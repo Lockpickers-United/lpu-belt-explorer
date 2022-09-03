@@ -1057,8 +1057,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'Basi CO',
+        make: 'Basi',
+        model: 'CO',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1067,8 +1067,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'Basi ST',
+        make: 'Basi',
+        model: 'ST',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1092,7 +1092,7 @@ export default [
         belt: 'Orange',
         make: 'Brinks',
         model: 'House Key',
-        type: 'N / A',
+        type: 'Pin Tumbler',
         notes: '',
         tags: [],
         links: [],
@@ -1102,7 +1102,7 @@ export default [
         belt: 'Orange',
         make: 'Brinks',
         model: 'Weatherproof Laminated Padlock',
-        type: 'N / A',
+        type: 'Pin Tumbler',
         notes: '44mm, Black plastic case',
         tags: [
             'Padlock',
@@ -1123,8 +1123,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'CES KB',
+        make: 'CES',
+        model: 'KB',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1133,8 +1133,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'CES PS5',
+        make: 'CES',
+        model: 'PS5',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1143,8 +1143,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'CES WM 5',
+        make: 'CES',
+        model: 'WM 5',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1153,8 +1153,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'CES WZ',
+        make: 'CES',
+        model: 'WZ',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1236,8 +1236,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'FAB 100',
+        make: 'Fab',
+        model: '100',
         type: 'Pin Tumbler',
         notes: '',
         tags: [],
@@ -1302,8 +1302,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'Gege ANS-2',
+        make: 'GeGe',
+        model: 'ANS-2',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1312,8 +1312,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'Gera Iseo F5',
+        make: 'Gera Iseo',
+        model: 'F5',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1508,8 +1508,8 @@ export default [
     },
     {
         belt: 'Orange',
-        make: 'N / A',
-        model: 'Trelock Euro Cylinder',
+        make: 'Trelock',
+        model: 'Euro Cylinder',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1904,7 +1904,7 @@ export default [
     },
     {
         belt: 'Green',
-        make: 'N / A',
+        make: 'Any',
         model: 'American Clone',
         type: 'Pin Tumbler',
         notes: '',
@@ -1984,8 +1984,8 @@ export default [
     },
     {
         belt: 'Green',
-        make: 'N / A',
-        model: 'Bab Ikon DS',
+        make: 'Bab Ikon',
+        model: 'DS',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -1994,8 +1994,8 @@ export default [
     },
     {
         belt: 'Green',
-        make: 'N / A',
-        model: 'Bab Ikon P031',
+        make: 'Bab Ikon',
+        model: 'P031',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -2383,8 +2383,8 @@ export default [
     },
     {
         belt: 'Green',
-        make: 'N / A',
-        model: 'Guett Dern',
+        make: 'Guett',
+        model: 'Dern',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -2533,7 +2533,7 @@ export default [
         make: 'Mako',
         model: '427',
         type: 'Pin Tumbler',
-        notes: 'Blue until July 1, 2022',
+        notes: '',
         tags: [],
         links: [],
         regions: []
@@ -2617,8 +2617,8 @@ export default [
     },
     {
         belt: 'Green',
-        make: 'N / A',
-        model: 'Mauer Elite 1',
+        make: 'Mauer',
+        model: 'Elite 1',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -2627,8 +2627,8 @@ export default [
     },
     {
         belt: 'Green',
-        make: 'N / A',
-        model: 'MCM SCX',
+        make: 'MCM',
+        model: 'SCX',
         type: 'N / A',
         notes: '',
         tags: [],
@@ -2923,10 +2923,557 @@ export default [
     // Blue Belt
     {
         belt: 'Blue',
+        make: 'Abus',
+        model: 'KW14',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Abus',
+        model: 'KV14 / KY14',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Abus',
+        model: 'Bravus 3000',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Abus',
+        model: 'D10',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Abus',
+        model: 'Abus D6',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Abus',
+        model: 'EC',
+        type: 'Dimple',
+        notes: 'Serrated pin version, not 700/800',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Abus',
+        model: 'XP1',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Ankerslot',
+        model: 'Infinity',
+        type: 'N / A',
+        notes: 'Without magnet',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Assa Abloy',
+        model: 'ASSA 500',
+        type: 'Pin Tumbler',
+        notes: 'With barrels and matched countermilling',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Assa Abloy',
+        model: 'ASSA 700',
+        type: 'Pin Tumbler',
+        notes: 'With spools and no countermilling, or with tapered drivers',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Assa Abloy',
+        model: 'ASSA Flexcore',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Assa Abloy',
+        model: 'ASSA R502',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Bricard',
+        model: 'Bloctout',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Bricard',
+        model: 'Serial S',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Burg Wächter',
+        model: 'Gamma 700',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Non-guttable'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Cantol',
+        model: 'High-security line',
+        type: 'Dimple',
+        notes: '10-pin dimple',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Chubb',
+        model: '114 - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Chubb',
+        model: '114e - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Chubb',
+        model: 'Any uncurtained 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Chubb',
+        model: 'Cruiser - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Cisa',
+        model: 'Astral S',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Cisa',
+        model: 'C3000',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'De Guard',
+        model: 'Interactive clone',
+        type: 'Dimple',
+        notes: '4 pins',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'DOM',
+        model: 'IX 5KG',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'DOM',
+        model: 'Plura',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'DOM',
+        model: 'RN *',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'DOM',
+        model: 'DOM R Plus',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'DOM',
+        model: 'DOM RS Sigma',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'DOM',
+        model: 'S (with circle)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Dorma',
+        model: 'DC3003',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'ERA',
+        model: 'Big 6 - 6 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'ERA',
+        model: 'Fortress - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'ERA',
+        model: 'Insurance - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'EVVA',
+        model: 'DPI',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'EVVA',
+        model: 'DPS',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'EVVA',
+        model: 'DPX',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'EVVA',
+        model: 'EPS',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'EVVA',
+        model: 'GPI/ALS',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Fab',
+        model: '2000',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Fab',
+        model: '3* Profi / 4* Profi',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Federal Lock',
+        model: '6KD3110',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'GeGe',
+        model: 'GeGe AP2000',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'GeGe',
+        model: 'AP3000',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Guard',
+        model: 'NVL',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'N / A',
+        model: 'HQ High Security Interactive clone (4 pins)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kaba',
+        model: '8 (2-row)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kaba',
+        model: '8 (3-row)',
+        type: 'Dimple',
+        notes: '< 9 pins',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kaba',
+        model: 'Gege pExtra 5 pin',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kale',
+        model: 'Kilit 164 YGS SE',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kaken',
+        model: 'KX3 exterior (<6 sidepins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kenaurd',
+        model: 'Kenaurd (pin-in-pin) (5 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Kryptonite',
+        model: 'Disk Detainer',
+        type: 'Disk Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Lince',
+        model: 'C4',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Lockwood',
+        model: '270S70',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Padlock',
+            'Guttable'
+        ],
+        links: [],
+        regions: [
+            'Australia'
+        ]
+    },
+    {
+        belt: 'Blue',
         make: 'Lockwood',
         model: '334 Series',
         type: 'Pin Tumbler',
-        notes: '',
+        notes: 'With spools',
         tags: [
             'Padlock',
             'Guttable'
@@ -2937,6 +3484,426 @@ export default [
         regions: [
             'Australia'
         ]
+    },
+    {
+        belt: 'Blue',
+        make: 'Lockwood',
+        model: '356S63',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Padlock',
+            'Guttable'
+        ],
+        links: [],
+        regions: [
+            'Australia'
+        ]
+    },
+    {
+        belt: 'Blue',
+        make: 'Lockwood',
+        model: 'V7',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: [
+            'Australia'
+        ]
+    },
+    {
+        belt: 'Blue',
+        make: 'M&C',
+        model: 'Color / Color Pro / Color+',
+        type: 'Dimple',
+        notes: '<4 sliders',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mauer',
+        model: 'RedLine G',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mauer',
+        model: 'RedLine GM',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'MCM',
+        model: 'AS6',
+        type: 'Dimple',
+        notes: '6 pin dimple, 3 spools and 3 T pins, good tolerances',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Medeco',
+        model: 'Biaxial (4 pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: [
+            'United States'
+        ]
+    },
+    {
+        belt: 'Blue',
+        make: 'Medeco',
+        model: 'BiLevel',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: [
+            'United States'
+        ]
+    },
+    {
+        belt: 'Blue',
+        make: 'Medeco',
+        model: 'Original Camlock (≤4 pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Cam'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Metal',
+        model: 'Zx5J',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mila',
+        model: 'Evolution',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mindy',
+        model: 'Pagoda',
+        type: 'Other',
+        notes: 'Round key',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Miwa',
+        model: 'DS',
+        type: 'Wafer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: [
+            'Japan'
+        ]
+    },
+    {
+        belt: 'Blue',
+        make: 'Mottura',
+        model: 'Champions C28/C29',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mottura',
+        model: 'Mottura Champions C30 / C31 / C39',
+        type: 'Dimple',
+        notes: 'Must be picked with the bible oriented down',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mul-T-Lock',
+        model: 'Classic (Standard drivers)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Mul-T-Lock',
+        model: 'Integrator',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Paclock',
+        model: '90A Pro',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Padlock',
+            'Guttable'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Paclock',
+        model: 'PL410',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Pisla',
+        model: '860',
+        type: 'N / A',
+        notes: '',
+        tags: [
+            'Non-guttable'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Ruko',
+        model: 'R501',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'SEA',
+        model: 'SEA slider lock',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Securemme',
+        model: 'K22',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Securit',
+        model: 'S20##',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Any',
+        model: 'SFIC Format Lock',
+        type: 'Pin Tumbler',
+        notes: 'To one shearline',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Takigen',
+        model: '10-pin',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'TESA',
+        model: 'T60',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Tokoz',
+        model: 'Tech',
+        type: 'Wafer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Trioving',
+        model: 'Vingcard 55##',
+        type: 'Pin Tumbler',
+        notes: 'With trampoline pins',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Union',
+        model: 'Strongbolt - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'VSR',
+        model: 'VSR 2-row',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Winkhaus',
+        model: 'N-Tra',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Winkhaus',
+        model: 'Titan',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Yale',
+        model: '500 series',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Yale',
+        model: 'Superior / Milencio Magnum (<7 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Zeiss Ikon',
+        model: 'P031 (N6 profile)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Zeiss Ikon',
+        model: 'Sk6 vector',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Zeiss Ikon',
+        model: 'SK7',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Blue',
+        make: 'Zeiss Ikon',
+        model: 'Undercut',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
     },
 
     // Purple Belt
