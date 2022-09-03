@@ -97,7 +97,7 @@ function FilterButton() {
                         </Stack>
                     }/>
                     <FieldValue name='Add Filters' value={
-                        <Stack direction='column'>
+                        <Stack direction='column' style={{marginTop: 8, maxWidth: 350}}>
                             <FilterByField field='Belt' onFilter={handleAddFilter}/>
                             <FilterByField field='Make' onFilter={handleAddFilter}/>
                             <FilterByField field='Type' onFilter={handleAddFilter}/>

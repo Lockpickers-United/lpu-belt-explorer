@@ -5,13 +5,14 @@
     "main": "index.js",
     "repository": "git@github.com:NiXXeD/lpu-belt-explorer.git",
     "author": "Andy Christianson <nix@nixxed.com>",
-    "license": "The Unlicense",
+    "license": "Unlicense",
     "homepage": "https://nixxed.github.io/lpu-belt-explorer",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@emotion/react": "^11.10.4",
@@ -26,6 +27,7 @@
         "@types/react": "^18.0.17",
         "@types/react-dom": "^18.0.6",
         "@vitejs/plugin-react": "^2.0.1",
+        "gh-pages": "^4.0.0",
         "vite": "^3.0.7"
     }
 }
