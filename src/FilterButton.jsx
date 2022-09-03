@@ -7,7 +7,7 @@ import FilterDialog from './FilterDialog.jsx'
 
 function FilterButton() {
     const [open, setOpen] = useState(false)
-    const [query, setQuery] = useState({})
+    const [query, setQuery] = useState(queryString.parse(location.search))
     const filters = useMemo(() => {
         return Object.keys(query)
             .map(key => {

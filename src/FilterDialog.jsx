@@ -28,11 +28,13 @@ function FilterDialog({filters, open, onClose, query, setQuery}) {
     }
 
     const handleClear = () => {
-        location.search = ''
+        onClose()
+        setTimeout(() => location.search = '')
     }
 
     const handleSave = () => {
-        location.search = queryString.stringify(query)
+        onClose()
+        setTimeout(() => location.search = queryString.stringify(query))
     }
 
     return (
