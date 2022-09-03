@@ -31,7 +31,7 @@ function Belts() {
     }, [filters])
 
     return (
-        <div style={{margin: 8, maxWidth: 700}}>
+        <div style={{paddingTop: 64, margin: 8, maxWidth: 700}}>
             {visibleBelts.map((datum, index) =>
                 <Belt
                     key={index}

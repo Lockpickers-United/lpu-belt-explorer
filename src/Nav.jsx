@@ -9,7 +9,7 @@ import LPUImage from './resources/LPU.png'
 
 function Nav() {
     return (
-        <AppBar position='static'>
+        <AppBar position='fixed'>
             <Toolbar>
                 <IconButton
                     edge='start' color='inherit' size='medium' sx={{mr: 2}}
