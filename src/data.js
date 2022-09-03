@@ -10,7 +10,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Master_Lock_No_1'}
-        ]
+        ],
+        regions: ['United States']
     },
 
     // Yellow Belt
@@ -24,7 +25,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Master_Lock_No_140'}
-        ]
+        ],
+        regions: []
     },
 
     // Orange Belt
@@ -39,7 +41,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/ABUS_83'}
-        ]
+        ],
+        regions: []
     },
 
     // Green Belt
@@ -54,7 +57,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/American_Lock_1100_1200_1300'}
-        ]
+        ],
+        regions: []
     },
 
     // Blue Belt
@@ -69,7 +73,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Lockwood_334_series'}
-        ]
+        ],
+        regions: []
     },
 
     // Purple Belt
@@ -87,7 +92,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Medeco_Biaxial'}
-        ]
+        ],
+        regions: []
     },
     {
         belt: 'Purple',
@@ -100,7 +106,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Lockwood_Twin'}
-        ]
+        ],
+        regions: []
     },
 
     // Brown Belt
@@ -115,7 +122,8 @@ export default [
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Schlage_Primus'}
-        ]
+        ],
+        regions: []
     },
 
     // Red Belt
@@ -125,7 +133,8 @@ export default [
         model: 'U9',
         type: 'Wafer',
         tags: [],
-        links: []
+        links: [],
+        regions: []
     },
 
     // Black Belt
@@ -137,6 +146,7 @@ export default [
         tags: [],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/ASSA_Twin_6000'}
-        ]
+        ],
+        regions: []
     }
 ]
