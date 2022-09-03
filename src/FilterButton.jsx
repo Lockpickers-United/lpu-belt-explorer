@@ -24,7 +24,10 @@ function FilterButton() {
         setQuery(queryString.parse(location.search))
         setOpen(true)
     }
-    const closeDialog = () => setOpen(false)
+    const closeDialog = () => {
+        setQuery(queryString.parse(location.search))
+        setOpen(false)
+    }
 
     return (
         <React.Fragment>
