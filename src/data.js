@@ -5748,16 +5748,6 @@ export default [
         {
             belt: 'Red',
             make: 'N / A',
-            model: 'Cism Atlas',
-            type: 'N / A',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Red',
-            make: 'N / A',
             model: 'Clavis T-20 (15-19 pins)',
             type: 'Dimple',
             notes: '',
@@ -6198,16 +6188,6 @@ export default [
         {
             belt: 'Red',
             make: 'N / A',
-            model: 'Winkhaus X-Tra (≥9 pins)',
-            type: 'Dimple',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Red',
-            make: 'N / A',
             model: 'Xylock',
             type: 'Pin Tumbler',
             notes: '',
@@ -6586,16 +6566,6 @@ export default [
             make: 'N / A',
             model: 'Walsall locks, Walsall 2000 - 5 levers',
             type: 'Large Lever',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Black 1',
-            make: 'N / A',
-            model: 'West 917',
-            type: 'Dimple',
             notes: '',
             tags: [],
             links: [],
