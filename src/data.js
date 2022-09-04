@@ -5345,7 +5345,7 @@ export default [
         },
         {
             belt: 'Brown',
-            make: 'Mauer ',
+            make: 'Mauer',
             model: 'President - 7 lever',
             type: 'Large Lever',
             notes: '',
@@ -5425,7 +5425,7 @@ export default [
         {
             belt: 'Brown',
             make: 'Miwa',
-            model: ' PS / Tostem DN (<7 unmastered wafers)',
+            model: 'PS / Tostem DN (<7 unmastered wafers)',
             type: 'N / A',
             notes: '',
             tags: [],
@@ -6078,7 +6078,7 @@ export default [
         {
             belt: 'Red',
             make: 'Robur',
-            model: 'Safe Deposit Lock ()',
+            model: 'Safe Deposit Lock',
             type: 'Pin Tumbler',
             notes: 'Barrels/gins > 3 chambers with matched milling',
             tags: [
@@ -6306,7 +6306,7 @@ export default [
         {
             belt: 'Black 1',
             make: 'Clavis',
-            model: 'Q-18 ',
+            model: 'Q-18',
             type: 'Dimple',
             notes: '',
             tags: [],
@@ -6542,7 +6542,7 @@ export default [
         {
             belt: 'Black 1',
             make: 'UrbanAlps',
-            model: ' Stealth Key SK2',
+            model: 'Stealth Key SK2',
             type: 'N / A',
             notes: '',
             tags: [],
