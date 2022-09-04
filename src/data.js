@@ -6233,9 +6233,9 @@ export default [
         regions: []
     },
 
-    // Black Belt 1
+    // Black 1
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Abloy Sentry',
         type: 'Disc Detainer',
@@ -6245,7 +6245,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)',
         type: 'Pin Tumbler',
@@ -6255,7 +6255,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'ASSA Twin Exclusive/6000 (with barrels)',
         type: 'Pin Tumbler',
@@ -6267,7 +6267,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'ASSA Twin Maximum/Pro/v10 with barrels/Global',
         type: 'Pin Tumbler',
@@ -6279,7 +6279,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'ASSA Twin Exclusive 5700 (Baltic)',
         type: 'Pin Tumbler',
@@ -6291,7 +6291,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Bilock (12-pins) (1-2 mastered elements) (upgrade of 8-pin version)',
         type: 'Slider',
@@ -6301,7 +6301,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'BKS Janus (14 or more pins)',
         type: 'Dimple',
@@ -6311,7 +6311,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Clavis Q-18 ',
         type: 'Dimple',
@@ -6321,7 +6321,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Clavis T-20 (20 pins)',
         type: 'Dimple',
@@ -6331,7 +6331,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'DOM Diamant',
         type: 'Disc Detainer',
@@ -6341,7 +6341,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'DOM ix Twinstar (upgrade of Saturn)',
         type: 'Dimple',
@@ -6351,7 +6351,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Emhart with 2+ mastered chambers',
         type: 'Pin Tumbler',
@@ -6361,7 +6361,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)',
         type: 'Slider',
@@ -6371,7 +6371,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'EVVA Dual (1-4 mastered elements)',
         type: 'Slider',
@@ -6381,7 +6381,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'EVVA ICS (1-2 mastered elements)',
         type: 'Slider',
@@ -6391,7 +6391,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Fichet 450/484 (With false gates) (1 mastered element)',
         type: 'N / A',
@@ -6401,7 +6401,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Goal v18 / GP (14-16 pins)',
         type: 'Dimple',
@@ -6411,7 +6411,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Goal Z (<2 standard drivers)',
         type: 'Pin Tumbler',
@@ -6421,7 +6421,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Kaba 20 / Miwa JN / Kaba Star (4 rows) (15 or more pins)',
         type: 'Dimple',
@@ -6431,7 +6431,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Kaba Quattro / experT (15-20 pins)',
         type: 'Dimple',
@@ -6441,7 +6441,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Kaba Star (5+ rows) (16-20 pins)',
         type: 'Dimple',
@@ -6451,7 +6451,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Kaba Penta (15-20 pins)',
         type: 'Dimple',
@@ -6461,7 +6461,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Miwa LB',
         type: 'N / A',
@@ -6471,7 +6471,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Miwa PR (7-8 unmastered elements) (upgrade of Miwa PS)',
         type: 'N / A',
@@ -6481,7 +6481,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Miwa U9 (8 unmastered elements)',
         type: 'N / A',
@@ -6491,7 +6491,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Mottura Champions C43/C44/C48',
         type: 'Dimple',
@@ -6503,7 +6503,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Mul-T-Lock MT5+ / 800 / Lockwood MT5 (not mastered) / Zeiss Ikon R10',
         type: 'Dimple',
@@ -6515,7 +6515,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Rosengrens 32A81S / 32C81P',
         type: 'Disc Detainer',
@@ -6525,7 +6525,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Sargent Keso',
         type: 'Dimple',
@@ -6535,7 +6535,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'UrbanAlps Stealth Key SK1',
         type: 'N / A',
@@ -6545,7 +6545,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'UrbanAlps Stealth Key SK2',
         type: 'N / A',
@@ -6555,7 +6555,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Walsall locks, Ace - 7 levers',
         type: 'Large Lever',
@@ -6565,7 +6565,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Walsall locks, Walsall 2000 - 5 levers',
         type: 'Large Lever',
@@ -6575,7 +6575,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'West 917',
         type: 'Dimple',
@@ -6585,7 +6585,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 1',
+        belt: 'Black 1',
         make: 'N / A',
         model: 'Zeiss Ikon WSW (5 sliders)',
         type: 'Pin Tumbler',
@@ -6597,9 +6597,9 @@ export default [
         regions: []
     },
 
-    // Black Belt 2
+    // Black 2
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Abloy Disklock Pro',
         type: 'Disc Detainer',
@@ -6609,7 +6609,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Abloy Exec',
         type: 'Disc Detainer',
@@ -6619,7 +6619,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / Trioving system 10 / Trioving Twin Control / Fab Variant',
         type: 'Pin Tumbler',
@@ -6631,7 +6631,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'ASSA Twin 6000 (with gins, upgrade of ASSA Twin 6000)',
         type: 'Pin Tumbler',
@@ -6643,7 +6643,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'ASSA Twin v10 (with gins, upgrade of ASSA Twin v10)',
         type: 'Pin Tumbler',
@@ -6655,7 +6655,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)',
         type: 'Slider',
@@ -6665,7 +6665,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Bilock (ASIO/SCEC) (2nd/3rd gen)',
         type: 'Slider',
@@ -6675,7 +6675,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Bilock Exclusive (Picked to Control)',
         type: 'Slider',
@@ -6685,7 +6685,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Clavis F-22 (upgrade of Clavis Q-18)',
         type: 'Dimple',
@@ -6695,7 +6695,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'EVVA Dual (0 mastered elements)',
         type: 'Slider',
@@ -6705,7 +6705,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'EVVA ICS (0 mastered elements)',
         type: 'Slider',
@@ -6715,7 +6715,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Fichet 450/484 (With false gates) (0 mastered elements)',
         type: 'N / A',
@@ -6725,7 +6725,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Fichet-Bauche M2B / M3B / MxB',
         type: 'Wafer',
@@ -6735,7 +6735,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Goal v18 / GP (≥17 pins)',
         type: 'Dimple',
@@ -6745,7 +6745,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Kaba Quattro / experT (21 pins)',
         type: 'Dimple',
@@ -6755,7 +6755,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Kaba Star (5+ rows) (21 or more pins)',
         type: 'Dimple',
@@ -6765,7 +6765,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Kaba Penta (21 or more pins)',
         type: 'Dimple',
@@ -6775,7 +6775,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Miwa PR (9-10 unmastered elements) (upgrade of Miwa PS)',
         type: 'N / A',
@@ -6785,7 +6785,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Miwa U9 (9 unmastered elements)',
         type: 'N / A',
@@ -6795,7 +6795,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)',
         type: 'Pin Tumbler',
@@ -6807,7 +6807,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 2',
+        belt: 'Black 2',
         make: 'N / A',
         model: 'Zeiss Ikon WSW (7 sliders, upgrade of WSW with 5 sliders)',
         type: 'Pin Tumbler',
@@ -6819,9 +6819,9 @@ export default [
         regions: []
     },
 
-    // Black Belt 3
+    // Black 3
     {
-        belt: 'Black Belt 3',
+        belt: 'Black 3',
         make: 'N / A',
         model: 'Abloy Protec',
         type: 'Disc Detainer',
@@ -6831,7 +6831,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 3',
+        belt: 'Black 3',
         make: 'N / A',
         model: 'ASSA dp4400 / dp11 / Trioving dp / Ruko Garant+',
         type: 'Pin Tumbler',
@@ -6843,7 +6843,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 3',
+        belt: 'Black 3',
         make: 'N / A',
         model: 'Bowley Door Lock',
         type: 'Pin Tumbler',
@@ -6853,7 +6853,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 3',
+        belt: 'Black 3',
         make: 'N / A',
         model: 'EVVA MCS gen 1 / MCS gen 2 / Zeiss Ikon M',
         type: 'N / A',
@@ -6863,7 +6863,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 3',
+        belt: 'Black 3',
         make: 'N / A',
         model: 'Goal Grand V',
         type: 'Dimple',
@@ -6873,7 +6873,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 3',
+        belt: 'Black 3',
         make: 'N / A',
         model: 'Miwa PR (11 unmastered elements) (upgrade of Miwa PS)',
         type: 'N / A',
@@ -6883,9 +6883,9 @@ export default [
         regions: []
     },
 
-    // Black Belt 4
+    // Black 4
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Abloy Protec2',
         type: 'Disc Detainer',
@@ -6895,7 +6895,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Bowley Padlock',
         type: 'Pin Tumbler',
@@ -6905,7 +6905,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Chubb, 6K174 isolator',
         type: 'Large Lever',
@@ -6915,7 +6915,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Chubb ‘Definitive’ - Standard mortice',
         type: 'Large Lever',
@@ -6925,7 +6925,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Chubb ‘Definitive’ - jewellery box',
         type: 'Large Lever',
@@ -6935,7 +6935,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Chubb\'s Improved Patent',
         type: 'Large Lever',
@@ -6945,7 +6945,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Chubb “New Patent”',
         type: 'Large Lever',
@@ -6955,7 +6955,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Fichet F3D (indoor cylinder)',
         type: 'N / A',
@@ -6965,7 +6965,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Opnus MMXII',
         type: 'N / A',
@@ -6975,7 +6975,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Opnus Memolis',
         type: 'N / A',
@@ -6985,7 +6985,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Sargent & Greenleaf 6990',
         type: 'Large Lever',
@@ -6995,7 +6995,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Western Electric 29B',
         type: 'Large Lever',
@@ -7005,9 +7005,9 @@ export default [
         regions: []
     },
 
-    // Black Belt 5
+    // Black 5
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Fichet F3D (outside cylinder, upgrade of indoor cylinder)',
         type: 'N / A',
@@ -7017,7 +7017,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Kromer Protector',
         type: 'N / A',
@@ -7027,7 +7027,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'NATO Mersey (10 levers)',
         type: 'Large Lever',
@@ -7037,7 +7037,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'NATO Mersey (14 levers)',
         type: 'Large Lever',
@@ -7047,7 +7047,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Western Electric 30C',
         type: 'Large Lever',
@@ -7057,7 +7057,7 @@ export default [
         regions: []
     },
     {
-        belt: 'Black Belt 4',
+        belt: 'Black 4',
         make: 'N / A',
         model: 'Yuema 750 / Forte Enigma',
         type: 'Slider',

@@ -1,7 +1,7 @@
 import React from 'react'
 
 function BeltStripe({value}) {
-    const color = value.toLowerCase()
+    const color = value.toLowerCase().replace(/\s/g, '')
     const backgroundColor = colors[color]
     const style = {
         width: 8,
@@ -25,5 +25,9 @@ const colors = {
     purple: '#6810cf',
     brown: '#7d5016',
     red: '#fe1016',
-    black: '#000000'
+    black1: '#000000',
+    black2: '#000000',
+    black3: '#000000',
+    black4: '#000000',
+    black5: '#000000'
 }
