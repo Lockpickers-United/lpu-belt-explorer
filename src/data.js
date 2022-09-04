@@ -1028,7 +1028,7 @@ export default [
     {
         belt: 'Orange',
         make: 'Abus',
-        model: 'Diskus',
+        model: 'Discus',
         type: 'Pin Tumbler',
         notes: 'Not dimple',
         tags: [],
@@ -1627,7 +1627,7 @@ export default [
         belt: 'Orange',
         make: 'Zarker',
         model: 'J45/J45S',
-        type: 'Disk Detainer',
+        type: 'Disc Detainer',
         notes: '',
         tags: [],
         links: [],
@@ -3436,8 +3436,8 @@ export default [
     {
         belt: 'Blue',
         make: 'Kryptonite',
-        model: 'Disk Detainer',
-        type: 'Disk Detainer',
+        model: 'Disc Detainer',
+        type: 'Disc Detainer',
         notes: '',
         tags: [],
         links: [],
@@ -3775,7 +3775,7 @@ export default [
     },
     {
         belt: 'Blue',
-        make: 'TESA',
+        make: 'Tesa',
         model: 'T60',
         type: 'Dimple',
         notes: '',
@@ -3909,22 +3909,568 @@ export default [
     // Purple Belt
     {
         belt: 'Purple',
-        make: 'Medeco',
-        model: 'Biaxial',
+        make: 'ABA',
+        model: '109582',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Abus',
+        model: 'Bravus 4000',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Abus',
+        model: 'EP10',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Abus',
+        model: 'TS5000',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Abus',
+        model: 'XP20s / XP2s / Cisa AP3 / Bricard xp s2',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Agent',
+        model: 'LS3 / LS4 / LS5',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Aldon Corporation',
+        model: 'Hot Dog Lock',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Alpha',
+        model: 'YKK AP',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Anchor Las',
+        model: 'Disc Detainer',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'ASEC',
+        model: 'BS Sash lock - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Assa Abloy',
+        model: 'ASSA 500',
+        type: 'Pin Tumbler',
+        notes: 'With gin spools and matching countermilling',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Assa Abloy',
+        model: 'ASSA 600',
+        type: 'Pin Tumbler',
+        notes: 'With barrel spools and matching countermilling',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Assa Abloy',
+        model: 'ASSA Desmo (6 sliders)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Assa Abloy',
+        model: 'ASSA Desmo (8 sliders) (1-3 mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Assa Abloy',
+        model: 'ASSA Guideline',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Assa Abloy',
+        model: 'ASSA Twin Combi (2 finger pins)',
         type: 'Pin Tumbler',
         notes: '',
         tags: [
-            'Padlock',
-            'Mortise',
-            'Cam',
-            'Guttable',
             'Sidebar'
         ],
-        links: [
-            {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Medeco_Biaxial'}
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Avocet',
+        model: 'ABS',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
         ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'BiLock',
+        model: 'BiLock (8 pins) (3-4 mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'BiLock',
+        model: 'BiLock (12 pins) (7-8 mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Bricard',
+        model: 'Chifral (all versions) (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Bricard',
+        model: 'Supersureté',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Burg Wächter',
+        model: 'Alpha 800',
+        type: 'Wafer',
+        notes: '',
+        tags: [
+            'Guttable'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'CEI',
+        model: '"Five Colors"',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Chubb',
+        model: 'Biaxial',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Chubb',
+        model: 'Battleship - 6 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Codkey',
+        model: 'Locksys (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'DAF',
+        model: 'DAF Kilit DBS02',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'DOM',
+        model: 'ix10 (without fins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'DOM',
+        model: 'ix6sr',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'DOM',
+        model: 'IX Twido',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Eagle',
+        model: '"Supr-Security" (without shutter)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Elzett',
+        model: 'X11',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Emhart',
+        model: 'Emhart (4 pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'EVVA',
+        model: 'DPI / DPS / DPX / EPS',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Fichet',
+        model: '450 (no false gates)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Fontaine',
+        model: 'Fontaine',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'N / A',
+        model: 'HQ High Security / DeGuard interactive clone (5 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Ifam',
+        model: 'WX1000',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Illinois',
+        model: 'Illinois Duo',
+        type: 'Wafer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Ingersoll',
+        model: '10 Lever Padlock',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Iseo',
+        model: 'Perfecta',
+        type: 'Requires 360 core rotation',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Iseo',
+        model: 'R7',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Kaba',
+        model: '8 (3-row) (≥9 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Kaba',
+        model: 'Ace (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Kaba',
+        model: 'Gege pExtra 6-7 pin',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Kale',
+        model: 'Kilit 164 BNE',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Kaken',
+        model: 'KX3 exterior (6+ sidepins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Keso',
+        model: '10RS / 2000S / 4000S (Omega) (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Kwikset',
+        model: 'Smartkey',
+        type: 'Slider',
+        notes: 'Generations I, II, and III',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'N / A',
+        model: 'Legge BS Sash lock - 5 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'N / A',
+        model: 'Lever Unknown/Generic lock - 6 or 7 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Lips',
+        model: 'Keso (door cylinder) / Octro (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Lips',
+        model: 'Keso Padlock',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Padlock'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Lockman',
+        model: 'Megacross (9-pins, Mushroom Drivers)',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Lockwood',
+        model: 'MT5 (VPI, Heavily Mastered)',
+        type: 'Dimple',
+        notes: 'Excempt from the rule regarding minimum master wafers',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
         regions: [
-            'United States'
+            'Australia'
         ]
     },
     {
@@ -3946,17 +4492,1000 @@ export default [
             'Australia'
         ]
     },
+    {
+        belt: 'Purple',
+        make: 'M&C',
+        model: 'Color / Color Pro / Color+ /// Vachette V-DIS/V-DIS+ (≥4 sliders)',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'M&C',
+        model: 'Condor / Move',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'M&C',
+        model: 'M&C Matrix',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Magnum',
+        model: 'Magnum Atlantic',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Medeco',
+        model: 'Medeco Original / Biaxial / M3 (5+ pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Padlock',
+            'Mortise',
+            'Cam',
+            'Guttable',
+            'Sidebar'
+        ],
+        links: [
+            {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Medeco_Biaxial'}
+        ],
+        regions: [
+            'United States'
+        ]
+    },
+    {
+        belt: 'Purple',
+        make: 'Medeco',
+        model: 'Medeco Original Camlock (5+ pins)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Miracle',
+        model: 'Magnetic',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Miwa',
+        model: 'Magnetic Camlock',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: [
+            'Japan'
+        ]
+    },
+    {
+        belt: 'Purple',
+        make: 'N / A',
+        model: 'MLock',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Mottura',
+        model: 'Champions C38',
+        type: 'Dimple',
+        notes: 'Must be picked with the bible oriented down',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Mottura',
+        model: 'Viper',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Mul-T-Lock',
+        model: 'Jr / Classic / Interactive',
+        type: 'Dimple',
+        notes: 'Spooled drivers, < 3 countermilled outer keypins',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Mul-T-Lock',
+        model: 'MT5',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Mul-T-Lock',
+        model: 'Omega Plus',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Nagasawa',
+        model: 'Kodai KCY-31 (6 pin pt)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Nemef',
+        model: 'NF2 / NF3',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Nemef',
+        model: 'NF4',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Opnus',
+        model: 'UX',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Pollux',
+        model: '5',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'N / A',
+        model: 'Rav Bariach Locxis',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Rielda',
+        model: 'Rekeyable lock',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Sargent',
+        model: 'Signature',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Schlage',
+        model: 'Everest 29SL',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Securemme',
+        model: 'K5',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Sepa',
+        model: 'HDS',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Any',
+        model: 'SFIC Format Lock',
+        type: 'Pin Tumbler',
+        notes: 'Excempt from the rule regarding minimum master wafers',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Tesa',
+        model: 'T80 / TX80',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Tesa',
+        model: 'Tk 100',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Titan',
+        model: 'T250',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Tubar',
+        model: 'Tubar',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'N / A',
+        model: 'US Star Tech "Hi Security"',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Vachette',
+        model: 'Axi\'Home',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Yale',
+        model: '5000',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Yale',
+        model: 'Superior / Milencio Magnum (7 or 9 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Purple',
+        make: 'Zeiss Ikon',
+        model: 'sk6 vectorprofil rib extra (5 sliders)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
 
     // Brown Belt
     {
         belt: 'Brown',
+        make: 'Abus',
+        model: 'Plus *',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Agent',
+        model: 'GMD-500',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'ALC',
+        model: 'Galaxy',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Alke',
+        model: 'Alke',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'Alpha FB (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Ankerslot',
+        model: 'Infinity K',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Assa Abloy',
+        model: '1800 / 4800-(3 fingerpin combi)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Assa Abloy',
+        model: 'Desmo (8 sliders) (no mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [
+            {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/ASSA_Desmo'}
+        ],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Assa Abloy',
+        model: 'd12 / P600 / Neptun 1900 / Trioving d12 level 1 (aka d13, no long pin)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Basi',
+        model: 'K10',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'BiLock',
+        model: 'BiLock (12 pins) (5-6 mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'BiLock',
+        model: 'BiLock (8 pins) (0-2 mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Bks',
+        model: 'Multipin',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Bricard',
+        model: 'Chifral (all versions) (fully pinned)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Cavers',
+        model: 'Cavith',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Clavis',
+        model: 'T-20 (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'Codkey Locksys (≥15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'CX-5 Scorpion / Marks High Security Lock',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'Dierre New Power',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'DOM',
+        model: 'ix10 (with shark fins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'DOM',
+        model: 'ix10kg',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'DOM',
+        model: 'System D',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Eagle',
+        model: '"Supr-Security" (with shutter)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Fab',
+        model: 'Dynamic',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Federal Lock',
+        model: '11KDCF3110',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Federal Lock',
+        model: 'UCF3100 / USC3100',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Fichet',
+        model: '450/484',
+        type: 'N / A',
+        notes: 'With false gates and 4-6 mastered levers',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Fichet',
+        model: '666',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Gerda',
+        model: 'HSS',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Gerda',
+        model: 'Tytan ZX / Rim 6000',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Goal',
+        model: 'D9',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'iNAHO',
+        model: 'Tierkey',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Goal',
+        model: 'P',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'Izis',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'JPM 405',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Kaba',
+        model: '14 (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Kaba',
+        model: 'Ace (≥13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Kaba',
+        model: 'Gemini (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Kaba',
+        model: 'Gemini pluS (<14 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Kaken',
+        model: 'KXR',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Kale',
+        model: 'Kilit 164 CEC',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Keso',
+        model: '10RS / 2000S / 4000S (Omega) (≥13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Laperche',
+        model: 'Rols',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Lips',
+        model: 'Keso (door cylinder) / Octro (≥13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Lowe and Fletcher',
+        model: '3007 Safe lock - 7 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Mauer ',
+        model: 'President - 7 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Mauer',
+        model: 'Variator A - 7 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Magnum',
+        model: 'Mont Blanc',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Mauer',
+        model: 'NW4 / NW5 / NW6',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Medeco',
+        model: 'Duracam',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar',
+            'Non-guttable'
+        ],
+        links: [],
+        regions: [
+            'United States'
+        ]
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'MG Serrature HS',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Miwa',
+        model: 'EC',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: [
+            'Japan'
+        ]
+    },
+    {
+        belt: 'Brown',
+        make: 'Miwa',
+        model: ' PS / Tostem DN (<7 unmastered wafers)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: [
+            'Japan'
+        ]
+    },
+    {
+        belt: 'Brown',
+        make: 'Mul-T-Lock',
+        model: 'Classic / Interactive (serrated drivers)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Mul-T-Lock',
+        model: 'Interactive/Classic',
+        type: 'Dimple',
+        notes: 'Spooled inner drivers + >3 counter milled outer keypins',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Pollux',
+        model: '7',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Robur',
+        model: 'Safe Deposit Lock',
+        type: 'Pin Tumbler',
+        notes: 'Barrels <3 chambers with matched milling',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Robur',
+        model: 'Safe Deposit Lock',
+        type: 'Pin Tumbler',
+        notes: 'Gins < 3 chambers with matched milling',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
         make: 'Schlage',
-        model: 'Primus',
+        model: 'Primus / Everest Primus',
         type: 'Pin Tumbler',
         notes: '',
         tags: [
             'Guttable',
-            'Sidebar'
+            'Sidebar',
+            'KIK',
+            'Padlock'
         ],
         links: [
             {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/Schlage_Primus'}
@@ -3965,32 +5494,1576 @@ export default [
             'United States'
         ]
     },
+    {
+        belt: 'Brown',
+        make: 'Any',
+        model: 'SFIC with Security Pins',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Thirard',
+        model: 'Cobra',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'U-Shin Showa NX (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Vachette',
+        model: 'Radial NT/NT+ (<13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'Van Lock',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'VSR 3-row',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'West 916',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Winkhaus',
+        model: 'X-Tra (< 9 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'N / A',
+        model: 'X18 - Clavis Q18 clones (Anbo, Lex, GLK, Apec XS...)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Brown',
+        make: 'Zeiss Ikon',
+        model: 'tk5 sperwellenprofil',
+        type: 'Pin Tumbler',
+        notes: 'With smooth fingerpins',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
 
     // Red Belt
     {
         belt: 'Red',
-        make: 'Miwa',
-        model: 'U9',
+        make: 'N / A',
+        model: 'Abloy Classic',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Abloy Disklock',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Abloy High Profile',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Abus EC 700/800',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Alpha FB (≥15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Anker (MIWA/Ankerslot) 3800',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'ASSA 600 (with gin spools and matched countermilling)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, <2 tree pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'ASSA dp2400 / dp10',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Banham m2002',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'BiLock (12 pins) (3-4 mastered pins)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Bks Janus (<14 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Chubb 110 - 5 levers',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Cism Atlas',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Clavis T-20 (15-19 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'DOM ix Saturn',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'DOM RS 8',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Dorma DC500',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Elzett Magnet',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Emhart (6 pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'EVVA 3KS (without false gates or 1-3 mastered sliders}',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'EVVA Dual (>4 mastered sliders)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'EVVA ICS (>2 mastered sliders)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Fab NZS3',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Fichet 450/484 (w/ false gates) (2-3 mastered levers)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Fontaine Dynaxis',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'FTH Surveyor',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Goal v18 /GP (<14 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Goal Z (≥2 standard drivers)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'JPM Surf / Ruko Combi Plus',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba 14 (13+ pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba 20/Miwa JN/Kaba Star (4 directions) (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba Expert/Quattro (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba Gemini (≥13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba Gemini pluS (≥14 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba Penta (<15 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Kaba Star (5+ directions) (<16 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Lockman Megacross (with pyramid drivers)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Mauer Praetor B - 11 levers',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Miwa E6',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Miwa PR (<7 unmastered wafers)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Miwa PS / Tostem DN (7-8 unmastered wafers)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Miwa U9 (<8 unmastered levers)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Mottura 52 - 7 levers',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Mottura Champtions C55',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Picard Vigie',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Robur Safe Deposit Lock (barrels >3 chambers with matched milling)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Robur Safe Deposit Lock (gins >3 chambers with matched milling)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Rosengrens 32A / 32A8',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Ruko Combi 2',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Sémag Euromag',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Schlage Everest 29 SL Primus XP',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Tann 10 lever',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Tokoz Pro',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'U-Shin Showa NX (≥13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Vachette Axi\'Tec',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Vachette Radial NT/NT+ (≥13 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Winkhaus X-Tra (≥9 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Xylock',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Yuema 760',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Zeiss Ikon tk5 sperwellenprofil (with serrated fingerpins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Red',
+        make: 'N / A',
+        model: 'Zeiss Ikon Verso',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+
+    // Black Belt 1
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Abloy Sentry',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'ASSA Twin Exclusive/6000 (with barrels)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'ASSA Twin Maximum/Pro/v10 with barrels/Global',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'ASSA Twin Exclusive 5700 (Baltic)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Bilock (12-pins) (1-2 mastered elements) (upgrade of 8-pin version)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'BKS Janus (14 or more pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Clavis Q-18 ',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Clavis T-20 (20 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'DOM Diamant',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'DOM ix Twinstar (upgrade of Saturn)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Emhart with 2+ mastered chambers',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'EVVA Dual (1-4 mastered elements)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'EVVA ICS (1-2 mastered elements)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Fichet 450/484 (With false gates) (1 mastered element)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Goal v18 / GP (14-16 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Goal Z (<2 standard drivers)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Kaba 20 / Miwa JN / Kaba Star (4 rows) (15 or more pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Kaba Quattro / experT (15-20 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Kaba Star (5+ rows) (16-20 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Kaba Penta (15-20 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Miwa LB',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Miwa PR (7-8 unmastered elements) (upgrade of Miwa PS)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Miwa U9 (8 unmastered elements)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Mottura Champions C43/C44/C48',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Mul-T-Lock MT5+ / 800 / Lockwood MT5 (not mastered) / Zeiss Ikon R10',
+        type: 'Dimple',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Rosengrens 32A81S / 32C81P',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Sargent Keso',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'UrbanAlps Stealth Key SK1',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'UrbanAlps Stealth Key SK2',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Walsall locks, Ace - 7 levers',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Walsall locks, Walsall 2000 - 5 levers',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'West 917',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 1',
+        make: 'N / A',
+        model: 'Zeiss Ikon WSW (5 sliders)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+
+    // Black Belt 2
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Abloy Disklock Pro',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Abloy Exec',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / Trioving system 10 / Trioving Twin Control / Fab Variant',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'ASSA Twin 6000 (with gins, upgrade of ASSA Twin 6000)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'ASSA Twin v10 (with gins, upgrade of ASSA Twin v10)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Bilock (ASIO/SCEC) (2nd/3rd gen)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Bilock Exclusive (Picked to Control)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Clavis F-22 (upgrade of Clavis Q-18)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'EVVA Dual (0 mastered elements)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'EVVA ICS (0 mastered elements)',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Fichet 450/484 (With false gates) (0 mastered elements)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Fichet-Bauche M2B / M3B / MxB',
         type: 'Wafer',
         notes: '',
         tags: [],
         links: [],
-        regions: [
-            'Japan'
-        ]
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Goal v18 / GP (≥17 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Kaba Quattro / experT (21 pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Kaba Star (5+ rows) (21 or more pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Kaba Penta (21 or more pins)',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Miwa PR (9-10 unmastered elements) (upgrade of Miwa PS)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Miwa U9 (9 unmastered elements)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 2',
+        make: 'N / A',
+        model: 'Zeiss Ikon WSW (7 sliders, upgrade of WSW with 5 sliders)',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
     },
 
-    // Black Belt
+    // Black Belt 3
     {
-        belt: 'Black',
-        make: 'Assa Abloy',
-        model: 'Twin 6000',
+        belt: 'Black Belt 3',
+        make: 'N / A',
+        model: 'Abloy Protec',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 3',
+        make: 'N / A',
+        model: 'ASSA dp4400 / dp11 / Trioving dp / Ruko Garant+',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [
+            'Sidebar'
+        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 3',
+        make: 'N / A',
+        model: 'Bowley Door Lock',
         type: 'Pin Tumbler',
         notes: '',
         tags: [],
-        links: [
-            {text: 'LockWiki', url: 'http://www.lockwiki.com/index.php/ASSA_Twin_6000'}
-        ],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 3',
+        make: 'N / A',
+        model: 'EVVA MCS gen 1 / MCS gen 2 / Zeiss Ikon M',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 3',
+        make: 'N / A',
+        model: 'Goal Grand V',
+        type: 'Dimple',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 3',
+        make: 'N / A',
+        model: 'Miwa PR (11 unmastered elements) (upgrade of Miwa PS)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+
+    // Black Belt 4
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Abloy Protec2',
+        type: 'Disc Detainer',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Bowley Padlock',
+        type: 'Pin Tumbler',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Chubb, 6K174 isolator',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Chubb ‘Definitive’ - Standard mortice',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Chubb ‘Definitive’ - jewellery box',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Chubb\'s Improved Patent',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Chubb “New Patent”',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Fichet F3D (indoor cylinder)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Opnus MMXII',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Opnus Memolis',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Sargent & Greenleaf 6990',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Western Electric 29B',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+
+    // Black Belt 5
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Fichet F3D (outside cylinder, upgrade of indoor cylinder)',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Kromer Protector',
+        type: 'N / A',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'NATO Mersey (10 levers)',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'NATO Mersey (14 levers)',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Western Electric 30C',
+        type: 'Large Lever',
+        notes: '',
+        tags: [],
+        links: [],
+        regions: []
+    },
+    {
+        belt: 'Black Belt 4',
+        make: 'N / A',
+        model: 'Yuema 750 / Forte Enigma',
+        type: 'Slider',
+        notes: '',
+        tags: [],
+        links: [],
         regions: []
     }
 ]
