@@ -9,7 +9,7 @@ function App() {
 
     return (
         <React.Fragment>
-            <Nav onSearch={setSearchTerm}/>
+            <Nav searchTerm={searchTerm} onSearch={setSearchTerm}/>
 
             <Belts query={query} searchTerm={searchTerm}/>
         </React.Fragment>

@@ -57,12 +57,15 @@ function FilterDialog({filters, open, onClose, query, setQuery}) {
                     <Typography sx={{ml: 2, flex: 1}} variant='h6' component='div'>
                         Filters
                     </Typography>
-                    <Button color='error' onClick={handleClear}>
-                        clear
-                    </Button>
-                    <Button autoFocus color='inherit' onClick={handleSave}>
-                        save
-                    </Button>
+
+                    <Stack spacing={0.5} alignItems='center' direction='row'>
+                        <Button color='error' onClick={handleClear}>
+                            clear
+                        </Button>
+                        <Button autoFocus color='inherit' onClick={handleSave} style={{marginRight: -8}}>
+                            save
+                        </Button>
+                    </Stack>
                 </Toolbar>
             </AppBar>
             <DialogContent>

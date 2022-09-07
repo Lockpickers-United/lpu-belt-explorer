@@ -1,4 +1,5 @@
 import React from 'react'
+import Stack from '@mui/material/Stack'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -8,21 +9,19 @@ import GitHubButton from './GitHubButton.jsx'
 import LPUButton from './LPUButton.jsx'
 import SearchBox from './SearchBox.jsx'
 
-function Nav({onSearch}) {
+function Nav({searchTerm, onSearch}) {
     return (
         <AppBar position='fixed'>
             <Toolbar>
                 <LPUButton/>
 
-                <Typography variant='h6' component='div' sx={{flexGrow: 1}}>
-                    Belt Explorer
+                <Typography variant='h6' component='div' sx={{flexGrow: 1, minWidth: 55}} noWrap>
+                    Belts
                 </Typography>
 
-                <SearchBox onSearch={onSearch}/>
-
+                <SearchBox searchTerm={searchTerm} onSearch={onSearch}/>
                 <FilterButton/>
                 <ClearFilterButton onSearch={onSearch}/>
-
                 <GitHubButton/>
             </Toolbar>
         </AppBar>

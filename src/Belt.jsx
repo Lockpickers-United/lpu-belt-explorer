@@ -11,10 +11,10 @@ import BeltStripe from './BeltStripe.jsx'
 import FieldValue from './FieldValue.jsx'
 
 function Belt({index, expanded, belt, onAccordionChange}) {
-    const handleChange = panel => (_, isExpanded) => onAccordionChange(isExpanded ? panel : false)
+    const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? index : false)
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange(index)}>
+        <Accordion expanded={expanded} onChange={handleChange}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={belt.belt}/>
                 <Typography

@@ -5,7 +5,7 @@ import LPUImage from './resources/LPU.png'
 function LPUButton() {
     return (
         <IconButton
-            edge='start' color='inherit' size='medium' sx={{mr: 2}}
+            edge='start' color='inherit' size='medium' sx={{mr: 1}}
             href='https://www.lockpickersunited.org/beltsystem/belts/'
             target='_blank' rel='noopener noreferrer'
         >
