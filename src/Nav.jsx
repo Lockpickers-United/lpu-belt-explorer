@@ -2,33 +2,28 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import GitHubIcon from '@mui/icons-material/GitHub'
+import ClearFilterButton from './ClearFilterButton.jsx'
 import FilterButton from './FilterButton.jsx'
-import LPUImage from './resources/LPU.png'
+import GitHubButton from './GitHubButton.jsx'
+import LPUButton from './LPUButton.jsx'
+import SearchBox from './SearchBox.jsx'
 
-function Nav() {
+function Nav({onSearch}) {
     return (
         <AppBar position='fixed'>
             <Toolbar>
-                <IconButton
-                    edge='start' color='inherit' size='medium' sx={{mr: 2}}
-                    href='https://www.lockpickersunited.org/beltsystem/belts/'
-                    target='_blank' rel='noopener noreferrer'
-                >
-                    <img alt='LPU' src={LPUImage} width={36} height={36}/>
-                </IconButton>
+                <LPUButton/>
+
                 <Typography variant='h6' component='div' sx={{flexGrow: 1}}>
                     Belt Explorer
                 </Typography>
 
+                <SearchBox onSearch={onSearch}/>
+
                 <FilterButton/>
-                <IconButton
-                    color='inherit' target='_blank' rel='noopener noreferrer'
-                    href='https://github.com/NiXXeD/lpu-belt-explorer' edge='end'
-                >
-                    <GitHubIcon/>
-                </IconButton>
+                <ClearFilterButton onSearch={onSearch}/>
+
+                <GitHubButton/>
             </Toolbar>
         </AppBar>
     )

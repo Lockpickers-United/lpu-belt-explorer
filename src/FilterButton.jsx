@@ -1,3 +1,4 @@
+import {Tooltip} from '@mui/material'
 import React, {useMemo, useState} from 'react'
 import queryString from 'query-string'
 import FilterAltIcon from '@mui/icons-material/FilterAlt.js'
@@ -31,13 +32,15 @@ function FilterButton() {
 
     return (
         <React.Fragment>
-            <Badge badgeContent={filters.length} color='secondary' overlap='circular' anchorOrigin={{
-                vertical: 'bottom', horizontal: 'right'
-            }}>
-                <IconButton color='inherit' onClick={openDialog}>
-                    <FilterAltIcon/>
-                </IconButton>
-            </Badge>
+            <Tooltip title='Filter'>
+                <Badge badgeContent={filters.length} color='secondary' overlap='circular' anchorOrigin={{
+                    vertical: 'bottom', horizontal: 'right'
+                }}>
+                    <IconButton color='inherit' onClick={openDialog}>
+                        <FilterAltIcon/>
+                    </IconButton>
+                </Badge>
+            </Tooltip>
             <FilterDialog
                 open={open}
                 query={query}

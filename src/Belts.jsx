@@ -1,34 +1,40 @@
-import React, {useMemo} from 'react'
+import React, {useDeferredValue, useMemo} from 'react'
 import Belt from './Belt.jsx'
-import queryString from 'query-string'
+import fuzzysort from 'fuzzysort'
 
 import data from './data'
 
-function Belts() {
+function Belts({query, searchTerm}) {
     const [expanded, setExpanded] = React.useState(-1)
+    const deferredQuery = useDeferredValue(query)
+    const deferredSearchTerm = useDeferredValue(searchTerm)
 
-    const query = queryString.parse(location.search)
     const filters = useMemo(() => {
-        return Object.keys(query)
+        return Object.keys(deferredQuery)
             .map(key => {
-                const value = query[key]
+                const value = deferredQuery[key]
                 return Array.isArray(value)
                     ? value.map(subkey => ({key, value: subkey}))
                     : {key, value}
             })
             .flat()
-    }, [query])
+    }, [deferredQuery])
 
     const visibleBelts = useMemo(() => {
-        return data
-            .filter(belt => {
-                return filters.every(({key, value}) => {
-                    return Array.isArray(belt[key])
-                        ? belt[key].includes(value)
-                        : belt[key] === value
-                })
+        const filtered = data.filter(belt => {
+            return filters.every(({key, value}) => {
+                return Array.isArray(belt[key])
+                    ? belt[key].includes(value)
+                    : belt[key] === value
             })
-    }, [filters])
+        })
+        if (deferredSearchTerm) {
+            const fuzzyResults = fuzzysort.go(deferredSearchTerm, filtered, {keys: fuzzySortKeys})
+            return fuzzyResults.map(result => result.obj)
+        } else {
+            return filtered
+        }
+    }, [filters, deferredSearchTerm])
 
     return (
         <div style={{paddingTop: 64, margin: 8, maxWidth: 700}}>
@@ -44,5 +50,7 @@ function Belts() {
         </div>
     )
 }
+
+const fuzzySortKeys = ['make', 'model', 'notes', 'tags']
 
 export default Belts

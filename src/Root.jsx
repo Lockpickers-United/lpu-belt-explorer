@@ -1,6 +1,7 @@
 import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import App from './App.jsx'
 import Belts from './Belts'
 import Nav from './Nav'
 
@@ -28,9 +29,7 @@ function Root() {
         <ThemeProvider theme={darkTheme}>
             <CssBaseline/>
 
-            <Nav/>
-
-            <Belts/>
+            <App/>
         </ThemeProvider>
     )
 }
