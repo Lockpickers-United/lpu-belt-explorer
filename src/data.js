@@ -7052,4 +7052,6 @@ export default [
             regions: []
         }
     ]
-].flat()
+]
+    .flat()
+    .map(datum => ({...datum, makeModel: `${datum.make} ${datum.model}`}))

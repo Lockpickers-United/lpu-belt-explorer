@@ -51,6 +51,6 @@ function Belts({query, searchTerm}) {
     )
 }
 
-const fuzzySortKeys = ['make', 'model', 'notes', 'tags']
+const fuzzySortKeys = ['makeModel', 'notes', 'tags']
 
 export default Belts
