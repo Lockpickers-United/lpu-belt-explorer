@@ -858,6 +858,16 @@ export default [
             tags: [],
             links: [],
             regions: []
+        },
+        {
+            belt: 'Yellow',
+            make: 'Burg Wächter',
+            model: 'Alutitan 770/40',
+            type: 'Pin Tumbler',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
         }
     ],
 
@@ -1745,16 +1755,6 @@ export default [
             belt: 'Green',
             make: 'Abus',
             model: 'Bravus 2000',
-            type: 'Pin Tumbler',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Green',
-            make: 'Abus',
-            model: 'E-series (E20-E90)',
             type: 'Pin Tumbler',
             notes: '',
             tags: [],
@@ -2778,16 +2778,6 @@ export default [
         },
         {
             belt: 'Green',
-            make: 'Vachette',
-            model: 'VIP / VIP+',
-            type: 'N / A',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Green',
             make: 'Wetzel',
             model: 'Pfaffenhain',
             type: 'Pin Tumbler',
@@ -2922,6 +2912,26 @@ export default [
             model: 'Zoo Hardware V10',
             type: 'N / A',
             notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Green',
+            make: 'Burg Wächter',
+            model: 'Profi 116/40 and above',
+            type: 'Pin Tumbler',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Green',
+            make: 'Corbin Master',
+            model: 'Ring',
+            type: 'Pin Tumbler',
+            notes: 'Picked to one shearline',
             tags: [],
             links: [],
             regions: []
@@ -3913,6 +3923,26 @@ export default [
             tags: [],
             links: [],
             regions: []
+        },
+        {
+            belt: 'Blue',
+            make: 'Abus',
+            model: 'E-series (E20-E90)',
+            type: 'Pin Tumbler',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Blue',
+            make: 'Vachette',
+            model: 'VIP / VIP+',
+            type: 'N / A',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
         }
     ],
 
@@ -3990,16 +4020,6 @@ export default [
         },
         {
             belt: 'Purple',
-            make: 'Alpha',
-            model: 'YKK AP',
-            type: 'Dimple',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Purple',
             make: 'Anchor Las',
             model: 'Disc Detainer',
             type: 'Disc Detainer',
@@ -4065,18 +4085,6 @@ export default [
             type: 'Pin Tumbler',
             notes: '',
             tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Purple',
-            make: 'Assa Abloy',
-            model: 'ASSA Twin Combi (2 finger pins)',
-            type: 'Pin Tumbler',
-            notes: '',
-            tags: [
-                'Sidebar'
-            ],
             links: [],
             regions: []
         },
@@ -4558,7 +4566,6 @@ export default [
             tags: [
                 'Padlock',
                 'Mortise',
-                'Cam',
                 'Guttable',
                 'Sidebar'
             ],
@@ -4880,6 +4887,48 @@ export default [
             ],
             links: [],
             regions: []
+        },
+        {
+            belt: 'Purple',
+            make: 'Corbin Master',
+            model: 'Ring',
+            type: 'Pin Tumbler',
+            notes: 'Both shearlines in one take',
+            tags: [
+                'Sidebar'
+            ],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Purple',
+            make: 'ASSA',
+            model: 'ASSA 500',
+            type: 'Pin Tumbler',
+            notes: 'With gin drivers and matched sleeve',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Purple',
+            make: 'Dierre',
+            model: 'New Power',
+            type: 'Slider',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Purple',
+            make: 'Keso',
+            model: '10RS / 2000S / 4000S (Omega) (≥13 pins)',
+            type: 'Dimple',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
         }
     ],
 
@@ -5068,16 +5117,6 @@ export default [
             tags: [
                 'Sidebar'
             ],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Brown',
-            make: 'N / A',
-            model: 'Dierre New Power',
-            type: 'Slider',
-            notes: '',
-            tags: [],
             links: [],
             regions: []
         },
@@ -5297,16 +5336,6 @@ export default [
             belt: 'Brown',
             make: 'Kale',
             model: 'Kilit 164 CEC',
-            type: 'Dimple',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Brown',
-            make: 'Keso',
-            model: '10RS / 2000S / 4000S (Omega) (≥13 pins)',
             type: 'Dimple',
             notes: '',
             tags: [],
@@ -5608,6 +5637,58 @@ export default [
             ],
             links: [],
             regions: []
+        },
+        {
+            belt: 'Brown',
+            make: 'Aegis',
+            model: '18 pin',
+            type: 'Pin Tumbler',
+            notes: '18 spools in 3 rows makes for a solid challenge.',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Brown',
+            make: 'Alpha',
+            model: 'YKK AP',
+            type: 'Dimple',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Brown',
+            make: 'Assa Abloy',
+            model: 'ASSA Twin Combi (2 finger pins)',
+            type: 'Pin Tumbler',
+            notes: '',
+            tags: [
+                'Sidebar'
+            ],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Brown',
+            make: 'Medeco',
+            model: 'Biaxial / M3 Camlock',
+            type: 'Pin Tumbler',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Brown',
+            make: 'Dorma',
+            model: 'DC500',
+            type: 'Pin Tumbler',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
         }
     ],
 
@@ -5769,16 +5850,6 @@ export default [
             belt: 'Red',
             make: 'DOM',
             model: 'RS 8',
-            type: 'Pin Tumbler',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Red',
-            make: 'Dorma',
-            model: 'DC500',
             type: 'Pin Tumbler',
             notes: '',
             tags: [],
@@ -5973,16 +6044,6 @@ export default [
             model: 'Star',
             type: 'Dimple',
             notes: '5+ directions, < 16 pins',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Red',
-            make: 'Lockman',
-            model: 'Megacross',
-            type: 'Dimple',
-            notes: 'With pyramid drivers',
             tags: [],
             links: [],
             regions: []
@@ -6193,16 +6254,6 @@ export default [
         },
         {
             belt: 'Red',
-            make: 'Yuema',
-            model: '760',
-            type: 'Slider',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Red',
             make: 'Zeiss Ikon',
             model: 'tk5 sperwellenprofil',
             type: 'Pin Tumbler',
@@ -6219,6 +6270,16 @@ export default [
             model: 'Verso',
             type: 'N / A',
             notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Red',
+            make: 'Winkhaus',
+            model: 'X-Tra',
+            type: 'Pin Tumbler',
+            notes: '9-12 pins',
             tags: [],
             links: [],
             regions: []
@@ -6307,16 +6368,6 @@ export default [
             belt: 'Black 1',
             make: 'Clavis',
             model: 'Q-18',
-            type: 'Dimple',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Black 1',
-            make: 'Clavis',
-            model: 'T-20 (20 pins)',
             type: 'Dimple',
             notes: '',
             tags: [],
@@ -6580,6 +6631,26 @@ export default [
             ],
             links: [],
             regions: []
+        },
+        {
+            belt: 'Black 1',
+            make: 'Winkhaus',
+            model: 'X-Tra',
+            type: 'Pin Tumbler',
+            notes: 'More than 12 pins',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Black 1',
+            make: 'Lockman',
+            model: 'Megacross',
+            type: 'Dimple',
+            notes: 'With pyramid drivers',
+            tags: [],
+            links: [],
+            regions: []
         }
     ],
 
@@ -6804,6 +6875,36 @@ export default [
             ],
             links: [],
             regions: []
+        },
+        {
+            belt: 'Black 2',
+            make: 'Robur',
+            model: 'SDB',
+            type: 'Disc Detainer',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Black 2',
+            make: 'Hori',
+            model: 'Trident',
+            type: 'Pin Tumbler',
+            notes: '15 pins with a circular keyway, tight tolerances, and spooled T pins on every single pin.',
+            tags: [],
+            links: [],
+            regions: []
+        },
+        {
+            belt: 'Black 2',
+            make: 'Clavis',
+            model: 'T-20 (20 pins)',
+            type: 'Dimple',
+            notes: '',
+            tags: [],
+            links: [],
+            regions: []
         }
     ],
 
@@ -6887,18 +6988,6 @@ export default [
         },
         {
             belt: 'Black 4',
-            make: 'Bowley',
-            model: 'Bowley Padlock',
-            type: 'Pin Tumbler',
-            notes: '',
-            tags: [
-                'Padlock'
-            ],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Black 4',
             make: 'Chubb',
             model: '6K174 isolator',
             type: 'Large Lever',
@@ -6972,16 +7061,6 @@ export default [
             make: 'Opnus',
             model: 'Memolis',
             type: 'N / A',
-            notes: '',
-            tags: [],
-            links: [],
-            regions: []
-        },
-        {
-            belt: 'Black 4',
-            make: 'Sargent & Greenleaf',
-            model: '6990',
-            type: 'Large Lever',
             notes: '',
             tags: [],
             links: [],
