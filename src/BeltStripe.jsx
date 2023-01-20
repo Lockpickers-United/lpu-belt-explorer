@@ -2,7 +2,7 @@ import React from 'react'
 import beltColors from './data/beltColors.js'
 
 function BeltStripe({value}) {
-    const color = value.toLowerCase().replace(/\s/g, '')
+    const color = value.startsWith('black') ? 'black' : value.toLowerCase()
     const backgroundColor = beltColors[color]
     const style = {
         width: 8,

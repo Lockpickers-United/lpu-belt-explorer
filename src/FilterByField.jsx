@@ -3,13 +3,11 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import data from './data/data.json'
+import data from './data/data.js'
 
-function FilterByField({field, onFilter}) {
-    const key = field.toLowerCase()
-
+function FilterByField({label, fieldName, onFilter}) {
     const handleSelect = event => {
-        onFilter(field.toLowerCase(), event.target.value)
+        onFilter(fieldName, event.target.value)
         setTimeout(() => document.activeElement.blur())
     }
 
@@ -18,15 +16,15 @@ function FilterByField({field, onFilter}) {
     }
 
     const uniqueValues = useMemo(() => {
-        const allValues = data.map(datum => datum[key]).flat()
+        const allValues = data.map(datum => datum[fieldName]).flat()
         return [...new Set(allValues)].sort()
     }, [])
 
     return (
         <FormControl sx={{minWidth: 120}}>
-            <InputLabel>{`Filter by ${field}`}</InputLabel>
+            <InputLabel>{`Filter by ${label}`}</InputLabel>
             <Select
-                value='' label={`Filter by ${field}`}
+                value='' label={`Filter by ${label}`}
                 onChange={handleSelect} style={{marginBottom: 8}} onClose={handleBlur}
             >
                 {uniqueValues.map((value, index) =>

@@ -7,9 +7,5 @@ export default {
     purple: '#6810cf',
     brown: '#7d5016',
     red: '#fe1016',
-    black1: '#000000',
-    black2: '#000000',
-    black3: '#000000',
-    black4: '#000000',
-    black5: '#000000'
+    black: '#000000'
 }

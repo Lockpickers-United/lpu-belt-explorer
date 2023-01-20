@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
 import FilterDialog from './FilterDialog.jsx'
 
-function FilterButton() {
+function FilterButton({onSearch}) {
     const [open, setOpen] = useState(false)
     const [query, setQuery] = useState(queryString.parse(location.search))
     const filters = useMemo(() => {
@@ -46,6 +46,7 @@ function FilterButton() {
                 query={query}
                 filters={filters}
                 setQuery={setQuery}
+                onSearch={onSearch}
                 onClose={closeDialog}
             />
         </React.Fragment>

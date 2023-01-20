@@ -2,9 +2,9 @@ import React, {useDeferredValue, useMemo} from 'react'
 import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 
-import data from './data/data.json'
+import data from './data/data.js'
 
-function Entries({query, searchTerm}) {
+function Entries({belt, query, searchTerm}) {
     const [expanded, setExpanded] = React.useState(-1)
     const deferredQuery = useDeferredValue(query)
     const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -21,13 +21,15 @@ function Entries({query, searchTerm}) {
     }, [deferredQuery])
 
     const visibleEntries = useMemo(() => {
-        const filtered = data.filter(belt => {
-            return filters.every(({key, value}) => {
-                return Array.isArray(belt[key])
-                    ? belt[key].includes(value)
-                    : belt[key] === value
+        const filtered = data
+            .filter(datum => belt === 'search' || datum.belt.startsWith(belt))
+            .filter(datum => {
+                return filters.every(({key, value}) => {
+                    return Array.isArray(datum[key])
+                        ? datum[key].includes(value)
+                        : datum[key] === value
+                })
             })
-        })
         if (deferredSearchTerm) {
             const fuzzyResults = fuzzysort.go(deferredSearchTerm, filtered, {keys: fuzzySortKeys})
             return fuzzyResults.map(result => result.obj)
@@ -37,7 +39,7 @@ function Entries({query, searchTerm}) {
     }, [filters, deferredSearchTerm])
 
     return (
-        <div style={{paddingTop: 64, margin: 8, maxWidth: 700}}>
+        <div style={{margin: 8, maxWidth: 700}}>
             {visibleEntries.map((datum, index) =>
                 <Entry
                     key={index}
@@ -51,6 +53,10 @@ function Entries({query, searchTerm}) {
     )
 }
 
-const fuzzySortKeys = ['makeModel', 'notes', 'tags']
+const fuzzySortKeys = [
+    'fuzzy',
+    'version',
+    'notes'
+]
 
 export default Entries

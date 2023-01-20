@@ -23,7 +23,8 @@
         "fuzzysort": "^2.0.1",
         "query-string": "^7.1.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-responsive": "^9.0.2"
     },
     "devDependencies": {
         "@types/react": "^18.0.17",

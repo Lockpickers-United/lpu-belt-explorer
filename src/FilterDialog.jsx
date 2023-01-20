@@ -11,7 +11,7 @@ import React from 'react'
 import FieldValue from './FieldValue.jsx'
 import FilterByField from './FilterByField.jsx'
 
-function FilterDialog({filters, open, onClose, query, setQuery}) {
+function FilterDialog({filters, open, onClose, query, setQuery, onSearch}) {
     const handleAddFilter = (keyToAdd, valueToAdd) => {
         const queryValue = query[keyToAdd]
         if (Array.isArray(queryValue)) queryValue.push(valueToAdd)
@@ -34,6 +34,7 @@ function FilterDialog({filters, open, onClose, query, setQuery}) {
 
     const handleSave = () => {
         onClose()
+        onSearch()
         setTimeout(() => location.search = queryString.stringify(query), 100)
     }
 
@@ -88,8 +89,8 @@ function FilterDialog({filters, open, onClose, query, setQuery}) {
 
                 <FieldValue name='Add Filters' value={
                     <Stack direction='column' style={{marginTop: 8, maxWidth: 350}}>
-                        {filterFields.map((field, index) =>
-                            <FilterByField key={index} field={field} onFilter={handleAddFilter}/>
+                        {filterFields.map(({label, fieldName}, index) =>
+                            <FilterByField key={index} label={label} fieldName={fieldName} onFilter={handleAddFilter}/>
                         )}
                     </Stack>
                 }/>
@@ -99,11 +100,10 @@ function FilterDialog({filters, open, onClose, query, setQuery}) {
 }
 
 const filterFields = [
-    'Belt',
-    'Make',
-    'Type',
-    'Tags',
-    'Regions'
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Regions', fieldName: 'regions'}
 ]
 
 const Transition = React.forwardRef(function Transition(props, ref) {
