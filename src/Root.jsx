@@ -2,8 +2,6 @@ import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import App from './App.jsx'
-import Belts from './Belts'
-import Nav from './Nav'
 
 const darkTheme = createTheme({
     // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00

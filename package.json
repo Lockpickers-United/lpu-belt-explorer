@@ -19,6 +19,7 @@
         "@emotion/styled": "^11.10.4",
         "@mui/icons-material": "^5.10.3",
         "@mui/material": "^5.10.3",
+        "csv-parse": "^5.3.3",
         "fuzzysort": "^2.0.1",
         "query-string": "^7.1.1",
         "react": "^18.2.0",

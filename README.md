@@ -2,7 +2,7 @@
 An interactive web app for exploring the Lockpickers United belt ranking system.
 
 # Contributing
-For data contributions, see [data.js](./src/data.js).
+For data contributions, see [data.js](src/data/data.js).
 ```javascript
 // Template:
 // Note that case and spelling matters, since filters are generated dynamically.

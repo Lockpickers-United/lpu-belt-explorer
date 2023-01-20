@@ -1,6 +1,6 @@
 import queryString from 'query-string'
 import React, {useState} from 'react'
-import Belts from './Belts.jsx'
+import Entries from './Entries.jsx'
 import Nav from './Nav.jsx'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <React.Fragment>
             <Nav searchTerm={searchTerm} onSearch={setSearchTerm}/>
 
-            <Belts query={query} searchTerm={searchTerm}/>
+            <Entries query={query} searchTerm={searchTerm}/>
         </React.Fragment>
     )
 }

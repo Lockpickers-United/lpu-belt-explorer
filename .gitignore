@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 scripts/data.csv
+scripts/data.json
 
 # Editor directories and files
 .vscode/*

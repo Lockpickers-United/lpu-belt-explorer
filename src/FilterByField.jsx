@@ -3,7 +3,7 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import data from './data.js'
+import data from './data/data.json'
 
 function FilterByField({field, onFilter}) {
     const key = field.toLowerCase()

@@ -1,10 +1,10 @@
 import React, {useDeferredValue, useMemo} from 'react'
-import Belt from './Belt.jsx'
+import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 
-import data from './data'
+import data from './data/data.json'
 
-function Belts({query, searchTerm}) {
+function Entries({query, searchTerm}) {
     const [expanded, setExpanded] = React.useState(-1)
     const deferredQuery = useDeferredValue(query)
     const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -20,7 +20,7 @@ function Belts({query, searchTerm}) {
             .flat()
     }, [deferredQuery])
 
-    const visibleBelts = useMemo(() => {
+    const visibleEntries = useMemo(() => {
         const filtered = data.filter(belt => {
             return filters.every(({key, value}) => {
                 return Array.isArray(belt[key])
@@ -38,11 +38,11 @@ function Belts({query, searchTerm}) {
 
     return (
         <div style={{paddingTop: 64, margin: 8, maxWidth: 700}}>
-            {visibleBelts.map((datum, index) =>
-                <Belt
+            {visibleEntries.map((datum, index) =>
+                <Entry
                     key={index}
                     index={index}
-                    belt={datum}
+                    entry={datum}
                     expanded={expanded === index}
                     onAccordionChange={setExpanded}
                 />
@@ -53,4 +53,4 @@ function Belts({query, searchTerm}) {
 
 const fuzzySortKeys = ['makeModel', 'notes', 'tags']
 
-export default Belts
+export default Entries
