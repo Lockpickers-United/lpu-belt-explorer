@@ -12,7 +12,9 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "deploy": "gh-pages -d dist"
+        "deploy": "gh-pages -d dist",
+        "import": "node ./scripts/import.js",
+        "export": "node ./scripts/export.js"
     },
     "dependencies": {
         "@emotion/react": "^11.10.4",
@@ -21,6 +23,7 @@
         "@mui/material": "^5.10.3",
         "csv-parse": "^5.3.3",
         "fuzzysort": "^2.0.1",
+        "joi": "^17.7.0",
         "query-string": "^7.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",

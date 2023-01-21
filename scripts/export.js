@@ -1,6 +1,7 @@
 const fs = require('fs')
 const data = require('../src/data/data.json')
 
+// Clean up format to something that works for CSV
 const formatted = data.map(datum => ({
     belt: datum.belt,
     make: datum.makeModels[0].make,
