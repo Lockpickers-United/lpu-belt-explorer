@@ -61,7 +61,7 @@
     "media": [
       {
         "text": "AcrylicLocks",
-        "url": "https://www.dropbox.com/s/zofhdvoc5dl89q0/acrylic.jpg"
+        "url": "https://i.imgur.com/WG1b2T2.jpg"
       }
     ]
   },
@@ -85,7 +85,7 @@
     "media": [
       {
         "text": "BrinksR80",
-        "url": "https://www.dropbox.com/s/6cx2dym8azy5d8s/81wa5gxZtUL.jpg"
+        "url": "https://i.imgur.com/PFqSgDE.jpeg"
       }
     ]
   },
@@ -109,7 +109,7 @@
     "media": [
       {
         "text": "ChinaGranite",
-        "url": "https://www.dropbox.com/s/2ss5b0z0xt7jdd9/H6e176812909a4e89a9b5b4994b06e734x.jpg"
+        "url": "https://i.imgur.com/L7RaIU8.jpg"
       }
     ]
   },
@@ -387,7 +387,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_65"
+      }
+    ],
     "media": []
   },
   {
@@ -1612,7 +1617,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_55"
+      }
+    ],
     "media": []
   },
   {
@@ -1650,7 +1660,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_64TI"
+      }
+    ],
     "media": []
   },
   {
@@ -1669,7 +1684,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_65"
+      }
+    ],
     "media": []
   },
   {
@@ -1688,7 +1708,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_83"
+      }
+    ],
     "media": []
   },
   {
@@ -1707,7 +1732,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_85"
+      }
+    ],
     "media": []
   },
   {
@@ -2742,7 +2772,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_72"
+      }
+    ],
     "media": []
   },
   {
@@ -2784,7 +2819,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_75IB"
+      }
+    ],
     "media": []
   },
   {
@@ -2972,7 +3012,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_80TI"
+      }
+    ],
     "media": []
   },
   {
@@ -3174,7 +3219,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/American_Lock_5200"
+      }
+    ],
     "media": []
   },
   {
@@ -3231,7 +3281,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/American_Lock_1100_1200_1300"
+      }
+    ],
     "media": []
   },
   {
@@ -5032,7 +5087,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_700"
+      }
+    ],
     "media": []
   },
   {
@@ -5051,7 +5111,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_700"
+      }
+    ],
     "media": []
   },
   {
@@ -5238,10 +5303,17 @@
       }
     ],
     "version": "",
-    "lockingMechanisms": [],
+    "lockingMechanisms": [
+      "Pin Tumbler"
+    ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/CISA_C3000"
+      }
+    ],
     "media": []
   },
   {
@@ -6565,7 +6637,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Anchor_810-1"
+      }
+    ],
     "media": []
   },
   {
@@ -6661,7 +6738,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Desmo"
+      }
+    ],
     "media": []
   },
   {
@@ -6680,7 +6762,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Desmo"
+      }
+    ],
     "media": []
   },
   {
@@ -6735,7 +6822,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -6751,7 +6847,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -7003,7 +7108,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Corbin_Emhart"
+      }
+    ],
     "media": []
   },
   {
@@ -7069,7 +7179,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/DeGuard_Interactive"
+      }
+    ],
     "media": []
   },
   {
@@ -8005,7 +8120,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Abloy_Classic"
+      }
+    ],
     "media": []
   },
   {
@@ -8021,7 +8141,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_Plus_88/50"
+      }
+    ],
     "media": []
   },
   {
@@ -8152,8 +8277,34 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
-    "media": []
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_d12"
+      },
+      {
+        "text": "HanFeyLockTech",
+        "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
+      },
+      {
+        "text": "Toool",
+        "url": "https://blackbag.toool.nl/?p=1797"
+      }
+    ],
+    "media": [
+      {
+        "text": "keyway and plug",
+        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/assa-d12.jpg"
+      },
+      {
+        "text": "Key and Keypins",
+        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/ASSA-d12-correct-700.jpg"
+      },
+      {
+        "text": "Cutaway",
+        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/assa-d12-grabbing-pin.jpg"
+      }
+    ]
   },
   {
     "belt": "brown",
@@ -8170,7 +8321,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Desmo"
+      }
+    ],
     "media": []
   },
   {
@@ -8194,7 +8350,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
+      }
+    ],
     "media": []
   },
   {
@@ -8224,7 +8385,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -8240,7 +8410,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -9170,7 +9349,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Abloy_Disklock"
+      }
+    ],
     "media": []
   },
   {
@@ -9187,7 +9371,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Abloy_Profile"
+      }
+    ],
     "media": []
   },
   {
@@ -9204,7 +9393,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_EC700"
+      }
+    ],
     "media": []
   },
   {
@@ -9282,7 +9476,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_700"
+      }
+    ],
     "media": []
   },
   {
@@ -9341,7 +9540,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -9462,7 +9670,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Corbin_Emhart"
+      }
+    ],
     "media": []
   },
   {
@@ -9665,10 +9878,19 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Kaba 20/Miwa JN/Kaba Star (4 directions) (<15 pins)"
+        "make": "Kaba",
+        "model": "20"
+      },
+      {
+        "make": "Miwa",
+        "model": "JN"
+      },
+      {
+        "make": "Kaba",
+        "model": "Star"
       }
     ],
-    "version": "",
+    "version": "4 directions, < 15 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -10251,8 +10473,18 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
-    "media": []
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_700"
+      }
+    ],
+    "media": [
+      {
+        "text": "cutaway",
+        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/assa-700.jpg"
+      }
+    ]
   },
   {
     "belt": "black1",
@@ -10297,7 +10529,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
+      }
+    ],
     "media": []
   },
   {
@@ -10320,7 +10557,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
+      }
+    ],
     "media": []
   },
   {
@@ -10336,7 +10578,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -10436,7 +10687,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Corbin_Emhart"
+      }
+    ],
     "media": []
   },
   {
@@ -10910,7 +11166,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Abloy_Exec"
+      }
+    ],
     "media": []
   },
   {
@@ -10936,7 +11197,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
+      }
+    ],
     "media": []
   },
   {
@@ -10959,7 +11225,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
+      }
+    ],
     "media": []
   },
   {
@@ -10985,7 +11256,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
+      }
+    ],
     "media": []
   },
   {
@@ -11002,7 +11278,16 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki_FG",
+        "url": "http://lockwiki.com/index.php/BiLock_FG"
+      },
+      {
+        "text": "LockWiki_NG",
+        "url": "http://lockwiki.com/index.php/BiLock_NG"
+      }
+    ],
     "media": []
   },
   {
@@ -11036,7 +11321,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/BiLock_Exclusive"
+      }
+    ],
     "media": []
   },
   {

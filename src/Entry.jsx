@@ -23,9 +23,9 @@ function Entry({index, expanded, entry, onAccordionChange}) {
                     sx={{width: '50%', flexShrink: 0, flexDirection: 'column'}}
                 >
                     <FieldValue name='Make / Model' value={
-                        <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                        <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                             {entry.makeModels.map(({make, model}, index) =>
-                                <Typography key={index}>{make ? `${make} / ${model}` : model}</Typography>
+                                <Typography key={index}>{make ? `${make} ${model}` : model}</Typography>
                             )}
                         </Stack>
                     }/>
