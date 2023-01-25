@@ -39,7 +39,7 @@ function Entries({belt, query, searchTerm}) {
     }, [filters, deferredSearchTerm])
 
     return (
-        <div style={{margin: 8, maxWidth: 700}}>
+        <div style={{marginTop: 8, marginBottom: 8}}>
             {visibleEntries.map((datum, index) =>
                 <Entry
                     key={index}

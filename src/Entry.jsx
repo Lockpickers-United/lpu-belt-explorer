@@ -10,12 +10,17 @@ import React from 'react'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
+import {useMediaQuery} from 'react-responsive'
 
 function Entry({index, expanded, entry, onAccordionChange}) {
+    const isBigEnough = useMediaQuery({minWidth: 716})
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? index : false)
+    const style = isBigEnough
+        ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+        : {maxWidth: 700, marginLeft: 8, marginRight: 8}
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
                 <Typography

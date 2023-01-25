@@ -30,7 +30,7 @@ function SearchBox({searchTerm, onSearch}) {
             color='secondary'
             onChange={handleSearch}
             value={searchTerm}
-            style={{maxWidth: 400}}
+            style={{maxWidth: 450, marginRight: -50}}
             fullWidth
         />
     )
