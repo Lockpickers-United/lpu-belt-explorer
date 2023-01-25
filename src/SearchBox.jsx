@@ -3,8 +3,10 @@ import IconButton from '@mui/material/IconButton'
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
+import {useMediaQuery} from 'react-responsive'
 
 function SearchBox({searchTerm, onSearch}) {
+    const isBigEnough = useMediaQuery({minWidth: 800})
     const handleSearch = ({target}) => setTimeout(onSearch(target.value))
     const handleClear = () => onSearch('')
     const endAdornment = searchTerm ? (
@@ -14,6 +16,9 @@ function SearchBox({searchTerm, onSearch}) {
             </IconButton>
         </InputAdornment>
     ) : null
+    const style = isBigEnough
+        ? {maxWidth: 450, marginRight: -90}
+        : {maxWidth: 450}
 
     return (
         <TextField
@@ -30,7 +35,7 @@ function SearchBox({searchTerm, onSearch}) {
             color='secondary'
             onChange={handleSearch}
             value={searchTerm}
-            style={{maxWidth: 450, marginRight: -50}}
+            style={style}
             fullWidth
         />
     )

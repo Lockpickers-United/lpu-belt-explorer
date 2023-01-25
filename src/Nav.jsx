@@ -12,6 +12,7 @@ import BeltIcon from './BeltIcon.jsx'
 import beltIcons from './data/beltIcons.js'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
 import {useMediaQuery} from 'react-responsive'
+import InfoButton from './InfoButton.jsx'
 
 function Nav({belt, searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
@@ -32,6 +33,7 @@ function Nav({belt, searchTerm, onSearch, onChangeTab}) {
 
                     <div style={{flexGrow: 1}}></div>
 
+                    <InfoButton/>
                     <FilterButton onSearch={onSearch}/>
                     <ClearFilterButton onSearch={onSearch}/>
                     <GitHubButton/>

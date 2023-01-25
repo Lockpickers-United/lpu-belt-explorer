@@ -13,7 +13,7 @@ import BeltIcon from './BeltIcon'
 import {useMediaQuery} from 'react-responsive'
 
 function Entry({index, expanded, entry, onAccordionChange}) {
-    const isBigEnough = useMediaQuery({minWidth: 716})
+    const isBigEnough = useMediaQuery({minWidth: 732})
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? index : false)
     const style = isBigEnough
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
