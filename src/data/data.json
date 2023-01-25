@@ -546,7 +546,7 @@
     "makeModels": [
       {
         "make": "TESA",
-        "model": "Assa Abloy Tesa TE-5"
+        "model": "TE-5"
       }
     ],
     "version": "",
@@ -874,7 +874,8 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "model": "ERA mortice"
+        "make": "ERA",
+        "model": "mortice"
       }
     ],
     "version": "2 lever",
@@ -1447,7 +1448,8 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "model": "Schlage Mortise"
+        "make": "Schlage",
+        "model": "Mortise"
       }
     ],
     "version": "",
@@ -1463,10 +1465,14 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "model": "Smith and Locke mortice"
+        "make": "Smith and Locke",
+        "model": "mortice"
+      },
+      {
+        "model": " non-British Standard"
       }
     ],
-    "version": "non-British Standard - 3 lever",
+    "version": "3 lever",
     "lockingMechanisms": [
       "Lever"
     ],
@@ -1593,10 +1599,10 @@
     "makeModels": [
       {
         "make": "Abus",
-        "model": "45/50 (brass)"
+        "model": "45/50"
       }
     ],
-    "version": "",
+    "version": "brass",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -1785,7 +1791,15 @@
     "makeModels": [
       {
         "make": "Abus",
-        "model": "C73 / C83 / C90"
+        "model": "C73"
+      },
+      {
+        "make": "Abus",
+        "model": "C83"
+      },
+      {
+        "make": "Abus",
+        "model": "C90"
       }
     ],
     "version": "old pinning: mostly standard keypins, normal spool drivers",
@@ -1922,7 +1936,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Brinks House Key"
+        "make": "Brinks",
+        "model": "House Key"
       }
     ],
     "version": "",
@@ -1940,7 +1955,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Brinks Weatherproof 44mm laminated padlock"
+        "make": "Brinks",
+        "model": "Weatherproof 44mm laminated padlock"
       }
     ],
     "version": "",
@@ -2061,7 +2077,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Cocraft 6-Pin Padlock"
+        "make": "Cocraft",
+        "model": "6-Pin Padlock"
       }
     ],
     "version": "Non guttable version",
@@ -2079,7 +2096,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Corbin Arco Cromato"
+        "make": "Corbin",
+        "model": "Arco Cromato"
       }
     ],
     "version": "",
@@ -2245,7 +2263,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Garrison 40mm Brass Padlock"
+        "make": "Garrison",
+        "model": "40mm Brass Padlock"
       }
     ],
     "version": "",
@@ -2309,7 +2328,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "GTV Padlock"
+        "make": "GTV",
+        "model": "Padlock"
       }
     ],
     "version": "",
@@ -2579,7 +2599,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Trelock Euro Cylinder"
+        "make": "Trelock",
+        "model": "Euro Cylinder"
       }
     ],
     "version": "",
@@ -2639,7 +2660,8 @@
     "belt": "orange",
     "makeModels": [
       {
-        "model": "Wilka standard profile"
+        "make": "Wilka",
+        "model": "standard profile"
       }
     ],
     "version": "5 pin",
@@ -3043,7 +3065,15 @@
     "makeModels": [
       {
         "make": "Abus",
-        "model": "V14/XV14/Y14"
+        "model": "V14"
+      },
+      {
+        "make": "Abus",
+        "model": "XV14"
+      },
+      {
+        "make": "Abus",
+        "model": "Y14"
       }
     ],
     "version": "",
@@ -3456,7 +3486,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "BiLock Fake"
+        "model": "\" BiLock \" Fake"
       }
     ],
     "version": "",
@@ -3638,12 +3668,15 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Chateau C970 disk padlock -- Non-removable core"
+        "make": "Chateau",
+        "model": "C970 disk padlock"
       }
     ],
     "version": "",
     "lockingMechanisms": [],
-    "features": [],
+    "features": [
+      "Unguttable"
+    ],
     "regions": [],
     "links": [],
     "media": []
@@ -3653,12 +3686,14 @@
     "makeModels": [
       {
         "make": "Commando",
-        "model": "IC3 Tactical -- Non-removable core"
+        "model": "IC3 Tactical"
       }
     ],
     "version": "",
     "lockingMechanisms": [],
-    "features": [],
+    "features": [
+      "Unguttable"
+    ],
     "regions": [],
     "links": [],
     "media": []
@@ -3668,12 +3703,14 @@
     "makeModels": [
       {
         "make": "Commando",
-        "model": "Marine -- Non-removable core"
+        "model": "Marine"
       }
     ],
     "version": "",
     "lockingMechanisms": [],
-    "features": [],
+    "features": [
+      "Unguttable"
+    ],
     "regions": [],
     "links": [],
     "media": []
@@ -3683,12 +3720,14 @@
     "makeModels": [
       {
         "make": "Commando",
-        "model": "Peacemaker -- Non-removable core"
+        "model": "Peacemaker"
       }
     ],
     "version": "",
     "lockingMechanisms": [],
-    "features": [],
+    "features": [
+      "Unguttable"
+    ],
     "regions": [],
     "links": [],
     "media": []
@@ -3698,10 +3737,10 @@
     "makeModels": [
       {
         "make": "Corbin",
-        "model": "Master Ring (One shearline)"
+        "model": "Master Ring"
       }
     ],
-    "version": "",
+    "version": "(picked to one shearline)",
     "lockingMechanisms": [],
     "features": [],
     "regions": [],
@@ -3856,7 +3895,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "ERA Invincible - 5 lever"
+        "make": "ERA",
+        "model": "Invincible - 5 lever"
       }
     ],
     "version": "",
@@ -3870,7 +3910,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "ERA Pro-Fit - 5 lever"
+        "make": "ERA",
+        "model": "Pro-Fit - 5 lever"
       }
     ],
     "version": "",
@@ -3884,7 +3925,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "ERA Viscount - 5 lever"
+        "make": "ERA",
+        "model": "Viscount - 5 lever"
       }
     ],
     "version": "",
@@ -3945,7 +3987,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Fab 200RS"
+        "make": "Fab",
+        "model": "200RS"
       }
     ],
     "version": "",
@@ -3961,7 +4004,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Federal Lock 5Y3110"
+        "make": "Federal Lock",
+        "model": "5Y3110"
       }
     ],
     "version": "",
@@ -3975,7 +4019,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Federal Lock 6Y3110"
+        "make": "Federal Lock",
+        "model": "6Y3110"
       }
     ],
     "version": "",
@@ -3989,7 +4034,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Gera Iseo MC 6500"
+        "make": "Gera Iseo",
+        "model": "MC 6500"
       }
     ],
     "version": "",
@@ -4003,7 +4049,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Gera Iseo MC5"
+        "make": "Gera Iseo",
+        "model": "MC5"
       }
     ],
     "version": "",
@@ -4017,7 +4064,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Gera Iseo R6"
+        "make": "Gera Iseo",
+        "model": "R6"
       }
     ],
     "version": "",
@@ -4047,7 +4095,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Kaba Gege Ap 1000"
+        "make": "Kaba Gege",
+        "model": "Ap 1000"
       }
     ],
     "version": "",
@@ -4063,7 +4112,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Kaba Micro"
+        "make": "Kaba",
+        "model": "Micro"
       }
     ],
     "version": "",
@@ -4093,7 +4143,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Kale 164 CE"
+        "make": "Kale",
+        "model": "164 CE"
       }
     ],
     "version": "",
@@ -4109,13 +4160,11 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Kale 164 GNC (6 pin"
-      },
-      {
-        "model": " standard profile)"
+        "make": "Kale",
+        "model": "164 GNC"
       }
     ],
-    "version": "",
+    "version": "6 pin, standard profile",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -4143,10 +4192,10 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Kenaurd (pin-in-pin) (4 pins)"
+        "model": "Kenaurd"
       }
     ],
-    "version": "",
+    "version": "pin-in-pin, 4 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -4262,7 +4311,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Mako 425"
+        "make": "Mako",
+        "model": "425"
       }
     ],
     "version": "",
@@ -4278,7 +4328,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Mako 427"
+        "make": "Mako",
+        "model": "427"
       }
     ],
     "version": "",
@@ -4413,7 +4464,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Mauer Elite 1"
+        "make": "Mauer",
+        "model": "Elite 1"
       }
     ],
     "version": "",
@@ -4427,7 +4479,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "MCM SCX"
+        "make": "MCM",
+        "model": "SCX"
       }
     ],
     "version": "",
@@ -4457,7 +4510,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Mottura Champions C10"
+        "make": "Mottura",
+        "model": "Champions C10"
       }
     ],
     "version": "",
@@ -4473,7 +4527,16 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Mottura Champions C30/C31/C39****"
+        "make": "Mottura",
+        "model": "Champions C30"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C31"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C39"
       }
     ],
     "version": "",
@@ -4490,7 +4553,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Mul-T-Lock 7X7"
+        "make": "Mul-T-Lock",
+        "model": "7X7"
       }
     ],
     "version": "",
@@ -4608,10 +4672,11 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Sargent Mortise (with security pins)"
+        "make": "Sargent",
+        "model": "Mortise"
       }
     ],
-    "version": "",
+    "version": "with security pins",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -4641,7 +4706,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Squire 440"
+        "make": "Squire",
+        "model": "440"
       }
     ],
     "version": "4 lever, pipe key",
@@ -4657,7 +4723,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Tokoz Beta"
+        "make": "Tokoz",
+        "model": "Beta"
       }
     ],
     "version": "",
@@ -4671,7 +4738,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Vachette standard cylinder"
+        "make": "Vachette",
+        "model": "standard cylinder"
       }
     ],
     "version": "",
@@ -4685,7 +4753,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Wetzel Pfaffenhain"
+        "make": "Wetzel",
+        "model": "Pfaffenhain"
       }
     ],
     "version": "",
@@ -4846,7 +4915,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Yale 210C/51"
+        "make": "Yale",
+        "model": "210C/51"
       }
     ],
     "version": "",
@@ -4874,7 +4944,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Zarker J45/J45S"
+        "make": "Zarker",
+        "model": "J45/J45S"
       }
     ],
     "version": "",
@@ -5081,10 +5152,11 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Ankerslot Infinity (without magnet)"
+        "make": "Ankerslot",
+        "model": "Infinity"
       }
     ],
-    "version": "",
+    "version": "without magnet",
     "lockingMechanisms": [],
     "features": [],
     "regions": [],
@@ -5202,7 +5274,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Bricard Bloctout"
+        "make": "Bricard",
+        "model": "Bloctout"
       }
     ],
     "version": "",
@@ -5216,7 +5289,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Bricard Serial S"
+        "make": "Bricard",
+        "model": "Serial S"
       }
     ],
     "version": "",
@@ -5230,7 +5304,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Burg Wächter Gamma 700 -- Non-removable core"
+        "make": "Burg Wächter",
+        "model": "Gamma 700 -- Non-removable core"
       }
     ],
     "version": "",
@@ -5260,7 +5335,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Chubb - Any uncurtained 5 lever"
+        "make": "Chubb",
+        "model": "Any uncurtained 5 lever"
       }
     ],
     "version": "",
@@ -5276,7 +5352,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Chubb 114"
+        "make": "Chubb",
+        "model": "114"
       }
     ],
     "version": "5 lever",
@@ -5292,7 +5369,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Chubb 114e"
+        "make": "Chubb",
+        "model": "114e"
       }
     ],
     "version": "5 lever",
@@ -5308,7 +5386,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Chubb Cruiser"
+        "make": "Chubb",
+        "model": "Cruiser"
       }
     ],
     "version": "5 lever",
@@ -5324,7 +5403,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Cisa Astral S"
+        "make": "Cisa",
+        "model": "Astral S"
       }
     ],
     "version": "",
@@ -5340,7 +5420,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Cisa C3000"
+        "make": "Cisa",
+        "model": "C3000"
       }
     ],
     "version": "",
@@ -5361,10 +5442,11 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "De Guard interactive clone (4 pins)"
+        "make": "De Guard",
+        "model": "interactive clone"
       }
     ],
-    "version": "",
+    "version": "4 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -5431,7 +5513,7 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "RN *"
+        "model": "RN"
       }
     ],
     "version": "",
@@ -5483,7 +5565,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Dorma DC400"
+        "make": "Dorma",
+        "model": "DC400"
       }
     ],
     "version": "",
@@ -5499,7 +5582,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Dorma DC3003"
+        "make": "Dorma",
+        "model": "DC3003"
       }
     ],
     "version": "",
@@ -5515,7 +5599,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "ERA Big 6"
+        "make": "ERA",
+        "model": "Big 6"
       }
     ],
     "version": "6 lever",
@@ -5531,7 +5616,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "ERA Fortress"
+        "make": "ERA",
+        "model": "Fortress"
       }
     ],
     "version": "5 lever",
@@ -5547,7 +5633,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "ERA Insurance"
+        "make": "ERA",
+        "model": "Insurance"
       }
     ],
     "version": "5 lever",
@@ -5650,7 +5737,12 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Fab 3* Profi / Fab 4* Profi"
+        "make": "Fab",
+        "model": "3* Profi"
+      },
+      {
+        "make": "Fab",
+        "model": "Fab 4* Profi"
       }
     ],
     "version": "",
@@ -5666,7 +5758,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Fab 2000"
+        "make": "Fab",
+        "model": "2000"
       }
     ],
     "version": "",
@@ -5682,7 +5775,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Federal Lock 6KD3110"
+        "make": "Federal Lock",
+        "model": "6KD3110"
       }
     ],
     "version": "",
@@ -5696,7 +5790,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "GeGe",
+        "make": "Kaba GeGe",
         "model": "AP2000"
       }
     ],
@@ -5713,7 +5807,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "GeGe",
+        "make": "Kaba GeGe",
         "model": "AP3000"
       }
     ],
@@ -5809,7 +5903,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Kaken KX3"
+        "make": "Kaken",
+        "model": "KX3"
       }
     ],
     "version": "exterior, <6 sliders",
@@ -5829,7 +5924,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Kale Kilit 164 YGS SE"
+        "make": "Kale Kilit",
+        "model": "164 YGS SE"
       }
     ],
     "version": "",
@@ -5876,7 +5972,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Lince C4"
+        "make": "Lince",
+        "model": "C4"
       }
     ],
     "version": "",
@@ -5958,7 +6055,16 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "M&C Color / Color Pro / Color+"
+        "make": "M&C",
+        "model": "Color"
+      },
+      {
+        "make": "M&C",
+        "model": "Color Pro"
+      },
+      {
+        "make": "M&C",
+        "model": "Color+"
       }
     ],
     "version": "<4 sliders",
@@ -5978,7 +6084,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Mauer RedLine G"
+        "make": "Mauer",
+        "model": "RedLine G"
       }
     ],
     "version": "",
@@ -5992,7 +6099,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Mauer RedLine GM"
+        "make": "Mauer",
+        "model": "RedLine GM"
       }
     ],
     "version": "",
@@ -6006,13 +6114,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "MCM AS6 (6 pin dimple"
-      },
-      {
-        "model": " 3 spools and 3 T pins"
-      },
-      {
-        "model": " good tolerances)"
+        "make": "MCM",
+        "model": "AS6"
       }
     ],
     "version": "",
@@ -8341,7 +8444,8 @@
       "Barrel drivers",
       "Countermilling - serrated/threaded",
       "Characteristic hellish keyway",
-      "Guttable"
+      "Guttable",
+      "Forked keypins"
     ],
     "regions": [],
     "links": [
@@ -8350,12 +8454,16 @@
         "url": "http://lockwiki.com/index.php/ASSA_d12"
       },
       {
-        "text": "HanFeyLockTech",
+        "text": "HanFey",
         "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
       },
       {
         "text": "Toool",
         "url": "https://blackbag.toool.nl/?p=1797"
+      },
+      {
+        "text": "LPUTeardown",
+        "url": "https://www.youtube.com/watch?v=dSChpjaax-A&pp=ugMICgJlbhABGAE%3D"
       }
     ],
     "media": [
@@ -8377,10 +8485,11 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "ASSA Desmo (8 sliders) (no mastered pins)"
+        "make": "ASSA",
+        "model": "Desmo"
       }
     ],
-    "version": "",
+    "version": "8 sliders, no mastered pins",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -8443,10 +8552,11 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "BiLock (8 pins) (0-2 mastered pins)"
+        "make": "Australian Lock Co.",
+        "model": "BiLock"
       }
     ],
-    "version": "",
+    "version": "8 pins, 0-2 mastered pins",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -8468,10 +8578,11 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "BiLock (12 pins) (5-6 mastered pins)"
+        "make": "Australian Lock Co.",
+        "model": "BiLock"
       }
     ],
-    "version": "",
+    "version": "12 pins, 5-6 mastered pins",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -8591,7 +8702,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "DOM ix10"
+        "make": "DOM",
+        "model": "ix10"
       }
     ],
     "version": "with shark fins",
@@ -8610,7 +8722,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "DOM ix10kg"
+        "make": "DOM",
+        "model": "ix10kg"
       }
     ],
     "version": "",
@@ -8626,7 +8739,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "DOM System D"
+        "make": "DOM",
+        "model": "System D"
       }
     ],
     "version": "",
@@ -9152,10 +9266,15 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Mul-T-Lock Classic / Interactive (serrated drivers)"
+        "make": "Mul-T-Lock",
+        "model": "Classic"
+      },
+      {
+        "make": "Mul-T-Lock",
+        "model": "Interactive"
       }
     ],
-    "version": "",
+    "version": "Serrated drivers",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -9168,10 +9287,15 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Mul-T-Lock Interactive/Classic (spooled inner drivers + >3 counter milled outer keypins)"
+        "make": "Mul-T-Lock",
+        "model": "Classic"
+      },
+      {
+        "make": "Mul-T-Lock",
+        "model": "Interactive"
       }
     ],
-    "version": "",
+    "version": "Spooled inner drivers with > 3 counter milled outer keypins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -9217,7 +9341,12 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Schlage Primus / Everest Primus"
+        "make": "Schlage",
+        "model": "Primus"
+      },
+      {
+        "make": "Schlage",
+        "model": "Everest Primus"
       }
     ],
     "version": "",
@@ -9455,7 +9584,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Abus EC 700/800"
+        "model": "EC 700/800"
       }
     ],
     "version": "",
@@ -9477,7 +9606,7 @@
     "makeModels": [
       {
         "make": "ALPHA",
-        "model": "Alpha FB (≥15 pins)"
+        "model": "FB (≥15 pins)"
       }
     ],
     "version": "",
