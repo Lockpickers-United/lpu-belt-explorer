@@ -1,7 +1,6 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import ClearFilterButton from './ClearFilterButton.jsx'
 import FilterButton from './FilterButton.jsx'
 import GitHubButton from './GitHubButton.jsx'
 import LPUButton from './LPUButton.jsx'
@@ -14,7 +13,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch'
 import {useMediaQuery} from 'react-responsive'
 import InfoButton from './InfoButton.jsx'
 
-function Nav({belt, searchTerm, onSearch, onChangeTab}) {
+function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
     const beltStyle = isBigEnough ? {} : {transform: 'rotate(-90deg)'}
     const tabWidthStyle = isBigEnough
@@ -34,8 +33,7 @@ function Nav({belt, searchTerm, onSearch, onChangeTab}) {
                     <div style={{flexGrow: 1}}></div>
 
                     <InfoButton/>
-                    <FilterButton onSearch={onSearch}/>
-                    <ClearFilterButton onSearch={onSearch}/>
+                    <FilterButton data={data} onSearch={onSearch}/>
                     <GitHubButton/>
                 </Toolbar>
             </AppBar>

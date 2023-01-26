@@ -29,14 +29,14 @@ const cleaned = data.map(datum => {
     const lockingMechanisms = datum['Locking Mechanisms'].split(',').filter(x => x)
     const features = datum.Features.split(',').filter(x => x)
     const regions = datum.Regions.split(',').filter(x => x)
-    const notes = datum.notes
+    const notes = datum.Notes
 
     const links = [...datum.Links.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
     const media = [...datum.Media.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
 
-    return {
+    const value = {
         belt,
         makeModels,
         version,
@@ -45,9 +45,16 @@ const cleaned = data.map(datum => {
         notes,
         regions,
         links,
-        media,
-
+        media
     }
+
+    // Clean up empty values to reduce payload size
+    Object.keys(value).forEach(key => {
+        if (typeof value[key] === 'string' && value[key] === '') value[key] = undefined
+        else if (Array.isArray(value[key]) && value[key].length === 0) value[key] = undefined
+    })
+
+    return value
 })
 
 // Write out to src location for usage

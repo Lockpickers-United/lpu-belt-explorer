@@ -38,7 +38,7 @@ function Entry({index, expanded, entry, onAccordionChange}) {
                 </Typography>
                 <Typography component='span' sx={{width: '50%', flexShrink: 0, flexDirection: 'column'}}>
                     {
-                        entry.lockingMechanisms.length > 0 &&
+                        entry.lockingMechanisms?.length > 0 &&
                         <FieldValue name='Locking Mechanisms' value={
                             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                 {entry.lockingMechanisms.map((lockingMechanism, index) =>
@@ -64,7 +64,7 @@ function Entry({index, expanded, entry, onAccordionChange}) {
                         <Typography>{entry.notes}</Typography>
                     }/>
                 }
-                {!!entry.features.length &&
+                {!!entry.features?.length &&
                     <FieldValue name='Features' value={
                         <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                             {entry.features.map((tag, index) =>
@@ -89,7 +89,7 @@ function Entry({index, expanded, entry, onAccordionChange}) {
                     }/>
                 }
                 {
-                    !!entry.links.length &&
+                    !!entry.links?.length &&
                     <FieldValue name='Links' value={
                         <Stack direction='row' spacing={1}>
                             {entry.links.map(({text, url}, index) =>
@@ -102,7 +102,7 @@ function Entry({index, expanded, entry, onAccordionChange}) {
                     }/>
                 }
                 {
-                    !!entry.regions.length &&
+                    !!entry.regions?.length &&
                     <FieldValue name='Regions' value={
                         <Stack direction='row' spacing={1}>
                             {entry.regions.map((region, index) =>

@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
 import FilterDialog from './FilterDialog.jsx'
 
-function FilterButton({onSearch}) {
+function FilterButton({data, onSearch}) {
     const [open, setOpen] = useState(false)
     const [query, setQuery] = useState(queryString.parse(location.search))
     const filters = useMemo(() => {
@@ -42,6 +42,7 @@ function FilterButton({onSearch}) {
                 </Badge>
             </Tooltip>
             <FilterDialog
+                data={data}
                 open={open}
                 query={query}
                 filters={filters}

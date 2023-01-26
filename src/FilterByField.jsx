@@ -3,9 +3,8 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import data from './data/data.js'
 
-function FilterByField({label, fieldName, onFilter}) {
+function FilterByField({data, label, fieldName, onFilter}) {
     const handleSelect = event => {
         onFilter(fieldName, event.target.value)
         setTimeout(() => document.activeElement.blur())

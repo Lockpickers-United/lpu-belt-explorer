@@ -2,9 +2,7 @@ import React, {useDeferredValue, useMemo} from 'react'
 import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 
-import data from './data/data.js'
-
-function Entries({belt, query, searchTerm}) {
+function Entries({data, belt, query, searchTerm}) {
     const [expanded, setExpanded] = React.useState(-1)
     const deferredQuery = useDeferredValue(query)
     const deferredSearchTerm = useDeferredValue(searchTerm)

@@ -11,7 +11,7 @@ import React from 'react'
 import FieldValue from './FieldValue.jsx'
 import FilterByField from './FilterByField.jsx'
 
-function FilterDialog({filters, open, onClose, query, setQuery, onSearch}) {
+function FilterDialog({data, filters, open, onClose, query, setQuery, onSearch}) {
     const handleAddFilter = (keyToAdd, valueToAdd) => {
         const queryValue = query[keyToAdd]
         if (Array.isArray(queryValue)) queryValue.push(valueToAdd)
@@ -90,7 +90,13 @@ function FilterDialog({filters, open, onClose, query, setQuery, onSearch}) {
                 <FieldValue name='Add Filters' value={
                     <Stack direction='column' style={{marginTop: 8, maxWidth: 350}}>
                         {filterFields.map(({label, fieldName}, index) =>
-                            <FilterByField key={index} label={label} fieldName={fieldName} onFilter={handleAddFilter}/>
+                            <FilterByField
+                                data={data}
+                                key={index}
+                                label={label}
+                                fieldName={fieldName}
+                                onFilter={handleAddFilter}
+                            />
                         )}
                     </Stack>
                 }/>

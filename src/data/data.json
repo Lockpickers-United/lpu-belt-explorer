@@ -7,11 +7,6 @@
         "model": "Any lock with any tool"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
     "media": [
       {
         "text": "anytool",
@@ -23,7 +18,7 @@
     "belt": "white",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "45"
       }
     ],
@@ -34,8 +29,6 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
-    "links": [],
     "media": [
       {
         "text": "Abus45",
@@ -51,13 +44,9 @@
         "model": "Acrylic Padlocks"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
-    "links": [],
     "media": [
       {
         "text": "AcrylicLocks",
@@ -73,15 +62,12 @@
         "model": "R80 disk lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
-    "links": [],
     "media": [
       {
         "text": "BrinksR80",
@@ -97,15 +83,12 @@
         "model": "China padlocks (granite look)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
-    "links": [],
     "media": [
       {
         "text": "ChinaGranite",
@@ -120,13 +103,7 @@
         "make": "Any",
         "model": "Cutaway Locks"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -139,11 +116,7 @@
     "version": "1 or 2 levers",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -153,21 +126,18 @@
         "model": "#1"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_1"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -184,14 +154,12 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_2"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -201,21 +169,18 @@
         "model": "#3"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_3"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -232,14 +197,12 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_4"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -249,16 +212,12 @@
         "model": "#5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -274,10 +233,7 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -287,16 +243,12 @@
         "model": "#7"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -312,10 +264,7 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -324,16 +273,12 @@
         "model": "Timpson Special Brass Padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "white",
@@ -342,46 +287,39 @@
         "model": "Tri-Nine Padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "55/30"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_55"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "64Ti Titalium"
       }
     ],
@@ -392,20 +330,18 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "65/35"
       }
     ],
@@ -416,86 +352,67 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_65"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "84/35"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "EC75 75/30"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "MyLock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Nautic T84MB"
       }
     ],
     "version": "40mm and up",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -505,16 +422,12 @@
         "model": "laminated 40mm padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -523,16 +436,12 @@
         "model": "ADW"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -549,14 +458,12 @@
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/American_Lock_5200"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -565,16 +472,12 @@
         "model": "ARFE"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -584,14 +487,9 @@
         "model": "TE-5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -600,14 +498,9 @@
         "model": "Befa"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -616,14 +509,9 @@
         "model": "Bond"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -632,14 +520,9 @@
         "model": "Börkey"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -648,16 +531,12 @@
         "model": "Braslock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -667,16 +546,12 @@
         "model": "Brass Padlocks"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -685,14 +560,9 @@
         "model": "BSS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -702,14 +572,9 @@
         "model": "Alutitan 770 40"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -719,16 +584,12 @@
         "model": "C-Line"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -738,14 +599,9 @@
         "model": "Look"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -755,14 +611,9 @@
         "model": "SecuLock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -772,14 +623,9 @@
         "model": "Yacht"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -787,13 +633,7 @@
       {
         "model": "Casesa"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -801,13 +641,7 @@
       {
         "model": "CIB"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -816,14 +650,9 @@
         "model": "Citadel"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -831,13 +660,7 @@
       {
         "model": "Cotica"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -845,13 +668,7 @@
       {
         "model": "Dulimex (DX)"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -861,14 +678,9 @@
         "model": "37110"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -878,16 +690,12 @@
         "model": "5-pin padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -896,14 +704,9 @@
         "model": "EMR"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -916,11 +719,7 @@
     "version": "2 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -929,14 +728,9 @@
         "model": "Esco"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -944,13 +738,7 @@
       {
         "model": "Faithfull"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -959,14 +747,9 @@
         "model": "Favour"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -974,13 +757,7 @@
       {
         "model": "Fermod"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -989,14 +766,9 @@
         "model": "FF"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1005,14 +777,9 @@
         "model": "FFF"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1020,13 +787,7 @@
       {
         "model": "Flora"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1034,13 +795,7 @@
       {
         "model": "Glip"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1048,13 +803,7 @@
       {
         "model": "Guri"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1062,13 +811,7 @@
       {
         "model": "HiK"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1077,14 +820,9 @@
         "model": "HP+"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1092,13 +830,7 @@
       {
         "model": "IBAU"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1107,14 +839,9 @@
         "model": "Kinzo"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1123,14 +850,9 @@
         "model": "Koala"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1139,14 +861,9 @@
         "model": "Laperche"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1158,11 +875,7 @@
     "version": "3 levers",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1174,11 +887,7 @@
     "version": "3 levers",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1186,13 +895,7 @@
       {
         "model": "Lifetime"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1202,16 +905,12 @@
         "model": "227"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1220,16 +919,12 @@
         "model": "Mannesmann"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1239,21 +934,18 @@
         "model": "130"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_130"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1267,21 +959,18 @@
         "model": "141"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_140"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1291,16 +980,12 @@
         "model": "930"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1310,16 +995,12 @@
         "model": "4140 (V-line)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1329,16 +1010,12 @@
         "model": "DG"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1348,16 +1025,12 @@
         "model": "Magnum"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1365,13 +1038,7 @@
       {
         "model": "McGeiz"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1379,13 +1046,7 @@
       {
         "model": "Mecanimax"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1394,14 +1055,9 @@
         "model": "Metal"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1409,13 +1065,7 @@
       {
         "model": "Modeco"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1423,13 +1073,7 @@
       {
         "model": "Multi XL"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1437,13 +1081,7 @@
       {
         "model": "Multicar"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1451,13 +1089,7 @@
       {
         "model": "Owa"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1465,13 +1097,7 @@
       {
         "model": "Power Line"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1480,14 +1106,9 @@
         "model": "Santos"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1497,14 +1118,9 @@
         "model": "Mortise"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1520,11 +1136,7 @@
     "version": "3 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1537,11 +1149,7 @@
     "version": "4 lever, pin key",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1554,11 +1162,7 @@
     "version": "4 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1571,11 +1175,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1584,14 +1184,9 @@
         "model": "Stabilit"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1599,13 +1194,7 @@
       {
         "model": "Südmetall"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1613,13 +1202,7 @@
       {
         "model": "Tara"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "yellow",
@@ -1628,22 +1211,18 @@
         "model": "Wolfdog"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "45/50"
       }
     ],
@@ -1653,16 +1232,13 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "55/40"
       }
     ],
@@ -1673,39 +1249,33 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_55"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "60/50"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "64Ti Titalium"
       }
     ],
@@ -1716,20 +1286,18 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "65/40"
       }
     ],
@@ -1740,144 +1308,117 @@
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_65"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "83/40"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_83"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "85"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_85"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Buffo (Ecoline)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C51"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C73"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C83"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C90"
       }
     ],
     "version": "old pinning: mostly standard keypins, normal spool drivers",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Cisa"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Diskus"
       }
     ],
@@ -1885,68 +1426,51 @@
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_Diskus_25"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Monobloc"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Titalium 54TI/50"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Titalium Ti12"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -1956,14 +1480,9 @@
         "model": "CO"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -1973,14 +1492,9 @@
         "model": "ST"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -1990,16 +1504,12 @@
         "model": "House Key"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2009,16 +1519,12 @@
         "model": "Weatherproof 44mm laminated padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2028,16 +1534,12 @@
         "model": "Boccia"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2047,14 +1549,9 @@
         "model": "KB"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2064,14 +1561,9 @@
         "model": "PS5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2081,14 +1573,9 @@
         "model": "WM 5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2098,14 +1585,9 @@
         "model": "WZ"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2114,14 +1596,9 @@
         "model": "CFG"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2137,10 +1614,7 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2150,16 +1624,12 @@
         "model": "Arco Cromato"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2169,14 +1639,9 @@
         "model": "333 RNT (standard cylinder)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2188,11 +1653,7 @@
     "version": "British Standard - 5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2204,11 +1665,7 @@
     "version": "British Standard - 5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2217,14 +1674,9 @@
         "model": "F3"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2234,14 +1686,9 @@
         "model": "100"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2250,16 +1697,12 @@
         "model": "Fanal 5-pin padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2268,14 +1711,9 @@
         "model": "FCV"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2284,14 +1722,9 @@
         "model": "FUG"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2300,14 +1733,9 @@
         "model": "FXL"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2317,14 +1745,9 @@
         "model": "40mm Brass Padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2334,14 +1757,9 @@
         "model": "ANS-2"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2351,14 +1769,9 @@
         "model": "F5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2366,13 +1779,7 @@
       {
         "model": "Gloss"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2382,14 +1789,9 @@
         "model": "Padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2398,13 +1800,7 @@
         "make": "Kasp",
         "model": "160 series Diskus"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2417,11 +1813,7 @@
     "version": "40mm or bigger",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2431,21 +1823,18 @@
         "model": "150"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_150"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2455,16 +1844,12 @@
         "model": "532"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2482,16 +1867,12 @@
         "model": "576"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2501,16 +1882,12 @@
         "model": "4150 (V-line)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2518,13 +1895,7 @@
       {
         "model": "S&S"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2536,11 +1907,7 @@
     "version": "PT",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2549,14 +1916,9 @@
         "model": "SIB"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2564,13 +1926,7 @@
       {
         "model": "SMB"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2578,13 +1934,7 @@
       {
         "model": "Snowstar"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2593,14 +1943,9 @@
         "model": "SOLXD"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2609,14 +1954,9 @@
         "model": "Starlet"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2625,14 +1965,9 @@
         "model": "Techpro Tech 5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2641,14 +1976,9 @@
         "model": "TOP"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2658,14 +1988,9 @@
         "model": "Euro Cylinder"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2674,14 +1999,9 @@
         "model": "Trimas"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2689,13 +2009,7 @@
       {
         "model": "Urbis"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2703,13 +2017,7 @@
       {
         "model": "VEB"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2722,11 +2030,7 @@
     "version": "5 pin",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2736,14 +2040,9 @@
         "model": "AZ"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2754,13 +2053,9 @@
       }
     ],
     "version": "5 pin",
-    "lockingMechanisms": [],
     "features": [
       "Trap pin/bar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2773,11 +2068,7 @@
     "version": "5 Lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2787,16 +2078,12 @@
         "model": "125/40"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2809,11 +2096,7 @@
     "version": "PT",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2823,16 +2106,12 @@
         "model": "Y110/40"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "orange",
@@ -2842,396 +2121,307 @@
         "model": "DS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "72/40"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_72"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "74/40 LOTO"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "75/50"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "75IB/50"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_75IB"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "76/40"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Brady 71/40 LOTO (Lock Out Tag Out)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Bravus 1000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Bravus 2000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C73"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C83"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "C90"
       }
     ],
     "version": "new pinning: security keypins + serrated and spooled t-pins",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "D6"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "EC"
       }
     ],
     "version": "750/850 - spool pin version, not 700/800",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Integral"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Pfaffenhain Integral"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Pfaffenhain Standard"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Titalium 80TI"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_80TI"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "V14"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "XV14"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Y14"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "W14"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "WavyLine"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Pfaffenhain WavyLine"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "WavyLine Pro"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Pfaffenhain WavyLine Pro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "XD25"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Xp10"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3241,16 +2431,12 @@
         "model": "A527"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3266,10 +2452,7 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3285,10 +2468,7 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3298,16 +2478,12 @@
         "model": "2000 puck lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3317,21 +2493,18 @@
         "model": "5200"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/American_Lock_5200"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3341,16 +2514,12 @@
         "model": "Clone"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3360,16 +2529,12 @@
         "model": "Lock 700 / A700"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3379,21 +2544,18 @@
         "model": "1100 / A1100"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/American_Lock_1100_1200_1300"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3403,16 +2565,12 @@
         "model": "S1100"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3428,10 +2586,7 @@
     ],
     "features": [
       "Hourglass/graduated spools"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3447,10 +2602,7 @@
     ],
     "features": [
       "Tapered drivers"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3460,14 +2612,9 @@
         "model": "DS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3477,14 +2624,9 @@
         "model": "P031"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3494,14 +2636,9 @@
         "model": "3AX"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3511,14 +2648,9 @@
         "model": "AS Pro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3528,14 +2660,9 @@
         "model": "CX6"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3544,14 +2671,9 @@
         "model": "\" BiLock \" Fake"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3561,14 +2683,9 @@
         "model": "51-SL (Livius)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3578,14 +2695,9 @@
         "model": "88"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3594,13 +2706,7 @@
         "make": "BKS",
         "model": "Detect 3"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3610,14 +2716,9 @@
         "model": "Helius"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3627,14 +2728,9 @@
         "model": "Serial"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3644,14 +2740,9 @@
         "model": "Atlantic"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3661,14 +2752,9 @@
         "model": "Diamant"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3678,14 +2764,9 @@
         "model": "Karat"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3694,13 +2775,7 @@
         "make": "Burg Wächter",
         "model": "Profi 116/40"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3710,14 +2785,9 @@
         "model": "with dustcover"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3727,14 +2797,9 @@
         "model": "C970 disk padlock"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3744,14 +2809,9 @@
         "model": "IC3 Tactical"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3761,14 +2821,9 @@
         "model": "Marine"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3778,14 +2833,9 @@
         "model": "Peacemaker"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3795,12 +2845,7 @@
         "model": "Master Ring"
       }
     ],
-    "version": "(picked to one shearline)",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "version": "(picked to one shearline)"
   },
   {
     "belt": "green",
@@ -3810,14 +2855,9 @@
         "model": "Standard cylinder"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3826,13 +2866,7 @@
         "make": "Corona",
         "model": "cylinder"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3841,13 +2875,7 @@
         "make": "Corona",
         "model": "M"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3857,14 +2885,9 @@
         "model": "IX 5N"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3874,14 +2897,9 @@
         "model": "IX HT"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3891,14 +2909,9 @@
         "model": "RS 5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3907,13 +2920,7 @@
         "make": "DOM",
         "model": "SC"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3922,13 +2929,7 @@
         "make": "DOM",
         "model": "SV"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3937,14 +2938,9 @@
         "model": "Elca"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3953,13 +2949,7 @@
         "make": "ERA",
         "model": "Invincible - 5 lever"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3968,13 +2958,7 @@
         "make": "ERA",
         "model": "Pro-Fit - 5 lever"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3983,13 +2967,7 @@
         "make": "ERA",
         "model": "Viscount - 5 lever"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -3998,13 +2976,7 @@
         "make": "EVVA",
         "model": "FPS"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4014,14 +2986,9 @@
         "model": "Standardcylinder (Normalprofil)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4030,13 +2997,7 @@
         "make": "EVVA",
         "model": "TSC"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4046,14 +3007,9 @@
         "model": "200RS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4062,13 +3018,7 @@
         "make": "Federal Lock",
         "model": "5Y3110"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4077,13 +3027,7 @@
         "make": "Federal Lock",
         "model": "6Y3110"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4092,13 +3036,7 @@
         "make": "Gera Iseo",
         "model": "MC 6500"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4107,13 +3045,7 @@
         "make": "Gera Iseo",
         "model": "MC5"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4123,14 +3055,9 @@
         "model": "R6"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4138,13 +3065,7 @@
       {
         "model": "Guett Dern"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4154,14 +3075,9 @@
         "model": "Ap 1000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4171,14 +3087,9 @@
         "model": "Micro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4186,13 +3097,7 @@
       {
         "model": "Kai Kai"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4202,14 +3107,9 @@
         "model": "164 CE"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4222,11 +3122,7 @@
     "version": "6 pin, standard profile",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4235,13 +3131,7 @@
         "make": "Kasp",
         "model": "14040"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4253,11 +3143,7 @@
     "version": "pin-in-pin, 4 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4266,14 +3152,9 @@
         "model": "KryPin tumbleronite 6-pin padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4286,11 +3167,7 @@
     "version": "4 levers",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4303,11 +3180,7 @@
     "version": "4 levers",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4317,16 +3190,12 @@
         "model": "120/40 or above"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4336,14 +3205,9 @@
         "model": "234B45"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4356,11 +3220,7 @@
     "version": "Tapered/Beveled drivers",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4370,14 +3230,9 @@
         "model": "425"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4387,16 +3242,12 @@
         "model": "427"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4406,19 +3257,15 @@
         "model": "410"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4428,21 +3275,18 @@
         "model": "410 LOTO (Lock Out Tag Out)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Unguttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4452,14 +3296,9 @@
         "model": "911"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4468,13 +3307,7 @@
         "make": "Master Lock",
         "model": "931"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4483,13 +3316,7 @@
         "make": "Master Lock",
         "model": "6835"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4499,14 +3326,9 @@
         "model": "Pro Series"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4516,14 +3338,9 @@
         "model": "S32 LOTO (Lock Out Tag Out)"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4532,13 +3349,7 @@
         "make": "Mauer",
         "model": "Elite 1"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4547,13 +3358,7 @@
         "make": "MCM",
         "model": "SCX"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4565,11 +3370,7 @@
     "version": "Non British Standard, 5 levers",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4579,14 +3380,9 @@
         "model": "Champions C10"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4604,15 +3400,11 @@
         "model": "Champions C39"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
     ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "notes": "Must be picked with the bible oriented down"
   },
   {
     "belt": "green",
@@ -4622,14 +3414,9 @@
         "model": "7X7"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4639,14 +3426,9 @@
         "model": "90A"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4656,14 +3438,9 @@
         "model": "95g"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4676,11 +3453,7 @@
     "version": "green, 6-pin version of the 90a pro",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4690,14 +3463,9 @@
         "model": "100G"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4707,14 +3475,9 @@
         "model": "PL 90A-pro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4724,14 +3487,9 @@
         "model": "UCS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4744,11 +3502,7 @@
     "version": "with security pins",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4758,14 +3512,9 @@
         "model": "Everest"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4778,11 +3527,7 @@
     "version": "4 lever, pipe key",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4791,13 +3536,7 @@
         "make": "Tokoz",
         "model": "Beta"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4806,13 +3545,7 @@
         "make": "Vachette",
         "model": "standard cylinder"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4822,14 +3555,9 @@
         "model": "Pfaffenhain"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4838,13 +3566,7 @@
         "make": "Wilka",
         "model": "3VE"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4857,11 +3579,7 @@
     "version": "6 pin",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4871,14 +3589,9 @@
         "model": "3600"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4888,14 +3601,9 @@
         "model": "Primus HX"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4905,14 +3613,9 @@
         "model": "RAP"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4922,14 +3625,9 @@
         "model": "RAP+"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4939,12 +3637,7 @@
         "model": "VS"
       }
     ],
-    "version": "6-pin",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "version": "6-pin"
   },
   {
     "belt": "green",
@@ -4953,13 +3646,7 @@
         "make": "Winkhaus",
         "model": "ZRV"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4968,13 +3655,7 @@
         "make": "Winkhaus",
         "model": "ZRV6"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4983,13 +3664,7 @@
         "make": "Yale",
         "model": "210C/51"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -4997,13 +3672,7 @@
       {
         "model": "Yardeni"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -5013,14 +3682,9 @@
         "model": "J45/J45S"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -5030,14 +3694,9 @@
         "model": "K2 (with Zeiss Ikon Core)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -5047,14 +3706,9 @@
         "model": "N1"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "green",
@@ -5063,155 +3717,111 @@
         "make": "Zeiss Ikon",
         "model": "P031"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "Bravus 3000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "D10"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "E-series (E20-E90)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "EC"
       }
     ],
     "version": "serrated pin version, not 700/800",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "KV14"
       },
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "KY14"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "KW14"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "S6+"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "XP1"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Characteristic hellish keyway"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5221,12 +3831,7 @@
         "model": "Infinity"
       }
     ],
-    "version": "without magnet",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "version": "without magnet"
   },
   {
     "belt": "blue",
@@ -5244,10 +3849,7 @@
       "Barrel drivers",
       "Countermilling - serrated/threaded",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5264,14 +3866,12 @@
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5288,14 +3888,12 @@
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5313,10 +3911,7 @@
       "Barrel drivers",
       "Countermilling - serrated/threaded",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5326,14 +3921,9 @@
         "model": "R502"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5342,13 +3932,7 @@
         "make": "Bricard",
         "model": "Bloctout"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5357,13 +3941,7 @@
         "make": "Bricard",
         "model": "Serial S"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5373,14 +3951,9 @@
         "model": "Gamma 700 -- Non-removable core"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5388,13 +3961,7 @@
       {
         "model": "Cantol high-security line (10-pin dimple)"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5404,14 +3971,9 @@
         "model": "Any uncurtained 5 lever"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5424,11 +3986,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5441,11 +3999,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5458,11 +4012,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5472,14 +4022,9 @@
         "model": "Astral S"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5489,19 +4034,15 @@
         "model": "C3000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin Tumbler"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/CISA_C3000"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5514,11 +4055,7 @@
     "version": "4 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5528,14 +4065,9 @@
         "model": "IX 5KG"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5545,16 +4077,12 @@
         "model": "Plura"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Magic DOM drivers"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5564,14 +4092,9 @@
         "model": "R Plus"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5581,14 +4104,10 @@
         "model": "RN"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "notes": "At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Else it's green"
   },
   {
     "belt": "blue",
@@ -5598,16 +4117,12 @@
         "model": "RS Sigma"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Magic DOM drivers"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5617,14 +4132,9 @@
         "model": "S (with circle)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5634,14 +4144,9 @@
         "model": "DC400"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5651,14 +4156,9 @@
         "model": "DC3003"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5671,11 +4171,7 @@
     "version": "6 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5688,11 +4184,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5705,11 +4197,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5722,11 +4210,7 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5739,11 +4223,7 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5756,11 +4236,7 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5773,11 +4249,7 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5787,16 +4259,12 @@
         "model": "GPI/ALS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Characteristic hellish keyway"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5810,14 +4278,9 @@
         "model": "Fab 4* Profi"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5827,14 +4290,9 @@
         "model": "2000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5843,13 +4301,7 @@
         "make": "Federal Lock",
         "model": "6KD3110"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5859,14 +4311,9 @@
         "model": "AP2000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5876,14 +4323,9 @@
         "model": "AP3000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5891,13 +4333,7 @@
       {
         "model": "Guard NVL"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5905,13 +4341,7 @@
       {
         "model": "HQ High Security interactive clone (4 pins)"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5924,11 +4354,7 @@
     "version": "2 row",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5941,11 +4367,7 @@
     "version": "3-row, <9 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5958,11 +4380,7 @@
     "version": "5 pin",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5980,10 +4398,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -5992,13 +4407,7 @@
         "make": "Kale Kilit",
         "model": "164 YGS SE"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6011,11 +4420,7 @@
     "version": "pin-in-pin, 5 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6024,14 +4429,9 @@
         "model": "KryPin tumbleronite Disk Detainer"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6040,13 +4440,7 @@
         "make": "Lince",
         "model": "C4"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6056,14 +4450,9 @@
         "model": "270S70"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6076,11 +4465,7 @@
     "version": "With spools",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6090,14 +4475,9 @@
         "model": "356S63"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6107,14 +4487,9 @@
         "model": "V7"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6140,10 +4515,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6152,13 +4524,7 @@
         "make": "Mauer",
         "model": "RedLine G"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6167,13 +4533,7 @@
         "make": "Mauer",
         "model": "RedLine GM"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6183,14 +4543,10 @@
         "model": "AS6"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "notes": "6 pin dimple, 3 spools and 3 T pins, good tolerances"
   },
   {
     "belt": "blue",
@@ -6204,11 +4560,7 @@
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6218,14 +4570,9 @@
         "model": "BiLevel"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6239,11 +4586,7 @@
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6251,13 +4594,7 @@
       {
         "model": "Metal Zx5J"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6265,13 +4602,7 @@
       {
         "model": "Mila Evolution"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6280,14 +4611,9 @@
         "model": "Mindy Pagoda (round key)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6296,14 +4622,9 @@
         "model": "Miwa DS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Wafer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6311,13 +4632,7 @@
       {
         "model": "Mottura Champions C28/C29"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6330,11 +4645,7 @@
     "version": "Standard drivers",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6344,14 +4655,9 @@
         "model": "Integrator"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6360,14 +4666,9 @@
         "model": "Paclock 90A Pro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6376,14 +4677,9 @@
         "model": "Paclock PL410"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6392,14 +4688,9 @@
         "model": "Pisla 860"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
     "features": [
       "Unguttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6408,14 +4699,9 @@
         "model": "Ruko R501"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6424,14 +4710,9 @@
         "model": "SEA slider lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6440,14 +4721,9 @@
         "model": "Securemme K22"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6455,13 +4731,7 @@
       {
         "model": "Securit S20##"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6470,14 +4740,9 @@
         "model": "SFIC format locks (to one shearline)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6485,13 +4750,7 @@
       {
         "model": "Takigen 10-pin"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6500,14 +4759,9 @@
         "model": "TESA T60"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6516,14 +4770,9 @@
         "model": "Tokoz Tech"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Wafer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6532,14 +4781,9 @@
         "model": "Trioving (Vingcard) 55## (w trampoline pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6551,11 +4795,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6563,13 +4803,7 @@
       {
         "model": "Vachette VIP / VIP+"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6577,13 +4811,7 @@
       {
         "model": "VSR 2-row"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6591,13 +4819,7 @@
       {
         "model": "Winkhaus N-Tra"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6605,13 +4827,7 @@
       {
         "model": "Winkhaus Titan"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6619,13 +4835,7 @@
       {
         "model": "Yale 500 series"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6634,15 +4844,10 @@
         "model": "Yale Superior / Milencio Magnum (<7 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6652,14 +4857,9 @@
         "model": "P031 (N6 profile)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6668,13 +4868,7 @@
         "make": "Zeiss Ikon",
         "model": "Sk6 vector"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6683,13 +4877,7 @@
         "make": "Zeiss Ikon",
         "model": "SK7"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "blue",
@@ -6698,13 +4886,7 @@
         "make": "Zeiss Ikon",
         "model": "Undercut"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6713,94 +4895,66 @@
         "model": "ABA 109582"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Abus",
-        "model": "Abus Bravus 4000"
+        "make": "ABUS",
+        "model": "Bravus 4000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Abus",
-        "model": "Abus EP10"
+        "make": "ABUS",
+        "model": "EP10"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Abus",
-        "model": "Abus TS5000"
+        "make": "ABUS",
+        "model": "TS5000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "EP10",
         "model": "XP20s"
       },
       {
-        "make": "Abus",
         "model": "XP2s"
       },
       {
-        "make": "Cisa",
         "model": "Cisa AP3"
       },
       {
-        "make": "Bricard",
         "model": "Bricard XP S2"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6818,14 +4972,9 @@
         "model": "LS5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6833,13 +4982,7 @@
       {
         "model": "Aldon Corporation Hot Dog Lock"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6848,19 +4991,15 @@
         "model": "Anchor Las (disc detainer)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Anchor_810-1"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6872,11 +5011,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6894,10 +5029,7 @@
       "Gin bottle drivers",
       "Countermilling - undercut",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6907,16 +5039,12 @@
         "model": "500 with Gin drivers and matched sleeve"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
     "features": [
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6934,10 +5062,7 @@
       "Barrel drivers",
       "Countermilling - serrated/threaded",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6954,14 +5079,12 @@
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Desmo"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -6978,14 +5101,12 @@
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Desmo"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7004,10 +5125,7 @@
       "Countermilling - serrated/threaded",
       "Sidepins",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7016,15 +5134,10 @@
         "model": "Avocet ABS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7037,8 +5150,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -7048,8 +5159,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7062,8 +5172,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -7073,8 +5181,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7086,11 +5193,7 @@
     "version": "all versions, <15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7098,13 +5201,7 @@
       {
         "model": "Bricard Supersureté"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7116,11 +5213,7 @@
     "version": "non removable core",
     "lockingMechanisms": [
       "Wafer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7128,13 +5221,7 @@
       {
         "model": "CEI \"Five Colors\""
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7146,11 +5233,7 @@
     "version": "6 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7159,14 +5242,9 @@
         "model": "Chubb Biaxial"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7178,11 +5256,7 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7191,12 +5265,7 @@
         "model": "Corbin Master Ring"
       }
     ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "notes": "Both shearlines must be filmed in one take"
   },
   {
     "belt": "purple",
@@ -7205,15 +5274,10 @@
         "model": "DAF Kilit DBS02"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7222,14 +5286,9 @@
         "model": "Dierre New Power"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7238,14 +5297,9 @@
         "model": "Dom IX Twido"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7254,7 +5308,6 @@
         "model": "DOM ix6sr"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -7263,10 +5316,7 @@
       "Torpedoes",
       "Interactive element",
       "Magic DOM drivers"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7278,11 +5328,7 @@
     "version": "without fins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7291,12 +5337,7 @@
         "model": "Eagle \"Supr-Security\""
       }
     ],
-    "version": "without shutter",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    "version": "without shutter"
   },
   {
     "belt": "purple",
@@ -7304,13 +5345,7 @@
       {
         "model": "Elzett X11"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7319,19 +5354,15 @@
         "model": "Emhart (4 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Corbin_Emhart"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7348,10 +5379,7 @@
       "Trap pin/bar",
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7363,11 +5391,7 @@
     "version": "no false gates",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7375,13 +5399,7 @@
       {
         "model": "Fontaine"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7390,19 +5408,15 @@
         "model": "HQ High Security / DeGuard interactive clone (5 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/DeGuard_Interactive"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7410,13 +5424,7 @@
       {
         "model": "Ifam WX1000"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7425,14 +5433,9 @@
         "model": "Illinois Duo"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Wafer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7441,14 +5444,9 @@
         "model": "Ingersoll 10 lever padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7456,13 +5454,7 @@
       {
         "model": "Iseo Perfecta (requires 360)"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7471,14 +5463,9 @@
         "model": "Iseo R7"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7487,14 +5474,9 @@
         "model": "Kaba 8 (3-row) (≥9 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7503,14 +5485,9 @@
         "model": "Kaba Gege pExtra 6-7 pin"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7527,10 +5504,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7539,14 +5513,9 @@
         "model": "Kale Kilit 164 BNE"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7555,14 +5524,9 @@
         "model": "Keso 10RS / 2000S / 4000S (Omega)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7571,14 +5535,9 @@
         "model": "Kwikset Smartkey (Gen III)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7587,14 +5546,9 @@
         "model": "Kwikset Smartkey (Gens I & II)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7603,14 +5557,9 @@
         "model": "Kwikset Smartkey SC1 gen I"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7622,11 +5571,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7638,11 +5583,7 @@
     "version": "6 or 7 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7651,14 +5592,9 @@
         "model": "Lips Keso (door cylinder) / Lips Octro (<13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7667,14 +5603,9 @@
         "model": "Lips Keso padlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7686,14 +5617,9 @@
         "model": " mushroom drivers)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7705,15 +5631,10 @@
         "model": " heavily mastered)***"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7722,15 +5643,10 @@
         "model": "Lockwood Twin"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidepins"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7747,10 +5663,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7759,7 +5672,6 @@
         "model": "M&C Condor / M&C Move"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
@@ -7767,10 +5679,7 @@
     "features": [
       "Active Sidebar",
       "False gates"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7779,7 +5688,6 @@
         "model": "M&C Matrix"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider",
       "Pin tumbler"
@@ -7787,10 +5695,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7798,13 +5703,7 @@
       {
         "model": "Magnum Atlantic"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7813,15 +5712,10 @@
         "model": "Medeco Original / Biaxial / M3 (5+ pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Sidebar",
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7830,15 +5724,10 @@
         "model": "Medeco Original Camlock (5+ pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider",
       "Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7847,14 +5736,9 @@
         "model": "Miracle Magnetic"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7863,14 +5747,9 @@
         "model": "Miwa Magnetic Camlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7878,13 +5757,7 @@
       {
         "model": "MLock"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7893,15 +5766,10 @@
         "model": "Mottura Champions C38****"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7909,13 +5777,7 @@
       {
         "model": "Mottura Viper"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7936,11 +5798,7 @@
     "version": "spooled drivers, < 3 countermilled outer keypins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7950,14 +5808,9 @@
         "model": "MT5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7967,14 +5820,9 @@
         "model": "Omega Plus"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7983,14 +5831,9 @@
         "model": "Nagasawa Kodai KCY-31 (6 pin pt)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -7999,14 +5842,9 @@
         "model": "Nemef NF2 / NF3"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8015,14 +5853,9 @@
         "model": "Nemef NF4"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8030,13 +5863,7 @@
       {
         "model": "Opnus UX"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8044,13 +5871,7 @@
       {
         "model": "Pollux 5"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8059,14 +5880,9 @@
         "model": "Rav Bariach Locxis"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8074,13 +5890,7 @@
       {
         "model": "Rielda rekeyable lock"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8089,15 +5899,10 @@
         "model": "Sargent Signature"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8106,14 +5911,9 @@
         "model": "Schlage Everest 29SL"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8122,14 +5922,9 @@
         "model": "Securemme K5"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8137,13 +5932,7 @@
       {
         "model": "Sepa HDS"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8152,14 +5941,9 @@
         "model": "SFIC format locks (unless otherwise specified)***"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8168,14 +5952,9 @@
         "model": "TESA T80 / TX80"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8184,14 +5963,9 @@
         "model": "Tesa Tk 100"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8199,13 +5973,7 @@
       {
         "model": "Titan T250"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8215,7 +5983,6 @@
         "model": "Tubar"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other",
       "Sidebar"
@@ -8223,7 +5990,6 @@
     "features": [
       "Active Sidebar"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
@@ -8259,13 +6025,7 @@
       {
         "model": "US Star Tech \"Hi Security\""
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8273,13 +6033,7 @@
       {
         "model": "Vachette Axi'Home"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8288,15 +6042,10 @@
         "model": "Yale 5000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8305,15 +6054,10 @@
         "model": "Yale Superior / Milencio Magnum (7 or 9 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "purple",
@@ -8322,15 +6066,10 @@
         "model": "Zeiss Ikon sk6 vectorprofil rib extra (5 sliders)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8339,40 +6078,33 @@
         "model": "Abloy Classic"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Classic"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Abus Plus *"
+        "make": "ABUS",
+        "model": "Plus *"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_Plus_88/50"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8383,13 +6115,7 @@
       {
         "model": " 3 rows all spools"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8397,13 +6123,7 @@
       {
         "model": "Agent GMD-500"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8412,14 +6132,9 @@
         "model": "ALC Galaxy"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8427,13 +6142,7 @@
       {
         "model": "Alke"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8442,14 +6151,9 @@
         "model": "Alpha FB (<15 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8458,14 +6162,9 @@
         "model": "Alpha YKK AP"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8473,13 +6172,7 @@
       {
         "model": "Ankerslot Infinity K"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8512,7 +6205,6 @@
       "Guttable",
       "Forked keypins"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
@@ -8530,8 +6222,7 @@
         "text": "LPUTeardown",
         "url": "https://www.youtube.com/watch?v=dSChpjaax-A&pp=ugMICgJlbhABGAE%3D"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8548,14 +6239,12 @@
     "features": [
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Desmo"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8577,14 +6266,12 @@
       "Rotating fingerpins",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8592,13 +6279,7 @@
       {
         "model": "Basi K10"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8612,8 +6293,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -8623,8 +6302,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8638,8 +6316,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -8649,8 +6325,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8658,13 +6333,7 @@
       {
         "model": "Bks Multipin"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8673,14 +6342,9 @@
         "model": "Bricard Chifral (all versions) (fully pinned)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8688,13 +6352,7 @@
       {
         "model": "Cavers Cavith"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8703,14 +6361,9 @@
         "model": "Clavis T-20 (<15 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8719,14 +6372,9 @@
         "model": "Codkey Locksys (≥15 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8735,20 +6383,16 @@
         "model": "CX-5 Scorpion / Marks High Security Lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "legendofthesamurai Breakdown Video",
         "url": "https://www.youtube.com/watch?v=yBAT5GOaAnU"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8765,10 +6409,7 @@
     "features": [
       "Finned keypins",
       "Torpedoes"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8778,14 +6419,9 @@
         "model": "ix10kg"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8795,14 +6431,9 @@
         "model": "System D"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8811,14 +6442,9 @@
         "model": "Dorma DC500"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8826,13 +6452,7 @@
       {
         "model": "Eagle \"Supr-Security\" (with shutter)"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8841,15 +6461,10 @@
         "model": "Fab Dynamic"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider",
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8857,13 +6472,7 @@
       {
         "model": "Federal Lock 11KDCF3110"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8871,13 +6480,7 @@
       {
         "model": "Federal Lock UCF3100 / USC3100"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8889,11 +6492,7 @@
     "version": "w/ false gates || 4-6 mastered levers",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8902,14 +6501,9 @@
         "model": "Fichet 666"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8918,14 +6512,9 @@
         "model": "Gerda HSS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8934,14 +6523,9 @@
         "model": "Gerda Tytan ZX / Rim 6000"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8958,10 +6542,7 @@
       "Overmilling",
       "Torpedoes",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8978,10 +6559,7 @@
       "Gin bottle drivers",
       "Overmilling",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -8990,14 +6568,9 @@
         "model": "iNAHO Tierkey"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9006,14 +6579,9 @@
         "model": "Izis"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9021,13 +6589,7 @@
       {
         "model": "JPM 405"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9036,14 +6598,9 @@
         "model": "Kaba 14 (<13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9052,14 +6609,9 @@
         "model": "Kaba Ace (<13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9068,14 +6620,9 @@
         "model": "Kaba Gemini (<13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9084,14 +6631,9 @@
         "model": "Kaba Gemini pluS (<14 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9100,7 +6642,6 @@
         "model": "Kaken KXR"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider",
       "Pin tumbler"
@@ -9108,10 +6649,7 @@
     "features": [
       "Active Sidebar",
       "False gates"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9120,14 +6658,9 @@
         "model": "Kale Kilit 164 CEC"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9135,13 +6668,7 @@
       {
         "model": "Laperche Rols"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9150,14 +6677,9 @@
         "model": "Lips Keso (door cylinder) / Lips Octro (≥13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9165,13 +6687,7 @@
       {
         "model": "Lowe and Fletcher 3007 Safe lock - 7 lever"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9179,13 +6695,7 @@
       {
         "model": "Magnum Mont Blanc"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9194,15 +6704,10 @@
         "model": "Mauer NW4 / NW5 / NW6"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9210,13 +6715,7 @@
       {
         "model": "Mauer President -  7 lever"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9224,13 +6723,7 @@
       {
         "model": "Mauer Variator A - 7 lever"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9239,15 +6732,10 @@
         "model": "Medeco Biaxial / M3 Camlock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9256,13 +6744,11 @@
         "model": "Medeco Duracam -- Non-removable core"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Sidebar"
     ],
-    "features": [],
-    "regions": [],
+    "notes": "photos taken from lockwiki licensed under the [Creative Commons Attribution ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)",
     "links": [
       {
         "text": "Lockwiki",
@@ -9273,6 +6759,10 @@
       {
         "text": "key",
         "url": "https://imgur.com/V7GX9vx"
+      },
+      {
+        "text": "lock",
+        "url": "https://imgur.com/aAId8nT"
       }
     ]
   },
@@ -9283,14 +6773,9 @@
         "model": "MG Serrature HS"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9299,14 +6784,9 @@
         "model": "Miwa EC"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9315,14 +6795,9 @@
         "model": "Miwa PS / Tostem DN (<7 unmastered wafers)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9339,11 +6814,7 @@
     "version": "Serrated drivers",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9360,11 +6831,7 @@
     "version": "Spooled inner drivers with > 3 counter milled outer keypins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9373,14 +6840,9 @@
         "model": "Pollux 7"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9389,15 +6851,10 @@
         "model": "Robur Safe Deposit Lock (<3 barrels or gins with matched milling)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Sidepins",
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9411,15 +6868,10 @@
         "model": "Everest Primus"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Sidepins",
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9428,14 +6880,9 @@
         "model": "SFIC with security pins"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9444,14 +6891,9 @@
         "model": "Thirard Cobra"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9460,14 +6902,9 @@
         "model": "U-Shin Showa NX (<13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9476,14 +6913,9 @@
         "model": "Vachette Radial NT/NT+ (<13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9492,14 +6924,9 @@
         "model": "Van Lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9508,14 +6935,9 @@
         "model": "VSR 3-row"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9529,14 +6951,9 @@
         "model": "955"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9545,14 +6962,9 @@
         "model": "Winkhaus X-Tra (<9 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9570,14 +6982,9 @@
         "model": " Apec XS...)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "brown",
@@ -9591,11 +6998,7 @@
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidepins"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9605,19 +7008,15 @@
         "model": "Abloy Disklock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Disklock"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9627,41 +7026,33 @@
         "model": "Abloy High Profile"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Profile"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
     "makeModels": [
       {
-        "make": "Abus",
+        "make": "ABUS",
         "model": "EC 700/800"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_EC700"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9671,14 +7062,9 @@
         "model": "FB (≥15 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9687,14 +7073,9 @@
         "model": "Anker (MIWA/Ankerslot) 3800"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9712,10 +7093,7 @@
       "Gin bottle drivers",
       "Countermilling - undercut",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9736,14 +7114,12 @@
       "Tapered drivers",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9769,10 +7145,7 @@
       "False gates",
       "Sidepins",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9781,16 +7154,12 @@
         "model": "Banham m2002"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
       "Opposing overset stacks"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9804,8 +7173,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -9815,8 +7182,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9828,11 +7194,7 @@
     "version": "< 14 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9844,11 +7206,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9860,11 +7218,7 @@
     "version": "15-19 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9874,7 +7228,6 @@
         "model": "ix Saturn"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -9882,10 +7235,7 @@
       "Interactive element",
       "Torpedoes",
       "Finned keypins"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9895,7 +7245,6 @@
         "model": "RS 8"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -9904,10 +7253,7 @@
       "Characteristic hellish keyway",
       "Sidepins",
       "Torpedoes"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9916,14 +7262,9 @@
         "model": "Elzett Magnet"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9937,15 +7278,12 @@
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Corbin_Emhart"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9958,11 +7296,7 @@
     "version": "without false gates or 1-3 mastered sliders",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9979,10 +7313,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -9999,10 +7330,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10011,14 +7339,9 @@
         "model": "Fab NZS3"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10035,11 +7358,7 @@
     "version": "w/ false gates || 2-3 mastered levers",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10049,14 +7368,9 @@
         "model": "Dynaxis"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10064,13 +7378,7 @@
       {
         "model": "FTH Surveyor"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10091,10 +7399,7 @@
     "features": [
       "Torpedoes",
       "High pin count"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10111,10 +7416,7 @@
     "features": [
       "Gin bottle drivers",
       "Overmilling"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10139,10 +7441,7 @@
       "Barrel drivers",
       "Countermilling - serrated/threaded",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10155,11 +7454,7 @@
     "version": "13+ pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10180,11 +7475,7 @@
     "version": "4 directions, < 15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10197,11 +7488,7 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10218,11 +7505,7 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10235,11 +7518,7 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10252,11 +7531,7 @@
     "version": "≥14 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10269,11 +7544,7 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10286,11 +7557,7 @@
     "version": "5+ directions, <16 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10303,11 +7570,7 @@
     "version": "11 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10317,14 +7580,9 @@
         "model": "Miwa E6 / Miwa 83EC"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10334,14 +7592,9 @@
         "model": "Miwa PR (<7 unmastered wafers)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10351,14 +7604,9 @@
         "model": "Miwa PS / Tostem DN (7-8 unmastered wafers)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10368,14 +7616,9 @@
         "model": "Miwa U9 (<8 unmastered levers)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10387,11 +7630,7 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10400,15 +7639,10 @@
         "model": "Mottura Champions C43/C44/C48"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10417,15 +7651,10 @@
         "model": "Mottura Champtions C55"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10434,14 +7663,9 @@
         "model": "Picard Vigie"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10461,10 +7685,7 @@
       "Sidepins",
       "Active Sidebar",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10484,10 +7705,7 @@
       "Sidepins",
       "Active Sidebar",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10496,14 +7714,9 @@
         "model": "Rosengrens 32A / 32A8"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10523,10 +7736,7 @@
       "Countermilling - serrated/threaded",
       "Rotating fingerpins",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10535,14 +7745,9 @@
         "model": "S&G 4544/4545"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10552,19 +7757,15 @@
         "model": "Schlage Everest 29 SL Primus XP"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Schlage_Everest_29_SL_Primus_XP"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10573,14 +7774,9 @@
         "model": "Sémag Euromag"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10592,11 +7788,7 @@
     "version": "10 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10605,19 +7797,15 @@
         "model": "Tokoz Pro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/TOKOZ_Pro_400"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10626,14 +7814,9 @@
         "model": "U-Shin Showa NX (≥13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10642,14 +7825,9 @@
         "model": "Vachette Axi'Tec"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10658,14 +7836,9 @@
         "model": "Vachette Radial NT/NT+ (≥13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10674,14 +7847,9 @@
         "model": "Winkhaus X-Tra (9-13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10690,14 +7858,9 @@
         "model": "Xylock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10711,11 +7874,7 @@
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidepins"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "red",
@@ -10724,13 +7883,7 @@
         "make": "IKON",
         "model": "Zeiss Ikon Verso"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10740,14 +7893,9 @@
         "model": "Sentry"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10768,14 +7916,12 @@
       "Xmas tree drivers",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10795,10 +7941,7 @@
       "Sidepins",
       "Active Sidebar",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10819,14 +7962,12 @@
       "Active Sidebar",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10847,14 +7988,12 @@
       "Sidepins",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10863,12 +8002,9 @@
         "model": "Bilock (12-pins) (1-2 mastered elements) (upgrade of 8-pin version)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -10878,8 +8014,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10888,14 +8023,9 @@
         "model": "BKS Janus (14 or more pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10904,14 +8034,9 @@
         "model": "Chubb ‘Definitive’ - Standard mortice"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10920,14 +8045,9 @@
         "model": "Clavis Q-18"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10936,14 +8056,9 @@
         "model": "DOM Diamant"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10952,7 +8067,6 @@
         "model": "DOM ix Twinstar"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -10960,10 +8074,7 @@
       "Finned keypins",
       "Torpedoes",
       "Interactive element"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10972,19 +8083,15 @@
         "model": "Emhart with 2+ mastered chambers"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Corbin_Emhart"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -10993,14 +8100,9 @@
         "model": "EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11016,10 +8118,7 @@
     "features": [
       "Active Sidebar",
       "False gates"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11035,10 +8134,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11051,11 +8147,7 @@
     "version": "w/ false gates || 1 mastered lever",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11065,14 +8157,9 @@
         "model": "Fichet-Bauche M2B / M3B / MxB"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Wafer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11089,10 +8176,7 @@
     "features": [
       "High pin count",
       "Torpedoes"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11110,10 +8194,7 @@
       "Gin bottle drivers",
       "Torpedoes",
       "Overmilling"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11122,14 +8203,9 @@
         "model": "Kaba 20 / Miwa JN / Kaba Star (4 rows) (15 or more pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11138,14 +8214,9 @@
         "model": "Kaba Penta (15-20 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11154,14 +8225,9 @@
         "model": "Kaba Quattro / experT (15-20 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11170,14 +8236,9 @@
         "model": "Kaba Star (5+ rows) (16-20 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11186,14 +8247,9 @@
         "model": "Lockman Megacross (with pyramid drivers)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11202,13 +8258,7 @@
         "make": "Miwa",
         "model": "LB"
       }
-    ],
-    "version": "",
-    "lockingMechanisms": [],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11221,11 +8271,7 @@
     "version": "7-8 unmastered elements, upgrade of Miwa PS",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11238,11 +8284,7 @@
     "version": "8 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11251,7 +8293,6 @@
         "model": "Mul-T-Lock MT5+ / 800 / Lockwood MT5 (not mastered) / Zeiss Ikon R10"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
@@ -11263,10 +8304,7 @@
       "Sliders",
       "Countermilling - undercut",
       "False gates"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11275,14 +8313,9 @@
         "model": "Rosengrens 32A81S / 32C81P"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11291,14 +8324,9 @@
         "model": "Sargent Keso"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11307,14 +8335,9 @@
         "model": "UrbanAlps Stealth Key SK1"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11323,14 +8346,9 @@
         "model": "UrbanAlps Stealth Key SK2"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11345,11 +8363,7 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11364,11 +8378,7 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11378,14 +8388,9 @@
         "model": "West 917"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11394,14 +8399,9 @@
         "model": "Winkhaus X-Tra (≥13 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black1",
@@ -11411,20 +8411,16 @@
         "model": "Zeiss Ikon WSW (5 sliders)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/IKON_WSW"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11434,14 +8430,9 @@
         "model": "Abloy Disklock Pro"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11451,19 +8442,15 @@
         "model": "Abloy Exec"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Exec"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11487,14 +8474,12 @@
       "Active Sidebar",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11515,14 +8500,12 @@
       "Countermilling - serrated/threaded",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11546,14 +8529,12 @@
       "Active Sidebar",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11563,12 +8544,9 @@
         "model": "BiLock (12-pins) (0 mastered elements) (upgrade of 8-pin version)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki_FG",
@@ -11578,8 +8556,7 @@
         "text": "LockWiki_NG",
         "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11589,14 +8566,9 @@
         "model": "BiLock (ASIO/SCEC) (2nd/3rd gen)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11606,19 +8578,15 @@
         "model": "BiLock Exclusive (Picked to Control)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_Exclusive"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11627,14 +8595,9 @@
         "model": "Clavis F-22 (upgrade of Clavis Q-18)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11643,14 +8606,9 @@
         "model": "Clavis T-20 (20 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11666,10 +8624,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11685,10 +8640,7 @@
     "features": [
       "False gates",
       "Active Sidebar"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11701,11 +8653,7 @@
     "version": "w/ false gates || 0 mastered levers",
     "lockingMechanisms": [
       "Other"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11722,10 +8670,7 @@
     "features": [
       "High pin count",
       "Torpedoes"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11741,10 +8686,7 @@
     "features": [
       "High pin count",
       "Torpedoes"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11753,14 +8695,9 @@
         "model": "Kaba Penta (21 or more pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11769,14 +8706,9 @@
         "model": "Kaba Quattro / experT (21 pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11785,14 +8717,9 @@
         "model": "Kaba Star (5+ rows) (21 or more pins)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11802,14 +8729,9 @@
         "model": "Miwa PR (9-10 unmastered elements) (upgrade of Miwa PS)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11819,14 +8741,9 @@
         "model": "Miwa U9 (9 unmastered elements)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11835,14 +8752,9 @@
         "model": "Robur disc detainer SDB lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11851,14 +8763,9 @@
         "model": "Tann Detector/Chubb Detector from 50s"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11867,14 +8774,9 @@
         "model": "Western Electric 29B"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11883,14 +8785,9 @@
         "model": "Yanai R 2200M"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11910,10 +8807,7 @@
       "Active Sidebar",
       "Tapered drivers",
       "Guttable"
-    ],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black2",
@@ -11926,20 +8820,16 @@
         "model": " upgrade of WSW with 5 sliders)"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidepins"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/IKON_WSW"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -11949,19 +8839,15 @@
         "model": "Abloy Protec"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Abloy_Protec"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -11971,14 +8857,9 @@
         "model": "Abloy Protec2"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Disc Detainer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -12012,14 +8893,12 @@
       "Active Sidebar",
       "Guttable"
     ],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/ASSA_dp4400"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -12028,14 +8907,9 @@
         "model": "Bowley Door Lock"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -12045,19 +8919,15 @@
         "model": "EVVA MCS gen 1 / MCS gen 2 / Zeiss Ikon M"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Magnet"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/EVVA_MCS"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -12067,14 +8937,9 @@
         "model": "Goal Grand V"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black3",
@@ -12087,11 +8952,7 @@
     "version": "11 unmastered elements, upgrade of Miwa PS",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black4",
@@ -12103,11 +8964,7 @@
     "version": "jewellery box (Steel comb leaf spring)",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black4",
@@ -12119,14 +8976,9 @@
         "model": " 6K174 isolator"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black4",
@@ -12140,8 +8992,6 @@
     "lockingMechanisms": [
       "Other"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
@@ -12163,19 +9013,15 @@
         "model": "Opnus Memolis"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Opnus_Memolis"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black4",
@@ -12185,14 +9031,9 @@
         "model": "Opnus MMXII"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black5",
@@ -12206,15 +9047,12 @@
     "lockingMechanisms": [
       "Other"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Fichet_F3D"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black5",
@@ -12224,14 +9062,9 @@
         "model": "Kromer Protector"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Wafer"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black5",
@@ -12244,15 +9077,12 @@
     "lockingMechanisms": [
       "Lever"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/NATO_Mersey"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black5",
@@ -12265,15 +9095,12 @@
     "lockingMechanisms": [
       "Lever"
     ],
-    "features": [],
-    "regions": [],
     "links": [
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/NATO_Mersey"
       }
-    ],
-    "media": []
+    ]
   },
   {
     "belt": "black5",
@@ -12282,14 +9109,9 @@
         "model": "Western Electric 30C"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Lever"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   },
   {
     "belt": "black5",
@@ -12298,13 +9120,8 @@
         "model": "Yuema 750 / Forte Enigma"
       }
     ],
-    "version": "",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [],
-    "regions": [],
-    "links": [],
-    "media": []
+    ]
   }
 ]

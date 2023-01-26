@@ -23,13 +23,36 @@ const darkTheme = createTheme({
 })
 
 function Root() {
+    const style = getRootStyle(darkTheme)
     return (
         <ThemeProvider theme={darkTheme}>
             <CssBaseline/>
+            <style>{style}</style>
 
             <App/>
         </ThemeProvider>
     )
+}
+
+const getRootStyle = styleTheme => {
+    const linkTextColor = styleTheme.palette.action.link
+    const backgroundColor = styleTheme.palette.background.default
+
+    return `
+            body {
+                background-color: ${backgroundColor};
+                margin: 0;
+                padding: 0;
+            }
+            
+            a {
+                color: ${linkTextColor};
+            }
+            
+            :root {
+              color-scheme: dark;
+            }
+        `
 }
 
 export default Root
