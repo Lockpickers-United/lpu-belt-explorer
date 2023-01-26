@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import IconButton from '@mui/material/IconButton'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
-import {Dialog, DialogContent, Slide, Tooltip} from '@mui/material'
+import {Card, CardContent, Dialog, DialogContent, Slide, Tooltip} from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import CloseIcon from '@mui/icons-material/Close.js'
 import Typography from '@mui/material/Typography'
+import ReactMarkdown from 'react-markdown'
+import infoText from './data/info.md?raw'
 
 function InfoButton() {
     const [open, setOpen] = useState(false)
@@ -41,7 +43,11 @@ function InfoButton() {
                     </Toolbar>
                 </AppBar>
                 <DialogContent>
-                    <Typography>TODO</Typography>
+                    <Card>
+                        <CardContent>
+                            <ReactMarkdown>{infoText}</ReactMarkdown>
+                        </CardContent>
+                    </Card>
                 </DialogContent>
             </Dialog>
         </React.Fragment>
