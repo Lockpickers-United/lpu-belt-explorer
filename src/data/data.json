@@ -161,7 +161,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_1"
+      }
+    ],
     "media": []
   },
   {
@@ -180,7 +185,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_2"
+      }
+    ],
     "media": []
   },
   {
@@ -199,7 +209,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_3"
+      }
+    ],
     "media": []
   },
   {
@@ -218,7 +233,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_4"
+      }
+    ],
     "media": []
   },
   {
@@ -349,7 +369,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_55"
+      }
+    ],
     "media": []
   },
   {
@@ -368,7 +393,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_64TI"
+      }
+    ],
     "media": []
   },
   {
@@ -520,7 +550,12 @@
       "Guttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/American_Lock_5200"
+      }
+    ],
     "media": []
   },
   {
@@ -1212,7 +1247,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_130"
+      }
+    ],
     "media": []
   },
   {
@@ -1235,7 +1275,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_140"
+      }
+    ],
     "media": []
   },
   {
@@ -1842,7 +1887,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_Diskus_25"
+      }
+    ],
     "media": []
   },
   {
@@ -2389,7 +2439,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_150"
+      }
+    ],
     "media": []
   },
   {
@@ -4357,7 +4412,12 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
+      }
+    ],
     "media": []
   },
   {
@@ -4376,7 +4436,12 @@
       "Unguttable"
     ],
     "regions": [],
-    "links": [],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
+      }
+    ],
     "media": []
   },
   {
@@ -8466,20 +8531,7 @@
         "url": "https://www.youtube.com/watch?v=dSChpjaax-A&pp=ugMICgJlbhABGAE%3D"
       }
     ],
-    "media": [
-      {
-        "text": "keyway and plug",
-        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/assa-d12.jpg"
-      },
-      {
-        "text": "Key and Keypins",
-        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/ASSA-d12-correct-700.jpg"
-      },
-      {
-        "text": "Cutaway",
-        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/assa-d12-grabbing-pin.jpg"
-      }
-    ]
+    "media": []
   },
   {
     "belt": "brown",
@@ -10642,10 +10694,10 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon tk5 sperwellenprofil (with serrated fingerpins)"
+        "model": "Zeiss Ikon tk5 sperwellenprofil"
       }
     ],
-    "version": "",
+    "version": "with serrated fingerpins",
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidepins"
@@ -10675,7 +10727,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy Sentry"
+        "model": "Sentry"
       }
     ],
     "version": "",
@@ -10691,13 +10743,11 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers"
-      },
-      {
-        "model": " ≥2 tree pins)"
+        "make": "ASSA",
+        "model": "700"
       }
     ],
-    "version": "7 pin with 2 or more tree drivers",
+    "version": "Gin/tree pins and matching countermilling in 4+ chambers, ≥ 2 tree pins",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -10715,12 +10765,7 @@
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
     ],
-    "media": [
-      {
-        "text": "cutaway",
-        "url": "https://blackbag.toool.nl/wp-content/uploads/2010/12/assa-700.jpg"
-      }
-    ]
+    "media": []
   },
   {
     "belt": "black1",
@@ -11144,8 +11189,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "MIWA",
-        "model": "Miwa LB"
+        "make": "Miwa",
+        "model": "LB"
       }
     ],
     "version": "",
@@ -11159,11 +11204,11 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "MIWA",
-        "model": "Miwa PR (7-8 unmastered elements) (upgrade of Miwa PS)"
+        "make": "Miwa",
+        "model": "PR"
       }
     ],
-    "version": "",
+    "version": "7-8 unmastered elements, upgrade of Miwa PS",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ],
@@ -11176,11 +11221,11 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "MIWA",
-        "model": "Miwa U9 (8 unmastered elements)"
+        "make": "Miwa",
+        "model": "U9"
       }
     ],
-    "version": "",
+    "version": "8 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ],
@@ -11930,7 +11975,19 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "ASSA dp4400 / dp11 / Trioving dp / Ruko Garant+"
+        "model": "dp4400"
+      },
+      {
+        "make": "ASSA",
+        "model": "dp11"
+      },
+      {
+        "make": "TrioVing",
+        "model": "dp"
+      },
+      {
+        "make": "Ruko",
+        "model": "Garant+"
       }
     ],
     "version": "6 pin with 10 sliders",
@@ -12013,11 +12070,11 @@
     "belt": "black3",
     "makeModels": [
       {
-        "make": "MIWA",
-        "model": "Miwa PR (11 unmastered elements) (upgrade of Miwa PS)"
+        "make": "Miwa",
+        "model": "PR"
       }
     ],
-    "version": "",
+    "version": "11 unmastered elements, upgrade of Miwa PS",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ],
