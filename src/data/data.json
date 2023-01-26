@@ -901,7 +901,7 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Mako",
+        "make": "MAKO",
         "model": "227"
       }
     ],
@@ -1450,7 +1450,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Titalium 54TI/50"
+        "model": "54TI/50 Titalium"
       }
     ],
     "lockingMechanisms": [
@@ -1465,7 +1465,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Titalium Ti12"
+        "model": "Ti12 Titalium"
       }
     ],
     "lockingMechanisms": [
@@ -2319,7 +2319,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Titalium 80TI"
+        "model": "80TI Titalium"
       }
     ],
     "lockingMechanisms": [
@@ -3226,7 +3226,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Mako",
+        "make": "MAKO",
         "model": "425"
       }
     ],
@@ -3238,7 +3238,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Mako",
+        "make": "MAKO",
         "model": "427"
       }
     ],
@@ -3422,7 +3422,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Paclock",
+        "make": "PACLOCK",
         "model": "90A"
       }
     ],
@@ -3434,7 +3434,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Paclock",
+        "make": "PACLOCK",
         "model": "95g"
       }
     ],
@@ -3446,7 +3446,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Paclock",
+        "make": "PACLOCK",
         "model": "100a"
       }
     ],
@@ -3459,7 +3459,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Paclock",
+        "make": "PACLOCK",
         "model": "100G"
       }
     ],
@@ -3471,7 +3471,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Paclock",
+        "make": "PACLOCK",
         "model": "PL 90A-pro"
       }
     ],
@@ -3483,7 +3483,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Paclock",
+        "make": "PACLOCK",
         "model": "UCS"
       }
     ],
@@ -3690,7 +3690,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "K2 (with Zeiss Ikon Core)"
       }
     ],
@@ -3702,7 +3702,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "N1"
       }
     ],
@@ -3714,7 +3714,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "P031"
       }
     ]
@@ -4018,7 +4018,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Cisa",
+        "make": "CISA",
         "model": "Astral S"
       }
     ],
@@ -4030,7 +4030,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Cisa",
+        "make": "CISA",
         "model": "C3000"
       }
     ],
@@ -4619,7 +4619,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Miwa DS"
+        "make": "MIWA",
+        "model": "DS"
       }
     ],
     "lockingMechanisms": [
@@ -4630,7 +4631,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Mottura Champions C28/C29"
+        "make": "Mottura",
+        "model": "Champions C28/C29"
       }
     ]
   },
@@ -4663,7 +4665,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Paclock 90A Pro"
+        "make": "PACLOCK",
+        "model": "90A Pro"
       }
     ],
     "lockingMechanisms": [
@@ -4674,7 +4677,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Paclock PL410"
+        "make": "PACLOCK",
+        "model": "PL410"
       }
     ],
     "lockingMechanisms": [
@@ -4696,7 +4700,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Ruko R501"
+        "make": "Ruko",
+        "model": "R501"
       }
     ],
     "lockingMechanisms": [
@@ -4756,7 +4761,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "TESA T60"
+        "make": "TESA",
+        "model": "T60"
       }
     ],
     "lockingMechanisms": [
@@ -4801,7 +4807,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Vachette VIP / VIP+"
+        "make": "Vachette",
+        "model": "VIP / VIP+"
       }
     ]
   },
@@ -4817,7 +4824,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Winkhaus N-Tra"
+        "make": "Winkhaus",
+        "model": "N-Tra"
       }
     ]
   },
@@ -4825,7 +4833,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Winkhaus Titan"
+        "make": "Winkhaus",
+        "model": "Titan"
       }
     ]
   },
@@ -4833,7 +4842,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Yale 500 series"
+        "make": "Yale",
+        "model": "500 series"
       }
     ]
   },
@@ -4853,7 +4863,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "P031 (N6 profile)"
       }
     ],
@@ -4865,7 +4875,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "Sk6 vector"
       }
     ]
@@ -4874,7 +4884,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "SK7"
       }
     ]
@@ -4883,7 +4893,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "Zeiss IKON",
         "model": "Undercut"
       }
     ]
@@ -4980,7 +4990,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Aldon Corporation Hot Dog Lock"
+        "make": "Aldon Corporation",
+        "model": "Hot Dog Lock"
       }
     ]
   },
@@ -5131,7 +5142,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Avocet ABS"
+        "make": "Avocet",
+        "model": "ABS"
       }
     ],
     "lockingMechanisms": [
@@ -5187,7 +5199,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Bricard Chifral (all versions) (<15 pins)"
+        "make": "Bricard",
+        "model": "Chifral (all versions) (<15 pins)"
       }
     ],
     "version": "all versions, <15 pins",
@@ -5199,7 +5212,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Bricard Supersureté"
+        "make": "Bricard",
+        "model": "Supersureté"
       }
     ]
   },
@@ -5207,7 +5221,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Burg Wächter Alpha 800 -- Non-removable core"
+        "make": "Burg Wächter",
+        "model": "Alpha 800 -- Non-removable core"
       }
     ],
     "version": "non removable core",
@@ -5227,7 +5242,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Chubb Battleship"
+        "make": "Chubb",
+        "model": "Battleship"
       }
     ],
     "version": "6 lever",
@@ -5239,7 +5255,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Chubb Biaxial"
+        "make": "Chubb",
+        "model": "Biaxial"
       }
     ],
     "lockingMechanisms": [
@@ -5262,7 +5279,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Corbin Master Ring"
+        "make": "Corbin",
+        "model": "Master Ring"
       }
     ],
     "notes": "Both shearlines must be filmed in one take"
@@ -5294,7 +5312,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Dom IX Twido"
+        "make": "DOM",
+        "model": "ix Twido"
       }
     ],
     "lockingMechanisms": [
@@ -5305,7 +5324,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "DOM ix6sr"
+        "make": "DOM",
+        "model": "ix6sr"
       }
     ],
     "lockingMechanisms": [
@@ -5322,7 +5342,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "DOM ix10"
+        "make": "DOM",
+        "model": "ix10"
       }
     ],
     "version": "without fins",
@@ -5343,7 +5364,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Elzett X11"
+        "make": "Elzett",
+        "model": "X11"
       }
     ]
   },
@@ -5385,7 +5407,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Fichet 450"
+        "make": "Fichet",
+        "model": "450"
       }
     ],
     "version": "no false gates",
@@ -5422,7 +5445,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Ifam WX1000"
+        "make": "Ifam",
+        "model": "WX1000"
       }
     ]
   },
@@ -5430,7 +5454,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Illinois Duo"
+        "make": "Illinois",
+        "model": "Duo"
       }
     ],
     "lockingMechanisms": [
@@ -5441,7 +5466,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Ingersoll 10 lever padlock"
+        "make": "Ingersoll",
+        "model": "10 lever padlock"
       }
     ],
     "lockingMechanisms": [
@@ -5452,7 +5478,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Iseo Perfecta (requires 360)"
+        "make": "Iseo",
+        "model": "Perfecta (requires 360)"
       }
     ]
   },
@@ -5460,18 +5487,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Iseo R7"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ]
-  },
-  {
-    "belt": "purple",
-    "makeModels": [
-      {
-        "model": "Kaba 8 (3-row) (≥9 pins)"
+        "make": "Iseo",
+        "model": "R7"
       }
     ],
     "lockingMechanisms": [
@@ -5482,7 +5499,20 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Kaba Gege pExtra 6-7 pin"
+        "make": "Kaba",
+        "model": "8 (3-row) (≥9 pins)"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ]
+  },
+  {
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "Kaba",
+        "model": "Gege pExtra 6-7 pin"
       }
     ],
     "lockingMechanisms": [
@@ -5493,7 +5523,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Kaken KX3"
+        "make": "Kaken",
+        "model": "KX3"
       }
     ],
     "version": "exterior, 6+ sliders",
@@ -5510,7 +5541,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Kale Kilit 164 BNE"
+        "make": "Kale Kilit",
+        "model": "164 BNE"
       }
     ],
     "lockingMechanisms": [
@@ -5521,7 +5553,16 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Keso 10RS / 2000S / 4000S (Omega)"
+        "make": "Keso",
+        "model": "10RS"
+      },
+      {
+        "make": "Keso",
+        "model": "2000S"
+      },
+      {
+        "make": "Keso",
+        "model": "4000S (Omega)"
       }
     ],
     "lockingMechanisms": [
@@ -5532,7 +5573,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Kwikset Smartkey (Gen III)"
+        "make": "Kwikset",
+        "model": "Smartkey (Gen III)"
       }
     ],
     "lockingMechanisms": [
@@ -5543,7 +5585,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Kwikset Smartkey (Gens I & II)"
+        "make": "Kwikset",
+        "model": "Smartkey (Gens I & II)"
       }
     ],
     "lockingMechanisms": [
@@ -5554,7 +5597,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Kwikset Smartkey SC1 gen I"
+        "make": "Kwikset",
+        "model": "Smartkey SC1 gen I"
       }
     ],
     "lockingMechanisms": [
@@ -5733,6 +5777,7 @@
     "belt": "purple",
     "makeModels": [
       {
+        "make": "Liquidonics Industries ",
         "model": "Miracle Magnetic"
       }
     ],
@@ -5744,7 +5789,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Miwa Magnetic Camlock"
+        "make": "MIWA",
+        "model": "Magnetic Camlock"
       }
     ],
     "lockingMechanisms": [
@@ -5763,7 +5809,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Mottura Champions C38****"
+        "make": "Mottura",
+        "model": "Champions C38****"
       }
     ],
     "lockingMechanisms": [
@@ -5775,7 +5822,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Mottura Viper"
+        "make": "Mottura",
+        "model": "Viper"
       }
     ]
   },
@@ -5949,7 +5997,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "TESA T80 / TX80"
+        "make": "TESA",
+        "model": "T80 / TX80"
       }
     ],
     "lockingMechanisms": [
@@ -5960,7 +6009,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Tesa Tk 100"
+        "make": "TESA",
+        "model": "TK100"
       }
     ],
     "lockingMechanisms": [
@@ -6031,7 +6081,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Vachette Axi'Home"
+        "make": "Vachette",
+        "model": "Axi'Home"
       }
     ]
   },
@@ -6039,7 +6090,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Yale 5000"
+        "make": "Yale",
+        "model": "5000"
       }
     ],
     "lockingMechanisms": [
@@ -6148,7 +6200,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Alpha FB (<15 pins)"
+        "make": "ALPHA",
+        "model": "FB (<15 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6159,7 +6212,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Alpha YKK AP"
+        "make": "ALPHA",
+        "model": "YKK AP"
       }
     ],
     "lockingMechanisms": [
@@ -6339,7 +6393,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Bricard Chifral (all versions) (fully pinned)"
+        "make": "Bricard",
+        "model": "Chifral (all versions) (fully pinned)"
       }
     ],
     "lockingMechanisms": [
@@ -6486,7 +6541,12 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Fichet 450/484"
+        "make": "Fichet",
+        "model": "450"
+      },
+      {
+        "make": "Fichet",
+        "model": "484"
       }
     ],
     "version": "w/ false gates || 4-6 mastered levers",
@@ -6498,7 +6558,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Fichet 666"
+        "make": "Fichet",
+        "model": "666"
       }
     ],
     "lockingMechanisms": [
@@ -6531,7 +6592,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Goal D9"
+        "make": "GOAL",
+        "model": "D9"
       }
     ],
     "version": "9 pin",
@@ -6548,7 +6610,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Goal P"
+        "make": "GOAL",
+        "model": "P"
       }
     ],
     "version": "6 pin",
@@ -6595,7 +6658,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Kaba 14 (<13 pins)"
+        "make": "Kaba",
+        "model": "14 (<13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6606,7 +6670,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Kaba Ace (<13 pins)"
+        "make": "Kaba",
+        "model": "Ace (<13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6617,7 +6682,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Kaba Gemini (<13 pins)"
+        "make": "Kaba",
+        "model": "Gemini (<13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6628,7 +6694,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Kaba Gemini pluS (<14 pins)"
+        "make": "Kaba",
+        "model": "Gemini pluS (<14 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6639,7 +6706,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Kaken KXR"
+        "make": "Kaken",
+        "model": "KXR"
       }
     ],
     "lockingMechanisms": [
@@ -6655,7 +6723,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Kale Kilit 164 CEC"
+        "make": "Kale Kilit",
+        "model": "164 CEC"
       }
     ],
     "lockingMechanisms": [
@@ -6758,11 +6827,11 @@
     "media": [
       {
         "text": "key",
-        "url": "https://imgur.com/V7GX9vx"
+        "url": "https://i.imgur.com/V7GX9vx.png"
       },
       {
         "text": "lock",
-        "url": "https://imgur.com/aAId8nT"
+        "url": "https://i.imgur.com/aAId8nT.png"
       }
     ]
   },
@@ -6781,7 +6850,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Miwa EC"
+        "make": "MIWA",
+        "model": "EC"
       }
     ],
     "lockingMechanisms": [
@@ -6910,7 +6980,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Vachette Radial NT/NT+ (<13 pins)"
+        "make": "Vachette",
+        "model": "Radial NT/NT+ (<13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6943,11 +7014,11 @@
     "belt": "brown",
     "makeModels": [
       {
-        "make": "West",
+        "make": "WEST",
         "model": "916"
       },
       {
-        "make": "West",
+        "make": "WEST",
         "model": "955"
       }
     ],
@@ -6959,7 +7030,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Winkhaus X-Tra (<9 pins)"
+        "make": "Winkhaus",
+        "model": "X-Tra (<9 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -7200,7 +7272,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Chubb 110"
+        "make": "Chubb",
+        "model": "110"
       }
     ],
     "version": "5 lever",
@@ -7464,7 +7537,7 @@
         "model": "20"
       },
       {
-        "make": "Miwa",
+        "make": "MIWA",
         "model": "JN"
       },
       {
@@ -7589,7 +7662,7 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "Miwa PR (<7 unmastered wafers)"
+        "model": "PR (<7 unmastered wafers)"
       }
     ],
     "lockingMechanisms": [
@@ -7613,7 +7686,7 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "Miwa U9 (<8 unmastered levers)"
+        "model": "U9 (<8 unmastered levers)"
       }
     ],
     "lockingMechanisms": [
@@ -7624,7 +7697,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Mottura 52"
+        "make": "Mottura",
+        "model": "52"
       }
     ],
     "version": "7 lever",
@@ -7636,7 +7710,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Mottura Champions C43/C44/C48"
+        "make": "Mottura",
+        "model": "Champions C43/C44/C48"
       }
     ],
     "lockingMechanisms": [
@@ -7648,7 +7723,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Mottura Champtions C55"
+        "make": "Mottura",
+        "model": "Champtions C55"
       }
     ],
     "lockingMechanisms": [
@@ -7722,7 +7798,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Ruko Combi 2"
+        "make": "Ruko",
+        "model": "Combi 2"
       }
     ],
     "version": "6 pin with 5 finger pins",
@@ -7822,7 +7899,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Vachette Axi'Tec"
+        "make": "Vachette",
+        "model": "Axi'Tec"
       }
     ],
     "lockingMechanisms": [
@@ -7833,7 +7911,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Vachette Radial NT/NT+ (≥13 pins)"
+        "make": "Vachette",
+        "model": "Radial NT/NT+ (≥13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -7844,7 +7923,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Winkhaus X-Tra (9-13 pins)"
+        "make": "Winkhaus",
+        "model": "X-Tra (9-13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -8031,7 +8111,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Chubb ‘Definitive’ - Standard mortice"
+        "make": "Chubb",
+        "model": "‘Definitive’ - Standard mortice"
       }
     ],
     "lockingMechanisms": [
@@ -8053,7 +8134,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "DOM Diamant"
+        "make": "DOM",
+        "model": "Diamant"
       }
     ],
     "lockingMechanisms": [
@@ -8064,7 +8146,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "DOM ix Twinstar"
+        "make": "DOM",
+        "model": "ix Twinstar"
       }
     ],
     "lockingMechanisms": [
@@ -8141,7 +8224,11 @@
     "makeModels": [
       {
         "make": "Fichet",
-        "model": "Fichet 450/484"
+        "model": "450"
+      },
+      {
+        "make": "Fichet",
+        "model": "484"
       }
     ],
     "version": "w/ false gates || 1 mastered lever",
@@ -8166,7 +8253,7 @@
     "makeModels": [
       {
         "make": "GOAL",
-        "model": "Goal v18 / GP"
+        "model": "V18 / GP"
       }
     ],
     "version": "14-16 pins",
@@ -8183,7 +8270,7 @@
     "makeModels": [
       {
         "make": "GOAL",
-        "model": "Goal Z"
+        "model": "Z"
       }
     ],
     "version": "<2 standard drivers",
@@ -8211,7 +8298,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Kaba Penta (15-20 pins)"
+        "make": "Kaba",
+        "model": "Penta (15-20 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -8233,7 +8321,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Kaba Star (5+ rows) (16-20 pins)"
+        "make": "Kaba",
+        "model": "Star (5+ rows) (16-20 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -8255,7 +8344,7 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "Miwa",
+        "make": "MIWA",
         "model": "LB"
       }
     ]
@@ -8264,7 +8353,7 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "Miwa",
+        "make": "MIWA",
         "model": "PR"
       }
     ],
@@ -8277,7 +8366,7 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "Miwa",
+        "make": "MIWA",
         "model": "U9"
       }
     ],
@@ -8396,7 +8485,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Winkhaus X-Tra (≥13 pins)"
+        "make": "Winkhaus",
+        "model": "X-Tra (≥13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -8647,7 +8737,11 @@
     "makeModels": [
       {
         "make": "Fichet",
-        "model": "Fichet 450/484"
+        "model": "450"
+      },
+      {
+        "make": "Fichet",
+        "model": "484"
       }
     ],
     "version": "w/ false gates || 0 mastered levers",
@@ -8660,7 +8754,7 @@
     "makeModels": [
       {
         "make": "GOAL",
-        "model": "Goal v18 / GP"
+        "model": "V18 / GP"
       }
     ],
     "version": "≥17 pins",
@@ -8692,7 +8786,8 @@
     "belt": "black2",
     "makeModels": [
       {
-        "model": "Kaba Penta (21 or more pins)"
+        "make": "Kaba",
+        "model": "Penta (21 or more pins)"
       }
     ],
     "lockingMechanisms": [
@@ -8714,7 +8809,8 @@
     "belt": "black2",
     "makeModels": [
       {
-        "model": "Kaba Star (5+ rows) (21 or more pins)"
+        "make": "Kaba",
+        "model": "Star (5+ rows) (21 or more pins)"
       }
     ],
     "lockingMechanisms": [
@@ -8726,7 +8822,7 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "Miwa PR (9-10 unmastered elements) (upgrade of Miwa PS)"
+        "model": "PR (9-10 unmastered elements) (upgrade of Miwa PS)"
       }
     ],
     "lockingMechanisms": [
@@ -8738,7 +8834,7 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "Miwa U9 (9 unmastered elements)"
+        "model": "U9 (9 unmastered elements)"
       }
     ],
     "lockingMechanisms": [
@@ -8934,7 +9030,7 @@
     "makeModels": [
       {
         "make": "GOAL",
-        "model": "Goal Grand V"
+        "model": "Grand V"
       }
     ],
     "lockingMechanisms": [
@@ -8945,7 +9041,7 @@
     "belt": "black3",
     "makeModels": [
       {
-        "make": "Miwa",
+        "make": "MIWA",
         "model": "PR"
       }
     ],
@@ -8958,7 +9054,8 @@
     "belt": "black4",
     "makeModels": [
       {
-        "model": "Chubb ‘Definitive’"
+        "make": "Chubb",
+        "model": "‘Definitive’"
       }
     ],
     "version": "jewellery box (Steel comb leaf spring)",
@@ -8970,10 +9067,8 @@
     "belt": "black4",
     "makeModels": [
       {
-        "model": "Chubb"
-      },
-      {
-        "model": " 6K174 isolator"
+        "make": "Chubb",
+        "model": "6K174 isolator"
       }
     ],
     "lockingMechanisms": [
@@ -9040,7 +9135,7 @@
     "makeModels": [
       {
         "make": "Fichet",
-        "model": "Fichet F3D"
+        "model": "F3D"
       }
     ],
     "version": "outside cylinder, upgrade of indoor cylinder",
