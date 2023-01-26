@@ -6726,7 +6726,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "ABUS",
+        "make": "Abus",
         "model": "Abus Bravus 4000"
       }
     ],
@@ -6743,7 +6743,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "ABUS",
+        "make": "Abus",
         "model": "Abus EP10"
       }
     ],
@@ -6760,7 +6760,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "ABUS",
+        "make": "Abus",
         "model": "Abus TS5000"
       }
     ],
@@ -6777,11 +6777,11 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "ABUS",
+        "make": "Abus",
         "model": "XP20s"
       },
       {
-        "make": "ABUS",
+        "make": "Abus",
         "model": "XP2s"
       },
       {
@@ -9263,8 +9263,18 @@
     ],
     "features": [],
     "regions": [],
-    "links": [],
-    "media": []
+    "links": [
+      {
+        "text": "Lockwiki",
+        "url": "http://lockwiki.com/index.php/Medeco_Duracam"
+      }
+    ],
+    "media": [
+      {
+        "text": "key",
+        "url": "https://imgur.com/V7GX9vx"
+      }
+    ]
   },
   {
     "belt": "brown",
@@ -9635,7 +9645,7 @@
     "belt": "red",
     "makeModels": [
       {
-        "make": "ABUS",
+        "make": "Abus",
         "model": "EC 700/800"
       }
     ],
@@ -12123,7 +12133,7 @@
     "makeModels": [
       {
         "make": "Fichet",
-        "model": "Fichet F3D"
+        "model": "F3D"
       }
     ],
     "version": "indoor cylinder",
@@ -12138,7 +12148,12 @@
         "url": "http://www.lockwiki.com/index.php/Fichet_F3D"
       }
     ],
-    "media": []
+    "media": [
+      {
+        "text": "key",
+        "url": "https://imgur.com/0fBUJKL"
+      }
+    ]
   },
   {
     "belt": "black4",
