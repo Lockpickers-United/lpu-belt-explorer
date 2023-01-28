@@ -1765,7 +1765,7 @@
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Gera Iseo",
+        "make": "ISEO",
         "model": "F5"
       }
     ],
@@ -2117,7 +2117,7 @@
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Zeiss Ikon",
+        "make": "IKON",
         "model": "DS"
       }
     ],
@@ -2427,7 +2427,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Ace",
+        "make": "ACE",
         "model": "A527"
       }
     ],
@@ -3003,7 +3003,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Fab",
+        "make": "FAB",
         "model": "200RS"
       }
     ],
@@ -3033,7 +3033,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Gera Iseo",
+        "make": "ISEO",
         "model": "MC 6500"
       }
     ]
@@ -3042,7 +3042,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Gera Iseo",
+        "make": "ISEO",
         "model": "MC5"
       }
     ]
@@ -3051,7 +3051,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Gera Iseo",
+        "make": "ISEO",
         "model": "R6"
       }
     ],
@@ -3690,8 +3690,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
-        "model": "K2 (with Zeiss Ikon Core)"
+        "make": "IKON",
+        "model": "K2 (with IKON Core)"
       }
     ],
     "lockingMechanisms": [
@@ -3702,7 +3702,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
+        "make": "IKON",
         "model": "N1"
       }
     ],
@@ -3714,7 +3714,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
+        "make": "IKON",
         "model": "P031"
       }
     ]
@@ -3971,6 +3971,7 @@
         "model": "Any uncurtained 5 lever"
       }
     ],
+    "version": "uncurtained 5 lever",
     "lockingMechanisms": [
       "Lever"
     ]
@@ -4270,11 +4271,11 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Fab",
+        "make": "FAB",
         "model": "3* Profi"
       },
       {
-        "make": "Fab",
+        "make": "FAB",
         "model": "Fab 4* Profi"
       }
     ],
@@ -4286,7 +4287,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Fab",
+        "make": "FAB",
         "model": "2000"
       }
     ],
@@ -4307,7 +4308,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Kaba GeGe",
+        "make": "Kaba Gege",
         "model": "AP2000"
       }
     ],
@@ -4319,7 +4320,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Kaba GeGe",
+        "make": "Kaba Gege",
         "model": "AP3000"
       }
     ],
@@ -4373,8 +4374,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Kaba",
-        "model": "Gege pExtra"
+        "make": "Kaba Gege",
+        "model": "pExtra"
       }
     ],
     "version": "5 pin",
@@ -4784,9 +4785,10 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Trioving (Vingcard) 55## (w trampoline pins)"
+        "model": "Trioving (Vingcard) 55##"
       }
     ],
+    "version": "with trampoline pins",
     "lockingMechanisms": [
       "Pin tumbler"
     ]
@@ -4851,9 +4853,10 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Yale Superior / Milencio Magnum (<7 pins)"
+        "model": "Yale Superior / Milencio Magnum"
       }
     ],
+    "version": "<7 pins",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
@@ -4863,7 +4866,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
+        "make": "IKON",
         "model": "P031 (N6 profile)"
       }
     ],
@@ -4875,7 +4878,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
+        "make": "IKON",
         "model": "Sk6 vector"
       }
     ]
@@ -4884,7 +4887,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
+        "make": "IKON",
         "model": "SK7"
       }
     ]
@@ -4893,7 +4896,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Zeiss IKON",
+        "make": "IKON",
         "model": "Undercut"
       }
     ]
@@ -4949,17 +4952,20 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "EP10",
+        "make": "ABUS",
         "model": "XP20s"
       },
       {
+        "make": "ABUS",
         "model": "XP2s"
       },
       {
-        "model": "Cisa AP3"
+        "make": "Cisa",
+        "model": "AP3"
       },
       {
-        "model": "Bricard XP S2"
+        "make": "Bricard",
+        "model": "XP S2"
       }
     ],
     "lockingMechanisms": [
@@ -5029,10 +5035,10 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "500 (with gin drivers and matching countermilling)"
+        "model": "500"
       }
     ],
-    "version": "5 pins",
+    "version": "5 stacks of pins, gin drivers and matching countermilling",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -5047,9 +5053,10 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "500 with Gin drivers and matched sleeve"
+        "model": "500"
       }
     ],
+    "version": "5 stacks of pins, gin drivers and matching sleeve",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -5065,7 +5072,7 @@
         "model": "600"
       }
     ],
-    "version": "barrel spools and matching countermilling",
+    "version": "5 pin stacks, barrel spools and matching countermilling",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -5155,7 +5162,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "BiLock (8 pins) (3-4 mastered pins)"
+        "make": "Australian Lock Company",
+        "model": "BiLock"
       }
     ],
     "version": "8 sliders, 3-4 mastered",
@@ -5177,7 +5185,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "BiLock (12 pins) (7-8 mastered pins)"
+        "make": "Australian Lock Company",
+        "model": "BiLock"
       }
     ],
     "version": "12 sliders, 7-8 mastered",
@@ -5200,7 +5209,7 @@
     "makeModels": [
       {
         "make": "Bricard",
-        "model": "Chifral (all versions) (<15 pins)"
+        "model": "Chifral"
       }
     ],
     "version": "all versions, <15 pins",
@@ -5222,19 +5231,22 @@
     "makeModels": [
       {
         "make": "Burg Wächter",
-        "model": "Alpha 800 -- Non-removable core"
+        "model": "Alpha 800"
       }
     ],
-    "version": "non removable core",
     "lockingMechanisms": [
       "Wafer"
+    ],
+    "features": [
+      "unguttable"
     ]
   },
   {
     "belt": "purple",
     "makeModels": [
       {
-        "model": "CEI \"Five Colors\""
+        "make": "CEI",
+        "model": "\"Five Colors\""
       }
     ]
   },
@@ -5267,7 +5279,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Codkey Locksys (<15 pins)"
+        "make": "Codkey",
+        "model": "Locksys"
       }
     ],
     "version": "<15 pins",
@@ -5289,7 +5302,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "DAF Kilit DBS02"
+        "make": "DAF Kilit",
+        "model": "DBS02"
       }
     ],
     "lockingMechanisms": [
@@ -5301,7 +5315,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Dierre New Power"
+        "make": "Dierre",
+        "model": "New Power"
       }
     ],
     "lockingMechanisms": [
@@ -5355,7 +5370,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Eagle \"Supr-Security\""
+        "make": "Eagle",
+        "model": "\"Supr-Security\""
       }
     ],
     "version": "without shutter"
@@ -5373,9 +5389,11 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Emhart (4 pins)"
+        "make": "Corbin / Russwin",
+        "model": "Emhart"
       }
     ],
+    "version": "4 pins",
     "lockingMechanisms": [
       "Pin tumbler"
     ],
@@ -5390,7 +5408,20 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "EVVA DPI/DPS/DPX/EPS"
+        "make": "EVVA",
+        "model": "DPI"
+      },
+      {
+        "make": "EVVA",
+        "model": "DPS"
+      },
+      {
+        "make": "EVVA",
+        "model": "DPX"
+      },
+      {
+        "make": "EVVA",
+        "model": "EPS"
       }
     ],
     "version": "Slider version",
@@ -5478,7 +5509,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Iseo",
+        "make": "ISEO",
         "model": "Perfecta (requires 360)"
       }
     ]
@@ -5487,7 +5518,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Iseo",
+        "make": "ISEO",
         "model": "R7"
       }
     ],
@@ -5633,7 +5664,12 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Lips Keso (door cylinder) / Lips Octro (<13 pins)"
+        "make": "LIPS",
+        "model": "Keso (door cylinder)"
+      },
+      {
+        "make": "LIPS",
+        "model": "Octro (<13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -5644,7 +5680,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Lips Keso padlock"
+        "make": "LIPS",
+        "model": "Keso padlock"
       }
     ],
     "lockingMechanisms": [
@@ -5655,7 +5692,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Lockman Megacross (9-pins"
+        "make": "Lockman",
+        "model": "Megacross (9-pins"
       },
       {
         "model": " mushroom drivers)"
@@ -5669,7 +5707,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Lockwood MT5 (VPI"
+        "make": "Lockwood",
+        "model": "MT5 (VPI"
       },
       {
         "model": " heavily mastered)***"
@@ -5684,7 +5723,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Lockwood Twin"
+        "make": "Lockwood",
+        "model": "Twin"
       }
     ],
     "lockingMechanisms": [
@@ -5713,7 +5753,12 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "M&C Condor / M&C Move"
+        "make": "M&C",
+        "model": "Condor"
+      },
+      {
+        "make": "M&C",
+        "model": "Move"
       }
     ],
     "lockingMechanisms": [
@@ -5729,7 +5774,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "M&C Matrix"
+        "make": "M&C",
+        "model": "Matrix"
       }
     ],
     "lockingMechanisms": [
@@ -5745,7 +5791,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Magnum Atlantic"
+        "make": "Magnum",
+        "model": "Atlantic"
       }
     ]
   },
@@ -5753,7 +5800,16 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Medeco Original / Biaxial / M3 (5+ pins)"
+        "make": "Medeco",
+        "model": "Original"
+      },
+      {
+        "make": "Medeco",
+        "model": "Biaxial"
+      },
+      {
+        "make": "Medeco",
+        "model": "M3 (5+ pins)"
       }
     ],
     "lockingMechanisms": [
@@ -5765,7 +5821,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Medeco Original Camlock (5+ pins)"
+        "make": "Medeco",
+        "model": "Original Camlock (5+ pins)"
       }
     ],
     "lockingMechanisms": [
@@ -5887,7 +5944,12 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Nemef NF2 / NF3"
+        "make": "Nemef",
+        "model": "NF2"
+      },
+      {
+        "make": "Nemef",
+        "model": "NF3"
       }
     ],
     "lockingMechanisms": [
@@ -5898,7 +5960,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Nemef NF4"
+        "make": "Nemef",
+        "model": "NF4"
       }
     ],
     "lockingMechanisms": [
@@ -5909,7 +5972,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Opnus UX"
+        "make": "Opnus",
+        "model": "UX"
       }
     ]
   },
@@ -5917,7 +5981,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Pollux 5"
+        "make": "Pollux",
+        "model": "5"
       }
     ]
   },
@@ -5925,7 +5990,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Rav Bariach Locxis"
+        "make": "Rav Bariach",
+        "model": "Locxis"
       }
     ],
     "lockingMechanisms": [
@@ -5944,7 +6010,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Sargent Signature"
+        "make": "Sargent",
+        "model": "Signature"
       }
     ],
     "lockingMechanisms": [
@@ -5956,7 +6023,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Schlage Everest 29SL"
+        "make": "Schlage",
+        "model": "Everest 29SL"
       }
     ],
     "lockingMechanisms": [
@@ -6021,7 +6089,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Titan T250"
+        "make": "Titan",
+        "model": "T250"
       }
     ]
   },
@@ -6029,7 +6098,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "CompX Chicago",
+        "make": "Tubar",
         "model": "Tubar"
       }
     ],
@@ -6073,7 +6142,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "US Star Tech \"Hi Security\""
+        "make": "US Star Tech",
+        "model": "\"Hi Security\""
       }
     ]
   },
@@ -6115,7 +6185,8 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Zeiss Ikon sk6 vectorprofil rib extra (5 sliders)"
+        "make": "IKON",
+        "model": "sk6 vectorprofil rib extra (5 sliders)"
       }
     ],
     "lockingMechanisms": [
@@ -6127,7 +6198,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Abloy Classic"
+        "make": "Abloy",
+        "model": "Classic"
       }
     ],
     "lockingMechanisms": [
@@ -6454,7 +6526,7 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "ix10"
+        "model": "ix 10"
       }
     ],
     "version": "with shark fins",
@@ -6471,7 +6543,7 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "ix10kg"
+        "model": "ix 10 kg"
       }
     ],
     "lockingMechanisms": [
@@ -6743,7 +6815,12 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Lips Keso (door cylinder) / Lips Octro (≥13 pins)"
+        "make": "LIPS",
+        "model": "Keso (door cylinder)"
+      },
+      {
+        "make": "LIPS",
+        "model": "Lips Octro (≥13 pins)"
       }
     ],
     "lockingMechanisms": [
@@ -6762,7 +6839,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Magnum Mont Blanc"
+        "make": "Magnum",
+        "model": "Mont Blanc"
       }
     ]
   },
@@ -6798,7 +6876,12 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Medeco Biaxial / M3 Camlock"
+        "make": "Medeco",
+        "model": "Biaxial Camlock"
+      },
+      {
+        "make": "Medeco",
+        "model": "M3 Camlock"
       }
     ],
     "lockingMechanisms": [
@@ -6810,7 +6893,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Medeco Duracam -- Non-removable core"
+        "make": "Medeco",
+        "model": "Duracam -- Non-removable core"
       }
     ],
     "lockingMechanisms": [
@@ -6907,7 +6991,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Pollux 7"
+        "make": "Pollux",
+        "model": "7"
       }
     ],
     "lockingMechanisms": [
@@ -7063,7 +7148,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon tk5 sperwellenprofil"
+        "model": "tk5 sperwellenprofil"
       }
     ],
     "version": "with smooth fingerpins",
@@ -7077,7 +7162,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy Disklock"
+        "model": "Disklock"
       }
     ],
     "lockingMechanisms": [
@@ -7095,7 +7180,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy High Profile"
+        "model": "High Profile"
       }
     ],
     "lockingMechanisms": [
@@ -7831,7 +7916,7 @@
     "makeModels": [
       {
         "make": "Schlage",
-        "model": "Schlage Everest 29 SL Primus XP"
+        "model": "Everest 29 SL Primus XP"
       }
     ],
     "lockingMechanisms": [
@@ -7947,7 +8032,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon tk5 sperwellenprofil"
+        "model": "tk5 sperwellenprofil"
       }
     ],
     "version": "with serrated fingerpins",
@@ -7961,7 +8046,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon Verso"
+        "model": "Verso"
       }
     ]
   },
@@ -8333,7 +8418,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Lockman Megacross (with pyramid drivers)"
+        "make": "Lockman",
+        "model": "Megacross (with pyramid drivers)"
       }
     ],
     "lockingMechanisms": [
@@ -8379,7 +8465,7 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Mul-T-Lock MT5+ / 800 / Lockwood MT5 (not mastered) / Zeiss Ikon R10"
+        "model": "Mul-T-Lock MT5+ / 800 / Lockwood MT5 (not mastered) / IKON R10"
       }
     ],
     "lockingMechanisms": [
@@ -8498,7 +8584,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon WSW (5 sliders)"
+        "model": "WSW (5 sliders)"
       }
     ],
     "lockingMechanisms": [
@@ -8517,7 +8603,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy Disklock Pro"
+        "model": "Disklock Pro"
       }
     ],
     "lockingMechanisms": [
@@ -8529,7 +8615,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy Exec"
+        "model": "Exec"
       }
     ],
     "lockingMechanisms": [
@@ -8890,7 +8976,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)"
+        "model": "SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)"
       }
     ],
     "version": "6 pin with 5 finger pins",
@@ -8910,7 +8996,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Zeiss Ikon WSW (7 sliders"
+        "model": "WSW (7 sliders"
       },
       {
         "model": " upgrade of WSW with 5 sliders)"
@@ -8932,7 +9018,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy Protec"
+        "model": "Protec"
       }
     ],
     "lockingMechanisms": [
@@ -8950,7 +9036,7 @@
     "makeModels": [
       {
         "make": "Abloy",
-        "model": "Abloy Protec2"
+        "model": "Protec2"
       }
     ],
     "lockingMechanisms": [
@@ -9012,7 +9098,7 @@
     "makeModels": [
       {
         "make": "EVVA",
-        "model": "EVVA MCS gen 1 / MCS gen 2 / Zeiss Ikon M"
+        "model": "EVVA MCS gen 1 / MCS gen 2 / IKON M"
       }
     ],
     "lockingMechanisms": [
@@ -9105,7 +9191,7 @@
     "makeModels": [
       {
         "make": "Opnus",
-        "model": "Opnus Memolis"
+        "model": "Memolis"
       }
     ],
     "lockingMechanisms": [
@@ -9123,7 +9209,7 @@
     "makeModels": [
       {
         "make": "Opnus",
-        "model": "Opnus MMXII"
+        "model": "MMXII"
       }
     ],
     "lockingMechanisms": [
@@ -9165,7 +9251,8 @@
     "belt": "black5",
     "makeModels": [
       {
-        "model": "NATO Mersey"
+        "make": "NATO",
+        "model": "Mersey"
       }
     ],
     "version": "10 lever",
@@ -9183,7 +9270,8 @@
     "belt": "black5",
     "makeModels": [
       {
-        "model": "NATO Mersey"
+        "make": "NATO",
+        "model": "Mersey"
       }
     ],
     "version": "14 lever",
@@ -9201,7 +9289,8 @@
     "belt": "black5",
     "makeModels": [
       {
-        "model": "Western Electric 30C"
+        "make": "Western Electric",
+        "model": "30C"
       }
     ],
     "lockingMechanisms": [
