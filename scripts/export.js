@@ -12,7 +12,8 @@ const formatted = data.map(datum => ({
     notes: datum.notes,
     regions: datum.regions.join(','),
     links: datum.links.map(link => `[${link.text}](${link.url})`).join(','),
-    media: datum.media?.map(media => `[${media.text}](${media.url})`).join(',')
+    media: datum.media?.map(media => `[${media.text}](${media.url})`).join(','),
+    attribution: datum.attribution?.map(att => `[${att.text}](${att.url})`).join(','),
 }))
 
 const headers = Object.keys(formatted[0])

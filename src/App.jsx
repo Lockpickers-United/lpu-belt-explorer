@@ -2,7 +2,6 @@ import queryString from 'query-string'
 import React, {useEffect, useState} from 'react'
 import Entries from './Entries.jsx'
 import Nav from './Nav.jsx'
-import Footer from './Footer.jsx'
 
 function App() {
     const [searchTerm, setSearchTerm] = useState('')
@@ -21,8 +20,9 @@ function App() {
         if (!data.length) {
             const loadData = async () => {
                 const raw = (await import('./data/data.json')).default
-                const value = raw.map(datum => ({
+                const value = raw.map((datum, index) => ({
                     ...datum,
+                    id: index,
                     makes: datum.makeModels.map(({make}) => make),
                     fuzzy: datum.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')
                 }))
@@ -48,8 +48,6 @@ function App() {
                 query={query}
                 searchTerm={searchTerm}
             />
-
-            <Footer/>
         </React.Fragment>
     )
 }

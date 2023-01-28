@@ -35,6 +35,8 @@ const cleaned = data.map(datum => {
         .map(([,text, url]) => ({text, url}))
     const media = [...datum.Media.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
+    const attribution = [...datum.Attribution.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
+        .map(([,text, url]) => ({text, url}))
 
     const value = {
         belt,
@@ -45,7 +47,8 @@ const cleaned = data.map(datum => {
         notes,
         regions,
         links,
-        media
+        media,
+        attribution
     }
 
     // Clean up empty values to reduce payload size

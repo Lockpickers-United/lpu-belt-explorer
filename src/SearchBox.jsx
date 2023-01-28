@@ -5,10 +5,13 @@ import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useMediaQuery} from 'react-responsive'
 
-function SearchBox({searchTerm, onSearch}) {
+function SearchBox({searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 736})
     const handleSearch = ({target}) => setTimeout(onSearch(target.value))
-    const handleClear = () => onSearch('')
+    const handleClear = event => {
+        onSearch('')
+        onChangeTab(event, 'white')
+    }
     const endAdornment = searchTerm ? (
         <InputAdornment position='end'>
             <IconButton color='inherit' onClick={handleClear} edge='end' size='small'>

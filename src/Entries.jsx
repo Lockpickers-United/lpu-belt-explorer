@@ -38,12 +38,11 @@ function Entries({data, belt, query, searchTerm}) {
 
     return (
         <div style={{marginTop: 8, marginBottom: 8}}>
-            {visibleEntries.map((datum, index) =>
+            {visibleEntries.map(datum =>
                 <Entry
-                    key={index}
-                    index={index}
+                    key={datum.id}
                     entry={datum}
-                    expanded={expanded === index}
+                    expanded={expanded === datum.id}
                     onAccordionChange={setExpanded}
                 />
             )}

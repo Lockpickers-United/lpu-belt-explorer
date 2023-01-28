@@ -28,7 +28,7 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
 
                     <div style={{flexGrow: 1}}></div>
 
-                    <SearchBox searchTerm={searchTerm} onSearch={onSearch}/>
+                    <SearchBox searchTerm={searchTerm} onSearch={onSearch} onChangeTab={onChangeTab}/>
 
                     <div style={{flexGrow: 1}}></div>
 

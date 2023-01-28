@@ -6114,28 +6114,6 @@
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Tubar"
       }
-    ],
-    "media": [
-      {
-        "text": "Cylinder",
-        "url": "http://www.lockwiki.com/images/a/ad/Tubar_cylinder.jpg"
-      },
-      {
-        "text": "Plug/Sidebar",
-        "url": "http://www.lockwiki.com/images/6/69/Tubar_plug_sidebar.jpg"
-      },
-      {
-        "text": "Key",
-        "url": "http://www.lockwiki.com/images/7/74/Tubar_key.jpg"
-      },
-      {
-        "text": "Pins Close",
-        "url": "http://www.lockwiki.com/images/6/67/Tubar_pins_close.jpg"
-      },
-      {
-        "text": "Sidebar Aligned",
-        "url": "http://www.lockwiki.com/images/8/84/Tubar_sidebar_aligned.jpg"
-      }
     ]
   },
   {
@@ -6894,14 +6872,17 @@
     "makeModels": [
       {
         "make": "Medeco",
-        "model": "Duracam -- Non-removable core"
+        "model": "Duracam"
       }
     ],
     "lockingMechanisms": [
       "Dimple",
       "Sidebar"
     ],
-    "notes": "photos taken from lockwiki licensed under the [Creative Commons Attribution ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)",
+    "features": [
+      "Unguttable"
+    ],
+    "notes": "Photos taken from lockwiki licensed under the [Creative Commons Attribution ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)",
     "links": [
       {
         "text": "Lockwiki",
@@ -6910,12 +6891,22 @@
     ],
     "media": [
       {
-        "text": "key",
+        "text": "Key",
         "url": "https://i.imgur.com/V7GX9vx.png"
       },
       {
-        "text": "lock",
+        "text": "Lock",
         "url": "https://i.imgur.com/aAId8nT.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Source",
+        "url": "http://lockwiki.com/index.php/File:Medeco_Duracam_key_close.jpg"
+      },
+      {
+        "text": "Source",
+        "url": "http://lockwiki.com/index.php/File:Medeco_Duracam_cylinder.jpg"
       }
     ]
   },
