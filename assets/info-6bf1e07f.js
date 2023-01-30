@@ -186,7 +186,7 @@ Stipulations:
 -   **Chamber counter-milling**  counts as one "modification" regardless of the number of chambers augmented
 -   Each  **improvised secondary locking mechanism**  counts as one modification (latches, check pins, etc)
 -   **"Distinguishing mark" engraved into the lock**  counts as one modification (**Simple scratches do not count**. Engraving must be a symbol or mark of the maker)
--   **Hand cut key** counts as one \u201Cmodification\u201D. The key must be cut using hand tools from a blank, and must be a reasonable bitting. Locks made with 0-bitted, or minimally bitted keys do not count.
+-   **Hand cut key** counts as one “modification”. The key must be cut using hand tools from a blank, and must be a reasonable bitting. Locks made with 0-bitted, or minimally bitted keys do not count.
 
 ----------
 
@@ -201,7 +201,7 @@ A video demonstration of the filming requirements for SFIC locks can be  [seen h
     NOTE: The lock must remain in frame for the remainder of your video past this point
 
 3.  If the SFIC lock is currently in a lock body, such as a padlock, use the Control key to remove the core
-4.  Use the Operating key to turn the plug 180\xBA and show to the camera that the pins are present through the holes in the bottom of the lock.
+4.  Use the Operating key to turn the plug 180º and show to the camera that the pins are present through the holes in the bottom of the lock.
 5.  You may now put the lock core back into a lock body or vice, but the lock must remain in frame for the remainder of the video.
 6.  Pick the lock to both operating and control (picking to one of the two shearlines is good for Blue)
 
@@ -276,7 +276,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 ![](https://a.thumbs.redditmedia.com/nzSG-e0uglW8TCNzeMHss19uyYU-Dh5HDSoX4rp5Y80.png)
 
-Those security pins designed to keep you out are powerless against you. You're starting to find locks containing them easier to pick than those without. Your family is also starting to look at you and your growing collection of locks a bit strangely. It\u2019s OK -- we understand you. Let's get an orange belt on you to confuse them further.
+Those security pins designed to keep you out are powerless against you. You're starting to find locks containing them easier to pick than those without. Your family is also starting to look at you and your growing collection of locks a bit strangely. It’s OK -- we understand you. Let's get an orange belt on you to confuse them further.
 
 You must submit a **video** of your picking accomplishments for this rank. Videos must be in one, continuous take.  
 Photographs will also be accepted for locks that cannot be disassembled.
@@ -291,7 +291,7 @@ Photographs will also be accepted for locks that cannot be disassembled.
 
 ![](https://b.thumbs.redditmedia.com/q9JGs2TK1NeGeK6QMjk1PXPL60onYt-KxWxGpRDVc5M.png)
 
-Higher quality locks with even more security pins. Some of these locks have dead cores, and it\u2019s not just because you've picked them to death. It might also be that you have started down the dimple lock road. You've also started your development as a lock surgeon, gutting them and getting them back together again.
+Higher quality locks with even more security pins. Some of these locks have dead cores, and it’s not just because you've picked them to death. It might also be that you have started down the dimple lock road. You've also started your development as a lock surgeon, gutting them and getting them back together again.
 
 You must **video picking and gutting accomplishments in one continuous take**, pictures are no longer accepted at this rank, even for locks that cannot be disassembled.
 
@@ -347,7 +347,7 @@ If picking an SFIC, be sure to review the guidelines listed under SFIC Filming R
 
 ![](https://b.thumbs.redditmedia.com/sKVglm3acU3jAinYKb_eRlqTBE9nBA68uybXE_x4C2M.png)
 
-You are entering the realm of ultra high-security locks and becoming a pillar of the lockpicking community. You find yourself picking locks that are so difficult tools sometimes don\u2019t even exist to open them, requiring you make your own. Tight keyways, rotating sidebar fingers, telescoping keypins, and countermilling are the norm for you.
+You are entering the realm of ultra high-security locks and becoming a pillar of the lockpicking community. You find yourself picking locks that are so difficult tools sometimes don’t even exist to open them, requiring you make your own. Tight keyways, rotating sidebar fingers, telescoping keypins, and countermilling are the norm for you.
 
 You must video picking and gutting accomplishments in one continuous take.
 
