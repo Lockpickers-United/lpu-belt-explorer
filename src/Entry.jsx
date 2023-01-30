@@ -13,6 +13,7 @@ import BeltIcon from './BeltIcon'
 import {useMediaQuery} from 'react-responsive'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
+import ReactMarkdown from 'react-markdown'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
@@ -64,7 +65,11 @@ function Entry({expanded, entry, onAccordionChange}) {
                 }/>
                 {!!entry.notes &&
                     <FieldValue name='Notes' value={
-                        <Typography>{entry.notes}</Typography>
+                        <Typography>
+                            <ReactMarkdown>
+                                {entry.notes}
+                            </ReactMarkdown>
+                        </Typography>
                     }/>
                 }
                 {!!entry.features?.length &&
