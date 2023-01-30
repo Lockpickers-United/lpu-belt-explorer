@@ -24,3 +24,4 @@ scripts/*.json
 *.njsproj
 *.sln
 *.sw?
+/stats.html
