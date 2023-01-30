@@ -65,7 +65,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                 }/>
                 {!!entry.notes &&
                     <FieldValue name='Notes' value={
-                        <Typography>
+                        <Typography component='div'>
                             <ReactMarkdown>
                                 {entry.notes}
                             </ReactMarkdown>
@@ -95,19 +95,19 @@ function Entry({expanded, entry, onAccordionChange}) {
                                         title={text}
                                         subtitle={
                                             !!entry?.attribution?.[index] &&
-                                                 (
-                                                    <a href={entry.attribution[index].url}
-                                                       target='_blank'
-                                                       rel='noopener noreferrer'
-                                                    >
-                                                        {entry.attribution[index].text}
-                                                    </a>
-                                                 )
+                                            entry.attribution[index].text
                                         }
                                         actionIcon={
-                                            <IconButton href={url} target='_blank' rel='noopener noreferrer'>
-                                                <LaunchIcon/>
-                                            </IconButton>
+                                            !!entry?.attribution?.[index] &&
+                                            (
+                                                <IconButton
+                                                    href={entry.attribution[index].url}
+                                                    target='_blank'
+                                                    rel='noopener noreferrer'
+                                                >
+                                                    <LaunchIcon/>
+                                                </IconButton>
+                                            )
                                         }
                                     />
                                 </ImageListItem>
@@ -121,8 +121,14 @@ function Entry({expanded, entry, onAccordionChange}) {
                         <Stack direction='row' spacing={1}>
                             {entry.links.map(({text, url}, index) =>
                                 <Button
-                                    key={index} href={url} target='_blank'
-                                    rel='noopener noreferrer' color='secondary'>{text}
+                                    key={index}
+                                    href={url}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    color='secondary'
+                                    sx={{textTransform: 'none'}}
+                                >
+                                    {text}
                                 </Button>
                             )}
                         </Stack>
