@@ -33,8 +33,9 @@ function Entry({expanded, entry, onAccordionChange}) {
                     <FieldValue name='Make / Model' value={
                         <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                             {entry.makeModels.map(({make, model}, index) =>
-                                <Typography
-                                    key={index}>{make && make !== model ? `${make} ${model}` : model}</Typography>
+                                <Typography key={index}>
+                                    {make && make !== model ? `${make} ${model}` : model}
+                                </Typography>
                             )}
                         </Stack>
                     }/>

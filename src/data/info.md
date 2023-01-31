@@ -8,28 +8,28 @@ Remember this is all just for fun... In the end, no matter what karate belt you 
 
 ----------
 
-## INDEX
+## Table of contents
 
-FAQ
-General Rules
-Belt Request Instructions
-- Reddit
-- Discord
-Challenge Lock Requirements
-SFIC Filming Requirements
+- FAQ
+- General Rules
+  - Belt Request Instructions
+  - Reddit
+  - Discord
+- Challenge Lock Requirements
+- SFIC Filming Requirements
 - For SFIC locks that do not have keys
 - Confirmed SFIC's with security pins
-Locks Scheduled for Reclassification
-Belt Ranking Requirements
-- White
-- Yellow
-- Orange
-- Green
-- Blue
-- Purple
-- Brown
-- Red
-- Black
+- Locks Scheduled for Reclassification
+- Belt Ranking Requirements
+  - White
+  - Yellow
+  - Orange
+  - Green
+  - Blue
+  - Purple
+  - Brown
+  - Red
+  - Black
 
 --------------
 

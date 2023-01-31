@@ -6195,15 +6195,15 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "http://www.lockwiki.com/images/a/ad/Tubar_cylinder.jpg"
+        "url": "https://www.lockwiki.com/images/thumb/a/ad/Tubar_cylinder.jpg/240px-Tubar_cylinder.jpg"
       },
       {
         "text": "By: Datagram",
-        "url": "http://www.lockwiki.com/images/7/74/Tubar_key.jpg"
+        "url": "https://www.lockwiki.com/images/thumb/7/74/Tubar_key.jpg/800px-Tubar_key.jpg"
       },
       {
         "text": "By: Datagram",
-        "url": "http://www.lockwiki.com/images/6/67/Tubar_pins_close.jpg"
+        "url": "https://www.lockwiki.com/images/thumb/6/67/Tubar_pins_close.jpg/588px-Tubar_pins_close.jpg"
       }
     ],
     "attribution": [
@@ -7365,7 +7365,11 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "EC 700/800"
+        "model": "EC700"
+      },
+      {
+        "make": "ABUS",
+        "model": "EC800"
       }
     ],
     "lockingMechanisms": [
@@ -7513,7 +7517,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Bks Janus"
+        "make": "BKS",
+        "model": "Janus"
       }
     ],
     "version": "< 14 pins",
@@ -7586,7 +7591,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Elzett Magnet"
+        "make": "Elzett",
+        "model": "Magnet"
       }
     ],
     "lockingMechanisms": [
