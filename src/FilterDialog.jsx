@@ -77,7 +77,7 @@ function FilterDialog({data, filters, open, onClose, query, setQuery, onSearch})
                             {filters.map(({key, value: filter}, index) =>
                                 <Chip
                                     key={index}
-                                    label={filter}
+                                    label={`${labelByFieldName[key]} = ${filter}`}
                                     variant='outlined'
                                     style={{marginRight: 4, marginBottom: 4}}
                                     onDelete={handleDeleteFilter(key, filter)}
@@ -109,8 +109,14 @@ const filterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Features', fieldName: 'features'},
-    {label: 'Regions', fieldName: 'regions'}
+    {label: 'Regions', fieldName: 'regions'},
+    {label: 'Has Links', fieldName: 'hasLinks'},
+    {label: 'Has Images', fieldName: 'hasImages'}
 ]
+const labelByFieldName = filterFields.reduce((acc, {fieldName, label}) => ({
+    ...acc,
+    [fieldName]: label
+}), {})
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />

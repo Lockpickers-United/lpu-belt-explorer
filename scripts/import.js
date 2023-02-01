@@ -37,8 +37,10 @@ const cleaned = data.map(datum => {
         .map(([,text, url]) => ({text, url}))
     const attribution = [...datum.Attribution.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
+    const id = datum['Unique ID']
 
     const value = {
+        id,
         belt,
         makeModels,
         version,

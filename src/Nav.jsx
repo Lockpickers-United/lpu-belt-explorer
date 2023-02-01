@@ -12,6 +12,8 @@ import beltIcons from './data/beltIcons.js'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
 import {useMediaQuery} from 'react-responsive'
 import InfoButton from './InfoButton.jsx'
+import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop'
+import {Fab} from '@mui/material'
 
 function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
@@ -19,6 +21,9 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
     const tabWidthStyle = isBigEnough
         ? {minWidth: 50, maxWidth: 50}
         : {minWidth: 'calc(100vw / 10)', maxWidth: 'calc(100vw / 10)'}
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
+    }
 
     return (
         <React.Fragment>
@@ -67,6 +72,19 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
                     />
                 </Tabs>
             </AppBar>
+
+            <Fab
+                size='small'
+                sx={{
+                    position: 'fixed',
+                    right: 16,
+                    bottom: 16,
+                    zIndex: 1000
+                }}
+                onClick={scrollToTop}
+            >
+                <VerticalAlignTopIcon/>
+            </Fab>
         </React.Fragment>
     )
 }

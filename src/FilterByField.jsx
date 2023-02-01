@@ -21,10 +21,12 @@ function FilterByField({data, label, fieldName, onFilter}) {
 
     return (
         <FormControl sx={{minWidth: 120}}>
-            <InputLabel>{`Filter by ${label}`}</InputLabel>
+            <InputLabel>{label}</InputLabel>
             <Select
-                value='' label={`Filter by ${label}`}
-                onChange={handleSelect} style={{marginBottom: 8}} onClose={handleBlur}
+                value=''
+                onChange={handleSelect}
+                style={{marginBottom: 8}}
+                onClose={handleBlur}
             >
                 {uniqueValues.map((value, index) =>
                     <MenuItem key={index} value={value}>{value}</MenuItem>

@@ -20,11 +20,14 @@ function App() {
         if (!data.length) {
             const loadData = async () => {
                 const raw = (await import('./data/data.json')).default
-                const value = raw.map((datum, index) => ({
+
+                // Add extra properties for easier filtering
+                const value = raw.map(datum => ({
                     ...datum,
-                    id: index,
                     makes: datum.makeModels.map(({make}) => make),
-                    fuzzy: datum.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')
+                    fuzzy: datum.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(','),
+                    hasImages: datum.media?.length > 0 ? 'true' : 'false',
+                    hasLinks: datum.links?.length > 0 ? 'true' : 'false'
                 }))
                 setData(value)
             }

@@ -1,5 +1,6 @@
 [
   {
+    "id": "b22bdd44",
     "belt": "white",
     "makeModels": [
       {
@@ -9,6 +10,7 @@
     ]
   },
   {
+    "id": "5ff7457c",
     "belt": "white",
     "makeModels": [
       {
@@ -25,6 +27,7 @@
     ]
   },
   {
+    "id": "07034c0f",
     "belt": "white",
     "makeModels": [
       {
@@ -37,6 +40,7 @@
     ]
   },
   {
+    "id": "a8c9aa08",
     "belt": "white",
     "makeModels": [
       {
@@ -52,6 +56,7 @@
     ]
   },
   {
+    "id": "3ac43ea8",
     "belt": "white",
     "makeModels": [
       {
@@ -67,6 +72,7 @@
     ]
   },
   {
+    "id": "901b35b2",
     "belt": "white",
     "makeModels": [
       {
@@ -76,6 +82,7 @@
     ]
   },
   {
+    "id": "5dc117cd",
     "belt": "white",
     "makeModels": [
       {
@@ -89,6 +96,7 @@
     ]
   },
   {
+    "id": "5a91e6a5",
     "belt": "white",
     "makeModels": [
       {
@@ -107,9 +115,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_1"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Oaklandishh",
+        "url": "https://www.lockwiki.com/images/thumb/f/f6/Mastercommercial.JPG/225px-Mastercommercial.JPG"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Mastercommercial.JPG"
+      }
     ]
   },
   {
+    "id": "38289b36",
     "belt": "white",
     "makeModels": [
       {
@@ -129,9 +150,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_2"
       }
+    ],
+    "media": [
+      {
+        "text": "From: lockwiki.com",
+        "url": "https://www.lockwiki.com/images/thumb/a/a8/MasterNo2.jpeg/300px-MasterNo2.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MasterNo2.jpeg"
+      }
     ]
   },
   {
+    "id": "562e964e",
     "belt": "white",
     "makeModels": [
       {
@@ -150,9 +184,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_3"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/b/b6/Master_Lock_3_-_FXE47401.jpg/300px-Master_Lock_3_-_FXE47401.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
+      }
     ]
   },
   {
+    "id": "dff62f52",
     "belt": "white",
     "makeModels": [
       {
@@ -172,9 +219,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_4"
       }
+    ],
+    "media": [
+      {
+        "text": "From: lockwiki.com",
+        "url": "https://www.lockwiki.com/images/thumb/7/75/MasterNo4.jpg/300px-MasterNo4.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MasterNo4.jpg"
+      }
     ]
   },
   {
+    "id": "c800618f",
     "belt": "white",
     "makeModels": [
       {
@@ -190,6 +250,7 @@
     ]
   },
   {
+    "id": "f10deed6",
     "belt": "white",
     "makeModels": [
       {
@@ -206,6 +267,7 @@
     ]
   },
   {
+    "id": "4bbeeb48",
     "belt": "white",
     "makeModels": [
       {
@@ -221,6 +283,7 @@
     ]
   },
   {
+    "id": "79adf554",
     "belt": "white",
     "makeModels": [
       {
@@ -237,6 +300,7 @@
     ]
   },
   {
+    "id": "36d4123c",
     "belt": "white",
     "makeModels": [
       {
@@ -251,6 +315,7 @@
     ]
   },
   {
+    "id": "2201a1b1",
     "belt": "white",
     "makeModels": [
       {
@@ -265,6 +330,7 @@
     ]
   },
   {
+    "id": "c7d2eca1",
     "belt": "yellow",
     "makeModels": [
       {
@@ -283,9 +349,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_55"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/1/1d/Abus_model_55_with_keys.jpg/290px-Abus_model_55_with_keys.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abus_model_55_with_keys.jpg"
+      }
     ]
   },
   {
+    "id": "693abee0",
     "belt": "yellow",
     "makeModels": [
       {
@@ -305,9 +384,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/0/0d/ABUS_64TI-50_-_FXE47403.jpg/300px-ABUS_64TI-50_-_FXE47403.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_64TI-50_-_FXE47403.jpg"
+      }
     ]
   },
   {
+    "id": "1ce31c29",
     "belt": "yellow",
     "makeModels": [
       {
@@ -330,6 +422,7 @@
     ]
   },
   {
+    "id": "805fc883",
     "belt": "yellow",
     "makeModels": [
       {
@@ -345,6 +438,7 @@
     ]
   },
   {
+    "id": "2484ce70",
     "belt": "yellow",
     "makeModels": [
       {
@@ -360,6 +454,7 @@
     ]
   },
   {
+    "id": "423dbebe",
     "belt": "yellow",
     "makeModels": [
       {
@@ -372,6 +467,7 @@
     ]
   },
   {
+    "id": "9d830052",
     "belt": "yellow",
     "makeModels": [
       {
@@ -385,6 +481,7 @@
     ]
   },
   {
+    "id": "abdf3acd",
     "belt": "yellow",
     "makeModels": [
       {
@@ -400,6 +497,7 @@
     ]
   },
   {
+    "id": "3a2ed5f3",
     "belt": "yellow",
     "makeModels": [
       {
@@ -414,6 +512,7 @@
     ]
   },
   {
+    "id": "a0d1bf97",
     "belt": "yellow",
     "makeModels": [
       {
@@ -433,9 +532,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/American_Lock_5200"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Oaklandishh",
+        "url": "https://www.lockwiki.com/images/thumb/6/6f/American5200.JPG/225px-American5200.JPG"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:American5200.JPG"
+      }
     ]
   },
   {
+    "id": "a1581afe",
     "belt": "yellow",
     "makeModels": [
       {
@@ -450,6 +562,7 @@
     ]
   },
   {
+    "id": "7d9d715d",
     "belt": "yellow",
     "makeModels": [
       {
@@ -462,6 +575,7 @@
     ]
   },
   {
+    "id": "32244161",
     "belt": "yellow",
     "makeModels": [
       {
@@ -473,6 +587,7 @@
     ]
   },
   {
+    "id": "4062aefb",
     "belt": "yellow",
     "makeModels": [
       {
@@ -484,6 +599,7 @@
     ]
   },
   {
+    "id": "90267144",
     "belt": "yellow",
     "makeModels": [
       {
@@ -495,6 +611,7 @@
     ]
   },
   {
+    "id": "d6d43c00",
     "belt": "yellow",
     "makeModels": [
       {
@@ -509,6 +626,7 @@
     ]
   },
   {
+    "id": "58307da0",
     "belt": "yellow",
     "makeModels": [
       {
@@ -524,6 +642,7 @@
     ]
   },
   {
+    "id": "50fbf666",
     "belt": "yellow",
     "makeModels": [
       {
@@ -535,6 +654,7 @@
     ]
   },
   {
+    "id": "4d7dd1a0",
     "belt": "yellow",
     "makeModels": [
       {
@@ -547,6 +667,7 @@
     ]
   },
   {
+    "id": "6ca3420d",
     "belt": "yellow",
     "makeModels": [
       {
@@ -562,6 +683,7 @@
     ]
   },
   {
+    "id": "7f56acb9",
     "belt": "yellow",
     "makeModels": [
       {
@@ -574,6 +696,7 @@
     ]
   },
   {
+    "id": "b517a7ef",
     "belt": "yellow",
     "makeModels": [
       {
@@ -586,6 +709,7 @@
     ]
   },
   {
+    "id": "9a5b3f53",
     "belt": "yellow",
     "makeModels": [
       {
@@ -598,6 +722,7 @@
     ]
   },
   {
+    "id": "919755fe",
     "belt": "yellow",
     "makeModels": [
       {
@@ -606,6 +731,7 @@
     ]
   },
   {
+    "id": "e38b7c57",
     "belt": "yellow",
     "makeModels": [
       {
@@ -614,6 +740,7 @@
     ]
   },
   {
+    "id": "4938772f",
     "belt": "yellow",
     "makeModels": [
       {
@@ -625,6 +752,7 @@
     ]
   },
   {
+    "id": "6719b451",
     "belt": "yellow",
     "makeModels": [
       {
@@ -633,6 +761,7 @@
     ]
   },
   {
+    "id": "a8d996c0",
     "belt": "yellow",
     "makeModels": [
       {
@@ -641,6 +770,7 @@
     ]
   },
   {
+    "id": "2f634d15",
     "belt": "yellow",
     "makeModels": [
       {
@@ -653,6 +783,7 @@
     ]
   },
   {
+    "id": "75d883a0",
     "belt": "yellow",
     "makeModels": [
       {
@@ -668,6 +799,7 @@
     ]
   },
   {
+    "id": "f24c2d25",
     "belt": "yellow",
     "makeModels": [
       {
@@ -679,6 +811,7 @@
     ]
   },
   {
+    "id": "c2306424",
     "belt": "yellow",
     "makeModels": [
       {
@@ -692,6 +825,7 @@
     ]
   },
   {
+    "id": "71eea804",
     "belt": "yellow",
     "makeModels": [
       {
@@ -703,6 +837,7 @@
     ]
   },
   {
+    "id": "1376f489",
     "belt": "yellow",
     "makeModels": [
       {
@@ -711,6 +846,7 @@
     ]
   },
   {
+    "id": "ca5b08b4",
     "belt": "yellow",
     "makeModels": [
       {
@@ -722,6 +858,7 @@
     ]
   },
   {
+    "id": "d93c1ed7",
     "belt": "yellow",
     "makeModels": [
       {
@@ -730,6 +867,7 @@
     ]
   },
   {
+    "id": "5e3f057f",
     "belt": "yellow",
     "makeModels": [
       {
@@ -741,6 +879,7 @@
     ]
   },
   {
+    "id": "17ce6273",
     "belt": "yellow",
     "makeModels": [
       {
@@ -752,6 +891,7 @@
     ]
   },
   {
+    "id": "e8feb6f3",
     "belt": "yellow",
     "makeModels": [
       {
@@ -760,6 +900,7 @@
     ]
   },
   {
+    "id": "5599bd8a",
     "belt": "yellow",
     "makeModels": [
       {
@@ -768,6 +909,7 @@
     ]
   },
   {
+    "id": "234de3bc",
     "belt": "yellow",
     "makeModels": [
       {
@@ -776,6 +918,7 @@
     ]
   },
   {
+    "id": "9a7e1167",
     "belt": "yellow",
     "makeModels": [
       {
@@ -784,6 +927,7 @@
     ]
   },
   {
+    "id": "28f1b592",
     "belt": "yellow",
     "makeModels": [
       {
@@ -795,6 +939,7 @@
     ]
   },
   {
+    "id": "b4d52d31",
     "belt": "yellow",
     "makeModels": [
       {
@@ -803,6 +948,7 @@
     ]
   },
   {
+    "id": "88402cd0",
     "belt": "yellow",
     "makeModels": [
       {
@@ -814,6 +960,7 @@
     ]
   },
   {
+    "id": "7eaffc73",
     "belt": "yellow",
     "makeModels": [
       {
@@ -825,6 +972,7 @@
     ]
   },
   {
+    "id": "4773e1fa",
     "belt": "yellow",
     "makeModels": [
       {
@@ -836,6 +984,7 @@
     ]
   },
   {
+    "id": "ba5584ca",
     "belt": "yellow",
     "makeModels": [
       {
@@ -849,6 +998,7 @@
     ]
   },
   {
+    "id": "be3fef00",
     "belt": "yellow",
     "makeModels": [
       {
@@ -862,6 +1012,7 @@
     ]
   },
   {
+    "id": "7685aed5",
     "belt": "yellow",
     "makeModels": [
       {
@@ -870,6 +1021,7 @@
     ]
   },
   {
+    "id": "7c79137c",
     "belt": "yellow",
     "makeModels": [
       {
@@ -885,6 +1037,7 @@
     ]
   },
   {
+    "id": "1cad075e",
     "belt": "yellow",
     "makeModels": [
       {
@@ -899,6 +1052,7 @@
     ]
   },
   {
+    "id": "866660d6",
     "belt": "yellow",
     "makeModels": [
       {
@@ -917,9 +1071,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_130"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Oaklandishh",
+        "url": "https://www.lockwiki.com/images/thumb/b/ba/Master130.JPG/297px-Master130.JPG"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master130.JPG"
+      }
     ]
   },
   {
+    "id": "2455f0ae",
     "belt": "yellow",
     "makeModels": [
       {
@@ -942,9 +1109,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_140"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/0/0a/Master-140-front.jpg/300px-Master-140-front.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master-140-front.jpg"
+      }
     ]
   },
   {
+    "id": "759d0d0f",
     "belt": "yellow",
     "makeModels": [
       {
@@ -960,6 +1140,7 @@
     ]
   },
   {
+    "id": "6af6f704",
     "belt": "yellow",
     "makeModels": [
       {
@@ -975,6 +1156,7 @@
     ]
   },
   {
+    "id": "df703850",
     "belt": "yellow",
     "makeModels": [
       {
@@ -990,6 +1172,7 @@
     ]
   },
   {
+    "id": "d5053e6d",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1005,6 +1188,7 @@
     ]
   },
   {
+    "id": "2936bb00",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1013,6 +1197,7 @@
     ]
   },
   {
+    "id": "d02d36d5",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1021,6 +1206,7 @@
     ]
   },
   {
+    "id": "6c365304",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1032,6 +1218,7 @@
     ]
   },
   {
+    "id": "ae031589",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1040,6 +1227,7 @@
     ]
   },
   {
+    "id": "8824c0e5",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1048,6 +1236,7 @@
     ]
   },
   {
+    "id": "6d9fbd4a",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1056,6 +1245,7 @@
     ]
   },
   {
+    "id": "2924aa76",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1064,6 +1254,7 @@
     ]
   },
   {
+    "id": "30b60f60",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1072,6 +1263,7 @@
     ]
   },
   {
+    "id": "8e2d57b1",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1083,6 +1275,7 @@
     ]
   },
   {
+    "id": "40f7d7c7",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1095,6 +1288,7 @@
     ]
   },
   {
+    "id": "d4299b24",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1111,6 +1305,7 @@
     ]
   },
   {
+    "id": "a460c971",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1124,6 +1319,7 @@
     ]
   },
   {
+    "id": "920b7da1",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1137,6 +1333,7 @@
     ]
   },
   {
+    "id": "ed713b97",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1150,6 +1347,7 @@
     ]
   },
   {
+    "id": "9fd77c9a",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1161,6 +1359,7 @@
     ]
   },
   {
+    "id": "4ec9a150",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1169,6 +1368,7 @@
     ]
   },
   {
+    "id": "ff837451",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1177,6 +1377,7 @@
     ]
   },
   {
+    "id": "4b32e9dd",
     "belt": "yellow",
     "makeModels": [
       {
@@ -1191,6 +1392,7 @@
     ]
   },
   {
+    "id": "67b285d9",
     "belt": "orange",
     "makeModels": [
       {
@@ -1207,6 +1409,7 @@
     ]
   },
   {
+    "id": "632f4069",
     "belt": "orange",
     "makeModels": [
       {
@@ -1226,9 +1429,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_55"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/1/1d/Abus_model_55_with_keys.jpg/290px-Abus_model_55_with_keys.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abus_model_55_with_keys.jpg"
+      }
     ]
   },
   {
+    "id": "d7188e81",
     "belt": "orange",
     "makeModels": [
       {
@@ -1244,6 +1460,7 @@
     ]
   },
   {
+    "id": "52f1e117",
     "belt": "orange",
     "makeModels": [
       {
@@ -1263,9 +1480,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/0/0d/ABUS_64TI-50_-_FXE47403.jpg/300px-ABUS_64TI-50_-_FXE47403.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_64TI-50_-_FXE47403.jpg"
+      }
     ]
   },
   {
+    "id": "a0e50505",
     "belt": "orange",
     "makeModels": [
       {
@@ -1288,6 +1518,7 @@
     ]
   },
   {
+    "id": "3653f376",
     "belt": "orange",
     "makeModels": [
       {
@@ -1306,9 +1537,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_83"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Lockr",
+        "url": "https://www.lockwiki.com/images/thumb/e/ea/Abus_83_50_padlock.jpeg/226px-Abus_83_50_padlock.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abus_83_50_padlock.jpeg"
+      }
     ]
   },
   {
+    "id": "683e4f33",
     "belt": "orange",
     "makeModels": [
       {
@@ -1327,9 +1571,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_85"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/7/77/Abus_85-40.jpg/200px-Abus_85-40.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abus_85-40.jpg"
+      }
     ]
   },
   {
+    "id": "d7479fd6",
     "belt": "orange",
     "makeModels": [
       {
@@ -1342,6 +1599,7 @@
     ]
   },
   {
+    "id": "afd3e51d",
     "belt": "orange",
     "makeModels": [
       {
@@ -1354,6 +1612,7 @@
     ]
   },
   {
+    "id": "95a9d73c",
     "belt": "orange",
     "makeModels": [
       {
@@ -1375,6 +1634,7 @@
     ]
   },
   {
+    "id": "bc1ed715",
     "belt": "orange",
     "makeModels": [
       {
@@ -1387,6 +1647,7 @@
     ]
   },
   {
+    "id": "80667814",
     "belt": "orange",
     "makeModels": [
       {
@@ -1403,9 +1664,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_Diskus_25"
       }
+    ],
+    "media": [
+      {
+        "text": "From: lockwiki.com",
+        "url": "https://www.lockwiki.com/images/thumb/a/a9/ABUS_25_70_Diskus_with_keys.jpg/225px-ABUS_25_70_Diskus_with_keys.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_25_70_Diskus_with_keys.jpg"
+      }
     ]
   },
   {
+    "id": "204d85a7",
     "belt": "orange",
     "makeModels": [
       {
@@ -1418,6 +1692,7 @@
     ]
   },
   {
+    "id": "16e9d2ab",
     "belt": "orange",
     "makeModels": [
       {
@@ -1433,6 +1708,7 @@
     ]
   },
   {
+    "id": "1050a58c",
     "belt": "orange",
     "makeModels": [
       {
@@ -1445,6 +1721,7 @@
     ]
   },
   {
+    "id": "aa15b066",
     "belt": "orange",
     "makeModels": [
       {
@@ -1457,6 +1734,7 @@
     ]
   },
   {
+    "id": "7b4ce02a",
     "belt": "orange",
     "makeModels": [
       {
@@ -1469,6 +1747,7 @@
     ]
   },
   {
+    "id": "d49f60fe",
     "belt": "orange",
     "makeModels": [
       {
@@ -1484,6 +1763,7 @@
     ]
   },
   {
+    "id": "9215a45f",
     "belt": "orange",
     "makeModels": [
       {
@@ -1499,6 +1779,7 @@
     ]
   },
   {
+    "id": "171f76e9",
     "belt": "orange",
     "makeModels": [
       {
@@ -1514,6 +1795,7 @@
     ]
   },
   {
+    "id": "1a8afeac",
     "belt": "orange",
     "makeModels": [
       {
@@ -1526,6 +1808,7 @@
     ]
   },
   {
+    "id": "53732c41",
     "belt": "orange",
     "makeModels": [
       {
@@ -1538,6 +1821,7 @@
     ]
   },
   {
+    "id": "43fd87ae",
     "belt": "orange",
     "makeModels": [
       {
@@ -1550,6 +1834,7 @@
     ]
   },
   {
+    "id": "e89aa47e",
     "belt": "orange",
     "makeModels": [
       {
@@ -1562,6 +1847,7 @@
     ]
   },
   {
+    "id": "6758c30e",
     "belt": "orange",
     "makeModels": [
       {
@@ -1573,6 +1859,7 @@
     ]
   },
   {
+    "id": "3b3e78b0",
     "belt": "orange",
     "makeModels": [
       {
@@ -1589,6 +1876,7 @@
     ]
   },
   {
+    "id": "99057c44",
     "belt": "orange",
     "makeModels": [
       {
@@ -1604,6 +1892,7 @@
     ]
   },
   {
+    "id": "eaba4dd9",
     "belt": "orange",
     "makeModels": [
       {
@@ -1616,6 +1905,7 @@
     ]
   },
   {
+    "id": "677afce6",
     "belt": "orange",
     "makeModels": [
       {
@@ -1628,6 +1918,7 @@
     ]
   },
   {
+    "id": "26315d0f",
     "belt": "orange",
     "makeModels": [
       {
@@ -1640,6 +1931,7 @@
     ]
   },
   {
+    "id": "d98f267e",
     "belt": "orange",
     "makeModels": [
       {
@@ -1651,6 +1943,7 @@
     ]
   },
   {
+    "id": "140d2878",
     "belt": "orange",
     "makeModels": [
       {
@@ -1663,6 +1956,7 @@
     ]
   },
   {
+    "id": "5802cfb9",
     "belt": "orange",
     "makeModels": [
       {
@@ -1678,6 +1972,7 @@
     ]
   },
   {
+    "id": "0795d01a",
     "belt": "orange",
     "makeModels": [
       {
@@ -1689,6 +1984,7 @@
     ]
   },
   {
+    "id": "d7c8eec1",
     "belt": "orange",
     "makeModels": [
       {
@@ -1700,6 +1996,7 @@
     ]
   },
   {
+    "id": "0756b9e9",
     "belt": "orange",
     "makeModels": [
       {
@@ -1711,6 +2008,7 @@
     ]
   },
   {
+    "id": "5b5c6a9e",
     "belt": "orange",
     "makeModels": [
       {
@@ -1723,6 +2021,7 @@
     ]
   },
   {
+    "id": "92f98042",
     "belt": "orange",
     "makeModels": [
       {
@@ -1735,6 +2034,7 @@
     ]
   },
   {
+    "id": "d261a3ba",
     "belt": "orange",
     "makeModels": [
       {
@@ -1747,6 +2047,7 @@
     ]
   },
   {
+    "id": "836c5ce3",
     "belt": "orange",
     "makeModels": [
       {
@@ -1755,6 +2056,7 @@
     ]
   },
   {
+    "id": "ed0e0d36",
     "belt": "orange",
     "makeModels": [
       {
@@ -1767,6 +2069,7 @@
     ]
   },
   {
+    "id": "9bc8809e",
     "belt": "orange",
     "makeModels": [
       {
@@ -1776,6 +2079,7 @@
     ]
   },
   {
+    "id": "a5a164ad",
     "belt": "orange",
     "makeModels": [
       {
@@ -1789,6 +2093,7 @@
     ]
   },
   {
+    "id": "efc01233",
     "belt": "orange",
     "makeModels": [
       {
@@ -1807,9 +2112,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_150"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/c/c9/Master_Lock_150_-_FXE47400.jpg/300px-Master_Lock_150_-_FXE47400.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_150_-_FXE47400.jpg"
+      }
     ]
   },
   {
+    "id": "e2e15f47",
     "belt": "orange",
     "makeModels": [
       {
@@ -1825,6 +2143,7 @@
     ]
   },
   {
+    "id": "9ca2c109",
     "belt": "orange",
     "makeModels": [
       {
@@ -1848,6 +2167,7 @@
     ]
   },
   {
+    "id": "9441e2cc",
     "belt": "orange",
     "makeModels": [
       {
@@ -1863,6 +2183,7 @@
     ]
   },
   {
+    "id": "9f832458",
     "belt": "orange",
     "makeModels": [
       {
@@ -1871,6 +2192,7 @@
     ]
   },
   {
+    "id": "4071176d",
     "belt": "orange",
     "makeModels": [
       {
@@ -1884,6 +2206,7 @@
     ]
   },
   {
+    "id": "74f65a9c",
     "belt": "orange",
     "makeModels": [
       {
@@ -1895,6 +2218,7 @@
     ]
   },
   {
+    "id": "029fef1f",
     "belt": "orange",
     "makeModels": [
       {
@@ -1903,6 +2227,7 @@
     ]
   },
   {
+    "id": "f88a999d",
     "belt": "orange",
     "makeModels": [
       {
@@ -1911,6 +2236,7 @@
     ]
   },
   {
+    "id": "0754f036",
     "belt": "orange",
     "makeModels": [
       {
@@ -1922,6 +2248,7 @@
     ]
   },
   {
+    "id": "f2a8a932",
     "belt": "orange",
     "makeModels": [
       {
@@ -1933,6 +2260,7 @@
     ]
   },
   {
+    "id": "78205898",
     "belt": "orange",
     "makeModels": [
       {
@@ -1945,6 +2273,7 @@
     ]
   },
   {
+    "id": "665f75f2",
     "belt": "orange",
     "makeModels": [
       {
@@ -1956,6 +2285,7 @@
     ]
   },
   {
+    "id": "7b65effd",
     "belt": "orange",
     "makeModels": [
       {
@@ -1968,6 +2298,7 @@
     ]
   },
   {
+    "id": "ecd83598",
     "belt": "orange",
     "makeModels": [
       {
@@ -1979,6 +2310,7 @@
     ]
   },
   {
+    "id": "1be21a18",
     "belt": "orange",
     "makeModels": [
       {
@@ -1987,6 +2319,7 @@
     ]
   },
   {
+    "id": "e524ce27",
     "belt": "orange",
     "makeModels": [
       {
@@ -1995,6 +2328,7 @@
     ]
   },
   {
+    "id": "07d4fec6",
     "belt": "orange",
     "makeModels": [
       {
@@ -2008,6 +2342,7 @@
     ]
   },
   {
+    "id": "8c0171f9",
     "belt": "orange",
     "makeModels": [
       {
@@ -2020,6 +2355,7 @@
     ]
   },
   {
+    "id": "ab17daa6",
     "belt": "orange",
     "makeModels": [
       {
@@ -2033,6 +2369,7 @@
     ]
   },
   {
+    "id": "fb3daa70",
     "belt": "orange",
     "makeModels": [
       {
@@ -2046,6 +2383,7 @@
     ]
   },
   {
+    "id": "0f0dcd42",
     "belt": "orange",
     "makeModels": [
       {
@@ -2061,6 +2399,7 @@
     ]
   },
   {
+    "id": "db1040e5",
     "belt": "orange",
     "makeModels": [
       {
@@ -2074,6 +2413,7 @@
     ]
   },
   {
+    "id": "98a2ba2d",
     "belt": "orange",
     "makeModels": [
       {
@@ -2089,6 +2429,7 @@
     ]
   },
   {
+    "id": "2bdcb8c7",
     "belt": "orange",
     "makeModels": [
       {
@@ -2101,6 +2442,7 @@
     ]
   },
   {
+    "id": "74a00ae3",
     "belt": "green",
     "makeModels": [
       {
@@ -2119,9 +2461,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_72"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/a/a2/ABUS_72-40_-_FXE47393.jpg/300px-ABUS_72-40_-_FXE47393.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_72-40_-_FXE47393.jpg"
+      }
     ]
   },
   {
+    "id": "e42853c7",
     "belt": "green",
     "makeModels": [
       {
@@ -2137,6 +2492,7 @@
     ]
   },
   {
+    "id": "9ec8706c",
     "belt": "green",
     "makeModels": [
       {
@@ -2159,9 +2515,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_75IB"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/b/ba/ABUS_75IB-40_-_FXE47550.jpg/300px-ABUS_75IB-40_-_FXE47550.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_75IB-40_-_FXE47550.jpg"
+      }
     ]
   },
   {
+    "id": "47e7cf73",
     "belt": "green",
     "makeModels": [
       {
@@ -2177,6 +2546,7 @@
     ]
   },
   {
+    "id": "9da8ebe0",
     "belt": "green",
     "makeModels": [
       {
@@ -2192,6 +2562,7 @@
     ]
   },
   {
+    "id": "6b2e5290",
     "belt": "green",
     "makeModels": [
       {
@@ -2204,6 +2575,7 @@
     ]
   },
   {
+    "id": "8d1ebc79",
     "belt": "green",
     "makeModels": [
       {
@@ -2213,9 +2585,26 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/%20ABUS%20BRAVUS%202000_297.html"
+      }
+    ],
+    "media": [
+      {
+        "text": "From: catalocks.com",
+        "url": "https://www.catalocks.eu/photos/297/1.jpg"
+      },
+      {
+        "text": "From: catalocks.com",
+        "url": "https://www.catalocks.eu/photos/297/2.jpg"
+      }
     ]
   },
   {
+    "id": "85d93eb1",
     "belt": "green",
     "makeModels": [
       {
@@ -2237,6 +2626,7 @@
     ]
   },
   {
+    "id": "f97700ff",
     "belt": "green",
     "makeModels": [
       {
@@ -2249,6 +2639,7 @@
     ]
   },
   {
+    "id": "cf5bd73b",
     "belt": "green",
     "makeModels": [
       {
@@ -2266,6 +2657,7 @@
     ]
   },
   {
+    "id": "8606220a",
     "belt": "green",
     "makeModels": [
       {
@@ -2282,6 +2674,7 @@
     ]
   },
   {
+    "id": "f488f48e",
     "belt": "green",
     "makeModels": [
       {
@@ -2294,6 +2687,7 @@
     ]
   },
   {
+    "id": "e1625c4d",
     "belt": "green",
     "makeModels": [
       {
@@ -2312,9 +2706,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_80TI"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/c/c3/ABUS_80TI-50_-_FXE47402-Edit.jpg/300px-ABUS_80TI-50_-_FXE47402-Edit.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_80TI-50_-_FXE47402-Edit.jpg"
+      }
     ]
   },
   {
+    "id": "bc6837f8",
     "belt": "green",
     "makeModels": [
       {
@@ -2332,9 +2739,22 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20V%2014_304.html"
+      }
+    ],
+    "media": [
+      {
+        "text": "From: catalocks.com",
+        "url": "https://www.catalocks.eu/photos/304/1.jpg"
+      }
     ]
   },
   {
+    "id": "304df868",
     "belt": "green",
     "makeModels": [
       {
@@ -2344,9 +2764,22 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20W%2014_305.html"
+      }
+    ],
+    "media": [
+      {
+        "text": "From: Catalocks.com",
+        "url": "https://www.catalocks.eu/photos/305/1.jpg"
+      }
     ]
   },
   {
+    "id": "b0076ed7",
     "belt": "green",
     "makeModels": [
       {
@@ -2360,9 +2793,22 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20WAVY%20LINE_307.html"
+      }
+    ],
+    "media": [
+      {
+        "text": "From: catalocks.com",
+        "url": "https://www.catalocks.eu/photos/307/1.jpg"
+      }
     ]
   },
   {
+    "id": "c4130a64",
     "belt": "green",
     "makeModels": [
       {
@@ -2376,9 +2822,22 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20WAVY%20LINE%20PRO_306.html"
+      }
+    ],
+    "media": [
+      {
+        "text": "From:catalocks.com",
+        "url": "https://www.catalocks.eu/photos/306/1.jpg"
+      }
     ]
   },
   {
+    "id": "1b10225b",
     "belt": "green",
     "makeModels": [
       {
@@ -2391,6 +2850,7 @@
     ]
   },
   {
+    "id": "9adbc90f",
     "belt": "green",
     "makeModels": [
       {
@@ -2403,6 +2863,7 @@
     ]
   },
   {
+    "id": "3af47daf",
     "belt": "green",
     "makeModels": [
       {
@@ -2418,6 +2879,7 @@
     ]
   },
   {
+    "id": "1dafd552",
     "belt": "green",
     "makeModels": [
       {
@@ -2434,6 +2896,7 @@
     ]
   },
   {
+    "id": "200605b9",
     "belt": "green",
     "makeModels": [
       {
@@ -2450,6 +2913,7 @@
     ]
   },
   {
+    "id": "b16ffe3f",
     "belt": "green",
     "makeModels": [
       {
@@ -2465,6 +2929,7 @@
     ]
   },
   {
+    "id": "81fbd528",
     "belt": "green",
     "makeModels": [
       {
@@ -2483,9 +2948,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/American_Lock_5200"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Oaklandishh",
+        "url": "https://www.lockwiki.com/images/thumb/6/6f/American5200.JPG/225px-American5200.JPG"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:American5200.JPG"
+      }
     ]
   },
   {
+    "id": "b3af5e62",
     "belt": "green",
     "makeModels": [
       {
@@ -2501,6 +2979,7 @@
     ]
   },
   {
+    "id": "6f954c60",
     "belt": "green",
     "makeModels": [
       {
@@ -2516,6 +2995,7 @@
     ]
   },
   {
+    "id": "2ae1e0b8",
     "belt": "green",
     "makeModels": [
       {
@@ -2534,9 +3014,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/American_Lock_1100_1200_1300"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Lockr",
+        "url": "https://www.lockwiki.com/images/thumb/1/1c/American_lock_padlocks_1105_1205_1305_upright.jpg/300px-American_lock_padlocks_1105_1205_1305_upright.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:American_lock_padlocks_1105_1205_1305_upright.jpg"
+      }
     ]
   },
   {
+    "id": "5a6170fb",
     "belt": "green",
     "makeModels": [
       {
@@ -2552,6 +3045,7 @@
     ]
   },
   {
+    "id": "e84582aa",
     "belt": "green",
     "makeModels": [
       {
@@ -2568,6 +3062,7 @@
     ]
   },
   {
+    "id": "0b82681f",
     "belt": "green",
     "makeModels": [
       {
@@ -2584,6 +3079,7 @@
     ]
   },
   {
+    "id": "ca6ce763",
     "belt": "green",
     "makeModels": [
       {
@@ -2596,6 +3092,7 @@
     ]
   },
   {
+    "id": "bfc7c700",
     "belt": "green",
     "makeModels": [
       {
@@ -2608,6 +3105,7 @@
     ]
   },
   {
+    "id": "bea71188",
     "belt": "green",
     "makeModels": [
       {
@@ -2620,6 +3118,7 @@
     ]
   },
   {
+    "id": "27f1aaae",
     "belt": "green",
     "makeModels": [
       {
@@ -2632,6 +3131,7 @@
     ]
   },
   {
+    "id": "a6e954a6",
     "belt": "green",
     "makeModels": [
       {
@@ -2644,6 +3144,7 @@
     ]
   },
   {
+    "id": "b099c88a",
     "belt": "green",
     "makeModels": [
       {
@@ -2655,6 +3156,7 @@
     ]
   },
   {
+    "id": "569dd487",
     "belt": "green",
     "makeModels": [
       {
@@ -2667,6 +3169,7 @@
     ]
   },
   {
+    "id": "135ef1c0",
     "belt": "green",
     "makeModels": [
       {
@@ -2679,6 +3182,7 @@
     ]
   },
   {
+    "id": "ec0a2659",
     "belt": "green",
     "makeModels": [
       {
@@ -2688,6 +3192,7 @@
     ]
   },
   {
+    "id": "4bc2b65a",
     "belt": "green",
     "makeModels": [
       {
@@ -2700,6 +3205,7 @@
     ]
   },
   {
+    "id": "3b26e53c",
     "belt": "green",
     "makeModels": [
       {
@@ -2712,6 +3218,7 @@
     ]
   },
   {
+    "id": "14f021bb",
     "belt": "green",
     "makeModels": [
       {
@@ -2724,6 +3231,7 @@
     ]
   },
   {
+    "id": "32fa52a6",
     "belt": "green",
     "makeModels": [
       {
@@ -2736,6 +3244,7 @@
     ]
   },
   {
+    "id": "bd9dc1e4",
     "belt": "green",
     "makeModels": [
       {
@@ -2748,6 +3257,7 @@
     ]
   },
   {
+    "id": "dd155241",
     "belt": "green",
     "makeModels": [
       {
@@ -2757,6 +3267,7 @@
     ]
   },
   {
+    "id": "83ac6e00",
     "belt": "green",
     "makeModels": [
       {
@@ -2769,6 +3280,7 @@
     ]
   },
   {
+    "id": "20f3575c",
     "belt": "green",
     "makeModels": [
       {
@@ -2781,6 +3293,7 @@
     ]
   },
   {
+    "id": "9d478029",
     "belt": "green",
     "makeModels": [
       {
@@ -2793,6 +3306,7 @@
     ]
   },
   {
+    "id": "f7f31800",
     "belt": "green",
     "makeModels": [
       {
@@ -2805,6 +3319,7 @@
     ]
   },
   {
+    "id": "606275d8",
     "belt": "green",
     "makeModels": [
       {
@@ -2817,6 +3332,7 @@
     ]
   },
   {
+    "id": "73a718cb",
     "belt": "green",
     "makeModels": [
       {
@@ -2827,6 +3343,7 @@
     "version": "(picked to one shearline)"
   },
   {
+    "id": "96bb2cf7",
     "belt": "green",
     "makeModels": [
       {
@@ -2839,6 +3356,7 @@
     ]
   },
   {
+    "id": "6c9a666e",
     "belt": "green",
     "makeModels": [
       {
@@ -2848,6 +3366,7 @@
     ]
   },
   {
+    "id": "6b472dc2",
     "belt": "green",
     "makeModels": [
       {
@@ -2857,6 +3376,7 @@
     ]
   },
   {
+    "id": "04970fee",
     "belt": "green",
     "makeModels": [
       {
@@ -2869,6 +3389,7 @@
     ]
   },
   {
+    "id": "a165bc09",
     "belt": "green",
     "makeModels": [
       {
@@ -2881,6 +3402,7 @@
     ]
   },
   {
+    "id": "5241369e",
     "belt": "green",
     "makeModels": [
       {
@@ -2893,6 +3415,7 @@
     ]
   },
   {
+    "id": "05979a42",
     "belt": "green",
     "makeModels": [
       {
@@ -2902,6 +3425,7 @@
     ]
   },
   {
+    "id": "95b2c7b0",
     "belt": "green",
     "makeModels": [
       {
@@ -2911,6 +3435,7 @@
     ]
   },
   {
+    "id": "8e18bd5f",
     "belt": "green",
     "makeModels": [
       {
@@ -2922,6 +3447,7 @@
     ]
   },
   {
+    "id": "9bf13231",
     "belt": "green",
     "makeModels": [
       {
@@ -2931,6 +3457,7 @@
     ]
   },
   {
+    "id": "2ec75ab7",
     "belt": "green",
     "makeModels": [
       {
@@ -2940,6 +3467,7 @@
     ]
   },
   {
+    "id": "6ad7add4",
     "belt": "green",
     "makeModels": [
       {
@@ -2949,6 +3477,7 @@
     ]
   },
   {
+    "id": "6a870d80",
     "belt": "green",
     "makeModels": [
       {
@@ -2958,6 +3487,7 @@
     ]
   },
   {
+    "id": "b5a5e9a5",
     "belt": "green",
     "makeModels": [
       {
@@ -2970,6 +3500,7 @@
     ]
   },
   {
+    "id": "9406020f",
     "belt": "green",
     "makeModels": [
       {
@@ -2979,6 +3510,7 @@
     ]
   },
   {
+    "id": "cd0c2ff9",
     "belt": "green",
     "makeModels": [
       {
@@ -2991,6 +3523,7 @@
     ]
   },
   {
+    "id": "13b55a25",
     "belt": "green",
     "makeModels": [
       {
@@ -3000,6 +3533,7 @@
     ]
   },
   {
+    "id": "e98b5ae7",
     "belt": "green",
     "makeModels": [
       {
@@ -3009,6 +3543,7 @@
     ]
   },
   {
+    "id": "f8254416",
     "belt": "green",
     "makeModels": [
       {
@@ -3018,6 +3553,7 @@
     ]
   },
   {
+    "id": "95902951",
     "belt": "green",
     "makeModels": [
       {
@@ -3027,6 +3563,7 @@
     ]
   },
   {
+    "id": "54087329",
     "belt": "green",
     "makeModels": [
       {
@@ -3039,6 +3576,7 @@
     ]
   },
   {
+    "id": "3316c7d0",
     "belt": "green",
     "makeModels": [
       {
@@ -3047,6 +3585,7 @@
     ]
   },
   {
+    "id": "3129ee7e",
     "belt": "green",
     "makeModels": [
       {
@@ -3059,6 +3598,7 @@
     ]
   },
   {
+    "id": "c81ca385",
     "belt": "green",
     "makeModels": [
       {
@@ -3071,6 +3611,7 @@
     ]
   },
   {
+    "id": "14db6dbd",
     "belt": "green",
     "makeModels": [
       {
@@ -3079,6 +3620,7 @@
     ]
   },
   {
+    "id": "62f3dc5c",
     "belt": "green",
     "makeModels": [
       {
@@ -3091,6 +3633,7 @@
     ]
   },
   {
+    "id": "9811b260",
     "belt": "green",
     "makeModels": [
       {
@@ -3104,6 +3647,7 @@
     ]
   },
   {
+    "id": "14ece36b",
     "belt": "green",
     "makeModels": [
       {
@@ -3113,6 +3657,7 @@
     ]
   },
   {
+    "id": "7ec79663",
     "belt": "green",
     "makeModels": [
       {
@@ -3125,6 +3670,7 @@
     ]
   },
   {
+    "id": "1c002521",
     "belt": "green",
     "makeModels": [
       {
@@ -3136,6 +3682,7 @@
     ]
   },
   {
+    "id": "0e97c099",
     "belt": "green",
     "makeModels": [
       {
@@ -3149,6 +3696,7 @@
     ]
   },
   {
+    "id": "d46ac711",
     "belt": "green",
     "makeModels": [
       {
@@ -3162,6 +3710,7 @@
     ]
   },
   {
+    "id": "5f0834f5",
     "belt": "green",
     "makeModels": [
       {
@@ -3177,6 +3726,7 @@
     ]
   },
   {
+    "id": "3eced659",
     "belt": "green",
     "makeModels": [
       {
@@ -3189,6 +3739,7 @@
     ]
   },
   {
+    "id": "ae023398",
     "belt": "green",
     "makeModels": [
       {
@@ -3202,6 +3753,7 @@
     ]
   },
   {
+    "id": "af98761d",
     "belt": "green",
     "makeModels": [
       {
@@ -3214,6 +3766,7 @@
     ]
   },
   {
+    "id": "cba41cb7",
     "belt": "green",
     "makeModels": [
       {
@@ -3229,6 +3782,7 @@
     ]
   },
   {
+    "id": "ce6ee26e",
     "belt": "green",
     "makeModels": [
       {
@@ -3244,9 +3798,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/6/6c/Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg/300px-Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_410_LOTO,_orange_-_FXE47410.jpg"
+      }
     ]
   },
   {
+    "id": "c942490e",
     "belt": "green",
     "makeModels": [
       {
@@ -3265,9 +3832,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/6/6c/Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg/300px-Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_410_LOTO,_orange_-_FXE47410.jpg"
+      }
     ]
   },
   {
+    "id": "b1915ecd",
     "belt": "green",
     "makeModels": [
       {
@@ -3280,6 +3860,7 @@
     ]
   },
   {
+    "id": "cb471080",
     "belt": "green",
     "makeModels": [
       {
@@ -3289,6 +3870,7 @@
     ]
   },
   {
+    "id": "366d5f50",
     "belt": "green",
     "makeModels": [
       {
@@ -3298,6 +3880,7 @@
     ]
   },
   {
+    "id": "2bf16de8",
     "belt": "green",
     "makeModels": [
       {
@@ -3310,6 +3893,7 @@
     ]
   },
   {
+    "id": "efbc853f",
     "belt": "green",
     "makeModels": [
       {
@@ -3322,6 +3906,7 @@
     ]
   },
   {
+    "id": "b8f4f5f5",
     "belt": "green",
     "makeModels": [
       {
@@ -3331,6 +3916,7 @@
     ]
   },
   {
+    "id": "1f4e3e05",
     "belt": "green",
     "makeModels": [
       {
@@ -3340,6 +3926,7 @@
     ]
   },
   {
+    "id": "66f5175a",
     "belt": "green",
     "makeModels": [
       {
@@ -3352,6 +3939,7 @@
     ]
   },
   {
+    "id": "4f8a20de",
     "belt": "green",
     "makeModels": [
       {
@@ -3364,6 +3952,7 @@
     ]
   },
   {
+    "id": "3700d537",
     "belt": "green",
     "makeModels": [
       {
@@ -3386,6 +3975,7 @@
     "notes": "Must be picked with the bible oriented down"
   },
   {
+    "id": "abf55188",
     "belt": "green",
     "makeModels": [
       {
@@ -3398,6 +3988,7 @@
     ]
   },
   {
+    "id": "8ad36e8a",
     "belt": "green",
     "makeModels": [
       {
@@ -3410,6 +4001,7 @@
     ]
   },
   {
+    "id": "31d68cd1",
     "belt": "green",
     "makeModels": [
       {
@@ -3422,6 +4014,7 @@
     ]
   },
   {
+    "id": "c7f1add4",
     "belt": "green",
     "makeModels": [
       {
@@ -3435,6 +4028,7 @@
     ]
   },
   {
+    "id": "0fb9a3c8",
     "belt": "green",
     "makeModels": [
       {
@@ -3447,6 +4041,7 @@
     ]
   },
   {
+    "id": "e702ca41",
     "belt": "green",
     "makeModels": [
       {
@@ -3459,6 +4054,7 @@
     ]
   },
   {
+    "id": "f54c8493",
     "belt": "green",
     "makeModels": [
       {
@@ -3471,6 +4067,7 @@
     ]
   },
   {
+    "id": "8f3f18d8",
     "belt": "green",
     "makeModels": [
       {
@@ -3484,6 +4081,7 @@
     ]
   },
   {
+    "id": "ea1d1d8c",
     "belt": "green",
     "makeModels": [
       {
@@ -3496,6 +4094,7 @@
     ]
   },
   {
+    "id": "44bdfa06",
     "belt": "green",
     "makeModels": [
       {
@@ -3509,6 +4108,7 @@
     ]
   },
   {
+    "id": "5260b396",
     "belt": "green",
     "makeModels": [
       {
@@ -3518,6 +4118,7 @@
     ]
   },
   {
+    "id": "4f0fbb3f",
     "belt": "green",
     "makeModels": [
       {
@@ -3527,6 +4128,7 @@
     ]
   },
   {
+    "id": "ba627c40",
     "belt": "green",
     "makeModels": [
       {
@@ -3539,6 +4141,7 @@
     ]
   },
   {
+    "id": "9b275fcc",
     "belt": "green",
     "makeModels": [
       {
@@ -3548,6 +4151,7 @@
     ]
   },
   {
+    "id": "8cc092f5",
     "belt": "green",
     "makeModels": [
       {
@@ -3561,6 +4165,7 @@
     ]
   },
   {
+    "id": "736386f4",
     "belt": "green",
     "makeModels": [
       {
@@ -3573,6 +4178,7 @@
     ]
   },
   {
+    "id": "0a7b9888",
     "belt": "green",
     "makeModels": [
       {
@@ -3585,6 +4191,7 @@
     ]
   },
   {
+    "id": "69c4dbf2",
     "belt": "green",
     "makeModels": [
       {
@@ -3597,6 +4204,7 @@
     ]
   },
   {
+    "id": "574e9854",
     "belt": "green",
     "makeModels": [
       {
@@ -3609,6 +4217,7 @@
     ]
   },
   {
+    "id": "de53cff7",
     "belt": "green",
     "makeModels": [
       {
@@ -3619,6 +4228,7 @@
     "version": "6-pin"
   },
   {
+    "id": "a609fdb1",
     "belt": "green",
     "makeModels": [
       {
@@ -3628,6 +4238,7 @@
     ]
   },
   {
+    "id": "bd9e85b5",
     "belt": "green",
     "makeModels": [
       {
@@ -3637,6 +4248,7 @@
     ]
   },
   {
+    "id": "1105b55d",
     "belt": "green",
     "makeModels": [
       {
@@ -3646,6 +4258,7 @@
     ]
   },
   {
+    "id": "34532c45",
     "belt": "green",
     "makeModels": [
       {
@@ -3654,6 +4267,7 @@
     ]
   },
   {
+    "id": "4f6bcdb7",
     "belt": "green",
     "makeModels": [
       {
@@ -3666,6 +4280,7 @@
     ]
   },
   {
+    "id": "648a3742",
     "belt": "green",
     "makeModels": [
       {
@@ -3678,6 +4293,7 @@
     ]
   },
   {
+    "id": "b25e23fd",
     "belt": "green",
     "makeModels": [
       {
@@ -3691,6 +4307,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "9a972905",
     "belt": "green",
     "makeModels": [
       {
@@ -3701,6 +4318,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "ea0efaca",
     "belt": "blue",
     "makeModels": [
       {
@@ -3713,6 +4331,7 @@
     ]
   },
   {
+    "id": "f96de7cc",
     "belt": "blue",
     "makeModels": [
       {
@@ -3725,6 +4344,7 @@
     ]
   },
   {
+    "id": "5c0d870b",
     "belt": "blue",
     "makeModels": [
       {
@@ -3737,6 +4357,7 @@
     ]
   },
   {
+    "id": "3515caae",
     "belt": "blue",
     "makeModels": [
       {
@@ -3753,6 +4374,7 @@
     ]
   },
   {
+    "id": "fe84cc3c",
     "belt": "blue",
     "makeModels": [
       {
@@ -3766,9 +4388,22 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20KV%2014_303.html"
+      }
+    ],
+    "media": [
+      {
+        "text": "From: Catalocks.com",
+        "url": "https://www.catalocks.eu/photos/303/1.jpg"
+      }
     ]
   },
   {
+    "id": "4382d650",
     "belt": "blue",
     "makeModels": [
       {
@@ -3781,6 +4416,7 @@
     ]
   },
   {
+    "id": "f93c57fc",
     "belt": "blue",
     "makeModels": [
       {
@@ -3793,6 +4429,7 @@
     ]
   },
   {
+    "id": "34c0dfe4",
     "belt": "blue",
     "makeModels": [
       {
@@ -3808,6 +4445,7 @@
     ]
   },
   {
+    "id": "d20fb493",
     "belt": "blue",
     "makeModels": [
       {
@@ -3818,6 +4456,7 @@
     "version": "without magnet"
   },
   {
+    "id": "d9e3829f",
     "belt": "blue",
     "makeModels": [
       {
@@ -3836,6 +4475,7 @@
     ]
   },
   {
+    "id": "d08aa492",
     "belt": "blue",
     "makeModels": [
       {
@@ -3855,9 +4495,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Assa_700_cylinders_front_and_back.jpeg"
+      }
     ]
   },
   {
+    "id": "f1e92541",
     "belt": "blue",
     "makeModels": [
       {
@@ -3877,9 +4530,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Assa_700_cylinders_front_and_back.jpeg"
+      }
     ]
   },
   {
+    "id": "08a5799e",
     "belt": "blue",
     "makeModels": [
       {
@@ -3898,6 +4564,7 @@
     ]
   },
   {
+    "id": "1bee7a66",
     "belt": "blue",
     "makeModels": [
       {
@@ -3910,6 +4577,7 @@
     ]
   },
   {
+    "id": "307e1f03",
     "belt": "blue",
     "makeModels": [
       {
@@ -3919,6 +4587,7 @@
     ]
   },
   {
+    "id": "61f33761",
     "belt": "blue",
     "makeModels": [
       {
@@ -3928,6 +4597,7 @@
     ]
   },
   {
+    "id": "ed9fa926",
     "belt": "blue",
     "makeModels": [
       {
@@ -3940,6 +4610,7 @@
     ]
   },
   {
+    "id": "5647f11c",
     "belt": "blue",
     "makeModels": [
       {
@@ -3953,6 +4624,7 @@
     ]
   },
   {
+    "id": "9d337b72",
     "belt": "blue",
     "makeModels": [
       {
@@ -3966,6 +4638,7 @@
     ]
   },
   {
+    "id": "32c85438",
     "belt": "blue",
     "makeModels": [
       {
@@ -3979,6 +4652,7 @@
     ]
   },
   {
+    "id": "0c946064",
     "belt": "blue",
     "makeModels": [
       {
@@ -3992,6 +4666,7 @@
     ]
   },
   {
+    "id": "5b842c0e",
     "belt": "blue",
     "makeModels": [
       {
@@ -4005,6 +4680,7 @@
     ]
   },
   {
+    "id": "066d1e3b",
     "belt": "blue",
     "makeModels": [
       {
@@ -4017,6 +4693,7 @@
     ]
   },
   {
+    "id": "f9aceec0",
     "belt": "blue",
     "makeModels": [
       {
@@ -4032,9 +4709,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/CISA_C3000"
       }
+    ],
+    "media": [
+      {
+        "text": "From: lockwiki.com",
+        "url": "https://www.lockwiki.com/images/thumb/c/c8/C3000_least.png/193px-C3000_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:C3000_least.png"
+      }
     ]
   },
   {
+    "id": "b91162e7",
     "belt": "blue",
     "makeModels": [
       {
@@ -4048,6 +4738,7 @@
     ]
   },
   {
+    "id": "eec4bd4a",
     "belt": "blue",
     "makeModels": [
       {
@@ -4060,6 +4751,7 @@
     ]
   },
   {
+    "id": "96591a8f",
     "belt": "blue",
     "makeModels": [
       {
@@ -4075,6 +4767,7 @@
     ]
   },
   {
+    "id": "2e67118d",
     "belt": "blue",
     "makeModels": [
       {
@@ -4087,6 +4780,7 @@
     ]
   },
   {
+    "id": "81338028",
     "belt": "blue",
     "makeModels": [
       {
@@ -4100,6 +4794,7 @@
     "notes": "At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Else it's green"
   },
   {
+    "id": "1dd28bf9",
     "belt": "blue",
     "makeModels": [
       {
@@ -4115,6 +4810,7 @@
     ]
   },
   {
+    "id": "9aa8821a",
     "belt": "blue",
     "makeModels": [
       {
@@ -4127,6 +4823,7 @@
     ]
   },
   {
+    "id": "1ede9094",
     "belt": "blue",
     "makeModels": [
       {
@@ -4139,6 +4836,7 @@
     ]
   },
   {
+    "id": "4c544aa2",
     "belt": "blue",
     "makeModels": [
       {
@@ -4151,6 +4849,7 @@
     ]
   },
   {
+    "id": "0f7eb0f2",
     "belt": "blue",
     "makeModels": [
       {
@@ -4164,6 +4863,7 @@
     ]
   },
   {
+    "id": "e2d201c9",
     "belt": "blue",
     "makeModels": [
       {
@@ -4177,6 +4877,7 @@
     ]
   },
   {
+    "id": "a2a10bc7",
     "belt": "blue",
     "makeModels": [
       {
@@ -4190,6 +4891,7 @@
     ]
   },
   {
+    "id": "14481dfb",
     "belt": "blue",
     "makeModels": [
       {
@@ -4203,6 +4905,7 @@
     ]
   },
   {
+    "id": "da54208c",
     "belt": "blue",
     "makeModels": [
       {
@@ -4216,6 +4919,7 @@
     ]
   },
   {
+    "id": "af99d1cb",
     "belt": "blue",
     "makeModels": [
       {
@@ -4229,6 +4933,7 @@
     ]
   },
   {
+    "id": "18f3c21f",
     "belt": "blue",
     "makeModels": [
       {
@@ -4242,6 +4947,7 @@
     ]
   },
   {
+    "id": "bce6757d",
     "belt": "blue",
     "makeModels": [
       {
@@ -4257,6 +4963,7 @@
     ]
   },
   {
+    "id": "aee424c0",
     "belt": "blue",
     "makeModels": [
       {
@@ -4273,6 +4980,7 @@
     ]
   },
   {
+    "id": "f938f2fe",
     "belt": "blue",
     "makeModels": [
       {
@@ -4285,6 +4993,7 @@
     ]
   },
   {
+    "id": "275d33c9",
     "belt": "blue",
     "makeModels": [
       {
@@ -4294,6 +5003,7 @@
     ]
   },
   {
+    "id": "8ad6939a",
     "belt": "blue",
     "makeModels": [
       {
@@ -4306,6 +5016,7 @@
     ]
   },
   {
+    "id": "0037a89f",
     "belt": "blue",
     "makeModels": [
       {
@@ -4318,6 +5029,7 @@
     ]
   },
   {
+    "id": "62bdbd5e",
     "belt": "blue",
     "makeModels": [
       {
@@ -4326,6 +5038,7 @@
     ]
   },
   {
+    "id": "c1d09460",
     "belt": "blue",
     "makeModels": [
       {
@@ -4335,6 +5048,7 @@
     ]
   },
   {
+    "id": "1fda76a8",
     "belt": "blue",
     "makeModels": [
       {
@@ -4348,6 +5062,7 @@
     ]
   },
   {
+    "id": "5c2f5101",
     "belt": "blue",
     "makeModels": [
       {
@@ -4361,6 +5076,7 @@
     ]
   },
   {
+    "id": "aa7fc00e",
     "belt": "blue",
     "makeModels": [
       {
@@ -4374,6 +5090,7 @@
     ]
   },
   {
+    "id": "40e50dd4",
     "belt": "blue",
     "makeModels": [
       {
@@ -4392,6 +5109,7 @@
     ]
   },
   {
+    "id": "b01220ea",
     "belt": "blue",
     "makeModels": [
       {
@@ -4401,6 +5119,7 @@
     ]
   },
   {
+    "id": "54dc69e8",
     "belt": "blue",
     "makeModels": [
       {
@@ -4414,6 +5133,7 @@
     ]
   },
   {
+    "id": "c8c0ee06",
     "belt": "blue",
     "makeModels": [
       {
@@ -4425,6 +5145,7 @@
     ]
   },
   {
+    "id": "adc2d335",
     "belt": "blue",
     "makeModels": [
       {
@@ -4434,6 +5155,7 @@
     ]
   },
   {
+    "id": "58f12de9",
     "belt": "blue",
     "makeModels": [
       {
@@ -4446,6 +5168,7 @@
     ]
   },
   {
+    "id": "331c9d36",
     "belt": "blue",
     "makeModels": [
       {
@@ -4459,6 +5182,7 @@
     ]
   },
   {
+    "id": "36d61da4",
     "belt": "blue",
     "makeModels": [
       {
@@ -4471,6 +5195,7 @@
     ]
   },
   {
+    "id": "f6b001ed",
     "belt": "blue",
     "makeModels": [
       {
@@ -4483,6 +5208,7 @@
     ]
   },
   {
+    "id": "1fe0ba0d",
     "belt": "blue",
     "makeModels": [
       {
@@ -4509,6 +5235,7 @@
     ]
   },
   {
+    "id": "2a02810c",
     "belt": "blue",
     "makeModels": [
       {
@@ -4518,6 +5245,7 @@
     ]
   },
   {
+    "id": "0a70d67f",
     "belt": "blue",
     "makeModels": [
       {
@@ -4527,6 +5255,7 @@
     ]
   },
   {
+    "id": "72675596",
     "belt": "blue",
     "makeModels": [
       {
@@ -4540,6 +5269,7 @@
     "notes": "6 pin dimple, 3 spools and 3 T pins, good tolerances"
   },
   {
+    "id": "23c7988c",
     "belt": "blue",
     "makeModels": [
       {
@@ -4554,6 +5284,7 @@
     ]
   },
   {
+    "id": "69d4ef86",
     "belt": "blue",
     "makeModels": [
       {
@@ -4566,6 +5297,7 @@
     ]
   },
   {
+    "id": "a9e47067",
     "belt": "blue",
     "makeModels": [
       {
@@ -4580,6 +5312,7 @@
     ]
   },
   {
+    "id": "f3a2aa78",
     "belt": "blue",
     "makeModels": [
       {
@@ -4589,6 +5322,7 @@
     ]
   },
   {
+    "id": "f9f2d983",
     "belt": "blue",
     "makeModels": [
       {
@@ -4598,6 +5332,7 @@
     ]
   },
   {
+    "id": "c0af329b",
     "belt": "blue",
     "makeModels": [
       {
@@ -4610,6 +5345,7 @@
     ]
   },
   {
+    "id": "df8081fa",
     "belt": "blue",
     "makeModels": [
       {
@@ -4622,6 +5358,7 @@
     ]
   },
   {
+    "id": "b1834e81",
     "belt": "blue",
     "makeModels": [
       {
@@ -4631,6 +5368,7 @@
     ]
   },
   {
+    "id": "0418a174",
     "belt": "blue",
     "makeModels": [
       {
@@ -4644,6 +5382,7 @@
     ]
   },
   {
+    "id": "6e0bfdd2",
     "belt": "blue",
     "makeModels": [
       {
@@ -4656,6 +5395,7 @@
     ]
   },
   {
+    "id": "fb5a9eb7",
     "belt": "blue",
     "makeModels": [
       {
@@ -4668,6 +5408,7 @@
     ]
   },
   {
+    "id": "74c225d1",
     "belt": "blue",
     "makeModels": [
       {
@@ -4680,6 +5421,7 @@
     ]
   },
   {
+    "id": "ca6f4eaf",
     "belt": "blue",
     "makeModels": [
       {
@@ -4691,6 +5433,7 @@
     ]
   },
   {
+    "id": "6dc539dd",
     "belt": "blue",
     "makeModels": [
       {
@@ -4703,6 +5446,7 @@
     ]
   },
   {
+    "id": "842165cc",
     "belt": "blue",
     "makeModels": [
       {
@@ -4715,6 +5459,7 @@
     ]
   },
   {
+    "id": "ccd19ba8",
     "belt": "blue",
     "makeModels": [
       {
@@ -4727,6 +5472,7 @@
     ]
   },
   {
+    "id": "0a12f032",
     "belt": "blue",
     "makeModels": [
       {
@@ -4736,6 +5482,7 @@
     ]
   },
   {
+    "id": "c6529d9c",
     "belt": "blue",
     "makeModels": [
       {
@@ -4748,6 +5495,7 @@
     ]
   },
   {
+    "id": "b0d2e04c",
     "belt": "blue",
     "makeModels": [
       {
@@ -4757,6 +5505,7 @@
     ]
   },
   {
+    "id": "8b5b655e",
     "belt": "blue",
     "makeModels": [
       {
@@ -4769,6 +5518,7 @@
     ]
   },
   {
+    "id": "35330d19",
     "belt": "blue",
     "makeModels": [
       {
@@ -4781,6 +5531,7 @@
     ]
   },
   {
+    "id": "55511995",
     "belt": "blue",
     "makeModels": [
       {
@@ -4794,6 +5545,7 @@
     ]
   },
   {
+    "id": "86703028",
     "belt": "blue",
     "makeModels": [
       {
@@ -4807,6 +5559,7 @@
     ]
   },
   {
+    "id": "67c4159c",
     "belt": "blue",
     "makeModels": [
       {
@@ -4816,6 +5569,7 @@
     ]
   },
   {
+    "id": "97c2b9be",
     "belt": "blue",
     "makeModels": [
       {
@@ -4824,6 +5578,7 @@
     ]
   },
   {
+    "id": "2c9d12fc",
     "belt": "blue",
     "makeModels": [
       {
@@ -4833,6 +5588,7 @@
     ]
   },
   {
+    "id": "fe088de0",
     "belt": "blue",
     "makeModels": [
       {
@@ -4842,6 +5598,7 @@
     ]
   },
   {
+    "id": "779e7dcb",
     "belt": "blue",
     "makeModels": [
       {
@@ -4851,6 +5608,7 @@
     ]
   },
   {
+    "id": "30a4fef5",
     "belt": "blue",
     "makeModels": [
       {
@@ -4869,6 +5627,7 @@
     ]
   },
   {
+    "id": "d1896bf9",
     "belt": "blue",
     "makeModels": [
       {
@@ -4882,6 +5641,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "08b5986d",
     "belt": "blue",
     "makeModels": [
       {
@@ -4892,6 +5652,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "1c38e176",
     "belt": "blue",
     "makeModels": [
       {
@@ -4902,6 +5663,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "948f9068",
     "belt": "blue",
     "makeModels": [
       {
@@ -4912,6 +5674,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "96fd610e",
     "belt": "purple",
     "makeModels": [
       {
@@ -4924,6 +5687,7 @@
     ]
   },
   {
+    "id": "a062f1ee",
     "belt": "purple",
     "makeModels": [
       {
@@ -4936,6 +5700,7 @@
     ]
   },
   {
+    "id": "20adf729",
     "belt": "purple",
     "makeModels": [
       {
@@ -4948,6 +5713,7 @@
     ]
   },
   {
+    "id": "dd1dd313",
     "belt": "purple",
     "makeModels": [
       {
@@ -4960,6 +5726,7 @@
     ]
   },
   {
+    "id": "da8331ef",
     "belt": "purple",
     "makeModels": [
       {
@@ -4984,6 +5751,7 @@
     ]
   },
   {
+    "id": "557b2f45",
     "belt": "purple",
     "makeModels": [
       {
@@ -5004,6 +5772,7 @@
     ]
   },
   {
+    "id": "0723bdc2",
     "belt": "purple",
     "makeModels": [
       {
@@ -5013,6 +5782,7 @@
     ]
   },
   {
+    "id": "bbce33e0",
     "belt": "purple",
     "makeModels": [
       {
@@ -5027,9 +5797,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Anchor_810-1"
       }
+    ],
+    "media": [
+      {
+        "text": "By: autom8on",
+        "url": "https://www.lockwiki.com/images/thumb/2/2a/AnchorLas8101body-autom8on.jpg/300px-AnchorLas8101body-autom8on.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:AnchorLas8101body-autom8on.jpg"
+      }
     ]
   },
   {
+    "id": "23919b4e",
     "belt": "purple",
     "makeModels": [
       {
@@ -5043,6 +5826,7 @@
     ]
   },
   {
+    "id": "f2d41749",
     "belt": "purple",
     "makeModels": [
       {
@@ -5061,6 +5845,7 @@
     ]
   },
   {
+    "id": "ef221c67",
     "belt": "purple",
     "makeModels": [
       {
@@ -5077,6 +5862,7 @@
     ]
   },
   {
+    "id": "45e3cde7",
     "belt": "purple",
     "makeModels": [
       {
@@ -5095,6 +5881,7 @@
     ]
   },
   {
+    "id": "039a239f",
     "belt": "purple",
     "makeModels": [
       {
@@ -5114,9 +5901,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Desmo"
       }
+    ],
+    "media": [
+      {
+        "text": "By: GWiens2001",
+        "url": "https://www.lockwiki.com/images/thumb/8/81/ASSA_Desmo_cam_lock_keyway-Gwiens2001.png/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+      }
     ]
   },
   {
+    "id": "e2742f70",
     "belt": "purple",
     "makeModels": [
       {
@@ -5136,9 +5936,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Desmo"
       }
+    ],
+    "media": [
+      {
+        "text": "By: GWiens2001",
+        "url": "https://www.lockwiki.com/images/thumb/8/81/ASSA_Desmo_cam_lock_keyway-Gwiens2001.png/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+      }
     ]
   },
   {
+    "id": "122b5621",
     "belt": "purple",
     "makeModels": [
       {
@@ -5158,6 +5971,7 @@
     ]
   },
   {
+    "id": "f3666121",
     "belt": "purple",
     "makeModels": [
       {
@@ -5171,6 +5985,7 @@
     ]
   },
   {
+    "id": "1ca633a8",
     "belt": "purple",
     "makeModels": [
       {
@@ -5194,6 +6009,7 @@
     ]
   },
   {
+    "id": "f70b9b33",
     "belt": "purple",
     "makeModels": [
       {
@@ -5217,6 +6033,7 @@
     ]
   },
   {
+    "id": "8f004bf0",
     "belt": "purple",
     "makeModels": [
       {
@@ -5230,6 +6047,7 @@
     ]
   },
   {
+    "id": "98ba98ae",
     "belt": "purple",
     "makeModels": [
       {
@@ -5239,6 +6057,7 @@
     ]
   },
   {
+    "id": "e38d015b",
     "belt": "purple",
     "makeModels": [
       {
@@ -5254,6 +6073,7 @@
     ]
   },
   {
+    "id": "1f3a4b1d",
     "belt": "purple",
     "makeModels": [
       {
@@ -5263,6 +6083,7 @@
     ]
   },
   {
+    "id": "1f3a8ff9",
     "belt": "purple",
     "makeModels": [
       {
@@ -5276,6 +6097,7 @@
     ]
   },
   {
+    "id": "d78ca1ba",
     "belt": "purple",
     "makeModels": [
       {
@@ -5288,6 +6110,7 @@
     ]
   },
   {
+    "id": "8a0c4b07",
     "belt": "purple",
     "makeModels": [
       {
@@ -5301,6 +6124,7 @@
     ]
   },
   {
+    "id": "50fd7a98",
     "belt": "purple",
     "makeModels": [
       {
@@ -5311,6 +6135,7 @@
     "notes": "Both shearlines must be filmed in one take"
   },
   {
+    "id": "5e264777",
     "belt": "purple",
     "makeModels": [
       {
@@ -5324,6 +6149,7 @@
     ]
   },
   {
+    "id": "a10711cc",
     "belt": "purple",
     "makeModels": [
       {
@@ -5336,6 +6162,7 @@
     ]
   },
   {
+    "id": "fc4de1ff",
     "belt": "purple",
     "makeModels": [
       {
@@ -5348,6 +6175,7 @@
     ]
   },
   {
+    "id": "acde7f0c",
     "belt": "purple",
     "makeModels": [
       {
@@ -5366,6 +6194,7 @@
     ]
   },
   {
+    "id": "7b05dccc",
     "belt": "purple",
     "makeModels": [
       {
@@ -5379,6 +6208,7 @@
     ]
   },
   {
+    "id": "e8901d1c",
     "belt": "purple",
     "makeModels": [
       {
@@ -5389,6 +6219,7 @@
     "version": "without shutter"
   },
   {
+    "id": "04a402d6",
     "belt": "purple",
     "makeModels": [
       {
@@ -5398,6 +6229,7 @@
     ]
   },
   {
+    "id": "71bce5b7",
     "belt": "purple",
     "makeModels": [
       {
@@ -5414,9 +6246,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Corbin_Emhart"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/6/67/Corbin_Emhart_cylinder.jpg/300px-Corbin_Emhart_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Corbin_Emhart_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "8c2983b5",
     "belt": "purple",
     "makeModels": [
       {
@@ -5447,6 +6292,7 @@
     ]
   },
   {
+    "id": "93871dad",
     "belt": "purple",
     "makeModels": [
       {
@@ -5460,6 +6306,7 @@
     ]
   },
   {
+    "id": "7786832f",
     "belt": "purple",
     "makeModels": [
       {
@@ -5468,6 +6315,7 @@
     ]
   },
   {
+    "id": "db4de1bb",
     "belt": "purple",
     "makeModels": [
       {
@@ -5488,9 +6336,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/DeGuard_Interactive"
       }
+    ],
+    "media": [
+      {
+        "text": "By:  mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/1/1e/DeGuard-Dimple-front.jpg/300px-DeGuard-Dimple-front.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:DeGuard-Dimple-front.jpg"
+      }
     ]
   },
   {
+    "id": "3b848976",
     "belt": "purple",
     "makeModels": [
       {
@@ -5500,6 +6361,7 @@
     ]
   },
   {
+    "id": "07bc680a",
     "belt": "purple",
     "makeModels": [
       {
@@ -5512,6 +6374,7 @@
     ]
   },
   {
+    "id": "c11aca1a",
     "belt": "purple",
     "makeModels": [
       {
@@ -5524,6 +6387,7 @@
     ]
   },
   {
+    "id": "6eab0c38",
     "belt": "purple",
     "makeModels": [
       {
@@ -5534,6 +6398,7 @@
     "notes": "requires 360 for belting"
   },
   {
+    "id": "30aa78ef",
     "belt": "purple",
     "makeModels": [
       {
@@ -5546,6 +6411,7 @@
     ]
   },
   {
+    "id": "779d74f5",
     "belt": "purple",
     "makeModels": [
       {
@@ -5559,6 +6425,7 @@
     ]
   },
   {
+    "id": "4cd09b3b",
     "belt": "purple",
     "makeModels": [
       {
@@ -5572,6 +6439,7 @@
     ]
   },
   {
+    "id": "898a7138",
     "belt": "purple",
     "makeModels": [
       {
@@ -5590,6 +6458,7 @@
     ]
   },
   {
+    "id": "6f5e0d32",
     "belt": "purple",
     "makeModels": [
       {
@@ -5602,6 +6471,7 @@
     ]
   },
   {
+    "id": "304f5471",
     "belt": "purple",
     "makeModels": [
       {
@@ -5622,6 +6492,7 @@
     ]
   },
   {
+    "id": "06ddb074",
     "belt": "purple",
     "makeModels": [
       {
@@ -5634,6 +6505,7 @@
     ]
   },
   {
+    "id": "41f9efa2",
     "belt": "purple",
     "makeModels": [
       {
@@ -5646,6 +6518,7 @@
     ]
   },
   {
+    "id": "dd1bf2af",
     "belt": "purple",
     "makeModels": [
       {
@@ -5658,6 +6531,7 @@
     ]
   },
   {
+    "id": "bb317675",
     "belt": "purple",
     "makeModels": [
       {
@@ -5671,6 +6545,7 @@
     ]
   },
   {
+    "id": "a6a225e5",
     "belt": "purple",
     "makeModels": [
       {
@@ -5684,6 +6559,7 @@
     ]
   },
   {
+    "id": "c5b7e63b",
     "belt": "purple",
     "makeModels": [
       {
@@ -5700,6 +6576,7 @@
     ]
   },
   {
+    "id": "434b5b25",
     "belt": "purple",
     "makeModels": [
       {
@@ -5712,6 +6589,7 @@
     ]
   },
   {
+    "id": "9982c0eb",
     "belt": "purple",
     "makeModels": [
       {
@@ -5727,6 +6605,7 @@
     ]
   },
   {
+    "id": "883fb3cd",
     "belt": "purple",
     "makeModels": [
       {
@@ -5743,6 +6622,7 @@
     ]
   },
   {
+    "id": "71833308",
     "belt": "purple",
     "makeModels": [
       {
@@ -5756,6 +6636,7 @@
     ]
   },
   {
+    "id": "6efe5f67",
     "belt": "purple",
     "makeModels": [
       {
@@ -5790,6 +6671,7 @@
     ]
   },
   {
+    "id": "be22f5f1",
     "belt": "purple",
     "makeModels": [
       {
@@ -5811,6 +6693,7 @@
     ]
   },
   {
+    "id": "9aedb834",
     "belt": "purple",
     "makeModels": [
       {
@@ -5828,6 +6711,7 @@
     ]
   },
   {
+    "id": "c9fc823c",
     "belt": "purple",
     "makeModels": [
       {
@@ -5837,6 +6721,7 @@
     ]
   },
   {
+    "id": "826c31e0",
     "belt": "purple",
     "makeModels": [
       {
@@ -5859,6 +6744,7 @@
     ]
   },
   {
+    "id": "aeaa6a09",
     "belt": "purple",
     "makeModels": [
       {
@@ -5873,6 +6759,7 @@
     ]
   },
   {
+    "id": "50d411f4",
     "belt": "purple",
     "makeModels": [
       {
@@ -5885,6 +6772,7 @@
     ]
   },
   {
+    "id": "58f2eac0",
     "belt": "purple",
     "makeModels": [
       {
@@ -5897,6 +6785,7 @@
     ]
   },
   {
+    "id": "278f2108",
     "belt": "purple",
     "makeModels": [
       {
@@ -5905,6 +6794,7 @@
     ]
   },
   {
+    "id": "62520bea",
     "belt": "purple",
     "makeModels": [
       {
@@ -5919,6 +6809,7 @@
     "notes": "Must be picked with bible oriented down"
   },
   {
+    "id": "8c76cc79",
     "belt": "purple",
     "makeModels": [
       {
@@ -5928,6 +6819,7 @@
     ]
   },
   {
+    "id": "3335df97",
     "belt": "purple",
     "makeModels": [
       {
@@ -5949,6 +6841,7 @@
     ]
   },
   {
+    "id": "16906a6c",
     "belt": "purple",
     "makeModels": [
       {
@@ -5961,6 +6854,7 @@
     ]
   },
   {
+    "id": "8a65b956",
     "belt": "purple",
     "makeModels": [
       {
@@ -5973,6 +6867,7 @@
     ]
   },
   {
+    "id": "3efc97ad",
     "belt": "purple",
     "makeModels": [
       {
@@ -5986,6 +6881,7 @@
     ]
   },
   {
+    "id": "94466c21",
     "belt": "purple",
     "makeModels": [
       {
@@ -6002,6 +6898,7 @@
     ]
   },
   {
+    "id": "4debdca1",
     "belt": "purple",
     "makeModels": [
       {
@@ -6014,6 +6911,7 @@
     ]
   },
   {
+    "id": "ed3ae6cf",
     "belt": "purple",
     "makeModels": [
       {
@@ -6023,6 +6921,7 @@
     ]
   },
   {
+    "id": "c9da1540",
     "belt": "purple",
     "makeModels": [
       {
@@ -6032,6 +6931,7 @@
     ]
   },
   {
+    "id": "8e81c2c6",
     "belt": "purple",
     "makeModels": [
       {
@@ -6044,6 +6944,7 @@
     ]
   },
   {
+    "id": "6d754a0a",
     "belt": "purple",
     "makeModels": [
       {
@@ -6053,6 +6954,7 @@
     ]
   },
   {
+    "id": "e1e595b9",
     "belt": "purple",
     "makeModels": [
       {
@@ -6066,6 +6968,7 @@
     ]
   },
   {
+    "id": "3dabf132",
     "belt": "purple",
     "makeModels": [
       {
@@ -6078,6 +6981,7 @@
     ]
   },
   {
+    "id": "479f1d73",
     "belt": "purple",
     "makeModels": [
       {
@@ -6089,6 +6993,7 @@
     ]
   },
   {
+    "id": "e0a9caf4",
     "belt": "purple",
     "makeModels": [
       {
@@ -6097,6 +7002,7 @@
     ]
   },
   {
+    "id": "c8259a23",
     "belt": "purple",
     "makeModels": [
       {
@@ -6109,6 +7015,7 @@
     ]
   },
   {
+    "id": "3f49ccc1",
     "belt": "purple",
     "makeModels": [
       {
@@ -6121,6 +7028,7 @@
     ]
   },
   {
+    "id": "9a9ae8df",
     "belt": "purple",
     "makeModels": [
       {
@@ -6133,6 +7041,7 @@
     ]
   },
   {
+    "id": "e7f6d089",
     "belt": "purple",
     "makeModels": [
       {
@@ -6142,6 +7051,7 @@
     ]
   },
   {
+    "id": "8d4632d9",
     "belt": "purple",
     "makeModels": [
       {
@@ -6161,9 +7071,38 @@
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Tubar"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/a/ad/Tubar_cylinder.jpg/240px-Tubar_cylinder.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/7/74/Tubar_key.jpg/800px-Tubar_key.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/6/67/Tubar_pins_close.jpg/588px-Tubar_pins_close.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Tubar_cylinder.jpg"
+      },
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Tubar_key.jpg"
+      },
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Tubar_pins_close.jpg"
+      }
     ]
   },
   {
+    "id": "b35bf986",
     "belt": "purple",
     "makeModels": [
       {
@@ -6173,6 +7112,7 @@
     ]
   },
   {
+    "id": "416946bc",
     "belt": "purple",
     "makeModels": [
       {
@@ -6182,6 +7122,7 @@
     ]
   },
   {
+    "id": "1be10736",
     "belt": "purple",
     "makeModels": [
       {
@@ -6195,6 +7136,7 @@
     ]
   },
   {
+    "id": "ebe9ee59",
     "belt": "purple",
     "makeModels": [
       {
@@ -6207,6 +7149,7 @@
     ]
   },
   {
+    "id": "4ffe03a9",
     "belt": "purple",
     "makeModels": [
       {
@@ -6221,6 +7164,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "da09d849",
     "belt": "brown",
     "makeModels": [
       {
@@ -6236,9 +7180,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Classic"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/b/ba/Abloy_Classic_cylinder.jpg/287px-Abloy_Classic_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abloy_Classic_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "b8350900",
     "belt": "brown",
     "makeModels": [
       {
@@ -6254,9 +7211,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_Plus_88/50"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/1/12/ABUS_Plus_88_50_padlock.jpg/238px-ABUS_Plus_88_50_padlock.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_Plus_88_50_padlock.jpg"
+      }
     ]
   },
   {
+    "id": "19fce24d",
     "belt": "brown",
     "makeModels": [
       {
@@ -6268,6 +7238,7 @@
     ]
   },
   {
+    "id": "db380ba0",
     "belt": "brown",
     "makeModels": [
       {
@@ -6277,6 +7248,7 @@
     ]
   },
   {
+    "id": "33d6e0df",
     "belt": "brown",
     "makeModels": [
       {
@@ -6289,6 +7261,7 @@
     ]
   },
   {
+    "id": "d8abe040",
     "belt": "brown",
     "makeModels": [
       {
@@ -6297,6 +7270,7 @@
     ]
   },
   {
+    "id": "054731a5",
     "belt": "brown",
     "makeModels": [
       {
@@ -6309,6 +7283,7 @@
     ]
   },
   {
+    "id": "2c58f220",
     "belt": "brown",
     "makeModels": [
       {
@@ -6321,6 +7296,7 @@
     ]
   },
   {
+    "id": "5329b0f3",
     "belt": "brown",
     "makeModels": [
       {
@@ -6330,6 +7306,7 @@
     ]
   },
   {
+    "id": "d3ad5a73",
     "belt": "brown",
     "makeModels": [
       {
@@ -6380,6 +7357,7 @@
     ]
   },
   {
+    "id": "1459e2c6",
     "belt": "brown",
     "makeModels": [
       {
@@ -6399,9 +7377,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Desmo"
       }
+    ],
+    "media": [
+      {
+        "text": "By: GWiens2001",
+        "url": "https://www.lockwiki.com/images/thumb/8/81/ASSA_Desmo_cam_lock_keyway-Gwiens2001.png/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+      }
     ]
   },
   {
+    "id": "fd7b514a",
     "belt": "brown",
     "makeModels": [
       {
@@ -6435,9 +7426,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/3/3d/ASSA_Twin_Combi_cylinder.jpg/300px-ASSA_Twin_Combi_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_Combi_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "82ae66ad",
     "belt": "brown",
     "makeModels": [
       {
@@ -6447,6 +7451,7 @@
     ]
   },
   {
+    "id": "0b1a28ce",
     "belt": "brown",
     "makeModels": [
       {
@@ -6470,6 +7475,7 @@
     ]
   },
   {
+    "id": "9ed006d4",
     "belt": "brown",
     "makeModels": [
       {
@@ -6493,6 +7499,7 @@
     ]
   },
   {
+    "id": "39bf479d",
     "belt": "brown",
     "makeModels": [
       {
@@ -6501,6 +7508,7 @@
     ]
   },
   {
+    "id": "9b00fb5e",
     "belt": "brown",
     "makeModels": [
       {
@@ -6513,6 +7521,7 @@
     ]
   },
   {
+    "id": "de47d600",
     "belt": "brown",
     "makeModels": [
       {
@@ -6522,6 +7531,7 @@
     ]
   },
   {
+    "id": "f51e2ff2",
     "belt": "brown",
     "makeModels": [
       {
@@ -6534,6 +7544,7 @@
     ]
   },
   {
+    "id": "bc03135a",
     "belt": "brown",
     "makeModels": [
       {
@@ -6546,6 +7557,7 @@
     ]
   },
   {
+    "id": "626da374",
     "belt": "brown",
     "makeModels": [
       {
@@ -6569,6 +7581,7 @@
     ]
   },
   {
+    "id": "e39885f3",
     "belt": "brown",
     "makeModels": [
       {
@@ -6586,6 +7599,7 @@
     ]
   },
   {
+    "id": "dd6a3683",
     "belt": "brown",
     "makeModels": [
       {
@@ -6598,6 +7612,7 @@
     ]
   },
   {
+    "id": "61247b32",
     "belt": "brown",
     "makeModels": [
       {
@@ -6610,6 +7625,7 @@
     ]
   },
   {
+    "id": "87ee7a61",
     "belt": "brown",
     "makeModels": [
       {
@@ -6622,6 +7638,7 @@
     ]
   },
   {
+    "id": "33588917",
     "belt": "brown",
     "makeModels": [
       {
@@ -6631,6 +7648,7 @@
     ]
   },
   {
+    "id": "e0255299",
     "belt": "brown",
     "makeModels": [
       {
@@ -6644,6 +7662,7 @@
     ]
   },
   {
+    "id": "e8150a27",
     "belt": "brown",
     "makeModels": [
       {
@@ -6653,6 +7672,7 @@
     ]
   },
   {
+    "id": "45c08407",
     "belt": "brown",
     "makeModels": [
       {
@@ -6666,6 +7686,7 @@
     ]
   },
   {
+    "id": "58cbc037",
     "belt": "brown",
     "makeModels": [
       {
@@ -6683,6 +7704,7 @@
     ]
   },
   {
+    "id": "9c627ebd",
     "belt": "brown",
     "makeModels": [
       {
@@ -6695,6 +7717,7 @@
     ]
   },
   {
+    "id": "594b1a1c",
     "belt": "brown",
     "makeModels": [
       {
@@ -6707,6 +7730,7 @@
     ]
   },
   {
+    "id": "2929f922",
     "belt": "brown",
     "makeModels": [
       {
@@ -6718,6 +7742,7 @@
     ]
   },
   {
+    "id": "7194cc26",
     "belt": "brown",
     "makeModels": [
       {
@@ -6736,6 +7761,7 @@
     ]
   },
   {
+    "id": "a1233156",
     "belt": "brown",
     "makeModels": [
       {
@@ -6754,6 +7780,7 @@
     ]
   },
   {
+    "id": "9659ad59",
     "belt": "brown",
     "makeModels": [
       {
@@ -6766,6 +7793,7 @@
     ]
   },
   {
+    "id": "d64be6f7",
     "belt": "brown",
     "makeModels": [
       {
@@ -6783,6 +7811,7 @@
     ]
   },
   {
+    "id": "1ee01369",
     "belt": "brown",
     "makeModels": [
       {
@@ -6795,6 +7824,7 @@
     ]
   },
   {
+    "id": "f61461ed",
     "belt": "brown",
     "makeModels": [
       {
@@ -6807,6 +7837,7 @@
     ]
   },
   {
+    "id": "41b91a0e",
     "belt": "brown",
     "makeModels": [
       {
@@ -6819,6 +7850,7 @@
     ]
   },
   {
+    "id": "e0191c45",
     "belt": "brown",
     "makeModels": [
       {
@@ -6831,6 +7863,7 @@
     ]
   },
   {
+    "id": "2efc9257",
     "belt": "brown",
     "makeModels": [
       {
@@ -6843,6 +7876,7 @@
     ]
   },
   {
+    "id": "9375df98",
     "belt": "brown",
     "makeModels": [
       {
@@ -6860,6 +7894,7 @@
     ]
   },
   {
+    "id": "660a840e",
     "belt": "brown",
     "makeModels": [
       {
@@ -6872,6 +7907,7 @@
     ]
   },
   {
+    "id": "f5cc6ace",
     "belt": "brown",
     "makeModels": [
       {
@@ -6887,6 +7923,7 @@
     ]
   },
   {
+    "id": "514c7ec4",
     "belt": "brown",
     "makeModels": [
       {
@@ -6903,6 +7940,7 @@
     ]
   },
   {
+    "id": "8625f848",
     "belt": "brown",
     "makeModels": [
       {
@@ -6912,6 +7950,7 @@
     ]
   },
   {
+    "id": "236027a0",
     "belt": "brown",
     "makeModels": [
       {
@@ -6921,6 +7960,7 @@
     ]
   },
   {
+    "id": "b8783269",
     "belt": "brown",
     "makeModels": [
       {
@@ -6942,6 +7982,7 @@
     ]
   },
   {
+    "id": "b9b7ba7c",
     "belt": "brown",
     "makeModels": [
       {
@@ -6951,6 +7992,7 @@
     ]
   },
   {
+    "id": "620b6e5a",
     "belt": "brown",
     "makeModels": [
       {
@@ -6960,6 +8002,7 @@
     ]
   },
   {
+    "id": "305473cf",
     "belt": "brown",
     "makeModels": [
       {
@@ -6977,6 +8020,7 @@
     ]
   },
   {
+    "id": "848940e5",
     "belt": "brown",
     "makeModels": [
       {
@@ -6997,9 +8041,22 @@
         "text": "Lockwiki",
         "url": "http://lockwiki.com/index.php/Medeco_Duracam"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/9/9a/Medeco_Duracam_cylinder.jpg/300px-Medeco_Duracam_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_Duracam_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "540a14c0",
     "belt": "brown",
     "makeModels": [
       {
@@ -7011,6 +8068,7 @@
     ]
   },
   {
+    "id": "f257bf77",
     "belt": "brown",
     "makeModels": [
       {
@@ -7023,6 +8081,7 @@
     ]
   },
   {
+    "id": "2bf9f60e",
     "belt": "brown",
     "makeModels": [
       {
@@ -7039,6 +8098,7 @@
     ]
   },
   {
+    "id": "5c5701d7",
     "belt": "brown",
     "makeModels": [
       {
@@ -7056,6 +8116,7 @@
     ]
   },
   {
+    "id": "0ae75ea0",
     "belt": "brown",
     "makeModels": [
       {
@@ -7073,6 +8134,7 @@
     ]
   },
   {
+    "id": "cc5bbb68",
     "belt": "brown",
     "makeModels": [
       {
@@ -7085,6 +8147,7 @@
     ]
   },
   {
+    "id": "94ee12b7",
     "belt": "brown",
     "makeModels": [
       {
@@ -7098,6 +8161,7 @@
     ]
   },
   {
+    "id": "ea1afad0",
     "belt": "brown",
     "makeModels": [
       {
@@ -7115,6 +8179,7 @@
     ]
   },
   {
+    "id": "b13f4b57",
     "belt": "brown",
     "makeModels": [
       {
@@ -7127,6 +8192,7 @@
     ]
   },
   {
+    "id": "86e86a1d",
     "belt": "brown",
     "makeModels": [
       {
@@ -7138,6 +8204,7 @@
     ]
   },
   {
+    "id": "b91890bf",
     "belt": "brown",
     "makeModels": [
       {
@@ -7149,6 +8216,7 @@
     ]
   },
   {
+    "id": "40e99be0",
     "belt": "brown",
     "makeModels": [
       {
@@ -7161,6 +8229,7 @@
     ]
   },
   {
+    "id": "506b242a",
     "belt": "brown",
     "makeModels": [
       {
@@ -7172,6 +8241,7 @@
     ]
   },
   {
+    "id": "dd764207",
     "belt": "brown",
     "makeModels": [
       {
@@ -7183,6 +8253,7 @@
     ]
   },
   {
+    "id": "18e1f45b",
     "belt": "brown",
     "makeModels": [
       {
@@ -7199,6 +8270,7 @@
     ]
   },
   {
+    "id": "9d865bcd",
     "belt": "brown",
     "makeModels": [
       {
@@ -7211,6 +8283,7 @@
     ]
   },
   {
+    "id": "f85f4ac0",
     "belt": "brown",
     "makeModels": [
       {
@@ -7232,6 +8305,7 @@
     ]
   },
   {
+    "id": "f38cafca",
     "belt": "brown",
     "makeModels": [
       {
@@ -7247,6 +8321,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "87eaa964",
     "belt": "red",
     "makeModels": [
       {
@@ -7262,9 +8337,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Disklock"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/c/c0/Abloy_Disklock_cylinder.jpg/300px-Abloy_Disklock_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abloy_Disklock_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "e92d29ad",
     "belt": "red",
     "makeModels": [
       {
@@ -7280,9 +8368,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Profile"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/d/d1/Abloy_Profile_cylinder.jpg/300px-Abloy_Profile_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abloy_Profile_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "b29a8b44",
     "belt": "red",
     "makeModels": [
       {
@@ -7302,9 +8403,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_EC700"
       }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/0/00/ABUS_EC700_keyway_-_FXE47656.jpg/300px-ABUS_EC700_keyway_-_FXE47656.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_EC700_keyway_-_FXE47656.jpg"
+      }
     ]
   },
   {
+    "id": "4223eb26",
     "belt": "red",
     "makeModels": [
       {
@@ -7317,6 +8431,7 @@
     ]
   },
   {
+    "id": "cc8cfd45",
     "belt": "red",
     "makeModels": [
       {
@@ -7328,6 +8443,7 @@
     ]
   },
   {
+    "id": "29ab2852",
     "belt": "red",
     "makeModels": [
       {
@@ -7346,6 +8462,7 @@
     ]
   },
   {
+    "id": "e3bd3faf",
     "belt": "red",
     "makeModels": [
       {
@@ -7369,9 +8486,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Assa_700_cylinders_front_and_back.jpeg"
+      }
     ]
   },
   {
+    "id": "75fb1e5c",
     "belt": "red",
     "makeModels": [
       {
@@ -7398,6 +8528,7 @@
     ]
   },
   {
+    "id": "9eb3e9c4",
     "belt": "red",
     "makeModels": [
       {
@@ -7413,6 +8544,7 @@
     ]
   },
   {
+    "id": "5b60be8a",
     "belt": "red",
     "makeModels": [
       {
@@ -7436,6 +8568,7 @@
     ]
   },
   {
+    "id": "3af2407a",
     "belt": "red",
     "makeModels": [
       {
@@ -7449,6 +8582,7 @@
     ]
   },
   {
+    "id": "ab1cdc56",
     "belt": "red",
     "makeModels": [
       {
@@ -7462,6 +8596,7 @@
     ]
   },
   {
+    "id": "add0b067",
     "belt": "red",
     "makeModels": [
       {
@@ -7475,6 +8610,7 @@
     ]
   },
   {
+    "id": "6b06f591",
     "belt": "red",
     "makeModels": [
       {
@@ -7492,6 +8628,7 @@
     ]
   },
   {
+    "id": "4993a918",
     "belt": "red",
     "makeModels": [
       {
@@ -7510,6 +8647,7 @@
     ]
   },
   {
+    "id": "ff0be785",
     "belt": "red",
     "makeModels": [
       {
@@ -7522,6 +8660,7 @@
     ]
   },
   {
+    "id": "c4f942f0",
     "belt": "red",
     "makeModels": [
       {
@@ -7538,9 +8677,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Corbin_Emhart"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/6/67/Corbin_Emhart_cylinder.jpg/300px-Corbin_Emhart_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Corbin_Emhart_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "265226b1",
     "belt": "red",
     "makeModels": [
       {
@@ -7554,6 +8706,7 @@
     ]
   },
   {
+    "id": "00b569f2",
     "belt": "red",
     "makeModels": [
       {
@@ -7571,6 +8724,7 @@
     ]
   },
   {
+    "id": "6852489f",
     "belt": "red",
     "makeModels": [
       {
@@ -7588,6 +8742,7 @@
     ]
   },
   {
+    "id": "3b797ff2",
     "belt": "red",
     "makeModels": [
       {
@@ -7600,6 +8755,7 @@
     ]
   },
   {
+    "id": "03cbfaa5",
     "belt": "red",
     "makeModels": [
       {
@@ -7617,6 +8773,7 @@
     ]
   },
   {
+    "id": "9d7faa15",
     "belt": "red",
     "makeModels": [
       {
@@ -7629,6 +8786,7 @@
     ]
   },
   {
+    "id": "1f6cb393",
     "belt": "red",
     "makeModels": [
       {
@@ -7637,6 +8795,7 @@
     ]
   },
   {
+    "id": "9f613c4a",
     "belt": "red",
     "makeModels": [
       {
@@ -7658,6 +8817,7 @@
     ]
   },
   {
+    "id": "937eb7a8",
     "belt": "red",
     "makeModels": [
       {
@@ -7675,6 +8835,7 @@
     ]
   },
   {
+    "id": "0082fa4c",
     "belt": "red",
     "makeModels": [
       {
@@ -7700,6 +8861,7 @@
     ]
   },
   {
+    "id": "aa4c402d",
     "belt": "red",
     "makeModels": [
       {
@@ -7713,6 +8875,7 @@
     ]
   },
   {
+    "id": "eed91da5",
     "belt": "red",
     "makeModels": [
       {
@@ -7734,6 +8897,7 @@
     ]
   },
   {
+    "id": "434bdf9d",
     "belt": "red",
     "makeModels": [
       {
@@ -7747,6 +8911,7 @@
     ]
   },
   {
+    "id": "0770580d",
     "belt": "red",
     "makeModels": [
       {
@@ -7764,6 +8929,7 @@
     ]
   },
   {
+    "id": "c8e86f14",
     "belt": "red",
     "makeModels": [
       {
@@ -7777,6 +8943,7 @@
     ]
   },
   {
+    "id": "c4484574",
     "belt": "red",
     "makeModels": [
       {
@@ -7790,6 +8957,7 @@
     ]
   },
   {
+    "id": "e3081fd3",
     "belt": "red",
     "makeModels": [
       {
@@ -7803,6 +8971,7 @@
     ]
   },
   {
+    "id": "43deff29",
     "belt": "red",
     "makeModels": [
       {
@@ -7816,6 +8985,7 @@
     ]
   },
   {
+    "id": "169b80e3",
     "belt": "red",
     "makeModels": [
       {
@@ -7829,6 +8999,7 @@
     ]
   },
   {
+    "id": "9094ca58",
     "belt": "red",
     "makeModels": [
       {
@@ -7841,6 +9012,7 @@
     ]
   },
   {
+    "id": "fdb68dc4",
     "belt": "red",
     "makeModels": [
       {
@@ -7853,6 +9025,7 @@
     ]
   },
   {
+    "id": "550a0c9d",
     "belt": "red",
     "makeModels": [
       {
@@ -7865,6 +9038,7 @@
     ]
   },
   {
+    "id": "31431c49",
     "belt": "red",
     "makeModels": [
       {
@@ -7877,6 +9051,7 @@
     ]
   },
   {
+    "id": "5e090448",
     "belt": "red",
     "makeModels": [
       {
@@ -7890,6 +9065,7 @@
     ]
   },
   {
+    "id": "ae7d3780",
     "belt": "red",
     "makeModels": [
       {
@@ -7903,6 +9079,7 @@
     ]
   },
   {
+    "id": "3daff112",
     "belt": "red",
     "makeModels": [
       {
@@ -7916,6 +9093,7 @@
     ]
   },
   {
+    "id": "9c5f4539",
     "belt": "red",
     "makeModels": [
       {
@@ -7928,6 +9106,7 @@
     ]
   },
   {
+    "id": "9da7a5f2",
     "belt": "red",
     "makeModels": [
       {
@@ -7949,6 +9128,7 @@
     ]
   },
   {
+    "id": "112d0034",
     "belt": "red",
     "makeModels": [
       {
@@ -7970,6 +9150,7 @@
     ]
   },
   {
+    "id": "4a7db3c6",
     "belt": "red",
     "makeModels": [
       {
@@ -7982,6 +9163,7 @@
     ]
   },
   {
+    "id": "63a9a2b1",
     "belt": "red",
     "makeModels": [
       {
@@ -8003,6 +9185,7 @@
     ]
   },
   {
+    "id": "2ff8a738",
     "belt": "red",
     "makeModels": [
       {
@@ -8015,6 +9198,7 @@
     ]
   },
   {
+    "id": "cf76cfde",
     "belt": "red",
     "makeModels": [
       {
@@ -8033,6 +9217,7 @@
     ]
   },
   {
+    "id": "80b0044b",
     "belt": "red",
     "makeModels": [
       {
@@ -8044,6 +9229,7 @@
     ]
   },
   {
+    "id": "b5df156e",
     "belt": "red",
     "makeModels": [
       {
@@ -8056,6 +9242,7 @@
     ]
   },
   {
+    "id": "3198fffc",
     "belt": "red",
     "makeModels": [
       {
@@ -8073,6 +9260,7 @@
     ]
   },
   {
+    "id": "95281228",
     "belt": "red",
     "makeModels": [
       {
@@ -8084,6 +9272,7 @@
     ]
   },
   {
+    "id": "17d41d80",
     "belt": "red",
     "makeModels": [
       {
@@ -8096,6 +9285,7 @@
     ]
   },
   {
+    "id": "4db59eb3",
     "belt": "red",
     "makeModels": [
       {
@@ -8108,6 +9298,7 @@
     ]
   },
   {
+    "id": "131732a0",
     "belt": "red",
     "makeModels": [
       {
@@ -8120,6 +9311,7 @@
     ]
   },
   {
+    "id": "6708838f",
     "belt": "red",
     "makeModels": [
       {
@@ -8131,6 +9323,7 @@
     ]
   },
   {
+    "id": "34d27803",
     "belt": "red",
     "makeModels": [
       {
@@ -8146,6 +9339,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "843896be",
     "belt": "red",
     "makeModels": [
       {
@@ -8156,6 +9350,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "2ae6a691",
     "belt": "black1",
     "makeModels": [
       {
@@ -8168,6 +9363,7 @@
     ]
   },
   {
+    "id": "f133510b",
     "belt": "black1",
     "makeModels": [
       {
@@ -8191,9 +9387,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Xarragon",
+        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Assa_700_cylinders_front_and_back.jpeg"
+      }
     ]
   },
   {
+    "id": "f7ad4c89",
     "belt": "black1",
     "makeModels": [
       {
@@ -8215,6 +9424,7 @@
     ]
   },
   {
+    "id": "55053299",
     "belt": "black1",
     "makeModels": [
       {
@@ -8238,9 +9448,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/8e/ASSA_Twin_cylinder.jpg/300px-ASSA_Twin_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "3f73d2ce",
     "belt": "black1",
     "makeModels": [
       {
@@ -8264,9 +9487,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/7/77/ASSA_Twin_V10_cylinder.jpg/300px-ASSA_Twin_V10_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "e3058619",
     "belt": "black1",
     "makeModels": [
       {
@@ -8289,6 +9525,7 @@
     ]
   },
   {
+    "id": "f09ce6b3",
     "belt": "black1",
     "makeModels": [
       {
@@ -8301,6 +9538,7 @@
     ]
   },
   {
+    "id": "72215ba4",
     "belt": "black1",
     "makeModels": [
       {
@@ -8313,6 +9551,7 @@
     ]
   },
   {
+    "id": "7ea33803",
     "belt": "black1",
     "makeModels": [
       {
@@ -8325,6 +9564,7 @@
     ]
   },
   {
+    "id": "57fbcb1b",
     "belt": "black1",
     "makeModels": [
       {
@@ -8337,6 +9577,7 @@
     ]
   },
   {
+    "id": "3c73c705",
     "belt": "black1",
     "makeModels": [
       {
@@ -8354,6 +9595,7 @@
     ]
   },
   {
+    "id": "c266d57b",
     "belt": "black1",
     "makeModels": [
       {
@@ -8368,9 +9610,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Corbin_Emhart"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/6/67/Corbin_Emhart_cylinder.jpg/300px-Corbin_Emhart_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Corbin_Emhart_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "f7452b9f",
     "belt": "black1",
     "makeModels": [
       {
@@ -8391,6 +9646,7 @@
     ]
   },
   {
+    "id": "1e197456",
     "belt": "black1",
     "makeModels": [
       {
@@ -8408,6 +9664,7 @@
     ]
   },
   {
+    "id": "db749615",
     "belt": "black1",
     "makeModels": [
       {
@@ -8425,6 +9682,7 @@
     ]
   },
   {
+    "id": "4abcb403",
     "belt": "black1",
     "makeModels": [
       {
@@ -8442,6 +9700,7 @@
     ]
   },
   {
+    "id": "f048719a",
     "belt": "black1",
     "makeModels": [
       {
@@ -8453,6 +9712,7 @@
     ]
   },
   {
+    "id": "63b2e02b",
     "belt": "black1",
     "makeModels": [
       {
@@ -8470,6 +9730,7 @@
     ]
   },
   {
+    "id": "5103e650",
     "belt": "black1",
     "makeModels": [
       {
@@ -8488,6 +9749,7 @@
     ]
   },
   {
+    "id": "8f99236e",
     "belt": "black1",
     "makeModels": [
       {
@@ -8508,6 +9770,7 @@
     ]
   },
   {
+    "id": "68b5a797",
     "belt": "black1",
     "makeModels": [
       {
@@ -8520,6 +9783,7 @@
     ]
   },
   {
+    "id": "f7b52501",
     "belt": "black1",
     "makeModels": [
       {
@@ -8536,6 +9800,7 @@
     ]
   },
   {
+    "id": "3ddfc71c",
     "belt": "black1",
     "makeModels": [
       {
@@ -8548,6 +9813,7 @@
     ]
   },
   {
+    "id": "f1857cef",
     "belt": "black1",
     "makeModels": [
       {
@@ -8560,6 +9826,7 @@
     ]
   },
   {
+    "id": "a2bd7f1e",
     "belt": "black1",
     "makeModels": [
       {
@@ -8569,6 +9836,7 @@
     ]
   },
   {
+    "id": "d0c510c5",
     "belt": "black1",
     "makeModels": [
       {
@@ -8582,6 +9850,7 @@
     ]
   },
   {
+    "id": "71c7270b",
     "belt": "black1",
     "makeModels": [
       {
@@ -8595,6 +9864,7 @@
     ]
   },
   {
+    "id": "649eaebc",
     "belt": "black1",
     "makeModels": [
       {
@@ -8629,6 +9899,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "db63c882",
     "belt": "black1",
     "makeModels": [
       {
@@ -8641,6 +9912,7 @@
     ]
   },
   {
+    "id": "00cf7717",
     "belt": "black1",
     "makeModels": [
       {
@@ -8652,6 +9924,7 @@
     ]
   },
   {
+    "id": "e4bb0668",
     "belt": "black1",
     "makeModels": [
       {
@@ -8664,6 +9937,7 @@
     ]
   },
   {
+    "id": "284bf0b0",
     "belt": "black1",
     "makeModels": [
       {
@@ -8676,6 +9950,7 @@
     ]
   },
   {
+    "id": "37914cb6",
     "belt": "black1",
     "makeModels": [
       {
@@ -8691,6 +9966,7 @@
     ]
   },
   {
+    "id": "93e4cf5f",
     "belt": "black1",
     "makeModels": [
       {
@@ -8706,6 +9982,7 @@
     ]
   },
   {
+    "id": "23437955",
     "belt": "black1",
     "makeModels": [
       {
@@ -8718,6 +9995,7 @@
     ]
   },
   {
+    "id": "d1a5cd90",
     "belt": "black1",
     "makeModels": [
       {
@@ -8730,6 +10008,7 @@
     ]
   },
   {
+    "id": "7e967792",
     "belt": "black1",
     "makeModels": [
       {
@@ -8750,6 +10029,7 @@
     ]
   },
   {
+    "id": "1a7a23d4",
     "belt": "black2",
     "makeModels": [
       {
@@ -8762,6 +10042,7 @@
     ]
   },
   {
+    "id": "fc627b17",
     "belt": "black2",
     "makeModels": [
       {
@@ -8777,9 +10058,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Exec"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/f/fc/Abloy_Exec_cylinder.jpg/291px-Abloy_Exec_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Abloy_Exec_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "104776ef",
     "belt": "black2",
     "makeModels": [
       {
@@ -8807,9 +10101,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/8e/ASSA_Twin_cylinder.jpg/300px-ASSA_Twin_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "7168d463",
     "belt": "black2",
     "makeModels": [
       {
@@ -8833,9 +10140,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/3/3d/ASSA_Twin_Combi_cylinder.jpg/300px-ASSA_Twin_Combi_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_Combi_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "c8694f3a",
     "belt": "black2",
     "makeModels": [
       {
@@ -8863,9 +10183,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
       }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/7/77/ASSA_Twin_V10_cylinder.jpg/300px-ASSA_Twin_V10_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_cylinder.jpg"
+      }
     ]
   },
   {
+    "id": "ab1e901f",
     "belt": "black2",
     "makeModels": [
       {
@@ -8888,6 +10221,7 @@
     ]
   },
   {
+    "id": "12846cc6",
     "belt": "black2",
     "makeModels": [
       {
@@ -8900,6 +10234,7 @@
     ]
   },
   {
+    "id": "6d2555aa",
     "belt": "black2",
     "makeModels": [
       {
@@ -8915,9 +10250,22 @@
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_Exclusive"
       }
+    ],
+    "media": [
+      {
+        "text": "By: DoNotDuplicate.",
+        "url": "https://www.lockwiki.com/images/thumb/a/ac/BiLock_Exclusive_locks-DoNotDuplicate.png/300px-BiLock_Exclusive_locks-DoNotDuplicate.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC-BY-SA-3.0",
+        "url": "https://www.lockwiki.com/index.php/File:BiLock_Exclusive_locks-DoNotDuplicate.png"
+      }
     ]
   },
   {
+    "id": "234a8ca8",
     "belt": "black2",
     "makeModels": [
       {
@@ -8930,6 +10278,7 @@
     ]
   },
   {
+    "id": "48cf387f",
     "belt": "black2",
     "makeModels": [
       {
@@ -8942,6 +10291,7 @@
     ]
   },
   {
+    "id": "533c7408",
     "belt": "black2",
     "makeModels": [
       {
@@ -8959,6 +10309,7 @@
     ]
   },
   {
+    "id": "8ea170d2",
     "belt": "black2",
     "makeModels": [
       {
@@ -8976,6 +10327,7 @@
     ]
   },
   {
+    "id": "340154fa",
     "belt": "black2",
     "makeModels": [
       {
@@ -8993,6 +10345,7 @@
     ]
   },
   {
+    "id": "109531f4",
     "belt": "black2",
     "makeModels": [
       {
@@ -9010,6 +10363,7 @@
     ]
   },
   {
+    "id": "e8c7dd5b",
     "belt": "black2",
     "makeModels": [
       {
@@ -9027,6 +10381,7 @@
     ]
   },
   {
+    "id": "bc1509f5",
     "belt": "black2",
     "makeModels": [
       {
@@ -9039,6 +10394,7 @@
     ]
   },
   {
+    "id": "10968d37",
     "belt": "black2",
     "makeModels": [
       {
@@ -9055,6 +10411,7 @@
     ]
   },
   {
+    "id": "dfa88b94",
     "belt": "black2",
     "makeModels": [
       {
@@ -9067,6 +10424,7 @@
     ]
   },
   {
+    "id": "21b61a85",
     "belt": "black2",
     "makeModels": [
       {
@@ -9079,6 +10437,7 @@
     ]
   },
   {
+    "id": "d1272b9f",
     "belt": "black2",
     "makeModels": [
       {
@@ -9091,6 +10450,7 @@
     ]
   },
   {
+    "id": "5cba063b",
     "belt": "black2",
     "makeModels": [
       {
@@ -9103,6 +10463,7 @@
     ]
   },
   {
+    "id": "69668831",
     "belt": "black2",
     "makeModels": [
       {
@@ -9114,6 +10475,7 @@
     ]
   },
   {
+    "id": "5958a65b",
     "belt": "black2",
     "makeModels": [
       {
@@ -9126,6 +10488,7 @@
     ]
   },
   {
+    "id": "a8e79394",
     "belt": "black2",
     "makeModels": [
       {
@@ -9138,6 +10501,7 @@
     ]
   },
   {
+    "id": "108549ba",
     "belt": "black2",
     "makeModels": [
       {
@@ -9159,6 +10523,7 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
+    "id": "c9494ee8",
     "belt": "black2",
     "makeModels": [
       {
@@ -9182,6 +10547,7 @@
     ]
   },
   {
+    "id": "735439dd",
     "belt": "black3",
     "makeModels": [
       {
@@ -9200,6 +10566,7 @@
     ]
   },
   {
+    "id": "e87f0ca2",
     "belt": "black3",
     "makeModels": [
       {
@@ -9212,6 +10579,7 @@
     ]
   },
   {
+    "id": "6e59ba12",
     "belt": "black3",
     "makeModels": [
       {
@@ -9251,6 +10619,7 @@
     ]
   },
   {
+    "id": "78336fc0",
     "belt": "black3",
     "makeModels": [
       {
@@ -9263,6 +10632,7 @@
     ]
   },
   {
+    "id": "5ab25363",
     "belt": "black3",
     "makeModels": [
       {
@@ -9290,6 +10660,7 @@
     ]
   },
   {
+    "id": "3ca098da",
     "belt": "black3",
     "makeModels": [
       {
@@ -9302,6 +10673,7 @@
     ]
   },
   {
+    "id": "91f40022",
     "belt": "black3",
     "makeModels": [
       {
@@ -9315,6 +10687,7 @@
     ]
   },
   {
+    "id": "2db935ea",
     "belt": "black4",
     "makeModels": [
       {
@@ -9328,6 +10701,7 @@
     ]
   },
   {
+    "id": "362d0dee",
     "belt": "black4",
     "makeModels": [
       {
@@ -9340,6 +10714,7 @@
     ]
   },
   {
+    "id": "33056c0f",
     "belt": "black4",
     "makeModels": [
       {
@@ -9359,6 +10734,7 @@
     ]
   },
   {
+    "id": "6c0ec943",
     "belt": "black4",
     "makeModels": [
       {
@@ -9377,6 +10753,7 @@
     ]
   },
   {
+    "id": "e151c916",
     "belt": "black4",
     "makeModels": [
       {
@@ -9389,6 +10766,7 @@
     ]
   },
   {
+    "id": "c0af45f4",
     "belt": "black5",
     "makeModels": [
       {
@@ -9408,6 +10786,7 @@
     ]
   },
   {
+    "id": "f87db705",
     "belt": "black5",
     "makeModels": [
       {
@@ -9420,6 +10799,7 @@
     ]
   },
   {
+    "id": "4f2ed774",
     "belt": "black5",
     "makeModels": [
       {
@@ -9439,6 +10819,7 @@
     ]
   },
   {
+    "id": "f29a212f",
     "belt": "black5",
     "makeModels": [
       {
@@ -9458,6 +10839,7 @@
     ]
   },
   {
+    "id": "5a4310d5",
     "belt": "black5",
     "makeModels": [
       {
@@ -9470,6 +10852,7 @@
     ]
   },
   {
+    "id": "0b604114",
     "belt": "black5",
     "makeModels": [
       {
