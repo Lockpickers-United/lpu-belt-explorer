@@ -25,8 +25,8 @@ export default Joi.array().items(
         Features: Joi.string().allow(''),
         Notes: Joi.string().allow(''),
         Regions: Joi.string().allow(''),
-        Links: Joi.string().allow('').regex(/\[([^\]]+)]\(([^,]+)\),?/),
-        Media: Joi.string().allow('').regex(/\[([^\]]+)]\(([^,]+)\),?/),
-        Attribution: Joi.string().allow('').regex(/\[([^\]]+)]\(([^,]+)\),?/)
+        Links: Joi.string().allow('').regex(/\[([^\]]+)]\(([^)]+)\),?/),
+        Media: Joi.string().allow('').regex(/\[([^\]]+)]\(([^)]+)\),?/),
+        Attribution: Joi.string().allow('').regex(/\[([^\]]+)]\(([^)]+)\),?/)
     })
 )

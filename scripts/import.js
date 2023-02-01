@@ -31,11 +31,11 @@ const cleaned = data.map(datum => {
     const regions = datum.Regions.split(',').filter(x => x)
     const notes = datum.Notes
 
-    const links = [...datum.Links.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
+    const links = [...datum.Links.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
-    const media = [...datum.Media.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
+    const media = [...datum.Media.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
-    const attribution = [...datum.Attribution.matchAll(/\[([^\]]+)]\(([^,]+)\)/g)]
+    const attribution = [...datum.Attribution.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
         .map(([,text, url]) => ({text, url}))
 
     const value = {

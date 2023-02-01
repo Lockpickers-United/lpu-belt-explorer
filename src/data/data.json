@@ -6,12 +6,6 @@
         "make": "Any",
         "model": "Any lock with any tool"
       }
-    ],
-    "media": [
-      {
-        "text": "anytool",
-        "url": "https://www.cnet.com/a/img/resize/d1f4b66d0f6874bf649aa230e199322087d0b976/hub/2013/10/31/414ff80e-6de5-11e3-913e-14feb5ca9861/2Z9A6122.jpg?auto=webp&width=1200"
-      }
     ]
   },
   {
@@ -28,12 +22,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "media": [
-      {
-        "text": "Abus45",
-        "url": "https://www.abus.com/var/ImagesPIM/abus_kg/Bilder-US/Padlocks/45/45_40%20%20(45611)_3.jpg"
-      }
     ]
   },
   {
@@ -46,12 +34,6 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "media": [
-      {
-        "text": "AcrylicLocks",
-        "url": "https://i.imgur.com/WG1b2T2.jpg"
-      }
     ]
   },
   {
@@ -67,12 +49,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "media": [
-      {
-        "text": "BrinksR80",
-        "url": "https://i.imgur.com/PFqSgDE.jpeg"
-      }
     ]
   },
   {
@@ -88,12 +64,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "media": [
-      {
-        "text": "ChinaGranite",
-        "url": "https://i.imgur.com/L7RaIU8.jpg"
-      }
     ]
   },
   {
@@ -6191,34 +6161,6 @@
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Tubar"
       }
-    ],
-    "media": [
-      {
-        "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/a/ad/Tubar_cylinder.jpg/240px-Tubar_cylinder.jpg"
-      },
-      {
-        "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/7/74/Tubar_key.jpg/800px-Tubar_key.jpg"
-      },
-      {
-        "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/6/67/Tubar_pins_close.jpg/588px-Tubar_pins_close.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC-BY-SA-3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Tubar_cylinder.jpg"
-      },
-      {
-        "text": "CC-BY-SA-3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Tubar_key.jpg"
-      },
-      {
-        "text": "CC-BY-SA-3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Tubar_pins_close.jpg"
-      }
     ]
   },
   {
@@ -6835,8 +6777,8 @@
     ],
     "links": [
       {
-        "text": "Protectvol",
-        "url": "http://protectvol.online.fr/izis.html"
+        "text": "LocksNest",
+        "url": "https://youtu.be/u2nrGe6yRCQ,[Protectvol](http://protectvol.online.fr/izis.html"
       }
     ]
   },
@@ -7054,26 +6996,6 @@
       {
         "text": "Lockwiki",
         "url": "http://lockwiki.com/index.php/Medeco_Duracam"
-      }
-    ],
-    "media": [
-      {
-        "text": "Key",
-        "url": "https://i.imgur.com/V7GX9vx.png"
-      },
-      {
-        "text": "Lock",
-        "url": "https://i.imgur.com/aAId8nT.png"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "Source",
-        "url": "http://lockwiki.com/index.php/File:Medeco_Duracam_key_close.jpg"
-      },
-      {
-        "text": "Source",
-        "url": "http://lockwiki.com/index.php/File:Medeco_Duracam_cylinder.jpg"
       }
     ]
   },
@@ -9433,12 +9355,6 @@
       {
         "text": "LockWiki",
         "url": "http://www.lockwiki.com/index.php/Fichet_F3D"
-      }
-    ],
-    "media": [
-      {
-        "text": "key",
-        "url": "https://imgur.com/0fBUJKL"
       }
     ]
   },
