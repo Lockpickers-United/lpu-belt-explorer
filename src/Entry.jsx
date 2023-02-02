@@ -15,7 +15,7 @@ import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import ReactMarkdown from 'react-markdown'
 
-function Entry({expanded, entry, onAccordionChange}) {
+function Entry({betaUser, expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
     const style = isBigEnough
@@ -86,7 +86,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                     }/>
                 }
                 {
-                    !!entry.media?.length && expanded &&
+                    !!entry.media?.length && expanded && betaUser &&
                     <FieldValue name='Media' value={
                         <ImageList variant={isBigEnough ? 'quilted' : 'masonry'} cols={isBigEnough ? 4 : 2}>
                             {entry.media.map(({text, url}, index) =>

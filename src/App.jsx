@@ -14,6 +14,14 @@ function App() {
         setSearchTerm(value)
         setBelt('search')
     }
+    const [betaUser, setBetaUser] = useState(false)
+
+    useEffect(() => {
+        if (searchTerm === 'lpubeta') {
+            setBetaUser(!betaUser)
+            setSearchTerm('')
+        }
+    }, [searchTerm, betaUser])
 
     const [data, setData] = useState([])
     useEffect(() => {
@@ -50,6 +58,7 @@ function App() {
                 belt={belt}
                 query={query}
                 searchTerm={searchTerm}
+                betaUser={betaUser}
             />
         </React.Fragment>
     )

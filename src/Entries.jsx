@@ -2,7 +2,7 @@ import React, {useDeferredValue, useMemo} from 'react'
 import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 
-function Entries({data, belt, query, searchTerm}) {
+function Entries({betaUser, data, belt, query, searchTerm}) {
     const [expanded, setExpanded] = React.useState(-1)
     const deferredQuery = useDeferredValue(query)
     const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -41,6 +41,7 @@ function Entries({data, belt, query, searchTerm}) {
             {visibleEntries.map(datum =>
                 <Entry
                     key={datum.id}
+                    betaUser={betaUser}
                     entry={datum}
                     expanded={expanded === datum.id}
                     onAccordionChange={setExpanded}
