@@ -7,6 +7,24 @@
         "make": "Any",
         "model": "Any lock with any tool"
       }
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_3"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/b/b6/Master_Lock_3_-_FXE47401.jpg/300px-Master_Lock_3_-_FXE47401.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
+      }
     ]
   },
   {
@@ -144,24 +162,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Master_Lock_No_2"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: JasonAller",
-        "url": "https://www.lockwiki.com/images/thumb/8/84/Master175XDLF-front.JPG/270px-Master175XDLF-front.JPG"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Master175XDLF-front.JPG"
-      }
     ]
   },
   {
@@ -213,24 +213,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Master_Lock_No_4"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/b/b6/Master_Lock_3_-_FXE47401.jpg/300px-Master_Lock_3_-_FXE47401.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
-      }
     ]
   },
   {
@@ -413,24 +395,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ABUS_65"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/0/0d/ABUS_64TI-50_-_FXE47403.jpg/300px-ABUS_64TI-50_-_FXE47403.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:ABUS_64TI-50_-_FXE47403.jpg"
-      }
     ]
   },
   {
@@ -1120,12 +1084,20 @@
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Master_Lock_No_140"
+      },
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Master_Lock_No_141"
       }
     ],
     "media": [
       {
         "text": "By: mgsecure",
         "url": "https://www.lockwiki.com/images/thumb/0/0a/Master-140-front.jpg/300px-Master-140-front.jpg"
+      },
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/a/ab/Master-141-front.jpg/300px-Master-141-front.jpg"
       }
     ],
     "attribution": [
@@ -1521,24 +1493,6 @@
     ],
     "features": [
       "Unguttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ABUS_65"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/0/0d/ABUS_64TI-50_-_FXE47403.jpg/300px-ABUS_64TI-50_-_FXE47403.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:ABUS_64TI-50_-_FXE47403.jpg"
-      }
     ]
   },
   {
@@ -1682,12 +1636,6 @@
     "version": "normal pin tumblr, not dimple",
     "lockingMechanisms": [
       "Pin tumbler"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ABUS_Diskus_25"
-      }
     ]
   },
   {
@@ -1965,6 +1913,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/FAB_100"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/a/a5/FAB100_least.png/208px-FAB100_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:FAB100_least.png"
+      }
     ]
   },
   {
@@ -2102,6 +2068,24 @@
     "version": "40mm or bigger",
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Lockwood_110_series"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Nerixel",
+        "url": "https://www.lockwiki.com/images/thumb/4/4e/Lockwood_110-40.jpg/300px-Lockwood_110-40.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Public domain",
+        "url": "https://www.lockwiki.com/index.php/File:Lockwood_110-40.jpg"
+      }
     ]
   },
   {
@@ -3108,7 +3092,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Bab Ikon",
+        "make": "Bab IKON",
         "model": "P031"
       }
     ],
@@ -3735,6 +3719,24 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Lockwood_120_series"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Nerixel",
+        "url": "https://www.lockwiki.com/images/thumb/4/44/Lockwood_120-50.jpg/300px-Lockwood_120-50.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Public domain",
+        "url": "https://www.lockwiki.com/index.php/File:Lockwood_120-50.jpg"
+      }
     ]
   },
   {
@@ -3762,6 +3764,24 @@
     "version": "Tapered/Beveled drivers",
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Lockwood_334_series"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Nerixel",
+        "url": "https://www.lockwiki.com/images/thumb/4/4c/Lockwood_334B45.jpg/272px-Lockwood_334B45.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Public domain",
+        "url": "https://www.lockwiki.com/index.php/File:Lockwood_334B45.jpg"
+      }
     ]
   },
   {
@@ -3791,6 +3811,24 @@
     ],
     "features": [
       "Guttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/MAKO_427"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/b/b7/MAKO_427_front_-_Reinder_-_IMG_20210418_180852.jpg/252px-MAKO_427_front_-_Reinder_-_IMG_20210418_180852.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MAKO_427_front_-_Reinder_-_IMG_20210418_180852.jpg"
+      }
     ]
   },
   {
@@ -4010,6 +4048,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/PACLOCK_90A"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/9/9d/PACLOCK_90A_-_FXE47406.jpg/300px-PACLOCK_90A_-_FXE47406.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:PACLOCK_90A_-_FXE47406.jpg"
+      }
     ]
   },
   {
@@ -4050,6 +4106,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Pacific_Lock_100G"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Lochabar",
+        "url": "https://www.lockwiki.com/images/thumb/d/d9/PACLOCK_100G_%281%29.jpg/300px-PACLOCK_100G_%281%29.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:PACLOCK_100G_(1"
+      }
     ]
   },
   {
@@ -4103,6 +4177,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Schlage_Everest"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/2/23/Schlage_Everest_cylinder.jpg/300px-Schlage_Everest_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Schlage_Everest_cylinder.jpg"
+      }
     ]
   },
   {
@@ -4275,6 +4367,24 @@
     "makeModels": [
       {
         "model": "Yardeni"
+      }
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Yardeni_6"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/d/d8/Yardeni-Yardeni6-front-closer.jpg/300px-Yardeni-Yardeni6-front-closer.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Yardeni-Yardeni6-front-closer.jpg"
       }
     ]
   },
@@ -4747,6 +4857,24 @@
     "version": "4 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/DeGuard_Interactive"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/1/1e/DeGuard-Dimple-front.jpg/300px-DeGuard-Dimple-front.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:DeGuard-Dimple-front.jpg"
+      }
     ]
   },
   {
@@ -4819,6 +4947,24 @@
     ],
     "features": [
       "Magic DOM drivers"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/DOM_Sigma"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/1/13/DOM_Sigma_least.png/187px-DOM_Sigma_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:DOM_Sigma_least.png"
+      }
     ]
   },
   {
@@ -4914,6 +5060,24 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_DPI"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/a/ac/EVVA_DPI_cylinder.jpg/300px-EVVA_DPI_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_DPI_cylinder.jpg"
+      }
     ]
   },
   {
@@ -4928,6 +5092,24 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_DPS"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Moon-UA",
+        "url": "https://www.lockwiki.com/images/thumb/8/88/EVVA_DPS_keyway-Moon-UA.jpg/300px-EVVA_DPS_keyway-Moon-UA.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_DPS_keyway-Moon-UA.jpg"
+      }
     ]
   },
   {
@@ -4989,6 +5171,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/FAB_3***/4****"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/1/10/FAB4xxxx_least.png/251px-FAB4xxxx_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:FAB4xxxx_least.png"
+      }
     ]
   },
   {
@@ -5002,6 +5202,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/FAB_2000"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/7/7a/FAB2000_least.png/259px-FAB2000_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:FAB2000_least.png"
+      }
     ]
   },
   {
@@ -5191,6 +5409,24 @@
     "version": "With spools",
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Lockwood_334_series"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Nerixel",
+        "url": "https://www.lockwiki.com/images/thumb/4/4c/Lockwood_334B45.jpg/272px-Lockwood_334B45.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Public domain",
+        "url": "https://www.lockwiki.com/index.php/File:Lockwood_334B45.jpg"
+      }
     ]
   },
   {
@@ -5204,6 +5440,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Lockwood_334_series"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Nerixel",
+        "url": "https://www.lockwiki.com/images/thumb/4/4c/Lockwood_334B45.jpg/272px-Lockwood_334B45.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Public domain",
+        "url": "https://www.lockwiki.com/index.php/File:Lockwood_334B45.jpg"
+      }
     ]
   },
   {
@@ -5293,6 +5547,24 @@
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Medeco_Biaxial"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/4/49/Medeco_Biaxial_cylinder.jpg/300px-Medeco_Biaxial_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_Biaxial_cylinder.jpg"
+      }
     ]
   },
   {
@@ -5306,6 +5578,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Medeco_BiLevel"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/2/21/Medeco_Bilevel_cylinder.jpg/300px-Medeco_Bilevel_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_Bilevel_cylinder.jpg"
+      }
     ]
   },
   {
@@ -6011,12 +6301,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -6047,12 +6333,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -6325,6 +6607,24 @@
       "Trap pin/bar",
       "False gates",
       "Active Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_DPI"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/a/ac/EVVA_DPI_cylinder.jpg/300px-EVVA_DPI_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_DPI_cylinder.jpg"
+      }
     ]
   },
   {
@@ -6407,6 +6707,24 @@
     ],
     "lockingMechanisms": [
       "Wafer"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Illinois_Duo"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/8a/Duo_cylinder.jpg/294px-Duo_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Duo_cylinder.jpg"
+      }
     ]
   },
   {
@@ -6504,6 +6822,24 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Kale_Kilit_164_BNE"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/3/32/Kale_Kilit_164_BNE_-_keyway_-_FXE47654.jpg/300px-Kale_Kilit_164_BNE_-_keyway_-_FXE47654.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Kale_Kilit_164_BNE_-_keyway_-_FXE47654.jpg"
+      }
     ]
   },
   {
@@ -6538,6 +6874,24 @@
     ],
     "lockingMechanisms": [
       "Slider"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Kwikset_Smart_Key"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/83/Kwikset_SmartKey_cylinder_silver.jpg/300px-Kwikset_SmartKey_cylinder_silver.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Kwikset_SmartKey_cylinder_silver.jpg"
+      }
     ]
   },
   {
@@ -6551,6 +6905,24 @@
     ],
     "lockingMechanisms": [
       "Slider"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Kwikset_Smart_Key"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/83/Kwikset_SmartKey_cylinder_silver.jpg/300px-Kwikset_SmartKey_cylinder_silver.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Kwikset_SmartKey_cylinder_silver.jpg"
+      }
     ]
   },
   {
@@ -6564,6 +6936,24 @@
     ],
     "lockingMechanisms": [
       "Slider"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Kwikset_Smart_Key"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/83/Kwikset_SmartKey_cylinder_silver.jpg/300px-Kwikset_SmartKey_cylinder_silver.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Kwikset_SmartKey_cylinder_silver.jpg"
+      }
     ]
   },
   {
@@ -6609,6 +6999,24 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/LIPS_Octro"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/0/0a/LIPS_Octro_cylinder.jpg/281px-LIPS_Octro_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:LIPS_Octro_cylinder.jpg"
+      }
     ]
   },
   {
@@ -6777,6 +7185,32 @@
     "lockingMechanisms": [
       "Sidebar",
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Medeco_Original"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/7/7e/Medeco_Original_cylinder.jpg/300px-Medeco_Original_cylinder.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/b/b4/Medeco_M3_cylinder.jpg/300px-Medeco_M3_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_Original_cylinder.jpg"
+      },
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_M3_cylinder.jpg"
+      }
     ]
   },
   {
@@ -6805,6 +7239,24 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Miracle_Magnetic"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/3/34/Miracle_Magnetic_lock.jpg/300px-Miracle_Magnetic_lock.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Miracle_Magnetic_lock.jpg"
+      }
     ]
   },
   {
@@ -6874,6 +7326,24 @@
     "version": "spooled drivers, < 3 countermilled outer keypins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Mul-T-Lock_Interactive"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/e/e2/MTL_Interactive_front_view_-_FXE48058.jpg/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MTL_Interactive_front_view_-_FXE48058.jpg"
+      }
     ]
   },
   {
@@ -6931,6 +7401,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Nemef_NF2"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/3/3a/Nemef_NF2_least.png/180px-Nemef_NF2_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Nemef_NF2_least.png"
+      }
     ]
   },
   {
@@ -6944,6 +7432,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Nemef_NF4"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: TOOOL NL.",
+        "url": "https://www.lockwiki.com/images/3/30/Nemef_T1112-front-toool.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 2.0",
+        "url": "https://www.lockwiki.com/index.php/File:Nemef_T1112-front-toool.jpg"
+      }
     ]
   },
   {
@@ -7001,6 +7507,24 @@
     "lockingMechanisms": [
       "Pin tumbler",
       "Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Sargent_Signature"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Mow",
+        "url": "https://www.lockwiki.com/images/thumb/0/09/Sargent_Signature_face_cropped.jpg/300px-Sargent_Signature_face_cropped.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Sargent_Signature_face_cropped.jpg"
+      }
     ]
   },
   {
@@ -7105,7 +7629,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/Tubar"
+        "url": "http://lockwiki.com/index.php/Tubar"
       }
     ],
     "media": [
@@ -7361,18 +7885,6 @@
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_d12"
-      },
-      {
-        "text": "HanFey",
-        "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
-      },
-      {
-        "text": "Toool",
-        "url": "https://blackbag.toool.nl/?p=1797"
-      },
-      {
-        "text": "LPUTeardown",
-        "url": "https://www.youtube.com/watch?v=dSChpjaax-A&pp=ugMICgJlbhABGAE%3D"
       }
     ],
     "media": [
@@ -7497,12 +8009,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -7533,12 +8041,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -7631,8 +8135,24 @@
     ],
     "links": [
       {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Scorpion_CX-5"
+      },
+      {
         "text": "legendofthesamurai Breakdown Video",
         "url": "https://www.youtube.com/watch?v=yBAT5GOaAnU"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/b/b8/Scorpion_CX5_cylinder.jpg/284px-Scorpion_CX5_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Scorpion_CX5_cylinder.jpg"
       }
     ]
   },
@@ -7715,6 +8235,24 @@
     "lockingMechanisms": [
       "Slider",
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/FAB_Dynamic"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/9/99/FAB_Dynamic_least.png/288px-FAB_Dynamic_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:FAB_Dynamic_least.png"
+      }
     ]
   },
   {
@@ -7814,6 +8352,24 @@
       "Overmilling",
       "Torpedoes",
       "Guttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_D9"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/2/29/Goal_D9_keyway_02_-_FXE47503.jpg/300px-Goal_D9_keyway_02_-_FXE47503.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_D9_keyway_02_-_FXE47503.jpg"
+      }
     ]
   },
   {
@@ -7833,6 +8389,24 @@
       "Gin bottle drivers",
       "Overmilling",
       "Guttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_P"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/a/a8/Goal_P_front_view_-_IMG_20220302_083530-Reinder.jpg/300px-Goal_P_front_view_-_IMG_20220302_083530-Reinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_P_front_view_-_IMG_20220302_083530-Reinder.jpg"
+      }
     ]
   },
   {
@@ -7916,6 +8490,24 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/KABA_Gemini"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/3/38/KABA_Gemini_cylinder.jpg/300px-KABA_Gemini_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:KABA_Gemini_cylinder.jpg"
+      }
     ]
   },
   {
@@ -7993,6 +8585,24 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/LIPS_Octro"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/0/0a/LIPS_Octro_cylinder.jpg/281px-LIPS_Octro_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:LIPS_Octro_cylinder.jpg"
+      }
     ]
   },
   {
@@ -8094,7 +8704,7 @@
     "notes": "Photos taken from lockwiki licensed under the [Creative Commons Attribution ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)",
     "links": [
       {
-        "text": "Lockwiki",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Medeco_Duracam"
       }
     ],
@@ -8134,6 +8744,24 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/MIWA_EC"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/8f/MIWA_EC_lock.jpg/295px-MIWA_EC_lock.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MIWA_EC_lock.jpg"
+      }
     ]
   },
   {
@@ -8169,6 +8797,24 @@
     "version": "Serrated drivers",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Mul-T-Lock_Interactive"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/e/e2/MTL_Interactive_front_view_-_FXE48058.jpg/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MTL_Interactive_front_view_-_FXE48058.jpg"
+      }
     ]
   },
   {
@@ -8187,6 +8833,24 @@
     "version": "Spooled inner drivers with > 3 counter milled outer keypins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Mul-T-Lock_Interactive"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/e/e2/MTL_Interactive_front_view_-_FXE48058.jpg/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MTL_Interactive_front_view_-_FXE48058.jpg"
+      }
     ]
   },
   {
@@ -8200,6 +8864,24 @@
     ],
     "lockingMechanisms": [
       "Other"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Pollux_7"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Qikom",
+        "url": "https://www.lockwiki.com/images/thumb/6/6b/Pollux_7_cutaway_01-Qikom.jpg/300px-Pollux_7_cutaway_01-Qikom.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Pollux_7_cutaway_01-Qikom.jpg"
+      }
     ]
   },
   {
@@ -8232,6 +8914,24 @@
     "lockingMechanisms": [
       "Sidepins",
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Schlage_Primus"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/4/4f/Schlage_Primus_cylinder.jpg/300px-Schlage_Primus_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Schlage_Primus_cylinder.jpg"
+      }
     ]
   },
   {
@@ -8323,6 +9023,24 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/WEST_916"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/1/1d/West_916_front_view_keyway_-_FXE47527.jpg/300px-West_916_front_view_keyway_-_FXE47527.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:West_916_front_view_keyway_-_FXE47527.jpg"
+      }
     ]
   },
   {
@@ -8374,7 +9092,25 @@
       "Pin tumbler",
       "Sidepins"
     ],
-    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/IKON_TK5"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: SiskoSpaceman.",
+        "url": "https://www.lockwiki.com/images/thumb/9/9f/IKON_TK5_keyway_01_crop-SiskoSpaceman.png/300px-IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
+      }
+    ]
   },
   {
     "id": "87eaa964",
@@ -8614,12 +9350,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -8693,6 +9425,24 @@
       "Interactive element",
       "Torpedoes",
       "Finned keypins"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/DOM_ix_Saturn"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/e/e7/DOM_ix_Saturn_key-Reinder.png/300px-DOM_ix_Saturn_key-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:DOM_ix_Saturn_key-Reinder.png"
+      }
     ]
   },
   {
@@ -8712,6 +9462,24 @@
       "Characteristic hellish keyway",
       "Sidepins",
       "Torpedoes"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/DOM_RS_8"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/1/1e/DOM_RS_8_key-Reinder.png/300px-DOM_RS_8_key-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:DOM_RS_8_key-Reinder.png"
+      }
     ]
   },
   {
@@ -8771,6 +9539,24 @@
     "version": "without false gates or 1-3 mastered sliders",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_3KS"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/81/EVVA_3KS.jpg/300px-EVVA_3KS.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_3KS.jpg"
+      }
     ]
   },
   {
@@ -8789,6 +9575,24 @@
     "features": [
       "False gates",
       "Active Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_DUAL"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/1/18/EVVA_DUAL_keyway-Reinder.png/300px-EVVA_DUAL_keyway-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_DUAL_keyway-Reinder.png"
+      }
     ]
   },
   {
@@ -8807,6 +9611,24 @@
     "features": [
       "False gates",
       "Active Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_ICS"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/4/48/EVVA_ICS_key-Reinder.png/300px-EVVA_ICS_key-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_ICS_key-Reinder.png"
+      }
     ]
   },
   {
@@ -8820,6 +9642,24 @@
     ],
     "lockingMechanisms": [
       "Pin tumbler"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/FAB_NZS3"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Least",
+        "url": "https://www.lockwiki.com/images/thumb/f/fb/FAB_NZS3C_least.png/300px-FAB_NZS3C_least.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:FAB_NZS3C_least.png"
+      }
     ]
   },
   {
@@ -8882,6 +9722,24 @@
     "features": [
       "Torpedoes",
       "High pin count"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_V18"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/f/f5/Goal_V18_housing_keyway_-_FXE47506.jpg/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
     ]
   },
   {
@@ -8900,6 +9758,24 @@
     "features": [
       "Gin bottle drivers",
       "Overmilling"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_Z"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Red Wanderer",
+        "url": "https://www.lockwiki.com/images/thumb/7/7f/Goal_Z.jpeg/300px-Goal_Z.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_Z.jpeg"
+      }
     ]
   },
   {
@@ -8962,6 +9838,24 @@
     "version": "4 directions, < 15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/MIWA_JN"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/e/eb/MIWA_JN_front_keyway_-_FXE48203.png/300px-MIWA_JN_front_keyway_-_FXE48203.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MIWA_JN_front_keyway_-_FXE48203.png"
+      }
     ]
   },
   {
@@ -9008,6 +9902,24 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/KABA_Gemini"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/3/38/KABA_Gemini_cylinder.jpg/300px-KABA_Gemini_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:KABA_Gemini_cylinder.jpg"
+      }
     ]
   },
   {
@@ -9280,7 +10192,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/Schlage_Everest_29_SL_Primus_XP"
+        "url": "http://lockwiki.com/index.php/Schlage_Everest_29_SL_Primus_XP"
       }
     ],
     "media": [
@@ -9335,7 +10247,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/TOKOZ_Pro_400"
+        "url": "http://lockwiki.com/index.php/TOKOZ_Pro_400"
       }
     ],
     "media": [
@@ -9428,7 +10340,25 @@
       "Pin tumbler",
       "Sidepins"
     ],
-    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/IKON_TK5"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: SiskoSpaceman.",
+        "url": "https://www.lockwiki.com/images/thumb/9/9f/IKON_TK5_keyway_01_crop-SiskoSpaceman.png/300px-IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
+      }
+    ]
   },
   {
     "id": "843896be",
@@ -9534,12 +10464,6 @@
       "Sidepins",
       "Active Sidebar",
       "Guttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
-      }
     ]
   },
   {
@@ -9595,12 +10519,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -9684,6 +10604,24 @@
       "Finned keypins",
       "Torpedoes",
       "Interactive element"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/DOM_ix_TwinStar"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/2/21/DOM_ix_twinstar_key-Reinder.png/300px-DOM_ix_twinstar_key-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:DOM_ix_twinstar_key-Reinder.png"
+      }
     ]
   },
   {
@@ -9735,6 +10673,24 @@
     ],
     "lockingMechanisms": [
       "Slider"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_3KS"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/8/81/EVVA_3KS.jpg/300px-EVVA_3KS.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_3KS.jpg"
+      }
     ]
   },
   {
@@ -9753,6 +10709,24 @@
     "features": [
       "Active Sidebar",
       "False gates"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_DUAL"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/1/18/EVVA_DUAL_keyway-Reinder.png/300px-EVVA_DUAL_keyway-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_DUAL_keyway-Reinder.png"
+      }
     ]
   },
   {
@@ -9771,6 +10745,24 @@
     "features": [
       "False gates",
       "Active Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_ICS"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/4/48/EVVA_ICS_key-Reinder.png/300px-EVVA_ICS_key-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_ICS_key-Reinder.png"
+      }
     ]
   },
   {
@@ -9801,6 +10793,24 @@
     ],
     "lockingMechanisms": [
       "Wafer"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Fichet_M3b"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Duckfacts",
+        "url": "https://www.lockwiki.com/images/thumb/f/fe/Fichet_M3b-Duckfacts.png/300px-Fichet_M3b-Duckfacts.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Fichet_M3b-Duckfacts.png"
+      }
     ]
   },
   {
@@ -9819,6 +10829,24 @@
     "features": [
       "High pin count",
       "Torpedoes"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_V18"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/f/f5/Goal_V18_housing_keyway_-_FXE47506.jpg/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
     ]
   },
   {
@@ -9838,6 +10866,24 @@
       "Gin bottle drivers",
       "Torpedoes",
       "Overmilling"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_Z"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Red Wanderer",
+        "url": "https://www.lockwiki.com/images/thumb/7/7f/Goal_Z.jpeg/300px-Goal_Z.jpeg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_Z.jpeg"
+      }
     ]
   },
   {
@@ -9859,6 +10905,24 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/MIWA_JN"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/e/eb/MIWA_JN_front_keyway_-_FXE48203.png/300px-MIWA_JN_front_keyway_-_FXE48203.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:MIWA_JN_front_keyway_-_FXE48203.png"
+      }
     ]
   },
   {
@@ -10116,7 +11180,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/IKON_WSW"
+        "url": "http://lockwiki.com/index.php/IKON_WSW"
       }
     ],
     "media": [
@@ -10315,12 +11379,8 @@
     ],
     "links": [
       {
-        "text": "LockWiki_FG",
+        "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/BiLock_FG"
-      },
-      {
-        "text": "LockWiki_NG",
-        "url": "http://lockwiki.com/index.php/BiLock_NG"
       }
     ],
     "media": [
@@ -10422,6 +11482,24 @@
     "features": [
       "False gates",
       "Active Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_DUAL"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/1/18/EVVA_DUAL_keyway-Reinder.png/300px-EVVA_DUAL_keyway-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_DUAL_keyway-Reinder.png"
+      }
     ]
   },
   {
@@ -10440,6 +11518,24 @@
     "features": [
       "False gates",
       "Active Sidebar"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/EVVA_ICS"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Reinder Stegen",
+        "url": "https://www.lockwiki.com/images/thumb/4/48/EVVA_ICS_key-Reinder.png/300px-EVVA_ICS_key-Reinder.png"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:EVVA_ICS_key-Reinder.png"
+      }
     ]
   },
   {
@@ -10476,6 +11572,24 @@
     "features": [
       "High pin count",
       "Torpedoes"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_V18"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://www.lockwiki.com/images/thumb/f/f5/Goal_V18_housing_keyway_-_FXE47506.jpg/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
     ]
   },
   {
@@ -10658,7 +11772,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/IKON_WSW"
+        "url": "http://lockwiki.com/index.php/IKON_WSW"
       }
     ],
     "media": [
@@ -10689,7 +11803,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/Abloy_Protec"
+        "url": "http://lockwiki.com/index.php/Abloy_Protec"
       }
     ],
     "media": [
@@ -10754,7 +11868,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/ASSA_dp4400"
+        "url": "http://lockwiki.com/index.php/ASSA_dp4400"
       }
     ],
     "media": [
@@ -10807,7 +11921,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/EVVA_MCS"
+        "url": "http://lockwiki.com/index.php/EVVA_MCS"
       }
     ],
     "media": [
@@ -10893,7 +12007,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/Fichet_F3D"
+        "url": "http://lockwiki.com/index.php/Fichet_F3D"
       }
     ],
     "media": [
@@ -10924,7 +12038,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/Opnus_Memolis"
+        "url": "http://lockwiki.com/index.php/Opnus_Memolis"
       }
     ],
     "media": [
@@ -10969,7 +12083,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/Fichet_F3D"
+        "url": "http://lockwiki.com/index.php/Fichet_F3D"
       }
     ],
     "media": [
@@ -11014,7 +12128,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/NATO_Mersey"
+        "url": "http://lockwiki.com/index.php/NATO_Mersey"
       }
     ],
     "media": [
@@ -11046,7 +12160,7 @@
     "links": [
       {
         "text": "LockWiki",
-        "url": "http://www.lockwiki.com/index.php/NATO_Mersey"
+        "url": "http://lockwiki.com/index.php/NATO_Mersey"
       }
     ],
     "media": [
