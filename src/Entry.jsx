@@ -60,7 +60,7 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
             <AccordionDetails>
                 <FieldValue name='Belt' value={
                     <React.Fragment>
-                        <Typography>{entry.belt} <BeltIcon belt={entry.belt}/></Typography>
+                        <Typography>{entry.belt} <BeltIcon belt={entry.belt} style={{marginBottom: -10}}/></Typography>
                     </React.Fragment>
 
                 }/>

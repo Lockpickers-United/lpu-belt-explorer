@@ -2594,11 +2594,11 @@
     ],
     "media": [
       {
-        "text": "From: catalocks.com",
+        "text": "From: catalocks.eu",
         "url": "https://www.catalocks.eu/photos/297/1.jpg"
       },
       {
-        "text": "From: catalocks.com",
+        "text": "From: catalocks.eu",
         "url": "https://www.catalocks.eu/photos/297/2.jpg"
       }
     ]
@@ -2748,7 +2748,7 @@
     ],
     "media": [
       {
-        "text": "From: catalocks.com",
+        "text": "From: catalocks.eu",
         "url": "https://www.catalocks.eu/photos/304/1.jpg"
       }
     ]
@@ -2773,7 +2773,7 @@
     ],
     "media": [
       {
-        "text": "From: Catalocks.com",
+        "text": "From: catalocks.eu",
         "url": "https://www.catalocks.eu/photos/305/1.jpg"
       }
     ]
@@ -2802,7 +2802,7 @@
     ],
     "media": [
       {
-        "text": "From: catalocks.com",
+        "text": "From: catalocks.eu",
         "url": "https://www.catalocks.eu/photos/307/1.jpg"
       }
     ]
@@ -2831,7 +2831,7 @@
     ],
     "media": [
       {
-        "text": "From:catalocks.com",
+        "text": "From:catalocks.eu",
         "url": "https://www.catalocks.eu/photos/306/1.jpg"
       }
     ]
@@ -3019,12 +3019,20 @@
       {
         "text": "By: Lockr",
         "url": "https://www.lockwiki.com/images/thumb/1/1c/American_lock_padlocks_1105_1205_1305_upright.jpg/300px-American_lock_padlocks_1105_1205_1305_upright.jpg"
+      },
+      {
+        "text": "By: m.c.",
+        "url": "https://live.staticflickr.com/65535/52665330612_a331dba631_w_d.jpg"
       }
     ],
     "attribution": [
       {
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:American_lock_padlocks_1105_1205_1305_upright.jpg"
+      },
+      {
+        "text": "CC BY-SA 2.0",
+        "url": "https://www.flickr.com/photos/197671706@N08/52665330612/"
       }
     ]
   },
@@ -4523,7 +4531,7 @@
     ],
     "media": [
       {
-        "text": "From: Catalocks.com",
+        "text": "From: Catalocks.eu",
         "url": "https://www.catalocks.eu/photos/303/1.jpg"
       }
     ]
@@ -7194,6 +7202,10 @@
       {
         "text": "LockWiki",
         "url": "http://lockwiki.com/index.php/Medeco_Original"
+      },
+      {
+        "text": "Qikom fr",
+        "url": "http://qikom.free.fr"
       }
     ],
     "media": [
@@ -7204,6 +7216,18 @@
       {
         "text": "By: Datagram",
         "url": "https://www.lockwiki.com/images/thumb/b/b4/Medeco_M3_cylinder.jpg/300px-Medeco_M3_cylinder.jpg"
+      },
+      {
+        "text": "By: Qikom",
+        "url": "http://qikom.free.fr/Medeco_Original/05.jpg"
+      },
+      {
+        "text": "By: Qikom",
+        "url": "http://qikom.free.fr/Medeco_Biaxial/02.jpg"
+      },
+      {
+        "text": "By: Qikom",
+        "url": "http://qikom.free.fr/Medeco_Biaxial/05.jpg"
       }
     ],
     "attribution": [
@@ -7214,6 +7238,18 @@
       {
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:Medeco_M3_cylinder.jpg"
+      },
+      {
+        "text": "CC BY-SA 4.0",
+        "url": "http://qikom.free.fr/Medeco_Original/index.html"
+      },
+      {
+        "text": "CC BY-SA 4.0",
+        "url": "http://qikom.free.fr/Medeco_Biaxial/index.html"
+      },
+      {
+        "text": "CC BY-SA 4.0",
+        "url": "http://qikom.free.fr/Medeco_Biaxial/index.html"
       }
     ]
   },
@@ -12069,6 +12105,24 @@
     ],
     "lockingMechanisms": [
       "Lever/Sidebar"
+    ],
+    "links": [
+      {
+        "text": "Qikom.fr",
+        "url": "http://qikom.free.fr/"
+      }
+    ],
+    "media": [
+      {
+        "text": "By Qikom",
+        "url": "http://qikom.free.fr/Opnus-Mmx2/01.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 4.0",
+        "url": "http://qikom.free.fr/Opnus-Mmx2/index.html"
+      }
     ]
   },
   {
@@ -12114,6 +12168,18 @@
     ],
     "lockingMechanisms": [
       "Wafer"
+    ],
+    "media": [
+      {
+        "text": "By: Iona",
+        "url": "https://live.staticflickr.com/65535/52665772311_dd57bbe76b_w_d.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 2.0",
+        "url": "https://www.flickr.com/photos/197671706@N08/52665772311/"
+      }
     ]
   },
   {

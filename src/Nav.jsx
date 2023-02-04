@@ -17,10 +17,6 @@ import {Fab} from '@mui/material'
 
 function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
-    const beltStyle = isBigEnough ? {} : {transform: 'rotate(-90deg)'}
-    const tabWidthStyle = isBigEnough
-        ? {minWidth: 50, maxWidth: 50}
-        : {minWidth: 'calc(100vw / 10)', maxWidth: 'calc(100vw / 10)'}
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
@@ -52,23 +48,23 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
                     onChange={onChangeTab}
                     indicatorColor='secondary'
                     variant={isBigEnough ? 'standard' : 'fullWidth'}
-                    centered={isBigEnough}
+                    centered
                     textColor='inherit'
                 >
                     {belts.map(belt =>
                         <Tab
                             key={belt}
                             icon={
-                                <BeltIcon belt={belt} style={beltStyle}/>
+                                <BeltIcon belt={belt}/>
                             }
                             value={belt}
-                            sx={tabWidthStyle}
+                            sx={{minWidth: 36, maxWidth: 36}}
                         />
                     )}
                     <Tab
                         icon={<ManageSearchIcon/>}
                         value='search'
-                        sx={tabWidthStyle}
+                        sx={{minWidth: 36, maxWidth: 36}}
                     />
                 </Tabs>
             </AppBar>
