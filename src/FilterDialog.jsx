@@ -109,7 +109,6 @@ const filterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Features', fieldName: 'features'},
-    {label: 'Regions', fieldName: 'regions'},
     {label: 'Has Links', fieldName: 'hasLinks'},
     {label: 'Has Images', fieldName: 'hasImages'}
 ]

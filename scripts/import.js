@@ -28,7 +28,6 @@ const cleaned = data.map(datum => {
     const version = datum.Version
     const lockingMechanisms = datum['Locking Mechanisms'].split(',').filter(x => x)
     const features = datum.Features.split(',').filter(x => x)
-    const regions = datum.Regions.split(',').filter(x => x)
     const notes = datum.Notes
 
     const links = [...datum.Links.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
@@ -47,7 +46,6 @@ const cleaned = data.map(datum => {
         lockingMechanisms,
         features,
         notes,
-        regions,
         links,
         media,
         attribution

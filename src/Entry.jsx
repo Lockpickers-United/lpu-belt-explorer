@@ -139,16 +139,6 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
                         </Stack>
                     }/>
                 }
-                {
-                    !!entry.regions?.length &&
-                    <FieldValue name='Regions' value={
-                        <Stack direction='row' spacing={1}>
-                            {entry.regions.map((region, index) =>
-                                <Button key={index} color='inherit'>{region}</Button>
-                            )}
-                        </Stack>
-                    }/>
-                }
             </AccordionDetails>
         </Accordion>
     )

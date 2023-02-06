@@ -10,7 +10,6 @@ const formatted = data.map(datum => ({
     lockingMechanisms: datum.lockingMechanisms.join(','),
     features: datum.features.join(','),
     notes: datum.notes,
-    regions: datum.regions.join(','),
     links: datum.links.map(link => `[${link.text}](${link.url})`).join(','),
     media: datum.media?.map(media => `[${media.text}](${media.url})`).join(','),
     attribution: datum.attribution?.map(att => `[${att.text}](${att.url})`).join(','),
