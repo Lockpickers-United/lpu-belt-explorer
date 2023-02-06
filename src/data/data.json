@@ -10538,10 +10538,14 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "Twin Exclusive/6000 (with barrels)"
+        "model": "Twin Exclusive"
+      },
+      {
+        "make": "ASSA",
+        "model": "Twin 6000"
       }
     ],
-    "version": "6 pin with 5 side pins",
+    "version": "6 barrel drivers, 5 side pins",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -10555,8 +10559,64 @@
     ],
     "links": [
       {
+        "text": "Lockwiki",
+        "url": "https://www.lockwiki.com/index.php/ASSA_Twin_6000"
+      },
+      {
         "text": "HanFey",
         "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
+      },
+      {
+        "text": "Patent",
+        "url": "https://patentimages.storage.googleapis.com/9a/fa/54/f462544b51b361/US4393673.pdf"
+      },
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ASSA/TWIN%206000_73.html"
+      },
+      {
+        "text": "Assamow",
+        "url": "https://assamow.com/"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://live.staticflickr.com/65535/52673748295_6ac58447f6_w_d.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://live.staticflickr.com/65535/52673601859_fa8424ee2e_w_d.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://live.staticflickr.com/65535/52672815942_df49303ecd_w_d.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://live.staticflickr.com/65535/52673811203_afc5e3fe09_w_d.jpg"
+      },
+      {
+        "text": "By: Catalocks",
+        "url": "https://www.catalocks.eu/photos/73/2.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_cylinder.jpg"
+      },
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_counter_milling.jpg"
+      },
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_sidebar_pin.jpg"
+      },
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_sidebar.jpg"
       }
     ]
   },
@@ -10598,7 +10658,7 @@
     ],
     "attribution": [
       {
-        "text": "CC BY 3.0",
+        "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_cylinder.jpg"
       }
     ]
