@@ -18,8 +18,8 @@ import {Fab} from '@mui/material'
 function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
     const tabWidthStyle = isBigEnough
-        ? {minWidth: 50, maxWidth: 50}
-        : {minWidth: 'calc(100vw / 10)', maxWidth: 'calc(100vw / 10)'}
+        ? {minWidth: 50, maxWidth: 50, opacity: 1}
+        : {minWidth: 'calc(100vw / 10)', maxWidth: 'calc(100vw / 10)', opacity: 1}
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
