@@ -1,9 +1,8 @@
 import React from 'react'
-import beltColors from './data/beltColors.js'
+import belts from './data/belts.js'
 
 function BeltStripe({value}) {
-    const color = value.startsWith('black') ? 'black' : value.toLowerCase()
-    const backgroundColor = beltColors[color]
+    const {color: backgroundColor} = belts[value]
     const style = {
         width: 8,
         height: '100%',

@@ -14,6 +14,7 @@ import {useMediaQuery} from 'react-responsive'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import ReactMarkdown from 'react-markdown'
+import belts from './data/belts.js'
 
 function Entry({betaUser, expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
@@ -48,7 +49,9 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
                             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                 {entry.lockingMechanisms.map((lockingMechanism, index) =>
                                     <Chip
-                                        key={index} label={lockingMechanism} variant='outlined'
+                                        key={index}
+                                        label={lockingMechanism}
+                                        variant='outlined'
                                         style={{marginRight: 4, marginBottom: 4}}
                                     />
                                 )}
@@ -60,7 +63,8 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
             <AccordionDetails>
                 <FieldValue name='Belt' value={
                     <React.Fragment>
-                        <Typography>{entry.belt} <BeltIcon belt={entry.belt} style={{marginBottom: -10}}/></Typography>
+                        <Typography>{belts[entry.belt].label}</Typography>
+                        <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                     </React.Fragment>
 
                 }/>

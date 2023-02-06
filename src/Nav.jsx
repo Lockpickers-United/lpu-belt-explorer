@@ -8,7 +8,7 @@ import SearchBox from './SearchBox.jsx'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import BeltIcon from './BeltIcon.jsx'
-import beltIcons from './data/beltIcons.js'
+import {uniqueBelts} from './data/belts'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
 import {useMediaQuery} from 'react-responsive'
 import InfoButton from './InfoButton.jsx'
@@ -17,6 +17,9 @@ import {Fab} from '@mui/material'
 
 function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
+    const tabWidthStyle = isBigEnough
+        ? {minWidth: 50, maxWidth: 50}
+        : {minWidth: 'calc(100vw / 10)', maxWidth: 'calc(100vw / 10)'}
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
@@ -48,23 +51,23 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
                     onChange={onChangeTab}
                     indicatorColor='secondary'
                     variant={isBigEnough ? 'standard' : 'fullWidth'}
-                    centered
+                    centered={isBigEnough}
                     textColor='inherit'
                 >
-                    {belts.map(belt =>
+                    {uniqueBelts.map(belt =>
                         <Tab
                             key={belt}
                             icon={
-                                <BeltIcon belt={belt}/>
+                                <BeltIcon value={belt} style={{paddingTop: 2}}/>
                             }
                             value={belt}
-                            sx={{minWidth: 36, maxWidth: 36}}
+                            sx={tabWidthStyle}
                         />
                     )}
                     <Tab
                         icon={<ManageSearchIcon/>}
                         value='search'
-                        sx={{minWidth: 36, maxWidth: 36}}
+                        sx={tabWidthStyle}
                     />
                 </Tabs>
             </AppBar>
@@ -84,7 +87,5 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
         </React.Fragment>
     )
 }
-
-const belts = Object.keys(beltIcons)
 
 export default Nav
