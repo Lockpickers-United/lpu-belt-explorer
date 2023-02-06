@@ -8,30 +8,28 @@ function Entries({betaUser, data, belt, query, searchTerm}) {
     const deferredSearchTerm = useDeferredValue(searchTerm)
 
     const visibleEntries = useMemo(() => {
-        // Filters
+        // Filters as an array
+        const filters = Object.keys(deferredQuery)
+            .map(key => {
+                const value = deferredQuery[key]
+                return Array.isArray(value)
+                    ? value.map(subkey => ({key, value: subkey}))
+                    : {key, value}
+            })
+            .flat()
+
+        // Filter the data
         const filtered = data
             .filter(datum => belt === 'search' || datum.belt.startsWith(belt))
             .filter(datum => {
-                return Object.keys(deferredQuery)
-                    .every(term => {
-                        const filterValue = deferredQuery[term]
-                        if (Array.isArray(filterValue)) {
-                            if (Array.isArray(datum[term])) {
-                                return filterValue.some(filterSubValue => datum[term].includes(filterSubValue))
-                            } else {
-                                return filterValue.includes(datum[term])
-                            }
-                        } else {
-                            if (Array.isArray(datum[term])) {
-                                return datum[term].includes(filterValue)
-                            } else {
-                                return datum[term] === filterValue
-                            }
-                        }
-                    })
+                return filters.every(({key, value}) => {
+                    return Array.isArray(datum[key])
+                        ? datum[key].includes(value)
+                        : datum[key] === value
+                })
             })
 
-        // Search Term fuzzy match
+        // If there is a search term, fuzzy match that
         if (deferredSearchTerm) {
             const fuzzyResults = fuzzysort.go(deferredSearchTerm, filtered, {keys: fuzzySortKeys})
             return fuzzyResults.map(result => result.obj)
