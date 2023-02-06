@@ -3,7 +3,6 @@ import {Button, ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
-import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import React from 'react'
@@ -15,6 +14,7 @@ import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import ReactMarkdown from 'react-markdown'
 import belts from './data/belts.js'
+import FilterChip from './FilterChip'
 
 function Entry({betaUser, expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
@@ -48,11 +48,10 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
                         <FieldValue name='Locking Mechanisms' value={
                             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                 {entry.lockingMechanisms.map((lockingMechanism, index) =>
-                                    <Chip
+                                    <FilterChip
                                         key={index}
-                                        label={lockingMechanism}
-                                        variant='outlined'
-                                        style={{marginRight: 4, marginBottom: 4}}
+                                        value={lockingMechanism}
+                                        field='lockingMechanisms'
                                     />
                                 )}
                             </Stack>
@@ -80,10 +79,11 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
                 {!!entry.features?.length &&
                     <FieldValue name='Features' value={
                         <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                            {entry.features.map((tag, index) =>
-                                <Chip
-                                    key={index} label={tag} variant='outlined'
-                                    style={{marginRight: 4, marginBottom: 4}}
+                            {entry.features.map((feature, index) =>
+                                <FilterChip
+                                    key={index}
+                                    value={feature}
+                                    field='features'
                                 />
                             )}
                         </Stack>
