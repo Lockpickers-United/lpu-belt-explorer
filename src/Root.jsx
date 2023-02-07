@@ -51,6 +51,7 @@ const getRootStyle = styleTheme => {
             
             :root {
               color-scheme: dark;
+              overflow-y: scroll;
             }
         `
 }

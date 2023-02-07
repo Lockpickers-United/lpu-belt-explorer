@@ -11,7 +11,7 @@ function Entries({data, tab}) {
     const {search, ...otherFilters} = filters
     const defTab = useDeferredValue(tab)
     const defSearch = useDeferredValue(search)
-    const defFilters = useDeferredValue(filters)
+    const defFilters = useDeferredValue(otherFilters)
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
