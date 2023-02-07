@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import React from 'react'
+import React, {useContext} from 'react'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
@@ -15,13 +15,15 @@ import LaunchIcon from '@mui/icons-material/Launch'
 import ReactMarkdown from 'react-markdown'
 import belts from './data/belts.js'
 import FilterChip from './FilterChip'
+import FilterContext from './FilterContext.jsx'
 
-function Entry({betaUser, expanded, entry, onAccordionChange}) {
+function Entry({expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
     const style = isBigEnough
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
         : {maxWidth: 700, marginLeft: 8, marginRight: 8}
+    const {isBetaUser} = useContext(FilterContext)
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style}>
@@ -90,7 +92,7 @@ function Entry({betaUser, expanded, entry, onAccordionChange}) {
                     }/>
                 }
                 {
-                    !!entry.media?.length && expanded && betaUser &&
+                    !!entry.media?.length && expanded && isBetaUser &&
                     <FieldValue name='Media' value={
                         <ImageList variant={isBigEnough ? 'quilted' : 'masonry'} cols={isBigEnough ? 4 : 2}>
                             {entry.media.map(({text, url}, index) =>

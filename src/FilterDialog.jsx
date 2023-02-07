@@ -1,41 +1,33 @@
 import CloseIcon from '@mui/icons-material/Close.js'
 import {Button, Dialog, DialogContent, Slide} from '@mui/material'
 import AppBar from '@mui/material/AppBar'
-import Chip from '@mui/material/Chip'
 import IconButton from '@mui/material/IconButton'
 import Stack from '@mui/material/Stack'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import queryString from 'query-string'
-import React from 'react'
+import React, {useContext} from 'react'
 import FieldValue from './FieldValue.jsx'
 import FilterByField from './FilterByField.jsx'
+import FilterContext from './FilterContext.jsx'
+import FilterDisplay from './FilterDisplay.jsx'
+import filterFields from './data/filterFields.js'
 
-function FilterDialog({data, filters, open, onClose, query, setQuery, onSearch}) {
+function FilterDialog({data, open, onClose, onChangeTab}) {
+    const {filters, filterCount, addFilter, clearFilters} = useContext(FilterContext)
+
     const handleAddFilter = (keyToAdd, valueToAdd) => {
-        const queryValue = query[keyToAdd]
-        if (Array.isArray(queryValue)) queryValue.push(valueToAdd)
-        else if (queryValue) query[keyToAdd] = [queryValue, valueToAdd]
-        else query[keyToAdd] = valueToAdd
-        setQuery({...query})
-    }
-
-    const handleDeleteFilter = (keyToDelete, valueToDelete) => () => {
-        const queryValue = query[keyToDelete]
-        if (Array.isArray(queryValue)) query[keyToDelete] = query[keyToDelete].filter(value => value !== valueToDelete)
-        else query[keyToDelete] = undefined
-        setQuery({...query})
+        setTimeout(() => addFilter(keyToAdd, valueToAdd), 0)
     }
 
     const handleClear = () => {
+        onChangeTab('white')
         onClose()
-        setTimeout(() => location.search = '', 100)
+        setTimeout(() => clearFilters(), 0)
     }
 
     const handleSave = () => {
         onClose()
-        onSearch()
-        setTimeout(() => location.search = queryString.stringify(query), 100)
+        if (filterCount) onChangeTab('search')
     }
 
     return (
@@ -70,22 +62,7 @@ function FilterDialog({data, filters, open, onClose, query, setQuery, onSearch})
                 </Toolbar>
             </AppBar>
             <DialogContent>
-                {
-                    !!filters.length &&
-                    <FieldValue name='Current Filters' value={
-                        <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
-                            {filters.map(({key, value: filter}, index) =>
-                                <Chip
-                                    key={index}
-                                    label={`${labelByFieldName[key]} = ${filter}`}
-                                    variant='outlined'
-                                    style={{marginRight: 4, marginBottom: 4}}
-                                    onDelete={handleDeleteFilter(key, filter)}
-                                />
-                            )}
-                        </Stack>
-                    }/>
-                }
+                <FilterDisplay/>
 
                 <FieldValue name='Add Filters' value={
                     <Stack direction='column' style={{marginTop: 8, maxWidth: 350}}>
@@ -104,18 +81,6 @@ function FilterDialog({data, filters, open, onClose, query, setQuery, onSearch})
         </Dialog>
     )
 }
-
-const filterFields = [
-    {label: 'Make', fieldName: 'makes'},
-    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
-    {label: 'Features', fieldName: 'features'},
-    {label: 'Has Links', fieldName: 'hasLinks'},
-    {label: 'Has Images', fieldName: 'hasImages'}
-]
-const labelByFieldName = filterFields.reduce((acc, {fieldName, label}) => ({
-    ...acc,
-    [fieldName]: label
-}), {})
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />

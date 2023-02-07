@@ -1,41 +1,29 @@
 import {Tooltip} from '@mui/material'
-import React, {useMemo, useState} from 'react'
-import queryString from 'query-string'
+import React, {useContext, useState} from 'react'
 import FilterAltIcon from '@mui/icons-material/FilterAlt.js'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
 import FilterDialog from './FilterDialog.jsx'
+import FilterContext from './FilterContext.jsx'
 
-function FilterButton({data, onSearch}) {
+function FilterButton({data, onChangeTab}) {
     const [open, setOpen] = useState(false)
-    const [query, setQuery] = useState(queryString.parse(location.search))
-    const filters = useMemo(() => {
-        return Object.keys(query)
-            .map(key => {
-                const value = query[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
-            })
-            .flat()
-            .filter(({value}) => value)
-    }, [query])
+    const {filters, filterCount} = useContext(FilterContext)
 
-    const openDialog = () => {
-        setQuery(queryString.parse(location.search))
-        setOpen(true)
-    }
-    const closeDialog = () => {
-        setQuery(queryString.parse(location.search))
-        setOpen(false)
-    }
+    const openDialog = () => setOpen(true)
+    const closeDialog = () => setOpen(false)
 
     return (
         <React.Fragment>
             <Tooltip title='Filter'>
-                <Badge badgeContent={filters.length} color='secondary' overlap='circular' anchorOrigin={{
-                    vertical: 'bottom', horizontal: 'right'
-                }}>
+                <Badge
+                    badgeContent={filterCount}
+                    color='secondary'
+                    overlap='circular'
+                    anchorOrigin={{
+                        vertical: 'bottom', horizontal: 'right'
+                    }}
+                >
                     <IconButton color='inherit' onClick={openDialog}>
                         <FilterAltIcon/>
                     </IconButton>
@@ -44,10 +32,7 @@ function FilterButton({data, onSearch}) {
             <FilterDialog
                 data={data}
                 open={open}
-                query={query}
-                filters={filters}
-                setQuery={setQuery}
-                onSearch={onSearch}
+                onChangeTab={onChangeTab}
                 onClose={closeDialog}
             />
         </React.Fragment>

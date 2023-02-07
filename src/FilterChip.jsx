@@ -1,19 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Chip from '@mui/material/Chip'
-import queryString from 'query-string'
+import FilterContext from './FilterContext.jsx'
 
 function FilterChip({field, value, ...props}) {
-    const handleClick = event => {
-        event.preventDefault()
+    const {addFilter} = useContext(FilterContext)
 
-        const query = queryString.parse(location.search)
-        const queryValue = query[field]
-        if ((Array.isArray(queryValue) && !queryValue.includes(value)) || queryValue !== value) {
-            if (Array.isArray(queryValue)) queryValue.push(value)
-            else if (queryValue) query[field] = [queryValue, value]
-            else query[field] = value
-            setTimeout(() => location.search = queryString.stringify(query), 100)
-        }
+    const handleClick = event => {
+        event.stopPropagation()
+
+        addFilter(field, value)
     }
 
     return (

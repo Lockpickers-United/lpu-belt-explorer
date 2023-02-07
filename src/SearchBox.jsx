@@ -1,18 +1,34 @@
 import {InputAdornment, TextField} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
-import React from 'react'
+import React, {useContext, useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useMediaQuery} from 'react-responsive'
+import FilterContext from './FilterContext.jsx'
 
-function SearchBox({searchTerm, onSearch, onChangeTab}) {
+function SearchBox({onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 736})
-    const handleSearch = ({target}) => setTimeout(onSearch(target.value))
-    const handleClear = event => {
-        onSearch('')
-        onChangeTab(event, 'white')
+    const {filters, addFilter, removeFilter, setIsBetaUser, isBetaUser} = useContext(FilterContext)
+    const [text, setText] = useState(filters.search || '')
+    const handleChange = event => {
+        const value = event.target.value
+        if (value === 'lpubeta') {
+            setIsBetaUser(!isBetaUser)
+            setText('')
+            addFilter('search', value, true)
+        } else {
+            setText(value)
+            setTimeout(() => addFilter('search', value, true), 0)
+            onChangeTab('search')
+        }
     }
-    const endAdornment = searchTerm ? (
+    const handleClear = () => {
+        setText('')
+        removeFilter('search', '')
+        onChangeTab('white')
+    }
+
+    const endAdornment = text ? (
         <InputAdornment position='end'>
             <IconButton color='inherit' onClick={handleClear} edge='end' size='small'>
                 <ClearIcon/>
@@ -36,8 +52,8 @@ function SearchBox({searchTerm, onSearch, onChangeTab}) {
             }}
             variant='standard'
             color='secondary'
-            onChange={handleSearch}
-            value={searchTerm}
+            onChange={handleChange}
+            value={text}
             style={style}
             fullWidth
         />

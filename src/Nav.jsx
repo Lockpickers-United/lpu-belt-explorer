@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import FilterButton from './FilterButton.jsx'
@@ -15,14 +15,17 @@ import InfoButton from './InfoButton.jsx'
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop'
 import {Fab} from '@mui/material'
 
-function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
+function Nav({data, tab, onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 500})
+    const tabWidth = Math.floor(window.innerWidth/10)
     const tabWidthStyle = isBigEnough
         ? {minWidth: 50, maxWidth: 50, opacity: 1}
-        : {minWidth: 'calc(100vw / 10)', maxWidth: 'calc(100vw / 10)', opacity: 1}
+        : {minWidth: tabWidth, maxWidth: tabWidth, opacity: 1}
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
+
+    const handleTabClick = (event, value) => onChangeTab(value)
 
     return (
         <React.Fragment>
@@ -32,12 +35,12 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
 
                     <div style={{flexGrow: 1}}></div>
 
-                    <SearchBox searchTerm={searchTerm} onSearch={onSearch} onChangeTab={onChangeTab}/>
+                    <SearchBox onChangeTab={onChangeTab}/>
 
                     <div style={{flexGrow: 1}}></div>
 
                     <InfoButton/>
-                    <FilterButton data={data} onSearch={onSearch}/>
+                    <FilterButton data={data} onChangeTab={onChangeTab}/>
                     <GitHubButton/>
                 </Toolbar>
             </AppBar>
@@ -47,8 +50,8 @@ function Nav({data, belt, searchTerm, onSearch, onChangeTab}) {
 
             <AppBar position='relative'>
                 <Tabs
-                    value={belt}
-                    onChange={onChangeTab}
+                    value={tab}
+                    onChange={handleTabClick}
                     indicatorColor='secondary'
                     variant={isBigEnough ? 'standard' : 'fullWidth'}
                     centered={isBigEnough}
