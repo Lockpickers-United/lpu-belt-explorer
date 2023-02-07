@@ -11,18 +11,22 @@ function BeltStripe({value}) {
         top: 0,
         backgroundColor
     }
-    const [stripeCount] = (value.match(/\d/) || [0])
-    const stripes = Array(+stripeCount).fill(0)
-        .map((value, index) =>
-            <span key={index} style={{
-                width: 8,
-                height: 2,
-                position: 'absolute',
-                left: 0,
-                top: 18 + (index * 6),
-                backgroundColor: '#acacac'
-            }}/>
-        )
+    const [stripeValue] = (value.match(/\d/) || [0])
+    const stripeCount = +stripeValue
+    let stripes = null
+    if (stripeCount > 1) {
+        stripes = Array(stripeCount).fill(0)
+            .map((value, index) =>
+                <span key={index} style={{
+                    width: 8,
+                    height: 2,
+                    position: 'absolute',
+                    left: 0,
+                    top: 18 + (index * 6),
+                    backgroundColor: '#acacac'
+                }}/>
+            )
+    }
     return (
         <React.Fragment>
             <span style={style}/>
