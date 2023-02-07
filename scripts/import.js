@@ -64,12 +64,25 @@ const cleaned = data
         return value
     })
     .sort((a, b) => {
-        const beltNumberA = beltNumbers.indexOf(a.belt)
-        const beltNumberB = beltNumbers.indexOf(b.belt)
+        // Sort by belt first, keeping all Black belt variations together
+        const beltNumberA = beltNumbers.indexOf(a.belt.replace(/\d/g, ''))
+        const beltNumberB = beltNumbers.indexOf(b.belt.replace(/\d/g, ''))
 
         if (beltNumberA === beltNumberB) {
-            const fuzzyA = a.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')
-            const fuzzyB = b.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')
+            // If belt is equal, sort by make/model, keeping Any above others
+            const fuzzyA = a.makeModels[0].make === 'Any'
+                ? 'A' : a.makeModels
+                .map(({make, model}) => [make, model])
+                .flat()
+                .filter(a => a)
+                .join(',')
+            const fuzzyB = b.makeModels[0].make === 'Any'
+                ? 'A' : b.makeModels
+                .map(({make, model}) => [make, model])
+                .flat()
+                .filter(a => a)
+                .join(',')
+
             return fuzzyA < fuzzyB ? -1 : 1
         } else {
             return beltNumberA < beltNumberB ? -1 : 1
