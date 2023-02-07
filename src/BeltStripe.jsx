@@ -14,7 +14,7 @@ function BeltStripe({value}) {
     const [stripeCount] = (value.match(/\d/) || [0])
     const stripes = Array(+stripeCount).fill(0)
         .map((value, index) =>
-            <span style={{
+            <span key={index} style={{
                 width: 8,
                 height: 2,
                 position: 'absolute',

@@ -1,6 +1,9 @@
 import fs from 'fs'
 import {parse} from 'csv-parse/sync'
 import schema from './schema.js'
+import belts from '../src/data/belts.js'
+
+const beltNumbers = Object.keys(belts)
 
 // Parse CSV into JSON
 const csvData = fs.readFileSync('./scripts/data.csv')
@@ -17,48 +20,61 @@ if (results.error) {
 }
 
 // Transform fields into internal JSON format
-const cleaned = data.map(datum => {
-    const belt = datum.Belt.toLowerCase().replace(/\s/g, '')
-    const makes = datum.Make.split(',').filter(x => x)
-    const models = datum.Model.split(',').filter(x => x)
-    const makeModels = models.map((model, index) => ({
-        make: makes[index],
-        model
-    }))
-    const version = datum.Version
-    const lockingMechanisms = datum['Locking Mechanisms'].split(',').filter(x => x)
-    const features = datum.Features.split(',').filter(x => x)
-    const notes = datum.Notes
+const cleaned = data
+    .map(datum => {
+        const belt = datum.Belt.toLowerCase().replace(/\s/g, '')
+        const makes = datum.Make.split(',').filter(x => x)
+        const models = datum.Model.split(',').filter(x => x)
+        const makeModels = models.map((model, index) => ({
+            make: makes[index],
+            model
+        }))
+        const version = datum.Version
+        const lockingMechanisms = datum['Locking Mechanisms'].split(',').filter(x => x)
+        const features = datum.Features.split(',').filter(x => x)
+        const notes = datum.Notes
 
-    const links = [...datum.Links.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
-        .map(([,text, url]) => ({text, url}))
-    const media = [...datum.Media.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
-        .map(([,text, url]) => ({text, url}))
-    const attribution = [...datum.Attribution.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
-        .map(([,text, url]) => ({text, url}))
-    const id = datum['Unique ID']
+        const links = [...datum.Links.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
+            .map(([, text, url]) => ({text, url}))
+        const media = [...datum.Media.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
+            .map(([, text, url]) => ({text, url}))
+        const attribution = [...datum.Attribution.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)]
+            .map(([, text, url]) => ({text, url}))
+        const id = datum['Unique ID']
 
-    const value = {
-        id,
-        belt,
-        makeModels,
-        version,
-        lockingMechanisms,
-        features,
-        notes,
-        links,
-        media,
-        attribution
-    }
+        const value = {
+            id,
+            belt,
+            makeModels,
+            version,
+            lockingMechanisms,
+            features,
+            notes,
+            links,
+            media,
+            attribution
+        }
 
-    // Clean up empty values to reduce payload size
-    Object.keys(value).forEach(key => {
-        if (typeof value[key] === 'string' && value[key] === '') value[key] = undefined
-        else if (Array.isArray(value[key]) && value[key].length === 0) value[key] = undefined
+        // Clean up empty values to reduce payload size
+        Object.keys(value).forEach(key => {
+            if (typeof value[key] === 'string' && value[key] === '') value[key] = undefined
+            else if (Array.isArray(value[key]) && value[key].length === 0) value[key] = undefined
+        })
+
+        return value
     })
+    .sort((a, b) => {
+        const beltNumberA = beltNumbers.indexOf(a.belt)
+        const beltNumberB = beltNumbers.indexOf(b.belt)
 
-    return value
-})
+        if (beltNumberA === beltNumberB) {
+            const fuzzyA = a.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')
+            const fuzzyB = b.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')
+            return fuzzyA < fuzzyB ? -1 : 1
+        } else {
+            return beltNumberA < beltNumberB ? -1 : 1
+        }
+    })
 
 // Write out to src location for usage
 fs.writeFileSync('./src/data/data.json', JSON.stringify(cleaned, null, 2))
