@@ -1,11 +1,11 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
-import {Button, ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
+import {AccordionActions, Button, ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
@@ -15,7 +15,10 @@ import LaunchIcon from '@mui/icons-material/Launch'
 import ReactMarkdown from 'react-markdown'
 import belts from './data/belts.js'
 import FilterChip from './FilterChip'
-import FilterContext from './FilterContext.jsx'
+import StarIcon from '@mui/icons-material/Star'
+import LinkIcon from '@mui/icons-material/Link'
+import StarBorderIcon from '@mui/icons-material/StarBorder'
+import StorageContext from './StorageContext.jsx'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
@@ -23,7 +26,20 @@ function Entry({expanded, entry, onAccordionChange}) {
     const style = isBigEnough
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
         : {maxWidth: 700, marginLeft: 8, marginRight: 8}
-    const {isBetaUser} = useContext(FilterContext)
+    const {starredEntries, featureFlags, setStorageValue} = useContext(StorageContext)
+    const isStarred = starredEntries.includes(entry.id)
+    const {isBetaUser = false} = featureFlags
+
+    const handleStarClick = () => {
+        const newValue = isStarred
+            ? starredEntries.filter(val => val !== entry.id)
+            : [...starredEntries, entry.id]
+
+        setTimeout(() => setStorageValue('starredEntries', newValue), 0)
+    }
+
+    const link = new URL(window.location.href)
+    link.search = `id=${entry.id}`
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style}>
@@ -142,6 +158,18 @@ function Entry({expanded, entry, onAccordionChange}) {
                     }/>
                 }
             </AccordionDetails>
+            <AccordionActions>
+                <IconButton href={link.href} target='_blank' rel='noopener noreferrer'>
+                    <LinkIcon/>
+                </IconButton>
+                <IconButton onClick={handleStarClick}>
+                    {
+                        isStarred
+                            ? <StarIcon style={isStarred ? {color: 'gold'} : {}}/>
+                            : <StarBorderIcon style={isStarred ? {color: 'gold'} : {}}/>
+                    }
+                </IconButton>
+            </AccordionActions>
         </Accordion>
     )
 }

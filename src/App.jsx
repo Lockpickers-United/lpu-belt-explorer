@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Entries from './Entries.jsx'
 import Nav from './Nav.jsx'
-import {FilterProvider} from './FilterContext'
+import {FilterProvider} from './FilterContext.jsx'
+import {StorageProvider} from './StorageContext.jsx'
 
 function App() {
     const [tab, setTab] = useState(() => {
@@ -21,19 +22,21 @@ function App() {
     }, [data])
 
     return (
-        <FilterProvider>
-            <Nav
-                data={data}
-                tab={tab}
-                onChangeTab={handleChangeTab}
-            />
+        <StorageProvider>
+            <FilterProvider>
+                <Nav
+                    data={data}
+                    tab={tab}
+                    onChangeTab={handleChangeTab}
+                />
 
-            <Entries
-                tab={tab}
-                data={data}
-                onChangeTab={handleChangeTab}
-            />
-        </FilterProvider>
+                <Entries
+                    tab={tab}
+                    data={data}
+                    onChangeTab={handleChangeTab}
+                />
+            </FilterProvider>
+        </StorageProvider>
     )
 }
 

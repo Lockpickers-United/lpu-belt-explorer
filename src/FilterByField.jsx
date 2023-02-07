@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 
-function FilterByField({data, label, fieldName, onFilter}) {
+function FilterByField({data, label, fieldName, values, onFilter}) {
     const handleSelect = event => {
         onFilter(fieldName, event.target.value)
         setTimeout(() => document.activeElement.blur())
@@ -15,6 +15,8 @@ function FilterByField({data, label, fieldName, onFilter}) {
     }
 
     const uniqueValues = useMemo(() => {
+        if (values) return values
+
         const allValues = data.map(datum => datum[fieldName]).flat()
         return [...new Set(allValues)].sort()
     }, [])

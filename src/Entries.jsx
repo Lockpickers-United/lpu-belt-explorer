@@ -3,15 +3,18 @@ import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import InlineFilterDisplay from './InlineFilterDisplay.jsx'
+import StorageContext from './StorageContext.jsx'
 
 function Entries({data, tab, onChangeTab}) {
     const [expanded, setExpanded] = useState(-1)
     const {filters} = useContext(FilterContext)
+    const {starredEntries} = useContext(StorageContext)
 
     const {search, ...otherFilters} = filters
     const defTab = useDeferredValue(tab)
     const defSearch = useDeferredValue(search)
     const defFilters = useDeferredValue(otherFilters)
+    const defStarredEntries = useDeferredValue(starredEntries)
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -26,9 +29,15 @@ function Entries({data, tab, onChangeTab}) {
 
         // Filter the data
         const filtered = data
-            .filter(datum => defTab === 'search' || datum.belt.startsWith(defTab))
+            .map(entry => {
+                entry.starred = `${defStarredEntries.includes(entry.id)}`
+                return entry
+            })
             .filter(datum => {
-                return filterArray.every(({key, value}) => {
+                const isRightTab = defTab === 'search' || datum.belt.startsWith(defTab)
+                if (!isRightTab) return false
+
+                return !isRightTab || filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
                         ? datum[key].includes(value)
                         : datum[key] === value

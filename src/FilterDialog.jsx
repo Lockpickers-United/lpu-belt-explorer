@@ -66,12 +66,13 @@ function FilterDialog({data, open, onClose, onChangeTab}) {
 
                 <FieldValue name='Add Filters' value={
                     <Stack direction='column' style={{marginTop: 8, maxWidth: 350}}>
-                        {filterFields.map(({label, fieldName}, index) =>
+                        {filterFields.map(({label, fieldName, values}, index) =>
                             <FilterByField
                                 data={data}
                                 key={index}
                                 label={label}
                                 fieldName={fieldName}
+                                values={values}
                                 onFilter={handleAddFilter}
                             />
                         )}

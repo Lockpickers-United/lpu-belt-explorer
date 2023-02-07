@@ -5,15 +5,19 @@ import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useMediaQuery} from 'react-responsive'
 import FilterContext from './FilterContext.jsx'
+import StorageContext from './StorageContext.jsx'
 
 function SearchBox({onChangeTab}) {
     const isBigEnough = useMediaQuery({minWidth: 736})
-    const {filters, addFilter, removeFilter, setIsBetaUser, isBetaUser} = useContext(FilterContext)
+    const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
+    const {featureFlags, setStorageValue} = useContext(StorageContext)
+    const {isBetaUser = false} = featureFlags
+
     const handleChange = event => {
         const value = event.target.value
         if (value === 'lpubeta') {
-            setIsBetaUser(!isBetaUser)
+            setStorageValue('featureFlags', {...featureFlags, isBetaUser: !isBetaUser})
             onChangeTab('white')
             setText('')
             addFilter('search', '', true)

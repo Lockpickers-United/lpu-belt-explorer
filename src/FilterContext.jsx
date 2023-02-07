@@ -43,8 +43,6 @@ export function FilterProvider({children}) {
         setFilters({search: filters.search})
     }, [filters])
 
-    const [isBetaUser, setIsBetaUser] = useState(false)
-
     useEffect(() => {
         const query = queryString.stringify(filters)
         const newUrl = new URL(window.location.href)
@@ -62,9 +60,7 @@ export function FilterProvider({children}) {
         filterCount,
         addFilter,
         removeFilter,
-        clearFilters,
-        isBetaUser,
-        setIsBetaUser
+        clearFilters
     }), [filters])
 
     return (
