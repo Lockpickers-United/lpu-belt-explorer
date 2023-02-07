@@ -17,24 +17,10 @@
     ]
   },
   {
-    "id": "07034c0f",
-    "belt": "white",
-    "makeModels": [
-      {
-        "make": "Any",
-        "model": "Acrylic Padlock"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ]
-  },
-  {
     "id": "b22bdd44",
     "belt": "white",
     "makeModels": [
       {
-        "make": "Any",
         "model": "Any lock with any tool"
       }
     ],
@@ -55,6 +41,19 @@
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
       }
+    ]
+  },
+  {
+    "id": "07034c0f",
+    "belt": "white",
+    "makeModels": [
+      {
+        "make": "Any",
+        "model": "Acrylic Padlock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3928,7 +3927,7 @@
     "makeModels": [
       {
         "make": "Master Lock",
-        "model": "410 LOTO (Lock Out Tag Out)"
+        "model": "410 LOTO (Lockout Tagout)"
       }
     ],
     "lockingMechanisms": [
@@ -4008,7 +4007,7 @@
     "makeModels": [
       {
         "make": "Master Lock",
-        "model": "S32 LOTO (Lock Out Tag Out)"
+        "model": "S32 LOTO (Lockout Tagout)"
       }
     ],
     "features": [
@@ -4716,9 +4715,10 @@
     "makeModels": [
       {
         "make": "Any",
-        "model": "HQ High Security interactive clone (4 pins)"
+        "model": "HQ High Security interactive clone"
       }
-    ]
+    ],
+    "version": "4 pins"
   },
   {
     "id": "c6529d9c",
@@ -4726,9 +4726,10 @@
     "makeModels": [
       {
         "make": "Any",
-        "model": "SFIC format lock (to one shearline)"
+        "model": "SFIC format lock"
       }
     ],
+    "version": "picked to one shearline",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -4759,9 +4760,10 @@
     "makeModels": [
       {
         "make": "Burg Wächter ",
-        "model": "Gamma 700 -- Non-removable core"
+        "model": "Gamma 700"
       }
     ],
+    "version": "Non-removable core",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -5737,7 +5739,11 @@
     "makeModels": [
       {
         "make": "Mottura",
-        "model": "Champions C28/C29"
+        "model": "Champions C28"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C29"
       }
     ]
   },
@@ -5944,7 +5950,11 @@
     "makeModels": [
       {
         "make": "Vachette",
-        "model": "VIP / VIP+"
+        "model": "VIP"
+      },
+      {
+        "make": "Vachette",
+        "model": "VIP+"
       }
     ]
   },
@@ -6144,26 +6154,6 @@
     ]
   },
   {
-    "id": "122b5621",
-    "belt": "purple",
-    "makeModels": [
-      {
-        "make": "ASSA",
-        "model": "ASSA Guideline"
-      }
-    ],
-    "version": "6 pin with active side pins",
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Sidepins",
-      "Guttable"
-    ]
-  },
-  {
     "id": "039a239f",
     "belt": "purple",
     "makeModels": [
@@ -6231,6 +6221,26 @@
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
       }
+    ]
+  },
+  {
+    "id": "122b5621",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Guideline"
+      }
+    ],
+    "version": "6 pin with active side pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Barrel drivers",
+      "Countermilling - serrated/threaded",
+      "Sidepins",
+      "Guttable"
     ]
   },
   {
@@ -6548,6 +6558,25 @@
     ]
   },
   {
+    "id": "acde7f0c",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "DOM",
+        "model": "ix 6 sr"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Finned keypins",
+      "Torpedoes",
+      "Interactive element",
+      "Magic DOM drivers"
+    ]
+  },
+  {
     "id": "fc4de1ff",
     "belt": "purple",
     "makeModels": [
@@ -6572,25 +6601,6 @@
     "version": "without fins",
     "lockingMechanisms": [
       "Dimple"
-    ]
-  },
-  {
-    "id": "acde7f0c",
-    "belt": "purple",
-    "makeModels": [
-      {
-        "make": "DOM",
-        "model": "ix6sr"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Finned keypins",
-      "Torpedoes",
-      "Interactive element",
-      "Magic DOM drivers"
     ]
   },
   {
@@ -6751,9 +6761,10 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "sk6 vectorprofil rib extra (5 sliders)"
+        "model": "sk6 vectorprofil rib extra"
       }
     ],
+    "version": "5 sliders",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Slider"
@@ -6841,6 +6852,20 @@
     ]
   },
   {
+    "id": "4cd09b3b",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "Kaba Gege",
+        "model": "pExtra"
+      }
+    ],
+    "version": "6-7 pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
+  },
+  {
     "id": "779d74f5",
     "belt": "purple",
     "makeModels": [
@@ -6852,20 +6877,6 @@
     "version": "3 row, ≥9 pins",
     "lockingMechanisms": [
       "Dimple"
-    ]
-  },
-  {
-    "id": "4cd09b3b",
-    "belt": "purple",
-    "makeModels": [
-      {
-        "make": "Kaba",
-        "model": "Gege pExtra"
-      }
-    ],
-    "version": "6-7 pin",
-    "lockingMechanisms": [
-      "Pin-tumbler"
     ]
   },
   {
@@ -7042,9 +7053,10 @@
       },
       {
         "make": "LIPS",
-        "model": "Octro (<13 pins)"
+        "model": "Octro"
       }
     ],
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -7099,7 +7111,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Liquidonics Industries ",
+        "make": "Liquidonics",
         "model": "Miracle Magnetic"
       }
     ],
@@ -7131,12 +7143,10 @@
     "makeModels": [
       {
         "make": "Lockman",
-        "model": "Megacross (9-pins"
-      },
-      {
-        "model": " mushroom drivers)"
+        "model": "Megacross"
       }
     ],
+    "version": "9-pins, mushroom drivers",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -7147,16 +7157,15 @@
     "makeModels": [
       {
         "make": "Lockwood",
-        "model": "MT5 (VPI"
-      },
-      {
-        "model": " heavily mastered)***"
+        "model": "MT5"
       }
     ],
+    "version": "VPI, heavily mastered",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ]
+    ],
+    "notes": "Exempt from rule regarding maximum number of master wafers"
   },
   {
     "id": "71833308",
@@ -7663,7 +7672,11 @@
     "makeModels": [
       {
         "make": "TESA",
-        "model": "T80 / TX80"
+        "model": "T80"
+      },
+      {
+        "make": "TESA",
+        "model": "TX80"
       }
     ],
     "lockingMechanisms": [
@@ -7749,19 +7762,6 @@
     ]
   },
   {
-    "id": "ebe9ee59",
-    "belt": "purple",
-    "makeModels": [
-      {
-        "model": "Yale Superior / Milencio Magnum (7 or 9 pins)"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Slider"
-    ]
-  },
-  {
     "id": "1be10736",
     "belt": "purple",
     "makeModels": [
@@ -7772,6 +7772,25 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler",
+      "Slider"
+    ]
+  },
+  {
+    "id": "ebe9ee59",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "Superior"
+      },
+      {
+        "make": "Milencio",
+        "model": "Magnum"
+      }
+    ],
+    "version": "7 or 9 pins",
+    "lockingMechanisms": [
+      "Dimple",
       "Slider"
     ]
   },
@@ -7812,9 +7831,10 @@
     "makeModels": [
       {
         "make": "ALPHA",
-        "model": "FB (<15 pins)"
+        "model": "FB"
       }
     ],
+    "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8154,9 +8174,10 @@
     "makeModels": [
       {
         "make": "Bricard",
-        "model": "Chifral (all versions) (fully pinned)"
+        "model": "Chifral (all versions)"
       }
     ],
+    "version": "fully pinned",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8217,9 +8238,10 @@
     "makeModels": [
       {
         "make": "Clavis",
-        "model": "T-20 (<15 pins)"
+        "model": "T-20"
       }
     ],
+    "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8252,9 +8274,10 @@
     "makeModels": [
       {
         "make": "Codkey",
-        "model": "Locksys (≥15 pins)"
+        "model": "Locksys"
       }
     ],
+    "version": "≥15 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8501,18 +8524,6 @@
     ]
   },
   {
-    "id": "2929f922",
-    "belt": "brown",
-    "makeModels": [
-      {
-        "model": "Gerda Tytan ZX / Rim 6000"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ]
-  },
-  {
     "id": "594b1a1c",
     "belt": "brown",
     "makeModels": [
@@ -8523,6 +8534,22 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
+    ]
+  },
+  {
+    "id": "2929f922",
+    "belt": "brown",
+    "makeModels": [
+      {
+        "make": "Gerda",
+        "model": "Tytan ZX"
+      },
+      {
+        "model": "Rim 6000"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -8596,9 +8623,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "14 (<13 pins)"
+        "model": "14"
       }
     ],
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8609,9 +8637,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Ace (<13 pins)"
+        "model": "Ace"
       }
     ],
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8622,9 +8651,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Gemini (<13 pins)"
+        "model": "Gemini"
       }
     ],
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -8653,9 +8683,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Gemini pluS (<14 pins)"
+        "model": "Gemini pluS"
       }
     ],
+    "version": "<14 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8701,9 +8732,10 @@
       },
       {
         "make": "LIPS",
-        "model": "Lips Octro (≥13 pins)"
+        "model": "Octro"
       }
     ],
+    "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -8748,16 +8780,18 @@
     "makeModels": [
       {
         "make": "Lowe and Fletcher",
-        "model": "3007 Safe lock - 7 lever"
+        "model": "3007 Safe lock"
       }
-    ]
+    ],
+    "version": "7 lever"
   },
   {
     "id": "540a14c0",
     "belt": "brown",
     "makeModels": [
       {
-        "model": "MG Serrature HS"
+        "make": "MG Serrature",
+        "model": "HS"
       }
     ],
     "lockingMechanisms": [
@@ -8805,9 +8839,10 @@
       },
       {
         "make": "Tostem",
-        "model": "DN (<7 unmastered wafers)"
+        "model": "DN"
       }
     ],
+    "version": "<7 unmastered wafers",
     "lockingMechanisms": [
       "Slider"
     ]
@@ -8850,8 +8885,12 @@
     "makeModels": [
       {
         "make": "Mauer",
-        "model": "President -  7 lever"
+        "model": "President"
       }
+    ],
+    "version": "7 lever",
+    "lockingMechanisms": [
+      "Lever"
     ]
   },
   {
@@ -8860,8 +8899,12 @@
     "makeModels": [
       {
         "make": "Mauer",
-        "model": "Variator A - 7 lever"
+        "model": "Variator A"
       }
+    ],
+    "version": "7 lever",
+    "lockingMechanisms": [
+      "Lever"
     ]
   },
   {
@@ -9043,9 +9086,10 @@
     "makeModels": [
       {
         "make": "Robur",
-        "model": "Safe Deposit Lock (<3 barrels or gins with matched milling)"
+        "model": "2391 Safe Deposit Lock"
       }
     ],
+    "version": "<3 barrels or gins with matched milling",
     "lockingMechanisms": [
       "Sidepins",
       "Pin-tumbler"
@@ -9092,9 +9136,11 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "U-Shin Showa NX (<13 pins)"
+        "make": "U-Shin",
+        "model": "Showa NX"
       }
     ],
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -9117,9 +9163,10 @@
     "makeModels": [
       {
         "make": "Vachette",
-        "model": "Radial NT/NT+ (<13 pins)"
+        "model": "Radial NT/NT+"
       }
     ],
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -9177,9 +9224,10 @@
     "makeModels": [
       {
         "make": "Winkhaus",
-        "model": "X-Tra (<9 pins)"
+        "model": "X-Tra"
       }
     ],
+    "version": "<9 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -9238,9 +9286,10 @@
     "makeModels": [
       {
         "make": "ALPHA",
-        "model": "FB (≥15 pins)"
+        "model": "FB"
       }
     ],
+    "version": "≥15 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -10128,9 +10177,10 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "PR (<7 unmastered wafers)"
+        "model": "PR"
       }
     ],
+    "version": "<7 unmastered wafers",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -10141,9 +10191,10 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "U9 (<8 unmastered levers)"
+        "model": "U9"
       }
     ],
+    "version": "<8 unmastered levers",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -10223,10 +10274,10 @@
     "makeModels": [
       {
         "make": "Robur",
-        "model": "Safe Deposit Lock (barrels >3 chambers with matched milling)"
+        "model": "2391 Safe Deposit Lock"
       }
     ],
-    "version": "5 pin with 4 side pin",
+    "version": "barrels 3+ chambers with matched milling",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -10245,10 +10296,10 @@
     "makeModels": [
       {
         "make": "Robur",
-        "model": "Safe Deposit Lock (gins >3 chambers with matched milling)"
+        "model": "2391 Safe Deposit Lock"
       }
     ],
-    "version": "5 pin with 4 side pin",
+    "version": "gins 3+ chambers with matched milling)",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -10267,9 +10318,14 @@
     "makeModels": [
       {
         "make": "Rosengrens",
-        "model": "32A / 32A8"
+        "model": "32A"
+      },
+      {
+        "make": "Rosengrens",
+        "model": "32A8"
       }
     ],
+    "version": "thin round center posts, few or no false gates",
     "lockingMechanisms": [
       "Disc Detainer"
     ]
@@ -10302,7 +10358,11 @@
     "makeModels": [
       {
         "make": "S&G",
-        "model": "4544/4545"
+        "model": "4544"
+      },
+      {
+        "make": "S&G",
+        "model": "4545"
       }
     ],
     "lockingMechanisms": [
@@ -10345,7 +10405,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Sémag Euromag"
+        "make": "Sémag",
+        "model": "Euromag"
       }
     ],
     "lockingMechanisms": [
@@ -10370,7 +10431,8 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "Tokoz Pro"
+        "make": "Tokoz",
+        "model": "Pro"
       }
     ],
     "lockingMechanisms": [
@@ -10400,9 +10462,11 @@
     "belt": "red",
     "makeModels": [
       {
-        "model": "U-Shin Showa NX (≥13 pins)"
+        "make": "U-Shin",
+        "model": "Showa NX"
       }
     ],
+    "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -10426,9 +10490,14 @@
     "makeModels": [
       {
         "make": "Vachette",
-        "model": "Radial NT/NT+ (≥13 pins)"
+        "model": "Radial NT"
+      },
+      {
+        "make": "Vachette",
+        "model": "Radial NT+"
       }
     ],
+    "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -10439,9 +10508,10 @@
     "makeModels": [
       {
         "make": "Winkhaus",
-        "model": "X-Tra (9-13 pins)"
+        "model": "X-Tra"
       }
     ],
+    "version": "9-13 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -10456,49 +10526,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ]
-  },
-  {
-    "id": "3f73d2ce",
-    "belt": "black1",
-    "makeModels": [
-      {
-        "model": "ASSA Twin Maximum/Pro/v10 with barrels/Global"
-      }
-    ],
-    "version": "6 pin with 5 side pins",
-    "lockingMechanisms": [
-      "Pin-tumbler",
-      "Sidepins"
-    ],
-    "features": [
-      "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Active Sidebar",
-      "Sidepins",
-      "Guttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
-      },
-      {
-        "text": "HanFey",
-        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/7/77/ASSA_Twin_V10_cylinder.jpg/300px-ASSA_Twin_V10_cylinder.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_cylinder.jpg"
-      }
     ]
   },
   {
@@ -10651,6 +10678,62 @@
     ]
   },
   {
+    "id": "3f73d2ce",
+    "belt": "black1",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin Maximum"
+      },
+      {
+        "make": "ASSA",
+        "model": "Twin Pro"
+      },
+      {
+        "make": "ASSA",
+        "model": "Twin v10"
+      },
+      {
+        "make": "ASSA",
+        "model": "Twin Global"
+      }
+    ],
+    "version": "barrel driver, 6 stacks with 5 side pins",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Barrel drivers",
+      "Countermilling - serrated/threaded",
+      "Active Sidebar",
+      "Sidepins",
+      "Guttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
+      },
+      {
+        "text": "HanFey",
+        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/7/77/ASSA_Twin_V10_cylinder.jpg/300px-ASSA_Twin_V10_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_cylinder.jpg"
+      }
+    ]
+  },
+  {
     "id": "2ae6a691",
     "belt": "black1",
     "makeModels": [
@@ -10669,9 +10752,10 @@
     "makeModels": [
       {
         "make": "Australian Lock Co.",
-        "model": "Bilock (12-pins) (1-2 mastered elements) (upgrade of 8-pin version)"
+        "model": "Bilock"
       }
     ],
+    "version": "12-pins, 1-2 mastered elements",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -10700,9 +10784,10 @@
     "makeModels": [
       {
         "make": "BKS",
-        "model": "Janus (14 or more pins)"
+        "model": "Janus"
       }
     ],
+    "version": "14 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -10947,7 +11032,16 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Fichet-Bauche M2B / M3B / MxB"
+        "make": "Fichet-Bauche",
+        "model": "M2B"
+      },
+      {
+        "make": "Fichet-Bauche",
+        "model": "M3B"
+      },
+      {
+        "make": "Fichet-Bauche",
+        "model": "MxB"
       }
     ],
     "lockingMechanisms": [
@@ -10978,7 +11072,11 @@
     "makeModels": [
       {
         "make": "GOAL",
-        "model": "V18 / GP"
+        "model": "V18"
+      },
+      {
+        "make": "GOAL",
+        "model": "GP"
       }
     ],
     "version": "14-16 pins",
@@ -11052,9 +11150,10 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "WSW (5 sliders)"
+        "model": "WSW"
       }
     ],
+    "version": "5 sliders",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Slider"
@@ -11093,9 +11192,10 @@
       },
       {
         "make": "Kaba",
-        "model": "Star (4 rows) (15 or more pins)"
+        "model": "Star (4 rows)"
       }
     ],
+    "version": "15 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -11124,9 +11224,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Penta (15-20 pins)"
+        "model": "Penta"
       }
     ],
+    "version": "15-20 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11141,9 +11242,10 @@
       },
       {
         "make": "Kaba",
-        "model": "experT (15-20 pins)"
+        "model": "experT"
       }
     ],
+    "version": "15-20 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11154,9 +11256,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Star (5+ rows) (16-20 pins)"
+        "model": "Star"
       }
     ],
+    "version": "5+ rows, 16-20 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11167,9 +11270,10 @@
     "makeModels": [
       {
         "make": "Lockman",
-        "model": "Megacross (with pyramid drivers)"
+        "model": "Megacross"
       }
     ],
+    "version": "with pyramid drivers",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11263,9 +11367,14 @@
     "makeModels": [
       {
         "make": "Rosengrens",
-        "model": "32A81S / 32C81P"
+        "model": "32A81S"
+      },
+      {
+        "make": "Rosengrens",
+        "model": "32C81P"
       }
     ],
+    "version": "triangular central posts and many false gates",
     "lockingMechanisms": [
       "Disc Detainer"
     ]
@@ -11275,7 +11384,8 @@
     "belt": "black1",
     "makeModels": [
       {
-        "model": "Sargent Keso"
+        "make": "Sargent",
+        "model": "Keso"
       }
     ],
     "lockingMechanisms": [
@@ -11355,50 +11465,12 @@
     "makeModels": [
       {
         "make": "Winkhaus",
-        "model": "X-Tra (≥13 pins)"
+        "model": "X-Tra"
       }
     ],
+    "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
-    ]
-  },
-  {
-    "id": "7168d463",
-    "belt": "black2",
-    "makeModels": [
-      {
-        "model": "ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / TrioVing system 10 / TrioVing Twin Control / Fab Variant"
-      }
-    ],
-    "version": "6 pin with 5 finger pins",
-    "lockingMechanisms": [
-      "Pin-tumbler",
-      "Sidepins"
-    ],
-    "features": [
-      "Rotating fingerpins",
-      "Active Sidebar",
-      "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Guttable"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/3d/ASSA_Twin_Combi_cylinder.jpg/300px-ASSA_Twin_Combi_cylinder.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_Combi_cylinder.jpg"
-      }
     ]
   },
   {
@@ -11407,13 +11479,10 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "Twin 6000 (with gins"
-      },
-      {
-        "model": " upgrade of ASSA Twin 6000)"
+        "model": "Twin 6000"
       }
     ],
-    "version": "6 pin with 5 side pins",
+    "version": "gin drivers, 6 stacks with 5 side pins",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -11445,6 +11514,66 @@
       {
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_cylinder.jpg"
+      }
+    ]
+  },
+  {
+    "id": "7168d463",
+    "belt": "black2",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin Combi"
+      },
+      {
+        "make": "ASSA",
+        "model": "Triton"
+      },
+      {
+        "make": "ASSA",
+        "model": "Neptun 4900"
+      },
+      {
+        "make": "TrioVing",
+        "model": "System 10"
+      },
+      {
+        "make": "TrioVing",
+        "model": "Twin Control"
+      },
+      {
+        "make": "FAB",
+        "model": "Variant"
+      }
+    ],
+    "version": "6 pin with 5 finger pins",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Rotating fingerpins",
+      "Active Sidebar",
+      "Barrel drivers",
+      "Countermilling - serrated/threaded",
+      "Guttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://www.lockwiki.com/images/thumb/3/3d/ASSA_Twin_Combi_cylinder.jpg/300px-ASSA_Twin_Combi_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ASSA_Twin_Combi_cylinder.jpg"
       }
     ]
   },
@@ -11585,9 +11714,10 @@
     "makeModels": [
       {
         "make": "Australian Lock Co.",
-        "model": "BiLock Exclusive (Picked to Control)"
+        "model": "BiLock Exclusive"
       }
     ],
+    "version": "Picked to Control",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -11629,9 +11759,10 @@
     "makeModels": [
       {
         "make": "Clavis",
-        "model": "T-20 (20 pins)"
+        "model": "T-20"
       }
     ],
+    "version": "20 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11809,12 +11940,10 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "WSW (7 sliders"
-      },
-      {
-        "model": " upgrade of WSW with 5 sliders)"
+        "model": "WSW"
       }
     ],
+    "version": "7 sliders, upgrade of WSW with 5 sliders",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -11845,9 +11974,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Penta (21 or more pins)"
+        "model": "Penta"
       }
     ],
+    "version": "21 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11862,9 +11992,10 @@
       },
       {
         "make": "Kaba",
-        "model": "experT (21 pins)"
+        "model": "experT"
       }
     ],
+    "version": "21 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11875,9 +12006,10 @@
     "makeModels": [
       {
         "make": "Kaba",
-        "model": "Star (5+ rows) (21 or more pins)"
+        "model": "Star"
       }
     ],
+    "version": "5+ rows, 21 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -11888,9 +12020,10 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "PR (9-10 unmastered elements) (upgrade of Miwa PS)"
+        "model": "PR (upgrade of Miwa PS)"
       }
     ],
+    "version": "9-10 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -11901,9 +12034,10 @@
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "U9 (9 unmastered elements)"
+        "model": "U9"
       }
     ],
+    "version": "9 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]

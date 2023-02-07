@@ -28,5 +28,5 @@ export default Joi.array().items(
         Media: Joi.string().allow('').regex(/\[([^\]]+)]\(([^)]+)\),?/),
         Attribution: Joi.string().allow('').regex(/\[([^\]]+)]\(([^)]+)\),?/),
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/)
-    })
+    }).unknown()
 )
