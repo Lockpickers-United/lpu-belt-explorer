@@ -4,7 +4,9 @@ import Nav from './Nav.jsx'
 import {FilterProvider} from './FilterContext'
 
 function App() {
-    const [tab, setTab] = useState('white')
+    const [tab, setTab] = useState(() => {
+        return location.search.length > 0 ? 'search' : 'white'
+    })
     const handleChangeTab = newBelt => setTab(newBelt)
 
     const [data, setData] = useState([])
@@ -29,6 +31,7 @@ function App() {
             <Entries
                 tab={tab}
                 data={data}
+                onChangeTab={handleChangeTab}
             />
         </FilterProvider>
     )

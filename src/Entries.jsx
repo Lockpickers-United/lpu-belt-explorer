@@ -4,7 +4,7 @@ import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import InlineFilterDisplay from './InlineFilterDisplay.jsx'
 
-function Entries({data, tab}) {
+function Entries({data, tab, onChangeTab}) {
     const [expanded, setExpanded] = useState(-1)
     const {filters} = useContext(FilterContext)
 
@@ -47,7 +47,7 @@ function Entries({data, tab}) {
     return (
         <React.Fragment>
             <div style={{marginTop: 8, paddingBottom: 128}}>
-                <InlineFilterDisplay/>
+                <InlineFilterDisplay onChangeTab={onChangeTab}/>
 
                 {visibleEntries.map(datum =>
                     <Entry

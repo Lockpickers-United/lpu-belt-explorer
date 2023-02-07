@@ -40,8 +40,8 @@ export function FilterProvider({children}) {
     }, [filters])
 
     const clearFilters = useCallback(() => {
-        setFilters({})
-    }, [])
+        setFilters({search: filters.search})
+    }, [filters])
 
     const [isBetaUser, setIsBetaUser] = useState(false)
 

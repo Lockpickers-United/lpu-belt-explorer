@@ -20,7 +20,7 @@ function FilterDialog({data, open, onClose, onChangeTab}) {
     }
 
     const handleClear = () => {
-        onChangeTab('white')
+        if (!filters.search) onChangeTab('white')
         onClose()
         setTimeout(() => clearFilters(), 0)
     }

@@ -14,12 +14,15 @@ function SearchBox({onChangeTab}) {
         const value = event.target.value
         if (value === 'lpubeta') {
             setIsBetaUser(!isBetaUser)
+            onChangeTab('white')
             setText('')
-            addFilter('search', value, true)
+            addFilter('search', '', true)
         } else {
             setText(value)
-            setTimeout(() => addFilter('search', value, true), 0)
-            onChangeTab('search')
+            setTimeout(() => {
+                addFilter('search', value, true)
+                onChangeTab('search')
+            }, 0)
         }
     }
     const handleClear = () => {
