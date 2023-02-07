@@ -8,7 +8,8 @@ const filterFields = [
 
 export default filterFields
 
-export const filterFieldsByFieldName = filterFields.reduce((acc, {fieldName, label}) => ({
-    ...acc,
-    [fieldName]: label
-}), {})
+export const filterFieldsByFieldName = filterFields
+    .reduce((acc, {fieldName, label}) => ({
+        ...acc,
+        [fieldName]: label
+    }), {id: 'ID'})
