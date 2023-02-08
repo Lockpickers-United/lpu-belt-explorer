@@ -119,7 +119,11 @@ function Entry({expanded, entry, onAccordionChange}) {
                                         title={text}
                                         subtitle={
                                             !!entry?.attribution?.[index] &&
-                                            <a href={licenses[entry.attribution[index].text]}>
+                                            <a
+                                                href={licenses[entry.attribution[index].text]}
+                                                target='_blank'
+                                                rel='noopener noreferrer'
+                                            >
                                                 {entry.attribution[index].text}
                                             </a>
                                         }
