@@ -35,7 +35,7 @@ function Root() {
 }
 
 const getRootStyle = styleTheme => {
-    const linkTextColor = styleTheme.palette.action.link
+    const linkTextColor = styleTheme.palette.text.icon
     const backgroundColor = styleTheme.palette.background.default
 
     return `

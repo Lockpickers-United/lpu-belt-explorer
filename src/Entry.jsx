@@ -19,6 +19,7 @@ import StarIcon from '@mui/icons-material/Star'
 import LinkIcon from '@mui/icons-material/Link'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StorageContext from './StorageContext.jsx'
+import licenses from './data/licenses.js'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
@@ -118,7 +119,9 @@ function Entry({expanded, entry, onAccordionChange}) {
                                         title={text}
                                         subtitle={
                                             !!entry?.attribution?.[index] &&
-                                            entry.attribution[index].text
+                                            <a href={licenses[entry.attribution[index].text]}>
+                                                {entry.attribution[index].text}
+                                            </a>
                                         }
                                         actionIcon={
                                             !!entry?.attribution?.[index] &&
