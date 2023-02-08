@@ -86,7 +86,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/b/b6/Master_Lock_3_-_FXE47401.jpg/300px-Master_Lock_3_-_FXE47401.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg"
       }
     ],
     "attribution": [
@@ -136,7 +136,7 @@
     "media": [
       {
         "text": "By: Oaklandishh",
-        "url": "https://www.lockwiki.com/images/thumb/f/f6/Mastercommercial.JPG/225px-Mastercommercial.JPG"
+        "url": "https://photo-trove.com/i/lw/225px-Mastercommercial.jpeg"
       }
     ],
     "attribution": [
@@ -187,7 +187,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/b/b6/Master_Lock_3_-_FXE47401.jpg/300px-Master_Lock_3_-_FXE47401.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg"
       }
     ],
     "attribution": [
@@ -362,7 +362,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/1/1d/Abus_model_55_with_keys.jpg/290px-Abus_model_55_with_keys.jpg"
+        "url": "https://photo-trove.com/i/lw/290px-Abus_model_55_with_keys.jpg"
       }
     ],
     "attribution": [
@@ -397,7 +397,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/0/0d/ABUS_64TI-50_-_FXE47403.jpg/300px-ABUS_64TI-50_-_FXE47403.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ABUS_64TI-50_-_FXE47403.jpg"
       }
     ],
     "attribution": [
@@ -554,7 +554,7 @@
     "media": [
       {
         "text": "By: Oaklandishh",
-        "url": "https://www.lockwiki.com/images/thumb/6/6f/American5200.JPG/225px-American5200.JPG"
+        "url": "https://photo-trove.com/i/lw/225px-American5200.jpeg"
       }
     ],
     "attribution": [
@@ -636,7 +636,7 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Alutitan 770 40"
       }
     ],
@@ -649,7 +649,7 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "C-Line"
       }
     ],
@@ -665,7 +665,7 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Look"
       }
     ],
@@ -678,7 +678,7 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "SecuLock"
       }
     ],
@@ -691,7 +691,7 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Yacht"
       }
     ],
@@ -836,6 +836,32 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "links": [
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/FF"
+      }
+    ],
+    "media": [
+      {
+        "text": "OpHiDiAn",
+        "url": "https://wiki.koksa.org/images/5/5c/FF_Front.JPG"
+      },
+      {
+        "text": "OpHiDiAn",
+        "url": "https://wiki.koksa.org/images/5/5e/FF_Stifte.JPG"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Datei:FF_Front.JPG"
+      },
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Datei:FF_Stifte.JPG"
+      }
     ]
   },
   {
@@ -1037,7 +1063,7 @@
     "media": [
       {
         "text": "By: Oaklandishh",
-        "url": "https://www.lockwiki.com/images/thumb/b/ba/Master130.JPG/297px-Master130.JPG"
+        "url": "https://photo-trove.com/i/lw/297px-Master130.jpeg"
       }
     ],
     "attribution": [
@@ -1079,11 +1105,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/0/0a/Master-140-front.jpg/300px-Master-140-front.jpg"
-      },
-      {
-        "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/a/ab/Master-141-front.jpg/300px-Master-141-front.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Master-141-front.jpg"
       }
     ],
     "attribution": [
@@ -1436,7 +1458,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/1/1d/Abus_model_55_with_keys.jpg/290px-Abus_model_55_with_keys.jpg"
+        "url": "https://photo-trove.com/i/lw/290px-Abus_model_55_with_keys.jpg"
       }
     ],
     "attribution": [
@@ -1487,7 +1509,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/0/0d/ABUS_64TI-50_-_FXE47403.jpg/300px-ABUS_64TI-50_-_FXE47403.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ABUS_64TI-50_-_FXE47403.jpg"
       }
     ],
     "attribution": [
@@ -1538,7 +1560,7 @@
     "media": [
       {
         "text": "By: Lockr",
-        "url": "https://www.lockwiki.com/images/thumb/e/ea/Abus_83_50_padlock.jpeg/226px-Abus_83_50_padlock.jpeg"
+        "url": "https://photo-trove.com/i/lw/226px-Abus_83_50_padlock.jpeg"
       }
     ],
     "attribution": [
@@ -1572,7 +1594,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/7/77/Abus_85-40.jpg/200px-Abus_85-40.jpg"
+        "url": "https://photo-trove.com/i/lw/200px-Abus_85-40.jpg"
       }
     ],
     "attribution": [
@@ -1681,6 +1703,32 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "links": [
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/ABUS_Ti12"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: cristão",
+        "url": "https://wiki.koksa.org/images/d/da/Al-tsa424xtklxchs-essenoxtlheliosmeister-17625.jpg"
+      },
+      {
+        "text": "cristão",
+        "url": "https://wiki.koksa.org/images/3/3e/Al-tsa421xtklxchs-essenoxtlheliosmeister-17625.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Datei:Al-tsa424xtklxchs-essenoxtlheliosmeister-17625.jpg"
+      },
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Datei:Al-tsa421xtklxchs-essenoxtlheliosmeister-17625.jpg"
+      }
     ]
   },
   {
@@ -1694,6 +1742,32 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "links": [
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Basi_CO"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: OpHiDiAn",
+        "url": "https://wiki.koksa.org/images/2/27/Cof.JPG"
+      },
+      {
+        "text": "By: OpHiDiAn",
+        "url": "https://wiki.koksa.org/images/c/cb/Coz.JPG"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Datei:Cof.JPG"
+      },
+      {
+        "text": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Datei:Coz.JPG"
+      }
     ]
   },
   {
@@ -1746,7 +1820,7 @@
     "belt": "orange",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Boccia"
       }
     ],
@@ -1926,7 +2000,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/a/a5/FAB100_least.png/208px-FAB100_least.png"
+        "url": "https://photo-trove.com/i/lw/208px-FAB100_least.png"
       }
     ],
     "attribution": [
@@ -2025,6 +2099,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Characteristic hellish keyway"
     ]
   },
   {
@@ -2094,7 +2171,7 @@
     "media": [
       {
         "text": "By: Nerixel",
-        "url": "https://www.lockwiki.com/images/thumb/4/4e/Lockwood_110-40.jpg/300px-Lockwood_110-40.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Lockwood_110-40.jpg"
       }
     ],
     "attribution": [
@@ -2128,7 +2205,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/c/c9/Master_Lock_150_-_FXE47400.jpg/300px-Master_Lock_150_-_FXE47400.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Master_Lock_150_-_FXE47400.jpg"
       }
     ],
     "attribution": [
@@ -2504,7 +2581,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/a/a2/ABUS_72-40_-_FXE47393.jpg/300px-ABUS_72-40_-_FXE47393.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ABUS_72-40_-_FXE47393.jpg"
       }
     ],
     "attribution": [
@@ -2558,7 +2635,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/b/ba/ABUS_75IB-40_-_FXE47550.jpg/300px-ABUS_75IB-40_-_FXE47550.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ABUS_75IB-40_-_FXE47550.jpg"
       }
     ],
     "attribution": [
@@ -2608,7 +2685,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/c/c3/ABUS_80TI-50_-_FXE47402-Edit.jpg/300px-ABUS_80TI-50_-_FXE47402-Edit.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ABUS_80TI-50_-_FXE47402-Edit.jpg"
       }
     ],
     "attribution": [
@@ -2667,12 +2744,18 @@
     ],
     "media": [
       {
-        "text": "From: catalocks.eu",
+        "text": "By: Cech",
         "url": "https://www.catalocks.eu/photos/297/1.jpg"
       },
       {
         "text": "From: catalocks.eu",
         "url": "https://www.catalocks.eu/photos/297/2.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "catalocks.eu",
+        "url": "https://www.catalocks.eu/ABUS/%20ABUS%20BRAVUS%202000_297.html"
       }
     ]
   },
@@ -2783,12 +2866,46 @@
       {
         "text": "Catalocks",
         "url": "https://www.catalocks.eu/ABUS/ABUS%20V%2014_304.html"
+      },
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20Y%2014%20DELTUS_310.html"
       }
     ],
     "media": [
       {
-        "text": "From: catalocks.eu",
+        "text": "By: Cech",
         "url": "https://www.catalocks.eu/photos/304/1.jpg"
+      },
+      {
+        "text": "By: Cech",
+        "url": "https://www.catalocks.eu/photos/310/1.jpg"
+      },
+      {
+        "text": "By: Cech",
+        "url": "https://www.catalocks.eu/photos/310/2.jpg"
+      },
+      {
+        "text": "By: Cech",
+        "url": "https://www.catalocks.eu/photos/310/3.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20V%2014_304.html"
+      },
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20Y%2014%20DELTUS_310.html"
+      },
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20Y%2014%20DELTUS_310.html"
+      },
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20Y%2014%20DELTUS_310.html"
       }
     ]
   },
@@ -2812,8 +2929,14 @@
     ],
     "media": [
       {
-        "text": "From: catalocks.eu",
+        "text": "By: Cech",
         "url": "https://www.catalocks.eu/photos/305/1.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20W%2014_305.html"
       }
     ]
   },
@@ -2841,8 +2964,14 @@
     ],
     "media": [
       {
-        "text": "From:catalocks.eu",
+        "text": "By: Cech",
         "url": "https://www.catalocks.eu/photos/306/1.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20WAVY%20LINE%20PRO_306.html"
       }
     ]
   },
@@ -2870,8 +2999,14 @@
     ],
     "media": [
       {
-        "text": "From: catalocks.eu",
+        "text": "By: Cech",
         "url": "https://www.catalocks.eu/photos/307/1.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20WAVY%20LINE_307.html"
       }
     ]
   },
@@ -3009,7 +3144,7 @@
     "media": [
       {
         "text": "By: Lockr",
-        "url": "https://www.lockwiki.com/images/thumb/1/1c/American_lock_padlocks_1105_1205_1305_upright.jpg/300px-American_lock_padlocks_1105_1205_1305_upright.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-American_lock_padlocks_1105_1205_1305_upright.jpg"
       },
       {
         "text": "By: m.c.",
@@ -3067,7 +3202,7 @@
     "media": [
       {
         "text": "By: Oaklandishh",
-        "url": "https://www.lockwiki.com/images/thumb/6/6f/American5200.JPG/225px-American5200.JPG"
+        "url": "https://photo-trove.com/i/lw/225px-American5200.jpeg"
       }
     ],
     "attribution": [
@@ -3270,7 +3405,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Atlantic"
       }
     ],
@@ -3283,7 +3418,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Diamant"
       }
     ],
@@ -3296,7 +3431,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Karat"
       }
     ],
@@ -3309,7 +3444,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Profi 116/40"
       }
     ]
@@ -3778,7 +3913,7 @@
     "media": [
       {
         "text": "By: Nerixel",
-        "url": "https://www.lockwiki.com/images/thumb/4/44/Lockwood_120-50.jpg/300px-Lockwood_120-50.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Lockwood_120-50.jpg"
       }
     ],
     "attribution": [
@@ -3823,7 +3958,7 @@
     "media": [
       {
         "text": "By: Nerixel",
-        "url": "https://www.lockwiki.com/images/thumb/4/4c/Lockwood_334B45.jpg/272px-Lockwood_334B45.jpg"
+        "url": "https://photo-trove.com/i/lw/272px-Lockwood_334B45.jpg"
       }
     ],
     "attribution": [
@@ -3870,7 +4005,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/b/b7/MAKO_427_front_-_Reinder_-_IMG_20210418_180852.jpg/252px-MAKO_427_front_-_Reinder_-_IMG_20210418_180852.jpg"
+        "url": "https://photo-trove.com/i/lw/252px-MAKO_427_front_-_Reinder_-_IMG_20210418_180852.jpg"
       }
     ],
     "attribution": [
@@ -3887,37 +4022,6 @@
       {
         "make": "MCM",
         "model": "SCX"
-      }
-    ]
-  },
-  {
-    "id": "ce6ee26e",
-    "belt": "green",
-    "makeModels": [
-      {
-        "make": "Master Lock",
-        "model": "410"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Master_Lock_No_410"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/6/6c/Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg/300px-Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Master_Lock_410_LOTO,_orange_-_FXE47410.jpg"
       }
     ]
   },
@@ -3945,13 +4049,21 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/6/6c/Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg/300px-Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Master_Lock_410_LOTO%2C_orange_-_FXE47410.jpg"
+      },
+      {
+        "text": "By: EliteAssassin",
+        "url": "https://live.staticflickr.com/65535/52676207010_fb492c2c2f_w_d.jpg"
       }
     ],
     "attribution": [
       {
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:Master_Lock_410_LOTO,_orange_-_FXE47410.jpg"
+      },
+      {
+        "text": "CC BY-SA 2.0",
+        "url": "https://www.flickr.com/photos/197682669@N08/52676207010/in/dateposted-public/"
       }
     ]
   },
@@ -4107,7 +4219,7 @@
     "media": [
       {
         "text": "By: Lochabar",
-        "url": "https://www.lockwiki.com/images/thumb/d/d9/PACLOCK_100G_%281%29.jpg/300px-PACLOCK_100G_%281%29.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-PACLOCK_100G_%281%29.jpg"
       }
     ],
     "attribution": [
@@ -4152,7 +4264,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/9/9d/PACLOCK_90A_-_FXE47406.jpg/300px-PACLOCK_90A_-_FXE47406.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-PACLOCK_90A_-_FXE47406.jpg"
       }
     ],
     "attribution": [
@@ -4236,7 +4348,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/2/23/Schlage_Everest_cylinder.jpg/300px-Schlage_Everest_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Schlage_Everest_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -4427,7 +4539,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/d/d8/Yardeni-Yardeni6-front-closer.jpg/300px-Yardeni-Yardeni6-front-closer.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Yardeni-Yardeni6-front-closer.jpg"
       }
     ],
     "attribution": [
@@ -4555,8 +4667,14 @@
     ],
     "media": [
       {
-        "text": "From: Catalocks.eu",
+        "text": "By Cech",
         "url": "https://www.catalocks.eu/photos/303/1.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20KV%2014_303.html"
       }
     ]
   },
@@ -4646,7 +4764,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Assa_700_cylinders_front_and_back.jpeg"
       }
     ],
     "attribution": [
@@ -4681,7 +4799,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Assa_700_cylinders_front_and_back.jpeg"
       }
     ],
     "attribution": [
@@ -4759,7 +4877,7 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Gamma 700"
       }
     ],
@@ -4802,7 +4920,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/c/c8/C3000_least.png/193px-C3000_least.png"
+        "url": "https://photo-trove.com/i/lw/193px-C3000_least.png"
       }
     ],
     "attribution": [
@@ -4962,7 +5080,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/1/13/DOM_Sigma_least.png/187px-DOM_Sigma_least.png"
+        "url": "https://photo-trove.com/i/lw/187px-DOM_Sigma_least.png"
       }
     ],
     "attribution": [
@@ -5007,7 +5125,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/1/1e/DeGuard-Dimple-front.jpg/300px-DeGuard-Dimple-front.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-DeGuard-Dimple-front.jpg"
       }
     ],
     "attribution": [
@@ -5107,7 +5225,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/a/ac/EVVA_DPI_cylinder.jpg/300px-EVVA_DPI_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_DPI_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -5139,7 +5257,7 @@
     "media": [
       {
         "text": "By: Moon-UA",
-        "url": "https://www.lockwiki.com/images/thumb/8/88/EVVA_DPS_keyway-Moon-UA.jpg/300px-EVVA_DPS_keyway-Moon-UA.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_DPS_keyway-Moon-UA.jpg"
       }
     ],
     "attribution": [
@@ -5214,7 +5332,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/7/7a/FAB2000_least.png/259px-FAB2000_least.png"
+        "url": "https://photo-trove.com/i/lw/259px-FAB2000_least.png"
       }
     ],
     "attribution": [
@@ -5249,7 +5367,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/1/10/FAB4xxxx_least.png/251px-FAB4xxxx_least.png"
+        "url": "https://photo-trove.com/i/lw/251px-FAB4xxxx_least.png"
       }
     ],
     "attribution": [
@@ -5493,7 +5611,7 @@
     "media": [
       {
         "text": "By: Nerixel",
-        "url": "https://www.lockwiki.com/images/thumb/4/4c/Lockwood_334B45.jpg/272px-Lockwood_334B45.jpg"
+        "url": "https://photo-trove.com/i/lw/272px-Lockwood_334B45.jpg"
       }
     ],
     "attribution": [
@@ -5524,7 +5642,7 @@
     "media": [
       {
         "text": "By: Nerixel",
-        "url": "https://www.lockwiki.com/images/thumb/4/4c/Lockwood_334B45.jpg/272px-Lockwood_334B45.jpg"
+        "url": "https://photo-trove.com/i/lw/272px-Lockwood_334B45.jpg"
       }
     ],
     "attribution": [
@@ -5642,7 +5760,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/2/21/Medeco_Bilevel_cylinder.jpg/300px-Medeco_Bilevel_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Medeco_Bilevel_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -5675,7 +5793,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/4/49/Medeco_Biaxial_cylinder.jpg/300px-Medeco_Biaxial_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Medeco_Biaxial_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -5913,7 +6031,7 @@
     "makeModels": [
       {
         "make": "TrioVing",
-        "model": "Vingcard 55##"
+        "model": "(Vingcard) 55##"
       }
     ],
     "version": "with trampoline pins",
@@ -6205,7 +6323,7 @@
     "media": [
       {
         "text": "By: GWiens2001",
-        "url": "https://www.lockwiki.com/images/thumb/8/81/ASSA_Desmo_cam_lock_keyway-Gwiens2001.png/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
       }
     ],
     "attribution": [
@@ -6240,7 +6358,7 @@
     "media": [
       {
         "text": "By: GWiens2001",
-        "url": "https://www.lockwiki.com/images/thumb/8/81/ASSA_Desmo_cam_lock_keyway-Gwiens2001.png/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
       }
     ],
     "attribution": [
@@ -6321,7 +6439,7 @@
     "media": [
       {
         "text": "By: autom8on",
-        "url": "https://www.lockwiki.com/images/thumb/2/2a/AnchorLas8101body-autom8on.jpg/300px-AnchorLas8101body-autom8on.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-AnchorLas8101body-autom8on.jpg"
       }
     ],
     "attribution": [
@@ -6353,7 +6471,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -6385,7 +6503,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -6438,7 +6556,7 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Burg Wächter ",
+        "make": "Burg Wächter",
         "model": "Alpha 800"
       }
     ],
@@ -6522,7 +6640,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/6/67/Corbin_Emhart_cylinder.jpg/300px-Corbin_Emhart_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Corbin_Emhart_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -6655,7 +6773,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/a/ac/EVVA_DPI_cylinder.jpg/300px-EVVA_DPI_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_DPI_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -6735,7 +6853,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/1/1e/DeGuard-Dimple-front.jpg/300px-DeGuard-Dimple-front.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-DeGuard-Dimple-front.jpg"
       }
     ],
     "attribution": [
@@ -6816,7 +6934,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/8a/Duo_cylinder.jpg/294px-Duo_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/294px-Duo_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -6919,7 +7037,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/3/32/Kale_Kilit_164_BNE_-_keyway_-_FXE47654.jpg/300px-Kale_Kilit_164_BNE_-_keyway_-_FXE47654.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Kale_Kilit_164_BNE_-_keyway_-_FXE47654.jpg"
       }
     ],
     "attribution": [
@@ -6971,7 +7089,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/83/Kwikset_SmartKey_cylinder_silver.jpg/300px-Kwikset_SmartKey_cylinder_silver.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Kwikset_SmartKey_cylinder_silver.jpg"
       }
     ],
     "attribution": [
@@ -7002,7 +7120,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/83/Kwikset_SmartKey_cylinder_silver.jpg/300px-Kwikset_SmartKey_cylinder_silver.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Kwikset_SmartKey_cylinder_silver.jpg"
       }
     ],
     "attribution": [
@@ -7033,7 +7151,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/83/Kwikset_SmartKey_cylinder_silver.jpg/300px-Kwikset_SmartKey_cylinder_silver.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Kwikset_SmartKey_cylinder_silver.jpg"
       }
     ],
     "attribution": [
@@ -7069,7 +7187,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/0/0a/LIPS_Octro_cylinder.jpg/281px-LIPS_Octro_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/281px-LIPS_Octro_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -7127,7 +7245,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/34/Miracle_Magnetic_lock.jpg/300px-Miracle_Magnetic_lock.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Miracle_Magnetic_lock.jpg"
       }
     ],
     "attribution": [
@@ -7338,11 +7456,11 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/7/7e/Medeco_Original_cylinder.jpg/300px-Medeco_Original_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Medeco_Original_cylinder.jpg"
       },
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/b/b4/Medeco_M3_cylinder.jpg/300px-Medeco_M3_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Medeco_M3_cylinder.jpg"
       },
       {
         "text": "By: Qikom",
@@ -7355,6 +7473,14 @@
       {
         "text": "By: Qikom",
         "url": "https://live.staticflickr.com/65535/52668150435_4c676fa390_w_d.jpg"
+      },
+      {
+        "text": "By:Datagram",
+        "url": "https://live.staticflickr.com/65535/52675902062_d933912e3f_w_d.jpg"
+      },
+      {
+        "text": "By: Datagram",
+        "url": "https://live.staticflickr.com/65535/52676414816_b7e3196994_w_d.jpg"
       }
     ],
     "attribution": [
@@ -7377,6 +7503,14 @@
       {
         "text": "CC BY-SA 4.0",
         "url": "http://qikom.free.fr/Medeco_Biaxial/index.html"
+      },
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_Biaxial_key_bitting.jpg"
+      },
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Medeco_Biaxial_pins_aligned.jpg"
       }
     ]
   },
@@ -7443,7 +7577,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/e/e2/MTL_Interactive_front_view_-_FXE48058.jpg/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
       }
     ],
     "attribution": [
@@ -7528,7 +7662,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/3/3a/Nemef_NF2_least.png/180px-Nemef_NF2_least.png"
+        "url": "https://photo-trove.com/i/lw/180px-Nemef_NF2_least.png"
       }
     ],
     "attribution": [
@@ -7558,8 +7692,8 @@
     ],
     "media": [
       {
-        "text": "By: TOOOL NL.",
-        "url": "https://www.lockwiki.com/images/3/30/Nemef_T1112-front-toool.jpg"
+        "text": "By: TOOOL NL",
+        "url": "https://photo-trove.com/i/lw/Nemef_T1112-front-toool.jpg"
       }
     ],
     "attribution": [
@@ -7634,7 +7768,7 @@
     "media": [
       {
         "text": "By: Mow",
-        "url": "https://www.lockwiki.com/images/thumb/0/09/Sargent_Signature_face_cropped.jpg/300px-Sargent_Signature_face_cropped.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Sargent_Signature_face_cropped.jpg"
       }
     ],
     "attribution": [
@@ -7731,7 +7865,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/a/ad/Tubar_cylinder.jpg/300px-Tubar_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Tubar_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -7813,9 +7947,10 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Plus *"
+        "model": "Plus"
       }
     ],
+    "version": "no butterfly discs",
     "lockingMechanisms": [
       "Disc Detainer"
     ],
@@ -7828,7 +7963,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/1/12/ABUS_Plus_88_50_padlock.jpg/238px-ABUS_Plus_88_50_padlock.jpg"
+        "url": "https://photo-trove.com/i/lw/238px-ABUS_Plus_88_50_padlock.jpg"
       }
     ],
     "attribution": [
@@ -7890,7 +8025,7 @@
     "media": [
       {
         "text": "By: GWiens2001",
-        "url": "https://www.lockwiki.com/images/thumb/8/81/ASSA_Desmo_cam_lock_keyway-Gwiens2001.png/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Desmo_cam_lock_keyway-Gwiens2001.png"
       }
     ],
     "attribution": [
@@ -7914,10 +8049,10 @@
       },
       {
         "make": "ASSA",
-        "model": "4800 (2-3 finger pins)"
+        "model": "4800"
       }
     ],
-    "version": "6 pin barrel lock with 2 or 3 finger pins",
+    "version": "barrel drivers, 2 or 3 finger pins",
     "lockingMechanisms": [
       "Sidepins",
       "Pin-tumbler",
@@ -7939,7 +8074,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/3d/ASSA_Twin_Combi_cylinder.jpg/300px-ASSA_Twin_Combi_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Twin_Combi_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -7970,7 +8105,7 @@
         "model": "d12 level 1 (aka d13 no long pin)"
       }
     ],
-    "version": "6 pin sawn/serrated key pins",
+    "version": "barrel drivers, forked keypins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -7990,7 +8125,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/b/b8/Assa_d12_front.jpg/300px-Assa_d12_front.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Assa_d12_front.jpg"
       }
     ],
     "attribution": [
@@ -8021,7 +8156,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/b/ba/Abloy_Classic_cylinder.jpg/287px-Abloy_Classic_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/287px-Abloy_Classic_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -8036,12 +8171,10 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Aegis 18 pin"
-      },
-      {
-        "model": " 3 rows all spools"
+        "model": "Aegis"
       }
-    ]
+    ],
+    "version": "18 pin, 3 rows all spools"
   },
   {
     "id": "db380ba0",
@@ -8094,7 +8227,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -8126,7 +8259,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -8180,46 +8313,6 @@
     "version": "fully pinned",
     "lockingMechanisms": [
       "Dimple"
-    ]
-  },
-  {
-    "id": "626da374",
-    "belt": "brown",
-    "makeModels": [
-      {
-        "make": "CX-5",
-        "model": "Scorpion"
-      },
-      {
-        "make": "Marks",
-        "model": "High Security Lock"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler",
-      "Slider"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Scorpion_CX-5"
-      },
-      {
-        "text": "legendofthesamurai Breakdown Video",
-        "url": "https://www.youtube.com/watch?v=yBAT5GOaAnU"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/b/b8/Scorpion_CX5_cylinder.jpg/284px-Scorpion_CX5_cylinder.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Scorpion_CX5_cylinder.jpg"
-      }
     ]
   },
   {
@@ -8371,7 +8464,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/9/99/FAB_Dynamic_least.png/288px-FAB_Dynamic_least.png"
+        "url": "https://photo-trove.com/i/lw/288px-FAB_Dynamic_least.png"
       }
     ],
     "attribution": [
@@ -8476,7 +8569,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/2/29/Goal_D9_keyway_02_-_FXE47503.jpg/300px-Goal_D9_keyway_02_-_FXE47503.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Goal_D9_keyway_02_-_FXE47503.jpg"
       }
     ],
     "attribution": [
@@ -8513,7 +8606,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/a/a8/Goal_P_front_view_-_IMG_20220302_083530-Reinder.jpg/300px-Goal_P_front_view_-_IMG_20220302_083530-Reinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Goal_P_front_view_-_IMG_20220302_083530-Reinder.jpg"
       }
     ],
     "attribution": [
@@ -8576,7 +8669,7 @@
     "media": [
       {
         "text": "By: SiskoSpaceman.",
-        "url": "https://www.lockwiki.com/images/thumb/9/9f/IKON_TK5_keyway_01_crop-SiskoSpaceman.png/300px-IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
+        "url": "https://photo-trove.com/i/lw/300px-IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
       }
     ],
     "attribution": [
@@ -8667,7 +8760,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/38/KABA_Gemini_cylinder.jpg/300px-KABA_Gemini_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-KABA_Gemini_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -8748,7 +8841,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/0/0a/LIPS_Octro_cylinder.jpg/281px-LIPS_Octro_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/281px-LIPS_Octro_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -8819,7 +8912,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/8f/MIWA_EC_lock.jpg/295px-MIWA_EC_lock.jpg"
+        "url": "https://photo-trove.com/i/lw/295px-MIWA_EC_lock.jpg"
       }
     ],
     "attribution": [
@@ -8951,7 +9044,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/9/9a/Medeco_Duracam_cylinder.jpg/300px-Medeco_Duracam_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Medeco_Duracam_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -8995,7 +9088,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/e/e2/MTL_Interactive_front_view_-_FXE48058.jpg/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
       }
     ],
     "attribution": [
@@ -9039,7 +9132,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/e/e2/MTL_Interactive_front_view_-_FXE48058.jpg/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-MTL_Interactive_front_view_-_FXE48058.jpg"
       }
     ],
     "attribution": [
@@ -9070,7 +9163,7 @@
     "media": [
       {
         "text": "By: Qikom",
-        "url": "https://www.lockwiki.com/images/thumb/6/6b/Pollux_7_cutaway_01-Qikom.jpg/300px-Pollux_7_cutaway_01-Qikom.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Pollux_7_cutaway_01-Qikom.jpg"
       }
     ],
     "attribution": [
@@ -9121,13 +9214,53 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/4/4f/Schlage_Primus_cylinder.jpg/300px-Schlage_Primus_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Schlage_Primus_cylinder.jpg"
       }
     ],
     "attribution": [
       {
         "text": "CC BY 3.0",
         "url": "https://www.lockwiki.com/index.php/File:Schlage_Primus_cylinder.jpg"
+      }
+    ]
+  },
+  {
+    "id": "626da374",
+    "belt": "brown",
+    "makeModels": [
+      {
+        "make": "Scorpion",
+        "model": "CX-5"
+      },
+      {
+        "make": "Marks",
+        "model": "High Security Lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Slider"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Scorpion_CX-5"
+      },
+      {
+        "text": "legendofthesamurai Breakdown Video",
+        "url": "https://www.youtube.com/watch?v=yBAT5GOaAnU"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://photo-trove.com/i/lw/284px-Scorpion_CX5_cylinder.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Scorpion_CX5_cylinder.jpg"
       }
     ]
   },
@@ -9163,7 +9296,11 @@
     "makeModels": [
       {
         "make": "Vachette",
-        "model": "Radial NT/NT+"
+        "model": "Radial NT"
+      },
+      {
+        "make": "Vachette",
+        "model": "Radial NT+"
       }
     ],
     "version": "<13 pins",
@@ -9208,7 +9345,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/1/1d/West_916_front_view_keyway_-_FXE47527.jpg/300px-West_916_front_view_keyway_-_FXE47527.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-West_916_front_view_keyway_-_FXE47527.jpg"
       }
     ],
     "attribution": [
@@ -9270,13 +9407,45 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/0/00/ABUS_EC700_keyway_-_FXE47656.jpg/300px-ABUS_EC700_keyway_-_FXE47656.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ABUS_EC700_keyway_-_FXE47656.jpg"
       }
     ],
     "attribution": [
       {
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:ABUS_EC700_keyway_-_FXE47656.jpg"
+      }
+    ]
+  },
+  {
+    "id": "b8350901",
+    "belt": "red",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "Plus"
+      }
+    ],
+    "version": "with butterfly discs",
+    "lockingMechanisms": [
+      "Disc Detainer"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_Plus_88/50"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: Datagram",
+        "url": "https://photo-trove.com/i/lw/238px-ABUS_Plus_88_50_padlock.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:ABUS_Plus_88_50_padlock.jpg"
       }
     ]
   },
@@ -9342,7 +9511,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Assa_700_cylinders_front_and_back.jpeg"
       }
     ],
     "attribution": [
@@ -9400,7 +9569,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c0/Abloy_Disklock_cylinder.jpg/300px-Abloy_Disklock_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Abloy_Disklock_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -9431,7 +9600,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/d/d1/Abloy_Profile_cylinder.jpg/300px-Abloy_Profile_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Abloy_Profile_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -9439,18 +9608,6 @@
         "text": "CC BY-SA 3.0",
         "url": "https://www.lockwiki.com/index.php/File:Abloy_Profile_cylinder.jpg"
       }
-    ]
-  },
-  {
-    "id": "cc8cfd45",
-    "belt": "red",
-    "makeModels": [
-      {
-        "model": "Anker (MIWA/Ankerslot) 3800"
-      }
-    ],
-    "lockingMechanisms": [
-      "Magnet"
     ]
   },
   {
@@ -9475,7 +9632,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -9565,7 +9722,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/6/67/Corbin_Emhart_cylinder.jpg/300px-Corbin_Emhart_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Corbin_Emhart_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -9589,7 +9746,6 @@
     ],
     "features": [
       "Magic DOM drivers",
-      "Characteristic hellish keyway",
       "Sidepins",
       "Torpedoes"
     ],
@@ -9602,7 +9758,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/1/1e/DOM_RS_8_key-Reinder.png/300px-DOM_RS_8_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-DOM_RS_8_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -9638,7 +9794,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/e/e7/DOM_ix_Saturn_key-Reinder.png/300px-DOM_ix_Saturn_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-DOM_ix_Saturn_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -9670,7 +9826,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/81/EVVA_3KS.jpg/300px-EVVA_3KS.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_3KS.jpg"
       }
     ],
     "attribution": [
@@ -9706,7 +9862,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/1/18/EVVA_DUAL_keyway-Reinder.png/300px-EVVA_DUAL_keyway-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_DUAL_keyway-Reinder.png"
       }
     ],
     "attribution": [
@@ -9742,7 +9898,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/4/48/EVVA_ICS_key-Reinder.png/300px-EVVA_ICS_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_ICS_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -9786,7 +9942,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/f/fb/FAB_NZS3C_least.png/300px-FAB_NZS3C_least.png"
+        "url": "https://photo-trove.com/i/lw/300px-FAB_NZS3C_least.png"
       }
     ],
     "attribution": [
@@ -9863,7 +10019,7 @@
     "media": [
       {
         "text": "By: Red Wanderer",
-        "url": "https://www.lockwiki.com/images/thumb/7/7f/Goal_Z.jpeg/300px-Goal_Z.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Goal_Z.jpeg"
       }
     ],
     "attribution": [
@@ -9904,7 +10060,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/f/f5/Goal_V18_housing_keyway_-_FXE47506.jpg/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
       }
     ],
     "attribution": [
@@ -9948,8 +10104,8 @@
     ],
     "media": [
       {
-        "text": "By: SiskoSpaceman.",
-        "url": "https://www.lockwiki.com/images/thumb/9/9f/IKON_TK5_keyway_01_crop-SiskoSpaceman.png/300px-IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
+        "text": "By: SiskoSpaceman",
+        "url": "https://photo-trove.com/i/lw/300px-IKON_TK5_keyway_01_crop-SiskoSpaceman.png"
       }
     ],
     "attribution": [
@@ -10029,7 +10185,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/e/eb/MIWA_JN_front_keyway_-_FXE48203.png/300px-MIWA_JN_front_keyway_-_FXE48203.png"
+        "url": "https://photo-trove.com/i/lw/300px-MIWA_JN_front_keyway_-_FXE48203.png"
       }
     ],
     "attribution": [
@@ -10075,7 +10231,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/38/KABA_Gemini_cylinder.jpg/300px-KABA_Gemini_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-KABA_Gemini_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -10146,12 +10302,12 @@
     ]
   },
   {
-    "id": "9094ca58",
+    "id": "cc8cfd45",
     "belt": "red",
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "Miwa E6 / Miwa 83EC"
+        "model": "3800"
       }
     ],
     "lockingMechanisms": [
@@ -10159,16 +10315,20 @@
     ]
   },
   {
-    "id": "550a0c9d",
+    "id": "9094ca58",
     "belt": "red",
     "makeModels": [
       {
         "make": "MIWA",
-        "model": "Miwa PS / Tostem DN (7-8 unmastered wafers)"
+        "model": "E6"
+      },
+      {
+        "make": "MIWA",
+        "model": "83EC"
       }
     ],
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Magnet"
     ]
   },
   {
@@ -10181,6 +10341,24 @@
       }
     ],
     "version": "<7 unmastered wafers",
+    "lockingMechanisms": [
+      "Lever/Sidebar"
+    ]
+  },
+  {
+    "id": "550a0c9d",
+    "belt": "red",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "PS"
+      },
+      {
+        "make": "Tostem",
+        "model": "DN"
+      }
+    ],
+    "version": "7-8 unmastered wafers",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -10233,7 +10411,15 @@
     "makeModels": [
       {
         "make": "Mottura",
-        "model": "Champions C43/C44/C48"
+        "model": "Champions C43"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C44"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C48"
       }
     ],
     "lockingMechanisms": [
@@ -10390,7 +10576,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/c/c4/Everest_29_SL_Primus_XP_keyway-Reinder.png/300px-Everest_29_SL_Primus_XP_keyway-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-Everest_29_SL_Primus_XP_keyway-Reinder.png"
       }
     ],
     "attribution": [
@@ -10447,7 +10633,7 @@
     "media": [
       {
         "text": "By: Least",
-        "url": "https://www.lockwiki.com/images/thumb/8/8d/Tokoz_Pro_400_cylinder-Least.png/163px-Tokoz_Pro_400_cylinder-Least.png"
+        "url": "https://photo-trove.com/i/lw/163px-Tokoz_Pro_400_cylinder-Least.png"
       }
     ],
     "attribution": [
@@ -10557,7 +10743,7 @@
     "media": [
       {
         "text": "By: Xarragon",
-        "url": "https://www.lockwiki.com/images/thumb/5/54/Assa_700_cylinders_front_and_back.jpeg/300px-Assa_700_cylinders_front_and_back.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Assa_700_cylinders_front_and_back.jpeg"
       }
     ],
     "attribution": [
@@ -10601,7 +10787,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/8e/ASSA_Twin_cylinder.jpg/300px-ASSA_Twin_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Twin_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -10661,7 +10847,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/3d/ASSA_Twin_Combi_cylinder.jpg/300px-ASSA_Twin_Combi_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Twin_Combi_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -10827,7 +11013,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/7/77/ASSA_Twin_V10_cylinder.jpg/300px-ASSA_Twin_V10_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Twin_V10_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -10843,13 +11029,10 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "Twin v10 (with gins"
-      },
-      {
-        "model": " upgrade of ASSA Twin v10)"
+        "model": "Twin v10"
       }
     ],
-    "version": "6 pin with 5 side pins",
+    "version": "gin drivers, 6 stacks with 5 side pins",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -10861,6 +11044,7 @@
       "Active Sidebar",
       "Guttable"
     ],
+    "notes": "upgrade of ASSA Twin v10",
     "links": [
       {
         "text": "LockWiki",
@@ -10870,7 +11054,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/7/77/ASSA_Twin_V10_cylinder.jpg/300px-ASSA_Twin_V10_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_Twin_V10_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -10922,7 +11106,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/7/7c/ASSA_dp4400_key-Reinder.png/300px-ASSA_dp4400_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-ASSA_dp4400_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -10966,7 +11150,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/f/fc/Abloy_Exec_cylinder.jpg/291px-Abloy_Exec_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/291px-Abloy_Exec_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -10997,7 +11181,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/3/3d/Abloy_Protec_cylinder.jpg/214px-Abloy_Protec_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/214px-Abloy_Protec_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -11039,9 +11223,10 @@
     "makeModels": [
       {
         "make": "Australian Lock Co.",
-        "model": "BiLock (12-pins) (0 mastered elements) (upgrade of 8-pin version)"
+        "model": "BiLock"
       }
     ],
+    "version": "12-pins, 0 mastered elements",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -11054,7 +11239,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -11070,9 +11255,10 @@
     "makeModels": [
       {
         "make": "Australian Lock Co.",
-        "model": "BiLock (ASIO/SCEC) (2nd/3rd gen)"
+        "model": "BiLock ASIO"
       }
     ],
+    "version": "2nd/3rd gen",
     "lockingMechanisms": [
       "Slider"
     ]
@@ -11099,7 +11285,7 @@
     "media": [
       {
         "text": "By: DoNotDuplicate.",
-        "url": "https://www.lockwiki.com/images/thumb/a/ac/BiLock_Exclusive_locks-DoNotDuplicate.png/300px-BiLock_Exclusive_locks-DoNotDuplicate.png"
+        "url": "https://photo-trove.com/i/lw/300px-BiLock_Exclusive_locks-DoNotDuplicate.png"
       }
     ],
     "attribution": [
@@ -11131,7 +11317,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/c/c1/BiLock_NG_cylinder.jpg/242px-BiLock_NG_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/242px-BiLock_NG_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -11182,6 +11368,20 @@
     ]
   },
   {
+    "id": "72215ba4",
+    "belt": "black1",
+    "makeModels": [
+      {
+        "make": "Chubb",
+        "model": "‘Definitive’"
+      }
+    ],
+    "version": "Standard mortice",
+    "lockingMechanisms": [
+      "Lever"
+    ]
+  },
+  {
     "id": "2db935ea",
     "belt": "black4",
     "makeModels": [
@@ -11196,30 +11396,18 @@
     ]
   },
   {
-    "id": "72215ba4",
-    "belt": "black1",
-    "makeModels": [
-      {
-        "make": "Chubb",
-        "model": "‘Definitive’ - Standard mortice"
-      }
-    ],
-    "lockingMechanisms": [
-      "Lever"
-    ]
-  },
-  {
     "id": "234a8ca8",
     "belt": "black2",
     "makeModels": [
       {
         "make": "Clavis",
-        "model": "F-22 (upgrade of Clavis Q-18)"
+        "model": "F-22"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
-    ]
+    ],
+    "notes": "upgrade of Clavis Q-18"
   },
   {
     "id": "7ea33803",
@@ -11269,7 +11457,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/6/67/Corbin_Emhart_cylinder.jpg/300px-Corbin_Emhart_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Corbin_Emhart_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -11318,7 +11506,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/2/21/DOM_ix_twinstar_key-Reinder.png/300px-DOM_ix_twinstar_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-DOM_ix_twinstar_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -11357,7 +11545,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/8/81/EVVA_3KS.jpg/300px-EVVA_3KS.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_3KS.jpg"
       }
     ],
     "attribution": [
@@ -11393,7 +11581,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/1/18/EVVA_DUAL_keyway-Reinder.png/300px-EVVA_DUAL_keyway-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_DUAL_keyway-Reinder.png"
       }
     ],
     "attribution": [
@@ -11429,7 +11617,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/1/18/EVVA_DUAL_keyway-Reinder.png/300px-EVVA_DUAL_keyway-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_DUAL_keyway-Reinder.png"
       }
     ],
     "attribution": [
@@ -11465,7 +11653,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/4/48/EVVA_ICS_key-Reinder.png/300px-EVVA_ICS_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_ICS_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -11501,7 +11689,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/4/48/EVVA_ICS_key-Reinder.png/300px-EVVA_ICS_key-Reinder.png"
+        "url": "https://photo-trove.com/i/lw/300px-EVVA_ICS_key-Reinder.png"
       }
     ],
     "attribution": [
@@ -11541,7 +11729,7 @@
     "media": [
       {
         "text": "By: Datagram",
-        "url": "https://www.lockwiki.com/images/thumb/6/68/Mcs_cylinder.jpg/296px-Mcs_cylinder.jpg"
+        "url": "https://photo-trove.com/i/lw/296px-Mcs_cylinder.jpg"
       }
     ],
     "attribution": [
@@ -11609,7 +11797,7 @@
     "media": [
       {
         "text": "By: Melanie H.",
-        "url": "https://www.lockwiki.com/images/thumb/e/e5/Fichet_F3D-M.jpeg/300px-Fichet_F3D-M.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Fichet_F3D-M.jpeg"
       }
     ],
     "attribution": [
@@ -11641,7 +11829,7 @@
     "media": [
       {
         "text": "By: Melanie H.",
-        "url": "https://www.lockwiki.com/images/thumb/e/e5/Fichet_F3D-M.jpeg/300px-Fichet_F3D-M.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Fichet_F3D-M.jpeg"
       }
     ],
     "attribution": [
@@ -11680,7 +11868,7 @@
     "media": [
       {
         "text": "By: Duckfacts",
-        "url": "https://www.lockwiki.com/images/thumb/f/fe/Fichet_M3b-Duckfacts.png/300px-Fichet_M3b-Duckfacts.png"
+        "url": "https://photo-trove.com/i/lw/300px-Fichet_M3b-Duckfacts.png"
       }
     ],
     "attribution": [
@@ -11701,43 +11889,6 @@
     ],
     "lockingMechanisms": [
       "Dimple"
-    ]
-  },
-  {
-    "id": "109531f4",
-    "belt": "black2",
-    "makeModels": [
-      {
-        "make": "GOAL",
-        "model": "V18 / GP"
-      }
-    ],
-    "version": "≥17 pins",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Overmilling",
-      "High pin count",
-      "Torpedoes"
-    ],
-    "links": [
-      {
-        "text": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Goal_V18"
-      }
-    ],
-    "media": [
-      {
-        "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/f/f5/Goal_V18_housing_keyway_-_FXE47506.jpg/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
-      }
-    ],
-    "attribution": [
-      {
-        "text": "CC BY-SA 3.0",
-        "url": "https://www.lockwiki.com/index.php/File:Goal_V18_housing_keyway_-_FXE47506.jpg"
-      }
     ]
   },
   {
@@ -11771,7 +11922,48 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/f/f5/Goal_V18_housing_keyway_-_FXE47506.jpg/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
+    ],
+    "attribution": [
+      {
+        "text": "CC BY-SA 3.0",
+        "url": "https://www.lockwiki.com/index.php/File:Goal_V18_housing_keyway_-_FXE47506.jpg"
+      }
+    ]
+  },
+  {
+    "id": "109531f4",
+    "belt": "black2",
+    "makeModels": [
+      {
+        "make": "GOAL",
+        "model": "V18"
+      },
+      {
+        "make": "GOAL",
+        "model": "GP"
+      }
+    ],
+    "version": "≥17 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Overmilling",
+      "High pin count",
+      "Torpedoes"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Goal_V18"
+      }
+    ],
+    "media": [
+      {
+        "text": "By: mgsecure",
+        "url": "https://photo-trove.com/i/lw/300px-Goal_V18_housing_keyway_-_FXE47506.jpg"
       }
     ],
     "attribution": [
@@ -11808,7 +12000,7 @@
     "media": [
       {
         "text": "By: Red Wanderer",
-        "url": "https://www.lockwiki.com/images/thumb/7/7f/Goal_Z.jpeg/300px-Goal_Z.jpeg"
+        "url": "https://photo-trove.com/i/lw/300px-Goal_Z.jpeg"
       }
     ],
     "attribution": [
@@ -11842,7 +12034,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)"
+        "model": "SK6 Sperrwelle Extra Code"
       }
     ],
     "version": "6 pin with 5 finger pins",
@@ -11856,7 +12048,7 @@
       "Tapered drivers",
       "Guttable"
     ],
-    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)"
   },
   {
     "id": "7e967792",
@@ -11882,7 +12074,7 @@
     "media": [
       {
         "text": "By: mgsecure ",
-        "url": "https://www.lockwiki.com/images/thumb/7/7c/IKON_WSW_keyway_-_FXE47518.jpg/300px-IKON_WSW_keyway_-_FXE47518.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-IKON_WSW_keyway_-_FXE47518.jpg"
       }
     ],
     "attribution": [
@@ -11916,7 +12108,7 @@
     "media": [
       {
         "text": "By: mgsecure ",
-        "url": "https://www.lockwiki.com/images/thumb/7/7c/IKON_WSW_keyway_-_FXE47518.jpg/300px-IKON_WSW_keyway_-_FXE47518.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-IKON_WSW_keyway_-_FXE47518.jpg"
       }
     ],
     "attribution": [
@@ -11956,7 +12148,7 @@
     "media": [
       {
         "text": "By: mgsecure",
-        "url": "https://www.lockwiki.com/images/thumb/e/eb/MIWA_JN_front_keyway_-_FXE48203.png/300px-MIWA_JN_front_keyway_-_FXE48203.png"
+        "url": "https://photo-trove.com/i/lw/300px-MIWA_JN_front_keyway_-_FXE48203.png"
       }
     ],
     "attribution": [
@@ -12064,7 +12256,7 @@
     "makeModels": [
       {
         "make": "Kromer",
-        "model": "Kromer Protector"
+        "model": "Protector"
       }
     ],
     "lockingMechanisms": [
@@ -12122,6 +12314,20 @@
     ]
   },
   {
+    "id": "21b61a85",
+    "belt": "black2",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "PR"
+      }
+    ],
+    "version": "9-10 unmastered elements (upgrade of Miwa PS)",
+    "lockingMechanisms": [
+      "Lever/Sidebar"
+    ]
+  },
+  {
     "id": "91f40022",
     "belt": "black3",
     "makeModels": [
@@ -12131,20 +12337,6 @@
       }
     ],
     "version": "11 unmastered elements, upgrade of Miwa PS",
-    "lockingMechanisms": [
-      "Lever/Sidebar"
-    ]
-  },
-  {
-    "id": "21b61a85",
-    "belt": "black2",
-    "makeModels": [
-      {
-        "make": "MIWA",
-        "model": "PR (upgrade of Miwa PS)"
-      }
-    ],
-    "version": "9-10 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -12244,7 +12436,7 @@
     "media": [
       {
         "text": "By: MacGyver101",
-        "url": "https://www.lockwiki.com/images/thumb/3/3a/Mersey_Lock_04.jpg/300px-Mersey_Lock_04.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Mersey_Lock_04.jpg"
       }
     ],
     "attribution": [
@@ -12276,7 +12468,7 @@
     "media": [
       {
         "text": "By: MacGyver101",
-        "url": "https://www.lockwiki.com/images/thumb/3/3a/Mersey_Lock_04.jpg/300px-Mersey_Lock_04.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Mersey_Lock_04.jpg"
       }
     ],
     "attribution": [
@@ -12346,7 +12538,7 @@
     "media": [
       {
         "text": "By: Reinder Stegen",
-        "url": "https://www.lockwiki.com/images/thumb/0/0d/Opnus_Memolis_keyway_01-Reider.jpg/300px-Opnus_Memolis_keyway_01-Reider.jpg"
+        "url": "https://photo-trove.com/i/lw/300px-Opnus_Memolis_keyway_01-Reider.jpg"
       }
     ],
     "attribution": [
@@ -12405,9 +12597,15 @@
     "belt": "black2",
     "makeModels": [
       {
-        "model": "Tann Detector/Chubb Detector from 50s"
+        "make": "Tann",
+        "model": "Detector"
+      },
+      {
+        "make": "Chubb",
+        "model": "Detector"
       }
     ],
+    "version": "from 50's",
     "lockingMechanisms": [
       "Lever"
     ]
