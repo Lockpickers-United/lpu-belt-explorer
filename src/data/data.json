@@ -285,7 +285,8 @@
     "belt": "white",
     "makeModels": [
       {
-        "model": "Timpson Special Brass Padlock"
+        "make": "Timpson",
+        "model": "Special Brass Padlock"
       }
     ],
     "lockingMechanisms": [
@@ -422,6 +423,12 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "links": [
+      {
+        "text": "LockWiki",
+        "url": "https://www.lockwiki.com/index.php/ABUS_65"
+      }
     ]
   },
   {

@@ -15,7 +15,7 @@
         "deploy": "gh-pages -d dist",
         "import": "node ./scripts/import.js",
         "export": "node ./scripts/export.js",
-        "quicky": "yarn run import && yarn run build && yarn run deploy"
+        "bnd": "yarn run build && yarn run deploy"
     },
     "dependencies": {
         "@emotion/react": "^11.10.5",
