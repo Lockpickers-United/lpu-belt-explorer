@@ -15,7 +15,6 @@ import ReactMarkdown from 'react-markdown'
 import belts from './data/belts.js'
 import FilterChip from './FilterChip'
 import StarIcon from '@mui/icons-material/Star'
-import LinkIcon from '@mui/icons-material/Link'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StorageContext from './StorageContext.jsx'
 import LinkToEntryButton from './LinkToEntryButton.jsx'
@@ -27,9 +26,8 @@ function Entry({expanded, entry, onAccordionChange}) {
     const style = isBigEnough
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
         : {maxWidth: 700, marginLeft: 8, marginRight: 8}
-    const {starredEntries, featureFlags, setStorageValue} = useContext(StorageContext)
+    const {starredEntries, setStorageValue} = useContext(StorageContext)
     const isStarred = starredEntries.includes(entry.id)
-    const {isBetaUser = false} = featureFlags
 
     const handleStarClick = () => {
         const newValue = isStarred
@@ -106,7 +104,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                     }/>
                 }
                 {
-                    !!entry.media?.length && expanded && isBetaUser &&
+                    !!entry.media?.length && expanded &&
                     <FieldValue name='Media' value={
                         <ImageGallery entry={entry}/>
                     }/>
