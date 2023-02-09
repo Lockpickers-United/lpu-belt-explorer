@@ -1,17 +1,16 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
-import {AccordionActions, Button, ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
+import {AccordionActions, Button} from '@mui/material'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
 import {useMediaQuery} from 'react-responsive'
 import IconButton from '@mui/material/IconButton'
-import LaunchIcon from '@mui/icons-material/Launch'
 import ReactMarkdown from 'react-markdown'
 import belts from './data/belts.js'
 import FilterChip from './FilterChip'
@@ -19,7 +18,8 @@ import StarIcon from '@mui/icons-material/Star'
 import LinkIcon from '@mui/icons-material/Link'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StorageContext from './StorageContext.jsx'
-import licenses from './data/licenses.js'
+import LinkToEntryButton from './LinkToEntryButton.jsx'
+import ImageGallery from './ImageGallery.jsx'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
@@ -38,9 +38,6 @@ function Entry({expanded, entry, onAccordionChange}) {
 
         setTimeout(() => setStorageValue('starredEntries', newValue), 0)
     }
-
-    const link = new URL(window.location.href)
-    link.search = `id=${entry.id}`
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style}>
@@ -111,38 +108,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                 {
                     !!entry.media?.length && expanded && isBetaUser &&
                     <FieldValue name='Media' value={
-                        <ImageList variant={isBigEnough ? 'quilted' : 'masonry'} cols={isBigEnough ? 4 : 2}>
-                            {entry.media.map(({text, url}, index) =>
-                                <ImageListItem key={index}>
-                                    <img src={url} alt={text}/>
-                                    <ImageListItemBar
-                                        title={text}
-                                        subtitle={
-                                            !!entry?.attribution?.[index] &&
-                                            <a
-                                                href={licenses[entry.attribution[index].text]}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                            >
-                                                {entry.attribution[index].text}
-                                            </a>
-                                        }
-                                        actionIcon={
-                                            !!entry?.attribution?.[index] &&
-                                            (
-                                                <IconButton
-                                                    href={entry.attribution[index].url}
-                                                    target='_blank'
-                                                    rel='noopener noreferrer'
-                                                >
-                                                    <LaunchIcon/>
-                                                </IconButton>
-                                            )
-                                        }
-                                    />
-                                </ImageListItem>
-                            )}
-                        </ImageList>
+                        <ImageGallery entry={entry}/>
                     }/>
                 }
                 {
@@ -166,9 +132,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                 }
             </AccordionDetails>
             <AccordionActions>
-                <IconButton href={link.href} target='_blank' rel='noopener noreferrer'>
-                    <LinkIcon/>
-                </IconButton>
+                <LinkToEntryButton entry={entry}/>
                 <IconButton onClick={handleStarClick}>
                     {
                         isStarred
