@@ -10,6 +10,14 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Clear_acrylic_practice_lock_-_FXE47413_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Clear_acrylic_practice_lock_-_FXE47413.jpg"
+      }
     ]
   },
   {
@@ -822,13 +830,13 @@
     ],
     "media": [
       {
-        "title": "OpHiDiAn",
+        "title": "By: OpHiDiAn",
         "subtitle": "KoksaWiki",
         "thumbnailUrl": "https://wiki.koksa.org/images/5/5e/FF_Stifte.JPG",
         "fullUrl": "https://wiki.koksa.org/Datei:FF_Stifte.JPG"
       },
       {
-        "title": "OpHiDiAn",
+        "title": "By: OpHiDiAn",
         "subtitle": "KoksaWiki",
         "thumbnailUrl": "https://wiki.koksa.org/images/5/5c/FF_Front.JPG",
         "fullUrl": "https://wiki.koksa.org/Datei:FF_Front.JPG"
@@ -1070,6 +1078,12 @@
         "title": "By: mgsecure",
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://photo-trove.com/i/lw/300px-Master-141-front.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Master-140-front.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Master-140-front_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Master-140-front.jpg"
       }
     ],
@@ -1339,6 +1353,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Tapered"
     ]
   },
   {
@@ -1626,6 +1643,14 @@
     "version": "normal pin tumblr, not dimple",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Ben",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/ABUS_25_cutaway-Ben_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS_25_cutaway-Ben.jpg"
+      }
     ]
   },
   {
@@ -1655,13 +1680,13 @@
     ],
     "media": [
       {
-        "title": "cristão",
+        "title": "By: christian",
         "subtitle": "KoksaWiki",
         "thumbnailUrl": "https://wiki.koksa.org/images/3/3e/Al-tsa421xtklxchs-essenoxtlheliosmeister-17625.jpg",
         "fullUrl": "https://wiki.koksa.org/Datei:Al-tsa421xtklxchs-essenoxtlheliosmeister-17625.jpg"
       },
       {
-        "title": "By: cristão",
+        "title": "By: christian",
         "subtitle": "KoksaWiki",
         "thumbnailUrl": "https://wiki.koksa.org/images/d/da/Al-tsa424xtklxchs-essenoxtlheliosmeister-17625.jpg",
         "fullUrl": "https://wiki.koksa.org/Datei:Al-tsa424xtklxchs-essenoxtlheliosmeister-17625.jpg"
@@ -2501,6 +2526,12 @@
       {
         "title": "By: mgsecure",
         "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/ABUS-72-40-components-no-lock_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS-72-40-components-no-lock.png"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://photo-trove.com/i/lw/300px-ABUS_72-40_-_FXE47393.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS_72-40_-_FXE47393.jpg"
       }
@@ -2652,13 +2683,13 @@
     "media": [
       {
         "title": "From: catalocks.eu",
-        "subtitle": "",
+        "subtitle": "Catalocks",
         "thumbnailUrl": "https://www.catalocks.eu/photos/297/2.jpg",
         "fullUrl": ""
       },
       {
         "title": "By: Cech",
-        "subtitle": "catalocks.eu",
+        "subtitle": "Catalocks",
         "thumbnailUrl": "https://www.catalocks.eu/photos/297/1.jpg",
         "fullUrl": "https://www.catalocks.eu/ABUS/%20ABUS%20BRAVUS%202000_297.html"
       }
@@ -3669,6 +3700,14 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: Holly Poer",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/ISEO_R6_Euro_profile_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:ISEO_R6_Euro_profile.png"
+      }
     ]
   },
   {
@@ -4506,7 +4545,7 @@
     ],
     "media": [
       {
-        "title": "By Cech",
+        "title": "By: Cech",
         "subtitle": "Catalocks",
         "thumbnailUrl": "https://www.catalocks.eu/photos/303/1.jpg",
         "fullUrl": "https://www.catalocks.eu/ABUS/ABUS%20KV%2014_303.html"
@@ -4597,6 +4636,18 @@
       "Guttable"
     ],
     "media": [
+      {
+        "title": "By: Pickin' Rick",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Assa700_keyway-PickinRick_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa700_keyway-PickinRick.png"
+      },
+      {
+        "title": "By: Xarragon",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Assa_700_pinstacks_full_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_700_pinstacks_full.jpg"
+      },
       {
         "title": "By: Xarragon",
         "subtitle": "CC BY-SA 3.0",
@@ -6104,6 +6155,12 @@
       "Guttable"
     ],
     "media": [
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Assa_Desmo_gutted-LegOfSam_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_Desmo_gutted-LegOfSam.png"
+      },
       {
         "title": "By: GWiens2001",
         "subtitle": "CC BY-SA 3.0",
@@ -7799,6 +7856,24 @@
     ],
     "media": [
       {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/ASSA_d12_pin_tray-Reinder_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_d12_pin_tray-Reinder.png"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/ASSA_d12_keyway-Reinder_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_d12_keyway-Reinder.png"
+      },
+      {
+        "title": "By: Xarragon",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Assa_d12_key_closeup_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_d12_key_closeup.jpg"
+      },
+      {
         "title": "By: Xarragon",
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://photo-trove.com/i/lw/300px-Assa_d12_front.jpg",
@@ -9012,6 +9087,12 @@
       "Dimple"
     ],
     "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://photo-trove.com/i/lw/Abus_EC700_euro_cylinder_-_FXE47625_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Abus_EC700_euro_cylinder_-_FXE47625.jpg"
+      },
       {
         "title": "By: mgsecure",
         "subtitle": "CC BY-SA 3.0",
@@ -10427,10 +10508,10 @@
     ],
     "media": [
       {
-        "title": "By: Catalocks",
-        "subtitle": "",
-        "thumbnailUrl": "https://www.catalocks.eu/photos/73/2.jpg",
-        "fullUrl": ""
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://photo-trove.com/i/cl/assa_twin_6000_tn_sq.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/73/2.jpg"
       },
       {
         "title": "By: Datagram",
@@ -10767,7 +10848,7 @@
     ],
     "media": [
       {
-        "title": "By: DoNotDuplicate.",
+        "title": "By: DoNotDuplicate",
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://photo-trove.com/i/lw/300px-BiLock_Exclusive_locks-DoNotDuplicate.png",
         "fullUrl": "https://www.lockwiki.com/index.php/File:BiLock_Exclusive_locks-DoNotDuplicate.png"
@@ -11899,7 +11980,7 @@
         "fullUrl": "http://qikom.free.fr/Opnus-Mmx2/index.html"
       },
       {
-        "title": "By Qikom",
+        "title": "By: Qikom",
         "subtitle": "CC BY-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52667713921_ea99e11e91_w_d.jpg",
         "fullUrl": "http://qikom.free.fr/Opnus-Mmx2/index.html"
@@ -11996,7 +12077,7 @@
         "model": "Detector"
       }
     ],
-    "version": "from 50's",
+    "version": "from 1950's",
     "lockingMechanisms": [
       "Lever"
     ]
