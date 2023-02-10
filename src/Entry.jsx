@@ -113,7 +113,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                     !!entry.links?.length &&
                     <FieldValue name='Links' value={
                         <Stack direction='row' spacing={1}>
-                            {entry.links.map(({text, url}, index) =>
+                            {entry.links.map(({title, url}, index) =>
                                 <Button
                                     key={index}
                                     href={url}
@@ -122,7 +122,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                                     color='secondary'
                                     sx={{textTransform: 'none'}}
                                 >
-                                    {text}
+                                    {title}
                                 </Button>
                             )}
                         </Stack>

@@ -8,25 +8,12 @@ import {useMediaQuery} from 'react-responsive'
 function ImageGallery({entry}) {
     const isBigEnough = useMediaQuery({minWidth: 732})
 
-    const items = useMemo(() => {
-        return entry.media.map((value, index) => {
-            const attribution = entry.attribution[index] || {}
-            return {
-                title: value.text,
-                subtitle: attribution.text,
-                thumbUrl: value.url,
-                fullUrl: attribution.url,
-                licenseUrl: licenses[attribution.text]
-            }
-        })
-    }, [entry])
-
     return (
         <ImageList variant='masonry' cols={isBigEnough ? 3 : 2}>
-            {items.map(({title, subtitle, thumbUrl, fullUrl, licenseUrl}, index) =>
+            {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl}, index) =>
                 <ImageListItem key={index} style={{marginBottom: 8}}>
                     <img
-                        src={thumbUrl}
+                        src={thumbnailUrl}
                         alt={title}
                         style={{paddingBottom: subtitle ? 60 : 48}}
                     />
@@ -34,14 +21,14 @@ function ImageGallery({entry}) {
                         title={title}
                         subtitle={
                             subtitle &&
-                            <a href={licenseUrl} target='_blank' rel='noopener noreferrer'>
+                            <a href={licenses[subtitle]} target='_blank' rel='noopener noreferrer'>
                                 {subtitle}
                             </a>
                         }
                         actionIcon={
                             fullUrl &&
                             <IconButton
-                                href={entry.attribution[index].url}
+                                href={fullUrl}
                                 style={{color: 'rgba(255, 255, 255, 0.5)'}}
                                 target='_blank'
                                 rel='noopener noreferrer'
