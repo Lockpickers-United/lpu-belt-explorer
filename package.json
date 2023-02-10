@@ -13,7 +13,7 @@
         "build": "NODE_ENV=production vite build",
         "preview": "vite preview",
         "deploy": "gh-pages -d dist",
-        "lint": "eslint ./src ./scripts",
+        "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
         "export": "node ./scripts/export.js",
         "bnd": "yarn run build && yarn run deploy"
@@ -35,10 +35,11 @@
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",
         "@vitejs/plugin-react": "^3.0.1",
-        "gh-pages": "^5.0.0",
-        "vite": "^4.0.4",
         "csv-parse": "^5.3.3",
         "eslint": "^8.34.0",
-        "rollup-plugin-visualizer": "^5.9.0"
+        "eslint-plugin-react": "^7.32.2",
+        "gh-pages": "^5.0.0",
+        "rollup-plugin-visualizer": "^5.9.0",
+        "vite": "^4.0.4"
     }
 }

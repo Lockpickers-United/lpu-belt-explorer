@@ -8,7 +8,7 @@ import FilterContext from './FilterContext.jsx'
 
 function FilterButton({data, onChangeTab}) {
     const [open, setOpen] = useState(false)
-    const {filters, filterCount} = useContext(FilterContext)
+    const {filterCount} = useContext(FilterContext)
 
     const openDialog = () => setOpen(true)
     const closeDialog = () => setOpen(false)

@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react'
+import React from 'react'
 import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
 import licenses from './data/licenses.js'
 import IconButton from '@mui/material/IconButton'
