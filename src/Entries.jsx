@@ -6,8 +6,8 @@ import InlineFilterDisplay from './InlineFilterDisplay.jsx'
 import StorageContext from './StorageContext.jsx'
 
 function Entries({data, tab, onChangeTab}) {
-    const [expanded, setExpanded] = useState(-1)
     const {filters} = useContext(FilterContext)
+    const [expanded, setExpanded] = useState(filters.id)
     const {starredEntries} = useContext(StorageContext)
 
     const {search, ...otherFilters} = filters
