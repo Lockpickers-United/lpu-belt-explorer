@@ -62,22 +62,28 @@ function FilterDialog({data, open, onClose, onChangeTab}) {
                 </Toolbar>
             </AppBar>
             <DialogContent>
-                <FilterDisplay/>
+                <div style={{maxWidth: 350, marginLeft: 'auto', marginRight: 'auto'}}>
+                    <FilterDisplay/>
 
-                <FieldValue name='Add Filters' value={
-                    <Stack direction='column' style={{marginTop: 8, maxWidth: 350}}>
-                        {filterFields.map(({label, fieldName, values}, index) =>
-                            <FilterByField
-                                data={data}
-                                key={index}
-                                label={label}
-                                fieldName={fieldName}
-                                values={values}
-                                onFilter={handleAddFilter}
-                            />
-                        )}
-                    </Stack>
-                }/>
+                    <FieldValue
+                        centered
+                        name='Add Filters'
+                        value={
+                            <Stack direction='column' style={{marginTop: 8, width: 350}}>
+                                {filterFields.map(({label, fieldName, values}, index) =>
+                                    <FilterByField
+                                        data={data}
+                                        key={index}
+                                        label={label}
+                                        fieldName={fieldName}
+                                        values={values}
+                                        onFilter={handleAddFilter}
+                                    />
+                                )}
+                            </Stack>
+                        }
+                    />
+                </div>
             </DialogContent>
         </Dialog>
     )

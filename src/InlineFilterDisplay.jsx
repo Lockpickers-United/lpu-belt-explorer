@@ -21,7 +21,7 @@ function InlineFilterDisplay({onChangeTab}) {
     if (!filterCount) return null
     return (
         <Card style={style}>
-            <CardContent >
+            <CardContent>
                 <FilterDisplay/>
             </CardContent>
             <CardActions>
