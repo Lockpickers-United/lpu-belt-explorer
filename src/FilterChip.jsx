@@ -1,15 +1,15 @@
-import React, {useContext} from 'react'
+import React, {useCallback, useContext} from 'react'
 import Chip from '@mui/material/Chip'
 import FilterContext from './FilterContext.jsx'
 
 function FilterChip({field, value, ...props}) {
     const {addFilter} = useContext(FilterContext)
 
-    const handleClick = event => {
+    const handleClick = useCallback(event => {
         event.stopPropagation()
 
         addFilter(field, value)
-    }
+    }, [addFilter, field, value])
 
     return (
         <Chip

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import FilterButton from './FilterButton.jsx'
@@ -25,7 +25,7 @@ function Nav({data, tab, onChangeTab}) {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
-    const handleTabClick = (event, value) => onChangeTab(value)
+    const handleTabClick = useCallback((event, value) => onChangeTab(value), [onChangeTab])
 
     return (
         <React.Fragment>

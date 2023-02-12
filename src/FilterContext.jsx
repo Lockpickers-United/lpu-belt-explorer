@@ -61,7 +61,7 @@ export function FilterProvider({children}) {
         addFilter,
         removeFilter,
         clearFilters
-    }), [filters])
+    }), [addFilter, clearFilters, filterCount, filters, removeFilter])
 
     return (
         <FilterContext.Provider value={value}>

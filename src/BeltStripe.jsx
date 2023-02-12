@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import belts from './data/belts.js'
 
 function BeltStripe({value}) {
@@ -11,22 +11,25 @@ function BeltStripe({value}) {
         top: 0,
         backgroundColor
     }
-    const [stripeValue] = (value.match(/\d/) || [0])
-    const stripeCount = +stripeValue
-    let stripes = null
-    if (stripeCount > 1) {
-        stripes = Array(stripeCount).fill(0)
-            .map((value, index) =>
-                <span key={index} style={{
-                    width: 8,
-                    height: 2,
-                    position: 'absolute',
-                    left: 0,
-                    top: 18 + (index * 6),
-                    backgroundColor: '#acacac'
-                }}/>
-            )
-    }
+
+    const stripes = useMemo(() => {
+        const [stripeValue] = (value.match(/\d/) || [0])
+        const stripeCount = +stripeValue
+        if (stripeCount > 1) {
+            return Array(stripeCount).fill(0)
+                .map((value, index) =>
+                    <span key={index} style={{
+                        width: 8,
+                        height: 2,
+                        position: 'absolute',
+                        left: 0,
+                        top: 18 + (index * 6),
+                        backgroundColor: '#acacac'
+                    }}/>
+                )
+        }
+    }, [value])
+
     return (
         <React.Fragment>
             <span style={style}/>
@@ -35,6 +38,6 @@ function BeltStripe({value}) {
     )
 }
 
-export default BeltStripe
+export default React.memo(BeltStripe)
 
 

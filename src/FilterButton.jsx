@@ -1,5 +1,5 @@
 import {Tooltip} from '@mui/material'
-import React, {useContext, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import FilterAltIcon from '@mui/icons-material/FilterAlt.js'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
@@ -10,8 +10,8 @@ function FilterButton({data, onChangeTab}) {
     const [open, setOpen] = useState(false)
     const {filterCount} = useContext(FilterContext)
 
-    const openDialog = () => setOpen(true)
-    const closeDialog = () => setOpen(false)
+    const openDialog = useCallback(() => setOpen(true), [])
+    const closeDialog = useCallback(() => setOpen(false), [])
 
     return (
         <React.Fragment>

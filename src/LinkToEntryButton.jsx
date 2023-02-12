@@ -2,9 +2,9 @@ import React from 'react'
 import LinkIcon from '@mui/icons-material/Link.js'
 import IconButton from '@mui/material/IconButton'
 
-function LinkToEntryButton({entry}) {
+function LinkToEntryButton({id}) {
     const link = new URL(window.location.href)
-    link.search = `id=${entry.id}`
+    link.search = `id=${id}`
 
     return (
         <IconButton href={link.href} target='_blank' rel='noopener noreferrer'>
@@ -13,4 +13,4 @@ function LinkToEntryButton({entry}) {
     )
 }
 
-export default LinkToEntryButton
+export default React.memo(LinkToEntryButton)

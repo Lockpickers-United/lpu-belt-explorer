@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 
 const StorageContext = React.createContext({})
 
@@ -21,18 +21,18 @@ export function StorageProvider({children}) {
         return keyValues.reduce((acc, {key, value}) => ({...acc, [key]: value}), {})
     })
 
-    const setStorageValue = (key, value) => {
+    const setStorageValue = useCallback((key, value) => {
         setStoredData({
             ...storedData,
             [key]: value
         })
         localStorage.setItem(key, JSON.stringify(value))
-    }
+    }, [storedData])
 
     const value = useMemo(() => ({
         ...storedData,
         setStorageValue
-    }), [storedData])
+    }), [setStorageValue, storedData])
 
     return (
         <StorageContext.Provider value={value}>

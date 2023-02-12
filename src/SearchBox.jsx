@@ -1,6 +1,6 @@
+import React, {useCallback, useContext, useState} from 'react'
 import {InputAdornment, TextField} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
-import React, {useContext, useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useMediaQuery} from 'react-responsive'
@@ -14,7 +14,7 @@ function SearchBox({onChangeTab}) {
     const {featureFlags, setStorageValue} = useContext(StorageContext)
     const {isBetaUser = false} = featureFlags
 
-    const handleChange = event => {
+    const handleChange = useCallback(event => {
         const value = event.target.value
         if (value === 'lpubeta') {
             setStorageValue('featureFlags', {...featureFlags, isBetaUser: !isBetaUser})
@@ -28,12 +28,12 @@ function SearchBox({onChangeTab}) {
                 onChangeTab('search')
             }, 0)
         }
-    }
-    const handleClear = () => {
+    }, [addFilter, featureFlags, isBetaUser, onChangeTab, setStorageValue])
+    const handleClear = useCallback(() => {
         setText('')
         removeFilter('search', '')
         onChangeTab('white')
-    }
+    }, [onChangeTab, removeFilter])
 
     const endAdornment = text ? (
         <InputAdornment position='end'>

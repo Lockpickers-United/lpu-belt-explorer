@@ -1,12 +1,8 @@
 import Typography from '@mui/material/Typography'
 import React from 'react'
 
-function FieldValue({name, value, centered}) {
+function FieldValue({name, value}) {
     const style = {marginBottom: 8}
-    if (centered) {
-        style.marginLeft = 'auto'
-        style.marginRight = 'auto'
-    }
     return (
         <div style={style}>
             <Typography component='span' sx={{color: 'text.secondary'}}>{name}: </Typography>
@@ -16,4 +12,4 @@ function FieldValue({name, value, centered}) {
     )
 }
 
-export default FieldValue
+export default React.memo(FieldValue)

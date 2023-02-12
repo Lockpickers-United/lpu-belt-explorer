@@ -5,7 +5,8 @@ module.exports = {
         node: true
     },
     plugins: [
-        'react'
+        'react',
+        'react-hooks'
     ],
     extends: [
         'eslint:recommended',
@@ -29,7 +30,8 @@ module.exports = {
             'warn', {
                 'ignoreRestSiblings': true
             }
-        ]
+        ],
+        'react-hooks/exhaustive-deps': 'warn'
     },
     ignorePatterns: [
         '*.md',

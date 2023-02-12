@@ -66,7 +66,6 @@ function FilterDialog({data, open, onClose, onChangeTab}) {
                     <FilterDisplay/>
 
                     <FieldValue
-                        centered
                         name='Add Filters'
                         value={
                             <Stack direction='column' style={{marginTop: 8, width: 350}}>

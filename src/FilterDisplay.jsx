@@ -1,4 +1,4 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import FieldValue from './FieldValue.jsx'
 import Stack from '@mui/material/Stack'
 import Chip from '@mui/material/Chip'
@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography'
 function FilterDisplay() {
     const {filters, filterCount, removeFilter} = useContext(FilterContext)
 
-    const handleDeleteFilter = (keyToDelete, valueToDelete) => () => {
+    const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
         setTimeout(() => removeFilter(keyToDelete, valueToDelete), 0)
-    }
+    }, [removeFilter])
 
     const filterValues = useMemo(() => {
         const {search, ...rest} = filters

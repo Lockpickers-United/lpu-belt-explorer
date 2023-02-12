@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import IconButton from '@mui/material/IconButton'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import {Tooltip} from '@mui/material'
@@ -6,8 +6,8 @@ import InfoDialog from './InfoDialog.jsx'
 
 function InfoButton() {
     const [open, setOpen] = useState(false)
-    const handleOpen = () => setOpen(true)
-    const handleClose = () => setOpen(false)
+    const handleOpen = useCallback(() => setOpen(true), [])
+    const handleClose = useCallback(() => setOpen(false), [])
 
     return (
         <React.Fragment>

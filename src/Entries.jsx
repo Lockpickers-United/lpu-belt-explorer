@@ -18,9 +18,9 @@ function Entries({data, tab, onChangeTab}) {
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
-        const filterArray = Object.keys(otherFilters)
+        const filterArray = Object.keys(defFilters)
             .map(key => {
-                const value = filters[key]
+                const value = defFilters[key]
                 return Array.isArray(value)
                     ? value.map(subkey => ({key, value: subkey}))
                     : {key, value}
@@ -45,13 +45,15 @@ function Entries({data, tab, onChangeTab}) {
             })
 
         // If there is a search term, fuzzy match that
-        if (defSearch) {
-            const fuzzyResults = fuzzysort.go(search, filtered, {keys: fuzzySortKeys})
-            return fuzzyResults.map(result => result.obj)
-        } else {
-            return filtered
-        }
-    }, [defTab, defSearch, defFilters])
+        const newEntries = defSearch
+            ? fuzzysort.go(defSearch, filtered, {keys: fuzzySortKeys}).map(result => result.obj)
+            : filtered
+
+        // Only show 50 entries on search tab to prevent lag
+        return defTab === 'search'
+            ? newEntries.slice(0, 50)
+            : newEntries
+    }, [data, defFilters, defSearch, defTab, defStarredEntries])
 
     return (
         <React.Fragment>

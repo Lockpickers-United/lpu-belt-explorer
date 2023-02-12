@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import React, {useContext} from 'react'
+import React, {useCallback, useContext} from 'react'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
@@ -29,13 +29,13 @@ function Entry({expanded, entry, onAccordionChange}) {
     const {starredEntries, setStorageValue} = useContext(StorageContext)
     const isStarred = starredEntries.includes(entry.id)
 
-    const handleStarClick = () => {
+    const handleStarClick = useCallback(() => {
         const newValue = isStarred
             ? starredEntries.filter(val => val !== entry.id)
             : [...starredEntries, entry.id]
 
         setTimeout(() => setStorageValue('starredEntries', newValue), 0)
-    }
+    }, [entry.id, isStarred, setStorageValue, starredEntries])
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style}>
@@ -130,7 +130,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                 }
             </AccordionDetails>
             <AccordionActions>
-                <LinkToEntryButton entry={entry}/>
+                <LinkToEntryButton id={entry.id}/>
                 <IconButton onClick={handleStarClick}>
                     {
                         isStarred
