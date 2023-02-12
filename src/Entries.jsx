@@ -45,19 +45,14 @@ function Entries({data, tab, onChangeTab}) {
             })
 
         // If there is a search term, fuzzy match that
-        const newEntries = defSearch
+        return defSearch
             ? fuzzysort.go(defSearch, filtered, {keys: fuzzySortKeys}).map(result => result.obj)
             : filtered
-
-        // Only show 50 entries on search tab to prevent lag
-        return defTab === 'search'
-            ? newEntries.slice(0, 50)
-            : newEntries
     }, [data, defFilters, defSearch, defTab, defStarredEntries])
 
     return (
         <React.Fragment>
-            <div style={{marginTop: 8, paddingBottom: 128}}>
+            <div style={{margin: 8, paddingBottom: 128}}>
                 <InlineFilterDisplay onChangeTab={onChangeTab}/>
 
                 {visibleEntries.map(datum =>

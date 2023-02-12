@@ -10,17 +10,18 @@ import Tab from '@mui/material/Tab'
 import BeltIcon from './BeltIcon.jsx'
 import {uniqueBelts} from './data/belts'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
-import {useMediaQuery} from 'react-responsive'
 import InfoButton from './InfoButton.jsx'
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop'
 import {Fab} from '@mui/material'
+import useWindowSize from './useWindowSize.js'
 
-function Nav({data, tab, onChangeTab}) {
-    const isBigEnough = useMediaQuery({minWidth: 500})
-    const tabWidth = Math.floor(window.innerWidth/10)
-    const tabWidthStyle = isBigEnough
-        ? {minWidth: 50, maxWidth: 50, opacity: 1}
-        : {minWidth: tabWidth, maxWidth: tabWidth, opacity: 1}
+function Nav({data, tab, onChangeTab, isMobile}) {
+    const tabWidth = Math.floor(window.innerWidth / 10)
+    const {width} = useWindowSize()
+    const smallWidth = width <= 500
+    const tabWidthStyle = smallWidth
+        ? {minWidth: tabWidth, maxWidth: tabWidth, opacity: 1}
+        : {minWidth: 50, maxWidth: 50, opacity: 1}
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
@@ -35,7 +36,7 @@ function Nav({data, tab, onChangeTab}) {
 
                     <div style={{flexGrow: 1}}></div>
 
-                    <SearchBox onChangeTab={onChangeTab}/>
+                    <SearchBox onChangeTab={onChangeTab} isMobile={isMobile}/>
 
                     <div style={{flexGrow: 1}}></div>
 
@@ -53,8 +54,8 @@ function Nav({data, tab, onChangeTab}) {
                     value={tab}
                     onChange={handleTabClick}
                     indicatorColor='secondary'
-                    variant={isBigEnough ? 'standard' : 'fullWidth'}
-                    centered={isBigEnough}
+                    variant={smallWidth ? 'fullWidth' : 'standard'}
+                    centered={!smallWidth}
                     textColor='inherit'
                 >
                     {uniqueBelts.map(belt =>

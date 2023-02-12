@@ -3,13 +3,14 @@ import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
 import licenses from './data/licenses.js'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch.js'
-import {useMediaQuery} from 'react-responsive'
+import useWindowSize from './useWindowSize.js'
 
 function ImageGallery({entry}) {
-    const isBigEnough = useMediaQuery({minWidth: 732})
+    const {width} = useWindowSize()
+    const isMobile = width < 736
 
     return (
-        <ImageList variant='masonry' cols={isBigEnough ? 3 : 2}>
+        <ImageList variant='masonry' cols={isMobile ? 2 : 3}>
             {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl}, index) =>
                 <ImageListItem key={index} style={{marginBottom: 8}}>
                     <img

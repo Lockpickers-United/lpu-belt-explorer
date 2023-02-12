@@ -3,12 +3,10 @@ import {InputAdornment, TextField} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
-import {useMediaQuery} from 'react-responsive'
 import FilterContext from './FilterContext.jsx'
 import StorageContext from './StorageContext.jsx'
 
-function SearchBox({onChangeTab}) {
-    const isBigEnough = useMediaQuery({minWidth: 736})
+function SearchBox({onChangeTab, isMobile}) {
     const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const {featureFlags, setStorageValue} = useContext(StorageContext)
@@ -42,9 +40,9 @@ function SearchBox({onChangeTab}) {
             </IconButton>
         </InputAdornment>
     ) : null
-    const style = isBigEnough
-        ? {maxWidth: 450, marginRight: -60}
-        : {maxWidth: 450}
+    const style = isMobile
+        ? {maxWidth: 450}
+        : {maxWidth: 450, marginRight: -60}
 
     return (
         <TextField
