@@ -6,7 +6,7 @@
     "repository": "git@github.com:NiXXeD/lpu-belt-explorer.git",
     "author": "Andy Christianson <nix@nixxed.com>",
     "license": "Unlicense",
-    "homepage": "https://nixxed.github.io/lpu-belt-explorer",
+    "homepage": "https://www.lpubelts.com",
     "type": "module",
     "scripts": {
         "dev": "vite",

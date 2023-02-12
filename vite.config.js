@@ -4,7 +4,6 @@ import { visualizer } from "rollup-plugin-visualizer"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/lpu-belt-explorer/',
     server: {
         port: 3000
     },
