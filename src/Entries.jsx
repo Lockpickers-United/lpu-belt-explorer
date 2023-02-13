@@ -4,6 +4,7 @@ import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import InlineFilterDisplay from './InlineFilterDisplay.jsx'
 import StorageContext from './StorageContext.jsx'
+import BeltRequirements from './BeltRequirements.jsx'
 
 function Entries({data, tab, onChangeTab}) {
     const {filters} = useContext(FilterContext)
@@ -54,6 +55,7 @@ function Entries({data, tab, onChangeTab}) {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 128}}>
                 <InlineFilterDisplay onChangeTab={onChangeTab}/>
+                {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
                 {visibleEntries.map(datum =>
                     <Entry
