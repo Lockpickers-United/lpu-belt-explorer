@@ -40,7 +40,7 @@ function Nav({data, tab, onChangeTab, isMobile}) {
 
                     <div style={{flexGrow: 1}}></div>
 
-                    <InfoButton/>
+                    <InfoButton icon/>
                     <FilterButton data={data} onChangeTab={onChangeTab}/>
                     <GitHubButton/>
                 </Toolbar>

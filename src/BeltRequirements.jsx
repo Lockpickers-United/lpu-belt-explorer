@@ -8,6 +8,8 @@ import ReactMarkdown from 'react-markdown'
 import BeltStripe from './BeltStripe'
 import Typography from '@mui/material/Typography'
 import belts from './data/belts.js'
+import {AccordionActions} from '@mui/material'
+import InfoButton from './InfoButton.jsx'
 
 function BeltRequirements({belt}) {
     const [expanded, setExpanded] = useState(false)
@@ -26,6 +28,9 @@ function BeltRequirements({belt}) {
                     {markdown}
                 </ReactMarkdown>
             </AccordionDetails>
+            <AccordionActions>
+                <InfoButton/>
+            </AccordionActions>
         </Accordion>
     )
 }
