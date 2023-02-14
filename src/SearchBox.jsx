@@ -36,7 +36,7 @@ function SearchBox({tab, onChangeTab, isMobile}) {
                 }, 0)
             }
         }
-    }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, setStorageValue])
+    }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, setStorageValue, tab])
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
