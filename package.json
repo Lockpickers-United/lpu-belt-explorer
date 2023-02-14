@@ -15,7 +15,8 @@
         "deploy": "gh-pages -d dist",
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
-        "export": "node ./scripts/export.js",
+        "exportCsv": "node ./scripts/exportCsv.js",
+        "exportMd": "node ./scripts/exportMarkdown.js",
         "bnd": "yarn run build && yarn run deploy"
     },
     "dependencies": {
