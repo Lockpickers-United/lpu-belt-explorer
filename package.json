@@ -24,6 +24,7 @@
         "@emotion/styled": "^11.10.5",
         "@mui/icons-material": "^5.11.0",
         "@mui/material": "^5.11.6",
+        "debounce": "^1.2.1",
         "fuzzysort": "^2.0.4",
         "joi": "^17.7.0",
         "query-string": "^8.1.0",

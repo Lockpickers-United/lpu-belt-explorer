@@ -36,7 +36,7 @@ function Nav({data, tab, onChangeTab, isMobile}) {
 
                     <div style={{flexGrow: 1}}></div>
 
-                    <SearchBox onChangeTab={onChangeTab} isMobile={isMobile}/>
+                    <SearchBox tab={tab} onChangeTab={onChangeTab} isMobile={isMobile}/>
 
                     <div style={{flexGrow: 1}}></div>
 

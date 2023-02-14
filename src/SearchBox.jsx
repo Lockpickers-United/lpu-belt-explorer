@@ -6,11 +6,17 @@ import ClearIcon from '@mui/icons-material/Clear'
 import FilterContext from './FilterContext.jsx'
 import StorageContext from './StorageContext.jsx'
 
-function SearchBox({onChangeTab, isMobile}) {
+function SearchBox({tab, onChangeTab, isMobile}) {
     const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const {featureFlags, setStorageValue} = useContext(StorageContext)
     const {isBetaUser = false} = featureFlags
+
+    const handleClear = useCallback(() => {
+        setText('')
+        removeFilter('search', '')
+        onChangeTab('white')
+    }, [onChangeTab, removeFilter])
 
     const handleChange = useCallback(event => {
         const value = event.target.value
@@ -20,18 +26,17 @@ function SearchBox({onChangeTab, isMobile}) {
             setText('')
             addFilter('search', '', true)
         } else {
-            setText(value)
-            setTimeout(() => {
-                addFilter('search', value, true)
-                onChangeTab('search')
-            }, 0)
+            if (value === '') {
+                handleClear()
+            } else {
+                setText(value)
+                setTimeout(() => {
+                    addFilter('search', value, true)
+                    if (tab !== 'search') onChangeTab('search')
+                }, 0)
+            }
         }
-    }, [addFilter, featureFlags, isBetaUser, onChangeTab, setStorageValue])
-    const handleClear = useCallback(() => {
-        setText('')
-        removeFilter('search', '')
-        onChangeTab('white')
-    }, [onChangeTab, removeFilter])
+    }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, setStorageValue])
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
