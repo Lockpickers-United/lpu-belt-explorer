@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Entries from './Entries.jsx'
 import Nav from './Nav.jsx'
 import {FilterProvider} from './FilterContext.jsx'
