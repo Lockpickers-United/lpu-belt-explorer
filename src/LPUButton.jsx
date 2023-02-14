@@ -1,6 +1,5 @@
 import React from 'react'
 import IconButton from '@mui/material/IconButton'
-import LPUImage from './resources/LPU.png'
 
 function LPUButton() {
     return (
@@ -9,7 +8,7 @@ function LPUButton() {
             href='https://www.lockpickersunited.org/beltsystem/belts/'
             target='_blank' rel='noopener noreferrer'
         >
-            <img alt='LPU' src={LPUImage} width={36} height={36}/>
+            <img alt='LPU' src='https://images.lpubelts.com/i/LPU-f691d3fe.png' width={36} height={36}/>
         </IconButton>
     )
 }
