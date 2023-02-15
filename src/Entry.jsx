@@ -1,11 +1,10 @@
+import React, {useCallback, useContext, useMemo} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
-import {AccordionActions, Button} from '@mui/material'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import React, {useCallback, useContext, useMemo} from 'react'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
@@ -18,7 +17,9 @@ import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StorageContext from './StorageContext.jsx'
 import LinkToEntryButton from './LinkToEntryButton.jsx'
 import ImageGallery from './ImageGallery.jsx'
-import SelectableText from './SelectableText.jsx'
+import AccordionActions from '@mui/material/AccordionActions'
+import Button from '@mui/material/Button'
+import CopyEntryButton from './CopyEntryButton.jsx'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
@@ -38,9 +39,9 @@ function Entry({expanded, entry, onAccordionChange}) {
         return (
             <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                 {entry.makeModels?.map(({make, model}, index) =>
-                    <SelectableText key={index}>
+                    <Typography key={index}>
                         {make && make !== model ? `${make} ${model}` : model}
-                    </SelectableText>
+                    </Typography>
                 )}
             </Stack>
         )
@@ -73,12 +74,11 @@ function Entry({expanded, entry, onAccordionChange}) {
                         value={makeModels}
                     />
 
-                    {!!entry.version &&
+                    {
+                        !!entry.version &&
                         <FieldValue
                             name='Version'
-                            value={
-                                <SelectableText>{entry.version}</SelectableText>
-                            }
+                            value={<Typography>{entry.version}</Typography>}
                         />
                     }
                 </Typography>
@@ -131,7 +131,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                         {
                             !!entry.links?.length &&
                             <FieldValue name='Links' value={
-                                <Stack direction='row' spacing={1}>
+                                <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
                                     {entry.links.map(({title, url}, index) =>
                                         <Button
                                             key={index}
@@ -139,7 +139,9 @@ function Entry({expanded, entry, onAccordionChange}) {
                                             target='_blank'
                                             rel='noopener noreferrer'
                                             color='secondary'
+                                            variant='outlined'
                                             sx={{textTransform: 'none'}}
+                                            style={{margin: 4}}
                                         >
                                             {title}
                                         </Button>
@@ -148,7 +150,8 @@ function Entry({expanded, entry, onAccordionChange}) {
                             }/>
                         }
                     </AccordionDetails>
-                    <AccordionActions>
+                    <AccordionActions disableSpacing>
+                        <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton id={entry.id}/>
                         <IconButton onClick={handleStarClick}>
                             {

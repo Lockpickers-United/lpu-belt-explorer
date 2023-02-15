@@ -23,8 +23,10 @@ function FilterByField({data, label, fieldName, values, onFilter}) {
 
     return (
         <FormControl sx={{minWidth: 120}}>
-            <InputLabel>{label}</InputLabel>
+            <InputLabel id={`filter-${fieldName}`}>{label}</InputLabel>
             <Select
+                label={label}
+                labelId={`filter-${fieldName}`}
                 value=''
                 onChange={handleSelect}
                 style={{marginBottom: 8}}

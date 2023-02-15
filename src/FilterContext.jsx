@@ -16,6 +16,8 @@ export function FilterProvider({children}) {
             if (Array.isArray(oldValue)) {
                 if (!oldValue.includes(valueToAdd)) {
                     newValue = [...oldValue, valueToAdd]
+                } else {
+                    newValue = oldValue
                 }
             } else if (oldValue && oldValue !== valueToAdd) {
                 newValue = [oldValue, valueToAdd]
