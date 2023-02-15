@@ -43,9 +43,9 @@ function InfoDialog({open, onClose}) {
                 </Toolbar>
             </AppBar>
             <DialogContent>
-                <Card>
+                <Card sx={{maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}}>
                     <CardContent>
-                        <ReactMarkdown>{infoText}</ReactMarkdown>
+                        <ReactMarkdown linkTarget='_blank'>{infoText}</ReactMarkdown>
                     </CardContent>
                 </Card>
             </DialogContent>

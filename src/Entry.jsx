@@ -91,7 +91,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                         {!!entry.notes &&
                             <FieldValue name='Notes' value={
                                 <Typography component='div'>
-                                    <ReactMarkdown>
+                                    <ReactMarkdown linkTarget='_blank'>
                                         {entry.notes}
                                     </ReactMarkdown>
                                 </Typography>

@@ -4,6 +4,7 @@ import Nav from './Nav.jsx'
 import {FilterProvider} from './FilterContext.jsx'
 import {StorageProvider} from './StorageContext.jsx'
 import useWindowSize from './useWindowSize.js'
+import Footer from './Footer.jsx'
 
 function App() {
     const [tab, setTab] = useState(() => {
@@ -40,6 +41,8 @@ function App() {
                     data={data}
                     onChangeTab={handleChangeTab}
                 />
+
+                <Footer/>
             </FilterProvider>
         </StorageProvider>
     )

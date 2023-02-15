@@ -32,82 +32,82 @@ pajamas.
 Question: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
 is appropriate for me?**
 
-> Answer: **You can skip directly to the belt that is appropriate for you. Just compile a list of your accomplishments
-in accordance with the guidelines and request to be issued the belt you are going for.**
+> Answer: You can skip directly to the belt that is appropriate for you. Just compile a list of your accomplishments
+in accordance with the guidelines and request to be issued the belt you are going for.
 
 Question: **How to I include a photo of my lock in a Reddit modmail?**
 
-> Answer: **You include a link to your photo in your modmail. This link can be to a photo you've uploaded to a new
-Reddit post, or one using a service like imgur.com**
+> Answer: You include a link to your photo in your modmail. This link can be to a photo you've uploaded to a new
+Reddit post, or one using a service like imgur.com
 
 Question: **How do I share a Challenge Lock? How do I make sure it qualifies?**
 
-> Answer: **It is recommended that, before you send out a challenge lock, you send photos of the modifications you made
+> Answer: It is recommended that, before you send out a challenge lock, you send photos of the modifications you made
 of the lock to a mod and receive confirmation that the lock qualifies. Once you've sent the lock, you'll need the
 recipient to confirm to a mod that the lock has been received (or you can provide a link to a YouTube video where the
-recipient is picking it; anything that proves the lock has been received by someone else)**
+recipient is picking it; anything that proves the lock has been received by someone else)
 
 Question: **My lock is SFIC or some other really difficult to gut core and I don't want to risk ruining it. Can I still
 use this to qualify for a belt?**
 
-> Answer: **For SFIC locks, check the guidelines listed under SFIC Filming Requirements. For other locks, maybe. Let us
+> Answer: For SFIC locks, check the guidelines listed under SFIC Filming Requirements. For other locks, maybe. Let us
 know what you're thinking by contacting the mod team and we will try to work with you to find a way of meeting the
-requirement.**
+requirement.
 
 Question: **I don't make lockpicking videos. Can I use a photograph for the higher levels instead?**
 
-> Answer: **No. While we understand that people have privacy concerns, the gold standard for Locksport is to video your
+> Answer: No. While we understand that people have privacy concerns, the gold standard for Locksport is to video your
 accomplishments as a way of sharing them with the community. The video does not have to be public and you can remove it
 as soon as we have reviewed it, but does need to be a video that meets the standards outlined in the "Rules" section.
 For those not wanting to share public videos, we are suggesting that you use [Vimeo](https://vimeo.com/)  and select the
-option to password protect your video.**
+option to password protect your video.
 
 Question: **I already have a Six Sigma black belt. Can I trade this for a lockpicking belt?**
 
-> Answer: **No, but you get points for making us LOL :)**
+> Answer: No, but you get points for making us LOL :)
 
 Question: **Can I use this belting system for my club or picking group?**
 
-> Answer: **Of course. This work is licensed under
+> Answer: Of course. This work is licensed under
 a  [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)
-. Just be sure to credit us.**
+. Just be sure to credit us.
 
 Question: **Will I be disqualified if I shoot the video vertically?**
 
-> Answer: **No, but for the betterment of the
+> Answer: No, but for the betterment of the
 world,  [please say "no" to vertical video](https://www.youtube.com/watch?v=dechvhb0Meo). Also, please avoid using the
 Shorts format on YouTube, it does not allow for rewinding to see anything that was missed without watching the whole
-video over.**
+video over.
 
 Question: **What's the deal with the Abus numbering?**
 
-> Answer: **Most Abus padlocks have two numbers, for example 55/40. The first number printed on the lock is the model of
+> Answer: Most Abus padlocks have two numbers, for example 55/40. The first number printed on the lock is the model of
 lock, and the second number is the width of the lock in millimeters. Many of the smaller variants of a model lack some
 of the security features of the larger variants, so we list the minimum size that we will accept for that belt rank. For
 example, we list the Abus 55/40, we will also accept the 55/45 and 55/50. We will not accept smaller variants of the
 lock listed for that belt rank. Variants of the Abus locks that are smaller than the size listed can be assumed to be
 white belt in rank (we may make some exceptions, but a smaller variant will never be accepted as the listed belt rank of
-a larger variant.)**
+a larger variant.)
 
 Question: **Do I have to submit for my belt on Discord and Reddit if I use both?**
 
-> Answer: **Please only submit your request on one platform and ask for your belt to be sync'd to the other platform by
+> Answer: Please only submit your request on one platform and ask for your belt to be sync'd to the other platform by
 providing your username there. Eg. if you have a belt on Reddit you'd like sync'd to Discord, provide your Discord
 username via modmail. If you have a belt on Discord you'd like sync'd to Reddit, provide your Reddit username via
-@LPUBeltBot in #belt-requests.**
+@LPUBeltBot in #belt-requests.
 
 Question: **I asked for special consideration on something and I don't agree with your decision on the matter.**
 
-> Answer: **While we honestly make every effort to be accommodating, it is inevitable that there will be disagreements.
+> Answer: While we honestly make every effort to be accommodating, it is inevitable that there will be disagreements.
 Once you have made your case and the decision has been rendered, it's time to respectfully step away. Endlessly trying
 to convince us of your position is counterproductive and disrespectful. Doing so will result in a warning. If continued,
-you will be ineligible for promotion for 30 days.**
+you will be ineligible for promotion for 30 days.
 
 Question: **Are there any more goals to work towards after achieving black belt?**
 
-> Answer: **Yep! We have an entirely separate rule system for earning stripes after you've achieved black. It takes into
+> Answer: Yep! We have an entirely separate rule system for earning stripes after you've achieved black. It takes into
 account everything you've done throughout your lockpicking career, so we advise you don't delete any of your videos from
-the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtXb0QbfvLrnlGqAWgj9SK2RKEndcB6AMtE9c).**
+the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtXb0QbfvLrnlGqAWgj9SK2RKEndcB6AMtE9c).
 
 ----------
 

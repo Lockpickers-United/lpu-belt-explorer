@@ -53,7 +53,7 @@ function Entries({data, tab, onChangeTab}) {
 
     return (
         <React.Fragment>
-            <div style={{margin: 8, paddingBottom: 128}}>
+            <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay onChangeTab={onChangeTab}/>
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 

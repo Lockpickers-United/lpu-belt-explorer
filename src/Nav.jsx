@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import FilterButton from './FilterButton.jsx'
 import GitHubButton from './GitHubButton.jsx'
-import LPUButton from './LPUButton.jsx'
+import HomeButton from './HomeButton.jsx'
 import SearchBox from './SearchBox.jsx'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
@@ -32,7 +32,7 @@ function Nav({data, tab, onChangeTab, isMobile}) {
         <React.Fragment>
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
                 <Toolbar>
-                    <LPUButton/>
+                    <HomeButton onChangeTab={onChangeTab}/>
 
                     <div style={{flexGrow: 1}}></div>
 

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import {InputAdornment, TextField} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
@@ -9,6 +9,7 @@ import StorageContext from './StorageContext.jsx'
 function SearchBox({tab, onChangeTab, isMobile}) {
     const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
+    const [settled, setSettled] = useState(true)
     const {featureFlags, setStorageValue} = useContext(StorageContext)
     const {isBetaUser = false} = featureFlags
 
@@ -20,11 +21,12 @@ function SearchBox({tab, onChangeTab, isMobile}) {
 
     const handleChange = useCallback(event => {
         const value = event.target.value
+        setSettled(false)
         if (value === 'lpubeta') {
             setStorageValue('featureFlags', {...featureFlags, isBetaUser: !isBetaUser})
             onChangeTab('white')
             setText('')
-            addFilter('search', '', true)
+            removeFilter('search')
         } else {
             if (value === '') {
                 handleClear()
@@ -36,7 +38,15 @@ function SearchBox({tab, onChangeTab, isMobile}) {
                 }, 0)
             }
         }
-    }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, setStorageValue, tab])
+    }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, removeFilter, setStorageValue, tab])
+
+    useEffect(() => {
+        if (settled && !Object.hasOwn(filters, 'search') && text) {
+            setTimeout(() => setText(''))
+        } else {
+            setSettled(true)
+        }
+    }, [filters, settled, text])
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
