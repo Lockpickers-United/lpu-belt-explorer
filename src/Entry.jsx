@@ -18,6 +18,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder'
 import StorageContext from './StorageContext.jsx'
 import LinkToEntryButton from './LinkToEntryButton.jsx'
 import ImageGallery from './ImageGallery.jsx'
+import SelectableText from './SelectableText.jsx'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
@@ -36,10 +37,10 @@ function Entry({expanded, entry, onAccordionChange}) {
     const makeModels = useMemo(() => {
         return (
             <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
-                {entry?.makeModels?.map(({make, model}, index) =>
-                    <Typography key={index}>
+                {entry.makeModels?.map(({make, model}, index) =>
+                    <SelectableText key={index}>
                         {make && make !== model ? `${make} ${model}` : model}
-                    </Typography>
+                    </SelectableText>
                 )}
             </Stack>
         )
@@ -48,7 +49,7 @@ function Entry({expanded, entry, onAccordionChange}) {
     const lockingMechanisms = useMemo(() => {
         return (
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                {entry?.lockingMechanisms?.map((lockingMechanism, index) =>
+                {entry.lockingMechanisms?.map((lockingMechanism, index) =>
                     <FilterChip
                         key={index}
                         value={lockingMechanism}
@@ -67,8 +68,19 @@ function Entry({expanded, entry, onAccordionChange}) {
                     component='span' style={{marginRight: 8}}
                     sx={{width: '50%', flexShrink: 0, flexDirection: 'column'}}
                 >
-                    <FieldValue name='Make / Model' value={makeModels}/>
-                    {!!entry.version && <FieldValue name='Version' value={entry.version}/>}
+                    <FieldValue
+                        name='Make / Model'
+                        value={makeModels}
+                    />
+
+                    {!!entry.version &&
+                        <FieldValue
+                            name='Version'
+                            value={
+                                <SelectableText>{entry.version}</SelectableText>
+                            }
+                        />
+                    }
                 </Typography>
                 <Typography component='span' sx={{width: '50%', flexShrink: 0, flexDirection: 'column'}}>
                     {
