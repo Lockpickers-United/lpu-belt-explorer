@@ -41,8 +41,9 @@ export function FilterProvider({children}) {
         }
     }, [filters])
 
-    const clearFilters = useCallback(() => {
-        setFilters({search: filters.search})
+    const clearFilters = useCallback(searchToo => {
+        const newValue = searchToo ? {} : {search: filters.search}
+        setFilters(newValue)
     }, [filters])
 
     useEffect(() => {

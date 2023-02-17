@@ -3,12 +3,11 @@ import IconButton from '@mui/material/IconButton'
 import FilterContext from './FilterContext.jsx'
 
 function HomeButton({onChangeTab}) {
-    const {clearFilters, removeFilter} = useContext(FilterContext)
+    const {clearFilters} = useContext(FilterContext)
     const handleClick = useCallback(() => {
-        clearFilters()
-        removeFilter('search')
+        clearFilters(true)
         onChangeTab('white')
-    }, [clearFilters, onChangeTab, removeFilter])
+    }, [clearFilters, onChangeTab])
 
     return (
         <IconButton edge='start' color='inherit' size='medium' sx={{mr: 1}} onClick={handleClick}>
