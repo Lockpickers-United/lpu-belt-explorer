@@ -1,11 +1,11 @@
-import React, {useId} from 'react'
+import React from 'react'
 
-function Tracker({entry}) {
-    const randomStuff = useId()
-    const file = entry ? 'clear.gif' : 'welcome.gif'
-    const suffix = entry ? `id=${entry.id}&r=${randomStuff}` : `r=${randomStuff}`
+function Tracker({id}) {
+    const randomStuff = (Math.random()).toString(36).substring(2, 10)
+    const file = id ? 'clear.gif' : 'welcome.gif'
+    const suffix = id ? `id=${id}&r=${randomStuff}` : `r=${randomStuff}`
     const url = `https://images.lpubelts.com/i/${file}?${suffix}`
     return <img src={url} width={0} height={0}/>
 }
 
-export default Tracker
+export default React.memo(Tracker)

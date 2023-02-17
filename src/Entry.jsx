@@ -151,7 +151,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                             }/>
                         }
 
-                        <Tracker entry={entry}/>
+                        <Tracker id={entry.id}/>
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <CopyEntryButton entry={entry}/>
