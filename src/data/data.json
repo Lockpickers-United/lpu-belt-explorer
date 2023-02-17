@@ -5040,6 +5040,12 @@
         "subtitle": "CC BY-NC-ND 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/fl/52687458646_eb97cb853e_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687458646/"
+      },
+      {
+        "title": "By: Catalocks",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/cl/714-3_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/714/3.jpg"
       }
     ],
     "links": [
@@ -8585,12 +8591,6 @@
         "subtitle": "CC BY-NC-ND 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/Goal_GoalD9-cylinder-front%2Bkey_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Goal_GoalD9-cylinder-front%2Bkey.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-ND 4.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52687565800_03f9cf9c79_n.jpg",
-        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687565800/"
       }
     ],
     "links": [
@@ -10929,6 +10929,18 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_Combi"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
+      },
+      {
+        "title": "Toool",
+        "url": "https://blackbag.toool.nl/?p=1797"
+      },
+      {
+        "title": "LPU-Teardown",
+        "url": "https://www.youtube.com/watch?v=dSChpjaax-A&pp=ugMICgJlbhABGAE%3D"
       }
     ]
   },
