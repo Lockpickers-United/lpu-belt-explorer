@@ -150,10 +150,9 @@ function Entry({expanded, entry, onAccordionChange}) {
                                 </Stack>
                             }/>
                         }
-
-                        <Tracker id={entry.id}/>
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
+                        <Tracker id={entry.id}/>
                         <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton id={entry.id}/>
                         <IconButton onClick={handleStarClick}>
