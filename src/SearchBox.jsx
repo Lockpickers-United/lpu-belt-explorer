@@ -41,7 +41,7 @@ function SearchBox({tab, onChangeTab, isMobile}) {
     }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, removeFilter, setStorageValue, tab])
 
     useEffect(() => {
-        if (settled && !Object.hasOwn(filters, 'search') && text) {
+        if (settled && !Object.keys(filters).includes('search') && text) {
             setTimeout(() => setText(''))
         } else {
             setSettled(true)

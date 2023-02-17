@@ -41,6 +41,8 @@ function Nav({data, tab, onChangeTab, isMobile}) {
 
                     <div style={{flexGrow: 1}}></div>
 
+                    <Tracker/>
+
                     <InfoButton icon/>
                     <FilterButton data={data} onChangeTab={onChangeTab}/>
                     <GitHubButton/>
@@ -89,8 +91,6 @@ function Nav({data, tab, onChangeTab, isMobile}) {
             >
                 <VerticalAlignTopIcon/>
             </Fab>
-
-            <Tracker/>
         </React.Fragment>
     )
 }
