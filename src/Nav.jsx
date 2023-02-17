@@ -14,6 +14,7 @@ import InfoButton from './InfoButton.jsx'
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop'
 import {Fab} from '@mui/material'
 import useWindowSize from './useWindowSize.js'
+import Tracker from './Tracker.jsx'
 
 function Nav({data, tab, onChangeTab, isMobile}) {
     const tabWidth = Math.floor(window.innerWidth / 10)
@@ -88,6 +89,8 @@ function Nav({data, tab, onChangeTab, isMobile}) {
             >
                 <VerticalAlignTopIcon/>
             </Fab>
+
+            <Tracker/>
         </React.Fragment>
     )
 }

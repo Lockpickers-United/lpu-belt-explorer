@@ -20,6 +20,7 @@ import ImageGallery from './ImageGallery.jsx'
 import AccordionActions from '@mui/material/AccordionActions'
 import Button from '@mui/material/Button'
 import CopyEntryButton from './CopyEntryButton.jsx'
+import Tracker from './Tracker.jsx'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
@@ -149,6 +150,8 @@ function Entry({expanded, entry, onAccordionChange}) {
                                 </Stack>
                             }/>
                         }
+
+                        <Tracker entry={entry}/>
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <CopyEntryButton entry={entry}/>
