@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -27,6 +27,22 @@ function Entry({expanded, entry, onAccordionChange}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {starredEntries, setStorageValue} = useContext(StorageContext)
     const isStarred = starredEntries.includes(entry.id)
+    const ref = useRef(null)
+
+    useEffect(() => {
+        if (expanded && ref) {
+            const isMobile = window.innerWidth <= 600
+            const offset = isMobile ? 70 : 74
+
+            setTimeout(() => {
+                window.scrollTo({
+                    left: 0,
+                    top: ref.current.offsetTop - offset,
+                    behavior: 'smooth'
+                })
+            }, 100)
+        }
+    }, [expanded])
 
     const handleStarClick = useCallback(() => {
         const newValue = isStarred
@@ -63,7 +79,7 @@ function Entry({expanded, entry, onAccordionChange}) {
     }, [entry.lockingMechanisms])
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
                 <Typography
