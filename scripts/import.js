@@ -76,12 +76,14 @@ const jsonData = mainData
                     .flat()
                     .filter(a => a)
                     .join(',')
+                    .toLowerCase()
             const fuzzyB = b.makeModels[0].make === 'Any'
                 ? 'A' : b.makeModels
                     .map(({make, model}) => [make, model])
                     .flat()
                     .filter(a => a)
                     .join(',')
+                    .toLowerCase()
 
             return fuzzyA < fuzzyB ? -1 : 1
         } else {
