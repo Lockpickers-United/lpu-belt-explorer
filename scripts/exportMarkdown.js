@@ -16,10 +16,11 @@ const markdown = uniqueBelts.map(belt => {
         const makeModels = entry.makeModels.map(({make, model}) => {
             return make && make !== model ? `${make} ${model}` : model
         }).join (' / ')
+        const url = `https://lpubelts.com/?id=${entry.id}`
         const version = entry.version ? ` (${entry.version})` : ''
-        return `- ${makeModels}${version}`
+        return `- [${makeModels}](${url}) ${version}`
     }).join('\n')
     return header + entries
 }).join('\n\n')
 
-fs.writeFileSync('./scripts/belts.md', markdown)
+fs.writeFileSync('./dist/belts.md', markdown)

@@ -17,7 +17,7 @@
         "import": "node ./scripts/import.js",
         "exportCsv": "node ./scripts/exportCsv.js",
         "exportMd": "node ./scripts/exportMarkdown.js",
-        "bnd": "yarn run build && yarn run deploy"
+        "bnd": "yarn run build && yarn exportMd && yarn run deploy"
     },
     "dependencies": {
         "@emotion/react": "^11.10.5",
