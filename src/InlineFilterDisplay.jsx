@@ -2,17 +2,16 @@ import React, {useContext} from 'react'
 import {Card, CardActions, CardContent} from '@mui/material'
 import FilterDisplay from './FilterDisplay.jsx'
 import FilterContext from './FilterContext.jsx'
-import IconButton from '@mui/material/IconButton'
-import FilterAltOffIcon from '@mui/icons-material/FilterAltOff'
+import Button from '@mui/material/Button'
 
-function InlineFilterDisplay({onChangeTab, isMobile}) {
+function InlineFilterDisplay({tab, onChangeTab, isMobile}) {
     const {filters, filterCount, clearFilters} = useContext(FilterContext)
     const style = isMobile
         ? {maxWidth: 700, marginLeft: 8, marginRight: 8}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
 
     const handleClear = () => {
-        if (!filters.search) onChangeTab('white')
+        if (!filters.search && tab === 'search') onChangeTab('white')
         setTimeout(() => clearFilters(), 0)
     }
 
@@ -24,9 +23,9 @@ function InlineFilterDisplay({onChangeTab, isMobile}) {
             </CardContent>
             <CardActions>
                 <div style={{width: '100%'}}/>
-                <IconButton onClick={handleClear}>
-                    <FilterAltOffIcon/>
-                </IconButton>
+                <Button variant='outlined' color='inherit' onClick={handleClear}>
+                    Clear&nbsp;Filters
+                </Button>
             </CardActions>
         </Card>
     )

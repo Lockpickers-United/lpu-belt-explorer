@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useDeferredValue, useMemo, useState} from 'react'
 import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
@@ -7,15 +7,22 @@ import StorageContext from './StorageContext.jsx'
 import BeltRequirements from './BeltRequirements.jsx'
 
 function Entries({data, tab, onChangeTab}) {
-    const {filters} = useContext(FilterContext)
+    const {filters, removeFilter} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {starredEntries} = useContext(StorageContext)
 
-    const {search, ...otherFilters} = filters
+    const {search, id, ...otherFilters} = filters
     const defTab = useDeferredValue(tab)
     const defSearch = useDeferredValue(search)
     const defFilters = useDeferredValue(otherFilters)
     const defStarredEntries = useDeferredValue(starredEntries)
+
+    const handleExpand = useCallback(value => {
+        if (id && value && value !== id) {
+            removeFilter('id')
+        }
+        setExpanded(value)
+    }, [id, removeFilter])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -54,7 +61,7 @@ function Entries({data, tab, onChangeTab}) {
     return (
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
-                <InlineFilterDisplay onChangeTab={onChangeTab}/>
+                <InlineFilterDisplay tab={tab} onChangeTab={onChangeTab}/>
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
                 {visibleEntries.map(datum =>
@@ -62,7 +69,7 @@ function Entries({data, tab, onChangeTab}) {
                         key={datum.id}
                         entry={datum}
                         expanded={expanded === datum.id}
-                        onAccordionChange={setExpanded}
+                        onAccordionChange={handleExpand}
                     />
                 )}
             </div>

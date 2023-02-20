@@ -21,6 +21,7 @@ import AccordionActions from '@mui/material/AccordionActions'
 import Button from '@mui/material/Button'
 import CopyEntryButton from './CopyEntryButton.jsx'
 import Tracker from './Tracker.jsx'
+import queryString from 'query-string'
 
 function Entry({expanded, entry, onAccordionChange}) {
     const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
@@ -33,16 +34,18 @@ function Entry({expanded, entry, onAccordionChange}) {
         if (expanded && ref) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
+            const {id} = queryString.parse(location.search)
+            const isIdFiltered = id === entry.id
 
             setTimeout(() => {
                 window.scrollTo({
                     left: 0,
                     top: ref.current.offsetTop - offset,
-                    behavior: 'smooth'
+                    behavior: isIdFiltered ? 'auto' : 'smooth'
                 })
-            }, 100)
+            }, isIdFiltered ? 0 : 100)
         }
-    }, [expanded])
+    }, [expanded, entry])
 
     const handleStarClick = useCallback(() => {
         const newValue = isStarred
