@@ -1,6 +1,9 @@
 name: Import
 
-on: []
+on:
+  push:
+    paths:
+      - 'scripts/**'
 
 jobs:
   deploy:
