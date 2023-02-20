@@ -13,9 +13,6 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: /home/runner/work/lpu-belt-explorer
     steps:
       - name: Set Node.js 14.x
         uses: actions/setup-node@v3
@@ -29,6 +26,7 @@ jobs:
           
       - name: Build production bundle
         uses: borales/actions-yarn@v4
+        working-directory: ../
         with:
           cmd: bnd
           
