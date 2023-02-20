@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
     paths:
       - 'src/**'
+      - 'package.json'
+      - '.github/workflows/build.js.yml'
+      - 'public/**'
 
 jobs:
   deploy:
