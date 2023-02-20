@@ -1,8 +1,10 @@
-name: Deploy
+name: Build-N-Deploy
 
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'src/**'
 
 jobs:
   deploy:
