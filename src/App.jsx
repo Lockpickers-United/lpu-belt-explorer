@@ -9,10 +9,10 @@ import data from './data/data.js'
 import queryString from 'query-string'
 
 function App() {
+    const query = queryString.parse(location.search)
     const [tab, setTab] = useState(() => {
-        const idFiltered = location.search.startsWith('?id=')
+        const idFiltered = !!query.id
         if (idFiltered && data.length > 0) {
-            const query = queryString.parse(location.search)
             const entry = data.find(({id}) => query.id === id)
             if (entry) {
                 return entry.belt.replace(/\d/g, '')
@@ -22,7 +22,11 @@ function App() {
         }
         return 'white'
     })
-    const handleChangeTab = newBelt => setTab(newBelt)
+    const [expanded, setExpanded] = useState(query.id)
+    const handleChangeTab = newBelt => {
+        setTab(newBelt)
+        setExpanded(undefined)
+    }
     const {width} = useWindowSize()
     const isMobile = width <= 736
 
@@ -39,8 +43,10 @@ function App() {
                 <Entries
                     isMobile={isMobile}
                     tab={tab}
+                    expanded={expanded}
                     data={data}
                     onChangeTab={handleChangeTab}
+                    onExpand={setExpanded}
                 />
 
                 <Footer/>

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useDeferredValue, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useDeferredValue, useMemo} from 'react'
 import Entry from './Entry.jsx'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
@@ -6,9 +6,8 @@ import InlineFilterDisplay from './InlineFilterDisplay.jsx'
 import StorageContext from './StorageContext.jsx'
 import BeltRequirements from './BeltRequirements.jsx'
 
-function Entries({data, tab, onChangeTab}) {
+function Entries({data, expanded, onExpand, tab, onChangeTab}) {
     const {filters, removeFilter} = useContext(FilterContext)
-    const [expanded, setExpanded] = useState(filters.id)
     const {starredEntries} = useContext(StorageContext)
 
     const {search, id, ...otherFilters} = filters
@@ -21,8 +20,8 @@ function Entries({data, tab, onChangeTab}) {
         if (id && value && value !== id) {
             removeFilter('id')
         }
-        setExpanded(value)
-    }, [id, removeFilter])
+        onExpand(value)
+    }, [id, removeFilter, onExpand])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

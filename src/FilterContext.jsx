@@ -26,7 +26,8 @@ export function FilterProvider({children}) {
             }
         }
 
-        setFilters({...filters, [keyToAdd]: newValue})
+        const {id, ...keepFilters} = filters
+        setFilters({...keepFilters, [keyToAdd]: newValue})
     }, [filters])
 
     const removeFilter = useCallback((keyToDelete, valueToDelete) => {

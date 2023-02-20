@@ -17,6 +17,7 @@ function SearchBox({tab, onChangeTab, isMobile}) {
         setText('')
         removeFilter('search', '')
         onChangeTab('white')
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }, [onChangeTab, removeFilter])
 
     const handleChange = useCallback(event => {
@@ -34,7 +35,10 @@ function SearchBox({tab, onChangeTab, isMobile}) {
                 setText(value)
                 setTimeout(() => {
                     addFilter('search', value, true)
-                    if (tab !== 'search') onChangeTab('search')
+                    if (tab !== 'search') {
+                        onChangeTab('search')
+                        window.scrollTo({top: 0, behavior: 'smooth'})
+                    }
                 }, 0)
             }
         }
