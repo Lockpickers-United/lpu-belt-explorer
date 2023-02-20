@@ -14,6 +14,10 @@ jobs:
       id-token: write   # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
     steps:
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
       - uses: actions/checkout@v3
 
       - name: Set Node.js 14.x
