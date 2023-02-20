@@ -3,7 +3,7 @@ name: Import
 on:
   workflow_dispatch:
 env:
-  env_var: ${{ secrets.GOOGLE_SHEET_ID }}
+  env_var: ${{ vars.GOOGLE_SHEET_ID }}
   
 jobs:
   deploy:
