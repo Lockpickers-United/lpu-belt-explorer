@@ -8,10 +8,24 @@
         "model": "lock with any tool"
       }
     ],
-    "links": [
+    "media": [
       {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Master_Lock_No_3"
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Clear_acrylic_practice_lock_-_FXE47413_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Clear_acrylic_practice_lock_-_FXE47413.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
+      },
+      {
+        "title": "By: Oaklandishh",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/225px-Mastercommercial.jpeg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Mastercommercial.JPG"
       }
     ]
   },
@@ -3936,6 +3950,12 @@
         "subtitle": "Public domain",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/272px-Lockwood_334B45.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Lockwood_334B45.jpg"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698426183_cd445773ef_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698426183/in/dateposted-public/"
       }
     ],
     "links": [
@@ -5615,6 +5635,12 @@
         "subtitle": "Public domain",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/272px-Lockwood_334B45.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Lockwood_334B45.jpg"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698537060_52a5eee639_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698537060/in/dateposted-public/"
       }
     ],
     "links": [
@@ -5635,6 +5661,26 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Lemon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698130738_5bf9b3796d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698130738/in/album-72177720306109160/"
+      },
+      {
+        "title": "By: Lemon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698130743_6d874e7c99_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698130743/in/album-72177720306109160/"
+      },
+      {
+        "title": "By: Lemon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52697638396_c1d9af09dc_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52697638396/in/album-72177720306109160/"
+      }
     ],
     "links": [
       {
@@ -5924,8 +5970,12 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Pisla 860"
+        "make": "Pisla",
+        "model": "860"
       }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
     ],
     "features": [
       "Unguttable"
@@ -6966,6 +7016,36 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/294px-Duo_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Duo_cylinder.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52668126240_976acd2c2f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52668126240/in/album-72177720305767873/"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52668193348_10bb589c9c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52668193348/in/album-72177720305767873/"
+      },
+      {
+        "title": "By: Datagram",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://www.lockwiki.com/images/7/76/Duo_wafers_1.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Duo_wafers_1.jpg"
+      },
+      {
+        "title": "By: Datagram",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://www.lockwiki.com/images/9/9b/Duo_wafers_2.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Duo_wafers_2.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695143986_ecd906992e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695143986/in/album-72177720306100433/"
       }
     ],
     "links": [
@@ -7758,6 +7838,20 @@
         "make": "Opnus",
         "model": "UX"
       }
+    ],
+    "media": [
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52696814646_ab8241fe6e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52696814646/in/album-72177720306107512/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52696298417_d8b1f8b81f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52696298417/in/album-72177720306107512/"
+      }
     ]
   },
   {
@@ -8043,7 +8137,33 @@
         "model": "Aegis"
       }
     ],
-    "version": "18 pin, 3 rows all spools"
+    "version": "18 pin, 3 rows all spools",
+    "media": [
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52696809526_f99f7ce50f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52696809526/in/album-72177720306099866/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52696809601_56b064ceb8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52696809601/in/album-72177720306099866/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52697227045_98f89fc372_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52697227045/in/album-72177720306099866/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52697227090_9c9bd4a009_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52697227090/in/album-72177720306099866/"
+      }
+    ]
   },
   {
     "id": "db380ba0",
@@ -8345,6 +8465,26 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698397409_35cabe43ee_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698397409/in/album-72177720306114186/"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698556860_ab8c38c25c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698556860/in/album-72177720306114186/"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698410624_ca33b41617_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698410624/in/album-72177720306114186/"
+      }
     ]
   },
   {
@@ -10416,6 +10556,30 @@
         "subtitle": "CC BY-NC-ND 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/MIWA_JN_key_-_FXE48230_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:MIWA_JN_key_-_FXE48230.png"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571095_c049dd0930_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695571095/in/album-72177720306090062/"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571100_8a57de1b24_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695571100/in/album-72177720306090062/"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695424319_c2f6659c1f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695424319/in/album-72177720306090062/"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695158491_c717c21fc3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695158491/in/album-72177720306090062/"
       }
     ],
     "links": [
@@ -10525,6 +10689,26 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695432704_f6e8390db7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695432704/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695579855_0f4c134b80_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695579855/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52694651087_b047f03d56_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52694651087/in/album-72177720306096799/"
+      }
     ]
   },
   {
@@ -11699,7 +11883,27 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "notes": "upgrade of Clavis Q-18"
+    "notes": "upgrade of Clavis Q-18",
+    "media": [
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52697624882_55bcc5094c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52697624882/in/album-72177720306121202/"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698140351_7b8b0cedb0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698140351/in/album-72177720306121202/"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52697624902_33e43fc685_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52697624902/in/album-72177720306121202/"
+      }
+    ]
   },
   {
     "id": "7ea33803",
@@ -12539,6 +12743,30 @@
         "subtitle": "CC BY-NC-ND 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/MIWA_JN_key_-_FXE48230_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:MIWA_JN_key_-_FXE48230.png"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571095_c049dd0930_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695571095/in/album-72177720306090062/"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571100_8a57de1b24_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695571100/in/album-72177720306090062/"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695424319_c2f6659c1f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695424319/in/album-72177720306090062/"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695158491_c717c21fc3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695158491/in/album-72177720306090062/"
       }
     ],
     "links": [
@@ -12560,6 +12788,26 @@
     "version": "15-20 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695432704_f6e8390db7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695432704/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695579855_0f4c134b80_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695579855/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52694651087_b047f03d56_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52694651087/in/album-72177720306096799/"
+      }
     ]
   },
   {
@@ -12574,6 +12822,26 @@
     "version": "21 or more pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695432704_f6e8390db7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695432704/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695579855_0f4c134b80_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695579855/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52694651087_b047f03d56_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52694651087/in/album-72177720306096799/"
+      }
     ]
   },
   {
@@ -12710,6 +12978,44 @@
       {
         "make": "MIWA",
         "model": "LB"
+      }
+    ],
+    "media": [
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692796624_1ee195886b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52692796624/in/dateposted-public/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695109836_56dd647617_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695109836/in/album-72177720306100128/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695109851_3e4cea8ca8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695109851/in/album-72177720306100128/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692527616_094d8e0599_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52692527616/in/album-72177720306100128/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692527666_c8471ba799_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52692527666/in/album-72177720306100128/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692939240_818913b5f3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52692939240/in/album-72177720306100128/"
       }
     ]
   },

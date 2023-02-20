@@ -2,13 +2,18 @@ import fs from 'fs'
 import {parse} from 'csv-parse/sync'
 import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
 import belts from '../src/data/belts.js'
+import fetch from 'node-fetch'
 
 const beltNumbers = Object.keys(belts)
 
 // Helper to load and validate a file
-const importValidate = (filename, schema) => {
+const importValidate = async (tab, schema) => {
+    // Download file
+    const {GOOGLE_SHEET_ID: sheetId} = process.env
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${tab}`
+    const csvData = await (await fetch(url)).text()
+
     // Parse CSV into JSON
-    const csvData = fs.readFileSync(filename)
     const data = parse(csvData, {
         columns: true,
         skip_empty_lines: true
@@ -25,9 +30,9 @@ const importValidate = (filename, schema) => {
 }
 
 // Load all 3 data files
-const mainData = importValidate('./scripts/data.csv', mainSchema)
-const mediaData = importValidate('./scripts/media.csv', mediaSchema)
-const linkData = importValidate('./scripts/link.csv', linkSchema)
+const mainData = await importValidate('App Data', mainSchema)
+const mediaData = await importValidate('Media', mediaSchema)
+const linkData = await importValidate('Links', linkSchema)
 
 // Transform fields into internal JSON format
 const jsonData = mainData
