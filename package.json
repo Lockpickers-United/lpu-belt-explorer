@@ -12,7 +12,7 @@
         "dev": "vite",
         "build": "NODE_ENV=production vite build",
         "preview": "vite preview",
-        "deploy": "gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'",
+        "deploy": "gh-pages -d dist -u 'github-actions-bot <support+actions@github.com>'",
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
         "exportCsv": "node ./scripts/exportCsv.js",
