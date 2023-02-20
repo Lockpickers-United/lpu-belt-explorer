@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ../
+        working-directory: /home/runner/work/lpu-belt-explorer
     steps:
       - name: Set Node.js 14.x
         uses: actions/setup-node@v3
