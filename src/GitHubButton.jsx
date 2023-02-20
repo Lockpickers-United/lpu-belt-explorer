@@ -8,7 +8,7 @@ function GitHubButton() {
         <Tooltip title='View Source on GitHub'>
             <IconButton
                 color='inherit' target='_blank' rel='noopener noreferrer'
-                href='https://github.com/NiXXeD/lpu-belt-explorer' edge='end'
+                href='https://github.com/Lockpickers-United/lpu-belt-explorer' edge='end'
             >
                 <GitHubIcon/>
             </IconButton>
