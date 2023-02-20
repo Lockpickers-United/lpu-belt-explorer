@@ -8,8 +8,13 @@ const beltNumbers = Object.keys(belts)
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
-    // Download file
     const {GOOGLE_SHEET_ID: sheetId} = process.env
+    if (!sheetId) {
+        console.log('Config error! Set GOOGLE_SHEET_ID env var to run Import.')
+        process.exit(1)
+    }
+
+    // Download file
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${tab}`
     const csvData = await (await fetch(url)).text()
 
