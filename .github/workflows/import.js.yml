@@ -1,9 +1,7 @@
 name: Import
 
 on:
-  push:
-    paths:
-      - 'scripts/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
