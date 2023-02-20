@@ -20,28 +20,28 @@
         "bnd": "yarn run build && yarn exportMd && yarn run deploy"
     },
     "dependencies": {
-        "@emotion/react": "^11.10.5",
-        "@emotion/styled": "^11.10.5",
-        "@mui/icons-material": "^5.11.0",
-        "@mui/material": "^5.11.6",
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@mui/icons-material": "^5.11.9",
+        "@mui/material": "^5.11.9",
         "debounce": "^1.2.1",
         "fuzzysort": "^2.0.4",
-        "joi": "^17.7.0",
+        "joi": "^17.8.1",
         "query-string": "^8.1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-markdown": "^8.0.5"
     },
     "devDependencies": {
-        "@types/react": "^18.0.27",
-        "@types/react-dom": "^18.0.10",
-        "@vitejs/plugin-react": "^3.0.1",
-        "csv-parse": "^5.3.3",
+        "@types/react": "^18.0.28",
+        "@types/react-dom": "^18.0.11",
+        "@vitejs/plugin-react": "^3.1.0",
+        "csv-parse": "^5.3.5",
         "eslint": "^8.34.0",
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "gh-pages": "^5.0.0",
         "rollup-plugin-visualizer": "^5.9.0",
-        "vite": "^4.0.4"
+        "vite": "^4.1.2"
     }
 }
