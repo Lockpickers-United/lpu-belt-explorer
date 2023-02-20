@@ -13,20 +13,19 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Set Node.js 14.x
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@master
+            
+      - name: Set up Node.js ⚙️
+        uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: '16.x'
 
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+      - name: Install dependencies 📦
+        run: yarn install --frozen-lockfile
           
-      - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        working-directory: ../
-        with:
-          cmd: bnd
+      - name: Build and Deploy
+        run: yarn bnd
           
