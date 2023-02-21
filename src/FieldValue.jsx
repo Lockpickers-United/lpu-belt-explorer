@@ -5,9 +5,14 @@ function FieldValue({name, value}) {
     const style = {marginBottom: 8}
     return (
         <div style={style}>
-            <Typography component='span' sx={{color: 'text.secondary'}}>{name}: </Typography>
-            <br/>
-            <Typography component='span'>{value}</Typography>
+            <Typography
+                component='div'
+                variant='subtitle2'
+                sx={{color: 'text.disabled'}}
+            >
+                {name}:
+            </Typography>
+            <Typography component='div'>{value}</Typography>
         </div>
     )
 }
