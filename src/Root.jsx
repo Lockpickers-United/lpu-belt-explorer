@@ -49,6 +49,11 @@ const getRootStyle = styleTheme => {
                 color: ${linkTextColor};
             }
             
+            pre{ 
+                white-space: pre-wrap; 
+                word-break: break-word;
+            }
+            
             :root {
               color-scheme: dark;
               overflow-y: scroll;

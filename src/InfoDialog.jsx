@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close.js'
 import Typography from '@mui/material/Typography'
-import {Card, CardContent, Dialog, DialogContent, Slide} from '@mui/material'
+import {CardContent, Dialog, DialogContent, Slide} from '@mui/material'
 import ReactMarkdown from 'react-markdown'
 
 function InfoDialog({open, onClose}) {
@@ -22,10 +22,11 @@ function InfoDialog({open, onClose}) {
 
     return (
         <Dialog
-            fullScreen
             open={open}
             onClose={onClose}
             TransitionComponent={Transition}
+            scroll='paper'
+            style={{overflowX: 'none'}}
         >
             <AppBar sx={{position: 'relative'}}>
                 <Toolbar>
@@ -43,11 +44,9 @@ function InfoDialog({open, onClose}) {
                 </Toolbar>
             </AppBar>
             <DialogContent>
-                <Card sx={{maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}}>
-                    <CardContent>
-                        <ReactMarkdown linkTarget='_blank'>{infoText}</ReactMarkdown>
-                    </CardContent>
-                </Card>
+                <ReactMarkdown linkTarget='_blank' style={{overflowX: 'wrap'}}>
+                    {infoText}
+                </ReactMarkdown>
             </DialogContent>
         </Dialog>
     )
