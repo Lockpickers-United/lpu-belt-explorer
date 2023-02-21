@@ -44,7 +44,7 @@ function Nav({data, tab, onChangeTab, isMobile}) {
                     <Tracker/>
 
                     <InfoButton icon/>
-                    <FilterButton data={data} onChangeTab={onChangeTab}/>
+                    <FilterButton data={data} tab={tab} onChangeTab={onChangeTab}/>
                     <GitHubButton/>
                 </Toolbar>
             </AppBar>

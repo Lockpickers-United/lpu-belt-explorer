@@ -22,7 +22,7 @@ function FilterByField({data, label, fieldName, values, onFilter}) {
     }, [data, fieldName, values])
 
     return (
-        <FormControl sx={{minWidth: 120}}>
+        <FormControl sx={{minWidth: 120}} fullWidth>
             <InputLabel id={`filter-${fieldName}`}>{label}</InputLabel>
             <Select
                 label={label}
