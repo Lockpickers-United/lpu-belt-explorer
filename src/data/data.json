@@ -20,12 +20,6 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
-      },
-      {
-        "title": "By: Oaklandishh",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/225px-Mastercommercial.jpeg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Mastercommercial.JPG"
       }
     ]
   },
@@ -483,6 +477,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   {
@@ -2132,6 +2129,9 @@
         "make": "Kasp",
         "model": "160 series Diskus"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -2430,6 +2430,9 @@
       }
     ],
     "version": "5 pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Trap pin/bar"
     ]
@@ -2909,7 +2912,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "sidepins"
     ],
     "media": [
       {
@@ -2940,7 +2944,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "sidepins"
     ],
     "media": [
       {
@@ -3347,6 +3352,13 @@
         "make": "BKS",
         "model": "Detect 3"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "sidebar"
+    ],
+    "features": [
+      "Active sidebar"
     ]
   },
   {
@@ -3422,6 +3434,12 @@
         "make": "Burg Wächter",
         "model": "Profi 116/40"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   {
@@ -3446,6 +3464,9 @@
         "model": "C970 disk padlock"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Unguttable"
     ]
@@ -3458,6 +3479,9 @@
         "make": "Commando",
         "model": "IC3 Tactical"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ],
     "features": [
       "Unguttable"
@@ -3472,6 +3496,9 @@
         "model": "Marine"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Unguttable"
     ]
@@ -3484,6 +3511,9 @@
         "make": "Commando",
         "model": "Peacemaker"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ],
     "features": [
       "Unguttable"
@@ -3521,6 +3551,9 @@
         "make": "Corona",
         "model": "cylinder"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3531,6 +3564,9 @@
         "make": "Corona",
         "model": "M"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3590,6 +3626,9 @@
         "make": "DOM",
         "model": "SV"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3612,6 +3651,9 @@
         "make": "ERA",
         "model": "Invincible - 5 lever"
       }
+    ],
+    "lockingMechanisms": [
+      "Lever"
     ]
   },
   {
@@ -3622,6 +3664,9 @@
         "make": "ERA",
         "model": "Pro-Fit - 5 lever"
       }
+    ],
+    "lockingMechanisms": [
+      "Lever"
     ]
   },
   {
@@ -3632,6 +3677,9 @@
         "make": "ERA",
         "model": "Viscount - 5 lever"
       }
+    ],
+    "lockingMechanisms": [
+      "Lever"
     ]
   },
   {
@@ -3642,6 +3690,9 @@
         "make": "EVVA",
         "model": "FPS"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3665,6 +3716,9 @@
         "make": "EVVA",
         "model": "TSC"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -7325,6 +7379,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -7363,7 +7420,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Magnet"
+      "Magnet",
+      "Pin-tumbler"
     ],
     "media": [
       {
@@ -7422,6 +7480,10 @@
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
+    ],
+    "features": [
+      "Active Sidebar",
+      "False gates"
     ]
   },
   {
@@ -8138,6 +8200,12 @@
       }
     ],
     "version": "18 pin, 3 rows all spools",
+    "lockingMechanisms": [
+      "Dimple "
+    ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Greenish",
@@ -12382,6 +12450,10 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Fichet_F3D"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/f/fe/The_Fichet_F3D_High_Security_Lock_Mechanism.pdf"
       }
     ]
   },
@@ -12410,6 +12482,10 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Fichet_F3D"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/f/fe/The_Fichet_F3D_High_Security_Lock_Mechanism.pdf"
       }
     ]
   },
