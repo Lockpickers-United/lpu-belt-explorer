@@ -10,7 +10,7 @@ function ImageGallery({entry}) {
     const isMobile = width < 736
 
     return (
-        <ImageList variant='masonry' cols={isMobile ? 2 : 3}>
+        <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 0}}>
             {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl}, index) =>
                 <ImageListItem key={index} style={{marginBottom: 8}}>
                     <img
