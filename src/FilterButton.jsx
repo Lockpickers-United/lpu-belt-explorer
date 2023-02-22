@@ -47,6 +47,7 @@ function FilterButton({data, tab, onChangeTab}) {
             <SwipeableDrawer
                 anchor='right'
                 open={open}
+                onOpen={openDrawer}
                 onClose={closeDrawer}
             >
                 <Box margin={1}>
