@@ -53,20 +53,18 @@ function FilterButton({data, tab, onChangeTab}) {
                     <Typography variant="h6">Filters</Typography>
                 </Toolbar>
                 <Box margin={1}>
-                    <FieldValue name='Add Filter' last value={
-                        <Stack direction='column' style={{minWidth: 250, marginTop: 8}}>
-                            {filterFields.map(({label, fieldName, values}, index) =>
-                                <FilterByField
-                                    data={data}
-                                    key={index}
-                                    label={label}
-                                    fieldName={fieldName}
-                                    values={values}
-                                    onFilter={handleAddFilter}
-                                />
-                            )}
-                        </Stack>
-                    }/>
+                    <Stack direction='column' style={{minWidth: 250}}>
+                        {filterFields.map(({label, fieldName, values}, index) =>
+                            <FilterByField
+                                data={data}
+                                key={index}
+                                label={label}
+                                fieldName={fieldName}
+                                values={values}
+                                onFilter={handleAddFilter}
+                            />
+                        )}
+                    </Stack>
                 </Box>
                 <Toolbar variant='dense'>
                     <Button
