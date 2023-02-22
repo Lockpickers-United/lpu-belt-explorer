@@ -1,4 +1,4 @@
-import {Box, Container, DialogActions, SwipeableDrawer, Tooltip} from '@mui/material'
+import {Box, SwipeableDrawer, Tooltip} from '@mui/material'
 import React, {useCallback, useContext, useState} from 'react'
 import FilterAltIcon from '@mui/icons-material/FilterAlt.js'
 import IconButton from '@mui/material/IconButton'
@@ -8,12 +8,15 @@ import filterFields from './data/filterFields.js'
 import FilterByField from './FilterByField.jsx'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton.jsx'
+import Toolbar from '@mui/material/Toolbar'
+import FieldValue from './FieldValue'
+import Button from '@mui/material/Button'
 
 function FilterButton({data, tab, onChangeTab}) {
     const [open, setOpen] = useState(false)
 
-    const openDialog = useCallback(() => setOpen(true), [])
-    const closeDialog = useCallback(() => setOpen(false), [])
+    const openDrawer = useCallback(() => setOpen(true), [])
+    const closeDrawer = useCallback(() => setOpen(false), [])
 
     const {filterCount, addFilter} = useContext(FilterContext)
 
@@ -35,7 +38,7 @@ function FilterButton({data, tab, onChangeTab}) {
                         vertical: 'bottom', horizontal: 'right'
                     }}
                 >
-                    <IconButton color='inherit' onClick={openDialog}>
+                    <IconButton color='inherit' onClick={openDrawer}>
                         <FilterAltIcon/>
                     </IconButton>
                 </Badge>
@@ -44,28 +47,38 @@ function FilterButton({data, tab, onChangeTab}) {
             <SwipeableDrawer
                 anchor='right'
                 open={open}
-                onClose={closeDialog}
+                onClose={closeDrawer}
             >
                 <Box margin={1}>
-                    <Stack direction='column' style={{marginTop: 8, minWidth: 250}}>
-                        {filterFields.map(({label, fieldName, values}, index) =>
-                            <FilterByField
-                                data={data}
-                                key={index}
-                                label={label}
-                                fieldName={fieldName}
-                                values={values}
-                                onFilter={handleAddFilter}
-                            />
-                        )}
-                    </Stack>
-                    <DialogActions>
-                        <ClearFiltersButton
-                            tab={tab}
-                            onChangeTab={onChangeTab}
-                        />
-                    </DialogActions>
+                    <FieldValue name='Add Filter' last value={
+                        <Stack direction='column' style={{minWidth: 250}}>
+                            {filterFields.map(({label, fieldName, values}, index) =>
+                                <FilterByField
+                                    data={data}
+                                    key={index}
+                                    label={label}
+                                    fieldName={fieldName}
+                                    values={values}
+                                    onFilter={handleAddFilter}
+                                />
+                            )}
+                        </Stack>
+                    }/>
                 </Box>
+                <Toolbar variant='dense'>
+                    <Button
+                        variant='outlined'
+                        color='inherit'
+                        onClick={closeDrawer}
+                        style={{marginRight: 8}}
+                    >
+                        Close
+                    </Button>
+                    <ClearFiltersButton
+                        tab={tab}
+                        onChangeTab={onChangeTab}
+                    />
+                </Toolbar>
             </SwipeableDrawer>
         </React.Fragment>
     )
