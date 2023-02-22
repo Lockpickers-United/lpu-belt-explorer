@@ -9,7 +9,6 @@ import FilterByField from './FilterByField.jsx'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton.jsx'
 import Toolbar from '@mui/material/Toolbar'
-import FieldValue from './FieldValue'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
