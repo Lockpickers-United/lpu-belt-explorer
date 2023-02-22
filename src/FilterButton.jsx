@@ -11,6 +11,7 @@ import ClearFiltersButton from './ClearFiltersButton.jsx'
 import Toolbar from '@mui/material/Toolbar'
 import FieldValue from './FieldValue'
 import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 
 function FilterButton({data, tab, onChangeTab}) {
     const [open, setOpen] = useState(false)
@@ -21,10 +22,8 @@ function FilterButton({data, tab, onChangeTab}) {
     const {filterCount, addFilter} = useContext(FilterContext)
 
     const handleAddFilter = (keyToAdd, valueToAdd) => {
-        setTimeout(() => {
-            addFilter(keyToAdd, valueToAdd)
-            if (tab !== 'search') onChangeTab('search')
-        }, 0)
+        if (tab !== 'search') onChangeTab('search')
+        setTimeout(() => addFilter(keyToAdd, valueToAdd, true), 0)
     }
 
     return (
@@ -50,9 +49,12 @@ function FilterButton({data, tab, onChangeTab}) {
                 onOpen={openDrawer}
                 onClose={closeDrawer}
             >
+                <Toolbar variant='dense'>
+                    <Typography variant="h6">Filters</Typography>
+                </Toolbar>
                 <Box margin={1}>
                     <FieldValue name='Add Filter' last value={
-                        <Stack direction='column' style={{minWidth: 250}}>
+                        <Stack direction='column' style={{minWidth: 250, marginTop: 8}}>
                             {filterFields.map(({label, fieldName, values}, index) =>
                                 <FilterByField
                                     data={data}

@@ -7,7 +7,7 @@ function ClearFiltersButton({tab, onChangeTab, ...props}) {
 
     const handleClear = () => {
         if (!filters.search && tab === 'search') onChangeTab('white')
-        setTimeout(() => clearFilters(), 0)
+        setTimeout(() => clearFilters(), 50)
     }
 
     return (

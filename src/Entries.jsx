@@ -1,20 +1,16 @@
 import React, {useCallback, useContext, useDeferredValue, useMemo} from 'react'
 import Entry from './Entry.jsx'
-import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import InlineFilterDisplay from './InlineFilterDisplay.jsx'
-import StorageContext from './StorageContext.jsx'
 import BeltRequirements from './BeltRequirements.jsx'
+import DataContext from './DataContext.jsx'
 
-function Entries({data, expanded, onExpand, tab, onChangeTab}) {
+function Entries({expanded, onExpand, tab, onChangeTab}) {
     const {filters, removeFilter} = useContext(FilterContext)
-    const {starredEntries} = useContext(StorageContext)
+    const {id} = filters
+    const {visibleEntries, beltedEntries} = useContext(DataContext)
 
-    const {search, id, ...otherFilters} = filters
     const defTab = useDeferredValue(tab)
-    const defSearch = useDeferredValue(search)
-    const defFilters = useDeferredValue(otherFilters)
-    const defStarredEntries = useDeferredValue(starredEntries)
 
     const handleExpand = useCallback(value => {
         if (id && value && value !== id) {
@@ -23,47 +19,21 @@ function Entries({data, expanded, onExpand, tab, onChangeTab}) {
         onExpand(value)
     }, [id, removeFilter, onExpand])
 
-    const visibleEntries = useMemo(() => {
-        // Filters as an array
-        const filterArray = Object.keys(defFilters)
-            .map(key => {
-                const value = defFilters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
-            })
-            .flat()
-
-        // Filter the data
-        const filtered = data
-            .map(entry => {
-                entry.starred = `${defStarredEntries.includes(entry.id)}`
-                return entry
-            })
-            .filter(datum => {
-                const isRightTab = defTab === 'search' || datum.belt.startsWith(defTab)
-                if (!isRightTab) return false
-
-                return !isRightTab || filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
-                })
-            })
-
-        // If there is a search term, fuzzy match that
-        return defSearch
-            ? fuzzysort.go(defSearch, filtered, {keys: fuzzySortKeys}).map(result => result.obj)
-            : filtered
-    }, [data, defFilters, defSearch, defTab, defStarredEntries])
+    const entries = useMemo(() => {
+        if (defTab === 'search') {
+            return visibleEntries
+        } else {
+            return beltedEntries[defTab]
+        }
+    }, [beltedEntries, defTab, visibleEntries])
 
     return (
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
-                <InlineFilterDisplay tab={tab} onChangeTab={onChangeTab}/>
+                <InlineFilterDisplay tab={defTab} onChangeTab={onChangeTab}/>
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
-                {visibleEntries.map(datum =>
+                {entries.map(datum =>
                     <Entry
                         key={datum.id}
                         entry={datum}
@@ -76,11 +46,5 @@ function Entries({data, expanded, onExpand, tab, onChangeTab}) {
         </React.Fragment>
     )
 }
-
-const fuzzySortKeys = [
-    'fuzzy',
-    'version',
-    'notes'
-]
 
 export default Entries

@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Entries from './Entries.jsx'
 import Nav from './Nav.jsx'
-import {FilterProvider} from './FilterContext.jsx'
-import {StorageProvider} from './StorageContext.jsx'
 import useWindowSize from './useWindowSize.js'
 import Footer from './Footer.jsx'
-import data from './data/data.js'
 import queryString from 'query-string'
+import DataContext from './DataContext.jsx'
 
 function App() {
+    const {allEntries: data} = useContext(DataContext)
+
     const query = queryString.parse(location.search)
     const [tab, setTab] = useState(() => {
         const idFiltered = !!query.id
@@ -22,36 +22,34 @@ function App() {
         }
         return 'white'
     })
+
     const [expanded, setExpanded] = useState(query.id)
     const handleChangeTab = newBelt => {
         setTab(newBelt)
         setExpanded(undefined)
     }
+
     const {width} = useWindowSize()
     const isMobile = width <= 736
 
     return (
-        <StorageProvider>
-            <FilterProvider>
-                <Nav
-                    isMobile={isMobile}
-                    data={data}
-                    tab={tab}
-                    onChangeTab={handleChangeTab}
-                />
+        <React.Fragment>
+            <Nav
+                isMobile={isMobile}
+                tab={tab}
+                onChangeTab={handleChangeTab}
+            />
 
-                <Entries
-                    isMobile={isMobile}
-                    tab={tab}
-                    expanded={expanded}
-                    data={data}
-                    onChangeTab={handleChangeTab}
-                    onExpand={setExpanded}
-                />
+            <Entries
+                isMobile={isMobile}
+                tab={tab}
+                expanded={expanded}
+                onChangeTab={handleChangeTab}
+                onExpand={setExpanded}
+            />
 
-                <Footer/>
-            </FilterProvider>
-        </StorageProvider>
+            <Footer/>
+        </React.Fragment>
     )
 }
 

@@ -2,6 +2,9 @@ import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import App from './App.jsx'
+import {FilterProvider} from './FilterContext.jsx'
+import {StorageProvider} from './StorageContext.jsx'
+import {DataProvider} from './DataContext'
 
 const darkTheme = createTheme({
     // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00
@@ -29,7 +32,13 @@ function Root() {
             <CssBaseline/>
             <style>{style}</style>
 
-            <App/>
+            <StorageProvider>
+                <FilterProvider>
+                    <DataProvider>
+                        <App/>
+                    </DataProvider>
+                </FilterProvider>
+            </StorageProvider>
         </ThemeProvider>
     )
 }

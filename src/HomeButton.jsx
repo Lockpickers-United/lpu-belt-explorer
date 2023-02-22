@@ -6,8 +6,8 @@ import LPUImage from './resources/LPU.png'
 function HomeButton({onChangeTab}) {
     const {clearFilters} = useContext(FilterContext)
     const handleClick = useCallback(() => {
-        clearFilters(true)
         onChangeTab('white')
+        setTimeout(() => clearFilters(true), 50)
     }, [clearFilters, onChangeTab])
 
     return (
