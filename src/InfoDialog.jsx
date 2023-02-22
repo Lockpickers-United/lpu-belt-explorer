@@ -4,11 +4,14 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close.js'
 import Typography from '@mui/material/Typography'
-import {CardContent, Dialog, DialogContent, Slide} from '@mui/material'
+import {Dialog, DialogContent, Slide} from '@mui/material'
 import ReactMarkdown from 'react-markdown'
+import useWindowSize from './useWindowSize.js'
 
 function InfoDialog({open, onClose}) {
+    const {width} = useWindowSize()
     const [infoText, setInfoText] = useState()
+    const isMobile = width <= 500
 
     useEffect(() => {
         if (!infoText) {
@@ -25,8 +28,8 @@ function InfoDialog({open, onClose}) {
             open={open}
             onClose={onClose}
             TransitionComponent={Transition}
-            scroll='paper'
-            style={{overflowX: 'none'}}
+            fullScreen={isMobile}
+            scroll='body'
         >
             <AppBar sx={{position: 'relative'}}>
                 <Toolbar>
