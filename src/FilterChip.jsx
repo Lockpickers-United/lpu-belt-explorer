@@ -8,7 +8,8 @@ function FilterChip({field, value, ...props}) {
     const handleClick = useCallback(event => {
         event.stopPropagation()
 
-        addFilter(field, value)
+        setTimeout(() => addFilter(field, value), 0)
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }, [addFilter, field, value])
 
     return (
