@@ -2913,7 +2913,7 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler",
-      "sidepins"
+      "Sidepins"
     ],
     "media": [
       {
@@ -2945,7 +2945,7 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler",
-      "sidepins"
+      "Sidepins"
     ],
     "media": [
       {
@@ -3358,7 +3358,8 @@
       "sidebar"
     ],
     "features": [
-      "Active sidebar"
+      "Pin-tumbler",
+      "Sidebar"
     ]
   },
   {
@@ -8201,7 +8202,7 @@
     ],
     "version": "18 pin, 3 rows all spools",
     "lockingMechanisms": [
-      "Dimple "
+      "Dimple"
     ],
     "features": [
       "High pin count"
