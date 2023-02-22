@@ -8,6 +8,10 @@ on:
       - 'package.json'
       - '.github/workflows/build.js.yml'
       - 'public/**'
+  workflow_run:
+    workflows: [Import]
+    types:
+      - completed
 
 jobs:
   deploy:
