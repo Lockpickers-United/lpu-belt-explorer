@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useDeferredValue, useMemo} from 'react'
+import React, {useCallback, useContext, useDeferredValue, useMemo, useState} from 'react'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -11,15 +11,15 @@ import Chip from '@mui/material/Chip'
 function FilterByField({label, fieldName, onFilter}) {
     const {visibleEntries} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
+    const [open, setOpen] = useState(false)
 
     const handleSelect = useCallback(event => {
-        onFilter(fieldName, event.target.value, true)
-        setTimeout(() => document.activeElement.blur())
+        setOpen(false)
+        setTimeout(() => onFilter(fieldName, event.target.value, true), 0)
     }, [fieldName, onFilter])
 
-    const handleBlur = useCallback(() => {
-        setTimeout(() => document.activeElement.blur())
-    }, [])
+    const handleClose = () => setOpen(false)
+    const handleOpen = () => setOpen(true)
 
     const {counts, options} = useMemo(() => {
         const allValues = visibleEntries
@@ -54,7 +54,9 @@ function FilterByField({label, fieldName, onFilter}) {
                 value={value}
                 onChange={handleSelect}
                 style={{marginBottom: 8}}
-                onClose={handleBlur}
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
                 MenuProps={{
                     PaperProps: {
                         style: {
