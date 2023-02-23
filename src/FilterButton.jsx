@@ -66,18 +66,18 @@ function FilterButton({data, tab, onChangeTab}) {
                     </Stack>
                 </Box>
                 <Toolbar variant='dense'>
+                    <ClearFiltersButton
+                        tab={tab}
+                        onChangeTab={onChangeTab}
+                        style={{marginRight: 8}}
+                    />
                     <Button
                         variant='outlined'
                         color='inherit'
                         onClick={closeDrawer}
-                        style={{marginRight: 8}}
                     >
-                        Close
+                        Done
                     </Button>
-                    <ClearFiltersButton
-                        tab={tab}
-                        onChangeTab={onChangeTab}
-                    />
                 </Toolbar>
             </SwipeableDrawer>
         </React.Fragment>

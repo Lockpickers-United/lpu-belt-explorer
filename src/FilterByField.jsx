@@ -16,9 +16,13 @@ function FilterByField({label, fieldName, onFilter}) {
     const handleSelect = useCallback(event => {
         setOpen(false)
         setTimeout(() => onFilter(fieldName, event.target.value, true), 0)
+        setTimeout(() => document.activeElement.blur())
     }, [fieldName, onFilter])
 
-    const handleClose = () => setOpen(false)
+    const handleClose = () => {
+        setOpen(false)
+        setTimeout(() => document.activeElement.blur())
+    }
     const handleOpen = () => setOpen(true)
 
     const {counts, options} = useMemo(() => {
@@ -57,6 +61,7 @@ function FilterByField({label, fieldName, onFilter}) {
                 open={open}
                 onClose={handleClose}
                 onOpen={handleOpen}
+                onBlur={handleClose}
                 MenuProps={{
                     PaperProps: {
                         style: {
