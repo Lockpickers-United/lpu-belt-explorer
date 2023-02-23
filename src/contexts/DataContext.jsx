@@ -1,9 +1,9 @@
 import React, {useContext, useMemo} from 'react'
-import data from './data/data.js'
+import allEntries from '../data/data.json'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import StorageContext from './StorageContext.jsx'
-import {uniqueBelts} from './data/belts.js'
+import {uniqueBelts} from '../data/belts.js'
 
 const DataContext = React.createContext({})
 
@@ -11,6 +11,21 @@ export function DataProvider({children}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
     const {search, id, ...filters} = allFilters
+
+    const mappedEntries = useMemo(() => {
+        return allEntries
+            .map(entry => ({
+                ...entry,
+                makes: entry.makeModels.map(({make}) => make),
+                fuzzy: entry.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(','),
+                content: [
+                    entry.media?.length > 0 ? 'Has Images' : 'No Images',
+                    entry.links?.length > 0 ? 'Has Links' : 'No Links',
+                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
+                ].filter(x => x),
+                expanded: id === entry.id
+            }))
+    }, [id, starredEntries])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -23,16 +38,8 @@ export function DataProvider({children}) {
             })
             .flat()
 
-        // If filtering by stars, an additional data element is required
-        const mapped = filters.starred
-            ? data.map(entry => {
-                entry.starred = `${starredEntries.includes(entry.id)}`
-                return entry
-            })
-            : data
-
         // Filter the data
-        const filtered = mapped
+        const filtered = mappedEntries
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -45,7 +52,7 @@ export function DataProvider({children}) {
         return search
             ? fuzzysort.go(search, filtered, {keys: fuzzySortKeys}).map(result => result.obj)
             : filtered
-    }, [filters, search, starredEntries])
+    }, [filters, search, mappedEntries])
 
     const beltedEntries = useMemo(() => {
         const beltedInitial = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), {})
@@ -57,7 +64,7 @@ export function DataProvider({children}) {
     }, [visibleEntries])
 
     const value = useMemo(() => ({
-        allEntries: data,
+        allEntries,
         visibleEntries,
         beltedEntries
     }), [visibleEntries, beltedEntries])

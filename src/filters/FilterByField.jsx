@@ -3,10 +3,11 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import DataContext from './DataContext.jsx'
-import FilterContext from './FilterContext.jsx'
+import DataContext from '../contexts/DataContext.jsx'
+import FilterContext from '../contexts/FilterContext.jsx'
 import {Box} from '@mui/material'
 import Chip from '@mui/material/Chip'
+import {filterFieldsByFieldName} from '../data/filterFields.js'
 
 function FilterByField({label, fieldName, onFilter}) {
     const {visibleEntries} = useContext(DataContext)
@@ -19,13 +20,14 @@ function FilterByField({label, fieldName, onFilter}) {
         setTimeout(() => document.activeElement.blur())
     }, [fieldName, onFilter])
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
         setOpen(false)
         setTimeout(() => document.activeElement.blur())
-    }
-    const handleOpen = () => setOpen(true)
+    }, [])
+    const handleOpen = useCallback(() => setOpen(true), [])
 
     const {counts, options} = useMemo(() => {
+        const {extraValues = []} = filterFieldsByFieldName[fieldName]
         const allValues = visibleEntries
             .map(datum => datum[fieldName])
             .flat()
@@ -37,7 +39,7 @@ function FilterByField({label, fieldName, onFilter}) {
             return acc
         }, {})
 
-        const options = [...new Set(allValues)].sort()
+        const options = [...new Set(allValues.concat(extraValues))].sort()
 
         return {counts, options}
     }, [visibleEntries, fieldName])
@@ -79,7 +81,7 @@ function FilterByField({label, fieldName, onFilter}) {
             >
                 {options.map((value, index) =>
                     <MenuItem key={index} value={value}>
-                        {`${value} (${counts[value]})`}
+                        {`${value} (${counts[value] || 0})`}
                     </MenuItem>
                 )}
             </Select>

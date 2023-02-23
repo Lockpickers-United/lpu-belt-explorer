@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Tracker({id}) {
+    if (import.meta.env.DEV) return null
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = id ? 'clear.gif' : 'welcome.gif'
     const suffix = id ? `id=${id}&r=${randomStuff}` : `r=${randomStuff}`

@@ -1,9 +1,9 @@
 import React from 'react'
 import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
-import licenses from './data/licenses.js'
+import licenses from '../data/licenses.js'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch.js'
-import useWindowSize from './useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.js'
 
 function ImageGallery({entry}) {
     const {width} = useWindowSize()

@@ -2,13 +2,13 @@ const filterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Features', fieldName: 'features'},
-    {label: 'Content', fieldName: 'content'}
+    {label: 'Content', fieldName: 'content', extraValues: ['Is Starred']}
 ]
 
 export default filterFields
 
 export const filterFieldsByFieldName = filterFields
-    .reduce((acc, {fieldName, label}) => ({
+    .reduce((acc, value) => ({
         ...acc,
-        [fieldName]: label
-    }), {id: 'ID'})
+        [value.fieldName]: value
+    }), {id: {label: 'ID'}})

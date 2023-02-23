@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react'
-import belts from './data/belts.js'
+import belts from '../data/belts.js'
 
 function BeltStripe({value}) {
     const {color: backgroundColor} = belts[value]

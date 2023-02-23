@@ -1,30 +1,31 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import BeltStripe from './BeltStripe'
-import FieldValue from './FieldValue'
-import BeltIcon from './BeltIcon'
+import BeltStripe from './BeltStripe.jsx'
+import FieldValue from './FieldValue.jsx'
+import BeltIcon from './BeltIcon.jsx'
 import IconButton from '@mui/material/IconButton'
 import ReactMarkdown from 'react-markdown'
-import belts from './data/belts.js'
-import FilterChip from './FilterChip'
+import belts from '../data/belts.js'
+import FilterChip from '../filters/FilterChip.jsx'
 import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
-import StorageContext from './StorageContext.jsx'
+import StorageContext from '../contexts/StorageContext.jsx'
 import LinkToEntryButton from './LinkToEntryButton.jsx'
 import ImageGallery from './ImageGallery.jsx'
 import AccordionActions from '@mui/material/AccordionActions'
 import Button from '@mui/material/Button'
 import CopyEntryButton from './CopyEntryButton.jsx'
-import Tracker from './Tracker.jsx'
+import Tracker from '../app/Tracker.jsx'
 import queryString from 'query-string'
 
-function Entry({expanded, entry, onAccordionChange}) {
-    const handleChange = (_, isExpanded) => onAccordionChange(isExpanded ? entry.id : false)
+function Entry({entry}) {
+    const [expanded, setExpanded] = useState(!!entry.expanded)
+    const handleChange = (_, isExpanded) => setExpanded(isExpanded)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {starredEntries, setStorageValue} = useContext(StorageContext)
     const isStarred = starredEntries.includes(entry.id)
@@ -143,7 +144,7 @@ function Entry({expanded, entry, onAccordionChange}) {
                             }/>
                         }
                         {
-                            !!entry.media?.length && expanded &&
+                            !!entry.media?.length &&
                             <FieldValue name='Media' value={
                                 <ImageGallery entry={entry}/>
                             }/>

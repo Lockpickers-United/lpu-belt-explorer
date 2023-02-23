@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close.js'
 import Typography from '@mui/material/Typography'
 import {Dialog, DialogContent, Slide} from '@mui/material'
 import ReactMarkdown from 'react-markdown'
-import useWindowSize from './useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.js'
 
 function InfoDialog({open, onClose}) {
     const {width} = useWindowSize()
@@ -16,7 +16,7 @@ function InfoDialog({open, onClose}) {
     useEffect(() => {
         if (!infoText) {
             const loadInfoText = async () => {
-                const value = (await import('./data/info.md?raw')).default
+                const value = (await import('../data/info.md')).default
                 setInfoText(value)
             }
             loadInfoText()
@@ -25,7 +25,7 @@ function InfoDialog({open, onClose}) {
 
     return (
         <Dialog
-            open={open}
+            open={!!infoText && open}
             onClose={onClose}
             TransitionComponent={Transition}
             fullScreen={isMobile}

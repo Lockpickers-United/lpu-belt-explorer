@@ -33,7 +33,7 @@ export function FilterProvider({children}) {
     const removeFilter = useCallback((keyToDelete, valueToDelete) => {
         const currentValue = filters[keyToDelete]
 
-        if (Array.isArray(currentValue)) {
+        if (Array.isArray(currentValue) && currentValue.length > 1) {
             const newValue = currentValue.filter(value => value !== valueToDelete)
             setFilters({...filters, [keyToDelete]: newValue})
         } else {

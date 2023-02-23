@@ -1,10 +1,13 @@
 import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import App from './App.jsx'
-import {FilterProvider} from './FilterContext.jsx'
-import {StorageProvider} from './StorageContext.jsx'
-import {DataProvider} from './DataContext'
+import {FilterProvider} from '../contexts/FilterContext.jsx'
+import {StorageProvider} from '../contexts/StorageContext.jsx'
+import {DataProvider} from '../contexts/DataContext.jsx'
+import {AppProvider} from '../contexts/AppContext.jsx'
+import Nav from '../nav/Nav.jsx'
+import Entries from '../entries/Entries.jsx'
+import Footer from './Footer.jsx'
 
 const darkTheme = createTheme({
     // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00
@@ -25,7 +28,7 @@ const darkTheme = createTheme({
     }
 })
 
-function Root() {
+function App() {
     const style = getRootStyle(darkTheme)
     return (
         <ThemeProvider theme={darkTheme}>
@@ -35,7 +38,13 @@ function Root() {
             <StorageProvider>
                 <FilterProvider>
                     <DataProvider>
-                        <App/>
+                        <AppProvider>
+                            <Nav/>
+
+                            <Entries/>
+
+                            <Footer/>
+                        </AppProvider>
                     </DataProvider>
                 </FilterProvider>
             </StorageProvider>
@@ -70,4 +79,4 @@ const getRootStyle = styleTheme => {
         `
 }
 
-export default Root
+export default App

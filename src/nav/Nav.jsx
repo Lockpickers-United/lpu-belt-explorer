@@ -1,50 +1,49 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import FilterButton from './FilterButton.jsx'
+import FilterButton from '../filters/FilterButton.jsx'
 import GitHubButton from './GitHubButton.jsx'
 import HomeButton from './HomeButton.jsx'
 import SearchBox from './SearchBox.jsx'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-import BeltIcon from './BeltIcon.jsx'
-import {uniqueBelts} from './data/belts'
+import BeltIcon from '../entries/BeltIcon.jsx'
+import {uniqueBelts} from '../data/belts.js'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
-import InfoButton from './InfoButton.jsx'
-import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop'
-import {Fab} from '@mui/material'
-import useWindowSize from './useWindowSize.js'
-import Tracker from './Tracker.jsx'
+import InfoButton from '../info/InfoButton.jsx'
+import useWindowSize from '../util/useWindowSize.js'
+import Tracker from '../app/Tracker.jsx'
+import AppContext from '../contexts/AppContext.jsx'
+import ScrollToTopButton from './ScrollToTopButton.jsx'
 
-function Nav({data, tab, onChangeTab, isMobile}) {
+function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)
     const {width} = useWindowSize()
     const smallWidth = width <= 500
     const tabWidthStyle = smallWidth
         ? {minWidth: tabWidth, maxWidth: tabWidth, opacity: 1}
         : {minWidth: 50, maxWidth: 50, opacity: 1}
-    const scrollToTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'})
-    }
 
-    const handleTabClick = useCallback((event, value) => onChangeTab(value), [onChangeTab])
+    const {tab, setTab} = useContext(AppContext)
+
+    const handleTabClick = useCallback((event, value) => setTab(value), [setTab])
 
     return (
         <React.Fragment>
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
                 <Toolbar>
-                    <HomeButton onChangeTab={onChangeTab}/>
+                    <HomeButton/>
 
                     <div style={{flexGrow: 1}}></div>
 
-                    <SearchBox tab={tab} onChangeTab={onChangeTab} isMobile={isMobile}/>
+                    <SearchBox/>
 
                     <div style={{flexGrow: 1}}></div>
 
                     <Tracker/>
 
                     <InfoButton icon/>
-                    <FilterButton data={data} tab={tab} onChangeTab={onChangeTab}/>
+                    <FilterButton/>
                     <GitHubButton/>
                 </Toolbar>
             </AppBar>
@@ -79,18 +78,7 @@ function Nav({data, tab, onChangeTab, isMobile}) {
                 </Tabs>
             </AppBar>
 
-            <Fab
-                size='small'
-                sx={{
-                    position: 'fixed',
-                    right: 16,
-                    bottom: 16,
-                    zIndex: 1000
-                }}
-                onClick={scrollToTop}
-            >
-                <VerticalAlignTopIcon/>
-            </Fab>
+            <ScrollToTopButton/>
         </React.Fragment>
     )
 }

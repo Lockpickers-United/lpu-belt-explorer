@@ -1,13 +1,15 @@
 import React, {useContext} from 'react'
 import Button from '@mui/material/Button'
-import FilterContext from './FilterContext.jsx'
+import FilterContext from '../contexts/FilterContext.jsx'
+import AppContext from '../contexts/AppContext.jsx'
 
-function ClearFiltersButton({tab, onChangeTab, ...props}) {
+function ClearFiltersButton(props) {
+    const {tab, setTab} = useContext(AppContext)
     const {filters, clearFilters} = useContext(FilterContext)
 
     const handleClear = () => {
-        if (!filters.search && tab === 'search') onChangeTab('white')
-        setTimeout(() => clearFilters(), 50)
+        if (!filters.search && tab === 'search') setTab('white')
+        setTimeout(() => clearFilters(), 100)
     }
 
     return (

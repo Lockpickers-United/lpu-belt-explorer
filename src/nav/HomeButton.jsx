@@ -1,14 +1,16 @@
 import React, {useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
-import FilterContext from './FilterContext.jsx'
-import LPUImage from './resources/LPU.png'
+import FilterContext from '../contexts/FilterContext.jsx'
+import LPUImage from '../resources/LPU.png'
+import AppContext from '../contexts/AppContext.jsx'
 
-function HomeButton({onChangeTab}) {
+function HomeButton() {
+    const {setTab} = useContext(AppContext)
     const {clearFilters} = useContext(FilterContext)
     const handleClick = useCallback(() => {
-        onChangeTab('white')
-        setTimeout(() => clearFilters(true), 50)
-    }, [clearFilters, onChangeTab])
+        setTab('white')
+        setTimeout(() => clearFilters(true), 0)
+    }, [clearFilters, setTab])
 
     return (
         <IconButton edge='start' color='inherit' size='medium' sx={{mr: 1}} onClick={handleClick}>

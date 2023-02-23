@@ -3,29 +3,33 @@ import {InputAdornment, TextField} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
-import FilterContext from './FilterContext.jsx'
-import StorageContext from './StorageContext.jsx'
+import FilterContext from '../contexts/FilterContext.jsx'
+import StorageContext from '../contexts/StorageContext.jsx'
+import AppContext from '../contexts/AppContext.jsx'
+import useWindowSize from '../util/useWindowSize.js'
 
-function SearchBox({tab, onChangeTab, isMobile}) {
+function SearchBox() {
+    const {tab, setTab} = useContext(AppContext)
     const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const [settled, setSettled] = useState(true)
     const {featureFlags, setStorageValue} = useContext(StorageContext)
     const {isBetaUser = false} = featureFlags
+    const {width} = useWindowSize()
 
     const handleClear = useCallback(() => {
         setText('')
         removeFilter('search', '')
-        onChangeTab('white')
+        setTab('white')
         window.scrollTo({top: 0, behavior: 'smooth'})
-    }, [onChangeTab, removeFilter])
+    }, [setTab, removeFilter])
 
     const handleChange = useCallback(event => {
         const value = event.target.value
         setSettled(false)
         if (value === 'lpubeta') {
             setStorageValue('featureFlags', {...featureFlags, isBetaUser: !isBetaUser})
-            onChangeTab('white')
+            setTab('white')
             setText('')
             removeFilter('search')
         } else {
@@ -36,13 +40,13 @@ function SearchBox({tab, onChangeTab, isMobile}) {
                 setTimeout(() => {
                     addFilter('search', value, true)
                     if (tab !== 'search') {
-                        onChangeTab('search')
+                        setTab('search')
                         window.scrollTo({top: 0, behavior: 'smooth'})
                     }
                 }, 0)
             }
         }
-    }, [addFilter, featureFlags, handleClear, isBetaUser, onChangeTab, removeFilter, setStorageValue, tab])
+    }, [addFilter, featureFlags, handleClear, isBetaUser, setTab, removeFilter, setStorageValue, tab])
 
     useEffect(() => {
         if (settled && !Object.keys(filters).includes('search') && text) {
@@ -59,7 +63,7 @@ function SearchBox({tab, onChangeTab, isMobile}) {
             </IconButton>
         </InputAdornment>
     ) : null
-    const style = isMobile
+    const style = width < 736
         ? {maxWidth: 450}
         : {maxWidth: 450, marginRight: -60}
 

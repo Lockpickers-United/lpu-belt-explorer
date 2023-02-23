@@ -1,5 +1,5 @@
 import React from 'react'
-import belts from './data/belts.js'
+import belts from '../data/belts.js'
 
 function BeltIcon({value, style}) {
     const {color, lineColor = '#010101'} = belts[value]

@@ -3,16 +3,18 @@ import React, {useCallback, useContext, useState} from 'react'
 import FilterAltIcon from '@mui/icons-material/FilterAlt.js'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
-import FilterContext from './FilterContext.jsx'
-import filterFields from './data/filterFields.js'
+import FilterContext from '../contexts/FilterContext.jsx'
+import filterFields from '../data/filterFields.js'
 import FilterByField from './FilterByField.jsx'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton.jsx'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import AppContext from '../contexts/AppContext.jsx'
 
-function FilterButton({data, tab, onChangeTab}) {
+function FilterButton({data}) {
+    const {tab, setTab} = useContext(AppContext)
     const [open, setOpen] = useState(false)
 
     const openDrawer = useCallback(() => setOpen(true), [])
@@ -21,7 +23,7 @@ function FilterButton({data, tab, onChangeTab}) {
     const {filterCount, addFilter} = useContext(FilterContext)
 
     const handleAddFilter = (keyToAdd, valueToAdd) => {
-        if (tab !== 'search') onChangeTab('search')
+        if (tab !== 'search') setTab('search')
         setTimeout(() => addFilter(keyToAdd, valueToAdd, true), 0)
     }
 
@@ -66,11 +68,7 @@ function FilterButton({data, tab, onChangeTab}) {
                     </Stack>
                 </Box>
                 <Toolbar variant='dense'>
-                    <ClearFiltersButton
-                        tab={tab}
-                        onChangeTab={onChangeTab}
-                        style={{marginRight: 8}}
-                    />
+                    <ClearFiltersButton style={{marginRight: 8}}/>
                     <Button
                         variant='outlined'
                         color='inherit'
