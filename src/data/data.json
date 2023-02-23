@@ -1640,6 +1640,14 @@
     "version": "old pinning: mostly standard keypins, normal spool drivers",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Jan Willem",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52706668864_c61d42b946_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52706668864/in/album-72177720306051978/"
+      }
     ]
   },
   {
@@ -2070,7 +2078,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Characteristic hellish keyway"
+      "Hellish keyway"
     ]
   },
   {
@@ -2751,6 +2759,14 @@
     "version": "new pinning: security keypins + serrated and spooled t-pins",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Jan Willem",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52706668864_c61d42b946_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52706668864/in/album-72177720306051978/"
+      }
     ]
   },
   {
@@ -3650,9 +3666,10 @@
     "makeModels": [
       {
         "make": "ERA",
-        "model": "Invincible - 5 lever"
+        "model": "Invincible"
       }
     ],
+    "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
     ]
@@ -3663,9 +3680,10 @@
     "makeModels": [
       {
         "make": "ERA",
-        "model": "Pro-Fit - 5 lever"
+        "model": "Pro-Fit"
       }
     ],
+    "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
     ]
@@ -3676,9 +3694,10 @@
     "makeModels": [
       {
         "make": "ERA",
-        "model": "Viscount - 5 lever"
+        "model": "Viscount"
       }
     ],
+    "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
     ]
@@ -3999,6 +4018,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Tapered drivers"
+    ],
     "media": [
       {
         "title": "By: Nerixel",
@@ -4238,6 +4260,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin"
     ]
   },
   {
@@ -4249,7 +4274,7 @@
         "model": "100a"
       }
     ],
-    "version": "green, 6-pin version of the 90a pro",
+    "version": "6-pin version of the 90a pro",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -4747,7 +4772,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Characteristic hellish keyway"
+      "Hellish keyway"
     ]
   },
   {
@@ -4776,7 +4801,7 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Guttable"
     ]
   },
@@ -4843,7 +4868,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Guttable"
+      "Guttable",
+      "Tapered drivers"
     ],
     "media": [
       {
@@ -4881,7 +4907,7 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Guttable"
     ]
   },
@@ -5081,6 +5107,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Interactive element"
     ]
   },
   {
@@ -5096,7 +5125,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Magic DOM drivers"
+      "\"Magic\" DOM drivers"
     ]
   },
   {
@@ -5139,7 +5168,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Magic DOM drivers"
+      "\"Magic\" DOM drivers"
     ],
     "media": [
       {
@@ -5274,6 +5303,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Trap pin/bar"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -5314,6 +5346,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Trap pin/bar"
+    ],
     "media": [
       {
         "title": "By: Moon-UA",
@@ -5341,6 +5376,9 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Trap pin/bar"
     ]
   },
   {
@@ -5355,6 +5393,9 @@
     "version": "Pin Tumbler version",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Trap pin/bar"
     ],
     "media": [
       {
@@ -5384,7 +5425,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Characteristic hellish keyway"
+      "Hellish keyway"
     ]
   },
   {
@@ -5549,6 +5590,9 @@
     "version": "5 pin",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Overmilling"
     ]
   },
   {
@@ -5595,7 +5639,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ]
   },
   {
@@ -5621,6 +5665,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "media": [
       {
         "title": "By: Florida Man",
@@ -5641,7 +5688,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "KryPin tumbleronite Disk Detainer"
+        "make": "KryPin",
+        "model": "tumbleronite Disk Detainer"
       }
     ],
     "lockingMechanisms": [
@@ -5781,7 +5829,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -5970,6 +6018,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "links": [
       {
         "title": "LPForensics_MTL",
@@ -5992,6 +6043,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin"
     ]
   },
   {
@@ -6047,6 +6101,10 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Barrel drivers",
+      "Sleeved core"
     ],
     "media": [
       {
@@ -6120,6 +6178,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Tapered drivers"
     ]
   },
   {
@@ -6132,6 +6193,7 @@
       }
     ],
     "lockingMechanisms": [
+      "Pin-tumbler",
       "Wafer"
     ]
   },
@@ -6147,6 +6209,9 @@
     "version": "with trampoline pins",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Trampoline drivers"
     ]
   },
   {
@@ -6182,7 +6247,8 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "VSR 2-row"
+        "make": "VSR",
+        "model": "2-row"
       }
     ]
   },
@@ -6214,6 +6280,9 @@
         "make": "Yale",
         "model": "500 series"
       }
+    ],
+    "features": [
+      "Overmilling"
     ]
   },
   {
@@ -6233,6 +6302,10 @@
     "lockingMechanisms": [
       "Dimple",
       "Slider"
+    ],
+    "features": [
+      "Sliders",
+      "Active sidebar"
     ]
   },
   {
@@ -6337,6 +6410,10 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Hellish keyway",
+      "Interactive element"
     ]
   },
   {
@@ -6428,8 +6505,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Countermilling - undercut",
+      "Gin spool drivers",
+      "Undercut milling",
       "Guttable"
     ],
     "media": [
@@ -6515,7 +6592,7 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Guttable"
     ]
   },
@@ -6614,7 +6691,7 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Sidepins",
       "Guttable"
     ]
@@ -6631,6 +6708,11 @@
     "version": "8 sliders, 3-4 mastered",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -6660,6 +6742,11 @@
     "lockingMechanisms": [
       "Slider"
     ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -6686,6 +6773,9 @@
     ],
     "lockingMechanisms": [
       "Dimple",
+      "Magnet"
+    ],
+    "features": [
       "Magnet"
     ]
   },
@@ -6793,6 +6883,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Interlocking pins"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -6859,10 +6952,10 @@
       "Dimple"
     ],
     "features": [
-      "Finned keypins",
-      "Torpedoes",
+      "Shark fin keypins",
+      "Torpedo keypins",
       "Interactive element",
-      "Magic DOM drivers"
+      "\"Magic\" DOM drivers"
     ]
   },
   {
@@ -6941,7 +7034,7 @@
     "features": [
       "Trap pin/bar",
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -6969,7 +7062,7 @@
     ],
     "version": "no false gates",
     "lockingMechanisms": [
-      "Other"
+      "Lever/Sidebar"
     ]
   },
   {
@@ -6979,6 +7072,9 @@
       {
         "model": "Fontaine"
       }
+    ],
+    "lockingMechanisms": [
+      "Pump"
     ],
     "media": [
       {
@@ -7132,6 +7228,9 @@
         "model": "Perfecta"
       }
     ],
+    "lockingMechanisms": [
+      "Pump"
+    ],
     "notes": "requires 360 for belting"
   },
   {
@@ -7211,7 +7310,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ]
   },
   {
@@ -7451,6 +7550,9 @@
     "version": "9-pins, mushroom drivers",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -7483,7 +7585,7 @@
       "Sidepins"
     ],
     "features": [
-      "Active Sidebar",
+      "Active sidebar",
       "False gates"
     ]
   },
@@ -7519,7 +7621,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ]
   },
   {
@@ -7540,7 +7642,7 @@
       "Slider"
     ],
     "features": [
-      "Active Sidebar",
+      "Active sidebar",
       "False gates"
     ]
   },
@@ -7559,7 +7661,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ]
   },
   {
@@ -7585,6 +7687,11 @@
     "lockingMechanisms": [
       "Slider",
       "Sidebar"
+    ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
     ]
   },
   {
@@ -7608,6 +7715,11 @@
     "lockingMechanisms": [
       "Sidebar",
       "Pin-tumbler"
+    ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -7687,6 +7799,9 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "features": [
+      "Magnet"
     ]
   },
   {
@@ -7709,6 +7824,9 @@
     ],
     "lockingMechanisms": [
       "Dimple",
+      "Magnet"
+    ],
+    "features": [
       "Magnet"
     ],
     "notes": "Must be picked with bible oriented down"
@@ -7743,6 +7861,10 @@
     "version": "spooled drivers, < 3 countermilled outer keypins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin",
+      "Undercut milling"
     ],
     "media": [
       {
@@ -7797,6 +7919,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "links": [
       {
         "title": "LPForensics_MTL",
@@ -7819,6 +7944,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin"
     ]
   },
   {
@@ -7851,6 +7979,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Tapered drivers"
+    ],
     "media": [
       {
         "title": "By: Least",
@@ -7876,7 +8007,10 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
+    ],
+    "features": [
+      "Tapered drivers"
     ],
     "media": [
       {
@@ -7902,6 +8036,12 @@
         "model": "UX"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Greenish",
@@ -7925,6 +8065,9 @@
         "make": "Pollux",
         "model": "5"
       }
+    ],
+    "lockingMechanisms": [
+      "Pump"
     ]
   },
   {
@@ -7996,8 +8139,15 @@
     "belt": "purple",
     "makeModels": [
       {
-        "model": "Sepa HDS"
+        "make": "Sepa",
+        "model": "HDS"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -8015,6 +8165,10 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Tapered drivers",
+      "Interactive element"
     ]
   },
   {
@@ -8028,6 +8182,10 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Tapered drivers",
+      "Interactive element"
     ]
   },
   {
@@ -8054,7 +8212,7 @@
       "Sidebar"
     ],
     "features": [
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -8122,6 +8280,10 @@
     "lockingMechanisms": [
       "Dimple",
       "Slider"
+    ],
+    "features": [
+      "Sliders",
+      "Active sidebar"
     ]
   },
   {
@@ -8161,6 +8323,10 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Classic"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/5/58/Abloy.pdf"
       }
     ]
   },
@@ -8266,6 +8432,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -8286,6 +8455,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -8325,8 +8497,8 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Characteristic hellish keyway",
+      "Serrated/threaded milling",
+      "Hellish keyway",
       "Guttable",
       "Forked keypins"
     ],
@@ -8360,6 +8532,14 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_d12"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
+      },
+      {
+        "title": "Toool.nl",
+        "url": "https://blackbag.toool.nl/?p=1797"
       }
     ]
   },
@@ -8425,8 +8605,8 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Active Sidebar",
+      "Serrated/threaded milling",
+      "Active sidebar",
       "Rotating fingerpins",
       "Guttable"
     ],
@@ -8458,6 +8638,11 @@
     "lockingMechanisms": [
       "Slider"
     ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -8485,6 +8670,11 @@
     "version": "12 pins, 5-6 mastered pins",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -8529,7 +8719,8 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "Bks Multipin"
+        "make": "BKS",
+        "model": "Multipin"
       }
     ],
     "lockingMechanisms": [
@@ -8562,10 +8753,10 @@
     "makeModels": [
       {
         "make": "Bricard",
-        "model": "Chifral (all versions)"
+        "model": "Chifral"
       }
     ],
-    "version": "fully pinned",
+    "version": "all versions, fully pinned",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8592,6 +8783,9 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -8628,6 +8822,9 @@
     "version": "≥15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -8644,8 +8841,8 @@
       "Dimple"
     ],
     "features": [
-      "Finned keypins",
-      "Torpedoes"
+      "Shark fin keypins",
+      "Torpedo keypins"
     ]
   },
   {
@@ -8659,6 +8856,10 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Torpedo keypins",
+      "Interactive element"
     ]
   },
   {
@@ -8784,7 +8985,11 @@
     ],
     "version": "w/ false gates || 4-6 mastered levers",
     "lockingMechanisms": [
-      "Other"
+      "Lever/sidebar"
+    ],
+    "features": [
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -8867,6 +9072,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Peaceweapon",
@@ -8903,8 +9111,8 @@
     ],
     "features": [
       "Overmilling",
-      "Torpedoes",
-      "Guttable"
+      "Torpedo keypins",
+      "High pin count"
     ],
     "media": [
       {
@@ -8941,9 +9149,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Overmilling",
-      "Guttable"
+      "Gin spool drivers",
+      "Overmilling"
     ],
     "media": [
       {
@@ -9012,7 +9219,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump"
     ],
     "links": [
       {
@@ -9035,7 +9242,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump"
     ]
   },
   {
@@ -9050,6 +9257,9 @@
     "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -9064,6 +9274,9 @@
     "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -9078,6 +9291,9 @@
     "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -9106,6 +9322,9 @@
     "version": "<14 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -9122,7 +9341,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Active Sidebar",
+      "Active sidebar",
       "False gates"
     ]
   },
@@ -9148,6 +9367,9 @@
         "model": "Rols"
       }
     ],
+    "lockingMechanisms": [
+      "Pump"
+    ],
     "links": [
       {
         "title": "LocksNest",
@@ -9171,6 +9393,9 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -9196,7 +9421,10 @@
         "model": "3007 Safe lock"
       }
     ],
-    "version": "7 lever"
+    "version": "7 lever",
+    "lockingMechanisms": [
+      "Lever"
+    ]
   },
   {
     "id": "236027a0",
@@ -9307,6 +9535,11 @@
       "Sidebar",
       "Slider"
     ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: Peaceweapon",
@@ -9334,9 +9567,6 @@
     "lockingMechanisms": [
       "Dimple",
       "Sidebar"
-    ],
-    "features": [
-      "Unguttable"
     ],
     "notes": "Photos taken from lockwiki licensed under the [Creative Commons Attribution ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)",
     "media": [
@@ -9429,6 +9659,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -9474,6 +9707,9 @@
     "version": "Spooled inner drivers with > 3 counter milled outer keypins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin"
     ],
     "media": [
       {
@@ -9618,6 +9854,13 @@
     "lockingMechanisms": [
       "Pin-tumbler",
       "Slider"
+    ],
+    "features": [
+      "Gin spool drivers",
+      "Active sidebar",
+      "Sliders",
+      "False gates",
+      "Undercut milling"
     ],
     "media": [
       {
@@ -9889,6 +10132,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -9912,8 +10158,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Countermilling - undercut",
+      "Gin spool drivers",
+      "Undercut milling",
       "Guttable"
     ]
   },
@@ -9932,29 +10178,33 @@
     ],
     "features": [
       "Xmas tree drivers",
-      "Gin bottle drivers",
-      "Countermilling - undercut",
+      "Gin spool drivers",
+      "Undercut milling",
       "Tapered drivers",
       "Guttable"
     ],
     "media": [
       {
-        "title": "By: Xarragon",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Assa_700_cylinders_front_and_back.jpeg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_700_cylinders_front_and_back.jpeg"
-      },
-      {
         "title": "By: PeaceWeapon",
         "subtitle": "CC BY-NC-ND 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/fl/52687879495_024db3cffe.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687879495/"
+      },
+      {
+        "title": "By: Peaceweapon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52687732884_5378fe1382_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687732884/in/album-72177720305999987/"
       }
     ],
     "links": [
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
       }
     ]
   },
@@ -9978,8 +10228,8 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Active Sidebar",
+      "Serrated/threaded milling",
+      "Active sidebar",
       "False gates",
       "Sidepins",
       "Guttable"
@@ -9997,6 +10247,11 @@
     "version": "12 pins, 3-4 mastered pins",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -10084,6 +10339,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Interlocking pins"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -10125,8 +10383,8 @@
     ],
     "features": [
       "Interactive element",
-      "Torpedoes",
-      "Finned keypins"
+      "Torpedo keypins",
+      "Shark fin keypins"
     ],
     "media": [
       {
@@ -10168,9 +10426,9 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Magic DOM drivers",
+      "\"Magic\" DOM drivers",
       "Sidepins",
-      "Torpedoes"
+      "Torpedo keypins"
     ],
     "media": [
       {
@@ -10243,7 +10501,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -10275,7 +10533,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -10422,6 +10680,9 @@
         "make": "FTH -THIRARD",
         "model": "FTH Surveyor"
       }
+    ],
+    "lockingMechanisms": [
+      "Pump"
     ]
   },
   {
@@ -10443,7 +10704,7 @@
     ],
     "features": [
       "Overmilling",
-      "Torpedoes",
+      "Torpedo keypins",
       "High pin count"
     ],
     "media": [
@@ -10487,7 +10748,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin bottle drivers",
+      "Gin spool drivers",
       "Overmilling"
     ],
     "media": [
@@ -10566,9 +10827,9 @@
     ],
     "features": [
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Guttable"
     ]
   },
@@ -10584,6 +10845,9 @@
     "version": "13+ pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -10606,6 +10870,9 @@
     "version": "4 directions, < 15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -10670,6 +10937,9 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -10688,6 +10958,9 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -10717,6 +10990,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -10744,6 +11020,9 @@
     "version": "≥14 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -10758,6 +11037,9 @@
     "version": "<15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -10792,6 +11074,9 @@
     "version": "5+ directions, <16 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -10836,6 +11121,9 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "features": [
+      "Magnet"
     ]
   },
   {
@@ -10847,7 +11135,7 @@
         "model": "PR"
       }
     ],
-    "version": "<7 unmastered wafers",
+    "version": "<7 unmastered levers",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -10865,7 +11153,7 @@
         "model": "DN"
       }
     ],
-    "version": "7-8 unmastered wafers",
+    "version": "7-8 unmastered levers",
     "lockingMechanisms": [
       "Lever/Sidebar"
     ]
@@ -10944,7 +11232,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump"
     ]
   },
   {
@@ -10963,9 +11251,9 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Guttable"
     ]
   },
@@ -10984,10 +11272,10 @@
       "Sidepins"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Countermilling - undercut",
+      "Gin spool drivers",
+      "Undercut milling",
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Guttable"
     ]
   },
@@ -11032,9 +11320,9 @@
       "Sidepins"
     ],
     "features": [
-      "Active Sidebar",
+      "Active sidebar",
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Rotating fingerpins",
       "Guttable"
     ]
@@ -11094,6 +11382,9 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "features": [
+      "Magnet"
     ]
   },
   {
@@ -11148,6 +11439,9 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -11179,6 +11473,9 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -11193,6 +11490,9 @@
     "version": "9-13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -11218,6 +11518,12 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
+    ],
+    "links": [
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/f/f3/Abloypart2.pdf"
+      }
     ]
   },
   {
@@ -11244,6 +11550,10 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Exec"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/f/f3/Abloypart2.pdf"
       }
     ]
   },
@@ -11271,6 +11581,10 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Abloy_Protec"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/8/8a/Abloypart3.pdf"
       }
     ]
   },
@@ -11314,24 +11628,34 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin bottle drivers",
+      "Gin spool drivers",
       "Tapered drivers",
-      "Countermilling - undercut",
+      "Undercut milling",
       "Xmas tree drivers",
       "Guttable"
     ],
     "media": [
       {
-        "title": "By: Xarragon",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Assa_700_cylinders_front_and_back.jpeg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_700_cylinders_front_and_back.jpeg"
+        "title": "By: Peaceweapon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52687732884_5378fe1382_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687732884/in/album-72177720305999987/"
+      },
+      {
+        "title": "By: Peaceweapon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52687953803_4ddb5f01c5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687953803/in/album-72177720305999987/"
       }
     ],
     "links": [
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_700"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://hanfeylocktechnologies.com/Han_Fey_ASSA_d12.pdf"
       }
     ]
   },
@@ -11364,8 +11688,8 @@
     "features": [
       "Sidepins",
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Active Sidebar",
+      "Serrated/threaded milling",
+      "Active sidebar",
       "Guttable"
     ],
     "media": [
@@ -11398,10 +11722,10 @@
       "Sidepins"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Countermilling - undercut",
+      "Gin spool drivers",
+      "Undercut milling",
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Guttable"
     ],
     "media": [
@@ -11420,6 +11744,10 @@
       {
         "title": "Lockwiki",
         "url": "https://www.lockwiki.com/index.php/ASSA_Twin_6000"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
       },
       {
         "title": "HanFey",
@@ -11483,9 +11811,9 @@
     ],
     "features": [
       "Rotating fingerpins",
-      "Active Sidebar",
+      "Active sidebar",
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Guttable"
     ],
     "media": [
@@ -11561,9 +11889,9 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Guttable"
     ]
   },
@@ -11587,9 +11915,9 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
+      "Serrated/threaded milling",
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Guttable"
     ],
     "media": [
@@ -11628,6 +11956,10 @@
       {
         "title": "Lockwiki",
         "url": "https://www.lockwiki.com/index.php/ASSA_Twin_6000"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
       },
       {
         "title": "HanFey",
@@ -11683,8 +12015,8 @@
     ],
     "features": [
       "Barrel drivers",
-      "Countermilling - serrated/threaded",
-      "Active Sidebar",
+      "Serrated/threaded milling",
+      "Active sidebar",
       "Sidepins",
       "Guttable"
     ],
@@ -11734,6 +12066,10 @@
       {
         "title": "HanFey",
         "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
       }
     ]
   },
@@ -11752,10 +12088,10 @@
       "Sidepins"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Countermilling - undercut",
+      "Gin spool drivers",
+      "Undercut milling",
       "Sidepins",
-      "Active Sidebar",
+      "Active sidebar",
       "Guttable"
     ],
     "notes": "upgrade of ASSA Twin v10",
@@ -11787,6 +12123,11 @@
     "lockingMechanisms": [
       "Slider"
     ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -11815,6 +12156,11 @@
     "lockingMechanisms": [
       "Slider"
     ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -11842,6 +12188,11 @@
     "version": "2nd/3rd gen",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
     ]
   },
   {
@@ -11856,6 +12207,11 @@
     "version": "Picked to Control",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "False gates",
+      "Sliders",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -11884,6 +12240,9 @@
     "version": "14 or more pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -11985,6 +12344,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -11999,6 +12361,9 @@
     "version": "20 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -12006,12 +12371,15 @@
     "belt": "black1",
     "makeModels": [
       {
-        "make": "Corbin",
+        "make": "Corbin Russwin",
         "model": "Emhart with 2+ mastered chambers"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Interlocking pins"
     ],
     "media": [
       {
@@ -12066,8 +12434,8 @@
       "Dimple"
     ],
     "features": [
-      "Finned keypins",
-      "Torpedoes",
+      "Shark fin keypins",
+      "Torpedo keypins",
       "Interactive element"
     ],
     "media": [
@@ -12134,7 +12502,7 @@
       "Slider"
     ],
     "features": [
-      "Active Sidebar",
+      "Active sidebar",
       "False gates"
     ],
     "media": [
@@ -12167,7 +12535,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -12199,7 +12567,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -12249,7 +12617,7 @@
     ],
     "features": [
       "False gates",
-      "Active Sidebar"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -12536,6 +12904,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -12558,7 +12929,7 @@
     "features": [
       "Overmilling",
       "High pin count",
-      "Torpedoes"
+      "Torpedo keypins"
     ],
     "media": [
       {
@@ -12607,7 +12978,7 @@
     "features": [
       "Overmilling",
       "High pin count",
-      "Torpedoes"
+      "Torpedo keypins"
     ],
     "media": [
       {
@@ -12650,8 +13021,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin bottle drivers",
-      "Torpedoes",
+      "Gin spool drivers",
+      "Torpedo keypins",
       "Overmilling"
     ],
     "media": [
@@ -12684,7 +13055,7 @@
     ],
     "features": [
       "High pin count",
-      "Torpedoes"
+      "Torpedo keypins"
     ]
   },
   {
@@ -12703,7 +13074,7 @@
     ],
     "features": [
       "Rotating fingerpins",
-      "Active Sidebar",
+      "Active sidebar",
       "Tapered drivers",
       "Guttable"
     ],
@@ -12722,6 +13093,10 @@
     "lockingMechanisms": [
       "Pin-tumbler",
       "Slider"
+    ],
+    "features": [
+      "High pin count",
+      "Active sidebar"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
@@ -12758,6 +13133,10 @@
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
+    ],
+    "features": [
+      "High pin count",
+      "Active sidebar"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
@@ -12801,6 +13180,9 @@
     "version": "15 or more pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -12866,6 +13248,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Yagias",
@@ -12899,6 +13284,9 @@
     "version": "21 or more pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -12938,6 +13326,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -12970,6 +13361,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -12997,6 +13391,9 @@
     "version": "5+ rows, 16-20 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -13011,6 +13408,9 @@
     "version": "5+ rows, 21 or more pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -13046,6 +13446,9 @@
     "version": "with pyramid drivers",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -13194,9 +13597,9 @@
     "features": [
       "Pin-in-pin",
       "Interactive element",
-      "Active Sidebar",
+      "Active sidebar",
       "Sliders",
-      "Countermilling - undercut",
+      "Undercut milling",
       "False gates"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
@@ -13377,6 +13780,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -13389,10 +13795,9 @@
       },
       {
         "make": "Chubb",
-        "model": "Detector"
+        "model": "Detector from 1950's"
       }
     ],
-    "version": "from 1950's",
     "lockingMechanisms": [
       "Lever"
     ]
@@ -13542,6 +13947,9 @@
     "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -13555,6 +13963,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
