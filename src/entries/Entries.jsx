@@ -7,8 +7,9 @@ import AppContext from '../contexts/AppContext.jsx'
 
 function Entries() {
     const {visibleEntries, beltedEntries} = useContext(DataContext)
-    const {tab} = useContext(AppContext)
+    const {tab, expanded, setExpanded} = useContext(AppContext)
     const defTab = useDeferredValue(tab)
+    const defExpanded = useDeferredValue(expanded)
 
     const entries = useMemo(() => {
         if (defTab === 'search') {
@@ -25,7 +26,14 @@ function Entries() {
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
-                {entries.map(datum => <Entry key={datum.id} entry={datum}/>)}
+                {entries.map(entry =>
+                    <Entry
+                        key={entry.id}
+                        entry={entry}
+                        expanded={entry.id === defExpanded}
+                        onExpand={setExpanded}
+                    />
+                )}
             </div>
 
         </React.Fragment>

@@ -19,18 +19,28 @@ export function AppProvider({children}) {
         }
         return 'white'
     })
+    const [expanded, setExpanded] = useState(filters.id)
+
+    const handleSetExpanded = useCallback(newValue => {
+        if (filters.id && newValue !== filters.id) {
+            setTimeout(() => removeFilter('id'), 0)
+        }
+        setExpanded(newValue)
+    }, [filters.id, removeFilter])
 
     const handleSetTab = useCallback(tab => {
         setTab(tab)
-        if (filters.id) {
-            setTimeout(() => removeFilter('id'), 100)
+        if (expanded !== 'beltreqs') {
+            handleSetExpanded(false)
         }
-    }, [filters.id, removeFilter])
+    }, [expanded, handleSetExpanded])
 
     const value = useMemo(() => ({
         tab,
-        setTab: handleSetTab
-    }), [handleSetTab, tab])
+        setTab: handleSetTab,
+        expanded,
+        setExpanded: handleSetExpanded
+    }), [expanded, handleSetExpanded, handleSetTab, tab])
 
     return (
         <AppContext.Provider value={value}>

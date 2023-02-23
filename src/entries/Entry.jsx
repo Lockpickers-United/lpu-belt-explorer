@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -23,9 +23,8 @@ import CopyEntryButton from './CopyEntryButton.jsx'
 import Tracker from '../app/Tracker.jsx'
 import queryString from 'query-string'
 
-function Entry({entry}) {
-    const [expanded, setExpanded] = useState(!!entry.expanded)
-    const handleChange = (_, isExpanded) => setExpanded(isExpanded)
+function Entry({entry, expanded, onExpand}) {
+    const handleChange = (_, isExpanded) => onExpand(isExpanded ? entry.id : false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {starredEntries, setStorageValue} = useContext(StorageContext)
     const isStarred = starredEntries.includes(entry.id)
