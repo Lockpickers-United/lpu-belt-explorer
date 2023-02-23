@@ -1,4 +1,4 @@
-# Earn Lockpicking Karate Belt
+const e=`# Earn Lockpicking Karate Belt
 
 As a way to have fun, Lockpickers United gives its members the opportunity to earn karate belts. Belt flair (on reddit)
 or Belt role (on discord) is issued based on the accomplishments of the member, with each higher level requiring
@@ -234,15 +234,15 @@ use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 
-```
+\`\`\`
 @LPUBeltBot request BELTCOLOR https://image_or_video_link_here
-```
+\`\`\`
 
 If you wish to sync the belt to your user on Reddit you should use the following structure:
 
-```
+\`\`\`
 @LPUBeltBot request BELTCOLOR sync to /u/redditusername https://image_or_video_link_here
-```
+\`\`\`
 
 Any additional information can be added below in different lines if necessary, but the above formula must be in one
 line.
@@ -359,3 +359,4 @@ that we are doing so publicly, and provide an appropriate grace period (generall
 working on that lock to have time to get their accomplishment ranked at the old belt level.
 
 - See Changelog in the Discord for more information on all changes.
+`;export{e as default};
