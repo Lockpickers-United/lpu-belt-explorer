@@ -2960,8 +2960,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Sidepins"
+      "Pin-tumbler"
     ],
     "media": [
       {
@@ -3762,6 +3761,9 @@
         "make": "Federal Lock",
         "model": "5Y3110"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3772,6 +3774,9 @@
         "make": "Federal Lock",
         "model": "6Y3110"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -3806,6 +3811,9 @@
         "model": "P031"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
@@ -3816,6 +3824,13 @@
         "make": "ISEO",
         "model": "MC 6500"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Magnetic"
+    ],
+    "features": [
+      "Magnet"
     ]
   },
   {
@@ -3826,6 +3841,13 @@
         "make": "ISEO",
         "model": "MC5"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Magnetic"
+    ],
+    "features": [
+      "Magnet"
     ]
   },
   {
@@ -3927,6 +3949,9 @@
         "make": "Kasp",
         "model": "14040"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4129,6 +4154,9 @@
         "make": "Master Lock",
         "model": "6835"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4152,6 +4180,9 @@
         "make": "Master Lock",
         "model": "931"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4176,6 +4207,9 @@
         "model": "S32 LOTO (Lockout Tagout)"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Unguttable"
     ]
@@ -4188,6 +4222,9 @@
         "make": "Mauer",
         "model": "Elite 1"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -4198,6 +4235,9 @@
         "make": "MCM",
         "model": "SCX"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -4435,6 +4475,12 @@
         "make": "Tokoz",
         "model": "Beta"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   {
@@ -4445,6 +4491,9 @@
         "make": "Vachette",
         "model": "standard cylinder"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4495,6 +4544,9 @@
         "make": "Wilka",
         "model": "3VE"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -4545,7 +4597,10 @@
         "model": "VS"
       }
     ],
-    "version": "6-pin"
+    "version": "6-pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "a609fdb1",
@@ -4555,6 +4610,9 @@
         "make": "Winkhaus",
         "model": "ZRV"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4565,6 +4623,9 @@
         "make": "Winkhaus",
         "model": "ZRV6"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4575,6 +4636,9 @@
         "make": "Yale",
         "model": "210C/51"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -4784,7 +4848,10 @@
         "model": "Infinity"
       }
     ],
-    "version": "without magnet"
+    "version": "without magnet",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "d9e3829f",
@@ -4932,6 +4999,9 @@
         "make": "Bricard",
         "model": "Bloctout"
       }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
     ]
   },
   {
@@ -4942,6 +5012,9 @@
         "make": "Bricard",
         "model": "Serial S"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -5494,6 +5567,9 @@
         "make": "Federal Lock",
         "model": "6KD3110"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -5501,8 +5577,12 @@
     "belt": "blue",
     "makeModels": [
       {
-        "model": "Guard NVL"
+        "make": "Guard",
+        "model": "NVL"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -5650,6 +5730,9 @@
         "make": "Kale Kilit",
         "model": "164 YGS SE"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -5704,6 +5787,9 @@
         "make": "Lince",
         "model": "C4"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -7727,6 +7813,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Medeco_Original_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Medeco_Original_cylinder.jpg"
+      },
+      {
+        "title": "By: Opensourcefan",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52703310563_4c2ba856fb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52703310563/in/album-72177720305852425/"
+      },
+      {
+        "title": "By: Opensourcefan",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52703310558_ba86b9f889_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52703310558/in/album-72177720305852425/"
       },
       {
         "title": "By: Datagram",
@@ -11852,6 +11950,12 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52693626060_ef537b719f_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52693626060/in/dateposted-public/"
+      },
+      {
+        "title": "By: Yohapii",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52702712737_8684d7a002_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52702712737/in/album-72177720306179217/"
       }
     ],
     "links": [
