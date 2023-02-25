@@ -1643,6 +1643,18 @@
     ],
     "media": [
       {
+        "title": "By: cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/49/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/49/1.jpg"
+      },
+      {
+        "title": "By: cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/49/tn_3.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/49/3.jpg"
+      },
+      {
         "title": "By: Jan Willem",
         "subtitle": "CC BY-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52706668864_c61d42b946_w_d.jpg",
@@ -1675,14 +1687,6 @@
     "version": "normal pin tumblr, not dimple",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "media": [
-      {
-        "title": "By: Ben",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/ABUS_25_cutaway-Ben_tn.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS_25_cutaway-Ben.jpg"
-      }
     ]
   },
   {
@@ -1991,6 +1995,12 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/208px-FAB100_least.png",
         "fullUrl": "https://www.lockwiki.com/index.php/File:FAB100_least.png"
+      },
+      {
+        "title": "By: Least",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://lockwiki.com/images/thumb/0/00/FAB100_pins_least.png/520px-FAB100_pins_least.png",
+        "fullUrl": "https://lockwiki.com/index.php/File:FAB100_pins_least.png"
       }
     ],
     "links": [
@@ -2762,10 +2772,28 @@
     ],
     "media": [
       {
+        "title": "By: Peaceweapon",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52691713390_6f202fd9ed_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52691713390/in/album-72177720306051978/"
+      },
+      {
+        "title": "By: Dromicete",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52693606973_6ec9565162_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52693606973/in/album-72177720306051978/"
+      },
+      {
         "title": "By: Jan Willem",
         "subtitle": "CC BY-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52706668864_c61d42b946_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52706668864/in/album-72177720306051978/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52709026203_940aa38a74_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52709026203/in/album-72177720306051978/"
       }
     ]
   },
@@ -3077,7 +3105,7 @@
       },
       {
         "title": "By: m.c.",
-        "subtitle": "CC BY-SA 2.0",
+        "subtitle": "CC BY-NC-ND 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52667717586_c16092f408_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52667717586/in/dateposted-public/"
       }
@@ -4056,8 +4084,8 @@
       {
         "title": "By: Septclues",
         "subtitle": "CC BY-NC-ND 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52698426183_cd445773ef_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698426183/in/dateposted-public/"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698537060_52a5eee639_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698537060/in/dateposted-public/"
       }
     ],
     "links": [
@@ -5347,6 +5375,32 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "media": [
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52708457731_041c845b6f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52708457731/in/album-72177720306256263/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52708872265_e8a78c983c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52708872265/in/album-72177720306256263/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52708714289_31072371b4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52708714289/in/album-72177720306256263/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-ND 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52708714314_5b4c6b0cd1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52708714314/in/album-72177720306256263/"
+      }
     ]
   },
   {
@@ -5382,7 +5436,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-EVVA_DPI_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:EVVA_DPI_cylinder.jpg"
       },
@@ -5828,8 +5882,8 @@
       {
         "title": "By: Septclues",
         "subtitle": "CC BY-NC-ND 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52698537060_52a5eee639_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698537060/in/dateposted-public/"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52698426183_cd445773ef_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52698426183/in/dateposted-public/"
       }
     ],
     "links": [
@@ -5977,7 +6031,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Medeco_Biaxial_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Medeco_Biaxial_cylinder.jpg"
       }
@@ -7125,7 +7179,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-EVVA_DPI_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:EVVA_DPI_cylinder.jpg"
       }
@@ -8444,7 +8498,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/238px-ABUS_Plus_88_50_padlock.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS_Plus_88_50_padlock.jpg"
       }
@@ -8711,7 +8765,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-ASSA_Twin_Combi_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_Combi_cylinder.jpg"
       }
@@ -9396,7 +9450,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-KABA_Gemini_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:KABA_Gemini_cylinder.jpg"
       }
@@ -9924,7 +9978,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Schlage_Primus_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Schlage_Primus_cylinder.jpg"
       }
@@ -10205,7 +10259,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/238px-ABUS_Plus_88_50_padlock.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS_Plus_88_50_padlock.jpg"
       }
@@ -10285,7 +10339,7 @@
       {
         "title": "By: PeaceWeapon",
         "subtitle": "CC BY-NC-ND 4.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52687879495_024db3cffe.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52687879495_ca4b015f22_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687879495/"
       },
       {
@@ -10572,7 +10626,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-EVVA_3KS.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:EVVA_3KS.jpg"
       }
@@ -11094,7 +11148,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-KABA_Gemini_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:KABA_Gemini_cylinder.jpg"
       }
@@ -11639,7 +11693,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/291px-Abloy_Exec_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Abloy_Exec_cylinder.jpg"
       }
@@ -11917,7 +11971,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-ASSA_Twin_Combi_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_Combi_cylinder.jpg"
       },
@@ -12202,7 +12256,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-ASSA_Twin_V10_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_cylinder.jpg"
       }
@@ -12580,7 +12634,7 @@
     "media": [
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY 3.0",
+        "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-EVVA_3KS.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:EVVA_3KS.jpg"
       }
