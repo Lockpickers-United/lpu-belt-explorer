@@ -6528,12 +6528,13 @@
     "makeModels": [
       {
         "make": "Any",
-        "model": "SFIC format lock (unless otherwise specified)***"
+        "model": "SFIC format lock (unless otherwise specified)"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ]
+    ],
+    "notes": "Exempt from rule regarding minimum master wafers"
   },
   {
     "id": "96fd610e",
@@ -7892,7 +7893,8 @@
       "Rotating gated keypins",
       "False gates",
       "Active sidebar"
-    ]
+    ],
+    "notes": "Must be raked prior to picking to reset pin combination"
   },
   {
     "id": "826c31e0",
@@ -7921,6 +7923,7 @@
       "False gates",
       "Active sidebar"
     ],
+    "notes": "Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -7966,14 +7969,14 @@
       },
       {
         "title": "By:Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52675902062_d933912e3f_w_d.jpg",
+        "subtitle": "CC BY 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Medeco_Biaxial_key_bitting_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Medeco_Biaxial_key_bitting.jpg"
       },
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52676414816_b7e3196994_w_d.jpg",
+        "subtitle": "CC BY 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Medeco_Biaxial_pins_aligned_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Medeco_Biaxial_pins_aligned.jpg"
       },
       {
@@ -8507,9 +8510,11 @@
         "model": "SFIC with security pins"
       }
     ],
+    "version": "Must be picked to both shearlines in one take",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ]
+    ],
+    "notes": "Must have a total number of security pins that is equal to or higher than the number of pin stacks (see \"confirmed SFIC's with security pins\")"
   },
   {
     "id": "da09d849",
@@ -9758,6 +9763,7 @@
       "False gates",
       "Active sidebar"
     ],
+    "notes": "Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Peaceweapon",
@@ -9786,7 +9792,7 @@
       "Dimple",
       "Sidebar"
     ],
-    "notes": "Photos taken from lockwiki licensed under the [Creative Commons Attribution ShareAlike 3.0 License](https://creativecommons.org/licenses/by-sa/3.0/)",
+    "notes": "Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -10566,6 +10572,7 @@
     "features": [
       "Interlocking pins"
     ],
+    "notes": "Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -12248,25 +12255,25 @@
       {
         "title": "By: Datagram",
         "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52673748295_6ac58447f6_w_d.jpg",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/ASSA_Twin_cylinder_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_cylinder.jpg"
       },
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52673601859_fa8424ee2e_w_d.jpg",
+        "subtitle": "CC BY 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/ASSA_Twin_V10_counter_milling_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_counter_milling.jpg"
       },
       {
         "title": "By: Datagram",
         "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52672815942_df49303ecd_w_d.jpg",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/ASSA_Twin_sidebar_pin_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_sidebar_pin.jpg"
       },
       {
         "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52673811203_afc5e3fe09_w_d.jpg",
+        "subtitle": "CC BY 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/ASSA_Twin_V10_sidebar_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ASSA_Twin_V10_sidebar.jpg"
       },
       {
