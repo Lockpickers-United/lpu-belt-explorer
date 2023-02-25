@@ -401,7 +401,7 @@
 ### Purple Belt
 
 - [Any Lever Unknown/Generic lock](https://lpubelts.com/?id=a6a225e5)  (6 or 7 lever)
-- [Any SFIC format lock (unless otherwise specified)***](https://lpubelts.com/?id=c8259a23) 
+- [Any SFIC format lock (unless otherwise specified)](https://lpubelts.com/?id=c8259a23) 
 - [ABA 109582](https://lpubelts.com/?id=96fd610e) 
 - [ABUS Bravus 4000](https://lpubelts.com/?id=a062f1ee) 
 - [ABUS EP10](https://lpubelts.com/?id=20adf729) 
@@ -496,7 +496,7 @@
 
 ### Brown Belt
 
-- [Any SFIC with security pins](https://lpubelts.com/?id=b13f4b57) 
+- [Any SFIC with security pins](https://lpubelts.com/?id=b13f4b57)  (Must be picked to both shearlines in one take)
 - [Abloy Classic](https://lpubelts.com/?id=da09d849) 
 - [ABUS Plus](https://lpubelts.com/?id=b8350900)  (no butterfly discs)
 - [Aegis](https://lpubelts.com/?id=19fce24d)  (18 pin, 3 rows all spools)
