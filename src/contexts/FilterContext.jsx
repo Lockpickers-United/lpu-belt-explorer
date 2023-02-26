@@ -4,13 +4,7 @@ import queryString from 'query-string'
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
-    const [filters, setFilters] = useState(() => {
-        const query = queryString.parse(location.search)
-        return {
-            search: '',
-            ...query
-        }
-    })
+    const [filters, setFilters] = useState(() => queryString.parse(location.search))
 
     const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
         const oldValue = filters[keyToAdd]
@@ -54,14 +48,7 @@ export function FilterProvider({children}) {
     }, [filters])
 
     useEffect(() => {
-        const validFilters = Object.keys(filters)
-            .reduce((acc, key) => {
-                if (filters[key]) {
-                    acc[key] = filters[key]
-                }
-                return acc
-            }, {})
-        const query = queryString.stringify(validFilters)
+        const query = queryString.stringify(filters)
         const newUrl = new URL(window.location.href)
         newUrl.search = query
         history.replaceState({path: newUrl.href}, '', newUrl.href)

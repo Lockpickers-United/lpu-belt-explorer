@@ -1,29 +1,36 @@
-import React, {useContext} from 'react'
+import React, {useContext, useDeferredValue, useMemo} from 'react'
 import Entry from './Entry.jsx'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay.jsx'
 import BeltRequirements from '../info/BeltRequirements.jsx'
+import DataContext from '../contexts/DataContext.jsx'
 import AppContext from '../contexts/AppContext.jsx'
-import Progress from '../nav/Progress.jsx'
-import useSlowData from '../contexts/useSlowData.jsx'
 
 function Entries() {
-    const {expanded, setExpanded} = useContext(AppContext)
-    const {value, progress} = useSlowData()
+    const {visibleEntries, beltedEntries} = useContext(DataContext)
+    const {tab, expanded, setExpanded} = useContext(AppContext)
+    const defTab = useDeferredValue(tab)
+    const defExpanded = useDeferredValue(expanded)
+
+    const entries = useMemo(() => {
+        if (defTab === 'search') {
+            return visibleEntries
+        } else {
+            return beltedEntries[defTab]
+        }
+    }, [beltedEntries, defTab, visibleEntries])
 
     return (
         <React.Fragment>
-            <Progress value={progress}/>
-
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay/>
 
-                <BeltRequirements/>
+                {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
-                {value.map(entry =>
+                {entries.map(entry =>
                     <Entry
                         key={entry.id}
                         entry={entry}
-                        expanded={entry.id === expanded}
+                        expanded={entry.id === defExpanded}
                         onExpand={setExpanded}
                     />
                 )}

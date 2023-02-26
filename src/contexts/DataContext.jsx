@@ -3,6 +3,7 @@ import allEntries from '../data/data.json'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import StorageContext from './StorageContext.jsx'
+import {uniqueBelts} from '../data/belts.js'
 
 const DataContext = React.createContext({})
 
@@ -22,7 +23,6 @@ export function DataProvider({children}) {
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
                 ].filter(x => x),
-                simpleBelt: entry.belt.replace(/\d/g, ''),
                 expanded: id === entry.id
             }))
     }, [id, starredEntries])
@@ -54,10 +54,20 @@ export function DataProvider({children}) {
             : filtered
     }, [filters, search, mappedEntries])
 
+    const beltedEntries = useMemo(() => {
+        const beltedInitial = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), {})
+        return visibleEntries.reduce((acc, val) => {
+            const belt = val.belt.replace(/\d/g, '')
+            acc[belt].push(val)
+            return acc
+        }, beltedInitial)
+    }, [visibleEntries])
+
     const value = useMemo(() => ({
         allEntries,
-        visibleEntries
-    }), [visibleEntries])
+        visibleEntries,
+        beltedEntries
+    }), [visibleEntries, beltedEntries])
 
     return (
         <DataContext.Provider value={value}>

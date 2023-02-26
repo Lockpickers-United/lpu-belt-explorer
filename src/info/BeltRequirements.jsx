@@ -12,21 +12,20 @@ import {AccordionActions} from '@mui/material'
 import InfoButton from './InfoButton.jsx'
 import AppContext from '../contexts/AppContext.jsx'
 
-function BeltRequirements() {
-    const {tab, expanded, setExpanded} = useContext(AppContext)
+function BeltRequirements({belt}) {
+    const {expanded, setExpanded} = useContext(AppContext)
     const handleExpand = useCallback((_, isExpanded) => {
         setExpanded(isExpanded ? 'beltreqs' : false)
         window.scrollTo({top: 0, behavior: 'smooth'})
     }, [setExpanded])
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-    const markdown = beltRequirements[tab]
+    const markdown = beltRequirements[belt]
 
-    if (!tab || tab === 'search') return null
     return (
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                <BeltStripe value={tab}/>
-                <Typography variant='h6'>{belts[tab].label} Belt Requirements</Typography>
+                <BeltStripe value={belt}/>
+                <Typography variant='h6'>{belts[belt].label} Belt Requirements</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <ReactMarkdown>

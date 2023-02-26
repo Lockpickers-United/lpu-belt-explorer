@@ -38,7 +38,7 @@ function FilterButton({data}) {
                         vertical: 'bottom', horizontal: 'right'
                     }}
                 >
-                    <IconButton color='inherit' onClick={openDrawer} edge='end'>
+                    <IconButton color='inherit' onClick={openDrawer}>
                         <FilterAltIcon/>
                     </IconButton>
                 </Badge>
