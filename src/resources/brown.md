@@ -10,7 +10,7 @@ You must video picking and gutting accomplishments in one continuous take.
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping advancing and advanced pickers
-3. Have built a Challenge Lock and shared it with a fellow picker
+3. Have built a "Challenge Lock" and shared it with a fellow picker. Please visit the "Read More..." link below for more
+   information.
 4. Have made at least one specialized tool
-5. SPP and gut two different locks ranked as brown (locks have to be from 
-separate lines on the list) or similar
+5. SPP and gut two different locks ranked as Brown Belt (locks have to be from separate entries on the list) or similar

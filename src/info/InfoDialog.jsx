@@ -16,7 +16,7 @@ function InfoDialog({open, onClose}) {
     useEffect(() => {
         if (!infoText) {
             const loadInfoText = async () => {
-                const value = (await import('../data/info.md?raw')).default
+                const value = (await import('../resources/info.md?raw')).default
                 setInfoText(value)
             }
             loadInfoText()

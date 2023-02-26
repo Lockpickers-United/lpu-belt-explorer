@@ -19,11 +19,12 @@ Requirements:
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping advancing and advanced pickers
-3. Have built a Challenge Lock and shared it with a fellow picker
+3. Have built a "Challenge Lock" and shared it with a fellow picker. Please visit the "Read More..." link below for more
+   information.
 4. Have made at least one specialized tool and published the specs
 5. Mentor at least two advanced pickers through the process of getting into a difficult lock
 6. Complete at least two of the "Epic Quest Options" listed below
-7. SPP and gut two different locks ranked as Black Belt (locks have to be from separate lines on the list) or similar
+7. SPP and gut two different locks ranked as Black Belt (locks have to be from separate entries on the list) or similar
 
 Epic Quest Options (all subject to approval):
 
