@@ -9,7 +9,9 @@ function HomeButton() {
     const {clearFilters} = useContext(FilterContext)
     const handleClick = useCallback(() => {
         setTab('white')
-        setTimeout(() => clearFilters(true), 0)
+        window.scrollTo({top: 0, behavior: 'smooth'})
+
+        setTimeout(() => clearFilters(true), 50)
     }, [clearFilters, setTab])
 
     return (
