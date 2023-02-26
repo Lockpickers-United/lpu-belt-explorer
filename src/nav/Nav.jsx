@@ -2,7 +2,6 @@ import React, {useCallback, useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import FilterButton from '../filters/FilterButton.jsx'
-import GitHubButton from './GitHubButton.jsx'
 import HomeButton from './HomeButton.jsx'
 import SearchBox from './SearchBox.jsx'
 import Tabs from '@mui/material/Tabs'
@@ -44,7 +43,6 @@ function Nav() {
 
                     <InfoButton icon/>
                     <FilterButton/>
-                    <GitHubButton/>
                 </Toolbar>
             </AppBar>
 

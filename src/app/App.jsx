@@ -7,7 +7,7 @@ import {DataProvider} from '../contexts/DataContext.jsx'
 import {AppProvider} from '../contexts/AppContext.jsx'
 import Nav from '../nav/Nav.jsx'
 import Entries from '../entries/Entries.jsx'
-import Footer from './Footer.jsx'
+import Footer from '../nav/Footer.jsx'
 
 const darkTheme = createTheme({
     // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00
