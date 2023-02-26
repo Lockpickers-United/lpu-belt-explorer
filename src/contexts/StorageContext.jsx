@@ -42,9 +42,6 @@ export function StorageProvider({children}) {
 }
 
 const storageConfig = {
-    featureFlags: {
-        defaultValue: {}
-    },
     starredEntries: {
         defaultValue: []
     }
