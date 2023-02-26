@@ -23,9 +23,9 @@ export function DataProvider({children}) {
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
                 ].filter(x => x),
-                expanded: id === entry.id
+                simpleBelt: entry.belt.replace(/\d/g, '')
             }))
-    }, [id, starredEntries])
+    }, [starredEntries])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -54,20 +54,10 @@ export function DataProvider({children}) {
             : filtered
     }, [filters, search, mappedEntries])
 
-    const beltedEntries = useMemo(() => {
-        const beltedInitial = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), {})
-        return visibleEntries.reduce((acc, val) => {
-            const belt = val.belt.replace(/\d/g, '')
-            acc[belt].push(val)
-            return acc
-        }, beltedInitial)
-    }, [visibleEntries])
-
     const value = useMemo(() => ({
         allEntries,
-        visibleEntries,
-        beltedEntries
-    }), [visibleEntries, beltedEntries])
+        visibleEntries
+    }), [visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

@@ -15,7 +15,8 @@ function Entries() {
         if (defTab === 'search') {
             return visibleEntries
         } else {
-            return beltedEntries[defTab]
+            return visibleEntries
+                .filter(entry => entry.simpleBelt === defTab)
         }
     }, [beltedEntries, defTab, visibleEntries])
 
