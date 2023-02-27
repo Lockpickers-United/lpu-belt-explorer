@@ -632,6 +632,26 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: Alpama",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712485538_5ce6399de0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712485538/in/album-72177720306296543/"
+      },
+      {
+        "title": "By: Alpama",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712425030_2da76cee3d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712425030/in/album-72177720306296543/"
+      },
+      {
+        "title": "By: Alpama",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712425010_0658b2bd4a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712425010/in/album-72177720306296543/"
+      }
     ]
   },
   {
@@ -1560,6 +1580,14 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713540234_cb4b3e28ce_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713540234/in/album-72177720306294066/"
+      }
     ]
   },
   {
@@ -2743,6 +2771,14 @@
     ],
     "features": [
       "Guttable"
+    ],
+    "media": [
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713699700_d1faeb6102_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713699700/in/album-72177720306294056/"
+      }
     ]
   },
   {
@@ -2837,19 +2873,6 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52709026203_940aa38a74_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52709026203/in/album-72177720306051978/"
       }
-    ]
-  },
-  {
-    "id": "f97700ff",
-    "belt": "green",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "D6"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
     ]
   },
   {
@@ -4022,6 +4045,14 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713699715_d07db81645_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713699715/in/album-72177720306294061/"
+      }
     ]
   },
   {
@@ -4335,29 +4366,6 @@
     "lockingMechanisms": [
       "Dimple"
     ]
-  },
-  {
-    "id": "3700d537",
-    "belt": "green",
-    "makeModels": [
-      {
-        "make": "Mottura",
-        "model": "Champions C30"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C31"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C39"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Magnet"
-    ],
-    "notes": "Must be picked with the bible oriented down"
   },
   {
     "id": "abf55188",
@@ -4800,6 +4808,19 @@
       {
         "make": "ABUS",
         "model": "D10"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ]
+  },
+  {
+    "id": "f97700ff",
+    "belt": "blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "D6"
       }
     ],
     "lockingMechanisms": [
@@ -5716,6 +5737,10 @@
         "model": "Sk6 vector"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
@@ -5737,6 +5762,10 @@
         "make": "IKON",
         "model": "Undercut"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
@@ -6153,6 +6182,10 @@
         "make": "Metal",
         "model": "Zx5J"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Slider"
     ]
   },
   {
@@ -6204,6 +6237,29 @@
         "model": "Champions C29"
       }
     ]
+  },
+  {
+    "id": "3700d537",
+    "belt": "blue",
+    "makeModels": [
+      {
+        "make": "Mottura",
+        "model": "Champions C30"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C31"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C39"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Magnet"
+    ],
+    "notes": "Must be picked with the bible oriented down"
   },
   {
     "id": "0418a174",
@@ -6259,6 +6315,14 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712757847_dd870fae80_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712757847/in/album-72177720306294051/"
+      }
     ]
   },
   {
@@ -6440,6 +6504,9 @@
         "make": "Vachette",
         "model": "VIP+"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -6449,6 +6516,20 @@
       {
         "make": "VSR",
         "model": "2-row"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count"
+    ],
+    "media": [
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692794794_b5e79392be_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52692794794/in/album-72177720306266726/"
       }
     ]
   },
@@ -6460,6 +6541,9 @@
         "make": "Winkhaus",
         "model": "N-Tra"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -6470,6 +6554,10 @@
         "make": "Winkhaus",
         "model": "Titan"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
     ]
   },
   {
@@ -6480,6 +6568,9 @@
         "make": "Yale",
         "model": "500 series"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ],
     "features": [
       "Overmilling"
@@ -6504,7 +6595,7 @@
       "Slider"
     ],
     "features": [
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ]
   },
@@ -6911,8 +7002,7 @@
       "Slider"
     ],
     "features": [
-      "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -6945,7 +7035,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -7221,6 +7311,9 @@
         "make": "Elzett",
         "model": "X11"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -7291,7 +7384,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ],
     "media": [
       {
@@ -7348,6 +7441,12 @@
         "make": "IFAM",
         "model": "WX1000"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin"
     ]
   },
   {
@@ -7363,6 +7462,10 @@
     "lockingMechanisms": [
       "Pin-tumbler",
       "Slider"
+    ],
+    "features": [
+      "Sprung sliders",
+      "Active sidebar"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
@@ -7446,7 +7549,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ],
     "notes": "requires 360 for belting"
   },
@@ -7509,6 +7612,23 @@
     "version": "3 row, ≥9 pins",
     "lockingMechanisms": [
       "Dimple"
+    ]
+  },
+  {
+    "id": "41b91a0e",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "Kaba",
+        "model": "Ace"
+      }
+    ],
+    "version": "<13 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -8070,6 +8190,10 @@
         "make": "Mottura",
         "model": "Viper"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Sliders"
     ]
   },
   {
@@ -8298,7 +8422,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ]
   },
   {
@@ -8545,7 +8669,7 @@
       "Slider"
     ],
     "features": [
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -8583,37 +8707,6 @@
       "Pin-tumbler"
     ],
     "notes": "Must have a total number of security pins that is equal to or higher than the number of pin stacks (see \"confirmed SFIC's with security pins\")"
-  },
-  {
-    "id": "da09d849",
-    "belt": "brown",
-    "makeModels": [
-      {
-        "make": "Abloy",
-        "model": "Classic"
-      }
-    ],
-    "lockingMechanisms": [
-      "Disc Detainer"
-    ],
-    "media": [
-      {
-        "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/287px-Abloy_Classic_cylinder.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Abloy_Classic_cylinder.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Abloy_Classic"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/5/58/Abloy.pdf"
-      }
-    ]
   },
   {
     "id": "b8350900",
@@ -8746,6 +8839,32 @@
     ]
   },
   {
+    "id": "f85f4ac0",
+    "belt": "brown",
+    "makeModels": [
+      {
+        "make": "Anbo",
+        "model": "X18u"
+      },
+      {
+        "make": "Lex",
+        "model": "X18"
+      },
+      {
+        "make": "GLK",
+        "model": "X18"
+      },
+      {
+        "make": "Apec",
+        "model": "XS"
+      }
+    ],
+    "version": "Clavis X18 clones",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
+  },
+  {
     "id": "5329b0f3",
     "belt": "brown",
     "makeModels": [
@@ -8848,7 +8967,9 @@
       "Slider"
     ],
     "features": [
-      "Guttable"
+      "Guttable",
+      " Unsprung sliders",
+      " Active sidebar"
     ],
     "media": [
       {
@@ -8931,7 +9052,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -8964,7 +9085,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -9080,28 +9201,6 @@
     ]
   },
   {
-    "id": "f85f4ac0",
-    "belt": "brown",
-    "makeModels": [
-      {
-        "make": "Clavis",
-        "model": "X18 - Clavis Q18 clones (Anbo"
-      },
-      {
-        "model": " Lex"
-      },
-      {
-        "model": " GLK"
-      },
-      {
-        "model": " Apec XS...)"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ]
-  },
-  {
     "id": "bc03135a",
     "belt": "brown",
     "makeModels": [
@@ -9164,6 +9263,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Torpedo keypins"
     ]
   },
   {
@@ -9177,6 +9279,13 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Xmas tree drivers",
+      "Gin spool drivers",
+      "Undercut milling",
+      "Tapered drivers",
+      "Guttable"
     ],
     "media": [
       {
@@ -9222,12 +9331,27 @@
       "Slider",
       "Pin-tumbler"
     ],
+    "features": [
+      "Unsprung sliders"
+    ],
     "media": [
       {
         "title": "By: Least",
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/288px-FAB_Dynamic_least.png",
         "fullUrl": "https://www.lockwiki.com/index.php/File:FAB_Dynamic_least.png"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712984575_55c678e629_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712984575/in/album-72177720306299789/"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712984545_2aab7021bb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712984545/in/album-72177720306299789/"
       }
     ],
     "links": [
@@ -9358,7 +9482,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump/Push"
     ]
   },
   {
@@ -9536,7 +9660,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ],
     "links": [
       {
@@ -9559,7 +9683,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ]
   },
   {
@@ -9580,7 +9704,7 @@
     ]
   },
   {
-    "id": "41b91a0e",
+    "id": "434bdf9d",
     "belt": "brown",
     "makeModels": [
       {
@@ -9588,7 +9712,7 @@
         "model": "Ace"
       }
     ],
-    "version": "<13 pins",
+    "version": "≥13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -9685,7 +9809,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ],
     "links": [
       {
@@ -9773,6 +9897,9 @@
     "lockingMechanisms": [
       "Dimple",
       "Slider"
+    ],
+    "features": [
+      "Unsprung sliders"
     ],
     "media": [
       {
@@ -9884,7 +10011,13 @@
     ],
     "lockingMechanisms": [
       "Dimple",
+      "Slider",
       "Sidebar"
+    ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
     ],
     "notes": "Must be raked prior to picking to reset pin combination",
     "media": [
@@ -10092,7 +10225,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump/Push"
     ],
     "media": [
       {
@@ -10176,7 +10309,7 @@
     "features": [
       "Gin spool drivers",
       "Active sidebar",
-      "Sliders",
+      "Sprung sliders",
       "False gates",
       "Undercut milling"
     ],
@@ -10258,7 +10391,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump/Push"
     ]
   },
   {
@@ -10266,11 +10399,26 @@
     "belt": "brown",
     "makeModels": [
       {
-        "model": "VSR 3-row"
+        "make": "VSR",
+        "model": "3-row"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692794794_b5e79392be_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52692794794/in/album-72177720306266726/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52693016078_4d4a1e98e8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52693016078/in/album-72177720306266726/"
+      }
     ]
   },
   {
@@ -10322,6 +10470,37 @@
     "version": "<9 pins",
     "lockingMechanisms": [
       "Dimple"
+    ]
+  },
+  {
+    "id": "da09d849",
+    "belt": "red",
+    "makeModels": [
+      {
+        "make": "Abloy",
+        "model": "Classic"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
+    ],
+    "media": [
+      {
+        "title": "By: Datagram",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/287px-Abloy_Classic_cylinder.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Abloy_Classic_cylinder.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Abloy_Classic"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/5/58/Abloy.pdf"
+      }
     ]
   },
   {
@@ -10574,7 +10753,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung",
       "Active sidebar"
     ],
     "media": [
@@ -10666,7 +10845,7 @@
     "features": [
       "Interlocking pins"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination",
+    "notes": "Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
     "media": [
       {
         "title": "By: Datagram",
@@ -10795,6 +10974,11 @@
     "version": "without false gates or 1-3 mastered sliders",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "Unsprung sliders",
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -10933,9 +11117,13 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates || 2-3 mastered levers",
+    "version": "w/ false gates, 2-3 mastered levers",
     "lockingMechanisms": [
-      "Other"
+      "Lever"
+    ],
+    "features": [
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -10980,7 +11168,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pump/Push"
     ],
     "media": [
       {
@@ -11007,7 +11195,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ]
   },
   {
@@ -11305,23 +11493,6 @@
     ]
   },
   {
-    "id": "434bdf9d",
-    "belt": "red",
-    "makeModels": [
-      {
-        "make": "Kaba",
-        "model": "Ace"
-      }
-    ],
-    "version": "≥13 pins",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "High pin count"
-    ]
-  },
-  {
     "id": "0770580d",
     "belt": "red",
     "makeModels": [
@@ -11566,28 +11737,6 @@
     ]
   },
   {
-    "id": "ae7d3780",
-    "belt": "red",
-    "makeModels": [
-      {
-        "make": "Mottura",
-        "model": "Champions C43"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C44"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C48"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Other"
-    ]
-  },
-  {
     "id": "3daff112",
     "belt": "red",
     "makeModels": [
@@ -11611,7 +11760,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump"
+      "Pump/Push"
     ]
   },
   {
@@ -11733,7 +11882,8 @@
     ],
     "lockingMechanisms": [
       "Lever"
-    ]
+    ],
+    "notes": "S&G: Sargent & Greenleaf"
   },
   {
     "id": "cf76cfde",
@@ -12009,7 +12159,7 @@
   },
   {
     "id": "e87f0ca2",
-    "belt": "black3",
+    "belt": "black4",
     "makeModels": [
       {
         "make": "Abloy",
@@ -12102,10 +12252,10 @@
     "version": "6 pin with 10 sliders",
     "lockingMechanisms": [
       "Pin-tumbler",
-      "Sidepins"
+      "Sliders"
     ],
     "features": [
-      "Sidepins",
+      "Unsprung sliders",
       "Barrel drivers",
       "Serrated/threaded milling",
       "Active sidebar",
@@ -12550,7 +12700,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -12583,7 +12733,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -12616,7 +12766,7 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ]
   },
@@ -12635,9 +12785,10 @@
     ],
     "features": [
       "False gates",
-      "Sliders",
+      "Sprung sliders",
       "Active sidebar"
     ],
+    "notes": "l",
     "media": [
       {
         "title": "By: DoNotDuplicate",
@@ -12838,6 +12989,7 @@
     "features": [
       "Interlocking pins"
     ],
+    "notes": "Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
     "media": [
       {
         "title": "By: Datagram",
@@ -12924,11 +13076,17 @@
       },
       {
         "make": "EVVA",
-        "model": "4KS (with false gates and no mastered sliders)"
+        "model": "4KS"
       }
     ],
+    "version": "with false gates and no mastered sliders",
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "Unsprung sliders",
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -13142,12 +13300,66 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/296px-Mcs_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Mcs_cylinder.jpg"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/339/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/339/1.jpg"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/340/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/340/1.jpg"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/38/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/38/1.jpg"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692006577_0d859af42b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52692006577/in/album-72177720306280524/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713320324_622b6b6f8f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713320324/in/album-72177720306280524/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52712536702_c3e2af2bc4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712536702/in/album-72177720306280524/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713536878_eef0738736_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713536878/in/album-72177720306280524/"
       }
     ],
     "links": [
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/EVVA_MCS"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/EVVA/EVVA%20MCS_339.html"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/EVVA/EVVA%20MCS_340.html"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ZEISS-IKON/IKON%20M_38.html"
       }
     ]
   },
@@ -13164,9 +13376,13 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates || 1 mastered lever",
+    "version": "w/ false gates, 1 mastered lever",
     "lockingMechanisms": [
-      "Other"
+      "Lever"
+    ],
+    "features": [
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -13214,9 +13430,13 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates || 0 mastered levers",
+    "version": "w/ false gates, 0 mastered levers",
     "lockingMechanisms": [
-      "Other"
+      "Lever/sidebar"
+    ],
+    "features": [
+      "False gates",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -13262,7 +13482,7 @@
     ],
     "version": "indoor cylinder",
     "lockingMechanisms": [
-      "Other"
+      "Pump/Push"
     ],
     "media": [
       {
@@ -13292,9 +13512,9 @@
         "model": "F3D"
       }
     ],
-    "version": "outside cylinder, upgrade of indoor cylinder",
+    "version": "outside cylinder - upgrade of indoor cylinder",
     "lockingMechanisms": [
-      "Other"
+      "Pump/Push"
     ],
     "media": [
       {
@@ -13317,7 +13537,7 @@
   },
   {
     "id": "f048719a",
-    "belt": "black1",
+    "belt": "black2",
     "makeModels": [
       {
         "make": "Fichet-Bauche",
@@ -13935,6 +14155,9 @@
         "model": "LB"
       }
     ],
+    "lockingMechanisms": [
+      "Sliders"
+    ],
     "media": [
       {
         "title": "By: Legendofthesamurai",
@@ -13983,10 +14206,11 @@
         "model": "PR"
       }
     ],
-    "version": "7-8 unmastered elements, upgrade of Miwa PS",
+    "version": "7-8 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ]
+    ],
+    "notes": "upgrade of Miwa PS"
   },
   {
     "id": "21b61a85",
@@ -13997,10 +14221,11 @@
         "model": "PR"
       }
     ],
-    "version": "9-10 unmastered elements, upgrade of Miwa PS",
+    "version": "9-10 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ]
+    ],
+    "notes": "upgrade of Miwa PS"
   },
   {
     "id": "91f40022",
@@ -14011,10 +14236,11 @@
         "model": "PR"
       }
     ],
-    "version": "11 unmastered elements, upgrade of Miwa PS",
+    "version": "11 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
-    ]
+    ],
+    "notes": "upgrade of Miwa PS"
   },
   {
     "id": "71c7270b",
@@ -14042,6 +14268,31 @@
     "version": "9 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
+    ]
+  },
+  {
+    "id": "ae7d3780",
+    "belt": "black1",
+    "makeModels": [
+      {
+        "make": "Mottura",
+        "model": "Champions C43"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C44"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C48"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Other"
+    ],
+    "features": [
+      "Rotors"
     ]
   },
   {
@@ -14073,7 +14324,7 @@
       "Pin-in-pin",
       "Interactive element",
       "Active sidebar",
-      "Sliders",
+      "Unsprung sliders",
       "Undercut milling",
       "False gates"
     ],
