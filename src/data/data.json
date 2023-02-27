@@ -2876,6 +2876,19 @@
     ]
   },
   {
+    "id": "f97700ff",
+    "belt": "green",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "D6"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ]
+  },
+  {
     "id": "cf5bd73b",
     "belt": "green",
     "makeModels": [
@@ -4368,6 +4381,29 @@
     ]
   },
   {
+    "id": "3700d537",
+    "belt": "green",
+    "makeModels": [
+      {
+        "make": "Mottura",
+        "model": "Champions C30"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C31"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C39"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Magnet"
+    ],
+    "notes": "Must be picked with the bible oriented down"
+  },
+  {
     "id": "abf55188",
     "belt": "green",
     "makeModels": [
@@ -4724,7 +4760,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Yardeni"
+        "make": "Yardeni",
+        "model": "6"
       }
     ],
     "media": [
@@ -4808,19 +4845,6 @@
       {
         "make": "ABUS",
         "model": "D10"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ]
-  },
-  {
-    "id": "f97700ff",
-    "belt": "blue",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "D6"
       }
     ],
     "lockingMechanisms": [
@@ -6239,29 +6263,6 @@
     ]
   },
   {
-    "id": "3700d537",
-    "belt": "blue",
-    "makeModels": [
-      {
-        "make": "Mottura",
-        "model": "Champions C30"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C31"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C39"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Magnet"
-    ],
-    "notes": "Must be picked with the bible oriented down"
-  },
-  {
     "id": "0418a174",
     "belt": "blue",
     "makeModels": [
@@ -7615,23 +7616,6 @@
     ]
   },
   {
-    "id": "41b91a0e",
-    "belt": "purple",
-    "makeModels": [
-      {
-        "make": "Kaba",
-        "model": "Ace"
-      }
-    ],
-    "version": "<13 pins",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "High pin count"
-    ]
-  },
-  {
     "id": "898a7138",
     "belt": "purple",
     "makeModels": [
@@ -8637,6 +8621,37 @@
     ]
   },
   {
+    "id": "37914cb6",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "Walsall Locks",
+        "model": "Ace"
+      }
+    ],
+    "version": "7 lever",
+    "lockingMechanisms": [
+      "Lever"
+    ]
+  },
+  {
+    "id": "5958a65b",
+    "belt": "purple",
+    "makeModels": [
+      {
+        "make": "Western Electric",
+        "model": "29A"
+      },
+      {
+        "make": "Western Electric",
+        "model": "29B"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ]
+  },
+  {
     "id": "1be10736",
     "belt": "purple",
     "makeModels": [
@@ -8707,6 +8722,37 @@
       "Pin-tumbler"
     ],
     "notes": "Must have a total number of security pins that is equal to or higher than the number of pin stacks (see \"confirmed SFIC's with security pins\")"
+  },
+  {
+    "id": "da09d849",
+    "belt": "brown",
+    "makeModels": [
+      {
+        "make": "Abloy",
+        "model": "Classic"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
+    ],
+    "media": [
+      {
+        "title": "By: Datagram",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/287px-Abloy_Classic_cylinder.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Abloy_Classic_cylinder.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Abloy_Classic"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/5/58/Abloy.pdf"
+      }
+    ]
   },
   {
     "id": "b8350900",
@@ -9704,7 +9750,7 @@
     ]
   },
   {
-    "id": "434bdf9d",
+    "id": "41b91a0e",
     "belt": "brown",
     "makeModels": [
       {
@@ -9712,7 +9758,7 @@
         "model": "Ace"
       }
     ],
-    "version": "≥13 pins",
+    "version": "<13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -9875,6 +9921,9 @@
         "make": "Magnum",
         "model": "Mont Blanc"
       }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
     ]
   },
   {
@@ -10470,37 +10519,6 @@
     "version": "<9 pins",
     "lockingMechanisms": [
       "Dimple"
-    ]
-  },
-  {
-    "id": "da09d849",
-    "belt": "red",
-    "makeModels": [
-      {
-        "make": "Abloy",
-        "model": "Classic"
-      }
-    ],
-    "lockingMechanisms": [
-      "Disc Detainer"
-    ],
-    "media": [
-      {
-        "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/287px-Abloy_Classic_cylinder.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Abloy_Classic_cylinder.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Abloy_Classic"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/5/58/Abloy.pdf"
-      }
     ]
   },
   {
@@ -11354,6 +11372,9 @@
         "model": "Verso"
       }
     ],
+    "lockingMechanisms": [
+      "Sliders"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   {
@@ -11490,6 +11511,23 @@
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/MIWA_JN"
       }
+    ]
+  },
+  {
+    "id": "434bdf9d",
+    "belt": "red",
+    "makeModels": [
+      {
+        "make": "Kaba",
+        "model": "Ace"
+      }
+    ],
+    "version": "≥13 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -11734,6 +11772,31 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
+    ]
+  },
+  {
+    "id": "ae7d3780",
+    "belt": "red",
+    "makeModels": [
+      {
+        "make": "Mottura",
+        "model": "Champions C43"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C44"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C48"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Other"
+    ],
+    "features": [
+      "Rotors"
     ]
   },
   {
@@ -12159,7 +12222,7 @@
   },
   {
     "id": "e87f0ca2",
-    "belt": "black4",
+    "belt": "black3",
     "makeModels": [
       {
         "make": "Abloy",
@@ -13473,7 +13536,7 @@
   },
   {
     "id": "33056c0f",
-    "belt": "black4",
+    "belt": "black1",
     "makeModels": [
       {
         "make": "Fichet",
@@ -13537,7 +13600,7 @@
   },
   {
     "id": "f048719a",
-    "belt": "black2",
+    "belt": "black1",
     "makeModels": [
       {
         "make": "Fichet-Bauche",
@@ -14271,31 +14334,6 @@
     ]
   },
   {
-    "id": "ae7d3780",
-    "belt": "black1",
-    "makeModels": [
-      {
-        "make": "Mottura",
-        "model": "Champions C43"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C44"
-      },
-      {
-        "make": "Mottura",
-        "model": "Champions C48"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Other"
-    ],
-    "features": [
-      "Rotors"
-    ]
-  },
-  {
     "id": "649eaebc",
     "belt": "black1",
     "makeModels": [
@@ -14587,20 +14625,6 @@
     ]
   },
   {
-    "id": "37914cb6",
-    "belt": "black1",
-    "makeModels": [
-      {
-        "make": "Walsall Locks",
-        "model": "Ace"
-      }
-    ],
-    "version": "7 lever",
-    "lockingMechanisms": [
-      "Lever"
-    ]
-  },
-  {
     "id": "93e4cf5f",
     "belt": "black1",
     "makeModels": [
@@ -14645,19 +14669,6 @@
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/West_917_key_%2B_dimple_cuts_-_FXE47909_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:West_917_key_%2B_dimple_cuts_-_FXE47909.jpg"
       }
-    ]
-  },
-  {
-    "id": "5958a65b",
-    "belt": "black2",
-    "makeModels": [
-      {
-        "make": "Western Electric",
-        "model": "29B"
-      }
-    ],
-    "lockingMechanisms": [
-      "Lever"
     ]
   },
   {
