@@ -13105,7 +13105,7 @@
     "features": [
       "Interlocking pins"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
+    "notes": "**SPECIAL PICKING REQUIREMENT:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
     "media": [
       {
         "title": "By: Datagram",
