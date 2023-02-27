@@ -4397,6 +4397,7 @@
         "model": "Champions C39"
       }
     ],
+    "version": "**",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
@@ -6645,6 +6646,7 @@
         "model": "SFIC format lock (unless otherwise specified)"
       }
     ],
+    "version": "***",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -7907,7 +7909,7 @@
         "model": "MT5"
       }
     ],
-    "version": "VPI, heavily mastered",
+    "version": "VPI, heavily mastered ***",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
@@ -8026,7 +8028,7 @@
         "model": "Original Camlock"
       }
     ],
-    "version": "5+ pins",
+    "version": "5+ pins **",
     "lockingMechanisms": [
       "Slider",
       "Sidebar"
@@ -8055,7 +8057,7 @@
         "model": "M3"
       }
     ],
-    "version": "5+ pins",
+    "version": "5+ pins **",
     "lockingMechanisms": [
       "Sidebar",
       "Pin-tumbler"
@@ -8179,6 +8181,7 @@
         "model": "Champions C38"
       }
     ],
+    "version": "**",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
@@ -8739,7 +8742,7 @@
         "model": "SFIC with security pins"
       }
     ],
-    "version": "Must be picked to both shearlines in one take",
+    "version": "Must be picked to both shearlines in one take ****",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -10056,6 +10059,7 @@
         "model": "M3 Camlock"
       }
     ],
+    "version": "**",
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
@@ -10090,6 +10094,7 @@
         "model": "Duracam"
       }
     ],
+    "version": "**",
     "lockingMechanisms": [
       "Dimple",
       "Slider",
@@ -10898,7 +10903,7 @@
         "model": "Emhart"
       }
     ],
-    "version": "6 pins",
+    "version": "6 pins **",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -13096,16 +13101,17 @@
     "makeModels": [
       {
         "make": "Corbin Russwin",
-        "model": "Emhart with 2+ mastered chambers"
+        "model": "Emhart"
       }
     ],
+    "version": "2+ mastered chambers **",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
       "Interlocking pins"
     ],
-    "notes": "**SPECIAL PICKING REQUIREMENT:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
     "media": [
       {
         "title": "By: Datagram",
