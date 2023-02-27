@@ -4402,7 +4402,7 @@
       "Dimple",
       "Magnet"
     ],
-    "notes": "Must be picked with the bible oriented down"
+    "notes": "** **Special Picking Requirement:**\nMust be picked with the bible oriented down"
   },
   {
     "id": "abf55188",
@@ -6650,7 +6650,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "Exempt from rule regarding minimum master wafers"
+    "notes": "*** **Special Picking Requirement:** Exempt from rule regarding minimum master wafers"
   },
   {
     "id": "96fd610e",
@@ -7914,7 +7914,7 @@
       "Dimple",
       "Slider"
     ],
-    "notes": "Exempt from rule regarding maximum number of master wafers"
+    "notes": "*** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers"
   },
   {
     "id": "71833308",
@@ -8038,7 +8038,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination"
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination"
   },
   {
     "id": "826c31e0",
@@ -8067,7 +8067,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination",
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -8189,7 +8189,7 @@
     "features": [
       "Magnet"
     ],
-    "notes": "Must be picked with bible oriented down"
+    "notes": "** **Special Picking Requirement:**\n\nMust be picked with bible oriented down"
   },
   {
     "id": "8c76cc79",
@@ -8746,7 +8746,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "Must have a total number of security pins that is equal to or higher than the number of pin stacks (see \"confirmed SFIC's with security pins\")"
+    "notes": "**** **Special Picking Requirement:** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see \"confirmed SFIC's with security pins\")"
   },
   {
     "id": "da09d849",
@@ -10069,7 +10069,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination",
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Peaceweapon",
@@ -10105,7 +10105,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination",
+    "notes": "** **Special Picking Requirement:**\\n\\nMust be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -10910,7 +10910,7 @@
     "features": [
       "Interlocking pins"
     ],
-    "notes": "Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
     "media": [
       {
         "title": "By: Datagram",
