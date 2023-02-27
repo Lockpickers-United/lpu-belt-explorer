@@ -27,7 +27,7 @@ pajamas.
 
 --------------
 
-## FAQ
+## <a name="faq"></a>FAQ
 
 Question: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
 is appropriate for me?**
@@ -111,7 +111,7 @@ the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtX
 
 ----------
 
-## General Rules
+## <a name="general_rules"></a>General Rules
 
 - When making your belt request, please add the model of your lock into the request (if you know what it is.) There are
   hundreds of different models of lock commonly used around the world, and the mods are not immediately familiar with
@@ -192,7 +192,7 @@ the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtX
 
 ----------
 
-## Belt Request Instructions
+## <a name="general_rules_belts"></a>Belt Request Instructions
 
 ### REDDIT
 
@@ -249,7 +249,7 @@ line.
 
 ----------
 
-## Challenge Lock Requirements
+## <a name="challenge_locks"></a>Challenge Lock Requirements
 
 Blue Belt Picker and higher require that you have custom pinned a "Challenge Lock" and shared it with another picker (
 Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you
@@ -289,7 +289,7 @@ Stipulations:
 
 ----------
 
-## SFIC Filming Requirements
+## <a name="sfic_filming"></a>SFIC Filming Requirements
 
 SFIC (Small Format Interchangeable Core) locks can be gutted, but require expensive tools to do so. Normally, we require
 any lock that can be gutted, to be gutted in order to be eligible for belt rank, but due to the difficult and expensive,
@@ -316,12 +316,12 @@ to  [u/Tko5479](https://www.reddit.com/u/Tko5479)  for the photo example.
 You may pick the lock before showing the lock verification steps above, but the lock must remain in frame for the
 entirety of the video
 
-### For SFIC locks that do not have keys
+### <a name="sfic_keys"></a>For SFIC locks that do not have keys
 
 The lock must be picked to both control AND operating in one take, in addition to rule 1 above. Show the control lug is
 operating as intended (locked not moving, unlocked in control mode moving)
 
-### Confirmed SFIC's with security pins
+### <a name="sfic_security_pins"></a>Confirmed SFIC's with security pins
 
 Since it is not always an option to gut SFIC's for video, the following are SFIC's which are confirmed to meet the
 security pin requirements as listed in the Brown belt list:
@@ -341,7 +341,7 @@ Brown belt:
 
 ----------
 
-## Locks Scheduled for Reclassification
+## <a name="reclassification"></a>Locks Scheduled for Reclassification
 
 From time to time we may change the rankings of certain locks. These changes may be due to refined or new picking
 techniques making locks that were once difficult to pick, less so, or simply because we've decided they were improperly
@@ -358,5 +358,44 @@ before we announced the lock is being reclassified. When we move a lock down a r
 that we are doing so publicly, and provide an appropriate grace period (generally one month) to allow anyone currently
 working on that lock to have time to get their accomplishment ranked at the old belt level.
 
-- See Changelog in the Discord for more information on all changes.
+- See Changelog in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
+
+----------
+
+## Recent Changes: November 2022–February 2023
+
+### New Additions
+* **Dorma DC400 (Blue)** Interesting spools and tight tolerances make blue logical, though quite difficult amongst blue locks.
+* **Yanai R 2200M (Black 2)** A clone of the Clavis T20, this Japanese HPC lock is similar in difficulty.
+* **Goal S (5 pins) (Blue)** Similar to the Goal P and Z with less pins, blue seems to be an easy decision.
+* **Abus S6+ (Blue)** Spools and T-pins with tight tolerances make blue obvious.
+* **ASSA Twin Combi with Gin Drivers (Black 2)** A very rare lock, the addition of gin drivers means floating is needed, but the extra isolation keeps this lock at the same level as the barrel version.
+* **M&C Matrix without Sidebar (Blue)** Easy to overset, this downgrade of the M&C Matrix fits in at blue.
+* **Fuki Tierkey (Brown)** A 3 row HPC, this lock features many spools. Clear feedback, room to maneuvre, and the ability to preset leaves this lock as a solid brown.
+* **Cism Atlas (Red)** Now that this lock has been picked with feedback, its original ranking has been restored.
+
+### Upgrades
+* **Kaba Ace (≥13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
+* **Kaba Ace (<13 pins) (Purple -> Brown)** Upgraded alongside the other version.
+
+### Downgrades
+* **Abloy Protec2 (Black 4 -> Black 3)** A new method being discovered means this lock is no more difficult than the Protec.
+* **Abus D6 (Blue -> Green)** Despite the spools, this lock is lacking in difficulty for blue.
+* **Mottura Champions C30/C31/C39 (Blue -> Green)** As the magnetic element does not consistently work, there are far too many samples of this lock that are missing its unique feature, so it has been downgraded.
+* **Fichet-Bauche M2B / M3B / MxB (Black 2 -> Black 1)** Beyond the need for toolmaking, this is simply 8 tapered levers. There has been recent news of another more difficult version that will be added in a higher rank as more information comes.
+* **Mottura Champions C43/C44/C48 (Black 1 -> Red)** A tentative change, this lock has been reduced to red for the time being due to some feedback. It will be monitored and returning to Black 1 will be considered in the near future.
+* **Abloy Classic (Red -> Brown)** A second downgrade for this lock, once tooling is looked past, this lock is a standard DD lock with false gates.
+* **Western Electric 29A/B (Black 2 -> Purple)** Relabelled from Western Electric 29B, this lock has been downgraded thanks to a new method and more information on the lock - it features only 5 unsprung levers with false gates or 4 unsprung smooth levers and 1 sprung lever with false gates, and as such is far from black.
+* **Fichet F3D (indoor cylinder) (Black 4 -> Black 1)** A difficult lock in theory, this lock is unfortunately easy to accidentally open in the picking process, which causes it to be significantly weaker than its exterior version.
+* **Walsall locks, Ace - 7 levers (Black 1 -> Purple)** This lock was ranked by some mistake, as it features 7 false gated levers and an open keyway, being a lever lock often recommended to beginners.
+
+### Changes to Listing
+* **Robur Safe Deposit Lock (barrels < 3 chambers with matched milling)** and **Robur Safe Deposit Lock (gins < 3 chambers with matched milling)** are now samelined as with few security pins, they are almost identical locks. The versions with 3 or more security pins remain separate.
+* **West 916 -> West 916 / West 955** These are almost identical HPC locks.
+* **Miwa E6 -> Miwa E6 / Miwa 83EC** The 83EC has 2 less top pins and the same magnetic elements, which are the main part of the lock.
+* **S&G 4540 -> S&G 4544/4545** Renamed for clarity.
+* **Yardeni -> Yardeni 6** Renamed for clarity.
+
+### Clarification
+* **Fichet F3D External Cylinder** is considered an upgrade of Fichet F3D Indoor Cylinder. 
 `;export{e as default};
