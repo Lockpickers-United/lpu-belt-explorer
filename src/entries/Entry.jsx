@@ -122,7 +122,7 @@ function Entry({entry, expanded, onExpand}) {
                         }/>
                         {!!entry.notes &&
                             <FieldValue name='Notes' value={
-                                <Typography component='div'>
+                                <Typography component='div' style={{marginTop: -16}}>
                                     <ReactMarkdown linkTarget='_blank'>
                                         {entry.notes}
                                     </ReactMarkdown>
