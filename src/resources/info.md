@@ -27,7 +27,7 @@ pajamas.
 
 --------------
 
-## <a name="faq"></a>FAQ
+## FAQ
 
 Question: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
 is appropriate for me?**
@@ -111,7 +111,7 @@ the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtX
 
 ----------
 
-## <a name="general_rules"></a>General Rules
+## General Rules
 
 - When making your belt request, please add the model of your lock into the request (if you know what it is.) There are
   hundreds of different models of lock commonly used around the world, and the mods are not immediately familiar with
@@ -192,7 +192,7 @@ the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtX
 
 ----------
 
-## <a name="general_rules_belts"></a>Belt Request Instructions
+## Belt Request Instructions
 
 ### REDDIT
 
@@ -249,7 +249,7 @@ line.
 
 ----------
 
-## <a name="challenge_locks"></a>Challenge Lock Requirements
+## Challenge Lock Requirements
 
 Blue Belt Picker and higher require that you have custom pinned a "Challenge Lock" and shared it with another picker (
 Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you
@@ -289,7 +289,7 @@ Stipulations:
 
 ----------
 
-## <a name="sfic_filming"></a>SFIC Filming Requirements
+## SFIC Filming Requirements
 
 SFIC (Small Format Interchangeable Core) locks can be gutted, but require expensive tools to do so. Normally, we require
 any lock that can be gutted, to be gutted in order to be eligible for belt rank, but due to the difficult and expensive,
@@ -316,12 +316,12 @@ to  [u/Tko5479](https://www.reddit.com/u/Tko5479)  for the photo example.
 You may pick the lock before showing the lock verification steps above, but the lock must remain in frame for the
 entirety of the video
 
-### <a name="sfic_keys"></a>For SFIC locks that do not have keys
+### For SFIC locks that do not have keys
 
 The lock must be picked to both control AND operating in one take, in addition to rule 1 above. Show the control lug is
 operating as intended (locked not moving, unlocked in control mode moving)
 
-### <a name="sfic_security_pins"></a>Confirmed SFIC's with security pins
+### Confirmed SFIC's with security pins
 
 Since it is not always an option to gut SFIC's for video, the following are SFIC's which are confirmed to meet the
 security pin requirements as listed in the Brown belt list:
@@ -341,7 +341,7 @@ Brown belt:
 
 ----------
 
-## <a name="reclassification"></a>Locks Scheduled for Reclassification
+## Locks Scheduled for Reclassification
 
 From time to time we may change the rankings of certain locks. These changes may be due to refined or new picking
 techniques making locks that were once difficult to pick, less so, or simply because we've decided they were improperly
