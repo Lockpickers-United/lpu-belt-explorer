@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
 import licenses from '../data/licenses.js'
 import IconButton from '@mui/material/IconButton'
@@ -9,6 +9,10 @@ function ImageGallery({entry}) {
     const {width} = useWindowSize()
     const isMobile = width < 736
 
+    const handleClick = useCallback(url => {
+        return () => window.open(url, '_blank', 'noopener,noreferrer')
+    }, [])
+
     return (
         <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 0}}>
             {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl}, index) =>
@@ -16,7 +20,8 @@ function ImageGallery({entry}) {
                     <img
                         src={thumbnailUrl}
                         alt={title}
-                        style={{paddingBottom: subtitle ? 60 : 48}}
+                        style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
+                        onClick={handleClick(fullUrl)}
                     />
                     <ImageListItemBar
                         title={title}
