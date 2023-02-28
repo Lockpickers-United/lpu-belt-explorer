@@ -6,7 +6,7 @@ import DataContext from '../contexts/DataContext.jsx'
 import AppContext from '../contexts/AppContext.jsx'
 
 function Entries() {
-    const {visibleEntries, beltedEntries} = useContext(DataContext)
+    const {visibleEntries} = useContext(DataContext)
     const {tab, expanded, setExpanded} = useContext(AppContext)
     const defTab = useDeferredValue(tab)
     const defExpanded = useDeferredValue(expanded)
@@ -18,7 +18,7 @@ function Entries() {
             return visibleEntries
                 .filter(entry => entry.simpleBelt === defTab)
         }
-    }, [beltedEntries, defTab, visibleEntries])
+    }, [defTab, visibleEntries])
 
     return (
         <React.Fragment>

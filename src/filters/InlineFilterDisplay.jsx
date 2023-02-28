@@ -3,7 +3,7 @@ import {Card, CardActions, CardContent} from '@mui/material'
 import FilterDisplay from './FilterDisplay.jsx'
 import FilterContext from '../contexts/FilterContext.jsx'
 import ClearFiltersButton from './ClearFiltersButton.jsx'
-import useWindowSize from '../util/useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function InlineFilterDisplay() {
     const {filterCount} = useContext(FilterContext)

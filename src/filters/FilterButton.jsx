@@ -12,10 +12,12 @@ import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import AppContext from '../contexts/AppContext.jsx'
+import {useHotkeys} from 'react-hotkeys-hook'
 
 function FilterButton({data}) {
     const {tab, setTab} = useContext(AppContext)
     const [open, setOpen] = useState(false)
+    useHotkeys('f', () => setOpen(true))
 
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])

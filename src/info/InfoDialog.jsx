@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close.js'
 import Typography from '@mui/material/Typography'
 import {Dialog, DialogContent, Slide} from '@mui/material'
 import ReactMarkdown from 'react-markdown'
-import useWindowSize from '../util/useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function InfoDialog({open, onClose}) {
     const {width} = useWindowSize()

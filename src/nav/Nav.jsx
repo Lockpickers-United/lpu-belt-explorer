@@ -10,10 +10,11 @@ import BeltIcon from '../entries/BeltIcon.jsx'
 import {uniqueBelts} from '../data/belts.js'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
 import InfoButton from '../info/InfoButton.jsx'
-import useWindowSize from '../util/useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.jsx'
 import Tracker from '../app/Tracker.jsx'
 import AppContext from '../contexts/AppContext.jsx'
 import ScrollToTopButton from './ScrollToTopButton.jsx'
+import {useHotkeys} from 'react-hotkeys-hook'
 
 function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)
@@ -22,6 +23,9 @@ function Nav() {
     const tabWidthStyle = smallWidth
         ? {minWidth: tabWidth, maxWidth: tabWidth, opacity: 1}
         : {minWidth: 50, maxWidth: 50, opacity: 1}
+    useHotkeys('1,2,3,4,5,6,7,8,9', ({key}) => {
+        setTab(uniqueBelts[key - 1])
+    })
 
     const {tab, setTab} = useContext(AppContext)
 

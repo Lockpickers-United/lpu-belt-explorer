@@ -3,7 +3,6 @@ import allEntries from '../data/data.json'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import StorageContext from './StorageContext.jsx'
-import {uniqueBelts} from '../data/belts.js'
 
 const DataContext = React.createContext({})
 

@@ -3,7 +3,7 @@ import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
 import licenses from '../data/licenses.js'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch.js'
-import useWindowSize from '../util/useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function ImageGallery({entry}) {
     const {width} = useWindowSize()

@@ -1,18 +1,21 @@
-import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import {InputAdornment, TextField} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import FilterContext from '../contexts/FilterContext.jsx'
 import AppContext from '../contexts/AppContext.jsx'
-import useWindowSize from '../util/useWindowSize.js'
+import useWindowSize from '../util/useWindowSize.jsx'
 import debounce from 'debounce'
+import {useHotkeys} from 'react-hotkeys-hook'
 
 function SearchBox() {
     const {tab, setTab} = useContext(AppContext)
     const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const {width} = useWindowSize()
+    const inputEl = useRef()
+    useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
     const handleClear = useCallback(() => {
         setText('')
@@ -69,6 +72,9 @@ function SearchBox() {
         <TextField
             placeholder='Quick Search'
             InputProps={{
+                inputProps: {
+                    ref: inputEl
+                },
                 startAdornment: (
                     <InputAdornment position='start'>
                         <SearchIcon/>

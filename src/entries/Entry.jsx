@@ -118,7 +118,6 @@ function Entry({entry, expanded, onExpand}) {
                                 <Typography>{belts[entry.belt].label}</Typography>
                                 <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                             </React.Fragment>
-
                         }/>
                         {!!entry.notes &&
                             <FieldValue name='Notes' value={
