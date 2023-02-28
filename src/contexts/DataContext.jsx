@@ -1,5 +1,4 @@
-import React, {useContext, useMemo} from 'react'
-import allEntries from '../data/data.json'
+import React, {useContext, useEffect, useMemo, useState} from 'react'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext.jsx'
 import StorageContext from './StorageContext.jsx'
@@ -7,9 +6,18 @@ import StorageContext from './StorageContext.jsx'
 const DataContext = React.createContext({})
 
 export function DataProvider({children}) {
+    const [allEntries, setAllEntries] = useState([])
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
     const {search, id, ...filters} = allFilters
+
+    useEffect(() => {
+        const load = async () => {
+            const value = (await import('../data/data.json')).default
+            setAllEntries(value)
+        }
+        load()
+    }, [])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -24,7 +32,7 @@ export function DataProvider({children}) {
                 ].filter(x => x),
                 simpleBelt: entry.belt.replace(/\d/g, '')
             }))
-    }, [starredEntries])
+    }, [allEntries, starredEntries])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -56,8 +64,9 @@ export function DataProvider({children}) {
     const value = useMemo(() => ({
         allEntries,
         visibleEntries
-    }), [visibleEntries])
+    }), [allEntries, visibleEntries])
 
+    if (!allEntries.length) return null
     return (
         <DataContext.Provider value={value}>
             {children}
