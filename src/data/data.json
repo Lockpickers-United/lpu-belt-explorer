@@ -1,29 +1,5 @@
 [
   {
-    "id": "b22bdd44",
-    "belt": "white",
-    "makeModels": [
-      {
-        "make": "Any",
-        "model": "lock with any tool"
-      }
-    ],
-    "media": [
-      {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Clear_acrylic_practice_lock_-_FXE47413_tn.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Clear_acrylic_practice_lock_-_FXE47413.jpg"
-      },
-      {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
-      }
-    ]
-  },
-  {
     "id": "07034c0f",
     "belt": "white",
     "makeModels": [
@@ -31,9 +7,6 @@
         "make": "Any",
         "model": "Acrylic Padlock"
       }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
     ],
     "media": [
       {
@@ -82,6 +55,30 @@
     "version": "1 or 2 levers",
     "lockingMechanisms": [
       "Lever"
+    ]
+  },
+  {
+    "id": "b22bdd44",
+    "belt": "white",
+    "makeModels": [
+      {
+        "make": "Any",
+        "model": "lock with any tool"
+      }
+    ],
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Clear_acrylic_practice_lock_-_FXE47413_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Clear_acrylic_practice_lock_-_FXE47413.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
+      }
     ]
   },
   {
@@ -2623,6 +2620,9 @@
     "version": "4 levers",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Uncurtained"
     ]
   },
   {
@@ -2791,7 +2791,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ]
   },
   {
@@ -2804,7 +2804,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ],
     "media": [
       {
@@ -4792,6 +4792,10 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Rear tension"
+    ],
+    "notes": "Can be front tensioned and counterrotated",
     "media": [
       {
         "title": "By: Florida Man",
@@ -5201,7 +5205,8 @@
     "version": "uncurtained 5 lever",
     "lockingMechanisms": [
       "Lever"
-    ]
+    ],
+    "notes": "Uncurtained"
   },
   {
     "id": "5b842c0e",
@@ -5735,7 +5740,10 @@
         "model": "S"
       }
     ],
-    "version": "5 pins"
+    "version": "5 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "62bdbd5e",
@@ -5944,13 +5952,17 @@
     "belt": "blue",
     "makeModels": [
       {
-        "make": "KryPin",
-        "model": "tumbleronite Disk Detainer"
+        "make": "Kryptonite",
+        "model": "Disk Detainer"
       }
     ],
     "lockingMechanisms": [
       "Disc Detainer"
-    ]
+    ],
+    "features": [
+      "Random mid tension"
+    ],
+    "notes": "Readily picked with front tension and counter-rotation"
   },
   {
     "id": "adc2d335",
@@ -6114,7 +6126,10 @@
         "model": "Matrix"
       }
     ],
-    "version": "no sidebar"
+    "version": "no sidebar",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "2a02810c",
@@ -6775,6 +6790,10 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Front tension",
+      "False gates"
+    ],
     "media": [
       {
         "title": "By: autom8on",
@@ -7014,7 +7033,7 @@
     ]
   },
   {
-    "id": "1ca633a8",
+    "id": "f70b9b33",
     "belt": "purple",
     "makeModels": [
       {
@@ -7022,11 +7041,12 @@
         "model": "BiLock"
       }
     ],
-    "version": "8 sliders, 3-4 mastered",
+    "version": "12 sliders, 7-8 mastered",
     "lockingMechanisms": [
       "Slider"
     ],
     "features": [
+      "False gates",
       "Sprung sliders",
       "Active sidebar"
     ],
@@ -7046,7 +7066,7 @@
     ]
   },
   {
-    "id": "f70b9b33",
+    "id": "1ca633a8",
     "belt": "purple",
     "makeModels": [
       {
@@ -7054,12 +7074,11 @@
         "model": "BiLock"
       }
     ],
-    "version": "12 sliders, 7-8 mastered",
+    "version": "8 sliders, 3-4 mastered",
     "lockingMechanisms": [
       "Slider"
     ],
     "features": [
-      "False gates",
       "Sprung sliders",
       "Active sidebar"
     ],
@@ -8671,6 +8690,10 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe",
+      "False gates"
     ]
   },
   {
@@ -8688,6 +8711,12 @@
     ],
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Cabinet",
+      "Flat steel key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -8774,6 +8803,11 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Rear tension",
+      "False gates"
+    ],
+    "notes": "Old models can be front tensioned",
     "media": [
       {
         "title": "By: Datagram",
@@ -8805,6 +8839,10 @@
     "version": "no butterfly discs",
     "lockingMechanisms": [
       "Disc Detainer"
+    ],
+    "features": [
+      "Random mid tension",
+      "False gates"
     ],
     "media": [
       {
@@ -9123,7 +9161,7 @@
     ]
   },
   {
-    "id": "0b1a28ce",
+    "id": "9ed006d4",
     "belt": "brown",
     "makeModels": [
       {
@@ -9131,7 +9169,7 @@
         "model": "BiLock"
       }
     ],
-    "version": "8 pins, 0-2 mastered pins",
+    "version": "12 pins, 5-6 mastered pins",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -9156,7 +9194,7 @@
     ]
   },
   {
-    "id": "9ed006d4",
+    "id": "0b1a28ce",
     "belt": "brown",
     "makeModels": [
       {
@@ -9164,7 +9202,7 @@
         "model": "BiLock"
       }
     ],
-    "version": "12 pins, 5-6 mastered pins",
+    "version": "8 pins, 0-2 mastered pins",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -9578,6 +9616,12 @@
         "make": "Fuki",
         "model": "Tierkey"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   {
@@ -9591,7 +9635,12 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
-    ]
+    ],
+    "features": [
+      "Rear tension",
+      "False gates"
+    ],
+    "notes": "Can be picked with front tension but gated spinner complicates this"
   },
   {
     "id": "2929f922",
@@ -10044,6 +10093,11 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe",
+      "Pipe key",
+      "Double bitted"
     ]
   },
   {
@@ -10058,6 +10112,11 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe",
+      "Pipe key",
+      "Double bitted"
     ]
   },
   {
@@ -10584,6 +10643,11 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Rear tension",
+      "False gates"
+    ],
+    "notes": "Disc 4 needs picking early.  Generally gives muted, subtle feedback",
     "media": [
       {
         "title": "By: Datagram",
@@ -10611,6 +10675,12 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Rear tension",
+      "False gates",
+      "Profile discs"
+    ],
+    "notes": "Many keyway variations, warded spinners, rear profile spinner and profile discs",
     "media": [
       {
         "title": "By: Datagram",
@@ -10675,6 +10745,11 @@
     "version": "with butterfly discs",
     "lockingMechanisms": [
       "Disc Detainer"
+    ],
+    "features": [
+      "Random mid tension",
+      "False gates",
+      "Butterfly discs"
     ],
     "media": [
       {
@@ -10882,6 +10957,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -11228,7 +11309,7 @@
     ],
     "version": "w/ false gates, 2-3 mastered levers",
     "lockingMechanisms": [
-      "Lever"
+      "Lever/sidebar"
     ],
     "features": [
       "False gates",
@@ -11808,6 +11889,9 @@
     "version": "11 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe"
     ]
   },
   {
@@ -11887,6 +11971,10 @@
     "version": "<8 unmastered levers",
     "lockingMechanisms": [
       "Lever/Sidebar"
+    ],
+    "features": [
+      "Active sidebar",
+      "False gates"
     ]
   },
   {
@@ -11901,6 +11989,11 @@
     "version": "7 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Rim",
+      "Pin key",
+      "Double bitted"
     ]
   },
   {
@@ -11934,7 +12027,7 @@
     "makeModels": [
       {
         "make": "Mottura",
-        "model": "Champtions C55"
+        "model": "Champions C55"
       }
     ],
     "lockingMechanisms": [
@@ -12016,6 +12109,10 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Front/rear tension"
+    ],
+    "notes": "Hard to navigate and manipulate and often poor feedback",
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -12075,7 +12172,12 @@
     "lockingMechanisms": [
       "Lever"
     ],
-    "notes": "S&G: Sargent & Greenleaf"
+    "features": [
+      "Safe deposit",
+      "Flat steel key",
+      "false gates"
+    ],
+    "notes": "S&G=Sargent & Greenleaf"
   },
   {
     "id": "cf76cfde",
@@ -12145,6 +12247,10 @@
     "version": "10 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe",
+      "False gates"
     ]
   },
   {
@@ -12280,6 +12386,12 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Front/rear tension",
+      "Disc controller",
+      "False gates"
+    ],
+    "notes": "Two versions, padlock and door lock. For the door lock version, only one public pick and no means of performing wobble test known",
     "links": [
       {
         "title": "HanFey",
@@ -12298,6 +12410,11 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
+    ],
+    "features": [
+      "Rear tension",
+      "Disc steering system",
+      "False gates"
     ],
     "media": [
       {
@@ -12330,6 +12447,13 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Front tension",
+      "False gates",
+      "Bi-directional",
+      "Disc controller",
+      "Disc blocker system"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -12360,6 +12484,13 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
+    ],
+    "features": [
+      "Front tension",
+      "False gates",
+      "Bi-directional",
+      "Disc controller",
+      "Disc blocker system"
     ]
   },
   {
@@ -12373,7 +12504,13 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
-    ]
+    ],
+    "features": [
+      "Rear tension",
+      "Disc steering system",
+      "False gates"
+    ],
+    "notes": "Often can be front tensioned"
   },
   {
     "id": "f133510b",
@@ -12539,18 +12676,6 @@
         "url": "http://lockwiki.com/index.php/ASSA_Twin_6000"
       },
       {
-        "title": "Lockwiki",
-        "url": "https://www.lockwiki.com/index.php/ASSA_Twin_6000"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
-      },
-      {
         "title": "HanFey",
         "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
       },
@@ -12581,7 +12706,18 @@
         "model": "Twin Combi"
       }
     ],
-    "version": "with Gin Drivers"
+    "version": "with Gin Drivers",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Rotating fingerpins",
+      "Active sidebar",
+      "Gin spool drivers",
+      "Undercut milling",
+      "Guttable"
+    ]
   },
   {
     "id": "7168d463",
@@ -12768,12 +12904,8 @@
     ],
     "links": [
       {
-        "title": "Lockwiki",
+        "title": "LockWiki",
         "url": "https://www.lockwiki.com/index.php/ASSA_Twin_6000"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
       },
       {
         "title": "HanFey",
@@ -12876,10 +13008,6 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/ASSA_Twin_V-10"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/d/dc/Assa-twin-part1.pdf"
       },
       {
         "title": "HanFey",
@@ -13084,6 +13212,9 @@
     ],
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe"
     ]
   },
   {
@@ -13098,7 +13229,12 @@
     "version": "Standard mortice",
     "lockingMechanisms": [
       "Lever"
-    ]
+    ],
+    "features": [
+      "Mortice",
+      "False gates"
+    ],
+    "notes": "5 lever"
   },
   {
     "id": "2db935ea",
@@ -13112,6 +13248,11 @@
     "version": "jewellery box (Steel comb leaf spring)",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Cabinet",
+      "Pin/pipe key",
+      "False gates"
     ],
     "media": [
       {
@@ -13286,6 +13427,10 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
+    ],
+    "features": [
+      "Front tension",
+      "False gates"
     ]
   },
   {
@@ -13636,7 +13781,7 @@
     ],
     "version": "w/ false gates, 1 mastered lever",
     "lockingMechanisms": [
-      "Lever"
+      "Lever/sidebar"
     ],
     "features": [
       "False gates",
@@ -14512,6 +14657,10 @@
     "version": "8 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
+    ],
+    "features": [
+      "Active sidebar",
+      "False gates"
     ]
   },
   {
@@ -14526,6 +14675,10 @@
     "version": "9 unmastered elements",
     "lockingMechanisms": [
       "Lever/Sidebar"
+    ],
+    "features": [
+      "Active sidebar",
+      "False gates"
     ]
   },
   {
@@ -14586,6 +14739,11 @@
     "lockingMechanisms": [
       "Lever"
     ],
+    "features": [
+      "Safe",
+      "Pin key",
+      "Double bitted"
+    ],
     "media": [
       {
         "title": "By: MacGyver101",
@@ -14613,6 +14771,11 @@
     "version": "14 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Safe",
+      "Pin key",
+      "Double bitted"
     ],
     "media": [
       {
@@ -14700,7 +14863,13 @@
     ],
     "lockingMechanisms": [
       "Disc Detainer"
-    ]
+    ],
+    "features": [
+      "Front/rear tension",
+      "False gates",
+      "Curtain"
+    ],
+    "notes": "Curtain needs to be overcome. No means of correcting an overset known"
   },
   {
     "id": "db63c882",
@@ -14719,6 +14888,11 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Front/rear tension",
+      "False gates"
+    ],
+    "notes": "Hard to navigate and manipulate and often poor feedback",
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -14771,7 +14945,12 @@
     ],
     "lockingMechanisms": [
       "Lever"
-    ]
+    ],
+    "features": [
+      "Various formats",
+      "False gates"
+    ],
+    "notes": "Usually 5 levers"
   },
   {
     "id": "e4bb0668",
@@ -14831,6 +15010,11 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pipe key",
+      "False gates"
     ]
   },
   {
@@ -14844,6 +15028,9 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "High pin count"
     ],
     "media": [
       {
@@ -14877,6 +15064,11 @@
     ],
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Cabinet",
+      "Flat steel",
+      "Curtain"
     ]
   },
   {
