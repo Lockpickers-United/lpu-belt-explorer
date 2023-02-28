@@ -31,7 +31,7 @@ function FilterButton({data}) {
 
     return (
         <React.Fragment>
-            <Tooltip title='Filter'>
+            <Tooltip title='Filter' arrow disableFocusListener>
                 <Badge
                     badgeContent={filterCount}
                     color='secondary'

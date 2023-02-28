@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react'
-import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material'
+import {ImageList, ImageListItem, ImageListItemBar, Tooltip} from '@mui/material'
 import licenses from '../data/licenses.js'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch.js'
@@ -33,14 +33,16 @@ function ImageGallery({entry}) {
                         }
                         actionIcon={
                             fullUrl &&
-                            <IconButton
-                                href={fullUrl}
-                                style={{color: 'rgba(255, 255, 255, 0.5)'}}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <LaunchIcon/>
-                            </IconButton>
+                            <Tooltip title='View Full Size' arrow disableFocusListener>
+                                <IconButton
+                                    href={fullUrl}
+                                    style={{color: 'rgba(255, 255, 255, 0.5)'}}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
+                                    <LaunchIcon/>
+                                </IconButton>
+                            </Tooltip>
                         }
                     />
                 </ImageListItem>

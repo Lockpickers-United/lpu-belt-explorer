@@ -23,7 +23,7 @@ function InfoButton({icon}) {
 
     return (
         <React.Fragment>
-            <Tooltip title='Information'>
+            <Tooltip title='Information' arrow disableFocusListener>
                 {button}
             </Tooltip>
             {

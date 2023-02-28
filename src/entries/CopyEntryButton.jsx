@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react'
 import IconButton from '@mui/material/IconButton'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import {Tooltip} from '@mui/material'
 
 function CopyEntryButton({entry}) {
     const handleClick = useCallback(async () => {
@@ -12,9 +13,11 @@ function CopyEntryButton({entry}) {
     }, [entry.makeModels])
 
     return (
-        <IconButton onClick={handleClick}>
-            <ContentCopyIcon/>
-        </IconButton>
+        <Tooltip title='Copy Make/Model Text' arrow disableFocusListener>
+            <IconButton onClick={handleClick}>
+                <ContentCopyIcon/>
+            </IconButton>
+        </Tooltip>
     )
 }
 

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef} from 'react'
+import React, {useCallback, useEffect, useMemo, useRef} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -8,13 +8,9 @@ import Typography from '@mui/material/Typography'
 import BeltStripe from './BeltStripe.jsx'
 import FieldValue from './FieldValue.jsx'
 import BeltIcon from './BeltIcon.jsx'
-import IconButton from '@mui/material/IconButton'
 import ReactMarkdown from 'react-markdown'
 import belts from '../data/belts.js'
 import FilterChip from '../filters/FilterChip.jsx'
-import StarIcon from '@mui/icons-material/Star'
-import StarBorderIcon from '@mui/icons-material/StarBorder'
-import StorageContext from '../contexts/StorageContext.jsx'
 import LinkToEntryButton from './LinkToEntryButton.jsx'
 import ImageGallery from './ImageGallery.jsx'
 import AccordionActions from '@mui/material/AccordionActions'
@@ -22,13 +18,15 @@ import Button from '@mui/material/Button'
 import CopyEntryButton from './CopyEntryButton.jsx'
 import Tracker from '../app/Tracker.jsx'
 import queryString from 'query-string'
+import StarButton from './StarButton.jsx'
 
 function Entry({entry, expanded, onExpand}) {
-    const handleChange = (_, isExpanded) => onExpand(isExpanded ? entry.id : false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-    const {starredEntries, setStorageValue} = useContext(StorageContext)
-    const isStarred = starredEntries.includes(entry.id)
     const ref = useRef(null)
+
+    const handleChange = useCallback((_, isExpanded) => {
+        onExpand(isExpanded ? entry.id : false)
+    }, [entry.id, onExpand])
 
     useEffect(() => {
         if (expanded && ref) {
@@ -47,13 +45,6 @@ function Entry({entry, expanded, onExpand}) {
         }
     }, [expanded, entry])
 
-    const handleStarClick = useCallback(() => {
-        const newValue = isStarred
-            ? starredEntries.filter(val => val !== entry.id)
-            : [...starredEntries, entry.id]
-
-        setTimeout(() => setStorageValue('starredEntries', newValue), 0)
-    }, [entry.id, isStarred, setStorageValue, starredEntries])
 
     const makeModels = useMemo(() => {
         return (
@@ -173,13 +164,7 @@ function Entry({entry, expanded, onExpand}) {
                         <Tracker id={entry.id}/>
                         <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton id={entry.id}/>
-                        <IconButton onClick={handleStarClick}>
-                            {
-                                isStarred
-                                    ? <StarIcon style={isStarred ? {color: 'gold'} : {}}/>
-                                    : <StarBorderIcon style={isStarred ? {color: 'gold'} : {}}/>
-                            }
-                        </IconButton>
+                        <StarButton id={entry.id}/>
                     </AccordionActions>
                 </React.Fragment>
             }

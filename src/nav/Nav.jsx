@@ -15,6 +15,8 @@ import Tracker from '../app/Tracker.jsx'
 import AppContext from '../contexts/AppContext.jsx'
 import ScrollToTopButton from './ScrollToTopButton.jsx'
 import {useHotkeys} from 'react-hotkeys-hook'
+import {Tooltip} from '@mui/material'
+import belts from '../data/belts.js'
 
 function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)
@@ -63,26 +65,43 @@ function Nav() {
                     textColor='inherit'
                 >
                     {uniqueBelts.map(belt =>
-                        <Tab
-                            key={belt}
-                            icon={
-                                <BeltIcon value={belt} style={{paddingTop: 2}}/>
-                            }
-                            value={belt}
-                            sx={tabWidthStyle}
-                        />
+                        <CloneProps key={belt} value={belt}>
+                            {tabProps => (
+                                <Tooltip title={`${belts[belt].label} Belt`} arrow disableFocusListener>
+                                    <Tab
+                                        {...tabProps}
+                                        icon={
+                                            <BeltIcon value={belt} style={{paddingTop: 2}}/>
+                                        }
+                                        sx={tabWidthStyle}
+                                    />
+                                </Tooltip>
+                            )}
+                        </CloneProps>
                     )}
-                    <Tab
-                        icon={<ManageSearchIcon/>}
-                        value='search'
-                        sx={tabWidthStyle}
-                    />
+                    <CloneProps value='search'>
+                        {tabProps => (
+                            <Tooltip title='Search Results' arrow disableFocusListener>
+                                <Tab
+                                    {...tabProps}
+                                    icon={
+                                        <ManageSearchIcon/>
+                                    }
+                                    sx={tabWidthStyle}
+                                />
+                            </Tooltip>
+                        )}
+                    </CloneProps>
                 </Tabs>
             </AppBar>
 
             <ScrollToTopButton/>
         </React.Fragment>
     )
+}
+
+function CloneProps({children, ...other}) {
+    return children(other)
 }
 
 export default Nav

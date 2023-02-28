@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
-import {InputAdornment, TextField} from '@mui/material'
+import {InputAdornment, TextField, Tooltip} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
@@ -24,7 +24,7 @@ function SearchBox() {
 
         setTimeout(() => {
             removeFilter('search', '')
-        }, 50)
+        }, 100)
     }, [setTab, removeFilter])
 
     const debounceChange = useMemo(() => {
@@ -59,9 +59,11 @@ function SearchBox() {
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
-            <IconButton color='inherit' onClick={handleClear} edge='end' size='small'>
-                <ClearIcon/>
-            </IconButton>
+            <Tooltip title='Clear' arrow disableFocusListener>
+                <IconButton color='inherit' onClick={handleClear} edge='end' size='small'>
+                    <ClearIcon/>
+                </IconButton>
+            </Tooltip>
         </InputAdornment>
     ) : null
     const style = width < 650

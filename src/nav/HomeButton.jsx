@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton'
 import FilterContext from '../contexts/FilterContext.jsx'
 import LPUImage from '../resources/LPU.png'
 import AppContext from '../contexts/AppContext.jsx'
+import {Tooltip} from '@mui/material'
 
 function HomeButton() {
     const {setTab} = useContext(AppContext)
@@ -15,9 +16,11 @@ function HomeButton() {
     }, [clearFilters, setTab])
 
     return (
-        <IconButton edge='start' color='inherit' size='medium' sx={{mr: 1}} onClick={handleClick}>
-            <img alt='LPU' src={LPUImage} width={36} height={36}/>
-        </IconButton>
+        <Tooltip title='Home' arrow disableFocusListener>
+            <IconButton edge='start' color='inherit' size='medium' sx={{mr: 1}} onClick={handleClick}>
+                <img alt='LPU' src={LPUImage} width={36} height={36}/>
+            </IconButton>
+        </Tooltip>
     )
 }
 
