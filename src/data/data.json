@@ -3936,7 +3936,7 @@
       "Magnetic"
     ],
     "features": [
-      "Magnet"
+      "Magnetic pins"
     ]
   },
   {
@@ -3953,7 +3953,7 @@
       "Magnetic"
     ],
     "features": [
-      "Magnet"
+      "Magnetic pins"
     ]
   },
   {
@@ -4401,6 +4401,9 @@
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
+    ],
+    "features": [
+      "Magnetic pins"
     ],
     "notes": "** **Special Picking Requirement:** Must be picked with the bible oriented down"
   },
@@ -7137,7 +7140,7 @@
       "Magnet"
     ],
     "features": [
-      "Magnet"
+      "Magnetic pins"
     ]
   },
   {
@@ -7927,6 +7930,9 @@
       "Magnet",
       "Pin-tumbler"
     ],
+    "features": [
+      "Magnetic rotors"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -8219,7 +8225,7 @@
       "Magnet"
     ],
     "features": [
-      "Magnet"
+      "Magnetic sliders"
     ]
   },
   {
@@ -8246,7 +8252,7 @@
       "Magnet"
     ],
     "features": [
-      "Magnet"
+      "Magnetic pins"
     ],
     "notes": "** **Special Picking Requirement:** Must be picked with bible oriented down"
   },
@@ -9677,6 +9683,7 @@
         "model": "Tytan ZX"
       },
       {
+        "make": "Gerda",
         "model": "Rim 6000"
       }
     ],
@@ -11023,6 +11030,10 @@
         "make": "CISM",
         "model": "Atlas"
       }
+    ],
+    "lockingMechanisms": [
+      "Magnet",
+      "Pump/push"
     ]
   },
   {
@@ -11200,6 +11211,9 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "features": [
+      "Magnetic rotors"
     ]
   },
   {
@@ -11278,7 +11292,8 @@
     ],
     "version": ">2 mastered elements",
     "lockingMechanisms": [
-      "Slider"
+      "Slider",
+      "Pin-tumbler"
     ],
     "features": [
       "False gates",
@@ -11955,6 +11970,9 @@
     ],
     "lockingMechanisms": [
       "Magnet"
+    ],
+    "features": [
+      "Magnetic sliders"
     ]
   },
   {
@@ -11974,7 +11992,7 @@
       "Magnet"
     ],
     "features": [
-      "Magnet"
+      "Magnetic pins"
     ]
   },
   {
@@ -12266,10 +12284,11 @@
       }
     ],
     "lockingMechanisms": [
-      "Magnet"
+      "Magnet",
+      "Pump/push"
     ],
     "features": [
-      "Magnet"
+      "Magnetic pins"
     ],
     "media": [
       {
@@ -12366,6 +12385,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Donotduplicate",
@@ -12446,9 +12468,10 @@
     "features": [
       "Front/rear tension",
       "Disc controller",
-      "False gates"
+      "False gates",
+      "Bi-directional"
     ],
-    "notes": "Two versions, padlock and door lock. For the door lock version, only one public pick and no means of performing wobble test known",
+    "notes": "Two versions, padlock and door lock. For the door lock version, only one public pick",
     "links": [
       {
         "title": "HanFey",
@@ -13650,7 +13673,8 @@
     ],
     "version": "1-2 mastered elements",
     "lockingMechanisms": [
-      "Slider"
+      "Slider",
+      "Pin-tumbler"
     ],
     "features": [
       "False gates",
@@ -13700,7 +13724,8 @@
     ],
     "version": "0 (zero) mastered elements",
     "lockingMechanisms": [
-      "Slider"
+      "Slider",
+      "Pin-tumbler"
     ],
     "features": [
       "False gates",
@@ -13763,7 +13788,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Magnet"
+      "Magnetic rotors"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
