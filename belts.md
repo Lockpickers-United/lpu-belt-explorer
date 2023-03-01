@@ -535,7 +535,7 @@
 - [FTH -THIRARD Thirard Cobra](https://lpubelts.com/?id=86e86a1d) 
 - [Fuki Tierkey](https://lpubelts.com/?id=7298a640) 
 - [Gerda HSS](https://lpubelts.com/?id=594b1a1c) 
-- [Gerda Tytan ZX / Rim 6000](https://lpubelts.com/?id=2929f922) 
+- [Gerda Tytan ZX / Gerda Rim 6000](https://lpubelts.com/?id=2929f922) 
 - [GOAL D9](https://lpubelts.com/?id=7194cc26)  (9 pin)
 - [GOAL P](https://lpubelts.com/?id=a1233156)  (6 pin)
 - [IKON tk5 sperwellenprofil](https://lpubelts.com/?id=f38cafca)  (with smooth fingerpins)
