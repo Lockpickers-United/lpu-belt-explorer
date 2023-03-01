@@ -7030,6 +7030,32 @@
       "Serrated/threaded milling",
       "Sidepins",
       "Guttable"
+    ],
+    "media": [
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699484_4030f2f6bd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699484/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715865005_cfa5719b4c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715865005/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52714918592_5fd05091e0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52714918592/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699334_a1789c35de_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699334/in/album-72177720306337368/"
+      }
     ]
   },
   {
@@ -10225,6 +10251,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/295px-MIWA_EC_lock.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:MIWA_EC_lock.jpg"
+      },
+      {
+        "title": "By: Ronb",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52714992417_d2774bf5a2_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52714992417/in/album-72177720306319501/"
+      },
+      {
+        "title": "By: Ronb",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52718120464_c053584f90_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52718120464/in/album-72177720306319501/"
       }
     ],
     "links": [
@@ -10439,6 +10477,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Schlage_Primus_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Schlage_Primus_cylinder.jpg"
+      },
+      {
+        "title": "By: MrBlackMagic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52716007908_b4c510b310_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52716007908/in/album-72177720306338398/"
+      },
+      {
+        "title": "By: MrBlackMagic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715529406_2154745844_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715529406/in/album-72177720306338398/"
       }
     ],
     "links": [
@@ -12265,6 +12315,13 @@
     "lockingMechanisms": [
       "Disc Detainer"
     ],
+    "features": [
+      "Front/rear tension",
+      "Profile discs",
+      "Disc steering system",
+      "Disc blocking system",
+      "bi-directional"
+    ],
     "media": [
       {
         "title": "By: Least",
@@ -13456,6 +13513,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-DOM_ix_twinstar_key-Reinder.png",
         "fullUrl": "https://www.lockwiki.com/index.php/File:DOM_ix_twinstar_key-Reinder.png"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52718452604_1dd42f35ac_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52718452604/in/album-72177720306011953/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52718452579_f9a842b6b8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52718452579/in/album-72177720306011953/"
       }
     ],
     "links": [
