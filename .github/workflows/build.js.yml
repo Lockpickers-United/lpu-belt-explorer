@@ -8,6 +8,7 @@ on:
       - 'package.json'
       - '.github/workflows/build.js.yml'
       - 'public/**'
+      - 'scripts/exportMarkdown.js'
   workflow_run:
     workflows: [Import]
     types:
