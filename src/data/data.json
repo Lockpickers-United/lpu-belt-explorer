@@ -15277,5 +15277,1046 @@
     "lockingMechanisms": [
       "Slider"
     ]
+  },
+  {
+    "id": "3b7643da",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ABA",
+        "model": "108418"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
+    ]
+  },
+  {
+    "id": "a17a6cf3",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ABA",
+        "model": "Pagoda"
+      }
+    ]
+  },
+  {
+    "id": "9ae8b650",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Abloy",
+        "model": "AVA"
+      }
+    ]
+  },
+  {
+    "id": "12ff8c25",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Abloy",
+        "model": "Easy"
+      }
+    ]
+  },
+  {
+    "id": "71ca74d0",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Abloy",
+        "model": "Novel"
+      }
+    ]
+  },
+  {
+    "id": "cad3eff0",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Abloy",
+        "model": "Sento"
+      }
+    ]
+  },
+  {
+    "id": "0feafca7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "5/45 Silver Rock"
+      }
+    ]
+  },
+  {
+    "id": "d005e7b8",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "P1R"
+      }
+    ]
+  },
+  {
+    "id": "b370e57b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "Vela 2000 Mx"
+      }
+    ],
+    "notes": "2 spools, 2 \"barrels\", 1 special passive pin"
+  },
+  {
+    "id": "c9d6d06d",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "X-Plus"
+      }
+    ]
+  },
+  {
+    "id": "9423b4a4",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Alpha",
+        "model": "1000"
+      }
+    ],
+    "version": "10mm (2pins)"
+  },
+  {
+    "id": "d000f733",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Alpha",
+        "model": "1000"
+      }
+    ],
+    "version": "15mm up to 35mm (3pins)"
+  },
+  {
+    "id": "82ea52a4",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Alpha",
+        "model": "1000"
+      }
+    ],
+    "version": "40mm up to 45mm (4pins / spools)"
+  },
+  {
+    "id": "bac43ba7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Alpha",
+        "model": "1000"
+      }
+    ],
+    "version": "50mm 60mm (5pins / spools)"
+  },
+  {
+    "id": "05298f91",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Alpha",
+        "model": "ED"
+      }
+    ],
+    "version": "cam lock",
+    "notes": "14 pins in 4 directions, standard and mushroom drivers"
+  },
+  {
+    "id": "dbc1279d",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "An Jia Bao"
+      },
+      {
+        "model": "HPP"
+      }
+    ]
+  },
+  {
+    "id": "fd93632b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "Angal"
+      }
+    ],
+    "version": "5 serrated pin-in-pin",
+    "notes": "mul-t-lock clone with poorer tolerances."
+  },
+  {
+    "id": "c2db34fb",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Arrow",
+        "model": "ChoICe HS SFIC"
+      }
+    ],
+    "notes": "6/7 pin SFIC with ASSA twin 6000 sidebar"
+  },
+  {
+    "id": "f8445741",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "500"
+      }
+    ],
+    "version": "with Barrel drivers and matched sleeve"
+  },
+  {
+    "id": "ef4e0295",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "700"
+      }
+    ],
+    "version": "with Gin drivers and matched sleeve"
+  },
+  {
+    "id": "ee04714f",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "K6-RT"
+      }
+    ],
+    "notes": "6-pin"
+  },
+  {
+    "id": "e35772c9",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Bowley",
+        "model": "Rotasera"
+      }
+    ]
+  },
+  {
+    "id": "35adb4d6",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Burgwächter",
+        "model": "Profi 116/30"
+      }
+    ]
+  },
+  {
+    "id": "85591581",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Capitol",
+        "model": "magnetic cam lock"
+      }
+    ]
+  },
+  {
+    "id": "0813d39e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "CAVEO",
+        "model": "TS007 Exterior"
+      }
+    ]
+  },
+  {
+    "id": "60964e9f",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "CAVEO",
+        "model": "TS007 Interior"
+      }
+    ]
+  },
+  {
+    "id": "267e47c4",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Chubb",
+        "model": "6k202"
+      }
+    ],
+    "version": "7 lever with anti-pick"
+  },
+  {
+    "id": "a832e82d",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Cisa",
+        "model": "285"
+      }
+    ]
+  },
+  {
+    "id": "22d70f2e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Cisa",
+        "model": "810"
+      }
+    ]
+  },
+  {
+    "id": "0e5adf31",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Clavis",
+        "model": "10 pin"
+      }
+    ],
+    "version": "dual row, all spools"
+  },
+  {
+    "id": "4d738de3",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Crown",
+        "model": "no.100"
+      }
+    ],
+    "version": "solid brass padlock 5-Pin"
+  },
+  {
+    "id": "bf43348b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Emhart",
+        "model": "Cam Lock - 5 pin"
+      }
+    ]
+  },
+  {
+    "id": "abe6074c",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Ezcurra",
+        "model": "DS-15"
+      }
+    ]
+  },
+  {
+    "id": "b5e210ec",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "FAB",
+        "model": "Control"
+      }
+    ]
+  },
+  {
+    "id": "10ab07eb",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Fichet 787",
+        "model": "787"
+      }
+    ],
+    "version": "interior"
+  },
+  {
+    "id": "d6e6039e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Fichet-Bauche",
+        "model": "M2i"
+      }
+    ]
+  },
+  {
+    "id": "3bd433d7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Fichet-Bauche",
+        "model": "Monopole"
+      }
+    ]
+  },
+  {
+    "id": "a57c1e9b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "FTH",
+        "model": "Pacific"
+      }
+    ]
+  },
+  {
+    "id": "b379e483",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "GEGE",
+        "model": "MRT"
+      }
+    ]
+  },
+  {
+    "id": "88085257",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Gera",
+        "model": "3500"
+      }
+    ]
+  },
+  {
+    "id": "1575614d",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "GLK",
+        "model": "60G50"
+      }
+    ],
+    "version": "60mm padlock"
+  },
+  {
+    "id": "63a898da",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "GLK",
+        "model": "G10"
+      }
+    ]
+  },
+  {
+    "id": "6b220699",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "GSK"
+      }
+    ],
+    "version": "dual row sidebar lock"
+  },
+  {
+    "id": "93324d19",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "Helason "
+      }
+    ],
+    "version": "16-pin round key"
+  },
+  {
+    "id": "4c90dcbd",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Hong Dun",
+        "model": "model undefined"
+      }
+    ],
+    "version": "security pinned dimple with sliders"
+  },
+  {
+    "id": "97e1ae9f",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Hori",
+        "model": "Trident"
+      }
+    ],
+    "version": "standard pins"
+  },
+  {
+    "id": "49b2c746",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Hori",
+        "model": "Trident"
+      }
+    ],
+    "version": "spools"
+  },
+  {
+    "id": "9b94b1c0",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "iNAHO",
+        "model": "Tierkey"
+      }
+    ],
+    "version": "3 row, short format"
+  },
+  {
+    "id": "a7d98df3",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Kaba",
+        "model": "Gemini T"
+      }
+    ],
+    "version": "≥13 pins"
+  },
+  {
+    "id": "281aa393",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Kromer",
+        "model": "Novum"
+      }
+    ]
+  },
+  {
+    "id": "c65959a3",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "La Gard",
+        "model": "2270"
+      }
+    ]
+  },
+  {
+    "id": "728d4aa0",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Lips",
+        "model": "8300"
+      }
+    ],
+    "notes": "similar to Nemef NF2, same drivers plus check pin in bottom"
+  },
+  {
+    "id": "380aeb89",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Mailboss",
+        "model": "\"12\" wafer mailbox camlock"
+      }
+    ]
+  },
+  {
+    "id": "f74e0e97",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Marks",
+        "model": "high security SFIC"
+      }
+    ]
+  },
+  {
+    "id": "8f7f1830",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "#19"
+      }
+    ]
+  },
+  {
+    "id": "7b69a331",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "160"
+      }
+    ]
+  },
+  {
+    "id": "8d67f9b7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "1921D \"100 Anniversary\" Padlock"
+      }
+    ],
+    "notes": "4 pins all spools"
+  },
+  {
+    "id": "237f29c9",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "EURD1165"
+      }
+    ]
+  },
+  {
+    "id": "01c9e8d1",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "KeyMark"
+      }
+    ]
+  },
+  {
+    "id": "00a2ff18",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "M4"
+      }
+    ]
+  },
+  {
+    "id": "0684a655",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "X4"
+      }
+    ]
+  },
+  {
+    "id": "e6872b30",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Mindy",
+        "model": "AF 8-50 smiley dimple padlock"
+      }
+    ]
+  },
+  {
+    "id": "06a28ac7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Mindy",
+        "model": "Pagoda AF 16-50"
+      }
+    ],
+    "version": "(flat key)"
+  },
+  {
+    "id": "c511cc75",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "Ming Gao"
+      }
+    ]
+  },
+  {
+    "id": "31cd85d7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Miwa",
+        "model": "SR"
+      }
+    ]
+  },
+  {
+    "id": "fd2b533e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Mul-T-Lock",
+        "model": "Classic Pro"
+      }
+    ]
+  },
+  {
+    "id": "1798ca06",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Mul-T-Lock",
+        "model": "Interactive"
+      }
+    ],
+    "version": "4 pins, spooled drivers"
+  },
+  {
+    "id": "1ee9600e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Nagasawa",
+        "model": "kcy-7x"
+      }
+    ],
+    "version": "12 pin"
+  },
+  {
+    "id": "f8aaa0ef",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Opnus",
+        "model": "TZ"
+      }
+    ],
+    "version": "3 rows",
+    "notes": "Similar to UX but 3 rows of pins"
+  },
+  {
+    "id": "3af6c54b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Opnus",
+        "model": "ZX"
+      }
+    ]
+  },
+  {
+    "id": "9637ddde",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Rav Bariach",
+        "model": "Dynamic"
+      }
+    ],
+    "version": "with sliders"
+  },
+  {
+    "id": "5646568c",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Rosengrens",
+        "model": "RKL-10"
+      }
+    ]
+  },
+  {
+    "id": "6dd5a34b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Ruko",
+        "model": "Combi 900"
+      }
+    ]
+  },
+  {
+    "id": "347bd804",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "S&G",
+        "model": "4440"
+      }
+    ]
+  },
+  {
+    "id": "894238be",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "S&G",
+        "model": "6870"
+      }
+    ]
+  },
+  {
+    "id": "4403a73f",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Securemme",
+        "model": "Evo K64"
+      }
+    ]
+  },
+  {
+    "id": "97baf67b",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "SOL",
+        "model": "2500"
+      }
+    ],
+    "version": "10mm (2pins)"
+  },
+  {
+    "id": "0d0bf1a5",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "SOL",
+        "model": "2500"
+      }
+    ],
+    "version": "15mm up to 35mm (3pins)"
+  },
+  {
+    "id": "29d423c8",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "SOL",
+        "model": "2500"
+      }
+    ],
+    "version": "40mm up to 45mm (4pins / spools)"
+  },
+  {
+    "id": "53365ed3",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "SOL",
+        "model": "2500"
+      }
+    ],
+    "version": "50mm up to 70mm (5pins / spools)"
+  },
+  {
+    "id": "a77899fe",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Takigen",
+        "model": "T-999"
+      }
+    ],
+    "version": "9 pins-standards in two opposing rows"
+  },
+  {
+    "id": "174e20c0",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Takigen",
+        "model": "Wavelock disc detainer"
+      },
+      {
+        "make": "Clover",
+        "model": "Wavelock disc detainer"
+      }
+    ],
+    "version": "9 discs"
+  },
+  {
+    "id": "0bc03ee8",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "TESA",
+        "model": "T-12"
+      }
+    ],
+    "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive"
+  },
+  {
+    "id": "9a99a0a7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Trelock",
+        "model": "SUPER Padlock"
+      }
+    ]
+  },
+  {
+    "id": "95a9b042",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "U-Shin",
+        "model": "Showa X Key"
+      }
+    ]
+  },
+  {
+    "id": "ab1e3974",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Vachette",
+        "model": "Radial"
+      }
+    ],
+    "version": "18 or more pins"
+  },
+  {
+    "id": "90b4ade7",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Voga",
+        "model": "X18"
+      }
+    ]
+  },
+  {
+    "id": "fa9fb7e1",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "War-Lok"
+      }
+    ]
+  },
+  {
+    "id": "1220174e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "WEST",
+        "model": "YKK AP"
+      }
+    ]
+  },
+  {
+    "id": "288c8f6e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Wilka",
+        "model": "3700"
+      }
+    ]
+  },
+  {
+    "id": "10679814",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Wilka",
+        "model": "Primus VX"
+      }
+    ]
+  },
+  {
+    "id": "c4a2fbe5",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "model": "Wilson"
+      }
+    ],
+    "version": "18 pins"
+  },
+  {
+    "id": "efca4bf9",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "1500"
+      }
+    ],
+    "notes": "1 tapered spool and 5 tapered drivers , keypins tapered as well"
+  },
+  {
+    "id": "a42a815e",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "2000 Plus"
+      }
+    ],
+    "notes": "dimple, 10 vertically aligned pins in 2 rows, 4 sliders"
+  },
+  {
+    "id": "7164f69d",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "2100"
+      }
+    ],
+    "notes": "dimple, similar to Superior, but 6 pin stacks vertically aligned"
+  },
+  {
+    "id": "e16080de",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "Bicentric"
+      }
+    ]
+  },
+  {
+    "id": "0757b1ed",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yardeni",
+        "model": "10"
+      }
+    ],
+    "notes": "9 pins, 2 spools more restricted keyway than XL model"
+  },
+  {
+    "id": "2b6dd267",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yardeni",
+        "model": "Super XL"
+      }
+    ],
+    "notes": "8 pin dimple with interactive element on the key"
+  },
+  {
+    "id": "a7ffa199",
+    "belt": "unclassified",
+    "makeModels": [
+      {
+        "make": "Yardeni",
+        "model": "XL"
+      }
+    ],
+    "notes": "8 pin dimple with more restrictive keyway than 6 pin yardeni"
   }
 ]
