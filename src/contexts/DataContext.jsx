@@ -28,7 +28,8 @@ export function DataProvider({children}) {
                 content: [
                     entry.media?.length > 0 ? 'Has Images' : 'No Images',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
+                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
+                    entry.belt === 'unclassified' ? 'Is Unclassified' : undefined
                 ].filter(x => x),
                 simpleBelt: entry.belt.replace(/\d/g, '')
             }))

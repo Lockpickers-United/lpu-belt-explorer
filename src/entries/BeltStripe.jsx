@@ -2,7 +2,7 @@ import React, {useMemo} from 'react'
 import belts from '../data/belts.js'
 
 function BeltStripe({value}) {
-    const {color: backgroundColor} = belts[value]
+    const {color: backgroundColor, lineColor} = belts[value]
     const style = {
         width: 8,
         height: '100%',
@@ -10,6 +10,12 @@ function BeltStripe({value}) {
         left: 0,
         top: 0,
         backgroundColor
+    }
+    if (value === 'unclassified') {
+        style.backgroundImage = `linear-gradient(-45deg, ${lineColor} 25%, ${backgroundColor} 25%, 
+                ${backgroundColor} 50%, ${lineColor} 50%, ${lineColor} 75%, ${backgroundColor} 75%, 
+                ${backgroundColor} 100%)`
+        style.backgroundSize = '25px 35px'
     }
 
     const stripes = useMemo(() => {
