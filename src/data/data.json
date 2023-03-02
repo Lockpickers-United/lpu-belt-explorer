@@ -2592,6 +2592,26 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720403454_1403677a4d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720403454/in/album-72177720306397739/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720557415_acfc9fa6cd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720557415/in/album-72177720306397739/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720403489_b54c079703_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720403489/in/album-72177720306397739/"
+      }
     ]
   },
   {
@@ -6773,7 +6793,6 @@
       "Dimple"
     ],
     "features": [
-      "Hellish keyway",
       "Interactive element"
     ]
   },
@@ -7336,7 +7355,6 @@
       "Dimple"
     ],
     "features": [
-      "Shark fin keypins",
       "Torpedo keypins",
       "Interactive element",
       "\"Magic\" DOM drivers"
@@ -8651,6 +8669,20 @@
     "features": [
       "Tapered drivers",
       "Interactive element"
+    ],
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720601373_c0e5b53d85_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720601373/in/album-72177720306382646/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52721343220_df2f6e4edf_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52721343220/in/album-72177720306382646/"
+      }
     ]
   },
   {
@@ -8753,6 +8785,20 @@
       "Flat steel key",
       "Curtain",
       "False gates"
+    ],
+    "media": [
+      {
+        "title": "By: Two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720444652_acd9c0ba3b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720444652/in/album-72177720306394115/"
+      },
+      {
+        "title": "By: Two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52721453668_68119483e0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52721453668/in/album-72177720306394115/"
+      }
     ]
   },
   {
@@ -11024,6 +11070,32 @@
       "Pin key",
       "Curtain",
       "False gates"
+    ],
+    "media": [
+      {
+        "title": "By: Two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720361167_30afdb7bbd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720361167/in/album-72177720306406399/"
+      },
+      {
+        "title": "By: Two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52721298470_d9cf62b483_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52721298470/in/album-72177720306406399/"
+      },
+      {
+        "title": "By: Two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52721298375_995559432e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52721298375/in/album-72177720306406399/"
+      },
+      {
+        "title": "By: Two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720361112_85faa2cd44_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720361112/in/album-72177720306406399/"
+      }
     ]
   },
   {
@@ -13792,6 +13864,10 @@
       }
     ],
     "lockingMechanisms": [
+      "Pin-tumbler",
+      "Magnet"
+    ],
+    "features": [
       "Magnetic rotors"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
@@ -14233,7 +14309,8 @@
     ],
     "features": [
       "High pin count",
-      "Torpedo keypins"
+      "Torpedo keypins",
+      "Hellish keyway"
     ]
   },
   {
