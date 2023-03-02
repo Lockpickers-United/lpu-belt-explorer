@@ -6,7 +6,7 @@ const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 const initialVal = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), [])
 const groupedByBelt = rawData.reduce((acc, val) => {
     const belt = val.belt.replace(/\d/g, '')
-    acc[belt].push(val)
+    if (acc[belt]) acc[belt].push(val)
     return acc
 }, initialVal)
 
