@@ -5099,6 +5099,32 @@
       "Barrel drivers",
       "Serrated/threaded milling",
       "Guttable"
+    ],
+    "media": [
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699484_4030f2f6bd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699484/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715865005_cfa5719b4c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715865005/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52714918592_5fd05091e0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52714918592/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699334_a1789c35de_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699334/in/album-72177720306337368/"
+      }
     ]
   },
   {
@@ -6923,9 +6949,13 @@
       {
         "make": "ASSA",
         "model": "600"
+      },
+      {
+        "make": "ASSA",
+        "model": "Max+ Restricted"
       }
     ],
-    "version": "5 pin stacks, barrel spools and matching countermilling",
+    "version": "Barrel spools and matching countermilling",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -7033,32 +7063,6 @@
       "Serrated/threaded milling",
       "Sidepins",
       "Guttable"
-    ],
-    "media": [
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699484_4030f2f6bd_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699484/in/album-72177720306337368/"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52715865005_cfa5719b4c_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715865005/in/album-72177720306337368/"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52714918592_5fd05091e0_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52714918592/in/album-72177720306337368/"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699334_a1789c35de_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699334/in/album-72177720306337368/"
-      }
     ]
   },
   {
@@ -7696,7 +7700,7 @@
         "model": "8"
       }
     ],
-    "version": "3 row, ≥9 pins",
+    "version": "3 row, ≥ 9 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -8719,7 +8723,7 @@
         "model": "Ace"
       }
     ],
-    "version": "7 lever",
+    "version": "7 lever safe",
     "lockingMechanisms": [
       "Lever"
     ],
@@ -9553,7 +9557,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates || 4-6 mastered levers",
+    "version": "w/ false gates, 4-6 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -12338,7 +12342,7 @@
       "Front/rear tension",
       "Profile discs",
       "Disc steering system",
-      "Disc blocking system",
+      "Disc blocker system",
       "bi-directional"
     ],
     "media": [
@@ -12471,7 +12475,7 @@
       "False gates",
       "Bi-directional"
     ],
-    "notes": "Two versions, padlock and door lock. For the door lock version, only one public pick",
+    "notes": "Two versions, padlock and door lock.",
     "links": [
       {
         "title": "HanFey",
