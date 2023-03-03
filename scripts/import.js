@@ -3,6 +3,7 @@ import {parse} from 'csv-parse/sync'
 import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
 import belts from '../src/data/belts.js'
 import fetch from 'node-fetch'
+import validate from './validate.js'
 
 const beltNumbers = Object.keys(belts)
 
@@ -25,11 +26,7 @@ const importValidate = async (tab, schema) => {
     })
 
     // Validate data before merging in
-    const results = schema.validate(data)
-    if (results.error) {
-        console.log('Parse error!', JSON.stringify(results.error.details, null, 2))
-        process.exit(1)
-    }
+    validate(data, schema)
 
     return data
 }

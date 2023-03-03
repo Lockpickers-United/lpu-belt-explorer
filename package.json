@@ -16,7 +16,7 @@
         "import": "node ./scripts/import.js",
         "exportCsv": "node ./scripts/exportCsv.js",
         "exportMd": "node ./scripts/exportMarkdown.js",
-        "ci-build": "yarn run build && yarn exportMd"
+        "ci-build": "yarn run build && yarn exportMd && yarn exportCsv"
     },
     "dependencies": {
         "@emotion/react": "^11.10.6",

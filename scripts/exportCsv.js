@@ -1,26 +1,27 @@
 import fs from 'fs'
+import validate from './validate.js'
+import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
-// Clean up format to something that works for CSV
+const belts = rawData.map(datum => ({
+    uniqueId: datum.id,
+    belt: datum.belt,
+    lock: datum.makeModels.map(({make, model}) => {
+        return make && make !== model ? `${make} ${model}` : model
+    }).join (' / ')
+}))
+
 const mainData = rawData.map(datum => ({
     belt: datum.belt,
-    make: datum.makeModels[0].make,
-    model: datum.makeModels[0].model,
+    make: datum.makeModels.map(e => e.make).join(','),
+    model: datum.makeModels.map(e => e.model).join(','),
     version: datum.version,
     lockingMechanisms: datum?.lockingMechanisms?.join(','),
     features: datum?.features?.join(','),
     notes: datum.notes,
     uniqueId: datum.id
 }))
-
-// const mediaData = rawData.map((datum, index) => ({
-//
-// })).flat()
-//
-// const linkData = rawData.map((datum, index) => ({
-//
-// })).flat()
 
 const mediaData = rawData.map(datum => {
     return datum.media?.map((m, index) => ({
@@ -57,6 +58,11 @@ const makeCsv = (data, filename) => {
     fs.writeFileSync(filename, fileData)
 }
 
-makeCsv(mainData, './scripts/data.csv')
-makeCsv(mediaData, './scripts/media.csv')
-makeCsv(linkData, './scripts/link.csv')
+validate(mainData, mainSchema)
+validate(mediaData, mediaSchema)
+validate(linkData, linkSchema)
+
+makeCsv(belts, './dist/belts.csv')
+makeCsv(mainData, './dist/data.csv')
+makeCsv(mediaData, './dist/media.csv')
+makeCsv(linkData, './dist/link.csv')
