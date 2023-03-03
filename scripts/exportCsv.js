@@ -9,7 +9,8 @@ const belts = rawData.map(datum => ({
     belt: datum.belt,
     lock: datum.makeModels.map(({make, model}) => {
         return make && make !== model ? `${make} ${model}` : model
-    }).join (' / ')
+    }).join (' / '),
+    version: datum.version
 }))
 
 const mainData = rawData.map(datum => ({
