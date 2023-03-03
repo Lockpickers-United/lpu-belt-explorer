@@ -11,7 +11,7 @@ function BeltStripe({value}) {
         top: 0,
         backgroundColor
     }
-    if (value === 'unclassified') {
+    if (value === 'unranked') {
         style.backgroundImage = `linear-gradient(-45deg, ${lineColor} 25%, ${backgroundColor} 25%, 
                 ${backgroundColor} 50%, ${lineColor} 50%, ${lineColor} 75%, ${backgroundColor} 75%, 
                 ${backgroundColor} 100%)`

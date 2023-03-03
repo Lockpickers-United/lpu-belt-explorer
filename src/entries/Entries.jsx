@@ -12,12 +12,9 @@ function Entries() {
     const defExpanded = useDeferredValue(expanded)
 
     const entries = useMemo(() => {
-        if (defTab === 'search') {
-            return visibleEntries
-        } else {
-            return visibleEntries
-                .filter(entry => entry.simpleBelt === defTab)
-        }
+        return defTab === 'search'
+            ? visibleEntries
+            : visibleEntries.filter(entry => entry.simpleBelt === defTab)
     }, [defTab, visibleEntries])
 
     return (

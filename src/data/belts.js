@@ -13,7 +13,7 @@ const belts = {
     black3: {id: 'black3', label: 'Black 3', color: '#000000', lineColor: '#494949'},
     black4: {id: 'black4', label: 'Black 4', color: '#000000', lineColor: '#494949'},
     black5: {id: 'black5', label: 'Black 5', color: '#000000', lineColor: '#494949'},
-    unclassified: {id: 'unclassified', label: 'Unclassified', color: '#000000', lineColor: '#d3d31c'}
+    unranked: {id: 'unranked', label: 'Unranked', color: '#000000', lineColor: '#d3d31c'}
 }
 
 export default belts

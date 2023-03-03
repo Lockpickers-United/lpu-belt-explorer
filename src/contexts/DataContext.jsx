@@ -9,7 +9,7 @@ export function DataProvider({children}) {
     const [allEntries, setAllEntries] = useState([])
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
-    const {search, id, ...filters} = allFilters
+    const {search, id, unranked, ...filters} = allFilters
 
     useEffect(() => {
         const load = async () => {
@@ -29,7 +29,7 @@ export function DataProvider({children}) {
                     entry.media?.length > 0 ? 'Has Images' : 'No Images',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
-                    entry.belt === 'unclassified' ? 'Is Unclassified' : undefined
+                    entry.belt === 'unranked' ? 'Is Unranked' : 'Is Ranked'
                 ].filter(x => x),
                 simpleBelt: entry.belt.replace(/\d/g, '')
             }))
@@ -47,7 +47,7 @@ export function DataProvider({children}) {
             .flat()
 
         // Filter the data
-        const filtered = mappedEntries
+        let value = mappedEntries
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -57,9 +57,20 @@ export function DataProvider({children}) {
             })
 
         // If there is a search term, fuzzy match that
-        return search
-            ? fuzzysort.go(search, filtered, {keys: fuzzySortKeys}).map(result => result.obj)
-            : filtered
+        value = search
+            ? fuzzysort.go(search, value, {keys: fuzzySortKeys})
+                .map(result => ({
+                    ...result.obj,
+                    score: result.score
+                }))
+                .sort((a, b) => {
+                    const val1 = a.belt === 'unranked'
+                    const val2 = b.belt === 'unranked'
+                    return val1 - val2
+                })
+            : value
+
+        return value
     }, [filters, search, mappedEntries])
 
     const value = useMemo(() => ({
