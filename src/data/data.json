@@ -5611,6 +5611,14 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "media": [
+      {
+        "title": "By: Pete Lane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52723327218_e3d9c6c484_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52723327218/in/album-72177720306422942/"
+      }
     ]
   },
   {
@@ -7339,7 +7347,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Other"
+      "Pin-tumbler",
+      "Sidebar"
     ]
   },
   {
@@ -14663,22 +14672,10 @@
         "fullUrl": "https://www.lockwiki.com/index.php/File:MIWA_JN_front_keyway_-_FXE48203.png"
       },
       {
-        "title": "By: Mugatu",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571095_c049dd0930_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695571095/in/album-72177720306090062/"
-      },
-      {
         "title": "By: mgsecure",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/MIWA_JN_pin_axes_-_MIWA_JN_four_pin_axes_tn.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:MIWA_JN_pin_axes_-_MIWA_JN_four_pin_axes.png"
-      },
-      {
-        "title": "By: Mugatu",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571100_8a57de1b24_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695571100/in/album-72177720306090062/"
       },
       {
         "title": "By: mgsecure",
@@ -14689,26 +14686,20 @@
       {
         "title": "By: Mugatu",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52695424319_c2f6659c1f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695424319/in/album-72177720306090062/"
-      },
-      {
-        "title": "By: Mugatu",
-        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52695571095_c049dd0930_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695571095/in/album-72177720306090062/"
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695571095/in/album-72177720306090062/"
       },
       {
         "title": "By: Mugatu",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52695571100_8a57de1b24_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695571100/in/album-72177720306090062/"
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695571100/in/album-72177720306090062/"
       },
       {
         "title": "By: Mugatu",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52695424319_c2f6659c1f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/197682669@N08/52695424319/in/album-72177720306090062/"
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695424319/in/album-72177720306090062/"
       },
       {
         "title": "By: Mugatu",
@@ -15593,6 +15584,9 @@
         "make": "Abloy",
         "model": "Easy"
       }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
     ]
   },
   {
@@ -15603,6 +15597,9 @@
         "make": "Abloy",
         "model": "Novel"
       }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
     ]
   },
   {
@@ -15613,6 +15610,9 @@
         "make": "Abloy",
         "model": "Sento"
       }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
     ]
   },
   {
@@ -15644,6 +15644,9 @@
         "model": "Vela 2000 Mx"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "notes": "2 spools, 2 \"barrels\", 1 special passive pin"
   },
   {
@@ -15654,6 +15657,9 @@
         "make": "ABUS",
         "model": "X-Plus"
       }
+    ],
+    "lockingMechanisms": [
+      "Disc Detainer"
     ]
   },
   {
@@ -15733,6 +15739,9 @@
       }
     ],
     "version": "5 serrated pin-in-pin",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "notes": "mul-t-lock clone with poorer tolerances."
   },
   {
@@ -15755,7 +15764,10 @@
         "model": "500"
       }
     ],
-    "version": "with Barrel drivers and matched sleeve"
+    "version": "with Barrel drivers and matched sleeve",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "ef4e0295",
@@ -15766,7 +15778,10 @@
         "model": "700"
       }
     ],
-    "version": "with Gin drivers and matched sleeve"
+    "version": "with Gin drivers and matched sleeve",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "ee04714f",
@@ -15869,7 +15884,10 @@
         "model": "10 pin"
       }
     ],
-    "version": "dual row, all spools"
+    "version": "dual row, all spools",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "4d738de3",
@@ -15890,6 +15908,9 @@
         "make": "Emhart",
         "model": "Cam Lock - 5 pin"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -15900,6 +15921,9 @@
         "make": "Ezcurra",
         "model": "DS-15"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -15910,6 +15934,9 @@
         "make": "FAB",
         "model": "Control"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -15982,7 +16009,10 @@
         "model": "60G50"
       }
     ],
-    "version": "60mm padlock"
+    "version": "60mm padlock",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   {
     "id": "63a898da",
@@ -15992,6 +16022,9 @@
         "make": "GLK",
         "model": "G10"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -16012,7 +16045,10 @@
         "model": "Helason "
       }
     ],
-    "version": "16-pin round key"
+    "version": "16-pin round key",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "4c90dcbd",
@@ -16034,7 +16070,10 @@
         "model": "Trident"
       }
     ],
-    "version": "standard pins"
+    "version": "standard pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "49b2c746",
@@ -16045,7 +16084,10 @@
         "model": "Trident"
       }
     ],
-    "version": "spools"
+    "version": "spools",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "9b94b1c0",
@@ -16067,7 +16109,10 @@
         "model": "Gemini T"
       }
     ],
-    "version": "≥13 pins"
+    "version": "≥13 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "281aa393",
@@ -16098,6 +16143,9 @@
         "model": "8300"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "notes": "similar to Nemef NF2, same drivers plus check pin in bottom"
   },
   {
@@ -16108,6 +16156,9 @@
         "make": "Mailboss",
         "model": "\"12\" wafer mailbox camlock"
       }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
     ]
   },
   {
@@ -16128,6 +16179,9 @@
         "make": "Master Lock",
         "model": "#19"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -16138,6 +16192,9 @@
         "make": "Master Lock",
         "model": "160"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -16149,6 +16206,9 @@
         "model": "1921D \"100 Anniversary\" Padlock"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "notes": "4 pins all spools"
   },
   {
@@ -16159,6 +16219,9 @@
         "make": "Master Lock",
         "model": "EURD1165"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -16169,6 +16232,9 @@
         "make": "Medeco",
         "model": "KeyMark"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -16179,6 +16245,11 @@
         "make": "Medeco",
         "model": "M4"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Slider",
+      "Sidebar"
     ]
   },
   {
@@ -16189,6 +16260,9 @@
         "make": "Medeco",
         "model": "X4"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -16239,6 +16313,9 @@
         "make": "Mul-T-Lock",
         "model": "Classic Pro"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -16250,7 +16327,10 @@
         "model": "Interactive"
       }
     ],
-    "version": "4 pins, spooled drivers"
+    "version": "4 pins, spooled drivers",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "1ee9600e",
@@ -16314,6 +16394,9 @@
         "make": "Ruko",
         "model": "Combi 900"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -16344,6 +16427,9 @@
         "make": "Securemme",
         "model": "Evo K64"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   {
@@ -16425,6 +16511,9 @@
         "model": "T-12"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive"
   },
   {
@@ -16456,7 +16545,10 @@
         "model": "Radial"
       }
     ],
-    "version": "18 or more pins"
+    "version": "18 or more pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ]
   },
   {
     "id": "90b4ade7",
@@ -16537,6 +16629,11 @@
         "model": "2000 Plus"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Sidebar",
+      "Slider"
+    ],
     "notes": "dimple, 10 vertically aligned pins in 2 rows, 4 sliders"
   },
   {
@@ -16548,6 +16645,11 @@
         "model": "2100"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Sidebar",
+      "Slider"
+    ],
     "notes": "dimple, similar to Superior, but 6 pin stacks vertically aligned"
   },
   {
@@ -16558,6 +16660,9 @@
         "make": "Yale",
         "model": "Bicentric"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
