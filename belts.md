@@ -688,7 +688,7 @@
 - [IKON SK6 Sperrwelle Extra Code](https://lpubelts.com/?id=108549ba)  (6 pin with 5 finger pins)
 - [IKON WSW](https://lpubelts.com/?id=7e967792)  (5 sliders)
 - [IKON WSW](https://lpubelts.com/?id=c9494ee8)  (7 sliders, upgrade of WSW with 5 sliders)
-- [Kaba 20 / MIWA JN / Kaba Star (4 rows)](https://lpubelts.com/?id=8f99236e)  (15 or more pins)
+- [Kaba 20 / MIWA JN / Kaba Star](https://lpubelts.com/?id=8f99236e)  (4 directions, 15+ pins)
 - [Kaba Penta](https://lpubelts.com/?id=68b5a797)  (15-20 pins)
 - [Kaba Penta](https://lpubelts.com/?id=bc1509f5)  (21 or more pins)
 - [Kaba Quattro / Kaba experT](https://lpubelts.com/?id=f7b52501)  (15-20 pins)
