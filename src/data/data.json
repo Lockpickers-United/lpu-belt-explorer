@@ -6390,6 +6390,14 @@
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
+    ],
+    "media": [
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713279046_a06b2fca20_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713279046/in/album-72177720306294071/"
+      }
     ]
   },
   {
@@ -6514,7 +6522,7 @@
     "media": [
       {
         "title": "By: Guid",
-        "subtitle": "CC BY-SA 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52712757847_dd870fae80_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52712757847/in/album-72177720306294051/"
       }
@@ -8292,7 +8300,21 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination"
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "media": [
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713279046_a06b2fca20_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713279046/in/album-72177720306294071/"
+      },
+      {
+        "title": "By: Guid",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52713549699_fb619a78a0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713549699/in/album-72177720306294071/"
+      }
+    ]
   },
   {
     "id": "826c31e0",
@@ -11170,10 +11192,16 @@
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687732884/in/album-72177720305999987/"
       },
       {
-        "title": "By: PeaceWeapon",
+        "title": "By: Peaceweapon",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52687879495_ca4b015f22_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687879495/"
+      },
+      {
+        "title": "By: MrBlackMagic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724341639_8cfc8d1d3b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724341639/in/album-72177720306008889/"
       }
     ],
     "links": [
@@ -12921,10 +12949,22 @@
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687732884/in/album-72177720305999987/"
       },
       {
+        "title": "By: DangDangus",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724361259_1e9f9a00b2_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724361259/in/album-72177720305999987/"
+      },
+      {
         "title": "By: Peaceweapon",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52687732859_02b8af5fcb_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52687732859/in/album-72177720305999987/"
+      },
+      {
+        "title": "By: MrBlackMagic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724341639_8cfc8d1d3b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724341639/in/album-72177720306008889/"
       }
     ],
     "links": [
@@ -14292,6 +14332,42 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Fichet_F3D-M.jpeg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Fichet_F3D-M.jpeg"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724366189_eda59bdcdd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724366189/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724368004_a603cc8a65_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724368004/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724079906_2e951ea3c9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724079906/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724485790_4d9a680da0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724485790/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724554213_6fea6a2a57_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724554213/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52723554847_76dc868624_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52723554847/in/album-72177720306454838/"
       }
     ],
     "links": [
@@ -14324,6 +14400,42 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Fichet_F3D-M.jpeg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Fichet_F3D-M.jpeg"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724366189_eda59bdcdd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724366189/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724368004_a603cc8a65_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724368004/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Greenish",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724079906_2e951ea3c9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724079906/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724485790_4d9a680da0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724485790/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724554213_6fea6a2a57_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724554213/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Mick",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52723554847_76dc868624_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52723554847/in/album-72177720306454838/"
       }
     ],
     "links": [
@@ -14654,10 +14766,10 @@
       },
       {
         "make": "Kaba",
-        "model": "Star (4 rows)"
+        "model": "Star"
       }
     ],
-    "version": "15 or more pins",
+    "version": "4 directions, 15+ pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -15321,7 +15433,7 @@
       {
         "title": "By: DangDangus",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52722439850_5ecfeed9a7_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52722439850_b1a9dc002b_c_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52722439850/in/album-72177720306421854/"
       }
     ]
@@ -16250,6 +16362,26 @@
       "Pin-tumbler",
       "Slider",
       "Sidebar"
+    ],
+    "media": [
+      {
+        "title": "By: Antix",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52723537127_1f63141eb7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52723537127/in/album-72177720306280609/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52692794654_3f1eab7d06_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52692794654/in/album-72177720306280609/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52693015758_67cf5a9ee5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52693015758/in/album-72177720306280609/"
+      }
     ]
   },
   {
