@@ -104,7 +104,7 @@
 - [ABUS 55/40](https://lpubelts.com/?id=632f4069)  (40 mm and up (ex: abus 55/50))
 - [ABUS 60/50](https://lpubelts.com/?id=d7188e81) 
 - [ABUS 64Ti Titalium](https://lpubelts.com/?id=52f1e117)  (5 pins or more (40mm and larger))
-- [ABUS 65/40](https://lpubelts.com/?id=a0e50505)  (40mm or larger (ex: 65/50))
+- [ABUS 65/40 / ABUS 65/45 / ABUS 65/50 / ABUS 65/60](https://lpubelts.com/?id=a0e50505) 
 - [ABUS 83/40](https://lpubelts.com/?id=3653f376) 
 - [ABUS 85](https://lpubelts.com/?id=683e4f33) 
 - [ABUS Buffo (Ecoline)](https://lpubelts.com/?id=d7479fd6) 

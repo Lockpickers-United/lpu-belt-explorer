@@ -96,7 +96,7 @@ orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
 orange,ABUS,55/40,"40 mm and up (ex: abus 55/50)",Pin-tumbler,Unguttable,,632f4069
 orange,ABUS,60/50,,Pin-tumbler,Unguttable,,d7188e81
 orange,ABUS,"64Ti Titalium","5 pins or more (40mm and larger)",Pin-tumbler,Unguttable,,52f1e117
-orange,ABUS,65/40,"40mm or larger (ex: 65/50)",Pin-tumbler,Unguttable,,a0e50505
+orange,"ABUS,ABUS,ABUS,ABUS","65/40,65/45,65/50,65/60",,Pin-tumbler,Unguttable,,a0e50505
 orange,ABUS,83/40,,Pin-tumbler,Guttable,,3653f376
 orange,ABUS,85,,Pin-tumbler,Unguttable,,683e4f33
 orange,ABUS,"Buffo (Ecoline)",,Pin-tumbler,,,d7479fd6
