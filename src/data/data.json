@@ -1583,9 +1583,20 @@
       {
         "make": "ABUS",
         "model": "65/40"
+      },
+      {
+        "make": "ABUS",
+        "model": "65/45"
+      },
+      {
+        "make": "ABUS",
+        "model": "65/50"
+      },
+      {
+        "make": "ABUS",
+        "model": "65/60"
       }
     ],
-    "version": "40mm or larger (ex: 65/50)",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
