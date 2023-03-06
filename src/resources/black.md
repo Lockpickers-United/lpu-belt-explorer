@@ -15,7 +15,7 @@ In gutting, all components relevant to function must be shown clearly and zoomed
 recommended applicants ask in the discord or via modmail prior to filming. All locks must be gutted, even if destruction
 is required to gut.
 
-Requirements:
+**Requirements**
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping advancing and advanced pickers
