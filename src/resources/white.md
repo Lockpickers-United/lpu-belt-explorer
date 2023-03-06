@@ -2,6 +2,6 @@ This is the beginning of your journey of self-discovery that will test the limit
 
 Both photos and videos of your picking accomplishment are accepted for this rank.
 
-#### Requirements:
+**Requirements**
 
 1.  Pick any lock with any tool.
