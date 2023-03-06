@@ -2,6 +2,6 @@ You understand the basic function of locks, and technique to pick them. Normal p
 
 Both photos and videos of your picking accomplishment are accepted for this rank.
 
-#### Requirements:
+**Requirements**
 
 1.  Pick one of the locks ranked as yellow belt or similar
