@@ -16,9 +16,10 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 You must submit a **video** of your picking accomplishments for this rank. Videos must be in one, continuous take.  
 Photographs will also be accepted for locks that cannot be disassembled.
 
-#### Requirements:
+**Requirements**
 
-1.  Pick one of the locks ranked as orange belt or similar`,o=`Higher quality locks with even more security pins. Some of these locks have
+1.  Pick one of the locks ranked as orange belt or similar
+`,o=`Higher quality locks with even more security pins. Some of these locks have
 dead cores, and it’s not just because you've picked them to death. It might
 also be that you have started down the dimple lock road. You've also started
 your development as a lock surgeon, gutting them and getting them back
