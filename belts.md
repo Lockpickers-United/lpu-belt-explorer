@@ -427,9 +427,10 @@ You understand the basic function of locks, and technique to pick them. Normal p
 
 Both photos and videos of your picking accomplishment are accepted for this rank.
 
-#### Requirements:
+**Requirements**
 
 1.  Pick one of the locks ranked as yellow belt or similar
+
 
 - [Any Lever Generic/Unknown Cabinet lock](https://lpubelts.com/?id=ba5584ca)  (3 levers)
 - [Any Lever Generic/Unknown Mortice lock](https://lpubelts.com/?id=be3fef00)  (3 levers)
