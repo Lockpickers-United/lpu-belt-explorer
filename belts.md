@@ -394,6 +394,12 @@ and a column where notes are kept for the next update, **[click here](https://do
 
 
 
+### Lock Pickers United Belt Explorer
+
+The LPU [Belt Explorer](https://www.lpubelts.com/) is a new tool that lets you explore the belt rankings list. Every
+lock for every belt is described with it's locking mechanisms and other features. Many of the locks have photo galleries
+as well as notes about the lock and strategies for picking. [Check it out!](https://www.lpubelts.com/)
+
 ### White Belt
 ![](%%white%%)
 
