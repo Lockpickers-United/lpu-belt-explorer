@@ -381,7 +381,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 ----------
 
-###Current Belt Rankings List
+### Current Belt Rankings List
 
 Interested in seeing what's coming up? Below is a spreadsheet with all the same locks as this list, and a column where notes are kept for the next update.
 
