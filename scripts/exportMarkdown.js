@@ -25,9 +25,10 @@ const beltsMd = uniqueBelts.map(belt => {
     return header + reqs + '\n\n' + entries
 }).join('\n\n')
 
+const headerMd = fs.readFileSync('./src/resources/header.md', 'utf8')
 const footerMd = fs.readFileSync('./src/resources/footer.md', 'utf8')
 
-const markdown = infoMd + '\n\n' + beltsMd + '\n\n' + footerMd
+const markdown = infoMd + '\n\n' + headerMd + '\n\n' + beltsMd + '\n\n' + footerMd
 
 /*  -Layout-
     <./src/resources/info.md>
