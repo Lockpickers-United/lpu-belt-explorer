@@ -345,6 +345,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 ### Recent Changes: November 2022&ndash;February 2023
 
 **New Additions**
+
 * **Dorma DC400 (Blue)** Interesting spools and tight tolerances make blue logical, though quite difficult amongst blue locks.
 * **Yanai R 2200M (Black 2)** A clone of the Clavis T20, this Japanese HPC lock is similar in difficulty.
 * **Goal S (5 pins) (Blue)** Similar to the Goal P and Z with less pins, blue seems to be an easy decision.
@@ -355,10 +356,12 @@ working on that lock to have time to get their accomplishment ranked at the old 
 * **Cism Atlas (Red)** Now that this lock has been picked with feedback, its original ranking has been restored.
 
 **Upgrades**
+
 * **Kaba Ace (&ge;13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
 * **Kaba Ace (<13 pins) (Purple -> Brown)** Upgraded alongside the other version.
 
 **Downgrades**
+
 * **Abloy Protec2 (Black 4 -> Black 3)** A new method being discovered means this lock is no more difficult than the Protec.
 * **Abus D6 (Blue -> Green)** Despite the spools, this lock is lacking in difficulty for blue.
 * **Mottura Champions C30/C31/C39 (Blue -> Green)** As the magnetic element does not consistently work, there are far too many samples of this lock that are missing its unique feature, so it has been downgraded.
@@ -370,6 +373,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 * **Walsall locks, Ace - 7 levers (Black 1 -> Purple)** This lock was ranked by some mistake, as it features 7 false gated levers and an open keyway, being a lever lock often recommended to beginners.
 
 **Changes to Listing**
+
 * **Robur Safe Deposit Lock (barrels < 3 chambers with matched milling)** and **Robur Safe Deposit Lock (gins < 3 chambers with matched milling)** are now samelined as with few security pins, they are almost identical locks. The versions with 3 or more security pins remain separate.
 * **West 916 -> West 916 / West 955** These are almost identical HPC locks.
 * **Miwa E6 -> Miwa E6 / Miwa 83EC** The 83EC has 2 less top pins and the same magnetic elements, which are the main part of the lock.
@@ -377,6 +381,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 * **Yardeni -> Yardeni 6** Renamed for clarity.
 
 **Clarification**
+
 * **Fichet F3D External Cylinder** is considered an upgrade of Fichet F3D Indoor Cylinder. 
 
 ----------
