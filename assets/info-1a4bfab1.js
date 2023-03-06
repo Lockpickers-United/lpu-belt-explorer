@@ -175,7 +175,7 @@ the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb
 
 ### Belt Request Instructions
 
-#### REDDIT
+#### Reddit
 
 Belts should always be requested via modmail on Reddit. Posts requesting belts will be excluded.
 If you want to sync the new belt with your user on Discord, please add your Discord username with the request.
@@ -207,7 +207,7 @@ use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 
 ----------
 
-#### DISCORD
+#### Discord
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 
