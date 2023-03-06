@@ -2,6 +2,7 @@ import fs from 'fs'
 import belts, {uniqueBelts} from '../src/data/belts.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
+const infoMd = fs.readFileSync('./src/resources/info.md', 'utf8')
 
 const initialVal = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), [])
 const groupedByBelt = rawData.reduce((acc, val) => {
@@ -10,8 +11,9 @@ const groupedByBelt = rawData.reduce((acc, val) => {
     return acc
 }, initialVal)
 
-const markdown = uniqueBelts.map(belt => {
-    const header = `### ${belts[belt].label} Belt\n\n`
+const beltsMd = uniqueBelts.map(belt => {
+    const header = `### ${belts[belt].label} Belt\n![](%%${belt}%%)\n\n`
+    const reqs = fs.readFileSync(`./src/resources/${belt}.md`, 'utf8')
     const entries = groupedByBelt[belt].map(entry => {
         const makeModels = entry.makeModels.map(({make, model}) => {
             return make && make !== model ? `${make} ${model}` : model
@@ -20,7 +22,21 @@ const markdown = uniqueBelts.map(belt => {
         const version = entry.version ? ` (${entry.version})` : ''
         return `- [${makeModels}](${url}) ${version}`
     }).join('\n')
-    return header + entries
+    return header + reqs + '\n\n' + entries
 }).join('\n\n')
+
+const footerMd = fs.readFileSync('./src/resources/footer.md', 'utf8')
+
+const markdown = infoMd + '\n\n' + beltsMd + '\n\n' + footerMd
+
+/*  -Layout-
+    <./src/resources/info.md>
+
+    ### Color Belt
+    <./src/resources/color.md>
+    <belt ranking info>
+
+    <./src/resources/footer.md>
+ */
 
 fs.writeFileSync('./dist/belts.md', markdown)
