@@ -754,7 +754,7 @@ of the lockpicking community as they progress.
 
 You must video picking and gutting accomplishments in one continuous take.
 
-#### Requirements:
+**Requirements**
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping new pickers, either on the sub and/or
@@ -765,6 +765,7 @@ You must video picking and gutting accomplishments in one continuous take.
 
 Note: If picking an SFIC, be sure to review the guidelines listed under SFIC Filming Requirements for validating
 your lock in the picking video. Please visit the "Read More..." link below for filming requirements.
+
 
 - [Any HQ High Security interactive clone](https://lpubelts.com/?id=c1d09460)  (4 pins)
 - [Any SFIC format lock](https://lpubelts.com/?id=c6529d9c)  (picked to one shearline)

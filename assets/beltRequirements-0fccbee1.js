@@ -47,7 +47,7 @@ of the lockpicking community as they progress.
 
 You must video picking and gutting accomplishments in one continuous take.
 
-#### Requirements:
+**Requirements**
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping new pickers, either on the sub and/or
@@ -57,7 +57,8 @@ You must video picking and gutting accomplishments in one continuous take.
 4. SPP and gut one of the locks ranked as blue belt or similar
 
 Note: If picking an SFIC, be sure to review the guidelines listed under SFIC Filming Requirements for validating
-your lock in the picking video. Please visit the "Read More..." link below for filming requirements.`,a=`You are now picking locks that are categorically hi-sec. They have two or
+your lock in the picking video. Please visit the "Read More..." link below for filming requirements.
+`,a=`You are now picking locks that are categorically hi-sec. They have two or
 more discrete locking mechanisms and are considered unpickable by nearly
 every locksmith on the planet. You are helping new pickers frequently
 and sharing challenge locks.
