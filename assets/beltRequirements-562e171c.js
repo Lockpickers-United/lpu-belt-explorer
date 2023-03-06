@@ -84,7 +84,7 @@ keypins, and countermilling are the norm for you.
 
 You must video picking and gutting accomplishments in one continuous take.
 
-#### Requirements:
+**Requirements**
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping advancing and advanced pickers
