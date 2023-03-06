@@ -1,14 +1,10 @@
-const e=`# Earn Lockpicking Karate Belt
+const e=`## Earn Lockpicking Karate Flair
+ 
+As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
-As a way to have fun, Lockpickers United gives its members the opportunity to earn karate belts. Belt flair (on reddit)
-or Belt role (on discord) is issued based on the accomplishments of the member, with each higher level requiring
-increased community participation and the picking of increasingly difficult locks.
+Karate Belt Flair is entirely optional and members will go "unranked" until they specifically requests ranking by [messaging the moderation team](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking). The moderators do not actively monitor the sub and all requests must go through modmail, posts requesting a belt will be removed. 
 
-Karate Belt is entirely optional and members will go "unranked" until they specifically request ranking to the
-moderation team, either on Reddit or on Discord.
-
-Remember this is all just for fun... In the end, no matter what karate belt you wear, you're still just wearing fancy
-pajamas.
+Remember this is all just for fun... In the end, no matter what karate belt you wear, you're still just wearing fancy pajamas.
 
 ----------
 
@@ -27,7 +23,7 @@ pajamas.
 
 --------------
 
-## FAQ
+### FAQ
 
 Question: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
 is appropriate for me?**
@@ -107,11 +103,11 @@ Question: **Are there any more goals to work towards after achieving black belt?
 
 > Answer: Yep! We have an entirely separate rule system for earning stripes after you've achieved black. It takes into
 account everything you've done throughout your lockpicking career, so we advise you don't delete any of your videos from
-the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtXb0QbfvLrnlGqAWgj9SK2RKEndcB6AMtE9c).
+the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb0QbfvLrnlGqAWgj9SK2RKEndcB6AMtE9c).
 
 ----------
 
-## General Rules
+### General Rules
 
 - When making your belt request, please add the model of your lock into the request (if you know what it is.) There are
   hundreds of different models of lock commonly used around the world, and the mods are not immediately familiar with
@@ -192,14 +188,14 @@ the internet. Check it out  [here](https://docs.google.com/document/d/1w33AkXvtX
 
 ----------
 
-## Belt Request Instructions
+### Belt Request Instructions
 
-### REDDIT
+#### REDDIT
 
 Belts should always be requested via modmail on Reddit. Posts requesting belts will be excluded.
 If you want to sync the new belt with your user on Discord, please add your Discord username with the request.
 
-- Each modmail should include:
+Each modmail should include:
 
     - A link to the photo / video of the lock(s) picked.
     - The model of the lock that was picked.
@@ -228,9 +224,7 @@ use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 
 ----------
 
-### DISCORD
-
-#### Belt Request Formatting
+#### DISCORD
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 
@@ -249,15 +243,16 @@ line.
 
 ----------
 
-## Challenge Lock Requirements
+### Challenge Lock Requirements
 
 Blue Belt Picker and higher require that you have custom pinned a "Challenge Lock" and shared it with another picker (
 Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you
-to the fun of exchanging locks designed not for security but specifically to defeat picking.  
+to the fun of exchanging locks designed not for security but specifically to defeat picking.
+
 If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain
-the more in-depth knowledge of how locks function that comes from building your own. Speak to a moderator for assistance
-if you're having trouble finding pickers you can send your lock to. Having no interest in building a challenge lock is
-not grounds for an exception.
+the more in-depth knowledge of how locks function that comes from building your own.
+
+[Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to. Having no interest in building a challenge lock is not grounds for an exception.
 
 A "**Challenge Lock**" is defined as:
 
@@ -289,7 +284,7 @@ Stipulations:
 
 ----------
 
-## SFIC Filming Requirements
+### SFIC Filming Requirements
 
 SFIC (Small Format Interchangeable Core) locks can be gutted, but require expensive tools to do so. Normally, we require
 any lock that can be gutted, to be gutted in order to be eligible for belt rank, but due to the difficult and expensive,
@@ -316,12 +311,12 @@ to  [u/Tko5479](https://www.reddit.com/u/Tko5479)  for the photo example.
 You may pick the lock before showing the lock verification steps above, but the lock must remain in frame for the
 entirety of the video
 
-### For SFIC locks that do not have keys
+#### For SFIC locks that do not have keys
 
 The lock must be picked to both control AND operating in one take, in addition to rule 1 above. Show the control lug is
 operating as intended (locked not moving, unlocked in control mode moving)
 
-### Confirmed SFIC's with security pins
+#### Confirmed SFIC's with security pins
 
 Since it is not always an option to gut SFIC's for video, the following are SFIC's which are confirmed to meet the
 security pin requirements as listed in the Brown belt list:
@@ -357,6 +352,8 @@ require a significant financial and time investment, and you may have already pu
 before we announced the lock is being reclassified. When we move a lock down a rank, we will make every effort to state
 that we are doing so publicly, and provide an appropriate grace period (generally one month) to allow anyone currently
 working on that lock to have time to get their accomplishment ranked at the old belt level.
+
+**Effective Immediately:**
 
 - See Changelog in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
 
