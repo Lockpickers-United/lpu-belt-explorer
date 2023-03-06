@@ -34,7 +34,7 @@ disassembled.
 Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-7If8) if you not familiar with the
 process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo).
 
-Requirements:
+**Requirements**
 
 1. Demonstrate your ability to gut locks.
 2. Demonstrate your ability to reassemble locks (the reassembly can be a different lock and even in a separate video).
