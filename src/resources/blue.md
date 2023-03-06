@@ -6,7 +6,7 @@ of the lockpicking community as they progress.
 
 You must video picking and gutting accomplishments in one continuous take.
 
-#### Requirements:
+**Requirements**
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping new pickers, either on the sub and/or
