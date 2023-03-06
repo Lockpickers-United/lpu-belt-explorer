@@ -8,21 +8,6 @@ Remember this is all just for fun... In the end, no matter what karate belt you 
 
 ----------
 
-## Table of contents
-
-- FAQ
-- General Rules
-    - Belt Request Instructions
-    - Reddit
-    - Discord
-- Challenge Lock Requirements
-- SFIC Filming Requirements
-- For SFIC locks that do not have keys
-- Confirmed SFIC's with security pins
-- Locks Scheduled for Reclassification
-
---------------
-
 ### FAQ
 
 Question: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
@@ -357,7 +342,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 ----------
 
-### Recent Changes: November 2022–February 2023
+### Recent Changes: November 2022&ndash;February 2023
 
 #### New Additions
 * **Dorma DC400 (Blue)** Interesting spools and tight tolerances make blue logical, though quite difficult amongst blue locks.
@@ -370,7 +355,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 * **Cism Atlas (Red)** Now that this lock has been picked with feedback, its original ranking has been restored.
 
 #### Upgrades
-* **Kaba Ace (≥13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
+* **Kaba Ace (&ge;13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
 * **Kaba Ace (<13 pins) (Purple -> Brown)** Upgraded alongside the other version.
 
 #### Downgrades
@@ -393,6 +378,16 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 #### Clarification
 * **Fichet F3D External Cylinder** is considered an upgrade of Fichet F3D Indoor Cylinder. 
+
+----------
+
+###Current Belt Rankings List
+
+Interested in seeing what's coming up? Below is a spreadsheet with all the same locks as this list, and a column where notes are kept for the next update.
+
+**[Click Here!](https://docs.google.com/spreadsheets/d/1JvskJMIl55mVVh53jgaWDFmwJz-KvHDWXVmvYsINB2g/edit?usp=sharing)**
+
+
 
 
 ### White Belt
