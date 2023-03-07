@@ -19,7 +19,7 @@ const beltsMd = uniqueBelts.map(belt => {
             return make && make !== model ? `${make} ${model}` : model
         }).join (' / ')
         const url = `https://lpubelts.com/?id=${entry.id}`
-        const version = entry.version ? ` (${entry.version})` : ''
+        const version = entry.version ? `(${entry.version})` : ''
         return `- [${makeModels}](${url}) ${version}`
     }).join('\n')
     return header + reqs + '\n\n' + entries
@@ -28,7 +28,9 @@ const beltsMd = uniqueBelts.map(belt => {
 const headerMd = fs.readFileSync('./src/resources/header.md', 'utf8')
 const footerMd = fs.readFileSync('./src/resources/footer.md', 'utf8')
 
-const markdown = infoMd + '\n\n' + headerMd + '\n\n' + beltsMd + '\n\n' + footerMd
+const markdown = (infoMd + '\n\n' + headerMd + '\n\n' + beltsMd + '\n\n' + footerMd)
+    .replace(/≥/g, '&ge;')
+    .replace(/≤/g, '&le;')
 
 /*  -Layout-
     <./src/resources/info.md>
