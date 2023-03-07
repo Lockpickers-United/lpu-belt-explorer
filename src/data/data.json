@@ -135,6 +135,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/225px-Mastercommercial.jpeg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Mastercommercial.JPG"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729635575_10083c7ef5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729635575/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729703843_4d8d69cec1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729703843/in/album-72177720306493537/"
       }
     ],
     "links": [
@@ -182,6 +194,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master_Lock_3_-_FXE47401.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Master_Lock_3_-_FXE47401.jpg"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702793_90cfa0baae_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702793/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729477504_d6b6388c67_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729477504/in/album-72177720306493537/"
       }
     ],
     "links": [
@@ -222,6 +246,20 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702753_7a900283da_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702753/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729225126_1a2bb5365a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729225126/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -255,6 +293,20 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729635485_dde64e5154_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729635485/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701687_f50d64f354_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701687/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -787,8 +839,12 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "model": "Dulimex (DX)"
+        "make": "Dulimex",
+        "model": "DX"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   {
@@ -844,6 +900,11 @@
     "version": "2 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "False gates"
     ]
   },
   {
@@ -864,6 +925,20 @@
     "makeModels": [
       {
         "model": "Faithfull"
+      }
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729703103_623ecb5293_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729703103/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729477829_90fe6e61b6_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729477829/in/album-72177720306493537/"
       }
     ]
   },
@@ -948,6 +1023,12 @@
       {
         "model": "Glip"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   {
@@ -1048,6 +1129,14 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729636725_f84819f595_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729636725/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -1126,6 +1215,30 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master-141-front.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Master-140-front.jpg"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729476704_7c5fc610aa_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729476704/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729476694_d52f7b9597_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729476694/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729703948_6d25b5cfb7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729703948/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728702002_e569166e0b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728702002/in/album-72177720306493537/"
       }
     ],
     "links": [
@@ -1153,6 +1266,20 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702943_46d8b120c9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702943/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729636485_f5a75fe478_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729636485/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -1169,6 +1296,20 @@
     ],
     "features": [
       "Guttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729224171_6588560bbc_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729224171/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701912_9a7286c9e3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701912/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -1221,6 +1362,20 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702913_3d3fb2d25e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702913/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701872_54f6de2acb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701872/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -1237,8 +1392,14 @@
     "belt": "yellow",
     "makeModels": [
       {
-        "model": "Mecanimax"
+        "model": "Mecanimex"
       }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   {
@@ -1329,7 +1490,7 @@
     "makeModels": [
       {
         "make": "Smith and Locke",
-        "model": "Mortise"
+        "model": "Mortice"
       },
       {
         "model": " non-British Standard"
@@ -1338,6 +1499,10 @@
     "version": "3 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key"
     ]
   },
   {
@@ -1352,6 +1517,10 @@
     "version": "4 lever, pin key",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key"
     ],
     "media": [
       {
@@ -1374,6 +1543,10 @@
     "version": "4 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key"
     ]
   },
   {
@@ -1388,6 +1561,10 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key"
     ]
   },
   {
@@ -2028,6 +2205,12 @@
     "version": "British Standard - 5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -2041,6 +2224,12 @@
     "version": "British Standard - 5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -2242,6 +2431,14 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729224376_6faff32512_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729224376/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -2293,6 +2490,18 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Master_Lock_150_-_FXE47400.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Master_Lock_150_-_FXE47400.jpg"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702953_56f90461d6_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702953/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729636580_75120451ab_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729636580/in/album-72177720306493537/"
       }
     ],
     "links": [
@@ -2316,6 +2525,20 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702868_e570453832_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702868/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729703793_5c29ebc0e3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729703793/in/album-72177720306493537/"
+      }
     ]
   },
   {
@@ -2589,6 +2812,12 @@
     "version": "5 Lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -2685,6 +2914,9 @@
     "version": "4 levers",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Curtain"
     ]
   },
   {
@@ -3599,6 +3831,26 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: BXoneXR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727546360_0eee0fae93_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727546360/in/album-72177720306481364/"
+      },
+      {
+        "title": "By: BXoneXR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727611373_c4d90ea0a9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727611373/in/album-72177720306481364/"
+      },
+      {
+        "title": "By: BXoneXR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727386049_daced8abff_w_d.jpgg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727386049/in/album-72177720306481364/"
+      }
     ]
   },
   {
@@ -3612,6 +3864,26 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Manipu lator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728163828_a95319231d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728163828/in/album-72177720306478117/"
+      },
+      {
+        "title": "By: Manipu lator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727163272_a07f67953b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727163272/in/album-72177720306478117/"
+      },
+      {
+        "title": "By: Manipu lator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727688196_b71c9ebba4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727688196/in/album-72177720306478117/"
+      }
     ]
   },
   {
@@ -3625,6 +3897,32 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727186222_7d0fe80168_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727186222/in/album-72177720306478377/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728122705_83c901a827_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728122705/in/album-72177720306478377/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727186167_6f1ebfc5d8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727186167/in/album-72177720306478377/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727185492_9638e29f50_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727185492/in/album-72177720306478377/"
+      }
     ]
   },
   {
@@ -3686,6 +3984,26 @@
     ],
     "features": [
       "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728262058_c32d144e94_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728262058/in/album-72177720306473546/"
+      },
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728262043_e80711a3e1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728262043/in/album-72177720306473546/"
+      },
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727260317_5e78fd987d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727260317/in/album-72177720306473546/"
+      }
     ]
   },
   {
@@ -3725,7 +4043,7 @@
     "belt": "green",
     "makeModels": [
       {
-        "make": "Corbin",
+        "make": "Corbin Russwin",
         "model": "Master Ring"
       }
     ],
@@ -3856,6 +4174,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -3870,6 +4194,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -3884,6 +4214,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -4363,6 +4699,32 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728091608_5e532cbdd4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728091608/in/album-72177720306477857/"
+      },
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727090612_24046a6203_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727090612/in/album-72177720306477857/"
+      },
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727090562_88dcb3ef8c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727090562/in/album-72177720306477857/"
+      },
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727614651_9f5a5b841a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727614651/in/album-72177720306477857/"
+      }
     ]
   },
   {
@@ -4438,12 +4800,17 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "Morgan"
+        "make": "Morgan",
+        "model": "Non British Standard"
       }
     ],
-    "version": "Non British Standard, 5 levers",
+    "version": "5 levers",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Curtain"
     ]
   },
   {
@@ -4508,7 +4875,7 @@
     "makeModels": [
       {
         "make": "PACLOCK",
-        "model": "100a"
+        "model": "100A"
       }
     ],
     "version": "6-pin version of the 90a pro",
@@ -4534,6 +4901,24 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-PACLOCK_100G_%281%29.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:PACLOCK_100G_(1"
+      },
+      {
+        "title": "By: Keyla Sentry",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728138530_0a019cbc33_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728138530/in/album-72177720306478382/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52727963929_80beea32b8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52727963929/in/album-72177720306478382/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728186453_e893a5826b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728186453/in/album-72177720306478382/"
       }
     ],
     "links": [
@@ -4576,11 +4961,19 @@
     "makeModels": [
       {
         "make": "PACLOCK",
-        "model": "95g"
+        "model": "95G"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Keyla Sentry",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728186558_b8b0b319c7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728186558/in/album-72177720306478372/"
+      }
     ]
   },
   {
@@ -4662,6 +5055,10 @@
     "version": "4 lever, pipe key",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pipe key"
     ]
   },
   {
@@ -5285,6 +5682,11 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -5299,6 +5701,11 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -5314,6 +5721,10 @@
     "lockingMechanisms": [
       "Lever"
     ],
+    "features": [
+      "Mortice",
+      "Uncurtained"
+    ],
     "notes": "Uncurtained"
   },
   {
@@ -5328,6 +5739,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -5582,6 +5999,12 @@
     "version": "6 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -5596,6 +6019,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ],
     "media": [
       {
@@ -5636,6 +6065,9 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock"
     ],
     "media": [
       {
@@ -6750,6 +7182,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -7041,6 +7479,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -7400,6 +7844,12 @@
     "version": "6 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -8167,6 +8617,12 @@
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
+    ],
+    "features": [
+      "Mortice",
+      "Pin key",
+      "Curtain",
+      "False gates"
     ]
   },
   {
@@ -12760,7 +13216,7 @@
       },
       {
         "make": "S&G",
-        "model": "4545"
+        "model": "4440 series"
       }
     ],
     "lockingMechanisms": [
@@ -15114,6 +15570,24 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52694651087_b047f03d56_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52694651087/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728219335_751c2dd25b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728219335/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728219335_751c2dd25b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728219335/in/album-72177720306096799/"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728219335_751c2dd25b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728219335/in/album-72177720306096799/"
       }
     ]
   },
@@ -16764,6 +17238,36 @@
     "lockingMechanisms": [
       "Dimple"
     ]
+  },
+  {
+    "id": "50ac8cd2",
+    "belt": "unranked",
+    "makeModels": [
+      {
+        "make": "Mul-t-Lock",
+        "model": "Classic"
+      },
+      {
+        "make": "Mul-t-Lock",
+        "model": "Interactive"
+      }
+    ],
+    "version": "4 pins, spooled drivers"
+  },
+  {
+    "id": "02e1ebe4",
+    "belt": "unranked",
+    "makeModels": [
+      {
+        "make": "Mul-t-Lock",
+        "model": "Classic"
+      },
+      {
+        "make": "Mul-t-Lock",
+        "model": "Interactive"
+      }
+    ],
+    "version": "4 pins, serrated drivers"
   },
   {
     "id": "1798ca06",
