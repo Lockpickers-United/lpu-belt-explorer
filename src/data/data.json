@@ -424,13 +424,14 @@
         "model": "64Ti Titalium"
       }
     ],
-    "version": "4 pins or fewer",
+    "version": "30mm or smaller (<5 pins)",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
       "Unguttable"
     ],
+    "notes": "Includes 64Ti/20, 64Ti/25, 64Ti/30",
     "media": [
       {
         "title": "By: mgsecure",
@@ -455,7 +456,7 @@
         "model": "65/35"
       }
     ],
-    "version": "or smaller",
+    "version": "35mm or smaller",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -540,7 +541,7 @@
         "model": "Nautic T84MB"
       }
     ],
-    "version": "40mm and up",
+    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -551,9 +552,10 @@
     "makeModels": [
       {
         "make": "ACE",
-        "model": "laminated 40mm padlock"
+        "model": "laminated"
       }
     ],
+    "version": "40mm padlock",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -1253,36 +1255,6 @@
     ]
   },
   {
-    "id": "6af6f704",
-    "belt": "yellow",
-    "makeModels": [
-      {
-        "make": "Master Lock",
-        "model": "4140 (V-line)"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Unguttable"
-    ],
-    "media": [
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702943_46d8b120c9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702943/in/album-72177720306493537/"
-      },
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729636485_f5a75fe478_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729636485/in/album-72177720306493537/"
-      }
-    ]
-  },
-  {
     "id": "759d0d0f",
     "belt": "yellow",
     "makeModels": [
@@ -1375,6 +1347,36 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52728701872_54f6de2acb_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701872/in/album-72177720306493537/"
+      }
+    ]
+  },
+  {
+    "id": "6af6f704",
+    "belt": "yellow",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "V-line 4140"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702943_46d8b120c9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702943/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729636485_f5a75fe478_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729636485/in/album-72177720306493537/"
       }
     ]
   },
@@ -1684,7 +1686,7 @@
         "model": "55/40"
       }
     ],
-    "version": "40 mm and up (ex: abus 55/50)",
+    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -1731,7 +1733,7 @@
         "model": "64Ti Titalium"
       }
     ],
-    "version": "5 pins or more (40mm and larger)",
+    "version": "40mm or larger (5+ pins)",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -1760,20 +1762,9 @@
       {
         "make": "ABUS",
         "model": "65/40"
-      },
-      {
-        "make": "ABUS",
-        "model": "65/45"
-      },
-      {
-        "make": "ABUS",
-        "model": "65/50"
-      },
-      {
-        "make": "ABUS",
-        "model": "65/60"
       }
     ],
+    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -1939,7 +1930,7 @@
         "model": "Diskus"
       }
     ],
-    "version": "normal pin tumblr, not dimple",
+    "version": "normal pin tumbler, not dimple",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -2450,7 +2441,7 @@
         "model": "110/40"
       }
     ],
-    "version": "40mm or bigger",
+    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -2512,36 +2503,6 @@
     ]
   },
   {
-    "id": "9441e2cc",
-    "belt": "orange",
-    "makeModels": [
-      {
-        "make": "Master Lock",
-        "model": "4150 (V-line)"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Unguttable"
-    ],
-    "media": [
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702868_e570453832_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702868/in/album-72177720306493537/"
-      },
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729703793_5c29ebc0e3_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729703793/in/album-72177720306493537/"
-      }
-    ]
-  },
-  {
     "id": "e2e15f47",
     "belt": "orange",
     "makeModels": [
@@ -2596,6 +2557,36 @@
     ]
   },
   {
+    "id": "9441e2cc",
+    "belt": "orange",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "V-line 4150"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729702868_e570453832_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729702868/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729703793_5c29ebc0e3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729703793/in/album-72177720306493537/"
+      }
+    ]
+  },
+  {
     "id": "9f832458",
     "belt": "orange",
     "makeModels": [
@@ -2613,7 +2604,6 @@
         "model": "Mortise"
       }
     ],
-    "version": "PT",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -2829,7 +2819,6 @@
         "model": "Mortise"
       }
     ],
-    "version": "PT",
     "lockingMechanisms": [
       "Pin-tumbler"
     ]
@@ -2867,38 +2856,6 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52722025186_1590e8f22d_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52722025186/in/album-72177720306407131/"
-      }
-    ]
-  },
-  {
-    "id": "b099c88a",
-    "belt": "green",
-    "makeModels": [
-      {
-        "model": "\" BiLock \" Fake"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "media": [
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52720403454_1403677a4d_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720403454/in/album-72177720306397739/"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52720557415_acfc9fa6cd_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720557415/in/album-72177720306397739/"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52720403489_b54c079703_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720403489/in/album-72177720306397739/"
       }
     ]
   },
@@ -3445,7 +3402,7 @@
         "model": "Brass Padlock"
       }
     ],
-    "version": "40mm and up",
+    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -3462,7 +3419,7 @@
         "model": "laminated padlock"
       }
     ],
-    "version": "44mm and up",
+    "version": "44mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -3748,6 +3705,38 @@
     ],
     "lockingMechanisms": [
       "Dimple"
+    ]
+  },
+  {
+    "id": "b099c88a",
+    "belt": "green",
+    "makeModels": [
+      {
+        "model": "BiLock Clone"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720403454_1403677a4d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720403454/in/album-72177720306397739/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720557415_acfc9fa6cd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720557415/in/album-72177720306397739/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52720403489_b54c079703_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52720403489/in/album-72177720306397739/"
+      }
     ]
   },
   {
@@ -4047,7 +4036,8 @@
         "model": "Master Ring"
       }
     ],
-    "version": "(picked to one shearline)"
+    "version": "**",
+    "notes": "** green if picked to one shearline"
   },
   {
     "id": "96bb2cf7",
@@ -4398,7 +4388,7 @@
     "makeModels": [
       {
         "make": "Kaba Gege",
-        "model": "Ap 1000"
+        "model": "AP 1000"
       }
     ],
     "lockingMechanisms": [
@@ -4509,7 +4499,8 @@
     "belt": "green",
     "makeModels": [
       {
-        "model": "KryPin tumbleronite 6-pin padlock"
+        "make": "Kryptonite",
+        "model": "6-pin padlock"
       }
     ],
     "lockingMechanisms": [
@@ -4843,7 +4834,7 @@
         "model": "Champions C39"
       }
     ],
-    "version": "**",
+    "version": "***",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
@@ -4851,7 +4842,7 @@
     "features": [
       "Magnetic pins"
     ],
-    "notes": "** **Special Picking Requirement:** Must be picked with the bible oriented down"
+    "notes": "*** **Special Picking Requirement:** Must be picked with the bible oriented down"
   },
   {
     "id": "abf55188",
@@ -4974,19 +4965,6 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52728186558_b8b0b319c7_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728186558/in/album-72177720306478372/"
       }
-    ]
-  },
-  {
-    "id": "e702ca41",
-    "belt": "green",
-    "makeModels": [
-      {
-        "make": "PACLOCK",
-        "model": "PL 90A-pro"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
     ]
   },
   {
@@ -5304,10 +5282,11 @@
         "model": "SFIC format lock"
       }
     ],
-    "version": "picked to one shearline",
+    "version": "**",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ]
+    ],
+    "notes": "** Blue if picked to one shearline"
   },
   {
     "id": "ea0efaca",
@@ -6332,9 +6311,10 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "P031 (N6 profile)"
+        "model": "P031"
       }
     ],
+    "version": "N6 profile",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -6473,7 +6453,7 @@
         "model": "8"
       }
     ],
-    "version": "3-row, <9 pins",
+    "version": "3 row, <9 pins",
     "lockingMechanisms": [
       "Dimple"
     ]
@@ -6875,7 +6855,7 @@
         "model": "Original Camlock"
       }
     ],
-    "version": "≤4 pins",
+    "version": "<5 pins",
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
@@ -7324,7 +7304,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "*** **Special Picking Requirement:** Exempt from rule regarding minimum master wafers"
+    "notes": "*** **Special Picking Requirement:** Check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers"
   },
   {
     "id": "96fd610e",
@@ -7946,11 +7926,12 @@
     "belt": "purple",
     "makeModels": [
       {
-        "make": "Corbin",
+        "make": "Corbin Russwin",
         "model": "Master Ring"
       }
     ],
-    "notes": "Both shearlines must be filmed in one take"
+    "version": "***",
+    "notes": "*** **Special Picking Requirement:** Both shearlines must be filmed in one take"
   },
   {
     "id": "5e264777",
@@ -9641,11 +9622,11 @@
         "model": "SFIC with security pins"
       }
     ],
-    "version": "Must be picked to both shearlines in one take ****",
+    "version": "****",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "**** **Special Picking Requirement:** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see \"confirmed SFIC's with security pins\")"
+    "notes": "**** **Special Picking Requirement:** Must be picked to both shearlines in one take (check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)"
   },
   {
     "id": "da09d849",
@@ -17240,7 +17221,7 @@
     ]
   },
   {
-    "id": "50ac8cd2",
+    "id": "23ddfa44",
     "belt": "unranked",
     "makeModels": [
       {
@@ -17255,7 +17236,7 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "02e1ebe4",
+    "id": "64f33005",
     "belt": "unranked",
     "makeModels": [
       {
