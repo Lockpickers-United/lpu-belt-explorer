@@ -43,11 +43,11 @@ yellow,,Casesa,,,,,919755fe
 yellow,,CIB,,,,,e38b7c57
 yellow,,Citadel,,Pin-tumbler,,,4938772f
 yellow,,Cotica,,,,,6719b451
-yellow,,"Dulimex (DX)",,,,,a8d996c0
+yellow,Dulimex,DX,,Pin-tumbler,,,a8d996c0
 yellow,Eagle,37110,,Pin-tumbler,,,2f634d15
 yellow,Egret,"5-pin padlock",,Pin-tumbler,Unguttable,,75d883a0
 yellow,,EMR,,Pin-tumbler,,,f24c2d25
-yellow,ERA,mortice,"2 lever",Lever,,,c2306424
+yellow,ERA,mortice,"2 lever",Lever,"Mortice,Pin key,False gates",,c2306424
 yellow,,Esco,,Pin-tumbler,,,71eea804
 yellow,,Faithfull,,,,,1376f489
 yellow,,Favour,,Pin-tumbler,,,ca5b08b4
@@ -55,7 +55,7 @@ yellow,,Fermod,,,,,d93c1ed7
 yellow,,FF,,Pin-tumbler,,,5e3f057f
 yellow,,FFF,,Pin-tumbler,,,17ce6273
 yellow,,Flora,,,,,e8feb6f3
-yellow,,Glip,,,,,5599bd8a
+yellow,,Glip,,Pin-tumbler,Unguttable,,5599bd8a
 yellow,,Guri,,,,,234de3bc
 yellow,,HiK,,,,,9a7e1167
 yellow,,HP+,,Pin-tumbler,,,28f1b592
@@ -73,7 +73,7 @@ yellow,"Master Lock",930,,Pin-tumbler,Guttable,,759d0d0f
 yellow,"Master Lock",DG,,Pin-tumbler,Unguttable,,df703850
 yellow,"Master Lock",Magnum,,Pin-tumbler,Unguttable,,d5053e6d
 yellow,,McGeiz,,,,,2936bb00
-yellow,,Mecanimax,,,,,d02d36d5
+yellow,,Mecanimex,,Pin-tumbler,Unguttable,,d02d36d5
 yellow,,Metal,,Pin-tumbler,,,6c365304
 yellow,,Modeco,,,,,ae031589
 yellow,,"Multi XL",,,,,8824c0e5
@@ -82,10 +82,10 @@ yellow,,Owa,,,,,2924aa76
 yellow,,"Power Line",,,,,30b60f60
 yellow,,Santos,,Pin-tumbler,,,8e2d57b1
 yellow,Schlage,Mortise,,Pin-tumbler,,,40f7d7c7
-yellow,"Smith and Locke,","Mortise, non-British Standard","3 lever",Lever,,,d4299b24
-yellow,Squire,440,"4 lever, pin key",Lever,,,a460c971
-yellow,Squire,660,"4 lever",Lever,,,920b7da1
-yellow,Squire,Defiant,"5 lever",Lever,,,ed713b97
+yellow,"Smith and Locke,","Mortice, non-British Standard","3 lever",Lever,"Mortice,Pin key",,d4299b24
+yellow,Squire,440,"4 lever, pin key",Lever,"Padlock,Pin key",,a460c971
+yellow,Squire,660,"4 lever",Lever,"Padlock,Pin key",,920b7da1
+yellow,Squire,Defiant,"5 lever",Lever,"Padlock,Pin key",,ed713b97
 yellow,,Stabilit,,Pin-tumbler,,,9fd77c9a
 yellow,,Südmetall,,,,,4ec9a150
 yellow,,Tara,,,,,ff837451
@@ -119,8 +119,8 @@ orange,,CFG,,Pin-tumbler,,,6758c30e
 orange,Cocraft,"6-Pin Padlock","Non guttable version",Pin-tumbler,Unguttable,,3b3e78b0
 orange,Corbin,"Arco Cromato",,Pin-tumbler,Unguttable,,99057c44
 orange,DOM,"333 RNT (standard cylinder)",,Pin-tumbler,,,eaba4dd9
-orange,,Eclipse,"British Standard - 5 lever",Lever,,,677afce6
-orange,,"Eurospec (E*S)","British Standard - 5 lever",Lever,,,26315d0f
+orange,,Eclipse,"British Standard - 5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,677afce6
+orange,,"Eurospec (E*S)","British Standard - 5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,26315d0f
 orange,,F3,,Pin-tumbler,,,d98f267e
 orange,FAB,100,,Pin-tumbler,,,140d2878
 orange,Fanal,"5-pin padlock",,Pin-tumbler,Unguttable,,5802cfb9
@@ -156,11 +156,11 @@ orange,Wilka,"standard profile","5 pin",Pin-tumbler,,,07d4fec6
 orange,Winkhaus,AZ,,Pin-tumbler,,,8c0171f9
 orange,Winkhaus,"VS 5","5 pin",Pin-tumbler,"Trap pin/bar",,ab17daa6
 orange,Yale,125/40,,Pin-tumbler,Unguttable,,0f0dcd42
-orange,Yale,"5 lever sashlock","5 Lever",Lever,,,fb3daa70
+orange,Yale,"5 lever sashlock","5 Lever",Lever,"Mortice,Pin key,Curtain,False gates",,fb3daa70
 orange,Yale,Mortise,PT,Pin-tumbler,,,db1040e5
 orange,Yale,Y110/40,,Pin-tumbler,Unguttable,,98a2ba2d
 green,,""" BiLock "" Fake",,Pin-tumbler,,,b099c88a
-green,Any,"Lever Generic/Unknown curtained lock","4 levers",Lever,,,0e97c099
+green,Any,"Lever Generic/Unknown curtained lock","4 levers",Lever,Curtain,,0e97c099
 green,Any,"Lever Generic/Unknown uncurtained lock","4 levers",Lever,Uncurtained,,d46ac711
 green,ABUS,72/40,,Pin-tumbler,Guttable,,74a00ae3
 green,ABUS,"74/40 LOTO",,Pin-tumbler,Unguttable,,e42853c7
@@ -212,7 +212,7 @@ green,Chateau,"C970 disk padlock",,Pin-tumbler,Unguttable,,20f3575c
 green,Commando,"IC3 Tactical",,Pin-tumbler,Unguttable,,9d478029
 green,Commando,Marine,,Pin-tumbler,Unguttable,,f7f31800
 green,Commando,Peacemaker,,Pin-tumbler,Unguttable,,606275d8
-green,Corbin,"Master Ring","(picked to one shearline)",,,,73a718cb
+green,"Corbin Russwin","Master Ring","(picked to one shearline)",,,,73a718cb
 green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 green,Corona,cylinder,,Pin-tumbler,,,6c9a666e
 green,Corona,M,,Pin-tumbler,,,6b472dc2
@@ -222,9 +222,9 @@ green,DOM,"RS 5",,Pin-tumbler,,,5241369e
 green,DOM,SC,,,,,05979a42
 green,DOM,SV,,Pin-tumbler,,,95b2c7b0
 green,,Elca,,Pin-tumbler,,,8e18bd5f
-green,ERA,Invincible,"5 lever",Lever,,,9bf13231
-green,ERA,Pro-Fit,"5 lever",Lever,,,2ec75ab7
-green,ERA,Viscount,"5 lever",Lever,,,6ad7add4
+green,ERA,Invincible,"5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,9bf13231
+green,ERA,Pro-Fit,"5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,2ec75ab7
+green,ERA,Viscount,"5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,6ad7add4
 green,EVVA,FPS,,Pin-tumbler,,,6a870d80
 green,EVVA,"Standardcylinder (Normalprofil)",,Pin-tumbler,,,b5a5e9a5
 green,EVVA,TSC,,Pin-tumbler,,,9406020f
@@ -258,19 +258,19 @@ green,"Master Lock","Pro Series",,Pin-tumbler,,,2bf16de8
 green,"Master Lock","S32 LOTO (Lockout Tagout)",,Pin-tumbler,Unguttable,,efbc853f
 green,Mauer,"Elite 1",,Dimple,,,b8f4f5f5
 green,MCM,SCX,,Dimple,,,1f4e3e05
-green,,Morgan,"Non British Standard, 5 levers",Lever,,,66f5175a
+green,Morgan,"Non British Standard","5 levers",Lever,"Mortice,Curtain",,66f5175a
 green,Mottura,"Champions C10",,Dimple,,,4f8a20de
 green,"Mottura,Mottura,Mottura","Champions C30,Champions C31,Champions C39",**,"Dimple,Magnet","Magnetic pins","** **Special Picking Requirement:** Must be picked with the bible oriented down",3700d537
 green,Mul-T-Lock,7X7,,Dimple,Pin-in-pin,,abf55188
-green,PACLOCK,100a,"6-pin version of the 90a pro",Pin-tumbler,,,c7f1add4
+green,PACLOCK,100A,"6-pin version of the 90a pro",Pin-tumbler,,,c7f1add4
 green,PACLOCK,100G,,Pin-tumbler,,,0fb9a3c8
 green,PACLOCK,90A,,Pin-tumbler,,,8ad36e8a
-green,PACLOCK,95g,,Pin-tumbler,,,31d68cd1
+green,PACLOCK,95G,,Pin-tumbler,,,31d68cd1
 green,PACLOCK,"PL 90A-pro",,Pin-tumbler,,,e702ca41
 green,PACLOCK,UCS,,Pin-tumbler,,,f54c8493
 green,Sargent,Mortise,"with security pins",Pin-tumbler,,,8f3f18d8
 green,Schlage,Everest,,Pin-tumbler,,,ea1d1d8c
-green,Squire,440,"4 lever, pipe key",Lever,,,44bdfa06
+green,Squire,440,"4 lever, pipe key",Lever,"Padlock,Pipe key",,44bdfa06
 green,Tokoz,Beta,,Pin-tumbler,Unguttable,,5260b396
 green,Vachette,"standard cylinder",,Pin-tumbler,,,4f0fbb3f
 green,Wetzel,Pfaffenhain,,Pin-tumbler,,,ba627c40
@@ -306,10 +306,10 @@ blue,Bricard,Bloctout,,Wafer,,,307e1f03
 blue,Bricard,"Serial S",,Dimple,,,61f33761
 blue,"Burg Wächter","Gamma 700","Non-removable core",Pin-tumbler,,,ed9fa926
 blue,Cantol,"high-security line ","10-pin dimple",Dimple,,,5647f11c
-blue,Chubb,114,"5 lever",Lever,,,32c85438
-blue,Chubb,114e,"5 lever",Lever,,,0c946064
-blue,Chubb,"Any uncurtained 5 lever","uncurtained 5 lever",Lever,,Uncurtained,9d337b72
-blue,Chubb,Cruiser,"5 lever",Lever,,,5b842c0e
+blue,Chubb,114,"5 lever",Lever,"Pin key,Curtain,False gates",,32c85438
+blue,Chubb,114e,"5 lever",Lever,"Pin key,Curtain,False gates",,0c946064
+blue,Chubb,"Any uncurtained 5 lever","uncurtained 5 lever",Lever,"Mortice,Uncurtained",Uncurtained,9d337b72
+blue,Chubb,Cruiser,"5 lever",Lever,"Padlock,Pin key,Curtain,False gates",,5b842c0e
 blue,CISA,"Astral S",,Dimple,,,066d1e3b
 blue,CISA,C3000,,Pin-tumbler,,,f9aceec0
 blue,DeGuard,"interactive clone","4 pins",Dimple,,,b91162e7
@@ -321,9 +321,9 @@ blue,DOM,"RS Sigma",,Pin-tumbler,"""Magic"" DOM drivers",,1dd28bf9
 blue,DOM,"S (with circle)",,Pin-tumbler,,,9aa8821a
 blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
 blue,Dorma,DC400,,Pin-tumbler,,,1ede9094
-blue,ERA,"Big 6","6 lever",Lever,,,0f7eb0f2
-blue,ERA,Fortress,"5 lever",Lever,,,e2d201c9
-blue,ERA,Insurance,"5 lever",Lever,,,a2a10bc7
+blue,ERA,"Big 6","6 lever",Lever,"Padlock,Pin key,Curtain,False gates",,0f7eb0f2
+blue,ERA,Fortress,"5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,e2d201c9
+blue,ERA,Insurance,"5 lever",Lever,Padlock,,a2a10bc7
 blue,EVVA,DPI,"Pin Tumbler version",Pin-tumbler,"Trap pin/bar",,14481dfb
 blue,EVVA,DPS,"Pin Tumbler version",Pin-tumbler,"Trap pin/bar",,da54208c
 blue,EVVA,DPX,"Pin Tumbler version",Pin-tumbler,"Trap pin/bar",,af99d1cb
@@ -378,7 +378,7 @@ blue,Takigen,10-pin,,,,,b0d2e04c
 blue,TESA,T60,,Dimple,"Tapered drivers",,8b5b655e
 blue,Tokoz,Tech,,"Pin-tumbler,Wafer",,,35330d19
 blue,TrioVing,"(Vingcard) 55##","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
-blue,Union,Strongbolt,"5 lever",Lever,,,86703028
+blue,Union,Strongbolt,"5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,86703028
 blue,"Vachette,Vachette","VIP,VIP+",,Pin-tumbler,,,67c4159c
 blue,VSR,2-row,,Dimple,"High pin count",,97c2b9be
 blue,Winkhaus,N-Tra,,Dimple,,,2c9d12fc
@@ -395,7 +395,7 @@ purple,"ABUS,ABUS,CISA,Bricard","XP20s,XP2s,AP3,XP S2",,Dimple,"Interactive elem
 purple,"Agent,Agent,Agent","LS3,LS4,LS5",,Dimple,,,557b2f45
 purple,"Aldon Corporation","Hot Dog Lock",,,,,0723bdc2
 purple,,"Anchor Las (disc detainer)",,"Disc Detainer","Front tension,False gates",,bbce33e0
-purple,ASEC,"BS Sash lock","5 lever",Lever,,,23919b4e
+purple,ASEC,"BS Sash lock","5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,23919b4e
 purple,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling,Guttable",,f2d41749
 purple,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching sleeve",Pin-tumbler,Guttable,,ef221c67
 purple,"ASSA,ASSA","600,Max+ Restricted","Barrel spools and matching countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Guttable",,45e3cde7
@@ -409,7 +409,7 @@ purple,Bricard,Chifral,"all versions, <15 pins",Dimple,,,8f004bf0
 purple,Bricard,Supersureté,,,,,98ba98ae
 purple,"Burg Wächter","Alpha 800",,Wafer,Unguttable,,e38d015b
 purple,CEI,"""Five Colors""",,,,,1f3a4b1d
-purple,Chubb,Battleship,"6 lever",Lever,,,1f3a8ff9
+purple,Chubb,Battleship,"6 lever",Lever,"Padlock,Pin key,Curtain,False gates",,1f3a8ff9
 purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
 purple,Codkey,Locksys,"<15 pins",Dimple,,,8a0c4b07
 purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b7
@@ -440,7 +440,7 @@ purple,"Keso,Keso,Keso","10RS,2000S,4000S (Omega)",,Dimple,,,304f5471
 purple,Kwikset,"Smartkey (Gen III)",,Slider,,,06ddb074
 purple,Kwikset,"Smartkey (Gens I & II)",,Slider,,,41f9efa2
 purple,Kwikset,"Smartkey SC1 gen I",,Slider,,,dd1bf2af
-purple,Legge,"BS Sash lock","5 lever",Lever,,,bb317675
+purple,Legge,"BS Sash lock","5 lever",Lever,"Mortice,Pin key,Curtain,False gates",,bb317675
 purple,"LIPS,LIPS","Keso (door cylinder),Octro","<13 pins",Dimple,"High pin count",,c5b7e63b
 purple,LIPS,"Keso padlock",,Dimple,,,434b5b25
 purple,Liquidonics,"Miracle Magnetic",,"Magnet,Pin-tumbler","Magnetic rotors",,50d411f4
@@ -604,7 +604,7 @@ red,Robur,"2391 Safe Deposit Lock","barrels 3+ chambers with matched milling","P
 red,Robur,"2391 Safe Deposit Lock","gins 3+ chambers with matched milling)","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar,Guttable",,112d0034
 red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no false gates","Disc Detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
 red,Ruko,"Combi 2","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins,Guttable",,63a9a2b1
-red,"S&G,S&G","4544,4545",,Lever,"Safe deposit,Flat steel key,false gates","S&G=Sargent & Greenleaf",2ff8a738
+red,"S&G,S&G","4544,4440 series",,Lever,"Safe deposit,Flat steel key,false gates","S&G=Sargent & Greenleaf",2ff8a738
 red,Schlage,"Everest 29 SL Primus XP",,Slider,,,cf76cfde
 red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
 red,,Tann,"10 lever",Lever,"Safe,False gates",,b5df156e
@@ -760,6 +760,8 @@ unranked,Mindy,"Pagoda AF 16-50","(flat key)",,,,06a28ac7
 unranked,,"Ming Gao",,,,,c511cc75
 unranked,Miwa,SR,,,,,31cd85d7
 unranked,Mul-T-Lock,"Classic Pro",,Dimple,,,fd2b533e
+unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,50ac8cd2
+unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,02e1ebe4
 unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 unranked,Nagasawa,kcy-7x,"12 pin",,,,1ee9600e
 unranked,Opnus,TZ,"3 rows",,,"Similar to UX but 3 rows of pins",f8aaa0ef

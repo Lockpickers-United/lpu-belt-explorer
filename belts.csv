@@ -43,7 +43,7 @@ b517a7ef,yellow,"Burg Wächter SecuLock",
 e38b7c57,yellow,CIB,
 4938772f,yellow,Citadel,
 6719b451,yellow,Cotica,
-a8d996c0,yellow,"Dulimex (DX)",
+a8d996c0,yellow,"Dulimex DX",
 2f634d15,yellow,"Eagle 37110",
 75d883a0,yellow,"Egret 5-pin padlock",
 f24c2d25,yellow,EMR,
@@ -73,7 +73,7 @@ b4d52d31,yellow,IBAU,
 df703850,yellow,"Master Lock DG",
 d5053e6d,yellow,"Master Lock Magnum",
 2936bb00,yellow,McGeiz,
-d02d36d5,yellow,Mecanimax,
+d02d36d5,yellow,Mecanimex,
 6c365304,yellow,Metal,
 ae031589,yellow,Modeco,
 8824c0e5,yellow,"Multi XL",
@@ -82,7 +82,7 @@ ae031589,yellow,Modeco,
 30b60f60,yellow,"Power Line",
 8e2d57b1,yellow,Santos,
 40f7d7c7,yellow,"Schlage Mortise",
-d4299b24,yellow,"Smith and Locke Mortise /  non-British Standard","3 lever"
+d4299b24,yellow,"Smith and Locke Mortice /  non-British Standard","3 lever"
 a460c971,yellow,"Squire 440","4 lever, pin key"
 920b7da1,yellow,"Squire 660","4 lever"
 ed713b97,yellow,"Squire Defiant","5 lever"
@@ -212,7 +212,7 @@ dd155241,green,"Burg Wächter Profi 116/40",
 9d478029,green,"Commando IC3 Tactical",
 f7f31800,green,"Commando Marine",
 606275d8,green,"Commando Peacemaker",
-73a718cb,green,"Corbin Master Ring","(picked to one shearline)"
+73a718cb,green,"Corbin Russwin Master Ring","(picked to one shearline)"
 96bb2cf7,green,"Corbin Standard cylinder",
 6c9a666e,green,"Corona cylinder",
 6b472dc2,green,"Corona M",
@@ -258,14 +258,14 @@ cb471080,green,"Master Lock 931",
 efbc853f,green,"Master Lock S32 LOTO (Lockout Tagout)",
 b8f4f5f5,green,"Mauer Elite 1",
 1f4e3e05,green,"MCM SCX",
-66f5175a,green,Morgan,"Non British Standard, 5 levers"
+66f5175a,green,"Morgan Non British Standard","5 levers"
 4f8a20de,green,"Mottura Champions C10",
 3700d537,green,"Mottura Champions C30 / Mottura Champions C31 / Mottura Champions C39",**
 abf55188,green,"Mul-T-Lock 7X7",
-c7f1add4,green,"PACLOCK 100a","6-pin version of the 90a pro"
+c7f1add4,green,"PACLOCK 100A","6-pin version of the 90a pro"
 0fb9a3c8,green,"PACLOCK 100G",
 8ad36e8a,green,"PACLOCK 90A",
-31d68cd1,green,"PACLOCK 95g",
+31d68cd1,green,"PACLOCK 95G",
 e702ca41,green,"PACLOCK PL 90A-pro",
 f54c8493,green,"PACLOCK UCS",
 8f3f18d8,green,"Sargent Mortise","with security pins"
@@ -604,7 +604,7 @@ ae7d3780,red,"Mottura Champions C43 / Mottura Champions C44 / Mottura Champions 
 112d0034,red,"Robur 2391 Safe Deposit Lock","gins 3+ chambers with matched milling)"
 4a7db3c6,red,"Rosengrens 32A / Rosengrens 32A8","thin round center posts, few or no false gates"
 63a9a2b1,red,"Ruko Combi 2","6 pin with 5 finger pins"
-2ff8a738,red,"S&G 4544 / S&G 4545",
+2ff8a738,red,"S&G 4544 / S&G 4440 series",
 cf76cfde,red,"Schlage Everest 29 SL Primus XP",
 80b0044b,red,"Sémag Euromag",
 b5df156e,red,Tann,"10 lever"
@@ -760,6 +760,8 @@ e6872b30,unranked,"Mindy AF 8-50 smiley dimple padlock",
 c511cc75,unranked,"Ming Gao",
 31cd85d7,unranked,"Miwa SR",
 fd2b533e,unranked,"Mul-T-Lock Classic Pro",
+50ac8cd2,unranked,"Mul-t-Lock Classic / Mul-t-Lock Interactive","4 pins, spooled drivers"
+02e1ebe4,unranked,"Mul-t-Lock Classic / Mul-t-Lock Interactive","4 pins, serrated drivers"
 1798ca06,unranked,"Mul-T-Lock Interactive","4 pins, spooled drivers"
 1ee9600e,unranked,"Nagasawa kcy-7x","12 pin"
 f8aaa0ef,unranked,"Opnus TZ","3 rows"
