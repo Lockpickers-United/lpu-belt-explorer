@@ -1,5 +1,6 @@
 import fs from 'fs'
 import belts, {uniqueBelts} from '../src/data/belts.js'
+import {encodeNonAsciiHTML} from 'entities'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 const infoMd = fs.readFileSync('./src/resources/info.md', 'utf8')
@@ -16,10 +17,10 @@ const beltsMd = uniqueBelts.map(belt => {
     const reqs = fs.readFileSync(`./src/resources/${belt}.md`, 'utf8')
     const entries = groupedByBelt[belt].map(entry => {
         const makeModels = entry.makeModels.map(({make, model}) => {
-            return make && make !== model ? `${make} ${model}` : model
+            return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)
         }).join (' / ')
         const url = `https://lpubelts.com/?id=${entry.id}`
-        const version = entry.version ? `(${entry.version})` : ''
+        const version = encodeNonAsciiHTML(entry.version ? `(${entry.version})` : '')
         return `- [${makeModels}](${url}) ${version}`
     }).join('\n')
     return header + reqs + '\n\n' + entries
@@ -28,9 +29,7 @@ const beltsMd = uniqueBelts.map(belt => {
 const headerMd = fs.readFileSync('./src/resources/header.md', 'utf8')
 const footerMd = fs.readFileSync('./src/resources/footer.md', 'utf8')
 
-const markdown = (infoMd + '\n\n' + headerMd + '\n\n' + beltsMd + '\n\n' + footerMd)
-    .replace(/≥/g, '&ge;')
-    .replace(/≤/g, '&le;')
+const markdown = infoMd + '\n\n' + headerMd + '\n\n' + beltsMd + '\n\n' + footerMd
 
 /*  -Layout-
     <./src/resources/info.md>
