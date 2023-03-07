@@ -18,13 +18,13 @@ white,,"Tri-Nine Padlock",,Pin-tumbler,Unguttable,,2201a1b1
 yellow,Any,"Lever Generic/Unknown Cabinet lock","3 levers",Lever,,,ba5584ca
 yellow,Any,"Lever Generic/Unknown Mortice lock","3 levers",Lever,,,be3fef00
 yellow,ABUS,55/30,,Pin-tumbler,Unguttable,,c7d2eca1
-yellow,ABUS,"64Ti Titalium","4 pins or fewer",Pin-tumbler,Unguttable,,693abee0
-yellow,ABUS,65/35,"or smaller",Pin-tumbler,Unguttable,,1ce31c29
+yellow,ABUS,"64Ti Titalium","30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,"Includes 64Ti/20, 64Ti/25, 64Ti/30",693abee0
+yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
 yellow,ABUS,84/35,,Pin-tumbler,Unguttable,,805fc883
 yellow,ABUS,"EC75 75/30",,Dimple,Unguttable,,2484ce70
 yellow,ABUS,MyLock,,Pin-tumbler,Unguttable,,423dbebe
-yellow,ABUS,"Nautic T84MB","40mm and up",Pin-tumbler,,,9d830052
-yellow,ACE,"laminated 40mm padlock",,Pin-tumbler,Unguttable,,abdf3acd
+yellow,ABUS,"Nautic T84MB","40mm or larger",Pin-tumbler,,,9d830052
+yellow,ACE,laminated,"40mm padlock",Pin-tumbler,Unguttable,,abdf3acd
 yellow,,ADW,,Pin-tumbler,Unguttable,,3a2ed5f3
 yellow,"American Lock",A5200,"bump stop model: all standards + 1 anti-bump pin",Pin-tumbler,Guttable,,a0d1bf97
 yellow,,ARFE,,Pin-tumbler,Unguttable,,a1581afe
@@ -68,10 +68,10 @@ yellow,MAKO,227,,Pin-tumbler,Unguttable,,7c79137c
 yellow,,Mannesmann,,Pin-tumbler,Unguttable,,1cad075e
 yellow,"Master Lock",130,,Pin-tumbler,Unguttable,,866660d6
 yellow,"Master Lock,Master Lock","140,141",,Pin-tumbler,Unguttable,,2455f0ae
-yellow,"Master Lock","4140 (V-line)",,Pin-tumbler,Unguttable,,6af6f704
 yellow,"Master Lock",930,,Pin-tumbler,Guttable,,759d0d0f
 yellow,"Master Lock",DG,,Pin-tumbler,Unguttable,,df703850
 yellow,"Master Lock",Magnum,,Pin-tumbler,Unguttable,,d5053e6d
+yellow,"Master Lock","V-line 4140",,Pin-tumbler,Unguttable,,6af6f704
 yellow,,McGeiz,,,,,2936bb00
 yellow,,Mecanimex,,Pin-tumbler,Unguttable,,d02d36d5
 yellow,,Metal,,Pin-tumbler,,,6c365304
@@ -93,17 +93,17 @@ yellow,TESA,TE-5,,Pin-tumbler,Tapered,,7d9d715d
 yellow,,Wolfdog,,Pin-tumbler,Unguttable,,4b32e9dd
 orange,ABUS,45/50,brass,Pin-tumbler,Unguttable,,67b285d9
 orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
-orange,ABUS,55/40,"40 mm and up (ex: abus 55/50)",Pin-tumbler,Unguttable,,632f4069
+orange,ABUS,55/40,"40mm or larger",Pin-tumbler,Unguttable,,632f4069
 orange,ABUS,60/50,,Pin-tumbler,Unguttable,,d7188e81
-orange,ABUS,"64Ti Titalium","5 pins or more (40mm and larger)",Pin-tumbler,Unguttable,,52f1e117
-orange,"ABUS,ABUS,ABUS,ABUS","65/40,65/45,65/50,65/60",,Pin-tumbler,Unguttable,,a0e50505
+orange,ABUS,"64Ti Titalium","40mm or larger (5+ pins)",Pin-tumbler,Unguttable,,52f1e117
+orange,ABUS,65/40,"40mm or larger",Pin-tumbler,Unguttable,,a0e50505
 orange,ABUS,83/40,,Pin-tumbler,Guttable,,3653f376
 orange,ABUS,85,,Pin-tumbler,Unguttable,,683e4f33
 orange,ABUS,"Buffo (Ecoline)",,Pin-tumbler,,,d7479fd6
 orange,ABUS,C51,,Pin-tumbler,,,afd3e51d
 orange,"ABUS,ABUS,ABUS","C73,C83,C90","old pinning: mostly standard keypins, normal spool drivers",Pin-tumbler,,,95a9d73c
 orange,ABUS,Cisa,,Pin-tumbler,,,bc1ed715
-orange,ABUS,Diskus,"normal pin tumblr, not dimple",Pin-tumbler,,,80667814
+orange,ABUS,Diskus,"normal pin tumbler, not dimple",Pin-tumbler,,,80667814
 orange,ABUS,Monobloc,,Pin-tumbler,,,204d85a7
 orange,ABUS,"Ti12 Titalium",,Pin-tumbler,,,1050a58c
 orange,BASI,CO,,Pin-tumbler,,,aa15b066
@@ -134,13 +134,13 @@ orange,GTV,Padlock,,Pin-tumbler,,,ed0e0d36
 orange,IKON,DS,,Pin-tumbler,,,2bdcb8c7
 orange,ISEO,F5,,Pin-tumbler,,,d261a3ba
 orange,Kasp,"160 series Diskus",,Pin-tumbler,,,9bc8809e
-orange,Lockwood,110/40,"40mm or bigger",Pin-tumbler,,,a5a164ad
+orange,Lockwood,110/40,"40mm or larger",Pin-tumbler,,,a5a164ad
 orange,"Master Lock",150,,Pin-tumbler,Unguttable,,efc01233
-orange,"Master Lock","4150 (V-line)",,Pin-tumbler,Unguttable,,9441e2cc
 orange,"Master Lock",532,,Pin-tumbler,Unguttable,,e2e15f47
 orange,"Master Lock,Master Lock,Master Lock","570,575,576",,Pin-tumbler,Unguttable,,9ca2c109
+orange,"Master Lock","V-line 4150",,Pin-tumbler,Unguttable,,9441e2cc
 orange,,S&S,,,,,9f832458
-orange,Sargent,Mortise,PT,Pin-tumbler,,,4071176d
+orange,Sargent,Mortise,,Pin-tumbler,,,4071176d
 orange,,SIB,,Pin-tumbler,,,74f65a9c
 orange,,SMB,,,,,029fef1f
 orange,,Snowstar,,,,,f88a999d
@@ -157,9 +157,8 @@ orange,Winkhaus,AZ,,Pin-tumbler,,,8c0171f9
 orange,Winkhaus,"VS 5","5 pin",Pin-tumbler,"Trap pin/bar",,ab17daa6
 orange,Yale,125/40,,Pin-tumbler,Unguttable,,0f0dcd42
 orange,Yale,"5 lever sashlock","5 Lever",Lever,"Mortice,Pin key,Curtain,False gates",,fb3daa70
-orange,Yale,Mortise,PT,Pin-tumbler,,,db1040e5
+orange,Yale,Mortise,,Pin-tumbler,,,db1040e5
 orange,Yale,Y110/40,,Pin-tumbler,Unguttable,,98a2ba2d
-green,,""" BiLock "" Fake",,Pin-tumbler,,,b099c88a
 green,Any,"Lever Generic/Unknown curtained lock","4 levers",Lever,Curtain,,0e97c099
 green,Any,"Lever Generic/Unknown uncurtained lock","4 levers",Lever,Uncurtained,,d46ac711
 green,ABUS,72/40,,Pin-tumbler,Guttable,,74a00ae3
@@ -182,8 +181,8 @@ green,"ABUS,ABUS","WavyLine,Pfaffenhain WavyLine",,Pin-tumbler,,,b0076ed7
 green,ABUS,XD25,,Dimple,,,1b10225b
 green,ABUS,Xp10,,Pin-tumbler,,,9adbc90f
 green,ACE,A527,,Pin-tumbler,Guttable,,3af47daf
-green,ACE,"Brass Padlock","40mm and up",Pin-tumbler,Unguttable,,1dafd552
-green,ACE,"laminated padlock","44mm and up",Pin-tumbler,Unguttable,,200605b9
+green,ACE,"Brass Padlock","40mm or larger",Pin-tumbler,Unguttable,,1dafd552
+green,ACE,"laminated padlock","44mm or larger",Pin-tumbler,Unguttable,,200605b9
 green,"American Lock","1100 / A1100",,Pin-tumbler,Guttable,,2ae1e0b8
 green,"American Lock","2000 puck lock",,Pin-tumbler,Guttable,,b16ffe3f
 green,"American Lock",5200,,Pin-tumbler,Guttable,,81fbd528
@@ -198,6 +197,7 @@ green,"Bab IKON",P031,,Pin-tumbler,,,bfc7c700
 green,BASI,3AX,,Pin-tumbler,,,bea71188
 green,BASI,"AS Pro",,Pin-tumbler,,,27f1aaae
 green,BASI,CX6,,Dimple,,,a6e954a6
+green,,"BiLock Clone",,Pin-tumbler,,,b099c88a
 green,BKS,"51-SL (Livius)",,Pin-tumbler,,,569dd487
 green,BKS,88,,Pin-tumbler,,,135ef1c0
 green,BKS,"Detect 3",,"Pin-tumbler,Sidebar","Pin-tumbler,Sidebar",,ec0a2659
@@ -212,7 +212,7 @@ green,Chateau,"C970 disk padlock",,Pin-tumbler,Unguttable,,20f3575c
 green,Commando,"IC3 Tactical",,Pin-tumbler,Unguttable,,9d478029
 green,Commando,Marine,,Pin-tumbler,Unguttable,,f7f31800
 green,Commando,Peacemaker,,Pin-tumbler,Unguttable,,606275d8
-green,"Corbin Russwin","Master Ring","(picked to one shearline)",,,,73a718cb
+green,"Corbin Russwin","Master Ring",**,,,"** green if picked to one shearline",73a718cb
 green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 green,Corona,cylinder,,Pin-tumbler,,,6c9a666e
 green,Corona,M,,Pin-tumbler,,,6b472dc2
@@ -237,14 +237,14 @@ green,IKON,P031,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](htt
 green,ISEO,"MC 6500",,"Pin-tumbler,Magnetic","Magnetic pins",,f8254416
 green,ISEO,MC5,,"Pin-tumbler,Magnetic","Magnetic pins",,95902951
 green,ISEO,R6,,Dimple,,,54087329
-green,"Kaba Gege","Ap 1000",,Pin-tumbler,,,3129ee7e
+green,"Kaba Gege","AP 1000",,Pin-tumbler,,,3129ee7e
 green,Kaba,Micro,,Dimple,,,c81ca385
 green,,"Kai Kai",,,,,14db6dbd
 green,"Kale Kilit","164 CE",,Dimple,,,62f3dc5c
 green,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 green,Kasp,14040,,Pin-tumbler,,,14ece36b
 green,,Kenaurd,"pin-in-pin, 4 pins",Dimple,,,7ec79663
-green,,"KryPin tumbleronite 6-pin padlock",,Pin-tumbler,,,1c002521
+green,Kryptonite,"6-pin padlock",,Pin-tumbler,,,1c002521
 green,Lockwood,"120/40 or above",,Pin-tumbler,Unguttable,,5f0834f5
 green,Lockwood,234B45,,Pin-tumbler,,,3eced659
 green,Lockwood,334B45,"Tapered/Beveled drivers",Pin-tumbler,"Tapered drivers",,ae023398
@@ -260,13 +260,12 @@ green,Mauer,"Elite 1",,Dimple,,,b8f4f5f5
 green,MCM,SCX,,Dimple,,,1f4e3e05
 green,Morgan,"Non British Standard","5 levers",Lever,"Mortice,Curtain",,66f5175a
 green,Mottura,"Champions C10",,Dimple,,,4f8a20de
-green,"Mottura,Mottura,Mottura","Champions C30,Champions C31,Champions C39",**,"Dimple,Magnet","Magnetic pins","** **Special Picking Requirement:** Must be picked with the bible oriented down",3700d537
+green,"Mottura,Mottura,Mottura","Champions C30,Champions C31,Champions C39",***,"Dimple,Magnet","Magnetic pins","*** **Special Picking Requirement:** Must be picked with the bible oriented down",3700d537
 green,Mul-T-Lock,7X7,,Dimple,Pin-in-pin,,abf55188
 green,PACLOCK,100A,"6-pin version of the 90a pro",Pin-tumbler,,,c7f1add4
 green,PACLOCK,100G,,Pin-tumbler,,,0fb9a3c8
 green,PACLOCK,90A,,Pin-tumbler,,,8ad36e8a
 green,PACLOCK,95G,,Pin-tumbler,,,31d68cd1
-green,PACLOCK,"PL 90A-pro",,Pin-tumbler,,,e702ca41
 green,PACLOCK,UCS,,Pin-tumbler,,,f54c8493
 green,Sargent,Mortise,"with security pins",Pin-tumbler,,,8f3f18d8
 green,Schlage,Everest,,Pin-tumbler,,,ea1d1d8c
@@ -287,7 +286,7 @@ green,Yale,210C/51,,Pin-tumbler,,,1105b55d
 green,Yardeni,6,,,,,34532c45
 green,Zarker,J45/J45S,,"Disc Detainer","Rear tension","Can be front tensioned and counterrotated",4f6bcdb7
 blue,Any,"HQ High Security interactive clone","4 pins",,,,c1d09460
-blue,Any,"SFIC format lock","picked to one shearline",Pin-tumbler,,,c6529d9c
+blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline",c6529d9c
 blue,ABUS,"Bravus 3000",,Dimple,,,ea0efaca
 blue,ABUS,D10,,Dimple,,,f96de7cc
 blue,ABUS,"E-series (E20-E90)",,Pin-tumbler,,,5c0d870b
@@ -334,7 +333,7 @@ blue,"FAB,FAB","3* Profi,4* Profi",,Pin-tumbler,,,aee424c0
 blue,"Federal Lock",6KD3110,,Dimple,,,275d33c9
 blue,GOAL,S,"5 pins",Pin-tumbler,,,959a6b9d
 blue,Guard,NVL,,Pin-tumbler,,,62bdbd5e
-blue,IKON,"P031 (N6 profile)",,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",d1896bf9
+blue,IKON,P031,"N6 profile",Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",d1896bf9
 blue,IKON,"Sk6 vector",,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",08b5986d
 blue,IKON,SK7,,,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",1c38e176
 blue,IKON,Undercut,,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",948f9068
@@ -342,7 +341,7 @@ blue,"Kaba Gege",AP2000,,Pin-tumbler,,,8ad6939a
 blue,"Kaba Gege",AP3000,,Pin-tumbler,,,0037a89f
 blue,"Kaba Gege",pExtra,"5 pin",Pin-tumbler,Overmilling,,aa7fc00e
 blue,Kaba,8,"2 row",Dimple,,,1fda76a8
-blue,Kaba,8,"3-row, <9 pins",Dimple,,,5c2f5101
+blue,Kaba,8,"3 row, <9 pins",Dimple,,,5c2f5101
 blue,Kaken,KX3,"exterior, <6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements ant type",40e50dd4
 blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 blue,Kenaurd,Dimple,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
@@ -359,7 +358,7 @@ blue,Mauer,"RedLine GM",,,,,0a70d67f
 blue,MCM,AS6,,Dimple,,"6 pin dimple, 3 spools and 3 T pins, good tolerances",72675596
 blue,Medeco,Biaxial,"4 pins","Pin-tumbler,Sidebar",,,23c7988c
 blue,Medeco,BiLevel,,Pin-tumbler,,,69d4ef86
-blue,Medeco,"Original Camlock","≤4 pins","Sidebar,Slider",,,a9e47067
+blue,Medeco,"Original Camlock","<5 pins","Sidebar,Slider",,,a9e47067
 blue,Metal,Zx5J,,"Dimple,Slider",,,f3a2aa78
 blue,Mila,Evolution,,,,,f9f2d983
 blue,Mindy,"Pagoda (round key)",,Other,,,c0af329b
@@ -386,7 +385,7 @@ blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 blue,Yale,"500 series",,Pin-tumbler,Overmilling,,779e7dcb
 blue,"Yale,Milencio","Superior,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 purple,Any,"Lever Unknown/Generic lock","6 or 7 lever",Lever,,,a6a225e5
-purple,Any,"SFIC format lock (unless otherwise specified)",***,Pin-tumbler,,"*** **Special Picking Requirement:** Exempt from rule regarding minimum master wafers",c8259a23
+purple,Any,"SFIC format lock (unless otherwise specified)",***,Pin-tumbler,,"*** **Special Picking Requirement:** Check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
 purple,ABA,109582,,Dimple,,,96fd610e
 purple,ABUS,"Bravus 4000",,Dimple,,,a062f1ee
 purple,ABUS,EP10,,Dimple,,,20adf729
@@ -413,7 +412,7 @@ purple,Chubb,Battleship,"6 lever",Lever,"Padlock,Pin key,Curtain,False gates",,1
 purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
 purple,Codkey,Locksys,"<15 pins",Dimple,,,8a0c4b07
 purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b7
-purple,Corbin,"Master Ring",,,,"Both shearlines must be filmed in one take",50fd7a98
+purple,"Corbin Russwin","Master Ring",***,,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take",50fd7a98
 purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 purple,Dierre,"New Power",,Slider,,,a10711cc
 purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,acde7f0c
@@ -480,7 +479,7 @@ purple,"Walsall Locks",Ace,"7 lever safe",Lever,"Safe,False gates",,37914cb6
 purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet,Flat steel key,Curtain,False gates",,5958a65b
 purple,Yale,5000,,"Pin-tumbler,Slider",,,1be10736
 purple,"Yale,Milencio","Superior,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
-brown,Any,"SFIC with security pins","Must be picked to both shearlines in one take ****",Pin-tumbler,,"**** **Special Picking Requirement:** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see ""confirmed SFIC's with security pins"")",b13f4b57
+brown,Any,"SFIC with security pins",****,Pin-tumbler,,"**** **Special Picking Requirement:** Must be picked to both shearlines in one take (check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
 brown,Abloy,Classic,,"Disc Detainer","Rear tension,False gates","Old models can be front tensioned",da09d849
 brown,ABUS,Plus,"no butterfly discs","Disc Detainer","Random mid tension,False gates",,b8350900
 brown,,Aegis,"18 pin, 3 rows all spools",Dimple,"High pin count",,19fce24d
@@ -760,8 +759,8 @@ unranked,Mindy,"Pagoda AF 16-50","(flat key)",,,,06a28ac7
 unranked,,"Ming Gao",,,,,c511cc75
 unranked,Miwa,SR,,,,,31cd85d7
 unranked,Mul-T-Lock,"Classic Pro",,Dimple,,,fd2b533e
-unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,50ac8cd2
-unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,02e1ebe4
+unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,23ddfa44
+unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,64f33005
 unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 unranked,Nagasawa,kcy-7x,"12 pin",,,,1ee9600e
 unranked,Opnus,TZ,"3 rows",,,"Similar to UX but 3 rows of pins",f8aaa0ef

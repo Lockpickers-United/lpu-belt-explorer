@@ -18,13 +18,13 @@ f10deed6,white,"Master Lock #6","Laminated brass"
 ba5584ca,yellow,"Any Lever Generic/Unknown Cabinet lock","3 levers"
 be3fef00,yellow,"Any Lever Generic/Unknown Mortice lock","3 levers"
 c7d2eca1,yellow,"ABUS 55/30",
-693abee0,yellow,"ABUS 64Ti Titalium","4 pins or fewer"
-1ce31c29,yellow,"ABUS 65/35","or smaller"
+693abee0,yellow,"ABUS 64Ti Titalium","30mm or smaller (<5 pins)"
+1ce31c29,yellow,"ABUS 65/35","35mm or smaller"
 805fc883,yellow,"ABUS 84/35",
 2484ce70,yellow,"ABUS EC75 75/30",
 423dbebe,yellow,"ABUS MyLock",
-9d830052,yellow,"ABUS Nautic T84MB","40mm and up"
-abdf3acd,yellow,"ACE laminated 40mm padlock",
+9d830052,yellow,"ABUS Nautic T84MB","40mm or larger"
+abdf3acd,yellow,"ACE laminated","40mm padlock"
 3a2ed5f3,yellow,ADW,
 a0d1bf97,yellow,"American Lock A5200","bump stop model: all standards + 1 anti-bump pin"
 a1581afe,yellow,ARFE,
@@ -68,10 +68,10 @@ b4d52d31,yellow,IBAU,
 1cad075e,yellow,Mannesmann,
 866660d6,yellow,"Master Lock 130",
 2455f0ae,yellow,"Master Lock 140 / Master Lock 141",
-6af6f704,yellow,"Master Lock 4140 (V-line)",
 759d0d0f,yellow,"Master Lock 930",
 df703850,yellow,"Master Lock DG",
 d5053e6d,yellow,"Master Lock Magnum",
+6af6f704,yellow,"Master Lock V-line 4140",
 2936bb00,yellow,McGeiz,
 d02d36d5,yellow,Mecanimex,
 6c365304,yellow,Metal,
@@ -93,17 +93,17 @@ ff837451,yellow,Tara,
 4b32e9dd,yellow,Wolfdog,
 67b285d9,orange,"ABUS 45/50",brass
 16e9d2ab,orange,"ABUS 54TI/50 Titalium",
-632f4069,orange,"ABUS 55/40","40 mm and up (ex: abus 55/50)"
+632f4069,orange,"ABUS 55/40","40mm or larger"
 d7188e81,orange,"ABUS 60/50",
-52f1e117,orange,"ABUS 64Ti Titalium","5 pins or more (40mm and larger)"
-a0e50505,orange,"ABUS 65/40 / ABUS 65/45 / ABUS 65/50 / ABUS 65/60",
+52f1e117,orange,"ABUS 64Ti Titalium","40mm or larger (5+ pins)"
+a0e50505,orange,"ABUS 65/40","40mm or larger"
 3653f376,orange,"ABUS 83/40",
 683e4f33,orange,"ABUS 85",
 d7479fd6,orange,"ABUS Buffo (Ecoline)",
 afd3e51d,orange,"ABUS C51",
 95a9d73c,orange,"ABUS C73 / ABUS C83 / ABUS C90","old pinning: mostly standard keypins, normal spool drivers"
 bc1ed715,orange,"ABUS Cisa",
-80667814,orange,"ABUS Diskus","normal pin tumblr, not dimple"
+80667814,orange,"ABUS Diskus","normal pin tumbler, not dimple"
 204d85a7,orange,"ABUS Monobloc",
 1050a58c,orange,"ABUS Ti12 Titalium",
 aa15b066,orange,"BASI CO",
@@ -134,13 +134,13 @@ ed0e0d36,orange,"GTV Padlock",
 2bdcb8c7,orange,"IKON DS",
 d261a3ba,orange,"ISEO F5",
 9bc8809e,orange,"Kasp 160 series Diskus",
-a5a164ad,orange,"Lockwood 110/40","40mm or bigger"
+a5a164ad,orange,"Lockwood 110/40","40mm or larger"
 efc01233,orange,"Master Lock 150",
-9441e2cc,orange,"Master Lock 4150 (V-line)",
 e2e15f47,orange,"Master Lock 532",
 9ca2c109,orange,"Master Lock 570 / Master Lock 575 / Master Lock 576",
+9441e2cc,orange,"Master Lock V-line 4150",
 9f832458,orange,S&S,
-4071176d,orange,"Sargent Mortise",PT
+4071176d,orange,"Sargent Mortise",
 74f65a9c,orange,SIB,
 029fef1f,orange,SMB,
 f88a999d,orange,Snowstar,
@@ -157,9 +157,8 @@ e524ce27,orange,VEB,
 ab17daa6,orange,"Winkhaus VS 5","5 pin"
 0f0dcd42,orange,"Yale 125/40",
 fb3daa70,orange,"Yale 5 lever sashlock","5 Lever"
-db1040e5,orange,"Yale Mortise",PT
+db1040e5,orange,"Yale Mortise",
 98a2ba2d,orange,"Yale Y110/40",
-b099c88a,green,""" BiLock "" Fake",
 0e97c099,green,"Any Lever Generic/Unknown curtained lock","4 levers"
 d46ac711,green,"Any Lever Generic/Unknown uncurtained lock","4 levers"
 74a00ae3,green,"ABUS 72/40",
@@ -182,8 +181,8 @@ b0076ed7,green,"ABUS WavyLine / ABUS Pfaffenhain WavyLine",
 1b10225b,green,"ABUS XD25",
 9adbc90f,green,"ABUS Xp10",
 3af47daf,green,"ACE A527",
-1dafd552,green,"ACE Brass Padlock","40mm and up"
-200605b9,green,"ACE laminated padlock","44mm and up"
+1dafd552,green,"ACE Brass Padlock","40mm or larger"
+200605b9,green,"ACE laminated padlock","44mm or larger"
 2ae1e0b8,green,"American Lock 1100 / A1100",
 b16ffe3f,green,"American Lock 2000 puck lock",
 81fbd528,green,"American Lock 5200",
@@ -198,6 +197,7 @@ bfc7c700,green,"Bab IKON P031",
 bea71188,green,"BASI 3AX",
 27f1aaae,green,"BASI AS Pro",
 a6e954a6,green,"BASI CX6",
+b099c88a,green,"BiLock Clone",
 569dd487,green,"BKS 51-SL (Livius)",
 135ef1c0,green,"BKS 88",
 ec0a2659,green,"BKS Detect 3",
@@ -212,7 +212,7 @@ dd155241,green,"Burg Wächter Profi 116/40",
 9d478029,green,"Commando IC3 Tactical",
 f7f31800,green,"Commando Marine",
 606275d8,green,"Commando Peacemaker",
-73a718cb,green,"Corbin Russwin Master Ring","(picked to one shearline)"
+73a718cb,green,"Corbin Russwin Master Ring",**
 96bb2cf7,green,"Corbin Standard cylinder",
 6c9a666e,green,"Corona cylinder",
 6b472dc2,green,"Corona M",
@@ -237,14 +237,14 @@ b25e23fd,green,"IKON N1",
 f8254416,green,"ISEO MC 6500",
 95902951,green,"ISEO MC5",
 54087329,green,"ISEO R6",
-3129ee7e,green,"Kaba Gege Ap 1000",
+3129ee7e,green,"Kaba Gege AP 1000",
 c81ca385,green,"Kaba Micro",
 14db6dbd,green,"Kai Kai",
 62f3dc5c,green,"Kale Kilit 164 CE",
 9811b260,green,"Kale Kilit 164 GNC","6 pin, standard profile"
 14ece36b,green,"Kasp 14040",
 7ec79663,green,Kenaurd,"pin-in-pin, 4 pins"
-1c002521,green,"KryPin tumbleronite 6-pin padlock",
+1c002521,green,"Kryptonite 6-pin padlock",
 5f0834f5,green,"Lockwood 120/40 or above",
 3eced659,green,"Lockwood 234B45",
 ae023398,green,"Lockwood 334B45","Tapered/Beveled drivers"
@@ -260,13 +260,12 @@ b8f4f5f5,green,"Mauer Elite 1",
 1f4e3e05,green,"MCM SCX",
 66f5175a,green,"Morgan Non British Standard","5 levers"
 4f8a20de,green,"Mottura Champions C10",
-3700d537,green,"Mottura Champions C30 / Mottura Champions C31 / Mottura Champions C39",**
+3700d537,green,"Mottura Champions C30 / Mottura Champions C31 / Mottura Champions C39",***
 abf55188,green,"Mul-T-Lock 7X7",
 c7f1add4,green,"PACLOCK 100A","6-pin version of the 90a pro"
 0fb9a3c8,green,"PACLOCK 100G",
 8ad36e8a,green,"PACLOCK 90A",
 31d68cd1,green,"PACLOCK 95G",
-e702ca41,green,"PACLOCK PL 90A-pro",
 f54c8493,green,"PACLOCK UCS",
 8f3f18d8,green,"Sargent Mortise","with security pins"
 ea1d1d8c,green,"Schlage Everest",
@@ -287,7 +286,7 @@ bd9e85b5,green,"Winkhaus ZRV6",
 34532c45,green,"Yardeni 6",
 4f6bcdb7,green,"Zarker J45/J45S",
 c1d09460,blue,"Any HQ High Security interactive clone","4 pins"
-c6529d9c,blue,"Any SFIC format lock","picked to one shearline"
+c6529d9c,blue,"Any SFIC format lock",**
 ea0efaca,blue,"ABUS Bravus 3000",
 f96de7cc,blue,"ABUS D10",
 5c0d870b,blue,"ABUS E-series (E20-E90)",
@@ -334,7 +333,7 @@ aee424c0,blue,"FAB 3* Profi / FAB 4* Profi",
 275d33c9,blue,"Federal Lock 6KD3110",
 959a6b9d,blue,"GOAL S","5 pins"
 62bdbd5e,blue,"Guard NVL",
-d1896bf9,blue,"IKON P031 (N6 profile)",
+d1896bf9,blue,"IKON P031","N6 profile"
 08b5986d,blue,"IKON Sk6 vector",
 1c38e176,blue,"IKON SK7",
 948f9068,blue,"IKON Undercut",
@@ -342,7 +341,7 @@ d1896bf9,blue,"IKON P031 (N6 profile)",
 0037a89f,blue,"Kaba Gege AP3000",
 aa7fc00e,blue,"Kaba Gege pExtra","5 pin"
 1fda76a8,blue,"Kaba 8","2 row"
-5c2f5101,blue,"Kaba 8","3-row, <9 pins"
+5c2f5101,blue,"Kaba 8","3 row, <9 pins"
 40e50dd4,blue,"Kaken KX3","exterior, <6 sliders"
 b01220ea,blue,"Kale Kilit 164 YGS SE",
 54dc69e8,blue,"Kenaurd Dimple","pin-in-pin, 5 pins"
@@ -359,7 +358,7 @@ bc6f6e7c,blue,"M&C Matrix","no sidebar"
 72675596,blue,"MCM AS6",
 23c7988c,blue,"Medeco Biaxial","4 pins"
 69d4ef86,blue,"Medeco BiLevel",
-a9e47067,blue,"Medeco Original Camlock","≤4 pins"
+a9e47067,blue,"Medeco Original Camlock","<5 pins"
 f3a2aa78,blue,"Metal Zx5J",
 f9f2d983,blue,"Mila Evolution",
 c0af329b,blue,"Mindy Pagoda (round key)",
@@ -413,7 +412,7 @@ e38d015b,purple,"Burg Wächter Alpha 800",
 d78ca1ba,purple,"Chubb Biaxial",
 8a0c4b07,purple,"Codkey Locksys","<15 pins"
 71bce5b7,purple,"Corbin Russwin Emhart","4 pins"
-50fd7a98,purple,"Corbin Master Ring",
+50fd7a98,purple,"Corbin Russwin Master Ring",***
 5e264777,purple,"DAF Kilit DBS02",
 a10711cc,purple,"Dierre New Power",
 acde7f0c,purple,"DOM ix 6 sr",
@@ -480,7 +479,7 @@ b35bf986,purple,"US Star Tech ""Hi Security""",
 5958a65b,purple,"Western Electric 29A / Western Electric 29B",
 1be10736,purple,"Yale 5000",
 ebe9ee59,purple,"Yale Superior / Milencio Magnum","7 or 9 pins"
-b13f4b57,brown,"Any SFIC with security pins","Must be picked to both shearlines in one take ****"
+b13f4b57,brown,"Any SFIC with security pins",****
 da09d849,brown,"Abloy Classic",
 b8350900,brown,"ABUS Plus","no butterfly discs"
 19fce24d,brown,Aegis,"18 pin, 3 rows all spools"
@@ -760,8 +759,8 @@ e6872b30,unranked,"Mindy AF 8-50 smiley dimple padlock",
 c511cc75,unranked,"Ming Gao",
 31cd85d7,unranked,"Miwa SR",
 fd2b533e,unranked,"Mul-T-Lock Classic Pro",
-50ac8cd2,unranked,"Mul-t-Lock Classic / Mul-t-Lock Interactive","4 pins, spooled drivers"
-02e1ebe4,unranked,"Mul-t-Lock Classic / Mul-t-Lock Interactive","4 pins, serrated drivers"
+23ddfa44,unranked,"Mul-t-Lock Classic / Mul-t-Lock Interactive","4 pins, spooled drivers"
+64f33005,unranked,"Mul-t-Lock Classic / Mul-t-Lock Interactive","4 pins, serrated drivers"
 1798ca06,unranked,"Mul-T-Lock Interactive","4 pins, spooled drivers"
 1ee9600e,unranked,"Nagasawa kcy-7x","12 pin"
 f8aaa0ef,unranked,"Opnus TZ","3 rows"
