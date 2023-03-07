@@ -357,7 +357,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 **Upgrades**
 
-* **Kaba Ace (≥13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
+* **Kaba Ace (&ge;13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
 * **Kaba Ace (<13 pins) (Purple -> Brown)** Upgraded alongside the other version.
 
 **Downgrades**
