@@ -262,7 +262,7 @@ Stipulations:
 - Each  **improvised secondary locking mechanism**  counts as one modification (latches, check pins, etc)
 - **"Distinguishing mark" engraved into the lock**  counts as one modification (**Simple scratches do not count**.
   Engraving must be a symbol or mark of the maker)
-- **Hand cut key** counts as one “modification”. The key must be cut using hand tools from a blank, and must be a
+- **Hand cut key** counts as one "modification". The key must be cut using hand tools from a blank, and must be a
   reasonable bitting. Locks made with 0-bitted, or minimally bitted keys do not count.
 
 ----------
