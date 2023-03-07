@@ -20,8 +20,8 @@ const beltsMd = uniqueBelts.map(belt => {
             return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)
         }).join (' / ')
         const url = `https://lpubelts.com/?id=${entry.id}`
-        const version = encodeNonAsciiHTML(entry.version ? `(${entry.version})` : '')
-        return `- [${makeModels}](${url}) ${version}`
+        const version = encodeNonAsciiHTML(entry.version ? ` (${entry.version})` : '')
+        return `- [${makeModels}](${url})${version}`
     }).join('\n')
     return header + reqs + '\n\n' + entries
 }).join('\n\n')

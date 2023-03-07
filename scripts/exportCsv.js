@@ -1,17 +1,33 @@
 import fs from 'fs'
 import validate from './validate.js'
 import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
+import belts, {uniqueBelts} from '../src/data/belts.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
-const belts = rawData.map(datum => ({
-    uniqueId: datum.id,
-    belt: datum.belt,
-    lock: datum.makeModels.map(({make, model}) => {
-        return make && make !== model ? `${make} ${model}` : model
-    }).join (' / '),
-    version: datum.version
-}))
+const initialValue = uniqueBelts.reduce((acc, key) => {
+    acc[key] = [`${belts[key].label} Belt`]
+    return acc
+}, {})
+const entriesByBelt = rawData.reduce((acc, entry) => {
+    const belt = entry.belt.replace(/\d/g, '')
+    if (acc[belt]) {
+        const makeModels = entry.makeModels.map(({make, model}) => {
+            return make && make !== model ? `${make} ${model}` : model
+        }).join(' / ')
+        const version = entry.version ? ` (${entry.version})` : ''
+        acc[belt].push(`${makeModels}${version}`)
+    }
+    return acc
+}, initialValue)
+const largestColumn = Object.keys(entriesByBelt).reduce((acc, key) => Math.max(acc, entriesByBelt[key].length), 0)
+const columnView = [...Array(largestColumn)]
+    .map((_, index) => {
+        return uniqueBelts.reduce((acc, key) => {
+            acc[key] = entriesByBelt[key][index] || ''
+            return acc
+        }, {})
+    })
 
 const mainData = rawData.map(datum => ({
     belt: datum.belt,
@@ -63,7 +79,7 @@ validate(mainData, mainSchema)
 validate(mediaData, mediaSchema)
 validate(linkData, linkSchema)
 
-makeCsv(belts, './dist/belts.csv')
+makeCsv(columnView, './dist/columnView.csv', true)
 makeCsv(mainData, './dist/data.csv')
 makeCsv(mediaData, './dist/media.csv')
 makeCsv(linkData, './dist/link.csv')
