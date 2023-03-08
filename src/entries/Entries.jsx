@@ -4,6 +4,7 @@ import InlineFilterDisplay from '../filters/InlineFilterDisplay.jsx'
 import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from '../contexts/DataContext.jsx'
 import AppContext from '../contexts/AppContext.jsx'
+import NoEntriesCard from './NoEntriesCard.jsx'
 
 function Entries() {
     const {visibleEntries} = useContext(DataContext)
@@ -23,6 +24,8 @@ function Entries() {
                 <InlineFilterDisplay/>
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
+
+                {entries.length === 0 && <NoEntriesCard/>}
 
                 {entries.map(entry =>
                     <Entry
