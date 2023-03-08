@@ -157,4 +157,4 @@ Examples of "Master's Projects":
 
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
-`,c={white:e,yellow:n,orange:t,green:o,blue:i,purple:a,brown:s,red:r,black:l};export{c as default};
+`,c={White:e,Yellow:n,Orange:t,Green:o,Blue:i,Purple:a,Brown:s,Red:r,Black:l};export{c as default};
