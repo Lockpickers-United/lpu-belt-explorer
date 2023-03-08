@@ -32,18 +32,18 @@ function FilterButton({data}) {
     return (
         <React.Fragment>
             <Tooltip title='Filter' arrow disableFocusListener>
-                <Badge
-                    badgeContent={filterCount}
-                    color='secondary'
-                    overlap='circular'
-                    anchorOrigin={{
-                        vertical: 'bottom', horizontal: 'right'
-                    }}
-                >
-                    <IconButton color='inherit' onClick={openDrawer} edge='end'>
+                <IconButton color='inherit' onClick={openDrawer} edge='end'>
+                    <Badge
+                        badgeContent={filterCount}
+                        color='secondary'
+                        overlap='circular'
+                        anchorOrigin={{
+                            vertical: 'bottom', horizontal: 'right'
+                        }}
+                    >
                         <FilterAltIcon/>
-                    </IconButton>
-                </Badge>
+                    </Badge>
+                </IconButton>
             </Tooltip>
 
             <SwipeableDrawer
@@ -53,7 +53,7 @@ function FilterButton({data}) {
                 onClose={closeDrawer}
             >
                 <Toolbar variant='dense'>
-                    <Typography variant="h6">Filters</Typography>
+                    <Typography variant='h6'>Filters</Typography>
                 </Toolbar>
                 <Box margin={1}>
                     <Stack direction='column' style={{minWidth: 250}}>
