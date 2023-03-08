@@ -3,7 +3,7 @@ import belts from '../data/belts.js'
 
 function BeltIcon({value, style}) {
     const {color, lineColor = '#010101'} = belts[value]
-    if (value === 'unranked') return null
+    if (value === 'Unranked') return null
     return (
         <div style={{display: 'inline-block', minWidth: 32, height: 32, ...style}}>
             <svg x='0' y='0' viewBox='0 -2 32 32'>

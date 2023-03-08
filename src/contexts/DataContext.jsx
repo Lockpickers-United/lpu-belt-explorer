@@ -9,7 +9,7 @@ export function DataProvider({children}) {
     const [allEntries, setAllEntries] = useState([])
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
-    const {search, id, unranked, ...filters} = allFilters
+    const {search, id, ...filters} = allFilters
 
     useEffect(() => {
         const load = async () => {
@@ -28,8 +28,7 @@ export function DataProvider({children}) {
                 content: [
                     entry.media?.length > 0 ? 'Has Images' : 'No Images',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
-                    entry.belt === 'unranked' ? 'Is Unranked' : 'Is Ranked'
+                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
                 ].filter(x => x),
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
@@ -64,8 +63,8 @@ export function DataProvider({children}) {
                     score: result.score
                 }))
                 .sort((a, b) => {
-                    const val1 = a.belt === 'unranked'
-                    const val2 = b.belt === 'unranked'
+                    const val1 = a.belt === 'Unranked'
+                    const val2 = b.belt === 'Unranked'
                     return val1 - val2
                 })
             : value
