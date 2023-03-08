@@ -1,6 +1,6 @@
 import React, {useCallback, useContext} from 'react'
-import StarIcon from '@mui/icons-material/Star.js'
-import StarBorderIcon from '@mui/icons-material/StarBorder.js'
+import StarIcon from '@mui/icons-material/Star'
+import StarBorderIcon from '@mui/icons-material/StarBorder'
 import IconButton from '@mui/material/IconButton'
 import StorageContext from '../contexts/StorageContext.jsx'
 import {Tooltip} from '@mui/material'

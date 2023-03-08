@@ -2,7 +2,7 @@ import React, {useCallback} from 'react'
 import {ImageList, ImageListItem, ImageListItemBar, Tooltip} from '@mui/material'
 import licenses from '../data/licenses.js'
 import IconButton from '@mui/material/IconButton'
-import LaunchIcon from '@mui/icons-material/Launch.js'
+import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize.jsx'
 
 function ImageGallery({entry}) {

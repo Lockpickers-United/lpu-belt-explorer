@@ -1,6 +1,6 @@
 import {Box, SwipeableDrawer, Tooltip} from '@mui/material'
 import React, {useCallback, useContext, useState} from 'react'
-import FilterAltIcon from '@mui/icons-material/FilterAlt.js'
+import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
 import FilterContext from '../contexts/FilterContext.jsx'
