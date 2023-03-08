@@ -31,7 +31,7 @@ export function DataProvider({children}) {
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
                     entry.belt === 'unranked' ? 'Is Unranked' : 'Is Ranked'
                 ].filter(x => x),
-                simpleBelt: entry.belt.replace(/\d/g, '')
+                simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
     }, [allEntries, starredEntries])
 
