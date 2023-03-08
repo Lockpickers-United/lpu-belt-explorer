@@ -9,7 +9,7 @@ import {Box} from '@mui/material'
 import Chip from '@mui/material/Chip'
 import {filterFieldsByFieldName} from '../data/filterFields.js'
 
-function FilterByField({label, fieldName, onFilter}) {
+function FilterByField({label, fieldName, onFilter, sort}) {
     const {visibleEntries} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
     const [open, setOpen] = useState(false)
@@ -39,10 +39,10 @@ function FilterByField({label, fieldName, onFilter}) {
             return acc
         }, {})
 
-        const options = [...new Set(allValues.concat(extraValues))].sort()
+        const options = [...new Set(allValues.concat(extraValues))].sort(sort)
 
         return {counts, options}
-    }, [visibleEntries, fieldName])
+    }, [fieldName, visibleEntries, sort])
 
     const defFilters = useDeferredValue(filters)
     const filterValue = defFilters[fieldName]

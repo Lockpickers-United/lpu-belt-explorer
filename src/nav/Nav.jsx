@@ -16,7 +16,6 @@ import AppContext from '../contexts/AppContext.jsx'
 import ScrollToTopButton from './ScrollToTopButton.jsx'
 import {useHotkeys} from 'react-hotkeys-hook'
 import {Tooltip} from '@mui/material'
-import belts from '../data/belts.js'
 
 function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)
@@ -67,7 +66,7 @@ function Nav() {
                     {uniqueBelts.map(belt =>
                         <CloneProps key={belt} value={belt}>
                             {tabProps => (
-                                <Tooltip title={`${belts[belt].label} Belt`} arrow disableFocusListener>
+                                <Tooltip title={`${belt} Belt`} arrow disableFocusListener>
                                     <Tab
                                         {...tabProps}
                                         icon={

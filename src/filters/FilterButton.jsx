@@ -57,13 +57,11 @@ function FilterButton({data}) {
                 </Toolbar>
                 <Box margin={1}>
                     <Stack direction='column' style={{minWidth: 250}}>
-                        {filterFields.map(({label, fieldName, values}, index) =>
+                        {filterFields.map((field, index) =>
                             <FilterByField
                                 data={data}
                                 key={index}
-                                label={label}
-                                fieldName={fieldName}
-                                values={values}
+                                {...field}
                                 onFilter={handleAddFilter}
                             />
                         )}

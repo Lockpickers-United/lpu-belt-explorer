@@ -1,15 +1,15 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react'
 import AccordionSummary from '@mui/material/AccordionSummary'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import Accordion from '@mui/material/Accordion'
 import ReactMarkdown from 'react-markdown'
 import BeltStripe from '../entries/BeltStripe.jsx'
 import Typography from '@mui/material/Typography'
-import belts from '../data/belts.js'
 import {AccordionActions} from '@mui/material'
 import InfoButton from './InfoButton.jsx'
 import AppContext from '../contexts/AppContext.jsx'
+import LinkToRequirementsButton from './LinkToRequirementsButton.jsx'
 
 function BeltRequirements({belt}) {
     const [data, setData] = useState({})
@@ -33,7 +33,7 @@ function BeltRequirements({belt}) {
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={belt}/>
-                <Typography variant='h6'>{belts[belt].label} Belt Requirements</Typography>
+                <Typography variant='h6'>{belt} Belt Requirements</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <ReactMarkdown>
@@ -41,6 +41,7 @@ function BeltRequirements({belt}) {
                 </ReactMarkdown>
             </AccordionDetails>
             <AccordionActions>
+                <LinkToRequirementsButton belt={belt}/>
                 <InfoButton/>
             </AccordionActions>
         </Accordion>

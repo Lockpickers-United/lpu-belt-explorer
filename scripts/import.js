@@ -1,11 +1,9 @@
 import fs from 'fs'
 import {parse} from 'csv-parse/sync'
 import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
-import belts from '../src/data/belts.js'
+import {allBelts} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
-
-const beltNumbers = Object.keys(belts)
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -39,7 +37,7 @@ const linkData = await importValidate('Links', linkSchema)
 // Transform fields into internal JSON format
 const jsonData = mainData
     .map(datum => {
-        const belt = datum.Belt.toLowerCase().replace(/\s/g, '')
+        const belt = datum.Belt
         const makes = datum.Make.split(',').filter(x => x)
         const models = datum.Model.split(',').filter(x => x)
         const makeModels = models.map((model, index) => ({
@@ -72,8 +70,8 @@ const jsonData = mainData
     })
     .sort((a, b) => {
         // Sort by belt first, keeping all Black belt variations together
-        const beltNumberA = beltNumbers.indexOf(a.belt.replace(/\d/g, ''))
-        const beltNumberB = beltNumbers.indexOf(b.belt.replace(/\d/g, ''))
+        const beltNumberA = allBelts.indexOf(a.belt.replace(/\s\d/g, ''))
+        const beltNumberB = allBelts.indexOf(b.belt.replace(/\s\d/g, ''))
 
         if (beltNumberA === beltNumberB) {
             // If belt is equal, sort by make/model, keeping Any above others

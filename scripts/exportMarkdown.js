@@ -1,5 +1,5 @@
 import fs from 'fs'
-import belts, {uniqueBelts} from '../src/data/belts.js'
+import {uniqueBelts} from '../src/data/belts.js'
 import {encodeNonAsciiHTML} from 'entities'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
@@ -7,14 +7,14 @@ const infoMd = fs.readFileSync('./src/resources/info.md', 'utf8')
 
 const initialVal = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), [])
 const groupedByBelt = rawData.reduce((acc, val) => {
-    const belt = val.belt.replace(/\d/g, '')
+    const belt = val.belt.replace(/\s\d/g, '')
     if (acc[belt]) acc[belt].push(val)
     return acc
 }, initialVal)
 
 const beltsMd = uniqueBelts.map(belt => {
-    const header = `### ${belts[belt].label} Belt\n![](%%${belt}%%)\n\n`
-    const reqs = fs.readFileSync(`./src/resources/${belt}.md`, 'utf8')
+    const header = `### ${belt} Belt\n![](%%${belt.toLowerCase()}%%)\n\n`
+    const reqs = fs.readFileSync(`./src/resources/${belt.toLowerCase()}.md`, 'utf8')
     const entries = groupedByBelt[belt].map(entry => {
         const makeModels = entry.makeModels.map(({make, model}) => {
             return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)

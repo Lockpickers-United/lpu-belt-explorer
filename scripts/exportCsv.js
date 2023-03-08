@@ -1,16 +1,16 @@
 import fs from 'fs'
 import validate from './validate.js'
 import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
-import belts, {uniqueBelts} from '../src/data/belts.js'
+import {uniqueBelts} from '../src/data/belts.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
-const initialValue = uniqueBelts.reduce((acc, key) => {
-    acc[key] = [`${belts[key].label} Belt`]
+const initialValue = uniqueBelts.reduce((acc, belt) => {
+    acc[belt] = [`${belt} Belt`]
     return acc
 }, {})
 const entriesByBelt = rawData.reduce((acc, entry) => {
-    const belt = entry.belt.replace(/\d/g, '')
+    const belt = entry.belt.replace(/\s\d/g, '')
     if (acc[belt]) {
         const makeModels = entry.makeModels.map(({make, model}) => {
             return make && make !== model ? `${make} ${model}` : model

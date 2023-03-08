@@ -19,7 +19,7 @@ function SearchBox() {
 
     const handleClear = useCallback(() => {
         setText('')
-        setTab('white')
+        setTab('White')
         window.scrollTo({top: 0, behavior: 'smooth'})
 
         setTimeout(() => {

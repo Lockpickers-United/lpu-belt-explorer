@@ -1,6 +1,9 @@
+import {beltSort} from './belts.js'
+
 const filterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Belt', fieldName: 'belt', sort: beltSort},
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content', extraValues: ['Is Starred']}
 ]

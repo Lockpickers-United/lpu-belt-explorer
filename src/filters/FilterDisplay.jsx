@@ -11,7 +11,7 @@ function FilterDisplay() {
     const {tab, setTab} = useContext(AppContext)
 
     const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
-        if (filterCount === 1 && !filters.search && tab === 'search') setTab('white')
+        if (filterCount === 1 && !filters.search && tab === 'search') setTab('White')
         setTimeout(() => removeFilter(keyToDelete, valueToDelete), 100)
     }, [tab, setTab, filterCount, filters.search, removeFilter])
 

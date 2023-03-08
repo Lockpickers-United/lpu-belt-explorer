@@ -1,6 +1,7 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import DataContext from './DataContext.jsx'
 import FilterContext from './FilterContext.jsx'
+import {uniqueBelts} from '../data/belts.js'
 
 const AppContext = React.createContext({})
 
@@ -9,15 +10,17 @@ export function AppProvider({children}) {
     const {filters, removeFilter} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
-        if (filters.id) {
+        if (filters.belt && uniqueBelts.includes(filters.belt)) {
+            return filters.belt
+        } else if (filters.id) {
             const entry = allEntries.find(({id}) => filters.id === id)
             if (entry) {
-                return entry.belt.replace(/\d/g, '')
+                return entry.belt
             }
         } else if (filters.search?.length > 0) {
             return 'search'
         }
-        return 'white'
+        return 'White'
     })
     const [expanded, setExpanded] = useState(filters.id)
 

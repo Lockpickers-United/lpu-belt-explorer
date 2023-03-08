@@ -1,7 +1,7 @@
 [
   {
     "id": "07034c0f",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Any",
@@ -19,7 +19,7 @@
   },
   {
     "id": "3ac43ea8",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Any",
@@ -35,7 +35,7 @@
   },
   {
     "id": "901b35b2",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Any",
@@ -45,7 +45,7 @@
   },
   {
     "id": "5dc117cd",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Any",
@@ -59,7 +59,7 @@
   },
   {
     "id": "b22bdd44",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Any",
@@ -83,7 +83,7 @@
   },
   {
     "id": "5ff7457c",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "ABUS",
@@ -100,7 +100,7 @@
   },
   {
     "id": "a8c9aa08",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Brinks",
@@ -124,7 +124,7 @@
   },
   {
     "id": "5a91e6a5",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -166,7 +166,7 @@
   },
   {
     "id": "38289b36",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -183,7 +183,7 @@
   },
   {
     "id": "562e964e",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -225,7 +225,7 @@
   },
   {
     "id": "dff62f52",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -242,7 +242,7 @@
   },
   {
     "id": "c800618f",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -272,7 +272,7 @@
   },
   {
     "id": "f10deed6",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -289,7 +289,7 @@
   },
   {
     "id": "4bbeeb48",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -319,7 +319,7 @@
   },
   {
     "id": "79adf554",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -336,7 +336,7 @@
   },
   {
     "id": "36d4123c",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "make": "Timpson",
@@ -352,7 +352,7 @@
   },
   {
     "id": "2201a1b1",
-    "belt": "white",
+    "belt": "White",
     "makeModels": [
       {
         "model": "Tri-Nine Padlock"
@@ -367,7 +367,7 @@
   },
   {
     "id": "ba5584ca",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Any",
@@ -381,7 +381,7 @@
   },
   {
     "id": "be3fef00",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Any",
@@ -395,7 +395,7 @@
   },
   {
     "id": "c7d2eca1",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -437,7 +437,7 @@
   },
   {
     "id": "693abee0",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -475,7 +475,7 @@
   },
   {
     "id": "1ce31c29",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -512,7 +512,7 @@
   },
   {
     "id": "805fc883",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -528,7 +528,7 @@
   },
   {
     "id": "2484ce70",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -558,7 +558,7 @@
   },
   {
     "id": "423dbebe",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -588,7 +588,7 @@
   },
   {
     "id": "9d830052",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -616,7 +616,7 @@
   },
   {
     "id": "abdf3acd",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ACE",
@@ -633,7 +633,7 @@
   },
   {
     "id": "3a2ed5f3",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "ADW"
@@ -648,7 +648,7 @@
   },
   {
     "id": "a0d1bf97",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "American Lock",
@@ -685,7 +685,7 @@
   },
   {
     "id": "a1581afe",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "ARFE"
@@ -700,7 +700,7 @@
   },
   {
     "id": "32244161",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Befa"
@@ -712,7 +712,7 @@
   },
   {
     "id": "4062aefb",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Bond"
@@ -724,7 +724,7 @@
   },
   {
     "id": "d6d43c00",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Braslock"
@@ -739,7 +739,7 @@
   },
   {
     "id": "58307da0",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Brinks",
@@ -787,7 +787,7 @@
   },
   {
     "id": "50fbf666",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "BSS"
@@ -799,7 +799,7 @@
   },
   {
     "id": "4d7dd1a0",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -826,7 +826,7 @@
   },
   {
     "id": "6ca3420d",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -856,7 +856,7 @@
   },
   {
     "id": "7f56acb9",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -883,7 +883,7 @@
   },
   {
     "id": "b517a7ef",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -896,7 +896,7 @@
   },
   {
     "id": "9a5b3f53",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -923,7 +923,7 @@
   },
   {
     "id": "90267144",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Börkey"
@@ -935,7 +935,7 @@
   },
   {
     "id": "919755fe",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Casesa"
@@ -944,7 +944,7 @@
   },
   {
     "id": "e38b7c57",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "CIB"
@@ -953,7 +953,7 @@
   },
   {
     "id": "4938772f",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Citadel"
@@ -965,7 +965,7 @@
   },
   {
     "id": "6719b451",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Cotica"
@@ -974,7 +974,7 @@
   },
   {
     "id": "a8d996c0",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Dulimex",
@@ -987,7 +987,7 @@
   },
   {
     "id": "2f634d15",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Eagle",
@@ -1000,7 +1000,7 @@
   },
   {
     "id": "75d883a0",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Egret",
@@ -1030,7 +1030,7 @@
   },
   {
     "id": "f24c2d25",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "EMR"
@@ -1042,7 +1042,7 @@
   },
   {
     "id": "c2306424",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ERA",
@@ -1061,7 +1061,7 @@
   },
   {
     "id": "71eea804",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Esco"
@@ -1073,7 +1073,7 @@
   },
   {
     "id": "1376f489",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Faithfull"
@@ -1096,7 +1096,7 @@
   },
   {
     "id": "ca5b08b4",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Favour"
@@ -1108,7 +1108,7 @@
   },
   {
     "id": "d93c1ed7",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Fermod"
@@ -1117,7 +1117,7 @@
   },
   {
     "id": "5e3f057f",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "FF"
@@ -1149,7 +1149,7 @@
   },
   {
     "id": "17ce6273",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "FFF"
@@ -1161,7 +1161,7 @@
   },
   {
     "id": "e8feb6f3",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Flora"
@@ -1170,7 +1170,7 @@
   },
   {
     "id": "5599bd8a",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Glip"
@@ -1185,7 +1185,7 @@
   },
   {
     "id": "234de3bc",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Guri"
@@ -1194,7 +1194,7 @@
   },
   {
     "id": "9a7e1167",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "HiK"
@@ -1203,7 +1203,7 @@
   },
   {
     "id": "28f1b592",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "HP+"
@@ -1215,7 +1215,7 @@
   },
   {
     "id": "b4d52d31",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "IBAU"
@@ -1224,7 +1224,7 @@
   },
   {
     "id": "88402cd0",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Kinzo"
@@ -1236,7 +1236,7 @@
   },
   {
     "id": "7eaffc73",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Koala"
@@ -1248,7 +1248,7 @@
   },
   {
     "id": "4773e1fa",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Laperche"
@@ -1260,7 +1260,7 @@
   },
   {
     "id": "7685aed5",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Lifetime"
@@ -1269,7 +1269,7 @@
   },
   {
     "id": "7c79137c",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "MAKO",
@@ -1293,7 +1293,7 @@
   },
   {
     "id": "1cad075e",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Mannesmann"
@@ -1308,7 +1308,7 @@
   },
   {
     "id": "866660d6",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -1338,7 +1338,7 @@
   },
   {
     "id": "2455f0ae",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -1406,7 +1406,7 @@
   },
   {
     "id": "759d0d0f",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -1436,7 +1436,7 @@
   },
   {
     "id": "df703850",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -1472,7 +1472,7 @@
   },
   {
     "id": "d5053e6d",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -1502,7 +1502,7 @@
   },
   {
     "id": "6af6f704",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -1532,7 +1532,7 @@
   },
   {
     "id": "2936bb00",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "McGeiz"
@@ -1541,7 +1541,7 @@
   },
   {
     "id": "d02d36d5",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Mecanimex"
@@ -1556,7 +1556,7 @@
   },
   {
     "id": "6c365304",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Metal"
@@ -1568,7 +1568,7 @@
   },
   {
     "id": "ae031589",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Modeco"
@@ -1577,7 +1577,7 @@
   },
   {
     "id": "8824c0e5",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Multi XL"
@@ -1586,7 +1586,7 @@
   },
   {
     "id": "6d9fbd4a",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Multicar"
@@ -1595,7 +1595,7 @@
   },
   {
     "id": "2924aa76",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Owa"
@@ -1604,7 +1604,7 @@
   },
   {
     "id": "30b60f60",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Power Line"
@@ -1613,7 +1613,7 @@
   },
   {
     "id": "8e2d57b1",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Santos"
@@ -1625,7 +1625,7 @@
   },
   {
     "id": "40f7d7c7",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Schlage",
@@ -1638,7 +1638,7 @@
   },
   {
     "id": "d4299b24",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Smith and Locke",
@@ -1659,7 +1659,7 @@
   },
   {
     "id": "a460c971",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Squire",
@@ -1685,7 +1685,7 @@
   },
   {
     "id": "920b7da1",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Squire",
@@ -1703,7 +1703,7 @@
   },
   {
     "id": "ed713b97",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Squire",
@@ -1721,7 +1721,7 @@
   },
   {
     "id": "9fd77c9a",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Stabilit"
@@ -1733,7 +1733,7 @@
   },
   {
     "id": "4ec9a150",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Südmetall"
@@ -1742,7 +1742,7 @@
   },
   {
     "id": "ff837451",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Tara"
@@ -1751,7 +1751,7 @@
   },
   {
     "id": "7d9d715d",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "TESA",
@@ -1775,7 +1775,7 @@
   },
   {
     "id": "4b32e9dd",
-    "belt": "yellow",
+    "belt": "Yellow",
     "makeModels": [
       {
         "model": "Wolfdog"
@@ -1804,7 +1804,7 @@
   },
   {
     "id": "67b285d9",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -1821,7 +1821,7 @@
   },
   {
     "id": "16e9d2ab",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -1851,7 +1851,7 @@
   },
   {
     "id": "632f4069",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -1894,7 +1894,7 @@
   },
   {
     "id": "d7188e81",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -1910,7 +1910,7 @@
   },
   {
     "id": "52f1e117",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -1941,7 +1941,7 @@
   },
   {
     "id": "a0e50505",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -1978,7 +1978,7 @@
   },
   {
     "id": "3653f376",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2008,7 +2008,7 @@
   },
   {
     "id": "683e4f33",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2038,7 +2038,7 @@
   },
   {
     "id": "d7479fd6",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2051,7 +2051,7 @@
   },
   {
     "id": "afd3e51d",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2064,7 +2064,7 @@
   },
   {
     "id": "95a9d73c",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2106,7 +2106,7 @@
   },
   {
     "id": "bc1ed715",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2119,7 +2119,7 @@
   },
   {
     "id": "80667814",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2133,7 +2133,7 @@
   },
   {
     "id": "204d85a7",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2146,7 +2146,7 @@
   },
   {
     "id": "1050a58c",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2179,7 +2179,7 @@
   },
   {
     "id": "aa15b066",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "BASI",
@@ -2212,7 +2212,7 @@
   },
   {
     "id": "7b4ce02a",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "BASI",
@@ -2225,7 +2225,7 @@
   },
   {
     "id": "d49f60fe",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Brinks",
@@ -2241,7 +2241,7 @@
   },
   {
     "id": "9215a45f",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Brinks",
@@ -2257,7 +2257,7 @@
   },
   {
     "id": "171f76e9",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -2273,7 +2273,7 @@
   },
   {
     "id": "1a8afeac",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "CES",
@@ -2286,7 +2286,7 @@
   },
   {
     "id": "53732c41",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "CES",
@@ -2299,7 +2299,7 @@
   },
   {
     "id": "43fd87ae",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "CES",
@@ -2312,7 +2312,7 @@
   },
   {
     "id": "e89aa47e",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "CES",
@@ -2325,7 +2325,7 @@
   },
   {
     "id": "6758c30e",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "CFG"
@@ -2337,7 +2337,7 @@
   },
   {
     "id": "3b3e78b0",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Cocraft",
@@ -2354,7 +2354,7 @@
   },
   {
     "id": "99057c44",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Corbin",
@@ -2370,7 +2370,7 @@
   },
   {
     "id": "eaba4dd9",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "DOM",
@@ -2383,7 +2383,7 @@
   },
   {
     "id": "677afce6",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Eclipse"
@@ -2402,7 +2402,7 @@
   },
   {
     "id": "26315d0f",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Eurospec (E*S)"
@@ -2421,7 +2421,7 @@
   },
   {
     "id": "d98f267e",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "F3"
@@ -2433,7 +2433,7 @@
   },
   {
     "id": "140d2878",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "FAB",
@@ -2466,7 +2466,7 @@
   },
   {
     "id": "5802cfb9",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Fanal",
@@ -2482,7 +2482,7 @@
   },
   {
     "id": "0795d01a",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "FCV"
@@ -2494,7 +2494,7 @@
   },
   {
     "id": "d7c8eec1",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "FUG"
@@ -2506,7 +2506,7 @@
   },
   {
     "id": "0756b9e9",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "FXL"
@@ -2518,7 +2518,7 @@
   },
   {
     "id": "5b5c6a9e",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Garrison",
@@ -2531,7 +2531,7 @@
   },
   {
     "id": "92f98042",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Gege",
@@ -2547,7 +2547,7 @@
   },
   {
     "id": "836c5ce3",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Gloss"
@@ -2556,7 +2556,7 @@
   },
   {
     "id": "ed0e0d36",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "GTV",
@@ -2569,7 +2569,7 @@
   },
   {
     "id": "2bdcb8c7",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "IKON",
@@ -2582,7 +2582,7 @@
   },
   {
     "id": "d261a3ba",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ISEO",
@@ -2609,7 +2609,7 @@
   },
   {
     "id": "9bc8809e",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Kasp",
@@ -2630,7 +2630,7 @@
   },
   {
     "id": "a5a164ad",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -2670,7 +2670,7 @@
   },
   {
     "id": "efc01233",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -2712,7 +2712,7 @@
   },
   {
     "id": "e2e15f47",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -2728,7 +2728,7 @@
   },
   {
     "id": "9ca2c109",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -2766,7 +2766,7 @@
   },
   {
     "id": "9441e2cc",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -2796,7 +2796,7 @@
   },
   {
     "id": "9f832458",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "S&S"
@@ -2805,7 +2805,7 @@
   },
   {
     "id": "4071176d",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Sargent",
@@ -2818,7 +2818,7 @@
   },
   {
     "id": "74f65a9c",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "SIB"
@@ -2830,7 +2830,7 @@
   },
   {
     "id": "029fef1f",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "SMB"
@@ -2839,7 +2839,7 @@
   },
   {
     "id": "f88a999d",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Snowstar"
@@ -2848,7 +2848,7 @@
   },
   {
     "id": "0754f036",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "SOLXD"
@@ -2860,7 +2860,7 @@
   },
   {
     "id": "f2a8a932",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Starlet"
@@ -2872,7 +2872,7 @@
   },
   {
     "id": "78205898",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Techpro",
@@ -2885,7 +2885,7 @@
   },
   {
     "id": "665f75f2",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "TOP"
@@ -2897,7 +2897,7 @@
   },
   {
     "id": "7b65effd",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Trelock",
@@ -2910,7 +2910,7 @@
   },
   {
     "id": "ecd83598",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Trimas"
@@ -2922,7 +2922,7 @@
   },
   {
     "id": "1be21a18",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "Urbis"
@@ -2931,7 +2931,7 @@
   },
   {
     "id": "e524ce27",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "model": "VEB"
@@ -2940,7 +2940,7 @@
   },
   {
     "id": "07d4fec6",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Wilka",
@@ -2954,7 +2954,7 @@
   },
   {
     "id": "8c0171f9",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -2967,7 +2967,7 @@
   },
   {
     "id": "ab17daa6",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -2984,7 +2984,7 @@
   },
   {
     "id": "0f0dcd42",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Yale",
@@ -3000,7 +3000,7 @@
   },
   {
     "id": "fb3daa70",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Yale",
@@ -3020,7 +3020,7 @@
   },
   {
     "id": "db1040e5",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Yale",
@@ -3033,7 +3033,7 @@
   },
   {
     "id": "98a2ba2d",
-    "belt": "orange",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Yale",
@@ -3069,7 +3069,7 @@
   },
   {
     "id": "0e97c099",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Any",
@@ -3086,7 +3086,7 @@
   },
   {
     "id": "d46ac711",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Any",
@@ -3103,7 +3103,7 @@
   },
   {
     "id": "74a00ae3",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3139,7 +3139,7 @@
   },
   {
     "id": "e42853c7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3155,7 +3155,7 @@
   },
   {
     "id": "9ec8706c",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3189,7 +3189,7 @@
   },
   {
     "id": "47e7cf73",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3205,7 +3205,7 @@
   },
   {
     "id": "e1625c4d",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3235,7 +3235,7 @@
   },
   {
     "id": "9da8ebe0",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3259,7 +3259,7 @@
   },
   {
     "id": "6b2e5290",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3272,7 +3272,7 @@
   },
   {
     "id": "8d1ebc79",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3305,7 +3305,7 @@
   },
   {
     "id": "85d93eb1",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3353,7 +3353,7 @@
   },
   {
     "id": "f97700ff",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3366,7 +3366,7 @@
   },
   {
     "id": "cf5bd73b",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3384,7 +3384,7 @@
   },
   {
     "id": "8606220a",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3401,7 +3401,7 @@
   },
   {
     "id": "f488f48e",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3414,7 +3414,7 @@
   },
   {
     "id": "bc6837f8",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3471,7 +3471,7 @@
   },
   {
     "id": "304df868",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3498,7 +3498,7 @@
   },
   {
     "id": "c4130a64",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3530,7 +3530,7 @@
   },
   {
     "id": "b0076ed7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3561,7 +3561,7 @@
   },
   {
     "id": "1b10225b",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3574,7 +3574,7 @@
   },
   {
     "id": "9adbc90f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ABUS",
@@ -3587,7 +3587,7 @@
   },
   {
     "id": "3af47daf",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ACE",
@@ -3603,7 +3603,7 @@
   },
   {
     "id": "1dafd552",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ACE",
@@ -3620,7 +3620,7 @@
   },
   {
     "id": "200605b9",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ACE",
@@ -3637,7 +3637,7 @@
   },
   {
     "id": "2ae1e0b8",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "American Lock",
@@ -3673,7 +3673,7 @@
   },
   {
     "id": "b16ffe3f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "American Lock",
@@ -3689,7 +3689,7 @@
   },
   {
     "id": "81fbd528",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "American Lock",
@@ -3725,7 +3725,7 @@
   },
   {
     "id": "b3af5e62",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "American Lock",
@@ -3741,7 +3741,7 @@
   },
   {
     "id": "6f954c60",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "American Lock",
@@ -3757,7 +3757,7 @@
   },
   {
     "id": "5a6170fb",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "American Lock",
@@ -3773,7 +3773,7 @@
   },
   {
     "id": "e84582aa",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ASSA",
@@ -3798,7 +3798,7 @@
   },
   {
     "id": "0b82681f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ASSA",
@@ -3839,7 +3839,7 @@
   },
   {
     "id": "ca6ce763",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Bab IKON",
@@ -3852,7 +3852,7 @@
   },
   {
     "id": "648a3742",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Bab IKON",
@@ -3865,7 +3865,7 @@
   },
   {
     "id": "bfc7c700",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Bab IKON",
@@ -3878,7 +3878,7 @@
   },
   {
     "id": "bea71188",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BASI",
@@ -3891,7 +3891,7 @@
   },
   {
     "id": "27f1aaae",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BASI",
@@ -3904,7 +3904,7 @@
   },
   {
     "id": "a6e954a6",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BASI",
@@ -3917,7 +3917,7 @@
   },
   {
     "id": "b099c88a",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "model": "BiLock Clone"
@@ -3949,7 +3949,7 @@
   },
   {
     "id": "569dd487",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BKS",
@@ -3962,7 +3962,7 @@
   },
   {
     "id": "135ef1c0",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BKS",
@@ -3975,7 +3975,7 @@
   },
   {
     "id": "ec0a2659",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BKS",
@@ -3993,7 +3993,7 @@
   },
   {
     "id": "4bc2b65a",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "BKS",
@@ -4006,7 +4006,7 @@
   },
   {
     "id": "3b26e53c",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Bricard",
@@ -4019,7 +4019,7 @@
   },
   {
     "id": "14f021bb",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -4052,7 +4052,7 @@
   },
   {
     "id": "32fa52a6",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -4085,7 +4085,7 @@
   },
   {
     "id": "bd9dc1e4",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -4124,7 +4124,7 @@
   },
   {
     "id": "dd155241",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -4160,7 +4160,7 @@
   },
   {
     "id": "83ac6e00",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "CES",
@@ -4173,7 +4173,7 @@
   },
   {
     "id": "20f3575c",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Chateau",
@@ -4189,7 +4189,7 @@
   },
   {
     "id": "9d478029",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Commando",
@@ -4225,7 +4225,7 @@
   },
   {
     "id": "f7f31800",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Commando",
@@ -4241,7 +4241,7 @@
   },
   {
     "id": "606275d8",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Commando",
@@ -4257,7 +4257,7 @@
   },
   {
     "id": "73a718cb",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Corbin Russwin",
@@ -4269,7 +4269,7 @@
   },
   {
     "id": "96bb2cf7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Corbin",
@@ -4282,7 +4282,7 @@
   },
   {
     "id": "6c9a666e",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Corona",
@@ -4295,7 +4295,7 @@
   },
   {
     "id": "6b472dc2",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Corona",
@@ -4308,7 +4308,7 @@
   },
   {
     "id": "04970fee",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "DOM",
@@ -4321,7 +4321,7 @@
   },
   {
     "id": "a165bc09",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "DOM",
@@ -4334,7 +4334,7 @@
   },
   {
     "id": "5241369e",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "DOM",
@@ -4347,7 +4347,7 @@
   },
   {
     "id": "05979a42",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "DOM",
@@ -4357,7 +4357,7 @@
   },
   {
     "id": "95b2c7b0",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "DOM",
@@ -4370,7 +4370,7 @@
   },
   {
     "id": "8e18bd5f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "model": "Elca"
@@ -4382,7 +4382,7 @@
   },
   {
     "id": "9bf13231",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ERA",
@@ -4402,7 +4402,7 @@
   },
   {
     "id": "2ec75ab7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ERA",
@@ -4422,7 +4422,7 @@
   },
   {
     "id": "6ad7add4",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ERA",
@@ -4442,7 +4442,7 @@
   },
   {
     "id": "6a870d80",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "EVVA",
@@ -4455,7 +4455,7 @@
   },
   {
     "id": "b5a5e9a5",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "EVVA",
@@ -4468,7 +4468,7 @@
   },
   {
     "id": "9406020f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "EVVA",
@@ -4481,7 +4481,7 @@
   },
   {
     "id": "cd0c2ff9",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "FAB",
@@ -4494,7 +4494,7 @@
   },
   {
     "id": "13b55a25",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Federal Lock",
@@ -4507,7 +4507,7 @@
   },
   {
     "id": "e98b5ae7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Federal Lock",
@@ -4520,7 +4520,7 @@
   },
   {
     "id": "3316c7d0",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "model": "Guett Dern"
@@ -4529,7 +4529,7 @@
   },
   {
     "id": "b25e23fd",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "IKON",
@@ -4543,7 +4543,7 @@
   },
   {
     "id": "9a972905",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "IKON",
@@ -4557,7 +4557,7 @@
   },
   {
     "id": "f8254416",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ISEO",
@@ -4574,7 +4574,7 @@
   },
   {
     "id": "95902951",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ISEO",
@@ -4591,7 +4591,7 @@
   },
   {
     "id": "54087329",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "ISEO",
@@ -4612,7 +4612,7 @@
   },
   {
     "id": "3129ee7e",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Kaba Gege",
@@ -4625,7 +4625,7 @@
   },
   {
     "id": "c81ca385",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Kaba",
@@ -4646,7 +4646,7 @@
   },
   {
     "id": "14db6dbd",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "model": "Kai Kai"
@@ -4655,7 +4655,7 @@
   },
   {
     "id": "62f3dc5c",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Kale Kilit",
@@ -4668,7 +4668,7 @@
   },
   {
     "id": "9811b260",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Kale Kilit",
@@ -4682,7 +4682,7 @@
   },
   {
     "id": "14ece36b",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Kasp",
@@ -4703,7 +4703,7 @@
   },
   {
     "id": "7ec79663",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "model": "Kenaurd"
@@ -4724,7 +4724,7 @@
   },
   {
     "id": "1c002521",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Kryptonite",
@@ -4737,7 +4737,7 @@
   },
   {
     "id": "5f0834f5",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -4779,7 +4779,7 @@
   },
   {
     "id": "3eced659",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -4792,7 +4792,7 @@
   },
   {
     "id": "ae023398",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -4829,7 +4829,7 @@
   },
   {
     "id": "af98761d",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "MAKO",
@@ -4842,7 +4842,7 @@
   },
   {
     "id": "cba41cb7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "MAKO",
@@ -4872,7 +4872,7 @@
   },
   {
     "id": "c942490e",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -4908,7 +4908,7 @@
   },
   {
     "id": "366d5f50",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -4921,7 +4921,7 @@
   },
   {
     "id": "b1915ecd",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -4960,7 +4960,7 @@
   },
   {
     "id": "cb471080",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -4973,7 +4973,7 @@
   },
   {
     "id": "2bf16de8",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -4986,7 +4986,7 @@
   },
   {
     "id": "efbc853f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -5002,7 +5002,7 @@
   },
   {
     "id": "b8f4f5f5",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Mauer",
@@ -5015,7 +5015,7 @@
   },
   {
     "id": "1f4e3e05",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "MCM",
@@ -5028,7 +5028,7 @@
   },
   {
     "id": "66f5175a",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Morgan",
@@ -5046,7 +5046,7 @@
   },
   {
     "id": "4f8a20de",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Mottura",
@@ -5059,7 +5059,7 @@
   },
   {
     "id": "3700d537",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Mottura",
@@ -5086,7 +5086,7 @@
   },
   {
     "id": "abf55188",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -5102,7 +5102,7 @@
   },
   {
     "id": "c7f1add4",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -5116,7 +5116,7 @@
   },
   {
     "id": "0fb9a3c8",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -5161,7 +5161,7 @@
   },
   {
     "id": "8ad36e8a",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -5188,7 +5188,7 @@
   },
   {
     "id": "31d68cd1",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -5209,7 +5209,7 @@
   },
   {
     "id": "f54c8493",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -5222,7 +5222,7 @@
   },
   {
     "id": "8f3f18d8",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Sargent",
@@ -5236,7 +5236,7 @@
   },
   {
     "id": "ea1d1d8c",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Schlage",
@@ -5263,7 +5263,7 @@
   },
   {
     "id": "44bdfa06",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Squire",
@@ -5281,7 +5281,7 @@
   },
   {
     "id": "5260b396",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Tokoz",
@@ -5297,7 +5297,7 @@
   },
   {
     "id": "4f0fbb3f",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Vachette",
@@ -5310,7 +5310,7 @@
   },
   {
     "id": "ba627c40",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Wetzel",
@@ -5323,7 +5323,7 @@
   },
   {
     "id": "8cc092f5",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Wilka",
@@ -5337,7 +5337,7 @@
   },
   {
     "id": "736386f4",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Wilka",
@@ -5350,7 +5350,7 @@
   },
   {
     "id": "9b275fcc",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Wilka",
@@ -5363,7 +5363,7 @@
   },
   {
     "id": "0a7b9888",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Wilka",
@@ -5376,7 +5376,7 @@
   },
   {
     "id": "69c4dbf2",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -5389,7 +5389,7 @@
   },
   {
     "id": "574e9854",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -5402,7 +5402,7 @@
   },
   {
     "id": "de53cff7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -5416,7 +5416,7 @@
   },
   {
     "id": "a609fdb1",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -5429,7 +5429,7 @@
   },
   {
     "id": "bd9e85b5",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -5442,7 +5442,7 @@
   },
   {
     "id": "1105b55d",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Yale",
@@ -5455,7 +5455,7 @@
   },
   {
     "id": "34532c45",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Yardeni",
@@ -5479,7 +5479,7 @@
   },
   {
     "id": "4f6bcdb7",
-    "belt": "green",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Zarker",
@@ -5504,7 +5504,7 @@
   },
   {
     "id": "c1d09460",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Any",
@@ -5515,7 +5515,7 @@
   },
   {
     "id": "c6529d9c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Any",
@@ -5530,7 +5530,7 @@
   },
   {
     "id": "ea0efaca",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5543,7 +5543,7 @@
   },
   {
     "id": "f96de7cc",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5556,7 +5556,7 @@
   },
   {
     "id": "5c0d870b",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5569,7 +5569,7 @@
   },
   {
     "id": "3515caae",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5586,7 +5586,7 @@
   },
   {
     "id": "fe84cc3c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5617,7 +5617,7 @@
   },
   {
     "id": "4382d650",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5630,7 +5630,7 @@
   },
   {
     "id": "f93c57fc",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5643,7 +5643,7 @@
   },
   {
     "id": "34c0dfe4",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -5659,7 +5659,7 @@
   },
   {
     "id": "d20fb493",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Ankerslot",
@@ -5673,7 +5673,7 @@
   },
   {
     "id": "d9e3829f",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ASSA",
@@ -5692,7 +5692,7 @@
   },
   {
     "id": "d08aa492",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ASSA",
@@ -5741,7 +5741,7 @@
   },
   {
     "id": "f1e92541",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ASSA",
@@ -5779,7 +5779,7 @@
   },
   {
     "id": "08a5799e",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ASSA",
@@ -5824,7 +5824,7 @@
   },
   {
     "id": "1bee7a66",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ASSA",
@@ -5837,7 +5837,7 @@
   },
   {
     "id": "307e1f03",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Bricard",
@@ -5850,7 +5850,7 @@
   },
   {
     "id": "61f33761",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Bricard",
@@ -5863,7 +5863,7 @@
   },
   {
     "id": "ed9fa926",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -5877,7 +5877,7 @@
   },
   {
     "id": "5647f11c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Cantol",
@@ -5891,7 +5891,7 @@
   },
   {
     "id": "32c85438",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Chubb",
@@ -5910,7 +5910,7 @@
   },
   {
     "id": "0c946064",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Chubb",
@@ -5929,7 +5929,7 @@
   },
   {
     "id": "9d337b72",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Chubb",
@@ -5948,7 +5948,7 @@
   },
   {
     "id": "5b842c0e",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Chubb",
@@ -5968,7 +5968,7 @@
   },
   {
     "id": "066d1e3b",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "CISA",
@@ -5981,7 +5981,7 @@
   },
   {
     "id": "f9aceec0",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "CISA",
@@ -6008,7 +6008,7 @@
   },
   {
     "id": "b91162e7",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DeGuard",
@@ -6036,7 +6036,7 @@
   },
   {
     "id": "eec4bd4a",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DOM",
@@ -6052,7 +6052,7 @@
   },
   {
     "id": "96591a8f",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DOM",
@@ -6068,7 +6068,7 @@
   },
   {
     "id": "2e67118d",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DOM",
@@ -6081,7 +6081,7 @@
   },
   {
     "id": "81338028",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DOM",
@@ -6095,7 +6095,7 @@
   },
   {
     "id": "1dd28bf9",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DOM",
@@ -6149,7 +6149,7 @@
   },
   {
     "id": "9aa8821a",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "DOM",
@@ -6182,7 +6182,7 @@
   },
   {
     "id": "4c544aa2",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Dorma",
@@ -6221,7 +6221,7 @@
   },
   {
     "id": "1ede9094",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Dorma",
@@ -6234,7 +6234,7 @@
   },
   {
     "id": "0f7eb0f2",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ERA",
@@ -6254,7 +6254,7 @@
   },
   {
     "id": "e2d201c9",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ERA",
@@ -6300,7 +6300,7 @@
   },
   {
     "id": "a2a10bc7",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ERA",
@@ -6325,7 +6325,7 @@
   },
   {
     "id": "14481dfb",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "EVVA",
@@ -6368,7 +6368,7 @@
   },
   {
     "id": "da54208c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "EVVA",
@@ -6399,7 +6399,7 @@
   },
   {
     "id": "af99d1cb",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "EVVA",
@@ -6416,7 +6416,7 @@
   },
   {
     "id": "18f3c21f",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "EVVA",
@@ -6447,7 +6447,7 @@
   },
   {
     "id": "bce6757d",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "EVVA",
@@ -6463,7 +6463,7 @@
   },
   {
     "id": "f938f2fe",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "FAB",
@@ -6490,7 +6490,7 @@
   },
   {
     "id": "aee424c0",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "FAB",
@@ -6533,7 +6533,7 @@
   },
   {
     "id": "275d33c9",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Federal Lock",
@@ -6546,7 +6546,7 @@
   },
   {
     "id": "959a6b9d",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "GOAL",
@@ -6560,7 +6560,7 @@
   },
   {
     "id": "62bdbd5e",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Guard",
@@ -6573,7 +6573,7 @@
   },
   {
     "id": "d1896bf9",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "IKON",
@@ -6588,7 +6588,7 @@
   },
   {
     "id": "08b5986d",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "IKON",
@@ -6603,7 +6603,7 @@
   },
   {
     "id": "1c38e176",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "IKON",
@@ -6614,7 +6614,7 @@
   },
   {
     "id": "948f9068",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "IKON",
@@ -6629,7 +6629,7 @@
   },
   {
     "id": "8ad6939a",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kaba Gege",
@@ -6642,7 +6642,7 @@
   },
   {
     "id": "0037a89f",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kaba Gege",
@@ -6655,7 +6655,7 @@
   },
   {
     "id": "aa7fc00e",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kaba Gege",
@@ -6698,7 +6698,7 @@
   },
   {
     "id": "1fda76a8",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kaba",
@@ -6712,7 +6712,7 @@
   },
   {
     "id": "5c2f5101",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kaba",
@@ -6726,7 +6726,7 @@
   },
   {
     "id": "40e50dd4",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kaken",
@@ -6796,7 +6796,7 @@
   },
   {
     "id": "b01220ea",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kale Kilit",
@@ -6809,7 +6809,7 @@
   },
   {
     "id": "54dc69e8",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kenaurd",
@@ -6840,7 +6840,7 @@
   },
   {
     "id": "c8c0ee06",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kryptonite",
@@ -6857,7 +6857,7 @@
   },
   {
     "id": "adc2d335",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Lince",
@@ -6870,7 +6870,7 @@
   },
   {
     "id": "58f12de9",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -6883,7 +6883,7 @@
   },
   {
     "id": "331c9d36",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -6920,7 +6920,7 @@
   },
   {
     "id": "36d61da4",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -6962,7 +6962,7 @@
   },
   {
     "id": "f6b001ed",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -6975,7 +6975,7 @@
   },
   {
     "id": "1fe0ba0d",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "M&C",
@@ -7010,7 +7010,7 @@
   },
   {
     "id": "bc6f6e7c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "M&C",
@@ -7024,7 +7024,7 @@
   },
   {
     "id": "2a02810c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mauer",
@@ -7034,7 +7034,7 @@
   },
   {
     "id": "0a70d67f",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mauer",
@@ -7044,7 +7044,7 @@
   },
   {
     "id": "72675596",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "MCM",
@@ -7058,7 +7058,7 @@
   },
   {
     "id": "23c7988c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Medeco",
@@ -7087,7 +7087,7 @@
   },
   {
     "id": "69d4ef86",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Medeco",
@@ -7114,7 +7114,7 @@
   },
   {
     "id": "a9e47067",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Medeco",
@@ -7137,7 +7137,7 @@
   },
   {
     "id": "f3a2aa78",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Metal",
@@ -7151,7 +7151,7 @@
   },
   {
     "id": "f9f2d983",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mila",
@@ -7161,7 +7161,7 @@
   },
   {
     "id": "c0af329b",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mindy",
@@ -7174,7 +7174,7 @@
   },
   {
     "id": "df8081fa",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "MIWA",
@@ -7187,7 +7187,7 @@
   },
   {
     "id": "b1834e81",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mottura",
@@ -7201,7 +7201,7 @@
   },
   {
     "id": "0418a174",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -7228,7 +7228,7 @@
   },
   {
     "id": "6e0bfdd2",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -7244,7 +7244,7 @@
   },
   {
     "id": "fb5a9eb7",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -7265,7 +7265,7 @@
   },
   {
     "id": "74c225d1",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "PACLOCK",
@@ -7278,7 +7278,7 @@
   },
   {
     "id": "ca6f4eaf",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Pisla",
@@ -7294,7 +7294,7 @@
   },
   {
     "id": "6dc539dd",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Ruko",
@@ -7325,7 +7325,7 @@
   },
   {
     "id": "842165cc",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "SEA",
@@ -7338,7 +7338,7 @@
   },
   {
     "id": "ccd19ba8",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Securemme",
@@ -7351,7 +7351,7 @@
   },
   {
     "id": "0a12f032",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Securit",
@@ -7361,7 +7361,7 @@
   },
   {
     "id": "b0d2e04c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Takigen",
@@ -7371,7 +7371,7 @@
   },
   {
     "id": "8b5b655e",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "TESA",
@@ -7387,7 +7387,7 @@
   },
   {
     "id": "35330d19",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Tokoz",
@@ -7401,7 +7401,7 @@
   },
   {
     "id": "55511995",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "TrioVing",
@@ -7418,7 +7418,7 @@
   },
   {
     "id": "86703028",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Union",
@@ -7438,7 +7438,7 @@
   },
   {
     "id": "67c4159c",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Vachette",
@@ -7455,7 +7455,7 @@
   },
   {
     "id": "97c2b9be",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "VSR",
@@ -7479,7 +7479,7 @@
   },
   {
     "id": "2c9d12fc",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -7492,7 +7492,7 @@
   },
   {
     "id": "fe088de0",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -7506,7 +7506,7 @@
   },
   {
     "id": "779e7dcb",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Yale",
@@ -7522,7 +7522,7 @@
   },
   {
     "id": "30a4fef5",
-    "belt": "blue",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Yale",
@@ -7545,7 +7545,7 @@
   },
   {
     "id": "a6a225e5",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Any",
@@ -7559,7 +7559,7 @@
   },
   {
     "id": "c8259a23",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Any",
@@ -7574,7 +7574,7 @@
   },
   {
     "id": "96fd610e",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ABA",
@@ -7587,7 +7587,7 @@
   },
   {
     "id": "a062f1ee",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ABUS",
@@ -7600,7 +7600,7 @@
   },
   {
     "id": "20adf729",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ABUS",
@@ -7613,7 +7613,7 @@
   },
   {
     "id": "dd1dd313",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ABUS",
@@ -7626,7 +7626,7 @@
   },
   {
     "id": "da8331ef",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ABUS",
@@ -7654,7 +7654,7 @@
   },
   {
     "id": "557b2f45",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Agent",
@@ -7675,7 +7675,7 @@
   },
   {
     "id": "0723bdc2",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Aldon Corporation",
@@ -7685,7 +7685,7 @@
   },
   {
     "id": "bbce33e0",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "model": "Anchor Las (disc detainer)"
@@ -7715,7 +7715,7 @@
   },
   {
     "id": "23919b4e",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASEC",
@@ -7735,7 +7735,7 @@
   },
   {
     "id": "f2d41749",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASSA",
@@ -7778,7 +7778,7 @@
   },
   {
     "id": "ef221c67",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASSA",
@@ -7825,7 +7825,7 @@
   },
   {
     "id": "45e3cde7",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASSA",
@@ -7848,7 +7848,7 @@
   },
   {
     "id": "039a239f",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASSA",
@@ -7891,7 +7891,7 @@
   },
   {
     "id": "e2742f70",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASSA",
@@ -7928,7 +7928,7 @@
   },
   {
     "id": "122b5621",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ASSA",
@@ -7948,7 +7948,7 @@
   },
   {
     "id": "f70b9b33",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -7981,7 +7981,7 @@
   },
   {
     "id": "1ca633a8",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -8013,7 +8013,7 @@
   },
   {
     "id": "f3666121",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Avocet",
@@ -8030,7 +8030,7 @@
   },
   {
     "id": "8f004bf0",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Bricard",
@@ -8044,7 +8044,7 @@
   },
   {
     "id": "98ba98ae",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Bricard",
@@ -8054,7 +8054,7 @@
   },
   {
     "id": "e38d015b",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -8070,7 +8070,7 @@
   },
   {
     "id": "1f3a4b1d",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "CEI",
@@ -8080,7 +8080,7 @@
   },
   {
     "id": "1f3a8ff9",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Chubb",
@@ -8100,7 +8100,7 @@
   },
   {
     "id": "d78ca1ba",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Chubb",
@@ -8114,7 +8114,7 @@
   },
   {
     "id": "8a0c4b07",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Codkey",
@@ -8142,7 +8142,7 @@
   },
   {
     "id": "71bce5b7",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Corbin Russwin",
@@ -8189,7 +8189,7 @@
   },
   {
     "id": "50fd7a98",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Corbin Russwin",
@@ -8201,7 +8201,7 @@
   },
   {
     "id": "5e264777",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "DAF Kilit",
@@ -8215,7 +8215,7 @@
   },
   {
     "id": "a10711cc",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Dierre",
@@ -8224,11 +8224,25 @@
     ],
     "lockingMechanisms": [
       "Slider"
+    ],
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52723558807_cf22547770_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52723558807/in/album-72177720306454888/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724489950_26fc1bdb89_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724489950/in/album-72177720306454888/"
+      }
     ]
   },
   {
     "id": "acde7f0c",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "DOM",
@@ -8246,7 +8260,7 @@
   },
   {
     "id": "fc4de1ff",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "DOM",
@@ -8259,7 +8273,7 @@
   },
   {
     "id": "7b05dccc",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "DOM",
@@ -8273,7 +8287,7 @@
   },
   {
     "id": "e8901d1c",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Eagle",
@@ -8298,7 +8312,7 @@
   },
   {
     "id": "04a402d6",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Elzett",
@@ -8311,7 +8325,7 @@
   },
   {
     "id": "8c2983b5",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "EVVA",
@@ -8356,7 +8370,7 @@
   },
   {
     "id": "93871dad",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Fichet",
@@ -8370,7 +8384,7 @@
   },
   {
     "id": "7786832f",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "model": "Fontaine"
@@ -8396,7 +8410,7 @@
   },
   {
     "id": "db4de1bb",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "HQ",
@@ -8428,7 +8442,7 @@
   },
   {
     "id": "3b848976",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "IFAM",
@@ -8444,7 +8458,7 @@
   },
   {
     "id": "4ffe03a9",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "IKON",
@@ -8478,7 +8492,7 @@
   },
   {
     "id": "07bc680a",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Illinois",
@@ -8535,7 +8549,7 @@
   },
   {
     "id": "c11aca1a",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Ingersoll",
@@ -8548,7 +8562,7 @@
   },
   {
     "id": "6eab0c38",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ISEO",
@@ -8562,7 +8576,7 @@
   },
   {
     "id": "30aa78ef",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ISEO",
@@ -8583,7 +8597,7 @@
   },
   {
     "id": "479f1d73",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "model": "K5"
@@ -8595,7 +8609,7 @@
   },
   {
     "id": "4cd09b3b",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kaba Gege",
@@ -8635,7 +8649,7 @@
   },
   {
     "id": "779d74f5",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kaba",
@@ -8649,7 +8663,7 @@
   },
   {
     "id": "898a7138",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kaken",
@@ -8719,7 +8733,7 @@
   },
   {
     "id": "6f5e0d32",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kale Kilit",
@@ -8752,7 +8766,7 @@
   },
   {
     "id": "304f5471",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Keso",
@@ -8773,7 +8787,7 @@
   },
   {
     "id": "06ddb074",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kwikset",
@@ -8800,7 +8814,7 @@
   },
   {
     "id": "41f9efa2",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kwikset",
@@ -8827,7 +8841,7 @@
   },
   {
     "id": "dd1bf2af",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Kwikset",
@@ -8854,7 +8868,7 @@
   },
   {
     "id": "bb317675",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Legge",
@@ -8874,7 +8888,7 @@
   },
   {
     "id": "c5b7e63b",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "LIPS",
@@ -8909,7 +8923,7 @@
   },
   {
     "id": "434b5b25",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "LIPS",
@@ -8922,7 +8936,7 @@
   },
   {
     "id": "50d411f4",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Liquidonics",
@@ -8953,7 +8967,7 @@
   },
   {
     "id": "9982c0eb",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Lockman",
@@ -8970,7 +8984,7 @@
   },
   {
     "id": "883fb3cd",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -8982,11 +8996,25 @@
       "Dimple",
       "Slider"
     ],
-    "notes": "*** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers"
+    "notes": "*** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",
+    "media": [
+      {
+        "title": "By: Alpama",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52725435712_787db5d44c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52725435712/in/album-72177720306470044/"
+      },
+      {
+        "title": "By: Alpama",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52725435707_1ed2b1024a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52725435707/in/album-72177720306470044/"
+      }
+    ]
   },
   {
     "id": "71833308",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Lockwood",
@@ -9004,7 +9032,7 @@
   },
   {
     "id": "6efe5f67",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "M&C",
@@ -9039,7 +9067,7 @@
   },
   {
     "id": "be22f5f1",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "M&C",
@@ -9061,7 +9089,7 @@
   },
   {
     "id": "9aedb834",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "M&C",
@@ -9079,7 +9107,7 @@
   },
   {
     "id": "c9fc823c",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Magnum",
@@ -9089,7 +9117,7 @@
   },
   {
     "id": "aeaa6a09",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Medeco",
@@ -9124,7 +9152,7 @@
   },
   {
     "id": "826c31e0",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Medeco",
@@ -9231,7 +9259,7 @@
   },
   {
     "id": "58f2eac0",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "MIWA",
@@ -9247,7 +9275,7 @@
   },
   {
     "id": "278f2108",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "model": "MLock"
@@ -9256,7 +9284,7 @@
   },
   {
     "id": "62520bea",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Mottura",
@@ -9275,7 +9303,7 @@
   },
   {
     "id": "8c76cc79",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Mottura",
@@ -9289,7 +9317,7 @@
   },
   {
     "id": "3335df97",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -9355,7 +9383,7 @@
   },
   {
     "id": "16906a6c",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -9395,7 +9423,7 @@
   },
   {
     "id": "8a65b956",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -9411,7 +9439,7 @@
   },
   {
     "id": "3efc97ad",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Nagasawa",
@@ -9425,7 +9453,7 @@
   },
   {
     "id": "94466c21",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Nemef",
@@ -9459,7 +9487,7 @@
   },
   {
     "id": "4debdca1",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Nemef",
@@ -9489,7 +9517,7 @@
   },
   {
     "id": "ed3ae6cf",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Opnus",
@@ -9519,7 +9547,7 @@
   },
   {
     "id": "c9da1540",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Pollux",
@@ -9532,7 +9560,7 @@
   },
   {
     "id": "8e81c2c6",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Rav Bariach",
@@ -9545,7 +9573,7 @@
   },
   {
     "id": "6d754a0a",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Rielda",
@@ -9555,7 +9583,7 @@
   },
   {
     "id": "e1e595b9",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Sargent",
@@ -9583,7 +9611,7 @@
   },
   {
     "id": "3dabf132",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Schlage",
@@ -9596,7 +9624,7 @@
   },
   {
     "id": "e0a9caf4",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Sepa",
@@ -9612,7 +9640,7 @@
   },
   {
     "id": "3f49ccc1",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "TESA",
@@ -9665,7 +9693,7 @@
   },
   {
     "id": "9a9ae8df",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "TESA",
@@ -9708,7 +9736,7 @@
   },
   {
     "id": "e7f6d089",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Titan",
@@ -9718,7 +9746,7 @@
   },
   {
     "id": "8d4632d9",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Tubar",
@@ -9749,7 +9777,7 @@
   },
   {
     "id": "b35bf986",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "US Star Tech",
@@ -9759,7 +9787,7 @@
   },
   {
     "id": "416946bc",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Vachette",
@@ -9769,7 +9797,7 @@
   },
   {
     "id": "37914cb6",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Walsall Locks",
@@ -9787,7 +9815,7 @@
   },
   {
     "id": "5958a65b",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Western Electric",
@@ -9824,7 +9852,7 @@
   },
   {
     "id": "1be10736",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Yale",
@@ -9838,7 +9866,7 @@
   },
   {
     "id": "ebe9ee59",
-    "belt": "purple",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Yale",
@@ -9881,7 +9909,7 @@
   },
   {
     "id": "b13f4b57",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Any",
@@ -9896,7 +9924,7 @@
   },
   {
     "id": "da09d849",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Abloy",
@@ -9932,7 +9960,7 @@
   },
   {
     "id": "b8350900",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ABUS",
@@ -9964,7 +9992,7 @@
   },
   {
     "id": "19fce24d",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "model": "Aegis"
@@ -10006,7 +10034,7 @@
   },
   {
     "id": "db380ba0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Agent",
@@ -10016,7 +10044,7 @@
   },
   {
     "id": "d8abe040",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "model": "Alke"
@@ -10025,7 +10053,7 @@
   },
   {
     "id": "054731a5",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ALPHA",
@@ -10050,7 +10078,7 @@
   },
   {
     "id": "2c58f220",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ALPHA",
@@ -10066,7 +10094,7 @@
   },
   {
     "id": "f85f4ac0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Anbo",
@@ -10092,7 +10120,7 @@
   },
   {
     "id": "5329b0f3",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Ankerslot",
@@ -10102,7 +10130,7 @@
   },
   {
     "id": "d3ad5a73",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ASSA",
@@ -10181,7 +10209,7 @@
   },
   {
     "id": "1459e2c6",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ASSA",
@@ -10220,7 +10248,7 @@
   },
   {
     "id": "fd7b514a",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ASSA",
@@ -10283,7 +10311,7 @@
   },
   {
     "id": "9ed006d4",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -10316,7 +10344,7 @@
   },
   {
     "id": "0b1a28ce",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -10349,7 +10377,7 @@
   },
   {
     "id": "33d6e0df",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -10362,7 +10390,7 @@
   },
   {
     "id": "82ae66ad",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "BASI",
@@ -10372,7 +10400,7 @@
   },
   {
     "id": "39bf479d",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "BKS",
@@ -10405,7 +10433,7 @@
   },
   {
     "id": "9b00fb5e",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Bricard",
@@ -10419,7 +10447,7 @@
   },
   {
     "id": "de47d600",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Cavers",
@@ -10429,7 +10457,7 @@
   },
   {
     "id": "f51e2ff2",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Clavis",
@@ -10446,7 +10474,7 @@
   },
   {
     "id": "bc03135a",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Codkey",
@@ -10477,7 +10505,7 @@
   },
   {
     "id": "e39885f3",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "DOM",
@@ -10495,7 +10523,7 @@
   },
   {
     "id": "dd6a3683",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "DOM",
@@ -10512,7 +10540,7 @@
   },
   {
     "id": "61247b32",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "DOM",
@@ -10560,7 +10588,7 @@
   },
   {
     "id": "87ee7a61",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Dorma",
@@ -10600,7 +10628,7 @@
   },
   {
     "id": "33588917",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Eagle",
@@ -10630,7 +10658,7 @@
   },
   {
     "id": "e0255299",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "FAB",
@@ -10673,7 +10701,7 @@
   },
   {
     "id": "e8150a27",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Federal Lock",
@@ -10683,7 +10711,7 @@
   },
   {
     "id": "45c08407",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Federal Lock",
@@ -10697,7 +10725,7 @@
   },
   {
     "id": "58cbc037",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Fichet",
@@ -10745,7 +10773,7 @@
   },
   {
     "id": "9c627ebd",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Fichet",
@@ -10784,7 +10812,7 @@
   },
   {
     "id": "86e86a1d",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "FTH -THIRARD",
@@ -10797,7 +10825,7 @@
   },
   {
     "id": "7298a640",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Fuki",
@@ -10813,7 +10841,7 @@
   },
   {
     "id": "594b1a1c",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Gerda",
@@ -10831,7 +10859,7 @@
   },
   {
     "id": "2929f922",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Gerda",
@@ -10871,7 +10899,7 @@
   },
   {
     "id": "7194cc26",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "GOAL",
@@ -10910,7 +10938,7 @@
   },
   {
     "id": "a1233156",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "GOAL",
@@ -10942,7 +10970,7 @@
   },
   {
     "id": "f38cafca",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "IKON",
@@ -10972,7 +11000,7 @@
   },
   {
     "id": "9659ad59",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "iNAHO",
@@ -10985,7 +11013,7 @@
   },
   {
     "id": "d64be6f7",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "model": "Izis"
@@ -11007,7 +11035,7 @@
   },
   {
     "id": "1ee01369",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "JPM",
@@ -11020,7 +11048,7 @@
   },
   {
     "id": "f61461ed",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Kaba",
@@ -11037,7 +11065,7 @@
   },
   {
     "id": "41b91a0e",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Kaba",
@@ -11054,7 +11082,7 @@
   },
   {
     "id": "e0191c45",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Kaba",
@@ -11085,7 +11113,7 @@
   },
   {
     "id": "2efc9257",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Kaba",
@@ -11102,7 +11130,7 @@
   },
   {
     "id": "9375df98",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Kaken",
@@ -11120,7 +11148,7 @@
   },
   {
     "id": "660a840e",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Kale Kilit",
@@ -11133,7 +11161,7 @@
   },
   {
     "id": "f5cc6ace",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Laperche",
@@ -11152,7 +11180,7 @@
   },
   {
     "id": "514c7ec4",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "LIPS",
@@ -11187,7 +11215,7 @@
   },
   {
     "id": "8625f848",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Lowe and Fletcher",
@@ -11201,7 +11229,7 @@
   },
   {
     "id": "236027a0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Magnum",
@@ -11214,7 +11242,7 @@
   },
   {
     "id": "b8783269",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Mauer",
@@ -11271,7 +11299,7 @@
   },
   {
     "id": "b9b7ba7c",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Mauer",
@@ -11290,7 +11318,7 @@
   },
   {
     "id": "620b6e5a",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Mauer",
@@ -11309,7 +11337,7 @@
   },
   {
     "id": "305473cf",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Medeco",
@@ -11348,7 +11376,7 @@
   },
   {
     "id": "848940e5",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Medeco",
@@ -11384,7 +11412,7 @@
   },
   {
     "id": "540a14c0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "MG Serrature",
@@ -11397,7 +11425,7 @@
   },
   {
     "id": "f257bf77",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "MIWA",
@@ -11436,7 +11464,7 @@
   },
   {
     "id": "2bf9f60e",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "MIWA",
@@ -11454,7 +11482,7 @@
   },
   {
     "id": "5c5701d7",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -11503,7 +11531,7 @@
   },
   {
     "id": "0ae75ea0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -11576,7 +11604,7 @@
   },
   {
     "id": "cc5bbb68",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Pollux",
@@ -11603,7 +11631,7 @@
   },
   {
     "id": "94ee12b7",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Robur",
@@ -11638,7 +11666,7 @@
   },
   {
     "id": "ea1afad0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Schlage",
@@ -11682,7 +11710,7 @@
   },
   {
     "id": "626da374",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Scorpion",
@@ -11743,7 +11771,7 @@
   },
   {
     "id": "b91890bf",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "U-Shin",
@@ -11757,7 +11785,7 @@
   },
   {
     "id": "40e99be0",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Vachette",
@@ -11775,7 +11803,7 @@
   },
   {
     "id": "506b242a",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "model": "Van Lock"
@@ -11787,7 +11815,7 @@
   },
   {
     "id": "dd764207",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "VSR",
@@ -11814,7 +11842,7 @@
   },
   {
     "id": "18e1f45b",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "WEST",
@@ -11851,7 +11879,7 @@
   },
   {
     "id": "9d865bcd",
-    "belt": "brown",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -11865,7 +11893,7 @@
   },
   {
     "id": "87eaa964",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Abloy",
@@ -11897,7 +11925,7 @@
   },
   {
     "id": "e92d29ad",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Abloy",
@@ -11930,7 +11958,7 @@
   },
   {
     "id": "b29a8b44",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "ABUS",
@@ -11967,7 +11995,7 @@
   },
   {
     "id": "b8350901",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "ABUS",
@@ -12000,7 +12028,7 @@
   },
   {
     "id": "4223eb26",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "ALPHA",
@@ -12025,7 +12053,7 @@
   },
   {
     "id": "29ab2852",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "ASSA",
@@ -12070,7 +12098,7 @@
   },
   {
     "id": "e3bd3faf",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "ASSA",
@@ -12121,7 +12149,7 @@
   },
   {
     "id": "75fb1e5c",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "ASSA",
@@ -12148,7 +12176,7 @@
   },
   {
     "id": "5b60be8a",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -12181,7 +12209,7 @@
   },
   {
     "id": "9eb3e9c4",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Banham",
@@ -12197,7 +12225,7 @@
   },
   {
     "id": "3af2407a",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "BKS",
@@ -12211,7 +12239,7 @@
   },
   {
     "id": "ab1cdc56",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Chubb",
@@ -12257,7 +12285,7 @@
   },
   {
     "id": "9bb97454",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "CISM",
@@ -12271,7 +12299,7 @@
   },
   {
     "id": "add0b067",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Clavis",
@@ -12285,7 +12313,7 @@
   },
   {
     "id": "c4f942f0",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Corbin Russwin",
@@ -12335,7 +12363,7 @@
   },
   {
     "id": "6b06f591",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "DOM",
@@ -12379,7 +12407,7 @@
   },
   {
     "id": "4993a918",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "DOM",
@@ -12435,7 +12463,7 @@
   },
   {
     "id": "ff0be785",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Elzett",
@@ -12451,7 +12479,7 @@
   },
   {
     "id": "265226b1",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "EVVA",
@@ -12484,7 +12512,7 @@
   },
   {
     "id": "00b569f2",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "EVVA",
@@ -12516,7 +12544,7 @@
   },
   {
     "id": "6852489f",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "EVVA",
@@ -12567,7 +12595,7 @@
   },
   {
     "id": "3b797ff2",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "FAB",
@@ -12594,7 +12622,7 @@
   },
   {
     "id": "03cbfaa5",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Fichet",
@@ -12648,7 +12676,7 @@
   },
   {
     "id": "9d7faa15",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Fontaine",
@@ -12675,7 +12703,7 @@
   },
   {
     "id": "1f6cb393",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "FTH -THIRARD",
@@ -12688,7 +12716,7 @@
   },
   {
     "id": "9f613c4a",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "GOAL",
@@ -12737,7 +12765,7 @@
   },
   {
     "id": "937eb7a8",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "GOAL",
@@ -12769,7 +12797,7 @@
   },
   {
     "id": "34d27803",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "IKON",
@@ -12835,7 +12863,7 @@
   },
   {
     "id": "843896be",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "IKON",
@@ -12849,7 +12877,7 @@
   },
   {
     "id": "0082fa4c",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "JPM",
@@ -12913,7 +12941,7 @@
   },
   {
     "id": "aa4c402d",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -12930,7 +12958,7 @@
   },
   {
     "id": "eed91da5",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13005,7 +13033,7 @@
   },
   {
     "id": "434bdf9d",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13022,7 +13050,7 @@
   },
   {
     "id": "0770580d",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13057,7 +13085,7 @@
   },
   {
     "id": "c8e86f14",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13088,7 +13116,7 @@
   },
   {
     "id": "c4484574",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13105,7 +13133,7 @@
   },
   {
     "id": "e3081fd3",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13142,7 +13170,7 @@
   },
   {
     "id": "43deff29",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Kaba",
@@ -13159,7 +13187,7 @@
   },
   {
     "id": "169b80e3",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Mauer",
@@ -13176,7 +13204,7 @@
   },
   {
     "id": "cc8cfd45",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "MIWA",
@@ -13192,7 +13220,7 @@
   },
   {
     "id": "9094ca58",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "MIWA",
@@ -13212,7 +13240,7 @@
   },
   {
     "id": "fdb68dc4",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "MIWA",
@@ -13226,7 +13254,7 @@
   },
   {
     "id": "550a0c9d",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "MIWA",
@@ -13244,7 +13272,7 @@
   },
   {
     "id": "31431c49",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "MIWA",
@@ -13262,7 +13290,7 @@
   },
   {
     "id": "5e090448",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Mottura",
@@ -13281,7 +13309,7 @@
   },
   {
     "id": "ae7d3780",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Mottura",
@@ -13306,7 +13334,7 @@
   },
   {
     "id": "3daff112",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Mottura",
@@ -13320,7 +13348,7 @@
   },
   {
     "id": "9c5f4539",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Picard",
@@ -13333,7 +13361,7 @@
   },
   {
     "id": "9da7a5f2",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Robur",
@@ -13355,7 +13383,7 @@
   },
   {
     "id": "112d0034",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Robur",
@@ -13391,7 +13419,7 @@
   },
   {
     "id": "4a7db3c6",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Rosengrens",
@@ -13433,7 +13461,7 @@
   },
   {
     "id": "63a9a2b1",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Ruko",
@@ -13455,7 +13483,7 @@
   },
   {
     "id": "2ff8a738",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "S&G",
@@ -13478,7 +13506,7 @@
   },
   {
     "id": "cf76cfde",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Schlage",
@@ -13505,7 +13533,7 @@
   },
   {
     "id": "80b0044b",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Sémag",
@@ -13536,7 +13564,7 @@
   },
   {
     "id": "b5df156e",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "model": "Tann"
@@ -13553,7 +13581,7 @@
   },
   {
     "id": "3198fffc",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Tokoz",
@@ -13605,7 +13633,7 @@
   },
   {
     "id": "95281228",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "U-Shin",
@@ -13622,7 +13650,7 @@
   },
   {
     "id": "17d41d80",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Vachette",
@@ -13652,7 +13680,7 @@
   },
   {
     "id": "4db59eb3",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Vachette",
@@ -13673,7 +13701,7 @@
   },
   {
     "id": "131732a0",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -13690,7 +13718,7 @@
   },
   {
     "id": "6708838f",
-    "belt": "red",
+    "belt": "Red",
     "makeModels": [
       {
         "model": "Xylock"
@@ -13702,7 +13730,7 @@
   },
   {
     "id": "1a7a23d4",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Abloy",
@@ -13728,7 +13756,7 @@
   },
   {
     "id": "fc627b17",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Abloy",
@@ -13764,7 +13792,7 @@
   },
   {
     "id": "735439dd",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "Abloy",
@@ -13802,7 +13830,7 @@
   },
   {
     "id": "e87f0ca2",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "Abloy",
@@ -13822,7 +13850,7 @@
   },
   {
     "id": "2ae6a691",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Abloy",
@@ -13841,7 +13869,7 @@
   },
   {
     "id": "f133510b",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "ASSA",
@@ -13898,7 +13926,7 @@
   },
   {
     "id": "6e59ba12",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "ASSA",
@@ -13982,7 +14010,7 @@
   },
   {
     "id": "104776ef",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14038,7 +14066,7 @@
   },
   {
     "id": "fb51b475",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14060,7 +14088,7 @@
   },
   {
     "id": "7168d463",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14164,7 +14192,7 @@
   },
   {
     "id": "f7ad4c89",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14224,7 +14252,7 @@
   },
   {
     "id": "55053299",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14308,7 +14336,7 @@
   },
   {
     "id": "3f73d2ce",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14394,7 +14422,7 @@
   },
   {
     "id": "c8694f3a",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "ASSA",
@@ -14431,7 +14459,7 @@
   },
   {
     "id": "e3058619",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -14464,7 +14492,7 @@
   },
   {
     "id": "ab1e901f",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -14497,7 +14525,7 @@
   },
   {
     "id": "12846cc6",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -14516,7 +14544,7 @@
   },
   {
     "id": "6d2555aa",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Australian Lock Co.",
@@ -14550,7 +14578,7 @@
   },
   {
     "id": "f09ce6b3",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "BKS",
@@ -14567,7 +14595,7 @@
   },
   {
     "id": "78336fc0",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "Bowley",
@@ -14580,7 +14608,7 @@
   },
   {
     "id": "362d0dee",
-    "belt": "black4",
+    "belt": "Black 4",
     "makeModels": [
       {
         "make": "Chubb",
@@ -14596,7 +14624,7 @@
   },
   {
     "id": "72215ba4",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Chubb",
@@ -14615,7 +14643,7 @@
   },
   {
     "id": "2db935ea",
-    "belt": "black4",
+    "belt": "Black 4",
     "makeModels": [
       {
         "make": "Chubb",
@@ -14666,7 +14694,7 @@
   },
   {
     "id": "234a8ca8",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Clavis",
@@ -14700,7 +14728,7 @@
   },
   {
     "id": "7ea33803",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Clavis",
@@ -14716,7 +14744,7 @@
   },
   {
     "id": "48cf387f",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Clavis",
@@ -14733,7 +14761,7 @@
   },
   {
     "id": "c266d57b",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Corbin Russwin",
@@ -14795,7 +14823,7 @@
   },
   {
     "id": "57fbcb1b",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "DOM",
@@ -14812,7 +14840,7 @@
   },
   {
     "id": "3c73c705",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "DOM",
@@ -14856,7 +14884,7 @@
   },
   {
     "id": "f7452b9f",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "EVVA",
@@ -14897,7 +14925,7 @@
   },
   {
     "id": "1e197456",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "EVVA",
@@ -14929,7 +14957,7 @@
   },
   {
     "id": "533c7408",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "EVVA",
@@ -14961,7 +14989,7 @@
   },
   {
     "id": "db749615",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "EVVA",
@@ -15012,7 +15040,7 @@
   },
   {
     "id": "8ea170d2",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "EVVA",
@@ -15069,7 +15097,7 @@
   },
   {
     "id": "5ab25363",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "EVVA",
@@ -15163,7 +15191,7 @@
   },
   {
     "id": "4abcb403",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Fichet",
@@ -15217,7 +15245,7 @@
   },
   {
     "id": "340154fa",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Fichet",
@@ -15271,7 +15299,7 @@
   },
   {
     "id": "33056c0f",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Fichet",
@@ -15339,7 +15367,7 @@
   },
   {
     "id": "c0af45f4",
-    "belt": "black5",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "Fichet",
@@ -15407,7 +15435,7 @@
   },
   {
     "id": "f048719a",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Fichet-Bauche",
@@ -15442,7 +15470,7 @@
   },
   {
     "id": "3ca098da",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "GOAL",
@@ -15458,7 +15486,7 @@
   },
   {
     "id": "63b2e02b",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "GOAL",
@@ -15507,7 +15535,7 @@
   },
   {
     "id": "109531f4",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "GOAL",
@@ -15556,7 +15584,7 @@
   },
   {
     "id": "5103e650",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "GOAL",
@@ -15589,7 +15617,7 @@
   },
   {
     "id": "e8c7dd5b",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Hori",
@@ -15608,7 +15636,7 @@
   },
   {
     "id": "108549ba",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "IKON",
@@ -15630,7 +15658,7 @@
   },
   {
     "id": "7e967792",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "IKON",
@@ -15670,7 +15698,7 @@
   },
   {
     "id": "c9494ee8",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "IKON",
@@ -15710,7 +15738,7 @@
   },
   {
     "id": "8f99236e",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15785,7 +15813,7 @@
   },
   {
     "id": "68b5a797",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15840,7 +15868,7 @@
   },
   {
     "id": "bc1509f5",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15877,7 +15905,7 @@
   },
   {
     "id": "f7b52501",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15912,7 +15940,7 @@
   },
   {
     "id": "10968d37",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15947,7 +15975,7 @@
   },
   {
     "id": "3ddfc71c",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15964,7 +15992,7 @@
   },
   {
     "id": "dfa88b94",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Kaba",
@@ -15981,7 +16009,7 @@
   },
   {
     "id": "f87db705",
-    "belt": "black5",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "Kromer",
@@ -16002,7 +16030,7 @@
   },
   {
     "id": "f1857cef",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Lockman",
@@ -16019,7 +16047,7 @@
   },
   {
     "id": "a2bd7f1e",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "MIWA",
@@ -16070,7 +16098,7 @@
   },
   {
     "id": "d0c510c5",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "MIWA",
@@ -16085,7 +16113,7 @@
   },
   {
     "id": "21b61a85",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "MIWA",
@@ -16100,7 +16128,7 @@
   },
   {
     "id": "91f40022",
-    "belt": "black3",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "MIWA",
@@ -16115,7 +16143,7 @@
   },
   {
     "id": "71c7270b",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "MIWA",
@@ -16133,7 +16161,7 @@
   },
   {
     "id": "d1272b9f",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "MIWA",
@@ -16151,7 +16179,7 @@
   },
   {
     "id": "649eaebc",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -16250,7 +16278,7 @@
   },
   {
     "id": "4f2ed774",
-    "belt": "black5",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "NATO",
@@ -16283,7 +16311,7 @@
   },
   {
     "id": "f29a212f",
-    "belt": "black5",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "NATO",
@@ -16316,7 +16344,7 @@
   },
   {
     "id": "6c0ec943",
-    "belt": "black4",
+    "belt": "Black 4",
     "makeModels": [
       {
         "make": "Opnus",
@@ -16343,7 +16371,7 @@
   },
   {
     "id": "e151c916",
-    "belt": "black4",
+    "belt": "Black 4",
     "makeModels": [
       {
         "make": "Opnus",
@@ -16376,7 +16404,7 @@
   },
   {
     "id": "5cba063b",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Robur",
@@ -16395,7 +16423,7 @@
   },
   {
     "id": "db63c882",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Rosengrens",
@@ -16438,7 +16466,7 @@
   },
   {
     "id": "00cf7717",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Sargent",
@@ -16468,7 +16496,7 @@
   },
   {
     "id": "69668831",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Tann",
@@ -16510,7 +16538,7 @@
   },
   {
     "id": "e4bb0668",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "UrbanAlps",
@@ -16523,7 +16551,7 @@
   },
   {
     "id": "284bf0b0",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "UrbanAlps",
@@ -16556,7 +16584,7 @@
   },
   {
     "id": "93e4cf5f",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Walsall Locks",
@@ -16575,7 +16603,7 @@
   },
   {
     "id": "23437955",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "WEST",
@@ -16611,7 +16639,7 @@
   },
   {
     "id": "5a4310d5",
-    "belt": "black5",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "Western Electric",
@@ -16629,7 +16657,7 @@
   },
   {
     "id": "d1a5cd90",
-    "belt": "black1",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "Winkhaus",
@@ -16646,7 +16674,7 @@
   },
   {
     "id": "a8e79394",
-    "belt": "black2",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "Yanai",
@@ -16688,7 +16716,7 @@
   },
   {
     "id": "0b604114",
-    "belt": "black5",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "Yuema",
@@ -16705,7 +16733,7 @@
   },
   {
     "id": "3b7643da",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABA",
@@ -16718,7 +16746,7 @@
   },
   {
     "id": "a17a6cf3",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABA",
@@ -16728,7 +16756,7 @@
   },
   {
     "id": "9ae8b650",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Abloy",
@@ -16738,7 +16766,7 @@
   },
   {
     "id": "12ff8c25",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Abloy",
@@ -16751,7 +16779,7 @@
   },
   {
     "id": "71ca74d0",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Abloy",
@@ -16764,7 +16792,7 @@
   },
   {
     "id": "cad3eff0",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Abloy",
@@ -16777,7 +16805,7 @@
   },
   {
     "id": "0feafca7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABUS",
@@ -16787,7 +16815,7 @@
   },
   {
     "id": "d005e7b8",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABUS",
@@ -16797,7 +16825,7 @@
   },
   {
     "id": "b370e57b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABUS",
@@ -16811,7 +16839,7 @@
   },
   {
     "id": "c9d6d06d",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABUS",
@@ -16824,7 +16852,7 @@
   },
   {
     "id": "9423b4a4",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Alpha",
@@ -16835,7 +16863,7 @@
   },
   {
     "id": "d000f733",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Alpha",
@@ -16846,7 +16874,7 @@
   },
   {
     "id": "82ea52a4",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Alpha",
@@ -16857,7 +16885,7 @@
   },
   {
     "id": "bac43ba7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Alpha",
@@ -16868,7 +16896,7 @@
   },
   {
     "id": "05298f91",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Alpha",
@@ -16880,7 +16908,7 @@
   },
   {
     "id": "dbc1279d",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "An Jia Bao"
@@ -16892,7 +16920,7 @@
   },
   {
     "id": "fd93632b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "Angal"
@@ -16906,7 +16934,7 @@
   },
   {
     "id": "c2db34fb",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Arrow",
@@ -16917,7 +16945,7 @@
   },
   {
     "id": "f8445741",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ASSA",
@@ -16931,7 +16959,7 @@
   },
   {
     "id": "ef4e0295",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ASSA",
@@ -16945,7 +16973,7 @@
   },
   {
     "id": "ee04714f",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "BASI",
@@ -16956,7 +16984,7 @@
   },
   {
     "id": "e35772c9",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Bowley",
@@ -16966,7 +16994,7 @@
   },
   {
     "id": "35adb4d6",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Burgwächter",
@@ -16976,7 +17004,7 @@
   },
   {
     "id": "85591581",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Capitol",
@@ -16986,7 +17014,7 @@
   },
   {
     "id": "0813d39e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "CAVEO",
@@ -16996,7 +17024,7 @@
   },
   {
     "id": "60964e9f",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "CAVEO",
@@ -17006,7 +17034,7 @@
   },
   {
     "id": "267e47c4",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Chubb",
@@ -17017,7 +17045,7 @@
   },
   {
     "id": "a832e82d",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Cisa",
@@ -17027,7 +17055,7 @@
   },
   {
     "id": "22d70f2e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Cisa",
@@ -17037,7 +17065,7 @@
   },
   {
     "id": "0e5adf31",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Clavis",
@@ -17051,7 +17079,7 @@
   },
   {
     "id": "4d738de3",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Crown",
@@ -17062,7 +17090,7 @@
   },
   {
     "id": "bf43348b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Emhart",
@@ -17075,7 +17103,7 @@
   },
   {
     "id": "abe6074c",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Ezcurra",
@@ -17088,7 +17116,7 @@
   },
   {
     "id": "b5e210ec",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "FAB",
@@ -17101,7 +17129,7 @@
   },
   {
     "id": "10ab07eb",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Fichet",
@@ -17112,7 +17140,7 @@
   },
   {
     "id": "d6e6039e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Fichet-Bauche",
@@ -17122,7 +17150,7 @@
   },
   {
     "id": "3bd433d7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Fichet-Bauche",
@@ -17132,7 +17160,7 @@
   },
   {
     "id": "a57c1e9b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "FTH",
@@ -17142,7 +17170,7 @@
   },
   {
     "id": "b379e483",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "GEGE",
@@ -17152,7 +17180,7 @@
   },
   {
     "id": "88085257",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Gera",
@@ -17162,7 +17190,7 @@
   },
   {
     "id": "1575614d",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "GLK",
@@ -17176,7 +17204,7 @@
   },
   {
     "id": "63a898da",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "GLK",
@@ -17189,7 +17217,7 @@
   },
   {
     "id": "6b220699",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "GSK"
@@ -17199,7 +17227,7 @@
   },
   {
     "id": "93324d19",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "Helason "
@@ -17212,7 +17240,7 @@
   },
   {
     "id": "4c90dcbd",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Hong Dun",
@@ -17223,7 +17251,7 @@
   },
   {
     "id": "97e1ae9f",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Hori",
@@ -17237,7 +17265,7 @@
   },
   {
     "id": "49b2c746",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Hori",
@@ -17251,7 +17279,7 @@
   },
   {
     "id": "9b94b1c0",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "iNAHO",
@@ -17262,7 +17290,7 @@
   },
   {
     "id": "a7d98df3",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Kaba",
@@ -17276,7 +17304,7 @@
   },
   {
     "id": "281aa393",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Kromer",
@@ -17286,7 +17314,7 @@
   },
   {
     "id": "c65959a3",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "La Gard",
@@ -17296,7 +17324,7 @@
   },
   {
     "id": "728d4aa0",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Lips",
@@ -17310,7 +17338,7 @@
   },
   {
     "id": "380aeb89",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mailboss",
@@ -17323,7 +17351,7 @@
   },
   {
     "id": "f74e0e97",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Marks",
@@ -17333,7 +17361,7 @@
   },
   {
     "id": "8f7f1830",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -17346,7 +17374,7 @@
   },
   {
     "id": "7b69a331",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -17359,7 +17387,7 @@
   },
   {
     "id": "8d67f9b7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -17373,7 +17401,7 @@
   },
   {
     "id": "237f29c9",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Master Lock",
@@ -17386,7 +17414,7 @@
   },
   {
     "id": "01c9e8d1",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Medeco",
@@ -17399,7 +17427,7 @@
   },
   {
     "id": "00a2ff18",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Medeco",
@@ -17434,7 +17462,7 @@
   },
   {
     "id": "0684a655",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Medeco",
@@ -17447,7 +17475,7 @@
   },
   {
     "id": "e6872b30",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mindy",
@@ -17457,7 +17485,7 @@
   },
   {
     "id": "06a28ac7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mindy",
@@ -17468,7 +17496,7 @@
   },
   {
     "id": "c511cc75",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "Ming Gao"
@@ -17477,7 +17505,7 @@
   },
   {
     "id": "31cd85d7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Miwa",
@@ -17487,7 +17515,7 @@
   },
   {
     "id": "fd2b533e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -17499,8 +17527,8 @@
     ]
   },
   {
-    "id": "ec9555d7",
-    "belt": "unranked",
+    "id": "2bb68e21",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mul-t-Lock",
@@ -17514,8 +17542,8 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "dde72691",
-    "belt": "unranked",
+    "id": "9ebc42b5",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mul-t-Lock",
@@ -17530,7 +17558,7 @@
   },
   {
     "id": "1798ca06",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Mul-T-Lock",
@@ -17544,7 +17572,7 @@
   },
   {
     "id": "1ee9600e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Nagasawa",
@@ -17555,7 +17583,7 @@
   },
   {
     "id": "f8aaa0ef",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Opnus",
@@ -17567,7 +17595,7 @@
   },
   {
     "id": "3af6c54b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Opnus",
@@ -17577,7 +17605,7 @@
   },
   {
     "id": "9637ddde",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Rav Bariach",
@@ -17588,7 +17616,7 @@
   },
   {
     "id": "5646568c",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Rosengrens",
@@ -17598,7 +17626,7 @@
   },
   {
     "id": "6dd5a34b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Ruko",
@@ -17611,7 +17639,7 @@
   },
   {
     "id": "347bd804",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "S&G",
@@ -17621,7 +17649,7 @@
   },
   {
     "id": "894238be",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "S&G",
@@ -17631,7 +17659,7 @@
   },
   {
     "id": "4403a73f",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Securemme",
@@ -17644,7 +17672,7 @@
   },
   {
     "id": "97baf67b",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "SOL",
@@ -17655,7 +17683,7 @@
   },
   {
     "id": "0d0bf1a5",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "SOL",
@@ -17666,7 +17694,7 @@
   },
   {
     "id": "29d423c8",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "SOL",
@@ -17677,7 +17705,7 @@
   },
   {
     "id": "53365ed3",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "SOL",
@@ -17688,7 +17716,7 @@
   },
   {
     "id": "a77899fe",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Takigen",
@@ -17699,7 +17727,7 @@
   },
   {
     "id": "174e20c0",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Takigen",
@@ -17714,7 +17742,7 @@
   },
   {
     "id": "0bc03ee8",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "TESA",
@@ -17728,7 +17756,7 @@
   },
   {
     "id": "9a99a0a7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Trelock",
@@ -17738,7 +17766,7 @@
   },
   {
     "id": "95a9b042",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "U-Shin",
@@ -17748,7 +17776,7 @@
   },
   {
     "id": "ab1e3974",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Vachette",
@@ -17762,7 +17790,7 @@
   },
   {
     "id": "90b4ade7",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Voga",
@@ -17772,7 +17800,7 @@
   },
   {
     "id": "fa9fb7e1",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "War-Lok"
@@ -17781,7 +17809,7 @@
   },
   {
     "id": "1220174e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "WEST",
@@ -17791,7 +17819,7 @@
   },
   {
     "id": "288c8f6e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Wilka",
@@ -17801,7 +17829,7 @@
   },
   {
     "id": "10679814",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Wilka",
@@ -17811,7 +17839,7 @@
   },
   {
     "id": "c4a2fbe5",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "model": "Wilson"
@@ -17821,7 +17849,7 @@
   },
   {
     "id": "efca4bf9",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yale",
@@ -17832,7 +17860,7 @@
   },
   {
     "id": "a42a815e",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yale",
@@ -17848,7 +17876,7 @@
   },
   {
     "id": "7164f69d",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yale",
@@ -17864,7 +17892,7 @@
   },
   {
     "id": "e16080de",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yale",
@@ -17877,7 +17905,7 @@
   },
   {
     "id": "0757b1ed",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yardeni",
@@ -17888,7 +17916,7 @@
   },
   {
     "id": "2b6dd267",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yardeni",
@@ -17899,7 +17927,7 @@
   },
   {
     "id": "a7ffa199",
-    "belt": "unranked",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Yardeni",

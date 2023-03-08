@@ -8,7 +8,7 @@ function ClearFiltersButton(props) {
     const {filters, clearFilters} = useContext(FilterContext)
 
     const handleClear = () => {
-        if (!filters.search && tab === 'search') setTab('white')
+        if (!filters.search && tab === 'search') setTab('White')
         setTimeout(() => clearFilters(), 100)
     }
 

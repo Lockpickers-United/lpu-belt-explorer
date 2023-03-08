@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useRef} from 'react'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore.js'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -9,7 +9,6 @@ import BeltStripe from './BeltStripe.jsx'
 import FieldValue from './FieldValue.jsx'
 import BeltIcon from './BeltIcon.jsx'
 import ReactMarkdown from 'react-markdown'
-import belts from '../data/belts.js'
 import FilterChip from '../filters/FilterChip.jsx'
 import LinkToEntryButton from './LinkToEntryButton.jsx'
 import ImageGallery from './ImageGallery.jsx'
@@ -106,7 +105,7 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionDetails>
                         <FieldValue name='Belt' value={
                             <React.Fragment>
-                                <Typography>{belts[entry.belt].label}</Typography>
+                                <Typography>{entry.belt}</Typography>
                                 <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                             </React.Fragment>
                         }/>
