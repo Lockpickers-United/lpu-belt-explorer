@@ -1301,9 +1301,7 @@ before we announced the lock is being reclassified. When we move a lock down a r
 that we are doing so publicly, and provide an appropriate grace period (generally one month) to allow anyone currently
 working on that lock to have time to get their accomplishment ranked at the old belt level.
 
-**Effective Immediately:**
-
-- See Changelog in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
+Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
 
 
 ---
