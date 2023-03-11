@@ -1,4 +1,4 @@
-### Recent Changes: November 2022&ndash;February 2023
+### Recent Changes: Nov. 2022&ndash;Feb. 2023
 
 **New Additions**
 
