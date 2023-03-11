@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
@@ -7,25 +7,17 @@ import Typography from '@mui/material/Typography'
 import {Dialog, DialogContent, Slide} from '@mui/material'
 import ReactMarkdown from 'react-markdown'
 import useWindowSize from '../util/useWindowSize.jsx'
+import introMd from '../resources/intro.md?raw'
+import infoMd from '../resources/info.md?raw'
+import changelogMd from '../resources/changelog.md?raw'
 
 function InfoDialog({open, onClose}) {
     const {width} = useWindowSize()
-    const [infoText, setInfoText] = useState()
     const isMobile = width <= 500
-
-    useEffect(() => {
-        if (!infoText) {
-            const loadInfoText = async () => {
-                const value = (await import('../resources/info.md?raw')).default
-                setInfoText(value)
-            }
-            loadInfoText()
-        }
-    }, [infoText])
 
     return (
         <Dialog
-            open={!!infoText && open}
+            open={open}
             onClose={onClose}
             TransitionComponent={Transition}
             fullScreen={isMobile}
@@ -48,7 +40,7 @@ function InfoDialog({open, onClose}) {
             </AppBar>
             <DialogContent>
                 <ReactMarkdown linkTarget='_blank' style={{overflowX: 'wrap'}}>
-                    {infoText}
+                    {markdown}
                 </ReactMarkdown>
             </DialogContent>
         </Dialog>
@@ -58,5 +50,11 @@ function InfoDialog({open, onClose}) {
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />
 })
+
+const markdown = [
+    introMd,
+    infoMd,
+    changelogMd
+].join('\n\n---\n\n')
 
 export default InfoDialog

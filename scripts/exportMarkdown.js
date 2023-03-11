@@ -3,6 +3,7 @@ import {uniqueBelts} from '../src/data/belts.js'
 import {encodeNonAsciiHTML} from 'entities'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
+const introMd = fs.readFileSync('./src/resources/intro.md', 'utf8')
 const infoMd = fs.readFileSync('./src/resources/info.md', 'utf8')
 
 const initialVal = uniqueBelts.reduce((acc, val) => ({...acc, [val]: []}), [])
@@ -26,19 +27,18 @@ const beltsMd = uniqueBelts.map(belt => {
     return header + reqs + '\n\n' + entries
 }).join('\n\n')
 
-const headerMd = fs.readFileSync('./src/resources/header.md', 'utf8')
+const beltExplorerPromoMd = fs.readFileSync('./src/resources/beltExplorerPromo.md', 'utf8')
+const changelogMd = fs.readFileSync('./src/resources/changelog.md', 'utf8')
 const footerMd = fs.readFileSync('./src/resources/footer.md', 'utf8')
 
-const markdown = infoMd + '\n\n' + headerMd + '\n\n' + beltsMd + '\n\n' + footerMd
-
-/*  -Layout-
-    <./src/resources/info.md>
-
-    ### Color Belt
-    <./src/resources/color.md>
-    <belt ranking info>
-
-    <./src/resources/footer.md>
- */
+// Layout
+const markdown = [
+    introMd,
+    beltExplorerPromoMd,
+    beltsMd,
+    changelogMd,
+    infoMd,
+    footerMd
+].join('\n\n---\n\n')
 
 fs.writeFileSync('./dist/belts.md', markdown)
