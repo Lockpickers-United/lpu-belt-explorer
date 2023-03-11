@@ -307,7 +307,7 @@ Brown belt:
 
 ----------
 
-## Locks Scheduled for Reclassification
+## Changes to Lock Rankings
 
 From time to time we may change the rankings of certain locks. These changes may be due to refined or new picking
 techniques making locks that were once difficult to pick, less so, or simply because we've decided they were improperly
