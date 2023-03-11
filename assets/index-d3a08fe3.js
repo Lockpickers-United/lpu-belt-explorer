@@ -488,7 +488,7 @@ working on that lock to have time to get their accomplishment ranked at the old 
 **Effective Immediately:**
 
 - See Changelog in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
-`,xB=`### Recent Changes: November 2022&ndash;February 2023
+`,xB=`### Recent Changes: Nov. 2022&ndash;Feb. 2023
 
 **New Additions**
 
