@@ -22,7 +22,7 @@ Photographs will also be accepted for locks that cannot be disassembled.
 
 1.  Pick one of the locks ranked as orange belt or similar
 `,o=`Higher quality locks with even more security pins. Some of these locks have
-dead cores, and it’s not just because you've picked them to death. It might
+dead cores, and it's not just because you've picked them to death. It might
 also be that you have started down the dimple lock road. You've also started
 your development as a lock surgeon, gutting them and getting them back
 together again.
@@ -31,7 +31,7 @@ You must **video picking and gutting accomplishments in one continuous take**,
 pictures are no longer accepted at this rank, even for locks that cannot be
 disassembled.
 
-- FOR NON GUTTABLE LOCKS (IE. Master 410 LOTO) Video documentation of
+- FOR UNGUTTABLE LOCKS -- e.g. Master Lock #410 LOTO -- video documentation of
   gutting and reassembling a different lock will be accepted.
 
 Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-7If8) if you not familiar with the
