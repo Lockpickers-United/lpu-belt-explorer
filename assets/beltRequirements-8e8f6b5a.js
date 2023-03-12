@@ -12,7 +12,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 **Requirements**
 
 1.  Pick one of the locks ranked as yellow belt or similar
-`,t=`Those security pins designed to keep you out are powerless against you. You're starting to find locks containing them easier to pick than those without. Your family is also starting to look at you and your growing collection of locks a bit strangely. It's OK -- we understand you. Let's get an orange belt on you to confuse them further.
+`,o=`Those security pins designed to keep you out are powerless against you. You're starting to find locks containing them easier to pick than those without. Your family is also starting to look at you and your growing collection of locks a bit strangely. It's OK -- we understand you. Let's get an orange belt on you to confuse them further.
 
 You must submit a **video** of your picking accomplishments for this rank. Videos must be in one, continuous take.  
 
@@ -21,7 +21,7 @@ Photographs will also be accepted for locks that cannot be disassembled.
 **Requirements**
 
 1.  Pick one of the locks ranked as orange belt or similar
-`,o=`Higher quality locks with even more security pins. Some of these locks have
+`,t=`Higher quality locks with even more security pins. Some of these locks have
 dead cores, and it's not just because you've picked them to death. It might
 also be that you have started down the dimple lock road. You've also started
 your development as a lock surgeon, gutting them and getting them back
@@ -105,8 +105,7 @@ You must video picking and gutting accomplishments in one continuous take.
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping advancing and advanced pickers
-3. Have built a "Challenge Lock" and shared it with a fellow picker. Please visit the "Read More..." link below for more
-   information.
+3. Have built a "Challenge Lock" and shared it with a fellow picker. Please see below for more information.
 4. Have made at least one specialized tool
 5. Mentor a more advanced picker through the process of getting into a difficult lock
 6. SPP and gut two different locks ranked as Red Belt (locks have to be from separate entries on the list) or similar
@@ -157,4 +156,4 @@ Examples of "Master's Projects":
 
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
-`,c={White:e,Yellow:n,Orange:t,Green:o,Blue:i,Purple:a,Brown:s,Red:r,Black:l};export{c as default};
+`,c={White:e,Yellow:n,Orange:o,Green:t,Blue:i,Purple:a,Brown:s,Red:r,Black:l};export{c as default};
