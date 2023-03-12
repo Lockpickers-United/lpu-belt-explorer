@@ -396,7 +396,7 @@ You must video picking and gutting accomplishments in one continuous take.
 4. SPP and gut one of the locks ranked as blue belt or similar
 
 Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review the guidelines listed under SFIC Filming Requirements for validating
-your lock in the picking video. Please visit read more below for filming requirements.
+your lock in the picking video. Please read more below for filming requirements.
 
 
 - [Any HQ High Security interactive clone](https://lpubelts.com/?id=c1d09460) (4 pins)
