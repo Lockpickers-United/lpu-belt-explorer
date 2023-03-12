@@ -804,7 +804,7 @@ at least one custom tool of your own design.
 To earn a black belt, world-class picking is necessary but not sufficient. Mentoring others is necessary but not
 sufficient. You must deviate from your comfort zone and complete at least two epic quests of sufficient complexity and
 difficulty. Black Belt Pickers are extremely rare, and while this system was designed with a degree of levity, earning
-one is true honor and something to be very very proud of.
+one is true honor and something to be very, very proud of.
 
 You must video picking and gutting accomplishments in one continuous take, If there is a sidebar it must also be
 displayed to show nothing has been tampered with. There are no exceptions to the gutting requirement for videos of black
@@ -818,8 +818,7 @@ is required to gut.
 
 1. Demonstrate your ability to gut locks and get them back together again
 2. Demonstrated history of helping advancing and advanced pickers
-3. Have built a "Challenge Lock" and shared it with a fellow picker. Please visit the "Read More..." link below for more
-   information.
+3. Have built a "Challenge Lock" and shared it with a fellow picker. Please see below for more information.
 4. Have made at least one specialized tool and published the specs
 5. Mentor at least two advanced pickers through the process of getting into a difficult lock
 6. Complete at least two of the "Epic Quest Options" listed below
@@ -844,6 +843,8 @@ Examples of "Master's Projects":
 
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
+
+.
 
 
 - [Abloy Disklock Pro](https://lpubelts.com/?id=1a7a23d4)
