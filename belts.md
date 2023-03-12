@@ -1169,7 +1169,7 @@ the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb
   Adding security pins to otherwise low ranking locks will not increase the ranking of a lock.
 
 - Kung Fu Panda Clause: In some extremely rare cases, a member's accomplishment will be noteworthy to the point that it
-  changes the state of the art with respect to lock picking. Generally this involves highly complex tool, method and
+  changes the state of the art with respect to lock picking. Generally this involves developing a highly complex tool, method and
   technique that results in a "first time in history" opening of a lock that had long stood as pick proof. Since there
   is usually no precedent for the work having been accomplished, these cases will be evaluated individually as they
   arise by the moderation team, and the member ranked at the belt deemed appropriate.
