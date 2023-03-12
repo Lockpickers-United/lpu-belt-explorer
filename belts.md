@@ -1139,6 +1139,12 @@ the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb
 
 - Some of the higher belts require you to have made a tool. This requirement cannot be met by having used a paper clip,
   bobby pin or the like. You must actually make a specialized tool.
+  
+- All lock picking must take place through "normally accessible" means. What this means is that lock tools should be 
+  inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the 
+  lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the 
+  lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get 
+  in the way of the camera.
 
 - The list of locks is a living document. If you believe you have picked a lock that is equivalent to one of those
   listed in the requirements, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking). We
