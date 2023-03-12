@@ -279,7 +279,7 @@ to  [u/Tko5479](https://www.reddit.com/u/Tko5479)  for the photo example.
    NOTE: The lock must remain in frame for the remainder of your video past this point
 
 3. If the SFIC lock is currently in a lock body, such as a padlock, use the Control key to remove the core
-4. Use the Operating key to turn the plug 180º and show to the camera that the pins are present through the holes in the
+4. Use the Operating key to turn the plug 180&deg; and show to the camera that the pins are present through the holes in the
    bottom of the lock.
 5. You may now put the lock core back into a lock body or vice, but the lock must remain in frame for the remainder of
    the video.
