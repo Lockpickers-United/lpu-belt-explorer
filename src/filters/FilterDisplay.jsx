@@ -34,7 +34,7 @@ function FilterDisplay() {
                 {filterValues.map(({key, value: filter}, index) =>
                     <Chip
                         key={index}
-                        label={`${filterFieldsByFieldName[key].label} = ${filter}`}
+                        label={`${filterFieldsByFieldName[key]?.label || 'Unknown'} = ${filter}`}
                         variant='outlined'
                         style={{marginRight: 4, marginBottom: 4}}
                         onDelete={handleDeleteFilter(key, filter)}

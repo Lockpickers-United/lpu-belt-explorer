@@ -10,7 +10,9 @@ export function AppProvider({children}) {
     const {filters, removeFilter} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
-        if (filters.belt && uniqueBelts.includes(filters.belt)) {
+        if (filters.tab && uniqueBelts.includes(filters.tab)) {
+            return filters.tab
+        } else if (filters.belt && uniqueBelts.includes(filters.belt)) {
             return filters.belt
         } else if (filters.id) {
             const entry = allEntries.find(({id}) => filters.id === id)
@@ -33,10 +35,13 @@ export function AppProvider({children}) {
 
     const handleSetTab = useCallback(tab => {
         setTab(tab)
+        if (filters.tab && filters.tab !== tab) {
+            removeFilter('tab')
+        }
         if (expanded !== 'beltreqs') {
             handleSetExpanded(false)
         }
-    }, [expanded, handleSetExpanded])
+    }, [expanded, filters.tab, handleSetExpanded, removeFilter])
 
     const value = useMemo(() => ({
         tab,
