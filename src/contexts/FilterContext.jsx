@@ -68,7 +68,7 @@ export function FilterProvider({children}) {
     }, [filters])
 
     const filterCount = useMemo(() => {
-        const {search, ...rest} = filters
+        const {search, tab, ...rest} = filters
         return Object.keys(rest).length
     }, [filters])
 
