@@ -17,7 +17,7 @@ export function AppProvider({children}) {
         } else if (filters.id) {
             const entry = allEntries.find(({id}) => filters.id === id)
             if (entry) {
-                return entry.belt
+                return entry.belt.replace(/\s\d/g, '')
             }
         } else if (filters.search?.length > 0) {
             return 'search'
