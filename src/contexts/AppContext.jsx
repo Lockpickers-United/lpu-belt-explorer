@@ -10,16 +10,16 @@ export function AppProvider({children}) {
     const {filters, removeFilter} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
-        if (filters.tab && uniqueBelts.includes(filters.tab)) {
+        const {tab, belt, id, search, ...rest} = filters
+        let entry
+        if (id) entry = allEntries.find(e => id === e.id)
+        if (tab && uniqueBelts.includes(tab)) {
             return filters.tab
-        } else if (filters.belt && uniqueBelts.includes(filters.belt)) {
-            return filters.belt
-        } else if (filters.id) {
-            const entry = allEntries.find(({id}) => filters.id === id)
-            if (entry) {
-                return entry.belt.replace(/\s\d/g, '')
-            }
-        } else if (filters.search?.length > 0) {
+        } else if (belt && uniqueBelts.includes(belt)) {
+            return belt
+        } else if (id && entry) {
+            return entry.belt.replace(/\s\d/g, '')
+        } else if (search?.length > 0 || Object.keys(rest).length > 0) {
             return 'search'
         }
         return 'White'
