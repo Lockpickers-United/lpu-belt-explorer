@@ -113,7 +113,8 @@ mediaData
             title: item.Title,
             subtitle: item.Subtitle,
             thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL']
+            fullUrl: item['Full URL'],
+            subtitleUrl: item['Subtitle URL']
         })
     })
 

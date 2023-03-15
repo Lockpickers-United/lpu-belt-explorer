@@ -26,10 +26,11 @@ export function DataProvider({children}) {
                 makes: entry.makeModels.map(({make}) => make),
                 fuzzy: entry.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(','),
                 content: [
-                    entry.media?.length > 0 ? 'Has Images' : 'No Images',
+                    entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
+                    entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
-                ].filter(x => x),
+                ].flat().filter(x => x),
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
     }, [allEntries, starredEntries])

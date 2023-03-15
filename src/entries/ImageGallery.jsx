@@ -4,6 +4,7 @@ import licenses from '../data/licenses.js'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize.jsx'
+import ytIcon from '../resources/yt.png'
 
 function ImageGallery({entry}) {
     const {width} = useWindowSize()
@@ -15,7 +16,7 @@ function ImageGallery({entry}) {
 
     return (
         <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 0}}>
-            {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl}, index) =>
+            {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl}, index) =>
                 <ImageListItem key={index} style={{marginBottom: 8}}>
                     <img
                         src={thumbnailUrl}
@@ -23,11 +24,27 @@ function ImageGallery({entry}) {
                         style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
                         onClick={handleClick(fullUrl)}
                     />
+                    {
+                        fullUrl?.match(/youtube\.com/) &&
+                        <img
+                            src={ytIcon}
+                            style={{
+                                alignItems: 'center',
+                                position: 'absolute',
+                                top: 'calc(50% - 65px)',
+                                left: 'calc(50% - 40px)',
+                                width: 80,
+                                height: 80,
+                                cursor: 'pointer'
+                            }}
+                            onClick={handleClick(fullUrl)}
+                        />
+                    }
                     <ImageListItemBar
                         title={title}
                         subtitle={
                             subtitle &&
-                            <a href={licenses[subtitle]} target='_blank' rel='noopener noreferrer'>
+                            <a href={subtitleUrl || licenses[subtitle]} target='_blank' rel='noopener noreferrer'>
                                 {subtitle}
                             </a>
                         }
