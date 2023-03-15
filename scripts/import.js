@@ -109,13 +109,14 @@ mediaData
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         if (!entry) console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
-        entry.media.push({
+        const media = {
             title: item.Title,
             subtitle: item.Subtitle,
             thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL'],
-            subtitleUrl: item['Subtitle URL']
-        })
+            fullUrl: item['Full URL']
+        }
+        if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
+        entry.media.push(media)
     })
 
 // Add link data
