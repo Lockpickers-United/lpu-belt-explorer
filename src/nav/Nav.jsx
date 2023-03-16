@@ -16,6 +16,7 @@ import AppContext from '../contexts/AppContext.jsx'
 import ScrollToTopButton from './ScrollToTopButton.jsx'
 import {useHotkeys} from 'react-hotkeys-hook'
 import {Tooltip} from '@mui/material'
+import FilterContext from '../contexts/FilterContext.jsx'
 
 function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)
@@ -29,8 +30,13 @@ function Nav() {
     })
 
     const {tab, setTab} = useContext(AppContext)
+    const {addFilter} = useContext(FilterContext)
 
     const handleTabClick = useCallback((event, value) => setTab(value), [setTab])
+
+    const handleClick = useCallback(value => () => {
+        if (tab === value) addFilter('tab', tab, true)
+    }, [addFilter, tab])
 
     return (
         <React.Fragment>
@@ -73,6 +79,7 @@ function Nav() {
                                             <BeltIcon value={belt} style={{paddingTop: 2}}/>
                                         }
                                         sx={tabWidthStyle}
+                                        onClick={handleClick(belt)}
                                     />
                                 </Tooltip>
                             )}
