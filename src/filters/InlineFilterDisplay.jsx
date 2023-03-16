@@ -11,7 +11,7 @@ function InlineFilterDisplay() {
     const {filterCount} = useContext(FilterContext)
     const {width} = useWindowSize()
     const style = width < 736
-        ? {maxWidth: 700, marginLeft: 8, marginRight: 8}
+        ? {maxWidth: 700}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
 
     if (!filterCount) return null
