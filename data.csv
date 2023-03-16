@@ -216,8 +216,8 @@ Green,"Corbin Russwin","Master Ring",**,,,"** green if picked to one shearline",
 Green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 Green,Corona,cylinder,,Pin-tumbler,,,6c9a666e
 Green,Corona,M,,Pin-tumbler,,,6b472dc2
-Green,DOM,"IX 5N",,Dimple,,,04970fee
-Green,DOM,"IX HT",,Dimple,,,a165bc09
+Green,DOM,"ix 5 HT",,Dimple,,,a165bc09
+Green,DOM,"IX 5 N",,Dimple,,,04970fee
 Green,DOM,"RS 5",,Pin-tumbler,,,5241369e
 Green,DOM,SC,,,,,05979a42
 Green,DOM,SV,,Pin-tumbler,,,95b2c7b0
@@ -759,8 +759,8 @@ Unranked,Mindy,"Pagoda AF 16-50","(flat key)",,,,06a28ac7
 Unranked,,"Ming Gao",,,,,c511cc75
 Unranked,Miwa,SR,,,,,31cd85d7
 Unranked,Mul-T-Lock,"Classic Pro",,Dimple,,,fd2b533e
-Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,107cc580
-Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,df1e2d58
+Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,36394df4
+Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,6f47a087
 Unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 Unranked,Nagasawa,kcy-7x,"12 pin",,,,1ee9600e
 Unranked,Opnus,TZ,"3 rows",,,"Similar to UX but 3 rows of pins",f8aaa0ef
