@@ -3985,10 +3985,6 @@
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidebar"
-    ],
-    "features": [
-      "Pin-tumbler",
-      "Sidebar"
     ]
   },
   {
@@ -4605,7 +4601,7 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler",
-      "Magnetic"
+      "Magnet"
     ],
     "features": [
       "Magnetic pins"
@@ -4622,7 +4618,7 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler",
-      "Magnetic"
+      "Magnet"
     ],
     "features": [
       "Magnetic pins"
@@ -5533,7 +5529,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension"
@@ -6073,7 +6069,7 @@
         "fullUrl": "https://www.lockwiki.com/index.php/File:DeGuard-Dimple-front.jpg"
       },
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52726252503_d83a0a23df_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52726252503/in/album-72177720306645725/"
@@ -6926,7 +6922,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Random mid tension"
@@ -7261,6 +7257,9 @@
     ],
     "lockingMechanisms": [
       "Wafer"
+    ],
+    "features": [
+      "Partial gut"
     ]
   },
   {
@@ -7364,7 +7363,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Unguttable"
@@ -7770,7 +7769,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front tension",
@@ -7925,7 +7924,7 @@
     ],
     "media": [
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52741462712_9b3b251751_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52741462712/in/album-72177720306643526/"
@@ -8515,7 +8514,7 @@
     ],
     "version": "no false gates",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ]
   },
   {
@@ -8527,7 +8526,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "media": [
       {
@@ -8609,7 +8608,7 @@
         "fullUrl": "https://www.lockwiki.com/index.php/File:DeGuard-Dimple-front.jpg"
       },
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52741470517_8020cd2122_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52741470517/in/album-72177720306645725/"
@@ -8669,6 +8668,12 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52715942890_43dd25a147_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715942890/in/album-72177720306326722/"
+      },
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52734113020_7f7b4fb433_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52734113020/in/album-72177720306544566/"
       }
     ]
   },
@@ -8739,7 +8744,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ]
   },
   {
@@ -8752,7 +8757,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "notes": "requires 360 for belting"
   },
@@ -9173,19 +9178,19 @@
     ],
     "media": [
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52742477593_2034b3557e_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52742477593/in/album-72177720306660929/"
       },
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52742243434_6d75e259de_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52742243434/in/album-72177720306660929/"
       },
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52742243359_9a765b33a5_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52742243359/in/album-72177720306660929/"
@@ -9474,7 +9479,7 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Sliders"
+      "Slider"
     ]
   },
   {
@@ -9717,7 +9722,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ]
   },
   {
@@ -10094,7 +10099,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension",
@@ -10131,7 +10136,7 @@
     ],
     "version": "no butterfly discs",
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Random mid tension",
@@ -10986,7 +10991,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ]
   },
   {
@@ -11015,7 +11020,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension",
@@ -11186,7 +11191,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "media": [
       {
@@ -11214,7 +11219,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ]
   },
   {
@@ -11340,7 +11345,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "links": [
       {
@@ -11795,7 +11800,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "media": [
       {
@@ -11989,7 +11994,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ]
   },
   {
@@ -12080,7 +12085,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension",
@@ -12112,7 +12117,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension",
@@ -12183,7 +12188,7 @@
     ],
     "version": "with butterfly discs",
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Random mid tension",
@@ -12196,6 +12201,12 @@
         "subtitle": "CC BY-SA 3.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/238px-ABUS_Plus_88_50_padlock.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:ABUS_Plus_88_50_padlock.jpg"
+      },
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52734183148_f875733542_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52734183148/in/album-72177720306544621/"
       }
     ],
     "links": [
@@ -12863,7 +12874,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "media": [
       {
@@ -12890,7 +12901,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ]
   },
   {
@@ -13050,7 +13061,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Sliders"
+      "Slider"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
@@ -13428,7 +13439,7 @@
     ],
     "version": "<7 unmastered levers",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ]
   },
   {
@@ -13446,7 +13457,7 @@
     ],
     "version": "7-8 unmastered levers",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ]
   },
   {
@@ -13460,7 +13471,7 @@
     ],
     "version": "<8 unmastered levers",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ],
     "features": [
       "Active sidebar",
@@ -13544,7 +13555,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ]
   },
   {
@@ -13620,7 +13631,7 @@
     ],
     "version": "thin round center posts, few or no false gates",
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front/rear tension"
@@ -13688,7 +13699,7 @@
     "features": [
       "Safe deposit",
       "Flat steel key",
-      "false gates"
+      "False gates"
     ],
     "notes": "S&G=Sargent & Greenleaf",
     "media": [
@@ -13797,14 +13808,14 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front/rear tension",
       "Profile discs",
       "Disc steering system",
       "Disc blocker system",
-      "bi-directional"
+      "Bi-directional"
     ],
     "media": [
       {
@@ -13946,7 +13957,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front/rear tension",
@@ -13972,7 +13983,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension",
@@ -14008,7 +14019,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front tension",
@@ -14046,7 +14057,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front tension",
@@ -14066,7 +14077,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Rear tension",
@@ -14156,7 +14167,7 @@
     "version": "6 pin with 10 sliders",
     "lockingMechanisms": [
       "Pin-tumbler",
-      "Sliders"
+      "Slider"
     ],
     "features": [
       "Unsprung sliders",
@@ -15048,7 +15059,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front tension",
@@ -15525,7 +15536,7 @@
     ],
     "version": "indoor cylinder",
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "media": [
       {
@@ -15551,6 +15562,12 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52724079906_2e951ea3c9_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724079906/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52733173027_8f12d36eb8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52733173027/in/album-72177720306454838/"
       },
       {
         "title": "By: Mick777Oz",
@@ -15593,7 +15610,7 @@
     ],
     "version": "outside cylinder - upgrade of indoor cylinder",
     "lockingMechanisms": [
-      "Pump/Push"
+      "Pump/push"
     ],
     "media": [
       {
@@ -15619,6 +15636,12 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52724079906_2e951ea3c9_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724079906/in/album-72177720306454838/"
+      },
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52733696436_a92fd7f78b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52733696436/in/album-72177720306454838/"
       },
       {
         "title": "By: Mick777Oz",
@@ -15871,7 +15894,57 @@
       "Tapered drivers",
       "Guttable"
     ],
-    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)"
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724087221_505f5baf56_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724087221/in/album-72177720306450919/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52724087216_e6b414d7ce_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52724087216/in/album-72177720306450919/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52752115401_00763ce96a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52752115401/in/dateposted-public/"
+      },
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52733953174_465b89501b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52733953174/in/album-72177720306450919/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52733698931_6acd89938f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52733698931/in/album-72177720306450919/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52751553977_fbfe34de5c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52751553977/in/album-72177720306450919/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52752331134_0c614e22db_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52752331134/in/album-72177720306450919/"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52752586483_0dc77de43c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52752586483/in/album-72177720306450919/"
+      }
+    ]
   },
   {
     "id": "7e967792",
@@ -16272,7 +16345,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Sliders"
+      "Slider"
     ],
     "media": [
       {
@@ -16324,7 +16397,10 @@
     ],
     "version": "7-8 unmastered elements",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
+    ],
+    "features": [
+      "Partial gut"
     ],
     "notes": "upgrade of Miwa PS"
   },
@@ -16339,7 +16415,10 @@
     ],
     "version": "9-10 unmastered elements",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
+    ],
+    "features": [
+      "Partial gut"
     ],
     "notes": "upgrade of Miwa PS"
   },
@@ -16354,7 +16433,10 @@
     ],
     "version": "11 unmastered elements",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
+    ],
+    "features": [
+      "Partial gut"
     ],
     "notes": "upgrade of Miwa PS"
   },
@@ -16369,11 +16451,12 @@
     ],
     "version": "8 unmastered elements",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ],
     "features": [
       "Active sidebar",
-      "False gates"
+      "False gates",
+      "Partial gut"
     ],
     "media": [
       {
@@ -16396,11 +16479,12 @@
     ],
     "version": "9 unmastered elements",
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ],
     "features": [
       "Active sidebar",
-      "False gates"
+      "False gates",
+      "Partial gut"
     ],
     "media": [
       {
@@ -16593,7 +16677,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ],
     "media": [
       {
@@ -16620,7 +16704,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ],
     "media": [
       {
@@ -16653,7 +16737,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front/rear tension",
@@ -16677,7 +16761,7 @@
     ],
     "version": "triangular central posts and many false gates",
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Front/rear tension",
@@ -16787,7 +16871,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ]
   },
   {
@@ -16800,7 +16884,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Lever/Sidebar"
+      "Lever/sidebar"
     ],
     "media": [
       {
@@ -16892,8 +16976,9 @@
     ],
     "features": [
       "Cabinet",
-      "Flat steel",
-      "Curtain"
+      "Flat steel key",
+      "Curtain",
+      "Destructive gut"
     ]
   },
   {
@@ -16970,6 +17055,9 @@
     ],
     "lockingMechanisms": [
       "Slider"
+    ],
+    "features": [
+      "Destructive gut"
     ]
   },
   {
@@ -16982,7 +17070,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ]
   },
   {
@@ -17015,7 +17103,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ]
   },
   {
@@ -17028,7 +17116,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ]
   },
   {
@@ -17041,23 +17129,23 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "media": [
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52742248159_364fa522fb_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52742248159/in/album-72177720306643681/"
       },
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52742482258_9ba0ac3766_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52742482258/in/album-72177720306643681/"
       },
       {
-        "title": "By: Nixxed",
+        "title": "By: NiXXeD",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52742482268_83253cd71a_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52742482268/in/album-72177720306643681/"
@@ -17108,7 +17196,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ]
   },
   {
@@ -17858,7 +17946,7 @@
     ]
   },
   {
-    "id": "3231662b",
+    "id": "ae30dca8",
     "belt": "Unranked",
     "makeModels": [
       {
@@ -17873,7 +17961,7 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "15e17d6f",
+    "id": "f41f3d16",
     "belt": "Unranked",
     "makeModels": [
       {
