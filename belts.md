@@ -646,7 +646,7 @@ You must video picking and gutting accomplishments in one continuous take.
 - [Alke](https://lpubelts.com/?id=d8abe040)
 - [ALPHA FB](https://lpubelts.com/?id=054731a5) (&lt;15 pins)
 - [ALPHA YKK AP](https://lpubelts.com/?id=2c58f220)
-- [Anbo X18u / Lex X18 / GLK X18 / Apec XS / ...](https://lpubelts.com/?id=f85f4ac0) (Clavis X18 clones)
+- [Anbo X18u / Lex X18 / GLK X18 / Apec XS](https://lpubelts.com/?id=f85f4ac0) (Clavis X18 clones)
 - [Ankerslot Infinity K](https://lpubelts.com/?id=5329b0f3)
 - [ASSA d12 / ASSA P600 / ASSA Neptun 1900 / TrioVing d12 level 1 (aka d13 no long pin)](https://lpubelts.com/?id=d3ad5a73) (barrel drivers, forked keypins)
 - [ASSA Desmo](https://lpubelts.com/?id=1459e2c6) (8 sliders, no mastered pins)

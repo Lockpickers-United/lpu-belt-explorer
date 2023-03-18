@@ -487,7 +487,7 @@ Brown,Agent,GMD-500,,,,,db380ba0
 Brown,,Alke,,,,,d8abe040
 Brown,ALPHA,FB,"<15 pins",Dimple,"High pin count",,054731a5
 Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
-Brown,"Anbo,Lex,GLK,Apec,...","X18u,X18,X18,XS,...","Clavis X18 clones",Dimple,,,f85f4ac0
+Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis X18 clones",Dimple,,,f85f4ac0
 Brown,Ankerslot,"Infinity K",,,,,5329b0f3
 Brown,"ASSA,ASSA,ASSA,TrioVing","d12,P600,Neptun 1900,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Hellish keyway,Guttable,Forked keypins",,d3ad5a73
 Brown,ASSA,Desmo,"8 sliders, no mastered pins",Slider,"Guttable, Unsprung sliders, Active sidebar",,1459e2c6
@@ -759,8 +759,8 @@ Unranked,Mindy,"Pagoda AF 16-50","(flat key)",,,,06a28ac7
 Unranked,,"Ming Gao",,,,,c511cc75
 Unranked,Miwa,SR,,,,,31cd85d7
 Unranked,Mul-T-Lock,"Classic Pro",,Dimple,,,fd2b533e
-Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,facae410
-Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,20dd8875
+Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,56f45904
+Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,2444bce2
 Unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 Unranked,Nagasawa,kcy-7x,"12 pin",,,,1ee9600e
 Unranked,Opnus,TZ,"3 rows",,,"Similar to UX but 3 rows of pins",f8aaa0ef
