@@ -41,6 +41,20 @@
         "make": "Any",
         "model": "Cutaway Lock"
       }
+    ],
+    "media": [
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52755801095_f4b151c6cc_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52755801095/"
+      },
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52754853512_a09e582ea0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52754853512/"
+      }
     ]
   },
   {
@@ -5553,7 +5567,15 @@
         "model": "HQ High Security interactive clone"
       }
     ],
-    "version": "4 pins"
+    "version": "4 pins",
+    "media": [
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52755931023_9a7d5e9732_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52755931023/"
+      }
+    ]
   },
   {
     "id": "c6529d9c",
@@ -6079,6 +6101,12 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52741470517_8020cd2122_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52741470517/in/album-72177720306645725/"
+      },
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52755931023_9a7d5e9732_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52755931023/"
       }
     ],
     "links": [
@@ -8612,6 +8640,12 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52741470517_8020cd2122_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52741470517/in/album-72177720306645725/"
+      },
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52755931023_9a7d5e9732_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52755931023/"
       }
     ],
     "links": [
@@ -10278,10 +10312,6 @@
       {
         "make": "Apec",
         "model": "XS"
-      },
-      {
-        "make": "...",
-        "model": "..."
       }
     ],
     "version": "Clavis X18 clones",
@@ -15064,6 +15094,14 @@
     "features": [
       "Front tension",
       "False gates"
+    ],
+    "media": [
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52734112985_b188a734c7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52734112985/"
+      }
     ]
   },
   {
@@ -17946,7 +17984,7 @@
     ]
   },
   {
-    "id": "facae410",
+    "id": "56f45904",
     "belt": "Unranked",
     "makeModels": [
       {
@@ -17961,7 +17999,7 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "20dd8875",
+    "id": "2444bce2",
     "belt": "Unranked",
     "makeModels": [
       {
