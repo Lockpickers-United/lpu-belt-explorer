@@ -18,31 +18,23 @@ function SearchBox() {
     useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
     const handleClear = useCallback(() => {
-        setText('')
-        setTab('White')
         window.scrollTo({top: 0, behavior: 'smooth'})
-
-        setTimeout(() => {
-            removeFilter('search', '')
-        }, 100)
-    }, [setTab, removeFilter])
+        setText('')
+        removeFilter('search', '')
+    }, [removeFilter])
 
     const debounceChange = useMemo(() => {
         return debounce(value => {
-            if (value === '') {
-                handleClear()
-            } else {
-                addFilter('search', value, true)
+            addFilter('search', value, true)
 
-                setTimeout(() => {
-                    if (tab !== 'search') {
-                        setTab('search')
-                        window.scrollTo({top: 0, behavior: 'smooth'})
-                    }
-                }, 0)
-            }
+            setTimeout(() => {
+                if (tab !== 'search') {
+                    setTab('search')
+                    window.scrollTo({top: 0, behavior: 'smooth'})
+                }
+            }, 0)
         }, 150)
-    }, [addFilter, handleClear, setTab, tab])
+    }, [addFilter, setTab, tab])
 
     const handleChange = useCallback(event => {
         const {value} = event.target

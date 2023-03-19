@@ -5,18 +5,35 @@ import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from '../contexts/DataContext.jsx'
 import AppContext from '../contexts/AppContext.jsx'
 import NoEntriesCard from './NoEntriesCard.jsx'
+import {useState} from 'react'
+import {useCallback} from 'react'
+import {useEffect} from 'react'
 
 function Entries() {
-    const {visibleEntries} = useContext(DataContext)
+    const {allEntries, visibleEntries} = useContext(DataContext)
     const {tab, expanded, setExpanded} = useContext(AppContext)
+
     const defTab = useDeferredValue(tab)
     const defExpanded = useDeferredValue(expanded)
 
+    const [displayAll, setDisplayAll] = useState(false)
+    const handleDisplayAll = useCallback(() => {
+        setTimeout(() => setDisplayAll(true), 100)
+    }, [])
+
     const entries = useMemo(() => {
-        return defTab === 'search'
-            ? visibleEntries
-            : visibleEntries.filter(entry => entry.simpleBelt === defTab)
-    }, [defTab, visibleEntries])
+        if (defTab === 'search') {
+            return displayAll || allEntries.length !== visibleEntries.length
+                ? visibleEntries
+                : []
+        } else {
+            return visibleEntries.filter(entry => entry.simpleBelt === defTab)
+        }
+    }, [displayAll, defTab, allEntries, visibleEntries])
+
+    useEffect(() => {
+        if (defTab !== 'search') setDisplayAll(false)
+    }, [defTab])
 
     return (
         <React.Fragment>
@@ -25,7 +42,7 @@ function Entries() {
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
-                {entries.length === 0 && <NoEntriesCard/>}
+                {entries.length === 0 && <NoEntriesCard onDisplayAll={handleDisplayAll}/>}
 
                 {entries.map(entry =>
                     <Entry

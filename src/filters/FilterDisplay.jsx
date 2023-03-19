@@ -4,16 +4,13 @@ import Stack from '@mui/material/Stack'
 import Chip from '@mui/material/Chip'
 import FilterContext from '../contexts/FilterContext.jsx'
 import {filterFieldsByFieldName} from '../data/filterFields.js'
-import AppContext from '../contexts/AppContext.jsx'
 
 function FilterDisplay() {
     const {filters, filterCount, removeFilter} = useContext(FilterContext)
-    const {tab, setTab} = useContext(AppContext)
 
     const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
-        if (filterCount === 1 && !filters.search && tab === 'search') setTab('White')
-        setTimeout(() => removeFilter(keyToDelete, valueToDelete), 100)
-    }, [tab, setTab, filterCount, filters.search, removeFilter])
+        removeFilter(keyToDelete, valueToDelete)
+    }, [removeFilter])
 
     const filterValues = useMemo(() => {
         const {search, id, tab, ...rest} = filters
