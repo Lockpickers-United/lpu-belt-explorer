@@ -1,13 +1,10 @@
-import React, {useContext, useDeferredValue, useMemo} from 'react'
-import Entry from './Entry.jsx'
-import InlineFilterDisplay from '../filters/InlineFilterDisplay.jsx'
-import BeltRequirements from '../info/BeltRequirements.jsx'
-import DataContext from '../contexts/DataContext.jsx'
-import AppContext from '../contexts/AppContext.jsx'
-import NoEntriesCard from './NoEntriesCard.jsx'
-import {useState} from 'react'
-import {useCallback} from 'react'
-import {useEffect} from 'react'
+import React, {useEffect, useCallback, useState, useContext, useDeferredValue, useMemo} from 'react'
+import Entry from './Entry'
+import InlineFilterDisplay from '../filters/InlineFilterDisplay'
+import BeltRequirements from '../info/BeltRequirements'
+import DataContext from '../contexts/DataContext'
+import AppContext from '../contexts/AppContext'
+import NoEntriesCard from './NoEntriesCard'
 
 function Entries() {
     const {allEntries, visibleEntries} = useContext(DataContext)
@@ -53,7 +50,6 @@ function Entries() {
                     />
                 )}
             </div>
-
         </React.Fragment>
     )
 }

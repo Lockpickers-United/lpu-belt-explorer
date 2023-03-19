@@ -4,12 +4,14 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import Typography from '@mui/material/Typography'
-import {Dialog, DialogContent, Slide} from '@mui/material'
+import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
 import ReactMarkdown from 'react-markdown'
-import useWindowSize from '../util/useWindowSize.jsx'
+import useWindowSize from '../util/useWindowSize'
 import introMd from '../resources/intro.md?raw'
 import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
+import Transition from '../util/Transition'
 
 function InfoDialog({open, onClose}) {
     const {width} = useWindowSize()
@@ -46,10 +48,6 @@ function InfoDialog({open, onClose}) {
         </Dialog>
     )
 }
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction='up' ref={ref} {...props} />
-})
 
 const markdown = [
     introMd,

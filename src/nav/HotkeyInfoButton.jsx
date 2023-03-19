@@ -11,7 +11,8 @@ import Dialog from '@mui/material/Dialog'
 import Transition from '../util/Transition'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
-import {ListItemAvatar, ListItemText} from '@mui/material'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import ListItemText from '@mui/material/ListItemText'
 
 function HotkeyInfoButton() {
     const [open, setOpen] = useState(false)

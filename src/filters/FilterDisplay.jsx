@@ -1,9 +1,9 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-import FieldValue from '../entries/FieldValue.jsx'
+import FieldValue from '../entries/FieldValue'
 import Stack from '@mui/material/Stack'
 import Chip from '@mui/material/Chip'
-import FilterContext from '../contexts/FilterContext.jsx'
-import {filterFieldsByFieldName} from '../data/filterFields.js'
+import FilterContext from '../contexts/FilterContext'
+import {filterFieldsByFieldName} from '../data/filterFields'
 
 function FilterDisplay() {
     const {filters, filterCount, removeFilter} = useContext(FilterContext)

@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
-import DataContext from './DataContext.jsx'
-import FilterContext from './FilterContext.jsx'
-import {uniqueBelts} from '../data/belts.js'
+import DataContext from './DataContext'
+import FilterContext from './FilterContext'
+import {uniqueBelts} from '../data/belts'
 
 const AppContext = React.createContext({})
 

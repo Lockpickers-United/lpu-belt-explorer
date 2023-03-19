@@ -1,9 +1,9 @@
 import React, {useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
-import FilterContext from '../contexts/FilterContext.jsx'
+import FilterContext from '../contexts/FilterContext'
 import LPUImage from '../resources/LPU.png'
-import AppContext from '../contexts/AppContext.jsx'
-import {Tooltip} from '@mui/material'
+import AppContext from '../contexts/AppContext'
+import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function HomeButton() {

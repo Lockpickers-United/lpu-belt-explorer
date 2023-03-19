@@ -4,12 +4,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import Accordion from '@mui/material/Accordion'
 import ReactMarkdown from 'react-markdown'
-import BeltStripe from '../entries/BeltStripe.jsx'
+import BeltStripe from '../entries/BeltStripe'
 import Typography from '@mui/material/Typography'
-import {AccordionActions} from '@mui/material'
-import InfoButton from './InfoButton.jsx'
-import AppContext from '../contexts/AppContext.jsx'
-import LinkToRequirementsButton from './LinkToRequirementsButton.jsx'
+import AccordionActions from '@mui/material/AccordionActions'
+import InfoButton from './InfoButton'
+import AppContext from '../contexts/AppContext'
+import LinkToRequirementsButton from './LinkToRequirementsButton'
 
 function BeltRequirements({belt}) {
     const [data, setData] = useState({})

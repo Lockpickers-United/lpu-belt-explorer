@@ -1,4 +1,4 @@
-import {beltSort} from './belts.js'
+import {beltSort} from './belts'
 
 const filterFields = [
     {label: 'Make', fieldName: 'makes'},

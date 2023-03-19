@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react'
 import VerticalAlignTopIcon from '@mui/icons-material/VerticalAlignTop'
-import {Fab, Tooltip} from '@mui/material'
+import Fab from '@mui/material/Fab'
+import Tooltip from '@mui/material/Tooltip'
 
 function ScrollToTopButton() {
     const scrollToTop = useCallback(() => {

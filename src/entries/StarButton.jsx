@@ -2,8 +2,8 @@ import React, {useCallback, useContext} from 'react'
 import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import IconButton from '@mui/material/IconButton'
-import StorageContext from '../contexts/StorageContext.jsx'
-import {Tooltip} from '@mui/material'
+import StorageContext from '../contexts/StorageContext'
+import Tooltip from '@mui/material/Tooltip'
 
 function StarButton({id}) {
     const {starredEntries, setStorageValue} = useContext(StorageContext)

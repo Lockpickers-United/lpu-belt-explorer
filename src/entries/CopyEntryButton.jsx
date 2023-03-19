@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import IconButton from '@mui/material/IconButton'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import {Tooltip} from '@mui/material'
+import Tooltip from '@mui/material/Tooltip'
 
 function CopyEntryButton({entry}) {
     const handleClick = useCallback(async () => {

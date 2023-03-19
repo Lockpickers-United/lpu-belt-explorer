@@ -2,10 +2,10 @@ import React, {useContext} from 'react'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
-import FilterDisplay from './FilterDisplay.jsx'
-import FilterContext from '../contexts/FilterContext.jsx'
-import ClearFiltersButton from './ClearFiltersButton.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
+import FilterDisplay from './FilterDisplay'
+import FilterContext from '../contexts/FilterContext'
+import ClearFiltersButton from './ClearFiltersButton'
+import useWindowSize from '../util/useWindowSize'
 
 function InlineFilterDisplay() {
     const {filterCount} = useContext(FilterContext)

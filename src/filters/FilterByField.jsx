@@ -3,11 +3,11 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import DataContext from '../contexts/DataContext.jsx'
-import FilterContext from '../contexts/FilterContext.jsx'
-import {Box} from '@mui/material'
+import DataContext from '../contexts/DataContext'
+import FilterContext from '../contexts/FilterContext'
+import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
-import {filterFieldsByFieldName} from '../data/filterFields.js'
+import {filterFieldsByFieldName} from '../data/filterFields'
 
 function FilterByField({label, fieldName, onFilter, sort}) {
     const {visibleEntries} = useContext(DataContext)

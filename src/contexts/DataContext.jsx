@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useMemo, useState} from 'react'
 import fuzzysort from 'fuzzysort'
-import FilterContext from './FilterContext.jsx'
-import StorageContext from './StorageContext.jsx'
+import FilterContext from './FilterContext'
+import StorageContext from './StorageContext'
 
 const DataContext = React.createContext({})
 

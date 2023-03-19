@@ -1,13 +1,13 @@
 import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import {FilterProvider} from '../contexts/FilterContext.jsx'
-import {StorageProvider} from '../contexts/StorageContext.jsx'
-import {DataProvider} from '../contexts/DataContext.jsx'
-import {AppProvider} from '../contexts/AppContext.jsx'
-import Nav from '../nav/Nav.jsx'
-import Entries from '../entries/Entries.jsx'
-import Footer from '../nav/Footer.jsx'
+import {FilterProvider} from '../contexts/FilterContext'
+import {StorageProvider} from '../contexts/StorageContext'
+import {DataProvider} from '../contexts/DataContext'
+import {AppProvider} from '../contexts/AppContext'
+import Nav from '../nav/Nav'
+import Entries from '../entries/Entries'
+import Footer from '../nav/Footer'
 
 const darkTheme = createTheme({
     // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00

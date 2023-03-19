@@ -1,6 +1,6 @@
 import React, {useCallback, useContext} from 'react'
 import Chip from '@mui/material/Chip'
-import FilterContext from '../contexts/FilterContext.jsx'
+import FilterContext from '../contexts/FilterContext'
 
 function FilterChip({field, value, ...props}) {
     const {addFilter} = useContext(FilterContext)

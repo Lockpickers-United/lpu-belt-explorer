@@ -1,5 +1,5 @@
-import Typography from '@mui/material/Typography'
 import React from 'react'
+import Typography from '@mui/material/Typography'
 
 function FieldValue({name, value, last}) {
     const style = last ? {} : {marginBottom: 8}

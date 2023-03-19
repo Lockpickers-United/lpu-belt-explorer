@@ -1,11 +1,9 @@
-import React from 'react'
+import React, {useContext, useDeferredValue} from 'react'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
-import {useContext} from 'react'
-import AppContext from '../contexts/AppContext.jsx'
-import {useDeferredValue} from 'react'
+import AppContext from '../contexts/AppContext'
 import Button from '@mui/material/Button'
 
 function NoEntriesCard({onDisplayAll}) {
