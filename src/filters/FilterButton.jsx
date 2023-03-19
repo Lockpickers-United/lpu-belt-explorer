@@ -19,7 +19,8 @@ import {useHotkeys} from 'react-hotkeys-hook'
 function FilterButton({data}) {
     const {tab, setTab} = useContext(AppContext)
     const [open, setOpen] = useState(false)
-    useHotkeys('f', () => setOpen(true))
+    const handleHotkey = useCallback(() => setOpen(!open), [open])
+    useHotkeys('f', handleHotkey)
 
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])

@@ -10,10 +10,11 @@ function InfoButton({icon}) {
     const [open, setOpen] = useState(false)
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleClose = useCallback(() => setOpen(false), [])
-    useHotkeys('i', () => {
+    const handleHotkey = useCallback(() => {
         if (!icon) return false
-        setOpen(true)
-    })
+        else setOpen(!open)
+    }, [icon, open])
+    useHotkeys('i', handleHotkey)
 
     const button = icon
         ? (
@@ -32,13 +33,10 @@ function InfoButton({icon}) {
             <Tooltip title='Information' arrow disableFocusListener>
                 {button}
             </Tooltip>
-            {
-                open &&
-                <InfoDialog
-                    open={open}
-                    onClose={handleClose}
-                />
-            }
+            <InfoDialog
+                open={open}
+                onClose={handleClose}
+            />
         </React.Fragment>
     )
 }

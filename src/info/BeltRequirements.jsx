@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react'
+import React, {useCallback, useContext} from 'react'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -10,24 +10,16 @@ import AccordionActions from '@mui/material/AccordionActions'
 import InfoButton from './InfoButton'
 import AppContext from '../contexts/AppContext'
 import LinkToRequirementsButton from './LinkToRequirementsButton'
+import beltRequirements from '../data/beltRequirements'
 
 function BeltRequirements({belt}) {
-    const [data, setData] = useState({})
     const {expanded, setExpanded} = useContext(AppContext)
     const handleExpand = useCallback((_, isExpanded) => {
         setExpanded(isExpanded ? 'beltreqs' : false)
         window.scrollTo({top: 0, behavior: 'smooth'})
     }, [setExpanded])
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-    const markdown = data[belt]
-
-    useEffect(() => {
-        const load = async () => {
-            const value = (await import('../data/beltRequirements.js')).default
-            setData(value)
-        }
-        load()
-    }, [])
+    const markdown = beltRequirements[belt]
 
     return (
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
