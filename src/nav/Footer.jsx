@@ -1,9 +1,10 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import HotkeyInfoButton from './HotkeyInfoButton'
 
 function Footer() {
     return (
-        <Typography align='center' style={{marginBottom: 64}}>
+        <Typography align='center' style={{marginBottom: 32}}>
             <span>LPU</span>
             &nbsp;•&nbsp;
             <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
@@ -21,6 +22,9 @@ function Footer() {
             <a href='https://github.com/Lockpickers-United' target='_blank' rel='noopener noreferrer'>
                 GitHub
             </a>
+
+            <br/>
+            <HotkeyInfoButton/>
         </Typography>
     )
 }
