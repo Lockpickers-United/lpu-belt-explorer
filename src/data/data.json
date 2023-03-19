@@ -1648,6 +1648,20 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757916448_1f4a50980f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757916448/"
+      },
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757434156_988418b01d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757434156/"
+      }
     ]
   },
   {
@@ -7278,6 +7292,9 @@
     ],
     "lockingMechanisms": [
       "Other"
+    ],
+    "features": [
+      "Destructive gut"
     ]
   },
   {
@@ -8729,6 +8746,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
+    "features": [
+      "Partial gut"
+    ],
     "media": [
       {
         "title": "By: Datagram",
@@ -10040,7 +10060,8 @@
       "Cabinet",
       "Flat steel key",
       "Curtain",
-      "False gates"
+      "False gates",
+      "Destructive gut"
     ],
     "media": [
       {
@@ -10272,7 +10293,8 @@
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Difficult gut"
     ],
     "media": [
       {
@@ -12037,6 +12059,9 @@
     ],
     "lockingMechanisms": [
       "Pump/push"
+    ],
+    "features": [
+      "Destructive gut"
     ]
   },
   {
@@ -12272,7 +12297,8 @@
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Difficult gut"
     ],
     "media": [
       {
@@ -13482,6 +13508,9 @@
     "version": "<7 unmastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
+    ],
+    "features": [
+      "Partial gut"
     ]
   },
   {
@@ -13517,7 +13546,8 @@
     ],
     "features": [
       "Active sidebar",
-      "False gates"
+      "False gates",
+      " Partial gut"
     ],
     "media": [
       {
@@ -16928,6 +16958,9 @@
     ],
     "lockingMechanisms": [
       "Lever/sidebar"
+    ],
+    "features": [
+      "Partial gut"
     ]
   },
   {
@@ -16941,6 +16974,9 @@
     ],
     "lockingMechanisms": [
       "Lever/sidebar"
+    ],
+    "features": [
+      "Partial gut"
     ],
     "media": [
       {
@@ -18014,7 +18050,7 @@
     ]
   },
   {
-    "id": "65ee0582",
+    "id": "ca41775c",
     "belt": "Unranked",
     "makeModels": [
       {
@@ -18029,7 +18065,7 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "20560607",
+    "id": "2e619e2a",
     "belt": "Unranked",
     "makeModels": [
       {
