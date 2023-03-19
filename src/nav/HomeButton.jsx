@@ -4,16 +4,17 @@ import FilterContext from '../contexts/FilterContext.jsx'
 import LPUImage from '../resources/LPU.png'
 import AppContext from '../contexts/AppContext.jsx'
 import {Tooltip} from '@mui/material'
+import {useHotkeys} from 'react-hotkeys-hook'
 
 function HomeButton() {
     const {setTab} = useContext(AppContext)
     const {clearFilters} = useContext(FilterContext)
     const handleClick = useCallback(() => {
-        setTab('White')
         window.scrollTo({top: 0, behavior: 'smooth'})
-
-        setTimeout(() => clearFilters(true), 50)
+        setTab('White')
+        clearFilters(true)
     }, [clearFilters, setTab])
+    useHotkeys('h', handleClick)
 
     return (
         <Tooltip title='Home' arrow disableFocusListener>

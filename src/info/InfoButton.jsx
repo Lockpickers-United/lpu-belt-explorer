@@ -3,11 +3,16 @@ import {Button, Tooltip} from '@mui/material'
 import InfoDialog from './InfoDialog.jsx'
 import IconButton from '@mui/material/IconButton'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import {useHotkeys} from 'react-hotkeys-hook'
 
 function InfoButton({icon}) {
     const [open, setOpen] = useState(false)
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleClose = useCallback(() => setOpen(false), [])
+    useHotkeys('i', () => {
+        if (!icon) return false
+        setOpen(true)
+    })
 
     const button = icon
         ? (
