@@ -1681,7 +1681,7 @@
         "model": "Mortice"
       },
       {
-        "model": " non-British Standard"
+        "model": "Non-British Standard"
       }
     ],
     "version": "3 lever",
@@ -10757,8 +10757,8 @@
     ],
     "features": [
       "Guttable",
-      " Unsprung sliders",
-      " Active sidebar"
+      "Unsprung sliders",
+      "Active sidebar"
     ],
     "media": [
       {
@@ -14105,7 +14105,7 @@
     "features": [
       "Active sidebar",
       "False gates",
-      " Partial gut"
+      "Partial gut"
     ],
     "media": [
       {

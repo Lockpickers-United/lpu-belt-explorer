@@ -39,7 +39,9 @@ function FilterByField({label, fieldName, onFilter, sort}) {
             return acc
         }, {})
 
-        const options = [...new Set(allValues.concat(extraValues))].sort(sort)
+
+        const options = [...new Set(allValues.concat(extraValues))]
+            .sort((a, b) => sort ? sort(a, b) : a.localeCompare(b))
 
         return {counts, options}
     }, [fieldName, visibleEntries, sort])
