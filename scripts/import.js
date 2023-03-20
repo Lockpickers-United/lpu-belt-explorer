@@ -20,7 +20,8 @@ const importValidate = async (tab, schema) => {
     // Parse CSV into JSON
     const data = parse(csvData, {
         columns: true,
-        skip_empty_lines: true
+        skip_empty_lines: true,
+        trim: true
     })
 
     // Validate data before merging in
@@ -42,7 +43,7 @@ const jsonData = mainData
         const models = datum.Model.split(',').filter(x => x)
         const makeModels = models.map((model, index) => ({
             make: makes[index],
-            model
+            model: model
         }))
         const version = datum.Version
         const lockingMechanisms = datum['Locking Mechanisms'].split(',').filter(x => x)
