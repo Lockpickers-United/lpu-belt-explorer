@@ -903,7 +903,7 @@ Examples of "Master's Projects":
 - [Kaba Star](https://lpubelts.com/?id=3ddfc71c) (5+ rows, 16-20 pins)
 - [Kaba Star](https://lpubelts.com/?id=dfa88b94) (5+ rows, 21 or more pins)
 - [Kromer Protector](https://lpubelts.com/?id=f87db705)
-- [Lockman Megacross](https://lpubelts.com/?id=f1857cef) (with pyramid drivers)
+- [Lockman Megacross](https://lpubelts.com/?id=f1857cef) (with pyramid drivers (SP?))
 - [MIWA LB](https://lpubelts.com/?id=a2bd7f1e)
 - [MIWA PR](https://lpubelts.com/?id=d0c510c5) (7-8 unmastered elements)
 - [MIWA PR](https://lpubelts.com/?id=21b61a85) (9-10 unmastered elements)

@@ -669,7 +669,7 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 1",Kaba,Star,"5+ rows, 16-20 pins",Dimple,"High pin count",,3ddfc71c
 "Black 2",Kaba,Star,"5+ rows, 21 or more pins",Dimple,"High pin count",,dfa88b94
 "Black 5",Kromer,Protector,,Wafer,,,f87db705
-"Black 1",Lockman,Megacross,"with pyramid drivers",Dimple,"High pin count",,f1857cef
+"Black 1",Lockman,Megacross,"with pyramid drivers (SP?)",Dimple,"High pin count",,f1857cef
 "Black 1",MIWA,LB,,Slider,,,a2bd7f1e
 "Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",d0c510c5
 "Black 2",MIWA,PR,"9-10 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",21b61a85
@@ -759,8 +759,8 @@ Unranked,Mindy,"Pagoda AF 16-50","(flat key)",,,,06a28ac7
 Unranked,,"Ming Gao",,,,,c511cc75
 Unranked,Miwa,SR,,,,,31cd85d7
 Unranked,Mul-T-Lock,"Classic Pro",,Dimple,,,fd2b533e
-Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,ca41775c
-Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,2e619e2a
+Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, spooled drivers",,,,9b6bd194
+Unranked,"Mul-t-Lock,Mul-t-Lock","Classic,Interactive","4 pins, serrated drivers",,,,25a3e426
 Unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 Unranked,Nagasawa,kcy-7x,"12 pin",,,,1ee9600e
 Unranked,Opnus,TZ,"3 rows",,,"Similar to UX but 3 rows of pins",f8aaa0ef
