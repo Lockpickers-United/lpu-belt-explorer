@@ -129,7 +129,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Power Line](https://lpubelts.com/?id=30b60f60)
 - [Santos](https://lpubelts.com/?id=8e2d57b1)
 - [Schlage Mortise](https://lpubelts.com/?id=40f7d7c7)
-- [Smith and Locke Mortice /  non-British Standard](https://lpubelts.com/?id=d4299b24) (3 lever)
+- [Smith and Locke Mortice / Non-British Standard](https://lpubelts.com/?id=d4299b24) (3 lever)
 - [Squire 440](https://lpubelts.com/?id=a460c971) (4 lever, pin key)
 - [Squire 660](https://lpubelts.com/?id=920b7da1) (4 lever)
 - [Squire Defiant](https://lpubelts.com/?id=ed713b97) (5 lever)
