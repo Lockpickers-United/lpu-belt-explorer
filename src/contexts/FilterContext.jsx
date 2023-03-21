@@ -5,7 +5,7 @@ const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
     const [filters, setFilters] = useState(() => {
-        const query = queryString.parse(location.search)
+        const {name, ...query} = queryString.parse(location.search)
         return {
             search: '',
             ...query
