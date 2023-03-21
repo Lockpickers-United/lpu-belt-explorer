@@ -13,7 +13,7 @@ function FilterDisplay() {
     }, [removeFilter])
 
     const filterValues = useMemo(() => {
-        const {search, id, tab, ...rest} = filters
+        const {search, id, tab, name, ...rest} = filters
         return Object.keys(rest)
             .map(key => {
                 const value = filters[key]

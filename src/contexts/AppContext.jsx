@@ -7,7 +7,7 @@ const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
     const {allEntries} = useContext(DataContext)
-    const {filters, removeFilter} = useContext(FilterContext)
+    const {filters, removeFilters} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
         const {tab, belt, id, search, ...rest} = filters
@@ -27,21 +27,23 @@ export function AppProvider({children}) {
     const [expanded, setExpanded] = useState(filters.id)
 
     const handleSetExpanded = useCallback(newValue => {
-        if (filters.id && newValue !== filters.id) {
-            setTimeout(() => removeFilter('id'), 0)
+        if ((filters.id || filters.name) && newValue !== filters.id) {
+            setTimeout(() => removeFilters(['id', 'name']), 0)
         }
         setExpanded(newValue)
-    }, [filters.id, removeFilter])
+    }, [filters, removeFilters])
 
     const handleSetTab = useCallback(tab => {
         setTab(tab)
-        if (filters.tab && filters.tab !== tab) {
-            removeFilter('tab')
-        }
+
         if (expanded !== 'beltreqs') {
             handleSetExpanded(false)
         }
-    }, [expanded, filters.tab, handleSetExpanded, removeFilter])
+
+        if (filters.id || filters.name || filters.tab) {
+            setTimeout(() => removeFilters(['id', 'name', 'tab']), 0)
+        }
+    }, [expanded, filters, handleSetExpanded, removeFilters])
 
     const value = useMemo(() => ({
         tab,

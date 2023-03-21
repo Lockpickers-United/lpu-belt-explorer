@@ -7,7 +7,7 @@ function LinkToEntryButton({entry}) {
     const {id, makeModels} = entry
     const {make, model} = makeModels[0]
     const makeModel = make && make !== model ? `${make} ${model}` : model
-    const name = makeModel.replace(/\s/g, '_').replace(/\W/g, '')
+    const name = makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
     const link = new URL(window.location.href)
     link.search = `id=${id}&name=${name}`
 

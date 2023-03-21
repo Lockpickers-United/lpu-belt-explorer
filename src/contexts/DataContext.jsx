@@ -9,7 +9,7 @@ export function DataProvider({children}) {
     const [allEntries, setAllEntries] = useState([])
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
-    const {search, id, tab, ...filters} = allFilters
+    const {search, id, tab, name, ...filters} = allFilters
 
     useEffect(() => {
         const load = async () => {

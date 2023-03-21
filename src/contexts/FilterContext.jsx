@@ -5,7 +5,7 @@ const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
     const [filters, setFilters] = useState(() => {
-        const {name, ...query} = queryString.parse(location.search)
+        const query = queryString.parse(location.search)
         return {
             search: '',
             ...query
@@ -34,6 +34,14 @@ export function FilterProvider({children}) {
 
         const {id, ...keepFilters} = filters
         setFilters({...keepFilters, [keyToAdd]: newValue})
+    }, [filters])
+
+    const removeFilters = useCallback(keysToDelete => {
+        const newFilters = keysToDelete.reduce((acc, keyToDelete) => {
+            const {[keyToDelete]: _, ...newValue} = acc
+            return newValue
+        }, filters)
+        setFilters(newFilters)
     }, [filters])
 
     const removeFilter = useCallback((keyToDelete, valueToDelete) => {
@@ -68,7 +76,7 @@ export function FilterProvider({children}) {
     }, [filters])
 
     const filterCount = useMemo(() => {
-        const {id, search, tab, ...rest} = filters
+        const {id, search, tab, name, ...rest} = filters
         return Object.keys(rest).length
     }, [filters])
 
@@ -77,8 +85,9 @@ export function FilterProvider({children}) {
         filterCount,
         addFilter,
         removeFilter,
+        removeFilters,
         clearFilters
-    }), [addFilter, clearFilters, filterCount, filters, removeFilter])
+    }), [addFilter, clearFilters, filterCount, filters, removeFilter, removeFilters])
 
     return (
         <FilterContext.Provider value={value}>
