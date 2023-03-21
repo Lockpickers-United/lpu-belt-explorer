@@ -8278,6 +8278,18 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/fl/52687880370_bb13f6dfba_z.jpg",
         "fullUrl": "https://www.flickr.com/photos/197682669@N08/52687880370/"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Assa_Desmo_gutted-LegOfSam_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_Desmo_gutted-LegOfSam.png"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Assa_Desmo_gutted-LegOfSam_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Assa_Desmo_gutted-LegOfSam.png"
       }
     ],
     "links": [
@@ -18989,7 +19001,27 @@
         "model": "Pagoda AF 16-50"
       }
     ],
-    "version": "(flat key)"
+    "version": "(flat key)",
+    "media": [
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52762030870_720a995e48_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52762030870/in/album-72177720306891049/"
+      },
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52761874569_f5c8309461_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52761874569/in/album-72177720306891049/"
+      },
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52761625801_2272d73ec0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52761625801/in/album-72177720306891049/"
+      }
+    ]
   },
   {
     "id": "c511cc75",
@@ -19080,7 +19112,7 @@
     ]
   },
   {
-    "id": "392cd8be",
+    "id": "dfff0cbb",
     "belt": "Unranked",
     "makeModels": [
       {
@@ -19095,7 +19127,7 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "ced6a330",
+    "id": "236d0bfb",
     "belt": "Unranked",
     "makeModels": [
       {
