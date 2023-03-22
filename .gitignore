@@ -26,3 +26,4 @@ scripts/*.md
 *.sln
 *.sw?
 /stats.html
+public/version.json
