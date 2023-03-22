@@ -26,11 +26,11 @@ function VersionChecker() {
         // Timer for checking later
         const timerId = setTimeout(() => {
             const now = dayjs()
-            const shouldCheckTime = checkTime.add(5, 'minutes')
+            const shouldCheckTime = checkTime.add(1, 'minutes')
             if (now.isAfter(shouldCheckTime)) {
                 loadVersion()
             }
-        }, 5 * 60 * 1000) // 5 minutes
+        }, 1 * 60 * 1000) // 1 minute
 
         // Clean up timer
         return () => clearTimeout(timerId)
