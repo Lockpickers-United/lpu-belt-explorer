@@ -24,17 +24,18 @@ function VersionChecker() {
         }
 
         // Timer for checking later
-        const timerId = setTimeout(() => {
+        const duration = 10 * 60 * 1000 // 10 minutes
+        let intervalId = setInterval(() => {
             const now = dayjs()
             // Only check the version 60 minutes after last check
             const shouldCheckTime = checkTime.add(60, 'minutes')
             if (now.isAfter(shouldCheckTime)) {
                 loadVersion()
             }
-        }, 10 * 60 * 1000) // 10 minutes
+        }, duration)
 
         // Clean up timer
-        return () => clearTimeout(timerId)
+        return () => clearInterval(intervalId)
     }, [checkTime, currentVersion, loadVersion])
 
     const handleClick = useCallback(() => {
