@@ -1,6 +1,7 @@
 import React, {useCallback, useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
+import VersionChecker from '../app/VersionChecker'
 import FilterButton from '../filters/FilterButton'
 import HomeButton from './HomeButton'
 import SearchBox from './SearchBox'
@@ -52,6 +53,7 @@ function Nav() {
 
                     <Tracker/>
 
+                    <VersionChecker/>
                     <InfoButton icon/>
                     <FilterButton/>
                 </Toolbar>
