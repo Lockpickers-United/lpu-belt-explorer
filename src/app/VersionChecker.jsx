@@ -10,7 +10,7 @@ function VersionChecker() {
     const [nextVersion, setNextVersion] = useState(null)
 
     const loadVersion = useCallback(async initial => {
-        const response = await fetch('./version.json')
+        const response = await fetch('./version.json', {cache: 'no-cache'})
         const {version} = (await response.json())
         if (initial) setCurrentVersion(version)
         setNextVersion(version)
@@ -26,11 +26,12 @@ function VersionChecker() {
         // Timer for checking later
         const timerId = setTimeout(() => {
             const now = dayjs()
-            const shouldCheckTime = checkTime.add(1, 'minutes')
+            // Only check the version 60 minutes after last check
+            const shouldCheckTime = checkTime.add(60, 'minutes')
             if (now.isAfter(shouldCheckTime)) {
                 loadVersion()
             }
-        }, 1 * 60 * 1000) // 1 minute
+        }, 10 * 60 * 1000) // 10 minutes
 
         // Clean up timer
         return () => clearTimeout(timerId)
