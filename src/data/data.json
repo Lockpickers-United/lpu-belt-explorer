@@ -23,7 +23,7 @@
     "makeModels": [
       {
         "make": "Any",
-        "model": "China padlock (granite look)"
+        "model": "China Padlock (granite look)"
       }
     ],
     "lockingMechanisms": [
@@ -19160,7 +19160,7 @@
     ]
   },
   {
-    "id": "566e37a9",
+    "id": "e44a6963",
     "belt": "Unranked",
     "makeModels": [
       {
@@ -19175,7 +19175,7 @@
     "version": "4 pins, spooled drivers"
   },
   {
-    "id": "2478aff8",
+    "id": "e69e4da3",
     "belt": "Unranked",
     "makeModels": [
       {
