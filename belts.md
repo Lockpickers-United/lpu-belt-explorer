@@ -33,7 +33,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 
 - [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
-- [Any China padlock (granite look)](https://lpubelts.com/?id=3ac43ea8)
+- [Any China Padlock (granite look)](https://lpubelts.com/?id=3ac43ea8)
 - [Any Cutaway Lock](https://lpubelts.com/?id=901b35b2)
 - [Any Lever Generic/Unknown Cabinet lock](https://lpubelts.com/?id=5dc117cd) (1 or 2 levers)
 - [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
