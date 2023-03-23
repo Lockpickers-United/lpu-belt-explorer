@@ -9,7 +9,7 @@ export function DataProvider({children}) {
     const [allEntries, setAllEntries] = useState([])
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
-    const {search, id, tab, name, ...filters} = allFilters
+    const {search, id, tab, name, sort, ...filters} = allFilters
 
     useEffect(() => {
         const load = async () => {
@@ -64,14 +64,24 @@ export function DataProvider({children}) {
                     score: result.score
                 }))
                 .sort((a, b) => {
+                    // Move unranked to the bottom of search results
                     const val1 = a.belt === 'Unranked'
                     const val2 = b.belt === 'Unranked'
                     return val1 - val2
                 })
             : value
 
+        if (sort) {
+            value = value
+                .sort((a, b) => {
+                    if (sort === 'popularity') {
+                        return b.views - a.views
+                    }
+                })
+        }
+
         return value
-    }, [filters, search, mappedEntries])
+    }, [filters, mappedEntries, search, sort])
 
     const value = useMemo(() => ({
         allEntries,

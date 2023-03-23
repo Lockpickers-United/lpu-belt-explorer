@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import VersionChecker from '../app/VersionChecker'
 import FilterButton from '../filters/FilterButton'
+import SortButton from '../filters/SortButton'
 import HomeButton from './HomeButton'
 import SearchBox from './SearchBox'
 import Tabs from '@mui/material/Tabs'
@@ -55,6 +56,7 @@ function Nav() {
 
                     <VersionChecker/>
                     <InfoButton icon/>
+                    <SortButton/>
                     <FilterButton/>
                 </Toolbar>
             </AppBar>

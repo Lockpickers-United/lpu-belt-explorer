@@ -62,7 +62,7 @@ function SearchBox() {
     ) : null
     const style = width < 650
         ? {maxWidth: 450}
-        : {maxWidth: 450, paddingLeft: 20}
+        : {maxWidth: 450, paddingLeft: 60}
 
     return (
         <TextField

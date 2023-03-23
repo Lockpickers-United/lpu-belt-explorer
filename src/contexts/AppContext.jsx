@@ -10,7 +10,7 @@ export function AppProvider({children}) {
     const {filters, removeFilters} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
-        const {tab, belt, id, search, ...rest} = filters
+        const {tab, belt, id, search, name, sort, ...rest} = filters
         let entry
         if (id) entry = allEntries.find(e => id === e.id)
         if (tab && uniqueBelts.includes(tab)) {

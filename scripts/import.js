@@ -1,6 +1,6 @@
 import fs from 'fs'
 import {parse} from 'csv-parse/sync'
-import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
+import {mainSchema, mediaSchema, linkSchema, viewSchema} from './schemas.js'
 import {allBelts} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
@@ -34,6 +34,7 @@ const importValidate = async (tab, schema) => {
 const mainData = await importValidate('App Data', mainSchema)
 const mediaData = await importValidate('Media', mediaSchema)
 const linkData = await importValidate('Links', linkSchema)
+const viewData = await importValidate('Lock Views', viewSchema)
 
 // Transform fields into internal JSON format
 const jsonData = mainData
@@ -108,7 +109,7 @@ mediaData
     })
     .forEach(item => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
-        if (!entry) console.log('Entry not found!', item)
+        if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
         const media = {
             title: item.Title,
@@ -136,6 +137,15 @@ linkData
             title: item.Title,
             url: item.URL
         })
+    })
+
+// Add view data
+viewData
+    // .filter(item => item.Count > 0)
+    .forEach(item => {
+        const entry = jsonData.find(e => e.id === item['Unique ID'])
+        if (!entry) return console.log('Entry not found:', item)
+        entry.views = +item['Count']
     })
 
 // Write out to src location for usage

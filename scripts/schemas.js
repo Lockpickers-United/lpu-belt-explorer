@@ -49,3 +49,10 @@ export const linkSchema = Joi.array().items(
         URL: Joi.string().uri()
     }).unknown()
 )
+
+export const viewSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Count': Joi.number().min(0)
+    }).unknown()
+)
