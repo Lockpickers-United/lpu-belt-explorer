@@ -59,7 +59,8 @@ function SortButton() {
 const sortValues = [
     {label: 'Default', value: undefined},
     {label: 'Popularity', value: 'popularity'},
-    {label: 'Recently Updated', value: 'recentlyUpdated'}
+    {label: 'Recently Updated', value: 'recentlyUpdated'},
+    {label: 'Dan Points', value: 'danPoints'}
 ]
 
 export default SortButton

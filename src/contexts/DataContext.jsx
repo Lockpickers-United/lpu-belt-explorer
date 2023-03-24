@@ -3,6 +3,7 @@ import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext'
 import StorageContext from './StorageContext'
 import dayjs from 'dayjs'
+import belts from '../data/belts'
 
 const DataContext = React.createContext({})
 
@@ -82,6 +83,8 @@ export function DataProvider({children}) {
                         const dayB = dayjs(b.lastUpdated)
                         if (dayA.isAfter(dayB)) return -1
                         else if (dayB.isAfter(dayA)) return 1
+                    } else if (sort === 'danPoints') {
+                        return belts[b.belt].danPoints - belts[a.belt].danPoints
                     }
                 })
         }

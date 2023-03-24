@@ -23,7 +23,7 @@ import StarButton from './StarButton'
 function Entry({entry, expanded, onExpand}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
-    const dans = belts[entry.belt].dans
+    const {danPoints} = belts[entry.belt]
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand(isExpanded ? entry.id : false)
@@ -107,7 +107,7 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionDetails>
                         <FieldValue name='Belt' value={
                             <React.Fragment>
-                                <Typography>{entry.belt} {dans > 0 && ` (${dans} Dan Points)`}</Typography>
+                                <Typography>{entry.belt} {danPoints > 0 && ` (${danPoints} Dan Points)`}</Typography>
                                 <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                             </React.Fragment>
                         }/>
