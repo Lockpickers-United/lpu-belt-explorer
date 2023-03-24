@@ -12,7 +12,7 @@ function HomeButton() {
     const handleClick = useCallback(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
         setTab('White')
-        clearFilters(true)
+        setTimeout(() => clearFilters(true), 150)
     }, [clearFilters, setTab])
     useHotkeys('h', handleClick)
 
