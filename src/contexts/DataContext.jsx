@@ -32,7 +32,8 @@ export function DataProvider({children}) {
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
-                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined
+                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
+                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(7, 'days')) ? 'Updated Recently' : undefined
                 ].flat().filter(x => x),
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
