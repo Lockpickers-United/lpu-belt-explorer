@@ -17,6 +17,8 @@ const belts = {
 }
 export default belts
 export const allBelts = Object.keys(belts)
+export const allBeltsReverse = [...allBelts].reverse()
+allBeltsReverse.push(allBeltsReverse.shift())
 
 export const uniqueBelts = [
     'White',
@@ -32,4 +34,7 @@ export const uniqueBelts = [
 
 export const beltSort = (a, b) => {
     return allBelts.indexOf(a) - allBelts.indexOf(b)
+}
+export const beltSortReverse = (a, b) => {
+    return allBeltsReverse.indexOf(a) - allBeltsReverse.indexOf(b)
 }

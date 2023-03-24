@@ -7,7 +7,7 @@ import AppContext from '../contexts/AppContext'
 import NoEntriesCard from './NoEntriesCard'
 
 function Entries() {
-    const {allEntries, visibleEntries} = useContext(DataContext)
+    const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {tab, expanded, setExpanded} = useContext(AppContext)
 
     const defTab = useDeferredValue(tab)

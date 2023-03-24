@@ -2,7 +2,7 @@ import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
 function BeltStripe({value}) {
-    const {color: backgroundColor, lineColor} = belts[value]
+    const {color: backgroundColor, lineColor} = belts[value] || {}
     const style = {
         width: 8,
         height: '100%',

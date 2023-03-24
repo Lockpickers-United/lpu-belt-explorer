@@ -17,7 +17,7 @@ function SortButton() {
 
     const handleClick = useCallback(value => () => {
         handleClose()
-        addFilter('sort', value, true)
+        setTimeout(() => addFilter('sort', value, true), 0)
     }, [addFilter, handleClose])
 
     return (
@@ -58,9 +58,10 @@ function SortButton() {
 
 const sortValues = [
     {label: 'Default', value: undefined},
+    {label: 'Belt (Ascending)', value: 'beltAscending'},
+    {label: 'Belt (Descending)', value: 'beltDescending'},
     {label: 'Popularity', value: 'popularity'},
-    {label: 'Recently Updated', value: 'recentlyUpdated'},
-    {label: 'Dan Points', value: 'danPoints'}
+    {label: 'Recently Updated', value: 'recentlyUpdated'}
 ]
 
 export default SortButton

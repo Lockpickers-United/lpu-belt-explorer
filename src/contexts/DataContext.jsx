@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext'
 import StorageContext from './StorageContext'
 import dayjs from 'dayjs'
-import belts from '../data/belts'
+import {beltSort, beltSortReverse} from '../data/belts'
 
 const DataContext = React.createContext({})
 
@@ -49,7 +49,7 @@ export function DataProvider({children}) {
             .flat()
 
         // Filter the data
-        let value = mappedEntries
+        const filtered = mappedEntries
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -59,8 +59,8 @@ export function DataProvider({children}) {
             })
 
         // If there is a search term, fuzzy match that
-        value = search
-            ? fuzzysort.go(search, value, {keys: fuzzySortKeys})
+        const searched = search
+            ? fuzzysort.go(search, filtered, {keys: fuzzySortKeys})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
@@ -71,25 +71,24 @@ export function DataProvider({children}) {
                     const val2 = b.belt === 'Unranked'
                     return val1 - val2
                 })
-            : value
+            : filtered
 
-        if (sort) {
-            value = value
-                .sort((a, b) => {
-                    if (sort === 'popularity') {
-                        return b.views - a.views
-                    } else if (sort === 'recentlyUpdated') {
-                        const dayA = dayjs(a.lastUpdated)
-                        const dayB = dayjs(b.lastUpdated)
-                        if (dayA.isAfter(dayB)) return -1
-                        else if (dayB.isAfter(dayA)) return 1
-                    } else if (sort === 'danPoints') {
-                        return belts[b.belt].danPoints - belts[a.belt].danPoints
-                    }
-                })
-        }
-
-        return value
+        return sort
+            ? searched.sort((a, b) => {
+                if (sort === 'popularity') {
+                    return b.views - a.views
+                } else if (sort === 'recentlyUpdated') {
+                    const dayA = dayjs(a.lastUpdated)
+                    const dayB = dayjs(b.lastUpdated)
+                    if (dayA.isAfter(dayB)) return -1
+                    else if (dayB.isAfter(dayA)) return 1
+                } else if (sort === 'beltAscending') {
+                    return beltSort(a.belt, b.belt)
+                } else if (sort === 'beltDescending') {
+                    return beltSortReverse(a.belt, b.belt)
+                }
+            })
+            : searched
     }, [filters, mappedEntries, search, sort])
 
     const value = useMemo(() => ({
