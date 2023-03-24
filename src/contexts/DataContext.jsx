@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext'
 import StorageContext from './StorageContext'
 import dayjs from 'dayjs'
-import {beltSort, beltSortReverse} from '../data/belts'
+import belts, {beltSort, beltSortReverse} from '../data/belts'
 
 const DataContext = React.createContext({})
 
@@ -31,7 +31,8 @@ export function DataProvider({children}) {
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred'
+                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
+                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined
                 ].flat().filter(x => x),
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
