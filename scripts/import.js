@@ -151,13 +151,14 @@ viewData
 // Recently updated data
 const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
 jsonData
-    .forEach(newEntry => {
-        const {lastUpdated, ...oldEntry} = originalData.find(e => e.id === newEntry.id) || {}
+    .forEach(entry => {
+        const {lastUpdated, views: oldViews, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
+        const {views: newViews, ...newEntry} = entry
         if (JSON.stringify(newEntry) !== JSON.stringify(oldEntry)) {
             console.log(`Entry updated ${newEntry.id}`, )
-            newEntry.lastUpdated = dayjs().toISOString()
+            entry.lastUpdated = dayjs().toISOString()
         } else {
-            newEntry.lastUpdated = lastUpdated
+            entry.lastUpdated = lastUpdated
         }
     })
 

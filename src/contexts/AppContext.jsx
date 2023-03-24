@@ -14,7 +14,7 @@ export function AppProvider({children}) {
         let entry
         if (id) entry = allEntries.find(e => id === e.id)
         if (tab && uniqueBelts.includes(tab)) {
-            return filters.tab
+            return tab
         } else if (belt && uniqueBelts.includes(belt)) {
             return belt
         } else if (id && entry) {
@@ -35,6 +35,7 @@ export function AppProvider({children}) {
 
     const handleSetTab = useCallback(tab => {
         setTab(tab)
+        setTimeout(() => setDisplayAll(false), 0)
 
         if (expanded !== 'beltreqs') {
             handleSetExpanded(false)
@@ -45,12 +46,16 @@ export function AppProvider({children}) {
         }
     }, [expanded, filters, handleSetExpanded, removeFilters])
 
+    const [displayAll, setDisplayAll] = useState(false)
+
     const value = useMemo(() => ({
         tab,
         setTab: handleSetTab,
         expanded,
-        setExpanded: handleSetExpanded
-    }), [expanded, handleSetExpanded, handleSetTab, tab])
+        setExpanded: handleSetExpanded,
+        displayAll: displayAll && tab === 'search',
+        setDisplayAll
+    }), [displayAll, expanded, handleSetExpanded, handleSetTab, tab])
 
     return (
         <AppContext.Provider value={value}>

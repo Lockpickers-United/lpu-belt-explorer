@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback, useState, useContext, useDeferredValue, useMemo} from 'react'
+import React, {useContext, useDeferredValue, useMemo} from 'react'
 import Entry from './Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements'
@@ -8,29 +8,21 @@ import NoEntriesCard from './NoEntriesCard'
 
 function Entries() {
     const {allEntries, visibleEntries = []} = useContext(DataContext)
-    const {tab, expanded, setExpanded} = useContext(AppContext)
+    const {tab, expanded, setExpanded, displayAll} = useContext(AppContext)
 
     const defTab = useDeferredValue(tab)
     const defExpanded = useDeferredValue(expanded)
-
-    const [displayAll, setDisplayAll] = useState(false)
-    const handleDisplayAll = useCallback(() => {
-        setTimeout(() => setDisplayAll(true), 100)
-    }, [])
+    const defDisplayAll = useDeferredValue(displayAll)
 
     const entries = useMemo(() => {
         if (defTab === 'search') {
-            return displayAll || allEntries.length !== visibleEntries.length
+            return defDisplayAll || allEntries.length !== visibleEntries.length
                 ? visibleEntries
                 : []
         } else {
             return visibleEntries.filter(entry => entry.simpleBelt === defTab)
         }
-    }, [displayAll, defTab, allEntries, visibleEntries])
-
-    useEffect(() => {
-        if (defTab !== 'search') setDisplayAll(false)
-    }, [defTab])
+    }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
     return (
         <React.Fragment>
@@ -39,7 +31,7 @@ function Entries() {
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
-                {entries.length === 0 && <NoEntriesCard onDisplayAll={handleDisplayAll}/>}
+                {entries.length === 0 && <NoEntriesCard/>}
 
                 {entries.map(entry =>
                     <Entry

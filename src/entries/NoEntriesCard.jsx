@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue} from 'react'
+import React, {useCallback, useContext, useDeferredValue} from 'react'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -6,15 +6,20 @@ import CardActions from '@mui/material/CardActions'
 import AppContext from '../contexts/AppContext'
 import Button from '@mui/material/Button'
 
-function NoEntriesCard({onDisplayAll}) {
+function NoEntriesCard() {
     const {tab} = useContext(AppContext)
     const defTab = useDeferredValue(tab)
     const style = {marginTop: 16, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const {setDisplayAll} = useContext(AppContext)
 
     const isSearchTab = defTab === 'search'
     const message = isSearchTab
         ? 'No search or filter criteria selected.'
         : <span>No matching locks were found.<br/>Try adjusting filters, search, or tab.</span>
+
+    const handleClick = useCallback(() => {
+        setTimeout(() => setDisplayAll(true), 50)
+    }, [setDisplayAll])
 
     return (
         <Card style={style}>
@@ -25,7 +30,12 @@ function NoEntriesCard({onDisplayAll}) {
             </CardContent>
             {isSearchTab &&
                 <CardActions style={{paddingBottom: 16}}>
-                    <Button variant='outlined' color='inherit' onClick={onDisplayAll} style={{minWidth: 160, margin: 'auto'}}>
+                    <Button
+                        variant='outlined'
+                        color='inherit'
+                        onClick={handleClick}
+                        style={{minWidth: 160, margin: 'auto'}}
+                    >
                         View all locks
                     </Button>
                 </CardActions>
