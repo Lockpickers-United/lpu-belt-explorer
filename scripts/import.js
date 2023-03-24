@@ -1,4 +1,5 @@
 import fs from 'fs'
+import dayjs from 'dayjs'
 import {parse} from 'csv-parse/sync'
 import {mainSchema, mediaSchema, linkSchema, viewSchema} from './schemas.js'
 import {allBelts} from '../src/data/belts.js'
@@ -141,11 +142,23 @@ linkData
 
 // Add view data
 viewData
-    // .filter(item => item.Count > 0)
     .forEach(item => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         if (!entry) return console.log('Entry not found:', item)
         entry.views = +item['Count']
+    })
+
+// Recently updated data
+const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
+jsonData
+    .forEach(newEntry => {
+        const {lastUpdated, ...oldEntry} = originalData.find(e => e.id === newEntry.id) || {}
+        if (JSON.stringify(newEntry) !== JSON.stringify(oldEntry)) {
+            console.log(`Entry updated ${newEntry.id}`, )
+            newEntry.lastUpdated = dayjs().toISOString()
+        } else {
+            newEntry.lastUpdated = lastUpdated
+        }
     })
 
 // Write out to src location for usage

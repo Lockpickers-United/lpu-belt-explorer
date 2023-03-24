@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useMemo, useState} from 'react'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext'
 import StorageContext from './StorageContext'
+import dayjs from 'dayjs'
 
 const DataContext = React.createContext({})
 
@@ -76,6 +77,11 @@ export function DataProvider({children}) {
                 .sort((a, b) => {
                     if (sort === 'popularity') {
                         return b.views - a.views
+                    } else if (sort === 'recentlyUpdated') {
+                        const dayA = dayjs(a.lastUpdated)
+                        const dayB = dayjs(b.lastUpdated)
+                        if (dayA.isAfter(dayB)) return -1
+                        else if (dayB.isAfter(dayA)) return 1
                     }
                 })
         }
