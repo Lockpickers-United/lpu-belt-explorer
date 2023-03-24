@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import belts from '../data/belts'
 import BeltStripe from './BeltStripe'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
@@ -22,6 +23,7 @@ import StarButton from './StarButton'
 function Entry({entry, expanded, onExpand}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
+    const dans = belts[entry.belt].dans
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand(isExpanded ? entry.id : false)
@@ -105,7 +107,7 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionDetails>
                         <FieldValue name='Belt' value={
                             <React.Fragment>
-                                <Typography>{entry.belt}</Typography>
+                                <Typography>{entry.belt} {dans > 0 && ` (${dans} Dan Points)`}</Typography>
                                 <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                             </React.Fragment>
                         }/>
