@@ -7,7 +7,6 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import belts from '../data/belts'
 import BeltStripe from './BeltStripe'
-import EntryMetaTags from './EntryMetaTags'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
 import ReactMarkdown from 'react-markdown'
@@ -160,7 +159,6 @@ function Entry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
-                        <EntryMetaTags entry={entry}/>
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker id={entry.id}/>

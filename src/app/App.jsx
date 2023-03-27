@@ -8,7 +8,6 @@ import {AppProvider} from '../contexts/AppContext'
 import Nav from '../nav/Nav'
 import Entries from '../entries/Entries'
 import Footer from '../nav/Footer'
-import {HelmetProvider} from 'react-helmet-async'
 
 const darkTheme = createTheme({
     // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00
@@ -40,13 +39,11 @@ function App() {
                 <FilterProvider>
                     <DataProvider>
                         <AppProvider>
-                            <HelmetProvider>
-                                <Nav/>
+                            <Nav/>
 
-                                <Entries/>
+                            <Entries/>
 
-                                <Footer/>
-                            </HelmetProvider>
+                            <Footer/>
                         </AppProvider>
                     </DataProvider>
                 </FilterProvider>
