@@ -13,6 +13,8 @@ function EntryMetaTags({entry}) {
 
     return (
         <Helmet>
+            <meta property='og:site_name' content='LPU Belt Explorer'/>
+            <meta property='og:type' content='website'/>
             <meta property='og:title' content={title}/>
             <meta property='og:description' content={description}/>
             {imageUrl && <meta property='og:image' content={imageUrl}/>}
