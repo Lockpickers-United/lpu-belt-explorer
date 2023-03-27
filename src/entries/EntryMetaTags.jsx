@@ -8,7 +8,7 @@ function EntryMetaTags({entry}) {
     const description = makeModels
         .map(({make, model}) => {
             return make && make !== model ? `${make} ${model}` : model
-        }).join('\n') + version
+        }).join('\n') + (version ? version : '')
     const imageUrl = media.find(m => !m.fullUrl.includes('youtube'))?.thumbnailUrl
 
     return (
