@@ -212,7 +212,7 @@ Green,Chateau,"C970 disk padlock",,Pin-tumbler,Unguttable,,20f3575c
 Green,Commando,"IC3 Tactical",,Pin-tumbler,Unguttable,,9d478029
 Green,Commando,Marine,,Pin-tumbler,Unguttable,,f7f31800
 Green,Commando,Peacemaker,,Pin-tumbler,Unguttable,,606275d8
-Green,"Corbin Russwin","Master Ring",**,,,"** green if picked to one shearline",73a718cb
+Green,"Corbin Russwin","Master Ring",**,,,"** Green if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",73a718cb
 Green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 Green,Corona,cylinder,,Pin-tumbler,,,6c9a666e
 Green,Corona,M,,Pin-tumbler,,,6b472dc2
@@ -286,7 +286,7 @@ Green,Yale,210C/51,,Pin-tumbler,,,1105b55d
 Green,Yardeni,6,,,,,34532c45
 Green,Zarker,J45/J45S,,"Disc detainer","Rear tension","Can be front tensioned and counterrotated",4f6bcdb7
 Blue,Any,"HQ High Security interactive clone","4 pins",,,,c1d09460
-Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline",c6529d9c
+Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",c6529d9c
 Blue,ABUS,"Bravus 3000",,Dimple,,,ea0efaca
 Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,ABUS,"E-series (E20-E90)",,Pin-tumbler,,,5c0d870b
@@ -315,7 +315,7 @@ Blue,DeGuard,"interactive clone","4 pins",Dimple,,,b91162e7
 Blue,DOM,"IX 5KG",,Dimple,"Interactive element",,eec4bd4a
 Blue,DOM,Plura,,Pin-tumbler,"""Magic"" DOM drivers",,96591a8f
 Blue,DOM,"R Plus",,Pin-tumbler,,,2e67118d
-Blue,DOM,RN,,Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Else it's green",81338028
+Blue,DOM,RN,,Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
 Blue,DOM,"RS Sigma",,Pin-tumbler,"""Magic"" DOM drivers",,1dd28bf9
 Blue,DOM,"S (with circle)",,Pin-tumbler,,,9aa8821a
 Blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
@@ -385,7 +385,7 @@ Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,"500 series",,Pin-tumbler,Overmilling,,779e7dcb
 Blue,"Yale,Milencio","Superior,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"Lever Unknown/Generic lock","6 or 7 lever",Lever,,,a6a225e5
-Purple,Any,"SFIC format lock (unless otherwise specified)",***,Pin-tumbler,,"*** **Special Picking Requirement:** Check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
+Purple,Any,"SFIC format lock (unless otherwise specified)",***,Pin-tumbler,,"*** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
 Purple,ABA,109582,,Dimple,,,96fd610e
 Purple,ABUS,"Bravus 4000",,Dimple,,,a062f1ee
 Purple,ABUS,EP10,,Dimple,,,20adf729
@@ -412,7 +412,7 @@ Purple,Chubb,Battleship,"6 lever",Lever,"Padlock,Pin key,Curtain,False gates",,1
 Purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
 Purple,Codkey,Locksys,"<15 pins",Dimple,,,8a0c4b07
 Purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b7
-Purple,"Corbin Russwin","Master Ring",***,,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take",50fd7a98
+Purple,"Corbin Russwin","Master Ring",***,,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,Dierre,"New Power",,Slider,,,a10711cc
 Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,acde7f0c
@@ -479,7 +479,7 @@ Purple,"Walsall Locks",Ace,"7 lever safe",Lever,"Safe,False gates",,37914cb6
 Purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet,Flat steel key,Curtain,False gates,Destructive gut",,5958a65b
 Purple,Yale,5000,,"Pin-tumbler,Slider",,,1be10736
 Purple,"Yale,Milencio","Superior,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
-Brown,Any,"SFIC with security pins",****,Pin-tumbler,,"**** **Special Picking Requirement:** Must be picked to both shearlines in one take (check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
+Brown,Any,"SFIC with security pins",****,Pin-tumbler,,"**** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
 Brown,Abloy,Classic,,"Disc detainer","Rear tension,False gates","Old models can be front tensioned",da09d849
 Brown,ABUS,Plus,"no butterfly discs","Disc detainer","Random mid tension,False gates",,b8350900
 Brown,,Aegis,"18 pin, 3 rows all spools",Dimple,"High pin count",,19fce24d
