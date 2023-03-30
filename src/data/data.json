@@ -4815,9 +4815,9 @@
       }
     ],
     "version": "**",
-    "notes": "** green if picked to one shearline",
+    "notes": "** Green if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",
     "views": 26,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-03-30T15:46:13.740Z"
   },
   {
     "id": "96bb2cf7",
@@ -6318,7 +6318,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "** Blue if picked to one shearline",
+    "notes": "** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",
     "media": [
       {
         "title": "SFIC Primer",
@@ -6371,7 +6371,7 @@
       }
     ],
     "views": 91,
-    "lastUpdated": "2023-03-26T21:11:38.747Z"
+    "lastUpdated": "2023-03-30T15:46:13.741Z"
   },
   {
     "id": "ea0efaca",
@@ -7062,9 +7062,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Else it's green",
+    "notes": "At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",
     "views": 37,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-03-30T15:46:13.742Z"
   },
   {
     "id": "1dd28bf9",
@@ -8761,7 +8761,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "*** **Special Picking Requirement:** Check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",
+    "notes": "*** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",
     "media": [
       {
         "title": "SFIC Primer",
@@ -8814,7 +8814,7 @@
       }
     ],
     "views": 115,
-    "lastUpdated": "2023-03-26T21:11:38.750Z"
+    "lastUpdated": "2023-03-30T15:46:13.744Z"
   },
   {
     "id": "96fd610e",
@@ -9589,9 +9589,9 @@
       }
     ],
     "version": "***",
-    "notes": "*** **Special Picking Requirement:** Both shearlines must be filmed in one take",
+    "notes": "*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",
     "views": 22,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-03-30T15:46:13.745Z"
   },
   {
     "id": "5e264777",
@@ -11570,7 +11570,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "**** **Special Picking Requirement:** Must be picked to both shearlines in one take (check [SFIC filming requirements](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",
+    "notes": "**** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",
     "media": [
       {
         "title": "SFIC Primer",
@@ -11623,7 +11623,7 @@
       }
     ],
     "views": 118,
-    "lastUpdated": "2023-03-26T21:11:38.752Z"
+    "lastUpdated": "2023-03-30T15:46:13.747Z"
   },
   {
     "id": "da09d849",
