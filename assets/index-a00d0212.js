@@ -208,8 +208,6 @@ If you wish to sync the belt to your user on Reddit you should use the following
 
 Any additional information can be added below in different lines if necessary, but the above formula must be in one
 line.
-
-----------
 `,Pz=`## FAQ
 
 Q: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
