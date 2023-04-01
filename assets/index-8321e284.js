@@ -162,7 +162,7 @@ Remember this is all just for fun... In the end, no matter what karate belt you 
 ### Reddit
 
 Belts should always be requested via modmail on Reddit. Posts requesting belts will be excluded.
-If you want to sync the new belt with your user on Discord, please add your Discord username with the request.
+If you want to sync the new belt with your user on Discord, please add your Discord username with the request. (You must have made at least one post to the [LPU discord](https://discord.gg/lockpicking) for this to take effect.)
 
 Each modmail should include:
 
