@@ -109,7 +109,8 @@ export function DataProvider({children}) {
 const fuzzySortKeys = [
     'fuzzy',
     'version',
-    'notes'
+    'notes',
+    'id'
 ]
 
 export default DataContext
