@@ -717,8 +717,8 @@ Unranked,BASI,K6-RT,,,,6-pin,ee04714f
 Unranked,Bowley,Rotasera,,,,,e35772c9
 Unranked,Burgwächter,"Profi 116/30",,,,,35adb4d6
 Unranked,Capitol,"magnetic cam lock",,,,,85591581
-Unranked,CAVEO,"TS007 Exterior",,,,,0813d39e
-Unranked,CAVEO,"TS007 Interior",,,,,60964e9f
+Unranked,CAVEO,"TS007 Exterior",,"Dimple,Slider",,,0813d39e
+Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider",,,60964e9f
 Unranked,Chubb,6k202,"7 lever with anti-pick",,,,267e47c4
 Unranked,Cisa,285,,,,,a832e82d
 Unranked,Cisa,810,,,,,22d70f2e
@@ -731,7 +731,7 @@ Unranked,Fichet,787,interior,,,,10ab07eb
 Unranked,Fichet-Bauche,M2i,,,,,d6e6039e
 Unranked,Fichet-Bauche,Monopole,,,,,3bd433d7
 Unranked,FTH,Pacific,,,,,a57c1e9b
-Unranked,Gege,MRT,,,,,b379e483
+Unranked,Gege,MRT,,Magnet,,,b379e483
 Unranked,Gera,3500,,,,,88085257
 Unranked,GLK,60G50,"60mm padlock",Pin-tumbler,,,1575614d
 Unranked,GLK,G10,,Dimple,,,63a898da
@@ -769,7 +769,7 @@ Unranked,"Rav Bariach",Dynamic,"with sliders",,,,9637ddde
 Unranked,Rosengrens,RKL-10,,,,,5646568c
 Unranked,Ruko,"Combi 900",,Pin-tumbler,,,6dd5a34b
 Unranked,S&G,4440,,,,,347bd804
-Unranked,S&G,6870,,,,,894238be
+Unranked,S&G,6870,,Lever,,,894238be
 Unranked,Securemme,"Evo K64",,Dimple,,,4403a73f
 Unranked,SOL,2500,"10mm (2pins)",,,,97baf67b
 Unranked,SOL,2500,"15mm up to 35mm (3pins)",,,,0d0bf1a5
@@ -779,7 +779,7 @@ Unranked,Takigen,T-999,"9 pins-standards in two opposing rows",,,,a77899fe
 Unranked,"Takigen,Clover","Wavelock disc detainer,Wavelock disc detainer","9 discs",,,,174e20c0
 Unranked,TESA,T-12,,Dimple,,"5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive",0bc03ee8
 Unranked,Trelock,"SUPER Padlock",,,,,9a99a0a7
-Unranked,U-Shin,"Showa X Key",,,,,95a9b042
+Unranked,U-Shin,"Showa X Key",,Dimple,,,95a9b042
 Unranked,Vachette,Radial,"18 or more pins",Dimple,,,ab1e3974
 Unranked,Voga,X18,,,,,90b4ade7
 Unranked,,War-Lok,,,,,fa9fb7e1
