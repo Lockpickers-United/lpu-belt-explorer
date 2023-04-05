@@ -3533,8 +3533,14 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795701323/in/album-72177720307268266/"
       }
     ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Trelock"
+      }
+    ],
     "views": 18,
-    "lastUpdated": "2023-04-05T18:53:57.634Z"
+    "lastUpdated": "2023-04-05T20:56:00.393Z"
   },
   {
     "id": "ecd83598",
@@ -13520,8 +13526,16 @@
       "False gates"
     ],
     "notes": "Can be picked with front tension but gated spinner complicates this",
+    "media": [
+      {
+        "title": "By: m.c.",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52796346219_7b3443a1dc_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52796346219/in/album-72177720307277931/"
+      }
+    ],
     "views": 26,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-05T20:56:00.404Z"
   },
   {
     "id": "2929f922",
