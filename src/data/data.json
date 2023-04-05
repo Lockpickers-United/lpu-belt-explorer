@@ -1308,8 +1308,40 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795564505_b20e7c4aff_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795564505/in/album-72177720307285198/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795171571_4c65c20190_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795171571/in/album-72177720307285198/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795615118_e3034cce7e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795615118/in/album-72177720307285198/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795564970_d2f0b6098f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795564970/in/album-72177720307285198/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Esco_Profilzylinder"
+      }
+    ],
     "views": 10,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-05T18:53:57.632Z"
   },
   {
     "id": "1376f489",
@@ -2086,8 +2118,28 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Schlüsselmeister",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794683547_7da70e32d7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794683547/in/album-72177720307285199/"
+      },
+      {
+        "title": "By: Schlüsselmeister",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795693403_e4c3563185_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795693403/in/album-72177720307285199/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Stabilit"
+      }
+    ],
     "views": 13,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-05T18:53:57.633Z"
   },
   {
     "id": "4ec9a150",
@@ -3467,8 +3519,22 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795257516_99d0dbf90c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795257516/in/album-72177720307268266/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795701323_e652a56e80_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795701323/in/album-72177720307268266/"
+      }
+    ],
     "views": 18,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-05T18:53:57.634Z"
   },
   {
     "id": "ecd83598",
@@ -5176,8 +5242,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795569703_72e1bc2b1e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795569703/in/album-72177720307266911/"
+      },
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794560982_e893947dfe_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794560982/in/album-72177720307266911/"
+      },
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795367099_6207bb2fb7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795367099/in/album-72177720307266911/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Corona"
+      }
+    ],
     "views": 5,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-05T18:53:57.635Z"
   },
   {
     "id": "6b472dc2",
@@ -5191,8 +5283,40 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794569372_a8ca72a928_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794569372/in/album-72177720307268942/"
+      },
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795578218_3a683c313d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795578218/in/album-72177720307268942/"
+      },
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795578348_e5b03ec2a9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795578348/in/album-72177720307268942/"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795527870_4fee1c25e5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795527870/in/album-72177720307268942/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Corona_M"
+      }
+    ],
     "views": 6,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-05T18:53:57.635Z"
   },
   {
     "id": "a165bc09",
@@ -5274,8 +5398,40 @@
         "model": "SC"
       }
     ],
+    "media": [
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795147266_d716c9e1a8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795147266/in/album-72177720307268770/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794581387_4a3dd0d78d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794581387/in/album-72177720307268770/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795590278_f875bfcb33_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795590278/in/album-72177720307268770/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795590443_2755b2d581_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795590443/in/album-72177720307268770/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Dom_SC"
+      }
+    ],
     "views": 7,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-05T18:53:57.635Z"
   },
   {
     "id": "95b2c7b0",
@@ -5474,8 +5630,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795226896_b8b62c7b6e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795226896/in/album-72177720307269777/"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795466434_e7803f2639_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795466434/in/album-72177720307269777/"
+      },
+      {
+        "title": "By: Jan-Willem Markus",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52779577356_d67a2a5177_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52779577356/in/album-72177720307269777/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/GEGE_Normalprofil"
+      }
+    ],
     "views": 6,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-05T18:53:57.636Z"
   },
   {
     "id": "3316c7d0",
@@ -10300,8 +10482,40 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "media": [
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795156201_3bd4cb5fcb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795156201/in/album-72177720307269197/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794589747_aac60266d1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794589747/in/album-72177720307269197/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795548850_7889a4bfb3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795548850/in/album-72177720307269197/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794590252_9d7d56cf29_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794590252/in/album-72177720307269197/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Elzett_961_X-11"
+      }
+    ],
     "views": 3,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-04-05T18:53:57.640Z"
   },
   {
     "id": "8c2983b5",
