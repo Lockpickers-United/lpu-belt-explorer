@@ -809,8 +809,28 @@
     "features": [
       "Unguttable"
     ],
+    "media": [
+      {
+        "title": "By: Kamikaze",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52793398187_394c83745a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52793398187/in/album-72177720307256160/"
+      },
+      {
+        "title": "By: Kamikaze",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794199699_c776bd6b87_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794199699/in/album-72177720307256160/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/ARFE"
+      }
+    ],
     "views": 23,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-05T15:49:59.362Z"
   },
   {
     "id": "32244161",
@@ -1023,8 +1043,40 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Puubaer",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794551317_3c54119a10_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794551317/in/album-72177720307268460/"
+      },
+      {
+        "title": "By: Puubaer",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795117386_2ce0d23dd0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795117386/in/album-72177720307268460/"
+      },
+      {
+        "title": "By: Puubaer",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795116946_217813c813_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795116946/in/album-72177720307268460/"
+      },
+      {
+        "title": "By: Puubaer",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795116826_4939348839_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795116826/in/album-72177720307268460/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Burg_W%C3%A4chter_SecuLock"
+      }
+    ],
     "views": 24,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-05T15:49:59.362Z"
   },
   {
     "id": "9a5b3f53",
@@ -1128,8 +1180,40 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Selflockmaster",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794403483_7060a2d9d7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794403483/in/album-72177720307254356/"
+      },
+      {
+        "title": "By: Selflockmaster",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52793959431_434b6958d5_o_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52793959431/in/album-72177720307254356/"
+      },
+      {
+        "title": "By: Selflockmaster",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52793959431_434b6958d5_o_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52793959431/in/album-72177720307254356/"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794199614_a6ec9e1b53_o_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794199614/in/album-72177720307254356/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/DX-Discusschlo%C3%9F"
+      }
+    ],
     "views": 11,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-05T15:49:59.362Z"
   },
   {
     "id": "2f634d15",
@@ -1765,8 +1849,28 @@
     "features": [
       "Unguttable"
     ],
+    "media": [
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794239729_51f3cceb29_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794239729/in/album-72177720307272304/"
+      },
+      {
+        "title": "By: Retac",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794239719_4a7f1f80c5_m_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794239719/in/album-72177720307272304/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Mecanimex"
+      }
+    ],
     "views": 6,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-05T15:49:59.363Z"
   },
   {
     "id": "6c365304",
@@ -2338,8 +2442,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795338159_75d5c938bb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795338159/in/album-72177720307266491/"
+      },
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794532757_07530a2803_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794532757/in/album-72177720307266491/"
+      },
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794533132_0ddacc0b10_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794533132/in/album-72177720307266491/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/ABUS_BUFFO"
+      }
+    ],
     "views": 35,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-05T15:49:59.363Z"
   },
   {
     "id": "afd3e51d",
@@ -3960,8 +4090,46 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794015266_6d491df214_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794015266/in/album-72177720307272743/"
+      },
+      {
+        "title": "By: OpHiDiAn",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794255269_e10df06dd7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794255269/in/album-72177720307272743/"
+      },
+      {
+        "title": "By: MoonUA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795243880_3a2f5ebb69_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795243880/in/album-72177720307272743/"
+      },
+      {
+        "title": "By: MoonUA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795263080_bf667aeda8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795263080/in/album-72177720307272743/"
+      },
+      {
+        "title": "By: Dromicete",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795331748_3d3415e763_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795331748/in/album-72177720307272743/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Abus_Pfaffenhain_Integral"
+      }
+    ],
     "views": 14,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-05T15:49:59.364Z"
   },
   {
     "id": "f488f48e",
@@ -6605,8 +6773,28 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795104621_4bbf39cba7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795104621/in/album-72177720307283499/"
+      },
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794538682_400c01471e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794538682/in/album-72177720307283499/"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/ABUS_E50"
+      }
+    ],
     "views": 76,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-04-05T15:49:59.366Z"
   },
   {
     "id": "3515caae",
