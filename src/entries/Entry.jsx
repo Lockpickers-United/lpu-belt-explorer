@@ -106,7 +106,9 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionDetails>
                         <FieldValue name='Belt' value={
                             <React.Fragment>
-                                <Typography>{entry.belt} {danPoints > 0 && ` (${danPoints} Dan Points)`}</Typography>
+                                <Typography>
+                                    {entry.belt} {danPoints > 0 && ` (${danPoints} Dan Point${danPoints > 1 ? 's' : ''})`}
+                                </Typography>
                                 <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                             </React.Fragment>
                         }/>
