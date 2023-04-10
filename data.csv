@@ -416,7 +416,7 @@ Purple,"Corbin Russwin","Master Ring",***,,,"*** **Special Picking Requirement:*
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,Dierre,"New Power",,Slider,,,a10711cc
 Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,acde7f0c
-Purple,DOM,"ix Twido",,Dimple,,,fc4de1ff
+Purple,DOM,"ix Twido",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,fc4de1ff
 Purple,DOM,ix10,"without fins",Dimple,,,7b05dccc
 Purple,Eagle,"""Supr-Security""","without shutter",,,,e8901d1c
 Purple,Elzett,X11,,Dimple,,,04a402d6
@@ -429,14 +429,14 @@ Purple,IFAM,WX1000,,Dimple,Pin-in-pin,,3b848976
 Purple,IKON,"sk6 vectorprofil rib extra","5 sliders","Pin-tumbler,Slider","Sprung sliders,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",4ffe03a9
 Purple,Illinois,Duo,,Wafer,"Partial gut",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
-Purple,ISEO,Perfecta,,Pump/push,,"requires 360 for belting",6eab0c38
+Purple,ISEO,Perfecta,***,Pump/push,,"*** **Special Picking Requirement:** requires 360 for belting",6eab0c38
 Purple,ISEO,R7,,Dimple,,,30aa78ef
 Purple,,K5,,Dimple,,,479f1d73
-Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,,,779d74f5
+Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,"High pin count",,779d74f5
 Purple,Kaken,KX3,"exterior, 6+ sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements ant type",898a7138
 Purple,"Kale Kilit","164 BNE",,Dimple,,,6f5e0d32
-Purple,"Keso,Keso,Keso","10RS,2000S,4000S (Omega)",,Dimple,,,304f5471
-Purple,Kwikset,"Smartkey (Gen III)",,Slider,,,06ddb074
+Purple,"Keso,Keso,Keso","10RS,2000S,4000S (Omega)",,Dimple,"High pin count",,304f5471
+Purple,Kwikset,"Smartkey (Gen III)",,Slider,"Reverse sidebar",,06ddb074
 Purple,Kwikset,"Smartkey (Gens I & II)",,Slider,,,41f9efa2
 Purple,Kwikset,"Smartkey SC1 gen I",,Slider,,,dd1bf2af
 Purple,Legge,"BS Sash lock","5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,bb317675
@@ -536,7 +536,7 @@ Brown,Mauer,President,"7 lever",Lever,"Safe,Pipe key,Double bitted",,b9b7ba7c
 Brown,Mauer,"Variator A","7 lever",Lever,"Safe,Pipe key,Double bitted",,620b6e5a
 Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock",**,"Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
 Brown,Medeco,Duracam,**,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
-Brown,"MG Serrature",HS,,Dimple,,,540a14c0
+Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
 Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
 Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","Serrated drivers",Dimple,Pin-in-pin,,5c5701d7

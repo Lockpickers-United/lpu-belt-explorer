@@ -618,7 +618,7 @@ the picking video. Please read more below for more filming requirements.
 - [IKON sk6 vectorprofil rib extra](https://lpubelts.com/?id=4ffe03a9) (5 sliders)
 - [Illinois Duo](https://lpubelts.com/?id=07bc680a)
 - [Ingersoll 10 lever padlock](https://lpubelts.com/?id=c11aca1a)
-- [ISEO Perfecta](https://lpubelts.com/?id=6eab0c38)
+- [ISEO Perfecta](https://lpubelts.com/?id=6eab0c38) (***)
 - [ISEO R7](https://lpubelts.com/?id=30aa78ef)
 - [K5](https://lpubelts.com/?id=479f1d73)
 - [Kaba 8](https://lpubelts.com/?id=779d74f5) (3 row, &ge; 9 pins)
