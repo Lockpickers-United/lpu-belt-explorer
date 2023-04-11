@@ -831,7 +831,7 @@ You must video picking and gutting accomplishments in one continuous take.
 - [Mottura Champions C55](https://lpubelts.com/?id=3daff112)
 - [Picard Vigie](https://lpubelts.com/?id=9c5f4539)
 - [Robur 2391 Safe Deposit Lock](https://lpubelts.com/?id=9da7a5f2) (barrels 3+ chambers with matched milling)
-- [Robur 2391 Safe Deposit Lock](https://lpubelts.com/?id=112d0034) (gins 3+ chambers with matched milling))
+- [Robur 2391 Safe Deposit Lock](https://lpubelts.com/?id=112d0034) (gins 3+ chambers with matched milling)
 - [Rosengrens 32A / Rosengrens 32A8](https://lpubelts.com/?id=4a7db3c6) (thin round center posts, few or no false gates)
 - [Ruko Combi 2](https://lpubelts.com/?id=63a9a2b1) (6 pin with 5 finger pins)
 - [S&amp;G 4544 / S&amp;G 4440 series](https://lpubelts.com/?id=2ff8a738)
