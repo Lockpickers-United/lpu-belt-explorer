@@ -590,11 +590,11 @@ Red,Kaba,"Gemini pluS","≥14 pins",Dimple,"High pin count",,c4484574
 Red,Kaba,Penta,"<15 pins",Dimple,"High pin count",,e3081fd3
 Red,Kaba,Star,"5+ directions, <16 pins",Dimple,"High pin count",,43deff29
 Red,Mauer,"Praetor B","11 lever",Lever,Safe,,169b80e3
-Red,MIWA,3800,,Magnet,"Magnetic sliders",,cc8cfd45
 Red,"MIWA,MIWA","E6,83EC",,Magnet,"Magnetic pins",,9094ca58
 Red,MIWA,PR,"<7 unmastered levers",Lever/sidebar,"Partial gut",,fdb68dc4
 Red,"MIWA,Tostem","PS,DN","7-8 unmastered levers",Lever/sidebar,,,550a0c9d
 Red,MIWA,U9,"<8 unmastered levers",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
+Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Rim,Pin key,Double bitted",,5e090448
 Red,"Mottura,Mottura,Mottura","Champions C43,Champions C44,Champions C48",,"Dimple,Other",Rotors,,ae7d3780
 Red,Mottura,"Champions C55",,"Dimple,Other",,,3daff112
