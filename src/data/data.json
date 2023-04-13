@@ -9474,10 +9474,14 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Medeco_Biaxial"
+      },
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
       }
     ],
     "views": 68,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-04-13T09:34:46.705Z"
   },
   {
     "id": "69d4ef86",
@@ -9530,8 +9534,14 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713279046/in/album-72177720306294071/"
       }
     ],
+    "links": [
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
+      }
+    ],
     "views": 46,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-04-13T09:34:46.706Z"
   },
   {
     "id": "f3a2aa78",
@@ -12567,8 +12577,14 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52713549699/in/album-72177720306294071/"
       }
     ],
+    "links": [
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
+      }
+    ],
     "views": 48,
-    "lastUpdated": "2023-03-23T03:24:22.390Z"
+    "lastUpdated": "2023-04-13T09:34:46.710Z"
   },
   {
     "id": "826c31e0",
@@ -12674,10 +12690,14 @@
       {
         "title": "Qikom fr",
         "url": "http://qikom.free.fr"
+      },
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
       }
     ],
     "views": 85,
-    "lastUpdated": "2023-03-23T03:24:22.390Z"
+    "lastUpdated": "2023-04-13T09:34:46.710Z"
   },
   {
     "id": "58f2eac0",
@@ -15482,24 +15502,16 @@
         "thumbnailUrl": "https://img.youtube.com/vi/EYBvsbB6J-A/0.jpg",
         "fullUrl": "https://www.youtube.com/watch?v=EYBvsbB6J-A",
         "subtitleUrl": "https://www.youtube.com/@LockPickersUnited"
-      },
+      }
+    ],
+    "links": [
       {
-        "title": "Medeco Biaxial Teardown",
-        "subtitle": "Lockpickers United",
-        "thumbnailUrl": "https://i3.ytimg.com/vi/EYBvsbB6J-A/maxresdefault.jpg",
-        "fullUrl": "https://www.youtube.com/watch?v=EYBvsbB6J-A",
-        "subtitleUrl": "https://www.youtube.com/watch?v=EYBvsbB6J-A"
-      },
-      {
-        "title": "Medeco Biaxial Teardown",
-        "subtitle": "Lockpickers United",
-        "thumbnailUrl": "https://i3.ytimg.com/vi/EYBvsbB6J-A/maxresdefault.jpg",
-        "fullUrl": "https://www.youtube.com/watch?v=EYBvsbB6J-A",
-        "subtitleUrl": "https://www.youtube.com/watch?v=EYBvsbB6J-A"
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
       }
     ],
     "views": 64,
-    "lastUpdated": "2023-04-10T12:07:11.040Z"
+    "lastUpdated": "2023-04-13T09:34:46.713Z"
   },
   {
     "id": "848940e5",
@@ -15534,10 +15546,14 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Medeco_Duracam"
+      },
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
       }
     ],
     "views": 38,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-13T09:34:46.713Z"
   },
   {
     "id": "540a14c0",
@@ -15923,10 +15939,14 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/Schlage_Primus"
+      },
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/primus/"
       }
     ],
     "views": 79,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-13T09:34:46.714Z"
   },
   {
     "id": "626da374",
@@ -19372,6 +19392,10 @@
         "url": "https://patentimages.storage.googleapis.com/9a/fa/54/f462544b51b361/US4393673.pdf"
       },
       {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/assa/"
+      },
+      {
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/ASSA/TWIN%206000_73.html"
       },
@@ -19385,7 +19409,7 @@
       }
     ],
     "views": 113,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-13T09:34:46.716Z"
   },
   {
     "id": "fb51b475",
@@ -19680,6 +19704,10 @@
         "url": "https://patentimages.storage.googleapis.com/9a/fa/54/f462544b51b361/US4393673.pdf"
       },
       {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/assa/"
+      },
+      {
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/ASSA/TWIN%206000_73.html"
       },
@@ -19693,7 +19721,7 @@
       }
     ],
     "views": 56,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-13T09:34:46.716Z"
   },
   {
     "id": "3f73d2ce",
@@ -24269,8 +24297,14 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756060839/in/album-72177720306280609/"
       }
     ],
+    "links": [
+      {
+        "title": "AssaHatLabs",
+        "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
+      }
+    ],
     "views": 14,
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "lastUpdated": "2023-04-13T09:34:46.721Z"
   },
   {
     "id": "0684a655",
