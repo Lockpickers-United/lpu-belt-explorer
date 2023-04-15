@@ -12810,7 +12810,7 @@
         "model": "Interactive"
       }
     ],
-    "version": "≥ 4 spooled drivers, < 3 countermilled outer keypins",
+    "version": "5 pin stacks, 4+ spooled drivers, <3 countermilled outer keypins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -12859,7 +12859,7 @@
       }
     ],
     "views": 104,
-    "lastUpdated": "2023-03-23T03:24:22.390Z"
+    "lastUpdated": "2023-04-15T11:48:07.161Z"
   },
   {
     "id": "16906a6c",
@@ -15687,7 +15687,7 @@
         "model": "Interactive"
       }
     ],
-    "version": "Serrated drivers",
+    "version": "5 pin stacks, Serrated drivers",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -15723,7 +15723,7 @@
       }
     ],
     "views": 65,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-15T11:48:07.163Z"
   },
   {
     "id": "0ae75ea0",
@@ -15738,7 +15738,7 @@
         "model": "Interactive"
       }
     ],
-    "version": "Spooled inner drivers with > 3 counter milled outer keypins",
+    "version": "5 pin stacks, spooled inner drivers with 3+ counter milled outer keypins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -15810,7 +15810,7 @@
       }
     ],
     "views": 55,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-15T11:48:07.163Z"
   },
   {
     "id": "cc5bbb68",
