@@ -456,7 +456,7 @@ Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
 Purple,Mottura,"Champions C38",**,"Dimple,Magnet","Magnetic pins","** **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
-Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","≥ 4 spooled drivers, < 3 countermilled outer keypins",Dimple,"Pin-in-pin,Undercut milling",,3335df97
+Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, 4+ spooled drivers, <3 countermilled outer keypins",Dimple,"Pin-in-pin,Undercut milling",,3335df97
 Purple,Mul-T-Lock,MT5,,Dimple,Pin-in-pin,,16906a6c
 Purple,Mul-T-Lock,"Omega Plus",,Dimple,Pin-in-pin,,8a65b956
 Purple,Nagasawa,"Kodai KCY-31","6 pin",Pin-tumbler,,,3efc97ad
@@ -539,8 +539,8 @@ Brown,Medeco,Duracam,**,"Dimple,Slider,Sidebar","Rotating gated keypins,False ga
 Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
 Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
-Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","Serrated drivers",Dimple,Pin-in-pin,,5c5701d7
-Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","Spooled inner drivers with > 3 counter milled outer keypins",Dimple,Pin-in-pin,,0ae75ea0
+Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, Serrated drivers",Dimple,Pin-in-pin,,5c5701d7
+Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, spooled inner drivers with 3+ counter milled outer keypins",Dimple,Pin-in-pin,,0ae75ea0
 Brown,Pollux,7,,Pump/push,,,cc5bbb68
 Brown,Robur,"2391 Safe Deposit Lock","<3 barrels or gins with matched milling","Sidepins,Pin-tumbler",,,94ee12b7
 Brown,"Schlage,Schlage","Primus,Everest Primus",,"Sidepins,Pin-tumbler",,,ea1afad0
