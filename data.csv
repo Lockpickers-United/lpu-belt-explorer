@@ -212,7 +212,7 @@ Green,Chateau,"C970 disk padlock",,Pin-tumbler,Unguttable,,20f3575c
 Green,Commando,"IC3 Tactical",,Pin-tumbler,Unguttable,,9d478029
 Green,Commando,Marine,,Pin-tumbler,Unguttable,,f7f31800
 Green,Commando,Peacemaker,,Pin-tumbler,Unguttable,,606275d8
-Green,"Corbin Russwin","Master Ring",**,,,"** Green if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",73a718cb
+Green,"Corbin Russwin","Master Ring",**,Pin-tumbler,,"** Green if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",73a718cb
 Green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 Green,Corona,cylinder,,Pin-tumbler,,,6c9a666e
 Green,Corona,M,,Pin-tumbler,,,6b472dc2
@@ -283,9 +283,9 @@ Green,Winkhaus,VS,6-pin,Pin-tumbler,,,de53cff7
 Green,Winkhaus,ZRV,,Pin-tumbler,,,a609fdb1
 Green,Winkhaus,ZRV6,,Pin-tumbler,,,bd9e85b5
 Green,Yale,210C/51,,Pin-tumbler,,,1105b55d
-Green,Yardeni,6,,,,,34532c45
+Green,Yardeni,6,,Dimple,,,34532c45
 Green,Zarker,J45/J45S,,"Disc detainer","Rear tension","Can be front tensioned and counterrotated",4f6bcdb7
-Blue,Any,"HQ High Security interactive clone","4 pins",,,,c1d09460
+Blue,Any,"HQ High Security interactive clone","4 pins",Dimple,,,c1d09460
 Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",c6529d9c
 Blue,ABUS,"Bravus 3000",,Dimple,,,ea0efaca
 Blue,ABUS,D10,,Dimple,,,f96de7cc
@@ -412,7 +412,7 @@ Purple,Chubb,Battleship,"6 lever",Lever,"Padlock,Pin key,Curtain,False gates",,1
 Purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
 Purple,Codkey,Locksys,"<15 pins",Dimple,,,8a0c4b07
 Purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b7
-Purple,"Corbin Russwin","Master Ring",***,,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
+Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,Dierre,"New Power",,Slider,,,a10711cc
 Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,acde7f0c
@@ -473,7 +473,7 @@ Purple,"TESA,TESA","T80,TX80",,Dimple,"Tapered drivers,Interactive element",,3f4
 Purple,TESA,TK100,,Dimple,"Tapered drivers,Interactive element",,9a9ae8df
 Purple,Titan,T250,,,,,e7f6d089
 Purple,Tubar,Tubar,,"Other,Sidebar","Active sidebar",,8d4632d9
-Purple,"US Star Tech","""Hi Security""",,,,,b35bf986
+Purple,"US Star Tech","""Hi Security""",,Dimple,,,b35bf986
 Purple,Vachette,Axi'Home,,,,,416946bc
 Purple,"Walsall Locks",Ace,"7 lever safe",Lever,"Safe,False gates",,37914cb6
 Purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet,Flat steel key,Curtain,False gates,Destructive gut",,5958a65b
@@ -759,8 +759,8 @@ Unranked,Mindy,"Pagoda AF 16-50","flat key",,,,06a28ac7
 Unranked,,"Ming Gao",,,,,c511cc75
 Unranked,Miwa,SR,,,,,31cd85d7
 Unranked,Mul-T-Lock,"Classic Pro",,Dimple,,,fd2b533e
-Unranked,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, spooled drivers",,,,aec0c82d
-Unranked,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, serrated drivers",,,,48323cde
+Unranked,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, spooled drivers",Dimple,Pin-in-pin,,aec0c82d
+Unranked,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, serrated drivers",Dimple,Pin-in-pin,,48323cde
 Unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 Unranked,Nagasawa,kcy-7x,"12 pin",,,,1ee9600e
 Unranked,Opnus,TZ,"3 rows",,,"Similar to UX but 3 rows of pins",f8aaa0ef
