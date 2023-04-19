@@ -84,10 +84,10 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 
 - [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
+- [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
 - [Any China Padlock (granite look)](https://lpubelts.com/?id=3ac43ea8)
 - [Any Cutaway Lock](https://lpubelts.com/?id=901b35b2)
 - [Any Lever Generic/Unknown Cabinet lock](https://lpubelts.com/?id=5dc117cd) (1 or 2 levers)
-- [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
 - [ABUS 45](https://lpubelts.com/?id=5ff7457c) (laminated padlock)
 - [Brinks R80 disk lock](https://lpubelts.com/?id=a8c9aa08)
 - [Master Lock #1](https://lpubelts.com/?id=5a91e6a5)
@@ -204,7 +204,7 @@ Photographs will also be accepted for locks that cannot be disassembled.
 1.  Pick one of the locks ranked as orange belt or similar
 
 
-- [ABUS 45/50](https://lpubelts.com/?id=67b285d9) (brass)
+- [ABUS 45/50](https://lpubelts.com/?id=67b285d9) (brass body)
 - [ABUS 54TI/50 Titalium](https://lpubelts.com/?id=16e9d2ab)
 - [ABUS 55/40](https://lpubelts.com/?id=632f4069) (40mm or larger)
 - [ABUS 60/50](https://lpubelts.com/?id=d7188e81)
@@ -231,7 +231,7 @@ Photographs will also be accepted for locks that cannot be disassembled.
 - [CFG](https://lpubelts.com/?id=6758c30e)
 - [Cocraft 6-Pin Padlock](https://lpubelts.com/?id=3b3e78b0) (Non guttable version)
 - [Corbin Arco Cromato](https://lpubelts.com/?id=99057c44)
-- [DOM 333 RNT (standard cylinder)](https://lpubelts.com/?id=eaba4dd9)
+- [DOM 333 RNT](https://lpubelts.com/?id=eaba4dd9) (standard cylinder)
 - [Eclipse](https://lpubelts.com/?id=677afce6) (British Standard - 5 lever)
 - [Eurospec (E*S)](https://lpubelts.com/?id=26315d0f) (British Standard - 5 lever)
 - [F3](https://lpubelts.com/?id=d98f267e)

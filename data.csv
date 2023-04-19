@@ -1,8 +1,8 @@
 White,Any,"Acrylic Padlock",,,,,07034c0f
+White,Any,"lock with any tool",,,,,b22bdd44
 White,Any,"China Padlock (granite look)",,Pin-tumbler,Unguttable,,3ac43ea8
 White,Any,"Cutaway Lock",,,,,901b35b2
 White,Any,"Lever Generic/Unknown Cabinet lock","1 or 2 levers",Lever,,,5dc117cd
-White,Any,"lock with any tool",,,,,b22bdd44
 White,ABUS,45,"laminated padlock",Pin-tumbler,Unguttable,,5ff7457c
 White,Brinks,"R80 disk lock",,Pin-tumbler,Unguttable,,a8c9aa08
 White,"Master Lock",#1,,Pin-tumbler,Unguttable,,5a91e6a5
@@ -25,7 +25,7 @@ Yellow,ABUS,"EC75 75/30",,Dimple,Unguttable,,2484ce70
 Yellow,ABUS,MyLock,,Pin-tumbler,Unguttable,,423dbebe
 Yellow,ABUS,"Nautic T84MB","40mm or larger",Pin-tumbler,,,9d830052
 Yellow,ACE,laminated,"40mm padlock",Pin-tumbler,Unguttable,,abdf3acd
-Yellow,,ADW,,Pin-tumbler,Unguttable,,3a2ed5f3
+Yellow,ADW,ADW,,Pin-tumbler,Unguttable,,3a2ed5f3
 Yellow,"American Lock",A5200,"bump stop model: all standards + 1 anti-bump pin",Pin-tumbler,Guttable,,a0d1bf97
 Yellow,,ARFE,,Pin-tumbler,Unguttable,,a1581afe
 Yellow,,Befa,,Pin-tumbler,,,32244161
@@ -91,7 +91,7 @@ Yellow,,Südmetall,,,,,4ec9a150
 Yellow,,Tara,,,,,ff837451
 Yellow,TESA,TE-5,,Pin-tumbler,Tapered,,7d9d715d
 Yellow,,Wolfdog,,Pin-tumbler,Unguttable,,4b32e9dd
-Orange,ABUS,45/50,brass,Pin-tumbler,Unguttable,,67b285d9
+Orange,ABUS,45/50,"brass body",Pin-tumbler,Unguttable,,67b285d9
 Orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
 Orange,ABUS,55/40,"40mm or larger",Pin-tumbler,Unguttable,,632f4069
 Orange,ABUS,60/50,,Pin-tumbler,Unguttable,,d7188e81
@@ -118,7 +118,7 @@ Orange,CES,WZ,,Dimple,,,e89aa47e
 Orange,,CFG,,Pin-tumbler,,,6758c30e
 Orange,Cocraft,"6-Pin Padlock","Non guttable version",Pin-tumbler,Unguttable,,3b3e78b0
 Orange,Corbin,"Arco Cromato",,Pin-tumbler,Unguttable,,99057c44
-Orange,DOM,"333 RNT (standard cylinder)",,Pin-tumbler,,,eaba4dd9
+Orange,DOM,"333 RNT","standard cylinder",Pin-tumbler,,,eaba4dd9
 Orange,,Eclipse,"British Standard - 5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,677afce6
 Orange,,"Eurospec (E*S)","British Standard - 5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,26315d0f
 Orange,,F3,,Pin-tumbler,,,d98f267e
