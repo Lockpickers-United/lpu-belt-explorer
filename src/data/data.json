@@ -4106,10 +4106,28 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52759354437_fb5dbd21af_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52759354437/in/album-72177720306874193/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52832094274_0d62c5e2d8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52832094274/in/album-72177720306874193/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52831915826_acd59458fe_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52831915826/in/album-72177720306874193/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52831916101_c1a5a45a39_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52831916101/in/album-72177720306874193/"
       }
     ],
     "views": 77,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-20T13:01:31.579Z"
   },
   {
     "id": "e1625c4d",
@@ -4389,8 +4407,14 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "links": [
+      {
+        "title": "(Un)locked by decoder",
+        "url": "http://unlocked.own-hero.net/2014/01/19/a-look-at-the-abus-ec700800/"
+      }
+    ],
     "views": 50,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-20T13:01:31.580Z"
   },
   {
     "id": "8606220a",
@@ -7744,8 +7768,14 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "links": [
+      {
+        "title": "(Un)locked by decoder",
+        "url": "http://unlocked.own-hero.net/2014/01/19/a-look-at-the-abus-ec700800/"
+      }
+    ],
     "views": 73,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-04-20T13:01:31.583Z"
   },
   {
     "id": "fe84cc3c",
@@ -9165,26 +9195,26 @@
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
       {
-        "title": "By: unknown",
+        "title": "By: JayDee",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52830214536_05f20448e8_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52830214536/in/album-72177720307642868/"
       },
       {
-        "title": "By: unknown",
+        "title": "By: JayDee",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52830661773_bb1f1d0e81_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52830661773/in/album-72177720307642868/"
       },
       {
-        "title": "By: unknown",
+        "title": "By: JayDee",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52830616345_cc7b16faf9_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52830616345/in/album-72177720307642868/"
       }
     ],
     "views": 22,
-    "lastUpdated": "2023-04-20T12:33:38.703Z"
+    "lastUpdated": "2023-04-20T13:01:31.584Z"
   },
   {
     "id": "948f9068",
@@ -16813,10 +16843,14 @@
       {
         "title": "LockWiki",
         "url": "http://lockwiki.com/index.php/ABUS_EC700"
+      },
+      {
+        "title": "(Un)locked by decoder",
+        "url": "http://unlocked.own-hero.net/2014/01/19/a-look-at-the-abus-ec700800/"
       }
     ],
     "views": 88,
-    "lastUpdated": "2023-03-23T03:24:22.393Z"
+    "lastUpdated": "2023-04-20T13:01:31.589Z"
   },
   {
     "id": "b8350901",
