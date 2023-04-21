@@ -17228,8 +17228,30 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/107/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/107/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/BKS/BKS%20JANUS_107.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/107/tn_2.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/107/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/BKS/BKS%20JANUS_107.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/BKS/BKS%20JANUS_107.html"
+      }
+    ],
     "views": 31,
-    "lastUpdated": "2023-03-23T03:24:22.393Z"
+    "lastUpdated": "2023-04-21T13:43:41.548Z"
   },
   {
     "id": "ab1cdc56",
@@ -20581,8 +20603,30 @@
     "features": [
       "High pin count"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/107/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/107/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/BKS/BKS%20JANUS_107.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/107/tn_2.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/107/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/BKS/BKS%20JANUS_107.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/BKS/BKS%20JANUS_107.html"
+      }
+    ],
     "views": 85,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-21T13:43:41.551Z"
   },
   {
     "id": "78336fc0",
@@ -24382,8 +24426,11 @@
       }
     ],
     "version": "7 lever with anti-pick",
+    "lockingMechanisms": [
+      "Lever"
+    ],
     "views": 4,
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "lastUpdated": "2023-04-21T13:43:41.555Z"
   },
   {
     "id": "a832e82d",
