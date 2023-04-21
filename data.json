@@ -4534,8 +4534,30 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/311/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/311/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20STANDARD_311.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/311/tn_2.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/311/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20STANDARD_311.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20STANDARD_311.html"
+      }
+    ],
     "views": 33,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-21T14:26:58.577Z"
   },
   {
     "id": "bc6837f8",
@@ -4725,8 +4747,23 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/298/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/298/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20XP%2010_298.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%2010_298.html"
+      }
+    ],
     "views": 25,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-21T14:26:58.578Z"
   },
   {
     "id": "3af47daf",
@@ -7985,8 +8022,23 @@
       "Serrated/threaded milling",
       "Guttable"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/71/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/71/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ASSA/ASSA%20500_71.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ASSA/ASSA%20500_71.html"
+      }
+    ],
     "views": 79,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-04-21T14:26:58.581Z"
   },
   {
     "id": "d08aa492",
@@ -10757,8 +10809,30 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/55/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/55/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/55/tn_2.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/55/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html"
+      }
+    ],
     "views": 78,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-04-21T14:26:58.584Z"
   },
   {
     "id": "dd1dd313",
@@ -10772,8 +10846,30 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/53/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/53/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/53/tn_2.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/53/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
+      }
+    ],
     "views": 101,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-04-21T14:26:58.585Z"
   },
   {
     "id": "da8331ef",
@@ -16737,8 +16833,23 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/207/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/207/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/WINKHAUS/WINKHAUS%20X-TRA_207.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/WINKHAUS/WINKHAUS%20X-TRA_207.html"
+      }
+    ],
     "views": 9,
-    "lastUpdated": "2023-03-23T03:24:22.393Z"
+    "lastUpdated": "2023-04-21T14:26:58.591Z"
   },
   {
     "id": "87eaa964",
@@ -19407,8 +19518,23 @@
     "features": [
       "High pin count"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/207/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/207/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/WINKHAUS/WINKHAUS%20X-TRA_207.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/WINKHAUS/WINKHAUS%20X-TRA_207.html"
+      }
+    ],
     "views": 18,
-    "lastUpdated": "2023-03-23T03:24:22.393Z"
+    "lastUpdated": "2023-04-21T14:26:58.593Z"
   },
   {
     "id": "6708838f",
@@ -23835,8 +23961,23 @@
     "features": [
       "High pin count"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/207/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/207/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/WINKHAUS/WINKHAUS%20X-TRA_207.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/WINKHAUS/WINKHAUS%20X-TRA_207.html"
+      }
+    ],
     "views": 81,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-21T14:26:58.597Z"
   },
   {
     "id": "a8e79394",
