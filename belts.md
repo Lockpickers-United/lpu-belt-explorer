@@ -455,7 +455,7 @@ your lock in the picking video. Please read more below for filming requirements.
 - [ABUS Bravus 3000](https://lpubelts.com/?id=ea0efaca)
 - [ABUS D10](https://lpubelts.com/?id=f96de7cc)
 - [ABUS E-series (E20-E90)](https://lpubelts.com/?id=5c0d870b)
-- [ABUS EC750 / EC850](https://lpubelts.com/?id=3515caae) (serrated pin version, not 700/800)
+- [ABUS EC750 / ABUS EC850](https://lpubelts.com/?id=3515caae) (serrated pin version, not 700/800)
 - [ABUS KV14 / ABUS KY14](https://lpubelts.com/?id=fe84cc3c)
 - [ABUS KW14](https://lpubelts.com/?id=4382d650)
 - [ABUS S6+](https://lpubelts.com/?id=f93c57fc)
