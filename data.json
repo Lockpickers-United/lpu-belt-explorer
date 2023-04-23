@@ -1512,8 +1512,23 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-548_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/548/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FAVOUR/FAVOUR_548.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FAVOUR/FAVOUR_548.html"
+      }
+    ],
     "views": 12,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-23T14:27:42.226Z"
   },
   {
     "id": "d93c1ed7",
@@ -1539,6 +1554,13 @@
     ],
     "media": [
       {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-544_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/544/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FF/FF_544.html"
+      },
+      {
         "title": "By: OpHiDiAn",
         "subtitle": "KoksaWiki",
         "thumbnailUrl": "https://wiki.koksa.org/images/5/5c/FF_Front.JPG",
@@ -1555,10 +1577,14 @@
       {
         "title": "KoksaWiki",
         "url": "https://wiki.koksa.org/FF"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FF/FF_544.html"
       }
     ],
     "views": 16,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-04-23T14:27:42.226Z"
   },
   {
     "id": "17ce6273",
@@ -3313,8 +3339,37 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-246_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/246/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/?action=list&firma=156"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-585_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/585/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/?action=list&firma=156"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-584_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/584/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/?action=list&firma=156"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/?action=list&firma=156"
+      }
+    ],
     "views": 9,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-23T14:27:42.227Z"
   },
   {
     "id": "d7c8eec1",
@@ -3327,8 +3382,23 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-940_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/940/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FUG/FUG_940.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FUG/FUG_940.html"
+      }
+    ],
     "views": 16,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-23T14:27:42.227Z"
   },
   {
     "id": "0756b9e9",
@@ -3341,8 +3411,44 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-935_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/935/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FXL/FXL_935.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-935_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/935/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FXL/FXL_935.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-935_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/935/4.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FXL/FXL_935.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-935_6_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/935/6.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FXL/FXL_935.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FXL/FXL_935.html"
+      }
+    ],
     "views": 8,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-04-23T14:27:42.228Z"
   },
   {
     "id": "5b5c6a9e",
@@ -6280,8 +6386,23 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-496_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/496/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ELCA/ELCA_496.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ELCA/ELCA_496.html"
+      }
+    ],
     "views": 3,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-23T14:27:42.231Z"
   },
   {
     "id": "9bf13231",
@@ -6406,8 +6527,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-177_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/177/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FAB/FAB%20200RS_177.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-177_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/177/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FAB/FAB%20200RS_177.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FAB/FAB%20200RS_177.html"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FAB/FAB%20200RS_177.html"
+      }
+    ],
     "views": 6,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-04-23T14:27:42.231Z"
   },
   {
     "id": "13b55a25",
@@ -9438,8 +9585,34 @@
     "features": [
       "Hellish keyway"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-338_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/338/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/EVVA/EVVA%20GPI_338.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-215_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/215/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/EVVA/EVVA%20GPI_215.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/EVVA/EVVA%20GPI_338.html"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/EVVA/EVVA%20GPI_215.html"
+      }
+    ],
     "views": 15,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-04-23T14:27:42.234Z"
   },
   {
     "id": "f938f2fe",
@@ -15752,8 +15925,44 @@
         "model": "USC3100"
       }
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-943_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/943/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FEDERAL/FEDERAL%20LOCK%20UCF_943.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-943_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/943/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FEDERAL/FEDERAL%20LOCK%20UCF_943.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-943_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/943/4.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FEDERAL/FEDERAL%20LOCK%20UCF_943.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-943_7_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/943/7.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FEDERAL/FEDERAL%20LOCK%20UCF_943.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FEDERAL/FEDERAL%20LOCK%20UCF_943.html"
+      }
+    ],
     "views": 25,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-23T14:27:42.240Z"
   },
   {
     "id": "58cbc037",
@@ -15858,8 +16067,44 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-909_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/909/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FTH/THIRARD%20COBRA%20M%2B_909.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-909_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/909/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FTH/THIRARD%20COBRA%20M%2B_909.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-909_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/909/4.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FTH/THIRARD%20COBRA%20M%2B_909.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-909_5_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/909/5.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FTH/THIRARD%20COBRA%20M%2B_909.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FTH/THIRARD%20COBRA%20M%2B_909.html"
+      }
+    ],
     "views": 10,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2023-04-23T14:27:42.241Z"
   },
   {
     "id": "7298a640",
@@ -18201,8 +18446,44 @@
     "features": [
       "Magnetic rotors"
     ],
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-692_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/692/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ELZETT/ELZETT%20M_692.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-692_3_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/692/3.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ELZETT/ELZETT%20M_692.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-692_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/692/4.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ELZETT/ELZETT%20M_692.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-692_5_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/692/5.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ELZETT/ELZETT%20M_692.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ELZETT/ELZETT%20M_692.html"
+      }
+    ],
     "views": 13,
-    "lastUpdated": "2023-03-23T03:24:22.393Z"
+    "lastUpdated": "2023-04-23T14:27:42.243Z"
   },
   {
     "id": "265226b1",
@@ -24817,8 +25098,22 @@
       "Dimple"
     ],
     "notes": "2 spools, 2 \"barrels\", 1 special passive pin",
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52836154052_64ac033363_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52836154052/in/album-72177720307691035/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52837177473_91b60a38df_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52837177473/in/album-72177720307691035/"
+      }
+    ],
     "views": 11,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-23T14:27:42.250Z"
   },
   {
     "id": "c9d6d06d",
@@ -25173,7 +25468,34 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52836913764_896d8d9968_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52836913764/in/album-72177720307691867/"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-189_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/189/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/EZCURRA/EZCURRA%20%20DS%2015_189.html"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52836153972_14f520a504_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52836153972/in/album-72177720307691867/"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/EZCURRA/EZCURRA%20%20DS%2015_189.html"
+      }
+    ],
+    "lastUpdated": "2023-04-23T14:27:42.251Z"
   },
   {
     "id": "b5e210ec",
@@ -25187,7 +25509,39 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52836913709_c7414b317b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52836913709/in/album-72177720307703554/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52837177218_bcb779a5db_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52837177218/in/album-72177720307703554/"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52837177223_4a94cd7690_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52837177223/in/album-72177720307703554/"
+      },
+      {
+        "title": "By: Least",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52837177313_fc03ceeac8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52837177313/in/album-72177720307703554/"
+      },
+      {
+        "title": "By: Least",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52837133025_fff9c7e787_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52837133025/in/album-72177720307703554/"
+      }
+    ],
+    "lastUpdated": "2023-04-23T14:27:42.251Z"
   },
   {
     "id": "10ab07eb",
@@ -25266,7 +25620,29 @@
         "model": "Pacific"
       }
     ],
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "media": [
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1036_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1036/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FTH/FTH%20PACIFIC_1036.html"
+      },
+      {
+        "title": "By: Cech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1036_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1036/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/FTH/FTH%20PACIFIC_1036.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/FTH/FTH%20PACIFIC_1036.html"
+      }
+    ],
+    "lastUpdated": "2023-04-23T14:27:42.252Z"
   },
   {
     "id": "b379e483",
