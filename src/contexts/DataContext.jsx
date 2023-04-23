@@ -4,6 +4,7 @@ import FilterContext from './FilterContext'
 import StorageContext from './StorageContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
+import removeAccents from 'remove-accents'
 
 const DataContext = React.createContext({})
 
@@ -26,7 +27,7 @@ export function DataProvider({children}) {
             .map(entry => ({
                 ...entry,
                 makes: entry.makeModels.map(({make}) => make),
-                fuzzy: entry.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(','),
+                fuzzy: removeAccents(entry.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')),
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
@@ -62,7 +63,7 @@ export function DataProvider({children}) {
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(search, filtered, {keys: fuzzySortKeys})
+            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
