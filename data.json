@@ -10078,8 +10078,28 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Red Wanderer",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://img.lpubelts.com/i/lw/Goal_S_Face_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Goal_S_Face.jpeg"
+      },
+      {
+        "title": "By: Red Wanderer",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://img.lpubelts.com/i/lw/Goal_S_Key_tn.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Goal_S_Key.jpeg"
+      }
+    ],
+    "links": [
+      {
+        "title": "LockWiki",
+        "url": "https://www.lockwiki.com/index.php/GOAL_S"
+      }
+    ],
     "views": 26,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-04-25T15:29:23.712Z"
   },
   {
     "id": "62bdbd5e",
