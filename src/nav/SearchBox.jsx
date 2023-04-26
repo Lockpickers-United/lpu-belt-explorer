@@ -84,6 +84,7 @@ function SearchBox() {
             value={text}
             style={style}
             fullWidth
+            inputRef={input => input && input.focus()}
         />
     )
 }
