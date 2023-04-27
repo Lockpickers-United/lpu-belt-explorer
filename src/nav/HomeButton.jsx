@@ -7,13 +7,14 @@ import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function HomeButton() {
-    const {setTab} = useContext(AppContext)
+    const {setTab, setExpanded} = useContext(AppContext)
     const {clearFilters} = useContext(FilterContext)
     const handleClick = useCallback(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
         setTab('White')
+        setExpanded(undefined)
         setTimeout(() => clearFilters(true), 150)
-    }, [clearFilters, setTab])
+    }, [clearFilters, setTab, setExpanded])
     useHotkeys('h', handleClick)
 
     return (
