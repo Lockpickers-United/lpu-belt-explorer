@@ -101,6 +101,8 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Timpson Special Brass Padlock](https://lpubelts.com/?id=36d4123c)
 - [Tri-Nine Padlock](https://lpubelts.com/?id=2201a1b1)
 
+
+
 ### Yellow Belt
 ![](%%yellow%%)
 
@@ -190,6 +192,8 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [TESA TE-5](https://lpubelts.com/?id=7d9d715d)
 - [Wolfdog](https://lpubelts.com/?id=4b32e9dd)
 
+
+
 ### Orange Belt
 ![](%%orange%%)
 
@@ -272,6 +276,8 @@ Photographs will also be accepted for locks that cannot be disassembled.
 - [Yale 5 lever sashlock](https://lpubelts.com/?id=fb3daa70) (5 Lever)
 - [Yale Mortise](https://lpubelts.com/?id=db1040e5)
 - [Yale Y110/40](https://lpubelts.com/?id=98a2ba2d)
+
+
 
 ### Green Belt
 ![](%%green%%)
@@ -426,6 +432,9 @@ process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvh
 - [Yardeni 6](https://lpubelts.com/?id=34532c45)
 - [Zarker J45/J45S](https://lpubelts.com/?id=4f6bcdb7)
 
+** Green if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).
+*** Must be picked with the bible oriented down.
+
 ### Blue Belt
 ![](%%blue%%)
 
@@ -550,6 +559,8 @@ your lock in the picking video. Please read more below for filming requirements.
 - [Yale 500 series](https://lpubelts.com/?id=779e7dcb)
 - [Yale Superior / Milencio Magnum](https://lpubelts.com/?id=30a4fef5) (&lt;7 pins)
 
+** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).
+
 ### Purple Belt
 ![](%%purple%%)
 
@@ -669,6 +680,13 @@ the picking video. Please read more below for more filming requirements.
 - [Yale 5000](https://lpubelts.com/?id=1be10736)
 - [Yale Superior / Milencio Magnum](https://lpubelts.com/?id=ebe9ee59) (7 or 9 pins)
 
+** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers
+*** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).
+**** Requires 360 for belting.
+***** Exempt from rule regarding maximum number of master wafers.
+****** Must be raked prior to picking to reset pin combination.
+******* Must be picked with bible oriented down
+
 ### Brown Belt
 ![](%%brown%%)
 
@@ -762,6 +780,9 @@ You must video picking and gutting accomplishments in one continuous take.
 - [WEST 916 / WEST 955](https://lpubelts.com/?id=18e1f45b)
 - [Winkhaus X-Tra](https://lpubelts.com/?id=9d865bcd) (&lt;9 pins)
 
+** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)
+*** Must be raked prior to picking to reset pin combination.
+
 ### Red Belt
 ![](%%red%%)
 
@@ -844,6 +865,8 @@ You must video picking and gutting accomplishments in one continuous take.
 - [Vachette Radial NT / Vachette Radial NT+](https://lpubelts.com/?id=4db59eb3) (&ge;13 pins)
 - [Winkhaus X-Tra](https://lpubelts.com/?id=131732a0) (9-13 pins)
 - [Xylock](https://lpubelts.com/?id=6708838f)
+
+** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.
 
 ### Black Belt
 ![](%%black%%)
@@ -978,6 +1001,8 @@ Examples of "Master's Projects":
 - [Winkhaus X-Tra](https://lpubelts.com/?id=d1a5cd90) (&ge;13 pins)
 - [Yanai R 2200M](https://lpubelts.com/?id=a8e79394)
 - [Yuema 750 / Forte Enigma](https://lpubelts.com/?id=0b604114)
+
+** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.
 
 ---
 
