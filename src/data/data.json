@@ -11973,11 +11973,11 @@
         "model": "SFIC format lock (unless otherwise specified)"
       }
     ],
-    "version": "***",
+    "version": "**",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "*** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",
+    "notes": "** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",
     "media": [
       {
         "title": "SFIC Primer",
@@ -12042,7 +12042,7 @@
       }
     ],
     "views": 229,
-    "lastUpdated": "2023-04-07T16:11:35.186Z"
+    "lastUpdated": "2023-04-28T19:42:45.741Z"
   },
   {
     "id": "96fd610e",
@@ -13678,13 +13678,13 @@
         "model": "Perfecta"
       }
     ],
-    "version": "***",
+    "version": "****",
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "notes": "*** **Special Picking Requirement:** requires 360 for belting",
+    "notes": "**** **Special Picking Requirement:** requires 360 for belting",
     "views": 25,
-    "lastUpdated": "2023-04-10T21:09:16.782Z"
+    "lastUpdated": "2023-04-28T19:42:45.743Z"
   },
   {
     "id": "30aa78ef",
@@ -14261,12 +14261,12 @@
         "model": "MT5"
       }
     ],
-    "version": "VPI, heavily mastered ***",
+    "version": "VPI, heavily mastered *****",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
     ],
-    "notes": "*** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",
+    "notes": "***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",
     "media": [
       {
         "title": "By: Alpama",
@@ -14282,7 +14282,7 @@
       }
     ],
     "views": 56,
-    "lastUpdated": "2023-03-23T03:24:22.390Z"
+    "lastUpdated": "2023-04-28T19:42:45.743Z"
   },
   {
     "id": "71833308",
@@ -14533,7 +14533,7 @@
         "model": "Original Camlock"
       }
     ],
-    "version": "5+ pins **",
+    "version": "5+ pins ******",
     "lockingMechanisms": [
       "Slider",
       "Sidebar"
@@ -14543,7 +14543,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "notes": "****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Guid",
@@ -14565,7 +14565,7 @@
       }
     ],
     "views": 68,
-    "lastUpdated": "2023-04-13T09:34:46.710Z"
+    "lastUpdated": "2023-04-28T19:42:45.744Z"
   },
   {
     "id": "826c31e0",
@@ -14584,7 +14584,7 @@
         "model": "M3"
       }
     ],
-    "version": "5+ pins **",
+    "version": "5+ pins ******",
     "lockingMechanisms": [
       "Sidebar",
       "Pin-tumbler"
@@ -14594,7 +14594,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "notes": "****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -14678,7 +14678,7 @@
       }
     ],
     "views": 125,
-    "lastUpdated": "2023-04-13T09:34:46.710Z"
+    "lastUpdated": "2023-04-28T19:42:45.744Z"
   },
   {
     "id": "58f2eac0",
@@ -14726,7 +14726,7 @@
         "model": "Champions C38"
       }
     ],
-    "version": "**",
+    "version": "*******",
     "lockingMechanisms": [
       "Dimple",
       "Magnet"
@@ -14734,9 +14734,9 @@
     "features": [
       "Magnetic pins"
     ],
-    "notes": "** **Special Picking Requirement:** Must be picked with bible oriented down",
+    "notes": "******* **Special Picking Requirement:** Must be picked with bible oriented down",
     "views": 28,
-    "lastUpdated": "2023-03-23T03:24:22.390Z"
+    "lastUpdated": "2023-04-28T19:42:45.744Z"
   },
   {
     "id": "8c76cc79",
@@ -15493,11 +15493,11 @@
         "model": "SFIC with security pins"
       }
     ],
-    "version": "****",
+    "version": "**",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "**** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",
+    "notes": "** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",
     "media": [
       {
         "title": "SFIC Primer",
@@ -15562,7 +15562,7 @@
       }
     ],
     "views": 229,
-    "lastUpdated": "2023-04-07T16:11:35.189Z"
+    "lastUpdated": "2023-04-28T19:42:45.745Z"
   },
   {
     "id": "da09d849",
@@ -17703,7 +17703,7 @@
         "model": "M3 Camlock"
       }
     ],
-    "version": "**",
+    "version": "***",
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
@@ -17713,7 +17713,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Peaceweapon",
@@ -17742,7 +17742,7 @@
       }
     ],
     "views": 100,
-    "lastUpdated": "2023-04-13T09:34:46.713Z"
+    "lastUpdated": "2023-04-28T19:42:45.746Z"
   },
   {
     "id": "848940e5",
@@ -17753,7 +17753,7 @@
         "model": "Duracam"
       }
     ],
-    "version": "**",
+    "version": "***",
     "lockingMechanisms": [
       "Dimple",
       "Slider",
@@ -17764,7 +17764,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "media": [
       {
         "title": "By: Datagram",
@@ -17784,7 +17784,7 @@
       }
     ],
     "views": 63,
-    "lastUpdated": "2023-04-13T09:34:46.713Z"
+    "lastUpdated": "2023-04-28T19:42:45.747Z"
   },
   {
     "id": "540a14c0",
@@ -20104,7 +20104,7 @@
       {
         "title": "By: Mugatu",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571100_8a57de1b24_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52695571100_468eef66f1_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52695571100/in/album-72177720306090062/"
       },
       {
@@ -20127,7 +20127,7 @@
       }
     ],
     "views": 28,
-    "lastUpdated": "2023-03-23T03:24:22.393Z"
+    "lastUpdated": "2023-04-28T19:42:45.749Z"
   },
   {
     "id": "434bdf9d",
@@ -20202,7 +20202,7 @@
       {
         "title": "By: Yabende",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52734183488_a825e05605_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52801128479_01556d19be_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801128479/in/album-72177720306544581/"
       },
       {
@@ -20237,7 +20237,7 @@
       }
     ],
     "views": 37,
-    "lastUpdated": "2023-04-28T14:56:47.836Z"
+    "lastUpdated": "2023-04-28T19:42:45.749Z"
   },
   {
     "id": "c8e86f14",
@@ -22466,7 +22466,6 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "notes": "l",
     "media": [
       {
         "title": "By: DoNotDuplicate",
@@ -22482,7 +22481,7 @@
       }
     ],
     "views": 67,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-28T19:42:45.750Z"
   },
   {
     "id": "f09ce6b3",
@@ -22541,30 +22540,12 @@
     "lastUpdated": "2023-03-23T03:24:22.395Z"
   },
   {
-    "id": "362d0dee",
-    "belt": "Black 4",
-    "makeModels": [
-      {
-        "make": "Chubb",
-        "model": "6K174 isolator"
-      }
-    ],
-    "lockingMechanisms": [
-      "Lever"
-    ],
-    "features": [
-      "Safe"
-    ],
-    "views": 86,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
-  },
-  {
     "id": "72215ba4",
     "belt": "Black 1",
     "makeModels": [
       {
         "make": "Chubb",
-        "model": "‘Definitive’"
+        "model": "\"Definitive\""
       }
     ],
     "version": "Standard mortise",
@@ -22577,7 +22558,7 @@
     ],
     "notes": "5 lever",
     "views": 82,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-04-28T19:42:45.751Z"
   },
   {
     "id": "2db935ea",
@@ -22585,7 +22566,7 @@
     "makeModels": [
       {
         "make": "Chubb",
-        "model": "‘Definitive’"
+        "model": "\"Definitive\""
       }
     ],
     "version": "jewellery box (Steel comb leaf spring)",
@@ -22630,6 +22611,24 @@
       }
     ],
     "views": 106,
+    "lastUpdated": "2023-04-28T19:42:45.751Z"
+  },
+  {
+    "id": "362d0dee",
+    "belt": "Black 4",
+    "makeModels": [
+      {
+        "make": "Chubb",
+        "model": "6K174 isolator"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe"
+    ],
+    "views": 86,
     "lastUpdated": "2023-03-23T03:24:22.395Z"
   },
   {
@@ -24507,7 +24506,7 @@
       {
         "title": "By: Yabende",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52734183488_a825e05605_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52801128479_01556d19be_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801128479/in/album-72177720306544581/"
       },
       {
@@ -24542,7 +24541,7 @@
       }
     ],
     "views": 60,
-    "lastUpdated": "2023-04-28T14:56:47.839Z"
+    "lastUpdated": "2023-04-28T19:42:45.752Z"
   },
   {
     "id": "10968d37",
