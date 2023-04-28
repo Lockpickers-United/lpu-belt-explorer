@@ -14,8 +14,15 @@ const groupedByBelt = rawData.reduce((acc, val) => {
 }, initialVal)
 
 const beltsMd = uniqueBelts.map(belt => {
-    const header = `### ${belt} Belt\n![](%%${belt.toLowerCase()}%%)\n\n`
-    const reqs = fs.readFileSync(`./src/resources/${belt.toLowerCase()}.md`, 'utf8')
+    const actualBelt = belt.toLowerCase()
+    const header = `### ${belt} Belt\n![](%%${actualBelt}%%)\n\n`
+    const reqsPath = `./src/resources/beltRequirements/${actualBelt}.md`
+    const reqs = fs.readFileSync(reqsPath, 'utf8')
+    const specialReqsPath = `./src/resources/specialRequirements/${actualBelt}.md`
+    const specialReqs = fs.existsSync(specialReqsPath)
+        ? fs.readFileSync(specialReqsPath, 'utf8')
+        : ''
+
     const entries = groupedByBelt[belt].map(entry => {
         const makeModels = entry.makeModels.map(({make, model}) => {
             return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)
@@ -24,7 +31,7 @@ const beltsMd = uniqueBelts.map(belt => {
         const version = encodeNonAsciiHTML(entry.version ? ` (${entry.version})` : '')
         return `- [${makeModels}](${url})${version}`
     }).join('\n')
-    return header + reqs + '\n\n' + entries
+    return header + reqs + '\n\n' + entries + '\n\n' + specialReqs
 }).join('\n\n')
 
 const beltExplorerPromoMd = fs.readFileSync('./src/resources/beltExplorerPromo.md', 'utf8')
