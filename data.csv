@@ -385,7 +385,7 @@ Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,"500 series",,Pin-tumbler,Overmilling,,779e7dcb
 Blue,"Yale,Milencio","Superior,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"Lever Unknown/Generic lock","6 or 7 lever",Lever,,,a6a225e5
-Purple,Any,"SFIC format lock (unless otherwise specified)",***,Pin-tumbler,,"*** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
+Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
 Purple,ABA,109582,,Dimple,,,96fd610e
 Purple,ABUS,"Bravus 4000",,Dimple,,,a062f1ee
 Purple,ABUS,EP10,,Dimple,,,20adf729
@@ -429,7 +429,7 @@ Purple,IFAM,WX1000,,Dimple,Pin-in-pin,,3b848976
 Purple,IKON,"sk6 vectorprofil rib extra","5 sliders","Pin-tumbler,Slider","Sprung sliders,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",4ffe03a9
 Purple,Illinois,Duo,,Wafer,"Partial gut",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
-Purple,ISEO,Perfecta,***,Pump/push,,"*** **Special Picking Requirement:** requires 360 for belting",6eab0c38
+Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requires 360 for belting",6eab0c38
 Purple,ISEO,R7,,Dimple,,,30aa78ef
 Purple,,K5,,Dimple,,,479f1d73
 Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,"High pin count",,779d74f5
@@ -444,17 +444,17 @@ Purple,"LIPS,LIPS","Keso (door cylinder),Octro","<13 pins",Dimple,"High pin coun
 Purple,LIPS,"Keso padlock",,Dimple,,,434b5b25
 Purple,Liquidonics,"Miracle Magnetic",,"Magnet,Pin-tumbler","Magnetic rotors",,50d411f4
 Purple,Lockman,Megacross,"9-pins, mushroom drivers",Dimple,"High pin count",,9982c0eb
-Purple,Lockwood,MT5,"VPI, heavily mastered ***","Dimple,Slider",,"*** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",883fb3cd
+Purple,Lockwood,MT5,"VPI, heavily mastered *****","Dimple,Slider",,"***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",883fb3cd
 Purple,Lockwood,Twin,,"Pin-tumbler,Sidepins","Active sidebar,False gates",,71833308
 Purple,"M&C,M&C,M&C,Vachette,Vachette","Color,Color Pro,Color+,V-DIS,V-DIS+","≥4 sliders","Dimple,Slider","False gates,Active sidebar",,6efe5f67
 Purple,"M&C,M&C","Condor,Move",,"Dimple,Slider","Active sidebar,False gates",,be22f5f1
 Purple,M&C,Matrix,,"Slider,Pin-tumbler","False gates,Active sidebar",,9aedb834
 Purple,Magnum,Atlantic,,,,,c9fc823c
-Purple,Medeco,"Original Camlock","5+ pins **","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",aeaa6a09
-Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","5+ pins **","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",826c31e0
+Purple,Medeco,"Original Camlock","5+ pins ******","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",aeaa6a09
+Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","5+ pins ******","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",826c31e0
 Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
-Purple,Mottura,"Champions C38",**,"Dimple,Magnet","Magnetic pins","** **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
+Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
 Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, 4+ spooled drivers, <3 countermilled outer keypins",Dimple,"Pin-in-pin,Undercut milling",,3335df97
 Purple,Mul-T-Lock,MT5,,Dimple,Pin-in-pin,,16906a6c
@@ -479,7 +479,7 @@ Purple,"Walsall Locks",Ace,"7 lever safe",Lever,"Safe,False gates",,37914cb6
 Purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet,Flat steel key,Curtain,False gates,Destructive gut",,5958a65b
 Purple,Yale,5000,,"Pin-tumbler,Slider",,,1be10736
 Purple,"Yale,Milencio","Superior,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
-Brown,Any,"SFIC with security pins",****,Pin-tumbler,,"**** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
+Brown,Any,"SFIC with security pins",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
 Brown,Abloy,Classic,,"Disc detainer","Rear tension,False gates","Old models can be front tensioned",da09d849
 Brown,ABUS,Plus,"no butterfly discs","Disc detainer","Random mid tension,False gates",,b8350900
 Brown,,Aegis,"18 pin, 3 rows all spools",Dimple,"High pin count",,19fce24d
@@ -534,8 +534,8 @@ Brown,Magnum,"Mont Blanc",,Wafer,,,236027a0
 Brown,"Mauer,Mauer,Mauer","NW4,NW5,NW6",,"Dimple,Slider","Unsprung sliders",,b8783269
 Brown,Mauer,President,"7 lever",Lever,"Safe,Pipe key,Double bitted",,b9b7ba7c
 Brown,Mauer,"Variator A","7 lever",Lever,"Safe,Pipe key,Double bitted",,620b6e5a
-Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock",**,"Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
-Brown,Medeco,Duracam,**,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
+Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock",***,"Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
+Brown,Medeco,Duracam,***,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
 Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
 Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
@@ -630,12 +630,12 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 1","Australian Lock Co.",Bilock,"12-pins, 1-2 mastered elements",Slider,"False gates,Sprung sliders,Active sidebar",,e3058619
 "Black 2","Australian Lock Co.",BiLock,"12-pins, 0 mastered elements",Slider,"False gates,Sprung sliders,Active sidebar",,ab1e901f
 "Black 2","Australian Lock Co.","BiLock ASIO","2nd/3rd gen",Slider,"False gates,Sprung sliders,Active sidebar",,12846cc6
-"Black 2","Australian Lock Co.","BiLock Exclusive","Picked to Control",Slider,"False gates,Sprung sliders,Active sidebar",l,6d2555aa
+"Black 2","Australian Lock Co.","BiLock Exclusive","Picked to Control",Slider,"False gates,Sprung sliders,Active sidebar",,6d2555aa
 "Black 1",BKS,Janus,"14 or more pins",Dimple,"High pin count",,f09ce6b3
 "Black 3",Bowley,"Door Lock",,Pin-tumbler,,,78336fc0
+"Black 1",Chubb,"""Definitive""","Standard mortise",Lever,"Mortise,False gates","5 lever",72215ba4
+"Black 4",Chubb,"""Definitive""","jewellery box (Steel comb leaf spring)",Lever,"Cabinet,Pin/pipe key,False gates",,2db935ea
 "Black 4",Chubb,"6K174 isolator",,Lever,Safe,,362d0dee
-"Black 1",Chubb,‘Definitive’,"Standard mortise",Lever,"Mortise,False gates","5 lever",72215ba4
-"Black 4",Chubb,‘Definitive’,"jewellery box (Steel comb leaf spring)",Lever,"Cabinet,Pin/pipe key,False gates",,2db935ea
 "Black 2",Clavis,F-22,,Dimple,,"upgrade of Clavis Q-18",234a8ca8
 "Black 1",Clavis,Q-18,,Dimple,"High pin count",,7ea33803
 "Black 2",Clavis,T-20,"20 pins",Dimple,"High pin count",,48cf387f
