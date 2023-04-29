@@ -692,7 +692,7 @@ the picking video. Please read more below for more filming requirements.
 
 ****** Must be raked prior to picking to reset pin combination.
 
-******* Must be picked with bible oriented down
+******* Must be picked with bible oriented down.
 
 
 ### Brown Belt
