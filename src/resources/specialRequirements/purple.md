@@ -8,4 +8,4 @@
 
 ****** Must be raked prior to picking to reset pin combination.
 
-******* Must be picked with bible oriented down
+******* Must be picked with bible oriented down.
