@@ -1,2 +1,3 @@
 ** Green if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).
+
 *** Must be picked with the bible oriented down.
