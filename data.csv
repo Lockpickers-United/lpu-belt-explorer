@@ -700,6 +700,7 @@ Unranked,Abloy,Easy,,"Disc detainer",,,12ff8c25
 Unranked,Abloy,Novel,,"Disc detainer",,,71ca74d0
 Unranked,Abloy,Sento,,"Disc detainer",,,cad3eff0
 Unranked,ABUS,"5/45 Silver Rock",,,,,0feafca7
+Unranked,ABUS,Maglok,,,,,2d1adbaf
 Unranked,ABUS,P1R,,,,,d005e7b8
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,,"2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
 Unranked,ABUS,X-Plus,,"Disc detainer",,,c9d6d06d
@@ -708,22 +709,28 @@ Unranked,Alpha,1000,"15mm up to 35mm (3pins)",,,,d000f733
 Unranked,Alpha,1000,"40mm up to 45mm (4pins / spools)",,,,82ea52a4
 Unranked,Alpha,1000,"50mm 60mm (5pins / spools)",,,,bac43ba7
 Unranked,Alpha,ED,"cam lock",,,"14 pins in 4 directions, standard and mushroom drivers",05298f91
+Unranked,"American Lock",1160,"1100 but with 6 pin stacks",,,,1ae40987
 Unranked,",","An Jia Bao,HPP",,,,,dbc1279d
 Unranked,,Angal,"5 serrated pin-in-pin",Dimple,,"mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Arrow,"ChoICe HS SFIC",,,,"6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
 Unranked,ASSA,500,"with Barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
 Unranked,ASSA,700,"with Gin drivers and matched sleeve",Pin-tumbler,,,ef4e0295
 Unranked,BASI,K6-RT,,,,6-pin,ee04714f
+Unranked,Baton,"6000 series","(non Abloy keyway)",,,,ae0d35bc
 Unranked,Bowley,Rotasera,,,,,e35772c9
+Unranked,Burgwächter,"Profi 116/25",,,,,c77a4ac8
 Unranked,Burgwächter,"Profi 116/30",,,,,35adb4d6
+Unranked,Burgwächter,"Profi 116/50","50mm or larger",,,,bbfd4108
 Unranked,Capitol,"magnetic cam lock",,,,,85591581
 Unranked,CAVEO,"TS007 Exterior",,"Dimple,Slider",,,0813d39e
 Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider",,,60964e9f
+Unranked,CAWI,7113/7123,,,,,c6a14e93
 Unranked,Chubb,6k202,"7 lever with anti-pick",Lever,,,267e47c4
-Unranked,Cisa,285,,,,,a832e82d
-Unranked,Cisa,810,,,,,22d70f2e
+Unranked,CISA,285,,,,,a832e82d
+Unranked,CISA,810,,,,,22d70f2e
 Unranked,Clavis,"10 pin","dual row, all spools",Dimple,,,0e5adf31
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,,,4d738de3
+Unranked,,Dény,"3 lever, Trap door",,,,204066fa
 Unranked,Emhart,"Cam Lock - 5 pin",,Pin-tumbler,,,bf43348b
 Unranked,Ezcurra,DS-15,,Dimple,,,abe6074c
 Unranked,FAB,Control,,Pin-tumbler,,,b5e210ec
@@ -735,6 +742,7 @@ Unranked,Gege,MRT,,Magnet,,,b379e483
 Unranked,Gera,3500,,,,,88085257
 Unranked,GLK,60G50,"60mm padlock",Pin-tumbler,,,1575614d
 Unranked,GLK,G10,,Dimple,,,63a898da
+Unranked,Godrej,Ultra,"14 pins in 3 rows",,,,3fbd7b3d
 Unranked,,GSK,"dual row sidebar lock",,,,6b220699
 Unranked,,"Helason ","16-pin round key",Dimple,,,93324d19
 Unranked,"Hong Dun","model undefined","security pinned dimple with sliders",,,,4c90dcbd
@@ -742,7 +750,10 @@ Unranked,Hori,Trident,"standard pins",Dimple,,,97e1ae9f
 Unranked,Hori,Trident,spools,Dimple,,,49b2c746
 Unranked,iNAHO,Tierkey,"3 row, short format",,,,9b94b1c0
 Unranked,ISEO,"F6 extra S3",,,,,895be796
-Unranked,Kaba,"Gemini T","≥13 pins",Dimple,,,a7d98df3
+Unranked,KABA,"Gemini T","≥13 pins",Dimple,,,a7d98df3
+Unranked,KABA,Matrix,"16 pins (fully pinned)",,,,7d5c53c4
+Unranked,"Kawaha,Magmaus","(any),(any)",,,,,ab9df828
+Unranked,Keso,1000,,,,,110c872d
 Unranked,Kromer,Novum,,,,,281aa393
 Unranked,"La Gard",2270,,,,,c65959a3
 Unranked,Lips,8300,,Pin-tumbler,,"similar to Nemef NF2, same drivers plus check pin in bottom",728d4aa0
@@ -769,7 +780,7 @@ Unranked,Opnus,ZX,,,,,3af6c54b
 Unranked,"Rav Bariach",Dynamic,"with sliders",,,,9637ddde
 Unranked,Rosengrens,RKL-10,,,,,5646568c
 Unranked,Ruko,"Combi 900",,Pin-tumbler,,,6dd5a34b
-Unranked,S&G,4440,,,,,347bd804
+Unranked,S&G,4544/4545,,,,,347bd804
 Unranked,S&G,6870,,Lever,,,894238be
 Unranked,Securemme,"Evo K64",,Dimple,,,4403a73f
 Unranked,SOL,2500,"10mm (2pins)",,,,97baf67b
@@ -782,6 +793,7 @@ Unranked,TESA,T-12,,Dimple,,"5 pins on main row similar to T60, 5 opposing pins,
 Unranked,Trelock,"SUPER Padlock",,,,,9a99a0a7
 Unranked,U-Shin,"Showa X Key",,Dimple,,,95a9b042
 Unranked,Vachette,Radial,"18 or more pins",Dimple,,,ab1e3974
+Unranked,Vachette,"Radial SI",,,,,708256e9
 Unranked,Voga,X18,,,,,90b4ade7
 Unranked,,War-Lok,,,,,fa9fb7e1
 Unranked,WEST,"YKK AP",,,,,1220174e
