@@ -26840,17 +26840,6 @@
     "lastUpdated": "2023-03-23T03:24:22.395Z"
   },
   {
-    "id": "2d1adbaf",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "Maglok"
-      }
-    ],
-    "lastUpdated": "2023-05-05T09:34:26.536Z"
-  },
-  {
     "id": "d005e7b8",
     "belt": "Unranked",
     "makeModels": [
@@ -27907,6 +27896,16 @@
     "notes": "similar to Nemef NF2, same drivers plus check pin in bottom",
     "views": 6,
     "lastUpdated": "2023-03-23T03:24:22.396Z"
+  },
+  {
+    "id": "2d1adbaf",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "model": "Maglok"
+      }
+    ],
+    "lastUpdated": "2023-05-05T11:22:23.774Z"
   },
   {
     "id": "380aeb89",

@@ -700,7 +700,6 @@ Unranked,Abloy,Easy,,"Disc detainer",,,12ff8c25
 Unranked,Abloy,Novel,,"Disc detainer",,,71ca74d0
 Unranked,Abloy,Sento,,"Disc detainer",,,cad3eff0
 Unranked,ABUS,"5/45 Silver Rock",,,,,0feafca7
-Unranked,ABUS,Maglok,,,,,2d1adbaf
 Unranked,ABUS,P1R,,,,,d005e7b8
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,,"2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
 Unranked,ABUS,X-Plus,,"Disc detainer",,,c9d6d06d
@@ -757,6 +756,7 @@ Unranked,Keso,1000,,,,,110c872d
 Unranked,Kromer,Novum,,,,,281aa393
 Unranked,"La Gard",2270,,,,,c65959a3
 Unranked,Lips,8300,,Pin-tumbler,,"similar to Nemef NF2, same drivers plus check pin in bottom",728d4aa0
+Unranked,,Maglok,,,,,2d1adbaf
 Unranked,Mailboss,"""12"" wafer mailbox camlock",,Wafer,,,380aeb89
 Unranked,Marks,"high security SFIC",,,,,f74e0e97
 Unranked,"Master Lock",#19,,Pin-tumbler,,,8f7f1830
