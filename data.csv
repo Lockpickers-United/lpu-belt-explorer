@@ -782,6 +782,7 @@ Unranked,Rosengrens,RKL-10,,,,,5646568c
 Unranked,Ruko,"Combi 900",,Pin-tumbler,,,6dd5a34b
 Unranked,S&G,4544/4545,,,,,347bd804
 Unranked,S&G,6870,,Lever,,,894238be
+Unranked,"Schlage,Keiden","Cor-Key,M40",,,,,a72739bc
 Unranked,Securemme,"Evo K64",,Dimple,,,4403a73f
 Unranked,SOL,2500,"10mm (2pins)",,,,97baf67b
 Unranked,SOL,2500,"15mm up to 35mm (3pins)",,,,0d0bf1a5
@@ -804,6 +805,7 @@ Unranked,Yale,1500,,,,"1 tapered spool and 5 tapered drivers , keypins tapered a
 Unranked,Yale,"2000 Plus",,"Dimple,Sidebar,Slider",,"dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
 Unranked,Yale,2100,,"Dimple,Sidebar,Slider",,"dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
 Unranked,Yale,Bicentric,,Pin-tumbler,,,e16080de
+Unranked,Yale,"KM 1 star Superior","spooled key pins with 6 gege style drivers",Pin-tumbler,,,c1e91978
 Unranked,Yardeni,10,,,,"9 pins, 2 spools more restricted keyway than XL model",0757b1ed
 Unranked,Yardeni,"Super XL",,,,"8 pin dimple with interactive element on the key",2b6dd267
 Unranked,Yardeni,XL,,,,"8 pin dimple with more restrictive keyway than 6 pin yardeni",a7ffa199
