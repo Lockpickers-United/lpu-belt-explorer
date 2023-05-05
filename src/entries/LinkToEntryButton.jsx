@@ -10,6 +10,9 @@ function LinkToEntryButton({entry}) {
     const name = makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
     const link = new URL(window.location.href)
     link.search = `id=${id}&name=${name}`
+    if (link.host.toLowerCase().startsWith('lpubelts')) {
+        link.host = `share.${link.host}`
+    }
 
     return (
         <Tooltip title='Link to Entry' arrow disableFocusListener>
