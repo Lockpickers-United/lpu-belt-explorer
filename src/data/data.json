@@ -28546,6 +28546,21 @@
     "lastUpdated": "2023-04-04T13:42:24.045Z"
   },
   {
+    "id": "a72739bc",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Schlage",
+        "model": "Cor-Key"
+      },
+      {
+        "make": "Keiden",
+        "model": "M40"
+      }
+    ],
+    "lastUpdated": "2023-05-05T09:46:30.617Z"
+  },
+  {
     "id": "4403a73f",
     "belt": "Unranked",
     "makeModels": [
@@ -28931,6 +28946,21 @@
     ],
     "views": 4,
     "lastUpdated": "2023-03-23T03:24:22.398Z"
+  },
+  {
+    "id": "c1e91978",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "KM 1 star Superior"
+      }
+    ],
+    "version": "spooled key pins with 6 gege style drivers",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2023-05-05T09:46:30.618Z"
   },
   {
     "id": "0757b1ed",
