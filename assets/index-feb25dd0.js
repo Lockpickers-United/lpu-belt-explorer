@@ -531,7 +531,7 @@ Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpickin
 **Clarification**
 
 * **Fichet F3D External Cylinder** is considered an upgrade of Fichet F3D Indoor Cylinder. 
-`,vk=we.forwardRef(function(t,n){return E(Zb,{direction:"up",ref:n,...t})});function zz({open:e,onClose:t}){const{width:n}=pa(),r=n<=500;return le(Mx,{open:e,onClose:t,TransitionComponent:vk,fullScreen:r,scroll:"body",children:[E(Us,{sx:{position:"relative"},children:le(Ri,{children:[E(tn,{edge:"start",color:"inherit",onClick:t,"aria-label":"close",children:E(Th,{})}),E(gt,{sx:{ml:2,flex:1},variant:"h6",component:"div",children:"Information"})]})}),E(Fx,{children:E(nc,{linkTarget:"_blank",style:{overflowX:"wrap"},children:Bz})})]})}const Bz=[Mz,Fz,_z].join(`
+`,vk=we.forwardRef(function(t,n){return E(Zb,{direction:"up",ref:n,...t})});function zz({open:e,onClose:t}){const{width:n}=pa(),r=n<=500;return le(Mx,{open:e,onClose:t,TransitionComponent:vk,fullScreen:r,children:[E(Us,{sx:{position:"relative"},children:le(Ri,{children:[E(tn,{edge:"start",color:"inherit",onClick:t,"aria-label":"close",children:E(Th,{})}),E(gt,{sx:{ml:2,flex:1},variant:"h6",component:"div",children:"Information"})]})}),E(Fx,{children:E(nc,{linkTarget:"_blank",style:{overflowX:"wrap"},children:Bz})})]})}const Bz=[Mz,Fz,_z].join(`
 
 ---
 
