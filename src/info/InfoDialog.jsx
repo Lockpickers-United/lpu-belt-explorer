@@ -23,7 +23,6 @@ function InfoDialog({open, onClose}) {
             onClose={onClose}
             TransitionComponent={Transition}
             fullScreen={isMobile}
-            scroll='body'
         >
             <AppBar sx={{position: 'relative'}}>
                 <Toolbar>
