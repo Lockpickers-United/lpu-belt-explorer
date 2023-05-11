@@ -82,7 +82,7 @@ Yellow,,Owa,,,,,2924aa76
 Yellow,,"Power Line",,,,,30b60f60
 Yellow,,Santos,,Pin-tumbler,,,8e2d57b1
 Yellow,Schlage,Mortise,,Pin-tumbler,,,40f7d7c7
-Yellow,"Smith and Locke,","Mortise,Non-British Standard","3 lever",Lever,"Mortise,Pin key",,d4299b24
+Yellow,"Smith and Locke","1634G Non-British Standard","3 lever",Lever,"Mortise,Pin key",,d4299b24
 Yellow,Squire,440,"4 lever, pin key",Lever,"Padlock,Pin key",,a460c971
 Yellow,Squire,660,"4 lever",Lever,"Padlock,Pin key",,920b7da1
 Yellow,Squire,Defiant,"5 lever",Lever,"Padlock,Pin key",,ed713b97
@@ -119,8 +119,8 @@ Orange,,CFG,,Pin-tumbler,,,6758c30e
 Orange,Cocraft,"6-Pin Padlock","Non guttable version",Pin-tumbler,Unguttable,,3b3e78b0
 Orange,Corbin,"Arco Cromato",,Pin-tumbler,Unguttable,,99057c44
 Orange,DOM,"333 RNT","standard cylinder",Pin-tumbler,,,eaba4dd9
-Orange,,Eclipse,"British Standard - 5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,677afce6
-Orange,,"Eurospec (E*S)","British Standard - 5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,26315d0f
+Orange,Eclipse,"(any model)","British Standard - 5 lever, 2007+",Lever,"Mortise,Pin key,Curtain,False gates",,677afce6
+Orange,"Eurospec (E*S)",Easi-T,"British Standard - 5 lever, 2004+",Lever,"Mortise,Pin key,Curtain,False gates",,26315d0f
 Orange,,F3,,Pin-tumbler,,,d98f267e
 Orange,FAB,100,,Pin-tumbler,,,140d2878
 Orange,Fanal,"5-pin padlock",,Pin-tumbler,Unguttable,,5802cfb9
@@ -305,9 +305,9 @@ Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
 Blue,"Burg Wächter","Gamma 700","Non-removable core",Pin-tumbler,,,ed9fa926
 Blue,Cantol,"high-security line ","10-pin dimple",Dimple,,,5647f11c
-Blue,Chubb,114,"5 lever",Lever,"Pin key,Curtain,False gates",,32c85438
-Blue,Chubb,114e,"5 lever",Lever,"Pin key,Curtain,False gates",,0c946064
-Blue,Chubb,"Any uncurtained 5 lever","uncurtained 5 lever",Lever,"Mortise,Uncurtained",Uncurtained,9d337b72
+Blue,Chubb,"114 (3g114)","5 lever, pre-2004",Lever,"Pin key,Curtain,False gates",,32c85438
+Blue,Chubb,"114e (3g114e)","5 lever, after 2004",Lever,"Pin key,Curtain,False gates",,0c946064
+Blue,Chubb,2m22,"uncurtained 5 lever",Lever,"Mortise,Uncurtained",Uncurtained,9d337b72
 Blue,Chubb,Cruiser,"5 lever",Lever,"Padlock,Pin key,Curtain,False gates",,5b842c0e
 Blue,CISA,"Astral S",,Dimple,,,066d1e3b
 Blue,CISA,C3000,,Pin-tumbler,,,f9aceec0
@@ -322,7 +322,7 @@ Blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
 Blue,Dorma,DC400,,Pin-tumbler,,,1ede9094
 Blue,ERA,"Big 6","6 lever",Lever,"Padlock,Pin key,Curtain,False gates",,0f7eb0f2
 Blue,ERA,Fortress,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,e2d201c9
-Blue,ERA,Insurance,"5 lever",Lever,Padlock,,a2a10bc7
+Blue,ERA,"Insurance (975)","5 lever",Lever,Padlock,,a2a10bc7
 Blue,EVVA,DPI,"Pin Tumbler version",Pin-tumbler,"Trap pin/bar",,14481dfb
 Blue,EVVA,DPS,"Pin Tumbler version",Pin-tumbler,"Trap pin/bar",,da54208c
 Blue,EVVA,DPX,"Pin Tumbler version",Pin-tumbler,"Trap pin/bar",,af99d1cb
@@ -377,7 +377,7 @@ Blue,Takigen,10-pin,,,,,b0d2e04c
 Blue,TESA,T60,,Dimple,"Tapered drivers",,8b5b655e
 Blue,Tokoz,Tech,,"Pin-tumbler,Wafer",,,35330d19
 Blue,TrioVing,"(Vingcard) 55##","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
-Blue,Union,Strongbolt,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,86703028
+Blue,Union,"Strongbolt (2100)","5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,86703028
 Blue,"Vachette,Vachette","VIP,VIP+",,Pin-tumbler,,,67c4159c
 Blue,VSR,2-row,,Dimple,"High pin count",,97c2b9be
 Blue,Winkhaus,N-Tra,,Dimple,,,2c9d12fc
@@ -475,7 +475,7 @@ Purple,Titan,T250,,,,,e7f6d089
 Purple,Tubar,Tubar,,"Other,Sidebar","Active sidebar",,8d4632d9
 Purple,"US Star Tech","""Hi Security""",,Dimple,,,b35bf986
 Purple,Vachette,Axi'Home,,,,,416946bc
-Purple,"Walsall Locks",Ace,"7 lever safe",Lever,"Safe,False gates",,37914cb6
+Purple,"Walsall Locks","Ace (S1311)","7 lever safe",Lever,"Safe,False gates",,37914cb6
 Purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet,Flat steel key,Curtain,False gates,Destructive gut",,5958a65b
 Purple,Yale,5000,,"Pin-tumbler,Slider",,,1be10736
 Purple,"Yale,Milencio","Superior,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
@@ -532,8 +532,8 @@ Brown,"LIPS,LIPS","Keso (door cylinder),Octro","≥13 pins",Dimple,"High pin cou
 Brown,"Lowe and Fletcher","3007 Safe lock","7 lever",Lever,,,8625f848
 Brown,Magnum,"Mont Blanc",,Wafer,,,236027a0
 Brown,"Mauer,Mauer,Mauer","NW4,NW5,NW6",,"Dimple,Slider","Unsprung sliders",,b8783269
-Brown,Mauer,President,"7 lever",Lever,"Safe,Pipe key,Double bitted",,b9b7ba7c
-Brown,Mauer,"Variator A","7 lever",Lever,"Safe,Pipe key,Double bitted",,620b6e5a
+Brown,Mauer,"President (71111)","7 lever",Lever,"Safe,Pipe key,Double bitted",,b9b7ba7c
+Brown,Mauer,"Variator A (70091)","7 lever",Lever,"Safe,Pipe key,Double bitted",,620b6e5a
 Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock",***,"Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
 Brown,Medeco,Duracam,***,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
 Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
@@ -562,7 +562,7 @@ Red,"ASSA,ASSA","dp2400,dp10","6 pin 4 slider","Sidepins,Pin-tumbler","Barrel dr
 Red,"Australian Lock Co.",BiLock,"12 pins, 3-4 mastered pins",Slider,"False gates,Sprung,Active sidebar",,5b60be8a
 Red,Banham,m2002,,Dimple,"Opposing overset stacks",,9eb3e9c4
 Red,BKS,Janus,"< 14 pins",Dimple,,,3af2407a
-Red,Chubb,110,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,ab1cdc56
+Red,Chubb,"110 (3g110)","5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,ab1cdc56
 Red,CISM,Atlas,,"Magnet,Pump/push",,,9bb97454
 Red,Clavis,T-20,"15-19 pins",Dimple,,,add0b067
 Red,"Corbin Russwin",Emhart,"6 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c4f942f0
@@ -589,7 +589,7 @@ Red,Kaba,Gemini,"≥13 pins",Dimple,"High pin count",,c8e86f14
 Red,Kaba,"Gemini pluS","≥14 pins",Dimple,"High pin count",,c4484574
 Red,Kaba,Penta,"<15 pins",Dimple,"High pin count",,e3081fd3
 Red,Kaba,Star,"5+ directions, <16 pins",Dimple,"High pin count",,43deff29
-Red,Mauer,"Praetor B","11 lever",Lever,Safe,,169b80e3
+Red,Mauer,"Praetor B (70079)","11 lever",Lever,Safe,,169b80e3
 Red,"MIWA,MIWA","E6,83EC",,Magnet,"Magnetic pins",,9094ca58
 Red,MIWA,PR,"<7 unmastered levers",Lever/sidebar,"Partial gut",,fdb68dc4
 Red,"MIWA,Tostem","PS,DN","7-8 unmastered levers",Lever/sidebar,,,550a0c9d
@@ -677,8 +677,8 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 1",MIWA,U9,"8 unmastered elements",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
 "Black 2",MIWA,U9,"9 unmastered elements",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5 (not mastered),R10",,"Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
-"Black 5",NATO,Mersey,"10 lever",Lever,"Safe,Pin key,Double bitted",,4f2ed774
-"Black 5",NATO,Mersey,"14 lever",Lever,"Safe,Pin key,Double bitted",,f29a212f
+"Black 5",NATO,Mersey,"10 lever, pre-1973",Lever,"Safe,Pin key,Double bitted",,4f2ed774
+"Black 5",NATO,Mersey,"14 lever, pre-1973",Lever,"Safe,Pin key,Double bitted",,f29a212f
 "Black 4",Opnus,Memolis,,Lever/sidebar,,,6c0ec943
 "Black 4",Opnus,MMXII,,Lever/sidebar,,,e151c916
 "Black 2",Robur,"Disc Detainer SDB lock",,"Disc detainer","Front/rear tension,False gates,Curtain","Curtain needs to be overcome. No means of correcting an overset known",5cba063b
