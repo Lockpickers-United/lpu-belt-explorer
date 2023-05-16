@@ -116,7 +116,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 
 - [Any Lever Generic/Unknown Cabinet lock](https://lpubelts.com/?id=ba5584ca) (3 levers)
-- [Any Lever Generic/Unknown Mortise lock](https://lpubelts.com/?id=be3fef00) (3 levers)
+- [Any Lever Generic/Unknown Mortice lock](https://lpubelts.com/?id=be3fef00) (3 levers)
 - [ABUS 55/30](https://lpubelts.com/?id=c7d2eca1)
 - [ABUS 64Ti Titalium](https://lpubelts.com/?id=693abee0) (30mm or smaller (&lt;5 pins))
 - [ABUS 65/35](https://lpubelts.com/?id=1ce31c29) (35mm or smaller)
@@ -147,7 +147,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Eagle 37110](https://lpubelts.com/?id=2f634d15)
 - [Egret 5-pin padlock](https://lpubelts.com/?id=75d883a0)
 - [EMR](https://lpubelts.com/?id=f24c2d25)
-- [ERA Mortise](https://lpubelts.com/?id=c2306424) (2 lever)
+- [ERA Mortice](https://lpubelts.com/?id=c2306424) (2 lever)
 - [Esco](https://lpubelts.com/?id=71eea804)
 - [Faithfull](https://lpubelts.com/?id=1376f489)
 - [Favour](https://lpubelts.com/?id=ca5b08b4)

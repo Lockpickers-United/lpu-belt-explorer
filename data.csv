@@ -16,7 +16,7 @@ White,"Master Lock",#8,"Laminated brass",Pin-tumbler,Unguttable,,79adf554
 White,Timpson,"Special Brass Padlock",,Pin-tumbler,Unguttable,,36d4123c
 White,,"Tri-Nine Padlock",,Pin-tumbler,Unguttable,,2201a1b1
 Yellow,Any,"Lever Generic/Unknown Cabinet lock","3 levers",Lever,,,ba5584ca
-Yellow,Any,"Lever Generic/Unknown Mortise lock","3 levers",Lever,,,be3fef00
+Yellow,Any,"Lever Generic/Unknown Mortice lock","3 levers",Lever,,,be3fef00
 Yellow,ABUS,55/30,,Pin-tumbler,Unguttable,,c7d2eca1
 Yellow,ABUS,"64Ti Titalium","30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,"Includes 64Ti/20, 64Ti/25, 64Ti/30",693abee0
 Yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
@@ -47,7 +47,7 @@ Yellow,Dulimex,DX,,Pin-tumbler,,,a8d996c0
 Yellow,Eagle,37110,,Pin-tumbler,,,2f634d15
 Yellow,Egret,"5-pin padlock",,Pin-tumbler,Unguttable,,75d883a0
 Yellow,,EMR,,Pin-tumbler,,,f24c2d25
-Yellow,ERA,Mortise,"2 lever",Lever,"Mortise,Pin key,False gates",,c2306424
+Yellow,ERA,Mortice,"2 lever",Lever,"Mortise,Pin key,False gates",,c2306424
 Yellow,,Esco,,Pin-tumbler,,,71eea804
 Yellow,,Faithfull,,,,,1376f489
 Yellow,,Favour,,Pin-tumbler,,,ca5b08b4
