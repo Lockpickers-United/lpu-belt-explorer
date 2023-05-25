@@ -14749,26 +14749,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "media": [
-      {
-        "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Kwikset_SmartKey_cylinder_silver.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Kwikset_SmartKey_cylinder_silver.jpg"
-      },
-      {
-        "title": "By: LockSportsman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52800358193_202d80aa32_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52800358193/in/album-72177720307317581/"
-      },
-      {
-        "title": "By: LockSportsman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52800160679_6eeff1c08e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52800160679/in/album-72177720307317581/"
-      }
-    ],
     "links": [
       {
         "title": "LockWiki",
@@ -14776,7 +14756,7 @@
       }
     ],
     "views": 87,
-    "lastUpdated": "2023-04-07T16:11:35.188Z"
+    "lastUpdated": "2023-05-25T20:33:03.920Z"
   },
   {
     "id": "bb317675",
