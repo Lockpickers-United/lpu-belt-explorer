@@ -7029,7 +7029,6 @@
         "model": "120/40"
       }
     ],
-    "version": "or above",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -7063,7 +7062,7 @@
       }
     ],
     "views": 57,
-    "lastUpdated": "2023-05-26T19:06:05.061Z"
+    "lastUpdated": "2023-05-26T19:33:06.965Z"
   },
   {
     "id": "3eced659",
@@ -20404,6 +20403,81 @@
     "lastUpdated": "2023-03-23T03:24:22.393Z"
   },
   {
+    "id": "63a9a2b1",
+    "belt": "Red",
+    "makeModels": [
+      {
+        "make": "FAB",
+        "model": "Variant"
+      },
+      {
+        "make": "Ruko",
+        "model": "Combi 2"
+      },
+      {
+        "make": "Ruko",
+        "model": "Garant 10"
+      }
+    ],
+    "version": "6 pin with 5 finger pins",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Active sidebar",
+      "Barrel drivers",
+      "Serrated/threaded milling",
+      "Rotating fingerpins",
+      "Guttable"
+    ],
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/265/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/265/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_3_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/265/3.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/265/4.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_5_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/265/5.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
+      }
+    ],
+    "views": 42,
+    "lastUpdated": "2023-05-26T19:33:06.974Z"
+  },
+  {
     "id": "03cbfaa5",
     "belt": "Red",
     "makeModels": [
@@ -21852,73 +21926,6 @@
     "lastUpdated": "2023-04-10T11:17:45.109Z"
   },
   {
-    "id": "63a9a2b1",
-    "belt": "Red",
-    "makeModels": [
-      {
-        "make": "Ruko",
-        "model": "Combi 2"
-      }
-    ],
-    "version": "6 pin with 5 finger pins",
-    "lockingMechanisms": [
-      "Pin-tumbler",
-      "Sidepins"
-    ],
-    "features": [
-      "Active sidebar",
-      "Barrel drivers",
-      "Serrated/threaded milling",
-      "Rotating fingerpins",
-      "Guttable"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/265/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/265/2.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_3_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/265/3.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_4_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/265/4.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-265_5_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/265/5.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
-      }
-    ],
-    "views": 42,
-    "lastUpdated": "2023-05-01T18:26:36.905Z"
-  },
-  {
     "id": "2ff8a738",
     "belt": "Red",
     "makeModels": [
@@ -22966,10 +22973,6 @@
       {
         "make": "TrioVing",
         "model": "Twin Control"
-      },
-      {
-        "make": "FAB",
-        "model": "Variant"
       }
     ],
     "version": "6 pin with 5 finger pins",
@@ -23061,7 +23064,7 @@
       }
     ],
     "views": 251,
-    "lastUpdated": "2023-04-10T12:07:11.044Z"
+    "lastUpdated": "2023-05-26T19:33:06.976Z"
   },
   {
     "id": "f7ad4c89",
@@ -27780,6 +27783,7 @@
       "Serrated/threaded milling",
       "Guttable"
     ],
+    "notes": "(samelined with ASSA 500 - barrels and matched countermilling)",
     "media": [
       {
         "title": "By: Septclues",
@@ -27807,7 +27811,7 @@
       }
     ],
     "views": 92,
-    "lastUpdated": "2023-05-26T19:06:05.075Z"
+    "lastUpdated": "2023-05-26T19:33:06.980Z"
   },
   {
     "id": "ee04714f",

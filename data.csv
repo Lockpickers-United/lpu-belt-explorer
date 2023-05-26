@@ -213,7 +213,7 @@ Green,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Green,Kasp,14040,,Pin-tumbler,,,14ece36b
 Green,,Kenaurd,"pin-in-pin, 4 pins",Dimple,,,7ec79663
 Green,Kryptonite,"6-pin padlock",,Pin-tumbler,,,1c002521
-Green,Lockwood,120/40,"or above",Pin-tumbler,Unguttable,,5f0834f5
+Green,Lockwood,120/40,,Pin-tumbler,Unguttable,,5f0834f5
 Green,Lockwood,234B45,,Pin-tumbler,,,3eced659
 Green,Lockwood,334B45,"Tapered/Beveled drivers",Pin-tumbler,"Tapered drivers",,ae023398
 Green,MAKO,425,,Pin-tumbler,,,af98761d
@@ -554,6 +554,7 @@ Red,EVVA,3KS,"without false gates or 1-3 mastered sliders",Slider,"Unsprung slid
 Red,EVVA,Dual,">4 mastered elements",Slider,"False gates,Active sidebar",,00b569f2
 Red,EVVA,ICS,">2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,6852489f
 Red,FAB,NZS3,,Pin-tumbler,,,3b797ff2
+Red,"FAB,Ruko,Ruko","Variant,Combi 2,Garant 10","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins,Guttable",,63a9a2b1
 Red,"Fichet,Fichet","450,484","w/ false gates, 2-3 mastered levers",Lever/sidebar,"False gates,Active sidebar",,03cbfaa5
 Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
 Red,"FTH -THIRARD","FTH Surveyor",,Pump/push,,,1f6cb393
@@ -584,7 +585,6 @@ Red,Picard,Vigie,,Pump/push,,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels 3+ chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar,Guttable",,9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins 3+ chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar,Guttable",,112d0034
 Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no false gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
-Red,Ruko,"Combi 2","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins,Guttable",,63a9a2b1
 Red,"S&G,S&G","4544,4440 series",,Lever,"Safe deposit,Flat steel key,False gates","S&G=Sargent & Greenleaf",2ff8a738
 Red,Schlage,"Everest 29 SL Primus XP",,Slider,,,cf76cfde
 Red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
@@ -605,7 +605,7 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 3","ASSA,ASSA,TrioVing,Ruko","dp4400,dp11,dp,Garant+","6 pin with 10 sliders","Pin-tumbler,Slider","Unsprung sliders,Barrel drivers,Serrated/threaded milling,Active sidebar,Guttable",,6e59ba12
 "Black 2",ASSA,"Twin 6000","gin drivers, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar,Guttable",,104776ef
 "Black 2",ASSA,"Twin Combi","with Gin Drivers","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Gin spool drivers,Undercut milling,Guttable",,fb51b475
-"Black 2","ASSA,ASSA,ASSA,TrioVing,TrioVing,FAB","Twin Combi,Triton,Neptun 4900,System 10,Twin Control,Variant","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Barrel drivers,Serrated/threaded milling,Guttable",,7168d463
+"Black 2","ASSA,ASSA,ASSA,TrioVing,TrioVing","Twin Combi,Triton,Neptun 4900,System 10,Twin Control","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Barrel drivers,Serrated/threaded milling,Guttable",,7168d463
 "Black 1",ASSA,"Twin Exclusive 5700 (Baltic)","6 pin with 5 side pins with 4 possible heights each","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar,Guttable",,f7ad4c89
 "Black 1","ASSA,ASSA","Twin Exclusive,Twin 6000","6 barrel drivers, 5 side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar,Guttable",,55053299
 "Black 1","ASSA,ASSA,ASSA,ASSA,ASSA","Twin Maximum,Twin Pro,Twin v10,Twin 2,Twin Global","barrel driver, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Active sidebar,Sidepins,Guttable",,3f73d2ce
@@ -697,7 +697,7 @@ Unranked,"American Lock",1160,"1100 but with 6 pin stacks",,,,1ae40987
 Unranked,",","An Jia Bao,HPP",,,,,dbc1279d
 Unranked,,Angal,"5 serrated pin-in-pin",Dimple,,"mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Arrow,"ChoICe HS SFIC",,,,"6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
-Unranked,ASSA,"Flexcore/Flexcore Plus","5 pins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Guttable",,08a5799e
+Unranked,ASSA,"Flexcore/Flexcore Plus","5 pins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Guttable","(samelined with ASSA 500 - barrels and matched countermilling)",08a5799e
 Unranked,BASI,K6-RT,,,,6-pin,ee04714f
 Unranked,Baton,"6000 series","(non Abloy keyway)",,,,ae0d35bc
 Unranked,,Bond,,Pin-tumbler,,,4062aefb
