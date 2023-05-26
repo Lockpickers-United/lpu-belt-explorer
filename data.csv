@@ -554,7 +554,6 @@ Red,EVVA,3KS,"without false gates or 1-3 mastered sliders",Slider,"Unsprung slid
 Red,EVVA,Dual,">4 mastered elements",Slider,"False gates,Active sidebar",,00b569f2
 Red,EVVA,ICS,">2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,6852489f
 Red,FAB,NZS3,,Pin-tumbler,,,3b797ff2
-Red,"FAB,Ruko,Ruko","Variant,Combi 2,Garant 10","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins,Guttable",,63a9a2b1
 Red,"Fichet,Fichet","450,484","w/ false gates, 2-3 mastered levers",Lever/sidebar,"False gates,Active sidebar",,03cbfaa5
 Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
 Red,"FTH -THIRARD","FTH Surveyor",,Pump/push,,,1f6cb393
@@ -585,6 +584,7 @@ Red,Picard,Vigie,,Pump/push,,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels 3+ chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar,Guttable",,9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins 3+ chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar,Guttable",,112d0034
 Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no false gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
+Red,"Ruko,Ruko,FAB","Combi 2,Garant 10,Variant","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins,Guttable",,63a9a2b1
 Red,"S&G,S&G","4544,4440 series",,Lever,"Safe deposit,Flat steel key,False gates","S&G=Sargent & Greenleaf",2ff8a738
 Red,Schlage,"Everest 29 SL Primus XP",,Slider,,,cf76cfde
 Red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
