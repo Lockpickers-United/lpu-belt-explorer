@@ -8756,12 +8756,32 @@
     "lastUpdated": "2023-03-23T03:24:22.388Z"
   },
   {
+    "id": "f8445741",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "500"
+      }
+    ],
+    "version": "with Barrel drivers and matched sleeve",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "views": 21,
+    "lastUpdated": "2023-05-26T17:28:40.462Z"
+  },
+  {
     "id": "d9e3829f",
     "belt": "Blue",
     "makeModels": [
       {
         "make": "ASSA",
         "model": "500"
+      },
+      {
+        "make": "ASSA",
+        "model": "Flexcore/Flexcore Plus"
       }
     ],
     "version": "5 pin with barrels and matched countermilling",
@@ -8795,23 +8815,7 @@
       }
     ],
     "views": 189,
-    "lastUpdated": "2023-05-01T18:26:36.896Z"
-  },
-  {
-    "id": "f8445741",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "ASSA",
-        "model": "500"
-      }
-    ],
-    "version": "with Barrel drivers and matched sleeve",
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "views": 21,
-    "lastUpdated": "2023-05-26T17:28:40.462Z"
+    "lastUpdated": "2023-05-26T19:13:30.778Z"
   },
   {
     "id": "d08aa492",
