@@ -699,7 +699,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "64Ti Titalium"
+        "model": "64Ti/30"
       }
     ],
     "version": "30mm or smaller (<5 pins)",
@@ -731,7 +731,7 @@
       }
     ],
     "views": 360,
-    "lastUpdated": "2023-04-02T15:20:07.099Z"
+    "lastUpdated": "2023-05-26T19:06:05.054Z"
   },
   {
     "id": "1ce31c29",
@@ -860,10 +860,9 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Nautic T84MB"
+        "model": "Nautic T84MB/40"
       }
     ],
-    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -882,7 +881,7 @@
       }
     ],
     "views": 122,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-05-26T19:06:05.054Z"
   },
   {
     "id": "abdf3acd",
@@ -1151,6 +1150,96 @@
     "lastUpdated": "2023-05-01T18:26:36.890Z"
   },
   {
+    "id": "4d7dd1a0",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "\"Alutitan\" 770 40"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729635945_2ae9d6b825_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729635945/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729225751_effa83a9a9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729225751/in/album-72177720306493537/"
+      }
+    ],
+    "views": 87,
+    "lastUpdated": "2023-05-26T19:06:05.054Z"
+  },
+  {
+    "id": "6ca3420d",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "\"C-Line\" 222 40"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728702222_6eb3bf0aab_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728702222/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701237_11fa94485e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701237/in/album-72177720306493537/"
+      }
+    ],
+    "views": 67,
+    "lastUpdated": "2023-05-26T19:06:05.054Z"
+  },
+  {
+    "id": "7f56acb9",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "\"Look\" 402 40"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701172_0a2e0edace_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701172/in/album-72177720306493537/"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729477979_c78aa4f88c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729477979/in/album-72177720306493537/"
+      }
+    ],
+    "views": 69,
+    "lastUpdated": "2023-05-26T19:06:05.054Z"
+  },
+  {
     "id": "b517a7ef",
     "belt": "Yellow",
     "makeModels": [
@@ -1225,96 +1314,6 @@
     ],
     "views": 92,
     "lastUpdated": "2023-04-18T18:11:16.360Z"
-  },
-  {
-    "id": "4d7dd1a0",
-    "belt": "Yellow",
-    "makeModels": [
-      {
-        "make": "Burg Wächter",
-        "model": "Alutitan 770 40"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "media": [
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729635945_2ae9d6b825_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729635945/in/album-72177720306493537/"
-      },
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729225751_effa83a9a9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729225751/in/album-72177720306493537/"
-      }
-    ],
-    "views": 87,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
-  },
-  {
-    "id": "6ca3420d",
-    "belt": "Yellow",
-    "makeModels": [
-      {
-        "make": "Burg Wächter",
-        "model": "C-Line"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Unguttable"
-    ],
-    "media": [
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52728702222_6eb3bf0aab_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728702222/in/album-72177720306493537/"
-      },
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701237_11fa94485e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701237/in/album-72177720306493537/"
-      }
-    ],
-    "views": 67,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
-  },
-  {
-    "id": "7f56acb9",
-    "belt": "Yellow",
-    "makeModels": [
-      {
-        "make": "Burg Wächter",
-        "model": "Look"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "media": [
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52728701172_0a2e0edace_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52728701172/in/album-72177720306493537/"
-      },
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729477979_c78aa4f88c_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729477979/in/album-72177720306493537/"
-      }
-    ],
-    "views": 69,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
   },
   {
     "id": "90267144",
@@ -2033,33 +2032,18 @@
     "lastUpdated": "2023-03-23T03:24:22.385Z"
   },
   {
-    "id": "40f7d7c7",
+    "id": "715898f9",
     "belt": "Yellow",
     "makeModels": [
       {
         "make": "Schlage",
-        "model": "Mortise"
+        "model": "Original Commercial/Residential"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "media": [
-      {
-        "title": "By: Mgsecure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52757916448_1f4a50980f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757916448/"
-      },
-      {
-        "title": "By: Mgsecure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52757434156_988418b01d_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757434156/"
-      }
-    ],
-    "views": 225,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-05-26T19:06:05.055Z"
   },
   {
     "id": "d4299b24",
@@ -2445,7 +2429,6 @@
         "model": "65/40"
       }
     ],
-    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -2473,7 +2456,7 @@
       }
     ],
     "views": 264,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-05-26T19:06:05.058Z"
   },
   {
     "id": "3653f376",
@@ -3433,7 +3416,6 @@
         "model": "110/40"
       }
     ],
-    "version": "40mm or larger",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -3464,7 +3446,7 @@
       }
     ],
     "views": 113,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2023-05-26T19:06:05.058Z"
   },
   {
     "id": "380aeb89",
@@ -3634,6 +3616,20 @@
     ],
     "views": 269,
     "lastUpdated": "2023-03-23T03:24:22.386Z"
+  },
+  {
+    "id": "50fdf847",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Schlage",
+        "model": "Original F-series KiK with collapsible bible"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2023-05-26T19:06:05.059Z"
   },
   {
     "id": "74f65a9c",
@@ -7030,9 +7026,10 @@
     "makeModels": [
       {
         "make": "Lockwood",
-        "model": "120/40 or above"
+        "model": "120/40"
       }
     ],
+    "version": "or above",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -7066,7 +7063,7 @@
       }
     ],
     "views": 57,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-05-26T19:06:05.061Z"
   },
   {
     "id": "3eced659",
@@ -8905,53 +8902,6 @@
       }
     ],
     "views": 108,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
-  },
-  {
-    "id": "08a5799e",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "ASSA",
-        "model": "Flexcore"
-      }
-    ],
-    "version": "5 pins",
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Barrel drivers",
-      "Serrated/threaded milling",
-      "Guttable"
-    ],
-    "media": [
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699484_4030f2f6bd_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699484/in/album-72177720306337368/"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52715865005_cfa5719b4c_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715865005/in/album-72177720306337368/"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52714918592_5fd05091e0_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52714918592/in/album-72177720306337368/"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699334_a1789c35de_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699334/in/album-72177720306337368/"
-      }
-    ],
-    "views": 92,
     "lastUpdated": "2023-03-23T03:24:22.388Z"
   },
   {
@@ -10852,6 +10802,34 @@
     "lastUpdated": "2023-03-30T22:13:27.813Z"
   },
   {
+    "id": "17270f9c",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Lucznik",
+        "model": "E8"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2023-05-26T19:06:05.063Z"
+  },
+  {
+    "id": "1c01212e",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Lucznik",
+        "model": "LC"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2023-05-26T19:06:05.063Z"
+  },
+  {
     "id": "1fe0ba0d",
     "belt": "Blue",
     "makeModels": [
@@ -11366,22 +11344,6 @@
     ],
     "views": 102,
     "lastUpdated": "2023-05-21T10:38:24.999Z"
-  },
-  {
-    "id": "1798ca06",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "Mul-T-Lock",
-        "model": "Interactive"
-      }
-    ],
-    "version": "4 pins, spooled drivers",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "views": 27,
-    "lastUpdated": "2023-05-26T17:28:40.465Z"
   },
   {
     "id": "fb5a9eb7",
@@ -22290,6 +22252,10 @@
       {
         "make": "Abloy",
         "model": "Disklock Pro"
+      },
+      {
+        "make": "Abloy",
+        "model": "Novel"
       }
     ],
     "lockingMechanisms": [
@@ -22361,7 +22327,7 @@
       }
     ],
     "views": 615,
-    "lastUpdated": "2023-04-18T18:11:16.372Z"
+    "lastUpdated": "2023-05-26T19:06:05.071Z"
   },
   {
     "id": "12ff8c25",
@@ -26077,6 +26043,9 @@
       {
         "make": "Kromer",
         "model": "Protector"
+      },
+      {
+        "model": " BP55K"
       }
     ],
     "lockingMechanisms": [
@@ -26091,7 +26060,24 @@
       }
     ],
     "views": 108,
-    "lastUpdated": "2023-03-23T03:24:22.395Z"
+    "lastUpdated": "2023-05-26T19:06:05.073Z"
+  },
+  {
+    "id": "50a463eb",
+    "belt": "Black 5",
+    "makeModels": [
+      {
+        "make": "Kromer",
+        "model": "Protector"
+      },
+      {
+        "model": " Non-BP55K"
+      }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "lastUpdated": "2023-05-26T19:06:05.073Z"
   },
   {
     "id": "f1857cef",
@@ -26510,13 +26496,14 @@
       },
       {
         "make": "Lockwood",
-        "model": "MT5 (not mastered)"
+        "model": "MT5"
       },
       {
         "make": "IKON",
         "model": "R10"
       }
     ],
+    "version": "not mastered",
     "lockingMechanisms": [
       "Dimple",
       "Slider"
@@ -26609,7 +26596,7 @@
       }
     ],
     "views": 232,
-    "lastUpdated": "2023-05-01T18:26:36.908Z"
+    "lastUpdated": "2023-05-26T19:06:05.073Z"
   },
   {
     "id": "4f2ed774",
@@ -27490,6 +27477,7 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
+    "notes": "(samelined with Abloy Disklock Pro)",
     "media": [
       {
         "title": "By: Crispix",
@@ -27509,7 +27497,7 @@
       }
     ],
     "views": 15,
-    "lastUpdated": "2023-04-18T18:11:16.375Z"
+    "lastUpdated": "2023-05-26T19:06:05.074Z"
   },
   {
     "id": "0feafca7",
@@ -27777,6 +27765,53 @@
     "lastUpdated": "2023-03-23T03:24:22.395Z"
   },
   {
+    "id": "08a5799e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Flexcore/Flexcore Plus"
+      }
+    ],
+    "version": "5 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Barrel drivers",
+      "Serrated/threaded milling",
+      "Guttable"
+    ],
+    "media": [
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699484_4030f2f6bd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699484/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715865005_cfa5719b4c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715865005/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52714918592_5fd05091e0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52714918592/in/album-72177720306337368/"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52715699334_a1789c35de_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715699334/in/album-72177720306337368/"
+      }
+    ],
+    "views": 92,
+    "lastUpdated": "2023-05-26T19:06:05.075Z"
+  },
+  {
     "id": "ee04714f",
     "belt": "Unranked",
     "makeModels": [
@@ -27833,36 +27868,36 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Burgwächter",
+        "make": "Burg Wächter",
         "model": "Profi 116/25"
       }
     ],
     "views": 1,
-    "lastUpdated": "2023-05-05T09:34:26.537Z"
+    "lastUpdated": "2023-05-26T19:06:05.075Z"
   },
   {
     "id": "35adb4d6",
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Burgwächter",
+        "make": "Burg Wächter",
         "model": "Profi 116/30"
       }
     ],
     "views": 9,
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "lastUpdated": "2023-05-26T19:06:05.075Z"
   },
   {
     "id": "bbfd4108",
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Burgwächter",
+        "make": "Burg Wächter",
         "model": "Profi 116/50"
       }
     ],
     "version": "50mm or larger",
-    "lastUpdated": "2023-05-05T09:34:26.537Z"
+    "lastUpdated": "2023-05-26T19:06:05.075Z"
   },
   {
     "id": "919755fe",
@@ -29178,6 +29213,22 @@
     "lastUpdated": "2023-05-26T16:38:11.443Z"
   },
   {
+    "id": "1798ca06",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Mul-T-Lock",
+        "model": "Interactive"
+      }
+    ],
+    "version": "4 pins, spooled drivers",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "views": 27,
+    "lastUpdated": "2023-05-26T19:06:05.077Z"
+  },
+  {
     "id": "6d9fbd4a",
     "belt": "Unranked",
     "makeModels": [
@@ -29304,11 +29355,11 @@
     "makeModels": [
       {
         "make": "S&G",
-        "model": "4544/4545"
+        "model": "4440 Series"
       }
     ],
     "views": 5,
-    "lastUpdated": "2023-05-05T09:34:26.542Z"
+    "lastUpdated": "2023-05-26T19:06:05.077Z"
   },
   {
     "id": "894238be",
@@ -29351,6 +29402,35 @@
     ],
     "views": 2,
     "lastUpdated": "2023-05-05T09:46:30.617Z"
+  },
+  {
+    "id": "40f7d7c7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Schlage",
+        "model": "Mortise"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757916448_1f4a50980f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757916448/"
+      },
+      {
+        "title": "By: Mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757434156_988418b01d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757434156/"
+      }
+    ],
+    "views": 225,
+    "lastUpdated": "2023-05-26T19:06:05.077Z"
   },
   {
     "id": "4403a73f",
