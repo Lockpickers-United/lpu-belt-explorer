@@ -652,8 +652,8 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 2","Kaba,Kaba","Quattro,experT","21 pins",Dimple,"High pin count",,10968d37
 "Black 1",Kaba,Star,"5+ rows, 16-20 pins",Dimple,"High pin count",,3ddfc71c
 "Black 2",Kaba,Star,"5+ rows, 21 or more pins",Dimple,"High pin count",,dfa88b94
-"Black 5","Kromer,","Protector, BP55K",,Wafer,,,f87db705
-"Black 5","Kromer,","Protector, Non-BP55K",,Wafer,,,50a463eb
+"Black 5",Kromer,"Protector (BP55K)",,Wafer,,,f87db705
+"Black 5",Kromer,"Protector (Non-BP55K)",,Wafer,,,50a463eb
 "Black 1",Lockman,Megacross,"with pyramid drivers (SP?)",Dimple,"High pin count",,f1857cef
 "Black 1",MIWA,LB,,Slider,,,a2bd7f1e
 "Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",d0c510c5

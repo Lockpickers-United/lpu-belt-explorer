@@ -26042,10 +26042,7 @@
     "makeModels": [
       {
         "make": "Kromer",
-        "model": "Protector"
-      },
-      {
-        "model": " BP55K"
+        "model": "Protector (BP55K)"
       }
     ],
     "lockingMechanisms": [
@@ -26060,7 +26057,7 @@
       }
     ],
     "views": 108,
-    "lastUpdated": "2023-05-26T19:06:05.073Z"
+    "lastUpdated": "2023-05-26T19:10:00.633Z"
   },
   {
     "id": "50a463eb",
@@ -26068,16 +26065,13 @@
     "makeModels": [
       {
         "make": "Kromer",
-        "model": "Protector"
-      },
-      {
-        "model": " Non-BP55K"
+        "model": "Protector (Non-BP55K)"
       }
     ],
     "lockingMechanisms": [
       "Wafer"
     ],
-    "lastUpdated": "2023-05-26T19:06:05.073Z"
+    "lastUpdated": "2023-05-26T19:10:00.634Z"
   },
   {
     "id": "f1857cef",
