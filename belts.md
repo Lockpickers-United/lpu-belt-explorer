@@ -1002,47 +1002,63 @@ Examples of "Master's Projects":
 
 ---
 
-### Recent Changes: Nov. 2022&ndash;Feb. 2023
+### Recent Changes: February&ndash;May, 2023
 
 **New Additions**
 
-* **Dorma DC400 (Blue)** Interesting spools and tight tolerances make blue logical, though quite difficult amongst blue locks.
-* **Yanai R 2200M (Black 2)** A clone of the Clavis T20, this Japanese HPC lock is similar in difficulty.
-* **Goal S (5 pins) (Blue)** Similar to the Goal P and Z with less pins, blue seems to be an easy decision.
-* **Abus S6+ (Blue)** Spools and T-pins with tight tolerances make blue obvious.
-* **ASSA Twin Combi with Gin Drivers (Black 2)** A very rare lock, the addition of gin drivers means floating is needed, but the extra isolation keeps this lock at the same level as the barrel version.
-* **M&C Matrix without Sidebar (Blue)** Easy to overset, this downgrade of the M&C Matrix fits in at blue.
-* **Fuki Tierkey (Brown)** A 3 row HPC, this lock features many spools. Clear feedback, room to maneuvre, and the ability to preset leaves this lock as a solid brown.
-* **Cism Atlas (Red)** Now that this lock has been picked with feedback, its original ranking has been restored.
+* **Mul-T-Lock Interactive (4 pins, spooled drivers) (Blue)** An old change that was never officially listed but has precedent.
+* **Mul-T-Lock Interactive (4 pins, serrated drivers) (Purple)** An old change that was never officially listed but has precedent.
+* **Hori Trident (Spools) (Red)** Another version of the Hori Trident, a very difficult HPC lock with a round keyway that fits well in Red.
+* **Medeco M4 (Red)** The new Medeco now with a sidebar and barrels - plenty for red.
+* **iNAHO Tierkey (3 row, short format) (Blue)** A short HPC lock.
+* **CAVEO TS007 Exterior (Purple)** A dimple and slider lock, fitting in well with the other similar locks in Purple.
+* **Capitol magnetic cam lock (Purple)** Similar in difficulty to the Miwa Magnetic cam that is already in Purple.
+* **Clavis 10 pin (dual row, all spools) (Purple)** A HPC spooled lock without too many pins.
+* **Ruko Combi 900 (Purple)** Like an ASSA 600 barrels but with an extra sidepin, this is not hard enough for brown.
+* **Lucznik LC (Blue)** Simple to pick normally, but the trap pins that engage make it difficult to pick completely.
+* **Lucznik E8 (Blue)** A simple lock with a tough keyway and tight tolerances.
+* **Abloy Easy (Black 2)** Another Abloy with the usual difficulties.
+* **Abloy Sento (Black 2)** As above.
+* **Mul-T-Lock Classic Pro / MTL 400 (Purple)** A variation on the MTL Classic, but with spooling on the inners and some countermilled drivers - setting it apart but not difficult enough for an upgrade.
+* **Abus XPlus (Brown)** An Abus plus without butterflies and with a blocker, but the ease of bypassing the blocker limits this to brown.
+* **ASSA 500 with Barrel drivers and matched sleeve (Blue)** In line with the countermilled version.
+* **ASSA 700 with Gin drivers and matched sleeve (Red)** Similar to the ASSA 600 gins, but with 1 extra pin. Remains in red difficulty range.
+* **Mailboss "12" wafer mailbox camlock (Orange)** A wafer cam lock.
 
 **Upgrades**
 
-* **Kaba Ace (&ge;13 pins) (Brown -> Red)** Standard pins in 3 rows with extraordinary tolerances means this lock is uniquely challenging.
-* **Kaba Ace (<13 pins) (Purple -> Brown)** Upgraded alongside the other version.
+* **Sargent Mortise (Orange -> Green)** Tolerances make this harder than most other orange locks.
+* **ASSA 500 (with gin spools and matching countermilling) (Purple -> Brown)** In line with the upgrade of the gin 600, this one also deserves to go up one rank.
+* **Tokoz Pro (Red -> BB1)** A clone of the Protec, this lock is easily difficult enough for black.
+* **JPM Surf / Ruko Combi Plus (Red -> BB1)** An ASSA lock with a sidebar, self-explanatory. 
 
 **Downgrades**
 
-* **Abloy Protec2 (Black 4 -> Black 3)** A new method being discovered means this lock is no more difficult than the Protec.
-* **Abus D6 (Blue -> Green)** Despite the spools, this lock is lacking in difficulty for blue.
-* **Mottura Champions C30/C31/C39 (Blue -> Green)** As the magnetic element does not consistently work, there are far too many samples of this lock that are missing its unique feature, so it has been downgraded.
-* **Fichet-Bauche M2B / M3B / MxB (Black 2 -> Black 1)** Beyond the need for toolmaking, this is simply 8 tapered levers. There has been recent news of another more difficult version that will be added in a higher rank as more information comes.
-* **Mottura Champions C43/C44/C48 (Black 1 -> Red)** A tentative change, this lock has been reduced to red for the time being due to some feedback. It will be monitored and returning to Black 1 will be considered in the near future.
-* **Abloy Classic (Red -> Brown)** A second downgrade for this lock, once tooling is looked past, this lock is a standard DD lock with false gates.
-* **Western Electric 29A/B (Black 2 -> Purple)** Relabelled from Western Electric 29B, this lock has been downgraded thanks to a new method and more information on the lock - it features only 5 unsprung levers with false gates or 4 unsprung smooth levers and 1 sprung lever with false gates, and as such is far from black.
-* **Fichet F3D (indoor cylinder) (Black 4 -> Black 1)** A difficult lock in theory, this lock is unfortunately easy to accidentally open in the picking process, which causes it to be significantly weaker than its exterior version.
-* **Walsall locks, Ace - 7 levers (Black 1 -> Purple)** This lock was ranked by some mistake, as it features 7 false gated levers and an open keyway, being a lever lock often recommended to beginners.
+* No downgrades this time!
+
+**Unranked Pending more Information**
+
+* ADW, Bond, Casesa, CIB, Cotica, EMR, Favour, Fermod, FFF, Flora, Glip, HiK, HP+, IBAU, Kinzo, Laperche, Lifetime, McGeiz, Mecanimax, Modeco, Multicar, Owa, Power Line, Südmetall, Tara, CFG, F3, Gloss, S&S, Snowstar, Tech 5, TOP, VEB 
 
 **Changes to Listing**
 
-* **Robur Safe Deposit Lock (barrels < 3 chambers with matched milling)** and **Robur Safe Deposit Lock (gins < 3 chambers with matched milling)** are now samelined as with few security pins, they are almost identical locks. The versions with 3 or more security pins remain separate.
-* **West 916 -> West 916 / West 955** These are almost identical HPC locks.
-* **Miwa E6 -> Miwa E6 / Miwa 83EC** The 83EC has 2 less top pins and the same magnetic elements, which are the main part of the lock.
-* **S&G 4540 -> S&G 4544/4545** Renamed for clarity.
-* **Yardeni -> Yardeni 6** Renamed for clarity.
-
-**Clarification**
-
-* **Fichet F3D External Cylinder** is considered an upgrade of Fichet F3D Indoor Cylinder. 
+* **S&G 4545 -> S&G 4440 Series** Previous picks of the "4545" were actually the 4440 series.
+* **ASSA Max+ Restricted** has been samelined with ASSA 600 (Barrel drivers).
+* **Abloy Novel** has been samelined with Abloy Disklock Pro.
+* **Schlage Mortise** unranked and replaced by Schlage Original Commercial / Residential (Yellow) and Schlage Original F-series KiK with collapsible bible (Orange).
+* **FAB Variant and Ruko Garant 10** moved to sameline with Ruko Combi 2.
+* **ASSA 500 (barrels and matched countermilling**) and **ASSA Flexcore/Flexcore Plus** samelined.
+* **Mul-T-Lock MT5+ / Mul-T-Lock 800 / Lockwood MT5 (not mastered) / IKON R10** -> Mul-T-Lock MT5+ / Mul-T-Lock 800 / Lockwood MT5 / IKON R10 (not mastered)
+* **Abus 64Ti Titalium - Non-removable core and 4 pins or fewer** -> Abus 64Ti/30 or smaller
+* **Abus Nautic (40mm and up)** -> Abus Nautic T84MB/40
+* **Abus 65/40 or larger - Non-removable core** -> Abus 65/40
+* **Lockwood 110/40 (or bigger)** -> Lockwood 110/40
+* **Lockwood 120/40 (or bigger)** -> Lockwood 120/40
+* **Burg Wächter C-Line** -> Burg Wächter "C-Line" 222 40
+* **Burg Wächter Look** -> Burg Wächter "Look" 402 40
+* **Burg Wächter SecuLock** -> Burg Wächter "SecuLock" 405 40
+* **Burg Wächter Yacht** -> Burg Wächter "Yacht" 460 Ni 40
+* **Kromer Protector** split into Kromer Protector (Non-BP55K) and Kromer Protector (BP55K)
 
 
 ---
