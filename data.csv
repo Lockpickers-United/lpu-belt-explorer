@@ -58,7 +58,7 @@ Yellow,"Master Lock","V-line 4140",,Pin-tumbler,Unguttable,,6af6f704
 Yellow,,Metal,,Pin-tumbler,,,6c365304
 Yellow,,"Multi XL",,,,,8824c0e5
 Yellow,,Santos,,Pin-tumbler,,,8e2d57b1
-Yellow,Schlage,"Original Commercial/Residential",,Pin-tumbler,,,715898f9
+Yellow,Schlage,"Original Commercial/Residential",,Pin-tumbler,,,40f7d7c7
 Yellow,"Smith and Locke","1634G Non-British Standard","3 lever",Lever,"Mortise,Pin key",,d4299b24
 Yellow,Squire,440,"4 lever, pin key",Lever,"Padlock,Pin key,Curtain",,a460c971
 Yellow,Squire,660,"4 lever",Lever,"Padlock,Pin key,Curtain",,920b7da1
@@ -782,7 +782,6 @@ Unranked,S&G,"4440 Series",,,,,347bd804
 Unranked,S&G,6870,,Lever,,,894238be
 Unranked,,S&S,,,,,9f832458
 Unranked,"Schlage,Keiden","Cor-Key,M40",,,,,a72739bc
-Unranked,Schlage,Mortise,,Pin-tumbler,,,40f7d7c7
 Unranked,Securemme,"Evo K64",,Dimple,,,4403a73f
 Unranked,,Snowstar,,,,,f88a999d
 Unranked,SOL,2500,"10mm (2pins)",,,,97baf67b

@@ -158,7 +158,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Metal](https://lpubelts.com/?id=6c365304)
 - [Multi XL](https://lpubelts.com/?id=8824c0e5)
 - [Santos](https://lpubelts.com/?id=8e2d57b1)
-- [Schlage Original Commercial/Residential](https://lpubelts.com/?id=715898f9)
+- [Schlage Original Commercial/Residential](https://lpubelts.com/?id=40f7d7c7)
 - [Smith and Locke 1634G Non-British Standard](https://lpubelts.com/?id=d4299b24) (3 lever)
 - [Squire 440](https://lpubelts.com/?id=a460c971) (4 lever, pin key)
 - [Squire 660](https://lpubelts.com/?id=920b7da1) (4 lever)
