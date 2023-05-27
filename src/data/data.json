@@ -2032,7 +2032,7 @@
     "lastUpdated": "2023-03-23T03:24:22.385Z"
   },
   {
-    "id": "715898f9",
+    "id": "40f7d7c7",
     "belt": "Yellow",
     "makeModels": [
       {
@@ -2057,8 +2057,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757434156/"
       }
     ],
-    "views": 1,
-    "lastUpdated": "2023-05-27T13:08:56.540Z"
+    "views": 228,
+    "lastUpdated": "2023-05-27T16:08:59.469Z"
   },
   {
     "id": "d4299b24",
@@ -29416,21 +29416,6 @@
     ],
     "views": 2,
     "lastUpdated": "2023-05-05T09:46:30.617Z"
-  },
-  {
-    "id": "40f7d7c7",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Schlage",
-        "model": "Mortise"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "views": 228,
-    "lastUpdated": "2023-05-27T13:08:56.560Z"
   },
   {
     "id": "4403a73f",
