@@ -618,7 +618,7 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 3",Bowley,"Door Lock",,Pin-tumbler,,,78336fc0
 "Black 1",Chubb,"""Definitive""","Standard mortise, 5 lever",Lever,"Mortise,False gates",,72215ba4
 "Black 4",Chubb,"""Definitive""","jewellery box (Steel comb leaf spring)",Lever,"Cabinet,Pin/pipe key,False gates",,2db935ea
-"Black 4",Chubb,"6K174 isolator",,Lever,Safe,,362d0dee
+"Black 4",Chubb,"6K174 Isolator",,Lever,Safe,,362d0dee
 "Black 2",Clavis,F-22,,Dimple,,"upgrade of Clavis Q-18",234a8ca8
 "Black 1",Clavis,Q-18,,Dimple,"High pin count",,7ea33803
 "Black 2",Clavis,T-20,"20 pins",Dimple,"High pin count",,48cf387f

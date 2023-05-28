@@ -936,7 +936,7 @@ Examples of "Master's Projects":
 - [Bowley Door Lock](https://lpubelts.com/?id=78336fc0)
 - [Chubb &quot;Definitive&quot;](https://lpubelts.com/?id=72215ba4) (Standard mortise, 5 lever)
 - [Chubb &quot;Definitive&quot;](https://lpubelts.com/?id=2db935ea) (jewellery box (Steel comb leaf spring))
-- [Chubb 6K174 isolator](https://lpubelts.com/?id=362d0dee)
+- [Chubb 6K174 Isolator](https://lpubelts.com/?id=362d0dee)
 - [Clavis F-22](https://lpubelts.com/?id=234a8ca8)
 - [Clavis Q-18](https://lpubelts.com/?id=7ea33803)
 - [Clavis T-20](https://lpubelts.com/?id=48cf387f) (20 pins)
