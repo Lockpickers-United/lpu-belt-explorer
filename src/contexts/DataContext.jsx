@@ -1,6 +1,7 @@
-import React, {useContext, useEffect, useMemo, useState} from 'react'
+import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import FilterContext from './FilterContext'
+import LazyDataContext from './LazyDataContext'
 import StorageContext from './StorageContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
@@ -9,18 +10,10 @@ import removeAccents from 'remove-accents'
 const DataContext = React.createContext({})
 
 export function DataProvider({children}) {
-    const [allEntries, setAllEntries] = useState([])
+    const {data: allEntries} = useContext(LazyDataContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
     const {search, id, tab, name, sort, ...filters} = allFilters
-
-    useEffect(() => {
-        const load = async () => {
-            const value = (await import('../data/data.json')).default
-            setAllEntries(value)
-        }
-        load()
-    }, [])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -99,7 +92,6 @@ export function DataProvider({children}) {
         visibleEntries
     }), [allEntries, visibleEntries])
 
-    if (!allEntries.length) return null
     return (
         <DataContext.Provider value={value}>
             {children}

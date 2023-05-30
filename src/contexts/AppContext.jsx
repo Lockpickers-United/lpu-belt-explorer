@@ -1,24 +1,23 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
-import DataContext from './DataContext'
 import FilterContext from './FilterContext'
 import {uniqueBelts} from '../data/belts'
+import LazyDataContext from './LazyDataContext'
 
 const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
-    const {allEntries} = useContext(DataContext)
+    const {data} = useContext(LazyDataContext)
     const {filters, removeFilters} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
-        const {tab, belt, id, search, name, sort, ...rest} = filters
-        let entry
-        if (id) entry = allEntries.find(e => id === e.id)
+        const {tab, belt, id, name, search, ...rest} = filters
         if (tab && uniqueBelts.includes(tab)) {
             return tab
         } else if (belt && uniqueBelts.includes(belt)) {
             return belt
-        } else if (id && entry) {
-            return entry.belt.replace(/\s\d/g, '')
+        } else if (id) {
+            const entry = data.find(e => id === e.id)
+            return entry ? entry.belt.replace(/\s\d/g, '') : 'White'
         } else if (search?.length > 0 || Object.keys(rest).length > 0) {
             return 'search'
         }

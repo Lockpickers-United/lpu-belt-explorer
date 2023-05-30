@@ -1,15 +1,27 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import queryString from 'query-string'
+import LazyDataContext from './LazyDataContext'
 
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
+    const {data} = useContext(LazyDataContext)
     const [filters, setFilters] = useState(() => {
-        const query = queryString.parse(location.search)
-        return {
-            search: '',
-            ...query
+        const {id, name, ...query} = queryString.parse(location.search)
+
+        query.search = ''
+
+        if (id) {
+            const entry = data.find(e => id === e.id)
+            if (entry) {
+                query.id = id
+                query.name = name
+            } else {
+                query.search = name.replace(/_/g, ' ')
+            }
         }
+
+        return query
     })
 
     const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
