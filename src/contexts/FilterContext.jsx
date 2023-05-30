@@ -16,7 +16,7 @@ export function FilterProvider({children}) {
             if (entry) {
                 query.id = id
                 query.name = name
-            } else {
+            } else if (name) {
                 query.search = name.replace(/_/g, ' ')
             }
         }
