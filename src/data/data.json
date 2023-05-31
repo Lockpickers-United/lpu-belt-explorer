@@ -1327,8 +1327,22 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Dignity",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52940578638_bf4fd24b21_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52940578638/in/album-72177720308708442/"
+      },
+      {
+        "title": "By: Dignity",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52940119511_2ab3b47d66_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52940119511/in/album-72177720308708442/"
+      }
+    ],
     "views": 104,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2023-05-31T13:51:52.261Z"
   },
   {
     "id": "a8d996c0",
