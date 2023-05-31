@@ -1,5 +1,6 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import RandomEntryButton from '../entries/RandomEntryButton'
 import HotkeyInfoButton from './HotkeyInfoButton'
 
 function Footer() {
@@ -25,6 +26,8 @@ function Footer() {
 
             <br/>
             <HotkeyInfoButton/>
+            &nbsp;•&nbsp;
+            <RandomEntryButton/>
         </Typography>
     )
 }
