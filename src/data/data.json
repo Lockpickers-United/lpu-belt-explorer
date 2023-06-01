@@ -3681,8 +3681,28 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52848678837_b497fda215_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52848678837/in/album-72177720307828318/"
+      },
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52849441429_296f9cce95_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52849441429/in/album-72177720307828318/"
+      },
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52849652475_5b2b544297_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52849652475/in/album-72177720307828318/"
+      }
+    ],
     "views": 10,
-    "lastUpdated": "2023-05-26T19:06:05.059Z"
+    "lastUpdated": "2023-06-01T11:38:20.279Z"
   },
   {
     "id": "74f65a9c",
