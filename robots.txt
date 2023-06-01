@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://share.lpubelts.com/sitemap.txt
+Sitemap: https://lpubelts.com/sitemap.txt
