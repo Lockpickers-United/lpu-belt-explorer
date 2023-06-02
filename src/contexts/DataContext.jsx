@@ -20,7 +20,14 @@ export function DataProvider({children}) {
             .map(entry => ({
                 ...entry,
                 makes: entry.makeModels.map(({make}) => make),
-                fuzzy: removeAccents(entry.makeModels.map(({make, model}) => [make, model]).flat().filter(a => a).join(',')),
+                fuzzy: removeAccents(
+                    entry.makeModels
+                        .map(({make, model}) => [make, model])
+                        .flat()
+                        .filter(a => a)
+                        .join(',')
+                    + `, ${entry.version}, ${entry.notes}`
+                ),
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
@@ -101,8 +108,6 @@ export function DataProvider({children}) {
 
 const fuzzySortKeys = [
     'fuzzy',
-    'version',
-    'notes',
     'id'
 ]
 
