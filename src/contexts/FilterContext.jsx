@@ -7,9 +7,8 @@ const FilterContext = React.createContext({})
 export function FilterProvider({children}) {
     const {data} = useContext(LazyDataContext)
     const [filters, setFilters] = useState(() => {
-        const {id, name, ...query} = queryString.parse(location.search)
-
-        query.search = ''
+        const {id, name, search = '', ...query} = queryString.parse(location.search)
+        query.search = search
 
         if (id) {
             const entry = data.find(e => id === e.id)
