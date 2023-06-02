@@ -25,8 +25,12 @@ export function DataProvider({children}) {
                         .map(({make, model}) => [make, model])
                         .flat()
                         .filter(a => a)
+                        .concat([
+                            entry.version,
+                            entry.notes,
+                            entry.belt
+                        ])
                         .join(',')
-                    + `, ${entry.version}, ${entry.notes}`
                 ),
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
