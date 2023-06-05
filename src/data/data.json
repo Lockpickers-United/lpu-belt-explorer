@@ -12448,8 +12448,16 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/297/1.jpg",
+        "fullUrl": "https://www.catalocks.eu/ABUS/%20ABUS%20BRAVUS%202000_297.html"
+      }
+    ],
     "views": 225,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-06-05T10:37:25.070Z"
   },
   {
     "id": "20adf729",
@@ -29762,7 +29770,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "KABA",
+        "make": "Kaba",
         "model": "Gemini T"
       }
     ],
@@ -29771,20 +29779,20 @@
       "Dimple"
     ],
     "views": 9,
-    "lastUpdated": "2023-05-05T09:34:26.541Z"
+    "lastUpdated": "2023-06-05T10:37:25.088Z"
   },
   {
     "id": "7d5c53c4",
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "KABA",
+        "make": "Kaba",
         "model": "Matrix"
       }
     ],
     "version": "16 pins (fully pinned)",
     "views": 1,
-    "lastUpdated": "2023-05-05T09:34:26.541Z"
+    "lastUpdated": "2023-06-05T10:37:25.088Z"
   },
   {
     "id": "ab9df828",
