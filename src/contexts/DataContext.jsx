@@ -110,9 +110,6 @@ export function DataProvider({children}) {
     )
 }
 
-const fuzzySortKeys = [
-    'fuzzy',
-    'id'
-]
+const fuzzySortKeys = ['fuzzy']
 
 export default DataContext
