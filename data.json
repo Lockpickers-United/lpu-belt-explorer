@@ -28493,9 +28493,11 @@
         "model": "108418"
       }
     ],
-    "version": " - 🔎 Under Review",
     "lockingMechanisms": [
       "Disc detainer"
+    ],
+    "features": [
+      "🔎 Under Review"
     ],
     "links": [
       {
@@ -28508,7 +28510,7 @@
       }
     ],
     "views": 18,
-    "lastUpdated": "2023-06-06T17:08:14.777Z"
+    "lastUpdated": "2023-06-06T17:25:37.481Z"
   },
   {
     "id": "a17a6cf3",
@@ -28519,9 +28521,11 @@
         "model": "Pagoda"
       }
     ],
-    "version": " - 🔎 Under Review",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 6,
-    "lastUpdated": "2023-06-06T17:08:14.777Z"
+    "lastUpdated": "2023-06-06T17:25:37.481Z"
   },
   {
     "id": "9ae8b650",
@@ -28532,9 +28536,12 @@
         "model": "AVA"
       }
     ],
-    "version": "flat key - 🔎 Under Review",
+    "version": "flat key",
     "lockingMechanisms": [
       "Wafer"
+    ],
+    "features": [
+      "🔎 Under Review"
     ],
     "media": [
       {
@@ -28569,7 +28576,7 @@
       }
     ],
     "views": 16,
-    "lastUpdated": "2023-06-06T17:08:14.777Z"
+    "lastUpdated": "2023-06-06T17:25:37.481Z"
   },
   {
     "id": "0feafca7",
@@ -28580,7 +28587,9 @@
         "model": "5/45 Silver Rock"
       }
     ],
-    "version": " - 🔎 Under Review",
+    "features": [
+      "🔎 Under Review"
+    ],
     "media": [
       {
         "title": "By: LockFumbler",
@@ -28608,7 +28617,7 @@
       }
     ],
     "views": 40,
-    "lastUpdated": "2023-06-06T17:08:14.777Z"
+    "lastUpdated": "2023-06-06T17:25:37.481Z"
   },
   {
     "id": "5c5a2309",
@@ -28619,9 +28628,11 @@
         "model": "Magtec 1500"
       }
     ],
-    "version": " - 🔎 Under Review",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 3,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "d005e7b8",
@@ -28632,9 +28643,11 @@
         "model": "P1R"
       }
     ],
-    "version": " - 🔎 Under Review",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 16,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "b370e57b",
@@ -28645,9 +28658,11 @@
         "model": "Vela 2000 Mx"
       }
     ],
-    "version": " - 🔎 Under Review",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "🔎 Under Review"
     ],
     "notes": "2 spools, 2 \"barrels\", 1 special passive pin",
     "media": [
@@ -28665,7 +28680,7 @@
       }
     ],
     "views": 20,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "3a2ed5f3",
@@ -28693,9 +28708,12 @@
         "model": "1000"
       }
     ],
-    "version": "10mm (2pins) - 🔎 Under Review",
+    "version": "10mm (2pins)",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 3,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "d000f733",
@@ -28706,9 +28724,12 @@
         "model": "1000"
       }
     ],
-    "version": "15mm up to 35mm (3pins) - 🔎 Under Review",
+    "version": "15mm up to 35mm (3pins)",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 4,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "82ea52a4",
@@ -28719,9 +28740,12 @@
         "model": "1000"
       }
     ],
-    "version": "40mm up to 45mm (4pins / spools) - 🔎 Under Review",
+    "version": "40mm up to 45mm (4pins / spools)",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 1,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "bac43ba7",
@@ -28732,9 +28756,12 @@
         "model": "1000"
       }
     ],
-    "version": "50mm 60mm (5pins / spools) - 🔎 Under Review",
+    "version": "50mm 60mm (5pins / spools)",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 5,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "05298f91",
@@ -28745,10 +28772,13 @@
         "model": "ED"
       }
     ],
-    "version": "cam lock - 🔎 Under Review",
+    "version": "cam lock",
+    "features": [
+      "🔎 Under Review"
+    ],
     "notes": "14 pins in 4 directions, standard and mushroom drivers",
     "views": 4,
-    "lastUpdated": "2023-06-06T17:08:14.778Z"
+    "lastUpdated": "2023-06-06T17:25:37.482Z"
   },
   {
     "id": "1ae40987",
@@ -28759,7 +28789,10 @@
         "model": "1160"
       }
     ],
-    "version": "1100 but with 6 pin stacks - 🔎 Under Review",
+    "version": "1100 but with 6 pin stacks",
+    "features": [
+      "🔎 Under Review"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -28781,7 +28814,7 @@
       }
     ],
     "views": 21,
-    "lastUpdated": "2023-06-06T17:08:14.779Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "dbc1279d",
@@ -28794,9 +28827,11 @@
         "model": "HPP"
       }
     ],
-    "version": " - 🔎 Under Review",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 2,
-    "lastUpdated": "2023-06-06T17:08:14.779Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "fd93632b",
@@ -28809,6 +28844,9 @@
     "version": "5 serrated pin-in-pin ",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "🔎 Under Review"
     ],
     "notes": "mul-t-lock clone with poorer tolerances.",
     "media": [
@@ -28826,7 +28864,7 @@
       }
     ],
     "views": 12,
-    "lastUpdated": "2023-06-06T14:54:54.425Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "c2db34fb",
@@ -28837,7 +28875,9 @@
         "model": "ChoICe HS SFIC"
       }
     ],
-    "version": " - 🔎 Under Review",
+    "features": [
+      "🔎 Under Review"
+    ],
     "notes": "6/7 pin SFIC with ASSA twin 6000 sidebar",
     "media": [
       {
@@ -28884,7 +28924,7 @@
       }
     ],
     "views": 18,
-    "lastUpdated": "2023-06-06T17:08:14.779Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "ee04714f",
@@ -28895,9 +28935,12 @@
         "model": "K6-RT"
       }
     ],
+    "features": [
+      "🔎 Under Review"
+    ],
     "notes": "6-pin",
     "views": 5,
-    "lastUpdated": "2023-03-23T03:24:22.396Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "ae0d35bc",
@@ -28909,8 +28952,11 @@
       }
     ],
     "version": "not Abloy keyway",
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 7,
-    "lastUpdated": "2023-05-30T18:50:08.550Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "4062aefb",
@@ -28934,6 +28980,9 @@
         "make": "Bowley",
         "model": "Rotasera"
       }
+    ],
+    "features": [
+      "🔎 Under Review"
     ],
     "media": [
       {
@@ -28974,7 +29023,7 @@
       }
     ],
     "views": 22,
-    "lastUpdated": "2023-06-03T18:17:56.395Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "c77a4ac8",
@@ -28985,8 +29034,11 @@
         "model": "Profi 116/25"
       }
     ],
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 3,
-    "lastUpdated": "2023-05-26T19:06:05.075Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "35adb4d6",
@@ -28997,8 +29049,11 @@
         "model": "Profi 116/30"
       }
     ],
+    "features": [
+      "🔎 Under Review"
+    ],
     "views": 13,
-    "lastUpdated": "2023-05-26T19:06:05.075Z"
+    "lastUpdated": "2023-06-06T17:25:37.483Z"
   },
   {
     "id": "bbfd4108",
@@ -31136,6 +31191,7 @@
       "Lever"
     ],
     "features": [
+      "🔎 Under Review",
       "Cabinet",
       "Flat steel key",
       "Curtain",
@@ -31169,7 +31225,7 @@
       }
     ],
     "views": 3,
-    "lastUpdated": "2023-05-23T22:24:08.608Z"
+    "lastUpdated": "2023-06-06T17:25:37.487Z"
   },
   {
     "id": "288c8f6e",
