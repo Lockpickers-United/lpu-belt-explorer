@@ -679,29 +679,29 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 1",Winkhaus,X-Tra,"≥13 pins",Dimple,"High pin count",,d1a5cd90
 "Black 2",Yanai,"R 2200M",,Dimple,"High pin count",,a8e79394
 "Black 5","Yuema,Forte","750,Enigma",,Slider,"Destructive gut",,0b604114
-Unranked,ABA,108418,,"Disc detainer","🔎 Under Review",,3b7643da
-Unranked,ABA,Pagoda,,,"🔎 Under Review",,a17a6cf3
-Unranked,Abloy,AVA,"flat key",Wafer,"🔎 Under Review",,9ae8b650
-Unranked,ABUS,"5/45 Silver Rock",,,"🔎 Under Review",,0feafca7
-Unranked,ABUS,"Magtec 1500",,,"🔎 Under Review",,5c5a2309
-Unranked,ABUS,P1R,,,"🔎 Under Review",,d005e7b8
-Unranked,ABUS,"Vela 2000 Mx",,Dimple,"🔎 Under Review","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
+Unranked,ABA,108418,,"Disc detainer","Under Review ⚑",,3b7643da
+Unranked,ABA,Pagoda,,,,,a17a6cf3
+Unranked,Abloy,AVA,"flat key",Wafer,,,9ae8b650
+Unranked,ABUS,"5/45 Silver Rock",,,,,0feafca7
+Unranked,ABUS,"Magtec 1500",,,,,5c5a2309
+Unranked,ABUS,P1R,,,,,d005e7b8
+Unranked,ABUS,"Vela 2000 Mx",,Dimple,,"2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
 Unranked,,ADW,,Pin-tumbler,Unguttable,,3a2ed5f3
-Unranked,Alpha,1000,"10mm (2pins)",,"🔎 Under Review",,9423b4a4
-Unranked,Alpha,1000,"15mm up to 35mm (3pins)",,"🔎 Under Review",,d000f733
-Unranked,Alpha,1000,"40mm up to 45mm (4pins / spools)",,"🔎 Under Review",,82ea52a4
-Unranked,Alpha,1000,"50mm 60mm (5pins / spools)",,"🔎 Under Review",,bac43ba7
-Unranked,Alpha,ED,"cam lock",,"🔎 Under Review","14 pins in 4 directions, standard and mushroom drivers",05298f91
-Unranked,"American Lock",1160,"1100 but with 6 pin stacks",,"🔎 Under Review",,1ae40987
-Unranked,",","An Jia Bao,HPP",,,"🔎 Under Review",,dbc1279d
-Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"🔎 Under Review","mul-t-lock clone with poorer tolerances.",fd93632b
-Unranked,Arrow,"ChoICe HS SFIC",,,"🔎 Under Review","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
-Unranked,BASI,K6-RT,,,"🔎 Under Review",6-pin,ee04714f
-Unranked,Baton,"6000 series","not Abloy keyway",,"🔎 Under Review",,ae0d35bc
+Unranked,Alpha,1000,"10mm (2pins)",,,,9423b4a4
+Unranked,Alpha,1000,"15mm up to 35mm (3pins)",,,,d000f733
+Unranked,Alpha,1000,"40mm up to 45mm (4pins / spools)",,,,82ea52a4
+Unranked,Alpha,1000,"50mm 60mm (5pins / spools)",,,,bac43ba7
+Unranked,Alpha,ED,"cam lock",,,"14 pins in 4 directions, standard and mushroom drivers",05298f91
+Unranked,"American Lock",1160,"1100 but with 6 pin stacks",,,,1ae40987
+Unranked,",","An Jia Bao,HPP",,,,,dbc1279d
+Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,,"mul-t-lock clone with poorer tolerances.",fd93632b
+Unranked,Arrow,"ChoICe HS SFIC",,,,"6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
+Unranked,BASI,K6-RT,,,,6-pin,ee04714f
+Unranked,Baton,"6000 series","not Abloy keyway",,,,ae0d35bc
 Unranked,,Bond,,Pin-tumbler,,,4062aefb
-Unranked,Bowley,Rotasera,,,"🔎 Under Review",,e35772c9
-Unranked,"Burg Wächter","Profi 116/25",,,"🔎 Under Review",,c77a4ac8
-Unranked,"Burg Wächter","Profi 116/30",,,"🔎 Under Review",,35adb4d6
+Unranked,Bowley,Rotasera,,,,,e35772c9
+Unranked,"Burg Wächter","Profi 116/25",,,,,c77a4ac8
+Unranked,"Burg Wächter","Profi 116/30",,,,,35adb4d6
 Unranked,"Burg Wächter","Profi 116/50","50mm or larger",,,,bbfd4108
 Unranked,,Casesa,,,,,919755fe
 Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider",,,60964e9f
@@ -801,7 +801,7 @@ Unranked,,VEB,,,,,e524ce27
 Unranked,Voga,X18,,,,,90b4ade7
 Unranked,,War-Lok,,,,,fa9fb7e1
 Unranked,WEST,"YKK AP",,,,,1220174e
-Unranked,"Western Electric",30B,,Lever,"🔎 Under Review,Cabinet,Flat steel key,Curtain,False gates,Destructive gut",,e718b140
+Unranked,"Western Electric",30B,,Lever,"Under Review ⚑,Cabinet,Flat steel key,Curtain,False gates,Destructive gut",,e718b140
 Unranked,Wilka,3700,,,,,288c8f6e
 Unranked,Wilka,"Primus VX",,,,,10679814
 Unranked,,Wilson,"18 pins",,,,c4a2fbe5
