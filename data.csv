@@ -235,7 +235,7 @@ Green,PACLOCK,100G,,Pin-tumbler,,,0fb9a3c8
 Green,PACLOCK,90A,,Pin-tumbler,,,8ad36e8a
 Green,PACLOCK,95G,,Pin-tumbler,,,31d68cd1
 Green,PACLOCK,UCS,,Pin-tumbler,,,f54c8493
-Green,Sargent,Mortise,,Pin-tumbler,,,4071176d
+Green,Sargent,Mortise,"standard pins",Pin-tumbler,,,4071176d
 Green,Sargent,Mortise,"with security pins",Pin-tumbler,,,8f3f18d8
 Green,Schlage,Everest,,Pin-tumbler,,,ea1d1d8c
 Green,Squire,440,"4 lever, pipe key",Lever,"Padlock,Pipe key,Uncurtained",,44bdfa06
@@ -694,7 +694,7 @@ Unranked,Alpha,1000,"50mm 60mm (5pins / spools)",,,,bac43ba7
 Unranked,Alpha,ED,"cam lock",,,"14 pins in 4 directions, standard and mushroom drivers",05298f91
 Unranked,"American Lock",1160,"1100 but with 6 pin stacks",,,,1ae40987
 Unranked,",","An Jia Bao,HPP",,,,,dbc1279d
-Unranked,,Angal,"5 serrated pin-in-pin",Dimple,,"mul-t-lock clone with poorer tolerances.",fd93632b
+Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,,"mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Arrow,"ChoICe HS SFIC",,,,"6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
 Unranked,BASI,K6-RT,,,,6-pin,ee04714f
 Unranked,Baton,"6000 series","not Abloy keyway",,,,ae0d35bc
