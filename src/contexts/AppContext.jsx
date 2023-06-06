@@ -13,8 +13,8 @@ export function AppProvider({children}) {
         const {tab, belt, id, name, search, ...rest} = filters
         if (tab && uniqueBelts.includes(tab)) {
             return tab
-        } else if (belt && uniqueBelts.includes(belt)) {
-            return belt
+        } else if (belt) {
+            return uniqueBelts.includes(belt) ? belt : 'search'
         } else if (id) {
             const entry = data.find(e => id === e.id)
             return entry ? entry.belt.replace(/\s\d/g, '') : 'White'
