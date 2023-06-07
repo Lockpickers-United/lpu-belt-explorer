@@ -83,6 +83,7 @@ function Entry({entry, expanded, onExpand}) {
                     <FieldValue
                         name='Make / Model'
                         value={makeModels}
+                        unranked={entry.belt === 'Unranked'}
                     />
 
                     {
@@ -90,6 +91,7 @@ function Entry({entry, expanded, onExpand}) {
                         <FieldValue
                             name='Version'
                             value={<Typography>{entry.version}</Typography>}
+                            unranked={entry.belt === 'Unranked'}
                         />
                     }
                 </Typography>

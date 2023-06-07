@@ -72,12 +72,6 @@ export function DataProvider({children}) {
                     ...result.obj,
                     score: result.score
                 }))
-                .sort((a, b) => {
-                    // Move unranked to the bottom of search results
-                    const val1 = a.belt === 'Unranked'
-                    const val2 = b.belt === 'Unranked'
-                    return val1 - val2
-                })
             : filtered
 
         return sort
