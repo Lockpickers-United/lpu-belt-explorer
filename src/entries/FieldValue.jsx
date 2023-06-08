@@ -1,26 +1,27 @@
 import React from 'react'
-import Typography from '@mui/material/Typography'
 
-function FieldValue({name, value, last, unranked}) {
-    const marginStyle = last ? {} : {marginBottom: 8}
-    const headerStyle = unranked ? {color: '#777'} : {}
-    const textStyle = unranked ? {color: '#AAA'} : {}
+function FieldValue({name, value, last, headerStyle = {}, textStyle = {}}) {
+    const marginStyle = last
+        ? {marginLeft: 5}
+        : {marginLeft: 5, marginBottom: 8}
+    const fullHeaderStyle = {
+        color: '#666',
+        fontSize: '0.85rem',
+        ...headerStyle
+    }
+    const fullTextStyle = {
+        marginLeft: 5,
+        ...textStyle
+    }
+
     return (
         <div style={marginStyle}>
-            <Typography
-                component='div'
-                variant='subtitle2'
-                sx={{color: 'text.disabled'}}
-                style={headerStyle}
-            >
+            <div style={fullHeaderStyle}>
                 {name}:
-            </Typography>
-            <Typography
-                component='div'
-                style={textStyle}
-            >
+            </div>
+            <div style={fullTextStyle}>
                 {value}
-            </Typography>
+            </div>
         </div>
     )
 }

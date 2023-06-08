@@ -50,7 +50,7 @@ function Entry({entry, expanded, onExpand}) {
         return (
             <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                 {entry.makeModels?.map(({make, model}, index) =>
-                    <Typography key={index}>
+                    <Typography key={index} style={{fontWeight: 500}}>
                         {make && make !== model ? `${make} ${model}` : model}
                     </Typography>
                 )}
@@ -76,14 +76,15 @@ function Entry({entry, expanded, onExpand}) {
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
-                <Typography
-                    component='span' style={{marginRight: 8}}
-                    sx={{width: '50%', flexShrink: 0, flexDirection: 'column'}}
-                >
+                <div style={{marginRight: 8, width: '50%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         name='Make / Model'
                         value={makeModels}
-                        unranked={entry.belt === 'Unranked'}
+                        textStyle={
+                            entry.belt === 'Unranked'
+                                ? {color: '#777'}
+                                : {}
+                        }
                     />
 
                     {
@@ -91,16 +92,16 @@ function Entry({entry, expanded, onExpand}) {
                         <FieldValue
                             name='Version'
                             value={<Typography>{entry.version}</Typography>}
-                            unranked={entry.belt === 'Unranked'}
+                            textStyle={entry.belt === 'Unranked' ? {color: '#777'} : {}}
                         />
                     }
-                </Typography>
-                <Typography component='span' sx={{width: '50%', flexShrink: 0, flexDirection: 'column'}}>
+                </div>
+                <div style={{width: '50%', flexShrink: 0, flexDirection: 'column'}}>
                     {
                         entry.lockingMechanisms?.length > 0 &&
                         <FieldValue name='Locking Mechanisms' value={lockingMechanisms}/>
                     }
-                </Typography>
+                </div>
             </AccordionSummary>
             {
                 expanded &&
