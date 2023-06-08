@@ -80,11 +80,7 @@ function Entry({entry, expanded, onExpand}) {
                     <FieldValue
                         name='Make / Model'
                         value={makeModels}
-                        textStyle={
-                            entry.belt === 'Unranked'
-                                ? {color: '#777'}
-                                : {}
-                        }
+                        textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
                     />
 
                     {
@@ -92,7 +88,7 @@ function Entry({entry, expanded, onExpand}) {
                         <FieldValue
                             name='Version'
                             value={<Typography>{entry.version}</Typography>}
-                            textStyle={entry.belt === 'Unranked' ? {color: '#777'} : {}}
+                            textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />
                     }
                 </div>
