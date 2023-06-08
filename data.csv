@@ -682,8 +682,8 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 Unranked,ABA,108418,,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,ABA,Pagoda,,,,,a17a6cf3
 Unranked,Abloy,AVA,"flat key",Wafer,,,9ae8b650
-Unranked,ABUS,"5/45 Silver Rock",,,,,0feafca7
-Unranked,ABUS,"Magtec 1500",,,,,5c5a2309
+Unranked,ABUS,"5/45 Silver Rock",,Pin-tumbler,,,0feafca7
+Unranked,ABUS,"Magtec 1500",,"Pin-tumbler,Magnet",,,5c5a2309
 Unranked,ABUS,P1R,,,,,d005e7b8
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,,"2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
 Unranked,,ADW,,Pin-tumbler,Unguttable,,3a2ed5f3
