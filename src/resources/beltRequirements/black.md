@@ -44,5 +44,3 @@ Examples of "Master's Projects":
 
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
-
-.
