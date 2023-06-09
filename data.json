@@ -917,23 +917,30 @@
     "features": [
       "Guttable"
     ],
+    "notes": "The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",
     "media": [
       {
-        "title": "By: mgsecure",
+        "title": "By: DEW",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/American_5200_-_FXE47395_tn.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:American_5200_-_FXE47395.jpg"
-      },
-      {
-        "title": "By: Oaklandishh",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/225px-American5200.jpeg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:American5200.JPG"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52961013837_a1032415b6_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52961013837/in/album-72177720307966378/"
       },
       {
         "title": "By: DEW",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52864637053_bf8756deeb_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52962066088_64f9998c3b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52962066088/in/album-72177720307966378/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52961611576_01dc3fcfb4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52961611576/in/album-72177720307966378/"
+      },
+      {
+        "title": "By: DEW",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52864637053_a5fbf112ee_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52864637053/in/album-72177720307966378/"
       }
     ],
@@ -944,7 +951,7 @@
       }
     ],
     "views": 373,
-    "lastUpdated": "2023-05-02T11:15:24.738Z"
+    "lastUpdated": "2023-06-09T10:03:00.264Z"
   },
   {
     "id": "a1581afe",
@@ -5328,18 +5335,25 @@
     "features": [
       "Guttable"
     ],
+    "notes": "The standard, non-bumpstop model of the American Lock 5200 can be distinguished by the angular shape of the bow of its key, compared to the rounded shape of the bumpstop keybow.",
     "media": [
       {
         "title": "By: mgsecure",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/American_5200_-_FXE47395_tn.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:American_5200_-_FXE47395.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52962071263_c7bf44aa91_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52962071263/in/album-72177720308937229/"
       },
       {
-        "title": "By: Oaklandishh",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/225px-American5200.jpeg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:American5200.JPG"
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52961762484_6abea87ccb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52961762484/in/album-72177720308937229/"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52961762564_2d8c245187_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52961762564/in/album-72177720308937229/"
       }
     ],
     "links": [
@@ -5349,7 +5363,7 @@
       }
     ],
     "views": 326,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-06-09T10:03:00.267Z"
   },
   {
     "id": "b3af5e62",
@@ -17513,12 +17527,6 @@
     ],
     "media": [
       {
-        "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/242px-BiLock_NG_cylinder.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:BiLock_NG_cylinder.jpg"
-      },
-      {
         "title": "By: LockPickingFisherman",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52938116828_60e855ab3c_w_d.jpg",
@@ -17568,7 +17576,7 @@
       }
     ],
     "views": 30,
-    "lastUpdated": "2023-06-09T09:33:16.663Z"
+    "lastUpdated": "2023-06-09T10:03:00.274Z"
   },
   {
     "id": "33d6e0df",
