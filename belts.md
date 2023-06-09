@@ -909,8 +909,6 @@ Examples of "Master's Projects":
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
 
-.
-
 
 - [Abloy Disklock Pro / Abloy Novel](https://lpubelts.com/?id=1a7a23d4)
 - [Abloy Easy](https://lpubelts.com/?id=12ff8c25)
