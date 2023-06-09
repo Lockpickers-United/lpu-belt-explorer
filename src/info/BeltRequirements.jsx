@@ -21,6 +21,7 @@ function BeltRequirements({belt}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const markdown = beltRequirements[belt]
 
+    if (!markdown) return null
     return (
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>

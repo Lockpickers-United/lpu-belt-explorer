@@ -7,7 +7,7 @@ const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
     const {data} = useContext(LazyDataContext)
-    const {filters, removeFilters} = useContext(FilterContext)
+    const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
     const [tab, setTab] = useState(() => {
         const {tab, belt, id, name, search, ...rest} = filters
@@ -17,7 +17,13 @@ export function AppProvider({children}) {
             return uniqueBelts.includes(belt) ? belt : 'search'
         } else if (id) {
             const entry = data.find(e => id === e.id)
-            return entry ? entry.belt.replace(/\s\d/g, '') : 'White'
+            const value = entry ? entry.belt.replace(/\s\d/g, '') : 'White'
+            if (value === 'Unranked') {
+                addFilter('belt', 'Unranked', true)
+                return 'search'
+            } else {
+                return value
+            }
         } else if (search?.length > 0 || Object.keys(rest).length > 0) {
             return 'search'
         }
