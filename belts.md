@@ -123,7 +123,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [ABUS MyLock](https://lpubelts.com/?id=423dbebe)
 - [ABUS Nautic T84MB/40](https://lpubelts.com/?id=9d830052)
 - [ACE Laminated padlock](https://lpubelts.com/?id=abdf3acd) (40mm or larger)
-- [American Lock A5200](https://lpubelts.com/?id=a0d1bf97) (bump stop model: all standards + 1 anti-bump pin)
+- [American Lock 5200](https://lpubelts.com/?id=a0d1bf97) (bump stop model: all standards + 1 anti-bump pin)
 - [ARFE](https://lpubelts.com/?id=a1581afe)
 - [Befa](https://lpubelts.com/?id=32244161)
 - [Braslock](https://lpubelts.com/?id=d6d43c00)
