@@ -524,7 +524,7 @@ Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, spooled inner
 Brown,Pollux,7,,Pump/push,,,cc5bbb68
 Brown,Robur,"2391 Safe Deposit Lock","<3 barrels or gins with matched milling","Sidepins,Pin-tumbler",,,94ee12b7
 Brown,"Schlage,Schlage","Primus,Everest Primus",,"Sidepins,Pin-tumbler",,,ea1afad0
-Brown,"Scorpion,Marks","CX-5,High Security Lock",,"Pin-tumbler,Slider","Gin spool drivers,Active sidebar,Sprung sliders,False gates,Undercut milling",,626da374
+Brown,"Scorpion,Marks","CX-5,High Security Lock",,"Pin-tumbler,Slider","Gin spool drivers,Active sidebar,Unsprung sliders,False gates,Undercut milling",,626da374
 Brown,U-Shin,"Showa NX","<13 pins",Dimple,,,b91890bf
 Brown,"Vachette,Vachette","Radial NT,Radial NT+","<13 pins",Dimple,,,40e99be0
 Brown,,"Van Lock",,Pump/push,"Destructive gut",,506b242a
@@ -663,7 +663,7 @@ Red,,Xylock,,Pin-tumbler,,,6708838f
 "Black 2",MIWA,U9,"9 unmastered elements",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5,R10","not mastered","Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
 "Black 5",NATO,Mersey,"10 lever, pre-1973",Lever,"Safe,Pin key,Double bitted",,4f2ed774
-"Black 5",NATO,Mersey,"14 lever, pre-1973",Lever,"Safe,Pin key,Double bitted",,f29a212f
+"Black 5",NATO,Mersey,"14 lever",Lever,"Safe,Pin key,Double bitted",,f29a212f
 "Black 4",Opnus,Memolis,,Lever/sidebar,,,6c0ec943
 "Black 4",Opnus,MMXII,,Lever/sidebar,,,e151c916
 "Black 2",Robur,"Disc Detainer SDB lock",,"Disc detainer","Front/rear tension,False gates,Curtain","Curtain needs to be overcome. No means of correcting an overset known",5cba063b
