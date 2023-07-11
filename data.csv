@@ -478,7 +478,7 @@ Brown,"Australian Lock Co.",Galaxy,,Other,,,33d6e0df
 Brown,BASI,K10,,,,,82ae66ad
 Brown,BKS,Multipin,,Pin-tumbler,,,39bf479d
 Brown,Bricard,Chifral,"all versions, fully pinned",Dimple,,,9b00fb5e
-Brown,Cavers,Cavith,,,,,de47d600
+Brown,Cavers,Cavith,,"Pump/push,Pin-tumbler",,,de47d600
 Brown,Clavis,T-20,"<15 pins",Dimple,"High pin count",,f51e2ff2
 Brown,Codkey,Locksys,"≥15 pins",Dimple,"High pin count",,bc03135a
 Brown,DOM,"ix 10","with shark fins",Dimple,"Shark fin keypins,Torpedo keypins",,e39885f3
@@ -717,7 +717,6 @@ Unranked,,Dény,"3 lever, trap door",,,,204066fa
 Unranked,Emhart,"Cam Lock - 5 pin",,Pin-tumbler,,,bf43348b
 Unranked,,EMR,,Pin-tumbler,,,f24c2d25
 Unranked,Ezcurra,DS-15,,Dimple,,,abe6074c
-Unranked,,F3,,Pin-tumbler,,,d98f267e
 Unranked,FAB,Control,,Pin-tumbler,,,b5e210ec
 Unranked,,Favour,,Pin-tumbler,,,ca5b08b4
 Unranked,,Fermod,,,,,d93c1ed7
@@ -741,6 +740,7 @@ Unranked,"Hong Dun","model undefined","security pinned dimple with sliders",,,,4
 Unranked,Hori,Trident,"standard pins",Dimple,,,97e1ae9f
 Unranked,,HP+,,Pin-tumbler,,,28f1b592
 Unranked,,IBAU,,,,,b4d52d31
+Unranked,ISEO,F3,,Pin-tumbler,,,d98f267e
 Unranked,ISEO,"F6 extra S3",,,,,895be796
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,,,a7d98df3
 Unranked,Kaba,Matrix,"16 pins (fully pinned)",,,,7d5c53c4
