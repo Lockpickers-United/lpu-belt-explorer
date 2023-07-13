@@ -81,8 +81,10 @@ This is the beginning of your journey of self-discovery that will test the limit
 Both photos and videos of your picking accomplishment are accepted for this rank.
 
 **Requirements**
+* Pick any lock with any tool.
 
-1.  Pick any lock with any tool.
+**Evidence format**
+* Photos or vídeos, showing turned core
 
 
 - [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
