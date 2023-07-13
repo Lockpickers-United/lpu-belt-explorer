@@ -625,7 +625,7 @@ of the lockpicking community as they progress.
 
 **Picking Requirements**
 
-- SPP and gut one of the locks ranked as blue belt.
+- SPP and gut one of the locks ranked as Blue Belt.
 
 **Non-Picking Requirements**
 
@@ -643,7 +643,7 @@ your lock in the picking video. Please read more below for filming requirements.
 
 - Pick and gut in a continuous video take without cuts, keeping the lock in frame.
 
-**Blue Belt Lock List:**
+**Blue Belt Locks:**
 `,pD=`You are now picking locks that are categorically hi-sec. They have two or
 more discrete locking mechanisms and are considered unpickable by nearly
 every locksmith on the planet. You are helping new pickers frequently

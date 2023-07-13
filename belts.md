@@ -438,7 +438,7 @@ of the lockpicking community as they progress.
 
 **Picking Requirements**
 
-- SPP and gut one of the locks ranked as blue belt.
+- SPP and gut one of the locks ranked as Blue Belt.
 
 **Non-Picking Requirements**
 
@@ -456,7 +456,7 @@ your lock in the picking video. Please read more below for filming requirements.
 
 - Pick and gut in a continuous video take without cuts, keeping the lock in frame.
 
-**Blue Belt Lock List:**
+**Blue Belt Locks:**
 
 
 - [Any HQ High Security Interactive clone](https://lpubelts.com/?id=c1d09460) (4 pins)
