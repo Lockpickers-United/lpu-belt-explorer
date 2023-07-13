@@ -186,7 +186,7 @@ Those security pins designed to keep you out are powerless against you. You're s
 
 **Requirements**
 
-- Pick one of the locks ranked as orange belt
+- Pick one of the locks ranked as orange belt.
 
 **Evidence format**
 

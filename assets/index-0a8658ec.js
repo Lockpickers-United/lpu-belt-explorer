@@ -580,7 +580,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 **Requirements**
 
-- Pick one of the locks ranked as orange belt
+- Pick one of the locks ranked as orange belt.
 
 **Evidence format**
 
