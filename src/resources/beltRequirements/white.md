@@ -7,3 +7,5 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 **Evidence format**
 * Photos or vídeos, showing turned core
+
+**White Belt Locks:**
