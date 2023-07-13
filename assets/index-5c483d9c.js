@@ -563,6 +563,8 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 
 **Evidence format**
 * Photos or vídeos, showing turned core
+
+**White Belt Locks:**
 `,uD=`You understand the basic function of locks, and technique to pick them. Normal padlocks crumble at your very glance and you've moved onto higher quality cylinders, some of which may even contain security pins.
 
 Both photos and videos of your picking accomplishment are accepted for this rank.

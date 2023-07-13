@@ -86,6 +86,8 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 **Evidence format**
 * Photos or vídeos, showing turned core
 
+**White Belt Locks:**
+
 
 - [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
 - [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
