@@ -15,21 +15,30 @@ In gutting, all components relevant to function must be shown clearly and zoomed
 recommended applicants ask in the discord or via modmail prior to filming. All locks must be gutted, even if destruction
 is required to gut.
 
-**Requirements**
+**Picking Requirements**
 
-1. Demonstrate your ability to gut locks and get them back together again
-2. Demonstrated history of helping advancing and advanced pickers
-3. Have built a "Challenge Lock" and shared it with a fellow picker. Please see below for more information.
-4. Have made at least one specialized tool and published the specs
-5. Mentor at least two advanced pickers through the process of getting into a difficult lock
-6. Complete at least two of the "Epic Quest Options" listed below
-7. SPP and gut two different locks ranked as Black Belt (locks have to be from separate entries on the list) or similar
+- SPP (single pin pick) and gut **two** different locks ranked as Black Belt (locks have to be from separate entries in the list).
 
-Epic Quest Options (all subject to approval):
+**Non-Picking Requirements**
 
-- Develop and demonstrate an "Extra Skill" that is related to picking or physical security
-- Complete and document a "Master's Project" of sufficient difficulty and complexity
-- Select and pick two additional Black Belt level locks from the list
+- Mentor at least **two** advanced pickers through the process of getting into a difficult lock.
+- Complete at least two of the "Epic Quest Options" listed below.
+
+- All previous non-picking requirements must have been fulfilled.
+  - Demonstrate your ability to gut locks and get them back together again. *(Green Belt Requirement)*
+  - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
+  - Have built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
+  - Make at least one specialized tool and publish the specs *(Brown Belt Requirement)*
+
+**Evidence Format**
+
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
+
+**Epic Quest Options** (all subject to approval):
+
+- Develop and demonstrate an "Extra Skill" that is related to picking or physical security.
+- Complete and document a "Master's Project" of sufficient difficulty and complexity.
+- Select and pick two additional Black Belt level locks from the list.
 
 Examples of "Extra Skills":
 
@@ -44,3 +53,5 @@ Examples of "Master's Projects":
 
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
+
+**Black Belt Locks:**
