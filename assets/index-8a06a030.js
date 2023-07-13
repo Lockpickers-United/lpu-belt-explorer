@@ -619,6 +619,7 @@ pinning your own locks, making challenge locks, and helping newer members
 of the lockpicking community as they progress.
 
 **Picking Requirements**
+
 - SPP and gut one of the locks ranked as blue belt.
 
 **Non-Picking Requirements**
@@ -634,6 +635,7 @@ Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review 
 your lock in the picking video. Please read more below for filming requirements.
 
 **Evidence Format**
+
 - Pick and gut in a continuous video take without cuts, keeping the lock in frame.
 
 **Blue Belt Lock List:**
