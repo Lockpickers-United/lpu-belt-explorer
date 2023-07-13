@@ -22,6 +22,6 @@ your lock in the picking video. Please read more below for filming requirements.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
 
 **Blue Belt Locks:**
