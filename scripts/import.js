@@ -119,6 +119,7 @@ mediaData
             fullUrl: item['Full URL']
         }
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
+        if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
         entry.media.push(media)
     })
 

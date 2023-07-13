@@ -37,7 +37,8 @@ export const mediaSchema = Joi.array().items(
         Subtitle: Joi.string().allow(''),
         'Thumbnail URL': Joi.string().uri({scheme: ['https']}),
         'Full URL': Joi.string().allow('').uri(),
-        'Subtitle URL': Joi.string().allow('').uri()
+        'Subtitle URL': Joi.string().allow('').uri(),
+        'Full Image Direct URL': Joi.string().allow('').uri()
     }).unknown()
 )
 
