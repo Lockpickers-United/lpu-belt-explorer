@@ -189,6 +189,9 @@ Those security pins designed to keep you out are powerless against you. You're s
 * You must submit a **video** of your picking accomplishments for this rank. Videos must be in one, continuous take.
 * Photographs will also be accepted for locks that cannot be disassembled.
 
+ ...
+ 
+
 
 - [ABUS 45/50](https://lpubelts.com/?id=67b285d9) (brass body)
 - [ABUS 54TI/50 Titalium](https://lpubelts.com/?id=16e9d2ab)
