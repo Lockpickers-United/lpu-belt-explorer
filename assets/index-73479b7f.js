@@ -676,15 +676,23 @@ are so difficult tools sometimes don't even exist to open them, requiring
 you make your own. Tight keyways, rotating sidebar fingers, telescoping
 keypins, and countermilling are the norm for you.
 
-You must video picking and gutting accomplishments in one continuous take.
+**Picking Requirements**
 
-**Requirements**
+- SPP (single pin pick) and gut **two** different locks ranked as Brown Belt (locks have to be from separate entries in the list).
 
-1. Demonstrate your ability to gut locks and get them back together again
-2. Demonstrated history of helping advancing and advanced pickers
-3. Have built a "Challenge Lock" and shared it with a fellow picker. Please see below for more information.
-4. Have made at least one specialized tool
-5. SPP and gut two different locks ranked as Brown Belt (locks have to be from separate entries on the list) or similar
+**Non-Picking Requirements**
+
+- Make at least one specialized tool and publish the specs
+- All previous non-picking requirements must have been fulfilled.
+  - Demonstrate your ability to gut locks and get them back together again. *(Green Belt Requirement)*
+  - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
+  - Have built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
+
+**Evidence Format**
+
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
+
+**Brown Belt Locks:**
 `,mD=`Ultra high security is your middle name. Your lock collection is worth more than
 your first car and you constantly troll eBay for deals on insane European locks.
 You are frequently making custom tools to pick difficult locks, and you are acting
