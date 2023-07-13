@@ -6,6 +6,6 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - Pick any lock with any tool.
 
 **Evidence format**
-- Photos or vídeos, showing turned core
+- Photos or vídeos, showing turned core.
 
 **White Belt Locks:**
