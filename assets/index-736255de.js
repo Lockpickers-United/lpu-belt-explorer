@@ -572,9 +572,11 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 Both photos and videos of your picking accomplishment are accepted for this rank.
 
 **Requirements**
+
 - Pick one of the locks ranked as yellow belt.
 
 **Evidence format**
+
 - Photos or vídeos, showing turned core.
 
 **Yellow Belt Locks:**
