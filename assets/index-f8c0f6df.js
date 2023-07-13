@@ -154,7 +154,9 @@ Error generating stack: `+i.message+`
 
 As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
-Karate Belt Flair is entirely optional and members will go "unranked" until they specifically requests ranking by messaging the moderation team **with the required documentation as described below**. The moderators do not actively monitor the sub and all requests must go through modmail or discord, posts requesting a belt will be removed.
+Karate Belt Flair is entirely optional and members will go "unranked" until they specifically request ranking by messaging the moderation team **with the required documentation as described below**. The moderators do not actively monitor the sub for requests and all requests must go through modmail or discord, posts requesting a belt will be removed.
+
+You don't need to request every belt in sequence, nor start with white belt. Request the belt that best reflects your current level of skill, making sure you fulfill its requirements. Please read all of the requirements for each belt carefully and make sure to check the general rules, video requirements, and other information below the ranking list.
 
 Remember this is all just for fun... In the end, no matter what karate belt you wear, you're still just wearing fancy pajamas.
 
