@@ -186,15 +186,14 @@ Those security pins designed to keep you out are powerless against you. You're s
 
 **Requirements**
 
-* Pick one of the locks ranked as orange belt
+- Pick one of the locks ranked as orange belt
 
 **Evidence format**
 
-* You must submit a **video** of your picking accomplishments for this rank. Videos must be in one, continuous take.
-* Photographs will also be accepted for locks that cannot be disassembled.
+- You must submit a **video** of your picking accomplishments for this rank. Videos must be in one continuous take.
+- Photographs showing turned core will also be accepted for locks that cannot be disassembled.
 
- ...
- 
+**Orange Belt Locks:** 
 
 
 - [ABUS 45/50](https://lpubelts.com/?id=67b285d9) (brass body)
