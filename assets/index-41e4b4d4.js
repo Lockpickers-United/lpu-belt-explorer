@@ -570,10 +570,10 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 Both photos and videos of your picking accomplishment are accepted for this rank.
 
 **Requirements**
-- Pick one of the locks ranked as yellow belt
+- Pick one of the locks ranked as yellow belt.
 
 **Evidence format**
-- Photos or vídeos, showing turned core
+- Photos or vídeos, showing turned core.
 
 **Yellow Belt Locks:**
 `,cD=`Those security pins designed to keep you out are powerless against you. You're starting to find locks containing them easier to pick than those without. Your family is also starting to look at you and your growing collection of locks a bit strangely. It's OK -- we understand you. Let's get an orange belt on you to confuse them further.
