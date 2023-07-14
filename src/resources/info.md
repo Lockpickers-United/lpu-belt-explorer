@@ -169,6 +169,25 @@ the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb
 
 ----------
 
+## Video Requirements
+
+For submissions, please follow the below video guidelines:
+
+- Videos must consist of a pick and gut in a single take. Length is unimportant - do not remove sections to make the video "cleaner."
+- Videos must be in an easily reviewable format. Standard Youtube (not Shorts) videos are preferred. If another format/host is used please ensure it does not require downloading the video or other accommodations to view.
+- Video elements such as obscuring graphics, speed adjustments, quick zooms (which can look like cuts), etc. during the pick and gut may result in the invalidation of the submission. While these may be added to a video for social media, please submit the raw footage for belt purposes.
+  - If you have any concerns about zooms or lighting changes being misconstrued as cuts, consider placing a timer in view of the camera to provide evidence the pick and gut is continuous.
+- All important elements of the lock must be shown clearly during the video. This includes but is not limited to:
+  - Pins with security features shown closely and clearly to demonstrate said features. 
+  - Correct orientation of drivers if essential to the lock's function (e.g. gin drivers)
+  - Sidebars shown in detail to demonstrate they are unaltered. 
+  - Milling shown to be intact via running a pick through it.
+  - Any elements outside the plug (e.g. sidebar grooves) are also shown.
+- Sound is not important - if you wish to remove background sounds from the video that is acceptable.
+- Private videos are allowed, either as unlisted or set to private. Please contact a member of the mod team to discuss.
+
+----------
+
 ## Challenge Lock Requirements
 
 Blue Belt Picker and higher require that you have custom pinned a "Challenge Lock" and shared it with another picker (
