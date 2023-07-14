@@ -383,7 +383,7 @@ the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb
 
 ## Video Requirements
 
-For submissions, please follow the below video guidelines:
+For submissions, please follow these guidelines:
 
 - Videos must consist of a pick and gut in a single take. Length is unimportant - do not remove sections to make the video "cleaner."
 - Videos must be in an easily reviewable format. Standard Youtube (not Shorts) videos are preferred. If another format/host is used please ensure it does not require downloading the video or other accommodations to view.
