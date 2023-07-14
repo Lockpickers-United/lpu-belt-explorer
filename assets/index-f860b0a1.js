@@ -700,10 +700,10 @@ keypins, and countermilling are the norm for you.
 **Non-Picking Requirements**
 
 - Make at least one specialized tool and publish the specs
-- All previous non-picking requirements must have been fulfilled.
-  - Demonstrate your ability to gut locks and get them back together again. *(Green Belt Requirement)*
+- All previous non-picking requirements must have been fulfilled:
+  - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
-  - Have built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
+  - Built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
 
 **Evidence Format**
 
