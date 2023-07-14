@@ -12,8 +12,8 @@ of the lockpicking community as they progress.
 
 - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel.
 - Have built a "Challenge Lock" and shared it with a fellow picker. Please see below for more information on this requirement.
-- All previous non-picking requirements must have been fulfilled.
-  - Demonstrate your ability to gut locks and get them back together again. *(Green Belt Requirement)*
+- All previous non-picking requirements must have been fulfilled:
+  - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
 
 Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review the guidelines listed under SFIC Filming Requirements for validating
 your lock in the picking video. Please read more below for filming requirements.
