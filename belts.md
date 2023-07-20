@@ -89,7 +89,9 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - Photos or vídeos, showing turned core.
 
 
-**White Belt Locks**- [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
+**White Belt Locks**
+
+- [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
 - [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
 - [Any China Padlock (granite look)](https://lpubelts.com/?id=3ac43ea8)
 - [Any Cutaway Lock](https://lpubelts.com/?id=901b35b2)
@@ -125,7 +127,9 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - Photos or vídeos, showing turned core.
 
 
-**Yellow Belt Locks**- [ABUS 55/30](https://lpubelts.com/?id=c7d2eca1)
+**Yellow Belt Locks**
+
+- [ABUS 55/30](https://lpubelts.com/?id=c7d2eca1)
 - [ABUS 64Ti/30](https://lpubelts.com/?id=693abee0) (30mm or smaller (&lt;5 pins))
 - [ABUS 65/35](https://lpubelts.com/?id=1ce31c29) (35mm or smaller)
 - [ABUS 84/35](https://lpubelts.com/?id=805fc883)
@@ -194,7 +198,9 @@ Those security pins designed to keep you out are powerless against you. You're s
 - Photographs showing turned core will also be accepted for locks that cannot be disassembled.
 
 
-**Orange Belt Locks**- [ABUS 45/50](https://lpubelts.com/?id=67b285d9) (brass body)
+**Orange Belt Locks**
+
+- [ABUS 45/50](https://lpubelts.com/?id=67b285d9) (brass body)
 - [ABUS 54TI/50 Titalium](https://lpubelts.com/?id=16e9d2ab)
 - [ABUS 55/40](https://lpubelts.com/?id=632f4069) (40mm or larger)
 - [ABUS 60/50](https://lpubelts.com/?id=d7188e81)
@@ -286,7 +292,9 @@ Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-
 process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo).
 
 
-**Green Belt Locks**- [ABUS 72/40](https://lpubelts.com/?id=74a00ae3)
+**Green Belt Locks**
+
+- [ABUS 72/40](https://lpubelts.com/?id=74a00ae3)
 - [ABUS 74/40 LOTO](https://lpubelts.com/?id=e42853c7)
 - [ABUS 75/50 / ABUS 75IB/50](https://lpubelts.com/?id=9ec8706c)
 - [ABUS 76/40](https://lpubelts.com/?id=47e7cf73)
@@ -447,7 +455,9 @@ your lock in the picking video. Please read more below for filming requirements.
 - Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
 
 
-**Blue Belt Locks**- [Any HQ High Security Interactive clone](https://lpubelts.com/?id=c1d09460) (4 pins)
+**Blue Belt Locks**
+
+- [Any HQ High Security Interactive clone](https://lpubelts.com/?id=c1d09460) (4 pins)
 - [Any SFIC format lock](https://lpubelts.com/?id=c6529d9c) (**)
 - [ABUS Bravus 3000](https://lpubelts.com/?id=ea0efaca)
 - [ABUS D10](https://lpubelts.com/?id=f96de7cc)
@@ -582,7 +592,9 @@ Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review 
 your lock in the picking video. Please read more below for filming requirements.
 
 
-**Purple Belt Locks**- [Any SFIC format lock (unless otherwise specified)](https://lpubelts.com/?id=c8259a23) (**)
+**Purple Belt Locks**
+
+- [Any SFIC format lock (unless otherwise specified)](https://lpubelts.com/?id=c8259a23) (**)
 - [ABA 109582](https://lpubelts.com/?id=96fd610e)
 - [ABUS Bravus 4000](https://lpubelts.com/?id=a062f1ee)
 - [ABUS EP10](https://lpubelts.com/?id=20adf729)
@@ -722,7 +734,9 @@ keypins, and countermilling are the norm for you.
 - Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
 
 
-**Brown Belt Locks**- [Any SFIC with security pins](https://lpubelts.com/?id=b13f4b57) (**)
+**Brown Belt Locks**
+
+- [Any SFIC with security pins](https://lpubelts.com/?id=b13f4b57) (**)
 - [Abloy Classic](https://lpubelts.com/?id=da09d849)
 - [ABUS Plus](https://lpubelts.com/?id=b8350900) (no butterfly discs)
 - [ABUS X-Plus](https://lpubelts.com/?id=c9d6d06d)
@@ -828,7 +842,9 @@ as a mentor to folks at the blue, purple and brown belt levels.
 - Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
 
 
-**Red Belt Locks**- [Abloy Disklock](https://lpubelts.com/?id=87eaa964)
+**Red Belt Locks**
+
+- [Abloy Disklock](https://lpubelts.com/?id=87eaa964)
 - [Abloy High Profile](https://lpubelts.com/?id=e92d29ad)
 - [ABUS EC700 / ABUS EC800](https://lpubelts.com/?id=b29a8b44)
 - [ABUS Plus](https://lpubelts.com/?id=b8350901) (with butterfly discs)
@@ -953,7 +969,9 @@ Examples of "Master's Projects":
 - Formation and leadership of a TOOOL chapter or other community organization
 
 
-**Black Belt Locks**- [Abloy Disklock Pro / Abloy Novel](https://lpubelts.com/?id=1a7a23d4)
+**Black Belt Locks**
+
+- [Abloy Disklock Pro / Abloy Novel](https://lpubelts.com/?id=1a7a23d4)
 - [Abloy Easy](https://lpubelts.com/?id=12ff8c25)
 - [Abloy Exec](https://lpubelts.com/?id=fc627b17)
 - [Abloy Protec](https://lpubelts.com/?id=735439dd)
