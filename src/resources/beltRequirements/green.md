@@ -21,5 +21,3 @@ together again.
 
 Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-7If8) if you not familiar with the
 process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo).
-
-**Green Belt Locks:** 

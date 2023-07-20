@@ -16,6 +16,7 @@ const groupedByBelt = rawData.reduce((acc, val) => {
 const beltsMd = uniqueBelts.map(belt => {
     const actualBelt = belt.toLowerCase()
     const header = `### ${belt} Belt\n![](%%${actualBelt}%%)\n\n`
+    const entriesHeader = `**${belt} Belt Locks**`
     const reqsPath = `./src/resources/beltRequirements/${actualBelt}.md`
     const reqs = fs.readFileSync(reqsPath, 'utf8')
     const specialReqsPath = `./src/resources/specialRequirements/${actualBelt}.md`
@@ -31,7 +32,7 @@ const beltsMd = uniqueBelts.map(belt => {
         const version = encodeNonAsciiHTML(entry.version ? ` (${entry.version})` : '')
         return `- [${makeModels}](${url})${version}`
     }).join('\n')
-    return header + reqs + '\n\n' + entries + '\n\n' + specialReqs
+    return header + reqs + '\n\n' + entriesHeader + entries + '\n\n' + specialReqs
 }).join('\n\n')
 
 const beltExplorerPromoMd = fs.readFileSync('./src/resources/beltExplorerPromo.md', 'utf8')

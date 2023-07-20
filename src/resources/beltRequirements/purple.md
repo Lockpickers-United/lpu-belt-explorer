@@ -22,5 +22,3 @@ You must video picking and gutting accomplishments in one continuous take.
 
 Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review the guidelines listed under SFIC Filming Requirements for validating
 your lock in the picking video. Please read more below for filming requirements.
-
-**Purple Belt Locks:**

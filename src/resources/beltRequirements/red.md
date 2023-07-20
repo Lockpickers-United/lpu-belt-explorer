@@ -19,5 +19,3 @@ as a mentor to folks at the blue, purple and brown belt levels.
 **Evidence Format**
 
 - Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
-
-**Red Belt Locks:**
