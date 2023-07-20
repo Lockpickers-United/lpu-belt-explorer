@@ -16,7 +16,7 @@ const groupedByBelt = rawData.reduce((acc, val) => {
 const beltsMd = uniqueBelts.map(belt => {
     const actualBelt = belt.toLowerCase()
     const header = `### ${belt} Belt\n![](%%${actualBelt}%%)\n\n`
-    const entriesHeader = `**${belt} Belt Locks**`
+    const entriesHeader = `**${belt} Belt Locks**\n\n`
     const reqsPath = `./src/resources/beltRequirements/${actualBelt}.md`
     const reqs = fs.readFileSync(reqsPath, 'utf8')
     const specialReqsPath = `./src/resources/specialRequirements/${actualBelt}.md`
