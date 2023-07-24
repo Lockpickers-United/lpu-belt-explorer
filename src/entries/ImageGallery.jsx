@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
-import Lightbox from 'react-awesome-lightbox'
+import Lightbox from 'react-awesome-lightbox/src/index'
 import 'react-awesome-lightbox/build/style.css'
 
 function ImageGallery({entry}) {
@@ -22,9 +22,6 @@ function ImageGallery({entry}) {
 
     const handleOpen = useCallback(index => () => setOpenImage(index), [])
     const handleClose = useCallback(() => setOpenImage(-1), [])
-    const handleWat = (...args) => {
-        console.log('wtf', args)
-    }
 
     return (
         <React.Fragment>
@@ -38,7 +35,6 @@ function ImageGallery({entry}) {
                         url: entry.fullSizeUrl || entry.thumbnailUrl,
                         title: `${entry.title} (${entry.subtitle})`
                     }))}
-                    onMouseDown={handleWat}
                     onClose={handleClose}
                 />
             }
