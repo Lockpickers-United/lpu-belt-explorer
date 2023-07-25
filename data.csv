@@ -296,7 +296,7 @@ Blue,EVVA,DPI,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,14481dfb
 Blue,EVVA,DPS,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,da54208c
 Blue,EVVA,DPX,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,af99d1cb
 Blue,EVVA,EPS,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,18f3c21f
-Blue,EVVA,GPI/ALS,,Pin-tumbler,"Hellish keyway",,bce6757d
+Blue,EVVA,GPI/ALS,,Pin-tumbler,"Hellish keyway","The EVVA ALS has a profile restriction plate after pin 4 and its key narrows accordingly.",bce6757d
 Blue,FAB,2000,,Pin-tumbler,,,f938f2fe
 Blue,"FAB,FAB","3* Profi,4* Profi",,Pin-tumbler,,,aee424c0
 Blue,"Federal Lock",6KD3110,,Dimple,,,275d33c9
