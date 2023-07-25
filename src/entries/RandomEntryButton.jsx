@@ -12,8 +12,9 @@ function RandomEntryButton() {
     const {clearFilters} = useContext(FilterContext)
 
     const handleClick = useCallback(() => {
-        const index = Math.floor(Math.random() * data.length)
-        const entry = data[index]
+        const filtered = data.filter(datum => datum.belt !== 'Unranked')
+        const index = Math.floor(Math.random() * filtered.length)
+        const entry = filtered[index]
         clearFilters()
         setTab(entry.belt.replace(/\s\d/g, ''))
         setExpanded(entry.id)
