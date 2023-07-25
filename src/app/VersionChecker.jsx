@@ -5,16 +5,21 @@ import Tooltip from '@mui/material/Tooltip'
 import dayjs from 'dayjs'
 
 function VersionChecker() {
+    if (import.meta.env.DEV) return null
     const [checkTime, setCheckTime] = useState(dayjs())
     const [currentVersion, setCurrentVersion] = useState(null)
     const [nextVersion, setNextVersion] = useState(null)
 
     const loadVersion = useCallback(async initial => {
-        const response = await fetch('./version.json', {cache: 'no-cache'})
-        const {version} = (await response.json())
-        if (initial) setCurrentVersion(version)
-        setNextVersion(version)
-        setCheckTime(dayjs())
+        try {
+            const response = await fetch('./version.json', {cache: 'no-cache'})
+            const {version} = (await response.json())
+            if (initial) setCurrentVersion(version)
+            setNextVersion(version)
+            setCheckTime(dayjs())
+        } catch (e) {
+            console.warn('Unable to check version.', e)
+        }
     }, [])
 
     useEffect(() => {
