@@ -181,6 +181,13 @@ export default class Lightbox extends React.Component {
         }
     }
 
+    handleClick(e) {
+        this.stopSideEffect(e)
+        if (this.props.onClick) {
+            this.props.onClick(e, this.state.current)
+        }
+    }
+
     componentDidMount() {
         document.body.classList.add('lb-open-lightbox')
         let {keyboardInteraction = true} = this.props
@@ -269,7 +276,7 @@ export default class Lightbox extends React.Component {
                         onMouseUp={e => this.endMove(e)}
                         onMouseLeave={e => this.endMove(e)}
                         onTouchEnd={e => this.endMove(e)}
-                        onClick={e => this.stopSideEffect(e)}
+                        onClick={e => this.handleClick(e)}
                         onDoubleClick={e => this.shockZoom(e)}
                         onLoad={() => this.setState({loading: false})}
                         className={`lb-img${loading ? ' lb-loading' : ''}`}

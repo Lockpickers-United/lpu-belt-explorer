@@ -16,10 +16,14 @@ function ImageGallery({entry}) {
     const isMobile = width < 736
     const [openImage, setOpenImage] = useState(-1)
 
-    const handleVideoClick = useCallback(url => {
-        return () => window.open(url, '_blank', 'noopener,noreferrer')
+    const handleVideoClick = useCallback(url => () => {
+        return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
+    const handleImageClick = useCallback((event, index) => {
+        const {fullUrl} = entry.media[index]
+        return window.open(fullUrl, '_blank', 'noopener,noreferrer')
+    })
     const handleOpen = useCallback(index => () => setOpenImage(index), [])
     const handleClose = useCallback(() => setOpenImage(-1), [])
 
@@ -35,6 +39,7 @@ function ImageGallery({entry}) {
                         url: entry.fullSizeUrl || entry.thumbnailUrl,
                         title: `${entry.title} (${entry.subtitle})`
                     }))}
+                    onClick={handleImageClick}
                     onClose={handleClose}
                 />
             }
