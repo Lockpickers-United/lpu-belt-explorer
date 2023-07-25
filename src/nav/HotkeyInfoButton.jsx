@@ -69,7 +69,8 @@ const hotkeys = [
     {key: 'S', text: 'Select (S)earch text box.'},
     {key: 'F', text: 'Open/Close (F)ilter drawer.'},
     {key: '1 - 9', text: 'Select belt tab, 1=white, 2=yellow, etc.'},
-    {key: 'I', text: 'Open/Close (I)nfo dialog.'}
+    {key: 'I', text: 'Open/Close (I)nfo dialog.'},
+    {key: 'R', text: '(R)andom Lock'}
 ]
 
 export default HotkeyInfoButton

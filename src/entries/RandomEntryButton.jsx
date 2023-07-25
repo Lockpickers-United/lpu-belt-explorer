@@ -2,6 +2,7 @@ import CasinoIcon from '@mui/icons-material/Casino'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
+import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../contexts/AppContext'
 import FilterContext from '../contexts/FilterContext'
 import LazyDataContext from '../contexts/LazyDataContext'
@@ -19,6 +20,8 @@ function RandomEntryButton() {
         setTab(entry.belt.replace(/\s\d/g, ''))
         setExpanded(entry.id)
     }, [setTab, setExpanded, clearFilters, data])
+
+    useHotkeys('r', () => handleClick(), {preventDefault: true})
 
     return (
         <Tooltip title='Random Lock' arrow disableFocusListener>
