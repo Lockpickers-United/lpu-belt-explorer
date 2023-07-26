@@ -94,8 +94,8 @@ function ImageViewer({startIndex = 0, media, onClose}) {
     useHotkeys('up', handleZoomIn, {preventDefault: true})
     useHotkeys('down', handleZoomOut, {preventDefault: true})
     const swipeHandlers = useSwipeable({
-        onSwipedLeft: handleNavigatePrevious,
-        onSwipedRight: handleNavigateNext,
+        onSwipedLeft: handleNavigateNext,
+        onSwipedRight: handleNavigatePrevious,
         swipeDuration: 250
     })
 
