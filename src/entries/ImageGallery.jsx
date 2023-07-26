@@ -8,8 +8,7 @@ import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
-import Lightbox from './ReactAwesomeLightbox'
-import 'react-awesome-lightbox/build/style.css'
+import ImageViewer from './ImageViewer'
 
 function ImageGallery({entry}) {
     const {width} = useWindowSize()
@@ -20,10 +19,6 @@ function ImageGallery({entry}) {
         return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
-    const handleImageClick = useCallback((event, index) => {
-        const {fullUrl} = entry.media[index]
-        return window.open(fullUrl, '_blank', 'noopener,noreferrer')
-    })
     const handleOpen = useCallback(index => () => setOpenImage(index), [])
     const handleClose = useCallback(() => setOpenImage(-1), [])
 
@@ -31,15 +26,9 @@ function ImageGallery({entry}) {
         <React.Fragment>
             {
                 openImage >= 0 &&
-                <Lightbox
+                <ImageViewer
+                    media={entry.media}
                     startIndex={openImage}
-                    allowRotate={false}
-                    allowReset={false}
-                    images={entry.media.map(entry => ({
-                        url: entry.fullSizeUrl || entry.thumbnailUrl,
-                        title: `${entry.title} (${entry.subtitle})`
-                    }))}
-                    onClick={handleImageClick}
                     onClose={handleClose}
                 />
             }
