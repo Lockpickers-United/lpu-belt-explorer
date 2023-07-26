@@ -58,6 +58,8 @@ function SortButton() {
 
 const sortValues = [
     {label: 'Default', value: undefined},
+    {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
+    {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
     {label: 'Belt (Ascending)', value: 'beltAscending'},
     {label: 'Belt (Descending)', value: 'beltDescending'},
     {label: 'Popularity', value: 'popularity'},

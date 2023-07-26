@@ -87,6 +87,10 @@ export function DataProvider({children}) {
                     return beltSort(a.belt, b.belt)
                 } else if (sort === 'beltDescending') {
                     return beltSortReverse(a.belt, b.belt)
+                } else if (sort === 'alphaAscending') {
+                    return a.fuzzy.localeCompare(b.fuzzy)
+                } else if (sort === 'alphaDescending') {
+                    return b.fuzzy.localeCompare(a.fuzzy)
                 }
             })
             : searched
