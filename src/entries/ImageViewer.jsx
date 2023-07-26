@@ -51,15 +51,13 @@ function ImageViewer({startIndex = 0, media, onClose}) {
         setZoom(1)
     }, [])
 
-    const handleNavigatePrevious = useCallback(event => {
-        event.stopPropagation()
+    const handleNavigatePrevious = useCallback(() => {
         const nextIndex = index === 0 ? media.length - 1 : index - 1
         setIndex(nextIndex)
         handleReset()
         setLoading(true)
     }, [index, media, handleReset])
-    const handleNavigateNext = useCallback(event => {
-        event.stopPropagation()
+    const handleNavigateNext = useCallback(() => {
         const nextIndex = index === media.length - 1 ? 0 : index + 1
         setIndex(nextIndex)
         handleReset()
@@ -96,7 +94,8 @@ function ImageViewer({startIndex = 0, media, onClose}) {
     useHotkeys('up', handleZoomIn, {preventDefault: true})
     useHotkeys('down', handleZoomOut, {preventDefault: true})
     const swipeHandlers = useSwipeable({
-        onSwipedLeft: handleNavigatePrevious, onSwipedRight: handleNavigateNext,
+        onSwipedLeft: handleNavigatePrevious,
+        onSwipedRight: handleNavigateNext,
         swipeDuration: 250
     })
 
@@ -106,9 +105,6 @@ function ImageViewer({startIndex = 0, media, onClose}) {
             onClose={handleClose}
             TransitionComponent={Transition}
             fullScreen
-            PaperProps={{
-                onClick: handleClose
-            }}
         >
             <AppBar sx={{position: 'relative'}}>
                 <Toolbar>
