@@ -6134,8 +6134,51 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53073561156_0c51ffdcc2_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53073561156/in/album-72177720310044990/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53073561156_16fb5e5f36_o.jpg"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53073756629_4db814bc4f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53073756629/in/album-72177720310044990/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53073756629_e581be2cae_o.jpg"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53073969785_399e74ee7a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53073969785/in/album-72177720310044990/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53073969785_5910f99fb4_o.jpg"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53073561586_022847b5c1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53073561586/in/album-72177720310044990/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53073561586_e7731568e6_o.jpg"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53073757059_39802bbe0e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53073757059/in/album-72177720310044990/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53073757059_05c113b3bf_o.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/BAB_DS_103"
+      }
+    ],
     "views": 54,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-07-26T21:14:59.205Z"
   },
   {
     "id": "648a3742",
