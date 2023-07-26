@@ -96,6 +96,7 @@ function ImageViewer({startIndex = 0, media, onClose}) {
     const swipeHandlers = useSwipeable({
         onSwipedLeft: handleNavigateNext,
         onSwipedRight: handleNavigatePrevious,
+        onSwipedDown: handleClose,
         swipeDuration: 250
     })
 
