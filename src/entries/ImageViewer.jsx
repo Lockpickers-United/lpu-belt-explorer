@@ -51,13 +51,15 @@ function ImageViewer({startIndex = 0, media, onClose}) {
         setZoom(1)
     }, [])
 
-    const handleNavigatePrevious = useCallback(() => {
+    const handleNavigatePrevious = useCallback(event => {
+        event.stopPropagation()
         const nextIndex = index === 0 ? media.length - 1 : index - 1
         setIndex(nextIndex)
         handleReset()
         setLoading(true)
     }, [index, media, handleReset])
-    const handleNavigateNext = useCallback(() => {
+    const handleNavigateNext = useCallback(event => {
+        event.stopPropagation()
         const nextIndex = index === media.length - 1 ? 0 : index + 1
         setIndex(nextIndex)
         handleReset()
