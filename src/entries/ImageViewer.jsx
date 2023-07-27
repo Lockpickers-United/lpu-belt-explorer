@@ -237,28 +237,28 @@ function ImageViewer({startIndex = 0, media, onClose}) {
                     </IconButton>
                 </Tooltip>
                 <Tooltip title='Reset Zoom' arrow disableFocusListener>
-                <span>
-                    <IconButton
-                        color='inherit'
-                        onClick={handleReset}
-                        aria-label='reset'
-                        disabled={zoom === 1 && x === 0 && y === 0}
-                    >
-                        <YoutubeSearchedForIcon/>
-                    </IconButton>
-                </span>
+                    <span>
+                        <IconButton
+                            color='inherit'
+                            onClick={handleReset}
+                            aria-label='reset'
+                            disabled={zoom === 1 && x === 0 && y === 0}
+                        >
+                            <YoutubeSearchedForIcon/>
+                        </IconButton>
+                    </span>
                 </Tooltip>
                 <Tooltip title='Zoom Out' arrow disableFocusListener>
-                <span>
-                    <IconButton
-                        color='inherit'
-                        onClick={handleZoomOut}
-                        aria-label='zoomOut'
-                        disabled={zoom === 1}
-                    >
-                        <ZoomOutIcon/>
-                    </IconButton>
-                </span>
+                    <span>
+                        <IconButton
+                            color='inherit'
+                            onClick={handleZoomOut}
+                            aria-label='zoomOut'
+                            disabled={zoom === 1}
+                        >
+                            <ZoomOutIcon/>
+                        </IconButton>
+                    </span>
                 </Tooltip>
                 {
                     isMobile && media.length > 0 &&
