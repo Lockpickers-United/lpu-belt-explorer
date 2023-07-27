@@ -1,3 +1,5 @@
+import {Paper} from '@mui/material'
+import {useTheme} from '@mui/material'
 import React, {useCallback, useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -30,6 +32,8 @@ function Nav() {
     useHotkeys('1,2,3,4,5,6,7,8,9', ({key}) => {
         setTab(uniqueBelts[key - 1])
     })
+    const theme = useTheme()
+    console.log(theme)
 
     const {tab, setTab} = useContext(AppContext)
     const {addFilter} = useContext(FilterContext)
@@ -62,9 +66,9 @@ function Nav() {
             </AppBar>
 
             {/* Dummy toolbar to help content place correctly */}
-            <Toolbar/>
+            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)'}}/>
 
-            <AppBar position='relative'>
+            <AppBar position='relative' style={{boxShadow: 'none'}}>
                 <Tabs
                     value={tab}
                     onChange={handleTabClick}
