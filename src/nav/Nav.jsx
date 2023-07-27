@@ -32,8 +32,6 @@ function Nav() {
     useHotkeys('1,2,3,4,5,6,7,8,9', ({key}) => {
         setTab(uniqueBelts[key - 1])
     })
-    const theme = useTheme()
-    console.log(theme)
 
     const {tab, setTab} = useContext(AppContext)
     const {addFilter} = useContext(FilterContext)

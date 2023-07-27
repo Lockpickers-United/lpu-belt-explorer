@@ -1,7 +1,7 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
-import RandomEntryButton from '../entries/RandomEntryButton'
-import HotkeyInfoButton from './HotkeyInfoButton'
+import RandomEntryButton from '../misc/RandomEntryButton'
+import HotkeyInfoButton from '../misc/HotkeyInfoButton'
 
 function Footer() {
     return (

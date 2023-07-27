@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
-import ImageViewer from './ImageViewer'
+import ImageViewer from '../misc/ImageViewer'
 
 function ImageGallery({entry}) {
     const {width} = useWindowSize()
