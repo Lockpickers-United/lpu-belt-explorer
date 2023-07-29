@@ -1,5 +1,3 @@
-import {Paper} from '@mui/material'
-import {useTheme} from '@mui/material'
 import React, {useCallback, useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'

@@ -2,6 +2,7 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import RandomEntryButton from '../misc/RandomEntryButton'
 import HotkeyInfoButton from '../misc/HotkeyInfoButton'
+import SlideshowButton from '../misc/SlideshowButton'
 
 function Footer() {
     return (
@@ -28,6 +29,8 @@ function Footer() {
             <HotkeyInfoButton/>
             &nbsp;•&nbsp;
             <RandomEntryButton/>
+            &nbsp;•&nbsp;
+            <SlideshowButton/>
         </Typography>
     )
 }
