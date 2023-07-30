@@ -50,16 +50,25 @@ function Slideshow({onClose}) {
         setTimeout(() => onClose(), 200)
     }, [onClose])
 
+    const handleNextRandomImage = useCallback(() => {
+        const newEntries = entries.length > 4 ? entries.slice(1, 5) : [...entries]
+        newEntries.push(randomMedia())
+        setEntries(newEntries)
+        setIndex(newEntries.length - 1)
+    }, [entries, randomMedia])
+
     const handleNavigatePrevious = useCallback(() => {
-        const nextIndex = index === 0 ? entries.length - 1 : index - 1
-        setIndex(nextIndex)
+        setIndex(index - 1)
         setLoading(true)
-    }, [index, entries])
+    }, [index])
     const handleNavigateNext = useCallback(() => {
-        const nextIndex = index === entries.length - 1 ? 0 : index + 1
-        setIndex(nextIndex)
-        setLoading(true)
-    }, [index, entries])
+        if (index === entries.length - 1) {
+            handleNextRandomImage()
+        } else {
+            setIndex(index + 1)
+            setLoading(true)
+        }
+    }, [index, entries, handleNextRandomImage])
 
     const handleGoToLock = useCallback(() => {
         const {id} = entries[index]
@@ -71,14 +80,9 @@ function Slideshow({onClose}) {
     }, [data, entries, handleClose, index, setExpanded, setTab])
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            const newEntries = entries.length > 4 ? entries.slice(1, 5) : [...entries]
-            newEntries.push(randomMedia())
-            setEntries(newEntries)
-            setIndex(newEntries.length - 1)
-        }, 10000) // 10 seconds
+        const intervalId = setInterval(handleNextRandomImage, 10000) // 10 seconds
         return () => clearInterval(intervalId)
-    }, [entries, index, randomMedia])
+    }, [entries, index, handleNextRandomImage])
 
     return (
         <Dialog
@@ -182,16 +186,13 @@ function Slideshow({onClose}) {
                     </span>
                 </Tooltip>
                 <Tooltip title='Next Image' arrow disableFocusListener>
-                    <span>
-                        <IconButton
-                            color='inherit'
-                            onClick={handleNavigateNext}
-                            aria-label='nextImage'
-                            disabled={index === entries.length - 1}
-                        >
-                            <ArrowForwardIcon/>
-                        </IconButton>
-                    </span>
+                    <IconButton
+                        color='inherit'
+                        onClick={handleNavigateNext}
+                        aria-label='nextImage'
+                    >
+                        <ArrowForwardIcon/>
+                    </IconButton>
                 </Tooltip>
             </DialogActions>
         </Dialog>)
