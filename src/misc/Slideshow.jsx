@@ -72,11 +72,11 @@ function Slideshow({onClose}) {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            const newEntries = entries.slice(1, 5)
+            const newEntries = entries.length > 4 ? entries.slice(1, 5) : [...entries]
             newEntries.push(randomMedia())
             setEntries(newEntries)
             setIndex(newEntries.length - 1)
-        }, 45000) // 45 seconds
+        }, 10000) // 10 seconds
         return () => clearInterval(intervalId)
     }, [entries, index, randomMedia])
 
