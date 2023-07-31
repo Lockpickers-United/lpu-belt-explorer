@@ -10,6 +10,7 @@ import DialogContent from '@mui/material/DialogContent'
 import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../contexts/AppContext'
 import LazyDataContext from '../contexts/LazyDataContext'
 import licenses from '../data/licenses'
@@ -58,8 +59,10 @@ function Slideshow({onClose}) {
     }, [entries, randomMedia])
 
     const handleNavigatePrevious = useCallback(() => {
-        setIndex(index - 1)
-        setLoading(true)
+        if (index > 0) {
+            setIndex(index - 1)
+            setLoading(true)
+        }
     }, [index])
     const handleNavigateNext = useCallback(() => {
         if (index === entries.length - 1) {
@@ -78,6 +81,9 @@ function Slideshow({onClose}) {
         setExpanded(entry.id)
         handleClose()
     }, [data, entries, handleClose, index, setExpanded, setTab])
+
+    useHotkeys('left', handleNavigatePrevious, {preventDefault: true})
+    useHotkeys('right', handleNavigateNext, {preventDefault: true})
 
     useEffect(() => {
         const intervalId = setInterval(handleNextRandomImage, 10000) // 10 seconds
