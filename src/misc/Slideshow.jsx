@@ -19,18 +19,21 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import FindInPageIcon from '@mui/icons-material/FindInPage'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import Tooltip from '@mui/material/Tooltip'
+import makeStyles from '@mui/styles/makeStyles'
 
 function Slideshow({onClose}) {
+    const classes = useStyles()
     const {data} = useContext(LazyDataContext)
     const media = useMemo(() => {
         return data
             .filter(datum => datum.media)
             .flatMap(datum => datum.media.map(m => ({
-                id: datum.id,
+                entry: datum,
                 ...m
             })))
     }, [data])
 
+    const [visible, setVisible] = useState(true)
     const [open, setOpen] = useState(true)
     const [loading, setLoading] = useState(true)
     const [index, setIndex] = useState(0)
@@ -43,19 +46,27 @@ function Slideshow({onClose}) {
     }, [media])
 
     const [entries, setEntries] = useState([randomMedia()])
+    const {entry} = entries[index]
     const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = entries[index]
 
-    const handleLoaded = useCallback(() => setLoading(false), [])
+    const handleLoaded = useCallback(() => {
+        setLoading(false)
+        setVisible(true)
+    }, [])
     const handleClose = useCallback(() => {
         setOpen(false)
         setTimeout(() => onClose(), 200)
     }, [onClose])
 
     const handleNextRandomImage = useCallback(() => {
-        const newEntries = entries.length > 4 ? entries.slice(1, 5) : [...entries]
-        newEntries.push(randomMedia())
-        setEntries(newEntries)
-        setIndex(newEntries.length - 1)
+        setVisible(false)
+
+        setTimeout(() => {
+            const newEntries = entries.length > 4 ? entries.slice(1, 5) : [...entries]
+            newEntries.push(randomMedia())
+            setEntries(newEntries)
+            setIndex(newEntries.length - 1)
+        }, 1000)
     }, [entries, randomMedia])
 
     const handleNavigatePrevious = useCallback(() => {
@@ -74,13 +85,10 @@ function Slideshow({onClose}) {
     }, [index, entries, handleNextRandomImage])
 
     const handleGoToLock = useCallback(() => {
-        const {id} = entries[index]
-        const entry = data.find(datum => datum.id === id)
-
         setTab(entry.belt.replace(/\s\d/g, ''))
         setExpanded(entry.id)
         handleClose()
-    }, [data, entries, handleClose, index, setExpanded, setTab])
+    }, [entry, handleClose, setExpanded, setTab])
 
     useHotkeys('left', handleNavigatePrevious, {preventDefault: true})
     useHotkeys('right', handleNavigateNext, {preventDefault: true})
@@ -146,12 +154,12 @@ function Slideshow({onClose}) {
             }}>
                 <img
                     draggable={false}
+                    className={visible ? classes.visible : classes.hidden}
                     style={{
                         maxWidth: '100vw',
                         maxHeight: 'calc(100vh - 128px)',
                         backgroundSize: 50,
                         transformOrigin: 'center center'
-
                     }}
                     onLoad={handleLoaded}
 
@@ -203,5 +211,19 @@ function Slideshow({onClose}) {
             </DialogActions>
         </Dialog>)
 }
+
+const useStyles = makeStyles({
+    visible: {
+        visibility: 'visible',
+        opacity: 1,
+        transition: 'opacity 1s linear'
+    },
+
+    hidden: {
+        visibility: 'hidden',
+        opacity: 0,
+        transition: 'visibility 0s 1s, opacity 1s linear'
+    }
+})
 
 export default Slideshow
