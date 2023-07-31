@@ -33,7 +33,7 @@ function Slideshow({onClose}) {
             })))
     }, [data])
 
-    const [visible, setVisible] = useState(true)
+    const [visible, setVisible] = useState(false)
     const [open, setOpen] = useState(true)
     const [loading, setLoading] = useState(true)
     const [index, setIndex] = useState(0)
