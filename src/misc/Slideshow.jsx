@@ -19,10 +19,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import FindInPageIcon from '@mui/icons-material/FindInPage'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import Tooltip from '@mui/material/Tooltip'
-import makeStyles from '@mui/styles/makeStyles'
 
 function Slideshow({onClose}) {
-    const classes = useStyles()
     const {data} = useContext(LazyDataContext)
     const media = useMemo(() => {
         return data
@@ -154,12 +152,12 @@ function Slideshow({onClose}) {
             }}>
                 <img
                     draggable={false}
-                    className={visible ? classes.visible : classes.hidden}
                     style={{
                         maxWidth: '100vw',
                         maxHeight: 'calc(100vh - 128px)',
                         backgroundSize: 50,
-                        transformOrigin: 'center center'
+                        transformOrigin: 'center center',
+                        ...(visible ? styles.visible : styles.hidden)
                     }}
                     onLoad={handleLoaded}
 
@@ -212,7 +210,7 @@ function Slideshow({onClose}) {
         </Dialog>)
 }
 
-const useStyles = makeStyles({
+const styles = {
     visible: {
         visibility: 'visible',
         opacity: 1,
@@ -224,6 +222,6 @@ const useStyles = makeStyles({
         opacity: 0,
         transition: 'visibility 0s 1s, opacity 1s linear'
     }
-})
+}
 
 export default Slideshow

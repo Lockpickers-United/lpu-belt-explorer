@@ -26,7 +26,6 @@
         "@emotion/styled": "^11.10.6",
         "@mui/icons-material": "^5.11.9",
         "@mui/material": "^5.11.9",
-        "@mui/styles": "^5.14.1",
         "dayjs": "^1.11.7",
         "debounce": "^1.2.1",
         "fuzzysort": "^2.0.4",
