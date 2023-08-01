@@ -143,7 +143,11 @@ function Slideshow({onClose}) {
 
             {loading && <LinearProgress color='secondary'/>}
 
-            <DialogContent>
+            <DialogContent style={{
+                padding: 0,
+                height: '100%',
+                width: '100%'
+            }}>
                 <FullScreen handle={handle}>
                     <div style={{
                         display: 'flex',
@@ -153,13 +157,14 @@ function Slideshow({onClose}) {
                         justifyContent: 'center',
                         width: '100%',
                         height: '100%',
-                        overflow: 'hidden'
+                        overflow: 'hidden',
+                        backgroundColor: handle.active ? 'black' : null
                     }}>
                         <img
                             draggable={false}
                             style={{
                                 maxWidth: '100vw',
-                                maxHeight: 'calc(100vh - 128px)',
+                                maxHeight: handle.active ? '100vh' : 'calc(100vh - 128px)',
                                 backgroundSize: 50,
                                 transformOrigin: 'center center',
                                 ...(visible ? styles.visible : styles.hidden)
