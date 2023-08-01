@@ -19,8 +19,11 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import FindInPageIcon from '@mui/icons-material/FindInPage'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import Tooltip from '@mui/material/Tooltip'
+import {FullScreen, useFullScreenHandle} from 'react-full-screen'
+import FullscreenIcon from '@mui/icons-material/Fullscreen'
 
 function Slideshow({onClose}) {
+    const handle = useFullScreenHandle()
     const {data} = useContext(LazyDataContext)
     const media = useMemo(() => {
         return data
@@ -140,31 +143,35 @@ function Slideshow({onClose}) {
 
             {loading && <LinearProgress color='secondary'/>}
 
-            <DialogContent style={{
-                display: 'flex',
-                flex: 1,
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '100%',
-                height: '100%',
-                overflow: 'hidden'
-            }}>
-                <img
-                    draggable={false}
-                    style={{
-                        maxWidth: '100vw',
-                        maxHeight: 'calc(100vh - 128px)',
-                        backgroundSize: 50,
-                        transformOrigin: 'center center',
-                        ...(visible ? styles.visible : styles.hidden)
-                    }}
-                    onLoad={handleLoaded}
+            <DialogContent>
+                <FullScreen handle={handle}>
+                    <div style={{
+                        display: 'flex',
+                        flex: 1,
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        height: '100%',
+                        overflow: 'hidden'
+                    }}>
+                        <img
+                            draggable={false}
+                            style={{
+                                maxWidth: '100vw',
+                                maxHeight: 'calc(100vh - 128px)',
+                                backgroundSize: 50,
+                                transformOrigin: 'center center',
+                                ...(visible ? styles.visible : styles.hidden)
+                            }}
+                            onLoad={handleLoaded}
 
-                    title={title}
-                    src={fullSizeUrl || thumbnailUrl}
-                    alt={title}
-                />
+                            title={title}
+                            src={fullSizeUrl || thumbnailUrl}
+                            alt={title}
+                        />
+                    </div>
+                </FullScreen>
             </DialogContent>
             <DialogActions
                 sx={{
@@ -194,6 +201,17 @@ function Slideshow({onClose}) {
                             aria-label='goToLock'
                         >
                             <FindInPageIcon/>
+                        </IconButton>
+                    </span>
+                </Tooltip>
+                <Tooltip title='Full Screen' arrow disableFocusListener>
+                    <span>
+                        <IconButton
+                            color='inherit'
+                            onClick={handle.enter}
+                            aria-label='fullScreen'
+                        >
+                            <FullscreenIcon/>
                         </IconButton>
                     </span>
                 </Tooltip>
