@@ -707,6 +707,7 @@ Unranked,"Burg Wächter","Profi 116/25",,,"Under Review ⚑",,c77a4ac8
 Unranked,"Burg Wächter","Profi 116/30",,,"Under Review ⚑",,35adb4d6
 Unranked,"Burg Wächter","Profi 116/50","50mm or larger",,"Under Review ⚑",,bbfd4108
 Unranked,,Casesa,,,"Insufficient information",,919755fe
+Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 padlock",033ab190
 Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider","Under Review ⚑",,60964e9f
 Unranked,"CAWI,CAWI","7113,7123",,,"Under Review ⚑",,c6a14e93
 Unranked,CAWI,"Protector 714",,,"Under Review ⚑",,5995db9e
@@ -723,6 +724,7 @@ Unranked,CISA,810,,,"Under Review ⚑",,22d70f2e
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑",,bf43348b
 Unranked,,Cotica,,,"Insufficient information",,6719b451
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
+Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Usprung sliders,Active sidebar",,aebd0373
 Unranked,Dejo,"7 pin","tapered spools, trees, no milling",,"Under Review ⚑",,59d8bfc1
 Unranked,DOM,"S pp1024","6 pins",,"Under Review ⚑",,d0632926
 Unranked,Dény,"3 lever with trapdoor",,,"Under Review ⚑",,204066fa
@@ -738,6 +740,7 @@ Unranked,Fichet-Bauche,M2i,,,"Under Review ⚑",,d6e6039e
 Unranked,Fichet-Bauche,Monopole,,,"Under Review ⚑",,3bd433d7
 Unranked,FJM,Padlock,,,"Under Review ⚑",,639c4f0b
 Unranked,,Flora,,,"Insufficient information",,e8feb6f3
+Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates,Wiggly keyway",,89207b78
 Unranked,FTH,Pacific,,,"Under Review ⚑",,a57c1e9b
 Unranked,,Gaab," 6-pin dimple",,"Under Review ⚑",,cd5acff8
 Unranked,Gege,MRT,,Magnet,"Under Review ⚑",,b379e483
@@ -768,6 +771,7 @@ Unranked,,Kinzo,,Pin-tumbler,"Insufficient information",,88402cd0
 Unranked,Kromer,Novum,,,"Under Review ⚑",,281aa393
 Unranked,"La Gard",2270,,,"Under Review ⚑",,c65959a3
 Unranked,,Laperche,,Pin-tumbler,"Insufficient information",,4773e1fa
+Unranked,Laperche,Diam,,Dimple,,,64662298
 Unranked,,Lifetime,,,"Insufficient information",,7685aed5
 Unranked,Lips,8300,,Pin-tumbler,"Under Review ⚑","similar to Nemef NF2, same drivers plus check pin in bottom",728d4aa0
 Unranked,,Maglok,,,"Under Review ⚑",,2d1adbaf
@@ -792,16 +796,21 @@ Unranked,,Multicar,,,"Insufficient information",,6d9fbd4a
 Unranked,Nagasawa,kcy-7x,"12 pin",,"Under Review ⚑",,1ee9600e
 Unranked,,Ohshima,"3 row dimple",,"Under Review ⚑",,ea4834c8
 Unranked,Opnus,TZ,"3 rows",,"Under Review ⚑","Similar to UX but 3 rows of pins",f8aaa0ef
-Unranked,Opnus,ZX,,,"Under Review ⚑",,3af6c54b
+Unranked,Opnus,XZ,,,"Under Review ⚑",,3af6c54b
 Unranked,,Owa,,,"Insufficient information",,2924aa76
 Unranked,Picard,VTX,,"Dimple,Slider","Unsprung sliders,Active sidebar",,e9499182
 Unranked,Pollux,gm05,,,"Under Review ⚑",,3ca24202
 Unranked,,"Power Line",,,"Insufficient information",,30b60f60
 Unranked,"Rav Bariach",Dynamic,"with sliders",,"Under Review ⚑",,9637ddde
-Unranked,Rosengrens,RKL-10,,,"Under Review ⚑",,5646568c
+Unranked,Rosengrens,RKL-10,,,"Under Review ⚑,Swappable bitting",,5646568c
+Unranked,Ross,102,,Lever,"Pin key,Single bitted",,d78c58be
+Unranked,Ross,600,,Lever,"Pin key,Single bitted",,9a20e22d
 Unranked,Ruko,Garant,"with gins",,"Under Review ⚑",,61a01892
+Unranked,S&G,4163,"8 levers",Lever,"Flat steel key,Single bitted,False gates",,b4d87196
 Unranked,S&G,"4544/4545 Series",,,"Under Review ⚑",,347bd804
+Unranked,S&G,6804,"7 levers",Lever,"Pin key,Single bitted,False gates",,8a7eee5c
 Unranked,S&G,6870,,Lever,"Under Review ⚑",,894238be
+Unranked,S&G,6880,,Lever,"Double bitted,False gates",,62cbb01c
 Unranked,,S&S,,,"Insufficient information",,9f832458
 Unranked,"Schlage,Keiden","Cor-Key,M40",,,"Under Review ⚑",,a72739bc
 Unranked,Securemme,"Evo K64",,Dimple,"Under Review ⚑",,4403a73f
@@ -812,9 +821,13 @@ Unranked,SOL,2500,"10mm (2pins)",,"Under Review ⚑",,97baf67b
 Unranked,SOL,2500,"15mm up to 35mm (3pins)",,"Under Review ⚑",,0d0bf1a5
 Unranked,SOL,2500,"40mm up to 45mm (4pins / spools)",,"Under Review ⚑",,29d423c8
 Unranked,SOL,2500,"50mm up to 70mm (5pins / spools)",,"Under Review ⚑",,53365ed3
+Unranked,STUV,4.19.94,"10 levers",Lever,"Pin key,Double bitted,False gates",,dc8dfd58
+Unranked,STUV,"4.19.97 IVOX",,Lever,"Pin key,Double bitted",,6b67b5e4
 Unranked,,Südmetall,,,"Insufficient information",,4ec9a150
 Unranked,Takigen,T-999,"9 pins-standards in two opposing rows",,"Under Review ⚑",,a77899fe
 Unranked,"Takigen,Clover","Wavelock disc detainer,Wavelock disc detainer","9 discs",,"Under Review ⚑",,174e20c0
+Unranked,Tann,"9 lever","9 levers",Lever,"Pin key,Single bitted,Swappable bitting,False gates",,624d7e96
+Unranked,Tann,Vardeskydd,"8? levers",Lever,"Pipe key,Double bitted,False gates,Sliding levers",,a2074b7f
 Unranked,,Tara,,,"Insufficient information",,ff837451
 Unranked,Techpro,"Tech 5",,Pin-tumbler,"Insufficient information",,78205898
 Unranked,TESA,T-12,,Dimple,"Under Review ⚑","5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive",0bc03ee8
