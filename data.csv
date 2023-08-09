@@ -713,9 +713,9 @@ Unranked,,Casesa,,,"Insufficient information",,919755fe
 Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 padlock",033ab190
 Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider","Under Review ⚑",,60964e9f
 Unranked,"CAWI,CAWI","7113,7123",,,"Under Review ⚑",,c6a14e93
-Unranked,CAWI,"Protector 714",,,"Under Review ⚑",,5995db9e
+Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
 Unranked,,CFG,,Pin-tumbler,"Insufficient information",,6758c30e
-Unranked,,"Chain Key Lock",,,"Under Review ⚑",,111062fc
+Unranked,,"Chain Key Lock",,,"Under Review ⚑","Various brands",111062fc
 Unranked,Chubb,6k202,"7 lever with anti-pick",Lever,"Under Review ⚑",,267e47c4
 Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",,"Under Review ⚑",,dbc6670b
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
@@ -793,12 +793,14 @@ Unranked,Mindy,"AF 8-50 smiley dimple padlock",,,"Under Review ⚑",,e6872b30
 Unranked,Mindy,"Pagoda AF 16-50","flat key",,"Under Review ⚑",,06a28ac7
 Unranked,,"Ming Gao",,,"Under Review ⚑",,c511cc75
 Unranked,Miwa,SR,,,"Under Review ⚑",,31cd85d7
+Unranked,MIWA,"Star Orion","6 rows",Dimple,"High pin count",,4150776b
 Unranked,,Modeco,,,"Insufficient information",,ae031589
 Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Double bitted",,e9d77a86
 Unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
 Unranked,,Multicar,,,"Insufficient information",,6d9fbd4a
 Unranked,Nagasawa,kcy-7x,"12 pin",,"Under Review ⚑",,1ee9600e
 Unranked,,Ohshima,"3 row dimple",,"Under Review ⚑",,ea4834c8
+Unranked,Omellow,R3,,Dimple,"Interlocking pins",,1d80c9bb
 Unranked,Opnus,TZ,"3 rows",,"Under Review ⚑","Similar to UX but 3 rows of pins",f8aaa0ef
 Unranked,Opnus,XZ,,,"Under Review ⚑",,3af6c54b
 Unranked,,Owa,,,"Insufficient information",,2924aa76
@@ -806,6 +808,7 @@ Unranked,Picard,VTX,,"Dimple,Slider","Unsprung sliders,Active sidebar",,e9499182
 Unranked,Pollux,gm05,,,"Under Review ⚑",,3ca24202
 Unranked,,"Power Line",,,"Insufficient information",,30b60f60
 Unranked,"Rav Bariach",Dynamic,"with sliders",,"Under Review ⚑",,9637ddde
+Unranked,Rosengrens,24K,,"Disc detainer",,,9b528165
 Unranked,Rosengrens,RKL-10,,,"Under Review ⚑,Swappable bitting",,5646568c
 Unranked,Ross,102,,Lever,"Pin key,Single bitted",,d78c58be
 Unranked,Ross,600,,Lever,"Pin key,Single bitted",,9a20e22d
@@ -840,10 +843,12 @@ Unranked,,TOP,,Pin-tumbler,"Insufficient information",,665f75f2
 Unranked,Trelock,"SUPER Padlock",,,"Under Review ⚑",,9a99a0a7
 Unranked,U-Shin,"Showa X Key",,Dimple,"Under Review ⚑",,95a9b042
 Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(simliar to the blue belt StrongBOLT 2100)",8dc5dbb4
+Unranked,Union,2134e,"5 lever",Lever,"Pin key,False gates",,45cadc22
 Unranked,Vachette,Radial,"18 or more pins",Dimple,"Under Review ⚑",,ab1e3974
 Unranked,Vachette,"Radial S",,Dimple,,,5d1bbb5f
 Unranked,Vachette,"Radial SI",,,"Under Review ⚑",,708256e9
 Unranked,,VEB,,,"Insufficient information",,e524ce27
+Unranked,Viro,"Palladium PV",,"Dimple,Slider,Sidebar","Active sidebar,Sprung sliders",,9b7d3001
 Unranked,Voga,X18,,,"Under Review ⚑",,90b4ade7
 Unranked,,War-Lok,,,"Under Review ⚑",,fa9fb7e1
 Unranked,WEST,"YKK AP",,,"Under Review ⚑",,1220174e
