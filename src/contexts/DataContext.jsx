@@ -38,7 +38,9 @@ export function DataProvider({children}) {
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
                     belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
-                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined
+                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
+                    entry.belt.startsWith('Black') ? 'Is Black' : undefined,
+                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
