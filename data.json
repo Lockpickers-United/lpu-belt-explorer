@@ -18559,8 +18559,38 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: DoNotDuplicate",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53110948261_d369182642_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53110948261/in/album-72177720310440143/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53110948261_c814a4e1e1_o.jpg"
+      },
+      {
+        "title": "By: DoNotDuplicate",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53110948511_cd43c766f1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53110948511/in/album-72177720310440143/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53110948511_a1e56a2ca2_o.jpg"
+      },
+      {
+        "title": "By: DoNotDuplicate",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53111451533_a634625ac5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53111451533/in/album-72177720310440143/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53111451533_e507459211_o.jpg"
+      },
+      {
+        "title": "By: DoNotDuplicate",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53111154494_8b7e1e2b93_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53111154494/in/album-72177720310440143/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53111154494_96f49fdab4_o.jpg"
+      }
+    ],
     "views": 79,
-    "lastUpdated": "2023-05-26T17:28:40.470Z"
+    "lastUpdated": "2023-08-12T13:29:58.647Z"
   },
   {
     "id": "e1e595b9",
