@@ -9450,8 +9450,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/666/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/666/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/PFAFFENHAIN%2C/PFAFFENHAIN%20WETZEL_666.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/666/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/666/tn_3.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/666/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/PFAFFENHAIN%2C/PFAFFENHAIN%20WETZEL_666.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/666/2.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/666/tn_4.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/666/3.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/PFAFFENHAIN%2C/PFAFFENHAIN%20WETZEL_666.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/666/3.jpg"
+      }
+    ],
     "views": 39,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-08-26T18:43:59.324Z"
   },
   {
     "id": "8cc092f5",
