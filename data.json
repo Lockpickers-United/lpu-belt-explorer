@@ -6347,21 +6347,6 @@
     "lastUpdated": "2023-07-26T21:14:59.205Z"
   },
   {
-    "id": "648a3742",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "Bab IKON",
-        "model": "K2 (with IKON Core)"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "views": 75,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
-  },
-  {
     "id": "bfc7c700",
     "belt": "Green",
     "makeModels": [
@@ -7946,6 +7931,21 @@
     ],
     "views": 26,
     "lastUpdated": "2023-03-23T03:24:22.387Z"
+  },
+  {
+    "id": "648a3742",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "IKON",
+        "model": "K2 (with IKON Core)"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "views": 75,
+    "lastUpdated": "2023-08-29T11:27:22.284Z"
   },
   {
     "id": "b25e23fd",
@@ -15819,6 +15819,47 @@
     "lastUpdated": "2023-07-25T11:20:19.894Z"
   },
   {
+    "id": "8d4632d9",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "CompX Chicago",
+        "model": "TuBAR"
+      }
+    ],
+    "lockingMechanisms": [
+      "Other",
+      "Sidebar"
+    ],
+    "features": [
+      "Active sidebar"
+    ],
+    "media": [
+      {
+        "title": "By: Datagram",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Tubar_cylinder.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Tubar_cylinder.jpg",
+        "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Tubar_cylinder.jpg"
+      },
+      {
+        "title": "Tubar Teardown",
+        "subtitle": "Lockpickers United",
+        "thumbnailUrl": "https://i3.ytimg.com/vi/yFvQQtl-hM4/maxresdefault.jpg",
+        "fullUrl": "https://www.youtube.com/watch?v=yFvQQtl-hM4&list=PLd05gZIjxH9umy3x7FYq1HCUlvUNhcBwO&index=13&pp=iAQB",
+        "subtitleUrl": "https://www.youtube.com/watch?v=yFvQQtl-hM4&list=PLd05gZIjxH9umy3x7FYq1HCUlvUNhcBwO&index=13&pp=iAQB"
+      }
+    ],
+    "links": [
+      {
+        "title": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Tubar"
+      }
+    ],
+    "views": 71,
+    "lastUpdated": "2023-08-29T11:27:22.289Z"
+  },
+  {
     "id": "71bce5b7",
     "belt": "Purple",
     "makeModels": [
@@ -18105,10 +18146,38 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52729651315_69c7929742_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729651315/in/album-72177720306489580/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52729651315_3235710d91_o.jpg"
+      },
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53149392837_cf578ede29_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53149392837/in/album-72177720306489580/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53149392837_68fffa19fa_o.jpg"
+      },
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53150401735_34bb90978a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53150401735/in/album-72177720306489580/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53150401735_e554a5f5a7_o.jpg"
+      },
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53149968346_fb098f22b4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53149968346/in/album-72177720306489580/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53149968346_af5664d26a_o.jpg"
+      },
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53149968456_f2950d9a03_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53149968456/in/album-72177720306489580/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53149968456_88120bfc25_o.jpg"
       }
     ],
     "views": 88,
-    "lastUpdated": "2023-07-25T11:20:19.896Z"
+    "lastUpdated": "2023-08-29T11:27:22.290Z"
   },
   {
     "id": "278f2108",
@@ -19015,47 +19084,6 @@
     ],
     "views": 75,
     "lastUpdated": "2023-03-23T03:24:22.392Z"
-  },
-  {
-    "id": "8d4632d9",
-    "belt": "Purple",
-    "makeModels": [
-      {
-        "make": "Tubar",
-        "model": "Tubar"
-      }
-    ],
-    "lockingMechanisms": [
-      "Other",
-      "Sidebar"
-    ],
-    "features": [
-      "Active sidebar"
-    ],
-    "media": [
-      {
-        "title": "By: Datagram",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Tubar_cylinder.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Tubar_cylinder.jpg",
-        "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Tubar_cylinder.jpg"
-      },
-      {
-        "title": "Tubar Teardown",
-        "subtitle": "Lockpickers United",
-        "thumbnailUrl": "https://i3.ytimg.com/vi/yFvQQtl-hM4/maxresdefault.jpg",
-        "fullUrl": "https://www.youtube.com/watch?v=yFvQQtl-hM4&list=PLd05gZIjxH9umy3x7FYq1HCUlvUNhcBwO&index=13&pp=iAQB",
-        "subtitleUrl": "https://www.youtube.com/watch?v=yFvQQtl-hM4&list=PLd05gZIjxH9umy3x7FYq1HCUlvUNhcBwO&index=13&pp=iAQB"
-      }
-    ],
-    "links": [
-      {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Tubar"
-      }
-    ],
-    "views": 71,
-    "lastUpdated": "2023-07-25T11:20:19.896Z"
   },
   {
     "id": "b35bf986",

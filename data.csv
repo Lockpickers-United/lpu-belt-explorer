@@ -158,7 +158,6 @@ Green,"American Lock",S1100,,Pin-tumbler,Guttable,,5a6170fb
 Green,ASSA,500,"graduated spools",Pin-tumbler,"Hourglass/graduated spools",,e84582aa
 Green,"ASSA,Ruko","500,500","tapered drivers",Pin-tumbler,"Tapered drivers",,0b82681f
 Green,"Bab IKON",DS,,Pin-tumbler,,,ca6ce763
-Green,"Bab IKON","K2 (with IKON Core)",,Pin-tumbler,,,648a3742
 Green,"Bab IKON",P031,,Pin-tumbler,,,bfc7c700
 Green,BASI,3AX,,Pin-tumbler,,,bea71188
 Green,BASI,"AS Pro",,Pin-tumbler,,,27f1aaae
@@ -201,6 +200,7 @@ Green,Gege,"AP 1000",,Pin-tumbler,,,3129ee7e
 Green,Generic/Unknown,"4 Lever Curtained lock",,Lever,Curtain,,0e97c099
 Green,Generic/Unknown,"4 Lever Uncurtained lock",,Lever,Uncurtained,,d46ac711
 Green,,"Guett Dern",,,,,3316c7d0
+Green,IKON,"K2 (with IKON Core)",,Pin-tumbler,,,648a3742
 Green,IKON,N1,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",b25e23fd
 Green,IKON,P031,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",9a972905
 Green,ISEO,"MC 6500",,"Pin-tumbler,Magnet","Magnetic pins",,f8254416
@@ -385,6 +385,7 @@ Purple,Chubb,Battleship,"6 lever, offset key",Lever,"Padlock,Pin key,Curtain,Fal
 Purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
 Purple,Clavis,"10 pin","dual row, all spools",Dimple,,,0e5adf31
 Purple,Codkey,Locksys,"<15 pins",Dimple,,,8a0c4b07
+Purple,"CompX Chicago",TuBAR,,"Other,Sidebar","Active sidebar",,8d4632d9
 Purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b7
 Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
@@ -450,7 +451,6 @@ Purple,Sepa,HDS,,Dimple,"High pin count",,e0a9caf4
 Purple,"TESA,TESA","T80,TX80",,Dimple,"Tapered drivers,Interactive element",,3f49ccc1
 Purple,TESA,TK100,,Dimple,"Tapered drivers,Interactive element",,9a9ae8df
 Purple,Titan,T250,,,,,e7f6d089
-Purple,Tubar,Tubar,,"Other,Sidebar","Active sidebar",,8d4632d9
 Purple,"US Star Tech","""Hi Security""",,Dimple,,,b35bf986
 Purple,Vachette,Axi'Home,,,,,416946bc
 Purple,"Walsall Locks","Ace (S1311)","7 lever safe",Lever,"Safe,False gates",,37914cb6
