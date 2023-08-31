@@ -38465,11 +38465,45 @@
       }
     ],
     "version": "18 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
+    "notes": "Cruciform Lock",
+    "media": [
+      {
+        "title": "By: LockSportsman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53154599064_88df8b1501_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53154599064/in/album-72177720310856555/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53154599064_8d95148bf6_o.jpg"
+      },
+      {
+        "title": "By: LockSportsman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53153815687_87de4453d8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53153815687/in/album-72177720310856555/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53153815687_7f53669540_o.jpg"
+      },
+      {
+        "title": "By: LockSportsman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53154886188_01fa03e1a4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53154886188/in/album-72177720310856555/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53154886188_03450af71e_o.jpg"
+      },
+      {
+        "title": "By: LockSportsman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53154825755_3fba3751c4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53154825755/in/album-72177720310856555/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53154825755_9fd7468138_o.jpg"
+      }
+    ],
     "views": 3,
-    "lastUpdated": "2023-08-03T13:21:20.111Z"
+    "lastUpdated": "2023-08-31T10:40:57.437Z"
   },
   {
     "id": "222bd1fa",
