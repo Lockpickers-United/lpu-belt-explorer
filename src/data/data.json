@@ -3119,7 +3119,23 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "lastUpdated": "2023-09-02T16:12:59.700Z"
+    "media": [
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795104621_81fa59b287_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795104621/in/album-72177720307283499/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52795104621_03b4d0e0c2_o.jpg"
+      },
+      {
+        "title": "By: Slacc",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52794538682_6637b359d8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794538682/in/album-72177720307283499/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52794538682_c3e93815a8_o.jpg"
+      }
+    ],
+    "lastUpdated": "2023-09-04T11:27:09.001Z"
   },
   {
     "id": "2484ce70",
@@ -10200,36 +10216,25 @@
         "model": "E20"
       },
       {
-        "model": " E30"
+        "make": "ABUSABUS",
+        "model": "E30"
       },
       {
-        "model": " E60"
+        "make": "ABUS",
+        "model": "E60"
       },
       {
-        "model": " E70"
+        "make": "ABUS",
+        "model": "E70"
       },
       {
-        "model": " E90"
+        "model": "E90"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "media": [
-      {
-        "title": "By: Slacc",
-        "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52795104621_81fa59b287_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795104621/in/album-72177720307283499/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52795104621_03b4d0e0c2_o.jpg"
-      },
-      {
-        "title": "By: Slacc",
-        "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52794538682_6637b359d8_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794538682/in/album-72177720307283499/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52794538682_c3e93815a8_o.jpg"
-      },
       {
         "title": "By: Zitrone",
         "subtitle": "KoksaWiki",
@@ -10277,7 +10282,7 @@
       }
     ],
     "views": 754,
-    "lastUpdated": "2023-09-02T16:12:59.707Z"
+    "lastUpdated": "2023-09-04T11:27:09.007Z"
   },
   {
     "id": "3515caae",
@@ -32423,6 +32428,34 @@
         "fullUrl": "https://www.catalocks.eu/photos/265/5.jpg",
         "subtitleUrl": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html",
         "fullSizeUrl": "https://www.catalocks.eu/photos/265/5.jpg"
+      },
+      {
+        "title": "By: DoctorHogmaster",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53162755402_f82e610123_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53162755402/in/album-72177720310957108/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53162755402_bd32520d07_o.jpg"
+      },
+      {
+        "title": "By: DoctorHogmaster",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53163344986_6979cd44b4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53163344986/in/album-72177720310957108/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53163344986_2b09993afe_o.jpg"
+      },
+      {
+        "title": "By: DoctorHogmaster",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53163777465_52b92d5d18_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53163777465/in/album-72177720310957108/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53163777465_ef160631cc_o.jpg"
+      },
+      {
+        "title": "By: DoctorHogmaster",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53162756022_105b205651_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53162756022/in/album-72177720310957108/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53162756022_384b72795b_o.jpg"
       }
     ],
     "links": [
@@ -32432,7 +32465,7 @@
       }
     ],
     "views": 109,
-    "lastUpdated": "2023-09-02T16:12:59.730Z"
+    "lastUpdated": "2023-09-04T11:27:09.026Z"
   },
   {
     "id": "00cf7717",
@@ -32717,7 +32750,51 @@
     "features": [
       "High pin count"
     ],
-    "lastUpdated": "2023-09-02T16:12:59.735Z"
+    "media": [
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52948855072_e8915a747d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52948855072/in/album-72177720308122682/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52948855072_4b8389baed_o.jpg"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52949907198_6d03692e8d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52949907198/in/album-72177720308122682/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52949907198_40227eacaa_o.jpg"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52948855412_fe50ce8ee3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52948855412/in/album-72177720308122682/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52948855412_c80a11f1fd_o.jpg"
+      },
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52882321258_9a9d723633_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52882321258/in/album-72177720308122682/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52882321258_ba5bf37416_o.jpg"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52949453991_31c0dee396_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52949453991/in/album-72177720308122682/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52949453991_dcdc15be98_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52882253985_b67926603d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52882253985/in/album-72177720308122682/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52882253985_82f0fbec0a_o.jpg"
+      }
+    ],
+    "lastUpdated": "2023-09-04T11:27:09.026Z"
   },
   {
     "id": "93e4cf5f",
