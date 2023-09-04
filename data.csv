@@ -262,7 +262,7 @@ Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline.
 Blue,"ABUS,ABUS","75/50,75IB/50",,Dimple,Unguttable,,9ec8706c
 Blue,ABUS,"Bravus 3000",,Dimple,,,ea0efaca
 Blue,ABUS,D10,,Dimple,,,f96de7cc
-Blue,"ABUS,,,,","E20, E30, E60, E70, E90",,Pin-tumbler,,,5c0d870b
+Blue,"ABUS,ABUSABUS,ABUS,ABUS,","E20,E30,E60,E70,E90",,Pin-tumbler,,,5c0d870b
 Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515caae
 Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
 Blue,ABUS,KW14,,Pin-tumbler,,,4382d650
