@@ -503,7 +503,7 @@ Brown,"Federal Lock",11KDCF3110,,,,,e8150a27
 Brown,"Federal Lock,Federal Lock","UCF3100,USC3100",,,,,45c08407
 Brown,"Fichet,Fichet","450,484","with false gates, 4-6 mastered levers",Lever/sidebar,"False gates,Active sidebar",,58cbc037
 Brown,Fichet,666,,Slider,,,9c627ebd
-Brown,"FTH -THIRARD","Thirard Cobra",,Pump/push,,,86e86a1d
+Brown,"FTH Thirard",Cobra,,Pump/push,,,86e86a1d
 Brown,Fuki,Tierkey,,Dimple,"High pin count",,7298a640
 Brown,Gege,MRT,,Magnet,,,b379e483
 Brown,Gerda,HSS,,"Disc detainer","Rear tension,False gates","Can be picked with front tension but gated spinner complicates this",594b1a1c
@@ -569,7 +569,7 @@ Red,EVVA,ICS,">2 mastered elements","Slider,Pin-tumbler","False gates,Active sid
 Red,FAB,NZS3,,Pin-tumbler,,,3b797ff2
 Red,"Fichet,Fichet","450,484","w/ false gates, 2-3 mastered levers",Lever/sidebar,"False gates,Active sidebar",,03cbfaa5
 Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
-Red,"FTH -THIRARD","FTH Surveyor",,Pump/push,,,1f6cb393
+Red,"FTH Thirard",Surveyor,,Pump/push,,,1f6cb393
 Red,"GOAL,GOAL","v18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
 Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling",,937eb7a8
 Red,Hori,Trident,spools,Dimple,,,49b2c746
@@ -709,7 +709,7 @@ Unranked,Alpha,1000,"40mm up to 45mm (4pins / spools)",,"Under Review ⚑",,82ea
 Unranked,Alpha,1000,"50mm 60mm (5pins / spools)",,"Under Review ⚑",,bac43ba7
 Unranked,Alpha,ED,"cam lock",,"Under Review ⚑","14 pins in 4 directions, standard and mushroom drivers",05298f91
 Unranked,"American Lock",1160,"1100 but with 6 pin stacks",,"Under Review ⚑",,1ae40987
-Unranked,",","An Jia Bao,HPP",,"Disc detainer","Under Review ⚑",,dbc1279d
+Unranked,"An Jia Bao,HPP,Ming Gao","padlock,padlock,padlock","all similarly made 6 disc generic disc detainer padlock","Disc detainer","Under Review ⚑",,dbc1279d
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑","mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
@@ -727,6 +727,7 @@ Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 pad
 Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider","Under Review ⚑",,60964e9f
 Unranked,"CAWI,CAWI","7113,7123",,,"Under Review ⚑",,c6a14e93
 Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
+Unranked,CCL,"Sesamee 900 series",,Pin-tumbler,"Under Review ⚑,Overmilling",,1fbf6a7a
 Unranked,,CFG,,Pin-tumbler,"Insufficient information",,6758c30e
 Unranked,,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑","Various brands",111062fc
 Unranked,Chubb,6k202,"7 lever with anti-pick",Lever,"Under Review ⚑",,267e47c4
@@ -758,7 +759,7 @@ Unranked,Fichet-Bauche,Monopole,,Pump/push,"Under Review ⚑",,3bd433d7
 Unranked,FJM,Padlock,,,"Under Review ⚑",,639c4f0b
 Unranked,,Flora,,,"Insufficient information",,e8feb6f3
 Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates,Wiggly keyway",,89207b78
-Unranked,FTH,Pacific,,,"Under Review ⚑",,a57c1e9b
+Unranked,"FTH Thirard",Pacific,,,"Under Review ⚑",,a57c1e9b
 Unranked,,Gaab," 6-pin dimple",Dimple,"Under Review ⚑",,cd5acff8
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,Glip,,Pin-tumbler,"Insufficient information",,5599bd8a
@@ -774,6 +775,7 @@ Unranked,"Hong Dun","model undefined","security pinned dimple with sliders",,"Un
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
 Unranked,,HP+,,Pin-tumbler,"Insufficient information",,28f1b592
 Unranked,,IBAU,,,"Insufficient information",,b4d52d31
+Unranked,IFAM,"Start 50 Padlock",,,,,033f8958
 Unranked,ISEO,"F6 extra S3",,,"Under Review ⚑",,895be796
 Unranked,ISEO,R50,,Dimple,"Under Review ⚑",,42bebf45
 Unranked,JPM,"Quartz UP",,,"Under Review ⚑",,5433316e
@@ -815,7 +817,7 @@ Unranked,Picard,VTX,,"Dimple,Slider","Unsprung sliders,Active sidebar",,e9499182
 Unranked,Pollux,gm05,,Push/pump,"Under Review ⚑",,3ca24202
 Unranked,,"Power Line",,,"Insufficient information",,30b60f60
 Unranked,"Rav Bariach",Dynamic,"with sliders",,"Under Review ⚑",,9637ddde
-Unranked,Rosengrens,24K,,"Disc detainer",,,9b528165
+Unranked,Rosengrens,24K,,"Disc detainer","Under Review ⚑",,9b528165
 Unranked,Rosengrens,RKL-10,,,"Under Review ⚑,Swappable bitting",,5646568c
 Unranked,Ross,102,,Lever,"Pin key,Single bitted",,d78c58be
 Unranked,Ross,600,,Lever,"Pin key,Single bitted",,9a20e22d
@@ -861,8 +863,8 @@ Unranked,"Western Electric",30B,,Lever,"Under Review ⚑,Cabinet,Flat steel key,
 Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e
 Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5
+Unranked,"Yale,Yale","1000,1500",,Dimple,"Under Review ⚑","1 tapered spool and 5 tapered drivers , keypins tapered as well",efca4bf9
 Unranked,Yale,112,,"Disc detainer","Under Review ⚑",,222bd1fa
-Unranked,Yale,1500,,Dimple,"Under Review ⚑","1 tapered spool and 5 tapered drivers , keypins tapered as well",efca4bf9
 Unranked,Yale,"2000 Plus",,"Dimple,Sidebar,Slider","Under Review ⚑","dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
 Unranked,Yale,2100,,"Dimple,Sidebar,Slider","Under Review ⚑","dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
