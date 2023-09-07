@@ -387,7 +387,7 @@ Purple,Bricard,Chifral,"all versions, <15 pins",Dimple,,,8f004bf0
 Purple,Bricard,Supersureté,,,,,98ba98ae
 Purple,"Burg Wächter","Alpha 800",,Wafer,Unguttable,,e38d015b
 Purple,Capitol,"magnetic cam lock",,,,,85591581
-Purple,CAVEO,"TS007 Exterior",,"Dimple,Slider",,,0813d39e
+Purple,CAVEO,"TS007 Exterior",,"Dimple,Slider",,"Seven pins with security drivers, five slider sidebar",0813d39e
 Purple,CEI,"""Five Colors""",,,,,1f3a4b1d
 Purple,Chubb,Battleship,"6 lever, offset key",Lever,"Padlock,Pin key,Curtain,False gates",,1f3a8ff9
 Purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
@@ -724,7 +724,7 @@ Unranked,"Burg Wächter","Profi 116/30",,Pin-tumbler,"Under Review ⚑",,35adb4d
 Unranked,"Burg Wächter","Profi 116/50","50mm or larger",Pin-tumbler,"Under Review ⚑",,bbfd4108
 Unranked,,Casesa,,,"Insufficient information",,919755fe
 Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 padlock",033ab190
-Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider","Under Review ⚑",,60964e9f
+Unranked,CAVEO,"TS007 Interior",,"Dimple,Slider","Under Review ⚑","Seven pins with standard drivers, five slider sidebar",60964e9f
 Unranked,"CAWI,CAWI","7113,7123",,,"Under Review ⚑",,c6a14e93
 Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
 Unranked,CCL,"Sesamee 900 series",,Pin-tumbler,"Under Review ⚑,Overmilling",,1fbf6a7a
