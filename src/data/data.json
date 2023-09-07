@@ -7456,6 +7456,9 @@
         "model": "SC"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -7529,7 +7532,7 @@
       }
     ],
     "views": 82,
-    "lastUpdated": "2023-07-25T11:20:19.887Z"
+    "lastUpdated": "2023-09-07T12:00:17.095Z"
   },
   {
     "id": "95b2c7b0",
@@ -12470,6 +12473,9 @@
         "model": "SK7"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
       {
@@ -12495,7 +12501,7 @@
       }
     ],
     "views": 107,
-    "lastUpdated": "2023-07-25T11:20:19.891Z"
+    "lastUpdated": "2023-09-07T12:00:17.098Z"
   },
   {
     "id": "948f9068",
@@ -13500,8 +13506,11 @@
         "model": "Evolution"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "views": 54,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-09-07T12:00:17.098Z"
   },
   {
     "id": "c0af329b",
@@ -14100,8 +14109,11 @@
         "model": "10-pin"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "views": 49,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2023-09-07T12:00:17.099Z"
   },
   {
     "id": "8b5b655e",
@@ -15129,6 +15141,9 @@
         "model": "Hot Dog Lock"
       }
     ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
     "media": [
       {
         "title": "By: DoNotDuplicate",
@@ -15167,7 +15182,7 @@
       }
     ],
     "views": 205,
-    "lastUpdated": "2023-07-25T11:20:19.893Z"
+    "lastUpdated": "2023-09-07T12:00:17.099Z"
   },
   {
     "id": "bbce33e0",
@@ -18956,6 +18971,20 @@
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/180px-Nemef_NF2_least.png",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Nemef_NF2_least.png",
         "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Nemef_NF2_least.png"
+      },
+      {
+        "title": "By: Peregrine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53168821043_18547257b4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53168821043/in/album-72177720310994975/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53168821043_f12d6c729f_o.jpg"
+      },
+      {
+        "title": "By: Peregrine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53167746217_8e564b73d3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53167746217/in/album-72177720310994975/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53167746217_fe5f88f4fc_o.jpg"
       }
     ],
     "links": [
@@ -18965,7 +18994,7 @@
       }
     ],
     "views": 296,
-    "lastUpdated": "2023-07-25T11:20:19.896Z"
+    "lastUpdated": "2023-09-07T12:00:17.101Z"
   },
   {
     "id": "4debdca1",
@@ -18989,6 +19018,13 @@
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/Nemef_T1112-front-toool.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Nemef_T1112-front-toool.jpg",
         "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Nemef_T1112-front-toool.jpg"
+      },
+      {
+        "title": "By: Peregrine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53167747727_52a8e74760_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53167747727/in/album-72177720311007713/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53167747727_b47a8de853_o.jpg"
       }
     ],
     "links": [
@@ -18998,7 +19034,7 @@
       }
     ],
     "views": 91,
-    "lastUpdated": "2023-07-25T11:20:19.896Z"
+    "lastUpdated": "2023-09-07T12:00:17.101Z"
   },
   {
     "id": "f8aaa0ef",
@@ -19548,6 +19584,9 @@
         "model": "Axi'Home"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "media": [
       {
         "title": "By: rondeLoro",
@@ -19565,7 +19604,7 @@
       }
     ],
     "views": 53,
-    "lastUpdated": "2023-07-26T21:50:31.664Z"
+    "lastUpdated": "2023-09-07T12:00:17.102Z"
   },
   {
     "id": "37914cb6",
@@ -19595,6 +19634,9 @@
         "make": "WEST",
         "model": "YKK AP"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ],
     "features": [
       "High pin count"
@@ -19630,7 +19672,7 @@
       }
     ],
     "views": 4,
-    "lastUpdated": "2023-09-02T16:12:59.714Z"
+    "lastUpdated": "2023-09-07T12:00:17.102Z"
   },
   {
     "id": "5958a65b",
@@ -33696,6 +33738,9 @@
       }
     ],
     "version": "10mm (2pins)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -33709,7 +33754,7 @@
       }
     ],
     "views": 4,
-    "lastUpdated": "2023-08-10T22:29:42.769Z"
+    "lastUpdated": "2023-09-07T12:00:17.113Z"
   },
   {
     "id": "d000f733",
@@ -33721,6 +33766,9 @@
       }
     ],
     "version": "15mm up to 35mm (3pins)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -33734,7 +33782,7 @@
       }
     ],
     "views": 6,
-    "lastUpdated": "2023-08-10T22:29:42.769Z"
+    "lastUpdated": "2023-09-07T12:00:17.113Z"
   },
   {
     "id": "82ea52a4",
@@ -33746,6 +33794,9 @@
       }
     ],
     "version": "40mm up to 45mm (4pins / spools)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -33759,7 +33810,7 @@
       }
     ],
     "views": 6,
-    "lastUpdated": "2023-08-10T22:29:42.770Z"
+    "lastUpdated": "2023-09-07T12:00:17.114Z"
   },
   {
     "id": "bac43ba7",
@@ -33771,6 +33822,9 @@
       }
     ],
     "version": "50mm 60mm (5pins / spools)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -33784,7 +33838,7 @@
       }
     ],
     "views": 8,
-    "lastUpdated": "2023-08-10T22:29:42.770Z"
+    "lastUpdated": "2023-09-07T12:00:17.114Z"
   },
   {
     "id": "05298f91",
@@ -33813,6 +33867,9 @@
       }
     ],
     "version": "1100 but with 6 pin stacks",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -33840,7 +33897,7 @@
       }
     ],
     "views": 116,
-    "lastUpdated": "2023-08-03T13:21:20.099Z"
+    "lastUpdated": "2023-09-07T12:00:17.114Z"
   },
   {
     "id": "dbc1279d",
@@ -33859,7 +33916,7 @@
         "model": "padlock"
       }
     ],
-    "version": "all similarly made 6 disc generic disc detainer padlock",
+    "version": "5-6 disc generic disc detainer padlock with same style keybow",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -33890,7 +33947,7 @@
       }
     ],
     "views": 10,
-    "lastUpdated": "2023-09-06T12:09:17.690Z"
+    "lastUpdated": "2023-09-07T12:00:17.114Z"
   },
   {
     "id": "fd93632b",
@@ -35753,11 +35810,37 @@
         "model": "Padlock"
       }
     ],
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
     "features": [
       "Under Review ⚑"
     ],
+    "media": [
+      {
+        "title": "By: LockChuck",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53170641298_7d10126322_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53170641298/in/album-72177720311026608/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53170641298_998c219d9a_o.jpg"
+      },
+      {
+        "title": "By: LockChuck",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53170592035_f53334f749_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53170592035/in/album-72177720311026608/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53170592035_fd1e66e80d_o.jpg"
+      },
+      {
+        "title": "By: LockChuck",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53170592075_2dfc4b22f4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53170592075/in/album-72177720311026608/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53170592075_716dff16f2_o.jpg"
+      }
+    ],
     "views": 6,
-    "lastUpdated": "2023-08-03T13:21:20.104Z"
+    "lastUpdated": "2023-09-07T12:00:17.116Z"
   },
   {
     "id": "e8feb6f3",
@@ -36927,6 +37010,9 @@
         "model": "AF 8-50 smiley dimple padlock"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -36940,7 +37026,7 @@
       }
     ],
     "views": 12,
-    "lastUpdated": "2023-08-12T12:12:39.504Z"
+    "lastUpdated": "2023-09-07T12:00:17.118Z"
   },
   {
     "id": "06a28ac7",
@@ -38130,6 +38216,9 @@
       }
     ],
     "version": "10mm (2pins)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -38143,7 +38232,7 @@
       }
     ],
     "views": 6,
-    "lastUpdated": "2023-09-01T14:46:33.606Z"
+    "lastUpdated": "2023-09-07T12:00:17.119Z"
   },
   {
     "id": "0d0bf1a5",
@@ -38155,6 +38244,9 @@
       }
     ],
     "version": "15mm up to 35mm (3pins)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -38168,7 +38260,7 @@
       }
     ],
     "views": 2,
-    "lastUpdated": "2023-09-01T14:46:33.606Z"
+    "lastUpdated": "2023-09-07T12:00:17.119Z"
   },
   {
     "id": "29d423c8",
@@ -38180,6 +38272,9 @@
       }
     ],
     "version": "40mm up to 45mm (4pins / spools)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -38193,7 +38288,7 @@
       }
     ],
     "views": 4,
-    "lastUpdated": "2023-09-01T14:46:33.606Z"
+    "lastUpdated": "2023-09-07T12:00:17.119Z"
   },
   {
     "id": "53365ed3",
@@ -38205,6 +38300,9 @@
       }
     ],
     "version": "50mm up to 70mm (5pins / spools)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -38218,7 +38316,7 @@
       }
     ],
     "views": 10,
-    "lastUpdated": "2023-09-01T14:46:33.606Z"
+    "lastUpdated": "2023-09-07T12:00:17.119Z"
   },
   {
     "id": "6d63be2d",
@@ -38439,6 +38537,9 @@
       }
     ],
     "version": "9 discs",
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -38473,7 +38574,7 @@
       }
     ],
     "views": 25,
-    "lastUpdated": "2023-08-03T13:21:20.109Z"
+    "lastUpdated": "2023-09-07T12:00:17.119Z"
   },
   {
     "id": "624d7e96",
@@ -38903,6 +39004,9 @@
         "model": "Radial SI"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
       "Under Review ⚑",
       "High pin count",
@@ -38925,7 +39029,7 @@
       }
     ],
     "views": 33,
-    "lastUpdated": "2023-08-10T00:09:36.312Z"
+    "lastUpdated": "2023-09-07T12:00:17.120Z"
   },
   {
     "id": "e524ce27",
@@ -39430,12 +39534,15 @@
         "model": "Super XL"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
       "Under Review ⚑"
     ],
     "notes": "8 pin dimple with interactive element on the key",
     "views": 9,
-    "lastUpdated": "2023-08-03T13:21:20.111Z"
+    "lastUpdated": "2023-09-07T12:00:17.120Z"
   },
   {
     "id": "a7ffa199",
@@ -39445,6 +39552,9 @@
         "make": "Yardeni",
         "model": "XL"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ],
     "features": [
       "Under Review ⚑"
@@ -39467,6 +39577,6 @@
       }
     ],
     "views": 20,
-    "lastUpdated": "2023-08-03T13:21:20.111Z"
+    "lastUpdated": "2023-09-07T12:00:17.120Z"
   }
 ]
