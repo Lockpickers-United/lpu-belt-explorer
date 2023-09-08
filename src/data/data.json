@@ -9773,11 +9773,18 @@
     ],
     "media": [
       {
-        "title": "By: Christian",
-        "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52794725997_e323256104_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794725997/in/album-72177720307268656/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52794725997_d79572983c_o.jpg"
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53173036833_f2f3c01001_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53173036833/in/album-72177720307268656/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53173036833_7045249030_o.jpg"
+      },
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53172752734_59726548dd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53172752734/in/album-72177720307268656/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53172752734_e4a2aff9c9_o.jpg"
       },
       {
         "title": "By: Christian",
@@ -9789,9 +9796,9 @@
       {
         "title": "By: Christian",
         "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52795533384_6c23d270ca_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795533384_4cddc0123f_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795533384/in/album-72177720307268656/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52795533384_73077fc6e0_o.jpg"
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52795533384_19b6f0482d_o.jpg"
       }
     ],
     "links": [
@@ -9801,7 +9808,7 @@
       }
     ],
     "views": 89,
-    "lastUpdated": "2023-07-25T11:20:19.889Z"
+    "lastUpdated": "2023-09-08T11:36:14.674Z"
   },
   {
     "id": "bd9e85b5",
@@ -9815,8 +9822,17 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53173036833_f2f3c01001_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53173036833/in/album-72177720307268656/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53173036833_7045249030_o.jpg"
+      }
+    ],
     "views": 69,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-09-08T11:36:14.674Z"
   },
   {
     "id": "1105b55d",
