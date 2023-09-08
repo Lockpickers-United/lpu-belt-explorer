@@ -10583,8 +10583,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/1025/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1025/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ANKERSLOT/ANKER%20INFINITY_1025.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1025/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/1025/tn_2.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1025/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ANKERSLOT/ANKER%20INFINITY_1025.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1025/2.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/1025/tn_6.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1025/6.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ANKERSLOT/ANKER%20INFINITY_1025.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1025/6.jpg"
+      }
+    ],
     "views": 247,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-09-08T14:00:31.341Z"
   },
   {
     "id": "f8445741",
