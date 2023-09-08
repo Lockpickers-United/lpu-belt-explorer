@@ -189,7 +189,7 @@ Green,DOM,"RS 5",,Pin-tumbler,,,5241369e
 Green,DOM,SC,,Pin-tumbler,,,05979a42
 Green,DOM,SV,,Pin-tumbler,,,95b2c7b0
 Green,,Elca,,Pin-tumbler,,,8e18bd5f
-Green,ERA,Invincible,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,9bf13231
+Green,ERA,Invincible,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates","**Not** the pin-tumbler lock of the same name",9bf13231
 Green,ERA,Pro-Fit,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,2ec75ab7
 Green,ERA,Viscount,"5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,6ad7add4
 Green,EVVA,FPS,,Pin-tumbler,,,6a870d80
