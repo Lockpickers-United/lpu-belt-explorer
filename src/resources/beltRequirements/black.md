@@ -42,17 +42,26 @@ is required to gut.
 Examples of "Extra Skills":
 
 - Group 2 safe lock manipulation
-- Key impressioning (5 pin minimum)
+  - Document the process for opening a Group 2 safe dial of easier type (eg. S&G 6700)
+- Key impressioning
+  - Blind impressioning of 5 or more pins, simple pin tumbler or dimple lock
 - Advanced and refined pick making
-- Machining cutaway locks
-- Portfolio of high-level challenge locks
-- Disc detainer tool making
-- Community involvement projects
-- Other projects, subject to approval
+  - Portfolio of at least 3 picks, including unusual designs or artistic merit
+- Disc detainer pick making
+  - Create BOTH front-tensioning **as well as** rear- or random-tensioning Disc Detainer pick tip/tensioner sets from stock material or using parts from existing near-functional pick designs capable of picking specific locks they were designed for
+  - OR create a Disc Detainer pick tip and handle from stock material or using parts from existing near-functional pick designs capable of picking a specific lock it was designed for
+- Making cutaway locks
+  - Two good cutaways of separate locks or one of extraordinary quality; leniency for handmade
+- Challenge locks portfolio
+  - Portfolio of at least five Challenge Locks, including unusual designs or artistic merit
+- Exceptional knowledge of locks and keyways
+- Electronics projects that decode or bypass locks
+- Other projects, subject to prior approval
 
-*Please ask LPU staff for information on specific requirements for extra skills.*
+*Please ask LPU staff if you need further information about extra skills.*
 
 Examples of "Master's Projects":
 
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
+- Community engagement, interaction or improvement projects
