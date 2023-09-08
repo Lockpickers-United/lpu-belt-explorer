@@ -42,11 +42,15 @@ is required to gut.
 Examples of "Extra Skills":
 
 - Group 2 safe lock manipulation
-- Electronics projects that decode or bypass locks
-- Key impressioning
-- Advanced and refined Pick making
+- Key impressioning (5 pin minimum)
+- Advanced and refined pick making
 - Machining cutaway locks
-- Exceptional knowledge of locks and keyways
+- Portfolio of high-level challenge locks
+- Disc detainer tool making
+- Community involvement projects
+- Other projects, subject to approval
+
+*Please ask LPU staff for information on specific requirements for extra skills.*
 
 Examples of "Master's Projects":
 
