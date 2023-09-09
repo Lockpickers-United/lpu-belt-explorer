@@ -10295,7 +10295,7 @@
         "model": "E20"
       },
       {
-        "make": "ABUSABUS",
+        "make": "ABUS",
         "model": "E30"
       },
       {
@@ -10307,6 +10307,7 @@
         "model": "E70"
       },
       {
+        "make": "ABUS",
         "model": "E90"
       }
     ],
@@ -10361,7 +10362,7 @@
       }
     ],
     "views": 810,
-    "lastUpdated": "2023-09-04T11:27:09.007Z"
+    "lastUpdated": "2023-09-09T11:27:38.145Z"
   },
   {
     "id": "3515caae",
@@ -11091,8 +11092,38 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "media": [
+      {
+        "title": "By: CorrectJeans",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53174891099_40ab45062a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53174891099/in/album-72177720311066042/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53174891099_0d667becc0_o.jpg"
+      },
+      {
+        "title": "By: CorrectJeans",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53174891309_26da434441_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53174891309/in/album-72177720311066042/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53174891309_a5d88eefcb_o.jpg"
+      },
+      {
+        "title": "By: CorrectJeans",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53174689481_de0acc6e92_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53174689481/in/album-72177720311066042/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53174689481_fc1d967036_o.jpg"
+      },
+      {
+        "title": "By: CorrectJeans",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53174689591_9fabe7e9f0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53174689591/in/album-72177720311066042/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53174689591_167be2568c_o.jpg"
+      }
+    ],
     "views": 173,
-    "lastUpdated": "2023-03-23T03:24:22.388Z"
+    "lastUpdated": "2023-09-09T11:27:38.146Z"
   },
   {
     "id": "32c85438",
@@ -16025,8 +16056,38 @@
         "model": "magnetic cam lock"
       }
     ],
+    "media": [
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53175193448_8549965a7f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53175193448/in/album-72177720311080299/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53175193448_dc939c51b3_o.jpg"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53175193593_f954b1fbb3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53175193593/in/album-72177720311080299/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53175193593_726146b59d_o.jpg"
+      },
+      {
+        "title": "By: DoNotDuplicate",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53175193683_242143e949_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53175193683/in/album-72177720311080299/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53175193683_012e14e6b0_o.jpg"
+      },
+      {
+        "title": "By: Legendofthesamurai",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53174904154_8b7587ca42_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53174904154/in/album-72177720311080299/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53174904154_4f190306ff_o.jpg"
+      }
+    ],
     "views": 53,
-    "lastUpdated": "2023-05-26T17:28:40.466Z"
+    "lastUpdated": "2023-09-09T11:27:38.149Z"
   },
   {
     "id": "0813d39e",
