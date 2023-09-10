@@ -15332,7 +15332,8 @@
     "belt": "Purple",
     "makeModels": [
       {
-        "model": "Anchor Las (disc detainer)"
+        "make": "Anchor Las",
+        "model": "Disc Detainer"
       }
     ],
     "lockingMechanisms": [
@@ -15380,7 +15381,7 @@
       }
     ],
     "views": 273,
-    "lastUpdated": "2023-07-25T11:20:19.893Z"
+    "lastUpdated": "2023-09-10T20:23:07.247Z"
   },
   {
     "id": "23919b4e",
@@ -17499,20 +17500,6 @@
     "lastUpdated": "2023-07-25T11:20:19.895Z"
   },
   {
-    "id": "479f1d73",
-    "belt": "Purple",
-    "makeModels": [
-      {
-        "model": "K5"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "views": 57,
-    "lastUpdated": "2023-03-23T03:24:22.390Z"
-  },
-  {
     "id": "779d74f5",
     "belt": "Purple",
     "makeModels": [
@@ -19624,6 +19611,37 @@
     ],
     "views": 316,
     "lastUpdated": "2023-07-25T11:20:19.896Z"
+  },
+  {
+    "id": "479f1d73",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Securemme",
+        "model": "K5"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: Norlin",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53178222966_c36deeb946_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53178222966/in/album-72177720311092055/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53178222966_5f77a3bf28_o.jpg"
+      },
+      {
+        "title": "By: Norlin",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53178422404_f699ccf056_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53178422404/in/album-72177720311092055/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53178422404_30cb29014f_o.jpg"
+      }
+    ],
+    "views": 57,
+    "lastUpdated": "2023-09-10T20:23:07.250Z"
   },
   {
     "id": "e0a9caf4",
@@ -26698,8 +26716,17 @@
       "Double bitted",
       "False gates"
     ],
+    "media": [
+      {
+        "title": "By: Lock Noob",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53178685723_b5fb900987_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53178685723/in/album-72177720311091765/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53178685723_3dbe3f6a11_o.jpg"
+      }
+    ],
     "views": 73,
-    "lastUpdated": "2023-05-11T15:21:26.481Z"
+    "lastUpdated": "2023-09-10T20:23:07.259Z"
   },
   {
     "id": "ae7d3780",

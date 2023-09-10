@@ -373,7 +373,7 @@ Purple,ABUS,TS5000,,Pin-tumbler,,,dd1dd313
 Purple,"ABUS,ABUS,CISA,Bricard","XP20s,XP2s,AP3,XP S2",,Dimple,"Interactive element",,da8331ef
 Purple,"Agent,Agent,Agent","LS3,LS4,LS5",,Dimple,,,557b2f45
 Purple,"Aldon Corporation","Hot Dog Lock",,Pump/push,,,0723bdc2
-Purple,,"Anchor Las (disc detainer)",,"Disc detainer","Front tension,False gates",,bbce33e0
+Purple,"Anchor Las","Disc Detainer",,"Disc detainer","Front tension,False gates",,bbce33e0
 Purple,ASEC,"BS Sash lock","5 lever",Lever,"Mortise,Sliding levers,Pin key,Curtain,False gates",,23919b4e
 Purple,"ASSA,Ruko","500,500","5 pin stacks, gin drivers and matching sleeve",Pin-tumbler,Guttable,,ef221c67
 Purple,"ASSA,ASSA","600,Max+ Restricted","Barrel spools and matching countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Guttable",,45e3cde7
@@ -415,7 +415,6 @@ Purple,Illinois,Duo,,Wafer,"Partial gut",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
 Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requires 360 for belting",6eab0c38
 Purple,ISEO,R7,,Dimple,,,30aa78ef
-Purple,,K5,,Dimple,,,479f1d73
 Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,"High pin count",,779d74f5
 Purple,Kaken,KX3,"exterior, 6+ sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements ant type",898a7138
 Purple,"Kale Kilit","164 BNE",,Dimple,,,6f5e0d32
@@ -457,6 +456,7 @@ Purple,Rielda,"rekeyable lock",,,,,6d754a0a
 Purple,Ruko,"Combi 900",,Pin-tumbler,,,6dd5a34b
 Purple,Sargent,Signature,,"Pin-tumbler,Sidebar",,,e1e595b9
 Purple,Schlage,"Everest 29SL",,Slider,,,3dabf132
+Purple,Securemme,K5,,Dimple,,,479f1d73
 Purple,Sepa,HDS,,Dimple,"High pin count",,e0a9caf4
 Purple,"TESA,TESA","T80,TX80",,Dimple,"Tapered drivers,Interactive element",,3f49ccc1
 Purple,TESA,TK100,,Dimple,"Tapered drivers,Interactive element",,9a9ae8df
