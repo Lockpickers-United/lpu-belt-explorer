@@ -8,13 +8,13 @@ const data = entries
         const {make, model} = makeModels[0]
         const makeModel = make && make !== model ? `${make} ${model}` : model
         const name = makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
-        return [
-            `https://lpubelts.com/?id=${id}&name=${name}`,
-            `https://lpubelts.com/locks/${id}.html?name=${name}`
-        ]
+        return `https://lpubelts.com/locks/${id}.html?name=${name}`
     })
-    .flat()
     .join('\n')
-const prefix = 'https://lpubelts.com/all-locks.html\n'
-const sitemap = prefix + data
+
+const staticUrls = [
+    //TODO: future static urls go here
+].join('\n')
+
+const sitemap = staticUrls + '\n' + data
 fs.writeFileSync('./public/sitemap.txt', sitemap)
