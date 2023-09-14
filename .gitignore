@@ -27,3 +27,4 @@ scripts/*.md
 *.sw?
 /stats.html
 public/version.json
+public/sitemap.txt
