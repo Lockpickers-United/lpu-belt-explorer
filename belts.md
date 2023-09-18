@@ -916,7 +916,7 @@ as a mentor to folks at the blue, purple and brown belt levels.
 - [Vachette Axi&apos;Tec](https://lpubelts.com/?id=17d41d80)
 - [Vachette Radial NT / Vachette Radial NT+](https://lpubelts.com/?id=4db59eb3) (&lt;18 pins)
 - [Winkhaus X-Tra](https://lpubelts.com/?id=131732a0) (9-13 pins)
-- [Xylock](https://lpubelts.com/?id=6708838f)
+- [Xylok](https://lpubelts.com/?id=6708838f)
 
 ** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.
 

@@ -605,7 +605,7 @@ Red,U-Shin,"Showa NX","≥13 pins",Dimple,"High pin count",,95281228
 Red,Vachette,Axi'Tec,,Dimple,"High pin count",,17d41d80
 Red,"Vachette,Vachette","Radial NT,Radial NT+","<18 pins",Dimple,"High pin count",,4db59eb3
 Red,Winkhaus,X-Tra,"9-13 pins",Dimple,"High pin count",,131732a0
-Red,,Xylock,,Pin-tumbler,,,6708838f
+Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2","Abloy,Abloy","Disklock Pro,Novel",,"Disc detainer","Front/rear tension,Disc controller,False gates,Bi-directional","Two versions, padlock and door lock.",1a7a23d4
 "Black 2",Abloy,Easy,,"Disc detainer",,,12ff8c25
 "Black 2",Abloy,Exec,,"Disc detainer","Rear tension,Disc steering system,False gates",,fc627b17
