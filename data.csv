@@ -601,6 +601,7 @@ Red,"S&G,S&G","4544,4440 series",,Lever,"Safe deposit,Flat steel key,False gates
 Red,Schlage,"Everest 29 SL Primus XP",,Slider,,,cf76cfde
 Red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
 Red,,Tann,"10 lever",Lever,"Safe,False gates",,b5df156e
+Red,"Tann,Chubb","Detector,Detector from 1950's",,Lever,"Various formats,False gates","Usually 5 levers",69668831
 Red,U-Shin,"Showa NX","≥13 pins",Dimple,"High pin count",,95281228
 Red,Vachette,Axi'Tec,,Dimple,"High pin count",,17d41d80
 Red,"Vachette,Vachette","Radial NT,Radial NT+","<18 pins",Dimple,"High pin count",,4db59eb3
@@ -682,7 +683,6 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1","Rosengrens,Rosengrens","32A81S,32C81P","triangular central posts and many false gates","Disc detainer","Front/rear tension,False gates","Hard to navigate and manipulate and often poor feedback",db63c882
 "Black 1","Ruko,Ruko,FAB","Combi 2,Garant 10,Variant","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins,Guttable",,63a9a2b1
 "Black 1",Sargent,Keso,,Dimple,"High pin count",,00cf7717
-"Black 2","Tann,Chubb","Detector,Detector from 1950's",,Lever,"Various formats,False gates","Usually 5 levers",69668831
 "Black 1",Tokoz,Pro,,"Disc detainer","Front/rear tension,Profile discs,Disc steering system,Disc blocker system,Bi-directional",,3198fffc
 "Black 1",UrbanAlps,"Stealth Key SK1",,Lever/sidebar,"Partial gut",,e4bb0668
 "Black 1",UrbanAlps,"Stealth Key SK2",,Lever/sidebar,"Partial gut",,284bf0b0
