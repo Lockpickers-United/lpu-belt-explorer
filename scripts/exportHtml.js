@@ -27,6 +27,9 @@ const replaceValues = (template, values) => {
 }
 
 rawData.forEach(entry => {
+    const {make, model} = entry.makeModels[0]
+    const makeModel = make && make !== model ? `${make} ${model}` : model
+    const urlName = makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
     const values = {
         id: entry.id,
         title: entry.makeModels.map(({make, model}) => {
@@ -39,7 +42,8 @@ rawData.forEach(entry => {
         image_count: entry.media?.length || 0,
         images: entry.media?.map(media => replaceValues(mediaTemplate, media)).join('\n') || '',
         features: (entry.features || []).join(', '),
-        locking_mechanisms: (entry.lockingMechanisms || []).join(', ')
+        locking_mechanisms: (entry.lockingMechanisms || []).join(', '),
+        url_name: urlName
     }
 
     const output = replaceValues(template, values)
