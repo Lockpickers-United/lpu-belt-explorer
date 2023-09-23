@@ -15,9 +15,9 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
 	<style>
 		body {
-			font-family: Roboto, Helvetica, Arial, sans-serif;
-			font-size: 12px;
-			color: #ccc;
+		    font-family: Roboto, Helvetica, Arial, sans-serif;
+		    font-size: 12px;
+		    color: #ccc;
 			background-color: #121212;
 			margin:0px;
 			padding:0px;
@@ -28,9 +28,11 @@
 		}    
 		
 		.nav-button {
-			background-color:#222;
+			background-color:rgb(42, 42, 42);
 			border:0;
-			width:34px;
+			width:32px;
+			margin: 0px 4px;
+			padding:0px;
 		}
 		
 		.lockEntry {
@@ -195,6 +197,7 @@
 		  .imageItem { width:210px; }
 		}
 		
+
 		.White 	{background-color: rgb(238, 238, 238);	}
 		.Yellow	{background-color: rgb(211, 211, 28);	}
 		.Orange	{background-color: rgb(217, 91, 39);	}
@@ -205,6 +208,157 @@
 		.Red	{background-color: rgb(185, 33, 33);	}
 		.Black	{background-color: rgb(0, 0, 0);		}
 		
+		
+		.topNavSearch {
+			position: relative;
+			display: flex;
+			-webkit-box-align: center;
+			align-items: center;
+			padding-left: 2px;
+			padding-right: 2px;
+			min-height: 40px;
+			background-color:rgb(42, 42, 42);
+		}
+
+		.navIconSVG {
+			user-select: none;
+			width: 1em;
+			height: 1em;
+			display: inline-block;
+			fill: currentcolor;
+			flex-shrink: 0;
+			transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			font-size: 1.5rem;
+		}
+
+		.searchWrapper {
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 1em;
+			letter-spacing: 0.00938em;
+			color: rgb(255, 255, 255);
+			box-sizing: border-box;
+			cursor: text;
+			display: inline-flex;
+			-webkit-box-align: center;
+			align-items: center;
+			width: 100%;
+			position: relative;
+			margin-right:10px;
+			border-bottom: 1px solid #aaa;
+		}
+
+		.searchWrapper:focus-within {
+			border-bottom: 1px solid #fff;
+ 		}
+
+		.XXXsearchWrapper::before {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+			left: 0px;
+			bottom: 0px;
+			content: " ";
+			position: absolute;
+			right: 0px;
+			transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			pointer-events: none;
+		}
+
+		.XXXsearchWrapper::after {
+			border-bottom: 2px solid rgb(73, 255, 0);
+			left: 0px;
+			bottom: 0px;
+			content: "";
+			position: absolute;
+			right: 0px;
+			transform: scaleX(0);
+			transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+			pointer-events: none;
+		}
+
+		.searchIcon {
+			display: flex;
+			height: 0.01em;
+			max-height: 2em;
+			-webkit-box-align: center;
+			align-items: center;
+			white-space: nowrap;
+			color: rgb(255, 255, 255);
+			margin-right: 8px;
+		}
+
+		.searchInput {
+			outline: none;
+			font: inherit;
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+			font-weight: 300;
+			letter-spacing: inherit;
+			color: currentcolor;
+			padding: 4px 0px 5px;
+			border: 0px;
+			box-sizing: content-box;
+			background: none;
+			height: 1.4375em;
+			margin: 0px;
+			-webkit-tap-highlight-color: transparent;
+			display: block;
+			min-width: 0px;
+			width: 100%;
+			animation-name: mui-auto-fill-cancel;
+			animation-duration: 10ms;
+		}
+
+		.searchInput:focus::-webkit-input-placeholder{
+			color: transparent!important;
+		}
+		.searchInput:focus::-moz-placeholder{
+			color: transparent!important;
+		}
+		.searchInput:-moz-placeholder{
+			color: transparent!important;
+		}
+
+		.infoButton {
+			width:40px;
+			color:#fff;
+			display: inline-flex;
+			-webkit-box-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			justify-content: center;
+			position: relative;
+			box-sizing: border-box;
+			-webkit-tap-highlight-color: transparent;
+			background-color: transparent;
+			outline: 0px;
+			border: 0px;
+			margin: 0px;
+			cursor: pointer;
+			user-select: none;
+			vertical-align: middle;
+			appearance: none;
+			text-decoration: none;
+			text-align: center;
+			flex: 0 0 auto;
+			font-size: 1.5rem;
+			padding: 8px;
+			border-radius: 50%;
+			overflow: visible;
+			transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+		}
+
+		.submitButton {
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+			background-color: #bbb;
+			border: none;
+			padding: 2px 8px;
+			margin-bottom:6px;
+			text-decoration: none;
+			cursor: pointer;
+			border-radius: 5px;
+		}
 	</style>
 </head>
 <body>
