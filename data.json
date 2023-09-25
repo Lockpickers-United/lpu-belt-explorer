@@ -11412,16 +11412,38 @@
         "model": "2m22"
       }
     ],
-    "version": "uncurtained 5 lever",
+    "version": "6 lever",
     "lockingMechanisms": [
       "Lever"
     ],
     "features": [
-      "Mortise",
-      "Uncurtained"
+      "Mortise"
+    ],
+    "media": [
+      {
+        "title": "By: Safecracker33",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53209281057_559cb195af_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53209281057/in/album-72177720311424016/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53209281057_833d681c2d_o.jpg"
+      },
+      {
+        "title": "By: Safecracker33",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53209281547_a4f00f365e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53209281547/in/album-72177720311424016/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53209281547_2a3e2b09c5_o.jpg"
+      },
+      {
+        "title": "By: Safecracker33",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53210161231_2b2165e570_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53210161231/in/album-72177720311424016/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53210161231_7cd8312120_o.jpg"
+      }
     ],
     "views": 131,
-    "lastUpdated": "2023-05-11T15:21:26.469Z"
+    "lastUpdated": "2023-09-25T10:20:02.903Z"
   },
   {
     "id": "5b842c0e",
@@ -23658,13 +23680,6 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52693016823_45a622af4a_o.jpg"
       },
       {
-        "title": "By: Legendofthesamurai",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52692795379_1540bd91c2_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52692795379/in/album-72177720306056527/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52692795379_0af4e64a5a_o.jpg"
-      },
-      {
         "title": "By: L0ckJockey",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52737839356_a577753e8a_w_d.jpg",
@@ -23694,7 +23709,7 @@
       }
     ],
     "views": 319,
-    "lastUpdated": "2023-07-25T11:20:19.900Z"
+    "lastUpdated": "2023-09-25T10:20:02.910Z"
   },
   {
     "id": "cc5bbb68",

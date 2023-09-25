@@ -282,7 +282,7 @@ Blue,"Burg Wächter","Gamma 700","non-removable core",Pin-tumbler,,,ed9fa926
 Blue,Cantol,"high-security line ","10-pin dimple",Dimple,,,5647f11c
 Blue,Chubb,"114 (3g114)","5 lever, pre-2004",Lever,"Pin key,Curtain,False gates",,32c85438
 Blue,Chubb,"114e (3g114e)","5 lever, after 2004",Lever,"Pin key,Curtain,False gates",,0c946064
-Blue,Chubb,2m22,"uncurtained 5 lever",Lever,"Mortise,Uncurtained",,9d337b72
+Blue,Chubb,2m22,"6 lever",Lever,Mortise,,9d337b72
 Blue,Chubb,Cruiser,"5 lever",Lever,"Padlock,Pin key,Curtain,False gates",,5b842c0e
 Blue,CISA,"Astral S",,Dimple,,,066d1e3b
 Blue,CISA,C3000,,Pin-tumbler,,,f9aceec0

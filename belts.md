@@ -483,7 +483,7 @@ your lock in the picking video. Please read more below for filming requirements.
 - [Cantol high-security line ](https://lpubelts.com/?id=5647f11c) (10-pin dimple)
 - [Chubb 114 (3g114)](https://lpubelts.com/?id=32c85438) (5 lever, pre-2004)
 - [Chubb 114e (3g114e)](https://lpubelts.com/?id=0c946064) (5 lever, after 2004)
-- [Chubb 2m22](https://lpubelts.com/?id=9d337b72) (uncurtained 5 lever)
+- [Chubb 2m22](https://lpubelts.com/?id=9d337b72) (6 lever)
 - [Chubb Cruiser](https://lpubelts.com/?id=5b842c0e) (5 lever)
 - [CISA Astral S](https://lpubelts.com/?id=066d1e3b)
 - [CISA C3000](https://lpubelts.com/?id=f9aceec0)
