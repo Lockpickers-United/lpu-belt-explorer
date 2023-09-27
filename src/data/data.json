@@ -8522,6 +8522,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -8546,7 +8549,7 @@
       }
     ],
     "views": 128,
-    "lastUpdated": "2023-07-25T11:20:19.887Z"
+    "lastUpdated": "2023-09-27T11:45:14.613Z"
   },
   {
     "id": "1c002521",
@@ -10214,6 +10217,7 @@
       "Dimple"
     ],
     "features": [
+      "Pin-in-pin",
       "Interactive element"
     ],
     "media": [
@@ -10226,7 +10230,7 @@
       }
     ],
     "views": 797,
-    "lastUpdated": "2023-07-25T11:20:19.889Z"
+    "lastUpdated": "2023-09-27T11:45:14.614Z"
   },
   {
     "id": "c6529d9c",
@@ -11660,6 +11664,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -11697,7 +11704,7 @@
       }
     ],
     "views": 233,
-    "lastUpdated": "2023-07-25T11:20:19.890Z"
+    "lastUpdated": "2023-09-27T11:45:14.615Z"
   },
   {
     "id": "eec4bd4a",
@@ -17424,6 +17431,7 @@
       "Dimple"
     ],
     "features": [
+      "Pin-in-pin",
       "Interactive element"
     ],
     "media": [
@@ -17456,7 +17464,7 @@
       }
     ],
     "views": 205,
-    "lastUpdated": "2023-07-25T11:20:19.894Z"
+    "lastUpdated": "2023-09-27T11:45:14.618Z"
   },
   {
     "id": "3b848976",
@@ -19152,6 +19160,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Pin-in-pin"
+    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -19218,7 +19229,7 @@
       }
     ],
     "views": 206,
-    "lastUpdated": "2023-07-25T11:20:19.896Z"
+    "lastUpdated": "2023-09-27T11:45:14.619Z"
   },
   {
     "id": "48323cde",
@@ -23641,7 +23652,8 @@
       "Dimple"
     ],
     "features": [
-      "Pin-in-pin"
+      "Pin-in-pin",
+      "Undercut milling"
     ],
     "media": [
       {
@@ -23709,7 +23721,7 @@
       }
     ],
     "views": 325,
-    "lastUpdated": "2023-09-25T10:20:02.910Z"
+    "lastUpdated": "2023-09-27T11:45:14.622Z"
   },
   {
     "id": "cc5bbb68",
