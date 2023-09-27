@@ -13,7 +13,7 @@ const data = entries
     .join('\n')
 
 const staticUrls = [
-    //TODO: future static urls go here
+    'https://lpubelts.com/locks/information.html'
 ].join('\n')
 
 const sitemap = staticUrls + '\n' + data
