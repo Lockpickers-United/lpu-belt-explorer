@@ -26,12 +26,30 @@ const replaceValues = (template, values) => {
     return output
 }
 
-rawData.forEach(entry => {
+const getUrlName = entry => {
     const {make, model} = entry.makeModels[0]
     const makeModel = make && make !== model ? `${make} ${model}` : model
-    const urlName = makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
+    return makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
+}
+
+rawData.forEach((entry, index, arr) => {
+    const urlName = getUrlName(entry)
+
+    const prevIndex = index === 0 ? arr.length - 1 : index - 1
+    const nextIndex = index === arr.length - 1 ? 0 : index + 1
+    const prevEntry = arr[prevIndex]
+    const nextEntry = arr[nextIndex]
+    const prevUrlName = getUrlName(prevEntry)
+    const nextUrlName = getUrlName(nextEntry)
+
     const values = {
         id: entry.id,
+        url_name: urlName,
+        prev_id: prevEntry.id,
+        prev_url_name: prevUrlName,
+        next_id: nextEntry.id,
+        next_url_name: nextUrlName,
+
         title: entry.makeModels.map(({make, model}) => {
             return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)
         }).join (' / '),
@@ -42,8 +60,7 @@ rawData.forEach(entry => {
         image_count: entry.media?.length || 0,
         images: entry.media?.map(media => replaceValues(mediaTemplate, media)).join('\n') || '',
         features: (entry.features || []).join(', '),
-        locking_mechanisms: (entry.lockingMechanisms || []).join(', '),
-        url_name: urlName
+        locking_mechanisms: (entry.lockingMechanisms || []).join(', ')
     }
 
     const output = replaceValues(template, values)
