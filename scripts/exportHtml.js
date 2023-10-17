@@ -1,8 +1,10 @@
 import {encodeNonAsciiHTML} from 'entities'
 import fs from 'fs'
+import belts from '../src/data/belts.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 const template = fs.readFileSync('./src/resources/seo-template.html', 'utf8')
+const allLocksTemplate = fs.readFileSync('./src/resources/all-locks-template.html', 'utf8')
 const mediaTemplate = fs.readFileSync('./src/resources/seo-media-template.html', 'utf8')
 const shareTemplate = fs.readFileSync('./src/resources/seo-share-template.html', 'utf8')
 
@@ -24,6 +26,12 @@ const replaceValues = (template, values) => {
     }
 
     return output
+}
+
+const getName = entry => {
+    return entry.makeModels.map(({make, model}) => {
+        return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)
+    }).join(' / ')
 }
 
 const getUrlName = entry => {
@@ -50,9 +58,7 @@ rawData.forEach((entry, index, arr) => {
         next_id: nextEntry.id,
         next_url_name: nextUrlName,
 
-        title: entry.makeModels.map(({make, model}) => {
-            return encodeNonAsciiHTML(make && make !== model ? `${make} ${model}` : model)
-        }).join (' / '),
+        title: getName(entry),
         belt: entry.belt,
         version: entry.version || '',
         notes: entry.notes || '',
@@ -69,3 +75,18 @@ rawData.forEach((entry, index, arr) => {
     fs.writeFileSync(`./dist/locks/${entry.id}.html`, output)
     fs.writeFileSync(`./dist/share/${entry.id}.html`, shareOutput)
 })
+
+const all_locks = Object.keys(belts)
+    .map(belt => {
+        return [
+            `\t\t<h2>${belt} Belt</h2>`,
+            rawData.filter(entry => entry.belt === belt).map(entry => {
+                const urlName = getUrlName(entry)
+                const name = getName(entry)
+                return `\t\t<a href='https://lpubelts.com/locks/${entry.id}.html?name=${urlName}'>${name}</a><br>`
+            }).join('\n')
+        ].join('\n')
+    })
+    .join('\n')
+const output = replaceValues(allLocksTemplate, {all_locks})
+fs.writeFileSync(`./dist/locks/all-locks.html`, output)
