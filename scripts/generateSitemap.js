@@ -13,6 +13,7 @@ const data = entries
     .join('\n')
 
 const staticUrls = [
+    'https://lpubelts.com/locks/all-locks.html',
     'https://lpubelts.com/locks/information.html'
 ].join('\n')
 
