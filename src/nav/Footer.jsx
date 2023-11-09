@@ -25,10 +25,6 @@ function Footer() {
             <a href='https://github.com/Lockpickers-United' target='_blank' rel='noopener noreferrer'>
                 GitHub
             </a>
-            &nbsp;•&nbsp;
-            <a href='https://lpubelts.com/locks/all-locks.html' target='_blank' rel='noopener noreferrer'>
-                All Locks
-            </a>
 
             <br/>
             <HotkeyInfoButton/>
