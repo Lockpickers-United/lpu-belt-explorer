@@ -60,7 +60,9 @@ function FilterButton({data}) {
                 </Toolbar>
                 <Box margin={1}>
                     <Stack direction='column' style={{minWidth: 250}}>
-                        {filterFields.map((field, index) =>
+                        {filterFields
+                            .filter(field => !field.beta || beta)
+                            .map((field, index) =>
                             <FilterByField
                                 data={data}
                                 key={index}

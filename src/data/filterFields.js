@@ -5,7 +5,8 @@ const filterFields = [
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Belt', fieldName: 'belt', sort: beltSort},
     {label: 'Features', fieldName: 'features'},
-    {label: 'Content', fieldName: 'content', extraValues: ['Is Starred']}
+    {label: 'Content', fieldName: 'content', extraValues: ['Is Starred']},
+    {label: 'Collection', fieldName: 'collection', beta: true}
 ]
 
 export default filterFields

@@ -1,27 +1,11 @@
-import React, {useEffect, useMemo, useState} from 'react'
-import {initializeApp} from 'firebase/app'
-import {getAuth, GoogleAuthProvider, signInWithPopup, signOut} from 'firebase/auth'
-
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: 'AIzaSyDGGErdOp0lpzUumA60xJO7BlQr027y9Vo',
-    authDomain: 'lpu-belt-explorer.firebaseapp.com',
-    projectId: 'lpu-belt-explorer',
-    storageBucket: 'lpu-belt-explorer.appspot.com',
-    messagingSenderId: '1004257270920',
-    appId: '1:1004257270920:web:ba605e14f98e926a1e533d'
-}
-
-// Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig)
-const auth = getAuth(firebaseApp)
-const provider = new GoogleAuthProvider()
-provider.setCustomParameters({prompt: 'select_account'})
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import {GoogleAuthProvider, signInWithPopup, signOut} from 'firebase/auth'
+import {auth} from '../auth/firebase'
 
 const AuthContext = React.createContext({})
 
 export function AuthProvider({children}) {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState({})
 
     useEffect(() => {
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
@@ -30,12 +14,22 @@ export function AuthProvider({children}) {
         return () => unregisterAuthObserver()
     }, [])
 
+    const login = useCallback(() => {
+        const provider = new GoogleAuthProvider()
+        provider.setCustomParameters({prompt: 'select_account'})
+        return signInWithPopup(auth, provider)
+    }, [])
+
+    const logout = useCallback(() => {
+        return signOut(auth)
+    }, [])
+
     const value = useMemo(() => ({
-        isLoggedIn: !!user,
+        isLoggedIn: !!user?.uid,
         user,
-        login: () => signInWithPopup(auth, provider),
-        logout: () => signOut(auth)
-    }), [user])
+        login,
+        logout
+    }), [login, logout, user])
 
     return (
         <AuthContext.Provider value={value}>

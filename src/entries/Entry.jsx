@@ -166,7 +166,7 @@ function Entry({entry, expanded, onExpand}) {
                         <Tracker id={entry.id}/>
                         <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton entry={entry}/>
-                        <CollectionButton/>
+                        <CollectionButton id={entry.id}/>
                         <StarButton id={entry.id}/>
                     </AccordionActions>
                 </React.Fragment>

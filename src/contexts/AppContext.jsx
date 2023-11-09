@@ -1,4 +1,5 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
+import {useHotkeys} from 'react-hotkeys-hook'
 import FilterContext from './FilterContext'
 import {uniqueBelts} from '../data/belts'
 import LazyDataContext from './LazyDataContext'
@@ -53,15 +54,18 @@ export function AppProvider({children}) {
 
     const [displayAll, setDisplayAll] = useState(false)
 
+    const [beta, setBeta] = useState(import.meta.env.DEV)
+    useHotkeys('ctrl+b', () => setBeta(!beta))
+
     const value = useMemo(() => ({
-        beta: import.meta.env.DEV,
+        beta,
         tab,
         setTab: handleSetTab,
         expanded,
         setExpanded: handleSetExpanded,
         displayAll: displayAll && tab === 'search',
         setDisplayAll
-    }), [displayAll, expanded, handleSetExpanded, handleSetTab, tab])
+    }), [beta, displayAll, expanded, handleSetExpanded, handleSetTab, tab])
 
     return (
         <AppContext.Provider value={value}>

@@ -1,5 +1,6 @@
 import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
+import DBContext from './DBContext'
 import FilterContext from './FilterContext'
 import LazyDataContext from './LazyDataContext'
 import StorageContext from './StorageContext'
@@ -10,6 +11,7 @@ import removeAccents from 'remove-accents'
 const DataContext = React.createContext({})
 
 export function DataProvider({children}) {
+    const {lockCollection} = useContext(DBContext)
     const {data: allEntries} = useContext(LazyDataContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {starredEntries} = useContext(StorageContext)
@@ -42,9 +44,16 @@ export function DataProvider({children}) {
                     entry.belt.startsWith('Black') ? 'Is Black' : undefined,
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
+                collection: [
+                    lockCollection.own?.includes(entry.id) ? 'Own' : "Don't Own",
+                    lockCollection.picked?.includes(entry.id) ? 'Picked' : 'Not Picked',
+                    lockCollection.wishlist?.includes(entry.id) ? 'On Wishlist' : 'Not on Wishlist',
+                    lockCollection.recorded?.includes(entry.id) ? 'Recorded' : 'Not Recorded',
+                    lockCollection.previouslyOwned?.includes(entry.id) ? 'Previously Owned' : 'Not Previously Owned'
+                ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [allEntries, starredEntries])
+    }, [allEntries, starredEntries, lockCollection])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
