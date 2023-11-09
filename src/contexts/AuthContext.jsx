@@ -37,7 +37,6 @@ export function AuthProvider({children}) {
         logout: () => signOut(auth)
     }), [user])
 
-    console.log(value)
     return (
         <AuthContext.Provider value={value}>
             {children}

@@ -9,10 +9,12 @@ import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
+import AppContext from '../contexts/AppContext'
 import AuthContext from '../contexts/AuthContext'
 
 function UserMenu() {
     const {isLoggedIn, user, login, logout} = useContext(AuthContext)
+    const {beta} = useContext(AppContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -28,6 +30,7 @@ function UserMenu() {
         logout()
     }, [logout])
 
+    if (!beta) return null
     return (
         <React.Fragment>
             <Tooltip title={isLoggedIn ? user.displayName : 'Account'} arrow disableFocusListener>
