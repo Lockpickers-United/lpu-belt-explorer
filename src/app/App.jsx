@@ -1,6 +1,7 @@
 import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import {AuthProvider} from '../contexts/AuthContext'
 import {FilterProvider} from '../contexts/FilterContext'
 import {LazyDataProvider} from '../contexts/LazyDataContext'
 import {StorageProvider} from '../contexts/StorageContext'
@@ -36,21 +37,23 @@ function App() {
             <CssBaseline/>
             <style>{style}</style>
 
-            <LazyDataProvider>
-                <StorageProvider>
-                    <FilterProvider>
-                        <DataProvider>
-                            <AppProvider>
-                                <Nav/>
+            <AuthProvider>
+                <LazyDataProvider>
+                    <StorageProvider>
+                        <FilterProvider>
+                            <DataProvider>
+                                <AppProvider>
+                                    <Nav/>
 
-                                <Entries/>
+                                    <Entries/>
 
-                                <Footer/>
-                            </AppProvider>
-                        </DataProvider>
-                    </FilterProvider>
-                </StorageProvider>
-            </LazyDataProvider>
+                                    <Footer/>
+                                </AppProvider>
+                            </DataProvider>
+                        </FilterProvider>
+                    </StorageProvider>
+                </LazyDataProvider>
+            </AuthProvider>
         </ThemeProvider>
     )
 }

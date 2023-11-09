@@ -1,6 +1,7 @@
+import Avatar from '@mui/material/Avatar'
+import React, {useCallback, useContext, useState} from 'react'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import React, {useCallback, useContext, useState} from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import LoginIcon from '@mui/icons-material/Login'
 import LogoutIcon from '@mui/icons-material/Logout'
@@ -8,26 +9,38 @@ import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
-import AppContext from '../contexts/AppContext'
+import AuthContext from '../contexts/AuthContext'
 
 function UserMenu() {
-    const {beta} = useContext(AppContext)
+    const {isLoggedIn, user, login, logout} = useContext(AuthContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
-    const signedIn = false
 
-    const handleClick = useCallback(() => {
-        console.log('TBD')
-    }, [])
+    const handleLogin = useCallback(() => {
+        setAnchorEl(null)
+        login()
+    }, [login])
 
-    if (!beta) return null
+    const handleLogout = useCallback(() => {
+        setAnchorEl(null)
+        logout()
+    }, [logout])
+
     return (
         <React.Fragment>
-            <Tooltip title='Account' arrow disableFocusListener>
+            <Tooltip title={isLoggedIn ? user.displayName : 'Account'} arrow disableFocusListener>
                 <IconButton color='inherit' onClick={handleOpen} edge='end'>
-                    <AccountCircleIcon/>
+                    {
+                        isLoggedIn
+                            ? <Avatar
+                                alt={user.displayName}
+                                src={user.photoURL}
+                                sx={{ width: 24, height: 24 }}
+                            />
+                            : <AccountCircleIcon/>
+                    }
                 </IconButton>
             </Tooltip>
             <Menu
@@ -35,19 +48,29 @@ function UserMenu() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClick}>
-                    <ListItemIcon>
-                        {
-                            signedIn
-                                ? <LogoutIcon fontSize='small'/>
-                                : <LoginIcon fontSize='small'/>
-                        }
-                    </ListItemIcon>
-                    <ListItemText>Sign In</ListItemText>
-                </MenuItem>
+                {
+                    isLoggedIn &&
+                    <MenuItem disabled>
+                        <ListItemText>{user.displayName}</ListItemText>
+                    </MenuItem>
+                }
+                {
+                    isLoggedIn
+                        ? <MenuItem onClick={handleLogout}>
+                            <ListItemIcon>
+                                <LogoutIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Sign Out</ListItemText>
+                        </MenuItem>
+                        : <MenuItem onClick={handleLogin}>
+                            <ListItemIcon>
+                                <LoginIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Sign In with Google</ListItemText>
+                        </MenuItem>
+                }
             </Menu>
         </React.Fragment>
-
     )
 }
 
