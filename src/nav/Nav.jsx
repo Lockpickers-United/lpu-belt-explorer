@@ -19,6 +19,7 @@ import ScrollToTopButton from './ScrollToTopButton'
 import {useHotkeys} from 'react-hotkeys-hook'
 import Tooltip from '@mui/material/Tooltip'
 import FilterContext from '../contexts/FilterContext'
+import UserMenu from '../auth/UserMenu'
 
 function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)
@@ -58,6 +59,7 @@ function Nav() {
                     <InfoButton icon/>
                     <SortButton/>
                     <FilterButton/>
+                    <UserMenu/>
                 </Toolbar>
             </AppBar>
 

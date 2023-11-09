@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import belts from '../data/belts'
 import BeltStripe from './BeltStripe'
+import CollectionButton from './CollectionButton'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
 import ReactMarkdown from 'react-markdown'
@@ -165,6 +166,7 @@ function Entry({entry, expanded, onExpand}) {
                         <Tracker id={entry.id}/>
                         <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton entry={entry}/>
+                        <CollectionButton/>
                         <StarButton id={entry.id}/>
                     </AccordionActions>
                 </React.Fragment>

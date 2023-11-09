@@ -54,6 +54,7 @@ export function AppProvider({children}) {
     const [displayAll, setDisplayAll] = useState(false)
 
     const value = useMemo(() => ({
+        beta: import.meta.env.DEV,
         tab,
         setTab: handleSetTab,
         expanded,

@@ -17,7 +17,7 @@ import AppContext from '../contexts/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function FilterButton({data}) {
-    const {tab, setTab} = useContext(AppContext)
+    const {beta, tab, setTab} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('f', handleHotkey)
@@ -35,7 +35,7 @@ function FilterButton({data}) {
     return (
         <React.Fragment>
             <Tooltip title='Filter' arrow disableFocusListener>
-                <IconButton color='inherit' onClick={openDrawer} edge='end'>
+                <IconButton color='inherit' onClick={openDrawer} edge={beta ? null : 'end'}>
                     <Badge
                         badgeContent={filterCount}
                         color='secondary'
