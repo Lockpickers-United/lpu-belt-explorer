@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, updateDoc, arrayUnion, arrayRemove, onSnapshot} from 'firebase/firestore'
+import {doc, setDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 
 const DBContext = React.createContext({})
@@ -24,8 +24,14 @@ export function DBProvider({children}) {
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
-            return onSnapshot(doc(db, 'lockcollections', user.uid), doc => {
-                setLockCollection(doc.data())
+            const ref = doc(db, 'lockcollections', user.uid)
+            return onSnapshot(ref, doc => {
+                const data = doc.data()
+                if (data) {
+                    setLockCollection(data)
+                } else {
+                    return setDoc(ref, {})
+                }
             })
         }
     }, [isLoggedIn, user])

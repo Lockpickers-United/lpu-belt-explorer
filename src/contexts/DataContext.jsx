@@ -45,11 +45,11 @@ export function DataProvider({children}) {
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
                 collection: [
-                    lockCollection.own?.includes(entry.id) ? 'Own' : "Don't Own",
-                    lockCollection.picked?.includes(entry.id) ? 'Picked' : 'Not Picked',
-                    lockCollection.wishlist?.includes(entry.id) ? 'On Wishlist' : 'Not on Wishlist',
-                    lockCollection.recorded?.includes(entry.id) ? 'Recorded' : 'Not Recorded',
-                    lockCollection.previouslyOwned?.includes(entry.id) ? 'Previously Owned' : 'Not Previously Owned'
+                    lockCollection.own?.includes?.(entry.id) ? 'Own' : "Don't Own",
+                    lockCollection.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
+                    lockCollection.wishlist?.includes?.(entry.id) ? 'On Wishlist' : 'Not on Wishlist',
+                    lockCollection.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded',
+                    lockCollection.previouslyOwned?.includes?.(entry.id) ? 'Previously Owned' : 'Not Previously Owned'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
