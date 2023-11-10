@@ -7,7 +7,6 @@ import DataContext from '../contexts/DataContext'
 import FilterContext from '../contexts/FilterContext'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
-import {filterFieldsByFieldName} from '../data/filterFields'
 
 function FilterByField({label, fieldName, onFilter, sort}) {
     const {visibleEntries} = useContext(DataContext)
@@ -27,7 +26,6 @@ function FilterByField({label, fieldName, onFilter, sort}) {
     const handleOpen = useCallback(() => setOpen(true), [])
 
     const {counts, options} = useMemo(() => {
-        const {extraValues = []} = filterFieldsByFieldName[fieldName]
         const allValues = visibleEntries
             .map(datum => datum[fieldName])
             .flat()
@@ -40,7 +38,7 @@ function FilterByField({label, fieldName, onFilter, sort}) {
         }, {})
 
 
-        const options = [...new Set(allValues.concat(extraValues))]
+        const options = [...new Set(allValues)]
             .sort((a, b) => sort ? sort(a, b) : a.localeCompare(b))
 
         return {counts, options}

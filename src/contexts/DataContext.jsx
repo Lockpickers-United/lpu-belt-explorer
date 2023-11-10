@@ -3,7 +3,6 @@ import fuzzysort from 'fuzzysort'
 import DBContext from './DBContext'
 import FilterContext from './FilterContext'
 import LazyDataContext from './LazyDataContext'
-import StorageContext from './StorageContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
@@ -14,7 +13,6 @@ export function DataProvider({children}) {
     const {lockCollection} = useContext(DBContext)
     const {data: allEntries} = useContext(LazyDataContext)
     const {filters: allFilters} = useContext(FilterContext)
-    const {starredEntries} = useContext(StorageContext)
     const {search, id, tab, name, sort, ...filters} = allFilters
 
     const mappedEntries = useMemo(() => {
@@ -38,7 +36,6 @@ export function DataProvider({children}) {
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    starredEntries.includes(entry.id) ? 'Is Starred' : 'Not Starred',
                     belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
                     dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
                     entry.belt.startsWith('Black') ? 'Is Black' : undefined,
@@ -52,7 +49,7 @@ export function DataProvider({children}) {
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [allEntries, starredEntries, lockCollection])
+    }, [allEntries, lockCollection])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

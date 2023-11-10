@@ -19,7 +19,6 @@ import Button from '@mui/material/Button'
 import CopyEntryButton from './CopyEntryButton'
 import Tracker from '../app/Tracker'
 import queryString from 'query-string'
-import StarButton from './StarButton'
 
 function Entry({entry, expanded, onExpand}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -167,7 +166,6 @@ function Entry({entry, expanded, onExpand}) {
                         <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton entry={entry}/>
                         <CollectionButton id={entry.id}/>
-                        <StarButton id={entry.id}/>
                     </AccordionActions>
                 </React.Fragment>
             }

@@ -5,7 +5,6 @@ import {AuthProvider} from '../contexts/AuthContext'
 import {DBProvider} from '../contexts/DBContext'
 import {FilterProvider} from '../contexts/FilterContext'
 import {LazyDataProvider} from '../contexts/LazyDataContext'
-import {StorageProvider} from '../contexts/StorageContext'
 import {DataProvider} from '../contexts/DataContext'
 import {AppProvider} from '../contexts/AppContext'
 import Nav from '../nav/Nav'
@@ -41,19 +40,17 @@ function App() {
             <AuthProvider>
                 <DBProvider>
                     <LazyDataProvider>
-                        <StorageProvider>
-                            <FilterProvider>
-                                <DataProvider>
-                                    <AppProvider>
-                                        <Nav/>
+                        <FilterProvider>
+                            <DataProvider>
+                                <AppProvider>
+                                    <Nav/>
 
-                                        <Entries/>
+                                    <Entries/>
 
-                                        <Footer/>
-                                    </AppProvider>
-                                </DataProvider>
-                            </FilterProvider>
-                        </StorageProvider>
+                                    <Footer/>
+                                </AppProvider>
+                            </DataProvider>
+                        </FilterProvider>
                     </LazyDataProvider>
                 </DBProvider>
             </AuthProvider>
