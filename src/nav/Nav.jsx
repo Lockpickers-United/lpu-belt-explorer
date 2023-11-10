@@ -19,7 +19,7 @@ import ScrollToTopButton from './ScrollToTopButton'
 import {useHotkeys} from 'react-hotkeys-hook'
 import Tooltip from '@mui/material/Tooltip'
 import FilterContext from '../contexts/FilterContext'
-import UserMenu from '../auth/UserMenu'
+import UserMenu from './UserMenu'
 
 function Nav() {
     const tabWidth = Math.floor(window.innerWidth / 10)

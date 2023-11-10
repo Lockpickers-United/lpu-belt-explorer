@@ -6,7 +6,7 @@ const filterFields = [
     {label: 'Belt', fieldName: 'belt', sort: beltSort},
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content', extraValues: ['Is Starred']},
-    {label: 'Collection', fieldName: 'collection', beta: true}
+    {label: 'Collection', fieldName: 'collection', userBased: true}
 ]
 
 export default filterFields

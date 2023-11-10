@@ -6,6 +6,7 @@ import Tooltip from '@mui/material/Tooltip'
 function LinkToEntryButton({belt}) {
     const link = new URL(window.location.href)
     link.search = `id=beltreqs&tab=${belt}`
+    link.hash = ''
 
     return (
         <Tooltip title='Link to Requirements' arrow disableFocusListener>

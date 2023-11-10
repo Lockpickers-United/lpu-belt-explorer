@@ -5,6 +5,7 @@ import Tooltip from '@mui/material/Tooltip'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
+import AuthContext from '../contexts/AuthContext'
 import FilterContext from '../contexts/FilterContext'
 import filterFields from '../data/filterFields'
 import FilterByField from './FilterByField'
@@ -17,6 +18,7 @@ import AppContext from '../contexts/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function FilterButton({data}) {
+    const {isLoggedIn} = useContext(AuthContext)
     const {beta, tab, setTab} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const handleHotkey = useCallback(() => setOpen(!open), [open])
@@ -35,7 +37,7 @@ function FilterButton({data}) {
     return (
         <React.Fragment>
             <Tooltip title='Filter' arrow disableFocusListener>
-                <IconButton color='inherit' onClick={openDrawer} edge={beta ? null : 'end'}>
+                <IconButton color='inherit' onClick={openDrawer}>
                     <Badge
                         badgeContent={filterCount}
                         color='secondary'
@@ -61,7 +63,9 @@ function FilterButton({data}) {
                 <Box margin={1}>
                     <Stack direction='column' style={{minWidth: 250}}>
                         {filterFields
-                            .filter(field => !field.beta || beta)
+                            .filter(field => {
+                                return (!field.beta || beta) && (!field.userBased || isLoggedIn)
+                            })
                             .map((field, index) =>
                             <FilterByField
                                 data={data}

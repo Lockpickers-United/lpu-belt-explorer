@@ -55,7 +55,7 @@ export function AppProvider({children}) {
     const [displayAll, setDisplayAll] = useState(false)
 
     const [beta, setBeta] = useState(import.meta.env.DEV)
-    useHotkeys('ctrl+b', () => setBeta(!beta))
+    useHotkeys('ctrl+shift+m', () => setBeta(!beta))
 
     const value = useMemo(() => ({
         beta,

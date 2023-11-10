@@ -13,6 +13,7 @@ function LinkToEntryButton({entry}) {
     if (link.host.toLowerCase().startsWith('lpubelts')) {
         link.host = `share.${link.host}`
     }
+    link.hash = ''
 
     return (
         <Tooltip title='Link to Entry' arrow disableFocusListener>

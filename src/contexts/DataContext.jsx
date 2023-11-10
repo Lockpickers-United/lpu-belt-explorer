@@ -48,8 +48,7 @@ export function DataProvider({children}) {
                     lockCollection.own?.includes?.(entry.id) ? 'Own' : "Don't Own",
                     lockCollection.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
                     lockCollection.wishlist?.includes?.(entry.id) ? 'On Wishlist' : 'Not on Wishlist',
-                    lockCollection.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded',
-                    lockCollection.previouslyOwned?.includes?.(entry.id) ? 'Previously Owned' : 'Not Previously Owned'
+                    lockCollection.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))

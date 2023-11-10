@@ -33,6 +33,8 @@ export function DBProvider({children}) {
                     return setDoc(ref, {})
                 }
             })
+        } else {
+            setLockCollection({})
         }
     }, [isLoggedIn, user])
 
