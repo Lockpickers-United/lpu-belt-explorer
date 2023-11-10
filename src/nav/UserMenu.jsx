@@ -21,7 +21,7 @@ import FilterContext from '../contexts/FilterContext'
 
 function UserMenu() {
     const {setTab} = useContext(AppContext)
-    const {addFilter} = useContext(FilterContext)
+    const {addFilter, removeFilters} = useContext(FilterContext)
     const {isLoggedIn, user, login, logout} = useContext(AuthContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -41,6 +41,7 @@ function UserMenu() {
 
     const handleLogout = useCallback(() => {
         handleClose()
+        removeFilters(['collection'])
         logout()
     }, [logout, handleClose])
 
