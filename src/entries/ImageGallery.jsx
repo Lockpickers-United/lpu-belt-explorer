@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
@@ -19,8 +19,21 @@ function ImageGallery({entry}) {
         return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
-    const handleOpen = useCallback(index => () => setOpenImage(index), [])
-    const handleClose = useCallback(() => setOpenImage(-1), [])
+    const handleOpen = useCallback(index => () => {
+        setOpenImage(index)
+        history.pushState({}, '', `#image-${index}`)
+    }, [])
+    const handleClose = useCallback(() => {
+        setOpenImage(-1)
+        history.pushState('', document.title, window.location.pathname + window.location.search)
+    }, [])
+
+    // Handle back button presses
+    useEffect(() => {
+        const handler = () => setOpenImage(-1)
+        addEventListener('hashchange', handler)
+        return () => removeEventListener('hashchange', handler)
+    })
 
     return (
         <React.Fragment>
@@ -32,7 +45,7 @@ function ImageGallery({entry}) {
                     onClose={handleClose}
                 />
             }
-            <ImageList variant="masonry" cols={isMobile ? 2 : 3} sx={{marginTop: 0}}>
+            <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 0}}>
                 {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl}, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>
                         <img
@@ -62,18 +75,18 @@ function ImageGallery({entry}) {
                             title={title}
                             subtitle={
                                 subtitle &&
-                                <a href={subtitleUrl || licenses[subtitle]} target="_blank" rel="noopener noreferrer">
+                                <a href={subtitleUrl || licenses[subtitle]} target='_blank' rel='noopener noreferrer'>
                                     {subtitle}
                                 </a>
                             }
                             actionIcon={
                                 fullUrl &&
-                                <Tooltip title="View Full Size" arrow disableFocusListener>
+                                <Tooltip title='View Full Size' arrow disableFocusListener>
                                     <IconButton
                                         href={fullUrl}
                                         style={{color: 'rgba(255, 255, 255, 0.5)'}}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        target='_blank'
+                                        rel='noopener noreferrer'
                                     >
                                         <LaunchIcon/>
                                     </IconButton>
