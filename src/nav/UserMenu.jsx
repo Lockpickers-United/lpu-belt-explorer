@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
+import AppContext from '../contexts/AppContext'
 import AuthContext from '../contexts/AuthContext'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
@@ -19,6 +20,7 @@ import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import FilterContext from '../contexts/FilterContext'
 
 function UserMenu() {
+    const {setTab} = useContext(AppContext)
     const {addFilter} = useContext(FilterContext)
     const {isLoggedIn, user, login, logout} = useContext(AuthContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -28,6 +30,7 @@ function UserMenu() {
 
     const handleFilter = useCallback((filterKey, filterValue) => () => {
         handleClose()
+        setTab('search')
         addFilter(filterKey, filterValue, true)
     }, [addFilter, handleClose])
 
