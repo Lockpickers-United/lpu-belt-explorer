@@ -288,10 +288,10 @@ Blue,CISA,"Astral S",,Dimple,,,066d1e3b
 Blue,CISA,C3000,,Pin-tumbler,,,f9aceec0
 Blue,DeGuard,"interactive clone","4 pins",Dimple,Pin-in-pin,,b91162e7
 Blue,DOM,"IX 5KG",,Dimple,"Interactive element",,eec4bd4a
-Blue,DOM,Plura,,Pin-tumbler,"Magic' DOM drivers",,96591a8f
+Blue,DOM,Plura,,Pin-tumbler,"'Magic' DOM drivers",,96591a8f
 Blue,DOM,"R Plus",,Pin-tumbler,,,2e67118d
 Blue,DOM,RN,,Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
-Blue,DOM,"RS Sigma",,Pin-tumbler,"Magic' DOM drivers",,1dd28bf9
+Blue,DOM,"RS Sigma",,Pin-tumbler,"'Magic' DOM drivers",,1dd28bf9
 Blue,DOM,"S (with circle)",,Pin-tumbler,,,9aa8821a
 Blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
 Blue,Dorma,DC400,,Pin-tumbler,,,1ede9094
