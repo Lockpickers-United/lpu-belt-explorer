@@ -61,8 +61,8 @@ function SearchBox() {
         </InputAdornment>
     ) : null
     const style = width < 650
-        ? {maxWidth: 450}
-        : {maxWidth: 450, paddingLeft: 60}
+        ? {maxWidth: 450, marginRight: 8}
+        : {maxWidth: 450, paddingLeft: 60, marginRight: 8}
 
     return (
         <TextField

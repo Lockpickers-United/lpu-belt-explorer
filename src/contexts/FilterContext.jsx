@@ -83,7 +83,7 @@ export function FilterProvider({children}) {
         const query = queryString.stringify(validFilters)
         const newUrl = new URL(window.location.href)
         newUrl.search = query
-        history.replaceState({path: newUrl.href}, '', newUrl.pathname + newUrl.search)
+        history.replaceState({path: newUrl.href}, '', newUrl.href)
     }, [filters])
 
     const filterCount = useMemo(() => {
@@ -97,7 +97,8 @@ export function FilterProvider({children}) {
         addFilter,
         removeFilter,
         removeFilters,
-        clearFilters
+        clearFilters,
+        setFilters
     }), [addFilter, clearFilters, filterCount, filters, removeFilter, removeFilters])
 
     return (

@@ -21,7 +21,7 @@ import FilterContext from '../contexts/FilterContext'
 
 function UserMenu() {
     const {setTab} = useContext(AppContext)
-    const {addFilter, removeFilters} = useContext(FilterContext)
+    const {setFilters, removeFilters} = useContext(FilterContext)
     const {isLoggedIn, user, login, logout} = useContext(AuthContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -31,8 +31,8 @@ function UserMenu() {
     const handleFilter = useCallback((filterKey, filterValue) => () => {
         handleClose()
         setTab('search')
-        addFilter(filterKey, filterValue, true)
-    }, [addFilter, handleClose])
+        setFilters({[filterKey]: filterValue})
+    }, [setFilters, handleClose, setTab])
 
     const handleLogin = useCallback(() => {
         handleClose()
@@ -43,7 +43,7 @@ function UserMenu() {
         handleClose()
         removeFilters(['collection'])
         logout()
-    }, [logout, handleClose])
+    }, [handleClose, removeFilters, logout])
 
     return (
         <React.Fragment>
