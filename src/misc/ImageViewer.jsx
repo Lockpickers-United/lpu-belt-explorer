@@ -54,12 +54,14 @@ function ImageViewer({startIndex = 0, media, onClose}) {
     const handleNavigatePrevious = useCallback(() => {
         const nextIndex = index === 0 ? media.length - 1 : index - 1
         setIndex(nextIndex)
+        history.replaceState({}, '', `#image-${nextIndex}`)
         handleReset()
         setLoading(true)
     }, [index, media, handleReset])
     const handleNavigateNext = useCallback(() => {
         const nextIndex = index === media.length - 1 ? 0 : index + 1
         setIndex(nextIndex)
+        history.replaceState({}, '', `#image-${nextIndex}`)
         handleReset()
         setLoading(true)
     }, [index, media, handleReset])

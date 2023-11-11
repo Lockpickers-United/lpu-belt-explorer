@@ -1,56 +1,54 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
+import DataContext from './DataContext'
 import FilterContext from './FilterContext'
-import {uniqueBelts} from '../data/belts'
-import LazyDataContext from './LazyDataContext'
 
 const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
-    const {data} = useContext(LazyDataContext)
-    const {filters, addFilter, removeFilters} = useContext(FilterContext)
+    const {getEntryFromId, getNameFromId} = useContext(DataContext)
+    const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
-    const [tab, setTab] = useState(() => {
-        const {tab, belt, id, name, search, ...rest} = filters
-        if (tab && uniqueBelts.includes(tab)) {
-            return tab
-        } else if (belt) {
-            return uniqueBelts.includes(belt) ? belt : 'search'
-        } else if (id) {
-            const entry = data.find(e => id === e.id)
-            const value = entry ? entry.belt.replace(/\s\d/g, '') : 'White'
-            if (value === 'Unranked') {
-                addFilter('belt', 'Unranked', true)
-                return 'search'
-            } else {
-                return value
-            }
-        } else if (search?.length > 0 || Object.keys(rest).length > 0) {
-            return 'search'
-        }
-        return 'White'
-    })
     const [expanded, setExpanded] = useState(filters.id)
 
     const handleSetExpanded = useCallback(newValue => {
-        if ((filters.id || filters.name) && newValue !== filters.id) {
-            setTimeout(() => removeFilters(['id', 'name']), 0)
+        const entry = getEntryFromId(newValue)
+        const name = getNameFromId(newValue)
+        if (newValue && newValue !== 'beltreqs') {
+            addFilters([
+                {key: 'id', value: newValue},
+                {key: 'name', value: name},
+                {key: 'tab', value: entry.belt.replace(/\s\d/g, '')}
+            ], true)
+        } else if (newValue === 'beltreqs') {
+            addFilters([
+                {key: 'id', value: newValue},
+                {key: 'name', value: undefined}
+            ], true)
+        } else {
+            removeFilters(['id', 'name'])
         }
+
         setExpanded(newValue)
-    }, [filters, removeFilters])
+    }, [addFilters, getEntryFromId, getNameFromId, removeFilters])
+
+    const handleClearExpanded = useCallback(() => {
+        setExpanded(undefined)
+    }, [])
 
     const handleSetTab = useCallback(tab => {
-        setTab(tab)
-        setTimeout(() => setDisplayAll(false), 0)
+        addFilters([
+            {key: 'tab', value: tab},
+            {key: 'id', value: expanded === 'beltreqs' ? 'beltreqs' : undefined},
+            {key: 'name', value: undefined}
+        ], true)
 
         if (expanded !== 'beltreqs') {
-            handleSetExpanded(false)
+            setExpanded(false)
         }
 
-        if (filters.id || filters.name || filters.tab) {
-            setTimeout(() => removeFilters(['id', 'name', 'tab']), 0)
-        }
-    }, [expanded, filters, handleSetExpanded, removeFilters])
+        setTimeout(() => setDisplayAll(false), 0)
+    }, [addFilters, expanded])
 
     const [displayAll, setDisplayAll] = useState(false)
 
@@ -59,13 +57,14 @@ export function AppProvider({children}) {
 
     const value = useMemo(() => ({
         beta,
-        tab,
+        tab: filters.tab,
         setTab: handleSetTab,
         expanded,
         setExpanded: handleSetExpanded,
-        displayAll: displayAll && tab === 'search',
+        clearExpanded: handleClearExpanded,
+        displayAll: displayAll && filters.tab === 'search',
         setDisplayAll
-    }), [beta, displayAll, expanded, handleSetExpanded, handleSetTab, tab])
+    }), [beta, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab])
 
     return (
         <AppContext.Provider value={value}>

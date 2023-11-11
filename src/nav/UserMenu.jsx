@@ -11,18 +11,18 @@ import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
-import AppContext from '../contexts/AppContext'
 import AuthContext from '../contexts/AuthContext'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
+import DBContext from '../contexts/DBContext'
 import FilterContext from '../contexts/FilterContext'
 
 function UserMenu() {
-    const {setTab} = useContext(AppContext)
-    const {setFilters, removeFilters} = useContext(FilterContext)
     const {isLoggedIn, user, login, logout} = useContext(AuthContext)
+    const {setFilters, removeFilters} = useContext(FilterContext)
+    const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -30,9 +30,11 @@ function UserMenu() {
 
     const handleFilter = useCallback((filterKey, filterValue) => () => {
         handleClose()
-        setTab('search')
-        setFilters({[filterKey]: filterValue})
-    }, [setFilters, handleClose, setTab])
+        setFilters({
+            [filterKey]: filterValue,
+            tab: 'search'
+        })
+    }, [setFilters, handleClose])
 
     const handleLogin = useCallback(() => {
         handleClose()
@@ -82,25 +84,25 @@ function UserMenu() {
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Owned</ListItemText>
+                            <ListItemText>Owned ({lockCollection.own?.length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleFilter('collection', 'Picked')}>
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Picked</ListItemText>
+                            <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleFilter('collection', 'Recorded')}>
                             <ListItemIcon>
                                 <VideocamOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Recorded</ListItemText>
+                            <ListItemText>Recorded ({lockCollection.recorded?.length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleFilter('collection', 'Wishlist')}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Wishlist</ListItemText>
+                            <ListItemText>Wishlist ({lockCollection.wishlist?.length || 0})</ListItemText>
                         </MenuItem>
                         <Divider/>
                         <MenuItem onClick={handleLogout}>

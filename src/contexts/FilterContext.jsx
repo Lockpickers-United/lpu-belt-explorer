@@ -1,5 +1,6 @@
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import queryString from 'query-string'
+import {uniqueBelts} from '../data/belts'
 import LazyDataContext from './LazyDataContext'
 
 const FilterContext = React.createContext({})
@@ -7,45 +8,61 @@ const FilterContext = React.createContext({})
 export function FilterProvider({children}) {
     const {data} = useContext(LazyDataContext)
     const [filters, setFilters] = useState(() => {
-        const {id, name, search = '', ...query} = queryString.parse(location.search)
-        query.search = search
+        const {id, name, tab, search = '', ...initialFilters} = queryString.parse(location.search)
+        initialFilters.search = search
 
         if (id) {
             const entry = data.find(e => id === e.id)
             if (entry) {
-                query.id = id
-                query.name = name
-            } else if (name) {
-                query.search = name.replace(/_/g, ' ')
+                initialFilters.id = id
+                initialFilters.name = name
+                initialFilters.tab = entry.belt.replace(/\s\d/g, '')
+            } else if (name && !initialFilters.search) {
+                initialFilters.search = name.replace(/_/g, ' ')
             }
         }
 
-        return query
+        if (tab && uniqueBelts.includes(tab) && !initialFilters.tab) {
+            initialFilters.tab = tab
+        } else if (!initialFilters.tab) {
+            initialFilters.tab = 'White'
+        }
+
+        return initialFilters
     })
 
-    const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
-        const oldValue = filters[keyToAdd]
-
-        let newValue
-        if (replace) {
-            newValue = valueToAdd
-        } else {
-            if (Array.isArray(oldValue)) {
-                if (!oldValue.includes(valueToAdd)) {
-                    newValue = [...oldValue, valueToAdd]
-                } else {
-                    newValue = oldValue
-                }
-            } else if (oldValue && oldValue !== valueToAdd) {
-                newValue = [oldValue, valueToAdd]
-            } else {
-                newValue = valueToAdd
-            }
-        }
-
+    const addFilters = useCallback((keyValues, replace) => {
         const {id, ...keepFilters} = filters
-        setFilters({...keepFilters, [keyToAdd]: newValue})
+        const newFilters = {...keepFilters}
+
+        keyValues.forEach(({key: keyToAdd, value: valueToAdd}) => {
+            const oldValue = filters[keyToAdd]
+
+            let newValue
+            if (replace) {
+                newValue = valueToAdd
+            } else {
+                if (Array.isArray(oldValue)) {
+                    if (!oldValue.includes(valueToAdd)) {
+                        newValue = [...oldValue, valueToAdd]
+                    } else {
+                        newValue = oldValue
+                    }
+                } else if (oldValue && oldValue !== valueToAdd) {
+                    newValue = [oldValue, valueToAdd]
+                } else {
+                    newValue = valueToAdd
+                }
+            }
+            newFilters[keyToAdd] = newValue
+        })
+
+        setFilters(newFilters)
     }, [filters])
+
+    const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
+        return addFilters([{key: keyToAdd, value: valueToAdd}], replace)
+    }, [addFilters])
 
     const removeFilters = useCallback(keysToDelete => {
         const newFilters = keysToDelete.reduce((acc, keyToDelete) => {
@@ -67,9 +84,9 @@ export function FilterProvider({children}) {
         }
     }, [filters])
 
-    const clearFilters = useCallback(searchToo => {
-        const newValue = searchToo ? {} : {search: filters.search}
-        setFilters(newValue)
+    const clearFilters = useCallback(() => {
+        const {tab, id, name} = filters
+        setFilters({tab, id, name})
     }, [filters])
 
     useEffect(() => {
@@ -95,11 +112,12 @@ export function FilterProvider({children}) {
         filters,
         filterCount,
         addFilter,
+        addFilters,
         removeFilter,
         removeFilters,
-        clearFilters,
-        setFilters
-    }), [addFilter, clearFilters, filterCount, filters, removeFilter, removeFilters])
+        setFilters,
+        clearFilters
+    }), [addFilter, addFilters, clearFilters, filterCount, filters, removeFilter, removeFilters])
 
     return (
         <FilterContext.Provider value={value}>

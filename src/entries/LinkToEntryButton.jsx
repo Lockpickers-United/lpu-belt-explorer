@@ -1,15 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
+import DataContext from '../contexts/DataContext'
 
 function LinkToEntryButton({entry}) {
-    const {id, makeModels} = entry
-    const {make, model} = makeModels[0]
-    const makeModel = make && make !== model ? `${make} ${model}` : model
-    const name = makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
+    const {getNameFromId} = useContext(DataContext)
+    const name = getNameFromId(entry.id)
     const link = new URL(window.location.href)
-    link.search = `id=${id}&name=${name}`
+    link.search = `id=${entry.id}&name=${name}`
     if (link.host.toLowerCase().startsWith('lpubelts')) {
         link.host = `share.${link.host}`
     }

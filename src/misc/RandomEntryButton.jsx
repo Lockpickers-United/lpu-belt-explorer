@@ -4,22 +4,17 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../contexts/AppContext'
-import FilterContext from '../contexts/FilterContext'
-import LazyDataContext from '../contexts/LazyDataContext'
+import DataContext from '../contexts/DataContext'
 
 function RandomEntryButton() {
-    const {data} = useContext(LazyDataContext)
-    const {setTab, setExpanded} = useContext(AppContext)
-    const {clearFilters} = useContext(FilterContext)
+    const {setExpanded} = useContext(AppContext)
+    const {visibleEntries} = useContext(DataContext)
 
     const handleClick = useCallback(() => {
-        const filtered = data.filter(datum => datum.belt !== 'Unranked')
-        const index = Math.floor(Math.random() * filtered.length)
-        const entry = filtered[index]
-        clearFilters()
-        setTab(entry.belt.replace(/\s\d/g, ''))
+        const index = Math.floor(Math.random() * visibleEntries.length)
+        const entry = visibleEntries[index]
         setExpanded(entry.id)
-    }, [setTab, setExpanded, clearFilters, data])
+    }, [setExpanded, visibleEntries])
 
     useHotkeys('r', () => handleClick(), {preventDefault: true})
 

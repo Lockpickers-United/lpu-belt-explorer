@@ -19,7 +19,7 @@ import {useHotkeys} from 'react-hotkeys-hook'
 
 function FilterButton({data}) {
     const {isLoggedIn} = useContext(AuthContext)
-    const {beta, tab, setTab} = useContext(AppContext)
+    const {beta} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('f', handleHotkey)
@@ -27,12 +27,14 @@ function FilterButton({data}) {
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
 
-    const {filterCount, addFilter} = useContext(FilterContext)
+    const {filterCount, addFilters} = useContext(FilterContext)
 
-    const handleAddFilter = (keyToAdd, valueToAdd) => {
-        if (tab !== 'search') setTab('search')
-        setTimeout(() => addFilter(keyToAdd, valueToAdd, true), 0)
-    }
+    const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
+        addFilters([
+            {key: 'tab', value: 'search'},
+            {key: keyToAdd, value: valueToAdd}
+        ], true)
+    }, [addFilters])
 
     return (
         <React.Fragment>

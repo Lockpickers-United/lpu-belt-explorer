@@ -13,7 +13,20 @@ import ImageViewer from '../misc/ImageViewer'
 function ImageGallery({entry}) {
     const {width} = useWindowSize()
     const isMobile = width < 736
-    const [openImage, setOpenImage] = useState(-1)
+    const [openImage, setOpenImage] = useState(() => {
+        const {hash} = window.location
+        const [, index] = (hash.match(/#image-(\d+)/) || [])
+        if (index > -1) {
+            // Delay this so scrolling to entry can occur
+            setTimeout(() => {
+                // Make a history entry so the back button will exit dialog instead of app
+                history.replaceState({}, '', window.location.pathname + window.location.search)
+                history.pushState({}, '', `#image-${index}`)
+                setOpenImage(index)
+            }, 50)
+        }
+        return -1
+    })
 
     const handleVideoClick = useCallback(url => () => {
         return window.open(url, '_blank', 'noopener,noreferrer')
@@ -23,14 +36,19 @@ function ImageGallery({entry}) {
         setOpenImage(index)
         history.pushState({}, '', `#image-${index}`)
     }, [])
+
     const handleClose = useCallback(() => {
         setOpenImage(-1)
-        history.pushState('', document.title, window.location.pathname + window.location.search)
+        history.pushState({}, '', window.location.pathname + window.location.search)
     }, [])
 
     // Handle back button presses
     useEffect(() => {
-        const handler = () => setOpenImage(-1)
+        const handler = () => {
+            const {hash} = window.location
+            const [, index] = (hash.match(/#image-(\d+)/) || [])
+            setOpenImage(index || -1)
+        }
         addEventListener('hashchange', handler)
         return () => removeEventListener('hashchange', handler)
     })

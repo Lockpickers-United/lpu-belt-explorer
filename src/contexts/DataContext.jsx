@@ -1,4 +1,4 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DBContext from './DBContext'
 import FilterContext from './FilterContext'
@@ -44,7 +44,7 @@ export function DataProvider({children}) {
                 collection: [
                     lockCollection.own?.includes?.(entry.id) ? 'Own' : "Don't Own",
                     lockCollection.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
-                    lockCollection.wishlist?.includes?.(entry.id) ? 'On Wishlist' : 'Not on Wishlist',
+                    lockCollection.wishlist?.includes?.(entry.id) ? 'Wishlist' : 'Not on Wishlist',
                     lockCollection.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
@@ -103,10 +103,26 @@ export function DataProvider({children}) {
             : searched
     }, [filters, mappedEntries, search, sort])
 
+    const getEntryFromId = useCallback(id => {
+        return allEntries.find(e => e.id === id)
+    }, [allEntries])
+
+    const getNameFromId = useCallback(id => {
+        const entry = getEntryFromId(id)
+        if (entry) {
+            const {makeModels} = entry
+            const {make, model} = makeModels[0]
+            const makeModel = make && make !== model ? `${make} ${model}` : model
+            return makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
+        }
+    }, [getEntryFromId])
+
     const value = useMemo(() => ({
         allEntries,
-        visibleEntries
-    }), [allEntries, visibleEntries])
+        visibleEntries,
+        getEntryFromId,
+        getNameFromId
+    }), [allEntries, getNameFromId, getEntryFromId, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

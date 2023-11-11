@@ -6,14 +6,12 @@ import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import FilterContext from '../contexts/FilterContext'
-import AppContext from '../contexts/AppContext'
 import useWindowSize from '../util/useWindowSize'
 import debounce from 'debounce'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function SearchBox() {
-    const {tab, setTab} = useContext(AppContext)
-    const {filters, addFilter, removeFilter} = useContext(FilterContext)
+    const {filters, addFilter, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const {width} = useWindowSize()
     const inputEl = useRef()
@@ -27,16 +25,12 @@ function SearchBox() {
 
     const debounceChange = useMemo(() => {
         return debounce(value => {
-            addFilter('search', value, true)
-
-            setTimeout(() => {
-                if (tab !== 'search') {
-                    setTab('search')
-                    window.scrollTo({top: 0, behavior: 'smooth'})
-                }
-            }, 0)
+            addFilters([
+                {key: 'search', value},
+                {key: 'tab', value: 'search'}
+            ], true)
         }, 150)
-    }, [addFilter, setTab, tab])
+    }, [addFilters])
 
     const handleChange = useCallback(event => {
         const {value} = event.target
