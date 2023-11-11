@@ -1,6 +1,6 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
-import ExportJsonButton from '../misc/ExportJsonButton'
+import ExportButton from '../misc/ExportButton'
 import RandomEntryButton from '../misc/RandomEntryButton'
 import HotkeyInfoButton from '../misc/HotkeyInfoButton'
 import SlideshowButton from '../misc/SlideshowButton'
@@ -31,7 +31,7 @@ function Footer() {
             &nbsp;•&nbsp;
             <RandomEntryButton/>
             &nbsp;•&nbsp;
-            <ExportJsonButton/>
+            <ExportButton/>
             &nbsp;•&nbsp;
             <SlideshowButton/>
         </Typography>
