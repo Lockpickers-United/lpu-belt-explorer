@@ -1,6 +1,7 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
 import ExportButton from '../misc/ExportButton'
+import PrivacyPolicyButton from '../misc/PrivacyPolicyButton'
 import RandomEntryButton from '../misc/RandomEntryButton'
 import HotkeyInfoButton from '../misc/HotkeyInfoButton'
 import SlideshowButton from '../misc/SlideshowButton'
@@ -25,6 +26,8 @@ function Footer() {
             <a href='https://github.com/Lockpickers-United' target='_blank' rel='noopener noreferrer'>
                 GitHub
             </a>
+            &nbsp;•&nbsp;
+            <PrivacyPolicyButton/>
 
             <br/>
             <HotkeyInfoButton/>
