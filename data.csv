@@ -398,8 +398,8 @@ Purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b
 Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,Dierre,"New Power",,Slider,,,a10711cc
-Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,acde7f0c
-Purple,DOM,"ix Twido",,Dimple,"Torpedo keypins,Interactive element,""Magic"" DOM drivers",,fc4de1ff
+Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,'Magic' DOM drivers",,acde7f0c
+Purple,DOM,"ix Twido",,Dimple,"Torpedo keypins,Interactive element,'Magic' DOM drivers",,fc4de1ff
 Purple,DOM,ix10,"without fins",Dimple,,,7b05dccc
 Purple,Eagle,"""Supr-Security""","without shutter",,,,e8901d1c
 Purple,Elzett,X11,,Dimple,,,04a402d6
@@ -561,7 +561,7 @@ Red,CISM,Atlas,,"Magnet,Pump/push",,,9bb97454
 Red,Clavis,T-20,"15-19 pins",Dimple,,,add0b067
 Red,"Corbin Russwin",Emhart,"6 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c4f942f0
 Red,DOM,"ix Saturn",,Dimple,"Interactive element,Torpedo keypins,Shark fin keypins",,6b06f591
-Red,DOM,"RS 8",,Pin-tumbler,"""Magic"" DOM drivers,Sidepins,Torpedo keypins",,4993a918
+Red,DOM,"RS 8",,Pin-tumbler,"'Magic' DOM drivers,Sidepins,Torpedo keypins",,4993a918
 Red,Elzett,Magnet,,Magnet,"Magnetic rotors",,ff0be785
 Red,"EVVA,EVVA,EVVA","3KS,3KS+,4KS","without false gates or 1-3 mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,265226b1
 Red,EVVA,Dual,">4 mastered elements",Slider,"False gates,Active sidebar",,00b569f2
