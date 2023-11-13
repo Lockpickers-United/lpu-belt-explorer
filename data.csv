@@ -563,7 +563,7 @@ Red,"Corbin Russwin",Emhart,"6 pins **",Pin-tumbler,"Interlocking pins","** **Sp
 Red,DOM,"ix Saturn",,Dimple,"Interactive element,Torpedo keypins,Shark fin keypins",,6b06f591
 Red,DOM,"RS 8",,Pin-tumbler,"""Magic"" DOM drivers,Sidepins,Torpedo keypins",,4993a918
 Red,Elzett,Magnet,,Magnet,"Magnetic rotors",,ff0be785
-Red,EVVA,3KS,"without false gates or 1-3 mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,265226b1
+Red,"EVVA,EVVA,EVVA","3KS,3KS+,4KS","without false gates or 1-3 mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,265226b1
 Red,EVVA,Dual,">4 mastered elements",Slider,"False gates,Active sidebar",,00b569f2
 Red,EVVA,ICS,">2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,6852489f
 Red,FAB,NZS3,,Pin-tumbler,,,3b797ff2
@@ -638,7 +638,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1","Corbin Russwin",Emhart,"2+ mastered chambers **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c266d57b
 "Black 1",DOM,Diamant,,"Disc detainer","Front tension,False gates",,57fbcb1b
 "Black 1",DOM,"ix Twinstar",,Dimple,"Shark fin keypins,Torpedo keypins,Interactive element",,3c73c705
-"Black 1","EVVA,EVVA,EVVA","3KS,3KS+,4KS","with false gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
+"Black 1","EVVA,EVVA","3KS,3KS+","with false gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
 "Black 1",EVVA,Dual,"1-4 mastered elements",Slider,"Active sidebar,False gates",,1e197456
 "Black 2",EVVA,Dual,"0 (zero) mastered elements",Slider,"False gates,Active sidebar",,533c7408
 "Black 1",EVVA,ICS,"1-2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,db749615

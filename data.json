@@ -25555,6 +25555,14 @@
       {
         "make": "EVVA",
         "model": "3KS"
+      },
+      {
+        "make": "EVVA",
+        "model": "3KS+"
+      },
+      {
+        "make": "EVVA",
+        "model": "4KS"
       }
     ],
     "version": "without false gates or 1-3 mastered sliders",
@@ -25625,7 +25633,7 @@
       }
     ],
     "views": 172,
-    "lastUpdated": "2023-07-25T11:20:19.901Z"
+    "lastUpdated": "2023-11-13T11:31:22.719Z"
   },
   {
     "id": "00b569f2",
@@ -30257,10 +30265,6 @@
       {
         "make": "EVVA",
         "model": "3KS+"
-      },
-      {
-        "make": "EVVA",
-        "model": "4KS"
       }
     ],
     "version": "with false gates and no mastered sliders",
@@ -30352,7 +30356,7 @@
       }
     ],
     "views": 473,
-    "lastUpdated": "2023-07-25T11:20:19.905Z"
+    "lastUpdated": "2023-11-13T11:31:22.721Z"
   },
   {
     "id": "1e197456",
