@@ -170,7 +170,7 @@ groupData.forEach(group => {
     relatedIds.forEach(id => {
         const entry = jsonData.find(e => e.id === id)
         if (!entry) return console.log('Entry not found:', id)
-        entry.relatedIds = relatedIds
+        entry.relatedIds = relatedIds.filter(rid => rid !== id)
     })
 })
 
