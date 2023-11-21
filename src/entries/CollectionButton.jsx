@@ -61,7 +61,6 @@ function CollectionButton({id}) {
                 <Card>
                     <CardHeader title='My Collection'/>
                     <CardContent style={{paddingTop: 0}}>
-                        {!isLoggedIn && <Typography style={{marginBottom: 8}}>Sign In to keep track.</Typography>}
                         <FormGroup>
                             {collectionOptions.map(({key, label}) =>
                                 <React.Fragment key={key}>

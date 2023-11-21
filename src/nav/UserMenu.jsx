@@ -1,5 +1,6 @@
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography'
 import React, {useCallback, useContext, useState} from 'react'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
@@ -108,9 +109,41 @@ function UserMenu() {
                         </MenuItem>
                     </div>
                 }
-                <div>
-                    <SignInButton onClick={handleClose}/>
-                </div>
+                {
+                    !isLoggedIn &&
+                    <div>
+                        <MenuItem disabled>
+                            <ListItemText>My Collection</ListItemText>
+                        </MenuItem>
+                        <MenuItem disabled>
+                            <ListItemIcon>
+                                <LockIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Owned</ListItemText>
+                        </MenuItem>
+                        <MenuItem disabled>
+                            <ListItemIcon>
+                                <LockOpenOutlinedIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Picked</ListItemText>
+                        </MenuItem>
+                        <MenuItem disabled>
+                            <ListItemIcon>
+                                <VideocamOutlinedIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Recorded</ListItemText>
+                        </MenuItem>
+                        <MenuItem disabled>
+                            <ListItemIcon>
+                                <SavingsOutlinedIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Wishlist</ListItemText>
+                        </MenuItem>
+                        <Divider/>
+                        <SignInButton onClick={handleClose}/>
+                    </div>
+                }
+
             </Menu>
         </React.Fragment>
     )
