@@ -31,7 +31,7 @@ export function AppProvider({children}) {
         }
 
         setExpanded(newValue)
-    }, [addFilters, getEntryFromId, getNameFromId, removeFilters])
+    }, [addFilters, filters.tab, getEntryFromId, getNameFromId, removeFilters])
 
     const handleClearExpanded = useCallback(() => {
         setExpanded(undefined)
