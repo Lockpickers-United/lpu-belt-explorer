@@ -61,6 +61,7 @@ export function AppProvider({children}) {
         tab: filters.tab,
         setTab: handleSetTab,
         expanded,
+        setExpandedDirect: setExpanded,
         setExpanded: handleSetExpanded,
         clearExpanded: handleClearExpanded,
         displayAll: displayAll && filters.tab === 'search',

@@ -1,10 +1,11 @@
-import React, {useCallback, useEffect, useMemo, useRef} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import DataContext from '../contexts/DataContext'
 import belts from '../data/belts'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
@@ -19,6 +20,7 @@ import Button from '@mui/material/Button'
 import CopyEntryButton from './CopyEntryButton'
 import Tracker from '../app/Tracker'
 import queryString from 'query-string'
+import RelatedEntryButton from './RelatedEntryButton'
 
 function Entry({entry, expanded, onExpand}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -99,14 +101,25 @@ function Entry({entry, expanded, onExpand}) {
                 expanded &&
                 <React.Fragment>
                     <AccordionDetails>
-                        <FieldValue name='Belt' value={
-                            <React.Fragment>
-                                <Typography>
-                                    {entry.belt} {danPoints > 0 && ` (${danPoints} Dan Point${danPoints > 1 ? 's' : ''})`}
-                                </Typography>
-                                <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
-                            </React.Fragment>
-                        }/>
+                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
+                            <FieldValue name='Belt' style={{width: '45%'}} value={
+                                <React.Fragment>
+                                    <Typography>
+                                        {entry.belt} {danPoints > 0 && ` (${danPoints} Dan Point${danPoints > 1 ? 's' : ''})`}
+                                    </Typography>
+                                    <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
+                                </React.Fragment>
+                            }/>
+                            {!!entry.relatedIds &&
+                                <FieldValue name='Other Versions' style={{width: '45%'}} value={
+                                    <React.Fragment>
+                                        {entry.relatedIds.map(relatedId =>
+                                            <RelatedEntryButton key={relatedId} id={relatedId}/>
+                                        )}
+                                    </React.Fragment>
+                                }/>
+                            }
+                        </Stack>
                         {!!entry.notes &&
                             <FieldValue name='Notes' value={
                                 <Typography component='div' style={{marginTop: -16}}>
