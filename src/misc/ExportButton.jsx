@@ -40,6 +40,7 @@ function ExportButton() {
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
             model: datum.makeModels.map(e => e.model).join(','),
+            version: datum.version,
             belt: datum.belt
         }))
         const headers = csvColumns.join(',')
@@ -95,6 +96,7 @@ const csvColumns = [
     'id',
     'make',
     'model',
+    'version',
     'belt'
 ]
 

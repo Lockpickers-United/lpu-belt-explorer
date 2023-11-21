@@ -5,12 +5,12 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import PersonIcon from '@mui/icons-material/Person'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import LoginIcon from '@mui/icons-material/Login'
 import LogoutIcon from '@mui/icons-material/Logout'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
+import SignInButton from '../auth/SignInButton'
 import AuthContext from '../contexts/AuthContext'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
@@ -20,7 +20,7 @@ import DBContext from '../contexts/DBContext'
 import FilterContext from '../contexts/FilterContext'
 
 function UserMenu() {
-    const {isLoggedIn, user, login, logout} = useContext(AuthContext)
+    const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {setFilters, removeFilters} = useContext(FilterContext)
     const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -35,11 +35,6 @@ function UserMenu() {
             tab: 'search'
         })
     }, [setFilters, handleClose])
-
-    const handleLogin = useCallback(() => {
-        handleClose()
-        login()
-    }, [login, handleClose])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -113,17 +108,9 @@ function UserMenu() {
                         </MenuItem>
                     </div>
                 }
-                {
-                    !isLoggedIn &&
-                    <div>
-                        <MenuItem onClick={handleLogin}>
-                            <ListItemIcon>
-                                <LoginIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Sign In with Google</ListItemText>
-                        </MenuItem>
-                    </div>
-                }
+                <div>
+                    <SignInButton onClick={handleClose}/>
+                </div>
             </Menu>
         </React.Fragment>
     )

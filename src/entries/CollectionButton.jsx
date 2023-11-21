@@ -1,3 +1,6 @@
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import Typography from '@mui/material/Typography'
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -9,6 +12,7 @@ import Popover from '@mui/material/Popover'
 import Checkbox from '@mui/material/Checkbox'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
+import SignInButton from '../auth/SignInButton'
 import AuthContext from '../contexts/AuthContext'
 import DBContext from '../contexts/DBContext'
 import {collectionOptions} from '../data/collectionTypes'
@@ -40,7 +44,6 @@ function CollectionButton({id}) {
         }
     }, [id, addToLockCollection, removeFromLockCollection])
 
-    if (!isLoggedIn) return null
     return (
         <React.Fragment>
             <Tooltip title='My Collection' arrow disableFocusListener>
@@ -60,12 +63,14 @@ function CollectionButton({id}) {
                 <Card>
                     <CardHeader title='My Collection'/>
                     <CardContent style={{paddingTop: 0}}>
+                        {!isLoggedIn && <Typography style={{marginBottom: 8}}>Sign In to keep track.</Typography>}
                         <FormGroup>
                             {collectionOptions.map(({key, label}) =>
                                 <React.Fragment key={key}>
                                     <FormControlLabel
                                         control={
                                             <Checkbox
+                                                disabled={!isLoggedIn}
                                                 color='secondary'
                                                 checked={isChecked(key)}
                                                 onChange={handleChange(key)}
@@ -77,6 +82,10 @@ function CollectionButton({id}) {
                             )}
                         </FormGroup>
                     </CardContent>
+
+                    <div style={{marginTop: -8, marginBottom: 16}}>
+                        <SignInButton onClick={handleClose}/>
+                    </div>
                 </Card>
             </Popover>
         </React.Fragment>
