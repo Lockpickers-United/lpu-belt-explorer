@@ -2,7 +2,7 @@ import fs from 'fs'
 import dayjs from 'dayjs'
 import {parse} from 'csv-parse/sync'
 import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema} from './schemas.js'
-import {allBelts} from '../src/data/belts.js'
+import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
 
@@ -167,10 +167,13 @@ jsonData
 // Lock Group data
 groupData.forEach(group => {
     const relatedIds = group['Related IDs'].split(',').map(s => s.trim())
-    relatedIds.forEach(id => {
-        const entry = jsonData.find(e => e.id === id)
-        if (!entry) return console.log('Entry not found:', id)
-        entry.relatedIds = relatedIds.filter(rid => rid !== id)
+    const entries = relatedIds
+        .map(id => jsonData.find(e => e.id === id))
+        .filter(x => x)
+        .sort((a, b) => beltSort(a.belt, b.belt))
+    const sortedIds = entries.map(e => e.id)
+    entries.forEach(entry => {
+        entry.relatedIds = sortedIds.filter(rid => rid !== entry.id)
     })
 })
 
