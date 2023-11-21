@@ -31,6 +31,8 @@ function CollectionButton({id}) {
     }, [id, lockCollection])
 
     const handleChange = useCallback(key => (event, checked) => {
+        event.preventDefault()
+
         if (checked) {
             addToLockCollection(key, id)
         } else {
