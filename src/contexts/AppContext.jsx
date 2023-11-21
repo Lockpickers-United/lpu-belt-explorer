@@ -11,11 +11,11 @@ export function AppProvider({children}) {
 
     const [expanded, setExpanded] = useState(filters.id)
 
-    const handleSetExpanded = useCallback(newValue => {
+    const handleSetExpanded = useCallback((newValue, forceTab) => {
         const entry = getEntryFromId(newValue)
         const name = getNameFromId(newValue)
         if (newValue && newValue !== 'beltreqs') {
-            const newTab = filters.tab === 'search' ? 'search' : entry.belt.replace(/\s\d/g, '')
+            const newTab = filters.tab === 'search' && !forceTab ? 'search' : entry.belt.replace(/\s\d/g, '')
             addFilters([
                 {key: 'id', value: newValue},
                 {key: 'name', value: name},

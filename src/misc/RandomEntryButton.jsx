@@ -13,7 +13,7 @@ function RandomEntryButton() {
     const handleClick = useCallback(() => {
         const index = Math.floor(Math.random() * visibleEntries.length)
         const entry = visibleEntries[index]
-        setExpanded(entry.id)
+        setExpanded(entry.id, true)
     }, [setExpanded, visibleEntries])
 
     useHotkeys('r', () => handleClick(), {preventDefault: true})
