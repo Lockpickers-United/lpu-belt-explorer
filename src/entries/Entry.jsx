@@ -58,20 +58,6 @@ function Entry({entry, expanded, onExpand}) {
         )
     }, [entry.makeModels])
 
-    const lockingMechanisms = useMemo(() => {
-        return (
-            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                {entry.lockingMechanisms?.map((lockingMechanism, index) =>
-                    <FilterChip
-                        key={index}
-                        value={lockingMechanism}
-                        field='lockingMechanisms'
-                    />
-                )}
-            </Stack>
-        )
-    }, [entry.lockingMechanisms])
-
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
@@ -95,7 +81,17 @@ function Entry({entry, expanded, onExpand}) {
                 <div style={{width: '50%', flexShrink: 0, flexDirection: 'column'}}>
                     {
                         entry.lockingMechanisms?.length > 0 &&
-                        <FieldValue name='Locking Mechanisms' value={lockingMechanisms}/>
+                        <FieldValue name='Locking Mechanisms' value={
+                            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                                {entry.lockingMechanisms?.map((lockingMechanism, index) =>
+                                    <FilterChip
+                                        key={index}
+                                        value={lockingMechanism}
+                                        field='lockingMechanisms'
+                                    />
+                                )}
+                            </Stack>
+                        }/>
                     }
                 </div>
             </AccordionSummary>
