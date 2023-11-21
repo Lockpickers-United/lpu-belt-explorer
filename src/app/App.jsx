@@ -12,7 +12,6 @@ import Entries from '../entries/Entries'
 import Footer from '../nav/Footer'
 
 const darkTheme = createTheme({
-    // https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=000000&secondary.color=49ff00
     palette: {
         mode: 'dark',
         primary: {
@@ -22,9 +21,9 @@ const darkTheme = createTheme({
             contrastText: '#ffffff'
         },
         secondary: {
-            main: '#49ff00',
-            light: '#8cff56',
-            dark: '#00ca00',
+            main: '#18aa18',
+            light: '#23d523',
+            dark: '#117e11',
             contrastText: '#000000'
         }
     }
