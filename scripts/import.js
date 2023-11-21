@@ -1,7 +1,7 @@
 import fs from 'fs'
 import dayjs from 'dayjs'
 import {parse} from 'csv-parse/sync'
-import {mainSchema, mediaSchema, linkSchema, viewSchema} from './schemas.js'
+import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema} from './schemas.js'
 import {allBelts} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
@@ -36,6 +36,7 @@ const mainData = await importValidate('App Data', mainSchema)
 const mediaData = await importValidate('Media', mediaSchema)
 const linkData = await importValidate('Links', linkSchema)
 const viewData = await importValidate('Lock Views', viewSchema)
+const groupData = await importValidate('Groups', groupSchema)
 
 // Transform fields into internal JSON format
 const jsonData = mainData
@@ -162,6 +163,16 @@ jsonData
             entry.lastUpdated = lastUpdated
         }
     })
+
+// Lock Group data
+groupData.forEach(group => {
+    const relatedIds = group['Related IDs'].split(',').map(s => s.trim())
+    relatedIds.forEach(id => {
+        const entry = jsonData.find(e => e.id === id)
+        if (!entry) return console.log('Entry not found:', id)
+        entry.relatedIds = relatedIds
+    })
+})
 
 // Write out to src location for usage
 fs.writeFileSync('./src/data/data.json', JSON.stringify(jsonData, null, 2))

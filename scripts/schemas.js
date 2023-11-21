@@ -57,3 +57,10 @@ export const viewSchema = Joi.array().items(
         'Count': Joi.number().min(0)
     }).unknown()
 )
+
+export const groupSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Related IDs': Joi.string().min(1),
+    }).unknown()
+)
