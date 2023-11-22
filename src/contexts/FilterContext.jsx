@@ -22,7 +22,7 @@ export function FilterProvider({children}) {
             }
         }
 
-        if (tab && uniqueBelts.includes(tab) && !initialFilters.tab) {
+        if (tab && (uniqueBelts.includes(tab) || tab === 'search') && !initialFilters.tab) {
             initialFilters.tab = tab
         } else if (!initialFilters.tab) {
             initialFilters.tab = 'White'
