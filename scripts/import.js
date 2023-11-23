@@ -150,20 +150,6 @@ viewData
         entry.views = +item['Count']
     })
 
-// Recently updated data
-const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
-jsonData
-    .forEach(entry => {
-        const {lastUpdated, views: oldViews, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
-        const {views: newViews, ...newEntry} = entry
-        if (JSON.stringify(newEntry) !== JSON.stringify(oldEntry)) {
-            console.log(`Entry updated ${newEntry.id}`, )
-            entry.lastUpdated = dayjs().toISOString()
-        } else {
-            entry.lastUpdated = lastUpdated
-        }
-    })
-
 // Lock Group data
 groupData.forEach(group => {
     const relatedIds = group['Related IDs'].split(',').map(s => s.trim())
@@ -176,6 +162,20 @@ groupData.forEach(group => {
         entry.relatedIds = sortedIds.filter(rid => rid !== entry.id)
     })
 })
+
+// Recently updated data
+const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
+jsonData
+    .forEach(entry => {
+        const {lastUpdated, views: oldViews, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
+        const {views: newViews, ...newEntry} = entry
+        if (JSON.stringify(newEntry) !== JSON.stringify(oldEntry)) {
+            console.log(`Entry updated ${newEntry.id}`)
+            entry.lastUpdated = dayjs().toISOString()
+        } else {
+            entry.lastUpdated = lastUpdated
+        }
+    })
 
 // Write out to src location for usage
 fs.writeFileSync('./src/data/data.json', JSON.stringify(jsonData, null, 2))
