@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useRef} from 'react'
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -22,6 +22,7 @@ import queryString from 'query-string'
 import RelatedEntryButton from './RelatedEntryButton'
 
 function Entry({entry, expanded, onExpand}) {
+    const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
     const {danPoints} = belts[entry.belt]
@@ -31,11 +32,13 @@ function Entry({entry, expanded, onExpand}) {
     }, [entry.id, onExpand])
 
     useEffect(() => {
-        if (expanded && ref) {
+        if (expanded && ref && !scrolled) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             const {id} = queryString.parse(location.search)
             const isIdFiltered = id === entry.id
+
+            setScrolled(true)
 
             setTimeout(() => {
                 window.scrollTo({
@@ -44,8 +47,10 @@ function Entry({entry, expanded, onExpand}) {
                     behavior: isIdFiltered ? 'auto' : 'smooth'
                 })
             }, isIdFiltered ? 0 : 100)
+        } else if (!expanded) {
+            setScrolled(false)
         }
-    }, [expanded, entry])
+    }, [expanded, entry, scrolled])
 
     const makeModels = useMemo(() => {
         return (
