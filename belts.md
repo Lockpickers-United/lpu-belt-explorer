@@ -881,7 +881,7 @@ as a mentor to folks at the blue, purple and brown belt levels.
 - [Fichet 450 / Fichet 484](https://lpubelts.com/?id=03cbfaa5) (w/ false gates, 2-3 mastered levers)
 - [Fontaine Dynaxis](https://lpubelts.com/?id=9d7faa15)
 - [FTH Thirard Surveyor](https://lpubelts.com/?id=1f6cb393)
-- [GOAL v18 / GOAL GP](https://lpubelts.com/?id=9f613c4a) (&lt;14 pins)
+- [GOAL V18 / GOAL GP](https://lpubelts.com/?id=9f613c4a) (&lt;14 pins)
 - [GOAL Z](https://lpubelts.com/?id=937eb7a8) (&ge;2 standard drivers)
 - [Hori Trident](https://lpubelts.com/?id=49b2c746) (spools)
 - [IKON tk5 sperwellenprofil](https://lpubelts.com/?id=34d27803) (with serrated fingerpins)
