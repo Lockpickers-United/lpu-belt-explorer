@@ -1,10 +1,9 @@
-import Typography from '@mui/material/Typography'
 import React, {useCallback, useContext, useMemo, useState} from 'react'
+import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
-import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import Popover from '@mui/material/Popover'
 import Checkbox from '@mui/material/Checkbox'
@@ -14,6 +13,7 @@ import SignInButton from '../auth/SignInButton'
 import AuthContext from '../contexts/AuthContext'
 import DBContext from '../contexts/DBContext'
 import {collectionOptions} from '../data/collectionTypes'
+import useWindowSize from '../util/useWindowSize'
 
 function CollectionButton({id}) {
     const {isLoggedIn} = useContext(AuthContext)
@@ -22,6 +22,8 @@ function CollectionButton({id}) {
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+    const {width} = useWindowSize()
+    const isMobile = width <= 500
 
     const isCollected = useMemo(() => {
         return Object.keys(lockCollection)
@@ -45,9 +47,16 @@ function CollectionButton({id}) {
     return (
         <React.Fragment>
             <Tooltip title='My Collection' arrow disableFocusListener>
-                <IconButton onClick={handleOpen}>
+                <Button
+                    variant='outlined'
+                    color='inherit'
+                    onClick={handleOpen}
+                    size={isMobile ? 'small' : 'medium'}
+                    startIcon={
                     <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
-                </IconButton>
+                }>
+                    My Collection
+                </Button>
             </Tooltip>
             <Popover
                 open={open}
@@ -59,7 +68,10 @@ function CollectionButton({id}) {
                 }}
             >
                 <Card>
-                    <CardHeader title='My Collection'/>
+                    <CardHeader
+                        title='My Collection'
+                        style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
+                    />
                     <CardContent style={{paddingTop: 0}}>
                         <FormGroup>
                             {collectionOptions.map(({key, label}) =>

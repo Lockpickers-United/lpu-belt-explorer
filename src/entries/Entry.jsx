@@ -114,6 +114,20 @@ function Entry({entry, expanded, onExpand}) {
                                     <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                                 </React.Fragment>
                             }/>
+                            <div style={{marginLeft: 'auto'}}>
+                                <CollectionButton id={entry.id}/>
+                            </div>
+                        </Stack>
+                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
+                            {!!entry.notes &&
+                                <FieldValue name='Notes' value={
+                                    <Typography component='div' style={{marginTop: -16}}>
+                                        <ReactMarkdown linkTarget='_blank'>
+                                            {entry.notes}
+                                        </ReactMarkdown>
+                                    </Typography>
+                                }/>
+                            }
                             {!!entry.relatedIds &&
                                 <FieldValue name='Other Versions' style={{width: '45%'}} value={
                                     <React.Fragment>
@@ -124,15 +138,6 @@ function Entry({entry, expanded, onExpand}) {
                                 }/>
                             }
                         </Stack>
-                        {!!entry.notes &&
-                            <FieldValue name='Notes' value={
-                                <Typography component='div' style={{marginTop: -16}}>
-                                    <ReactMarkdown linkTarget='_blank'>
-                                        {entry.notes}
-                                    </ReactMarkdown>
-                                </Typography>
-                            }/>
-                        }
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
@@ -178,7 +183,6 @@ function Entry({entry, expanded, onExpand}) {
                         <Tracker id={entry.id}/>
                         <CopyEntryButton entry={entry}/>
                         <LinkToEntryButton entry={entry}/>
-                        <CollectionButton id={entry.id}/>
                     </AccordionActions>
                 </React.Fragment>
             }
