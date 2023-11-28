@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown'
 import Transition from '../util/Transition'
 import IconButton from '@mui/material/IconButton'
 import privacyPolicyMd from '../resources/privacyPolicy.md?raw'
+import useWindowSize from '../util/useWindowSize'
 
 function PrivacyPolicyButton() {
     const [open, setOpen] = useState(false)
@@ -17,6 +18,8 @@ function PrivacyPolicyButton() {
         setOpen(true)
     }, [])
     const handleClose = useCallback(() => setOpen(false), [])
+    const {width} = useWindowSize()
+    const isMobile = width <= 500
 
     return (
         <React.Fragment>
@@ -27,7 +30,7 @@ function PrivacyPolicyButton() {
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
-                fullScreen
+                fullScreen={isMobile}
             >
                 <AppBar sx={{position: 'relative'}}>
                     <Toolbar>
