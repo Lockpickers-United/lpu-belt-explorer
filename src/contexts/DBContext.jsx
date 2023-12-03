@@ -1,7 +1,9 @@
+import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
 import {doc, setDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot} from 'firebase/firestore'
 import AuthContext from './AuthContext'
+import {enqueueSnackbar} from 'notistack'
 
 const DBContext = React.createContext({})
 
@@ -40,6 +42,10 @@ export function DBProvider({children}) {
             }, error => {
                 console.error('Error listening to DB:', error)
                 setDbError(true)
+                enqueueSnackbar('Error loading DB. Unable to manage collection data. Please refresh the page.', {
+                    autoHideDuration: null,
+                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
+                })
             })
         } else {
             setLockCollection({})

@@ -1,3 +1,4 @@
+import {SnackbarProvider} from 'notistack'
 import React from 'react'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -36,23 +37,25 @@ function App() {
             <CssBaseline/>
             <style>{style}</style>
 
-            <AuthProvider>
-                <DBProvider>
-                    <LazyDataProvider>
-                        <FilterProvider>
-                            <DataProvider>
-                                <AppProvider>
-                                    <Nav/>
+            <SnackbarProvider>
+                <AuthProvider>
+                    <DBProvider>
+                        <LazyDataProvider>
+                            <FilterProvider>
+                                <DataProvider>
+                                    <AppProvider>
+                                        <Nav/>
 
-                                    <Entries/>
+                                        <Entries/>
 
-                                    <Footer/>
-                                </AppProvider>
-                            </DataProvider>
-                        </FilterProvider>
-                    </LazyDataProvider>
-                </DBProvider>
-            </AuthProvider>
+                                        <Footer/>
+                                    </AppProvider>
+                                </DataProvider>
+                            </FilterProvider>
+                        </LazyDataProvider>
+                    </DBProvider>
+                </AuthProvider>
+            </SnackbarProvider>
         </ThemeProvider>
     )
 }
