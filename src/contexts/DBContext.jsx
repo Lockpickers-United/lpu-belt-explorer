@@ -8,18 +8,21 @@ const DBContext = React.createContext({})
 export function DBProvider({children}) {
     const {isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
+    const [dbError, setDbError] = useState(null)
 
     const addToLockCollection = useCallback(async (key, entryId) => {
+        if (dbError) return false
         await updateDoc(doc(db, 'lockcollections', user.uid), {
             [key]: arrayUnion(entryId)
         })
-    }, [user])
+    }, [dbError, user])
 
     const removeFromLockCollection = useCallback(async (key, entryId) => {
+        if (dbError) return false
         await updateDoc(doc(db, 'lockcollections', user.uid), {
             [key]: arrayRemove(entryId)
         })
-    }, [user])
+    }, [dbError, user])
 
     // Lock Collection Subscription
     useEffect(() => {
@@ -28,10 +31,15 @@ export function DBProvider({children}) {
             return onSnapshot(ref, doc => {
                 const data = doc.data()
                 if (data) {
+                    console.info('DB Subscription set up successfully.')
                     setLockCollection(data)
                 } else {
+                    console.info('New user detected, creating initial DB record.')
                     return setDoc(ref, {})
                 }
+            }, error => {
+                console.error('Error listening to DB:', error)
+                setDbError(true)
             })
         } else {
             setLockCollection({})
