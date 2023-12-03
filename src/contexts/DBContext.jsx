@@ -42,7 +42,7 @@ export function DBProvider({children}) {
             }, error => {
                 console.error('Error listening to DB:', error)
                 setDbError(true)
-                enqueueSnackbar('Error loading DB. Unable to manage collection data. Please refresh the page.', {
+                enqueueSnackbar('There was a problem reading your collection. It will be unavailable until you refresh the page. ', {
                     autoHideDuration: null,
                     action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
                 })
