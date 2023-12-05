@@ -56,7 +56,7 @@ function Entry({entry, expanded, onExpand}) {
         return (
             <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                 {entry.makeModels?.map(({make, model}, index) =>
-                    <Typography key={index} style={{fontWeight: 500}}>
+                    <Typography key={index} style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '6px'}}>
                         {make && make !== model ? `${make} ${model}` : model}
                     </Typography>
                 )}
@@ -68,27 +68,29 @@ function Entry({entry, expanded, onExpand}) {
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
-                <div style={{marginRight: 8, width: '50%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '12px 0px 0px 0px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
-                        name='Make / Model'
+                        // name='Make / Model'
                         value={makeModels}
-                        textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
+                        // textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
+                        textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
                     />
 
                     {
                         !!entry.version &&
                         <FieldValue
                             name='Version'
-                            value={<Typography>{entry.version}</Typography>}
+                            value={<Typography style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entry.version}</Typography>}
                             textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />
                     }
                 </div>
-                <div style={{width: '50%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'column'}}>
                     {
                         entry.lockingMechanisms?.length > 0 &&
-                        <FieldValue name='Locking Mechanisms' value={
-                            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                        <FieldValue
+                        	//name='Locking Mechanisms'
+                        	value={<Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                 {entry.lockingMechanisms?.map((lockingMechanism, index) =>
                                     <FilterChip
                                         key={index}
@@ -104,12 +106,19 @@ function Entry({entry, expanded, onExpand}) {
             {
                 expanded &&
                 <React.Fragment>
-                    <AccordionDetails>
+                    <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
-                            <FieldValue name='Belt' style={{width: '45%'}} value={
+                            <FieldValue
+                              //name='Belt'
+                              style={{width: '50%', marginLeft: '0px'}} value={
                                 <React.Fragment>
-                                    <Typography>
-                                        {entry.belt} {danPoints > 0 && ` (${danPoints} Dan Point${danPoints > 1 ? 's' : ''})`}
+                                    <Typography style={{marginLeft: '0px', fontSize: '1rem', lineHeight: 1.25, fontWeight: 500}}>
+                                        {entry.belt} 
+                                        {danPoints > 0
+                                        ? ` (${danPoints} Dan P${danPoints < 2 ? `oint` 
+                                        	: danPoints > 10 ? `ts` : `oints`})`
+                                        : entry.belt==`Unranked` ? ``
+                                        : ` Belt` }
                                     </Typography>
                                     <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                                 </React.Fragment>
@@ -128,15 +137,6 @@ function Entry({entry, expanded, onExpand}) {
                                     </Typography>
                                 }/>
                             }
-                            {!!entry.relatedIds &&
-                                <FieldValue name='Other Versions' style={{width: '45%'}} value={
-                                    <React.Fragment>
-                                        {entry.relatedIds.map(relatedId =>
-                                            <RelatedEntryButton key={relatedId} id={relatedId}/>
-                                        )}
-                                    </React.Fragment>
-                                }/>
-                            }
                         </Stack>
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
@@ -151,9 +151,20 @@ function Entry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
+                            {!!entry.relatedIds &&
+                                <FieldValue name='Other Versions' value={
+                                    <React.Fragment>
+                                        {entry.relatedIds.map(relatedId =>
+                                            <RelatedEntryButton key={relatedId} id={relatedId}/>
+                                        )}
+                                    </React.Fragment>
+                                }/>
+                            }
                         {
                             !!entry.media?.length &&
-                            <FieldValue name='Media' value={
+                            <FieldValue
+                              //name='Media'
+                              value={
                                 <ImageGallery entry={entry}/>
                             }/>
                         }
