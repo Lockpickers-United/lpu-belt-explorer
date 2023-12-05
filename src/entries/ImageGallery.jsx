@@ -63,7 +63,7 @@ function ImageGallery({entry}) {
                     onClose={handleClose}
                 />
             }
-            <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 0}}>
+            <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 2}}>
                 {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl}, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>
                         <img
