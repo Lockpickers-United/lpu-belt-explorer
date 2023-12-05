@@ -28,3 +28,12 @@ scripts/*.md
 /stats.html
 public/version.json
 public/sitemap.txt
+package-lock.json
+vite-project/counter.js
+vite-project/index.html
+vite-project/javascript.svg
+vite-project/main.js
+vite-project/package.json
+vite-project/public/vite.svg
+vite-project/style.css
+yarn.lock

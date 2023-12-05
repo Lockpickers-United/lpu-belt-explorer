@@ -68,7 +68,7 @@ function Entry({entry, expanded, onExpand}) {
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
-                <div style={{margin: '12px 0px 0px 0px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '12px 0px 0px 8px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         // name='Make / Model'
                         value={makeModels}
