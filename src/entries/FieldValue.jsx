@@ -12,7 +12,7 @@ function FieldValue({name, value, last, style, headerStyle = {}, textStyle = {}}
     const fullTextStyle = {
         marginLeft: 5,
         ...textStyle
-    }
+    }		
 
     return (
         <div style={marginStyle}>
