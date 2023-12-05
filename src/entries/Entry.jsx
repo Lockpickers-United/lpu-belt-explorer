@@ -70,7 +70,6 @@ function Entry({entry, expanded, onExpand}) {
                 <BeltStripe value={entry.belt}/>
                 <div style={{margin: '12px 0px 0px 8px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
-                        {/* Make/Model */}
                         value={makeModels}
                         textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
                     />
@@ -88,7 +87,6 @@ function Entry({entry, expanded, onExpand}) {
                     {
                         entry.lockingMechanisms?.length > 0 &&
                         <FieldValue
-                        	{/* Locking Mechanisms */}
                         	value={<Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                 {entry.lockingMechanisms?.map((lockingMechanism, index) =>
                                     <FilterChip
@@ -108,7 +106,6 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
                             <FieldValue
-                              {/* Belt */}
                               style={{width: '50%', marginLeft: '0px'}} value={
                                 <React.Fragment>
                                     <Typography style={{marginLeft: '0px', fontSize: '1rem', lineHeight: 1.25, fontWeight: 500}}>
@@ -162,7 +159,6 @@ function Entry({entry, expanded, onExpand}) {
                         {
                             !!entry.media?.length &&
                             <FieldValue
-                              {/* Media */}
                               value={
                                 <ImageGallery entry={entry}/>
                             }/>
