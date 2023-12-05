@@ -17,7 +17,7 @@ function FieldValue({name, value, last, style, headerStyle = {}, textStyle = {}}
     return (
         <div style={marginStyle}>
             <div style={fullHeaderStyle}>
-                {name}:
+                {name}
             </div>
             <div style={fullTextStyle}>
                 {value}
