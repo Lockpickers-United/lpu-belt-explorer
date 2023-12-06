@@ -197,7 +197,7 @@ Green,"Corbin Russwin","Master Ring",**,Pin-tumbler,,"** Green if picked to one 
 Green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 Green,Corona,Cylinder,,Pin-tumbler,,,6c9a666e
 Green,Corona,M,,Pin-tumbler,,,6b472dc2
-Green,"Digby Lock and Tool",Bravo,,,,,19573781
+Green,"Digby Lock and Tool",Bravo,,Pin-tumbler,,,19573781
 Green,DOM,"ix 5 HT",,Dimple,,,a165bc09
 Green,DOM,"IX 5 N",,Dimple,,,04970fee
 Green,DOM,"RS 5",,Pin-tumbler,,,5241369e
@@ -260,7 +260,7 @@ Green,Sargent,Mortise,"with security pins",Pin-tumbler,,,8f3f18d8
 Green,Schlage,Everest,,Pin-tumbler,,,ea1d1d8c
 Green,Squire,440,"4 lever, pipe key",Lever,"Padlock,Pipe key,Uncurtained",,44bdfa06
 Green,Tokoz,Beta,,Pin-tumbler,Unguttable,,5260b396
-Green,Unity,"Disc Detainer Padlock",,,,,06353788
+Green,Unity,"Disc Detainer Padlock",,"Disc detainer",,,06353788
 Green,Vachette,"Standard cylinder",,Pin-tumbler,,,4f0fbb3f
 Green,Wetzel,Pfaffenhain,,Pin-tumbler,,,ba627c40
 Green,Wilka,1400,"6 pin",Pin-tumbler,,,8cc092f5
@@ -334,7 +334,7 @@ Blue,Gege,pExtra,"5 pin",Pin-tumbler,Overmilling,,aa7fc00e
 Blue,GOAL,S,"5 pins",Pin-tumbler,,,959a6b9d
 Blue,Guard,NVL,,Pin-tumbler,,,62bdbd5e
 Blue,IKON,P031,"N6 profile",Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",d1896bf9
-Blue,IKON,RW6,,,,,bc6c2d51
+Blue,IKON,RW6,,Dimple,,,bc6c2d51
 Blue,IKON,"Sk6 vector",,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",08b5986d
 Blue,IKON,SK7,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",1c38e176
 Blue,IKON,Undercut,,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",948f9068
@@ -462,7 +462,7 @@ Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","5+ pins ******","Sidebar,Pi
 Purple,Mindy,"Pagoda AF 16-50","flat key",,,,06a28ac7
 Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
-Purple,Mottura,"3D Key",,,,,0a2c7044
+Purple,Mottura,"3D Key",,"Dimple,other","Rotors,Active sidebar",,0a2c7044
 Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
 Purple,Mul-T-Lock,"Classic Pro",,Dimple,Pin-in-pin,,fd2b533e
