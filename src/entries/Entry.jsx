@@ -88,7 +88,7 @@ function Entry({entry, expanded, onExpand}) {
                     {
                         entry.lockingMechanisms?.length > 0 &&
                         <FieldValue
-                        	value={<Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                            value={<Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                 {entry.lockingMechanisms?.map((lockingMechanism, index) =>
                                     <FilterChip
                                         key={index}
@@ -113,7 +113,7 @@ function Entry({entry, expanded, onExpand}) {
                                         {entry.belt} 
                                         {danPoints > 0
                                         ? ` (${danPoints} Dan P${danPoints < 2 ? `oint` 
-                                        	: danPoints > 10 ? `ts` : `oints`})`
+                                            : danPoints > 10 ? `ts` : `oints`})`
                                         : entry.belt==`Unranked` ? ``
                                         : ` Belt` }
                                     </Typography>
