@@ -1,3 +1,5 @@
+{/* comment */}
+
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
