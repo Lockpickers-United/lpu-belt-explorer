@@ -3,10 +3,12 @@ import fs from 'fs'
 const entries = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
 const today = new Date()
-const month = today.getMonth() + 1
 const year = today.getFullYear()
+const month = today.getMonth() + 1
+const monthPad = String(month).padStart(2, '0')
 const date = today.getDate()
-const currentDate = `${year}-${month}-${date}`
+const datePad = String(date).padStart(2, '0')
+const currentDate = `${year}-${monthPad}-${datePad}`
 
 const data = entries
     .map(entry => {
