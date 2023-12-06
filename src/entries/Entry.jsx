@@ -56,7 +56,7 @@ function Entry({entry, expanded, onExpand}) {
         return (
             <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                 {entry.makeModels?.map(({make, model}, index) =>
-                    <Typography key={index} style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '6px'}}>
+                    <Typography key={index} style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '4px'}}>
                         {make && make !== model ? `${make} ${model}` : model}
                     </Typography>
                 )}
@@ -68,10 +68,11 @@ function Entry({entry, expanded, onExpand}) {
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
-                <div style={{margin: '12px 0px 0px 8px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '12px 0px 8px 8px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         value={makeModels}
                         textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
+                        style = {{marginBottom: '2px'}}
                     />
 
                     {
