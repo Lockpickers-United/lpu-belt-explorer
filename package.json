@@ -18,9 +18,10 @@
         "exportMd": "node ./scripts/exportMarkdown.js",
         "exportHtml": "node ./scripts/exportHtml.js",
         "generateSitemap": "node ./scripts/generateSitemap.js",
+        "generateSitemap-xml": "node ./scripts/generateSitemap-xml.js",
         "versionFile": "node ./scripts/version.js",
         "copyFiles": "node ./scripts/copyFiles.js",
-        "ci-build": "yarn versionFile && yarn generateSitemap && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
+        "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
