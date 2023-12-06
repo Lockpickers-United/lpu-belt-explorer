@@ -6938,9 +6938,13 @@
     ],
     "views": 500,
     "relatedIds": [
-      "f8445741"
+      "0b82681f",
+      "f8445741",
+      "d9e3829f",
+      "ef221c67",
+      "f2d41749"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.019Z"
+    "lastUpdated": "2023-12-06T11:28:34.724Z"
   },
   {
     "id": "0b82681f",
@@ -7008,10 +7012,13 @@
     ],
     "views": 427,
     "relatedIds": [
+      "e84582aa",
+      "f8445741",
+      "d9e3829f",
       "ef221c67",
       "f2d41749"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.019Z"
+    "lastUpdated": "2023-12-06T11:28:34.724Z"
   },
   {
     "id": "ca6ce763",
@@ -8128,6 +8135,9 @@
         "model": "Bravo"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: Digs",
@@ -8144,7 +8154,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53108734892_fc79827cc6_o.jpg"
       }
     ],
-    "lastUpdated": "2023-12-04T21:01:31.659Z"
+    "lastUpdated": "2023-12-06T11:28:34.725Z"
   },
   {
     "id": "a165bc09",
@@ -10686,7 +10696,10 @@
         "model": "Disc Detainer Padlock"
       }
     ],
-    "lastUpdated": "2023-12-04T21:01:31.660Z"
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
+    "lastUpdated": "2023-12-06T11:28:34.726Z"
   },
   {
     "id": "4f0fbb3f",
@@ -11901,9 +11914,13 @@
     ],
     "views": 687,
     "relatedIds": [
-      "e84582aa"
+      "e84582aa",
+      "0b82681f",
+      "d9e3829f",
+      "ef221c67",
+      "f2d41749"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.020Z"
+    "lastUpdated": "2023-12-06T11:28:34.727Z"
   },
   {
     "id": "d9e3829f",
@@ -11979,7 +11996,14 @@
       }
     ],
     "views": 761,
-    "lastUpdated": "2023-07-25T11:20:19.889Z"
+    "relatedIds": [
+      "e84582aa",
+      "0b82681f",
+      "f8445741",
+      "ef221c67",
+      "f2d41749"
+    ],
+    "lastUpdated": "2023-12-06T11:28:34.727Z"
   },
   {
     "id": "d08aa492",
@@ -14021,7 +14045,10 @@
         "model": "RW6"
       }
     ],
-    "lastUpdated": "2023-12-04T21:01:31.662Z"
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "lastUpdated": "2023-12-06T11:28:34.728Z"
   },
   {
     "id": "08b5986d",
@@ -17031,10 +17058,13 @@
     ],
     "views": 764,
     "relatedIds": [
+      "e84582aa",
       "0b82681f",
+      "f8445741",
+      "d9e3829f",
       "f2d41749"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.022Z"
+    "lastUpdated": "2023-12-06T11:28:34.730Z"
   },
   {
     "id": "45e3cde7",
@@ -20434,6 +20464,14 @@
         "model": "3D Key"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple",
+      "other"
+    ],
+    "features": [
+      "Rotors",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: TypeRegal",
@@ -20457,7 +20495,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728714712_5e6d0e2087_o.jpg"
       }
     ],
-    "lastUpdated": "2023-12-04T21:01:31.665Z"
+    "lastUpdated": "2023-12-06T11:28:34.732Z"
   },
   {
     "id": "62520bea",
@@ -22447,10 +22485,13 @@
     ],
     "views": 544,
     "relatedIds": [
+      "e84582aa",
       "0b82681f",
+      "f8445741",
+      "d9e3829f",
       "ef221c67"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2023-12-06T11:28:34.733Z"
   },
   {
     "id": "d3ad5a73",
