@@ -72,7 +72,7 @@ function Entry({entry, expanded, onExpand}) {
                     <FieldValue
                         value={makeModels}
                         textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
-                        style = {{marginBottom: '0px'}}
+                        style = {{marginBottom: '2px'}}
                     />
 
                     {
