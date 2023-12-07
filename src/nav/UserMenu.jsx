@@ -1,6 +1,5 @@
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
 import React, {useCallback, useContext, useState} from 'react'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'

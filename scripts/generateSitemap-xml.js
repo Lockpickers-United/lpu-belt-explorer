@@ -2,13 +2,8 @@ import fs from 'fs'
 
 const entries = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
-const today = new Date()
-const year = today.getFullYear()
-const month = today.getMonth() + 1
-const monthPad = String(month).padStart(2, '0')
-const date = today.getDate()
-const datePad = String(date).padStart(2, '0')
-const currentDate = `${year}-${monthPad}-${datePad}`
+const dayjs = require('dayjs')
+const currentDate = dayjs().format('YYYY-MM-DD')
 
 const data = entries
     .map(entry => {
