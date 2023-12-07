@@ -36,7 +36,15 @@ function ExportButton() {
     }, [download, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
-        const data = visibleEntries.map(datum => ({
+         const csvColumns = [
+            'id',
+            'make',
+            'model',
+            'version',
+            'belt'
+        ]
+
+       const data = visibleEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
             model: datum.makeModels.map(e => e.model).join(','),
@@ -57,6 +65,67 @@ function ExportButton() {
         return download('lpubeltsdata.csv', csvFile)
     }, [download, visibleEntries])
 
+
+    const handleExportCsvShortNames = useCallback(() => {
+        const csvColumns = [
+            'id',
+            'name',
+            'version',
+            'belt'
+        ]
+        const shortNames = new Map()
+        visibleEntries.forEach((entry) => {
+            var lockmakes = new Map()
+            var modelsArray = []
+            var prevMake = ""
+            entry.makeModels.forEach((makeModel) => {
+                var thisMake = makeModel.make
+                var thisModel = makeModel.model
+                if (!thisMake) {    
+                    thisMake = thisModel
+                    thisModel = ""
+                }
+                if (thisMake != prevMake) {
+                    modelsArray = []
+                }
+                modelsArray.push(thisModel)
+                lockmakes.set(thisMake, modelsArray)
+                prevMake = thisMake
+            })
+            var lockShortName = ""
+            var lockSeparator = ""
+            lockmakes.forEach((model,make) => {
+                lockShortName += lockSeparator + make
+                lockShortName += " " + model.join(", ")
+                lockSeparator = " / "
+            })
+            shortNames.set(entry.id, lockShortName)
+        })
+        
+        const data = visibleEntries.map(datum => ({
+            id: datum.id,
+            make: datum.makeModels.map(e => e.make).join(','),
+            model: datum.makeModels.map(e => e.model).join(','),
+            version: datum.version,
+            belt: datum.belt,
+            name: shortNames.get(datum.id)
+        }))
+
+        const headers = csvColumns.join(',')
+        const csvData = data.map(datum => {
+            return csvColumns
+                .map(header => datum[header])
+                .map(value => {
+                    const newValue = `${value ?? ''}`.replace(/"/g, '""')
+                    return /(\s|,|")/.test(newValue) ? `"${newValue}"` : newValue
+                })
+                .join(',')
+        }).join('\n')
+        const csvFile = `${headers}\n${csvData}`
+        return download('lpubeltsdata.csv', csvFile)
+    }, [download, visibleEntries])
+
+
     return (
         <React.Fragment>
             <Tooltip title='Export' arrow disableFocusListener>
@@ -75,7 +144,7 @@ function ExportButton() {
                     </ListItemIcon>
                     <ListItemText>Export</ListItemText>
                 </MenuItem>
-                <MenuItem onClick={handleExportCsv}>
+                <MenuItem onClick={handleExportCsvShortNames}>
                     <ListItemIcon>
                         <ListIcon fontSize='small'/>
                     </ListItemIcon>
@@ -91,13 +160,5 @@ function ExportButton() {
         </React.Fragment>
     )
 }
-
-const csvColumns = [
-    'id',
-    'make',
-    'model',
-    'version',
-    'belt'
-]
 
 export default ExportButton
