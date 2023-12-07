@@ -1,8 +1,8 @@
 import fs from 'fs'
+import dayjs from 'dayjs'
 
 const entries = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
-const dayjs = require('dayjs')
 const currentDate = dayjs().format('YYYY-MM-DD')
 
 const data = entries
