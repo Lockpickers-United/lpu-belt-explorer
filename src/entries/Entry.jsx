@@ -112,8 +112,8 @@ function Entry({entry, expanded, onExpand}) {
                                     <Typography style={{marginLeft: '0px', fontSize: '1rem', lineHeight: 1.25, fontWeight: 500}}>
                                         {entry.belt} 
                                         {danPoints > 0
-                                        ? ` (${danPoints} Dan P${danPoints < 2 ? `oint` 
-                                            : danPoints > 10 ? `ts` : `oints`})`
+                                        ? ` (${danPoints} Dan ${danPoints < 2 ? `Point` 
+                                            : danPoints > 10 ? `Pts` : `Points`})`
                                         : entry.belt==`Unranked` ? ``
                                         : ` Belt` }
                                     </Typography>
