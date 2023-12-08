@@ -28,3 +28,4 @@ scripts/*.md
 /stats.html
 public/version.json
 public/sitemap.txt
+public/sitemap.xml
