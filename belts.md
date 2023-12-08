@@ -845,7 +845,7 @@ keypins, and countermilling are the norm for you.
 - [Vachette Radial NT / Vachette Radial NT+](https://lpubelts.com/?id=40e99be0) (&lt;13 pins)
 - [Van Lock](https://lpubelts.com/?id=506b242a)
 - [VSR 3-row](https://lpubelts.com/?id=dd764207)
-- [Walsall Locks Walsall 2000](https://lpubelts.com/?id=93e4cf5f) (5 lever)
+- [Walsall Locks 2000](https://lpubelts.com/?id=93e4cf5f) (5 lever)
 - [WEST 916 / WEST 955](https://lpubelts.com/?id=18e1f45b)
 - [Winkhaus X-Tra](https://lpubelts.com/?id=9d865bcd) (&lt;9 pins)
 

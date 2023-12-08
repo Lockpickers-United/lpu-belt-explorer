@@ -568,7 +568,7 @@ Brown,U-Shin,"Showa NX","<13 pins",Dimple,,,b91890bf
 Brown,"Vachette,Vachette","Radial NT,Radial NT+","<13 pins",Dimple,,,40e99be0
 Brown,,"Van Lock",,Pump/push,"Destructive gut",,506b242a
 Brown,VSR,3-row,,Dimple,,,dd764207
-Brown,"Walsall Locks","Walsall 2000","5 lever",Lever,"Padlock,Pipe key,False gates",,93e4cf5f
+Brown,"Walsall Locks",2000,"5 lever",Lever,"Padlock,Pipe key,False gates",,93e4cf5f
 Brown,"WEST,WEST","916,955",,Dimple,,,18e1f45b
 Brown,Winkhaus,X-Tra,"<9 pins",Dimple,,,9d865bcd
 Red,Abloy,Disklock,,"Disc detainer","Rear tension,False gates","Disc 4 needs picking early.  Generally gives muted, subtle feedback",87eaa964
