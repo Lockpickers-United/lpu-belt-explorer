@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext, useState} from 'react'
 import DataContext from '../contexts/DataContext'
+import Name from '../entries/Name'
 
 function ExportButton() {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -24,9 +25,7 @@ function ExportButton() {
 
         element.style.display = 'none'
         document.body.appendChild(element)
-
         element.click()
-
         document.body.removeChild(element)
     }, [])
 
@@ -36,69 +35,14 @@ function ExportButton() {
     }, [download, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
-         const csvColumns = [
-            'id',
-            'make',
-            'model',
-            'version',
-            'belt'
-        ]
-
-       const data = visibleEntries.map(datum => ({
-            id: datum.id,
-            make: datum.makeModels.map(e => e.make).join(','),
-            model: datum.makeModels.map(e => e.model).join(','),
-            version: datum.version,
-            belt: datum.belt
-        }))
-        const headers = csvColumns.join(',')
-        const csvData = data.map(datum => {
-            return csvColumns
-                .map(header => datum[header])
-                .map(value => {
-                    const newValue = `${value ?? ''}`.replace(/"/g, '""')
-                    return /(\s|,|")/.test(newValue) ? `"${newValue}"` : newValue
-                })
-                .join(',')
-        }).join('\n')
-        const csvFile = `${headers}\n${csvData}`
-        return download('lpubeltsdata.csv', csvFile)
-    }, [download, visibleEntries])
-
-
-	const handleExportCsvShortNames = useCallback(() => {
-        const csvColumns = [
-            'id',
-            'name',
-            'version',
-            'belt'
-        ]
-        const shortNames = new Map()
+        const csvColumns = [ 'id', 'name', 'version', 'belt' ]
         visibleEntries.forEach((entry) => {
-            var lockmakes = new Map()
-            var modelsArray = []
-            var prevMake = ""
-
-            var lockShortName = ""
-            var lockSeparator = ""
-            
-            entry.makeModels.forEach((makeModel) => {
-                var thisMake = makeModel.make
-                var thisModel = makeModel.model
-                if (!thisMake) {    
-                    thisMake = thisModel
-                    thisModel = ""
-                }
-                if (prevMake == "") {
-                    lockShortName = `${thisMake} ${thisModel}`
-                } else if (thisMake == prevMake) {
-                	lockShortName += `, ${thisModel}`
-                } else {
-                    lockShortName += ` / ${thisMake} ${thisModel}`
-                }
-	            prevMake = thisMake
-            })
-            shortNames.set(entry.id, lockShortName)
+            console.log(Name(entry))
+            console.log(Name(entry,1))
+            console.log(Name(entry, 0,"long"))
+            console.log(Name(entry, 0,"data"))
+            console.log(Name(entry,0,"array"))
+            console.log("---")
         })
         const data = visibleEntries.map(datum => ({
             id: datum.id,
@@ -106,7 +50,7 @@ function ExportButton() {
             model: datum.makeModels.map(e => e.model).join(','),
             version: datum.version,
             belt: datum.belt,
-            name: shortNames.get(datum.id)
+            name: Name(datum)
         }))
 
         const headers = csvColumns.join(',')
@@ -122,7 +66,6 @@ function ExportButton() {
         const csvFile = `${headers}\n${csvData}`
         return download('lpubeltsdata.csv', csvFile)
     }, [download, visibleEntries])
-
 
     return (
         <React.Fragment>
@@ -142,7 +85,7 @@ function ExportButton() {
                     </ListItemIcon>
                     <ListItemText>Export</ListItemText>
                 </MenuItem>
-                <MenuItem onClick={handleExportCsvShortNames}>
+                <MenuItem onClick={handleExportCsv}>
                     <ListItemIcon>
                         <ListIcon fontSize='small'/>
                     </ListItemIcon>
@@ -158,6 +101,5 @@ function ExportButton() {
         </React.Fragment>
     )
 }
-
 
 export default ExportButton
