@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext, useState} from 'react'
 import DataContext from '../contexts/DataContext'
-import EntryName from '../entries/EntryName.jsx'
+import EntryName from '../entries/EntryName.js'
 
 function ExportButton() {
     const [anchorEl, setAnchorEl] = useState(null)
