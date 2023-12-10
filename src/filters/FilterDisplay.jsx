@@ -25,13 +25,25 @@ function FilterDisplay() {
     }, [filters])
 
     if (filterCount === 0) return null
+
+    function cleanChipLabel(filterLabel,filterName) {
+        if (filterLabel==="Belt") {
+            if (filterName==="Unranked") { return filterName }
+            if (filterName.includes("Black")) {
+                return filterName.replace(/(Black)\s(\d+)/,'$1 Belt $2')
+            } else {
+                return filterName + " Belt"
+            }
+        }
+        return filterName
+    }
+
     return (
-        <FieldValue name='Current Filters' value={
+        <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
                 {filterValues.map(({key, value: filter}, index) =>
                     <Chip
                         key={index}
-                        //label={`${filterFieldsByFieldName[key]?.label || 'Unknown'} = ${filter}`}
                         label={`${cleanChipLabel(filterFieldsByFieldName[key]?.label,filter)}`}
                         variant='outlined'
                         style={{marginRight: 4, marginBottom: 4}}
