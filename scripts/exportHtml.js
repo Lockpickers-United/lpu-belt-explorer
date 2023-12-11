@@ -48,10 +48,7 @@ rawData.forEach((entry, index, arr) => {
     const prevUrlName = getUrlName(prevEntry)
     const nextUrlName = getUrlName(nextEntry)
 
-    var title_version = ""
-    if (entry.relatedIds) {
-        title_version = " (" + entry.version + ")"
-    }
+    const title_version = entry.relatedIds ? ` (${entry.version})` : ''
 
     const values = {
         id: entry.id,
