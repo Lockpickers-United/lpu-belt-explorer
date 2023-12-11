@@ -16,11 +16,11 @@ function InlineFilterDisplay() {
 
     if (!filterCount) return null
     return (
-        <Card style={style} sx={{paddingBottom:"0px"}}>
-            <CardContent style={{paddingBottom:"0px"}}>
+        <Card style={style} sx={{paddingBottom: '0px'}}>
+            <CardContent style={{paddingBottom: '0px'}}>
                 <FilterDisplay/>
             </CardContent>
-            <CardActions style={{padding:"8px 16px 16px 16px"}}>
+            <CardActions style={{padding: '8px 16px 16px 16px'}}>
                 <div style={{width: '100%'}}/>
                 <ClearFiltersButton/>
             </CardActions>
