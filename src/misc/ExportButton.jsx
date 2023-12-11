@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext, useState} from 'react'
 import DataContext from '../contexts/DataContext'
+import EntryName from '../entries/EntryName.js'
 
 function ExportButton() {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -24,9 +25,7 @@ function ExportButton() {
 
         element.style.display = 'none'
         document.body.appendChild(element)
-
         element.click()
-
         document.body.removeChild(element)
     }, [])
 
@@ -36,13 +35,16 @@ function ExportButton() {
     }, [download, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
+        const csvColumns = [ 'id', 'name', 'version', 'belt' ]
         const data = visibleEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
             model: datum.makeModels.map(e => e.model).join(','),
             version: datum.version,
-            belt: datum.belt
+            belt: datum.belt,
+            name: EntryName(datum)
         }))
+
         const headers = csvColumns.join(',')
         const csvData = data.map(datum => {
             return csvColumns
@@ -91,13 +93,5 @@ function ExportButton() {
         </React.Fragment>
     )
 }
-
-const csvColumns = [
-    'id',
-    'make',
-    'model',
-    'version',
-    'belt'
-]
 
 export default ExportButton
