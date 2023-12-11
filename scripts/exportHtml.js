@@ -24,7 +24,6 @@ const replaceValues = (template, values) => {
         console.log('Missed tokens', missed)
         process.exit(1)
     }
-
     return output
 }
 
@@ -42,13 +41,14 @@ const getUrlName = entry => {
 
 rawData.forEach((entry, index, arr) => {
     const urlName = getUrlName(entry)
-
     const prevIndex = index === 0 ? arr.length - 1 : index - 1
     const nextIndex = index === arr.length - 1 ? 0 : index + 1
     const prevEntry = arr[prevIndex]
     const nextEntry = arr[nextIndex]
     const prevUrlName = getUrlName(prevEntry)
     const nextUrlName = getUrlName(nextEntry)
+
+    const title_version = entry.relatedIds ? ` (${entry.version})` : ''
 
     const values = {
         id: entry.id,
@@ -59,6 +59,7 @@ rawData.forEach((entry, index, arr) => {
         next_url_name: nextUrlName,
 
         title: getName(entry),
+        title_version: title_version,
         belt: entry.belt,
         version: entry.version || '',
         notes: entry.notes || '',
