@@ -10,6 +10,7 @@ import {DataProvider} from '../contexts/DataContext'
 import {AppProvider} from '../contexts/AppContext'
 import Nav from '../nav/Nav'
 import Entries from '../entries/Entries'
+import EntriesCompact from '../entries/EntriesCompact'
 import Footer from '../nav/Footer'
 
 const darkTheme = createTheme({
@@ -46,7 +47,7 @@ function App() {
                                     <AppProvider>
                                         <Nav/>
 
-                                        <Entries/>
+                                        <EntriesCompact/>
 
                                         <Footer/>
                                     </AppProvider>

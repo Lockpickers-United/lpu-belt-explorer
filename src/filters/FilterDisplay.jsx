@@ -39,8 +39,11 @@ function FilterDisplay() {
     }
 
     if (filterCount === 0) return null
+
+    //const {clearFilters} = useContext(FilterContext)
+
     return (
-        <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
+        <FieldValue name='Current Filters' style={{margin:'0px'}} value={
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
                 {filterValues.map(({key, value: filter}, index) =>
                     <Chip
@@ -51,6 +54,12 @@ function FilterDisplay() {
                         onDelete={handleDeleteFilter(key, filter)}
                     />
                 )}
+                {/*<Chip
+                    label={`CLEAR FILTERS`}
+                    style={{marginRight: 4, marginBottom: 4, fontWeight:700, backgroundColor:'#666'}}
+                    onClick={clearFilters}
+                />*/}
+
             </Stack>
         }/>
     )
