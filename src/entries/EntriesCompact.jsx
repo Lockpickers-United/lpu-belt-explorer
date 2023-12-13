@@ -8,9 +8,27 @@ import AppContext from '../contexts/AppContext'
 import NoEntriesCard from './NoEntriesCard'
 import InlineHeaderDisplay from './InlineHeaderDisplay'
 import InlineDisplaySpacer from './InlineDisplaySpacer.jsx'
+
 console.log('EntriesCompact start')
+import FilterContext from '../contexts/FilterContext'
+import DBContext from "../contexts/DBContext.jsx";
+
+console.log('EntryCompact start')
 
 function EntriesCompact() {
+    const splitDisplay = true
+    const {filters} = useContext(FilterContext)
+    const {filterCount} = useContext(FilterContext)
+    const {lockCollection} = useContext(DBContext)
+
+    console.log(filters)
+    console.log(lockCollection)
+    console.log(filters.collection)
+
+    const collectionFiltered = filters.collection?.match(/^(Own|Picked|Recorded|Wishlist)$/) ? true : false
+    console.log(collectionFiltered)
+
+
     const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {tab, expanded, setExpanded, displayAll} = useContext(AppContext)
 
@@ -28,6 +46,24 @@ function EntriesCompact() {
         }
     }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
+    function foobar(entry) {
+        if (splitDisplay && collectionFiltered) {
+            return <EntryCompact
+                key={entry.id}
+                entry={entry}
+                expanded={entry.id === defExpanded}
+                onExpand={setExpanded}
+            />
+        } else {
+            return <Entry
+                key={entry.id}
+                entry={entry}
+                expanded={entry.id === defExpanded}
+                onExpand={setExpanded}
+            />
+        }
+    }
+
     return (
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
@@ -41,17 +77,13 @@ function EntriesCompact() {
                 {entries.length === 0 && <NoEntriesCard/>}
 
                 {entries.map(entry =>
-                    <EntryCompact
-                        key={entry.id}
-                        entry={entry}
-                        expanded={entry.id === defExpanded}
-                        onExpand={setExpanded}
-                    />
+                    foobar(entry)
                 )}
             </div>
         </React.Fragment>
     )
 }
+
 console.log('EntriesCompact end')
 
 export default EntriesCompact

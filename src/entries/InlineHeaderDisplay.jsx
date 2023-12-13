@@ -18,10 +18,6 @@ function InlineHeaderDisplay() {
     const {filterCount} = useContext(FilterContext)
     const {lockCollection} = useContext(DBContext)
 
-    console.log(filters)
-    console.log(lockCollection)
-    console.log(filters.collection)
-
     let currentCollection = ''
 
     if (filters && filters.collection) {

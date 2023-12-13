@@ -5,12 +5,9 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import AppContext from '../contexts/AppContext'
 import FilterContext from '../contexts/FilterContext'
 import IconButton from '@mui/material/IconButton'
+import {backdropClasses} from '@mui/material'
 
 console.log('OpenLinkToEntryButton start')
-
-// {entry.relatedIds.map(relatedId =>
-//    <RelatedEntryButton key={relatedId} id={relatedId}/>
-// )}
 
 function OpenLinkToEntryButton({id}) {
     const {setExpanded, setExpandedDirect} = useContext(AppContext)
@@ -29,7 +26,7 @@ function OpenLinkToEntryButton({id}) {
     return (
         <Tooltip title='View Full Entry' arrow disableFocusListener>
             <IconButton onClick={handleClick}>
-                <OpenInNewIcon/>
+                <OpenInNewIcon fontSize='small'/>
             </IconButton>
         </Tooltip>
     )

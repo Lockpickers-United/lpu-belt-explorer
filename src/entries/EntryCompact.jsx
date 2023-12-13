@@ -6,23 +6,16 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import BeltStripe from './BeltStripe'
 import EntryName from '../entries/EntryName.js'
 import FieldValue from './FieldValue'
-import LinkToEntryButton from './LinkToEntryButton'
 import Stack from '@mui/material/Stack'
 import Tracker from '../app/Tracker'
 import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
 import CollectionFormHoriz from './CollectionFormHoriz.jsx'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks.js"
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import CollectionIcon from "./CollectionIcon.jsx"
 import {styled} from '@mui/material/styles'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
-import FilterContext from '../contexts/FilterContext'
 
 console.log('EntryCompact start')
-
-//const {filters} = useContext(FilterContext)
 
 function Entry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
@@ -33,6 +26,8 @@ function Entry({entry, expanded, onExpand}) {
         onExpand(isExpanded ? entry.id : false)
     }, [entry.id, onExpand])
 
+
+    const {collection} = queryString.parse(location.search)
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -110,11 +105,18 @@ function Entry({entry, expanded, onExpand}) {
             {
                 expanded &&
                 <React.Fragment>
-                    <AccordionDetails sx={{padding: '8px 16px 0px 16px', backgroundColor: '#000'}}>
+                    <AccordionDetails sx={{padding: '0px 16px 0px 16px', backgroundColor: '#000'}}>
                         <BeltStripe value={entry.belt}/>
-                        <CollectionFormHoriz id={entry.id}/>
-                        {/*<OpenLinkToEntryButton entry={entry} key={entry.id} id={entry.id}/>*/}
-                    </AccordionDetails>
+                        <div style={{marginTop:0, marginLeft: 12}}>
+                            <CollectionFormHoriz id={entry.id} entry={entry}/>
+                        </div>
+                            {
+                                collection &&
+                                <div style={{width:28, marginTop:4, marginLeft:'auto', marginRight:0}}>
+                                    <OpenLinkToEntryButton entry={entry} key={entry.id} id={entry.id}/>
+                                </div>
+                            }
+                                </AccordionDetails>
                     <AccordionActions disableSpacing sx={{backgroundColor: '#000'}}>
                         <Tracker id={entry.id}/>
                     </AccordionActions>

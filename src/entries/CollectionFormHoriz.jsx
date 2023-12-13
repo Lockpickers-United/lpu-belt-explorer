@@ -7,6 +7,7 @@ import DBContext from '../contexts/DBContext'
 import {collectionOptions} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import Typography from "@mui/material/Typography";
+import OpenLinkToEntryButton from "./OpenLinkToEntryButton.jsx";
 
 function CollectionFormHoriz({id}) {
     const {isLoggedIn} = useContext(AuthContext)
@@ -35,7 +36,7 @@ function CollectionFormHoriz({id}) {
     }, [id, addToLockCollection, removeFromLockCollection])
 
     return (
-        <FormGroup row style={{marginTop: 6, marginLeft: 12}}>
+        <FormGroup row>
             {collectionOptions.map(({key, label}) =>
                 <React.Fragment key={key}>
                     <FormControlLabel
