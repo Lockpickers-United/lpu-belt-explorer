@@ -32,7 +32,7 @@ function InlineHeaderDisplay() {
     const collectionHeader = isLoggedIn ? `${collectionName} (${lockCollection[currentCollection.toLowerCase()]?.length})` : 'Sign in to view'
 
     return (
-        <Card style={style}>
+        <Card style={style} sx={{borderRadius: 0}}>
             <CardContent style={{fontSize: '1.48rem', paddingBottom: 0, paddingTop: 0, float: 'left'}}>
                 <span style={{fontWeight: 500}}>Collection:</span> {collectionHeader}
             </CardContent>
