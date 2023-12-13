@@ -11,8 +11,12 @@ import InfoButton from './InfoButton'
 import AppContext from '../contexts/AppContext'
 import LinkToRequirementsButton from './LinkToRequirementsButton'
 import beltRequirements from '../data/beltRequirements'
+import DataContext from "../contexts/DataContext.jsx";
 
 function BeltRequirements({belt}) {
+
+    const {visibleEntries = []} = useContext(DataContext)
+
     const {expanded, setExpanded} = useContext(AppContext)
     const handleExpand = useCallback((_, isExpanded) => {
         setExpanded(isExpanded ? 'beltreqs' : false)
@@ -21,7 +25,7 @@ function BeltRequirements({belt}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const markdown = beltRequirements[belt]
 
-    if (!markdown) return null
+    if (!markdown || (!visibleEntries.length>0)) return null
     return (
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
