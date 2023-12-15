@@ -5,7 +5,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import AppContext from '../contexts/AppContext'
 import FilterContext from '../contexts/FilterContext'
 import IconButton from '@mui/material/IconButton'
-import {backdropClasses} from '@mui/material'
+import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 
 console.log('OpenLinkToEntryButton start')
 

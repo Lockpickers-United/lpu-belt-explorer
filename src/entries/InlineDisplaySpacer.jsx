@@ -4,8 +4,6 @@ import CardContent from '@mui/material/CardContent'
 import FilterContext from '../contexts/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 
-console.log('InlineSpacerDisplay start')
-
 function InlineDisplaySpacer() {
     const {filterCount} = useContext(FilterContext)
     const {width} = useWindowSize()
@@ -15,11 +13,10 @@ function InlineDisplaySpacer() {
 
     if (!filterCount) return null
     return (
-        <Card style={style} sx={{paddingBottom:"0px"}}>
+        <Card style={style} sx={{paddingBottom:"0px", borderRadius: 0}}>
             <CardContent style={{paddingBottom:"0px"}}/>
         </Card>
     )
 }
-console.log('InlineSpacerDisplay end')
 
 export default InlineDisplaySpacer

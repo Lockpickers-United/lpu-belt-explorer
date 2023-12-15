@@ -6,7 +6,6 @@ import ExportButton from '../misc/ExportButton'
 import FilterContext from '../contexts/FilterContext'
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize'
-console.log('InlineHeaderDisplay start')
 
 function InlineHeaderDisplay() {
     const {width} = useWindowSize()
@@ -14,15 +13,11 @@ function InlineHeaderDisplay() {
         ? {maxWidth: 700}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
 
-    const {filters} = useContext(FilterContext)
-    const {filterCount} = useContext(FilterContext)
     const {lockCollection} = useContext(DBContext)
+    const {filters} = useContext(FilterContext)
 
     let currentCollection = ''
-
     if (filters && filters.collection) {
-        console.log(typeof filters.collection)
-
         if (typeof filters.collection === 'string') {
             currentCollection = filters.collection
         } else {
@@ -37,18 +32,16 @@ function InlineHeaderDisplay() {
     const collectionName = currentCollection === 'Own' ? 'Owned' : currentCollection
 
     return (
-        <Card style={style}>
+        <Card style={style} sx={{borderRadius: 0}}>
             <CardContent style={{fontSize: '1.48rem', paddingBottom: 0, paddingTop: 0, float: 'left'}}>
                 <span
                     style={{fontWeight: 500}}>Collection:</span> {collectionName} ({lockCollection[currentCollection.toLowerCase()]?.length})
             </CardContent>
             <CardActions style={{paddingTop: 0, float: 'right'}}>
-                <ExportButton/>
+                {/*<ExportButton/>*/}
             </CardActions>
         </Card>
     )
 }
-
-console.log('InlineHeaderDisplay end')
 
 export default InlineHeaderDisplay

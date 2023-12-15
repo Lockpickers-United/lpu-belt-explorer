@@ -11,7 +11,7 @@ import Tracker from '../app/Tracker'
 import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
 import CollectionFormHoriz from './CollectionFormHoriz.jsx'
-import CollectionIcon from "./CollectionIcon.jsx"
+import CollectionButton from "./CollectionButton.jsx";
 import {styled} from '@mui/material/styles'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 
@@ -50,19 +50,6 @@ function Entry({entry, expanded, onExpand}) {
         }
     }, [expanded, entry, scrolled])
 
-    const makeModels = useMemo(() => {
-        return (
-            <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
-                {entry.makeModels?.map(({make, model}, index) =>
-                    <Typography key={index}
-                                style={{fontWeight: 500, fontSize: '.95rem', lineHeight: 1.25, marginBottom: '4px'}}>
-                        {make && make !== model ? `${make} ${model}` : model}
-                    </Typography>
-                )}
-            </Stack>
-        )
-    }, [entry.makeModels])
-
     const CustomizedAccordion = styled(Accordion)(
         '::before { background-color:#000; opacity: 1; }'
     )
@@ -73,7 +60,7 @@ function Entry({entry, expanded, onExpand}) {
                              sx={{"& .Mui-expanded": {backgroundColor: '#000'}}}
         >
             <AccordionSummary
-                expandIcon={<CollectionIcon id={entry.id} fontSize='small'/>}
+                expandIcon={<CollectionButton id={entry.id} useIcon={true}/>}
                 //sx={{"& .Mui-expanded": {backgroundColor:'#2a2a2a'}}}
             >
                 <BeltStripe value={entry.belt}/>

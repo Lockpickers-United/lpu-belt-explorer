@@ -8,15 +8,14 @@ import AppContext from '../contexts/AppContext'
 import NoEntriesCard from './NoEntriesCard'
 import InlineHeaderDisplay from './InlineHeaderDisplay'
 import InlineDisplaySpacer from './InlineDisplaySpacer.jsx'
-
-console.log('EntriesCompact start')
 import FilterContext from '../contexts/FilterContext'
-import DBContext from "../contexts/DBContext.jsx";
+import DBContext from "../contexts/DBContext.jsx"
+import EntryList from './EntryList.jsx'
+
 
 console.log('EntryCompact start')
 
 function EntriesCompact() {
-    const splitDisplay = true
     const {filters} = useContext(FilterContext)
     const {filterCount} = useContext(FilterContext)
     const {lockCollection} = useContext(DBContext)
@@ -27,7 +26,6 @@ function EntriesCompact() {
 
     const collectionFiltered = filters.collection?.match(/^(Own|Picked|Recorded|Wishlist)$/) ? true : false
     console.log(collectionFiltered)
-
 
     const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {tab, expanded, setExpanded, displayAll} = useContext(AppContext)
@@ -46,14 +44,27 @@ function EntriesCompact() {
         }
     }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
-    function foobar(entry) {
-        if (splitDisplay && collectionFiltered) {
+    const splitDisplay = false
+    const listDisplay = false
+    const compactDisplay = false
+
+    return <Entry
+        key={entry.id}
+        entry={entry}
+        expanded={entry.id === defExpanded}
+        onExpand={setExpanded}
+    />
+
+    function EntryObject(entry, index) {
+        if (compactDisplay && collectionFiltered) {
             return <EntryCompact
                 key={entry.id}
                 entry={entry}
                 expanded={entry.id === defExpanded}
                 onExpand={setExpanded}
             />
+        } else if (listDisplay && splitDisplay && collectionFiltered) {
+            return <EntryList key={entry.id} entry={entry} index={index}/>
         } else {
             return <Entry
                 key={entry.id}
@@ -73,17 +84,14 @@ function EntriesCompact() {
                 <InlineFilterDisplay/>
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
-
                 {entries.length === 0 && <NoEntriesCard/>}
 
-                {entries.map(entry =>
-                    foobar(entry)
+                {entries.map((entry, index) =>
+                    EntryObject(entry,index)
                 )}
             </div>
         </React.Fragment>
     )
 }
-
-console.log('EntriesCompact end')
 
 export default EntriesCompact
