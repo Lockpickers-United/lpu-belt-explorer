@@ -12,8 +12,10 @@ import queryString from 'query-string'
 import {styled} from "@mui/material/styles";
 import FilterContext from "../contexts/FilterContext.jsx";
 
+
 function EntryList({entry, index}) {
     const {filters} = useContext(FilterContext)
+
 
     let currentCollection = ''
     if (filters && filters.collection) {

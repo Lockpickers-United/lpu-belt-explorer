@@ -14,19 +14,13 @@ import EntryList from './EntryList.jsx'
 import List from "@mui/material/List";
 import InlineCollectionSelect from './InlineCollectionSelect.jsx'
 import queryString from "query-string";
+import mglog from './mglog.js'
 
 function EntriesList() {
-
-    const [logging, setLogging] = useState(0);
-
-    function mgLog() {
-        console.log('foo')
-    }
 
     const {filters} = useContext(FilterContext)
     const {filterCount} = useContext(FilterContext)
     const {lockCollection} = useContext(DBContext)
-
     const {collection} = queryString.parse(location.search)
 
     let currentCollection = ''
@@ -37,7 +31,7 @@ function EntriesList() {
             currentCollection = filters.collection[0]
         }
     }
-    console.log(currentCollection)
+    mglog(currentCollection)
 
     const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {tab, expanded, setExpanded, displayAll} = useContext(AppContext)
@@ -115,7 +109,6 @@ function EntriesList() {
                     </List>
                 </div>
                 <div style={{margin: 8, marginBottom: 24}}/>
-
             </React.Fragment>
         )
     } else {
@@ -127,9 +120,7 @@ function EntriesList() {
                     <InlineFilterDisplay/>
 
                     {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
-
                     {entries.length === 0 && <NoEntriesCard/>}
-
                     {entries.map(entry =>
                         <Entry
                             key={entry.id}
