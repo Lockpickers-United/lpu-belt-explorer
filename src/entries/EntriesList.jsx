@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue, useMemo} from 'react'
+import React, {useContext, useDeferredValue, useMemo, useState} from 'react'
 import Entry from './Entry'
 import EntryCompact from './EntryCompact'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
@@ -15,9 +15,14 @@ import List from "@mui/material/List";
 import InlineCollectionSelect from './InlineCollectionSelect.jsx'
 import queryString from "query-string";
 
-console.log('EntryCompact start')
-
 function EntriesList() {
+
+    const [logging, setLogging] = useState(0);
+
+    function mgLog() {
+        console.log('foo')
+    }
+
     const {filters} = useContext(FilterContext)
     const {filterCount} = useContext(FilterContext)
     const {lockCollection} = useContext(DBContext)
@@ -51,10 +56,6 @@ function EntriesList() {
         }
     }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
-    const splitDisplay = true
-    const listDisplay = true
-    const compactDisplay = false
-
     function EntryObject(entry, index) {
         if (compactDisplay && currentCollection) {
             return <EntryCompact
@@ -84,7 +85,12 @@ function EntriesList() {
             0
     }
 
-    if (listDisplay && currentCollection) {
+    const alwaysDisplay = true
+    const listDisplay = true
+    const compactDisplay = false
+
+
+    if (listDisplay && currentCollection || alwaysDisplay) {
         return (
             <React.Fragment>
                 <div style={{margin: '8px 8px 0px 8px'}}>

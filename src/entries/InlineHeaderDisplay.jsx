@@ -6,6 +6,7 @@ import ExportButton from '../misc/ExportButton'
 import FilterContext from '../contexts/FilterContext'
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize'
+import ClearFiltersButton from "../filters/ClearFiltersButton.jsx";
 
 function InlineHeaderDisplay() {
     const {width} = useWindowSize()
@@ -40,6 +41,7 @@ function InlineHeaderDisplay() {
             </CardContent>
             <CardActions style={{paddingTop: 0, float: 'right'}}>
             {/*<ExportButton/>*/}
+                <ClearFiltersButton/>
             </CardActions>
         </Card>
     )
