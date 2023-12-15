@@ -10,6 +10,7 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext, useState} from 'react'
 import DataContext from '../contexts/DataContext'
 import EntryName from '../entries/EntryName.js'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 function ExportButton() {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -31,11 +32,36 @@ function ExportButton() {
 
     const handleExportJson = useCallback(() => {
         const data = JSON.stringify(visibleEntries)
+        handleClose()
         return download('lpubeltsdata.json', data)
-    }, [download, visibleEntries])
+    }, [handleClose,download, visibleEntries])
+
+    const handleExportClipboard = useCallback(() => {
+        const copyToClipboard = async (clipboardText) => {
+            await navigator.clipboard.writeText(clipboardText)
+            console.log(clipboardText)
+        }
+
+        const data = visibleEntries.map(datum => ({
+            id: datum.id,
+            make: datum.makeModels.map(e => e.make).join(','),
+            model: datum.makeModels.map(e => e.model).join(','),
+            version: datum.version,
+            belt: datum.belt,
+            name: EntryName(datum),
+            versionText: datum.version ? ' (' + datum.version + ')' : ''
+        }))
+
+        const clipboardText = data.map(datum => {
+            return '* ' + datum.name + datum.versionText
+        }).join('\n')
+
+        handleClose()
+        return copyToClipboard(clipboardText)
+    }, [handleClose,visibleEntries])
 
     const handleExportCsv = useCallback(() => {
-        const csvColumns = [ 'id', 'name', 'version', 'belt' ]
+        const csvColumns = ['id', 'name', 'version', 'belt']
         const data = visibleEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
@@ -56,8 +82,9 @@ function ExportButton() {
                 .join(',')
         }).join('\n')
         const csvFile = `${headers}\n${csvData}`
+        handleClose()
         return download('lpubeltsdata.csv', csvFile)
-    }, [download, visibleEntries])
+    }, [handleClose,download, visibleEntries])
 
     return (
         <React.Fragment>
@@ -76,6 +103,12 @@ function ExportButton() {
                         <FileDownloadIcon fontSize='small'/>
                     </ListItemIcon>
                     <ListItemText>Export</ListItemText>
+                </MenuItem>
+                <MenuItem onClick={handleExportClipboard}>
+                    <ListItemIcon>
+                        <ContentCopyIcon fontSize='small'/>
+                    </ListItemIcon>
+                    <ListItemText>Copy to clipboard</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={handleExportCsv}>
                     <ListItemIcon>

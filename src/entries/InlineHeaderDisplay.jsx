@@ -34,11 +34,12 @@ function InlineHeaderDisplay() {
     return (
         <Card style={style} sx={{borderRadius: 0}}>
             <CardContent style={{fontSize: '1.48rem', paddingBottom: 0, paddingTop: 0, float: 'left'}}>
-                <span
-                    style={{fontWeight: 500}}>Collection:</span> {collectionName} ({lockCollection[currentCollection.toLowerCase()]?.length})
+                {/*<span
+                    style={{fontWeight: 500}}>Collection:</span> {collectionName} ({lockCollection[currentCollection.toLowerCase()]?.length})*/}
+                <span style={{fontWeight: 500}}>My Collection</span>
             </CardContent>
             <CardActions style={{paddingTop: 0, float: 'right'}}>
-                {/*<ExportButton/>*/}
+            {/*<ExportButton/>*/}
             </CardActions>
         </Card>
     )

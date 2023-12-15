@@ -1,18 +1,12 @@
 import * as React from 'react';
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
 import FilterContext from '../contexts/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import SortButton from "../filters/SortButton.jsx";
-import {styled} from "@mui/material/styles";
 import Select from '@mui/material/Select';
-import Button from "@mui/material/Button";
 import {useCallback, useContext, useState} from "react";
-
-console.log('here')
+import DBContext from "../contexts/DBContext.jsx";
 
 export default function InlineCollectionSelect() {
     const {width} = useWindowSize()
@@ -23,6 +17,7 @@ export default function InlineCollectionSelect() {
     const {filters} = useContext(FilterContext)
     const [collection, setCollection] = React.useState('');
     const [open, setOpen] = React.useState(false);
+    const {lockCollection} = useContext(DBContext)
 
     let currentCollection = ''
     if (filters && filters.collection) {
@@ -58,16 +53,17 @@ export default function InlineCollectionSelect() {
     }
 
     const handleChange = (event) => {
-        console.log(event.target.value)
         handleFilter('collection', event.target.value)
         setCollection(event.target.value);
     }
 
     setUp()
 
+    const collectionsList = ['Own', 'Picked', 'Recorded', 'Wishlist']
+
     return (
         <div>
-            <FormControl fullWidth size="small" sx={{marginLeft:'8px', minWidth: 80, maxWidth: 300}}>
+            <FormControl fullWidth size="small" sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
                 <Select
                     open={open}
                     onClose={handleClose}
@@ -75,12 +71,12 @@ export default function InlineCollectionSelect() {
                     value={currentCollection}
                     label=""
                     onChange={handleChange}
-                    style={{backgroundColor:'#222', fontSize:'1.1rem', fontWeight:500}}
+                    style={{backgroundColor: '#222', fontSize: '1.1rem', fontWeight: 500}}
                 >
-                    <MenuItem value='Own'>Own</MenuItem>
-                    <MenuItem value='Picked'>Picked</MenuItem>
-                    <MenuItem value='Recorded'>Recorded</MenuItem>
-                    <MenuItem value='Wishlist'>Wishlist</MenuItem>
+                    {collectionsList.map((list, index) =>
+                        <MenuItem key={index}
+                                  value={list}>{list} ({lockCollection[list.toLowerCase()]?.length})</MenuItem>
+                    )}
                 </Select>
             </FormControl>
             <SortButton/>
