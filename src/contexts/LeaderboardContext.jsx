@@ -21,6 +21,7 @@ export function LeaderboardProvider({children}) {
 
     console.log(value)
 
+    // WTF? Don't I need this?
     //if (!value?.length) return null
     console.log('not null')
 

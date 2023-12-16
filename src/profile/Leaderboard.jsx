@@ -7,11 +7,14 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 
-function Leaderboard() {
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
+import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
+
+function Leaderboard(index) {
     const {leaderboardData} = useContext(LeaderboardContext)
-    const leaderboardColumns = ['Pos', 'Own', 'Picked', 'Rec', 'Wishlist']
 
     /*
         "id": "UbhgAjZIuLauV1dw2G4QsocHIk83",
@@ -32,21 +35,29 @@ function Leaderboard() {
             0
     }
 
+    const leaderboardColumns = ['Rank', 'Own', 'Picked', 'Rec', 'Wishlist']
+
     return (
         <React.Fragment>
             <div style={{
                 maxWidth: 700, padding: '8px 8px 16px 8px', backgroundColor: '#000',
                 marginLeft: 'auto', marginRight: 'auto'
             }}>
-
-                <TableContainer component={Paper}>
-                    <Table sx={{minWidth: 650, borderRadius: 0}} aria-label="simple table">
+                <TableContainer sx={{borderRadius: 0, height: '600px', overflowY: 'scroll', backgroundColor: '#111'}}>
+                    <Table sx={{borderRadius: 0}}
+                           aria-label="simple table">
                         <TableHead>
-                            <TableRow>
-                                <TableCell key='Display Name'>Display Name</TableCell>
-                                {leaderboardColumns.map((column) => (
-                                    <TableCell align={'center'} key={column}>{column}</TableCell>
-                                ))}
+                            <TableRow sx={{backgroundColor: '#000',}}>
+                                <TableCell key='Display Name'
+                                           style={{fontWeight: 700, fontSize:'1.2rem', border: 0, padding: '4px 16px'}}>Name</TableCell>
+                                <TableCell align={'center'} style={{
+                                    border: 0, padding: '4px 12px' }}><LockIcon/></TableCell>
+                                <TableCell align={'center'} style={{
+                                    border: 0, padding: '4px 12px' }}><LockOpenOutlinedIcon sx={{}}/></TableCell>
+                                <TableCell align={'center'} style={{
+                                    border: 0, padding: '4px 12px' }}><VideocamOutlinedIcon/></TableCell>
+                                <TableCell align={'center'} style={{
+                                    border: 0, padding: '4px 12px' }}><SavingsOutlinedIcon/></TableCell>
                             </TableRow>
                         </TableHead>
 
@@ -54,14 +65,21 @@ function Leaderboard() {
                             {leaderboardData.map((leader) => (
                                 <TableRow
                                     key={leader.id}
-                                    sx={{'&:last-child td, &:last-child th': {border: 0}}}
+                                    sx={{
+                                        '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#000'},
+                                        'td, th': {padding: '6px 12px', border: 0}
+                                    }}
                                 >
-                                    <TableCell component="th" scope="row"> {leader.DisplayName} </TableCell>
-                                    <TableCell align={'center'}>{leader.position}</TableCell>
-                                    <TableCell align={'center'}>{leader.own}</TableCell>
-                                    <TableCell align={'center'}>{leader.picked}</TableCell>
-                                    <TableCell align={'center'}>{leader.recorded}</TableCell>
-                                    <TableCell align={'center'}>{leader.wishlist}</TableCell>
+                                    <TableCell component="th" scope="row"
+                                               sx={{fontWeight: (leader.DisplayName !== 'Anonymous' ? 500 : null)}}
+                                    >
+                                        {leader.position}&nbsp;{leader.DisplayName}
+                                    </TableCell>
+
+                                    <TableCell align={'center'} sx={{}}>{leader.own}</TableCell>
+                                    <TableCell align={'center'} sx={{}}>{leader.picked}</TableCell>
+                                    <TableCell align={'center'} sx={{}}>{leader.recorded}</TableCell>
+                                    <TableCell align={'center'} sx={{}}>{leader.wishlist}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

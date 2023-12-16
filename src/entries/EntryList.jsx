@@ -28,9 +28,7 @@ function EntryList({entry, index}) {
     const entryText = index + EntryName(entry)
 
     function rowStyle({index}) {
-        if (!(index % 2)) {
-            return {backgroundColor: '#111111'}
-        }
+        if (!(index % 2)) { return {backgroundColor: '#111111'} }
     }
 
     return (
