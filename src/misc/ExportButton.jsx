@@ -37,11 +37,6 @@ function ExportButton() {
     }, [handleClose,download, visibleEntries])
 
     const handleExportClipboard = useCallback(() => {
-        const copyToClipboard = async (clipboardText) => {
-            await navigator.clipboard.writeText(clipboardText)
-            console.log(clipboardText)
-        }
-
         const data = visibleEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
@@ -57,7 +52,7 @@ function ExportButton() {
         }).join('\n')
 
         handleClose()
-        return copyToClipboard(clipboardText)
+        navigator.clipboard.writeText(clipboardText)
     }, [handleClose,visibleEntries])
 
     const handleExportCsv = useCallback(() => {
