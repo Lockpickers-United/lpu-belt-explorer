@@ -8,7 +8,7 @@ import {FilterProvider} from '../contexts/FilterContext'
 import {LazyDataProvider} from '../contexts/LazyDataContext'
 import {DataProvider} from '../contexts/DataContext'
 import {AppProvider} from '../contexts/AppContext'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import {createHashRouter, RouterProvider} from 'react-router-dom'
 import routes from '../routes/routes'
 
 const darkTheme = createTheme({
@@ -55,7 +55,7 @@ function App() {
     )
 }
 
-const router = createBrowserRouter(routes)
+const router = createHashRouter(routes)
 
 const getRootStyle = styleTheme => {
     const linkTextColor = styleTheme.palette.text.icon
