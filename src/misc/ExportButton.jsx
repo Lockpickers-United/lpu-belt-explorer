@@ -34,7 +34,7 @@ function ExportButton() {
         const data = JSON.stringify(visibleEntries)
         handleClose()
         return download('lpubeltsdata.json', data)
-    }, [handleClose,download, visibleEntries])
+    }, [handleClose, download, visibleEntries])
 
     const handleExportClipboard = useCallback(() => {
         const data = visibleEntries.map(datum => ({
@@ -53,7 +53,7 @@ function ExportButton() {
 
         handleClose()
         navigator.clipboard.writeText(clipboardText)
-    }, [handleClose,visibleEntries])
+    }, [handleClose, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
         const csvColumns = ['id', 'name', 'version', 'belt']
@@ -79,7 +79,7 @@ function ExportButton() {
         const csvFile = `${headers}\n${csvData}`
         handleClose()
         return download('lpubeltsdata.csv', csvFile)
-    }, [handleClose,download, visibleEntries])
+    }, [handleClose, download, visibleEntries])
 
     return (
         <React.Fragment>

@@ -5,9 +5,9 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import belts from '../data/belts'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
+import DanPoints from './DanPoints'
 import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
 import ReactMarkdown from 'react-markdown'
@@ -25,7 +25,6 @@ function Entry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
-    const {danPoints} = belts[entry.belt]
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand(isExpanded ? entry.id : false)
@@ -56,7 +55,8 @@ function Entry({entry, expanded, onExpand}) {
         return (
             <Stack direction='column' spacing={0} sx={{flexWrap: 'wrap'}}>
                 {entry.makeModels?.map(({make, model}, index) =>
-                    <Typography key={index} style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '4px'}}>
+                    <Typography key={index}
+                                style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '4px'}}>
                         {make && make !== model ? `${make} ${model}` : model}
                     </Typography>
                 )}
@@ -72,14 +72,15 @@ function Entry({entry, expanded, onExpand}) {
                     <FieldValue
                         value={makeModels}
                         textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
-                        style = {{marginBottom: '2px'}}
+                        style={{marginBottom: '2px'}}
                     />
 
                     {
                         !!entry.version &&
                         <FieldValue
                             name='Version'
-                            value={<Typography style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entry.version}</Typography>}
+                            value={<Typography
+                                style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entry.version}</Typography>}
                             textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />
                     }
@@ -97,7 +98,7 @@ function Entry({entry, expanded, onExpand}) {
                                     />
                                 )}
                             </Stack>
-                        }/>
+                            }/>
                     }
                 </div>
             </AccordionSummary>
@@ -107,15 +108,16 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
                             <FieldValue
-                              style={{width: '50%', marginLeft: '0px'}} value={
+                                style={{width: '50%', marginLeft: '0px'}} value={
                                 <React.Fragment>
-                                    <Typography style={{marginLeft: '0px', fontSize: '1rem', lineHeight: 1.25, fontWeight: 500}}>
-                                        {entry.belt} 
-                                        {danPoints > 0
-                                        ? ` (${danPoints} Dan ${danPoints < 2 ? `Point` 
-                                            : danPoints > 10 ? `Pts` : `Points`})`
-                                        : entry.belt==`Unranked` ? ``
-                                        : ` Belt` }
+                                    <Typography style={{
+                                        marginLeft: '0px',
+                                        fontSize: '1rem',
+                                        lineHeight: 1.25,
+                                        fontWeight: 500
+                                    }}>
+                                        {entry.belt}
+                                        <DanPoints belt={entry.belt}/>
                                     </Typography>
                                     <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
                                 </React.Fragment>
@@ -148,21 +150,21 @@ function Entry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
-                            {!!entry.relatedIds &&
-                                <FieldValue name='Other Versions' value={
-                                    <React.Fragment>
-                                        {entry.relatedIds.map(relatedId =>
-                                            <RelatedEntryButton key={relatedId} id={relatedId}/>
-                                        )}
-                                    </React.Fragment>
-                                }/>
-                            }
+                        {!!entry.relatedIds &&
+                            <FieldValue name='Other Versions' value={
+                                <React.Fragment>
+                                    {entry.relatedIds.map(relatedId =>
+                                        <RelatedEntryButton key={relatedId} id={relatedId}/>
+                                    )}
+                                </React.Fragment>
+                            }/>
+                        }
                         {
                             !!entry.media?.length &&
                             <FieldValue
-                              value={
-                                <ImageGallery entry={entry}/>
-                            }/>
+                                value={
+                                    <ImageGallery entry={entry}/>
+                                }/>
                         }
                         {
                             !!entry.links?.length &&

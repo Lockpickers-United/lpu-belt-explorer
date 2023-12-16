@@ -7,22 +7,22 @@ EntryName(entry,'data')		ASSA,ASSA,ASSA,TrioVing,TrioVing	Twin Combi,Triton,Nept
 EntryName(entry,'array')	['ASSA,ASSA,ASSA,TrioVing,TrioVing', 'Twin Combi,Triton,Neptun 4900,System 10,Twin Control']
 */
 
-function EntryName(entry, nameType='short', includeVersion=false) {
+function EntryName(entry, nameType = 'short', includeVersion = false) {
     const versionString = includeVersion && entry.version ? ' (' + entry.version + ')' : ''
 
-    if (nameType==='long') {
+    if (nameType === 'long') {
         let lockName = ''
         entry.makeModels.forEach((makeModel) => {
             let lockSep = lockName === '' ? '' : ' / '
             lockName += lockSep + makeModel.make + ' ' + makeModel.model
         })
-        return lockName+versionString
-    } else if (nameType==='data') {
+        return lockName + versionString
+    } else if (nameType === 'data') {
         return entry.makeModels.map(e => e.make).join(',') + '\t'
             + entry.makeModels.map(e => e.model).join(',')
             + versionString
-    } else if (nameType==='array') {
-        return [entry.makeModels.map(e => e.make).join(','),entry.makeModels.map(e => e.model).join(',')]
+    } else if (nameType === 'array') {
+        return [entry.makeModels.map(e => e.make).join(','), entry.makeModels.map(e => e.model).join(',')]
     } else {
         let lockName = ''
         let prevMake = ''
@@ -42,7 +42,7 @@ function EntryName(entry, nameType='short', includeVersion=false) {
             }
             prevMake = thisMake
         })
-        return lockName+versionString
+        return lockName + versionString
     }
 }
 

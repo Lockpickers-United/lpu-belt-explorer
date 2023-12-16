@@ -31,12 +31,15 @@ module.exports = {
                 'ignoreRestSiblings': true
             }
         ],
-        'react-hooks/exhaustive-deps': 'warn'
+        'react-hooks/exhaustive-deps': 'warn',
+        'quotes': ['warn', 'single', {'avoidEscape': true}],
+        'eqeqeq': ['warn', 'always']
     },
     ignorePatterns: [
         '*.md',
         '*.png',
         '*.csv',
-        '*.html'
+        '*.html',
+        '*.json'
     ]
 }
