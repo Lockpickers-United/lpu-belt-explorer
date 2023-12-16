@@ -38,11 +38,6 @@ export default function InlineCollectionSelect() {
         setOpen(true)
     }
 
-    const setUp = () => {
-        console.log(currentCollection)
-        //setCollection('Own')
-    }
-
     const {setFilters, removeFilters} = useContext(FilterContext)
 
     const handleFilter = (filterKey, filterValue) => {
@@ -56,8 +51,6 @@ export default function InlineCollectionSelect() {
         handleFilter('collection', event.target.value)
         setCollection(event.target.value);
     }
-
-    setUp()
 
     const collectionsList = ['Own', 'Picked', 'Recorded', 'Wishlist']
 

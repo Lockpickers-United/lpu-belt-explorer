@@ -1,6 +1,5 @@
 import React, {useContext, useDeferredValue, useMemo, useState} from 'react'
 import Entry from './Entry'
-import EntryCompact from './EntryCompact'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements'
 import DataContext from '../contexts/DataContext'
@@ -30,8 +29,8 @@ function EntriesList() {
         } else {
             currentCollection = filters.collection[0]
         }
+        mglog(currentCollection)
     }
-    mglog(currentCollection)
 
     const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {tab, expanded, setExpanded, displayAll} = useContext(AppContext)
@@ -50,28 +49,6 @@ function EntriesList() {
         }
     }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
-    function EntryObject(entry, index) {
-        if (compactDisplay && currentCollection) {
-            return <EntryCompact
-                key={entry.id}
-                entry={entry}
-                expanded={entry.id === defExpanded}
-                onExpand={setExpanded}
-            />
-        } else if (listDisplay && currentCollection) {
-            return (
-                <EntryList key={entry.id} entry={entry} index={index}/>
-            )
-        } else {
-            return <Entry
-                key={entry.id}
-                entry={entry}
-                expanded={entry.id === defExpanded}
-                onExpand={setExpanded}
-            />
-        }
-    }
-
     const style = {
         maxWidth: 700, marginLeft:
             'auto', marginRight:
@@ -82,7 +59,6 @@ function EntriesList() {
     const alwaysDisplay = true
     const listDisplay = true
     const compactDisplay = false
-
 
     if (listDisplay && currentCollection || alwaysDisplay) {
         return (

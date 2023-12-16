@@ -1,0 +1,30 @@
+[
+	{
+	"id": "UbhgAjZIuLauV1dw2G4QsocHIk83",
+	"DisplayName": "Georgia Jim",
+	"DateTime": "2023-12-15T20:28:42",
+	"position": 1,
+	"own": 233,
+	"picked": 255,
+	"recorded": 240,
+	"wishlist": 0
+	},{
+	"id": "hnX373zhNoT1QZ3lc8IWVEvcz0R2",
+	"DisplayName": "DoctorHogmaster",
+	"DateTime": "2023-12-15T20:28:42",
+	"position": 2,
+	"own": 202,
+	"picked": 223,
+	"recorded": 172,
+	"wishlist": 2
+	},{
+	"id": "8ZAMkphV1WS23gaAcC1UEjuzilf1",
+	"DisplayName": "Dra9i",
+	"DateTime": "2023-12-15T20:28:42",
+	"position": 3,
+	"own": 175,
+	"picked": 192,
+	"recorded": 135,
+	"wishlist": 0
+	}
+]

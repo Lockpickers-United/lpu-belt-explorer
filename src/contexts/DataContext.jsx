@@ -103,6 +103,8 @@ export function DataProvider({children}) {
             : searched
     }, [filters, mappedEntries, search, sort])
 
+    console.log(visibleEntries)
+
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
