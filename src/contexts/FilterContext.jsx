@@ -1,11 +1,14 @@
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import queryString from 'query-string'
+import {useLocation, useSearchParams} from 'react-router-dom'
 import {uniqueBelts} from '../data/belts'
 import LazyDataContext from './LazyDataContext'
 
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
+    const location = useLocation()
+    const [, setSearchParams] = useSearchParams()
     const {data} = useContext(LazyDataContext)
     const [filters, setFilters] = useState(() => {
         const {id, name, tab, search = '', ...initialFilters} = queryString.parse(location.search)
@@ -97,11 +100,8 @@ export function FilterProvider({children}) {
                 }
                 return acc
             }, {})
-        const query = queryString.stringify(validFilters)
-        const newUrl = new URL(window.location.href)
-        newUrl.search = query
-        history.replaceState({path: newUrl.href}, '', newUrl.href)
-    }, [filters])
+        setSearchParams(validFilters)
+    }, [filters, setSearchParams])
 
     const filterCount = useMemo(() => {
         const {id, search, tab, name, sort, ...rest} = filters

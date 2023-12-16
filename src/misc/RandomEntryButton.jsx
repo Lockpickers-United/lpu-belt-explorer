@@ -11,6 +11,7 @@ function RandomEntryButton() {
     const {visibleEntries} = useContext(DataContext)
 
     const handleClick = useCallback(() => {
+        // TODO: fix to handle unranked locks better
         const index = Math.floor(Math.random() * visibleEntries.length)
         const entry = visibleEntries[index]
         setExpanded(entry.id, true)

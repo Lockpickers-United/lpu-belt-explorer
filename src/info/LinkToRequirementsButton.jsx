@@ -3,14 +3,12 @@ import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 
-function LinkToEntryButton({belt}) {
+function LinkToEntryButton() {
     const handleClick = useCallback(async () => {
         const link = new URL(window.location.href)
-        link.search = `id=beltreqs&tab=${belt}`
-        link.hash = ''
 
         await navigator.clipboard.writeText(link.href)
-    }, [belt])
+    }, [])
 
     return (
         <Tooltip title='Copy Link to Requirements' arrow disableFocusListener>

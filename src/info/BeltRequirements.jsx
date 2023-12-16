@@ -34,7 +34,7 @@ function BeltRequirements({belt}) {
                 </ReactMarkdown>
             </AccordionDetails>
             <AccordionActions>
-                <LinkToRequirementsButton belt={belt}/>
+                <LinkToRequirementsButton/>
                 <InfoButton/>
             </AccordionActions>
         </Accordion>

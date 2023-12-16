@@ -4,13 +4,8 @@ import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import {AuthProvider} from '../contexts/AuthContext'
 import {DBProvider} from '../contexts/DBContext'
-import {FilterProvider} from '../contexts/FilterContext'
-import {LazyDataProvider} from '../contexts/LazyDataContext'
-import {DataProvider} from '../contexts/DataContext'
-import {AppProvider} from '../contexts/AppContext'
-// import {createHashRouter, RouterProvider} from 'react-router-dom'
-import BeltList from '../routes/BeltList'
-// import routes from '../routes/routes'
+import {createHashRouter, RouterProvider} from 'react-router-dom'
+import routes from '../routes/routes'
 
 const darkTheme = createTheme({
     palette: {
@@ -40,16 +35,7 @@ function App() {
             <SnackbarProvider>
                 <AuthProvider>
                     <DBProvider>
-                        <LazyDataProvider>
-                            <FilterProvider>
-                                <DataProvider>
-                                    <AppProvider>
-                                        <BeltList/>
-                                        {/*<RouterProvider router={router}/>*/}
-                                    </AppProvider>
-                                </DataProvider>
-                            </FilterProvider>
-                        </LazyDataProvider>
+                        <RouterProvider router={router}/>
                     </DBProvider>
                 </AuthProvider>
             </SnackbarProvider>
@@ -57,7 +43,7 @@ function App() {
     )
 }
 
-// const router = createHashRouter(routes)
+const router = createHashRouter(routes)
 
 const getRootStyle = styleTheme => {
     const linkTextColor = styleTheme.palette.text.icon
