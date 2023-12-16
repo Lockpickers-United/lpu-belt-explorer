@@ -1,6 +1,7 @@
 import React from 'react'
 import {redirect} from 'react-router-dom'
 import BeltList from './BeltList'
+import TestRoute from './TestRoute'
 
 export default [
     {
@@ -13,6 +14,6 @@ export default [
     },
     {
         path: '/test',
-        element: <div>Testing 123</div>
+        element: <TestRoute/>
     }
 ]

@@ -1,12 +1,8 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
-import ExportButton from '../misc/ExportButton'
 import PrivacyPolicyButton from '../misc/PrivacyPolicyButton'
-import RandomEntryButton from '../misc/RandomEntryButton'
-import HotkeyInfoButton from '../misc/HotkeyInfoButton'
-import SlideshowButton from '../misc/SlideshowButton'
 
-function Footer() {
+function Footer({extras}) {
     return (
         <Typography align='center' style={{marginBottom: 32}}>
             <span>LPU</span>
@@ -29,14 +25,7 @@ function Footer() {
             &nbsp;•&nbsp;
             <PrivacyPolicyButton/>
 
-            <br/>
-            <HotkeyInfoButton/>
-            &nbsp;•&nbsp;
-            <RandomEntryButton/>
-            &nbsp;•&nbsp;
-            <ExportButton/>
-            &nbsp;•&nbsp;
-            <SlideshowButton/>
+            {extras}
         </Typography>
     )
 }
