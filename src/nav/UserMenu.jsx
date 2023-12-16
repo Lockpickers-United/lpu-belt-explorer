@@ -79,7 +79,7 @@ function UserMenu() {
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Owned ({lockCollection.own?.length || 0})</ListItemText>
+                            <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleFilter('collection', 'Picked')}>
                             <ListItemIcon>
