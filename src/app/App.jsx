@@ -1,5 +1,5 @@
-import {SnackbarProvider} from 'notistack'
 import React from 'react'
+import {SnackbarProvider} from 'notistack'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import {AuthProvider} from '../contexts/AuthContext'
@@ -8,9 +8,8 @@ import {FilterProvider} from '../contexts/FilterContext'
 import {LazyDataProvider} from '../contexts/LazyDataContext'
 import {DataProvider} from '../contexts/DataContext'
 import {AppProvider} from '../contexts/AppContext'
-import Nav from '../nav/Nav'
-import Entries from '../entries/Entries'
-import Footer from '../nav/Footer'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import routes from '../routes/routes'
 
 const darkTheme = createTheme({
     palette: {
@@ -44,11 +43,7 @@ function App() {
                             <FilterProvider>
                                 <DataProvider>
                                     <AppProvider>
-                                        <Nav/>
-
-                                        <Entries/>
-
-                                        <Footer/>
+                                        <RouterProvider router={router}/>
                                     </AppProvider>
                                 </DataProvider>
                             </FilterProvider>
@@ -59,6 +54,8 @@ function App() {
         </ThemeProvider>
     )
 }
+
+const router = createBrowserRouter(routes)
 
 const getRootStyle = styleTheme => {
     const linkTextColor = styleTheme.palette.text.icon
