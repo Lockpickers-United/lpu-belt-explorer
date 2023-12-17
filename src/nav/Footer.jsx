@@ -4,9 +4,7 @@ import PrivacyPolicyButton from '../misc/PrivacyPolicyButton'
 
 function Footer({extras}) {
     return (
-        <Typography align='center' style={{marginBottom: 32}}>
-            <span>LPU</span>
-            &nbsp;•&nbsp;
+        <Typography align='center' style={{marginBottom: 80}}>
             <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
                 Discord
             </a>

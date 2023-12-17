@@ -2,6 +2,7 @@ import React from 'react'
 import {redirect} from 'react-router-dom'
 import BeltList from './BeltList'
 import TestRoute from './TestRoute'
+import LeaderboardRoute from "./LeaderboardRoute.jsx";
 
 export default [
     {
@@ -11,6 +12,10 @@ export default [
     {
         path: '/belts',
         element: <BeltList/>
+    },
+    {
+        path: '/leaderboard',
+        element: <LeaderboardRoute/>
     },
     {
         path: '/test',
