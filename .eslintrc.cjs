@@ -33,7 +33,8 @@ module.exports = {
         ],
         'react-hooks/exhaustive-deps': 'warn',
         'quotes': ['warn', 'single', {'avoidEscape': true}],
-        'eqeqeq': ['warn', 'always']
+        'eqeqeq': ['warn', 'always'],
+        'semi': ['warn', 'never']
     },
     ignorePatterns: [
         '*.md',

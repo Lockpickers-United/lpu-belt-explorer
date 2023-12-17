@@ -1,12 +1,9 @@
-import React, {useCallback, useContext} from 'react'
+import React, {useCallback} from 'react'
 import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import DataContext from '../contexts/DataContext'
 
-function LinkToEntryButton({entry}) {
-    const {getNameFromId} = useContext(DataContext)
-
+function LinkToEntryButton() {
     const handleClick = useCallback(async () => {
         const link = new URL(location)
         if (link.host.toLowerCase().startsWith('lpubelts')) {
@@ -14,7 +11,7 @@ function LinkToEntryButton({entry}) {
         }
 
         await navigator.clipboard.writeText(link.href)
-    }, [entry, getNameFromId])
+    }, [])
 
     return (
         <Tooltip title='Copy Link to Entry' arrow disableFocusListener>
