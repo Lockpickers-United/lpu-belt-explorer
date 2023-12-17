@@ -1,5 +1,4 @@
 import React from 'react'
-import Tracker from '../app/Tracker'
 import {AppProvider} from '../contexts/AppContext'
 import {DataProvider} from '../contexts/DataContext'
 import {FilterProvider} from '../contexts/FilterContext'

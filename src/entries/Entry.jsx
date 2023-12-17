@@ -191,7 +191,7 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionActions disableSpacing>
                         <Tracker id={entry.id}/>
                         <CopyEntryButton entry={entry}/>
-                        <LinkToEntryButton entry={entry}/>
+                        <LinkToEntryButton/>
                     </AccordionActions>
                 </React.Fragment>
             }
