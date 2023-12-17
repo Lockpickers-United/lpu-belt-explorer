@@ -23,7 +23,6 @@ export function LeaderboardProvider({children}) {
 
     // Breaks. Do I need this?
     //if (!value?.length) return null
-    console.log('not null')
 
     return (
         <LeaderboardContext.Provider value={value}>
