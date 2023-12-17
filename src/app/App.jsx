@@ -49,11 +49,7 @@ function App() {
                                 <DataProvider>
                                     <AppProvider>
                                         <Nav/>
-
-                                        <LeaderboardProvider>
-                                            <Leaderboard/>
-                                        </LeaderboardProvider>
-
+                                        
                                         <EntriesList/>
 
                                         <Footer/>
