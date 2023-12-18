@@ -8,10 +8,10 @@ import TableRow from '@mui/material/TableRow'
 import React from 'react'
 
 function LeaderboardHeader() {
-    const style = {border: 0, padding: '4px 12px', backgroundColor: '#000'}
+    const style = {border: 0, padding: '4px 12px'}
     return (
         <TableHead>
-            <TableRow>
+            <TableRow sx={{backgroundColor: '#000'}}>
                 <TableCell align='center' style={style}>
                     #
                 </TableCell>
@@ -19,8 +19,7 @@ function LeaderboardHeader() {
                     key='Display Name'
                     style={{
                         fontWeight: 700, fontSize: '1.2rem', border: 0,
-                        padding: '4px 16px 4px 0px',
-                        backgroundColor: '#000'
+                        padding: '4px 16px 4px 0px'
                     }}
                 >
                     Name

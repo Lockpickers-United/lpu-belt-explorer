@@ -4,10 +4,10 @@ import TableCell from '@mui/material/TableCell'
 function LeaderboardCell({align = 'center', user, leader, value}) {
     const {displayName, id} = leader
     const isCurrentUser = user?.uid === id
-    const color = (displayName ? '#eee' : '#bbb')
+    const color = (!displayName ? '#fff' : '#ccc')
     const style = isCurrentUser
-        ? {fontWeight: 600, color: '#4db013'}
-        : {fontWeight: 500, color}
+        ? {fontWeight: 500, color: '#4db013'}
+        : {fontWeight: 400, color}
     const sx = {color}
 
     return (

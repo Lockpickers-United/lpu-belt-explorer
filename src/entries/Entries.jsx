@@ -5,8 +5,6 @@ import BeltRequirements from '../info/BeltRequirements'
 import DataContext from '../contexts/DataContext'
 import AppContext from '../contexts/AppContext'
 import NoEntriesCard from './NoEntriesCard'
-import InlineHeaderDisplay from '../filters/InlineHeaderDisplay'
-import InlineDisplaySpacer from '../filters/InlineDisplaySpacer.jsx'
 
 function Entries() {
     const {allEntries, visibleEntries = []} = useContext(DataContext)
@@ -29,9 +27,6 @@ function Entries() {
     return (
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
-
-                <InlineDisplaySpacer/>
-                <InlineHeaderDisplay/>
                 <InlineFilterDisplay/>
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}

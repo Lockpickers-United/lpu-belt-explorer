@@ -23,8 +23,8 @@ function Leaderboard() {
                 maxWidth: 700, padding: '8px 8px 16px 8px', backgroundColor: '#000',
                 marginLeft: 'auto', marginRight: 'auto'
             }}>
-                <TableContainer sx={{borderRadius: 0, height:'78vh', overflowY: 'scroll', backgroundColor: '#111'}}>
-                    <Table sx={{borderRadius: 0}} stickyHeader>
+                <TableContainer sx={{borderRadius: 0, overflowY: 'scroll', backgroundColor: '#111'}}>
+                    <Table sx={{borderRadius: 0}} aria-label='simple table'>
                         <LeaderboardHeader/>
 
                         <TableBody>
