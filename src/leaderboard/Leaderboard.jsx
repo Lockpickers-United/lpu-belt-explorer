@@ -1,4 +1,6 @@
-import React, {useContext} from 'react'
+import Button from '@mui/material/Button'
+import {enqueueSnackbar} from 'notistack'
+import React, {useContext, useEffect, useState} from 'react'
 import AuthContext from '../contexts/AuthContext'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -10,7 +12,26 @@ import leaderboardData from '../data/leaderboardData.json'
 
 function Leaderboard() {
     const {user} = useContext(AuthContext)
-    const updateTime = dayjs(leaderboardData.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
+    const [data, setData] = useState({data: [], metadata: {}})
+    useEffect(() => {
+        // const load = async () => {
+        //     const response = await fetch(dataUrl)
+        //     const value = await response.json()
+        //     setData(value)
+        // }
+        try {
+            //TODO: Workaround because of CORS issue
+            setData(leaderboardData)
+            // load()
+        } catch(ex) {
+            console.error('Error loading leaderboard data.', ex)
+            enqueueSnackbar('Error loading leaderboard data. Please reload the page.', {
+                autoHideDuration: null,
+                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
+            })
+        }
+    }, [])
+    const updateTime = dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
 
     return (
         <React.Fragment>
@@ -28,7 +49,7 @@ function Leaderboard() {
                         <LeaderboardHeader/>
 
                         <TableBody>
-                            {leaderboardData.data.map((leader, index) =>
+                            {data.data.map((leader, index) =>
                                 <LeaderboardRow key={leader.id} index={index} leader={leader} user={user}/>
                             )}
                         </TableBody>
@@ -45,5 +66,10 @@ function Leaderboard() {
         </React.Fragment>
     )
 }
+
+// const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
+// const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.html'
+// const dataUrl = 'https://images.lpubelts.com/leaderboardData.json'
+// const dataUrl = 'https://explore.lpubelts.com/test/leaderboardData.html'
 
 export default Leaderboard

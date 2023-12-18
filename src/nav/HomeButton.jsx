@@ -1,6 +1,6 @@
 import React, {useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
-import FilterContext from '../contexts/FilterContext'
+import {useNavigate} from 'react-router-dom'
 import LPUImage from '../resources/LPU.png'
 import AppContext from '../contexts/AppContext'
 import Tooltip from '@mui/material/Tooltip'
@@ -8,12 +8,13 @@ import {useHotkeys} from 'react-hotkeys-hook'
 
 function HomeButton() {
     const {clearExpanded} = useContext(AppContext)
-    const {setFilters} = useContext(FilterContext)
+    const navigate = useNavigate()
+
     const handleClick = useCallback(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
-        setFilters({tab: 'White'})
-        clearExpanded()
-    }, [setFilters, clearExpanded])
+        navigate('/belts?tab=White')
+        clearExpanded && clearExpanded()
+    }, [navigate, clearExpanded])
     useHotkeys('h', handleClick)
 
     return (

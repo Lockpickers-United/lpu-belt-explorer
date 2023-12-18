@@ -1,16 +1,18 @@
-import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo} from 'react'
 import queryString from 'query-string'
 import {useLocation, useSearchParams} from 'react-router-dom'
 import {uniqueBelts} from '../data/belts'
+import AuthContext from './AuthContext'
 import LazyDataContext from './LazyDataContext'
 
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
+    const {isLoggedIn} = useContext(AuthContext)
     const location = useLocation()
     const [, setSearchParams] = useSearchParams()
     const {data} = useContext(LazyDataContext)
-    const [filters, setFilters] = useState(() => {
+    const filters = useMemo(() => {
         const {id, name, tab, search = '', ...initialFilters} = queryString.parse(location.search)
         initialFilters.search = search
 
@@ -32,7 +34,17 @@ export function FilterProvider({children}) {
         }
 
         return initialFilters
-    })
+    }, [data, location.search])
+
+    const setFilters = useCallback(newFilters => {
+        Object.keys(newFilters)
+            .forEach(key => {
+                if (!newFilters[key]) {
+                    delete newFilters[key]
+                }
+            })
+        setSearchParams(newFilters)
+    }, [setSearchParams])
 
     const addFilters = useCallback((keyValues, replace) => {
         const {id, ...keepFilters} = filters
@@ -61,7 +73,7 @@ export function FilterProvider({children}) {
         })
 
         setFilters(newFilters)
-    }, [filters])
+    }, [filters, setFilters])
 
     const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
         return addFilters([{key: keyToAdd, value: valueToAdd}], replace)
@@ -73,7 +85,7 @@ export function FilterProvider({children}) {
             return newValue
         }, filters)
         setFilters(newFilters)
-    }, [filters])
+    }, [filters, setFilters])
 
     const removeFilter = useCallback((keyToDelete, valueToDelete) => {
         const currentValue = filters[keyToDelete]
@@ -85,23 +97,18 @@ export function FilterProvider({children}) {
             const {[keyToDelete]: _, ...newValue} = filters
             setFilters(newValue)
         }
-    }, [filters])
+    }, [filters, setFilters])
 
     const clearFilters = useCallback(() => {
         const {tab, id, name} = filters
         setFilters({tab, id, name})
-    }, [filters])
+    }, [filters, setFilters])
 
     useEffect(() => {
-        const validFilters = Object.keys(filters)
-            .reduce((acc, key) => {
-                if (filters[key]) {
-                    acc[key] = filters[key]
-                }
-                return acc
-            }, {})
-        setSearchParams(validFilters)
-    }, [filters, setSearchParams])
+        if (!isLoggedIn) {
+            removeFilters(['collection'])
+        }
+    }, [isLoggedIn, removeFilters])
 
     const filterCount = useMemo(() => {
         const {id, search, tab, name, sort, ...rest} = filters
@@ -117,7 +124,7 @@ export function FilterProvider({children}) {
         removeFilters,
         setFilters,
         clearFilters
-    }), [addFilter, addFilters, clearFilters, filterCount, filters, removeFilter, removeFilters])
+    }), [addFilter, addFilters, clearFilters, filterCount, filters, removeFilter, removeFilters, setFilters])
 
     return (
         <FilterContext.Provider value={value}>
