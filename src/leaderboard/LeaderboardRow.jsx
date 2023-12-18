@@ -3,6 +3,11 @@ import React from 'react'
 import LeaderboardCell from './LeaderboardCell'
 
 function LeaderboardRow({index, leader, user}) {
+
+    const displayNameText = leader.displayName ? leader.displayName
+        : user?.uid === leader?.id ? 'Me!'
+            : 'Anonymous'
+
     return (
         <TableRow
             key={leader.id}
@@ -12,7 +17,7 @@ function LeaderboardRow({index, leader, user}) {
             }}
         >
             <LeaderboardCell leader={leader} user={user} value={index + 1}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.displayName || 'Anonymous'} align='left'/>
+            <LeaderboardCell leader={leader} user={user} value={displayNameText} align='left'/>
             <LeaderboardCell leader={leader} user={user} value={leader.own}/>
             <LeaderboardCell leader={leader} user={user} value={leader.picked}/>
             <LeaderboardCell leader={leader} user={user} value={leader.recorded}/>
