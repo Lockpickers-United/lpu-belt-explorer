@@ -23,11 +23,11 @@ function Leaderboard() {
             //TODO: Workaround because of CORS issue
             setData(leaderboardData)
             // load()
-        } catch(ex) {
+        } catch (ex) {
             console.error('Error loading leaderboard data.', ex)
             enqueueSnackbar('Error loading leaderboard data. Please reload the page.', {
                 autoHideDuration: null,
-                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
+                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
             })
         }
     }, [])
@@ -44,7 +44,7 @@ function Leaderboard() {
                 maxWidth: 700, padding: '8px 8px 16px 8px', backgroundColor: '#000',
                 marginLeft: 'auto', marginRight: 'auto'
             }}>
-                <TableContainer sx={{borderRadius: 0, height:'78vh', overflowY: 'scroll', backgroundColor: '#111'}}>
+                <TableContainer sx={{borderRadius: 0, height: '78vh', overflowY: 'scroll', backgroundColor: '#111'}}>
                     <Table sx={{borderRadius: 0}} stickyHeader>
                         <LeaderboardHeader/>
 

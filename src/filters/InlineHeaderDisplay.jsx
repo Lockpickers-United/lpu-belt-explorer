@@ -5,10 +5,9 @@ import DBContext from '../contexts/DBContext'
 import FilterContext from '../contexts/FilterContext'
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize'
-import SortButton from "./SortButton.jsx";
+import SortButton from './SortButton'
 import AuthContext from '../contexts/AuthContext'
-import UserMenu from "../nav/UserMenu.jsx";
-
+import UserMenu from '../nav/UserMenu'
 
 function InlineHeaderDisplay() {
     const {width} = useWindowSize()
@@ -26,7 +25,7 @@ function InlineHeaderDisplay() {
     }
 
     if (!currentCollection) return null
-    if (currentCollection.includes('Not') || currentCollection.includes("Don't")) return null
+    if (currentCollection.includes('Not') || currentCollection.includes('Don\'t')) return null
 
     const collectionName = currentCollection === 'Own' ? 'Owned' : currentCollection
     const collectionHeader = isLoggedIn ? `${collectionName} (${lockCollection[currentCollection.toLowerCase()]?.length})` : 'Sign in to view'
