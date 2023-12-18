@@ -1,21 +1,22 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
+import AuthContext from '../contexts/AuthContext'
+import DBContext from '../contexts/DBContext'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
+import IconButton from '@mui/material/IconButton'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
-import Tooltip from '@mui/material/Tooltip'
-import Popover from '@mui/material/Popover'
 import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
+import FormGroup from '@mui/material/FormGroup'
+import Popover from '@mui/material/Popover'
 import SignInButton from '../auth/SignInButton'
-import AuthContext from '../contexts/AuthContext'
-import DBContext from '../contexts/DBContext'
-import {collectionOptions} from '../data/collectionTypes'
+import Tooltip from '@mui/material/Tooltip'
 import useWindowSize from '../util/useWindowSize'
+import {collectionOptions} from '../data/collectionTypes'
 
-function CollectionButton({id}) {
+function CollectionButton({id, useIcon=false}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -46,18 +47,29 @@ function CollectionButton({id}) {
 
     return (
         <React.Fragment>
-            <Tooltip title='My Collection' arrow disableFocusListener>
-                <Button
-                    variant='outlined'
-                    color='inherit'
-                    onClick={handleOpen}
-                    size={isMobile ? 'small' : 'medium'}
-                    startIcon={
-                    <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
-                }>
-                    My Collection
-                </Button>
-            </Tooltip>
+            { useIcon &&
+                <Tooltip title='My Collection' arrow disableFocusListener>
+                    <IconButton onClick={handleOpen}>
+                        <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}
+                                          fontSize='small'
+                        />
+                    </IconButton>
+                </Tooltip>
+            }
+            { !useIcon &&
+                <Tooltip title='My Collection' arrow disableFocusListener>
+                    <Button
+                        variant='outlined'
+                        color='inherit'
+                        onClick={handleOpen}
+                        size={isMobile ? 'small' : 'medium'}
+                        startIcon={
+                            <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
+                        }>
+                        My Collection
+                    </Button>
+                </Tooltip>
+            }
             <Popover
                 open={open}
                 anchorEl={anchorEl}
@@ -68,9 +80,9 @@ function CollectionButton({id}) {
                 }}
             >
                 <Card>
-                    <CardHeader
-                        title='My Collection'
-                        style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
+                    <CardHeader  onClick={handleClose}
+                                 title='My Collection'
+                                 style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
                     />
                     <CardContent style={{paddingTop: 0}}>
                         <FormGroup>

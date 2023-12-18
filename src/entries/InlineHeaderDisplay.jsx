@@ -14,7 +14,6 @@ function InlineHeaderDisplay() {
 
     const {filters} = useContext(FilterContext)
     const {filterCount} = useContext(FilterContext)
-    const singleFilter = (filterCount===1)
 
     let currentCollection = ''
     if (filters && filters.collection) {
@@ -33,7 +32,7 @@ function InlineHeaderDisplay() {
                 <span style={{fontWeight: 500}}>My Collection</span>
             </CardContent>
             <CardActions style={{paddingTop: 0, float: 'right'}}>
-                { !singleFilter &&
+                {filterCount < 2 &&
                     <ClearFiltersButton/>
                 }
             </CardActions>
