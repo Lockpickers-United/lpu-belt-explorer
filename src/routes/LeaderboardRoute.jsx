@@ -6,7 +6,7 @@ import Leaderboard from '../leaderboard/Leaderboard'
 function LeaderboardRoute() {
     return (
         <React.Fragment>
-            <Nav/>
+            <Nav title='Collection Leaderboard'/>
 
             <Leaderboard/>
 
