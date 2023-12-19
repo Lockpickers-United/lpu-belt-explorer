@@ -122,7 +122,7 @@ function UserMenu() {
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Owned</ListItemText>
+                            <ListItemText>Own</ListItemText>
                         </MenuItem>
                         <MenuItem disabled>
                             <ListItemIcon>
@@ -143,7 +143,7 @@ function UserMenu() {
                             <ListItemText>Wishlist</ListItemText>
                         </MenuItem>
                         <Divider/>
-                        <MenuItem handleClick={('/leaderboard')}>
+                        <MenuItem onClick={handleClick('/leaderboard')}>
                             <ListItemIcon>
                                 <LeaderboardIcon fontSize='small'/>
                             </ListItemIcon>

@@ -54,7 +54,7 @@ function CollectionButton({id, dense}) {
                             variant='outlined'
                             color='inherit'
                             onClick={handleOpen}
-                            >
+                        >
                             <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'} fontSize='small'/>
                         </IconButton>
                         : <Button
@@ -62,8 +62,10 @@ function CollectionButton({id, dense}) {
                             color='inherit'
                             onClick={handleOpen}
                             startIcon={
-                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'} fontSize={isMobile ? 'small' : 'medium'}/>
-                            }>
+                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}
+                                                  fontSize={isMobile ? 'small' : 'medium'}/>
+                            }
+                        >
                             My Collection
                         </Button>
                 }

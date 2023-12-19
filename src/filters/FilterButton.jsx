@@ -58,7 +58,7 @@ function FilterButton({data}) {
                 open={open}
                 onClose={closeDrawer}
             >
-                <Toolbar variant='dense'  onClick={closeDrawer}>
+                <Toolbar variant='dense' onClick={closeDrawer}>
                     <Typography variant='h6'>Filters</Typography>
                 </Toolbar>
                 <Box margin={1}>
@@ -68,13 +68,13 @@ function FilterButton({data}) {
                                 return (!field.beta || beta) && (!field.userBased || isLoggedIn)
                             })
                             .map((field, index) =>
-                            <FilterByField
-                                data={data}
-                                key={index}
-                                {...field}
-                                onFilter={handleAddFilter}
-                            />
-                        )}
+                                <FilterByField
+                                    data={data}
+                                    key={index}
+                                    {...field}
+                                    onFilter={handleAddFilter}
+                                />
+                            )}
                     </Stack>
                 </Box>
                 <Toolbar variant='dense'>

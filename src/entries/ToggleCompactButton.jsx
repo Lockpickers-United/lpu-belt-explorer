@@ -5,11 +5,12 @@ import IconButton from '@mui/material/IconButton'
 import AppContext from '../contexts/AppContext'
 
 function ToggleCompactButton() {
-    const {compact, setCompact} = useContext(AppContext)
+    const {compact, setCompact, setExpanded} = useContext(AppContext)
 
     const handleClick = useCallback(() => {
         setCompact(!compact)
-    }, [compact, setCompact])
+        setExpanded(null)
+    }, [compact, setCompact, setExpanded])
 
     return (
         <Tooltip title='Toggle Compact View' arrow disableFocusListener>

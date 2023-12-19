@@ -4,3 +4,10 @@ export const collectionOptions = [
     {key: 'recorded', label: 'Recorded'},
     {key: 'wishlist', label: 'Wishlist'}
 ]
+
+export const validCollectionTypes = [
+    'Own',
+    'Picked',
+    'Recorded',
+    'Wishlist'
+]

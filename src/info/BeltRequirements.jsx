@@ -11,10 +11,8 @@ import InfoButton from './InfoButton'
 import AppContext from '../contexts/AppContext'
 import LinkToRequirementsButton from './CopyLinkToRequirementsButton'
 import beltRequirements from '../data/beltRequirements'
-import DataContext from '../contexts/DataContext'
 
 function BeltRequirements({belt}) {
-    const {visibleEntries = []} = useContext(DataContext)
     const {expanded, setExpanded} = useContext(AppContext)
     const handleExpand = useCallback((_, isExpanded) => {
         setExpanded(isExpanded ? 'beltreqs' : false)

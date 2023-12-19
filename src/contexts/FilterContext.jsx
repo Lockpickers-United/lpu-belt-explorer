@@ -1,14 +1,12 @@
-import React, {useCallback, useContext, useEffect, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import queryString from 'query-string'
 import {useLocation, useSearchParams} from 'react-router-dom'
 import {uniqueBelts} from '../data/belts'
-import AuthContext from './AuthContext'
 import LazyDataContext from './LazyDataContext'
 
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
-    const {isLoggedIn} = useContext(AuthContext)
     const location = useLocation()
     const [, setSearchParams] = useSearchParams()
     const {data} = useContext(LazyDataContext)
@@ -103,12 +101,6 @@ export function FilterProvider({children}) {
         const {tab, id, name} = filters
         setFilters({tab, id, name})
     }, [filters, setFilters])
-
-    useEffect(() => {
-        if (!isLoggedIn) {
-            removeFilters(['collection'])
-        }
-    }, [isLoggedIn, removeFilters])
 
     const filterCount = useMemo(() => {
         const {id, search, tab, name, sort, ...rest} = filters
