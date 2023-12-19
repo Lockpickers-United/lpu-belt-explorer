@@ -50,7 +50,7 @@ function InlineFilterDisplay() {
 
     if (!filterCount) return null
     const isValidCollection = isLoggedIn && typeof collection === 'string' &&
-        validCollectionTypes.includes(collection) && filterCount === 1
+        (validCollectionTypes.includes(collection) || collection === 'Any') && filterCount === 1
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 0}}>

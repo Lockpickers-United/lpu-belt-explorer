@@ -69,7 +69,6 @@ function CollectionButton({id, dense}) {
                             My Collection
                         </Button>
                 }
-
             </Tooltip>
             <Popover
                 open={open}
@@ -89,25 +88,21 @@ function CollectionButton({id, dense}) {
                     <CardContent style={{paddingTop: 0}}>
                         <FormGroup>
                             {collectionOptions.map(({key, label}) =>
-                                <React.Fragment key={key}>
-                                    {key !== 'any' &&
-                                        <FormControlLabel
-                                            control={
-                                                <Checkbox
-                                                    disabled={!isLoggedIn}
-                                                    color='secondary'
-                                                    checked={isChecked(key)}
-                                                    onChange={handleChange(key)}
-                                                />
-                                            }
-                                            label={label}
+                                <FormControlLabel
+                                    key={key}
+                                    control={
+                                        <Checkbox
+                                            disabled={!isLoggedIn}
+                                            color='secondary'
+                                            checked={isChecked(key)}
+                                            onChange={handleChange(key)}
                                         />
                                     }
-                                </React.Fragment>
+                                    label={label}
+                                />
                             )}
                         </FormGroup>
                     </CardContent>
-
                     <div style={{marginTop: -8, marginBottom: 16}}>
                         <SignInButton onClick={handleClose}/>
                     </div>
