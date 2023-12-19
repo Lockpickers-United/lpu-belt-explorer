@@ -2,7 +2,7 @@
   "data": [
     {
       "id": "UbhgAjZIuLauV1dw2G4QsocHIk83",
-      "DisplayName": "Georgia Jim",
+      "displayName": "Georgia Jim",
       "own": 234,
       "picked": 256,
       "recorded": 241,
@@ -10,7 +10,7 @@
     },
     {
       "id": "hnX373zhNoT1QZ3lc8IWVEvcz0R2",
-      "DisplayName": "DoctorHogmaster",
+      "displayName": "DoctorHogmaster",
       "own": 202,
       "picked": 223,
       "recorded": 172,
@@ -18,7 +18,7 @@
     },
     {
       "id": "8ZAMkphV1WS23gaAcC1UEjuzilf1",
-      "DisplayName": "Dra9i",
+      "displayName": "Dra9i",
       "own": 175,
       "picked": 192,
       "recorded": 135,
@@ -26,7 +26,7 @@
     },
     {
       "id": "f2yySWbxUBXF8k3HgorYhrm76gx2",
-      "DisplayName": "Rein",
+      "displayName": "Rein",
       "own": 98,
       "picked": 180,
       "recorded": 158,
@@ -48,7 +48,7 @@
     },
     {
       "id": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
-      "DisplayName": "Peace",
+      "displayName": "Peace",
       "own": 139,
       "picked": 77,
       "recorded": 47,
@@ -56,7 +56,7 @@
     },
     {
       "id": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
-      "DisplayName": "Greenish",
+      "displayName": "Greenish",
       "own": 66,
       "picked": 118,
       "recorded": 90,
@@ -71,7 +71,7 @@
     },
     {
       "id": "U3wCYsdGwYS8ujsO2K78iD68FMC3",
-      "DisplayName": "Dig",
+      "displayName": "Dig",
       "own": 118,
       "picked": 42,
       "recorded": 7,
@@ -79,7 +79,7 @@
     },
     {
       "id": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
-      "DisplayName": "Red Wanderer",
+      "displayName": "Red Wanderer",
       "own": 0,
       "picked": 112,
       "recorded": 83,
@@ -94,7 +94,7 @@
     },
     {
       "id": "yLbxfRWSKyWMZm9r2i2gD19J3Hb2",
-      "DisplayName": "septclues",
+      "displayName": "septclues",
       "own": 104,
       "picked": 37,
       "recorded": 10,
@@ -102,7 +102,7 @@
     },
     {
       "id": "AiS1jGKvjhVb4vOhmzVFzx2VNko2",
-      "DisplayName": "FloridaManPicks",
+      "displayName": "FloridaManPicks",
       "own": 101,
       "picked": 69,
       "recorded": 43,
@@ -110,7 +110,7 @@
     },
     {
       "id": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
-      "DisplayName": "DQ",
+      "displayName": "DQ",
       "own": 37,
       "picked": 84,
       "recorded": 81,
@@ -118,7 +118,7 @@
     },
     {
       "id": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
-      "DisplayName": "7woz3ro51x",
+      "displayName": "7woz3ro51x",
       "own": 28,
       "picked": 71,
       "recorded": 71,
@@ -126,7 +126,7 @@
     },
     {
       "id": "SODQHdFQUPYNqL37yiE2wGgVZUy2",
-      "DisplayName": "takendarkk",
+      "displayName": "takendarkk",
       "own": 81,
       "picked": 42,
       "recorded": 8,
@@ -141,7 +141,7 @@
     },
     {
       "id": "GGplAdctTfVDLVvYsfIADJmfp8f2",
-      "DisplayName": "mgsecure",
+      "displayName": "mgsecure",
       "own": 77,
       "picked": 52,
       "recorded": 13,
@@ -156,7 +156,7 @@
     },
     {
       "id": "mHlFwfstvgSgzUHnBNdKjPVFFgW2",
-      "DisplayName": "McBane",
+      "displayName": "McBane",
       "own": 76,
       "picked": 39,
       "recorded": 10,
@@ -178,7 +178,7 @@
     },
     {
       "id": "m70lMclrN7U0oMNeWleMSeyVm5E2",
-      "DisplayName": "fabianoh130",
+      "displayName": "fabianoh130",
       "own": 68,
       "picked": 39,
       "recorded": 0,
@@ -207,7 +207,7 @@
     },
     {
       "id": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
-      "DisplayName": "NiXXeD",
+      "displayName": "NiXXeD",
       "own": 61,
       "picked": 41,
       "recorded": 36,
@@ -299,7 +299,7 @@
     },
     {
       "id": "yBn09b92sJY9G7x1tjDIZEDBsiH3",
-      "DisplayName": "thegamingbug",
+      "displayName": "thegamingbug",
       "own": 40,
       "picked": 15,
       "recorded": 6,
@@ -335,7 +335,7 @@
     },
     {
       "id": "XX8BzLAvqmPeBTiqcdPZzojsTPF2",
-      "DisplayName": "tonysansan",
+      "displayName": "tonysansan",
       "own": 37,
       "picked": 32,
       "recorded": 31,
@@ -399,7 +399,7 @@
     },
     {
       "id": "tMviHgaeoqWKbYNrafjpMyJT1rh2",
-      "DisplayName": "minkle",
+      "displayName": "minkle",
       "own": 26,
       "picked": 24,
       "recorded": 8,
@@ -526,7 +526,7 @@
     },
     {
       "id": "1dlgPlIKx1dmCO3SH8axvWDbqZB2",
-      "DisplayName": "McFierce",
+      "displayName": "McFierce",
       "own": 15,
       "picked": 11,
       "recorded": 9,
