@@ -6,6 +6,7 @@ import BeltRequirements from '../info/BeltRequirements'
 import DataContext from '../contexts/DataContext'
 import AppContext from '../contexts/AppContext'
 import NoEntriesCard from './NoEntriesCard'
+import InlineCollectionSelect from './InlineCollectionSelect.jsx'
 
 function Entries() {
     const {compact, tab, expanded, setExpanded, displayAll} = useContext(AppContext)
@@ -29,8 +30,9 @@ function Entries() {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay/>
+                <InlineCollectionSelect/>
 
-                {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
+                {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
                 {entries.length === 0 && <NoEntriesCard/>}
 

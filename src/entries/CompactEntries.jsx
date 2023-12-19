@@ -7,20 +7,22 @@ import React from 'react'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
 import EntryName from './EntryName'
+import Divider from '@mui/material/Divider'
 
 function CompactEntries({entries}) {
     return (
         <Card style={{maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}}>
-            <List dense style={{paddingTop: 0}}>
+            <List dense style={{padding: 0}}>
                 {entries.map(entry =>
-                    <ListItem key={entry.id} sx={{minHeight: 64, borderTop: '1px solid rgba(255, 255, 255, 0.12)'}}>
+                    <ListItem key={entry.id}
+                              style = {{minHeight: 64, borderTop: '1px solid rgba(255, 255, 255, 0.12)'}}>
                         <BeltStripe value={entry.belt}/>
 
                         <ListItemText
                             primary={EntryName(entry)}
                             primaryTypographyProps={{fontWeight: 500}}
                             secondary={entry.version}
-                            style={{padding: '10px 0px'}}
+                            style={{padding: '0px 0px 0px 10px'}}
                         />
 
                         <ListItemIcon style={{minWidth: 20, marginLeft: 16}}>
@@ -29,6 +31,7 @@ function CompactEntries({entries}) {
                     </ListItem>
                 )}
             </List>
+            <Divider/>
         </Card>
     )
 }
