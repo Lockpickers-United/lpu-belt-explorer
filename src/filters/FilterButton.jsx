@@ -58,7 +58,7 @@ function FilterButton({data}) {
                 open={open}
                 onClose={closeDrawer}
             >
-                <Toolbar variant='dense'>
+                <Toolbar variant='dense'  onClick={closeDrawer}>
                     <Typography variant='h6'>Filters</Typography>
                 </Toolbar>
                 <Box margin={1}>

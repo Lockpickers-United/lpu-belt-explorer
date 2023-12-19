@@ -54,17 +54,15 @@ function CollectionButton({id, dense}) {
                             variant='outlined'
                             color='inherit'
                             onClick={handleOpen}
-                            size={isMobile ? 'small' : 'medium'}
                             >
-                            <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
+                            <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'} fontSize='small'/>
                         </IconButton>
                         : <Button
                             variant='outlined'
                             color='inherit'
                             onClick={handleOpen}
-                            size={isMobile ? 'small' : 'medium'}
                             startIcon={
-                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
+                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'} fontSize={isMobile ? 'small' : 'medium'}/>
                             }>
                             My Collection
                         </Button>
@@ -84,6 +82,7 @@ function CollectionButton({id, dense}) {
                     <CardHeader
                         title='My Collection'
                         style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
+                        onClick={handleClose}
                     />
                     <CardContent style={{paddingTop: 0}}>
                         <FormGroup>
