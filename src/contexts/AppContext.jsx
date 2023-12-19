@@ -56,8 +56,11 @@ export function AppProvider({children}) {
     const [beta, setBeta] = useState(import.meta.env.DEV)
     useHotkeys('ctrl+shift+m', () => setBeta(!beta))
 
+    const [compact, setCompact] = useState(false)
+
     const value = useMemo(() => ({
         beta,
+        compact,
         tab: filters.tab,
         setTab: handleSetTab,
         expanded,
@@ -65,8 +68,9 @@ export function AppProvider({children}) {
         setExpanded: handleSetExpanded,
         clearExpanded: handleClearExpanded,
         displayAll: displayAll && filters.tab === 'search',
-        setDisplayAll
-    }), [beta, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab])
+        setDisplayAll,
+        setCompact,
+    }), [beta, compact, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab])
 
     return (
         <AppContext.Provider value={value}>

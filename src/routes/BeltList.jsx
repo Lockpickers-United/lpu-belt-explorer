@@ -4,6 +4,7 @@ import {DataProvider} from '../contexts/DataContext'
 import {FilterProvider} from '../contexts/FilterContext'
 import {LazyDataProvider} from '../contexts/LazyDataContext'
 import Entries from '../entries/Entries'
+import ToggleCompactButton from '../entries/ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
 import InfoButton from '../info/InfoButton'
@@ -23,7 +24,7 @@ function BeltList() {
 
             <div style={{flexGrow: 1}}></div>
 
-            <InfoButton icon/>
+            <ToggleCompactButton/>
             <SortButton/>
             <FilterButton/>
         </React.Fragment>
@@ -31,6 +32,8 @@ function BeltList() {
     const footer = (
         <React.Fragment>
             <br/>
+            <InfoButton icon/>
+            &nbsp;•&nbsp;
             <HotkeyInfoButton/>
             &nbsp;•&nbsp;
             <RandomEntryButton/>

@@ -20,7 +20,7 @@ function BeltRequirements({belt}) {
         setExpanded(isExpanded ? 'beltreqs' : false)
         window.scrollTo({top: 0, behavior: 'smooth'})
     }, [setExpanded])
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
     const markdown = beltRequirements[belt]
 
     if (!markdown || (!visibleEntries.length > 0)) return null

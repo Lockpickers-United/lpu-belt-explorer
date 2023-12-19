@@ -1,16 +1,15 @@
 import React, {useContext, useDeferredValue, useMemo} from 'react'
+import CompactEntries from './CompactEntries'
 import Entry from './Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements'
 import DataContext from '../contexts/DataContext'
 import AppContext from '../contexts/AppContext'
 import NoEntriesCard from './NoEntriesCard'
-import InlineHeaderDisplay from '../filters/InlineHeaderDisplay'
-import InlineDisplaySpacer from '../filters/InlineDisplaySpacer.jsx'
 
 function Entries() {
+    const {compact, tab, expanded, setExpanded, displayAll} = useContext(AppContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
-    const {tab, expanded, setExpanded, displayAll} = useContext(AppContext)
 
     const defTab = useDeferredValue(tab)
     const defExpanded = useDeferredValue(expanded)
@@ -29,23 +28,24 @@ function Entries() {
     return (
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
-
-                <InlineDisplaySpacer/>
-                <InlineHeaderDisplay/>
                 <InlineFilterDisplay/>
 
                 {defTab !== 'search' && <BeltRequirements belt={defTab}/>}
 
                 {entries.length === 0 && <NoEntriesCard/>}
 
-                {entries.map(entry =>
-                    <Entry
-                        key={entry.id}
-                        entry={entry}
-                        expanded={entry.id === defExpanded}
-                        onExpand={setExpanded}
-                    />
-                )}
+                {compact
+                    ? <CompactEntries entries={entries}/>
+                    : entries.map(entry =>
+                        <Entry
+                            key={entry.id}
+                            entry={entry}
+                            expanded={entry.id === defExpanded}
+                            onExpand={setExpanded}
+                        />
+                    )
+                }
+
             </div>
         </React.Fragment>
     )

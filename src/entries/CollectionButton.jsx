@@ -1,3 +1,4 @@
+import IconButton from '@mui/material/IconButton'
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
@@ -15,7 +16,7 @@ import DBContext from '../contexts/DBContext'
 import {collectionOptions} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 
-function CollectionButton({id}) {
+function CollectionButton({id, dense}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -47,16 +48,28 @@ function CollectionButton({id}) {
     return (
         <React.Fragment>
             <Tooltip title='My Collection' arrow disableFocusListener>
-                <Button
-                    variant='outlined'
-                    color='inherit'
-                    onClick={handleOpen}
-                    size={isMobile ? 'small' : 'medium'}
-                    startIcon={
-                        <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
-                    }>
-                    My Collection
-                </Button>
+                {
+                    dense
+                        ? <IconButton
+                            variant='outlined'
+                            color='inherit'
+                            onClick={handleOpen}
+                            size={isMobile ? 'small' : 'medium'}
+                            >
+                            <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
+                        </IconButton>
+                        : <Button
+                            variant='outlined'
+                            color='inherit'
+                            onClick={handleOpen}
+                            size={isMobile ? 'small' : 'medium'}
+                            startIcon={
+                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
+                            }>
+                            My Collection
+                        </Button>
+                }
+
             </Tooltip>
             <Popover
                 open={open}
