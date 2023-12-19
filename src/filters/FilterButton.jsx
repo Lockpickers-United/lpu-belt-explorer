@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useState} from 'react'
 import Box from '@mui/material/Box'
-import SwipeableDrawer from '@mui/material/SwipeableDrawer'
+import Drawer from '@mui/material/Drawer'
 import Tooltip from '@mui/material/Tooltip'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import IconButton from '@mui/material/IconButton'
@@ -53,10 +53,9 @@ function FilterButton({data}) {
                 </IconButton>
             </Tooltip>
 
-            <SwipeableDrawer
+            <Drawer
                 anchor='right'
                 open={open}
-                onOpen={openDrawer}
                 onClose={closeDrawer}
             >
                 <Toolbar variant='dense'>
@@ -88,7 +87,7 @@ function FilterButton({data}) {
                         Done
                     </Button>
                 </Toolbar>
-            </SwipeableDrawer>
+            </Drawer>
         </React.Fragment>
     )
 }

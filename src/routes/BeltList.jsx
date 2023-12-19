@@ -24,9 +24,9 @@ function BeltList() {
 
             <div style={{flexGrow: 1}}></div>
 
-            <ToggleCompactButton/>
             <SortButton/>
             <FilterButton/>
+            <ToggleCompactButton/>
         </React.Fragment>
     )
     const footer = (

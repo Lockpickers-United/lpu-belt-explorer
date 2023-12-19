@@ -9,7 +9,13 @@ import Button from '@mui/material/Button'
 function NoEntriesCard() {
     const {tab} = useContext(AppContext)
     const defTab = useDeferredValue(tab)
-    const style = {marginTop: 16, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const style = {
+        marginTop: 16,
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        borderRadius: 0
+    }
     const {setDisplayAll} = useContext(AppContext)
 
     const isSearchTab = defTab === 'search'
