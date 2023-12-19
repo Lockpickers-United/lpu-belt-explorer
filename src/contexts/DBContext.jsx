@@ -54,10 +54,10 @@ export function DBProvider({children}) {
 
     const value = useMemo(() => ({
         anyCollection: [...new Set([
-            ...lockCollection.own,
-            ...lockCollection.picked,
-            ...lockCollection.recorded,
-            ...lockCollection.wishlist
+            ...lockCollection?.own || [],
+            ...lockCollection?.picked || [],
+            ...lockCollection?.recorded || [],
+            ...lockCollection?.wishlist || []
         ])],
         lockCollection,
         addToLockCollection,

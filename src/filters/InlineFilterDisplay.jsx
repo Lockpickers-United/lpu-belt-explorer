@@ -58,7 +58,7 @@ function InlineFilterDisplay() {
                 title={isValidCollection ? 'My Collection' : 'Filters'}
                 action={<ClearFiltersButton/>}
             />
-            <CardContent style={{paddingTop: 0}}>
+            <CardContent style={{paddingTop: 0, paddingLeft: 8}}>
                 {
                     isValidCollection &&
                     <FormControl fullWidth size='small' sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
