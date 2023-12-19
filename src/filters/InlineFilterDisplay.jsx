@@ -16,7 +16,7 @@ import useWindowSize from '../util/useWindowSize'
 function InlineFilterDisplay() {
     const {isLoggedIn} = useContext(AuthContext)
     const {filters, filterCount, setFilters} = useContext(FilterContext)
-    const {lockCollection} = useContext(DBContext)
+    const {anyCollection, lockCollection} = useContext(DBContext)
     const [open, setOpen] = React.useState(false)
 
     const {collection} = filters
@@ -72,7 +72,7 @@ function InlineFilterDisplay() {
                         >
                             {validCollectionTypes.map((list, index) =>
                                 <MenuItem key={index} value={list}>
-                                    {list} ({lockCollection[list.toLowerCase()]?.length || 0})
+                                    {list} ({list === 'Any' ? anyCollection.length : lockCollection[list.toLowerCase()]?.length || 0})
                                 </MenuItem>
                             )}
                         </Select>

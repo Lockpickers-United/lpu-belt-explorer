@@ -10,7 +10,7 @@ import removeAccents from 'remove-accents'
 const DataContext = React.createContext({})
 
 export function DataProvider({children}) {
-    const {lockCollection} = useContext(DBContext)
+    const {anyCollection, lockCollection} = useContext(DBContext)
     const {data: allEntries} = useContext(LazyDataContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, ...filters} = allFilters
@@ -42,14 +42,15 @@ export function DataProvider({children}) {
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
                 collection: [
-                    lockCollection.own?.includes?.(entry.id) ? 'Own' : "Don't Own",
+                    anyCollection.includes(entry.id) ? 'Any' : 'Not in any Collection',
+                    lockCollection.own?.includes?.(entry.id) ? 'Own' : 'Don\'t Own',
                     lockCollection.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
                     lockCollection.wishlist?.includes?.(entry.id) ? 'Wishlist' : 'Not on Wishlist',
                     lockCollection.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [allEntries, lockCollection])
+    }, [anyCollection, allEntries, lockCollection])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
