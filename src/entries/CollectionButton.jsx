@@ -90,17 +90,19 @@ function CollectionButton({id, dense}) {
                         <FormGroup>
                             {collectionOptions.map(({key, label}) =>
                                 <React.Fragment key={key}>
-                                    <FormControlLabel
-                                        control={
-                                            <Checkbox
-                                                disabled={!isLoggedIn}
-                                                color='secondary'
-                                                checked={isChecked(key)}
-                                                onChange={handleChange(key)}
-                                            />
-                                        }
-                                        label={label}
-                                    />
+                                    {key !== 'any' &&
+                                        <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    disabled={!isLoggedIn}
+                                                    color='secondary'
+                                                    checked={isChecked(key)}
+                                                    onChange={handleChange(key)}
+                                                />
+                                            }
+                                            label={label}
+                                        />
+                                    }
                                 </React.Fragment>
                             )}
                         </FormGroup>
