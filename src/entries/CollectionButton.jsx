@@ -53,8 +53,8 @@ function CollectionButton({id}) {
                     onClick={handleOpen}
                     size={isMobile ? 'small' : 'medium'}
                     startIcon={
-                    <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
-                }>
+                        <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}/>
+                    }>
                     My Collection
                 </Button>
             </Tooltip>

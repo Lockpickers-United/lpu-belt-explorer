@@ -1,40 +1,34 @@
-import React, {useCallback} from 'react'
+import Card from '@mui/material/Card'
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import introMd from '../resources/intro.md?raw'
 import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
 
 function InfoPage() {
-
     const updateTime = '12/4/2023'
 
     return (
         <React.Fragment>
-
-
-            <div style={{
-                maxWidth: 700, padding: '8px 8px 16px 8px', backgroundColor: '#000',
-                marginLeft: 'auto', marginRight: 'auto'
+            <Card style={{
+                maxWidth: 800,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginTop: 16,
+                marginButtom: 16
             }}>
-
-                <div style={{width: '95%', marginLeft: 'auto', marginRight: 'auto'}}>
-
+                <CardContent>
                     <ReactMarkdown linkTarget="_blank">
                         {markdown}
                     </ReactMarkdown>
-                </div>
-            </div>
-
-            <div style={{
-                padding: '8px 12px 24px 8px', fontSize: '0.8rem', textAlign: 'right', color: '#ccc',
-                maxWidth: 700, backgroundColor: '#111', marginLeft: 'auto', marginRight: 'auto'
-            }}>
-
-                Updated: {updateTime}
-            </div>
-
+                </CardContent>
+                <CardActions>
+                    Updated: {updateTime}
+                </CardActions>
+            </Card>
         </React.Fragment>
-
     )
 }
 
