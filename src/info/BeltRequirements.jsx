@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 import AccordionActions from '@mui/material/AccordionActions'
 import InfoButton from './InfoButton'
 import AppContext from '../contexts/AppContext'
-import LinkToRequirementsButton from './LinkToRequirementsButton'
+import LinkToRequirementsButton from './CopyLinkToRequirementsButton'
 import beltRequirements from '../data/beltRequirements'
 import DataContext from '../contexts/DataContext'
 

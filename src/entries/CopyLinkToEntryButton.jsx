@@ -1,9 +1,10 @@
 import React, {useCallback} from 'react'
+import {enqueueSnackbar} from 'notistack'
 import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 
-function LinkToEntryButton() {
+function CopyLinkToEntryButton() {
     const handleClick = useCallback(async () => {
         const link = new URL(location)
         if (link.host.toLowerCase().startsWith('lpubelts')) {
@@ -11,6 +12,7 @@ function LinkToEntryButton() {
         }
 
         await navigator.clipboard.writeText(link.href)
+        enqueueSnackbar('Link to entry copied to clipboard.')
     }, [])
 
     return (
@@ -22,4 +24,4 @@ function LinkToEntryButton() {
     )
 }
 
-export default LinkToEntryButton
+export default CopyLinkToEntryButton

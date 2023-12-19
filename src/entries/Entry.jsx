@@ -12,11 +12,11 @@ import FieldValue from './FieldValue'
 import BeltIcon from './BeltIcon'
 import ReactMarkdown from 'react-markdown'
 import FilterChip from '../filters/FilterChip'
-import LinkToEntryButton from './LinkToEntryButton'
+import CopyLinkToEntryButton from './CopyLinkToEntryButton'
 import ImageGallery from './ImageGallery'
 import AccordionActions from '@mui/material/AccordionActions'
 import Button from '@mui/material/Button'
-import CopyEntryButton from './CopyEntryButton'
+import CopyEntryTextButton from './CopyEntryTextButton'
 import Tracker from '../app/Tracker'
 import queryString from 'query-string'
 import RelatedEntryButton from './RelatedEntryButton'
@@ -190,8 +190,8 @@ function Entry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker id={entry.id}/>
-                        <CopyEntryButton entry={entry}/>
-                        <LinkToEntryButton/>
+                        <CopyEntryTextButton entry={entry}/>
+                        <CopyLinkToEntryButton/>
                     </AccordionActions>
                 </React.Fragment>
             }
