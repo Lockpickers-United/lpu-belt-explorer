@@ -16,7 +16,7 @@ function Nav({extras, title}) {
 
                     <HomeButton/>
 
-                    <div style={{flexGrow: 1, fontWeight: 500, fontSize: '1.7rem'}}>{title}</div>
+                    <div style={{flexGrow: 1, fontWeight: 500, fontSize: '1.5rem'}}>{title}</div>
 
                     <VersionChecker/>
 
