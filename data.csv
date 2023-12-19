@@ -448,7 +448,7 @@ Purple,Kwikset,"Smartkey SC1 gen I",,Slider,,,dd1bf2af
 Purple,Legge,"BS Sash lock","5 lever",Lever,"Mortise,Sliding levers,Pin key,Curtain,False gates",,bb317675
 Purple,"LIPS,LIPS","Keso (door cylinder),Octro","<13 pins",Dimple,"High pin count",,c5b7e63b
 Purple,LIPS,"Keso padlock",,Dimple,,,434b5b25
-Purple,Liquidonics,"Miracle Magnetic",,"Magnet,Pin-tumbler","Magnetic rotors",,50d411f4
+Purple,Liquidonics,"Miracle Magnetic",,"Magnet,Pin-tumbler",Magnetic,,50d411f4
 Purple,Lockman,Megacross,"9-pins, mushroom drivers",Dimple,"High pin count",,9982c0eb
 Purple,Lockwood,MT5,"VPI, heavily mastered *****","Dimple,Slider",,"***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",883fb3cd
 Purple,Lockwood,Twin,,"Pin-tumbler,Sidepins","Active sidebar,False gates",,71833308
@@ -469,7 +469,7 @@ Purple,Mul-T-Lock,"Classic Pro",,Dimple,Pin-in-pin,,fd2b533e
 Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, serrated drivers",Dimple,Pin-in-pin,,48323cde
 Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, 4+ spooled drivers, <3 countermilled outer keypins",Dimple,"Pin-in-pin,Undercut milling",,3335df97
 Purple,Mul-T-Lock,MT5,,Dimple,Pin-in-pin,,16906a6c
-Purple,Mul-T-Lock,"Omega Plus",,Dimple,Pin-in-pin,,8a65b956
+Purple,Mul-T-Lock,"Omega Plus",,Dimple,,,8a65b956
 Purple,Nagasawa,"Kodai KCY-31","6 pin",Pin-tumbler,,,3efc97ad
 Purple,"Nemef,Nemef,Lips","NF2,NF3,8300",,Pin-tumbler,"Tapered drivers",,94466c21
 Purple,Nemef,NF4,,Dimple,"Tapered drivers",,4debdca1
@@ -771,7 +771,7 @@ Unranked,Fichet-Bauche,Monopole,,Pump/push,"Under Review ⚑",,3bd433d7
 Unranked,,Flora,,,"Insufficient information",,e8feb6f3
 Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates,Wiggly keyway",,89207b78
 Unranked,"FTH Thirard",Pacific,,,"Under Review ⚑",,a57c1e9b
-Unranked,,Gaab," 6-pin dimple",Dimple,"Under Review ⚑",,cd5acff8
+Unranked,,Gaab,"6-pin dimple",Dimple,"Under Review ⚑",,cd5acff8
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,Glip,,Pin-tumbler,"Insufficient information",,5599bd8a
 Unranked,,Gloss,,,"Insufficient information",,836c5ce3
