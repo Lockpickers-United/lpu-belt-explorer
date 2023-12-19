@@ -19732,7 +19732,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Magnetic rotors"
+      "Magnetic"
     ],
     "media": [
       {
@@ -19841,7 +19841,7 @@
       }
     ],
     "views": 206,
-    "lastUpdated": "2023-12-11T12:10:16.206Z"
+    "lastUpdated": "2023-12-19T11:35:31.118Z"
   },
   {
     "id": "9982c0eb",
@@ -20952,9 +20952,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Pin-in-pin"
-    ],
     "media": [
       {
         "title": "By: Norlin",
@@ -20965,7 +20962,7 @@
       }
     ],
     "views": 230,
-    "lastUpdated": "2023-07-30T18:08:31.207Z"
+    "lastUpdated": "2023-12-19T11:35:31.119Z"
   },
   {
     "id": "3efc97ad",
@@ -38165,7 +38162,7 @@
         "model": "Gaab"
       }
     ],
-    "version": " 6-pin dimple",
+    "version": "6-pin dimple",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -38196,7 +38193,7 @@
       }
     ],
     "views": 19,
-    "lastUpdated": "2023-08-10T00:09:36.305Z"
+    "lastUpdated": "2023-12-19T11:35:31.131Z"
   },
   {
     "id": "88085257",
