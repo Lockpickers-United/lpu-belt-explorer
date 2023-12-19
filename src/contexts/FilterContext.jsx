@@ -19,7 +19,7 @@ export function FilterProvider({children}) {
             if (entry) {
                 initialFilters.id = id
                 initialFilters.name = name
-                initialFilters.tab = entry.belt.replace(/\s\d/g, '')
+                initialFilters.tab = tab === 'search' ? 'search' : entry.belt.replace(/\s\d/g, '')
             } else if (name && !initialFilters.search) {
                 initialFilters.search = name.replace(/_/g, ' ')
             }
@@ -106,6 +106,8 @@ export function FilterProvider({children}) {
         const {id, search, tab, name, sort, ...rest} = filters
         return Object.keys(rest).length
     }, [filters])
+
+    console.log('duh', filters)
 
     const value = useMemo(() => ({
         filters,
