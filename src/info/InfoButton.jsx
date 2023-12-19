@@ -1,44 +1,42 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
-import InfoDialog from './InfoDialog'
 import IconButton from '@mui/material/IconButton'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
-import {useHotkeys} from 'react-hotkeys-hook'
+import {useNavigate} from 'react-router-dom'
 
-function InfoButton({icon}) {
-    const [open, setOpen] = useState(false)
-    const handleOpen = useCallback(() => setOpen(true), [])
-    const handleClose = useCallback(() => setOpen(false), [])
-    const handleHotkey = useCallback(() => {
-        if (!icon) return false
-        else setOpen(!open)
-    }, [icon, open])
-    useHotkeys('i', handleHotkey)
+function InfoButton({icon, active}) {
+    const navigate = useNavigate()
+
+    const handleClick = useCallback(url => () => {
+        navigate(url)
+    }, [navigate])
 
     const button = icon
         ? (
-            <IconButton color='inherit' onClick={handleOpen}>
+            <IconButton color='inherit' onClick={handleClick('/info')}>
                 <InfoOutlinedIcon/>
             </IconButton>
         )
         : (
-            <Button color='inherit' onClick={handleOpen}>
+            <Button color='inherit' onClick={handleClick('/info')}>
                 Read more...
             </Button>
         )
 
-    return (
-        <React.Fragment>
-            <Tooltip title='Information' arrow disableFocusListener>
-                {button}
-            </Tooltip>
-            <InfoDialog
-                open={open}
-                onClose={handleClose}
-            />
-        </React.Fragment>
-    )
+    if (active) {
+        return (
+            <InfoOutlinedIcon color='secondary'/>
+        )
+    } else {
+        return (
+            <React.Fragment>
+                <Tooltip title='Information' arrow disableFocusListener>
+                    {button}
+                </Tooltip>
+            </React.Fragment>
+        )
+    }
 }
 
 export default InfoButton
