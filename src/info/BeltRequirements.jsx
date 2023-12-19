@@ -11,6 +11,7 @@ import InfoButton from './InfoButton'
 import AppContext from '../contexts/AppContext'
 import LinkToRequirementsButton from './LinkToRequirementsButton'
 import beltRequirements from '../data/beltRequirements'
+
 import DataContext from '../contexts/DataContext'
 
 function BeltRequirements({belt}) {
@@ -20,7 +21,9 @@ function BeltRequirements({belt}) {
         setExpanded(isExpanded ? 'beltreqs' : false)
         window.scrollTo({top: 0, behavior: 'smooth'})
     }, [setExpanded])
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const style = {
+        maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0
+    }
     const markdown = beltRequirements[belt]
 
     if (!markdown || (!visibleEntries.length > 0)) return null
@@ -28,7 +31,7 @@ function BeltRequirements({belt}) {
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={belt}/>
-                <Typography variant='h6' style={{margin: '0px 0px 0px 12px'}}>{belt} Belt Requirements</Typography>
+                <Typography variant="h6" style={{margin: '0px 0px 0px 12px'}}>{belt} Belt Requirements</Typography>
             </AccordionSummary>
             <AccordionDetails style={{margin: '0px 0px 0px 12px'}}>
                 <ReactMarkdown>

@@ -7,7 +7,7 @@ import Tracker from '../app/Tracker'
 import ScrollToTopButton from './ScrollToTopButton'
 import UserMenu from './UserMenu'
 
-function Nav({extras, title}) {
+function Nav({extras,title}) {
     return (
         <React.Fragment>
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
@@ -16,7 +16,7 @@ function Nav({extras, title}) {
 
                     <HomeButton/>
 
-                    <div style={{flexGrow: 1, fontWeight: 500, fontSize: '1.7rem'}}>{title}</div>
+                    <div style={{flexGrow: 1, fontWeight: 500, fontSize: '1.5rem'}}>{title}</div>
 
                     <VersionChecker/>
 

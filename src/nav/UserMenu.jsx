@@ -30,6 +30,11 @@ function UserMenu() {
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
     const handleClick = useCallback(url => () => {
+        const currentRoute = window.location.href.match(/#\/(\w*)/i)[1]
+        const urlRoute = url.match(/\/(\w*)/i)[1]
+        if (currentRoute.match(/(belt|compact)/) && urlRoute.match(/(belt|compact)/)) {
+            url = url.replace(urlRoute, currentRoute)
+        }
         handleClose()
         navigate(url)
     }, [handleClose, navigate])
@@ -48,7 +53,7 @@ function UserMenu() {
                             ? <Avatar
                                 alt={user.displayName}
                                 src={user.photoURL}
-                                sx={{ width: 24, height: 24 }}
+                                sx={{width: 24, height: 24}}
                             />
                             : <AccountCircleIcon/>
                     }
