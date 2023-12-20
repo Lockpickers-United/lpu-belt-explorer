@@ -10,6 +10,7 @@ function InfoButton({icon, active}) {
 
     const handleClick = useCallback(url => () => {
         navigate(url)
+        window.scrollTo({top: 0})
     }, [navigate])
 
     const button = icon
