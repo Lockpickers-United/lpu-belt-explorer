@@ -10,7 +10,7 @@ import Tooltip from '@mui/material/Tooltip'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useContext, useState} from 'react'
 import DataContext from '../contexts/DataContext'
-import EntryName from '../entries/EntryName.js'
+import entryName from '../entries/entryName'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
 
@@ -35,7 +35,7 @@ function ExportButton() {
             model: datum.makeModels.map(e => e.model).join(','),
             version: datum.version,
             belt: datum.belt,
-            name: EntryName(datum),
+            name: entryName(datum),
             versionText: datum.version ? ' (' + datum.version + ')' : ''
         }))
 
@@ -56,7 +56,7 @@ function ExportButton() {
             model: datum.makeModels.map(e => e.model).join(','),
             version: datum.version,
             belt: datum.belt,
-            name: EntryName(datum)
+            name: entryName(datum)
         }))
 
         const headers = csvColumns.join(',')

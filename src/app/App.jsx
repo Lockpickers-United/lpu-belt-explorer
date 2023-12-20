@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import {AuthProvider} from '../contexts/AuthContext'
 import {DBProvider} from '../contexts/DBContext'
 import {createHashRouter, RouterProvider} from 'react-router-dom'
-import routes from '../routes/routes'
+import routes from './routes'
 
 const darkTheme = createTheme({
     palette: {

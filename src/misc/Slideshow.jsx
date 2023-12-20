@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../contexts/AppContext'
-import LazyDataContext from '../contexts/LazyDataContext'
+import DataContext from '../contexts/DataContext'
 import licenses from '../data/licenses'
 import Transition from '../util/Transition'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
@@ -24,15 +24,15 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen'
 
 function Slideshow({onClose}) {
     const handle = useFullScreenHandle()
-    const {data} = useContext(LazyDataContext)
+    const {visibleEntries} = useContext(DataContext)
     const media = useMemo(() => {
-        return data
+        return visibleEntries
             .filter(datum => datum.media)
             .flatMap(datum => datum.media.map(m => ({
                 entry: datum,
                 ...m
             })))
-    }, [data])
+    }, [visibleEntries])
 
     const [visible, setVisible] = useState(false)
     const [open, setOpen] = useState(true)

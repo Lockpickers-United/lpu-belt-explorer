@@ -53,7 +53,7 @@ export function AppProvider({children}) {
 
     const [displayAll, setDisplayAll] = useState(false)
 
-    const [beta, setBeta] = useState(import.meta.env.DEV)
+    const [beta, setBeta] = useState(false)
     useHotkeys('ctrl+shift+m', () => setBeta(!beta))
 
     const [compact, setCompact] = useState(false)

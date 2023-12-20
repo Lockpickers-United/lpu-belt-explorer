@@ -1,6 +1,6 @@
 import React, {useContext, useDeferredValue, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
-import Entry from './Entry'
+import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements'
 import DataContext from '../contexts/DataContext'

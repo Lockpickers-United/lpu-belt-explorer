@@ -4,9 +4,9 @@ import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import React from 'react'
-import BeltStripe from './BeltStripe'
-import CollectionButton from './CollectionButton'
-import EntryName from './EntryName'
+import BeltStripe from '../entries/BeltStripe'
+import CollectionButton from '../entries/CollectionButton'
+import entryName from '../entries/entryName'
 import Divider from '@mui/material/Divider'
 
 function CompactEntries({entries}) {
@@ -21,7 +21,7 @@ function CompactEntries({entries}) {
                         <BeltStripe value={entry.belt}/>
 
                         <ListItemText
-                            primary={EntryName(entry)}
+                            primary={entryName(entry)}
                             primaryTypographyProps={{fontWeight: 500}}
                             secondary={entry.version}
                             style={{padding: '0px 0px 0px 10px'}}

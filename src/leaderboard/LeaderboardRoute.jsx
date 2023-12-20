@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
-import Leaderboard from '../leaderboard/Leaderboard'
+import Leaderboard from './Leaderboard'
 
 function LeaderboardRoute() {
     return (

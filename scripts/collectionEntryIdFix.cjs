@@ -32,4 +32,4 @@ const idPromises = idHistory.map(async ({oldId, newId}) => {
     })
     await Promise.all(collectionPromises)
 })
-return Promise.all(idPromises)
+Promise.all(idPromises)

@@ -2,16 +2,15 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DBContext from './DBContext'
 import FilterContext from './FilterContext'
-import LazyDataContext from './LazyDataContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
+import allEntries from '../data/data.json'
 
 const DataContext = React.createContext({})
 
 export function DataProvider({children}) {
     const {anyCollection, lockCollection} = useContext(DBContext)
-    const {data: allEntries} = useContext(LazyDataContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, ...filters} = allFilters
 
@@ -50,7 +49,7 @@ export function DataProvider({children}) {
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [anyCollection, allEntries, lockCollection])
+    }, [anyCollection, lockCollection])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -106,7 +105,7 @@ export function DataProvider({children}) {
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
-    }, [allEntries])
+    }, [])
 
     const getNameFromId = useCallback(id => {
         const entry = getEntryFromId(id)
@@ -123,7 +122,7 @@ export function DataProvider({children}) {
         visibleEntries,
         getEntryFromId,
         getNameFromId
-    }), [allEntries, getNameFromId, getEntryFromId, visibleEntries])
+    }), [getNameFromId, getEntryFromId, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

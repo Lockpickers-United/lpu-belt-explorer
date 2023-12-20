@@ -2,9 +2,8 @@ import React from 'react'
 import {AppProvider} from '../contexts/AppContext'
 import {DataProvider} from '../contexts/DataContext'
 import {FilterProvider} from '../contexts/FilterContext'
-import {LazyDataProvider} from '../contexts/LazyDataContext'
-import Entries from '../entries/Entries'
-import ToggleCompactButton from '../entries/ToggleCompactButton'
+import Entries from './Entries'
+import ToggleCompactButton from './ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
 import InfoButton from '../info/InfoButton'
@@ -17,7 +16,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 
-function BeltList() {
+function BeltListRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox/>
@@ -45,21 +44,19 @@ function BeltList() {
     )
 
     return (
-        <LazyDataProvider>
-            <FilterProvider>
-                <DataProvider>
-                    <AppProvider>
-                        <Nav extras={nav}/>
-                        <BeltToolbar/>
+        <FilterProvider>
+            <DataProvider>
+                <AppProvider>
+                    <Nav extras={nav}/>
+                    <BeltToolbar/>
 
-                        <Entries/>
+                    <Entries/>
 
-                        <Footer extras={footer}/>
-                    </AppProvider>
-                </DataProvider>
-            </FilterProvider>
-        </LazyDataProvider>
+                    <Footer extras={footer}/>
+                </AppProvider>
+            </DataProvider>
+        </FilterProvider>
     )
 }
 
-export default BeltList
+export default BeltListRoute

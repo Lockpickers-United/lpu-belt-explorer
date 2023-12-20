@@ -41,4 +41,4 @@ function BeltRequirements({belt}) {
     )
 }
 
-export default React.memo(BeltRequirements)
+export default BeltRequirements

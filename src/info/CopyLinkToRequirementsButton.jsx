@@ -21,4 +21,4 @@ function LinkToEntryButton() {
     )
 }
 
-export default React.memo(LinkToEntryButton)
+export default LinkToEntryButton
