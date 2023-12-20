@@ -9,21 +9,18 @@ import TableContainer from '@mui/material/TableContainer'
 import dayjs from 'dayjs'
 import LeaderboardHeader from './LeaderboardHeader'
 import LeaderboardRow from './LeaderboardRow'
-import leaderboardData from '../data/leaderboardData.json'
 
 function Leaderboard() {
     const {user} = useContext(AuthContext)
     const [data, setData] = useState({data: [], metadata: {}})
     useEffect(() => {
-        // const load = async () => {
-        //     const response = await fetch(dataUrl)
-        //     const value = await response.json()
-        //     setData(value)
-        // }
+        const load = async () => {
+            const response = await fetch(dataUrl)
+            const value = await response.json()
+            setData(value)
+        }
         try {
-            //TODO: Workaround because of CORS issue
-            setData(leaderboardData)
-            // load()
+            load()
         } catch (ex) {
             console.error('Error loading leaderboard data.', ex)
             enqueueSnackbar('Error loading leaderboard data. Please reload the page.', {
@@ -58,9 +55,6 @@ function Leaderboard() {
     )
 }
 
-// const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
-// const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.html'
-// const dataUrl = 'https://images.lpubelts.com/leaderboardData.json'
-// const dataUrl = 'https://explore.lpubelts.com/test/leaderboardData.html'
+const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
 
 export default Leaderboard
