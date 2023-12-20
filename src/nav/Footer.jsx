@@ -17,7 +17,7 @@ function Footer({extras}) {
                 YouTube
             </a>
             &nbsp;•&nbsp;
-            <a href='https://github.com/Lockpickers-United' target='_blank' rel='noopener noreferrer'>
+            <a href='https://github.com/Lockpickers-United/lpu-belt-explorer' target='_blank' rel='noopener noreferrer'>
                 GitHub
             </a>
             &nbsp;•&nbsp;
