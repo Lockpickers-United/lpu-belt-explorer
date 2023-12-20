@@ -50,7 +50,7 @@ function InlineFilterDisplay() {
 
     if (!filterCount) return null
     const isValidCollection = isLoggedIn && typeof collection === 'string' &&
-        (validCollectionTypes.includes(collection) || collection === 'Any') && filterCount === 1
+        (collectionTypes.includes(collection) || collection === 'Any') && filterCount === 1
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 0}}>
@@ -70,7 +70,7 @@ function InlineFilterDisplay() {
                             onChange={handleChange}
                             style={{backgroundColor: '#222', fontSize: '1.1rem', fontWeight: 500}}
                         >
-                            {validCollectionTypes.map((list, index) =>
+                            {collectionTypes.map((list, index) =>
                                 <MenuItem key={index} value={list}>
                                     {list} ({list === 'Any' ? anyCollection.length : lockCollection[list.toLowerCase()]?.length || 0})
                                 </MenuItem>
@@ -86,5 +86,7 @@ function InlineFilterDisplay() {
         </Card>
     )
 }
+
+const collectionTypes = ['Any', ...validCollectionTypes]
 
 export default InlineFilterDisplay
