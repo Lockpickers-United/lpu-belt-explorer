@@ -10,7 +10,6 @@ import TableContainer from '@mui/material/TableContainer'
 import dayjs from 'dayjs'
 import LeaderboardHeader from './LeaderboardHeader'
 import LeaderboardRow from './LeaderboardRow'
-import leaderboardPlaceholder from '../data/leaderboardPlaceholder.json'
 
 function Leaderboard() {
     const {user} = useContext(AuthContext)
@@ -21,7 +20,7 @@ function Leaderboard() {
             const response = await fetch(dataUrl)
             const value = await response.json()
             setData(value)
-            setLoading(false)
+            // setLoading(false)
         }
         try {
             load()
@@ -34,7 +33,8 @@ function Leaderboard() {
             setLoading(false)
         }
     }, [])
-    const updateTime = dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
+    const updateTime = loading ? '####-##-## ##:##' : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
+    const rows = loading ? skeletonData : data.data
 
     return (
         <React.Fragment>
@@ -49,10 +49,7 @@ function Leaderboard() {
                         <LeaderboardHeader/>
 
                         <TableBody>
-                            {loading && leaderboardPlaceholder.data.map((leader, index) => <LeaderboardRow
-                                key={leader.id} index={index} leader={leader} user={user}/>
-                            )}
-                            {data.data.map((leader, index) =>
+                            {rows.map((leader, index) =>
                                 <LeaderboardRow key={leader.id} index={index} leader={leader} user={user}/>
                             )}
                         </TableBody>
@@ -67,6 +64,16 @@ function Leaderboard() {
 
     )
 }
+
+const skeletonData = [...Array(40)]
+    .map((_, id) => ({
+        id,
+        displayName: '........................',
+        own: '---',
+        picked: '---',
+        recorded: '---',
+        wishlist: '--'
+    }))
 
 const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
 
