@@ -10,6 +10,7 @@ import TableContainer from '@mui/material/TableContainer'
 import dayjs from 'dayjs'
 import LeaderboardHeader from './LeaderboardHeader'
 import LeaderboardRow from './LeaderboardRow'
+import leaderboardPlaceholder from '../data/leaderboardPlaceholder.json'
 
 function Leaderboard() {
     const {user} = useContext(AuthContext)
@@ -48,6 +49,9 @@ function Leaderboard() {
                         <LeaderboardHeader/>
 
                         <TableBody>
+                            {loading && leaderboardPlaceholder.data.map((leader, index) => <LeaderboardRow
+                                key={leader.id} index={index} leader={leader} user={user}/>
+                            )}
                             {data.data.map((leader, index) =>
                                 <LeaderboardRow key={leader.id} index={index} leader={leader} user={user}/>
                             )}
