@@ -20,7 +20,7 @@ function Leaderboard() {
             const response = await fetch(dataUrl)
             const value = await response.json()
             setData(value)
-            // setLoading(false)
+            setLoading(false)
         }
         try {
             load()
