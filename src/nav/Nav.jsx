@@ -18,7 +18,7 @@ function Nav({extras, title}) {
                 <Toolbar>
                     <Tracker/>
 
-                    {beta ? <MainMenu/> : <HomeButton/>}
+                    <MainMenu/>
 
                     <div style={{flexGrow: 1, fontWeight: 500, fontSize: '1.5rem'}}>{title}</div>
 
