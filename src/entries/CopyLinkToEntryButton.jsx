@@ -7,9 +7,9 @@ import Tooltip from '@mui/material/Tooltip'
 function CopyLinkToEntryButton() {
     const handleClick = useCallback(async () => {
         const link = new URL(location)
-        if (link.host.toLowerCase().startsWith('lpubelts')) {
-            link.host = `share.${link.host}`
-        }
+        link.port = ''
+        link.host = 'share.lpubelts.com'
+        link.href = link.href.replace('#/belts','')
 
         await navigator.clipboard.writeText(link.href)
         enqueueSnackbar('Link to entry copied to clipboard.')
