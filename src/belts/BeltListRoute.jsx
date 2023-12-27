@@ -6,7 +6,6 @@ import Entries from './Entries'
 import ToggleCompactButton from './ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
-import InfoButton from '../info/InfoButton'
 import ExportButton from '../misc/ExportButton'
 import HotkeyInfoButton from '../misc/HotkeyInfoButton'
 import RandomEntryButton from '../misc/RandomEntryButton'
@@ -31,8 +30,6 @@ function BeltListRoute() {
     const footer = (
         <React.Fragment>
             <br/>
-            <InfoButton icon/>
-            &nbsp;•&nbsp;
             <HotkeyInfoButton/>
             &nbsp;•&nbsp;
             <RandomEntryButton/>

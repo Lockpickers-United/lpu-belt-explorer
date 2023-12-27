@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useState} from 'react'
-import LeaderboardIcon from '@mui/icons-material/Leaderboard'
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import ListItemIcon from '@mui/material/ListItemIcon'
@@ -11,28 +10,15 @@ import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
-import {useNavigate} from 'react-router-dom'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../contexts/AuthContext'
-import LockIcon from '@mui/icons-material/Lock'
-import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
-import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
-import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
-import DBContext from '../contexts/DBContext'
 
 function UserMenu() {
-    const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
-
-    const handleClick = useCallback(url => () => {
-        handleClose()
-        navigate(url)
-    }, [handleClose, navigate])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -69,41 +55,6 @@ function UserMenu() {
                             <ListItemText>{user.displayName}</ListItemText>
                         </MenuItem>
                         <Divider/>
-                        <MenuItem disabled>
-                            <ListItemText>My Collection</ListItemText>
-                        </MenuItem>
-                        <MenuItem onClick={handleClick('/belts?tab=search&collection=Own')}>
-                            <ListItemIcon>
-                                <LockIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
-                        </MenuItem>
-                        <MenuItem onClick={handleClick('/belts?tab=search&collection=Picked')}>
-                            <ListItemIcon>
-                                <LockOpenOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
-                        </MenuItem>
-                        <MenuItem onClick={handleClick('/belts?tab=search&collection=Recorded')}>
-                            <ListItemIcon>
-                                <VideocamOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Recorded ({lockCollection.recorded?.length || 0})</ListItemText>
-                        </MenuItem>
-                        <MenuItem onClick={handleClick('/belts?tab=search&collection=Wishlist')}>
-                            <ListItemIcon>
-                                <SavingsOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Wishlist ({lockCollection.wishlist?.length || 0})</ListItemText>
-                        </MenuItem>
-                        <Divider/>
-                        <MenuItem onClick={handleClick('/leaderboard')}>
-                            <ListItemIcon>
-                                <LeaderboardIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Leaderboard</ListItemText>
-                        </MenuItem>
-                        <Divider/>
                         <MenuItem onClick={handleLogout}>
                             <ListItemIcon>
                                 <LogoutIcon fontSize='small'/>
@@ -115,41 +66,6 @@ function UserMenu() {
                 {
                     !isLoggedIn &&
                     <div>
-                        <MenuItem disabled>
-                            <ListItemText>My Collection</ListItemText>
-                        </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
-                                <LockIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Own</ListItemText>
-                        </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
-                                <LockOpenOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Picked</ListItemText>
-                        </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
-                                <VideocamOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Recorded</ListItemText>
-                        </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
-                                <SavingsOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Wishlist</ListItemText>
-                        </MenuItem>
-                        <Divider/>
-                        <MenuItem onClick={handleClick('/leaderboard')}>
-                            <ListItemIcon>
-                                <LeaderboardIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Leaderboard</ListItemText>
-                        </MenuItem>
-                        <Divider/>
                         <SignInButton onClick={handleClose}/>
                     </div>
                 }
