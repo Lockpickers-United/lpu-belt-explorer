@@ -34,7 +34,7 @@ function MainMenuItem({menuItem, openTitle, onOpen, onClose, child}) {
     const color = isCurrentRoute ? '#18aa18' : null
 
     const style = child
-        ? {padding: '14px 0px 14px 48px', color}
+        ? {padding: '10px 0px 10px 48px', margin: '0px 0px 2px 0px', color}
         : {padding: '14px 0px 14px 24px', color}
 
     const coloredIcon = icon

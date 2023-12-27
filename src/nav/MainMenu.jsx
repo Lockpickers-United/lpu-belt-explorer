@@ -26,7 +26,9 @@ function MainMenu() {
     return (
         <React.Fragment>
             <Tooltip title='Main Menu' arrow disableFocusListener>
-                <IconButton edge='start' color='inherit' onClick={openDrawer}>
+                <IconButton edge='start' color='inherit' onClick={openDrawer}
+                            style={{ backgroundColor: '#181818', height:'36px', width:'36px', marginLeft:'-8px'}}
+                >
                     <MenuIcon/>
                 </IconButton>
             </Tooltip>
@@ -39,19 +41,19 @@ function MainMenu() {
             >
                 <Stack direction='column' style={{minWidth: 250}}>
                     <MenuItem onClick={closeDrawer} style={{
-                        padding: '8px 0px 8px 16px',
+                        padding: '12px 0px 8px 12px',
                         margin: '0px',
-                        borderBottom: '1px solid #555'
+                        borderBottom:'1px solid #555'
                     }}>
                         <ListItemIcon>
-                            <img alt='LPU' src={LPUImage} width={36} height={36}/>
+                            <img alt='LPU' src={LPUImage} width={42} height={42}/>
                         </ListItemIcon>
 
                         <ListItemText>
                             <span style={{
                                 fontSize: '1.3rem',
                                 fontWeight: 700,
-                                paddingLeft: 8
+                                paddingLeft: 4
                             }}>LPU Belt Explorer</span>
                         </ListItemText>
                     </MenuItem>
