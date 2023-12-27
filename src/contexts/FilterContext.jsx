@@ -44,8 +44,7 @@ export function FilterProvider({children}) {
     }, [setSearchParams])
 
     const addFilters = useCallback((keyValues, replace) => {
-        const {id, ...keepFilters} = filters
-        const newFilters = {...keepFilters}
+        const newFilters = {...filters}
 
         keyValues.forEach(({key: keyToAdd, value: valueToAdd}) => {
             const oldValue = filters[keyToAdd]
@@ -102,7 +101,7 @@ export function FilterProvider({children}) {
     }, [filters, setFilters])
 
     const filterCount = useMemo(() => {
-        const {id, search, tab, name, sort, ...rest} = filters
+        const {id, search, tab, name, sort, image, ...rest} = filters
         return Object.keys(rest).length
     }, [filters])
 

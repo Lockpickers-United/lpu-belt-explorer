@@ -12,7 +12,7 @@ const DataContext = React.createContext({})
 export function DataProvider({children}) {
     const {anyCollection, lockCollection} = useContext(DBContext)
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, ...filters} = allFilters
 
     const mappedEntries = useMemo(() => {
         return allEntries
