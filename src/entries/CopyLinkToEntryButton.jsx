@@ -5,13 +5,11 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 
 function CopyLinkToEntryButton() {
+    const urlParams = new URLSearchParams(location.href.split('#').pop())
+    const shareURL = 'https://share.lpubelts.com/?id=' + urlParams.get('id') + '&name=' + urlParams.get('name')
+    console.log({shareURL})
     const handleClick = useCallback(async () => {
-        const link = new URL(location)
-        link.port = ''
-        link.host = 'share.lpubelts.com'
-        link.href = link.href.replace('#/belts','')
-
-        await navigator.clipboard.writeText(link.href)
+        await navigator.clipboard.writeText(shareURL)
         enqueueSnackbar('Link to entry copied to clipboard.')
     }, [])
 
