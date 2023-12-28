@@ -1,9 +1,7 @@
 import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
 import React, {useCallback, useState} from 'react'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
-import LPUImage from '../resources/LPU.png'
 import MenuIcon from '@mui/icons-material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Stack from '@mui/material/Stack'
@@ -13,7 +11,6 @@ import {useHotkeys} from 'react-hotkeys-hook'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
-
 
 function MainMenu() {
     const [open, setOpen] = useState(false)
@@ -29,7 +26,7 @@ function MainMenu() {
         <React.Fragment>
             <Tooltip title='Main Menu' arrow disableFocusListener>
                 <IconButton edge='start' color='inherit' onClick={openDrawer}
-                            style={{ backgroundColor: '#181818', height:'36px', width:'36px', marginLeft:'-8px'}}
+                            style={{backgroundColor: '#181818', height: '36px', width: '36px', marginLeft: '-8px'}}
                 >
                     <MenuIcon/>
                 </IconButton>
@@ -45,20 +42,12 @@ function MainMenu() {
                     <MenuItem onClick={closeDrawer} style={{
                         padding: '12px 0px 6px 10px',
                         margin: '0px',
-                        backgroundColor:'#292929',
-                        borderBottom:'1px solid #000'
+                        backgroundColor: '#292929',
+                        borderBottom: '1px solid #000'
                     }}>
-                        <ListItemIcon style={{margin:'2px 0px 8px 10px'}}>
+                        <ListItemIcon style={{margin: '2px 0px 8px 10px'}}>
                             <img alt='LPU' src={lpuHeaderSmall} width={210}/>
                         </ListItemIcon>
-
-                        <ListItemText>
-                            <span style={{
-                                fontSize: '1.3rem',
-                                fontWeight: 700,
-                                paddingLeft: 4
-                            }}></span>
-                        </ListItemText>
                     </MenuItem>
 
                     {menuConfig.map((menuItem, index) =>
