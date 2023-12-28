@@ -28,6 +28,7 @@ function MainMenuItem({menuItem, openTitle, onOpen, onClose, child}) {
                 ? `${path}?${queryString.stringify(params)}`
                 : path
             navigate(url)
+            window.scrollTo({top: 0})
         }
     }, [children, navigate, onClose, onOpen, openTitle, params, path, title])
 

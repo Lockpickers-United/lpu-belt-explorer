@@ -14,7 +14,10 @@ export default [
         icon: <HomeIcon fontSize='small'/>,
         path: '/belts',
         params: {
-            tab: 'White'
+            tab: 'White',
+            search: undefined,
+            id: undefined,
+            name: undefined
         }
     },
     {
