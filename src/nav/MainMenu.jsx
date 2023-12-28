@@ -12,6 +12,8 @@ import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
+import lpuHeaderSmall from '../resources/LPU-header-small.png'
+
 
 function MainMenu() {
     const [open, setOpen] = useState(false)
@@ -26,7 +28,9 @@ function MainMenu() {
     return (
         <React.Fragment>
             <Tooltip title='Main Menu' arrow disableFocusListener>
-                <IconButton edge='start' color='inherit' onClick={openDrawer}>
+                <IconButton edge='start' color='inherit' onClick={openDrawer}
+                            style={{ backgroundColor: '#181818', height:'36px', width:'36px', marginLeft:'-8px'}}
+                >
                     <MenuIcon/>
                 </IconButton>
             </Tooltip>
@@ -39,20 +43,21 @@ function MainMenu() {
             >
                 <Stack direction='column' style={{minWidth: 250}}>
                     <MenuItem onClick={closeDrawer} style={{
-                        padding: '8px 0px 8px 16px',
+                        padding: '12px 0px 6px 10px',
                         margin: '0px',
-                        borderBottom: '1px solid #555'
+                        backgroundColor:'#292929',
+                        borderBottom:'1px solid #000'
                     }}>
-                        <ListItemIcon>
-                            <img alt='LPU' src={LPUImage} width={36} height={36}/>
+                        <ListItemIcon style={{margin:'2px 0px 8px 10px'}}>
+                            <img alt='LPU' src={lpuHeaderSmall} width={210}/>
                         </ListItemIcon>
 
                         <ListItemText>
                             <span style={{
                                 fontSize: '1.3rem',
                                 fontWeight: 700,
-                                paddingLeft: 8
-                            }}>LPU Belt Explorer</span>
+                                paddingLeft: 4
+                            }}></span>
                         </ListItemText>
                     </MenuItem>
 

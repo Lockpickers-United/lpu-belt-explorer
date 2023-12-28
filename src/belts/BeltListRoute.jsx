@@ -19,11 +19,9 @@ function BeltListRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox/>
-
-            <div style={{flexGrow: 1}}></div>
-
             <SortButton/>
             <FilterButton/>
+            <div style={{flexGrow: 1, minWidth:'10px'}}></div>
             <ToggleCompactButton/>
         </React.Fragment>
     )

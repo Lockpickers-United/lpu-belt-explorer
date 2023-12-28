@@ -10,7 +10,7 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 
 export default [
     {
-        title: 'Belt List',
+        title: 'Lock List',
         icon: <HomeIcon fontSize='small'/>,
         path: '/belts',
         params: {

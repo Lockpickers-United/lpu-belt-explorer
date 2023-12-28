@@ -34,7 +34,7 @@ function UserMenu() {
                             ? <Avatar
                                 alt={user.displayName}
                                 src={user.photoURL}
-                                sx={{ width: 24, height: 24 }}
+                                sx={{ width: 32, height: 32 }}
                             />
                             : <AccountCircleIcon/>
                     }
