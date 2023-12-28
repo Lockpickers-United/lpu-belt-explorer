@@ -7,7 +7,7 @@ import FilterContext from '../contexts/FilterContext'
 import BeltIcon from './BeltIcon'
 
 function RelatedEntryButton({id}) {
-    const {setExpanded, setExpandedDirect} = useContext(AppContext)
+    const {setExpanded} = useContext(AppContext)
     const {getEntryFromId, getNameFromId, visibleEntries} = useContext(DataContext)
     const {setFilters} = useContext(FilterContext)
     const entry = useMemo(() => getEntryFromId(id), [getEntryFromId, id])
@@ -16,11 +16,11 @@ function RelatedEntryButton({id}) {
         if (!visibleEntries.some(e => e.id === id)) {
             const name = getNameFromId(id)
             setFilters({id, name, tab: entry.belt.replace(/\s\d/g, '')})
-            setExpandedDirect(id)
+            setExpanded(id)
         } else {
             setExpanded(id)
         }
-    }, [visibleEntries, id, getNameFromId, setFilters, entry.belt, setExpanded, setExpandedDirect])
+    }, [visibleEntries, id, getNameFromId, setFilters, entry.belt, setExpanded])
 
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>

@@ -9,7 +9,7 @@ export function AppProvider({children}) {
     const {getEntryFromId, getNameFromId} = useContext(DataContext)
     const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
-    const [expanded, setExpanded] = useState(filters.id)
+    const expanded = filters.id
 
     const handleSetExpanded = useCallback((newValue, forceTab) => {
         const entry = getEntryFromId(newValue)
@@ -29,13 +29,11 @@ export function AppProvider({children}) {
         } else {
             removeFilters(['id', 'name'])
         }
-
-        setExpanded(newValue)
     }, [addFilters, filters.tab, getEntryFromId, getNameFromId, removeFilters])
 
     const handleClearExpanded = useCallback(() => {
-        setExpanded(undefined)
-    }, [])
+        removeFilters(['id', 'name'])
+    }, [removeFilters])
 
     const handleSetTab = useCallback(tab => {
         addFilters([
@@ -43,10 +41,6 @@ export function AppProvider({children}) {
             {key: 'id', value: expanded === 'beltreqs' ? 'beltreqs' : undefined},
             {key: 'name', value: undefined}
         ], true)
-
-        if (expanded !== 'beltreqs') {
-            setExpanded(false)
-        }
 
         setTimeout(() => setDisplayAll(false), 0)
     }, [addFilters, expanded])
@@ -64,7 +58,6 @@ export function AppProvider({children}) {
         tab: filters.tab,
         setTab: handleSetTab,
         expanded,
-        setExpandedDirect: setExpanded,
         setExpanded: handleSetExpanded,
         clearExpanded: handleClearExpanded,
         displayAll: displayAll && filters.tab === 'search',
