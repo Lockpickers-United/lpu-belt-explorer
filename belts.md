@@ -90,9 +90,9 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 **White Belt Locks**
 
 - [Any Acrylic Padlock](https://lpubelts.com/?id=07034c0f)
-- [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
 - [Any China Padlock (granite look)](https://lpubelts.com/?id=3ac43ea8)
 - [Any Cutaway Lock](https://lpubelts.com/?id=901b35b2)
+- [Any lock with any tool](https://lpubelts.com/?id=b22bdd44)
 - [ABUS 45](https://lpubelts.com/?id=5ff7457c) (laminated padlock)
 - [Alpha 1000](https://lpubelts.com/?id=9423b4a4) (10mm (2pins))
 - [Alpha 1000](https://lpubelts.com/?id=d000f733) (15mm up to 35mm (3pins))
@@ -888,8 +888,8 @@ as a mentor to folks at the blue, purple and brown belt levels.
 - [ABUS Plus](https://lpubelts.com/?id=b8350901) (with butterfly discs)
 - [ALPHA FB](https://lpubelts.com/?id=4223eb26) (&ge;15 pins)
 - [ASSA 600](https://lpubelts.com/?id=29ab2852) (6 pin, with gin spools and matched countermilling)
-- [ASSA 700](https://lpubelts.com/?id=ef4e0295) (with gin drivers and matched sleeve)
 - [ASSA 700](https://lpubelts.com/?id=e3bd3faf) (7 pin, with gin/tree pins and matching countermilling in 4+ chambers, &lt; 2 tree pins)
+- [ASSA 700](https://lpubelts.com/?id=ef4e0295) (with gin drivers and matched sleeve)
 - [ASSA dp2400 / ASSA dp10](https://lpubelts.com/?id=75fb1e5c) (6 pin 4 slider)
 - [Australian Lock Co. BiLock](https://lpubelts.com/?id=5b60be8a) (12 sliders, 3-4 mastered)
 - [Banham m2002](https://lpubelts.com/?id=9eb3e9c4)
