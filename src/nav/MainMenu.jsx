@@ -12,6 +12,8 @@ import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
+import lpuHeaderSmall from '../resources/LPU-header-small.png'
+
 
 function MainMenu() {
     const [open, setOpen] = useState(false)
@@ -41,12 +43,13 @@ function MainMenu() {
             >
                 <Stack direction='column' style={{minWidth: 250}}>
                     <MenuItem onClick={closeDrawer} style={{
-                        padding: '12px 0px 8px 12px',
+                        padding: '12px 0px 6px 10px',
                         margin: '0px',
-                        borderBottom:'1px solid #555'
+                        backgroundColor:'#292929',
+                        borderBottom:'1px solid #000'
                     }}>
-                        <ListItemIcon>
-                            <img alt='LPU' src={LPUImage} width={42} height={42}/>
+                        <ListItemIcon style={{margin:'2px 0px 8px 10px'}}>
+                            <img alt='LPU' src={lpuHeaderSmall} width={210}/>
                         </ListItemIcon>
 
                         <ListItemText>
@@ -54,7 +57,7 @@ function MainMenu() {
                                 fontSize: '1.3rem',
                                 fontWeight: 700,
                                 paddingLeft: 4
-                            }}>LPU Belt Explorer</span>
+                            }}></span>
                         </ListItemText>
                     </MenuItem>
 
