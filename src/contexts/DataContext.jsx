@@ -107,6 +107,7 @@ export function DataProvider({children}) {
         return allEntries.find(e => e.id === id)
     }, [])
 
+    // TODO: Move to entryName.js and fix references
     const getNameFromId = useCallback(id => {
         const entry = getEntryFromId(id)
         if (entry) {
