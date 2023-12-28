@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, setDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot} from 'firebase/firestore'
+import {doc, updateDoc, arrayUnion, arrayRemove, onSnapshot, runTransaction} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -30,14 +30,26 @@ export function DBProvider({children}) {
     useEffect(() => {
         if (isLoggedIn) {
             const ref = doc(db, 'lockcollections', user.uid)
-            return onSnapshot(ref, doc => {
+            return onSnapshot(ref, async doc => {
                 const data = doc.data()
                 if (data) {
-                    console.info('DB Subscription set up successfully.')
+                    console.trace('Received DB data update.', data)
                     setLockCollection(data)
                 } else {
-                    console.info('New user detected, creating initial DB record.')
-                    return setDoc(ref, {})
+                    console.trace('Missing DB data, creating new record.')
+
+                    await runTransaction(db, async transaction => {
+                        const sfDoc = await transaction.get(ref)
+                        if (sfDoc.exists()) {
+                            console.error('Error creating new DB record. Record already exists.')
+                            setDbError(true)
+                            enqueueSnackbar('There was a problem reading your collection. It will be unavailable until you refresh the page. ', {
+                                autoHideDuration: null,
+                                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
+                            })
+                        }
+                        transaction.set(ref, {})
+                    })
                 }
             }, error => {
                 console.error('Error listening to DB:', error)
