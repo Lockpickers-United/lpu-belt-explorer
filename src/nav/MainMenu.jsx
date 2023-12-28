@@ -19,7 +19,12 @@ function MainMenu() {
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('m', handleHotkey)
 
-    const openDrawer = useCallback(() => setOpen(true), [])
+    const openDrawer = useCallback(() => {
+        setOpen(true)
+
+        // Clear current focus to prevent weird issues on mobile
+        document.activeElement.blur()
+    }, [])
     const closeDrawer = useCallback(() => setOpen(false), [])
 
     return (
