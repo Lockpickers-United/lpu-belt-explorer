@@ -5,13 +5,15 @@ import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
+import {useLocation} from 'react-router-dom'
 import FilterContext from '../contexts/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import debounce from 'debounce'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function SearchBox() {
-    const {filters, addFilter, addFilters, removeFilter} = useContext(FilterContext)
+    const location = useLocation()
+    const {filters, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const {width} = useWindowSize()
     const inputEl = useRef()
@@ -39,11 +41,10 @@ function SearchBox() {
     }, [debounceChange])
 
     useEffect(() => {
-        if (filters.search === undefined) {
-            setText('')
-            addFilter('search', '', true)
+        if (filters.search !== text) {
+            setText(filters.search)
         }
-    }, [addFilter, filters.search])
+    }, [location]) // eslint-disable-line
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
