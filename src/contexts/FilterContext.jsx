@@ -21,6 +21,8 @@ export function FilterProvider({children}) {
                 initialFilters.tab = tab === 'search' ? 'search' : entry.belt.replace(/\s\d/g, '')
             } else if (name && !initialFilters.search) {
                 initialFilters.search = name.replace(/_/g, ' ')
+            } else if (id === 'beltreqs') {
+                initialFilters.id = id
             }
         }
 
