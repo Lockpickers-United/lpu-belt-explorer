@@ -18,12 +18,14 @@ export function DBProvider({children}) {
         await runTransaction(db, async transaction => {
             const sfDoc = await transaction.get(ref)
             if (!sfDoc.exists()) {
-                transaction.set(ref, {})
+                transaction.set(ref, {
+                    [key]: [entryId]
+                })
+            } else {
+                transaction.update(ref, {
+                    [key]: arrayUnion(entryId)
+                })
             }
-
-            transaction.update(ref, {
-                [key]: arrayUnion(entryId)
-            })
         })
     }, [dbError, user])
 
@@ -33,12 +35,14 @@ export function DBProvider({children}) {
         await runTransaction(db, async transaction => {
             const sfDoc = await transaction.get(ref)
             if (!sfDoc.exists()) {
-                transaction.set(ref, {})
+                transaction.set(ref, {
+                    [key]: [entryId]
+                })
+            } else {
+                transaction.update(ref, {
+                    [key]: arrayRemove(entryId)
+                })
             }
-
-            transaction.update(ref, {
-                [key]: arrayRemove(entryId)
-            })
         })
     }, [dbError, user])
 
