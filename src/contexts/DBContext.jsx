@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, updateDoc, arrayUnion, arrayRemove, onSnapshot, runTransaction} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -14,15 +14,31 @@ export function DBProvider({children}) {
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
-        await updateDoc(doc(db, 'lockcollections', user.uid), {
-            [key]: arrayUnion(entryId)
+        const ref = doc(db, 'lockcollections', user.uid)
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(ref)
+            if (!sfDoc.exists()) {
+                transaction.set(ref, {})
+            }
+
+            transaction.update(ref, {
+                [key]: arrayUnion(entryId)
+            })
         })
     }, [dbError, user])
 
     const removeFromLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
-        await updateDoc(doc(db, 'lockcollections', user.uid), {
-            [key]: arrayRemove(entryId)
+        const ref = doc(db, 'lockcollections', user.uid)
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(ref)
+            if (!sfDoc.exists()) {
+                transaction.set(ref, {})
+            }
+
+            transaction.update(ref, {
+                [key]: arrayRemove(entryId)
+            })
         })
     }, [dbError, user])
 
@@ -36,20 +52,8 @@ export function DBProvider({children}) {
                     console.trace('Received DB data update.', data)
                     setLockCollection(data)
                 } else {
-                    console.trace('Missing DB data, creating new record.')
-
-                    await runTransaction(db, async transaction => {
-                        const sfDoc = await transaction.get(ref)
-                        if (sfDoc.exists()) {
-                            console.error('Error creating new DB record. Record already exists.')
-                            setDbError(true)
-                            enqueueSnackbar('There was a problem reading your collection. It will be unavailable until you refresh the page. ', {
-                                autoHideDuration: null,
-                                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
-                            })
-                        }
-                        transaction.set(ref, {})
-                    })
+                    console.trace('Missing DB data, leaving empty for now.')
+                    setLockCollection({})
                 }
             }, error => {
                 console.error('Error listening to DB:', error)
