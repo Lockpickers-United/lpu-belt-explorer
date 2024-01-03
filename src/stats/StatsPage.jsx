@@ -5,8 +5,7 @@ import {useWindowWidths} from './Functions.jsx'
 
 function StatsPage() {
 
-    const [midWidth, smallWidth] = useWindowWidths()
-    const chartHeight = !smallWidth ? 350 : 300
+    const [midWidth,smallWidth,chartHeight] = useWindowWidths()
 
     return (
         <React.Fragment>
