@@ -1,11 +1,11 @@
 import React from 'react'
 import LockViewsLine from './LockViewsLine.jsx'
 import DataContext from '../contexts/DataContext.jsx'
-import {windowWidths} from './Functions.jsx'
+import {useWindowWidths} from './Functions.jsx'
 
 function StatsPage() {
 
-    const [width, midWidth, smallWidth] = windowWidths()
+    const [midWidth, smallWidth] = useWindowWidths()
     const chartHeight = !smallWidth ? 350 : 300
 
     return (
