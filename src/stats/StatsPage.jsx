@@ -1,11 +1,11 @@
 import React from 'react'
-import LockViewsLine from './LockViewsLine.jsx'
-import DataContext from '../locks/DataContext.jsx'
-import {useWindowWidths} from './Functions.jsx'
+import useWindowSize from '../util/useWindowSize'
+import LockViewsLine from './LockViewsLine'
 
 function StatsPage() {
-
-    const [midWidth,smallWidth,chartHeight] = useWindowWidths()
+    const {width} = useWindowSize()
+    const smallWidth = width < 500
+    const chartHeight = !smallWidth ? 350 : 300
 
     return (
         <React.Fragment>
@@ -15,14 +15,11 @@ function StatsPage() {
                 marginLeft: 'auto', marginRight: 'auto',
                 fontSize: '1.5rem'
             }}>
-
-                <DataContext.Provider value={{chartHeight}}>
-                    <div>Weekly Lock Views</div>
-                    <LockViewsLine/>
-                </DataContext.Provider>
-
+                <div>Weekly Lock Views</div>
+                <LockViewsLine chartHeight={chartHeight}/>
             </div>
         </React.Fragment>
     )
 }
+
 export default StatsPage

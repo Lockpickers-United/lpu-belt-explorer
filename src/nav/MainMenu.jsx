@@ -1,5 +1,5 @@
 import ListItemIcon from '@mui/material/ListItemIcon'
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -8,11 +8,13 @@ import Stack from '@mui/material/Stack'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
+import AppContext from '../app/AppContext'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
 
 function MainMenu() {
+    const {beta} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const [openTitle, setOpenTitle] = useState('My Collection')
 
@@ -55,17 +57,19 @@ function MainMenu() {
                         </ListItemIcon>
                     </MenuItem>
 
-                    {menuConfig.map((menuItem, index) =>
-                        <React.Fragment key={index}>
-                            <MainMenuItem
-                                menuItem={menuItem}
-                                openTitle={openTitle}
-                                onOpen={setOpenTitle}
-                                onClose={closeDrawer}
-                            />
-                            <Divider style={{margin: 0}}/>
-                        </React.Fragment>
-                    )}
+                    {menuConfig
+                        .filter(menuItem => beta || !menuItem.beta)
+                        .map((menuItem, index) =>
+                            <React.Fragment key={index}>
+                                <MainMenuItem
+                                    menuItem={menuItem}
+                                    openTitle={openTitle}
+                                    onOpen={setOpenTitle}
+                                    onClose={closeDrawer}
+                                />
+                                <Divider style={{margin: 0}}/>
+                            </React.Fragment>
+                        )}
                 </Stack>
             </SwipeableDrawer>
         </React.Fragment>

@@ -1,24 +1,10 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
-import merge from 'lodash.merge'
 import {primaryTheme} from './chartDefaults.js'
 import siteStatsData from './siteStatsData.json'
-import DataContext from '../locks/DataContext.jsx'
 
-const LockViewsLine = () => {
-
+function LockViewsLine({chartHeight}) {
     const data = siteStatsData.lockViews
-
-    const {chartHeight} = useContext(DataContext)
-    const gridTheme = {
-        grid: {
-            line: {
-                stroke: '#333',
-                strokeWidth: 1
-            }
-        }
-    }
-    const combinedTheme = merge({}, primaryTheme, gridTheme)
 
     return (
         <div style={{height: chartHeight}}>
@@ -31,7 +17,6 @@ const LockViewsLine = () => {
                 xScale={{
                     type: 'time',
                     format: '%m/%d/%Y'
-                    //precision: 'month'
                 }}
                 xFormat='time:%Y-%m-%d'
                 yScale={{
@@ -60,6 +45,20 @@ const LockViewsLine = () => {
             />
         </div>
     )
+}
+
+const gridTheme = {
+    grid: {
+        line: {
+            stroke: '#333',
+            strokeWidth: 1
+        }
+    }
+}
+
+const combinedTheme = {
+    ...primaryTheme,
+    ...gridTheme
 }
 
 export default LockViewsLine

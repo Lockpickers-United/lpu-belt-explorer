@@ -7,6 +7,7 @@ import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
+import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
 
 export default [
     {
@@ -66,6 +67,12 @@ export default [
         title: 'Leaderboard',
         icon: <LeaderboardIcon fontSize='small'/>,
         path: '/leaderboard'
+    },
+    {
+        beta: true,
+        title: 'Stats for Nerds',
+        icon: <InsertChartOutlinedIcon/>,
+        path: '/stats'
     },
     {
         title: 'Belt Requirements',

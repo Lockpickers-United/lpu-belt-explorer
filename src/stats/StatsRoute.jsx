@@ -7,7 +7,7 @@ import StatsPage from './StatsPage.jsx'
 function StatsRoute() {
     return (
         <React.Fragment>
-            <Nav title='Zeitgeist'/>
+            <Nav title='Stats for Nerds'/>
 
             <StatsPage/>
 
