@@ -3,7 +3,7 @@ import {enqueueSnackbar} from 'notistack'
 import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import DataContext from '../contexts/DataContext'
+import DataContext from '../locks/DataContext'
 
 function CopyLinkToEntryButton({entry}) {
     const {getNameFromId} = useContext(DataContext)
@@ -14,7 +14,7 @@ function CopyLinkToEntryButton({entry}) {
 
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link to entry copied to clipboard.')
-    }, [entry])
+    }, [entry, getNameFromId])
 
     return (
         <Tooltip title='Copy Link to Entry' arrow disableFocusListener>

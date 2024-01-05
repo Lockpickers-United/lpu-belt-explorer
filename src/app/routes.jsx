@@ -4,26 +4,30 @@ import {redirect} from 'react-router-dom'
 export default [
     {
         path: '/',
-        loader: () => redirect('/belts')
+        loader: () => redirect('/locks')
     },
     {
         path: '/belts',
+        loader: () => redirect('/locks')
+    },
+    {
+        path: '/locks',
         lazy: async () => {
-            const {default: BeltListRoute} = await import('../belts/BeltListRoute')
-            return {element: <BeltListRoute/>}
+            const {default: LockListRoute} = await import('../locks/LockListRoute')
+            return {element: <LockListRoute/>}
         }
     },
     {
         path: '/leaderboard',
         lazy: async () => {
-            const {default: LeaderboardRoute} = await import('../leaderboard/LeaderboardRoute.jsx')
+            const {default: LeaderboardRoute} = await import('../leaderboard/LeaderboardRoute')
             return {element: <LeaderboardRoute/>}
         }
     },
     {
         path: '/info',
         lazy: async () => {
-            const {default: LeaderboardRoute} = await import('../info/InfoRoute.jsx')
+            const {default: LeaderboardRoute} = await import('../info/InfoRoute')
             return {element: <LeaderboardRoute/>}
         }
     },

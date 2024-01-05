@@ -3,9 +3,9 @@ import {useHotkeys} from 'react-hotkeys-hook'
 import DataContext from './DataContext'
 import FilterContext from './FilterContext'
 
-const AppContext = React.createContext({})
+const LockListContext = React.createContext({})
 
-export function AppProvider({children}) {
+export function LockListProvider({children}) {
     const {getEntryFromId, getNameFromId} = useContext(DataContext)
     const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
@@ -53,7 +53,6 @@ export function AppProvider({children}) {
     const [compact, setCompact] = useState(false)
 
     const value = useMemo(() => ({
-        beta,
         compact,
         tab: filters.tab,
         setTab: handleSetTab,
@@ -63,13 +62,13 @@ export function AppProvider({children}) {
         displayAll: displayAll && filters.tab === 'search',
         setDisplayAll,
         setCompact,
-    }), [beta, compact, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab])
+    }), [compact, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab])
 
     return (
-        <AppContext.Provider value={value}>
+        <LockListContext.Provider value={value}>
             {children}
-        </AppContext.Provider>
+        </LockListContext.Provider>
     )
 }
 
-export default AppContext
+export default LockListContext

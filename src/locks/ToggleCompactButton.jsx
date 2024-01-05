@@ -2,10 +2,10 @@ import React, {useCallback, useContext} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import ViewListIcon from '@mui/icons-material/ViewList'
 import IconButton from '@mui/material/IconButton'
-import AppContext from '../contexts/AppContext'
+import LockListContext from './LockListContext'
 
 function ToggleCompactButton() {
-    const {compact, setCompact, setExpanded} = useContext(AppContext)
+    const {compact, setCompact, setExpanded} = useContext(LockListContext)
 
     const handleClick = useCallback(() => {
         setCompact(!compact)

@@ -1,13 +1,13 @@
 import IconButton from '@mui/material/IconButton'
 import React, {useCallback, useContext, useMemo} from 'react'
 import Tooltip from '@mui/material/Tooltip'
-import AppContext from '../contexts/AppContext'
-import DataContext from '../contexts/DataContext'
-import FilterContext from '../contexts/FilterContext'
+import LockListContext from '../locks/LockListContext'
+import DataContext from '../locks/DataContext'
+import FilterContext from '../locks/FilterContext'
 import BeltIcon from './BeltIcon'
 
 function RelatedEntryButton({id}) {
-    const {setExpanded} = useContext(AppContext)
+    const {setExpanded} = useContext(LockListContext)
     const {getEntryFromId, getNameFromId, visibleEntries} = useContext(DataContext)
     const {setFilters} = useContext(FilterContext)
     const entry = useMemo(() => getEntryFromId(id), [getEntryFromId, id])

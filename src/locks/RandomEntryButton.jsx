@@ -3,11 +3,11 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
-import AppContext from '../contexts/AppContext'
-import DataContext from '../contexts/DataContext'
+import LockListContext from './LockListContext'
+import DataContext from './DataContext'
 
 function RandomEntryButton() {
-    const {setExpanded} = useContext(AppContext)
+    const {setExpanded} = useContext(LockListContext)
     const {visibleEntries} = useContext(DataContext)
 
     const handleClick = useCallback(() => {

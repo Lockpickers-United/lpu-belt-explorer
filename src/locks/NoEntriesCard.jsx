@@ -3,11 +3,11 @@ import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
-import AppContext from '../contexts/AppContext'
 import Button from '@mui/material/Button'
+import LockListContext from './LockListContext'
 
 function NoEntriesCard() {
-    const {tab} = useContext(AppContext)
+    const {tab, setDisplayAll} = useContext(LockListContext)
     const defTab = useDeferredValue(tab)
     const style = {
         marginTop: 16,
@@ -16,7 +16,6 @@ function NoEntriesCard() {
         marginRight: 'auto',
         borderRadius: 0
     }
-    const {setDisplayAll} = useContext(AppContext)
 
     const isSearchTab = defTab === 'search'
     const message = isSearchTab

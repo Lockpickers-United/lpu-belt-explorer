@@ -3,7 +3,7 @@ import LoginIcon from '@mui/icons-material/Login'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import MenuItem from '@mui/material/MenuItem'
-import AuthContext from '../contexts/AuthContext'
+import AuthContext from '../app/AuthContext'
 
 function SignInButton({onClick}) {
     const {isLoggedIn, login} = useContext(AuthContext)

@@ -5,8 +5,8 @@ import Tabs from '@mui/material/Tabs'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
-import AppContext from '../contexts/AppContext'
-import FilterContext from '../contexts/FilterContext'
+import LockListContext from './LockListContext'
+import FilterContext from './FilterContext'
 import {uniqueBelts} from '../data/belts'
 import BeltIcon from '../entries/BeltIcon'
 import useWindowSize from '../util/useWindowSize'
@@ -23,7 +23,7 @@ function BeltToolbar() {
         setTab(uniqueBelts[key - 1])
     })
 
-    const {tab, setTab} = useContext(AppContext)
+    const {tab, setTab} = useContext(LockListContext)
     const {addFilter} = useContext(FilterContext)
 
     const handleTabClick = useCallback((event, value) => setTab(value), [setTab])

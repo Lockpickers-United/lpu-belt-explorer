@@ -11,8 +11,8 @@ import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import {useHotkeys} from 'react-hotkeys-hook'
-import AppContext from '../contexts/AppContext'
-import DataContext from '../contexts/DataContext'
+import LockListContext from './LockListContext'
+import DataContext from './DataContext'
 import licenses from '../data/licenses'
 import Transition from '../util/Transition'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
@@ -39,7 +39,7 @@ function Slideshow({onClose}) {
     const [loading, setLoading] = useState(true)
     const [index, setIndex] = useState(0)
 
-    const {setTab, setExpanded} = useContext(AppContext)
+    const {setTab, setExpanded} = useContext(LockListContext)
 
     const randomMedia = useCallback(() => {
         const index = Math.floor(Math.random() * media.length)

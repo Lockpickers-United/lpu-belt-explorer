@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DBContext from './DBContext'
+import DBContext from '../app/DBContext'
 import FilterContext from './FilterContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'

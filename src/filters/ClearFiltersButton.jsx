@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import Button from '@mui/material/Button'
-import FilterContext from '../contexts/FilterContext'
+import FilterContext from '../locks/FilterContext'
 
 function ClearFiltersButton(props) {
     const {clearFilters} = useContext(FilterContext)

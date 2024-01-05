@@ -11,7 +11,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import SignInButton from '../auth/SignInButton'
-import AuthContext from '../contexts/AuthContext'
+import AuthContext from '../app/AuthContext'
 
 function UserMenu() {
     const {isLoggedIn, user, logout} = useContext(AuthContext)

@@ -1,6 +1,6 @@
 import React from 'react'
 import LockViewsLine from './LockViewsLine.jsx'
-import DataContext from '../contexts/DataContext.jsx'
+import DataContext from '../locks/DataContext.jsx'
 import {useWindowWidths} from './Functions.jsx'
 
 function StatsPage() {

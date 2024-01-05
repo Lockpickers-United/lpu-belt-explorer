@@ -3,7 +3,7 @@ import {ResponsiveLine} from '@nivo/line'
 import merge from 'lodash.merge'
 import {primaryTheme} from './chartDefaults.js'
 import siteStatsData from './siteStatsData.json'
-import DataContext from '../contexts/DataContext.jsx'
+import DataContext from '../locks/DataContext.jsx'
 
 const LockViewsLine = () => {
 

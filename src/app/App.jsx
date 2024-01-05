@@ -2,8 +2,9 @@ import React from 'react'
 import {SnackbarProvider} from 'notistack'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import {AuthProvider} from '../contexts/AuthContext'
-import {DBProvider} from '../contexts/DBContext'
+import {AppProvider} from './AppContext'
+import {AuthProvider} from './AuthContext'
+import {DBProvider} from './DBContext'
 import {createHashRouter, RouterProvider} from 'react-router-dom'
 import routes from './routes'
 
@@ -35,7 +36,9 @@ function App() {
             <SnackbarProvider>
                 <AuthProvider>
                     <DBProvider>
-                        <RouterProvider router={router}/>
+                        <AppProvider>
+                            <RouterProvider router={router}/>
+                        </AppProvider>
                     </DBProvider>
                 </AuthProvider>
             </SnackbarProvider>

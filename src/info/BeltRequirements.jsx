@@ -7,13 +7,13 @@ import ReactMarkdown from 'react-markdown'
 import BeltStripe from '../entries/BeltStripe'
 import Typography from '@mui/material/Typography'
 import AccordionActions from '@mui/material/AccordionActions'
+import LockListContext from '../locks/LockListContext'
 import InfoButton from './InfoButton'
-import AppContext from '../contexts/AppContext'
 import LinkToRequirementsButton from './CopyLinkToRequirementsButton'
 import beltRequirements from '../data/beltRequirements'
 
 function BeltRequirements({belt}) {
-    const {expanded, setExpanded} = useContext(AppContext)
+    const {expanded, setExpanded} = useContext(LockListContext)
     const handleExpand = useCallback((_, isExpanded) => {
         setExpanded(isExpanded ? 'beltreqs' : false)
         window.scrollTo({top: 0, behavior: 'smooth'})

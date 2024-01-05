@@ -1,21 +1,21 @@
 import React from 'react'
-import {AppProvider} from '../contexts/AppContext'
-import {DataProvider} from '../contexts/DataContext'
-import {FilterProvider} from '../contexts/FilterContext'
+import {LockListProvider} from './LockListContext'
+import {DataProvider} from './DataContext'
+import {FilterProvider} from './FilterContext'
 import Entries from './Entries'
 import ToggleCompactButton from './ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
-import ExportButton from '../misc/ExportButton'
-import HotkeyInfoButton from '../misc/HotkeyInfoButton'
-import RandomEntryButton from '../misc/RandomEntryButton'
-import SlideshowButton from '../misc/SlideshowButton'
-import BeltToolbar from '../nav/BeltToolbar'
+import ExportButton from './ExportButton'
+import HotkeyInfoButton from './HotkeyInfoButton'
+import RandomEntryButton from './RandomEntryButton'
+import SlideshowButton from './SlideshowButton'
+import BeltToolbar from './BeltToolbar'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
-import SearchBox from '../nav/SearchBox'
+import SearchBox from './SearchBox'
 
-function BeltListRoute() {
+function LockListRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox/>
@@ -41,17 +41,18 @@ function BeltListRoute() {
     return (
         <FilterProvider>
             <DataProvider>
-                <AppProvider>
+                <LockListProvider>
                     <Nav extras={nav}/>
+
                     <BeltToolbar/>
 
                     <Entries/>
 
                     <Footer extras={footer}/>
-                </AppProvider>
+                </LockListProvider>
             </DataProvider>
         </FilterProvider>
     )
 }
 
-export default BeltListRoute
+export default LockListRoute

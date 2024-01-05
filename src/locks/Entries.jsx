@@ -3,12 +3,12 @@ import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements'
-import DataContext from '../contexts/DataContext'
-import AppContext from '../contexts/AppContext'
+import DataContext from './DataContext'
+import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
 
 function Entries() {
-    const {compact, tab, expanded, setExpanded, displayAll} = useContext(AppContext)
+    const {compact, tab, expanded, setExpanded, displayAll} = useContext(LockListContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
 
     const defTab = useDeferredValue(tab)
