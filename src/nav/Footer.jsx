@@ -21,7 +21,9 @@ function Footer({extras}) {
                 GitHub
             </a>
             &nbsp;•&nbsp;
-            <PrivacyPolicyButton/>
+            <a href='/#/privacy'>
+                Privacy
+            </a>
 
             {extras}
         </Typography>

@@ -34,22 +34,29 @@ export default [
     {
         path: '/stats',
         lazy: async () => {
-            const {default: StatsRoute} = await import('../stats/StatsRoute.jsx')
+            const {default: StatsRoute} = await import('../stats/StatsRoute')
             return {element: <StatsRoute/>}
         }
     },
     {
         path: '/glossary',
         lazy: async () => {
-            const {default: GlossaryRoute} = await import('../glossary/GlossaryRoute.jsx')
+            const {default: GlossaryRoute} = await import('../glossary/GlossaryRoute')
             return {element: <GlossaryRoute/>}
         }
     },
     {
         path: '/about',
         lazy: async () => {
-            const {default: LPUHistoryRoute} = await import('../history/HistoryRoute.jsx')
+            const {default: LPUHistoryRoute} = await import('../history/HistoryRoute')
             return {element: <LPUHistoryRoute/>}
+        }
+    },
+    {
+        path: '/privacy',
+        lazy: async () => {
+            const {default: PrivacyRoute} = await import('../privacy/PrivacyRoute')
+            return {element: <PrivacyRoute/>}
         }
     }
 ]
