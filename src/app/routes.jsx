@@ -26,5 +26,12 @@ export default [
             const {default: LeaderboardRoute} = await import('../info/InfoRoute.jsx')
             return {element: <LeaderboardRoute/>}
         }
+    },
+    {
+        path: '/stats',
+        lazy: async () => {
+            const {default: StatsRoute} = await import('../stats/StatsRoute.jsx')
+            return {element: <StatsRoute/>}
+        }
     }
 ]
