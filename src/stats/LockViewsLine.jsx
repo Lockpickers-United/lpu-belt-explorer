@@ -1,7 +1,7 @@
 import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from './chartDefaults.js'
-import siteStatsData from './siteStatsData.json'
+import siteStatsData from '../data/siteSummaryData.json'
 
 function LockViewsLine({chartHeight}) {
     const data = siteStatsData.lockViews
@@ -16,9 +16,9 @@ function LockViewsLine({chartHeight}) {
                 margin={{top: 10, right: 20, bottom: 50, left: 55}}
                 xScale={{
                     type: 'time',
-                    format: '%m/%d/%Y'
+                    format: '%Y-%m-%d'
                 }}
-                xFormat='time:%Y-%m-%d'
+                xFormat='time:%m/%d/%y'
                 yScale={{
                     type: 'linear',
                     min: 'auto',
