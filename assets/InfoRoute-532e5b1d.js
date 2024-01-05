@@ -1,4 +1,4 @@
-import{j as e,R as t}from"./index-65ab4aae.js";import{R as n,U as i,V as a}from"./Nav-4f16f8d4.js";import{C as r,a as s,b as l}from"./CardActions-a8588960.js";const h=`## Earn Lockpicking Karate Flair
+import{j as e,R as t}from"./index-6bfd595a.js";import{O as n,Q as i}from"./Nav-10bb512b.js";import{C as a,a as r,R as s}from"./react-markdown-3c02f1f4.js";import{C as l}from"./CardActions-00494d10.js";import"./index-07017e6e.js";const h=`## Earn Lockpicking Karate Flair
 
 As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
@@ -411,8 +411,8 @@ Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpickin
 * **Lips 8300** Added and samelined with Nemef NF2 - they are nearly the same lock, extra checkpin or no.
 * **Lockwood 215A40 and 214A40** Added and samelined with 334B40 - same core, same lock
 * **Lockwood 356S63, 270S70** Samelined with 334B40 (see previous.)
-`;function u(){const o="12/4/2023";return e.jsx(t.Fragment,{children:e.jsxs(r,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(s,{children:e.jsx(n,{linkTarget:"_blank",children:m})}),e.jsxs(l,{children:["Updated: ",o]})]})})}const m=[h,c,d].join(`
+`;function u(){const o="12/4/2023";return e.jsx(t.Fragment,{children:e.jsxs(a,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(r,{children:e.jsx(s,{linkTarget:"_blank",children:m})}),e.jsxs(l,{children:["Updated: ",o]})]})})}const m=[h,c,d].join(`
 
 ---
 
-`);function f(){return e.jsxs(t.Fragment,{children:[e.jsx(i,{title:"Information"}),e.jsx(u,{}),e.jsx(a,{})]})}export{f as default};
+`);function b(){return e.jsxs(t.Fragment,{children:[e.jsx(n,{title:"Information"}),e.jsx(u,{}),e.jsx(i,{})]})}export{b as default};
