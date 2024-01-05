@@ -8,6 +8,8 @@ import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
+import MenuBookIcon from '@mui/icons-material/MenuBook'
+import FactCheckIcon from '@mui/icons-material/FactCheck'
 
 export default [
     {
@@ -70,6 +72,12 @@ export default [
     },
     {
         beta: true,
+        title: 'Glossary',
+        icon: <MenuBookIcon fontSize='small'/>,
+        path: '/glossary'
+    },
+    {
+        beta: true,
         title: 'Stats for Nerds',
         icon: <InsertChartOutlinedIcon/>,
         path: '/stats'
@@ -78,5 +86,11 @@ export default [
         title: 'Belt Requirements',
         icon: <InfoOutlinedIcon fontSize='small'/>,
         path: '/info'
+    },
+    {
+        beta: true,
+        title: 'About LPU Belts',
+        icon: <FactCheckIcon fontSize='small'/>,
+        path: '/about'
     }
 ]

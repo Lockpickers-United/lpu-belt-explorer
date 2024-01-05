@@ -37,5 +37,19 @@ export default [
             const {default: StatsRoute} = await import('../stats/StatsRoute.jsx')
             return {element: <StatsRoute/>}
         }
+    },
+    {
+        path: '/glossary',
+        lazy: async () => {
+            const {default: GlossaryRoute} = await import('../glossary/GlossaryRoute.jsx')
+            return {element: <GlossaryRoute/>}
+        }
+    },
+    {
+        path: '/about',
+        lazy: async () => {
+            const {default: LPUHistoryRoute} = await import('../history/HistoryRoute.jsx')
+            return {element: <LPUHistoryRoute/>}
+        }
     }
 ]

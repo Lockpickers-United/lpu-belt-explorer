@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
+import ToggleBetaButton from './ToggleBetaButton'
 
 function UserMenu() {
     const {isLoggedIn, user, logout} = useContext(AuthContext)
@@ -54,6 +55,8 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>{user.displayName}</ListItemText>
                         </MenuItem>
+                        <Divider/>
+                        <ToggleBetaButton onToggle={handleClose}/>
                         <Divider/>
                         <MenuItem onClick={handleLogout}>
                             <ListItemIcon>
