@@ -1,25 +1,22 @@
-import {BugReportOutlined} from '@mui/icons-material'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import MenuItem from '@mui/material/MenuItem'
+import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
+import {BugReportOutlined} from '@mui/icons-material'
+import IconButton from '@mui/material/IconButton'
 import AppContext from '../app/AppContext'
 
-function ToggleBetaButton({onToggle}) {
+function ToggleBetaButton() {
     const {beta, setBeta} = useContext(AppContext)
 
     const handleClick = useCallback(() => {
         setBeta(!beta)
-        onToggle()
-    }, [beta, setBeta, onToggle])
+    }, [beta, setBeta])
 
     return (
-        <MenuItem onClick={handleClick}>
-            <ListItemIcon>
-                <BugReportOutlined fontSize='small'/>
-            </ListItemIcon>
-            <ListItemText>Toggle Beta Features {beta ? 'Off' : 'On'}</ListItemText>
-        </MenuItem>
+        <Tooltip title={`Toggle Beta Features ${beta ? 'Off' : 'On'}`} arrow disableFocusListener>
+            <IconButton onClick={handleClick}>
+                <BugReportOutlined fontSize='small' color={beta ? 'secondary' : 'primary'}/>
+            </IconButton>
+        </Tooltip>
     )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import ToggleBetaButton from './ToggleBetaButton'
 
 function Footer({extras}) {
     return (
@@ -25,8 +26,12 @@ function Footer({extras}) {
             </a>
 
             {extras}
+
+            <div>
+                <ToggleBetaButton/>
+            </div>
         </Typography>
-    )
+)
 }
 
 export default Footer
