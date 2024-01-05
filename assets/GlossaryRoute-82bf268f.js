@@ -1,0 +1,1 @@
+import{j as s,R as t}from"./index-816d5b32.js";import{N as o,O as r}from"./Nav-f62be805.js";function i(){return s.jsxs(t.Fragment,{children:[s.jsx(o,{title:"Glossary of Terms"}),s.jsx("div",{children:"Coming soon..."}),s.jsx(r,{})]})}export{i as default};
