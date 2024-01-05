@@ -1,6 +1,5 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
-import PrivacyPolicyButton from '../misc/PrivacyPolicyButton'
 
 function Footer({extras}) {
     return (
