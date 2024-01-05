@@ -40,6 +40,10 @@ function SearchBox() {
         debounceChange(value)
     }, [debounceChange])
 
+    const [hasFocus, setHasFocus] = useState(false)
+    const handleFocus = () => setHasFocus(true)
+    const handleBlur = () => setHasFocus(false)
+
     useEffect(() => {
         if (filters.search !== text) {
             setText(filters.search)
@@ -55,13 +59,27 @@ function SearchBox() {
             </Tooltip>
         </InputAdornment>
     ) : null
-    const style = width < 650
+
+    const isMobile = width < 650
+
+    const style = isMobile
         ? {maxWidth: 450, marginRight: 8}
         : {maxWidth: 450, paddingLeft: 60, marginRight: 8}
 
+    const focusStyle = hasFocus && isMobile ? {
+        width: 'auto',
+        position: 'fixed',
+        left: 60,
+        right: 0,
+        paddingRight: 16,
+        maxWidth: 'unset',
+        zIndex: 9999999,
+        backgroundColor: '#272727',
+    } : {}
+
     return (
         <TextField
-            placeholder='Quick Search'
+            placeholder='Search'
             InputProps={{
                 inputProps: {
                     ref: inputEl
@@ -76,8 +94,10 @@ function SearchBox() {
             variant='standard'
             color='secondary'
             onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
             value={text}
-            style={style}
+            style={{...style, ...focusStyle}}
             fullWidth
         />
     )

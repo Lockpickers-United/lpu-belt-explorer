@@ -4,7 +4,7 @@ import ToggleBetaButton from './ToggleBetaButton'
 
 function Footer({extras}) {
     return (
-        <Typography align='center' style={{marginTop: 16, marginBottom: 80}}>
+        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
             <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
                 Discord
             </a>
