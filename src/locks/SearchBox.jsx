@@ -20,7 +20,7 @@ function SearchBox() {
     useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
     const handleClear = useCallback(() => {
-        window.scrollTo({top: 0, behavior: 'smooth'})
+        window.scrollTo({top: 0})
         setText('')
         removeFilter('search', '')
         inputEl.current.focus()
@@ -30,8 +30,11 @@ function SearchBox() {
         return debounce(value => {
             addFilters([
                 {key: 'search', value},
-                {key: 'tab', value: 'search'}
+                {key: 'tab', value: 'search'},
+                {key: 'id', value: undefined},
+                {key: 'name', value: undefined}
             ], true)
+            window.scrollTo({top: 0})
         }, 150)
     }, [addFilters])
 
