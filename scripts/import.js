@@ -194,7 +194,7 @@ const glossary = glossaryData
     .map(item => {
         const term = item.Term
         const definition = item.Definition
-        const hasMedia = item.Title && item.Subtitle && item.thumbnailUrl && item.fullUrl
+        const hasMedia = item.Title && item.Subtitle && item['Thumbnail URL'] && item['Full URL']
         const media = hasMedia ? [{
             title: item.Title,
             subtitle: item.Subtitle,
