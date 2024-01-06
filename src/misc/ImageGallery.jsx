@@ -1,66 +1,71 @@
-import queryString from 'query-string'
-import React, {useCallback, useContext, useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import Tooltip from '@mui/material/Tooltip'
-import {useLocation} from 'react-router-dom'
-import FilterContext from '../locks/FilterContext'
 import licenses from '../data/licenses'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
-import ImageViewer from '../misc/ImageViewer'
+import ImageViewer from './ImageViewer'
 
-function ImageGallery({entry}) {
+function ImageGallery(props) {
+    const {
+        columns,
+        media,
+        initiallyOpen,
+        openIndex,
+        onOpenImage,
+        onCloseImage,
+        onBackButton
+    } = props
     const {width} = useWindowSize()
     const isMobile = width < 736
-    const location = useLocation()
-    const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
-    const [open, setOpen] = useState(() => {
-        return isValidImage(filters.image, entry)
-    })
+    const [open, setOpen] = useState(initiallyOpen)
 
     const handleVideoClick = useCallback(url => () => {
         return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
     const handleOpen = useCallback(index => () => {
-        addFilter('image', index + 1, true)
+        onOpenImage(index)
         setOpen(true)
-    }, [addFilter])
+    }, [onOpenImage])
 
     const handleClose = useCallback(() => {
-        removeFilters(['image'])
+        onCloseImage()
         setOpen(false)
-    }, [removeFilters])
+    }, [onCloseImage])
 
     // Handle back button presses
     useEffect(() => {
         const handler = () => {
-            const {image} = queryString.parse(location.search)
-            if (isValidImage(image, entry)) {
-                setOpen(true)
-            } else {
-                setOpen(false)
+            if (onBackButton) {
+                const result = onBackButton()
+                return setOpen(result)
             }
+            return setOpen(false)
         }
         addEventListener('hashchange', handler)
         return () => removeEventListener('hashchange', handler)
     })
 
+    const cols = columns ?? (isMobile ? 2 : 3)
+
     return (
         <React.Fragment>
             {open &&
                 <ImageViewer
-                    media={entry.media}
+                    media={media}
+                    openIndex={openIndex}
+                    onOpenImage={onOpenImage}
                     onClose={handleClose}
                 />
             }
-            <ImageList variant='masonry' cols={isMobile ? 2 : 3} sx={{marginTop: 2}}>
-                {entry.media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl}, index) =>
+            <ImageList variant='masonry' cols={cols} sx={{marginTop: 2}}>
+                {media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl}, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>
                         <img
                             src={thumbnailUrl}
@@ -113,7 +118,5 @@ function ImageGallery({entry}) {
         </React.Fragment>
     )
 }
-
-const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media[(+image) - 1]
 
 export default ImageGallery

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import LaunchIcon from '@mui/icons-material/Launch'
 import Stack from '@mui/material/Stack'
 import DialogActions from '@mui/material/DialogActions'
@@ -13,7 +13,6 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import {useHotkeys} from 'react-hotkeys-hook'
 import {useSwipeable} from 'react-swipeable'
-import FilterContext from '../locks/FilterContext'
 import licenses from '../data/licenses'
 import Transition from '../util/Transition'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
@@ -24,7 +23,7 @@ import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor'
 import useWindowSize from '../util/useWindowSize'
 import Tooltip from '@mui/material/Tooltip'
 
-function ImageViewer({media, onClose}) {
+function ImageViewer({media, openIndex, onOpenImage, onClose}) {
     const [open, setOpen] = useState(true)
     const [loading, setLoading] = useState(true)
     const [{x: initX, y: initY}, setInitXY] = useState({x: 0, y: 0})
@@ -32,13 +31,8 @@ function ImageViewer({media, onClose}) {
     const [{x, y}, setXY] = useState({x: 0, y: 0})
     const [zoom, setZoom] = useState(1)
     const [moving, setMoving] = useState(false)
-    const {addFilter, filters} = useContext(FilterContext)
 
-    const index = useMemo(() => {
-        return filters.image ? +filters.image - 1 : -1
-    }, [filters])
-
-    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = media[index] || {}
+    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = media[openIndex] || {}
     const {width} = useWindowSize()
     const isMobile = width <= 500
 
@@ -58,17 +52,17 @@ function ImageViewer({media, onClose}) {
     }, [])
 
     const handleNavigatePrevious = useCallback(() => {
-        const nextIndex = index === 0 ? media.length - 1 : index - 1
-        addFilter('image', nextIndex + 1, true)
+        const nextIndex = openIndex === 0 ? media.length - 1 : openIndex - 1
+        onOpenImage(nextIndex)
         handleReset()
         setLoading(true)
-    }, [index, media.length, addFilter, handleReset])
+    }, [openIndex, media.length, onOpenImage, handleReset])
     const handleNavigateNext = useCallback(() => {
-        const nextIndex = index === media.length - 1 ? 0 : index + 1
-        addFilter('image', nextIndex + 1, true)
+        const nextIndex = openIndex === media.length - 1 ? 0 : openIndex + 1
+        onOpenImage(nextIndex)
         handleReset()
         setLoading(true)
-    }, [index, media.length, addFilter, handleReset])
+    }, [openIndex, media.length, onOpenImage, handleReset])
 
     const handleMoveStart = useCallback(event => {
         if (zoom !== 1) {

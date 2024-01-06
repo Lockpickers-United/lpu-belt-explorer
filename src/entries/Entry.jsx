@@ -13,12 +13,12 @@ import BeltIcon from './BeltIcon'
 import ReactMarkdown from 'react-markdown'
 import FilterChip from '../filters/FilterChip'
 import CopyLinkToEntryButton from './CopyLinkToEntryButton'
-import ImageGallery from './ImageGallery'
 import AccordionActions from '@mui/material/AccordionActions'
 import Button from '@mui/material/Button'
 import CopyEntryTextButton from './CopyEntryTextButton'
 import Tracker from '../app/Tracker'
 import queryString from 'query-string'
+import LockImageGallery from './LockImageGallery'
 import RelatedEntryButton from './RelatedEntryButton'
 
 function Entry({entry, expanded, onExpand}) {
@@ -161,10 +161,9 @@ function Entry({entry, expanded, onExpand}) {
                         }
                         {
                             !!entry.media?.length &&
-                            <FieldValue
-                                value={
-                                    <ImageGallery entry={entry}/>
-                                }/>
+                            <FieldValue value={
+                                <LockImageGallery entry={entry}/>
+                            }/>
                         }
                         {
                             !!entry.links?.length &&

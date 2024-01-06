@@ -1,13 +1,14 @@
 import React from 'react'
 import Footer from '../nav/Footer.jsx'
 import Nav from '../nav/Nav.jsx'
+import Glossary from './Glossary'
 
 function StatsRoute() {
     return (
         <React.Fragment>
-            <Nav title='Glossary of Terms'/>
+            <Nav title='Glossary of LPU Terms'/>
 
-            <div>Coming soon...</div>
+            <Glossary/>
 
             <Footer/>
         </React.Fragment>
