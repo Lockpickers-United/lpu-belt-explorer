@@ -1,7 +1,7 @@
 import fs from 'fs'
 import dayjs from 'dayjs'
 import {parse} from 'csv-parse/sync'
-import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema} from './schemas.js'
+import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema, glossarySchema} from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
@@ -37,6 +37,7 @@ const mediaData = await importValidate('Media', mediaSchema)
 const linkData = await importValidate('Links', linkSchema)
 const viewData = await importValidate('Lock Views', viewSchema)
 const groupData = await importValidate('Groups', groupSchema)
+const glossaryData = await importValidate('Glossary', glossarySchema)
 
 // Transform fields into internal JSON format
 const jsonData = mainData
@@ -146,7 +147,7 @@ linkData
 viewData
     .forEach(item => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
-        if (!entry) return console.log('Entry not found:', item)
+        if (!entry) return console.log('viewData Import; Entry not found:', item)
         entry.views = +item['Count']
     })
 
@@ -179,3 +180,20 @@ jsonData
 
 // Write out to src location for usage
 fs.writeFileSync('./src/data/data.json', JSON.stringify(jsonData, null, 2))
+
+// Glossary Data
+const glossary = glossaryData
+    .map(item => {
+        const term = item.Term
+        const definition = item.Definition
+        const hasMedia = item.Title && item.Subtitle && item.thumbnailUrl && item.fullUrl
+        const media = hasMedia ? {
+            title: item.Title,
+            subtitle: item.Subtitle,
+            thumbnailUrl: item['Thumbnail URL'],
+            fullUrl: item['Full URL']
+        } : undefined
+        return {term, definition, media}
+    })
+
+fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))

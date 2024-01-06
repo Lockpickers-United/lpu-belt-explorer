@@ -35,7 +35,7 @@ export const mediaSchema = Joi.array().items(
         'Sequence ID': Joi.number().min(1).max(50),
         Title: Joi.string().min(1),
         Subtitle: Joi.string().allow(''),
-        'Thumbnail URL': Joi.string().uri({scheme: ['https']}),
+        'Thumbnail URL': Joi.string(),
         'Full URL': Joi.string().allow('').uri(),
         'Subtitle URL': Joi.string().allow('').uri(),
         'Full Image Direct URL': Joi.string().allow('').uri()
@@ -63,4 +63,17 @@ export const groupSchema = Joi.array().items(
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
         'Related IDs': Joi.string().min(1),
     }).unknown()
+)
+
+export const glossarySchema = Joi.array().items(
+    Joi.object({
+        Term: Joi.string(),
+        Definition: Joi.string(),
+        Title: Joi.string().allow(''),
+        Subtitle: Joi.string().allow(''),
+        'Thumbnail URL': Joi.string().allow(''),
+        'Full URL': Joi.string().allow('').uri(),
+        'Subtitle URL': Joi.string().allow('').uri(),
+        'Full Image Direct URL': Joi.string().allow('').uri()
+    })
 )
