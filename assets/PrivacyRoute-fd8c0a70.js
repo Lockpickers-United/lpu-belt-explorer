@@ -1,4 +1,4 @@
-import{j as e,R as o}from"./index-24726232.js";import{N as t,O as n}from"./Nav-0d8eb7bc.js";import{C as a,a as r,R as i}from"./react-markdown-785313e1.js";import"./index-351b9e63.js";const s=`# Privacy Policy
+import{j as e,R as o}from"./index-e543a07a.js";import{N as t,O as n}from"./Nav-c05cfaf0.js";import{C as a,a as r,R as i}from"./react-markdown-5fd214bc.js";import"./index-ae27d2ca.js";const s=`# Privacy Policy
 
 Last updated: November 28, 2023
 
