@@ -19,7 +19,7 @@ const SiteStatsTable = ({tableData}) => {
                         <TableRow key={index} index={index}>
                             <TableCell key={index + 1} style={bodyStyle}>{metric.label}</TableCell>
                             <TableCell style={bodyStyle}
-                                       sx={{textAlign: 'left'}}>{metric.value}</TableCell>
+                                       sx={{textAlign: 'left'}}>{metric.value.toLocaleString()}</TableCell>
                         </TableRow>
                     )}
                 </TableBody>

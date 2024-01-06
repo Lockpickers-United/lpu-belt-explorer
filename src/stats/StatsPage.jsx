@@ -3,6 +3,7 @@ import useWindowSize from '../util/useWindowSize'
 import LockViewsLine from './LockViewsLine'
 import SiteStats from './SiteStats.jsx'
 import PhotoStats from './PhotoStats.jsx'
+import PopularAreas from './PopularAreas.jsx'
 
 function StatsPage() {
     const {width} = useWindowSize()
@@ -26,6 +27,9 @@ function StatsPage() {
 
                 <div style={headerStyle}>Weekly Lock Views</div>
                 <LockViewsLine chartHeight={chartHeight}/>
+
+                <div style={headerStyle}>Popular Countries</div>
+                <PopularAreas/>
 
                 <div style={headerStyle}>Photo Stats</div>
                 <PhotoStats/>
