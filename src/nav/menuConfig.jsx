@@ -31,7 +31,7 @@ export default [
     },
     {
         beta: true,
-        title: 'Stats for Nerds',
+        title: 'Stats & Insights',
         icon: <InsertChartOutlinedIcon/>,
         path: '/stats'
     },
