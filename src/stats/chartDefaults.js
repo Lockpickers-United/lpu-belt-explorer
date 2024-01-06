@@ -1,3 +1,8 @@
+export const beltColors =
+    ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
+        '#0090de', '#634b9f', '#9d5918',
+        '#ba0303', '#1a1a1a', '#373737']
+
 export const primaryTheme = {
     text: {
         'fontSize': 11,

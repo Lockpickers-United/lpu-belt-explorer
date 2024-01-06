@@ -4,6 +4,7 @@ import LockViewsLine from './LockViewsLine'
 import SiteStats from './SiteStats.jsx'
 import PhotoStats from './PhotoStats.jsx'
 import PopularAreas from './PopularAreas.jsx'
+import BeltDistribution from './BeltDistribution.jsx'
 
 function StatsPage() {
     const {width} = useWindowSize()
@@ -33,6 +34,9 @@ function StatsPage() {
 
                 <div style={headerStyle}>Photo Stats</div>
                 <PhotoStats/>
+
+                <div style={headerStyle}>Belt Distribution</div>
+                <BeltDistribution/>
 
                 <div>&nbsp;</div>
             </div>
