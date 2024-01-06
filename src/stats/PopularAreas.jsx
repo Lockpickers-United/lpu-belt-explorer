@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import {Button, ButtonGroup} from '@mui/material'
 import useWindowSize from '../util/useWindowSize'
@@ -32,11 +32,11 @@ const PopularAreas = () => {
 
     const [data, setData] = useState(popularCountries)
     const [map, setMap] = useState(mapWorld)
-    const changeData = (newData, map) => {
+    const changeData = useCallback((newData, map) => {
         document.getElementById('areaList').scrollTop = 0
         setData(newData)
         setMap(map)
-    }
+    }, [])
 
     return (
         <React.Fragment>
