@@ -8,6 +8,7 @@ import validate from './validate.js'
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
+    console.log(`Importing ${tab}...`)
     const {GOOGLE_SHEET_ID: sheetId} = process.env
     if (!sheetId) {
         console.log('Config error! Set GOOGLE_SHEET_ID env var to run Import.')
@@ -40,6 +41,7 @@ const groupData = await importValidate('Groups', groupSchema)
 const glossaryData = await importValidate('Glossary', glossarySchema)
 
 // Transform fields into internal JSON format
+console.log('Processing main data...')
 const jsonData = mainData
     .map(datum => {
         const belt = datum.Belt
@@ -126,6 +128,7 @@ mediaData
     })
 
 // Add link data
+console.log('Processing link data...')
 linkData
     .sort((a, b) => {
         const one = a['Sequence ID']
@@ -144,6 +147,7 @@ linkData
     })
 
 // Add view data
+console.log('Processing view data...')
 viewData
     .forEach(item => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
@@ -152,6 +156,7 @@ viewData
     })
 
 // Lock Group data
+console.log('Processing group data...')
 groupData.forEach(group => {
     const relatedIds = group['Related IDs'].split(',').map(s => s.trim())
     const entries = relatedIds
@@ -165,6 +170,7 @@ groupData.forEach(group => {
 })
 
 // Recently updated data
+console.log('Processing recenty updated data...')
 const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
 jsonData
     .forEach(entry => {
@@ -179,9 +185,11 @@ jsonData
     })
 
 // Write out to src location for usage
+console.log('Writing data.json...')
 fs.writeFileSync('./src/data/data.json', JSON.stringify(jsonData, null, 2))
 
 // Glossary Data
+console.log('Processing glossary data...')
 const glossary = glossaryData
     .map(item => {
         const term = item.Term
@@ -196,4 +204,7 @@ const glossary = glossaryData
         return {term, definition, media}
     })
 
+console.log('Writing glossary.json')
 fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))
+
+console.log('Complete.')
