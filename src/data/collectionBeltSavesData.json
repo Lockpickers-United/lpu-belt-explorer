@@ -1,0 +1,52 @@
+[
+  {
+    "id": "White",
+    "label": "White",
+    "value": "0.0747"
+  },
+  {
+    "id": "Yellow",
+    "label": "Yellow",
+    "value": "0.0822"
+  },
+  {
+    "id": "Orange",
+    "label": "Orange",
+    "value": "0.0837"
+  },
+  {
+    "id": "Green",
+    "label": "Green",
+    "value": "0.1727"
+  },
+  {
+    "id": "Blue",
+    "label": "Blue",
+    "value": "0.1245"
+  },
+  {
+    "id": "Purple",
+    "label": "Purple",
+    "value": "0.1307"
+  },
+  {
+    "id": "Brown",
+    "label": "Brown",
+    "value": "0.1012"
+  },
+  {
+    "id": "Red",
+    "label": "Red",
+    "value": "0.0671"
+  },
+  {
+    "id": "Black",
+    "label": "Black",
+    "value": "0.1492"
+  },
+  {
+    "id": "Unranked",
+    "label": "Unranked",
+    "value": "0.014"
+  }
+]
