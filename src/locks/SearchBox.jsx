@@ -23,6 +23,7 @@ function SearchBox() {
         window.scrollTo({top: 0, behavior: 'smooth'})
         setText('')
         removeFilter('search', '')
+        inputEl.current.focus()
     }, [removeFilter])
 
     const debounceChange = useMemo(() => {
@@ -41,8 +42,8 @@ function SearchBox() {
     }, [debounceChange])
 
     const [hasFocus, setHasFocus] = useState(false)
-    const handleFocus = () => setHasFocus(true)
-    const handleBlur = () => setHasFocus(false)
+    const handleFocus = () => setTimeout(() => setHasFocus(true), 0)
+    const handleBlur = () => setTimeout(() => setHasFocus(false), 0)
 
     useEffect(() => {
         if (filters.search !== text) {
