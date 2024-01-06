@@ -1,3 +1,4 @@
+import Backdrop from '@mui/material/Backdrop'
 import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
@@ -78,32 +79,39 @@ function SearchBox() {
         paddingRight: 16,
         maxWidth: 'unset',
         zIndex: 9999999,
-        backgroundColor: '#272727',
+        backgroundColor: '#272727'
     } : {}
 
     return (
-        <TextField
-            placeholder='Search'
-            InputProps={{
-                inputProps: {
-                    ref: inputEl
-                },
-                startAdornment: (
-                    <InputAdornment position='start'>
-                        <SearchIcon/>
-                    </InputAdornment>
-                ),
-                endAdornment
-            }}
-            variant='standard'
-            color='secondary'
-            onChange={handleChange}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            value={text}
-            style={{...style, ...focusStyle}}
-            fullWidth
-        />
+        <React.Fragment>
+            <TextField
+                placeholder='Search'
+                InputProps={{
+                    inputProps: {
+                        ref: inputEl
+                    },
+                    startAdornment: (
+                        <InputAdornment position='start'>
+                            <SearchIcon/>
+                        </InputAdornment>
+                    ),
+                    endAdornment
+                }}
+                variant='standard'
+                color='secondary'
+                onChange={handleChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                value={text}
+                style={{...style, ...focusStyle}}
+                fullWidth
+            />
+            <Backdrop
+                invisible
+                open={hasFocus && isMobile}
+                onClick={handleBlur}
+            />
+        </React.Fragment>
     )
 }
 
