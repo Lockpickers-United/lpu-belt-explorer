@@ -205,6 +205,7 @@ const glossary = glossaryData
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
         return {term, definition, media}
     })
+    .sort((a, b) => a.term.localeCompare(b.term))
 
 console.log('Writing glossary.json')
 fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))
