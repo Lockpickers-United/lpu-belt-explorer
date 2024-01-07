@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../nav/Footer.jsx'
 import Nav from '../nav/Nav.jsx'
-import StatsPage from './StatsPage.jsx'
+import StatsMainPage from './StatsMainPage.jsx'
 
 
 function StatsRoute() {
@@ -9,7 +9,7 @@ function StatsRoute() {
         <React.Fragment>
             <Nav title='Stats & Insights'/>
 
-            <StatsPage/>
+            <StatsMainPage/>
 
             <Footer/>
         </React.Fragment>

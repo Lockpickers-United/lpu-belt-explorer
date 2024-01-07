@@ -5,8 +5,9 @@ import SiteStats from './SiteStats.jsx'
 import PhotoStats from './PhotoStats.jsx'
 import PopularAreas from './PopularAreas.jsx'
 import BeltDistribution from './BeltDistribution.jsx'
+import BrandBeltStats from './BrandBeltStats.jsx'
 
-function StatsPage() {
+function StatsMainPage() {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const chartHeight = !smallWidth ? 350 : 300
@@ -38,10 +39,13 @@ function StatsPage() {
                 <div style={headerStyle}>Belt Distribution</div>
                 <BeltDistribution/>
 
+                <div style={headerStyle}>Brand Lock Distribution By Belt</div>
+                <BrandBeltStats/>
+
                 <div>&nbsp;</div>
             </div>
         </React.Fragment>
     )
 }
 
-export default StatsPage
+export default StatsMainPage
