@@ -1,7 +1,15 @@
 [
   {
     "term": "Actuator",
-    "definition": "A component at the back of the plug that throws the bolt or unlocks the shackle when the plug is turned."
+    "definition": "A component at the back of the plug that throws the bolt or unlocks the shackle when the plug is turned.",
+    "media": [
+      {
+        "title": "By: drZongo",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53448597719_e97f3e0688_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448597719/in/album-72177720313869627/"
+      }
+    ]
   },
   {
     "term": "Anti-drill element",
@@ -25,7 +33,15 @@
   },
   {
     "term": "Bible Cover",
-    "definition": "A cover plate that is sometimes on top of the bible. Can be removed for gutting."
+    "definition": "A cover plate that is sometimes on top of the bible. Can be removed for gutting.",
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53448597624_c2ae33dfe6_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448597624/in/album-72177720313869627/"
+      }
+    ]
   },
   {
     "term": "Binding",
