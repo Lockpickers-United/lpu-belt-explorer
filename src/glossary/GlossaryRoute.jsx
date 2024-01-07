@@ -6,7 +6,7 @@ import Glossary from './Glossary'
 function StatsRoute() {
     return (
         <React.Fragment>
-            <Nav title='Glossary of LPU Terms'/>
+            <Nav title='Glossary'/>
 
             <Glossary/>
 
