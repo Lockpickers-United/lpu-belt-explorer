@@ -21,7 +21,7 @@ function Glossary() {
 
             <Card style={{
                 maxWidth: 700, marginLeft: 'auto', marginRight: 'auto',
-                padding: '6px 20px', borderTop: '1px solid #333', borderRadius: 0
+                padding: '6px 20px', borderBottom: '1px solid #333', bordertop: '1px solid #333', borderRadius: 0
             }}>
                 <ReactMarkdown>
                     {glossaryIntro}

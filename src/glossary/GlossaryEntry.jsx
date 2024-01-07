@@ -3,10 +3,16 @@ import Card from '@mui/material/Card'
 import GlossaryImage from './GlossaryImage'
 
 function GlossaryEntry({entry}) {
+
+    const photoCredit = entry.media
+        ? entry.media.title.charAt(0).toLowerCase() + entry?.media.title.slice(1)
+        : ''
+
+
     return (
         <Card style={{
-            maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: '20px 20px',
-            borderTop: '1px solid #333', borderRadius: 0
+            maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: '12px 20px',
+            borderRadius: 0
         }}>
             <div style={{color: '#ddd'}}>
                 <GlossaryImage entry={entry}/>
@@ -20,7 +26,7 @@ function GlossaryEntry({entry}) {
 
                 {entry.definition}
 
-                {!!entry.media && ` (Photo ${entry.media.title})`}
+                {!!entry.media && ` (Photo ${photoCredit})`}
             </div>
         </Card>
     )
