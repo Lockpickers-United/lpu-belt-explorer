@@ -1,4 +1,4 @@
-import{j as e,R as t}from"./index-223ea7a0.js";import{N as n,F as i}from"./Nav-2dfa70e2.js";import{C as a,a as r,R as s}from"./react-markdown-64e78d20.js";import{C as l}from"./CardActions-a1f332a8.js";import"./index-06af9392.js";const h=`## Earn Lockpicking Karate Flair
+import{j as e,R as t}from"./index-6dcb5b05.js";import{N as n,O as i}from"./Nav-8550d241.js";import{C as a,R as r}from"./react-markdown-ae1e83f8.js";import{C as s}from"./CardContent-4aceaed0.js";import{C as l}from"./CardActions-1485ad1a.js";import"./index-f944b71d.js";const h=`## Earn Lockpicking Karate Flair
 
 As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
@@ -411,8 +411,8 @@ Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpickin
 * **Lips 8300** Added and samelined with Nemef NF2 - they are nearly the same lock, extra checkpin or no.
 * **Lockwood 215A40 and 214A40** Added and samelined with 334B40 - same core, same lock
 * **Lockwood 356S63, 270S70** Samelined with 334B40 (see previous.)
-`;function u(){const o="12/4/2023";return e.jsx(t.Fragment,{children:e.jsxs(a,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(r,{children:e.jsx(s,{linkTarget:"_blank",children:m})}),e.jsxs(l,{children:["Updated: ",o]})]})})}const m=[h,c,d].join(`
+`;function u(){const o="12/4/2023";return e.jsx(t.Fragment,{children:e.jsxs(a,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(s,{children:e.jsx(r,{linkTarget:"_blank",children:m})}),e.jsxs(l,{children:["Updated: ",o]})]})})}const m=[h,c,d].join(`
 
 ---
 
-`);function b(){return e.jsxs(t.Fragment,{children:[e.jsx(n,{title:"Information"}),e.jsx(u,{}),e.jsx(i,{})]})}export{b as default};
+`);function w(){return e.jsxs(t.Fragment,{children:[e.jsx(n,{title:"Information"}),e.jsx(u,{}),e.jsx(i,{})]})}export{w as default};
