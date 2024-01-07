@@ -234,8 +234,8 @@ Green,Kasp,14040,,Pin-tumbler,,,14ece36b
 Green,,Kenaurd,"pin-in-pin, 4 pins",Dimple,Pin-in-pin,,7ec79663
 Green,Kryptonite,"6-pin padlock",,Pin-tumbler,,,1c002521
 Green,Lockwood,120/40,,Pin-tumbler,Unguttable,,5f0834f5
-Green,"Lockwood,Lockwood,Lockwood,Lockwood,Lockwood","214A40,215A40,270S70,334B45,356S63","tapered/beveled drivers",Pin-tumbler,"Tapered drivers",,ae023398
 Green,Lockwood,234B45,,Pin-tumbler,,,3eced659
+Green,Lockwood,334B45,"tapered/beveled drivers",Pin-tumbler,"Tapered drivers",,ae023398
 Green,MAKO,425,,Pin-tumbler,,,af98761d
 Green,MAKO,427,,Pin-tumbler,Guttable,,cba41cb7
 Green,"Master Lock","410 LOTO (Lockout Tagout)",,Pin-tumbler,Unguttable,,c942490e
@@ -346,7 +346,7 @@ Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 Blue,Kenaurd,Dimple,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
 Blue,Kryptonite,"Disk Detainer",,"Disc detainer","Random mid tension","Readily picked with front tension and counter-rotation",c8c0ee06
 Blue,Lince,C4,,Dimple,,,adc2d335
-Blue,Lockwood,334B45,"with spools",Pin-tumbler,Guttable,,331c9d36
+Blue,"Lockwood,Lockwood,Lockwood,Lockwood,Lockwood","214A40,215A40,270S70,334B45,356S63","with spools",Pin-tumbler,Guttable,,331c9d36
 Blue,Lockwood,V7,,Pin-tumbler,,,f6b001ed
 Blue,Lucznik,E8,,Pin-tumbler,,,17270f9c
 Blue,Lucznik,LC,,Pin-tumbler,,,1c01212e
