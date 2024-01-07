@@ -11,7 +11,7 @@ function GlossaryEntry({entry, highlighted}) {
         maxWidth: 700,
         marginLeft: 'auto',
         marginRight: 'auto',
-        padding: '12px 20px',
+        padding: '0px 20px',
         borderRadius: 0,
         backgroundColor: highlighted ? '#222' : undefined
     }
