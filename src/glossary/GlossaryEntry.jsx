@@ -1,42 +1,37 @@
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import Accordion from '@mui/material/Accordion'
-import AccordionActions from '@mui/material/AccordionActions'
-import AccordionDetails from '@mui/material/AccordionDetails'
-import AccordionSummary from '@mui/material/AccordionSummary'
 import React, {useCallback} from 'react'
-import FieldValue from '../entries/FieldValue'
-import GlossaryImageGallery from './GlossaryImageGallery'
+import Card from '@mui/material/Card'
+import useWindowSize from '../util/useWindowSize.jsx'
 
-function GlossaryEntry({entry, expanded, onExpand}) {
-    const handleChange = useCallback((_, isExpanded) => {
-        onExpand(isExpanded ? entry.term : false)
-    }, [entry.term, onExpand])
+function GlossaryEntry({entry}) {
 
-    const style = {maxWidth: 500, marginLeft: 'auto', marginRight: 'auto'}
+    const {width} = useWindowSize()
+    const smallWidth = width < 500
+    const photoWidth = !smallWidth ? 150 : 110
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                {entry.term}
-            </AccordionSummary>
-            {
-                expanded &&
-                <React.Fragment>
-                    <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
-                        <FieldValue value={entry.definition}/>
-                        {
-                            !!entry.media?.length &&
-                            <FieldValue value={
-                                <GlossaryImageGallery entry={entry}/>
-                            }/>
-                        }
-                    </AccordionDetails>
-                    <AccordionActions disableSpacing>
-
-                    </AccordionActions>
-                </React.Fragment>
-            }
-        </Accordion>
+        <Card style={{
+            maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: '20px 20px',
+            borderTop: '1px solid #333', borderRadius: 0
+        }}>
+            <div style={{color: '#ddd'}}>
+                {!!entry.media?.length &&
+                    <div style={{
+                        margin: '6px 0px 12px 20px', float: 'right',
+                        textAlign: 'center', fontSize: '0.85rem'
+                    }}>
+                        <img alt={entry.term} src={entry.media[0].thumbnailUrl} style={{width: photoWidth}}/><br/>
+                        <a href={null} style={{textDecoration: 'underline'}}>details</a>
+                    </div>
+                }
+                <span style={{
+                    fontWeight: 700,
+                    fontSize: '1.1rem',
+                    marginBottom: 4,
+                    color: '#fff'
+                }}>{entry.term}</span> - {entry.definition}
+                {!!entry.media?.length && ` (Photo ${entry.media[0].title})`}
+            </div>
+        </Card>
     )
 }
 
