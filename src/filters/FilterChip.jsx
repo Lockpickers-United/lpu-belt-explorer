@@ -41,7 +41,7 @@ function FilterChip({field, value, ...props}) {
                 {...props}
             />
             <Menu
-                open={open}
+                open={!!open}
                 anchorEl={open}
                 anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
                 onClose={handleClose}
