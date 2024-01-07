@@ -75,5 +75,5 @@ export const glossarySchema = Joi.array().items(
         'Full URL': Joi.string().allow('').uri(),
         'Subtitle URL': Joi.string().allow('').uri(),
         'Full Image Direct URL': Joi.string().allow('').uri()
-    })
+    }).unknown()
 )

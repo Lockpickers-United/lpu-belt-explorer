@@ -7,7 +7,6 @@ import Divider from '@mui/material/Divider'
 import useWindowSize from '../util/useWindowSize.jsx'
 
 function BrandBeltStats() {
-
     const brandBelts = brandBeltData
     const brandNameList = brandBelts.map((brand) =>
         brand.brandName
@@ -21,6 +20,10 @@ function BrandBeltStats() {
     const midWidth = width < 700
     const buttonMargin = !midWidth ? 20 : !smallWidth ? 10 : 2
 
+    const [open, setOpen] = useState(false)
+    const handleClose = useCallback(() => setOpen(false), [])
+    const handleOpen = useCallback(() => setOpen(true), [])
+
     const handleChange = useCallback(event => {
         setBrandIndex(brandNameList.findIndex(x => x === event.target.value))
         setBrandName(event.target.value)
@@ -29,11 +32,7 @@ function BrandBeltStats() {
         // TODO: deselect to restore display of 'Brand' header and border?
         document.getElementById('brandPulldown').classList.remove('active')
         document.getElementById('brandSelect').classList.remove('active')
-    }, [])
-
-    const [open, setOpen] = useState(false)
-    const handleClose = useCallback(() => setOpen(false), [])
-    const handleOpen = useCallback(() => setOpen(true), [])
+    }, [brandNameList, handleClose])
 
     return (
         <React.Fragment>

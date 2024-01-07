@@ -195,12 +195,12 @@ const glossary = glossaryData
         const term = item.Term
         const definition = item.Definition
         const hasMedia = item.Title && item.Subtitle && item['Thumbnail URL'] && item['Full URL']
-        const media = hasMedia ? [{
+        const media = hasMedia ? {
             title: item.Title,
             subtitle: item.Subtitle,
             thumbnailUrl: item['Thumbnail URL'],
             fullUrl: item['Full URL']
-        }] : undefined
+        } : undefined
         return {term, definition, media}
     })
 

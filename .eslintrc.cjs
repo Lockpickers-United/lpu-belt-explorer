@@ -39,6 +39,7 @@ module.exports = {
     ignorePatterns: [
         '*.md',
         '*.png',
+        '*.gif',
         '*.csv',
         '*.html',
         '*.json'
