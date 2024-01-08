@@ -7,6 +7,7 @@ import PopularAreas from './PopularAreas.jsx'
 import BeltDistribution from './BeltDistribution.jsx'
 import BrandBeltStats from './BrandBeltStats.jsx'
 import LockingMechanisms from './LockingMechanisms.jsx'
+import RedditBeltGrowth from './RedditBeltGrowth.jsx'
 
 function StatsMainPage() {
     const {width} = useWindowSize()
@@ -27,7 +28,6 @@ function StatsMainPage() {
                 marginLeft: 'auto', marginRight: 'auto',
                 fontSize: '1.5rem'
             }}>
-
                 <div style={firstHeaderStyle}>Site Stats</div>
                 <SiteStats/>
 
@@ -49,8 +49,11 @@ function StatsMainPage() {
                 <div style={headerStyle}>Locking Mechanisms</div>
                 <LockingMechanisms/>
 
-                <img alt='stats' src={'https://images.lpubelts.com/i/stats.gif'} width={10} height={10}/><br/>
+                <div style={headerStyle}>Reddit User Belt Rankings</div>
+                <RedditBeltGrowth/>
 
+                <div>&nbsp;</div>
+                <img alt='stats' src={'https://images.lpubelts.com/i/stats.gif'} width={10} height={10}/>
             </div>
         </React.Fragment>
     )

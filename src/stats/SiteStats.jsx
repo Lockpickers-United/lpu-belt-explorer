@@ -11,7 +11,7 @@ const SiteStats = () => {
     const smallWidth = width < 500
     const midWidth = width < 700
     const divStyle = !midWidth ? {display: 'flex', padding: '0xp 20px', maxWidth: 660} : {padding: '0xp 20px'}
-    const divSpacing = !smallWidth ? '10px' : '26px'
+    const divSpacing = !midWidth ? '10px' : !smallWidth ? '26px' : '26px'
 
     const lockCounts = lockSummaryData.lockCounts
     const siteData = siteStatsData
