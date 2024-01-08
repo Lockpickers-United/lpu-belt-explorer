@@ -1,4 +1,4 @@
-import{j as e,R as t}from"./index-f5f42d40.js";import{N as n,F as i}from"./Nav-6409f9d3.js";import{C as a,R as r}from"./react-markdown-7a97285c.js";import{C as s}from"./CardContent-a1eb0615.js";import{C as l}from"./CardActions-70f033ba.js";import"./index-76cb9877.js";const h=`## Earn Lockpicking Karate Flair
+import{j as e,R as t}from"./index-2fb8835b.js";import{N as n,F as i}from"./Nav-2a953b10.js";import{C as a,R as r}from"./react-markdown-496deeda.js";import{C as s}from"./CardContent-cc361d8e.js";import{C as l}from"./CardActions-d40097bf.js";import"./index-a760a50b.js";const h=`## Earn Lockpicking Karate Flair
 
 As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
