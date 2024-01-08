@@ -129,7 +129,7 @@ Orange,,SIB,,Pin-tumbler,,,74f65a9c
 Orange,,SMB,,,,,029fef1f
 Orange,,SOLXD,,Pin-tumbler,,,0754f036
 Orange,,Starlet,,Pin-tumbler,,,f2a8a932
-Orange,TESA,TE-5,,Pin-tumbler,Tapered,,7d9d715d
+Orange,TESA,TE-5,,Pin-tumbler,"Tapered drivers",,7d9d715d
 Orange,Trelock,"Euro Cylinder",,Pin-tumbler,,,7b65effd
 Orange,,Trimas,,Pin-tumbler,,,ecd83598
 Orange,,Urbis,,,,,1be21a18
@@ -618,7 +618,7 @@ Red,MIWA,PR,"<7 unmastered levers",Lever/sidebar,"Partial gut",,fdb68dc4
 Red,"MIWA,Tostem","PS,DN","7-8 unmastered levers",Lever/sidebar,,,550a0c9d
 Red,"MIWA,MIWA","U9,UR","<8 unmastered levers",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
-Red,Mottura,52,"7 lever",Lever,"Rim,Pin key,Sliding lever,Double bitted,False gates",,5e090448
+Red,Mottura,52,"7 lever",Lever,"Rim,Pin key,Sliding levers,Double bitted,False gates",,5e090448
 Red,Mottura,"Champions C55",,"Dimple,Other",,,3daff112
 Red,"Picard,Heracles","Vigie,Vigie",,Pump/push,,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels 3+ chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar,Guttable",,9da7a5f2
