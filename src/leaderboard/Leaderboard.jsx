@@ -59,6 +59,8 @@ function Leaderboard() {
                 <Typography variant='caption' align='right' component='div' style={{width: '100%', marginTop: 8}}>
                     Last updated: {updateTime} GMT
                 </Typography>
+                <img alt='leaderboard' src={'https://images.lpubelts.com/i/leaderboard.gif'} width={10} height={10}/><br/>
+
             </div>
         </React.Fragment>
 

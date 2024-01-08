@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
-import {Button, ButtonGroup} from '@mui/material'
+import {ToggleButtonGroup} from '@mui/material'
+import StatsToggleButton from './StatsToggleButton.jsx'
 import useWindowSize from '../util/useWindowSize'
 import popularAreas from '../data/popularAreasData.json'
 import mapWorld from './maps/mapWorld.gif'
@@ -30,38 +31,49 @@ const PopularAreas = () => {
         ...divFlexStyle
     }
 
-    const [data, setData] = useState(popularCountries)
+    const [dataset, setDataset] = useState(popularCountries)
     const [map, setMap] = useState(mapWorld)
-    const changeData = useCallback((newData, map) => {
+    const handleButtonClick = useCallback((newDataSet) => {
         document.getElementById('areaList').scrollTop = 0
-        setData(newData)
-        setMap(map)
-    }, [])
+        setDataset(newDataSet)
+
+        newDataSet === popularCountries && setMap(mapWorld)
+        || newDataSet === popularEuropeanCountries && setMap(mapEurope)
+        || newDataSet === popularStates && setMap(mapUSA)
+
+    }, [popularCountries, popularEuropeanCountries, popularStates])
 
     return (
         <React.Fragment>
             <div style={{textAlign: 'center'}}>
 
-                <ButtonGroup variant='outlined' style={{backgroundColor: '#222', outlineColor: '#222'}}>
-                    <Button
-                        onClick={() => {
-                            changeData(popularCountries, mapWorld)
-                        }}
-                        style={{color: data === popularCountries ? '#fff' : '#666'}}
-                    >Worldwide</Button>
-                    <Button
-                        onClick={() => {
-                            changeData(popularEuropeanCountries, mapEurope)
-                        }}
-                        style={{color: data === popularEuropeanCountries ? '#fff' : '#666'}}
-                    >Europe</Button>
-                    <Button
-                        onClick={() => {
-                            changeData(popularStates, mapUSA)
-                        }}
-                        style={{color: data === popularStates ? '#fff' : '#666'}}
-                    >US States</Button>
-                </ButtonGroup>
+                <ToggleButtonGroup variant='outlined'>
+
+                    <StatsToggleButton
+                        handleButtonClick={handleButtonClick}
+                        dataset={dataset}
+                        newDataset={popularCountries}
+                        value={dataset}
+                        label='Worldwide'
+                    >Worldwide</StatsToggleButton>
+
+                    <StatsToggleButton
+                        handleButtonClick={handleButtonClick}
+                        dataset={dataset}
+                        value={dataset}
+                        newDataset={popularEuropeanCountries}
+                        label='Europe'
+                    >Europe</StatsToggleButton>
+
+                    <StatsToggleButton
+                        handleButtonClick={handleButtonClick}
+                        dataset={dataset}
+                        value={dataset}
+                        newDataset={popularStates}
+                        label='US States'
+                    >US States</StatsToggleButton>
+
+                </ToggleButtonGroup>
 
                 <div style={combinedDivStyle}>
 
@@ -85,7 +97,7 @@ const PopularAreas = () => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {data.data?.map((area, index) =>
+                                    {dataset.data?.map((area, index) =>
                                         <TableRow key={index} index={index}>
                                             <TableCell key={index + 1} style={bodyStyle}
                                                        sx={{

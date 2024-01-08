@@ -49,7 +49,8 @@ function StatsMainPage() {
                 <div style={headerStyle}>Locking Mechanisms</div>
                 <LockingMechanisms/>
 
-                <div>&nbsp;</div>
+                <img alt='stats' src={'https://images.lpubelts.com/i/stats.gif'} width={10} height={10}/><br/>
+
             </div>
         </React.Fragment>
     )

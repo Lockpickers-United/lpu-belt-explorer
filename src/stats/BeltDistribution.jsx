@@ -11,9 +11,9 @@ const lockViewsByBelt = siteSummaryData.lockViewsByBelt.data
 
 function BeltDistribution() {
 
-    const [beltDistribution, setBeltDistribution] = useState(lockViewsByBelt)
-    const handleButtonClick = useCallback((dataset) => {
-        setBeltDistribution(dataset)
+    const [dataset, setDataset] = useState(lockViewsByBelt)
+    const handleButtonClick = useCallback((newDataset) => {
+        setDataset(newDataset)
     }, [])
 
     return (
@@ -22,31 +22,30 @@ function BeltDistribution() {
 
                 <ToggleButtonGroup
                     variant='outlined'
-                    value={beltDistribution}
                 >
                     <StatsToggleButton
                         handleButtonClick={handleButtonClick}
-                        beltDistribution={beltDistribution}
-                        dataset={lockViewsByBelt}
+                        dataset={dataset}
+                        newDataset={lockViewsByBelt}
                         label='Site Views'
                     />
 
                     <StatsToggleButton
                         handleButtonClick={handleButtonClick}
-                        beltDistribution={beltDistribution}
-                        dataset={locksByBelt}
+                        dataset={dataset}
+                        newDataset={locksByBelt}
                         label='Locks'
                     />
 
                     <StatsToggleButton
                         handleButtonClick={handleButtonClick}
-                        beltDistribution={beltDistribution}
-                        dataset={collectionBeltSaves}
+                        dataset={dataset}
+                        newDataset={collectionBeltSaves}
                         label='Collection Saves'
                     />
 
                 </ToggleButtonGroup>
-                <BeltDistributionBar beltDistribution={beltDistribution}/>
+                <BeltDistributionBar beltDistribution={dataset}/>
             </div>
         </React.Fragment>
     )
