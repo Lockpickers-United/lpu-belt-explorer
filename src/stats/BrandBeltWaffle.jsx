@@ -9,13 +9,25 @@ function BrandBeltWaffle({beltData}) {
             '#0090de', '#634b9f', '#9d5918',
             '#ba0303', '#2c2c2c', '#000000']
 
+    const lockCounts = new Map()
+    beltData.map(function (element) {
+        lockCounts.set(element.label, element.count)
+    })
+
     return (
-        <React.Fragment>
             <div key='waffle' style={{height: 70, padding: '0px 8px', width: '100%', border: '0px solid #333'}}>
 
                 <ResponsiveWaffle
                     data={beltData}
-                    isInteractive={false}
+                    isInteractive={true}
+                    tooltip={(e) => lockCounts.get(e.data.label) ?
+                        <div style={{
+                            padding: '4px 12px', background: '#1a1a1a', fontSize: '.82rem', color: '#ccc'
+                        }}>
+                            {e.data.label} - {lockCounts.get(e.data.label)}
+                        </div>
+                        : null
+                    }
                     fillDirection='right'
                     total={1}
                     rows={4}
@@ -30,7 +42,6 @@ function BrandBeltWaffle({beltData}) {
                 />
 
             </div>
-        </React.Fragment>
     )
 }
 
