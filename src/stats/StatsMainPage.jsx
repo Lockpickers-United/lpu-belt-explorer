@@ -28,7 +28,6 @@ function StatsMainPage() {
                 marginLeft: 'auto', marginRight: 'auto',
                 fontSize: '1.5rem'
             }}>
-
                 <div style={firstHeaderStyle}>Site Stats</div>
                 <SiteStats/>
 
@@ -54,6 +53,7 @@ function StatsMainPage() {
                 <RedditBeltGrowth/>
 
                 <div>&nbsp;</div>
+                <img alt='stats' src={'https://images.lpubelts.com/i/stats.gif'} width={10} height={10}/>
             </div>
         </React.Fragment>
     )

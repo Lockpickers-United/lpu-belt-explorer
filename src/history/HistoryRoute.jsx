@@ -8,6 +8,7 @@ function StatsRoute() {
             <Nav title='History of LPU Belts'/>
 
             <div>Coming soon...</div>
+            <img alt='history' src={'https://images.lpubelts.com/i/history.gif'} width={0} height={0}/>
 
             <Footer/>
         </React.Fragment>
