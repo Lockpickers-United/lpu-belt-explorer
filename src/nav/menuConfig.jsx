@@ -30,7 +30,6 @@ export default [
         path: '/glossary'
     },
     {
-        beta: true,
         title: 'Stats & Insights',
         icon: <InsertChartOutlinedIcon/>,
         path: '/stats'
