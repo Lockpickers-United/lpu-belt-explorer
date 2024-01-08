@@ -4982,7 +4982,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Tapered"
+      "Tapered drivers"
     ],
     "media": [
       {
@@ -5001,7 +5001,7 @@
       }
     ],
     "views": 405,
-    "lastUpdated": "2023-09-02T16:12:59.702Z"
+    "lastUpdated": "2024-01-08T16:21:05.834Z"
   },
   {
     "id": "7b65effd",
@@ -29050,7 +29050,7 @@
     "features": [
       "Rim",
       "Pin key",
-      "Sliding lever",
+      "Sliding levers",
       "Double bitted",
       "False gates"
     ],
@@ -29064,7 +29064,7 @@
       }
     ],
     "views": 149,
-    "lastUpdated": "2023-09-10T20:23:07.259Z"
+    "lastUpdated": "2024-01-08T16:21:05.848Z"
   },
   {
     "id": "3daff112",
