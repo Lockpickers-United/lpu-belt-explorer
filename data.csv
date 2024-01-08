@@ -462,7 +462,7 @@ Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","5+ pins ******","Sidebar,Pi
 Purple,Mindy,"Pagoda AF 16-50","flat key",,,,06a28ac7
 Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
-Purple,Mottura,"3D Key",,"Dimple,other","Rotors,Active sidebar",,0a2c7044
+Purple,Mottura,"3D Key",,"Dimple,Other","Rotors,Active sidebar",,0a2c7044
 Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
 Purple,Mul-T-Lock,"Classic Pro",,Dimple,Pin-in-pin,,fd2b533e
@@ -765,7 +765,7 @@ Unranked,Cobra,"C3 Sidewinder",,,"Under Review ⚑",,1add3dd0
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,,Cotica,,,"Insufficient information",,6719b451
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
-Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Usprung sliders,Active sidebar",,aebd0373
+Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
 Unranked,DOM,"RS Sirius",,,"Under Review ⚑",,406ac672
 Unranked,DOM,"S pp1024","6 pins",,"Under Review ⚑",,d0632926
 Unranked,,EMR,,Pin-tumbler,"Insufficient information",,f24c2d25

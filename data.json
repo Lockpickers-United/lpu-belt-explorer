@@ -20660,7 +20660,7 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "other"
+      "Other"
     ],
     "features": [
       "Rotors",
@@ -20690,7 +20690,7 @@
       }
     ],
     "views": 19,
-    "lastUpdated": "2023-12-06T11:28:34.732Z"
+    "lastUpdated": "2024-01-08T21:58:09.679Z"
   },
   {
     "id": "62520bea",
@@ -37934,7 +37934,7 @@
       "Slider"
     ],
     "features": [
-      "Usprung sliders",
+      "Unsprung sliders",
       "Active sidebar"
     ],
     "media": [
@@ -37989,7 +37989,7 @@
       }
     ],
     "views": 12,
-    "lastUpdated": "2023-08-05T14:23:23.162Z"
+    "lastUpdated": "2024-01-08T21:58:09.688Z"
   },
   {
     "id": "406ac672",
