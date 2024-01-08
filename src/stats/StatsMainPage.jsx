@@ -46,7 +46,7 @@ function StatsMainPage() {
                 <div style={headerStyle}>Brand Lock Distribution By Belt</div>
                 <BrandBeltStats/>
 
-                <div style={headerStyle}>Brand Lock Distribution By Belt</div>
+                <div style={headerStyle}>Locking Mechanisms</div>
                 <LockingMechanisms/>
 
                 <div>&nbsp;</div>
