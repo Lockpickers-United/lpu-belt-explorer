@@ -1,0 +1,1 @@
+import{j as t,R as s}from"./index-24bc01bb.js";import{N as i,G as o}from"./Nav-f33bba3a.js";function a(){return t.jsxs(s.Fragment,{children:[t.jsx(i,{title:"History of LPU Belts"}),t.jsx("div",{children:"Coming soon..."}),t.jsx("img",{alt:"history",src:"https://images.lpubelts.com/i/history.gif",width:0,height:0}),t.jsx(o,{})]})}export{a as default};
