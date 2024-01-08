@@ -11,7 +11,7 @@ const BeltDistributionBar = ({beltDistribution}) => {
     const chartHeight = !midWidth ? 375: !smallWidth ? 325 : 275
     const chartMargin = !smallWidth
         ? {top: 30, right: 20, bottom: 30, left: 50}
-        : {top: 30, right: 5, bottom: 55, left: 40}
+        : {top: 30, right: 5, bottom: 55, left: 48}
     const tickRotation = !smallWidth ? 0 : -45
 
     return (
