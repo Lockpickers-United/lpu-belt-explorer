@@ -7,6 +7,7 @@ import PopularAreas from './PopularAreas.jsx'
 import BeltDistribution from './BeltDistribution.jsx'
 import BrandBeltStats from './BrandBeltStats.jsx'
 import LockingMechanisms from './LockingMechanisms.jsx'
+import RedditBeltGrowth from './RedditBeltGrowth.jsx'
 
 function StatsMainPage() {
     const {width} = useWindowSize()
@@ -48,6 +49,9 @@ function StatsMainPage() {
 
                 <div style={headerStyle}>Locking Mechanisms</div>
                 <LockingMechanisms/>
+
+                <div style={headerStyle}>Reddit User Belt Rankings</div>
+                <RedditBeltGrowth/>
 
                 <div>&nbsp;</div>
             </div>

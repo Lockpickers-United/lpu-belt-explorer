@@ -1,0 +1,74 @@
+[
+  {
+    "date": "2018",
+    "White": "304",
+    "Yellow": "396",
+    "Orange": "467",
+    "Green": "125",
+    "Blue": "60",
+    "Purple": "38",
+    "Brown": "12",
+    "Red": "15",
+    "Black": "13"
+  },
+  {
+    "date": "2019",
+    "White": "518",
+    "Yellow": "806",
+    "Orange": "958",
+    "Green": "285",
+    "Blue": "102",
+    "Purple": "61",
+    "Brown": "21",
+    "Red": "22",
+    "Black": "21"
+  },
+  {
+    "date": "2020",
+    "White": "740",
+    "Yellow": "1199",
+    "Orange": "1418",
+    "Green": "458",
+    "Blue": "155",
+    "Purple": "80",
+    "Brown": "44",
+    "Red": "31",
+    "Black": "44"
+  },
+  {
+    "date": "2021",
+    "White": "913",
+    "Yellow": "1459",
+    "Orange": "1847",
+    "Green": "638",
+    "Blue": "212",
+    "Purple": "101",
+    "Brown": "47",
+    "Red": "39",
+    "Black": "81"
+  },
+  {
+    "date": "2022",
+    "White": "1012",
+    "Yellow": "1664",
+    "Orange": "2138",
+    "Green": "746",
+    "Blue": "248",
+    "Purple": "115",
+    "Brown": "67",
+    "Red": "47",
+    "Black": "97"
+  },
+  {
+    "date": "2023",
+    "White": "1129",
+    "Yellow": "1906",
+    "Orange": "2425",
+    "Green": "878",
+    "Blue": "275",
+    "Purple": "129",
+    "Brown": "65",
+    "Red": "54",
+    "Black": "113"
+  }
+]
