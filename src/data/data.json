@@ -36647,23 +36647,6 @@
     "lastUpdated": "2023-08-03T13:21:20.098Z"
   },
   {
-    "id": "3a2ed5f3",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "ADW"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 67,
-    "lastUpdated": "2023-08-03T13:21:20.098Z"
-  },
-  {
     "id": "05298f91",
     "belt": "Unranked",
     "makeModels": [
@@ -37249,20 +37232,6 @@
     "lastUpdated": "2023-08-10T00:09:36.303Z"
   },
   {
-    "id": "919755fe",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Casesa"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 40,
-    "lastUpdated": "2023-08-03T13:21:20.101Z"
-  },
-  {
     "id": "033ab190",
     "belt": "Unranked",
     "makeModels": [
@@ -37473,63 +37442,6 @@
     ],
     "views": 20,
     "lastUpdated": "2023-08-09T22:49:21.901Z"
-  },
-  {
-    "id": "6758c30e",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "CFG"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-938_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/938/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/CFG/CFG%203STAR_938.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/938/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-938_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/938/2.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/CFG/CFG%203STAR_938.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/938/2.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-938_4_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/938/4.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/CFG/CFG%203STAR_938.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/938/4.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-938_6_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/938/6.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/CFG/CFG%203STAR_938.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/938/6.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/CFG/CFG%203STAR_938.html"
-      }
-    ],
-    "views": 39,
-    "lastUpdated": "2023-08-03T13:21:20.101Z"
   },
   {
     "id": "111062fc",
@@ -37821,20 +37733,6 @@
     "lastUpdated": "2023-09-27T13:16:19.309Z"
   },
   {
-    "id": "e38b7c57",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "CIB"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 34,
-    "lastUpdated": "2023-08-03T13:21:20.103Z"
-  },
-  {
     "id": "22d70f2e",
     "belt": "Unranked",
     "makeModels": [
@@ -37888,20 +37786,6 @@
       "c266d57b"
     ],
     "lastUpdated": "2023-11-23T18:53:56.031Z"
-  },
-  {
-    "id": "6719b451",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Cotica"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 33,
-    "lastUpdated": "2023-08-03T13:21:20.103Z"
   },
   {
     "id": "4d738de3",
@@ -38033,23 +37917,6 @@
     "lastUpdated": "2023-08-05T14:23:23.162Z"
   },
   {
-    "id": "f24c2d25",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "EMR"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 27,
-    "lastUpdated": "2023-08-03T13:21:20.103Z"
-  },
-  {
     "id": "abe6074c",
     "belt": "Unranked",
     "makeModels": [
@@ -38096,70 +37963,6 @@
     ],
     "views": 15,
     "lastUpdated": "2023-08-03T13:21:20.103Z"
-  },
-  {
-    "id": "ca5b08b4",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Favour"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-548_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/548/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/FAVOUR/FAVOUR_548.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/548/1.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/FAVOUR/FAVOUR_548.html"
-      }
-    ],
-    "views": 26,
-    "lastUpdated": "2023-08-03T13:21:20.103Z"
-  },
-  {
-    "id": "d93c1ed7",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Fermod"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 21,
-    "lastUpdated": "2023-08-03T13:21:20.104Z"
-  },
-  {
-    "id": "17ce6273",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "FFF"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 34,
-    "lastUpdated": "2023-08-03T13:21:20.104Z"
   },
   {
     "id": "cadec525",
@@ -38348,20 +38151,6 @@
     ],
     "views": 60,
     "lastUpdated": "2023-08-10T00:09:36.305Z"
-  },
-  {
-    "id": "e8feb6f3",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Flora"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 23,
-    "lastUpdated": "2023-08-03T13:21:20.104Z"
   },
   {
     "id": "89207b78",
@@ -38558,37 +38347,6 @@
     "lastUpdated": "2023-08-03T13:21:20.104Z"
   },
   {
-    "id": "5599bd8a",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Glip"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 23,
-    "lastUpdated": "2023-08-03T13:21:20.104Z"
-  },
-  {
-    "id": "836c5ce3",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Gloss"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 32,
-    "lastUpdated": "2023-08-03T13:21:20.104Z"
-  },
-  {
     "id": "6b220699",
     "belt": "Unranked",
     "makeModels": [
@@ -38684,20 +38442,6 @@
     "lastUpdated": "2024-01-01T20:16:24.999Z"
   },
   {
-    "id": "9a7e1167",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "HiK"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 22,
-    "lastUpdated": "2023-08-03T13:21:20.105Z"
-  },
-  {
     "id": "81c91d86",
     "belt": "Unranked",
     "makeModels": [
@@ -38773,53 +38517,6 @@
       "e8c7dd5b"
     ],
     "lastUpdated": "2023-11-23T18:53:56.031Z"
-  },
-  {
-    "id": "28f1b592",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "HP+"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-534_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/534/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/HP%2B/HP%2B_534.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/534/1.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/HP%2B/HP%2B_534.html"
-      }
-    ],
-    "views": 32,
-    "lastUpdated": "2023-08-03T13:21:20.105Z"
-  },
-  {
-    "id": "b4d52d31",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "IBAU"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 18,
-    "lastUpdated": "2023-08-03T13:21:20.105Z"
   },
   {
     "id": "e92d344d",
@@ -39076,23 +38773,6 @@
     "lastUpdated": "2023-08-10T00:09:36.306Z"
   },
   {
-    "id": "88402cd0",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Kinzo"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 36,
-    "lastUpdated": "2023-08-03T13:21:20.106Z"
-  },
-  {
     "id": "281aa393",
     "belt": "Unranked",
     "makeModels": [
@@ -39159,39 +38839,6 @@
     "lastUpdated": "2023-08-03T13:21:20.106Z"
   },
   {
-    "id": "4773e1fa",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Laperche"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-336_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/336/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/LAPERCHE/LAPERCHE%20Series%207000_336.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/336/1.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/LAPERCHE/LAPERCHE%20Series%207000_336.html"
-      }
-    ],
-    "views": 29,
-    "lastUpdated": "2023-08-03T13:21:20.106Z"
-  },
-  {
     "id": "64662298",
     "belt": "Unranked",
     "makeModels": [
@@ -39228,20 +38875,6 @@
     ],
     "views": 6,
     "lastUpdated": "2023-08-05T14:23:23.164Z"
-  },
-  {
-    "id": "7685aed5",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Lifetime"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 41,
-    "lastUpdated": "2023-08-03T13:21:20.106Z"
   },
   {
     "id": "8e11009a",
@@ -39541,20 +39174,6 @@
     "lastUpdated": "2023-09-07T14:58:03.600Z"
   },
   {
-    "id": "2936bb00",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "McGeiz"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 43,
-    "lastUpdated": "2023-08-03T13:21:20.107Z"
-  },
-  {
     "id": "85f92137",
     "belt": "Unranked",
     "makeModels": [
@@ -39569,45 +39188,6 @@
     "notes": "requires 360º",
     "views": 1,
     "lastUpdated": "2024-01-01T20:16:25.000Z"
-  },
-  {
-    "id": "d02d36d5",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Mecanimex"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Retac",
-        "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52794239729_51f3cceb29_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794239729/in/album-72177720307272304/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52794239729_2a9d9bb315_o.jpg"
-      },
-      {
-        "title": "By: Retac",
-        "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52794239719_4a7f1f80c5_m_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52794239719/in/album-72177720307272304/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52794239719_a1fc34effe_o.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "KoksaWiki",
-        "url": "https://wiki.koksa.org/Mecanimex"
-      }
-    ],
-    "views": 34,
-    "lastUpdated": "2023-08-03T13:21:20.107Z"
   },
   {
     "id": "01c9e8d1",
@@ -39841,20 +39421,6 @@
     "lastUpdated": "2023-08-09T22:49:21.907Z"
   },
   {
-    "id": "ae031589",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Modeco"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 79,
-    "lastUpdated": "2023-08-03T13:21:20.107Z"
-  },
-  {
     "id": "e9d77a86",
     "belt": "Unranked",
     "makeModels": [
@@ -39983,20 +39549,6 @@
     ],
     "views": 150,
     "lastUpdated": "2023-10-22T12:17:55.361Z"
-  },
-  {
-    "id": "6d9fbd4a",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Multicar"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 35,
-    "lastUpdated": "2023-08-03T13:21:20.108Z"
   },
   {
     "id": "1ee9600e",
@@ -40149,20 +39701,6 @@
     "lastUpdated": "2023-08-10T00:09:36.307Z"
   },
   {
-    "id": "2924aa76",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Owa"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 28,
-    "lastUpdated": "2023-08-03T13:21:20.108Z"
-  },
-  {
     "id": "2ac99741",
     "belt": "Unranked",
     "makeModels": [
@@ -40260,20 +39798,6 @@
     ],
     "views": 16,
     "lastUpdated": "2024-01-01T20:16:25.001Z"
-  },
-  {
-    "id": "30b60f60",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Power Line"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 52,
-    "lastUpdated": "2023-08-03T13:21:20.108Z"
   },
   {
     "id": "9637ddde",
@@ -40753,20 +40277,6 @@
     "lastUpdated": "2023-08-05T14:23:23.166Z"
   },
   {
-    "id": "9f832458",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "S&S"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 49,
-    "lastUpdated": "2023-08-03T13:21:20.108Z"
-  },
-  {
     "id": "e713e7e6",
     "belt": "Unranked",
     "makeModels": [
@@ -40906,20 +40416,6 @@
     ],
     "views": 13,
     "lastUpdated": "2023-09-01T14:34:16.578Z"
-  },
-  {
-    "id": "f88a999d",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Snowstar"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 37,
-    "lastUpdated": "2023-08-03T13:21:20.109Z"
   },
   {
     "id": "97baf67b",
@@ -41205,44 +40701,6 @@
     "lastUpdated": "2023-08-05T14:23:23.167Z"
   },
   {
-    "id": "4ec9a150",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Südmetall"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-673_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/673/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/S%C3%9CDMETALL/S%C3%9CDMETALL_673.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/673/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-673_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/673/2.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/S%C3%9CDMETALL/S%C3%9CDMETALL_673.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/673/2.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/S%C3%9CDMETALL/S%C3%9CDMETALL_673.html"
-      }
-    ],
-    "views": 47,
-    "lastUpdated": "2023-08-03T13:21:20.109Z"
-  },
-  {
     "id": "a77899fe",
     "belt": "Unranked",
     "makeModels": [
@@ -41439,78 +40897,6 @@
     "lastUpdated": "2023-08-05T14:23:23.167Z"
   },
   {
-    "id": "ff837451",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Tara"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 25,
-    "lastUpdated": "2023-08-03T13:21:20.109Z"
-  },
-  {
-    "id": "78205898",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Techpro",
-        "model": "Tech 5"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-933_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/933/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/TECHPRO/TECH%205_933.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/933/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-933_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/933/2.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/TECHPRO/TECH%205_933.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/933/2.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-933_4_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/933/4.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/TECHPRO/TECH%205_933.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/933/4.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-933_6_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/933/6.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/TECHPRO/TECH%205_933.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/933/6.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/TECHPRO/TECH%205_933.html"
-      }
-    ],
-    "views": 37,
-    "lastUpdated": "2023-08-03T13:21:20.110Z"
-  },
-  {
     "id": "0bc03ee8",
     "belt": "Unranked",
     "makeModels": [
@@ -41534,39 +40920,6 @@
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
     "views": 82,
     "lastUpdated": "2023-12-28T18:48:58.582Z"
-  },
-  {
-    "id": "665f75f2",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "TOP"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-635_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/635/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/TOP/TOP_635.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/635/1.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/TOP/TOP_635.html"
-      }
-    ],
-    "views": 27,
-    "lastUpdated": "2023-08-03T13:21:20.110Z"
   },
   {
     "id": "9a99a0a7",
@@ -41785,20 +41138,6 @@
     ],
     "views": 69,
     "lastUpdated": "2023-09-07T12:00:17.120Z"
-  },
-  {
-    "id": "e524ce27",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "VEB"
-      }
-    ],
-    "features": [
-      "Insufficient information"
-    ],
-    "views": 24,
-    "lastUpdated": "2023-08-03T13:21:20.110Z"
   },
   {
     "id": "9b7d3001",
