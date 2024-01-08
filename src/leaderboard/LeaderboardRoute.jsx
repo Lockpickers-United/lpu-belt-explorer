@@ -1,4 +1,5 @@
 import React from 'react'
+import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import Leaderboard from './Leaderboard'
@@ -11,6 +12,8 @@ function LeaderboardRoute() {
             <Leaderboard/>
 
             <Footer/>
+
+            <Tracker feature='leaderboard'/>
         </React.Fragment>
     )
 }

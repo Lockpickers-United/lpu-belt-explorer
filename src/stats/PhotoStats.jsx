@@ -23,9 +23,7 @@ const PhotoStats = () => {
     const contributors = data.topPhotographers
 
     return (
-
         <React.Fragment>
-            <div style={{height: 10, backgroundColor: '#000', fontSize: '.1rem'}}>&nbsp;</div>
             <div style={divStyle}>
                 <div style={{
                     border: '1px solid #666', padding: 12, flexGrow: 1,

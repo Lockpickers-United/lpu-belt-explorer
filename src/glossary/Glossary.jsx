@@ -30,9 +30,6 @@ function Glossary() {
                     highlighted={highlightedTerm === entry.term}
                 />
             )}
-
-            <img alt='glossary' src={'https://images.lpubelts.com/i/glossary.gif'} width={0} height={0}/>
-
         </div>
     )
 }

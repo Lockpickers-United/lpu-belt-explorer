@@ -10,7 +10,6 @@ const locksByBelt = lockSummaryData.locksByBelt
 const lockViewsByBelt = siteSummaryData.lockViewsByBelt.data
 
 function BeltDistribution() {
-
     const [dataset, setDataset] = useState(lockViewsByBelt)
     const handleButtonClick = useCallback((newDataset) => {
         setDataset(newDataset)

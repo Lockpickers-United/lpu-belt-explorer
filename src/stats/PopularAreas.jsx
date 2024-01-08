@@ -44,8 +44,7 @@ const PopularAreas = () => {
     }, [popularCountries, popularEuropeanCountries, popularStates])
 
     return (
-        <React.Fragment>
-            <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center'}}>
 
                 <ToggleButtonGroup variant='outlined'>
 
@@ -117,7 +116,6 @@ const PopularAreas = () => {
                     </div>
                 </div>
             </div>
-        </React.Fragment>
     )
 }
 export default PopularAreas

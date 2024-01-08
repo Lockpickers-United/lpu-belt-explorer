@@ -1,4 +1,5 @@
 import React from 'react'
+import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer.jsx'
 import Nav from '../nav/Nav.jsx'
 
@@ -8,9 +9,10 @@ function StatsRoute() {
             <Nav title='History of LPU Belts'/>
 
             <div>Coming soon...</div>
-            <img alt='history' src={'https://images.lpubelts.com/i/history.gif'} width={0} height={0}/>
 
             <Footer/>
+
+            <Tracker feature='history'/>
         </React.Fragment>
     )
 }

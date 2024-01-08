@@ -2,7 +2,6 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import VersionChecker from '../app/VersionChecker'
-import Tracker from '../app/Tracker'
 import MainMenu from './MainMenu'
 import ScrollToTopButton from './ScrollToTopButton'
 import UserMenu from './UserMenu'
@@ -12,8 +11,6 @@ function Nav({extras, title}) {
         <React.Fragment>
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
                 <Toolbar>
-                    <Tracker/>
-
                     <MainMenu/>
 
                     <div style={{

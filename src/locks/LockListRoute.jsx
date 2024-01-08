@@ -1,4 +1,5 @@
 import React from 'react'
+import Tracker from '../app/Tracker'
 import {LockListProvider} from './LockListContext'
 import {DataProvider} from './DataContext'
 import {FilterProvider} from './FilterContext'
@@ -49,6 +50,8 @@ function LockListRoute() {
                     <Entries/>
 
                     <Footer extras={footer}/>
+
+                    <Tracker feature='locks'/>
                 </LockListProvider>
             </DataProvider>
         </FilterProvider>

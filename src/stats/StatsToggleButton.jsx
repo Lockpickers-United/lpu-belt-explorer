@@ -2,7 +2,6 @@ import React from 'react'
 import {ToggleButton} from '@mui/material'
 
 function StatsToggleButton({handleButtonClick, dataset, newDataset, label}) {
-
     return (
         <ToggleButton
             onClick={() => {

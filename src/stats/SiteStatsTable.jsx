@@ -2,7 +2,6 @@ import React from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 
 const SiteStatsTable = ({tableData}) => {
-
     const headerStyle = {padding: '0px', fontWeight: 700, backgroundColor: '#000'}
     const bodyStyle = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 400}
 
