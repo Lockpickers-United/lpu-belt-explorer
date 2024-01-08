@@ -30,7 +30,7 @@ export const primaryTheme = {
                 strokeWidth: 1
             },
             text: {
-                fill: '#aaa',
+                fill: '#ccc',
                 fontSize: '0.83rem'
             }
         },
@@ -42,7 +42,18 @@ export const primaryTheme = {
         },
         legend: {
             text: {
-                fill: '#ccc' // Color for the legend text
+                fill: '#ccc'
+            }
+        }
+    }
+}
+
+export const legendTheme = {
+    axis: {
+        ticks: {
+            text: {
+                fill: '#999',
+                fontSize: '0.83rem'
             }
         }
     }
