@@ -8,19 +8,25 @@ function LockingMechanisms() {
     const data = lockSummaryData.lockingMechanisms
 
     const {width} = useWindowSize()
-    const smallWidth = width < 500
+    const mobileSmall = width <= 360
+    const mobileMedium = width <= 395
+    const mobileLarge = width <= 428  // but test also at 412
+    const smallWindow = width <= 560
 
-    const myChartHeight = !smallWidth ? 320 : 200
-    const chartMargin = !smallWidth
-        ? {top: 24, right: 0, bottom: 20, left: 0}
-        : {top: 0, right: 80, bottom: 0, left: 120}
-    const arcLinkLabelsSkipAngle = !smallWidth ? 4 : 5
-    const arcLabelsSkipAngle = !smallWidth ? 8 : 10
-    const arcLinkLabelsStraightLength = !smallWidth ? 8 : 0
+    const chartMargin = {top: 24, right: 0, bottom: 20, left: 40}
+    let chartHeight = 320
+    if (mobileSmall) { chartHeight = 145 }
+    else if (mobileMedium) { chartHeight = 180 }
+    else if (mobileLarge) { chartHeight = 230 }
+    else if (smallWindow) { chartHeight = 240 }
+
+    const arcLinkLabelsSkipAngle = !smallWindow ? 4 : 5
+    const arcLabelsSkipAngle = !smallWindow ? 8 : 10
+    const arcLinkLabelsStraightLength = !smallWindow ? 8 : 0
 
     return (
         <div key='waffle'
-             style={{height: myChartHeight, padding: '0px 8px', width: '100%'}}
+             style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
         >
             <ResponsivePie
                 data={data}

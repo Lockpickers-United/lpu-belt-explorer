@@ -11,27 +11,26 @@ import RedditBeltGrowth from './RedditBeltGrowth.jsx'
 
 function StatsMainPage() {
     const {width} = useWindowSize()
-    const smallWidth = width < 500
-    const chartHeight = !smallWidth ? 350 : 300
+    const smallWidth = width < 560
     const pagePadding = !smallWidth
-        ? '24px'
-        : '8px'
+        ? '24px 24px 32px 24px'
+        : '8px 8px 32px 8px'
 
     const headerStyle = {margin: '46px 0px 26px 0px', width: '100%', backgroundColor: '#000', textAlign: 'center'}
     const firstHeaderStyle = {margin: '0px 0px 26px 0px', width: '100%', backgroundColor: '#000', textAlign: 'center'}
 
     return (
         <div style={{
-            minWidth: '390px', maxWidth: 720, height: '100%',
+            minWidth: '320px', maxWidth: 720, height: '100%',
             padding: pagePadding, backgroundColor: '#000',
             marginLeft: 'auto', marginRight: 'auto',
-            fontSize: '1.5rem', paddingBottom: 32
+            fontSize: '1.5rem'
         }}>
             <div style={firstHeaderStyle}>Site Stats</div>
             <SiteStats/>
 
             <div style={headerStyle}>Weekly Lock Views</div>
-            <LockViewsLine chartHeight={chartHeight}/>
+            <LockViewsLine/>
 
             <div style={headerStyle}>Popular Countries</div>
             <PopularAreas/>
