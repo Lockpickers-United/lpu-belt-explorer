@@ -9,11 +9,11 @@
       },
       {
         "label": "Unranked",
-        "value": "174"
+        "value": "143"
       },
       {
         "label": "All",
-        "value": "897"
+        "value": "866"
       }
     ]
   },
@@ -185,167 +185,255 @@
       {
         "segment": "Ranked locks",
         "count": "723",
-        "media": "675",
-        "coverage": "93.4%"
+        "media": "676",
+        "coverage": "93.5%"
       },
       {
         "segment": "All locks",
-        "count": "873",
-        "media": "766",
-        "coverage": "87.7%"
+        "count": "866",
+        "media": "771",
+        "coverage": "89.0%"
       }
     ],
-    "uniqueImages": "2,636",
-    "contributors": "214",
+    "uniqueImages": "2,675",
+    "contributors": "217",
     "topPhotographers": [
-      {
-        "contributor": "Luboš Čech",
-        "images": "191"
-      },
-      {
+    {
         "contributor": "PeaceWeapon",
-        "images": "168"
-      },
-      {
+        "images": "199"
+    },
+    {
+        "contributor": "Luboš Čech",
+        "images": "194"
+    },
+    {
         "contributor": "mgsecure",
-        "images": "159"
-      },
-      {
+        "images": "191"
+    },
+    {
         "contributor": "Reinder Stegen",
-        "images": "156"
-      },
-      {
+        "images": "175"
+    },
+    {
+        "contributor": "Ben-on-reddit",
+        "images": "137"
+    },
+    {
+        "contributor": "Clefmentine",
+        "images": "74"
+    },
+    {
+        "contributor": "LockPickingFisherman",
+        "images": "64"
+    },
+    {
         "contributor": "myktylgaan",
-        "images": "65"
-      },
-      {
+        "images": "61"
+    },
+    {
         "contributor": "Qikom",
-        "images": "63"
-      },
-      {
+        "images": "61"
+    },
+    {
         "contributor": "Yabende",
-        "images": "54"
-      },
-      {
+        "images": "61"
+    },
+    {
         "contributor": "Dra9i",
-        "images": "43"
-      },
-      {
+        "images": "49"
+    },
+    {
         "contributor": "Septclues",
-        "images": "37"
-      },
-      {
+        "images": "43"
+    },
+    {
         "contributor": "Legendofthesamurai",
-        "images": "37"
-      },
-      {
-        "contributor": "Datagram",
-        "images": "37"
-      },
-      {
+        "images": "41"
+    },
+    {
         "contributor": "TheGreenishOne",
+        "images": "38"
+    },
+    {
+        "contributor": "DoNotDuplicate",
         "images": "36"
-      },
-      {
+    },
+    {
         "contributor": "LockPicker1969",
         "images": "35"
-      },
-      {
+    },
+    {
+        "contributor": "Datagram",
+        "images": "34"
+    },
+    {
+        "contributor": "Lock Noob",
+        "images": "33"
+    },
+    {
         "contributor": "OpHiDiAn",
-        "images": "29"
-      },
-      {
-        "contributor": "Donotduplicate",
-        "images": "29"
-      },
-      {
-        "contributor": "Florida Man",
-        "images": "21"
-      },
-      {
+        "images": "33"
+    },
+    {
+        "contributor": "Yagias",
+        "images": "33"
+    },
+    {
+        "contributor": "Imaginary Unit",
+        "images": "30"
+    },
+    {
+        "contributor": "Safecracker33",
+        "images": "28"
+    },
+    {
+        "contributor": "DEW",
+        "images": "26"
+    },
+    {
+        "contributor": "Mugatu",
+        "images": "25"
+    },
+    {
         "contributor": "Hunson",
-        "images": "19"
-      },
-      {
+        "images": "24"
+    },
+    {
+        "contributor": "Norlin",
+        "images": "23"
+    },
+    {
+        "contributor": "Dependent-Quarter",
+        "images": "20"
+    },
+    {
+        "contributor": "Florida Man",
+        "images": "20"
+    },
+    {
+        "contributor": "JayDee",
+        "images": "20"
+    },
+    {
+        "contributor": "LockFumbler",
+        "images": "20"
+    },
+    {
+        "contributor": "fabianoh130",
+        "images": "18"
+    },
+    {
+        "contributor": "GeorgiaJim",
+        "images": "18"
+    },
+    {
+        "contributor": "Blackcatthirteen",
+        "images": "17"
+    },
+    {
+        "contributor": "Christian",
+        "images": "17"
+    },
+    {
+        "contributor": "DigPicks",
+        "images": "16"
+    },
+    {
+        "contributor": "Jan-Willem Markus",
+        "images": "16"
+    },
+    {
         "contributor": "Scoooot",
         "images": "15"
-      },
-      {
-        "contributor": "JayDee",
-        "images": "15"
-      },
-      {
-        "contributor": "NiXXeD",
+    },
+    {
+        "contributor": "LockSportsman",
         "images": "14"
-      },
-      {
+    },
+    {
         "contributor": "Moki",
         "images": "14"
-      },
-      {
-        "contributor": "Lock Noob",
+    },
+    {
+        "contributor": "NiXXeD",
         "images": "14"
-      },
-      {
-        "contributor": "Yagias",
+    },
+    {
+        "contributor": "tonysansan",
+        "images": "14"
+    },
+    {
+        "contributor": "TrapperLock",
+        "images": "14"
+    },
+    {
+        "contributor": "Crispix",
         "images": "13"
-      },
-      {
+    },
+    {
+        "contributor": "Devo",
+        "images": "13"
+    },
+    {
         "contributor": "Least",
         "images": "13"
-      },
-      {
-        "contributor": "imaginary unit",
+    },
+    {
+        "contributor": "Moon-UA",
         "images": "13"
-      },
-      {
-        "contributor": "Christian",
-        "images": "13"
-      },
-      {
-        "contributor": "Blackcatthirteen",
-        "images": "13"
-      },
-      {
-        "contributor": "tonysansan",
-        "images": "12"
-      },
-      {
+    },
+    {
         "contributor": "Kapton",
         "images": "12"
-      },
-      {
-        "contributor": "DEW",
-        "images": "12"
-      },
-      {
+    },
+    {
         "contributor": "m.c.",
-        "images": "11"
-      },
-      {
-        "contributor": "Dennis van Zuijlekom",
-        "images": "11"
-      },
-      {
+        "images": "12"
+    },
+    {
         "contributor": "Alpama",
         "images": "11"
-      },
-      {
-        "contributor": "LockSportsman",
-        "images": "10"
-      },
-      {
-        "contributor": "Jan-Willem Markus",
-        "images": "10"
-      },
-      {
-        "contributor": "DangDangus",
-        "images": "10"
-      },
-      {
+    },
+    {
+        "contributor": "Dennis van Zuijlekom",
+        "images": "11"
+    },
+    {
+        "contributor": "Ed McBane",
+        "images": "11"
+    },
+    {
+        "contributor": "MrBlackMagic",
+        "images": "11"
+    },
+    {
+        "contributor": "Retac",
+        "images": "11"
+    },
+    {
         "contributor": "Catalocks",
         "images": "10"
-      }
-    ]
+    },
+    {
+        "contributor": "DangDangus",
+        "images": "10"
+    },
+    {
+        "contributor": "DoctorHogmaster",
+        "images": "10"
+    },
+    {
+        "contributor": "gigawalt",
+        "images": "10"
+    },
+    {
+        "contributor": "Retep Reyem",
+        "images": "10"
+    },
+    {
+        "contributor": "Ross",
+        "images": "10"
+    }
+]
   }
 }
