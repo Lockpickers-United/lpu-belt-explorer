@@ -2,9 +2,17 @@ import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from './chartDefaults.js'
 import siteStatsData from '../data/siteSummaryData.json'
+import useWindowSize from '../util/useWindowSize.jsx'
 
-function LockViewsLine({chartHeight}) {
+function LockViewsLine() {
     const data = siteStatsData.lockViews
+
+    const {width} = useWindowSize()
+    const mobileSmall = width <= 360
+    const smallWindow = width <= 560
+
+    const chartHeight = mobileSmall ? 260
+        : !smallWindow ? 350 : 300
 
     return (
         <div style={{height: chartHeight}}>
