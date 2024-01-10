@@ -26,8 +26,8 @@
     "definition": "Unshimmable mechanism in padlocks where ball bearings are pushed into the shackle to prevent opening."
   },
   {
-    "term": "barrel driver pin",
-    "definition": "Name given to any driver pin with a shape similar to a “barrel”, having a portion near the extremities with a reduction in diameter, then flaring out at the end. Usually referring to the ASSA version, can also be used for other varieties like the DOM barrels.",
+    "term": "barrel driver pins",
+    "definition": "Name given to driver pins with a shape similar to a “barrel”, having a portion near the extremities with a reduction in diameter, then flaring out at the end. Usually referring to the ASSA version, can also be used for other varieties like the DOM barrels.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -281,8 +281,8 @@
     "definition": "Movable part of the locking mechanism preventing the lock from opening. See [tumbler](/#/glossary?term=tumbler)."
   },
   {
-    "term": "euro (lock / cylinder)",
-    "definition": "A lock type common in Europe, also called the euro profile cylinder.",
+    "term": "euro-profile cylinder",
+    "definition": "A lock type common in Europe, sometimes referred to as simply \"euro\". A full version will have two functioning ends with either a keyway or knob. A \"half\" eruo-profile cylinder will only have a single side with keyway. It is common locksport practice to cut a full euro cylinder in half to make two locks.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -359,8 +359,8 @@
     "definition": "See [plug follower](/#/glossary?term=plug%20follower)."
   },
   {
-    "term": "forked keypin",
-    "definition": "Keypin that has been shaped with a forked extremity where it contacts the key. This is usually so that mastering is easier without the addition of mastering wafers."
+    "term": "forked keypins",
+    "definition": "Keypins that have been shaped with a forked extremity where they contacts the key. This is usually to make mastering easier without the addition of mastering wafers."
   },
   {
     "term": "front tension",
@@ -378,8 +378,8 @@
     }
   },
   {
-    "term": "gin spool driver",
-    "definition": "Spool that has a thinner lip ant one end than at the other, usually to interact with countermilling. So called because it resembles somewhat a gin bottle. Also called gin bottle spool, gin spool or just gin.",
+    "term": "gin spool drivers",
+    "definition": "Spools that have a thinner lip at one end than at the other, usually to interact with countermilling. So called because they loosely resemble a gin bottle. Also called gin bottle spool, gin spool or just gin.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -551,6 +551,17 @@
     }
   },
   {
+    "term": "multiple locking mechanisms",
+    "definition": "Describes a single lock that employs more than one type of locking element, such as a combination of a pin tumblers and side pins, enhancing its resistance to picking.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53456009048_b5c95583ec_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53456009048/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53456009048_ac1fa3c4f7_o.jpg"
+    }
+  },
+  {
     "term": "music wire",
     "definition": "A type of wire used in pianos, that is a good material to construct lever lock picks and similar tools."
   },
@@ -604,8 +615,8 @@
     "definition": "A sidebar that does not interact with coding elements of the lock needing to be picked. Usually related with key control function."
   },
   {
-    "term": "pin key / barrel key",
-    "definition": "A key for a lever lock where the shaft of the key is a solid cylinder."
+    "term": "pin key",
+    "definition": "A key for a lever lock where the shaft of the key is a solid cylinder. Also sometimes called a barrel key."
   },
   {
     "term": "pin stack",
@@ -821,8 +832,8 @@
     }
   },
   {
-    "term": "sidepin",
-    "definition": "Pin or pin-like element that works as a secondary locking mechanism. Can include various pin types like fingerpins, sliders, active and passive pin elements, among others with no specific designation.",
+    "term": "sidepins",
+    "definition": "Pin or pin-like elements that work as a secondary locking mechanism. Can include various pin types like fingerpins, sliders, active and passive pin elements, among others with no specific designation.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -918,7 +929,14 @@
   },
   {
     "term": "top gutting",
-    "definition": "Gutting a lock by removing covers or grubs on the bible and emptying pin stacks out from the top of the bible."
+    "definition": "Gutting a lock by removing covers or grubs on the bible and emptying pin stacks out from the top of the bible.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53448406083_1a19361f6f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448406083/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53448406083_2afe4e6e33_o.jpg"
+    }
   },
   {
     "term": "top of the keyway",
