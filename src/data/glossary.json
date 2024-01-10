@@ -1,7 +1,14 @@
 [
   {
     "term": "active sidebar",
-    "definition": "A sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked"
+    "definition": "A sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53453276117_b4999a288d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53453276117/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53453276117_906262da8d_o.jpg"
+    }
   },
   {
     "term": "actuator",
@@ -69,7 +76,14 @@
   },
   {
     "term": "blade (key)",
-    "definition": "The part of a pin tumbler / dimple key that enters the lock."
+    "definition": "The part of a pin tumbler / dimple key that enters the lock.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454201946_aa26b8f295_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454201946/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454201946_28d0babf9c_o.jpg"
+    }
   },
   {
     "term": "BOK",
@@ -89,7 +103,14 @@
   },
   {
     "term": "bow",
-    "definition": "The part of a key which is held, at the end of the blade/shaft."
+    "definition": "The part of a key which is held, at the end of the blade/shaft.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454517004_ed9c514030_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454517004/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454517004_42173a3d3a_o.jpg"
+    }
   },
   {
     "term": "brick",
@@ -109,7 +130,7 @@
   },
   {
     "term": "CL",
-    "definition": "Short for [Challenge Lock](/#/glossary?term=challenge lock)."
+    "definition": "Short for [Challenge Lock](/#/glossary?term=challenge%20lock)."
   },
   {
     "term": "comb pick",
@@ -121,7 +142,7 @@
   },
   {
     "term": "core",
-    "definition": "The plug and housing of a lock. Often used as an interchangeable word for plug."
+    "definition": "The term \"core\" has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context."
   },
   {
     "term": "core bias",
@@ -149,7 +170,14 @@
   },
   {
     "term": "cutaway",
-    "definition": "A lock that has been modified by removing metal so that one can see how it operates."
+    "definition": "A lock that has been modified by removing metal so that one can see how it operates.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454201791_3a50b2bf59_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454201791/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454201791_b1920f92a0_o.jpg"
+    }
   },
   {
     "term": "CW / CCW",
@@ -157,11 +185,18 @@
   },
   {
     "term": "cylinder",
-    "definition": "See core."
+    "definition": "The lock body including the core/plug, the acuator, and the housing. Applies to locks that can be removed from their locking contexts such as door & knob installations as well as guttable padlocks. Common cylinder types include: rim, mortise, Euro-profile, KIK, and oval.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454613390_3c5cbe53ce_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613390/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454613390_e4bd55cdd1_o.jpg"
+    }
   },
   {
     "term": "DD",
-    "definition": "Short for [Disc Detainer](/#/glossary?term=disc detainer)."
+    "definition": "Short for [Disc Detainer](/#/glossary?term=disc%20detainer)."
   },
   {
     "term": "DD Pick / Disc Pick",
@@ -173,7 +208,14 @@
   },
   {
     "term": "dial (lock)",
-    "definition": "The part of a combination lock that is rotated"
+    "definition": "The part of a combination lock that is rotated",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454516839_04aba0bae7_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454516839/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454516839_d840f3b2ea_o.jpg"
+    }
   },
   {
     "term": "dial (picking)",
@@ -224,7 +266,14 @@
   },
   {
     "term": "false gate",
-    "definition": "A gate on a tumbler which is not deep enough for the core to turn if the sidebar falls in."
+    "definition": "A gate on a tumbler which is not deep enough for the core to turn if the sidebar falls in.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454613605_28ace91bab_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613605/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454613605_d5d55b0d49_o.jpg"
+    }
   },
   {
     "term": "false set",
@@ -247,7 +296,14 @@
   },
   {
     "term": "flag",
-    "definition": "A lock pick used for dimple locks, shaped like a rod with a protrusion at the side of the tip. Also called dimple pick."
+    "definition": "A lock pick used for dimple locks, shaped like a rod with a protrusion at the side of the tip. Also called dimple pick.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454201586_6c40e6be60_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454201586/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454201586_63fc7d3ab0_o.jpg"
+    }
   },
   {
     "term": "flat steel key",
@@ -263,7 +319,14 @@
   },
   {
     "term": "gate",
-    "definition": "A divot on a slider or disc that allows the sidebar to fall into it."
+    "definition": "A divot on a slider or disc that allows the sidebar to fall into it.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454613605_28ace91bab_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613605/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454613605_d5d55b0d49_o.jpg"
+    }
   },
   {
     "term": "gin spool driver",
@@ -278,7 +341,14 @@
   },
   {
     "term": "grubbing",
-    "definition": "To tap and insert grub/set screws into the top of a bible, acting as individual bible covers for each chamber."
+    "definition": "To tap and insert grub/set screws into the top of a bible, acting as individual bible covers for each chamber.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53453275437_9783395f34_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53453275437/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53453275437_a2e96b2a4a_o.jpg"
+    }
   },
   {
     "term": "gutting",
@@ -325,7 +395,7 @@
   },
   {
     "term": "jiggle",
-    "definition": "The allowed motion of a set element due to lock tolerances. See [Jiggle Test](/#/glossary?term=jiggle test)."
+    "definition": "The allowed motion of a set element due to lock tolerances. See [Jiggle Test](/#/glossary?term=jiggle%20test)."
   },
   {
     "term": "jiggle test",
@@ -417,7 +487,14 @@
   },
   {
     "term": "oval cylinder",
-    "definition": "A lock housing that has oval cross-section."
+    "definition": "A lock housing that has oval cross-section.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454327983_cc52bc073f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454327983/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454327983_51d31422c2_o.jpg"
+    }
   },
   {
     "term": "overmilling",
@@ -457,7 +534,7 @@
   },
   {
     "term": "plug",
-    "definition": "The central part of a lock cylinder that rotates, where the key is inserted."
+    "definition": "The central part of a lock cylinder that rotates when all locking elements are aligned properly to open the lock -- either by inserting a key into the plug or by picking the lock. The plug contains lock elements that directly contact the key, such as key pins and sliders. Also sometimes referred to as the core."
   },
   {
     "term": "plug follower",
@@ -564,7 +641,14 @@
   },
   {
     "term": "sidebar",
-    "definition": "A piece of metal that interfaces with another locking element (eg. levers, sliders, other sidepins) and blocks rotation until the key is inserted."
+    "definition": "A piece of metal that interfaces with another locking element (eg. levers, sliders, other sidepins) and blocks rotation until the key is inserted.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53453276117_b4999a288d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53453276117/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53453276117_906262da8d_o.jpg"
+    }
   },
   {
     "term": "sidepin",
@@ -610,7 +694,7 @@
   },
   {
     "term": "SPP",
-    "definition": "Short for [Single Pin Picking](/#/glossary?term=single pin picking)."
+    "definition": "Short for [Single Pin Picking](/#/glossary?term=single%20pin%20picking)."
   },
   {
     "term": "stack",
@@ -649,7 +733,7 @@
   },
   {
     "term": "TOK",
-    "definition": "(1) See [top of the keyway](/#/glossary?term=top of the keyway). (2) TOK (tensioner): name coloquially given to a tensioner used in the bottom of the keyway"
+    "definition": "(1) See [top of the keyway](/#/glossary?term=top%20of%20the%20keyway). (2) TOK (tensioner): name coloquially given to a tensioner used in the bottom of the keyway"
   },
   {
     "term": "TOK tensioner",
