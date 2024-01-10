@@ -68,7 +68,7 @@
   },
   {
     "term": "bitting code",
-    "definition": "An alphanumeric code that can be provided to a locksmith to cut a key to a desired shape. Some codes may be found on the keys themselves, other times in key cards that are obtained along with the lock."
+    "definition": "An alphanumeric code that can be provided to a locksmith to cut a key to a desired shape. Some codes may be found on the keys themselves, other times in [security cards](/#/glossary?term=security%20cards) that are obtained along with the lock."
   },
   {
     "term": "blade (key)",
@@ -83,15 +83,22 @@
   },
   {
     "term": "BOK",
-    "definition": "(1) See [bottom of the keyway](/#/glossary?term=bottom of the keyway). (2) BOK (tensioners): name colloquially given for tensioners used in the bottom of the keyway"
+    "definition": "Acronym for [bottom of the keyway](/#/glossary?term=bottom%20of%20the%20keyway). (2) BOK (tensioners): name colloquially given for tensioners used in the bottom of the keyway"
   },
   {
     "term": "BOK tensioner",
-    "definition": "The nickname used for a tensioner used in the bottom of the keyway. Sometimes just called BOK (see [BOK](/#/glossary?term=BOK))"
+    "definition": "The nickname used for a tensioner used in the bottom of the keyway. Sometimes just called BOK."
   },
   {
     "term": "bolt",
-    "definition": "The part of a lock that extends out from a door into the door frame, retracted by turning the key."
+    "definition": "The part of a lock that extends out from a door into the door frame, retracted by turning the key.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455315816_3b1a0e374a_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455315816/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455315816_8745e6c33e_o.jpg"
+    }
   },
   {
     "term": "bottom of the keyway",
@@ -601,6 +608,17 @@
     "definition": "A key for a lever lock where the shaft of the key is a solid cylinder."
   },
   {
+    "term": "pin stack",
+    "definition": "The combined key pin, driver pin, and spring within 1 chamber.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455441238_c46f385109_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455441238/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455441238_1df95a82fc_o.jpg"
+    }
+  },
+  {
     "term": "pin-in-pin",
     "definition": "A key or driver pin that has a smaller pin inside that moves independently."
   },
@@ -707,6 +725,17 @@
   {
     "term": "rotor",
     "definition": "A generally rounded or disc-like element featuring a prong to interact with the key, another part of it interacting with another locking mechanism, like a sidebar. As the key is inserted, the prong moves along a laser cut track rotating the disc to the correct position to drop the sidebar into the gate."
+  },
+  {
+    "term": "security card",
+    "definition": "A lock security card is a form of identification issued with certain high-security locks, required for making duplicate keys. It provides an additional layer of security by ensuring that only authorized individuals can have keys replicated.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455728065_1ab9021092_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455728065/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455728065_cd42a1ea68_o.jpg"
+    }
   },
   {
     "term": "serrated",
@@ -838,10 +867,6 @@
     "definition": "Short for [Single Pin Picking](/#/glossary?term=single%20pin%20picking)."
   },
   {
-    "term": "stack",
-    "definition": "The combined key pin, driver pin, and spring within 1 chamber."
-  },
-  {
     "term": "standard pin",
     "definition": "A pin which is shaped like a regular cylinder (with a bevel if it is a keypin)."
   },
@@ -885,7 +910,7 @@
   },
   {
     "term": "TOK",
-    "definition": "(1) See [top of the keyway](/#/glossary?term=top%20of%20the%20keyway). (2) TOK (tensioner): name coloquially given to a tensioner used in the bottom of the keyway"
+    "definition": "See [top of the keyway](/#/glossary?term=top%20of%20the%20keyway). (2) TOK tensioner: name coloquially given to a tensioner used in the top of the keyway"
   },
   {
     "term": "TOK tensioner",
