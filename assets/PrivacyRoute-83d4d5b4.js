@@ -1,4 +1,4 @@
-import{j as e,R as o}from"./index-d8ed620b.js";import{N as t,F as n}from"./Nav-f0a77cb5.js";import{C as a,R as r}from"./react-markdown-6f70591b.js";import{C as i}from"./CardContent-827a562f.js";import"./index-a0866dba.js";const s=`# Privacy Policy
+import{j as e,R as o}from"./index-2580bfdf.js";import{N as t,F as n}from"./Nav-adbcdc61.js";import{C as a,R as r}from"./react-markdown-a854fc06.js";import{C as i}from"./CardContent-77e2b120.js";import"./index-ab82c8fc.js";const s=`# Privacy Policy
 
 Last updated: November 28, 2023
 
