@@ -37,10 +37,6 @@
     }
   },
   {
-    "term": "barrel key / pin key",
-    "definition": "A key for a lever lock where the shaft of the key is a solid cylinder."
-  },
-  {
     "term": "bible",
     "definition": "The part of a pin tumbler lock where the driver pins and springs reside."
   },
@@ -256,7 +252,14 @@
   },
   {
     "term": "drill pin",
-    "definition": "A cylinder that is in the centre of the keyway of a lever lock that uses a pipe key, reducing access and centering the key."
+    "definition": "A cylinder that is in the centre of the keyway of a lever lock that uses a pipe key, reducing access and centering the key.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455520604_8c95c666af_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455520604/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455520604_256ab6da31_o.jpg"
+    }
   },
   {
     "term": "drill protection",
@@ -283,7 +286,14 @@
   },
   {
     "term": "face",
-    "definition": "The visible part of a lock where the key is inserted."
+    "definition": "The visible part of a lock where the key is inserted.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455618090_11b9e51865_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455618090/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455618090_fbdc638d4f_o.jpg"
+    }
   },
   {
     "term": "false gate",
@@ -291,9 +301,9 @@
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53454613605_28ace91bab_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613605/in/album-72177720313869627/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53454613605_d5d55b0d49_o.jpg"
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455330808_5c8c912768_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455330808/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455330808_1f4b32caba_o.jpg"
     }
   },
   {
@@ -328,7 +338,14 @@
   },
   {
     "term": "flat steel key",
-    "definition": "A key made out of flat sheet metal. Also called plate key."
+    "definition": "A key made out of flat sheet metal. Also called plate key.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454282892_09f10cae76_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454282892/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454282892_c4ccb0fc9d_o.jpg"
+    }
   },
   {
     "term": "follower",
@@ -411,7 +428,7 @@
   },
   {
     "term": "HPC",
-    "definition": "(1) See 'high pin count'. (2) Brand of picks sold mainly in USA"
+    "definition": "Acronym for 'high pin count'. Also a well-established brand of picks sold mainly in the United States."
   },
   {
     "term": "impressioning",
@@ -435,11 +452,11 @@
   },
   {
     "term": "key code",
-    "definition": "See [bitting code](/#/glossary?term=bitting code)."
+    "definition": "See [bitting code](/#/glossary?term=bitting%20code)."
   },
   {
     "term": "key pin",
-    "definition": "Key pins or keypins, are pins in the plug in a pin tumbler lock, that are lifted by the key to lift the driver pins. Their size corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include security features."
+    "definition": "Pin in the plug in a pin tumbler lock, that is lifted by the key to position the driver pin. Their length corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include security features."
   },
   {
     "term": "keyway",
@@ -536,7 +553,14 @@
   },
   {
     "term": "opposing overset stacks",
-    "definition": "Stacks of pins that directly oppose and are pushed by the main stacks of pins, and because of their weaker springs, some of them may be in a resting overset position."
+    "definition": "Stacks of pins that directly oppose and are pushed by the main stacks of pins, and because of their weaker springs, some of them may be in a resting overset position.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455206091_dbd5a4940d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455206091/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455206091_18586f0026_o.jpg"
+    }
   },
   {
     "term": "oval cylinder",
@@ -551,7 +575,14 @@
   },
   {
     "term": "overmilling",
-    "definition": "Regular cut in the chamber of a lock, widening the diameter at the shear line."
+    "definition": "Regular cut in the chamber of a lock, widening the diameter at the shear line.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455518929_d626ec62c8_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455518929/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455518929_526cc26e56_o.jpg"
+    }
   },
   {
     "term": "overset",
@@ -564,6 +595,10 @@
   {
     "term": "passive sidebar",
     "definition": "A sidebar that does not interact with coding elements of the lock needing to be picked. Usually related with key control function."
+  },
+  {
+    "term": "pin key / barrel key",
+    "definition": "A key for a lever lock where the shaft of the key is a solid cylinder."
   },
   {
     "term": "pin-in-pin",
@@ -621,11 +656,18 @@
   },
   {
     "term": "profile",
-    "definition": "The cross-sectional shape of a key or keyway."
+    "definition": "The cross-sectional shape of a key or keyway.",
+    "media": {
+      "title": "By: Reinder Stegen",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454282012_586906685e_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454282012/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454282012_be0a720b90_o.jpg"
+    }
   },
   {
     "term": "prog",
-    "definition": "See [progressive pinning](/#/glossary?term=progressive%20pinning)."
+    "definition": "Colloquial for [progressive pinning](/#/glossary?term=progressive%20pinning)."
   },
   {
     "term": "progressive pinning",
@@ -714,7 +756,14 @@
   },
   {
     "term": "shimming (core)",
-    "definition": "To insert a thin piece of metal (shim) between the plug and the housing. Generally used in locksport to prevent the driver pins to drop into holes in the plug that might brick the lock during disassembling. Can also be used to open and disassemble an unkeyed lock, by sliping the shim between the keypin and driver pin on every chamber from the back of the lock, while lifting each stack with a pick. In rare cases, one can shim a padlock from the front to open it."
+    "definition": "To insert a thin piece of metal (shim) between the plug and the housing. Generally used in locksport to prevent the driver pins to drop into holes in the plug that might brick the lock during disassembling. Can also be used to open and disassemble an unkeyed lock, by sliping the shim between the keypin and driver pin on every chamber from the back of the lock, while lifting each stack with a pick. In rare cases, one can shim a padlock from the front to open it.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454889920_c0a502f94a_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454889920/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454889920_998b9852ed_o.jpg"
+    }
   },
   {
     "term": "shimming (padlock)",
@@ -722,7 +771,14 @@
   },
   {
     "term": "shoulder",
-    "definition": "The part of a key near the bow that collides with the face of the lock to prevent over-insertion."
+    "definition": "The part of a key near the bow that collides with the face of the lock to prevent over-insertion.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455206281_ebb1207d04_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455206281/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455206281_f140d0a248_o.jpg"
+    }
   },
   {
     "term": "sidebar",
@@ -813,6 +869,17 @@
     "definition": "A tool used to apply rotational force to a plug in picking."
   },
   {
+    "term": "threading",
+    "definition": "Core modification of threading the chambers in the plug in order to catch the edge of spool pins. Creates misleading feedback for the picker.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455520744_5591c98025_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455520744/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455520744_f9c2497e37_o.jpg"
+    }
+  },
+  {
     "term": "throw",
     "definition": "The movement of a bolt as the key rotates."
   },
@@ -860,7 +927,14 @@
   },
   {
     "term": "true gate",
-    "definition": "A gate on a tumbler where if the sidebar falls in, it is sufficiently deep for the plug to turn."
+    "definition": "A gate on a tumbler where if the sidebar falls in, it is sufficiently deep for the plug to turn.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455330808_5c8c912768_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455330808/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455330808_1f4b32caba_o.jpg"
+    }
   },
   {
     "term": "tumbler",
@@ -900,6 +974,13 @@
   },
   {
     "term": "z-bar",
-    "definition": "A tensioner shaped like a Z, with long prongs often used for dimple locks."
+    "definition": "A tensioner shaped like a Z, with long prongs often used for dimple locks.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455518409_6733a2e09f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455518409/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455518409_ca41b88b9f_o.jpg"
+    }
   }
 ]
