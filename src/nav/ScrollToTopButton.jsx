@@ -6,6 +6,10 @@ import Tooltip from '@mui/material/Tooltip'
 function ScrollToTopButton() {
     const scrollToTop = useCallback(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
+        const scrollable = document.getElementById('scrollable')
+        if (scrollable) {
+            scrollable.scrollTo({top: 0, behavior: 'smooth'})
+        }
     }, [])
 
     return (
