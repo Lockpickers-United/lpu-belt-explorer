@@ -91,7 +91,14 @@
   },
   {
     "term": "BOK tensioner",
-    "definition": "The nickname used for a tensioner used in the bottom of the keyway. Sometimes just called BOK."
+    "definition": "The nickname used for a tensioner used in the bottom of the keyway. Sometimes just called BOK.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458522005_d1de5e8322_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458522005/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458522005_ae5674a6e5_o.jpg"
+    }
   },
   {
     "term": "bolt",
@@ -129,7 +136,14 @@
   },
   {
     "term": "cam",
-    "definition": "The piece at the back of a plug that rotates with the movement of the plug. See [actuator](/#/glossary?term=actuator)"
+    "definition": "The piece at the back of a plug that rotates with the movement of the plug. See [actuator](/#/glossary?term=actuator)",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458238043_21287905da_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458238043/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458238043_50e1bc33f7_o.jpg"
+    }
   },
   {
     "term": "challenge lock",
@@ -152,7 +166,14 @@
   },
   {
     "term": "comb pick",
-    "definition": "A tool used to overlift all pin stacks, opening cheaply made locks."
+    "definition": "A tool used to overlift all pin stacks, opening cheaply made locks.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458422864_f7dc898224_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458422864/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458422864_5a7e8c9ab9_o.jpg"
+    }
   },
   {
     "term": "control key",
@@ -425,7 +446,14 @@
   },
   {
     "term": "gutting",
-    "definition": "To disassemble a lock into its individual parts."
+    "definition": "To disassemble a lock into its individual parts.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458422274_ee47c341b1_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458422274/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458422274_f8fb36ec3a_o.jpg"
+    }
   },
   {
     "term": "high pin count",
@@ -490,7 +518,14 @@
   },
   {
     "term": "key code",
-    "definition": "See [bitting code](/#/glossary?term=bitting%20code)."
+    "definition": "See [bitting code](/#/glossary?term=bitting%20code).",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458112556_29c41e459c_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458112556/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458112556_c61eafbb51_o.jpg"
+    }
   },
   {
     "term": "key pin",
@@ -647,7 +682,14 @@
   },
   {
     "term": "pin key",
-    "definition": "A key for a lever lock where the shaft of the key is a solid cylinder. Also sometimes called a barrel key."
+    "definition": "A key for a lever lock where the shaft of the key is a solid cylinder. Also sometimes called a barrel key.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53457186222_b9b5cd484f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53457186222/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53457186222_5665de4c27_o.jpg"
+    }
   },
   {
     "term": "pin stack",
@@ -692,7 +734,14 @@
   },
   {
     "term": "pipe key",
-    "definition": "A lever key with hollow cylindrical shaft, to interface with a drill pin."
+    "definition": "A lever key with hollow cylindrical shaft, to interface with a drill pin.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458113446_23b2c6d6ac_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458113446/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458113446_1e1c1bc9a0_o.jpg"
+    }
   },
   {
     "term": "plate key",
@@ -700,7 +749,14 @@
   },
   {
     "term": "plug",
-    "definition": "The central part of a lock cylinder that rotates when all locking elements are aligned properly to open the lock -- either by inserting a key into the plug or by picking the lock. The plug contains lock elements that directly contact the key, such as key pins and sliders. Also sometimes referred to as the core."
+    "definition": "The central part of a lock cylinder that rotates when all locking elements are aligned properly to open the lock -- either by inserting a key into the plug or by picking the lock. The plug contains lock elements that directly contact the key, such as key pins and sliders. Also sometimes referred to as the core.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458546730_cec5281ec2_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458546730/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458546730_ac5531a1cc_o.jpg"
+    }
   },
   {
     "term": "plug follower",
@@ -746,7 +802,14 @@
   },
   {
     "term": "prybar",
-    "definition": "A tool generally used for TOK tensioning."
+    "definition": "A tool generally used for TOK tensioning.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458237508_6892b4ae71_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458237508/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458237508_7f7e0dd1a8_o.jpg"
+    }
   },
   {
     "term": "pump/push",
@@ -754,7 +817,14 @@
   },
   {
     "term": "rake",
-    "definition": "A tool that opens basic pin tumbler locks by random motion."
+    "definition": "A tool that opens basic pin tumbler locks by random motion.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458422619_fdbc4b795f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458422619/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458422619_b67eb701a1_o.jpg"
+    }
   },
   {
     "term": "random mid tension",
@@ -834,7 +904,14 @@
   },
   {
     "term": "shaft (key)",
-    "definition": "The cylindrical part of a lever lock key where the bitting flag attaches."
+    "definition": "The cylindrical part of a lever lock key where the bitting flag attaches.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53457185357_1936757b80_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53457185357/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53457185357_7632db906e_o.jpg"
+    }
   },
   {
     "term": "shaft / shank (pick)",
@@ -956,7 +1033,14 @@
   },
   {
     "term": "tensioner",
-    "definition": "A tool used to apply rotational force to a plug in picking."
+    "definition": "A tool used to apply rotational force to a plug in picking.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458237938_26616154df_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458237938/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458237938_68e72c1297_o.jpg"
+    }
   },
   {
     "term": "threading",
@@ -979,7 +1063,14 @@
   },
   {
     "term": "TOK tensioner",
-    "definition": "The nickname for a tensioner used in the top of the keyway. Sometimes just called TOK (see [TOK](/#/glossary?term=TOK))"
+    "definition": "The nickname for a tensioner used in the top of the keyway. Sometimes just called TOK (see [TOK](/#/glossary?term=TOK))",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458112976_09ba35d803_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458112976/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458112976_51465fc2e8_o.jpg"
+    }
   },
   {
     "term": "top gutting",
@@ -1063,7 +1154,14 @@
   },
   {
     "term": "wiper insert",
-    "definition": "Steel insert from a windscreen wiper, often used to make tensioners - Or the tensioner made in the shape of such, usually BOK tensioners."
+    "definition": "Steel insert from a windscreen wiper, often used to make tensioners - Or the tensioner made in the shape of such, usually BOK tensioners.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53457185852_06b3054042_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53457185852/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53457185852_ace3ff11b7_o.jpg"
+    }
   },
   {
     "term": "xmas tree driver",
