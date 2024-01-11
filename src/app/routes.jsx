@@ -1,5 +1,6 @@
 import React from 'react'
 import {redirect} from 'react-router-dom'
+import ErrorBoundary from './ErrorBoundary'
 
 export default [
     {
@@ -35,7 +36,9 @@ export default [
         path: '/stats',
         lazy: async () => {
             const {default: StatsRoute} = await import('../stats/StatsRoute')
-            return {element: <StatsRoute/>}
+            return {
+                element: <StatsRoute/>
+            }
         }
     },
     {
@@ -59,4 +62,5 @@ export default [
             return {element: <PrivacyRoute/>}
         }
     }
-]
+].map(route => ({...route, errorElement: <ErrorBoundary/>}))
+

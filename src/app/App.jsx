@@ -3,10 +3,9 @@ import {SnackbarProvider} from 'notistack'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import {AppProvider} from './AppContext'
+import AppRoutes from './AppRoutes'
 import {AuthProvider} from './AuthContext'
 import {DBProvider} from './DBContext'
-import {createHashRouter, RouterProvider} from 'react-router-dom'
-import routes from './routes'
 
 const darkTheme = createTheme({
     palette: {
@@ -37,7 +36,7 @@ function App() {
                 <AuthProvider>
                     <DBProvider>
                         <AppProvider>
-                            <RouterProvider router={router}/>
+                            <AppRoutes/>
                         </AppProvider>
                     </DBProvider>
                 </AuthProvider>
@@ -45,8 +44,6 @@ function App() {
         </ThemeProvider>
     )
 }
-
-const router = createHashRouter(routes)
 
 const getRootStyle = styleTheme => {
     const linkTextColor = styleTheme.palette.text.icon

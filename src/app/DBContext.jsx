@@ -53,10 +53,8 @@ export function DBProvider({children}) {
             return onSnapshot(ref, async doc => {
                 const data = doc.data()
                 if (data) {
-                    console.trace('Received DB data update.', data)
                     setLockCollection(data)
                 } else {
-                    console.trace('Missing DB data, leaving empty for now.')
                     setLockCollection({})
                 }
             }, error => {
