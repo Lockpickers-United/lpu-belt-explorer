@@ -1,4 +1,5 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react'
+import {enqueueSnackbar} from 'notistack'
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import Card from '@mui/material/Card'
 import ReactMarkdown from 'react-markdown'
 import GlossaryImage from './GlossaryImage'
@@ -38,15 +39,34 @@ function GlossaryEntry({entry, highlighted}) {
         return value
     }, [entry])
 
-    const markdownComponents = {
-        code({children}) {
-            return <span style={{
-                fontWeight: 700,
-                fontSize: '1.1rem',
-                marginBottom: 4,
-                color: '#fff'
-            }}>{children}</span>
+    const GlossaryTerm = ({children}) => {
+        const [term] = children
+
+        const handleClick = useCallback(async event => {
+            event.preventDefault()
+
+            const link = `https://lpubelts.com/?term=${term}`
+
+            await navigator.clipboard.writeText(link)
+            enqueueSnackbar('Link copied to clipboard.')
+        }, [term])
+
+        const style = {
+            fontWeight: 700,
+            fontSize: '1.1rem',
+            marginBottom: 4,
+            color: '#fff',
+            cursor: 'pointer',
+            textDecoration: 'none'
         }
+
+        return (
+            <a style={style} onClick={handleClick} href={`/#/glossary?term=${term}`}>{term}</a>
+        )
+    }
+
+    const markdownComponents = {
+        code: GlossaryTerm
     }
 
     return (
