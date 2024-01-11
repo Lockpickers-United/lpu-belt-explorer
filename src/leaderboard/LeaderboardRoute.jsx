@@ -40,7 +40,7 @@ function LeaderboardRoute() {
 
     return (
         <React.Fragment>
-            <Nav title='Collection Leaderboard' extras={nav}/>
+            <Nav title='Leaderboard' extras={nav}/>
 
             <Leaderboard data={data} loading={loading}/>
 

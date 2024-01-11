@@ -19,15 +19,15 @@ export default [
         }
     },
     {
-        title: 'Leaderboard',
-        icon: <LeaderboardIcon fontSize='small'/>,
-        path: '/leaderboard'
-    },
-    {
         beta: true,
         title: 'Glossary',
         icon: <MenuBookIcon fontSize='small'/>,
         path: '/glossary'
+    },
+    {
+        title: 'Belt Requirements',
+        icon: <InfoOutlinedIcon fontSize='small'/>,
+        path: '/info'
     },
     {
         title: 'Stats & Insights',
@@ -35,9 +35,9 @@ export default [
         path: '/stats'
     },
     {
-        title: 'Belt Requirements',
-        icon: <InfoOutlinedIcon fontSize='small'/>,
-        path: '/info'
+        title: 'Leaderboard',
+        icon: <LeaderboardIcon fontSize='small'/>,
+        path: '/leaderboard'
     },
     {
         beta: true,
