@@ -1,7 +1,7 @@
 import React from 'react'
 import querystring from 'query-string'
 
-function Tracker({feature, extraParams}) {
+function Tracker({feature, ...extraParams}) {
     if (import.meta.env.DEV) return null
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = files[feature] || 'lpu.gif'

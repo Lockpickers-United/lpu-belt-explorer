@@ -188,7 +188,7 @@ function Entry({entry, expanded, onExpand}) {
                         }
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <Tracker feature='lock' extraParams={{id: entry.id}}/>
+                        <Tracker feature='lock' id={entry.id}/>
                         <CopyEntryTextButton entry={entry}/>
                         <CopyLinkToEntryButton entry={entry}/>
                     </AccordionActions>
