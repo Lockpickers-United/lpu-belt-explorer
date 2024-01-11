@@ -210,4 +210,15 @@ const glossary = glossaryData
 console.log('Writing glossary.json')
 fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))
 
+// Check that all Features are accounted for in Glossary
+new Set(jsonData
+    .map(({features = [], lockingMechanism = []}) => {
+        return [...features, lockingMechanism].flat()
+    })
+    .flat())
+    .forEach(term => {
+        const item = glossary.find(entry => entry.term === term)
+        if (!item) console.log('Term not defined in Glossary: ', term)
+    })
+
 console.log('Complete.')

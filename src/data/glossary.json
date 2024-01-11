@@ -37,6 +37,10 @@
     }
   },
   {
+    "term": "bi-directional",
+    "definition": "A lock which can turn either clockwise or counter clockwise from the locked position, e.g. to drive a deadbolt "
+  },
+  {
     "term": "bible",
     "definition": "The part of a pin tumbler lock where the driver pins and springs reside."
   },
@@ -120,6 +124,10 @@
     "definition": "To prevent a lock from functioning or gutting without physical damage, for eg. by dropping a driver pin in the plug."
   },
   {
+    "term": "butterfly disc",
+    "definition": "A disc from a disc detainer lock which has an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
+  },
+  {
     "term": "cam",
     "definition": "The piece at the back of a plug that rotates with the movement of the plug. See [actuator](/#/glossary?term=actuator)"
   },
@@ -182,6 +190,10 @@
     "definition": "A component in a lever lock to only allow a small area of space within the lock to be accessible at any one time."
   },
   {
+    "term": "curtain",
+    "definition": "A shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs"
+  },
+  {
     "term": "cut",
     "definition": "A single part of the bitting to interface with a single element."
   },
@@ -210,6 +222,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613390/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454613390_e4bd55cdd1_o.jpg"
     }
+  },
+  {
+    "term": "DBS",
+    "definition": "Short for [disc blocker system](/#/glossary?term=disc%20blocker%20system)."
   },
   {
     "term": "DD",
@@ -252,6 +268,10 @@
   {
     "term": "dimple pick",
     "definition": "See [flag](/#/glossary?term=flag)."
+  },
+  {
+    "term": "disc blocker system",
+    "definition": "Often abbreviated to DBS. A system in disc detainer locks which locks the discs in position when tension is applied. Versions are included in Abloy Protec and Protec2, and Tokoz Pro."
   },
   {
     "term": "disc detainer",
@@ -364,7 +384,11 @@
   },
   {
     "term": "front tension",
-    "definition": "A tension method used for disc detainer locks, applying rotational force at the face of the lock."
+    "definition": "A disc detainer lock that can be front tensioned can be picked while tensioned from the front disc."
+  },
+  {
+    "term": "front/rear tension",
+    "definition": "A disc detainer lock that can be front or rear tensioned can be picked while tensioned from either the front or rearmost disc."
   },
   {
     "term": "gate",
@@ -431,7 +455,14 @@
   },
   {
     "term": "housing",
-    "definition": "The part of a lock the plug is placed into, containing the bible."
+    "definition": "The part of a lock the plug is placed into, containing the bible.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455331238_f53924523f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455331238/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455331238_7759d0c1fc_o.jpg"
+    }
   },
   {
     "term": "HPC",
@@ -631,7 +662,14 @@
   },
   {
     "term": "pin-in-pin",
-    "definition": "A key or driver pin that has a smaller pin inside that moves independently."
+    "definition": "A key or driver pin that has a smaller pin inside that moves independently.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/52913754216_05401fdd01_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52913754216/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/52913754216_b608c1f1c0_o.jpg"
+    }
   },
   {
     "term": "pin-tumbler",
@@ -695,6 +733,10 @@
     }
   },
   {
+    "term": "profile discs",
+    "definition": "Discs which have additional material in the keyway to restrict access for unauthorised key profiles or picking tools."
+  },
+  {
     "term": "prog",
     "definition": "Colloquial for [progressive pinning](/#/glossary?term=progressive%20pinning)."
   },
@@ -715,8 +757,20 @@
     "definition": "A tool that opens basic pin tumbler locks by random motion."
   },
   {
+    "term": "random mid tension",
+    "definition": "A disc detainer lock that is random mid tensioned can be picked while tensioned from an unknown disc  (not the front or rear disc)"
+  },
+  {
     "term": "rear tension",
     "definition": "To tension a disc detainer or similar lock by reaching in with a tool and turning an element at the back of the lock."
+  },
+  {
+    "term": "rear tension",
+    "definition": "A disc detainer lock that is rear tensioned can be picked while tensioned from the rear disc."
+  },
+  {
+    "term": "return bars",
+    "definition": "A pair of bars in a bi-directional disc detainer lock which limit the rotation and return the discs to a neutral position as the lock is relocked "
   },
   {
     "term": "reverse sidebar",
