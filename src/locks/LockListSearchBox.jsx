@@ -12,7 +12,7 @@ import useWindowSize from '../util/useWindowSize'
 import debounce from 'debounce'
 import {useHotkeys} from 'react-hotkeys-hook'
 
-function SearchBox() {
+function LockListSearchBox() {
     const location = useLocation()
     const {filters, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
@@ -115,4 +115,4 @@ function SearchBox() {
     )
 }
 
-export default SearchBox
+export default LockListSearchBox

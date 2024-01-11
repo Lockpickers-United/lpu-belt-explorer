@@ -18,9 +18,8 @@ function GlossaryEntry({entry, highlighted}) {
 
     useEffect(() => {
         if (highlighted && ref && !scrolled) {
-            setScrolled(true)
-
             setTimeout(() => {
+                setScrolled(true)
                 window.scrollTo({
                     left: 0,
                     top: ref.current.offsetTop - 74,

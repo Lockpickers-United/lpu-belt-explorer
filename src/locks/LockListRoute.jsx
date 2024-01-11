@@ -14,15 +14,15 @@ import SlideshowButton from './SlideshowButton'
 import BeltToolbar from './BeltToolbar'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
-import SearchBox from './SearchBox'
+import LockListSearchBox from './LockListSearchBox'
 
 function LockListRoute() {
     const nav = (
         <React.Fragment>
-            <SearchBox/>
+            <LockListSearchBox/>
             <SortButton/>
             <FilterButton/>
-            <div style={{flexGrow: 1, minWidth:'10px'}}></div>
+            <div style={{flexGrow: 1, minWidth:'10px'}}/>
             <ToggleCompactButton/>
         </React.Fragment>
     )

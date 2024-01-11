@@ -24,10 +24,10 @@
         "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
     },
     "dependencies": {
-        "@emotion/react": "^11.11.1",
+        "@emotion/react": "^11.11.3",
         "@emotion/styled": "^11.11.0",
-        "@mui/icons-material": "^5.14.8",
-        "@mui/material": "^5.14.8",
+        "@mui/icons-material": "^5.15.4",
+        "@mui/material": "^5.15.4",
         "@nivo/bar": "^0.84.0",
         "@nivo/bullet": "^0.84.0",
         "@nivo/core": "^0.84.0",
