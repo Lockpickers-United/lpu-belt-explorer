@@ -32,7 +32,7 @@ function Leaderboard({data, loading}) {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16
             }}>
                 <TableContainer sx={{height: '78vh', backgroundColor: '#111'}} id='scrollable' ref={scrollableRef}>
-                    <Table>
+                    <Table stickyHeader>
                         <LeaderboardHeader/>
 
                         <TableBody>
