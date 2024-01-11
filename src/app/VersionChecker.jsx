@@ -50,7 +50,7 @@ function VersionChecker() {
     if (!currentVersion || !nextVersion || currentVersion === nextVersion) return null
     return (
         <Tooltip title='New Version Available' arrow disableFocusListener>
-            <IconButton onClick={handleClick} style={{color: 'green'}}>
+            <IconButton onClick={handleClick} style={{color: 'green', marginLeft: 8}}>
                 <SystemUpdateIcon/>
             </IconButton>
         </Tooltip>

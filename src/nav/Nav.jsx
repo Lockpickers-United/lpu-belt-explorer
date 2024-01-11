@@ -13,14 +13,14 @@ function Nav({extras, title}) {
                 <Toolbar>
                     <MainMenu/>
 
+                    <VersionChecker/>
+
                     <div style={{
                         flexGrow: 1,
                         fontWeight: 500,
                         fontSize: '1.5rem',
                         paddingLeft: 16
                     }}>{title}</div>
-
-                    <VersionChecker/>
 
                     {extras}
 
