@@ -8953,9 +8953,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Hellish keyway"
-    ],
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -9001,7 +8998,7 @@
       }
     ],
     "views": 237,
-    "lastUpdated": "2023-11-26T16:04:42.042Z"
+    "lastUpdated": "2024-01-12T00:02:13.120Z"
   },
   {
     "id": "3129ee7e",
@@ -11888,9 +11885,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Hellish keyway"
-    ],
     "media": [
       {
         "title": "By: LockPicker1969",
@@ -11932,7 +11926,7 @@
       }
     ],
     "views": 937,
-    "lastUpdated": "2023-07-25T11:20:19.889Z"
+    "lastUpdated": "2024-01-12T00:02:13.122Z"
   },
   {
     "id": "d20fb493",
@@ -13696,9 +13690,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Hellish keyway"
-    ],
     "notes": "The EVVA ALS has a profile restriction plate after pin 4 and its key narrows accordingly.",
     "media": [
       {
@@ -13750,7 +13741,7 @@
       }
     ],
     "views": 271,
-    "lastUpdated": "2023-07-25T11:20:19.890Z"
+    "lastUpdated": "2024-01-12T00:02:13.123Z"
   },
   {
     "id": "f938f2fe",
@@ -22748,7 +22739,6 @@
     "features": [
       "Barrel drivers",
       "Serrated/threaded milling",
-      "Hellish keyway",
       "Guttable",
       "Forked keypins"
     ],
@@ -22818,7 +22808,7 @@
       }
     ],
     "views": 812,
-    "lastUpdated": "2023-07-25T11:20:19.897Z"
+    "lastUpdated": "2024-01-12T00:02:13.130Z"
   },
   {
     "id": "1459e2c6",
@@ -33480,8 +33470,7 @@
     ],
     "features": [
       "High pin count",
-      "Torpedo keypins",
-      "Hellish keyway"
+      "Torpedo keypins"
     ],
     "media": [
       {
@@ -33511,7 +33500,7 @@
       "49b2c746",
       "97e1ae9f"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.028Z"
+    "lastUpdated": "2024-01-12T00:02:13.135Z"
   },
   {
     "id": "108549ba",
