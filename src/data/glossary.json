@@ -72,7 +72,7 @@
   },
   {
     "term": "bitting code",
-    "definition": "An alphanumeric code that can be provided to a locksmith to cut a key to a desired shape. Some codes may be found on the keys themselves, other times in [security cards](/#/glossary?term=security%20cards) that are obtained along with the lock."
+    "definition": "An alphanumeric code that can be provided to a locksmith to cut a key to a desired shape. Some codes may be found on the keys themselves, other times in [security cards](/#/glossary?term=security%20card) that are obtained along with the lock."
   },
   {
     "term": "blade (key)",
@@ -84,6 +84,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454201946/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454201946_28d0babf9c_o.jpg"
     }
+  },
+  {
+    "term": "bogota pick",
+    "definition": "A [rake](/#/glossary?term=rake), known for its unique rake design that mimics the peaks and valleys of a key. It's named after Bogotá, Colombia, where it was reportedly first created."
   },
   {
     "term": "BOK",
@@ -795,7 +799,7 @@
   },
   {
     "term": "prybar",
-    "definition": "A tool generally used for TOK tensioning.",
+    "definition": "Tool generally used for TOK tensioning.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -837,11 +841,11 @@
   },
   {
     "term": "reverse sidebar",
-    "definition": "A sidebar that is spring biased into the plug with weaker springs than the sliders, preventing setting and feedback."
+    "definition": "Sidebar that is spring biased into the plug with weaker springs than the sliders, preventing setting and feedback."
   },
   {
     "term": "rim cylinder",
-    "definition": "A cylinder similar to a mortise cylinder to be installed directly in a door, with the use of screws.",
+    "definition": "Cylinder similar to a mortise cylinder to be installed directly in a door, with the use of screws.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -856,13 +860,24 @@
   },
   {
     "term": "security card",
-    "definition": "A lock security card is a form of identification issued with certain high-security locks, required for making duplicate keys. It provides an additional layer of security by ensuring that only authorized individuals can have keys replicated.",
+    "definition": "Form of identification issued with certain high-security locks, required for making duplicate keys. It provides an additional layer of security by ensuring that only authorized individuals can have keys replicated.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
       "thumbnailUrl": "https://live.staticflickr.com/65535/53455728065_1ab9021092_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455728065/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455728065_cd42a1ea68_o.jpg"
+    }
+  },
+  {
+    "term": "security pin",
+    "definition": "Specialized pin used in lock cylinders to increase resistance to picking and manipulation, often featuring unusual shapes or mechanisms like spool, serrated, or mushroom designs. These pins make the lock more secure by creating an irregular path that challenges conventional lock-picking techniques.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458167087_50a306e60d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458167087/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458167087_e6f6626e4f_o.jpg"
     }
   },
   {
@@ -946,7 +961,7 @@
   },
   {
     "term": "sidebar",
-    "definition": "A piece of metal that interfaces with another locking element (eg. levers, sliders, other sidepins) and blocks rotation until the key is inserted.",
+    "definition": "Piece of metal that interfaces with another locking element (eg. levers, sliders, other sidepins) and blocks rotation until the key is inserted.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -976,7 +991,14 @@
   },
   {
     "term": "slider",
-    "definition": "Element that moves in only one direction in the lock, usually without pushing directly other pins or elements, and is kept rotationally locked to maintain correct contact with the functional elements it interacts with. It can be the main or secondary locking mechanism of a lock. Can be Sprung or Unsprung. Generally considered only for those that interact with a sidebar, although the actual definition and distinction with Wafers is controversial."
+    "definition": "Element that moves in only one direction in the lock, usually without pushing directly other pins or elements, and is kept rotationally locked to maintain correct contact with the functional elements it interacts with. It can be the main or secondary locking mechanism of a lock. Can be Sprung or Unsprung. Generally considered only for those that interact with a sidebar, although the actual definition and distinction with Wafers is controversial.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53454613605_a3a78cec59_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613605/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53454613605_cc09a7933b_o.jpg"
+    }
   },
   {
     "term": "sliding lever",
@@ -1003,7 +1025,7 @@
   },
   {
     "term": "standard pin",
-    "definition": "A pin which is shaped like a regular cylinder (with a bevel if it is a keypin)."
+    "definition": "Pin which is shaped like a regular cylinder (with a bevel if it is a keypin)."
   },
   {
     "term": "talon",
@@ -1026,7 +1048,7 @@
   },
   {
     "term": "tensioner",
-    "definition": "A tool used to apply rotational force to a plug in picking.",
+    "definition": "Tool used to apply rotational force to a plug in picking.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
