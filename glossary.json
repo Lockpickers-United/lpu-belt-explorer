@@ -180,6 +180,10 @@
     }
   },
   {
+    "term": "construction core",
+    "definition": "Construction cores are locks used for temporarily controlling access for premises during construction. They usually work by including a special type of mastering where the mastering element (small wafer of ball bearing) will be removed from the lock chambers once the owner's key is used. Often present holes or dimples next to the plug chambers, where the mastering element can drop into."
+  },
+  {
     "term": "control key",
     "definition": "A key used to remove a lock from its housing. Makes it easy to rekey a lock simply by swapping cores."
   },
@@ -378,6 +382,10 @@
     }
   },
   {
+    "term": "fixed disc",
+    "definition": "A disc in a DD that can't be turned, fixed in place."
+  },
+  {
     "term": "flag",
     "definition": "A lock pick used for dimple locks, shaped like a rod with a protrusion at the side of the tip. Also called dimple pick.",
     "media": {
@@ -391,6 +399,10 @@
   {
     "term": "flat steel key",
     "definition": "A key made out of flat sheet metal. Also called plate key."
+  },
+  {
+    "term": "float picking",
+    "definition": "A special technique for picking pin tumblers where the picker completely controls the plug movement. This allows for careful manual counterrotation, for instance, to set a gin spool from the countermilling without dropping other pins. Can be done using one very well fitting tensioner, or two tensioners."
   },
   {
     "term": "follower",
