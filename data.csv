@@ -215,7 +215,7 @@ Green,FAB,200RS,,Pin-tumbler,,,cd0c2ff9
 Green,"Federal Lock",5Y3110,,Pin-tumbler,,,13b55a25
 Green,"Federal Lock",6Y3110,,Pin-tumbler,,,e98b5ae7
 Green,FJM,Padlock,,"Disc detainer",,,639c4f0b
-Green,Gege,ANS-2,,Pin-tumbler,"Hellish keyway",,92f98042
+Green,Gege,ANS-2,,Pin-tumbler,,,92f98042
 Green,Gege,"AP 1000",,Pin-tumbler,,,3129ee7e
 Green,Generic/Unknown,"4 Lever Curtained lock",,Lever,Curtain,,0e97c099
 Green,Generic/Unknown,"4 Lever Uncurtained lock",,Lever,Uncurtained,,d46ac711
@@ -286,7 +286,7 @@ Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515
 Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
 Blue,ABUS,KW14,,Pin-tumbler,,,4382d650
 Blue,ABUS,S6+,,Pin-tumbler,,,f93c57fc
-Blue,ABUS,XP1,,Pin-tumbler,"Hellish keyway",,34c0dfe4
+Blue,ABUS,XP1,,Pin-tumbler,,,34c0dfe4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
 Blue,ASSA,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
 Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Guttable",,d9e3829f
@@ -323,7 +323,7 @@ Blue,EVVA,DPI,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,14481dfb
 Blue,EVVA,DPS,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,da54208c
 Blue,EVVA,DPX,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,af99d1cb
 Blue,EVVA,EPS,"pin-tumbler version",Pin-tumbler,"Trap pin/bar",,18f3c21f
-Blue,EVVA,GPI/ALS,,Pin-tumbler,"Hellish keyway","The EVVA ALS has a profile restriction plate after pin 4 and its key narrows accordingly.",bce6757d
+Blue,EVVA,GPI/ALS,,Pin-tumbler,,"The EVVA ALS has a profile restriction plate after pin 4 and its key narrows accordingly.",bce6757d
 Blue,FAB,2000,,Pin-tumbler,,,f938f2fe
 Blue,"FAB,FAB","3* Profi,4* Profi",,Pin-tumbler,,,aee424c0
 Blue,"Federal Lock",6KD3110,,Dimple,,,275d33c9
@@ -506,7 +506,7 @@ Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
 Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis X18 clones",Dimple,,,f85f4ac0
 Brown,Ankerslot,"Infinity K",,,,,5329b0f3
 Brown,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling,Guttable",,f2d41749
-Brown,"ASSA,ASSA,ASSA,TrioVing","d12,P600,Neptun 1900,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Hellish keyway,Guttable,Forked keypins",,d3ad5a73
+Brown,"ASSA,ASSA,ASSA,TrioVing","d12,P600,Neptun 1900,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Guttable,Forked keypins",,d3ad5a73
 Brown,ASSA,Desmo,"8 sliders, no mastered pins",Slider,"Guttable,Unsprung sliders,Active sidebar",,1459e2c6
 Brown,"ASSA,ASSA,ASSA","Twin Combi,1800,4800","barrel drivers, 2 or 3 finger pins","Sidepins,Pin-tumbler,Sidebar","Barrel drivers,Serrated/threaded milling,Active sidebar,Rotating fingerpins,Guttable",,fd7b514a
 Brown,"Australian Lock Co.",BiLock,"12 sliders, 5-6 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,9ed006d4
@@ -680,7 +680,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1","GOAL,GOAL","V18,GP","14-16 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,63b2e02b
 "Black 2","GOAL,GOAL","V18,GP","≥17 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,109531f4
 "Black 1",GOAL,Z,"<2 standard drivers",Pin-tumbler,"Gin spool drivers,Torpedo keypins,Overmilling",,5103e650
-"Black 2",Hori,Trident,"T-spool drivers",Dimple,"High pin count,Torpedo keypins,Hellish keyway",,e8c7dd5b
+"Black 2",Hori,Trident,"T-spool drivers",Dimple,"High pin count,Torpedo keypins",,e8c7dd5b
 "Black 2",IKON,"SK6 Sperrwelle Extra Code","6 pin with 5 finger pins","Sidepins,Pin-tumbler","Rotating fingerpins,Active sidebar,Tapered drivers,Guttable","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",108549ba
 "Black 1",IKON,WSW,"5 sliders","Pin-tumbler,Slider","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",7e967792
 "Black 2",IKON,WSW,"7 sliders, upgrade of WSW with 5 sliders","Pin-tumbler,Sidepins","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",c9494ee8
