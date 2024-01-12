@@ -23372,13 +23372,34 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52722331024_e78c4ef7ff_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52722331024/in/album-72177720306426813/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52722331024_729485d7fc_o.jpg"
+      },
+      {
+        "title": "By: DQ",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53459475460_9471a4ca13_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53459475460/in/album-72177720306426813/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53459475460_226c004332_o.jpg"
+      },
+      {
+        "title": "By: DQ",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53459061591_348307bdcd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53459061591/in/album-72177720306426813/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53459061591_f6ba5e3d4f_o.jpg"
+      },
+      {
+        "title": "By: DQ",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53458139212_d34103df10_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458139212/in/album-72177720306426813/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53458139212_ed5f650b88_o.jpg"
       }
     ],
     "views": 155,
     "relatedIds": [
       "8a0c4b07"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2024-01-12T14:01:38.360Z"
   },
   {
     "id": "e39885f3",
@@ -24209,6 +24230,13 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52756361698_34a5519069_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756361698/in/album-72177720306813202/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52756361698_1d94be92cc_o.jpg"
+      },
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53459353049_a9fe5045c0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53459353049/in/album-72177720306813202/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53459353049_bf9eb0e97f_o.jpg"
       }
     ],
     "links": [
@@ -24218,7 +24246,7 @@
       }
     ],
     "views": 564,
-    "lastUpdated": "2023-07-25T11:20:19.898Z"
+    "lastUpdated": "2024-01-12T14:01:38.360Z"
   },
   {
     "id": "f38cafca",
@@ -29989,6 +30017,13 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52825833016_c6eecc3da6_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52825833016/in/album-72177720307577311/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52825833016_f21bb06e03_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53459449825_761372301d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53459449825/in/album-72177720306834720/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53459449825_878de3d738_o.jpg"
       }
     ],
     "links": [
@@ -30006,7 +30041,7 @@
       }
     ],
     "views": 3330,
-    "lastUpdated": "2023-07-25T11:20:19.903Z"
+    "lastUpdated": "2024-01-12T14:01:38.363Z"
   },
   {
     "id": "12ff8c25",
@@ -38964,9 +38999,10 @@
     "makeModels": [
       {
         "make": "Locksys",
-        "model": "Codkey L52 (factory split core 24 pins HPC)"
+        "model": "Codkey L52"
       }
     ],
+    "version": "factory split core, 24 pins",
     "features": [
       "Under Review ⚑"
     ],
@@ -38998,10 +39034,24 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52715879470_d16b8e4168_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52715879470/in/album-72177720306337528/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52715879470_08f271dab0_o.jpg"
+      },
+      {
+        "title": "By: DQ",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53459201463_3e51a7b1ca_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53459201463/in/album-72177720314024529/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53459201463_9487dfb8d4_o.jpg"
+      },
+      {
+        "title": "By: DQ",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53459381864_fd67fc4e36_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53459381864/in/album-72177720314024529/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53459381864_dc9e3d47f3_o.jpg"
       }
     ],
     "views": 12,
-    "lastUpdated": "2024-01-02T17:58:57.083Z"
+    "lastUpdated": "2024-01-12T14:01:38.369Z"
   },
   {
     "id": "45bb95df",
