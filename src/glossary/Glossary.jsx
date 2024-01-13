@@ -23,9 +23,9 @@ function Glossary() {
         }}>
             <GlossaryIntro/>
 
-            {glossary.map(entry =>
+            {glossary.map((entry, index) =>
                 <GlossaryEntry
-                    key={entry.term}
+                    key={index}
                     entry={entry}
                     highlighted={highlightedTerm === entry.term}
                 />

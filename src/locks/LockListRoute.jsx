@@ -1,5 +1,6 @@
 import React from 'react'
 import Tracker from '../app/Tracker'
+import useWindowSize from '../util/useWindowSize'
 import {LockListProvider} from './LockListContext'
 import {DataProvider} from './DataContext'
 import {FilterProvider} from './FilterContext'
@@ -17,12 +18,15 @@ import Nav from '../nav/Nav'
 import LockListSearchBox from './LockListSearchBox'
 
 function LockListRoute() {
+    const {width} = useWindowSize()
+    const isMobile = width < 650
+
     const nav = (
         <React.Fragment>
             <LockListSearchBox/>
             <SortButton/>
             <FilterButton/>
-            <div style={{flexGrow: 1, minWidth:'10px'}}/>
+            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
         </React.Fragment>
     )
@@ -43,7 +47,7 @@ function LockListRoute() {
         <FilterProvider>
             <DataProvider>
                 <LockListProvider>
-                    <Nav extras={nav}/>
+                    <Nav title='Locks' extras={nav}/>
 
                     <BeltToolbar/>
 

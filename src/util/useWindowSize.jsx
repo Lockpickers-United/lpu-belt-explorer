@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useMemo, useState} from 'react'
 import debounce from 'debounce'
 
 export default function useWindowSize() {
@@ -20,5 +20,8 @@ export default function useWindowSize() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    return dimensions
+    return useMemo(() => ({
+        ...dimensions,
+        isMobile: dimensions.width < 650
+    }), [dimensions])
 }

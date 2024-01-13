@@ -1,5 +1,5 @@
-import Backdrop from '@mui/material/Backdrop'
 import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
+import Backdrop from '@mui/material/Backdrop'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
@@ -16,7 +16,7 @@ function LockListSearchBox() {
     const location = useLocation()
     const {filters, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
-    const {width} = useWindowSize()
+    const {isMobile} = useWindowSize()
     const inputEl = useRef()
     useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
@@ -45,9 +45,12 @@ function LockListSearchBox() {
         debounceChange(value)
     }, [debounceChange])
 
-    const [hasFocus, setHasFocus] = useState(false)
-    const handleFocus = () => setTimeout(() => setHasFocus(true), 0)
-    const handleBlur = () => setTimeout(() => setHasFocus(false), 0)
+    const [open, setOpen] = useState(false)
+    const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])
+    const handleClick = useCallback(() => {
+        setOpen(true)
+        setTimeout(() => inputEl.current.focus(), 0)
+    }, [])
 
     useEffect(() => {
         if (filters.search !== text) {
@@ -65,13 +68,12 @@ function LockListSearchBox() {
         </InputAdornment>
     ) : null
 
-    const isMobile = width < 650
 
     const style = isMobile
         ? {maxWidth: 450, marginRight: 8}
         : {maxWidth: 450, paddingLeft: 60, marginRight: 8}
 
-    const focusStyle = hasFocus && isMobile ? {
+    const focusStyle = open && isMobile ? {
         width: 'auto',
         position: 'fixed',
         left: 60,
@@ -84,7 +86,12 @@ function LockListSearchBox() {
 
     return (
         <React.Fragment>
-            <TextField
+            {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
+                <IconButton color='inherit' onClick={handleClick}>
+                    <SearchIcon/>
+                </IconButton>
+            </Tooltip>}
+            {(open || !isMobile) && <TextField
                 placeholder='Search'
                 InputProps={{
                     inputProps: {
@@ -100,15 +107,14 @@ function LockListSearchBox() {
                 variant='standard'
                 color='secondary'
                 onChange={handleChange}
-                onFocus={handleFocus}
                 onBlur={handleBlur}
                 value={text}
                 style={{...style, ...focusStyle}}
                 fullWidth
-            />
+            /> }
             <Backdrop
                 invisible
-                open={hasFocus && isMobile}
+                open={open && isMobile}
                 onClick={handleBlur}
             />
         </React.Fragment>

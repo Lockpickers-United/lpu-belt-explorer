@@ -23,8 +23,7 @@ function GlossaryEntry({entry, highlighted}) {
                 setScrolled(true)
                 window.scrollTo({
                     left: 0,
-                    top: ref.current.offsetTop - 74,
-                    behavior: 'smooth'
+                    top: ref.current.offsetTop - 74
                 })
             }, 0)
         }

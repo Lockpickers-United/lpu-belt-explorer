@@ -4,11 +4,14 @@ import React, {useEffect, useState} from 'react'
 import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
+import useWindowSize from '../util/useWindowSize'
 import Leaderboard from './Leaderboard'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton'
 import LeaderboardSearchBox from './LeaderboardSearchBox'
 
 function LeaderboardRoute() {
+    const {width} = useWindowSize()
+    const isMobile = width < 650
     const [data, setData] = useState({data: [], metadata: {}})
     const [loading, setLoading] = useState(true)
     useEffect(() => {
@@ -34,13 +37,13 @@ function LeaderboardRoute() {
         <React.Fragment>
             <LeaderboardSearchBox data={data}/>
             <LeaderboardFindMeButton/>
-            <div style={{flexGrow: 1}}/>
+            {!isMobile && <div style={{flexGrow: 1}}/>}
         </React.Fragment>
     )
 
     return (
         <React.Fragment>
-            <Nav title='Collection Leaderboard' extras={nav}/>
+            <Nav title='Leaderboard' extras={nav}/>
 
             <Leaderboard data={data} loading={loading}/>
 
