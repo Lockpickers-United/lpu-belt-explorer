@@ -2,8 +2,8 @@ import React from 'react'
 import SsidChartIcon from '@mui/icons-material/SsidChart'
 import SiteStatsTable from './SiteStatsTable.jsx'
 import useWindowSize from '../util/useWindowSize'
-import lockSummaryData from '../data/lockSummaryData.json'
-import siteStatsData from '../data/siteSummaryData.json'
+import lockSummaryData from '../data/statsLockSummary.json'
+import siteStatsData from '../data/statsSiteSummary.json'
 
 const SiteStats = () => {
 

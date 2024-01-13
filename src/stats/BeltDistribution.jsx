@@ -1,13 +1,14 @@
 import React, {useState, useCallback} from 'react'
 import BeltDistributionBar from './BeltDistributionBar.jsx'
-import collectionBeltSaves from '../data/collectionBeltSavesData.json'
+import collectionBeltSaves from '../data/statsCollectionsSummary.json'
 import {ToggleButtonGroup} from '@mui/material'
-import lockSummaryData from '../data/lockSummaryData.json'
-import siteSummaryData from '../data/siteSummaryData.json'
+import lockSummaryData from '../data/statsLockSummary.json'
+import siteSummaryData from '../data/statsSiteSummary.json'
 import StatsToggleButton from './StatsToggleButton.jsx'
 
 const locksByBelt = lockSummaryData.locksByBelt
 const lockViewsByBelt = siteSummaryData.lockViewsByBelt.data
+const collectionSavesByBelt = collectionBeltSaves.savesByBelt
 
 function BeltDistribution() {
     const [dataset, setDataset] = useState(lockViewsByBelt)
@@ -39,7 +40,7 @@ function BeltDistribution() {
                     <StatsToggleButton
                         handleButtonClick={handleButtonClick}
                         dataset={dataset}
-                        newDataset={collectionBeltSaves}
+                        newDataset={collectionSavesByBelt}
                         label='Collection Saves'
                     />
 

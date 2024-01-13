@@ -1,7 +1,7 @@
 import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from './chartDefaults.js'
-import siteStatsData from '../data/siteSummaryData.json'
+import siteStatsData from '../data/statsSiteSummary.json'
 import useWindowSize from '../util/useWindowSize.jsx'
 
 function LockViewsLine() {
