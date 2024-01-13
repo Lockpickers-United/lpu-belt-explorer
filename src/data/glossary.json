@@ -176,12 +176,23 @@
     "definition": "Milled cyllindric-shaped hole where pins are inserted. Can be plug chambers or bible chambers. "
   },
   {
+    "term": "circlip",
+    "definition": "A circlip, also known as a C-clip, is a type of fastener or retaining ring that consists of a semi-flexible metal ring with open ends. In locks, it is used to hold the [plug](/#/glossary?term=plug) in the [housing](/#/glossary?term=housing).",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53460471757_fc7f373a82_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53460471757/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53460471757_4519cdeab6_o.jpg"
+    }
+  },
+  {
     "term": "CL",
-    "definition": "Short for [Challenge Lock](/#/glossary?term=challenge%20lock)."
+    "definition": "Acronym for [Challenge Lock](/#/glossary?term=challenge%20lock)."
   },
   {
     "term": "comb pick",
-    "definition": "A tool used to overlift all pin stacks, opening cheaply made locks.",
+    "definition": "A tool used to overlift all pin stacks, opening some low-security locks.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -227,10 +238,6 @@
   },
   {
     "term": "curtain",
-    "definition": "A component in a lever lock to only allow a small area of space within the lock to be accessible at any one time."
-  },
-  {
-    "term": "curtain",
     "definition": "A shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs"
   },
   {
@@ -247,10 +254,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454201791/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454201791_b1920f92a0_o.jpg"
     }
-  },
-  {
-    "term": "CW / CCW",
-    "definition": "Clockwise/Counter-clockwise, usually tension directions."
   },
   {
     "term": "cylinder",
@@ -281,7 +284,7 @@
   },
   {
     "term": "dial (lock)",
-    "definition": "The part of a combination lock that is rotated",
+    "definition": "The part of a combination lock that is rotated.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -425,7 +428,14 @@
   },
   {
     "term": "front loader",
-    "definition": "A piece of lock disassembly and reassembly equipment, rarely seen as a commercial tool, that allows for carefully removing and resetting pins in the the bible chambers of a full euro profile cylinder from the front. It includes a groove that will travel over the different chambers as you rotate the piece."
+    "definition": "A piece of lock disassembly and reassembly equipment, rarely seen as a commercial tool, that allows for carefully removing and resetting pins in the the bible chambers of a full euro profile cylinder from the front. It includes a groove that will travel over the different chambers as you rotate the piece.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461528573_1576d91283_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461528573/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461528573_60805a53d2_o.jpg"
+    }
   },
   {
     "term": "front tension",
@@ -467,6 +477,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53453275437/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53453275437_a2e96b2a4a_o.jpg"
     }
+  },
+  {
+    "term": "gut wrench",
+    "definition": "Tool used to remove circlips from locks during disassembling. Can be used as a general name for any tool with that function, although it usually refers to the one designed by Lock Noob."
   },
   {
     "term": "gutting",
@@ -588,7 +602,7 @@
   },
   {
     "term": "LFIC",
-    "definition": "Short for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another. See [SFIC](/#/glossary?term=SFIC)"
+    "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another. See also [SFIC](/#/glossary?term=SFIC)"
   },
   {
     "term": "lock",
@@ -761,7 +775,14 @@
   },
   {
     "term": "pinning tweezers",
-    "definition": "Tweezers are used for removing the small elements from a lock and reassembling it. In many cases, pinning tweezers are made or modified to make it easier to grab and secure pins, for example, with a groove near the tip."
+    "definition": "Tweezers are used for removing the small elements from a lock and reassembling it. In many cases, pinning tweezers are made or modified to make it easier to grab and secure pins, for example, with a groove near the tip.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461528278_822b8d2f14_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461528278/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461528278_e5bd0b1872_o.jpg"
+    }
   },
   {
     "term": "PIP",
@@ -870,10 +891,6 @@
     "definition": "To tension a disc detainer or similar lock by reaching in with a tool and turning an element at the back of the lock."
   },
   {
-    "term": "rear tension",
-    "definition": "A disc detainer lock that is rear tensioned can be picked while tensioned from the rear disc."
-  },
-  {
     "term": "return bars",
     "definition": "A pair of bars in a bi-directional disc detainer lock which limit the rotation and return the discs to a neutral position as the lock is relocked "
   },
@@ -946,7 +963,7 @@
   },
   {
     "term": "SFIC",
-    "definition": "Short for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another. See [LFIC](/#/glossary?term=LFIC)"
+    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another. See also [LFIC](/#/glossary?term=LFIC)"
   },
   {
     "term": "shackle",
