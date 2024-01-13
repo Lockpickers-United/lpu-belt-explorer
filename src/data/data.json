@@ -1864,6 +1864,9 @@
         "model": "Faithfull"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: myktylgaan",
@@ -1881,7 +1884,7 @@
       }
     ],
     "views": 288,
-    "lastUpdated": "2023-07-25T11:20:19.882Z"
+    "lastUpdated": "2024-01-13T16:01:18.292Z"
   },
   {
     "id": "5e3f057f",
@@ -2055,6 +2058,9 @@
         "model": "Guri"
       }
     ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
     "media": [
       {
         "title": "By: DonPicks",
@@ -2092,7 +2098,7 @@
       }
     ],
     "views": 234,
-    "lastUpdated": "2023-07-25T11:20:19.882Z"
+    "lastUpdated": "2024-01-13T16:01:18.292Z"
   },
   {
     "id": "033f8958",
@@ -2576,6 +2582,9 @@
         "model": "Multi XL"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: Moon-UA",
@@ -2586,7 +2595,7 @@
       }
     ],
     "views": 332,
-    "lastUpdated": "2023-07-25T11:20:19.882Z"
+    "lastUpdated": "2024-01-13T16:01:18.292Z"
   },
   {
     "id": "8e2d57b1",
@@ -3908,8 +3917,11 @@
         "model": "220/50"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "views": 86,
-    "lastUpdated": "2023-12-04T20:12:20.142Z"
+    "lastUpdated": "2024-01-13T16:01:18.293Z"
   },
   {
     "id": "3b3e78b0",
@@ -5100,8 +5112,11 @@
         "model": "Urbis"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "views": 149,
-    "lastUpdated": "2023-03-23T03:24:22.386Z"
+    "lastUpdated": "2024-01-13T16:01:18.293Z"
   },
   {
     "id": "07d4fec6",
@@ -7829,6 +7844,9 @@
         "model": "285"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: Yagias",
@@ -7881,7 +7899,7 @@
       }
     ],
     "views": 101,
-    "lastUpdated": "2023-12-04T20:12:20.145Z"
+    "lastUpdated": "2024-01-13T16:01:18.295Z"
   },
   {
     "id": "9d478029",
@@ -8503,6 +8521,9 @@
         "model": "3 lever with trapdoor"
       }
     ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
     "media": [
       {
         "title": "By: Ben-on-reddit",
@@ -8527,7 +8548,7 @@
       }
     ],
     "views": 42,
-    "lastUpdated": "2023-12-04T20:12:20.146Z"
+    "lastUpdated": "2024-01-13T16:01:18.295Z"
   },
   {
     "id": "8e18bd5f",
@@ -12914,6 +12935,9 @@
       }
     ],
     "version": "tapered spools, trees, no milling",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -12938,7 +12962,7 @@
       }
     ],
     "views": 76,
-    "lastUpdated": "2023-12-04T20:12:20.148Z"
+    "lastUpdated": "2024-01-13T16:01:18.298Z"
   },
   {
     "id": "eec4bd4a",
@@ -14984,6 +15008,9 @@
         "model": "Red Line G"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: Toool NL",
@@ -15011,7 +15038,7 @@
       }
     ],
     "views": 203,
-    "lastUpdated": "2023-08-26T18:27:25.581Z"
+    "lastUpdated": "2024-01-13T16:01:18.299Z"
   },
   {
     "id": "0a70d67f",
@@ -15021,6 +15048,9 @@
         "make": "Mauer",
         "model": "Red Line GM"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ],
     "media": [
       {
@@ -15057,7 +15087,7 @@
       }
     ],
     "views": 140,
-    "lastUpdated": "2023-08-26T18:27:25.581Z"
+    "lastUpdated": "2024-01-13T16:01:18.299Z"
   },
   {
     "id": "72675596",
@@ -15397,6 +15427,9 @@
         "model": "Champions C29"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "media": [
       {
         "title": "By: EdMcBane",
@@ -15421,7 +15454,7 @@
       }
     ],
     "views": 137,
-    "lastUpdated": "2023-08-07T12:06:43.228Z"
+    "lastUpdated": "2024-01-13T16:01:18.299Z"
   },
   {
     "id": "0418a174",
@@ -16750,8 +16783,11 @@
         "model": "Pagoda"
       }
     ],
+    "lockingMechanisms": [
+      "Other"
+    ],
     "views": 138,
-    "lastUpdated": "2023-12-04T20:12:20.150Z"
+    "lastUpdated": "2024-01-13T16:01:18.300Z"
   },
   {
     "id": "a062f1ee",
@@ -17797,6 +17833,9 @@
         "model": "Supersureté"
       }
     ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
     "media": [
       {
         "title": "By: Ben-on-reddit",
@@ -17821,7 +17860,7 @@
       }
     ],
     "views": 144,
-    "lastUpdated": "2023-07-25T11:20:19.893Z"
+    "lastUpdated": "2024-01-13T16:01:18.303Z"
   },
   {
     "id": "e38d015b",
@@ -17887,6 +17926,9 @@
         "model": "magnetic cam lock"
       }
     ],
+    "lockingMechanisms": [
+      "Magnet"
+    ],
     "media": [
       {
         "title": "By: Legendofthesamurai",
@@ -17918,7 +17960,7 @@
       }
     ],
     "views": 140,
-    "lastUpdated": "2023-09-09T11:27:38.149Z"
+    "lastUpdated": "2024-01-13T16:01:18.303Z"
   },
   {
     "id": "0813d39e",
@@ -17962,6 +18004,15 @@
         "model": "\"Five Colors\""
       }
     ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Slider"
+    ],
+    "features": [
+      "Pin-in-pin",
+      "Sprung sliders",
+      "Active sidebar"
+    ],
     "media": [
       {
         "title": "By: Michael Maynard",
@@ -18001,7 +18052,7 @@
       }
     ],
     "views": 169,
-    "lastUpdated": "2023-09-09T13:48:18.000Z"
+    "lastUpdated": "2024-01-13T16:01:18.303Z"
   },
   {
     "id": "1f3a8ff9",
@@ -18576,6 +18627,9 @@
       }
     ],
     "version": "without shutter",
+    "lockingMechanisms": [
+      "Wafer"
+    ],
     "media": [
       {
         "title": "By: Ben-on-reddit",
@@ -18586,7 +18640,7 @@
       }
     ],
     "views": 211,
-    "lastUpdated": "2023-08-09T22:49:21.887Z"
+    "lastUpdated": "2024-01-13T16:01:18.303Z"
   },
   {
     "id": "04a402d6",
@@ -18893,8 +18947,11 @@
       }
     ],
     "version": "14 pins in 3 rows",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "views": 49,
-    "lastUpdated": "2023-12-04T20:12:20.151Z"
+    "lastUpdated": "2024-01-13T16:01:18.303Z"
   },
   {
     "id": "db4de1bb",
@@ -20291,6 +20348,9 @@
         "model": "Atlantic"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -20340,7 +20400,7 @@
       }
     ],
     "views": 173,
-    "lastUpdated": "2023-07-25T11:20:19.895Z"
+    "lastUpdated": "2024-01-13T16:01:18.304Z"
   },
   {
     "id": "8f7f1830",
@@ -20583,6 +20643,9 @@
       }
     ],
     "version": "flat key",
+    "lockingMechanisms": [
+      "Other"
+    ],
     "media": [
       {
         "title": "By: LockPicker1969",
@@ -20607,7 +20670,7 @@
       }
     ],
     "views": 101,
-    "lastUpdated": "2023-12-04T20:12:20.152Z"
+    "lastUpdated": "2024-01-13T16:01:18.304Z"
   },
   {
     "id": "58f2eac0",
@@ -21383,6 +21446,9 @@
         "model": "rekeyable lock"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "media": [
       {
         "title": "By: Ben-on-reddit",
@@ -21400,7 +21466,7 @@
       }
     ],
     "views": 88,
-    "lastUpdated": "2023-08-09T22:49:21.889Z"
+    "lastUpdated": "2024-01-13T16:01:18.305Z"
   },
   {
     "id": "6dd5a34b",
@@ -21727,6 +21793,13 @@
         "model": "T250"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Slider"
+    ],
+    "features": [
+      "Unsprung sliders"
+    ],
     "media": [
       {
         "title": "By: Norlin",
@@ -21737,7 +21810,7 @@
       }
     ],
     "views": 172,
-    "lastUpdated": "2023-09-10T21:16:33.069Z"
+    "lastUpdated": "2024-01-13T16:01:18.305Z"
   },
   {
     "id": "8307d77f",
@@ -22432,6 +22505,9 @@
         "model": "GMD-500"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "media": [
       {
         "title": "By: GeorgiaJim",
@@ -22456,7 +22532,7 @@
       }
     ],
     "views": 154,
-    "lastUpdated": "2023-09-07T20:48:32.867Z"
+    "lastUpdated": "2024-01-13T16:01:18.305Z"
   },
   {
     "id": "d8abe040",
@@ -22616,6 +22692,10 @@
         "model": "Infinity K"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Magnet"
+    ],
     "media": [
       {
         "title": "By: tonysansan",
@@ -22633,7 +22713,7 @@
       }
     ],
     "views": 159,
-    "lastUpdated": "2023-07-25T11:20:19.897Z"
+    "lastUpdated": "2024-01-13T16:01:18.305Z"
   },
   {
     "id": "f2d41749",
@@ -23142,6 +23222,9 @@
         "model": "K10"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "media": [
       {
         "title": "By: Yabende",
@@ -23173,7 +23256,7 @@
       }
     ],
     "views": 149,
-    "lastUpdated": "2023-09-07T21:05:24.928Z"
+    "lastUpdated": "2024-01-13T16:01:18.306Z"
   },
   {
     "id": "39bf479d",
@@ -23636,6 +23719,9 @@
         "model": "\"Supr-Security\" (with shutter)"
       }
     ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
     "media": [
       {
         "title": "By: CorrectJeans",
@@ -23660,7 +23746,7 @@
       }
     ],
     "views": 164,
-    "lastUpdated": "2023-07-25T11:20:19.898Z"
+    "lastUpdated": "2024-01-13T16:01:18.306Z"
   },
   {
     "id": "e0255299",
@@ -23719,8 +23805,11 @@
         "model": "11KDCF3110"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "views": 265,
-    "lastUpdated": "2023-03-23T03:24:22.392Z"
+    "lastUpdated": "2024-01-13T16:01:18.306Z"
   },
   {
     "id": "45c08407",
@@ -23734,6 +23823,9 @@
         "make": "Federal Lock",
         "model": "USC3100"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
     ],
     "media": [
       {
@@ -23776,7 +23868,7 @@
       }
     ],
     "views": 243,
-    "lastUpdated": "2023-07-25T11:20:19.898Z"
+    "lastUpdated": "2024-01-13T16:01:18.306Z"
   },
   {
     "id": "58cbc037",
@@ -26923,6 +27015,9 @@
         "model": "bp17"
       }
     ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
     "media": [
       {
         "title": "By: HVlogic",
@@ -26954,7 +27049,7 @@
       }
     ],
     "views": 49,
-    "lastUpdated": "2023-12-04T20:12:20.156Z"
+    "lastUpdated": "2024-01-13T16:01:18.308Z"
   },
   {
     "id": "ab1cdc56",
@@ -36618,6 +36713,9 @@
         "model": "GDS"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -36666,7 +36764,7 @@
       }
     ],
     "views": 9,
-    "lastUpdated": "2024-01-09T22:43:19.055Z"
+    "lastUpdated": "2024-01-13T16:01:18.312Z"
   },
   {
     "id": "d005e7b8",
@@ -37219,11 +37317,14 @@
         "model": "Safekey"
       }
     ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
     "features": [
       "Under Review ⚑"
     ],
     "views": 3,
-    "lastUpdated": "2024-01-01T20:16:24.997Z"
+    "lastUpdated": "2024-01-13T16:01:18.313Z"
   },
   {
     "id": "c77a4ac8",
@@ -39003,6 +39104,9 @@
       }
     ],
     "version": "factory split core, 24 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -39051,7 +39155,7 @@
       }
     ],
     "views": 12,
-    "lastUpdated": "2024-01-12T14:01:38.369Z"
+    "lastUpdated": "2024-01-13T16:01:18.314Z"
   },
   {
     "id": "45bb95df",
@@ -39061,6 +39165,10 @@
         "make": "Locksys",
         "model": "Codkey MME (micro magnetic element)"
       }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Magnet"
     ],
     "features": [
       "Under Review ⚑"
@@ -39096,7 +39204,7 @@
       }
     ],
     "views": 6,
-    "lastUpdated": "2024-01-02T17:58:57.083Z"
+    "lastUpdated": "2024-01-13T16:01:18.314Z"
   },
   {
     "id": "2d1adbaf",
@@ -39269,12 +39377,15 @@
         "model": "SS"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
       "Under Review ⚑"
     ],
     "notes": "requires 360º",
     "views": 3,
-    "lastUpdated": "2024-01-01T20:16:25.000Z"
+    "lastUpdated": "2024-01-13T16:01:18.315Z"
   },
   {
     "id": "01c9e8d1",
@@ -39796,6 +39907,9 @@
         "model": "3 points pump lock"
       }
     ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -39816,7 +39930,7 @@
       }
     ],
     "views": 6,
-    "lastUpdated": "2024-01-02T17:58:57.084Z"
+    "lastUpdated": "2024-01-13T16:01:18.315Z"
   },
   {
     "id": "e9499182",
@@ -40372,6 +40486,9 @@
         "model": "5 pin tubular"
       }
     ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -40399,7 +40516,7 @@
       }
     ],
     "views": 23,
-    "lastUpdated": "2024-01-01T20:16:25.002Z"
+    "lastUpdated": "2024-01-13T16:01:18.316Z"
   },
   {
     "id": "a72739bc",

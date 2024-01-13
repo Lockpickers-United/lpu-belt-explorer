@@ -1,5 +1,9 @@
 [
   {
+    "term": "'magic' DOM drivers",
+    "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends."
+  },
+  {
     "term": "active sidebar",
     "definition": "A sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked",
     "media": {
@@ -86,8 +90,15 @@
     }
   },
   {
-    "term": "bogota pick",
-    "definition": "A [rake](/#/glossary?term=rake), known for its unique rake design that mimics the peaks and valleys of a key. It's named after Bogotá, Colombia, where it was reportedly first created."
+    "term": "bogota",
+    "definition": "A [rake](/#/glossary?term=rake), known for its unique rake design that mimics the peaks and valleys of a key. It's named after Bogotá, Colombia, where it was reportedly first created.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53458241978_182028a2f6_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458241978/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53458241978_4f651849d7_o.jpg"
+    }
   },
   {
     "term": "BOK",
@@ -181,7 +192,7 @@
   },
   {
     "term": "construction core",
-    "definition": "Construction cores are locks used for temporarily controlling access for premises during construction. They usually work by including a special type of mastering where the mastering element (small wafer of ball bearing) will be removed from the lock chambers once the owner's key is used. Often present holes or dimples next to the plug chambers, where the mastering element can drop into."
+    "definition": "Construction cores are locks used for temporarily controlling access for premises during construction. They usually work by including a special type of mastering where the mastering element (small wafer of ball bearing) will be removed from the lock chambers once the owner's key is used. Often present holes or large dimples next to the plug chambers, where the mastering element can drop into."
   },
   {
     "term": "control key",
@@ -413,6 +424,10 @@
     "definition": "Keypins that have been shaped with a forked extremity where they contacts the key. This is usually to make mastering easier without the addition of mastering wafers."
   },
   {
+    "term": "front loader",
+    "definition": "A piece of lock disassembly and reassembly equipment, rarely seen as a commercial tool, that allows for carefully removing and resetting pins in the the bible chambers of a full euro profile cylinder from the front. It includes a groove that will travel over the different chambers as you rotate the piece."
+  },
+  {
     "term": "front tension",
     "definition": "A disc detainer lock that can be front tensioned can be picked while tensioned from the front disc."
   },
@@ -573,7 +588,7 @@
   },
   {
     "term": "LFIC",
-    "definition": "A type of lock that can be removed from its housing with one key, and opened with another. See SFIC."
+    "definition": "Short for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another. See [SFIC](/#/glossary?term=SFIC)"
   },
   {
     "term": "lock",
@@ -596,11 +611,7 @@
   },
   {
     "term": "MACS",
-    "definition": "Maximum Adjacency Cut Standards. A rule for maximum height difference between adjacent bitting heights on a key. These vary with each lock model. Violation of MACS does not result in an unusable lock but does increase probablility that the key will not work properly in the lock."
-  },
-  {
-    "term": "magic' DOM drivers",
-    "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends."
+    "definition": "Maximum Adjacent Cut Specification. A rule for maximum height difference between adjacent bitting heights on a key. These vary with each lock model. Violation of MACS does not result in an unusable lock but does increase probablility that the key will not work properly in the lock."
   },
   {
     "term": "master ring",
@@ -736,6 +747,18 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454476256/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454476256_b96951c741_o.jpg"
     }
+  },
+  {
+    "term": "pinning shoe",
+    "definition": "A piece of lock disassembling equipment especially used for gutting double euro profile cylinders. It is used to hold the drivers inside the bible while the plug is removed or inserted in the lock body."
+  },
+  {
+    "term": "pinning tray",
+    "definition": "A tray where one can organize the elements of a disassembled lock. Makes it easier to showcase the components and to make sure they are not lost."
+  },
+  {
+    "term": "pinning tweezers",
+    "definition": "Tweezers are used for removing the small elements from a lock and reassembling it. In many cases, pinning tweezers are made or modified to make it easier to grab and secure pins, for example, with a groove near the tip."
   },
   {
     "term": "PIP",
@@ -887,9 +910,20 @@
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53458167087_50a306e60d_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458167087/in/album-72177720313985501/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53458167087_e6f6626e4f_o.jpg"
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461454729_41459fed93_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461454729/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461454729_02999d2fcd_o.jpg"
+    }
+  },
+  {
+    "term": "segmented followers",
+    "definition": "Used for gutting double euro profile cylinders, the are sections of plug follower inserted from the rear of the lock cylinder, after removing the cam. Using them to push the plug out the front, one can keep the driver pins in the bible.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461454624_c0941f7fa6_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461454624/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461454624_0a41080917_o.jpg"
     }
   },
   {
@@ -909,7 +943,7 @@
   },
   {
     "term": "SFIC",
-    "definition": "A type of lock that opens with one key and can be removed from its housing with another. See LFIC."
+    "definition": "Short for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another. See [LFIC](/#/glossary?term=LFIC)"
   },
   {
     "term": "shackle",
