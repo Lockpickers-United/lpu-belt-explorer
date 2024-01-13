@@ -1,11 +1,7 @@
 [
   {
-    "term": "'magic' DOM drivers",
-    "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends."
-  },
-  {
     "term": "active sidebar",
-    "definition": "A sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked",
+    "definition": "Sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -16,7 +12,7 @@
   },
   {
     "term": "actuator",
-    "definition": "A component at the back of the plug that throws the bolt or unlocks the shackle when the plug is turned.",
+    "definition": "Component at the back of the plug that throws the bolt or unlocks the shackle when the plug is turned.",
     "media": {
       "title": "By: drZongo",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -42,7 +38,7 @@
   },
   {
     "term": "bi-directional",
-    "definition": "A lock which can turn either clockwise or counter clockwise from the locked position, e.g. to drive a deadbolt "
+    "definition": "Lock which can turn either clockwise or counter clockwise from the locked position, e.g. to drive a deadbolt "
   },
   {
     "term": "bible",
@@ -50,7 +46,7 @@
   },
   {
     "term": "bible cover",
-    "definition": "A cover plate that is sometimes on top of the bible. Can usually be removed for [gutting](/#/glossary?term=gutting).",
+    "definition": "Cover plate that is sometimes on top of the bible. Can usually be removed for [gutting](/#/glossary?term=gutting).",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -162,7 +158,7 @@
   },
   {
     "term": "challenge lock",
-    "definition": "A lock modified from stock by a picker as a picking challenge to be passed around in the community.",
+    "definition": "Lock modified from stock by a picker as a picking challenge to be passed around in the community.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -192,7 +188,7 @@
   },
   {
     "term": "comb pick",
-    "definition": "A tool used to overlift all pin stacks, opening some low-security locks.",
+    "definition": "Tool used to overlift all pin stacks, opening some low-security locks.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -203,11 +199,18 @@
   },
   {
     "term": "construction core",
-    "definition": "Construction cores are locks used for temporarily controlling access for premises during construction. They usually work by including a special type of mastering where the mastering element (small wafer of ball bearing) will be removed from the lock chambers once the owner's key is used. Often present holes or large dimples next to the plug chambers, where the mastering element can drop into."
+    "definition": "Construction cores are locks used for temporarily controlling access for premises during construction. They usually work by including a special type of mastering where the mastering element (small wafer of ball bearing) will be removed from the lock chambers once the owner's key is used. Often present holes or large dimples next to the plug chambers, where the mastering element can drop into.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461853781_85f19b318c_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461853781/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461853781_39a7ab151b_o.jpg"
+    }
   },
   {
     "term": "control key",
-    "definition": "A key used to remove a lock from its housing. Makes it easy to rekey a lock simply by swapping cores."
+    "definition": "Key used to remove a lock from its housing. Makes it easy to rekey a lock simply by swapping cores."
   },
   {
     "term": "core",
@@ -238,7 +241,7 @@
   },
   {
     "term": "curtain",
-    "definition": "A shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs"
+    "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs"
   },
   {
     "term": "cut",
@@ -246,7 +249,7 @@
   },
   {
     "term": "cutaway",
-    "definition": "A lock that has been modified by removing metal so that one can see how it operates.",
+    "definition": "Lock that has been modified by removing metal so that one can see how it operates.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -276,7 +279,7 @@
   },
   {
     "term": "DD Pick / Disc Pick",
-    "definition": "A pick that has tensioner and tip rotating independently co-axially, used to pick disc detainer locks."
+    "definition": "Pick that has tensioner and tip rotating independently co-axially, used to pick disc detainer locks."
   },
   {
     "term": "depth / height",
@@ -367,7 +370,7 @@
   },
   {
     "term": "false gate",
-    "definition": "A gate on a tumbler which is not deep enough for the core to turn if the sidebar falls in.",
+    "definition": "Gate on a tumbler which is not deep enough for the core to turn if the sidebar falls in.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -401,7 +404,7 @@
   },
   {
     "term": "flag",
-    "definition": "A lock pick used for dimple locks, shaped like a rod with a protrusion at the side of the tip. Also called dimple pick.",
+    "definition": "Lock pick used for dimple locks, shaped like a rod with a protrusion at the side of the tip. Also called dimple pick.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -412,7 +415,7 @@
   },
   {
     "term": "flat steel key",
-    "definition": "A key made out of flat sheet metal. Also called plate key."
+    "definition": "Key made out of flat sheet metal. Also called plate key."
   },
   {
     "term": "float picking",
@@ -480,7 +483,14 @@
   },
   {
     "term": "gut wrench",
-    "definition": "Tool used to remove circlips from locks during disassembling. Can be used as a general name for any tool with that function, although it usually refers to the one designed by Lock Noob."
+    "definition": "Tool used to remove circlips from locks during disassembling. Can be used as a general name for any tool with that function, although it usually refers to the one designed by Lock Noob.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53462259685_b2747e93de_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53462259685/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53462259685_99bab53b43_o.jpg"
+    }
   },
   {
     "term": "gutting",
@@ -506,7 +516,7 @@
   },
   {
     "term": "hook",
-    "definition": "A tool used for single pin picking, shaped like a thin flat metal bar with a raised hook at the end to lift pins.",
+    "definition": "Tool used for single pin picking, shaped like a thin flat metal bar with a raised hook at the end to lift pins.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -566,12 +576,30 @@
     }
   },
   {
+    "term": "key gauge",
+    "definition": "Tool used to determine the key cut depths on a key. The gauge has a series of notches or slots, each corresponding to different key cut depths, allowing one to measure and match these depths accurately. ",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53462160549_884432ae80_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53462160549/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53462160549_e173881f14_o.jpg"
+    }
+  },
+  {
     "term": "key pin",
     "definition": "Pin in the plug in a pin tumbler lock, that is lifted by the key to position the driver pin. Their length corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include security features."
   },
   {
     "term": "keyway",
-    "definition": "The cavity in which the key is placed."
+    "definition": "The cavity in which the key is placed.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53462037248_da50e99060_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53462037248/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53462037248_94afae4059_o.jpg"
+    }
   },
   {
     "term": "KIK",
@@ -626,6 +654,10 @@
   {
     "term": "MACS",
     "definition": "Maximum Adjacent Cut Specification. A rule for maximum height difference between adjacent bitting heights on a key. These vary with each lock model. Violation of MACS does not result in an unusable lock but does increase probablility that the key will not work properly in the lock."
+  },
+  {
+    "term": "magic DOM drivers",
+    "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends."
   },
   {
     "term": "master ring",
@@ -1012,7 +1044,14 @@
   },
   {
     "term": "shimming (padlock)",
-    "definition": "To insert a shim between the shackle and body of a padlock without ball bearing mechanism, opening the lock without picking."
+    "definition": "To insert a shim between the shackle and body of a padlock without ball bearing mechanism, opening the lock without picking.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461853341_34243907b5_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461853341/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461853341_b244191fd6_o.jpg"
+    }
   },
   {
     "term": "shoulder",
