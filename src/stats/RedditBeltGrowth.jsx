@@ -3,7 +3,7 @@ import {ResponsiveBar} from '@nivo/bar'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {beltColors, legendTheme} from './chartDefaults.js'
 import {primaryTheme} from './chartDefaults.js'
-import beltRankingAnnualData from '../data/redditBeltGrowthAnnualData.json'
+import beltRankingAnnualData from '../data/statsRedditGrowth.json'
 import redditBeltGrowthLegend from './redditBeltGrowthLegend.json'
 
 function RedditBeltGrowth() {

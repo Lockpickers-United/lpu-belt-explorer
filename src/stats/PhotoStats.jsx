@@ -2,7 +2,7 @@ import React from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import useWindowSize from '../util/useWindowSize'
-import lockSummaryData from '../data/lockSummaryData.json'
+import lockSummaryData from '../data/statsLockSummary.json'
 
 const PhotoStats = () => {
     const {width} = useWindowSize()
@@ -19,7 +19,7 @@ const PhotoStats = () => {
     const bodyStyleBold = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 700}
 
     const data = lockSummaryData.photoStats
-    const segments = data.photoSegements
+    const segments = data.photoSegments
     const contributors = data.topPhotographers
 
     return (

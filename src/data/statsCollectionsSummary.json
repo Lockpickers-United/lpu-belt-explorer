@@ -1,0 +1,64 @@
+{
+  "savesByBelt" : [
+    {
+      "value" : 0.0878219305129486,
+      "count" : "1231",
+      "id" : "White",
+      "label" : "White"
+    },
+    {
+      "value" : 0.0948134408218592,
+      "count" : "1329",
+      "id" : "Yellow",
+      "label" : "Yellow"
+    },
+    {
+      "id" : "Orange",
+      "label" : "Orange",
+      "value" : 0.0932439180994507,
+      "count" : "1307"
+    },
+    {
+      "value" : 0.175215809374331,
+      "count" : "2456",
+      "id" : "Green",
+      "label" : "Green"
+    },
+    {
+      "id" : "Blue",
+      "label" : "Blue",
+      "count" : "1661",
+      "value" : 0.118498965541842
+    },
+    {
+      "id" : "Purple",
+      "label" : "Purple",
+      "value" : 0.125775843618463,
+      "count" : "1763"
+    },
+    {
+      "value" : 0.0954555182992081,
+      "count" : "1338",
+      "id" : "Brown",
+      "label" : "Brown"
+    },
+    {
+      "value" : 0.0605693086965827,
+      "count" : "849",
+      "id" : "Red",
+      "label" : "Red"
+    },
+    {
+      "count" : "1871",
+      "value" : 0.13348077334665,
+      "id" : "Black",
+      "label" : "Black"
+    },
+    {
+      "id" : "Unranked",
+      "label" : "Unranked",
+      "value" : 0.0151244916886638,
+      "count" : "212"
+    }
+  ]
+}

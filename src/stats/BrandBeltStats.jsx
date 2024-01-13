@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react'
 import BrandBeltWaffle from './BrandBeltWaffle.jsx'
-import brandBeltData from '../data/brandBeltData.json'
+import brandBeltData from '../data/statsBrandBelts.json'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 import Divider from '@mui/material/Divider'
