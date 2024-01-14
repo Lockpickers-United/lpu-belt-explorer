@@ -15,12 +15,12 @@ function ErrorFallback() {
 
     return (
         <React.Fragment>
-            <Nav title='Something went wrong...'/>
+            <Nav title='Something went awry.'/>
 
             <Card style={{maxWidth: 350, marginLeft: 'auto', marginRight: 'auto', marginTop: 16}}>
-                <CardHeader title='Oops'/>
+                <CardHeader title='Site updated.'/>
                 <CardContent>
-                    An unexpected error occurred. Sorry about that. Please reload the page.
+                    A new version of the site has been published! Please reload the page for the latest update.
                 </CardContent>
                 <CardActions>
                     <Button onClick={handleClick} color='secondary'>Reload</Button>
