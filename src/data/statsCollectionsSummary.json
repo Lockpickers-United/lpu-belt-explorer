@@ -1,64 +1,64 @@
 {
-  "savesByBelt" : [
-    {
-      "value" : 0.0878219305129486,
-      "count" : "1231",
-      "id" : "White",
-      "label" : "White"
-    },
-    {
-      "value" : 0.0948134408218592,
-      "count" : "1329",
-      "id" : "Yellow",
-      "label" : "Yellow"
-    },
-    {
-      "id" : "Orange",
-      "label" : "Orange",
-      "value" : 0.0932439180994507,
-      "count" : "1307"
-    },
-    {
-      "value" : 0.175215809374331,
-      "count" : "2456",
-      "id" : "Green",
-      "label" : "Green"
-    },
-    {
-      "id" : "Blue",
-      "label" : "Blue",
-      "count" : "1661",
-      "value" : 0.118498965541842
-    },
-    {
-      "id" : "Purple",
-      "label" : "Purple",
-      "value" : 0.125775843618463,
-      "count" : "1763"
-    },
-    {
-      "value" : 0.0954555182992081,
-      "count" : "1338",
-      "id" : "Brown",
-      "label" : "Brown"
-    },
-    {
-      "value" : 0.0605693086965827,
-      "count" : "849",
-      "id" : "Red",
-      "label" : "Red"
-    },
-    {
-      "count" : "1871",
-      "value" : 0.13348077334665,
-      "id" : "Black",
-      "label" : "Black"
-    },
-    {
-      "id" : "Unranked",
-      "label" : "Unranked",
-      "value" : 0.0151244916886638,
-      "count" : "212"
-    }
-  ]
+   "savesByBelt" : [
+      {
+         "id" : "White",
+         "count" : "1276",
+         "value" : 0.0899732054717247,
+         "label" : "White"
+      },
+      {
+         "id" : "Yellow",
+         "count" : "1343",
+         "value" : 0.0946975038781554,
+         "label" : "Yellow"
+      },
+      {
+         "id" : "Orange",
+         "count" : "1333",
+         "value" : 0.0939923847130165,
+         "label" : "Orange"
+      },
+      {
+         "id" : "Green",
+         "count" : "2493",
+         "label" : "Green",
+         "value" : 0.17578620786913
+      },
+      {
+         "id" : "Blue",
+         "label" : "Blue",
+         "value" : 0.118460019743337,
+         "count" : "1680"
+      },
+      {
+         "id" : "Purple",
+         "count" : "1767",
+         "value" : 0.124594556480045,
+         "label" : "Purple"
+      },
+      {
+         "id" : "Brown",
+         "count" : "1344",
+         "value" : 0.0947680157946693,
+         "label" : "Brown"
+      },
+      {
+         "count" : "849",
+         "value" : 0.0598646171202933,
+         "label" : "Red",
+         "id" : "Red"
+      },
+      {
+         "id" : "Black",
+         "count" : "1877",
+         "label" : "Black",
+         "value" : 0.132350867296573
+      },
+      {
+         "id" : "Unranked",
+         "label" : "Unranked",
+         "value" : 0.015512621633056,
+         "count" : "220"
+      }
+   ]
 }
