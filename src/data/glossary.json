@@ -1,7 +1,7 @@
 [
   {
     "term": "active sidebar",
-    "definition": "Sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked",
+    "definition": "Sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -23,7 +23,14 @@
   },
   {
     "term": "ball bearing locking mechanism (padlocks)",
-    "definition": "Unshimmable mechanism in padlocks where ball bearings are pushed into the shackle to prevent opening."
+    "definition": "Unshimmable mechanism in padlocks where ball bearings are pushed into the shackle to prevent opening.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53464982397_54cfcce948_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53464982397/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53464982397_968f52faa0_o.jpg"
+    }
   },
   {
     "term": "barrel driver pins",
@@ -38,7 +45,7 @@
   },
   {
     "term": "bi-directional",
-    "definition": "Lock which can turn either clockwise or counter clockwise from the locked position, e.g. to drive a deadbolt "
+    "definition": "Lock which can turn either clockwise or counter clockwise from the locked position to unlock the mechanism. "
   },
   {
     "term": "bible",
@@ -46,7 +53,7 @@
   },
   {
     "term": "bible cover",
-    "definition": "Cover plate that is sometimes on top of the bible. Can usually be removed for [gutting](/#/glossary?term=gutting).",
+    "definition": "Cover plate that is sometimes on top of the bible. Can usually be removed for [gutting](/#/glossary?term=gutting). Also called a spring cover.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -72,7 +79,7 @@
   },
   {
     "term": "bitting code",
-    "definition": "An alphanumeric code that can be provided to a locksmith to cut a key to a desired shape. Some codes may be found on the keys themselves, other times in [security cards](/#/glossary?term=security%20card) that are obtained along with the lock."
+    "definition": "An alphanumeric code that can be provided to a locksmith to cut a key to a desired shape. Some codes may be found on the keys themselves, other times on [security cards](/#/glossary?term=security%20card) that are obtained along with the lock."
   },
   {
     "term": "blade (key)",
@@ -98,7 +105,7 @@
   },
   {
     "term": "BOK",
-    "definition": "Acronym for [bottom of the keyway](/#/glossary?term=bottom%20of%20the%20keyway). (2) BOK (tensioners): name colloquially given for tensioners used in the bottom of the keyway"
+    "definition": "Acronym for [bottom of the keyway](/#/glossary?term=bottom%20of%20the%20keyway)."
   },
   {
     "term": "BOK tensioner",
@@ -139,7 +146,7 @@
   },
   {
     "term": "brick",
-    "definition": "To prevent a lock from functioning or gutting without physical damage, for eg. by dropping a driver pin in the plug."
+    "definition": "To prevent a lock from functioning or gutting without physical damage. Dropping a driver pin in the plug is a common way to brick a lock."
   },
   {
     "term": "butterfly disc",
@@ -147,7 +154,7 @@
   },
   {
     "term": "cam",
-    "definition": "The piece at the back of a plug that rotates with the movement of the plug. See [actuator](/#/glossary?term=actuator)",
+    "definition": "The piece at the back of a plug that rotates with the movement of the plug. See [actuator](/#/glossary?term=actuator).",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -225,7 +232,14 @@
   },
   {
     "term": "core",
-    "definition": "The term \"core\" has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context."
+    "definition": "The term \"core\" has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53465908136_964c7599fb_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53465908136/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53465908136_8c3d958b63_o.jpg"
+    }
   },
   {
     "term": "core bias",
@@ -252,7 +266,7 @@
   },
   {
     "term": "curtain",
-    "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs"
+    "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs."
   },
   {
     "term": "cut",
