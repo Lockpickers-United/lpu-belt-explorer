@@ -157,6 +157,17 @@
     }
   },
   {
+    "term": "cap removal tool",
+    "definition": "Tool that facilitates the removal of the end cap from a KIK cylinder by depressing the cap retaining pin. Has notched ends to fit the shape of the grooves in the end cap, often with patterns to match several styles of cap.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53461984533_4e24621eca_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53461984533/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53461984533_e6c19f470c_o.jpg"
+    }
+  },
+  {
     "term": "challenge lock",
     "definition": "Lock modified from stock by a picker as a picking challenge to be passed around in the community.",
     "media": {
@@ -1092,13 +1103,13 @@
   },
   {
     "term": "skeletonized core",
-    "definition": "Lock cylinder design where portions of the cylinder's material are removed or cut away, leaving a more open or \"skeleton-like\" structure. ",
+    "definition": "Lock cylinder design where portions of the cylinder's material are removed or cut away, leaving a more open or \"skeleton-like\" structure. Common in cheap locks, as a way to save money on material.",
     "media": {
-      "title": "By: mgsecure",
+      "title": "By: PeaceWeapon",
       "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53464208486_350f41d651_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53464208486/in/album-72177720313985501/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53464208486_602152c8f7_o.jpg"
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53464425787_de97aa1257_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53464425787/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53464425787_18c7827dcb_o.jpg"
     }
   },
   {
@@ -1231,7 +1242,7 @@
   },
   {
     "term": "trampoline driver",
-    "definition": "Driver pin resembling a spool driver, in which the center shaft widens progressively to the center of it from both ends.",
+    "definition": "Driver pin resembling a spool driver, in which the center bulges at the center.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
