@@ -33,7 +33,7 @@
     }
   },
   {
-    "term": "barrel driver pins",
+    "term": "barrel drivers",
     "definition": "Name given to driver pins with a shape similar to a “barrel”, having a portion near the extremities with a reduction in diameter, then flaring out at the end. Usually referring to the ASSA version, can also be used for other varieties like the DOM barrels.",
     "media": {
       "title": "By: mgsecure",
@@ -149,8 +149,8 @@
     "definition": "To prevent a lock from functioning or gutting without physical damage. Dropping a driver pin in the plug is a common way to brick a lock."
   },
   {
-    "term": "butterfly disc",
-    "definition": "A disc from a disc detainer lock which has an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
+    "term": "butterfly discs",
+    "definition": "Discs from a disc detainer lock which have an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
   },
   {
     "term": "cam",
@@ -394,8 +394,8 @@
     }
   },
   {
-    "term": "false gate",
-    "definition": "Gate on a tumbler which is not deep enough for the core to turn if the sidebar falls in.",
+    "term": "false gates",
+    "definition": "Gates on a tumbler which are not deep enough for the core to turn if the sidebar falls in.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -967,8 +967,8 @@
     }
   },
   {
-    "term": "rotor",
-    "definition": "A generally rounded or disc-like element featuring a prong to interact with the key, another part of it interacting with another locking mechanism, like a sidebar. As the key is inserted, the prong moves along a laser cut track rotating the disc to the correct position to drop the sidebar into the gate."
+    "term": "rotors",
+    "definition": "Generally rounded or disc-like elements featuring a prong to interact with the key, another part of it interacting with another locking mechanism, like a sidebar. As the key is inserted, the prong moves along a laser cut track rotating the disc to the correct position to drop the sidebar into the gate."
   },
   {
     "term": "security card",
@@ -1015,6 +1015,17 @@
     }
   },
   {
+    "term": "serrated/threaded milling",
+    "definition": "Core modification of threading the chambers in the plug in order to catch the edge of spool pins. Creates misleading feedback for the picker.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53455520744_5591c98025_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455520744/in/album-72177720313944555/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53455520744_f9c2497e37_o.jpg"
+    }
+  },
+  {
     "term": "set",
     "definition": "To lift an element to its required position for the lock to open, and for it to stay there due to tension."
   },
@@ -1049,8 +1060,8 @@
     "definition": "The part of a hook, rake, or other pick between the tip and handle."
   },
   {
-    "term": "shark fin keypin",
-    "definition": "Keypin that has been shaped with a thin flat vertical tip, similar to a shark fin, where it contacts the key. This is usually to prevent foil impressioning in dimple locks."
+    "term": "shark fin keypins",
+    "definition": "Keypins that have been shaped with a thin flat vertical tip, similar to a shark fin, where they contact the key. This is usually to prevent foil impressioning in dimple locks."
   },
   {
     "term": "shearline / shear line",
@@ -1142,7 +1153,7 @@
     }
   },
   {
-    "term": "sliding lever",
+    "term": "sliding levers",
     "definition": "Type of lever typical of italian lever locks. Technically not levers as they don't rotate about one point, but traditionally called so, for they are moved by the key in the same manner, allowing the talon of the bolt to pass through them to open the lock."
   },
   {
@@ -1173,8 +1184,8 @@
     "definition": "The part of a bolt in a lever lock that slides into the levers when unlocked."
   },
   {
-    "term": "tapered driver",
-    "definition": "Driver pin in which a few milimeters from one or both extremities, the diameter tapers to a slightly smaller one.",
+    "term": "tapered drivers",
+    "definition": "Driver pins in which a few milimeters from one or both extremities, the diameter tapers to a slightly smaller one.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1196,17 +1207,6 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53458237938_26616154df_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458237938/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458237938_68e72c1297_o.jpg"
-    }
-  },
-  {
-    "term": "threading",
-    "definition": "Core modification of threading the chambers in the plug in order to catch the edge of spool pins. Creates misleading feedback for the picker.",
-    "media": {
-      "title": "By: mgsecure",
-      "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53455520744_5591c98025_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455520744/in/album-72177720313944555/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53455520744_f9c2497e37_o.jpg"
     }
   },
   {
@@ -1244,8 +1244,8 @@
     "definition": "The area of the keyway on the same side of the pins in a normal pin-tumbler lock. Is positioned at the top of the lock when the bible is upwards. In regular euro cylinder installation with the bible downwards, it will be the bottom part of the keyway."
   },
   {
-    "term": "torpedo keypin",
-    "definition": "Keypin that has the shape of a torpedo, the key contacting tip resembling the front end of the torpedo, with a reduction in diameter near the opposite extremity, widening just before it contacts the driver pin.",
+    "term": "torpedo keypins",
+    "definition": "Keypins that have the shape of a torpedo, the key contacting tip resembling the front end of the torpedo, with a reduction in diameter near the opposite extremity, widening just before it contacts the driver pin.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1255,8 +1255,8 @@
     }
   },
   {
-    "term": "trampoline driver",
-    "definition": "Driver pin resembling a spool driver, in which the center bulges at the center.",
+    "term": "trampoline drivers",
+    "definition": "Driver pins resembling a spool driver, in which the center bulges at the center.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1285,7 +1285,11 @@
     "definition": "A moving element on a lock that prevents opening until the correct key is inserted."
   },
   {
-    "term": "undercut",
+    "term": "uncurtained\n",
+    "definition": "Lock without a [curtain](/#/glossary?term=curtain), generally referring to a lever lock."
+  },
+  {
+    "term": "undercut milling",
     "definition": "Regular cut in the chamber of a lock, widening the diameter just below the shear line for a short distance, enough to catch the lip of gin spool drivers or xmas tree drivers."
   },
   {
@@ -1320,8 +1324,8 @@
     }
   },
   {
-    "term": "xmas tree driver",
-    "definition": "short for \"christmas tree driver\", driver pin that looks like a spool fused with a gin spool. So called for it's simillarity to a christmas tree."
+    "term": "xmas tree drivers",
+    "definition": "Short for \"christmas tree drivers\", driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree."
   },
   {
     "term": "z-bar",
