@@ -13,21 +13,31 @@ function FilterChip({field, value, ...props}) {
     const [open, setOpen] = useState(false)
     const {addFilter} = useContext(FilterContext)
 
-    const handleClose = useCallback(() => setOpen(false), [])
+    const handleClose = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
+        setOpen(false)
+    }, [])
 
-    const handleFilter = useCallback(() => {
-        handleClose()
+    const handleFilter = useCallback(event => {
+        event.preventDefault()
+        setOpen(false)
         addFilter(field, value)
         window.scrollTo({top: 0, behavior: 'smooth'})
-    }, [addFilter, field, handleClose, value])
+    }, [addFilter, field, value])
 
     const handleOpen = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
         if (beta) setOpen(event.target)
         else handleFilter()
     }, [beta, handleFilter])
 
-    const handleGoToGlossary = useCallback(() => {
-        navigate(`/glossary?term=${value}`)
+    const handleGoToGlossary = useCallback(event => {
+        event.stopPropagation()
+        setOpen(false)
+        const safeValue = encodeURI(value)
+        setTimeout(() => navigate(`/glossary?term=${safeValue}`), 0)
     }, [navigate, value])
 
     return (

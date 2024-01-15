@@ -9,7 +9,7 @@ function Glossary() {
     const location = useLocation()
     const highlightedTerm = useMemo(() => {
         const {term} = queryString.parse(location.search)
-        return term
+        return term && term.toLowerCase()
     }, [location.search])
 
     return (
