@@ -217,7 +217,7 @@ new Set(jsonData
     })
     .flat())
     .forEach(term => {
-        const item = glossary.find(entry => entry.term === term)
+        const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
         if (!item) console.log('Term not defined in Glossary: ', term)
     })
 
