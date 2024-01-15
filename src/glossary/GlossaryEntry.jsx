@@ -40,15 +40,16 @@ function GlossaryEntry({entry, highlighted}) {
 
     const GlossaryTerm = ({children}) => {
         const [term] = children
+        const safeTerm = encodeURI(term)
 
         const handleClick = useCallback(async event => {
             event.preventDefault()
 
-            const link = `https://lpubelts.com/glossary?term=${term}`
+            const link = `https://lpubelts.com/#/glossary?term=${safeTerm}`
 
             await navigator.clipboard.writeText(link)
             enqueueSnackbar('Link copied to clipboard.')
-        }, [term])
+        }, [safeTerm])
 
         const style = {
             fontWeight: 700,
@@ -60,7 +61,9 @@ function GlossaryEntry({entry, highlighted}) {
         }
 
         return (
-            <a style={style} onClick={handleClick} href={`/#/glossary?term=${term}`}>{term}</a>
+            <a style={style} onClick={handleClick} href={`/#/glossary?term=${safeTerm}`}>
+                {term}
+            </a>
         )
     }
 
@@ -73,7 +76,7 @@ function GlossaryEntry({entry, highlighted}) {
             <div style={{color: '#ddd'}}>
                 <GlossaryImage entry={entry}/>
 
-                <ReactMarkdown components={markdownComponents} style={{}}>
+                <ReactMarkdown components={markdownComponents}>
                     {markdown}
                 </ReactMarkdown>
             </div>
