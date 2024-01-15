@@ -1045,7 +1045,7 @@ Examples of "Master's Projects":
 - [BKS Janus](https://lpubelts.com/?id=f09ce6b3) (14 or more pins)
 - [Bowley Door Lock](https://lpubelts.com/?id=78336fc0)
 - [Chubb &quot;Definitive&quot;](https://lpubelts.com/?id=72215ba4) (Standard mortise, 5 lever)
-- [Chubb &quot;Definitive&quot;](https://lpubelts.com/?id=2db935ea) (jewellery box (steel comb leaf spring))
+- [Chubb &quot;Definitive&quot;](https://lpubelts.com/?id=2db935ea) (jewelry box (steel comb leaf spring, pin or pipe key))
 - [Chubb 6K174 Isolator](https://lpubelts.com/?id=362d0dee)
 - [Clavis F-22](https://lpubelts.com/?id=234a8ca8)
 - [Clavis Q-18](https://lpubelts.com/?id=7ea33803)
