@@ -19,7 +19,6 @@ export default [
         }
     },
     {
-        beta: true,
         title: 'Glossary',
         icon: <MenuBookIcon fontSize='small'/>,
         path: '/glossary'
