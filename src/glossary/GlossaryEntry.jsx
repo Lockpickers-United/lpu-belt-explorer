@@ -41,15 +41,14 @@ function GlossaryEntry({entry, highlighted}) {
     const GlossaryTerm = ({children}) => {
         const [term] = children
         const safeTerm = encodeURI(term)
+        const href = `https://share.lpubelts.com/?term=${safeTerm}`
 
         const handleClick = useCallback(async event => {
             event.preventDefault()
 
-            const link = `https://share.lpubelts.com/term=${safeTerm}`
-
-            await navigator.clipboard.writeText(link)
+            await navigator.clipboard.writeText(href)
             enqueueSnackbar('Link copied to clipboard.')
-        }, [safeTerm])
+        }, [href, safeTerm])
 
         const style = {
             fontWeight: 700,
@@ -61,7 +60,7 @@ function GlossaryEntry({entry, highlighted}) {
         }
 
         return (
-            <a style={style} onClick={handleClick} href={`https://share.lpubelts.com/?term=${safeTerm}`}>
+            <a style={style} onClick={handleClick} href={href}>
                 {term}
             </a>
         )
