@@ -23,15 +23,22 @@ function Glossary() {
         }}>
             <GlossaryIntro/>
 
-            {glossary.map((entry, index) =>
+            {transformedData.map((entry, index) =>
                 <GlossaryEntry
                     key={index}
                     entry={entry}
-                    highlighted={highlightedTerm === entry.term}
+                    highlighted={highlightedTerm === entry.termLowerCased}
                 />
             )}
         </div>
     )
 }
+
+const transformedData = glossary.map(entry => {
+    return {
+        ...entry,
+        termLowerCased: entry.term.toLowerCase()
+    }
+})
 
 export default Glossary
