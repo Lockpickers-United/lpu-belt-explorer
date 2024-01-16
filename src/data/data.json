@@ -29566,7 +29566,7 @@
       "Lever"
     ],
     "features": [
-      "Safe deposit",
+      "Safe lock",
       "Flat steel key",
       "False gates"
     ],
@@ -29595,7 +29595,7 @@
       }
     ],
     "views": 228,
-    "lastUpdated": "2023-07-25T11:20:19.903Z"
+    "lastUpdated": "2024-01-16T22:20:19.769Z"
   },
   {
     "id": "cf76cfde",
@@ -35487,7 +35487,7 @@
     "makeModels": [
       {
         "make": "Robur",
-        "model": "Disc Detainer SDB lock"
+        "model": "Disc Detainer Safe Deposit Lock"
       }
     ],
     "lockingMechanisms": [
@@ -35596,7 +35596,7 @@
       }
     ],
     "views": 561,
-    "lastUpdated": "2023-07-25T11:20:19.908Z"
+    "lastUpdated": "2024-01-16T22:20:19.772Z"
   },
   {
     "id": "db63c882",

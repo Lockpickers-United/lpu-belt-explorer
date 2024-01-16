@@ -120,7 +120,7 @@
   },
   {
     "term": "bolt",
-    "definition": "The part of a lock that extends out from a door into the door frame, retracted by turning the key.",
+    "definition": "Part of the locking mechanism that extends into the door frame to secure a door in place. In a typical lockset, the bolt is a metal bar that moves in and out of the door jamb, either by rotating a key or turning a knob or lever.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -153,6 +153,17 @@
     "definition": "Discs from a disc detainer lock which have an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
   },
   {
+    "term": "cabinet lock",
+    "definition": "In an LPU context, a lock made to secure the door of a cabinet by use of a bolt. Ranked cabinet locks are all [lever locks](/#/glossary?term=lever) of varying levels of security. Broader usage includes cam locks such as the ones used to secure file cabinets, etc.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53467494412_ed4b1fd71c_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53467494412/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53467494412_40684962fb_o.jpg"
+    }
+  },
+  {
     "term": "cam",
     "definition": "The piece at the back of a plug that rotates with the movement of the plug. See [actuator](/#/glossary?term=actuator).",
     "media": {
@@ -162,6 +173,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458238043/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458238043_50e1bc33f7_o.jpg"
     }
+  },
+  {
+    "term": "cam lock",
+    "definition": "Consists of a cylindrical base and a rotating cam lever (the \"cam\") attached to the base. When the key or tool is inserted and turned in the lock, the cam rotates, locking or unlocking the mechanism. "
   },
   {
     "term": "cap removal tool",
@@ -651,7 +666,7 @@
   },
   {
     "term": "lever",
-    "definition": "(1) Coding element shaped like a flat piece of metal, that rotates about one point, interacting with the locking elements, which can be, for example. a sidebar or a talon, depending on the type of lever lock. (2) Italian levers (and silmilar types) are technically not levers as they don't rotate about one point, but are traditionally called levers. (3) Type of lock that uses levers as locking mechanism. The levers generally interact with a talon, an extended piece of metal of the bolt, usually through gates. When levers are lifted to the right height, the key pulls the bolt's talon into the levers' gates."
+    "definition": "Coding element shaped like a flat piece of metal, that rotates about one point, interacting with the locking elements, which can be, for example. a sidebar or a talon, depending on the type of lever lock. (2) Type of lock that uses levers as locking mechanism. The levers generally interact with a talon, an extended piece of metal of the bolt, usually through gates. When levers are lifted to the right height, the key pulls the bolt's talon into the levers' gates. (3) Italian levers (and silmilar types) are technically not levers as they don't rotate about one point, but are traditionally called levers."
   },
   {
     "term": "lever pack",
@@ -667,7 +682,7 @@
   },
   {
     "term": "LFIC",
-    "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another. See also [SFIC](/#/glossary?term=SFIC)"
+    "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). See also [SFIC](/#/glossary?term=SFIC)"
   },
   {
     "term": "lock",
@@ -710,7 +725,7 @@
   },
   {
     "term": "mortise",
-    "definition": "(1) A cylinder that is designed to screw into a mortise lock. (2) A lock designed to fit in a section of a door that has been mortised. Also called mortice (UK).",
+    "definition": "A lock cylinder that is designed to screw into a mortise lock. (2) A lock designed to fit in a pocket —- the mortise -—  cut in the door edge. Also called mortice (UK).",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -998,6 +1013,17 @@
     "definition": "Generally rounded or disc-like elements featuring a prong to interact with the key, another part of it interacting with another locking mechanism, like a sidebar. As the key is inserted, the prong moves along a laser cut track rotating the disc to the correct position to drop the sidebar into the gate."
   },
   {
+    "term": "safe lock",
+    "definition": "Lock made to secure the door of a safe by use of a bolt. LPU uses the term \"safe lock\" to distinguish a certain class of [lever lock](/#/glossary?term=lever) while other locks -- including dial locks which use gated wheels -- are common in safes as well.",
+    "media": {
+      "title": "By: MartinHewitt",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53468821110_a80c8a0195_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53468821110/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53468821110_3e99250f6b_o.jpg"
+    }
+  },
+  {
     "term": "security card",
     "definition": "Form of identification issued with certain high-security locks, required for making duplicate keys. It provides an additional layer of security by ensuring that only authorized individuals can have keys replicated.",
     "media": {
@@ -1058,7 +1084,7 @@
   },
   {
     "term": "SFIC",
-    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another. See also [LFIC](/#/glossary?term=LFIC)"
+    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another, called the [control key](/#/glossary?term=control%20key). See also [LFIC](/#/glossary?term=LFIC)"
   },
   {
     "term": "shackle",
