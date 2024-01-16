@@ -45,7 +45,7 @@ function GlossaryEntry({entry, highlighted}) {
         const handleClick = useCallback(async event => {
             event.preventDefault()
 
-            const link = `https://lpubelts.com/#/glossary?term=${safeTerm}`
+            const link = `https://share.lpubelts.com/term=${safeTerm}`
 
             await navigator.clipboard.writeText(link)
             enqueueSnackbar('Link copied to clipboard.')
@@ -61,7 +61,7 @@ function GlossaryEntry({entry, highlighted}) {
         }
 
         return (
-            <a style={style} onClick={handleClick} href={`/#/glossary?term=${safeTerm}`}>
+            <a style={style} onClick={handleClick} href={`https://share.lpubelts.com/?term=${safeTerm}`}>
                 {term}
             </a>
         )

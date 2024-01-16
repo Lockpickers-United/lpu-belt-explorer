@@ -1,14 +1,13 @@
 import Divider from '@mui/material/Divider'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Chip from '@mui/material/Chip'
 import {useNavigate} from 'react-router-dom'
-import AppContext from '../app/AppContext'
 import FilterContext from '../locks/FilterContext'
+import glossary from '../data/glossary.json'
 
 function FilterChip({field, value, ...props}) {
-    const {beta} = useContext(AppContext)
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const {addFilter} = useContext(FilterContext)
@@ -29,9 +28,8 @@ function FilterChip({field, value, ...props}) {
     const handleOpen = useCallback(event => {
         event.preventDefault()
         event.stopPropagation()
-        if (beta) setOpen(event.target)
-        else handleFilter()
-    }, [beta, handleFilter])
+        setOpen(event.target)
+    }, [])
 
     const handleGoToGlossary = useCallback(event => {
         event.stopPropagation()
@@ -39,6 +37,10 @@ function FilterChip({field, value, ...props}) {
         const safeValue = encodeURI(value)
         setTimeout(() => navigate(`/glossary?term=${safeValue}`), 0)
     }, [navigate, value])
+
+    const termFound = useMemo(() => {
+        return !!glossary.find(entry => entry.term.toLowerCase() === value.toLowerCase())
+    }, [value])
 
     return (
         <React.Fragment>
@@ -59,7 +61,9 @@ function FilterChip({field, value, ...props}) {
                 <MenuItem disabled>Term: {value}</MenuItem>
                 <Divider/>
                 <MenuItem onClick={handleFilter}>Add Filter</MenuItem>
-                <MenuItem onClick={handleGoToGlossary}>Go to Glossary</MenuItem>
+                <MenuItem onClick={handleGoToGlossary} disabled={!termFound}>
+                    Go to Glossary
+                </MenuItem>
             </Menu>
         </React.Fragment>
     )
