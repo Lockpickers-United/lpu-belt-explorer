@@ -169,14 +169,21 @@
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53458238043_21287905da_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458238043/in/album-72177720313944555/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53458238043_50e1bc33f7_o.jpg"
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53468998464_df64f574d5_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53468998464/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53468998464_81a2a3b6a1_o.jpg"
     }
   },
   {
     "term": "cam lock",
-    "definition": "Consists of a cylindrical base and a rotating cam lever (the \"cam\") attached to the base. When the key or tool is inserted and turned in the lock, the cam rotates, locking or unlocking the mechanism. "
+    "definition": "Consists of a cylindrical base and a rotating cam lever (the \"cam\") attached to the base. When the key or tool is inserted and turned in the lock, the cam rotates, locking or unlocking the mechanism. ",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53468679871_d7184ff2d3_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53468679871/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53468679871_8992ce7126_o.jpg"
+    }
   },
   {
     "term": "cap removal tool",
@@ -281,7 +288,14 @@
   },
   {
     "term": "curtain",
-    "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs."
+    "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53467772702_57c77ff91e_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53467772702/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53467772702_4cfdfe091b_o.jpg"
+    }
   },
   {
     "term": "cut",
@@ -666,11 +680,25 @@
   },
   {
     "term": "lever",
-    "definition": "Coding element shaped like a flat piece of metal, that rotates about one point, interacting with the locking elements, which can be, for example. a sidebar or a talon, depending on the type of lever lock. (2) Type of lock that uses levers as locking mechanism. The levers generally interact with a talon, an extended piece of metal of the bolt, usually through gates. When levers are lifted to the right height, the key pulls the bolt's talon into the levers' gates. (3) Italian levers (and silmilar types) are technically not levers as they don't rotate about one point, but are traditionally called levers."
+    "definition": "Coding element shaped like a flat piece of metal, that rotates about one point, interacting with the locking elements, which can be, for example. a sidebar or a talon, depending on the type of lever lock. (2) Type of lock that uses levers as locking mechanism. The levers generally interact with a talon, an extended piece of metal of the bolt, usually through gates. When levers are lifted to the right height, the key pulls the bolt's talon into the levers' gates. (3) Italian levers (and silmilar types) are technically not levers as they don't rotate about one point, but are traditionally called levers.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53467773027_041ac9b3e1_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53467773027/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53467773027_bf699b25cc_o.jpg"
+    }
   },
   {
     "term": "lever pack",
-    "definition": "A term for all the levers in a given lock."
+    "definition": "A term for all the levers in a given lock.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53468680226_6ef3667e64_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53468680226/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53468680226_c42791a523_o.jpg"
+    }
   },
   {
     "term": "lever pick",
