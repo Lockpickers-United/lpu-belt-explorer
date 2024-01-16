@@ -1095,7 +1095,7 @@ Examples of "Master's Projects":
 - [NATO Mersey](https://lpubelts.com/?id=f29a212f) (14 lever)
 - [Opnus Memolis](https://lpubelts.com/?id=6c0ec943)
 - [Opnus MMXII](https://lpubelts.com/?id=e151c916)
-- [Robur Disc Detainer SDB lock](https://lpubelts.com/?id=5cba063b)
+- [Robur Disc Detainer Safe Deposit Lock](https://lpubelts.com/?id=5cba063b)
 - [Rosengrens 32A81S / Rosengrens 32C81P](https://lpubelts.com/?id=db63c882) (triangular central posts and many false gates)
 - [Ruko Combi 2 / Ruko Garant 10 / FAB Variant](https://lpubelts.com/?id=63a9a2b1) (6 pin with 5 finger pins)
 - [Sargent Keso](https://lpubelts.com/?id=00cf7717)
