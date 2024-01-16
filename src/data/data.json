@@ -5201,7 +5201,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap pin/bar"
+      "Trap element"
     ],
     "media": [
       {
@@ -5276,7 +5276,7 @@
       }
     ],
     "views": 369,
-    "lastUpdated": "2023-09-28T21:49:06.224Z"
+    "lastUpdated": "2024-01-16T14:46:19.609Z"
   },
   {
     "id": "0f0dcd42",
@@ -6070,7 +6070,7 @@
     ],
     "features": [
       "Magnetic pins",
-      "Trap pin/bar"
+      "Trap element"
     ],
     "media": [
       {
@@ -6131,7 +6131,7 @@
       }
     ],
     "views": 169,
-    "lastUpdated": "2023-12-04T20:12:20.144Z"
+    "lastUpdated": "2024-01-16T14:46:19.609Z"
   },
   {
     "id": "f488f48e",
@@ -13614,7 +13614,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap pin/bar"
+      "Trap element"
     ],
     "media": [
       {
@@ -13646,7 +13646,7 @@
       }
     ],
     "views": 455,
-    "lastUpdated": "2023-07-25T11:20:19.890Z"
+    "lastUpdated": "2024-01-16T14:46:19.613Z"
   },
   {
     "id": "da54208c",
@@ -13662,7 +13662,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap pin/bar"
+      "Trap element"
     ],
     "media": [
       {
@@ -13680,7 +13680,7 @@
       }
     ],
     "views": 324,
-    "lastUpdated": "2023-07-25T11:20:19.890Z"
+    "lastUpdated": "2024-01-16T14:46:19.613Z"
   },
   {
     "id": "af99d1cb",
@@ -13696,10 +13696,10 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap pin/bar"
+      "Trap element"
     ],
     "views": 193,
-    "lastUpdated": "2023-05-30T18:50:08.535Z"
+    "lastUpdated": "2024-01-16T14:46:19.613Z"
   },
   {
     "id": "18f3c21f",
@@ -13715,7 +13715,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap pin/bar"
+      "Trap element"
     ],
     "media": [
       {
@@ -13734,7 +13734,7 @@
       }
     ],
     "views": 338,
-    "lastUpdated": "2023-07-25T11:20:19.890Z"
+    "lastUpdated": "2024-01-16T14:46:19.613Z"
   },
   {
     "id": "bce6757d",
@@ -18753,7 +18753,7 @@
       "Slider"
     ],
     "features": [
-      "Trap pin/bar",
+      "Trap element",
       "False gates",
       "Active sidebar"
     ],
@@ -18787,7 +18787,7 @@
       }
     ],
     "views": 418,
-    "lastUpdated": "2023-07-25T11:20:19.894Z"
+    "lastUpdated": "2024-01-16T14:46:19.616Z"
   },
   {
     "id": "93871dad",
@@ -23712,7 +23712,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Xmas tree drivers",
+      "Tree drivers",
       "Gin spool drivers",
       "Undercut milling",
       "Tapered drivers",
@@ -23742,7 +23742,7 @@
       }
     ],
     "views": 389,
-    "lastUpdated": "2023-09-02T16:12:59.716Z"
+    "lastUpdated": "2024-01-16T14:46:19.618Z"
   },
   {
     "id": "33588917",
@@ -26709,7 +26709,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Xmas tree drivers",
+      "Tree drivers",
       "Gin spool drivers",
       "Undercut milling",
       "Tapered drivers",
@@ -26755,7 +26755,7 @@
       "ef4e0295",
       "f133510b"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.025Z"
+    "lastUpdated": "2024-01-16T14:46:19.620Z"
   },
   {
     "id": "ef4e0295",
@@ -30561,7 +30561,7 @@
       "Gin spool drivers",
       "Tapered drivers",
       "Undercut milling",
-      "Xmas tree drivers",
+      "Tree drivers",
       "Guttable"
     ],
     "media": [
@@ -30611,7 +30611,7 @@
       "ef4e0295",
       "e3bd3faf"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.026Z"
+    "lastUpdated": "2024-01-16T14:46:19.624Z"
   },
   {
     "id": "6e59ba12",
@@ -36468,7 +36468,7 @@
     "features": [
       "Under Review ⚑",
       "Pin-in-pin",
-      "Trap pin/bar"
+      "Trap element"
     ],
     "media": [
       {
@@ -36501,7 +36501,7 @@
       }
     ],
     "views": 15,
-    "lastUpdated": "2024-01-06T15:32:22.644Z"
+    "lastUpdated": "2024-01-16T14:46:19.626Z"
   },
   {
     "id": "3b7643da",

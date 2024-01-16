@@ -349,6 +349,10 @@
     "definition": "A type of lock that uses unsprung rotating discs and a sidebar. The key repositions the discs so that gates align, the sidebar drops into them and the plug can rotate."
   },
   {
+    "term": "disc steering system",
+    "definition": "Often abbreviated to DSS, consists of 2 half moon shaped sliders that interact with dimples on the key, retracting into them to allow for plug rotation. The inner nubs of these sliders restrict picking space, and the nubs in the outer edge will block the plug rotation unless the sliders drop properly in place."
+  },
+  {
     "term": "drill pin",
     "definition": "A cylinder that is in the centre of the keyway of a lever lock that uses a pipe key, reducing access and centering the key.",
     "media": {
@@ -366,6 +370,10 @@
   {
     "term": "driver pin",
     "definition": "The pins that sit usually at shearline in a pin tumbler lock, preventing the rotation of the plug, and sit between a keypin and a spring. They must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include security features."
+  },
+  {
+    "term": "DSS",
+    "definition": "See [disc steering system](/#/glossary?term=disc%20steering%20system)."
   },
   {
     "term": "element",
@@ -527,6 +535,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458422274/in/album-72177720313985501/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458422274_f8fb36ec3a_o.jpg"
     }
+  },
+  {
+    "term": "hasp",
+    "definition": "Hardware device used for securing doors, lids, or gates. It consists of two main parts: a hinged metal plate (the hasp) and a looped metal strip (the staple). The hasp is attached to a fixed surface and folds over the looped staple, which is mounted on a movable part (like a door). "
   },
   {
     "term": "high pin count",
@@ -764,6 +776,17 @@
     "definition": "To lift an element too far past where it needs to be, preventing the lock from opening."
   },
   {
+    "term": "padlock",
+    "definition": "A portable lock with a [shackle](/#/glossary?term=shackle) that may be passed through an opening such as a chain link or [hasp](/#/glossary?term=hasp) staple.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53468228215_493cbb4c5f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53468228215/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53468228215_eeffa8e496_o.jpg"
+    }
+  },
+  {
     "term": "passive pin",
     "definition": "A pin that doesn't have a coding role in the lock and doesn't need to be picked to open the lock. Generally used for key control."
   },
@@ -965,6 +988,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454604173/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454604173_ed9efbb49d_o.jpg"
     }
+  },
+  {
+    "term": "rotating gated keypins",
+    "definition": "Keypins that have gates that interact with a sidebar, rotating to the true gate when the correct key is inserted. "
   },
   {
     "term": "rotors",
@@ -1176,6 +1203,10 @@
     "definition": "Short for [Single Pin Picking](/#/glossary?term=single%20pin%20picking)."
   },
   {
+    "term": "sprung sliders",
+    "definition": "[Sliders](/#/glossary?term=slider) that are subject to spring tension keeping them in place."
+  },
+  {
     "term": "standard pin",
     "definition": "Pin which is shaped like a regular cylinder (with a bevel if it is a keypin)."
   },
@@ -1266,8 +1297,12 @@
     }
   },
   {
-    "term": "trap pin/bar",
+    "term": "trap element",
     "definition": "A pin or sidebar that blocks the rotation of the plug after picking and as one starts to rotate the plug if no key is inserted."
+  },
+  {
+    "term": "tree drivers",
+    "definition": "Generally called \"christmas tree drivers\", or simply \"trees\"; driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree."
   },
   {
     "term": "true gate",
@@ -1290,11 +1325,15 @@
   },
   {
     "term": "undercut milling",
-    "definition": "Regular cut in the chamber of a lock, widening the diameter just below the shear line for a short distance, enough to catch the lip of gin spool drivers or xmas tree drivers."
+    "definition": "Regular cut in the chamber of a lock, widening the diameter just below the shear line for a short distance, enough to catch the lip of gin spool drivers or xmas tree drivers. Sometimes just called countermilling, although this term is not specific to this type of milling."
   },
   {
     "term": "underset",
     "definition": "A partially set element that is between its resting position and where it needs to be."
+  },
+  {
+    "term": "unsprung sliders",
+    "definition": "[Sliders](/#/glossary?term=slider) that are not subject to spring tension keeping them in place"
   },
   {
     "term": "wafer",
@@ -1322,10 +1361,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53457185852/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53457185852_ace3ff11b7_o.jpg"
     }
-  },
-  {
-    "term": "xmas tree drivers",
-    "definition": "Short for \"christmas tree drivers\", driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree."
   },
   {
     "term": "z-bar",
