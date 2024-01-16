@@ -4,11 +4,9 @@ import MenuItem from '@mui/material/MenuItem'
 import React, {useCallback, useContext, useState} from 'react'
 import Chip from '@mui/material/Chip'
 import {useNavigate} from 'react-router-dom'
-import AppContext from '../app/AppContext'
 import FilterContext from '../locks/FilterContext'
 
 function FilterChip({field, value, ...props}) {
-    const {beta} = useContext(AppContext)
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const {addFilter} = useContext(FilterContext)
@@ -29,9 +27,8 @@ function FilterChip({field, value, ...props}) {
     const handleOpen = useCallback(event => {
         event.preventDefault()
         event.stopPropagation()
-        if (beta) setOpen(event.target)
-        else handleFilter()
-    }, [beta, handleFilter])
+        setOpen(event.target)
+    }, [])
 
     const handleGoToGlossary = useCallback(event => {
         event.stopPropagation()
