@@ -7016,7 +7016,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Hourglass/graduated spools"
+      "Graduated spools"
     ],
     "media": [
       {
@@ -7035,7 +7035,7 @@
       "ef221c67",
       "f2d41749"
     ],
-    "lastUpdated": "2023-12-06T11:28:34.724Z"
+    "lastUpdated": "2024-01-17T15:21:42.548Z"
   },
   {
     "id": "0b82681f",
@@ -40365,24 +40365,6 @@
     ],
     "views": 22,
     "lastUpdated": "2023-08-05T14:23:23.166Z"
-  },
-  {
-    "id": "347bd804",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "S&G",
-        "model": "4544/4545 Series"
-      }
-    ],
-    "lockingMechanisms": [
-      "Lever"
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "views": 30,
-    "lastUpdated": "2023-08-10T00:09:36.310Z"
   },
   {
     "id": "8a7eee5c",
