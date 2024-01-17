@@ -374,12 +374,20 @@
     "definition": "Often abbreviated to DBS. A system in disc detainer locks which locks the discs in position when tension is applied. Versions are included in Abloy Protec and Protec2, and Tokoz Pro."
   },
   {
+    "term": "disc controller",
+    "definition": "Sometimes abbeviated to DC. Bars in the keyway of a disc detainer lock which center the key and restrict access for picking tools."
+  },
+  {
     "term": "disc detainer",
     "definition": "A type of lock that uses unsprung rotating discs and a sidebar. The key repositions the discs so that gates align, the sidebar drops into them and the plug can rotate."
   },
   {
     "term": "disc steering system",
     "definition": "Often abbreviated to DSS, consists of 2 half moon shaped sliders that interact with dimples on the key, retracting into them to allow for plug rotation. The inner nubs of these sliders restrict picking space, and the nubs in the outer edge will block the plug rotation unless the sliders drop properly in place."
+  },
+  {
+    "term": "double bitted",
+    "definition": "Reffering to lever lock keys, one that has two sets of bittings from each side of the key shaft."
   },
   {
     "term": "drill pin",
@@ -398,7 +406,14 @@
   },
   {
     "term": "driver pin",
-    "definition": "The pins that sit usually at shearline in a pin tumbler lock, preventing the rotation of the plug, and sit between a keypin and a spring. They must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include security features."
+    "definition": "The pins that sit usually at shearline in a pin tumbler lock, preventing the rotation of the plug, and sit between a keypin and a spring. They must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include security features.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53469949070_2cfe3f36d8_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53469949070/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53469949070_889e47c78f_o.jpg"
+    }
   },
   {
     "term": "DSS",
@@ -533,6 +548,10 @@
     }
   },
   {
+    "term": "graduated spool",
+    "definition": "Spool with a gradual taper in diameter reducing from the ends to the center. Also known as a hourglass spool."
+  },
+  {
     "term": "grubbing",
     "definition": "To tap and insert grub/set screws into the top of a bible, acting as individual bible covers for each chamber.",
     "media": {
@@ -592,8 +611,8 @@
     }
   },
   {
-    "term": "hourglass/graduated spool",
-    "definition": "spool with a gradual taper in diameter reducing from the ends to the center."
+    "term": "hourglass spools",
+    "definition": "Spool with a gradual taper in diameter reducing from the ends to the center. Also known as a graduated spool."
   },
   {
     "term": "housing",
@@ -608,7 +627,7 @@
   },
   {
     "term": "HPC",
-    "definition": "Acronym for 'high pin count'. Also a well-established brand of picks sold mainly in the United States."
+    "definition": "Acronym for [high pin count](/#/glossary?term=high%20pin%20count). Also a well-established brand of picks sold mainly in the United States."
   },
   {
     "term": "impressioning",
@@ -654,7 +673,14 @@
   },
   {
     "term": "key pin",
-    "definition": "Pin in the plug in a pin tumbler lock, that is lifted by the key to position the driver pin. Their length corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include security features."
+    "definition": "Pin in the plug in a pin tumbler lock, that is lifted by the key to position the driver pin. Their length corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include security features.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53469949135_7308de7535_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53469949135/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53469949135_4e77157925_o.jpg"
+    }
   },
   {
     "term": "keyway",
@@ -738,6 +764,18 @@
   {
     "term": "magic DOM drivers",
     "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends."
+  },
+  {
+    "term": "magnetic pins",
+    "definition": "Ferromagnetic pins or magnetized pins in a lock, or that are subject to a magnet placed on the key."
+  },
+  {
+    "term": "magnetic rotors",
+    "definition": "Ferromagnetic rotors or magnetized rotors in a lock, or that are subject to a magnet placed on the key. See [rotors(/#/glossary?term=rotors)."
+  },
+  {
+    "term": "magnetic sliders",
+    "definition": "Ferromagnetic rotors or magnetized rotors in a lock, or that are subject to a magnet placed on the key. See [slider(/#/glossary?term=slider)."
   },
   {
     "term": "master ring",
@@ -928,7 +966,7 @@
   },
   {
     "term": "plug",
-    "definition": "The central part of a lock cylinder that rotates when all locking elements are aligned properly to open the lock -- either by inserting a key into the plug or by picking the lock. The plug contains lock elements that directly contact the key, such as key pins and sliders. Also sometimes referred to as the core.",
+    "definition": "The central part of a lock cylinder that rotates when all locking elements are aligned properly to open the lock -- either by inserting a key into the plug or by picking the lock. The plug contains lock elements that directly contact the key, such as key pins and sliders. Also sometimes referred to as the [core](/#/glossary?term=core).",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1030,6 +1068,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53454604173_14954e9230_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454604173/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454604173_ed9efbb49d_o.jpg"
+    }
+  },
+  {
+    "term": "rotating fingerpin",
+    "definition": "Subtype of sidepin with extended prong that interacts with the key, and vertical rotational as well as vertical lift coding (must be lifted and rotated). Generally associated to a sidebar. Can called simply fingerpin.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53448885038_34827b1046_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448885038/in/album-72177720313869627/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53448885038_db6a86e52e_o.jpg"
     }
   },
   {
@@ -1204,6 +1253,10 @@
     }
   },
   {
+    "term": "single bitted",
+    "definition": "Reffering to lever lock keys, one that has only one set of bittings from one side of the key shaft."
+  },
+  {
     "term": "single pin picking",
     "definition": "Picking a lock by moving one element at a time under tension."
   },
@@ -1374,8 +1427,12 @@
     "definition": "A moving element on a lock that prevents opening until the correct key is inserted."
   },
   {
-    "term": "uncurtained\n",
+    "term": "uncurtained",
     "definition": "Lock without a [curtain](/#/glossary?term=curtain), generally referring to a lever lock."
+  },
+  {
+    "term": "under review",
+    "definition": "A lock that is currently in the classification queue, waiting for enough votes to be ranked."
   },
   {
     "term": "undercut milling",
