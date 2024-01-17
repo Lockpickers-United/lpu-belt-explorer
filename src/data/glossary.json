@@ -873,7 +873,14 @@
   },
   {
     "term": "passive sidebar",
-    "definition": "A sidebar that does not interact with coding elements of the lock needing to be picked. Usually related with key control function."
+    "definition": "A sidebar that does not interact with coding elements of the lock needing to be picked. Usually related with key control function.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470409520_3cd85be21e_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470409520/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470409520_8f5cba6e07_o.jpg"
+    }
   },
   {
     "term": "pin key",
@@ -1187,7 +1194,14 @@
   },
   {
     "term": "shaft / shank (pick)",
-    "definition": "The part of a hook, rake, or other pick between the tip and handle."
+    "definition": "The part of a hook, rake, or other pick between the tip and handle.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470331139_792620d364_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470331139/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470331139_3c48e244a2_o.jpg"
+    }
   },
   {
     "term": "shark fin keypins",
