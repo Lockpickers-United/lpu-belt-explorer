@@ -705,6 +705,17 @@
     }
   },
   {
+    "term": "laminated padlock",
+    "definition": "Padlock constructed from multiple layers of metal plates, usually steel, laminated and riveted together. The laminated lock body contains a traditional core, locking mechanism, and shackle.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470288778_fee3758092_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470288778/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470288778_83aeb934be_o.jpg"
+    }
+  },
+  {
     "term": "lever",
     "definition": "Coding element shaped like a flat piece of metal, that rotates about one point, interacting with the locking elements, which can be, for example. a sidebar or a talon, depending on the type of lever lock. (2) Type of lock that uses levers as locking mechanism. The levers generally interact with a talon, an extended piece of metal of the bolt, usually through gates. When levers are lifted to the right height, the key pulls the bolt's talon into the levers' gates. (3) Italian levers (and silmilar types) are technically not levers as they don't rotate about one point, but are traditionally called levers.",
     "media": {
@@ -787,7 +798,14 @@
   },
   {
     "term": "mastering",
-    "definition": "Adding (or removing) components within a lock to allow more than 1 unique key to work in the same lock."
+    "definition": "Adding (or removing) components within a lock to allow more than 1 unique key to work in the same lock.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470466569_7a08acaaf7_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470466569/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470466569_06cfee0cda_o.jpg"
+    }
   },
   {
     "term": "mortise",
@@ -1037,7 +1055,14 @@
   },
   {
     "term": "pump/push",
-    "definition": "A pump lock or push lock is a type of lock that tensions and opens by first pushing the key into the face of the lock before rotating. This includes, for example, most tubular locks (many of which are also types of pin tumblers), but also other locks that use sliders and sidebars as locking elements."
+    "definition": "A pump lock or push lock is a type of lock that tensions and opens by first pushing the key into the face of the lock before rotating. This includes, for example, most tubular locks (many of which are also types of pin tumblers), but also other locks that use sliders and sidebars as locking elements.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470288993_504d80541a_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470288993/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470288993_80bdf67c46_o.jpg"
+    }
   },
   {
     "term": "rake",
@@ -1332,6 +1357,17 @@
     "definition": "Pin which is shaped like a regular cylinder (with a bevel if it is a keypin)."
   },
   {
+    "term": "swappable bitting",
+    "definition": "Lock and key where the coded elements can be replaced to change the bitting.",
+    "media": {
+      "title": "By: Ben-on-reddit",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470618405_26f93a4bb4_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470618405/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470618405_bf8ec47a7e_o.jpg"
+    }
+  },
+  {
     "term": "talon",
     "definition": "The part of a bolt in a lever lock that slides into the levers when unlocked."
   },
@@ -1445,7 +1481,7 @@
     "definition": "Lock without a [curtain](/#/glossary?term=curtain), generally referring to a lever lock."
   },
   {
-    "term": "under review",
+    "term": "under review ⚑",
     "definition": "A lock that is currently in the classification queue, waiting for enough votes to be ranked."
   },
   {
@@ -1474,7 +1510,14 @@
   },
   {
     "term": "warding",
-    "definition": "Protruding metal in a keyway to make picking more difficult and restrict which key shapes can enter the plug."
+    "definition": "Protruding metal in a keyway to make picking more difficult and restrict which key shapes can enter the plug.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470466339_485b65059e_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470466339/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470466339_9acf1d5d1c_o.jpg"
+    }
   },
   {
     "term": "wiper insert",
