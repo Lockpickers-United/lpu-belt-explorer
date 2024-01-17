@@ -405,8 +405,8 @@
     "definition": "Components in a lock made of hardened steel to slow down or prevent drilling attacks. Various forms of drill protection are used by different manufacturers. They may be a part of the lock body itself, a steel pin or ball bearing inserted in the lock body or plug, or the pins themselves."
   },
   {
-    "term": "driver pin",
-    "definition": "The pins that sit usually at shearline in a pin tumbler lock, preventing the rotation of the plug, and sit between a keypin and a spring. They must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include security features.",
+    "term": "drive pins",
+    "definition": "Pin that usually sits at shearline in a pin tumbler lock, preventing the rotation of the plug, positioned between a key pin and a spring. It must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include [security features](/#/glossary?term=security%20pin).",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -673,7 +673,7 @@
   },
   {
     "term": "key pin",
-    "definition": "Pin in the plug in a pin tumbler lock, that is lifted by the key to position the driver pin. Their length corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include security features.",
+    "definition": "Pin in the plug in a pin tumbler lock, that is lifted by the key to position the driver pin. Their length corresponds to the code for a key cut. When a key with the correct cut size in that position is inserted, the keypin lifts the driver pin just above the shear line. Also known as bottom pin when the bible is upwards. Can include [security features](/#/glossary?term=security%20pin).",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
