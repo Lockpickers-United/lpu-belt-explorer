@@ -477,14 +477,7 @@
   },
   {
     "term": "fingerpin",
-    "definition": "Subtype of sidepin with extended prong that interacts with the key, and vertical rotational as well as vertical lift coding (must be lifted and rotated). Generally associated to a sidebar.",
-    "media": {
-      "title": "By: mgsecure",
-      "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53448885038_34827b1046_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448885038/in/album-72177720313869627/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53448885038_db6a86e52e_o.jpg"
-    }
+    "definition": "See [rotating fingerpin](/#/glossary?term=rotating%20fingerpin)."
   },
   {
     "term": "fixed disc",
@@ -559,8 +552,8 @@
     }
   },
   {
-    "term": "graduated spool",
-    "definition": "Spool with a gradual taper in diameter reducing from the ends to the center. Also known as a hourglass spool."
+    "term": "graduated spools",
+    "definition": "Spools with a gradual taper in diameter reducing from the ends to the center. Also known as hourglass spools."
   },
   {
     "term": "grubbing",
@@ -583,6 +576,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53462259685/in/album-72177720313985501/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53462259685_99bab53b43_o.jpg"
     }
+  },
+  {
+    "term": "guttable",
+    "definition": "Lock that can be [gutted](/#/glossary?term=gutting) non-destructively."
   },
   {
     "term": "gutting",
@@ -623,7 +620,7 @@
   },
   {
     "term": "hourglass spools",
-    "definition": "Spool with a gradual taper in diameter reducing from the ends to the center. Also known as a graduated spool."
+    "definition": "Spools with a gradual taper in diameter reducing from the ends to the center. Also known as graduated spools."
   },
   {
     "term": "housing",
@@ -1065,8 +1062,12 @@
     }
   },
   {
-    "term": "pump/push",
-    "definition": "A pump lock or push lock is a type of lock that tensions and opens by first pushing the key into the face of the lock before rotating. This includes, for example, most tubular locks (many of which are also types of pin tumblers), but also other locks that use sliders and sidebars as locking elements.",
+    "term": "pump lock",
+    "definition": "tbd."
+  },
+  {
+    "term": "push",
+    "definition": "A push lock, often called pump lock is a type of lock that tensions and opens by first pushing the key into the face of the lock before rotating. This includes, for example, most tubular locks (many of which are also types of pin tumblers), but also other locks that use sliders and sidebars as locking elements.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1115,7 +1116,7 @@
   },
   {
     "term": "rotating fingerpin",
-    "definition": "Subtype of sidepin with extended prong that interacts with the key, and vertical rotational as well as vertical lift coding (must be lifted and rotated). Generally associated to a sidebar. Can called simply fingerpin.",
+    "definition": "Subtype of sidepin with extended prong that interacts with the key, with rotational as well as vertical lift coding (must be lifted and rotated). Generally associated to a sidebar. Also called simply fingerpin.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1278,6 +1279,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53455206281_ebb1207d04_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455206281/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455206281_f140d0a248_o.jpg"
+    }
+  },
+  {
+    "term": "shutter",
+    "definition": "Small, movable cover or barrier that protects the keyhole or locking mechanism from external elements, such as dirt, dust, and moisture. The shutter is especially common in outdoor locks, like padlocks or automotive locks.",
+    "media": {
+      "title": "By: TheGreenishOne",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470331516_4602fe0498_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470331516/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470331516_26880cbebb_o.jpg"
     }
   },
   {
@@ -1517,6 +1529,10 @@
   {
     "term": "unsprung sliders",
     "definition": "[Sliders](/#/glossary?term=slider) that are not subject to spring tension keeping them in place"
+  },
+  {
+    "term": "various formats",
+    "definition": "Describes a lock that is available in different physical formats, such as padlocks as well as door cylinders."
   },
   {
     "term": "wafer",
