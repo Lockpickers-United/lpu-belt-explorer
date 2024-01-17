@@ -340,6 +340,17 @@
     "definition": "The height to which a specific part of the bitting is cut."
   },
   {
+    "term": "destructive gut",
+    "definition": "Lock that cannot be [gutted](/#/glossary?term=gutting) (disassembled) without damaging some of its components, by means such as grinding off rivets. Note that this damage does not render the lock inoperable. See also [unguttable](/#/glossary?term=unguttable).",
+    "media": {
+      "title": "By: TheGreenishOne",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/52919298696_4c5e275e54_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52919298696/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/52919298696_6e230b6a29_o.jpg"
+    }
+  },
+  {
     "term": "dial (lock)",
     "definition": "The part of a combination lock that is rotated.",
     "media": {
@@ -1491,6 +1502,17 @@
   {
     "term": "underset",
     "definition": "A partially set element that is between its resting position and where it needs to be."
+  },
+  {
+    "term": "unguttable",
+    "definition": "Lock that cannot be [gutted](/#/glossary?term=gutting) (disassembled) without destroying the lock and making it inoperable.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470358003_755957610d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470358003/in/album-72177720314012610/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470358003_ceda1c48b7_o.jpg"
+    }
   },
   {
     "term": "unsprung sliders",
