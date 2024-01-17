@@ -1,1 +1,0 @@
-import{j as s,R as t,al as a,am as e,a4 as r}from"./index-d9957233.js";function i(){return s.jsxs(t.Fragment,{children:[s.jsx(a,{title:"History of LPU Belts"}),s.jsx("div",{children:"Coming soon..."}),s.jsx(e,{}),s.jsx(r,{feature:"history"})]})}export{i as default};
