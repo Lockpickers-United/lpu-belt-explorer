@@ -23,7 +23,7 @@ function GlossaryImage({entry, highlighted}) {
         searchParams.set('image', '1')
         searchParams.set('term', term)
         setSearchParams(searchParams)
-    }, [searchParams, setSearchParams])
+    }, [searchParams, setSearchParams, term])
 
     const handleClose = useCallback(() => {
         setOpen(false)

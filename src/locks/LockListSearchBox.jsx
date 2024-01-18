@@ -6,14 +6,14 @@ import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
-import {useLocation} from 'react-router-dom'
+import {useSearchParams} from 'react-router-dom'
 import {useDebounce} from 'usehooks-ts'
 import FilterContext from './FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function LockListSearchBox() {
-    const location = useLocation()
+    const [searchParams] = useSearchParams()
     const {filters, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
     const {isMobile} = useWindowSize()
@@ -34,7 +34,7 @@ function LockListSearchBox() {
 
     const debounceText = useDebounce(text, 250)
     useEffect(() => {
-        if (debounceText) {
+        if (debounceText !== searchParams.get('search')) {
             window.scrollTo({top: 0})
             addFilters([
                 {key: 'search', value: debounceText},
@@ -53,10 +53,11 @@ function LockListSearchBox() {
     }, [])
 
     useEffect(() => {
-        if (filters.search !== text) {
-            setText(filters.search)
+        const newValue = searchParams.get('search')
+        if (newValue !== text) {
+            setText(newValue || '')
         }
-    }, [location]) // eslint-disable-line
+    }, [searchParams]) // eslint-disable-line
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
