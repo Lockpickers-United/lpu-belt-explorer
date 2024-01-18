@@ -35,13 +35,19 @@ function LockListSearchBox() {
     const debounceText = useDebounce(text, 250)
     useEffect(() => {
         if (debounceText !== searchParams.get('search')) {
-            window.scrollTo({top: 0})
-            addFilters([
-                {key: 'search', value: debounceText},
-                {key: 'tab', value: 'search'},
-                {key: 'id', value: undefined},
-                {key: 'name', value: undefined}
-            ], true)
+            if (debounceText) {
+                window.scrollTo({top: 0})
+                addFilters([
+                    {key: 'search', value: debounceText},
+                    {key: 'tab', value: 'search'},
+                    {key: 'id', value: undefined},
+                    {key: 'name', value: undefined}
+                ], true)
+            } else {
+                addFilters([
+                    {key: 'search', value: debounceText}
+                ], true)
+            }
         }
     }, [debounceText]) // eslint-disable-line
 
@@ -112,7 +118,7 @@ function LockListSearchBox() {
                 value={text}
                 style={{...style, ...focusStyle}}
                 fullWidth
-            /> }
+            />}
             <Backdrop
                 invisible
                 open={open && isMobile}
