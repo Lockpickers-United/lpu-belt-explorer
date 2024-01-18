@@ -34,6 +34,7 @@ function LockImageGallery({entry}) {
             onOpenImage={handleOpenImage}
             onCloseImage={handleCloseImage}
             onBackButton={handleBackButton}
+            shareParams={{id: entry.id, name: filters.name}}
         />
     )
 }

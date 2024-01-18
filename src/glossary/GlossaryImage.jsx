@@ -1,8 +1,10 @@
 import React, {useCallback, useState} from 'react'
+import {useSearchParams} from 'react-router-dom'
 import ImageViewer from '../misc/ImageViewer'
 import useWindowSize from '../util/useWindowSize'
 
-function GlossaryImage({entry}) {
+function GlossaryImage({entry, highlighted}) {
+    const [searchParams, setSearchParams] = useSearchParams()
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const photoWidth = !smallWidth ? 150 : 110
@@ -12,15 +14,21 @@ function GlossaryImage({entry}) {
             thumbnailUrl
         } = {}
     } = entry
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(() => {
+        return searchParams.get('image') === '1' && highlighted
+    })
 
     const handleClick = useCallback(() => {
         setOpen(true)
-    }, [])
+        searchParams.set('image', '1')
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams])
 
     const handleClose = useCallback(() => {
         setOpen(false)
-    }, [])
+        searchParams.delete('image')
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams])
 
     if (!thumbnailUrl) return null
     return (
@@ -41,6 +49,7 @@ function GlossaryImage({entry}) {
                 media={[entry.media]}
                 openIndex={0}
                 onClose={handleClose}
+                shareParams={{term: entry.term}}
             />}
         </React.Fragment>
     )

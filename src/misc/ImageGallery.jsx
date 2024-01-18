@@ -18,7 +18,8 @@ function ImageGallery(props) {
         openIndex,
         onOpenImage,
         onCloseImage,
-        onBackButton
+        onBackButton,
+        shareParams
     } = props
     const {width} = useWindowSize()
     const isMobile = width < 736
@@ -62,6 +63,7 @@ function ImageGallery(props) {
                     openIndex={openIndex}
                     onOpenImage={onOpenImage}
                     onClose={handleClose}
+                    shareParams={shareParams}
                 />
             }
             <ImageList variant='masonry' cols={cols} sx={{marginTop: 2}}>

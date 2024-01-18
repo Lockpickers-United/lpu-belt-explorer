@@ -73,7 +73,7 @@ function GlossaryEntry({entry, highlighted}) {
     return (
         <Card style={cardStyle} ref={ref}>
             <div style={{color: '#ddd'}}>
-                <GlossaryImage entry={entry}/>
+                <GlossaryImage entry={entry} highlighted={highlighted}/>
 
                 <ReactMarkdown components={markdownComponents}>
                     {markdown}

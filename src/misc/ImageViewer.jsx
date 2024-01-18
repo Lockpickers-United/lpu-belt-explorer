@@ -1,4 +1,7 @@
 import React, {useCallback, useState} from 'react'
+import LinkIcon from '@mui/icons-material/Link'
+import {enqueueSnackbar} from 'notistack'
+import queryString from 'query-string'
 import LaunchIcon from '@mui/icons-material/Launch'
 import Stack from '@mui/material/Stack'
 import DialogActions from '@mui/material/DialogActions'
@@ -23,7 +26,7 @@ import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor'
 import useWindowSize from '../util/useWindowSize'
 import Tooltip from '@mui/material/Tooltip'
 
-function ImageViewer({media, openIndex, onOpenImage, onClose}) {
+function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}}) {
     const [open, setOpen] = useState(true)
     const [loading, setLoading] = useState(true)
     const [{x: initX, y: initY}, setInitXY] = useState({x: 0, y: 0})
@@ -99,6 +102,14 @@ function ImageViewer({media, openIndex, onOpenImage, onClose}) {
         onSwipedDown: handleClose,
         swipeDuration: 250
     })
+
+    const handleCopyLink = useCallback(async () => {
+        const query = queryString.stringify({...shareParams, image: openIndex + 1})
+        const href = `https://share.lpubelts.com/?${query}`
+
+        await navigator.clipboard.writeText(href)
+        enqueueSnackbar('Link to entry copied to clipboard.')
+    }, [openIndex, shareParams])
 
     return (
         <Dialog
@@ -257,6 +268,17 @@ function ImageViewer({media, openIndex, onOpenImage, onClose}) {
                             disabled={zoom === 1}
                         >
                             <ZoomOutIcon/>
+                        </IconButton>
+                    </span>
+                </Tooltip>
+                <Tooltip title='Copy Link to Image' arrow disableFocusListener>
+                    <span>
+                        <IconButton
+                            color='inherit'
+                            onClick={handleCopyLink}
+                            aria-label='copyLink'
+                        >
+                            <LinkIcon/>
                         </IconButton>
                     </span>
                 </Tooltip>
