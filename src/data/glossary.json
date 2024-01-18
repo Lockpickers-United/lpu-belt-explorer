@@ -413,10 +413,17 @@
   },
   {
     "term": "drill protection",
-    "definition": "Components in a lock made of hardened steel to slow down or prevent drilling attacks. Various forms of drill protection are used by different manufacturers. They may be a part of the lock body itself, a steel pin or ball bearing inserted in the lock body or plug, or the pins themselves."
+    "definition": "Components in a lock made of hardened steel to slow down or prevent drilling attacks. Various forms of drill protection are used by different manufacturers. They may be a part of the lock body itself, a steel pin or ball bearing inserted in the lock body or plug, or the pins themselves.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471802380_d0e23ebf79_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471802380/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471802380_e703165535_o.jpg"
+    }
   },
   {
-    "term": "drive pins",
+    "term": "driver pin",
     "definition": "Pin that usually sits at shearline in a pin tumbler lock, preventing the rotation of the plug, positioned between a key pin and a spring. It must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include [security features](/#/glossary?term=security%20pin).",
     "media": {
       "title": "By: mgsecure",
@@ -643,11 +650,25 @@
   },
   {
     "term": "interactive element",
-    "definition": "Refers to elements on the lock that interact with moving elements on the key. These, in turn, sometimes interact with fixed or moving elements of the plug, to elevate the interactive element to shearline. Other times, the key itself may have the mechanism necessary for this interaction to happen, eg: an internal spring."
+    "definition": "Refers to elements on the lock that interact with moving elements on the key. These, in turn, sometimes interact with fixed or moving elements of the plug, to elevate the interactive element to shearline. Other times, the key itself may have the mechanism necessary for this interaction to happen, eg: an internal spring.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471802860_c13bcdc3e7_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471802860/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471802860_74d358b43b_o.jpg"
+    }
   },
   {
     "term": "interlocking pins",
-    "definition": "Famously present in Emhart locks, interlocking pins are attached to each other via dovetail connections, only dettaching at shearline with the correct lift and rotation by the key."
+    "definition": "Famously present in Emhart locks, interlocking pins are attached to each other via dovetail connections, only dettaching at shearline with the correct lift and rotation by the key.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471523318_628d2ac2fa_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471523318/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471523318_636da2e716_o.jpg"
+    }
   },
   {
     "term": "jiggle",
@@ -1063,7 +1084,7 @@
   },
   {
     "term": "pump lock",
-    "definition": "tbd."
+    "definition": "See [push](/#/glossary?term=push)."
   },
   {
     "term": "push",
@@ -1482,7 +1503,14 @@
   },
   {
     "term": "tree drivers",
-    "definition": "Generally called \"christmas tree drivers\", or simply \"trees\"; driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree."
+    "definition": "Generally called \"christmas tree drivers\", or simply \"trees\"; driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53470477672_b31654a2b5_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470477672/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53470477672_cef6c6005b_o.jpg"
+    }
   },
   {
     "term": "true gate",
@@ -1509,7 +1537,14 @@
   },
   {
     "term": "undercut milling",
-    "definition": "Regular cut in the chamber of a lock, widening the diameter just below the shear line for a short distance, enough to catch the lip of gin spool drivers or xmas tree drivers. Sometimes just called countermilling, although this term is not specific to this type of milling."
+    "definition": "Regular cut in the chamber of a lock, widening the diameter just below the shear line for a short distance, enough to catch the lip of gin spool drivers or xmas tree drivers. Sometimes just called countermilling, although this term is not specific to this type of milling.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471802620_42ee5f3b0c_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471802620/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471802620_9ccdfc613b_o.jpg"
+    }
   },
   {
     "term": "underset",
