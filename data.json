@@ -1123,9 +1123,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "notes": "The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",
     "media": [
       {
@@ -1164,7 +1161,7 @@
       }
     ],
     "views": 2514,
-    "lastUpdated": "2023-11-23T18:53:56.017Z"
+    "lastUpdated": "2024-01-18T11:44:42.977Z"
   },
   {
     "id": "a1581afe",
@@ -2395,9 +2392,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: myktylgaan",
@@ -2415,7 +2409,7 @@
       }
     ],
     "views": 2715,
-    "lastUpdated": "2023-07-25T11:20:19.882Z"
+    "lastUpdated": "2024-01-18T11:44:42.978Z"
   },
   {
     "id": "df703850",
@@ -3187,9 +3181,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Lockr",
@@ -3206,7 +3197,7 @@
       }
     ],
     "views": 1890,
-    "lastUpdated": "2023-07-25T11:20:19.883Z"
+    "lastUpdated": "2024-01-18T11:44:42.978Z"
   },
   {
     "id": "683e4f33",
@@ -3679,9 +3670,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -3713,7 +3701,7 @@
       }
     ],
     "views": 1797,
-    "lastUpdated": "2023-07-25T11:20:19.883Z"
+    "lastUpdated": "2024-01-18T11:44:42.978Z"
   },
   {
     "id": "171f76e9",
@@ -5448,9 +5436,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -5488,7 +5473,7 @@
       }
     ],
     "views": 3933,
-    "lastUpdated": "2023-07-25T11:20:19.884Z"
+    "lastUpdated": "2024-01-18T11:44:42.979Z"
   },
   {
     "id": "e42853c7",
@@ -5680,9 +5665,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Guid",
@@ -5714,7 +5696,7 @@
       }
     ],
     "views": 1116,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.979Z"
   },
   {
     "id": "6b2e5290",
@@ -6465,9 +6447,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Lock Noob",
@@ -6506,7 +6485,7 @@
       }
     ],
     "views": 969,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "1dafd552",
@@ -6614,9 +6593,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Lockr",
@@ -6685,7 +6661,7 @@
     "relatedIds": [
       "1ae40987"
     ],
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "1ae40987",
@@ -6741,9 +6717,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Lock Noob",
@@ -6761,7 +6734,7 @@
       }
     ],
     "views": 833,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "81fbd528",
@@ -6774,9 +6747,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Guttable"
     ],
     "notes": "The standard, non-bumpstop model of the American Lock 5200 can be distinguished by the angular shape of the bow of its key, compared to the rounded shape of the bumpstop keybow.",
     "media": [
@@ -6816,7 +6786,7 @@
       }
     ],
     "views": 2260,
-    "lastUpdated": "2023-11-23T18:53:56.019Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "b3af5e62",
@@ -6829,9 +6799,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Guttable"
     ],
     "media": [
       {
@@ -6850,7 +6817,7 @@
       }
     ],
     "views": 882,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "6f954c60",
@@ -6864,9 +6831,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: LockSkipper",
@@ -6877,7 +6841,7 @@
       }
     ],
     "views": 859,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "5a6170fb",
@@ -6890,9 +6854,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Guttable"
     ],
     "media": [
       {
@@ -6953,7 +6914,7 @@
       }
     ],
     "views": 1456,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-01-18T11:44:42.980Z"
   },
   {
     "id": "dbc1279d",
@@ -9888,9 +9849,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Reinder Stegen",
@@ -9921,7 +9879,7 @@
       }
     ],
     "views": 334,
-    "lastUpdated": "2023-07-25T11:20:19.888Z"
+    "lastUpdated": "2024-01-18T11:44:42.982Z"
   },
   {
     "id": "c942490e",
@@ -12097,8 +12055,7 @@
     ],
     "features": [
       "Barrel drivers",
-      "Serrated/threaded milling",
-      "Guttable"
+      "Serrated/threaded milling"
     ],
     "media": [
       {
@@ -12159,7 +12116,7 @@
       "ef221c67",
       "f2d41749"
     ],
-    "lastUpdated": "2023-12-06T11:28:34.727Z"
+    "lastUpdated": "2024-01-18T11:44:42.984Z"
   },
   {
     "id": "d08aa492",
@@ -12173,9 +12130,6 @@
     "version": "7 pin with spools and no countermilling",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Guttable"
     ],
     "media": [
       {
@@ -12220,7 +12174,7 @@
       "e3bd3faf",
       "f133510b"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.020Z"
+    "lastUpdated": "2024-01-18T11:44:42.984Z"
   },
   {
     "id": "f1e92541",
@@ -12236,7 +12190,6 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Guttable",
       "Tapered drivers"
     ],
     "media": [
@@ -12268,7 +12221,7 @@
       "e3bd3faf",
       "f133510b"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.020Z"
+    "lastUpdated": "2024-01-18T11:44:42.984Z"
   },
   {
     "id": "1bee7a66",
@@ -14766,9 +14719,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Nerixel",
@@ -14795,7 +14745,7 @@
     "relatedIds": [
       "ae023398"
     ],
-    "lastUpdated": "2024-01-07T11:58:13.097Z"
+    "lastUpdated": "2024-01-18T11:44:42.985Z"
   },
   {
     "id": "f6b001ed",
@@ -15343,9 +15293,6 @@
     "lockingMechanisms": [
       "Other"
     ],
-    "features": [
-      "Destructive gut"
-    ],
     "media": [
       {
         "title": "By: LockPicker1969",
@@ -15384,7 +15331,7 @@
       }
     ],
     "views": 339,
-    "lastUpdated": "2023-07-25T11:20:19.892Z"
+    "lastUpdated": "2024-01-18T11:44:42.986Z"
   },
   {
     "id": "df8081fa",
@@ -17285,9 +17232,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Guttable"
-    ],
     "media": [
       {
         "title": "By: Yagias",
@@ -17347,7 +17291,7 @@
       "d9e3829f",
       "f2d41749"
     ],
-    "lastUpdated": "2023-12-06T11:28:34.730Z"
+    "lastUpdated": "2024-01-18T11:44:42.987Z"
   },
   {
     "id": "45e3cde7",
@@ -17368,8 +17312,7 @@
     ],
     "features": [
       "Barrel drivers",
-      "Serrated/threaded milling",
-      "Guttable"
+      "Serrated/threaded milling"
     ],
     "media": [
       {
@@ -17430,7 +17373,7 @@
       }
     ],
     "views": 1190,
-    "lastUpdated": "2023-07-25T11:20:19.893Z"
+    "lastUpdated": "2024-01-18T11:44:42.987Z"
   },
   {
     "id": "039a239f",
@@ -17444,9 +17387,6 @@
     "version": "6 sliders",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [
-      "Guttable"
     ],
     "media": [
       {
@@ -17482,7 +17422,7 @@
       "e2742f70",
       "1459e2c6"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.022Z"
+    "lastUpdated": "2024-01-18T11:44:42.987Z"
   },
   {
     "id": "e2742f70",
@@ -17496,9 +17436,6 @@
     "version": "8 sliders, 1-3 mastered",
     "lockingMechanisms": [
       "Slider"
-    ],
-    "features": [
-      "Guttable"
     ],
     "media": [
       {
@@ -17534,7 +17471,7 @@
       "039a239f",
       "1459e2c6"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.022Z"
+    "lastUpdated": "2024-01-18T11:44:42.987Z"
   },
   {
     "id": "122b5621",
@@ -17552,8 +17489,7 @@
     "features": [
       "Barrel drivers",
       "Serrated/threaded milling",
-      "Sidepins",
-      "Guttable"
+      "Sidepins"
     ],
     "media": [
       {
@@ -17587,7 +17523,7 @@
       }
     ],
     "views": 645,
-    "lastUpdated": "2024-01-09T14:30:05.170Z"
+    "lastUpdated": "2024-01-18T11:44:42.987Z"
   },
   {
     "id": "f70b9b33",
@@ -22038,8 +21974,7 @@
       "Cabinet lock",
       "Flat steel key",
       "Curtain",
-      "False gates",
-      "Destructive gut"
+      "False gates"
     ],
     "media": [
       {
@@ -22065,7 +22000,7 @@
       }
     ],
     "views": 218,
-    "lastUpdated": "2024-01-15T21:27:04.404Z"
+    "lastUpdated": "2024-01-18T11:44:42.989Z"
   },
   {
     "id": "1be10736",
@@ -22614,8 +22549,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Difficult gut"
+      "High pin count"
     ],
     "media": [
       {
@@ -22630,7 +22564,7 @@
     "relatedIds": [
       "4223eb26"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2024-01-18T11:44:42.989Z"
   },
   {
     "id": "2c58f220",
@@ -22789,8 +22723,7 @@
     ],
     "features": [
       "Gin spool drivers",
-      "Undercut milling",
-      "Guttable"
+      "Undercut milling"
     ],
     "media": [
       {
@@ -22844,7 +22777,7 @@
       "d9e3829f",
       "ef221c67"
     ],
-    "lastUpdated": "2023-12-06T11:28:34.733Z"
+    "lastUpdated": "2024-01-18T11:44:42.990Z"
   },
   {
     "id": "d3ad5a73",
@@ -22874,7 +22807,6 @@
     "features": [
       "Barrel drivers",
       "Serrated/threaded milling",
-      "Guttable",
       "Forked keypins"
     ],
     "media": [
@@ -22943,7 +22875,7 @@
       }
     ],
     "views": 812,
-    "lastUpdated": "2024-01-12T00:02:13.130Z"
+    "lastUpdated": "2024-01-18T11:44:42.990Z"
   },
   {
     "id": "1459e2c6",
@@ -22959,7 +22891,6 @@
       "Slider"
     ],
     "features": [
-      "Guttable",
       "Unsprung sliders",
       "Active sidebar"
     ],
@@ -22997,7 +22928,7 @@
       "e2742f70",
       "039a239f"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2024-01-18T11:44:42.990Z"
   },
   {
     "id": "fd7b514a",
@@ -23026,8 +22957,7 @@
       "Barrel drivers",
       "Serrated/threaded milling",
       "Active sidebar",
-      "Rotating fingerpins",
-      "Guttable"
+      "Rotating fingerpins"
     ],
     "media": [
       {
@@ -23066,7 +22996,7 @@
       }
     ],
     "views": 482,
-    "lastUpdated": "2023-07-25T11:20:19.897Z"
+    "lastUpdated": "2024-01-18T11:44:42.990Z"
   },
   {
     "id": "9ed006d4",
@@ -23736,8 +23666,7 @@
       "Tree drivers",
       "Gin spool drivers",
       "Undercut milling",
-      "Tapered drivers",
-      "Guttable"
+      "Tapered drivers"
     ],
     "media": [
       {
@@ -23763,7 +23692,7 @@
       }
     ],
     "views": 389,
-    "lastUpdated": "2024-01-16T14:46:19.618Z"
+    "lastUpdated": "2024-01-18T11:44:42.990Z"
   },
   {
     "id": "33588917",
@@ -26115,9 +26044,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Destructive gut"
-    ],
     "media": [
       {
         "title": "By: XEMON",
@@ -26149,7 +26075,7 @@
       }
     ],
     "views": 210,
-    "lastUpdated": "2023-07-25T11:20:19.900Z"
+    "lastUpdated": "2024-01-18T11:44:42.991Z"
   },
   {
     "id": "dd764207",
@@ -26647,8 +26573,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Difficult gut"
+      "High pin count"
     ],
     "media": [
       {
@@ -26663,7 +26588,7 @@
     "relatedIds": [
       "054731a5"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.025Z"
+    "lastUpdated": "2024-01-18T11:44:42.992Z"
   },
   {
     "id": "29ab2852",
@@ -26680,8 +26605,7 @@
     ],
     "features": [
       "Gin spool drivers",
-      "Undercut milling",
-      "Guttable"
+      "Undercut milling"
     ],
     "media": [
       {
@@ -26714,7 +26638,7 @@
       }
     ],
     "views": 838,
-    "lastUpdated": "2023-07-25T11:20:19.901Z"
+    "lastUpdated": "2024-01-18T11:44:42.992Z"
   },
   {
     "id": "e3bd3faf",
@@ -26733,8 +26657,7 @@
       "Tree drivers",
       "Gin spool drivers",
       "Undercut milling",
-      "Tapered drivers",
-      "Guttable"
+      "Tapered drivers"
     ],
     "media": [
       {
@@ -26776,7 +26699,7 @@
       "ef4e0295",
       "f133510b"
     ],
-    "lastUpdated": "2024-01-16T14:46:19.620Z"
+    "lastUpdated": "2024-01-18T11:44:42.992Z"
   },
   {
     "id": "ef4e0295",
@@ -26853,8 +26776,7 @@
       "Serrated/threaded milling",
       "Active sidebar",
       "False gates",
-      "Sidepins",
-      "Guttable"
+      "Sidepins"
     ],
     "media": [
       {
@@ -26880,7 +26802,7 @@
       }
     ],
     "views": 297,
-    "lastUpdated": "2023-07-25T11:20:19.901Z"
+    "lastUpdated": "2024-01-18T11:44:42.992Z"
   },
   {
     "id": "5b60be8a",
@@ -29423,8 +29345,7 @@
       "Barrel drivers",
       "Serrated/threaded milling",
       "Sidepins",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -29454,7 +29375,7 @@
       "94ee12b7",
       "112d0034"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.026Z"
+    "lastUpdated": "2024-01-18T11:44:42.993Z"
   },
   {
     "id": "112d0034",
@@ -29474,8 +29395,7 @@
       "Gin spool drivers",
       "Undercut milling",
       "Sidepins",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -29511,7 +29431,7 @@
       "94ee12b7",
       "9da7a5f2"
     ],
-    "lastUpdated": "2023-11-28T23:02:12.085Z"
+    "lastUpdated": "2024-01-18T11:44:42.993Z"
   },
   {
     "id": "4a7db3c6",
@@ -30589,8 +30509,7 @@
       "Gin spool drivers",
       "Tapered drivers",
       "Undercut milling",
-      "Tree drivers",
-      "Guttable"
+      "Tree drivers"
     ],
     "media": [
       {
@@ -30639,7 +30558,7 @@
       "ef4e0295",
       "e3bd3faf"
     ],
-    "lastUpdated": "2024-01-16T14:46:19.624Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "6e59ba12",
@@ -30671,8 +30590,7 @@
       "Unsprung sliders",
       "Barrel drivers",
       "Serrated/threaded milling",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -30732,7 +30650,7 @@
       }
     ],
     "views": 1244,
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "104776ef",
@@ -30752,8 +30670,7 @@
       "Gin spool drivers",
       "Undercut milling",
       "Sidepins",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -30830,7 +30747,7 @@
       }
     ],
     "views": 1292,
-    "lastUpdated": "2023-08-08T11:03:56.845Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "fb51b475",
@@ -30850,8 +30767,7 @@
       "Rotating fingerpins",
       "Active sidebar",
       "Gin spool drivers",
-      "Undercut milling",
-      "Guttable"
+      "Undercut milling"
     ],
     "media": [
       {
@@ -30933,7 +30849,7 @@
       }
     ],
     "views": 1041,
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "7168d463",
@@ -30969,8 +30885,7 @@
       "Rotating fingerpins",
       "Active sidebar",
       "Barrel drivers",
-      "Serrated/threaded milling",
-      "Guttable"
+      "Serrated/threaded milling"
     ],
     "media": [
       {
@@ -31056,7 +30971,7 @@
       }
     ],
     "views": 1169,
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "f7ad4c89",
@@ -31076,8 +30991,7 @@
       "Barrel drivers",
       "Serrated/threaded milling",
       "Sidepins",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -31131,7 +31045,7 @@
       }
     ],
     "views": 666,
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "55053299",
@@ -31155,8 +31069,7 @@
       "Barrel drivers",
       "Serrated/threaded milling",
       "Sidepins",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -31226,7 +31139,7 @@
       }
     ],
     "views": 680,
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "3f73d2ce",
@@ -31262,8 +31175,7 @@
       "Barrel drivers",
       "Serrated/threaded milling",
       "Active sidebar",
-      "Sidepins",
-      "Guttable"
+      "Sidepins"
     ],
     "media": [
       {
@@ -31327,7 +31239,7 @@
       }
     ],
     "views": 985,
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "c8694f3a",
@@ -31347,8 +31259,7 @@
       "Gin spool drivers",
       "Undercut milling",
       "Sidepins",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "notes": "upgrade of ASSA Twin v10",
     "media": [
@@ -31388,7 +31299,7 @@
       }
     ],
     "views": 766,
-    "lastUpdated": "2023-11-14T22:22:46.097Z"
+    "lastUpdated": "2024-01-18T11:44:42.994Z"
   },
   {
     "id": "e3058619",
@@ -33710,8 +33621,7 @@
     "features": [
       "Rotating fingerpins",
       "Active sidebar",
-      "Tapered drivers",
-      "Guttable"
+      "Tapered drivers"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",
     "media": [
@@ -33780,7 +33690,7 @@
       }
     ],
     "views": 663,
-    "lastUpdated": "2023-07-25T11:20:19.906Z"
+    "lastUpdated": "2024-01-18T11:44:42.996Z"
   },
   {
     "id": "7e967792",
@@ -33975,8 +33885,7 @@
       "Sidepins",
       "Active sidebar",
       "Barrel drivers",
-      "Serrated/threaded milling",
-      "Guttable"
+      "Serrated/threaded milling"
     ],
     "media": [
       {
@@ -34037,7 +33946,7 @@
       }
     ],
     "views": 404,
-    "lastUpdated": "2023-07-25T11:20:19.906Z"
+    "lastUpdated": "2024-01-18T11:44:42.996Z"
   },
   {
     "id": "8f99236e",
@@ -35710,8 +35619,7 @@
       "Active sidebar",
       "Barrel drivers",
       "Serrated/threaded milling",
-      "Rotating fingerpins",
-      "Guttable"
+      "Rotating fingerpins"
     ],
     "media": [
       {
@@ -35790,7 +35698,7 @@
       }
     ],
     "views": 542,
-    "lastUpdated": "2023-09-04T11:27:09.026Z"
+    "lastUpdated": "2024-01-18T11:44:42.997Z"
   },
   {
     "id": "00cf7717",
@@ -36234,8 +36142,7 @@
       "Cabinet lock",
       "Flat steel key",
       "Curtain",
-      "False gates",
-      "Destructive gut"
+      "False gates"
     ],
     "media": [
       {
@@ -36268,7 +36175,7 @@
       }
     ],
     "views": 202,
-    "lastUpdated": "2024-01-15T21:27:04.412Z"
+    "lastUpdated": "2024-01-18T11:44:42.997Z"
   },
   {
     "id": "5a4310d5",
@@ -36285,8 +36192,7 @@
     "features": [
       "Cabinet lock",
       "Flat steel key",
-      "Curtain",
-      "Destructive gut"
+      "Curtain"
     ],
     "media": [
       {
@@ -36340,7 +36246,7 @@
       }
     ],
     "views": 866,
-    "lastUpdated": "2024-01-15T21:27:04.412Z"
+    "lastUpdated": "2024-01-18T11:44:42.997Z"
   },
   {
     "id": "d1a5cd90",
@@ -36445,9 +36351,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [
-      "Destructive gut"
-    ],
     "media": [
       {
         "title": "By: LockPicker1969",
@@ -36479,7 +36382,7 @@
       }
     ],
     "views": 1415,
-    "lastUpdated": "2023-07-25T11:20:19.908Z"
+    "lastUpdated": "2024-01-18T11:44:42.997Z"
   },
   {
     "id": "6f837bb4",
@@ -40321,8 +40224,7 @@
       "Unsprung sliders",
       "Gin spool drivers",
       "Serrated/threaded milling",
-      "Active sidebar",
-      "Guttable"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -40348,7 +40250,7 @@
       }
     ],
     "views": 87,
-    "lastUpdated": "2023-09-26T20:34:37.410Z"
+    "lastUpdated": "2024-01-18T11:44:43.000Z"
   },
   {
     "id": "b4d87196",

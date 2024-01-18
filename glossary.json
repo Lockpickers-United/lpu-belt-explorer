@@ -176,7 +176,7 @@
   },
   {
     "term": "cam lock",
-    "definition": "Consists of a cylindrical base and a rotating cam lever (the \"cam\") attached to the base. When the key or tool is inserted and turned in the lock, the cam rotates, locking or unlocking the mechanism. ",
+    "definition": "Consists of a cylindrical base and a rotating cam lever (the 'cam') attached to the base. When the key or tool is inserted and turned in the lock, the cam rotates, locking or unlocking the mechanism. ",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -254,7 +254,7 @@
   },
   {
     "term": "core",
-    "definition": "The term \"core\" has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context.",
+    "definition": "The term 'core' has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -338,17 +338,6 @@
   {
     "term": "depth / height",
     "definition": "The height to which a specific part of the bitting is cut."
-  },
-  {
-    "term": "destructive gut",
-    "definition": "Lock that cannot be [gutted](/#/glossary?term=gutting) (disassembled) without damaging some of its components, by means such as grinding off rivets. Note that this damage does not render the lock inoperable. See also [unguttable](/#/glossary?term=unguttable).",
-    "media": {
-      "title": "By: TheGreenishOne",
-      "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/52919298696_4c5e275e54_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52919298696/in/album-72177720314012610/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/52919298696_6e230b6a29_o.jpg"
-    }
   },
   {
     "term": "dial (lock)",
@@ -443,7 +432,7 @@
   },
   {
     "term": "euro-profile cylinder",
-    "definition": "A lock type common in Europe, sometimes referred to as simply \"euro\". A full version will have two functioning ends with either a keyway or knob. A \"half\" eruo-profile cylinder will only have a single side with keyway. It is common locksport practice to cut a full euro cylinder in half to make two locks.",
+    "definition": "A lock type common in Europe, sometimes referred to as simply 'euro'. A full version will have two functioning ends with either a keyway or knob. A 'half' eruo-profile cylinder will only have a single side with keyway. It is common locksport practice to cut a full euro cylinder in half to make two locks.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -585,12 +574,8 @@
     }
   },
   {
-    "term": "guttable",
-    "definition": "Lock that can be [gutted](/#/glossary?term=gutting) non-destructively."
-  },
-  {
     "term": "gutting",
-    "definition": "To disassemble a lock into its individual parts.",
+    "definition": "To non-destructively disassemble a lock into its individual parts.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -915,6 +900,10 @@
     }
   },
   {
+    "term": "partial gut",
+    "definition": "Denotes a lock which is difficult to fully disassemble and can be used in a belt request without documentation of full gutting."
+  },
+  {
     "term": "passive pin",
     "definition": "A pin that doesn't have a coding role in the lock and doesn't need to be picked to open the lock. Generally used for key control."
   },
@@ -1031,7 +1020,7 @@
   },
   {
     "term": "plug follower",
-    "definition": "A long cylinder used to push the plug out when disassembling a lock, holding the driver pins in place inside the bible. Often just called \"follower\".",
+    "definition": "A long cylinder used to push the plug out when disassembling a lock, holding the driver pins in place inside the bible. Often just called 'follower'.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1156,7 +1145,7 @@
   },
   {
     "term": "safe lock",
-    "definition": "Lock made to secure the door of a safe by use of a bolt. LPU uses the term \"safe lock\" to distinguish a certain class of [lever lock](/#/glossary?term=lever) while other locks -- including dial locks which use gated wheels -- are common in safes as well.",
+    "definition": "Lock made to secure the door of a safe by use of a bolt. LPU uses the term 'safe lock' to distinguish a certain class of [lever lock](/#/glossary?term=lever) while other locks -- including dial locks which use gated wheels -- are common in safes as well.",
     "media": {
       "title": "By: MartinHewitt",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1345,7 +1334,7 @@
   },
   {
     "term": "skeletonized core",
-    "definition": "Lock cylinder design where portions of the cylinder's material are removed or cut away, leaving a more open or \"skeleton-like\" structure. Common in cheap locks, as a way to save money on material.",
+    "definition": "Lock cylinder design where portions of the cylinder's material are removed or cut away, leaving a more open or 'skeleton-like' structure. Common in cheap locks, as a way to save money on material.",
     "media": {
       "title": "By: PeaceWeapon",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1503,7 +1492,7 @@
   },
   {
     "term": "tree drivers",
-    "definition": "Generally called \"christmas tree drivers\", or simply \"trees\"; driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree.",
+    "definition": "Generally called 'christmas tree drivers', or simply 'trees'; driver pins that look like a spool fused with a gin spool. So called for their simillarity to a christmas tree.",
     "media": {
       "title": "By: PeaceWeapon",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1571,7 +1560,7 @@
   },
   {
     "term": "wafer",
-    "definition": "(1) A tumbler shaped like a flat piece of metal, generally found in many mailbox locks. (2) A tumbler that slides in one direction, that is the size of the plug chamber it occupies. At rest it blocks the rotation of the plug by locking into grooves in the lock housing. As the correct key is inserted, it retracts into the plug completely. This definition does not consider the \"wafer-shaped\" condition of the tumbler. Although somewhat controversial for that reason, it is the most accepted definition. (3) For some, a subset of sliders that block the rotation of the plug by locking into grooves in the housing. This is also somewhat controversial. (4) A lock that uses wafers as main locking mechanism."
+    "definition": "(1) A tumbler shaped like a flat piece of metal, generally found in many mailbox locks. (2) A tumbler that slides in one direction, that is the size of the plug chamber it occupies. At rest it blocks the rotation of the plug by locking into grooves in the lock housing. As the correct key is inserted, it retracts into the plug completely. This definition does not consider the 'wafer-shaped' condition of the tumbler. Although somewhat controversial for that reason, it is the most accepted definition. (3) For some, a subset of sliders that block the rotation of the plug by locking into grooves in the housing. This is also somewhat controversial. (4) A lock that uses wafers as main locking mechanism."
   },
   {
     "term": "ward",
