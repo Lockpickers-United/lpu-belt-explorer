@@ -60,5 +60,413 @@
          "value" : 0.015512621633056,
          "count" : "220"
       }
+   ],
+   "topLocksOwn": [
+      {
+         "rank": "1",
+         "lock": "Master Lock 140, 141"
+      },
+      {
+         "rank": "2",
+         "lock": "American Lock 1100 / A1100"
+      },
+      {
+         "rank": "3",
+         "lock": "Master Lock #3"
+      },
+      {
+         "rank": "4",
+         "lock": "Any Acrylic Padlock"
+      },
+      {
+         "rank": "5",
+         "lock": "Master Lock 410 LOTO (Lockout Tagout)"
+      },
+      {
+         "rank": "6",
+         "lock": "Master Lock 150"
+      },
+      {
+         "rank": "7",
+         "lock": "ABUS 72/40"
+      },
+      {
+         "rank": "8",
+         "lock": "PACLOCK 90A Pro"
+      },
+      {
+         "rank": "9",
+         "lock": "Master Lock 570, 575, 576"
+      },
+      {
+         "rank": "10",
+         "lock": "ABUS 55/40"
+      },
+      {
+         "rank": "11",
+         "lock": "ASSA 700"
+      },
+      {
+         "rank": "12",
+         "lock": "Mul-T-Lock Classic, Interactive"
+      },
+      {
+         "rank": "13",
+         "lock": "Brinks Brass Padlocks"
+      },
+      {
+         "rank": "14",
+         "lock": "ABUS 64Ti Titalium"
+      },
+      {
+         "rank": "15",
+         "lock": "Medeco Original, Biaxial, M3"
+      },
+      {
+         "rank": "16",
+         "lock": "Australian Lock Co. BiLock"
+      },
+      {
+         "rank": "17",
+         "lock": "Master Lock #1"
+      },
+      {
+         "rank": "18",
+         "lock": "Any lock with any tool"
+      },
+      {
+         "rank": "19",
+         "lock": "American Lock 5200"
+      },
+      {
+         "rank": "20",
+         "lock": "ABUS 80TI Titalium"
+      },
+      {
+         "rank": "21",
+         "lock": "Robur 2391 Safe Deposit Lock"
+      },
+      {
+         "rank": "22",
+         "lock": "Any Cutaway Lock"
+      },
+      {
+         "rank": "23",
+         "lock": "Master Lock #5"
+      },
+      {
+         "rank": "24",
+         "lock": "ACE Brass Padlock"
+      },
+      {
+         "rank": "25",
+         "lock": "Master Lock Magnum"
+      }
+   ],
+   "topLocksPicked": [
+      {
+         "rank": "1",
+         "lock": "Master Lock 140, 141"
+      },
+      {
+         "rank": "2",
+         "lock": "Master Lock #3"
+      },
+      {
+         "rank": "3",
+         "lock": "Any Acrylic Padlock"
+      },
+      {
+         "rank": "4",
+         "lock": "American Lock 1100 / A1100"
+      },
+      {
+         "rank": "5",
+         "lock": "Master Lock 150"
+      },
+      {
+         "rank": "6",
+         "lock": "Master Lock 570, 575, 576"
+      },
+      {
+         "rank": "7",
+         "lock": "ABUS 55/40"
+      },
+      {
+         "rank": "8",
+         "lock": "ABUS 72/40"
+      },
+      {
+         "rank": "9",
+         "lock": "Master Lock 410 LOTO (Lockout Tagout)"
+      },
+      {
+         "rank": "10",
+         "lock": "Brinks Brass Padlocks"
+      },
+      {
+         "rank": "11",
+         "lock": "Any lock with any tool"
+      },
+      {
+         "rank": "12",
+         "lock": "Mul-T-Lock Classic, Interactive"
+      },
+      {
+         "rank": "13",
+         "lock": "Master Lock #1"
+      },
+      {
+         "rank": "14",
+         "lock": "Master Lock #5"
+      },
+      {
+         "rank": "15",
+         "lock": "PACLOCK 90A Pro"
+      },
+      {
+         "rank": "16",
+         "lock": "Any Cutaway Lock"
+      },
+      {
+         "rank": "17",
+         "lock": "ABUS 64Ti Titalium"
+      },
+      {
+         "rank": "18",
+         "lock": "Master Lock Magnum"
+      },
+      {
+         "rank": "19",
+         "lock": "ABUS 80TI Titalium"
+      },
+      {
+         "rank": "20",
+         "lock": "American Lock 5200"
+      },
+      {
+         "rank": "21",
+         "lock": "ASSA 700"
+      },
+      {
+         "rank": "22",
+         "lock": "Robur 2391 Safe Deposit Lock"
+      },
+      {
+         "rank": "23",
+         "lock": "Medeco Original, Biaxial, M3"
+      },
+      {
+         "rank": "24",
+         "lock": "Australian Lock Co. BiLock"
+      },
+      {
+         "rank": "25",
+         "lock": "Mul-T-Lock Jr, Classic, Interactive"
+      }
+   ],
+   "topLocksRecorded": [
+      {
+         "rank": "1",
+         "lock": "American Lock 1100 / A1100"
+      },
+      {
+         "rank": "2",
+         "lock": "Master Lock 140, 141"
+      },
+      {
+         "rank": "3",
+         "lock": "Mul-T-Lock Classic, Interactive"
+      },
+      {
+         "rank": "4",
+         "lock": "ASSA 700"
+      },
+      {
+         "rank": "5",
+         "lock": "ABUS 72/40"
+      },
+      {
+         "rank": "6",
+         "lock": "Robur 2391 Safe Deposit Lock"
+      },
+      {
+         "rank": "7",
+         "lock": "Medeco Original, Biaxial, M3"
+      },
+      {
+         "rank": "8",
+         "lock": "Master Lock #3"
+      },
+      {
+         "rank": "9",
+         "lock": "Any Acrylic Padlock"
+      },
+      {
+         "rank": "10",
+         "lock": "Master Lock 410 LOTO (Lockout Tagout)"
+      },
+      {
+         "rank": "11",
+         "lock": "PACLOCK 90A Pro"
+      },
+      {
+         "rank": "12",
+         "lock": "ASSA 600"
+      },
+      {
+         "rank": "13",
+         "lock": "ASSA Twin Maximum, Twin Pro, Twin v10, Twin 2, Twin Global"
+      },
+      {
+         "rank": "14",
+         "lock": "Australian Lock Co. BiLock"
+      },
+      {
+         "rank": "15",
+         "lock": "GOAL P"
+      },
+      {
+         "rank": "16",
+         "lock": "Lockwood 214A40, 215A40, 270S70, 334B45, 356S63"
+      },
+      {
+         "rank": "17",
+         "lock": "Master Lock 570, 575, 576"
+      },
+      {
+         "rank": "18",
+         "lock": "Milencio Magnum / Yale Superior"
+      },
+      {
+         "rank": "19",
+         "lock": "Mul-T-Lock Jr, Classic, Interactive"
+      },
+      {
+         "rank": "20",
+         "lock": "ABUS 80TI Titalium"
+      },
+      {
+         "rank": "21",
+         "lock": "Any lock with any tool"
+      },
+      {
+         "rank": "22",
+         "lock": "ASSA 600, Max+ Restricted"
+      },
+      {
+         "rank": "23",
+         "lock": "GOAL D9"
+      },
+      {
+         "rank": "24",
+         "lock": "Master Lock 150"
+      },
+      {
+         "rank": "25",
+         "lock": "ASSA 500 / Ruko 500"
+      }
+   ],
+   "topLocksWishlist": [
+      {
+         "rank": "1",
+         "lock": "ASSA 700"
+      },
+      {
+         "rank": "2",
+         "lock": "American Lock 1100 / A1100"
+      },
+      {
+         "rank": "3",
+         "lock": "ASSA 500 / Ruko 500"
+      },
+      {
+         "rank": "4",
+         "lock": "PACLOCK 90A Pro"
+      },
+      {
+         "rank": "5",
+         "lock": "PACLOCK 90A"
+      },
+      {
+         "rank": "6",
+         "lock": "ASSA Desmo"
+      },
+      {
+         "rank": "7",
+         "lock": "Australian Lock Co. BiLock"
+      },
+      {
+         "rank": "8",
+         "lock": "Fichet F3D"
+      },
+      {
+         "rank": "9",
+         "lock": "Burg Wächter Alpha 800"
+      },
+      {
+         "rank": "10",
+         "lock": "GOAL Z"
+      },
+      {
+         "rank": "11",
+         "lock": "IKON WSW"
+      },
+      {
+         "rank": "12",
+         "lock": "ABUS 72/40"
+      },
+      {
+         "rank": "13",
+         "lock": "ABUS 80TI Titalium"
+      },
+      {
+         "rank": "14",
+         "lock": "Burg Wächter Gamma 700"
+      },
+      {
+         "rank": "15",
+         "lock": "Forte Enigma / Yuema 750"
+      },
+      {
+         "rank": "16",
+         "lock": "Master Lock 1145 - 1165D"
+      },
+      {
+         "rank": "17",
+         "lock": "Schlage Primus, Everest Primus"
+      },
+      {
+         "rank": "18",
+         "lock": "ABUS 55/40"
+      },
+      {
+         "rank": "19",
+         "lock": "Corbin Russwin Emhart"
+      },
+      {
+         "rank": "20",
+         "lock": "DOM System D"
+      },
+      {
+         "rank": "21",
+         "lock": "Gege pExtra"
+      },
+      {
+         "rank": "22",
+         "lock": "Lockman Megacross"
+      },
+      {
+         "rank": "23",
+         "lock": "Master Lock #19"
+      },
+      {
+         "rank": "24",
+         "lock": "Master Lock 150"
+      },
+      {
+         "rank": "25",
+         "lock": "Master Lock 410 LOTO (Lockout Tagout)"
+      }
    ]
 }
