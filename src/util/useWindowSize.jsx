@@ -1,27 +1,12 @@
-import {useEffect, useMemo, useState} from 'react'
-import debounce from 'debounce'
+import {useMemo} from 'react'
+import {useWindowSize} from 'usehooks-ts'
 
-export default function useWindowSize() {
-    const [dimensions, setDimensions] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight
-    })
-
-    useEffect(() => {
-        const handleResize = debounce(() => {
-            setDimensions({
-                width: window.innerWidth,
-                height: window.innerHeight
-            })
-        }, 100)
-
-        window.addEventListener('resize', handleResize)
-
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
+export default function useWindowSize2() {
+    const {width, height} = useWindowSize()
 
     return useMemo(() => ({
-        ...dimensions,
-        isMobile: dimensions.width < 650
-    }), [dimensions])
+        width,
+        height,
+        isMobile: width < 650
+    }), [width, height])
 }

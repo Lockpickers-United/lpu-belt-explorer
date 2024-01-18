@@ -52,7 +52,8 @@
         "react-markdown": "^8.0.7",
         "react-router-dom": "^6.21.0",
         "react-swipeable": "^7.0.1",
-        "remove-accents": "^0.5.0"
+        "remove-accents": "^0.5.0",
+        "usehooks-ts": "^2.9.4"
     },
     "devDependencies": {
         "@types/react": "^18.2.21",

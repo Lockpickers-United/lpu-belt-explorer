@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
@@ -7,9 +7,9 @@ import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useLocation} from 'react-router-dom'
+import {useDebounce} from 'usehooks-ts'
 import FilterContext from './FilterContext'
 import useWindowSize from '../util/useWindowSize'
-import debounce from 'debounce'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function LockListSearchBox() {
@@ -27,23 +27,23 @@ function LockListSearchBox() {
         inputEl.current.focus()
     }, [removeFilter])
 
-    const debounceChange = useMemo(() => {
-        return debounce(value => {
+    const handleChange = useCallback(event => {
+        const {value} = event.target
+        setText(value)
+    }, [])
+
+    const debounceText = useDebounce(text, 250)
+    useEffect(() => {
+        if (debounceText) {
+            window.scrollTo({top: 0})
             addFilters([
-                {key: 'search', value},
+                {key: 'search', value: debounceText},
                 {key: 'tab', value: 'search'},
                 {key: 'id', value: undefined},
                 {key: 'name', value: undefined}
             ], true)
-            window.scrollTo({top: 0})
-        }, 150)
-    }, [addFilters])
-
-    const handleChange = useCallback(event => {
-        const {value} = event.target
-        setText(value)
-        debounceChange(value)
-    }, [debounceChange])
+        }
+    }, [debounceText]) // eslint-disable-line
 
     const [open, setOpen] = useState(false)
     const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])

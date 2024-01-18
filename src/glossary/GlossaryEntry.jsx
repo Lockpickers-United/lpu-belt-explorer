@@ -48,7 +48,7 @@ function GlossaryEntry({entry, highlighted}) {
 
             await navigator.clipboard.writeText(href)
             enqueueSnackbar('Link copied to clipboard.')
-        }, [href, safeTerm])
+        }, [href])
 
         const style = {
             fontWeight: 700,

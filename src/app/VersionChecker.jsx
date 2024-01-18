@@ -1,53 +1,36 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import SystemUpdateIcon from '@mui/icons-material/SystemUpdate'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import dayjs from 'dayjs'
+import {useEffectOnce, useInterval} from 'usehooks-ts'
 
 function VersionChecker() {
     if (import.meta.env.DEV) return null
-    const [checkTime, setCheckTime] = useState(dayjs())
-    const [currentVersion, setCurrentVersion] = useState(null)
-    const [nextVersion, setNextVersion] = useState(null)
+    const [initial, setInitial] = useState()
+    const [version, setVersion] = useState()
 
-    const loadVersion = useCallback(async initial => {
+    const checkVersion = async first => {
         try {
             const response = await fetch('./version.json', {cache: 'no-cache'})
-            const {version} = (await response.json())
-            if (initial) setCurrentVersion(version)
-            setNextVersion(version)
-            setCheckTime(dayjs())
+            const {version: newVersion} = (await response.json())
+            if (first) {
+                setInitial(newVersion)
+            }
+            setVersion(newVersion)
         } catch (e) {
             console.warn('Unable to check version.', e)
+            setVersion('error')
         }
-    }, [])
+    }
 
-    useEffect(() => {
-        // Initial load
-        if (!currentVersion) {
-            loadVersion(true)
-        }
+    useEffectOnce(() => {
+        checkVersion(true)
+    })
+    useInterval(checkVersion, 10 * 60 * 1000) // 10 minutes
 
-        // Timer for checking later
-        const duration = 10 * 60 * 1000 // 10 minutes
-        let intervalId = setInterval(() => {
-            const now = dayjs()
-            // Only check the version 60 minutes after last check
-            const shouldCheckTime = checkTime.add(60, 'minutes')
-            if (now.isAfter(shouldCheckTime)) {
-                loadVersion()
-            }
-        }, duration)
+    const handleClick = useCallback(() => location.reload(), [])
 
-        // Clean up timer
-        return () => clearInterval(intervalId)
-    }, [checkTime, currentVersion, loadVersion])
-
-    const handleClick = useCallback(() => {
-        location.reload()
-    }, [])
-
-    if (!currentVersion || !nextVersion || currentVersion === nextVersion) return null
+    if (!initial || !version || initial === version) return null
     return (
         <Tooltip title='New Version Available' arrow disableFocusListener>
             <IconButton onClick={handleClick} style={{color: 'green', marginLeft: 8}}>
