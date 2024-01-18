@@ -8,6 +8,7 @@ import BeltDistribution from './BeltDistribution.jsx'
 import BrandBeltStats from './BrandBeltStats.jsx'
 import LockingMechanisms from './LockingMechanisms.jsx'
 import RedditBeltGrowth from './RedditBeltGrowth.jsx'
+import CollectionStatsBar from './CollectionStatsBar.jsx'
 
 function StatsMainPage() {
     const {width} = useWindowSize()
@@ -49,6 +50,9 @@ function StatsMainPage() {
 
             <div style={headerStyle}>Reddit User Belt Rankings</div>
             <RedditBeltGrowth/>
+
+            <div style={headerStyle}>Personal Collection Stats</div>
+            <CollectionStatsBar/>
         </div>
     )
 }
