@@ -21,6 +21,7 @@ function GlossaryImage({entry, highlighted}) {
     const handleClick = useCallback(() => {
         setOpen(true)
         searchParams.set('image', '1')
+        searchParams.set('term', term)
         setSearchParams(searchParams)
     }, [searchParams, setSearchParams])
 
