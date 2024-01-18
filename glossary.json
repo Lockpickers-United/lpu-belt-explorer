@@ -49,7 +49,14 @@
   },
   {
     "term": "bible",
-    "definition": "The part of a pin tumbler lock where the driver pins and springs reside."
+    "definition": "The part of a pin tumbler lock where the driver pins and springs reside.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53472383621_1e7369bc97_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53472383621/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53472383621_786d00fffa_o.jpg"
+    }
   },
   {
     "term": "bible cover",
@@ -284,7 +291,7 @@
   },
   {
     "term": "countermilling",
-    "definition": "Regular cut in the chamber of a lock, widening the diameter in a portion of it. Sometimes refering to [undercut](/#/glossary?term=undercut) type of milling."
+    "definition": "Regular cut in the chamber of a lock, widening the diameter in a portion of it. Sometimes refering to [undercut](/#/glossary?term=undercut%20milling) type of milling."
   },
   {
     "term": "curtain",
@@ -420,6 +427,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53469949070_2cfe3f36d8_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53469949070/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53469949070_889e47c78f_o.jpg"
+    }
+  },
+  {
+    "term": "drunken spool",
+    "definition": "[Spool](/#/glossary?term=spool) driver pin comprising two separate pieces which can move independently. Named for the erratic feedback it provides to the picker.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53451580256_6f4cfe0696_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451580256/in/album-72177720313919453/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53451580256_e98e8ef58d_o.jpg"
     }
   },
   {
@@ -664,6 +682,17 @@
     "definition": "A test to see whether an element is set or not by seeing if it has a small jiggle to it, corresponding to the spring movement. If there is none, it is binding or under/overset."
   },
   {
+    "term": "key blank",
+    "definition": "Key that has not yet been cut to any specific bitting.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471476312_af88baf611_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471476312/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471476312_ff7b9ee8a4_o.jpg"
+    }
+  },
+  {
     "term": "key code",
     "definition": "See [bitting code](/#/glossary?term=bitting%20code).",
     "media": {
@@ -841,6 +870,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53456009048_b5c95583ec_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53456009048/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53456009048_ac1fa3c4f7_o.jpg"
+    }
+  },
+  {
+    "term": "mushroom pin",
+    "definition": "Security driver pin that tapers from a regular cylinder with a wider, spool-like end. Named based on the visual similarity to a mushroom and cap.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53451895759_ddaeba1ed3_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451895759/in/album-72177720313919453/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53451895759_a5684b9618_o.jpg"
     }
   },
   {
@@ -1144,6 +1184,10 @@
     "definition": "Generally rounded or disc-like elements featuring a prong to interact with the key, another part of it interacting with another locking mechanism, like a sidebar. As the key is inserted, the prong moves along a laser cut track rotating the disc to the correct position to drop the sidebar into the gate."
   },
   {
+    "term": "sad assa",
+    "definition": "Known in LPU as the act of accidentally removing an unretained plug of a lock from the body while trying to remove the key, consequently causing pins and springs to jump everywhere. Was made infamous by the talented lockpicker Culper, who accidentally gutted an ASSA on video in this way. Video that was turned into a frequently used gif."
+  },
+  {
     "term": "safe lock",
     "definition": "Lock made to secure the door of a safe by use of a bolt. LPU uses the term 'safe lock' to distinguish a certain class of [lever lock](/#/glossary?term=lever) while other locks -- including dial locks which use gated wheels -- are common in safes as well.",
     "media": {
@@ -1359,6 +1403,17 @@
     }
   },
   {
+    "term": "slider track",
+    "definition": "Sometimes called laser track (although many are milled), consists of a continuous cut forming a more or less wiggly line along the blade of the key where the nubs for sliders, wafers or rotors travel and move to their correct positions.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471695479_2b44cf1c6b_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471695479/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471695479_97b64b033f_o.jpg"
+    }
+  },
+  {
     "term": "sliding levers",
     "definition": "Type of lever typical of italian lever locks. Technically not levers as they don't rotate about one point, but traditionally called so, for they are moved by the key in the same manner, allowing the talon of the bolt to pass through them to open the lock."
   },
@@ -1375,6 +1430,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53451998315_df5337ffb7_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451998315/in/album-72177720313919453/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53451998315_f2e80c8a95_o.jpg"
+    }
+  },
+  {
+    "term": "spoorated pin",
+    "definition": "[Spool](/#/glossary?term=spool) driver pin with serrations on the edges of its ends. Also known as a serrated spool.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53451998120_a7cc012ba9_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451998120/in/album-72177720313919453/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53451998120_294c500b19_o.jpg"
     }
   },
   {
@@ -1398,6 +1464,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53470618405_26f93a4bb4_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470618405/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53470618405_bf8ec47a7e_o.jpg"
+    }
+  },
+  {
+    "term": "t-pin",
+    "definition": "Security driver pin shaped like a 'T'. Provides variable feedback to the picker.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53451581346_1890af6265_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451581346/in/album-72177720313919453/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53451581346_795517bfdf_o.jpg"
     }
   },
   {
@@ -1568,7 +1645,14 @@
   },
   {
     "term": "warded lock",
-    "definition": "A lock where the actuator can be directly reached by the key, blocked by unmoving obstructions."
+    "definition": "A lock where the actuator can be directly reached by the key, blocked by unmoving obstructions.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471476417_d8a251004d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471476417/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471476417_8d1b4e0c70_o.jpg"
+    }
   },
   {
     "term": "warding",
@@ -1601,6 +1685,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53455518409_6733a2e09f_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455518409/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455518409_ca41b88b9f_o.jpg"
+    }
+  },
+  {
+    "term": "zero-bitted",
+    "definition": "Lock that is not yet pinned to a specific bitting. 2) A key not yet cut to a specific bitting. Note that a bitting of '0' will actually be a cut in the blanks of some manufacturers.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471476312_af88baf611_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471476312/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471476312_ff7b9ee8a4_o.jpg"
     }
   }
 ]
