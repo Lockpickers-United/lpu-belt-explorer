@@ -483,7 +483,14 @@
   },
   {
     "term": "false set",
-    "definition": "The small rotation of a plug as elements (particularly spools or false gates) look partially set, that does not allow the lock to open."
+    "definition": "The small rotation of a plug as elements (particularly spools or false gates) look partially set, that does not allow the lock to open.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53473373671_1d473f18d8_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53473373671/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53473373671_2224d5f605_o.jpg"
+    }
   },
   {
     "term": "feedback",
@@ -926,7 +933,14 @@
   },
   {
     "term": "overset",
-    "definition": "To lift an element too far past where it needs to be, preventing the lock from opening."
+    "definition": "To lift an element too far past where it needs to be, preventing the lock from opening.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53473373491_ee191eea26_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53473373491/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53473373491_17ef7d74d9_o.jpg"
+    }
   },
   {
     "term": "padlock",
@@ -993,7 +1007,14 @@
   },
   {
     "term": "pin-tumbler",
-    "definition": "Any lock using stacks of pins composed by a coding keypin and a driver pin. Although generally used for locks with vertical keyways with pins coming from the bible side, and opened with vertical keys coded on one edge, the group technically includes also the so-called dimple locks and some tubular pump locks."
+    "definition": "Any lock using stacks of pins composed by a coding keypin and a driver pin. Although generally used for locks with vertical keyways with pins coming from the bible side, and opened with vertical keys coded on one edge, the group technically includes also the so-called dimple locks and some tubular pump locks.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53471564862_6aa724ccfb_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471564862/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53471564862_23c2d3c659_o.jpg"
+    }
   },
   {
     "term": "pinning shoe",
@@ -1255,11 +1276,25 @@
   },
   {
     "term": "set",
-    "definition": "To lift an element to its required position for the lock to open, and for it to stay there due to tension."
+    "definition": "To lift an element to its required position for the lock to open, and for it to stay there due to tension.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53473683759_0ba86eaf17_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53473683759/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53473683759_c9548bb100_o.jpg"
+    }
   },
   {
     "term": "SFIC",
-    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another, called the [control key](/#/glossary?term=control%20key). See also [LFIC](/#/glossary?term=LFIC)"
+    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another, called the [control key](/#/glossary?term=control%20key). See also [LFIC](/#/glossary?term=LFIC)",
+    "media": {
+      "title": "By: LockSportsman",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53472465197_936baf33be_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53472465197/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53472465197_db71bc94c9_o.jpg"
+    }
   },
   {
     "term": "shackle",
@@ -1614,7 +1649,14 @@
   },
   {
     "term": "underset",
-    "definition": "A partially set element that is between its resting position and where it needs to be."
+    "definition": "A partially set element that is between its resting position and where it needs to be.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53473513653_60cfb9eca4_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53473513653/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53473513653_bec9c1be4c_o.jpg"
+    }
   },
   {
     "term": "unguttable",
