@@ -10,11 +10,13 @@ import LockingMechanisms from './LockingMechanisms.jsx'
 import RedditBeltGrowth from './RedditBeltGrowth.jsx'
 import CollectionStatsBar from './CollectionStatsBar.jsx'
 import CollectionTopLocks from './CollectionTopLocks.jsx'
+import HourlyRequestsLine from './HourlyRequestsLine.jsx'
+import TrafficStats from './TrafficStats.jsx'
 
 function StatsMainPage() {
     const {width} = useWindowSize()
-    const smallWidth = width < 560
-    const pagePadding = !smallWidth
+    const smallWindow = width < 560
+    const pagePadding = !smallWindow
         ? '24px 24px 32px 24px'
         : '8px 8px 32px 8px'
 
@@ -57,6 +59,12 @@ function StatsMainPage() {
 
             <div style={headerStyle}>Collections Top Locks</div>
             <CollectionTopLocks/>
+
+            <div style={headerStyle}>Hourly Traffic</div>
+            <HourlyRequestsLine/>
+
+            <div style={headerStyle}>Visits by Platform & Browser</div>
+            <TrafficStats/>
 
         </div>
     )
