@@ -1099,6 +1099,17 @@
     "definition": "Acronym for [progressive pinning](/#/glossary?term=progressive%20pinning)."
   },
   {
+    "term": "probe",
+    "definition": "Simple tool used for manipulating and testing lock components. Can be used to open inexpensive [cam locks](/#/glossary?term=cam%20locks) and padlocks by directly moving the locking pawl.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53460933487_4b6d43260d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53460933487/in/album-72177720313985501/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53460933487_08938102c1_o.jpg"
+    }
+  },
+  {
     "term": "profile",
     "definition": "The cross-sectional shape of a key or keyway.",
     "media": {
@@ -1335,7 +1346,14 @@
   },
   {
     "term": "shearline / shear line",
-    "definition": "A line representing the height to which pins must be lifted for the lock to open."
+    "definition": "A line representing the height to which pins must be lifted for the lock to open.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53473718329_551432d4c8_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53473718329/in/album-72177720314155751/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53473718329_dc4ffbd073_o.jpg"
+    }
   },
   {
     "term": "shimming (core)",
