@@ -5,13 +5,13 @@ import SiteStats from './SiteStats.jsx'
 import PhotoStats from './PhotoStats.jsx'
 import PopularAreas from './PopularAreas.jsx'
 import BeltDistribution from './BeltDistribution.jsx'
-import BrandBeltStats from './BrandBeltStats.jsx'
 import LockingMechanisms from './LockingMechanisms.jsx'
 import RedditBeltGrowth from './RedditBeltGrowth.jsx'
 import CollectionStatsBar from './CollectionStatsBar.jsx'
 import CollectionTopLocks from './CollectionTopLocks.jsx'
 import HourlyRequestsLine from './HourlyRequestsLine.jsx'
 import TrafficStats from './TrafficStats.jsx'
+import BrandDistribution from './BrandDistribution.jsx'
 
 function StatsMainPage() {
     const {width} = useWindowSize()
@@ -30,6 +30,7 @@ function StatsMainPage() {
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem'
         }}>
+
             <div style={firstHeaderStyle}>Site Stats</div>
             <SiteStats/>
 
@@ -45,8 +46,8 @@ function StatsMainPage() {
             <div style={headerStyle}>Belt Distribution</div>
             <BeltDistribution/>
 
-            <div style={headerStyle}>Brand Lock Distribution By Belt</div>
-            <BrandBeltStats/>
+            <div style={headerStyle}>Brand Lock Distribution</div>
+            <BrandDistribution/>
 
             <div style={headerStyle}>Locking Mechanisms</div>
             <LockingMechanisms/>
