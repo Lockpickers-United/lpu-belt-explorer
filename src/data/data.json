@@ -8,6 +8,9 @@
         "model": "Acrylic Padlock"
       }
     ],
+    "lockingMechanisms": [
+      "Various"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -39,7 +42,7 @@
       }
     ],
     "views": 6467,
-    "lastUpdated": "2023-07-25T11:20:19.879Z"
+    "lastUpdated": "2024-01-20T20:26:43.961Z"
   },
   {
     "id": "3ac43ea8",
@@ -84,6 +87,9 @@
         "model": "Cutaway Lock"
       }
     ],
+    "lockingMechanisms": [
+      "Various"
+    ],
     "media": [
       {
         "title": "By: mgsecure",
@@ -101,7 +107,7 @@
       }
     ],
     "views": 3045,
-    "lastUpdated": "2023-07-25T11:20:19.880Z"
+    "lastUpdated": "2024-01-20T20:26:43.962Z"
   },
   {
     "id": "b22bdd44",
@@ -111,6 +117,9 @@
         "make": "Any",
         "model": "lock with any tool"
       }
+    ],
+    "lockingMechanisms": [
+      "Various"
     ],
     "media": [
       {
@@ -129,7 +138,7 @@
       }
     ],
     "views": 4625,
-    "lastUpdated": "2023-07-25T11:20:19.880Z"
+    "lastUpdated": "2024-01-20T20:26:43.962Z"
   },
   {
     "id": "5ff7457c",
