@@ -22,6 +22,17 @@
     }
   },
   {
+    "term": "ARX pins",
+    "definition": "Keypins used in Medeco locks that have bottom of the true gate's groove capped off. They were made mainly to defeat the Medecoder, a tool that used the true gates groove as guide to decode the correct rotation of each keypin.",
+    "media": {
+      "title": "By: cmfxa",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53481213271_7415242430_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53481213271/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53481213271_6cef9beb38_o.jpg"
+    }
+  },
+  {
     "term": "ball bearing locking mechanism (padlocks)",
     "definition": "Unshimmable mechanism in padlocks where ball bearings are pushed into the shackle to prevent opening.",
     "media": {
@@ -586,7 +597,14 @@
   },
   {
     "term": "forked keypins",
-    "definition": "Keypins that have been shaped with a forked extremity where they contacts the key. This is usually to make mastering easier without the addition of mastering wafers."
+    "definition": "Keypins that have been shaped with a forked extremity where they contacts the key. This is usually to make mastering easier without the addition of mastering wafers.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53481357758_37ae9a9bff_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53481357758/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53481357758_6a1c89d9c0_o.jpg"
+    }
   },
   {
     "term": "front loader",
@@ -668,7 +686,14 @@
   },
   {
     "term": "hasp",
-    "definition": "Hardware device used for securing doors, lids, or gates. It consists of two main parts: a hinged metal plate (the hasp) and a looped metal strip (the staple). The hasp is attached to a fixed surface and folds over the looped staple, which is mounted on a movable part (like a door). "
+    "definition": "Hardware device used for securing doors, lids, or gates. It consists of two main parts: a hinged metal plate (the hasp) and a looped metal strip (the staple). The hasp is attached to a fixed surface and folds over the looped staple, which is mounted on a movable part (like a door). ",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53481623790_785c35fff3_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53481623790/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53481623790_c49a252cb7_o.jpg"
+    }
   },
   {
     "term": "high pin count",
