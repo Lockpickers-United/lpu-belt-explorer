@@ -11,7 +11,7 @@ function BrandBeltPie({beltData}) {
     const mobileLarge = width <= 428  // but test also at 412
     const smallWindow = width <= 560
 
-    const chartMargin = {top: 6, right: 40, bottom: 20, left: 40}
+    const chartMargin = {top: 12, right: 40, bottom: 20, left: 40}
 
     const chartHeight = mobileSmall ? 120
         : mobileMedium ? 140
