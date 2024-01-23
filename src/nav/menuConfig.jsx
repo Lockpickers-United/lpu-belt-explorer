@@ -4,7 +4,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import LeaderboardIcon from '@mui/icons-material/Leaderboard'
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
-import FactCheckIcon from '@mui/icons-material/FactCheck'
+import FeedIcon from '@mui/icons-material/Feed'
 
 export default [
     {
@@ -19,14 +19,14 @@ export default [
         }
     },
     {
-        title: 'Glossary',
-        icon: <MenuBookIcon fontSize='small'/>,
-        path: '/glossary'
-    },
-    {
         title: 'Belt Requirements',
         icon: <InfoOutlinedIcon fontSize='small'/>,
         path: '/info'
+    },
+    {
+        title: 'Glossary',
+        icon: <MenuBookIcon fontSize='small'/>,
+        path: '/glossary'
     },
     {
         title: 'Stats & Insights',
@@ -41,7 +41,7 @@ export default [
     {
         beta: true,
         title: 'About LPU Belts',
-        icon: <FactCheckIcon fontSize='small'/>,
+        icon: <FeedIcon fontSize='small'/>,
         path: '/about'
     }
 ]
