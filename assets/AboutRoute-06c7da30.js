@@ -1,4 +1,4 @@
-import{j as e,R as t,K as n,N as i,ak as a,al as o,a3 as s}from"./index-9ef44271.js";import{R as r}from"./react-markdown-5501adce.js";import"./index-88e54f53.js";const l=`## LockPickers United and the Evolution of the LPU Belt Ranking System
+import{j as e,R as t,K as n,N as i,ak as a,al as o,a3 as s}from"./index-91a1f898.js";import{R as r}from"./react-markdown-595a4c3d.js";import"./index-0481f064.js";const l=`## LockPickers United and the Evolution of the LPU Belt Ranking System
 
 ### Introduction to the Belt Ranking System
 
@@ -112,8 +112,4 @@ Also, everyone in #belt-explorer on Discord, for taking the time to help improve
 
 #### Thank you!
 
-`;function c(){return e.jsx(t.Fragment,{children:e.jsx(n,{style:{maxWidth:700,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:e.jsx(i,{children:e.jsx(r,{linkTarget:"_blank",children:d})})})})}const d=[l].join(`
-
----
-
-`);function u(){return e.jsxs(t.Fragment,{children:[e.jsx(a,{title:"About LPU Belts"}),e.jsx(c,{}),e.jsx(o,{}),e.jsx(s,{feature:"about"})]})}export{u as default};
+`;function c(){return e.jsx(t.Fragment,{children:e.jsx(n,{style:{maxWidth:700,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:e.jsx(i,{children:e.jsx(r,{linkTarget:"_blank",children:l})})})})}function p(){return e.jsxs(t.Fragment,{children:[e.jsx(a,{title:"About LPU Belts"}),e.jsx(c,{}),e.jsx(o,{}),e.jsx(s,{feature:"about"})]})}export{p as default};
