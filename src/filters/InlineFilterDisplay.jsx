@@ -20,8 +20,8 @@ function InlineFilterDisplay() {
     const [open, setOpen] = React.useState(false)
 
     const {collection} = filters
-    const {width} = useWindowSize()
-    const style = width < 736
+    const {isMobile} = useWindowSize()
+    const style = isMobile
         ? {maxWidth: 700, borderRadius: 0}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
 

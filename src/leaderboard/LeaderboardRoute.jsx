@@ -10,8 +10,7 @@ import LeaderboardFindMeButton from './LeaderboardFindMeButton'
 import LeaderboardSearchBox from './LeaderboardSearchBox'
 
 function LeaderboardRoute() {
-    const {width} = useWindowSize()
-    const isMobile = width < 650
+    const {isMobile} = useWindowSize()
     const [data, setData] = useState({data: [], metadata: {}})
     const [loading, setLoading] = useState(true)
     useEffect(() => {

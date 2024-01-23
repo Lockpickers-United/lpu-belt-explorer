@@ -36,8 +36,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     const [moving, setMoving] = useState(false)
 
     const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = media[openIndex] || {}
-    const {width} = useWindowSize()
-    const isMobile = width <= 500
+    const {isMobile} = useWindowSize()
 
     const handleLoaded = useCallback(() => setLoading(false), [])
     const handleClose = useCallback(() => {

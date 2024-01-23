@@ -14,8 +14,8 @@ function TrafficStats() {
         '#6a2200', '#621d00', '#581d00']
 
     // saving this for later...
-    const greenColors = ['#009e01', '#008d01', '#007804', '#006604',
-        '#005a04', '#004a02', '#003f01']
+    // const greenColors = ['#009e01', '#008d01', '#007804', '#006604',
+    //     '#005a04', '#004a02', '#003f01']
 
     const {width} = useWindowSize()
     const smallWindow = width <= 560

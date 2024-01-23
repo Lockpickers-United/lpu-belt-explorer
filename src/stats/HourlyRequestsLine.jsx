@@ -10,7 +10,6 @@ function HourlyRequestsLine() {
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
     const mobileMedium = width <= 395
-    const mobileLarge = width <= 428  // but test also at 412
     const smallWindow = width <= 560
 
     const chartHeight =

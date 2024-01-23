@@ -18,8 +18,7 @@ import Nav from '../nav/Nav'
 import LockListSearchBox from './LockListSearchBox'
 
 function LockListRoute() {
-    const {width} = useWindowSize()
-    const isMobile = width < 650
+    const {isMobile} = useWindowSize()
 
     const nav = (
         <React.Fragment>

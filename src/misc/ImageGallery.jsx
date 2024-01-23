@@ -21,8 +21,7 @@ function ImageGallery(props) {
         onBackButton,
         shareParams
     } = props
-    const {width} = useWindowSize()
-    const isMobile = width < 736
+    const {isMobile} = useWindowSize()
 
     const [open, setOpen] = useState(initiallyOpen)
 

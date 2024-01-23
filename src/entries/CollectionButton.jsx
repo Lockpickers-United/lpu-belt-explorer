@@ -23,8 +23,7 @@ function CollectionButton({id, dense}) {
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
-    const {width} = useWindowSize()
-    const isMobile = width <= 500
+    const {isMobile} = useWindowSize()
 
     const isCollected = useMemo(() => {
         return Object.keys(lockCollection)
