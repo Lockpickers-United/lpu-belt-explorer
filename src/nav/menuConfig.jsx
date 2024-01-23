@@ -39,7 +39,6 @@ export default [
         path: '/leaderboard'
     },
     {
-        beta: true,
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
