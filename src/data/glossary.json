@@ -174,6 +174,17 @@
     "definition": "To prevent a lock from functioning or gutting without physical damage. Dropping a driver pin in the plug is a common way to brick a lock."
   },
   {
+    "term": "BS",
+    "definition": "Initials for \"British Standard\", from \"British Standards Institution\" (BSI), a ratings and standards organization that develops standards for locks and lock cylinders, based in United Kingdom. Present in the face or label of many locks (example: Yale Superior), the well known BSI Kitemark (\"heart\") logo identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked from one to three stars. In some of the LPU ranked lever locks, BS in the model name identifies this certification.",
+    "media": {
+      "title": "By: Brummie Lock Picker",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53482369033_01110a92a7_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53482369033/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53482369033_7056031725_o.jpg"
+    }
+  },
+  {
     "term": "butterfly discs",
     "definition": "Discs from a disc detainer lock which have an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
   },
@@ -835,6 +846,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53453551847/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53453551847_7fb2cbb15d_o.jpg"
     }
+  },
+  {
+    "term": "Kitemark",
+    "definition": "Present in the face or label of many locks (example: Yale Superior), the well known [BSI](#/glossary?term=BS) certification Kitemark (\"heart\" logo) identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked from one to three stars."
   },
   {
     "term": "laminated padlock",
@@ -1530,6 +1545,17 @@
     }
   },
   {
+    "term": "SKG",
+    "definition": "The Dutch organization Quality Foundation for Facade construction (SKG) approves & rates locks on strength and durability. It is notable that SKG rating only involves destructive entry, not picking. Rating definitions are 1 star: not able to provide three minutes of resistance on its own. 2 stars: at least three minutes of resistance. 3 stars: at least five minutes of resistance.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53482369238_5cb91a126d_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53482369238/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53482369238_8028cba83d_o.jpg"
+    }
+  },
+  {
     "term": "sleeved core",
     "definition": "Core featuring a partial or complete sleeve around it, fixed or with limited movement, usually metallic, that will interact with the tumblers of the lock."
   },
@@ -1734,6 +1760,25 @@
   {
     "term": "tumbler",
     "definition": "A moving element on a lock that prevents opening until the correct key is inserted."
+  },
+  {
+    "term": "UL",
+    "definition": "Initials for \"Underwriters Laboratories\", a ratings and standards organization that develops standards for locks, lock cylinders, and associated hardware, such as bolts and latches, based in United States. Present in the face of many locks (example: Medeco Biaxial), identifies safety and security systems and devices that have been certified as meeting those standards of security. In locks, different UL ratings exist, depending on the type of lock.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53481327427_f2fca83363_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53481327427/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53481327427_0517c32e2f_o.jpg"
+    }
+  },
+  {
+    "term": "UL 437",
+    "definition": "Underwriters Laboratories certification for key locks."
+  },
+  {
+    "term": "UL 768",
+    "definition": "Underwriters Laboratories certification for combination locks."
   },
   {
     "term": "uncurtained",
