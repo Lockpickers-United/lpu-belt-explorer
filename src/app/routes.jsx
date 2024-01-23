@@ -51,8 +51,8 @@ export default [
     {
         path: '/about',
         lazy: async () => {
-            const {default: LPUHistoryRoute} = await import('../history/HistoryRoute')
-            return {element: <LPUHistoryRoute/>}
+            const {default: AboutRoute} = await import('../about/AboutRoute.jsx')
+            return {element: <AboutRoute/>}
         }
     },
     {
