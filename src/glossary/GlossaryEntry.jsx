@@ -38,7 +38,7 @@ function GlossaryEntry({entry, highlighted}) {
         return value
     }, [entry])
 
-    const GlossaryTerm = ({children: term, ...rest}) => {
+    const GlossaryTerm = ({children: term}) => {
         const safeTerm = encodeURI(term)
         const href = `https://share.lpubelts.com/?term=${safeTerm}`
 

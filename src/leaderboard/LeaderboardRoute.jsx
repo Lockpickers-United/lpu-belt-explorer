@@ -8,6 +8,7 @@ import useWindowSize from '../util/useWindowSize'
 import Leaderboard from './Leaderboard'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton'
 import LeaderboardSearchBox from './LeaderboardSearchBox'
+import LeaderboardSortButton from './LeaderboardSortButton'
 
 function LeaderboardRoute() {
     const {isMobile} = useWindowSize()
@@ -35,6 +36,7 @@ function LeaderboardRoute() {
     const nav = (
         <React.Fragment>
             <LeaderboardSearchBox data={data}/>
+            <LeaderboardSortButton/>
             <LeaderboardFindMeButton/>
             {!isMobile && <div style={{flexGrow: 1}}/>}
         </React.Fragment>

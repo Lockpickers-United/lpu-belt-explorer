@@ -42,6 +42,7 @@ module.exports = {
         '*.gif',
         '*.csv',
         '*.html',
-        '*.json'
+        '*.json',
+        '*.css'
     ]
 }

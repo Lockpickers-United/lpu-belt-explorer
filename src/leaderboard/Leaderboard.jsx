@@ -16,12 +16,20 @@ function Leaderboard({data, loading}) {
     const {user} = useContext(AuthContext)
     const scrollableRef = useRef()
 
-    const {user: highlightedUser} = useMemo(() => {
-        return queryString.parse(location.search)
+    const {highlightedUser, sort} = useMemo(() => {
+        const query = queryString.parse(location.search)
+        return {
+            highlightedUser: query.user,
+            sort: validSort.includes(query.sort) ? query.sort : undefined
+        }
     }, [location.search])
 
+    const sortedData = useMemo(() => {
+        if (loading) return skeletonData
+        return data.data.sort((a, b) => b[sort] - a[sort])
+    }, [sort, loading, data])
+
     const updateTime = loading ? '####-##-## ##:##' : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
-    const rows = loading ? skeletonData : data.data
 
     return (
         <React.Fragment>
@@ -36,7 +44,7 @@ function Leaderboard({data, loading}) {
                         <LeaderboardHeader/>
 
                         <TableBody>
-                            {rows.map((leader, index) => {
+                            {sortedData.map((leader, index) => {
                                 const isHighlighted = !!highlightedUser && (
                                     (highlightedUser === 'me' && leader.id === user.uid)
                                     || (highlightedUser === leader.displayName)
@@ -64,6 +72,13 @@ function Leaderboard({data, loading}) {
 
     )
 }
+
+const validSort = [
+    'own',
+    'picked',
+    'recorded',
+    'wishlist'
+]
 
 const skeletonData = [...Array(40)]
     .map((_, id) => ({

@@ -5,10 +5,23 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import TableCell from '@mui/material/TableCell'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import React from 'react'
+import React, {useCallback} from 'react'
+import {useSearchParams} from 'react-router-dom'
 
 function LeaderboardHeader() {
+    const [searchParams, setSearchParams] = useSearchParams()
+    const sort = searchParams.get('sort')
     const style = {border: 0, padding: '4px 12px', backgroundColor: '#000'}
+
+    const handleSort = useCallback(value => () => {
+        if (value && value !== sort) {
+            searchParams.set('sort', value)
+        } else {
+            searchParams.delete('sort')
+        }
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams, sort])
+
     return (
         <TableHead>
             <TableRow>
@@ -26,16 +39,32 @@ function LeaderboardHeader() {
                     Name
                 </TableCell>
                 <TableCell align='center' style={style}>
-                    <LockIcon/>
+                    <LockIcon
+                        color={sort === 'own' ? 'secondary' : undefined}
+                        onClick={handleSort('own')}
+                        style={{cursor: 'pointer'}}
+                    />
                 </TableCell>
                 <TableCell align='center' style={style}>
-                    <LockOpenOutlinedIcon/>
+                    <LockOpenOutlinedIcon
+                        color={sort === 'picked' ? 'secondary' : undefined}
+                        onClick={handleSort('picked')}
+                        style={{cursor: 'pointer'}}
+                    />
                 </TableCell>
                 <TableCell align='center' style={style}>
-                    <VideocamOutlinedIcon/>
+                    <VideocamOutlinedIcon
+                        color={sort === 'recorded' ? 'secondary' : undefined}
+                        onClick={handleSort('recorded')}
+                        style={{cursor: 'pointer'}}
+                    />
                 </TableCell>
                 <TableCell align='center' style={style}>
-                    <SavingsOutlinedIcon/>
+                    <SavingsOutlinedIcon
+                        color={sort === 'wishlist' ? 'secondary' : undefined}
+                        onClick={handleSort('wishlist')}
+                        style={{cursor: 'pointer'}}
+                    />
                 </TableCell>
             </TableRow>
         </TableHead>
