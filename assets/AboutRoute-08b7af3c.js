@@ -1,4 +1,4 @@
-import{j as e,R as t,K as n,N as i,ak as a,al as o,a3 as s}from"./index-a6130c28.js";import{M as r}from"./index-293cde6c.js";import{r as l}from"./index-83e19805.js";const c=`## LockPickers United and the Evolution of the LPU Belt Ranking System
+import{j as e,R as t,K as n,N as i,ak as a,al as o,a3 as s}from"./index-18a60fd6.js";import{M as r}from"./index-c31b8545.js";import{r as l}from"./index-24e46d86.js";const c=`## LockPickers United and the Evolution of the LPU Belt Ranking System
 
 ### Introduction to the Belt Ranking System
 
@@ -49,7 +49,7 @@ Tumbl3r highlighted the key aspects of the LPU Belt Ranking System and its devel
 
 **Aspirations for Belt Distribution**: There was a hope for a Pareto distribution among the belts, which seemed to have been achieved, reflecting a balance in the distribution of skill levels across the community.
 
-The system, initially a small project on Reddit, gradually expanded and evolved with contributions from various community members, including MMDeveloper, evr-, Supallama, loupgarou21, potkettleracism, and CorrectJeans (creator of the Dan System and current game master).
+The system, initially a small project on Reddit, gradually expanded and evolved with contributions from various community members, including ITH, MMDeveloper, evr-, Supallama, loupgarou21, potkettleracism, and CorrectJeans (creator of the Dan System and current game master).
 
 ### The Dan System
 
