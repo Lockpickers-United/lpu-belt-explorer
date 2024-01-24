@@ -33,6 +33,14 @@ export default [
         }
     },
     {
+        beta: true,
+        path: '/dans',
+        lazy: async () => {
+            const {default: DansRoute} = await import('../info/DansRoute')
+            return {element: <DansRoute/>}
+        }
+    },
+    {
         path: '/stats',
         lazy: async () => {
             const {default: StatsRoute} = await import('../stats/StatsRoute')
@@ -61,6 +69,10 @@ export default [
             const {default: PrivacyRoute} = await import('../privacy/PrivacyRoute')
             return {element: <PrivacyRoute/>}
         }
-    }
+    },
+    {
+        path: '*',
+        loader: () => redirect('/locks')
+    },
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

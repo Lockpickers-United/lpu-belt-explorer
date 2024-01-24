@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import rehypeExternalLinks from 'rehype-external-links'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
 import DanPoints from './DanPoints'
@@ -130,7 +131,7 @@ function Entry({entry, expanded, onExpand}) {
                             {!!entry.notes &&
                                 <FieldValue name='Notes' value={
                                     <Typography component='div' style={{marginTop: -16}}>
-                                        <ReactMarkdown linkTarget='_blank'>
+                                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                             {entry.notes}
                                         </ReactMarkdown>
                                     </Typography>

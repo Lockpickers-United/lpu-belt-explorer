@@ -2,6 +2,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import rehypeExternalLinks from 'rehype-external-links'
 import aboutMD from '../resources/about.md?raw'
 
 function AboutPage() {
@@ -15,7 +16,7 @@ function AboutPage() {
                 marginButtom: 16
             }}>
                 <CardContent>
-                    <ReactMarkdown linkTarget="_blank">
+                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                         {aboutMD}
                     </ReactMarkdown>
                 </CardContent>

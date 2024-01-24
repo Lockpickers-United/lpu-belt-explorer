@@ -5,6 +5,7 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard'
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import FeedIcon from '@mui/icons-material/Feed'
+import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 
 export default [
     {
@@ -22,6 +23,12 @@ export default [
         title: 'Belt Requirements',
         icon: <InfoOutlinedIcon fontSize='small'/>,
         path: '/info'
+    },
+    {
+        beta: true,
+        title: 'Dan System',
+        icon: <InsightsOutlinedIcon fontSize='small'/>,
+        path: '/dans'
     },
     {
         title: 'Glossary',

@@ -30,6 +30,7 @@ function GlossaryEntry({entry, highlighted}) {
     }, [highlighted, entry, scrolled])
 
     const markdown = useMemo(() => {
+        console.log('wtf', entry)
         let value = `\`${entry.term}\`. ${entry.definition}`
         if (entry.media?.title) {
             const photoCredit = entry.media.title.charAt(0).toLowerCase() + entry?.media.title.slice(1)
@@ -38,8 +39,7 @@ function GlossaryEntry({entry, highlighted}) {
         return value
     }, [entry])
 
-    const GlossaryTerm = ({children}) => {
-        const [term] = children
+    const GlossaryTerm = ({children: term, ...rest}) => {
         const safeTerm = encodeURI(term)
         const href = `https://share.lpubelts.com/?term=${safeTerm}`
 
