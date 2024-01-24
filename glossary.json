@@ -155,6 +155,17 @@
     }
   },
   {
+    "term": "bottlenose pins",
+    "definition": "Also called \"nipple pins\" by some, it's a type of keypin with a thin cylindrical protrusion from the key contacting extremity. Mostly used by DOM, it's meant for increasing resistance to foil impressioning.",
+    "media": {
+      "title": "By: Reinder Stegen",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53484805404_7f7d0510d8_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53484805404/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53484805404_4c116fbcc1_o.jpg"
+    }
+  },
+  {
     "term": "bottom of the keyway",
     "definition": "The area of the keyway opposite to the pins in a normal pin tumbler; corresponds to the inferior area of the keyway when the bible is upwards; in regular euro cylinder installation, with the bible downwards, will be the top part of the keyway."
   },
@@ -175,7 +186,7 @@
   },
   {
     "term": "BS",
-    "definition": "Initials for \"British Standard\", from \"British Standards Institution\" (BSI), a ratings and standards organization that develops standards for locks and lock cylinders, based in United Kingdom. Present in the face or label of many locks (example: Yale Superior), the well known BSI Kitemark (\"heart\") logo identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked from one to three stars. In some of the LPU ranked lever locks, BS in the model name identifies this certification.",
+    "definition": "Initials for \"British Standard\", from \"British Standards Institution\" (BSI), a ratings and standards organization that develops standards for locks and lock cylinders, based in United Kingdom. Present in the face or label of many locks (example: Yale Superior), the well known BSI [Kitemark](/#/glossary?term=kitemark) (\"heart\") logo identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked either one or three stars. In some of the LPU ranked lever locks, BS in the model name identifies this certification.",
     "media": {
       "title": "By: Brummie Lock Picker",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -241,6 +252,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53477628621_5ebd9506ab_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53477628621/in/album-72177720314210693/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53477628621_69ab0ddff4_o.jpg"
+    }
+  },
+  {
+    "term": "chisel pin",
+    "definition": "Keypin that has been shaped with the key contacting extremity shaped like a wedge instead of a cone. Frequently used when correct keypin rotation is a requirement to open the lock (example: Medeco, Emhart), but can be also found in other locks without that feature (example: DOM system D).",
+    "media": {
+      "title": "By: Reinder Stegen",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53484781194_e7488b273f_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53484781194/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53484781194_98b5b1c0f8_o.jpg"
     }
   },
   {
@@ -311,12 +333,12 @@
     }
   },
   {
-    "term": "counter-rotation",
-    "definition": "To rotate the plug towards neutral from a false set. Can be caused by the lock elements, usually spools, or done manually."
-  },
-  {
     "term": "countermilling",
     "definition": "Regular cut in the chamber of a lock, widening the diameter in a portion of it. Sometimes refering to [undercut](/#/glossary?term=undercut%20milling) type of milling."
+  },
+  {
+    "term": "counterrotation",
+    "definition": "To rotate the plug towards neutral from a false set. Can be caused by the lock elements, usually spools, or done manually. Sometimes written counter-rotation."
   },
   {
     "term": "curtain",
@@ -427,6 +449,10 @@
     "definition": "To pick a lock with unsprung tumblers such as a disc detainer by moving tumblers directly to their correct position, memorising the key."
   },
   {
+    "term": "differs",
+    "definition": "An abbreviation of “different combinations\", meaning the number of different keys that can be made for a specific model of lock. This will depend on the design of the key, the number of locking components, the number of available positions for each component, and the tolerances of the lock."
+  },
+  {
     "term": "dimple",
     "definition": "Generally used to identify a certain subtype of pin tumblers in which the coding is marked on the key mainly on the flat side; this distinction is useful from a tool choice perspective; although used to refer to the lock type itself, this isn’t technically correct, as the word “dimple” actually designates the round markings on the wide face of the key where the keypins make contact.",
     "media": {
@@ -515,6 +541,17 @@
   {
     "term": "DSS",
     "definition": "See [disc steering system](/#/glossary?term=disc%20steering%20system)."
+  },
+  {
+    "term": "dumbbell pin",
+    "definition": "A type of DOM pin, similar to a spool, but with an t-pin-like extension on each side, that is flared out at the tip. It's one of the \"magic\" DOM pins.",
+    "media": {
+      "title": "By: Reinder Stegen",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53484623463_9b7b01cfa3_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53484623463/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53484623463_f5c7f4990a_o.jpg"
+    }
   },
   {
     "term": "element",
@@ -848,8 +885,8 @@
     }
   },
   {
-    "term": "Kitemark",
-    "definition": "Present in the face or label of many locks (example: Yale Superior), the well known [BSI](#/glossary?term=BS) certification Kitemark (\"heart\" logo) identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked from one to three stars."
+    "term": "kitemark",
+    "definition": "Present in the face or label of many locks (example: Yale Superior), the well known [BSI](#/glossary?term=BS) certification Kitemark (\"heart\" logo) identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked one star (protection against physical attack, key security, fire resistance, durability, plug extraction, and lock bumping) or three stars (additional snap protection)."
   },
   {
     "term": "laminated padlock",
@@ -921,7 +958,14 @@
   },
   {
     "term": "magic DOM drivers",
-    "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends."
+    "definition": "General colloquial term for driver pins that are frequently found in modern DOM locks. They are so called because they are harder to pick than their shape suggests. They include DOM barrels, spools with widening ends, and the so called dumbbells, a type of t-spool (mix of spool with t-pin extremities) with flared out ends.",
+    "media": {
+      "title": "By: Reinder Stegen",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53484890270_cc4470219a_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53484890270/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53484890270_b78756d8a9_o.jpg"
+    }
   },
   {
     "term": "magnetic pins",
@@ -990,6 +1034,10 @@
   {
     "term": "music wire",
     "definition": "A type of wire used in pianos, that is a good material to construct lever lock picks and similar tools."
+  },
+  {
+    "term": "nipple pins",
+    "definition": "Another name for [bottlenose pins](/#/glossary?term=bottlenose%20pins)"
   },
   {
     "term": "operating key",
@@ -1328,6 +1376,10 @@
     }
   },
   {
+    "term": "sash lock",
+    "definition": "An upright mortice lock, consisting of a latch bolt and a key operated bolt."
+  },
+  {
     "term": "security card",
     "definition": "Form of identification issued with certain high-security locks, required for making duplicate keys. It provides an additional layer of security by ensuring that only authorized individuals can have keys replicated.",
     "media": {
@@ -1546,7 +1598,7 @@
   },
   {
     "term": "SKG",
-    "definition": "The Dutch organization Quality Foundation for Facade construction (SKG) approves & rates locks on strength and durability. It is notable that SKG rating only involves destructive entry, not picking. Rating definitions are 1 star: not able to provide three minutes of resistance on its own. 2 stars: at least three minutes of resistance. 3 stars: at least five minutes of resistance.",
+    "definition": "The Dutch organization Quality Foundation for Facade construction (SKG) approves & rates locks on strength and durability. It is notable that SKG rating only involves destructive entry, not picking. In short, the rating definitions are 1 star: not able to provide three minutes of resistance on its own. 2 stars: at least three minutes of resistance. 3 stars: at least five minutes of resistance.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1569,6 +1621,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454613605/in/album-72177720313985501/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454613605_cc09a7933b_o.jpg"
     }
+  },
+  {
+    "term": "slider fork",
+    "definition": "Specialized pick, generaly custom made from a blank or broken pick, with the tip shaped like a two prong fork, as to grab both sides of a slider nub. Helps test for jiggle in unsprung sliders or wafers."
   },
   {
     "term": "slider track",
@@ -1758,6 +1814,17 @@
     }
   },
   {
+    "term": "TS007",
+    "definition": "TS007 is a technical specification that uses stars and a third party identifier, most commonly the BS [Kitemark](/#/glossary?term=kitemark), to provide a mix and match approach with interchanging cylinders and hardware to achieve a minimum level of security of at least 3 stars. This ensures the installed equipment meets the criteria for protection against the most common methods of attack: drilling, picking, snapping, bumping and plug extraction. Some lock cylinders include TS007 in their model name, demonstrating compliance with this specification. ",
+    "media": {
+      "title": "By: Devo",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53482809619_3311fc6385_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53482809619/in/album-72177720314210693/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53482809619_ab9c1ea909_o.jpg"
+    }
+  },
+  {
     "term": "tumbler",
     "definition": "A moving element on a lock that prevents opening until the correct key is inserted."
   },
@@ -1778,7 +1845,7 @@
   },
   {
     "term": "UL 768",
-    "definition": "Underwriters Laboratories certification for combination locks."
+    "definition": "Underwriters Laboratories certification for combination locks. Divides combination locks between groups according to resistance to unauthorized opening, either into Group 2 or 2M - moderately resistant - or Group 1 (1R if also resistant to radiological attacks) - highly resistant."
   },
   {
     "term": "uncurtained",
@@ -1835,11 +1902,11 @@
   },
   {
     "term": "ward",
-    "definition": "A piece of metal used to block the rotation of a blank in a lever or warded lock."
+    "definition": "A fixed metalic obstruction inside a lock case used to block the rotation of a blank or a key that was not cut to pass around it. Used in lever or [warded locks](/#/glossary?term=warded%20lock)."
   },
   {
     "term": "warded lock",
-    "definition": "A lock where the actuator can be directly reached by the key, blocked by unmoving obstructions.",
+    "definition": "A type of lock, the mechanism of which makes use only of [wards](/#/glossary?term=ward). In these, the actuator can be directly reached by the key, blocked by unmoving obstructions.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
