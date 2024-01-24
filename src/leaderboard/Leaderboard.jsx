@@ -20,13 +20,14 @@ function Leaderboard({data, loading}) {
         const query = queryString.parse(location.search)
         return {
             highlightedUser: query.user,
-            sort: validSort.includes(query.sort) ? query.sort : undefined
+            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined
         }
     }, [location.search])
 
     const sortedData = useMemo(() => {
         if (loading) return skeletonData
-        return data.data.sort((a, b) => b[sort] - a[sort])
+        else if (sort) return data.data.toSorted((a, b) => b[sort] - a[sort])
+        else return data.data
     }, [sort, loading, data])
 
     const updateTime = loading ? '####-##-## ##:##' : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
