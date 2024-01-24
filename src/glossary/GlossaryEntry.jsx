@@ -30,7 +30,6 @@ function GlossaryEntry({entry, highlighted}) {
     }, [highlighted, entry, scrolled])
 
     const markdown = useMemo(() => {
-        console.log('wtf', entry)
         let value = `\`${entry.term}\`. ${entry.definition}`
         if (entry.media?.title) {
             const photoCredit = entry.media.title.charAt(0).toLowerCase() + entry?.media.title.slice(1)
