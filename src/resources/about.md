@@ -49,7 +49,7 @@ Tumbl3r highlighted the key aspects of the LPU Belt Ranking System and its devel
 
 **Aspirations for Belt Distribution**: There was a hope for a Pareto distribution among the belts, which seemed to have been achieved, reflecting a balance in the distribution of skill levels across the community.
 
-The system, initially a small project on Reddit, gradually expanded and evolved with contributions from various community members, including MMDeveloper, evr-, Supallama, loupgarou21, potkettleracism, and CorrectJeans (creator of the Dan System and current game master).
+The system, initially a small project on Reddit, gradually expanded and evolved with contributions from various community members, including ITH, MMDeveloper, evr-, Supallama, loupgarou21, potkettleracism, and CorrectJeans (creator of the Dan System and current game master).
 
 ### The Dan System
 
