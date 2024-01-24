@@ -1,4 +1,4 @@
-import{j as e,R as t,K as n,N as i,a5 as a,ak as r,al as s}from"./index-87c8a13e.js";import{R as l}from"./react-markdown-6270899c.js";import"./index-3340eb75.js";const h=`## Earn Lockpicking Karate Flair
+import{j as e,R as t,K as n,N as i,a5 as a,ak as r,al as s}from"./index-a6130c28.js";import{M as l}from"./index-293cde6c.js";import{r as h}from"./index-83e19805.js";const c=`## Earn Lockpicking Karate Flair
 
 As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
@@ -58,7 +58,7 @@ If you wish to sync the belt to your user on Reddit you should use the following
 
 Any additional information can be added below in different lines if necessary, but the above formula must be in one
 line.
-`,c=`## FAQ
+`,d=`## FAQ
 
 Q: **Must I begin at "White Belt Picker" and progress through the ranks, or can I skip directly to the belt that
 is appropriate for me?**
@@ -359,7 +359,7 @@ that we are doing so publicly, and provide an appropriate grace period (generall
 working on that lock to have time to get their accomplishment ranked at the old belt level.
 
 Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
-`,d=`### Recent Changes: September&ndash;November, 2023
+`,u=`### Recent Changes: September&ndash;November, 2023
 
 **New Additions**
 
@@ -411,8 +411,8 @@ Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpickin
 * **Lips 8300** Added and samelined with Nemef NF2 - they are nearly the same lock, extra checkpin or no.
 * **Lockwood 215A40 and 214A40** Added and samelined with 334B40 - same core, same lock
 * **Lockwood 356S63, 270S70** Samelined with 334B40 (see previous.)
-`;function u(){const o="12/4/2023";return e.jsx(t.Fragment,{children:e.jsxs(n,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(i,{children:e.jsx(l,{linkTarget:"_blank",children:m})}),e.jsxs(a,{children:["Updated: ",o]})]})})}const m=[h,c,d].join(`
+`;function m(){const o="12/4/2023";return e.jsx(t.Fragment,{children:e.jsxs(n,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(i,{children:e.jsx(l,{rehypePlugins:[[h,{target:"_blank"}]],children:p})}),e.jsxs(a,{children:["Updated: ",o]})]})})}const p=[c,d,u].join(`
 
 ---
 
-`);function f(){return e.jsxs(t.Fragment,{children:[e.jsx(r,{title:"Information"}),e.jsx(u,{}),e.jsx(s,{})]})}export{f as default};
+`);function y(){return e.jsxs(t.Fragment,{children:[e.jsx(r,{title:"Information"}),e.jsx(m,{}),e.jsx(s,{})]})}export{y as default};

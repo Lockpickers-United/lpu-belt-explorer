@@ -1,4 +1,4 @@
-import{j as e,R as o,K as t,N as n,ak as a,al as r}from"./index-87c8a13e.js";import{R as i}from"./react-markdown-6270899c.js";import"./index-3340eb75.js";const s=`# Privacy Policy
+import{j as e,R as o,K as t,N as n,ak as a,al as r}from"./index-a6130c28.js";import{M as i}from"./index-293cde6c.js";import{r as s}from"./index-83e19805.js";const c=`# Privacy Policy
 
 Last updated: November 28, 2023
 
@@ -209,4 +209,4 @@ If you have any questions about this Privacy Policy, You can contact us:
 
 
 - By visiting this page on our website: [https://lpubelts.com/contact/](https://lpubelts.com/contact/)
-`;function c(){return e.jsx(o.Fragment,{children:e.jsx(t,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:e.jsx(n,{children:e.jsx(i,{linkTarget:"_blank",children:s})})})})}function d(){return e.jsxs(o.Fragment,{children:[e.jsx(a,{title:"Privacy Policy"}),e.jsx(c,{}),e.jsx(r,{})]})}export{d as default};
+`;function l(){return e.jsx(o.Fragment,{children:e.jsx(t,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:e.jsx(n,{children:e.jsx(i,{rehypePlugins:[[s,{target:"_blank"}]],children:c})})})})}function f(){return e.jsxs(o.Fragment,{children:[e.jsx(a,{title:"Privacy Policy"}),e.jsx(l,{}),e.jsx(r,{})]})}export{f as default};
