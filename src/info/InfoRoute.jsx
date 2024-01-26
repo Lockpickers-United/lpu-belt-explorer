@@ -6,7 +6,7 @@ import InfoPage from './InfoPage'
 function InfoRoute() {
     return (
         <React.Fragment>
-            <Nav title='Information'/>
+            <Nav title='Belt Requirements'/>
 
             <InfoPage/>
 
