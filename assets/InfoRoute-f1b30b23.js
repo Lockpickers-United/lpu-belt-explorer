@@ -1,4 +1,4 @@
-import{j as e,R as t,K as n,M as i,N as a,a5 as r,ak as s,al as l}from"./index-6d01bb54.js";import{G as h}from"./GithubButton-d420b54f.js";import{M as c}from"./index-709b943a.js";import{r as d}from"./index-162351ff.js";const u=`## Earn Lockpicking Karate Flair
+import{j as e,R as t,K as n,M as i,N as a,a5 as r,ak as s,al as l}from"./index-597998ef.js";import{G as h}from"./GithubButton-742565c1.js";import{M as c}from"./index-2a3b7189.js";import{r as d}from"./index-193906f1.js";const u=`## Earn Lockpicking Karate Flair
 
 As a way to have fun (perhaps at the expense of Six Sigma) this sub gives its members the opportunity to earn user flair in the form of karate belts. Belt flair is issued based on the accomplishments of the member, with each higher level requiring increased community participation and the picking of increasingly difficult locks.
 
@@ -415,4 +415,4 @@ Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpickin
 
 ---
 
-`);function v(){return e.jsxs(t.Fragment,{children:[e.jsx(s,{title:"Information"}),e.jsx(k,{}),e.jsx(l,{})]})}export{v as default};
+`);function v(){return e.jsxs(t.Fragment,{children:[e.jsx(s,{title:"Belt Requirements"}),e.jsx(k,{}),e.jsx(l,{})]})}export{v as default};
