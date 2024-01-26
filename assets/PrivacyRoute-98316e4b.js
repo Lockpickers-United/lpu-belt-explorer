@@ -1,8 +1,4 @@
-import{j as e,R as o,K as t,N as n,ak as a,al as r}from"./index-66cbca3d.js";import{M as i}from"./index-30e758e7.js";import{r as s}from"./index-16bc973e.js";const c=`# Privacy Policy
-
-Last updated: November 28, 2023
-
-This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+import{j as e,R as o,K as n,M as a,N as r,a5 as i,ak as s,al as c}from"./index-6d01bb54.js";import{G as l}from"./GithubButton-d420b54f.js";import{M as u}from"./index-709b943a.js";import{r as h}from"./index-162351ff.js";const d=`This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
 
 We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the [Privacy Policy Generator](https://www.termsfeed.com/privacy-policy-generator/).
 
@@ -209,4 +205,4 @@ If you have any questions about this Privacy Policy, You can contact us:
 
 
 - By visiting this page on our website: [https://lpubelts.com/contact/](https://lpubelts.com/contact/)
-`;function l(){return e.jsx(o.Fragment,{children:e.jsx(t,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:e.jsx(n,{children:e.jsx(i,{rehypePlugins:[[s,{target:"_blank"}]],children:c})})})})}function f(){return e.jsxs(o.Fragment,{children:[e.jsx(a,{title:"Privacy Policy"}),e.jsx(l,{}),e.jsx(r,{})]})}export{f as default};
+`;function f(){const t="November 28, 2023";return e.jsx(o.Fragment,{children:e.jsxs(n,{style:{maxWidth:800,marginLeft:"auto",marginRight:"auto",marginTop:16,marginButtom:16},children:[e.jsx(a,{title:"Privacy Policy",action:e.jsx(l,{url:"https://github.com/Lockpickers-United/lpu-belt-explorer/blob/main/src/resources/privacyPolicy.md"})}),e.jsx(r,{children:e.jsx(u,{rehypePlugins:[[h,{target:"_blank"}]],children:d})}),e.jsxs(i,{children:["Last Updated: ",t]})]})})}function v(){return e.jsxs(o.Fragment,{children:[e.jsx(s,{title:"Privacy Policy"}),e.jsx(f,{}),e.jsx(c,{})]})}export{v as default};
