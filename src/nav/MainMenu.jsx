@@ -14,7 +14,7 @@ import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
 
 function MainMenu() {
-    const {beta} = useContext(AppContext)
+    const {admin, beta} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const [openTitle, setOpenTitle] = useState('My Collection')
 
@@ -59,6 +59,7 @@ function MainMenu() {
 
                     {menuConfig
                         .filter(menuItem => beta || !menuItem.beta)
+                        .filter(menuItem => admin || !menuItem.admin)
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>
                                 <MainMenuItem
