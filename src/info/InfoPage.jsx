@@ -1,9 +1,11 @@
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
+import CardHeader from '@mui/material/CardHeader'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
+import GithubButton from '../nav/GithubButton'
 import introMd from '../resources/intro.md?raw'
 import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
@@ -20,6 +22,9 @@ function InfoPage() {
                 marginTop: 16,
                 marginButtom: 16
             }}>
+                <CardHeader title='Belt Requirements' action={
+                    <GithubButton url='https://github.com/Lockpickers-United/lpu-belt-explorer/blob/main/src/resources/info.md'/>
+                }/>
                 <CardContent>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                         {markdown}

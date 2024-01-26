@@ -1,5 +1,3 @@
-# Dan system
-
 ## Preamble:
 
 The three-fold purpose of the Dan system is to:
