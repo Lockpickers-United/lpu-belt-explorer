@@ -71,6 +71,14 @@ export default [
         }
     },
     {
+        admin: true,
+        path: '/admin',
+        lazy: async () => {
+            const {default: AdminRoute} = await import('../admin/AdminRoute')
+            return {element: <AdminRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },

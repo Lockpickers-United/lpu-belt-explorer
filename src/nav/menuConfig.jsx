@@ -6,6 +6,7 @@ import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import FeedIcon from '@mui/icons-material/Feed'
 import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
+import BuildIcon from '@mui/icons-material/Build'
 
 export default [
     {
@@ -49,5 +50,11 @@ export default [
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
+    },
+    {
+        admin: true,
+        title: 'Admin Tools',
+        icon: <BuildIcon fontSize='small'/>,
+        path: '/admin'
     }
 ]

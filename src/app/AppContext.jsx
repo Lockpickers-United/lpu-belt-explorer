@@ -13,7 +13,7 @@ export function AppProvider({children}) {
     }, [setBeta])
 
     const value = useMemo(() => ({
-        admin: adminUids.includes(user.uid),
+        admin: adminUids.includes(user?.uid),
         beta,
         setBeta: handleSetBeta
     }), [user, beta, handleSetBeta])
