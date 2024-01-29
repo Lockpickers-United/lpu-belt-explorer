@@ -27,6 +27,7 @@ function CollectionButton({id, dense}) {
 
     const isCollected = useMemo(() => {
         return Object.keys(lockCollection)
+            .filter(key => !excludedKeys.includes(key))
             .reduce((acc, key) => acc || lockCollection[key].includes(id), false)
     }, [id, lockCollection])
 
@@ -110,5 +111,10 @@ function CollectionButton({id, dense}) {
         </React.Fragment>
     )
 }
+
+const excludedKeys = [
+    'public',
+    'displayName'
+]
 
 export default CollectionButton

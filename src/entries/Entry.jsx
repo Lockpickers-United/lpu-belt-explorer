@@ -28,7 +28,7 @@ function Entry({entry, expanded, onExpand}) {
     const ref = useRef(null)
 
     const handleChange = useCallback((_, isExpanded) => {
-        onExpand(isExpanded ? entry.id : false)
+        onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry.id, onExpand])
 
     useEffect(() => {

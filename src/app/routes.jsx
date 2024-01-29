@@ -71,6 +71,14 @@ export default [
         }
     },
     {
+        beta: true,
+        path: '/profile/:userId',
+        lazy: async () => {
+            const {default: ProfileRoute} = await import('../profile/ProfileRoute')
+            return {element: <ProfileRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },

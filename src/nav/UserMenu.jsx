@@ -10,10 +10,12 @@ import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
+import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
+import AppContext from '../app/AppContext'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
@@ -21,6 +23,7 @@ import {useNavigate} from 'react-router-dom'
 
 function UserMenu() {
     const navigate = useNavigate()
+    const {beta} = useContext(AppContext)
     const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -67,7 +70,15 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>{user.displayName}</ListItemText>
                         </MenuItem>
-
+                        {
+                            beta &&
+                            <MenuItem onClick={handleClick(`/profile/${user.uid}`)}>
+                                <ListItemIcon>
+                                    <AccountBoxIcon/>
+                                </ListItemIcon>
+                                <ListItemText>View Profile</ListItemText>
+                            </MenuItem>
+                        }
                         <Divider/>
 
                         <MenuItem disabled>

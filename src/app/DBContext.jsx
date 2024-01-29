@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -46,6 +46,12 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const getProfile = useCallback(async userId => {
+        const ref = doc(db, 'lockcollections', userId)
+        const value = await getDoc(ref)
+        return value.data()
+    }, [])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -79,8 +85,9 @@ export function DBProvider({children}) {
         ])],
         lockCollection,
         addToLockCollection,
-        removeFromLockCollection
-    }), [lockCollection, addToLockCollection, removeFromLockCollection])
+        removeFromLockCollection,
+        getProfile
+    }), [lockCollection, addToLockCollection, removeFromLockCollection, getProfile])
 
     return (
         <DBContext.Provider value={value}>

@@ -26,28 +26,26 @@ function Entries() {
     }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
     return (
-        <React.Fragment>
-            <div style={{margin: 8, paddingBottom: 32}}>
-                <InlineFilterDisplay/>
+        <div style={{margin: 8, paddingBottom: 32}}>
+            <InlineFilterDisplay/>
 
-                {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
+            {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
-                {entries.length === 0 && <NoEntriesCard/>}
+            {entries.length === 0 && <NoEntriesCard/>}
 
-                {compact
-                    ? <CompactEntries entries={entries}/>
-                    : entries.map(entry =>
-                        <Entry
-                            key={entry.id}
-                            entry={entry}
-                            expanded={entry.id === defExpanded}
-                            onExpand={setExpanded}
-                        />
-                    )
-                }
+            {compact
+                ? <CompactEntries entries={entries}/>
+                : entries.map(entry =>
+                    <Entry
+                        key={entry.id}
+                        entry={entry}
+                        expanded={entry.id === defExpanded}
+                        onExpand={setExpanded}
+                    />
+                )
+            }
 
-            </div>
-        </React.Fragment>
+        </div>
     )
 }
 
