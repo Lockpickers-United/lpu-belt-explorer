@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useMemo, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
+import Tracker from '../app/Tracker'
 import {collectionOptions} from '../data/collectionTypes'
 import allEntries from '../data/data.json'
 import FilterButton from '../filters/FilterButton'
@@ -59,6 +60,8 @@ function ProfileRoute() {
                         {error && <ProfileNotFound/>}
 
                         <Footer/>
+
+                        <Tracker feature='profile'/>
                     </LockListProvider>
                 </DataProvider>
             </FilterProvider>
