@@ -16,6 +16,7 @@ import BeltToolbar from './BeltToolbar'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import LockListSearchBox from './LockListSearchBox'
+import allEntries from '../data/data.json'
 
 function LockListRoute() {
     const {isMobile} = useWindowSize()
@@ -44,7 +45,7 @@ function LockListRoute() {
 
     return (
         <FilterProvider>
-            <DataProvider>
+            <DataProvider allEntries={allEntries}>
                 <LockListProvider>
                     <Nav title='Locks' extras={nav}/>
 

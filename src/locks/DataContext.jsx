@@ -5,11 +5,10 @@ import FilterContext from './FilterContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
-import allEntries from '../data/data.json'
 
 const DataContext = React.createContext({})
 
-export function DataProvider({children}) {
+export function DataProvider({children, allEntries}) {
     const {anyCollection, lockCollection} = useContext(DBContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
@@ -49,7 +48,7 @@ export function DataProvider({children}) {
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [anyCollection, lockCollection])
+    }, [allEntries, anyCollection, lockCollection])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -105,7 +104,7 @@ export function DataProvider({children}) {
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
-    }, [])
+    }, [allEntries])
 
     // TODO: Move to entryName.js and fix references
     const getNameFromId = useCallback(id => {
@@ -123,7 +122,7 @@ export function DataProvider({children}) {
         visibleEntries,
         getEntryFromId,
         getNameFromId
-    }), [getNameFromId, getEntryFromId, visibleEntries])
+    }), [allEntries, getNameFromId, getEntryFromId, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

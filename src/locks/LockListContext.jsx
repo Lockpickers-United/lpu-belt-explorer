@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
-import {useHotkeys} from 'react-hotkeys-hook'
 import DataContext from './DataContext'
 import FilterContext from './FilterContext'
 
@@ -46,9 +45,6 @@ export function LockListProvider({children}) {
     }, [addFilters, expanded])
 
     const [displayAll, setDisplayAll] = useState(false)
-
-    const [beta, setBeta] = useState(false)
-    useHotkeys('ctrl+shift+m', () => setBeta(!beta))
 
     const [compact, setCompact] = useState(false)
 

@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import {useParams} from 'react-router-dom'
 import rehypeExternalLinks from 'rehype-external-links'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
@@ -23,6 +24,7 @@ import LockImageGallery from './LockImageGallery'
 import RelatedEntryButton from './RelatedEntryButton'
 
 function Entry({entry, expanded, onExpand}) {
+    const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
@@ -151,7 +153,7 @@ function Entry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
-                        {!!entry.relatedIds &&
+                        {!!entry.relatedIds && !userId &&
                             <FieldValue name='Other Versions' value={
                                 <React.Fragment>
                                     {entry.relatedIds.map(relatedId =>
