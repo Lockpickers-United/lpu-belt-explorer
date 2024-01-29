@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react'
 import BeltDistributionBar from './BeltDistributionBar.jsx'
-import collectionBeltSaves from '../data/statsCollectionsSummary.json'
+import collectionBeltSaves from '../data/statsCollectionsFull.json'
 import {ToggleButtonGroup} from '@mui/material'
 import lockSummaryData from '../data/statsLockSummary.json'
 import siteSummaryData from '../data/statsSiteSummary.json'
