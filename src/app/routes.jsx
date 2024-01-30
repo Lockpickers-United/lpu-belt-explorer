@@ -33,7 +33,6 @@ export default [
         }
     },
     {
-        beta: true,
         path: '/dans',
         lazy: async () => {
             const {default: DansRoute} = await import('../info/DansRoute')
