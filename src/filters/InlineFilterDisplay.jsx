@@ -20,7 +20,7 @@ function InlineFilterDisplay({profile}) {
 
     const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
 
-    const {collection = 'Any'} = filters
+    const {collection = (userId && filterCount === 0 ? 'Any' : null)} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, borderRadius: 0}
@@ -53,9 +53,9 @@ function InlineFilterDisplay({profile}) {
     const isValidCollection = typeof collection === 'string' &&
         (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
 
-    const title = isValidCollection
-        ? (userId ? `${profile.displayName}'s Collection` : 'My Collection')
-        : 'Filters'
+    const title = userId
+        ? `${profile.displayName}'s Collection`
+        : isValidCollection ? 'My Collection' : 'Filters'
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 0}}>
