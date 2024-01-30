@@ -1,4 +1,174 @@
 {
+   "traffic28days" : [
+      {
+         "Date": "2024-01-01",
+         "Visitors": 513,
+         "Visits": 852,
+         "Lock Views": 3528
+      },
+      {
+         "Date": "2024-01-02",
+         "Visitors": 608,
+         "Visits": 1051,
+         "Lock Views": 3983
+      },
+      {
+         "Date": "2024-01-03",
+         "Visitors": 561,
+         "Visits": 929,
+         "Lock Views": 3257
+      },
+      {
+         "Date": "2024-01-04",
+         "Visitors": 522,
+         "Visits": 834,
+         "Lock Views": 3489
+      },
+      {
+         "Date": "2024-01-05",
+         "Visitors": 460,
+         "Visits": 686,
+         "Lock Views": 2171
+      },
+      {
+         "Date": "2024-01-06",
+         "Visitors": 569,
+         "Visits": 887,
+         "Lock Views": 3694
+      },
+      {
+         "Date": "2024-01-07",
+         "Visitors": 465,
+         "Visits": 829,
+         "Lock Views": 3408
+      },
+      {
+         "Date": "2024-01-08",
+         "Visitors": 472,
+         "Visits": 734,
+         "Lock Views": 2982
+      },
+      {
+         "Date": "2024-01-09",
+         "Visitors": 463,
+         "Visits": 729,
+         "Lock Views": 3287
+      },
+      {
+         "Date": "2024-01-10",
+         "Visitors": 412,
+         "Visits": 600,
+         "Lock Views": 2667
+      },
+      {
+         "Date": "2024-01-11",
+         "Visitors": 436,
+         "Visits": 647,
+         "Lock Views": 2359
+      },
+      {
+         "Date": "2024-01-12",
+         "Visitors": 431,
+         "Visits": 662,
+         "Lock Views": 2959
+      },
+      {
+         "Date": "2024-01-13",
+         "Visitors": 440,
+         "Visits": 679,
+         "Lock Views": 2735
+      },
+      {
+         "Date": "2024-01-14",
+         "Visitors": 407,
+         "Visits": 627,
+         "Lock Views": 3091
+      },
+      {
+         "Date": "2024-01-15",
+         "Visitors": 429,
+         "Visits": 658,
+         "Lock Views": 2533
+      },
+      {
+         "Date": "2024-01-16",
+         "Visitors": 564,
+         "Visits": 761,
+         "Lock Views": 2304
+      },
+      {
+         "Date": "2024-01-17",
+         "Visitors": 543,
+         "Visits": 726,
+         "Lock Views": 2625
+      },
+      {
+         "Date": "2024-01-18",
+         "Visitors": 457,
+         "Visits": 632,
+         "Lock Views": 2257
+      },
+      {
+         "Date": "2024-01-19",
+         "Visitors": 454,
+         "Visits": 664,
+         "Lock Views": 2424
+      },
+      {
+         "Date": "2024-01-20",
+         "Visitors": 424,
+         "Visits": 653,
+         "Lock Views": 2463
+      },
+      {
+         "Date": "2024-01-21",
+         "Visitors": 377,
+         "Visits": 528,
+         "Lock Views": 2046
+      },
+      {
+         "Date": "2024-01-22",
+         "Visitors": 402,
+         "Visits": 655,
+         "Lock Views": 2661
+      },
+      {
+         "Date": "2024-01-23",
+         "Visitors": 432,
+         "Visits": 676,
+         "Lock Views": 2406
+      },
+      {
+         "Date": "2024-01-24",
+         "Visitors": 481,
+         "Visits": 727,
+         "Lock Views": 2233
+      },
+      {
+         "Date": "2024-01-25",
+         "Visitors": 462,
+         "Visits": 869,
+         "Lock Views": 2117
+      },
+      {
+         "Date": "2024-01-26",
+         "Visitors": 360,
+         "Visits": 1062,
+         "Lock Views": 2146
+      },
+      {
+         "Date": "2024-01-27",
+         "Visitors": 423,
+         "Visits": 1174,
+         "Lock Views": 2288
+      },
+      {
+         "Date": "2024-01-28",
+         "Visitors": 376,
+         "Visits": 979,
+         "Lock Views": 2013
+      }
+   ],
    "trafficTotals" : {
       "platform" : [
          {
