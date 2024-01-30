@@ -1,5 +1,20 @@
 [
   {
+    "term": "A2P",
+    "definition": "A2P means Assurance Prévention Protection, and is a certification for security standards attributed by CNPP, the National Center for Protection and Prevention, based in France. It's attributed to equipments and products of protection that were extensively tested, demonstrating superior protection and security. A2P norm includes a criteria of protection against intrusion, and a criteria of protection against fire. Lock cylinders can be classified from one to three stars, according to their resistance to a physical attack.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53497707951_da72904468_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53497707951/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53497707951_3195412c9e_o.jpg"
+    }
+  },
+  {
+    "term": "ACF",
+    "definition": "Acronym for \"Association des Crocheteurs de France\", the French Lockpickers Association, founded by enthusiasts of non-destructive entry. The Association promotes research and education in locksport, as well as championships."
+  },
+  {
     "term": "active sidebar",
     "definition": "Sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked.",
     "media": {
@@ -200,6 +215,10 @@
     "definition": "Discs from a disc detainer lock which have an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
   },
   {
+    "term": "c-rake",
+    "definition": "Same as [snake rake](/#/glossary?term=snake%20rake)."
+  },
+  {
     "term": "cabinet lock",
     "definition": "In an LPU context, a lock made to secure the door of a cabinet by use of a bolt. Ranked cabinet locks are all [lever locks](/#/glossary?term=lever) of varying levels of security. Broader usage includes cam locks such as the ones used to secure file cabinets, etc.",
     "media": {
@@ -275,6 +294,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53460471757/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53460471757_4519cdeab6_o.jpg"
     }
+  },
+  {
+    "term": "city rake",
+    "definition": "Rake profile that tries to emulate a key bitting, so that by wiggling it or jiggling it it might open a lock. Called so because of how it looks like a cityscape. Also called L-rake."
   },
   {
     "term": "CL",
@@ -421,6 +444,10 @@
   {
     "term": "DD Pick / Disc Pick",
     "definition": "Pick that has tensioner and tip rotating independently co-axially, used to pick disc detainer locks."
+  },
+  {
+    "term": "deforest",
+    "definition": "Pick profile with an offset shank, usually ending in a diamond style tip; in this case also called deforest (or DeForest) diamond or offset diamond. Named for its designer, Bill DeForrest, the name used by most manufacturers for this profile has since lost one of the \"r\"s. Deforest balls and gems exist also."
   },
   {
     "term": "depth / height",
@@ -674,6 +701,10 @@
     "definition": "A disc detainer lock that can be front or rear tensioned can be picked while tensioned from either the front or rearmost disc."
   },
   {
+    "term": "FSIC",
+    "definition": "Acronym for Full Size Interchangeable Core. Similar to LFIC, it's a type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). Unlike [SFIC](/#/glossary?term=SFIC), neither [LFIC](/#/glossary?term=LFIC) or FSIC are a universal formats. While in most LFIC's the control key lifts the pins to a second shear line, FSIC control key is usually longer and has an extra cut, that interacts with the last pin controling the holding bar or pin. See also [SFIC](/#/glossary?term=SFIC) and ."
+  },
+  {
     "term": "gate",
     "definition": "A divot on a slider or disc that allows the sidebar to fall into it.",
     "media": {
@@ -733,6 +764,10 @@
     }
   },
   {
+    "term": "half diamond",
+    "definition": "Pick profile where the tip looks like a triangle: one side sits flat along the end of the shaft, and the free point is used for picking."
+  },
+  {
     "term": "hasp",
     "definition": "Hardware device used for securing doors, lids, or gates. It consists of two main parts: a hinged metal plate (the hasp) and a looped metal strip (the staple). The hasp is attached to a fixed surface and folds over the looped staple, which is mounted on a movable part (like a door). ",
     "media": {
@@ -753,6 +788,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448878226/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53448878226_a7a8c7137c_o.jpg"
     }
+  },
+  {
+    "term": "holding pin / bar",
+    "definition": "Element in [FSICs](/#/glossary?term=FSIC) and some [LFICs](/#/glossary?term=LFIC) that hold the lock cylinder inside the housing."
   },
   {
     "term": "hook",
@@ -817,6 +856,10 @@
   {
     "term": "jiggle test",
     "definition": "A test to see whether an element is set or not by seeing if it has a small jiggle to it, corresponding to the spring movement. If there is none, it is binding or under/overset."
+  },
+  {
+    "term": "jigglers",
+    "definition": "Tools that are meant to emulate different types of bitting, usually for water locks, and to be used as a key. The user will try to jiggle various of these jigglers inside a lock in turn until they get the lock opened."
   },
   {
     "term": "key blank",
@@ -889,6 +932,10 @@
     "definition": "Present in the face or label of many locks (example: Yale Superior), the well known [BSI](#/glossary?term=BS) certification Kitemark (\"heart\" logo) identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked one star (protection against physical attack, key security, fire resistance, durability, plug extraction, and lock bumping) or three stars (additional snap protection)."
   },
   {
+    "term": "l-rake",
+    "definition": "Same as [city rake](/#/glossary?term=city%20rake)."
+  },
+  {
     "term": "laminated padlock",
     "definition": "Padlock constructed from multiple layers of metal plates, usually steel, laminated and riveted together. The laminated lock body contains a traditional core, locking mechanism, and shackle.",
     "media": {
@@ -931,7 +978,7 @@
   },
   {
     "term": "LFIC",
-    "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). See also [SFIC](/#/glossary?term=SFIC)"
+    "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). This key's action usually lifts the pins to a second shear line, allowing for the retraction of the holding pin or bar. See also [FSIC](/#/glossary?term=FSIC) and the smaller [SFIC](/#/glossary?term=SFIC)"
   },
   {
     "term": "lock",
@@ -1038,6 +1085,10 @@
   {
     "term": "nipple pins",
     "definition": "Another name for [bottlenose pins](/#/glossary?term=bottlenose%20pins)"
+  },
+  {
+    "term": "offset diamond",
+    "definition": "See [DeForest(/#/glossary?term=deforest)."
   },
   {
     "term": "operating key",
@@ -1214,6 +1265,10 @@
     "definition": "A [flat steel key](/#/glossary?term=flat%20steel%20key)."
   },
   {
+    "term": "plongus",
+    "definition": "That's a really interesting question. The fact of the matter is that the question itself is very interesting. Is it a plongus, or to plongus? Or do plongus plongus? Before we get stuck in the superficial meaning of plongus, we might want to deep dive into the philosophical issue of how plongus came to be. But that might be a matter for another day."
+  },
+  {
     "term": "plug",
     "definition": "The central part of a lock cylinder that rotates when all locking elements are aligned properly to open the lock -- either by inserting a key into the plug or by picking the lock. The plug contains lock elements that directly contact the key, such as key pins and sliders. Also sometimes referred to as the [core](/#/glossary?term=core).",
     "media": {
@@ -1342,6 +1397,17 @@
     }
   },
   {
+    "term": "rodeo core",
+    "definition": "Said of a cylinder inside a padlock body, where the tolerances between them are so bad that the cylinder wobbles inside the padlock. Typical of Master Lock DG.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498129105_1f62d56b81_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498129105/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498129105_820e4efb8a_o.jpg"
+    }
+  },
+  {
     "term": "rotating fingerpins",
     "definition": "Subtype of sidepin with extended prong that interacts with the key, with rotational as well as vertical lift coding (must be lifted and rotated). Generally associated to a sidebar. Also called simply fingerpin.",
     "media": {
@@ -1378,6 +1444,21 @@
   {
     "term": "sash lock",
     "definition": "An upright mortice lock, consisting of a latch bolt and a key operated bolt."
+  },
+  {
+    "term": "SCD",
+    "definition": "Acronym for Security Cylinder Drill-proof, a type of ASSA produced hardened steel cylinder. The letters are usually stamped on the face of such cylinders.",
+    "media": {
+      "title": "By: PeaceWeapon",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53496823347_f014b5fc72_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53496823347/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53496823347_e6095cb6f9_o.jpg"
+    }
+  },
+  {
+    "term": "SCEC",
+    "definition": "The Security Construction and Equipment Committee (SCEC) is a standing interdepartmental committee responsible for the evaluation and endorsement of security equipment for use by Australian Commonwealth departments and agencies. Under SCEC rating different certifications are issued to locking systems, being approved for areas of different threat levels."
   },
   {
     "term": "security card",
@@ -1447,7 +1528,7 @@
   },
   {
     "term": "SFIC",
-    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another, called the [control key](/#/glossary?term=control%20key). See also [LFIC](/#/glossary?term=LFIC)",
+    "definition": "Acronym for Small Format Interchangeable Core. A type of lock that opens with one key and can be removed from its housing with another, called the [control key](/#/glossary?term=control%20key). See also [LFIC](/#/glossary?term=LFIC) and [FSIC](/#/glossary?term=FSIC)",
     "media": {
       "title": "By: LockSportsman",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -1642,8 +1723,12 @@
     "definition": "Type of lever typical of italian lever locks. Technically not levers as they don't rotate about one point, but traditionally called so, for they are moved by the key in the same manner, allowing the talon of the bolt to pass through them to open the lock."
   },
   {
+    "term": "snake rake",
+    "definition": "Pick profile featuring two rounded waves at the tip, the first one wider and deeper, the other one shallower. Also called C-rake."
+  },
+  {
     "term": "spacer",
-    "definition": "Sheet metal between 2 discs or levers that remains stationary, allowing the rotation of one element to not affect adjacent ones."
+    "definition": "Sheet metal between 2 discs or levers that remains stationary, allowing the rotation of one element to not affect adjacent one."
   },
   {
     "term": "spool",
@@ -1674,6 +1759,10 @@
   {
     "term": "sprung sliders",
     "definition": "[Sliders](/#/glossary?term=slider) that are subject to spring tension keeping them in place."
+  },
+  {
+    "term": "SSDeV",
+    "definition": "Acronym for \"Sportsfreunden der Sperrtechnik - Deuchland, e.V.\", which liberally translates to \"sports fans of barrier technology (fans of locksport) - Germany\". It's a german based locksport association, promoting championships, as well as research, science and education projects in locksport. Well known internationally for developing some useful pick designs."
   },
   {
     "term": "standard pin",
@@ -1749,6 +1838,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458112976/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458112976_51465fc2e8_o.jpg"
     }
+  },
+  {
+    "term": "TOOOL",
+    "definition": "Acronym for \"The Open Organisation Of Lockpickers\", an international group of lockpicking enthusiasts dedicated to advancing the general public knowledge about locks and lockpicking through teaching, research, and competition. They organize in national groups, and in chapters. Largest and most important national TOOOL groups are in the US, UK and The Netherlands."
   },
   {
     "term": "top gutting",
@@ -1927,6 +2020,10 @@
     }
   },
   {
+    "term": "wave rake",
+    "definition": "Similar to the Same as [Bogota](/#/glossary?term=bogota), usually with more peaks, or more rounded profile. "
+  },
+  {
     "term": "wiper insert",
     "definition": "Steel insert from a windscreen wiper, often used to make tensioners - Or the tensioner made in the shape of such, usually BOK tensioners.",
     "media": {
@@ -1936,6 +2033,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53457185852/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53457185852_ace3ff11b7_o.jpg"
     }
+  },
+  {
+    "term": "worm rake",
+    "definition": "Three peaked wave rake with rounded peaks on both top and bottom."
   },
   {
     "term": "z-bar",
