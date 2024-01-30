@@ -1,6 +1,6 @@
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import Typography from '@mui/material/Typography'
 import {enqueueSnackbar} from 'notistack'
-import React, {useCallback, useContext, useEffect, useState} from 'react'
 import SaveIcon from '@mui/icons-material/Save'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -39,9 +39,13 @@ function EditProfilePage() {
         }
     }, [displayName, updateProfileVisibility])
 
-    const helperText = displayName?.length > 0
-        ? `Your profile will be public, as ${displayName}.`
-        : 'Your profile will be private'
+    const error = !pattern.test(displayName)
+
+    const helperText = error
+        ? 'Display name must only include A-Z, 0-9, _ and -.'
+        : displayName?.length > 0
+            ? `Your profile will be public, as ${displayName}.`
+            : 'Your profile will be private'
 
     return (
         <Card style={{
@@ -53,8 +57,8 @@ function EditProfilePage() {
         }}>
             <CardHeader title='Edit Profile' action={
                 <Tooltip title='Save' arrow disableFocusListener>
-                    <IconButton onClick={handleSave}>
-                        <SaveIcon color='success'/>
+                    <IconButton onClick={handleSave} disabled={error}>
+                        <SaveIcon color={error ? undefined : 'success'}/>
                     </IconButton>
                 </Tooltip>
             }/>
@@ -65,19 +69,24 @@ function EditProfilePage() {
                 </Typography>
                 <br/>
                 <TextField
+                    error={error}
                     fullWidth
                     variant='outlined'
                     color='secondary'
                     label='Display Name'
                     helperText={helperText}
-                    maxLength={50}
                     value={displayName || ''}
                     onChange={handleChange}
                     onFocus={handleFocus}
+                    inputProps={{
+                        maxLength: 32
+                    }}
                 />
             </CardContent>
         </Card>
     )
 }
+
+const pattern = /^[\sa-zA-Z0-9_-]{0,32}$/
 
 export default EditProfilePage
