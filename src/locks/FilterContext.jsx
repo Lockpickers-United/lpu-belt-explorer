@@ -11,14 +11,13 @@ export function FilterProvider({children}) {
     const location = useLocation()
     const [, setSearchParams] = useSearchParams()
     const filters = useMemo(() => {
-        const {id, name, tab, search = '', ...initialFilters} = queryString.parse(location.search)
+        const {id, tab, search = '', ...initialFilters} = queryString.parse(location.search)
         initialFilters.search = search
 
         if (id) {
             const entry = data.find(e => id === e.id)
             if (entry) {
                 initialFilters.id = id
-                initialFilters.name = name
                 initialFilters.tab = tab === 'search' ? 'search' : entry.belt.replace(/\s\d/g, '')
             } else if (name && !initialFilters.search) {
                 initialFilters.search = name.replace(/_/g, ' ')

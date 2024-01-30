@@ -5,6 +5,7 @@ import Tooltip from '@mui/material/Tooltip'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
+import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import FilterContext from '../locks/FilterContext'
 import filterFields from '../data/filterFields'
@@ -18,6 +19,7 @@ import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
 
 function FilterButton({data}) {
+    const {userId} = useParams()
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
     const [open, setOpen] = useState(false)
@@ -31,10 +33,10 @@ function FilterButton({data}) {
 
     const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
         addFilters([
-            {key: 'tab', value: 'search'},
+            {key: 'tab', value: userId ? undefined : 'search'},
             {key: keyToAdd, value: valueToAdd}
         ], true)
-    }, [addFilters])
+    }, [addFilters, userId])
 
     return (
         <React.Fragment>
