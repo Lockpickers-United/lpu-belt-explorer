@@ -1,12 +1,13 @@
 import React, {useCallback, useMemo} from 'react'
 import queryString from 'query-string'
-import {useLocation, useSearchParams} from 'react-router-dom'
+import {useLocation, useParams, useSearchParams} from 'react-router-dom'
 import {uniqueBelts} from '../data/belts'
 import data from '../data/data.json'
 
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children}) {
+    const {userId} = useParams()
     const location = useLocation()
     const [, setSearchParams] = useSearchParams()
     const filters = useMemo(() => {
@@ -32,8 +33,12 @@ export function FilterProvider({children}) {
             initialFilters.tab = 'White'
         }
 
+        if (userId) {
+            initialFilters.tab = undefined
+        }
+
         return initialFilters
-    }, [location.search])
+    }, [location.search, userId])
 
     const setFilters = useCallback(newFilters => {
         Object.keys(newFilters)
