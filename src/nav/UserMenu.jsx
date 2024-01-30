@@ -82,7 +82,7 @@ function UserMenu() {
                         }
                         {
                             beta &&
-                            <MenuItem onClick={handleClick(`/profile/${user.uid}`)}>
+                            <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${lockCollection.displayName || 'Private'}`)}>
                                 <ListItemIcon>
                                     <AccountBoxIcon/>
                                 </ListItemIcon>

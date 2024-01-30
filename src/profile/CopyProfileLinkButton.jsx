@@ -13,11 +13,11 @@ function CopyProfileLinkButton() {
     const {lockCollection} = useContext(DBContext)
 
     const handleClick = useCallback(async () => {
-        const link = `https://lpubelts.com/#/profile/${user.uid}`
+        const link = `https://lpubelts.com/#/profile/${user.uid}?name=${lockCollection.displayName}`
 
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link to entry copied to clipboard.')
-    }, [user?.uid])
+    }, [user?.uid, lockCollection?.displayName])
 
     if (!user || (!!userId && userId !== user.uid) || !lockCollection?.displayName) return null
     return (
