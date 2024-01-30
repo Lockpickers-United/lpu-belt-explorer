@@ -1,4 +1,6 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react'
+import Stack from '@mui/material/Stack'
+import Switch from '@mui/material/Switch'
+import React, {useCallback, useContext, useState} from 'react'
 import Typography from '@mui/material/Typography'
 import {enqueueSnackbar} from 'notistack'
 import SaveIcon from '@mui/icons-material/Save'
@@ -14,41 +16,41 @@ import DBContext from '../app/DBContext'
 
 function EditProfilePage() {
     const {lockCollection, updateProfileVisibility} = useContext(DBContext)
-    const [displayName, setDisplayName] = useState('')
+    const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
+    const [visibility, setVisibility] = useState(!!lockCollection.public)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
-
-    useEffect(() => {
-        setDisplayName(lockCollection.displayName)
-    }, [lockCollection.displayName])
 
     const handleChange = useCallback(event => {
         const {value} = event.target
         setDisplayName(value)
     }, [])
 
+    const handleCheckChange = useCallback(event => {
+        const {checked} = event.target
+        setVisibility(checked)
+    }, [])
+
     const handleFocus = useCallback(event => event.target.select(), [])
 
     const handleSave = useCallback(() => {
         try {
-            if (displayName) {
-                updateProfileVisibility(true, displayName)
-            } else {
-                updateProfileVisibility(false, '')
-            }
+            updateProfileVisibility(visibility, displayName)
             enqueueSnackbar('Updated profile.')
             navigate(`/profile/${user.uid}`)
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile.')
         }
-    }, [navigate, displayName, updateProfileVisibility, user?.uid])
+    }, [navigate, displayName, updateProfileVisibility, user?.uid, visibility])
 
-    const error = !pattern.test(displayName)
+    const error = visibility && !pattern.test(displayName)
 
     const helperText = error
-        ? 'Display name must only include A-Z, 0-9, _ and -.'
-        : displayName?.length > 0
+        ? displayName.length === 0
+            ? 'Public profiles must have a display name.'
+            : 'Display name must only include A-Z, 0-9, _ and -.'
+        : visibility === true
             ? `Your profile will be public, as ${displayName}.`
             : 'Your profile will be private'
 
@@ -73,25 +75,35 @@ function EditProfilePage() {
                     Public profiles can be shared and show nicknames on the leaderboard.
                 </Typography>
                 <br/>
-                <TextField
-                    error={error}
-                    fullWidth
-                    variant='outlined'
-                    color='secondary'
-                    label='Display Name'
-                    helperText={helperText}
-                    value={displayName || ''}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    inputProps={{
-                        maxLength: 32
-                    }}
-                />
+                <Stack direction='row'>
+                    <TextField
+                        error={error}
+                        fullWidth
+                        variant='outlined'
+                        color='secondary'
+                        label='Display Name'
+                        helperText={helperText}
+                        value={displayName || ''}
+                        onChange={handleChange}
+                        onFocus={handleFocus}
+                        inputProps={{
+                            maxLength: 32
+                        }}
+                    />
+                    <div style={{textAlign: 'center', width: 100}}>
+                        {visibility ? 'Public' : 'Private'}
+                        <Switch
+                            checked={visibility}
+                            color='secondary'
+                            onChange={handleCheckChange}
+                        />
+                    </div>
+                </Stack>
             </CardContent>
         </Card>
     )
 }
 
-const pattern = /^[\sa-zA-Z0-9_-]{0,32}$/
+const pattern = /^[\sa-zA-Z0-9_-]{1,32}$/
 
 export default EditProfilePage

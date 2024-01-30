@@ -34,7 +34,7 @@ function ProfileRoute() {
             }
 
             {authLoaded && !isLoggedIn && <MustBeLoggedIn/>}
-            {isLoggedIn && dbLoaded && <EditProfilePage/>}
+            {authLoaded && isLoggedIn && dbLoaded && <EditProfilePage/>}
 
             <Footer/>
 

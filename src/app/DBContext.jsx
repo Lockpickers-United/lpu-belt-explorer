@@ -8,7 +8,7 @@ import {enqueueSnackbar} from 'notistack'
 const DBContext = React.createContext({})
 
 export function DBProvider({children}) {
-    const {isLoggedIn, user} = useContext(AuthContext)
+    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
     const [dbLoaded, setDbLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
@@ -87,11 +87,11 @@ export function DBProvider({children}) {
                     action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
                 })
             })
-        } else {
+        } else if (authLoaded) {
             setLockCollection({})
             setDbLoaded(true)
         }
-    }, [isLoggedIn, user])
+    }, [authLoaded, isLoggedIn, user])
 
     const value = useMemo(() => ({
         dbLoaded,
