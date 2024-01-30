@@ -14851,6 +14851,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Trap element"
+    ],
     "media": [
       {
         "title": "By: Reinder Stegen",
@@ -14903,7 +14906,7 @@
       }
     ],
     "views": 127,
-    "lastUpdated": "2023-07-26T21:50:31.661Z"
+    "lastUpdated": "2024-01-30T12:50:01.402Z"
   },
   {
     "id": "1fe0ba0d",
@@ -15287,8 +15290,11 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Trap element"
+    ],
     "views": 180,
-    "lastUpdated": "2023-09-07T12:00:17.098Z"
+    "lastUpdated": "2024-01-30T12:50:01.402Z"
   },
   {
     "id": "c0af329b",

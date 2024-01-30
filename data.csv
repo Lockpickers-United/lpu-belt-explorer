@@ -349,7 +349,7 @@ Blue,Lince,C4,,Dimple,,,adc2d335
 Blue,"Lockwood,Lockwood,Lockwood,Lockwood,Lockwood","214A40,215A40,270S70,334B45,356S63","with spools",Pin-tumbler,,,331c9d36
 Blue,Lockwood,V7,,Pin-tumbler,,,f6b001ed
 Blue,Lucznik,E8,,Pin-tumbler,,,17270f9c
-Blue,Lucznik,LC,,Pin-tumbler,,,1c01212e
+Blue,Lucznik,LC,,Pin-tumbler,"Trap element",,1c01212e
 Blue,"M&C,M&C,M&C","Color,Color Pro,Color+","<4 sliders","Dimple,Slider","False gates,Active sidebar",,1fe0ba0d
 Blue,M&C,Matrix,"no sidebar",Pin-tumbler,,,bc6f6e7c
 Blue,Mauer,"Red Line G",,Pin-tumbler,,,2a02810c
@@ -359,7 +359,7 @@ Blue,Medeco,Biaxial,"4 pins","Pin-tumbler,Sidebar",,,23c7988c
 Blue,Medeco,BiLevel,,Pin-tumbler,,,69d4ef86
 Blue,Medeco,"Original Camlock","<5 pins","Sidebar,Slider",,,a9e47067
 Blue,Metal,Zx5J,,"Dimple,Slider",,,f3a2aa78
-Blue,Mila,Evolution,,Pin-tumbler,,,f9f2d983
+Blue,Mila,Evolution,,Pin-tumbler,"Trap element",,f9f2d983
 Blue,Mindy,"Pagoda (round key)",,Other,,,c0af329b
 Blue,MIWA,DS,,Wafer,"Partial gut",,df8081fa
 Blue,"Mottura,Mottura","Champions C28,Champions C29",,Dimple,,,b1834e81
