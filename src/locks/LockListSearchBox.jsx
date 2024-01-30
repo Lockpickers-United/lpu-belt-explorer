@@ -1,3 +1,4 @@
+import Badge from '@mui/material/Badge'
 import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -55,7 +56,10 @@ function LockListSearchBox() {
     const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])
     const handleClick = useCallback(() => {
         setOpen(true)
-        setTimeout(() => inputEl.current.focus(), 0)
+        setTimeout(() => {
+            inputEl.current.focus()
+            inputEl.current.select()
+        }, 0)
     }, [])
 
     useEffect(() => {
@@ -95,7 +99,17 @@ function LockListSearchBox() {
         <React.Fragment>
             {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
                 <IconButton color='inherit' onClick={handleClick}>
-                    <SearchIcon/>
+                    <Badge
+                        invisible={text.length === 0}
+                        variant='dot'
+                        color='secondary'
+                        overlap='circular'
+                        anchorOrigin={{
+                            vertical: 'bottom', horizontal: 'right'
+                        }}
+                    >
+                        <SearchIcon/>
+                    </Badge>
                 </IconButton>
             </Tooltip>}
             {(open || !isMobile) && <TextField

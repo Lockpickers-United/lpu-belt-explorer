@@ -10,10 +10,13 @@ import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
+import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
+import AppContext from '../app/AppContext'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
@@ -21,12 +24,16 @@ import {useNavigate} from 'react-router-dom'
 
 function UserMenu() {
     const navigate = useNavigate()
+    const {beta} = useContext(AppContext)
     const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+    const safeName = lockCollection.displayName
+        ? lockCollection.displayName.replace(/\s/g, '_')
+        : 'Private'
 
     const handleClick = useCallback(url => () => {
         handleClose()
@@ -47,7 +54,7 @@ function UserMenu() {
                             ? <Avatar
                                 alt={user.displayName}
                                 src={user.photoURL}
-                                sx={{ width: 32, height: 32 }}
+                                sx={{width: 32, height: 32}}
                             />
                             : <AccountCircleIcon/>
                     }
@@ -65,9 +72,26 @@ function UserMenu() {
                             <ListItemIcon>
                                 <PersonIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>{user.displayName}</ListItemText>
+                            <ListItemText>{safeName}</ListItemText>
                         </MenuItem>
-
+                        {
+                            beta &&
+                            <MenuItem onClick={handleClick('/profile/edit')}>
+                                <ListItemIcon>
+                                    <EditIcon/>
+                                </ListItemIcon>
+                                <ListItemText>Edit Profile</ListItemText>
+                            </MenuItem>
+                        }
+                        {
+                            beta &&
+                            <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
+                                <ListItemIcon>
+                                    <AccountBoxIcon/>
+                                </ListItemIcon>
+                                <ListItemText>View Profile</ListItemText>
+                            </MenuItem>
+                        }
                         <Divider/>
 
                         <MenuItem disabled>

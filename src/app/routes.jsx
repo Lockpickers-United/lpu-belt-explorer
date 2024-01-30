@@ -33,7 +33,6 @@ export default [
         }
     },
     {
-        beta: true,
         path: '/dans',
         lazy: async () => {
             const {default: DansRoute} = await import('../info/DansRoute')
@@ -71,11 +70,27 @@ export default [
         }
     },
     {
+
         admin: true,
         path: '/admin',
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
             return {element: <AdminRoute/>}
+        }
+    },
+        beta: true,
+        path: '/profile/edit',
+        lazy: async () => {
+            const {default: EditProfileRoute} = await import('../profile/EditProfileRoute')
+            return {element: <EditProfileRoute/>}
+        }
+    },
+    {
+        beta: true,
+        path: '/profile/:userId',
+        lazy: async () => {
+            const {default: ProfileRoute} = await import('../profile/ProfileRoute')
+            return {element: <ProfileRoute/>}
         }
     },
     {

@@ -26,7 +26,6 @@ export default [
         path: '/info'
     },
     {
-        beta: true,
         title: 'Dan System',
         icon: <InsightsOutlinedIcon fontSize='small'/>,
         path: '/dans'

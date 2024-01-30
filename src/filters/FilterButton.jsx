@@ -78,7 +78,7 @@ function FilterButton({data}) {
                     </Stack>
                 </Box>
                 <Toolbar variant='dense'>
-                    <ClearFiltersButton style={{marginRight: 8}}/>
+                    <ClearFiltersButton forceText style={{marginRight: 8}}/>
                     <Button
                         variant='outlined'
                         color='inherit'

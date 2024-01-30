@@ -1,15 +1,16 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
 const DBContext = React.createContext({})
 
 export function DBProvider({children}) {
-    const {isLoggedIn, user} = useContext(AuthContext)
+    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
+    const [dbLoaded, setDbLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
 
     const addToLockCollection = useCallback(async (key, entryId) => {
@@ -46,6 +47,26 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const updateProfileVisibility = useCallback(async (visibility, displayName) => {
+        if (dbError) return false
+        const ref = doc(db, 'lockcollections', user.uid)
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(ref)
+            const delta = {public: visibility, displayName}
+            if (!sfDoc.exists()) {
+                transaction.set(ref, delta)
+            } else {
+                transaction.update(ref, delta)
+            }
+        })
+    }, [dbError, user])
+
+    const getProfile = useCallback(async userId => {
+        const ref = doc(db, 'lockcollections', userId)
+        const value = await getDoc(ref)
+        return value.data()
+    }, [])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -57,6 +78,7 @@ export function DBProvider({children}) {
                 } else {
                     setLockCollection({})
                 }
+                setDbLoaded(true)
             }, error => {
                 console.error('Error listening to DB:', error)
                 setDbError(true)
@@ -65,22 +87,20 @@ export function DBProvider({children}) {
                     action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
                 })
             })
-        } else {
+        } else if (authLoaded) {
             setLockCollection({})
+            setDbLoaded(true)
         }
-    }, [isLoggedIn, user])
+    }, [authLoaded, isLoggedIn, user])
 
     const value = useMemo(() => ({
-        anyCollection: [...new Set([
-            ...lockCollection?.own || [],
-            ...lockCollection?.picked || [],
-            ...lockCollection?.recorded || [],
-            ...lockCollection?.wishlist || []
-        ])],
+        dbLoaded,
         lockCollection,
         addToLockCollection,
-        removeFromLockCollection
-    }), [lockCollection, addToLockCollection, removeFromLockCollection])
+        removeFromLockCollection,
+        getProfile,
+        updateProfileVisibility
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility])
 
     return (
         <DBContext.Provider value={value}>

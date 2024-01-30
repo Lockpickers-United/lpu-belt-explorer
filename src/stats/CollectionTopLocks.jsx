@@ -1,6 +1,6 @@
 import React from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import statsCollectionSummary from '../data/statsCollectionsSummary.json'
+import statsCollectionSummary from '../data/statsCollectionsFull.json'
 import CollectionTopLocksList from './CollectionTopLocksList.jsx'
 
 const CollectionTopLocks = () => {

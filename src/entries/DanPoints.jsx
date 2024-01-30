@@ -7,9 +7,10 @@ function DanPoints({belt}) {
         ? 'Point'
         : (danPoints >= 10 ? 'Pts' : 'Points')
     const value = ` (${danPoints} Dan ${label})`
+    const style = {textDecoration: 'none', color: '#fff'}
 
     if (danPoints === 0 || belt === 'Unranked') return null
-    return <span>{value}</span>
+    return <a style={style} href='/#/dans'>{value}</a>
 }
 
 export default DanPoints

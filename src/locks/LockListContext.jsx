@@ -1,11 +1,12 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
-import {useHotkeys} from 'react-hotkeys-hook'
+import {useParams} from 'react-router-dom'
 import DataContext from './DataContext'
 import FilterContext from './FilterContext'
 
 const LockListContext = React.createContext({})
 
 export function LockListProvider({children}) {
+    const {userId} = useParams()
     const {getEntryFromId, getNameFromId} = useContext(DataContext)
     const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
@@ -19,7 +20,7 @@ export function LockListProvider({children}) {
             addFilters([
                 {key: 'id', value: newValue},
                 {key: 'name', value: name},
-                {key: 'tab', value: newTab}
+                {key: 'tab', value: userId ? undefined : newTab}
             ], true)
         } else if (newValue === 'beltreqs') {
             addFilters([
@@ -29,7 +30,7 @@ export function LockListProvider({children}) {
         } else {
             removeFilters(['id', 'name'])
         }
-    }, [addFilters, filters.tab, getEntryFromId, getNameFromId, removeFilters])
+    }, [addFilters, filters.tab, getEntryFromId, getNameFromId, removeFilters, userId])
 
     const handleClearExpanded = useCallback(() => {
         removeFilters(['id', 'name'])
@@ -46,9 +47,6 @@ export function LockListProvider({children}) {
     }, [addFilters, expanded])
 
     const [displayAll, setDisplayAll] = useState(false)
-
-    const [beta, setBeta] = useState(false)
-    useHotkeys('ctrl+shift+m', () => setBeta(!beta))
 
     const [compact, setCompact] = useState(false)
 

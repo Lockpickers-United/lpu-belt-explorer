@@ -1,10 +1,8 @@
 import React from 'react'
 import TableCell from '@mui/material/TableCell'
 
-function LeaderboardCell({align = 'center', user, leader, value}) {
-    const {displayName, id} = leader
-    const isCurrentUser = user?.uid === id
-    const color = (displayName ? '#eee' : '#bbb')
+function LeaderboardCell({align = 'center', isCurrentUser, leader, value}) {
+    const color = (leader.displayName ? '#eee' : '#bbb')
     const style = isCurrentUser
         ? {fontWeight: 600, color: '#4db013'}
         : {fontWeight: 500, color}

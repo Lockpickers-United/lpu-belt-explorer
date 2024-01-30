@@ -1,11 +1,14 @@
 import TableRow from '@mui/material/TableRow'
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
+import AuthContext from '../app/AuthContext'
 import LeaderboardCell from './LeaderboardCell'
+import LeaderboardName from './LeaderboardName'
 
-function LeaderboardRow({index, leader, user, highlighted, scrollableRef}) {
+function LeaderboardRow({index, leader, highlighted, scrollableRef}) {
     const ref = useRef()
+    const {user} = useContext(AuthContext)
     const [scrolled, setScrolled] = useState(false)
-
+    const isCurrentUser = user?.uid === leader.id
     const style = highlighted ? {backgroundColor: '#333'} : {}
 
     useEffect(() => {
@@ -30,12 +33,14 @@ function LeaderboardRow({index, leader, user, highlighted, scrollableRef}) {
                 ...style
             }}
         >
-            <LeaderboardCell leader={leader} user={user} value={index + 1}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.displayName || 'Anonymous'} align='left'/>
-            <LeaderboardCell leader={leader} user={user} value={leader.own}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.picked}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.recorded}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.wishlist}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={index + 1}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={
+                <LeaderboardName isCurrentUser={isCurrentUser} leader={leader}/>
+            } align='left'/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.own}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.picked}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.recorded}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.wishlist}/>
         </TableRow>
     )
 }

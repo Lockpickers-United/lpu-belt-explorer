@@ -2,35 +2,36 @@ import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
-import React, {useCallback, useContext} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import AuthContext from '../app/AuthContext'
-import DBContext from '../app/DBContext'
+import {useParams} from 'react-router-dom'
 import {validCollectionTypes} from '../data/collectionTypes'
+import getAnyCollection from '../util/getAnyCollection'
 import FilterDisplay from './FilterDisplay'
 import FilterContext from '../locks/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
 
-function InlineFilterDisplay() {
-    const {isLoggedIn} = useContext(AuthContext)
+function InlineFilterDisplay({profile}) {
+    const {userId} = useParams()
     const {filters, filterCount, setFilters} = useContext(FilterContext)
-    const {anyCollection, lockCollection} = useContext(DBContext)
     const [open, setOpen] = React.useState(false)
 
-    const {collection} = filters
+    const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
+
+    const {collection = (userId && filterCount === 0 ? 'Any' : null)} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, borderRadius: 0}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
 
     let currentCollection = ''
-    if (filters && filters.collection) {
-        if (typeof filters.collection === 'string') {
-            currentCollection = filters.collection
+    if (collection) {
+        if (typeof collection === 'string') {
+            currentCollection = collection
         } else {
-            currentCollection = filters.collection[0]
+            currentCollection = collection[0]
         }
     }
 
@@ -48,14 +49,18 @@ function InlineFilterDisplay() {
         handleFilter('collection', event.target.value)
     }, [handleFilter])
 
-    if (!filterCount) return null
-    const isValidCollection = isLoggedIn && typeof collection === 'string' &&
-        (collectionTypes.includes(collection) || collection === 'Any') && filterCount === 1
+    if (!filterCount && !userId) return null
+    const isValidCollection = typeof collection === 'string' &&
+        (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
+
+    const title = userId
+        ? `${profile.displayName ? profile.displayName + '\'s' : 'Private'} Collection`
+        : isValidCollection ? 'My Collection' : 'Filters'
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 0}}>
             <CardHeader
-                title={isValidCollection ? 'My Collection' : 'Filters'}
+                title={title}
                 action={<ClearFiltersButton/>}
             />
             <CardContent style={{paddingTop: 0, paddingLeft: 8}}>
@@ -72,7 +77,7 @@ function InlineFilterDisplay() {
                         >
                             {collectionTypes.map((list, index) =>
                                 <MenuItem key={index} value={list}>
-                                    {list} ({list === 'Any' ? anyCollection.length : lockCollection[list.toLowerCase()]?.length || 0})
+                                    {list} ({list === 'Any' ? anyCollection.length : profile[list.toLowerCase()]?.length || 0})
                                 </MenuItem>
                             )}
                         </Select>
