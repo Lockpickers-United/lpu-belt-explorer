@@ -1250,7 +1250,7 @@ Q: **Are there any more goals to work towards after achieving black belt?**
 
 > A: Yep! We have an entirely separate rule system for earning stripes after you've achieved black. It takes into
 account everything you've done throughout your lockpicking career, so we advise you don't delete any of your videos from
-the internet. Check it out [here](https://docs.google.com/document/d/1w33AkXvtXb0QbfvLrnlGqAWgj9SK2RKEndcB6AMtE9c).
+the internet. Check it out [here](/#/dans).
 
 ----------
 
