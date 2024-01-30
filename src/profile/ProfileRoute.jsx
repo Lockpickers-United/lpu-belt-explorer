@@ -15,7 +15,7 @@ import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
 
 function ProfileRoute() {
-    const [data, setData] = useState([])
+    const [data, setData] = useState({})
     const {userId} = useParams()
     const {getProfile} = useContext(DBContext)
     const [error, setError] = useState(false)
@@ -28,7 +28,7 @@ function ProfileRoute() {
                 setError(false)
             } catch (ex) {
                 console.trace('Error loading profile', ex)
-                setData([])
+                setData({})
                 setError(true)
             }
         }
@@ -52,11 +52,11 @@ function ProfileRoute() {
     return (
         <React.Fragment>
             <FilterProvider>
-                <DataProvider allEntries={entries}>
+                <DataProvider allEntries={entries} profile={data}>
                     <LockListProvider>
                         <Nav title={`Profile for ${data.displayName || 'Anonymous'}`} extras={nav}/>
 
-                        {data && !error && <ProfilePage/>}
+                        {data && !error && <ProfilePage profile={data}/>}
                         {error && <ProfileNotFound/>}
 
                         <Footer/>

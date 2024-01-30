@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DBContext from '../app/DBContext'
+import getAnyCollection from '../util/getAnyCollection'
 import FilterContext from './FilterContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
@@ -8,10 +8,11 @@ import removeAccents from 'remove-accents'
 
 const DataContext = React.createContext({})
 
-export function DataProvider({children, allEntries}) {
-    const {anyCollection, lockCollection} = useContext(DBContext)
+export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
+
+    const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -41,14 +42,14 @@ export function DataProvider({children, allEntries}) {
                 ].flat().filter(x => x),
                 collection: [
                     anyCollection.includes(entry.id) ? 'Any' : 'Not in any Collection',
-                    lockCollection.own?.includes?.(entry.id) ? 'Own' : 'Don\'t Own',
-                    lockCollection.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
-                    lockCollection.wishlist?.includes?.(entry.id) ? 'Wishlist' : 'Not on Wishlist',
-                    lockCollection.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded'
+                    profile?.own?.includes?.(entry.id) ? 'Own' : 'Don\'t Own',
+                    profile?.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
+                    profile?.wishlist?.includes?.(entry.id) ? 'Wishlist' : 'Not on Wishlist',
+                    profile?.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [allEntries, anyCollection, lockCollection])
+    }, [allEntries, anyCollection, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

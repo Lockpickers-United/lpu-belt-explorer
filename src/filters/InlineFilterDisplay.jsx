@@ -2,22 +2,23 @@ import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
-import React, {useCallback, useContext} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import AuthContext from '../app/AuthContext'
-import DBContext from '../app/DBContext'
+import {useParams} from 'react-router-dom'
 import {validCollectionTypes} from '../data/collectionTypes'
+import getAnyCollection from '../util/getAnyCollection'
 import FilterDisplay from './FilterDisplay'
 import FilterContext from '../locks/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
 
-function InlineFilterDisplay() {
-    const {isLoggedIn} = useContext(AuthContext)
+function InlineFilterDisplay({profile}) {
+    const {userId} = useParams()
     const {filters, filterCount, setFilters} = useContext(FilterContext)
-    const {anyCollection, lockCollection} = useContext(DBContext)
     const [open, setOpen] = React.useState(false)
+
+    const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
 
     const {collection} = filters
     const {isMobile} = useWindowSize()
@@ -49,13 +50,17 @@ function InlineFilterDisplay() {
     }, [handleFilter])
 
     if (!filterCount) return null
-    const isValidCollection = isLoggedIn && typeof collection === 'string' &&
+    const isValidCollection = typeof collection === 'string' &&
         (collectionTypes.includes(collection) || collection === 'Any') && filterCount === 1
+
+    const title = isValidCollection
+        ? (userId ? `${profile.displayName}'s Collection` : 'My Collection')
+        : 'Filters'
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 0}}>
             <CardHeader
-                title={isValidCollection ? 'My Collection' : 'Filters'}
+                title={title}
                 action={<ClearFiltersButton/>}
             />
             <CardContent style={{paddingTop: 0, paddingLeft: 8}}>
@@ -72,7 +77,7 @@ function InlineFilterDisplay() {
                         >
                             {collectionTypes.map((list, index) =>
                                 <MenuItem key={index} value={list}>
-                                    {list} ({list === 'Any' ? anyCollection.length : lockCollection[list.toLowerCase()]?.length || 0})
+                                    {list} ({list === 'Any' ? anyCollection.length : profile[list.toLowerCase()]?.length || 0})
                                 </MenuItem>
                             )}
                         </Select>

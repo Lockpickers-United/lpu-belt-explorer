@@ -7,7 +7,7 @@ import DataContext from './DataContext'
 import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
 
-function Entries() {
+function Entries({profile}) {
     const {compact, tab, expanded, setExpanded, displayAll} = useContext(LockListContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
 
@@ -27,7 +27,7 @@ function Entries() {
 
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
-            <InlineFilterDisplay/>
+            <InlineFilterDisplay profile={profile}/>
 
             {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 

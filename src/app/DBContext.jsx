@@ -77,12 +77,6 @@ export function DBProvider({children}) {
     }, [isLoggedIn, user])
 
     const value = useMemo(() => ({
-        anyCollection: [...new Set([
-            ...lockCollection?.own || [],
-            ...lockCollection?.picked || [],
-            ...lockCollection?.recorded || [],
-            ...lockCollection?.wishlist || []
-        ])],
         lockCollection,
         addToLockCollection,
         removeFromLockCollection,

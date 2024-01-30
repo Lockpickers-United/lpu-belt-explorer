@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
 import useWindowSize from '../util/useWindowSize'
 import {LockListProvider} from './LockListContext'
@@ -20,6 +21,7 @@ import allEntries from '../data/data.json'
 
 function LockListRoute() {
     const {isMobile} = useWindowSize()
+    const {lockCollection} = useContext(DBContext)
 
     const nav = (
         <React.Fragment>
@@ -45,13 +47,13 @@ function LockListRoute() {
 
     return (
         <FilterProvider>
-            <DataProvider allEntries={allEntries}>
+            <DataProvider allEntries={allEntries} profile={lockCollection}>
                 <LockListProvider>
                     <Nav title='Locks' extras={nav}/>
 
                     <BeltToolbar/>
 
-                    <Entries/>
+                    <Entries profile={lockCollection}/>
 
                     <Footer extras={footer}/>
 
