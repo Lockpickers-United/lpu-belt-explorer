@@ -1,12 +1,306 @@
 {
+   "summary" : {
+      "data" : [
+         {
+            "totalSaves" : 15408,
+            "averageItems" : 32,
+            "listUsers" : 482,
+            "list" : "All Lists",
+            "percentListUsers" : "100%",
+            "newListUsers" : 5,
+            "newUsers" : 5,
+            "totalUsers" : 540,
+            "newSaves" : 117
+         },
+         {
+            "newUsers" : 5,
+            "newListUsers" : 5,
+            "percentListUsers" : "97%",
+            "list" : "Own",
+            "totalUsers" : 540,
+            "newSaves" : 67,
+            "totalSaves" : 6921,
+            "averageItems" : 15,
+            "listUsers" : 469
+         },
+         {
+            "percentListUsers" : "91%",
+            "list" : "Picked",
+            "newUsers" : 5,
+            "newListUsers" : 3,
+            "totalUsers" : 540,
+            "newSaves" : 35,
+            "totalSaves" : 5165,
+            "averageItems" : 12,
+            "listUsers" : 443
+         },
+         {
+            "newSaves" : 5,
+            "totalUsers" : 540,
+            "newListUsers" : 0,
+            "newUsers" : 5,
+            "percentListUsers" : "35%",
+            "list" : "Recorded",
+            "listUsers" : 173,
+            "averageItems" : 13,
+            "totalSaves" : 2195
+         },
+         {
+            "newUsers" : 5,
+            "newListUsers" : 2,
+            "list" : "Wishlist",
+            "percentListUsers" : "28%",
+            "newSaves" : 10,
+            "totalUsers" : 540,
+            "totalSaves" : 1127,
+            "listUsers" : 137,
+            "averageItems" : 8
+         }
+      ],
+      "columns" : [
+         {
+            "align" : "left",
+            "name" : "List Name",
+            "id" : "list"
+         },
+         {
+            "id" : "totalUsers",
+            "align" : "center",
+            "name" : "Total Users"
+         },
+         {
+            "align" : "center",
+            "name" : "New Users",
+            "id" : "newUsers"
+         },
+         {
+            "name" : "List Users",
+            "align" : "center",
+            "id" : "listUsers"
+         },
+         {
+            "align" : "center",
+            "name" : "New List Users",
+            "id" : "newListUsers"
+         },
+         {
+            "id" : "totalSaves",
+            "align" : "center",
+            "name" : "Total Saves"
+         },
+         {
+            "id" : "newSaves",
+            "align" : "center",
+            "name" : "New Saves"
+         },
+         {
+            "name" : "% List Users",
+            "align" : "center",
+            "id" : "percentListUsers"
+         },
+         {
+            "name" : "Average Items",
+            "align" : "center",
+            "id" : "averageItems"
+         }
+      ],
+      "title" : ""
+   },
+   "beltSaveData" : {
+      "columns" : [
+         {
+            "id" : "belt",
+            "align" : "left",
+            "name" : "Belt"
+         },
+         {
+            "name" : "Total Saves",
+            "align" : "center",
+            "id" : "totalSaves"
+         },
+         {
+            "align" : "center",
+            "name" : "Saves %",
+            "id" : "savesPerc"
+         },
+         {
+            "id" : "own",
+            "align" : "center",
+            "name" : "Own"
+         },
+         {
+            "name" : "Own %",
+            "align" : "center",
+            "id" : "ownPerc"
+         },
+         {
+            "id" : "picked",
+            "align" : "center",
+            "name" : "Picked"
+         },
+         {
+            "align" : "center",
+            "name" : "Picked %",
+            "id" : "pickedPerc"
+         },
+         {
+            "name" : "Recorded",
+            "align" : "center",
+            "id" : "recorded"
+         },
+         {
+            "id" : "recordedPerc",
+            "align" : "center",
+            "name" : "Recorded %"
+         },
+         {
+            "id" : "wishlist",
+            "align" : "center",
+            "name" : "Wishlist"
+         },
+         {
+            "align" : "center",
+            "name" : "Wishlist %",
+            "id" : "wishlistPerc"
+         },
+         {
+            "id" : null,
+            "align" : null,
+            "name" : null
+         }
+      ],
+      "title" : "",
+      "data" : [
+         {
+            "picked" : 720,
+            "wishlist" : 14,
+            "own" : 689,
+            "recordedPerc" : 3.736,
+            "pickedPerc" : 13.94,
+            "belt" : "White",
+            "totalSaves" : 1505,
+            "wishlistPerc" : 1.242,
+            "recorded" : 82,
+            "ownPerc" : 9.955
+         },
+         {
+            "ownPerc" : 10.389,
+            "recorded" : 112,
+            "wishlistPerc" : 2.218,
+            "totalSaves" : 1533,
+            "belt" : "Yellow",
+            "pickedPerc" : 13.107,
+            "recordedPerc" : 5.103,
+            "own" : 719,
+            "wishlist" : 25,
+            "picked" : 677
+         },
+         {
+            "wishlist" : 76,
+            "own" : 699,
+            "recordedPerc" : 5.103,
+            "picked" : 585,
+            "belt" : "Orange",
+            "totalSaves" : 1472,
+            "pickedPerc" : 11.326,
+            "ownPerc" : 10.1,
+            "wishlistPerc" : 6.744,
+            "recorded" : 112
+         },
+         {
+            "recorded" : 291,
+            "wishlistPerc" : 18.012,
+            "ownPerc" : 17.96,
+            "pickedPerc" : 18.974,
+            "totalSaves" : 2717,
+            "belt" : "Green",
+            "picked" : 980,
+            "own" : 1243,
+            "recordedPerc" : 13.257,
+            "wishlist" : 203
+         },
+         {
+            "ownPerc" : 11.068,
+            "recorded" : 300,
+            "wishlistPerc" : 14.374,
+            "totalSaves" : 1810,
+            "belt" : "Blue",
+            "pickedPerc" : 11.268,
+            "recordedPerc" : 13.667,
+            "own" : 766,
+            "wishlist" : 162,
+            "picked" : 582
+         },
+         {
+            "picked" : 531,
+            "wishlist" : 184,
+            "own" : 774,
+            "recordedPerc" : 17.677,
+            "pickedPerc" : 10.281,
+            "belt" : "Purple",
+            "totalSaves" : 1877,
+            "wishlistPerc" : 16.327,
+            "recorded" : 388,
+            "ownPerc" : 11.183
+         },
+         {
+            "recorded" : 300,
+            "wishlistPerc" : 10.382,
+            "ownPerc" : 8.756,
+            "picked" : 393,
+            "recordedPerc" : 13.667,
+            "own" : 606,
+            "wishlist" : 117,
+            "pickedPerc" : 7.609,
+            "totalSaves" : 1416,
+            "belt" : "Brown"
+         },
+         {
+            "picked" : 213,
+            "wishlist" : 107,
+            "recordedPerc" : 8.519,
+            "own" : 378,
+            "pickedPerc" : 4.124,
+            "belt" : "Red",
+            "totalSaves" : 885,
+            "wishlistPerc" : 9.494,
+            "recorded" : 187,
+            "ownPerc" : 5.462
+         },
+         {
+            "wishlist" : 210,
+            "recordedPerc" : 17.175,
+            "own" : 952,
+            "picked" : 413,
+            "belt" : "Black",
+            "totalSaves" : 1952,
+            "pickedPerc" : 7.996,
+            "ownPerc" : 13.755,
+            "wishlistPerc" : 18.634,
+            "recorded" : 377
+         },
+         {
+            "picked" : 71,
+            "wishlist" : 29,
+            "own" : 95,
+            "recordedPerc" : 2.096,
+            "pickedPerc" : 1.375,
+            "belt" : "Unranked",
+            "totalSaves" : 241,
+            "wishlistPerc" : 2.573,
+            "recorded" : 46,
+            "ownPerc" : 1.373
+         }
+      ]
+   },
    "topLocksOwn" : [
       {
          "rank" : 1,
          "lock" : "Master Lock 140, 141"
       },
       {
-         "lock" : "Master Lock #3",
-         "rank" : 2
+         "rank" : 2,
+         "lock" : "Master Lock #3"
       },
       {
          "rank" : 3,
@@ -21,231 +315,129 @@
          "lock" : "Master Lock 410 LOTO (Lockout Tagout)"
       },
       {
-         "rank" : 6,
-         "lock" : "Master Lock 150"
+         "lock" : "Master Lock 150",
+         "rank" : 6
       },
       {
-         "lock" : "ABUS 72/40",
-         "rank" : 7
+         "rank" : 7,
+         "lock" : "ABUS 72/40"
       },
       {
          "rank" : 8,
          "lock" : "PACLOCK 90A Pro"
       },
       {
-         "rank" : 9,
-         "lock" : "ABUS 55/40"
+         "lock" : "Master Lock 570, 575, 576",
+         "rank" : 9
       },
       {
-         "lock" : "Master Lock 570, 575, 576",
+         "lock" : "ABUS 55/40",
          "rank" : 10
       },
       {
-         "lock" : "Mul-T-Lock Classic, Interactive",
-         "rank" : 11
+         "rank" : 11,
+         "lock" : "Brinks Brass Padlocks"
       },
       {
-         "rank" : 12,
-         "lock" : "Brinks Brass Padlocks"
+         "lock" : "Mul-T-Lock Classic, Interactive",
+         "rank" : 12
       },
       {
          "rank" : 13,
          "lock" : "ASSA 700"
       },
       {
-         "rank" : 14,
-         "lock" : "ABUS 64Ti Titalium"
+         "lock" : "ABUS 64Ti Titalium",
+         "rank" : 14
       },
       {
          "rank" : 15,
          "lock" : "Medeco Original, Biaxial, M3"
       },
       {
-         "lock" : "Australian Lock Co. BiLock",
-         "rank" : 16
+         "rank" : 16,
+         "lock" : "Any lock with any tool"
       },
       {
          "rank" : 17,
          "lock" : "Master Lock #1"
       },
       {
-         "rank" : 18,
-         "lock" : "Any lock with any tool"
+         "lock" : "Australian Lock Co. BiLock",
+         "rank" : 18
       },
       {
          "rank" : 19,
+         "lock" : "Robur 2391 Safe Deposit Lock"
+      },
+      {
+         "rank" : 20,
          "lock" : "ABUS 80TI Titalium"
       },
       {
          "lock" : "American Lock 5200",
-         "rank" : 20
-      },
-      {
-         "lock" : "Robur 2391 Safe Deposit Lock",
          "rank" : 21
       },
       {
-         "rank" : 22,
-         "lock" : "Any Cutaway Lock"
+         "lock" : "Any Cutaway Lock",
+         "rank" : 22
       },
       {
-         "rank" : 23,
-         "lock" : "Master Lock #5"
+         "lock" : "Master Lock #5",
+         "rank" : 23
       },
       {
-         "lock" : "ACE Brass Padlock",
-         "rank" : 24
+         "rank" : 24,
+         "lock" : "ACE Brass Padlock"
       },
       {
          "rank" : 25,
          "lock" : "Master Lock Magnum"
       }
    ],
-   "topLocksWishlist" : [
+   "topLocksPicked" : [
       {
-         "lock" : "ASSA 700",
-         "rank" : 1
+         "rank" : 1,
+         "lock" : "Master Lock 140, 141"
       },
       {
-         "lock" : "American Lock 1100 / A1100",
+         "lock" : "Master Lock #3",
          "rank" : 2
       },
       {
-         "lock" : "ASSA 500 / Ruko 500",
+         "lock" : "Any Acrylic Padlock",
          "rank" : 3
-      },
-      {
-         "rank" : 4,
-         "lock" : "PACLOCK 90A Pro"
-      },
-      {
-         "lock" : "ASSA Desmo",
-         "rank" : 5
-      },
-      {
-         "lock" : "PACLOCK 90A",
-         "rank" : 6
-      },
-      {
-         "rank" : 7,
-         "lock" : "Australian Lock Co. BiLock"
-      },
-      {
-         "lock" : "Fichet F3D",
-         "rank" : 8
-      },
-      {
-         "rank" : 9,
-         "lock" : "GOAL Z"
-      },
-      {
-         "rank" : 10,
-         "lock" : "ABUS 72/40"
-      },
-      {
-         "lock" : "Burg Wächter Alpha 800",
-         "rank" : 11
-      },
-      {
-         "rank" : 12,
-         "lock" : "IKON WSW"
-      },
-      {
-         "rank" : 13,
-         "lock" : "Master Lock 1145 - 1165D"
-      },
-      {
-         "lock" : "Schlage Primus, Everest Primus",
-         "rank" : 14
-      },
-      {
-         "lock" : "ABUS 80TI Titalium",
-         "rank" : 15
-      },
-      {
-         "lock" : "Burg Wächter Gamma 700",
-         "rank" : 16
-      },
-      {
-         "lock" : "Corbin Russwin Emhart",
-         "rank" : 17
-      },
-      {
-         "lock" : "Forte Enigma / Yuema 750",
-         "rank" : 18
-      },
-      {
-         "lock" : "ABUS 55/40",
-         "rank" : 19
-      },
-      {
-         "lock" : "ASSA 500",
-         "rank" : 20
-      },
-      {
-         "lock" : "Bowley Door Lock",
-         "rank" : 21
-      },
-      {
-         "lock" : "DOM System D",
-         "rank" : 22
-      },
-      {
-         "rank" : 23,
-         "lock" : "Gege pExtra"
-      },
-      {
-         "lock" : "Lockman Megacross",
-         "rank" : 24
-      },
-      {
-         "lock" : "Lockwood 214A40, 215A40, 270S70, 334B45, 356S63",
-         "rank" : 25
-      }
-   ],
-   "topLocksPicked" : [
-      {
-         "lock" : "Master Lock 140, 141",
-         "rank" : 1
-      },
-      {
-         "rank" : 2,
-         "lock" : "Master Lock #3"
-      },
-      {
-         "rank" : 3,
-         "lock" : "Any Acrylic Padlock"
       },
       {
          "rank" : 4,
          "lock" : "American Lock 1100 / A1100"
       },
       {
-         "rank" : 5,
-         "lock" : "Master Lock 150"
+         "lock" : "Master Lock 150",
+         "rank" : 5
       },
       {
-         "rank" : 6,
-         "lock" : "Master Lock 570, 575, 576"
+         "lock" : "Master Lock 570, 575, 576",
+         "rank" : 6
       },
       {
-         "lock" : "ABUS 55/40",
+         "lock" : "Brinks Brass Padlocks",
          "rank" : 7
       },
       {
          "rank" : 8,
-         "lock" : "Brinks Brass Padlocks"
-      },
-      {
-         "rank" : 9,
-         "lock" : "ABUS 72/40"
+         "lock" : "ABUS 55/40"
       },
       {
          "lock" : "Any lock with any tool",
-         "rank" : 10
+         "rank" : 9
       },
       {
          "lock" : "Master Lock 410 LOTO (Lockout Tagout)",
+         "rank" : 10
+      },
+      {
+         "lock" : "ABUS 72/40",
          "rank" : 11
       },
       {
@@ -257,28 +449,28 @@
          "rank" : 13
       },
       {
-         "lock" : "Master Lock #5",
-         "rank" : 14
+         "rank" : 14,
+         "lock" : "PACLOCK 90A Pro"
       },
       {
-         "lock" : "PACLOCK 90A Pro",
-         "rank" : 15
+         "rank" : 15,
+         "lock" : "Master Lock #5"
       },
       {
-         "lock" : "Any Cutaway Lock",
-         "rank" : 16
+         "rank" : 16,
+         "lock" : "Any Cutaway Lock"
       },
       {
          "rank" : 17,
          "lock" : "ABUS 64Ti Titalium"
       },
       {
-         "rank" : 18,
-         "lock" : "Master Lock Magnum"
+         "lock" : "Master Lock Magnum",
+         "rank" : 18
       },
       {
-         "lock" : "ABUS 80TI Titalium",
-         "rank" : 19
+         "rank" : 19,
+         "lock" : "ABUS 80TI Titalium"
       },
       {
          "lock" : "ASSA 700",
@@ -289,82 +481,1302 @@
          "lock" : "American Lock 5200"
       },
       {
-         "lock" : "Robur 2391 Safe Deposit Lock",
-         "rank" : 22
+         "rank" : 22,
+         "lock" : "Robur 2391 Safe Deposit Lock"
       },
       {
-         "lock" : "ABUS 55/30",
-         "rank" : 23
+         "rank" : 23,
+         "lock" : "Schlage Original Commercial/Residential"
       },
       {
          "rank" : 24,
-         "lock" : "Medeco Original, Biaxial, M3"
+         "lock" : "Brinks 44mm laminated padlock"
       },
       {
-         "rank" : 25,
-         "lock" : "Schlage Original Commercial/Residential"
+         "lock" : "ACE Brass Padlock",
+         "rank" : 25
       }
    ],
+   "dailyTableData" : {
+      "title" : "",
+      "columns" : [
+         {
+            "id" : "date",
+            "name" : "Date",
+            "align" : "left"
+         },
+         {
+            "align" : "center",
+            "name" : "Total Users",
+            "id" : "totalUsers"
+         },
+         {
+            "name" : "List Users",
+            "align" : "center",
+            "id" : "listUsers"
+         },
+         {
+            "align" : "center",
+            "name" : "Total Saves",
+            "id" : "totalSaves"
+         },
+         {
+            "id" : "ownUsers",
+            "align" : "center",
+            "name" : "Owned Users"
+         },
+         {
+            "name" : "Owned Locks",
+            "align" : "center",
+            "id" : "ownLocks"
+         },
+         {
+            "align" : "center",
+            "name" : "Picked Users",
+            "id" : "pickedUsers"
+         },
+         {
+            "id" : "pickedLocks",
+            "align" : "center",
+            "name" : "Picked Locks"
+         },
+         {
+            "align" : "center",
+            "name" : "Rec. Users",
+            "id" : "recordedUsers"
+         },
+         {
+            "id" : "recordedLocks",
+            "name" : "Rec. Locks",
+            "align" : "center"
+         },
+         {
+            "id" : "wishlistUsers",
+            "align" : "center",
+            "name" : "Wishlist Users"
+         },
+         {
+            "align" : "center",
+            "name" : "Wishlist Locks",
+            "id" : "wishlistLocks"
+         },
+         {
+            "id" : "newUsers",
+            "align" : "center",
+            "name" : "New Users"
+         }
+      ],
+      "data" : [
+         {
+            "totalSaves" : 3937,
+            "date" : "2023-11-19",
+            "recordedLocks" : 746,
+            "pickedLocks" : 1319,
+            "listUsers" : 54,
+            "pickedUsers" : 52,
+            "wishlistLocks" : 207,
+            "wishlistUsers" : 26,
+            "ownUsers" : 53,
+            "ownLocks" : 1665,
+            "newUsers" : 66,
+            "totalUsers" : 66,
+            "recordedUsers" : 40
+         },
+         {
+            "date" : "2023-11-20",
+            "totalSaves" : 3967,
+            "recordedLocks" : 747,
+            "pickedLocks" : 1329,
+            "listUsers" : 58,
+            "pickedUsers" : 55,
+            "wishlistLocks" : 208,
+            "wishlistUsers" : 27,
+            "ownUsers" : 56,
+            "ownLocks" : 1683,
+            "newUsers" : 2,
+            "totalUsers" : 68,
+            "recordedUsers" : 41
+         },
+         {
+            "pickedUsers" : 57,
+            "wishlistLocks" : 228,
+            "pickedLocks" : 1399,
+            "recordedLocks" : 752,
+            "totalSaves" : 4251,
+            "date" : "2023-11-21",
+            "listUsers" : 60,
+            "newUsers" : 2,
+            "ownLocks" : 1872,
+            "recordedUsers" : 42,
+            "totalUsers" : 70,
+            "wishlistUsers" : 27,
+            "ownUsers" : 59
+         },
+         {
+            "wishlistLocks" : 259,
+            "pickedUsers" : 59,
+            "listUsers" : 62,
+            "recordedLocks" : 776,
+            "pickedLocks" : 1439,
+            "totalSaves" : 4404,
+            "date" : "2023-11-22",
+            "recordedUsers" : 43,
+            "totalUsers" : 74,
+            "newUsers" : 4,
+            "ownLocks" : 1930,
+            "ownUsers" : 61,
+            "wishlistUsers" : 26
+         },
+         {
+            "wishlistLocks" : 261,
+            "pickedUsers" : 59,
+            "listUsers" : 62,
+            "recordedLocks" : 776,
+            "pickedLocks" : 1440,
+            "totalSaves" : 4416,
+            "date" : "2023-11-23",
+            "recordedUsers" : 43,
+            "totalUsers" : 75,
+            "newUsers" : 1,
+            "ownLocks" : 1939,
+            "ownUsers" : 61,
+            "wishlistUsers" : 26
+         },
+         {
+            "wishlistUsers" : 27,
+            "ownUsers" : 62,
+            "newUsers" : 2,
+            "ownLocks" : 1953,
+            "recordedUsers" : 43,
+            "totalUsers" : 77,
+            "recordedLocks" : 777,
+            "pickedLocks" : 1452,
+            "totalSaves" : 4444,
+            "date" : "2023-11-24",
+            "listUsers" : 63,
+            "pickedUsers" : 60,
+            "wishlistLocks" : 262
+         },
+         {
+            "totalSaves" : 4521,
+            "date" : "2023-11-25",
+            "pickedLocks" : 1459,
+            "recordedLocks" : 778,
+            "listUsers" : 64,
+            "pickedUsers" : 61,
+            "wishlistLocks" : 273,
+            "wishlistUsers" : 27,
+            "ownUsers" : 63,
+            "ownLocks" : 2011,
+            "newUsers" : 1,
+            "totalUsers" : 78,
+            "recordedUsers" : 43
+         },
+         {
+            "recordedUsers" : 43,
+            "totalUsers" : 79,
+            "newUsers" : 1,
+            "ownLocks" : 2011,
+            "ownUsers" : 63,
+            "wishlistUsers" : 27,
+            "wishlistLocks" : 273,
+            "pickedUsers" : 61,
+            "listUsers" : 64,
+            "pickedLocks" : 1460,
+            "recordedLocks" : 778,
+            "date" : "2023-11-26",
+            "totalSaves" : 4522
+         },
+         {
+            "totalUsers" : 101,
+            "recordedUsers" : 51,
+            "ownLocks" : 2253,
+            "newUsers" : 22,
+            "ownUsers" : 79,
+            "wishlistUsers" : 29,
+            "wishlistLocks" : 281,
+            "pickedUsers" : 78,
+            "listUsers" : 82,
+            "date" : "2023-11-27",
+            "totalSaves" : 5055,
+            "recordedLocks" : 831,
+            "pickedLocks" : 1690
+         },
+         {
+            "newUsers" : 14,
+            "ownLocks" : 2372,
+            "recordedUsers" : 54,
+            "totalUsers" : 115,
+            "wishlistUsers" : 32,
+            "ownUsers" : 90,
+            "pickedUsers" : 90,
+            "wishlistLocks" : 285,
+            "pickedLocks" : 1800,
+            "recordedLocks" : 899,
+            "date" : "2023-11-28",
+            "totalSaves" : 5356,
+            "listUsers" : 94
+         },
+         {
+            "ownUsers" : 156,
+            "wishlistUsers" : 51,
+            "recordedUsers" : 83,
+            "totalUsers" : 193,
+            "newUsers" : 78,
+            "ownLocks" : 3967,
+            "listUsers" : 161,
+            "recordedLocks" : 1596,
+            "pickedLocks" : 3041,
+            "date" : "2023-11-29",
+            "totalSaves" : 9052,
+            "wishlistLocks" : 448,
+            "pickedUsers" : 151
+         },
+         {
+            "recordedUsers" : 87,
+            "totalUsers" : 213,
+            "newUsers" : 20,
+            "ownLocks" : 4076,
+            "ownUsers" : 169,
+            "wishlistUsers" : 57,
+            "wishlistLocks" : 465,
+            "pickedUsers" : 164,
+            "listUsers" : 175,
+            "recordedLocks" : 1611,
+            "pickedLocks" : 3120,
+            "date" : "2023-11-30",
+            "totalSaves" : 9272
+         },
+         {
+            "recordedLocks" : 1626,
+            "pickedLocks" : 3190,
+            "totalSaves" : 9531,
+            "date" : "2023-12-01",
+            "listUsers" : 189,
+            "pickedUsers" : 178,
+            "wishlistLocks" : 499,
+            "wishlistUsers" : 58,
+            "ownUsers" : 183,
+            "newUsers" : 13,
+            "ownLocks" : 4216,
+            "recordedUsers" : 92,
+            "totalUsers" : 226
+         },
+         {
+            "wishlistLocks" : 503,
+            "pickedUsers" : 179,
+            "listUsers" : 190,
+            "date" : "2023-12-02",
+            "totalSaves" : 9524,
+            "pickedLocks" : 3185,
+            "recordedLocks" : 1624,
+            "totalUsers" : 228,
+            "recordedUsers" : 92,
+            "ownLocks" : 4212,
+            "newUsers" : 2,
+            "ownUsers" : 184,
+            "wishlistUsers" : 59
+         },
+         {
+            "pickedUsers" : 190,
+            "wishlistLocks" : 521,
+            "totalSaves" : 9779,
+            "date" : "2023-12-03",
+            "pickedLocks" : 3265,
+            "recordedLocks" : 1666,
+            "listUsers" : 202,
+            "ownLocks" : 4327,
+            "newUsers" : 10,
+            "totalUsers" : 238,
+            "recordedUsers" : 97,
+            "wishlistUsers" : 63,
+            "ownUsers" : 195
+         },
+         {
+            "wishlistUsers" : 63,
+            "ownUsers" : 207,
+            "ownLocks" : 4382,
+            "newUsers" : 14,
+            "totalUsers" : 252,
+            "recordedUsers" : 98,
+            "date" : "2023-12-04",
+            "totalSaves" : 9896,
+            "recordedLocks" : 1668,
+            "pickedLocks" : 3302,
+            "listUsers" : 213,
+            "pickedUsers" : 202,
+            "wishlistLocks" : 544
+         },
+         {
+            "listUsers" : 221,
+            "pickedLocks" : 3453,
+            "recordedLocks" : 1712,
+            "totalSaves" : 10349,
+            "date" : "2023-12-05",
+            "wishlistLocks" : 626,
+            "pickedUsers" : 209,
+            "ownUsers" : 214,
+            "wishlistUsers" : 68,
+            "recordedUsers" : 100,
+            "totalUsers" : 261,
+            "newUsers" : 9,
+            "ownLocks" : 4558
+         },
+         {
+            "listUsers" : 223,
+            "recordedLocks" : 1714,
+            "pickedLocks" : 3472,
+            "totalSaves" : 10401,
+            "date" : "2023-12-06",
+            "wishlistLocks" : 631,
+            "pickedUsers" : 211,
+            "ownUsers" : 216,
+            "wishlistUsers" : 68,
+            "recordedUsers" : 100,
+            "totalUsers" : 263,
+            "newUsers" : 2,
+            "ownLocks" : 4584
+         },
+         {
+            "ownUsers" : 219,
+            "wishlistUsers" : 68,
+            "recordedUsers" : 101,
+            "totalUsers" : 268,
+            "newUsers" : 5,
+            "ownLocks" : 4613,
+            "listUsers" : 227,
+            "recordedLocks" : 1722,
+            "pickedLocks" : 3508,
+            "date" : "2023-12-07",
+            "totalSaves" : 10479,
+            "wishlistLocks" : 636,
+            "pickedUsers" : 215
+         },
+         {
+            "listUsers" : 231,
+            "pickedLocks" : 3522,
+            "recordedLocks" : 1722,
+            "totalSaves" : 10510,
+            "date" : "2023-12-08",
+            "wishlistLocks" : 634,
+            "pickedUsers" : 220,
+            "ownUsers" : 223,
+            "wishlistUsers" : 68,
+            "recordedUsers" : 101,
+            "totalUsers" : 273,
+            "newUsers" : 5,
+            "ownLocks" : 4632
+         },
+         {
+            "newUsers" : 4,
+            "ownLocks" : 4647,
+            "recordedUsers" : 102,
+            "totalUsers" : 277,
+            "wishlistUsers" : 68,
+            "ownUsers" : 226,
+            "pickedUsers" : 223,
+            "wishlistLocks" : 635,
+            "recordedLocks" : 1727,
+            "pickedLocks" : 3535,
+            "totalSaves" : 10544,
+            "date" : "2023-12-09",
+            "listUsers" : 234
+         },
+         {
+            "ownUsers" : 227,
+            "wishlistUsers" : 69,
+            "recordedUsers" : 102,
+            "totalUsers" : 278,
+            "newUsers" : 1,
+            "ownLocks" : 4691,
+            "listUsers" : 235,
+            "recordedLocks" : 1729,
+            "pickedLocks" : 3574,
+            "totalSaves" : 10642,
+            "date" : "2023-12-10",
+            "wishlistLocks" : 648,
+            "pickedUsers" : 224
+         },
+         {
+            "pickedUsers" : 227,
+            "wishlistLocks" : 659,
+            "date" : "2023-12-11",
+            "totalSaves" : 10677,
+            "recordedLocks" : 1730,
+            "pickedLocks" : 3584,
+            "listUsers" : 238,
+            "ownLocks" : 4704,
+            "newUsers" : 5,
+            "totalUsers" : 283,
+            "recordedUsers" : 102,
+            "wishlistUsers" : 70,
+            "ownUsers" : 230
+         },
+         {
+            "wishlistLocks" : 664,
+            "pickedUsers" : 231,
+            "listUsers" : 243,
+            "date" : "2023-12-12",
+            "totalSaves" : 10806,
+            "pickedLocks" : 3614,
+            "recordedLocks" : 1738,
+            "totalUsers" : 288,
+            "recordedUsers" : 104,
+            "ownLocks" : 4790,
+            "newUsers" : 5,
+            "ownUsers" : 236,
+            "wishlistUsers" : 72
+         },
+         {
+            "listUsers" : 246,
+            "recordedLocks" : 1740,
+            "pickedLocks" : 3618,
+            "date" : "2023-12-13",
+            "totalSaves" : 10831,
+            "wishlistLocks" : 666,
+            "pickedUsers" : 232,
+            "ownUsers" : 239,
+            "wishlistUsers" : 72,
+            "recordedUsers" : 104,
+            "totalUsers" : 294,
+            "newUsers" : 6,
+            "ownLocks" : 4807
+         },
+         {
+            "wishlistLocks" : 671,
+            "pickedUsers" : 233,
+            "listUsers" : 248,
+            "pickedLocks" : 3624,
+            "recordedLocks" : 1741,
+            "totalSaves" : 10855,
+            "date" : "2023-12-14",
+            "recordedUsers" : 104,
+            "totalUsers" : 297,
+            "newUsers" : 3,
+            "ownLocks" : 4819,
+            "ownUsers" : 241,
+            "wishlistUsers" : 74
+         },
+         {
+            "ownUsers" : 244,
+            "wishlistUsers" : 75,
+            "recordedUsers" : 105,
+            "totalUsers" : 301,
+            "newUsers" : 4,
+            "ownLocks" : 4911,
+            "listUsers" : 251,
+            "pickedLocks" : 3802,
+            "recordedLocks" : 1881,
+            "date" : "2023-12-15",
+            "totalSaves" : 11275,
+            "wishlistLocks" : 681,
+            "pickedUsers" : 236
+         },
+         {
+            "wishlistUsers" : 76,
+            "ownUsers" : 247,
+            "ownLocks" : 4921,
+            "newUsers" : 2,
+            "totalUsers" : 303,
+            "recordedUsers" : 106,
+            "date" : "2023-12-16",
+            "totalSaves" : 11298,
+            "pickedLocks" : 3808,
+            "recordedLocks" : 1883,
+            "listUsers" : 254,
+            "pickedUsers" : 239,
+            "wishlistLocks" : 686
+         },
+         {
+            "pickedUsers" : 239,
+            "wishlistLocks" : 686,
+            "pickedLocks" : 3808,
+            "recordedLocks" : 1883,
+            "date" : "2023-12-17",
+            "totalSaves" : 11298,
+            "listUsers" : 254,
+            "newUsers" : 0,
+            "ownLocks" : 4921,
+            "recordedUsers" : 106,
+            "totalUsers" : 303,
+            "wishlistUsers" : 76,
+            "ownUsers" : 247
+         },
+         {
+            "listUsers" : 265,
+            "recordedLocks" : 1888,
+            "pickedLocks" : 3856,
+            "totalSaves" : 11457,
+            "date" : "2023-12-18",
+            "wishlistLocks" : 730,
+            "pickedUsers" : 248,
+            "ownUsers" : 256,
+            "wishlistUsers" : 79,
+            "recordedUsers" : 107,
+            "totalUsers" : 314,
+            "newUsers" : 11,
+            "ownLocks" : 4983
+         },
+         {
+            "recordedLocks" : 1649,
+            "pickedLocks" : 3604,
+            "totalSaves" : 10779,
+            "date" : "2023-12-19",
+            "listUsers" : 268,
+            "pickedUsers" : 251,
+            "wishlistLocks" : 748,
+            "wishlistUsers" : 81,
+            "ownUsers" : 260,
+            "newUsers" : 4,
+            "ownLocks" : 4778,
+            "recordedUsers" : 109,
+            "totalUsers" : 318
+         },
+         {
+            "recordedUsers" : 113,
+            "totalUsers" : 325,
+            "newUsers" : 7,
+            "ownLocks" : 5262,
+            "ownUsers" : 266,
+            "wishlistUsers" : 86,
+            "wishlistLocks" : 812,
+            "pickedUsers" : 256,
+            "listUsers" : 274,
+            "recordedLocks" : 1947,
+            "pickedLocks" : 4011,
+            "date" : "2023-12-20",
+            "totalSaves" : 12032
+         },
+         {
+            "recordedLocks" : 1896,
+            "pickedLocks" : 3877,
+            "totalSaves" : 11602,
+            "date" : "2023-12-21",
+            "listUsers" : 272,
+            "pickedUsers" : 254,
+            "wishlistLocks" : 783,
+            "wishlistUsers" : 84,
+            "ownUsers" : 264,
+            "newUsers" : 0,
+            "ownLocks" : 5046,
+            "recordedUsers" : 112,
+            "totalUsers" : 322
+         },
+         {
+            "ownLocks" : 5321,
+            "newUsers" : 11,
+            "totalUsers" : 336,
+            "recordedUsers" : 116,
+            "wishlistUsers" : 89,
+            "ownUsers" : 275,
+            "pickedUsers" : 263,
+            "wishlistLocks" : 825,
+            "totalSaves" : 12161,
+            "date" : "2023-12-22",
+            "recordedLocks" : 1960,
+            "pickedLocks" : 4055,
+            "listUsers" : 283
+         },
+         {
+            "totalUsers" : 343,
+            "recordedUsers" : 119,
+            "ownLocks" : 5354,
+            "newUsers" : 7,
+            "ownUsers" : 281,
+            "wishlistUsers" : 90,
+            "wishlistLocks" : 824,
+            "pickedUsers" : 269,
+            "listUsers" : 289,
+            "date" : "2023-12-23",
+            "totalSaves" : 12227,
+            "pickedLocks" : 4084,
+            "recordedLocks" : 1965
+         },
+         {
+            "pickedUsers" : 274,
+            "wishlistLocks" : 830,
+            "date" : "2023-12-24",
+            "totalSaves" : 12269,
+            "recordedLocks" : 1966,
+            "pickedLocks" : 4099,
+            "listUsers" : 294,
+            "ownLocks" : 5374,
+            "newUsers" : 7,
+            "totalUsers" : 350,
+            "recordedUsers" : 120,
+            "wishlistUsers" : 90,
+            "ownUsers" : 286
+         },
+         {
+            "listUsers" : 298,
+            "recordedLocks" : 1969,
+            "pickedLocks" : 4127,
+            "date" : "2023-12-25",
+            "totalSaves" : 12337,
+            "wishlistLocks" : 833,
+            "pickedUsers" : 278,
+            "ownUsers" : 290,
+            "wishlistUsers" : 90,
+            "recordedUsers" : 122,
+            "totalUsers" : 355,
+            "newUsers" : 5,
+            "ownLocks" : 5408
+         },
+         {
+            "totalSaves" : 12595,
+            "date" : "2023-12-26",
+            "recordedLocks" : 2016,
+            "pickedLocks" : 4217,
+            "listUsers" : 302,
+            "pickedUsers" : 284,
+            "wishlistLocks" : 847,
+            "wishlistUsers" : 92,
+            "ownUsers" : 294,
+            "ownLocks" : 5515,
+            "newUsers" : 5,
+            "totalUsers" : 360,
+            "recordedUsers" : 124
+         },
+         {
+            "wishlistUsers" : 94,
+            "ownUsers" : 297,
+            "ownLocks" : 5554,
+            "newUsers" : 6,
+            "totalUsers" : 366,
+            "recordedUsers" : 124,
+            "date" : "2023-12-27",
+            "totalSaves" : 12678,
+            "recordedLocks" : 2016,
+            "pickedLocks" : 4234,
+            "listUsers" : 306,
+            "pickedUsers" : 286,
+            "wishlistLocks" : 874
+         },
+         {
+            "pickedUsers" : 293,
+            "wishlistLocks" : 877,
+            "recordedLocks" : 2028,
+            "pickedLocks" : 4261,
+            "totalSaves" : 12747,
+            "date" : "2023-12-28",
+            "listUsers" : 311,
+            "newUsers" : 5,
+            "ownLocks" : 5581,
+            "recordedUsers" : 124,
+            "totalUsers" : 371,
+            "wishlistUsers" : 95,
+            "ownUsers" : 303
+         },
+         {
+            "recordedUsers" : 126,
+            "totalUsers" : 380,
+            "newUsers" : 9,
+            "ownLocks" : 5650,
+            "ownUsers" : 312,
+            "wishlistUsers" : 95,
+            "wishlistLocks" : 887,
+            "pickedUsers" : 302,
+            "listUsers" : 321,
+            "recordedLocks" : 2032,
+            "pickedLocks" : 4310,
+            "totalSaves" : 12879,
+            "date" : "2023-12-29"
+         },
+         {
+            "totalUsers" : 388,
+            "recordedUsers" : 129,
+            "ownLocks" : 5734,
+            "newUsers" : 8,
+            "ownUsers" : 319,
+            "wishlistUsers" : 98,
+            "wishlistLocks" : 894,
+            "pickedUsers" : 310,
+            "listUsers" : 329,
+            "date" : "2023-12-30",
+            "totalSaves" : 13070,
+            "recordedLocks" : 2040,
+            "pickedLocks" : 4402
+         },
+         {
+            "recordedUsers" : 129,
+            "totalUsers" : 394,
+            "newUsers" : 6,
+            "ownLocks" : 5774,
+            "ownUsers" : 326,
+            "wishlistUsers" : 99,
+            "wishlistLocks" : 896,
+            "pickedUsers" : 315,
+            "listUsers" : 335,
+            "pickedLocks" : 4421,
+            "recordedLocks" : 2040,
+            "date" : "2023-12-31",
+            "totalSaves" : 13131
+         },
+         {
+            "pickedUsers" : 320,
+            "wishlistLocks" : 909,
+            "date" : "2024-01-01",
+            "totalSaves" : 13204,
+            "pickedLocks" : 4443,
+            "recordedLocks" : 2040,
+            "listUsers" : 341,
+            "ownLocks" : 5812,
+            "newUsers" : 7,
+            "totalUsers" : 401,
+            "recordedUsers" : 129,
+            "wishlistUsers" : 101,
+            "ownUsers" : 332
+         },
+         {
+            "wishlistUsers" : 105,
+            "ownUsers" : 338,
+            "newUsers" : 7,
+            "ownLocks" : 5860,
+            "recordedUsers" : 130,
+            "totalUsers" : 408,
+            "recordedLocks" : 2042,
+            "pickedLocks" : 4466,
+            "date" : "2024-01-02",
+            "totalSaves" : 13284,
+            "listUsers" : 348,
+            "pickedUsers" : 324,
+            "wishlistLocks" : 916
+         },
+         {
+            "listUsers" : 355,
+            "totalSaves" : 13392,
+            "date" : "2024-01-03",
+            "pickedLocks" : 4506,
+            "recordedLocks" : 2050,
+            "wishlistLocks" : 925,
+            "pickedUsers" : 331,
+            "ownUsers" : 345,
+            "wishlistUsers" : 106,
+            "totalUsers" : 414,
+            "recordedUsers" : 133,
+            "ownLocks" : 5911,
+            "newUsers" : 6
+         },
+         {
+            "wishlistUsers" : 107,
+            "ownUsers" : 352,
+            "ownLocks" : 5952,
+            "newUsers" : 7,
+            "totalUsers" : 421,
+            "recordedUsers" : 138,
+            "date" : "2024-01-04",
+            "totalSaves" : 13477,
+            "recordedLocks" : 2058,
+            "pickedLocks" : 4537,
+            "listUsers" : 362,
+            "pickedUsers" : 337,
+            "wishlistLocks" : 930
+         },
+         {
+            "pickedLocks" : 4552,
+            "recordedLocks" : 2064,
+            "date" : "2024-01-05",
+            "totalSaves" : 13535,
+            "listUsers" : 365,
+            "pickedUsers" : 340,
+            "wishlistLocks" : 945,
+            "wishlistUsers" : 108,
+            "ownUsers" : 355,
+            "newUsers" : 3,
+            "ownLocks" : 5974,
+            "recordedUsers" : 140,
+            "totalUsers" : 424
+         },
+         {
+            "ownUsers" : 361,
+            "wishlistUsers" : 110,
+            "totalUsers" : 430,
+            "recordedUsers" : 144,
+            "ownLocks" : 6015,
+            "newUsers" : 6,
+            "listUsers" : 371,
+            "date" : "2024-01-06",
+            "totalSaves" : 13617,
+            "recordedLocks" : 2072,
+            "pickedLocks" : 4577,
+            "wishlistLocks" : 953,
+            "pickedUsers" : 346
+         },
+         {
+            "pickedUsers" : 351,
+            "wishlistLocks" : 969,
+            "recordedLocks" : 2086,
+            "pickedLocks" : 4630,
+            "date" : "2024-01-07",
+            "totalSaves" : 13761,
+            "listUsers" : 376,
+            "newUsers" : 6,
+            "ownLocks" : 6076,
+            "recordedUsers" : 146,
+            "totalUsers" : 436,
+            "wishlistUsers" : 113,
+            "ownUsers" : 366
+         },
+         {
+            "pickedLocks" : 4645,
+            "recordedLocks" : 2088,
+            "date" : "2024-01-08",
+            "totalSaves" : 13814,
+            "listUsers" : 380,
+            "pickedUsers" : 354,
+            "wishlistLocks" : 982,
+            "wishlistUsers" : 113,
+            "ownUsers" : 370,
+            "newUsers" : 3,
+            "ownLocks" : 6099,
+            "recordedUsers" : 147,
+            "totalUsers" : 439
+         },
+         {
+            "wishlistUsers" : 112,
+            "ownUsers" : 379,
+            "newUsers" : 9,
+            "ownLocks" : 6152,
+            "recordedUsers" : 148,
+            "totalUsers" : 448,
+            "pickedLocks" : 4682,
+            "recordedLocks" : 2096,
+            "totalSaves" : 13917,
+            "date" : "2024-01-09",
+            "listUsers" : 389,
+            "pickedUsers" : 363,
+            "wishlistLocks" : 987
+         },
+         {
+            "listUsers" : 390,
+            "pickedLocks" : 4685,
+            "recordedLocks" : 2096,
+            "date" : "2024-01-10",
+            "totalSaves" : 13929,
+            "wishlistLocks" : 987,
+            "pickedUsers" : 364,
+            "ownUsers" : 380,
+            "wishlistUsers" : 113,
+            "recordedUsers" : 148,
+            "totalUsers" : 449,
+            "newUsers" : 1,
+            "ownLocks" : 6161
+         },
+         {
+            "wishlistLocks" : 991,
+            "pickedUsers" : 366,
+            "listUsers" : 394,
+            "pickedLocks" : 4702,
+            "recordedLocks" : 2098,
+            "totalSaves" : 13984,
+            "date" : "2024-01-11",
+            "recordedUsers" : 149,
+            "totalUsers" : 453,
+            "newUsers" : 4,
+            "ownLocks" : 6193,
+            "ownUsers" : 384,
+            "wishlistUsers" : 114
+         },
+         {
+            "ownUsers" : 387,
+            "wishlistUsers" : 114,
+            "recordedUsers" : 152,
+            "totalUsers" : 456,
+            "newUsers" : 3,
+            "ownLocks" : 6210,
+            "listUsers" : 397,
+            "pickedLocks" : 4714,
+            "recordedLocks" : 2102,
+            "totalSaves" : 14017,
+            "date" : "2024-01-12",
+            "wishlistLocks" : 991,
+            "pickedUsers" : 369
+         },
+         {
+            "ownLocks" : 6262,
+            "newUsers" : 8,
+            "totalUsers" : 464,
+            "recordedUsers" : 153,
+            "wishlistUsers" : 116,
+            "ownUsers" : 395,
+            "pickedUsers" : 375,
+            "wishlistLocks" : 998,
+            "totalSaves" : 14104,
+            "date" : "2024-01-13",
+            "recordedLocks" : 2104,
+            "pickedLocks" : 4740,
+            "listUsers" : 405
+         },
+         {
+            "recordedUsers" : 153,
+            "totalUsers" : 468,
+            "newUsers" : 4,
+            "ownLocks" : 6291,
+            "ownUsers" : 399,
+            "wishlistUsers" : 118,
+            "wishlistLocks" : 1010,
+            "pickedUsers" : 378,
+            "listUsers" : 409,
+            "pickedLocks" : 4772,
+            "recordedLocks" : 2109,
+            "date" : "2024-01-14",
+            "totalSaves" : 14182
+         },
+         {
+            "pickedLocks" : 4798,
+            "recordedLocks" : 2118,
+            "date" : "2024-01-15",
+            "totalSaves" : 14278,
+            "listUsers" : 419,
+            "pickedUsers" : 386,
+            "wishlistLocks" : 1041,
+            "wishlistUsers" : 120,
+            "ownUsers" : 408,
+            "newUsers" : 10,
+            "ownLocks" : 6321,
+            "recordedUsers" : 156,
+            "totalUsers" : 478
+         },
+         {
+            "wishlistUsers" : 120,
+            "ownUsers" : 410,
+            "newUsers" : 2,
+            "ownLocks" : 6344,
+            "recordedUsers" : 157,
+            "totalUsers" : 480,
+            "recordedLocks" : 2120,
+            "pickedLocks" : 4812,
+            "totalSaves" : 14317,
+            "date" : "2024-01-16",
+            "listUsers" : 421,
+            "pickedUsers" : 388,
+            "wishlistLocks" : 1041
+         },
+         {
+            "pickedUsers" : 397,
+            "wishlistLocks" : 1041,
+            "pickedLocks" : 4856,
+            "recordedLocks" : 2133,
+            "date" : "2024-01-17",
+            "totalSaves" : 14441,
+            "listUsers" : 430,
+            "newUsers" : 9,
+            "ownLocks" : 6411,
+            "recordedUsers" : 160,
+            "totalUsers" : 489,
+            "wishlistUsers" : 121,
+            "ownUsers" : 418
+         },
+         {
+            "pickedUsers" : 404,
+            "wishlistLocks" : 1064,
+            "totalSaves" : 14575,
+            "date" : "2024-01-18",
+            "recordedLocks" : 2137,
+            "pickedLocks" : 4900,
+            "listUsers" : 439,
+            "ownLocks" : 6474,
+            "newUsers" : 8,
+            "totalUsers" : 497,
+            "recordedUsers" : 161,
+            "wishlistUsers" : 123,
+            "ownUsers" : 427
+         },
+         {
+            "wishlistUsers" : 124,
+            "ownUsers" : 430,
+            "newUsers" : 4,
+            "ownLocks" : 6510,
+            "recordedUsers" : 162,
+            "totalUsers" : 501,
+            "recordedLocks" : 2139,
+            "pickedLocks" : 4920,
+            "date" : "2024-01-19",
+            "totalSaves" : 14639,
+            "listUsers" : 443,
+            "pickedUsers" : 407,
+            "wishlistLocks" : 1070
+         },
+         {
+            "recordedUsers" : 164,
+            "totalUsers" : 507,
+            "newUsers" : 6,
+            "ownLocks" : 6545,
+            "ownUsers" : 435,
+            "wishlistUsers" : 126,
+            "wishlistLocks" : 1075,
+            "pickedUsers" : 412,
+            "listUsers" : 449,
+            "recordedLocks" : 2144,
+            "pickedLocks" : 4943,
+            "totalSaves" : 14707,
+            "date" : "2024-01-20"
+         },
+         {
+            "ownLocks" : 6557,
+            "newUsers" : 1,
+            "totalUsers" : 508,
+            "recordedUsers" : 164,
+            "wishlistUsers" : 126,
+            "ownUsers" : 436,
+            "pickedUsers" : 413,
+            "wishlistLocks" : 1075,
+            "totalSaves" : 14723,
+            "date" : "2024-01-21",
+            "recordedLocks" : 2145,
+            "pickedLocks" : 4946,
+            "listUsers" : 450
+         },
+         {
+            "ownUsers" : 443,
+            "wishlistUsers" : 128,
+            "totalUsers" : 515,
+            "recordedUsers" : 167,
+            "ownLocks" : 6633,
+            "newUsers" : 7,
+            "listUsers" : 457,
+            "totalSaves" : 14879,
+            "date" : "2024-01-22",
+            "pickedLocks" : 5007,
+            "recordedLocks" : 2160,
+            "wishlistLocks" : 1079,
+            "pickedUsers" : 420
+         },
+         {
+            "listUsers" : 465,
+            "totalSaves" : 15059,
+            "date" : "2024-01-23",
+            "recordedLocks" : 2173,
+            "pickedLocks" : 5066,
+            "wishlistLocks" : 1096,
+            "pickedUsers" : 430,
+            "ownUsers" : 452,
+            "wishlistUsers" : 130,
+            "totalUsers" : 523,
+            "recordedUsers" : 168,
+            "ownLocks" : 6724,
+            "newUsers" : 8
+         },
+         {
+            "wishlistUsers" : 133,
+            "ownUsers" : 459,
+            "ownLocks" : 6804,
+            "newUsers" : 7,
+            "totalUsers" : 530,
+            "recordedUsers" : 171,
+            "totalSaves" : 15201,
+            "date" : "2024-01-24",
+            "pickedLocks" : 5105,
+            "recordedLocks" : 2181,
+            "listUsers" : 472,
+            "pickedUsers" : 436,
+            "wishlistLocks" : 1111
+         },
+         {
+            "ownLocks" : 6841,
+            "newUsers" : 3,
+            "totalUsers" : 533,
+            "recordedUsers" : 173,
+            "wishlistUsers" : 134,
+            "ownUsers" : 462,
+            "pickedUsers" : 438,
+            "wishlistLocks" : 1113,
+            "date" : "2024-01-25",
+            "totalSaves" : 15263,
+            "pickedLocks" : 5121,
+            "recordedLocks" : 2188,
+            "listUsers" : 475
+         },
+         {
+            "wishlistLocks" : 1117,
+            "pickedUsers" : 440,
+            "listUsers" : 477,
+            "recordedLocks" : 2190,
+            "pickedLocks" : 5130,
+            "date" : "2024-01-26",
+            "totalSaves" : 15291,
+            "recordedUsers" : 173,
+            "totalUsers" : 535,
+            "newUsers" : 2,
+            "ownLocks" : 6854,
+            "ownUsers" : 464,
+            "wishlistUsers" : 135
+         },
+         {
+            "ownLocks" : 6921,
+            "newUsers" : 5,
+            "totalUsers" : 540,
+            "recordedUsers" : 173,
+            "wishlistUsers" : 137,
+            "ownUsers" : 469,
+            "pickedUsers" : 443,
+            "wishlistLocks" : 1127,
+            "totalSaves" : 15408,
+            "date" : "2024-01-27",
+            "pickedLocks" : 5165,
+            "recordedLocks" : 2195,
+            "listUsers" : 482
+         }
+      ]
+   },
    "savesByBelt" : [
       {
-         "count" : "1413",
-         "id" : "White",
-         "value" : 0.0959722882564695,
-         "label" : "White"
+         "Orange" : 699,
+         "Yellow" : 719,
+         "Blue" : 766,
+         "list" : "Own",
+         "Green" : 1243,
+         "White" : 689,
+         "Brown" : 606,
+         "Black" : 952,
+         "Purple" : 774,
+         "Red" : 378,
+         "Unranked" : 95
       },
       {
-         "value" : 0.0965835767167018,
-         "id" : "Yellow",
-         "count" : "1422",
-         "label" : "Yellow"
+         "Green" : 980,
+         "list" : "Picked",
+         "White" : 720,
+         "Yellow" : 677,
+         "Orange" : 585,
+         "Blue" : 582,
+         "Unranked" : 71,
+         "Red" : 213,
+         "Purple" : 531,
+         "Black" : 413,
+         "Brown" : 393
       },
       {
-         "label" : "Orange",
-         "count" : "1388",
-         "id" : "Orange",
-         "value" : 0.0942742647558242
+         "Black" : 377,
+         "Brown" : 300,
+         "Unranked" : 46,
+         "Red" : 187,
+         "Purple" : 388,
+         "Yellow" : 112,
+         "Orange" : 112,
+         "Blue" : 300,
+         "Green" : 291,
+         "list" : "Recorded",
+         "White" : 82
       },
       {
-         "label" : "Green",
-         "id" : "Green",
-         "count" : "2593",
-         "value" : 0.176118997486925
+         "Black" : 210,
+         "Brown" : 117,
+         "Unranked" : 29,
+         "Red" : 107,
+         "Purple" : 184,
+         "Blue" : 162,
+         "Yellow" : 25,
+         "Orange" : 76,
+         "White" : 14,
+         "Green" : 203,
+         "list" : "Wishlist"
+      }
+   ],
+   "metadata" : {
+      "timezone" : "EST",
+      "updatedDateTime" : "2024-01-28T20:46:42"
+   },
+   "topLocksWishlist" : [
+      {
+         "lock" : "American Lock 1100 / A1100",
+         "rank" : 1
       },
       {
-         "value" : 0.118589961285064,
-         "id" : "Blue",
-         "count" : "1746",
-         "label" : "Blue"
+         "rank" : 2,
+         "lock" : "ASSA 700"
       },
       {
-         "label" : "Purple",
-         "count" : "1808",
-         "id" : "Purple",
-         "value" : 0.122801059566664
+         "rank" : 3,
+         "lock" : "ASSA 500 / Ruko 500"
       },
       {
-         "label" : "Brown",
-         "value" : 0.092915845955308,
-         "id" : "Brown",
-         "count" : "1368"
+         "rank" : 4,
+         "lock" : "PACLOCK 90A Pro"
       },
       {
-         "label" : "Red",
-         "id" : "Red",
-         "count" : "863",
-         "value" : 0.058615771242274
+         "rank" : 5,
+         "lock" : "ASSA Desmo"
       },
       {
-         "value" : 0.128846023228961,
-         "id" : "Black",
-         "count" : "1897",
-         "label" : "Black"
+         "lock" : "PACLOCK 90A",
+         "rank" : 6
       },
       {
-         "label" : "Unranked",
-         "value" : 0.0152822115058072,
-         "count" : "225",
-         "id" : "Unranked"
+         "lock" : "GOAL Z",
+         "rank" : 7
+      },
+      {
+         "rank" : 8,
+         "lock" : "ABUS 72/40"
+      },
+      {
+         "rank" : 9,
+         "lock" : "Australian Lock Co. BiLock"
+      },
+      {
+         "lock" : "Fichet F3D",
+         "rank" : 10
+      },
+      {
+         "rank" : 11,
+         "lock" : "Schlage Primus, Everest Primus"
+      },
+      {
+         "lock" : "Burg Wächter Alpha 800",
+         "rank" : 12
+      },
+      {
+         "rank" : 13,
+         "lock" : "Corbin Russwin Emhart"
+      },
+      {
+         "rank" : 14,
+         "lock" : "IKON WSW"
+      },
+      {
+         "rank" : 15,
+         "lock" : "Master Lock 1145 - 1165D"
+      },
+      {
+         "rank" : 16,
+         "lock" : "Master Lock 150"
+      },
+      {
+         "lock" : "Master Lock 410 LOTO (Lockout Tagout)",
+         "rank" : 17
+      },
+      {
+         "lock" : "ABUS 55/40",
+         "rank" : 18
+      },
+      {
+         "rank" : 19,
+         "lock" : "ABUS 80TI Titalium"
+      },
+      {
+         "lock" : "Bowley Door Lock",
+         "rank" : 20
+      },
+      {
+         "rank" : 21,
+         "lock" : "Burg Wächter Gamma 700"
+      },
+      {
+         "lock" : "Forte Enigma / Yuema 750",
+         "rank" : 22
+      },
+      {
+         "rank" : 23,
+         "lock" : "Yale 500 series"
+      },
+      {
+         "lock" : "ASSA 500",
+         "rank" : 24
+      },
+      {
+         "lock" : "DOM System D",
+         "rank" : 25
       }
    ],
    "topLocksRecorded" : [
@@ -373,20 +1785,20 @@
          "lock" : "American Lock 1100 / A1100"
       },
       {
-         "rank" : 2,
-         "lock" : "Master Lock 140, 141"
+         "lock" : "Master Lock 140, 141",
+         "rank" : 2
       },
       {
          "rank" : 3,
          "lock" : "Mul-T-Lock Classic, Interactive"
       },
       {
-         "rank" : 4,
-         "lock" : "ASSA 700"
+         "lock" : "ASSA 700",
+         "rank" : 4
       },
       {
-         "rank" : 5,
-         "lock" : "ABUS 72/40"
+         "lock" : "ABUS 72/40",
+         "rank" : 5
       },
       {
          "lock" : "Robur 2391 Safe Deposit Lock",
@@ -394,79 +1806,79 @@
       },
       {
          "rank" : 7,
-         "lock" : "Medeco Original, Biaxial, M3"
+         "lock" : "Master Lock #3"
       },
       {
-         "rank" : 8,
-         "lock" : "Master Lock #3"
+         "lock" : "Medeco Original, Biaxial, M3",
+         "rank" : 8
       },
       {
          "lock" : "Any Acrylic Padlock",
          "rank" : 9
       },
       {
-         "lock" : "Master Lock 410 LOTO (Lockout Tagout)",
+         "lock" : "PACLOCK 90A Pro",
          "rank" : 10
       },
       {
          "rank" : 11,
-         "lock" : "PACLOCK 90A Pro"
+         "lock" : "Master Lock 410 LOTO (Lockout Tagout)"
       },
       {
          "rank" : 12,
          "lock" : "ASSA 600"
       },
       {
-         "rank" : 13,
-         "lock" : "ASSA Twin Maximum, Twin Pro, Twin v10, Twin 2, Twin Global"
+         "lock" : "ASSA Twin Maximum, Twin Pro, Twin v10, Twin 2, Twin Global",
+         "rank" : 13
       },
       {
          "rank" : 14,
-         "lock" : "Lockwood 214A40, 215A40, 270S70, 334B45, 356S63"
+         "lock" : "Australian Lock Co. BiLock"
       },
       {
          "rank" : 15,
-         "lock" : "Milencio Magnum / Yale Superior"
+         "lock" : "GOAL P"
       },
       {
-         "lock" : "Australian Lock Co. BiLock",
-         "rank" : 16
-      },
-      {
-         "lock" : "GOAL P",
-         "rank" : 17
+         "rank" : 16,
+         "lock" : "Lockwood 214A40, 215A40, 270S70, 334B45, 356S63"
       },
       {
          "lock" : "Master Lock 150",
-         "rank" : 18
+         "rank" : 17
       },
       {
-         "lock" : "Master Lock 570, 575, 576",
-         "rank" : 19
+         "rank" : 18,
+         "lock" : "Master Lock 570, 575, 576"
       },
       {
-         "rank" : 20,
-         "lock" : "Mul-T-Lock Jr, Classic, Interactive"
-      },
-      {
-         "lock" : "ABUS 80TI Titalium",
-         "rank" : 21
+         "rank" : 19,
+         "lock" : "Milencio Magnum / Yale Superior"
       },
       {
          "lock" : "Any lock with any tool",
+         "rank" : 20
+      },
+      {
+         "lock" : "ASSA 600, Max+ Restricted",
+         "rank" : 21
+      },
+      {
+         "lock" : "ASSA Desmo",
          "rank" : 22
       },
       {
-         "rank" : 23,
-         "lock" : "ASSA 600, Max+ Restricted"
+         "lock" : "Mul-T-Lock Jr, Classic, Interactive",
+         "rank" : 23
       },
       {
-         "lock" : "GOAL D9",
-         "rank" : 24
+         "rank" : 24,
+         "lock" : "ABUS 80TI Titalium"
       },
       {
-         "lock" : "ASSA 500 / Ruko 500",
-         "rank" : 25
+         "rank" : 25,
+         "lock" : "ASSA Twin 6000"
       }
    ]
 }
