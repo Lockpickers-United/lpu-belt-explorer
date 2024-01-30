@@ -1,4 +1,4 @@
-import{j as e,R as t,C as n,a3 as i,c as a,U as o,V as s,W as r}from"./index-09f07e2d.js";import{G as l}from"./GithubButton-46c7a871.js";import{M as c}from"./index-854eb18b.js";import{r as d}from"./index-e7876458.js";const h=`## LockPickers United and the Evolution of the LPU Belt Ranking System
+import{j as e,R as t,C as n,a3 as i,c as a,U as o,V as s,W as r}from"./index-a89210de.js";import{G as l}from"./GithubButton-a44a2bec.js";import{M as c}from"./index-2fb6caf7.js";import{r as d}from"./index-bb02eaae.js";const h=`## LockPickers United and the Evolution of the LPU Belt Ranking System
 
 ### Introduction to the Belt Ranking System
 
