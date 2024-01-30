@@ -5,10 +5,12 @@ import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
+import DBContext from '../app/DBContext'
 
 function CopyProfileLinkButton() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
+    const {lockCollection} = useContext(DBContext)
 
     const handleClick = useCallback(async () => {
         const link = `https://lpubelts.com/#/profile/${user.uid}`
@@ -17,7 +19,7 @@ function CopyProfileLinkButton() {
         enqueueSnackbar('Link to entry copied to clipboard.')
     }, [user?.uid])
 
-    if (!user || userId !== user.uid) return null
+    if (!user || userId !== user.uid || !lockCollection?.displayName) return null
     return (
         <Tooltip title='Copy My Profile Link' arrow disableFocusListener>
             <IconButton onClick={handleClick}>

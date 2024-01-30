@@ -11,6 +11,7 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -50,7 +51,7 @@ function UserMenu() {
                             ? <Avatar
                                 alt={user.displayName}
                                 src={user.photoURL}
-                                sx={{ width: 32, height: 32 }}
+                                sx={{width: 32, height: 32}}
                             />
                             : <AccountCircleIcon/>
                     }
@@ -70,6 +71,15 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>{user.displayName}</ListItemText>
                         </MenuItem>
+                        {
+                            beta &&
+                            <MenuItem onClick={handleClick('/profile/edit')}>
+                                <ListItemIcon>
+                                    <EditIcon/>
+                                </ListItemIcon>
+                                <ListItemText>Edit Profile</ListItemText>
+                            </MenuItem>
+                        }
                         {
                             beta &&
                             <MenuItem onClick={handleClick(`/profile/${user.uid}`)}>

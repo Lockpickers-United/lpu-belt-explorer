@@ -15,10 +15,10 @@ function ProfileNotFound() {
 
     return (
         <Card style={style}>
-            <CardHeader title='Profile Not Found!'/>
+            <CardHeader title='Log In!'/>
             <CardContent>
                 <Typography variant='h6' align='center'>
-                    This profile was not found, or is not public.
+                    You must be logged in to edit your profile.
                 </Typography>
             </CardContent>
         </Card>

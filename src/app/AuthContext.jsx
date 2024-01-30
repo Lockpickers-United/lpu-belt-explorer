@@ -6,9 +6,11 @@ const AuthContext = React.createContext({})
 
 export function AuthProvider({children}) {
     const [user, setUser] = useState({})
+    const [authLoaded, setAuthLoaded] = useState(false)
 
     useEffect(() => {
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
+            setAuthLoaded(true)
             setUser(user)
         })
         return () => unregisterAuthObserver()
@@ -25,11 +27,12 @@ export function AuthProvider({children}) {
     }, [])
 
     const value = useMemo(() => ({
+        authLoaded,
         isLoggedIn: !!user?.uid,
         user,
         login,
         logout
-    }), [login, logout, user])
+    }), [authLoaded, login, logout, user])
 
     return (
         <AuthContext.Provider value={value}>

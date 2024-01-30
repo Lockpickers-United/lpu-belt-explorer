@@ -10,6 +10,7 @@ const DBContext = React.createContext({})
 export function DBProvider({children}) {
     const {isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
+    const [dbLoaded, setDbLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
 
     const addToLockCollection = useCallback(async (key, entryId) => {
@@ -46,6 +47,20 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const updateProfileVisibility = useCallback(async (visibility, displayName) => {
+        if (dbError) return false
+        const ref = doc(db, 'lockcollections', user.uid)
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(ref)
+            const delta = {public: visibility, displayName}
+            if (!sfDoc.exists()) {
+                transaction.set(ref, delta)
+            } else {
+                transaction.update(ref, delta)
+            }
+        })
+    }, [dbError, user])
+
     const getProfile = useCallback(async userId => {
         const ref = doc(db, 'lockcollections', userId)
         const value = await getDoc(ref)
@@ -63,6 +78,7 @@ export function DBProvider({children}) {
                 } else {
                     setLockCollection({})
                 }
+                setDbLoaded(true)
             }, error => {
                 console.error('Error listening to DB:', error)
                 setDbError(true)
@@ -73,15 +89,18 @@ export function DBProvider({children}) {
             })
         } else {
             setLockCollection({})
+            setDbLoaded(true)
         }
     }, [isLoggedIn, user])
 
     const value = useMemo(() => ({
+        dbLoaded,
         lockCollection,
         addToLockCollection,
         removeFromLockCollection,
-        getProfile
-    }), [lockCollection, addToLockCollection, removeFromLockCollection, getProfile])
+        getProfile,
+        updateProfileVisibility
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility])
 
     return (
         <DBContext.Provider value={value}>

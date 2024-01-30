@@ -54,7 +54,7 @@ function InlineFilterDisplay({profile}) {
         (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
 
     const title = userId
-        ? `${profile.displayName}'s Collection`
+        ? `${profile.displayName ? profile.displayName + '\'s' : 'Private'} Collection`
         : isValidCollection ? 'My Collection' : 'Filters'
 
     return (

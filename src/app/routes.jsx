@@ -72,6 +72,14 @@ export default [
     },
     {
         beta: true,
+        path: '/profile/edit',
+        lazy: async () => {
+            const {default: EditProfileRoute} = await import('../profile/EditProfileRoute')
+            return {element: <EditProfileRoute/>}
+        }
+    },
+    {
+        beta: true,
         path: '/profile/:userId',
         lazy: async () => {
             const {default: ProfileRoute} = await import('../profile/ProfileRoute')
