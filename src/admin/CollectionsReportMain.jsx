@@ -45,20 +45,19 @@ function CollectionsReportMain() {
     // build line data
     const dailyTableData = fullData.dailyTableData.data
     const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'pickedLocks', 'ownLocks']
-    const lineMetrics = new Map()
-    metricsList.map((metricName) => {
-        const metricHash = new Map()
-        const metricData = []
-        dailyTableData.map((value) => {
-            const dataPoint = new Map()
-            dataPoint['x'] = value['date']
-            dataPoint['y'] = value[metricName]
-            metricData.push(dataPoint)
-        })
-        metricHash['data'] = metricData
-        metricHash['id'] = metricName
-        lineMetrics[metricName] = metricHash
-    })
+    const lineMetrics = metricsList.reduce((acc, metricName) => {
+        const metricData = dailyTableData.map(value => ({
+            x: value.date,
+            y: value[metricName]
+        }))
+
+        acc[metricName] = {
+            data: metricData,
+            id: metricName
+        }
+
+        return acc
+    }, {})
 
     const {width} = useWindowSize()
     const smallWindow = width < 560

@@ -10,8 +10,12 @@ export const primaryTheme = {
     text: {
         color: mainColor
     },
-    grid: {line: {strokeWidth: 4, stroke: '#f00'}},
-
+    grid: {
+        line: {
+            strokeWidth: 1,
+            stroke: '#ccc'
+        }
+    },
     tooltip: {
         container: {
             backgroundColor: '#222',

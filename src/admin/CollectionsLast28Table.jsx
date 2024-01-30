@@ -5,10 +5,7 @@ import dayjs from 'dayjs'
 const CollectionsLast28Table = ({fullData}) => {
 
     const data = fullData.dailyTableData
-    let dates = []
-    data.data.map((dayData) => {
-        dates.push(dayData['date'])
-    })
+    const dates = data.data.map(value => value.date)
     const latest = dayjs(dates.reduce((max, c) => c > max ? c : max))
     const startDay = latest.subtract(28, 'day')
 

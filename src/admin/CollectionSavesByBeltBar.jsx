@@ -5,7 +5,7 @@ import {beltColors, primaryTheme} from './adminChartDefaults.js'
 
 const CollectionSavesByBeltBar = ({fullData}) => {
 
-    const data = fullData.savesByBelt
+    const data = fullData.listSavesByBelt
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360

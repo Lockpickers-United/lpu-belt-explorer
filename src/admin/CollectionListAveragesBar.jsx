@@ -10,10 +10,10 @@ const CollectionListAveragesBar = ({fullData}) => {
     let data = []
     summaryData.forEach((value) => {
         let averagesData = new Map()
-        averagesData['id'] = value['list']
-        averagesData['label'] = value['list']
-        averagesData['count'] = value['averageItems']
-        averagesData['value'] = value['averageItems']
+        averagesData.id = value.list
+        averagesData.label = value.list
+        averagesData.count = value.averageItems
+        averagesData.value = value.averageItems
         data.push(averagesData)
     })
 

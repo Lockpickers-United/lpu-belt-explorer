@@ -182,8 +182,69 @@
         "id" : "newUsers"
       }
     ]
+  }, "savesByBelt" : [
+  {
+    "value" : 0,
+    "label" : "White",
+    "id" : "White",
+    "count" : 0
   },
-  "savesByBelt": [
+  {
+    "label" : "Yellow",
+    "value" : 0,
+    "id" : "Yellow",
+    "count" : 0
+  },
+  {
+    "count" : 0,
+    "id" : "Orange",
+    "value" : 0,
+    "label" : "Orange"
+  },
+  {
+    "count" : 0,
+    "id" : "Green",
+    "value" : 0,
+    "label" : "Green"
+  },
+  {
+    "value" : 0,
+    "label" : "Blue",
+    "id" : "Blue",
+    "count" : 0
+  },
+  {
+    "label" : "Purple",
+    "value" : 0,
+    "count" : 0,
+    "id" : "Purple"
+  },
+  {
+    "count" : 0,
+    "id" : "Brown",
+    "value" : 0,
+    "label" : "Brown"
+  },
+  {
+    "label" : "Red",
+    "value" : 0,
+    "count" : 0,
+    "id" : "Red"
+  },
+  {
+    "id" : "Black",
+    "count" : 0,
+    "value" : 0,
+    "label" : "Black"
+  },
+  {
+    "count" : 0,
+    "id" : "Unranked",
+    "value" : 0,
+    "label" : "Unranked"
+  }
+],
+  "listSavesByBelt": [
     {
       "Brown": 0,
       "list": "Own",
