@@ -20,18 +20,18 @@ function InlineFilterDisplay({profile}) {
 
     const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
 
-    const {collection} = filters
+    const {collection = 'Any'} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, borderRadius: 0}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
 
     let currentCollection = ''
-    if (filters && filters.collection) {
-        if (typeof filters.collection === 'string') {
-            currentCollection = filters.collection
+    if (collection) {
+        if (typeof collection === 'string') {
+            currentCollection = collection
         } else {
-            currentCollection = filters.collection[0]
+            currentCollection = collection[0]
         }
     }
 
@@ -49,9 +49,9 @@ function InlineFilterDisplay({profile}) {
         handleFilter('collection', event.target.value)
     }, [handleFilter])
 
-    if (!filterCount) return null
+    if (!filterCount && !userId) return null
     const isValidCollection = typeof collection === 'string' &&
-        (collectionTypes.includes(collection) || collection === 'Any') && filterCount === 1
+        (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
 
     const title = isValidCollection
         ? (userId ? `${profile.displayName}'s Collection` : 'My Collection')
