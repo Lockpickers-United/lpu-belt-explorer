@@ -16,21 +16,22 @@ function LeaderboardRoute() {
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         const load = async () => {
-            const response = await fetch(dataUrl)
-            const value = await response.json()
-            setData(value)
-            setLoading(false)
+            try {
+                const response = await fetch(dataUrl)
+                const value = await response.json()
+                setData(value)
+                setLoading(false)
+            } catch (ex) {
+                console.error('Error loading leaderboard data.', ex)
+                enqueueSnackbar('Error loading leaderboard data. Please reload the page.', {
+                    autoHideDuration: null,
+                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
+                })
+                setLoading(false)
+            }
+
         }
-        try {
-            load()
-        } catch (ex) {
-            console.error('Error loading leaderboard data.', ex)
-            enqueueSnackbar('Error loading leaderboard data. Please reload the page.', {
-                autoHideDuration: null,
-                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
-            })
-            setLoading(false)
-        }
+        load()
     }, [])
 
     const nav = (

@@ -23,9 +23,7 @@ const CollectionsSummaryTable = ({fullData}) => {
     const tableWidth = '100%'
 
     return (
-        <div style={{}}>
-            <AdminStatsTable tableData={data} tableWidth={tableWidth} fontSize={fontSize}/>
-        </div>
+        <AdminStatsTable tableData={data} tableWidth={tableWidth} fontSize={fontSize}/>
     )
 }
 

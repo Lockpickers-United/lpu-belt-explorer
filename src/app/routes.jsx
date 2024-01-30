@@ -78,6 +78,7 @@ export default [
             return {element: <AdminRoute/>}
         }
     },
+    {
         beta: true,
         path: '/profile/edit',
         lazy: async () => {

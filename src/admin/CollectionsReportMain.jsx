@@ -14,27 +14,26 @@ import dayjs from 'dayjs'
 const dataUrl = 'https://explore.lpubelts.com/data/statsCollectionsFull.json'
 
 function CollectionsReportMain() {
-
     const [data, setData] = useState({data: [], metadata: {}})
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const load = async () => {
-            const response = await fetch(dataUrl)
-            const value = await response.json()
-            setData(value)
-            setLoading(false)
+            try {
+                const response = await fetch(dataUrl)
+                const value = await response.json()
+                setData(value)
+                setLoading(false)
+            } catch (ex) {
+                console.error('Error loading collections data.', ex)
+                enqueueSnackbar('Error loading collections data. Please reload the page.', {
+                    autoHideDuration: null,
+                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
+                })
+                setLoading(false)
+            }
         }
-        try {
-            load()
-        } catch (ex) {
-            console.error('Error loading collections data.', ex)
-            enqueueSnackbar('Error loading collections data. Please reload the page.', {
-                autoHideDuration: null,
-                action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
-            })
-            setLoading(false)
-        }
+        load()
     }, [])
 
     const fullData = loading ? skeletonData : data
@@ -73,7 +72,7 @@ function CollectionsReportMain() {
             minWidth: '320px', maxWidth: 900, height: '100%',
             padding: pagePadding, backgroundColor: '#efefef',
             marginLeft: 'auto', marginRight: 'auto',
-            fontSize: '1.5rem', lineHeight:0.8
+            fontSize: '1.5rem', lineHeight: 0.8
         }}>
 
             <div style={firstHeaderStyle}>
