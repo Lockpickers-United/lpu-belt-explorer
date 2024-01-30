@@ -55,7 +55,6 @@ function Leaderboard({data, loading}) {
                                         key={leader.id}
                                         index={index}
                                         leader={leader}
-                                        user={user}
                                         scrollableRef={scrollableRef}
                                         highlighted={isHighlighted}
                                     />

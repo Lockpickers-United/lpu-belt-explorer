@@ -13,6 +13,7 @@ import ToggleCompactButton from '../locks/ToggleCompactButton'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import CopyProfileLinkButton from './CopyProfileLinkButton'
+import EditProfileButton from './EditProfileButton'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
 import lpuLogoPath from '../resources/LPU.png'
@@ -52,6 +53,7 @@ function ProfileRoute() {
         <React.Fragment>
             <FilterButton/>
             <ToggleCompactButton/>
+            <EditProfileButton/>
             <CopyProfileLinkButton/>
         </React.Fragment>
     )

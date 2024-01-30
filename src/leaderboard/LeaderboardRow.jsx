@@ -1,8 +1,9 @@
 import TableRow from '@mui/material/TableRow'
 import React, {useEffect, useRef, useState} from 'react'
 import LeaderboardCell from './LeaderboardCell'
+import LeaderboardName from './LeaderboardName'
 
-function LeaderboardRow({index, leader, user, highlighted, scrollableRef}) {
+function LeaderboardRow({index, leader, highlighted, scrollableRef}) {
     const ref = useRef()
     const [scrolled, setScrolled] = useState(false)
 
@@ -30,12 +31,12 @@ function LeaderboardRow({index, leader, user, highlighted, scrollableRef}) {
                 ...style
             }}
         >
-            <LeaderboardCell leader={leader} user={user} value={index + 1}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.displayName || 'Anonymous'} align='left'/>
-            <LeaderboardCell leader={leader} user={user} value={leader.own}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.picked}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.recorded}/>
-            <LeaderboardCell leader={leader} user={user} value={leader.wishlist}/>
+            <LeaderboardCell leader={leader} value={index + 1}/>
+            <LeaderboardCell leader={leader} value={<LeaderboardName leader={leader}/>} align='left'/>
+            <LeaderboardCell leader={leader} value={leader.own}/>
+            <LeaderboardCell leader={leader} value={leader.picked}/>
+            <LeaderboardCell leader={leader} value={leader.recorded}/>
+            <LeaderboardCell leader={leader} value={leader.wishlist}/>
         </TableRow>
     )
 }

@@ -8,11 +8,15 @@ import CardHeader from '@mui/material/CardHeader'
 import IconButton from '@mui/material/IconButton'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
+import {useNavigate} from 'react-router-dom'
+import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 
 function EditProfilePage() {
     const {lockCollection, updateProfileVisibility} = useContext(DBContext)
     const [displayName, setDisplayName] = useState('')
+    const navigate = useNavigate()
+    const {user} = useContext(AuthContext)
 
     useEffect(() => {
         setDisplayName(lockCollection.displayName)
@@ -33,11 +37,12 @@ function EditProfilePage() {
                 updateProfileVisibility(false, '')
             }
             enqueueSnackbar('Updated profile.')
+            navigate(`/profile/${user.uid}`)
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile.')
         }
-    }, [displayName, updateProfileVisibility])
+    }, [navigate, displayName, updateProfileVisibility, user?.uid])
 
     const error = !pattern.test(displayName)
 
@@ -64,8 +69,8 @@ function EditProfilePage() {
             }/>
             <CardContent>
                 <Typography>
-                    Set a display name if you wish your profile to be public.
-                    If you want your profile to be private, remove it.
+                    Set a display name for your profile.
+                    Public profiles can be shared and show nicknames on the leaderboard.
                 </Typography>
                 <br/>
                 <TextField

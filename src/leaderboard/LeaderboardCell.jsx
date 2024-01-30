@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import TableCell from '@mui/material/TableCell'
+import AuthContext from '../app/AuthContext'
 
-function LeaderboardCell({align = 'center', user, leader, value}) {
+function LeaderboardCell({align = 'center', leader, value}) {
+    const {user} = useContext(AuthContext)
     const {displayName, id} = leader
     const isCurrentUser = user?.uid === id
     const color = (displayName ? '#eee' : '#bbb')

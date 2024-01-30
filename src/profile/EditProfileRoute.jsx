@@ -6,6 +6,7 @@ import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import lpuLogoPath from '../resources/LPU.png'
+import CopyProfileLinkButton from './CopyProfileLinkButton'
 import EditProfilePage from './EditProfilePage'
 import MustBeLoggedIn from './MustBeLoggedIn'
 
@@ -13,9 +14,15 @@ function ProfileRoute() {
     const {authLoaded, isLoggedIn} = useContext(AuthContext)
     const {dbLoaded} = useContext(DBContext)
 
+    const nav = (
+        <React.Fragment>
+            <CopyProfileLinkButton/>
+        </React.Fragment>
+    )
+
     return (
         <React.Fragment>
-            <Nav title='Edit Profile'/>
+            <Nav title='Edit Profile' extras={nav}/>
 
             {(!authLoaded || !dbLoaded) &&
                 <React.Fragment>
