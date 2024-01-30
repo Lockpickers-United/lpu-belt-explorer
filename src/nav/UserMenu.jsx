@@ -31,6 +31,9 @@ function UserMenu() {
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+    const safeName = lockCollection.displayName
+        ? lockCollection.displayName.replace(/\s/g, '_')
+        : 'Private'
 
     const handleClick = useCallback(url => () => {
         handleClose()
@@ -82,7 +85,7 @@ function UserMenu() {
                         }
                         {
                             beta &&
-                            <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${lockCollection.displayName || 'Private'}`)}>
+                            <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
                                 <ListItemIcon>
                                     <AccountBoxIcon/>
                                 </ListItemIcon>

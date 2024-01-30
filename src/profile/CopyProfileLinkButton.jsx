@@ -13,7 +13,8 @@ function CopyProfileLinkButton() {
     const {lockCollection} = useContext(DBContext)
 
     const handleClick = useCallback(async () => {
-        const link = `https://lpubelts.com/#/profile/${user.uid}?name=${lockCollection.displayName}`
+        const safeName = lockCollection.displayName.replace(/\s/g, '_')
+        const link = `https://lpubelts.com/#/profile/${user.uid}?name=${safeName}`
 
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link to entry copied to clipboard.')

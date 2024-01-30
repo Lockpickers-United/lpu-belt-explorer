@@ -6,7 +6,8 @@ function LeaderboardName({leader, isCurrentUser}) {
         color: isCurrentUser ? '#4db013' : '#fff'
     }
     if (leader.displayName) {
-        const href = `/#/profile/${leader.id}?name=${leader.displayName}`
+        const safeName = leader.displayName.replace(/\s/g, '_')
+        const href = `/#/profile/${leader.id}?name=${safeName}`
         return <a style={style} href={href}>{leader.displayName}</a>
     } else {
         return 'Anonymous'
