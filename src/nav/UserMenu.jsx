@@ -3,6 +3,7 @@ import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
+import PersonIcon from '@mui/icons-material/Person'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
@@ -67,6 +68,12 @@ function UserMenu() {
                 {
                     isLoggedIn &&
                     <div>
+                        <MenuItem disabled>
+                            <ListItemIcon>
+                                <PersonIcon fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>{safeName}</ListItemText>
+                        </MenuItem>
                         {
                             beta &&
                             <MenuItem onClick={handleClick('/profile/edit')}>
