@@ -8,6 +8,7 @@ import Stack from '@mui/material/Stack'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
+import {useNavigate} from 'react-router-dom'
 import AppContext from '../app/AppContext'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
@@ -17,9 +18,14 @@ function MainMenu() {
     const {admin, beta} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const [openTitle, setOpenTitle] = useState('My Collection')
+    const navigate = useNavigate()
 
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('m', handleHotkey)
+
+    const goHome = useCallback(() => {
+        navigate('/locks')
+    })
 
     const openDrawer = useCallback(() => {
         setOpen(true)
@@ -46,7 +52,7 @@ function MainMenu() {
                 onClose={closeDrawer}
             >
                 <Stack direction='column' style={{minWidth: 250}}>
-                    <MenuItem onClick={closeDrawer} style={{
+                    <MenuItem onClick={goHome} style={{
                         padding: '12px 0px 6px 10px',
                         margin: '0px',
                         backgroundColor: '#292929',
