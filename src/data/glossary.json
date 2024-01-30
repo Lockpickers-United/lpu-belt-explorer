@@ -297,7 +297,14 @@
   },
   {
     "term": "city rake",
-    "definition": "Rake profile that tries to emulate a key bitting, so that by wiggling it or jiggling it it might open a lock. Called so because of how it looks like a cityscape. Also called L-rake."
+    "definition": "Rake profile that tries to emulate a key bitting, so that by wiggling it or jiggling it it might open a lock. Called so because of how it looks like a cityscape. Also called L-rake.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498189258_ca0a265682_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498189258/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498189258_cca519823c_o.jpg"
+    }
   },
   {
     "term": "CL",
@@ -447,7 +454,14 @@
   },
   {
     "term": "deforest",
-    "definition": "Pick profile with an offset shank, usually ending in a diamond style tip; in this case also called deforest (or DeForest) diamond or offset diamond. Named for its designer, Bill DeForrest, the name used by most manufacturers for this profile has since lost one of the \"r\"s. Deforest balls and gems exist also."
+    "definition": "Pick profile with an offset shank, usually ending in a diamond style tip; in this case also called deforest (or DeForest) diamond or offset diamond. Named for its designer, Bill DeForrest, the name used by most manufacturers for this profile has since lost one of the 'r's. Deforest balls and gems exist also.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53497186912_59833ae5af_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53497186912/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53497186912_16c56a1b66_o.jpg"
+    }
   },
   {
     "term": "depth / height",
@@ -586,13 +600,13 @@
   },
   {
     "term": "euro-profile cylinder",
-    "definition": "A lock type common in Europe, sometimes referred to as simply 'euro'. A full version will have two functioning ends with either a keyway or knob. A 'half' eruo-profile cylinder will only have a single side with keyway. It is common locksport practice to cut a full euro cylinder in half to make two locks.",
+    "definition": "A lock type common in Europe, sometimes referred to as simply 'euro'. A full version will have two functioning ends with either a keyway or knob. A 'half' euro-profile cylinder will only have a single side with a keyway. It is common locksport practice to cut a full euro cylinder in half to make two locks.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53454475531_baacf30ba5_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454475531/in/album-72177720313869627/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53454475531_a3ef25bed4_o.jpg"
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53497186777_a4a81f3364_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53497186777/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53497186777_0a0ee9600b_o.jpg"
     }
   },
   {
@@ -765,7 +779,14 @@
   },
   {
     "term": "half diamond",
-    "definition": "Pick profile where the tip looks like a triangle: one side sits flat along the end of the shaft, and the free point is used for picking."
+    "definition": "Pick profile where the tip looks like a triangle: one side sits flat along the end of the shaft, and the free point is used for picking.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498338979_44680c9b18_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498338979/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498338979_3a973884f6_o.jpg"
+    }
   },
   {
     "term": "hasp",
@@ -1443,7 +1464,14 @@
   },
   {
     "term": "sash lock",
-    "definition": "An upright mortice lock, consisting of a latch bolt and a key operated bolt."
+    "definition": "An upright mortice lock, consisting of a latch bolt and a key operated bolt.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498224303_b38a1d378e_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498224303/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498224303_2b39f34745_o.jpg"
+    }
   },
   {
     "term": "SCD",
@@ -1724,7 +1752,14 @@
   },
   {
     "term": "snake rake",
-    "definition": "Pick profile featuring two rounded waves at the tip, the first one wider and deeper, the other one shallower. Also called C-rake."
+    "definition": "Pick profile featuring two rounded waves at the tip, the first one wider and deeper, the other one shallower. Also called C-rake.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498034866_dee50cccb9_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498034866/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498034866_cc9710658b_o.jpg"
+    }
   },
   {
     "term": "spacer",
@@ -1762,7 +1797,14 @@
   },
   {
     "term": "SSDeV",
-    "definition": "Acronym for \"Sportsfreunden der Sperrtechnik - Deuchland, e.V.\", which liberally translates to \"sports fans of barrier technology (fans of locksport) - Germany\". It's a german based locksport association, promoting championships, as well as research, science and education projects in locksport. Well known internationally for developing some useful pick designs."
+    "definition": "Acronym for \"Sportsfreunden der Sperrtechnik - Deuchland, e.V.\", which liberally translates to \"sports fans of barrier technology (fans of locksport) - Germany\". It's a german based locksport association, promoting championships, as well as research, science and education projects in locksport. Well known internationally for developing some useful pick designs.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498338309_c441149265_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498338309/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498338309_47547f8bde_o.jpg"
+    }
   },
   {
     "term": "standard pin",
@@ -2021,7 +2063,14 @@
   },
   {
     "term": "wave rake",
-    "definition": "Similar to the [Bogota](/#/glossary?term=bogota), usually with more peaks, or more rounded profile. "
+    "definition": "Similar to the [Bogota](/#/glossary?term=bogota), usually with two to five peaks and/or a more rounded profile. ",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498034751_5af0577cf4_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498034751/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498034751_95dd9506ac_o.jpg"
+    }
   },
   {
     "term": "wiper insert",
@@ -2036,7 +2085,14 @@
   },
   {
     "term": "worm rake",
-    "definition": "Three peaked wave rake with rounded peaks on both top and bottom."
+    "definition": "Three peaked wave rake with rounded peaks on both top and bottom.",
+    "media": {
+      "title": "By: mgsecure",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53498338429_ea673dc114_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498338429/in/album-72177720314444642/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53498338429_bff30e95b9_o.jpg"
+    }
   },
   {
     "term": "z-bar",
