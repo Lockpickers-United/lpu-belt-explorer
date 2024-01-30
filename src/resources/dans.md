@@ -120,16 +120,16 @@ and/or less point value based on their relative difficulty.
 
 To submit completed projects for placement in the respective Discipline Tier:
 
-Assemble any relevant information, pictures, video links, etc. in PDF format and submit to a moderator to be shared with
+- Assemble any relevant information, pictures, video links, etc. in PDF format and submit to a moderator to be shared with
 the black belt community in “The Mat” channel.
-That moderator will place it in the channel along with an @Black Belt mention as soon as possible so long as there
+- That moderator will place it in the channel along with an @Black Belt mention as soon as possible so long as there
 aren’t already several votes taking place.
-If you hate being pinged. Change your settings. This is necessary to ensure each project is seen.
-All Black Belt members will have 5 days from post time to vote using number emoji’s 0 thru 5. If two or more Tiers are
+- If you hate being pinged, change your settings. This is necessary to ensure each project is seen.
+- All Black Belt members will have 5 days from post time to vote using number emoji’s 0 thru 5. If two or more Tiers are
 tied, the vote will round up to the highest Tier.
-After 5 days a moderator will close out the vote by posting the result of the vote and confirming the point value of
+- After 5 days a moderator will close out the vote by posting the result of the vote and confirming the point value of
 that project.
-The submitter can then use that point value and date/time to enter the project into their tab of the Dan Sheet. You
+- The submitter can then use that point value and date/time to enter the project into their tab of the Dan Sheet. You
 should also add a link to that post to make it easier for fact checkers.
 
 Those who emote anything other than a number to represent a Tier will forfeit their vote. Repeated offenses will result
@@ -139,18 +139,18 @@ in suspension of access to the channel.
 
 There are special cases in which the point value for a lock is modified to reflect the amount of work and skill that was
 required to pick it.
-First recorded pick: In the event that an individual is the first person to pick a certain lock on video, even if done
+- First recorded pick: In the event that an individual is the first person to pick a certain lock on video, even if done
 before the classification of the lock, x1.5 points.
-Note: This bonus is awarded at the discretion of the moderators, and does not apply if the lock in question is very
-similar to a previously picked lock.
-First recorded pick (notable lock): Certain locks on the list will be marked with a * which indicates that they are
-locks that have famously not been picked on video. Being the first to demonstrate a successful pick of a notable lock
-receives x2.5 points.
-Non-picking defeat: Demonstrating a previously unknown method of defeating a specific lock nondestructively other than
-picking receives x0.75 points.
-Note that creating a new defeat for a lock you have already picked does result in additional points.
-Non-picking defeat (first defeat): Demonstrating a non-picking method of defeating a lock which has no known prior
-defeats receives x1.5 points (x2, notable lock), however the lock will still be considered unpicked.
+  - Note: This bonus is awarded at the discretion of the moderators, and does not apply if the lock in question is very
+  similar to a previously picked lock.
+- First recorded pick (notable lock): Certain locks on the list will be marked with a * which indicates that they are
+  locks that have famously not been picked on video. Being the first to demonstrate a successful pick of a notable lock
+  receives x2.5 points.
+- Non-picking defeat: Demonstrating a previously unknown method of defeating a specific lock nondestructively other than
+  picking receives x0.75 points.
+  - Note that creating a new defeat for a lock you have already picked does result in additional points.
+- Non-picking defeat (first defeat): Demonstrating a non-picking method of defeating a lock which has no known prior
+  defeats receives x1.5 points (x2, notable lock), however the lock will still be considered unpicked.
 
 ## Dan Sheet 2.0
 
@@ -177,10 +177,10 @@ Earning points through skills and community involvement
 There are a few special conditions:
 
 - **Reference documents**: Creating a formal reference document which breaks down all the main points of a locks design,
-  operation, and vulnerabilities (assuming no document already exists for
+  operation, and vulnerabilities (assuming no document already exists for it)
 - **Picking guide**: Create a unique or systematic
   method of picking a type of lock and publish a video or document describing how it works (must have new information).
   **+10 points**
-- **Public talk**: Create and give a talk at a public event focused on physical security. +10 points (per unique talk)
-  Cease & Desist: Receive a C&D from a lock company that is upset that you published information about their
+- **Public talk**: Create and give a talk at a public event focused on physical security. **+10 points** (per unique talk)
+- **Cease & Desist**: Receive a C&D from a lock company that is upset that you published information about their
   vulnerabilities. **+25 points**
