@@ -53,8 +53,14 @@ function InlineFilterDisplay({profile}) {
     const isValidCollection = typeof collection === 'string' &&
         (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
 
+    const ownerName = profile.displayName
+        ? profile.displayName.toLowerCase().endsWith('s')
+            ? `${profile.displayName}'`
+            : `${profile.displayName}'s`
+        : 'Private'
+
     const title = userId
-        ? `${profile.displayName ? profile.displayName + '\'s' : 'Private'} Collection`
+        ? `${ownerName} Collection`
         : isValidCollection ? 'My Collection' : 'Filters'
 
     return (
