@@ -25,7 +25,7 @@ function MainMenu() {
 
     const goHome = useCallback(() => {
         navigate('/locks')
-    })
+    }, [navigate])
 
     const openDrawer = useCallback(() => {
         setOpen(true)
