@@ -65,7 +65,7 @@ function Leaderboard({data, loading}) {
                 </TableContainer>
 
                 <Typography variant='caption' align='right' component='div' style={{width: '100%', marginTop: 8}}>
-                    Last updated: {updateTime} GMT
+                    Updated hourly, last update: {updateTime} GMT
                 </Typography>
             </div>
         </React.Fragment>
