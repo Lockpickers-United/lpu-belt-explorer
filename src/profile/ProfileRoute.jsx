@@ -68,7 +68,9 @@ function ProfileRoute() {
                         {loading &&
                             <React.Fragment>
                                 <LinearProgress variant='indeterminate' color='secondary'/>
-                                <img alt='Loading' src={lpuLogoPath}/>
+                                <img alt='Loading' src={lpuLogoPath} style={{
+                                    marginLeft: 'auto', marginRight: 'auto', display: 'block'
+                                }}/>
                             </React.Fragment>
                         }
 

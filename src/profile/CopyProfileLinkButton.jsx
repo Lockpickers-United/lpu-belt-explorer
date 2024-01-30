@@ -15,7 +15,7 @@ function CopyProfileLinkButton() {
 
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link to entry copied to clipboard.')
-    }, [user.uid])
+    }, [user?.uid])
 
     if (!user || userId !== user.uid) return null
     return (
