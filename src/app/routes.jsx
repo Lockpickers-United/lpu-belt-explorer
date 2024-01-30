@@ -70,6 +70,14 @@ export default [
         }
     },
     {
+
+        admin: true,
+        path: '/admin',
+        lazy: async () => {
+            const {default: AdminRoute} = await import('../admin/AdminRoute')
+            return {element: <AdminRoute/>}
+        }
+    },
         beta: true,
         path: '/profile/edit',
         lazy: async () => {

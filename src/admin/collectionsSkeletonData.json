@@ -1,0 +1,301 @@
+{
+  "metadata" : {
+    "updatedDateTime" : "",
+    "timezone" : "EST"
+  },
+  "summary": {
+    "title": "",
+    "columns": [
+      {
+        "id": "list",
+        "name": "List Name",
+        "align": "left"
+      },
+      {
+        "id": "totalUsers",
+        "name": "(Total Users)",
+        "align": "center"
+      },
+      {
+        "id": "listUsers",
+        "name": "List Users",
+        "align": "center"
+      },
+      {
+        "id": "percentListUsers",
+        "name": "% List Users",
+        "align": "center"
+      },
+      {
+        "id": "totalSaves",
+        "name": "Total Saves",
+        "align": "center"
+      },
+      {
+        "id": "averageItems",
+        "name": "Average Items",
+        "align": "center"
+      }
+    ],
+    "data": [
+      {
+        "list": "All Lists",
+        "totalUsers": 0,
+        "listUsers": 0,
+        "percentListUsers": "--",
+        "totalSaves": 0,
+        "averageItems": 0
+      },
+      {
+        "list": "Own",
+        "totalUsers": 0,
+        "listUsers": 0,
+        "percentListUsers": "--",
+        "totalSaves": 0,
+        "averageItems": 0
+      },
+      {
+        "list": "Picked",
+        "totalUsers": 0,
+        "listUsers": 0,
+        "percentListUsers": "--",
+        "totalSaves": 0,
+        "averageItems": 0
+      },
+      {
+        "list": "Recorded",
+        "totalUsers": 0,
+        "listUsers": 0,
+        "percentListUsers": "--",
+        "totalSaves": 0,
+        "averageItems": 0
+      },
+      {
+        "list": "Wishlist",
+        "totalUsers": 0,
+        "listUsers": 0,
+        "percentListUsers": "--",
+        "totalSaves": 0,
+        "averageItems": 0
+      }
+    ]
+  },
+  "dailyTableData": {
+    "title" : "",
+    "data" : [
+      {
+        "listUsers" : 0,
+        "recordedLocks" : 0,
+        "ownLocks" : 0,
+        "totalSaves" : 0,
+        "pickedLocks" : 0,
+        "ownUsers" : 0,
+        "totalUsers" : 0,
+        "wishlistLocks" : 0,
+        "newUsers" : 0,
+        "wishlistUsers" : 0,
+        "pickedUsers" : 0,
+        "date" : "2023-11-19",
+        "recordedUsers" : 0
+      },
+      {
+        "listUsers" : 0,
+        "recordedLocks" : 0,
+        "ownLocks" : 0,
+        "totalSaves" : 0,
+        "pickedLocks" : 0,
+        "ownUsers" : 0,
+        "totalUsers" : 0,
+        "wishlistLocks" : 0,
+        "newUsers" : 0,
+        "wishlistUsers" : 0,
+        "pickedUsers" : 0,
+        "date" : "2023-01-20",
+        "recordedUsers" : 0
+      }
+
+    ],
+    "columns" : [
+      {
+        "id" : "date",
+        "name" : "Date",
+        "align" : "left"
+      },
+      {
+        "name" : "Total Users",
+        "align" : "center",
+        "id" : "totalUsers"
+      },
+      {
+        "id" : "listUsers",
+        "name" : "List Users",
+        "align" : "center"
+      },
+      {
+        "align" : "center",
+        "name" : "Total Saves",
+        "id" : "totalSaves"
+      },
+      {
+        "align" : "center",
+        "name" : "Owned Users",
+        "id" : "ownUsers"
+      },
+      {
+        "id" : "ownLocks",
+        "align" : "center",
+        "name" : "Owned Locks"
+      },
+      {
+        "id" : "pickedUsers",
+        "align" : "center",
+        "name" : "Picked Users"
+      },
+      {
+        "align" : "center",
+        "name" : "Picked Locks",
+        "id" : "pickedLocks"
+      },
+      {
+        "id" : "recordedUsers",
+        "name" : "Rec. Users",
+        "align" : "center"
+      },
+      {
+        "id" : "recordedLocks",
+        "name" : "Rec. Locks",
+        "align" : "center"
+      },
+      {
+        "name" : "Wishlist Users",
+        "align" : "center",
+        "id" : "wishlistUsers"
+      },
+      {
+        "align" : "center",
+        "name" : "Wishlist Locks",
+        "id" : "wishlistLocks"
+      },
+      {
+        "align" : "center",
+        "name" : "New Users",
+        "id" : "newUsers"
+      }
+    ]
+  }, "savesByBelt" : [
+  {
+    "value" : 0,
+    "label" : "White",
+    "id" : "White",
+    "count" : 0
+  },
+  {
+    "label" : "Yellow",
+    "value" : 0,
+    "id" : "Yellow",
+    "count" : 0
+  },
+  {
+    "count" : 0,
+    "id" : "Orange",
+    "value" : 0,
+    "label" : "Orange"
+  },
+  {
+    "count" : 0,
+    "id" : "Green",
+    "value" : 0,
+    "label" : "Green"
+  },
+  {
+    "value" : 0,
+    "label" : "Blue",
+    "id" : "Blue",
+    "count" : 0
+  },
+  {
+    "label" : "Purple",
+    "value" : 0,
+    "count" : 0,
+    "id" : "Purple"
+  },
+  {
+    "count" : 0,
+    "id" : "Brown",
+    "value" : 0,
+    "label" : "Brown"
+  },
+  {
+    "label" : "Red",
+    "value" : 0,
+    "count" : 0,
+    "id" : "Red"
+  },
+  {
+    "id" : "Black",
+    "count" : 0,
+    "value" : 0,
+    "label" : "Black"
+  },
+  {
+    "count" : 0,
+    "id" : "Unranked",
+    "value" : 0,
+    "label" : "Unranked"
+  }
+],
+  "listSavesByBelt": [
+    {
+      "Brown": 0,
+      "list": "Own",
+      "Purple": 0,
+      "Unranked": 0,
+      "Yellow": 0,
+      "Green": 0,
+      "Red": 0,
+      "Black": 0,
+      "White": 0,
+      "Blue": 0,
+      "Orange": 0
+    },
+    {
+      "Black": 0,
+      "White": 0,
+      "Orange": 0,
+      "Blue": 0,
+      "Brown": 0,
+      "list": "Picked",
+      "Purple": 0,
+      "Unranked": 0,
+      "Yellow": 0,
+      "Red": 0,
+      "Green": 0
+    },
+    {
+      "Unranked": 0,
+      "Brown": 0,
+      "list": "Recorded",
+      "Purple": 0,
+      "Yellow": 0,
+      "Red": 0,
+      "Green": 0,
+      "Black": 0,
+      "Orange": 0,
+      "Blue": 0,
+      "White": 0
+    },
+    {
+      "White": 0,
+      "Blue": 0,
+      "Orange": 0,
+      "Black": 0,
+      "Red": 0,
+      "Green": 0,
+      "Yellow": 0,
+      "Purple": 0,
+      "list": "Wishlist",
+      "Brown": 0,
+      "Unranked": 0
+    }
+  ]
+}
