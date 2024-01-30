@@ -33,9 +33,9 @@ function EditProfilePage() {
 
     const handleFocus = useCallback(event => event.target.select(), [])
 
-    const handleSave = useCallback(() => {
+    const handleSave = useCallback(async () => {
         try {
-            updateProfileVisibility(visibility, displayName)
+            await updateProfileVisibility(visibility, displayName)
             enqueueSnackbar('Updated profile.')
             navigate(`/profile/${user.uid}`)
         } catch (ex) {
