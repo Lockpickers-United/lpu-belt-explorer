@@ -1,6 +1,7 @@
 ## Preamble:
 
 The three-fold purpose of the Dan system is to:
+
 Give Black Belts further levels of mastery to aspire to and achieve, to incentivize Black Belts to remain in the
 community and enrich it with knowledge and to increase the scope of what is possible within picking and locksport in
 general.
