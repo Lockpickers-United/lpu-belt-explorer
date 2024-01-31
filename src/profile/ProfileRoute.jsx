@@ -14,6 +14,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import CopyProfileLinkButton from './CopyProfileLinkButton'
 import EditProfileButton from './EditProfileButton'
+import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
 import lpuLogoPath from '../resources/LPU.png'
@@ -77,6 +78,7 @@ function ProfileRoute() {
                         }
 
                         {!loading && data && !error && <ProfilePage profile={data}/>}
+                        {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
                         {!loading && error && <ProfileNotFound/>}
 
                         <Footer/>
