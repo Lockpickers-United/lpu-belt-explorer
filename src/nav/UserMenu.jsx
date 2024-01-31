@@ -16,7 +16,6 @@ import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
-import AppContext from '../app/AppContext'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
@@ -24,7 +23,6 @@ import {useNavigate} from 'react-router-dom'
 
 function UserMenu() {
     const navigate = useNavigate()
-    const {beta} = useContext(AppContext)
     const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -74,24 +72,18 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>{safeName}</ListItemText>
                         </MenuItem>
-                        {
-                            beta &&
-                            <MenuItem onClick={handleClick('/profile/edit')}>
-                                <ListItemIcon>
-                                    <EditIcon/>
-                                </ListItemIcon>
-                                <ListItemText>Edit Profile</ListItemText>
-                            </MenuItem>
-                        }
-                        {
-                            beta &&
-                            <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
-                                <ListItemIcon>
-                                    <AccountBoxIcon/>
-                                </ListItemIcon>
-                                <ListItemText>View Profile</ListItemText>
-                            </MenuItem>
-                        }
+                        <MenuItem onClick={handleClick('/profile/edit')}>
+                            <ListItemIcon>
+                                <EditIcon/>
+                            </ListItemIcon>
+                            <ListItemText>Edit Profile</ListItemText>
+                        </MenuItem>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
+                            <ListItemIcon>
+                                <AccountBoxIcon/>
+                            </ListItemIcon>
+                            <ListItemText>View Profile</ListItemText>
+                        </MenuItem>
                         <Divider/>
 
                         <MenuItem disabled>
