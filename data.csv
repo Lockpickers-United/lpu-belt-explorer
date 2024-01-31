@@ -457,8 +457,8 @@ Purple,"M&C,M&C","Condor,Move",,"Dimple,Slider","Active sidebar,False gates",,be
 Purple,M&C,Matrix,,"Slider,Pin-tumbler","False gates,Active sidebar",,9aedb834
 Purple,Magnum,Atlantic,,Dimple,,,c9fc823c
 Purple,"Master Lock",#19,,Pin-tumbler,,,8f7f1830
-Purple,Medeco,"Original Camlock","5+ pins ******","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",aeaa6a09
-Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","5+ pins ******","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",826c31e0
+Purple,Medeco,"Original Camlock","5+ pins ******","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",aeaa6a09
+Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","5+ pins ******","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",826c31e0
 Purple,Mindy,"Pagoda AF 16-50","flat key",Other,,,06a28ac7
 Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
