@@ -20486,7 +20486,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
     "media": [
       {
         "title": "By: Guid",
@@ -20513,7 +20513,7 @@
     "relatedIds": [
       "a9e47067"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.023Z"
+    "lastUpdated": "2024-01-31T17:28:08.808Z"
   },
   {
     "id": "826c31e0",
@@ -20542,7 +20542,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "notes": "****** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
     "media": [
       {
         "title": "By: Datagram",
@@ -20637,7 +20637,7 @@
       }
     ],
     "views": 1400,
-    "lastUpdated": "2023-07-25T11:20:19.895Z"
+    "lastUpdated": "2024-01-31T17:28:08.808Z"
   },
   {
     "id": "06a28ac7",
@@ -40057,8 +40057,31 @@
     "features": [
       "Under Review ⚑"
     ],
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53500871720_24885e69f7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53500871720/in/album-72177720314476751/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53500871720_58f91a4c0a_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53500452601_5a71391268_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53500452601/in/album-72177720314476751/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53500452601_37cd937051_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53499567982_6634811a32_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53499567982/in/album-72177720314476751/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53499567982_92fc396cae_o.jpg"
+      }
+    ],
     "views": 14,
-    "lastUpdated": "2024-01-01T20:16:25.001Z"
+    "lastUpdated": "2024-01-31T17:28:08.819Z"
   },
   {
     "id": "9b528165",
