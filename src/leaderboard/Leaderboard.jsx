@@ -30,7 +30,7 @@ function Leaderboard({data, loading}) {
         else return data.data
     }, [sort, loading, data])
 
-    const updateTime = loading ? '####-##-## ##:##' : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm')
+    const updateTime = loading ? '####-##-## ##:##' : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY HH:mm')
 
     return (
         <React.Fragment>
