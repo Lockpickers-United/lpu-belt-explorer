@@ -22,26 +22,25 @@ function AdminRoute() {
     }, [admin, authLoaded, navigate])
 
     return (
-        <LightTheme>
-            <React.Fragment>
-                <Nav title='Admin'/>
+        <React.Fragment>
+            <Nav title='Admin'/>
 
-                {!authLoaded &&
-                    <React.Fragment>
-                        <LinearProgress variant='indeterminate' color='secondary'/>
-                        <img alt='Loading' src={lpuLogoPath} style={{
-                            marginLeft: 'auto', marginRight: 'auto', display: 'block'
-                        }}/>
-                    </React.Fragment>
-                }
+            {!authLoaded &&
+                <React.Fragment>
+                    <LinearProgress variant='indeterminate' color='secondary'/>
+                    <img alt='Loading' src={lpuLogoPath} style={{
+                        marginLeft: 'auto', marginRight: 'auto', display: 'block'
+                    }}/>
+                </React.Fragment>
+            }
 
-                {authLoaded && admin && <AdminMainPage/>}
+            {authLoaded && admin && <AdminMainPage/>}
 
-                <Footer/>
+            <Footer/>
 
-                <Tracker feature='admin'/>
-            </React.Fragment>
-        </LightTheme>
+            <Tracker feature='admin'/>
+            <LightTheme></LightTheme>
+        </React.Fragment>
     )
 }
 

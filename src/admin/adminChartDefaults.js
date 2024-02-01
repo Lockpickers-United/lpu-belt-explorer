@@ -1,9 +1,9 @@
 export const beltColors =
-    ['#d5d5d5', '#d2d816', '#df8a2e', '#4ab00d',
+    ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
         '#0090de', '#634b9f', '#9d5918',
-        '#cc3030', '#1a1a1a', '#898989']
+        '#ba0303', '#1a1a1a', '#373737']
 
-const mainColor = '#666'
+const mainColor = '#ccc'
 
 export const primaryTheme = {
 

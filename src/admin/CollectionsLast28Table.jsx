@@ -11,7 +11,7 @@ const CollectionsLast28Table = ({fullData}) => {
 
    const last28data = []
     data.data.map((dayData) => {
-        if (dayjs(dayData['date']).isAfter(startDay)) {
+        if (dayjs(dayData.date).isAfter(startDay)) {
             last28data.push(dayData)
         }
     })

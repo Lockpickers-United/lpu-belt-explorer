@@ -64,13 +64,13 @@ function CollectionsReportMain() {
         ? '24px 24px 32px 24px'
         : '8px 8px 32px 8px'
 
-    const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center'}
-    const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center'}
+    const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
+    const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
 
     return (
         <div style={{
             minWidth: '320px', maxWidth: 900, height: '100%',
-            padding: pagePadding, backgroundColor: '#efefef',
+            padding: pagePadding, backgroundColor: '#000',
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>

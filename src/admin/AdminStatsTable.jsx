@@ -24,7 +24,8 @@ const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
                                                textAlign: column.align,
                                                fontSize: fontSize,
                                                lineHeight: '1.1rem',
-                                               padding: '8px'
+                                               padding: '8px',
+                                               color:'#fff'
                                            }}
                                            component='th' scope='row'>
                                     {column.name}
@@ -36,13 +37,19 @@ const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
                         {tableData.data.map((row, index) =>
                             <TableRow key={index} index={index}
                                       sx={{
-                                          '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#eee'},
+                                          '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#111'},
                                           'td, th': {padding: '7px 1px', margin: '0px'}
                                       }}>
                                 {tableData.columns.map((column, index) =>
 
                                     <TableCell key={index + 1} style={bodyStyle}
-                                               sx={{textAlign: column.align, fontSize: fontSize, whiteSpace: 'nowrap'}}
+                                               sx={{
+                                                   textAlign: column.align,
+                                                   fontSize: fontSize,
+                                                   whiteSpace: 'nowrap',
+                                                   border: 0,
+                                                   color:'#eee'
+                                               }}
                                                component='th' scope='row'>
                                         {row[column.id].toLocaleString()}
                                     </TableCell>

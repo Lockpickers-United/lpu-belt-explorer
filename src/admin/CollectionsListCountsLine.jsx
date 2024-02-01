@@ -7,9 +7,6 @@ const CollectionsListCountsLine = ({lineData}) => {
 
     const data = [lineData.ownLocks, lineData.pickedLocks, lineData.recordedLocks, lineData.wishlistLocks]
 
-    const blueColors = ['#074674', '#085792', '#246497', '#628fc0',
-        '#063b87', '#062f6b']
-
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
     const mobileMedium = width <= 395
@@ -28,14 +25,18 @@ const CollectionsListCountsLine = ({lineData}) => {
 
     const chartMargin = {top: 10, right: 20, bottom: 65, left: 50}
 
+    const areaColors = ['#172072', '#2e399b', '#444fb2', '#5966da']
+
     return (
         <div style={{height: chartHeight, width: '100%'}}>
             <ResponsiveLine
                 theme={combinedTheme}
                 data={data}
-                colors={blueColors}
+                colors={areaColors}
                 enableArea={true}
-                lineWidth={1}
+                areaOpacity={1}
+
+                lineWidth={2}
                 margin={chartMargin}
                 curve='natural'
                 yScale={{
@@ -66,17 +67,12 @@ const CollectionsListCountsLine = ({lineData}) => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: tickRotation,
-                    direction: 'row',
-                    legendOffset: -12,
                     tickValues: 'every week'
                 }}
                 legends={[
                     {
                         anchor: 'bottom',
                         itemTextColor: '#666',
-                        text: {
-                            fontSize: 18 //not working
-                        },
                         direction: 'row',
                         justify: false,
                         translateX: 0,

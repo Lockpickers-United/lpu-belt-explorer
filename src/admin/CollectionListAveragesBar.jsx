@@ -32,9 +32,7 @@ const CollectionListAveragesBar = ({fullData}) => {
 
     const chartMargin = {top: 0, right: 20, bottom: 30, left: 50}
 
-    const blueColors = ['#bebebe', '#007de2', '#007de2', '#007de2', '#007de2',
-        '#0367ba', '#005ba0', '#004fa4',
-        '#063b87', '#062f6b']
+    const blueColors = ['#aeaeae', '#0364ac', '#0364ac', '#0364ac', '#0364ac']
 
     return (
         <div style={{height: chartHeight, width: '100%'}}>
