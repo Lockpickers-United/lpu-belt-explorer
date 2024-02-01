@@ -30,7 +30,9 @@ function Leaderboard({data, loading}) {
         else return data.data
     }, [sort, loading, data])
 
-    const updateTime = loading ? '####-##-## ##:##' : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY HH:mm')
+    const updateTime = loading
+        ? '####-##-## ##:##'
+        : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY HH:mm')
 
     return (
         <React.Fragment>
@@ -47,7 +49,7 @@ function Leaderboard({data, loading}) {
                         <TableBody>
                             {sortedData.map((leader, index) => {
                                 const isHighlighted = !!highlightedUser && (
-                                    (highlightedUser === 'me' && leader.id === user.uid)
+                                    (highlightedUser === 'me' && leader.id === user?.uid)
                                     || (highlightedUser === leader.displayName)
                                 )
                                 return (
@@ -69,7 +71,6 @@ function Leaderboard({data, loading}) {
                 </Typography>
             </div>
         </React.Fragment>
-
     )
 }
 
