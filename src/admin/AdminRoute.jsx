@@ -9,8 +9,11 @@ import Nav from '../nav/Nav.jsx'
 import lpuLogoPath from '../resources/LPU.png'
 import LightTheme from '../util/LightTheme'
 import AdminMainPage from './CollectionsReportMain.jsx'
+import AdminMenu from './AdminMenu.jsx'
+import useWindowSize from '../util/useWindowSize'
 
 function AdminRoute() {
+    const {isMobile} = useWindowSize()
     const {authLoaded} = useContext(AuthContext)
     const {admin} = useContext(AppContext)
     const navigate = useNavigate()
@@ -21,9 +24,16 @@ function AdminRoute() {
         }
     }, [admin, authLoaded, navigate])
 
+    const nav = (
+        <React.Fragment>
+            <AdminMenu/>
+            {!isMobile && <div style={{flexGrow: 1}}/>}
+        </React.Fragment>
+    )
+
     return (
         <React.Fragment>
-            <Nav title='Admin'/>
+            <Nav title='Admin' extras={nav}/>
 
             {!authLoaded &&
                 <React.Fragment>

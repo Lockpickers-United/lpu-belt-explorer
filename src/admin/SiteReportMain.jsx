@@ -6,6 +6,7 @@ import SiteReport28DaysLine from './siteReport/SiteReport28DaysLine.jsx'
 import LockViewsLine from '../stats/LockViewsLine.jsx'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable.jsx'
 import PageTrackingTable from './siteReport/PageTrackingTable.jsx'
+import AdminMenu from './AdminMenu.jsx'
 
 function SiteReportMain() {
 
@@ -21,11 +22,10 @@ function SiteReportMain() {
     return (
         <div style={{
             minWidth: '320px', maxWidth: 900, height: '100%',
-            padding: pagePadding, backgroundColor: '#2d2d2d',
+            padding: pagePadding, backgroundColor: '#292929',
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>
-
             {!!statsSiteFull.firstVistsLastSevenDays.countryCount &&
                 <React.Fragment>
                     <div style={firstHeaderStyle}>First Visits (Last Seven Days)</div>
@@ -45,7 +45,6 @@ function SiteReportMain() {
 
             <div style={headerStyle}>Weekly Lock Views</div>
             <LockViewsLine/>
-
 
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable fullData={statsSiteFull}/>
