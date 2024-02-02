@@ -183,5 +183,5 @@ There are a few special conditions:
   method of picking a type of lock and publish a video or document describing how it works (must have new information).
   **+10 points**
 - **Public talk**: Create and give a talk at a public event focused on physical security. **+10 points** (per unique talk)
-- **Cease & Desist**: Receive a C&D from a lock company that is upset that you published information about their
-  vulnerabilities. **+25 points**
+- **Cease & Desist**: Receive a C&D from a lock company. **+25 points**
+- **Lock Improvement**: Work with a lock manufacturer to improve a lock. **30 points**
