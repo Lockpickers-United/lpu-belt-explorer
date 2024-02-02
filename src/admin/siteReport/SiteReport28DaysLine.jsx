@@ -71,7 +71,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                 data={siteLineData}
                 enableGridX={false}
                 enableGridY={true}
-                colors={['#5f6dbe', '#072cc0', '#098909']}
+                colors={['#5265ed', '#082fd1', '#4fa720']}
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}
@@ -122,7 +122,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                 ]}
                 enablePoints={false}
                 useMesh={true}
-                isInteractive={false}
+                isInteractive={true}
             />
         </div>
     )

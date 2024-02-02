@@ -1,9 +1,13 @@
 import React from 'react'
 import useWindowSize from '../util/useWindowSize'
 import statsSiteSummary from '../data/statsSiteSummary.json'
+import statsSiteFull from '../data/statsSiteFull.json'
 import SiteReport28DaysLine from './siteReport/SiteReport28DaysLine.jsx'
+import LockViewsLine from '../stats/LockViewsLine.jsx'
+import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable.jsx'
+import PageTrackingTable from './siteReport/PageTrackingTable.jsx'
 
-function CollectionsReportMain() {
+function SiteReportMain() {
 
     const {width} = useWindowSize()
     const smallWindow = width < 560
@@ -17,16 +21,38 @@ function CollectionsReportMain() {
     return (
         <div style={{
             minWidth: '320px', maxWidth: 900, height: '100%',
-            padding: pagePadding, backgroundColor: '#222',
+            padding: pagePadding, backgroundColor: '#2d2d2d',
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>
 
-            <div style={firstHeaderStyle}>Site Summary Report<br/></div>
-            <SiteReport28DaysLine lineData={statsSiteSummary}/>
+            {!!statsSiteFull.firstVistsLastSevenDays.countryCount &&
+                <React.Fragment>
+                    <div style={firstHeaderStyle}>First Visits (Last Seven Days)</div>
+                    <FirstVisitsLastSevenTable fullData={statsSiteFull} tableWidth={'50%'}/>
+
+                    <div style={headerStyle}>Site Summary Report<br/></div>
+                    <SiteReport28DaysLine lineData={statsSiteSummary}/>
+                </React.Fragment>
+            }
+
+            {!statsSiteFull.firstVistsLastSevenDays.countryCount &&
+                <React.Fragment>
+                    <div style={firstHeaderStyle}>Site Summary Report<br/></div>
+                    <SiteReport28DaysLine lineData={statsSiteSummary}/>
+                </React.Fragment>
+            }
+
+            <div style={headerStyle}>Weekly Lock Views</div>
+            <LockViewsLine/>
+
+
+            <div style={headerStyle}>Page Tracking</div>
+            <PageTrackingTable fullData={statsSiteFull}/>
+
 
         </div>
     )
 }
 
-export default CollectionsReportMain
+export default SiteReportMain
