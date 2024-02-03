@@ -19,7 +19,7 @@ function SiteReportRoute() {
 
     useEffect(() => {
         if (authLoaded && !admin) {
-            //navigate('/locks')
+            navigate('/locks')
         }
     }, [admin, authLoaded, navigate])
 
