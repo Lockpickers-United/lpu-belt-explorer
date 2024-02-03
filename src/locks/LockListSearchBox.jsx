@@ -113,7 +113,7 @@ function LockListSearchBox() {
                 </IconButton>
             </Tooltip>}
             {(open || !isMobile) && <TextField
-                placeholder='Search'
+                placeholder='Search Locks'
                 InputProps={{
                     inputProps: {
                         ref: inputEl

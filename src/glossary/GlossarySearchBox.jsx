@@ -61,7 +61,7 @@ function GlossarySearchBox() {
                 renderInput={(params) =>
                     <TextField
                         {...params}
-                        placeholder='Search'
+                        placeholder='Search Glossary'
                         variant='standard'
                         color='secondary'
                         inputRef={inputEl}
