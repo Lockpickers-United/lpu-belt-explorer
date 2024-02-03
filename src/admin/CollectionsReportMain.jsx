@@ -70,7 +70,7 @@ function CollectionsReportMain() {
     return (
         <div style={{
             minWidth: '320px', maxWidth: 900, height: '100%',
-            padding: pagePadding, backgroundColor: '#000',
+            padding: pagePadding, backgroundColor: '#292929',
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>
