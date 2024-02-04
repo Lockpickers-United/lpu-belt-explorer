@@ -37,7 +37,7 @@ const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
                         {tableData.data.map((row, index) =>
                             <TableRow key={index} index={index}
                                       sx={{
-                                          '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#111'},
+                                          '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#191919'},
                                           'td, th': {padding: '7px 1px', margin: '0px'}
                                       }}>
                                 {tableData.columns.map((column, index) =>

@@ -70,12 +70,19 @@ export default [
         }
     },
     {
-
         admin: true,
         path: '/admin',
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
             return {element: <AdminRoute/>}
+        }
+    },
+    {
+        admin: true,
+        path: '/siteReport',
+        lazy: async () => {
+            const {default: SiteReportRoute} = await import('../admin/SiteReportRoute')
+            return {element: <SiteReportRoute/>}
         }
     },
     {

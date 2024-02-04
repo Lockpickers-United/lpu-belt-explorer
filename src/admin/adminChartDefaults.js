@@ -13,7 +13,7 @@ export const primaryTheme = {
     grid: {
         line: {
             strokeWidth: 1,
-            stroke: '#ccc'
+            stroke: '#555'
         }
     },
     tooltip: {
