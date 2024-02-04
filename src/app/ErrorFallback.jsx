@@ -4,14 +4,17 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
 import React, {useCallback} from 'react'
+import {useLocation} from 'react-router-dom'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import Tracker from './Tracker'
 
 function ErrorFallback() {
+    const location = useLocation()
+
     const handleClick = useCallback(() => {
         location.reload()
-    }, [])
+    }, [location])
 
     return (
         <React.Fragment>
@@ -29,7 +32,7 @@ function ErrorFallback() {
 
             <Footer/>
 
-            <Tracker feature='error'/>
+            <Tracker feature='error' extraParams={{path: location.pathname}}/>
         </React.Fragment>
     )
 }
