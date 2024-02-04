@@ -11,6 +11,7 @@ const SiteReport28DaysLine = ({lineData}) => {
     const visitsHash = new Map()
     const lockViewsHash = new Map()
 
+    // TODO: Clean up iteration
     fullData.forEach((value) => {
         const visitorsArray = []
         const visitsArray = []
