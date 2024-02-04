@@ -63,7 +63,7 @@ function LeaderboardSearchBox({data}) {
                 renderInput={(params) =>
                     <TextField
                         {...params}
-                        placeholder='Search'
+                        placeholder='Search Leaderboard'
                         variant='standard'
                         color='secondary'
                         inputRef={inputEl}
