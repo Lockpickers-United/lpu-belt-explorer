@@ -89,25 +89,25 @@ function UserMenu() {
                         <MenuItem disabled>
                             <ListItemText>My Collection</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick('/locks?tab=search&collection=Own')}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Own`)}>
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick('/locks?tab=search&collection=Picked')}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Picked`)}>
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick('/locks?tab=search&collection=Recorded')}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Recorded`)}>
                             <ListItemIcon>
                                 <VideocamOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Recorded ({lockCollection.recorded?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick('/locks?tab=search&collection=Wishlist')}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
