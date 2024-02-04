@@ -6,10 +6,8 @@ import SiteReport28DaysLine from './siteReport/SiteReport28DaysLine.jsx'
 import LockViewsLine from '../stats/LockViewsLine.jsx'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable.jsx'
 import PageTrackingTable from './siteReport/PageTrackingTable.jsx'
-import AdminMenu from './AdminMenu.jsx'
 
 function SiteReportMain() {
-
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -48,8 +46,6 @@ function SiteReportMain() {
 
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable fullData={statsSiteFull}/>
-
-
         </div>
     )
 }

@@ -17,7 +17,7 @@ import lpuHeaderSmall from '../resources/LPU-header-small.png'
 function MainMenu() {
     const {admin, beta} = useContext(AppContext)
     const [open, setOpen] = useState(false)
-    const [openTitle, setOpenTitle] = useState('My Collection')
+    const [openTitle, setOpenTitle] = useState('Admin Tools') // TODO: don't do this once there are more
     const navigate = useNavigate()
 
     const handleHotkey = useCallback(() => setOpen(!open), [open])

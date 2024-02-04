@@ -54,6 +54,17 @@ export default [
         admin: true,
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
-        path: '/admin'
+        path: '/admin',
+        children: [
+            {
+                admin: true,
+                title: 'Site Report',
+                path: '/admin/siteReport'
+            }, {
+                admin: true,
+                title: 'Collections Report',
+                path: '/admin/collectionsReport'
+            }
+        ]
     }
 ]

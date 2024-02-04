@@ -1,6 +1,6 @@
 import LinearProgress from '@mui/material/LinearProgress'
 import React, {useContext, useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Outlet, useNavigate} from 'react-router-dom'
 import AppContext from '../app/AppContext'
 import AuthContext from '../app/AuthContext'
 import Tracker from '../app/Tracker'
@@ -8,12 +8,8 @@ import Footer from '../nav/Footer.jsx'
 import Nav from '../nav/Nav.jsx'
 import lpuLogoPath from '../resources/LPU.png'
 import LightTheme from '../util/LightTheme'
-import AdminMainPage from './CollectionsReportMain.jsx'
-import AdminMenu from './AdminMenu.jsx'
-import useWindowSize from '../util/useWindowSize'
 
 function AdminRoute() {
-    const {isMobile} = useWindowSize()
     const {authLoaded} = useContext(AuthContext)
     const {admin} = useContext(AppContext)
     const navigate = useNavigate()
@@ -24,16 +20,9 @@ function AdminRoute() {
         }
     }, [admin, authLoaded, navigate])
 
-    const nav = (
-        <React.Fragment>
-            <AdminMenu/>
-            {!isMobile && <div style={{flexGrow: 1}}/>}
-        </React.Fragment>
-    )
-
     return (
         <React.Fragment>
-            <Nav title='Admin' extras={nav}/>
+            <Nav title='Admin'/>
 
             {!authLoaded &&
                 <React.Fragment>
@@ -44,7 +33,7 @@ function AdminRoute() {
                 </React.Fragment>
             }
 
-            {authLoaded && admin && <AdminMainPage/>}
+            {authLoaded && admin && <Outlet/>}
 
             <Footer/>
 

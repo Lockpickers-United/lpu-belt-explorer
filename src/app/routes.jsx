@@ -58,7 +58,7 @@ export default [
     {
         path: '/about',
         lazy: async () => {
-            const {default: AboutRoute} = await import('../about/AboutRoute.jsx')
+            const {default: AboutRoute} = await import('../about/AboutRoute')
             return {element: <AboutRoute/>}
         }
     },
@@ -75,15 +75,22 @@ export default [
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
             return {element: <AdminRoute/>}
-        }
-    },
-    {
-        admin: true,
-        path: '/siteReport',
-        lazy: async () => {
-            const {default: SiteReportRoute} = await import('../admin/SiteReportRoute')
-            return {element: <SiteReportRoute/>}
-        }
+        },
+        children: [
+            {
+                path: '/admin/collectionsReport',
+                lazy: async () => {
+                    const {default: CollectionsReportMain} = await import('../admin/CollectionsReportMain')
+                    return {element: <CollectionsReportMain/>}
+                }
+            }, {
+                path: '/admin/siteReport',
+                lazy: async () => {
+                    const {default: SiteReportMain} = await import('../admin/SiteReportMain')
+                    return {element: <SiteReportMain/>}
+                }
+            }
+        ]
     },
     {
         path: '/profile/edit',
