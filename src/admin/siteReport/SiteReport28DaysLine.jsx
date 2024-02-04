@@ -5,13 +5,12 @@ import useWindowSize from '../../util/useWindowSize.jsx'
 
 const SiteReport28DaysLine = ({lineData}) => {
 
-    const fullData = [lineData.traffic28days]
+    const fullData = [lineData.traffic28days.data]
     const siteLineData = []
     const visitorsHash = new Map()
     const visitsHash = new Map()
     const lockViewsHash = new Map()
 
-    // TODO: Clean up iteration
     fullData.forEach((value) => {
         const visitorsArray = []
         const visitsArray = []
@@ -19,18 +18,18 @@ const SiteReport28DaysLine = ({lineData}) => {
 
         for (let i = 0; i < value.length; i++) {
             const dataPoint = new Map()
-            dataPoint['x'] = value[i]['Date']
-            dataPoint['y'] = value[i]['Visitors']
+            dataPoint['x'] = value[i]['date']
+            dataPoint['y'] = value[i]['visitors']
             visitorsArray.push(dataPoint)
 
             const dataPoint2 = new Map()
-            dataPoint2['x'] = value[i]['Date']
-            dataPoint2['y'] = value[i]['Visits']
+            dataPoint2['x'] = value[i]['date']
+            dataPoint2['y'] = value[i]['visits']
             visitsArray.push(dataPoint2)
 
             const dataPoint3 = new Map()
-            dataPoint3['x'] = value[i]['Date']
-            dataPoint3['y'] = value[i]['Lock Views']
+            dataPoint3['x'] = value[i]['date']
+            dataPoint3['y'] = value[i]['lockViews']
             lockViewsArray.push(dataPoint3)
         }
         visitorsHash['id'] = 'Visitors'
@@ -66,7 +65,7 @@ const SiteReport28DaysLine = ({lineData}) => {
         : {top: 10, right: 20, bottom: 50, left: 50}
 
     return (
-        <div style={{height: chartHeight}}>
+        <div style={{height: chartHeight, width:'100%'}}>
             <ResponsiveLine
                 theme={primaryTheme}
                 data={siteLineData}

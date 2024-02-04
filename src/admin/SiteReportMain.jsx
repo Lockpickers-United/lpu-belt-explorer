@@ -1,13 +1,13 @@
 import React from 'react'
-import useWindowSize from '../util/useWindowSize'
-import statsSiteSummary from '../data/statsSiteSummary.json'
+import useWindowSize from '../util/useWindowSize.jsx'
 import statsSiteFull from '../data/statsSiteFull.json'
-import SiteReport28DaysLine from './siteReport/SiteReport28DaysLine.jsx'
 import LockViewsLine from '../stats/LockViewsLine.jsx'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable.jsx'
 import PageTrackingTable from './siteReport/PageTrackingTable.jsx'
+import SiteReportSummary from './siteReport/SiteReportSummary.jsx'
 
 function SiteReportMain() {
+
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -16,6 +16,9 @@ function SiteReportMain() {
 
     const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
     const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
+    const summaryHeaderStyle = statsSiteFull.firstVistsLastSevenDays.countryCount
+        ? headerStyle
+        : firstHeaderStyle
 
     return (
         <div style={{
@@ -28,24 +31,20 @@ function SiteReportMain() {
                 <React.Fragment>
                     <div style={firstHeaderStyle}>First Visits (Last Seven Days)</div>
                     <FirstVisitsLastSevenTable fullData={statsSiteFull} tableWidth={'50%'}/>
-
-                    <div style={headerStyle}>Site Summary Report<br/></div>
-                    <SiteReport28DaysLine lineData={statsSiteSummary}/>
                 </React.Fragment>
             }
 
-            {!statsSiteFull.firstVistsLastSevenDays.countryCount &&
-                <React.Fragment>
-                    <div style={firstHeaderStyle}>Site Summary Report<br/></div>
-                    <SiteReport28DaysLine lineData={statsSiteSummary}/>
-                </React.Fragment>
-            }
+            <React.Fragment>
+                <div style={summaryHeaderStyle}>Site Summary<br/></div>
+                <SiteReportSummary/>
+            </React.Fragment>
 
             <div style={headerStyle}>Weekly Lock Views</div>
             <LockViewsLine/>
 
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable fullData={statsSiteFull}/>
+
         </div>
     )
 }
