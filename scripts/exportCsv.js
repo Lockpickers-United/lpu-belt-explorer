@@ -1,7 +1,7 @@
 import fs from 'fs'
-import validate from './validate'
-import {mainSchema, mediaSchema, linkSchema} from './schemas'
-import {uniqueBelts} from '../src/data/belts'
+import validate from './validate.js'
+import {mainSchema, mediaSchema, linkSchema} from './schemas.js'
+import {uniqueBelts} from '../src/data/belts.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 

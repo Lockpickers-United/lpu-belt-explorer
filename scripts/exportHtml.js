@@ -1,6 +1,6 @@
 import {encodeNonAsciiHTML} from 'entities'
 import fs from 'fs'
-import belts from '../src/data/belts'
+import belts from '../src/data/belts.js'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 const template = fs.readFileSync('./src/resources/seo-template.html', 'utf8')

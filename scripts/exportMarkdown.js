@@ -1,5 +1,5 @@
 import fs from 'fs'
-import {uniqueBelts} from '../src/data/belts'
+import {uniqueBelts} from '../src/data/belts.js'
 import {encodeNonAsciiHTML} from 'entities'
 
 const rawData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
