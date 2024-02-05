@@ -1,21 +1,31 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 
-const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
+const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize}) => {
     const bodyStyle = {}
+
+    // don't show 'date' column if 'dateString' column exists
+    const [hasDateString, setHasDateString] = useState(false)
+    tableData.columns.map(
+        column => column.id === 'dateString' && !hasDateString ? setHasDateString(true) : null
+    )
+    tableData.columns = hasDateString
+        ? tableData.columns.filter((column => column.id !== 'date'))
+        : tableData.columns
 
     return (
         <div style={{}}>
             {tableData.title}
-            <TableContainer id='dailyAverages'
+            <TableContainer id='statsTable'
                             style={{
                                 padding: '0px 0px 0px 4px',
                                 width: tableWidth,
                                 marginLeft: 'auto',
-                                marginRight: 'auto'
+                                marginRight: 'auto',
+                                height: tableHeight
                             }}
                             component={Paper} elevation={2}>
-                <Table size='small'>
+                <Table size='small' stickyHeader={!!tableHeight}>
                     <TableHead>
                         <TableRow>
                             {tableData.columns.map((column, index) =>
@@ -25,7 +35,8 @@ const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
                                                fontSize: fontSize,
                                                lineHeight: '1.1rem',
                                                padding: '8px',
-                                               color:'#fff'
+                                               backgroundColor: '#111',
+                                               color: '#fff'
                                            }}
                                            component='th' scope='row'>
                                     {column.name}
@@ -38,7 +49,7 @@ const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
                             <TableRow key={index} index={index}
                                       sx={{
                                           '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#191919'},
-                                          'td, th': {padding: '7px 1px', margin: '0px'}
+                                          'td, th': {}
                                       }}>
                                 {tableData.columns.map((column, index) =>
 
@@ -47,8 +58,9 @@ const AdminStatsTable = ({tableData, tableWidth, fontSize}) => {
                                                    textAlign: column.align,
                                                    fontSize: fontSize,
                                                    whiteSpace: 'nowrap',
+                                                   padding: '8px',
                                                    border: 0,
-                                                   color:'#eee'
+                                                   color: '#eee'
                                                }}
                                                component='th' scope='row'>
                                         {row[column.id].toLocaleString()}

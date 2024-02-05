@@ -6,11 +6,13 @@ module.exports = {
     },
     plugins: [
         'react',
-        'react-hooks'
+        'react-hooks',
+        'import'
     ],
     extends: [
         'eslint:recommended',
-        'plugin:react/recommended'
+        'plugin:react/recommended',
+        'plugin:import/recommended'
     ],
     parserOptions: {
         ecmaVersion: 'latest',
