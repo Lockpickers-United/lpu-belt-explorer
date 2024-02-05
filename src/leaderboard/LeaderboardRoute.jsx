@@ -56,6 +56,7 @@ function LeaderboardRoute() {
     )
 }
 
-const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
+const randomStuff = (Math.random()).toString(36).substring(2, 10)
+const dataUrl = `https://explore.lpubelts.com/leaderboard/leaderboardData.json?r=${randomStuff}`
 
 export default LeaderboardRoute
