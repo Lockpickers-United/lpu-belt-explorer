@@ -2,9 +2,9 @@ import React, {useCallback, useState} from 'react'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 import Divider from '@mui/material/Divider'
-import useWindowSize from '../util/useWindowSize.jsx'
-import BrandBeltBar from './BrandBeltBar.jsx'
-import BrandMechanismPie from './BrandMechanismPie.jsx'
+import useWindowSize from '../util/useWindowSize'
+import BrandBeltBar from './BrandBeltBar'
+import BrandMechanismPie from './BrandMechanismPie'
 import statsBrandDistribution from '../data/statsBrandDistribution.json'
 
 function BrandDistribution() {

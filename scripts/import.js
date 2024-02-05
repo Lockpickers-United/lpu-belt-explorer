@@ -1,10 +1,10 @@
 import fs from 'fs'
 import dayjs from 'dayjs'
 import {parse} from 'csv-parse/sync'
-import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema, glossarySchema} from './schemas.js'
-import {allBelts, beltSort} from '../src/data/belts.js'
+import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema, glossarySchema} from './schemas'
+import {allBelts, beltSort} from '../src/data/belts'
 import fetch from 'node-fetch'
-import validate from './validate.js'
+import validate from './validate'
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {

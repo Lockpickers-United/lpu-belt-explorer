@@ -1,10 +1,10 @@
 import React, {useState, useCallback} from 'react'
-import BeltDistributionBar from './BeltDistributionBar.jsx'
+import BeltDistributionBar from './BeltDistributionBar'
 import statsCollectionsSummary from '../data/statsCollectionsSummary.json'
 import {ToggleButtonGroup} from '@mui/material'
 import lockSummaryData from '../data/statsLockSummary.json'
 import siteSummaryData from '../data/statsSiteSummary.json'
-import StatsToggleButton from './StatsToggleButton.jsx'
+import StatsToggleButton from './StatsToggleButton'
 
 const locksByBelt = lockSummaryData.locksByBelt
 const lockViewsByBelt = siteSummaryData.lockViewsByBelt.data

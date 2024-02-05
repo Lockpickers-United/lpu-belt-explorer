@@ -1,8 +1,8 @@
 import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
-import {primaryTheme} from './chartDefaults.js'
+import {primaryTheme} from './chartDefaults'
 import siteStatsData from '../data/statsSiteSummary.json'
-import useWindowSize from '../util/useWindowSize.jsx'
+import useWindowSize from '../util/useWindowSize'
 
 function HourlyRequestsLine() {
     const data = siteStatsData.hourlyRequests

@@ -1,8 +1,7 @@
 import React from 'react'
 import {ResponsiveBar} from '@nivo/bar'
-import {beltColors} from './chartDefaults.js'
-import {primaryTheme} from './chartDefaults.js'
-import useWindowSize from '../util/useWindowSize.jsx'
+import {primaryTheme, beltColors} from './chartDefaults'
+import useWindowSize from '../util/useWindowSize'
 
 const BeltDistributionBar = ({beltDistribution}) => {
     const {width} = useWindowSize()

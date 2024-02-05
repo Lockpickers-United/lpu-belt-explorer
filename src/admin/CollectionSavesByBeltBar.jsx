@@ -1,7 +1,7 @@
 import React from 'react'
 import {ResponsiveBar} from '@nivo/bar'
-import useWindowSize from '../util/useWindowSize.jsx'
-import {beltColors, primaryTheme} from './adminChartDefaults.js'
+import useWindowSize from '../util/useWindowSize'
+import {beltColors, primaryTheme} from './adminChartDefaults'
 
 const CollectionSavesByBeltBar = ({fullData}) => {
 

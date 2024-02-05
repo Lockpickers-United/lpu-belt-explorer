@@ -1,6 +1,6 @@
 import React from 'react'
-import TrafficPie from './TrafficPie.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
+import TrafficPie from './TrafficPie'
+import useWindowSize from '../util/useWindowSize'
 import siteStatsData from '../data/statsSiteSummary.json'
 
 function TrafficStats() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminStatsTable from './AdminStatsTable.jsx'
+import AdminStatsTable from './AdminStatsTable'
 import useWindowSize from '../util/useWindowSize'
 
 const CollectionsSummaryTable = ({fullData}) => {

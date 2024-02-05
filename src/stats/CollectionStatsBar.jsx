@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {ResponsiveBar} from '@nivo/bar'
-import {primaryTheme} from './chartDefaults.js'
-import useWindowSize from '../util/useWindowSize.jsx'
+import {primaryTheme} from './chartDefaults'
+import useWindowSize from '../util/useWindowSize'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 

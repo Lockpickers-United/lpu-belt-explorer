@@ -1,10 +1,10 @@
 import React from 'react'
-import useWindowSize from '../util/useWindowSize.jsx'
+import useWindowSize from '../util/useWindowSize'
 import statsSiteFull from '../data/statsSiteFull.json'
-import LockViewsLine from '../stats/LockViewsLine.jsx'
-import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable.jsx'
-import PageTrackingTable from './siteReport/PageTrackingTable.jsx'
-import SiteReportSummary from './siteReport/SiteReportSummary.jsx'
+import LockViewsLine from '../stats/LockViewsLine'
+import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
+import PageTrackingTable from './siteReport/PageTrackingTable'
+import SiteReportSummary from './siteReport/SiteReportSummary'
 
 function SiteReportMain() {
 

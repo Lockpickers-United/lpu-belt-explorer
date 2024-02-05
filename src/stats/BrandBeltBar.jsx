@@ -1,6 +1,6 @@
 import React from 'react'
-import {beltColors, primaryTheme} from './chartDefaults.js'
-import useWindowSize from '../util/useWindowSize.jsx'
+import {beltColors, primaryTheme} from './chartDefaults'
+import useWindowSize from '../util/useWindowSize'
 import {ResponsiveBar} from '@nivo/bar'
 
 function BrandBeltBar({beltData}) {

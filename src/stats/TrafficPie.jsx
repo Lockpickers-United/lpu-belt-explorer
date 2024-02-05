@@ -1,7 +1,7 @@
 import React from 'react'
 import {ResponsivePie} from '@nivo/pie'
-import {pieTheme} from './chartDefaults.js'
-import useWindowSize from '../util/useWindowSize.jsx'
+import {pieTheme} from './chartDefaults'
+import useWindowSize from '../util/useWindowSize'
 
 const TrafficPie = ({dataset, pieColors}) => {
 

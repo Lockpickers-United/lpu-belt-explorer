@@ -1,7 +1,7 @@
 import React from 'react'
-import useWindowSize from '../../util/useWindowSize.jsx'
-import SiteReport28DaysLine from './SiteReport28DaysLine.jsx'
-import SiteReport7daysTable from './SiteReportSummaryTable.jsx'
+import useWindowSize from '../../util/useWindowSize'
+import SiteReport28DaysLine from './SiteReport28DaysLine'
+import SiteReport7daysTable from './SiteReportSummaryTable'
 import statsSiteFull from '../../data/statsSiteFull.json'
 
 function SiteReportSummary() {

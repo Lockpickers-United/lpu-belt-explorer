@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminStatsTable from './AdminStatsTable.jsx'
+import AdminStatsTable from './AdminStatsTable'
 import dayjs from 'dayjs'
 
 const CollectionsLast28Table = ({fullData}) => {

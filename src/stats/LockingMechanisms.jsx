@@ -1,8 +1,8 @@
 import React from 'react'
 import {ResponsivePie} from '@nivo/pie'
-import {pieTheme} from './chartDefaults.js'
+import {pieTheme} from './chartDefaults'
 import lockSummaryData from '../data/statsLockSummary.json'
-import useWindowSize from '../util/useWindowSize.jsx'
+import useWindowSize from '../util/useWindowSize'
 
 function LockingMechanisms() {
     const data = lockSummaryData.lockingMechanisms

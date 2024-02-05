@@ -1,6 +1,6 @@
 import React from 'react'
 import SsidChartIcon from '@mui/icons-material/SsidChart'
-import SiteStatsTable from './SiteStatsTable.jsx'
+import SiteStatsTable from './SiteStatsTable'
 import useWindowSize from '../util/useWindowSize'
 import lockSummaryData from '../data/statsLockSummary.json'
 import siteStatsData from '../data/statsSiteSummary.json'

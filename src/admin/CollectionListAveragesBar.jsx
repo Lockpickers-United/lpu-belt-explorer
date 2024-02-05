@@ -1,7 +1,7 @@
 import React from 'react'
 import {ResponsiveBar} from '@nivo/bar'
-import {primaryTheme} from './adminChartDefaults.js'
-import useWindowSize from '../util/useWindowSize.jsx'
+import {primaryTheme} from './adminChartDefaults'
+import useWindowSize from '../util/useWindowSize'
 
 const CollectionListAveragesBar = ({fullData}) => {
 

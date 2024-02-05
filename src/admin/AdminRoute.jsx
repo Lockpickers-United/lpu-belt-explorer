@@ -1,13 +1,13 @@
 import LinearProgress from '@mui/material/LinearProgress'
 import React, {useContext, useEffect} from 'react'
 import {Outlet, useNavigate} from 'react-router-dom'
-import AppContext from '../app/AppContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
-import Tracker from '../app/Tracker.jsx'
-import Footer from '../nav/Footer.jsx'
-import Nav from '../nav/Nav.jsx'
+import AppContext from '../app/AppContext'
+import AuthContext from '../app/AuthContext'
+import Tracker from '../app/Tracker'
+import Footer from '../nav/Footer'
+import Nav from '../nav/Nav'
 import lpuLogoPath from '../resources/LPU.png'
-import LightTheme from '../util/LightTheme.jsx'
+import LightTheme from '../util/LightTheme'
 
 function AdminRoute() {
     const {authLoaded} = useContext(AuthContext)

@@ -1,8 +1,8 @@
 import React from 'react'
 import Tracker from '../app/Tracker'
-import Footer from '../nav/Footer.jsx'
-import Nav from '../nav/Nav.jsx'
-import StatsMainPage from './StatsMainPage.jsx'
+import Footer from '../nav/Footer'
+import Nav from '../nav/Nav'
+import StatsMainPage from './StatsMainPage'
 
 
 function StatsRoute() {

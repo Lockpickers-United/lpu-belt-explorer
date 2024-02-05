@@ -1,8 +1,7 @@
 import React from 'react'
 import {ResponsiveBar} from '@nivo/bar'
-import useWindowSize from '../util/useWindowSize.jsx'
-import {beltColors, legendTheme} from './chartDefaults.js'
-import {primaryTheme} from './chartDefaults.js'
+import useWindowSize from '../util/useWindowSize'
+import {beltColors, legendTheme, primaryTheme} from './chartDefaults'
 import beltRankingAnnualData from '../data/statsRedditGrowth.json'
 import redditBeltGrowthLegend from './redditBeltGrowthLegend.json'
 
