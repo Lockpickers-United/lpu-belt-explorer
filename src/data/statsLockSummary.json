@@ -2,112 +2,111 @@
    "locksByBelt" : [
       {
          "label" : "White",
-         "value" : 0.023121387283237,
          "id" : "White",
-         "count" : 20
+         "count" : 20,
+         "value" : 0.023121387283237
       },
       {
          "label" : "Yellow",
+         "id" : "Yellow",
          "count" : 55,
-         "value" : 0.0635838150289017,
-         "id" : "Yellow"
+         "value" : 0.0635838150289017
       },
       {
-         "id" : "Orange",
          "value" : 0.0774566473988439,
          "count" : 67,
+         "id" : "Orange",
          "label" : "Orange"
       },
       {
-         "label" : "Green",
          "value" : 0.157225433526012,
+         "count" : 136,
          "id" : "Green",
-         "count" : 136
+         "label" : "Green"
       },
       {
          "label" : "Blue",
          "id" : "Blue",
-         "value" : 0.128323699421965,
-         "count" : 111
+         "count" : 111,
+         "value" : 0.128323699421965
       },
       {
-         "label" : "Purple",
-         "count" : 107,
          "id" : "Purple",
-         "value" : 0.123699421965318
+         "label" : "Purple",
+         "value" : 0.123699421965318,
+         "count" : 107
       },
       {
          "label" : "Brown",
          "id" : "Brown",
-         "value" : 0.0890173410404624,
-         "count" : 77
+         "count" : 77,
+         "value" : 0.0890173410404624
       },
       {
          "id" : "Red",
+         "label" : "Red",
          "value" : 0.0728323699421965,
-         "count" : 63,
-         "label" : "Red"
+         "count" : 63
       },
       {
-         "label" : "Black",
          "count" : 87,
          "value" : 0.100578034682081,
+         "label" : "Black",
          "id" : "Black"
       },
       {
-         "label" : "Unranked",
          "count" : 142,
-         "id" : "Unranked",
-         "value" : 0.164161849710983
+         "value" : 0.164161849710983,
+         "label" : "Unranked",
+         "id" : "Unranked"
       }
    ],
-   "modificationDate" : "Mon Jan 29 07:36:10 2024",
+   "modificationDate" : "Mon Feb  5 11:28:26 2024",
    "photoStats" : {
-      "contributors" : 228,
       "topPhotographers" : [
          {
-            "contributor" : "mgsecure",
-            "images" : 307
+            "images" : 318,
+            "contributor" : "mgsecure"
          },
          {
             "contributor" : "PeaceWeapon",
-            "images" : 214
+            "images" : 217
          },
          {
-            "images" : 180,
-            "contributor" : "Luboš Čech"
+            "contributor" : "Luboš Čech",
+            "images" : 180
          },
          {
             "images" : 180,
             "contributor" : "Reinder Stegen"
          },
          {
-            "contributor" : "Ben-on-reddit",
-            "images" : 138
+            "images" : 138,
+            "contributor" : "Ben-on-reddit"
          },
          {
-            "images" : 80,
-            "contributor" : "Clefmentine"
+            "contributor" : "Clefmentine",
+            "images" : 80
          },
          {
-            "contributor" : "LockPickingFisherman",
-            "images" : 64
+            "images" : 64,
+            "contributor" : "LockPickingFisherman"
          },
          {
-            "images" : 61,
-            "contributor" : "myktylgaan"
-         },
-         {
-            "images" : 61,
-            "contributor" : "Qikom"
-         },
-         {
-            "contributor" : "Yabende",
+            "contributor" : "myktylgaan",
             "images" : 61
          },
          {
-            "contributor" : "Dra9i",
-            "images" : 50
+            "contributor" : "Qikom",
+            "images" : 61
+         },
+         {
+            "images" : 61,
+            "contributor" : "Yabende"
+         },
+         {
+            "images" : 50,
+            "contributor" : "Dra9i"
          },
          {
             "images" : 43,
@@ -122,44 +121,44 @@
             "images" : 39
          },
          {
-            "contributor" : "DoNotDuplicate",
-            "images" : 36
+            "images" : 36,
+            "contributor" : "DoNotDuplicate"
          },
          {
-            "images" : 35,
-            "contributor" : "LockPicker1969"
+            "contributor" : "LockPicker1969",
+            "images" : 35
          },
          {
             "contributor" : "Datagram",
             "images" : 34
          },
          {
-            "contributor" : "Lock Noob",
-            "images" : 33
+            "images" : 33,
+            "contributor" : "Lock Noob"
          },
          {
             "contributor" : "OpHiDiAn",
             "images" : 33
          },
          {
-            "images" : 33,
-            "contributor" : "Yagias"
+            "contributor" : "Yagias",
+            "images" : 33
          },
          {
             "images" : 31,
             "contributor" : "Imaginary Unit"
          },
          {
-            "contributor" : "Safecracker33",
-            "images" : 28
+            "images" : 28,
+            "contributor" : "Safecracker33"
          },
          {
-            "contributor" : "DEW",
-            "images" : 26
+            "images" : 26,
+            "contributor" : "DEW"
          },
          {
-            "images" : 25,
-            "contributor" : "Mugatu"
+            "contributor" : "Mugatu",
+            "images" : 25
          },
          {
             "images" : 24,
@@ -170,56 +169,56 @@
             "images" : 24
          },
          {
-            "contributor" : "Norlin",
-            "images" : 23
+            "images" : 23,
+            "contributor" : "Norlin"
          },
          {
-            "images" : 20,
-            "contributor" : "Dependent-Quarter"
+            "contributor" : "Dependent-Quarter",
+            "images" : 20
          },
          {
             "contributor" : "Florida Man",
             "images" : 20
          },
          {
-            "contributor" : "JayDee",
-            "images" : 20
+            "images" : 20,
+            "contributor" : "JayDee"
          },
          {
-            "images" : 20,
-            "contributor" : "LockFumbler"
+            "contributor" : "LockFumbler",
+            "images" : 20
          },
          {
             "contributor" : "fabianoh130",
             "images" : 18
          },
          {
-            "contributor" : "GeorgiaJim",
-            "images" : 18
+            "images" : 18,
+            "contributor" : "GeorgiaJim"
          },
          {
             "images" : 17,
             "contributor" : "Blackcatthirteen"
          },
          {
-            "contributor" : "Christian",
-            "images" : 17
+            "images" : 17,
+            "contributor" : "Christian"
          },
          {
-            "images" : 16,
-            "contributor" : "Crispix"
+            "contributor" : "Crispix",
+            "images" : 16
          },
          {
-            "images" : 16,
-            "contributor" : "DigPicks"
+            "contributor" : "DigPicks",
+            "images" : 16
          },
          {
             "contributor" : "Jan-Willem Markus",
             "images" : 16
          },
          {
-            "contributor" : "LockSportsman",
-            "images" : 15
+            "images" : 15,
+            "contributor" : "LockSportsman"
          },
          {
             "images" : 15,
@@ -234,16 +233,16 @@
             "images" : 14
          },
          {
-            "contributor" : "tonysansan",
-            "images" : 14
+            "images" : 14,
+            "contributor" : "tonysansan"
          },
          {
             "images" : 14,
             "contributor" : "TrapperLock"
          },
          {
-            "images" : 13,
-            "contributor" : "Least"
+            "contributor" : "Least",
+            "images" : 13
          },
          {
             "contributor" : "Moon-UA",
@@ -258,16 +257,16 @@
             "images" : 12
          },
          {
-            "contributor" : "Alpama",
-            "images" : 11
+            "images" : 11,
+            "contributor" : "Alpama"
          },
          {
             "contributor" : "Dennis van Zuijlekom",
             "images" : 11
          },
          {
-            "images" : 11,
-            "contributor" : "Ed McBane"
+            "contributor" : "Ed McBane",
+            "images" : 11
          },
          {
             "contributor" : "MrBlackMagic",
@@ -286,12 +285,12 @@
             "images" : 10
          },
          {
-            "contributor" : "gigawalt",
-            "images" : 10
+            "images" : 10,
+            "contributor" : "gigawalt"
          },
          {
-            "contributor" : "L0ckJockey",
-            "images" : 10
+            "images" : 10,
+            "contributor" : "L0ckJockey"
          },
          {
             "images" : 10,
@@ -302,44 +301,44 @@
             "contributor" : "Ross"
          },
          {
-            "images" : 9,
-            "contributor" : "DQ"
+            "contributor" : "DQ",
+            "images" : 9
          },
          {
             "images" : 9,
             "contributor" : "Retac"
          },
          {
-            "images" : 9,
-            "contributor" : "Skwiggledork"
-         },
-         {
-            "contributor" : "CorrectJeans",
-            "images" : 8
+            "contributor" : "Skwiggledork",
+            "images" : 9
          },
          {
             "images" : 8,
-            "contributor" : "DonPicks"
+            "contributor" : "CorrectJeans"
+         },
+         {
+            "contributor" : "DonPicks",
+            "images" : 8
          },
          {
             "images" : 8,
             "contributor" : "EdMcBane"
          },
          {
-            "contributor" : "MelBrooksKA",
+            "images" : 8,
+            "contributor" : "MelBrooksKA"
+         },
+         {
+            "contributor" : "Steve's Lock Picking",
             "images" : 8
          },
          {
-            "images" : 8,
-            "contributor" : "Steve's Lock Picking"
+            "images" : 7,
+            "contributor" : "banditobrandino07"
          },
          {
-            "contributor" : "banditobrandino07",
-            "images" : 7
-         },
-         {
-            "contributor" : "Brummie Lock Picker",
-            "images" : 7
+            "images" : 7,
+            "contributor" : "Brummie Lock Picker"
          },
          {
             "images" : 7,
@@ -354,12 +353,12 @@
             "contributor" : "Octane"
          },
          {
-            "contributor" : "Ronb",
-            "images" : 7
+            "images" : 7,
+            "contributor" : "Ronb"
          },
          {
-            "contributor" : "Slacc",
-            "images" : 7
+            "images" : 7,
+            "contributor" : "Slacc"
          },
          {
             "images" : 6,
@@ -370,12 +369,12 @@
             "contributor" : "ALTrdGenetics"
          },
          {
-            "contributor" : "Amvgaert",
-            "images" : 6
+            "images" : 6,
+            "contributor" : "Amvgaert"
          },
          {
-            "images" : 6,
-            "contributor" : "PickSmith"
+            "contributor" : "PickSmith",
+            "images" : 6
          },
          {
             "images" : 6,
@@ -390,20 +389,20 @@
             "contributor" : "Toool NL"
          },
          {
-            "images" : 6,
-            "contributor" : "Two06"
+            "contributor" : "Two06",
+            "images" : 6
          },
          {
-            "contributor" : "Tyler J. Thomas",
-            "images" : 6
+            "images" : 6,
+            "contributor" : "Tyler J. Thomas"
          },
          {
             "contributor" : "unnamed_900",
             "images" : 6
          },
          {
-            "contributor" : "Villain",
-            "images" : 6
+            "images" : 6,
+            "contributor" : "Villain"
          },
          {
             "contributor" : "Xarragon",
@@ -414,68 +413,68 @@
             "images" : 5
          },
          {
-            "images" : 5,
-            "contributor" : "LockChuck"
+            "contributor" : "LockChuck",
+            "images" : 5
          },
          {
-            "contributor" : "Mick777Oz",
-            "images" : 5
+            "images" : 5,
+            "contributor" : "Mick777Oz"
          },
          {
             "contributor" : "Peregrine",
             "images" : 5
          },
          {
-            "images" : 5,
-            "contributor" : "Potti314"
-         },
-         {
-            "contributor" : "Snow",
+            "contributor" : "Potti314",
             "images" : 5
          },
          {
             "images" : 5,
-            "contributor" : "Wyte"
+            "contributor" : "Snow"
          },
          {
-            "contributor" : "Aida",
-            "images" : 4
+            "contributor" : "Wyte",
+            "images" : 5
          },
          {
             "images" : 4,
-            "contributor" : "Anonymous"
+            "contributor" : "Aida"
+         },
+         {
+            "contributor" : "Anonymous",
+            "images" : 4
          },
          {
             "contributor" : "Atticus",
             "images" : 4
          },
          {
-            "contributor" : "baek",
-            "images" : 4
+            "images" : 4,
+            "contributor" : "baek"
          },
          {
             "images" : 4,
             "contributor" : "EDF0101"
          },
          {
-            "contributor" : "HVlogic",
-            "images" : 4
+            "images" : 4,
+            "contributor" : "HVlogic"
          },
          {
-            "contributor" : "Idanhurja",
-            "images" : 4
+            "images" : 4,
+            "contributor" : "Idanhurja"
          },
          {
             "images" : 4,
             "contributor" : "ImSchatten"
          },
          {
-            "contributor" : "Michael Maynard",
-            "images" : 4
+            "images" : 4,
+            "contributor" : "Michael Maynard"
          },
          {
-            "images" : 4,
-            "contributor" : "Peaceweapon"
+            "contributor" : "Peaceweapon",
+            "images" : 4
          },
          {
             "images" : 4,
@@ -490,12 +489,12 @@
             "images" : 4
          },
          {
-            "contributor" : "sic!",
-            "images" : 4
+            "images" : 4,
+            "contributor" : "sic!"
          },
          {
-            "contributor" : "thedungbeetle",
-            "images" : 4
+            "images" : 4,
+            "contributor" : "thedungbeetle"
          },
          {
             "contributor" : "two06",
@@ -514,8 +513,8 @@
             "contributor" : "BXoneXR"
          },
          {
-            "images" : 3,
-            "contributor" : "Chris Capune"
+            "contributor" : "Chris Capune",
+            "images" : 3
          },
          {
             "contributor" : "Dagolicious",
@@ -526,56 +525,56 @@
             "contributor" : "Devwickk"
          },
          {
-            "images" : 3,
-            "contributor" : "diesdas1312"
+            "contributor" : "diesdas1312",
+            "images" : 3
          },
          {
             "contributor" : "DuckFacts",
             "images" : 3
          },
          {
-            "images" : 3,
-            "contributor" : "Erik Weisz"
+            "contributor" : "Erik Weisz",
+            "images" : 3
          },
          {
-            "images" : 3,
-            "contributor" : "Frosty"
-         },
-         {
-            "contributor" : "Geoffry McGary",
+            "contributor" : "Frosty",
             "images" : 3
          },
          {
             "images" : 3,
-            "contributor" : "Han Fey"
+            "contributor" : "Geoffry McGary"
          },
          {
-            "images" : 3,
-            "contributor" : "hunson"
-         },
-         {
-            "contributor" : "Lemon",
+            "contributor" : "Han Fey",
             "images" : 3
          },
          {
-            "contributor" : "Lockpicking Dutchman",
+            "contributor" : "hunson",
             "images" : 3
          },
          {
             "images" : 3,
-            "contributor" : "Madriver1000"
+            "contributor" : "Lemon"
+         },
+         {
+            "images" : 3,
+            "contributor" : "Lockpicking Dutchman"
+         },
+         {
+            "contributor" : "Madriver1000",
+            "images" : 3
          },
          {
             "contributor" : "Majoral_",
             "images" : 3
          },
          {
-            "images" : 3,
-            "contributor" : "Manipu lator"
+            "contributor" : "Manipu lator",
+            "images" : 3
          },
          {
-            "contributor" : "Nerixel",
-            "images" : 3
+            "images" : 3,
+            "contributor" : "Nerixel"
          },
          {
             "images" : 3,
@@ -586,44 +585,44 @@
             "contributor" : "Pickleslice"
          },
          {
-            "contributor" : "Sage",
-            "images" : 3
+            "images" : 3,
+            "contributor" : "Sage"
          },
          {
             "contributor" : "Thice",
             "images" : 3
          },
          {
-            "contributor" : "Yamakasi",
-            "images" : 3
+            "images" : 3,
+            "contributor" : "Yamakasi"
          },
          {
-            "contributor" : "[FUN] Key",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "[FUN] Key"
          },
          {
-            "contributor" : "Banegard",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "Banegard"
          },
          {
-            "contributor" : "Bodhi-pickah",
+            "images" : 2,
+            "contributor" : "Bodhi-pickah"
+         },
+         {
+            "contributor" : "Crono.Lock",
             "images" : 2
          },
          {
             "images" : 2,
-            "contributor" : "Crono.Lock"
-         },
-         {
-            "contributor" : "decoder",
-            "images" : 2
+            "contributor" : "decoder"
          },
          {
             "contributor" : "Don",
             "images" : 2
          },
          {
-            "contributor" : "Dromicete",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "Dromicete"
          },
          {
             "images" : 2,
@@ -638,16 +637,16 @@
             "images" : 2
          },
          {
-            "contributor" : "Iona",
-            "images" : 2
-         },
-         {
-            "contributor" : "Kamikaze",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "Iona"
          },
          {
             "images" : 2,
-            "contributor" : "Keyla Sentry"
+            "contributor" : "Kamikaze"
+         },
+         {
+            "contributor" : "Keyla Sentry",
+            "images" : 2
          },
          {
             "images" : 2,
@@ -658,40 +657,40 @@
             "images" : 2
          },
          {
-            "contributor" : "MidnightPhilopicker",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "MidnightPhilopicker"
          },
          {
             "images" : 2,
             "contributor" : "Oaklandishh"
          },
          {
-            "images" : 2,
-            "contributor" : "Opensourcefan"
+            "contributor" : "Opensourcefan",
+            "images" : 2
          },
          {
-            "contributor" : "PandaFrog",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "PandaFrog"
          },
          {
             "images" : 2,
             "contributor" : "PurpleSkull"
          },
          {
-            "images" : 2,
-            "contributor" : "Raton"
+            "contributor" : "Raton",
+            "images" : 2
          },
          {
             "contributor" : "rondeLoro",
             "images" : 2
          },
          {
-            "images" : 2,
-            "contributor" : "Schlüsselmeister"
+            "contributor" : "Schlüsselmeister",
+            "images" : 2
          },
          {
-            "images" : 2,
-            "contributor" : "Selflockmaster"
+            "contributor" : "Selflockmaster",
+            "images" : 2
          },
          {
             "contributor" : "Skullsmashgame",
@@ -706,8 +705,8 @@
             "contributor" : "Tortuga Joe"
          },
          {
-            "contributor" : "two07",
-            "images" : 2
+            "images" : 2,
+            "contributor" : "two07"
          },
          {
             "contributor" : "4811",
@@ -718,12 +717,12 @@
             "contributor" : "Antix"
          },
          {
-            "images" : 1,
-            "contributor" : "b1blatt"
+            "contributor" : "b1blatt",
+            "images" : 1
          },
          {
-            "contributor" : "Bai_McD",
-            "images" : 1
+            "images" : 1,
+            "contributor" : "Bai_McD"
          },
          {
             "images" : 1,
@@ -734,32 +733,32 @@
             "images" : 1
          },
          {
-            "contributor" : "Culper Woodhull",
+            "images" : 1,
+            "contributor" : "Culper Woodhull"
+         },
+         {
+            "contributor" : "Digs",
             "images" : 1
          },
          {
             "images" : 1,
-            "contributor" : "Digs"
+            "contributor" : "Dmac"
          },
          {
-            "contributor" : "Dmac",
+            "contributor" : "Duckfacts",
             "images" : 1
-         },
-         {
-            "images" : 1,
-            "contributor" : "Duckfacts"
          },
          {
             "contributor" : "EliteAssassin",
             "images" : 1
          },
          {
-            "images" : 1,
-            "contributor" : "escape goat"
+            "contributor" : "escape goat",
+            "images" : 1
          },
          {
-            "images" : 1,
-            "contributor" : "GWiens2001"
+            "contributor" : "GWiens2001",
+            "images" : 1
          },
          {
             "images" : 1,
@@ -778,16 +777,16 @@
             "images" : 1
          },
          {
-            "contributor" : "JambonRoyale",
+            "images" : 1,
+            "contributor" : "JambonRoyale"
+         },
+         {
+            "contributor" : "Jippiedoe",
             "images" : 1
          },
          {
-            "images" : 1,
-            "contributor" : "Jippiedoe"
-         },
-         {
-            "images" : 1,
-            "contributor" : "Lochabar"
+            "contributor" : "Lochabar",
+            "images" : 1
          },
          {
             "contributor" : "Lock Pickers United",
@@ -798,28 +797,28 @@
             "images" : 1
          },
          {
-            "contributor" : "MacGyver101",
-            "images" : 1
+            "images" : 1,
+            "contributor" : "MacGyver101"
          },
          {
-            "contributor" : "McFierce",
-            "images" : 1
+            "images" : 1,
+            "contributor" : "McFierce"
          },
          {
             "contributor" : "Melanie",
             "images" : 1
          },
          {
-            "images" : 1,
-            "contributor" : "Melanie H."
+            "contributor" : "Melanie H.",
+            "images" : 1
          },
          {
             "images" : 1,
             "contributor" : "Mick777oz"
          },
          {
-            "images" : 1,
-            "contributor" : "Mow"
+            "contributor" : "Mow",
+            "images" : 1
          },
          {
             "contributor" : "Nkt",
@@ -830,12 +829,12 @@
             "contributor" : "nureinnarr"
          },
          {
-            "images" : 1,
-            "contributor" : "Pickin' Rick"
+            "contributor" : "Pickin' Rick",
+            "images" : 1
          },
          {
-            "images" : 1,
-            "contributor" : "Poukram"
+            "contributor" : "Poukram",
+            "images" : 1
          },
          {
             "images" : 1,
@@ -846,84 +845,85 @@
             "contributor" : "Schloßgespenst"
          },
          {
-            "images" : 1,
-            "contributor" : "Semenawa"
+            "contributor" : "Semenawa",
+            "images" : 1
          },
          {
             "contributor" : "SiskoSpaceman",
             "images" : 1
          },
          {
-            "images" : 1,
-            "contributor" : "TOOOL NL"
+            "contributor" : "TOOOL NL",
+            "images" : 1
          },
          {
             "contributor" : "UrbanHawk",
             "images" : 1
          },
          {
-            "contributor" : "Yohapii",
-            "images" : 1
+            "images" : 1,
+            "contributor" : "Yohapii"
          },
          {
-            "images" : 1,
-            "contributor" : "Zitrone"
+            "contributor" : "Zitrone",
+            "images" : 1
          }
       ],
-      "uniqueImages" : 2836,
       "photoSegments" : [
          {
             "coverage" : "100%",
-            "count" : "200",
+            "segment" : "Top 200 locks",
             "media" : 200,
-            "segment" : "Top 200 locks"
+            "count" : "200"
          },
          {
             "coverage" : "93%",
-            "count" : 723,
+            "segment" : "Ranked locks",
             "media" : 676,
-            "segment" : "Ranked locks"
+            "count" : 723
          },
          {
-            "coverage" : "89%",
             "count" : 865,
-            "media" : 774,
-            "segment" : "All locks"
+            "coverage" : "90%",
+            "segment" : "All locks",
+            "media" : 775
          }
-      ]
+      ],
+      "contributors" : 228,
+      "uniqueImages" : 2850
    },
    "lockCounts" : {
-      "description" : "Locks",
       "data" : [
          {
-            "label" : "Ranked",
-            "value" : 723
+            "value" : 723,
+            "label" : "Ranked"
          },
          {
             "value" : 142,
             "label" : "Unranked"
          },
          {
-            "value" : 865,
-            "label" : "All"
+            "label" : "All",
+            "value" : 865
          }
-      ]
+      ],
+      "description" : "Locks"
    },
    "lockingMechanisms" : [
       {
          "id" : "pin-tumbler",
-         "value" : 301,
-         "label" : "Pin-tumbler"
+         "label" : "Pin-tumbler",
+         "value" : 301
       },
       {
-         "value" : 169,
          "id" : "dimple",
-         "label" : "Dimple"
+         "label" : "Dimple",
+         "value" : 169
       },
       {
          "value" : 80,
-         "id" : "multiple",
-         "label" : "Multiple"
+         "label" : "Multiple",
+         "id" : "multiple"
       },
       {
          "value" : 51,
@@ -931,14 +931,14 @@
          "label" : "Lever"
       },
       {
-         "value" : 30,
          "id" : "slider",
-         "label" : "Slider"
+         "label" : "Slider",
+         "value" : 30
       },
       {
+         "id" : "disc-detainer",
          "label" : "Disc detainer",
-         "value" : 27,
-         "id" : "disc-detainer"
+         "value" : 27
       },
       {
          "label" : "Lever/sidebar",
@@ -947,22 +947,22 @@
       },
       {
          "label" : "Pump/push",
-         "value" : 16,
-         "id" : "pump-push"
+         "id" : "pump-push",
+         "value" : 16
       },
       {
+         "id" : "wafer",
          "label" : "Wafer",
-         "value" : 12,
-         "id" : "wafer"
+         "value" : 12
       },
       {
          "label" : "Magnet",
-         "value" : 6,
-         "id" : "magnet"
+         "id" : "magnet",
+         "value" : 6
       },
       {
-         "id" : "other",
          "value" : 4,
+         "id" : "other",
          "label" : "Other"
       },
       {

@@ -1,165 +1,164 @@
 {
    "popularStates" : {
-      "description" : "Popular US States",
       "data" : [
          {
-            "visits" : "15214",
-            "area" : "California"
+            "area" : "California",
+            "visits" : "15565"
          },
          {
-            "area" : "Texas",
-            "visits" : "9141"
+            "visits" : "9395",
+            "area" : "Texas"
          },
          {
-            "area" : "New York",
-            "visits" : "7992"
+            "visits" : "8198",
+            "area" : "New York"
          },
          {
-            "visits" : "6004",
+            "visits" : "6228",
             "area" : "Washington"
          },
          {
-            "area" : "Florida",
-            "visits" : "5507"
+            "visits" : "5649",
+            "area" : "Florida"
          },
          {
-            "area" : "Illinois",
-            "visits" : "5190"
+            "visits" : "5407",
+            "area" : "Illinois"
          },
          {
-            "visits" : "5179",
-            "area" : "Pennsylvania"
+            "area" : "Pennsylvania",
+            "visits" : "5325"
          },
          {
-            "visits" : "4663",
-            "area" : "Colorado"
+            "area" : "Colorado",
+            "visits" : "4734"
          },
          {
-            "area" : "Virginia",
-            "visits" : "4392"
+            "visits" : "4452",
+            "area" : "Virginia"
          },
          {
-            "area" : "Minnesota",
-            "visits" : "4187"
+            "visits" : "4359",
+            "area" : "Minnesota"
          },
          {
-            "visits" : "4071",
-            "area" : "North Carolina"
+            "area" : "North Carolina",
+            "visits" : "4182"
          },
          {
-            "area" : "Michigan",
-            "visits" : "3964"
+            "visits" : "4078",
+            "area" : "Michigan"
          },
          {
             "area" : "Oregon",
-            "visits" : "3494"
+            "visits" : "3589"
          },
          {
-            "visits" : "3172",
-            "area" : "Massachusetts"
+            "area" : "Massachusetts",
+            "visits" : "3269"
          },
          {
-            "area" : "Georgia",
-            "visits" : "3140"
+            "visits" : "3238",
+            "area" : "Georgia"
          },
          {
-            "area" : "Ohio",
-            "visits" : "2937"
+            "visits" : "2975",
+            "area" : "Ohio"
          },
          {
-            "visits" : "2703",
-            "area" : "New Jersey"
+            "area" : "New Jersey",
+            "visits" : "2793"
          },
          {
-            "visits" : "2602",
-            "area" : "Arizona"
+            "area" : "Arizona",
+            "visits" : "2671"
          },
          {
             "area" : "Missouri",
-            "visits" : "2338"
+            "visits" : "2404"
          },
          {
-            "visits" : "2130",
+            "visits" : "2241",
             "area" : "Wisconsin"
          },
          {
             "area" : "Tennessee",
-            "visits" : "2084"
+            "visits" : "2162"
          },
          {
             "area" : "Indiana",
-            "visits" : "1882"
+            "visits" : "1932"
          },
          {
-            "area" : "Maryland",
-            "visits" : "1743"
+            "visits" : "1799",
+            "area" : "Maryland"
          },
          {
-            "visits" : "1656",
+            "visits" : "1674",
             "area" : "Utah"
          },
          {
-            "area" : "Unknown",
-            "visits" : "1601"
+            "visits" : "1641",
+            "area" : "Unknown"
          },
          {
-            "visits" : "1122",
+            "visits" : "1147",
             "area" : "South Carolina"
          },
          {
-            "visits" : "1117",
-            "area" : "Oklahoma"
+            "area" : "Oklahoma",
+            "visits" : "1135"
          },
          {
-            "visits" : "1062",
+            "visits" : "1102",
             "area" : "Kentucky"
          },
          {
-            "area" : "Alabama",
-            "visits" : "1052"
+            "visits" : "1074",
+            "area" : "Alabama"
          },
          {
-            "visits" : "1045",
+            "visits" : "1071",
             "area" : "Nevada"
          },
          {
-            "visits" : "915",
-            "area" : "Connecticut"
+            "area" : "Connecticut",
+            "visits" : "948"
          },
          {
             "area" : "District of Columbia",
-            "visits" : "779"
+            "visits" : "816"
          },
          {
-            "area" : "New Mexico",
-            "visits" : "772"
+            "visits" : "793",
+            "area" : "New Mexico"
+         },
+         {
+            "area" : "Nebraska",
+            "visits" : "785"
          },
          {
             "area" : "Arkansas",
-            "visits" : "762"
+            "visits" : "784"
          },
          {
-            "visits" : "759",
+            "visits" : "771",
             "area" : "Kansas"
          },
          {
-            "visits" : "753",
-            "area" : "Iowa"
-         },
-         {
-            "visits" : "729",
-            "area" : "Nebraska"
+            "area" : "Iowa",
+            "visits" : "761"
          },
          {
             "area" : "Louisiana",
-            "visits" : "686"
+            "visits" : "708"
          },
          {
-            "area" : "Hawaii",
-            "visits" : "571"
+            "visits" : "593",
+            "area" : "Hawaii"
          },
          {
-            "visits" : "508",
+            "visits" : "525",
             "area" : "Rhode Island"
          },
          {
@@ -167,48 +166,206 @@
             "area" : "Idaho"
          },
          {
-            "visits" : "476",
+            "visits" : "483",
             "area" : "New Hampshire"
          },
          {
-            "visits" : "449",
-            "area" : "West Virginia"
+            "area" : "West Virginia",
+            "visits" : "469"
          },
          {
-            "visits" : "447",
+            "visits" : "457",
+            "area" : "Montana"
+         },
+         {
+            "visits" : "448",
             "area" : "Mississippi"
          },
          {
-            "area" : "Montana",
-            "visits" : "439"
-         },
-         {
-            "area" : "Maine",
-            "visits" : "330"
+            "visits" : "334",
+            "area" : "Maine"
          },
          {
             "area" : "Alaska",
-            "visits" : "226"
+            "visits" : "232"
          },
          {
-            "visits" : "223",
+            "visits" : "226",
             "area" : "South Dakota"
          },
          {
             "area" : "Delaware",
-            "visits" : "205"
+            "visits" : "207"
          },
          {
-            "area" : "Wyoming",
-            "visits" : "200"
+            "visits" : "200",
+            "area" : "Wyoming"
          },
          {
-            "area" : "Vermont",
-            "visits" : "111"
+            "visits" : "122",
+            "area" : "Vermont"
          },
          {
             "area" : "North Dakota",
-            "visits" : "93"
+            "visits" : "109"
+         }
+      ],
+      "description" : "Popular US States"
+   },
+   "popularEuropeanCountries" : {
+      "description" : "Popular European Countries",
+      "data" : [
+         {
+            "visits" : "13979",
+            "area" : "Germany"
+         },
+         {
+            "visits" : "11612",
+            "area" : "United Kingdom"
+         },
+         {
+            "area" : "Netherlands",
+            "visits" : "6804"
+         },
+         {
+            "visits" : "3784",
+            "area" : "France"
+         },
+         {
+            "visits" : "2107",
+            "area" : "Italy"
+         },
+         {
+            "visits" : "1565",
+            "area" : "Spain"
+         },
+         {
+            "visits" : "1469",
+            "area" : "Portugal"
+         },
+         {
+            "visits" : "1401",
+            "area" : "Poland"
+         },
+         {
+            "visits" : "1329",
+            "area" : "Finland"
+         },
+         {
+            "area" : "Sweden",
+            "visits" : "1316"
+         },
+         {
+            "visits" : "1187",
+            "area" : "Belgium"
+         },
+         {
+            "visits" : "1119",
+            "area" : "Denmark"
+         },
+         {
+            "area" : "Austria",
+            "visits" : "951"
+         },
+         {
+            "area" : "Norway",
+            "visits" : "945"
+         },
+         {
+            "visits" : "756",
+            "area" : "Slovakia"
+         },
+         {
+            "area" : "Switzerland",
+            "visits" : "696"
+         },
+         {
+            "visits" : "616",
+            "area" : "Romania"
+         },
+         {
+            "visits" : "571",
+            "area" : "Ireland"
+         },
+         {
+            "area" : "Czech Republic",
+            "visits" : "567"
+         },
+         {
+            "visits" : "519",
+            "area" : "Bulgaria"
+         },
+         {
+            "area" : "Greece",
+            "visits" : "430"
+         },
+         {
+            "area" : "Croatia",
+            "visits" : "388"
+         },
+         {
+            "area" : "Hungary",
+            "visits" : "376"
+         },
+         {
+            "area" : "Slovenia",
+            "visits" : "304"
+         },
+         {
+            "visits" : "242",
+            "area" : "Russian Federation"
+         },
+         {
+            "area" : "Lithuania",
+            "visits" : "178"
+         },
+         {
+            "area" : "Estonia",
+            "visits" : "162"
+         },
+         {
+            "area" : "Ukraine",
+            "visits" : "124"
+         },
+         {
+            "area" : "Bosnia and Herzegovina",
+            "visits" : "64"
+         },
+         {
+            "area" : "Luxembourg",
+            "visits" : "62"
+         },
+         {
+            "area" : "Iceland",
+            "visits" : "53"
+         },
+         {
+            "area" : "Serbia",
+            "visits" : "49"
+         },
+         {
+            "area" : "Latvia",
+            "visits" : "29"
+         },
+         {
+            "area" : "Malta",
+            "visits" : "20"
+         },
+         {
+            "visits" : "14",
+            "area" : "Montenegro"
+         },
+         {
+            "area" : "Albania",
+            "visits" : "6"
+         },
+         {
+            "area" : "Andorra",
+            "visits" : "4"
+         },
+         {
+            "area" : "Belarus",
+            "visits" : "1"
          }
       ]
    },
@@ -217,126 +374,126 @@
       "data" : [
          {
             "area" : "United States",
-            "visits" : "123311"
+            "visits" : "126754"
          },
          {
-            "area" : "Canada",
-            "visits" : "14111"
+            "visits" : "14436",
+            "area" : "Canada"
          },
          {
-            "visits" : "13714",
-            "area" : "Germany"
+            "area" : "Germany",
+            "visits" : "13979"
          },
          {
-            "visits" : "11290",
-            "area" : "United Kingdom"
+            "area" : "United Kingdom",
+            "visits" : "11612"
          },
          {
-            "visits" : "7295",
-            "area" : "Australia"
+            "area" : "Australia",
+            "visits" : "7453"
          },
          {
             "area" : "Netherlands",
-            "visits" : "6643"
+            "visits" : "6804"
          },
          {
-            "visits" : "3710",
-            "area" : "France"
+            "area" : "France",
+            "visits" : "3784"
          },
          {
-            "area" : "Italy",
-            "visits" : "2054"
+            "visits" : "2107",
+            "area" : "Italy"
          },
          {
-            "visits" : "1549",
+            "visits" : "1565",
             "area" : "Spain"
          },
          {
-            "area" : "Portugal",
-            "visits" : "1442"
+            "visits" : "1469",
+            "area" : "Portugal"
          },
          {
-            "visits" : "1355",
-            "area" : "Poland"
+            "area" : "Poland",
+            "visits" : "1401"
          },
          {
-            "visits" : "1290",
+            "visits" : "1329",
+            "area" : "Finland"
+         },
+         {
+            "visits" : "1316",
             "area" : "Sweden"
          },
          {
-            "area" : "Finland",
-            "visits" : "1289"
-         },
-         {
-            "visits" : "1184",
-            "area" : "Belgium"
+            "area" : "Belgium",
+            "visits" : "1187"
          },
          {
             "area" : "Denmark",
-            "visits" : "1104"
+            "visits" : "1119"
          },
          {
             "area" : "Austria",
-            "visits" : "930"
+            "visits" : "951"
          },
          {
             "area" : "Norway",
-            "visits" : "911"
+            "visits" : "945"
          },
          {
-            "visits" : "835",
-            "area" : "New Zealand"
+            "area" : "New Zealand",
+            "visits" : "885"
          },
          {
             "area" : "Slovakia",
-            "visits" : "740"
+            "visits" : "756"
          },
          {
-            "area" : "Switzerland",
-            "visits" : "691"
+            "visits" : "696",
+            "area" : "Switzerland"
          },
          {
-            "visits" : "606",
-            "area" : "Romania"
+            "area" : "Romania",
+            "visits" : "616"
          },
          {
-            "visits" : "564",
-            "area" : "Ireland"
+            "area" : "Ireland",
+            "visits" : "571"
          },
          {
-            "visits" : "560",
-            "area" : "Czech Republic"
+            "area" : "Czech Republic",
+            "visits" : "567"
          },
          {
-            "visits" : "555",
-            "area" : "Singapore"
+            "area" : "Singapore",
+            "visits" : "557"
          },
          {
-            "area" : "Bulgaria",
-            "visits" : "470"
+            "visits" : "519",
+            "area" : "Bulgaria"
          },
          {
             "visits" : "459",
             "area" : "Israel"
          },
          {
-            "area" : "Greece",
-            "visits" : "427"
+            "visits" : "430",
+            "area" : "Greece"
          },
          {
-            "visits" : "372",
+            "visits" : "388",
             "area" : "Croatia"
          },
          {
-            "visits" : "368",
+            "visits" : "376",
             "area" : "Hungary"
          },
          {
-            "visits" : "351",
+            "visits" : "374",
             "area" : "Brazil"
          },
          {
-            "visits" : "282",
+            "visits" : "304",
             "area" : "Slovenia"
          },
          {
@@ -345,55 +502,55 @@
          },
          {
             "area" : "Russian Federation",
-            "visits" : "238"
+            "visits" : "242"
          },
          {
             "area" : "Hong Kong",
-            "visits" : "205"
+            "visits" : "206"
          },
          {
-            "visits" : "199",
+            "visits" : "200",
             "area" : "Republic of Korea"
          },
          {
-            "visits" : "177",
-            "area" : "Lithuania"
+            "area" : "Lithuania",
+            "visits" : "178"
          },
          {
             "visits" : "173",
             "area" : "Turkey"
          },
          {
+            "area" : "Philippines",
+            "visits" : "168"
+         },
+         {
             "visits" : "168",
             "area" : "Vietnam"
          },
          {
-            "area" : "Philippines",
-            "visits" : "166"
+            "area" : "Estonia",
+            "visits" : "162"
          },
          {
-            "visits" : "160",
-            "area" : "Estonia"
+            "visits" : "138",
+            "area" : "Japan"
          },
          {
             "visits" : "138",
             "area" : "Mexico"
          },
          {
-            "area" : "Japan",
-            "visits" : "132"
-         },
-         {
             "area" : "Puerto Rico",
             "visits" : "130"
          },
          {
-            "visits" : "119",
-            "area" : "Ukraine"
+            "area" : "Ukraine",
+            "visits" : "124"
          },
          {
-            "area" : "Georgia",
-            "visits" : "95"
+            "visits" : "108",
+            "area" : "Georgia"
          },
          {
             "visits" : "87",
@@ -401,50 +558,50 @@
          },
          {
             "area" : "Colombia",
-            "visits" : "81"
+            "visits" : "82"
          },
          {
-            "visits" : "73",
-            "area" : "India"
+            "area" : "India",
+            "visits" : "77"
          },
          {
-            "visits" : "62",
-            "area" : "Luxembourg"
+            "visits" : "64",
+            "area" : "Bosnia and Herzegovina"
          },
          {
-            "area" : "Bosnia and Herzegovina",
+            "visits" : "63",
+            "area" : "Chile"
+         },
+         {
+            "area" : "Luxembourg",
             "visits" : "62"
          },
          {
-            "area" : "Chile",
-            "visits" : "60"
+            "area" : "Malaysia",
+            "visits" : "61"
          },
          {
-            "area" : "Malaysia",
-            "visits" : "56"
+            "area" : "Guatemala",
+            "visits" : "60"
          },
          {
             "visits" : "53",
             "area" : "Iceland"
          },
          {
-            "visits" : "51",
-            "area" : "United Arab Emirates"
+            "area" : "United Arab Emirates",
+            "visits" : "52"
          },
          {
-            "visits" : "48",
+            "visits" : "49",
             "area" : "Serbia"
-         },
-         {
-            "visits" : "47",
-            "area" : "Guatemala"
          },
          {
             "area" : "Thailand",
             "visits" : "45"
          },
          {
-            "visits" : "42",
+            "visits" : "44",
             "area" : "Argentina"
          },
          {
@@ -464,43 +621,47 @@
             "area" : "Kazakhstan"
          },
          {
-            "visits" : "34",
-            "area" : "Ecuador"
+            "area" : "Ecuador",
+            "visits" : "34"
          },
          {
             "visits" : "32",
             "area" : "New Caledonia"
          },
          {
-            "area" : "Saudi Arabia",
-            "visits" : "30"
-         },
-         {
             "area" : "China",
-            "visits" : "30"
+            "visits" : "31"
          },
          {
-            "visits" : "29",
-            "area" : "Latvia"
+            "visits" : "30",
+            "area" : "Saudi Arabia"
+         },
+         {
+            "area" : "Latvia",
+            "visits" : "29"
          },
          {
             "visits" : "27",
             "area" : "Panama"
          },
          {
-            "area" : "Macedonia",
-            "visits" : "26"
+            "visits" : "26",
+            "area" : "Macedonia"
          },
          {
-            "area" : "Dominican Republic",
-            "visits" : "25"
+            "visits" : "25",
+            "area" : "Dominican Republic"
          },
          {
-            "area" : "Azerbaijan",
-            "visits" : "24"
+            "visits" : "24",
+            "area" : "Azerbaijan"
          },
          {
-            "area" : "Bermuda",
+            "visits" : "20",
+            "area" : "Bermuda"
+         },
+         {
+            "area" : "Malta",
             "visits" : "20"
          },
          {
@@ -508,16 +669,12 @@
             "visits" : "20"
          },
          {
-            "visits" : "19",
-            "area" : "Malta"
+            "area" : "Sri Lanka",
+            "visits" : "19"
          },
          {
-            "visits" : "19",
-            "area" : "Sri Lanka"
-         },
-         {
-            "area" : "Taiwan",
-            "visits" : "18"
+            "visits" : "18",
+            "area" : "Taiwan"
          },
          {
             "visits" : "17",
@@ -528,39 +685,31 @@
             "area" : "Guam"
          },
          {
-            "area" : "Montenegro",
-            "visits" : "14"
+            "visits" : "14",
+            "area" : "Montenegro"
          },
          {
-            "area" : "Aruba",
-            "visits" : "13"
+            "visits" : "13",
+            "area" : "Aruba"
          },
          {
             "area" : "Bangladesh",
             "visits" : "12"
          },
          {
-            "visits" : "7",
-            "area" : "Pakistan"
-         },
-         {
-            "area" : "Trinidad and Tobago",
+            "area" : "Pakistan",
             "visits" : "7"
          },
          {
-            "visits" : "6",
-            "area" : "Egypt"
+            "visits" : "7",
+            "area" : "Trinidad and Tobago"
          },
          {
-            "visits" : "6",
-            "area" : "Honduras"
-         },
-         {
-            "area" : "Albania",
+            "area" : "Egypt",
             "visits" : "6"
          },
          {
-            "area" : "Bolivia",
+            "area" : "Honduras",
             "visits" : "6"
          },
          {
@@ -568,19 +717,27 @@
             "area" : "Bahrain"
          },
          {
-            "area" : "Suriname",
-            "visits" : "5"
+            "area" : "Bolivia",
+            "visits" : "6"
          },
          {
-            "area" : "Cyprus",
-            "visits" : "5"
+            "area" : "Albania",
+            "visits" : "6"
+         },
+         {
+            "visits" : "5",
+            "area" : "Suriname"
+         },
+         {
+            "visits" : "5",
+            "area" : "Cyprus"
+         },
+         {
+            "visits" : "5",
+            "area" : "Mauritius"
          },
          {
             "area" : "Armenia",
-            "visits" : "5"
-         },
-         {
-            "area" : "Mauritius",
             "visits" : "5"
          },
          {
@@ -588,16 +745,16 @@
             "visits" : "5"
          },
          {
-            "area" : "Andorra",
-            "visits" : "4"
+            "visits" : "4",
+            "area" : "Andorra"
          },
          {
-            "area" : "Venezuela",
-            "visits" : "4"
+            "visits" : "4",
+            "area" : "Iraq"
          },
          {
-            "area" : "Iraq",
-            "visits" : "4"
+            "visits" : "4",
+            "area" : "Venezuela"
          },
          {
             "area" : "Qatar",
@@ -608,12 +765,12 @@
             "visits" : "3"
          },
          {
-            "area" : "Saint Kitts and Nevis",
-            "visits" : "3"
+            "visits" : "3",
+            "area" : "Guernsey"
          },
          {
-            "visits" : "3",
-            "area" : "Seychelles"
+            "area" : "Kenya",
+            "visits" : "3"
          },
          {
             "area" : "Greenland",
@@ -621,18 +778,30 @@
          },
          {
             "visits" : "3",
-            "area" : "Kenya"
+            "area" : "Seychelles"
          },
          {
-            "area" : "El Salvador",
+            "area" : "Saint Kitts and Nevis",
+            "visits" : "3"
+         },
+         {
+            "visits" : "2",
+            "area" : "Uruguay"
+         },
+         {
+            "visits" : "2",
+            "area" : "El Salvador"
+         },
+         {
+            "area" : "Anguilla",
             "visits" : "2"
          },
          {
             "visits" : "2",
-            "area" : "Anguilla"
+            "area" : "Namibia"
          },
          {
-            "area" : "Namibia",
+            "area" : "Saint Lucia",
             "visits" : "2"
          },
          {
@@ -640,28 +809,20 @@
             "area" : "Tunisia"
          },
          {
-            "area" : "Saint Lucia",
-            "visits" : "2"
+            "visits" : "2",
+            "area" : "Isle of Man"
          },
          {
-            "area" : "Guernsey",
-            "visits" : "2"
-         },
-         {
-            "area" : "Iran, Islamic Republic of",
+            "area" : "Barbados",
             "visits" : "2"
          },
          {
             "visits" : "2",
-            "area" : "Barbados"
+            "area" : "Iran, Islamic Republic of"
          },
          {
-            "area" : "Jersey",
-            "visits" : "2"
-         },
-         {
-            "area" : "Isle of Man",
-            "visits" : "2"
+            "visits" : "2",
+            "area" : "Jersey"
          },
          {
             "visits" : "2",
@@ -681,46 +842,30 @@
          },
          {
             "visits" : "1",
-            "area" : "Moldova, Republic of"
+            "area" : "Gibraltar"
          },
          {
-            "area" : "Uzbekistan",
+            "area" : "Moldova, Republic of",
             "visits" : "1"
          },
          {
-            "area" : "Belarus",
-            "visits" : "1"
-         },
-         {
-            "area" : "Haiti",
-            "visits" : "1"
-         },
-         {
-            "area" : "Paraguay",
+            "area" : "Cambodia",
             "visits" : "1"
          },
          {
             "visits" : "1",
-            "area" : "Uganda"
-         },
-         {
-            "area" : "Zimbabwe",
-            "visits" : "1"
+            "area" : "Belarus"
          },
          {
             "visits" : "1",
-            "area" : "Jamaica"
+            "area" : "Uzbekistan"
          },
          {
             "visits" : "1",
             "area" : "Mongolia"
          },
          {
-            "area" : "Lebanon",
-            "visits" : "1"
-         },
-         {
-            "area" : "Nigeria",
+            "area" : "Uganda",
             "visits" : "1"
          },
          {
@@ -728,165 +873,32 @@
             "visits" : "1"
          },
          {
-            "area" : "Algeria",
+            "visits" : "1",
+            "area" : "Jamaica"
+         },
+         {
+            "area" : "Haiti",
             "visits" : "1"
-         }
-      ]
-   },
-   "popularEuropeanCountries" : {
-      "description" : "Popular European Countries",
-      "data" : [
-         {
-            "visits" : "13714",
-            "area" : "Germany"
-         },
-         {
-            "visits" : "11290",
-            "area" : "United Kingdom"
-         },
-         {
-            "visits" : "6643",
-            "area" : "Netherlands"
-         },
-         {
-            "area" : "France",
-            "visits" : "3710"
-         },
-         {
-            "area" : "Italy",
-            "visits" : "2054"
-         },
-         {
-            "area" : "Spain",
-            "visits" : "1549"
-         },
-         {
-            "visits" : "1442",
-            "area" : "Portugal"
-         },
-         {
-            "visits" : "1355",
-            "area" : "Poland"
-         },
-         {
-            "visits" : "1290",
-            "area" : "Sweden"
-         },
-         {
-            "area" : "Finland",
-            "visits" : "1289"
-         },
-         {
-            "visits" : "1184",
-            "area" : "Belgium"
-         },
-         {
-            "area" : "Denmark",
-            "visits" : "1104"
-         },
-         {
-            "visits" : "930",
-            "area" : "Austria"
-         },
-         {
-            "visits" : "911",
-            "area" : "Norway"
-         },
-         {
-            "area" : "Slovakia",
-            "visits" : "740"
-         },
-         {
-            "area" : "Switzerland",
-            "visits" : "691"
-         },
-         {
-            "area" : "Romania",
-            "visits" : "606"
-         },
-         {
-            "area" : "Ireland",
-            "visits" : "564"
-         },
-         {
-            "area" : "Czech Republic",
-            "visits" : "560"
-         },
-         {
-            "visits" : "470",
-            "area" : "Bulgaria"
-         },
-         {
-            "area" : "Greece",
-            "visits" : "427"
-         },
-         {
-            "visits" : "372",
-            "area" : "Croatia"
-         },
-         {
-            "visits" : "368",
-            "area" : "Hungary"
-         },
-         {
-            "visits" : "282",
-            "area" : "Slovenia"
-         },
-         {
-            "area" : "Russian Federation",
-            "visits" : "238"
-         },
-         {
-            "visits" : "177",
-            "area" : "Lithuania"
-         },
-         {
-            "visits" : "160",
-            "area" : "Estonia"
-         },
-         {
-            "area" : "Ukraine",
-            "visits" : "119"
-         },
-         {
-            "visits" : "62",
-            "area" : "Bosnia and Herzegovina"
-         },
-         {
-            "visits" : "62",
-            "area" : "Luxembourg"
-         },
-         {
-            "visits" : "53",
-            "area" : "Iceland"
-         },
-         {
-            "visits" : "48",
-            "area" : "Serbia"
-         },
-         {
-            "visits" : "29",
-            "area" : "Latvia"
-         },
-         {
-            "visits" : "19",
-            "area" : "Malta"
-         },
-         {
-            "area" : "Montenegro",
-            "visits" : "14"
-         },
-         {
-            "visits" : "6",
-            "area" : "Albania"
-         },
-         {
-            "visits" : "4",
-            "area" : "Andorra"
          },
          {
             "visits" : "1",
-            "area" : "Belarus"
+            "area" : "Lebanon"
+         },
+         {
+            "visits" : "1",
+            "area" : "Paraguay"
+         },
+         {
+            "area" : "Algeria",
+            "visits" : "1"
+         },
+         {
+            "area" : "Zimbabwe",
+            "visits" : "1"
+         },
+         {
+            "visits" : "1",
+            "area" : "Nigeria"
          }
       ]
    }
