@@ -1,11 +1,11 @@
 import React from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import statsCollectionSummary from '../data/statsCollectionsFull.json'
+import statsCollectionSummary from '../data/statsCollectionsSummary.json'
 import CollectionTopLocksList from './CollectionTopLocksList.jsx'
 
 const CollectionTopLocks = () => {
 
-    const data = statsCollectionSummary
+    const data = statsCollectionSummary.topLocks
 
     const {width} = useWindowSize()
     const smallWindow = width <= 560
