@@ -1,13 +1,11 @@
-name: Import
+name: PR Check
 
 on:
-  workflow_dispatch:
-env:
-  GOOGLE_SHEET_ID: ${{ vars.GOOGLE_SHEET_ID }}
-  
+  pull_request:
+
 jobs:
   deploy:
-    name: Import
+    name: PR Check
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -25,9 +23,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Import
-        run: yarn run import
-
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v4
-          
+      - name: Build and Deploy
+        run: yarn ci-pr
