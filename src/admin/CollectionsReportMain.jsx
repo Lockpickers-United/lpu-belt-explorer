@@ -11,7 +11,7 @@ import Button from '@mui/material/Button'
 import skeletonData from './collectionsSkeletonData.json'
 import dayjs from 'dayjs'
 
-const dataUrl = 'https://explore.lpubelts.com/data/statsCollectionsFull.json'
+const dataUrl = 'https://explore.lpubelts.com/data/statsCollectionsFullAdmin.json'
 
 function CollectionsReportMain() {
     const [data, setData] = useState({data: [], metadata: {}})
