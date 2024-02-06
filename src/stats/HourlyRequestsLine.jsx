@@ -38,7 +38,7 @@ function HourlyRequestsLine({data}) {
                 yScale={{
                     type: 'linear',
                     min: 0,
-                    max: 60000,
+                    max: 'auto',
                     stacked: false,
                     reverse: false
                 }}
