@@ -13,7 +13,7 @@ import HourlyRequestsLine from './HourlyRequestsLine'
 import TrafficStats from './TrafficStats'
 import BrandDistribution from './BrandDistribution'
 
-function StatsMainPage() {
+function StatsMainPage({data}) {
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -32,40 +32,40 @@ function StatsMainPage() {
         }}>
 
             <div style={firstHeaderStyle}>Site Stats</div>
-            <SiteStats/>
+            <SiteStats data={data}/>
 
             <div style={headerStyle}>Weekly Lock Views</div>
-            <LockViewsLine/>
+            <LockViewsLine data={data.siteSummary}/>
 
             <div style={headerStyle}>Popular Countries</div>
-            <PopularAreas/>
+            <PopularAreas data={data}/>
 
             <div style={headerStyle}>Photo Stats</div>
-            <PhotoStats/>
+            <PhotoStats data={data}/>
 
             <div style={headerStyle}>Belt Distribution</div>
-            <BeltDistribution/>
+            <BeltDistribution data={data}/>
 
             <div style={headerStyle}>Brand Lock Distribution</div>
-            <BrandDistribution/>
+            <BrandDistribution data={data}/>
 
             <div style={headerStyle}>Locking Mechanisms</div>
-            <LockingMechanisms/>
+            <LockingMechanisms data={data}/>
 
             <div style={headerStyle}>Reddit User Belt Rankings</div>
-            <RedditBeltGrowth/>
+            <RedditBeltGrowth data={data}/>
 
             <div style={headerStyle}>Collection Stats</div>
             <CollectionStatsBar/>
 
             <div style={headerStyle}>Collections Top Locks</div>
-            <CollectionTopLocks/>
+            <CollectionTopLocks data={data}/>
 
             <div style={headerStyle}>Hourly Traffic</div>
-            <HourlyRequestsLine/>
+            <HourlyRequestsLine data={data}/>
 
             <div style={headerStyle}>Visits by Platform & Browser</div>
-            <TrafficStats/>
+            <TrafficStats data={data}/>
 
         </div>
     )

@@ -1,4 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import LoadingDisplay from '../util/LoadingDisplay'
+import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
 import CollectionsSummaryTable from './CollectionsSummaryTable'
 import CollectionListAveragesBar from './CollectionListAveragesBar'
@@ -6,46 +8,19 @@ import CollectionsListUsersSavesLine from './CollectionsListUsersSavesLine'
 import CollectionsListCountsLine from './CollectionsListCountsLine'
 import CollectionSavesByBeltBar from './CollectionSavesByBeltBar'
 import CollectionsLast28Table from './CollectionsLast28Table'
-import {enqueueSnackbar} from 'notistack'
-import Button from '@mui/material/Button'
-import skeletonData from './collectionsSkeletonData.json'
 import dayjs from 'dayjs'
 
-const dataUrl = 'https://explore.lpubelts.com/data/statsCollectionsFullAdmin.json'
-
 function CollectionsReportMain() {
-    const [data, setData] = useState({data: [], metadata: {}})
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const load = async () => {
-            try {
-                const response = await fetch(dataUrl)
-                const value = await response.json()
-                setData(value)
-                setLoading(false)
-            } catch (ex) {
-                console.error('Error loading collections data.', ex)
-                enqueueSnackbar('Error loading collections data. Please reload the page.', {
-                    autoHideDuration: null,
-                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
-                })
-                setLoading(false)
-            }
-        }
-        load()
-    }, [])
-
-    const fullData = loading ? skeletonData : data
+    const {data, loading, error} = useData({url})
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(fullData.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${fullData.metadata.timezone})`
+        : '(updated: ' + dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${data.metadata.timezone})`
 
     // build line data
-    const dailyTableData = fullData.dailyTableData.data
     const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'pickedLocks', 'ownLocks']
     const lineMetrics = metricsList.reduce((acc, metricName) => {
-        const metricData = dailyTableData.map(value => ({
+        if (!data) return {}
+        const metricData = data.dailyTableData.data.map(value => ({
             x: value.date,
             y: value[metricName]
         }))
@@ -67,6 +42,8 @@ function CollectionsReportMain() {
     const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
     const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
 
+    if (loading) return <LoadingDisplay/>
+    else if (error) return null
     return (
         <div style={{
             minWidth: '320px', maxWidth: 900, height: '100%',
@@ -79,25 +56,26 @@ function CollectionsReportMain() {
                 Collections Summary<br/>
                 <span style={{fontSize: '0.7rem'}}>{updateTime}</span>
             </div>
-            <CollectionsSummaryTable fullData={fullData}/>
+            <CollectionsSummaryTable data={data}/>
 
             <div style={headerStyle}>List Users</div>
-            <CollectionsListUsersSavesLine lineData={lineMetrics}/>
+            <CollectionsListUsersSavesLine data={lineMetrics}/>
 
             <div style={headerStyle}>List Locks by Date</div>
-            <CollectionsListCountsLine lineData={lineMetrics}/>
+            <CollectionsListCountsLine data={lineMetrics}/>
 
             <div style={headerStyle}>Average Items Per List</div>
-            <CollectionListAveragesBar fullData={fullData}/>
+            <CollectionListAveragesBar data={data}/>
 
             <div style={headerStyle}>List Saves by Belt Ranking</div>
-            <CollectionSavesByBeltBar fullData={fullData}/>
+            <CollectionSavesByBeltBar data={data}/>
 
             <div style={headerStyle}>Last 28 Days</div>
-            <CollectionsLast28Table fullData={fullData}/>
-
+            <CollectionsLast28Table data={data}/>
         </div>
     )
 }
+
+const url = 'https://explore.lpubelts.com/data/statsCollectionsFullAdmin.json'
 
 export default CollectionsReportMain

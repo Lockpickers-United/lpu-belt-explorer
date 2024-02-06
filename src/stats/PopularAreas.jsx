@@ -1,23 +1,18 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import StatsToggleButton from './StatsToggleButton'
+import ChoiceButtonGroup from '../util/ChoiceButtonGroup'
 import useWindowSize from '../util/useWindowSize'
-import popularAreas from '../data/statsPopularAreas.json'
+// TODO: fetch from server too
 import mapWorld from './maps/mapWorld.gif'
 import mapEurope from './maps/mapEurope.gif'
 import mapUSA from './maps/mapUSA.gif'
 
-const PopularAreas = () => {
-    const popularCountries = popularAreas.popularCountries
-    const popularEuropeanCountries = popularAreas.popularEuropeanCountries
-    const popularStates = popularAreas.popularStates
-
+function PopularAreas({data}) {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
@@ -36,91 +31,63 @@ const PopularAreas = () => {
         ...divFlexStyle
     }
 
-    const [dataset, setDataset] = useState(popularCountries)
-    const [map, setMap] = useState(mapWorld)
-    const handleButtonClick = useCallback((newDataSet) => {
-        document.getElementById('areaList').scrollTop = 0
-        setDataset(newDataSet)
-
-        newDataSet === popularCountries && setMap(mapWorld)
-        || newDataSet === popularEuropeanCountries && setMap(mapEurope)
-        || newDataSet === popularStates && setMap(mapUSA)
-
-    }, [popularCountries, popularEuropeanCountries, popularStates])
+    const options = useMemo(() => {
+        const {popularCountries, popularEuropeanCountries, popularStates} = data.popularAreas
+        return [
+            {label: 'Worldwide', data: popularCountries, map: mapWorld},
+            {label: 'Europe', data: popularEuropeanCountries, map: mapEurope},
+            {label: 'US States', data: popularStates, map: mapUSA}
+        ]
+    }, [data])
+    const [selected, setSelected] = useState(options[0])
+    const handleChange = useCallback(newValue => setSelected(newValue), [])
 
     return (
         <div style={{textAlign: 'center'}}>
+            <ChoiceButtonGroup options={options} onChange={handleChange}/>
 
-                <ToggleButtonGroup variant='outlined'>
-
-                    <StatsToggleButton
-                        handleButtonClick={handleButtonClick}
-                        dataset={dataset}
-                        newDataset={popularCountries}
-                        value={dataset}
-                        label='Worldwide'
-                    >Worldwide</StatsToggleButton>
-
-                    <StatsToggleButton
-                        handleButtonClick={handleButtonClick}
-                        dataset={dataset}
-                        value={dataset}
-                        newDataset={popularEuropeanCountries}
-                        label='Europe'
-                    >Europe</StatsToggleButton>
-
-                    <StatsToggleButton
-                        handleButtonClick={handleButtonClick}
-                        dataset={dataset}
-                        value={dataset}
-                        newDataset={popularStates}
-                        label='US States'
-                    >US States</StatsToggleButton>
-
-                </ToggleButtonGroup>
-
-                <div style={combinedDivStyle}>
-
-                    <div style={{
-                        backgroundColor: '#000', border: '1px solid #666', padding: 12,
-                        align: 'center', margin: '10px 0px 0px 0px', width: 200,
-                        height: divHeight, marginLeft: 'auto', marginRight: 'auto'
+            <div style={combinedDivStyle}>
+                <div style={{
+                    backgroundColor: '#000', border: '1px solid #666', padding: 12,
+                    align: 'center', margin: '10px 0px 0px 0px', width: 200,
+                    height: divHeight, marginLeft: 'auto', marginRight: 'auto'
+                }}>
+                    <TableContainer id='areaList' sx={{
+                        height: leaderboardHeight, backgroundColor: '#111', margin: 'auto'
                     }}>
-                        <TableContainer id='areaList' sx={{
-                            height: leaderboardHeight, backgroundColor: '#111', margin: 'auto'
-                        }}>
-                            <Table stickyHeader>
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell style={{
-                                            padding: '4px 10px 4px 12px',
-                                            fontWeight: 700,
-                                            textAlign: 'right'
-                                        }}>#</TableCell>
-                                        <TableCell style={{padding: '4px 0px', fontWeight: 700}}>Area</TableCell>
+                        <Table stickyHeader>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell style={{
+                                        padding: '4px 10px 4px 12px',
+                                        fontWeight: 700,
+                                        textAlign: 'right'
+                                    }}>#</TableCell>
+                                    <TableCell style={{padding: '4px 0px', fontWeight: 700}}>Area</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {selected.data.data.map((area, index) =>
+                                    <TableRow key={index} index={index}>
+                                        <TableCell key={index + 1} style={bodyStyle}
+                                                   sx={{
+                                                       textAlign: 'right',
+                                                       padding: '0px',
+                                                       width: 34
+                                                   }}>{index + 1}</TableCell>
+                                        <TableCell key={area.area} style={bodyStyle}>{area.area}</TableCell>
                                     </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {dataset.data?.map((area, index) =>
-                                        <TableRow key={index} index={index}>
-                                            <TableCell key={index + 1} style={bodyStyle}
-                                                       sx={{
-                                                           textAlign: 'right',
-                                                           padding: '0px',
-                                                           width: 34
-                                                       }}>{index + 1}</TableCell>
-                                            <TableCell key={area.area} style={bodyStyle}>{area.area}</TableCell>
-                                        </TableRow>
-                                    )}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </div>
-                    <div style={{flexGrow: 1, width: mapWidth}}>
-                        <img id='mapImage' alt='map' src={map} width={mapWidth}/>
-                    </div>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </div>
+                <div style={{flexGrow: 1, width: mapWidth}}>
+                    <img id='mapImage' alt='map' src={selected.map} width={mapWidth}/>
                 </div>
             </div>
+        </div>
     )
 }
+
 export default PopularAreas

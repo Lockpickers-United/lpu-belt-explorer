@@ -2,9 +2,8 @@ import React from 'react'
 import AdminStatsTable from '../AdminStatsTable'
 import useWindowSize from '../../util/useWindowSize'
 
-const PageTrackingTable = ({fullData}) => {
-
-    const data = fullData.pageTracking
+const PageTrackingTable = ({data}) => {
+    const {pageTracking} = data
 
     const {width} = useWindowSize()
     const mobile360 = width <= 360
@@ -23,7 +22,7 @@ const PageTrackingTable = ({fullData}) => {
     const tableWidth = '100%'
 
     return (
-        <AdminStatsTable tableData={data} tableWidth={tableWidth} fontSize={fontSize}/>
+        <AdminStatsTable tableData={pageTracking} tableWidth={tableWidth} fontSize={fontSize}/>
     )
 }
 

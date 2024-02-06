@@ -3,19 +3,16 @@ import {ResponsiveBar} from '@nivo/bar'
 import {primaryTheme} from './adminChartDefaults'
 import useWindowSize from '../util/useWindowSize'
 
-const CollectionListAveragesBar = ({fullData}) => {
+const CollectionListAveragesBar = ({data}) => {
+    const {summary: {data: summaryData}} = data
 
-    const summaryData = fullData.summary.data
-
-    let data = []
-    summaryData.forEach((value) => {
-        let averagesData = new Map()
-        averagesData.id = value.list
-        averagesData.label = value.list
-        averagesData.count = value.averageItems
-        averagesData.value = value.averageItems
-        data.push(averagesData)
-    })
+    const averageData = summaryData
+        .map(value => ({
+            id: value.list,
+            label: value.list,
+            count: value.averageItems,
+            value: value.averageItems
+        }))
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -37,7 +34,7 @@ const CollectionListAveragesBar = ({fullData}) => {
     return (
         <div style={{height: chartHeight, width: '100%'}}>
             <ResponsiveBar
-                data={data}
+                data={averageData}
                 margin={chartMargin}
                 padding={0.15}
                 colors={(bar) => blueColors[bar.index % blueColors.length]}

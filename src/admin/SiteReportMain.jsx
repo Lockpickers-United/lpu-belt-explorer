@@ -1,13 +1,15 @@
 import React from 'react'
+import LoadingDisplay from '../util/LoadingDisplay'
+import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
-import statsSiteFull from '../data/statsSiteFull.json'
 import LockViewsLine from '../stats/LockViewsLine'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
 
 function SiteReportMain() {
-
+    const {data, loading, error} = useData({urls})
+    const {siteFull, siteSummary} = data || {}
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -16,10 +18,12 @@ function SiteReportMain() {
 
     const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
     const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
-    const summaryHeaderStyle = statsSiteFull.firstVistsLastSevenDays.countryCount
+    const summaryHeaderStyle = siteFull?.firstVistsLastSevenDays?.countryCount
         ? headerStyle
         : firstHeaderStyle
 
+    if (loading) return <LoadingDisplay/>
+    else if (error) return null
     return (
         <div style={{
             minWidth: '320px', maxWidth: 900, height: '100%',
@@ -27,26 +31,30 @@ function SiteReportMain() {
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>
-            {!!statsSiteFull.firstVistsLastSevenDays.countryCount &&
+            {!!siteFull.firstVistsLastSevenDays.countryCount &&
                 <React.Fragment>
                     <div style={firstHeaderStyle}>First Visits (Last Seven Days)</div>
-                    <FirstVisitsLastSevenTable fullData={statsSiteFull} tableWidth={'50%'}/>
+                    <FirstVisitsLastSevenTable data={siteFull} tableWidth={'50%'}/>
                 </React.Fragment>
             }
 
             <React.Fragment>
                 <div style={summaryHeaderStyle}>Site Summary<br/></div>
-                <SiteReportSummary/>
+                <SiteReportSummary data={siteFull}/>
             </React.Fragment>
 
             <div style={headerStyle}>Weekly Lock Views</div>
-            <LockViewsLine/>
+            <LockViewsLine data={siteSummary}/>
 
             <div style={headerStyle}>Page Tracking</div>
-            <PageTrackingTable fullData={statsSiteFull}/>
-
+            <PageTrackingTable data={siteFull}/>
         </div>
     )
+}
+
+const urls = {
+    siteFull: 'https://explore.lpubelts.com/data/statsSiteFull.json',
+    siteSummary: 'https://explore.lpubelts.com/data/statsSiteSummary.json'
 }
 
 export default SiteReportMain

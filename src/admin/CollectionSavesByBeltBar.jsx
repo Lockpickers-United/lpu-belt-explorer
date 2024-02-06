@@ -3,9 +3,8 @@ import {ResponsiveBar} from '@nivo/bar'
 import useWindowSize from '../util/useWindowSize'
 import {beltColors, primaryTheme} from './adminChartDefaults'
 
-const CollectionSavesByBeltBar = ({fullData}) => {
-
-    const data = fullData.listSavesByBelt
+const CollectionSavesByBeltBar = ({data}) => {
+    const {listSavesByBelt} = data
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -27,7 +26,7 @@ const CollectionSavesByBeltBar = ({fullData}) => {
     return (
         <div style={{height: chartHeight}}>
             <ResponsiveBar
-                data={data}
+                data={listSavesByBelt}
                 keys={[
                     'White', 'Yellow', 'Orange', 'Green', 'Blue',
                     'Purple', 'Brown', 'Red', 'Black', 'Unranked'

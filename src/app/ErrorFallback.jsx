@@ -13,8 +13,8 @@ function ErrorFallback() {
     const location = useLocation()
 
     const handleClick = useCallback(() => {
-        location.reload()
-    }, [location])
+        window.location.reload()
+    }, [])
 
     return (
         <React.Fragment>

@@ -1,11 +1,10 @@
 import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from './chartDefaults'
-import siteStatsData from '../data/statsSiteSummary.json'
 import useWindowSize from '../util/useWindowSize'
 
-function HourlyRequestsLine() {
-    const data = siteStatsData.hourlyRequests
+function HourlyRequestsLine({data}) {
+    const {hourlyRequests} = data.siteSummary
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -28,7 +27,7 @@ function HourlyRequestsLine() {
         <div style={{height: chartHeight}}>
             <ResponsiveLine
                 theme={combinedTheme}
-                data={data}
+                data={hourlyRequests}
                 colors={['#007de2', '#16325d']}
                 lineWidth={3}
                 margin={{top: 10, right: 20, bottom: 75, left: 55}}

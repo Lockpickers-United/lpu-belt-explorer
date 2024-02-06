@@ -1,7 +1,7 @@
 import Backdrop from '@mui/material/Backdrop'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import React, {useCallback, useRef, useState} from 'react'
+import React, {useCallback, useMemo, useRef, useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
 import Autocomplete from '@mui/material/Autocomplete'
@@ -15,9 +15,13 @@ function LeaderboardSearchBox({data}) {
     const navigate = useNavigate()
     const inputEl = useRef()
 
-    const options = data.data
-        .filter(item => item.displayName)
-        .map(item => item.displayName)
+    const options = useMemo(() => {
+        return data
+            ? data.data
+                .filter(item => item.displayName)
+                .map(item => item.displayName)
+            : []
+    }, [data])
 
     const handleChange = useCallback((event, value) => {
         if (!value) {

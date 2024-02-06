@@ -2,9 +2,8 @@ import React from 'react'
 import AdminStatsTable from './AdminStatsTable'
 import useWindowSize from '../util/useWindowSize'
 
-const CollectionsSummaryTable = ({fullData}) => {
-
-    const data = fullData.summary
+const CollectionsSummaryTable = ({data}) => {
+    const {summary} = data
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -23,7 +22,7 @@ const CollectionsSummaryTable = ({fullData}) => {
     const tableWidth = '100%'
 
     return (
-        <AdminStatsTable tableData={data} tableWidth={tableWidth} fontSize={fontSize}/>
+        <AdminStatsTable tableData={summary} tableWidth={tableWidth} fontSize={fontSize}/>
     )
 }
 

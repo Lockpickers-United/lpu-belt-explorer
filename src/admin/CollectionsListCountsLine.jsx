@@ -3,9 +3,13 @@ import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from './adminChartDefaults'
 import useWindowSize from '../util/useWindowSize'
 
-const CollectionsListCountsLine = ({lineData}) => {
-
-    const data = [lineData.ownLocks, lineData.pickedLocks, lineData.recordedLocks, lineData.wishlistLocks]
+const CollectionsListCountsLine = ({data}) => {
+    const lineData = [
+        data.ownLocks,
+        data.pickedLocks,
+        data.recordedLocks,
+        data.wishlistLocks
+    ]
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -31,7 +35,7 @@ const CollectionsListCountsLine = ({lineData}) => {
         <div style={{height: chartHeight, width: '100%'}}>
             <ResponsiveLine
                 theme={combinedTheme}
-                data={data}
+                data={lineData}
                 colors={areaColors}
                 enableArea={true}
                 areaOpacity={1}

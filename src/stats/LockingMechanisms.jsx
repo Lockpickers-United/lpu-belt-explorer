@@ -1,11 +1,10 @@
 import React from 'react'
 import {ResponsivePie} from '@nivo/pie'
 import {pieTheme} from './chartDefaults'
-import lockSummaryData from '../data/statsLockSummary.json'
 import useWindowSize from '../util/useWindowSize'
 
-function LockingMechanisms() {
-    const data = lockSummaryData.lockingMechanisms
+function LockingMechanisms({data}) {
+    const {lockingMechanisms} = data.lockSummary
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -29,7 +28,7 @@ function LockingMechanisms() {
              style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
         >
             <ResponsivePie
-                data={data}
+                data={lockingMechanisms}
                 theme={pieTheme}
                 colors={{scheme: 'dark2'}}
                 margin={chartMargin}

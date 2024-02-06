@@ -1,53 +1,30 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useCallback, useMemo} from 'react'
+import ChoiceButtonGroup from '../util/ChoiceButtonGroup'
 import BeltDistributionBar from './BeltDistributionBar'
-import statsCollectionsSummary from '../data/statsCollectionsSummary.json'
-import {ToggleButtonGroup} from '@mui/material'
-import lockSummaryData from '../data/statsLockSummary.json'
-import siteSummaryData from '../data/statsSiteSummary.json'
-import StatsToggleButton from './StatsToggleButton'
 
-const locksByBelt = lockSummaryData.locksByBelt
-const lockViewsByBelt = siteSummaryData.lockViewsByBelt.data
-const collectionSavesByBelt = statsCollectionsSummary.savesByBelt
+function BeltDistribution({data}) {
+    const options = useMemo(() => {
+        const {
+            lockSummary: {locksByBelt},
+            siteSummary: {lockViewsByBelt},
+            collectionsSummary: {savesByBelt}
+        } = data
+        return [
+            {label: 'Site Views', data: lockViewsByBelt.data},
+            {label: 'Locks', data: locksByBelt},
+            {label: 'Collection Saves', data: savesByBelt}
+        ]
+    }, [data])
 
-function BeltDistribution() {
-    const [dataset, setDataset] = useState(lockViewsByBelt)
-    const handleButtonClick = useCallback((newDataset) => {
-        setDataset(newDataset)
-    }, [])
+    const [selected, setSelected] = useState(options[0])
+    const handleChange = useCallback(newValue => setSelected(newValue), [])
 
     return (
-        <React.Fragment>
-            <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center'}}>
+            <ChoiceButtonGroup options={options} onChange={handleChange}/>
 
-                <ToggleButtonGroup
-                    variant='outlined'
-                >
-                    <StatsToggleButton
-                        handleButtonClick={handleButtonClick}
-                        dataset={dataset}
-                        newDataset={lockViewsByBelt}
-                        label='Site Views'
-                    />
-
-                    <StatsToggleButton
-                        handleButtonClick={handleButtonClick}
-                        dataset={dataset}
-                        newDataset={locksByBelt}
-                        label='Locks'
-                    />
-
-                    <StatsToggleButton
-                        handleButtonClick={handleButtonClick}
-                        dataset={dataset}
-                        newDataset={collectionSavesByBelt}
-                        label='Collection Saves'
-                    />
-
-                </ToggleButtonGroup>
-                <BeltDistributionBar beltDistribution={dataset}/>
-            </div>
-        </React.Fragment>
+            <BeltDistributionBar beltDistribution={selected.data}/>
+        </div>
     )
 }
 

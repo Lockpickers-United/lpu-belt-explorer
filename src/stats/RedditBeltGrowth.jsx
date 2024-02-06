@@ -2,21 +2,26 @@ import React from 'react'
 import {ResponsiveBar} from '@nivo/bar'
 import useWindowSize from '../util/useWindowSize'
 import {beltColors, legendTheme, primaryTheme} from './chartDefaults'
-import beltRankingAnnualData from '../data/statsRedditGrowth.json'
-import redditBeltGrowthLegend from './redditBeltGrowthLegend.json'
 
-function RedditBeltGrowth() {
-
+function RedditBeltGrowth({data}) {
+    const {redditGrowth} = data
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
     const chartHeight = !midWidth ? 350 : !smallWidth ? 300 : 220
     const borderRadius = !smallWidth ? 3 : 2
 
+    const legend = redditGrowth.map(item => {
+        const value = Object.keys(item).reduce((acc, key) => {
+            return key === 'date' ? acc : +item[key] + acc
+        }, 0)
+        return {total: value}
+    })
+
     return (
         <div style={{height: chartHeight}}>
             <ResponsiveBar
-                data={beltRankingAnnualData}
+                data={redditGrowth}
                 keys={[
                     'White', 'Yellow', 'Orange', 'Green', 'Blue',
                     'Purple', 'Brown', 'Red', 'Black'
@@ -51,7 +56,7 @@ function RedditBeltGrowth() {
             {/* second chart just to display totals */}
             <div style={{height: 30, marginTop: -20}}>
                 <ResponsiveBar
-                    data={redditBeltGrowthLegend}
+                    data={legend}
                     indexBy='total'
                     margin={{top: 10, right: 20, bottom: 40, left: 55}}
                     maxValue={0}

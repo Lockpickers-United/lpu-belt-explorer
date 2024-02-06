@@ -3,9 +3,8 @@ import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from './adminChartDefaults'
 import useWindowSize from '../util/useWindowSize'
 
-const CollectionsListUsersSavesLine = ({lineData}) => {
-
-    const data = [lineData.listUsers]
+const CollectionsListUsersSavesLine = ({data}) => {
+    const listUserData = [data.listUsers]
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -31,7 +30,7 @@ const CollectionsListUsersSavesLine = ({lineData}) => {
         <div style={{height: chartHeight}}>
             <ResponsiveLine
                 theme={combinedTheme}
-                data={data}
+                data={listUserData}
                 enableGridX={false}
                 enableGridY={false}
                 colors={['#007de2', '#16325d']}

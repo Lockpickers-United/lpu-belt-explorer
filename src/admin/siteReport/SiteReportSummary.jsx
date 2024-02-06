@@ -2,10 +2,8 @@ import React from 'react'
 import useWindowSize from '../../util/useWindowSize'
 import SiteReport28DaysLine from './SiteReport28DaysLine'
 import SiteReport7daysTable from './SiteReportSummaryTable'
-import statsSiteFull from '../../data/statsSiteFull.json'
 
-function SiteReportSummary() {
-
+function SiteReportSummary({data}) {
     const {width} = useWindowSize()
     const smallWindow = width <= 560
 
@@ -23,8 +21,8 @@ function SiteReportSummary() {
         <React.Fragment>
             <div style={{textAlign: 'center'}}>
                 <div style={combinedDivStyle}>
-                    <SiteReport28DaysLine lineData={statsSiteFull}/>
-                    <SiteReport7daysTable fullData={statsSiteFull}/>
+                    <SiteReport28DaysLine lineData={data}/>
+                    <SiteReport7daysTable fullData={data}/>
                 </div>
             </div>
         </React.Fragment>

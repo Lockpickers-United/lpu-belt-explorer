@@ -1,31 +1,28 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import AdminStatsTable from './AdminStatsTable'
 import dayjs from 'dayjs'
 
-const CollectionsLast28Table = ({fullData}) => {
-
-    const data = fullData.dailyTableData
-    const dates = data.data.map(value => value.date)
-    const latest = dayjs(dates.reduce((max, c) => c > max ? c : max))
-    const startDay = latest.subtract(28, 'day')
-
-   const last28data = []
-    data.data.map((dayData) => {
-        if (dayjs(dayData.date).isAfter(startDay)) {
-            last28data.push(dayData)
+function CollectionsLast28Table({data}) {
+    const last28 = useMemo(() => {
+        const {dailyTableData} = data
+        const dates = dailyTableData.data.map(value => value.date)
+        const latest = dayjs(dates.reduce((max, c) => c > max ? c : max))
+        const startDay = latest.subtract(28, 'day')
+        return {
+            title: '',
+            columns: dailyTableData.columns,
+            data: dailyTableData.data.filter((dayData) => {
+                return dayjs(dayData.date).isAfter(startDay)
+            })
         }
-    })
-    const last28 = new Map()
-    last28['title'] = ''
-    last28['columns'] = data['columns']
-    last28['data'] = last28data
+    }, [data])
 
     const tableWidth = '100%'
     const fontSize = '.83rem'
 
     return (
-        <div style={{width:'100%'}}>
-                <AdminStatsTable tableData={last28} tableWidth={tableWidth} fontSize={fontSize}/>
+        <div style={{width: '100%'}}>
+            <AdminStatsTable tableData={last28} tableWidth={tableWidth} fontSize={fontSize}/>
         </div>
     )
 }

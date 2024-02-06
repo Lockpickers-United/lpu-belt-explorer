@@ -1,9 +1,9 @@
-import Button from '@mui/material/Button'
-import {enqueueSnackbar} from 'notistack'
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
+import LoadingDisplay from '../util/LoadingDisplay'
+import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
 import Leaderboard from './Leaderboard'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton'
@@ -12,27 +12,7 @@ import LeaderboardSortButton from './LeaderboardSortButton'
 
 function LeaderboardRoute() {
     const {isMobile} = useWindowSize()
-    const [data, setData] = useState({data: [], metadata: {}})
-    const [loading, setLoading] = useState(true)
-    useEffect(() => {
-        const load = async () => {
-            try {
-                const response = await fetch(dataUrl)
-                const value = await response.json()
-                setData(value)
-                setLoading(false)
-            } catch (ex) {
-                console.error('Error loading leaderboard data.', ex)
-                enqueueSnackbar('Error loading leaderboard data. Please reload the page.', {
-                    autoHideDuration: null,
-                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
-                })
-                setLoading(false)
-            }
-
-        }
-        load()
-    }, [])
+    const {data, loading, error} = useData({url, noCache: true})
 
     const nav = (
         <React.Fragment>
@@ -43,11 +23,14 @@ function LeaderboardRoute() {
         </React.Fragment>
     )
 
+    const title = loading ? 'Loading...' : 'Leaderboard'
+
     return (
         <React.Fragment>
-            <Nav title='Leaderboard' extras={nav}/>
+            <Nav title={title} extras={nav}/>
 
-            <Leaderboard data={data} loading={loading}/>
+            {!loading && !error && data && <Leaderboard data={data} loading={loading}/>}
+            {loading && <LoadingDisplay/>}
 
             <Footer/>
 
@@ -56,6 +39,6 @@ function LeaderboardRoute() {
     )
 }
 
-const dataUrl = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
+const url = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
 
 export default LeaderboardRoute

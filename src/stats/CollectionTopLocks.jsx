@@ -1,11 +1,14 @@
 import React from 'react'
 import useWindowSize from '../util/useWindowSize'
-import statsCollectionSummary from '../data/statsCollectionsSummary.json'
 import CollectionTopLocksList from './CollectionTopLocksList'
 
-const CollectionTopLocks = () => {
-
-    const data = statsCollectionSummary.topLocks
+function CollectionTopLocks({data}) {
+    const {
+        topLocksOwn,
+        topLocksPicked,
+        topLocksRecorded,
+        topLocksWishlist
+    } = data.collectionsSummary
 
     const {width} = useWindowSize()
     const smallWindow = width <= 560
@@ -23,12 +26,12 @@ const CollectionTopLocks = () => {
     return (
         <div style={{textAlign: 'center'}}>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={data.topLocksOwn} title='Owned'/>
-                <CollectionTopLocksList dataset={data.topLocksPicked} title='Picked'/>
+                <CollectionTopLocksList dataset={topLocksOwn} title='Owned'/>
+                <CollectionTopLocksList dataset={topLocksPicked} title='Picked'/>
             </div>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={data.topLocksRecorded} title='Recorded'/>
-                <CollectionTopLocksList dataset={data.topLocksWishlist} title='Wishlist'/>
+                <CollectionTopLocksList dataset={topLocksRecorded} title='Recorded'/>
+                <CollectionTopLocksList dataset={topLocksWishlist} title='Wishlist'/>
             </div>
         </div>
     )

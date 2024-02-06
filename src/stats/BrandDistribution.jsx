@@ -5,22 +5,19 @@ import Divider from '@mui/material/Divider'
 import useWindowSize from '../util/useWindowSize'
 import BrandBeltBar from './BrandBeltBar'
 import BrandMechanismPie from './BrandMechanismPie'
-import statsBrandDistribution from '../data/statsBrandDistribution.json'
 
-function BrandDistribution() {
+function BrandDistribution({data}) {
+    const {brandBelts, brandMechanisms} = data.brandDistribution
 
-    const brandData = statsBrandDistribution.brandBelts
-    const mechData = statsBrandDistribution.brandMechanisms
-
-    const brandNameBeltList = brandData.map((brand) => brand.brandName)
+    const brandNameBeltList = brandBelts.map((brand) => brand.brandName)
     const [brandIndex, setBrandIndex] = useState(2)
-    const [brandName, setBrandName] = useState(brandData[brandIndex].brandName)
+    const [brandName, setBrandName] = useState(brandBelts[brandIndex].brandName)
 
-    const brandNameMechList = mechData.map((brand) => brand.brandName)
+    const brandNameMechList = brandMechanisms.map((brand) => brand.brandName)
     const [brandMechIndex, setBrandMechIndex] = useState(2)
 
-    const beltData = brandData[brandIndex].data
-    const mechanismData = mechData[brandMechIndex].data
+    const beltData = brandBelts[brandIndex].data
+    const mechanismData = brandMechanisms[brandMechIndex].data
 
     const [open, setOpen] = useState(false)
     const handleClose = useCallback(() => setOpen(false), [])

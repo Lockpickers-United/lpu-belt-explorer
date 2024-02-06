@@ -2,9 +2,8 @@ import React from 'react'
 import AdminStatsTable from '../AdminStatsTable'
 import useWindowSize from '../../util/useWindowSize'
 
-const FirstVisitsLastSevenTable = ({fullData}) => {
-
-    const data = fullData.firstVistsLastSevenDays
+const FirstVisitsLastSevenTable = ({data}) => {
+    const {firstVistsLastSevenDays} = data
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -23,7 +22,7 @@ const FirstVisitsLastSevenTable = ({fullData}) => {
     const tableWidth = 400
 
     return (
-        <AdminStatsTable tableData={data} tableWidth={tableWidth} fontSize={fontSize}/>
+        <AdminStatsTable tableData={firstVistsLastSevenDays} tableWidth={tableWidth} fontSize={fontSize}/>
     )
 }
 

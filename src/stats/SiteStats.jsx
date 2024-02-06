@@ -2,11 +2,8 @@ import React from 'react'
 import SsidChartIcon from '@mui/icons-material/SsidChart'
 import SiteStatsTable from './SiteStatsTable'
 import useWindowSize from '../util/useWindowSize'
-import lockSummaryData from '../data/statsLockSummary.json'
-import siteStatsData from '../data/statsSiteSummary.json'
 
-const SiteStats = () => {
-
+function SiteStats({data}) {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
@@ -17,8 +14,10 @@ const SiteStats = () => {
     } : {padding: '0xp 20px'}
     const divSpacing = !midWidth ? '10px' : !smallWidth ? '26px' : '26px'
 
-    const lockCounts = lockSummaryData.lockCounts
-    const siteData = siteStatsData
+    const {
+        lockSummary: {lockCounts},
+        siteSummary: {dailyAverages, totals}
+    } = data
 
     return (
         <div style={divStyle}>
@@ -33,14 +32,14 @@ const SiteStats = () => {
                 }}>
                     <SsidChartIcon style={{fontSize: 'x-large'}}/>
                 </div>
-                <SiteStatsTable tableData={siteData.dailyAverages}/>
+                <SiteStatsTable tableData={dailyAverages}/>
             </div>
 
             <div style={{
                 backgroundColor: '#000', border: '1px solid #666', padding: '18px 12px 12px 12px',
                 margin: `10px 0px 0px ${divSpacing}`, minWidth: '200px', maxWidth: '306px', height: 140
             }}>
-                <SiteStatsTable tableData={siteData.totals}/>
+                <SiteStatsTable tableData={totals}/>
             </div>
 
             <div style={{

@@ -5,9 +5,7 @@ import useWindowSize from '../util/useWindowSize'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 
-
-const CollectionStatsBar = () => {
-
+function CollectionStatsBar() {
     const {lockCollection} = useContext(DBContext)
     const {isLoggedIn} = useContext(AuthContext)
 
@@ -152,6 +150,7 @@ const CollectionStatsBar = () => {
 
                 />
             </div>
+
             <Legend items={legendItems}/>
         </React.Fragment>
     )

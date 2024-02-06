@@ -25,14 +25,11 @@ function Leaderboard({data, loading}) {
     }, [location.search])
 
     const sortedData = useMemo(() => {
-        if (loading) return skeletonData
-        else if (sort) return data.data.toSorted((a, b) => b[sort] - a[sort])
+        if (sort) return data.data.toSorted((a, b) => b[sort] - a[sort])
         else return data.data
-    }, [sort, loading, data])
+    }, [sort, data])
 
-    const updateTime = loading
-        ? '####-##-## ##:##'
-        : dayjs(data.metadata.updatedDateTime).format('MM/DD/YY HH:mm')
+    const updateTime = dayjs(data.metadata.updatedDateTime).format('MM/DD/YY HH:mm')
 
     return (
         <React.Fragment>
@@ -80,15 +77,5 @@ const validSort = [
     'recorded',
     'wishlist'
 ]
-
-const skeletonData = [...Array(40)]
-    .map((_, id) => ({
-        id,
-        displayName: '........................',
-        own: '---',
-        picked: '---',
-        recorded: '---',
-        wishlist: '--'
-    }))
 
 export default Leaderboard

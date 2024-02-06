@@ -2,9 +2,8 @@ import React from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import useWindowSize from '../util/useWindowSize'
-import lockSummaryData from '../data/statsLockSummary.json'
 
-const PhotoStats = () => {
+function PhotoStats({data}) {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
@@ -18,9 +17,7 @@ const PhotoStats = () => {
     const bodyStyle = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 400}
     const bodyStyleBold = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 700}
 
-    const data = lockSummaryData.photoStats
-    const segments = data.photoSegments
-    const contributors = data.topPhotographers
+    const {photoSegments, topPhotographers} = data.lockSummary.photoStats
 
     return (
         <React.Fragment>
@@ -42,13 +39,13 @@ const PhotoStats = () => {
                                     <TableCell key={'images'} style={bodyStyleBold} sx={{maxWidth: 108}}>Unique
                                         Images</TableCell>
                                     <TableCell key={'imageCount'}
-                                               style={bodyStyleBold}>{data.uniqueImages}</TableCell>
+                                               style={bodyStyleBold}>{photoSegments.uniqueImages}</TableCell>
                                 </TableRow>
                                 <TableRow key={2} index={2}>
                                     <TableCell key={'contribs'} style={bodyStyleBold} sx={{maxWidth: 108}}>Individual
                                         Contributors</TableCell>
                                     <TableCell key={'contribCount'}
-                                               style={bodyStyleBold}>{data.contributors}</TableCell>
+                                               style={bodyStyleBold}>{photoSegments.contributors}</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
@@ -65,7 +62,7 @@ const PhotoStats = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {segments.map((segment, index) =>
+                                {photoSegments.map((segment, index) =>
                                     <TableRow key={index} index={index}>
                                         <TableCell key={index + 1} style={bodyStyle}>{segment.segment}</TableCell>
                                         <TableCell style={bodyStyle}
@@ -98,7 +95,7 @@ const PhotoStats = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {contributors.map((contributor, index) =>
+                                {topPhotographers.map((contributor, index) =>
                                     <TableRow key={index}>
                                         <TableCell style={bodyStyle} sx={{}}>
                                             &nbsp;&nbsp;{contributor.contributor}

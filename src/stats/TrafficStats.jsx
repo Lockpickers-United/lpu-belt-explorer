@@ -1,11 +1,9 @@
 import React from 'react'
 import TrafficPie from './TrafficPie'
 import useWindowSize from '../util/useWindowSize'
-import siteStatsData from '../data/statsSiteSummary.json'
 
-function TrafficStats() {
-
-    const data = siteStatsData.trafficTotals
+function TrafficStats({data}) {
+    const {trafficTotals: {platform, browser}} = data.siteSummary
 
     const platformColors = ['#007de2', '#0367ba', '#005ba0', '#004fa4',
         '#063b87', '#062f6b']
@@ -34,8 +32,8 @@ function TrafficStats() {
         <React.Fragment>
             <div style={{textAlign: 'center'}}>
                 <div style={combinedDivStyle}>
-                    <TrafficPie dataset={data.platform} pieColors={platformColors}/>
-                    <TrafficPie dataset={data.browser} pieColors={browserColors}/>
+                    <TrafficPie dataset={platform} pieColors={platformColors}/>
+                    <TrafficPie dataset={browser} pieColors={browserColors}/>
                 </div>
             </div>
         </React.Fragment>

@@ -7,7 +7,6 @@ import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import lpuLogoPath from '../resources/LPU.png'
-import LightTheme from '../util/LightTheme'
 
 function AdminRoute() {
     const {authLoaded} = useContext(AuthContext)
@@ -38,7 +37,6 @@ function AdminRoute() {
             <Footer/>
 
             <Tracker feature='admin'/>
-            <LightTheme></LightTheme>
         </React.Fragment>
     )
 }
