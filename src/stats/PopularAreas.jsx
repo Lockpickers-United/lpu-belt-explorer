@@ -7,12 +7,9 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import ChoiceButtonGroup from '../util/ChoiceButtonGroup'
 import useWindowSize from '../util/useWindowSize'
-// TODO: fetch from server too
-import mapWorld from './maps/mapWorld.gif'
-import mapEurope from './maps/mapEurope.gif'
-import mapUSA from './maps/mapUSA.gif'
 
 function PopularAreas({data}) {
+
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
@@ -89,5 +86,9 @@ function PopularAreas({data}) {
         </div>
     )
 }
+
+const mapWorld = 'https://explore.lpubelts.com/maps/mapWorld.gif'
+const mapEurope = 'https://explore.lpubelts.com/maps/mapEurope.gif'
+const mapUSA = 'https://explore.lpubelts.com/maps/mapUSA.gif'
 
 export default PopularAreas

@@ -76,6 +76,6 @@ function CollectionsReportMain() {
     )
 }
 
-const url = 'https://explore.lpubelts.com/data/statsCollectionsFullAdmin.json'
+const url = 'https://explore.lpubelts.com/data/statsCollectionsFull.json'
 
 export default CollectionsReportMain

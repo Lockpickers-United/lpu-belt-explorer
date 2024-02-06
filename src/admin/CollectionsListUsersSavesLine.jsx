@@ -41,7 +41,7 @@ const CollectionsListUsersSavesLine = ({data}) => {
                 yScale={{
                     type: 'linear',
                     min: 0,
-                    max: 500,
+                    max: 'auto',
                     stacked: false,
                     reverse: false
                 }}
