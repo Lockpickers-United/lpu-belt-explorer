@@ -2,7 +2,7 @@ import Button from '@mui/material/Button'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
 
-function useData({url, urls, loadFn, noCache}) {
+function useData({url, urls, loadFn}) {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
     const [error, setError] = useState(false)
@@ -11,15 +11,13 @@ function useData({url, urls, loadFn, noCache}) {
         try {
             let value
             if (url) {
-                const options = noCache ? {cache: 'no-store'} : {}
-                const response = await fetch(url, options)
+                const response = await fetch(url, {cache: 'no-store'})
                 value = await response.json()
             } else if (urls) {
                 value = {}
                 const promises = Object.keys(urls)
                     .map(async key => {
-                        const options = noCache ? {cache: 'no-store'} : {}
-                        const response = await fetch(urls[key], options)
+                        const response = await fetch(urls[key], {cache: 'no-store'})
                         value[key] = await response.json()
                     })
                 await Promise.all(promises)
@@ -39,7 +37,7 @@ function useData({url, urls, loadFn, noCache}) {
             setLoading(false)
             setError(true)
         }
-    }, [url, urls, loadFn, noCache])
+    }, [url, urls, loadFn])
 
     useEffect(() => {
         loadData()

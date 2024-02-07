@@ -12,7 +12,7 @@ import LeaderboardSortButton from './LeaderboardSortButton'
 
 function LeaderboardRoute() {
     const {isMobile} = useWindowSize()
-    const {data, loading, error} = useData({url, noCache: true})
+    const {data, loading, error} = useData({url})
 
     const nav = (
         <React.Fragment>
