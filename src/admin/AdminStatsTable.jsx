@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 
-const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize}) => {
+const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) => {
     const bodyStyle = {}
+
+    const whiteSpace = wrap ? 'inherit' : 'nowrap'
 
     // don't show 'date' column if 'dateString' column exists
     const [hasDateString, setHasDateString] = useState(false)
@@ -14,9 +16,9 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize}) => {
         : tableData.columns
 
     return (
-        <div style={{}}>
-            {tableData.title}
-            <TableContainer id='statsTable'
+        <div>
+            <div style={{fontSize:'1.3rem', margin:'10px'}}>{tableData.title}</div>
+                <TableContainer id='statsTable'
                             style={{
                                 padding: '0px 0px 0px 4px',
                                 width: tableWidth,
@@ -57,7 +59,7 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize}) => {
                                                sx={{
                                                    textAlign: column.align,
                                                    fontSize: fontSize,
-                                                   whiteSpace: 'nowrap',
+                                                   whiteSpace: whiteSpace,
                                                    padding: '8px',
                                                    border: 0,
                                                    color: '#eee'

@@ -25,7 +25,6 @@ function StatsRoute() {
 
 const urls = {
     brandDistribution: 'https://explore.lpubelts.com/data/statsBrandDistribution.json',
-    collectionsFull: 'https://explore.lpubelts.com/data/statsCollectionsFull.json',
     collectionsSummary: 'https://explore.lpubelts.com/data/statsCollectionsSummary.json',
     lockSummary: 'https://explore.lpubelts.com/data/statsLockSummary.json',
     popularAreas: 'https://explore.lpubelts.com/data/statsPopularAreas.json',

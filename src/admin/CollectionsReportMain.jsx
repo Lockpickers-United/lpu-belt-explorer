@@ -2,13 +2,14 @@ import React from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
+import dayjs from 'dayjs'
 import CollectionsSummaryTable from './CollectionsSummaryTable'
 import CollectionListAveragesBar from './CollectionListAveragesBar'
 import CollectionsListUsersSavesLine from './CollectionsListUsersSavesLine'
 import CollectionsListCountsLine from './CollectionsListCountsLine'
 import CollectionSavesByBeltBar from './CollectionSavesByBeltBar'
 import CollectionsLast28Table from './CollectionsLast28Table'
-import dayjs from 'dayjs'
+import TopLocks from './collectionsReport/TopLocks'
 
 function CollectionsReportMain() {
     const {data, loading, error} = useData({url})
@@ -54,7 +55,7 @@ function CollectionsReportMain() {
 
             <div style={firstHeaderStyle}>
                 Collections Summary<br/>
-                <span style={{fontSize: '0.7rem'}}>{updateTime}</span>
+                <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
             <CollectionsSummaryTable data={data}/>
 
@@ -72,6 +73,9 @@ function CollectionsReportMain() {
 
             <div style={headerStyle}>Last 28 Days</div>
             <CollectionsLast28Table data={data}/>
+
+            <div style={headerStyle}>Top Locks</div>
+            <TopLocks data={data}/>
         </div>
     )
 }
