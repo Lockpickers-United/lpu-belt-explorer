@@ -8,7 +8,7 @@ function CollectionTopLocks({data}) {
         topLocksPicked,
         topLocksRecorded,
         topLocksWishlist
-    } = data.collectionsSummary.topLocks
+    } = data.collectionsSummary.topLocksFull
 
     const {width} = useWindowSize()
     const smallWindow = width <= 560
@@ -26,12 +26,12 @@ function CollectionTopLocks({data}) {
     return (
         <div style={{textAlign: 'center'}}>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={topLocksOwn} title='Owned'/>
-                <CollectionTopLocksList dataset={topLocksPicked} title='Picked'/>
+                <CollectionTopLocksList dataset={topLocksOwn.data} title='Owned'/>
+                <CollectionTopLocksList dataset={topLocksPicked.data} title='Picked'/>
             </div>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={topLocksRecorded} title='Recorded'/>
-                <CollectionTopLocksList dataset={topLocksWishlist} title='Wishlist'/>
+                <CollectionTopLocksList dataset={topLocksRecorded.data} title='Recorded'/>
+                <CollectionTopLocksList dataset={topLocksWishlist.data} title='Wishlist'/>
             </div>
         </div>
     )

@@ -45,7 +45,7 @@ function SiteReportMain() {
             <React.Fragment>
                 <div style={summaryHeaderStyle}>
                     Site Summary<br/>
-                    <span style={{fontSize: '0.7rem'}}>{updateTime}</span>
+                    <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
                 </div>
                 <SiteReportSummary data={siteFull}/>
             </React.Fragment>
