@@ -6,6 +6,7 @@ import LockViewsLine from '../stats/LockViewsLine'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
+import dayjs from 'dayjs'
 
 function SiteReportMain() {
     const {data, loading, error} = useData({urls})
@@ -21,6 +22,9 @@ function SiteReportMain() {
     const summaryHeaderStyle = siteFull?.firstVistsLastSevenDays?.countryCount
         ? headerStyle
         : firstHeaderStyle
+
+    const updateTime = loading ? '--'
+        : '(updated: ' + dayjs(siteFull?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFull?.metadata.timezone})`
 
     if (loading) return <LoadingDisplay/>
     else if (error) return null
@@ -39,7 +43,10 @@ function SiteReportMain() {
             }
 
             <React.Fragment>
-                <div style={summaryHeaderStyle}>Site Summary<br/></div>
+                <div style={summaryHeaderStyle}>
+                    Site Summary<br/>
+                    <span style={{fontSize: '0.7rem'}}>{updateTime}</span>
+                </div>
                 <SiteReportSummary data={siteFull}/>
             </React.Fragment>
 

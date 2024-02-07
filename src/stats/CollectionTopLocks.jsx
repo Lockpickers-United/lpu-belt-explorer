@@ -8,7 +8,7 @@ function CollectionTopLocks({data}) {
         topLocksPicked,
         topLocksRecorded,
         topLocksWishlist
-    } = data.collectionsSummary
+    } = data.collectionsSummary.topLocks
 
     const {width} = useWindowSize()
     const smallWindow = width <= 560
