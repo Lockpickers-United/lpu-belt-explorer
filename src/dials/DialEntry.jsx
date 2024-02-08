@@ -10,8 +10,8 @@ import queryString from 'query-string'
 import React, {useCallback, useEffect, useRef, useState} from 'react'
 import Tracker from '../app/Tracker'
 import FieldValue from '../entries/FieldValue'
-import LockImageGallery from '../entries/LockImageGallery'
 import FilterChip from '../filters/FilterChip'
+import DialImageGallery from './DialImageGallery'
 
 function DialEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -58,23 +58,32 @@ function DialEntry({entry, expanded, onExpand}) {
                         textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
                         style={{marginBottom: '2px'}}
                     />
-                    <FieldValue value={entry.group}/>
                 </div>
                 <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'column'}}>
-                    <FieldValue
-                        name='Fence Type'
-                        value={entry.fence}
-                    />
-                    <FieldValue
-                        name='Wheels'
-                        value={entry.wheels}
-                    />
+                    <FieldValue name='UL Group' value={entry.group}/>
                 </div>
             </AccordionSummary>
             {
                 expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
+                        <Stack direction='row' alignItems='flex-start'>
+                            <FieldValue
+                                name='Fence Type'
+                                value={entry.fence}
+                                style={{flexGrow: 1}}
+                            />
+                            <FieldValue
+                                name='Wheels'
+                                value={entry.wheels}
+                                style={{flexGrow: 1}}
+                            />
+                            <FieldValue
+                                name='Digits'
+                                value={entry.digits}
+                                style={{flexGrow: 1}}
+                            />
+                        </Stack>
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
@@ -91,7 +100,7 @@ function DialEntry({entry, expanded, onExpand}) {
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
-                                <LockImageGallery entry={entry}/>
+                                <DialImageGallery entry={entry}/>
                             }/>
                         }
                         {

@@ -6,6 +6,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -51,6 +52,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -67,6 +69,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -83,6 +86,7 @@
     "group": "2",
     "fence": "Rotary Gear",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -96,6 +100,7 @@
     "group": "1,1R",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -112,6 +117,7 @@
     "group": "1,1R",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -128,6 +134,7 @@
     "group": "1",
     "fence": "Gravity Lever",
     "wheels": 4,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -144,6 +151,7 @@
     "group": "2",
     "fence": "Gravity Lever",
     "wheels": 4,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -160,6 +168,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -176,6 +185,7 @@
     "group": "2M",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -193,6 +203,7 @@
     "group": "1",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -210,6 +221,7 @@
     "group": "1",
     "fence": "Spring Lever",
     "wheels": 4,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -227,6 +239,7 @@
     "group": "2M",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -243,6 +256,7 @@
     "group": "1",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -259,6 +273,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 4,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -274,6 +289,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -289,6 +305,7 @@
     "group": "1",
     "fence": "Spring Lever",
     "wheels": 0,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -305,6 +322,7 @@
     "group": "1",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -321,6 +339,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -335,6 +354,7 @@
     "group": "2",
     "fence": "Gravity Lever",
     "wheels": 4,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -351,6 +371,7 @@
     "group": "2",
     "fence": "Gravity Lever",
     "wheels": 4,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -365,6 +386,7 @@
     "group": "",
     "fence": "Spring Lever",
     "wheels": 3,
+    "digits": "0-100",
     "features": [
       "Moveable Flies",
       "Key Change",

@@ -1,29 +1,28 @@
-import queryString from 'query-string'
-import React, {useCallback, useContext, useMemo} from 'react'
-import {useLocation} from 'react-router-dom'
-import FilterContext from '../locks/FilterContext'
+import React, {useCallback, useMemo} from 'react'
+import {useSearchParams} from 'react-router-dom'
 import ImageGallery from '../misc/ImageGallery'
 
 function LockImageGallery({entry}) {
-    const location = useLocation()
-    const {filters, addFilter, removeFilters} = useContext(FilterContext)
+    const [searchParams, setSearchParams] = useSearchParams()
+    const image = searchParams.get('image')
 
     const handleOpenImage = useCallback(index => {
-        addFilter('image', index + 1, true)
-    }, [addFilter])
+        searchParams.set('image', index + 1)
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams])
 
     const handleCloseImage = useCallback(() => {
-        removeFilters(['image'])
-    }, [removeFilters])
+        searchParams.delete('image')
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams])
 
     const handleBackButton = useCallback(() => {
-        const {image} = queryString.parse(location.search)
         return isValidImage(image, entry)
-    }, [entry, location])
+    }, [entry, image])
 
     const openIndex = useMemo(() => {
-        return filters.image ? +filters.image - 1 : -1
-    }, [filters])
+        return image ? +image - 1 : -1
+    }, [image])
     const initiallyOpen = isValidImage(openIndex, entry)
 
     return (
@@ -34,7 +33,7 @@ function LockImageGallery({entry}) {
             onOpenImage={handleOpenImage}
             onCloseImage={handleCloseImage}
             onBackButton={handleBackButton}
-            shareParams={{id: entry.id, name: filters.name}}
+            shareParams={{id: entry.id, name: searchParams.get('name')}} // TODO: add lock name
         />
     )
 }
