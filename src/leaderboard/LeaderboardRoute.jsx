@@ -9,6 +9,9 @@ import Leaderboard from './Leaderboard'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton'
 import LeaderboardSearchBox from './LeaderboardSearchBox'
 import LeaderboardSortButton from './LeaderboardSortButton'
+import {
+    leaderboardData
+} from '../data/dataUrls'
 
 function LeaderboardRoute() {
     const {isMobile} = useWindowSize()
@@ -39,6 +42,6 @@ function LeaderboardRoute() {
     )
 }
 
-const url = 'https://explore.lpubelts.com/leaderboard/leaderboardData.json'
+const url = leaderboardData
 
 export default LeaderboardRoute
