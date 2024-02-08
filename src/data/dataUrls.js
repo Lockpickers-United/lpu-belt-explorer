@@ -14,3 +14,4 @@ export const popularAreas = `${url}/statsPopularAreas.json`
 export const redditGrowth = `${url}/statsRedditGrowth.json`
 export const siteFull = `${url}/statsSiteFull.json`
 export const siteSummary = `${url}/statsSiteSummary.json`
+export const leaderboardData = `${url}/leaderboardData.json`
