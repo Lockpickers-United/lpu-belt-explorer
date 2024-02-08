@@ -1,7 +1,7 @@
 import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
-import {primaryTheme} from './adminChartDefaults'
-import useWindowSize from '../util/useWindowSize'
+import {primaryTheme} from '../adminChartDefaults.js'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 const CollectionsListCountsLine = ({data}) => {
     const lineData = [

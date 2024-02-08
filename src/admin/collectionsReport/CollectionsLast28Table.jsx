@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react'
-import AdminStatsTable from './AdminStatsTable'
+import AdminStatsTable from '../AdminStatsTable.jsx'
 import dayjs from 'dayjs'
 
 function CollectionsLast28Table({data}) {
