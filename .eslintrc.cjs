@@ -45,7 +45,8 @@ module.exports = {
                 json: 'always'
             }
         ],
-        'import/no-unresolved': 'off'
+        'import/no-unresolved': 'off',
+        'import/namespace': 'off'
     },
     ignorePatterns: [
         '*.md',

@@ -30,3 +30,4 @@ scripts/*.md
 public/version.json
 public/sitemap.txt
 public/sitemap.xml
+public/data/*

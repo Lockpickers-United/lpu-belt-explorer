@@ -10,9 +10,10 @@ import CollectionsListCountsLine from './CollectionsListCountsLine'
 import CollectionSavesByBeltBar from './CollectionSavesByBeltBar'
 import CollectionsLast28Table from './CollectionsLast28Table'
 import TopLocks from './collectionsReport/TopLocks'
+import {collectionsFull} from '../data/dataUrls'
 
 function CollectionsReportMain() {
-    const {data, loading, error} = useData({url})
+    const {data, loading, error} = useData({url: collectionsFull})
 
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${data.metadata.timezone})`
@@ -79,7 +80,5 @@ function CollectionsReportMain() {
         </div>
     )
 }
-
-const url = 'https://explore.lpubelts.com/data/statsCollectionsFull.json'
 
 export default CollectionsReportMain

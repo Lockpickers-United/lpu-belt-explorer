@@ -5,6 +5,14 @@ import Nav from '../nav/Nav'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import StatsMainPage from './StatsMainPage'
+import {
+    brandDistribution,
+    collectionsSummary,
+    lockSummary,
+    popularAreas,
+    redditGrowth,
+    siteSummary
+} from '../data/dataUrls'
 
 function StatsRoute() {
     const {data, loading, error} = useData({urls})
@@ -24,12 +32,12 @@ function StatsRoute() {
 }
 
 const urls = {
-    brandDistribution: 'https://explore.lpubelts.com/data/statsBrandDistribution.json',
-    collectionsSummary: 'https://explore.lpubelts.com/data/statsCollectionsSummary.json',
-    lockSummary: 'https://explore.lpubelts.com/data/statsLockSummary.json',
-    popularAreas: 'https://explore.lpubelts.com/data/statsPopularAreas.json',
-    redditGrowth: 'https://explore.lpubelts.com/data/statsRedditGrowth.json',
-    siteSummary: 'https://explore.lpubelts.com/data/statsSiteSummary.json'
+    brandDistribution,
+    collectionsSummary,
+    lockSummary,
+    popularAreas,
+    redditGrowth,
+    siteSummary
 }
 
 export default StatsRoute

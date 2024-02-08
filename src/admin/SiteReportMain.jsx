@@ -7,6 +7,7 @@ import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
 import dayjs from 'dayjs'
+import {siteFull, siteSummary} from '../data/dataUrls'
 
 function SiteReportMain() {
     const {data, loading, error} = useData({urls})
@@ -60,8 +61,8 @@ function SiteReportMain() {
 }
 
 const urls = {
-    siteFull: 'https://explore.lpubelts.com/data/statsSiteFull.json',
-    siteSummary: 'https://explore.lpubelts.com/data/statsSiteSummary.json'
+    siteFull,
+    siteSummary
 }
 
 export default SiteReportMain

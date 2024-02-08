@@ -20,6 +20,7 @@
         "generateSitemap": "node ./scripts/generateSitemap.js",
         "generateSitemap-xml": "node ./scripts/generateSitemap-xml.js",
         "versionFile": "node ./scripts/version.js",
+        "copyData": "node ./scripts/copyData.js",
         "copyFiles": "node ./scripts/copyFiles.js",
         "ci-pr": "yarn lint && yarn build",
         "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
