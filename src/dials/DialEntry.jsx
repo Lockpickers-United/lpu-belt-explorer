@@ -58,12 +58,12 @@ function DialEntry({entry, expanded, onExpand}) {
                         textStyle={entry.belt === 'Unranked' ? {color: '#aaa', marginLeft: '0px'} : {marginLeft: '0px'}}
                         style={{marginBottom: '2px'}}
                     />
-                    <FieldValue value={entry.ulGroup}/>
+                    <FieldValue value={entry.group}/>
                 </div>
                 <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         name='Fence Type'
-                        value={entry.fenceType}
+                        value={entry.fence}
                     />
                     <FieldValue
                         name='Wheels'

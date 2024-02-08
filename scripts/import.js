@@ -240,8 +240,8 @@ const dialsMainData = dialsData.map(datum => {
         id: datum['Unique ID'],
         make: datum.Make,
         model: datum.Model,
-        ulGroup: datum['UL Group'],
-        fenceType: datum['Fence Type'],
+        group: datum.Group,
+        fence: datum.Fence,
         wheels: +datum.Wheels,
         features: datum.Features ? datum.Features.split(',').filter(x => x) : []
     }

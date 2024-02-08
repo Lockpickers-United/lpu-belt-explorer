@@ -3,6 +3,8 @@
     "id": "ae84d433",
     "make": "Sargent & Greenleaf",
     "model": "6730",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -16,6 +18,8 @@
     "id": "b04ccb99",
     "make": "LaGard",
     "model": "3330",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -30,6 +34,8 @@
     "id": "58441a32",
     "make": "Diebold",
     "model": "177",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -44,6 +50,8 @@
     "id": "6eeba243",
     "make": "Yale",
     "model": "OC-5",
+    "group": "2",
+    "fence": "Rotary Gear",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -55,6 +63,8 @@
     "id": "211383d8",
     "make": "Sargent & Greenleaf",
     "model": "8400 series",
+    "group": "1,1R",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -69,6 +79,8 @@
     "id": "87af3a83",
     "make": "Sargent & Greenleaf",
     "model": "8500 series",
+    "group": "1,1R",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -83,6 +95,8 @@
     "id": "a7258495",
     "make": "Sargent & Greenleaf",
     "model": "6400 series",
+    "group": "1",
+    "fence": "Gravity Lever",
     "wheels": 4,
     "features": [
       "Moveable Flies",
@@ -97,6 +111,8 @@
     "id": "c2f54e5c",
     "make": "Sargent & Greenleaf",
     "model": "6500 series",
+    "group": "2",
+    "fence": "Gravity Lever",
     "wheels": 4,
     "features": [
       "Moveable Flies",
@@ -111,6 +127,8 @@
     "id": "9262a564",
     "make": "Sargent & Greenleaf",
     "model": "6642",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -125,6 +143,8 @@
     "id": "7c91d17c",
     "make": "Sargent & Greenleaf",
     "model": "6630",
+    "group": "2M",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -140,6 +160,8 @@
     "id": "c427020e",
     "make": "Mosler",
     "model": "MR302",
+    "group": "1",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -155,6 +177,8 @@
     "id": "56fed723",
     "make": "Mosler",
     "model": "MR402",
+    "group": "1",
+    "fence": "Spring Lever",
     "wheels": 4,
     "features": [
       "Moveable Flies",
@@ -170,6 +194,8 @@
     "id": "0b1fc984",
     "make": "LaGard",
     "model": "3390",
+    "group": "2M",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -184,6 +210,8 @@
     "id": "0e5acb82",
     "make": "LaGard",
     "model": "1985",
+    "group": "1",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -198,6 +226,8 @@
     "id": "f59d47b3",
     "make": "Kromer",
     "model": "3012",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 4,
     "features": [
       "Moveable Flies",
@@ -211,6 +241,8 @@
     "id": "610d201c",
     "make": "Kromer",
     "model": "3011",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -224,6 +256,8 @@
     "id": "c32aa445",
     "make": "Kromer",
     "model": "3055",
+    "group": "1",
+    "fence": "Spring Lever",
     "wheels": 0,
     "features": [
       "Moveable Flies",
@@ -238,6 +272,8 @@
     "id": "8f0e636e",
     "make": "Kromer",
     "model": "3090",
+    "group": "1",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -252,6 +288,8 @@
     "id": "93b9e6f5",
     "make": "Kromer",
     "model": "3031",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
@@ -264,6 +302,8 @@
     "id": "e8bfa9ff",
     "make": "Mosler",
     "model": "1830",
+    "group": "2",
+    "fence": "Gravity Lever",
     "wheels": 4,
     "features": [
       "Moveable Flies",
@@ -278,6 +318,8 @@
     "id": "e24e62b7",
     "make": "Chubb",
     "model": "7L51",
+    "group": "2",
+    "fence": "Gravity Lever",
     "wheels": 4,
     "features": [
       "Moveable Flies",
@@ -290,6 +332,8 @@
     "id": "087f41e9",
     "make": "Chubb",
     "model": "Manifoil mk4",
+    "group": "",
+    "fence": "Spring Lever",
     "wheels": 3,
     "features": [
       "Moveable Flies",
