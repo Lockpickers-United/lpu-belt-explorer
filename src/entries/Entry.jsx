@@ -92,16 +92,18 @@ function Entry({entry, expanded, onExpand}) {
                     {
                         entry.lockingMechanisms?.length > 0 &&
                         <FieldValue
-                            value={<Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                {entry.lockingMechanisms?.map((lockingMechanism, index) =>
-                                    <FilterChip
-                                        key={index}
-                                        value={lockingMechanism}
-                                        field='lockingMechanisms'
-                                    />
-                                )}
-                            </Stack>
-                            }/>
+                            value={
+                                <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                                    {entry.lockingMechanisms?.map((lockingMechanism, index) =>
+                                        <FilterChip
+                                            key={index}
+                                            value={lockingMechanism}
+                                            field='lockingMechanisms'
+                                        />
+                                    )}
+                                </Stack>
+                            }
+                        />
                     }
                 </div>
             </AccordionSummary>

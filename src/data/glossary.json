@@ -48,6 +48,10 @@
     }
   },
   {
+    "term": "balanced stacks",
+    "definition": "Pin stacks where key pin and driver pin length are matched so that all stacks in the lock are roughly of equal height. Intended to reduce spring wear and make a lock resistant to decoding attacks that rely on knowing driver length."
+  },
+  {
     "term": "ball bearing locking mechanism (padlocks)",
     "definition": "Unshimmable mechanism in padlocks where ball bearings are pushed into the shackle to prevent opening.",
     "media": {
@@ -131,6 +135,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454201946/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454201946_28d0babf9c_o.jpg"
     }
+  },
+  {
+    "term": "blind picking",
+    "definition": "Picking a lock without foreknowledge of its pinning or bitting, picking without gutting or looking at the key beforehand. "
   },
   {
     "term": "bogota",

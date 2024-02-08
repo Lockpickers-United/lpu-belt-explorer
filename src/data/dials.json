@@ -1,0 +1,304 @@
+[
+  {
+    "id": "ae84d433",
+    "make": "Sargent & Greenleaf",
+    "model": "6730",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ]
+  },
+  {
+    "id": "b04ccb99",
+    "make": "LaGard",
+    "model": "3330",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Wheel Shadowing"
+    ]
+  },
+  {
+    "id": "58441a32",
+    "make": "Diebold",
+    "model": "177",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Zero Change"
+    ]
+  },
+  {
+    "id": "6eeba243",
+    "make": "Yale",
+    "model": "OC-5",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Mesh Change",
+      "Anti-Punch Relocker"
+    ]
+  },
+  {
+    "id": "211383d8",
+    "make": "Sargent & Greenleaf",
+    "model": "8400 series",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Butterfly anti-manipulation cam"
+    ]
+  },
+  {
+    "id": "87af3a83",
+    "make": "Sargent & Greenleaf",
+    "model": "8500 series",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Anti-manipulation double-lever"
+    ]
+  },
+  {
+    "id": "a7258495",
+    "make": "Sargent & Greenleaf",
+    "model": "6400 series",
+    "wheels": 4,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Right/Left Handed open",
+      "Vault Format",
+      "Indirect drive"
+    ]
+  },
+  {
+    "id": "c2f54e5c",
+    "make": "Sargent & Greenleaf",
+    "model": "6500 series",
+    "wheels": 4,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Right/Left Handed open",
+      "Vault Format",
+      "Indirect drive"
+    ]
+  },
+  {
+    "id": "9262a564",
+    "make": "Sargent & Greenleaf",
+    "model": "6642",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates"
+    ]
+  },
+  {
+    "id": "7c91d17c",
+    "make": "Sargent & Greenleaf",
+    "model": "6630",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates",
+      "Eccentric Roller"
+    ]
+  },
+  {
+    "id": "c427020e",
+    "make": "Mosler",
+    "model": "MR302",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Mesh Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates",
+      "Sprung Double-Cam"
+    ]
+  },
+  {
+    "id": "56fed723",
+    "make": "Mosler",
+    "model": "MR402",
+    "wheels": 4,
+    "features": [
+      "Moveable Flies",
+      "Mesh Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates",
+      "Sprung Double-Cam"
+    ]
+  },
+  {
+    "id": "0b1fc984",
+    "make": "LaGard",
+    "model": "3390",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Fence Lever Control Device"
+    ]
+  },
+  {
+    "id": "0e5acb82",
+    "make": "LaGard",
+    "model": "1985",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Fence Lever Control Device"
+    ]
+  },
+  {
+    "id": "f59d47b3",
+    "make": "Kromer",
+    "model": "3012",
+    "wheels": 4,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive"
+    ]
+  },
+  {
+    "id": "610d201c",
+    "make": "Kromer",
+    "model": "3011",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive"
+    ]
+  },
+  {
+    "id": "c32aa445",
+    "make": "Kromer",
+    "model": "3055",
+    "wheels": 0,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive",
+      "Magnetic double-cam"
+    ]
+  },
+  {
+    "id": "8f0e636e",
+    "make": "Kromer",
+    "model": "3090",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive",
+      "Fence Lever Control Device"
+    ]
+  },
+  {
+    "id": "93b9e6f5",
+    "make": "Kromer",
+    "model": "3031",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Kromer Standard Format"
+    ]
+  },
+  {
+    "id": "e8bfa9ff",
+    "make": "Mosler",
+    "model": "1830",
+    "wheels": 4,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Right/Left Handed open",
+      "Vault Format",
+      "Indirect drive",
+      "LOBC"
+    ]
+  },
+  {
+    "id": "e24e62b7",
+    "make": "Chubb",
+    "model": "7L51",
+    "wheels": 4,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format"
+    ]
+  },
+  {
+    "id": "087f41e9",
+    "make": "Chubb",
+    "model": "Manifoil mk4",
+    "wheels": 3,
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "False Gates",
+      "Eccentric Double-Cam",
+      "LOBC"
+    ]
+  }
+]

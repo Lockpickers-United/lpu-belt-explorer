@@ -1,7 +1,15 @@
 import fs from 'fs'
 import dayjs from 'dayjs'
 import {parse} from 'csv-parse/sync'
-import {mainSchema, mediaSchema, linkSchema, viewSchema, groupSchema, glossarySchema} from './schemas.js'
+import {
+    mainSchema,
+    mediaSchema,
+    linkSchema,
+    viewSchema,
+    groupSchema,
+    glossarySchema,
+    dialsSchema
+} from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
@@ -16,7 +24,8 @@ const importValidate = async (tab, schema) => {
     }
 
     // Download file
-    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${tab}`
+    const safeTab = encodeURI(tab)
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
     const csvData = await (await fetch(url)).text()
 
     // Parse CSV into JSON
@@ -39,6 +48,9 @@ const linkData = await importValidate('Links', linkSchema)
 const viewData = await importValidate('Lock Views', viewSchema)
 const groupData = await importValidate('Groups', groupSchema)
 const glossaryData = await importValidate('Glossary', glossarySchema)
+const dialsData = await importValidate('Dials', dialsSchema)
+const dialsMediaData = await importValidate('Dials Media', mediaSchema)
+const dialsLinkData = await importValidate('Dials Links', linkSchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -220,5 +232,65 @@ new Set(jsonData
         const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
         if (!item) console.log('Term not defined in Glossary: ', term)
     })
+
+// Dials Data
+console.log('Processing Dials data...')
+const dialsMainData = dialsData.map(datum => {
+    return {
+        id: datum['Unique ID'],
+        make: datum.Make,
+        model: datum.Model,
+        ulGroup: datum['UL Group'],
+        fenceType: datum['Fence Type'],
+        wheels: +datum.Wheels,
+        features: datum.Features ? datum.Features.split(',').filter(x => x) : []
+    }
+})
+
+// Dials Media data
+console.log('Processing Dials Media data...')
+dialsMediaData
+    .sort((a, b) => {
+        const one = a['Sequence ID']
+        const two = b['Sequence ID']
+        if (one === two) return 0
+        else if (one > two) return 1
+        else return -1
+    })
+    .forEach(item => {
+        const entry = dialsMainData.find(e => e.id === item['Unique ID'])
+        if (!entry) return console.log('Entry not found!', item)
+        if (!entry.media) entry.media = []
+        const media = {
+            title: item.Title,
+            subtitle: item.Subtitle,
+            thumbnailUrl: item['Thumbnail URL'],
+            fullUrl: item['Full URL']
+        }
+        if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
+        if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
+        entry.media.push(media)
+    })
+
+// Dials link data
+console.log('Processing Dials link data...')
+dialsLinkData
+    .sort((a, b) => {
+        const one = a['Sequence ID']
+        const two = b['Sequence ID']
+        if (one === two) return 0
+        else if (one > two) return 1
+        else return -1
+    })
+    .forEach(item => {
+        const entry = dialsMainData.find(e => e.id === item['Unique ID'])
+        if (!entry.links) entry.links = []
+        entry.links.push({
+            title: item.Title,
+            url: item.URL
+        })
+    })
+
+fs.writeFileSync('./src/data/dials.json', JSON.stringify(dialsMainData, null, 2))
 
 console.log('Complete.')

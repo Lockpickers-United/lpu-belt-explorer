@@ -61,7 +61,7 @@ export const viewSchema = Joi.array().items(
 export const groupSchema = Joi.array().items(
     Joi.object({
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
-        'Related IDs': Joi.string().min(1),
+        'Related IDs': Joi.string().min(1)
     }).unknown()
 )
 
@@ -75,5 +75,18 @@ export const glossarySchema = Joi.array().items(
         'Full URL': Joi.string().allow('').uri(),
         'Subtitle URL': Joi.string().allow('').uri(),
         'Full Image Direct URL': Joi.string().allow('').uri()
+    }).unknown()
+)
+
+export const dialsSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        Make: Joi.string().allow(''),
+        Model: Joi.string().allow(''),
+        'UL Group': Joi.string().allow(''),
+        'Fence Type': Joi.string().allow(''),
+        Wheels: Joi.string().allow(''),
+        Digits: Joi.string().allow(''),
+        Features: Joi.string().allow('')
     }).unknown()
 )

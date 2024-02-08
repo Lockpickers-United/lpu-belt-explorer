@@ -107,6 +107,14 @@ export default [
         }
     },
     {
+        beta: true,
+        path: '/dials',
+        lazy: async () => {
+            const {default: DialsRoute} = await import('../dials/DialsRoute')
+            return {element: <DialsRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },

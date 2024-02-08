@@ -7,10 +7,11 @@ import MenuBookIcon from '@mui/icons-material/MenuBook'
 import FeedIcon from '@mui/icons-material/Feed'
 import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 import BuildIcon from '@mui/icons-material/Build'
+import AvTimerIcon from '@mui/icons-material/AvTimer'
 
 export default [
     {
-        title: 'Lock List',
+        title: 'Locks',
         icon: <HomeIcon fontSize='small'/>,
         path: '/locks',
         params: {
@@ -36,8 +37,14 @@ export default [
         path: '/glossary'
     },
     {
+        beta: true,
+        title: 'Dials',
+        icon: <AvTimerIcon fontSize='small'/>,
+        path: '/dials'
+    },
+    {
         title: 'Stats & Insights',
-        icon: <InsertChartOutlinedIcon/>,
+        icon: <InsertChartOutlinedIcon fontSize='small'/>,
         path: '/stats'
     },
     {
