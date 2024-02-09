@@ -304,7 +304,7 @@
     "model": "3055",
     "group": "1",
     "fence": "Spring Lever",
-    "wheels": 0,
+    "wheels": null,
     "digits": "0-100",
     "features": [
       "Moveable Flies",
