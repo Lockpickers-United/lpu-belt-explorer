@@ -1726,7 +1726,14 @@
   },
   {
     "term": "sleeved core",
-    "definition": "Core featuring a partial or complete sleeve around it, fixed or with limited movement, usually metallic, that will interact with the tumblers of the lock."
+    "definition": "Core featuring a partial or complete sleeve around it, fixed or with limited movement, usually metallic, that will interact with the tumblers of the lock.",
+    "media": {
+      "title": "By: Yagias",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53518343856_ced7a44e52_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53518343856/in/album-72177720314691759/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53518343856_6798f8fc31_o.jpg"
+    }
   },
   {
     "term": "slider",
@@ -2041,7 +2048,7 @@
   },
   {
     "term": "wafer",
-    "definition": "(1) A tumbler shaped like a flat piece of metal, generally found in many mailbox locks. (2) A tumbler that slides in one direction, that is the size of the plug chamber it occupies. At rest it blocks the rotation of the plug by locking into grooves in the lock housing. As the correct key is inserted, it retracts into the plug completely. This definition does not consider the 'wafer-shaped' condition of the tumbler. Although somewhat controversial for that reason, it is the most accepted definition. (3) For some, a subset of sliders that block the rotation of the plug by locking into grooves in the housing. This is also somewhat controversial. (4) A lock that uses wafers as main locking mechanism."
+    "definition": "A tumbler shaped like a flat piece of metal, generally found in many mailbox locks. (2) A tumbler that slides in one direction, that is the size of the plug chamber it occupies. At rest it blocks the rotation of the plug by locking into grooves in the lock housing. As the correct key is inserted, it retracts into the plug completely. This definition does not consider the 'wafer-shaped' condition of the tumbler. Although somewhat controversial for that reason, it is the most accepted definition. (3) For some, a subset of sliders that block the rotation of the plug by locking into grooves in the housing. This is also somewhat controversial. (4) A lock that uses wafers as main locking mechanism."
   },
   {
     "term": "ward",
