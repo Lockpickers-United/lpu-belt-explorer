@@ -2,12 +2,13 @@ import React from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
+import dayjs from 'dayjs'
+import {siteFull, siteSummary} from '../data/dataUrls'
 import LockViewsLine from '../stats/LockViewsLine'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
-import dayjs from 'dayjs'
-import {siteFull, siteSummary} from '../data/dataUrls'
+import PopularCountries from './siteReport/PopularCountries'
 
 function SiteReportMain() {
     const {data, loading, error} = useData({urls})
@@ -43,19 +44,25 @@ function SiteReportMain() {
                 </React.Fragment>
             }
 
-            <React.Fragment>
-                <div style={summaryHeaderStyle}>
-                    Site Summary<br/>
-                    <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
-                </div>
-                <SiteReportSummary data={siteFull}/>
-            </React.Fragment>
+            <div style={summaryHeaderStyle}>
+                Site Summary<br/>
+                <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
+            </div>
+            <SiteReportSummary data={siteFull}/>
 
             <div style={headerStyle}>Weekly Lock Views</div>
             <LockViewsLine data={siteSummary}/>
 
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable data={siteFull}/>
+
+            {!!siteFull.popularCountries1 &&
+                <React.Fragment>
+                    <div style={headerStyle}>Popular Countries</div>
+                    <PopularCountries data={siteFull}/>
+                </React.Fragment>
+            }
+
         </div>
     )
 }
