@@ -47,7 +47,7 @@
   },
   {
     "id": "b04ccb99",
-    "make": "LaGard",
+    "make": "La Gard",
     "model": "3330",
     "group": "2",
     "fence": "Spring Lever",
@@ -245,6 +245,43 @@
       "Standard Format",
       "False Gates",
       "Eccentric Roller"
+    ],
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521499813_1d922f7167_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521499813/in/album-72177720314711293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521499813_c1c5bf2418_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521650644_3dc9af6d0d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521650644/in/album-72177720314711293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521650644_fbbc68219a_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521500208_c02f089abb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521500208/in/album-72177720314711293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521500208_80279d9ba5_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521650924_4da463acaa_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521650924/in/album-72177720314711293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521650924_35692c2afd_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521500463_a948ff4f0c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521500463/in/album-72177720314711293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521500463_afffa12ba1_o.jpg"
+      }
     ]
   },
   {
@@ -285,7 +322,7 @@
   },
   {
     "id": "0b1fc984",
-    "make": "LaGard",
+    "make": "La Gard",
     "model": "3390",
     "group": "2M",
     "fence": "Spring Lever",
@@ -302,7 +339,7 @@
   },
   {
     "id": "0e5acb82",
-    "make": "LaGard",
+    "make": "La Gard",
     "model": "1985",
     "group": "1",
     "fence": "Spring Lever",
