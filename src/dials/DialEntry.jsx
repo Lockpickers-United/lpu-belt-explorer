@@ -60,7 +60,7 @@ function DialEntry({entry, expanded, onExpand}) {
                     />
                 </div>
                 <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'column'}}>
-                    <FieldValue name='UL Group' value={entry.group}/>
+                    <FieldValue name='UL Group' value={`Group ${entry.group}`}/>
                 </div>
             </AccordionSummary>
             {
@@ -75,7 +75,7 @@ function DialEntry({entry, expanded, onExpand}) {
                             />
                             <FieldValue
                                 name='Wheels'
-                                value={entry.wheels}
+                                value={`${entry.wheels} wheels`}
                                 style={{flexGrow: 1}}
                             />
                             <FieldValue
