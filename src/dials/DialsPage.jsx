@@ -18,7 +18,7 @@ function DialsPage() {
             setSearchParams(searchParams)
         }
         setExpanded(id)
-    }, [])
+    }, [searchParams, setSearchParams])
 
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
