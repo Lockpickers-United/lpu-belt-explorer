@@ -12,6 +12,7 @@ import Tracker from '../app/Tracker'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
 import DialImageGallery from './DialImageGallery'
+import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined'
 
 function DialEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -59,12 +60,26 @@ function DialEntry({entry, expanded, onExpand}) {
                         style={{marginBottom: '2px'}}
                     />
                 </div>
-                <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '8px 0px 0px 0px', width: '25%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue name='UL Group' value={`Group ${entry.group}`}/>
                 </div>
+                { !!entry.media?.length &&
+                    <React.Fragment>
+                        <div style={{
+                            margin: '18px 0px 0px 0px',
+                            width:'20%',
+                            flexShrink: 0,
+                            flexDirection: 'column',
+                            textAlign:'center',
+                            color:'#aaa'
+                        }}>
+                            <ImageOutlinedIcon/>
+                        </div>
+                    </React.Fragment>
+                }
             </AccordionSummary>
             {
-                expanded &&
+            expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' alignItems='flex-start'>
