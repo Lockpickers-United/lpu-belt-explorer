@@ -1,47 +1,221 @@
 [
   {
-    "id": "ae84d433",
-    "make": "Sargent & Greenleaf",
-    "model": "6730",
+    "id": "e24e62b7",
+    "make": "Chubb",
+    "model": "7L51",
     "group": "2",
+    "fence": "Gravity Lever",
+    "wheels": 4,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format"
+    ]
+  },
+  {
+    "id": "087f41e9",
+    "make": "Chubb",
+    "model": "Manifoil mk4",
+    "group": "",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
-      "Standard Format"
+      "False Gates",
+      "Eccentric Double-Cam",
+      "LOBC"
+    ]
+  },
+  {
+    "id": "58441a32",
+    "make": "Diebold",
+    "model": "177",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Zero Change"
     ],
     "media": [
       {
-        "title": "By: mgsecure",
+        "title": "By: Lock Manipulator",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53517815280_b6782794a2_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517815280/in/album-72177720314662911/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53517815280_a1b1dc15a3_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53523024930_5c3bd3c078_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523024930/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53523024930_5d8211724e_o.jpg"
       },
       {
-        "title": "By: mgsecure",
+        "title": "By: Lock Manipulator",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53517555333_704f43701d_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517555333/in/album-72177720314662911/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53517555333_3da877c6a4_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521697947_dcc9110ce4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521697947/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521697947_b46a4723f9_o.jpg"
       },
       {
-        "title": "By: mgsecure",
+        "title": "By: Lock Manipulator",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53517816045_572407e85f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517816045/in/album-72177720314662911/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53517816045_dd981bbedf_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522914494_af54abee32_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522914494/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522914494_7cfc98d29e_o.jpg"
       },
       {
-        "title": "By: mgsecure",
+        "title": "By: Lock Manipulator",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53517816255_02c2dd204a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517816255/in/album-72177720314662911/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522597556_2536351153_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522597556/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "610d201c",
+    "make": "Kromer",
+    "model": "3011",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive"
+    ]
+  },
+  {
+    "id": "f59d47b3",
+    "make": "Kromer",
+    "model": "3012",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": 4,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive"
+    ]
+  },
+  {
+    "id": "93b9e6f5",
+    "make": "Kromer",
+    "model": "3031",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Kromer Standard Format"
+    ]
+  },
+  {
+    "id": "c32aa445",
+    "make": "Kromer",
+    "model": "3055",
+    "group": "1",
+    "fence": "Spring Lever",
+    "wheels": null,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive",
+      "Magnetic double-cam"
+    ]
+  },
+  {
+    "id": "8f0e636e",
+    "make": "Kromer",
+    "model": "3090",
+    "group": "1",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Vault Format",
+      "Indirect drive",
+      "Fence Lever Control Device"
+    ]
+  },
+  {
+    "id": "0e5acb82",
+    "make": "La Gard",
+    "model": "1985",
+    "group": "1",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Fence Lever Control Device"
+    ],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521696397_d6bb071492_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521696397/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521696397_827f02313e_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521696567_70908b67ee_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521696567/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "7d060e16",
+    "make": "La Gard",
+    "model": "2270",
+    "group": "",
+    "fence": "",
+    "wheels": 0,
+    "digits": "0-99",
+    "features": [],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522597766_7a64f36c5f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522597766/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522597766_1797146e1b_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53521698717_5e058ef000_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521698717/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53521698717_e1a3f36c63_o.jpg"
       }
     ]
   },
@@ -52,7 +226,7 @@
     "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -110,72 +284,123 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/53521252288_e73852ebfa_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521252288/in/album-72177720314701431/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521252288_4ec1579104_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522913499_46be739b6a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522913499/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522913499_220b927d25_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522764643_5238053d8b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522764643/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522764643_e569d850ab_o.jpg"
       }
     ]
   },
   {
-    "id": "58441a32",
-    "make": "Diebold",
-    "model": "177",
-    "group": "2",
+    "id": "0b1fc984",
+    "make": "La Gard",
+    "model": "3390",
+    "group": "2M",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
       "Standard Format",
-      "Zero Change"
+      "Fence Lever Control Device"
+    ],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522596111_f6e179910c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522596111/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522596111_9b58d85d9e_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522764253_d17e90e025_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522764253/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
+      }
     ]
   },
   {
-    "id": "6eeba243",
-    "make": "Yale",
-    "model": "OC-5",
+    "id": "e8bfa9ff",
+    "make": "Mosler",
+    "model": "1830",
     "group": "2",
-    "fence": "Rotary Gear",
+    "fence": "Gravity Lever",
+    "wheels": 4,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Right/Left Handed open",
+      "Vault Format",
+      "Indirect drive",
+      "LOBC"
+    ]
+  },
+  {
+    "id": "c427020e",
+    "make": "Mosler",
+    "model": "MR302",
+    "group": "1",
+    "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Mesh Change",
-      "Anti-Punch Relocker"
-    ]
-  },
-  {
-    "id": "211383d8",
-    "make": "Sargent & Greenleaf",
-    "model": "8400 series",
-    "group": "1,1R",
-    "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
       "Standard Format",
-      "Butterfly anti-manipulation cam"
+      "False Gates",
+      "Sprung Double-Cam"
+    ],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53523024595_4f1af1cb67_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523024595/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53523024595_2409d8fe09_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53523024800_37689b9738_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523024800/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53523024800_3d4b3c9c95_o.jpg"
+      }
     ]
   },
   {
-    "id": "87af3a83",
-    "make": "Sargent & Greenleaf",
-    "model": "8500 series",
-    "group": "1,1R",
+    "id": "56fed723",
+    "make": "Mosler",
+    "model": "MR402",
+    "group": "1",
     "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
+    "wheels": 4,
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
-      "Key Change",
+      "Mesh Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
       "Standard Format",
-      "Anti-manipulation double-lever"
+      "False Gates",
+      "Sprung Double-Cam"
     ]
   },
   {
@@ -185,7 +410,7 @@
     "group": "1",
     "fence": "Gravity Lever",
     "wheels": 4,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -202,7 +427,7 @@
     "group": "2",
     "fence": "Gravity Lever",
     "wheels": 4,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -213,30 +438,13 @@
     ]
   },
   {
-    "id": "9262a564",
-    "make": "Sargent & Greenleaf",
-    "model": "6642",
-    "group": "2",
-    "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates"
-    ]
-  },
-  {
     "id": "7c91d17c",
     "make": "Sargent & Greenleaf",
     "model": "6630",
     "group": "2M",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -285,204 +493,172 @@
     ]
   },
   {
-    "id": "c427020e",
-    "make": "Mosler",
-    "model": "MR302",
-    "group": "1",
+    "id": "9262a564",
+    "make": "Sargent & Greenleaf",
+    "model": "6642",
+    "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Sprung Double-Cam"
-    ]
-  },
-  {
-    "id": "56fed723",
-    "make": "Mosler",
-    "model": "MR402",
-    "group": "1",
-    "fence": "Spring Lever",
-    "wheels": 4,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Sprung Double-Cam"
-    ]
-  },
-  {
-    "id": "0b1fc984",
-    "make": "La Gard",
-    "model": "3390",
-    "group": "2M",
-    "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
       "Standard Format",
-      "Fence Lever Control Device"
+      "False Gates"
     ]
   },
   {
-    "id": "0e5acb82",
-    "make": "La Gard",
-    "model": "1985",
-    "group": "1",
+    "id": "ae84d433",
+    "make": "Sargent & Greenleaf",
+    "model": "6730",
+    "group": "2",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Standard Format"
+    ],
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53517815280_b6782794a2_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517815280/in/album-72177720314662911/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53517815280_a1b1dc15a3_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53517555333_704f43701d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517555333/in/album-72177720314662911/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53517555333_3da877c6a4_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53517816045_572407e85f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517816045/in/album-72177720314662911/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53517816045_dd981bbedf_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53517816255_02c2dd204a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517816255/in/album-72177720314662911/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
+      }
     ]
   },
   {
-    "id": "f59d47b3",
-    "make": "Kromer",
-    "model": "3012",
-    "group": "2",
-    "fence": "Spring Lever",
-    "wheels": 4,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Vault Format",
-      "Indirect drive"
-    ]
-  },
-  {
-    "id": "610d201c",
-    "make": "Kromer",
-    "model": "3011",
-    "group": "2",
-    "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Vault Format",
-      "Indirect drive"
-    ]
-  },
-  {
-    "id": "c32aa445",
-    "make": "Kromer",
-    "model": "3055",
-    "group": "1",
-    "fence": "Spring Lever",
-    "wheels": null,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Vault Format",
-      "Indirect drive",
-      "Magnetic double-cam"
-    ]
-  },
-  {
-    "id": "8f0e636e",
-    "make": "Kromer",
-    "model": "3090",
-    "group": "1",
-    "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Vault Format",
-      "Indirect drive",
-      "Fence Lever Control Device"
-    ]
-  },
-  {
-    "id": "93b9e6f5",
-    "make": "Kromer",
-    "model": "3031",
-    "group": "2",
-    "fence": "Spring Lever",
-    "wheels": 3,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Kromer Standard Format"
-    ]
-  },
-  {
-    "id": "e8bfa9ff",
-    "make": "Mosler",
-    "model": "1830",
-    "group": "2",
-    "fence": "Gravity Lever",
-    "wheels": 4,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Right/Left Handed open",
-      "Vault Format",
-      "Indirect drive",
-      "LOBC"
-    ]
-  },
-  {
-    "id": "e24e62b7",
-    "make": "Chubb",
-    "model": "7L51",
-    "group": "2",
-    "fence": "Gravity Lever",
-    "wheels": 4,
-    "digits": "0-100",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Vault Format"
-    ]
-  },
-  {
-    "id": "087f41e9",
-    "make": "Chubb",
-    "model": "Manifoil mk4",
+    "id": "3809d4a5",
+    "make": "Sargent & Greenleaf",
+    "model": "8077",
     "group": "",
     "fence": "Spring Lever",
     "wheels": 3,
-    "digits": "0-100",
+    "digits": "0-99",
+    "features": [],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522762218_dfc482681c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522762218/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522762218_66ce717570_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "211383d8",
+    "make": "Sargent & Greenleaf",
+    "model": "8400 series",
+    "group": "1,1R",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Multi-Orientation Cam",
-      "False Gates",
-      "Eccentric Double-Cam",
-      "LOBC"
+      "Standard Format",
+      "Butterfly anti-manipulation cam"
+    ],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522762618_6e3f8f23c1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522762618/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522762618_9a4b2299f2_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53523022660_debb138e9e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523022660/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "87af3a83",
+    "make": "Sargent & Greenleaf",
+    "model": "8500 series",
+    "group": "1,1R",
+    "fence": "Spring Lever",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Anti-manipulation double-lever"
+    ],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522912149_a6df2070cb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912149/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522912149_f861869dfc_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522912384_8a75304c2c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912384/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522912384_de34d8b5c5_o.jpg"
+      },
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522912574_cb5578dc0b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912574/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "6eeba243",
+    "make": "Yale",
+    "model": "OC-5",
+    "group": "2",
+    "fence": "Rotary Gear",
+    "wheels": 3,
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Mesh Change",
+      "Anti-Punch Relocker"
     ]
   }
 ]
