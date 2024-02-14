@@ -2047,6 +2047,10 @@
     "definition": "Describes a lock that is available in different physical formats, such as padlocks as well as door cylinders."
   },
   {
+    "term": "VdS",
+    "definition": "VdS certification is assigned by VdS Schadenverhütung GmbH, a german based institution specialising in fire protection, security and natural disaster prevention. Among other services, tests security products and certifies them by assigning them to classes which are used by insurance companies and the police. In locks, it's most commonly used for certification of security cabinets, safes, safe locks and strongboxes, but also comercial and residence locking systems and cylinders."
+  },
+  {
     "term": "wafer",
     "definition": "A tumbler shaped like a flat piece of metal, generally found in many mailbox locks. (2) A tumbler that slides in one direction, that is the size of the plug chamber it occupies. At rest it blocks the rotation of the plug by locking into grooves in the lock housing. As the correct key is inserted, it retracts into the plug completely. This definition does not consider the 'wafer-shaped' condition of the tumbler. Although somewhat controversial for that reason, it is the most accepted definition. (3) For some, a subset of sliders that block the rotation of the plug by locking into grooves in the housing. This is also somewhat controversial. (4) A lock that uses wafers as main locking mechanism."
   },
