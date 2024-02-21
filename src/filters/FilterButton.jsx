@@ -30,6 +30,8 @@ function FilterButton({onFiltersChanged, extraFilters = []}) {
     const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
         addFilters([
             {key: keyToAdd, value: valueToAdd},
+            {key: 'id', value: undefined},
+            {key: 'name', value: undefined},
             ...extraFilters
         ], true)
         onFiltersChanged && onFiltersChanged()
