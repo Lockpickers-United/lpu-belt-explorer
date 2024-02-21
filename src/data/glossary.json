@@ -1897,6 +1897,10 @@
     }
   },
   {
+    "term": "tolerances",
+    "definition": "Machining tolerance is defined as the total amount of variation a specific dimension can have from the given value. In Lockpicking, we refer to tolerances as the variation of the chamber diameters, pin diameters, and other significant dimensions that affect the way the elements bind or the lock works."
+  },
+  {
     "term": "TOOOL",
     "definition": "Acronym for \"The Open Organisation Of Lockpickers\", an international group of lockpicking enthusiasts dedicated to advancing the general public knowledge about locks and lockpicking through teaching, research, and competition. They organize in national groups, and in chapters. Largest and most important national TOOOL groups are in the US, UK and The Netherlands."
   },
