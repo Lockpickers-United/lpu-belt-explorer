@@ -5,7 +5,7 @@
     "model": "CDL-4",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "",
     "features": [],
     "media": [
@@ -45,7 +45,7 @@
     "model": "7L51",
     "group": "2",
     "fence": "Gravity Lever",
-    "wheels": 4,
+    "wheels": "4",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -60,7 +60,7 @@
     "model": "Bankers",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "",
     "features": [],
     "media": [
@@ -93,7 +93,7 @@
     "model": "Manifoil mk4",
     "group": "",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -111,7 +111,7 @@
     "model": "177",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -158,7 +158,7 @@
     "model": "3011",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -174,7 +174,7 @@
     "model": "3012",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 4,
+    "wheels": "4",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -213,7 +213,7 @@
     "model": "3031",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -228,7 +228,7 @@
     "model": "3055",
     "group": "1",
     "fence": "Spring Lever",
-    "wheels": null,
+    "wheels": "4(?)",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -245,7 +245,7 @@
     "model": "3090",
     "group": "1",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -262,7 +262,7 @@
     "model": "1985",
     "group": "1",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -295,7 +295,7 @@
     "model": "2270",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "0-99",
     "features": [],
     "media": [
@@ -321,7 +321,7 @@
     "model": "3330",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -403,7 +403,7 @@
     "model": "3332",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "",
     "features": [],
     "media": [
@@ -457,7 +457,7 @@
     "model": "3390",
     "group": "2M",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -490,7 +490,7 @@
     "model": "1830",
     "group": "2",
     "fence": "Gravity Lever",
-    "wheels": 4,
+    "wheels": "4",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -507,7 +507,7 @@
     "model": "MR302",
     "group": "1",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -569,7 +569,7 @@
     "model": "MR402",
     "group": "1",
     "fence": "Spring Lever",
-    "wheels": 4,
+    "wheels": "4",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -587,7 +587,7 @@
     "model": "6400 series",
     "group": "1",
     "fence": "Gravity Lever",
-    "wheels": 4,
+    "wheels": "4",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -604,7 +604,7 @@
     "model": "6500 series",
     "group": "2",
     "fence": "Gravity Lever",
-    "wheels": 4,
+    "wheels": "4",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -621,7 +621,7 @@
     "model": "6630",
     "group": "2M",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -676,7 +676,7 @@
     "model": "6642",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -730,7 +730,7 @@
     "model": "6651",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "",
     "features": [],
     "media": [
@@ -805,7 +805,7 @@
     "model": "6730",
     "group": "2",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -851,7 +851,7 @@
     "model": "6741",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "",
     "features": [],
     "media": [
@@ -877,7 +877,7 @@
     "model": "8077",
     "group": "",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [],
     "media": [
@@ -896,7 +896,7 @@
     "model": "8400 series",
     "group": "1,1R",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -929,7 +929,7 @@
     "model": "8500 series",
     "group": "1,1R",
     "fence": "Spring Lever",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
@@ -969,7 +969,7 @@
     "model": "R6700 series",
     "group": "",
     "fence": "",
-    "wheels": 0,
+    "wheels": "",
     "digits": "",
     "features": [],
     "media": [
@@ -1009,7 +1009,7 @@
     "model": "OC-5",
     "group": "2",
     "fence": "Rotary Gear",
-    "wheels": 3,
+    "wheels": "3",
     "digits": "0-99",
     "features": [
       "Moveable Flies",
