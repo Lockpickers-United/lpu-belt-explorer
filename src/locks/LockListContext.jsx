@@ -51,7 +51,7 @@ export function LockListProvider({children}) {
     const [compact, setCompact] = useState(false)
 
     const tab = useMemo(() => {
-        if (!filters.tab) {
+        if (!filters.tab && !userId) {
             const {id} = filters
             if (id && !filters.tab) {
                 const entry = allEntries.find(e => id === e.id)
@@ -65,7 +65,7 @@ export function LockListProvider({children}) {
         }
 
         return filters.tab
-    }, [addFilter, allEntries, filters])
+    }, [addFilter, allEntries, filters, userId])
 
     const value = useMemo(() => ({
         compact,

@@ -3,7 +3,7 @@ import {useSearchParams} from 'react-router-dom'
 
 const FilterContext = React.createContext({})
 
-export function FilterProvider({children, filterFields}) {
+export function FilterProvider({children, filterFields = []}) {
     const [searchParams, setSearchParams] = useSearchParams()
     const filters = useMemo(() => {
         const keys = Array.from(searchParams.keys())
@@ -43,6 +43,8 @@ export function FilterProvider({children, filterFields}) {
                         searchParams.set(key, value)
                     }
                 }
+            } else if (!value) {
+                searchParams.delete(key)
             }
         })
         setSearchParams(searchParams)

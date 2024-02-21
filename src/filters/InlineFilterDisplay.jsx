@@ -39,7 +39,7 @@ function InlineFilterDisplay({profile = {}}) {
     const handleOpen = useCallback(() => setOpen(true), [])
 
     const handleChange = useCallback(event => {
-        addFilter('collection', event.target.value)
+        addFilter('collection', event.target.value, true)
     }, [addFilter])
 
     if (!filterCount && !userId) return null
