@@ -61,6 +61,7 @@ export function LockListProvider({children}) {
                     return value
                 }
             }
+            return 'White'
         }
 
         return filters.tab
