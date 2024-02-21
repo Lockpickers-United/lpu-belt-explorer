@@ -55,6 +55,39 @@
     ]
   },
   {
+    "id": "f5703ac0",
+    "make": "Chubb",
+    "model": "Bankers",
+    "group": "",
+    "fence": "",
+    "wheels": 0,
+    "digits": "",
+    "features": [],
+    "media": [
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53542048629_8db8475c69_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53542048629/in/album-72177720314921522/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53542048629_27ae3ca63d_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53541723426_84d460d747_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541723426/in/album-72177720314921522/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53541723426_bc8e5280f0_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53541905018_ae685d7133_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541905018/in/album-72177720314921522/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
+      }
+    ]
+  },
+  {
     "id": "087f41e9",
     "make": "Chubb",
     "model": "Manifoil mk4",
@@ -471,11 +504,39 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523024595_2409d8fe09_o.jpg"
       },
       {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53541910663_24e63f8526_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541910663/in/album-72177720314925665/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53541910663_70e268fbfe_o.jpg"
+      },
+      {
         "title": "By: Lock Manipulator",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/53523024800_37689b9738_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523024800/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523024800_3d4b3c9c95_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53541911183_c70636c489_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541911183/in/album-72177720314925665/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53541911183_ef566e6c62_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53541911388_8f6d757e64_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541911388/in/album-72177720314925665/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53541911388_3635f2c252_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53540852337_518324d1db_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53540852337/in/album-72177720314925665/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
     ]
   },
@@ -931,16 +992,36 @@
       "Moveable Flies",
       "Mesh Change",
       "Anti-Punch Relocker"
+    ],
+    "media": [
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53542061849_6352309dc1_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53542061849/in/album-72177720314925765/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53542061849_7e5e733e81_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53540858587_143320f9d7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53540858587/in/album-72177720314925765/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53540858587_65cb8f97a2_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53540858832_38567dd9b7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53540858832/in/album-72177720314925765/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53540858832_0055984fb2_o.jpg"
+      },
+      {
+        "title": "By: Cheesehead",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53541737351_b9dea3317d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541737351/in/album-72177720314925765/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53541737351_c475dd7200_o.jpg"
+      }
     ]
-  },
-  {
-    "id": "",
-    "make": "",
-    "model": "",
-    "group": "",
-    "fence": "",
-    "wheels": 0,
-    "digits": "",
-    "features": []
   }
 ]
