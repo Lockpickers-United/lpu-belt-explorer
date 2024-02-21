@@ -242,7 +242,7 @@ const dialsMainData = dialsData.map(datum => {
         model: datum.Model,
         group: datum.Group,
         fence: datum.Fence,
-        wheels: +datum.Wheels,
+        wheels: datum.Wheels,
         digits: datum.Digits,
         features: datum.Features ? datum.Features.split(',').filter(x => x) : []
     }

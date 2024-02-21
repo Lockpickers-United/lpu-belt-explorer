@@ -2,7 +2,7 @@ import React, {useContext, useDeferredValue} from 'react'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import CompactEntries from '../locks/CompactEntries'
-import DataContext from '../locks/DataContext'
+import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 
 function ProfilePage({profile}) {

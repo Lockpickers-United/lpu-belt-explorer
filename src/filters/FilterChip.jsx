@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem'
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Chip from '@mui/material/Chip'
 import {useNavigate} from 'react-router-dom'
-import FilterContext from '../locks/FilterContext'
+import FilterContext from '../context/FilterContext'
 import glossary from '../data/glossary.json'
 
 function FilterChip({field, value, ...props}) {
@@ -20,6 +20,7 @@ function FilterChip({field, value, ...props}) {
 
     const handleFilter = useCallback(event => {
         event.preventDefault()
+        event.stopPropagation()
         setOpen(false)
         addFilter(field, value)
         window.scrollTo({top: 0, behavior: 'smooth'})

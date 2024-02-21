@@ -33,7 +33,7 @@ function LockImageGallery({entry}) {
             onOpenImage={handleOpenImage}
             onCloseImage={handleCloseImage}
             onBackButton={handleBackButton}
-            shareParams={{id: entry.id, name: searchParams.get('name')}} // TODO: add lock name
+            shareParams={{id: entry.id, name: searchParams.get('name')}}
         />
     )
 }

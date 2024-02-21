@@ -2,11 +2,10 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import FieldValue from '../entries/FieldValue'
 import Stack from '@mui/material/Stack'
 import Chip from '@mui/material/Chip'
-import FilterContext from '../locks/FilterContext'
-import {filterFieldsByFieldName} from '../data/filterFields'
+import FilterContext from '../context/FilterContext'
 
 function FilterDisplay() {
-    const {filters, filterCount, removeFilter} = useContext(FilterContext)
+    const {filters, filterCount, removeFilter, filterFieldsByFieldName} = useContext(FilterContext)
 
     const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
         removeFilter(keyToDelete, valueToDelete)
@@ -24,19 +23,23 @@ function FilterDisplay() {
             .flat()
     }, [filters])
 
-    function cleanChipLabel(filterLabel, filterName) {
-        if (filterLabel === 'Belt') {
-            if (filterName === 'Unranked') {
-                return filterName
+    const cleanChipLabel = useCallback((label, value) => {
+        if (label === 'Belt') {
+            if (value === 'Unranked') {
+                return label
             }
-            if (filterName.includes('Black')) {
-                return filterName.replace(/(Black)\s(\d+)/, '$1 Belt $2')
+            if (value.includes('Black')) {
+                return value.replace(/(Black)\s(\d+)/, '$1 Belt $2')
             } else {
-                return filterName + ' Belt'
+                return value + ' Belt'
             }
+        } else if (label === 'UL Group') {
+            return 'Group ' + value
+        } else if (label === 'Wheels') {
+            return `${value} Wheels`
         }
-        return filterName
-    }
+        return value
+    }, [])
 
     if (filterCount === 0) return null
     return (

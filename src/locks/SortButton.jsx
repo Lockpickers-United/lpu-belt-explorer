@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import FilterContext from './FilterContext'
+import FilterContext from '../context/FilterContext'
 
 function SortButton() {
     const [anchorEl, setAnchorEl] = useState(null)

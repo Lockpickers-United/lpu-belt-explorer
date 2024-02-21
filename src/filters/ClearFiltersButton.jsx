@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useContext} from 'react'
 import Button from '@mui/material/Button'
 import useWindowSize from '../util/useWindowSize'
-import FilterContext from '../locks/FilterContext'
+import FilterContext from '../context/FilterContext'
 
 function ClearFiltersButton({forceText}) {
     const {isMobile} = useWindowSize()

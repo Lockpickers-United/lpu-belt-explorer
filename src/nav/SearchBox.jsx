@@ -9,11 +9,11 @@ import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useSearchParams} from 'react-router-dom'
 import {useDebounce} from 'usehooks-ts'
-import FilterContext from './FilterContext'
+import FilterContext from '../context/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
 
-function LockListSearchBox() {
+function SearchBox({label, extraFilters = []}) {
     const [searchParams] = useSearchParams()
     const {filters, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
@@ -40,9 +40,9 @@ function LockListSearchBox() {
                 window.scrollTo({top: 0})
                 addFilters([
                     {key: 'search', value: debounceText},
-                    {key: 'tab', value: 'search'},
                     {key: 'id', value: undefined},
-                    {key: 'name', value: undefined}
+                    {key: 'name', value: undefined},
+                    ...extraFilters
                 ], true)
             } else {
                 addFilters([
@@ -113,7 +113,7 @@ function LockListSearchBox() {
                 </IconButton>
             </Tooltip>}
             {(open || !isMobile) && <TextField
-                placeholder='Search Locks'
+                placeholder={`Search ${label}`}
                 InputProps={{
                     inputProps: {
                         ref: inputEl
@@ -142,4 +142,4 @@ function LockListSearchBox() {
     )
 }
 
-export default LockListSearchBox
+export default SearchBox

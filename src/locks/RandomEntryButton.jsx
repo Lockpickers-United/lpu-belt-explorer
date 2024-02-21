@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
 import LockListContext from './LockListContext'
-import DataContext from './DataContext'
+import DataContext from './LockDataProvider'
 
 function RandomEntryButton() {
     const {setExpanded} = useContext(LockListContext)

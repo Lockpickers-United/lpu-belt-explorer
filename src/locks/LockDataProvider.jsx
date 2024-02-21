@@ -1,12 +1,11 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
+import DataContext from '../context/DataContext'
 import getAnyCollection from '../util/getAnyCollection'
-import FilterContext from './FilterContext'
+import FilterContext from '../context/FilterContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
-
-const DataContext = React.createContext({})
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)

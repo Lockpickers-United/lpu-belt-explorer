@@ -3,8 +3,8 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import DataContext from '../locks/DataContext'
-import FilterContext from '../locks/FilterContext'
+import DataContext from '../locks/LockDataProvider'
+import FilterContext from '../context/FilterContext'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 
@@ -37,10 +37,17 @@ function FilterByField({label, fieldName, onFilter, sort}) {
             return acc
         }, {})
 
-
         const options = [...new Set(allValues)]
-            .sort((a, b) => sort ? sort(a, b) : a.localeCompare(b))
-
+            .sort((a, b) => {
+                if (sort) return sort(a, b)
+                else {
+                    if (typeof a === 'string' && typeof b === 'string') {
+                        return a.localeCompare(b)
+                    } else if (Number.isInteger(a) && Number.isInteger(b)) {
+                        return a - b
+                    }
+                }
+            })
         return {counts, options}
     }, [fieldName, visibleEntries, sort])
 

@@ -3,7 +3,7 @@ import {enqueueSnackbar} from 'notistack'
 import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import DataContext from '../locks/DataContext'
+import DataContext from '../locks/LockDataProvider'
 
 function CopyLinkToEntryButton({entry}) {
     const {getNameFromId} = useContext(DataContext)

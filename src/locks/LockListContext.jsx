@@ -1,14 +1,14 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import DataContext from './DataContext'
-import FilterContext from './FilterContext'
+import DataContext from './LockDataProvider'
+import FilterContext from '../context/FilterContext'
 
 const LockListContext = React.createContext({})
 
 export function LockListProvider({children}) {
     const {userId} = useParams()
-    const {getEntryFromId, getNameFromId} = useContext(DataContext)
-    const {filters, addFilters, removeFilters} = useContext(FilterContext)
+    const {allEntries, getEntryFromId, getNameFromId} = useContext(DataContext)
+    const {filters, addFilter, addFilters, removeFilters} = useContext(FilterContext)
 
     const expanded = filters.id
 
@@ -50,17 +50,33 @@ export function LockListProvider({children}) {
 
     const [compact, setCompact] = useState(false)
 
+    const tab = useMemo(() => {
+        if (!filters.tab) {
+            const {id} = filters
+            if (id && !filters.tab) {
+                const entry = allEntries.find(e => id === e.id)
+                if (entry) {
+                    const value = entry.belt.replace(/\s\d/g, '')
+                    addFilter('tab', value)
+                    return value
+                }
+            }
+        }
+
+        return filters.tab
+    }, [addFilter, allEntries, filters])
+
     const value = useMemo(() => ({
         compact,
-        tab: filters.tab,
+        tab,
         setTab: handleSetTab,
         expanded,
         setExpanded: handleSetExpanded,
         clearExpanded: handleClearExpanded,
         displayAll: displayAll && filters.tab === 'search',
         setDisplayAll,
-        setCompact,
-    }), [compact, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab])
+        setCompact
+    }), [compact, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab, tab])
 
     return (
         <LockListContext.Provider value={value}>

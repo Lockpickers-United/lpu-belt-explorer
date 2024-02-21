@@ -1,10 +1,11 @@
 import React, {useContext} from 'react'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
+import {lockFilterFields} from '../data/filterFields'
 import useWindowSize from '../util/useWindowSize'
 import {LockListProvider} from './LockListContext'
-import {DataProvider} from './DataContext'
-import {FilterProvider} from './FilterContext'
+import {DataProvider} from './LockDataProvider'
+import {FilterProvider} from '../context/FilterContext'
 import Entries from './Entries'
 import ToggleCompactButton from './ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
@@ -16,7 +17,7 @@ import SlideshowButton from './SlideshowButton'
 import BeltToolbar from './BeltToolbar'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
-import LockListSearchBox from './LockListSearchBox'
+import SearchBox from '../nav/SearchBox'
 import allEntries from '../data/data.json'
 
 function LockListRoute() {
@@ -25,9 +26,9 @@ function LockListRoute() {
 
     const nav = (
         <React.Fragment>
-            <LockListSearchBox/>
+            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]}/>
             <SortButton/>
-            <FilterButton/>
+            <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
         </React.Fragment>
@@ -46,7 +47,7 @@ function LockListRoute() {
     )
 
     return (
-        <FilterProvider>
+        <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={allEntries} profile={lockCollection}>
                 <LockListProvider>
                     <Nav title='Locks' extras={nav}/>

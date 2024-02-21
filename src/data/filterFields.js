@@ -1,6 +1,6 @@
 import {beltSort} from './belts'
 
-const filterFields = [
+export const lockFilterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Belt', fieldName: 'belt', sort: beltSort},
@@ -9,10 +9,12 @@ const filterFields = [
     {label: 'Collection', fieldName: 'collection', userBased: true}
 ]
 
-export default filterFields
-
-export const filterFieldsByFieldName = filterFields
-    .reduce((acc, value) => ({
-        ...acc,
-        [value.fieldName]: value
-    }), {id: {label: 'ID'}})
+export const dialFilterFields = [
+    {label: 'Make', fieldName: 'make'},
+    {label: 'Fence Type', fieldName: 'fence'},
+    {label: 'UL Group', fieldName: 'group'},
+    {label: 'Wheels', fieldName: 'wheels'},
+    {label: 'Digits', fieldName: 'digits'},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Content', fieldName: 'content'}
+]

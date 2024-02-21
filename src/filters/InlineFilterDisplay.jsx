@@ -9,13 +9,13 @@ import {useParams} from 'react-router-dom'
 import {validCollectionTypes} from '../data/collectionTypes'
 import getAnyCollection from '../util/getAnyCollection'
 import FilterDisplay from './FilterDisplay'
-import FilterContext from '../locks/FilterContext'
+import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
 
-function InlineFilterDisplay({profile}) {
+function InlineFilterDisplay({profile = {}}) {
     const {userId} = useParams()
-    const {filters, filterCount, setFilters} = useContext(FilterContext)
+    const {filters, filterCount, addFilter} = useContext(FilterContext)
     const [open, setOpen] = React.useState(false)
 
     const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
@@ -38,16 +38,9 @@ function InlineFilterDisplay({profile}) {
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
 
-    const handleFilter = useCallback((filterKey, filterValue) => {
-        setFilters({
-            [filterKey]: filterValue,
-            tab: 'search'
-        })
-    }, [setFilters])
-
     const handleChange = useCallback(event => {
-        handleFilter('collection', event.target.value)
-    }, [handleFilter])
+        addFilter('collection', event.target.value)
+    }, [addFilter])
 
     if (!filterCount && !userId) return null
     const isValidCollection = typeof collection === 'string' &&

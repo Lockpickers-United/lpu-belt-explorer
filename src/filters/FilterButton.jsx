@@ -5,10 +5,8 @@ import Tooltip from '@mui/material/Tooltip'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
-import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
-import FilterContext from '../locks/FilterContext'
-import filterFields from '../data/filterFields'
+import FilterContext from '../context/FilterContext'
 import FilterByField from './FilterByField'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton'
@@ -18,10 +16,10 @@ import Typography from '@mui/material/Typography'
 import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
 
-function FilterButton({data}) {
-    const {userId} = useParams()
+function FilterButton({onFiltersChanged, extraFilters = []}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
+    const {filterCount, addFilters, filterFields} = useContext(FilterContext)
     const [open, setOpen] = useState(false)
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('f', handleHotkey)
@@ -29,14 +27,13 @@ function FilterButton({data}) {
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
 
-    const {filterCount, addFilters} = useContext(FilterContext)
-
     const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
         addFilters([
-            {key: 'tab', value: userId ? undefined : 'search'},
-            {key: keyToAdd, value: valueToAdd}
+            {key: keyToAdd, value: valueToAdd},
+            ...extraFilters
         ], true)
-    }, [addFilters, userId])
+        onFiltersChanged && onFiltersChanged()
+    }, [addFilters, onFiltersChanged, extraFilters])
 
     return (
         <React.Fragment>
@@ -71,7 +68,6 @@ function FilterButton({data}) {
                             })
                             .map((field, index) =>
                                 <FilterByField
-                                    data={data}
                                     key={index}
                                     {...field}
                                     onFilter={handleAddFilter}

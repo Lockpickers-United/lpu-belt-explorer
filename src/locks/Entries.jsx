@@ -3,7 +3,7 @@ import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements'
-import DataContext from './DataContext'
+import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
 
@@ -31,7 +31,7 @@ function Entries({profile}) {
 
             {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
-            {entries.length === 0 && <NoEntriesCard/>}
+            {entries.length === 0 && <NoEntriesCard label='Locks'/>}
 
             {compact
                 ? <CompactEntries entries={entries}/>
