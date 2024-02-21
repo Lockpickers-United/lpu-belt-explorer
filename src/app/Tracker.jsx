@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import querystring from 'query-string'
+import AppContext from './AppContext'
 
 function Tracker({feature, ...extraParams}) {
-    if (import.meta.env.DEV) return null
+    const {admin} = useContext(AppContext)
+    if (import.meta.env.DEV || admin) return null
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = files[feature] || 'lpu.gif'
     const ref = document.referrer || 'none'
