@@ -17,7 +17,7 @@ function PhotoStats({data}) {
     const bodyStyle = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 400}
     const bodyStyleBold = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 700}
 
-    const {photoSegments, topPhotographers} = data.lockSummary.photoStats
+    const {photoSegments, topPhotographers, uniqueImages, contributors} = data.lockSummary.photoStats
 
     return (
         <React.Fragment>
@@ -39,13 +39,13 @@ function PhotoStats({data}) {
                                     <TableCell key={'images'} style={bodyStyleBold} sx={{maxWidth: 108}}>Unique
                                         Images</TableCell>
                                     <TableCell key={'imageCount'}
-                                               style={bodyStyleBold}>{photoSegments.uniqueImages}</TableCell>
+                                               style={bodyStyleBold}>{uniqueImages}</TableCell>
                                 </TableRow>
                                 <TableRow key={2} index={2}>
                                     <TableCell key={'contribs'} style={bodyStyleBold} sx={{maxWidth: 108}}>Individual
                                         Contributors</TableCell>
                                     <TableCell key={'contribCount'}
-                                               style={bodyStyleBold}>{photoSegments.contributors}</TableCell>
+                                               style={bodyStyleBold}>{contributors}</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
