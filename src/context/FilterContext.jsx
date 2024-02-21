@@ -6,7 +6,12 @@ const FilterContext = React.createContext({})
 export function FilterProvider({children, filterFields}) {
     const [searchParams, setSearchParams] = useSearchParams()
     const filters = useMemo(() => {
-        return Object.fromEntries(searchParams.entries())
+        const keys = Array.from(searchParams.keys())
+        return keys.reduce((acc, key) => {
+            const value = searchParams.getAll(key)
+            acc[key] = value.length === 1 ? value[0] : value
+            return acc
+        }, {})
     }, [searchParams])
 
     const setFilters = useCallback(newFilters => {
@@ -21,11 +26,23 @@ export function FilterProvider({children, filterFields}) {
 
     const addFilters = useCallback((keyValues, replace) => {
         keyValues.forEach(({key, value}) => {
-            if (replace || !value) {
+            if (!value && replace) {
                 searchParams.delete(key)
-            }
-            if (value) {
-                searchParams.set(key, value)
+            } else if (value) {
+                if (replace) {
+                    if (Array.isArray(value)) {
+                        searchParams.delete(key)
+                        value.forEach(v => searchParams.append(key, v))
+                    } else {
+                        searchParams.set(key, value)
+                    }
+                } else {
+                    if (searchParams.has(key)) {
+                        searchParams.append(key, value)
+                    } else {
+                        searchParams.set(key, value)
+                    }
+                }
             }
         })
         setSearchParams(searchParams)
@@ -36,24 +53,20 @@ export function FilterProvider({children, filterFields}) {
     }, [addFilters])
 
     const removeFilters = useCallback(keysToDelete => {
-        const newFilters = keysToDelete.reduce((acc, keyToDelete) => {
-            const {[keyToDelete]: _, ...newValue} = acc
-            return newValue
-        }, filters)
-        setFilters(newFilters)
-    }, [filters, setFilters])
+        keysToDelete.forEach(key => searchParams.delete(key))
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams])
 
     const removeFilter = useCallback((keyToDelete, valueToDelete) => {
-        const currentValue = filters[keyToDelete]
+        const currentValue = searchParams.getAll(keyToDelete)
 
+        searchParams.delete(keyToDelete)
         if (Array.isArray(currentValue) && currentValue.length > 1) {
             const newValue = currentValue.filter(value => value !== valueToDelete)
-            setFilters({...filters, [keyToDelete]: newValue})
-        } else {
-            const {[keyToDelete]: _, ...newValue} = filters
-            setFilters(newValue)
+            newValue.forEach(v => searchParams.append(keyToDelete, v))
         }
-    }, [filters, setFilters])
+        setSearchParams(searchParams)
+    }, [searchParams, setSearchParams])
 
     const clearFilters = useCallback(() => {
         const {tab} = filters
