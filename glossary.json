@@ -1120,6 +1120,10 @@
     "definition": "See [DeForest(/#/glossary?term=deforest)."
   },
   {
+    "term": "open keyway",
+    "definition": "A keyway that has little or no significant warding in the direction of the middle line. Not [paracentric](/#/glossary?term=paracentric)"
+  },
+  {
     "term": "operating key",
     "definition": "A key used to turn the plug. Only used when a control key also exists."
   },
@@ -1177,6 +1181,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53468228215/in/album-72177720313985501/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53468228215_eeffa8e496_o.jpg"
     }
+  },
+  {
+    "term": "paracentric keyway",
+    "definition": "A paracentric keyway is a security feature, most commonly seen in european and australian pin tumblers, in which the warding in the keyway protrudes past the vertical centerline of the keyway. The goal of this feature is to reduce the space available for inserting a picking tool and moving it in a way that allows the elements to be picked."
   },
   {
     "term": "partial gut",
@@ -1401,6 +1409,10 @@
   {
     "term": "random mid tension",
     "definition": "A disc detainer lock that is random mid tensioned can be picked while tensioned from an unknown disc  (not the front or rear disc)"
+  },
+  {
+    "term": "rattle club",
+    "definition": "One enters the \"rattle club\" by purposefully or, most commonly, accidentally, turning a Masterlock 410 LOTO's core 180º, or enough so that the keypins drop from the lock body into the inside of the plastic housing of the padlock. Because the keypins are now freely jiggling inside a mostly empty padlock body, you can listen to the rattling noise they make as you wiggle it around. It is said the padlock has turned into a rattle."
   },
   {
     "term": "rear tension",
@@ -1898,7 +1910,7 @@
   },
   {
     "term": "tolerances",
-    "definition": "Machining tolerance is defined as the total amount of variation a specific dimension can have from the given value. In Lockpicking, we refer to tolerances as the variation of the chamber diameters, pin diameters, and other significant dimensions that affect the way the elements bind or the lock works."
+    "definition": "(Machining) tolerance is defined as the total amount of variation a specific dimension can have from the given value. In locks, we refer to tolerances as the combined variation of, for example, the chamber diameters, or element or parts dimensions, to each other, or relative to the elements they interact with. This variation influences the way the lock binds and works. The better (tighter) the tolerences, the smaller the variation between the element dimensions, usually increasing the difficulty of a pick."
   },
   {
     "term": "TOOOL",
