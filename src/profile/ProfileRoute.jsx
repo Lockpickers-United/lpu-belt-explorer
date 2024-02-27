@@ -24,12 +24,16 @@ function ProfileRoute() {
     const {getProfile} = useContext(DBContext)
 
     const loadFn = useCallback(() => {
-        return getProfile(userId)
+        try {
+            return getProfile(userId)
+        } catch (ex) {
+            console.log('gotem', ex)
+        }
     }, [getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
 
     const entries = useMemo(() => {
-        if (loading) return []
+        if (loading || !data) return []
         const uniqueIds = new Set(collectionOptions
             .flatMap(({key}) => data[key]))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
