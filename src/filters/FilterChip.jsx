@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router-dom'
 import FilterContext from '../context/FilterContext'
 import glossary from '../data/glossary.json'
 
-function FilterChip({field, value, ...props}) {
+function FilterChip({field, value, label = value, ...props}) {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const {addFilter} = useContext(FilterContext)
@@ -48,7 +48,7 @@ function FilterChip({field, value, ...props}) {
             <Chip
                 clickable
                 variant='outlined'
-                label={value}
+                label={label}
                 style={{marginRight: 4, marginBottom: 4}}
                 onClick={handleOpen}
                 {...props}

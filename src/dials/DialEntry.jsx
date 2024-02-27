@@ -60,18 +60,25 @@ function DialEntry({entry, expanded, onExpand}) {
                         style={{marginBottom: '2px'}}
                     />
                 </div>
+
                 <div style={{margin: '8px 0px 0px 0px', width: '25%', flexShrink: 0, flexDirection: 'column'}}>
-                    <FieldValue name='UL Group' value={`Group ${entry.group}`}/>
+                    {
+                        entry.group &&
+                        <FieldValue value={
+                            <FilterChip field='group' label={`Group ${entry.group}`} value={entry.group}/>
+                        }/>
+                    }
                 </div>
-                { !!entry.media?.length &&
+
+                {!!entry.media?.length &&
                     <React.Fragment>
                         <div style={{
                             margin: '18px 0px 0px 0px',
-                            width:'20%',
+                            width: '20%',
                             flexShrink: 0,
                             flexDirection: 'column',
-                            textAlign:'center',
-                            color:'#aaa'
+                            textAlign: 'center',
+                            color: '#aaa'
                         }}>
                             <ImageOutlinedIcon/>
                         </div>
@@ -79,23 +86,33 @@ function DialEntry({entry, expanded, onExpand}) {
                 }
             </AccordionSummary>
             {
-            expanded &&
+                expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' alignItems='flex-start'>
                             <FieldValue
                                 name='Fence Type'
-                                value={entry.fence}
+                                value={
+                                    <FilterChip field='fence' value={entry.fence || 'Unknown'}/>
+                                }
                                 style={{flexGrow: 1}}
                             />
                             <FieldValue
                                 name='Wheels'
-                                value={`${entry.wheels} wheels`}
+                                value={
+                                    <FilterChip
+                                        field='wheels'
+                                        label={entry.wheels ? `${entry.wheels} wheels` : 'Unknown'}
+                                        value={entry.wheels || 'Unknown'}
+                                    />
+                                }
                                 style={{flexGrow: 1}}
                             />
                             <FieldValue
                                 name='Digits'
-                                value={entry.digits}
+                                value={
+                                    <FilterChip field='digits' value={entry.digits || 'Unknown'}/>
+                                }
                                 style={{flexGrow: 1}}
                             />
                         </Stack>
