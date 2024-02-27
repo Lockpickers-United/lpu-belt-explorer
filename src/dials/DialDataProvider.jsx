@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
@@ -65,6 +66,11 @@ export function DialDataProvider({children, allEntries}) {
                     return groupSort(a.group, b.group)
                 } else if (sort === 'groupDescending') {
                     return groupSortReverse(a.group, b.group)
+                } else if (sort === 'recentlyUpdated') {
+                    const dayA = dayjs(a.lastUpdated)
+                    const dayB = dayjs(b.lastUpdated)
+                    if (dayA.isAfter(dayB)) return -1
+                    else if (dayB.isAfter(dayA)) return 1
                 }
             })
             : searched

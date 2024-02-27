@@ -13,5 +13,6 @@ export const dialSortFields = [
     {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
     {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
     {label: 'UL Group (Ascending)', value: 'groupAscending'},
-    {label: 'UL Group (Descending)', value: 'groupDescending'}
+    {label: 'UL Group (Descending)', value: 'groupDescending'},
+    {label: 'Recently Updated', value: 'recentlyUpdated'}
 ]

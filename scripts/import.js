@@ -189,7 +189,7 @@ jsonData
         const {lastUpdated, views: oldViews, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
         const {views: newViews, ...newEntry} = entry
         if (JSON.stringify(newEntry) !== JSON.stringify(oldEntry)) {
-            console.log(`Entry updated ${newEntry.id}`)
+            console.log(`Lock Entry updated ${newEntry.id}`)
             entry.lastUpdated = dayjs().toISOString()
         } else {
             entry.lastUpdated = lastUpdated
@@ -290,6 +290,20 @@ dialsLinkData
             title: item.Title,
             url: item.URL
         })
+    })
+
+// Recently updated data
+console.log('Processing recenty updated data...')
+const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/dials.json'))
+dialsMainData
+    .forEach(entry => {
+        const {lastUpdated, ...oldEntry} = orginalDialsData.find(e => e.id === entry.id) || {}
+        if (JSON.stringify(entry) !== JSON.stringify(oldEntry)) {
+            console.log(`Dial Entry updated ${entry.id}`)
+            entry.lastUpdated = dayjs().toISOString()
+        } else {
+            entry.lastUpdated = lastUpdated
+        }
     })
 
 fs.writeFileSync('./src/data/dials.json', JSON.stringify(dialsMainData, null, 2))
