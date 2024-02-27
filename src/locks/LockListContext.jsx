@@ -15,9 +15,9 @@ export function LockListProvider({children}) {
 
     const handleSetExpanded = useCallback((newValue, forceTab) => {
         const entry = getEntryFromId(newValue)
-        const name = entryName(entry)
-        const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
         if (newValue && newValue !== 'beltreqs') {
+            const name = entry ? entryName(entry) : ''
+            const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
             const newTab = filters.tab === 'search' && !forceTab ? 'search' : entry.belt.replace(/\s\d/g, '')
             addFilters([
                 {key: 'id', value: newValue},
