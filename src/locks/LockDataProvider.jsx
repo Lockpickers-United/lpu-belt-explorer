@@ -106,23 +106,11 @@ export function DataProvider({children, allEntries, profile}) {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
-    // TODO: Move to entryName.js and fix references
-    const getNameFromId = useCallback(id => {
-        const entry = getEntryFromId(id)
-        if (entry) {
-            const {makeModels} = entry
-            const {make, model} = makeModels[0]
-            const makeModel = make && make !== model ? `${make} ${model}` : model
-            return makeModel.replace(/[\s/]/g, '_').replace(/\W/g, '')
-        }
-    }, [getEntryFromId])
-
     const value = useMemo(() => ({
         allEntries,
         visibleEntries,
         getEntryFromId,
-        getNameFromId
-    }), [allEntries, getNameFromId, getEntryFromId, visibleEntries])
+    }), [allEntries, getEntryFromId, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

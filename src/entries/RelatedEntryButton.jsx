@@ -8,19 +8,16 @@ import BeltIcon from './BeltIcon'
 
 function RelatedEntryButton({id}) {
     const {setExpanded} = useContext(LockListContext)
-    const {getEntryFromId, getNameFromId, visibleEntries} = useContext(DataContext)
+    const {getEntryFromId, visibleEntries} = useContext(DataContext)
     const {addFilters} = useContext(FilterContext)
     const entry = useMemo(() => getEntryFromId(id), [getEntryFromId, id])
 
     const handleClick = useCallback(async () => {
         if (!visibleEntries.some(e => e.id === id)) {
-            const name = getNameFromId(id)
-            addFilters({id, name, tab: entry.belt.replace(/\s\d/g, '')})
-            setExpanded(id)
-        } else {
-            setExpanded(id)
+            addFilters({tab: entry.belt.replace(/\s\d/g, '')})
         }
-    }, [visibleEntries, id, getNameFromId, addFilters, entry.belt, setExpanded])
+        setExpanded(id)
+    }, [visibleEntries, id, addFilters, entry.belt, setExpanded])
 
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>

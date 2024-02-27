@@ -1,5 +1,6 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import {useParams} from 'react-router-dom'
+import entryName from '../entries/entryName'
 import DataContext from './LockDataProvider'
 import FilterContext from '../context/FilterContext'
 
@@ -7,19 +8,20 @@ const LockListContext = React.createContext({})
 
 export function LockListProvider({children}) {
     const {userId} = useParams()
-    const {allEntries, getEntryFromId, getNameFromId} = useContext(DataContext)
+    const {allEntries, getEntryFromId} = useContext(DataContext)
     const {filters, addFilter, addFilters, removeFilters} = useContext(FilterContext)
 
     const expanded = filters.id
 
     const handleSetExpanded = useCallback((newValue, forceTab) => {
         const entry = getEntryFromId(newValue)
-        const name = getNameFromId(newValue)
+        const name = entryName(newValue)
+        const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
         if (newValue && newValue !== 'beltreqs') {
             const newTab = filters.tab === 'search' && !forceTab ? 'search' : entry.belt.replace(/\s\d/g, '')
             addFilters([
                 {key: 'id', value: newValue},
-                {key: 'name', value: name},
+                {key: 'name', value: safeName},
                 {key: 'tab', value: userId ? undefined : newTab}
             ], true)
         } else if (newValue === 'beltreqs') {
@@ -30,7 +32,7 @@ export function LockListProvider({children}) {
         } else {
             removeFilters(['id', 'name'])
         }
-    }, [addFilters, filters.tab, getEntryFromId, getNameFromId, removeFilters, userId])
+    }, [addFilters, filters.tab, getEntryFromId, removeFilters, userId])
 
     const handleClearExpanded = useCallback(() => {
         removeFilters(['id', 'name'])

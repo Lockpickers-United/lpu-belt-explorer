@@ -1,14 +1,14 @@
 /*
     Usage:
-    entryName(entry,'any', 1) -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control (6 pin with 5 finger pins)
+    entryName(entry,'any', {includeVersion: true) -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control (6 pin with 5 finger pins)
     entryName(entry, 'short') -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control
     entryName(entry, 'long')  -> ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / TrioVing System 10 / TrioVing Twin Control
     entryName(entry, 'data')  -> ASSA,ASSA,ASSA,TrioVing,TrioVing	Twin Combi,Triton,Neptun 4900,System 10,Twin Control
     entryName(entry, 'array') -> ['ASSA,ASSA,ASSA,TrioVing,TrioVing', 'Twin Combi,Triton,Neptun 4900,System 10,Twin Control']
 */
 
-function entryName(entry, nameType = 'short', includeVersion = false) {
-    const versionString = includeVersion && entry.version ? ' (' + entry.version + ')' : ''
+function entryName(entry, nameType = 'short', options = {}) {
+    const versionString = options.includeVersion && entry.version ? ' (' + entry.version + ')' : ''
 
     if (nameType === 'long') {
         const lockName = entry.makeModels.map((makeModel) => {
@@ -24,6 +24,10 @@ function entryName(entry, nameType = 'short', includeVersion = false) {
             entry.makeModels.map(e => e.make).join(','),
             entry.makeModels.map(e => e.model).join(',')
         ]
+    } else if (nameType === 'dial') {
+        return entry.make && entry.model
+            ? `${entry.make} ${entry.model}`
+            : entry.model
     } else {
         // TODO: Clean up to be a bit more functional style
         let lockName = ''

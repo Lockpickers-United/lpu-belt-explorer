@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
 import React, {useCallback, useEffect, useRef, useState} from 'react'
 import Tracker from '../app/Tracker'
+import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
 import DialImageGallery from './DialImageGallery'
@@ -159,6 +160,7 @@ function DialEntry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker feature='dial' id={entry.id}/>
+                        <CopyLinkToEntryButton entry={entry} nameType='dial'/>
                     </AccordionActions>
                 </React.Fragment>
             }
