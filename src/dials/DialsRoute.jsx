@@ -1,8 +1,10 @@
 import React from 'react'
 import Tracker from '../app/Tracker'
 import {dialFilterFields} from '../data/filterFields'
+import {dialSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton'
 import {FilterProvider} from '../context/FilterContext'
+import SortButton from '../filters/SortButton'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
@@ -17,6 +19,7 @@ function DialsRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox label='Dials'/>
+            <SortButton sortValues={dialSortFields}/>
             <FilterButton/>
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
         </React.Fragment>

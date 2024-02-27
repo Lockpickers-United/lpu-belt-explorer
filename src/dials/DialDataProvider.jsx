@@ -3,6 +3,7 @@ import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
+import {groupSort, groupSortReverse} from './groups'
 
 export function DialDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -60,6 +61,10 @@ export function DialDataProvider({children, allEntries}) {
                     return a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaDescending') {
                     return b.fuzzy.localeCompare(a.fuzzy)
+                } else if (sort === 'groupAscending') {
+                    return groupSort(a.group, b.group)
+                } else if (sort === 'groupDescending') {
+                    return groupSortReverse(a.group, b.group)
                 }
             })
             : searched

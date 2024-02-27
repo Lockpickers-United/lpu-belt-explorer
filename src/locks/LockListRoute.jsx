@@ -9,7 +9,7 @@ import {FilterProvider} from '../context/FilterContext'
 import Entries from './Entries'
 import ToggleCompactButton from './ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
-import SortButton from './SortButton'
+import SortButton from '../filters/SortButton'
 import ExportButton from './ExportButton'
 import HotkeyInfoButton from './HotkeyInfoButton'
 import RandomEntryButton from './RandomEntryButton'
@@ -19,6 +19,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import allEntries from '../data/data.json'
+import {lockSortFields} from '../data/sortFields'
 
 function LockListRoute() {
     const {isMobile} = useWindowSize()
@@ -27,7 +28,7 @@ function LockListRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]}/>
-            <SortButton/>
+            <SortButton sortValues={lockSortFields}/>
             <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
