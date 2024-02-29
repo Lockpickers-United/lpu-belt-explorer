@@ -401,11 +401,18 @@
     "id": "baa53440",
     "make": "La Gard",
     "model": "3332",
-    "group": "",
-    "fence": "",
-    "wheels": "",
-    "digits": "",
-    "features": [],
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Fence Lever Control Device"
+    ],
     "media": [
       {
         "title": "By: Mick Emhurt",
@@ -449,7 +456,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541632280/in/album-72177720314920806/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-02-29T00:57:42.114Z"
   },
   {
     "id": "0b1fc984",
@@ -728,11 +736,19 @@
     "id": "082b9b1f",
     "make": "Sargent & Greenleaf",
     "model": "6651",
-    "group": "",
-    "fence": "",
-    "wheels": "",
-    "digits": "",
-    "features": [],
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates",
+      "Eccentric Roller"
+    ],
     "media": [
       {
         "title": "By: Mick Emhurt",
@@ -797,7 +813,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541197126/in/album-72177720314940394/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-02-29T00:57:42.115Z"
   },
   {
     "id": "ae84d433",
@@ -849,11 +866,17 @@
     "id": "8a2dc6e5",
     "make": "Sargent & Greenleaf",
     "model": "6741",
-    "group": "",
-    "fence": "",
-    "wheels": "",
-    "digits": "",
-    "features": [],
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -869,7 +892,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541346008/in/album-72177720314920201/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-02-29T00:57:42.115Z"
   },
   {
     "id": "3809d4a5",
