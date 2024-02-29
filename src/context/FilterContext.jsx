@@ -71,8 +71,8 @@ export function FilterProvider({children, filterFields = []}) {
     }, [searchParams, setSearchParams])
 
     const clearFilters = useCallback(() => {
-        const {tab} = filters
-        setFilters({tab})
+        const {tab, sort} = filters
+        setFilters({tab, sort})
     }, [filters, setFilters])
 
     const filterCount = useMemo(() => {
