@@ -222,17 +222,6 @@ const glossary = glossaryData
 console.log('Writing glossary.json')
 fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))
 
-// Check that all Features are accounted for in Glossary
-new Set(jsonData
-    .map(({features = [], lockingMechanism = []}) => {
-        return [...features, lockingMechanism].flat()
-    })
-    .flat())
-    .forEach(term => {
-        const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
-        if (!item) console.log('Term not defined in Glossary: ', term)
-    })
-
 // Dials Data
 console.log('Processing Dials data...')
 const dialsMainData = dialsData.map(datum => {
@@ -307,5 +296,20 @@ dialsMainData
     })
 
 fs.writeFileSync('./src/data/dials.json', JSON.stringify(dialsMainData, null, 2))
+
+// Check that all Features are accounted for in Glossary
+const lockFeatures = jsonData
+    .map(({features = [], lockingMechanism = []}) => {
+        return [...features, lockingMechanism].flat()
+    })
+    .flat()
+const dialFeatures = dialsMainData
+    .map(({features = []}) => features)
+    .flat()
+new Set(lockFeatures.concat(dialFeatures))
+    .forEach(term => {
+        const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
+        if (!item) console.log('Term not defined in Glossary: ', term)
+    })
 
 console.log('Complete.')
