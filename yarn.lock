@@ -1295,24 +1295,6 @@
     d3-shape "^1.3.5"
     lodash "^4.17.21"
 
-"@nivo/bullet@^0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/bullet/-/bullet-0.84.0.tgz"
-  integrity sha512-E4AWYQSMUrt9mZTE0wfFF3AgQf4cv7DP5+5bXT3C3WGUyCrVip4PBN9J2wVkdEgE4a//hiTebFTWNXdaj8zkIg==
-  dependencies:
-    "@nivo/axes" "0.84.0"
-    "@nivo/colors" "0.84.0"
-    "@nivo/core" "0.84.0"
-    "@nivo/legends" "0.84.0"
-    "@nivo/scales" "0.84.0"
-    "@nivo/tooltip" "0.84.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-
-"@nivo/canvas@0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/canvas/-/canvas-0.84.0.tgz"
-  integrity sha512-sDO3JOFwicChzdhLfesGFp/Y93gAwCo8ooGbaRrpln9avREnoV8SfSuxlysSgBSX5axPEmzDLx77gma7hgTXPQ==
-
 "@nivo/colors@0.84.0":
   version "0.84.0"
   resolved "https://registry.npmjs.org/@nivo/colors/-/colors-0.84.0.tgz"
@@ -1329,7 +1311,7 @@
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
-"@nivo/core@0.84.0", "@nivo/core@^0.84.0":
+"@nivo/core@0.84.0":
   version "0.84.0"
   resolved "https://registry.npmjs.org/@nivo/core/-/core-0.84.0.tgz"
   integrity sha512-HyQM4x4B7d4X9+xLPKkPxqIxhSDzbJUywGTDWHWx1daeX9VP8O+MqkTBsNsoB+tjxrbKrRJ0+ceS2w89JB+qrA==
@@ -1346,25 +1328,6 @@
     d3-shape "^1.3.5"
     d3-time-format "^3.0.0"
     lodash "^4.17.21"
-
-"@nivo/geo@^0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/geo/-/geo-0.84.0.tgz"
-  integrity sha512-KuvVONuHQG7vdw9vO+Q7W+HubVtJfp+ce9rWUMrE64NP1uM98ziK+9u0TxB127WXdit0QqRsDxlaQuGYpNGUmw==
-  dependencies:
-    "@nivo/colors" "0.84.0"
-    "@nivo/core" "0.84.0"
-    "@nivo/legends" "0.84.0"
-    "@nivo/tooltip" "0.84.0"
-    d3-format "^1.4.4"
-    d3-geo "^1.11.3"
-    lodash "^4.17.21"
-    prop-types "^15.7.2"
-
-"@nivo/grid@0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/grid/-/grid-0.84.0.tgz"
-  integrity sha512-dF3hVvECW7uHs9PHy855HhREpwFJ4ckx34Nnovs8M9A0rfHgvakWpuaegZgyMedAksgTDTxAXv86lpMg9LjHYA==
 
 "@nivo/legends@0.84.0":
   version "0.84.0"
@@ -1408,34 +1371,6 @@
     "@types/d3-shape" "^2.0.0"
     d3-shape "^1.3.5"
 
-"@nivo/polar-axes@0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/polar-axes/-/polar-axes-0.84.0.tgz"
-  integrity sha512-RxE/0wOG5V6lJR4iK3ow4F8Par2wJhVf4jFIyIqjlzRnq2DC9Z12leXN8iTrv+1nbCRiNvU+bJmCDnBbHMKCFA==
-  dependencies:
-    "@nivo/arcs" "0.84.0"
-    "@nivo/core" "0.84.0"
-    "@nivo/scales" "0.84.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-
-"@nivo/radial-bar@^0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/radial-bar/-/radial-bar-0.84.0.tgz"
-  integrity sha512-fByKlzTMbJNixptGdoV99Y7vrPoEQNomj2I7z/zaYZvs8znEwrp5VoN2vsig/xqjoXr66aStIsypQlc2CxDyEw==
-  dependencies:
-    "@nivo/arcs" "0.84.0"
-    "@nivo/colors" "0.84.0"
-    "@nivo/core" "0.84.0"
-    "@nivo/legends" "0.84.0"
-    "@nivo/polar-axes" "0.84.0"
-    "@nivo/scales" "0.84.0"
-    "@nivo/tooltip" "0.84.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-    "@types/d3-scale" "^3.2.3"
-    "@types/d3-shape" "^2.0.0"
-    d3-scale "^3.2.3"
-    d3-shape "^1.3.5"
-
 "@nivo/recompose@0.84.0":
   version "0.84.0"
   resolved "https://registry.npmjs.org/@nivo/recompose/-/recompose-0.84.0.tgz"
@@ -1459,21 +1394,6 @@
     d3-time-format "^3.0.0"
     lodash "^4.17.21"
 
-"@nivo/stream@^0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/stream/-/stream-0.84.0.tgz"
-  integrity sha512-EsoPKwD2Spueg75WDvlDeE3/hbMFTkBaUXdqkWSfabRTYC6F5ZGUWq3aAvfIwyLw1HZgbw//RhSVzc59wEfWzw==
-  dependencies:
-    "@nivo/axes" "0.84.0"
-    "@nivo/colors" "0.84.0"
-    "@nivo/core" "0.84.0"
-    "@nivo/legends" "0.84.0"
-    "@nivo/scales" "0.84.0"
-    "@nivo/tooltip" "0.84.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-    "@types/d3-shape" "^2.0.0"
-    d3-shape "^1.3.5"
-
 "@nivo/tooltip@0.84.0":
   version "0.84.0"
   resolved "https://registry.npmjs.org/@nivo/tooltip/-/tooltip-0.84.0.tgz"
@@ -1492,21 +1412,6 @@
     "@types/d3-scale" "^3.2.3"
     d3-delaunay "^5.3.0"
     d3-scale "^3.2.3"
-
-"@nivo/waffle@^0.84.0":
-  version "0.84.0"
-  resolved "https://registry.npmjs.org/@nivo/waffle/-/waffle-0.84.0.tgz"
-  integrity sha512-0pEzvzjFLWbMvzPhzKYZzv+3UPQQsS3EPcXxo7w96phpIOjiHKq/IFR0JQd+gCC79Seiu//rICejjkrm+o9xJQ==
-  dependencies:
-    "@nivo/canvas" "0.84.0"
-    "@nivo/colors" "0.84.0"
-    "@nivo/core" "0.84.0"
-    "@nivo/grid" "0.84.0"
-    "@nivo/legends" "0.84.0"
-    "@nivo/tooltip" "0.84.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-    "@types/d3-shape" "^2.0.0"
-    d3-shape "^1.3.5"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1886,13 +1791,6 @@
   version "1.2.7"
   resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.7.tgz"
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
-
-"@types/react-dom@^18.2.7":
-  version "18.2.7"
-  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.7.tgz"
-  integrity sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==
-  dependencies:
-    "@types/react" "*"
 
 "@types/react-lifecycles-compat@^3.0.1":
   version "3.0.4"
@@ -2371,11 +2269,6 @@ csv-parse@^5.5.0:
   resolved "https://registry.npmjs.org/csv-parse/-/csv-parse-5.5.0.tgz"
   integrity sha512-RxruSK3M4XgzcD7Trm2wEN+SJ26ChIb903+IWxNOcB5q4jT2Cs+hFr6QP39J05EohshRFEvyzEBoZ/466S2sbw==
 
-d3-array@1:
-  version "1.2.4"
-  resolved "https://registry.npmjs.org/d3-array/-/d3-array-1.2.4.tgz"
-  integrity sha512-KHW6M86R+FUPYGb3R5XiYjXPq7VzwxZ22buHhAEVG5ztoEcZZMLov530mmccaqA1GghZArjQV46fuc8kUqhhHw==
-
 d3-array@2, d3-array@^2.3.0:
   version "2.12.1"
   resolved "https://registry.npmjs.org/d3-array/-/d3-array-2.12.1.tgz"
@@ -2409,13 +2302,6 @@ d3-format@^1.4.4:
   version "1.4.5"
   resolved "https://registry.npmjs.org/d3-format/-/d3-format-1.4.5.tgz"
   integrity sha512-J0piedu6Z8iB6TbIGfZgDzfXxUFN3qQRMofy2oPdXzQibYGqPB/9iMcxr/TGalU+2RsyDO+U4f33id8tbnSRMQ==
-
-d3-geo@^1.11.3:
-  version "1.12.1"
-  resolved "https://registry.npmjs.org/d3-geo/-/d3-geo-1.12.1.tgz"
-  integrity sha512-XG4d1c/UJSEX9NfU02KwBL6BYPj8YKHxgBEw5om2ZnTRSbIcego6dhHwcxuSR3clxh0EpE38os1DVPOmnYtTPg==
-  dependencies:
-    d3-array "1"
 
 "d3-interpolate@1 - 2", "d3-interpolate@1.2.0 - 2":
   version "2.0.1"
@@ -2499,11 +2385,6 @@ dayjs@^1.11.9:
   resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.9.tgz"
   integrity sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==
 
-debounce@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/debounce/-/debounce-1.2.1.tgz"
-  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
-
 debug@4, debug@^4.0.0, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
@@ -2573,11 +2454,6 @@ devlop@^1.0.0, devlop@^1.1.0:
   integrity sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==
   dependencies:
     dequal "^2.0.0"
-
-dialog-polyfill@^0.4.7:
-  version "0.4.10"
-  resolved "https://registry.npmjs.org/dialog-polyfill/-/dialog-polyfill-0.4.10.tgz"
-  integrity sha512-j5yGMkP8T00UFgyO+78OxiN5vC5dzRQF3BEio+LhNvDbyfxWBsi3sfPArDm54VloaJwy2hm3erEiDWqHRC8rzw==
 
 doctrine@^2.1.0:
   version "2.1.0"
@@ -3124,14 +3000,6 @@ firebase@^10.6.0:
     "@firebase/storage" "0.11.2"
     "@firebase/storage-compat" "0.3.2"
     "@firebase/util" "1.9.3"
-
-firebaseui@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/firebaseui/-/firebaseui-6.1.0.tgz"
-  integrity sha512-5WiVYVxPGMANuZKxg6KLyU1tyqIsbqf/59Zm4HrdFYwPtM5lxxB0THvgaIk4ix+hCgF0qmY89sKiktcifKzGIA==
-  dependencies:
-    dialog-polyfill "^0.4.7"
-    material-design-lite "^1.2.0"
 
 flat-cache@^3.0.4:
   version "3.0.4"
@@ -4140,11 +4008,6 @@ marked@^4.0.10:
   resolved "https://registry.npmjs.org/marked/-/marked-4.3.0.tgz"
   integrity sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==
 
-material-design-lite@^1.2.0:
-  version "1.3.0"
-  resolved "https://registry.npmjs.org/material-design-lite/-/material-design-lite-1.3.0.tgz"
-  integrity sha512-ao76b0bqSTKcEMt7Pui+J/S3eVF0b3GWfuKUwfe2lP5DKlLZOwBq37e0/bXEzxrw7/SuHAuYAdoCwY6mAYhrsg==
-
 mdast-util-find-and-replace@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/mdast-util-find-and-replace/-/mdast-util-find-and-replace-3.0.1.tgz"
@@ -5023,13 +4886,6 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
-
-react-firebaseui@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/react-firebaseui/-/react-firebaseui-6.0.0.tgz"
-  integrity sha512-VzLMiW7DBZCsW/qpP9nky/pPlAoIjDxA2Qyc+QAPf+RjelIkvPPiCBXR2aAz+Upy+ujrx6pYDXj547DW5uC4ww==
-  dependencies:
-    firebaseui "^6.0.0"
 
 react-full-screen@^1.1.1:
   version "1.1.1"
