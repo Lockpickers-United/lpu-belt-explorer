@@ -4,15 +4,20 @@ import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
 import {collectionOptions} from '../data/collectionTypes'
 import allEntries from '../data/data.json'
+import {lockFilterFields} from '../data/filterFields'
+import {lockSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton'
+import SortButton from '../filters/SortButton'
 import {DataProvider} from '../locks/LockDataProvider'
 import {FilterProvider} from '../context/FilterContext'
 import {LockListProvider} from '../locks/LockListContext'
 import ToggleCompactButton from '../locks/ToggleCompactButton'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
+import SearchBox from '../nav/SearchBox'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
+import useWindowSize from '../util/useWindowSize'
 import CopyProfileLinkButton from './CopyProfileLinkButton'
 import EditProfileButton from './EditProfileButton'
 import NoProfileData from './NoProfileData'
@@ -22,12 +27,13 @@ import ProfilePage from './ProfilePage'
 function ProfileRoute() {
     const {userId} = useParams()
     const {getProfile} = useContext(DBContext)
+    const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(() => {
         try {
             return getProfile(userId)
         } catch (ex) {
-            console.log('gotem', ex)
+            console.error('Error loading profile.', ex)
         }
     }, [getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
@@ -41,7 +47,11 @@ function ProfileRoute() {
 
     const nav = (
         <React.Fragment>
+            <SearchBox label='Collection'/>
             <FilterButton/>
+            <SortButton sortValues={lockSortFields}/>
+
+            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
             <EditProfileButton/>
             <CopyProfileLinkButton/>
@@ -52,7 +62,7 @@ function ProfileRoute() {
 
     return (
         <React.Fragment>
-            <FilterProvider>
+            <FilterProvider filterFields={lockFilterFields}>
                 <DataProvider allEntries={entries} profile={data}>
                     <LockListProvider>
                         <Nav title={title} extras={nav}/>
