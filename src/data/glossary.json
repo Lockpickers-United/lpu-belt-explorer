@@ -37,6 +37,10 @@
     }
   },
   {
+    "term": "anti-punch relocker",
+    "definition": "A spring loaded device which when the backplate removes, blocks the bolt with a lever. When the relocker is engaged, the lock will not open with the correct combination."
+  },
+  {
     "term": "ARX pins",
     "definition": "Keypins used in Medeco locks that have bottom of the true gate's groove capped off. They were made mainly to defeat the Medecoder, a tool that used the true gates groove as guide to decode the correct rotation of each keypin.",
     "media": {
@@ -46,6 +50,14 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53481213271/in/album-72177720314210693/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53481213271_6cef9beb38_o.jpg"
     }
+  },
+  {
+    "term": "AWL",
+    "definition": "Acronym for All Wheels Left, indicating dialling all wheels CCW while taking readings."
+  },
+  {
+    "term": "AWR",
+    "definition": "Acronym for All Wheels Right, indicating dialling all wheels CW while taking readings."
   },
   {
     "term": "balanced stacks",
@@ -341,6 +353,10 @@
     }
   },
   {
+    "term": "contact point",
+    "definition": "The position of the felt (or heard) point of contact between the lever nose and the lock mechanism (typically the cam). There are two contact points in a basic Group 2 dial (left, and right)."
+  },
+  {
     "term": "control key",
     "definition": "Key used to remove a lock from its housing. Makes it easy to rekey a lock simply by swapping cores."
   },
@@ -498,6 +514,10 @@
     "definition": "To pick a lock with unsprung tumblers such as a disc detainer by moving tumblers directly to their correct position, mimicking the key."
   },
   {
+    "term": "dial ring",
+    "definition": "The outer disc with the reference marking(s) for aligning the dial numbers."
+  },
+  {
     "term": "differs",
     "definition": "An abbreviation of “different combinations\", meaning the number of different keys that can be made for a specific model of lock. This will depend on the design of the key, the number of locking components, the number of available positions for each component, and the tolerances of the lock."
   },
@@ -566,6 +586,10 @@
     }
   },
   {
+    "term": "drive cam",
+    "definition": "An extra wheel in (for example) a Group 2 lock that pulls the bolt mechanism, and raises the fence from the wheels to prevent feeling gates directly."
+  },
+  {
     "term": "driver pin",
     "definition": "Pin that usually sits at shearline in a pin tumbler lock, preventing the rotation of the plug, positioned between a key pin and a spring. It must be fully lifted into the bible to open the lock. Also known as top pin when bible is upwards. Can include [security features](/#/glossary?term=security%20pin).",
     "media": {
@@ -601,6 +625,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53484623463/in/album-72177720314210693/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53484623463_f5c7f4990a_o.jpg"
     }
+  },
+  {
+    "term": "eccentric roller",
+    "definition": "A small wheel mounted to the nose of the lever. Its purpose is to obscure the contact points."
   },
   {
     "term": "element",
@@ -640,6 +668,10 @@
     }
   },
   {
+    "term": "false gates (dials)",
+    "definition": "A portion of the wheel with a shallow cut designed to mimick a gate, that are not deep enough for the fence to drop completely."
+  },
+  {
     "term": "false set",
     "definition": "The small rotation of a plug as elements (particularly spools or false gates) look partially set, that does not allow the lock to open.",
     "media": {
@@ -655,12 +687,20 @@
     "definition": "The auditory, visual, and tactile sensations from a lock during picking."
   },
   {
+    "term": "fence (dials)",
+    "definition": "The portion of the lever that slots into the wheels when the gate of the wheel directly faces it."
+  },
+  {
     "term": "fingerpin",
     "definition": "See [rotating fingerpin](/#/glossary?term=rotating%20fingerpin)."
   },
   {
     "term": "fixed disc",
     "definition": "A disc in a DD that can't be turned, fixed in place."
+  },
+  {
+    "term": "fixed fly",
+    "definition": "Simple peg that \"catches\" the next wheel, mostly seen on older or cheaper locks."
   },
   {
     "term": "flag",
@@ -689,8 +729,16 @@
     "definition": "A special technique for picking pin tumblers where the picker completely controls the plug movement. This allows for careful manual counterrotation, for instance, to set a gin spool from the countermilling without dropping other pins. Can be done using one very well fitting tensioner, or two tensioners."
   },
   {
+    "term": "fly",
+    "definition": "The linkage between wheels, a simple version would be a peg protruding which catches a peg on the next wheel."
+  },
+  {
     "term": "follower",
     "definition": "See [plug follower](/#/glossary?term=plug%20follower)."
+  },
+  {
+    "term": "forbidden zone",
+    "definition": "A zone in which the last number of the combination must not be set to, as it can cause a mechanical malfunction."
   },
   {
     "term": "forked keypins",
@@ -719,6 +767,10 @@
     "definition": "A disc detainer lock that can be front tensioned can be picked while tensioned from the front disc."
   },
   {
+    "term": "front-reading",
+    "definition": "Dial is read from the face of the dial (parallel with spindle orientation)."
+  },
+  {
     "term": "front/rear tension",
     "definition": "A disc detainer lock that can be front or rear tensioned can be picked while tensioned from either the front or rearmost disc."
   },
@@ -736,6 +788,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455330808/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455330808_1f4b32caba_o.jpg"
     }
+  },
+  {
+    "term": "gate (dials)",
+    "definition": "The portion of the wheel cut to allow the fence to fall in."
   },
   {
     "term": "gin spool drivers",
@@ -902,6 +958,10 @@
     }
   },
   {
+    "term": "key change",
+    "definition": "Insert a warded combo change key through all the wheels with gates aligned at the change index. Turn key, dial new combination at change index, turn key back and remove."
+  },
+  {
     "term": "key code",
     "definition": "See [bitting code](/#/glossary?term=bitting%20code).",
     "media": {
@@ -987,6 +1047,10 @@
     }
   },
   {
+    "term": "lever fence",
+    "definition": "A lever pivoting directly on the bolt having a fence mounted to it, usually pulling directly on the locking bolt to unlock."
+  },
+  {
     "term": "lever pack",
     "definition": "A term for all the levers in a given lock.",
     "media": {
@@ -1008,6 +1072,10 @@
   {
     "term": "LFIC",
     "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). This key's action usually lifts the pins to a second shear line, allowing for the retraction of the holding pin or bar. See also [FSIC](/#/glossary?term=FSIC) and the smaller [SFIC](/#/glossary?term=SFIC)"
+  },
+  {
+    "term": "LOBC",
+    "definition": "Acronym for Locked On By Combination. Backplate cannot be removed without the proper combination."
   },
   {
     "term": "lock",
@@ -1044,6 +1112,10 @@
     }
   },
   {
+    "term": "magic-module-footprint",
+    "definition": "A standard format for safe locks implemented originally by Sargent and Greenleaf."
+  },
+  {
     "term": "magnetic pins",
     "definition": "Ferromagnetic pins or magnetized pins in a lock, or that are subject to a magnet placed on the key."
   },
@@ -1075,6 +1147,10 @@
     }
   },
   {
+    "term": "mesh change",
+    "definition": "Inner and outer wheels with a toothed mesh between them, pop them apart and turn them to desired combo, reassemble."
+  },
+  {
     "term": "mortise",
     "definition": "A lock cylinder that is designed to screw into a mortise lock. (2) A lock designed to fit in a pocket —- the mortise -—  cut in the door edge. Also called mortice (UK).",
     "media": {
@@ -1084,6 +1160,14 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53453551932/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53453551932_8a54eec776_o.jpg"
     }
+  },
+  {
+    "term": "moveable fly",
+    "definition": "Fly that can move about 8 increments, used to allow the whole keyspace of a wheel."
+  },
+  {
+    "term": "multi-orientation cam",
+    "definition": "A cam wheel that accepts a spline key in more than one position, to allow the drop-in area to remain at the same index point while orienting the lock body in."
   },
   {
     "term": "multiple locking mechanisms",
@@ -1114,6 +1198,10 @@
   {
     "term": "nipple pins",
     "definition": "Another name for [bottlenose pins](/#/glossary?term=bottlenose%20pins)"
+  },
+  {
+    "term": "nose",
+    "definition": "The portion of the lever that rests on the cam wheel."
   },
   {
     "term": "offset diamond",
@@ -1187,6 +1275,10 @@
     "definition": "A paracentric keyway is a security feature, most commonly seen in european and australian pin tumblers, in which the warding in the keyway protrudes past the vertical centerline of the keyway. The goal of this feature is to reduce the space available for inserting a picking tool and moving it in a way that allows the elements to be picked."
   },
   {
+    "term": "parking (wheel isolation)",
+    "definition": "Technique used to isolate contact point readings to a single wheel."
+  },
+  {
     "term": "partial gut",
     "definition": "Denotes a lock which is difficult to fully disassemble and can be used in a belt request without documentation of full gutting."
   },
@@ -1204,6 +1296,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470409520/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53470409520_8f5cba6e07_o.jpg"
     }
+  },
+  {
+    "term": "pin change",
+    "definition": "Pin used for the fly is put in one of a series of holes around the wheel circumference, changing the fly's position changes the combination number for that wheel."
   },
   {
     "term": "pin key",
@@ -1447,6 +1543,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498129105/in/album-72177720314444642/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53498129105_820e4efb8a_o.jpg"
     }
+  },
+  {
+    "term": "rotary gear fence",
+    "definition": "A fence looking much like a wing nut with a gear mounted to it. The gear is not fused to the fence but can turn independantly but with some friction. Also known as a [Friction Fence](/#/glossary?term=Friction%20Fence)."
   },
   {
     "term": "rotating fingerpins",
@@ -1793,6 +1893,18 @@
     "definition": "Sheet metal between 2 discs or levers that remains stationary, allowing the rotation of one element to not affect adjacent one."
   },
   {
+    "term": "spindle",
+    "definition": "The shaft that the dial is mounted to, which transfers movement to the cam"
+  },
+  {
+    "term": "spline",
+    "definition": "The groove cut along the spindle."
+  },
+  {
+    "term": "spline key",
+    "definition": "Small 'key' used to lock the drive cam to the spindle."
+  },
+  {
     "term": "spool",
     "definition": "A pin shaped like a spool of thread, with wider ends than the middle.",
     "media": {
@@ -1823,6 +1935,10 @@
     "definition": "[Sliders](/#/glossary?term=slider) that are subject to spring tension keeping them in place."
   },
   {
+    "term": "spy guard",
+    "definition": "Use with top reading dials, leaves only a window from the top from which to read the dial."
+  },
+  {
     "term": "SSDeV",
     "definition": "Acronym for \"Sportsfreunden der Sperrtechnik - Deuchland, e.V.\", which liberally translates to \"sports fans of barrier technology (fans of locksport) - Germany\". It's a german based locksport association, promoting championships, as well as research, science and education projects in locksport. Well known internationally for developing some useful pick designs.",
     "media": {
@@ -1832,6 +1948,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498338309/in/album-72177720314444642/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53498338309_47547f8bde_o.jpg"
     }
+  },
+  {
+    "term": "standard format",
+    "definition": "The smaller magic-module size."
   },
   {
     "term": "standard pin",
@@ -1930,6 +2050,10 @@
   {
     "term": "top of the keyway",
     "definition": "The area of the keyway on the same side of the pins in a normal pin-tumbler lock. Is positioned at the top of the lock when the bible is upwards. In regular euro cylinder installation with the bible downwards, it will be the bottom part of the keyway."
+  },
+  {
+    "term": "top-reading",
+    "definition": "Dial is read from above the dial (perpendicular with spindle orientation)."
   },
   {
     "term": "torpedo keypins",
@@ -2063,6 +2187,10 @@
     "definition": "Describes a lock that is available in different physical formats, such as padlocks as well as door cylinders."
   },
   {
+    "term": "vault format",
+    "definition": "The larger magic-module size."
+  },
+  {
     "term": "VdS",
     "definition": "VdS certification is assigned by VdS Schadenverhütung GmbH, a german based institution specialising in fire protection, security and natural disaster prevention. Among other services, tests security products and certifies them by assigning them to classes which are used by insurance companies and the police. In locks, it's most commonly used for certification of security cabinets, safes, safe locks and strongboxes, but also comercial and residence locking systems and cylinders."
   },
@@ -2108,6 +2236,14 @@
     }
   },
   {
+    "term": "wheel",
+    "definition": "A round disc with a cut (gate) which determines the correct number for that wheel."
+  },
+  {
+    "term": "wheel shadowing",
+    "definition": "When a wheel hides a gate by having a side sitting above a gate, so the gate is never tried by the fence. Usually used when referring to locks with out-of-round wheels."
+  },
+  {
     "term": "wiper insert",
     "definition": "Steel insert from a windscreen wiper, often used to make tensioners - Or the tensioner made in the shape of such, usually BOK tensioners.",
     "media": {
@@ -2139,6 +2275,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455518409/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455518409_ca41b88b9f_o.jpg"
     }
+  },
+  {
+    "term": "zero change",
+    "definition": "When the change index is the same as the dialling index on key change locks. This requires a mechanism to hold the fence away from the wheels when the lock is in change mode."
   },
   {
     "term": "zero-bitted",
