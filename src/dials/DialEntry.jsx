@@ -13,7 +13,6 @@ import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
 import DialImageGallery from './DialImageGallery'
-import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined'
 
 function DialEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -49,7 +48,7 @@ function DialEntry({entry, expanded, onExpand}) {
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                <div style={{margin: '12px 0px 8px 8px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '12px 0px 8px 8px', width: '60%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         value={
                             <Typography
@@ -62,7 +61,7 @@ function DialEntry({entry, expanded, onExpand}) {
                     />
                 </div>
 
-                <div style={{margin: '8px 0px 0px 0px', width: '25%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '8px 0px 0px 0px', width: '30%', flexShrink: 0, flexDirection: 'column'}}>
                     {
                         entry.group &&
                         <FieldValue value={
@@ -70,21 +69,6 @@ function DialEntry({entry, expanded, onExpand}) {
                         }/>
                     }
                 </div>
-
-                {!!entry.media?.length &&
-                    <React.Fragment>
-                        <div style={{
-                            margin: '18px 0px 0px 0px',
-                            width: '20%',
-                            flexShrink: 0,
-                            flexDirection: 'column',
-                            textAlign: 'center',
-                            color: '#aaa'
-                        }}>
-                            <ImageOutlinedIcon/>
-                        </div>
-                    </React.Fragment>
-                }
             </AccordionSummary>
             {
                 expanded &&
