@@ -1372,7 +1372,7 @@
         "model": "Brass Padlocks"
       }
     ],
-    "version": "50mm or larger (5 pins)",
+    "version": "50mm or larger (≥5 pins)",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -1392,7 +1392,7 @@
     "relatedIds": [
       "8cb1a776"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.017Z"
+    "lastUpdated": "2024-03-12T13:57:51.424Z"
   },
   {
     "id": "50fbf666",
@@ -3105,7 +3105,7 @@
         "model": "64Ti Titalium"
       }
     ],
-    "version": "40mm or larger (5+ pins)",
+    "version": "40mm or larger (≥5 pins)",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -3135,7 +3135,7 @@
       }
     ],
     "views": 2146,
-    "lastUpdated": "2023-07-25T11:20:19.883Z"
+    "lastUpdated": "2024-03-12T13:57:51.424Z"
   },
   {
     "id": "a0e50505",
@@ -19453,7 +19453,7 @@
         "model": "KX3"
       }
     ],
-    "version": "exterior, 6+ sliders",
+    "version": "exterior, ≥ 6 sliders",
     "lockingMechanisms": [
       "Slider",
       "Pin-tumbler"
@@ -19525,7 +19525,7 @@
     "relatedIds": [
       "40e50dd4"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.023Z"
+    "lastUpdated": "2024-03-12T13:57:51.433Z"
   },
   {
     "id": "6f5e0d32",
@@ -20549,7 +20549,7 @@
         "model": "Original Camlock"
       }
     ],
-    "version": "5+ pins ******",
+    "version": "≥ 5 pins ******",
     "lockingMechanisms": [
       "Slider",
       "Sidebar"
@@ -20586,7 +20586,7 @@
     "relatedIds": [
       "a9e47067"
     ],
-    "lastUpdated": "2024-01-31T17:28:08.808Z"
+    "lastUpdated": "2024-03-12T13:57:51.434Z"
   },
   {
     "id": "826c31e0",
@@ -20605,7 +20605,7 @@
         "model": "M3"
       }
     ],
-    "version": "5+ pins ******",
+    "version": "≥ 5 pins ******",
     "lockingMechanisms": [
       "Sidebar",
       "Pin-tumbler"
@@ -20710,7 +20710,7 @@
       }
     ],
     "views": 1400,
-    "lastUpdated": "2024-02-08T02:04:15.205Z"
+    "lastUpdated": "2024-03-12T13:57:51.434Z"
   },
   {
     "id": "06a28ac7",
@@ -21082,7 +21082,7 @@
         "model": "Interactive"
       }
     ],
-    "version": "5 pin stacks, 4+ spooled drivers, <3 countermilled outer keypins",
+    "version": "5 pin stacks, ≥ 4 spooled drivers, <3 countermilled outer keypins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -21142,7 +21142,7 @@
       }
     ],
     "views": 804,
-    "lastUpdated": "2023-10-22T12:12:34.722Z"
+    "lastUpdated": "2024-03-12T13:57:51.434Z"
   },
   {
     "id": "16906a6c",
@@ -25665,7 +25665,7 @@
         "model": "Interactive"
       }
     ],
-    "version": "5 pin stacks, spooled inner drivers with 3+ counter milled outer keypins",
+    "version": "5 pin stacks, spooled inner drivers with ≥ 3 counter milled outer keypins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -25751,7 +25751,7 @@
       "48323cde",
       "5c5701d7"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.025Z"
+    "lastUpdated": "2024-03-12T13:57:51.437Z"
   },
   {
     "id": "cc5bbb68",
@@ -26762,7 +26762,7 @@
         "model": "700"
       }
     ],
-    "version": "7 pin, with gin/tree pins and matching countermilling in 4+ chambers, < 2 tree pins",
+    "version": "7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -26812,7 +26812,7 @@
       "ef4e0295",
       "f133510b"
     ],
-    "lastUpdated": "2024-01-18T11:44:42.992Z"
+    "lastUpdated": "2024-03-12T13:57:51.437Z"
   },
   {
     "id": "ef4e0295",
@@ -29449,7 +29449,7 @@
         "model": "2391 Safe Deposit Lock"
       }
     ],
-    "version": "barrels 3+ chambers with matched milling",
+    "version": "barrels ≥ 3 chambers with matched milling",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -29488,7 +29488,7 @@
       "94ee12b7",
       "112d0034"
     ],
-    "lastUpdated": "2024-01-18T11:44:42.993Z"
+    "lastUpdated": "2024-03-12T13:57:51.439Z"
   },
   {
     "id": "112d0034",
@@ -29499,7 +29499,7 @@
         "model": "2391 Safe Deposit Lock"
       }
     ],
-    "version": "gins 3+ chambers with matched milling",
+    "version": "gins ≥ 3 chambers with matched milling",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -29544,7 +29544,7 @@
       "94ee12b7",
       "9da7a5f2"
     ],
-    "lastUpdated": "2024-01-18T11:44:42.993Z"
+    "lastUpdated": "2024-03-12T13:57:51.439Z"
   },
   {
     "id": "4a7db3c6",
@@ -29912,7 +29912,7 @@
         "model": "Showa NX"
       }
     ],
-    "version": "≥13 pins",
+    "version": "≥ 13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -29939,7 +29939,7 @@
     "relatedIds": [
       "b91890bf"
     ],
-    "lastUpdated": "2023-12-11T12:10:16.213Z"
+    "lastUpdated": "2024-03-12T13:57:51.439Z"
   },
   {
     "id": "17d41d80",
@@ -30663,7 +30663,7 @@
         "model": "700"
       }
     ],
-    "version": "gin/tree pins and matching countermilling in 4+ chambers, ≥ 2 tree pins",
+    "version": "gin/tree pins and matching countermilling in ≥ 4 chambers, ≥ 2 tree pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -30720,7 +30720,7 @@
       "ef4e0295",
       "e3bd3faf"
     ],
-    "lastUpdated": "2024-01-18T11:44:42.994Z"
+    "lastUpdated": "2024-03-12T13:57:51.440Z"
   },
   {
     "id": "6e59ba12",
@@ -32189,7 +32189,7 @@
         "model": "Emhart"
       }
     ],
-    "version": "2+ mastered chambers **",
+    "version": "≥ 2 mastered chambers **",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -32267,7 +32267,7 @@
       "c4f942f0",
       "bf43348b"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.027Z"
+    "lastUpdated": "2024-03-12T13:57:51.440Z"
   },
   {
     "id": "57fbcb1b",
@@ -33675,7 +33675,7 @@
         "model": "Z"
       }
     ],
-    "version": "<2 standard drivers",
+    "version": "< 2 standard drivers",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -33717,7 +33717,7 @@
     "relatedIds": [
       "937eb7a8"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.028Z"
+    "lastUpdated": "2024-03-12T13:57:51.441Z"
   },
   {
     "id": "e8c7dd5b",
@@ -34127,7 +34127,7 @@
         "model": "Star"
       }
     ],
-    "version": "4 directions, 15+ pins",
+    "version": "4 directions, ≥ 15 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -34237,7 +34237,7 @@
     "relatedIds": [
       "eed91da5"
     ],
-    "lastUpdated": "2024-02-08T02:04:15.210Z"
+    "lastUpdated": "2024-03-12T13:57:51.441Z"
   },
   {
     "id": "68b5a797",
@@ -34564,7 +34564,7 @@
         "model": "Star"
       }
     ],
-    "version": "5+ rows, 16-20 pins",
+    "version": "≥ 5 rows, 16-20 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -34592,7 +34592,7 @@
       "43deff29",
       "dfa88b94"
     ],
-    "lastUpdated": "2024-02-08T02:04:15.210Z"
+    "lastUpdated": "2024-03-12T13:57:51.442Z"
   },
   {
     "id": "dfa88b94",
@@ -34603,7 +34603,7 @@
         "model": "Star"
       }
     ],
-    "version": "5+ rows, 21 or more pins",
+    "version": "≥ 5 rows, 21 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -34631,7 +34631,7 @@
       "43deff29",
       "3ddfc71c"
     ],
-    "lastUpdated": "2024-02-08T02:04:15.210Z"
+    "lastUpdated": "2024-03-12T13:57:51.442Z"
   },
   {
     "id": "f87db705",
@@ -36140,7 +36140,7 @@
         "model": "Radial NT+"
       }
     ],
-    "version": "18+ pins",
+    "version": "≥ 18 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -36217,7 +36217,7 @@
       "40e99be0",
       "4db59eb3"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.028Z"
+    "lastUpdated": "2024-03-12T13:57:51.443Z"
   },
   {
     "id": "23437955",
