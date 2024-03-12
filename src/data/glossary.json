@@ -1162,7 +1162,7 @@
     }
   },
   {
-    "term": "moveable fly",
+    "term": "moveable flies",
     "definition": "Fly that can move about 8 increments, used to allow the whole keyspace of a wheel."
   },
   {

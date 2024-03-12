@@ -1,12 +1,60 @@
 [
   {
+    "id": "761d2fe8",
+    "make": "Big Red",
+    "model": "CDL-3",
+    "group": "2M",
+    "fence": "",
+    "wheels": "",
+    "digits": "0-99",
+    "features": [],
+    "media": [
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53582221502_78dfa05039_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53582221502/in/album-72177720315386952/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53582221502_79201f19ff_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583090421_e816613cf4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583090421/in/album-72177720315386952/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583090421_04295d45d0_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583416539_58acbd1d08_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583416539/in/album-72177720315386952/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583416539_397c6906a2_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583313673_d0e055029f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583313673/in/album-72177720315386952/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583313673_b3c5dde496_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583091526_24ce0a127c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583091526/in/album-72177720315386952/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-03-12T13:57:51.471Z"
+  },
+  {
     "id": "693fd901",
     "make": "Big Red",
     "model": "CDL-4",
-    "group": "",
+    "group": "2",
     "fence": "",
     "wheels": "",
-    "digits": "",
+    "digits": "0-99",
     "features": [],
     "media": [
       {
@@ -37,7 +85,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541613125/in/album-72177720314940324/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-03-12T13:57:51.472Z"
   },
   {
     "id": "e24e62b7",
@@ -153,6 +202,40 @@
     ]
   },
   {
+    "id": "3ad83c5d",
+    "make": "Kromer",
+    "model": "3001",
+    "group": "",
+    "fence": "",
+    "wheels": "",
+    "digits": "",
+    "features": [],
+    "media": [
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583144211_2911b40d49_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583144211/in/album-72177720315387732/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583144211_fd4883ef5d_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583469744_55e0deab5e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583469744/in/album-72177720315387732/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583469744_9736e8f02d_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583469899_fc8c7db7bc_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583469899/in/album-72177720315387732/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-03-12T13:57:51.472Z"
+  },
+  {
     "id": "610d201c",
     "make": "Kromer",
     "model": "3011",
@@ -166,7 +249,45 @@
       "Anti-Punch Relocker",
       "Vault Format",
       "Indirect drive"
-    ]
+    ],
+    "media": [
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583353143_2c3fd1decd_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583353143/in/album-72177720315395151/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583353143_88a3c6d5a2_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583353543_5ef297149c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583353543/in/album-72177720315395151/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583353543_b15bfcb3bb_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583456504_3fb5519817_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583456504/in/album-72177720315395151/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583456504_e752282741_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583578150_ec9082129a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583578150/in/album-72177720315395151/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583578150_a6f50568f5_o.jpg"
+      },
+      {
+        "title": "By: Octane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53582263557_9bb7c1c542_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53582263557/in/album-72177720315395151/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-03-12T13:57:51.472Z"
   },
   {
     "id": "f59d47b3",
@@ -588,6 +709,47 @@
       "False Gates",
       "Sprung Double-Cam"
     ]
+  },
+  {
+    "id": "ae66f9a6",
+    "make": "Sargent & Greenleaf",
+    "model": "2937",
+    "group": "1",
+    "fence": "",
+    "wheels": "",
+    "digits": "0-99",
+    "features": [],
+    "media": [
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53582243157_794f3c2dc3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53582243157/in/album-72177720315399818/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53582243157_e38f43829d_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53582243582_f82beeda91_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53582243582/in/album-72177720315399818/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53582243582_a9187905e6_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53582243732_df587c4235_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53582243732/in/album-72177720315399818/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53582243732_e428a04676_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53583438689_a5efcb8957_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583438689/in/album-72177720315399818/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53583438689_3d27ab0734_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-03-12T13:57:51.472Z"
   },
   {
     "id": "a7258495",
