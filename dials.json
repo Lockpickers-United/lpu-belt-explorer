@@ -1,9 +1,9 @@
 [
   {
     "id": "761d2fe8",
-    "make": "Big Red",
-    "model": "CDL-3",
-    "group": "2M",
+    "make": "Big Red, Big Red",
+    "model": "CDL-3, CDL-3M",
+    "group": "2, 2M",
     "fence": "",
     "wheels": "",
     "digits": "0-99",
@@ -45,7 +45,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.471Z"
+    "lastUpdated": "2024-03-13T13:14:51.871Z"
   },
   {
     "id": "693fd901",
