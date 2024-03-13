@@ -1,11 +1,11 @@
 [
   {
     "id": "761d2fe8",
-    "make": "Big Red, Big Red",
+    "make": "Big Red",
     "model": "CDL-3, CDL-3M",
     "group": "2, 2M",
     "fence": "",
-    "wheels": "",
+    "wheels": "3",
     "digits": "0-99",
     "features": [],
     "media": [
@@ -45,15 +45,15 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-13T13:14:51.871Z"
+    "lastUpdated": "2024-03-13T13:31:49.596Z"
   },
   {
     "id": "693fd901",
     "make": "Big Red",
-    "model": "CDL-4",
-    "group": "2",
+    "model": "CDL-4, CDL-4M",
+    "group": "2, 2M",
     "fence": "",
-    "wheels": "",
+    "wheels": "4",
     "digits": "0-99",
     "features": [],
     "media": [
@@ -86,7 +86,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-03-13T13:31:49.596Z"
   },
   {
     "id": "e24e62b7",
