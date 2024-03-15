@@ -3,7 +3,9 @@ import React from 'react'
 function LeaderboardName({leader, isCurrentUser}) {
     const style = {
         textDecoration: 'none',
-        color: isCurrentUser ? '#4db013' : '#fff'
+        color: isCurrentUser
+            ? '#4db013'
+            : leader.displayName !== 'anonymous' ? '#fff' : '#777'
     }
     if (leader.displayName) {
         const safeName = leader.displayName.replace(/\s/g, '_')
