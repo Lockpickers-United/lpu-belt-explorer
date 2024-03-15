@@ -72,7 +72,7 @@ function EditProfilePage() {
             <CardContent>
                 <Typography>
                     Set a display name for your profile.
-                    Public profiles can be shared and show nicknames on the leaderboard.
+                    Public profiles can be shared and will appear on the leaderboard.
                 </Typography>
                 <br/>
                 <Stack direction='row'>

@@ -33,14 +33,14 @@ function LeaderboardRow({index, leader, highlighted, scrollableRef}) {
                 ...style
             }}
         >
-            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={index + 1}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={
+            <LeaderboardCell isCurrentUser={isCurrentUser} value={index + 1}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} value={
                 <LeaderboardName isCurrentUser={isCurrentUser} leader={leader}/>
             } align='left'/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.own}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.picked}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.recorded}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} leader={leader} value={leader.wishlist}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.own}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.picked}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.recorded}/>
+            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.wishlist}/>
         </TableRow>
     )
 }

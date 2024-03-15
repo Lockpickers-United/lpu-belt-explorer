@@ -16,6 +16,10 @@ function Leaderboard({data, loading}) {
     const {user} = useContext(AuthContext)
     const scrollableRef = useRef()
 
+    const filteredData = useMemo(() => {
+        return data.data.filter(datum => datum.displayName !== 'anonymous')
+    }, [data.data])
+
     const {highlightedUser, sort} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
@@ -25,9 +29,9 @@ function Leaderboard({data, loading}) {
     }, [location.search])
 
     const sortedData = useMemo(() => {
-        if (sort) return data.data.toSorted((a, b) => b[sort] - a[sort])
-        else return data.data
-    }, [sort, data])
+        if (sort) return filteredData.toSorted((a, b) => b[sort] - a[sort])
+        else return filteredData
+    }, [sort, filteredData])
 
     const updateTime = dayjs(data.metadata.updatedDateTime).format('MM/DD/YY HH:mm')
 

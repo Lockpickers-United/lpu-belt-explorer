@@ -30,6 +30,7 @@
         "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.15.4",
         "@mui/material": "^5.15.4",
+        "@mui/styles": "^5.15.13",
         "@nivo/bar": "^0.84.0",
         "@nivo/line": "^0.84.0",
         "@nivo/pie": "^0.84.0",
