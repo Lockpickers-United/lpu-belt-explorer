@@ -1,34 +1,33 @@
 import Stack from '@mui/material/Stack'
-import Switch from '@mui/material/Switch'
 import React, {useCallback, useContext, useState} from 'react'
-import Typography from '@mui/material/Typography'
 import {enqueueSnackbar} from 'notistack'
-import SaveIcon from '@mui/icons-material/Save'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
-import IconButton from '@mui/material/IconButton'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
+import Button from '@mui/material/Button'
+import CardActions from '@mui/material/CardActions'
 
 function EditProfilePage() {
-    const {lockCollection, updateProfileVisibility} = useContext(DBContext)
+    const {lockCollection, updateProfileVisibility, clearProfile} = useContext(DBContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
-    const [visibility, setVisibility] = useState(!!lockCollection.public)
+    const [visibility] = useState(true)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
+
+    const profileType = !lockCollection?.displayName
+        ? 'none'
+        : lockCollection?.public
+            ? 'public'
+            : 'private'
 
     const handleChange = useCallback(event => {
         const {value} = event.target
         setDisplayName(value)
-    }, [])
-
-    const handleCheckChange = useCallback(event => {
-        const {checked} = event.target
-        setVisibility(checked)
     }, [])
 
     const handleFocus = useCallback(event => event.target.select(), [])
@@ -37,43 +36,79 @@ function EditProfilePage() {
         try {
             await updateProfileVisibility(visibility, displayName)
             enqueueSnackbar('Updated profile.')
+            // TODO: new display name doesn't show up on view profile until refresh
             navigate(`/profile/${user.uid}`)
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile.')
         }
-    }, [navigate, displayName, updateProfileVisibility, user?.uid, visibility])
+    }, [updateProfileVisibility, visibility, displayName, navigate, user.uid])
 
-    const error = visibility && !pattern.test(displayName)
+    const handleClearProfile = useCallback(async () => {
+        try {
+            await clearProfile()
+            setDisplayName('')
+            enqueueSnackbar('Display Name cleared.')
+            // TODO: cleared display name doesn't show up on view profile until refresh
+            //navigate(`/profile/${user.uid}`)
+        } catch (ex) {
+            console.error('Error while updating profile', ex)
+            enqueueSnackbar('Error while updating profile.')
+        }
+    }, [clearProfile])
 
+    const error = displayName.length > 0 && !pattern.test(displayName.toString())
+    const noSave = displayName.length === 0
+        || (displayName === lockCollection?.displayName && profileType !== 'private')
     const helperText = error
-        ? displayName.length === 0
-            ? 'Public profiles must have a display name.'
-            : 'Display name must only include A-Z, 0-9, _ and -.'
-        : visibility === true
-            ? `Your profile will be public, as ${displayName}.`
-            : 'Your profile will be private'
+        ? 'Display name must only include A-Z, 0-9, _ and -.'
+        : ''
+
+    const cardTitleText = displayName.length > 0
+        ? 'Edit Profile'
+        : 'Create Profile'
+    const introNameText = displayName.length > 0
+        ? ` (${displayName}) `
+        : ''
+    const saveButtonText = profileType === 'private'
+        ? 'Save As Public'
+        : 'Save'
 
     return (
         <Card style={{
-            maxWidth: 350,
+            maxWidth: 380,
             marginLeft: 'auto',
             marginRight: 'auto',
             marginTop: 16,
-            marginButtom: 16
+            marginBottom: 46
         }}>
-            <CardHeader title='Edit Profile' action={
-                <Tooltip title='Save' arrow disableFocusListener>
-                    <IconButton onClick={handleSave} disabled={error}>
-                        <SaveIcon color={error ? undefined : 'success'}/>
-                    </IconButton>
-                </Tooltip>
-            }/>
+            <CardHeader title={cardTitleText} action={null}/>
             <CardContent>
-                <Typography>
-                    Set a display name for your profile.
-                    Public profiles can be shared and will appear on the leaderboard.
-                </Typography>
+                {profileType === 'none' &&
+                    <div style={{marginBottom: 10}}>
+                        Your display name will show up on the leaderboard and
+                        your profile can be shared with others.
+                        <br/><br/>
+                        Your Google login information will never be displayed to other users.
+                    </div>
+                }
+                {profileType === 'public' &&
+                    <div style={{marginBottom: 10}}>
+                        Your display name {introNameText} shows up on the leaderboard and
+                        your profile can be shared by clicking the link icon above.
+                        <br/><br/>
+                        Your Google login information will never be displayed to other users.
+                    </div>
+                }
+                {profileType === 'private' &&
+                    <div style={{marginBottom: 10}}>
+                        Private profiles are going away soon.
+                        Click Save to make your profile public or Clear to remove your display name.
+                        Public profiles can be shared and will appear on the leaderboard.
+                        <br/><br/>
+                        No matter what you choose, your Google login information will never be displayed to other users.
+                    </div>
+                }
                 <br/>
                 <Stack direction='row'>
                     <TextField
@@ -90,16 +125,34 @@ function EditProfilePage() {
                             maxLength: 32
                         }}
                     />
-                    <div style={{textAlign: 'center', width: 100}}>
-                        {visibility ? 'Public' : 'Private'}
-                        <Switch
-                            checked={visibility}
-                            color='secondary'
-                            onChange={handleCheckChange}
-                        />
-                    </div>
                 </Stack>
             </CardContent>
+            <CardActions>
+                <div style={{width: '100%', textAlign: 'right', margin: '0px 10px 10px 0px'}}>
+                    {lockCollection?.displayName &&
+                        <Tooltip title='Clear Profile' arrow disableFocusListener>
+                            <Button variant='outlined'
+                                    color='info'
+                                    onClick={handleClearProfile}
+                                    disabled={error}
+                                    style={{marginBottom: 10, color: '#4972ab'}}
+                            >
+                                Clear Display Name
+                            </Button>
+                        </Tooltip>
+                    }
+                    <Tooltip title='Save' arrow disableFocusListener>
+                        <Button variant='outlined'
+                                color={error ? undefined : 'success'}
+                                onClick={handleSave}
+                                disabled={error || noSave}
+                                style={{marginLeft: 15, marginBottom: 10}}
+                        >
+                            {saveButtonText}
+                        </Button>
+                    </Tooltip>
+                </div>
+            </CardActions>
         </Card>
     )
 }

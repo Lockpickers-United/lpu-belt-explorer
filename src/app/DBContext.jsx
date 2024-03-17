@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, deleteField} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -61,6 +61,17 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const clearProfile = useCallback(async () => {
+        if (dbError) return false
+        const ref = doc(db, 'lockcollections', user.uid)
+        await runTransaction(db, async transaction => {
+            transaction.update(ref, {
+                displayName: deleteField(),
+                public: deleteField()
+            })
+        })
+    }, [dbError, user])
+
     const getProfile = useCallback(async userId => {
         const ref = doc(db, 'lockcollections', userId)
         const value = await getDoc(ref)
@@ -84,7 +95,7 @@ export function DBProvider({children}) {
                 setDbError(true)
                 enqueueSnackbar('There was a problem reading your collection. It will be unavailable until you refresh the page. ', {
                     autoHideDuration: null,
-                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>,
+                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
                 })
             })
         } else if (authLoaded) {
@@ -99,8 +110,9 @@ export function DBProvider({children}) {
         addToLockCollection,
         removeFromLockCollection,
         getProfile,
-        updateProfileVisibility
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility])
+        updateProfileVisibility,
+        clearProfile
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile])
 
     return (
         <DBContext.Provider value={value}>
