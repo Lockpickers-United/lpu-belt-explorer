@@ -29,11 +29,12 @@ function ProfileRoute() {
     const {getProfile} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
-    const loadFn = useCallback(() => {
+    const loadFn = useCallback(async () => {
         try {
-            return getProfile(userId)
+            return await getProfile(userId)
         } catch (ex) {
             console.error('Error loading profile.', ex)
+            return null
         }
     }, [getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
@@ -71,7 +72,7 @@ function ProfileRoute() {
 
                         {!loading && data && !error && <ProfilePage profile={data}/>}
                         {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
-                        {!loading && error && <ProfileNotFound/>}
+                        {!loading && (!data || error) && <ProfileNotFound/>}
 
                         <Footer/>
 

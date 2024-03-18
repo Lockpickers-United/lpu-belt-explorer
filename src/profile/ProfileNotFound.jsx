@@ -18,7 +18,7 @@ function ProfileNotFound() {
             <CardHeader title='Profile Not Found!'/>
             <CardContent>
                 <Typography variant='h6' align='center'>
-                    This profile was not found, or is not public.
+                    This profile was not found.
                 </Typography>
             </CardContent>
         </Card>

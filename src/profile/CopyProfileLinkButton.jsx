@@ -20,7 +20,7 @@ function CopyProfileLinkButton() {
         enqueueSnackbar('Link to entry copied to clipboard.')
     }, [user?.uid, lockCollection?.displayName])
 
-    if (!user || (!!userId && userId !== user.uid) || !lockCollection?.displayName) return null
+    if (!user || userId !== user.uid || !lockCollection?.displayName || lockCollection?.public === false) return null
     return (
         <Tooltip title='Copy My Profile Link' arrow disableFocusListener>
             <IconButton onClick={handleClick}>

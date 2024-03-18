@@ -15,7 +15,7 @@ function LeaderboardFindMeButton() {
         navigate('/leaderboard?user=me')
     }, [navigate])
 
-    if (!isLoggedIn || !lockCollection?.public) return null
+    if (!isLoggedIn || lockCollection?.public === false || !lockCollection?.displayName) return null
     return (
         <Tooltip title='Find Me' arrow disableFocusListener>
             <IconButton color='inherit' onClick={handleClick}>

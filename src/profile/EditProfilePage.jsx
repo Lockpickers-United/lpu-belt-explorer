@@ -13,7 +13,6 @@ import CardActions from '@mui/material/CardActions'
 function EditProfilePage() {
     const {lockCollection, updateProfileVisibility, clearProfile} = useContext(DBContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
-    const [visibility] = useState(true)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
 
@@ -32,13 +31,13 @@ function EditProfilePage() {
 
     const handleSave = useCallback(async () => {
         try {
-            await updateProfileVisibility(visibility, displayName)
+            await updateProfileVisibility(true, displayName)
             enqueueSnackbar('Profile updated')
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile')
         }
-    }, [updateProfileVisibility, visibility, displayName])
+    }, [updateProfileVisibility, displayName])
 
     const handleClearProfile = useCallback(async () => {
         try {

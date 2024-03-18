@@ -9,6 +9,8 @@ function useData({url, urls, loadFn}) {
 
     const loadData = useCallback(async () => {
         try {
+            setLoading(true)
+
             let value
             if (url) {
                 const response = await fetch(url, {cache: 'no-store'})
@@ -41,9 +43,7 @@ function useData({url, urls, loadFn}) {
 
     useEffect(() => {
         loadData()
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [loadData])
 
     return useMemo(() => ({
         loading,
