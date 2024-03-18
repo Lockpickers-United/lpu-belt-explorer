@@ -1,11 +1,9 @@
-import Stack from '@mui/material/Stack'
 import React, {useCallback, useContext, useState} from 'react'
 import {enqueueSnackbar} from 'notistack'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardHeader from '@mui/material/CardHeader'
 import TextField from '@mui/material/TextField'
-import Tooltip from '@mui/material/Tooltip'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
@@ -35,27 +33,27 @@ function EditProfilePage() {
     const handleSave = useCallback(async () => {
         try {
             await updateProfileVisibility(visibility, displayName)
-            enqueueSnackbar('Updated profile.')
-            // TODO: new display name doesn't show up on view profile until refresh
-            navigate(`/profile/${user.uid}`)
+            enqueueSnackbar('Profile updated')
         } catch (ex) {
             console.error('Error while updating profile', ex)
-            enqueueSnackbar('Error while updating profile.')
+            enqueueSnackbar('Error while updating profile')
         }
-    }, [updateProfileVisibility, visibility, displayName, navigate, user.uid])
+    }, [updateProfileVisibility, visibility, displayName])
 
     const handleClearProfile = useCallback(async () => {
         try {
             await clearProfile()
             setDisplayName('')
-            enqueueSnackbar('Display Name cleared.')
-            // TODO: cleared display name doesn't show up on view profile until refresh
-            //navigate(`/profile/${user.uid}`)
+            enqueueSnackbar('Display Name cleared')
         } catch (ex) {
             console.error('Error while updating profile', ex)
-            enqueueSnackbar('Error while updating profile.')
+            enqueueSnackbar('Error while updating profile')
         }
     }, [clearProfile])
+
+    const handleViewProfile = useCallback(() => {
+        navigate(`/profile/${user.uid}`)
+    }, [navigate, user.uid])
 
     const error = displayName.length > 0 && !pattern.test(displayName.toString())
     const noSave = displayName.length === 0
@@ -71,8 +69,11 @@ function EditProfilePage() {
         ? ` (${displayName}) `
         : ''
     const saveButtonText = profileType === 'private'
-        ? 'Save As Public'
+        ? 'Save Public'
         : 'Save'
+    const inputWidth = profileType === 'private'
+        ? 200
+        : 260
 
     return (
         <Card style={{
@@ -110,10 +111,9 @@ function EditProfilePage() {
                     </div>
                 }
                 <br/>
-                <Stack direction='row'>
+                <div style={{width: '100%'}}>
                     <TextField
                         error={error}
-                        fullWidth
                         variant='outlined'
                         color='secondary'
                         label='Display Name'
@@ -124,34 +124,41 @@ function EditProfilePage() {
                         inputProps={{
                             maxLength: 32
                         }}
+                        size='small'
+                        style={{width:inputWidth}}
+
                     />
-                </Stack>
-            </CardContent>
-            <CardActions>
-                <div style={{width: '100%', textAlign: 'right', margin: '0px 10px 10px 0px'}}>
-                    {lockCollection?.displayName &&
-                        <Tooltip title='Clear Profile' arrow disableFocusListener>
-                            <Button variant='outlined'
-                                    color='info'
-                                    onClick={handleClearProfile}
-                                    disabled={error}
-                                    style={{marginBottom: 10, color: '#4972ab'}}
-                            >
-                                Clear Display Name
-                            </Button>
-                        </Tooltip>
-                    }
-                    <Tooltip title='Save' arrow disableFocusListener>
                         <Button variant='outlined'
                                 color={error ? undefined : 'success'}
                                 onClick={handleSave}
                                 disabled={error || noSave}
-                                style={{marginLeft: 15, marginBottom: 10}}
+                                style={{marginLeft: 16, marginRight:0, marginBottom: 10, height:40}}
                         >
                             {saveButtonText}
                         </Button>
-                    </Tooltip>
                 </div>
+            </CardContent>
+            <CardActions>
+                <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
+                    {lockCollection?.displayName &&
+                            <Button variant='outlined'
+                                    color='info'
+                                    onClick={handleClearProfile}
+                                    disabled={error}
+                                    style={{marginBottom: 10, color: '#4972ab', padding:'5px 19px'}}
+                            >
+                                Clear Display Name
+                            </Button>
+                    }
+                        <Button variant='outlined'
+                                color='info'
+                                onClick={handleViewProfile}
+                                style={{marginLeft: 15, marginBottom: 10,  color: '#4972ab', padding:'5px 19px'}}
+                        >
+                            View Profile
+                        </Button>
+                </div>
+
             </CardActions>
         </Card>
     )
