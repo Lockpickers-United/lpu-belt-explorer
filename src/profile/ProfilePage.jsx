@@ -15,7 +15,7 @@ function ProfilePage({profile}) {
         <div style={{margin: 8, paddingBottom: 32}}>
 
             <InlineFilterDisplay profile={profile}/>
-            <InlineCollectionCharts profile={profile}/>
+            <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 
             {compact
                 ? <CompactEntries entries={visibleEntries}/>

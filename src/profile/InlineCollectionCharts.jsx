@@ -4,29 +4,20 @@ import CardContent from '@mui/material/CardContent'
 import useWindowSize from '../util/useWindowSize'
 import CollectionStatsBarProfile from './CollectionStatsBarProfile.jsx'
 import CollectionBeltBar from './CollectionBeltBar.jsx'
-import getAnyCollection from '../util/getAnyCollection'
-import DataContext from '../context/DataContext.jsx'
 import {uniqueBelts} from '../data/belts'
 import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
 
-function InlineCollectionCharts({profile}) {
+function InlineCollectionCharts({profile, entries}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const userProfile = profile
     const userText = userId === user?.uid ? 'You' : 'User'
 
-    const {getEntryFromId} = useContext(DataContext)
-
     const chartData = useMemo(() => {
-        const anyCollection = getAnyCollection(profile)
         const beltList = uniqueBelts.concat('Unranked')
 
-        const beltDistribution = anyCollection
-            .map(lockId => {
-                const belt = getEntryFromId(lockId).belt
-                return belt.includes('Black') ? 'Black' : belt
-            })
+        const beltDistribution = entries
+            .map(({belt}) => belt.includes('Black') ? 'Black' : belt)
             .reduce((acc, val) => {
                 if (!acc[val]) acc[val] = 0
                 acc[val]++
@@ -36,10 +27,10 @@ function InlineCollectionCharts({profile}) {
         return beltList.map(belt => ({
             id: belt,
             label: belt,
-            count: beltDistribution[belt],
-            value: beltDistribution[belt]
+            count: beltDistribution[belt] || 0,
+            value: beltDistribution[belt] || 0
         }))
-    }, [getEntryFromId, profile])
+    }, [entries])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -80,7 +71,7 @@ function InlineCollectionCharts({profile}) {
                 <div style={{textAlign: 'center'}}>
                     <div style={combinedDivStyle}>
                         <div style={{width: barDivWidth, verticalAlign: 'top', height: barDivHeight}}>
-                            <CollectionStatsBarProfile lockCollection={userProfile} userText={userText}
+                            <CollectionStatsBarProfile lockCollection={profile} userText={userText}
                                                        collectionBarHeight={170}/>
                         </div>
                         <div style={{width: pieDivWidth, height: pieDivHeight, marginTop: '0px'}}>
