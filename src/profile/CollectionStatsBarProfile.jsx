@@ -1,11 +1,9 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {ResponsiveBar} from '@nivo/bar'
-import {primaryTheme} from './chartDefaults'
+import {primaryTheme} from '../stats/chartDefaults'
 import useWindowSize from '../util/useWindowSize'
-import AuthContext from '../app/AuthContext'
 
-function CollectionStatsBar({lockCollection, userText, collectionBarHeight}) {
-    const {isLoggedIn} = useContext(AuthContext)
+function CollectionStatsBarProfile({lockCollection, userText, collectionBarHeight}) {
 
     const own = lockCollection.own ? lockCollection.own.length : 0
     const picked = lockCollection.picked ? lockCollection.picked.length : 0
@@ -24,6 +22,7 @@ function CollectionStatsBar({lockCollection, userText, collectionBarHeight}) {
         recorded: 0,
         wishlist: 0
     }
+
     const averages = {
         own: 14,
         picked: 11,
@@ -90,20 +89,21 @@ function CollectionStatsBar({lockCollection, userText, collectionBarHeight}) {
         ['#3c90c5', '#aaa', '#000',
             '#3c90c5', '#aaa']
 
-    const legendItems = isLoggedIn && lockCollection
-        ? [{title:userText, color: '#3c90c5', width: '14px'}]
+    const legendItems = lockCollection
+        ? [{title: userText, color: '#3c90c5', width: '14px'}]
         : []
     legendItems.push({title: 'Average', color: '#000', width: '35px'},
         {title: 'Top 10 Average', color: '#aaaaaa', width: '120px'})
 
     const Legend = ({items}) => (
         <div className='chart-legend' style={{
-            display: 'flex', fontSize: '.9rem', color: '#ddd', marginTop:13
+            display: 'flex', fontSize: '.9rem', color: '#ddd', marginTop: 13
         }}>
             <div style={{width: '100%'}}></div>
             {items.map(item => (
                     <div key={item.title} style={{display: 'flex', padding: '0px 18px 24px 18px'}}>
-                        <div style={{backgroundColor: item.color,
+                        <div style={{
+                            backgroundColor: item.color,
                             height: 15, width: 15,
                             margin: '2px 6px 0px 0px',
                             border: '1px solid #555'
@@ -133,12 +133,15 @@ function CollectionStatsBar({lockCollection, userText, collectionBarHeight}) {
                         tickSize: 5,
                         tickPadding: 5,
                         tickRotation: 0,
+                        tickValues: 5,
                         format: '00',
                         legend: 'Saves',
                         legendPosition: 'middle',
                         legendOffset: -45,
                         legendOpacity: 0.9
-
+                    }}
+                    axisBottom={{
+                        tickRotation: -45
                     }}
                     enableGridY={false}
                     isInteractive={false}
@@ -151,4 +154,4 @@ function CollectionStatsBar({lockCollection, userText, collectionBarHeight}) {
     )
 }
 
-export default CollectionStatsBar
+export default CollectionStatsBarProfile
