@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize'
 import LockViewsLine from './LockViewsLine'
 import SiteStats from './SiteStats'
@@ -12,14 +12,20 @@ import CollectionTopLocks from './CollectionTopLocks'
 import HourlyRequestsLine from './HourlyRequestsLine'
 import TrafficStats from './TrafficStats'
 import BrandDistribution from './BrandDistribution'
+import DBContext from '../app/DBContext.jsx'
 
 function StatsMainPage({data}) {
+
+    const {lockCollection} = useContext(DBContext)
+
     const {width} = useWindowSize()
+    const mobileSmall = width <= 360
     const smallWindow = width < 560
     const pagePadding = !smallWindow
         ? '24px 24px 32px 24px'
         : '8px 8px 32px 8px'
 
+    const collectionBarHeight = !smallWindow ? 320 : !mobileSmall ? 230 : 200
     const headerStyle = {margin: '46px 0px 26px 0px', width: '100%', backgroundColor: '#000', textAlign: 'center'}
     const firstHeaderStyle = {margin: '0px 0px 26px 0px', width: '100%', backgroundColor: '#000', textAlign: 'center'}
 
@@ -56,7 +62,8 @@ function StatsMainPage({data}) {
             <RedditBeltGrowth data={data}/>
 
             <div style={headerStyle}>Collection Stats</div>
-            <CollectionStatsBar/>
+
+            <CollectionStatsBar lockCollection={lockCollection} userText={'You'} collectionBarHeight={collectionBarHeight}/>
 
             <div style={headerStyle}>Collections Top Locks</div>
             <CollectionTopLocks data={data}/>

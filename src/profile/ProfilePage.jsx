@@ -4,6 +4,7 @@ import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import CompactEntries from '../locks/CompactEntries'
 import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
+import InlineCollectionCharts from './InlineCollectionCharts'
 
 function ProfilePage({profile}) {
     const {compact, expanded, setExpanded} = useContext(LockListContext)
@@ -12,6 +13,8 @@ function ProfilePage({profile}) {
 
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
+
+            <InlineCollectionCharts profile={profile}/>
             <InlineFilterDisplay profile={profile}/>
 
             {compact
