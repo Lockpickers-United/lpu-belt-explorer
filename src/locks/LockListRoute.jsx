@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
 import {lockFilterFields} from '../data/filterFields'
+import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import {LockListProvider} from './LockListContext'
 import {DataProvider} from './LockDataProvider'
@@ -24,6 +25,7 @@ import {lockSortFields} from '../data/sortFields'
 function LockListRoute() {
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
+    usePageTitle('Locks')
 
     const nav = (
         <React.Fragment>

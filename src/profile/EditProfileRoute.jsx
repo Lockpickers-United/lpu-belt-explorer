@@ -1,5 +1,6 @@
 import LinearProgress from '@mui/material/LinearProgress'
 import React, {useContext} from 'react'
+import {useDocumentTitle} from 'usehooks-ts'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
@@ -13,6 +14,7 @@ import MustBeLoggedIn from './MustBeLoggedIn'
 function ProfileRoute() {
     const {authLoaded, isLoggedIn} = useContext(AuthContext)
     const {dbLoaded} = useContext(DBContext)
+    useDocumentTitle('LPU Belt Explorer - Edit Profile')
 
     const nav = (
         <React.Fragment>

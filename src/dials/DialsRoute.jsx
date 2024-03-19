@@ -8,6 +8,7 @@ import SortButton from '../filters/SortButton'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
+import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import DialDataProvider from './DialDataProvider'
 import DialsPage from './DialsPage'
@@ -15,6 +16,7 @@ import dials from '../data/dials.json'
 
 function DialsRoute() {
     const {isMobile} = useWindowSize()
+    usePageTitle('Dials')
 
     const nav = (
         <React.Fragment>

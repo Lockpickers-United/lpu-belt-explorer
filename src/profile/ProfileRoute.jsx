@@ -31,7 +31,9 @@ function ProfileRoute() {
 
     const loadFn = useCallback(async () => {
         try {
-            return await getProfile(userId)
+            const profile = await getProfile(userId)
+            document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
+            return profile
         } catch (ex) {
             console.error('Error loading profile.', ex)
             return null
@@ -62,25 +64,23 @@ function ProfileRoute() {
     const title = loading ? 'Loading...' : 'Profile'
 
     return (
-        <React.Fragment>
-            <FilterProvider filterFields={lockFilterFields}>
-                <DataProvider allEntries={entries} profile={data}>
-                    <LockListProvider>
-                        <Nav title={title} extras={nav}/>
+        <FilterProvider filterFields={lockFilterFields}>
+            <DataProvider allEntries={entries} profile={data}>
+                <LockListProvider>
+                    <Nav title={title} extras={nav}/>
 
-                        {loading && <LoadingDisplay/>}
+                    {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error && <ProfilePage profile={data}/>}
-                        {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
-                        {!loading && (!data || error) && <ProfileNotFound/>}
+                    {!loading && data && !error && <ProfilePage profile={data}/>}
+                    {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
+                    {!loading && (!data || error) && <ProfileNotFound/>}
 
-                        <Footer/>
+                    <Footer/>
 
-                        <Tracker feature='profile'/>
-                    </LockListProvider>
-                </DataProvider>
-            </FilterProvider>
-        </React.Fragment>
+                    <Tracker feature='profile'/>
+                </LockListProvider>
+            </DataProvider>
+        </FilterProvider>
     )
 }
 

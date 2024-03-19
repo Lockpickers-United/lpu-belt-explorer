@@ -1,6 +1,7 @@
 import React from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
+import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
 import CollectionsSummaryTable from './collectionsReport/CollectionsSummaryTable'
@@ -13,6 +14,7 @@ import TopLocks from './collectionsReport/TopLocks'
 import {collectionsFull} from '../data/dataUrls'
 
 function CollectionsReportMain() {
+    usePageTitle('Collection Report')
     const {data, loading, error} = useData({url: collectionsFull})
 
     const updateTime = loading ? '--'

@@ -28,8 +28,8 @@ export default [
     {
         path: '/info',
         lazy: async () => {
-            const {default: LeaderboardRoute} = await import('../info/InfoRoute')
-            return {element: <LeaderboardRoute/>}
+            const {default: InfoRoute} = await import('../info/InfoRoute')
+            return {element: <InfoRoute/>}
         }
     },
     {

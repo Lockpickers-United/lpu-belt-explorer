@@ -4,6 +4,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
+import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import Leaderboard from './Leaderboard'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton'
@@ -16,6 +17,7 @@ import {
 function LeaderboardRoute() {
     const {isMobile} = useWindowSize()
     const {data, loading, error} = useData({url})
+    usePageTitle('Leaderboard')
 
     const nav = (
         <React.Fragment>

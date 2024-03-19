@@ -4,6 +4,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
+import usePageTitle from '../util/usePageTitle'
 import StatsMainPage from './StatsMainPage'
 import {
     brandDistribution,
@@ -16,6 +17,7 @@ import {
 
 function StatsRoute() {
     const {data, loading, error} = useData({urls})
+    usePageTitle('Stats & Insights')
 
     return (
         <React.Fragment>

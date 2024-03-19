@@ -1,6 +1,7 @@
 import React from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
+import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
 import {siteFull, siteSummary} from '../data/dataUrls'
@@ -11,6 +12,7 @@ import SiteReportSummary from './siteReport/SiteReportSummary'
 import PopularCountries from './siteReport/PopularCountries'
 
 function SiteReportMain() {
+    usePageTitle('Site Report')
     const {data, loading, error} = useData({urls})
     const {siteFull, siteSummary} = data || {}
     const {width} = useWindowSize()
