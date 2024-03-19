@@ -3,7 +3,7 @@ import {primaryTheme} from '../stats/chartDefaults'
 import useWindowSize from '../util/useWindowSize'
 import {ResponsiveBar} from '@nivo/bar'
 
-function BrandBeltBar({beltData}) {
+function CollectionBeltBar({beltData}) {
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -33,7 +33,6 @@ function BrandBeltBar({beltData}) {
         >
             <ResponsiveBar
                 data={beltData}
-                //maxValue={0.20}
                 margin={chartMargin}
                 padding={0.15}
                 colors={(bar) => beltColors[bar.index % beltColors.length]}
@@ -62,4 +61,4 @@ function BrandBeltBar({beltData}) {
     )
 }
 
-export default BrandBeltBar
+export default CollectionBeltBar

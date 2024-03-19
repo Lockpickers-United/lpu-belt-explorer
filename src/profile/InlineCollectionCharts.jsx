@@ -5,45 +5,41 @@ import useWindowSize from '../util/useWindowSize'
 import CollectionStatsBarProfile from './CollectionStatsBarProfile.jsx'
 import CollectionBeltBar from './CollectionBeltBar.jsx'
 import getAnyCollection from '../util/getAnyCollection'
-import CardHeader from '@mui/material/CardHeader'
 import DataContext from '../context/DataContext.jsx'
 import {uniqueBelts} from '../data/belts'
 import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
 
 function InlineCollectionCharts({profile}) {
-
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const userProfile = profile
-    const userText = userId===user?.uid ? 'You' : 'User'
-    const titleText = userId===user?.uid ? 'Your Collection Stats' : 'Collection Stats'
+    const userText = userId === user?.uid ? 'You' : 'User'
 
     const {getEntryFromId} = useContext(DataContext)
-    const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
-    const beltList = uniqueBelts.concat('Unranked')
 
-    const beltDistribution = new Map()
-    beltList.forEach(belt => {
-        beltDistribution[belt] = 0
-        beltDistribution['Unranked'] = 0
-    })
+    const chartData = useMemo(() => {
+        const anyCollection = getAnyCollection(profile)
+        const beltList = uniqueBelts.concat('Unranked')
 
-    anyCollection.forEach(lockId => {
-        let thisBelt = getEntryFromId(lockId).belt
-        if (thisBelt.includes('Black')) { thisBelt = 'Black' }
-        beltDistribution[thisBelt]++
-    })
+        const beltDistribution = anyCollection
+            .map(lockId => {
+                const belt = getEntryFromId(lockId).belt
+                return belt.includes('Black') ? 'Black' : belt
+            })
+            .reduce((acc, val) => {
+                if (!acc[val]) acc[val] = 0
+                acc[val]++
+                return acc
+            }, {})
 
-    let chartData = []
-    beltList.forEach(belt => {
-        let beltData = new Map()
-        beltData['label'] = belt
-        beltData['id'] = belt
-        beltData['count'] = beltDistribution[belt]
-        beltData['value'] = beltDistribution[belt]
-        chartData.push(beltData)
-    })
+        return beltList.map(belt => ({
+            id: belt,
+            label: belt,
+            count: beltDistribution[belt],
+            value: beltDistribution[belt]
+        }))
+    }, [getEntryFromId, profile])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -79,23 +75,19 @@ function InlineCollectionCharts({profile}) {
                     : 170
 
     return (
-        <Card style={style} sx={{paddingBottom: 0, paddingTop: '20px'}}>
-            <CardHeader
-                title={titleText}
-            />
+        <Card style={style} sx={{paddingBottom: 5}}>
             <CardContent style={{paddingTop: 0, paddingLeft: 8}}>
                 <div style={{textAlign: 'center'}}>
                     <div style={combinedDivStyle}>
                         <div style={{width: barDivWidth, verticalAlign: 'top', height: barDivHeight}}>
-                            <CollectionStatsBarProfile lockCollection={userProfile} userText={userText} collectionBarHeight={170}/>
+                            <CollectionStatsBarProfile lockCollection={userProfile} userText={userText}
+                                                       collectionBarHeight={170}/>
                         </div>
-                        <div style={{width: pieDivWidth, height: pieDivHeight, marginTop:'0px'}}>
+                        <div style={{width: pieDivWidth, height: pieDivHeight, marginTop: '0px'}}>
                             <CollectionBeltBar beltData={chartData}/>
                         </div>
                     </div>
                 </div>
-
-
             </CardContent>
         </Card>
     )
