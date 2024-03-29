@@ -3,113 +3,115 @@
 "Any China Padlock (granite look)","ABUS 64Ti/30 (30mm or smaller (<5 pins))","ABUS 54TI/50 Titalium","ABUS 74/40 LOTO","Any SFIC format lock (**)","ABA 109582","Abloy Classic","Abloy High Profile","Abloy Easy"
 "Any Cutaway Lock","ABUS 65/35 (35mm or smaller)","ABUS 55/40 (40mm or larger)","ABUS 76/40","ABUS 75/50 / ABUS 75IB/50","ABA Pagoda","ABUS Plus (no butterfly discs)","ABUS EC700 / ABUS EC800","Abloy Exec"
 "Any lock with any tool","ABUS 84/35","ABUS 60/50","ABUS 80TI Titalium","ABUS Bravus 3000","ABUS Bravus 4000","ABUS X-Plus","ABUS Plus (with butterfly discs)","Abloy Protec"
-"ABUS 45 (laminated padlock)","ABUS MyLock","ABUS 64Ti Titalium (40mm or larger (≥5 pins))","ABUS Brady 71/40 LOTO (Lock Out Tag Out)","ABUS D10","ABUS EP10","Aegis (18 pin, 3 rows all spools)","ALPHA FB (≥15 pins)","Abloy Protec2"
+"ABUS 45 (laminated padlock)","ABUS MyLock / T65AL","ABUS 64Ti Titalium (40mm or larger (≥5 pins))","ABUS Brady 71/40 LOTO (Lock Out Tag Out)","ABUS D10","ABUS EP10","Aegis (18 pin, 3 rows all spools)","ALPHA FB (≥15 pins)","Abloy Protec2"
 "Alpha 1000 (10mm (2pins))","ABUS Nautic T84MB/40","ABUS 65/40","ABUS Bravus 1000","ABUS E20 / ABUS E30 / ABUS E60 / ABUS E70 / ABUS E90","ABUS TS5000","Agent GMD-500","ASSA 600 (6 pin, with gin spools and matched countermilling)","Abloy Sento"
 "Alpha 1000 (15mm up to 35mm (3pins))","ACE Laminated padlock (40mm or larger)","ABUS 83/40","ABUS Bravus 2000","ABUS EC750 / ABUS EC850 (serrated pin version, not 700/800)","ABUS XP20s / ABUS XP2s / CISA AP3 / Bricard XP S2",Alke,"ASSA 700 (7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins)","Abloy Sentry"
-"Brinks R80 disk lock","Alpha 1000 (40mm up to 45mm (4pins / spools))","ABUS 85","ABUS C73 / ABUS C83 / ABUS C90 (new pinning: security keypins + serrated and spooled t-pins)","ABUS KV14 / ABUS KY14","Agent LS3 / Agent LS4 / Agent LS5","ALPHA FB (<15 pins)","ASSA 700 (with gin drivers and matched sleeve)","ASSA 700 (gin/tree pins and matching countermilling in ≥ 4 chambers, ≥ 2 tree pins)"
-"Brüder Mannesmann Brass Padlocks (<50mm (<5pins))","American Lock 5200 (bump stop model: all standards + 1 anti-bump pin)","ABUS Buffo (Ecoline)","ABUS D6","ABUS KW14","Aldon Corporation Hot Dog Lock","ALPHA YKK AP","ASSA dp2400 / ASSA dp10 (6 pin 4 slider)","ASSA dp4400 / ASSA dp11 / TrioVing dp / Ruko Garant+ (6 pin with 10 sliders)"
-"Generic/Unknown 1 or 2 Lever Cabinet lock",ARFE,"ABUS C51","ABUS EC750 / ABUS EC850 (spool pin version, not 700/800)","ABUS S6+","Anchor Las Disc Detainer","Anbo X18u / Lex X18 / GLK X18 / Apec XS (Clavis X18 clones)","Australian Lock Co. BiLock (12 sliders, 3-4 mastered)","ASSA Twin 6000 (gin drivers, 6 stacks with 5 side pins)"
-"Master Lock #1",Befa,"ABUS C73 / ABUS C83 / ABUS C90 (old pinning: mostly standard keypins, normal spool drivers)","ABUS Integral / ABUS Pfaffenhain Integral","ABUS XP1","ASEC BS Sash lock (5 lever)","Ankerslot Infinity K","Banham m2002","ASSA Twin Combi (with gin drivers)"
-"Master Lock #2 (laminated brass)",Braslock,"ABUS Cisa","ABUS Magtec 1500","Ankerslot Infinity (without magnet)","ASSA 500 / Ruko 500 (5 pin stacks, gin drivers and matching sleeve)","ASSA 500 / Ruko 500 (5 stacks of pins, gin drivers and matching countermilling)","BKS Janus (< 14 pins)","ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / TrioVing System 10 / TrioVing Twin Control (6 pin with 5 finger pins)"
-"Master Lock #3","Brinks Brass Padlocks","ABUS Diskus (normal pin-tumbler, not dimple)","ABUS Pfaffenhain Standard","ASSA 500 (with barrel drivers and matched sleeve)","ASSA 600 / ASSA Max+ Restricted (Barrel spools and matching countermilling)","ASSA d12 / ASSA P600 / ASSA Neptun 1900 / TrioVing d12 level 1 (aka d13 no long pin) (barrel drivers, forked keypins)","Bramah bp17","ASSA Twin Exclusive 5700 (Baltic) (6 pin with 5 side pins with 4 possible heights each)"
-"Master Lock #4 (laminated brass)","Brinks laminated padlock (40mm or larger, Weatherproof or not)","ABUS E50","ABUS V14 / ABUS XV14 / ABUS Y14","ASSA 500 / ASSA Flexcore/Flexcore Plus (5 pin with barrels and matched countermilling)","ASSA Desmo (6 sliders)","ASSA Desmo (8 sliders, no mastered pins)","Chubb 110 (3g110) (5 lever)","ASSA Twin Exclusive / ASSA Twin 6000 (6 barrel drivers, 5 side pins)"
-"Master Lock #5","Brüder Mannesmann Brass Padlocks (50mm or larger (≥5 pins))","ABUS EC75 75/30","ABUS W14","ASSA 700 (7 pin with spools and no countermilling)","ASSA Desmo (8 sliders, 1-3 mastered)","ASSA Twin Combi / ASSA 1800 / ASSA 4800 (barrel drivers, 2 or 3 finger pins)","CISM Atlas","ASSA Twin Maximum / ASSA Twin Pro / ASSA Twin v10 / ASSA Twin 2 / ASSA Twin Global (barrel driver, 6 stacks with 5 side pins)"
-"Master Lock #6 (laminated brass)",BSS,"ABUS Monobloc","ABUS WavyLine Pro / ABUS Pfaffenhain WavyLine Pro","ASSA 700 (7 pin with tapered drivers)","ASSA Guideline (6 pin with active side pins)","Australian Lock Co. BiLock (12 sliders, 5-6 mastered)","Clavis T-20 (15-19 pins)","ASSA Twin v10 (gin drivers, 6 stacks with 5 side pins)"
-"Master Lock #7","Burg Wächter ""Alutitan"" 770 40","ABUS Ti12 Titalium","ABUS WavyLine / ABUS Pfaffenhain WavyLine","ASSA R502","Australian Lock Co. BiLock (12 sliders, 7-8 mastered)","Australian Lock Co. BiLock (8 sliders, 0-2 mastered)","Corbin Russwin Emhart (6 pins **)","Australian Lock Co. BiLock (12 sliders, 1-2 mastered)"
-"Master Lock #8 (laminated brass)","Burg Wächter ""C-Line"" 222 40","Alpha 1000 (50mm 60mm (5pins / spools))","ABUS XD25","Baton 6000 series (not Abloy keyway)","Australian Lock Co. BiLock (8 sliders, 3-4 mastered)","Australian Lock Co. Galaxy","DOM ix Saturn","Australian Lock Co. BiLock (12 sliders, 0 mastered)"
-"Timpson Special Brass Padlock","Burg Wächter ""Look"" 402 40","BASI CO","ABUS Xp10","Bricard Bloctout","Avocet ABS","BASI K10","DOM RS 8","Australian Lock Co. BiLock ASIO (2nd/3rd gen)"
-"Tri-Nine Padlock","Burg Wächter ""SecuLock"" 405 40","BASI ST","ACE A527","Bricard Serial S","Bricard Chifral (all versions, <15 pins)","BKS Multipin","Elzett Magnet","Australian Lock Co. BiLock Exclusive (picked to control)"
-,"Burg Wächter ""Yacht"" 460 Ni 40","Brinks House Key","ACE Brass Padlock (38mm or larger)","Burg Wächter Diamant","Bricard Supersureté","Bricard Chifral (all versions, fully pinned)","EVVA 3KS / EVVA 3KS+ / EVVA 4KS (without false gates or 1-3 mastered sliders)","BKS Janus (14 or more pins)"
-,Börkey,"Burg Wächter Boccia","ACE Laminated padlock (44mm or larger)","Burg Wächter Gamma 700 (non-removable core)","Burg Wächter Alpha 800","Cavers Cavith","EVVA Dual (>4 mastered elements)","Bowley Door Lock"
-,Citadel,"CES KB","American Lock 1100 / A1100","Cantol high-security line  (10-pin dimple)","Capitol magnetic cam lock","Clavis T-20 (<15 pins)","EVVA ICS (>2 mastered elements)","Chubb ""Definitive"" (Standard mortise, 5 lever)"
-,"Dulimex DX","CES PS5","American Lock 1160 (1100 but with 6 pin stacks)","Chubb 114 (3g114) (5 lever, pre-2004)","CAVEO TS007 Exterior","Codkey Locksys (≥15 pins)","FAB NZS3","Chubb ""Definitive"" (jewelry box (steel comb leaf spring, pin or pipe key))"
-,"Eagle 37110","CES WM 5","American Lock 2000 puck lock","Chubb 114e (3g114e) (5 lever, after 2004)","CEI ""Five Colors""","DOM ix 10 (with shark fins)","Fichet 450 / Fichet 484 (w/ false gates, 2-3 mastered levers)","Chubb 6K174 Isolator"
-,"Egret 5-pin padlock","CES WZ","American Lock 5200","Chubb 2m22 (6 lever)","Chubb Battleship (6 lever, offset key)","DOM ix 10 kg","Fontaine Dynaxis","Clavis F-22"
-,"ERA Mortice (2 lever)","CISA 220/50","American Lock Clone","Chubb Cruiser (5 lever)","Chubb Biaxial","DOM System D","FTH Thirard Surveyor","Clavis Q-18"
-,Esco,"Cocraft 6-Pin Padlock (non-guttable version)","American Lock Lock 700 / A700","CISA Astral S","Clavis 10 pin (dual row, all spools)","Dorma DC500 / Dorma DC5400","GOAL V18 / GOAL GP (<14 pins)","Clavis T-20 (20 pins)"
-,Faithfull,"Corbin Arco Cromato","American Lock S1100","CISA C3000","Codkey Locksys (<15 pins)","Eagle ""Supr-Security"" (with shutter)","GOAL Z (≥2 standard drivers)","Corbin Russwin Emhart (≥ 2 mastered chambers **)"
-,FF,"DOM 333 RNT (standard cylinder)","An Jia Bao padlock / HPP padlock / Ming Gao padlock (5-6 disc generic disc detainer padlock with same style keybow)","DeGuard interactive clone (4 pins)","CompX Chicago TuBAR","FAB Dynamic","Hori Trident (spools)","DOM Diamant"
-,"Generic/Unknown 3 Lever Cabinet lock","Eclipse (any model) (British Standard - 5 lever, 2007+)","ASSA 500 (graduated spools)","Dejo 7 pin (tapered spools, trees, no milling)","Corbin Russwin Emhart (4 pins)","Federal Lock 11KDCF3110","IKON tk5 sperwellenprofil (with serrated fingerpins)","DOM ix Twinstar"
-,"Generic/Unknown 3 Lever Mortice lock","Eurospec (E*S) Easi-T (British Standard - 5 lever, Brass key, 2004+)","ASSA 500 / Ruko 500 (tapered drivers)","DOM IX 5KG","Corbin Russwin Master Ring (***)","Federal Lock UCF3100 / Federal Lock USC3100","IKON Verso","EVVA 3KS / EVVA 3KS+ (with false gates and no mastered sliders)"
-,"GLK 60G50 (60mm padlock)","FAB 100","Bab IKON DS","DOM Plura","DAF Kilit DBS02","Fichet 450 / Fichet 484 (with false gates, 4-6 mastered levers)","Kaba 14 (13+ pins)","EVVA Dual (1-4 mastered elements)"
-,"GLK G10","FAB Control","Bab IKON P031","DOM R Plus","DeGuard Interactive clone / HQ High Security interactive clone (5 pins)","Fichet 666","Kaba 20 / MIWA JN / Kaba Star (4 directions, < 15 pins)","EVVA Dual (0 (zero) mastered elements)"
-,Guri,"Fanal 5-pin padlock","BASI 3AX","DOM RN","Dierre New Power","FTH Thirard Cobra","Kaba Ace (≥13 pins)","EVVA ICS (1-2 mastered elements)"
-,"IFAM Start 50 Padlock",FCV,"BASI AS Pro","DOM RS Sigma","DOM ix 6 sr","Fuki Tierkey","Kaba experT / Kaba Quattro (<15 pins)","EVVA ICS (0 (zero) mastered elements)"
-,"ISEO F3",FUG,"BASI CX6","DOM S (with circle)","DOM ix Twido","Gege MRT","Kaba Gemini (≥13 pins)","EVVA MCS gen 1 / EVVA MCS gen 2 / IKON M"
-,Koala,FXL,"BiLock Clone","Dorma DC3003","DOM ix10 (without fins)","Gerda HSS","Kaba Gemini pluS (≥14 pins)","Fichet 450 / Fichet 484 (w/ false gates, 1 mastered lever)"
-,"MAKO 227","Garrison 40mm Brass Padlock","BKS 51-SL (Livius)","Dorma DC400","Eagle ""Supr-Security"" (without shutter)","Gerda Tytan ZX / Gerda Rim 6000","Kaba Penta (<15 pins)","Fichet 450 / Fichet 484 (w/ false gates, 0 mastered levers)"
-,"Master Lock 130","GTV Padlock","BKS 88","Dorma DC4300 / Elite DC4300","Elzett X11","GOAL D9 (9 pin)","Kaba Star (5+ directions, <16 pins)","Fichet F3D (indoor cylinder)"
-,"Master Lock 140 / Master Lock 141","IKON DS","BKS Detect 3 (no active sidebar)","ERA Big 6 (6 lever)","EVVA DPI / EVVA DPS / EVVA DPX / EVVA EPS (slider version)","GOAL P (6 pin)","Mauer Praetor B (70079) (11 lever)","Fichet F3D (outside cylinder - upgrade of indoor cylinder)"
-,"Master Lock 930","ISEO F5","BKS Helius","ERA Fortress (5 lever)","Fichet 450 (no false gates)","IKON tk5 sperwellenprofil (with smooth fingerpins)","Medeco M4","Fichet-Bauche M2B / Fichet-Bauche M3B / Fichet-Bauche MxB"
-,"Master Lock DG","Kasp 160 series Diskus","Bricard Serial","ERA Insurance (975) (5 lever)","Gege pExtra (6-7 pin)","iNAHO Tierkey","MIWA E6 / MIWA 83EC","GOAL Grand V"
-,"Master Lock Magnum","Lockwood 110/40","Burg Wächter Atlantic","EVVA DPI (pin-tumbler version)","Generic/Unknown 6 or 7 Lever lock",Izis,"MIWA PR (<7 unmastered levers)","GOAL V18 / GOAL GP (14-16 pins)"
-,"Master Lock V-line 4140","Mailboss ""12"" wafer mailbox camlock","Burg Wächter Karat","EVVA DPS (pin-tumbler version)","Godrej Ultra (14 pins in 3 rows)","JPM 405","MIWA PS / Tostem DN (7-8 unmastered levers)","GOAL V18 / GOAL GP (≥17 pins)"
-,Metal,"Master Lock 1145 - 1165D","Burg Wächter Profi 116/40","EVVA DPX (pin-tumbler version)","IFAM WX1000","Kaba 14 (<13 pins)","MIWA U9 / MIWA UR (<8 unmastered levers)","GOAL Z (< 2 standard drivers)"
-,"Multi XL","Master Lock 150","CCL Sesamee 900 series","EVVA EPS (pin-tumbler version)","IKON sk6 vectorprofil rib extra (5 sliders)","Kaba Ace (<13 pins)","MIWA/Anker 3800","Hori Trident (T-spool drivers)"
-,Santos,"Master Lock 1921D ""100 Anniversary"" Padlock","CES with dustcover","EVVA GPI/ALS","Illinois Duo","Kaba Gemini (<13 pins)","Mottura 52 (7 lever)","IKON SK6 Sperrwelle Extra Code (6 pin with 5 finger pins)"
-,"Schlage Original Commercial/Residential","Master Lock 532","Chateau C970 disk padlock","FAB 2000","Ingersoll 10 lever padlock","Kaba Gemini pluS (<14 pins)","Mottura Champions C55","IKON WSW (5 sliders)"
-,"Smith and Locke 1634G Non-British Standard (3 lever)","Master Lock 570 / Master Lock 575 / Master Lock 576","CISA 285","FAB 3* Profi / FAB 4* Profi","ISEO Perfecta (****)","Kaken KXR","Picard Vigie / Heracles Vigie","IKON WSW (7 sliders, upgrade of WSW with 5 sliders)"
-,"Squire 440 (4 lever, pin key)","Master Lock V-line 4150","Commando IC3 Tactical","Federal Lock 6KD3110","ISEO R7","Kale Kilit 164 CEC","Robur 2391 Safe Deposit Lock (barrels ≥ 3 chambers with matched milling)","JPM Surf / Ruko Combi Plus (6 pin with 5 side pins with 3 possible heights each)"
-,"Squire 660 (4 lever)","Schlage Original F-series KiK with collapsible bible","Commando Marine",Fontaine,"Kaba 8 (3 row, ≥ 9 pins)","Laperche Rols","Robur 2391 Safe Deposit Lock (gins ≥ 3 chambers with matched milling)","Kaba 20 / MIWA JN / Kaba Star (4 directions, ≥ 15 pins)"
-,"Squire Defiant (5 lever)",SIB,"Commando Peacemaker","Gege AP2000","Kaken KX3 (exterior, ≥ 6 sliders)","LIPS Keso (door cylinder) / LIPS Octro (≥13 pins)","Rosengrens 32A / Rosengrens 32A8 (thin round center posts, few or no false gates)","Kaba Penta (15-20 pins)"
-,Stabilit,SMB,"Corbin Russwin Master Ring (**)","Gege AP3000","Kale Kilit 164 BNE","Lowe and Fletcher 3007 Safe lock (7 lever)","S&G 4544 / S&G 4440 series","Kaba Penta (21 or more pins)"
-,Wolfdog,SOLXD,"Corbin Standard cylinder","Gege pExtra (5 pin)","Keso 10RS / Keso 2000S / Keso 4000S (Omega)","Magnum Mont Blanc","Schlage Everest 29 SL Primus XP","Kaba Quattro / Kaba experT (15-20 pins)"
-,,Starlet,"Corona Cylinder","GOAL S (5 pins)","Kwikset Smartkey (Gen III)","Mauer NW4 / Mauer NW5 / Mauer NW6","Sémag Euromag","Kaba Quattro / Kaba experT (21 pins)"
-,,"TESA TE-5","Corona M","Guard NVL","Kwikset Smartkey (Gens I & II)","Mauer President (71111) (7 lever)","Tann (10 lever)","Kaba Star (≥ 5 rows, 16-20 pins)"
-,,"Trelock Euro Cylinder","Digby Lock and Tool Bravo","IKON P031 (N6 profile)","Kwikset Smartkey SC1 gen I","Mauer Variator A (70091) (7 lever)","Tann Detector / Chubb Detector from 1950's","Kaba Star (≥ 5 rows, 21 or more pins)"
-,,Trimas,"DOM ix 5 HT","IKON RW6","Legge BS Sash lock (5 lever)","Medeco Biaxial Camlock / Medeco M3 Camlock (***)","U-Shin Showa NX (≥ 13 pins)","Kromer Protector (BP55K)"
-,,Urbis,"DOM IX 5 N","IKON Sk6 vector","LIPS Keso (door cylinder) / LIPS Octro (<13 pins)","Medeco Duracam (***)","Vachette Axi'Tec","Kromer Protector (Non-BP55K)"
-,,"Wilka standard profile (5 pin)","DOM RS 5","IKON SK7","LIPS Keso padlock","MG Serrature HS","Vachette Radial NT / Vachette Radial NT+ (<18 pins)","Lockman Megacross (with pyramid drivers (SP?))"
-,,"Winkhaus AZ","DOM SC","IKON Undercut","Liquidonics Miracle Magnetic","MIWA EC","Winkhaus X-Tra (9-13 pins)","MIWA LB"
-,,"Winkhaus VS 5 (5 pin)","DOM SV","iNAHO Tierkey (3 row, short format)","Lockman Megacross (9-pins, mushroom drivers)","MIWA PS / Tostem DN (<7 unmastered wafers)",Xylok,"MIWA PR (7-8 unmastered elements)"
-,,"Yale 125/40","Dény 3 lever with trapdoor","Kaba 8 (2 row)","Lockwood MT5 (VPI, heavily mastered *****)","Mul-T-Lock Classic / Mul-T-Lock Interactive (5 pin stacks, Serrated drivers)",,"MIWA PR (9-10 unmastered elements)"
-,,"Yale 5 lever sashlock (5 Lever)",Elca,"Kaba 8 (3 row, <9 pins)","Lockwood Twin","Mul-T-Lock Classic / Mul-T-Lock Interactive (5 pin stacks, spooled inner drivers with ≥ 3 counter milled outer keypins)",,"MIWA PR (11 unmastered elements)"
-,,"Yale Mortise","ERA Invincible (5 lever)","Kaken KX3 (exterior, <6 sliders)","M&C Color / M&C Color Pro / M&C Color+ / Vachette V-DIS / Vachette V-DIS+ (≥4 sliders)","Pollux 7",,"MIWA U9 (8 unmastered elements)"
-,,"Yale Y110/40","ERA Pro-Fit (5 lever)","Kale Kilit 164 YGS SE","M&C Condor / M&C Move","Robur 2391 Safe Deposit Lock (<3 barrels or gins with matched milling)",,"MIWA U9 (9 unmastered elements)"
-,,,"ERA Viscount (5 lever)","Kenaurd Dimple (pin-in-pin, 5 pins)","M&C Matrix","Schlage Primus / Schlage Everest Primus",,"Mottura Champions C43 / Mottura Champions C44 / Mottura Champions C48"
-,,,"EVVA FPS","Kryptonite Disk Detainer","Magnum Atlantic","Scorpion CX-5 / Marks High Security Lock",,"Mul-T-Lock MT5+ / Mul-T-Lock 800 / Lockwood MT5 / IKON R10 (not mastered)"
-,,,"EVVA Standardcylinder (Normalprofil)","Lince C4","Master Lock #19","Securemme Evo K64",,"NATO Mersey (10 lever, pre-1973)"
-,,,"EVVA TSC","Lockwood 334B45 / Lockwood 356S63 / Lockwood 214A40 / Lockwood 215A40 / Lockwood 270S70 (with spools)","Medeco Original Camlock (≥ 5 pins ******)","U-Shin Showa NX (<13 pins)",,"NATO Mersey (14 lever)"
-,,,"FAB 200RS","Lockwood V7","Medeco Original / Medeco Biaxial / Medeco M3 (≥ 5 pins ******)","Vachette Radial NT / Vachette Radial NT+ (<13 pins)",,"Opnus Memolis"
-,,,"Federal Lock 5Y3110","Lucznik E8","Mindy Pagoda AF 16-50 (flat key)","Van Lock",,"Opnus MMXII"
-,,,"Federal Lock 6Y3110","Lucznik LC","MIWA Magnetic Camlock","VSR 3-row",,"Robur Disc Detainer Safe Deposit Lock"
-,,,"FJM Padlock","M&C Color / M&C Color Pro / M&C Color+ (<4 sliders)",MLock,"Walsall Locks 2000 (5 lever)",,"Rosengrens 32A81S / Rosengrens 32C81P (triangular central posts and many false gates)"
-,,,"Gege ANS-2","M&C Matrix (no sidebar)","Mottura 3D Key","WEST 916 / WEST 955",,"Ruko Combi 2 / Ruko Garant 10 / FAB Variant (6 pin with 5 finger pins)"
-,,,"Gege AP 1000","Mauer Red Line G","Mottura Champions C38 (*******)","Winkhaus X-Tra (<9 pins)",,"Sargent Keso"
-,,,"Generic/Unknown 4 Lever Curtained lock","Mauer Red Line GM","Mottura Viper",,,"Tokoz Pro"
-,,,"Generic/Unknown 4 Lever Uncurtained lock","MCM AS6","Mul-T-Lock Classic Pro / Mul-T-Lock 600",,,"UrbanAlps Stealth Key SK1"
-,,,"Guett Dern","Medeco Biaxial (4 pins)","Mul-T-Lock Classic / Mul-T-Lock Interactive (4 pins, serrated drivers)",,,"UrbanAlps Stealth Key SK2"
-,,,"IKON K2 (with IKON Core)","Medeco BiLevel","Mul-T-Lock Jr / Mul-T-Lock Classic / Mul-T-Lock Interactive (5 pin stacks, ≥ 4 spooled drivers, <3 countermilled outer keypins)",,,"Vachette Radial NT / Vachette Radial NT+ (≥ 18 pins)"
-,,,"IKON N1","Medeco Original Camlock (<5 pins)","Mul-T-Lock MT5",,,"WEST 917"
-,,,"IKON P031","Metal Zx5J","Mul-T-Lock Omega Plus",,,"Western Electric 30B"
-,,,"ISEO MC 6500","Mila Evolution","Nagasawa Kodai KCY-31 (6 pin)",,,"Western Electric 30C"
-,,,"ISEO MC5","Mindy Pagoda (round key)","Nemef NF2 / Nemef NF3 / Lips 8300",,,"Winkhaus X-Tra (≥13 pins)"
-,,,"ISEO R6","MIWA DS","Nemef NF4",,,"Yanai R 2200M"
-,,,"Kaba Micro","Mottura Champions C28 / Mottura Champions C29","Opnus TZ (3 rows)",,,"Yuema 750 / Forte Enigma"
-,,,"Kai Kai","Mul-T-Lock Classic (standard drivers)","Opnus UX",,,
-,,,"Kale Kilit 164 CE","Mul-T-Lock Classic / Mul-T-Lock Interactive (4 pins, spooled drivers)","Pollux 5",,,
-,,,"Kale Kilit 164 GNC (6 pin, standard profile)","Mul-T-Lock Integrator","Rav Bariach Locxis",,,
-,,,"Kasp 14040","PACLOCK 90A Pro","Rielda rekeyable lock",,,
-,,,"Kenaurd (pin-in-pin, 4 pins)","PACLOCK PL410","Ruko Combi 900",,,
-,,,"Kryptonite 6-pin padlock","Pisla 860","Sargent Signature",,,
-,,,"Lockwood 120/40","Ruko R501","Schlage Everest 29SL",,,
+"Brinks R80 disk lock","Alpha 1000 (40mm up to 45mm (4pins / spools))","ABUS 85","ABUS C73 / ABUS C83 / ABUS C90 (new pinning: security keypins + serrated and spooled t-pins)","ABUS GDS (with barrels)","Agent LS3 / Agent LS4 / Agent LS5","Alpha ED (cam lock)","ASSA 700 / Ruko 700 (with gin drivers and matched sleeve)","ASSA 700 (gin/tree pins and matching countermilling in ≥ 4 chambers, ≥ 2 tree pins)"
+"Brüder Mannesmann Brass Padlocks (<50mm (<5pins))","American Lock 5200 (bump stop model: all standards + 1 anti-bump pin)","ABUS Buffo (Ecoline)","ABUS D6","ABUS KV14 / ABUS KY14","Aldon Corporation Hot Dog Lock","ALPHA FB (<15 pins)","ASSA dp2400 / ASSA dp10 (6 pin 4 slider)","ASSA dp4400 / ASSA dp11 / TrioVing dp / Ruko Garant+ (6 pin with 10 sliders)"
+"Generic/Unknown 1 or 2 Lever Cabinet lock",ARFE,"ABUS C51","ABUS EC750 / ABUS EC850 (spool pin version, not 700/800)","ABUS KW14","Anchor Las Disc Detainer","ALPHA YKK AP","Australian Lock Co. BiLock (12 sliders, 3-4 mastered)","ASSA Twin 6000 (gin drivers, 6 stacks with 5 side pins)"
+"Master Lock #1",Befa,"ABUS C73 / ABUS C83 / ABUS C90 (old pinning: mostly standard keypins, normal spool drivers)","ABUS GDS (with trees and tapered pins)","ABUS S6+","ASEC BS Sash lock (5 lever)","Anbo X18u / Lex X18 / GLK X18 / Apec XS (Clavis X18 clones)","Banham m2002","ASSA Twin Combi (with gin drivers)"
+"Master Lock #2 (laminated brass)",Braslock,"ABUS Cisa","ABUS Integral / ABUS Pfaffenhain Integral","ABUS XP1","ASSA 500 / Ruko 500 (5 pin stacks, gin drivers and matching sleeve)","Ankerslot Infinity K","BKS Janus (< 14 pins)","ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / TrioVing System 10 / TrioVing Twin Control (6 pin with 5 finger pins)"
+"Master Lock #3","Brinks Brass Padlocks","ABUS Diskus (normal pin-tumbler, not dimple)","ABUS Magtec 1500","Alpha Z cam lock","ASSA 600 / ASSA Max+ Restricted (Barrel spools and matching countermilling)","ASSA 500 / Ruko 500 (5 stacks of pins, gin drivers and matching countermilling)","Bramah bp17","ASSA Twin Exclusive 5700 (Baltic) (6 pin with 5 side pins with 4 possible heights each)"
+"Master Lock #4 (laminated brass)","Brinks laminated padlock (40mm or larger, Weatherproof or not)","ABUS E50","ABUS Pfaffenhain Standard","Ankerslot Infinity (without magnet)","ASSA Desmo (6 sliders)","ASSA d12 / ASSA P600 / ASSA Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka d13 no long pin) (barrel drivers, forked keypins)","Chubb 110 (3g110) (5 lever)","ASSA Twin Exclusive / ASSA Twin 6000 (6 barrel drivers, 5 side pins)"
+"Master Lock #5","Brüder Mannesmann Brass Padlocks (50mm or larger (≥5 pins))","ABUS EC75 75/30","ABUS V14 / ABUS XV14 / ABUS Y14","ASSA 500 (with barrel drivers and matched sleeve)","ASSA Desmo (8 sliders, 1-3 mastered)","ASSA Desmo (8 sliders, no mastered pins)","CISM Atlas","ASSA Twin Maximum / ASSA Twin Pro / ASSA Twin v10 / ASSA Twin 2 / ASSA Twin Global (barrel driver, 6 stacks with 5 side pins)"
+"Master Lock #6 (laminated brass)",BSS,"ABUS Monobloc","ABUS W14","ASSA 500 / ASSA Flexcore/Flexcore Plus (5 pin with barrels and matched countermilling)","ASSA Guideline (6 pin with active side pins)","ASSA Twin Combi / ASSA 1800 / ASSA 4800 (barrel drivers, 2 or 3 finger pins)","Clavis T-20 (15-19 pins)","ASSA Twin v10 (gin drivers, 6 stacks with 5 side pins)"
+"Master Lock #7","Burg Wächter ""Alutitan"" 770 40","ABUS Ti12 Titalium","ABUS WavyLine Pro / ABUS Pfaffenhain WavyLine Pro","ASSA 700 (7 pin with spools and no countermilling)","Australian Lock Co. BiLock (12 sliders, 7-8 mastered)","Australian Lock Co. BiLock (12 sliders, 5-6 mastered)","Corbin Russwin Emhart (6 pins **)","Australian Lock Co. BiLock (12 sliders, 1-2 mastered)"
+"Master Lock #8 (laminated brass)","Burg Wächter ""C-Line"" 222 40","Alpha 1000 (50mm 60mm (5pins / spools))","ABUS WavyLine / ABUS Pfaffenhain WavyLine","ASSA 700 (7 pin with tapered drivers)","Australian Lock Co. BiLock (8 sliders, 3-4 mastered)","Australian Lock Co. BiLock (8 sliders, 0-2 mastered)","DOM ix Saturn","Australian Lock Co. BiLock (12 sliders, 0 mastered)"
+"Timpson Special Brass Padlock","Burg Wächter ""Look"" 402 40","BASI CO","ABUS XD25","ASSA R502","Avocet ABS / Federal Locks U-systems (UCF/UCH/UCS/UUS)-3100 / Thirard Federal S / Thirard Federal 2","Australian Lock Co. Galaxy","DOM RS 8","Australian Lock Co. BiLock ASIO (2nd/3rd gen)"
+"Tri-Nine Padlock","Burg Wächter ""SecuLock"" 405 40","BASI ST","ABUS Xp10","Baton 6000 series (not Abloy keyway)","Bricard Chifral (all versions, <15 pins)","BASI K10","Elzett Magnet","Australian Lock Co. BiLock Exclusive (picked to control)"
+,"Burg Wächter ""Yacht"" 460 Ni 40","Brinks House Key","ACE A527","Bricard Bloctout","Bricard Supersureté","BKS Multipin","EVVA 3KS / EVVA 3KS+ / EVVA 4KS (without false gates or 1-3 mastered sliders)","BKS Janus (14 or more pins)"
+,Börkey,"Burg Wächter Boccia","ACE Brass Padlock (38mm or larger)","Bricard Serial S","Capitol magnetic cam lock","Bricard Chifral (all versions, fully pinned)","EVVA Dual (>4 mastered elements)","Bowley Door Lock"
+,Citadel,"CES KB","ACE Laminated padlock (44mm or larger)","Burg Wächter Diamant","CAVEO TS007 (with spools)","Burg Wächter Alpha 800","EVVA ICS (>2 mastered elements)","Chubb ""Definitive"" (Standard mortise, 5 lever)"
+,"Dulimex DX","CES PS5","American Lock 1100 / A1100","Burg Wächter Gamma 700 (non-removable core)","CEI ""Five Colors""","Cavers Cavith","FAB NZS3","Chubb ""Definitive"" (jewelry box (steel comb leaf spring, pin or pipe key))"
+,"Eagle 37110","CES WM 5","American Lock 1160 (1100 but with 6 pin stacks)","Cantol high-security line  (10-pin dimple)","Chubb Battleship (6 lever, offset key)","Clavis T-20 (<15 pins)","Fichet 450 / Fichet 484 (w/ false gates, 2-3 mastered levers)","Chubb 6K174 Isolator"
+,"Egret 5-pin padlock","CES WZ","American Lock 2000 puck lock","Chubb 114 (3g114) (5 lever, pre-2004)","Chubb Biaxial","Codkey Locksys (≥15 pins)","Fontaine Dynaxis","Clavis F-22"
+,"ERA Mortice (2 lever)","CISA 220/50","American Lock 5200","Chubb 114e (3g114e) (5 lever, after 2004)","Clavis 10 pin (dual row, all spools)","DOM ix 10 (with shark fins)","FTH Thirard Surveyor","Clavis Q-18"
+,Esco,"Cocraft 6-Pin Padlock (non-guttable version)","American Lock Clone","Chubb 2m22 (6 lever)","Codkey Locksys (<15 pins)","DOM ix 10 kg","GOAL V18 / GOAL GP (<14 pins)","Clavis T-20 (20 pins)"
+,Faithfull,"Corbin Arco Cromato","American Lock Lock 700 / A700","Chubb Cruiser (5 lever)","CompX Chicago TuBAR","DOM System D","GOAL Z (≥2 standard drivers)","Corbin Russwin Emhart (≥ 2 mastered chambers **)"
+,FF,"DOM 333 RNT (standard cylinder)","American Lock S1100","CISA Astral S","Corbin Russwin Emhart (4 pins)","Dorma DC500 / Dorma DC5400","Hori Trident (spools)","DOM Diamant"
+,"Generic/Unknown 3 Lever Cabinet lock","Eclipse (any model) (British Standard - 5 lever, 2007+)","An Jia Bao padlock / HPP padlock / Ming Gao padlock (5-6 disc generic disc detainer padlock with same style keybow)","CISA C3000","Corbin Russwin Master Ring (***)","Eagle ""Supr-Security"" (with shutter)","IKON tk5 sperwellenprofil (with serrated fingerpins)","DOM ix Twinstar"
+,"Generic/Unknown 3 Lever Mortice lock","Eurospec (E*S) Easi-T (British Standard - 5 lever, Brass key, 2004+)","ASSA 500 (graduated spools)","DeGuard interactive clone (4 pins)","DAF Kilit DBS02","FAB Dynamic","IKON Verso","EVVA 3KS / EVVA 3KS+ (with false gates and no mastered sliders)"
+,"GLK 60G50 (60mm padlock)","FAB 100","ASSA 500 / Ruko 500 (tapered drivers)","Dejo 7 pin (tapered spools, trees, no milling)","DeGuard Interactive clone / HQ High Security interactive clone (5 pins)","Federal Lock 11KDCF3110","Kaba 14 (13+ pins)","EVVA Dual (1-4 mastered elements)"
+,"GLK G10","FAB Control","Bab IKON DS","DOM IX 5KG","Dierre New Power","Fichet 450 / Fichet 484 (with false gates, 4-6 mastered levers)","Kaba 20 / MIWA JN / Kaba Star (4 directions, < 15 pins)","EVVA Dual (0 (zero) mastered elements)"
+,Guri,"Fanal 5-pin padlock","Bab IKON P031","DOM Plura","DOM ix 6 sr","Fichet 666","Kaba Ace (≥13 pins)","EVVA ICS (1-2 mastered elements)"
+,"IFAM Start 50 Padlock",FCV,"BASI 3AX","DOM R Plus","DOM ix Teco","Fichet-Bauche Monopole","Kaba experT / Kaba Quattro (<15 pins)","EVVA ICS (0 (zero) mastered elements)"
+,"ISEO F3",FUG,"BASI AS Pro","DOM RN","DOM ix Twido","FTH Thirard Cobra","Kaba Gemini (≥13 pins)","EVVA MCS gen 1 / EVVA MCS gen 2 / IKON M"
+,Koala,FXL,"BASI CX6","DOM RS Sigma","DOM ix10 (without fins)","Fuki Tierkey","Kaba Gemini pluS (≥14 pins)","Fichet 450 / Fichet 484 (w/ false gates, 1 mastered lever)"
+,"MAKO 227","Garrison 40mm Brass Padlock","BiLock Clone","DOM S (with circle)","Eagle ""Supr-Security"" (without shutter)","Gege MRT","Kaba Penta (<15 pins)","Fichet 450 / Fichet 484 (w/ false gates, 0 mastered levers)"
+,"Master Lock 130","GTV Padlock","BKS 51-SL (Livius)","Dorma DC3003","Elzett X11","Gerda HSS","Kaba Star (5+ directions, <16 pins)","Fichet F3D (indoor cylinder)"
+,"Master Lock 140 / Master Lock 141","IKON DS","BKS 88","Dorma DC400","EVVA DPI / EVVA DPS / EVVA DPX / EVVA EPS (slider version)","Gerda Tytan ZX / Gerda Rim 6000","Mauer Praetor B (70079) (11 lever)","Fichet F3D (outside cylinder - upgrade of indoor cylinder)"
+,"Master Lock 930","ISEO F5","BKS Detect 3 (no active sidebar)","Dorma DC4300 / Elite DC4300","Fichet 450 (no false gates)","GOAL D9 (9 pin)","Medeco M4","Fichet-Bauche M2B / Fichet-Bauche M3B / Fichet-Bauche MxB"
+,"Master Lock DG","Kasp 160 series Diskus","BKS Helius","ERA Big 6 (6 lever)","Gege pExtra / Alfa ""pExtra"" (6-7 pin)","GOAL P (6 pin)","MIWA E6 / MIWA 83EC","GOAL Grand V"
+,"Master Lock Magnum","Lockwood 110/40","Brady SafeKey","ERA Fortress (5 lever)","Generic/Unknown 6 or 7 Lever lock","IKON tk5 sperwellenprofil (with smooth fingerpins)","MIWA PR (<7 unmastered levers)","GOAL V18 / GOAL GP (14-16 pins)"
+,"Master Lock V-line 4140","Mailboss ""12"" wafer mailbox camlock","Bricard Serial","ERA Insurance (975) (5 lever)","Godrej Ultra (14 pins in 3 rows)","iNAHO Tierkey","MIWA PS / Tostem DN (7-8 unmastered levers)","GOAL V18 / GOAL GP (≥17 pins)"
+,Metal,"Master Lock 1145 - 1165D","Burg Wächter Atlantic","EVVA DPI (pin-tumbler version)","IFAM WX1000",Izis,"Miwa SR","GOAL Z (< 2 standard drivers)"
+,"Multi XL","Master Lock 150","Burg Wächter Karat","EVVA DPS (pin-tumbler version)","IKON sk6 vectorprofil rib extra (5 sliders)","JPM 405","MIWA U9 / MIWA UR (<8 unmastered levers, barred false gates (old shallow false gates equals a belt below))","Hori Trident (T-spool drivers)"
+,Santos,"Master Lock 1921D ""100 Anniversary"" Padlock","Burg Wächter Profi 116/40","EVVA DPX (pin-tumbler version)","Illinois Duo","JPM Quartz UP","MIWA/Anker 3800","IKON SK6 Sperrwelle Extra Code (6 pin with 5 finger pins)"
+,"Schlage Original Commercial/Residential","Master Lock 532","CCL Sesamee 900 series","EVVA EPS (pin-tumbler version)","Ingersoll 10 lever padlock","Kaba 14 (<13 pins)","Mottura 52 (7 lever)","IKON WSW (5 sliders)"
+,"Smith and Locke 1634G Non-British Standard (3 lever)","Master Lock 570 / Master Lock 575 / Master Lock 576","CES with dustcover","EVVA GPI/ALS","ISEO Perfecta (****)","Kaba Ace (<13 pins)","Mottura Champions C55","IKON WSW (7 sliders, upgrade of WSW with 5 sliders)"
+,"Squire 440 (4 lever, pin key)","Master Lock V-line 4150","Chateau C970 disk padlock","FAB 2000","ISEO R7","Kaba Gemini (<13 pins)","Picard Vigie / Heracles Vigie","JPM Surf / Ruko Combi Plus (6 pin with 5 side pins with 3 possible heights each)"
+,"Squire 660 (4 lever)","Schlage Original F-series KiK with collapsible bible","CISA 285","FAB 3* Profi / FAB 4* Profi","Kaba 8 (3 row, ≥ 9 pins)","Kaba Gemini pluS (<14 pins)","Robur 2391 Safe Deposit Lock (barrels ≥ 3 chambers with matched milling)","Kaba 20 / MIWA JN / Kaba Star (4 directions, ≥ 15 pins)"
+,"Squire Defiant (5 lever)",SIB,"Commando IC3 Tactical","Federal Lock 6KD3110","Kaken KX3 (exterior, ≥ 6 sliders)","Kaken KXR","Robur 2391 Safe Deposit Lock (gins ≥ 3 chambers with matched milling)","Kaba Matrix (16 pins (fully pinned))"
+,Stabilit,SMB,"Commando Marine",Fontaine,"Kale Kilit 164 BNE","Kale Kilit 164 CEC","Rosengrens 32A / Rosengrens 32A8 (thin round center posts, few or no false gates)","Kaba Penta (15-20 pins)"
+,Wolfdog,SOLXD,"Commando Peacemaker","Gege AP2000","Keso 10RS / Keso 2000S / Keso 4000S (Omega)","Laperche Rols","S&G 4544 / S&G 4440 series","Kaba Penta (21 or more pins)"
+,,Starlet,"Corbin Russwin Master Ring (**)","Gege AP3000","Kwikset Smartkey (Gen III)","LIPS Keso (door cylinder) / LIPS Octro (≥13 pins)","Schlage Everest 29 SL Primus XP","Kaba Quattro / Kaba experT (15-20 pins)"
+,,"TESA TE-5","Corbin Standard cylinder","Gege pExtra / Alfa ""pExtra"" (5 pin)","Kwikset Smartkey (Gens I & II)","Lowe and Fletcher 3007 Safe lock (7 lever)","Sémag Euromag","Kaba Quattro / Kaba experT (21 pins)"
+,,"Trelock Euro Cylinder","Corona Cylinder","GOAL S (5 pins)","Kwikset Smartkey SC1 gen I","Magnum Mont Blanc","Tann (10 lever)","Kaba Star (≥ 5 rows, 16-20 pins)"
+,,Trimas,"Corona M","Guard NVL","Legge BS Sash lock (5 lever)","Mauer NW4 / Mauer NW5 / Mauer NW6","Tann Detector / Chubb Detector from 1950's","Kaba Star (≥ 5 rows, 21 or more pins)"
+,,Urbis,"Digby Lock and Tool Bravo","IKON P031 (N6 profile)","LIPS Keso (door cylinder) / LIPS Octro (<13 pins)","Mauer President (71111) (7 lever)","U-Shin Showa NX (≥ 13 pins)","Kromer Protector (BP55K)"
+,,"Wilka standard profile (5 pin)","DOM ix 5 HT","IKON RW6","LIPS Keso padlock","Mauer Variator A (70091) (7 lever)","Vachette Axi'Tec","Kromer Protector (Non-BP55K)"
+,,"Winkhaus AZ","DOM IX 5 N","IKON Sk6 vector","Liquidonics Miracle Magnetic","Medeco Biaxial Camlock / Medeco M3 Camlock (***)","Vachette Radial NT / Vachette Radial NT+ (<18 pins)","Lockman Megacross (with pyramid drivers (SP?))"
+,,"Winkhaus VS 5 (5 pin)","DOM RS 5","IKON SK7","Lockman Megacross (9-pins, mushroom drivers)","Medeco Duracam (***)","Winkhaus X-Tra (9-13 pins)","MIWA LB"
+,,"Yale 125/40","DOM SC","IKON Undercut","Lockwood MT5 (VPI, heavily mastered *****)","MG Serrature HS",Xylok,"MIWA PR (7-8 unmastered elements)"
+,,"Yale 5 lever sashlock (5 Lever)","DOM SV","iNAHO Tierkey (3 row, short format)","Lockwood Twin","MIWA EC",,"MIWA PR (9-10 unmastered elements)"
+,,"Yale Mortise","Dény 3 lever with trapdoor","Kaba 8 (2 row)","M&C Color / M&C Color Pro / M&C Color+ / Vachette V-DIS / Vachette V-DIS+ (≥4 sliders)","MIWA PS / Tostem DN (<7 unmastered wafers)",,"MIWA PR (11 unmastered elements)"
+,,"Yale Y110 series brass padlock (all formats 40mm or larger (includes Y113 and Y114, excludes iron body disc detainer Y112))",Elca,"Kaba 8 (3 row, <9 pins)","M&C Condor / M&C Move","Mul-T-Lock Classic / Mul-T-Lock Interactive (5 pin stacks, Serrated drivers)",,"MIWA U9 (8 unmastered elements, barred false gates (old shallow false gates equals a belt below))"
+,,"Yale Y120 series brass padlock (all formats)","ERA Invincible (5 lever)","Kaken KX3 (exterior, <6 sliders)","M&C Matrix","Mul-T-Lock Interactive+ (5 pin stacks, pinned to factory spec (spooled inner drivers, some counter milled outer keypins))",,"MIWA U9 (9 unmastered elements, barred false gates (old shallow false gates equals a belt below))"
+,,,"ERA Pro-Fit (5 lever)","Kale Kilit 164 YGS SE","Magnum Atlantic","Pollux 7",,"Mottura Champions C43 / Mottura Champions C44 / Mottura Champions C48"
+,,,"ERA Viscount (5 lever)","Kenaurd Dimple (pin-in-pin, 5 pins)","Master Lock #19","Robur 2391 Safe Deposit Lock (<3 barrels or gins with matched milling)",,"Mul-T-Lock MT5+ / Mul-T-Lock 800 / Lockwood MT5 / IKON R10 (not mastered)"
+,,,"EVVA FPS","Kryptonite Disk Detainer","Mauer Red Line GM","Schlage Primus / Schlage Everest Primus",,"NATO Mersey (10 lever, pre-1973)"
+,,,"EVVA Standardcylinder (Normalprofil)","Lince C4","Medeco Original Camlock (≥ 5 pins ******)","Scorpion CX-5 / Marks High Security Lock",,"NATO Mersey (14 lever)"
+,,,"EVVA TSC","Lockwood 334B45 / Lockwood 356S63 / Lockwood 214A40 / Lockwood 215A40 / Lockwood 270S70 (with spools)","Medeco Original / Medeco Biaxial / Medeco M3 (≥ 5 pins ******)","Securemme Evo K64",,"Opnus Memolis"
+,,,"FAB 200RS","Lockwood V7","Mindy Pagoda AF 16-50 (flat key)","TESA T-10 / TESA T-12",,"Opnus MMXII"
+,,,"Federal Lock 5Y3110","Lucznik E8","MIWA Magnetic Camlock","U-Shin Showa NX (<13 pins)",,"Robur Disc Detainer Safe Deposit Lock"
+,,,"Federal Lock 6Y3110","Lucznik LC",MLock,"Vachette Radial NT / Vachette Radial NT+ (<13 pins)",,"Rosengrens 32A81S / Rosengrens 32C81P (triangular central posts and many false gates)"
+,,,"FJM Padlock","M&C Color / M&C Color Pro / M&C Color+ (<4 sliders)","Mottura 3D Key","Van Lock",,"Ruko Combi 2 / Ruko Garant 10 / FAB Variant (6 pin with 5 finger pins)"
+,,,"Gege ANS-2","M&C Matrix (no sidebar)","Mottura Champions C38 (*******)","VSR 3-row",,"Sargent Keso"
+,,,"Gege AP 1000 / Alfa  ""AP 1000""","Mauer Red Line G","Mottura Viper","Walsall Locks 2000 (5 lever)",,"Tokoz Pro"
+,,,"Generic/Unknown 4 Lever Curtained lock","MCM AS6","Mul-T-Lock Classic Pro / Mul-T-Lock 400","WEST 916 / WEST 955",,"UrbanAlps Stealth Key SK1"
+,,,"Generic/Unknown 4 Lever Uncurtained lock","Medeco Biaxial (4 pins)","Mul-T-Lock Classic / Mul-T-Lock Interactive (4 pins, serrated drivers)","Winkhaus X-Tra (<9 pins)",,"UrbanAlps Stealth Key SK2"
+,,,"Guett Dern","Medeco BiLevel","Mul-T-Lock Jr / Mul-T-Lock Classic / Mul-T-Lock Interactive (5 pin stacks, ≥ 4 spooled drivers)",,,"Vachette Radial NT / Vachette Radial NT+ (≥ 18 pins)"
+,,,"IKON K2 (with IKON Core)","Medeco Original Camlock (<5 pins)","Mul-T-Lock MT5",,,"WEST 917"
+,,,"IKON N1","Metal Zx5J","Mul-T-Lock Omega Plus",,,"Western Electric 30B"
+,,,"IKON P031","Mila Evolution","Nagasawa Kodai KCY-31 (6 pin)",,,"Western Electric 30C"
+,,,"ISEO MC 6500","Mindy Pagoda (round key)","Nemef NF2 / Nemef NF3 / Lips 8300",,,"Winkhaus X-Tra (≥13 pins)"
+,,,"ISEO MC5","MIWA DS","Nemef NF4",,,"Yanai R 2200M"
+,,,"ISEO R6","Mottura Champions C28 / Mottura Champions C29","Opnus TZ (3 rows)",,,"Yuema 750 / Forte Enigma"
+,,,"Kaba Micro","Mul-T-Lock Classic (standard drivers)","Opnus UX",,,
+,,,"Kai Kai","Mul-T-Lock Classic / Mul-T-Lock Interactive (4 pins, spooled drivers)","Pollux 5",,,
+,,,"Kale Kilit 164 CE","Mul-T-Lock Classic / Mul-T-Lock Interactive (5 pins, 3 or fewer spooled drivers)","Rav Bariach Locxis",,,
+,,,"Kale Kilit 164 GNC (6 pin, standard profile)","Mul-T-Lock Integrator","Rielda rekeyable lock",,,
+,,,"Kasp 14040","PACLOCK 90A Pro","Ruko Combi 900",,,
+,,,"Kenaurd (pin-in-pin, 4 pins)","PACLOCK PL410","Sargent Signature",,,
+,,,"Kryptonite 6-pin padlock","Pisla 860","Schlage Everest 29SL",,,
+,,,"Lockwood 120/40","Ruko R501","Securemme K22",,,
 ,,,"Lockwood 234B45","SEA slider lock","Securemme K5",,,
-,,,"Lockwood 334B45 (tapered/beveled drivers)","Securemme K22","Sepa HDS",,,
-,,,"MAKO 425","Securit S20##","TESA T80 / TESA TX80",,,
-,,,"MAKO 427","Takigen 10-pin","TESA TK100",,,
-,,,"Master Lock 410 LOTO (Lockout Tagout)","TESA T60","Titan T250",,,
-,,,"Master Lock 6835","Tokoz Tech","U-Shin Showa X Key (12 pins)",,,
-,,,"Master Lock 911","TrioVing (Vingcard) 55## (with trampoline pins)","US Star Tech ""Hi Security""",,,
-,,,"Master Lock 931","U-Shin Showa X Key (8 pins)","Vachette Axi'Home",,,
-,,,"Master Lock Pro Series","Union Strongbolt (2100) (5 lever)","Walsall Locks Ace (S1311) (7 lever safe)",,,
-,,,"Master Lock S32 LOTO (Lockout Tagout)","Vachette VIP / Vachette VIP+","WEST YKK AP",,,
-,,,"Mauer Elite 1","VSR 2-row","Western Electric 29A / Western Electric 29B",,,
-,,,"MCM SCX","Winkhaus N-Tra","Yale 5000",,,
-,,,"Morgan Non British Standard (5 levers, brass key)","Winkhaus Titan","Yale Superior / Milencio Magnum (7 or 9 pins)",,,
-,,,"Mottura Champions C10","Yale 2100",,,,
-,,,"Mottura Champions C30 / Mottura Champions C31 / Mottura Champions C39 (***)","Yale 500 series",,,,
-,,,"Mul-T-Lock 7X7","Yale KM 1 star Superior",,,,
-,,,"PACLOCK 100A (6-pin version of the 90A PRO)","Yale Superior / Milencio Magnum (<7 pins)",,,,
+,,,"Lockwood 334B45 (tapered/beveled drivers)","Securit S20##","Sepa HDS",,,
+,,,"MAKO 425","Takigen 10-pin","TESA T80 / TESA TX80",,,
+,,,"MAKO 427","TESA T60","TESA TK100",,,
+,,,"Master Lock 410 LOTO (Lockout Tagout)","Tokoz Tech","Titan T250 / Picard VTX / UCEM T200",,,
+,,,"Master Lock 6835","TrioVing (Vingcard) 55## (with trampoline pins)","U-Shin Showa X Key (12 pins)",,,
+,,,"Master Lock 911","U-Shin Showa X Key (8 pins)","US Star Tech ""Hi Security""",,,
+,,,"Master Lock 931","Union Strongbolt (2100) (5 lever)","Vachette Axi'Home",,,
+,,,"Master Lock Pro Series","Vachette VIP / Vachette VIP+","Walsall Locks Ace (S1311) (7 lever safe)",,,
+,,,"Master Lock S32 LOTO (Lockout Tagout)","VSR 2-row","WEST YKK AP",,,
+,,,"Mauer Elite 1","Winkhaus N-Tra","Western Electric 29A / Western Electric 29B",,,
+,,,"MCM SCX","Winkhaus Titan","Yale 5000",,,
+,,,"Morgan Non British Standard (5 levers, brass key)","Yale 2100","Yale Superior / Yale Platinum / Milencio Magnum (7 or 9 pins)",,,
+,,,"Mottura Champions C10","Yale 500 series",,,,
+,,,"Mottura Champions C30 / Mottura Champions C31 / Mottura Champions C39 (***)","Yale KM 1 star Superior",,,,
+,,,"Mul-T-Lock 7X7","Yale Superior / Yale Platinum / Milencio Magnum (<7 pins)",,,,
+,,,"PACLOCK 100A (6-pin version of the 90A PRO)",,,,,
 ,,,"PACLOCK 100G",,,,,
 ,,,"PACLOCK 90A",,,,,
 ,,,"PACLOCK 95G",,,,,
@@ -117,10 +119,12 @@
 ,,,"Sargent Mortise (standard pins)",,,,,
 ,,,"Sargent Mortise (with security pins)",,,,,
 ,,,"Schlage Everest",,,,,
+,,,"Solon Super-Lock Company Nix Pix",,,,,
 ,,,"Squire 440 (4 lever, pipe key)",,,,,
 ,,,"Tokoz Beta",,,,,
 ,,,"Unity Disc Detainer Padlock",,,,,
 ,,,"Vachette Standard cylinder",,,,,
+,,,"Viro Palladium PV",,,,,
 ,,,"Wetzel Pfaffenhain",,,,,
 ,,,"Wilka 1400 (6 pin)",,,,,
 ,,,"Wilka 3600",,,,,
