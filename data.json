@@ -5444,7 +5444,10 @@
       }
     ],
     "version": "all formats",
-    "lastUpdated": "2024-03-29T20:50:58.753Z"
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2024-03-29T21:45:41.236Z"
   },
   {
     "id": "74a00ae3",
@@ -6003,7 +6006,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Under Review ⚑"
+      "Xmas tree drivers"
     ],
     "media": [
       {
@@ -6050,7 +6053,7 @@
       }
     ],
     "views": 18,
-    "lastUpdated": "2024-03-29T20:50:58.753Z"
+    "lastUpdated": "2024-03-29T21:45:41.237Z"
   },
   {
     "id": "8606220a",
@@ -7655,9 +7658,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Under Review ⚑"
-    ],
     "media": [
       {
         "title": "By: LockPickingFisherman",
@@ -7724,7 +7724,7 @@
       }
     ],
     "views": 10,
-    "lastUpdated": "2024-03-29T20:50:58.753Z"
+    "lastUpdated": "2024-03-29T21:45:41.237Z"
   },
   {
     "id": "3b26e53c",
@@ -8494,7 +8494,7 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "IX 5 N"
+        "model": "ix 5 N"
       }
     ],
     "lockingMechanisms": [
@@ -8524,7 +8524,7 @@
       }
     ],
     "views": 367,
-    "lastUpdated": "2023-08-11T13:30:01.075Z"
+    "lastUpdated": "2024-03-29T21:45:41.238Z"
   },
   {
     "id": "5241369e",
@@ -10875,8 +10875,9 @@
         "model": "Nix Pix"
       }
     ],
-    "features": [
-      "Under Review ⚑"
+    "lockingMechanisms": [
+      "Pump/push",
+      "Sliders"
     ],
     "media": [
       {
@@ -10930,7 +10931,7 @@
       }
     ],
     "views": 16,
-    "lastUpdated": "2024-03-29T20:50:58.754Z"
+    "lastUpdated": "2024-03-29T21:45:41.239Z"
   },
   {
     "id": "44bdfa06",
@@ -12013,7 +12014,13 @@
       }
     ],
     "version": "with barrels",
-    "lastUpdated": "2024-03-29T20:50:58.755Z"
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Barrel drivers"
+    ],
+    "lastUpdated": "2024-03-29T21:45:41.241Z"
   },
   {
     "id": "fe84cc3c",
@@ -12226,7 +12233,10 @@
         "model": "Z cam lock"
       }
     ],
-    "lastUpdated": "2024-03-29T20:50:58.755Z"
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "lastUpdated": "2024-03-29T21:45:41.241Z"
   },
   {
     "id": "d20fb493",
@@ -15907,7 +15917,13 @@
       }
     ],
     "version": "5 pins, 3 or fewer spooled drivers",
-    "lastUpdated": "2024-03-29T20:50:58.756Z"
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin"
+    ],
+    "lastUpdated": "2024-03-29T21:45:41.245Z"
   },
   {
     "id": "6e0bfdd2",
@@ -18013,7 +18029,9 @@
       "Magnet"
     ],
     "features": [
-      "Magnetic pins"
+      "Magnetic pins",
+      "Pin-in-pin",
+      "Trap element"
     ],
     "media": [
       {
@@ -18112,7 +18130,7 @@
       }
     ],
     "views": 345,
-    "lastUpdated": "2024-03-29T20:53:50.297Z"
+    "lastUpdated": "2024-03-29T21:45:41.246Z"
   },
   {
     "id": "8f004bf0",
@@ -18470,6 +18488,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "High pin count"
+    ],
     "media": [
       {
         "title": "By: Bodhi-pickah",
@@ -18490,7 +18511,7 @@
     "relatedIds": [
       "bc03135a"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.022Z"
+    "lastUpdated": "2024-03-29T21:45:41.247Z"
   },
   {
     "id": "8d4632d9",
@@ -18770,7 +18791,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Slider"
+      "Wafer"
     ],
     "media": [
       {
@@ -18810,7 +18831,7 @@
       }
     ],
     "views": 143,
-    "lastUpdated": "2023-08-22T13:01:09.847Z"
+    "lastUpdated": "2024-03-29T21:45:41.247Z"
   },
   {
     "id": "acde7f0c",
@@ -18885,7 +18906,14 @@
         "model": "ix Teco"
       }
     ],
-    "lastUpdated": "2024-03-29T20:50:58.757Z"
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "\"Magic\" DOM drivers",
+      "Bottlenose keypins"
+    ],
+    "lastUpdated": "2024-03-29T21:45:41.247Z"
   },
   {
     "id": "fc4de1ff",
@@ -22984,8 +23012,11 @@
       }
     ],
     "version": "cam lock",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
-      "Under Review ⚑"
+      "High pin count"
     ],
     "notes": "14 pins in 4 directions, standard and mushroom drivers",
     "media": [
@@ -23012,7 +23043,7 @@
       }
     ],
     "views": 43,
-    "lastUpdated": "2024-03-29T20:50:58.759Z"
+    "lastUpdated": "2024-03-29T21:45:41.250Z"
   },
   {
     "id": "054731a5",
@@ -25136,11 +25167,14 @@
         "model": "Quartz UP"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
     "features": [
-      "Under Review ⚑"
+      "Interactive element"
     ],
     "views": 12,
-    "lastUpdated": "2024-03-29T20:50:58.759Z"
+    "lastUpdated": "2024-03-29T21:45:41.251Z"
   },
   {
     "id": "f61461ed",
@@ -26478,13 +26512,12 @@
       "Dimple"
     ],
     "features": [
-      "Under Review ⚑",
       "Opposing overset stacks",
       "Interactive element"
     ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
     "views": 95,
-    "lastUpdated": "2024-03-29T20:50:58.760Z"
+    "lastUpdated": "2024-03-29T21:45:41.252Z"
   },
   {
     "id": "b91890bf",
@@ -29653,8 +29686,11 @@
         "model": "SR"
       }
     ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
     "features": [
-      "Under Review ⚑"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -29708,7 +29744,7 @@
       }
     ],
     "views": 69,
-    "lastUpdated": "2024-03-29T20:50:58.762Z"
+    "lastUpdated": "2024-03-29T21:45:41.254Z"
   },
   {
     "id": "31431c49",
@@ -34815,7 +34851,7 @@
       "Dimple"
     ],
     "features": [
-      "Under Review ⚑"
+      "High pin count"
     ],
     "notes": "High pin count",
     "media": [
@@ -34835,7 +34871,7 @@
       }
     ],
     "views": 59,
-    "lastUpdated": "2024-03-29T20:50:58.763Z"
+    "lastUpdated": "2024-03-29T21:45:41.257Z"
   },
   {
     "id": "68b5a797",
