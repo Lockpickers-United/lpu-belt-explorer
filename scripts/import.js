@@ -151,11 +151,15 @@ linkData
     })
     .forEach(item => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
-        if (!entry.links) entry.links = []
-        entry.links.push({
-            title: item.Title,
-            url: item.URL
-        })
+        if (entry) {
+            if (!entry.links) entry.links = []
+            entry.links.push({
+                title: item.Title,
+                url: item.URL
+            })
+        } else {
+            console.log('Entry not found:', item)
+        }
     })
 
 // Add view data
