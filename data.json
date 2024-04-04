@@ -16172,16 +16172,40 @@
     "lastUpdated": "2023-07-25T11:20:19.892Z"
   },
   {
+    "id": "0a12f032",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Securit",
+        "model": "S20##"
+      }
+    ],
+    "views": 86,
+    "lastUpdated": "2023-03-23T03:24:22.389Z"
+  },
+  {
     "id": "842165cc",
     "belt": "Blue",
     "makeModels": [
       {
+        "make": "Stanley",
+        "model": "Vidmar SEA SL-10"
+      },
+      {
+        "make": "Ezcurra",
+        "model": "SEA 23"
+      },
+      {
+        "make": "Ezcurra",
+        "model": "SEA 3"
+      },
+      {
         "make": "SEA",
-        "model": "slider lock"
+        "model": "Locking System (Original)"
       }
     ],
     "lockingMechanisms": [
-      "Slider"
+      "Wafer"
     ],
     "media": [
       {
@@ -16256,19 +16280,7 @@
       }
     ],
     "views": 202,
-    "lastUpdated": "2024-02-08T02:04:15.203Z"
-  },
-  {
-    "id": "0a12f032",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "Securit",
-        "model": "S20##"
-      }
-    ],
-    "views": 86,
-    "lastUpdated": "2023-03-23T03:24:22.389Z"
+    "lastUpdated": "2024-04-04T12:45:38.936Z"
   },
   {
     "id": "b0d2e04c",
