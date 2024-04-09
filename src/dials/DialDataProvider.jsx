@@ -49,7 +49,7 @@ export function DialDataProvider({children, allEntries}) {
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys})
+            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
