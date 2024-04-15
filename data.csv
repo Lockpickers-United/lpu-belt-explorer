@@ -3,8 +3,8 @@ White,Any,"China Padlock (granite look)",,Pin-tumbler,Unguttable,,3ac43ea8
 White,Any,"Cutaway Lock",,Various,,,901b35b2
 White,Any,"lock with any tool",,Various,,,b22bdd44
 White,ABUS,45,"laminated padlock",Pin-tumbler,Unguttable,,5ff7457c
-White,Alpha,1000,"10mm (2pins)",Pin-tumbler,,,9423b4a4
-White,Alpha,1000,"15mm up to 35mm (3pins)",Pin-tumbler,,,d000f733
+White,ALPHA,1000,"10mm (2pins)",Pin-tumbler,,,9423b4a4
+White,ALPHA,1000,"15mm up to 35mm (3pins)",Pin-tumbler,,,d000f733
 White,Brinks,"R80 disk lock",,Pin-tumbler,Unguttable,,a8c9aa08
 White,"Brüder Mannesmann","Brass Padlocks","<50mm (<5pins)",Pin-tumbler,Unguttable,,8cb1a776
 White,Generic/Unknown,"1 or 2 Lever Cabinet lock",,Lever,"Cabinet lock",,5dc117cd
@@ -25,7 +25,7 @@ Yellow,ABUS,84/35,,Pin-tumbler,Unguttable,,805fc883
 Yellow,ABUS,"MyLock / T65AL",,Pin-tumbler,Unguttable,,423dbebe
 Yellow,ABUS,"Nautic T84MB/40",,Pin-tumbler,,,9d830052
 Yellow,ACE,"Laminated padlock","40mm or larger",Pin-tumbler,Unguttable,,abdf3acd
-Yellow,Alpha,1000,"40mm up to 45mm (4pins / spools)",Pin-tumbler,,,82ea52a4
+Yellow,ALPHA,1000,"40mm up to 45mm (4pins / spools)",Pin-tumbler,,,82ea52a4
 Yellow,"American Lock",5200,"bump stop model: all standards + 1 anti-bump pin",Pin-tumbler,,"The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",a0d1bf97
 Yellow,,ARFE,,Pin-tumbler,Unguttable,,a1581afe
 Yellow,,Befa,,Pin-tumbler,,,32244161
@@ -90,7 +90,7 @@ Orange,ABUS,E50,,Pin-tumbler,,,1dc9f802
 Orange,ABUS,"EC75 75/30",,Dimple,Unguttable,,2484ce70
 Orange,ABUS,Monobloc,,Pin-tumbler,,,204d85a7
 Orange,ABUS,"Ti12 Titalium",,Pin-tumbler,,,1050a58c
-Orange,Alpha,1000,"50mm 60mm (5pins / spools)",Pin-tumbler,,,bac43ba7
+Orange,ALPHA,1000,"50mm 60mm (5pins / spools)",Pin-tumbler,,,bac43ba7
 Orange,BASI,CO,,Pin-tumbler,,,aa15b066
 Orange,BASI,ST,,Pin-tumbler,,,7b4ce02a
 Orange,Brinks,"House Key",,Pin-tumbler,,,d49f60fe
@@ -293,7 +293,7 @@ Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
 Blue,ABUS,KW14,,Pin-tumbler,,,4382d650
 Blue,ABUS,S6+,,Pin-tumbler,,,f93c57fc
 Blue,ABUS,XP1,,Pin-tumbler,,,34c0dfe4
-Blue,Alpha,"Z cam lock",,Dimple,,,3ebbc1f4
+Blue,ALPHA,"Z cam lock",,Dimple,,,3ebbc1f4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
 Blue,ASSA,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
 Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,d9e3829f
@@ -509,7 +509,7 @@ Brown,ABUS,X-Plus,,"Disc detainer",,,c9d6d06d
 Brown,,Aegis,"18 pin, 3 rows all spools",Dimple,"High pin count",,19fce24d
 Brown,Agent,GMD-500,,Dimple,,,db380ba0
 Brown,,Alke,,,,,d8abe040
-Brown,Alpha,ED,"cam lock",Dimple,"High pin count","14 pins in 4 directions, standard and mushroom drivers",05298f91
+Brown,ALPHA,ED,"cam lock",Dimple,"High pin count","14 pins in 4 directions, standard and mushroom drivers",05298f91
 Brown,ALPHA,FB,"<15 pins",Dimple,"High pin count",,054731a5
 Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
 Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis X18 clones",Dimple,,,f85f4ac0
