@@ -713,7 +713,7 @@ your lock in the picking video. Please read more below for filming requirements.
 - [Mul-T-Lock MT5](https://lpubelts.com/?id=16906a6c)
 - [Mul-T-Lock Omega Plus](https://lpubelts.com/?id=8a65b956)
 - [Nagasawa Kodai KCY-31](https://lpubelts.com/?id=3efc97ad) (6 pin)
-- [Nemef NF2 / Nemef NF3 / Lips 8300](https://lpubelts.com/?id=94466c21)
+- [Nemef NF2 / Nemef NF3 / LIPS 8300](https://lpubelts.com/?id=94466c21)
 - [Nemef NF4](https://lpubelts.com/?id=4debdca1)
 - [Opnus TZ](https://lpubelts.com/?id=f8aaa0ef) (3 rows)
 - [Opnus UX](https://lpubelts.com/?id=ed3ae6cf)
