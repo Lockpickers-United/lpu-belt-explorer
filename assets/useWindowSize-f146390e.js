@@ -1,0 +1,1 @@
+import{r as n,aI as o,as as s}from"./index-c38f22f8.js";function r(){const[e,i]=n.useState({width:0,height:0}),t=()=>{i({width:window.innerWidth,height:window.innerHeight})};return o("resize",t),s(()=>{t()},[]),e}function u(){const{width:e,height:i}=r();return n.useMemo(()=>({width:e,height:i,isMobile:e<650}),[e,i])}export{u};
