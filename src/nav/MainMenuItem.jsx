@@ -18,10 +18,17 @@ function MainMenuItem({menuItem, openTitle, onOpen, onClose, child}) {
         .every(key => params[key] === searchParams[key])
     const isCurrentRoute = isCurrentPath && isCurrentParams
 
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
+
     const handleClick = useCallback(() => {
         if (children) {
             const isOpen = openTitle === title
             onOpen(isOpen ? null : title)
+        } else if (path.includes('http')) {
+            openInNewTab(path)
         } else {
             onClose()
             const url = params
