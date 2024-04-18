@@ -8,6 +8,7 @@ import FeedIcon from '@mui/icons-material/Feed'
 import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 import BuildIcon from '@mui/icons-material/Build'
 import AvTimerIcon from '@mui/icons-material/AvTimer'
+import LPU_logo from '../resources/LPU_logo'
 
 export default [
     {
@@ -71,6 +72,21 @@ export default [
                 admin: true,
                 title: 'Collections Report',
                 path: '/admin/collectionsReport'
+            }
+        ]
+    },
+    {
+        title: 'More from LPU',
+        icon: <LPU_logo style={{height:20}}/>,
+        expanded: true,
+        children: [
+            {
+                title: 'LPUlocks.com Lock Bazaar',
+                path: 'https://lpulocks.com/#/lockbazaar'
+            },
+            {
+                title: 'LPUlocks.com Speed Picks',
+                path: 'https://lpulocks.com/#/speedpicks'
             }
         ]
     }

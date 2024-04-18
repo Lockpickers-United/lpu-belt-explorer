@@ -46,7 +46,7 @@ function MainMenuItem({menuItem, openTitle, onOpen, onClose, child}) {
         <React.Fragment>
             <MenuItem style={style} onClick={handleClick} dense={child}>
                 {coloredIcon &&
-                    <ListItemIcon>
+                    <ListItemIcon style={{height:20}}>
                         {coloredIcon}
                     </ListItemIcon>
                 }
