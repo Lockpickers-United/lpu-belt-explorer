@@ -374,7 +374,7 @@ Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, spooled drivers",Dim
 Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pins, 3 or fewer spooled drivers",Dimple,Pin-in-pin,,a0ec1618
 Blue,Mul-T-Lock,Integrator,,Dimple,,,6e0bfdd2
 Blue,PACLOCK,"90A Pro",,Pin-tumbler,,,fb5a9eb7
-Blue,PACLOCK,PL410,,Pin-tumbler,,,74c225d1
+Blue,PACLOCK,PL410,,Pin-tumbler,Unguttable,,74c225d1
 Blue,Pisla,860,,"Disc detainer",Unguttable,,ca6f4eaf
 Blue,Ruko,R501,,Pin-tumbler,"Barrel drivers,Sleeved core",,6dc539dd
 Blue,Securit,S20##,,,,,0a12f032
