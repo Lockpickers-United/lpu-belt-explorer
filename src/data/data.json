@@ -16164,6 +16164,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Unguttable"
+    ],
     "media": [
       {
         "title": "By: RC13",
@@ -16181,7 +16184,7 @@
       }
     ],
     "views": 1096,
-    "lastUpdated": "2023-07-25T11:20:19.892Z"
+    "lastUpdated": "2024-04-20T19:48:11.552Z"
   },
   {
     "id": "ca6f4eaf",
