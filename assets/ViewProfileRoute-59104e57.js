@@ -1,1 +1,0 @@
-import{r as s,X as u,u as a}from"./index-8a4e989c.js";function i(){const{authLoaded:t,user:e}=s.useContext(u),o=a();return s.useEffect(()=>{t&&e?o(`/profile/${e.uid}`):t&&!e&&o("/locks")},[o,t,e]),null}export{i as default};
