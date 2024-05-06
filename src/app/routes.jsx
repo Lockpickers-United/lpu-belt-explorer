@@ -100,6 +100,13 @@ export default [
         }
     },
     {
+        path: '/profile/view',
+        lazy: async () => {
+            const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
+            return {element: <ViewProfileRoute/>}
+        }
+    },
+    {
         path: '/profile/:userId',
         lazy: async () => {
             const {default: ProfileRoute} = await import('../profile/ProfileRoute')
