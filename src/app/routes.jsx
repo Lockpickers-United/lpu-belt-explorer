@@ -107,6 +107,13 @@ export default [
         }
     },
     {
+        path: '/profile/view',
+        lazy: async () => {
+            const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
+            return {element: <ViewProfileRoute/>}
+        }
+    },
+    {
         beta: true,
         path: '/dials',
         lazy: async () => {
