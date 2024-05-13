@@ -611,7 +611,7 @@ Red,"Fichet,Fichet","450,484","w/ false gates, 2-3 mastered levers",Lever/sideba
 Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
 Red,"FTH Thirard",Surveyor,,Pump/push,,,1f6cb393
 Red,"GOAL,GOAL","V18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
-Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling",,937eb7a8
+Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut Milling",,937eb7a8
 Red,Hori,Trident,spools,Dimple,,,49b2c746
 Red,IKON,"tk5 sperwellenprofil","with serrated fingerpins","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",34d27803
 Red,IKON,Verso,,Slider,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",843896be
@@ -692,7 +692,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 3",GOAL,"Grand V",,Dimple,"High pin count",,3ca098da
 "Black 1","GOAL,GOAL","V18,GP","14-16 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,63b2e02b
 "Black 2","GOAL,GOAL","V18,GP","≥17 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,109531f4
-"Black 1",GOAL,Z,"< 2 standard drivers",Pin-tumbler,"Gin spool drivers,Torpedo keypins,Overmilling",,5103e650
+"Black 1",GOAL,Z,"< 2 standard drivers",Pin-tumbler,"Gin spool drivers,Torpedo keypins,Overmilling,Undercut Milling",,5103e650
 "Black 2",Hori,Trident,"T-spool drivers",Dimple,"High pin count,Torpedo keypins",,e8c7dd5b
 "Black 2",IKON,"SK6 Sperrwelle Extra Code","6 pin with 5 finger pins","Sidepins,Pin-tumbler","Rotating fingerpins,Active sidebar,Tapered drivers","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",108549ba
 "Black 1",IKON,WSW,"5 sliders","Pin-tumbler,Slider","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",7e967792
