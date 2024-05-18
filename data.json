@@ -25224,7 +25224,8 @@
     ],
     "features": [
       "Gin spool drivers",
-      "Overmilling"
+      "Overmilling",
+      " Undercut milling"
     ],
     "media": [
       {
@@ -25263,7 +25264,7 @@
       }
     ],
     "views": 1096,
-    "lastUpdated": "2024-01-12T14:01:38.360Z"
+    "lastUpdated": "2024-05-18T14:46:08.328Z"
   },
   {
     "id": "f38cafca",
