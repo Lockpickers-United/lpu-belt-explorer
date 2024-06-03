@@ -18,12 +18,12 @@ const CollectionsListUsersSavesLine = ({data}) => {
             : mobileMedium ? 200
                 : mobileLarge ? 210
                     : midWindow ? 230
-                        : 250
+                        : 300
 
     const tickRotation = !smallWindow ? 0 : -45
 
     const chartMargin = !smallWindow
-        ? {top: 10, right: 20, bottom: 30, left: 50}
+        ? {top: 10, right: 20, bottom: 45, left: 50}
         : {top: 10, right: 20, bottom: 50, left: 50}
 
     return (
@@ -59,13 +59,13 @@ const CollectionsListUsersSavesLine = ({data}) => {
                 }}
                 xFormat='time:%m/%d/%y'
                 axisBottom={{
-                    format: '%b %d',
+                    format: '%b',
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: tickRotation,
                     direction: 'row',
                     legendOffset: -12,
-                    tickValues: 'every week'
+                    tickValues: 'every month'
                 }}
                 legends={[
                     {

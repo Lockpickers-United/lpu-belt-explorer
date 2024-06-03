@@ -23,11 +23,11 @@ const CollectionsListCountsLine = ({data}) => {
             : mobileMedium ? 220
                 : mobileLarge ? 230
                     : midWindow ? 260
-                        : 290
+                        : 310
 
     const tickRotation = !smallWindow ? 0 : -45
 
-    const chartMargin = {top: 10, right: 20, bottom: 65, left: 50}
+    const chartMargin = {top: 10, right: 20, bottom: 70, left: 50}
 
     const areaColors = ['#172072', '#2e399b', '#444fb2', '#5966da']
 
@@ -67,11 +67,11 @@ const CollectionsListCountsLine = ({data}) => {
                 enableGridY={false}
 
                 axisBottom={{
-                    format: '%b %d',
+                    format: '%b',
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: tickRotation,
-                    tickValues: 'every week'
+                    tickValues: 'every month'
                 }}
                 legends={[
                     {
@@ -80,7 +80,7 @@ const CollectionsListCountsLine = ({data}) => {
                         direction: 'row',
                         justify: false,
                         translateX: 0,
-                        translateY: 65,
+                        translateY: 70,
                         itemsSpacing: 6,
                         itemWidth: 100,
                         itemHeight: 20,
