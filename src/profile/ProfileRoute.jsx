@@ -19,7 +19,6 @@ import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
 import CopyProfileLinkButton from './CopyProfileLinkButton'
-import EditProfileButton from './EditProfileButton'
 import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
@@ -56,7 +55,6 @@ function ProfileRoute() {
 
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
-            <EditProfileButton/>
             <CopyProfileLinkButton/>
         </React.Fragment>
     )
