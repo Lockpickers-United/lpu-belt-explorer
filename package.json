@@ -14,6 +14,7 @@
         "preview": "vite preview",
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
+        "import-dan": "node ./scripts/importDan.js",
         "exportCsv": "node scripts/exportCsv.js",
         "exportMd": "node ./scripts/exportMarkdown.js",
         "exportHtml": "node ./scripts/exportHtml.js",
