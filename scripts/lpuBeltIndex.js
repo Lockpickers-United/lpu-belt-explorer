@@ -137,7 +137,11 @@ const codewordMap = [
     ['****', 'requires360'],
     ['standardpins', 'standards'],
     ['wavelockdiscdetainer', 'dd'],
-    ['18ormore', '18+']
+    ['18ormore', '18+'],
+    ['500series', '500'],
+    ['thinroundcenterpostsfewornofalsegates', ''],
+    ['10rs', '10rs<13pins'],
+    ['10rs', '10rs2000s4000somega≥13pins']
 ]
 
 // Apply 3 iterations of replacements to generate codeword variants

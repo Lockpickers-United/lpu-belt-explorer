@@ -217,35 +217,51 @@ function matchDanSheet(danData) {
                 }
 
                 // prefer an exact match
-                let val = masterIndex[hit.key].find(cw => {
+                let vals = masterIndex[hit.key].filter(cw => {
                     return cw.codeword == hit.code
                 })
-                if (val) {
-                    return {id: val.id, entry: hit.entry}
+                if (vals.length > 0) {
+                    let uniqIds = [...new Set(vals.map(el => el.id))]
+                    if (DEBUG && uniqIds.length > 1) {
+                        console.log(`WARN: multimatch (exact) ${uniqIds} for ${hit.entry.lock}`)
+                    }
+                    return {id: uniqIds[0], entry: hit.entry}
                 } 
 
                 // then prefer matching the source codeword as a prefix
-                val = masterIndex[hit.key].find(cw => {
+                vals = masterIndex[hit.key].filter(cw => {
                     return 0 == cw.codeword.indexOf(hit.code)
                 })
-                if (val) {
-                    return {id: val.id, entry: hit.entry}
+                if (vals.length > 0) {
+                    let uniqIds = [...new Set(vals.map(el => el.id))]
+                    if (DEBUG && uniqIds.length > 1) {
+                        console.log(`WARN: multimatch (prefix) ${uniqIds} for ${hit.entry.lock}`)
+                    }
+                    return {id: uniqIds[0], entry: hit.entry}
                 } 
 
                 // then prefer the codeword including the entire source
-                val = masterIndex[hit.key].find(cw => {
+                vals = masterIndex[hit.key].filter(cw => {
                     return cw.codeword.includes(hit.code)
                 })
-                if (val) {
-                    return {id: val.id, entry: hit.entry}
+                if (vals.length > 0) {
+                    let uniqIds = [...new Set(vals.map(el => el.id))]
+                    if (DEBUG && uniqIds.length > 1) {
+                        console.log(`WARN: multimatch (include) ${uniqIds} for ${hit.entry.lock}`)
+                    }
+                    return {id: uniqIds[0], entry: hit.entry}
                 } 
 
                 // as a last hope, the codeword may be a prefix of the source
-                val = masterIndex[hit.key].find(cw => {
+                vals = masterIndex[hit.key].filter(cw => {
                     return 0 == hit.code.indexOf(cw.codeword)
                 })
-                if (val) {
-                    return {id: val.id, entry: hit.entry}
+                if (vals.length > 0) {
+                    let uniqIds = [...new Set(vals.map(el => el.id))]
+                    if (DEBUG && uniqIds.length > 1) {
+                        console.log(`WARN: multimatch (reverse) ${uniqIds} for ${hit.entry.lock}`)
+                    }
+                    return {id: uniqIds[0], entry: hit.entry}
                 } 
 
                 // We stop trying here... going much further leads to false matches.
