@@ -1,0 +1,33 @@
+{
+  "header": {
+    "picker": "Craig3.0",
+    "numBlack": 1,
+    "points": 48
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Abloy Disklock",
+      "link": "https://youtu.be/2YBPOhTw0Qo",
+      "id": "87eaa964"
+    },
+    {
+      "row": 5,
+      "lock": "DOM Diamant",
+      "link": "https://youtu.be/1f0ErMiMepA",
+      "id": "57fbcb1b"
+    },
+    {
+      "row": 6,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/282173282546089985/1011292147019948083",
+      "id": "12345679"
+    },
+    {
+      "row": 7,
+      "lock": "Tier 2 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/282173282546089985/1011292147019948083",
+      "id": "12345694"
+    }
+  ]
+}

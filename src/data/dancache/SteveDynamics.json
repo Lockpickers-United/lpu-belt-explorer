@@ -1,0 +1,237 @@
+{
+  "header": {
+    "picker": "SteveDynamics",
+    "numBlack": 16,
+    "points": 399
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Abloy Classic",
+      "link": "https://youtu.be/7rnU9qqmUl8",
+      "id": "da09d849"
+    },
+    {
+      "row": 5,
+      "lock": "EVVA ICS (0 mastered elements)",
+      "link": "https://youtu.be/rCy6AdSLV68",
+      "id": "8ea170d2"
+    },
+    {
+      "row": 6,
+      "lock": "EVVA 3KS (without false gates or with any mastered sliders)",
+      "link": "https://youtu.be/mSwHWeX8jhg",
+      "id": "265226b1"
+    },
+    {
+      "row": 7,
+      "lock": "UrbanAlps Stealth Key SK2",
+      "link": "https://youtu.be/_w-BesDz5-g",
+      "id": "284bf0b0"
+    },
+    {
+      "row": 8,
+      "lock": "Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)",
+      "link": "https://youtu.be/C1a17lW-_4o",
+      "id": "108549ba"
+    },
+    {
+      "row": 9,
+      "lock": "DOM Diamant",
+      "link": "https://youtu.be/J573brfRKbs",
+      "id": "57fbcb1b"
+    },
+    {
+      "row": 10,
+      "lock": "ASSA Twin Exclusive 5700 (Baltic)",
+      "link": "https://youtu.be/ppDMl88F9Qk",
+      "id": "f7ad4c89"
+    },
+    {
+      "row": 11,
+      "lock": "DOM ix Twinstar",
+      "link": "https://youtu.be/D-O5kqecvdI",
+      "id": "3c73c705"
+    },
+    {
+      "row": 12,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/jWArkTVaCeQ",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 13,
+      "lock": "DOM RS 8",
+      "link": "https://youtu.be/KwLTZ0O1BiU",
+      "id": "4993a918"
+    },
+    {
+      "row": 14,
+      "lock": "Miwa PR (<7 unmastered wafers)",
+      "link": "https://youtu.be/eg4soIHJJfI",
+      "id": "fdb68dc4"
+    },
+    {
+      "row": 15,
+      "lock": "Mul-T-Lock 800",
+      "link": "https://youtu.be/LfBo4Mz0YSs",
+      "id": "649eaebc"
+    },
+    {
+      "row": 16,
+      "lock": "Abus Plus (with butterfly discs)",
+      "link": "https://youtu.be/TmewLxnLxgs",
+      "id": "b8350901"
+    },
+    {
+      "row": 17,
+      "lock": "Avocet ABS",
+      "link": "https://youtu.be/EFP5zVTKi4U",
+      "id": "f3666121"
+    },
+    {
+      "row": 18,
+      "lock": "Codkey Locksys (≥15 pins)",
+      "link": "https://youtu.be/HmxmhscD0TQ",
+      "id": "bc03135a"
+    },
+    {
+      "row": 19,
+      "lock": "Mul-T-Lock Jr / Classic / Interactive (spooled drivers, <3 countermilled outer keypins)",
+      "link": "https://youtu.be/9Qi_N9gRCbk",
+      "id": "a0ec1618"
+    },
+    {
+      "row": 20,
+      "lock": "Medeco M3 (5+ pins)",
+      "link": "https://youtu.be/zPzzbDPh3WI",
+      "id": "826c31e0"
+    },
+    {
+      "row": 21,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/32ec_7akSrM",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 22,
+      "lock": "Mul-T-Lock Integrator",
+      "link": "https://youtu.be/Wp8EvixQ9GE",
+      "id": "6e0bfdd2"
+    },
+    {
+      "row": 23,
+      "lock": "Yale Superior (short format)",
+      "link": "https://youtu.be/1kQSUgBMEAc",
+      "id": "30a4fef5"
+    },
+    {
+      "row": 24,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/YeCLaJZDlwI",
+      "id": "f133510b"
+    },
+    {
+      "row": 25,
+      "lock": "ASSA d12 / P600 / Neptun 1900 / Trioving d12 level 1 (aka d13, no long pin)",
+      "link": "https://youtu.be/CM8eOo5zvRw",
+      "id": "d3ad5a73"
+    },
+    {
+      "row": 26,
+      "lock": "ASSA Twin Combi",
+      "link": "https://youtu.be/GNmUSkGn_7c",
+      "id": "7168d463"
+    },
+    {
+      "row": 27,
+      "lock": "ASSA Twin v10/Twin 2 with barrels",
+      "link": "https://youtu.be/D0Uf0RuySK8",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 28,
+      "lock": "ASSA Twin 6000 (with barrels)",
+      "link": "https://youtu.be/VfU8Wu3c1p0",
+      "id": "55053299"
+    },
+    {
+      "row": 29,
+      "lock": "Fichet 450/484 (w/ false gates) (4-6 mastered levers)",
+      "link": "https://youtu.be/QGr0nkSg_X8",
+      "id": "58cbc037"
+    },
+    {
+      "row": 30,
+      "lock": "ERA Fortress - 5 lever",
+      "link": "https://youtu.be/ougZv-Ddpms",
+      "id": "e2d201c9"
+    },
+    {
+      "row": 31,
+      "lock": "Union Strongbolt - 5 lever",
+      "link": "https://youtu.be/x4FjB-tdKKU",
+      "id": "86703028"
+    },
+    {
+      "row": 32,
+      "lock": "Bricard Supersureté",
+      "link": "https://youtu.be/Pc4FyzwCRic",
+      "id": "98ba98ae"
+    },
+    {
+      "row": 33,
+      "lock": "Ruko 600",
+      "link": "https://youtu.be/ayTZmh7KpPk",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 34,
+      "lock": "Robur Safe Deposit Lock (gins >3 chambers with matched milling)",
+      "link": "https://youtu.be/1UkW8pz0auE",
+      "id": "112d0034"
+    },
+    {
+      "row": 35,
+      "lock": "Goal GP (≥17 pins)",
+      "link": "https://youtu.be/V783PMou1vM",
+      "id": "109531f4"
+    },
+    {
+      "row": 36,
+      "lock": "Goal v18 (≥17 pins)",
+      "link": "https://youtu.be/wQ9EKh23DEQ",
+      "id": "109531f4"
+    },
+    {
+      "row": 37,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/YN14zoIg-KQ",
+      "id": "ab1e901f"
+    },
+    {
+      "row": 38,
+      "lock": "Chubb 110 - 5 levers",
+      "link": "https://youtu.be/TtoDAXMc3B0",
+      "id": "ab1cdc56"
+    },
+    {
+      "row": 39,
+      "lock": "West 917",
+      "link": "https://youtu.be/uUAgC0EK5U8",
+      "id": "23437955"
+    },
+    {
+      "row": 40,
+      "lock": "Dorma DC3003 (7 pins)",
+      "link": "https://youtu.be/z6PTrxrwNV0",
+      "id": "4c544aa2"
+    },
+    {
+      "row": 41,
+      "lock": "Miwa JN (4 rows) (15 or more pins)",
+      "link": "https://youtu.be/eYCtphUXKxA",
+      "id": "8f99236e"
+    }
+  ]
+}

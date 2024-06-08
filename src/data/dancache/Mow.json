@@ -1,0 +1,112 @@
+{
+  "header": {
+    "picker": "Mow",
+    "numBlack": 6,
+    "points": 336.5
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "EVVA 3KS (with false gates and no mastered sliders)",
+      "link": "https://www.youtube.com/watch?v=_UxQC-Q3Bdo",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 5,
+      "lock": "ASSA Twin 6000 (with barrels)",
+      "link": "https://www.youtube.com/watch?v=WRYz5cMkiiE",
+      "id": "55053299"
+    },
+    {
+      "row": 6,
+      "lock": "Mul-T-Lock MT5+",
+      "link": "https://www.youtube.com/watch?v=eoyDnQt4B0g",
+      "id": "649eaebc"
+    },
+    {
+      "row": 7,
+      "lock": "ASSA Twin Pro (barrels)",
+      "link": "https://www.youtube.com/watch?v=X4uiyoJfNEQ",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 8,
+      "lock": "Abloy Disklock",
+      "link": "https://www.youtube.com/watch?v=glYBt9zGeIA",
+      "id": "87eaa964"
+    },
+    {
+      "row": 9,
+      "lock": "UrbanAlps Stealth Key SK1",
+      "link": "https://www.youtube.com/watch?v=TDtALlHNENY",
+      "id": "e4bb0668"
+    },
+    {
+      "row": 10,
+      "lock": "ASSA Desmo (8 sliders) (no mastered pins)",
+      "link": "https://www.youtube.com/watch?v=oOc5Yd9Ocw8",
+      "id": "1459e2c6"
+    },
+    {
+      "row": 11,
+      "lock": "EVVA Dual (0 mastered elements)",
+      "link": "https://www.youtube.com/watch?v=bEMOrETqdk0",
+      "id": "533c7408"
+    },
+    {
+      "row": 12,
+      "lock": "DOM ix10 (with shark fins)",
+      "link": "https://www.youtube.com/watch?v=2Df5r_30PAk",
+      "id": "e39885f3"
+    },
+    {
+      "row": 13,
+      "lock": "CX-5 Scorpion",
+      "link": "https://www.youtube.com/watch?v=v7DMYSMOHPU",
+      "id": "626da374",
+      "modifier": "Non-Picking Defeat"
+    },
+    {
+      "row": 14,
+      "lock": "Schlage Everest Primus",
+      "link": "https://www.youtube.com/watch?v=cV2BCgdwwEk",
+      "id": "ea1afad0"
+    },
+    {
+      "row": 15,
+      "lock": "Mul-T-Lock Interactive (spooled inner drivers + >3 counter milled outer keypins)",
+      "link": "https://www.youtube.com/watch?v=iNaQoKj7dpg",
+      "id": "3335df97"
+    },
+    {
+      "row": 16,
+      "lock": "Tier 5 Project Community",
+      "link": "https://assamow.com",
+      "id": "12345712"
+    },
+    {
+      "row": 17,
+      "lock": "Tier 5 Project Tool Manufacturing",
+      "link": "https://i.imgur.com/IBemcTW.jpg",
+      "id": "12345727"
+    },
+    {
+      "row": 18,
+      "lock": "Tier 5 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/1015052239519371404/1048643843333042206",
+      "id": "12345697"
+    },
+    {
+      "row": 19,
+      "lock": "Abloy Classic",
+      "link": "https://youtu.be/RqQBF6Mhf10",
+      "id": "da09d849"
+    },
+    {
+      "row": 20,
+      "lock": "Tier 4 Project Picking Instruction",
+      "link": "https://assamow.com/abloysim/",
+      "id": "12345716"
+    }
+  ]
+}

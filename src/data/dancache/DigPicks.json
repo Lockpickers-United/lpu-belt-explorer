@@ -1,0 +1,51 @@
+{
+  "header": {
+    "picker": "DigPicks",
+    "numBlack": 1,
+    "points": 65
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Abus Plus (without butterfly discs)",
+      "link": "https://youtu.be/LkjnZ8ZaaUE",
+      "id": "b8350900"
+    },
+    {
+      "row": 5,
+      "lock": "Zeiss Ikon Sk6 vector",
+      "link": "https://youtu.be/a-pv-fJH6F8",
+      "id": "08b5986d"
+    },
+    {
+      "row": 6,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://youtu.be/n_TcN5ct_Wo",
+      "id": "29ab2852"
+    },
+    {
+      "row": 7,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/r4XqpkRENCI",
+      "id": "f133510b"
+    },
+    {
+      "row": 8,
+      "lock": "ASSA Twin v10/Twin 2 with barrels",
+      "link": "https://youtu.be/f63_BMwBmQk",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 9,
+      "lock": "Tier 3 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1121005821317349416",
+      "id": "12345680"
+    },
+    {
+      "row": 10,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1121006467001090088",
+      "id": "12345689"
+    }
+  ]
+}

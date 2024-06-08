@@ -1,0 +1,123 @@
+{
+  "header": {
+    "picker": "Loose-Shirt",
+    "numBlack": 5,
+    "points": 140
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Zeiss Ikon tk5 sperwellenprofil (with serrated fingerpins)",
+      "link": "https://youtu.be/NMzpVXi83ng",
+      "id": "34d27803"
+    },
+    {
+      "row": 5,
+      "lock": "Goal v18 (<14 pins)",
+      "link": "https://youtu.be/zSlhGEXN0A0",
+      "id": "9f613c4a"
+    },
+    {
+      "row": 6,
+      "lock": "Goal D9",
+      "link": "https://youtu.be/IA12j1KNVPE",
+      "id": "7194cc26"
+    },
+    {
+      "row": 7,
+      "lock": "Lockman Megacross (9-pins, mushroom drivers)",
+      "link": "https://youtu.be/M5zS38XuPCw",
+      "id": "9982c0eb"
+    },
+    {
+      "row": 8,
+      "lock": "Kenaurd (pin-in-pin) (5 pins)",
+      "link": "https://youtu.be/HB8KIg8rCJI",
+      "id": "54dc69e8"
+    },
+    {
+      "row": 9,
+      "lock": "Mul-T-Lock Classic (4 pins, spooled drivers)",
+      "link": "https://youtu.be/pc1uammnoSk",
+      "id": "aec0c82d"
+    },
+    {
+      "row": 10,
+      "lock": "Medeco Biaxial (5+ pins)",
+      "link": "https://youtu.be/bsk7nwJdRI4",
+      "id": "826c31e0"
+    },
+    {
+      "row": 11,
+      "lock": "Mul-T-Lock Interactive (>4 spooled drivers, <3 countermilled outer keypins)",
+      "link": "https://youtu.be/0fZjCSmqNck",
+      "id": "3335df97"
+    },
+    {
+      "row": 12,
+      "lock": "Schlage Primus",
+      "link": "https://youtu.be/l6Ys1MK5_Lo",
+      "id": "ea1afad0"
+    },
+    {
+      "row": 13,
+      "lock": "SFIC format locks (unless otherwise specified)***",
+      "link": "https://youtu.be/OmnKfEJyf70",
+      "id": "c8259a23"
+    },
+    {
+      "row": 14,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/BkjS7V72FI8",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 15,
+      "lock": "Tier 2 Project Cutaways",
+      "link": "https://docs.google.com/presentation/d/1Y7PGX88xdMlEWOWhMb7oRjJ1FBs62NNrCkwEJ0bjM5Q/edit?usp=drive_link",
+      "id": "12345699"
+    },
+    {
+      "row": 16,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://docs.google.com/presentation/d/1gw89CfQCoz3z2AzQ-UugWN5OIUHp2TgrcoUkUDK-sS0/edit?usp=drive_link",
+      "id": "12345689"
+    },
+    {
+      "row": 17,
+      "lock": "ASSA Twin Maximum (barrels)",
+      "link": "https://www.reddit.com/r/lockpicking/comments/16wyetu/assa_twin_maximum_picked_and_gutted/",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 18,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/LVTGigHlDUU",
+      "id": "f133510b"
+    },
+    {
+      "row": 19,
+      "lock": "Goal v18 (14-16 or more pins)",
+      "link": "https://youtu.be/9g-7LrdTjS4",
+      "id": "63b2e02b"
+    },
+    {
+      "row": 20,
+      "lock": "ASSA Twin Maximum (barrels)",
+      "link": "https://www.reddit.com/r/lockpicking/comments/16wyetu/assa_twin_maximum_picked_and_gutted/",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 21,
+      "lock": "ASSA Twin Combi",
+      "link": "https://youtu.be/85AdqbStePk",
+      "id": "7168d463"
+    },
+    {
+      "row": 22,
+      "lock": "Abus GDS (barrels)",
+      "link": "https://youtu.be/Fz9AiJrOT3A",
+      "id": "3df9c95f"
+    }
+  ]
+}

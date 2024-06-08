@@ -1,0 +1,63 @@
+{
+  "header": {
+    "picker": "Skylerminer",
+    "numBlack": 4,
+    "points": 101
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://cdn.discordapp.com/attachments/282173282546089985/1241010111997153310/SkylerMiner_SafeCracking.pdf?ex=66567bfb&is=66552a7b&hm=7910928a35b853cb2f9f17880fba66d7249158a13e096ea3c6a71151aa43f4a5&",
+      "id": "12345679"
+    },
+    {
+      "row": 5,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/6ZZig5BtDtA",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 6,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://youtu.be/OrhV4ePKDF0",
+      "id": "06ddb074"
+    },
+    {
+      "row": 7,
+      "lock": "Medeco Biaxial (≥5 pins)",
+      "link": "https://youtu.be/wXm6uwLgVFA",
+      "id": "826c31e0"
+    },
+    {
+      "row": 8,
+      "lock": "Goal P",
+      "link": "https://youtu.be/3RuEWKz7Wp0",
+      "id": "a1233156"
+    },
+    {
+      "row": 9,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://youtu.be/9674zfCxD9c",
+      "id": "104776ef"
+    },
+    {
+      "row": 10,
+      "lock": "Goal Z (<2 standard drivers)",
+      "link": "https://youtu.be/EyypAQ1Jk3w",
+      "id": "5103e650"
+    },
+    {
+      "row": 11,
+      "lock": "ASSA Twin 6000 (with barrels)",
+      "link": "https://youtu.be/JbiiDjjiyVY",
+      "id": "55053299"
+    },
+    {
+      "row": 12,
+      "lock": "ASSA Twin v10 with barrels",
+      "link": "https://youtu.be/S9D9bR9j938",
+      "id": "3f73d2ce"
+    }
+  ]
+}

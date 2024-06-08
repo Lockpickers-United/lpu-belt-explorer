@@ -1,0 +1,51 @@
+{
+  "header": {
+    "picker": "Picksmith",
+    "numBlack": 2,
+    "points": 173
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/yrbQK4hk1bA",
+      "id": "f133510b"
+    },
+    {
+      "row": 5,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/-n3MyZq5a7U",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 11,
+      "lock": "Nemef NF2",
+      "link": "https://youtu.be/KqjHo6O0xTg",
+      "id": "94466c21"
+    },
+    {
+      "row": 15,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://docs.google.com/document/d/179q0iMFgGdABGeMLYKP_7OSxDISF735TQbd8KS4GJxs/edit?usp=share_link",
+      "id": "12345689"
+    },
+    {
+      "row": 16,
+      "lock": "Tier 5 Project Pickmaking",
+      "link": "https://docs.google.com/document/d/1--msOwI79MdeQtB2DiBxB5z8hx7ub8jPFamt4FeWauw/edit?usp=share_link",
+      "id": "12345697"
+    },
+    {
+      "row": 17,
+      "lock": "Tier 4 Project Community",
+      "link": "https://docs.google.com/document/d/1Z6LL6xVwaI1xyTsCE1N6cEDO7AEOL5lcyAUSSoG4Zqk/edit?usp=share_link",
+      "id": "12345711"
+    },
+    {
+      "row": 18,
+      "lock": "Tier 4 Project Challenge locks",
+      "link": "https://docs.google.com/document/d/1dGdnfVNQgcWqbZuIjyUI4Nht4yktvMR63DUhIaQumdY/edit?usp=share_link",
+      "id": "12345706"
+    }
+  ]
+}

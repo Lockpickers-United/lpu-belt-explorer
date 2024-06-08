@@ -1,0 +1,99 @@
+{
+  "header": {
+    "picker": "CYP",
+    "numBlack": 7,
+    "points": 193
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "ASSA 500 (with gin spools and matched sleeve)",
+      "link": "https://youtu.be/f3cRV8wHSLQ",
+      "id": "ef221c67"
+    },
+    {
+      "row": 5,
+      "lock": "Mul-T-Lock Interactive (>4 spooled drivers)",
+      "link": "https://youtu.be/ynZLQci0r1Q",
+      "id": "3335df97"
+    },
+    {
+      "row": 6,
+      "lock": "Mul-T-Lock Interactive (>4 serrated drivers)",
+      "link": "https://youtu.be/OvtYptPhERU",
+      "id": "5c5701d7"
+    },
+    {
+      "row": 7,
+      "lock": "Mul-T-Lock Interactive plus",
+      "link": "https://youtu.be/iuocqcfb5TU",
+      "id": "0ae75ea0"
+    },
+    {
+      "row": 8,
+      "lock": "Abus Plus (with butterfly discs)",
+      "link": "https://youtu.be/iZ88whkWA6w",
+      "id": "b8350901"
+    },
+    {
+      "row": 9,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://youtu.be/Ix6Gr6olkbg",
+      "id": "29ab2852"
+    },
+    {
+      "row": 10,
+      "lock": "Goal Z (<2 standard drivers)",
+      "link": "https://youtu.be/IpcLgqZoihw",
+      "id": "5103e650"
+    },
+    {
+      "row": 11,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/NCQjsDA9e_8",
+      "id": "f133510b"
+    },
+    {
+      "row": 12,
+      "lock": "Abloy Sentry",
+      "link": "https://youtu.be/17QTD0u8lCc",
+      "id": "2ae6a691"
+    },
+    {
+      "row": 13,
+      "lock": "ASSA Twin v10 with barrels",
+      "link": "https://youtu.be/Iha6YAzlFck",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 14,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://youtu.be/T_IdAS6Nmwg",
+      "id": "104776ef"
+    },
+    {
+      "row": 15,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/i2O9dlE0QVw",
+      "id": "ab1e901f"
+    },
+    {
+      "row": 16,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/sIZFoG2ZNeU",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 17,
+      "lock": "Goal v18 (≥17 pins)",
+      "link": "https://youtu.be/Y2EE2J1Q3vM",
+      "id": "109531f4"
+    },
+    {
+      "row": 18,
+      "lock": "Tier 2 Project Tool making",
+      "link": "https://discord.com/channels/140129091796992000/1237418483059392542",
+      "id": "12345719"
+    }
+  ]
+}

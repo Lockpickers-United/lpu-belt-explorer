@@ -1,0 +1,51 @@
+{
+  "header": {
+    "picker": "LockNoob",
+    "numBlack": 0,
+    "points": 66
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Rosengrens 32A81S / 32C81P †",
+      "link": "https://youtu.be/6frDSfcmo3E",
+      "id": "db63c882"
+    },
+    {
+      "row": 5,
+      "lock": "DOM Diamant (picked with custom tool)",
+      "link": "https://youtu.be/8T6sPeVy3yU",
+      "id": "57fbcb1b"
+    },
+    {
+      "row": 6,
+      "lock": "Tier 2 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/985778623028015104",
+      "id": "12345694"
+    },
+    {
+      "row": 7,
+      "lock": "Tier 4 Project impressioning",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/985778623028015104",
+      "id": "12345691"
+    },
+    {
+      "row": 8,
+      "lock": "Tier 3 Project Community",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/985778623028015104",
+      "id": "12345710"
+    },
+    {
+      "row": 9,
+      "lock": "Dom IX 5KG",
+      "link": "https://www.youtube.com/watch?v=Q3-ZDu8dTAw",
+      "id": "eec4bd4a"
+    },
+    {
+      "row": 10,
+      "lock": "Mul-T-Lock Classic (standard drivers)",
+      "link": "https://www.youtube.com/watch?v=kmDLVirUqgg",
+      "id": "0418a174"
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "header": {
+    "picker": "Syotos",
+    "numBlack": 18,
+    "points": 603
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/S1e1udZTu7Q",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 5,
+      "lock": "Goal v18 (14-16 or more pins)",
+      "link": "https://youtu.be/c1iD41fWaP0",
+      "id": "63b2e02b"
+    },
+    {
+      "row": 6,
+      "lock": "ASSA Twin 2 with barrels",
+      "link": "https://youtu.be/2RI3BS_iaTg",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 7,
+      "lock": "Miwa PR (11 unmastered elements) (upgrade of Miwa PS)",
+      "link": "https://youtu.be/n63ggb5AVmg",
+      "id": "91f40022"
+    },
+    {
+      "row": 8,
+      "lock": "EVVA 3KS+ (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/mmfgM3hISUQ",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 9,
+      "lock": "UrbanAlps Stealth Key SK1",
+      "link": "https://www.youtube.com/watch?v=1fAkejIFTUo",
+      "id": "e4bb0668"
+    },
+    {
+      "row": 10,
+      "lock": "EVVA ICS (0 mastered elements)",
+      "link": "https://youtu.be/ZAYpBH1RNPw",
+      "id": "8ea170d2"
+    },
+    {
+      "row": 11,
+      "lock": "West 917",
+      "link": "https://youtu.be/tdvfmaocWiE",
+      "id": "23437955"
+    },
+    {
+      "row": 12,
+      "lock": "Zeiss Ikon WSW (7 sliders, upgrade of WSW with 5 sliders)",
+      "link": "https://youtu.be/CCw_DX7ptnM",
+      "id": "c9494ee8"
+    },
+    {
+      "row": 13,
+      "lock": "DOM ix Twinstar",
+      "link": "https://youtu.be/m639LeFqvFQ",
+      "id": "3c73c705"
+    },
+    {
+      "row": 14,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/IGFC5Tuw2Ik",
+      "id": "f133510b"
+    },
+    {
+      "row": 15,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://youtu.be/HKepuES2NDI",
+      "id": "104776ef"
+    },
+    {
+      "row": 16,
+      "lock": "DOM RS 8",
+      "link": "https://youtu.be/ivTCT-YlaZY",
+      "id": "4993a918"
+    },
+    {
+      "row": 17,
+      "lock": "Anker 3800",
+      "link": "https://youtu.be/S_meIfvP0lw",
+      "id": "cc8cfd45"
+    },
+    {
+      "row": 18,
+      "lock": "Zeiss Ikon R10",
+      "link": "https://youtu.be/3Ow8acZ-QWU",
+      "id": "649eaebc"
+    },
+    {
+      "row": 19,
+      "lock": "Miwa E6 / Miwa 83EC",
+      "link": "https://youtu.be/fZ8wQFKTRQY",
+      "id": "9094ca58"
+    },
+    {
+      "row": 20,
+      "lock": "EVVA Dual (>4 mastered sliders)",
+      "link": "https://youtu.be/d2fwys_jPFc",
+      "id": "00b569f2"
+    },
+    {
+      "row": 21,
+      "lock": "Mul-T-Lock Classic (>4 serrated drivers)",
+      "link": "https://youtu.be/mzrEEurl6lU",
+      "id": "5c5701d7"
+    },
+    {
+      "row": 22,
+      "lock": "Mauer NW4",
+      "link": "https://www.youtube.com/watch?v=MxVIr6su7cg",
+      "id": "b8783269"
+    },
+    {
+      "row": 23,
+      "lock": "Lips Octro (≥13 pins)",
+      "link": "https://youtu.be/Ygbf5QgmNgY",
+      "id": "514c7ec4"
+    },
+    {
+      "row": 24,
+      "lock": "Robur Safe Deposit Lock (gins or barrels <3 chambers with matched milling)",
+      "link": "https://www.youtube.com/watch?v=X8jB1MACcQ8",
+      "id": "94ee12b7"
+    },
+    {
+      "row": 25,
+      "lock": "Goal D9",
+      "link": "https://youtu.be/_RoAPRBMvYU",
+      "id": "7194cc26"
+    },
+    {
+      "row": 26,
+      "lock": "M&C Color Pro (≥4 sliders)",
+      "link": "https://youtu.be/h67MOrmGO5g",
+      "id": "6efe5f67"
+    },
+    {
+      "row": 27,
+      "lock": "M&C Condor",
+      "link": "https://youtu.be/Yqy3nWv76Vw",
+      "id": "be22f5f1"
+    },
+    {
+      "row": 28,
+      "lock": "M&C Matrix",
+      "link": "https://youtu.be/Yqy3nWv76Vw",
+      "id": "9aedb834"
+    },
+    {
+      "row": 29,
+      "lock": "DOM ix6sr",
+      "link": "https://youtu.be/OOvPeo2krH0",
+      "id": "acde7f0c"
+    },
+    {
+      "row": 30,
+      "lock": "Mul-T-Lock Classic (>4 spooled drivers)",
+      "link": "https://youtu.be/t6hYUemv2rE",
+      "id": "3335df97"
+    },
+    {
+      "row": 31,
+      "lock": "Mul-T-Lock MT5",
+      "link": "https://youtu.be/-DVX2AvCsxw",
+      "id": "16906a6c"
+    },
+    {
+      "row": 32,
+      "lock": "West 955",
+      "link": "https://youtu.be/4NopKhfpBWE",
+      "id": "18e1f45b"
+    },
+    {
+      "row": 33,
+      "lock": "M&C Color (<4 sliders)",
+      "link": "https://youtu.be/xoaCzQTa4c0",
+      "id": "1fe0ba0d"
+    },
+    {
+      "row": 34,
+      "lock": "M&C Move",
+      "link": "https://youtu.be/POqvHM-nWKc",
+      "id": "be22f5f1"
+    },
+    {
+      "row": 35,
+      "lock": "Mul-T-Lock Classic (standard drivers)",
+      "link": "https://www.youtube.com/watch?v=C6B9TaRJ0os",
+      "id": "0418a174"
+    },
+    {
+      "row": 36,
+      "lock": "Miwa Magnetic Camlock",
+      "link": "https://youtu.be/y5fAxTToSmo",
+      "id": "58f2eac0"
+    },
+    {
+      "row": 37,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/952996564522115152",
+      "id": "12345679"
+    },
+    {
+      "row": 38,
+      "lock": "DOM ix Saturn",
+      "link": "https://youtu.be/uqFgwO3j3mo",
+      "id": "6b06f591"
+    },
+    {
+      "row": 39,
+      "lock": "Schlage Everest 29 SL Primus XP",
+      "link": "https://youtu.be/JxdoKHErId0",
+      "id": "cf76cfde"
+    },
+    {
+      "row": 40,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://youtu.be/NO1E9GL1zNU",
+      "id": "06ddb074"
+    },
+    {
+      "row": 41,
+      "lock": "Goal P",
+      "link": "https://youtu.be/OB7eMePL9cI",
+      "id": "a1233156"
+    },
+    {
+      "row": 42,
+      "lock": "Tesa TX80",
+      "link": "https://youtu.be/Ca62AP2J0bI",
+      "id": "3f49ccc1"
+    },
+    {
+      "row": 43,
+      "lock": "Kaken KX3 (fully pinned)",
+      "link": "https://youtu.be/PzrXXlTt0-U",
+      "id": "898a7138"
+    },
+    {
+      "row": 44,
+      "lock": "Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)",
+      "link": "https://youtu.be/PBECQw1xIew",
+      "id": "108549ba"
+    },
+    {
+      "row": 45,
+      "lock": "Nemef NF2",
+      "link": "https://youtu.be/z_u2Bp72qXw",
+      "id": "94466c21"
+    },
+    {
+      "row": 46,
+      "lock": "ASSA Twin Combi",
+      "link": "https://youtu.be/BbzIEx1GVsM",
+      "id": "7168d463"
+    },
+    {
+      "row": 47,
+      "lock": "Miwa JN (4 rows) (15 or more pins)",
+      "link": "https://youtu.be/t4y6Hmw9mAs",
+      "id": "8f99236e"
+    },
+    {
+      "row": 48,
+      "lock": "Millenco Magnum (7 or 9 pins)",
+      "link": "https://youtu.be/CvbDzyRvXU8",
+      "id": "ebe9ee59"
+    },
+    {
+      "row": 49,
+      "lock": "Miwa DS",
+      "link": "https://youtu.be/6WN6cTz57zk",
+      "id": "df8081fa"
+    },
+    {
+      "row": 50,
+      "lock": "Abus EC 700",
+      "link": "https://youtu.be/r7RwtdLf7NM",
+      "id": "b29a8b44"
+    },
+    {
+      "row": 51,
+      "lock": "DOM RS Sigma",
+      "link": "https://youtu.be/RVk4UvX24VM",
+      "id": "1dd28bf9"
+    },
+    {
+      "row": 52,
+      "lock": "Illinois Duo",
+      "link": "https://youtu.be/ovYNpfqFyoM",
+      "id": "07bc680a"
+    },
+    {
+      "row": 53,
+      "lock": "Lockman Megacross (pyramid drivers)",
+      "link": "https://youtu.be/W-6CA3bLT7g",
+      "id": "f1857cef"
+    },
+    {
+      "row": 54,
+      "lock": "Clavis T-20 (20 pins)",
+      "link": "https://youtu.be/e0vWYeVRGdM",
+      "id": "48cf387f"
+    },
+    {
+      "row": 55,
+      "lock": "Emhart (6 pins)",
+      "link": "https://youtu.be/6cl5EmYKXiM",
+      "id": "c4f942f0"
+    },
+    {
+      "row": 56,
+      "lock": "DOM System D",
+      "link": "https://youtu.be/kLm8n74Yfts",
+      "id": "61247b32"
+    },
+    {
+      "row": 57,
+      "lock": "Ruko 600",
+      "link": "https://youtu.be/rNipVegI7x0",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 58,
+      "lock": "Sepa HDS",
+      "link": "https://youtu.be/C7oDV3JCpfA",
+      "id": "e0a9caf4"
+    },
+    {
+      "row": 59,
+      "lock": "Opnus UX",
+      "link": "https://youtu.be/fa5DsffLAMw",
+      "id": "ed3ae6cf"
+    },
+    {
+      "row": 60,
+      "lock": "Fuki Tierkey",
+      "link": "https://youtu.be/yiGHvZ2GNz4",
+      "id": "7298a640"
+    },
+    {
+      "row": 61,
+      "lock": "Aegis 18 pin",
+      "link": "https://youtu.be/8DiLSJYzpAE",
+      "id": "19fce24d"
+    },
+    {
+      "row": 62,
+      "lock": "Alpha YKK AP",
+      "link": "https://youtu.be/R6ZXvRmpGl0",
+      "id": "2c58f220"
+    },
+    {
+      "row": 63,
+      "lock": "VSR 2-row",
+      "link": "https://youtu.be/jmA3U5GpXYY",
+      "id": "97c2b9be"
+    },
+    {
+      "row": 64,
+      "lock": "Lucznik E8",
+      "link": "https://youtu.be/DhyS00oBfNY",
+      "id": "17270f9c"
+    },
+    {
+      "row": 65,
+      "lock": "Lucznik LC",
+      "link": "https://youtu.be/zH211Um_NCg",
+      "id": "1c01212e"
+    },
+    {
+      "row": 66,
+      "lock": "Mul-T-Lock Integrator",
+      "link": "https://youtu.be/xl-g0ts3rTE",
+      "id": "6e0bfdd2"
+    },
+    {
+      "row": 67,
+      "lock": "Dom IX 5KG",
+      "link": "https://youtu.be/EmbBzCeOURI",
+      "id": "eec4bd4a"
+    },
+    {
+      "row": 68,
+      "lock": "Fichet-Bauche Monopole",
+      "link": "https://youtu.be/wsBmLTlqYMM",
+      "id": "3bd433d7"
+    }
+  ]
+}

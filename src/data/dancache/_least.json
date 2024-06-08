@@ -1,0 +1,237 @@
+{
+  "header": {
+    "picker": "_least",
+    "numBlack": 12,
+    "points": 418
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Fab Variant",
+      "link": "https://youtu.be/E23salcTXew",
+      "id": "63a9a2b1"
+    },
+    {
+      "row": 5,
+      "lock": "EVVA 3KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/xLtb0pxn4so",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 6,
+      "lock": "Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)",
+      "link": "https://youtu.be/_Ns622TsJ6k",
+      "id": "108549ba"
+    },
+    {
+      "row": 7,
+      "lock": "DOM ix Twinstar",
+      "link": "https://youtu.be/JB1RQLWMx5o",
+      "id": "3c73c705"
+    },
+    {
+      "row": 8,
+      "lock": "ASSA Twin Combi",
+      "link": "https://youtu.be/ppVPiODq7QY",
+      "id": "7168d463"
+    },
+    {
+      "row": 9,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/EtFGX9WrZYA",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 10,
+      "lock": "UrbanAlps Stealth Key SK1",
+      "link": "https://youtu.be/r_-MfYMU0yk",
+      "id": "e4bb0668"
+    },
+    {
+      "row": 11,
+      "lock": "Fab Dynamic",
+      "link": "https://youtu.be/ReYJGXyZeC8",
+      "id": "e0255299"
+    },
+    {
+      "row": 12,
+      "lock": "Fab NZS3",
+      "link": "https://youtu.be/4MUIum7HeFQ",
+      "id": "3b797ff2"
+    },
+    {
+      "row": 13,
+      "lock": "EVVA EPS (Slider version)",
+      "link": "https://youtu.be/oQRhxsd1ROw",
+      "id": "8c2983b5"
+    },
+    {
+      "row": 14,
+      "lock": "Tier 4 Project impressioning",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1126116063487197325",
+      "id": "12345691"
+    },
+    {
+      "row": 15,
+      "lock": "Tier 3 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1004142037295181885",
+      "id": "12345680"
+    },
+    {
+      "row": 16,
+      "lock": "Fab 2000",
+      "link": "https://youtu.be/8ym70k0DW2A",
+      "id": "f938f2fe"
+    },
+    {
+      "row": 17,
+      "lock": "Tokoz Tech",
+      "link": "https://youtu.be/tg1-b2jyguw",
+      "id": "35330d19"
+    },
+    {
+      "row": 18,
+      "lock": "Nemef NF2",
+      "link": "https://youtu.be/OrPKWL4sGXw",
+      "id": "94466c21"
+    },
+    {
+      "row": 19,
+      "lock": "Nemef NF4",
+      "link": "https://youtu.be/6iXSKoiJyMs",
+      "id": "4debdca1"
+    },
+    {
+      "row": 20,
+      "lock": "Yale Superior (7 or 9 pins)",
+      "link": "https://youtu.be/Hp-EYq9HD-8",
+      "id": "ebe9ee59"
+    },
+    {
+      "row": 21,
+      "lock": "Goal D9",
+      "link": "https://youtu.be/wVcmkbwGV64",
+      "id": "7194cc26"
+    },
+    {
+      "row": 22,
+      "lock": "Mul-T-Lock Classic Pro",
+      "link": "https://youtu.be/zCxN2KFR5Sg",
+      "id": "fd2b533e"
+    },
+    {
+      "row": 23,
+      "lock": "Abus Plus (with butterfly discs)",
+      "link": "https://youtu.be/_PymLUkNcjs",
+      "id": "b8350901"
+    },
+    {
+      "row": 24,
+      "lock": "ASSA Desmo (8 sliders) (no mastered pins)",
+      "link": "https://youtu.be/AMy0SWFrtlw",
+      "id": "1459e2c6"
+    },
+    {
+      "row": 25,
+      "lock": "Kaba Gege pExtra (6-7 pins)",
+      "link": "https://youtu.be/frtc-9ZcTpE ",
+      "id": "4cd09b3b"
+    },
+    {
+      "row": 26,
+      "lock": "ASSA d12",
+      "link": "https://youtu.be/baiJSNEtAtc",
+      "id": "d3ad5a73"
+    },
+    {
+      "row": 27,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://youtu.be/jB1EcbqnUl4",
+      "id": "29ab2852"
+    },
+    {
+      "row": 28,
+      "lock": "SEA slider lock",
+      "link": "https://youtu.be/-7r3KRLyTK4",
+      "id": "842165cc"
+    },
+    {
+      "row": 29,
+      "lock": "Miwa DS",
+      "link": "https://youtu.be/-cKM2xNmmII ",
+      "id": "df8081fa"
+    },
+    {
+      "row": 30,
+      "lock": "Medeco Biaxial",
+      "link": "https://youtu.be/5VjAiacS61s",
+      "id": "826c31e0"
+    },
+    {
+      "row": 31,
+      "lock": "Mul-T-Lock MT5+",
+      "link": "https://youtu.be/0gip2jNOg0w",
+      "id": "649eaebc"
+    },
+    {
+      "row": 32,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/O39AxL2JsIk?si=ctBdOUJKLfhimDk8",
+      "id": "f133510b"
+    },
+    {
+      "row": 33,
+      "lock": "Trioving (Vingcard) 55## (w trampoline pins)",
+      "link": "https://youtu.be/YgaU8iwsptI?si=YwjAs8QiPKHYo3w-",
+      "id": "55511995"
+    },
+    {
+      "row": 34,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://youtu.be/nGEFoR4VHdw?si=aqttEsjaCfHv_zqb",
+      "id": "104776ef"
+    },
+    {
+      "row": 35,
+      "lock": "Keso 2000S",
+      "link": "https://youtu.be/6zrULmx2e08?si=1QWfQWMx8n4klFVd",
+      "id": "304f5471"
+    },
+    {
+      "row": 36,
+      "lock": "Ruko 600",
+      "link": " https://youtu.be/fyd4FpQ8IUs?si=MRxjCFZG1g--1Kgf",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 37,
+      "lock": "Robur Safe Deposit Lock (barrels >3 chambers with matched milling)",
+      "link": " https://youtu.be/g4TyAdp8FVc?si=Y8E31h2PqcKnr2P0",
+      "id": "9da7a5f2"
+    },
+    {
+      "row": 38,
+      "lock": "DOM RS 8",
+      "link": "https://youtu.be/iQVLJuGSDKM?si=Ehw90jwI55UuHw5z ",
+      "id": "4993a918"
+    },
+    {
+      "row": 39,
+      "lock": "Fichet 484 (with false gates) (0 mastered elements)",
+      "link": "https://youtu.be/VNCRWqO60zU?si=t3DgKZzleI75mjoo",
+      "id": "340154fa"
+    },
+    {
+      "row": 40,
+      "lock": "EVVA ICS (0 mastered elements)",
+      "link": "https://youtu.be/hpt7gXnvf5k?si=R7HWYajrvXIvnRkU ",
+      "id": "8ea170d2"
+    },
+    {
+      "row": 41,
+      "lock": "DOM System D",
+      "link": "https://youtu.be/imDfhbKS0Q0?si=0z4Na3WIECGH1xVe",
+      "id": "61247b32"
+    }
+  ]
+}

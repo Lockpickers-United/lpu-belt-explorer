@@ -1,0 +1,87 @@
+{
+  "header": {
+    "picker": "m.c.",
+    "numBlack": 1,
+    "points": 82
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://youtu.be/xt2Hma_NXxw",
+      "id": "104776ef"
+    },
+    {
+      "row": 5,
+      "lock": "EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/vuI9deMMwxA",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 6,
+      "lock": "Tier 2 Project Cutaways",
+      "link": "https://youtu.be/jp4mN5ZDHgg",
+      "id": "12345699"
+    },
+    {
+      "row": 7,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/282173282546089985/1078002986812457090",
+      "id": "12345679"
+    },
+    {
+      "row": 8,
+      "lock": "Tier 1 Project Community",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1052875247247958086",
+      "id": "12345708"
+    },
+    {
+      "row": 9,
+      "lock": "Kryptonite Disk Detainer",
+      "link": "https://youtu.be/V-cZjRxvo9M",
+      "id": "c8c0ee06"
+    },
+    {
+      "row": 11,
+      "lock": "Millenco Magnum (7 or 9 pins)",
+      "link": "https://youtu.be/NQHP6qlpn38",
+      "id": "ebe9ee59"
+    },
+    {
+      "row": 12,
+      "lock": "ASSA 600 / ASSA Max+ Restricted (with barrel spools and matching countermilling)",
+      "link": "https://youtu.be/3nH9auQfaZI",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 13,
+      "lock": "avocet abs",
+      "link": "https://youtu.be/DlqBe_Pk98M",
+      "id": "f3666121"
+    },
+    {
+      "row": 14,
+      "lock": "Mul-T-Lock Classic / Interactive (4 serrated drivers)",
+      "link": "https://youtu.be/gHLM6eIElWE",
+      "id": "48323cde"
+    },
+    {
+      "row": 15,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://youtu.be/sQYVG54dRmM",
+      "id": "29ab2852"
+    },
+    {
+      "row": 17,
+      "lock": "Gerda HSS",
+      "link": "https://youtu.be/qRUpkc_q8hQ",
+      "id": "594b1a1c"
+    },
+    {
+      "row": 18,
+      "lock": "Abus Plus (with butterfly discs)",
+      "link": "https://youtu.be/RWJMH4n64Fs",
+      "id": "b8350901"
+    }
+  ]
+}

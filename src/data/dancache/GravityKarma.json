@@ -1,0 +1,298 @@
+{
+  "header": {
+    "picker": "GravityKarma",
+    "numBlack": 14,
+    "points": 0
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Crosslock",
+      "link": "https://www.youtube.com/watch?v=0xjnLCjIxdU&t=9s",
+      "modifier": "Other"
+    },
+    {
+      "row": 5,
+      "lock": "American 1100 / A1100",
+      "link": "https://www.youtube.com/watch?v=OLVMqth5kkA&t=316s",
+      "id": "2ae1e0b8"
+    },
+    {
+      "row": 6,
+      "lock": "Castell Padlock",
+      "link": "https://www.youtube.com/watch?v=mgHfiMpAABY",
+      "modifier": "First Recorded Pick"
+    },
+    {
+      "row": 7,
+      "lock": "Mul-T-Lock Jr / Classic / Interactive (spooled drivers, <3 countermilled outer keypins)",
+      "link": "https://www.youtube.com/watch?v=QsuYEG-1Dv0&ab_channel=GravityKarma",
+      "id": "a0ec1618"
+    },
+    {
+      "row": 8,
+      "lock": "Lockwood V7",
+      "link": "https://www.youtube.com/watch?v=hc9q6sTtTIs&ab_channel=GravityKarma",
+      "id": "f6b001ed"
+    },
+    {
+      "row": 10,
+      "lock": "Lockwood 334B45 (with spools)",
+      "link": "https://www.youtube.com/watch?v=xSIV0-xAcDc",
+      "id": "331c9d36"
+    },
+    {
+      "row": 11,
+      "lock": "fab control",
+      "link": "https://www.youtube.com/watch?v=wqX_tBdsA5Q",
+      "id": "b5e210ec"
+    },
+    {
+      "row": 12,
+      "lock": "West 916",
+      "link": "https://youtu.be/Q_7PultbgKk",
+      "id": "18e1f45b"
+    },
+    {
+      "row": 13,
+      "lock": "Keso 10RS (<13 pins)",
+      "link": "https://youtu.be/Avb5l9Hybng",
+      "id": "304f5471"
+    },
+    {
+      "row": 14,
+      "lock": "Kaba 8 (3-row) (≥9 pins)",
+      "link": "https://www.youtube.com/watch?v=VP7yewbWpmM",
+      "id": "779d74f5"
+    },
+    {
+      "row": 15,
+      "lock": "DOM ix6sr",
+      "link": "https://www.twitch.tv/gravitykarma",
+      "id": "acde7f0c"
+    },
+    {
+      "row": 16,
+      "lock": "Medeco Original (5+ pins)",
+      "link": "https://www.youtube.com/watch?v=PmLZW5NvcyY",
+      "id": "826c31e0"
+    },
+    {
+      "row": 17,
+      "lock": "Mul-T-Lock MT5",
+      "link": "https://www.youtube.com/watch?v=QsuYEG-1Dv0&ab_channel=GravityKarma",
+      "id": "16906a6c"
+    },
+    {
+      "row": 18,
+      "lock": "M&C Matrix",
+      "link": "https://www.youtube.com/watch?v=zqX3HXYF4TI",
+      "id": "9aedb834"
+    },
+    {
+      "row": 19,
+      "lock": "ASSA 600 (with barrel spools and matching countermilling)",
+      "link": "https://youtu.be/HQgV7_aQiYs",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 20,
+      "lock": "ALC Galaxy",
+      "link": "https://www.youtube.com/watch?v=tbqASTT2eXE",
+      "id": "33d6e0df"
+    },
+    {
+      "row": 21,
+      "lock": "ASSA Desmo (8 sliders) (no mastered pins)",
+      "link": "https://www.youtube.com/watch?v=40u4F97eZms",
+      "id": "1459e2c6"
+    },
+    {
+      "row": 22,
+      "lock": "Mul-T-Lock Classic / Interactive (serrated drivers)",
+      "link": "https://www.youtube.com/watch?v=oqtXx9ce3eY",
+      "id": "5c5701d7"
+    },
+    {
+      "row": 23,
+      "lock": "Kaba Gemini (<13 pins)",
+      "link": "https://www.youtube.com/watch?v=TrkVdmAjRo",
+      "id": "e0191c45"
+    },
+    {
+      "row": 24,
+      "lock": "Bks Multipin",
+      "link": "https://www.youtube.com/watch?v=2ECyNxM2A4E",
+      "id": "39bf479d"
+    },
+    {
+      "row": 25,
+      "lock": "Abloy Sentry",
+      "link": "https://gravitykarma.net/specialist-lock-tools",
+      "id": "2ae6a691"
+    },
+    {
+      "row": 26,
+      "lock": "Mul-T-Lock MT5+",
+      "link": "https://www.youtube.com/watch?v=2UzFAgZv9R0",
+      "id": "649eaebc"
+    },
+    {
+      "row": 27,
+      "lock": "Abus EC 700/800",
+      "link": "https://youtu.be/iAJ85rWt8q4",
+      "id": "b29a8b44"
+    },
+    {
+      "row": 28,
+      "lock": "Goal Z (≥2 standard drivers)",
+      "link": "https://www.youtube.com/watch?v=B8KafWDaAaM",
+      "id": "937eb7a8"
+    },
+    {
+      "row": 29,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/957686540455260241",
+      "id": "12345679"
+    },
+    {
+      "row": 30,
+      "lock": "Robur Safe Deposit Lock (>3 chambers with matched milling)",
+      "link": "https://www.youtube.com/watch?v=r1ByGh3u2l8",
+      "id": "112d0034"
+    },
+    {
+      "row": 31,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://www.youtube.com/watch?v=xOUe8YSWB5A&ab_channel=GravityKarma",
+      "id": "29ab2852"
+    },
+    {
+      "row": 32,
+      "lock": "Lowe and Fletcher 3007 Safe Lock ",
+      "link": "https://www.youtube.com/watch?v=5uBVa912ofE",
+      "id": "8625f848"
+    },
+    {
+      "row": 33,
+      "lock": "BKS Janus (14 or more pins)",
+      "link": "https://www.youtube.com/watch?v=sq2hccxHbQs",
+      "id": "f09ce6b3"
+    },
+    {
+      "row": 34,
+      "lock": "Kaba 20 (4 rows) (15 or more pins)",
+      "link": "https://youtu.be/0sLC5qIN6Ao",
+      "id": "8f99236e"
+    },
+    {
+      "row": 35,
+      "lock": "Fichet 450/484 (With false gates) (0 mastered elements)",
+      "link": "https://www.youtube.com/watch?v=BQVx9OhDZQg",
+      "id": "340154fa"
+    },
+    {
+      "row": 36,
+      "lock": "EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/dEnD7bDjblA",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 37,
+      "lock": "West 917",
+      "link": "https://youtu.be/Q_7PultbgKk",
+      "id": "23437955"
+    },
+    {
+      "row": 38,
+      "lock": "DOM ix Twinstar",
+      "link": "https://youtu.be/NeZ-Dyj0ysc",
+      "id": "3c73c705"
+    },
+    {
+      "row": 39,
+      "lock": "Bilock (12-pins) (1-2 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/K1vZc3jwB6g",
+      "id": "e3058619"
+    },
+    {
+      "row": 40,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/C_Q3GEUXKFI",
+      "id": "f133510b"
+    },
+    {
+      "row": 41,
+      "lock": "Walsall locks, Ace - 7 levers",
+      "link": "https://www.youtube.com/watch?v=bRsZgGtjrAU",
+      "id": "37914cb6"
+    },
+    {
+      "row": 42,
+      "lock": "Tier 3 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/957683734205849695",
+      "id": "12345695"
+    },
+    {
+      "row": 43,
+      "lock": "Goal GP (≥17 pins)",
+      "link": "https://youtu.be/okjwrJoucM0",
+      "id": "109531f4"
+    },
+    {
+      "row": 44,
+      "lock": "Clavis F-22 (upgrade of Clavis Q-18)",
+      "link": "https://www.youtube.com/watch?v=9KsRGf4VAds",
+      "id": "234a8ca8"
+    },
+    {
+      "row": 45,
+      "lock": "EVVA Dual (0 mastered elements)",
+      "link": "https://www.youtube.com/watch?v=bNmXtLxBBPU&ab_channel=GravityKarma",
+      "id": "533c7408"
+    },
+    {
+      "row": 46,
+      "lock": "ASIO/SCEC BiLock (2nd/3rd Gen only)",
+      "link": "https://www.youtube.com/watch?v=bDYTxenfLQs&ab_channel=GravityKarma",
+      "id": "12846cc6"
+    },
+    {
+      "row": 47,
+      "lock": "Fichet-Bauche M2B / M3B / MxB",
+      "link": "https://youtu.be/bl6BYL4ziJQ",
+      "id": "f048719a"
+    },
+    {
+      "row": 48,
+      "lock": "Tier 4 Project Challenge locks",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/957681633471909958",
+      "id": "12345706"
+    },
+    {
+      "row": 49,
+      "lock": "NATO Mersey (10 levers)",
+      "link": "https://youtu.be/dxHB9e4yvE0",
+      "id": "4f2ed774",
+      "modifier": "First Recorded Pick (Notable)"
+    },
+    {
+      "row": 50,
+      "lock": "NATO Mersey (14 levers)",
+      "link": "https://www.youtube.com/watch?v=qjm0tiN6PB0",
+      "id": "f29a212f"
+    },
+    {
+      "row": 51,
+      "lock": "Tier 5 Project Community",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1010199862471569590",
+      "id": "12345712"
+    },
+    {
+      "row": 52,
+      "lock": "Dorma DC500",
+      "link": "https://www.youtube.com/watch?v=KtyStjx1Adw&ab_channel=GravityKarma",
+      "id": "87ee7a61"
+    }
+  ]
+}

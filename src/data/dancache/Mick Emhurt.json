@@ -1,0 +1,57 @@
+{
+  "header": {
+    "picker": "Mick Emhurt",
+    "numBlack": 3,
+    "points": 0
+  },
+  "entries": [
+    {
+      "row": 8,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/991964540080234548",
+      "id": "12345679"
+    },
+    {
+      "row": 9,
+      "lock": "Tier 4 Project Lock Manufacturing",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/991641030204076112",
+      "id": "12345736"
+    },
+    {
+      "row": 12,
+      "lock": "ASSA Twin v10 with barrels",
+      "link": "https://youtu.be/A44TjHrWqGg",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 13,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/ORO8FNgpGrY",
+      "id": "ab1e901f"
+    },
+    {
+      "row": 14,
+      "lock": "Emhart with ≥2 mastered chambers",
+      "link": "https://youtu.be/TUkaTDpWMdg",
+      "id": "c266d57b"
+    },
+    {
+      "row": 15,
+      "lock": "Emhart (6 pins)",
+      "link": "https://youtu.be/UwzYPx3L92I",
+      "id": "c4f942f0"
+    },
+    {
+      "row": 17,
+      "lock": "Medeco Original (≥5 pins)",
+      "link": "https://youtu.be/F0pF3zYDRk0",
+      "id": "826c31e0"
+    },
+    {
+      "row": 19,
+      "lock": "Lockwood 334B45 (with spools)",
+      "link": "https://youtu.be/RhAXyuVOCI0",
+      "id": "331c9d36"
+    }
+  ]
+}

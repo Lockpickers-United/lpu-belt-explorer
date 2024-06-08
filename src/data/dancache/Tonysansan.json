@@ -1,0 +1,196 @@
+{
+  "header": {
+    "picker": "Tonysansan",
+    "numBlack": 17,
+    "points": 676
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://youtu.be/Ps2KPkl9VTM",
+      "id": "06ddb074"
+    },
+    {
+      "row": 5,
+      "lock": "Kwikset Smartkey (Gen I)",
+      "link": "https://youtu.be/Bd8i5LW9laU",
+      "id": "41f9efa2"
+    },
+    {
+      "row": 6,
+      "lock": "Tesa TX80",
+      "link": "https://youtu.be/WvJSCpKiSJg",
+      "id": "3f49ccc1"
+    },
+    {
+      "row": 7,
+      "lock": "Abus Plus (without butterfly discs)",
+      "link": "https://youtu.be/fd0i-dyHm_A",
+      "id": "b8350900"
+    },
+    {
+      "row": 8,
+      "lock": "Ankerslot Infinity K",
+      "link": "https://youtu.be/YF1prbego9w",
+      "id": "5329b0f3"
+    },
+    {
+      "row": 9,
+      "lock": "Lips Octro (≥13 pins)",
+      "link": "https://youtu.be/pUjtCKDSm5E",
+      "id": "514c7ec4"
+    },
+    {
+      "row": 10,
+      "lock": "SFIC with security pins",
+      "link": "https://youtu.be/cw_4VePu8_I",
+      "id": "b13f4b57"
+    },
+    {
+      "row": 11,
+      "lock": "Abus Plus (with butterfly discs)",
+      "link": "https://youtu.be/2dZ0vNJmtg0",
+      "id": "b8350901"
+    },
+    {
+      "row": 12,
+      "lock": "DOM RS 8",
+      "link": "https://youtu.be/P77ciiAnyy4",
+      "id": "4993a918"
+    },
+    {
+      "row": 13,
+      "lock": "Emhart (6 pins)",
+      "link": "https://youtu.be/OIgFrMuNvp4",
+      "id": "c4f942f0"
+    },
+    {
+      "row": 14,
+      "lock": "Abloy Sentry",
+      "link": "https://youtu.be/R8rvz4TZW9M",
+      "id": "2ae6a691"
+    },
+    {
+      "row": 15,
+      "lock": "EVVA 3KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/SP9MrVlP6jk",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 16,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://youtu.be/2eWvsFDoyyE",
+      "id": "104776ef"
+    },
+    {
+      "row": 17,
+      "lock": "Tann Detector from 50s",
+      "link": "https://youtu.be/Zdksc0sS3o8",
+      "id": "69668831"
+    },
+    {
+      "row": 18,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1120659913757163581",
+      "id": "12345679"
+    },
+    {
+      "row": 19,
+      "lock": "Western Electric 30C",
+      "link": "https://youtu.be/XF75a6tvQpg",
+      "id": "5a4310d5"
+    },
+    {
+      "row": 20,
+      "lock": "ASSA Twin v10 with barrels",
+      "link": "https://youtu.be/gvAngLd_OhA",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 21,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/ZakeclA9i2g",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 22,
+      "lock": "Miwa PR (11 unmastered elements) (upgrade of Miwa PS)",
+      "link": "https://youtu.be/3qZZp8FWGSc",
+      "id": "91f40022"
+    },
+    {
+      "row": 23,
+      "lock": "Western Electric 30A",
+      "link": "https://youtu.be/tI2TM2Y7FEc?feature=shared",
+      "modifier": "First Recorded Pick"
+    },
+    {
+      "row": 24,
+      "lock": "Western Electric 29A",
+      "link": "https://youtu.be/BmDfHAzA9yk",
+      "id": "5958a65b"
+    },
+    {
+      "row": 25,
+      "lock": "Western Electric 30B",
+      "link": "https://youtu.be/eXY9mne-RgY",
+      "id": "e718b140"
+    },
+    {
+      "row": 26,
+      "lock": "Fichet F3D (indoor cylinder)",
+      "link": "https://youtu.be/DwmpcgxoxDQ",
+      "id": "33056c0f",
+      "modifier": "Upgraded"
+    },
+    {
+      "row": 27,
+      "lock": "Fichet F3D (outside cylinder, upgrade of indoor cylinder)",
+      "link": "https://youtu.be/pNDnFit9erU",
+      "id": "c0af45f4"
+    },
+    {
+      "row": 28,
+      "lock": "NATO Mersey (14 levers)",
+      "link": "https://youtu.be/pW02Y1L7i98",
+      "id": "f29a212f"
+    },
+    {
+      "row": 29,
+      "lock": "Kromer Protector (BP55K)",
+      "link": "https://youtu.be/zFYN1fKQM9Y",
+      "id": "f87db705"
+    },
+    {
+      "row": 30,
+      "lock": "NATO Mersey (10 levers)",
+      "link": "https://youtu.be/LzTjlIgj1lk",
+      "id": "4f2ed774"
+    },
+    {
+      "row": 31,
+      "lock": "Yuema 750",
+      "link": "https://youtu.be/JDFOnz98l3A",
+      "id": "0b604114"
+    },
+    {
+      "row": 32,
+      "lock": "Chubb ‘Definitive’ - jewellery box (steel comb leaf spring)",
+      "link": "https://youtu.be/zkyQK0izO-4",
+      "id": "2db935ea"
+    },
+    {
+      "row": 33,
+      "lock": "Opnus MMXII",
+      "link": "https://youtu.be/yV2c65OmS4I",
+      "id": "e151c916"
+    },
+    {
+      "row": 34,
+      "lock": "Opnus Memolis ",
+      "link": "https://youtu.be/ClG3po-RIIw",
+      "id": "6c0ec943"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "header": {
+    "picker": "B1",
+    "numBlack": 5,
+    "points": 150
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Abloy Exec",
+      "link": "https://www.youtube.com/watch?v=goF4ZG4eqMg",
+      "id": "fc627b17"
+    },
+    {
+      "row": 5,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://www.youtube.com/watch?v=SzYEoXIgi_8",
+      "id": "f133510b"
+    },
+    {
+      "row": 6,
+      "lock": "ASSA Twin 6000 (with barrels)",
+      "link": "https://www.youtube.com/watch?v=9SVchYV8Yxo",
+      "id": "55053299"
+    },
+    {
+      "row": 7,
+      "lock": "DOM ix Twinstar",
+      "link": "https://www.youtube.com/watch?v=3HlkNh3mr_k",
+      "id": "3c73c705"
+    },
+    {
+      "row": 8,
+      "lock": "EVVA 3KS (with false gates and no mastered sliders)",
+      "link": "https://www.youtube.com/watch?v=A3yidQwMP38",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 9,
+      "lock": "Abloy High Profile",
+      "link": "https://www.youtube.com/watch?v=rM_JK4bse1I",
+      "id": "e92d29ad"
+    },
+    {
+      "row": 10,
+      "lock": "Abus EC 700",
+      "link": "https://www.youtube.com/watch?v=1ZZwnQDKNcc",
+      "id": "b29a8b44"
+    },
+    {
+      "row": 11,
+      "lock": "DOM ix Saturn",
+      "link": "https://www.youtube.com/watch?v=Ca1B6dLcJZw",
+      "id": "6b06f591"
+    },
+    {
+      "row": 12,
+      "lock": "Abloy Classic",
+      "link": "https://www.youtube.com/watch?v=Hic9ASpRmcs",
+      "id": "da09d849"
+    },
+    {
+      "row": 13,
+      "lock": "Mauer NW4",
+      "link": "https://www.youtube.com/watch?v=7pgVCXqxZKI",
+      "id": "b8783269"
+    },
+    {
+      "row": 14,
+      "lock": "ASSA d12",
+      "link": "https://www.youtube.com/watch?v=e6h65cIDoE8",
+      "id": "d3ad5a73"
+    },
+    {
+      "row": 15,
+      "lock": "Ruko 600",
+      "link": "https://www.youtube.com/watch?v=8dZPCCCZUAs",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 16,
+      "lock": "DOM ix10 (without fins)",
+      "link": "https://www.youtube.com/watch?v=NbvIyGHxQUA",
+      "id": "7b05dccc"
+    }
+  ]
+}

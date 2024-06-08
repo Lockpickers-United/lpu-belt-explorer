@@ -1,0 +1,105 @@
+{
+  "header": {
+    "picker": "decent picker dude",
+    "numBlack": 4,
+    "points": 115
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "DOM RS 8",
+      "link": "https://youtu.be/dgcCTsTE-hg",
+      "id": "4993a918"
+    },
+    {
+      "row": 5,
+      "lock": "Pollux 7",
+      "link": "https://youtu.be/RQJNI4nyeLg",
+      "id": "cc5bbb68"
+    },
+    {
+      "row": 6,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://www.youtube.com/watch?v=pMk-WKF92cY",
+      "id": "29ab2852"
+    },
+    {
+      "row": 7,
+      "lock": "Medeco Biaxial (5+ pins)",
+      "link": "https://www.youtube.com/watch?v=6pbL7UIi30s",
+      "id": "826c31e0"
+    },
+    {
+      "row": 8,
+      "lock": "Mul-T-Lock Interactive (>4 spooled drivers, <3 countermilled outer keypins)",
+      "link": "https://www.youtube.com/watch?v=tcSX9oHdUf8",
+      "id": "3335df97"
+    },
+    {
+      "row": 9,
+      "lock": "Schlage Primus",
+      "link": "https://www.youtube.com/watch?v=xzdRHS_iBcs",
+      "id": "ea1afad0"
+    },
+    {
+      "row": 10,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "link": "https://www.youtube.com/watch?v=X0akxzklmoQ",
+      "id": "104776ef"
+    },
+    {
+      "row": 11,
+      "lock": "EVVA 3KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/wLpB3yB9Sm0",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 12,
+      "lock": "Tier 2 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/1165041892380119080",
+      "id": "12345694"
+    },
+    {
+      "row": 13,
+      "lock": "Tier 2 Project Cutaways",
+      "link": "https://discord.com/channels/140129091796992000/1165041546438127616",
+      "id": "12345699"
+    },
+    {
+      "row": 14,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://www.youtube.com/watch?v=Igg1zwnSVBM",
+      "id": "06ddb074"
+    },
+    {
+      "row": 15,
+      "lock": "ASSA Twin 6000 (with barrels)",
+      "link": "https://youtu.be/LDaoBTSHQf8",
+      "id": "55053299"
+    },
+    {
+      "row": 16,
+      "lock": "ASSA Desmo (8 sliders) (no mastered pins)",
+      "link": "TBA",
+      "id": "1459e2c6"
+    },
+    {
+      "row": 17,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "TBA",
+      "id": "f133510b"
+    },
+    {
+      "row": 18,
+      "lock": "SFIC format locks (to one shearline)",
+      "link": "TBA",
+      "id": "c6529d9c"
+    },
+    {
+      "row": 19,
+      "lock": "Paclock 90A Pro",
+      "link": "Filmed, needs edited",
+      "id": "fb5a9eb7"
+    }
+  ]
+}

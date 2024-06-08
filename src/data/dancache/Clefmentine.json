@@ -1,0 +1,112 @@
+{
+  "header": {
+    "picker": "Clefmentine",
+    "numBlack": 3,
+    "points": 187
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Tier 3 Project impressioning",
+      "link": "https://docs.google.com/document/d/1-nOfgkFGDlbsiFMcBTxW-Cd9f2ij1QSwJmH06p_Tq0I/edit?usp=sharing",
+      "id": "12345690"
+    },
+    {
+      "row": 5,
+      "lock": "Tier 3 Project Tool making",
+      "link": "https://discord.com/channels/140129091796992000/1164965415240339617/1164965415240339617",
+      "id": "12345720"
+    },
+    {
+      "row": 6,
+      "lock": "Tier 2 Project Cutaways",
+      "link": "https://docs.google.com/document/d/1s4_4kiB0NynNi7ql1psqmgIv2iZf8XlYHUCSptq3Olo/edit?usp=sharing",
+      "id": "12345699"
+    },
+    {
+      "row": 7,
+      "lock": "DOM Diamant",
+      "link": "https://youtu.be/UipO8Qn8kGg?si=rZxcgBWRw6mhepbr",
+      "id": "57fbcb1b"
+    },
+    {
+      "row": 8,
+      "lock": "Fichet F3D (indoor cylinder)",
+      "link": "https://youtu.be/7W2sgl2-oVU?si=R7NA_07XyFECy6Vp",
+      "id": "33056c0f"
+    },
+    {
+      "row": 9,
+      "lock": "Fontaine Dynaxis",
+      "link": "https://youtu.be/IMl8xLMuVuo?si=Hk8uiRXXATNnftDD",
+      "id": "9d7faa15"
+    },
+    {
+      "row": 10,
+      "lock": "FTH Surveyor",
+      "link": "https://www.youtube.com/watch?v=d7yGbAExTJA",
+      "id": "1f6cb393"
+    },
+    {
+      "row": 11,
+      "lock": "Izis",
+      "link": "https://youtu.be/McTdpfrGjQ8?si=FvDyaK9BvAITh4dZ",
+      "id": "d64be6f7"
+    },
+    {
+      "row": 12,
+      "lock": "Pollux 7",
+      "link": "https://youtu.be/EISoD7gs6AE?si=Sddn3xb4oFe41tI5",
+      "id": "cc5bbb68"
+    },
+    {
+      "row": 13,
+      "lock": "Fontaine (5 pin)",
+      "link": "https://youtu.be/0Vi55mg-Qc0?si=zQ48t36DSKgLw1jJ",
+      "id": "7786832f"
+    },
+    {
+      "row": 14,
+      "lock": "Vachette V-DIS",
+      "link": "https://youtu.be/OpnBtKr7fyI?si=5P0fH0erUBVusS-G",
+      "id": "6efe5f67"
+    },
+    {
+      "row": 15,
+      "lock": "Vachette V-DIS+",
+      "link": "https://youtu.be/qfTHdRWsXcw?si=c8FtfjNxS5W1v1pk",
+      "id": "6efe5f67"
+    },
+    {
+      "row": 16,
+      "lock": "Pollux 5",
+      "link": "https://www.youtube.com/watch?v=2CeQ7JsIx7Y",
+      "id": "c9da1540"
+    },
+    {
+      "row": 17,
+      "lock": "Picard CR cerrature",
+      "link": "https://youtu.be/b6sa96U-v7k?si=R3H0YTqOkbjSi9PD",
+      "id": "2ac99741",
+      "modifier": "First Recorded Pick"
+    },
+    {
+      "row": 18,
+      "lock": "Fichet F3D (outside cylinder, upgrade of indoor cylinder)",
+      "link": "https://www.youtube.com/watch?v=6V6SlgVMSio&t",
+      "id": "c0af45f4"
+    },
+    {
+      "row": 19,
+      "lock": "Fichet 450 (no false gates)",
+      "link": "https://youtu.be/5k-PKjRODGU?si=q6BUwqH4burP0Grc",
+      "id": "93871dad"
+    },
+    {
+      "row": 20,
+      "lock": "JPM 405",
+      "link": "https://youtu.be/7Q4eid62_m8?si=aTKCbEL-h-kwtsci",
+      "id": "1ee01369"
+    }
+  ]
+}

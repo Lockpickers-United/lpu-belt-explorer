@@ -1,0 +1,33 @@
+{
+  "header": {
+    "picker": "Roo1",
+    "numBlack": 2,
+    "points": 108
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://www.youtube.com/watch?v=4t8cQkQB4sk",
+      "id": "ab1e901f"
+    },
+    {
+      "row": 5,
+      "lock": "EVVA ICS (0 mastered elements)",
+      "link": "https://youtu.be/iYnYZBSZ2b0",
+      "id": "8ea170d2"
+    },
+    {
+      "row": 6,
+      "lock": "Tier 5 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/971381000087158855",
+      "id": "12345697"
+    },
+    {
+      "row": 7,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/971380133246152735",
+      "id": "12345679"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "header": {
+    "picker": "Sir Paradise",
+    "numBlack": 6,
+    "points": 0
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Yuema 750 / Forte Enigma",
+      "link": "https://youtu.be/_YJjaEgKehs",
+      "id": "0b604114",
+      "modifier": "First Recorded Pick (Notable)"
+    },
+    {
+      "row": 5,
+      "lock": "ASSA Twin v10/Twin 2 with barrels",
+      "link": "https://youtu.be/OMgIdtiWXXE",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 6,
+      "lock": "Medeco Biaxial (5+ pins)",
+      "link": "https://youtu.be/MB6ljuQYoHY",
+      "id": "826c31e0"
+    },
+    {
+      "row": 7,
+      "lock": "Illinois Duo",
+      "link": "https://youtu.be/MB6ljuQYoHY",
+      "id": "07bc680a"
+    },
+    {
+      "row": 8,
+      "lock": "ASSA d12 / P600 / Neptun 1900 / Trioving d12 level 1 (aka d13, no long pin)",
+      "link": "https://youtu.be/_G8rO4Nh9wg",
+      "id": "d3ad5a73",
+      "modifier": "First Recorded Pick"
+    },
+    {
+      "row": 9,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://youtu.be/jbrEMRUSgBs",
+      "id": "06ddb074"
+    },
+    {
+      "row": 10,
+      "lock": "Schlage Primus / Everest Primus",
+      "link": "https://youtu.be/dmkP_UeRcb4",
+      "id": "ea1afad0"
+    },
+    {
+      "row": 11,
+      "lock": "Robur Safe Deposit Lock (gins or barrels <3 chambers with matched milling)",
+      "link": "https://youtu.be/R8MoGq4MvGs",
+      "id": "94ee12b7"
+    },
+    {
+      "row": 12,
+      "lock": "ASSA Twin Exclusive 5700 (Baltic)",
+      "link": "https://youtu.be/QYK29BWyZ98",
+      "id": "f7ad4c89"
+    },
+    {
+      "row": 13,
+      "lock": "Sargent Signature",
+      "link": "https://youtu.be/Eui7FeyFKLI",
+      "id": "e1e595b9"
+    },
+    {
+      "row": 14,
+      "lock": "Kwikset Smartkey (Gens I & II)",
+      "link": "https://youtu.be/97SX_SeL_0E",
+      "id": "41f9efa2"
+    },
+    {
+      "row": 15,
+      "lock": "Mul-T-Lock Jr / Classic / Interactive (spooled drivers, <3 countermilled outer keypins)",
+      "link": "https://youtu.be/QIGi9ffy5QI",
+      "id": "a0ec1618"
+    },
+    {
+      "row": 16,
+      "lock": "Emhart with 2+ mastered chambers",
+      "link": "https://youtu.be/JvA_1ePp2rg",
+      "id": "c266d57b"
+    },
+    {
+      "row": 17,
+      "lock": "Mottura Champions C38****",
+      "link": "https://youtu.be/iIsEO7zPROE",
+      "id": "62520bea"
+    },
+    {
+      "row": 18,
+      "lock": "Pollux 7",
+      "link": "https://youtu.be/Nr1yzhqrgr0",
+      "id": "cc5bbb68"
+    },
+    {
+      "row": 19,
+      "lock": "Lips Keso padlock",
+      "link": "https://youtu.be/TXrs1072ApQ",
+      "id": "434b5b25"
+    },
+    {
+      "row": 20,
+      "lock": "Mul-T-Lock Classic / Interactive (serrated drivers)",
+      "link": "https://youtu.be/OYoD2coEf0A",
+      "id": "5c5701d7"
+    },
+    {
+      "row": 21,
+      "lock": "DAF Kilit DBS02",
+      "link": "https://youtu.be/eL1ECReNFu8",
+      "id": "5e264777"
+    },
+    {
+      "row": 22,
+      "lock": "M&C Color+ (≥4 sliders)",
+      "link": "https://youtu.be/0Z5gRF3g9Jw",
+      "id": "6efe5f67"
+    },
+    {
+      "row": 23,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/ZdsJ0tGQwpQ",
+      "id": "f133510b"
+    },
+    {
+      "row": 24,
+      "lock": "Van Lock",
+      "link": "https://youtu.be/dvnM0tSuZYo",
+      "id": "506b242a"
+    },
+    {
+      "row": 25,
+      "lock": "ASSA Desmo (8 sliders) (no mastered pins)",
+      "link": "https://youtu.be/VMb0PWG3KSw",
+      "id": "1459e2c6"
+    },
+    {
+      "row": 26,
+      "lock": "Ruko Garant+",
+      "link": "https://youtu.be/jIMspNOJ2Fg",
+      "id": "6e59ba12"
+    },
+    {
+      "row": 27,
+      "lock": "American 5200",
+      "link": "https://youtu.be/P_wNOWQs_M0",
+      "id": "81fbd528"
+    },
+    {
+      "row": 28,
+      "lock": "HQ High Security (5 pins)",
+      "link": "https://youtu.be/BJlGwU2se8g",
+      "id": "db4de1bb"
+    },
+    {
+      "row": 29,
+      "lock": "Yale Superior (7 or 9 pins)",
+      "link": "https://youtu.be/A4T1wLy8GUI",
+      "id": "ebe9ee59"
+    },
+    {
+      "row": 30,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/hJfFYXNn30M",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 31,
+      "lock": "ASSA Twin Combi",
+      "link": "https://youtu.be/1W25dNViKeE",
+      "id": "7168d463"
+    },
+    {
+      "row": 32,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/foyy5_K9rnE",
+      "id": "ab1e901f"
+    },
+    {
+      "row": 33,
+      "lock": "Goal v18 (14-16 or more pins)",
+      "link": "https://youtu.be/O1v9SEmi9hc",
+      "id": "63b2e02b"
+    },
+    {
+      "row": 34,
+      "lock": "Lockwood Twin",
+      "link": "https://youtu.be/K4H1ukIHBZY",
+      "id": "71833308"
+    }
+  ]
+}

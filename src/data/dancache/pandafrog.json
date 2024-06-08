@@ -1,0 +1,69 @@
+{
+  "header": {
+    "picker": "pandafrog",
+    "numBlack": 0,
+    "points": 59
+  },
+  "entries": [
+    {
+      "row": 6,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/csnuSNcjRVI",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 7,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://youtu.be/QYQvBH3isT0",
+      "id": "06ddb074"
+    },
+    {
+      "row": 8,
+      "lock": "Medeco Original Camlock (5+ pins)",
+      "link": "https://youtu.be/6Rd2wc_Oaf8",
+      "id": "aeaa6a09"
+    },
+    {
+      "row": 9,
+      "lock": "Izis",
+      "link": "https://youtu.be/-xd7MqqMSEs",
+      "id": "d64be6f7"
+    },
+    {
+      "row": 10,
+      "lock": "EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/Vvl4BXRNWLE",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 11,
+      "lock": "Fichet-Bauche M2B / M3B / MxB",
+      "link": "https://youtu.be/1yEA0HqMV-U",
+      "id": "f048719a"
+    },
+    {
+      "row": 12,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://youtu.be/ERQfQVgGIIU",
+      "id": "12345689"
+    },
+    {
+      "row": 13,
+      "lock": "Tier 4 Project Community",
+      "link": "https://speedlocks.org",
+      "id": "12345711"
+    },
+    {
+      "row": 14,
+      "lock": "Kwikset Smartkey (Gens I & II)",
+      "link": "https://youtu.be/GXA5NFks29o",
+      "id": "41f9efa2"
+    },
+    {
+      "row": 15,
+      "lock": "Tier 1 Project Challenge locks",
+      "link": "https://challenge-lock.com/",
+      "id": "12345703"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "header": {
+    "picker": "MGsecure",
+    "numBlack": 2,
+    "points": 119
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "DeGuard interactive clone (5 pins)",
+      "link": "https://youtu.be/xPbsW6VepOU",
+      "id": "db4de1bb"
+    },
+    {
+      "row": 5,
+      "lock": "Mul-T-Lock Jr (>4 spooled drivers, <3 countermilled outer keypins)",
+      "link": "https://youtu.be/22GAqnPhb0k",
+      "id": "3335df97"
+    },
+    {
+      "row": 6,
+      "lock": "Goal D9",
+      "link": "https://youtu.be/QkUj0T2PwyA",
+      "id": "7194cc26"
+    },
+    {
+      "row": 7,
+      "lock": "Mul-T-Lock Interactive (>4 serrated drivers)",
+      "link": "https://youtu.be/OhOOzQ2lAos",
+      "id": "5c5701d7"
+    },
+    {
+      "row": 8,
+      "lock": "West 917",
+      "link": "https://youtu.be/oyoJHbube04",
+      "id": "23437955"
+    },
+    {
+      "row": 9,
+      "lock": "Goal v18 (≥17 pins)",
+      "link": "https://youtu.be/wGGwNQTSYOs",
+      "id": "109531f4"
+    },
+    {
+      "row": 10,
+      "lock": "Tier 3 Project Community",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1065141353006252083",
+      "id": "12345710"
+    },
+    {
+      "row": 11,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1065141034000076860",
+      "id": "12345679"
+    },
+    {
+      "row": 12,
+      "lock": "West 916",
+      "link": "https://www.youtube.com/watch?v=8rpfDQFZ6zs",
+      "id": "18e1f45b"
+    },
+    {
+      "row": 13,
+      "lock": "Tier 2 Project Tool making",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1103333472346591283",
+      "id": "12345719"
+    },
+    {
+      "row": 14,
+      "lock": "Tier 2 Project Challenge locks",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1131568096663064637",
+      "id": "12345704"
+    }
+  ]
+}

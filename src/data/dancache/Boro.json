@@ -1,0 +1,71 @@
+{
+  "header": {
+    "picker": "Boro",
+    "numBlack": 8,
+    "points": 372
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "NATO Mersey (14 levers)",
+      "link": "https://www.youtube.com/watch?v=Kj18pUlk-O0",
+      "id": "f29a212f",
+      "modifier": "First Recorded Pick (Notable)"
+    },
+    {
+      "row": 5,
+      "lock": "Fichet F3D (outside cylinder, upgrade of indoor cylinder)",
+      "link": "https://www.youtube.com/watch?v=mEqMA1_eSbs",
+      "id": "c0af45f4"
+    },
+    {
+      "row": 6,
+      "lock": "ASSA dp4400 ",
+      "link": "https://www.youtube.com/watch?v=2F0bGrs2Ez8",
+      "id": "6e59ba12"
+    },
+    {
+      "row": 7,
+      "lock": "Xylock",
+      "link": "https://www.youtube.com/watch?v=XZ9Axbvb6ic",
+      "id": "6708838f",
+      "modifier": "First Recorded Pick"
+    },
+    {
+      "row": 8,
+      "lock": "DOM ix Twinstar",
+      "link": "https://www.youtube.com/watch?v=gcDEotcRpfg",
+      "id": "3c73c705"
+    },
+    {
+      "row": 9,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://www.youtube.com/watch?v=Vnv52262npE",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 10,
+      "lock": "Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)",
+      "link": "https://www.youtube.com/watch?v=4ZUArWdKYm8&t=183s",
+      "id": "108549ba"
+    },
+    {
+      "row": 11,
+      "lock": "Zeiss Ikon R10",
+      "link": "https://www.youtube.com/watch?v=44bY6BjumHo",
+      "id": "649eaebc"
+    },
+    {
+      "row": 12,
+      "lock": "Tier 5 Project safecracking",
+      "link": "https://www.youtube.com/watch?v=1ySCfKCvlGY",
+      "id": "12345682"
+    },
+    {
+      "row": 13,
+      "lock": "Fichet F3D (indoor cylinder)",
+      "link": "https://youtu.be/e_69gtdr0x0",
+      "id": "33056c0f"
+    }
+  ]
+}

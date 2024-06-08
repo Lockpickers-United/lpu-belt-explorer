@@ -1,0 +1,63 @@
+{
+  "header": {
+    "picker": "Rxpert",
+    "numBlack": 1,
+    "points": 77
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/tbqTu3yZr_w",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 5,
+      "lock": "Master Lock #19",
+      "link": "https://youtu.be/Bpdr9Iaztr4",
+      "id": "8f7f1830"
+    },
+    {
+      "row": 6,
+      "lock": "Schlage Primus",
+      "link": "https://youtu.be/V3HD1DoX3Es",
+      "id": "ea1afad0"
+    },
+    {
+      "row": 7,
+      "lock": "Goal D9",
+      "link": "https://youtu.be/9VWDBaHyZaE",
+      "id": "7194cc26"
+    },
+    {
+      "row": 9,
+      "lock": "ASSA 500 (with gin spools and matched sleeve)",
+      "link": "https://youtu.be/j73TjZ0VH-k",
+      "id": "ef221c67"
+    },
+    {
+      "row": 10,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, <2 tree pins)",
+      "link": "https://youtu.be/jGKkBOxo2cw",
+      "id": "e3bd3faf"
+    },
+    {
+      "row": 11,
+      "lock": "Goal Z (<2 standard drivers)",
+      "link": "https://youtu.be/-sxj4mB9w7o",
+      "id": "5103e650"
+    },
+    {
+      "row": 12,
+      "lock": "Tier 3 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/1246934877623029953/1246934877623029953",
+      "id": "12345680"
+    },
+    {
+      "row": 13,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://discord.com/channels/140129091796992000/1234924490862100577/1234924490862100577",
+      "id": "12345689"
+    }
+  ]
+}

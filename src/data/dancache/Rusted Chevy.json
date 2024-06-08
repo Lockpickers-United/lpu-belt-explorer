@@ -1,0 +1,24 @@
+{
+  "header": {
+    "picker": "Rusted Chevy",
+    "numBlack": 2,
+    "points": 0
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "ASSA Twin 6000 (with gins)",
+      "id": "104776ef"
+    },
+    {
+      "row": 5,
+      "lock": "ASSA Twin v10 with barrels",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 8,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, <2 tree pins)",
+      "id": "e3bd3faf"
+    }
+  ]
+}

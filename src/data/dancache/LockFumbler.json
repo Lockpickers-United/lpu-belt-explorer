@@ -1,0 +1,279 @@
+{
+  "header": {
+    "picker": "LockFumbler",
+    "numBlack": 5,
+    "points": 272
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/VkhD2UonHpo",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 5,
+      "lock": "Tier 3 Project safecracking",
+      "link": "https://youtu.be/dSTNl-br-GI",
+      "id": "12345680"
+    },
+    {
+      "row": 6,
+      "lock": "ASSA 700 (with gin/tree pins and matching countermilling in 4+ chambers, ≥2 tree pins)",
+      "link": "https://youtu.be/rVHtYWebDuU",
+      "id": "f133510b"
+    },
+    {
+      "row": 7,
+      "lock": "Zeiss Ikon R10",
+      "link": "https://youtu.be/-57taREwwRs",
+      "id": "649eaebc"
+    },
+    {
+      "row": 8,
+      "lock": "Kaba Star (4 rows) (15 or more pins)",
+      "link": "https://youtu.be/Q4oYX9ReHw4",
+      "id": "8f99236e"
+    },
+    {
+      "row": 9,
+      "lock": "Abus Plus (with butterfly discs)",
+      "link": "https://youtu.be/TQ4aCuhCMQc",
+      "id": "b8350901"
+    },
+    {
+      "row": 10,
+      "lock": "ASSA 600 (with gin spools and matched countermilling)",
+      "link": "https://youtu.be/u9RdQGjDtis",
+      "id": "29ab2852"
+    },
+    {
+      "row": 11,
+      "lock": "DOM ix Saturn",
+      "link": "https://youtu.be/ZdR2sZRhXmA",
+      "id": "6b06f591"
+    },
+    {
+      "row": 12,
+      "lock": "Robur Safe Deposit Lock (barrels >3 chambers with matched milling)",
+      "link": "https://youtu.be/MZ9Bnt753rA",
+      "id": "9da7a5f2"
+    },
+    {
+      "row": 13,
+      "lock": "Robur Safe Deposit Lock (gins >3 chambers with matched milling)",
+      "link": "https://youtu.be/gWgan4Qob7g",
+      "id": "112d0034"
+    },
+    {
+      "row": 14,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://youtu.be/UhnT1OPhkco",
+      "id": "12345689"
+    },
+    {
+      "row": 15,
+      "lock": "Zeiss Ikon tk5 sperwellenprofil (with serrated fingerpins)",
+      "link": "https://youtu.be/JRMOPZ9qr8c",
+      "id": "34d27803"
+    },
+    {
+      "row": 16,
+      "lock": "Abus Plus (without butterfly discs)",
+      "link": "https://youtu.be/iGuLXRgEXBs",
+      "id": "b8350900"
+    },
+    {
+      "row": 17,
+      "lock": "Abus XPlus",
+      "link": "https://youtu.be/PulXY1AtMAg",
+      "id": "c9d6d06d"
+    },
+    {
+      "row": 18,
+      "lock": "Mul-T-Lock Classic (>4 spooled drivers)",
+      "link": "https://youtu.be/PbLl1--s3JE",
+      "id": "3335df97"
+    },
+    {
+      "row": 19,
+      "lock": "Abus XP20s",
+      "link": "https://youtu.be/43lJcIXlz1w",
+      "id": "da8331ef"
+    },
+    {
+      "row": 20,
+      "lock": "DOM ix6sr",
+      "link": "https://youtu.be/qZ2srmVV9O0",
+      "id": "acde7f0c"
+    },
+    {
+      "row": 21,
+      "lock": "Kwikset Smartkey (Gen III)",
+      "link": "https://youtu.be/dwn_CICu2PM",
+      "id": "06ddb074"
+    },
+    {
+      "row": 22,
+      "lock": "Kwikset Smartkey (Gen II)",
+      "link": "https://youtu.be/tQq7k0Pe2ZY",
+      "id": "41f9efa2"
+    },
+    {
+      "row": 23,
+      "lock": "Ruko 600",
+      "link": "https://youtu.be/xF2WBaVkqr4",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 24,
+      "lock": "SFIC format locks (unless otherwise specified)***",
+      "link": "https://youtu.be/C6HTWQcG9Sg",
+      "id": "c8259a23"
+    },
+    {
+      "row": 25,
+      "lock": "Abus E90",
+      "link": "https://youtu.be/RxDj4rsRGHA",
+      "id": "5c0d870b"
+    },
+    {
+      "row": 26,
+      "lock": "ASSA 500 (barrels+milling)",
+      "link": "https://youtu.be/gE7IhyP5AK0",
+      "id": "d9e3829f"
+    },
+    {
+      "row": 27,
+      "lock": "Burg Wächter Gamma 700 -- Non-removable core",
+      "link": "https://youtu.be/K7Ba5gZa9Rk",
+      "id": "ed9fa926"
+    },
+    {
+      "row": 28,
+      "lock": "De Guard interactive clone (4 pins)",
+      "link": "https://youtu.be/L9Q7dtUH1uk",
+      "id": "b91162e7"
+    },
+    {
+      "row": 29,
+      "lock": "Dom RN",
+      "link": "https://youtu.be/-fwU7RHh6Kg",
+      "id": "81338028"
+    },
+    {
+      "row": 30,
+      "lock": "DOM RS Sigma",
+      "link": "https://youtu.be/0XTR2d-71FM",
+      "id": "1dd28bf9"
+    },
+    {
+      "row": 31,
+      "lock": "Dom S (with circle)",
+      "link": "https://youtu.be/RSsfJvHLcpg",
+      "id": "9aa8821a"
+    },
+    {
+      "row": 32,
+      "lock": "EVVA DPI - Pin Tumbler version",
+      "link": "https://youtu.be/jfLCo1v2n_U",
+      "id": "14481dfb"
+    },
+    {
+      "row": 33,
+      "lock": "Kryptonite Disk Detainer",
+      "link": "https://youtu.be/HWJ7yqF__VQ",
+      "id": "c8c0ee06"
+    },
+    {
+      "row": 34,
+      "lock": "Lockwood 334B45 (with spools)",
+      "link": "https://youtu.be/0DAWUVmCRKM",
+      "id": "331c9d36"
+    },
+    {
+      "row": 35,
+      "lock": "Paclock 90A Pro",
+      "link": "https://youtu.be/huD4rNMW_U4",
+      "id": "fb5a9eb7"
+    },
+    {
+      "row": 36,
+      "lock": "Winkhaus N-Tra",
+      "link": "https://youtu.be/CgS85vMZ_bI",
+      "id": "2c9d12fc"
+    },
+    {
+      "row": 37,
+      "lock": "Zeiss Ikon Sk6 vector",
+      "link": "https://youtu.be/Q0YmWsq2uH8",
+      "id": "08b5986d"
+    },
+    {
+      "row": 38,
+      "lock": "American 5200",
+      "link": "https://youtu.be/4EK-yvIhDNM?si=ag04U3Uaq_3fjwJu",
+      "id": "81fbd528"
+    },
+    {
+      "row": 39,
+      "lock": "Abus Bravus 4000",
+      "link": "https://youtu.be/QC3Q-k0P2fk?si=jJNWvjvi8XiuYJGb",
+      "id": "a062f1ee"
+    },
+    {
+      "row": 40,
+      "lock": "DOM RS 8",
+      "link": "https://youtu.be/ljTCI9nnSM8?si=AV_BxIelPlLxf-h5",
+      "id": "4993a918"
+    },
+    {
+      "row": 41,
+      "lock": "DOM ix10kg",
+      "link": "https://youtu.be/ywoCQR1dwok?si=969W28JRWbpwjxsy",
+      "id": "dd6a3683"
+    },
+    {
+      "row": 42,
+      "lock": "Miwa DS",
+      "link": "https://youtu.be/uuhxjHbP53s?si=6P2LR9GUtbZBg4Ib",
+      "id": "df8081fa"
+    },
+    {
+      "row": 43,
+      "lock": "Winkhaus Titan",
+      "link": "https://www.youtube.com/watch?v=64BIiTYL7FA&ab_channel=LockFumbler",
+      "id": "fe088de0"
+    },
+    {
+      "row": 44,
+      "lock": "Yale 500",
+      "link": "https://youtu.be/-yKTITHY7lI?si=JVHmoOcTZtUa4GoM",
+      "id": "779e7dcb"
+    },
+    {
+      "row": 45,
+      "lock": "Nemef NF2",
+      "link": "https://www.youtube.com/watch?v=-4f4UVf57lU",
+      "id": "94466c21"
+    },
+    {
+      "row": 46,
+      "lock": "Zeiss Ikon SK6 Sperrwelle Extra Code (upgrade of TK5 Sperrwellenprofil)",
+      "link": "https://www.youtube.com/watch?v=dxkVI6NKXk0",
+      "id": "108549ba"
+    },
+    {
+      "row": 47,
+      "lock": "Mul-T-Lock Classic Pro",
+      "link": "https://www.youtube.com/watch?v=3xwWRQEVnrc",
+      "id": "fd2b533e"
+    },
+    {
+      "row": 48,
+      "lock": "Burg Wächter Alpha 800 -- Non-removable core",
+      "link": "https://www.youtube.com/watch?v=pHVU5h3FGPo",
+      "id": "e38d015b"
+    }
+  ]
+}

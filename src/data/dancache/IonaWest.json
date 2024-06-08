@@ -1,0 +1,204 @@
+{
+  "header": {
+    "picker": "IonaWest",
+    "numBlack": 7,
+    "points": 297
+  },
+  "entries": [
+    {
+      "row": 4,
+      "lock": "Kromer Protector",
+      "link": "https://youtu.be/MbdFG2zOdsA",
+      "id": "f87db705",
+      "modifier": "First Recorded Pick (Notable)"
+    },
+    {
+      "row": 5,
+      "lock": "Fichet F3D (indoor cylinder)",
+      "link": "https://www.youtube.com/watch?v=em4jPj1iNPI",
+      "id": "33056c0f"
+    },
+    {
+      "row": 6,
+      "lock": "Tier 4 Project Pickmaking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/946086418881609739",
+      "id": "12345696"
+    },
+    {
+      "row": 7,
+      "lock": "Tier 4 Project Picking Instruction",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/1022962163234648114",
+      "id": "12345716"
+    },
+    {
+      "row": 8,
+      "lock": "Miwa U9 (9 unmastered elements)",
+      "link": "https://youtu.be/GEyFAuB94lo",
+      "id": "d1272b9f"
+    },
+    {
+      "row": 9,
+      "lock": "BiLock Exclusive (Picked to Control)",
+      "link": "https://youtu.be/eD3rOKkrM9s",
+      "id": "6d2555aa"
+    },
+    {
+      "row": 10,
+      "lock": "ASIO/SCEC BiLock (2nd/3rd Gen only)",
+      "link": "https://youtu.be/4Y373gSCL3o",
+      "id": "12846cc6"
+    },
+    {
+      "row": 11,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/Vn7H4rVDLIY",
+      "id": "ab1e901f"
+    },
+    {
+      "row": 12,
+      "lock": "EVVA ICS (0 mastered elements)",
+      "link": "https://www.youtube.com/watch?v=Xru8CQxzOUg",
+      "id": "8ea170d2"
+    },
+    {
+      "row": 13,
+      "lock": "Western Electric 29A/B",
+      "link": "https://www.youtube.com/watch?v=yTfIOWbl7dc",
+      "id": "5958a65b"
+    },
+    {
+      "row": 14,
+      "lock": "Walsall locks, Ace - 7 levers",
+      "link": "https://youtu.be/339HahJdYGQ",
+      "id": "37914cb6"
+    },
+    {
+      "row": 15,
+      "lock": "Bilock (12-pins) (0 mastered elements) (upgrade of 8-pin version)",
+      "link": "https://youtu.be/PUDnbBFBWE8",
+      "id": "ab1e901f",
+      "modifier": "Non-Picking Defeat"
+    },
+    {
+      "row": 16,
+      "lock": "ASSA Twin v10/Twin 2 with barrels",
+      "link": "https://www.youtube.com/watch?v=7uvpu0QtYhA",
+      "id": "3f73d2ce"
+    },
+    {
+      "row": 17,
+      "lock": "EVVA 3KS/3KS+/4KS (with false gates and no mastered sliders)",
+      "link": "https://youtu.be/FVF31Was13Y",
+      "id": "f7452b9f"
+    },
+    {
+      "row": 18,
+      "lock": "Abloy Classic",
+      "link": "https://youtu.be/ZsNuyHTFc1w",
+      "id": "da09d849"
+    },
+    {
+      "row": 19,
+      "lock": "Tier 2 Project safecracking",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/947415246950256680",
+      "id": "12345679"
+    },
+    {
+      "row": 20,
+      "lock": "Tier 2 Project impressioning",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/947415060597338132",
+      "id": "12345689"
+    },
+    {
+      "row": 21,
+      "lock": "Tier 2 Project Cutaways",
+      "link": "https://discord.com/channels/140129091796992000/946082204826603561/955815303567249429",
+      "id": "12345699"
+    },
+    {
+      "row": 22,
+      "lock": "Dorma DC500",
+      "link": "https://www.youtube.com/watch?v=folGzV29IOM",
+      "id": "87ee7a61"
+    },
+    {
+      "row": 23,
+      "lock": "ASSA Desmo (8 sliders) (no mastered pins)",
+      "link": "https://youtu.be/mKXaC7SfZQI",
+      "id": "1459e2c6"
+    },
+    {
+      "row": 24,
+      "lock": "Corbin master ring (both shearlines in one take)",
+      "link": "https://www.youtube.com/watch?v=TiyM-DBA8DA",
+      "id": "50fd7a98"
+    },
+    {
+      "row": 25,
+      "lock": "Kwikset Smartkey (Gens I & II)",
+      "link": "https://youtu.be/QlO6oesPrwQ",
+      "id": "41f9efa2"
+    },
+    {
+      "row": 26,
+      "lock": "ASSA 600 / ASSA Max+ Restricted (with barrel spools and matching countermilling)",
+      "link": "https://www.youtube.com/watch?v=Z0zsfZoIZiQ",
+      "id": "45e3cde7"
+    },
+    {
+      "row": 27,
+      "lock": "SFIC format locks (unless otherwise specified)***",
+      "link": "https://youtu.be/qaSMWZDbM6A",
+      "id": "c8259a23"
+    },
+    {
+      "row": 28,
+      "lock": "Fontaine (5 pin)",
+      "link": "https://youtu.be/GafRcfctQUg",
+      "id": "7786832f"
+    },
+    {
+      "row": 29,
+      "lock": "Illinois Duo",
+      "link": "https://youtu.be/03YZt5IQEX0",
+      "id": "07bc680a"
+    },
+    {
+      "row": 30,
+      "lock": "Pollux 5",
+      "link": "https://youtu.be/THWWX62HMbo",
+      "id": "c9da1540"
+    },
+    {
+      "row": 31,
+      "lock": "Hot Dog Lock (Aldon Corp)",
+      "link": "https://www.youtube.com/watch?v=NVMwk7y8yBI",
+      "id": "0723bdc2"
+    },
+    {
+      "row": 32,
+      "lock": "Lockwood 334B45 (with spools)",
+      "link": "https://youtu.be/x5S-2-bUK98",
+      "id": "331c9d36"
+    },
+    {
+      "row": 33,
+      "lock": "Miwa DS",
+      "link": "https://youtu.be/F_LVlHFyTrc",
+      "id": "df8081fa"
+    },
+    {
+      "row": 34,
+      "lock": "kromer novum",
+      "link": "https://www.youtube.com/watch?v=hOOtJug9nUg",
+      "id": "281aa393",
+      "modifier": "First Recorded Pick"
+    },
+    {
+      "row": 35,
+      "lock": "Sargent and Greenleaf 4440 Series",
+      "link": "https://youtu.be/z7r0-ihq29g",
+      "id": "2ff8a738"
+    }
+  ]
+}
