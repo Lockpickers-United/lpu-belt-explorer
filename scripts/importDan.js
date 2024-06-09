@@ -9,6 +9,7 @@ import {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
 import masterIndex from './lpuBeltIndex.js'
 
 const DEBUG = true
+const FOLLOW_LINKS = false
 
 // Some folks take liberties with dan sheet format
 
@@ -404,6 +405,9 @@ function writeEntriesAsJSON(target, header, idEntries) {
         if (elem.id) {
             newEnt.id = elem.id
         }
+        if (elem.entry.publishDate) {
+            newEnt.publishDate = elem.entry.publishDate
+        }
         if (elem.entry.modifier) {
             newEnt.modifier = elem.entry.modifier
         }
@@ -454,6 +458,18 @@ function compareMatches(idEntries) {
     return idEntries.length - numSame
 }
 
+// Simple identification of YouTube urls
+
+function isYouTubeLink(link) {
+    const ytUrls = [
+        'https://youtube.com/',
+        'https://youtu.be/',
+        'https://www.youtube.com/',
+        'https://m.youtube.com/'
+    ]
+    return ytUrls.map(url => link.startsWith(url)).some(val => val)
+}
+
 
 /** 
  * Try out a single tab or process the full sheet. 
@@ -495,6 +511,31 @@ for (let idx = 0; idx < pickers.length; idx++) {
 
     if (DEBUG) {
         console.log(`Imported ${danData.entries.length} entries for ${target}...`)
+    }
+
+    // Find any YouTube links, follow and grab date published.
+    // This is slow.
+
+    for (let jdx = 0; jdx < danData.entries.length; jdx++) {
+        const link = danData.entries[jdx].link
+        let result = undefined
+        let match = undefined
+
+        if (FOLLOW_LINKS && !danData.entries[jdx].publishDate && isYouTubeLink(link)) {
+            try {
+                result = await (await fetch(link)).text()
+            } catch (error) {
+                if (DEBUG) {
+                    console.log(`WARN: ${error.name} failed to fetch ${link}`)
+                }
+            }
+            if (result) {
+                match = result.match(/"publishDate":"(\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d-\d\d:\d\d)"/)
+                if (match) {
+                    danData.entries[jdx].publishDate = match[1]
+                }
+            }
+        }
     }
 
     const idEntries = matchDanSheet(danData)
