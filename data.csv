@@ -370,7 +370,7 @@ Blue,Mindy,"Pagoda (round key)",,Other,,,c0af329b
 Blue,MIWA,DS,,Wafer,"Partial gut",,df8081fa
 Blue,"Mottura,Mottura","Champions C28,Champions C29",,Dimple,,,b1834e81
 Blue,Mul-T-Lock,Classic,"standard drivers",Dimple,Pin-in-pin,,0418a174
-Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, spooled drivers",Dimple,Pin-in-pin,,aec0c82d
+Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 spooled drivers",Dimple,Pin-in-pin,,aec0c82d
 Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pins, 3 or fewer spooled drivers",Dimple,Pin-in-pin,,a0ec1618
 Blue,Mul-T-Lock,Integrator,,Dimple,,,6e0bfdd2
 Blue,PACLOCK,"90A Pro",,Pin-tumbler,,,fb5a9eb7
@@ -405,7 +405,7 @@ Purple,"Aldon Corporation","Hot Dog Lock",,Pump/push,,,0723bdc2
 Purple,"Anchor Las","Disc Detainer",,"Disc detainer","Front tension,False gates",,bbce33e0
 Purple,ASEC,"BS Sash lock","5 lever",Lever,"Mortise,Sliding levers,Pin key,Curtain,False gates",,23919b4e
 Purple,"ASSA,Ruko","500,500","5 pin stacks, gin drivers and matching sleeve",Pin-tumbler,,,ef221c67
-Purple,"ASSA,ASSA","600,Max+ Restricted","Barrel spools and matching countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,45e3cde7
+Purple,"ASSA,ASSA,Ruko","600,Max+ Restricted,600","Barrel spools and matching countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,45e3cde7
 Purple,ASSA,Desmo,"6 sliders",Slider,,,039a239f
 Purple,ASSA,Desmo,"8 sliders, 1-3 mastered",Slider,,,e2742f70
 Purple,ASSA,Guideline,"6 pin with active side pins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Sidepins",,122b5621
@@ -435,7 +435,7 @@ Purple,Eagle,"""Supr-Security""","without shutter",Wafer,,,e8901d1c
 Purple,Elzett,X11,,Dimple,,,04a402d6
 Purple,"EVVA,EVVA,EVVA,EVVA","DPI,DPS,DPX,EPS","slider version",Slider,"Trap element,False gates,Active sidebar",,8c2983b5
 Purple,Fichet,450,"no false gates",Lever/sidebar,,,93871dad
-Purple,"Gege,Alfa","pExtra,""pExtra""","6-7 pin",Pin-tumbler,,,4cd09b3b
+Purple,"Gege,Alfa","pExtra,""pExtra""","6-7 pin",Pin-tumbler,Overmilling,,4cd09b3b
 Purple,Generic/Unknown,"6 or 7 Lever lock",,Lever,,,a6a225e5
 Purple,Godrej,Ultra,"14 pins in 3 rows",Dimple,,,3fbd7b3d
 Purple,IFAM,WX1000,,Dimple,Pin-in-pin,"16 pins in three rows",3b848976
@@ -473,7 +473,7 @@ Purple,Mottura,"3D Key",,"Dimple,Other","Rotors,Active sidebar",,0a2c7044
 Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
 Purple,"Mul-T-Lock,Mul-T-Lock","Classic Pro,400",,Dimple,Pin-in-pin,,fd2b533e
-Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, serrated drivers",Dimple,Pin-in-pin,,48323cde
+Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 serrated drivers",Dimple,Pin-in-pin,,48323cde
 Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, ≥ 4 spooled drivers",Dimple,"Pin-in-pin,Undercut milling",,3335df97
 Purple,Mul-T-Lock,MT5,,Dimple,Pin-in-pin,,16906a6c
 Purple,Mul-T-Lock,"Omega Plus",,Dimple,,,8a65b956
@@ -568,7 +568,7 @@ Brown,Medeco,Duracam,***,"Dimple,Slider,Sidebar","Rotating gated keypins,False g
 Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
 Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
-Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, Serrated drivers",Dimple,Pin-in-pin,,5c5701d7
+Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, 5 serrated drivers",Dimple,Pin-in-pin,,5c5701d7
 Brown,Mul-T-Lock,Interactive+,"5 pin stacks, pinned to factory spec (spooled inner drivers, some counter milled outer keypins)",Dimple,"Pin-in-pin,Undercut milling",,0ae75ea0
 Brown,Pollux,7,,Pump/push,,,cc5bbb68
 Brown,Robur,"2391 Safe Deposit Lock","<3 barrels or gins with matched milling","Sidepins,Pin-tumbler",,,94ee12b7
@@ -588,10 +588,10 @@ Red,Abloy,"High Profile",,"Disc detainer","Rear tension,False gates,Profile disc
 Red,"ABUS,ABUS","EC700,EC800",,Dimple,,,b29a8b44
 Red,ABUS,Plus,"with butterfly discs","Disc detainer","Random mid tension,False gates,Butterfly discs",,b8350901
 Red,ALPHA,FB,"≥15 pins",Dimple,"High pin count",,4223eb26
-Red,ASSA,600,"6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,29ab2852
+Red,"ASSA,Ruko","600,600","6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,29ab2852
 Red,ASSA,700,"7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins",Pin-tumbler,"Tree drivers,Gin spool drivers,Undercut milling,Tapered drivers",,e3bd3faf
 Red,"ASSA,Ruko","700,700","with gin drivers and matched sleeve",Pin-tumbler,,,ef4e0295
-Red,"ASSA,ASSA","dp2400,dp10","6 pin 4 slider","Sidepins,Pin-tumbler","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
+Red,"ASSA,ASSA,Trioving","dp2400,dp10,System 10","6 pin 4 slider","Sidepins,Pin-tumbler","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
 Red,"Australian Lock Co.",BiLock,"12 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,5b60be8a
 Red,Banham,m2002,,Dimple,"Opposing overset stacks",,9eb3e9c4
 Red,BKS,Janus,"< 14 pins",Dimple,,,3af2407a
@@ -658,7 +658,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 3","ASSA,ASSA,TrioVing,Ruko","dp4400,dp11,dp,Garant+","6 pin with 10 sliders","Pin-tumbler,Slider","Unsprung sliders,Barrel drivers,Serrated/threaded milling,Active sidebar",,6e59ba12
 "Black 2",ASSA,"Twin 6000","gin drivers, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,104776ef
 "Black 2",ASSA,"Twin Combi","with gin drivers","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Gin spool drivers,Undercut milling",,fb51b475
-"Black 2","ASSA,ASSA,ASSA,TrioVing,TrioVing","Twin Combi,Triton,Neptun 4900,System 10,Twin Control","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Barrel drivers,Serrated/threaded milling",,7168d463
+"Black 2","ASSA,ASSA,ASSA,TrioVing","Twin Combi,Triton,Neptun 4900,Twin Control","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Barrel drivers,Serrated/threaded milling",,7168d463
 "Black 1",ASSA,"Twin Exclusive 5700 (Baltic)","6 pin with 5 side pins with 4 possible heights each","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,f7ad4c89
 "Black 1","ASSA,ASSA","Twin Exclusive,Twin 6000","6 barrel drivers, 5 side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,55053299
 "Black 1","ASSA,ASSA,ASSA,ASSA,ASSA","Twin Maximum,Twin Pro,Twin v10,Twin 2,Twin Global","barrel driver, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Active sidebar,Sidepins",,3f73d2ce
@@ -768,7 +768,7 @@ Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",Wafer,"Under Review ⚑",,dbc6
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
 Unranked,Chubb,"GPO No.6",,,"Under Review ⚑",,c2c1f8e0
 Unranked,CISA,810,,,"Under Review ⚑",,22d70f2e
-Unranked,Cobra,"C3 Sidewinder",,,"Under Review ⚑",,1add3dd0
+Unranked,Cobra,"C3 Sidewinder",,Slider,"Under Review ⚑",,1add3dd0
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
@@ -813,7 +813,7 @@ Unranked,Medeco,X4,,Pin-tumbler,"Under Review ⚑",,0684a655
 Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872b30
 Unranked,MIWA,"Star Orion","6 rows",Dimple,"High pin count",,4150776b
 Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Double bitted",,e9d77a86
-Unranked,Mul-T-Lock,Interactive,"4 pins, spooled drivers",Dimple,,,1798ca06
+Unranked,Mul-T-Lock,Interactive,"4 pins, 4 spooled drivers",Dimple,,,1798ca06
 Unranked,Nagasawa,kcy-7x,"12 pin",Dimple,"Under Review ⚑,High pin count",,1ee9600e
 Unranked,,Ohshima,"3 row dimple",Dimple,"Under Review ⚑,High pin count",,ea4834c8
 Unranked,Omellow,R3,,Dimple,"Interlocking pins",,1d80c9bb
