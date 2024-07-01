@@ -90,3 +90,31 @@ export const dialsSchema = Joi.array().items(
         Features: Joi.string().allow('')
     }).unknown()
 )
+
+export const danSchema = Joi.object({
+    Lock: Joi.string().min(1),
+    Link: Joi.string().min(1),
+    'Unique LPU id': Joi.number().integer(),
+    'Duplicate/Sameline checker': Joi.number().integer(),
+    'Lock Points': Joi.number().integer(),
+    Modifier: Joi.string()
+        .valid(
+            'N/A', 
+            'First Recorded Pick', 
+            'First Recorded Pick (Notable)',
+            'Non-Picking Defeat',
+            'First Recorded Defeat',
+            'First Recorded Defeat (Notable)',
+            'Other',
+            'Upgraded'
+        ),
+    'Lock * Modifier Points': Joi.number()
+}).unknown()
+
+export const projectSchema = Joi.array().items(
+    Joi.object({
+        Name: Joi.string().min(1),
+        Tier: Joi.string().valid('T1', 'T2', 'T3', 'T4', 'T5'),
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
+    }).unknown()
+)
