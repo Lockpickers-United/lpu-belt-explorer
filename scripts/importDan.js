@@ -546,7 +546,6 @@ for (let idx = 0; idx < pickers.length; idx++) {
     if (!fs.existsSync(filename)) {
         writeEntriesAsJSON(target, danData.header, idEntries)
     }
-    idx++
 
     // await new Promise(r => setTimeout(r, 1000));
 }
