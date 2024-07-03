@@ -3,10 +3,10 @@ import {parse} from 'csv-parse/sync'
 import {danSchema} from './schemas.js'
 import beltDetails from '../src/data/belts.js'
 import {projectTiers, modifierMultiplier} from '../src/data/belts.js'
-import {allPickers} from '../src/data/allPickerDanTabs.js'
 import fetch from 'node-fetch'
 import {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
 import masterIndex from './lpuBeltIndex.js'
+// import {allPickers} from '../src/data/allPickerDanTabs.js'
 
 const DEBUG = true
 const FOLLOW_LINKS = false
@@ -485,11 +485,6 @@ let target = undefined
 
 target = 'NiXXeD'
 // target = 'Tonysansan'
-// target = 'Yabende'
-// target = 'DQ'
-// target = 'GeorgiaJim'
-// target = 'Reinder'
-// target = 'DrHogmaster'
 // target = allPickers[100]
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
