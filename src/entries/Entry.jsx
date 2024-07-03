@@ -128,7 +128,7 @@ function Entry({entry, expanded, onExpand}) {
                                 </React.Fragment>
                             }/>
                             <div style={{marginLeft: 'auto'}}>
-                                <CollectionButton id={entry.id}/>
+                                <CollectionButton id={entry.id} makeModels={entry.makeModels}/>
                             </div>
                         </Stack>
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>

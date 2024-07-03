@@ -15,8 +15,9 @@ import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import {collectionOptions} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
+import RecordingControls from './RecordingControls'
 
-function CollectionButton({id, dense}) {
+function CollectionButton({id, dense, makeModels}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
@@ -102,6 +103,8 @@ function CollectionButton({id, dense}) {
                                 />
                             )}
                         </FormGroup>
+
+                        <RecordingControls makeModels={makeModels}/>
                     </CardContent>
                     <div style={{marginTop: -8, marginBottom: 16}}>
                         <SignInButton onClick={handleClose}/>
