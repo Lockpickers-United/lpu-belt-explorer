@@ -38,3 +38,20 @@ export const beltSort = (a, b) => {
 export const beltSortReverse = (a, b) => {
     return allBeltsReverse.indexOf(a) - allBeltsReverse.indexOf(b)
 }
+
+export const projectTiers = {
+    T1: {danPoints: 5},
+    T2: {danPoints: 10},
+    T3: {danPoints: 20},
+    T4: {danPoints: 34},
+    T5: {danPoints: 50}
+}
+
+export const modifierMultiplier = {
+    'First Recorded Pick': 1.5,
+    'First Recorded Pick (Notable)': 2.5,
+    'Non-Picking Defeat': 0.75,
+    'First Recorded Defeat': 1.5,
+    'First Recorded Defeat (Notable)': 2,
+    'Upgraded': 0
+}
