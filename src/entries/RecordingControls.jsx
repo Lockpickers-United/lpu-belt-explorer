@@ -190,7 +190,7 @@ function RecordingControls({makeModels}) {
 							onCancel={handleCancel}
 						/>
 					</div>
-				:
+				: recordings.length === 0 &&
 					<div id='0'>
 						<Stack direction='row' alignItems='center' onClick={() => setEditRecId(0)}>
 						    <IconButton edge='start'>
