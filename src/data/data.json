@@ -23486,7 +23486,7 @@
         "model": "XS"
       }
     ],
-    "version": "Clavis X18 clones",
+    "version": "Clavis Q18 clones",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -23521,7 +23521,7 @@
       }
     ],
     "views": 248,
-    "lastUpdated": "2023-07-25T11:20:19.897Z"
+    "lastUpdated": "2024-07-09T14:20:38.354Z"
   },
   {
     "id": "5329b0f3",
@@ -33309,6 +33309,7 @@
         "model": "Diamant"
       }
     ],
+    "version": "With sprung rear disc",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -33368,7 +33369,7 @@
       }
     ],
     "views": 1066,
-    "lastUpdated": "2023-07-25T11:20:19.905Z"
+    "lastUpdated": "2024-07-09T14:20:38.359Z"
   },
   {
     "id": "3c73c705",
