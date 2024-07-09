@@ -512,7 +512,7 @@ Brown,,Alke,,,,,d8abe040
 Brown,ALPHA,ED,"cam lock",Dimple,"High pin count","14 pins in 4 directions, standard and mushroom drivers",05298f91
 Brown,ALPHA,FB,"<15 pins",Dimple,"High pin count",,054731a5
 Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
-Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis X18 clones",Dimple,,,f85f4ac0
+Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis Q18 clones",Dimple,,,f85f4ac0
 Brown,Ankerslot,"Infinity K",,"Pin-tumbler,Magnet",,,5329b0f3
 Brown,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,f2d41749
 Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
@@ -676,7 +676,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",Clavis,Q-18,,Dimple,"High pin count",,7ea33803
 "Black 2",Clavis,T-20,"20 pins",Dimple,"High pin count",,48cf387f
 "Black 1","Corbin Russwin",Emhart,"≥ 2 mastered chambers **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c266d57b
-"Black 1",DOM,Diamant,,"Disc detainer","Front tension,False gates",,57fbcb1b
+"Black 1",DOM,Diamant,"With sprung rear disc","Disc detainer","Front tension,False gates",,57fbcb1b
 "Black 1",DOM,"ix Twinstar",,Dimple,"Shark fin keypins,Torpedo keypins,Interactive element",,3c73c705
 "Black 1","EVVA,EVVA","3KS,3KS+","with false gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
 "Black 1",EVVA,Dual,"1-4 mastered elements",Slider,"Active sidebar,False gates",,1e197456
