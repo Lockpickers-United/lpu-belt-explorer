@@ -160,7 +160,7 @@ function RecordingControls({makeModels}) {
 							        <EditIcon/> 
 							    </IconButton>
 						        <Link href={rec.link} target='_blank' color='secondary'>
-						        	<Typography noWrap='true'>{rec.name}</Typography>
+									<Typography noWrap={true}>{rec.name}</Typography>
 						        </Link>
 						    </Stack>
 						</div>
