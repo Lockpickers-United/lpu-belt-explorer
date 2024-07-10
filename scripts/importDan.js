@@ -509,29 +509,43 @@ for (let idx = 0; idx < pickers.length; idx++) {
     }
 
     // Find any YouTube links, follow and grab date published.
-    // This is slow.
+    // This is slow, but we have a cache.
 
+    const linkCacheFilename = './src/data/dancache/linkCache.json'
+    let linkCache = {}
+    if (fs.existsSync(linkCacheFilename)) {
+        linkCache = JSON.parse(fs.readFileSync(linkCacheFilename))
+    }
+ 
     for (let jdx = 0; jdx < danData.entries.length; jdx++) {
         const link = danData.entries[jdx].link
         let result = undefined
         let match = undefined
 
         if (FOLLOW_LINKS && !danData.entries[jdx].publishDate && isYouTubeLink(link)) {
-            try {
-                result = await (await fetch(link)).text()
-            } catch (error) {
-                if (DEBUG) {
-                    console.log(`WARN: ${error.name} failed to fetch ${link}`)
+            if (!linkCache[link]) {
+                try {
+                    result = await (await fetch(link)).text()
+                } catch (error) {
+                    if (DEBUG) {
+                        console.log(`WARN: ${error.name} failed to fetch ${link}`)
+                    }
                 }
             }
             if (result) {
                 match = result.match(/"publishDate":"(\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d-\d\d:\d\d)"/)
                 if (match) {
-                    danData.entries[jdx].publishDate = match[1]
+                    linkCache[link] = match[1]
                 }
+            }
+            if (linkCache[link]) {
+                danData.entries[jdx].publishDate = linkCache[link]
             }
         }
     }
+
+    const json = JSON.stringify(linkCache, null, 2)
+    fs.writeFileSync(linkCacheFilename, json)
 
     const idEntries = matchDanSheet(danData)
     scoreEntries(target, danData.header, idEntries)
