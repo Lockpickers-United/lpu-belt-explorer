@@ -107,6 +107,13 @@ export default [
         }
     },
     {
+        path: '/profile/:userId/scorecard',
+        lazy: async() => {
+            const {default: ScorecardRoute} = await import('../profile/ScorecardRoute')
+            return {element: <ScorecardRoute/>}
+        }
+    },
+    {
         path: '/profile/view',
         lazy: async () => {
             const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
