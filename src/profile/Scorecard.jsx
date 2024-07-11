@@ -207,16 +207,18 @@ function ScorecardRowEdit({evid, onSave, onCancel}) {
     )
 }
 
-function ScorecardRowDisplay({evid, onEdit}) {
+function ScorecardRowDisplay({owner, evid, onEdit}) {
     return (
         <TableRow key={evid.row}>
             <TableCell align='left' style={{backgroundColor: evid.color}}>
                 <Typography>{evid.row}</Typography>
             </TableCell>
             <TableCell align='center'>
-                <IconButton size='small' onClick={() => onEdit(evid.id)}>
-                    <EditIcon/>
-                </IconButton>
+                {owner && 
+                    <IconButton size='small' onClick={() => onEdit(evid.id)}>
+                        <EditIcon/>
+                    </IconButton>
+                }
             </TableCell>
             <TableCell align='left'>
                 {evid.matchLink ?
@@ -250,7 +252,7 @@ function ScorecardRowDisplay({evid, onEdit}) {
     )
 }
 
-function Scorecard({evidenceData}) {
+function Scorecard({owner, evidenceData}) {
     const [evidence, setEvidence] = useState(evidenceData)
     const [editRowId, setEditRowId] = useState(null)
 
@@ -445,7 +447,7 @@ function Scorecard({evidenceData}) {
                             if (ev.id === editRowId) {
                                 return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave} onCancel={handleCancel}/>
                             } else {
-                                return <ScorecardRowDisplay key={ev.row} evid={ev} onEdit={handleEdit}/>
+                                return <ScorecardRowDisplay key={ev.row} owner={owner} evid={ev} onEdit={handleEdit}/>
                             }
                         })}
                     </TableBody>

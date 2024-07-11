@@ -5,6 +5,7 @@ import Nav from '../nav/Nav'
 import Footer from '../nav/Footer'
 import Tracker from '../app/Tracker'
 import DBContext from '../app/DBContext'
+import AuthContext from '../app/AuthContext'
 import Scorecard from './Scorecard'
 import LoadingDisplay from '../util/LoadingDisplay'
 import ProfileNotFound from './ProfileNotFound'
@@ -26,6 +27,7 @@ function getEvidenceForUser(uid) {
 
 function ScorecardRoute() {
     const {userId} = useParams()
+    const {user} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
 
     const loadFn = useCallback(async () => {
@@ -38,7 +40,7 @@ function ScorecardRoute() {
             return null
         }
     }, [getProfile, userId])
-    const {userData = {}, loading, error} = useData({loadFn})
+    const {data = {}, loading, error} = useData({loadFn})
 
     const title = loading ? 'Loading...' : 'Scorecard'
 
@@ -50,8 +52,8 @@ function ScorecardRoute() {
 
             {loading && <LoadingDisplay/>}
 
-            {!loading && userData && !error && <Scorecard evidenceData={evidence}/>}
-            {!loading && (!userData || error) && <ProfileNotFound/>}
+            {!loading && data && !error && <Scorecard owner={user.uid === userId} evidenceData={evidence}/>}
+            {!loading && (!data || error) && <ProfileNotFound/>}
 
             <Footer/>
 
