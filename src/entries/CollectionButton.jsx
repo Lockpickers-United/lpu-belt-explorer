@@ -104,7 +104,7 @@ function CollectionButton({id, dense, makeModels}) {
                             )}
                         </FormGroup>
 
-                        <RecordingControls makeModels={makeModels}/>
+                        <RecordingControls lockId={id} makeModels={makeModels}/>
                     </CardContent>
                     <div style={{marginTop: -8, marginBottom: 16}}>
                         <SignInButton onClick={handleClose}/>

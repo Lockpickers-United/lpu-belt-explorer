@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, deleteField} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, deleteField, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -10,8 +10,12 @@ const DBContext = React.createContext({})
 export function DBProvider({children}) {
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
-    const [dbLoaded, setDbLoaded] = useState(false)
+    const [evidence, setEvidence] = useState([])
+    const [collectionDBLoaded, setCollectionDBLoaded] = useState(false)
+    const [evidenceDBLoaded, setEvidenceDBLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
+
+    const dbLoaded = collectionDBLoaded && evidenceDBLoaded
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
@@ -78,6 +82,35 @@ export function DBProvider({children}) {
         return value.data()
     }, [])
 
+    const addEvidence = useCallback(async evid => {
+        if (dbError) return false
+        await addDoc(collection(db, 'evidence'), {
+            userId: user.uid,
+            lockProjectId: evid.matchId,
+            evidName: evid.name,
+            evidUrl: evid.link,
+            evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
+            modifier: evid.modifier
+        })
+    }, [dbError, user])
+
+    const updateEvidence = useCallback(async (id, evid) => {
+        if (dbError) return false
+        await setDoc(doc(db, 'evidence', id), {
+            userId: user.uid,
+            lockProjectId: evid.matchId,
+            evidName: evid.name,
+            evidUrl: evid.link,
+            evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
+            modifier: evid.modifier
+        })
+    }, [dbError, user])
+
+    const removeEvidence = useCallback(async (id) => {
+        if (dbError) return false
+        await deleteDoc(doc(db, 'evidence', id))
+    }, [dbError])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -89,9 +122,9 @@ export function DBProvider({children}) {
                 } else {
                     setLockCollection({})
                 }
-                setDbLoaded(true)
+                setCollectionDBLoaded(true)
             }, error => {
-                console.error('Error listening to DB:', error)
+                console.error('Error listening to collection DB:', error)
                 setDbError(true)
                 enqueueSnackbar('There was a problem reading your collection. It will be unavailable until you refresh the page. ', {
                     autoHideDuration: null,
@@ -100,7 +133,40 @@ export function DBProvider({children}) {
             })
         } else if (authLoaded) {
             setLockCollection({})
-            setDbLoaded(true)
+            setCollectionDBLoaded(true)
+        }
+    }, [authLoaded, isLoggedIn, user])
+
+    // Evidence Subscription
+    useEffect(() => {
+        if (isLoggedIn) {
+            const q = query(collection(db, 'evidence'), where('userId', '==', user.uid))
+            return onSnapshot(q, async querySnapshot => {
+                setEvidence(querySnapshot.docs.map(doc => {
+                    const data = doc.data()
+                    const dateStr = data.evidCreatedAt && data.evidCreatedAt.toDate().toJSON()
+
+                    return {
+                        id: doc.id,
+                        matchId: data.lockProjectId,
+                        name: data.evidName,
+                        link: data.evidUrl,
+                        date: dateStr,
+                        modifier: data.modifier
+                    }
+                }))
+                setEvidenceDBLoaded(true)
+            }, error => {
+                console.error('Error listening to evidence DB:', error)
+                setDbError(true)
+                enqueueSnackbar('There was a problem reading your evidence. It will be unavailable until you refresh the page. ', {
+                    autoHideDuration: null,
+                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
+                })
+            })
+        } else if (authLoaded) {
+            setEvidence([])
+            setEvidenceDBLoaded(true)
         }
     }, [authLoaded, isLoggedIn, user])
 
@@ -111,8 +177,12 @@ export function DBProvider({children}) {
         removeFromLockCollection,
         getProfile,
         updateProfileVisibility,
-        clearProfile
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile])
+        clearProfile,
+        evidence,
+        addEvidence,
+        updateEvidence,
+        removeEvidence
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence])
 
     return (
         <DBContext.Provider value={value}>

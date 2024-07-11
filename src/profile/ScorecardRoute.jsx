@@ -9,21 +9,6 @@ import AuthContext from '../app/AuthContext'
 import Scorecard from './Scorecard'
 import LoadingDisplay from '../util/LoadingDisplay'
 import ProfileNotFound from './ProfileNotFound'
-import tonyEvidence from '../data/dancache/Tonysansan.json'
-
-
-function getEvidenceForUser(uid) {
-    return tonyEvidence.entries.map(ent => {
-        return {
-            id: Math.floor(Math.random() * 100000),
-            matchId: ent.id,
-            name: ent.lock,
-            link: ent.link,
-            modifier: ent.modifier,
-            date: ent.publishDate
-        }
-    })
-}
 
 function ScorecardRoute() {
     const {userId} = useParams()
@@ -44,15 +29,13 @@ function ScorecardRoute() {
 
     const title = loading ? 'Loading...' : 'Scorecard'
 
-    const evidence = getEvidenceForUser(userId)
-
     return (
         <React.Fragment>
             <Nav title={title}/>
 
             {loading && <LoadingDisplay/>}
 
-            {!loading && data && !error && <Scorecard owner={user.uid === userId} evidenceData={evidence}/>}
+            {!loading && data && !error && <Scorecard owner={user.uid === userId}/>}
             {!loading && (!data || error) && <ProfileNotFound/>}
 
             <Footer/>

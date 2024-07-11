@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import {makeStyles} from '@mui/styles'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -17,6 +17,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import EditIcon from '@mui/icons-material/Edit'
+import DBContext from '../app/DBContext'
 import entryName from '../entries/entryName'
 import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
@@ -113,7 +114,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                 <Stack direction='column'>
                     <TextField
                         id='lock-project-id'
-                        error={lockProjectIdErr}
+                        error={!!lockProjectIdErr}
                         helperText={lockProjectIdErr}
                         label='Lock / Project Id'
                         defaultValue={lockProjectId}
@@ -132,7 +133,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                 <Stack direction='column'>
                     <TextField
                         id='evidence-name'
-                        error={evidenceNameErr}
+                        error={!!evidenceNameErr}
                         helperText={evidenceNameErr}
                         label='Evidence Name'
                         defaultValue={evidenceName}
@@ -146,7 +147,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                     />
                     <TextField
                         id='evidence-url'
-                        error={evidenceUrlErr}
+                        error={!!evidenceUrlErr}
                         helperText={evidenceUrlErr}
                         label='Evidence Link'
                         defaultValue={evidenceUrl}
@@ -164,7 +165,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
             <TableCell align='left'>
                 <TextField
                     id='evidence-date'
-                    error={evidenceDateErr}
+                    error={!!evidenceDateErr}
                     helperText={evidenceDateErr}
                     label='Evidence Date'
                     defaultValue={evidenceDate}
@@ -255,8 +256,8 @@ function ScorecardRowDisplay({owner, evid, onEdit}) {
     )
 }
 
-function Scorecard({owner, evidenceData}) {
-    const [evidence, setEvidence] = useState(evidenceData)
+function Scorecard({owner}) {
+    const {evidence, updateEvidence, removeEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
 
     function handleEdit(id) {
@@ -265,20 +266,13 @@ function Scorecard({owner, evidenceData}) {
 
     function handleSave(id, matchId, name, url, date, modifier) {
         setEditRowId(null)
-
-        setEvidence(evidence.map(ev => {
-            if (ev.id === id) {
-                return {
-                    matchId: matchId,
-                    name: name,
-                    link: url,
-                    date: new Date(date).toJSON(),
-                    modifier: modifier
-                }
-            } else {
-                return ev
-            }
-        }))
+        updateEvidence(id, {
+            matchId: matchId,
+            name: name,
+            link: url,
+            date: new Date(date).toJSON(),
+            modifier: modifier
+        })
     }
 
     function handleCancel() {
@@ -287,7 +281,7 @@ function Scorecard({owner, evidenceData}) {
 
     function handleDelete(id) {
         setEditRowId(null)
-        setEvidence(evidence.filter(ev => ev.id !== id))
+        removeEvidence(id)
     }
 
     const annotatedEvidence = evidence.map(ev => {
