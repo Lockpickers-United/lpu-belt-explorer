@@ -12,16 +12,16 @@ import tonyEvidence from '../data/dancache/Tonysansan.json'
 
 
 function getEvidenceForUser(uid) {
-	return tonyEvidence.entries.map(ent => {
-		return {
+    return tonyEvidence.entries.map(ent => {
+        return {
             id: Math.floor(Math.random() * 100000),
-			matchId: ent.id,
-			name: ent.lock,
-			link: ent.link,
-			modifier: ent.modifier,
-			date: ent.publishDate
-		}
-	})
+            matchId: ent.id,
+            name: ent.lock,
+            link: ent.link,
+            modifier: ent.modifier,
+            date: ent.publishDate
+        }
+    })
 }
 
 function ScorecardRoute() {
