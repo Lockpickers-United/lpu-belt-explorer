@@ -56,7 +56,7 @@ function isUpgradeOf(aId, bId) {
     }
 }
 
-function ScorecardRowEdit({evid, onSave, onCancel}) {
+function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)
     const [lockProjectIdErr, setLockProjectIdErr] = useState(null)
     const [evidenceName, setEvidenceName] = useState(evid.name)
@@ -104,7 +104,10 @@ function ScorecardRowEdit({evid, onSave, onCancel}) {
                 <Button color='secondary' onClick={handleSave}>Save</Button>
             </TableCell>
             <TableCell align='center'>
-                <Button color='secondary' onClick={onCancel}>Cancel</Button>
+                <Stack direction='column' spacing={2}>
+                    <Button color='secondary' onClick={onCancel}>Cancel</Button>
+                    <Button color='secondary' onClick={() => onDelete(evid.id)}>Delete</Button>
+                </Stack>
             </TableCell>
             <TableCell align='left'>
                 <Stack direction='column'>
@@ -282,6 +285,11 @@ function Scorecard({owner, evidenceData}) {
         setEditRowId(null)
     }
 
+    function handleDelete(id) {
+        setEditRowId(null)
+        setEvidence(evidence.filter(ev => ev.id !== id))
+    }
+
     const annotatedEvidence = evidence.map(ev => {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
@@ -445,7 +453,7 @@ function Scorecard({owner, evidenceData}) {
                     <TableBody>
                         {scoredEvidence.map(ev => {
                             if (ev.id === editRowId) {
-                                return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave} onCancel={handleCancel}/>
+                                return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave} onCancel={handleCancel} onDelete={handleDelete}/>
                             } else {
                                 return <ScorecardRowDisplay key={ev.row} owner={owner} evid={ev} onEdit={handleEdit}/>
                             }
