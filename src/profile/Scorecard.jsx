@@ -115,7 +115,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                         id='lock-project-id'
                         error={lockProjectIdErr}
                         helperText={lockProjectIdErr}
-                        label='Lock/Project Id'
+                        label='Lock / Project Id'
                         defaultValue={lockProjectId}
                         size='small'
                         margin='dense'
@@ -148,7 +148,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                         id='evidence-url'
                         error={evidenceUrlErr}
                         helperText={evidenceUrlErr}
-                        label='Evidence Name'
+                        label='Evidence Link'
                         defaultValue={evidenceUrl}
                         placeholder='https://youtu.be/'
                         size='small'
