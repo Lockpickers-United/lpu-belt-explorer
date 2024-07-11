@@ -14,7 +14,8 @@ import tonyEvidence from '../data/dancache/Tonysansan.json'
 function getEvidenceForUser(uid) {
 	return tonyEvidence.entries.map(ent => {
 		return {
-			id: ent.id,
+            id: Math.floor(Math.random() * 100000),
+			matchId: ent.id,
 			name: ent.lock,
 			link: ent.link,
 			modifier: ent.modifier,
@@ -49,7 +50,7 @@ function ScorecardRoute() {
 
             {loading && <LoadingDisplay/>}
 
-            {!loading && userData && !error && <Scorecard evidence={evidence}/>}
+            {!loading && userData && !error && <Scorecard evidenceData={evidence}/>}
             {!loading && (!userData || error) && <ProfileNotFound/>}
 
             <Footer/>
