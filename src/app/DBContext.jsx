@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, deleteField, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, deleteField, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -111,6 +111,30 @@ export function DBProvider({children}) {
         await deleteDoc(doc(db, 'evidence', id))
     }, [dbError])
 
+    const importUnclaimedEvidence = useCallback(async (tabName) => {
+        if (dbError) return false
+        const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
+        const querySnapshot = await getDocs(q);
+        const docs = querySnapshot.docs
+
+        for (let idx=0; idx < docs.length; idx++) {
+            const rec = docs[idx].data()
+            let newRec = {
+                userId: user.uid,
+                evidName: rec.evidName,
+                evidUrl: rec.evidUrl,
+                modifier: rec.modifier
+            }
+            if (rec.lockProjectId) {
+                newRec.lockProjectId = rec.lockProjectId
+            }
+            if (rec.evidCreatedAt) {
+                newRec.evidCreatedAt = Timestamp.fromDate(new Date(rec.evidCreatedAt))
+            }
+            await addDoc(collection(db, 'evidence'), newRec)
+        }
+    }, [dbError, user])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -181,8 +205,9 @@ export function DBProvider({children}) {
         evidence,
         addEvidence,
         updateEvidence,
-        removeEvidence
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence])
+        removeEvidence,
+        importUnclaimedEvidence
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, importUnclaimedEvidence])
 
     return (
         <DBContext.Provider value={value}>

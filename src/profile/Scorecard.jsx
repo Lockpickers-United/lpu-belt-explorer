@@ -94,7 +94,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
     let matchName = '(Unknown Id)'
 
     if (allEntriesById[lockProjectId]) {
-        matchName = entryName(allEntriesById[lockProjectId])
+        matchName = entryName(allEntriesById[lockProjectId], 'short', {includeVersion: true})
     } else if (allProjectsById[lockProjectId]) {
         matchName = allProjectsById[lockProjectId].name
     }
@@ -117,7 +117,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                         error={!!lockProjectIdErr}
                         helperText={lockProjectIdErr}
                         label='Lock / Project Id'
-                        defaultValue={lockProjectId}
+                        value={lockProjectId}
                         size='small'
                         margin='dense'
                         color='secondary'
@@ -136,7 +136,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                         error={!!evidenceNameErr}
                         helperText={evidenceNameErr}
                         label='Evidence Name'
-                        defaultValue={evidenceName}
+                        value={evidenceName}
                         size='small'
                         margin='dense'
                         color='secondary'
@@ -150,7 +150,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                         error={!!evidenceUrlErr}
                         helperText={evidenceUrlErr}
                         label='Evidence Link'
-                        defaultValue={evidenceUrl}
+                        value={evidenceUrl}
                         placeholder='https://youtu.be/'
                         size='small'
                         margin='dense'
@@ -168,7 +168,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                     error={!!evidenceDateErr}
                     helperText={evidenceDateErr}
                     label='Evidence Date'
-                    defaultValue={evidenceDate}
+                    value={evidenceDate}
                     placeholder='yyyy-mm-dd'
                     size='small'
                     margin='dense'
@@ -183,7 +183,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                 <Select
                     id='modifier'
                     label='Modifier'
-                    defaultValue={modifier ?? ''}
+                    value={modifier ?? ''}
                     size='small'
                     margin='dense'
                     color='secondary'
@@ -257,8 +257,9 @@ function ScorecardRowDisplay({owner, evid, onEdit}) {
 }
 
 function Scorecard({owner}) {
-    const {evidence, updateEvidence, removeEvidence} = useContext(DBContext)
+    const {evidence, updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
+    const [tabToImport, setTabToImport] = useState('')
 
     function handleEdit(id) {
         setEditRowId(id)
@@ -284,6 +285,16 @@ function Scorecard({owner}) {
         removeEvidence(id)
     }
 
+    function handleDeleteAll() {
+        const ids = evidence.map(evid => evid.id)
+        ids.forEach(id => removeEvidence(id))
+    }
+
+    function handleImport() {
+        importUnclaimedEvidence(tabToImport)
+        setTabToImport('')
+    }
+
     const annotatedEvidence = evidence.map(ev => {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
@@ -293,7 +304,7 @@ function Scorecard({owner}) {
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
         if (entry) {
-            const name =  entryName(entry)
+            const name = entryName(entry)
             const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
             return {
@@ -416,6 +427,24 @@ function Scorecard({owner}) {
         <div style={{margin: 8, paddingBottom: 32}}>
             <Stack direction='row' justifyContent='space-evenly' alignItems='center'>
                 <Typography variant='h4'>{bbCount} Black Belt Locks</Typography>
+                {owner && scoredEvidence.length > 0 ?
+                    <Button color='secondary' size='large' onClick={handleDeleteAll}>DELETE ALL</Button>
+                : owner &&
+                    <div>
+                        <TextField
+                            id='tab-to-import'
+                            label='Tab to Import'
+                            value={tabToImport}
+                            size='small'
+                            margin='dense'
+                            color='secondary'
+                            onChange={e => {
+                                setTabToImport(e.target.value)
+                            }}
+                        />
+                        <Button color='secondary' size='large' sx={{margin: 1}} onClick={handleImport}>IMPORT</Button>
+                    </div>
+                }
                 <Typography variant='h4'>{danPoints} Dan Points</Typography>
             </Stack>
             <TableContainer component={Paper}>

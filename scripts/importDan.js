@@ -6,10 +6,20 @@ import {projectTiers, modifierMultiplier} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
 import masterIndex from './lpuBeltIndex.js'
-// import {allPickers} from '../src/data/allPickerDanTabs.js'
+import admin from 'firebase-admin'
+import {initializeApp} from 'firebase/app'
+import {allPickers} from '../src/data/allPickerDanTabs.js'
+
+const serviceAccount = JSON.parse(fs.readFileSync('../keys/dev-lpu-belt-explorer-firebase-adminsdk-nzry6-f570da8dae.json'))
+const app = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://dev-lpu-belt-explorer.firebaseio.com'
+})
+const db = admin.firestore(app)
 
 const DEBUG = true
-const FOLLOW_LINKS = false
+const FOLLOW_LINKS = true
+const WRITE_TO_DB = true
 
 // Some folks take liberties with dan sheet format
 
@@ -470,7 +480,6 @@ function isYouTubeLink(link) {
     return ytUrls.map(url => link.startsWith(url)).some(val => val)
 }
 
-
 /** 
  * Try out a single tab or process the full sheet. 
  * Provided DAN_SHEET_ID is set, run:
@@ -483,9 +492,9 @@ function isYouTubeLink(link) {
 
 let target = undefined
 
-target = 'NiXXeD'
+// target = 'NiXXeD'
 // target = 'Tonysansan'
-// target = allPickers[100]
+target = allPickers[134]
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
 
@@ -554,6 +563,23 @@ for (let idx = 0; idx < pickers.length; idx++) {
 
     if (!fs.existsSync(filename)) {
         writeEntriesAsJSON(target, danData.header, idEntries)
+    }
+
+    for (let idx=0; WRITE_TO_DB && idx < idEntries.length; idx++) {
+        const elem = idEntries[idx]
+        let rec = {
+            tabName: target,
+            evidName: elem.entry.lock,
+            evidUrl: elem.entry.link,
+            modifier: elem.entry.modifier ?? ''
+        }
+        if (elem.id) {
+            rec.lockProjectId = elem.id
+        }
+        if (elem.entry.publishDate) {
+            rec.evidCreatedAt = elem.entry.publishDate
+        }
+        await db.collection('unclaimed-evidence').add(rec)        
     }
 
     // await new Promise(r => setTimeout(r, 1000));
