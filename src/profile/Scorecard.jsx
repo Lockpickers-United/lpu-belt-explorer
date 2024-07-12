@@ -367,10 +367,18 @@ function Scorecard({owner, evidence}) {
                 row: idx+1,
                 note: 'no match with lock or project'
             }
+        } else if (!ev.link.startsWith('http')) {
+            scoredEvidence[idx] = {
+                ...ev,
+                row: idx+1,
+                points: 0,
+                bbCount: 0,
+                note: 'no URL for evidence'
+            }
         } else {
             const collidedIdx = usedIds[ev.matchId]
 
-            if (collidedIdx) {
+            if (collidedIdx && ev.points <= scoredEvidence[collidedIdx].points) {
                 scoredEvidence[idx] = {
                     ...ev,
                     row: idx+1,
@@ -378,6 +386,15 @@ function Scorecard({owner, evidence}) {
                     note: `samelined with row ${collidedIdx+1}`
                 }
             } else {
+                if (collidedIdx) {
+                    scoredEvidence[collidedIdx] = {
+                        ...sortedEvidence[collidedIdx],
+                        row: collidedIdx+1,
+                        points: 0,
+                        note: `samelined with row ${idx+1}`
+                    }
+                }
+
                 usedIds[ev.matchId] = idx
                 let superseded = false 
 
