@@ -256,8 +256,8 @@ function ScorecardRowDisplay({owner, evid, onEdit}) {
     )
 }
 
-function Scorecard({owner}) {
-    const {evidence, updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
+function Scorecard({owner, evidence}) {
+    const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
 

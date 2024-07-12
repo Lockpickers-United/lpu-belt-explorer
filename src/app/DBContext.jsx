@@ -7,6 +7,19 @@ import {enqueueSnackbar} from 'notistack'
 
 const DBContext = React.createContext({})
 
+function evidenceDB2State(id, dbRec) {
+    const dateStr = dbRec.evidCreatedAt && dbRec.evidCreatedAt.toDate().toJSON()
+
+    return {
+        id: id,
+        matchId: dbRec.lockProjectId,
+        name: dbRec.evidName,
+        link: dbRec.evidUrl,
+        date: dateStr,
+        modifier: dbRec.modifier
+    }
+}
+
 export function DBProvider({children}) {
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
@@ -83,57 +96,71 @@ export function DBProvider({children}) {
     }, [])
 
     const addEvidence = useCallback(async evid => {
-        if (dbError) return false
-        await addDoc(collection(db, 'evidence'), {
-            userId: user.uid,
+        const rec = {
+            userId: user.uid, 
             lockProjectId: evid.matchId,
             evidName: evid.name,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
-        })
-    }, [dbError, user])
+        }
+        const docRef = await addDoc(collection(db, 'evidence'), rec)
+        setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
+    }, [user, evidence])
 
     const updateEvidence = useCallback(async (id, evid) => {
-        if (dbError) return false
-        await setDoc(doc(db, 'evidence', id), {
+        const rec = {
             userId: user.uid,
             lockProjectId: evid.matchId,
             evidName: evid.name,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
-        })
-    }, [dbError, user])
+        }
+        await setDoc(doc(db, 'evidence', id), rec)
+        setEvidence(e => e.map(evid => {
+            if (evid.id === id) {
+                return evidenceDB2State(id, rec)
+            } else {
+                return evid
+            }
+        }))
+    }, [user, evidence])
 
     const removeEvidence = useCallback(async (id) => {
-        if (dbError) return false
         await deleteDoc(doc(db, 'evidence', id))
-    }, [dbError])
+        setEvidence(e => e.filter(evid => evid.id != id))
+    }, [evidence])
+
+    const getEvidence = useCallback(async userId => {
+        const q = query(collection(db, 'evidence'), where('userId', '==', userId))
+        const querySnapshot = await getDocs(q);
+        return querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
+    }, [user])
 
     const importUnclaimedEvidence = useCallback(async (tabName) => {
-        if (dbError) return false
         const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
         const querySnapshot = await getDocs(q);
         const docs = querySnapshot.docs
 
         for (let idx=0; idx < docs.length; idx++) {
             const rec = docs[idx].data()
-            let newRec = {
+            let newDoc = {
                 userId: user.uid,
                 evidName: rec.evidName,
                 evidUrl: rec.evidUrl,
                 modifier: rec.modifier
             }
             if (rec.lockProjectId) {
-                newRec.lockProjectId = rec.lockProjectId
+                newDoc.lockProjectId = rec.lockProjectId
             }
             if (rec.evidCreatedAt) {
-                newRec.evidCreatedAt = Timestamp.fromDate(new Date(rec.evidCreatedAt))
+                newDoc.evidCreatedAt = Timestamp.fromDate(new Date(rec.evidCreatedAt))
             }
-            await addDoc(collection(db, 'evidence'), newRec)
+            const docRef = await addDoc(collection(db, 'evidence'), newDoc)
+            setEvidence(e => e.concat([evidenceDB2State(docRef.id, newDoc)]))
         }
-    }, [dbError, user])
+    }, [user, evidence])
 
     // Lock Collection Subscription
     useEffect(() => {
@@ -148,7 +175,7 @@ export function DBProvider({children}) {
                 }
                 setCollectionDBLoaded(true)
             }, error => {
-                console.error('Error listening to collection DB:', error)
+                console.error('Error listening to DB:', error)
                 setDbError(true)
                 enqueueSnackbar('There was a problem reading your collection. It will be unavailable until you refresh the page. ', {
                     autoHideDuration: null,
@@ -161,37 +188,20 @@ export function DBProvider({children}) {
         }
     }, [authLoaded, isLoggedIn, user])
 
-    // Evidence Subscription
+    // Evidence Load
     useEffect(() => {
-        if (isLoggedIn) {
-            const q = query(collection(db, 'evidence'), where('userId', '==', user.uid))
-            return onSnapshot(q, async querySnapshot => {
-                setEvidence(querySnapshot.docs.map(doc => {
-                    const data = doc.data()
-                    const dateStr = data.evidCreatedAt && data.evidCreatedAt.toDate().toJSON()
-
-                    return {
-                        id: doc.id,
-                        matchId: data.lockProjectId,
-                        name: data.evidName,
-                        link: data.evidUrl,
-                        date: dateStr,
-                        modifier: data.modifier
-                    }
-                }))
+        async function loadEvidence() {
+            if (isLoggedIn) {
+                const q = query(collection(db, 'evidence'), where('userId', '==', user.uid))
+                const querySnapshot = await getDocs(q);
+                setEvidence(querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data())))
                 setEvidenceDBLoaded(true)
-            }, error => {
-                console.error('Error listening to evidence DB:', error)
-                setDbError(true)
-                enqueueSnackbar('There was a problem reading your evidence. It will be unavailable until you refresh the page. ', {
-                    autoHideDuration: null,
-                    action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
-                })
-            })
-        } else if (authLoaded) {
-            setEvidence([])
-            setEvidenceDBLoaded(true)
+            } else if (authLoaded) {
+                setEvidence([])
+                setEvidenceDBLoaded(true)
+            }
         }
+        loadEvidence()
     }, [authLoaded, isLoggedIn, user])
 
     const value = useMemo(() => ({
@@ -206,8 +216,9 @@ export function DBProvider({children}) {
         addEvidence,
         updateEvidence,
         removeEvidence,
+        getEvidence,
         importUnclaimedEvidence
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, importUnclaimedEvidence])
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence])
 
     return (
         <DBContext.Provider value={value}>
