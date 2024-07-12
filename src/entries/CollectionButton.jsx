@@ -93,6 +93,7 @@ function CollectionButton({id, dense, makeModels}) {
                                     key={key}
                                     control={
                                         <Checkbox
+                                            id={key}
                                             disabled={!isLoggedIn}
                                             color='secondary'
                                             checked={isChecked(key)}

@@ -67,6 +67,7 @@ function InlineFilterDisplay({profile = {}}) {
                     isValidCollection &&
                     <FormControl fullWidth size='small' sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
                         <Select
+                            name='collection-selector'
                             open={open}
                             onClose={handleClose}
                             onOpen={handleOpen}
