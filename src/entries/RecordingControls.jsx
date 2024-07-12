@@ -8,10 +8,10 @@ import Stack from '@mui/material/Stack'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import DBContext from '../app/DBContext'
+import {user2SysDate, sys2UserDate, now2UserDate} from '../util/datetime'
 
 function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDelete}) {
-    const date = defDate ? new Date(defDate) : new Date()
-    const dateStr = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate()
+    const dateStr = defDate ? sys2UserDate(defDate) : id === 0 && now2UserDate
     const [lockName, setLockName] = useState(defName)
     const [lockNameErr, setLockNameErr] = useState(null)
     const [recUrl, setRecUrl] = useState(defLink)
@@ -29,7 +29,7 @@ function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDe
             setRecUrlErr('Must specify valid URL')
             error = true
         }
-        if (isNaN(Date.parse(recDate))) {
+        if (!user2SysDate(recDate)) {
             setRecDateErr('Invalid date format: use yyyy-mm-dd')
             error = true
         }
@@ -108,7 +108,7 @@ function RecordingControls({lockId, makeModels}) {
                 matchId: lockId,
                 name: params.lockName,
                 link: params.recUrl,
-                date: new Date(params.recDate).toJSON(),
+                date: user2SysDate(params.recDate),
                 modifier: modifier
             })
         } else {
@@ -116,7 +116,7 @@ function RecordingControls({lockId, makeModels}) {
                 matchId: lockId,
                 name: params.lockName,
                 link: params.recUrl,
-                date: new Date(params.recDate).toJSON(),
+                date: user2SysDate(params.recDate),
                 modifier: modifier
             })
         }

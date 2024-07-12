@@ -23,6 +23,7 @@ import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
 import nextUpgrades from '../data/upgrades.json'
 import belts, {projectTiers, modifierMultiplier} from '../data/belts'
+import {user2SysDate, sys2UserDate} from '../util/datetime'
 
 const allEntriesById = allEntries
     .reduce((group, term) => {
@@ -82,7 +83,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
             setEvidenceUrlErr('Must specify valid URL')
             error = true
         }
-        if (isNaN(Date.parse(evidenceDate))) {
+        if (!user2SysDate(evidenceDate)) {
             setEvidenceDateErr('Invalid date format: use yyyy-mm-dd')
             error = true
         }
@@ -129,7 +130,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                     <Typography sx={{margin: 2}}>{matchName}</Typography>
                 </Stack>
             </TableCell>
-            <TableCell component='th' scope='row'>
+            <TableCell align='left'>
                 <Stack direction='column'>
                     <TextField
                         id='evidence-name'
@@ -233,7 +234,7 @@ function ScorecardRowDisplay({owner, evid, onEdit}) {
                     <Typography>{evid.matchName}</Typography>
                 }
             </TableCell>
-            <TableCell component='th' scope='row'>
+            <TableCell alight='left'>
                 <Link href={evid.link} target='_blank' color='secondary'>
                      <Typography>{evid.name}</Typography>
                 </Link>
@@ -271,7 +272,7 @@ function Scorecard({owner, evidence}) {
             matchId: matchId,
             name: name,
             link: url,
-            date: new Date(date).toJSON(),
+            date: user2SysDate(date),
             modifier: modifier
         })
     }
@@ -298,8 +299,7 @@ function Scorecard({owner, evidence}) {
     const annotatedEvidence = evidence.map(ev => {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
-        const dateObj = ev.date && new Date(ev.date) 
-        const dateStr = dateObj && dateObj.getFullYear() + '-' + (dateObj.getMonth()+1) + '-' + dateObj.getDate()
+        const dateStr = sys2UserDate(ev.date)
         const modifier = ev.modifier && ev.modifier != 'Upgraded' ? ev.modifier : null
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
