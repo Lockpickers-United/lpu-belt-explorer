@@ -19,7 +19,7 @@ const db = admin.firestore(app)
 
 const DEBUG = true
 const FOLLOW_LINKS = true
-const WRITE_TO_DB = true
+const WRITE_TO_DB = false
 
 // Some folks take liberties with dan sheet format
 
@@ -492,9 +492,10 @@ function isYouTubeLink(link) {
 
 let target = undefined
 
-// target = 'NiXXeD'
+target = 'NiXXeD'
 // target = 'Tonysansan'
-target = allPickers[132]
+// target = allPickers[132]
+
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
 
@@ -565,21 +566,35 @@ for (let idx = 0; idx < pickers.length; idx++) {
         writeEntriesAsJSON(target, danData.header, idEntries)
     }
 
-    for (let idx=0; WRITE_TO_DB && idx < idEntries.length; idx++) {
-        const elem = idEntries[idx]
-        let rec = {
-            tabName: target,
-            evidName: elem.entry.lock,
-            evidUrl: elem.entry.link,
-            modifier: elem.entry.modifier ?? ''
+    if (WRITE_TO_DB) {
+        const docs = await db.collection('unclaimed-evidence').where('tabName', '==', target).get()
+        docs.forEach(rec => rec.ref.delete())
+
+        for (let idx=0; idx < idEntries.length; idx++) {
+            const elem = idEntries[idx]
+            let rec = {
+                tabName: target,
+                evidName: elem.entry.lock,
+                evidUrl: elem.entry.link,
+                modifier: ''
+            }
+
+            if (['First Recorded Pick',
+                'First Recorded Pick (Notable)',
+                'Non-Picking Defeat',
+                'First Recorded Defeat',
+                'First Recorded Defeat (Notable)'].includes(elem.entry.modifier)) {
+                rec.modifier = elem.entry.modifier
+            }
+
+            if (elem.id) {
+                rec.lockProjectId = elem.id
+            }
+            if (elem.entry.publishDate) {
+                rec.evidCreatedAt = elem.entry.publishDate
+            }
+            await db.collection('unclaimed-evidence').add(rec)
         }
-        if (elem.id) {
-            rec.lockProjectId = elem.id
-        }
-        if (elem.entry.publishDate) {
-            rec.evidCreatedAt = elem.entry.publishDate
-        }
-        await db.collection('unclaimed-evidence').add(rec)        
     }
 
     // await new Promise(r => setTimeout(r, 1000));
