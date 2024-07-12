@@ -390,7 +390,7 @@ Blue,VSR,2-row,,Dimple,"High pin count",,97c2b9be
 Blue,Winkhaus,N-Tra,,Dimple,,,2c9d12fc
 Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,2100,,"Dimple,Sidebar,Slider",,"dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
-Blue,Yale,"500 series",,Pin-tumbler,Overmilling,,779e7dcb
+Blue,Yale,500,,Pin-tumbler,Overmilling,,779e7dcb
 Blue,Yale,"KM 1 star Superior",,Pin-tumbler,,"spooled key pins with 6 gege style drivers",c1e91978
 Blue,"Yale,Yale,Milencio","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
@@ -861,6 +861,7 @@ Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2f
 Unranked,Winkhaus,XR,,,"Under Review ⚑",,0e1cabed
 Unranked,Yale,112,,"Disc detainer","Under Review ⚑",,222bd1fa
 Unranked,Yale,"2000 Plus",,"Dimple,Sidebar,Slider","Under Review ⚑","dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
+Unranked,Yale,500+,,Pin-tumbler,"Under Review ⚑",,37951bc4
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
 Unranked,Yale,YE3B,,,"Under Review ⚑",,ad6b0d8f
 Unranked,Yardeni,10,,Dimple,"Under Review ⚑","9 pins, 2 spools more restricted keyway than XL model",0757b1ed

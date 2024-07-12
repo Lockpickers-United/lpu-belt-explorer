@@ -591,7 +591,7 @@ your lock in the picking video. Please read more below for filming requirements.
 - [Winkhaus N-Tra](https://lpubelts.com/?id=2c9d12fc)
 - [Winkhaus Titan](https://lpubelts.com/?id=fe088de0)
 - [Yale 2100](https://lpubelts.com/?id=7164f69d)
-- [Yale 500 series](https://lpubelts.com/?id=779e7dcb)
+- [Yale 500](https://lpubelts.com/?id=779e7dcb)
 - [Yale KM 1 star Superior](https://lpubelts.com/?id=c1e91978)
 - [Yale Superior / Yale Platinum / Milencio Magnum](https://lpubelts.com/?id=30a4fef5) (&lt;7 pins)
 
