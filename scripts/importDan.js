@@ -494,7 +494,7 @@ let target = undefined
 
 // target = 'NiXXeD'
 // target = 'Tonysansan'
-target = allPickers[134]
+target = allPickers[132]
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
 
@@ -520,7 +520,7 @@ for (let idx = 0; idx < pickers.length; idx++) {
     // Find any YouTube links, follow and grab date published.
     // This is slow, but we have a cache.
 
-    const linkCacheFilename = './src/data/dancache/linkCache.json'
+    const linkCacheFilename = './src/data/linkCache.json'
     let linkCache = {}
     if (fs.existsSync(linkCacheFilename)) {
         linkCache = JSON.parse(fs.readFileSync(linkCacheFilename))
