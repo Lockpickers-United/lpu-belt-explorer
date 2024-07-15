@@ -1,5 +1,4 @@
-import {useState, useContext} from 'react'
-import {makeStyles} from '@mui/styles'
+import React, {useState, useContext} from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -75,7 +74,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
             setLockProjectIdErr('Must match to lock or project')
             error = true
         }
-        if (evidenceName.length == 0) {
+        if (evidenceName.length === 0) {
             setEvidenceNameErr('Evidence Name cannot be empty')
             error = true
         }
@@ -300,7 +299,7 @@ function Scorecard({owner, evidence}) {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
         const dateStr = sys2UserDate(ev.date)
-        const modifier = ev.modifier && ev.modifier != 'Upgraded' ? ev.modifier : null
+        const modifier = ev.modifier && ev.modifier !== 'Upgraded' ? ev.modifier : null
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
         if (entry) {
