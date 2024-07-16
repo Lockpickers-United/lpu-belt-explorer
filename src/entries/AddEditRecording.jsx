@@ -15,7 +15,7 @@ function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDe
 
     function handleSave() {
         let error = false
-        if (lockName.length == 0) {
+        if (lockName.length === 0) {
             setLockNameErr('Lock Name cannot be empty')
             error = true
         }

@@ -10,7 +10,8 @@ import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
-import entryName from '../entries/entryName.js'
+import entryName from '../entries/entryName'
+import {user2SysDate} from '../util/datetime'
 
 function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)

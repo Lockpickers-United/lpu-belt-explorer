@@ -1,14 +1,11 @@
 import fs from 'fs'
 import {parse} from 'csv-parse/sync'
 import {danSchema} from './schemas.js'
-import beltDetails from '../src/data/belts.js'
-import {projectTiers, modifierMultiplier} from '../src/data/belts.js'
+import beltDetails, {projectTiers, modifierMultiplier} from '../src/data/belts.js'
 import fetch from 'node-fetch'
-import {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
-import masterIndex from './lpuBeltIndex.js'
+import masterIndex, {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
 import admin from 'firebase-admin'
-import {initializeApp} from 'firebase/app'
-import {allPickers} from '../src/data/allPickerDanTabs.js'
+// import {allPickers} from '../src/data/allPickerDanTabs.js'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/dev-lpu-belt-explorer-firebase-adminsdk-nzry6-f570da8dae.json'))
 const app = admin.initializeApp({
@@ -24,7 +21,7 @@ const WRITE_TO_DB = false
 // Some folks take liberties with dan sheet format
 
 function startLine(tab) {
-    if (tab == 'Mick Emhurt') {
+    if (tab === 'Mick Emhurt') {
         return 7
     } else {
         return 3
@@ -59,7 +56,7 @@ const importDanTab = async (tab) => {
     // we silently skip over lines that we can't parse, notably those
     // that lack either a lock or a link.
 
-    if (tab == 'Loose-Shirt') {
+    if (tab === 'Loose-Shirt') {
         // this sheet's header is split across two lines
         let csvLines = csvData.split('\n')
         csvLines[2] = csvLines[2].concat(csvLines[3])
@@ -74,15 +71,15 @@ const importDanTab = async (tab) => {
         trim: true,
         cast: (val, ctx) => {
             // some people change these header values
-            if (ctx.lines == startLine(tab)) {
-                if (ctx.index == 0) {
+            if (ctx.lines === startLine(tab)) {
+                if (ctx.index === 0) {
                     return 'Lock'
-                } else if (ctx.index == 2) {
+                } else if (ctx.index === 2) {
                     return 'Unique LPU id'
                 }
             }
             // overwrite a column to add row numbers
-            if (ctx.lines > startLine(tab) && ctx.index == 2) {
+            if (ctx.lines > startLine(tab) && ctx.index === 2) {
                 return ctx.lines
             } else {
                 return val
@@ -111,7 +108,7 @@ const importDanTab = async (tab) => {
                 lock,
                 link
             }
-            if (modifier != 'N/A') {
+            if (modifier !== 'N/A') {
                 value.modifier = modifier
             }
             return value
@@ -222,14 +219,14 @@ function matchDanSheet(danData) {
         .map(hit => {
             if (hit.key) {
                 // for deep debugging of specific lock
-                if (hit.entry.lock == 'XXX Corbin master ring (both shearlines in one take)') {
+                if (hit.entry.lock === 'XXX Corbin master ring (both shearlines in one take)') {
                     console.log(`hit on ${hit.key} and searching for ${hit.code}`)
                     console.log(masterIndex[hit.key])
                 }
 
                 // prefer an exact match
                 let vals = masterIndex[hit.key].filter(cw => {
-                    return cw.codeword == hit.code
+                    return cw.codeword === hit.code
                 })
                 if (vals.length > 0) {
                     let uniqIds = [...new Set(vals.map(el => el.id))]
@@ -241,7 +238,7 @@ function matchDanSheet(danData) {
 
                 // then prefer matching the source codeword as a prefix
                 vals = masterIndex[hit.key].filter(cw => {
-                    return 0 == cw.codeword.indexOf(hit.code)
+                    return 0 === cw.codeword.indexOf(hit.code)
                 })
                 if (vals.length > 0) {
                     let uniqIds = [...new Set(vals.map(el => el.id))]
@@ -265,7 +262,7 @@ function matchDanSheet(danData) {
 
                 // as a last hope, the codeword may be a prefix of the source
                 vals = masterIndex[hit.key].filter(cw => {
-                    return 0 == hit.code.indexOf(cw.codeword)
+                    return 0 === hit.code.indexOf(cw.codeword)
                 })
                 if (vals.length > 0) {
                     let uniqIds = [...new Set(vals.map(el => el.id))]
@@ -282,9 +279,9 @@ function matchDanSheet(danData) {
                     console.log(`WARN: unable to match ${hit.code} for ${hit.entry.lock}`)
                 }
 
-                masterIndex[hit.key].forEach(cw => {
-                    // console.log(`trying to match ${hit.code} to ${cw.codeword}`)
-                })
+                // masterIndex[hit.key].forEach(cw => {
+                //     console.log(`trying to match ${hit.code} to ${cw.codeword}`)
+                // })
             }
             return {entry: hit.entry}
         })
@@ -295,28 +292,6 @@ function matchDanSheet(danData) {
 // dan points properly, using our own logic. 
 
 function scoreEntries(target, header, matchedEntries) {
-
-    // TODO: Correct scoring relies on handling lock upgrades. 
-    // To do this, we need to specify the upgrade chains. We 
-    // currently have the concept of relatedIds, but this is not
-    // exactly correct, because locks are related that are not
-    // upgrades of each other. The code below sketches how to 
-    // do this, but is commented out as we will use user supplied
-    // upgrade modifiers for now. This is inaccurate in a different
-    // way.
-    //
-    // const entryIds = entries.map(row => row.id) 
-    // matchedEntries.forEach(row => {
-    //     if (row.id && lockById[row.id] && lockById[row.id].relatedIds) {
-    //         const commonIds = lockById[row.id].relatedIds.filter(val => entryIds.includes(val)).concat([row.id])
-    //         const topId = commonIds.map(id => [beltDetails[lockById[id].belt].danPoints, id]).sort().pop().pop()
-    //
-    //         if (topId != row.id && row.entry.modifier != 'Upgraded') {
-    //             console.log(`Entry ${row.id} should be upgraded by ${topId}!`)
-    //         }
-    //     }
-    // })
-
     let dedupIds = {}
     const danPtsArr = matchedEntries.reverse().map(row => {
         if (!row.id) {
@@ -362,10 +337,10 @@ function scoreEntries(target, header, matchedEntries) {
     // Compare our results with the dan sheet. They usually don't match
     // due to errors and stale data in the sheet. 
 
-    if (DEBUG && danPts != header.points) {
+    if (DEBUG && danPts !== header.points) {
         console.log(`WARN: point mismatch, ${danPts} vs ${header.points} in sheet`)
     }
-    if (DEBUG && numBlack != header.numBlack) {
+    if (DEBUG && numBlack !== header.numBlack) {
         console.log(`WARN: black count mismatch, ${numBlack} vs ${header.numBlack} in sheet`)
     }
  
@@ -455,7 +430,7 @@ function compareMatches(idEntries) {
                 console.log(`${elem.entry.id} > -------- : ${elem.entry.lock}`)
 
             } else if (elem.id && elem.entry.id) {
-                if (elem.id == elem.entry.id) {
+                if (elem.id === elem.entry.id) {
                     numSame++
                 } else {
                     console.log(`${elem.entry.id} > ${elem.id} : ${elem.entry.lock}`)

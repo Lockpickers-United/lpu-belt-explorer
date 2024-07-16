@@ -48,7 +48,7 @@ function RecordingControls({lockId, makeModels}) {
     return (
         <React.Fragment> {
             recordings.map(rec => {
-                if (editRecId != rec.id) {
+                if (editRecId !== rec.id) {
                     return (
                         <div key={rec.id}>
                             <Stack direction='row' alignItems='center'>

@@ -2,7 +2,6 @@ import React from 'react'
 import IconButton from '@mui/material/IconButton'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import DiscordIcon from '../resources/DiscordIcon.jsx'
-import LaunchIcon from '@mui/icons-material/Launch'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 

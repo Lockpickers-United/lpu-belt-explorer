@@ -106,7 +106,7 @@ export function DBProvider({children}) {
         }
         const docRef = await addDoc(collection(db, 'evidence'), rec)
         setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
-    }, [user, evidence])
+    }, [user])
 
     const updateEvidence = useCallback(async (id, evid) => {
         const rec = {
@@ -125,22 +125,22 @@ export function DBProvider({children}) {
                 return evid
             }
         }))
-    }, [user, evidence])
+    }, [user])
 
     const removeEvidence = useCallback(async (id) => {
         await deleteDoc(doc(db, 'evidence', id))
-        setEvidence(e => e.filter(evid => evid.id != id))
-    }, [evidence])
+        setEvidence(e => e.filter(evid => evid.id !== id))
+    }, [])
 
     const getEvidence = useCallback(async userId => {
         const q = query(collection(db, 'evidence'), where('userId', '==', userId))
-        const querySnapshot = await getDocs(q);
+        const querySnapshot = await getDocs(q)
         return querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
-    }, [user])
+    }, [])
 
     const importUnclaimedEvidence = useCallback(async (tabName) => {
         const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
-        const querySnapshot = await getDocs(q);
+        const querySnapshot = await getDocs(q)
         const docs = querySnapshot.docs
 
         for (let idx=0; idx < docs.length; idx++) {
@@ -160,7 +160,7 @@ export function DBProvider({children}) {
             const docRef = await addDoc(collection(db, 'evidence'), newDoc)
             setEvidence(e => e.concat([evidenceDB2State(docRef.id, newDoc)]))
         }
-    }, [user, evidence])
+    }, [user])
 
     // Lock Collection Subscription
     useEffect(() => {
@@ -193,7 +193,7 @@ export function DBProvider({children}) {
         async function loadEvidence() {
             if (isLoggedIn) {
                 const q = query(collection(db, 'evidence'), where('userId', '==', user.uid))
-                const querySnapshot = await getDocs(q);
+                const querySnapshot = await getDocs(q)
                 setEvidence(querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data())))
                 setEvidenceDBLoaded(true)
             } else if (authLoaded) {

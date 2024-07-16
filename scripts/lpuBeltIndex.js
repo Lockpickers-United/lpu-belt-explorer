@@ -152,18 +152,18 @@ const codewordMap = [
 function findCodewordVariants(cw) {
     const firstIter = codewordMap
         .map(pair => cw.replace(pair[0], pair[1]))
-        .filter(pos => pos != cw)
+        .filter(pos => pos !== cw)
 
     const secondIter = firstIter.map(cw1 => {
         return codewordMap
         .map(pair => cw1.replace(pair[0], pair[1]))
-        .filter(pos => pos != cw1)
+        .filter(pos => pos !== cw1)
     }).flat()
 
     const thirdIter = secondIter.map(cw2 => {
         return codewordMap
         .map(pair => cw2.replace(pair[0], pair[1]))
-        .filter(pos => pos != cw2)
+        .filter(pos => pos !== cw2)
     }).flat()
 
     return firstIter.concat(secondIter).concat(thirdIter)
