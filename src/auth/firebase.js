@@ -19,4 +19,4 @@ firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
-export const db = getFirestore(app, DEV_DATABASE ? 'lpubelts-dev' : '(default)')
+export const db = getFirestore(app, import.meta.env.DEV ? 'lpubelts-dev' : '(default)')
