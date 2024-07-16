@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useCallback} from 'react'
 import IconButton from '@mui/material/IconButton'
 import AddLinkIcon from '@mui/icons-material/AddLink'
 import EditIcon from '@mui/icons-material/Edit'
@@ -14,7 +14,7 @@ function RecordingControls({lockId, makeModels}) {
     const [editRecId, setEditRecId] = useState(null)
     const recordings = evidence.filter(evid => evid.matchId === lockId)
 
-    function handleSave(params, lockId, modifier) {
+    const handleSave = useCallback((params, lockId, modifier) => {
         setEditRecId(null)
 
         if (params.id === 0) {
@@ -34,16 +34,16 @@ function RecordingControls({lockId, makeModels}) {
                 modifier: modifier
             })
         }
-    }
+    }, [addEvidence, updateEvidence]) 
 
-    function handleCancel() {
+    const handleCancel = useCallback(() => {
         setEditRecId(null)
-    }
+    }, [])
 
-    function handleDelete(id) {
+    const handleDelete = useCallback((id) => {
         setEditRecId(null)
         removeEvidence(id)
-    }
+    }, [removeEvidence])
 
     return (
         <React.Fragment> {

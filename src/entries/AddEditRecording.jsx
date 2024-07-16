@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
@@ -13,7 +13,7 @@ function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDe
     const [recDate, setRecDate] = useState(dateStr)
     const [recDateErr, setRecDateErr] = useState(null)
 
-    function handleSave() {
+    const handleSave = useCallback(() => {
         let error = false
         if (lockName.length === 0) {
             setLockNameErr('Lock Name cannot be empty')
@@ -30,7 +30,7 @@ function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDe
         if (!error) {
             onSave({id, lockName, recUrl, recDate})
         }
-    }
+    }, [id, lockName, recUrl, recDate, onSave])
 
     return (
         <React.Fragment>

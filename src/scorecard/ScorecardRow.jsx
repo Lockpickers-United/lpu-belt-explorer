@@ -35,7 +35,7 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
     const {getEntryFromId} = useContext(DataContext)
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
 
-    function handleSave() {
+    const handleSave = useCallback(() => {
         let error = false
         if (!allEntriesById[lockProjectId] && !allProjectsById[lockProjectId]) {
             setLockProjectIdErr('Must match to lock or project')
@@ -52,7 +52,7 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
         if (!error) {
             //onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
         }
-    }
+    }, [allEntriesById, allProjectsById, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
 
@@ -67,9 +67,9 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
         }
     }, [evid.link, updated])
 
-    function handleDelete() {
+    const handleDelete = useCallback(() => {
         console.log('handleDelete')
-    }
+    }, [])
 
     const processURL = useCallback(event => {
         const {value} = event.target

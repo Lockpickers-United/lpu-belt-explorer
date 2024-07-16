@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useCallback} from 'react'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
@@ -24,7 +24,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
     const [evidenceDateErr, setEvidenceDateErr] = useState(null)
     const [modifier, setModifier] = useState(evid.modifier)
 
-    function handleSave() {
+    const handleSave = useCallback(() => {
         let error = false
         if (!allEntriesById[lockProjectId] && !allProjectsById[lockProjectId]) {
             setLockProjectIdErr('Must match to lock or project')
@@ -45,7 +45,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
         if (!error) {
             onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
         }
-    }
+    }, [onSave, evid, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier])
 
     let matchName = '(Unknown Id)'
 

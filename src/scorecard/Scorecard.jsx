@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useCallback} from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -26,11 +26,11 @@ function Scorecard({owner, evidence}) {
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
 
-    function handleEdit(id) {
+    const handleEdit = useCallback(id => {
         setEditRowId(id)
-    }
+    }, [])
 
-    function handleSave(id, matchId, name, url, date, modifier) {
+    const handleSave = useCallback((id, matchId, name, url, date, modifier) => {
         setEditRowId(null)
         updateEvidence(id, {
             matchId: matchId,
@@ -39,26 +39,26 @@ function Scorecard({owner, evidence}) {
             date: user2SysDate(date),
             modifier: modifier
         })
-    }
+    }, [updateEvidence])
 
-    function handleCancel() {
+    const handleCancel = useCallback(() => {
         setEditRowId(null)
-    }
+    }, [])
 
-    function handleDelete(id) {
+    const handleDelete = useCallback(id => {
         setEditRowId(null)
         removeEvidence(id)
-    }
+    }, [removeEvidence])
 
-    function handleDeleteAll() {
+    const handleDeleteAll = useCallback(() => {
         const ids = evidence.map(evid => evid.id)
         ids.forEach(id => removeEvidence(id))
-    }
+    }, [evidence, removeEvidence])
 
-    function handleImport() {
+    const handleImport = useCallback(() => {
         importUnclaimedEvidence(tabToImport)
         setTabToImport('')
-    }
+    }, [tabToImport, importUnclaimedEvidence])
 
     const annotatedEvidence = evidence.map(ev => {
         const entry = allEntriesById[ev.matchId]
