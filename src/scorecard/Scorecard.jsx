@@ -16,13 +16,15 @@ import MenuItem from '@mui/material/MenuItem'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import EditIcon from '@mui/icons-material/Edit'
-import DBContext from '../app/DBContext'
-import entryName from '../entries/entryName'
+import DBContext from '../app/DBContext.jsx'
+import entryName from '../entries/entryName.js'
 import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
 import nextUpgrades from '../data/upgrades.json'
-import belts, {projectTiers, modifierMultiplier} from '../data/belts'
-import {user2SysDate, sys2UserDate} from '../util/datetime'
+import belts, {projectTiers, modifierMultiplier} from '../data/belts.js'
+import {user2SysDate, sys2UserDate} from '../util/datetime.js'
+
+import ScorecardRow from './ScorecardRow.jsx'
 
 const allEntriesById = allEntries
     .reduce((group, term) => {
@@ -190,7 +192,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
                     onChange={e => {
                         setModifier(e.target.value)
                     }}
-                    >
+                >
                     <MenuItem value=''>(None)</MenuItem>
                     <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
                     <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
@@ -212,13 +214,14 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
 }
 
 function ScorecardRowDisplay({owner, evid, onEdit}) {
+
     return (
         <TableRow key={evid.row}>
             <TableCell align='left' style={{backgroundColor: evid.color}}>
                 <Typography>{evid.row}</Typography>
             </TableCell>
             <TableCell align='center'>
-                {owner && 
+                {owner &&
                     <IconButton size='small' onClick={() => onEdit(evid.id)}>
                         <EditIcon/>
                     </IconButton>
@@ -229,13 +232,13 @@ function ScorecardRowDisplay({owner, evid, onEdit}) {
                     <Link href={evid.matchLink} target='_blank' color='secondary'>
                         <Typography>{evid.matchName}</Typography>
                     </Link>
-                :
+                    :
                     <Typography>{evid.matchName}</Typography>
                 }
             </TableCell>
             <TableCell alight='left'>
                 <Link href={evid.link} target='_blank' color='secondary'>
-                     <Typography>{evid.name}</Typography>
+                    <Typography>{evid.name}</Typography>
                 </Link>
             </TableCell>
             <TableCell align='left'>
@@ -315,7 +318,7 @@ function Scorecard({owner, evidence}) {
                 date: dateStr,
                 modifier: modifier,
                 points: multiplier * belts[entry.belt].danPoints,
-                bbCount: entry.belt.startsWith('Black') ? 1 : 0,
+                bbCount: entry.belt.startsWith('Black') ? 1 : 0
             }
         } else if (project) {
             return {
@@ -341,7 +344,7 @@ function Scorecard({owner, evidence}) {
         }
     })
 
-    const sortedEvidence = annotatedEvidence.sort((a,b) => {
+    const sortedEvidence = annotatedEvidence.sort((a, b) => {
         const aDate = new Date(a.date)
         const bDate = new Date(b.date)
         if (aDate > bDate) {
@@ -357,19 +360,19 @@ function Scorecard({owner, evidence}) {
     let usedIds = {}
     let upgradeableIdIdx = []
 
-    for (let idx=sortedEvidence.length-1; idx >= 0; idx--) {
+    for (let idx = sortedEvidence.length - 1; idx >= 0; idx--) {
         const ev = sortedEvidence[idx]
 
         if (!ev.matchId) {
             scoredEvidence[idx] = {
                 ...ev,
-                row: idx+1,
+                row: idx + 1,
                 note: 'no match with lock or project'
             }
         } else if (!ev.link.startsWith('http')) {
             scoredEvidence[idx] = {
                 ...ev,
-                row: idx+1,
+                row: idx + 1,
                 points: 0,
                 bbCount: 0,
                 note: 'no URL for evidence'
@@ -380,25 +383,25 @@ function Scorecard({owner, evidence}) {
             if (collidedIdx && ev.points <= scoredEvidence[collidedIdx].points) {
                 scoredEvidence[idx] = {
                     ...ev,
-                    row: idx+1,
+                    row: idx + 1,
                     points: 0,
-                    note: `samelined with row ${collidedIdx+1}`
+                    note: `samelined with row ${collidedIdx + 1}`
                 }
             } else {
                 if (collidedIdx) {
                     scoredEvidence[collidedIdx] = {
                         ...sortedEvidence[collidedIdx],
-                        row: collidedIdx+1,
+                        row: collidedIdx + 1,
                         points: 0,
-                        note: `samelined with row ${idx+1}`
+                        note: `samelined with row ${idx + 1}`
                     }
                 }
 
                 usedIds[ev.matchId] = idx
-                let superseded = false 
+                let superseded = false
 
                 if (possibleUpgrades[ev.matchId]) {
-                    for (let jdx=0; !superseded && jdx < upgradeableIdIdx.length; jdx++) {
+                    for (let jdx = 0; !superseded && jdx < upgradeableIdIdx.length; jdx++) {
                         const [upId, upIdx] = upgradeableIdIdx[jdx]
 
                         if (isUpgradeOf(upId, ev.matchId)) {
@@ -406,17 +409,17 @@ function Scorecard({owner, evidence}) {
 
                             scoredEvidence[idx] = {
                                 ...ev,
-                                row: idx+1,
+                                row: idx + 1,
                                 points: 0,
-                                note: `superseded by row ${upIdx+1}`
+                                note: `superseded by row ${upIdx + 1}`
                             }
 
                         } else if (isUpgradeOf(ev.matchId, upId)) {
                             scoredEvidence[upIdx] = {
                                 ...scoredEvidence[upIdx],
-                                row: upIdx+1,
+                                row: upIdx + 1,
                                 points: 0,
-                                note: `superseded by row ${idx+1}`
+                                note: `superseded by row ${idx + 1}`
                             }
                         }
                     }
@@ -426,7 +429,7 @@ function Scorecard({owner, evidence}) {
                 if (!superseded) {
                     scoredEvidence[idx] = {
                         ...ev,
-                        row: idx+1
+                        row: idx + 1
                     }
                 }
             }
@@ -440,66 +443,95 @@ function Scorecard({owner, evidence}) {
     }, [0, 0])
 
     return (
-        <div style={{margin: 8, paddingBottom: 32}}>
-            <Stack direction='row' justifyContent='space-evenly' alignItems='center'>
-                <Typography variant='h4'>{bbCount} Black Belt Locks</Typography>
-                {owner && scoredEvidence.length > 0 ?
-                    <Button color='secondary' size='large' onClick={handleDeleteAll}>DELETE ALL</Button>
-                : owner &&
-                    <div>
-                        <TextField
-                            id='tab-to-import'
-                            label='Tab to Import'
-                            value={tabToImport}
-                            size='small'
-                            margin='dense'
-                            color='secondary'
-                            onChange={e => {
-                                setTabToImport(e.target.value)
-                            }}
-                        />
-                        <Button color='secondary' size='large' sx={{margin: 1}} onClick={handleImport}>IMPORT</Button>
-                    </div>
-                }
-                <Typography variant='h4'>{danPoints} Dan Points</Typography>
-            </Stack>
-            <TableContainer component={Paper}>
-                <Table aria-label="scorecard">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell align='left'></TableCell>
-                            <TableCell align='left'></TableCell>
-                            <TableCell align='left'>
-                                <Typography>Lock / Project</Typography>
-                            </TableCell>
-                            <TableCell align='left'>
-                                <Typography>Evidence</Typography>
-                            </TableCell>
-                            <TableCell align='left'>
-                                <Typography>Date</Typography>
-                            </TableCell>
-                            <TableCell align='left'>
-                                <Typography>Modifier</Typography>
-                            </TableCell>
-                            <TableCell align='right'>
-                                <Typography>BBs</Typography>
-                            </TableCell>
-                            <TableCell align='right'>
-                                <Typography>Points</Typography>
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {scoredEvidence.map(ev => {
-                            if (ev.id === editRowId) {
-                                return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave} onCancel={handleCancel} onDelete={handleDelete}/>
-                            } else {
-                                return <ScorecardRowDisplay key={ev.row} owner={owner} evid={ev} onEdit={handleEdit}/>
-                            }
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+        <div style={{
+            maxWidth: 700, padding: 0, backgroundColor: '#000',
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+        }}>
+
+            <div style={{display: 'flex'}}>
+                <div style={{marginLeft: 0}}>
+
+                    {owner && scoredEvidence.length > 0 ?
+                        <Button color='secondary' size='large' onClick={handleDeleteAll}>DELETE&nbsp;ALL</Button>
+                        : owner &&
+                        <div>
+                            <TextField
+                                id='tab-to-import'
+                                label='Tab to Import'
+                                value={tabToImport}
+                                size='small'
+                                margin='dense'
+                                color='secondary'
+                                onChange={e => {
+                                    setTabToImport(e.target.value)
+                                }}
+                            />
+                            <Button color='secondary' size='small' sx={{margin: 1}}
+                                    onClick={handleImport}>IMPORT</Button>
+                        </div>
+                    }
+                </div>
+                <div style={{
+                    width: '100%',
+                    textAlign: 'right',
+                    padding: '10px 12px 8px 0px'
+                }}>
+                        <span style={{fontWeight: 700}}>{bbCount} Black Belt Lock{bbCount !== 1 &&
+                            <span>s</span>}, </span>
+                    <span style={{fontWeight: 700}}>{danPoints} Dan Point{danPoints !== 1 && <span>s</span>}</span>
+                </div>
+
+            </div>
+
+            <div>
+                {scoredEvidence.map(ev =>
+                    <ScorecardRow key={ev.row} owner={owner} evid={ev} onEdit={handleEdit}
+                                  allEntriesById={allEntriesById} allProjectsById={allProjectsById}/>
+                )}
+            </div>
+
+
+            <div style={{marginTop: 50, paddingBottom: 32}}>
+                <TableContainer component={Paper}>
+                    <Table aria-label='scorecard'>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell align='left'></TableCell>
+                                <TableCell align='left'></TableCell>
+                                <TableCell align='left'>
+                                    <Typography>Lock / Project</Typography>
+                                </TableCell>
+                                <TableCell align='left'>
+                                    <Typography>Evidence</Typography>
+                                </TableCell>
+                                <TableCell align='left'>
+                                    <Typography>Date</Typography>
+                                </TableCell>
+                                <TableCell align='left'>
+                                    <Typography>Modifier</Typography>
+                                </TableCell>
+                                <TableCell align='right'>
+                                    <Typography>BBs</Typography>
+                                </TableCell>
+                                <TableCell align='right'>
+                                    <Typography>Points</Typography>
+                                </TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {scoredEvidence.map(ev => {
+                                if (ev.id === editRowId) {
+                                    return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave}
+                                                             onCancel={handleCancel} onDelete={handleDelete}/>
+                                } else {
+                                    return <ScorecardRowDisplay key={ev.row} owner={owner} evid={ev}
+                                                                onEdit={handleEdit}/>
+                                }
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
         </div>
     )
 }
