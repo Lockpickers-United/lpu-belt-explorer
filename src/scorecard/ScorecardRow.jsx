@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -11,14 +11,19 @@ import {DatePicker} from '@mui/x-date-pickers/DatePicker'
 import DataContext from '../locks/LockDataProvider.jsx'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ScorecardEvidenceButton from './ScorecardEvidenceButton.jsx'
+import entryName from '../entries/entryName'
+import ViewLockButton from './ViewLockButton.jsx'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import LaunchIcon from '@mui/icons-material/Launch'
 import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
+import queryString from 'query-string'
 
-export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsById}) {
+export default function ScorecardRow({owner, evid, allEntriesById, allProjectsById, expanded, onExpand}) {
+
+    //console.log('ScorecardRow', evid)
 
     const eDate = dayjs(evid.date)
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)
@@ -34,6 +39,36 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
 
     const {getEntryFromId} = useContext(DataContext)
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
+    const [scrolled, setScrolled] = useState(false)
+    const ref = useRef(null)
+
+    const handleChange = useCallback((_, isExpanded) => {
+        onExpand && onExpand(isExpanded ? evid.id : false)
+    }, [evid.id, onExpand])
+
+    useEffect(() => {
+        if (expanded && ref && !scrolled) {
+            const isMobile = window.innerWidth <= 600
+            const offset = isMobile ? 70 : 74
+            const {id} = queryString.parse(location.search)
+            const isIdFiltered = id === entry.id
+
+            setScrolled(true)
+
+            setTimeout(() => {
+                window.scrollTo({
+                    left: 0,
+                    top: ref.current.offsetTop - offset,
+                    behavior: isIdFiltered ? 'auto' : 'smooth'
+                })
+            }, isIdFiltered ? 0 : 100)
+        } else if (!expanded) {
+            setScrolled(false)
+        }
+    }, [expanded, entry, scrolled])
+
+    let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
+    entryTitle = evid.note ? entryTitle + ' *' : entryTitle
 
     const handleSave = useCallback(() => {
         let error = false
@@ -52,7 +87,7 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
         if (!error) {
             //onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
         }
-    }, [allEntriesById, allProjectsById, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier])
+    }, [allEntriesById, allProjectsById, lockProjectId, evidenceName, evidenceUrl])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
 
@@ -82,15 +117,29 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
     const evidenceUrlError = !!evidenceUrl && !isValidHttpUrl(evidenceUrl)
     const evidenceURLHelperText = evidenceUrlError ? 'Video URL is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
-
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
     const cancelColor = updated ? '#e15c07' : '#555'
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
 
+    const cursorStyle = !owner ? {cursor: 'default'} : {}
+    const expandIcon = owner ? <ExpandMoreIcon/> : null
+
+    /*
+    function handleAccordionClick(event) {
+        if (!owner) {
+            setExpanded(false)
+        } else {
+            setExpanded(!expanded)
+        }
+    }
+     */
+
+    // onChange={handleAccordionClick}
+
     return (
-        <Accordion key={evid.row}>
-            <AccordionSummary style={style} expandIcon={<ExpandMoreIcon/>}>
+        <Accordion key={evid.row} expanded={expanded} onChange={handleChange}  ref={ref}>
+            <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entry ? entry.belt : ''}/>
                 <div style={{
                     margin: '12px 0px 0px 8px',
@@ -99,7 +148,7 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
                     flexDirection: 'column'
                 }}>
                     <FieldValue
-                        value={evid.matchName}
+                        value={entryTitle}
                         textStyle={{marginLeft: '0px', fontWeight: 700}}
                         style={{marginBottom: '2px'}}
                     />
@@ -112,29 +161,44 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
                         }}>{evid.modifier}</span>}
                 </div>
 
-                <div style={{margin: '6px 0px 0px 8px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '8px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
+                    {entry &&
+                        <ViewLockButton entry={entry}/>
+                    }
+                </div>
+
+                <div style={{margin: '6px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
                     <ScorecardEvidenceButton url={evid.link}/>
                 </div>
 
-                <div style={{margin: '12px 0px 0px 8px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '14px 0px 0px 20px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
                     {dayjs(evid.date).format('MM/DD/YY')}
                 </div>
 
-                <div style={{margin: '12px 0px 0px 45px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '14px 0px 0px 35px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
                     <span style={{fontWeight: 700}}>{evid.points}</span> <span
                     style={{color: '#666'}}>{pointsText}</span>
                 </div>
 
-            </AccordionSummary>
 
+            </AccordionSummary>
+            {expanded &&
             <React.Fragment>
-                <AccordionDetails sx={{padding: '8px 16px 0px 26px'}}>
+                <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
+                    {evid.note &&
+                        <div style={{
+                            margin: '0px 0px 20px 20px',
+                            fontWeight: 600,
+                            fontSize: '.95rem'
+                        }}>* {evid.note}</div>
+                    }
+
                     <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
                         <TextField
                             id='evidence-url'
                             error={!!evidenceUrlErr}
                             helperText={evidenceURLHelperText}
-                            label='Evidence Link'
+                            label='Documentation Link'
                             value={evidenceUrl}
                             placeholder='https://youtu.be/'
                             fullWidth
@@ -226,6 +290,7 @@ export default function ScorecardRow({evid, onEdit, allEntriesById, allProjectsB
                     </div>
                 </AccordionDetails>
             </React.Fragment>
+            }
         </Accordion>
     )
 

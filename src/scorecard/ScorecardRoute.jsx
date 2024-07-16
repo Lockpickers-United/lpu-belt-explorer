@@ -9,20 +9,24 @@ import AuthContext from '../app/AuthContext.jsx'
 import Scorecard from './Scorecard.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
-import {DataProvider} from '../locks/LockDataProvider.jsx'
+import {DataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {LockListProvider} from '../locks/LockListContext.jsx'
 import {lockFilterFields} from '../data/filterFields'
-import allEntries from '../data/data.json'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+import SearchBox from '../nav/SearchBox.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import {scorecardSortFields} from '../data/sortFields'
+import FilterButton from '../filters/FilterButton.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function ScorecardRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, evidence, getEvidence} = useContext(DBContext)
-
-    const entries = allEntries
+    const {lockCollection} = useContext(DBContext)
+    const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(async () => {
         try {
@@ -42,15 +46,30 @@ function ScorecardRoute() {
     }, [getProfile, user, userId, evidence, getEvidence])
     const {data = {}, loading, error} = useData({loadFn})
 
+    console.log('evidenceEntries', data)
+
+    const nav = (
+        <React.Fragment>
+            <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
+            <SortButton sortValues={scorecardSortFields}/>
+            <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
+            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
+        </React.Fragment>
+    )
+
     const title = loading ? 'Loading...' : 'Scorecard'
+
+    if (loading || error) {
+        return null
+    }
 
     return (
         <FilterProvider filterFields={lockFilterFields}>
-            <DataProvider allEntries={entries} profile={data}>
+            <DataProvider evidenceEntries={data} profile={lockCollection}>
                 <LockListProvider>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
 
-                        <Nav title={title}/>
+                        <Nav title={title} extras={nav}/>
 
                         {loading && <LoadingDisplay/>}
 

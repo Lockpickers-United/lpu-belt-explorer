@@ -1,4 +1,4 @@
-import React, {useState, useContext, useCallback} from 'react'
+import React, {useState, useContext, useCallback, useDeferredValue} from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -20,11 +20,19 @@ import {user2SysDate, sys2UserDate} from '../util/datetime'
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardRowEdit from './ScorecardRowEdit.jsx'
 import ScorecardRowDisplay from './ScorecardRowDisplay.jsx'
+import DataContext from '../locks/LockDataProvider.jsx'
+import LockListContext from '../locks/LockListContext.jsx'
 
 function Scorecard({owner, evidence}) {
+    const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
+    const {compact, tab, expanded, setExpanded, displayAll} = useContext(LockListContext)
+
+    const defExpanded = useDeferredValue(expanded)
+
+    console.log('visibleEntries', visibleEntries)
 
     const handleEdit = useCallback(id => {
         setEditRowId(id)
@@ -60,7 +68,7 @@ function Scorecard({owner, evidence}) {
         setTabToImport('')
     }, [tabToImport, importUnclaimedEvidence])
 
-    const annotatedEvidence = evidence.map(ev => {
+    const annotatedEvidence = visibleEntries.map(ev => {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
         const dateStr = sys2UserDate(ev.date)
@@ -106,6 +114,7 @@ function Scorecard({owner, evidence}) {
         }
     })
 
+    /*
     const sortedEvidence = annotatedEvidence.sort((a, b) => {
         const aDate = new Date(a.date)
         const bDate = new Date(b.date)
@@ -117,6 +126,9 @@ function Scorecard({owner, evidence}) {
             return a.name < b.name ? -1 : 1
         }
     })
+    */
+
+    const sortedEvidence = annotatedEvidence
 
     let scoredEvidence = []
     let usedIds = {}
@@ -204,6 +216,7 @@ function Scorecard({owner, evidence}) {
         return group
     }, [0, 0])
 
+    const table = false
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#000',
@@ -247,12 +260,18 @@ function Scorecard({owner, evidence}) {
 
             <div>
                 {scoredEvidence.map(ev =>
-                    <ScorecardRow key={ev.row} owner={owner} evid={ev} onEdit={handleEdit}
-                                  allEntriesById={allEntriesById} allProjectsById={allProjectsById}/>
+                    <ScorecardRow key={ev.row}
+                                  owner={owner}
+                                  evid={ev}
+                                  onEdit={handleEdit}
+                                  expanded={ev.id === defExpanded}
+                                  onExpand={setExpanded}
+                                  allEntriesById={allEntriesById}
+                                  allProjectsById={allProjectsById}/>
                 )}
             </div>
 
-
+            {table &&
             <div style={{marginTop: 50, paddingBottom: 32}}>
                 <TableContainer component={Paper}>
                     <Table aria-label='scorecard'>
@@ -294,6 +313,7 @@ function Scorecard({owner, evidence}) {
                     </Table>
                 </TableContainer>
             </div>
+            }
         </div>
     )
 }
