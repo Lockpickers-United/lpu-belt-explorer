@@ -1,19 +1,20 @@
+import dayjs from 'dayjs'
+import customParseFormat from'dayjs/plugin/customParseFormat'
+dayjs.extend(customParseFormat)
+
 export function user2SysDate(date) {
-    if (date && date.match(/^\d\d\d\d-\d{1,2}-\d{1,2}$/)) {
-        const fullDate = date.split('-').map(d => d.length === 1 ? '0' + d : d).join('-')
-        const utcStr = fullDate + 'T00:00:00.000Z'
-        return new Date(utcStr).toJSON()        
+    const dayParse = dayjs(date, ['YYYY-M-D', 'YYYY-MM-DD', 'YYYY-MM-D', 'YYYY-M-DD'], true)
+    if (dayParse.isValid()) {
+        return dayParse.toISOString()
     } else {
         return null
     }
 }
 
 export function sys2UserDate(date) {
-    const dateObj = date && new Date(date) 
-    const dateStr = dateObj && dateObj.getUTCFullYear() + '-' + (dateObj.getUTCMonth()+1) + '-' + dateObj.getUTCDate()
-    return dateStr
+    return date ? dayjs(date).format('YYYY-M-D') : null
 }
 
 export function now2UserDate() {
-    return sys2UserDate(new Date().toJSON())
+    return dayjs().format('YYYY-M-D')
 }
