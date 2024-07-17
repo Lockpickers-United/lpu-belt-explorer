@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography'
 function ScorecardRowDisplay({owner, evid, onEdit}) {
 
     return (
-        <TableRow key={evid.row}>
+        <TableRow key={evid.id}>
             <TableCell align='left' style={{backgroundColor: evid.color}}>
                 <Typography>{evid.row}</Typography>
             </TableCell>

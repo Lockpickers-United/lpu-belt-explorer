@@ -138,7 +138,7 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
     // onChange={handleAccordionClick}
 
     return (
-        <Accordion key={evid.row} expanded={expanded} onChange={handleChange}  ref={ref}>
+        <Accordion key={evid.id} expanded={expanded} onChange={handleChange}  ref={ref}>
             <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entry ? entry.belt : ''}/>
                 <div style={{

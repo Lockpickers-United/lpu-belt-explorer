@@ -9,7 +9,7 @@ import AuthContext from '../app/AuthContext.jsx'
 import Scorecard from './Scorecard.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
-import {DataProvider} from './ScorecardDataProvider.jsx'
+import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {lockFilterFields} from '../data/filterFields'
@@ -65,7 +65,7 @@ function ScorecardRoute() {
 
     return (
         <FilterProvider filterFields={lockFilterFields}>
-            <DataProvider evidenceEntries={data} profile={lockCollection}>
+            <ScorecardDataProvider evidenceEntries={data} profile={lockCollection}>
                 <ScorecardListProvider>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
 
@@ -80,7 +80,7 @@ function ScorecardRoute() {
                     </LocalizationProvider>
                     <Tracker feature='scorecard'/>
                 </ScorecardListProvider>
-            </DataProvider>
+            </ScorecardDataProvider>
         </FilterProvider>
     )
 }

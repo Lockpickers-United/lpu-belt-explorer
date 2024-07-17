@@ -1,14 +1,14 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import entryName from '../entries/entryName'
-import DataContext from './ScorecardDataProvider.jsx'
+import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import FilterContext from '../context/FilterContext'
 
 const ScorecardListContext = React.createContext({})
 
 export function ScorecardListProvider({children}) {
     const {userId} = useParams()
-    const {allEntries, getEntryFromId} = useContext(DataContext)
+    const {allEntries, getEntryFromId} = useContext(ScorecardDataContext)
     const {filters, addFilter, addFilters, removeFilters} = useContext(FilterContext)
 
     const expanded = filters.id

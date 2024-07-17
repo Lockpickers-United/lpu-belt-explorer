@@ -56,7 +56,7 @@ function ScorecardRowEdit({evid, onSave, onCancel, onDelete}) {
     }
 
     return (
-        <TableRow key={evid.row}>
+        <TableRow key={evid.id}>
             <TableCell align='center'>
                 <Button color='secondary' onClick={handleSave}>Save</Button>
             </TableCell>

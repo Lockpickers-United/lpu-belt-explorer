@@ -114,7 +114,7 @@ function Scorecard({owner, evidence}) {
 
             <div>
                 {visibleEntries.map(ev =>
-                    <ScorecardRow key={ev.row}
+                    <ScorecardRow key={ev.id}
                                   owner={owner}
                                   evid={ev}
                                   onEdit={handleEdit}
@@ -156,10 +156,10 @@ function Scorecard({owner, evidence}) {
                         <TableBody>
                             {visibleEntries.map(ev => {
                                 if (ev.id === editRowId) {
-                                    return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave}
+                                    return <ScorecardRowEdit key={ev.id} evid={ev} onSave={handleSave}
                                                              onCancel={handleCancel} onDelete={handleDelete}/>
                                 } else {
-                                    return <ScorecardRowDisplay key={ev.row} owner={owner} evid={ev}
+                                    return <ScorecardRowDisplay key={ev.id} owner={owner} evid={ev}
                                                                 onEdit={handleEdit}/>
                                 }
                             })}

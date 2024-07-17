@@ -11,7 +11,7 @@ import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
 import nextUpgrades from '../data/upgrades.json'
 
-export function DataProvider({children, evidenceEntries}) {
+export function ScorecardDataProvider({children, evidenceEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
 
