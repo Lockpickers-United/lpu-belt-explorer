@@ -6,6 +6,7 @@ import ListItemText from '@mui/material/ListItemText'
 import PersonIcon from '@mui/icons-material/Person'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ScoreIcon from '@mui/icons-material/Score'
+import ListAltIcon from '@mui/icons-material/ListAlt'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
@@ -87,7 +88,7 @@ function UserMenu() {
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}/scorecard?name=${safeName}`)}>
                             <ListItemIcon>
-                                <ScoreIcon/>
+                                <ListAltIcon/>
                             </ListItemIcon>
                             <ListItemText>Scorecard</ListItemText>
                         </MenuItem>

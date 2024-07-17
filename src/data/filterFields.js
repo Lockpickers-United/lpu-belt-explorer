@@ -18,3 +18,11 @@ export const dialFilterFields = [
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content'}
 ]
+
+export const scorecardFilterFields = [
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Features', fieldName: 'features'},
+]
+
