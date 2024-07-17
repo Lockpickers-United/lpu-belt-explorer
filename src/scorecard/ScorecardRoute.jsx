@@ -73,7 +73,7 @@ function ScorecardRoute() {
 
                         {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error && <Scorecard owner={user && user.uid === userId} evidence={data}/>}
+                        {!loading && data && !error && <Scorecard owner={user && user.uid === userId}/>}
                         {!loading && (!data || error) && <ProfileNotFound/>}
 
                         <Footer/>

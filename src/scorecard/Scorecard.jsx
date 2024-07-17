@@ -18,13 +18,15 @@ import ScorecardRowDisplay from './ScorecardRowDisplay.jsx'
 import DataContext from '../locks/LockDataProvider.jsx'
 import ScorecardListContext from './ScorecardListContext.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
+import ScorecardDataContext from './ScorecardDataProvider'
 
-function Scorecard({owner, evidence}) {
+function Scorecard({owner}) {
     const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(DataContext)
     const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
     const {expanded, setExpanded} = useContext(ScorecardListContext)
+    const {scoredEvidence, bbCount, danPoints} = useContext(ScorecardDataContext)
 
     const defExpanded = useDeferredValue(expanded)
 
@@ -55,21 +57,14 @@ function Scorecard({owner, evidence}) {
     }, [removeEvidence])
 
     const handleDeleteAll = useCallback(() => {
-        const ids = evidence.map(evid => evid.id)
+        const ids = scoredEvidence.map(evid => evid.id)
         ids.forEach(id => removeEvidence(id))
-    }, [evidence, removeEvidence])
+    }, [scoredEvidence, removeEvidence])
 
     const handleImport = useCallback(() => {
         importUnclaimedEvidence(tabToImport)
         setTabToImport('')
     }, [tabToImport, importUnclaimedEvidence])
-
-
-    const [bbCount, danPoints] = visibleEntries.reduce((group, ev) => {
-        group[0] = group[0] + ev.bbCount
-        group[1] = group[1] + ev.points
-        return group
-    }, [0, 0])
 
     const table = false
     return (
