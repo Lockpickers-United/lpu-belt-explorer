@@ -77,7 +77,7 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
         }
     })
 
-    let scoredEvidence = []
+    let scoredEvidence = useMemo(() => [], [])
     let usedIds = {}
     let upgradeableIdIdx = []
 
@@ -99,13 +99,14 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
                 note: 'no URL for evidence'
             }
         } else {
-            const collidedIdx = usedIds[ev.matchId]
+            const [collidedIdx, collidedId] = usedIds[ev.matchId] ? usedIds[ev.matchId] : [null, null]
 
             if (collidedIdx && ev.points <= scoredEvidence[collidedIdx].points) {
                 scoredEvidence[idx] = {
                     ...ev,
                     row: idx + 1,
                     points: 0,
+                    samelinedId: collidedId,
                     note: `samelined with row ${collidedIdx + 1}`
                 }
             } else {
@@ -114,37 +115,40 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
                         ...sortedEvidence[collidedIdx],
                         row: collidedIdx + 1,
                         points: 0,
+                        samelinedId: ev.id,
                         note: `samelined with row ${idx + 1}`
                     }
                 }
 
-                usedIds[ev.matchId] = idx
+                usedIds[ev.matchId] = [idx, ev.id]
                 let superseded = false
 
                 if (possibleUpgrades[ev.matchId]) {
                     for (let jdx = 0; !superseded && jdx < upgradeableIdIdx.length; jdx++) {
-                        const [upId, upIdx] = upgradeableIdIdx[jdx]
+                        const [upMatchId, upIdx, upId] = upgradeableIdIdx[jdx]
 
-                        if (isUpgradeOf(upId, ev.matchId)) {
+                        if (isUpgradeOf(upMatchId, ev.matchId)) {
                             superseded = true
 
                             scoredEvidence[idx] = {
                                 ...ev,
                                 row: idx + 1,
                                 points: 0,
+                                supersededId: upId,
                                 note: `superseded by row ${upIdx + 1}`
                             }
 
-                        } else if (isUpgradeOf(ev.matchId, upId)) {
+                        } else if (isUpgradeOf(ev.matchId, upMatchId)) {
                             scoredEvidence[upIdx] = {
                                 ...scoredEvidence[upIdx],
                                 row: upIdx + 1,
                                 points: 0,
+                                supersededId: ev.id,
                                 note: `superseded by row ${idx + 1}`
                             }
                         }
                     }
-                    upgradeableIdIdx.push([ev.matchId, idx])
+                    upgradeableIdIdx.push([ev.matchId, idx, ev.id])
                 }
 
                 if (!superseded) {
@@ -248,11 +252,12 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
 
     const value = useMemo(() => ({
         allEntries,
+        scoredEvidence,
         visibleEntries,
         getEntryFromId,
         allEntriesById,
         allProjectsById
-    }), [getEntryFromId, visibleEntries])
+    }), [getEntryFromId, scoredEvidence, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

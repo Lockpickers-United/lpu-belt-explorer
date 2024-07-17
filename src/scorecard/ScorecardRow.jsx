@@ -65,7 +65,7 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [expanded, entry, scrolled])
+    }, [evid.id, expanded, entry, scrolled])
 
     let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
     entryTitle = evid.note ? entryTitle + ' *' : entryTitle

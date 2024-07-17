@@ -17,6 +17,7 @@ import ScorecardRowEdit from './ScorecardRowEdit.jsx'
 import ScorecardRowDisplay from './ScorecardRowDisplay.jsx'
 import DataContext from '../locks/LockDataProvider.jsx'
 import ScorecardListContext from './ScorecardListContext.jsx'
+import ScoringExceptions from './ScoringExceptions.jsx'
 
 function Scorecard({owner, evidence}) {
     const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(DataContext)
@@ -105,8 +106,9 @@ function Scorecard({owner, evidence}) {
                     textAlign: 'right',
                     padding: '10px 12px 8px 0px'
                 }}>
-                        <span style={{fontWeight: 700}}>{bbCount} Black Belt Lock{bbCount !== 1 &&
-                            <span>s</span>}, </span>
+                    <ScoringExceptions/>
+                    <span style={{fontWeight: 700}}>{bbCount} Black Belt Lock{bbCount !== 1 &&
+                        <span>s</span>}, </span>
                     <span style={{fontWeight: 700}}>{danPoints} Dan Point{danPoints !== 1 && <span>s</span>}</span>
                 </div>
 
