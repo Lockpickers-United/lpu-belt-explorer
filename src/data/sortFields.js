@@ -22,8 +22,8 @@ export const scorecardSortFields = [
     {label: 'Dan Points', value: 'danPoints'},
     {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
     {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
-    {label: 'Date (Ascending)', value: 'alphaAscending'},
-    {label: 'Date (Descending)', value: 'alphaDescending'},
+    {label: 'Date (Ascending)', value: 'dateAscending'},
+    {label: 'Date (Descending)', value: 'dateDescending'},
     {label: 'Belt (Ascending)', value: 'beltAscending'},
     {label: 'Belt (Descending)', value: 'beltDescending'},
 ]

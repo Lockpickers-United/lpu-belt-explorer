@@ -10,12 +10,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import DBContext from '../app/DBContext.jsx'
-import entryName from '../entries/entryName'
-import allEntries from '../data/data.json'
-import allProjects from '../data/projects.json'
-import nextUpgrades from '../data/upgrades.json'
-import belts, {projectTiers, modifierMultiplier} from '../data/belts'
-import {user2SysDate, sys2UserDate} from '../util/datetime'
+import {user2SysDate} from '../util/datetime'
 
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardRowEdit from './ScorecardRowEdit.jsx'
@@ -24,11 +19,11 @@ import DataContext from '../locks/LockDataProvider.jsx'
 import LockListContext from '../locks/LockListContext.jsx'
 
 function Scorecard({owner, evidence}) {
-    const {allEntries, visibleEntries = []} = useContext(DataContext)
+    const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(DataContext)
     const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
-    const {compact, tab, expanded, setExpanded, displayAll} = useContext(LockListContext)
+    const {expanded, setExpanded} = useContext(LockListContext)
 
     const defExpanded = useDeferredValue(expanded)
 
@@ -68,149 +63,8 @@ function Scorecard({owner, evidence}) {
         setTabToImport('')
     }, [tabToImport, importUnclaimedEvidence])
 
-    const annotatedEvidence = visibleEntries.map(ev => {
-        const entry = allEntriesById[ev.matchId]
-        const project = allProjectsById[ev.matchId]
-        const dateStr = sys2UserDate(ev.date)
-        const modifier = ev.modifier && ev.modifier !== 'Upgraded' ? ev.modifier : null
-        const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
-        if (entry) {
-            const name = entryName(entry)
-            const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-
-            return {
-                ...ev,
-                matchId: entry.id,
-                matchName: name,
-                matchLink: `https://share.lpubelts.com/?id=${entry.id}&name=${safeName}`,
-                color: belts[entry.belt].color,
-                date: dateStr,
-                modifier: modifier,
-                points: multiplier * belts[entry.belt].danPoints,
-                bbCount: entry.belt.startsWith('Black') ? 1 : 0
-            }
-        } else if (project) {
-            return {
-                ...ev,
-                matchId: project.id,
-                matchName: project.name,
-                color: belts['Unranked'].color,
-                date: dateStr,
-                modifier: modifier,
-                points: multiplier * projectTiers[project.tier].danPoints,
-                bbCount: 0
-            }
-        } else {
-            return {
-                ...ev,
-                matchName: '',
-                color: belts['Unranked'].color,
-                date: dateStr,
-                modifier: modifier,
-                points: 0,
-                bbCount: 0
-            }
-        }
-    })
-
-    /*
-    const sortedEvidence = annotatedEvidence.sort((a, b) => {
-        const aDate = new Date(a.date)
-        const bDate = new Date(b.date)
-        if (aDate > bDate) {
-            return -1
-        } else if (aDate < bDate) {
-            return 1
-        } else {
-            return a.name < b.name ? -1 : 1
-        }
-    })
-    */
-
-    const sortedEvidence = annotatedEvidence
-
-    let scoredEvidence = []
-    let usedIds = {}
-    let upgradeableIdIdx = []
-
-    for (let idx = sortedEvidence.length - 1; idx >= 0; idx--) {
-        const ev = sortedEvidence[idx]
-
-        if (!ev.matchId) {
-            scoredEvidence[idx] = {
-                ...ev,
-                row: idx + 1,
-                note: 'no match with lock or project'
-            }
-        } else if (!ev.link.startsWith('http')) {
-            scoredEvidence[idx] = {
-                ...ev,
-                row: idx + 1,
-                points: 0,
-                bbCount: 0,
-                note: 'no URL for evidence'
-            }
-        } else {
-            const collidedIdx = usedIds[ev.matchId]
-
-            if (collidedIdx && ev.points <= scoredEvidence[collidedIdx].points) {
-                scoredEvidence[idx] = {
-                    ...ev,
-                    row: idx + 1,
-                    points: 0,
-                    note: `samelined with row ${collidedIdx + 1}`
-                }
-            } else {
-                if (collidedIdx) {
-                    scoredEvidence[collidedIdx] = {
-                        ...sortedEvidence[collidedIdx],
-                        row: collidedIdx + 1,
-                        points: 0,
-                        note: `samelined with row ${idx + 1}`
-                    }
-                }
-
-                usedIds[ev.matchId] = idx
-                let superseded = false
-
-                if (possibleUpgrades[ev.matchId]) {
-                    for (let jdx = 0; !superseded && jdx < upgradeableIdIdx.length; jdx++) {
-                        const [upId, upIdx] = upgradeableIdIdx[jdx]
-
-                        if (isUpgradeOf(upId, ev.matchId)) {
-                            superseded = true
-
-                            scoredEvidence[idx] = {
-                                ...ev,
-                                row: idx + 1,
-                                points: 0,
-                                note: `superseded by row ${upIdx + 1}`
-                            }
-
-                        } else if (isUpgradeOf(ev.matchId, upId)) {
-                            scoredEvidence[upIdx] = {
-                                ...scoredEvidence[upIdx],
-                                row: upIdx + 1,
-                                points: 0,
-                                note: `superseded by row ${idx + 1}`
-                            }
-                        }
-                    }
-                    upgradeableIdIdx.push([ev.matchId, idx])
-                }
-
-                if (!superseded) {
-                    scoredEvidence[idx] = {
-                        ...ev,
-                        row: idx + 1
-                    }
-                }
-            }
-        }
-    }
-
-    const [bbCount, danPoints] = scoredEvidence.reduce((group, ev) => {
+    const [bbCount, danPoints] = visibleEntries.reduce((group, ev) => {
         group[0] = group[0] + ev.bbCount
         group[1] = group[1] + ev.points
         return group
@@ -226,7 +80,7 @@ function Scorecard({owner, evidence}) {
             <div style={{display: 'flex'}}>
                 <div style={{marginLeft: 0}}>
 
-                    {owner && scoredEvidence.length > 0 ?
+                    {owner && visibleEntries.length > 0 ?
                         <Button color='secondary' size='large' onClick={handleDeleteAll}>DELETE&nbsp;ALL</Button>
                         : owner &&
                         <div>
@@ -259,7 +113,7 @@ function Scorecard({owner, evidence}) {
             </div>
 
             <div>
-                {scoredEvidence.map(ev =>
+                {visibleEntries.map(ev =>
                     <ScorecardRow key={ev.row}
                                   owner={owner}
                                   evid={ev}
@@ -300,7 +154,7 @@ function Scorecard({owner, evidence}) {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {scoredEvidence.map(ev => {
+                            {visibleEntries.map(ev => {
                                 if (ev.id === editRowId) {
                                     return <ScorecardRowEdit key={ev.row} evid={ev} onSave={handleSave}
                                                              onCancel={handleCancel} onDelete={handleDelete}/>
@@ -316,39 +170,6 @@ function Scorecard({owner, evidence}) {
             }
         </div>
     )
-}
-
-const allEntriesById = allEntries
-    .reduce((group, term) => {
-        const {id} = term
-        group[id] = term
-        return group
-    }, {})
-
-const allProjectsById = allProjects
-    .reduce((group, term) => {
-        const {id} = term
-        group[id] = term
-        return group
-    }, {})
-
-const possibleUpgrades = Object.keys(nextUpgrades)
-    .reduce((group, term) => {
-        group[term] = true
-        nextUpgrades[term].forEach(id => {
-            group[id] = true
-        })
-        return group
-    }, {})
-
-function isUpgradeOf(aId, bId) {
-    if (!nextUpgrades[bId]) {
-        return false
-    } else if (nextUpgrades[bId].includes(aId)) {
-        return true
-    } else {
-        return nextUpgrades[bId].some(id => isUpgradeOf(aId, id))
-    }
 }
 
 export default Scorecard

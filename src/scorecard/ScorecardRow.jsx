@@ -23,7 +23,7 @@ import queryString from 'query-string'
 
 export default function ScorecardRow({owner, evid, allEntriesById, allProjectsById, expanded, onExpand}) {
 
-    //console.log('ScorecardRow', evid)
+    console.log('ScorecardRow', evid)
 
     const eDate = dayjs(evid.date)
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)
