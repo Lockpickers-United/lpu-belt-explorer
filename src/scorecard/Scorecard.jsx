@@ -16,14 +16,14 @@ import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardRowEdit from './ScorecardRowEdit.jsx'
 import ScorecardRowDisplay from './ScorecardRowDisplay.jsx'
 import DataContext from '../locks/LockDataProvider.jsx'
-import LockListContext from '../locks/LockListContext.jsx'
+import ScorecardListContext from './ScorecardListContext.jsx'
 
 function Scorecard({owner, evidence}) {
     const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(DataContext)
     const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
-    const {expanded, setExpanded} = useContext(LockListContext)
+    const {expanded, setExpanded} = useContext(ScorecardListContext)
 
     const defExpanded = useDeferredValue(expanded)
 

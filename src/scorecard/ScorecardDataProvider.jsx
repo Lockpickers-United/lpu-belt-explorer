@@ -160,7 +160,7 @@ export function DataProvider({children, evidenceEntries}) {
     const allEvidenceEntries = scoredEvidence.map(evidenceEntry =>
         {
             const entry = getLockEntryFromId(evidenceEntry.matchId)
-            return {...evidenceEntry, ...entry}
+            return {...evidenceEntry, ...entry, id: evidenceEntry.id}
         }
     )
 

@@ -11,7 +11,7 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import {DataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
-import {LockListProvider} from '../locks/LockListContext.jsx'
+import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {lockFilterFields} from '../data/filterFields'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
@@ -66,7 +66,7 @@ function ScorecardRoute() {
     return (
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider evidenceEntries={data} profile={lockCollection}>
-                <LockListProvider>
+                <ScorecardListProvider>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
 
                         <Nav title={title} extras={nav}/>
@@ -79,7 +79,7 @@ function ScorecardRoute() {
                         <Footer/>
                     </LocalizationProvider>
                     <Tracker feature='scorecard'/>
-                </LockListProvider>
+                </ScorecardListProvider>
             </DataProvider>
         </FilterProvider>
     )
