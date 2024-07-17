@@ -161,6 +161,12 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
         }
     }
 
+    const [bbCount, danPoints] = scoredEvidence.reduce((group, ev) => {
+        group[0] = group[0] + ev.bbCount
+        group[1] = group[1] + ev.points
+        return group
+    }, [0, 0])
+
     const allEvidenceEntries = scoredEvidence.map(evidenceEntry =>
         {
             const entry = getLockEntryFromId(evidenceEntry.matchId)
@@ -253,11 +259,13 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
     const value = useMemo(() => ({
         allEntries,
         scoredEvidence,
+        bbCount,
+        danPoints,
         visibleEntries,
         getEntryFromId,
         allEntriesById,
         allProjectsById
-    }), [getEntryFromId, scoredEvidence, visibleEntries])
+    }), [getEntryFromId, scoredEvidence, bbCount, danPoints, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>
