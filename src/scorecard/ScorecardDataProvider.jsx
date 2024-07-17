@@ -27,7 +27,7 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
         if (entry) {
-            const name = entryName(entry)
+            const name = entryName(entry, 'short', {matchTo: ev.name})
             const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
             return {

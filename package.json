@@ -37,6 +37,7 @@
         "@nivo/line": "^0.84.0",
         "@nivo/pie": "^0.84.0",
         "dayjs": "^1.11.9",
+        "fast-levenshtein": "^3.0.0",
         "firebase": "^10.6.0",
         "fuzzysort": "^2.0.4",
         "joi": "^17.10.1",
