@@ -23,7 +23,7 @@ import queryString from 'query-string'
 
 export default function ScorecardRow({owner, evid, allEntriesById, allProjectsById, expanded, onExpand}) {
 
-    //console.log('ScorecardRow', evid)
+    console.log('ScorecardRow', evid)
 
     const eDate = dayjs(evid.date)
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)
@@ -43,8 +43,10 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
     const ref = useRef(null)
 
     const handleChange = useCallback((_, isExpanded) => {
-        onExpand && onExpand(isExpanded ? evid.id : false)
-    }, [evid.id, onExpand])
+        if (owner) {
+            onExpand && onExpand(isExpanded ? evid.id : false)
+        }
+    }, [evid.id, onExpand, owner])
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -65,10 +67,8 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [evid.id, expanded, entry, scrolled])
+    }, [expanded, entry, scrolled, evid.id])
 
-    let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
-    entryTitle = evid.note ? entryTitle + ' *' : entryTitle
 
     const handleSave = useCallback(() => {
         let error = false
@@ -89,6 +89,9 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
         }
     }, [allEntriesById, allProjectsById, lockProjectId, evidenceName, evidenceUrl])
 
+    let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
+    entryTitle = evid.note ? entryTitle + ' *' : entryTitle
+    const evidenceNotes = evid.name && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
 
     const [anchorEl, setAnchorEl] = useState(null)
@@ -125,18 +128,6 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
     const cursorStyle = !owner ? {cursor: 'default'} : {}
     const expandIcon = owner ? <ExpandMoreIcon/> : null
 
-    /*
-    function handleAccordionClick(event) {
-        if (!owner) {
-            setExpanded(false)
-        } else {
-            setExpanded(!expanded)
-        }
-    }
-     */
-
-    // onChange={handleAccordionClick}
-
     return (
         <Accordion key={evid.id} expanded={expanded} onChange={handleChange}  ref={ref}>
             <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
@@ -152,13 +143,13 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
                         textStyle={{marginLeft: '0px', fontWeight: 700}}
                         style={{marginBottom: '2px'}}
                     />
-                    {!!evid.modifier &&
+                    {!!evidenceNotes &&
                         <span style={{
                             marginLeft: 15,
                             fontSize: '0.95rem',
                             lineHeight: 1.25,
-                            color: '#ddd'
-                        }}>{evid.modifier}</span>}
+                            color: '#bbb'
+                        }}>{evidenceNotes}</span>}
                 </div>
 
                 <div style={{margin: '8px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
@@ -185,15 +176,22 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
             {expanded &&
             <React.Fragment>
                 <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
-                    {evid.note &&
+                    {(evid.note || evid.modifier) &&
                         <div style={{
                             margin: '0px 0px 20px 20px',
                             fontWeight: 600,
                             fontSize: '.95rem'
-                        }}>* {evid.note}</div>
+                        }}>
+                            {evid.modifier &&
+                                <span>{evid.modifier}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            }
+                            {evid.note &&
+                                <span>* {evid.note}</span>
+                            }
+                        </div>
                     }
 
-                    <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
+                    <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
                         <TextField
                             id='evidence-url'
                             error={!!evidenceUrlErr}
@@ -221,6 +219,7 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
                             onChange={(newValue) => {
                                 setEvidenceDateErr(null)
                                 setEvidenceDate(newValue)
+                                setUpdated(true)
                             }}
                             sx={{width: 250}}
                             disableFuture
@@ -235,6 +234,7 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
                             color='secondary'
                             onChange={e => {
                                 setModifier(e.target.value)
+                                setUpdated(true)
                             }}
                         >
                             <MenuItem value=''>(None)</MenuItem>
@@ -245,6 +245,26 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
                             <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat (Notable)</MenuItem>
                         </TextField>
 
+                    </div>
+
+
+                    <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
+                        <TextField
+                            id='evidence-notes'
+                            label='Notes (optional)'
+                            value={evidenceName}
+                            placeholder='https://youtu.be/'
+                            fullWidth
+                            size='small'
+                            margin='dense'
+                            color='secondary'
+                            onChange={e => {
+                                setEvidenceName(e.target.value)
+                                setUpdated(true)
+
+                            }}
+                            sx={{input: {color: '#999'}}}
+                        />
                     </div>
 
                     <div style={{display: 'flex'}}>
