@@ -87,12 +87,14 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
         if (!ev.matchId) {
             scoredEvidence[idx] = {
                 ...ev,
+                exceptionType: 'nomatch',
                 row: idx + 1,
                 note: 'no match with lock or project'
             }
         } else if (!ev.link.startsWith('http')) {
             scoredEvidence[idx] = {
                 ...ev,
+                exceptionType: 'badlink',
                 row: idx + 1,
                 points: 0,
                 bbCount: 0,
@@ -104,6 +106,7 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
             if (collidedIdx && ev.points <= scoredEvidence[collidedIdx].points) {
                 scoredEvidence[idx] = {
                     ...ev,
+                    exceptionType: 'duplicate',
                     row: idx + 1,
                     points: 0,
                     samelinedId: collidedId,
@@ -113,6 +116,7 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
                 if (collidedIdx) {
                     scoredEvidence[collidedIdx] = {
                         ...sortedEvidence[collidedIdx],
+                        exceptionType: 'duplicate',
                         row: collidedIdx + 1,
                         points: 0,
                         samelinedId: ev.id,
@@ -132,6 +136,7 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
 
                             scoredEvidence[idx] = {
                                 ...ev,
+                                exceptionType: 'upgraded',
                                 row: idx + 1,
                                 points: 0,
                                 supersededId: upId,
@@ -141,6 +146,7 @@ export function ScorecardDataProvider({children, evidenceEntries}) {
                         } else if (isUpgradeOf(ev.matchId, upMatchId)) {
                             scoredEvidence[upIdx] = {
                                 ...scoredEvidence[upIdx],
+                                exceptionType: 'upgraded',
                                 row: upIdx + 1,
                                 points: 0,
                                 supersededId: ev.id,

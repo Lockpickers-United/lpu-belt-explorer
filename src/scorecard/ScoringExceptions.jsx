@@ -17,10 +17,10 @@ function ScoringExceptions() {
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const unmatchedEvid = scoredEvidence.filter(ev => !ev.matchId)
-    const badlinkEvid = scoredEvidence.filter(ev => !ev.link.startsWith('http'))
-    const samelinedEvid = scoredEvidence.filter(ev => !!ev.samelinedId)
-    const supersededEvid = scoredEvidence.filter(ev => !!ev.supersededId)
+    const unmatchedEvid = scoredEvidence.filter(ev => 'nomatch' === ev.exceptionType)
+    const badlinkEvid = scoredEvidence.filter(ev => 'badlink' === ev.exceptionType)
+    const samelinedEvid = scoredEvidence.filter(ev => 'duplicate' === ev.exceptionType)
+    const supersededEvid = scoredEvidence.filter(ev => 'upgraded' === ev.exceptionType)
     const totalNum = unmatchedEvid.length + badlinkEvid.length + samelinedEvid.length + supersededEvid.length
 
     if (totalNum > 0) {
