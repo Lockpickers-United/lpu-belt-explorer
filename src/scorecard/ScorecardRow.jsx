@@ -7,8 +7,6 @@ import FieldValue from '../entries/FieldValue.jsx'
 
 import dayjs from 'dayjs'
 import {DatePicker} from '@mui/x-date-pickers/DatePicker'
-
-import DataContext from '../locks/LockDataProvider.jsx'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ScorecardEvidenceButton from './ScorecardEvidenceButton.jsx'
 import entryName from '../entries/entryName'
@@ -20,8 +18,13 @@ import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import queryString from 'query-string'
+import ScorecardDataContext from './ScorecardDataProvider.jsx'
+import FilterContext from '../context/FilterContext.jsx'
+import Link from '@mui/material/Link'
 
-export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesById, allProjectsById, expanded, onExpand, }) {
+export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, onExpand}) {
+    const {clearFilters, setFilters} = useContext(FilterContext)
+    const {scoredEvidence, getEntryFromId} = useContext(ScorecardDataContext)
 
     console.log('ScorecardRow', evid)
 
@@ -34,9 +37,8 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesB
     const [evidenceDateErr, setEvidenceDateErr] = useState(null)
     const [modifier, setModifier] = useState(evid.modifier)
     const [updated, setUpdated] = useState(false)
-
-    const {getEntryFromId} = useContext(DataContext)
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
+
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 
@@ -69,7 +71,36 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesB
 
     let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
     entryTitle = evid.note ? entryTitle + ' *' : entryTitle
+
     const evidenceNotes = evid.name && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
+
+    const supersedingEntryId = evid.samelinedId
+        ? evid.samelinedId
+        : evid.supersededId
+            ? evid.supersededId
+            : null
+    const supersedingEntry = supersedingEntryId ? scoredEvidence.find(e => e.id === supersedingEntryId) : {}
+    const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [getEntryFromId, supersedingEntry.matchId]) : {}
+    const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
+    const supersedingLink = supersedingEntryId
+        ? <Link style={{color:'#99c2e5'}} onClick={() => {
+            navigateToEntry(supersedingEntryId)
+        }}>{supersedingLockName}</Link>
+        : null
+    const exceptionNote = evid.exceptionType === 'nomatch'
+        ? 'Could not be matched to a lock or project'
+        : evid.exceptionType === 'badlink'
+            ? 'Invalid URL'
+            : evid.exceptionType === 'duplicate'
+                ? 'Duplicate of '
+                : evid.exceptionType === 'upgraded'
+                    ? 'Upgraded to '
+                    : null
+
+    const navigateToEntry = useCallback((id) => {
+        setFilters({id: id})
+    }, [setFilters])
+
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
 
     const [anchorEl, setAnchorEl] = useState(null)
@@ -77,7 +108,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesB
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const handleSave = useCallback( async () => {
+    const handleSave = useCallback(async () => {
         onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
         setUpdated(false)
     }, [evid.id, evidenceDate, evidenceName, evidenceUrl, lockProjectId, modifier, onSave])
@@ -114,7 +145,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesB
     const expandIcon = owner ? <ExpandMoreIcon/> : null
 
     return (
-        <Accordion key={evid.id} expanded={expanded} onChange={handleChange}  ref={ref}>
+        <Accordion key={evid.id} expanded={expanded} onChange={handleChange} ref={ref}>
             <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entry ? entry.belt : ''}/>
                 <div style={{
@@ -159,142 +190,143 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesB
 
             </AccordionSummary>
             {expanded &&
-            <React.Fragment>
-                <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
-                    {(evid.note || evid.modifier) &&
-                        <div style={{
-                            margin: '0px 0px 20px 20px',
-                            fontWeight: 600,
-                            fontSize: '.95rem'
-                        }}>
-                            {evid.modifier &&
-                                <span>{evid.modifier}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            }
-                            {evid.note &&
-                                <span>* {evid.note}</span>
-                            }
+                <React.Fragment>
+                    <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
+                        {(exceptionNote || evid.modifier) &&
+                            <div style={{
+                                margin: '0px 0px 20px 20px',
+                                fontWeight: 600,
+                                fontSize: '.95rem'
+                            }}>
+                                {evid.modifier &&
+                                    <span>{evid.modifier}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                }
+                                {exceptionNote &&
+                                    <span>* {exceptionNote} {supersedingLink}</span>
+                                }
+                            </div>
+                        }
+
+                        <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
+                            <TextField
+                                id='evidence-url'
+                                error={!!evidenceUrlErr}
+                                helperText={evidenceURLHelperText}
+                                label='Documentation Link'
+                                value={evidenceUrl}
+                                placeholder='https://youtu.be/'
+                                fullWidth
+                                size='small'
+                                margin='dense'
+                                color='secondary'
+                                onChange={processURL}
+                            />
+                            <IconButton disabled={false}>
+                                <a href={evidenceUrl} target='_blank' rel='noreferrer'>
+                                    <LaunchIcon style={{fontSize: 'large', color: evidenceLaunchColor}}/></a>
+                            </IconButton>
                         </div>
-                    }
 
-                    <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
-                        <TextField
-                            id='evidence-url'
-                            error={!!evidenceUrlErr}
-                            helperText={evidenceURLHelperText}
-                            label='Documentation Link'
-                            value={evidenceUrl}
-                            placeholder='https://youtu.be/'
-                            fullWidth
-                            size='small'
-                            margin='dense'
-                            color='secondary'
-                            onChange={processURL}
-                        />
-                        <IconButton disabled={false}>
-                            <a href={evidenceUrl} target='_blank' rel='noreferrer'>
-                                <LaunchIcon style={{fontSize: 'large', color: evidenceLaunchColor}}/></a>
-                        </IconButton>
-                    </div>
+                        <div style={{display: 'flex', width: '100%', marginBottom: 20}}>
 
-                    <div style={{display: 'flex', width: '100%', marginBottom: 20}}>
+                            <DatePicker
+                                label='Pick date'
+                                value={evidenceDate}
+                                onChange={(newValue) => {
+                                    setEvidenceDateErr(null)
+                                    setEvidenceDate(newValue)
+                                    setUpdated(true)
+                                }}
+                                sx={{width: 250}}
+                                disableFuture
+                            />
 
-                        <DatePicker
-                            label='Pick date'
-                            value={evidenceDate}
-                            onChange={(newValue) => {
-                                setEvidenceDateErr(null)
-                                setEvidenceDate(newValue)
-                                setUpdated(true)
-                            }}
-                            sx={{width: 250}}
-                            disableFuture
-                        />
-
-                        <TextField
-                            select
-                            style={{marginLeft: 30, width: 250}}
-                            id='modifier'
-                            label='Modifier'
-                            value={modifier ?? ''}
-                            color='secondary'
-                            onChange={e => {
-                                setModifier(e.target.value)
-                                setUpdated(true)
-                            }}
-                        >
-                            <MenuItem value=''>(None)</MenuItem>
-                            <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
-                            <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
-                            <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
-                            <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
-                            <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat (Notable)</MenuItem>
-                        </TextField>
-
-                    </div>
-
-
-                    <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
-                        <TextField
-                            id='evidence-notes'
-                            label='Notes (optional)'
-                            value={evidenceName}
-                            placeholder='https://youtu.be/'
-                            fullWidth
-                            size='small'
-                            margin='dense'
-                            color='secondary'
-                            onChange={e => {
-                                setEvidenceName(e.target.value)
-                                setUpdated(true)
-
-                            }}
-                            sx={{input: {color: '#999'}}}
-                        />
-                    </div>
-
-                    <div style={{display: 'flex'}}>
-                        <div style={{marginLeft: 0}}>
-                            <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'>
-                                Delete
-                            </Button>
-                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                <div style={{padding: 20, textAlign: 'center'}}>
-                                    You cannot undo delete.<br/>
-                                    Are you sure?
-                                </div>
-                                <div style={{textAlign: 'center'}}>
-                                    <Button style={{marginBottom: 10, color: '#000'}}
-                                            variant='contained'
-                                            onClick={handleDelete}
-                                            edge='start'
-                                            color='error'
-                                    >
-                                        Delete
-                                    </Button>
-                                </div>
-                            </Menu>
-                        </div>
-                        <div style={{
-                            width: '100%',
-                            textAlign: 'right',
-                            padding: '0px 12px 8px 0px'
-                        }}>
-                            <Button style={{marginRight: 10, color: cancelColor}}
-                                    onClick={cancelEdit}
-                                    disabled={!updated}
+                            <TextField
+                                select
+                                style={{marginLeft: 30, width: 250}}
+                                id='modifier'
+                                label='Modifier'
+                                value={modifier ?? ''}
+                                color='secondary'
+                                onChange={e => {
+                                    setModifier(e.target.value)
+                                    setUpdated(true)
+                                }}
                             >
-                                Cancel
-                            </Button>
-                            <Button style={{marginRight: 0, color: saveEntryColor}}
-                                    onClick={handleSave}
-                                    disabled={!updated}
-                            >
-                                Save
-                            </Button>
+                                <MenuItem value=''>(None)</MenuItem>
+                                <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
+                                <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
+                                <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
+                                <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
+                                <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
+                                    (Notable)</MenuItem>
+                            </TextField>
+
                         </div>
-                    </div>
-                </AccordionDetails>
-            </React.Fragment>
+
+
+                        <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
+                            <TextField
+                                id='evidence-notes'
+                                label='Notes (optional)'
+                                value={evidenceName}
+                                placeholder='https://youtu.be/'
+                                fullWidth
+                                size='small'
+                                margin='dense'
+                                color='secondary'
+                                onChange={e => {
+                                    setEvidenceName(e.target.value)
+                                    setUpdated(true)
+
+                                }}
+                                sx={{input: {color: '#999'}}}
+                            />
+                        </div>
+
+                        <div style={{display: 'flex'}}>
+                            <div style={{marginLeft: 0}}>
+                                <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'>
+                                    Delete
+                                </Button>
+                                <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                    <div style={{padding: 20, textAlign: 'center'}}>
+                                        You cannot undo delete.<br/>
+                                        Are you sure?
+                                    </div>
+                                    <div style={{textAlign: 'center'}}>
+                                        <Button style={{marginBottom: 10, color: '#000'}}
+                                                variant='contained'
+                                                onClick={handleDelete}
+                                                edge='start'
+                                                color='error'
+                                        >
+                                            Delete
+                                        </Button>
+                                    </div>
+                                </Menu>
+                            </div>
+                            <div style={{
+                                width: '100%',
+                                textAlign: 'right',
+                                padding: '0px 12px 8px 0px'
+                            }}>
+                                <Button style={{marginRight: 10, color: cancelColor}}
+                                        onClick={cancelEdit}
+                                        disabled={!updated}
+                                >
+                                    Cancel
+                                </Button>
+                                <Button style={{marginRight: 0, color: saveEntryColor}}
+                                        onClick={handleSave}
+                                        disabled={!updated}
+                                >
+                                    Save
+                                </Button>
+                            </div>
+                        </div>
+                    </AccordionDetails>
+                </React.Fragment>
             }
         </Accordion>
     )

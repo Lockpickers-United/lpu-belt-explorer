@@ -15,14 +15,13 @@ import {user2SysDate} from '../util/datetime'
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardRowEdit from './ScorecardRowEdit.jsx'
 import ScorecardRowDisplay from './ScorecardRowDisplay.jsx'
-import DataContext from '../locks/LockDataProvider.jsx'
 import ScorecardListContext from './ScorecardListContext.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 import {enqueueSnackbar} from 'notistack'
 
 function Scorecard({owner}) {
-    const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(DataContext)
+    const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(ScorecardDataContext)
     const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
@@ -64,7 +63,7 @@ function Scorecard({owner}) {
             enqueueSnackbar('Error while deleting entry')
         }
     }, [removeEvidence])
-    
+
     const handleCancel = useCallback(() => {
         setEditRowId(null)
     }, [])
