@@ -21,15 +21,13 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import queryString from 'query-string'
 
-export default function ScorecardRow({owner, evid, allEntriesById, allProjectsById, expanded, onExpand}) {
+export default function ScorecardRow({owner, evid, onSave, onDelete, allEntriesById, allProjectsById, expanded, onExpand, }) {
 
     console.log('ScorecardRow', evid)
 
     const eDate = dayjs(evid.date)
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)
-    const [lockProjectIdErr, setLockProjectIdErr] = useState(null)
     const [evidenceName, setEvidenceName] = useState(evid.name)
-    const [evidenceNameErr, setEvidenceNameErr] = useState(null)
     const [evidenceUrl, setEvidenceUrl] = useState(evid.link)
     const [evidenceUrlErr, setEvidenceUrlErr] = useState(null)
     const [evidenceDate, setEvidenceDate] = useState(eDate)
@@ -69,26 +67,6 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
         }
     }, [expanded, entry, scrolled, evid.id])
 
-
-    const handleSave = useCallback(() => {
-        let error = false
-        if (!allEntriesById[lockProjectId] && !allProjectsById[lockProjectId]) {
-            setLockProjectIdErr('Must match to lock or project')
-            error = true
-        }
-        if (evidenceName.length === 0) {
-            setEvidenceNameErr('Evidence Name cannot be empty')
-            error = true
-        }
-        if (!evidenceUrl || !evidenceUrl.startsWith('http')) {
-            setEvidenceUrlErr('Must specify valid URL')
-            error = true
-        }
-        if (!error) {
-            //onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
-        }
-    }, [allEntriesById, allProjectsById, lockProjectId, evidenceName, evidenceUrl])
-
     let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
     entryTitle = evid.note ? entryTitle + ' *' : entryTitle
     const evidenceNotes = evid.name && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
@@ -98,23 +76,30 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+
+    const handleSave = useCallback( async () => {
+        onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
+        setUpdated(false)
+    }, [evid.id, evidenceDate, evidenceName, evidenceUrl, lockProjectId, modifier, onSave])
+
     const cancelEdit = useCallback(() => {
         if (updated) {
             setEvidenceUrl(evid.link)
             setUpdated(false)
+            setEvidenceName(evid.name)
         }
-    }, [evid.link, updated])
+    }, [evid.link, evid.name, updated])
 
     const handleDelete = useCallback(() => {
         console.log('handleDelete')
-    }, [])
+        onDelete(evid.id)
+    }, [evid.id, onDelete])
 
     const processURL = useCallback(event => {
         const {value} = event.target
         setEvidenceUrl(value)
         setUpdated(true)
     }, [])
-
 
     const evidenceUrlValid = isValidHttpUrl(evidenceUrl)
     const evidenceUrlError = !!evidenceUrl && !isValidHttpUrl(evidenceUrl)
@@ -301,7 +286,7 @@ export default function ScorecardRow({owner, evid, allEntriesById, allProjectsBy
                                 Cancel
                             </Button>
                             <Button style={{marginRight: 0, color: saveEntryColor}}
-                                    onClick={null}
+                                    onClick={handleSave}
                                     disabled={!updated}
                             >
                                 Save

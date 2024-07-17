@@ -19,6 +19,7 @@ import DataContext from '../locks/LockDataProvider.jsx'
 import ScorecardListContext from './ScorecardListContext.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
+import {enqueueSnackbar} from 'notistack'
 
 function Scorecard({owner}) {
     const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(DataContext)
@@ -36,25 +37,37 @@ function Scorecard({owner}) {
         setEditRowId(id)
     }, [])
 
-    const handleSave = useCallback((id, matchId, name, url, date, modifier) => {
-        setEditRowId(null)
-        updateEvidence(id, {
-            matchId: matchId,
-            name: name,
-            link: url,
-            date: user2SysDate(date),
-            modifier: modifier
-        })
+    const handleSave = useCallback( async (id, matchId, name, url, date, modifier) => {
+        try {
+            setEditRowId(null)
+            updateEvidence(id, {
+                matchId: matchId,
+                name: name,
+                link: url,
+                date: user2SysDate(date),
+                modifier: modifier
+            })
+            enqueueSnackbar('Scorecard updated')
+        } catch (ex) {
+            console.error('Error while updating scorecard', ex)
+            enqueueSnackbar('Error while updating scorecard')
+        }
     }, [updateEvidence])
 
+    const handleDelete = useCallback(async id => {
+        try {
+        setEditRowId(null)
+        removeEvidence(id)
+            enqueueSnackbar('Entry deleted')
+        } catch (ex) {
+            console.error('Error while deleting entry', ex)
+            enqueueSnackbar('Error while deleting entry')
+        }
+    }, [removeEvidence])
+    
     const handleCancel = useCallback(() => {
         setEditRowId(null)
     }, [])
-
-    const handleDelete = useCallback(id => {
-        setEditRowId(null)
-        removeEvidence(id)
-    }, [removeEvidence])
 
     const handleDeleteAll = useCallback(() => {
         const ids = scoredEvidence.map(evid => evid.id)
@@ -117,6 +130,8 @@ function Scorecard({owner}) {
                                   onEdit={handleEdit}
                                   expanded={ev.id === defExpanded}
                                   onExpand={setExpanded}
+                                  onSave={handleSave}
+                                  onDelete={handleDelete}
                                   allEntriesById={allEntriesById}
                                   allProjectsById={allProjectsById}/>
                 )}
