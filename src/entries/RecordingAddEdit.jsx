@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
 import {user2SysDate, sys2UserDate, now2UserDate} from '../util/datetime'
 
-function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDelete}) {
+function RecordingAddEdit({id, defName, defLink, defDate, onSave, onCancel, onDelete}) {
     const dateStr = defDate ? sys2UserDate(defDate) : id === 0 && now2UserDate
     const [lockName, setLockName] = useState(defName)
     const [lockNameErr, setLockNameErr] = useState(null)
@@ -89,4 +89,4 @@ function AddEditRecording({id, defName, defLink, defDate, onSave, onCancel, onDe
     )
 }
 
-export default AddEditRecording
+export default RecordingAddEdit

@@ -7,12 +7,20 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import DBContext from '../app/DBContext'
 import {user2SysDate} from '../util/datetime'
-import AddEditRecording from './AddEditRecording.jsx'
+import RecordingAddEdit from './RecordingAddEdit.jsx'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
+import AuthContext from '../app/AuthContext.jsx'
+import FormGroup from '@mui/material/FormGroup'
+import ScorecardEvidenceButton from '../scorecard/ScorecardEvidenceButton.jsx'
 
 function RecordingControls({lockId, makeModels}) {
+    const {isLoggedIn} = useContext(AuthContext)
     const {evidence, addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
     const [editRecId, setEditRecId] = useState(null)
     const recordings = evidence.filter(evid => evid.matchId === lockId)
+
+    console.log('recordings', recordings)
 
     const handleSave = useCallback((params, lockId, modifier) => {
         setEditRecId(null)
@@ -34,7 +42,7 @@ function RecordingControls({lockId, makeModels}) {
                 modifier: modifier
             })
         }
-    }, [addEvidence, updateEvidence]) 
+    }, [addEvidence, updateEvidence])
 
     const handleCancel = useCallback(() => {
         setEditRecId(null)
@@ -52,19 +60,32 @@ function RecordingControls({lockId, makeModels}) {
                     return (
                         <div key={rec.id}>
                             <Stack direction='row' alignItems='center'>
+                                <FormGroup>
+                                    <FormControlLabel
+                                        key={'scorecard'}
+                                        control={
+                                            <Checkbox
+                                                id={'scorecard'}
+                                                disabled={!isLoggedIn}
+                                                color='secondary'
+                                                checked={recordings.length > 0}
+                                                onChange={null}
+                                            />
+                                        }
+                                        label={'Scorecard'}
+                                    />
+                                </FormGroup>
                                 <IconButton edge='start' onClick={() => setEditRecId(rec.id)}>
-                                    <EditIcon/>
+                                    <EditIcon style={{width: 22, height: 22}}/>
                                 </IconButton>
-                                <Link href={rec.link} target='_blank' color='secondary'>
-                                    <Typography noWrap={true}>{rec.name}</Typography>
-                                </Link>
+                                <ScorecardEvidenceButton url={rec.link}/>
                             </Stack>
                         </div>
                     )
                 } else {
                     return (
                         <div key={rec.id}>
-                            <AddEditRecording
+                            <RecordingAddEdit
                                 id={rec.id}
                                 defName={rec.name}
                                 defLink={rec.link}
@@ -77,22 +98,33 @@ function RecordingControls({lockId, makeModels}) {
                     )
                 }
             }).concat([
-                editRecId === 0 ?
-                    <div key='0'>
-                        <AddEditRecording
+                editRecId === 0
+                    ? <div key='0'>
+                        <RecordingAddEdit
                             id={0}
                             defName={makeModels[0].make + ' ' + makeModels[0].model}
                             onSave={params => handleSave(params, lockId, '')}
                             onCancel={handleCancel}
                         />
                     </div>
-                : recordings.length === 0 &&
+                    : recordings.length === 0 &&
                     <div key='0'>
                         <Stack direction='row' alignItems='center' onClick={() => setEditRecId(0)}>
-                            <IconButton edge='start'>
-                                <AddLinkIcon/>
-                            </IconButton>
-                            <Typography>Add Recording</Typography>
+                            <FormGroup>
+                                <FormControlLabel
+                                    key={'scorecard'}
+                                    control={
+                                        <Checkbox
+                                            id={'scorecard'}
+                                            disabled={!isLoggedIn}
+                                            color='secondary'
+                                            checked={editRecId === 0}
+                                            onChange={null}
+                                        />
+                                    }
+                                    label={'Scorecard'}
+                                />
+                            </FormGroup>
                         </Stack>
                     </div>
             ])}

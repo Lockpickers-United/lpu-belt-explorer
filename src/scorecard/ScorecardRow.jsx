@@ -21,9 +21,10 @@ import queryString from 'query-string'
 import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Link from '@mui/material/Link'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, onExpand}) {
-    const {clearFilters, setFilters} = useContext(FilterContext)
+    const {setFilters} = useContext(FilterContext)
     const {scoredEvidence, getEntryFromId} = useContext(ScorecardDataContext)
 
     console.log('ScorecardRow', evid)
@@ -31,7 +32,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
     const eDate = dayjs(evid.date)
     const [lockProjectId, setLockProjectId] = useState(evid.matchId)
     const [evidenceName, setEvidenceName] = useState(evid.name)
-    const [evidenceUrl, setEvidenceUrl] = useState(evid.link)
+    const [evidenceUrl, setEvidenceUrl] = useState(evid.link + '')
     const [evidenceUrlErr, setEvidenceUrlErr] = useState(null)
     const [evidenceDate, setEvidenceDate] = useState(eDate)
     const [evidenceDateErr, setEvidenceDateErr] = useState(null)
@@ -41,12 +42,6 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
-
-    const handleChange = useCallback((_, isExpanded) => {
-        if (owner) {
-            onExpand && onExpand(isExpanded ? evid.id : false)
-        }
-    }, [evid.id, onExpand, owner])
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -83,14 +78,14 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
     const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [getEntryFromId, supersedingEntry.matchId]) : {}
     const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
     const supersedingLink = supersedingEntryId
-        ? <Link style={{color:'#99c2e5'}} onClick={() => {
+        ? <Link style={{color: '#99c2e5'}} onClick={() => {
             navigateToEntry(supersedingEntryId)
         }}>{supersedingLockName}</Link>
         : null
-    const exceptionNote = evid.exceptionType === 'nomatch'
+    let exceptionNote = evid.exceptionType === 'nomatch'
         ? 'Could not be matched to a lock or project'
         : evid.exceptionType === 'badlink'
-            ? 'Invalid URL'
+            ? 'You must provide a valid link.'
             : evid.exceptionType === 'duplicate'
                 ? 'Duplicate of '
                 : evid.exceptionType === 'upgraded'
@@ -121,6 +116,14 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
         }
     }, [evid.link, evid.name, updated])
 
+    const handleChange = useCallback((_, isExpanded) => {
+        if (owner) {
+            onExpand && onExpand(isExpanded ? evid.id : false)
+        }
+        cancelEdit()
+    }, [cancelEdit, evid.id, onExpand, owner])
+
+
     const handleDelete = useCallback(() => {
         console.log('handleDelete')
         onDelete(evid.id)
@@ -133,16 +136,22 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
     }, [])
 
     const evidenceUrlValid = isValidHttpUrl(evidenceUrl)
-    const evidenceUrlError = !!evidenceUrl && !isValidHttpUrl(evidenceUrl)
+    const evidenceUrlError = (!!evidenceUrl && !isValidHttpUrl(evidenceUrl)) || (updated && !evidenceUrl)
     const evidenceURLHelperText = evidenceUrlError ? 'Video URL is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
     const cancelColor = updated ? '#e15c07' : '#555'
-
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
+    const urlFieldColor = evidenceUrlError ? 'error' : 'secondary'
 
     const cursorStyle = !owner ? {cursor: 'default'} : {}
     const expandIcon = owner ? <ExpandMoreIcon/> : null
+
+    const {isMobile} = useWindowSize()
+    const flexType = !isMobile ? 'flex' : 'block'
+    const infoDivStyle = !isMobile ? {display: 'flex', margin: '0px 0px 0px 20px'} : {display: 'block', marginLeft:0, placeItems:'center'}
+    const nameDivWidth = !isMobile ? '58%' : '70%'
+
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
 
     return (
         <Accordion key={evid.id} expanded={expanded} onChange={handleChange} ref={ref}>
@@ -150,7 +159,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                 <BeltStripe value={entry ? entry.belt : ''}/>
                 <div style={{
                     margin: '12px 0px 0px 8px',
-                    width: '60%',
+                    width: nameDivWidth,
                     flexShrink: 0,
                     flexDirection: 'column'
                 }}>
@@ -168,30 +177,38 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                         }}>{evidenceNotes}</span>}
                 </div>
 
-                <div style={{margin: '8px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
-                    {entry &&
-                        <ViewLockButton entry={entry}/>
-                    }
-                </div>
+                <div style={{display: flexType, placeItems:'center', marginLeft:10}}>
 
-                <div style={{margin: '6px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
-                    <ScorecardEvidenceButton url={evid.link}/>
-                </div>
+                    <div style={{display: 'flex', width: 76}}>
+                        <div style={{margin: '2px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
+                            {entry &&
+                                <ViewLockButton entry={entry}/>
+                            }
+                        </div>
+                        <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
+                            <ScorecardEvidenceButton url={evid.link}/>
+                        </div>
+                    </div>
 
-                <div style={{margin: '14px 0px 0px 20px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
-                    {dayjs(evid.date).format('MM/DD/YY')}
-                </div>
+                    <div style={infoDivStyle}>
+                        <div
+                            style={{margin: '0px 0px 0px 0px'}}>
+                            {dayjs(evid.date).format('MM/DD/YY')}
+                        </div>
+                        <div
+                            style={{margin: '0px 0px 0px 20px'}}>
+                            <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
+                                style={{color: '#666'}}>{pointsText}</span></nobr>
+                        </div>
+                    </div>
 
-                <div style={{margin: '14px 0px 0px 35px', width: '10%', flexShrink: 0, flexDirection: 'column'}}>
-                    <span style={{fontWeight: 700}}>{evid.points}</span> <span
-                    style={{color: '#666'}}>{pointsText}</span>
                 </div>
-
 
             </AccordionSummary>
             {expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
+
                         {(exceptionNote || evid.modifier) &&
                             <div style={{
                                 margin: '0px 0px 20px 20px',
@@ -207,6 +224,8 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                             </div>
                         }
 
+
+
                         <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
                             <TextField
                                 id='evidence-url'
@@ -218,8 +237,12 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                                 fullWidth
                                 size='small'
                                 margin='dense'
-                                color='secondary'
+                                color={urlFieldColor}
                                 onChange={processURL}
+                                sx={{
+                                    '.MuiFormHelperText-root' :{
+                                        color: '#e12a2a',
+                                    }}}
                             />
                             <IconButton disabled={false}>
                                 <a href={evidenceUrl} target='_blank' rel='noreferrer'>
@@ -227,7 +250,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                             </IconButton>
                         </div>
 
-                        <div style={{display: 'flex', width: '100%', marginBottom: 20}}>
+                        <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
 
                             <DatePicker
                                 label='Pick date'
@@ -264,8 +287,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
 
                         </div>
 
-
-                        <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
+                        <div style={{display: 'flex', width: '90%', marginBottom: 20}}>
                             <TextField
                                 id='evidence-notes'
                                 label='Notes (optional)'
@@ -278,7 +300,6 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                                 onChange={e => {
                                     setEvidenceName(e.target.value)
                                     setUpdated(true)
-
                                 }}
                                 sx={{input: {color: '#999'}}}
                             />
@@ -319,12 +340,15 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                                 </Button>
                                 <Button style={{marginRight: 0, color: saveEntryColor}}
                                         onClick={handleSave}
-                                        disabled={!updated}
+                                        disabled={!updated || evidenceUrlError}
                                 >
                                     Save
                                 </Button>
                             </div>
                         </div>
+
+
+
                     </AccordionDetails>
                 </React.Fragment>
             }
