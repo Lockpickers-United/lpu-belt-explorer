@@ -64,7 +64,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
         }
     }, [expanded, entry, scrolled, evid.id])
 
-    let entryTitle = entry ? entryName(entry, 'short', {matchTo: evid.name}) : `[ ${evid.name} ]`
+    let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
     entryTitle = evid.note ? entryTitle + ' *' : entryTitle
 
     const evidenceNotes = evid.name && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
