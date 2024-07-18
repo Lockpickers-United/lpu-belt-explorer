@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, deleteField, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, deleteField, writeBatch, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -132,6 +132,13 @@ export function DBProvider({children}) {
         setEvidence(e => e.filter(evid => evid.id !== id))
     }, [])
 
+    const removeAllEvidence = useCallback(async () => {
+        const batch = writeBatch(db)
+        evidence.forEach(evid => batch.delete(doc(db, 'evidence', evid.id)))
+        await batch.commit()
+        setEvidence([])
+    }, [evidence])
+
     const getEvidence = useCallback(async userId => {
         const q = query(collection(db, 'evidence'), where('userId', '==', userId))
         const querySnapshot = await getDocs(q)
@@ -142,6 +149,8 @@ export function DBProvider({children}) {
         const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
         const querySnapshot = await getDocs(q)
         const docs = querySnapshot.docs
+        const batch = writeBatch(db)
+        let result = []
 
         for (let idx=0; idx < docs.length; idx++) {
             const rec = docs[idx].data()
@@ -157,9 +166,12 @@ export function DBProvider({children}) {
             if (rec.evidCreatedAt) {
                 newDoc.evidCreatedAt = Timestamp.fromDate(new Date(rec.evidCreatedAt))
             }
-            const docRef = await addDoc(collection(db, 'evidence'), newDoc)
-            setEvidence(e => e.concat([evidenceDB2State(docRef.id, newDoc)]))
+            const docRef = doc(collection(db, 'evidence'))
+            batch.set(docRef, newDoc)
+            result = result.concat([evidenceDB2State(docRef.id, newDoc)])
         }
+        await batch.commit()
+        setEvidence(result)
     }, [user])
 
     // Lock Collection Subscription
@@ -216,9 +228,10 @@ export function DBProvider({children}) {
         addEvidence,
         updateEvidence,
         removeEvidence,
+        removeAllEvidence,
         getEvidence,
         importUnclaimedEvidence
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence])
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence])
 
     return (
         <DBContext.Provider value={value}>

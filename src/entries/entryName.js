@@ -24,9 +24,6 @@ function entryName(entry, nameType = 'short', options = {}) {
             }
             const dist = levenshtein.get(searchStr.toLowerCase(), target.toLowerCase())
 
-            if (options.matchTo.startsWith('Picard')) {
-                console.log(`leven(${searchStr.toLowerCase()}, ${target.toLowerCase()}) = ${dist}`)
-            }
             if (group.min === undefined || dist < group.min) {
                 group.min = dist
                 group.winners = [{make, model}]

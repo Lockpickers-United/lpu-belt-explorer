@@ -22,7 +22,7 @@ import {enqueueSnackbar} from 'notistack'
 
 function Scorecard({owner}) {
     const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(ScorecardDataContext)
-    const {updateEvidence, removeEvidence, importUnclaimedEvidence} = useContext(DBContext)
+    const {updateEvidence, removeEvidence, removeAllEvidence, importUnclaimedEvidence} = useContext(DBContext)
     const [editRowId, setEditRowId] = useState(null)
     const [tabToImport, setTabToImport] = useState('')
     const {expanded, setExpanded} = useContext(ScorecardListContext)
@@ -69,9 +69,8 @@ function Scorecard({owner}) {
     }, [])
 
     const handleDeleteAll = useCallback(() => {
-        const ids = scoredEvidence.map(evid => evid.id)
-        ids.forEach(id => removeEvidence(id))
-    }, [scoredEvidence, removeEvidence])
+        removeAllEvidence()
+    }, [removeAllEvidence])
 
     const handleImport = useCallback(() => {
         importUnclaimedEvidence(tabToImport)
