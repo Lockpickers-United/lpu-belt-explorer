@@ -1,72 +1,25 @@
 import React, {useState, useContext, useCallback, useDeferredValue} from 'react'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
 import DBContext from '../app/DBContext.jsx'
-import {user2SysDate} from '../util/datetime'
 
 import ScorecardRow from './ScorecardRow.jsx'
-import ScorecardRowEdit from './ScorecardRowEdit.jsx'
-import ScorecardRowDisplay from './ScorecardRowDisplay.jsx'
 import ScorecardListContext from './ScorecardListContext.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
-import {enqueueSnackbar} from 'notistack'
 
 function Scorecard({owner}) {
-    const {visibleEntries, allEntriesById, allProjectsById = []} = useContext(ScorecardDataContext)
-    const {updateEvidence, removeEvidence, removeAllEvidence, importUnclaimedEvidence} = useContext(DBContext)
-    const [editRowId, setEditRowId] = useState(null)
+
+    const {visibleEntries = []} = useContext(ScorecardDataContext)
+    const {removeAllEvidence, importUnclaimedEvidence} = useContext(DBContext)
+
     const [tabToImport, setTabToImport] = useState('')
     const {expanded, setExpanded} = useContext(ScorecardListContext)
-    const {scoredEvidence, bbCount, danPoints} = useContext(ScorecardDataContext)
+    const {bbCount, danPoints} = useContext(ScorecardDataContext)
 
     const defExpanded = useDeferredValue(expanded)
 
     console.log('visibleEntries', visibleEntries)
-
-    const handleEdit = useCallback(id => {
-        setEditRowId(id)
-    }, [])
-
-    const handleSave = useCallback( async (id, matchId, name, url, date, modifier) => {
-        try {
-            setEditRowId(null)
-            updateEvidence(id, {
-                matchId: matchId,
-                name: name,
-                link: url,
-                date: user2SysDate(date),
-                modifier: modifier
-            })
-            enqueueSnackbar('Scorecard updated')
-        } catch (ex) {
-            console.error('Error while updating scorecard', ex)
-            enqueueSnackbar('Error while updating scorecard')
-        }
-    }, [updateEvidence])
-
-    const handleDelete = useCallback(async id => {
-        try {
-        setEditRowId(null)
-        removeEvidence(id)
-            enqueueSnackbar('Entry deleted')
-        } catch (ex) {
-            console.error('Error while deleting entry', ex)
-            enqueueSnackbar('Error while deleting entry')
-        }
-    }, [removeEvidence])
-
-    const handleCancel = useCallback(() => {
-        setEditRowId(null)
-    }, [])
 
     const handleDeleteAll = useCallback(() => {
         removeAllEvidence()
@@ -77,7 +30,6 @@ function Scorecard({owner}) {
         setTabToImport('')
     }, [tabToImport, importUnclaimedEvidence])
 
-    const table = false
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#000',
@@ -125,59 +77,11 @@ function Scorecard({owner}) {
                     <ScorecardRow key={ev.id}
                                   owner={owner}
                                   evid={ev}
-                                  onEdit={handleEdit}
                                   expanded={ev.id === defExpanded}
                                   onExpand={setExpanded}
-                                  onSave={handleSave}
-                                  onDelete={handleDelete}
-                                  allEntriesById={allEntriesById}
-                                  allProjectsById={allProjectsById}/>
+                    />
                 )}
             </div>
-
-            {table &&
-            <div style={{marginTop: 50, paddingBottom: 32}}>
-                <TableContainer component={Paper}>
-                    <Table aria-label='scorecard'>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell align='left'></TableCell>
-                                <TableCell align='left'></TableCell>
-                                <TableCell align='left'>
-                                    <Typography>Lock / Project</Typography>
-                                </TableCell>
-                                <TableCell align='left'>
-                                    <Typography>Evidence</Typography>
-                                </TableCell>
-                                <TableCell align='left'>
-                                    <Typography>Date</Typography>
-                                </TableCell>
-                                <TableCell align='left'>
-                                    <Typography>Modifier</Typography>
-                                </TableCell>
-                                <TableCell align='right'>
-                                    <Typography>BBs</Typography>
-                                </TableCell>
-                                <TableCell align='right'>
-                                    <Typography>Points</Typography>
-                                </TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {visibleEntries.map(ev => {
-                                if (ev.id === editRowId) {
-                                    return <ScorecardRowEdit key={ev.id} evid={ev} onSave={handleSave}
-                                                             onCancel={handleCancel} onDelete={handleDelete}/>
-                                } else {
-                                    return <ScorecardRowDisplay key={ev.id} owner={owner} evid={ev}
-                                                                onEdit={handleEdit}/>
-                                }
-                            })}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </div>
-            }
         </div>
     )
 }

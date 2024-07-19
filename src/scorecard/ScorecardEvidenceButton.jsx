@@ -5,8 +5,9 @@ import DiscordIcon from '../resources/DiscordIcon.jsx'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
+import WarningIcon from '@mui/icons-material/Warning'
 
-export default function ScorecardEvidenceButton({url}) {
+export default function ScorecardEvidenceButton({url, exceptionType, handleChange}) {
 
     const handleClick = useCallback(event => {
         event.preventDefault()
@@ -26,11 +27,22 @@ export default function ScorecardEvidenceButton({url}) {
     }
 
     return (
-        <Tooltip title='View Documentation' arrow disableFocusListener>
-            <IconButton style={{width: 40, height: 40}} onClick={handleClick}>
-                {icon}
-            </IconButton>
-        </Tooltip>
+        <React.Fragment>
+            {exceptionType !== 'badlink' &&
+                <Tooltip title='View Documentation' arrow disableFocusListener>
+                    <IconButton style={{width: 40, height: 40}} onClick={handleClick}>
+                        {icon}
+                    </IconButton>
+                </Tooltip>
+            }
+            {exceptionType === 'badlink' &&
+                <Tooltip title='Documentation link is not valid' arrow disableFocusListener>
+                    <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
+                        <WarningIcon style={{width: 22, height: 22, color:'#ef3939'}}/>
+                    </IconButton>
+                </Tooltip>
+            }
+        </React.Fragment>
     )
 }
 

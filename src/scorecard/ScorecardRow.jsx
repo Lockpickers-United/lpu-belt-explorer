@@ -6,38 +6,24 @@ import BeltStripe from '../entries/BeltStripe.jsx'
 import FieldValue from '../entries/FieldValue.jsx'
 
 import dayjs from 'dayjs'
-import {DatePicker} from '@mui/x-date-pickers/DatePicker'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ScorecardEvidenceButton from './ScorecardEvidenceButton.jsx'
 import entryName from '../entries/entryName'
 import ViewLockButton from './ViewLockButton.jsx'
-import TextField from '@mui/material/TextField'
-import IconButton from '@mui/material/IconButton'
-import LaunchIcon from '@mui/icons-material/Launch'
-import MenuItem from '@mui/material/MenuItem'
-import Button from '@mui/material/Button'
-import Menu from '@mui/material/Menu'
 import queryString from 'query-string'
 import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Link from '@mui/material/Link'
+import EvidenceForm from './EvidenceForm.jsx'
+
 import useWindowSize from '../util/useWindowSize.jsx'
 
-export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, onExpand}) {
+export default function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
     const {scoredEvidence, getEntryFromId} = useContext(ScorecardDataContext)
 
     console.log('ScorecardRow', evid)
 
-    const eDate = dayjs(evid.date)
-    const [lockProjectId, setLockProjectId] = useState(evid.matchId)
-    const [evidenceName, setEvidenceName] = useState(evid.name)
-    const [evidenceUrl, setEvidenceUrl] = useState(evid.link + '')
-    const [evidenceUrlErr, setEvidenceUrlErr] = useState(null)
-    const [evidenceDate, setEvidenceDate] = useState(eDate)
-    const [evidenceDateErr, setEvidenceDateErr] = useState(null)
-    const [modifier, setModifier] = useState(evid.modifier)
-    const [updated, setUpdated] = useState(false)
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
 
     const [scrolled, setScrolled] = useState(false)
@@ -65,9 +51,10 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
     }, [expanded, entry, scrolled, evid.id])
 
     let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
-    entryTitle = evid.note ? entryTitle + ' *' : entryTitle
+    entryTitle = evid.exceptionType ? entryTitle + ' *' : entryTitle
 
-    const evidenceNotes = evid.name && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
+    const evidenceNotes = evid.exceptionType && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
+    const rowOpacity = ['nomatch','duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
 
     const supersedingEntryId = evid.samelinedId
         ? evid.samelinedId
@@ -97,24 +84,11 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
     }, [setFilters])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
-
-    const [anchorEl, setAnchorEl] = useState(null)
-    const open = Boolean(anchorEl)
-    const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
-    const handleClose = useCallback(() => setAnchorEl(null), [])
-
-    const handleSave = useCallback(async () => {
-        onSave(evid.id, lockProjectId, evidenceName, evidenceUrl, evidenceDate, modifier)
-        setUpdated(false)
-    }, [evid.id, evidenceDate, evidenceName, evidenceUrl, lockProjectId, modifier, onSave])
+    const dateText = evid.date ? dayjs(evid.date).format('MM/DD/YY') : '(no date)'
 
     const cancelEdit = useCallback(() => {
-        if (updated) {
-            setEvidenceUrl(evid.link)
-            setUpdated(false)
-            setEvidenceName(evid.name)
-        }
-    }, [evid.link, evid.name, updated])
+        console.log('deal with me??')
+    }, [])
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
@@ -123,32 +97,16 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
         cancelEdit()
     }, [cancelEdit, evid.id, onExpand, owner])
 
-
-    const handleDelete = useCallback(() => {
-        console.log('handleDelete')
-        onDelete(evid.id)
-    }, [evid.id, onDelete])
-
-    const processURL = useCallback(event => {
-        const {value} = event.target
-        setEvidenceUrl(value)
-        setUpdated(true)
-    }, [])
-
-    const evidenceUrlValid = isValidHttpUrl(evidenceUrl)
-    const evidenceUrlError = (!!evidenceUrl && !isValidHttpUrl(evidenceUrl)) || (updated && !evidenceUrl)
-    const evidenceURLHelperText = evidenceUrlError ? 'Video URL is not valid' : ''
-    const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
-    const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
-    const cancelColor = updated ? '#e15c07' : '#555'
-    const urlFieldColor = evidenceUrlError ? 'error' : 'secondary'
-
     const cursorStyle = !owner ? {cursor: 'default'} : {}
     const expandIcon = owner ? <ExpandMoreIcon/> : null
 
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
-    const infoDivStyle = !isMobile ? {display: 'flex', margin: '0px 0px 0px 20px'} : {display: 'block', marginLeft:0, placeItems:'center'}
+    const infoDivStyle = !isMobile ? {display: 'flex', margin: '0px 0px 0px 20px'} : {
+        display: 'block',
+        marginLeft: 0,
+        placeItems: 'center'
+    }
     const nameDivWidth = !isMobile ? '58%' : '70%'
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
@@ -161,7 +119,8 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                     margin: '12px 0px 0px 8px',
                     width: nameDivWidth,
                     flexShrink: 0,
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    opacity:rowOpacity
                 }}>
                     <FieldValue
                         value={entryTitle}
@@ -177,7 +136,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                         }}>{evidenceNotes}</span>}
                 </div>
 
-                <div style={{display: flexType, placeItems:'center', marginLeft:10}}>
+                <div style={{display: flexType, placeItems: 'center', marginLeft: 10, opacity:rowOpacity}}>
 
                     <div style={{display: 'flex', width: 76}}>
                         <div style={{margin: '2px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
@@ -186,14 +145,14 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                             }
                         </div>
                         <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
-                            <ScorecardEvidenceButton url={evid.link}/>
+                            <ScorecardEvidenceButton url={evid.link} handleChange={handleChange} exceptionType={evid.exceptionType}/>
                         </div>
                     </div>
 
                     <div style={infoDivStyle}>
                         <div
                             style={{margin: '0px 0px 0px 0px'}}>
-                            {dayjs(evid.date).format('MM/DD/YY')}
+                            {dateText}
                         </div>
                         <div
                             style={{margin: '0px 0px 0px 20px'}}>
@@ -224,130 +183,7 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
                             </div>
                         }
 
-
-
-                        <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
-                            <TextField
-                                id='evidence-url'
-                                error={!!evidenceUrlErr}
-                                helperText={evidenceURLHelperText}
-                                label='Documentation Link'
-                                value={evidenceUrl}
-                                placeholder='https://youtu.be/'
-                                fullWidth
-                                size='small'
-                                margin='dense'
-                                color={urlFieldColor}
-                                onChange={processURL}
-                                sx={{
-                                    '.MuiFormHelperText-root' :{
-                                        color: '#e12a2a',
-                                    }}}
-                            />
-                            <IconButton disabled={false}>
-                                <a href={evidenceUrl} target='_blank' rel='noreferrer'>
-                                    <LaunchIcon style={{fontSize: 'large', color: evidenceLaunchColor}}/></a>
-                            </IconButton>
-                        </div>
-
-                        <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
-
-                            <DatePicker
-                                label='Pick date'
-                                value={evidenceDate}
-                                onChange={(newValue) => {
-                                    setEvidenceDateErr(null)
-                                    setEvidenceDate(newValue)
-                                    setUpdated(true)
-                                }}
-                                sx={{width: 250}}
-                                disableFuture
-                            />
-
-                            <TextField
-                                select
-                                style={{marginLeft: 30, width: 250}}
-                                id='modifier'
-                                label='Modifier'
-                                value={modifier ?? ''}
-                                color='secondary'
-                                onChange={e => {
-                                    setModifier(e.target.value)
-                                    setUpdated(true)
-                                }}
-                            >
-                                <MenuItem value=''>(None)</MenuItem>
-                                <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
-                                <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
-                                <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
-                                <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
-                                <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
-                                    (Notable)</MenuItem>
-                            </TextField>
-
-                        </div>
-
-                        <div style={{display: 'flex', width: '90%', marginBottom: 20}}>
-                            <TextField
-                                id='evidence-notes'
-                                label='Notes (optional)'
-                                value={evidenceName}
-                                placeholder='https://youtu.be/'
-                                fullWidth
-                                size='small'
-                                margin='dense'
-                                color='secondary'
-                                onChange={e => {
-                                    setEvidenceName(e.target.value)
-                                    setUpdated(true)
-                                }}
-                                sx={{input: {color: '#999'}}}
-                            />
-                        </div>
-
-                        <div style={{display: 'flex'}}>
-                            <div style={{marginLeft: 0}}>
-                                <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'>
-                                    Delete
-                                </Button>
-                                <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                    <div style={{padding: 20, textAlign: 'center'}}>
-                                        You cannot undo delete.<br/>
-                                        Are you sure?
-                                    </div>
-                                    <div style={{textAlign: 'center'}}>
-                                        <Button style={{marginBottom: 10, color: '#000'}}
-                                                variant='contained'
-                                                onClick={handleDelete}
-                                                edge='start'
-                                                color='error'
-                                        >
-                                            Delete
-                                        </Button>
-                                    </div>
-                                </Menu>
-                            </div>
-                            <div style={{
-                                width: '100%',
-                                textAlign: 'right',
-                                padding: '0px 12px 8px 0px'
-                            }}>
-                                <Button style={{marginRight: 10, color: cancelColor}}
-                                        onClick={cancelEdit}
-                                        disabled={!updated}
-                                >
-                                    Cancel
-                                </Button>
-                                <Button style={{marginRight: 0, color: saveEntryColor}}
-                                        onClick={handleSave}
-                                        disabled={!updated || evidenceUrlError}
-                                >
-                                    Save
-                                </Button>
-                            </div>
-                        </div>
-
-
+                        <EvidenceForm evid={evid}/>
 
                     </AccordionDetails>
                 </React.Fragment>
@@ -357,12 +193,3 @@ export default function ScorecardRow({owner, evid, onSave, onDelete, expanded, o
 
 }
 
-function isValidHttpUrl(string) {
-    let url
-    try {
-        url = new URL(string)
-    } catch (_) {
-        return false
-    }
-    return url.protocol === 'http:' || url.protocol === 'https:'
-}
