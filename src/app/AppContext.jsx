@@ -29,7 +29,8 @@ const adminUids = [
     'GGplAdctTfVDLVvYsfIADJmfp8f2',
     'WMSvvuutyShfvBBYB3PmDe4fmeS2',
     'mZyfQIARjCP1uJJJc7ioMAALV9v2',
-    'XoUDXU5McjTuVnPA1xfmzytcKuy2'
+    'XoUDXU5McjTuVnPA1xfmzytcKuy2',
+    'XX8BzLAvqmPeBTiqcdPZzojsTPF2'
 ]
 
 export default AppContext
