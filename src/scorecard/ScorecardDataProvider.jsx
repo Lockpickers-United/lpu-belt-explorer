@@ -1,29 +1,21 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DataContext from '../context/DataContext'
+import ScorecardDataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import dayjs from 'dayjs'
 import {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
-import ScoringContext from '../context/ScoringContext.jsx'
 
-export function ScorecardDataProvider({children}) {
+export function ScorecardDataProvider({children, cardEvidence, cardBBCount, cardDanPoints}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
-    const {scoredEvidence} = useContext(ScoringContext)
 
     const getLockEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [])
 
-    const [bbCount, danPoints] = scoredEvidence.reduce((group, ev) => {
-        group[0] = group[0] + ev.bbCount
-        group[1] = group[1] + ev.points
-        return group
-    }, [0, 0])
-
-    const allEvidenceEntries = scoredEvidence.map(evidenceEntry =>
+    const allEvidenceEntries = cardEvidence.map(evidenceEntry =>
         {
             const entry = getLockEntryFromId(evidenceEntry.matchId)
             return {...evidenceEntry, ...entry, id: evidenceEntry.id}
@@ -114,20 +106,20 @@ export function ScorecardDataProvider({children}) {
 
     const value = useMemo(() => ({
         allEntries,
-        scoredEvidence,
-        bbCount,
-        danPoints,
+        cardEvidence,
+        cardBBCount,
+        cardDanPoints,
         visibleEntries,
         getEntryFromId,
-    }), [getEntryFromId, scoredEvidence, bbCount, danPoints, visibleEntries])
+    }), [getEntryFromId, cardEvidence, cardBBCount, cardDanPoints, visibleEntries])
 
     return (
-        <DataContext.Provider value={value}>
+        <ScorecardDataContext.Provider value={value}>
             {children}
-        </DataContext.Provider>
+        </ScorecardDataContext.Provider>
     )
 }
 
 const fuzzySortKeys = ['fuzzy']
 
-export default DataContext
+export default ScorecardDataContext

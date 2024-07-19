@@ -10,25 +10,21 @@ import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 
 function Scorecard({owner, profile}) {
-    const {visibleEntries = []} = useContext(ScorecardDataContext)
-    const {evidence, removeAllEvidence, importUnclaimedEvidence, createEvidenceForEntries} = useContext(DBContext)
+    const {visibleEntries = [], cardEvidence, cardBBCount, cardDanPoints} = useContext(ScorecardDataContext)
+    const {removeAllEvidence, importUnclaimedEvidence, createEvidenceForEntries} = useContext(DBContext)
 
     const [tabToImport, setTabToImport] = useState('')
     const {expanded, setExpanded} = useContext(ScorecardListContext)
-    const {bbCount, danPoints} = useContext(ScorecardDataContext)
-
     const defExpanded = useDeferredValue(expanded)
 
     const recordedIdsToMerge = useMemo(() => {
         if (profile && profile.recorded) {
-            const evIds = evidence.map(ev => ev.matchId)
+            const evIds = cardEvidence.map(ev => ev.matchId)
             return profile.recorded.filter(id => !evIds.includes(id))
         } else {
             return []
         }
-    }, [profile, evidence])
-
-    console.log('visibleEntries', visibleEntries)
+    }, [profile, cardEvidence])
 
     const handleDeleteAll = useCallback(() => {
         removeAllEvidence()
@@ -87,9 +83,9 @@ function Scorecard({owner, profile}) {
                     padding: '10px 12px 8px 0px'
                 }}>
                     <ScoringExceptions/>
-                    <span style={{fontWeight: 700}}>{bbCount} Black Belt Lock{bbCount !== 1 &&
+                    <span style={{fontWeight: 700}}>{cardBBCount} Black Belt Lock{cardBBCount !== 1 &&
                         <span>s</span>}, </span>
-                    <span style={{fontWeight: 700}}>{danPoints} Dan Point{danPoints !== 1 && <span>s</span>}</span>
+                    <span style={{fontWeight: 700}}>{cardDanPoints} Dan Point{cardDanPoints !== 1 && <span>s</span>}</span>
                 </div>
 
             </div>

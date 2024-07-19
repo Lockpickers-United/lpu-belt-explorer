@@ -10,17 +10,17 @@ import Stack from '@mui/material/Stack'
 import ScorecardDataContext from './ScorecardDataProvider'
 
 function ScoringExceptions() {
-    const {scoredEvidence} = useContext(ScorecardDataContext)
+    const {cardEvidence} = useContext(ScorecardDataContext)
 
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const unmatchedEvid = scoredEvidence.filter(ev => 'nomatch' === ev.exceptionType)
-    const badlinkEvid = scoredEvidence.filter(ev => 'badlink' === ev.exceptionType)
-    const samelinedEvid = scoredEvidence.filter(ev => 'duplicate' === ev.exceptionType)
-    const supersededEvid = scoredEvidence.filter(ev => 'upgraded' === ev.exceptionType)
+    const unmatchedEvid = cardEvidence.filter(ev => 'nomatch' === ev.exceptionType)
+    const badlinkEvid = cardEvidence.filter(ev => 'badlink' === ev.exceptionType)
+    const samelinedEvid = cardEvidence.filter(ev => 'duplicate' === ev.exceptionType)
+    const supersededEvid = cardEvidence.filter(ev => 'upgraded' === ev.exceptionType)
     const totalNum = unmatchedEvid.length + badlinkEvid.length + samelinedEvid.length + supersededEvid.length
 
     if (totalNum > 0) {
@@ -102,7 +102,7 @@ function ScoringExceptions() {
                                 >
                                     <Stack direction='column'>
                                         <Typography>{ev.name}</Typography>
-                                        <Typography>duplicate of {scoredEvidence.find(e => e.id === ev.samelinedId).name}</Typography>
+                                        <Typography>duplicate of {cardEvidence.find(e => e.id === ev.samelinedId).name}</Typography>
                                     </Stack>
                                 </ListItem>
                             )}    
@@ -126,7 +126,7 @@ function ScoringExceptions() {
                                 >
                                     <Stack direction='column'>
                                         <Typography>{ev.name}</Typography>
-                                        <Typography>upgraded by {scoredEvidence.find(e => e.id === ev.supersededId).name}</Typography>
+                                        <Typography>upgraded by {cardEvidence.find(e => e.id === ev.supersededId).name}</Typography>
                                     </Stack>
                                 </ListItem>
                             )}    

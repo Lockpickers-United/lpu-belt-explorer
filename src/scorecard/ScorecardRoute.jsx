@@ -11,6 +11,8 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
+import ScoringContext from '../context/ScoringContext.jsx'
+import calculateScoreForUser from '../scorecard/scoring'
 
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
@@ -25,7 +27,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 function ScorecardRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, evidence, getEvidence} = useContext(DBContext)
+    const {getProfile, getEvidence} = useContext(DBContext)
+    const {scoredEvidence, bbCount, danPoints} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(async () => {
@@ -34,18 +37,23 @@ function ScorecardRoute() {
             const name = profile && profile.displayName ? profile.displayName : 'A Picker'
             document.title = `LPU Belt Explorer - ${name}'s Scorecard`
 
-            const evidenceEntries = user && user.uid === userId ? evidence : await getEvidence(userId)
-            return {profile, evidenceEntries}
+            if (user?.uid !== userId) {
+                const evidence = await getEvidence(userId)
+                return {profile, ...calculateScoreForUser(evidence)}
+            } else {
+                return {profile, scoredEvidence, bbCount, danPoints}
+            }
         } catch (ex) {
             console.error('Error loading profile and evidence.', ex)
             return null
         }
-    }, [getProfile, user, userId, evidence, getEvidence])
+    }, [user, userId, getProfile, getEvidence, scoredEvidence, bbCount, danPoints])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
-    const evidenceEntries = data ? data.evidenceEntries : []
-    console.log('evidenceEntries', evidenceEntries)
+    const cardEvidence = data ? data.scoredEvidence : []
+    const cardBBCount = data ? data.bbCount : 0
+    const cardDanPoints = data ? data.danPoints : 0
 
     const nav = (
         <React.Fragment>
@@ -64,7 +72,7 @@ function ScorecardRoute() {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider>
+            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}>
                 <ScorecardListProvider>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
 

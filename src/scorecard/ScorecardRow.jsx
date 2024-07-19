@@ -20,7 +20,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
-    const {scoredEvidence, getEntryFromId} = useContext(ScorecardDataContext)
+    const {cardEvidence, getEntryFromId} = useContext(ScorecardDataContext)
 
     //console.log('ScorecardRow', evid)
 
@@ -61,7 +61,7 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
         : evid.supersededId
             ? evid.supersededId
             : null
-    const supersedingEntry = supersedingEntryId ? scoredEvidence.find(e => e.id === supersedingEntryId) : {}
+    const supersedingEntry = supersedingEntryId ? cardEvidence.find(e => e.id === supersedingEntryId) : {}
     const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [getEntryFromId, supersedingEntry.matchId]) : {}
     const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
     const supersedingLink = supersedingEntryId
