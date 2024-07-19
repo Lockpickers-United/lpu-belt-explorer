@@ -36,11 +36,8 @@ function ScorecardRoute() {
             const name = profile && profile.displayName ? profile.displayName : 'A Picker'
             document.title = `LPU Belt Explorer - ${name}'s Scorecard`
 
-            if (user && user.uid === userId) {
-                return evidence
-            } else {
-                return await getEvidence(userId)
-            }
+            const evidenceEntries = user && user.uid === userId ? evidence : await getEvidence(userId)
+            return {profile, evidenceEntries}
         } catch (ex) {
             console.error('Error loading profile and evidence.', ex)
             return null
@@ -48,7 +45,9 @@ function ScorecardRoute() {
     }, [getProfile, user, userId, evidence, getEvidence])
     const {data = {}, loading, error} = useData({loadFn})
 
-    console.log('evidenceEntries', data)
+    const profile = data ? data.profile : {}
+    const evidenceEntries = data ? data.evidenceEntries : []
+    console.log('evidenceEntries', evidenceEntries)
 
     const nav = (
         <React.Fragment>
@@ -76,8 +75,8 @@ function ScorecardRoute() {
 
                             {loading && <LoadingDisplay/>}
 
-                            {!loading && data && !error && <Scorecard owner={user && user.uid === userId}/>}
-                            {!loading && (!data || error) && <ProfileNotFound/>}
+                        {!loading && data && !error && <Scorecard owner={user && user.uid === userId} profile={profile}/>}
+                        {!loading && (!data || error) && <ProfileNotFound/>}
 
                             <Footer/>
                         </LocalizationProvider>

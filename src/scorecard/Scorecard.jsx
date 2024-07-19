@@ -1,6 +1,7 @@
-import React, {useState, useContext, useCallback, useDeferredValue} from 'react'
+import React, {useState, useMemo, useContext, useCallback, useDeferredValue} from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import Badge from '@mui/material/Badge'
 import DBContext from '../app/DBContext.jsx'
 
 import ScorecardRow from './ScorecardRow.jsx'
@@ -8,16 +9,24 @@ import ScorecardListContext from './ScorecardListContext.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 
-function Scorecard({owner}) {
-
+function Scorecard({owner, profile}) {
     const {visibleEntries = []} = useContext(ScorecardDataContext)
-    const {removeAllEvidence, importUnclaimedEvidence} = useContext(DBContext)
+    const {evidence, removeAllEvidence, importUnclaimedEvidence, createEvidenceForEntries} = useContext(DBContext)
 
     const [tabToImport, setTabToImport] = useState('')
     const {expanded, setExpanded} = useContext(ScorecardListContext)
     const {bbCount, danPoints} = useContext(ScorecardDataContext)
 
     const defExpanded = useDeferredValue(expanded)
+
+    const recordedIdsToMerge = useMemo(() => {
+        if (profile && profile.recorded) {
+            const evIds = evidence.map(ev => ev.matchId)
+            return profile.recorded.filter(id => !evIds.includes(id))
+        } else {
+            return []
+        }
+    }, [profile, evidence])
 
     console.log('visibleEntries', visibleEntries)
 
@@ -29,6 +38,10 @@ function Scorecard({owner}) {
         importUnclaimedEvidence(tabToImport)
         setTabToImport('')
     }, [tabToImport, importUnclaimedEvidence])
+
+    const handleMergeRecorded = useCallback(() => {
+        createEvidenceForEntries(recordedIdsToMerge)
+    }, [createEvidenceForEntries, recordedIdsToMerge])
 
     return (
         <div style={{
@@ -60,7 +73,16 @@ function Scorecard({owner}) {
                     }
                 </div>
                 <div style={{
-                    width: '100%',
+                    width: '20%',
+                }}>
+                    {owner &&
+                        <Badge badgeContent={recordedIdsToMerge.length}>
+                            <Button color='secondary' size='large' onClick={handleMergeRecorded}>MERGE&nbsp;RECORDED</Button>
+                        </Badge>
+                    }
+                </div>
+                <div style={{
+                    width: '80%',
                     textAlign: 'right',
                     padding: '10px 12px 8px 0px'
                 }}>
