@@ -6,6 +6,8 @@ import {AppProvider} from './AppContext'
 import AppRoutes from './AppRoutes'
 import {AuthProvider} from './AuthContext'
 import {DBProvider} from './DBContext'
+import {ScoringProvider} from '../context/ScoringContext.jsx'
+
 
 const darkTheme = createTheme({
     palette: {
@@ -36,7 +38,9 @@ function App() {
                 <AuthProvider>
                     <DBProvider>
                         <AppProvider>
-                            <AppRoutes/>
+                            <ScoringProvider>
+                                <AppRoutes/>
+                            </ScoringProvider>
                         </AppProvider>
                     </DBProvider>
                 </AuthProvider>

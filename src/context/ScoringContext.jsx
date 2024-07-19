@@ -15,27 +15,18 @@ const ScoringContext = React.createContext({})
 
 export function ScoringProvider({children}) {
     const {user} = useContext(AuthContext)
-    const {getProfile, evidence, getEvidence} = useContext(DBContext)
+    const {evidence, getEvidence} = useContext(DBContext)
 
     console.log('user', user)
-    const {userId} = useParams()
 
     const loadFn = useCallback(async () => {
         try {
-            const profile = await getProfile(userId)
-            const name = profile && profile.displayName ? profile.displayName : 'A Picker'
-            document.title = `LPU Belt Explorer - ${name}'s Scorecard`
-
-            if (user && user.uid === userId) {
-                return evidence
-            } else {
-                return await getEvidence(userId)
-            }
+            return await getEvidence(user?.uid)
         } catch (ex) {
             console.error('Error loading profile and evidence.', ex)
             return null
         }
-    }, [getProfile, user, userId, evidence, getEvidence])
+    }, [user, getEvidence])
 
     const {data = {}, loading, error} = useData({loadFn})
 

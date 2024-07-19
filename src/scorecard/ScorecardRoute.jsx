@@ -11,7 +11,6 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
-import {ScoringProvider} from '../context/ScoringContext.jsx'
 
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
@@ -27,7 +26,6 @@ function ScorecardRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, evidence, getEvidence} = useContext(DBContext)
-    const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(async () => {
@@ -65,7 +63,6 @@ function ScorecardRoute() {
     }
 
     return (
-        <ScoringProvider>
             <FilterProvider filterFields={scorecardFilterFields}>
                 <ScorecardDataProvider>
                     <ScorecardListProvider>
@@ -84,7 +81,6 @@ function ScorecardRoute() {
                     </ScorecardListProvider>
                 </ScorecardDataProvider>
             </FilterProvider>
-        </ScoringProvider>
     )
 }
 
