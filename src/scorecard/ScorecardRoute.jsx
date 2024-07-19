@@ -63,24 +63,26 @@ function ScorecardRoute() {
     }
 
     return (
-            <FilterProvider filterFields={scorecardFilterFields}>
-                <ScorecardDataProvider>
-                    <ScorecardListProvider>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <FilterProvider filterFields={scorecardFilterFields}>
+            <ScorecardDataProvider>
+                <ScorecardListProvider>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
 
-                            <Nav title={title} extras={nav}/>
+                        <Nav title={title} extras={nav}/>
 
-                            {loading && <LoadingDisplay/>}
+                        {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error && <Scorecard owner={user && user.uid === userId} profile={profile}/>}
+                        {!loading && data && !error &&
+                            <Scorecard owner={user && user.uid === userId} profile={profile}/>}
+
                         {!loading && (!data || error) && <ProfileNotFound/>}
 
-                            <Footer/>
-                        </LocalizationProvider>
-                        <Tracker feature='scorecard'/>
-                    </ScorecardListProvider>
-                </ScorecardDataProvider>
-            </FilterProvider>
+                        <Footer/>
+                    </LocalizationProvider>
+                    <Tracker feature='scorecard'/>
+                </ScorecardListProvider>
+            </ScorecardDataProvider>
+        </FilterProvider>
     )
 }
 

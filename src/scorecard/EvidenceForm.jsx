@@ -12,38 +12,52 @@ import DBContext from '../app/DBContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 
-export default function EvidenceForm({evid}) {
-    const {updateEvidence, removeEvidence} = useContext(DBContext)
+export default function EvidenceForm({evid, lockId}) {
+    const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceName, setEvidenceName] = useState(evid?.name ? evid?.name : '')
     const [evidenceUrl, setEvidenceUrl] = useState(evid?.link ? evid?.link + '' : '')
     const [evidenceDate, setEvidenceDate] = useState(evid?.date ? dayjs(evid.date) : dayjs())
-    const [modifier, setModifier] = useState(evid?.modifier)
+    const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
     const [updated, setUpdated] = useState(false)
 
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
-    const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
+    const handleOpen = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
+        setAnchorEl(event.currentTarget)
+    }, [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
     const handleSave = useCallback(async () => {
         try {
-            updateEvidence(evid.id, {
-                matchId: evid.matchId,
-                name: evidenceName,
-                link: evidenceUrl,
-                date: evidenceDate,
-                modifier: modifier
-            })
+            if (evid?.id) {
+                updateEvidence(evid.id, {
+                    matchId: evid.matchId,
+                    name: evidenceName,
+                    link: evidenceUrl,
+                    date: evidenceDate,
+                    modifier: modifier
+                })
+            } else {
+                addEvidence({
+                    matchId: lockId,
+                    name: evidenceName,
+                    link: evidenceUrl,
+                    date: evidenceDate,
+                    modifier: modifier
+                })
+            }
             enqueueSnackbar('Scorecard updated')
             setUpdated(false)
         } catch (ex) {
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [evid?.id, evid?.matchId, evidenceDate, evidenceName, evidenceUrl, modifier, updateEvidence])
+    }, [addEvidence, evid?.id, evid?.matchId, evidenceDate, evidenceName, evidenceUrl, lockId, modifier, updateEvidence])
 
-    const handleDelete = useCallback(async () => {
+    const handleDelete = useCallback(async (event) => {
         try {
             removeEvidence(evid.id)
             enqueueSnackbar('Entry deleted')
@@ -51,6 +65,7 @@ export default function EvidenceForm({evid}) {
             console.error('Error while deleting entry', ex)
             enqueueSnackbar('Error while deleting entry')
         }
+        setAnchorEl(null)
     }, [evid?.id, removeEvidence])
 
     const cancelEdit = useCallback(() => {

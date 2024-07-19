@@ -19,25 +19,30 @@ import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import ScoringContext from '../context/ScoringContext.jsx'
 
 function RecordingControls({lockId, makeModels}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {evidence, addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
     const [editRecId, setEditRecId] = useState(null)
-    const recordings = evidence.filter(evid => evid.matchId === lockId)
+    const {scoredEvidence} = useContext(ScoringContext)
+
+    const recordings = scoredEvidence
+        .filter(evid => evid.matchId === lockId)
+        .sort((a, b) => {
+            return b.points - a.points
+        })
 
     console.log('recordings', recordings)
 
     const [overlayIsOpen, setOverlayIsOpen] = useState(false)
     const handleOverlayOpen = useCallback((rec) => {
         setOverlayIsOpen(true)
-        setEditRecId(rec.id)
+        setEditRecId(rec ? rec.id : null)
     }, [])
     const handleOverlayClose = useCallback(() => {
         setOverlayIsOpen(false)
     }, [])
-
-
 
     const handleSave = useCallback((params, lockId, modifier) => {
         setEditRecId(null)
@@ -72,10 +77,11 @@ function RecordingControls({lockId, makeModels}) {
 
     return (
         <React.Fragment> {
-            recordings.map(rec => {
+            recordings.map((rec, index) => {
                     return (
                         <div key={rec.id}>
                             <Stack direction='row' alignItems='center'>
+                                {index===0 &&
                                 <FormGroup>
                                     <FormControlLabel
                                         key={'scorecard'}
@@ -91,6 +97,10 @@ function RecordingControls({lockId, makeModels}) {
                                         label={'Scorecard'}
                                     />
                                 </FormGroup>
+                                }
+                                {index > 0 &&
+                                <div style={{margin:'0px 15px 0px 38px', color:'#bbb'}}>Duplicate</div>
+                                }
                                 <IconButton edge='start' onClick={() => handleOverlayOpen(rec)}>
                                     <EditIcon style={{width: 22, height: 22}}/>
                                 </IconButton>
@@ -106,7 +116,7 @@ function RecordingControls({lockId, makeModels}) {
                                     marginRight: 'auto',
                                     border: '1px solid #666'
                                 }}>
-                                    <CardHeader title={'Add Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}}/>
+                                    <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}}/>
                                     <CardContent>
                                         <EvidenceForm evid={rec}/>
                                     </CardContent>
@@ -117,16 +127,7 @@ function RecordingControls({lockId, makeModels}) {
                     )
 
             }).concat([
-                editRecId === 0
-                    ? <div key='0'>
-                        <RecordingAddEdit
-                            id={0}
-                            defName={makeModels[0].make + ' ' + makeModels[0].model}
-                            onSave={params => handleSave(params, lockId, '')}
-                            onCancel={handleCancel}
-                        />
-                    </div>
-                    : recordings.length === 0 &&
+                recordings.length === 0 &&
                     <div key='0'>
                         <Stack direction='row' alignItems='center' onClick={() => setEditRecId(0)}>
                             <FormGroup>
@@ -137,14 +138,31 @@ function RecordingControls({lockId, makeModels}) {
                                             id={'scorecard'}
                                             disabled={!isLoggedIn}
                                             color='secondary'
-                                            checked={editRecId === 0}
-                                            onChange={null}
+                                            checked={recordings.length > 0}
+                                            onClick={() => handleOverlayOpen(null)}
                                         />
                                     }
                                     label={'Scorecard'}
                                 />
                             </FormGroup>
                         </Stack>
+                        <Backdrop
+                            sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
+                            open={overlayIsOpen} onClick={null}
+                        >
+                            <Card style={{
+                                maxWidth: 600,
+                                marginLeft: 'auto',
+                                marginRight: 'auto',
+                                border: '1px solid #666'
+                            }}>
+                                <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
+                                <CardContent>
+                                    <EvidenceForm evid={null} lockId={lockId}/>
+                                </CardContent>
+                            </Card>
+                        </Backdrop>
+
                     </div>
             ])}
         </React.Fragment>

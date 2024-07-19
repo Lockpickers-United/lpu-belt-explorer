@@ -80,7 +80,7 @@ function CollectionButton({id, dense, makeModels}) {
                     horizontal: 'left'
                 }}
             >
-                <Card>
+                <Card style={{backgroundColor:'#222'}}>
                     <CardHeader
                         title='My Collection'
                         style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
