@@ -13,6 +13,12 @@ import Checkbox from '@mui/material/Checkbox'
 import AuthContext from '../app/AuthContext.jsx'
 import FormGroup from '@mui/material/FormGroup'
 import ScorecardEvidenceButton from '../scorecard/ScorecardEvidenceButton.jsx'
+import EvidenceForm from '../scorecard/EvidenceForm.jsx'
+import Backdrop from '@mui/material/Backdrop'
+import Card from '@mui/material/Card'
+import CardHeader from '@mui/material/CardHeader'
+import CardContent from '@mui/material/CardContent'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 
 function RecordingControls({lockId, makeModels}) {
     const {isLoggedIn} = useContext(AuthContext)
@@ -21,6 +27,17 @@ function RecordingControls({lockId, makeModels}) {
     const recordings = evidence.filter(evid => evid.matchId === lockId)
 
     console.log('recordings', recordings)
+
+    const [overlayIsOpen, setOverlayIsOpen] = useState(false)
+    const handleOverlayOpen = useCallback((rec) => {
+        setOverlayIsOpen(true)
+        setEditRecId(rec.id)
+    }, [])
+    const handleOverlayClose = useCallback(() => {
+        setOverlayIsOpen(false)
+    }, [])
+
+
 
     const handleSave = useCallback((params, lockId, modifier) => {
         setEditRecId(null)
@@ -56,7 +73,6 @@ function RecordingControls({lockId, makeModels}) {
     return (
         <React.Fragment> {
             recordings.map(rec => {
-                if (editRecId !== rec.id) {
                     return (
                         <div key={rec.id}>
                             <Stack direction='row' alignItems='center'>
@@ -75,28 +91,31 @@ function RecordingControls({lockId, makeModels}) {
                                         label={'Scorecard'}
                                     />
                                 </FormGroup>
-                                <IconButton edge='start' onClick={() => setEditRecId(rec.id)}>
+                                <IconButton edge='start' onClick={() => handleOverlayOpen(rec)}>
                                     <EditIcon style={{width: 22, height: 22}}/>
                                 </IconButton>
                                 <ScorecardEvidenceButton url={rec.link}/>
                             </Stack>
+                            <Backdrop
+                                sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
+                                open={overlayIsOpen} onClick={handleOverlayClose}
+                            >
+                                <Card style={{
+                                    maxWidth: 600,
+                                    marginLeft: 'auto',
+                                    marginRight: 'auto',
+                                    border: '1px solid #666'
+                                }}>
+                                    <CardHeader title={'Add Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}}/>
+                                    <CardContent>
+                                        <EvidenceForm evid={rec}/>
+                                    </CardContent>
+                                </Card>
+                            </Backdrop>
+
                         </div>
                     )
-                } else {
-                    return (
-                        <div key={rec.id}>
-                            <RecordingAddEdit
-                                id={rec.id}
-                                defName={rec.name}
-                                defLink={rec.link}
-                                defDate={rec.date}
-                                onSave={params => handleSave(params, lockId, rec.modifier)}
-                                onCancel={handleCancel}
-                                onDelete={handleDelete}
-                            />
-                        </div>
-                    )
-                }
+
             }).concat([
                 editRecId === 0
                     ? <div key='0'>

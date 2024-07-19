@@ -22,7 +22,7 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
     const {scoredEvidence, getEntryFromId} = useContext(ScorecardDataContext)
 
-    console.log('ScorecardRow', evid)
+    //console.log('ScorecardRow', evid)
 
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
 

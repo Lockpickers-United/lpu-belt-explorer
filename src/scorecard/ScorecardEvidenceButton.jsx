@@ -35,8 +35,15 @@ export default function ScorecardEvidenceButton({url, exceptionType, handleChang
                     </IconButton>
                 </Tooltip>
             }
-            {exceptionType === 'badlink' &&
+            {(exceptionType === 'badlink' && !!url) &&
                 <Tooltip title='Documentation link is not valid' arrow disableFocusListener>
+                    <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
+                        <WarningIcon style={{width: 22, height: 22, color:'#ef3939'}}/>
+                    </IconButton>
+                </Tooltip>
+            }
+            {(exceptionType === 'badlink' && !url) &&
+                <Tooltip title='Documentation link is missing' arrow disableFocusListener>
                     <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
                         <WarningIcon style={{width: 22, height: 22, color:'#ef3939'}}/>
                     </IconButton>

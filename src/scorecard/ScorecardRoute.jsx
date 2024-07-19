@@ -11,6 +11,8 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
+import {ScoringProvider} from '../context/ScoringContext.jsx'
+
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
 import {LocalizationProvider} from '@mui/x-date-pickers'
@@ -53,7 +55,7 @@ function ScorecardRoute() {
             <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
             <SortButton sortValues={scorecardSortFields}/>
             <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
-            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
 
@@ -64,24 +66,26 @@ function ScorecardRoute() {
     }
 
     return (
-        <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider evidenceEntries={data} profile={lockCollection}>
-                <ScorecardListProvider>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <ScoringProvider>
+            <FilterProvider filterFields={scorecardFilterFields}>
+                <ScorecardDataProvider>
+                    <ScorecardListProvider>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
 
-                        <Nav title={title} extras={nav}/>
+                            <Nav title={title} extras={nav}/>
 
-                        {loading && <LoadingDisplay/>}
+                            {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error && <Scorecard owner={user && user.uid === userId}/>}
-                        {!loading && (!data || error) && <ProfileNotFound/>}
+                            {!loading && data && !error && <Scorecard owner={user && user.uid === userId}/>}
+                            {!loading && (!data || error) && <ProfileNotFound/>}
 
-                        <Footer/>
-                    </LocalizationProvider>
-                    <Tracker feature='scorecard'/>
-                </ScorecardListProvider>
-            </ScorecardDataProvider>
-        </FilterProvider>
+                            <Footer/>
+                        </LocalizationProvider>
+                        <Tracker feature='scorecard'/>
+                    </ScorecardListProvider>
+                </ScorecardDataProvider>
+            </FilterProvider>
+        </ScoringProvider>
     )
 }
 
