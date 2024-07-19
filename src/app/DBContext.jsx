@@ -174,6 +174,28 @@ export function DBProvider({children}) {
         setEvidence(result)
     }, [user])
 
+    const createEvidenceForEntries = useCallback(async (ids) => {
+        const batch = writeBatch(db)
+        let result = []
+        const newDocs = ids.map(matchId => {
+            return {
+                userId: user.uid,
+                evidName: 'ADD NAME HERE',
+                evidUrl: 'ADD URL HERE',
+                modifier: '',
+                lockProjectId: matchId,
+                evidCreatedAt: Timestamp.fromDate(new Date())
+            }
+        })
+        newDocs.forEach(newDoc => {
+            const docRef = doc(collection(db, 'evidence'))
+            batch.set(docRef, newDoc)
+            result = result.concat([evidenceDB2State(docRef.id, newDoc)])
+        })
+        await batch.commit()
+        setEvidence(evidence.concat(result))
+    }, [user, evidence])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -230,8 +252,9 @@ export function DBProvider({children}) {
         removeEvidence,
         removeAllEvidence,
         getEvidence,
-        importUnclaimedEvidence
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence])
+        importUnclaimedEvidence,
+        createEvidenceForEntries
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
 
     return (
         <DBContext.Provider value={value}>

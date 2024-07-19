@@ -14,7 +14,7 @@ function entryName(entry, nameType = 'short', options = {}) {
     const versionString = options.includeVersion && entry.version ? ' (' + entry.version + ')' : ''
 
     if (options.matchTo) {
-        const match = options.matchTo.match(/^([&\/\w\s+.'-]+)/)
+        const match = options.matchTo.match(/^([&/\w\s+.'-]+)/)
         const searchStr = match ? match[1] : options.matchTo
 
         const closest = makeModels.reduce((group, {make, model}) => {
