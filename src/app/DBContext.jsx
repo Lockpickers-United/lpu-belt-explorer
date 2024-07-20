@@ -13,7 +13,7 @@ function evidenceDB2State(id, dbRec) {
     return {
         id: id,
         matchId: dbRec.lockProjectId,
-        name: dbRec.evidName,
+        notes: dbRec.evidName,
         link: dbRec.evidUrl,
         date: dateStr,
         modifier: dbRec.modifier
@@ -99,7 +99,7 @@ export function DBProvider({children}) {
         const rec = {
             userId: user.uid, 
             lockProjectId: evid.matchId,
-            evidName: evid.name,
+            evidName: evid.notes,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
@@ -112,7 +112,7 @@ export function DBProvider({children}) {
         const rec = {
             userId: user.uid,
             lockProjectId: evid.matchId,
-            evidName: evid.name,
+            evidName: evid.notes,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier

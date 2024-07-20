@@ -58,7 +58,7 @@ function ScoringExceptions() {
                                     key={ev.id}
                                     style={{minHeight: 20, borderTop: '1px solid rgba(255, 255, 255, 0.12)'}}
                                 >
-                                    {ev.name}
+                                    {ev.notes}
                                 </ListItem>
                             )}    
                         </List>
@@ -79,7 +79,7 @@ function ScoringExceptions() {
                                     key={ev.id}
                                     style={{minHeight: 20, borderTop: '1px solid rgba(255, 255, 255, 0.12)'}}
                                 >
-                                    {ev.name}
+                                    {ev.notes}
                                 </ListItem>
                             )}    
                         </List>
@@ -101,8 +101,8 @@ function ScoringExceptions() {
                                     style={{minHeight: 20, borderTop: '1px solid rgba(255, 255, 255, 0.12)'}}
                                 >
                                     <Stack direction='column'>
-                                        <Typography>{ev.name}</Typography>
-                                        <Typography>duplicate of {cardEvidence.find(e => e.id === ev.samelinedId).name}</Typography>
+                                        <Typography>{ev.notes}</Typography>
+                                        <Typography>duplicate of {cardEvidence.find(e => e.id === ev.exceptionId).notes}</Typography>
                                     </Stack>
                                 </ListItem>
                             )}    
@@ -125,8 +125,8 @@ function ScoringExceptions() {
                                     style={{minHeight: 20, borderTop: '1px solid rgba(255, 255, 255, 0.12)'}}
                                 >
                                     <Stack direction='column'>
-                                        <Typography>{ev.name}</Typography>
-                                        <Typography>upgraded by {cardEvidence.find(e => e.id === ev.supersededId).name}</Typography>
+                                        <Typography>{ev.notes}</Typography>
+                                        <Typography>upgraded by {cardEvidence.find(e => e.id === ev.exceptionId).notes}</Typography>
                                     </Stack>
                                 </ListItem>
                             )}    

@@ -3,7 +3,6 @@ import allProjects from '../data/projects.json'
 import nextUpgrades from '../data/upgrades.json'
 import {sys2UserDate} from '../util/datetime'
 import belts, {modifierMultiplier, projectTiers} from '../data/belts'
-import entryName from '../entries/entryName'
 
 function calculateScoreForUser(allEvidence) {
     const annotatedEvidence = allEvidence.map(ev => {
@@ -14,15 +13,9 @@ function calculateScoreForUser(allEvidence) {
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
         if (entry) {
-            const name = entryName(entry)
-            const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-
             return {
                 ...ev,
                 matchId: entry.id,
-                matchName: name,
-                matchLink: `https://share.lpubelts.com/?id=${entry.id}&name=${safeName}`,
-                color: belts[entry.belt].color,
                 date: dateStr,
                 modifier: modifier,
                 points: multiplier * belts[entry.belt].danPoints,
@@ -32,8 +25,6 @@ function calculateScoreForUser(allEvidence) {
             return {
                 ...ev,
                 matchId: project.id,
-                matchName: project.name,
-                color: belts['Unranked'].color,
                 date: dateStr,
                 modifier: modifier,
                 points: multiplier * projectTiers[project.tier].danPoints,
@@ -42,8 +33,6 @@ function calculateScoreForUser(allEvidence) {
         } else {
             return {
                 ...ev,
-                matchName: '',
-                color: belts['Unranked'].color,
                 date: dateStr,
                 modifier: modifier,
                 points: 0,
@@ -60,7 +49,7 @@ function calculateScoreForUser(allEvidence) {
         } else if (aDate < bDate) {
             return 1
         } else {
-            return a.name < b.name ? -1 : 1
+            return a.notes < b.notes ? -1 : 1
         }
     })
 
@@ -74,18 +63,14 @@ function calculateScoreForUser(allEvidence) {
         if (!ev.matchId) {
             scoredEvidence[idx] = {
                 ...ev,
-                exceptionType: 'nomatch',
-                row: idx + 1,
-                note: 'no match with lock or project'
+                exceptionType: 'nomatch'
             }
         } else if (!ev.link.startsWith('http')) {
             scoredEvidence[idx] = {
                 ...ev,
                 exceptionType: 'badlink',
-                row: idx + 1,
                 points: 0,
-                bbCount: 0,
-                note: 'no URL for evidence'
+                bbCount: 0
             }
         } else {
             const [collidedIdx, collidedId] = usedIds[ev.matchId] ? usedIds[ev.matchId] : [null, null]
@@ -94,20 +79,16 @@ function calculateScoreForUser(allEvidence) {
                 scoredEvidence[idx] = {
                     ...ev,
                     exceptionType: 'duplicate',
-                    row: idx + 1,
-                    points: 0,
-                    samelinedId: collidedId,
-                    note: `samelined with row ${collidedIdx + 1}`
+                    exceptionId: collidedId,
+                    points: 0
                 }
             } else {
                 if (collidedIdx) {
                     scoredEvidence[collidedIdx] = {
                         ...sortedEvidence[collidedIdx],
                         exceptionType: 'duplicate',
-                        row: collidedIdx + 1,
-                        points: 0,
-                        samelinedId: ev.id,
-                        note: `samelined with row ${idx + 1}`
+                        exceptionId: ev.id,
+                        points: 0
                     }
                 }
 
@@ -124,20 +105,19 @@ function calculateScoreForUser(allEvidence) {
                             scoredEvidence[idx] = {
                                 ...ev,
                                 exceptionType: 'upgraded',
-                                row: idx + 1,
-                                points: 0,
-                                supersededId: upId,
-                                note: `superseded by row ${upIdx + 1}`
+                                exceptionId: upId,
+                                points: 0
                             }
 
                         } else if (isUpgradeOf(ev.matchId, upMatchId)) {
-                            scoredEvidence[upIdx] = {
-                                ...scoredEvidence[upIdx],
-                                exceptionType: 'upgraded',
-                                row: upIdx + 1,
-                                points: 0,
-                                supersededId: ev.id,
-                                note: `superseded by row ${idx + 1}`
+
+                            if (!scoredEvidence[upIdx].exceptionType) {
+                                scoredEvidence[upIdx] = {
+                                    ...scoredEvidence[upIdx],
+                                    exceptionType: 'upgraded',
+                                    exceptionId: ev.id,
+                                    points: 0
+                                }
                             }
                         }
                     }
@@ -145,10 +125,7 @@ function calculateScoreForUser(allEvidence) {
                 }
 
                 if (!superseded) {
-                    scoredEvidence[idx] = {
-                        ...ev,
-                        row: idx + 1
-                    }
+                    scoredEvidence[idx] = ev
                 }
             }
         }

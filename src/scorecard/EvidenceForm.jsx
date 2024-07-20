@@ -15,7 +15,7 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 export default function EvidenceForm({evid, lockId, handleUpdate}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
-    const [evidenceName, setEvidenceName] = useState(evid?.name ? evid?.name : '')
+    const [evidenceNotes, setEvidenceNotes] = useState(evid?.notes ? evid?.notes : '')
     const [evidenceUrl, setEvidenceUrl] = useState(evid?.link ? evid?.link + '' : '')
     const [evidenceDate, setEvidenceDate] = useState(evid?.date ? dayjs(evid.date) : dayjs())
     const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
@@ -35,7 +35,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
             if (evid?.id) {
                 updateEvidence(evid.id, {
                     matchId: evid.matchId,
-                    name: evidenceName,
+                    notes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     modifier: modifier
@@ -43,7 +43,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
             } else {
                 addEvidence({
                     matchId: lockId,
-                    name: evidenceName,
+                    notes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     modifier: modifier
@@ -56,7 +56,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [addEvidence, evid?.id, evid?.matchId, evidenceDate, evidenceName, evidenceUrl, handleUpdate, lockId, modifier, updateEvidence])
+    }, [addEvidence, evid?.id, evid?.matchId, evidenceDate, evidenceNotes, evidenceUrl, handleUpdate, lockId, modifier, updateEvidence])
 
     const handleDelete = useCallback(async () => {
         try {
@@ -74,9 +74,9 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
         if (updated) {
             setEvidenceUrl(evid?.link ? evid.link : '')
             setUpdated(false)
-            setEvidenceName(evid?.name ? evid.name : '')
+            setEvidenceNotes(evid?.notes ? evid.notes : '')
         }
-    }, [evid?.link, evid?.name, updated])
+    }, [evid?.link, evid?.notes, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target
@@ -156,14 +156,14 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
                     <TextField
                         id='evidence-notes'
                         label='Notes (optional)'
-                        value={evidenceName}
+                        value={evidenceNotes}
                         placeholder='https://youtu.be/'
                         fullWidth
                         size='small'
                         margin='dense'
                         color='secondary'
                         onChange={e => {
-                            setEvidenceName(e.target.value)
+                            setEvidenceNotes(e.target.value)
                             setUpdated(true)
                         }}
                         sx={{input: {color: '#999'}}}

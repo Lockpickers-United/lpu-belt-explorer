@@ -50,17 +50,13 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
         }
     }, [expanded, entry, scrolled, evid.id])
 
-    let entryTitle = entry ? entryName(entry) : `[ ${evid.name} ]`
+    let entryTitle = entry ? entryName(entry) : `[ ${evid.notes} ]`
     entryTitle = evid.exceptionType ? entryTitle + ' *' : entryTitle
 
-    const evidenceNotes = evid.exceptionType && (evid.name.toLowerCase() !== entryTitle.toLowerCase()) ? evid.name : null
+    const evidenceNotes = evid.exceptionType && (evid.notes.toLowerCase() !== entryTitle.toLowerCase()) ? evid.notes : null
     const rowOpacity = ['nomatch','duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
 
-    const supersedingEntryId = evid.samelinedId
-        ? evid.samelinedId
-        : evid.supersededId
-            ? evid.supersededId
-            : null
+    const supersedingEntryId = evid.exceptionId
     const supersedingEntry = supersedingEntryId ? cardEvidence.find(e => e.id === supersedingEntryId) : {}
     const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [getEntryFromId, supersedingEntry.matchId]) : {}
     const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
