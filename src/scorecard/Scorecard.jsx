@@ -48,7 +48,7 @@ function Scorecard({owner, profile}) {
             <div style={{display: 'flex'}}>
                 <div style={{marginLeft: 0}}>
 
-                    {owner && visibleEntries.length > 0 ?
+                    {owner && cardEvidence.length > 0 ?
                         <Button color='secondary' size='large' onClick={handleDeleteAll}>DELETE&nbsp;ALL</Button>
                         : owner &&
                         <div>
