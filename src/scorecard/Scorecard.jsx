@@ -15,7 +15,7 @@ function Scorecard({owner, profile}) {
 
     const [tabToImport, setTabToImport] = useState('')
     const {expanded, setExpanded} = useContext(ScorecardListContext)
-    const defExpanded = useDeferredValue(expanded)
+    const defExpanded = useDeferredValue(owner && expanded)
 
     const recordedIdsToMerge = useMemo(() => {
         if (profile && profile.recorded) {
