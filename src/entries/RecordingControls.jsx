@@ -28,13 +28,12 @@ function RecordingControls({lockId}) {
 
     console.log('recordings', recordings)
 
-    const [overlayIsOpen, setOverlayIsOpen] = useState(false)
-    const handleOverlayOpen = useCallback((rec) => {
-        setOverlayIsOpen(true)
-        setEditRecId(rec ? rec.id : null)
+    const handleOverlayOpen = useCallback(id => {
+        setEditRecId(id)
     }, [])
+
     const handleOverlayClose = useCallback(() => {
-        setOverlayIsOpen(false)
+        setEditRecId(null)
     }, [])
 
     return (
@@ -63,14 +62,14 @@ function RecordingControls({lockId}) {
                                 {index > 0 &&
                                 <div style={{margin:'0px 15px 0px 38px', color:'#bbb'}}>Duplicate</div>
                                 }
-                                <IconButton edge='start' onClick={() => handleOverlayOpen(rec)}>
+                                <IconButton edge='start' onClick={() => handleOverlayOpen(rec.id)}>
                                     <EditIcon style={{width: 22, height: 22}}/>
                                 </IconButton>
                                 <ScorecardEvidenceButton url={rec.link}/>
                             </Stack>
                             <Backdrop
                                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
-                                open={overlayIsOpen} onClick={null}
+                                open={editRecId === rec.id} onClick={null}
                             >
                                 <Card style={{
                                     maxWidth: 600,
@@ -101,7 +100,7 @@ function RecordingControls({lockId}) {
                                             disabled={!isLoggedIn}
                                             color='secondary'
                                             checked={recordings.length > 0}
-                                            onClick={() => handleOverlayOpen(null)}
+                                            onClick={() => handleOverlayOpen(0)}
                                         />
                                     }
                                     label={'Scorecard'}
@@ -110,7 +109,7 @@ function RecordingControls({lockId}) {
                         </Stack>
                         <Backdrop
                             sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
-                            open={overlayIsOpen} onClick={null}
+                            open={editRecId === 0} onClick={null}
                         >
                             <Card style={{
                                 maxWidth: 600,
