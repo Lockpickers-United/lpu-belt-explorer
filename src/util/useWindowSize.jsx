@@ -1,6 +1,6 @@
 import {useMemo} from 'react'
 
-export default function useWindowSize2() {
+export default function useWindowSize() {
     let width = undefined,
         timeout = false,
         delay = 250

@@ -20,11 +20,12 @@ import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
-    const {cardEvidence, getEntryFromId} = useContext(ScorecardDataContext)
+    const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
     //console.log('ScorecardRow', evid)
 
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
+    const project = useMemo(() => getProjectEntryFromId(evid.matchId), [getProjectEntryFromId, evid.matchId])
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -50,11 +51,15 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
         }
     }, [expanded, entry, scrolled, evid.id])
 
-    let entryTitle = entry ? entryName(entry) : `[ ${evid.notes} ]`
+    let entryTitle = entry
+        ? entryName(entry)
+        : project
+            ? evid.name
+            : `[ ${evid.notes} ]`
     entryTitle = evid.exceptionType ? entryTitle + ' *' : entryTitle
 
     const evidenceNotes = evid.exceptionType && (evid.notes.toLowerCase() !== entryTitle.toLowerCase()) ? evid.notes : null
-    const rowOpacity = ['nomatch','duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
+    const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
 
     const supersedingEntryId = evid.exceptionId
     const supersedingEntry = supersedingEntryId ? cardEvidence.find(e => e.id === supersedingEntryId) : {}
@@ -82,16 +87,12 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
     const dateText = evid.date ? dayjs(evid.date).format('MM/DD/YY') : '(no date)'
 
-    const cancelEdit = useCallback(() => {
-        console.log('deal with me??')
-    }, [])
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
             onExpand && onExpand(isExpanded ? evid.id : false)
         }
-        cancelEdit()
-    }, [cancelEdit, evid.id, onExpand, owner])
+    }, [evid.id, onExpand, owner])
 
     const cursorStyle = !owner ? {cursor: 'default'} : {}
     const expandIcon = owner ? <ExpandMoreIcon/> : null
@@ -116,7 +117,7 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
                     width: nameDivWidth,
                     flexShrink: 0,
                     flexDirection: 'column',
-                    opacity:rowOpacity
+                    opacity: rowOpacity
                 }}>
                     <FieldValue
                         value={entryTitle}
@@ -132,7 +133,7 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
                         }}>{evidenceNotes}</span>}
                 </div>
 
-                <div style={{display: flexType, placeItems: 'center', marginLeft: 10, opacity:rowOpacity}}>
+                <div style={{display: flexType, placeItems: 'center', marginLeft: 10, opacity: rowOpacity}}>
 
                     <div style={{display: 'flex', width: 76}}>
                         <div style={{margin: '2px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
@@ -141,7 +142,8 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
                             }
                         </div>
                         <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
-                            <ScorecardEvidenceButton url={evid.link} handleChange={handleChange} exceptionType={evid.exceptionType}/>
+                            <ScorecardEvidenceButton url={evid.link} handleChange={handleChange}
+                                                     exceptionType={evid.exceptionType}/>
                         </div>
                     </div>
 
@@ -179,7 +181,8 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
                             </div>
                         }
 
-                        <EvidenceForm evid={evid} handleUpdate={() => {}}/>
+                        <EvidenceForm evid={evid} handleUpdate={() => {
+                        }}/>
 
                     </AccordionDetails>
                 </React.Fragment>

@@ -6,19 +6,26 @@ import dayjs from 'dayjs'
 import {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
+import allProjects from '../data/projects.json'
 
 export function ScorecardDataProvider({children, cardEvidence, cardBBCount, cardDanPoints}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
 
-    const getLockEntryFromId = useCallback(id => {
+
+    const getProjectEntryFromId = useCallback(id => {
+        return allProjects.find(e => e.id === id)
+    }, [])
+
+    const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [])
 
     const allEvidenceEntries = cardEvidence.map(evidenceEntry =>
         {
-            const entry = getLockEntryFromId(evidenceEntry.matchId)
-            return {...evidenceEntry, ...entry, id: evidenceEntry.id}
+            const entry = getEntryFromId(evidenceEntry.matchId)
+            const projectEntry = getProjectEntryFromId(evidenceEntry.matchId)
+            return {...evidenceEntry, ...entry, ...projectEntry, id: evidenceEntry.id}
         }
     )
 
@@ -100,10 +107,6 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
             : searched
     }, [filters, mappedEntries, search, sort])
 
-    const getEntryFromId = useCallback(id => {
-        return allEntries.find(e => e.id === id)
-    }, [])
-
     const value = useMemo(() => ({
         allEntries,
         cardEvidence,
@@ -111,7 +114,8 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         cardDanPoints,
         visibleEntries,
         getEntryFromId,
-    }), [getEntryFromId, cardEvidence, cardBBCount, cardDanPoints, visibleEntries])
+        getProjectEntryFromId
+    }), [getEntryFromId, cardEvidence, cardBBCount, cardDanPoints, visibleEntries,getProjectEntryFromId])
 
     return (
         <ScorecardDataContext.Provider value={value}>
