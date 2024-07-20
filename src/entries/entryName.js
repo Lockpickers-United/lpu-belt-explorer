@@ -58,25 +58,19 @@ function entryName(entry, nameType = 'short', options = {}) {
             ? `${entry.make} ${entry.model}`
             : entry.model
     } else {
-        // TODO: Clean up to be a bit more functional style
-        let lockName = ''
-        let prevMake = ''
-        makeModels.forEach((makeModel) => {
-            let thisMake = makeModel.make
-            let thisModel = makeModel.model
-            if (!thisMake) {
-                thisMake = thisModel
-                thisModel = ''
-            }
-            if (prevMake === '') {
-                lockName = `${thisMake} ${thisModel}`
-            } else if (thisMake === prevMake) {
-                lockName += `, ${thisModel}`
-            } else {
-                lockName += ` / ${thisMake} ${thisModel}`
-            }
-            prevMake = thisMake
-        })
+        const lockName = makeModels
+            .reduce((acc, {make, model}) => {
+                const group = make || model
+                const item = make ? model : ''
+                let toAppend = `${group} ${item}`
+                if (acc.last?.group === group) {
+                    toAppend = `, ${item}`
+                } else if (acc.last) {
+                    toAppend = ' / ' + toAppend
+                }
+                return {lockName: acc.lockName + toAppend, last: {group, item}}
+            }, {lockName: ''}).lockName
+
         return lockName + versionString
     }
 }
