@@ -2,19 +2,20 @@ import React, {useCallback} from 'react'
 import IconButton from '@mui/material/IconButton'
 import LinkIcon from '@mui/icons-material/Link'
 import Tooltip from '@mui/material/Tooltip'
-import {useNavigate} from 'react-router-dom'
 import entryName from '../entries/entryName'
 
 export default function ViewLockButton({entry}) {
-    const navigate = useNavigate()
     const name =  entryName(entry)
     const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
     const handleClick = useCallback(event => {
         event.preventDefault()
         event.stopPropagation()
-        setTimeout(() => navigate(`/locks?id=${entry.id}&name=${safeName}`), 0)
-    }, [entry.id, navigate, safeName])
+        const url = `${window.location.origin}/#/locks?id=${entry.id}&name=${safeName}`
+        console.log(url)
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }, [entry.id, safeName])
 
     return (
         <Tooltip title='View Lock Details' arrow disableFocusListener>
