@@ -109,13 +109,15 @@ export function DBProvider({children}) {
     }, [user])
 
     const updateEvidence = useCallback(async (id, evid) => {
-        const rec = {
+        let rec = {
             userId: user.uid,
-            lockProjectId: evid.matchId,
             evidName: evid.notes,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
+        }
+        if (evid.matchId) {
+            rec.lockProjectId = evid.matchId
         }
         await setDoc(doc(db, 'evidence', id), rec)
         setEvidence(e => e.map(evid => {
