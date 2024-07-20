@@ -109,7 +109,7 @@ export default [
     {
         path: '/profile/:userId/scorecard',
         lazy: async() => {
-            const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute.jsx')
+            const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute/>}
         }
     },
@@ -118,6 +118,13 @@ export default [
         lazy: async () => {
             const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
             return {element: <ViewProfileRoute/>}
+        }
+    },
+    {
+        path: '/profile/view/scorecard',
+        lazy: async () => {
+            const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
+            return {element: <ViewScorecardRoute/>}
         }
     },
     {
