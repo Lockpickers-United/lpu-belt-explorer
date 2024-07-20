@@ -52,7 +52,7 @@ function RecordingControls({lockId}) {
                                                 disabled={!isLoggedIn}
                                                 color='secondary'
                                                 checked={recordings.length > 0}
-                                                onChange={null}
+                                                onChange={() => handleOverlayOpen(rec.id)}
                                             />
                                         }
                                         label={'Scorecard'}
@@ -77,7 +77,7 @@ function RecordingControls({lockId}) {
                                     marginRight: 'auto',
                                     border: '1px solid #666'
                                 }}>
-                                    <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
+                                    <CardHeader title={'Documentation'} action={<HighlightOffIcon sx={{cursor:'pointer'}}/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
                                     <CardContent>
                                         <EvidenceForm evid={rec} handleUpdate={handleOverlayClose}/>
                                     </CardContent>
@@ -117,7 +117,10 @@ function RecordingControls({lockId}) {
                                 marginRight: 'auto',
                                 border: '1px solid #666'
                             }}>
-                                <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
+                                <CardHeader title={'Documentation'}
+                                            action={<HighlightOffIcon sx={{cursor:'pointer'}}/>}
+                                            style={{paddingBottom: 0}}
+                                            onClick={handleOverlayClose}/>
                                 <CardContent>
                                     <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose}/>
                                 </CardContent>

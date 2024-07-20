@@ -16,10 +16,12 @@ import DBContext from '../app/DBContext'
 import {collectionOptions} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import RecordingControls from './RecordingControls'
+import ScoringContext from '../context/ScoringContext.jsx'
 
-function CollectionButton({id, dense, makeModels}) {
+function CollectionButton({id, dense}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
+    const {scoredEvidence} = useContext(ScoringContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -27,10 +29,13 @@ function CollectionButton({id, dense, makeModels}) {
     const {isMobile} = useWindowSize()
 
     const isCollected = useMemo(() => {
-        return Object.keys(lockCollection)
+        const collected = Object.keys(lockCollection)
             .filter(key => !excludedKeys.includes(key))
             .reduce((acc, key) => acc || lockCollection[key].includes(id), false)
-    }, [id, lockCollection])
+        const evidence = scoredEvidence
+            .filter(evid => evid.matchId === id)
+        return collected || evidence.length > 0
+    }, [id, lockCollection, scoredEvidence])
 
     const isChecked = useCallback(key => {
         return !!lockCollection[key] && !!lockCollection[key].includes(id)
@@ -80,7 +85,7 @@ function CollectionButton({id, dense, makeModels}) {
                     horizontal: 'left'
                 }}
             >
-                <Card style={{backgroundColor:'#222'}}>
+                <Card style={{backgroundColor: '#222'}}>
                     <CardHeader
                         title='My Collection'
                         style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
@@ -106,7 +111,7 @@ function CollectionButton({id, dense, makeModels}) {
                         </FormGroup>
 
                         {isLoggedIn &&
-                            <RecordingControls lockId={id} makeModels={makeModels}/>
+                            <RecordingControls lockId={id}/>
                         }
 
                     </CardContent>
