@@ -183,7 +183,7 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
                             </div>
                         }
 
-                        <EvidenceForm evid={evid}/>
+                        <EvidenceForm evid={evid} handleUpdate={() => {}}/>
 
                     </AccordionDetails>
                 </React.Fragment>

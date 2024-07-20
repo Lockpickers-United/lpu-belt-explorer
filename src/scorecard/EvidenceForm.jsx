@@ -12,7 +12,7 @@ import DBContext from '../app/DBContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 
-export default function EvidenceForm({evid, lockId}) {
+export default function EvidenceForm({evid, lockId, handleUpdate}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceName, setEvidenceName] = useState(evid?.name ? evid?.name : '')
@@ -51,28 +51,30 @@ export default function EvidenceForm({evid, lockId}) {
             }
             enqueueSnackbar('Scorecard updated')
             setUpdated(false)
+            handleUpdate()
         } catch (ex) {
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [addEvidence, evid?.id, evid?.matchId, evidenceDate, evidenceName, evidenceUrl, lockId, modifier, updateEvidence])
+    }, [addEvidence, evid?.id, evid?.matchId, evidenceDate, evidenceName, evidenceUrl, handleUpdate, lockId, modifier, updateEvidence])
 
-    const handleDelete = useCallback(async (event) => {
+    const handleDelete = useCallback(async () => {
         try {
             removeEvidence(evid.id)
             enqueueSnackbar('Entry deleted')
+            handleUpdate()
         } catch (ex) {
             console.error('Error while deleting entry', ex)
             enqueueSnackbar('Error while deleting entry')
         }
         setAnchorEl(null)
-    }, [evid?.id, removeEvidence])
+    }, [evid?.id, handleUpdate, removeEvidence])
 
     const cancelEdit = useCallback(() => {
         if (updated) {
-            setEvidenceUrl(evid.link)
+            setEvidenceUrl(evid?.link ? evid.link : '')
             setUpdated(false)
-            setEvidenceName(evid.name)
+            setEvidenceName(evid?.name ? evid.name : '')
         }
     }, [evid?.link, evid?.name, updated])
 
@@ -170,7 +172,7 @@ export default function EvidenceForm({evid, lockId}) {
 
                 <div style={{display: 'flex'}}>
                     <div style={{marginLeft: 0}}>
-                        <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'>
+                        <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start' disabled={!evid}>
                             Delete
                         </Button>
                         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>

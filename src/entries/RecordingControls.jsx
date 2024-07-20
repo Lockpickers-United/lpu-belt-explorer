@@ -1,13 +1,7 @@
 import React, {useState, useContext, useCallback} from 'react'
 import IconButton from '@mui/material/IconButton'
-import AddLinkIcon from '@mui/icons-material/AddLink'
 import EditIcon from '@mui/icons-material/Edit'
 import Stack from '@mui/material/Stack'
-import Link from '@mui/material/Link'
-import Typography from '@mui/material/Typography'
-import DBContext from '../app/DBContext'
-import {user2SysDate} from '../util/datetime'
-import RecordingAddEdit from './RecordingAddEdit.jsx'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import AuthContext from '../app/AuthContext.jsx'
@@ -21,9 +15,8 @@ import CardContent from '@mui/material/CardContent'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import ScoringContext from '../context/ScoringContext.jsx'
 
-function RecordingControls({lockId, makeModels}) {
+function RecordingControls({lockId}) {
     const {isLoggedIn} = useContext(AuthContext)
-    const {evidence, addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
     const [editRecId, setEditRecId] = useState(null)
     const {scoredEvidence} = useContext(ScoringContext)
 
@@ -43,37 +36,6 @@ function RecordingControls({lockId, makeModels}) {
     const handleOverlayClose = useCallback(() => {
         setOverlayIsOpen(false)
     }, [])
-
-    const handleSave = useCallback((params, lockId, modifier) => {
-        setEditRecId(null)
-
-        if (params.id === 0) {
-            addEvidence({
-                matchId: lockId,
-                name: params.lockName,
-                link: params.recUrl,
-                date: user2SysDate(params.recDate),
-                modifier: modifier
-            })
-        } else {
-            updateEvidence(params.id, {
-                matchId: lockId,
-                name: params.lockName,
-                link: params.recUrl,
-                date: user2SysDate(params.recDate),
-                modifier: modifier
-            })
-        }
-    }, [addEvidence, updateEvidence])
-
-    const handleCancel = useCallback(() => {
-        setEditRecId(null)
-    }, [])
-
-    const handleDelete = useCallback((id) => {
-        setEditRecId(null)
-        removeEvidence(id)
-    }, [removeEvidence])
 
     return (
         <React.Fragment> {
@@ -108,7 +70,7 @@ function RecordingControls({lockId, makeModels}) {
                             </Stack>
                             <Backdrop
                                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
-                                open={overlayIsOpen} onClick={handleOverlayClose}
+                                open={overlayIsOpen} onClick={null}
                             >
                                 <Card style={{
                                     maxWidth: 600,
@@ -116,9 +78,9 @@ function RecordingControls({lockId, makeModels}) {
                                     marginRight: 'auto',
                                     border: '1px solid #666'
                                 }}>
-                                    <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}}/>
+                                    <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
                                     <CardContent>
-                                        <EvidenceForm evid={rec}/>
+                                        <EvidenceForm evid={rec} handleUpdate={handleOverlayClose}/>
                                     </CardContent>
                                 </Card>
                             </Backdrop>
@@ -158,7 +120,7 @@ function RecordingControls({lockId, makeModels}) {
                             }}>
                                 <CardHeader title={'Documentation'} action={<HighlightOffIcon/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
                                 <CardContent>
-                                    <EvidenceForm evid={null} lockId={lockId}/>
+                                    <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose}/>
                                 </CardContent>
                             </Card>
                         </Backdrop>
