@@ -1,5 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import React, {useCallback, useContext, useMemo} from 'react'
 import entryName from '../entries/entryName'
 import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import FilterContext from '../context/FilterContext'
@@ -7,13 +6,12 @@ import FilterContext from '../context/FilterContext'
 const ScorecardListContext = React.createContext({})
 
 export function ScorecardListProvider({children}) {
-    const {userId} = useParams()
-    const {allEntries, getEntryFromId} = useContext(ScorecardDataContext)
-    const {filters, addFilter, addFilters, removeFilters} = useContext(FilterContext)
+    const {getEntryFromId} = useContext(ScorecardDataContext)
+    const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
     const expanded = filters.id
 
-    const handleSetExpanded = useCallback((newValue, forceTab) => {
+    const handleSetExpanded = useCallback((newValue) => {
         const entry = getEntryFromId(newValue)
         if (newValue && newValue !== 'beltreqs') {
             const name = entry ? entryName(entry) : ''
@@ -36,48 +34,12 @@ export function ScorecardListProvider({children}) {
         removeFilters(['id', 'name'])
     }, [removeFilters])
 
-    const handleSetTab = useCallback(tab => {
-        addFilters([
-            {key: 'tab', value: tab},
-            {key: 'id', value: expanded === 'beltreqs' ? 'beltreqs' : undefined},
-            {key: 'name', value: undefined}
-        ], true)
-
-        setTimeout(() => setDisplayAll(false), 0)
-    }, [addFilters, expanded])
-
-    const [displayAll, setDisplayAll] = useState(false)
-
-    const [compact, setCompact] = useState(false)
-
-    const tab = useMemo(() => {
-        if (!filters.tab && !userId) {
-            const {id} = filters
-            if (id && !filters.tab) {
-                const entry = allEntries.find(e => id === e.id)
-                if (entry) {
-                    const value = entry.belt.replace(/\s\d/g, '')
-                    addFilter('tab', value)
-                    return value
-                }
-            }
-            return 'White'
-        }
-
-        return filters.tab
-    }, [addFilter, allEntries, filters, userId])
 
     const value = useMemo(() => ({
-        compact,
-        tab,
-        setTab: handleSetTab,
         expanded,
         setExpanded: handleSetExpanded,
         clearExpanded: handleClearExpanded,
-        displayAll: displayAll && filters.tab === 'search',
-        setDisplayAll,
-        setCompact
-    }), [compact, displayAll, expanded, filters.tab, handleClearExpanded, handleSetExpanded, handleSetTab, tab])
+    }), [expanded, handleClearExpanded, handleSetExpanded])
 
     return (
         <ScorecardListContext.Provider value={value}>

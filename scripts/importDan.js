@@ -409,7 +409,7 @@ function writeEntriesAsJSON(target, header, idEntries) {
 // To tune matching system, find unmatched and
 // compare new matches with existing
 
-function findUnmatched(idEntries) {
+    function findUnmatched(idEntries) { //eslint-disable-line
     idEntries.toSorted((a1, a2) => a1.entry.row - a2.entry.row)
         .forEach(elem => {
             if (!elem.id) {
