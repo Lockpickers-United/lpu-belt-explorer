@@ -3,6 +3,7 @@ import allProjects from '../data/projects.json'
 import nextUpgrades from '../data/upgrades.json'
 import {sys2UserDate} from '../util/datetime'
 import belts, {modifierMultiplier, projectTiers} from '../data/belts'
+import isValidUrl from '../util/isValidUrl'
 
 function calculateScoreForUser(allEvidence) {
     const annotatedEvidence = allEvidence.map(ev => {
@@ -65,7 +66,7 @@ function calculateScoreForUser(allEvidence) {
                 ...ev,
                 exceptionType: 'nomatch'
             }
-        } else if (!ev.link.startsWith('http')) {
+        } else if (!isValidUrl(ev.link)) {
             scoredEvidence[idx] = {
                 ...ev,
                 exceptionType: 'badlink',

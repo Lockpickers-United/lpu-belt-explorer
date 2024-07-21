@@ -11,6 +11,7 @@ import {enqueueSnackbar} from 'notistack'
 import DBContext from '../app/DBContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+import isValidUrl from '../util/isValidUrl'
 
 export default function EvidenceForm({evid, lockId, handleUpdate}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
@@ -84,8 +85,8 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
         setUpdated(true)
     }, [])
 
-    const evidenceUrlValid = isValidHttpUrl(evidenceUrl)
-    const evidenceUrlError = (!!evidenceUrl && !isValidHttpUrl(evidenceUrl)) || (updated && !evidenceUrl)
+    const evidenceUrlValid = isValidUrl(evidenceUrl)
+    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl)) || (updated && !evidenceUrl)
     const evidenceURLHelperText = evidenceUrlError ? 'Documentation link is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
@@ -216,15 +217,4 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
 
         </LocalizationProvider>
     )
-
-    function isValidHttpUrl(string) {
-        let url
-        try {
-            url = new URL(string)
-        } catch (_) {
-            return false
-        }
-        return url.protocol === 'http:' || url.protocol === 'https:'
-    }
-
 }

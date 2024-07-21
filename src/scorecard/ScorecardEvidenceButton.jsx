@@ -6,6 +6,7 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
 import WarningIcon from '@mui/icons-material/Warning'
+import isValidUrl from '../util/isValidUrl'
 
 export default function ScorecardEvidenceButton({url, exceptionType, handleChange}) {
 
@@ -15,6 +16,8 @@ export default function ScorecardEvidenceButton({url, exceptionType, handleChang
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }, [url])
+
+    const notValidUrl = !isValidUrl(url)
 
     let icon = <SubjectIcon style={{width: 20, height: 20}}/>
 
@@ -30,7 +33,7 @@ export default function ScorecardEvidenceButton({url, exceptionType, handleChang
         <React.Fragment>
             {exceptionType !== 'badlink' &&
                 <Tooltip title='View Documentation' arrow disableFocusListener>
-                    <IconButton style={{width: 40, height: 40}} onClick={handleClick}>
+                    <IconButton style={{width: 40, height: 40}} onClick={handleClick} disabled={notValidUrl}>
                         {icon}
                     </IconButton>
                 </Tooltip>
