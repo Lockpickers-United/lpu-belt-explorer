@@ -2,11 +2,11 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import entryName from '../entries/entryName'
 import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import FilterContext from '../context/FilterContext'
+import {getEntryFromId} from '../entries/entryutils'
 
 const ScorecardListContext = React.createContext({})
 
 export function ScorecardListProvider({children}) {
-    const {getEntryFromId} = useContext(ScorecardDataContext)
     const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
     const expanded = filters.id
@@ -28,7 +28,7 @@ export function ScorecardListProvider({children}) {
         } else {
             removeFilters(['id', 'name'])
         }
-    }, [addFilters, getEntryFromId, removeFilters])
+    }, [addFilters, removeFilters])
 
     const handleClearExpanded = useCallback(() => {
         removeFilters(['id', 'name'])

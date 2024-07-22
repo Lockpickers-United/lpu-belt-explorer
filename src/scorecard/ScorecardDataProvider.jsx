@@ -6,19 +6,11 @@ import dayjs from 'dayjs'
 import {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
-import allProjects from '../data/projects.json'
+import {getEntryFromId, getProjectEntryFromId} from '../entries/entryutils'
 
 export function ScorecardDataProvider({children, cardEvidence, cardBBCount, cardDanPoints}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
-
-    const getProjectEntryFromId = useCallback(id => {
-        return allProjects.find(e => e.id === id)
-    }, [])
-
-    const getEntryFromId = useCallback(id => {
-        return allEntries.find(e => e.id === id)
-    }, [])
 
     const allEvidenceEntries = useMemo(() => cardEvidence.map(evidenceEntry =>
         {
@@ -29,9 +21,9 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
             const projectEntry = getProjectEntryFromId(evidenceEntry.matchId)
             return {...entry, ...evidenceEntry, ...projectEntry, id: evidenceEntry.id}
         }
-    ), [cardEvidence, getEntryFromId, getProjectEntryFromId])
+    ), [cardEvidence])
 
-    console.log('allEvidenceEntries', allEvidenceEntries)
+//    console.log('allEvidenceEntries', allEvidenceEntries)
 
     const mappedEntries = useMemo(() => {
         return allEvidenceEntries
@@ -116,7 +108,7 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
             })
     }, [filters, mappedEntries, search, sort])
 
-    console.log('visibleEntries', visibleEntries)
+//    console.log('visibleEntries', visibleEntries)
 
     const value = useMemo(() => ({
         allEntries,
@@ -126,7 +118,7 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         visibleEntries,
         getEntryFromId,
         getProjectEntryFromId
-    }), [getEntryFromId, cardEvidence, cardBBCount, cardDanPoints, visibleEntries, getProjectEntryFromId])
+    }), [cardEvidence, cardBBCount, cardDanPoints, visibleEntries])
 
     return (
         <ScorecardDataContext.Provider value={value}>
