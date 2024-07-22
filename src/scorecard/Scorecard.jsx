@@ -1,8 +1,8 @@
 import React, {useState, useMemo, useContext, useCallback, useDeferredValue} from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import Badge from '@mui/material/Badge'
 import DBContext from '../app/DBContext.jsx'
+import dans from '../data/dans.json'
 
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardListContext from './ScorecardListContext.jsx'
@@ -10,6 +10,13 @@ import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 
 function Scorecard({owner, profile}) {
+
+    const scorecardName = profile?.displayName
+        ? profile.displayName.slice(-1).toLowerCase() === 's'
+            ? profile.displayName + '\''
+            : profile.displayName + '\'s'
+        : 'User'
+
     const {visibleEntries = [], cardEvidence, cardBBCount, cardDanPoints} = useContext(ScorecardDataContext)
     const {removeAllEvidence, importUnclaimedEvidence, createEvidenceForEntries} = useContext(DBContext)
 
@@ -39,17 +46,34 @@ function Scorecard({owner, profile}) {
         createEvidenceForEntries(recordedIdsToMerge)
     }, [createEvidenceForEntries, recordedIdsToMerge])
 
+    const eligibleDan = dans
+        ? dans.filter(dan => {
+            return (cardDanPoints >= dan.points) && (cardBBCount >= dan.bbLocks)
+        }).pop()?.level
+        : 0
+    const nextDan = dans[eligibleDan + 1]
+    const nextDanPoints = Math.max(0, (nextDan.points - cardDanPoints))
+    const nextDanLocks = Math.max(0, (nextDan.bbLocks - cardBBCount))
+
     return (
         <div style={{
-            maxWidth: 700, padding: 0, backgroundColor: '#000',
+            maxWidth: 700, padding: 0, backgroundColor: '#222',
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
 
-            <div style={{display: 'flex'}}>
-                <div style={{marginLeft: 0}}>
+            <div style={{display: 'flex', padding: 16}}>
+                <div style={{marginLeft: 0, display: 'block'}}>
 
-                    {owner && cardEvidence.length > 0 ?
-                        <Button color='secondary' size='large' onClick={handleDeleteAll}>DELETE&nbsp;ALL</Button>
+                    <div style={{fontSize: '24px', lineHeight: '26px'}}>
+                        {scorecardName} Scorecard<br/>
+                        <span style={{fontSize: '0.85rem'}}>
+                            {nextDanPoints} point{nextDanPoints !== 1 && 's'} and {nextDanLocks} BB lock{nextDanLocks !== 1 && 's'} until next Dan
+                        </span>
+                    </div>
+
+                    {owner && cardEvidence.length > 0
+                        ? <div><Button color='secondary' size='small' onClick={handleDeleteAll}>DELETE&nbsp;ALL</Button>
+                        </div>
                         : owner &&
                         <div>
                             <TextField
@@ -67,25 +91,31 @@ function Scorecard({owner, profile}) {
                                     onClick={handleImport}>IMPORT</Button>
                         </div>
                     }
+
+                    <div>
+                        {owner &&
+                            <Button color='secondary'
+                                    size='small'
+                                    onClick={handleMergeRecorded}>MERGE&nbsp;RECORDED&nbsp;({recordedIdsToMerge.length})
+                            </Button>
+                        }
+                    </div>
                 </div>
-                <div style={{
-                    width: '20%',
-                }}>
-                    {owner &&
-                        <Badge badgeContent={recordedIdsToMerge.length}>
-                            <Button color='secondary' size='large' onClick={handleMergeRecorded}>MERGE&nbsp;RECORDED</Button>
-                        </Badge>
-                    }
+
+                <div style={{flexGrow: 1, textAlign: 'right'}}>
+                    <ScoringExceptions/>
                 </div>
+
                 <div style={{
-                    width: '80%',
                     textAlign: 'right',
                     padding: '10px 12px 8px 0px'
                 }}>
-                    <ScoringExceptions/>
-                    <span style={{fontWeight: 700}}>{cardBBCount} Black Belt Lock{cardBBCount !== 1 &&
-                        <span>s</span>}, </span>
-                    <span style={{fontWeight: 700}}>{cardDanPoints} Dan Point{cardDanPoints !== 1 && <span>s</span>}</span>
+                    <div style={{fontWeight: 700}}>
+                        Eligible for Dan <span style={{fontSize: '1.8rem'}}>{eligibleDan}</span>
+                    </div>
+
+                    <div style={{marginBottom: 5}}>Dan Points <strong>{cardDanPoints}</strong></div>
+                    <div style={{marginBottom: 5}}>Black Belt Locks <strong>{cardBBCount}</strong></div>
                 </div>
 
             </div>

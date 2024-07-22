@@ -182,8 +182,8 @@ export function DBProvider({children}) {
         const newDocs = ids.map(matchId => {
             return {
                 userId: user.uid,
-                evidName: 'ADD NAME HERE',
-                evidUrl: 'ADD URL HERE',
+                evidName: '',
+                evidUrl: '',
                 modifier: '',
                 lockProjectId: matchId,
                 evidCreatedAt: Timestamp.fromDate(new Date())

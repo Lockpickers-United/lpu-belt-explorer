@@ -1,10 +1,10 @@
-import React, {useState, useCallback, useContext, useMemo} from 'react'
+import React, {useState, useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import ScorecardDataContext from './ScorecardDataProvider'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import entryName from '../entries/entryName'
 import Link from '@mui/material/Link'
 import FilterContext from '../context/FilterContext.jsx'
@@ -31,9 +31,11 @@ function ScoringExceptions() {
     const annotatedEvidence = cardEvidence.map(evid => {
         const supersedingEntryId = evid.exceptionId
         const supersedingEntry = supersedingEntryId ? cardEvidence.find(e => e.id === supersedingEntryId) : {}
-        const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [supersedingEntry.matchId]) : {}
+        const supersedingLock = supersedingEntry ? getEntryFromId(supersedingEntry.matchId) : {}
         const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
-        return {...evid, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName}
+        const matchLock = evid.matchId ? getEntryFromId(evid.matchId) : null
+        const matchLockName = matchLock ? entryName(matchLock, 'short') : ''
+        return {...evid, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName, matchLockName:matchLockName}
     })
 
     const unmatchedEvid = annotatedEvidence.filter(ev => 'nomatch' === ev.exceptionType)
@@ -45,8 +47,8 @@ function ScoringExceptions() {
     if (totalNum > 0) {
         return (
             <React.Fragment>
-                <IconButton onClick={handleOverlayOpen}>
-                    <ErrorOutlineIcon/>
+                <IconButton onClick={handleOverlayOpen} style={{marginRight:5}}>
+                    <HelpOutlineIcon fontSize='small'/>
                 </IconButton>
                 <Drawer
                     sx={{color: '#fff', textAlign: 'left', height: 700, zIndex: (theme) => theme.zIndex.drawer + 1}}
@@ -70,6 +72,7 @@ function ScoringExceptions() {
                             we could not find a lock matching your entry,
                             you have multiple entries for the same lock,
                             or an entry may have been replaced by an upgrade of the same lock.
+                            Locks ranked below Blue Belt are never eligible for Dan Points.
                         </div>
                         {unmatchedEvid.length > 0 &&
                             <React.Fragment>
@@ -105,7 +108,7 @@ function ScoringExceptions() {
                                         <li key={index} style={{marginBottom: 4}}>
                                             <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
                                                 navigateToEntry(ev.id)
-                                            }}>{ev.notes}</Link>
+                                            }}>{ev.matchLockName}</Link>
                                         </li>
                                     )}
                                 </ul>
