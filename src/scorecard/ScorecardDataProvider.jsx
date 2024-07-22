@@ -12,7 +12,6 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
 
-
     const getProjectEntryFromId = useCallback(id => {
         return allProjects.find(e => e.id === id)
     }, [])
@@ -21,13 +20,17 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         return allEntries.find(e => e.id === id)
     }, [])
 
-    const allEvidenceEntries = cardEvidence.map(evidenceEntry =>
-        {
-            const entry = getEntryFromId(evidenceEntry.matchId)
+    const allEvidenceEntries = cardEvidence.map(evidenceEntry => {
+            let entry = getEntryFromId(evidenceEntry.matchId)
+            if (entry) {
+                entry.notes = undefined
+            }
             const projectEntry = getProjectEntryFromId(evidenceEntry.matchId)
-            return {...evidenceEntry, ...entry, ...projectEntry, id: evidenceEntry.id}
+            return {...entry, ...evidenceEntry, ...projectEntry, id: evidenceEntry.id}
         }
     )
+
+    console.log('allEvidenceEntries', allEvidenceEntries)
 
     const mappedEntries = useMemo(() => {
         return allEvidenceEntries
@@ -84,28 +87,35 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
             ? searched.sort((a, b) => {
                 if (sort === 'danPoints') {
                     return a.points - b.points
+                        || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
                 } else if (sort === 'dateAscending') {
-                    const dayA = dayjs(a.date)
-                    const dayB = dayjs(b.date)
-                    if (dayA.isAfter(dayB)) return 1
-                    else if (dayB.isAfter(dayA)) return -1
+                    return dayjs(a.date).valueOf() - dayjs(b.date).valueOf()
+                        || beltSortReverse(a.simpleBelt, b.simpleBelt)
                 } else if (sort === 'dateDescending') {
-                    const dayA = dayjs(a.date)
-                    const dayB = dayjs(b.date)
-                    if (dayA.isAfter(dayB)) return -1
-                    else if (dayB.isAfter(dayA)) return 1
+                    return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
+                        || beltSortReverse(a.simpleBelt, b.simpleBelt)
                 } else if (sort === 'beltAscending') {
                     return beltSort(a.belt, b.belt)
+                        || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
                 } else if (sort === 'beltDescending') {
                     return beltSortReverse(a.belt, b.belt)
+                        || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
                 } else if (sort === 'alphaAscending') {
                     return a.fuzzy.localeCompare(b.fuzzy)
+                        || b.points - a.points
                 } else if (sort === 'alphaDescending') {
                     return b.fuzzy.localeCompare(a.fuzzy)
+                        || b.points - a.points
                 }
             })
-            : searched
+            : searched.sort((a, b) => {
+                return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
+                    || beltSortReverse(a.belt, b.belt)
+                    || a.fuzzy.localeCompare(b.fuzzy)
+            })
     }, [filters, mappedEntries, search, sort])
+
+    console.log('visibleEntries', visibleEntries)
 
     const value = useMemo(() => ({
         allEntries,
@@ -115,7 +125,7 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         visibleEntries,
         getEntryFromId,
         getProjectEntryFromId
-    }), [getEntryFromId, cardEvidence, cardBBCount, cardDanPoints, visibleEntries,getProjectEntryFromId])
+    }), [getEntryFromId, cardEvidence, cardBBCount, cardDanPoints, visibleEntries, getProjectEntryFromId])
 
     return (
         <ScorecardDataContext.Provider value={value}>

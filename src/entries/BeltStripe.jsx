@@ -2,6 +2,7 @@ import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
 function BeltStripe({value}) {
+    console.log(value)
     const {color: backgroundColor} = belts[value] || {}
     const style = {
         width: 8,
@@ -12,6 +13,7 @@ function BeltStripe({value}) {
         backgroundColor
     }
 
+    const {lineColor: stripeColor} = belts[value] || {}
     const stripes = useMemo(() => {
         const [stripeValue] = (value.match(/\d/) || [0])
         const stripeCount = +stripeValue
@@ -24,7 +26,7 @@ function BeltStripe({value}) {
                         position: 'absolute',
                         left: 0,
                         top: 18 + (index * 6),
-                        backgroundColor: '#acacac'
+                        backgroundColor: stripeColor
                     }}/>
                 )
         }

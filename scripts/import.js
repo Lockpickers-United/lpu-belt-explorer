@@ -8,7 +8,8 @@ import {
     viewSchema,
     groupSchema,
     glossarySchema,
-    dialsSchema
+    dialsSchema,
+    projectSchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -51,6 +52,7 @@ const glossaryData = await importValidate('Glossary', glossarySchema)
 const dialsData = await importValidate('Dials', dialsSchema)
 const dialsMediaData = await importValidate('Dials Media', mediaSchema)
 const dialsLinkData = await importValidate('Dials Links', linkSchema)
+const projectsData = await importValidate('Projects', projectSchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -114,6 +116,31 @@ const jsonData = mainData
             return beltNumberA < beltNumberB ? -1 : 1
         }
     })
+
+// Add projects data
+console.log('Processing project data...')
+const projects = projectsData
+    .map(item => {
+        const id = item['Unique ID']
+        const name = item.Name
+        const tier = item.Tier
+        const makeModels = [{make: '', model: item.Name}]
+        const projectBelts = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5']
+        const projectTiers = ['T1', 'T2', 'T3', 'T4', 'T5']
+        const belt = projectBelts[projectTiers.indexOf(item.Tier)]
+        return {
+            id,
+            tier,
+            name,
+            belt,
+            makeModels
+        }
+    })
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+console.log('Writing projects.json')
+fs.writeFileSync('./src/data/projects.json', JSON.stringify(projects, null, 2))
+
 
 // Add media data
 mediaData
