@@ -18,11 +18,11 @@ import EvidenceForm from './EvidenceForm.jsx'
 
 import useWindowSize from '../util/useWindowSize.jsx'
 
-export default function ScorecardRow({owner, evid, expanded, onExpand}) {
+function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    //console.log('ScorecardRow', evid)
+    console.log('ScorecardRow')
 
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
     const project = useMemo(() => getProjectEntryFromId(evid.matchId), [getProjectEntryFromId, evid.matchId])
@@ -192,3 +192,6 @@ export default function ScorecardRow({owner, evid, expanded, onExpand}) {
 
 }
 
+export default React.memo(ScorecardRow, (prevProps, nextProps) => {
+    return prevProps.evid.id === nextProps.evid.id && prevProps.expanded === nextProps.expanded
+})
