@@ -15,9 +15,6 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
     const allEvidenceEntries = useMemo(() => cardEvidence.map(evidenceEntry =>
         {
             const entry = getEntryFromId(evidenceEntry.matchId)
-            if (entry) {
-                entry.notes = undefined
-            }
             const projectEntry = getProjectEntryFromId(evidenceEntry.matchId)
             return {...entry, ...evidenceEntry, ...projectEntry, id: evidenceEntry.id}
         }

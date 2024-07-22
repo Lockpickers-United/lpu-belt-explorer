@@ -48,7 +48,7 @@ function calculateScoreForUser(allEvidence) {
         } else if (aDate < bDate) {
             return 1
         } else {
-            return a.notes < b.notes ? -1 : 1
+            return a.evidenceNotes < b.evidenceNotes ? -1 : 1
         }
     })
 

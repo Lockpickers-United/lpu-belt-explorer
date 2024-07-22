@@ -88,7 +88,7 @@ function ScoringExceptions() {
                                         <li key={index} style={{marginBottom: 4}}>
                                             <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
                                                 navigateToEntry(ev.id)
-                                            }}>{ev.notes}</Link>
+                                            }}>{ev.evidenceNotes}</Link>
                                         </li>
                                     )}
                                 </ul>
@@ -126,7 +126,7 @@ function ScoringExceptions() {
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {samelinedEvid.map((ev, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {ev.notes} is a duplicate
+                                            {ev.evidenceNotes} is a duplicate
                                             of <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
                                             navigateToEntry(ev.supersedingEntryId)
                                         }}>{ev.supersedingLockName}</Link>
@@ -147,7 +147,7 @@ function ScoringExceptions() {
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {supersededEvid.map((ev, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {ev.notes} is upgraded by <Link
+                                            {ev.evidenceNotes} is upgraded by <Link
                                             style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
                                             navigateToEntry(ev.supersedingEntryId)
                                         }}>{ev.supersedingLockName}</Link>

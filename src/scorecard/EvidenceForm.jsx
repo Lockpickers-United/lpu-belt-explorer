@@ -16,7 +16,7 @@ import isValidUrl from '../util/isValidUrl'
 export default function EvidenceForm({evid, lockId, handleUpdate}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
-    const [evidenceNotes, setEvidenceNotes] = useState(evid?.notes ? evid?.notes : '')
+    const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
     const [evidenceUrl, setEvidenceUrl] = useState(evid?.link ? evid?.link + '' : '')
     const [evidenceDate, setEvidenceDate] = useState(evid?.date ? dayjs(evid.date) : dayjs())
     const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
@@ -36,7 +36,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
             if (evid?.id) {
                 updateEvidence(evid.id, {
                     matchId: evid.matchId,
-                    notes: evidenceNotes,
+                    evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     modifier: modifier
@@ -44,7 +44,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
             } else {
                 addEvidence({
                     matchId: lockId,
-                    notes: evidenceNotes,
+                    evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     modifier: modifier
@@ -75,9 +75,9 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
         if (updated) {
             setEvidenceUrl(evid?.link ? evid.link : '')
             setUpdated(false)
-            setEvidenceNotes(evid?.notes ? evid.notes : '')
+            setEvidenceNotes(evid?.evidenceNotes ? evid.evidenceNotes : '')
         }
-    }, [evid?.link, evid?.notes, updated])
+    }, [evid?.link, evid?.evidenceNotes, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target

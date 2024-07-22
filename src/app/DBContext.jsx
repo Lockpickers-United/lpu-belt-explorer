@@ -13,7 +13,7 @@ function evidenceDB2State(id, dbRec) {
     return {
         id: id,
         matchId: dbRec.lockProjectId,
-        notes: dbRec.evidName,
+        evidenceNotes: dbRec.evidName,
         link: dbRec.evidUrl,
         date: dateStr,
         modifier: dbRec.modifier
@@ -99,7 +99,7 @@ export function DBProvider({children}) {
         const rec = {
             userId: user.uid, 
             lockProjectId: evid.matchId,
-            evidName: evid.notes,
+            evidName: evid.evidenceNotes,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
@@ -111,7 +111,7 @@ export function DBProvider({children}) {
     const updateEvidence = useCallback(async (id, evid) => {
         let rec = {
             userId: user.uid,
-            evidName: evid.notes,
+            evidName: evid.evidenceNotes,
             evidUrl: evid.link,
             evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
@@ -185,7 +185,6 @@ export function DBProvider({children}) {
                 evidName: '',
                 evidUrl: '',
                 modifier: '',
-                notes: '',
                 lockProjectId: matchId,
                 evidCreatedAt: Timestamp.fromDate(new Date())
             }

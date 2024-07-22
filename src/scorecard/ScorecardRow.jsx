@@ -58,11 +58,11 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 
     let entryTitle = entry
         ? entryName(entry)
-        :  evid.notes
-    const evidenceNotes = evid.exceptionType && (evid.notes.toLowerCase() !== entryTitle.toLowerCase())
-        ? evid.notes
+        :  evid.evidenceNotes
+    const evidenceNotes = evid.exceptionType && (evid.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
+        ? evid.evidenceNotes
         : null
-    entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.notes} ]` : entryTitle
+    entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.evidenceNotes} ]` : entryTitle
     entryTitle = evid.exceptionType ? entryTitle + ' *' : entryTitle
 
     const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
