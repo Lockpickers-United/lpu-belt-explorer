@@ -21,13 +21,13 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         return allEntries.find(e => e.id === id)
     }, [])
 
-    const allEvidenceEntries = cardEvidence.map(evidenceEntry =>
+    const allEvidenceEntries = useMemo(() => cardEvidence.map(evidenceEntry =>
         {
             const entry = getEntryFromId(evidenceEntry.matchId)
             const projectEntry = getProjectEntryFromId(evidenceEntry.matchId)
             return {...evidenceEntry, ...entry, ...projectEntry, id: evidenceEntry.id}
         }
-    )
+    ), [cardEvidence, getEntryFromId, getProjectEntryFromId])
 
     const mappedEntries = useMemo(() => {
         return allEvidenceEntries

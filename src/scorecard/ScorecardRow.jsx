@@ -22,7 +22,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    console.log('ScorecardRow')
+    console.log(`ScorecardRow ${evid.id}`)
 
     const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
     const project = useMemo(() => getProjectEntryFromId(evid.matchId), [getProjectEntryFromId, evid.matchId])
@@ -193,5 +193,25 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 }
 
 export default React.memo(ScorecardRow, (prevProps, nextProps) => {
-    return prevProps.evid.id === nextProps.evid.id && prevProps.expanded === nextProps.expanded
+    const prevEvidKeys = Object.keys(prevProps.evid)
+    const nextEvidKeys = Object.keys(nextProps.evid)
+    console.log('comparing')
+
+    if (prevEvidKeys.length !== nextEvidKeys.length) {
+        return false
+    }
+    for (let idx=0; idx < prevEvidKeys.length; idx++) {
+        if (prevProps.evid[idx] !== nextProps.evid[idx]) {
+            return false
+        }
+    }
+
+    if (prevProps.owner === nextProps.owner &&
+        prevProps.expanded === nextProps.expanded &&
+        prevProps.onExpand === nextProps.onExpand) {
+        console.log('they are the same')
+        return true
+    } else {
+        return false
+    }
 })
