@@ -22,10 +22,15 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    console.log(`ScorecardRow ${evid.id}`)
+    //console.log('ScorecardRow')
 
-    const entry = useMemo(() => getEntryFromId(evid.matchId), [getEntryFromId, evid])
-    const project = useMemo(() => getProjectEntryFromId(evid.matchId), [getProjectEntryFromId, evid.matchId])
+    let entry = useMemo(() => {
+        let match = getEntryFromId(evid.matchId)
+        match = match
+            ? match
+            : getProjectEntryFromId(evid.matchId)
+        return match
+    }, [getEntryFromId, evid.matchId, getProjectEntryFromId])
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -53,12 +58,13 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 
     let entryTitle = entry
         ? entryName(entry)
-        : project
-            ? evid.name
-            : `[ ${evid.notes} ]`
+        :  evid.notes
+    const evidenceNotes = evid.exceptionType && (evid.notes.toLowerCase() !== entryTitle.toLowerCase())
+        ? evid.notes
+        : null
+    entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.notes} ]` : entryTitle
     entryTitle = evid.exceptionType ? entryTitle + ' *' : entryTitle
 
-    const evidenceNotes = evid.exceptionType && (evid.notes.toLowerCase() !== entryTitle.toLowerCase()) ? evid.notes : null
     const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
 
     const supersedingEntryId = evid.exceptionId
@@ -86,7 +92,6 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
     const dateText = evid.date ? dayjs(evid.date).format('MM/DD/YY') : '(no date)'
-
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
@@ -195,7 +200,6 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 export default React.memo(ScorecardRow, (prevProps, nextProps) => {
     const prevEvidKeys = Object.keys(prevProps.evid)
     const nextEvidKeys = Object.keys(nextProps.evid)
-    console.log('comparing')
 
     if (prevEvidKeys.length !== nextEvidKeys.length) {
         return false
@@ -209,7 +213,6 @@ export default React.memo(ScorecardRow, (prevProps, nextProps) => {
     if (prevProps.owner === nextProps.owner &&
         prevProps.expanded === nextProps.expanded &&
         prevProps.onExpand === nextProps.onExpand) {
-        console.log('they are the same')
         return true
     } else {
         return false

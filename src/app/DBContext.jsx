@@ -185,6 +185,7 @@ export function DBProvider({children}) {
                 evidName: '',
                 evidUrl: '',
                 modifier: '',
+                notes: '',
                 lockProjectId: matchId,
                 evidCreatedAt: Timestamp.fromDate(new Date())
             }
