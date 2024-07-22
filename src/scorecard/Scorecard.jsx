@@ -1,11 +1,10 @@
-import React, {useState, useMemo, useContext, useCallback, useDeferredValue} from 'react'
+import React, {useState, useMemo, useContext, useCallback} from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import DBContext from '../app/DBContext.jsx'
 import dans from '../data/dans.json'
 
 import ScorecardRow from './ScorecardRow.jsx'
-import ScorecardListContext from './ScorecardListContext.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 
@@ -21,8 +20,7 @@ function Scorecard({owner, profile}) {
     const {removeAllEvidence, importUnclaimedEvidence, createEvidenceForEntries} = useContext(DBContext)
 
     const [tabToImport, setTabToImport] = useState('')
-    const {expanded, setExpanded} = useContext(ScorecardListContext)
-    const defExpanded = useDeferredValue(owner && expanded)
+    const [expanded, setExpanded] = useState(false)
 
     const recordedIdsToMerge = useMemo(() => {
         if (profile && profile.recorded) {
@@ -125,7 +123,7 @@ function Scorecard({owner, profile}) {
                     <ScorecardRow key={ev.id}
                                   owner={owner}
                                   evid={ev}
-                                  expanded={ev.id === defExpanded}
+                                  expanded={ev.id === expanded}
                                   onExpand={setExpanded}
                     />
                 )}

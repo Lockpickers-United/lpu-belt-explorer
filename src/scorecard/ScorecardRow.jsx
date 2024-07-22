@@ -22,7 +22,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    //console.log('ScorecardRow')
+    // console.log(`ScorecardRow ${evid.id}`)
 
     let entry = useMemo(() => {
         let match = getEntryFromId(evid.matchId)
@@ -95,7 +95,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
-            onExpand && onExpand(isExpanded ? evid.id : false)
+            onExpand(isExpanded ? evid.id : false)
         }
     }, [evid.id, onExpand, owner])
 
@@ -209,7 +209,6 @@ export default React.memo(ScorecardRow, (prevProps, nextProps) => {
             return false
         }
     }
-
     if (prevProps.owner === nextProps.owner &&
         prevProps.expanded === nextProps.expanded &&
         prevProps.onExpand === nextProps.onExpand) {

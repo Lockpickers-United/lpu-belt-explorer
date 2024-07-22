@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import ScorecardDataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
