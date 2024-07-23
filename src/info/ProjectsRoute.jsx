@@ -2,24 +2,23 @@ import React from 'react'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
-import DansPage from './DansPage'
+import ProjectsPage from './ProjectsPage'
 import Tracker from '../app/Tracker.jsx'
 
-function InfoRoute() {
-    usePageTitle('Dan System')
+export default function ProjectsRoute() {
+
+    usePageTitle("Master's Projects")
 
     return (
         <React.Fragment>
-            <Nav title='Dan System'/>
+            <Nav title="Master's Projects"/>
 
-            <DansPage/>
+            <ProjectsPage/>
 
             <Footer/>
 
-            <Tracker feature='dans'/>
+            <Tracker feature='projects'/>
 
         </React.Fragment>
     )
 }
-
-export default InfoRoute

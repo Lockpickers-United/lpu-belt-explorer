@@ -3,6 +3,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
 import InfoPage from './InfoPage'
+import Tracker from '../app/Tracker.jsx'
 
 function InfoRoute() {
     usePageTitle('Belt Requirements')
@@ -14,6 +15,9 @@ function InfoRoute() {
             <InfoPage/>
 
             <Footer/>
+
+            <Tracker feature='beltRequirements'/>
+
         </React.Fragment>
     )
 }

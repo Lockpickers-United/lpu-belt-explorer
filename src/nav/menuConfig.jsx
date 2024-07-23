@@ -9,6 +9,9 @@ import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 import BuildIcon from '@mui/icons-material/Build'
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import LPU_logo from '../resources/LPU_logo'
+import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
+import ConstructionIcon from '@mui/icons-material/Construction'
+import ColorLensIcon from '@mui/icons-material/ColorLens'
 
 export default [
     {
@@ -29,8 +32,13 @@ export default [
     },
     {
         title: 'Dan System',
-        icon: <InsightsOutlinedIcon fontSize='small'/>,
+        icon: <SportsMartialArtsIcon fontSize='small'/>,
         path: '/dans'
+    },
+    {
+        title: "Master's Projects",
+        icon: <ConstructionIcon fontSize='small'/>,
+        path: '/projects'
     },
     {
         title: 'Glossary',
