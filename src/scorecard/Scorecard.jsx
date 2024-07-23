@@ -7,6 +7,7 @@ import dans from '../data/dans.json'
 import ScorecardRow from './ScorecardRow.jsx'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
+import AddProjectButton from './AddProjectButton.jsx'
 
 function Scorecard({owner, profile}) {
 
@@ -98,6 +99,10 @@ function Scorecard({owner, profile}) {
                             </Button>
                         }
                     </div>
+                    <div>
+                        <AddProjectButton/>
+                    </div>
+
                 </div>
 
                 <div style={{flexGrow: 1, textAlign: 'right'}}>

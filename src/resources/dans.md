@@ -102,9 +102,9 @@ Earning Dan Points “on the mat” can also be accomplished completing projects
 - Cutaway Making
 
 You can also nominate others to receive points through:
-Exceptional Knowledge of Locks
-Community Leadership
-Lock Distribution
+- Exceptional Knowledge of Locks
+- Community Leadership
+- Lock Distribution
 
 Completed projects will be submitted for a vote in the black belt community in “The Mat” channel to place them within
 the tier structure for that discipline. The generic tier point structure is below. Some Disciplines may have less tiers

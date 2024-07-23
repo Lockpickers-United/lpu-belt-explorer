@@ -20,8 +20,6 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         }
     ), [cardEvidence])
 
-//    console.log('allEvidenceEntries', allEvidenceEntries)
-
     const mappedEntries = useMemo(() => {
         return allEvidenceEntries
             .map(entry => ({

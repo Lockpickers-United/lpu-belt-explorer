@@ -2,720 +2,780 @@
   {
     "id": "12345703",
     "tier": "T1",
-    "name": "Challenge Locks Project, tier 1",
+    "name": "Challenge Locks, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Challenge Locks Project, tier 1"
+        "model": "Challenge Locks, tier 1"
       }
     ]
   },
   {
     "id": "12345704",
     "tier": "T2",
-    "name": "Challenge Locks Project, tier 2",
+    "name": "Challenge Locks, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Challenge Locks Project, tier 2"
+        "model": "Challenge Locks, tier 2"
       }
     ]
   },
   {
     "id": "12345705",
     "tier": "T3",
-    "name": "Challenge Locks Project, tier 3",
+    "name": "Challenge Locks, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Challenge Locks Project, tier 3"
+        "model": "Challenge Locks, tier 3"
       }
     ]
   },
   {
     "id": "12345706",
     "tier": "T4",
-    "name": "Challenge Locks Project, tier 4",
+    "name": "Challenge Locks, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Challenge Locks Project, tier 4"
+        "model": "Challenge Locks, tier 4"
       }
     ]
   },
   {
     "id": "12345707",
     "tier": "T5",
-    "name": "Challenge Locks Project, tier 5",
+    "name": "Challenge Locks, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Challenge Locks Project, tier 5"
+        "model": "Challenge Locks, tier 5"
       }
     ]
   },
   {
     "id": "12345708",
     "tier": "T1",
-    "name": "Community Project, tier 1",
+    "name": "Community Involvement, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Community Project, tier 1"
+        "model": "Community Involvement, tier 1"
       }
     ]
   },
   {
     "id": "12345709",
     "tier": "T2",
-    "name": "Community Project, tier 2",
+    "name": "Community Involvement, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Community Project, tier 2"
+        "model": "Community Involvement, tier 2"
       }
     ]
   },
   {
     "id": "12345710",
     "tier": "T3",
-    "name": "Community Project, tier 3",
+    "name": "Community Involvement, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Community Project, tier 3"
+        "model": "Community Involvement, tier 3"
       }
     ]
   },
   {
     "id": "12345711",
     "tier": "T4",
-    "name": "Community Project, tier 4",
+    "name": "Community Involvement, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Community Project, tier 4"
+        "model": "Community Involvement, tier 4"
       }
     ]
   },
   {
     "id": "12345712",
     "tier": "T5",
-    "name": "Community Project, tier 5",
+    "name": "Community Involvement, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Community Project, tier 5"
+        "model": "Community Involvement, tier 5"
       }
     ]
   },
   {
     "id": "12345698",
     "tier": "T1",
-    "name": "Cutaways Project, tier 1",
+    "name": "Cutaway Making, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Cutaways Project, tier 1"
+        "model": "Cutaway Making, tier 1"
       }
     ]
   },
   {
     "id": "12345699",
     "tier": "T2",
-    "name": "Cutaways Project, tier 2",
+    "name": "Cutaway Making, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Cutaways Project, tier 2"
+        "model": "Cutaway Making, tier 2"
       }
     ]
   },
   {
     "id": "12345700",
     "tier": "T3",
-    "name": "Cutaways Project, tier 3",
+    "name": "Cutaway Making, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Cutaways Project, tier 3"
+        "model": "Cutaway Making, tier 3"
       }
     ]
   },
   {
     "id": "12345701",
     "tier": "T4",
-    "name": "Cutaways Project, tier 4",
+    "name": "Cutaway Making, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Cutaways Project, tier 4"
+        "model": "Cutaway Making, tier 4"
       }
     ]
   },
   {
     "id": "12345702",
     "tier": "T5",
-    "name": "Cutaways Project, tier 5",
+    "name": "Cutaway Making, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Cutaways Project, tier 5"
+        "model": "Cutaway Making, tier 5"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "tier": "T1",
+    "name": "Disc Detainer Pick Making, tier 1",
+    "belt": "Project 1",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Disc Detainer Pick Making, tier 1"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "tier": "T2",
+    "name": "Disc Detainer Pick Making, tier 2",
+    "belt": "Project 2",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Disc Detainer Pick Making, tier 2"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "tier": "T3",
+    "name": "Disc Detainer Pick Making, tier 3",
+    "belt": "Project 3",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Disc Detainer Pick Making, tier 3"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "tier": "T4",
+    "name": "Disc Detainer Pick Making, tier 4",
+    "belt": "Project 4",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Disc Detainer Pick Making, tier 4"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "tier": "T5",
+    "name": "Disc Detainer Pick Making, tier 5",
+    "belt": "Project 5",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Disc Detainer Pick Making, tier 5"
       }
     ]
   },
   {
     "id": "12345688",
     "tier": "T1",
-    "name": "Impressioning Project, tier 1",
+    "name": "Impressioning, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Impressioning Project, tier 1"
+        "model": "Impressioning, tier 1"
       }
     ]
   },
   {
     "id": "12345689",
     "tier": "T2",
-    "name": "Impressioning Project, tier 2",
+    "name": "Impressioning, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Impressioning Project, tier 2"
+        "model": "Impressioning, tier 2"
       }
     ]
   },
   {
     "id": "12345690",
     "tier": "T3",
-    "name": "Impressioning Project, tier 3",
+    "name": "Impressioning, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Impressioning Project, tier 3"
+        "model": "Impressioning, tier 3"
       }
     ]
   },
   {
     "id": "12345691",
     "tier": "T4",
-    "name": "Impressioning Project, tier 4",
+    "name": "Impressioning, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Impressioning Project, tier 4"
+        "model": "Impressioning, tier 4"
       }
     ]
   },
   {
     "id": "12345692",
     "tier": "T5",
-    "name": "Impressioning Project, tier 5",
+    "name": "Impressioning, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Impressioning Project, tier 5"
+        "model": "Impressioning, tier 5"
       }
     ]
   },
   {
     "id": "12345728",
     "tier": "T1",
-    "name": "Lock Design Project, tier 1",
+    "name": "Lock Design, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Design Project, tier 1"
+        "model": "Lock Design, tier 1"
       }
     ]
   },
   {
     "id": "12345729",
     "tier": "T2",
-    "name": "Lock Design Project, tier 2",
+    "name": "Lock Design, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Design Project, tier 2"
+        "model": "Lock Design, tier 2"
       }
     ]
   },
   {
     "id": "12345730",
     "tier": "T3",
-    "name": "Lock Design Project, tier 3",
+    "name": "Lock Design, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Design Project, tier 3"
+        "model": "Lock Design, tier 3"
       }
     ]
   },
   {
     "id": "12345731",
     "tier": "T4",
-    "name": "Lock Design Project, tier 4",
+    "name": "Lock Design, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Design Project, tier 4"
+        "model": "Lock Design, tier 4"
       }
     ]
   },
   {
     "id": "12345732",
     "tier": "T5",
-    "name": "Lock Design Project, tier 5",
+    "name": "Lock Design, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Design Project, tier 5"
+        "model": "Lock Design, tier 5"
       }
     ]
   },
   {
     "id": "12345733",
     "tier": "T1",
-    "name": "Lock Manufacturing Project, tier 1",
+    "name": "Lock Manufacturing, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Manufacturing Project, tier 1"
+        "model": "Lock Manufacturing, tier 1"
       }
     ]
   },
   {
     "id": "12345734",
     "tier": "T2",
-    "name": "Lock Manufacturing Project, tier 2",
+    "name": "Lock Manufacturing, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Manufacturing Project, tier 2"
+        "model": "Lock Manufacturing, tier 2"
       }
     ]
   },
   {
     "id": "12345735",
     "tier": "T3",
-    "name": "Lock Manufacturing Project, tier 3",
+    "name": "Lock Manufacturing, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Manufacturing Project, tier 3"
+        "model": "Lock Manufacturing, tier 3"
       }
     ]
   },
   {
     "id": "12345736",
     "tier": "T4",
-    "name": "Lock Manufacturing Project, tier 4",
+    "name": "Lock Manufacturing, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Manufacturing Project, tier 4"
+        "model": "Lock Manufacturing, tier 4"
       }
     ]
   },
   {
     "id": "12345737",
     "tier": "T5",
-    "name": "Lock Manufacturing Project, tier 5",
+    "name": "Lock Manufacturing, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Lock Manufacturing Project, tier 5"
+        "model": "Lock Manufacturing, tier 5"
       }
     ]
   },
   {
     "id": "12345683",
     "tier": "T1",
-    "name": "Other Project, tier 1",
+    "name": "Other Master's Project, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Other Project, tier 1"
+        "model": "Other Master's Project, tier 1"
       }
     ]
   },
   {
     "id": "12345684",
     "tier": "T2",
-    "name": "Other Project, tier 2",
+    "name": "Other Master's Project, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Other Project, tier 2"
+        "model": "Other Master's Project, tier 2"
       }
     ]
   },
   {
     "id": "12345685",
     "tier": "T3",
-    "name": "Other Project, tier 3",
+    "name": "Other Master's Project, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Other Project, tier 3"
+        "model": "Other Master's Project, tier 3"
       }
     ]
   },
   {
     "id": "12345686",
     "tier": "T4",
-    "name": "Other Project, tier 4",
+    "name": "Other Master's Project, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Other Project, tier 4"
+        "model": "Other Master's Project, tier 4"
       }
     ]
   },
   {
     "id": "12345687",
     "tier": "T5",
-    "name": "Other Project, tier 5",
+    "name": "Other Master's Project, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Other Project, tier 5"
-      }
-    ]
-  },
-  {
-    "id": "12345713",
-    "tier": "T1",
-    "name": "Picking Instruction Project, tier 1",
-    "belt": "Project 1",
-    "makeModels": [
-      {
-        "make": "",
-        "model": "Picking Instruction Project, tier 1"
-      }
-    ]
-  },
-  {
-    "id": "12345714",
-    "tier": "T2",
-    "name": "Picking Instruction Project, tier 2",
-    "belt": "Project 2",
-    "makeModels": [
-      {
-        "make": "",
-        "model": "Picking Instruction Project, tier 2"
-      }
-    ]
-  },
-  {
-    "id": "12345715",
-    "tier": "T3",
-    "name": "Picking Instruction Project, tier 3",
-    "belt": "Project 3",
-    "makeModels": [
-      {
-        "make": "",
-        "model": "Picking Instruction Project, tier 3"
-      }
-    ]
-  },
-  {
-    "id": "12345716",
-    "tier": "T4",
-    "name": "Picking Instruction Project, tier 4",
-    "belt": "Project 4",
-    "makeModels": [
-      {
-        "make": "",
-        "model": "Picking Instruction Project, tier 4"
-      }
-    ]
-  },
-  {
-    "id": "12345717",
-    "tier": "T5",
-    "name": "Picking Instruction Project, tier 5",
-    "belt": "Project 5",
-    "makeModels": [
-      {
-        "make": "",
-        "model": "Picking Instruction Project, tier 5"
+        "model": "Other Master's Project, tier 5"
       }
     ]
   },
   {
     "id": "12345693",
     "tier": "T1",
-    "name": "Pickmaking Project, tier 1",
+    "name": "Pick Making, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Pickmaking Project, tier 1"
+        "model": "Pick Making, tier 1"
       }
     ]
   },
   {
     "id": "12345694",
     "tier": "T2",
-    "name": "Pickmaking Project, tier 2",
+    "name": "Pick Making, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Pickmaking Project, tier 2"
+        "model": "Pick Making, tier 2"
       }
     ]
   },
   {
     "id": "12345695",
     "tier": "T3",
-    "name": "Pickmaking Project, tier 3",
+    "name": "Pick Making, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Pickmaking Project, tier 3"
+        "model": "Pick Making, tier 3"
       }
     ]
   },
   {
     "id": "12345696",
     "tier": "T4",
-    "name": "Pickmaking Project, tier 4",
+    "name": "Pick Making, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Pickmaking Project, tier 4"
+        "model": "Pick Making, tier 4"
       }
     ]
   },
   {
     "id": "12345697",
     "tier": "T5",
-    "name": "Pickmaking Project, tier 5",
+    "name": "Pick Making, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Pickmaking Project, tier 5"
+        "model": "Pick Making, tier 5"
+      }
+    ]
+  },
+  {
+    "id": "12345713",
+    "tier": "T1",
+    "name": "Picking Instruction, tier 1",
+    "belt": "Project 1",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Picking Instruction, tier 1"
+      }
+    ]
+  },
+  {
+    "id": "12345714",
+    "tier": "T2",
+    "name": "Picking Instruction, tier 2",
+    "belt": "Project 2",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Picking Instruction, tier 2"
+      }
+    ]
+  },
+  {
+    "id": "12345715",
+    "tier": "T3",
+    "name": "Picking Instruction, tier 3",
+    "belt": "Project 3",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Picking Instruction, tier 3"
+      }
+    ]
+  },
+  {
+    "id": "12345716",
+    "tier": "T4",
+    "name": "Picking Instruction, tier 4",
+    "belt": "Project 4",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Picking Instruction, tier 4"
+      }
+    ]
+  },
+  {
+    "id": "12345717",
+    "tier": "T5",
+    "name": "Picking Instruction, tier 5",
+    "belt": "Project 5",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Picking Instruction, tier 5"
       }
     ]
   },
   {
     "id": "12345678",
     "tier": "T1",
-    "name": "Safe Manipulation Project, tier 1",
+    "name": "Safe Lock Manipulation, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Safe Manipulation Project, tier 1"
+        "model": "Safe Lock Manipulation, tier 1"
       }
     ]
   },
   {
     "id": "12345679",
     "tier": "T2",
-    "name": "Safe Manipulation Project, tier 2",
+    "name": "Safe Lock Manipulation, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Safe Manipulation Project, tier 2"
+        "model": "Safe Lock Manipulation, tier 2"
       }
     ]
   },
   {
     "id": "12345680",
     "tier": "T3",
-    "name": "Safe Manipulation Project, tier 3",
+    "name": "Safe Lock Manipulation, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Safe Manipulation Project, tier 3"
+        "model": "Safe Lock Manipulation, tier 3"
       }
     ]
   },
   {
     "id": "12345681",
     "tier": "T4",
-    "name": "Safe Manipulation Project, tier 4",
+    "name": "Safe Lock Manipulation, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Safe Manipulation Project, tier 4"
+        "model": "Safe Lock Manipulation, tier 4"
       }
     ]
   },
   {
     "id": "12345682",
     "tier": "T5",
-    "name": "Safe Manipulation Project, tier 5",
+    "name": "Safe Lock Manipulation, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Safe Manipulation Project, tier 5"
+        "model": "Safe Lock Manipulation, tier 5"
       }
     ]
   },
   {
     "id": "12345718",
     "tier": "T1",
-    "name": "Tool Making Project, tier 1",
+    "name": "Tool Making, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Making Project, tier 1"
+        "model": "Tool Making, tier 1"
       }
     ]
   },
   {
     "id": "12345719",
     "tier": "T2",
-    "name": "Tool Making Project, tier 2",
+    "name": "Tool Making, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Making Project, tier 2"
+        "model": "Tool Making, tier 2"
       }
     ]
   },
   {
     "id": "12345720",
     "tier": "T3",
-    "name": "Tool Making Project, tier 3",
+    "name": "Tool Making, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Making Project, tier 3"
+        "model": "Tool Making, tier 3"
       }
     ]
   },
   {
     "id": "12345721",
     "tier": "T4",
-    "name": "Tool Making Project, tier 4",
+    "name": "Tool Making, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Making Project, tier 4"
+        "model": "Tool Making, tier 4"
       }
     ]
   },
   {
     "id": "12345722",
     "tier": "T5",
-    "name": "Tool Making Project, tier 5",
+    "name": "Tool Making, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Making Project, tier 5"
+        "model": "Tool Making, tier 5"
       }
     ]
   },
   {
     "id": "12345723",
     "tier": "T1",
-    "name": "Tool Manufacturing Project, tier 1",
+    "name": "Tool Manufacturing, tier 1",
     "belt": "Project 1",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Manufacturing Project, tier 1"
+        "model": "Tool Manufacturing, tier 1"
       }
     ]
   },
   {
     "id": "12345724",
     "tier": "T2",
-    "name": "Tool Manufacturing Project, tier 2",
+    "name": "Tool Manufacturing, tier 2",
     "belt": "Project 2",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Manufacturing Project, tier 2"
+        "model": "Tool Manufacturing, tier 2"
       }
     ]
   },
   {
     "id": "12345725",
     "tier": "T3",
-    "name": "Tool Manufacturing Project, tier 3",
+    "name": "Tool Manufacturing, tier 3",
     "belt": "Project 3",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Manufacturing Project, tier 3"
+        "model": "Tool Manufacturing, tier 3"
       }
     ]
   },
   {
     "id": "12345726",
     "tier": "T4",
-    "name": "Tool Manufacturing Project, tier 4",
+    "name": "Tool Manufacturing, tier 4",
     "belt": "Project 4",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Manufacturing Project, tier 4"
+        "model": "Tool Manufacturing, tier 4"
       }
     ]
   },
   {
     "id": "12345727",
     "tier": "T5",
-    "name": "Tool Manufacturing Project, tier 5",
+    "name": "Tool Manufacturing, tier 5",
     "belt": "Project 5",
     "makeModels": [
       {
         "make": "",
-        "model": "Tool Manufacturing Project, tier 5"
+        "model": "Tool Manufacturing, tier 5"
       }
     ]
   }

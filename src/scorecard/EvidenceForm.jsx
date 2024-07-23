@@ -12,8 +12,10 @@ import DBContext from '../app/DBContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import isValidUrl from '../util/isValidUrl'
+import allProjects from '../data/projects.json'
+import Autocomplete from '@mui/material/Autocomplete'
 
-export default function EvidenceForm({evid, lockId, handleUpdate}) {
+export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
@@ -21,6 +23,20 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
     const [evidenceDate, setEvidenceDate] = useState(evid?.date ? dayjs(evid.date) : dayjs())
     const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
     const [updated, setUpdated] = useState(false)
+
+    const [projectName, setProjectName] = useState('')
+    const projectValues = allProjects.map(project => {
+        return {label: project.name, value: project.id}
+    })
+    const project = allProjects.find(item => {
+        return item.name === projectName
+    })
+
+    const entryId = lockId
+        ? lockId
+        : project
+            ? project.id
+            : null
 
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -43,8 +59,9 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
                 })
             } else {
                 addEvidence({
-                    matchId: lockId,
+                    matchId: entryId,
                     evidenceNotes: evidenceNotes,
+                    notes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     modifier: modifier
@@ -57,7 +74,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [addEvidence, evid?.id, evid?.matchId, evidenceDate, evidenceNotes, evidenceUrl, handleUpdate, lockId, modifier, updateEvidence])
+    }, [addEvidence, entryId, evid?.id, evid?.matchId, evidenceDate, evidenceNotes, evidenceUrl, handleUpdate, modifier, updateEvidence])
 
     const handleDelete = useCallback(async () => {
         try {
@@ -97,6 +114,19 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
 
             <React.Fragment>
+
+                {addProject &&
+                    <Autocomplete
+                        disablePortal
+                        options={projectValues}
+                        style={{maxWidth: 400, marginBottom: 10}}
+                        onInputChange={(event, newInputValue) => {
+                            setProjectName(newInputValue)
+                        }}
+                        renderInput={(params) => <TextField {...params} label='Project' color='secondary'/>}
+                    />
+                }
+
                 <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
                     <TextField
                         id='evidence-url'
@@ -173,7 +203,8 @@ export default function EvidenceForm({evid, lockId, handleUpdate}) {
 
                 <div style={{display: 'flex'}}>
                     <div style={{marginLeft: 0}}>
-                        <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start' disabled={!evid}>
+                        <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'
+                                disabled={!evid}>
                             Delete
                         </Button>
                         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
