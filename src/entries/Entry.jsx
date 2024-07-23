@@ -203,4 +203,12 @@ function Entry({entry, expanded, onExpand}) {
     )
 }
 
-export default React.memo(Entry)
+export default React.memo(Entry, (prevProps, nextProps) => {
+    if (prevProps.entry.id === nextProps.entry.id &&
+        prevProps.expanded === nextProps.expanded &&
+        prevProps.onExpand === nextProps.onExpand) {
+        return true
+    } else {
+        return false
+    }
+})

@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue} from 'react'
+import React, {useState, useContext, useDeferredValue} from 'react'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import CompactEntries from '../locks/CompactEntries'
@@ -7,7 +7,8 @@ import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
 
 function ProfilePage({profile}) {
-    const {compact, expanded, setExpanded} = useContext(LockListContext)
+    const {compact} = useContext(LockListContext)
+    const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
 

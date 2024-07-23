@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue, useMemo} from 'react'
+import React, {useState, useContext, useDeferredValue, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
@@ -8,11 +8,11 @@ import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
 
 function Entries({profile}) {
-    const {compact, tab, expanded, setExpanded, displayAll} = useContext(LockListContext)
+    const {compact, tab, displayAll} = useContext(LockListContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
 
+    const [expanded, setExpanded] = useState(false)
     const defTab = useDeferredValue(tab)
-    const defExpanded = useDeferredValue(expanded)
     const defDisplayAll = useDeferredValue(displayAll)
 
     const entries = useMemo(() => {
@@ -39,7 +39,7 @@ function Entries({profile}) {
                     <Entry
                         key={entry.id}
                         entry={entry}
-                        expanded={entry.id === defExpanded}
+                        expanded={entry.id === expanded}
                         onExpand={setExpanded}
                     />
                 )
