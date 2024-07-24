@@ -7,12 +7,13 @@ import CardContent from '@mui/material/CardContent'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import Button from '@mui/material/Button'
 
-export default function AddProjectButton() {
+export default function AddProjectButton({setControlsExpanded}) {
 
     const [overlayIsOpen, setOverlayIsOpen] = useState(false)
     const handleOverlayOpen = useCallback(() => {
         setOverlayIsOpen(true)
-    }, [])
+        setControlsExpanded(false)
+    }, [setControlsExpanded])
     const handleOverlayClose = useCallback(() => {
         setOverlayIsOpen(false)
     }, [])
@@ -20,7 +21,7 @@ export default function AddProjectButton() {
     return (
         <React.Fragment>
             <div>
-                <Button color='secondary' size='small' onClick={handleOverlayOpen}>ADD PROJECT</Button>
+                <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={handleOverlayOpen}>ADD PROJECT</Button>
                 <Backdrop
                     sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                     open={overlayIsOpen} onClick={null}

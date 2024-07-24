@@ -122,6 +122,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
                         style={{maxWidth: 400, marginBottom: 10}}
                         onInputChange={(event, newInputValue) => {
                             setProjectName(newInputValue)
+                            setUpdated(true)
                         }}
                         renderInput={(params) => <TextField {...params} label='Project' color='secondary'/>}
                     />
