@@ -6,7 +6,6 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
-import GithubButton from '../nav/GithubButton'
 import projectsMd from '../resources/projects.md?raw'
 import '../resources/md-tables.css'
 

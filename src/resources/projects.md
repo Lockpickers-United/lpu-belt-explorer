@@ -37,7 +37,7 @@ Note: evidence should be images/text/video links etc, ideally in a pdf document 
 - **Tier 4** - Relevant contribution to the pool of advanced high quality CLs (at least 20 CLs, many of which with advanced or unusual security features). Verifiable technical innovation in pin making or locking mechanisms. Significant contribution with mentoring the production and distribution of high quality challenge locks.
 - **Tier 5** - Significant portfolio of advanced challenge locks (at least 40 CLs, many of which with advanced or unusual security features). Recognized community wide as an expert challenge lock maker, innovator, mentor, promoter and distributor.
 
-  *Examples of unusual security features may include: pin-in-pin, rattlesnake-style pins, articulated pins, secondary locking mechanisms, addition of magnets, combined core modifications, sleeve making, split core, upper chamber work, among others.
+*Examples of unusual security features may include: pin-in-pin, rattlesnake-style pins, articulated pins, secondary locking mechanisms, addition of magnets, combined core modifications, sleeve making, split core, upper chamber work, among others.
 
 ### Community Involvement
 
@@ -70,7 +70,7 @@ The cutaway locks should be completely functional with a working key. Exceptions
 - **Tier 4** - Added 2 more advanced tips* for 2 different locks, fulfilling previous tiers. Must have created a handle for each of two different tensioning methods OR a handle capable of different types of tensioning. Must be of high quality of build.
 - **Tier 5** - Demonstrate ability to make state-of-the-art setups including EITHER handles with extra or innovative features OR notably high quality, advanced* and functional tips for many high difficulty DD locks
 
-  *Other than generic, Abus Plus, Anchor Las, Abloy Classic, Abloy Disklock, and similar tips, or including any new design distinct from commonly available ones.
+*Other than generic, Abus Plus, Anchor Las, Abloy Classic, Abloy Disklock, and similar tips, or including any new design distinct from commonly available ones.
 
 ### Impressioning
 
@@ -81,7 +81,7 @@ The cutaway locks should be completely functional with a working key. Exceptions
 - **Tier 4** - Blind impressioning of 2 locks of each of 3 different types of locks (wafer, pin tumbler, dimple, lever...).
 - **Tier 5** - Portfolio of advanced impressioning skill including various impressioned lock types. Must include demonstration of lever impressioning ability OR impressioning of a complex locking mechanism (example: rotating pin mechanisms).
 
-    *Blind impressioning is defined as impressioned without access to the key or possibility to disassemble the lock. All Tiers must fulfill the previous ones. Being provided a lock from a trusted source (e.g. a member of LPU staff or a black belt) who can vouch for it being keyless is acceptable. Unguttable padlocks are acceptable, as are other formats provided they can be made tamper proof, for example by sealing screws with wax or intentionally stripping screws to make them unremovable. 
+*Blind impressioning is defined as impressioned without access to the key or possibility to disassemble the lock. All Tiers must fulfill the previous ones. Being provided a lock from a trusted source (e.g. a member of LPU staff or a black belt) who can vouch for it being keyless is acceptable. Unguttable padlocks are acceptable, as are other formats provided they can be made tamper proof, for example by sealing screws with wax or intentionally stripping screws to make them unremovable. 
 
 ### Pick Making
 

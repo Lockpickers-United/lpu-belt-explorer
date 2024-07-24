@@ -5,13 +5,11 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard'
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import FeedIcon from '@mui/icons-material/Feed'
-import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 import BuildIcon from '@mui/icons-material/Build'
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import LPU_logo from '../resources/LPU_logo'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import ConstructionIcon from '@mui/icons-material/Construction'
-import ColorLensIcon from '@mui/icons-material/ColorLens'
 
 export default [
     {

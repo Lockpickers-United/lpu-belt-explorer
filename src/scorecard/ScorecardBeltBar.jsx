@@ -6,26 +6,26 @@ import {ResponsiveBar} from '@nivo/bar'
 function CollectionBeltBar({beltData}) {
 
     const {width} = useWindowSize()
-    const mobileSmall = width <= 360
     const smallWindow = width <= 560
 
-    const chartHeight = mobileSmall ? 190
-        : smallWindow ? 200
-            : 175
+    const chartHeight = !smallWindow ? 175
+            : 180
 
     const chartMargin = !smallWindow
-        ? {top: 0, right: 10, bottom: 60, left: 10}
-        : {top: 0, right: 20, bottom: 50, left: 20}
+        ? {top: 0, right: 10, bottom: 60, left: 15}
+        : {top: 0, right: 20, bottom: 60, left: 20}
 
     const beltColors =
         ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
             '#0090de', '#634b9f', '#9d5918',
-            '#ba0303', '#000', '#373737']
+            '#ba0303', '#000', '#000', '#000',
+            '#000', '#000', '#a5a93c']
 
     const labelColors =
-        ['#000', '#000', '#000', '#000',
-            '#000', '#000', '#000',
-            '#000', '#ddd', '#ddd']
+        ['#000', '#000', '#000', '#ddd',
+            '#ddd', '#ddd', '#ddd',
+            '#ddd', '#ddd', '#ddd', '#ddd',
+            '#ddd', '#ddd', '#ddd', ]
 
     return (
         <div key='bar'
@@ -40,7 +40,6 @@ function CollectionBeltBar({beltData}) {
                 axisBottom={{
                     tickRotation: -45,
                 }}
-
                 axisLeft={null}
                 enableGridY={false}
                 theme={primaryTheme}
@@ -51,13 +50,6 @@ function CollectionBeltBar({beltData}) {
                 labelSkipHeight={12}
                 labelTextColor={(bar) => labelColors[bar.index % labelColors.length]}
             />
-
-            <div className='chart-legend' style={{
-                fontSize: '.9rem', color: '#ddd', textAlign: 'center', width: '100%', marginTop: '3px'
-            }}>
-                Belt Distribution
-            </div>
-
         </div>
     )
 }
