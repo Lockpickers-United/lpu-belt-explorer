@@ -4,8 +4,6 @@ import {danBelts} from '../data/belts'
 
 function InlineCollectionCharts({entries}) {
 
-    console.log('entries', entries)
-
     const chartData = useMemo(() => {
 
         const beltDistribution = entries

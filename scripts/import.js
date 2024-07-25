@@ -9,7 +9,8 @@ import {
     groupSchema,
     glossarySchema,
     dialsSchema,
-    projectSchema
+    projectSchema,
+    upgradeSchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -53,6 +54,7 @@ const dialsData = await importValidate('Dials', dialsSchema)
 const dialsMediaData = await importValidate('Dials Media', mediaSchema)
 const dialsLinkData = await importValidate('Dials Links', linkSchema)
 const projectsData = await importValidate('Projects', projectSchema)
+const upgradeData = await importValidate('Upgrades', upgradeSchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -139,8 +141,29 @@ const projects = projectsData
     .sort((a, b) => a.name.localeCompare(b.name))
 
 console.log('Writing projects.json')
-fs.writeFileSync('./src/data/projects.json', JSON.stringify(projects, null, 2))
+fs.writeFileSync('./src/data/projectsFromSheet.json', JSON.stringify(projects, null, 2))
 
+// Add upgrade data
+console.log('Processing project data...')
+const upgrades = upgradeData
+    .reduce((acc,item) => {
+        const id = item['Base ID']
+        const upgrade1 = item['Upgrade ID 1'] ? item['Upgrade ID 1'].toString() : null
+        const upgrade2 = item['Upgrade ID 2'] ? item['Upgrade ID 2'].toString() : null
+        const upgrade3 = item['Upgrade ID 3'] ? item['Upgrade ID 3'].toString() : null
+        const upgrade4 = item['Upgrade ID 4'] ? item['Upgrade ID 4'].toString() : null
+
+        const upgradeArray = [upgrade1]
+        if (upgrade2) {upgradeArray.push(upgrade2)}
+        if (upgrade3) {upgradeArray.push(upgrade3)}
+        if (upgrade4) {upgradeArray.push(upgrade4)}
+
+        acc[id] = upgradeArray
+        return acc
+    },{})
+
+console.log('Writing upgrades.json')
+fs.writeFileSync('./src/data/upgradesFromSheet.json', JSON.stringify(upgrades, null, 2))
 
 // Add media data
 mediaData

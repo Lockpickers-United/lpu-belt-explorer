@@ -118,3 +118,15 @@ export const projectSchema = Joi.array().items(
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
     }).unknown()
 )
+
+export const upgradeSchema = Joi.array().items(
+    Joi.object({
+        'Base ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 1': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 2': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 3': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 4': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
+    }).unknown()
+)
+
+

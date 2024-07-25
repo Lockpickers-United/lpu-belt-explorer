@@ -1,61 +1,66 @@
-Name,Tier,Unique Id
-Tier 1 Project safecracking,T1,12345678
-Tier 2 Project safecracking,T2,12345679
-Tier 3 Project safecracking,T3,12345680
-Tier 4 Project safecracking,T4,12345681
-Tier 5 Project safecracking,T5,12345682
-Tier 1 Project Other,T1,12345683
-Tier 2 Project Other,T2,12345684
-Tier 3 Project Other,T3,12345685
-Tier 4 Project Other,T4,12345686
-Tier 5 Project Other,T5,12345687
-Tier 1 Project impressioning,T1,12345688
-Tier 2 Project impressioning,T2,12345689
-Tier 3 Project impressioning,T3,12345690
-Tier 4 Project impressioning,T4,12345691
-Tier 5 Project impressioning,T5,12345692
-Tier 1 Project Pickmaking,T1,12345693
-Tier 2 Project Pickmaking,T2,12345694
-Tier 3 Project Pickmaking,T3,12345695
-Tier 4 Project Pickmaking,T4,12345696
-Tier 5 Project Pickmaking,T5,12345697
-Tier 1 Project Cutaways,T1,12345698
-Tier 2 Project Cutaways,T2,12345699
-Tier 3 Project Cutaways,T3,12345700
-Tier 4 Project Cutaways,T4,12345701
-Tier 5 Project Cutaways,T5,12345702
-Tier 1 Project Challenge locks,T1,12345703
-Tier 2 Project Challenge locks,T2,12345704
-Tier 3 Project Challenge locks,T3,12345705
-Tier 4 Project Challenge locks,T4,12345706
-Tier 5 Project Challenge locks,T5,12345707
-Tier 1 Project Community,T1,12345708
-Tier 2 Project Community,T2,12345709
-Tier 3 Project Community,T3,12345710
-Tier 4 Project Community,T4,12345711
-Tier 5 Project Community,T5,12345712
-Tier 1 Project Picking Instruction,T1,12345713
-Tier 2 Project Picking Instruction,T2,12345714
-Tier 3 Project Picking Instruction,T3,12345715
-Tier 4 Project Picking Instruction,T4,12345716
-Tier 5 Project Picking Instruction,T5,12345717
-Tier 1 Project Tool making,T1,12345718
-Tier 2 Project Tool making,T2,12345719
-Tier 3 Project Tool making,T3,12345720
-Tier 4 Project Tool making,T4,12345721
-Tier 5 Project Tool making,T5,12345722
-Tier 1 Project Tool Manufacturing,T1,12345723
-Tier 2 Project Tool Manufacturing,T2,12345724
-Tier 3 Project Tool Manufacturing,T3,12345725
-Tier 4 Project Tool Manufacturing,T4,12345726
-Tier 5 Project Tool Manufacturing,T5,12345727
-Tier 1 Project Lock Design,T1,12345728
-Tier 2 Project Lock Design,T2,12345729
-Tier 3 Project Lock Design,T3,12345730
-Tier 4 Project Lock Design,T4,12345731
-Tier 5 Project Lock Design,T5,12345732
-Tier 1 Project Lock Manufacturing,T1,12345733
-Tier 2 Project Lock Manufacturing,T2,12345734
-Tier 3 Project Lock Manufacturing,T3,12345735
-Tier 4 Project Lock Manufacturing,T4,12345736
-Tier 5 Project Lock Manufacturing,T5,12345737
+"Name", "Tier", "Unique ID"
+"Challenge Locks, tier 1", "T1", "93a61f11"
+"Challenge Locks, tier 2", "T2", "3b90ab9b"
+"Challenge Locks, tier 3", "T3", "e2c0342e"
+"Challenge Locks, tier 4", "T4", "76fee3b3"
+"Challenge Locks, tier 5", "T5", "35946aab"
+"Community Involvement, tier 1", "T1", "db448561"
+"Community Involvement, tier 2", "T2", "7c490c64"
+"Community Involvement, tier 3", "T3", "84a7f7c6"
+"Community Involvement, tier 4", "T4", "17bc33c4"
+"Community Involvement, tier 5", "T5", "f475c0f2"
+"Cutaway Making, tier 1", "T1", "e3211470"
+"Cutaway Making, tier 2", "T2", "5a0aa3e0"
+"Cutaway Making, tier 3", "T3", "505bc312"
+"Cutaway Making, tier 4", "T4", "b46b119a"
+"Cutaway Making, tier 5", "T5", "8b65f1db"
+"Disc Detainer Pick Making, tier 1", "T1", "26889b66"
+"Disc Detainer Pick Making, tier 2", "T2", "409f8d0a"
+"Disc Detainer Pick Making, tier 3", "T3", "786f1d52"
+"Disc Detainer Pick Making, tier 4", "T4", "599feff0"
+"Disc Detainer Pick Making, tier 5", "T5", "904b564f"
+"Impressioning, tier 1", "T1", "64b3ca91"
+"Impressioning, tier 2", "T2", "ee1c082f"
+"Impressioning, tier 3", "T3", "b60f6f7e"
+"Impressioning, tier 4", "T4", "72971f6c"
+"Impressioning, tier 5", "T5", "5dccbb32"
+"Lock Design, tier 1", "T1", "395c53b8"
+"Lock Design, tier 2", "T2", "79147d28"
+"Lock Design, tier 3", "T3", "db65eaf8"
+"Lock Design, tier 4", "T4", "4f793a00"
+"Lock Design, tier 5", "T5", "cb99bdd3"
+"Lock Manufacturing, tier 1", "T1", "e52406b9"
+"Lock Manufacturing, tier 2", "T2", "01d218bc"
+"Lock Manufacturing, tier 3", "T3", "fb3120f1"
+"Lock Manufacturing, tier 4", "T4", "98da0c85"
+"Lock Manufacturing, tier 5", "T5", "dd6b9d83"
+"Other Master's Project, tier 1", "T1", "9bc3714a"
+"Other Master's Project, tier 2", "T2", "28ebf3b8"
+"Other Master's Project, tier 3", "T3", "6b36ece2"
+"Other Master's Project, tier 4", "T4", "9d206b41"
+"Other Master's Project, tier 5", "T5", "ed62f676"
+"Pick Making, tier 1", "T1", "630d0229"
+"Pick Making, tier 2", "T2", "c2e1c952"
+"Pick Making, tier 3", "T3", "5bbc0602"
+"Pick Making, tier 4", "T4", "399daa10"
+"Pick Making, tier 5", "T5", "24272bae"
+"Picking Instruction, tier 1", "T1", "e9c16310"
+"Picking Instruction, tier 2", "T2", "619d41e1"
+"Picking Instruction, tier 3", "T3", "9042214a"
+"Picking Instruction, tier 4", "T4", "f6c8bf2c"
+"Picking Instruction, tier 5", "T5", "10e0f82a"
+"Safe Lock Manipulation, tier 1", "T1", "e48dabec"
+"Safe Lock Manipulation, tier 2", "T2", "c53d56b1"
+"Safe Lock Manipulation, tier 3", "T3", "c09036aa"
+"Safe Lock Manipulation, tier 4", "T4", "4ef6357c"
+"Safe Lock Manipulation, tier 5", "T5", "7afa1ef9"
+"Tool Making, tier 1", "T1", "459225cc"
+"Tool Making, tier 2", "T2", "24df60f0"
+"Tool Making, tier 3", "T3", "8a994627"
+"Tool Making, tier 4", "T4", "37fc777a"
+"Tool Making, tier 5", "T5", "0957731d"
+"Tool Manufacturing, tier 1", "T1", "420b8697"
+"Tool Manufacturing, tier 2", "T2", "c3d7c0e3"
+"Tool Manufacturing, tier 3", "T3", "775ec0ba"
+"Tool Manufacturing, tier 4", "T4", "913a4de9"
+"Tool Manufacturing, tier 5", "T5", "8113bb34"
