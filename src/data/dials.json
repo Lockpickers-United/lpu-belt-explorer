@@ -4,19 +4,19 @@
     "make": "Big Red",
     "model": "CDL-3",
     "group": "2",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-07-26T14:37:39.402Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
   },
   {
     "id": "761d2fe8",
     "make": "Big Red",
     "model": "CDL-3M",
     "group": "2M",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
@@ -58,14 +58,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
   },
   {
     "id": "693fd901",
     "make": "Big Red",
     "model": "CDL-4",
     "group": "2",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
     "tier": "",
@@ -100,19 +100,19 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
   },
   {
     "id": "0638d9d8",
     "make": "Big Red",
     "model": "CDL-4M",
     "group": "2M",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
   },
   {
     "id": "e24e62b7",
@@ -436,14 +436,26 @@
   {
     "id": "218529be",
     "make": "La Gard",
-    "model": "1800",
+    "model": "1800, 3 wheels",
     "group": "",
     "fence": "",
     "wheels": "",
     "digits": "0-99",
     "tier": "Tier 3",
     "features": [],
-    "lastUpdated": "2024-07-26T17:16:08.353Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
+  },
+  {
+    "id": "ea7b53e2",
+    "make": "La Gard",
+    "model": "1800, 4 wheels",
+    "group": "",
+    "fence": "",
+    "wheels": "",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
   },
   {
     "id": "82847ba5",
@@ -498,8 +510,8 @@
     "model": "2270",
     "group": "",
     "fence": "",
-    "wheels": "",
-    "digits": "0-99",
+    "wheels": "4",
+    "digits": "n/a",
     "tier": "",
     "features": [],
     "media": [
@@ -518,7 +530,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521698717_e1a3f36c63_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
   },
   {
     "id": "b04ccb99",
@@ -811,7 +823,7 @@
     "model": "2937",
     "group": "1",
     "fence": "",
-    "wheels": "",
+    "wheels": "3",
     "digits": "0-99",
     "tier": "",
     "features": [],
@@ -845,7 +857,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583438689_3d27ab0734_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "a7258495",
@@ -943,6 +955,26 @@
     "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
+    "id": "ffffb9fa",
+    "make": "Sargent & Greenleaf",
+    "model": "6631",
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "Tier 3",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates",
+      "Eccentric Roller"
+    ],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
     "id": "9262a564",
     "make": "Sargent & Greenleaf",
     "model": "6642",
@@ -997,6 +1029,25 @@
       }
     ],
     "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "edb5f9e3",
+    "make": "Sargent & Greenleaf",
+    "model": "6643",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates"
+    ],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "082b9b1f",
@@ -1132,6 +1183,24 @@
     "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
+    "id": "15d969bb",
+    "make": "Sargent & Greenleaf",
+    "model": "6731",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
     "id": "8a2dc6e5",
     "make": "Sargent & Greenleaf",
     "model": "6741",
@@ -1168,8 +1237,8 @@
   {
     "id": "3809d4a5",
     "make": "Sargent & Greenleaf",
-    "model": "8077",
-    "group": "Padlock",
+    "model": "8077 Padlock",
+    "group": "",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
@@ -1186,7 +1255,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522762218_66ce717570_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T17:16:08.353Z"
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "211383d8",
@@ -1227,7 +1296,7 @@
     "id": "87af3a83",
     "make": "Sargent & Greenleaf",
     "model": "8500 series",
-    "group": "1",
+    "group": "1, 1R",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
@@ -1263,14 +1332,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "7729589b",
     "make": "Sargent & Greenleaf",
-    "model": "R6700 series, 3 wheel",
+    "model": "R6700 series, 3 wheels",
     "group": "2",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
@@ -1305,19 +1374,19 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T17:16:08.354Z"
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "06555f12",
     "make": "Sargent & Greenleaf",
-    "model": "R6700 series, 4 wheel",
+    "model": "R6700 series, 4 wheels",
     "group": "2",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-26T17:16:08.354Z"
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "6eeba243",
@@ -1364,5 +1433,425 @@
       }
     ],
     "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "314e58a4",
+    "make": "AMSEC",
+    "model": "STAR C3",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "e3a922f0",
+    "make": "Chubb",
+    "model": "7L08",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "183de4b2",
+    "make": "Diebold",
+    "model": "6660 series",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "531f16d1",
+    "make": "Diebold",
+    "model": "6661",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "48b6f239",
+    "make": "Federal",
+    "model": "800",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "b8ad025e",
+    "make": "Ilco",
+    "model": "673",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "9e99b0ed",
+    "make": "Ilco",
+    "model": "674",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "6ac1cea2",
+    "make": "Ilco",
+    "model": "A673",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "cbeab2a1",
+    "make": "International",
+    "model": "2000",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "8b059d5a",
+    "make": "JIS",
+    "model": "4100",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "94976b4d",
+    "make": "JOLI",
+    "model": "",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "6675b41d",
+    "make": "Kromer",
+    "model": "14a",
+    "group": "",
+    "fence": "Gravity Lever",
+    "wheels": "3",
+    "digits": "0-49",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "cc91e358",
+    "make": "Kromer",
+    "model": "15b",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "6b301968",
+    "make": "Kromer",
+    "model": "3002",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "cffd6d42",
+    "make": "La Gard",
+    "model": "2050",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "d16ed8ce",
+    "make": "La Gard",
+    "model": "3330",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "0e6f7715",
+    "make": "Mosler",
+    "model": "5-H",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "58be25bb",
+    "make": "Mosler",
+    "model": "CD(K)-120",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "66e4c71a",
+    "make": "Mosler",
+    "model": "CD(K)-302",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "a377c77f",
+    "make": "Mosler",
+    "model": "KCB104",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "db3cba26",
+    "make": "Mosler",
+    "model": "MR-99",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "2c418e8a",
+    "make": "Mosler",
+    "model": "MR(K)-120",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "c51157c7",
+    "make": "Mosler",
+    "model": "no.11",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "e2f3be34",
+    "make": "Precision",
+    "model": "P67",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "7bdc4f32",
+    "make": "Rench",
+    "model": "4031",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "bb279fda",
+    "make": "Sargent & Greenleaf",
+    "model": "8100",
+    "group": "",
+    "fence": "",
+    "wheels": "2",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "e2c63188",
+    "make": "Sargent & Greenleaf",
+    "model": "C87",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "ddfdba26",
+    "make": "Sargent & Greenleaf",
+    "model": "No.5",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "cc7e7e41",
+    "make": "Satoh",
+    "model": "Sun 700",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "75ae5685",
+    "make": "Satoh",
+    "model": "Sun Magnetic",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "9250529e",
+    "make": "Steel Safe",
+    "model": "CS411B",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "d36e5167",
+    "make": "Yale",
+    "model": "025 1/2",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "ba90d477",
+    "make": "Yale",
+    "model": "026",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "da5d6407",
+    "make": "Yale",
+    "model": "OC5M",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "86c1a98b",
+    "make": "Yale",
+    "model": "V5332",
+    "group": "",
+    "fence": "",
+    "wheels": "",
+    "digits": "",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
   }
 ]
