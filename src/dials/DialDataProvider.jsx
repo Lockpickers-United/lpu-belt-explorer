@@ -14,6 +14,7 @@ export function DialDataProvider({children, allEntries}) {
         return allEntries
             .map(entry => ({
                 ...entry,
+                makeModels: [{make:entry.make, model:entry.model}],
                 fuzzy: removeAccents([
                     entry.make,
                     entry.model

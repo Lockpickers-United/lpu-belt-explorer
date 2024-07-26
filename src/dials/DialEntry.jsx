@@ -14,11 +14,14 @@ import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
 import DialImageGallery from './DialImageGallery'
 import BeltStripe from '../entries/BeltStripe.jsx'
+import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function DialEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const {isMobile} = useWindowSize()
     const ref = useRef(null)
 
     useEffect(() => {
@@ -45,6 +48,8 @@ function DialEntry({entry, expanded, onExpand}) {
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry.id, onExpand])
+
+    const questLabel = isMobile ? 'Quest' : 'Quest Level'
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -77,6 +82,15 @@ function DialEntry({entry, expanded, onExpand}) {
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' alignItems='flex-start'>
+                            {entry.tier &&
+                                <FieldValue
+                                    name={questLabel}
+                                    value={
+                                        <FilterChip field='fence' value={entry.tier || 'Unknown'}/>
+                                    }
+                                    style={{flexGrow: 1}}
+                                />
+                            }
                             <FieldValue
                                 name='Fence Type'
                                 value={
@@ -146,6 +160,7 @@ function DialEntry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker feature='dial' id={entry.id}/>
+                        <CopyEntryTextButton entry={entry}/>
                         <CopyLinkToEntryButton entry={entry} nameType='dial'/>
                     </AccordionActions>
                 </React.Fragment>
