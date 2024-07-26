@@ -691,11 +691,11 @@
     "model": "1800, 3 wheels",
     "group": "",
     "fence": "",
-    "wheels": "",
+    "wheels": "3",
     "digits": "0-99",
     "tier": "Tier 3",
     "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.948Z"
+    "lastUpdated": "2024-07-26T23:45:43.407Z"
   },
   {
     "id": "ea7b53e2",
@@ -703,11 +703,11 @@
     "model": "1800, 4 wheels",
     "group": "",
     "fence": "",
-    "wheels": "",
+    "wheels": "4",
     "digits": "0-99",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.948Z"
+    "lastUpdated": "2024-07-26T23:45:43.407Z"
   },
   {
     "id": "82847ba5",
@@ -879,18 +879,6 @@
       }
     ],
     "lastUpdated": "2024-07-26T14:37:39.403Z"
-  },
-  {
-    "id": "d16ed8ce",
-    "make": "La Gard",
-    "model": "3330",
-    "group": "",
-    "fence": "",
-    "wheels": "3",
-    "digits": "0-99",
-    "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.950Z"
   },
   {
     "id": "baa53440",
@@ -1477,7 +1465,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1552,7 +1540,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T23:45:43.407Z"
   },
   {
     "id": "ae84d433",
