@@ -36,9 +36,6 @@ export function DialDataProvider({children, allEntries}) {
                     ? value.map(subkey => ({key, value: subkey}))
                     : {key, value}
             })
-            .sort((a, b) => {
-                return a.fuzzy.localeCompare(b.fuzzy)
-            })
             .flat()
 
         // Filter the data
@@ -50,6 +47,7 @@ export function DialDataProvider({children, allEntries}) {
                         : datum[key] === value
                 })
             })
+            .sort((a, b) => { return a.fuzzy.localeCompare(b.fuzzy)})
 
         // If there is a search term, fuzzy match that
         const searched = search
