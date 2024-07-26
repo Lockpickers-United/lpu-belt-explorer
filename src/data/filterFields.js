@@ -11,9 +11,10 @@ export const lockFilterFields = [
 
 export const dialFilterFields = [
     {label: 'Make', fieldName: 'make'},
-    {label: 'Fence Type', fieldName: 'fence'},
-    {label: 'UL Group', fieldName: 'group'},
     {label: 'Wheels', fieldName: 'wheels'},
+    {label: 'UL Group', fieldName: 'group'},
+    {label: 'Quest Tier', fieldName: 'tier'},
+    {label: 'Fence Type', fieldName: 'fence'},
     {label: 'Digits', fieldName: 'digits'},
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content'}

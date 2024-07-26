@@ -7,8 +7,9 @@
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-07-25T22:11:20.466Z"
+    "lastUpdated": "2024-07-26T14:37:39.402Z"
   },
   {
     "id": "761d2fe8",
@@ -18,6 +19,7 @@
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -56,7 +58,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-25T22:11:20.467Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "693fd901",
@@ -66,6 +68,7 @@
     "fence": "",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -97,7 +100,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-25T22:11:20.467Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "0638d9d8",
@@ -107,8 +110,9 @@
     "fence": "",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-25T22:11:20.467Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "e24e62b7",
@@ -118,12 +122,26 @@
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Vault Format"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "75ddbd51",
+    "make": "Chubb",
+    "model": "7L64",
+    "group": "",
+    "fence": "",
+    "wheels": "",
+    "digits": "",
+    "tier": "Tier 3",
+    "features": [],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "f5703ac0",
@@ -133,6 +151,7 @@
     "fence": "",
     "wheels": "",
     "digits": "",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -156,7 +175,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541905018/in/album-72177720314921522/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "087f41e9",
@@ -166,6 +186,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -174,7 +195,8 @@
       "False Gates",
       "Eccentric Double-Cam",
       "LOBC"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "58441a32",
@@ -184,6 +206,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -221,7 +244,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522597556/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "3ad83c5d",
@@ -231,6 +255,7 @@
     "fence": "",
     "wheels": "",
     "digits": "",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -255,7 +280,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "610d201c",
@@ -265,6 +290,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -309,7 +335,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "f59d47b3",
@@ -319,6 +345,7 @@
     "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -348,7 +375,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53543551118/in/album-72177720314946356/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53543551118_fc1f2597f1_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "93b9e6f5",
@@ -358,12 +386,14 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Kromer Standard Format"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "c32aa445",
@@ -373,6 +403,7 @@
     "fence": "Spring Lever",
     "wheels": "4(?)",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -380,7 +411,8 @@
       "Vault Format",
       "Indirect drive",
       "Magnetic double-cam"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "8f0e636e",
@@ -390,6 +422,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -397,7 +430,20 @@
       "Vault Format",
       "Indirect drive",
       "Fence Lever Control Device"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "218529be",
+    "make": "La Gard",
+    "model": "1800",
+    "group": "",
+    "fence": "",
+    "wheels": "",
+    "digits": "",
+    "tier": "Tier 3",
+    "features": [],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "0e5acb82",
@@ -407,6 +453,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -430,7 +477,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521696567/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "7d060e16",
@@ -440,6 +488,7 @@
     "fence": "",
     "wheels": "",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -456,7 +505,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521698717/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521698717_e1a3f36c63_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "b04ccb99",
@@ -466,6 +516,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -538,7 +589,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522764643/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764643_e569d850ab_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "baa53440",
@@ -548,6 +600,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -600,7 +653,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-02-29T00:57:42.114Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "0b1fc984",
@@ -610,6 +663,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -633,7 +687,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522764253/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "e8bfa9ff",
@@ -643,6 +698,7 @@
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -650,7 +706,8 @@
       "Vault Format",
       "Indirect drive",
       "LOBC"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "c427020e",
@@ -660,6 +717,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -712,7 +770,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53540852337/in/album-72177720314925665/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "56fed723",
@@ -722,6 +781,7 @@
     "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -730,7 +790,8 @@
       "Standard Format",
       "False Gates",
       "Sprung Double-Cam"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "ae66f9a6",
@@ -740,6 +801,7 @@
     "fence": "",
     "wheels": "",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -771,7 +833,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583438689_3d27ab0734_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "a7258495",
@@ -781,6 +843,7 @@
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -788,7 +851,8 @@
       "Right/Left Handed open",
       "Vault Format",
       "Indirect drive"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "c2f54e5c",
@@ -798,6 +862,7 @@
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -805,7 +870,8 @@
       "Right/Left Handed open",
       "Vault Format",
       "Indirect drive"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "7c91d17c",
@@ -815,6 +881,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -860,7 +927,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521500463/in/album-72177720314711293/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521500463_afffa12ba1_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "9262a564",
@@ -870,6 +938,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -914,7 +983,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541171936/in/album-72177720314920306/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "082b9b1f",
@@ -924,6 +994,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -998,7 +1069,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
     ],
-    "lastUpdated": "2024-02-29T00:57:42.115Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "ae84d433",
@@ -1008,6 +1079,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1044,7 +1116,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517816255/in/album-72177720314662911/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "8a2dc6e5",
@@ -1054,6 +1127,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1077,7 +1151,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
     ],
-    "lastUpdated": "2024-02-29T00:57:42.115Z"
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "3809d4a5",
@@ -1087,6 +1161,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -1096,7 +1171,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522762218/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522762218_66ce717570_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "211383d8",
@@ -1106,6 +1182,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1129,7 +1206,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523022660/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "87af3a83",
@@ -1139,6 +1217,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1169,7 +1248,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912574/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "7729589b",
@@ -1179,6 +1259,7 @@
     "fence": "",
     "wheels": "",
     "digits": "",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -1209,7 +1290,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541360948/in/album-72177720314920416/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "6eeba243",
@@ -1219,6 +1301,7 @@
     "fence": "Rotary Gear",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -1253,6 +1336,7 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541737351/in/album-72177720314925765/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541737351_c475dd7200_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   }
 ]

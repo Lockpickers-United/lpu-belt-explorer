@@ -13,6 +13,7 @@ import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
 import DialImageGallery from './DialImageGallery'
+import BeltStripe from '../entries/BeltStripe.jsx'
 
 function DialEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -48,6 +49,7 @@ function DialEntry({entry, expanded, onExpand}) {
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+                <BeltStripe value={entry.tier}/>
                 <div style={{margin: '12px 0px 8px 8px', width: '60%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         value={
