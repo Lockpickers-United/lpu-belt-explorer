@@ -137,11 +137,11 @@
     "model": "7L64",
     "group": "",
     "fence": "",
-    "wheels": "",
-    "digits": "",
+    "wheels": "4",
+    "digits": "0-99",
     "tier": "Tier 3",
     "features": [],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T17:16:08.352Z"
   },
   {
     "id": "f5703ac0",
@@ -254,7 +254,7 @@
     "group": "",
     "fence": "",
     "wheels": "",
-    "digits": "",
+    "digits": "0-99",
     "tier": "",
     "features": [],
     "media": [
@@ -280,7 +280,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
     "id": "610d201c",
@@ -440,10 +440,22 @@
     "group": "",
     "fence": "",
     "wheels": "",
-    "digits": "",
+    "digits": "0-99",
     "tier": "Tier 3",
     "features": [],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
+  },
+  {
+    "id": "82847ba5",
+    "make": "La Gard",
+    "model": "1947",
+    "group": "1",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
     "id": "0e5acb82",
@@ -1127,7 +1139,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1151,18 +1163,20 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
     "id": "3809d4a5",
     "make": "Sargent & Greenleaf",
     "model": "8077",
-    "group": "",
+    "group": "Padlock",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
-    "features": [],
+    "features": [
+      "Padlock"
+    ],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -1172,7 +1186,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522762218_66ce717570_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
     "id": "211383d8",
@@ -1254,11 +1268,11 @@
   {
     "id": "7729589b",
     "make": "Sargent & Greenleaf",
-    "model": "R6700 series",
-    "group": "",
+    "model": "R6700 series, 3 wheel",
+    "group": "2",
     "fence": "",
-    "wheels": "",
-    "digits": "",
+    "wheels": "3",
+    "digits": "0-99",
     "tier": "",
     "features": [],
     "media": [
@@ -1291,7 +1305,19 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-26T17:16:08.354Z"
+  },
+  {
+    "id": "06555f12",
+    "make": "Sargent & Greenleaf",
+    "model": "R6700 series, 4 wheel",
+    "group": "2",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T17:16:08.354Z"
   },
   {
     "id": "6eeba243",
