@@ -72,6 +72,8 @@ export function DialDataProvider({children, allEntries}) {
                     const dayB = dayjs(b.lastUpdated)
                     if (dayA.isAfter(dayB)) return -1
                     else if (dayB.isAfter(dayA)) return 1
+                } else {
+                    return a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
             : searched

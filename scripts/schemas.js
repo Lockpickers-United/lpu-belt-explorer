@@ -88,7 +88,8 @@ export const dialsSchema = Joi.array().items(
         Wheels: Joi.string().allow(''),
         Digits: Joi.string().allow(''),
         Features: Joi.string().allow(''),
-        'Quest Tier': Joi.string().allow('')
+        'Quest Tier': Joi.string().allow(''),
+        'Do Not Import': Joi.string().allow('')
     }).unknown()
 )
 
