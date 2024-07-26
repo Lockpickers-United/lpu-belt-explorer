@@ -36,6 +36,9 @@ export function DialDataProvider({children, allEntries}) {
                     ? value.map(subkey => ({key, value: subkey}))
                     : {key, value}
             })
+            .sort((a, b) => {
+                return a.fuzzy.localeCompare(b.fuzzy)
+            })
             .flat()
 
         // Filter the data
