@@ -729,7 +729,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -754,7 +754,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T01:36:02.325Z"
   },
   {
     "id": "cffd6d42",
@@ -888,7 +888,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -941,19 +941,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
-  },
-  {
-    "id": "a6cd4c75",
-    "make": "La Gard",
-    "model": "3332",
-    "group": "",
-    "fence": "",
-    "wheels": "3",
-    "digits": "0-99",
-    "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-26T23:31:04.551Z"
+    "lastUpdated": "2024-07-27T01:36:02.325Z"
   },
   {
     "id": "0b1fc984",
@@ -1685,15 +1673,15 @@
     "fence": "",
     "wheels": "2",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 1",
     "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.950Z"
+    "lastUpdated": "2024-07-27T01:36:02.325Z"
   },
   {
     "id": "211383d8",
     "make": "Sargent & Greenleaf",
-    "model": "8400 series",
-    "group": "1, 1R",
+    "model": "841x",
+    "group": "1",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
@@ -1722,19 +1710,26 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T23:31:04.552Z"
+    "lastUpdated": "2024-07-27T01:36:02.326Z"
   },
   {
     "id": "daa48991",
     "make": "Sargent & Greenleaf",
-    "model": "8435",
+    "model": "843x",
     "group": "1R",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-26T23:31:04.552Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Butterfly anti-manipulation cam"
+    ],
+    "lastUpdated": "2024-07-27T01:36:02.326Z"
   },
   {
     "id": "87af3a83",
@@ -1776,11 +1771,18 @@
     "make": "Sargent & Greenleaf",
     "model": "8560",
     "group": "1R",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
-    "features": [],
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Anti-manipulation double-lever"
+    ],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -1797,7 +1799,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T23:31:04.552Z"
+    "lastUpdated": "2024-07-27T01:36:02.326Z"
   },
   {
     "id": "e2c63188",
