@@ -134,26 +134,26 @@
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 3",
     "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.949Z"
+    "lastUpdated": "2024-07-27T12:29:35.703Z"
   },
   {
     "id": "e24e62b7",
     "make": "Chubb",
-    "model": "7L51",
+    "model": "7L50",
     "group": "2",
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Vault Format"
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T12:29:35.703Z"
   },
   {
     "id": "75ddbd51",
@@ -518,7 +518,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -563,7 +563,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T12:29:35.704Z"
   },
   {
     "id": "f59d47b3",
@@ -951,7 +951,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -976,7 +976,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T12:29:35.704Z"
   },
   {
     "id": "e8bfa9ff",
@@ -1072,12 +1072,12 @@
   {
     "id": "c427020e",
     "make": "Mosler",
-    "model": "MR302",
+    "model": "MR(K)-302",
     "group": "1",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -1131,7 +1131,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T12:29:35.704Z"
   },
   {
     "id": "56fed723",
@@ -1263,7 +1263,7 @@
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1272,7 +1272,7 @@
       "Vault Format",
       "Indirect drive"
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T12:29:35.704Z"
   },
   {
     "id": "c2f54e5c",
@@ -1378,7 +1378,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "Tier 2",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1424,7 +1424,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-27T12:29:35.704Z"
   },
   {
     "id": "edb5f9e3",
