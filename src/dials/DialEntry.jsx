@@ -51,6 +51,11 @@ function DialEntry({entry, expanded, onExpand}) {
 
     const questLabel = isMobile ? 'Quest' : 'Quest Level'
 
+    const groupList = ['2', '2M', '1', '1R']
+    const groupName = groupList.includes(entry.group)
+    ? 'Group ' + entry.group
+        : entry.group
+
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
@@ -68,11 +73,11 @@ function DialEntry({entry, expanded, onExpand}) {
                     />
                 </div>
 
-                <div style={{margin: '8px 0px 0px 0px', width: '30%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '8px 0px 0px 0px', width: '30%', flexShrink: 0, flexDirection: 'column', textAlign:'center'}}>
                     {
                         entry.group &&
                         <FieldValue value={
-                            <FilterChip field='group' label={`Group ${entry.group}`} value={entry.group}/>
+                            <FilterChip field='group' label={groupName} value={entry.group}/>
                         }/>
                     }
                 </div>
