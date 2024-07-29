@@ -10,9 +10,11 @@ export const lockSortFields = [
 
 export const dialSortFields = [
     {label: 'Default', value: undefined},
-    {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
-    {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
     {label: 'UL Group (Ascending)', value: 'groupAscending'},
     {label: 'UL Group (Descending)', value: 'groupDescending'},
+    {label: 'Difficulty Tier (Ascending)', value: 'tierAscending'},
+    {label: 'Difficulty Tier (Descending)', value: 'tierDescending'},
+    {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
+    {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
     {label: 'Recently Updated', value: 'recentlyUpdated'}
 ]
