@@ -21,18 +21,6 @@
     "digits": "0-99",
     "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.948Z"
-  },
-  {
-    "id": "761d2fe8",
-    "make": "Big Red",
-    "model": "CDL-3M",
-    "group": "2M",
-    "fence": "Spring Lever",
-    "wheels": "3",
-    "digits": "0-99",
-    "tier": "",
-    "features": [],
     "media": [
       {
         "title": "By: Insomniaclockpicker",
@@ -58,19 +46,24 @@
       {
         "title": "By: Insomniaclockpicker",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53583313673_d0e055029f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583313673/in/album-72177720315386952/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53583313673_b3c5dde496_o.jpg"
-      },
-      {
-        "title": "By: Insomniaclockpicker",
-        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/53583091526_24ce0a127c_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583091526/in/album-72177720315386952/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T19:28:51.948Z"
+    "lastUpdated": "2024-07-28T21:39:23.262Z"
+  },
+  {
+    "id": "761d2fe8",
+    "make": "Big Red",
+    "model": "CDL-3M",
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:39:23.262Z"
   },
   {
     "id": "693fd901",
