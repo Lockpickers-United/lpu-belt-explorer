@@ -16,11 +16,11 @@ import dials from '../data/dials.json'
 
 function DialsRoute() {
     const {isMobile} = useWindowSize()
-    usePageTitle('Dials')
+    usePageTitle('Safe Locks')
 
     const nav = (
         <React.Fragment>
-            <SearchBox label='Dials'/>
+            <SearchBox label='Safe Locks'/>
             <SortButton sortValues={dialSortFields}/>
             <FilterButton/>
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
@@ -30,7 +30,7 @@ function DialsRoute() {
     return (
         <FilterProvider filterFields={dialFilterFields}>
             <DialDataProvider allEntries={dials}>
-                <Nav title='Dials' extras={nav}/>
+                <Nav title='Safe Locks' extras={nav}/>
 
                 <DialsPage/>
 
