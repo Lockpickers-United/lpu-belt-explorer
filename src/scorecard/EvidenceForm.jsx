@@ -14,6 +14,9 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import isValidUrl from '../util/isValidUrl'
 import allProjects from '../data/projects.json'
 import Autocomplete from '@mui/material/Autocomplete'
+import CollectionButton from '../entries/CollectionButton.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
+import {getEntryFromId} from '../entries/entryutils'
 
 export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
@@ -28,12 +31,14 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
     const projectValues = allProjects.map(project => {
         return {label: project.name, value: project.id}
     })
+
     const project = allProjects.find(item => {
         return item.name === projectName
     })
+    const entry = getEntryFromId(evid?.matchId)
 
-    const entryId = lockId
-        ? lockId
+    const entryId = entry
+        ? entry.id
         : project
             ? project.id
             : null
@@ -49,7 +54,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
 
     const handleSave = useCallback(async () => {
         try {
-            if (evid?.id) {
+            if (evid?.id && evid?.matchId) {
                 updateEvidence(evid.id, {
                     matchId: evid.matchId,
                     evidenceNotes: evidenceNotes,
@@ -109,6 +114,10 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
     const cancelColor = updated ? '#e15c07' : '#555'
     const urlFieldColor = evidenceUrlError ? 'error' : 'secondary'
+
+    const {isMobile} = useWindowSize()
+    const denseButton = !!isMobile
+    const buttonWidth = isMobile ? 50 : 250
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -200,6 +209,11 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
                         }}
                         sx={{input: {color: '#999'}}}
                     />
+                    {!!entry &&
+                        <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
+                            <CollectionButton id={evid.matchId} dense={denseButton}/>
+                        </div>
+                    }
                 </div>
 
                 <div style={{display: 'flex'}}>
