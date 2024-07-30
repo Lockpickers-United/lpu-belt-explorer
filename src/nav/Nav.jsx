@@ -20,7 +20,7 @@ function Nav({extras, title}) {
                         fontWeight: 500,
                         fontSize: '1.5rem',
                         paddingLeft: 16
-                    }}>{title}</div>
+                    }}><nobr>{title}</nobr></div>
 
                     {extras}
 
