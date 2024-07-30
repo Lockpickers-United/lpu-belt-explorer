@@ -61,9 +61,9 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-07-28T21:39:23.262Z"
+    "lastUpdated": "2024-07-30T18:17:05.631Z"
   },
   {
     "id": "693fd901",
@@ -115,9 +115,9 @@
     "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-07-26T19:28:51.948Z"
+    "lastUpdated": "2024-07-30T18:17:05.631Z"
   },
   {
     "id": "e3a922f0",
@@ -196,9 +196,21 @@
     "lastUpdated": "2024-07-28T21:10:25.492Z"
   },
   {
+    "id": "19359f35",
+    "make": "Chubb",
+    "model": "Manifoil MK3",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
+  },
+  {
     "id": "087f41e9",
     "make": "Chubb",
-    "model": "Manifoil mk4",
+    "model": "Manifoil MK4",
     "group": "",
     "fence": "Spring Lever",
     "wheels": "3",
@@ -213,7 +225,7 @@
       "Eccentric Double-Cam",
       "LOBC"
     ],
-    "lastUpdated": "2024-07-26T14:37:39.403Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "58441a32",
@@ -412,13 +424,13 @@
     "id": "539f0577",
     "make": "Ilco",
     "model": "69",
-    "group": "1?",
+    "group": "1",
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-28T21:10:25.492Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "6ac1cea2",
@@ -472,13 +484,13 @@
     "id": "6675b41d",
     "make": "Kromer",
     "model": "14a",
-    "group": "n/a",
+    "group": "not rated",
     "fence": "Gravity Lever",
     "wheels": "3",
     "digits": "0-49",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-28T21:10:25.492Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "cc91e358",
@@ -758,9 +770,9 @@
     "fence": "",
     "wheels": "4",
     "digits": "0-99",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-07-26T17:16:08.353Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "0e5acb82",
@@ -770,7 +782,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "Tier 4",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -795,7 +807,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-27T01:36:02.325Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "cffd6d42",
@@ -929,7 +941,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "Tier 4",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -982,7 +994,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-27T01:36:02.325Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "0b1fc984",
@@ -1452,7 +1464,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "Tier 3",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1498,7 +1510,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-27T12:29:35.704Z"
+    "lastUpdated": "2024-07-30T18:17:05.633Z"
   },
   {
     "id": "edb5f9e3",
