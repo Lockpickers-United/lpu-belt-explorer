@@ -18,7 +18,7 @@ import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId} from '../entries/entryutils'
 
-export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
+export default function EvidenceForm({evid, handleUpdate, addProject}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')

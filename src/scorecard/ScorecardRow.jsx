@@ -24,13 +24,11 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 
     // console.log(`ScorecardRow ${evid.id}`)
 
-    let entry = useMemo(() => {
-        let match = getEntryFromId(evid.matchId)
-        match = match
-            ? match
-            : getProjectEntryFromId(evid.matchId)
-        return match
-    }, [getEntryFromId, evid.matchId, getProjectEntryFromId])
+    const entry = getEntryFromId(evid.matchId)
+    const project = getProjectEntryFromId(evid.matchId)
+    const entity = entry
+        ? entry
+        : project
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -54,11 +52,11 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [expanded, entry, scrolled, evid.id])
+    }, [expanded, entity, scrolled, evid.id])
 
-    let entryTitle = entry
-        ? entryName(entry)
-        :  evid.evidenceNotes
+    let entryTitle = entity
+        ? entryName(entity)
+        : evid.evidenceNotes
     const evidenceNotes = evid.exceptionType && (evid.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
         ? evid.evidenceNotes
         : null
@@ -116,7 +114,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
     return (
         <Accordion key={evid.id} expanded={expanded} onChange={handleChange} ref={ref}>
             <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
-                <BeltStripe value={entry ? entry.belt : ''}/>
+                <BeltStripe value={entity ? entity.belt : ''}/>
                 <div style={{
                     margin: '12px 0px 0px 8px',
                     width: nameDivWidth,
@@ -204,16 +202,12 @@ export default React.memo(ScorecardRow, (prevProps, nextProps) => {
     if (prevEvidKeys.length !== nextEvidKeys.length) {
         return false
     }
-    for (let idx=0; idx < prevEvidKeys.length; idx++) {
+    for (let idx = 0; idx < prevEvidKeys.length; idx++) {
         if (prevProps.evid[idx] !== nextProps.evid[idx]) {
             return false
         }
     }
-    if (prevProps.owner === nextProps.owner &&
+    return prevProps.owner === nextProps.owner &&
         prevProps.expanded === nextProps.expanded &&
-        prevProps.onExpand === nextProps.onExpand) {
-        return true
-    } else {
-        return false
-    }
+        prevProps.onExpand === nextProps.onExpand
 })
