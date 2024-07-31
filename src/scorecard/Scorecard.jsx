@@ -11,6 +11,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import EvidenceForm from './EvidenceForm.jsx'
+import Menu from '@mui/material/Menu'
 
 function Scorecard({owner, profile}) {
     const {isMobile} = useWindowSize()
@@ -42,17 +43,25 @@ function Scorecard({owner, profile}) {
         setControlsExpanded(false)
     }, [createEvidenceForEntries, recordedIdsToMerge])
 
-    const handleDeleteAll = useCallback(() => {
-        removeAllEvidence()
-    }, [removeAllEvidence])
-
-
     const handleOpenControls = useCallback((controlForm) => {
         setControlForm(controlForm)
         setControlsExpanded(!controlsExpanded)
     }, [controlsExpanded])
 
+    const [anchorEl, setAnchorEl] = useState(null)
+    const open = Boolean(anchorEl)
+    const handleOpen = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
+        setAnchorEl(event.currentTarget)
+    }, [])
+    const handleClose = useCallback(() => setAnchorEl(null), [])
 
+    const handleDeleteAll = useCallback(() => {
+        removeAllEvidence()
+        handleClose()
+    }, [handleClose, removeAllEvidence])
+    
     const buttonsMargin = isMobile ? 10 : 40
     const headerDivStyle = isMobile ? 'block' : 'flex'
     return (
@@ -98,11 +107,27 @@ function Scorecard({owner, profile}) {
 
                         <div style={{width: '33%', textAlign: 'center'}}>
                             { cardEvidence.length > 0
-                                    ? <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={handleDeleteAll}>DELETE ALL</Button>
+                                    ? <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={handleOpen}>DELETE ALL</Button>
                                     : <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={() => handleOpenControls('import')}>
                                         IMPORT DAN SHEET
                                     </Button>
                             }
+                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                <div style={{padding: 20, textAlign: 'center'}}>
+                                    You cannot undo delete.<br/>
+                                    Are you sure?
+                                </div>
+                                <div style={{textAlign: 'center'}}>
+                                    <Button style={{marginBottom: 10, color: '#000'}}
+                                            variant='contained'
+                                            onClick={handleDeleteAll}
+                                            edge='start'
+                                            color='error'
+                                    >
+                                        Delete
+                                    </Button>
+                                </div>
+                            </Menu>
                         </div>
 
                         <div style={{width: '33%', textAlign: 'center'}}>
