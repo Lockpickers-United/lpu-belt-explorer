@@ -12,12 +12,12 @@ import Tracker from '../app/Tracker'
 import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
-import DialImageGallery from './DialImageGallery'
+import DialImageGallery from './SafelockImageGallery.jsx'
 import BeltStripe from '../entries/BeltStripe.jsx'
 import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 
-function DialEntry({entry, expanded, onExpand}) {
+function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -174,4 +174,4 @@ function DialEntry({entry, expanded, onExpand}) {
     )
 }
 
-export default DialEntry
+export default SafelockEntry

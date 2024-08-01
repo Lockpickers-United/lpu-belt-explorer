@@ -6,7 +6,7 @@ import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import {groupSort, groupSortReverse} from './groups'
 
-export function DialDataProvider({children, allEntries}) {
+export function SafelocksDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
 
@@ -107,4 +107,4 @@ export function DialDataProvider({children, allEntries}) {
 
 const fuzzySortKeys = ['fuzzy']
 
-export default DialDataProvider
+export default SafelocksDataProvider
