@@ -2237,7 +2237,7 @@
   },
   {
     "term": "wheel",
-    "definition": "A round disc with a cut (gate) which determines the correct number for that wheel."
+    "definition": "A round disc with a cut (gate) which determines the correct number for that wheel. Typically there are three wheels, each wheel represents a number in the combination."
   },
   {
     "term": "wheel shadowing",
