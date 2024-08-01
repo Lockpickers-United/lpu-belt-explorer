@@ -10,11 +10,11 @@ import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
-import DialDataProvider from './DialDataProvider'
-import DialsPage from './DialsPage'
-import dials from '../data/dials.json'
+import SafelocksDataProvider from './SafelocksDataProvider.jsx'
+import SafelocksPage from './SafelocksPage.jsx'
+import dials from '../data/safelocks.json'
 
-function DialsRoute() {
+function SafelocksRoute() {
     const {isMobile} = useWindowSize()
     usePageTitle('Safe Locks')
 
@@ -29,17 +29,17 @@ function DialsRoute() {
 
     return (
         <FilterProvider filterFields={dialFilterFields}>
-            <DialDataProvider allEntries={dials}>
+            <SafelocksDataProvider allEntries={dials}>
                 <Nav title='Safe Locks' extras={nav}/>
 
-                <DialsPage/>
+                <SafelocksPage/>
 
                 <Footer/>
 
                 <Tracker feature='dials'/>
-            </DialDataProvider>
+            </SafelocksDataProvider>
         </FilterProvider>
     )
 }
 
-export default DialsRoute
+export default SafelocksRoute

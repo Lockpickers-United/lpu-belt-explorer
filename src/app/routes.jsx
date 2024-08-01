@@ -114,10 +114,17 @@ export default [
         }
     },
     {
+        path: '/safelocks',
+        lazy: async () => {
+            const {default: SafelocksRoute} = await import('../safelocks/SafelocksRoute.jsx')
+            return {element: <SafelocksRoute/>}
+        }
+    },
+    {
         path: '/dials',
         lazy: async () => {
-            const {default: DialsRoute} = await import('../dials/DialsRoute')
-            return {element: <DialsRoute/>}
+            const {default: SafelocksRoute} = await import('../safelocks/SafelocksRoute.jsx')
+            return {element: <SafelocksRoute/>}
         }
     },
     {

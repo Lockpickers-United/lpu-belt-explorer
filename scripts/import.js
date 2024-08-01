@@ -288,7 +288,7 @@ dialsLinkData
 
 // Recently updated data
 console.log('Processing recenty updated data...')
-const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/dials.json'))
+const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/safelocks.json'))
 dialsMainData
     .forEach(entry => {
         const {lastUpdated, ...oldEntry} = orginalDialsData.find(e => e?.id === entry?.id) || {}
@@ -300,7 +300,7 @@ dialsMainData
         }
     })
 
-fs.writeFileSync('./src/data/dials.json', JSON.stringify(dialsMainData, null, 2))
+fs.writeFileSync('./src/data/safelocks.json', JSON.stringify(dialsMainData, null, 2))
 
 // Check that all Features are accounted for in Glossary
 const lockFeatures = jsonData
