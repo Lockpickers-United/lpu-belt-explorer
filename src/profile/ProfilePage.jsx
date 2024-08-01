@@ -5,6 +5,7 @@ import CompactEntries from '../locks/CompactEntries'
 import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
+import ProfileHeader from './ProfileHeader.jsx'
 
 function ProfilePage({profile}) {
     const {compact} = useContext(LockListContext)
@@ -13,8 +14,12 @@ function ProfilePage({profile}) {
     const defExpanded = useDeferredValue(expanded)
 
     return (
-        <div style={{margin: 8, paddingBottom: 32}}>
+        <div style={{
+            maxWidth: 700, padding: 0, backgroundColor: '#222',
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+        }}>
 
+            <ProfileHeader profile={profile} page={'collection'}/>
             <InlineFilterDisplay profile={profile}/>
             <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 

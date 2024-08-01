@@ -12,15 +12,10 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import EvidenceForm from './EvidenceForm.jsx'
 import Menu from '@mui/material/Menu'
+import ProfileHeader from '../profile/ProfileHeader.jsx'
 
 function Scorecard({owner, profile}) {
     const {isMobile} = useWindowSize()
-
-    const scorecardName = profile?.displayName
-        ? profile.displayName.slice(-1).toLowerCase() === 's'
-            ? profile.displayName + '\''
-            : profile.displayName + '\'s'
-        : 'User'
 
     const {visibleEntries = [], cardEvidence, cardBBCount, cardDanPoints} = useContext(ScorecardDataContext)
     const {createEvidenceForEntries, removeAllEvidence} = useContext(DBContext)
@@ -61,7 +56,7 @@ function Scorecard({owner, profile}) {
         removeAllEvidence()
         handleClose()
     }, [handleClose, removeAllEvidence])
-    
+
     const buttonsMargin = isMobile ? 10 : 40
     const headerDivStyle = isMobile ? 'block' : 'flex'
     return (
@@ -69,19 +64,18 @@ function Scorecard({owner, profile}) {
             maxWidth: 700, padding: 0, backgroundColor: '#222',
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
-            <div style={{fontSize: '24px', lineHeight: '26px', padding: 16}}>
-                {scorecardName} Scorecard<br/>
-            </div>
+            <ProfileHeader profile={profile} page={'scorecard'}/>
 
             {!isMobile
-                ? <div style={{display: headerDivStyle, padding: '0px 0px 0px 16px'}}>
+                ? <div style={{display: headerDivStyle, padding: '10px 8px 0px 16px'}}>
                     <div style={{marginRight: 0, width: 350}}>
                         <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                     </div>
-                    <div style={{flexGrow: 1, marginRight: 0}}></div>
-                    <ScorecardDanStats cardDanPoints={cardDanPoints} cardBBCount={cardBBCount}/>
+                    <div style={{flexGrow: 1, marginRight: 0}}>
+                        <ScorecardDanStats cardDanPoints={cardDanPoints} cardBBCount={cardBBCount}/>
+                    </div>
                 </div>
-                : <div style={{display: headerDivStyle, padding: '0px 0px 0px 16px'}}>
+                : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
                     <ScorecardDanStats cardDanPoints={cardDanPoints} cardBBCount={cardBBCount}/>
                     <div style={{marginRight: 0, width: 350}}>
                         <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
@@ -106,11 +100,13 @@ function Scorecard({owner, profile}) {
                         </div>
 
                         <div style={{width: '33%', textAlign: 'center'}}>
-                            { cardEvidence.length > 0
-                                    ? <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={handleOpen}>DELETE ALL</Button>
-                                    : <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={() => handleOpenControls('import')}>
-                                        IMPORT DAN SHEET
-                                    </Button>
+                            {cardEvidence.length > 0
+                                ? <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                          onClick={handleOpen}>DELETE ALL</Button>
+                                : <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                          onClick={() => handleOpenControls('import')}>
+                                    IMPORT DAN SHEET
+                                </Button>
                             }
                             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                                 <div style={{padding: 20, textAlign: 'center'}}>
@@ -131,7 +127,8 @@ function Scorecard({owner, profile}) {
                         </div>
 
                         <div style={{width: '33%', textAlign: 'center'}}>
-                            <Button color='secondary' size='small' style={{lineHeight:'1rem'}} onClick={() => handleOpenControls('project')}>ADD PROJECT</Button>
+                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                    onClick={() => handleOpenControls('project')}>ADD PROJECT</Button>
                         </div>
                     </AccordionSummary>
 

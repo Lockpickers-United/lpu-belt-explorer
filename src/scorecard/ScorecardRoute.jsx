@@ -64,7 +64,7 @@ function ScorecardRoute() {
         </React.Fragment>
     )
 
-    const title = loading ? 'Loading...' : 'Scorecard'
+    const title = loading ? 'Loading...' : 'Profile'
 
     if (loading || error) {
         return null

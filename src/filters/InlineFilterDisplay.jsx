@@ -1,4 +1,3 @@
-import CardHeader from '@mui/material/CardHeader'
 import FormControl from '@mui/material/FormControl'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
@@ -12,6 +11,7 @@ import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
+import InputLabel from '@mui/material/InputLabel'
 
 function InlineFilterDisplay({profile = {}}) {
     const {userId} = useParams()
@@ -46,42 +46,36 @@ function InlineFilterDisplay({profile = {}}) {
     const isValidCollection = typeof collection === 'string' &&
         (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
 
-    const ownerName = profile.displayName
-        ? profile.displayName.toLowerCase().endsWith('s')
-            ? `${profile.displayName}'`
-            : `${profile.displayName}'s`
-        : 'Private'
-
-    const title = userId
-        ? `${ownerName} Collection`
-        : isValidCollection ? 'My Collection' : 'Filters'
-
     return (
-        <Card style={style} sx={{paddingBottom: 0, paddingTop: 0}}>
-            <CardHeader
-                title={title}
-                action={<ClearFiltersButton/>}
-            />
+        <Card style={style} sx={{paddingBottom: 0, paddingTop: 2}}>
             <CardContent style={{paddingTop: 0, paddingLeft: 8}}>
                 {
                     isValidCollection &&
-                    <FormControl fullWidth size='small' sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
-                        <Select
-                            name='collection-selector'
-                            open={open}
-                            onClose={handleClose}
-                            onOpen={handleOpen}
-                            value={currentCollection}
-                            onChange={handleChange}
-                            style={{backgroundColor: '#222', fontSize: '1.1rem', fontWeight: 500}}
-                        >
-                            {collectionTypes.map((list, index) =>
-                                <MenuItem key={index} value={list}>
-                                    {list} ({list === 'Any' ? anyCollection.length : profile[list.toLowerCase()]?.length || 0})
-                                </MenuItem>
-                            )}
-                        </Select>
-                    </FormControl>
+                    <div style={{display: 'flex'}}>
+                        <FormControl fullWidth size='small' color='secondary' sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
+                            <InputLabel id={'label'}>Collection</InputLabel>
+                            <Select
+                                name='collection-selector'
+                                label={'Collection'}
+                                open={open}
+                                onClose={handleClose}
+                                onOpen={handleOpen}
+                                value={currentCollection}
+                                onChange={handleChange}
+                                style={{backgroundColor: '#222', fontSize: '1.1rem', fontWeight: 500}}
+                                color='secondary'
+                            >
+                                {collectionTypes.map((list, index) =>
+                                    <MenuItem key={index} value={list}>
+                                        {list} ({list === 'Any' ? anyCollection.length : profile[list.toLowerCase()]?.length || 0})
+                                    </MenuItem>
+                                )}
+                            </Select>
+                        </FormControl>
+                        <div style={{flexGrow: 1, marginTop:2, marginLeft:15}}>
+                            <ClearFiltersButton/>
+                        </div>
+                    </div>
                 }
                 {
                     !isValidCollection &&
