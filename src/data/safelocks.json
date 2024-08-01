@@ -61,9 +61,9 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "tier": "Tier 5",
+    "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-30T18:17:05.631Z"
+    "lastUpdated": "2024-08-01T05:04:29.090Z"
   },
   {
     "id": "693fd901",
@@ -115,9 +115,9 @@
     "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
-    "tier": "Tier 5",
+    "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-30T18:17:05.631Z"
+    "lastUpdated": "2024-08-01T05:04:29.090Z"
   },
   {
     "id": "e3a922f0",
@@ -163,7 +163,7 @@
   {
     "id": "f5703ac0",
     "make": "Chubb",
-    "model": "Bankers",
+    "model": "7K50",
     "group": "",
     "fence": "",
     "wheels": "",
@@ -193,7 +193,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-28T21:10:25.492Z"
+    "lastUpdated": "2024-08-01T05:04:29.090Z"
   },
   {
     "id": "19359f35",
@@ -1375,9 +1375,9 @@
     "digits": "0-99",
     "tier": "",
     "features": [
-      "Inderect Drive"
+      "Indirect Drive"
     ],
-    "lastUpdated": "2024-07-28T21:10:25.494Z"
+    "lastUpdated": "2024-08-01T05:04:29.091Z"
   },
   {
     "id": "7c91d17c",
