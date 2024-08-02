@@ -12,10 +12,11 @@ import Tracker from '../app/Tracker'
 import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
-import DialImageGallery from './SafelockImageGallery.jsx'
+import SafelockImageGallery from './SafelockImageGallery.jsx'
 import BeltStripe from '../entries/BeltStripe.jsx'
 import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import SafelocksCollectionButton from './SafelocksCollectionButton.jsx'
 
 function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -53,8 +54,12 @@ function SafelockEntry({entry, expanded, onExpand}) {
 
     const groupList = ['2', '2M', '1', '1R']
     const groupName = groupList.includes(entry.group)
-    ? 'Group ' + entry.group
+        ? 'Group ' + entry.group
         : entry.group
+
+    const infoFlexStyle = isMobile
+        ? 'block'
+        : 'flex'
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -73,7 +78,13 @@ function SafelockEntry({entry, expanded, onExpand}) {
                     />
                 </div>
 
-                <div style={{margin: '8px 0px 0px 0px', width: '30%', flexShrink: 0, flexDirection: 'column', textAlign:'center'}}>
+                <div style={{
+                    margin: '8px 0px 0px 0px',
+                    width: '30%',
+                    flexShrink: 0,
+                    flexDirection: 'column',
+                    textAlign: 'center'
+                }}>
                     {
                         entry.group &&
                         <FieldValue value={
@@ -86,42 +97,47 @@ function SafelockEntry({entry, expanded, onExpand}) {
                 expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
-                        <Stack direction='row' alignItems='flex-start'>
-                            {entry.tier &&
+                        <div style={{display: infoFlexStyle}}>
+                            <Stack direction='row' alignItems='flex-start' style={{flexGrow: 1}}>
+                                {entry.tier &&
+                                    <FieldValue
+                                        name={questLabel}
+                                        value={
+                                            <FilterChip field='fence' value={entry.tier || 'Unknown'}/>
+                                        }
+                                        style={{flexGrow: 1}}
+                                    />
+                                }
                                 <FieldValue
-                                    name={questLabel}
+                                    name='Fence Type'
                                     value={
-                                        <FilterChip field='fence' value={entry.tier || 'Unknown'}/>
+                                        <FilterChip field='fence' value={entry.fence || 'Unknown'}/>
                                     }
                                     style={{flexGrow: 1}}
                                 />
-                            }
-                            <FieldValue
-                                name='Fence Type'
-                                value={
-                                    <FilterChip field='fence' value={entry.fence || 'Unknown'}/>
-                                }
-                                style={{flexGrow: 1}}
-                            />
-                            <FieldValue
-                                name='Wheels'
-                                value={
-                                    <FilterChip
-                                        field='wheels'
-                                        label={entry.wheels ? `${entry.wheels} wheels` : 'Unknown'}
-                                        value={entry.wheels || 'Unknown'}
-                                    />
-                                }
-                                style={{flexGrow: 1}}
-                            />
-                            <FieldValue
-                                name='Digits'
-                                value={
-                                    <FilterChip field='digits' value={entry.digits || 'Unknown'}/>
-                                }
-                                style={{flexGrow: 1}}
-                            />
-                        </Stack>
+                                <FieldValue
+                                    name='Wheels'
+                                    value={
+                                        <FilterChip
+                                            field='wheels'
+                                            label={entry.wheels ? `${entry.wheels} wheels` : 'Unknown'}
+                                            value={entry.wheels || 'Unknown'}
+                                        />
+                                    }
+                                    style={{flexGrow: 1}}
+                                />
+                                <FieldValue
+                                    name='Digits'
+                                    value={
+                                        <FilterChip field='digits' value={entry.digits || 'Unknown'}/>
+                                    }
+                                    style={{flexGrow: 1}}
+                                />
+                            </Stack>
+                            <div style={{margin: '12px 0px 0px 8px'}}>
+                                <SafelocksCollectionButton id={entry?.id}/>
+                            </div>
+                        </div>
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
@@ -138,7 +154,7 @@ function SafelockEntry({entry, expanded, onExpand}) {
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
-                                <DialImageGallery entry={entry}/>
+                                <SafelockImageGallery entry={entry}/>
                             }/>
                         }
                         {
