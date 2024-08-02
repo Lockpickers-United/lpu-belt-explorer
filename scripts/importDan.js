@@ -409,7 +409,7 @@ function writeEntriesAsJSON(target, header, idEntries) {
 // To tune matching system, find unmatched and
 // compare new matches with existing
 
-    function findUnmatched(idEntries) { //eslint-disable-line
+function findUnmatched(idEntries) { //eslint-disable-line
     idEntries.toSorted((a1, a2) => a1.entry.row - a2.entry.row)
         .forEach(elem => {
             if (!elem.id) {
@@ -529,13 +529,16 @@ for (let idx = 0; idx < pickers.length; idx++) {
         }
     }
 
-    const json = JSON.stringify(linkCache, null, 2)
-    fs.writeFileSync(linkCacheFilename, json)
+    if (FOLLOW_LINKS) {
+        const json = JSON.stringify(linkCache, null, 2)
+        fs.writeFileSync(linkCacheFilename, json)
+    }
 
     const idEntries = matchDanSheet(danData)
     scoreEntries(target, danData.header, idEntries)
 
     compareMatches(idEntries)
+//    findUnmatched(idEntries)
 
     if (!fs.existsSync(filename)) {
         writeEntriesAsJSON(target, danData.header, idEntries)
