@@ -38,7 +38,14 @@
   },
   {
     "term": "anti-punch relocker",
-    "definition": "A spring loaded device which when the backplate removes, blocks the bolt with a lever. When the relocker is engaged, the lock will not open, even with the correct combination."
+    "definition": "A spring loaded device which when the backplate removes, blocks the bolt with a lever. When the relocker is engaged, the lock will not open, even with the correct combination.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896649381_2fa9e71773_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896649381/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896649381_63b0433264_o.jpg"
+    }
   },
   {
     "term": "ARX pins",
@@ -354,7 +361,14 @@
   },
   {
     "term": "contact point",
-    "definition": "The position of the felt (or heard) point of contact between the lever nose and the lock mechanism (typically the cam). There are two contact points in a basic Group 2 dial (left, and right)."
+    "definition": "The position of the felt (or heard) point of contact between the lever nose and the lock mechanism (typically the cam). There are two contact points in a basic Group 2 dial (left, and right).",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53897075710_f2342d1931_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53897075710/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53897075710_05123ddc27_o.jpg"
+    }
   },
   {
     "term": "control key",
@@ -587,7 +601,14 @@
   },
   {
     "term": "drive cam",
-    "definition": "An extra wheel in (for example) a Group 2 lock that pulls the bolt mechanism, and raises the fence from the wheels to prevent feeling gates directly."
+    "definition": "An extra wheel in (for example) a Group 2 lock that pulls the bolt mechanism, and raises the fence from the wheels to prevent feeling gates directly.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896990389_9030fb1efa_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896990389/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896990389_f9bf3e4faf_o.jpg"
+    }
   },
   {
     "term": "driver pin",
@@ -628,7 +649,13 @@
   },
   {
     "term": "eccentric roller",
-    "definition": "A small wheel mounted to the nose of the lever. Its purpose is to obscure the contact points."
+    "definition": "A small wheel mounted to the nose of the lever. Its purpose is to obscure the contact points.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896991514_45d5780663_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896991514/in/album-72177720319269835/"
+    }
   },
   {
     "term": "element",
@@ -668,8 +695,15 @@
     }
   },
   {
-    "term": "false gates (dials)",
-    "definition": "A portion of the wheel with a shallow cut designed to mimick a gate, that are not deep enough for the fence to drop completely."
+    "term": "false gates (safe locks)",
+    "definition": "A portion of the wheel with a shallow cut designed to mimick a gate, that are not deep enough for the fence to drop completely.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53897075085_dd23d0de55_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53897075085/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53897075085_fdba899b7e_o.jpg"
+    }
   },
   {
     "term": "false set",
@@ -687,8 +721,15 @@
     "definition": "The auditory, visual, and tactile sensations from a lock during picking."
   },
   {
-    "term": "fence (dials)",
-    "definition": "The portion of the lever that slots into the wheels when the gate of the wheel directly faces it."
+    "term": "fence (safe locks)",
+    "definition": "The portion of the lever that slots into the wheels when the gate of the wheel directly faces it.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896892538_7f826b8547_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896892538/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896892538_abba41fd64_o.jpg"
+    }
   },
   {
     "term": "fingerpin",
@@ -959,7 +1000,14 @@
   },
   {
     "term": "key change",
-    "definition": "Insert a warded combo change key through all the wheels with gates aligned at the change index. Turn key, dial new combination at change index, turn key back and remove."
+    "definition": "Insert a warded combo change key through all the wheels with gates aligned at the change index. Turn key, dial new combination at change index, turn key back and remove.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53895730907_88e92dd986_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53895730907/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53895730907_24fa1e9fd5_o.jpg"
+    }
   },
   {
     "term": "key code",
@@ -1048,7 +1096,14 @@
   },
   {
     "term": "lever fence",
-    "definition": "A lever pivoting directly on the bolt having a fence mounted to it, usually pulling directly on the locking bolt to unlock."
+    "definition": "A lever pivoting directly on the bolt having a fence mounted to it, usually pulling directly on the locking bolt to unlock.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896892538_7f826b8547_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896892538/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896892538_abba41fd64_o.jpg"
+    }
   },
   {
     "term": "lever pack",
@@ -1163,11 +1218,25 @@
   },
   {
     "term": "moveable flies",
-    "definition": "Fly that can move about 8 increments, used to allow the whole keyspace of a wheel."
+    "definition": "Fly that can move about 8 increments, used to allow the whole keyspace of a wheel.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896892893_561620bfd4_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896892893/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896892893_3c68959150_o.jpg"
+    }
   },
   {
     "term": "multi-orientation cam",
-    "definition": "A cam wheel that accepts a spline key in more than one position, to allow the drop-in area to remain at the same index point while orienting the lock body in."
+    "definition": "A cam wheel that accepts a spline key in more than one position, to allow the drop-in area to remain at the same index point while orienting the lock body in.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896990719_edc93275fb_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896990719/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896990719_8a1f4aab60_o.jpg"
+    }
   },
   {
     "term": "multiple locking mechanisms",
@@ -1201,7 +1270,14 @@
   },
   {
     "term": "nose",
-    "definition": "The portion of the lever that rests on the cam wheel."
+    "definition": "The portion of the lever that rests on the cam wheel.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53897075710_f2342d1931_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53897075710/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53897075710_05123ddc27_o.jpg"
+    }
   },
   {
     "term": "offset diamond",
@@ -2237,7 +2313,14 @@
   },
   {
     "term": "wheel",
-    "definition": "A round disc with a cut (gate) which determines the correct number for that wheel. Typically there are three wheels, each wheel represents a number in the combination."
+    "definition": "A round disc with a cut (gate) which determines the correct number for that wheel. Typically there are three wheels, each wheel represents a number in the combination.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896990284_3682869873_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896990284/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896990284_51d0739e31_o.jpg"
+    }
   },
   {
     "term": "wheel shadowing",
