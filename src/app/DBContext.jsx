@@ -20,6 +20,27 @@ function evidenceDB2State(id, dbRec) {
     }
 }
 
+async function evidenceCache(userId) {
+    const queryStr = `evidence: userId == ${userId}`
+    const docRef = doc(db, 'query-cache', queryStr)
+    const cached = await getDoc(docRef)
+
+    if (cached.exists()) {
+        return JSON.parse(cached.data().payload)
+    } else {
+        const q = query(collection(db, 'evidence'), where('userId', '==', userId))
+        const querySnapshot = await getDocs(q)
+        const retval = querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
+        await setDoc(docRef, {payload: JSON.stringify(retval)})
+        return retval
+    }
+}
+
+async function invalidateEvidenceCache(userId) {
+    const queryStr = `evidence: userId == ${userId}`
+    await deleteDoc(doc(db, 'query-cache', queryStr))
+}
+
 export function DBProvider({children}) {
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
@@ -105,6 +126,7 @@ export function DBProvider({children}) {
             modifier: evid.modifier
         }
         const docRef = await addDoc(collection(db, 'evidence'), rec)
+        await invalidateEvidenceCache(user.uid)
         setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
     }, [user])
 
@@ -120,6 +142,7 @@ export function DBProvider({children}) {
             rec.lockProjectId = evid.matchId
         }
         await setDoc(doc(db, 'evidence', id), rec)
+        await invalidateEvidenceCache(user.uid)
         setEvidence(e => e.map(evid => {
             if (evid.id === id) {
                 return evidenceDB2State(id, rec)
@@ -131,20 +154,20 @@ export function DBProvider({children}) {
 
     const removeEvidence = useCallback(async (id) => {
         await deleteDoc(doc(db, 'evidence', id))
+        await invalidateEvidenceCache(user.uid)
         setEvidence(e => e.filter(evid => evid.id !== id))
-    }, [])
+    }, [user.uid])
 
     const removeAllEvidence = useCallback(async () => {
         const batch = writeBatch(db)
         evidence.forEach(evid => batch.delete(doc(db, 'evidence', evid.id)))
         await batch.commit()
+        await invalidateEvidenceCache(user.uid)
         setEvidence([])
-    }, [evidence])
+    }, [evidence, user.uid])
 
     const getEvidence = useCallback(async userId => {
-        const q = query(collection(db, 'evidence'), where('userId', '==', userId))
-        const querySnapshot = await getDocs(q)
-        return querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
+        return await evidenceCache(userId)
     }, [])
 
     const importUnclaimedEvidence = useCallback(async (tabName) => {
@@ -173,6 +196,7 @@ export function DBProvider({children}) {
             result = result.concat([evidenceDB2State(docRef.id, newDoc)])
         }
         await batch.commit()
+        await invalidateEvidenceCache(user.uid)
         setEvidence(result)
     }, [user])
 
@@ -195,6 +219,7 @@ export function DBProvider({children}) {
             result = result.concat([evidenceDB2State(docRef.id, newDoc)])
         })
         await batch.commit()
+        await invalidateEvidenceCache(user.uid)
         setEvidence(evidence.concat(result))
     }, [user, evidence])
 
@@ -228,9 +253,8 @@ export function DBProvider({children}) {
     useEffect(() => {
         async function loadEvidence() {
             if (isLoggedIn) {
-                const q = query(collection(db, 'evidence'), where('userId', '==', user.uid))
-                const querySnapshot = await getDocs(q)
-                setEvidence(querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data())))
+                const evidence = await evidenceCache(user.uid)
+                setEvidence(evidence)
                 setEvidenceDBLoaded(true)
             } else if (authLoaded) {
                 setEvidence([])
