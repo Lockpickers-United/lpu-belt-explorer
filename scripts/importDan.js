@@ -5,14 +5,15 @@ import beltDetails, {projectTiers, modifierMultiplier} from '../src/data/belts.j
 import fetch from 'node-fetch'
 import masterIndex, {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
 import admin from 'firebase-admin'
+import {getFirestore} from 'firebase-admin/firestore'
 // import {allPickers} from '../src/data/allPickerDanTabs.js'
 
-const serviceAccount = JSON.parse(fs.readFileSync('../keys/dev-lpu-belt-explorer-firebase-adminsdk-nzry6-f570da8dae.json'))
+const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
 const app = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://dev-lpu-belt-explorer.firebaseio.com'
+    databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
-const db = admin.firestore(app)
+const db = getFirestore(app, 'lpubelts-dev')
 
 const DEBUG = true
 const FOLLOW_LINKS = true
@@ -469,8 +470,7 @@ let target = undefined
 
 target = 'NiXXeD'
 // target = 'Tonysansan'
-// target = allPickers[132]
-
+// target = allPickers[137]
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
 
@@ -552,8 +552,8 @@ for (let idx = 0; idx < pickers.length; idx++) {
             const elem = idEntries[idx]
             let rec = {
                 tabName: target,
-                evidName: elem.entry.lock,
-                evidUrl: elem.entry.link,
+                evidenceNotes: elem.entry.lock,
+                evidenceUrl: elem.entry.link,
                 modifier: ''
             }
 
@@ -566,10 +566,10 @@ for (let idx = 0; idx < pickers.length; idx++) {
             }
 
             if (elem.id) {
-                rec.lockProjectId = elem.id
+                rec.projectId = elem.id
             }
             if (elem.entry.publishDate) {
-                rec.evidCreatedAt = elem.entry.publishDate
+                rec.evidenceCreatedAt = elem.entry.publishDate
             }
             await db.collection('unclaimed-evidence').add(rec)
         }

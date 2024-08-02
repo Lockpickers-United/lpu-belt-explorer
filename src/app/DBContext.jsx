@@ -8,13 +8,13 @@ import {enqueueSnackbar} from 'notistack'
 const DBContext = React.createContext({})
 
 function evidenceDB2State(id, dbRec) {
-    const dateStr = dbRec.evidCreatedAt && dbRec.evidCreatedAt.toDate().toJSON()
+    const dateStr = dbRec.evidenceCreatedAt && dbRec.evidenceCreatedAt.toDate().toJSON()
 
     return {
         id: id,
-        matchId: dbRec.lockProjectId,
-        evidenceNotes: dbRec.evidName,
-        link: dbRec.evidUrl,
+        matchId: dbRec.projectId,
+        evidenceNotes: dbRec.evidenceNotes,
+        link: dbRec.evidenceUrl,
         date: dateStr,
         modifier: dbRec.modifier
     }
@@ -119,10 +119,10 @@ export function DBProvider({children}) {
     const addEvidence = useCallback(async evid => {
         const rec = {
             userId: user.uid, 
-            lockProjectId: evid.matchId,
-            evidName: evid.evidenceNotes,
-            evidUrl: evid.link,
-            evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
+            projectId: evid.matchId,
+            evidenceNotes: evid.evidenceNotes,
+            evidenceUrl: evid.link,
+            evidenceCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
         }
         const docRef = await addDoc(collection(db, 'evidence'), rec)
@@ -133,13 +133,13 @@ export function DBProvider({children}) {
     const updateEvidence = useCallback(async (id, evid) => {
         let rec = {
             userId: user.uid,
-            evidName: evid.evidenceNotes,
-            evidUrl: evid.link,
-            evidCreatedAt: Timestamp.fromDate(new Date(evid.date)),
+            evidenceNotes: evid.evidenceNotes,
+            evidenceUrl: evid.link,
+            evidenceCreatedAt: Timestamp.fromDate(new Date(evid.date)),
             modifier: evid.modifier
         }
         if (evid.matchId) {
-            rec.lockProjectId = evid.matchId
+            rec.projectId = evid.matchId
         }
         await setDoc(doc(db, 'evidence', id), rec)
         await invalidateEvidenceCache(user.uid)
@@ -181,15 +181,15 @@ export function DBProvider({children}) {
             const rec = docs[idx].data()
             let newDoc = {
                 userId: user.uid,
-                evidName: rec.evidName,
-                evidUrl: rec.evidUrl,
+                evidenceNotes: rec.evidenceNotes,
+                evidenceUrl: rec.evidenceUrl,
                 modifier: rec.modifier
             }
-            if (rec.lockProjectId) {
-                newDoc.lockProjectId = rec.lockProjectId
+            if (rec.projectId) {
+                newDoc.projectId = rec.projectId
             }
-            if (rec.evidCreatedAt) {
-                newDoc.evidCreatedAt = Timestamp.fromDate(new Date(rec.evidCreatedAt))
+            if (rec.evidenceCreatedAt) {
+                newDoc.evidenceCreatedAt = Timestamp.fromDate(new Date(rec.evidenceCreatedAt))
             }
             const docRef = doc(collection(db, 'evidence'))
             batch.set(docRef, newDoc)
@@ -206,11 +206,11 @@ export function DBProvider({children}) {
         const newDocs = ids.map(matchId => {
             return {
                 userId: user.uid,
-                evidName: '',
-                evidUrl: '',
+                evidenceNotes: '',
+                evidenceUrl: '',
                 modifier: '',
-                lockProjectId: matchId,
-                evidCreatedAt: Timestamp.fromDate(new Date())
+                projectId: matchId,
+                evidenceCreatedAt: Timestamp.fromDate(new Date())
             }
         })
         newDocs.forEach(newDoc => {
