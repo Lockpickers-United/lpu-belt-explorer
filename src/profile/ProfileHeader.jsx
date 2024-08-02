@@ -63,6 +63,7 @@ export default function ProfileHeader({profile = {}, page}) {
                     <ToggleButton onClick={() => handleClick(profileLink)}
                                   selected={page === 'collection'}
                                   disabled={page === 'collection'}
+                                  value='collection'
                                   style={{padding: '2px 12px 2px 12px'}}>
                         Lock Collection
                     </ToggleButton>
@@ -70,6 +71,7 @@ export default function ProfileHeader({profile = {}, page}) {
                     <ToggleButton onClick={() => handleClick(scorecardLink)}
                                   selected={page === 'scorecard'}
                                   disabled={page === 'scorecard'}
+                                  value='scorecard'
                                   style={{padding: '2px 12px 2px 12px'}}>
                         Scorecard
                     </ToggleButton>
