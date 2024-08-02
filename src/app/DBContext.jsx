@@ -156,7 +156,7 @@ export function DBProvider({children}) {
         await deleteDoc(doc(db, 'evidence', id))
         await invalidateEvidenceCache(user.uid)
         setEvidence(e => e.filter(evid => evid.id !== id))
-    }, [user.uid])
+    }, [user])
 
     const removeAllEvidence = useCallback(async () => {
         const batch = writeBatch(db)
@@ -164,7 +164,7 @@ export function DBProvider({children}) {
         await batch.commit()
         await invalidateEvidenceCache(user.uid)
         setEvidence([])
-    }, [evidence, user.uid])
+    }, [evidence, user])
 
     const getEvidence = useCallback(async userId => {
         return await evidenceCache(userId)
