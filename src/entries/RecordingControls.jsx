@@ -26,8 +26,6 @@ function RecordingControls({lockId}) {
             return b.points - a.points
         })
 
-    console.log('recordings', recordings)
-
     const handleOverlayOpen = useCallback(id => {
         setEditRecId(id)
     }, [])

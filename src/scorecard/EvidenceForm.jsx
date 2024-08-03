@@ -18,7 +18,7 @@ import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId} from '../entries/entryutils'
 
-export default function EvidenceForm({evid, handleUpdate, addProject}) {
+export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
@@ -35,7 +35,7 @@ export default function EvidenceForm({evid, handleUpdate, addProject}) {
     const project = allProjects.find(item => {
         return item.name === projectName
     })
-    const entry = getEntryFromId(evid?.matchId)
+    const entry = getEntryFromId(evid?.matchId || lockId)
 
     const entryId = entry
         ? entry.id
@@ -211,7 +211,7 @@ export default function EvidenceForm({evid, handleUpdate, addProject}) {
                     />
                     {!!entry &&
                         <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
-                            <CollectionButton id={evid.matchId} dense={denseButton}/>
+                            <CollectionButton id={evid?.matchId || lockId} dense={denseButton}/>
                         </div>
                     }
                 </div>
