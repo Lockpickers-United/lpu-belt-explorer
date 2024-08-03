@@ -6,7 +6,6 @@ import fetch from 'node-fetch'
 import masterIndex, {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
-// import {allPickers} from '../src/data/allPickerDanTabs.js'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
 const app = admin.initializeApp({
@@ -29,12 +28,37 @@ function startLine(tab) {
     }
 }
 
+const importTabNames = async () => {
+    const {TAB_SHEET_ID: sheetId} = process.env
+    if (!sheetId) {
+        console.log('Config error! Set TAB_SHEET_ID env var to google sheet of dan tab names and black belt dates.')
+        process.exit(1)
+    }
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=Pickers&headers=1`
+    let csvData = await (await fetch(url)).text()
+
+    const data = parse(csvData, {
+        columns: true,
+        skip_empty_lines: true,
+        trim: true
+    })
+    const retval = data
+        .map(datum => {
+            return {
+                picker: datum.Picker,
+                date: datum.Date
+            }
+        })
+    return retval
+}
+
+
 // Pulls all necessary info from a specified dan sheet tab
 
 const importDanTab = async (tab) => {
     const {DAN_SHEET_ID: sheetId} = process.env
     if (!sheetId) {
-        console.log('Config error! Set DAN_SHEET_ID env var to import.')
+        console.log('Config error! Set DAN_SHEET_ID env var to dan google sheet.')
         process.exit(1)
     }
 
@@ -470,12 +494,24 @@ let target = undefined
 
 target = 'NiXXeD'
 // target = 'Tonysansan'
-// target = allPickers[137]
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
 
+const allTabsAndDates = await importTabNames()
+const allPickers = allTabsAndDates.map(td => td.picker)
+const allBBDates = allTabsAndDates.map(td => {
+    const match = td.date.match(/^(\d\d)\/(\d\d)\/(\d\d\d\d)$/)
+    if (match) {
+        return `${match[3]}-${match[1]}-${match[2]}T00:00:00.000Z`
+    } else {
+        return null
+    }
+})
+
 if (target) {
     pickers = [target]
+} else {
+    pickers = allPickers
 }
 
 for (let idx = 0; idx < pickers.length; idx++) {
