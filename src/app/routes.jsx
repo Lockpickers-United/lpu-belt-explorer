@@ -120,6 +120,13 @@ export default [
         }
     },
     {
+        path: '/profile/:userId/safelocks',
+        lazy: async() => {
+            const {default: SafelocksCollectionRoute} = await import('../safelocksCollection/SafelocksCollectionRoute')
+            return {element: <SafelocksCollectionRoute/>}
+        }
+    },
+    {
         path: '/profile/view',
         lazy: async () => {
             const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
