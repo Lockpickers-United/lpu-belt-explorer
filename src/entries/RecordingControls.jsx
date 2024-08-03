@@ -77,7 +77,7 @@ function RecordingControls({lockId}) {
                                 }}>
                                     <CardHeader title={'Documentation'} action={<HighlightOffIcon sx={{cursor:'pointer'}}/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
                                     <CardContent>
-                                        <EvidenceForm evid={rec} handleUpdate={handleOverlayClose}/>
+                                        <EvidenceForm evid={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}/>
                                     </CardContent>
                                 </Card>
                             </Backdrop>
@@ -120,7 +120,7 @@ function RecordingControls({lockId}) {
                                             style={{paddingBottom: 0}}
                                             onClick={handleOverlayClose}/>
                                 <CardContent>
-                                    <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose}/>
+                                    <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose} source={'collectionButton'}/>
                                 </CardContent>
                             </Card>
                         </Backdrop>

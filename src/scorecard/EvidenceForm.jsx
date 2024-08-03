@@ -18,7 +18,7 @@ import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId} from '../entries/entryutils'
 
-export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
+export default function EvidenceForm({evid, lockId, handleUpdate, addProject, source}) {
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
@@ -209,7 +209,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject}) {
                         }}
                         sx={{input: {color: '#999'}}}
                     />
-                    {!!entry &&
+                    {(!!entry && source !== 'collectionButton') &&
                         <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
                             <CollectionButton id={evid?.matchId || lockId} dense={denseButton}/>
                         </div>
