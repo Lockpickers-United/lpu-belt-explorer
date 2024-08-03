@@ -1,12 +1,25 @@
 [
   {
-    "id": "761d2fe8",
-    "make": "Big Red",
-    "model": "CDL-3, CDL-3M",
-    "group": "2, 2M",
+    "id": "314e58a4",
+    "make": "AMSEC",
+    "model": "STAR C3",
+    "group": "2",
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.550Z"
+  },
+  {
+    "id": "f1bee574",
+    "make": "Big Red",
+    "model": "CDL-3",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "Tier 2",
     "features": [],
     "media": [
       {
@@ -33,28 +46,34 @@
       {
         "title": "By: Insomniaclockpicker",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53583313673_d0e055029f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583313673/in/album-72177720315386952/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53583313673_b3c5dde496_o.jpg"
-      },
-      {
-        "title": "By: Insomniaclockpicker",
-        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/53583091526_24ce0a127c_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53583091526/in/album-72177720315386952/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-13T13:31:49.596Z"
+    "lastUpdated": "2024-07-28T21:39:23.262Z"
+  },
+  {
+    "id": "761d2fe8",
+    "make": "Big Red",
+    "model": "CDL-3M",
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-08-01T05:04:29.090Z"
   },
   {
     "id": "693fd901",
     "make": "Big Red",
-    "model": "CDL-4, CDL-4M",
-    "group": "2, 2M",
-    "fence": "",
+    "model": "CDL-4",
+    "group": "2",
+    "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -86,31 +105,70 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-13T13:31:49.596Z"
+    "lastUpdated": "2024-07-26T19:28:51.948Z"
+  },
+  {
+    "id": "0638d9d8",
+    "make": "Big Red",
+    "model": "CDL-4M",
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-08-01T05:04:29.090Z"
+  },
+  {
+    "id": "e3a922f0",
+    "make": "Chubb",
+    "model": "7L08",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "Tier 3",
+    "features": [],
+    "lastUpdated": "2024-07-27T12:29:35.703Z"
   },
   {
     "id": "e24e62b7",
     "make": "Chubb",
-    "model": "7L51",
-    "group": "2",
+    "model": "7L50",
+    "group": "not rated",
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Vault Format"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "75ddbd51",
+    "make": "Chubb",
+    "model": "7L64",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "Tier 3",
+    "features": [],
+    "lastUpdated": "2024-07-26T17:16:08.352Z"
   },
   {
     "id": "f5703ac0",
     "make": "Chubb",
-    "model": "Bankers",
+    "model": "7K50",
     "group": "",
     "fence": "",
     "wheels": "",
-    "digits": "",
+    "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -134,16 +192,30 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541905018/in/album-72177720314921522/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-08-01T05:04:29.090Z"
+  },
+  {
+    "id": "19359f35",
+    "make": "Chubb",
+    "model": "Manifoil MK3",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "087f41e9",
     "make": "Chubb",
-    "model": "Manifoil mk4",
+    "model": "Manifoil MK4",
     "group": "",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -152,7 +224,8 @@
       "False Gates",
       "Eccentric Double-Cam",
       "LOBC"
-    ]
+    ],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "58441a32",
@@ -162,6 +235,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -199,7 +273,236 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522597556/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "74ac6513",
+    "make": "Diebold",
+    "model": "177-23B",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "91242adb",
+    "make": "Diebold",
+    "model": "177-75",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "9ba1d776",
+    "make": "Diebold",
+    "model": "180-04",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "4c87c9aa",
+    "make": "Diebold",
+    "model": "180-34",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "0c0fcaa3",
+    "make": "Diebold",
+    "model": "180-55",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "5801c35c",
+    "make": "Diebold",
+    "model": "900",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "183de4b2",
+    "make": "Diebold",
+    "model": "6660 series",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "531f16d1",
+    "make": "Diebold",
+    "model": "6661",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "48b6f239",
+    "make": "Federal",
+    "model": "800",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "995fe19d",
+    "make": "Fichet-Bauche",
+    "model": "Moneo",
+    "group": "",
+    "fence": "",
+    "wheels": "7",
+    "digits": "1-13",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.551Z"
+  },
+  {
+    "id": "b8ad025e",
+    "make": "Ilco",
+    "model": "673",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "9e99b0ed",
+    "make": "Ilco",
+    "model": "674",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "539f0577",
+    "make": "Ilco",
+    "model": "69",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
+  },
+  {
+    "id": "6ac1cea2",
+    "make": "Ilco",
+    "model": "A673",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.492Z"
+  },
+  {
+    "id": "cbeab2a1",
+    "make": "International",
+    "model": "2000",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "8b059d5a",
+    "make": "JIS",
+    "model": "4100",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "94976b4d",
+    "make": "JOLI",
+    "model": "",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "6675b41d",
+    "make": "Kromer",
+    "model": "14a",
+    "group": "not rated",
+    "fence": "Gravity Lever",
+    "wheels": "3",
+    "digits": "0-49",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
+  },
+  {
+    "id": "cc91e358",
+    "make": "Kromer",
+    "model": "15b",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "3ad83c5d",
@@ -208,7 +511,8 @@
     "group": "",
     "fence": "",
     "wheels": "",
-    "digits": "",
+    "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -233,16 +537,41 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
+  },
+  {
+    "id": "6b301968",
+    "make": "Kromer",
+    "model": "3002",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
+  },
+  {
+    "id": "e393e3d5",
+    "make": "Kromer",
+    "model": "3010",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.551Z"
   },
   {
     "id": "610d201c",
     "make": "Kromer",
     "model": "3011",
-    "group": "2",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -287,16 +616,17 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "f59d47b3",
     "make": "Kromer",
     "model": "3012",
-    "group": "2",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -326,31 +656,35 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53543551118/in/album-72177720314946356/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53543551118_fc1f2597f1_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "93b9e6f5",
     "make": "Kromer",
     "model": "3031",
-    "group": "2",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Anti-Punch Relocker",
       "Kromer Standard Format"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "c32aa445",
     "make": "Kromer",
     "model": "3055",
-    "group": "1",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "4(?)",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -358,16 +692,18 @@
       "Vault Format",
       "Indirect drive",
       "Magnetic double-cam"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "8f0e636e",
     "make": "Kromer",
     "model": "3090",
-    "group": "1",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -375,7 +711,68 @@
       "Vault Format",
       "Indirect drive",
       "Fence Lever Control Device"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "c07f8b5c",
+    "make": "Kromer",
+    "model": "3097",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.551Z"
+  },
+  {
+    "id": "e2f66615",
+    "make": "Kromer",
+    "model": "3098",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.551Z"
+  },
+  {
+    "id": "218529be",
+    "make": "La Gard",
+    "model": "1800(RL)",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "Tier 3",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "ea7b53e2",
+    "make": "La Gard",
+    "model": "1847",
+    "group": "2",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "82847ba5",
+    "make": "La Gard",
+    "model": "1947",
+    "group": "1",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "Tier 5",
+    "features": [],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "0e5acb82",
@@ -385,6 +782,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -408,16 +806,30 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521696567/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
+  },
+  {
+    "id": "cffd6d42",
+    "make": "La Gard",
+    "model": "2050",
+    "group": "2",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "7d060e16",
     "make": "La Gard",
     "model": "2270",
-    "group": "",
+    "group": "key lock",
     "fence": "",
-    "wheels": "",
-    "digits": "0-99",
+    "wheels": "4",
+    "digits": "n/a",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -434,7 +846,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521698717/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521698717_e1a3f36c63_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "b04ccb99",
@@ -444,6 +857,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -516,7 +930,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522764643/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764643_e569d850ab_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
   },
   {
     "id": "baa53440",
@@ -526,6 +941,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -578,7 +994,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-02-29T00:57:42.114Z"
+    "lastUpdated": "2024-07-30T18:17:05.632Z"
   },
   {
     "id": "0b1fc984",
@@ -588,6 +1004,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -611,7 +1028,8 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522764253/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-27T12:29:35.704Z"
   },
   {
     "id": "e8bfa9ff",
@@ -621,6 +1039,7 @@
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -628,16 +1047,90 @@
       "Vault Format",
       "Indirect drive",
       "LOBC"
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "0e6f7715",
+    "make": "Mosler",
+    "model": "5-H",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "58be25bb",
+    "make": "Mosler",
+    "model": "CD(K)-120",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "66e4c71a",
+    "make": "Mosler",
+    "model": "CD(K)-302",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "a377c77f",
+    "make": "Mosler",
+    "model": "KCB104",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "db3cba26",
+    "make": "Mosler",
+    "model": "MR-99",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "2c418e8a",
+    "make": "Mosler",
+    "model": "MR(K)-120",
+    "group": "1R",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "c427020e",
     "make": "Mosler",
-    "model": "MR302",
-    "group": "1",
+    "model": "MR(K)-302",
+    "group": "1R",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -690,16 +1183,18 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53540852337/in/album-72177720314925665/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "56fed723",
     "make": "Mosler",
-    "model": "MR402",
-    "group": "1",
+    "model": "MR-402",
+    "group": "1R",
     "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -708,7 +1203,68 @@
       "Standard Format",
       "False Gates",
       "Sprung Double-Cam"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "c51157c7",
+    "make": "Mosler",
+    "model": "no.11",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "e2f3be34",
+    "make": "Precision",
+    "model": "P67",
+    "group": "2",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "7bdc4f32",
+    "make": "Rench",
+    "model": "4031",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "ad3b6507",
+    "make": "Rench",
+    "model": "4037-AM",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.552Z"
+  },
+  {
+    "id": "369205da",
+    "make": "Rosengrens",
+    "model": "CNAB 6",
+    "group": "1",
+    "fence": "",
+    "wheels": "6",
+    "digits": "1-10",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "ae66f9a6",
@@ -716,8 +1272,9 @@
     "model": "2937",
     "group": "1",
     "fence": "",
-    "wheels": "",
+    "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -749,16 +1306,36 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583438689_3d27ab0734_o.jpg"
       }
     ],
-    "lastUpdated": "2024-03-12T13:57:51.472Z"
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "a7258495",
     "make": "Sargent & Greenleaf",
-    "model": "6400 series",
+    "model": "6430",
+    "group": "2M",
+    "fence": "Gravity Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "Tier 4",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Right/Left Handed open",
+      "Vault Format",
+      "Indirect drive"
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "350e09f9",
+    "make": "Sargent & Greenleaf",
+    "model": "6435",
     "group": "1",
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -766,16 +1343,18 @@
       "Right/Left Handed open",
       "Vault Format",
       "Indirect drive"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
   },
   {
     "id": "c2f54e5c",
     "make": "Sargent & Greenleaf",
-    "model": "6500 series",
+    "model": "6530",
     "group": "2",
     "fence": "Gravity Lever",
     "wheels": "4",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -783,7 +1362,22 @@
       "Right/Left Handed open",
       "Vault Format",
       "Indirect drive"
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.493Z"
+  },
+  {
+    "id": "bd3e18ae",
+    "make": "Sargent & Greenleaf",
+    "model": "6535",
+    "group": "2",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Indirect Drive"
+    ],
+    "lastUpdated": "2024-08-01T05:04:29.091Z"
   },
   {
     "id": "7c91d17c",
@@ -793,6 +1387,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -838,7 +1433,28 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53521500463/in/album-72177720314711293/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521500463_afffa12ba1_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "ffffb9fa",
+    "make": "Sargent & Greenleaf",
+    "model": "6631",
+    "group": "2M",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "Tier 3",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates",
+      "Eccentric Roller"
+    ],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "9262a564",
@@ -848,6 +1464,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -892,7 +1509,27 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541171936/in/album-72177720314920306/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-30T18:17:05.633Z"
+  },
+  {
+    "id": "edb5f9e3",
+    "make": "Sargent & Greenleaf",
+    "model": "6643",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "False Gates"
+    ],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "082b9b1f",
@@ -902,6 +1539,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -976,7 +1614,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
     ],
-    "lastUpdated": "2024-02-29T00:57:42.115Z"
+    "lastUpdated": "2024-07-26T23:45:43.407Z"
   },
   {
     "id": "ae84d433",
@@ -986,6 +1624,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1022,7 +1661,26 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53517816255/in/album-72177720314662911/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-26T14:37:39.403Z"
+  },
+  {
+    "id": "15d969bb",
+    "make": "Sargent & Greenleaf",
+    "model": "6731",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
+    "lastUpdated": "2024-07-26T19:28:51.949Z"
   },
   {
     "id": "8a2dc6e5",
@@ -1032,6 +1690,7 @@
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1055,17 +1714,20 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
     ],
-    "lastUpdated": "2024-02-29T00:57:42.115Z"
+    "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
     "id": "3809d4a5",
     "make": "Sargent & Greenleaf",
-    "model": "8077",
-    "group": "",
+    "model": "8077 Padlock",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
-    "features": [],
+    "tier": "",
+    "features": [
+      "Padlock"
+    ],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -1074,16 +1736,42 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522762218/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522762218_66ce717570_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "b951fed1",
+    "make": "Sargent & Greenleaf",
+    "model": "8088",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.552Z"
+  },
+  {
+    "id": "bb279fda",
+    "make": "Sargent & Greenleaf",
+    "model": "8100",
+    "group": "",
+    "fence": "",
+    "wheels": "2",
+    "digits": "0-99",
+    "tier": "Tier 1",
+    "features": [],
+    "lastUpdated": "2024-07-27T01:36:02.325Z"
   },
   {
     "id": "211383d8",
     "make": "Sargent & Greenleaf",
-    "model": "8400 series",
+    "model": "841x",
     "group": "1",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1107,16 +1795,37 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53523022660/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-27T01:36:02.326Z"
+  },
+  {
+    "id": "daa48991",
+    "make": "Sargent & Greenleaf",
+    "model": "843x",
+    "group": "1R",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Butterfly anti-manipulation cam"
+    ],
+    "lastUpdated": "2024-07-27T01:36:02.326Z"
   },
   {
     "id": "87af3a83",
     "make": "Sargent & Greenleaf",
-    "model": "8500 series",
+    "model": "8550",
     "group": "1",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1139,6 +1848,34 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/53522912384_8a75304c2c_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912384/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912384_de34d8b5c5_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-07-26T23:31:04.552Z"
+  },
+  {
+    "id": "0004c8cc",
+    "make": "Sargent & Greenleaf",
+    "model": "8560",
+    "group": "1R",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Anti-manipulation double-lever"
+    ],
+    "media": [
+      {
+        "title": "By: Lock Manipulator",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53522912149_a6df2070cb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912149/in/album-72177720314713995/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53522912149_f861869dfc_o.jpg"
       },
       {
         "title": "By: Lock Manipulator",
@@ -1147,16 +1884,42 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53522912574/in/album-72177720314713995/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-27T01:36:02.326Z"
+  },
+  {
+    "id": "e2c63188",
+    "make": "Sargent & Greenleaf",
+    "model": "C87",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "ddfdba26",
+    "make": "Sargent & Greenleaf",
+    "model": "No.5",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
   },
   {
     "id": "7729589b",
     "make": "Sargent & Greenleaf",
-    "model": "R6700 series",
-    "group": "",
-    "fence": "",
-    "wheels": "",
-    "digits": "",
+    "model": "R6730",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
     "features": [],
     "media": [
       {
@@ -1187,16 +1950,138 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541360948/in/album-72177720314920416/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "06555f12",
+    "make": "Sargent & Greenleaf",
+    "model": "R6731",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "cc7e7e41",
+    "make": "Satoh Lock Co.",
+    "model": "Sun 700",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.552Z"
+  },
+  {
+    "id": "75ae5685",
+    "make": "Satoh Lock Co.",
+    "model": "Sun Magnetic",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.552Z"
+  },
+  {
+    "id": "9250529e",
+    "make": "Steel Safe",
+    "model": "CS411B",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "d36e5167",
+    "make": "Yale",
+    "model": "025 1/2",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "ba90d477",
+    "make": "Yale",
+    "model": "026",
+    "group": "",
+    "fence": "",
+    "wheels": "4",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T19:28:51.950Z"
+  },
+  {
+    "id": "493d1ce2",
+    "make": "Yale",
+    "model": "B30",
+    "group": "1R",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "ac15ffba",
+    "make": "Yale",
+    "model": "B31",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "7ce746ae",
+    "make": "Yale",
+    "model": "B40",
+    "group": "1R",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "b6f20651",
+    "make": "Yale",
+    "model": "B41",
+    "group": "1",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
   },
   {
     "id": "6eeba243",
     "make": "Yale",
     "model": "OC-5",
-    "group": "2",
+    "group": "not rated",
     "fence": "Rotary Gear",
     "wheels": "3",
     "digits": "0-99",
+    "tier": "",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -1231,6 +2116,31 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53541737351/in/album-72177720314925765/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541737351_c475dd7200_o.jpg"
       }
-    ]
+    ],
+    "lastUpdated": "2024-07-28T21:10:25.494Z"
+  },
+  {
+    "id": "da5d6407",
+    "make": "Yale",
+    "model": "OC-5M",
+    "group": "",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.553Z"
+  },
+  {
+    "id": "86c1a98b",
+    "make": "Yale",
+    "model": "V5332",
+    "group": "",
+    "fence": "",
+    "wheels": "2",
+    "digits": "0-49",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-07-26T23:31:04.553Z"
   }
 ]

@@ -3,9 +3,9 @@ import {useSearchParams} from 'react-router-dom'
 import DataContext from '../context/DataContext'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import NoEntriesCard from '../locks/NoEntriesCard'
-import DialEntry from './DialEntry'
+import SafelockEntry from './SafelockEntry.jsx'
 
-function DialsPage() {
+function SafelocksPage() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [expanded, setExpanded] = useState(searchParams.get('id'))
     const {allEntries, visibleEntries} = useContext(DataContext)
@@ -30,7 +30,7 @@ function DialsPage() {
             {visibleEntries.length === 0 && <NoEntriesCard label='Dials'/>}
 
             {visibleEntries.map(entry =>
-                <DialEntry
+                <SafelockEntry
                     key={entry.id}
                     entry={entry}
                     onExpand={handleExpand}
@@ -41,4 +41,4 @@ function DialsPage() {
     )
 }
 
-export default DialsPage
+export default SafelocksPage

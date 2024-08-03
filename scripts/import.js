@@ -279,7 +279,7 @@ fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))
 // Dials Data
 console.log('Processing Dials data...')
 const dialsMainData = dialsData.map(datum => {
-    return {
+    if (!datum['Do Not Import']) return {
         id: datum['Unique ID'],
         make: datum.Make,
         model: datum.Model,
@@ -287,9 +287,10 @@ const dialsMainData = dialsData.map(datum => {
         fence: datum.Fence,
         wheels: datum.Wheels,
         digits: datum.Digits,
+        tier: datum['Quest Tier'],
         features: datum.Features ? datum.Features.split(',').filter(x => x) : []
     }
-})
+}).filter(x => x)
 
 // Dials Media data
 console.log('Processing Dials Media data...')
@@ -302,7 +303,7 @@ dialsMediaData
         else return -1
     })
     .forEach(item => {
-        const entry = dialsMainData.find(e => e.id === item['Unique ID'])
+        const entry = dialsMainData.find(e => e?.id === item['Unique ID'])
         if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
         const media = {
@@ -337,19 +338,19 @@ dialsLinkData
 
 // Recently updated data
 console.log('Processing recenty updated data...')
-const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/dials.json'))
+const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/safelocks.json'))
 dialsMainData
     .forEach(entry => {
-        const {lastUpdated, ...oldEntry} = orginalDialsData.find(e => e.id === entry.id) || {}
+        const {lastUpdated, ...oldEntry} = orginalDialsData.find(e => e?.id === entry?.id) || {}
         if (JSON.stringify(entry) !== JSON.stringify(oldEntry)) {
-            console.log(`Dial Entry updated ${entry.id}`)
+            console.log(`Dial Entry updated ${entry?.id}`)
             entry.lastUpdated = dayjs().toISOString()
         } else {
             entry.lastUpdated = lastUpdated
         }
     })
 
-fs.writeFileSync('./src/data/dials.json', JSON.stringify(dialsMainData, null, 2))
+fs.writeFileSync('./src/data/safelocks.json', JSON.stringify(dialsMainData, null, 2))
 
 // Check that all Features are accounted for in Glossary
 const lockFeatures = jsonData

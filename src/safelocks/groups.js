@@ -3,7 +3,8 @@ const allGroups = [
     '2',
     '2M',
     '1',
-    '1R'
+    '1R',
+    'zzz'
 ]
 
 const allGroupsReverse = [...allGroups].reverse()

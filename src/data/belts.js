@@ -7,7 +7,7 @@ const belts = {
     Purple: {color: '#6a4b9d', danPoints: 3},
     Brown: {color: '#624e38', danPoints: 6},
     Red: {color: '#b92121', danPoints: 10},
-    'Black': {color: '#000000', lineColor: '#acacac', danPoints: 18},
+    Black: {color: '#000000', lineColor: '#acacac', danPoints: 18},
     'Black 1': {color: '#000000', lineColor: '#acacac', danPoints: 18},
     'Black 2': {color: '#000000', lineColor: '#acacac', danPoints: 24},
     'Black 3': {color: '#000000', lineColor: '#acacac', danPoints: 30},
@@ -20,6 +20,11 @@ const belts = {
     'Project 4': {color: '#000000', lineColor: '#c7c340', danPoints: 34},
     'Project 5': {color: '#000000', lineColor: '#c7c340', danPoints: 50},
     Unranked: {color: '#000000', lineColor: '#d3d31c', danPoints: 0},
+    'Tier 1': {color: '#000000', lineColor: '#80b535', danPoints: 5},
+    'Tier 2': {color: '#000000', lineColor: '#80b535', danPoints: 10},
+    'Tier 3': {color: '#000000', lineColor: '#80b535', danPoints: 20},
+    'Tier 4': {color: '#000000', lineColor: '#80b535', danPoints: 34},
+    'Tier 5': {color: '#000000', lineColor: '#80b535', danPoints: 50}
 }
 export default belts
 export const allBelts = Object.keys(belts)

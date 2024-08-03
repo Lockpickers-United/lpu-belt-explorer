@@ -59,7 +59,7 @@ function FilterByField({label, fieldName, onFilter, sort}) {
 
     return (
         <FormControl style={{minWidth: 120, maxWidth: 300, marginTop: 4}} fullWidth>
-            <InputLabel id={`filter-${fieldName}`}>{label}</InputLabel>
+            <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
             <Select
                 multiple
                 label={label}
@@ -67,6 +67,7 @@ function FilterByField({label, fieldName, onFilter, sort}) {
                 value={value}
                 onChange={handleSelect}
                 style={{marginBottom: 8}}
+                color='secondary'
                 open={open}
                 onClose={handleClose}
                 onOpen={handleOpen}

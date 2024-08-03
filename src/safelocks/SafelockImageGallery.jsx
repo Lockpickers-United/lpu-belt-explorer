@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react'
 import {useSearchParams} from 'react-router-dom'
 import ImageGallery from '../misc/ImageGallery'
 
-function LockImageGallery({entry}) {
+function SafelockImageGallery({entry}) {
     const [searchParams, setSearchParams] = useSearchParams()
     const image = searchParams.get('image')
 
@@ -40,4 +40,4 @@ function LockImageGallery({entry}) {
 
 const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media[image]
 
-export default LockImageGallery
+export default SafelockImageGallery

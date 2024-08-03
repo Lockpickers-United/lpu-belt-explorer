@@ -45,9 +45,9 @@ export default [
     },
     {
         beta: true,
-        title: 'Dials',
+        title: 'Safe Locks',
         icon: <AvTimerIcon fontSize='small'/>,
-        path: '/dials'
+        path: '/safelocks'
     },
     {
         title: 'Stats & Insights',

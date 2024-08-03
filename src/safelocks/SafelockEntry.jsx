@@ -12,12 +12,17 @@ import Tracker from '../app/Tracker'
 import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
-import DialImageGallery from './DialImageGallery'
+import SafelockImageGallery from './SafelockImageGallery.jsx'
+import BeltStripe from '../entries/BeltStripe.jsx'
+import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
+import SafelocksCollectionButton from './SafelocksCollectionButton.jsx'
 
-function DialEntry({entry, expanded, onExpand}) {
+function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const {isMobile} = useWindowSize()
     const ref = useRef(null)
 
     useEffect(() => {
@@ -45,9 +50,21 @@ function DialEntry({entry, expanded, onExpand}) {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry.id, onExpand])
 
+    const questLabel = isMobile ? 'Quest' : 'Quest Level'
+
+    const groupList = ['2', '2M', '1', '1R']
+    const groupName = groupList.includes(entry.group)
+        ? 'Group ' + entry.group
+        : entry.group
+
+    const infoFlexStyle = isMobile
+        ? 'block'
+        : 'flex'
+
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+                <BeltStripe value={entry.tier}/>
                 <div style={{margin: '12px 0px 8px 8px', width: '60%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         value={
@@ -61,11 +78,17 @@ function DialEntry({entry, expanded, onExpand}) {
                     />
                 </div>
 
-                <div style={{margin: '8px 0px 0px 0px', width: '30%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{
+                    margin: '8px 0px 0px 0px',
+                    width: '30%',
+                    flexShrink: 0,
+                    flexDirection: 'column',
+                    textAlign: 'center'
+                }}>
                     {
                         entry.group &&
                         <FieldValue value={
-                            <FilterChip field='group' label={`Group ${entry.group}`} value={entry.group}/>
+                            <FilterChip field='group' label={groupName} value={entry.group}/>
                         }/>
                     }
                 </div>
@@ -74,33 +97,47 @@ function DialEntry({entry, expanded, onExpand}) {
                 expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
-                        <Stack direction='row' alignItems='flex-start'>
-                            <FieldValue
-                                name='Fence Type'
-                                value={
-                                    <FilterChip field='fence' value={entry.fence || 'Unknown'}/>
-                                }
-                                style={{flexGrow: 1}}
-                            />
-                            <FieldValue
-                                name='Wheels'
-                                value={
-                                    <FilterChip
-                                        field='wheels'
-                                        label={entry.wheels ? `${entry.wheels} wheels` : 'Unknown'}
-                                        value={entry.wheels || 'Unknown'}
+                        <div style={{display: infoFlexStyle}}>
+                            <Stack direction='row' alignItems='flex-start' style={{flexGrow: 1}}>
+                                {entry.tier &&
+                                    <FieldValue
+                                        name={questLabel}
+                                        value={
+                                            <FilterChip field='fence' value={entry.tier || 'Unknown'}/>
+                                        }
+                                        style={{flexGrow: 1}}
                                     />
                                 }
-                                style={{flexGrow: 1}}
-                            />
-                            <FieldValue
-                                name='Digits'
-                                value={
-                                    <FilterChip field='digits' value={entry.digits || 'Unknown'}/>
-                                }
-                                style={{flexGrow: 1}}
-                            />
-                        </Stack>
+                                <FieldValue
+                                    name='Fence Type'
+                                    value={
+                                        <FilterChip field='fence' value={entry.fence || 'Unknown'}/>
+                                    }
+                                    style={{flexGrow: 1}}
+                                />
+                                <FieldValue
+                                    name='Wheels'
+                                    value={
+                                        <FilterChip
+                                            field='wheels'
+                                            label={entry.wheels ? `${entry.wheels} wheels` : 'Unknown'}
+                                            value={entry.wheels || 'Unknown'}
+                                        />
+                                    }
+                                    style={{flexGrow: 1}}
+                                />
+                                <FieldValue
+                                    name='Digits'
+                                    value={
+                                        <FilterChip field='digits' value={entry.digits || 'Unknown'}/>
+                                    }
+                                    style={{flexGrow: 1}}
+                                />
+                            </Stack>
+                            <div style={{margin: '12px 0px 0px 8px'}}>
+                                <SafelocksCollectionButton id={entry?.id}/>
+                            </div>
+                        </div>
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
@@ -117,7 +154,7 @@ function DialEntry({entry, expanded, onExpand}) {
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
-                                <DialImageGallery entry={entry}/>
+                                <SafelockImageGallery entry={entry}/>
                             }/>
                         }
                         {
@@ -144,6 +181,7 @@ function DialEntry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker feature='dial' id={entry.id}/>
+                        <CopyEntryTextButton entry={entry}/>
                         <CopyLinkToEntryButton entry={entry} nameType='dial'/>
                     </AccordionActions>
                 </React.Fragment>
@@ -152,4 +190,4 @@ function DialEntry({entry, expanded, onExpand}) {
     )
 }
 
-export default DialEntry
+export default SafelockEntry
