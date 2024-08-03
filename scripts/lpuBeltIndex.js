@@ -1,8 +1,7 @@
 import fs from 'fs'
-import {parse} from 'csv-parse/sync'
-import allProjects from '../src/data/projects.json' with {type: 'json'}
 
 const allLocks = JSON.parse(fs.readFileSync('./src/data/data.json'))
+const allProjects = JSON.parse(fs.readFileSync('./src/data/projects.json'))
 
 // Access any lock data uniquely by id
 
