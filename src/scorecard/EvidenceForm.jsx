@@ -96,10 +96,12 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const cancelEdit = useCallback(() => {
         if (updated) {
             setEvidenceUrl(evid?.link ? evid.link : '')
-            setUpdated(false)
+            setEvidenceDate(evid?.date ? dayjs(evid.date) : dayjs())
+            setModifier(evid?.modifier ? evid?.modifier : '')
             setEvidenceNotes(evid?.evidenceNotes ? evid.evidenceNotes : '')
+            setUpdated(false)
         }
-    }, [evid?.link, evid?.evidenceNotes, updated])
+    }, [evid?.link, evid?.date, evid?.modifier, evid?.evidenceNotes, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target

@@ -499,14 +499,13 @@ let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.jso
 
 const allTabsAndDates = await importTabNames()
 const allPickers = allTabsAndDates.map(td => td.picker)
-const allBBDates = allTabsAndDates.map(td => {
-    const match = td.date.match(/^(\d\d)\/(\d\d)\/(\d\d\d\d)$/)
+const bbDatesByPicker = allTabsAndDates.reduce((group, term) => {
+    const match = term.date.match(/^(\d\d)\/(\d\d)\/(\d\d\d\d)$/)
     if (match) {
-        return `${match[3]}-${match[1]}-${match[2]}T00:00:00.000Z`
-    } else {
-        return null
+        group[term.picker] = `${match[3]}-${match[1]}-${match[2]}T00:00:00.000Z`
     }
-})
+    return group
+}, {})
 
 if (target) {
     pickers = [target]
@@ -581,6 +580,10 @@ for (let idx = 0; idx < pickers.length; idx++) {
     }
 
     if (WRITE_TO_DB) {
+        if (bbDatesByPicker[target]) {
+            await db.collection('unclaimed-blackbelts').doc(target).set({awardedAt: bbDatesByPicker[target], claimed: false})
+        }
+
         const docs = await db.collection('unclaimed-evidence').where('tabName', '==', target).get()
         docs.forEach(rec => rec.ref.delete())
 

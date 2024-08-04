@@ -114,7 +114,8 @@ function SafelockCollectionButton({id, dense}) {
 
 const excludedKeys = [
     'public',
-    'displayName'
+    'displayName',
+    'blackBeltAwardedAt'
 ]
 
 export default SafelockCollectionButton
