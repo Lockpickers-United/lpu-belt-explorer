@@ -3,6 +3,7 @@ import FieldValue from '../entries/FieldValue'
 import Stack from '@mui/material/Stack'
 import Chip from '@mui/material/Chip'
 import FilterContext from '../context/FilterContext'
+import {filterValueNames} from '../data/filterValues'
 
 function FilterDisplay() {
     const {filters, filterCount, removeFilter, filterFieldsByFieldName} = useContext(FilterContext)
@@ -37,6 +38,8 @@ function FilterDisplay() {
             return 'Group ' + value
         } else if (label === 'Wheels') {
             return `${value} Wheels`
+        } else if (filterValueNames[value]) {
+            return filterValueNames[value]
         }
         return value
     }, [])
