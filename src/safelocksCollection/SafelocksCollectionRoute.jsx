@@ -1,6 +1,7 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
+import AuthContext from '../app/AuthContext.jsx'
 import Tracker from '../app/Tracker'
 import {dialFilterFields} from '../data/filterFields'
 import {lockSortFields} from '../data/sortFields'
@@ -25,19 +26,20 @@ import {safelockCollectionOptions} from '../data/collectionTypes'
 
 function ProfileRoute() {
     const {userId} = useParams()
-    const {getProfile} = useContext(DBContext)
+    const {user} = useContext(AuthContext)
+    const {getProfile, lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(async () => {
         try {
-            const profile = await getProfile(userId)
+            const profile = user?.uid !== userId ? await getProfile(userId) : lockCollection
             document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
             return profile
         } catch (ex) {
             console.error('Error loading profile.', ex)
             return null
         }
-    }, [getProfile, userId])
+    }, [getProfile, lockCollection, user, userId])
 
     const {data = {}, loading, error} = useData({loadFn})
 

@@ -33,7 +33,7 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
                     profile?.safelockWishlist?.includes?.(entry.id) ? 'safelockWishlist' : 'Not on safelockWishlist'
                 ]
             }))
-    }, [allEntries])
+    }, [allEntries, anyCollection, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
