@@ -13,7 +13,7 @@ export const validCollectionTypes = [
 ]
 
 export const safelockCollectionOptions = [
-    {key: 'safelockOwn', label: 'Own'},
+    {key: 'safelocksOwn', label: 'Own'},
     {key: 'safelockCracked', label: 'Cracked'},
     {key: 'safelockWishlist', label: 'Wishlist'}
 ]

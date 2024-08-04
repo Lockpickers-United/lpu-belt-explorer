@@ -5,7 +5,7 @@ import Select from '@mui/material/Select'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
-import {validCollectionTypes, safelocksValidCollectionTypes} from '../data/collectionTypes'
+import {validCollectionTypes, collectionOptions, safelocksValidCollectionTypes, safelockCollectionOptions} from '../data/collectionTypes'
 import getAnyCollection, {anySafelockCollection} from '../util/getAnyCollection'
 import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
@@ -23,9 +23,19 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         ? ['Any', ...safelocksValidCollectionTypes]
         : ['Any', ...validCollectionTypes]
 
+    const options = collectionType === 'safelocks'
+        ? safelockCollectionOptions
+        : collectionOptions
+
     const anyCollection = collectionType === 'safelocks'
         ? useMemo(() => anySafelockCollection(profile), [profile])
         : useMemo(() => getAnyCollection(profile), [profile])
+
+    const collectionMap = options.reduce((acc, collection) => {
+        acc[collection.label] = collection.key
+        return acc
+    }, {})
+    collectionMap['Any'] = 'any'
     
     const {collection = (userId && filterCount === 0 ? 'Any' : null)} = filters
     const {isMobile} = useWindowSize()
@@ -38,7 +48,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         if (typeof collection === 'string') {
             currentCollection = collection
         } else {
-            currentCollection = collection[0]
+            currentCollection = 'Any'
         }
     }
 
@@ -74,8 +84,8 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
                                 color='secondary'
                             >
                                 {collectionTypes.map((list, index) =>
-                                    <MenuItem key={index} value={list}>
-                                        {list} ({list === 'Any' ? anyCollection.length : profile[list.toLowerCase()]?.length || 0})
+                                    <MenuItem key={index} value={collectionMap[list]}>
+                                        {list} ({list === 'Any' ? anyCollection.length : profile[collectionMap[list]]?.length || 0})
                                     </MenuItem>
                                 )}
                             </Select>
