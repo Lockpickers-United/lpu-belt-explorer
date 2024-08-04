@@ -126,7 +126,8 @@ function CollectionButton({id, dense}) {
 
 const excludedKeys = [
     'public',
-    'displayName'
+    'displayName',
+    'blackBeltAwardedAt'
 ]
 
 export default CollectionButton

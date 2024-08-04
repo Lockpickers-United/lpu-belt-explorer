@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, deleteField, writeBatch, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
+import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, updateDoc, deleteField, writeBatch, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 
@@ -99,6 +99,12 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const updateProfileBlackBeltAwardedAt = useCallback(async (date) => {
+        if (dbError) return false
+        const ref = doc(db, 'lockcollections', user.uid)
+        await updateDoc(ref, {blackBeltAwardedAt: Timestamp.fromDate(new Date(date))})
+    }, [dbError, user])
+
     const clearProfile = useCallback(async () => {
         if (dbError) return false
         const ref = doc(db, 'lockcollections', user.uid)
@@ -171,6 +177,23 @@ export function DBProvider({children}) {
     }, [])
 
     const importUnclaimedEvidence = useCallback(async (tabName) => {
+        const bbRef = doc(db, 'unclaimed-blackbelts', tabName)
+        const profileRef = doc(db, 'lockcollections', user.uid)
+
+        await runTransaction(db, async transaction => {
+            const bbDoc = await transaction.get(bbRef)
+            const profileDoc = await transaction.get(profileRef)
+            const dateStr = bbDoc.data().awardedAt
+
+            const profileDelta = {blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
+            if (!profileDoc.exists()) {
+                transaction.set(profileRef, profileDelta)
+            } else {
+                transaction.update(profileRef, profileDelta)
+            }
+            transaction.update(bbRef, {claimed: true})
+        })
+
         const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
         const querySnapshot = await getDocs(q)
         const docs = querySnapshot.docs
@@ -271,6 +294,7 @@ export function DBProvider({children}) {
         removeFromLockCollection,
         getProfile,
         updateProfileVisibility,
+        updateProfileBlackBeltAwardedAt,
         clearProfile,
         evidence,
         addEvidence,
@@ -280,7 +304,7 @@ export function DBProvider({children}) {
         getEvidence,
         importUnclaimedEvidence,
         createEvidenceForEntries
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
+    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
 
     return (
         <DBContext.Provider value={value}>

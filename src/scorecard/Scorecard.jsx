@@ -13,6 +13,7 @@ import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import EvidenceForm from './EvidenceForm.jsx'
 import Menu from '@mui/material/Menu'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
+import BlackBeltAwardRow from './BlackBeltAwardRow'
 
 function Scorecard({owner, profile}) {
     const {isMobile} = useWindowSize()
@@ -143,7 +144,9 @@ function Scorecard({owner, profile}) {
 
                 </Accordion>
             }
-
+            {profile && profile.blackBeltAwardedAt &&
+                <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
+            }
             <div>
                 {visibleEntries.map(ev =>
                     <ScorecardRow key={ev.id}
