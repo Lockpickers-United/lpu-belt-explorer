@@ -13,7 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
-import {collectionOptions} from '../data/collectionTypes'
+import {collectionOptions, validCollectionKeys} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import RecordingControls from './RecordingControls'
 import ScoringContext from '../context/ScoringContext.jsx'
@@ -30,7 +30,7 @@ function CollectionButton({id, dense}) {
 
     const isCollected = useMemo(() => {
         const collected = Object.keys(lockCollection)
-            .filter(key => !excludedKeys.includes(key))
+            .filter(key => validCollectionKeys.includes(key))
             .reduce((acc, key) => acc || lockCollection[key].includes(id), false)
         const evidence = scoredEvidence
             .filter(evid => evid.matchId === id)
@@ -123,11 +123,5 @@ function CollectionButton({id, dense}) {
         </React.Fragment>
     )
 }
-
-const excludedKeys = [
-    'public',
-    'displayName',
-    'blackBeltAwardedAt'
-]
 
 export default CollectionButton

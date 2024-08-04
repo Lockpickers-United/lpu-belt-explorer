@@ -50,6 +50,7 @@ export function DBProvider({children}) {
     const [dbError, setDbError] = useState(null)
 
     const dbLoaded = collectionDBLoaded && evidenceDBLoaded
+    const admin = lockCollection && lockCollection.admin
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
@@ -289,6 +290,7 @@ export function DBProvider({children}) {
 
     const value = useMemo(() => ({
         dbLoaded,
+        admin,
         lockCollection,
         addToLockCollection,
         removeFromLockCollection,
@@ -304,7 +306,7 @@ export function DBProvider({children}) {
         getEvidence,
         importUnclaimedEvidence,
         createEvidenceForEntries
-    }), [dbLoaded, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
+    }), [dbLoaded, admin, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
 
     return (
         <DBContext.Provider value={value}>

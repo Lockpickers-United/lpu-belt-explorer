@@ -13,10 +13,9 @@ export function AppProvider({children}) {
     }, [setBeta])
 
     const value = useMemo(() => ({
-        admin: adminUids.includes(user?.uid),
         beta,
         setBeta: handleSetBeta
-    }), [user, beta, handleSetBeta])
+    }), [beta, handleSetBeta])
 
     return (
         <AppContext.Provider value={value}>
@@ -24,13 +23,5 @@ export function AppProvider({children}) {
         </AppContext.Provider>
     )
 }
-
-const adminUids = [
-    'GGplAdctTfVDLVvYsfIADJmfp8f2',
-    'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-    'mZyfQIARjCP1uJJJc7ioMAALV9v2',
-    'XoUDXU5McjTuVnPA1xfmzytcKuy2',
-    'XX8BzLAvqmPeBTiqcdPZzojsTPF2'
-]
 
 export default AppContext

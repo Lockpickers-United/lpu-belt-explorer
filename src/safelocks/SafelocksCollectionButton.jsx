@@ -13,7 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
-import {safelockCollectionOptions} from '../data/collectionTypes'
+import {safelockCollectionOptions, safelocksValidCollectionKeys} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 
 function SafelockCollectionButton({id, dense}) {
@@ -27,7 +27,7 @@ function SafelockCollectionButton({id, dense}) {
 
     const isCollected = useMemo(() => {
         return Object.keys(lockCollection)
-            .filter(key => !excludedKeys.includes(key))
+            .filter(key => safelocksValidCollectionKeys.includes(key))
             .reduce((acc, key) => acc || lockCollection[key].includes(id), false)
     }, [id, lockCollection])
 
@@ -111,11 +111,5 @@ function SafelockCollectionButton({id, dense}) {
         </React.Fragment>
     )
 }
-
-const excludedKeys = [
-    'public',
-    'displayName',
-    'blackBeltAwardedAt'
-]
 
 export default SafelockCollectionButton
