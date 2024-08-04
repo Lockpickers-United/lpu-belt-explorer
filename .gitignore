@@ -31,3 +31,5 @@ public/version.json
 public/sitemap.txt
 public/sitemap.xml
 public/data/*
+
+src/data/dancache/*
