@@ -14,9 +14,9 @@ const app = admin.initializeApp({
 })
 const db = getFirestore(app, 'lpubelts-dev')
 
-const DEBUG = true
+const DEBUG = false
 const FOLLOW_LINKS = true
-const WRITE_TO_DB = false
+const WRITE_TO_DB = true
 
 // Some folks take liberties with dan sheet format
 
@@ -492,7 +492,7 @@ function isYouTubeLink(link) {
 
 let target = undefined
 
-target = 'NiXXeD'
+// target = 'NiXXeD'
 // target = 'Tonysansan'
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
@@ -524,7 +524,7 @@ for (let idx = 0; idx < pickers.length; idx++) {
         danData = await importDanTab(target)
     }
 
-    if (DEBUG) {
+    if (DEBUG || WRITE_TO_DB) {
         console.log(`Imported ${danData.entries.length} entries for ${target}...`)
     }
 
@@ -542,8 +542,8 @@ for (let idx = 0; idx < pickers.length; idx++) {
         let result = undefined
         let match = undefined
 
-        if (FOLLOW_LINKS && !danData.entries[jdx].publishDate && isYouTubeLink(link)) {
-            if (!linkCache[link]) {
+        if (FOLLOW_LINKS && !danData.entries[jdx].publishDate) {
+            if (!linkCache[link] && isYouTubeLink(link)) {
                 try {
                     result = await (await fetch(link)).text()
                 } catch (error) {
