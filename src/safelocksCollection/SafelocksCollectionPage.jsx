@@ -9,8 +9,6 @@ function SafelocksCollectionPage({profile}) {
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
 
-    console.log('visibleEntries', visibleEntries)
-
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#222',

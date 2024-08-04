@@ -40,11 +40,11 @@ export function DataProvider({children, allEntries, profile}) {
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
                 collection: [
-                    anyCollection.includes(entry.id) ? 'Any' : 'Not in any Collection',
-                    profile?.own?.includes?.(entry.id) ? 'Own' : 'Don\'t Own',
-                    profile?.picked?.includes?.(entry.id) ? 'Picked' : 'Not Picked',
-                    profile?.wishlist?.includes?.(entry.id) ? 'Wishlist' : 'Not on Wishlist',
-                    profile?.recorded?.includes?.(entry.id) ? 'Recorded' : 'Not Recorded'
+                    anyCollection.includes(entry.id) ? 'any' : 'Not in any Collection',
+                    profile?.own?.includes?.(entry.id) ? 'own' : 'Don\'t own',
+                    profile?.picked?.includes?.(entry.id) ? 'picked' : 'Not picked',
+                    profile?.wishlist?.includes?.(entry.id) ? 'wishlist' : 'Not on wishlist',
+                    profile?.recorded?.includes?.(entry.id) ? 'recorded' : 'Not recorded'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))

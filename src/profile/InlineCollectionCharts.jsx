@@ -13,7 +13,6 @@ function InlineCollectionCharts({profile, entries}) {
     const {user} = useContext(AuthContext)
     const userText = userId === user?.uid ? 'You' : 'User'
 
-    console.log('entries', entries)
     const chartData = useMemo(() => {
         const beltList = uniqueBelts.concat('Unranked')
 

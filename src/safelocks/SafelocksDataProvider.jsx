@@ -3,12 +3,14 @@ import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
 import DataContext from '../context/DataContext'
+import {getAnySafelockCollection} from '../util/getAnyCollection'
 import FilterContext from '../context/FilterContext'
 import {groupSort, groupSortReverse} from './groups'
 
-export function SafelocksDataProvider({children, allEntries}) {
+export function SafelocksDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
+    const anyCollection = useMemo(() => getAnySafelockCollection(profile), [profile])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -23,7 +25,13 @@ export function SafelocksDataProvider({children, allEntries}) {
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links'
-                ].flat().filter(x => x)
+                ].flat().filter(x => x),
+                collection: [
+                    anyCollection.includes(entry.id) ? 'any' : 'Not in any Collection',
+                    profile?.safelocksOwn?.includes?.(entry.id) ? 'safelocksOwn' : 'Don\'t safelocksOwn',
+                    profile?.safelockCracked?.includes?.(entry.id) ? 'safelockCracked' : 'Not safelockCracked',
+                    profile?.safelockWishlist?.includes?.(entry.id) ? 'safelockWishlist' : 'Not on safelockWishlist'
+                ]
             }))
     }, [allEntries])
 

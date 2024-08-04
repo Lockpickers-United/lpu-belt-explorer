@@ -6,7 +6,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
 import {validCollectionTypes, collectionOptions, safelocksValidCollectionTypes, safelockCollectionOptions} from '../data/collectionTypes'
-import getAnyCollection, {anySafelockCollection} from '../util/getAnyCollection'
+import getAnyCollection, {getAnySafelockCollection} from '../util/getAnyCollection'
 import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
@@ -28,7 +28,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         : collectionOptions
 
     const anyCollection = collectionType === 'safelocks'
-        ? useMemo(() => anySafelockCollection(profile), [profile])
+        ? useMemo(() => getAnySafelockCollection(profile), [profile])
         : useMemo(() => getAnyCollection(profile), [profile])
 
     const collectionMap = options.reduce((acc, collection) => {
@@ -37,7 +37,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
     }, {})
     collectionMap['Any'] = 'any'
     
-    const {collection = (userId && filterCount === 0 ? 'Any' : null)} = filters
+    const {collection = (userId && filterCount === 0 ? 'any' : null)} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, borderRadius: 0}
@@ -48,7 +48,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         if (typeof collection === 'string') {
             currentCollection = collection
         } else {
-            currentCollection = 'Any'
+            currentCollection = 'any'
         }
     }
 
@@ -61,7 +61,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
 
     if (!filterCount && !userId) return null
     const isValidCollection = typeof collection === 'string' &&
-        (collectionTypes.includes(collection) || collection === 'Any') && filterCount < 2
+        (collectionTypes.includes(collection) || collection === 'any') && filterCount < 2
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 2}}>

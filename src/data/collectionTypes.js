@@ -5,12 +5,7 @@ export const collectionOptions = [
     {key: 'wishlist', label: 'Wishlist'}
 ]
 
-export const validCollectionTypes = [
-    'Own',
-    'Picked',
-    'Recorded',
-    'Wishlist'
-]
+export const validCollectionTypes = collectionOptions.map(c => c.label)
 
 export const safelockCollectionOptions = [
     {key: 'safelocksOwn', label: 'Own'},
@@ -18,8 +13,4 @@ export const safelockCollectionOptions = [
     {key: 'safelockWishlist', label: 'Wishlist'}
 ]
 
-export const safelocksValidCollectionTypes = [
-    'Own',
-    'Cracked',
-    'Wishlist'
-]
+export const safelocksValidCollectionTypes = safelockCollectionOptions.map(c => c.label)
