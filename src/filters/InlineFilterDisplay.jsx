@@ -1,25 +1,32 @@
+import React, {useCallback, useContext, useMemo} from 'react'
 import FormControl from '@mui/material/FormControl'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
-import React, {useCallback, useContext, useMemo} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
-import {validCollectionTypes} from '../data/collectionTypes'
-import getAnyCollection from '../util/getAnyCollection'
+import {validCollectionTypes, safelocksValidCollectionTypes} from '../data/collectionTypes'
+import getAnyCollection, {anySafelockCollection} from '../util/getAnyCollection'
 import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
 import InputLabel from '@mui/material/InputLabel'
 
-function InlineFilterDisplay({profile = {}}) {
+function InlineFilterDisplay({profile = {}, collectionType}) {
+    //const collectionType = 'safelocks'
     const {userId} = useParams()
     const {filters, filterCount, addFilter} = useContext(FilterContext)
     const [open, setOpen] = React.useState(false)
 
-    const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
+    const collectionTypes = collectionType === 'safelocks'
+        ? ['Any', ...safelocksValidCollectionTypes]
+        : ['Any', ...validCollectionTypes]
 
+    const anyCollection = collectionType === 'safelocks'
+        ? useMemo(() => anySafelockCollection(profile), [profile])
+        : useMemo(() => getAnyCollection(profile), [profile])
+    
     const {collection = (userId && filterCount === 0 ? 'Any' : null)} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -52,7 +59,8 @@ function InlineFilterDisplay({profile = {}}) {
                 {
                     isValidCollection &&
                     <div style={{display: 'flex'}}>
-                        <FormControl fullWidth size='small' color='secondary' sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
+                        <FormControl fullWidth size='small' color='secondary'
+                                     sx={{marginLeft: '8px', minWidth: 80, maxWidth: 300}}>
                             <InputLabel id={'label'}>Collection</InputLabel>
                             <Select
                                 name='collection-selector'
@@ -72,7 +80,7 @@ function InlineFilterDisplay({profile = {}}) {
                                 )}
                             </Select>
                         </FormControl>
-                        <div style={{flexGrow: 1, marginTop:2, marginLeft:15}}>
+                        <div style={{flexGrow: 1, marginTop: 2, marginLeft: 15}}>
                             <ClearFiltersButton/>
                         </div>
                     </div>
@@ -85,7 +93,5 @@ function InlineFilterDisplay({profile = {}}) {
         </Card>
     )
 }
-
-const collectionTypes = ['Any', ...validCollectionTypes]
 
 export default InlineFilterDisplay

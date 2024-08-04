@@ -9,8 +9,11 @@ export default function ProfileHeader({profile = {}, page}) {
     const navigate = useNavigate()
 
     const profileLink = '/profile/' + userId + '?name=' + profile.displayName
+    const safelocksLink = '/profile/' + userId + '/safelocks?name=' + profile.displayName
     const scorecardLink = '/profile/' + userId + '/scorecard?name=' + profile.displayName
-    const pageName = page.charAt(0).toUpperCase() + page.slice(1)
+
+    let pageName = page.charAt(0).toUpperCase() + page.slice(1)
+    pageName = pageName.replace('Safelocks', 'Safe Locks')
 
     const handleClick = useCallback((link) => {
         navigate(link)
@@ -65,7 +68,15 @@ export default function ProfileHeader({profile = {}, page}) {
                                   disabled={page === 'collection'}
                                   value='collection'
                                   style={{padding: '2px 12px 2px 12px'}}>
-                        Lock Collection
+                        Locks
+                    </ToggleButton>
+
+                    <ToggleButton onClick={() => handleClick(safelocksLink)}
+                                  selected={page === 'safelocks'}
+                                  disabled={page === 'safelocks'}
+                                  value='safelocks'
+                                  style={{padding: '2px 12px 2px 12px'}}>
+                        Safes
                     </ToggleButton>
 
                     <ToggleButton onClick={() => handleClick(scorecardLink)}

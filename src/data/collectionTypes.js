@@ -13,9 +13,9 @@ export const validCollectionTypes = [
 ]
 
 export const safelockCollectionOptions = [
-    {key: 'own', label: 'Own'},
-    {key: 'cracked', label: 'Cracked'},
-    {key: 'wishlist', label: 'Wishlist'}
+    {key: 'safelockOwn', label: 'Own'},
+    {key: 'safelockCracked', label: 'Cracked'},
+    {key: 'safelockWishlist', label: 'Wishlist'}
 ]
 
 export const safelocksValidCollectionTypes = [

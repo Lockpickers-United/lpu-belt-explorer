@@ -1,17 +1,15 @@
 import React, {useState, useContext, useDeferredValue} from 'react'
-import Entry from '../entries/Entry'
+import SafelockEntry from '../safelocks/SafelockEntry.jsx'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
-import CompactEntries from '../locks/CompactEntries'
-import DataContext from '../locks/LockDataProvider'
-import LockListContext from '../locks/LockListContext'
-import InlineCollectionCharts from '../profile/InlineCollectionCharts'
+import DataContext from '../context/DataContext'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 
-function ProfilePage({profile}) {
-    const {compact} = useContext(LockListContext)
+function SafelocksCollectionPage({profile}) {
     const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
+
+    console.log('visibleEntries', visibleEntries)
 
     return (
         <div style={{
@@ -19,14 +17,11 @@ function ProfilePage({profile}) {
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
 
-            <ProfileHeader profile={profile} page={'collection'}/>
-            <InlineFilterDisplay profile={profile}/>
-            <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
+            <ProfileHeader profile={profile} page={'safelocks'}/>
+            <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
 
-            {compact
-                ? <CompactEntries entries={visibleEntries}/>
-                : visibleEntries.map(entry =>
-                    <Entry
+            { visibleEntries?.map(entry =>
+                    <SafelockEntry
                         key={entry.id}
                         entry={entry}
                         expanded={entry.id === defExpanded}
@@ -38,4 +33,4 @@ function ProfilePage({profile}) {
     )
 }
 
-export default ProfilePage
+export default SafelocksCollectionPage

@@ -8,3 +8,13 @@ export default profile => {
         ])
     ]
 }
+
+export const anySafelockCollection = profile => {
+    return [
+        ...new Set([
+            ...profile?.safelockOwn || [],
+            ...profile?.safelockCracked || [],
+            ...profile?.safelockWishlist || []
+        ])
+    ]
+}

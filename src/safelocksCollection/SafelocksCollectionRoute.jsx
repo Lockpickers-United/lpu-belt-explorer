@@ -2,13 +2,10 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
-import {collectionOptions} from '../data/collectionTypes'
-import allEntries from '../data/data.json'
-import {lockFilterFields} from '../data/filterFields'
+import {dialFilterFields} from '../data/filterFields'
 import {lockSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
-import {DataProvider} from '../locks/LockDataProvider'
 import {FilterProvider} from '../context/FilterContext'
 import {LockListProvider} from '../locks/LockListContext'
 import ToggleCompactButton from '../locks/ToggleCompactButton'
@@ -21,7 +18,10 @@ import useWindowSize from '../util/useWindowSize'
 import CopyProfileLinkButton from '../profile/CopyProfileLinkButton'
 import NoProfileData from '../profile/NoProfileData'
 import ProfileNotFound from '../profile/ProfileNotFound'
-import ProfilePage from '../profile/ProfilePage'
+import SafelocksCollectionPage from './SafelocksCollectionPage.jsx'
+import SafelocksDataProvider from '../safelocks/SafelocksDataProvider.jsx'
+import allEntries from '../data/safelocks.json'
+import {safelockCollectionOptions} from '../data/collectionTypes'
 
 function ProfileRoute() {
     const {userId} = useParams()
@@ -43,7 +43,7 @@ function ProfileRoute() {
 
     const entries = useMemo(() => {
         if (loading || !data) return []
-        const uniqueIds = new Set(collectionOptions
+        const uniqueIds = new Set(safelockCollectionOptions
             .flatMap(({key}) => data[key]))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
     }, [data, loading])
@@ -63,14 +63,14 @@ function ProfileRoute() {
     const title = loading ? 'Loading...' : 'Profile'
 
     return (
-        <FilterProvider filterFields={lockFilterFields}>
-            <DataProvider allEntries={entries} profile={data}>
+        <FilterProvider filterFields={dialFilterFields}>
+            <SafelocksDataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
                     <Nav title={title} extras={nav}/>
 
                     {loading && <LoadingDisplay/>}
 
-                    {!loading && data && !error && <ProfilePage profile={data}/>}
+                    {!loading && data && !error && entries.length > 0 && <SafelocksCollectionPage profile={data}/>}
                     {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
                     {!loading && (!data || error) && <ProfileNotFound/>}
 
@@ -78,7 +78,7 @@ function ProfileRoute() {
 
                     <Tracker feature='profile'/>
                 </LockListProvider>
-            </DataProvider>
+            </SafelocksDataProvider>
         </FilterProvider>
     )
 }
