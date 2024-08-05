@@ -33,7 +33,7 @@ function ProfileRoute() {
     const loadFn = useCallback(async () => {
         try {
             const profile = user?.uid !== userId ? await getProfile(userId) : lockCollection
-            document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
+            document.title = `LPU Belt Explorer - ${profile.displayName}'s Safe Locks`
             return profile
         } catch (ex) {
             console.error('Error loading profile.', ex)
@@ -62,7 +62,11 @@ function ProfileRoute() {
         </React.Fragment>
     )
 
-    const title = loading ? 'Loading...' : 'Profile'
+    const title = loading ? 'Loading...' : 'Safe Locks'
+
+    if (loading || !data) {
+        return <LoadingDisplay/>
+    }
 
     return (
         <FilterProvider filterFields={dialFilterFields}>
@@ -73,7 +77,7 @@ function ProfileRoute() {
                     {loading && <LoadingDisplay/>}
 
                     {!loading && data && !error && entries.length > 0 && <SafelocksCollectionPage profile={data}/>}
-                    {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
+                    {!loading && data && !error && entries.length === 0 && <NoProfileData collectionType={'safelocks'}/>}
                     {!loading && (!data || error) && <ProfileNotFound/>}
 
                     <Footer/>

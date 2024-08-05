@@ -36,7 +36,12 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         return acc
     }, {})
     collectionMap['Any'] = 'any'
-    
+
+    const collectionValues = options.reduce((acc, collection) => {
+        acc.push(collection.key)
+        return acc
+    }, [])
+
     const {collection = (userId && filterCount === 0 ? 'any' : null)} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -59,9 +64,11 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         addFilter('collection', event.target.value, true)
     }, [addFilter])
 
+    console.log('collectionMap', collectionMap)
+    console.log('collection', collection)
     if (!filterCount && !userId) return null
     const isValidCollection = typeof collection === 'string' &&
-        (collectionTypes.includes(collection) || collection === 'any') && filterCount < 2
+        (collectionValues.includes(collection) || collection === 'any') && filterCount < 2
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 2}}>

@@ -12,6 +12,7 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import AvTimerIcon from '@mui/icons-material/AvTimer'
 import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
@@ -84,6 +85,12 @@ function UserMenu() {
                                 <AccountBoxIcon/>
                             </ListItemIcon>
                             <ListItemText>View Profile</ListItemText>
+                        </MenuItem>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}/safelocks?name=${safeName}`)}>
+                            <ListItemIcon>
+                                <AvTimerIcon/>
+                            </ListItemIcon>
+                            <ListItemText>Safe Locks</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}/scorecard?name=${safeName}`)}>
                             <ListItemIcon>
