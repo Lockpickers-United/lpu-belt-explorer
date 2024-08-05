@@ -181,13 +181,13 @@ export function DBProvider({children}) {
 
             const currentIds = evids.filter(ev => ev.userId === user.uid).map(ev => ev.id)
             if (currentIds.length > 0) {
-                setEvidence(e => e.filter(evid => !currentIds.includes(evid.id)))
+                setEvidence(e => e.filter(ev => !currentIds.includes(ev.id)))
             }
         } else {
             await deleteDoc(doc(db, 'evidence', evids.id))
             await invalidateEvidenceCache(evids.userId)
             if (user.uid === evids.userId) {
-                setEvidence(e => e.filter(evid => evids.userId !== evid.id))
+                setEvidence(e => e.filter(ev => evids.id !== ev.id))
             }
         }
     }, [user])
@@ -216,12 +216,16 @@ export function DBProvider({children}) {
 
         const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
         const querySnapshot = await getDocs(q)
-        const docs = querySnapshot.docs
+        const newEvidence = querySnapshot.docs.map(d => d.data())
+        const newMatchIds = newEvidence.map(e => e.projectId)
+        const toReplace = await evidenceCache(userId)
+        const toReplaceIds = toReplace.filter(ev => ev.link === '' && newMatchIds.includes(ev.matchId)).map(ev => ev.id)
+
         const batch = writeBatch(db)
         let result = []
+        toReplaceIds.forEach(id => batch.delete(doc(db, 'evidence', id)))
 
-        for (let idx=0; idx < docs.length; idx++) {
-            const rec = docs[idx].data()
+        newEvidence.forEach(rec => {
             let newDoc = {
                 userId: userId,
                 evidenceNotes: rec.evidenceNotes,
@@ -237,12 +241,13 @@ export function DBProvider({children}) {
             const docRef = doc(collection(db, 'evidence'))
             batch.set(docRef, newDoc)
             result = result.concat([evidenceDB2State(docRef.id, newDoc)])
-        }
+        })
+
         await batch.commit()
         await invalidateEvidenceCache(userId)
 
         if (user.uid === userId) {
-            setEvidence(result)
+            setEvidence(e => e.filter(ev => !toReplaceIds.includes(ev.id)).concat(result))
         }
     }, [user])
 
