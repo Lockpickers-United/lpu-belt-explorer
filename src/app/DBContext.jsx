@@ -4,6 +4,7 @@ import {db} from '../auth/firebase'
 import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, updateDoc, deleteField, writeBatch, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
+import calculateScoreForUser from '../scorecard/scoring'
 
 const DBContext = React.createContext({})
 
@@ -101,6 +102,19 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const updateUserStatistics = useCallback(async (userId) => {
+        const evids = await evidenceCache(userId)
+        const scored = calculateScoreForUser(evids)
+        const projectsWorthPoints = scored.scoredEvidence.filter(e => e.points > 0).map(e => e.matchId)
+
+        const ref = doc(db, 'lockcollections', userId)
+        await setDoc(ref, {
+            danPoints: scored.danPoints,
+            danLevel: scored.eligibleDan,
+            projectsWorthPoints: projectsWorthPoints
+        }, {merge: true})
+    }, [])
+
     const updateProfileBlackBeltAwardedAt = useCallback(async (userId, date) => {
         if (dbError) return false
         const ref = doc(db, 'lockcollections', userId)
@@ -135,6 +149,7 @@ export function DBProvider({children}) {
         }
         const docRef = await addDoc(collection(db, 'evidence'), rec)
         await invalidateEvidenceCache(userId)
+        await updateUserStatistics(userId)
 
         if (user.uid === userId) {
             setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
@@ -154,6 +169,7 @@ export function DBProvider({children}) {
         }
         await setDoc(doc(db, 'evidence', oldEvid.id), rec)
         await invalidateEvidenceCache(oldEvid.userId)
+        await updateUserStatistics(oldEvid.userId)
 
         if (user.uid === oldEvid.userId) {
             setEvidence(e => e.map(evid => {
@@ -177,6 +193,7 @@ export function DBProvider({children}) {
             }, [])
             for (let idx=0; idx < userIds.length; idx++) {
                 await invalidateEvidenceCache(userIds[idx])
+                await updateUserStatistics(userIds[idx])
             }
 
             const currentIds = evids.filter(ev => ev.userId === user.uid).map(ev => ev.id)
@@ -186,6 +203,7 @@ export function DBProvider({children}) {
         } else {
             await deleteDoc(doc(db, 'evidence', evids.id))
             await invalidateEvidenceCache(evids.userId)
+            await updateUserStatistics(evids.userId)
             if (user.uid === evids.userId) {
                 setEvidence(e => e.filter(ev => evids.id !== ev.id))
             }
@@ -205,7 +223,7 @@ export function DBProvider({children}) {
             const profileDoc = await transaction.get(profileRef)
             const dateStr = bbDoc.data().awardedAt
 
-            const profileDelta = {blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
+            const profileDelta = {awardedBelt: 'Black', blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
             if (!profileDoc.exists()) {
                 transaction.set(profileRef, profileDelta)
             } else {
@@ -245,6 +263,7 @@ export function DBProvider({children}) {
 
         await batch.commit()
         await invalidateEvidenceCache(userId)
+        await updateUserStatistics(userId)
 
         if (user.uid === userId) {
             setEvidence(e => e.filter(ev => !toReplaceIds.includes(ev.id)).concat(result))
@@ -271,6 +290,7 @@ export function DBProvider({children}) {
         })
         await batch.commit()
         await invalidateEvidenceCache(userId)
+        await updateUserStatistics(userId)
 
         if (user.uid === userId) {
             setEvidence(e => e.concat(result))
