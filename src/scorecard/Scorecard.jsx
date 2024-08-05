@@ -104,14 +104,12 @@ function Scorecard({owner, profile}) {
                         </div>
 
                         <div style={{width: '33%', textAlign: 'center'}}>
-                            {cardEvidence.length > 0
-                                ? <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                          onClick={handleOpen}>DELETE ALL</Button>
-                                : <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                          onClick={() => handleOpenControls('import')}>
-                                    IMPORT DAN SHEET
-                                </Button>
-                            }
+                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                      onClick={handleOpen}>DELETE ALL</Button>
+                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                      onClick={() => handleOpenControls('import')}>
+                                IMPORT DAN SHEET
+                            </Button>
                             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                                 <div style={{padding: 20, textAlign: 'center'}}>
                                     You cannot undo delete.<br/>
