@@ -47,7 +47,7 @@ function NoProfileData({collectionType}) {
         } else {
             navigate('/locks')
         }
-    }, [navigate])
+    }, [navigate, collectionType])
 
     return (
         <Box alignContent='center'>

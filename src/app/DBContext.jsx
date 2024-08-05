@@ -154,7 +154,7 @@ export function DBProvider({children}) {
         if (user.uid === userId) {
             setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
         }
-    }, [user])
+    }, [user, updateUserStatistics])
 
     const updateEvidence = useCallback(async (oldEvid, newEvid) => {
         let rec = {
@@ -180,7 +180,7 @@ export function DBProvider({children}) {
                 }
             }))
         }
-    }, [user])
+    }, [user, updateUserStatistics])
 
     const removeEvidence = useCallback(async (evids) => {
         if (Array.isArray(evids)) {
@@ -208,7 +208,7 @@ export function DBProvider({children}) {
                 setEvidence(e => e.filter(ev => evids.id !== ev.id))
             }
         }
-    }, [user])
+    }, [user, updateUserStatistics])
 
     const getEvidence = useCallback(async userId => {
         return await evidenceCache(userId)
@@ -268,7 +268,7 @@ export function DBProvider({children}) {
         if (user.uid === userId) {
             setEvidence(e => e.filter(ev => !toReplaceIds.includes(ev.id)).concat(result))
         }
-    }, [user])
+    }, [user, updateUserStatistics])
 
     const createEvidenceForEntries = useCallback(async (userId, ids) => {
         const batch = writeBatch(db)
@@ -295,7 +295,7 @@ export function DBProvider({children}) {
         if (user.uid === userId) {
             setEvidence(e => e.concat(result))
         }
-    }, [user])
+    }, [user, updateUserStatistics])
 
     // Lock Collection Subscription
     useEffect(() => {
