@@ -1,4 +1,5 @@
 import React, {useState, useMemo, useContext, useCallback} from 'react'
+import {useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import DBContext from '../app/DBContext.jsx'
 import ScorecardRow from './ScorecardRow.jsx'
@@ -17,9 +18,11 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 
 function Scorecard({owner, profile}) {
     const {isMobile} = useWindowSize()
+    const {userId} = useParams()
+    const {admin} = useContext(DBContext)
 
     const {visibleEntries = [], cardEvidence, cardBBCount, cardDanPoints} = useContext(ScorecardDataContext)
-    const {createEvidenceForEntries, removeAllEvidence} = useContext(DBContext)
+    const {createEvidenceForEntries, removeEvidence} = useContext(DBContext)
 
     const [expanded, setExpanded] = useState(false)
     const [controlsExpanded, setControlsExpanded] = useState(false)
@@ -35,9 +38,9 @@ function Scorecard({owner, profile}) {
     }, [profile, cardEvidence])
 
     const handleMergeRecorded = useCallback(() => {
-        createEvidenceForEntries(recordedIdsToMerge)
+        createEvidenceForEntries(userId, recordedIdsToMerge)
         setControlsExpanded(false)
-    }, [createEvidenceForEntries, recordedIdsToMerge])
+    }, [createEvidenceForEntries, userId, recordedIdsToMerge])
 
     const handleOpenControls = useCallback((controlForm) => {
         setControlForm(controlForm)
@@ -54,9 +57,9 @@ function Scorecard({owner, profile}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
     const handleDeleteAll = useCallback(() => {
-        removeAllEvidence()
+        removeEvidence(cardEvidence)
         handleClose()
-    }, [handleClose, removeAllEvidence])
+    }, [cardEvidence, removeEvidence, handleClose])
 
     const buttonsMargin = isMobile ? 10 : 40
     const headerDivStyle = isMobile ? 'block' : 'flex'
@@ -84,7 +87,7 @@ function Scorecard({owner, profile}) {
                 </div>
             }
 
-            {owner &&
+            {(owner || admin) &&
                 <Accordion expanded={controlsExpanded} disableGutters={true}>
 
                     <AccordionSummary style={{

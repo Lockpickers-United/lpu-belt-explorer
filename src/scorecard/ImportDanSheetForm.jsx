@@ -1,4 +1,5 @@
 import React, {useCallback, useContext, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import DBContext from '../app/DBContext.jsx'
@@ -6,6 +7,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 
 
 export default function ImportDanSheetForm({setControlsExpanded}) {
+    const {userId} = useParams()
     const {importUnclaimedEvidence} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
@@ -13,10 +15,10 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
     const [tabToImport, setTabToImport] = useState('')
 
     const handleImport = useCallback(() => {
-        importUnclaimedEvidence(tabToImport)
+        importUnclaimedEvidence(userId, tabToImport)
         setTabToImport('')
         setControlsExpanded(false)
-    }, [importUnclaimedEvidence, tabToImport, setControlsExpanded])
+    }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded])
 
     const formDisplayStyle = isMobile ? 'block' : 'flex'
 

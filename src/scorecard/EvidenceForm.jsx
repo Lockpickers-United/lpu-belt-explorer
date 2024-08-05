@@ -6,8 +6,10 @@ import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import React, {useCallback, useContext, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import dayjs from 'dayjs'
 import {enqueueSnackbar} from 'notistack'
+import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
@@ -19,6 +21,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId} from '../entries/entryutils'
 
 export default function EvidenceForm({evid, lockId, handleUpdate, addProject, source}) {
+    const {userId} = useParams()
+    const {user} = useContext(AuthContext)
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
@@ -55,7 +59,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const handleSave = useCallback(async () => {
         try {
             if (evid?.id && evid?.matchId) {
-                updateEvidence(evid.id, {
+                updateEvidence(evid, {
                     matchId: evid.matchId,
                     evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
@@ -63,7 +67,8 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                     modifier: modifier
                 })
             } else {
-                addEvidence({
+                const evidUserId = userId || user.uid
+                addEvidence(evidUserId, {
                     matchId: entryId,
                     evidenceNotes: evidenceNotes,
                     notes: evidenceNotes,
@@ -79,11 +84,11 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [addEvidence, entryId, evid?.id, evid?.matchId, evidenceDate, evidenceNotes, evidenceUrl, handleUpdate, modifier, updateEvidence])
+    }, [user, userId, addEvidence, entryId, evid, evidenceDate, evidenceNotes, evidenceUrl, handleUpdate, modifier, updateEvidence])
 
     const handleDelete = useCallback(async () => {
         try {
-            removeEvidence(evid.id)
+            removeEvidence(evid)
             enqueueSnackbar('Entry deleted')
             handleUpdate()
         } catch (ex) {
@@ -91,7 +96,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
             enqueueSnackbar('Error while deleting entry')
         }
         setAnchorEl(null)
-    }, [evid?.id, handleUpdate, removeEvidence])
+    }, [evid, handleUpdate, removeEvidence])
 
     const cancelEdit = useCallback(() => {
         if (updated) {

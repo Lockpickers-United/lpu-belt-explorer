@@ -1,4 +1,5 @@
 import React, {useState, useCallback, useContext} from 'react'
+import {useParams} from 'react-router-dom'
 import BeltStripe from '../entries/BeltStripe.jsx'
 import FieldValue from '../entries/FieldValue.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -18,6 +19,7 @@ import utc from 'dayjs/plugin/utc'
 dayjs.extend(utc)
 
 function BlackBeltAwardRow({owner, date}) {
+    const {userId} = useParams()
     const {updateProfileBlackBeltAwardedAt} = useContext(DBContext)
     const [expanded, setExpanded] = useState(false)
     const [updated, setUpdated] = useState(false)
@@ -38,14 +40,14 @@ function BlackBeltAwardRow({owner, date}) {
 
     const handleSave = useCallback(async () => {
         try {
-            updateProfileBlackBeltAwardedAt(evidenceDate)
+            updateProfileBlackBeltAwardedAt(userId, evidenceDate)
             enqueueSnackbar('Profile updated')
             setUpdated(false)
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile')
         }
-    }, [evidenceDate, updateProfileBlackBeltAwardedAt])
+    }, [userId, evidenceDate, updateProfileBlackBeltAwardedAt])
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
     const cursorStyle = !owner ? {cursor: 'default'} : {}

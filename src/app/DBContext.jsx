@@ -12,6 +12,7 @@ function evidenceDB2State(id, dbRec) {
 
     return {
         id: id,
+        userId: dbRec.userId,
         matchId: dbRec.projectId,
         evidenceNotes: dbRec.evidenceNotes,
         link: dbRec.evidenceUrl,
@@ -100,11 +101,11 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
-    const updateProfileBlackBeltAwardedAt = useCallback(async (date) => {
+    const updateProfileBlackBeltAwardedAt = useCallback(async (userId, date) => {
         if (dbError) return false
-        const ref = doc(db, 'lockcollections', user.uid)
+        const ref = doc(db, 'lockcollections', userId)
         await updateDoc(ref, {blackBeltAwardedAt: Timestamp.fromDate(new Date(date))})
-    }, [dbError, user])
+    }, [dbError])
 
     const clearProfile = useCallback(async () => {
         if (dbError) return false
@@ -123,9 +124,9 @@ export function DBProvider({children}) {
         return value.data()
     }, [])
 
-    const addEvidence = useCallback(async evid => {
+    const addEvidence = useCallback(async (userId, evid) => {
         const rec = {
-            userId: user.uid, 
+            userId: userId,
             projectId: evid.matchId,
             evidenceNotes: evid.evidenceNotes,
             evidenceUrl: evid.link,
@@ -133,53 +134,71 @@ export function DBProvider({children}) {
             modifier: evid.modifier
         }
         const docRef = await addDoc(collection(db, 'evidence'), rec)
-        await invalidateEvidenceCache(user.uid)
-        setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
+        await invalidateEvidenceCache(userId)
+
+        if (user.uid === userId) {
+            setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
+        }
     }, [user])
 
-    const updateEvidence = useCallback(async (id, evid) => {
+    const updateEvidence = useCallback(async (oldEvid, newEvid) => {
         let rec = {
-            userId: user.uid,
-            evidenceNotes: evid.evidenceNotes,
-            evidenceUrl: evid.link,
-            evidenceCreatedAt: Timestamp.fromDate(new Date(evid.date)),
-            modifier: evid.modifier
+            userId: oldEvid.userId,
+            evidenceNotes: newEvid.evidenceNotes,
+            evidenceUrl: newEvid.link,
+            evidenceCreatedAt: Timestamp.fromDate(new Date(newEvid.date)),
+            modifier: newEvid.modifier
         }
-        if (evid.matchId) {
-            rec.projectId = evid.matchId
+        if (newEvid.matchId) {
+            rec.projectId = newEvid.matchId
         }
-        await setDoc(doc(db, 'evidence', id), rec)
-        await invalidateEvidenceCache(user.uid)
-        setEvidence(e => e.map(evid => {
-            if (evid.id === id) {
-                return evidenceDB2State(id, rec)
-            } else {
-                return evid
+        await setDoc(doc(db, 'evidence', oldEvid.id), rec)
+        await invalidateEvidenceCache(oldEvid.userId)
+
+        if (user.uid === oldEvid.userId) {
+            setEvidence(e => e.map(evid => {
+                if (evid.id === oldEvid.id) {
+                    return evidenceDB2State(oldEvid.id, rec)
+                } else {
+                    return evid
+                }
+            }))
+        }
+    }, [user])
+
+    const removeEvidence = useCallback(async (evids) => {
+        if (Array.isArray(evids)) {
+            const batch = writeBatch(db)
+            evids.forEach(ev => batch.delete(doc(db, 'evidence', ev.id)))
+            await batch.commit()
+
+            const userIds = evids.reduce((acc, ev) => {
+                return acc.includes(ev.userId) ? acc : [...acc, ev.userId]
+            }, [])
+            for (let idx=0; idx < userIds.length; idx++) {
+                await invalidateEvidenceCache(userIds[idx])
             }
-        }))
-    }, [user])
 
-    const removeEvidence = useCallback(async (id) => {
-        await deleteDoc(doc(db, 'evidence', id))
-        await invalidateEvidenceCache(user.uid)
-        setEvidence(e => e.filter(evid => evid.id !== id))
+            const currentIds = evids.filter(ev => ev.userId === user.uid).map(ev => ev.id)
+            if (currentIds.length > 0) {
+                setEvidence(e => e.filter(evid => !currentIds.includes(evid.id)))
+            }
+        } else {
+            await deleteDoc(doc(db, 'evidence', evids.id))
+            await invalidateEvidenceCache(evids.userId)
+            if (user.uid === evids.userId) {
+                setEvidence(e => e.filter(evid => evids.userId !== evid.id))
+            }
+        }
     }, [user])
-
-    const removeAllEvidence = useCallback(async () => {
-        const batch = writeBatch(db)
-        evidence.forEach(evid => batch.delete(doc(db, 'evidence', evid.id)))
-        await batch.commit()
-        await invalidateEvidenceCache(user.uid)
-        setEvidence([])
-    }, [evidence, user])
 
     const getEvidence = useCallback(async userId => {
         return await evidenceCache(userId)
     }, [])
 
-    const importUnclaimedEvidence = useCallback(async (tabName) => {
+    const importUnclaimedEvidence = useCallback(async (userId, tabName) => {
         const bbRef = doc(db, 'unclaimed-blackbelts', tabName)
-        const profileRef = doc(db, 'lockcollections', user.uid)
+        const profileRef = doc(db, 'lockcollections', userId)
 
         await runTransaction(db, async transaction => {
             const bbDoc = await transaction.get(bbRef)
@@ -204,7 +223,7 @@ export function DBProvider({children}) {
         for (let idx=0; idx < docs.length; idx++) {
             const rec = docs[idx].data()
             let newDoc = {
-                userId: user.uid,
+                userId: userId,
                 evidenceNotes: rec.evidenceNotes,
                 evidenceUrl: rec.evidenceUrl,
                 modifier: rec.modifier
@@ -220,16 +239,19 @@ export function DBProvider({children}) {
             result = result.concat([evidenceDB2State(docRef.id, newDoc)])
         }
         await batch.commit()
-        await invalidateEvidenceCache(user.uid)
-        setEvidence(result)
+        await invalidateEvidenceCache(userId)
+
+        if (user.uid === userId) {
+            setEvidence(result)
+        }
     }, [user])
 
-    const createEvidenceForEntries = useCallback(async (ids) => {
+    const createEvidenceForEntries = useCallback(async (userId, ids) => {
         const batch = writeBatch(db)
         let result = []
         const newDocs = ids.map(matchId => {
             return {
-                userId: user.uid,
+                userId: userId,
                 evidenceNotes: '',
                 evidenceUrl: '',
                 modifier: '',
@@ -243,9 +265,12 @@ export function DBProvider({children}) {
             result = result.concat([evidenceDB2State(docRef.id, newDoc)])
         })
         await batch.commit()
-        await invalidateEvidenceCache(user.uid)
-        setEvidence(evidence.concat(result))
-    }, [user, evidence])
+        await invalidateEvidenceCache(userId)
+
+        if (user.uid === userId) {
+            setEvidence(e => e.concat(result))
+        }
+    }, [user])
 
     // Lock Collection Subscription
     useEffect(() => {
@@ -302,11 +327,10 @@ export function DBProvider({children}) {
         addEvidence,
         updateEvidence,
         removeEvidence,
-        removeAllEvidence,
         getEvidence,
         importUnclaimedEvidence,
         createEvidenceForEntries
-    }), [dbLoaded, admin, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, removeAllEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
+    }), [dbLoaded, admin, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
 
     return (
         <DBContext.Provider value={value}>
