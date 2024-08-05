@@ -9,10 +9,12 @@ import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import Button from '@mui/material/Button'
 import CardActions from '@mui/material/CardActions'
+import Menu from '@mui/material/Menu'
 
 function EditProfilePage() {
-    const {lockCollection, updateProfileVisibility, clearProfile} = useContext(DBContext)
+    const {lockCollection, updateProfileVisibility, deleteAllUserData, clearProfile} = useContext(DBContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
+    const [anchorEl, setAnchorEl] = useState(null)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
 
@@ -53,6 +55,17 @@ function EditProfilePage() {
     const handleViewProfile = useCallback(() => {
         navigate(`/profile/${user.uid}`)
     }, [navigate, user.uid])
+
+    const handleDeleteConfirm = useCallback((ev) => {
+        ev.preventDefault()
+        ev.stopPropagation()
+        setAnchorEl(ev.currentTarget)
+    }, [])
+
+    const handleDeleteAllData = useCallback(() => {
+        deleteAllUserData(user.uid)
+        setAnchorEl(null)
+    }, [deleteAllUserData, user])
 
     const error = displayName.length > 0 && !pattern.test(displayName.toString())
     const noSave = displayName.length === 0
@@ -159,6 +172,31 @@ function EditProfilePage() {
                 </div>
 
             </CardActions>
+            <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
+                <Button variant='outlined'
+                        color='info'
+                        onClick={handleDeleteConfirm}
+                        style={{marginBottom: 10,  color: '#4972ab', padding:'5px 110px'}}
+                >
+                    Delete All Data
+                </Button>
+                <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
+                    <div style={{padding: 20, textAlign: 'center'}}>
+                        This will permanently delete all of your data.<br/>
+                        Are you sure?
+                    </div>
+                    <div style={{textAlign: 'center'}}>
+                        <Button style={{marginBottom: 10, color: '#000'}}
+                                variant='contained'
+                                onClick={handleDeleteAllData}
+                                edge='start'
+                                color='error'
+                        >
+                            Delete
+                        </Button>
+                    </div>
+                </Menu>
+            </div>
         </Card>
     )
 }

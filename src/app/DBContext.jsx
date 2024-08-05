@@ -297,6 +297,20 @@ export function DBProvider({children}) {
         }
     }, [user, updateUserStatistics])
 
+    const deleteAllUserData = useCallback(async (userId) => {
+        await invalidateEvidenceCache(userId)
+        const evids = await evidenceCache(userId)
+        await removeEvidence(evids)
+
+        const ref = doc(db, 'lockcollections', userId)
+        const profile = (await getDoc(ref)).data()
+        let cleanProfile = (({admin, displayName}) => ({admin, displayName}))(profile)
+        if (profile.public) {
+            cleanProfile.public = profile.public
+        }
+        await setDoc(ref, cleanProfile)
+    }, [removeEvidence])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -354,8 +368,9 @@ export function DBProvider({children}) {
         removeEvidence,
         getEvidence,
         importUnclaimedEvidence,
-        createEvidenceForEntries
-    }), [dbLoaded, admin, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries])
+        createEvidenceForEntries,
+        deleteAllUserData,
+    }), [dbLoaded, admin, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
 
     return (
         <DBContext.Provider value={value}>

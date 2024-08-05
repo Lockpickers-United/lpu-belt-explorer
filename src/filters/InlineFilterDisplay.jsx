@@ -64,8 +64,6 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         addFilter('collection', event.target.value, true)
     }, [addFilter])
 
-    console.log('collectionMap', collectionMap)
-    console.log('collection', collection)
     if (!filterCount && !userId) return null
     const isValidCollection = typeof collection === 'string' &&
         (collectionValues.includes(collection) || collection === 'any') && filterCount < 2
