@@ -21,7 +21,7 @@ function Scorecard({owner, profile}) {
     const {userId} = useParams()
     const {admin} = useContext(DBContext)
 
-    const {visibleEntries = [], cardEvidence, cardBBCount, cardDanPoints} = useContext(ScorecardDataContext)
+    const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
     const {createEvidenceForEntries, removeEvidence} = useContext(DBContext)
 
     const [expanded, setExpanded] = useState(false)
@@ -76,11 +76,11 @@ function Scorecard({owner, profile}) {
                         <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                     </div>
                     <div style={{flexGrow: 1, marginRight: 0}}>
-                        <ScorecardDanStats cardDanPoints={cardDanPoints} cardBBCount={cardBBCount}/>
+                        <ScorecardDanStats/>
                     </div>
                 </div>
                 : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
-                    <ScorecardDanStats cardDanPoints={cardDanPoints} cardBBCount={cardBBCount}/>
+                    <ScorecardDanStats/>
                     <div style={{marginRight: 0, width: 350}}>
                         <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                     </div>

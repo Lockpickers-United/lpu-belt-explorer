@@ -28,7 +28,7 @@ function ScorecardRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, getEvidence} = useContext(DBContext)
-    const {scoredEvidence, bbCount, danPoints} = useContext(ScoringContext)
+    const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(async () => {
@@ -41,19 +41,22 @@ function ScorecardRoute() {
                 const evidence = await getEvidence(userId)
                 return {profile, ...calculateScoreForUser(evidence)}
             } else {
-                return {profile, scoredEvidence, bbCount, danPoints}
+                return {profile, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
             }
         } catch (ex) {
             console.error('Error loading profile and evidence.', ex)
             return null
         }
-    }, [user, userId, getProfile, getEvidence, scoredEvidence, bbCount, danPoints])
+    }, [user, userId, getProfile, getEvidence, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
     const cardEvidence = data ? data.scoredEvidence : []
     const cardBBCount = data ? data.bbCount : 0
     const cardDanPoints = data ? data.danPoints : 0
+    const cardEligibleDan = data ? data.eligibleDan : 0
+    const cardNextDanPoints = data ? data.nextDanPoints : 0
+    const cardNextDanLocks = data ? data.nextDanLocks : 0
 
     const nav = (
         <React.Fragment>
@@ -72,7 +75,7 @@ function ScorecardRoute() {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}>
+            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints} cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints} cardNextDanLocks={cardNextDanLocks}>
                 <ScorecardListProvider>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
 

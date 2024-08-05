@@ -8,7 +8,7 @@ import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
 import {getEntryFromId, getProjectEntryFromId} from '../entries/entryutils'
 
-export function ScorecardDataProvider({children, cardEvidence, cardBBCount, cardDanPoints}) {
+export function ScorecardDataProvider({children, cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
 
@@ -110,10 +110,13 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
         cardEvidence,
         cardBBCount,
         cardDanPoints,
+        cardEligibleDan,
+        cardNextDanPoints,
+        cardNextDanLocks,
         visibleEntries,
         getEntryFromId,
         getProjectEntryFromId
-    }), [cardEvidence, cardBBCount, cardDanPoints, visibleEntries])
+    }), [cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries])
 
     return (
         <ScorecardDataContext.Provider value={value}>

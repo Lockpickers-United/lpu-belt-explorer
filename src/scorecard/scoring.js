@@ -2,6 +2,7 @@ import {sys2UserDate} from '../util/datetime'
 import belts, {modifierMultiplier, projectTiers} from '../data/belts'
 import isValidUrl from '../util/isValidUrl'
 import {allEntriesById, allProjectsById, possibleUpgrades, isUpgradeOf} from '../entries/entryutils'
+import dans from '../data/dans.json'
 
 function calculateScoreForUser(allEvidence) {
     const annotatedEvidence = allEvidence.map(ev => {
@@ -136,10 +137,18 @@ function calculateScoreForUser(allEvidence) {
         return group
     }, [0, 0])
 
+    const eligibleDan = dans.filter(d => danPoints >= d.points && bbCount >= d.bbLocks).pop().level
+    const nextDan = eligibleDan + 1 < dans.length && dans[eligibleDan + 1]
+    const nextDanPoints = nextDan ? Math.max(0, nextDan.points - danPoints) : 0
+    const nextDanLocks = nextDan ? Math.max(0, nextDan.bbLocks - bbCount) : 0
+
     return ({
         scoredEvidence,
         bbCount,
-        danPoints
+        danPoints,
+        eligibleDan,
+        nextDanPoints,
+        nextDanLocks
     })
 }
 
