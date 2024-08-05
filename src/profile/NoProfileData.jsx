@@ -10,15 +10,16 @@ import AuthContext from '../app/AuthContext'
 import mycollectionImagePath from '../resources/mycollection.png'
 import useWindowSize from '../util/useWindowSize'
 
-function NoProfileData() {
+function NoProfileData({collectionType}) {
+
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
     const navigate = useNavigate()
 
     const {isMobile} = useWindowSize()
     const style = isMobile
-        ? {marginTop: -32, maxWidth: 700, marginLeft: 8, marginRight: 8,borderRadius: 0}
-        : {marginTop: -32, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
+        ? {marginTop: 32, maxWidth: 700, marginLeft: 8, marginRight: 8, borderRadius: 0}
+        : {marginTop: 32, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
 
     const isCurrentUser = userId === user?.uid
     const message = isCurrentUser
@@ -33,10 +34,19 @@ function NoProfileData() {
             <img alt='My Collection' src={mycollectionImagePath}/>
         </React.Fragment>
         : 'There are no locks in this collection.'
-    const buttonText = isCurrentUser ? 'Explore' : 'Go Home'
+
+    const buttonText = !isCurrentUser
+        ? 'Go Home'
+        : collectionType === 'safelocks'
+            ? 'Explore Safe Locks'
+            : 'Explore Locks'
 
     const handleClick = useCallback(() => {
-        navigate('/locks')
+        if (collectionType === 'safelocks') {
+            navigate('/safelocks')
+        } else {
+            navigate('/locks')
+        }
     }, [navigate])
 
     return (
@@ -53,7 +63,7 @@ function NoProfileData() {
                         variant='outlined'
                         color='secondary'
                         onClick={handleClick}
-                        style={{whiteSpace: 'nowrap'}}
+                        style={{whiteSpace: 'nowrap', padding:'10px 30px', margin:10}}
                     >{buttonText}</Button>
                 </CardActions>
             </Card>
