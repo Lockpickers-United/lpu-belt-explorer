@@ -1,6 +1,7 @@
 import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
 import nextUpgrades from '../data/upgrades.json'
+import {beltSort} from '../data/belts'
 
 export const allEntriesById = allEntries
     .reduce((group, term) => {
@@ -74,6 +75,49 @@ export function upgradeTree(id) {
     return [...new Set(allIds)]
 }
 
+
+const maxBaseArraysByBase = Object.keys(possibleUpgrades)
+    .map(id => baseVersions(id))
+    .reduce((acc, currentBases) => {
+        // Need to combine and reduce sets of bases that overlap.
+        // To do this, we form a hash where each base id points to maximal 
+        // array of bases that ultimately intersect with the given base id 
+        // in the graph.
+        currentBases.forEach(newBase => {
+            if (!acc[newBase]) {
+                // This is a new base, so start with the array where we found it.
+                acc[newBase] = currentBases
+            } else {
+                // We've seen this base before, but perhaps as part of different set.
+                // So combine the two sets.
+                acc[newBase] = [...new Set([...acc[newBase], ...currentBases].flat())]
+            }
+        })
+        return acc
+    }, {})
+
+export const allUpgradesPartitioned = Object.keys(maxBaseArraysByBase)
+    .reduce((acc, base) => {
+        // Need to identify the uniq sets of base arrays. Each will
+        // correspond with a distinct partition that we are after.
+        const baseArray = maxBaseArraysByBase[base]
+        const uniqKey = baseArray.sort().toString()
+
+        if (!acc.keys[uniqKey]) {
+            acc.keys[uniqKey] = true
+            acc.result = [...acc.result, baseArray]
+        }
+        return acc
+}, {keys: {}, result: []}).result
+    .map(basePartition => {
+        // We have our partitions, at least by base. Following
+        // each up the upgrade tree and combining will give full
+        // partition.
+        const partition = [...new Set(basePartition.map(base => upgradesFrom(base)).flat())]
+        return partition.sort((a, b) => beltSort((allEntriesById[a] || allProjectsById[a]).belt, 
+                                                 (allEntriesById[b] || allProjectsById[b]).belt))
+})
+
 export function isUpgradeOf(aId, bId) {
     if (!nextUpgrades[bId]) {
         return false
@@ -83,5 +127,3 @@ export function isUpgradeOf(aId, bId) {
         return nextUpgrades[bId].some(id => isUpgradeOf(aId, id))
     }
 }
-
-
