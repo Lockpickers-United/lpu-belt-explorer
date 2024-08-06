@@ -2,21 +2,24 @@ import React, {useCallback, useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import DBContext from '../app/DBContext.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay'
+import DBContext from '../app/DBContext'
+import useWindowSize from '../util/useWindowSize'
 
 
 export default function ImportDanSheetForm({setControlsExpanded}) {
     const {userId} = useParams()
     const {importUnclaimedEvidence} = useContext(DBContext)
     const {isMobile} = useWindowSize()
-
+    const [importing, setImporting] = useState(false)
 
     const [tabToImport, setTabToImport] = useState('')
 
-    const handleImport = useCallback(() => {
-        importUnclaimedEvidence(userId, tabToImport)
+    const handleImport = useCallback(async () => {
+        setImporting(true)
+        await importUnclaimedEvidence(userId, tabToImport)
         setTabToImport('')
+        setImporting(false)
         setControlsExpanded(false)
     }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded])
 
@@ -25,31 +28,37 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
     return (
         <React.Fragment>
             <div style={{placeItems:'center', display:formDisplayStyle}}>
-                <div style={{padding: 20, width: 340}}>
-                    For Black Belts only. Specify your tab in the Dan Sheet to import. Please note that tab names are
-                    case sensitive.
-                </div>
-                <div style={{padding: '0px', textAlign: 'center', display: 'flex', marginLeft:20, width: 340}}>
-                    <TextField
-                        id='tab-to-import'
-                        label='Tab to Import'
-                        value={tabToImport}
-                        size='small'
-                        margin='dense'
-                        color='secondary'
-                        onChange={e => {
-                            setTabToImport(e.target.value)
-                        }}
-                    />
-                    <Button style={{color: '#000', padding:0, lineHeight:'1rem', height:40, marginTop:8, marginLeft:10}}
-                            variant='contained'
-                            onClick={handleImport}
-                            edge='start'
-                            color='secondary'
-                    >
-                        Import
-                    </Button>
-                </div>
+                {importing ? 
+                    <LoadingDisplay/>
+                :
+                    <React.Fragment>
+                        <div style={{padding: 20, width: 340}}>
+                            For Black Belts only. Specify your tab in the Dan Sheet to import. Please note that tab names are
+                            case sensitive.
+                        </div>
+                        <div style={{padding: '0px', textAlign: 'center', display: 'flex', marginLeft:20, width: 340}}>
+                            <TextField
+                                id='tab-to-import'
+                                label='Tab to Import'
+                                value={tabToImport}
+                                size='small'
+                                margin='dense'
+                                color='secondary'
+                                onChange={e => {
+                                    setTabToImport(e.target.value)
+                                }}
+                            />
+                            <Button style={{color: '#000', padding:0, lineHeight:'1rem', height:40, marginTop:8, marginLeft:10}}
+                                    variant='contained'
+                                    onClick={handleImport}
+                                    edge='start'
+                                    color='secondary'
+                            >
+                                Import
+                            </Button>
+                        </div>
+                    </React.Fragment>
+                }
             </div>
         </React.Fragment>
     )

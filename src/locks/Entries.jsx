@@ -8,10 +8,10 @@ import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
 
 function Entries({profile}) {
-    const {compact, tab, displayAll} = useContext(LockListContext)
+    const {compact, tab, expanded, displayAll} = useContext(LockListContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
 
-    const [expanded, setExpanded] = useState(false)
+    const [entryExpanded, setEntryExpanded] = useState(expanded)
     const defTab = useDeferredValue(tab)
     const defDisplayAll = useDeferredValue(displayAll)
 
@@ -39,8 +39,8 @@ function Entries({profile}) {
                     <Entry
                         key={entry.id}
                         entry={entry}
-                        expanded={entry.id === expanded}
-                        onExpand={setExpanded}
+                        expanded={entry.id === entryExpanded}
+                        onExpand={setEntryExpanded}
                     />
                 )
             }
