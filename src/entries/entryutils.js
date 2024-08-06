@@ -41,6 +41,39 @@ export const possibleUpgrades = Object.keys(nextUpgrades)
         return group
     }, {})
 
+const prevUpgrades = Object.keys(nextUpgrades)
+    .reduce((group, term) => {
+        nextUpgrades[term].forEach(id => {
+            if (!group[id]) {
+                group[id] = [term]
+            } else if (!group[id].includes(term)) {
+                group[id] = [...group[id], term]
+            }
+        })
+        return group
+    }, {})
+
+function baseVersions(id) {
+    if (prevUpgrades[id]) {
+        return prevUpgrades[id].map(p => baseVersions(p)).flat()
+    } else {
+        return [id]
+    }
+}
+
+function upgradesFrom(id) {
+    if (nextUpgrades[id]) {
+        return [id, nextUpgrades[id].map(n => upgradesFrom(n)).flat()].flat()
+    } else {
+        return [id]
+    }
+}
+
+export function upgradeTree(id) {
+    const allIds = baseVersions(id).map(b => upgradesFrom(b)).flat()
+    return [...new Set(allIds)]
+}
+
 export function isUpgradeOf(aId, bId) {
     if (!nextUpgrades[bId]) {
         return false
