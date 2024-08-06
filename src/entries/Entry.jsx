@@ -22,12 +22,18 @@ import Tracker from '../app/Tracker'
 import queryString from 'query-string'
 import LockImageGallery from './LockImageGallery'
 import RelatedEntryButton from './RelatedEntryButton'
+import {allEntriesById, upgradeTree} from './entryutils'
+import {beltSort} from '../data/belts'
 
 function Entry({entry, expanded, onExpand}) {
     const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
+
+    const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
+                            .filter(id => id !== entry.id)
+                            .sort((a, b) => beltSort(allEntriesById[a].belt, allEntriesById[b].belt))
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
@@ -155,10 +161,10 @@ function Entry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
-                        {!!entry.relatedIds && !userId &&
+                        {!!allRelatedIds && !userId &&
                             <FieldValue name='Other Versions' value={
                                 <React.Fragment>
-                                    {entry.relatedIds.map(relatedId =>
+                                    {allRelatedIds.map(relatedId =>
                                         <RelatedEntryButton key={relatedId} id={relatedId}/>
                                     )}
                                 </React.Fragment>

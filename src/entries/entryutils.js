@@ -75,7 +75,6 @@ export function upgradeTree(id) {
     return [...new Set(allIds)]
 }
 
-
 const maxBaseArraysByBase = Object.keys(possibleUpgrades)
     .map(id => baseVersions(id))
     .reduce((acc, currentBases) => {
