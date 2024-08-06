@@ -2,6 +2,7 @@ import React, {useCallback, useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import CircularProgress from '@mui/material/CircularProgress'
 import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 
@@ -10,13 +11,15 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
     const {userId} = useParams()
     const {importUnclaimedEvidence} = useContext(DBContext)
     const {isMobile} = useWindowSize()
-
+    const [importing, setImporting] = useState(false)
 
     const [tabToImport, setTabToImport] = useState('')
 
-    const handleImport = useCallback(() => {
-        importUnclaimedEvidence(userId, tabToImport)
+    const handleImport = useCallback(async () => {
+        setImporting(true)
+        await importUnclaimedEvidence(userId, tabToImport)
         setTabToImport('')
+        setImporting(false)
         setControlsExpanded(false)
     }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded])
 
@@ -41,14 +44,19 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
                             setTabToImport(e.target.value)
                         }}
                     />
-                    <Button style={{color: '#000', padding:0, lineHeight:'1rem', height:40, marginTop:8, marginLeft:10}}
-                            variant='contained'
-                            onClick={handleImport}
-                            edge='start'
-                            color='secondary'
-                    >
-                        Import
-                    </Button>
+                    {importing && (
+                        <CircularProgress sx={{marginLeft:3}}/>
+                    )}
+                    {!importing && (
+                        <Button style={{color: '#000', padding:0, lineHeight:'1rem', height:40, marginTop:8, marginLeft:10}}
+                                variant='contained'
+                                onClick={handleImport}
+                                edge='start'
+                                color='secondary'
+                        >
+                            Import
+                        </Button>
+                    )}
                 </div>
             </div>
         </React.Fragment>
