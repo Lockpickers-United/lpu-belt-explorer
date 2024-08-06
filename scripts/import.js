@@ -141,7 +141,7 @@ const projects = projectsData
     .sort((a, b) => a.name.localeCompare(b.name))
 
 console.log('Writing projects.json')
-fs.writeFileSync('./src/data/projectsFromSheet.json', JSON.stringify(projects, null, 2))
+fs.writeFileSync('./src/data/projects.json', JSON.stringify(projects, null, 2))
 
 // Add upgrade data
 console.log('Processing project data...')
@@ -163,7 +163,7 @@ const upgrades = upgradeData
     },{})
 
 console.log('Writing upgrades.json')
-fs.writeFileSync('./src/data/upgradesFromSheet.json', JSON.stringify(upgrades, null, 2))
+fs.writeFileSync('./src/data/upgrades.json', JSON.stringify(upgrades, null, 2))
 
 // Add media data
 mediaData
