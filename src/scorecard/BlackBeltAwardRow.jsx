@@ -15,6 +15,8 @@ import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import {enqueueSnackbar} from 'notistack'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
 function BlackBeltAwardRow({owner, date}) {
     const {userId} = useParams()
