@@ -1,6 +1,7 @@
 import React from 'react'
 import introCopyData from '../data/introCopy.json'
 import {useNavigate} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 export default function IntroCopy({pageName}) {
     const navigate = useNavigate()
@@ -14,9 +15,9 @@ export default function IntroCopy({pageName}) {
 
                 {intro.link && intro.destination &&
                     <React.Fragment>
-                    &nbsp;<a onClick={() => {
+                    &nbsp;<Link onClick={() => {
                         navigate(intro.destination)
-                    }} style={{cursor: 'pointer'}}>{intro.link}</a>
+                    }} style={{color:'#aaa', cursor: 'pointer'}}>{intro.link}</Link>
                     </React.Fragment>
                 }
             </div>
