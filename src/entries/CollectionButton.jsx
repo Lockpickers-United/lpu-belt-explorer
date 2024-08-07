@@ -17,12 +17,14 @@ import {collectionOptions, validCollectionKeys} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import RecordingControls from './RecordingControls'
 import ScoringContext from '../context/ScoringContext.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay'
 
 function CollectionButton({id, dense}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
     const {scoredEvidence} = useContext(ScoringContext)
     const [anchorEl, setAnchorEl] = useState(null)
+    const [checkboxUpdating, setCheckboxUpdating] = useState(false)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
@@ -41,14 +43,15 @@ function CollectionButton({id, dense}) {
         return !!lockCollection[key] && !!lockCollection[key].includes(id)
     }, [id, lockCollection])
 
-    const handleChange = useCallback(key => (event, checked) => {
+    const handleChange = useCallback(key => async (event, checked) => {
         event.preventDefault()
-
+        setCheckboxUpdating(true)
         if (checked) {
-            addToLockCollection(key, id)
+            await addToLockCollection(key, id)
         } else {
-            removeFromLockCollection(key, id)
+            await removeFromLockCollection(key, id)
         }
+        setCheckboxUpdating(false)
     }, [id, addToLockCollection, removeFromLockCollection])
 
     return (
@@ -92,28 +95,33 @@ function CollectionButton({id, dense}) {
                         onClick={handleClose}
                     />
                     <CardContent style={{paddingTop: 0}}>
-                        <FormGroup>
-                            {collectionOptions.map(({key, label}) =>
-                                <FormControlLabel
-                                    key={key}
-                                    control={
-                                        <Checkbox
-                                            id={key}
-                                            disabled={!isLoggedIn}
-                                            color='secondary'
-                                            checked={isChecked(key)}
-                                            onChange={handleChange(key)}
+                        {checkboxUpdating ?
+                            <LoadingDisplay/>
+                        :
+                            <React.Fragment>
+                                <FormGroup>
+                                    {collectionOptions.map(({key, label}) =>
+                                        <FormControlLabel
+                                            key={key}
+                                            control={
+                                                <Checkbox
+                                                    id={key}
+                                                    disabled={!isLoggedIn}
+                                                    color='secondary'
+                                                    checked={isChecked(key)}
+                                                    onChange={handleChange(key)}
+                                                />
+                                            }
+                                            label={label}
                                         />
-                                    }
-                                    label={label}
-                                />
-                            )}
-                        </FormGroup>
+                                    )}
+                                </FormGroup>
 
-                        {isLoggedIn &&
-                            <RecordingControls lockId={id}/>
+                                {isLoggedIn &&
+                                    <RecordingControls lockId={id}/>
+                                }
+                            </React.Fragment>
                         }
-
                     </CardContent>
                     <div style={{marginTop: -8, marginBottom: 16}}>
                         <SignInButton onClick={handleClose}/>

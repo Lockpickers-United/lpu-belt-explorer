@@ -59,7 +59,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const handleSave = useCallback(async () => {
         try {
             if (evid?.id && evid?.matchId) {
-                updateEvidence(evid, {
+                await updateEvidence(evid, {
                     matchId: evid.matchId,
                     evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
@@ -68,7 +68,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                 })
             } else {
                 const evidUserId = userId || user.uid
-                addEvidence(evidUserId, {
+                await addEvidence(evidUserId, {
                     matchId: entryId,
                     evidenceNotes: evidenceNotes,
                     notes: evidenceNotes,
@@ -88,7 +88,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
 
     const handleDelete = useCallback(async () => {
         try {
-            removeEvidence(evid)
+            await removeEvidence(evid)
             enqueueSnackbar('Entry deleted')
             handleUpdate()
         } catch (ex) {
