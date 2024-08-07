@@ -19,7 +19,6 @@ import SearchBox from '../nav/SearchBox'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
-import CopyProfileLinkButton from './CopyProfileLinkButton'
 import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
@@ -57,7 +56,6 @@ function ProfileRoute() {
 
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
-            <CopyProfileLinkButton/>
         </React.Fragment>
     )
 

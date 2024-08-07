@@ -3,6 +3,7 @@ import {useNavigate, useParams} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
+import CopyProfileLinkButton from './CopyProfileLinkButton.jsx'
 
 export default function ProfileHeader({profile = {}, page}) {
     const {userId} = useParams()
@@ -57,7 +58,10 @@ export default function ProfileHeader({profile = {}, page}) {
     return (
 
         <div style={style}>
-            <div style={{marginTop: 6}}>{title}</div>
+            <div style={{marginTop: 6, display:'flex'}}>
+                <div>{title}</div>
+                <div style={{marginTop: -2}}><CopyProfileLinkButton/></div>
+            </div>
             <div style={{flexGrow: 1, textAlign: 'right'}}>
                 <ToggleButtonGroup
                     variant='outlined'

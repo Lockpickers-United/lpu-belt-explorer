@@ -1,0 +1,12 @@
+{
+  "upgrades" : {
+    "title": "Dan Upgrade List",
+    "copy": "A number of locks in the Dan system are considered upgrades of other, easier locks. You recieve points for the most difficult lock in the group.",
+    "link": "Back to scorecard.",
+    "destination": "/profile/view/scorecard"
+  }
+}
+
+
+
+

@@ -3,6 +3,7 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import SignInButton from '../auth/SignInButton.jsx'
 
 function ProfileNotFound() {
     const style = {
@@ -15,11 +16,13 @@ function ProfileNotFound() {
 
     return (
         <Card style={style}>
-            <CardHeader title='Log In!'/>
+            <CardHeader title='Please Log In'/>
             <CardContent>
                 <Typography variant='h6' align='center'>
-                    You must be logged in to edit your profile.
+                    You must be logged in to<br/>
+                    edit your profile.
                 </Typography>
+                <div style={{marginLeft:120, marginTop:30}}><SignInButton/></div>
             </CardContent>
         </Card>
     )

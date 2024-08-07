@@ -11,7 +11,8 @@ import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
-import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
@@ -60,11 +61,18 @@ function UserMenu() {
                     }
                 </IconButton>
             </Tooltip>
+
             <Menu
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+                sx={{
+                    '.MuiMenuItem-root': {
+                        minHeight:'36px'
+                    }
+                }}
             >
+
                 {
                     isLoggedIn &&
                     <div>
@@ -82,9 +90,9 @@ function UserMenu() {
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
                             <ListItemIcon>
-                                <AccountBoxIcon/>
+                                <LibraryBooksIcon  fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>View Profile</ListItemText>
+                            <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}/safelocks?name=${safeName}`)}>
                             <ListItemIcon>
@@ -101,7 +109,7 @@ function UserMenu() {
                         <Divider/>
 
                         <MenuItem disabled>
-                            <ListItemText>My Collection</ListItemText>
+                            <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Own`)}>
                             <ListItemIcon>
@@ -114,12 +122,6 @@ function UserMenu() {
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
-                        </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Recorded`)}>
-                            <ListItemIcon>
-                                <VideocamOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Recorded ({lockCollection.recorded?.length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
                             <ListItemIcon>

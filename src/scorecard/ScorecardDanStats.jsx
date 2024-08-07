@@ -1,9 +1,15 @@
-import React, {useContext} from 'react'
+import React, {useCallback, useContext} from 'react'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
+import {useNavigate} from 'react-router-dom'
 
 export default function ScorecardDanStats() {
     const {cardDanPoints, cardBBCount, cardEligibleDan, cardNextDanPoints, cardNextDanLocks} = useContext(ScorecardDataContext)
+    const navigate = useNavigate()
+
+    const openUpgrades = useCallback(() => {
+        navigate('/profile/scorecard/upgrades')
+    }, [navigate])
 
     return (
         <div style={{display: 'flex'}}>
@@ -19,6 +25,9 @@ export default function ScorecardDanStats() {
                     {cardNextDanPoints} point{cardNextDanPoints !== 1 && 's'} and {cardNextDanLocks} BB
                     lock{cardNextDanLocks !== 1 && 's'} until next Dan
                 </div>
+                <div style={{margin: '10px 0px', fontSize: '0.85rem'}}>
+                    <a onClick={openUpgrades} style={{cursor: 'pointer'}}>Upgrades list</a></div>
+
             </div>
             <div style={{textAlign: 'right'}}>
                 <ScoringExceptions/>

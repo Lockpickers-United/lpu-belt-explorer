@@ -54,13 +54,16 @@ function InlineCollectionCharts({profile, entries}) {
         ...divFlexStyle
     }
     const barDivWidth = !smallWindow ? '50%' : '100%'
-    const pieDivWidth = !smallWindow ? '50%' : '100%'
+    const beltBarDivWidth = !smallWindow ? '50%' : '100%'
 
     const barDivHeight = mobileSmall ? 200
         : smallWindow ? 210
             : 180
 
-    const pieDivHeight = mobileSmall ? 170
+    const collectionBarHeight = smallWindow ? 160
+            : 170
+
+    const beltBarDivHeight = mobileSmall ? 150
         : mobileMedium ? 170
             : mobileLarge ? 170
                 : smallWindow ? 170
@@ -73,9 +76,9 @@ function InlineCollectionCharts({profile, entries}) {
                     <div style={combinedDivStyle}>
                         <div style={{width: barDivWidth, verticalAlign: 'top', height: barDivHeight}}>
                             <CollectionStatsBarProfile lockCollection={profile} userText={userText}
-                                                       collectionBarHeight={170}/>
+                                                       collectionBarHeight={collectionBarHeight}/>
                         </div>
-                        <div style={{width: pieDivWidth, height: pieDivHeight, marginTop: '0px'}}>
+                        <div style={{width: beltBarDivWidth, height: beltBarDivHeight, marginTop: '0px'}}>
                             <CollectionBeltBar beltData={chartData}/>
                         </div>
                     </div>

@@ -9,14 +9,12 @@ import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
 import {FilterProvider} from '../context/FilterContext'
 import {LockListProvider} from '../locks/LockListContext'
-import ToggleCompactButton from '../locks/ToggleCompactButton'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
-import CopyProfileLinkButton from '../profile/CopyProfileLinkButton'
 import NoProfileData from '../profile/NoProfileData'
 import ProfileNotFound from '../profile/ProfileNotFound'
 import SafelocksCollectionPage from './SafelocksCollectionPage.jsx'
@@ -55,10 +53,7 @@ function ProfileRoute() {
             <SearchBox label='Collection'/>
             <FilterButton/>
             <SortButton sortValues={lockSortFields}/>
-
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
-            <ToggleCompactButton/>
-            <CopyProfileLinkButton/>
         </React.Fragment>
     )
 
