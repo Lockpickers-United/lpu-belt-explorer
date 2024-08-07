@@ -1,433 +1,147 @@
-export async function localeLoader(locale) {
+export function localeLoader(locale) {
     switch(locale) {
-        case 'af':
-            await import('dayjs/locale/af')
-            break
-        case 'am':
-            await import('dayjs/locale/am')
-            break
-        case 'ar-dz':
-            await import('dayjs/locale/ar-dz')
-            break
-        case 'ar-iq':
-            await import('dayjs/locale/ar-iq')
-            break
-        case 'ar-kw':
-            await import('dayjs/locale/ar-kw')
-            break
-        case 'ar-ly':
-            await import('dayjs/locale/ar-ly')
-            break
-        case 'ar-ma':
-            await import('dayjs/locale/ar-ma')
-            break
-        case 'ar-sa':
-            await import('dayjs/locale/ar-sa')
-            break
-        case 'ar-tn':
-            await import('dayjs/locale/ar-tn')
-            break
-        case 'ar':
-            await import('dayjs/locale/ar')
-            break
-        case 'az':
-            await import('dayjs/locale/az')
-            break
-        case 'be':
-            await import('dayjs/locale/be')
-            break
-        case 'bg':
-            await import('dayjs/locale/bg')
-            break
-        case 'bi':
-            await import('dayjs/locale/bi')
-            break
-        case 'bm':
-            await import('dayjs/locale/bm')
-            break
-        case 'bn-bd':
-            await import('dayjs/locale/bn-bd')
-            break
-        case 'bn':
-            await import('dayjs/locale/bn')
-            break
-        case 'bo':
-            await import('dayjs/locale/bo')
-            break
-        case 'br':
-            await import('dayjs/locale/br')
-            break
-        case 'bs':
-            await import('dayjs/locale/bs')
-            break
-        case 'ca':
-            await import('dayjs/locale/ca')
-            break
-        case 'cs':
-            await import('dayjs/locale/cs')
-            break
-        case 'cv':
-            await import('dayjs/locale/cv')
-            break
-        case 'cy':
-            await import('dayjs/locale/cy')
-            break
-        case 'da':
-            await import('dayjs/locale/da')
-            break
-        case 'de-at':
-            await import('dayjs/locale/de-at')
-            break
-        case 'de-ch':
-            await import('dayjs/locale/de-ch')
-            break
-        case 'de':
-            await import('dayjs/locale/de')
-            break
-        case 'dv':
-            await import('dayjs/locale/dv')
-            break
-        case 'el':
-            await import('dayjs/locale/el')
-            break
-        case 'en-au':
-            await import('dayjs/locale/en-au')
-            break
-        case 'en-ca':
-            await import('dayjs/locale/en-ca')
-            break
-        case 'en-gb':
-            await import('dayjs/locale/en-gb')
-            break
-        case 'en-ie':
-            await import('dayjs/locale/en-ie')
-            break
-        case 'en-il':
-            await import('dayjs/locale/en-il')
-            break
-        case 'en-in':
-            await import('dayjs/locale/en-in')
-            break
-        case 'en-nz':
-            await import('dayjs/locale/en-nz')
-            break
-        case 'en-sg':
-            await import('dayjs/locale/en-sg')
-            break
-        case 'en-tt':
-            await import('dayjs/locale/en-tt')
-            break
-        case 'en':
-            await import('dayjs/locale/en')
-            break
-        case 'eo':
-            await import('dayjs/locale/eo')
-            break
-        case 'es-do':
-            await import('dayjs/locale/es-do')
-            break
-        case 'es-mx':
-            await import('dayjs/locale/es-mx')
-            break
-        case 'es-pr':
-            await import('dayjs/locale/es-pr')
-            break
-        case 'es-us':
-            await import('dayjs/locale/es-us')
-            break
-        case 'es':
-            await import('dayjs/locale/es')
-            break
-        case 'et':
-            await import('dayjs/locale/et')
-            break
-        case 'eu':
-            await import('dayjs/locale/eu')
-            break
-        case 'fa':
-            await import('dayjs/locale/fa')
-            break
-        case 'fi':
-            await import('dayjs/locale/fi')
-            break
-        case 'fo':
-            await import('dayjs/locale/fo')
-            break
-        case 'fr-ca':
-            await import('dayjs/locale/fr-ca')
-            break
-        case 'fr-ch':
-            await import('dayjs/locale/fr-ch')
-            break
-        case 'fr':
-            await import('dayjs/locale/fr')
-            break
-        case 'fy':
-            await import('dayjs/locale/fy')
-            break
-        case 'ga':
-            await import('dayjs/locale/ga')
-            break
-        case 'gd':
-            await import('dayjs/locale/gd')
-            break
-        case 'gl':
-            await import('dayjs/locale/gl')
-            break
-        case 'gom-latn':
-            await import('dayjs/locale/gom-latn')
-            break
-        case 'gu':
-            await import('dayjs/locale/gu')
-            break
-        case 'he':
-            await import('dayjs/locale/he')
-            break
-        case 'hi':
-            await import('dayjs/locale/hi')
-            break
-        case 'hr':
-            await import('dayjs/locale/hr')
-            break
-        case 'ht':
-            await import('dayjs/locale/ht')
-            break
-        case 'hu':
-            await import('dayjs/locale/hu')
-            break
-        case 'hy-am':
-            await import('dayjs/locale/hy-am')
-            break
-        case 'id':
-            await import('dayjs/locale/id')
-            break
-        case 'is':
-            await import('dayjs/locale/is')
-            break
-        case 'it-ch':
-            await import('dayjs/locale/it-ch')
-            break
-        case 'it':
-            await import('dayjs/locale/it')
-            break
-        case 'ja':
-            await import('dayjs/locale/ja')
-            break
-        case 'jv':
-            await import('dayjs/locale/jv')
-            break
-        case 'ka':
-            await import('dayjs/locale/ka')
-            break
-        case 'kk':
-            await import('dayjs/locale/kk')
-            break
-        case 'km':
-            await import('dayjs/locale/km')
-            break
-        case 'kn':
-            await import('dayjs/locale/kn')
-            break
-        case 'ko':
-            await import('dayjs/locale/ko')
-            break
-        case 'ku':
-            await import('dayjs/locale/ku')
-            break
-        case 'ky':
-            await import('dayjs/locale/ky')
-            break
-        case 'lb':
-            await import('dayjs/locale/lb')
-            break
-        case 'lo':
-            await import('dayjs/locale/lo')
-            break
-        case 'lt':
-            await import('dayjs/locale/lt')
-            break
-        case 'lv':
-            await import('dayjs/locale/lv')
-            break
-        case 'me':
-            await import('dayjs/locale/me')
-            break
-        case 'mi':
-            await import('dayjs/locale/mi')
-            break
-        case 'mk':
-            await import('dayjs/locale/mk')
-            break
-        case 'ml':
-            await import('dayjs/locale/ml')
-            break
-        case 'mn':
-            await import('dayjs/locale/mn')
-            break
-        case 'mr':
-            await import('dayjs/locale/mr')
-            break
-        case 'ms-my':
-            await import('dayjs/locale/ms-my')
-            break
-        case 'ms':
-            await import('dayjs/locale/ms')
-            break
-        case 'mt':
-            await import('dayjs/locale/mt')
-            break
-        case 'my':
-            await import('dayjs/locale/my')
-            break
-        case 'nb':
-            await import('dayjs/locale/nb')
-            break
-        case 'ne':
-            await import('dayjs/locale/ne')
-            break
-        case 'nl-be':
-            await import('dayjs/locale/nl-be')
-            break
-        case 'nl':
-            await import('dayjs/locale/nl')
-            break
-        case 'nn':
-            await import('dayjs/locale/nn')
-            break
-        case 'oc-lnc':
-            await import('dayjs/locale/oc-lnc')
-            break
-        case 'pa-in':
-            await import('dayjs/locale/pa-in')
-            break
-        case 'pl':
-            await import('dayjs/locale/pl')
-            break
-        case 'pt-br':
-            await import('dayjs/locale/pt-br')
-            break
-        case 'pt':
-            await import('dayjs/locale/pt')
-            break
-        case 'rn':
-            await import('dayjs/locale/rn')
-            break
-        case 'sd':
-            await import('dayjs/locale/sd')
-            break
-        case 'se':
-            await import('dayjs/locale/se')
-            break
-        case 'si':
-            await import('dayjs/locale/si')
-            break
-        case 'sk':
-            await import('dayjs/locale/sk')
-            break
-        case 'sl':
-            await import('dayjs/locale/sl')
-            break
-        case 'sq':
-            await import('dayjs/locale/sq')
-            break
-        case 'sr-cyrl':
-            await import('dayjs/locale/sr-cyrl')
-            break
-        case 'sr':
-            await import('dayjs/locale/sr')
-            break
-        case 'ss':
-            await import('dayjs/locale/ss')
-            break
-        case 'sv-fi':
-            await import('dayjs/locale/sv-fi')
-            break
-        case 'sv':
-            await import('dayjs/locale/sv')
-            break
-        case 'sw':
-            await import('dayjs/locale/sw')
-            break
-        case 'ta':
-            await import('dayjs/locale/ta')
-            break
-        case 'te':
-            await import('dayjs/locale/te')
-            break
-        case 'tet':
-            await import('dayjs/locale/tet')
-            break
-        case 'tg':
-            await import('dayjs/locale/tg')
-            break
-        case 'th':
-            await import('dayjs/locale/th')
-            break
-        case 'tk':
-            await import('dayjs/locale/tk')
-            break
-        case 'tl-ph':
-            await import('dayjs/locale/tl-ph')
-            break
-        case 'tlh':
-            await import('dayjs/locale/tlh')
-            break
-        case 'tr':
-            await import('dayjs/locale/tr')
-            break
-        case 'tzl':
-            await import('dayjs/locale/tzl')
-            break
-        case 'tzm-latn':
-            await import('dayjs/locale/tzm-latn')
-            break
-        case 'tzm':
-            await import('dayjs/locale/tzm')
-            break
-        case 'ug-cn':
-            await import('dayjs/locale/ug-cn')
-            break
-        case 'uk':
-            await import('dayjs/locale/uk')
-            break
-        case 'ur':
-            await import('dayjs/locale/ur')
-            break
-        case 'uz-latn':
-            await import('dayjs/locale/uz-latn')
-            break
-        case 'uz':
-            await import('dayjs/locale/uz')
-            break
-        case 'vi':
-            await import('dayjs/locale/vi')
-            break
-        case 'x-pseudo':
-            await import('dayjs/locale/x-pseudo')
-            break
-        case 'yo':
-            await import('dayjs/locale/yo')
-            break
-        case 'zh-cn':
-            await import('dayjs/locale/zh-cn')
-            break
-        case 'zh-hk':
-            await import('dayjs/locale/zh-hk')
-            break
-        case 'zh-tw':
-            await import('dayjs/locale/zh-tw')
-            break
-        case 'zh':
-            await import('dayjs/locale/zh')
-            break
-        case 'rw':
-            await import('dayjs/locale/rw')
-            break
-        case 'ru':
-            await import('dayjs/locale/ru')
-            break
-        case 'ro':
-            await import('dayjs/locale/ro')
-            break
+        case 'af': return import('dayjs/locale/af')
+        case 'am': return import('dayjs/locale/am')
+        case 'ar-dz': return import('dayjs/locale/ar-dz')
+        case 'ar-iq': return import('dayjs/locale/ar-iq')
+        case 'ar-kw': return import('dayjs/locale/ar-kw')
+        case 'ar-ly': return import('dayjs/locale/ar-ly')
+        case 'ar-ma': return import('dayjs/locale/ar-ma')
+        case 'ar-sa': return import('dayjs/locale/ar-sa')
+        case 'ar-tn': return import('dayjs/locale/ar-tn')
+        case 'ar': return import('dayjs/locale/ar')
+        case 'az': return import('dayjs/locale/az')
+        case 'be': return import('dayjs/locale/be')
+        case 'bg': return import('dayjs/locale/bg')
+        case 'bi': return import('dayjs/locale/bi')
+        case 'bm': return import('dayjs/locale/bm')
+        case 'bn-bd': return import('dayjs/locale/bn-bd')
+        case 'bn': return import('dayjs/locale/bn')
+        case 'bo': return import('dayjs/locale/bo')
+        case 'br': return import('dayjs/locale/br')
+        case 'bs': return import('dayjs/locale/bs')
+        case 'ca': return import('dayjs/locale/ca')
+        case 'cs': return import('dayjs/locale/cs')
+        case 'cv': return import('dayjs/locale/cv')
+        case 'cy': return import('dayjs/locale/cy')
+        case 'da': return import('dayjs/locale/da')
+        case 'de-at': return import('dayjs/locale/de-at')
+        case 'de-ch': return import('dayjs/locale/de-ch')
+        case 'de': return import('dayjs/locale/de')
+        case 'dv': return import('dayjs/locale/dv')
+        case 'el': return import('dayjs/locale/el')
+        case 'en-au': return import('dayjs/locale/en-au')
+        case 'en-ca': return import('dayjs/locale/en-ca')
+        case 'en-gb': return import('dayjs/locale/en-gb')
+        case 'en-ie': return import('dayjs/locale/en-ie')
+        case 'en-il': return import('dayjs/locale/en-il')
+        case 'en-in': return import('dayjs/locale/en-in')
+        case 'en-nz': return import('dayjs/locale/en-nz')
+        case 'en-sg': return import('dayjs/locale/en-sg')
+        case 'en-tt': return import('dayjs/locale/en-tt')
+        case 'en': return import('dayjs/locale/en')
+        case 'eo': return import('dayjs/locale/eo')
+        case 'es-do': return import('dayjs/locale/es-do')
+        case 'es-mx': return import('dayjs/locale/es-mx')
+        case 'es-pr': return import('dayjs/locale/es-pr')
+        case 'es-us': return import('dayjs/locale/es-us')
+        case 'es': return import('dayjs/locale/es')
+        case 'et': return import('dayjs/locale/et')
+        case 'eu': return import('dayjs/locale/eu')
+        case 'fa': return import('dayjs/locale/fa')
+        case 'fi': return import('dayjs/locale/fi')
+        case 'fo': return import('dayjs/locale/fo')
+        case 'fr-ca': return import('dayjs/locale/fr-ca')
+        case 'fr-ch': return import('dayjs/locale/fr-ch')
+        case 'fr': return import('dayjs/locale/fr')
+        case 'fy': return import('dayjs/locale/fy')
+        case 'ga': return import('dayjs/locale/ga')
+        case 'gd': return import('dayjs/locale/gd')
+        case 'gl': return import('dayjs/locale/gl')
+        case 'gom-latn': return import('dayjs/locale/gom-latn')
+        case 'gu': return import('dayjs/locale/gu')
+        case 'he': return import('dayjs/locale/he')
+        case 'hi': return import('dayjs/locale/hi')
+        case 'hr': return import('dayjs/locale/hr')
+        case 'ht': return import('dayjs/locale/ht')
+        case 'hu': return import('dayjs/locale/hu')
+        case 'hy-am': return import('dayjs/locale/hy-am')
+        case 'id': return import('dayjs/locale/id')
+        case 'is': return import('dayjs/locale/is')
+        case 'it-ch': return import('dayjs/locale/it-ch')
+        case 'it': return import('dayjs/locale/it')
+        case 'ja': return import('dayjs/locale/ja')
+        case 'jv': return import('dayjs/locale/jv')
+        case 'ka': return import('dayjs/locale/ka')
+        case 'kk': return import('dayjs/locale/kk')
+        case 'km': return import('dayjs/locale/km')
+        case 'kn': return import('dayjs/locale/kn')
+        case 'ko': return import('dayjs/locale/ko')
+        case 'ku': return import('dayjs/locale/ku')
+        case 'ky': return import('dayjs/locale/ky')
+        case 'lb': return import('dayjs/locale/lb')
+        case 'lo': return import('dayjs/locale/lo')
+        case 'lt': return import('dayjs/locale/lt')
+        case 'lv': return import('dayjs/locale/lv')
+        case 'me': return import('dayjs/locale/me')
+        case 'mi': return import('dayjs/locale/mi')
+        case 'mk': return import('dayjs/locale/mk')
+        case 'ml': return import('dayjs/locale/ml')
+        case 'mn': return import('dayjs/locale/mn')
+        case 'mr': return import('dayjs/locale/mr')
+        case 'ms-my': return import('dayjs/locale/ms-my')
+        case 'ms': return import('dayjs/locale/ms')
+        case 'mt': return import('dayjs/locale/mt')
+        case 'my': return import('dayjs/locale/my')
+        case 'nb': return import('dayjs/locale/nb')
+        case 'ne': return import('dayjs/locale/ne')
+        case 'nl-be': return import('dayjs/locale/nl-be')
+        case 'nl': return import('dayjs/locale/nl')
+        case 'nn': return import('dayjs/locale/nn')
+        case 'oc-lnc': return import('dayjs/locale/oc-lnc')
+        case 'pa-in': return import('dayjs/locale/pa-in')
+        case 'pl': return import('dayjs/locale/pl')
+        case 'pt-br': return import('dayjs/locale/pt-br')
+        case 'pt': return import('dayjs/locale/pt')
+        case 'rn': return import('dayjs/locale/rn')
+        case 'sd': return import('dayjs/locale/sd')
+        case 'se': return import('dayjs/locale/se')
+        case 'si': return import('dayjs/locale/si')
+        case 'sk': return import('dayjs/locale/sk')
+        case 'sl': return import('dayjs/locale/sl')
+        case 'sq': return import('dayjs/locale/sq')
+        case 'sr-cyrl': return import('dayjs/locale/sr-cyrl')
+        case 'sr': return import('dayjs/locale/sr')
+        case 'ss': return import('dayjs/locale/ss')
+        case 'sv-fi': return import('dayjs/locale/sv-fi')
+        case 'sv': return import('dayjs/locale/sv')
+        case 'sw': return import('dayjs/locale/sw')
+        case 'ta': return import('dayjs/locale/ta')
+        case 'te': return import('dayjs/locale/te')
+        case 'tet': return import('dayjs/locale/tet')
+        case 'tg': return import('dayjs/locale/tg')
+        case 'th': return import('dayjs/locale/th')
+        case 'tk': return import('dayjs/locale/tk')
+        case 'tl-ph': return import('dayjs/locale/tl-ph')
+        case 'tlh': return import('dayjs/locale/tlh')
+        case 'tr': return import('dayjs/locale/tr')
+        case 'tzl': return import('dayjs/locale/tzl')
+        case 'tzm-latn': return import('dayjs/locale/tzm-latn')
+        case 'tzm': return import('dayjs/locale/tzm')
+        case 'ug-cn': return import('dayjs/locale/ug-cn')
+        case 'uk': return import('dayjs/locale/uk')
+        case 'ur': return import('dayjs/locale/ur')
+        case 'uz-latn': return import('dayjs/locale/uz-latn')
+        case 'uz': return import('dayjs/locale/uz')
+        case 'vi': return import('dayjs/locale/vi')
+        case 'x-pseudo': return import('dayjs/locale/x-pseudo')
+        case 'yo': return import('dayjs/locale/yo')
+        case 'zh-cn': return import('dayjs/locale/zh-cn')
+        case 'zh-hk': return import('dayjs/locale/zh-hk')
+        case 'zh-tw': return import('dayjs/locale/zh-tw')
+        case 'zh': return import('dayjs/locale/zh')
+        case 'rw': return import('dayjs/locale/rw')
+        case 'ru': return import('dayjs/locale/ru')
+        case 'ro': return import('dayjs/locale/ro')
     }
 }

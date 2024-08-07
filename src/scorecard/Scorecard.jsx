@@ -49,7 +49,7 @@ function Scorecard({owner, profile}) {
             removeFilters(['id'])
         }
         setEntryExpanded(expand)
-    }, [removeFilters])
+    }, [filters, removeFilters])
 
     const handleMergeRecorded = useCallback(() => {
         createEvidenceForEntries(userId, recordedIdsToMerge)

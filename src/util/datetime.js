@@ -10,12 +10,13 @@ dayjs.extend(utc)
 
 const allLocales = localeMap.map(l => l.key)
 
-async function loadLocale(locale) {
+function loadLocale(locale) {
     if (allLocales.includes(locale)) {
         try {
-            await localeLoader(locale)
-            dayjs.locale(locale)
-            // console.info(`Set locale to ${dayjs.locale()}`)
+            localeLoader(locale).then(() => {
+                dayjs.locale(locale)
+                // console.info(`Set locale to ${dayjs.locale()}`)
+            })
             return true
         } catch (err) {
             throw new Error(`Unable to import dayjs/locale/${locale} error ${err}`)
@@ -25,16 +26,16 @@ async function loadLocale(locale) {
     return false
 }
 
-export default async function initializeLocales() {
+export default function initializeLocales() {
     let navLangs = (navigator.languages || (navigator.language ? [navigator.language] : [])).map(l => l.toLowerCase())
     let localeLoaded = false
 
     for (let idx=0; !localeLoaded && idx < navLangs.length; idx++) {
         const lang = navLangs[idx]
-        localeLoaded = await loadLocale(lang)
+        localeLoaded = loadLocale(lang)
 
         if (!localeLoaded && lang.includes('-')) {
-            localeLoaded = await loadLocale(lang.split('-')[0])
+            localeLoaded = loadLocale(lang.split('-')[0])
         }
     }
 }
