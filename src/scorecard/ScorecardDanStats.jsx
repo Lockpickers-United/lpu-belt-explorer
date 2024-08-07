@@ -2,6 +2,7 @@ import React, {useCallback, useContext} from 'react'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 import {useNavigate} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 export default function ScorecardDanStats() {
     const {cardDanPoints, cardBBCount, cardEligibleDan, cardNextDanPoints, cardNextDanLocks} = useContext(ScorecardDataContext)
@@ -26,7 +27,7 @@ export default function ScorecardDanStats() {
                     lock{cardNextDanLocks !== 1 && 's'} until next Dan
                 </div>
                 <div style={{margin: '10px 0px', fontSize: '0.85rem'}}>
-                    <a onClick={openUpgrades} style={{cursor: 'pointer'}}>Upgrades list</a></div>
+                    <Link onClick={openUpgrades} style={{color:'#99c2e5', cursor:'pointer'}}>Upgrades list</Link></div>
 
             </div>
             <div style={{textAlign: 'right'}}>
