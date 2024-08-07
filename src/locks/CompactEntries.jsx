@@ -8,6 +8,7 @@ import BeltStripe from '../entries/BeltStripe'
 import CollectionButton from '../entries/CollectionButton'
 import entryName from '../entries/entryName'
 import Divider from '@mui/material/Divider'
+import Tracker from '../app/Tracker.jsx'
 
 function CompactEntries({entries}) {
     return (
@@ -34,6 +35,7 @@ function CompactEntries({entries}) {
                 )}
             </List>
             <Divider/>
+            <Tracker feature='compact'/>
         </Card>
     )
 }

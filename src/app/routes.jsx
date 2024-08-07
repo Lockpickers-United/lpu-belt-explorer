@@ -118,6 +118,12 @@ export default [
             const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute/>}
         }
+    },{
+        path: '/profile/scorecard/upgrades',
+        lazy: async() => {
+            const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')
+            return {element: <UpgradesRoute/>}
+        }
     },
     {
         path: '/profile/:userId/safelocks',

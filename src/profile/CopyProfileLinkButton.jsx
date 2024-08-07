@@ -17,7 +17,7 @@ function CopyProfileLinkButton() {
         const link = `https://lpubelts.com/#/profile/${user.uid}?name=${safeName}`
 
         await navigator.clipboard.writeText(link)
-        enqueueSnackbar('Link to entry copied to clipboard.')
+        enqueueSnackbar('Link to collection copied to clipboard.')
     }, [user?.uid, lockCollection?.displayName])
 
     if (!user || userId !== user.uid || !lockCollection?.displayName || lockCollection?.public === false) return null
