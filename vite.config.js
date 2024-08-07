@@ -10,6 +10,9 @@ export default defineConfig({
     preview: {
         port: 3000
     },
+    build: {
+        target: 'esnext' //browsers can handle the latest ES features
+    },
     plugins: [react(), visualizer()],
     assetsInclude: ['**/*.md']
 })
