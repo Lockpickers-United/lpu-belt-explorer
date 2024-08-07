@@ -4,6 +4,8 @@ import Button from '@mui/material/Button'
 import DBContext from '../app/DBContext.jsx'
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
+import ScorecardListContext from './ScorecardListContext'
+import FilterContext from '../context/FilterContext'
 import InlineScorecardCharts from './InlineScorecardCharts'
 import ScorecardDanStats from './ScorecardDanStats.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -19,14 +21,19 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 function Scorecard({owner, profile}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
-    const {admin} = useContext(DBContext)
 
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
-    const {createEvidenceForEntries, removeEvidence} = useContext(DBContext)
+    const {expanded} = useContext(ScorecardListContext)
+    const {filters, removeFilters} = useContext(FilterContext)
+    const {admin, createEvidenceForEntries, removeEvidence} = useContext(DBContext)
 
-    const [expanded, setExpanded] = useState(false)
+    const [entryExpanded, setEntryExpanded] = useState(expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
+
+    if (expanded && expanded !== entryExpanded) {
+        setEntryExpanded(expanded)
+    }
 
     const recordedIdsToMerge = useMemo(() => {
         if (profile && profile.recorded) {
@@ -36,6 +43,13 @@ function Scorecard({owner, profile}) {
             return []
         }
     }, [profile, cardEvidence])
+
+    const handleEntryExpand = useCallback((expand) => {
+        if (filters['id']) {
+            removeFilters(['id'])
+        }
+        setEntryExpanded(expand)
+    }, [removeFilters])
 
     const handleMergeRecorded = useCallback(() => {
         createEvidenceForEntries(userId, recordedIdsToMerge)
@@ -153,8 +167,8 @@ function Scorecard({owner, profile}) {
                     <ScorecardRow key={ev.id}
                                   owner={owner}
                                   evid={ev}
-                                  expanded={ev.id === expanded}
-                                  onExpand={setExpanded}
+                                  expanded={ev.id === entryExpanded}
+                                  onExpand={handleEntryExpand}
                     />
                 )}
             </div>
