@@ -7,7 +7,9 @@ import AppRoutes from './AppRoutes'
 import {AuthProvider} from './AuthContext'
 import {DBProvider} from './DBContext'
 import {ScoringProvider} from '../context/ScoringContext.jsx'
+import initializeLocales from '../util/datetime'
 
+await initializeLocales()
 
 const darkTheme = createTheme({
     palette: {

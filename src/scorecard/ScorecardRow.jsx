@@ -89,7 +89,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
     }, [setFilters])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    const dateText = evid.date ? dayjs(evid.date).format('MM/DD/YY') : '(no date)'
+    const dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {

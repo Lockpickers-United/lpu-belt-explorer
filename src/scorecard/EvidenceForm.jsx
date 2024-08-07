@@ -127,7 +127,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const buttonWidth = isMobile ? 50 : 250
 
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
             <React.Fragment>
 

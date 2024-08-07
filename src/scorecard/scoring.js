@@ -1,4 +1,3 @@
-import {sys2UserDate} from '../util/datetime'
 import belts, {modifierMultiplier, projectTiers} from '../data/belts'
 import isValidUrl from '../util/isValidUrl'
 import {allEntriesById, allProjectsById, possibleUpgrades, isUpgradeOf} from '../entries/entryutils'
@@ -8,7 +7,6 @@ function calculateScoreForUser(allEvidence) {
     const annotatedEvidence = allEvidence.map(ev => {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
-        const dateStr = sys2UserDate(ev.date)
         const modifier = ev.modifier && ev.modifier !== 'Upgraded' ? ev.modifier : null
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
@@ -16,7 +14,6 @@ function calculateScoreForUser(allEvidence) {
             return {
                 ...ev,
                 matchId: entry.id,
-                date: dateStr,
                 modifier: modifier,
                 points: multiplier * belts[entry.belt].danPoints,
                 bbCount: entry.belt.startsWith('Black') ? 1 : 0
@@ -25,7 +22,6 @@ function calculateScoreForUser(allEvidence) {
             return {
                 ...ev,
                 matchId: project.id,
-                date: dateStr,
                 modifier: modifier,
                 points: multiplier * projectTiers[project.tier].danPoints,
                 bbCount: 0
@@ -33,7 +29,6 @@ function calculateScoreForUser(allEvidence) {
         } else {
             return {
                 ...ev,
-                date: dateStr,
                 modifier: modifier,
                 points: 0,
                 bbCount: 0

@@ -15,8 +15,6 @@ import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import {enqueueSnackbar} from 'notistack'
 import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-dayjs.extend(utc)
 
 function BlackBeltAwardRow({owner, date}) {
     const {userId} = useParams()
@@ -25,7 +23,7 @@ function BlackBeltAwardRow({owner, date}) {
     const [updated, setUpdated] = useState(false)
     const [evidenceDate, setEvidenceDate] = useState(dayjs.utc(date))
 
-    const dateText = dayjs.utc(date).format('MM/DD/YY')
+    const dateText = dayjs.utc(date).format('L')
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
@@ -94,7 +92,7 @@ function BlackBeltAwardRow({owner, date}) {
                 </AccordionSummary>
                 {expanded &&
                     <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                             <React.Fragment>
                                 <div style={{display: 'flex', width: '100%', marginBottom: 20}}>
                                     <DatePicker

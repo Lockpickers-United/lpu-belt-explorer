@@ -1,5 +1,6 @@
 import React, {useContext, useCallback} from 'react'
 import {useParams} from 'react-router-dom'
+import dayjs from 'dayjs'
 import useData from '../util/useData.jsx'
 import Nav from '../nav/Nav.jsx'
 import Footer from '../nav/Footer.jsx'
@@ -77,7 +78,7 @@ function ScorecardRoute() {
         <FilterProvider filterFields={scorecardFilterFields}>
             <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints} cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints} cardNextDanLocks={cardNextDanLocks}>
                 <ScorecardListProvider>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
                         <Nav title={title} extras={nav}/>
 
