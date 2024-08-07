@@ -27,9 +27,6 @@ async function loadLocale(locale) {
 
 export default async function initializeLocales() {
     let navLangs = (navigator.languages || (navigator.language ? [navigator.language] : [])).map(l => l.toLowerCase())
-    // for testing
-    // navLangs = ['de']
-
     let localeLoaded = false
 
     for (let idx=0; !localeLoaded && idx < navLangs.length; idx++) {
