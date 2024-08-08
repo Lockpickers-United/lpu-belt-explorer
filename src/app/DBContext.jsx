@@ -306,7 +306,13 @@ export function DBProvider({children}) {
 
         const ref = doc(db, 'lockcollections', userId)
         const profile = (await getDoc(ref)).data()
-        let cleanProfile = (({admin, displayName}) => ({admin, displayName}))(profile)
+        let cleanProfile = {}
+        if (profile.admin) {
+            cleanProfile.admin = profile.admin
+        }
+        if (profile.displayName) {
+            cleanProfile.displayName = profile.displayName
+        }
         if (profile.public) {
             cleanProfile.public = profile.public
         }
