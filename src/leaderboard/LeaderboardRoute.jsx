@@ -10,9 +10,7 @@ import Leaderboard from './Leaderboard'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton'
 import LeaderboardSearchBox from './LeaderboardSearchBox'
 import LeaderboardSortButton from './LeaderboardSortButton'
-import {
-    leaderboardData
-} from '../data/dataUrls'
+import {leaderboardData2} from '../data/dataUrls'
 
 function LeaderboardRoute() {
     const {isMobile} = useWindowSize()
@@ -32,9 +30,8 @@ function LeaderboardRoute() {
 
     return (
         <React.Fragment>
-            <Nav title={title} extras={nav}/>
 
-            {!loading && !error && data && <Leaderboard data={data} loading={loading}/>}
+            {(!loading && !error && data) && <Leaderboard data={data} loading={loading}/>}
             {loading && <LoadingDisplay/>}
 
             <Footer/>
@@ -44,6 +41,6 @@ function LeaderboardRoute() {
     )
 }
 
-const url = leaderboardData
+const url = leaderboardData2
 
 export default LeaderboardRoute

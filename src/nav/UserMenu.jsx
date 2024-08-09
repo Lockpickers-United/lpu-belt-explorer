@@ -88,6 +88,9 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>Edit Profile</ListItemText>
                         </MenuItem>
+
+                        <Divider/>
+
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
                             <ListItemIcon>
                                 <LibraryBooksIcon  fontSize='small'/>
@@ -111,19 +114,19 @@ function UserMenu() {
                         <MenuItem disabled>
                             <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Own`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=own`)}>
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Picked`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=picked`)}>
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=wishlist`)}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>

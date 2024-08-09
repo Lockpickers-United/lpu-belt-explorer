@@ -17,7 +17,7 @@ function LeaderboardSearchBox({data}) {
 
     const options = useMemo(() => {
         return data
-            ? data.data
+            ? data
                 .filter(item => item.displayName && item.displayName !== 'anonymous')
                 .map(item => item.displayName)
             : []

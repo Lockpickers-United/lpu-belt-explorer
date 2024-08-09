@@ -119,7 +119,7 @@ function Scorecard({owner, profile}) {
 
                         <div style={{width: '33%', textAlign: 'center'}}>
                             <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                      onClick={handleOpen}>DELETE ALL</Button>
+                                      onClick={handleOpen}>DELETE SCORECARD</Button>
                             <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
                                       onClick={() => handleOpenControls('import')}>
                                 IMPORT DAN SHEET

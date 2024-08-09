@@ -15,3 +15,4 @@ export const redditGrowth = `${url}/statsRedditGrowth.json`
 export const siteFull = `${url}/statsSiteFull.json`
 export const siteSummary = `${url}/statsSiteSummary.json`
 export const leaderboardData = `${url}/leaderboardData.json`
+export const leaderboardData2 = `${url}/leaderboardData2.json`
