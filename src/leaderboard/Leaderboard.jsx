@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import LinearProgress from '@mui/material/LinearProgress'
 import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
@@ -25,8 +25,6 @@ function Leaderboard({data, loading}) {
     const [searchParams, setSearchParams] = useSearchParams()
     const {isMobile} = useWindowSize()
 
-    const [page, setPage] = useState('locks')
-
     const {highlightedUser, sort, tab} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
@@ -35,6 +33,12 @@ function Leaderboard({data, loading}) {
             tab: (query.tab && validTab.includes(query.tab)) ? query.tab : 'locks'
         }
     }, [location.search])
+
+    const [page, setPage] = useState(tab)
+
+    useEffect(() => {
+        setPage(tab)
+    }, [tab])
 
     const tabData = useMemo(() => {
         return {
@@ -60,23 +64,25 @@ function Leaderboard({data, loading}) {
                 columns: [
                     {field: 'danLevel', order: 'desc', tooltip: 'Sort by Dan Level'},
                     {field: 'danPoints', order: 'desc', tooltip: 'Sort by Dan Points'},
+                    {field: 'blackBeltCount', order: 'desc', tooltip: 'Sort by Black Belt Locks'},
                     {field: 'blackBeltAwardedAt', order: 'asc', tooltip: 'Sort by Date'}
                 ]
-            },
+            }
         }
     }, [])
 
     const sortOrder = tabData[tab]['columns'].find(col => col.field === sort) ? tabData[tab]['columns'].find(col => col.field === sort)['order'] : 'desc'
 
-    console.log('sortOrder', sortOrder)
-
     const filteredData = useMemo(() => {
-        return data.data
+        const allData = data.data
             .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
             .sort((a, b) => {
                 return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
             })
-    }, [data.data, tab, tabData])
+        return page === 'blackBelts'
+            ? allData.filter(leader => leader['blackBeltAwardedAt'] > 0)
+            : allData
+    }, [data.data, page, tab, tabData])
 
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
@@ -86,8 +92,8 @@ function Leaderboard({data, loading}) {
             return a[sort] - b[sort]
         })
         else return filteredData.sort((a, b) => {
-            return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
-        })
+                return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
+            })
     }, [sort, sortOrder, filteredData, tabData, tab])
 
     const updateTime = dayjs(data.metadata['updatedDateTime']).format('MM/DD/YY HH:mm')
@@ -102,8 +108,6 @@ function Leaderboard({data, loading}) {
         setSearchParams(searchParams)
         setPage(value)
     }, [searchParams, setSearchParams, tab])
-
-    console.log('sortedData', sortedData)
 
     const nav = (
         <React.Fragment>
@@ -126,7 +130,7 @@ function Leaderboard({data, loading}) {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16
             }}>
 
-                <div style={{flexGrow: 1, textAlign: 'center', marginBottom:20}}>
+                <div style={{flexGrow: 1, textAlign: 'center', marginBottom: 20}}>
                     <ToggleButtonGroup
                         variant='outlined'
                         size='large'
@@ -182,7 +186,7 @@ function Leaderboard({data, loading}) {
                 </TableContainer>
 
                 <Typography variant='caption' align='right' component='div' style={{width: '100%', marginTop: 8}}>
-                    Updated hourly, last update: {updateTime} GMT
+                    Last update: {updateTime} GMT
                 </Typography>
             </div>
         </React.Fragment>
@@ -199,7 +203,8 @@ const validSort = [
     'safelocksWishlist',
     'danLevel',
     'danPoints',
-    'blackBeltAwardedAt',
+    'blackBeltCount',
+    'blackBeltAwardedAt'
 ]
 
 const validTab = [

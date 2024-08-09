@@ -45,6 +45,8 @@ function LeaderboardHeader({columns}) {
                        style={{cursor: 'pointer'}}/>,
         danPoints: <NumbersIcon color={sort === 'danPoints' ? 'secondary' : undefined} onClick={handleSort('danPoints')}
                        style={{cursor: 'pointer'}}/>,
+        blackBeltCount: <LockOpenOutlinedIcon color={sort === 'blackBeltCount' ? 'secondary' : undefined} onClick={handleSort('blackBeltCount')}
+                                              style={{cursor: 'pointer'}}/>,
         blackBeltAwardedAt: <EventAvailableIcon color={sort === 'blackBeltAwardedAt' ? 'secondary' : undefined} onClick={handleSort('blackBeltAwardedAt')}
                        style={{cursor: 'pointer'}}/>,
 
