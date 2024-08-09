@@ -6,13 +6,12 @@ import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
-import {useNavigate, useSearchParams} from 'react-router-dom'
+import {useSearchParams} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize'
 
 function LeaderboardSearchBox({data}) {
     const style = {maxWidth: 450}
     const {isMobile} = useWindowSize()
-    const navigate = useNavigate()
     const inputEl = useRef()
     const [searchParams, setSearchParams] = useSearchParams()
 

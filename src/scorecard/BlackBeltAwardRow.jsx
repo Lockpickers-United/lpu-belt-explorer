@@ -66,6 +66,7 @@ function BlackBeltAwardRow({owner, date}) {
 
     return (
         <React.Fragment>
+
             <Accordion expanded={expanded} onChange={handleChange}>
                 <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                     <BeltStripe value='Black'/>
@@ -133,6 +134,7 @@ function BlackBeltAwardRow({owner, date}) {
                     </AccordionDetails>
                 }
             </Accordion>
+            <Divider/>
             <Divider/>
         </React.Fragment>
     )

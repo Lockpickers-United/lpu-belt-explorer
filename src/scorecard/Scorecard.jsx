@@ -17,6 +17,8 @@ import EvidenceForm from './EvidenceForm.jsx'
 import Menu from '@mui/material/Menu'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 import BlackBeltAwardRow from './BlackBeltAwardRow'
+import NoScorecardData from './NoScorecardData.jsx'
+
 
 function Scorecard({owner, profile}) {
     const {isMobile} = useWindowSize()
@@ -77,6 +79,10 @@ function Scorecard({owner, profile}) {
 
     const buttonsMargin = isMobile ? 10 : 40
     const headerDivStyle = isMobile ? 'block' : 'flex'
+
+    const danSheetImported = profile?.blackBeltAwardedAt > 0
+    const addProjectDivWidth = danSheetImported ? '100%' : '50%'
+
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#222',
@@ -84,67 +90,102 @@ function Scorecard({owner, profile}) {
         }}>
             <ProfileHeader profile={profile} page={'scorecard'}/>
 
-            {!isMobile
-                ? <div style={{display: headerDivStyle, padding: '10px 8px 0px 16px'}}>
-                    <div style={{marginRight: 0, width: 350}}>
-                        <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
-                    </div>
-                    <div style={{flexGrow: 1, marginRight: 0}}>
-                        <ScorecardDanStats/>
-                    </div>
-                </div>
-                : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
-                    <ScorecardDanStats/>
-                    <div style={{marginRight: 0, width: 350}}>
-                        <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
-                    </div>
-                </div>
+            {visibleEntries.length > 0 &&
+                <React.Fragment>
+                    {!isMobile
+                        ? <div style={{display: headerDivStyle, padding: '10px 8px 0px 16px'}}>
+                            <div style={{marginRight: 0, width: 350}}>
+                                <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
+                            </div>
+                            {profile.danLevel > 0 &&
+                                <div style={{flexGrow: 1, marginRight: 0}}>
+                                    <ScorecardDanStats/>
+                                </div>
+                            }
+                        </div>
+                        : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
+                            {profile.danLevel > 0 &&
+                                <ScorecardDanStats/>
+                            }
+                            <div style={{marginRight: 0, width: 350}}>
+                                <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
+                            </div>
+                        </div>
+                    }
+                </React.Fragment>
             }
 
             {(owner || admin) &&
                 <Accordion expanded={controlsExpanded} disableGutters={true}>
-
                     <AccordionSummary style={{
                         paddingLeft: buttonsMargin,
                         paddingRight: buttonsMargin,
-                        display: 'flex',
                         placeItems: 'center',
                         width: '100%'
                     }}>
-                        <div style={{width: '33%', textAlign: 'center'}}>
-                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                    onClick={handleMergeRecorded}>MERGE RECORDED&nbsp;({recordedIdsToMerge.length})
-                            </Button>
-                        </div>
+                        <div style={{width: '100%', placeItems: 'center', textAlign: 'center'}}>
 
-                        <div style={{width: '33%', textAlign: 'center'}}>
-                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                      onClick={handleOpen}>DELETE SCORECARD</Button>
-                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                      onClick={() => handleOpenControls('import')}>
-                                IMPORT DAN SHEET
-                            </Button>
-                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                <div style={{padding: 20, textAlign: 'center'}}>
-                                    You cannot undo delete.<br/>
-                                    Are you sure?
+                            <div style={{display: 'flex', width: '100%', placeItems: 'center', textAlign: 'center'}}>
+                                {!danSheetImported &&
+                                    <div style={{width: '50%', textAlign: 'center'}}>
+                                        <Button variant='outlined' color='secondary' size='small'
+                                                style={{lineHeight: '1rem'}}
+                                                onClick={() => handleOpenControls('import')}>
+                                            IMPORT DAN SHEET
+                                        </Button>
+                                    </div>
+                                }
+                                <div style={{width: addProjectDivWidth, textAlign: 'center'}}>
+                                    <Button variant='outlined' color='secondary' size='small'
+                                            style={{lineHeight: '1rem'}}
+                                            onClick={() => handleOpenControls('project')}>ADD PROJECT</Button>
                                 </div>
-                                <div style={{textAlign: 'center'}}>
-                                    <Button style={{marginBottom: 10, color: '#000'}}
-                                            variant='contained'
-                                            onClick={handleDeleteAll}
-                                            edge='start'
-                                            color='error'
-                                    >
-                                        Delete
-                                    </Button>
-                                </div>
-                            </Menu>
-                        </div>
+                            </div>
 
-                        <div style={{width: '33%', textAlign: 'center'}}>
-                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                    onClick={() => handleOpenControls('project')}>ADD PROJECT</Button>
+                            {admin &&
+                                <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
+                                    <div style={{display: 'flex'}}>
+                                        <div style={{width: '10%', textAlign: 'center'}}>
+                                            admin
+                                        </div>
+                                        <div style={{width: '30%', textAlign: 'center'}}>
+                                            <Button color='secondary' size='small'
+                                                    style={{lineHeight: '1rem'}}
+                                                    onClick={() => handleOpenControls('import')}>
+                                                IMPORT DAN SHEET
+                                            </Button>
+                                        </div>
+
+                                        <div style={{width: '30%', textAlign: 'center'}}>
+                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                                    onClick={handleMergeRecorded}>MERGE
+                                                RECORDED&nbsp;({recordedIdsToMerge.length})
+                                            </Button>
+                                        </div>
+                                        <div style={{width: '30%', textAlign: 'center'}}>
+                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                                    onClick={handleOpen}>DELETE SCORECARD</Button>
+                                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                                <div style={{padding: 20, textAlign: 'center'}}>
+                                                    You cannot undo delete.<br/>
+                                                    Are you sure?
+                                                </div>
+                                                <div style={{textAlign: 'center'}}>
+                                                    <Button style={{marginBottom: 10, color: '#000'}}
+                                                            variant='contained'
+                                                            onClick={handleDeleteAll}
+                                                            edge='start'
+                                                            color='error'
+                                                    >
+                                                        Delete
+                                                    </Button>
+                                                </div>
+                                            </Menu>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
                         </div>
                     </AccordionSummary>
 
@@ -156,9 +197,13 @@ function Scorecard({owner, profile}) {
                             <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true}/>
                         }
                     </AccordionDetails>
-
                 </Accordion>
             }
+
+            {visibleEntries.length === 0 &&
+                <NoScorecardData/>
+            }
+
             {profile && profile.blackBeltAwardedAt &&
                 <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
             }
