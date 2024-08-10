@@ -1,8 +1,7 @@
 export const collectionOptions = [
     {key: 'own', label: 'Own'},
     {key: 'picked', label: 'Picked'},
-    {key: 'wishlist', label: 'Wishlist'},
-    {key: 'recordedLocks', label: 'Scorecard'}
+    {key: 'wishlist', label: 'Wishlist'}
 ]
 
 export const validCollectionKeys = collectionOptions.map(c => c.key)
