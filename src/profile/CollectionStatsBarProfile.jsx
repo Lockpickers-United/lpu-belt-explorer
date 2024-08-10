@@ -7,7 +7,7 @@ function CollectionStatsBarProfile({lockCollection, userText, collectionBarHeigh
 
     const own = lockCollection.own ? lockCollection.own.length : 0
     const picked = lockCollection.picked ? lockCollection.picked.length : 0
-    const recorded = lockCollection.recorded ? lockCollection.recorded.length : 0
+    const recorded = lockCollection.recordedLocks ? lockCollection.recordedLocks.length : 0
     const wishlist = lockCollection.wishlist ? lockCollection.wishlist.length : 0
     const userSaves = own + picked + recorded + wishlist
 

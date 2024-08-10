@@ -163,12 +163,6 @@ function UserMenu() {
                         </MenuItem>
                         <MenuItem disabled>
                             <ListItemIcon>
-                                <VideocamOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Recorded</ListItemText>
-                        </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Wishlist</ListItemText>

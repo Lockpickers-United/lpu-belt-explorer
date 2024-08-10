@@ -3,8 +3,8 @@ export default profile => {
         ...new Set([
             ...profile?.own || [],
             ...profile?.picked || [],
-            ...profile?.recorded || [],
-            ...profile?.wishlist || []
+            ...profile?.wishlist || [],
+            ...profile?.recordedLocks || []
         ])
     ]
 }

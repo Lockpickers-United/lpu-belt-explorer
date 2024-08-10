@@ -17,7 +17,6 @@ function InlineCollectionCharts({profile, entries}) {
         const beltList = uniqueBelts.concat('Unranked')
 
         const beltDistribution = entries
-            //.filter(({collection}) => collection.some(r=> ['Own','Picked', 'Recorded'].includes(r)))
             .map(({belt}) => belt.includes('Black') ? 'Black' : belt)
             .reduce((acc, val) => {
                 if (!acc[val]) acc[val] = 0

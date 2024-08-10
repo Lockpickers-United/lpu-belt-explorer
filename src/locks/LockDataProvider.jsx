@@ -44,7 +44,7 @@ export function DataProvider({children, allEntries, profile}) {
                     profile?.own?.includes?.(entry.id) ? 'own' : 'Don\'t own',
                     profile?.picked?.includes?.(entry.id) ? 'picked' : 'Not picked',
                     profile?.wishlist?.includes?.(entry.id) ? 'wishlist' : 'Not on wishlist',
-                    profile?.recorded?.includes?.(entry.id) ? 'recorded' : 'Not recorded'
+                    profile?.recordedLocks?.includes?.(entry.id) ? 'scorecard' : 'Not on scorecard'
                 ],
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
