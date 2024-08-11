@@ -1,7 +1,6 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
-import AuthContext from '../app/AuthContext.jsx'
 import Tracker from '../app/Tracker'
 import collectionOptions from '../data/collectionTypes'
 import allEntries from '../data/data.json'
@@ -25,8 +24,7 @@ import ProfilePage from './ProfilePage'
 
 function ProfileRoute() {
     const {userId} = useParams()
-    const {user} = useContext(AuthContext)
-    const {getProfile, lockCollection} = useContext(DBContext)
+    const {getProfile} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
     const loadFn = useCallback(async () => {
@@ -40,7 +38,7 @@ function ProfileRoute() {
             console.error('Error loading profile.', ex)
             return null
         }
-    }, [getProfile, lockCollection, user, userId])
+    }, [getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
 
     const entries = useMemo(() => {
