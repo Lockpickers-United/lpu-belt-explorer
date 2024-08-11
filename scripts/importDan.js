@@ -581,16 +581,16 @@ for (let idx = 0; idx < pickers.length; idx++) {
 
     if (WRITE_TO_DB) {
         if (bbDatesByPicker[target]) {
-            await db.collection('unclaimed-blackbelts').doc(target).set({awardedAt: bbDatesByPicker[target], claimed: false})
+            await db.collection('unclaimed-blackbelts').doc(target.trim()).set({awardedAt: bbDatesByPicker[target], claimed: false})
         }
 
-        const docs = await db.collection('unclaimed-evidence').where('tabName', '==', target).get()
+        const docs = await db.collection('unclaimed-evidence').where('tabName', '==', target.trim()).get()
         docs.forEach(rec => rec.ref.delete())
 
         for (let idx=0; idx < idEntries.length; idx++) {
             const elem = idEntries[idx]
             let rec = {
-                tabName: target,
+                tabName: target.trim(),
                 evidenceNotes: elem.entry.lock,
                 evidenceUrl: elem.entry.link,
                 modifier: ''

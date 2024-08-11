@@ -217,7 +217,7 @@ export function DBProvider({children}) {
     }, [])
 
     const importUnclaimedEvidence = useCallback(async (userId, tabName) => {
-        const bbRef = doc(db, 'unclaimed-blackbelts', tabName)
+        const bbRef = doc(db, 'unclaimed-blackbelts', tabName.trim())
         const profileRef = doc(db, 'lockcollections', userId)
 
         await runTransaction(db, async transaction => {
@@ -225,7 +225,7 @@ export function DBProvider({children}) {
             const profileDoc = await transaction.get(profileRef)
             const dateStr = bbDoc.data().awardedAt
 
-            const profileDelta = {awardedBelt: 'Black', tabClaimed: tabName, blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
+            const profileDelta = {awardedBelt: 'Black', tabClaimed: tabName.trim(), blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
             if (!profileDoc.exists()) {
                 transaction.set(profileRef, profileDelta)
             } else {
@@ -234,7 +234,7 @@ export function DBProvider({children}) {
             transaction.update(bbRef, {claimed: true})
         })
 
-        const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName))
+        const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName.trim()))
         const querySnapshot = await getDocs(q)
         const newEvidence = querySnapshot.docs.map(d => d.data())
         const newMatchIds = newEvidence.map(e => e.projectId)
