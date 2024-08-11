@@ -1,18 +1,40 @@
-export const collectionOptions = [
+const lockMap = [
+    {key: 'any', label: 'Any', entry: 'system:any'},
     {key: 'own', label: 'Own', entry: 'checkbox'},
     {key: 'picked', label: 'Picked', entry: 'checkbox'},
     {key: 'wishlist', label: 'Wishlist', entry: 'checkbox'},
     {key: 'recordedLocks', label: 'Scorecard', entry: 'form'}
 ]
 
-export const validCollectionKeys = collectionOptions.map(c => c.key)
-export const validCollectionTypes = collectionOptions.map(c => c.label)
-
-export const safelockCollectionOptions = [
+const safelockMap = [
+    {key: 'safelocksAny', label: 'Any', entry: 'system:any'},
     {key: 'safelocksOwn', label: 'Own', entry: 'checkbox'},
     {key: 'safelocksCracked', label: 'Cracked', entry: 'checkbox'},
     {key: 'safelocksWishlist', label: 'Wishlist', entry: 'checkbox'}
 ]
 
-export const safelocksValidCollectionKeys = safelockCollectionOptions.map(c => c.key)
-export const safelocksValidCollectionTypes = safelockCollectionOptions.map(c => c.label)
+const collectionOptions = {
+    locks: {
+        map: lockMap,
+        keys: lockMap.map(l => l.key),
+        labels: lockMap.map(l => l.label),
+        keyByLabel: lockMap.reduce((acc, row) => {
+            acc[row.label] = row.key
+            return acc
+        }, {}),
+        getCollected: (profile) => profile ? profile[lockMap.find(l => l.entry === 'system:any').key] : []
+    },
+
+    safelocks: {
+        map: safelockMap,
+        keys: safelockMap.map(l => l.key),
+        labels: safelockMap.map(l => l.label),
+        keyByLabel: safelockMap.reduce((acc, row) => {
+            acc[row.label] = row.key
+            return acc
+        }, {}),
+        getCollected: (profile) => profile ? profile[safelockMap.find(l => l.entry === 'system:any').key] : []
+    }
+}
+
+export default collectionOptions

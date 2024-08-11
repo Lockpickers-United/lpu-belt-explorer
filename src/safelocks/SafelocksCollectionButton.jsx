@@ -13,7 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
-import {safelockCollectionOptions, safelocksValidCollectionKeys} from '../data/collectionTypes'
+import collectionOptions from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 
 function SafelockCollectionButton({id, dense}) {
@@ -25,7 +25,7 @@ function SafelockCollectionButton({id, dense}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {isMobile} = useWindowSize()
 
-    const collected = Object.keys(lockCollection).some(key => safelocksValidCollectionKeys.includes(key))
+    const collected = collectionOptions.safelocks.getCollected(lockCollection).includes(id)
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
     const handleChange = useCallback(key => (event, checked) => {
@@ -80,7 +80,7 @@ function SafelockCollectionButton({id, dense}) {
                     />
                     <CardContent style={{paddingTop: 0}}>
                         <FormGroup>
-                            {safelockCollectionOptions.filter(c => c.entry === 'checkbox').map(({key, label}) =>
+                            {collectionOptions.safelocks.map.filter(c => c.entry === 'checkbox').map(({key, label}) =>
                                 <FormControlLabel
                                     key={key}
                                     control={

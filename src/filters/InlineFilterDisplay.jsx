@@ -1,12 +1,11 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useContext} from 'react'
 import FormControl from '@mui/material/FormControl'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
-import {validCollectionTypes, collectionOptions, safelocksValidCollectionTypes, safelockCollectionOptions} from '../data/collectionTypes'
-import getAnyCollection, {getAnySafelockCollection} from '../util/getAnyCollection'
+import collectionOptions from '../data/collectionTypes'
 import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
@@ -18,54 +17,34 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
     const {filters, filterCount, addFilter} = useContext(FilterContext)
     const [open, setOpen] = React.useState(false)
 
-    const collectionTypes = collectionType === 'safelocks'
-        ? ['Any', ...safelocksValidCollectionTypes]
-        : ['Any', ...validCollectionTypes]
+    const collectionLabels = collectionOptions[collectionType].labels
+    const collectionKeyByLabel = collectionOptions[collectionType].keyByLabel
+    const collectedLocks = collectionOptions[collectionType].getCollected(profile) || []
 
-    const options = collectionType === 'safelocks'
-        ? safelockCollectionOptions
-        : collectionOptions
-
-    const anyCollection = collectionType === 'safelocks'
-        ? useMemo(() => getAnySafelockCollection(profile), [profile])
-        : useMemo(() => getAnyCollection(profile), [profile])
-
-    const collectionMap = options.reduce((acc, collection) => {
-        acc[collection.label] = collection.key
-        return acc
-    }, {})
-    collectionMap['Any'] = 'any'
-
-    const collectionValues = options.reduce((acc, collection) => {
-        acc.push(collection.key)
-        return acc
-    }, [])
-
-    const {collection = (userId && filterCount === 0 ? 'any' : null)} = filters
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, borderRadius: 0}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
+
+    const {collection = (userId && filterCount === 0 ? 'Any' : null)} = filters
+    const isValidCollection = collectionLabels.includes(collection) && filterCount < 2
 
     let currentCollection = ''
     if (collection) {
         if (typeof collection === 'string') {
             currentCollection = collection
         } else {
-            currentCollection = 'any'
+            currentCollection = 'Any'
         }
     }
 
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
-
     const handleChange = useCallback(event => {
         addFilter('collection', event.target.value, true)
     }, [addFilter])
 
     if (!filterCount && !userId) return null
-    const isValidCollection = typeof collection === 'string' &&
-        (collectionValues.includes(collection) || collection === 'any') && filterCount < 2
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 2}}>
@@ -87,9 +66,9 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
                                 style={{backgroundColor: '#222', fontSize: '1.1rem', fontWeight: 500}}
                                 color='secondary'
                             >
-                                {collectionTypes.map((list, index) =>
-                                    <MenuItem key={index} value={collectionMap[list]}>
-                                        {list} ({list === 'Any' ? anyCollection.length : profile[collectionMap[list]]?.length || 0})
+                                {collectionLabels.map((list, index) =>
+                                    <MenuItem key={index} value={list}>
+                                        {list} ({list === 'Any' ? collectedLocks.length : profile[collectionKeyByLabel[list]]?.length || 0})
                                     </MenuItem>
                                 )}
                             </Select>

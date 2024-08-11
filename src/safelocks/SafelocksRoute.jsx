@@ -34,7 +34,7 @@ function SafelocksRoute() {
             <SafelocksDataProvider allEntries={dials} profile={lockCollection}>
                 <Nav title='Safe Locks' extras={nav}/>
 
-                <SafelocksPage/>
+                <SafelocksPage profile={lockCollection}/>
 
                 <Footer/>
 

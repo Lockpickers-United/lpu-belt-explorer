@@ -6,6 +6,7 @@ import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 import calculateScoreForUser from '../scorecard/scoring'
 import {isLock} from '../entries/entryutils'
+import collectionOptions from '../data/collectionTypes'
 
 const DBContext = React.createContext({})
 
@@ -21,6 +22,17 @@ function evidenceDB2State(id, dbRec) {
         date: dateStr,
         modifier: dbRec.modifier
     }
+}
+
+function profileDB2State(dbRec) {
+    const additionalFields = Object.keys(collectionOptions).reduce((acc, type) => {
+        const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any').key
+        const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any').map(c => c.key)
+        acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
+        return acc
+    }, {})
+
+    return {...dbRec, ...additionalFields}
 }
 
 async function evidenceCache(userId) {
@@ -143,7 +155,7 @@ export function DBProvider({children}) {
     const getProfile = useCallback(async userId => {
         const ref = doc(db, 'lockcollections', userId)
         const value = await getDoc(ref)
-        return value.data()
+        return profileDB2State(value.data())
     }, [])
 
     const addEvidence = useCallback(async (userId, evid) => {
@@ -332,7 +344,8 @@ export function DBProvider({children}) {
             return onSnapshot(ref, async doc => {
                 const data = doc.data()
                 if (data) {
-                    setLockCollection(data)
+                    const toSet = profileDB2State(data)
+                    setLockCollection(toSet)
                 } else {
                     setLockCollection({})
                 }

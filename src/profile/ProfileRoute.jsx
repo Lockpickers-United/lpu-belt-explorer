@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
 import AuthContext from '../app/AuthContext.jsx'
 import Tracker from '../app/Tracker'
-import {collectionOptions} from '../data/collectionTypes'
+import collectionOptions from '../data/collectionTypes'
 import allEntries from '../data/data.json'
 import {lockFilterFields} from '../data/filterFields'
 import {lockSortFields} from '../data/sortFields'
@@ -31,7 +31,7 @@ function ProfileRoute() {
 
     const loadFn = useCallback(async () => {
         try {
-            const profile = user?.uid !== userId ? await getProfile(userId) : lockCollection
+            const profile = await getProfile(userId)
             document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
             return profile
         } catch (ex) {
@@ -43,8 +43,7 @@ function ProfileRoute() {
 
     const entries = useMemo(() => {
         if (loading || !data) return []
-        const uniqueIds = new Set(collectionOptions
-            .flatMap(({key}) => data[key]))
+        const uniqueIds = new Set(collectionOptions.locks.getCollected(data))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
     }, [data, loading])
 

@@ -1,17 +1,15 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
-import getAnyCollection from '../util/getAnyCollection'
 import FilterContext from '../context/FilterContext'
 import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
+import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
-
-    const anyCollection = useMemo(() => getAnyCollection(profile), [profile])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -39,16 +37,10 @@ export function DataProvider({children, allEntries, profile}) {
                     entry.belt.startsWith('Black') ? 'Is Black' : undefined,
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
-                collection: [
-                    anyCollection.includes(entry.id) ? 'any' : 'Not in any Collection',
-                    profile?.own?.includes?.(entry.id) ? 'own' : 'Don\'t own',
-                    profile?.picked?.includes?.(entry.id) ? 'picked' : 'Not picked',
-                    profile?.wishlist?.includes?.(entry.id) ? 'wishlist' : 'Not on wishlist',
-                    profile?.recordedLocks?.includes?.(entry.id) ? 'recordedLocks' : 'Not recordedLocks'
-                ],
+                collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [allEntries, anyCollection, profile])
+    }, [allEntries, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

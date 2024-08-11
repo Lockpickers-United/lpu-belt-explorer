@@ -20,7 +20,7 @@ function ProfilePage({profile}) {
         }}>
 
             <ProfileHeader profile={profile} page={'collection'}/>
-            <InlineFilterDisplay profile={profile}/>
+            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
             <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 
             {compact

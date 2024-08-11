@@ -5,7 +5,7 @@ import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import NoEntriesCard from '../locks/NoEntriesCard'
 import SafelockEntry from './SafelockEntry.jsx'
 
-function SafelocksPage() {
+function SafelocksPage({profile}) {
     const [searchParams, setSearchParams] = useSearchParams()
     const [expanded, setExpanded] = useState(searchParams.get('id'))
     const {allEntries, visibleEntries} = useContext(DataContext)
@@ -25,7 +25,7 @@ function SafelocksPage() {
 
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
-            <InlineFilterDisplay/>
+            <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Dials'/>}
 

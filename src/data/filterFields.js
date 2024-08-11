@@ -17,7 +17,8 @@ export const dialFilterFields = [
     {label: 'Fence Type', fieldName: 'fence'},
     {label: 'Digits', fieldName: 'digits'},
     {label: 'Features', fieldName: 'features'},
-    {label: 'Content', fieldName: 'content'}
+    {label: 'Content', fieldName: 'content'},
+    {label: 'Collection', fieldName: 'collection', userBased: true}
 ]
 
 export const scorecardFilterFields = [

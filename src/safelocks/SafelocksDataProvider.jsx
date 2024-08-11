@@ -1,16 +1,15 @@
-import dayjs from 'dayjs'
 import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import removeAccents from 'remove-accents'
 import DataContext from '../context/DataContext'
-import {getAnySafelockCollection} from '../util/getAnyCollection'
 import FilterContext from '../context/FilterContext'
+import dayjs from 'dayjs'
+import collectionOptions from '../data/collectionTypes'
+import removeAccents from 'remove-accents'
 import {groupSort, groupSortReverse} from './groups'
 
 export function SafelocksDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
-    const anyCollection = useMemo(() => getAnySafelockCollection(profile), [profile])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -26,14 +25,9 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links'
                 ].flat().filter(x => x),
-                collection: [
-                    anyCollection.includes(entry.id) ? 'any' : 'Not in any Collection',
-                    profile?.safelocksOwn?.includes?.(entry.id) ? 'safelocksOwn' : 'Don\'t safelocksOwn',
-                    profile?.safelocksCracked?.includes?.(entry.id) ? 'safelocksCracked' : 'Not safelocksCracked',
-                    profile?.safelocksWishlist?.includes?.(entry.id) ? 'safelocksWishlist' : 'Not on safelocksWishlist'
-                ]
+                collection: collectionOptions.safelocks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
             }))
-    }, [allEntries, anyCollection, profile])
+    }, [allEntries, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

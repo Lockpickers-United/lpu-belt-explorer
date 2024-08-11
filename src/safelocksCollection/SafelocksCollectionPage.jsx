@@ -2,7 +2,6 @@ import React, {useState, useContext, useDeferredValue} from 'react'
 import SafelockEntry from '../safelocks/SafelockEntry.jsx'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import DataContext from '../context/DataContext'
-import ProfileHeader from '../profile/ProfileHeader.jsx'
 
 function SafelocksCollectionPage({profile}) {
     const [expanded, setExpanded] = useState(false)

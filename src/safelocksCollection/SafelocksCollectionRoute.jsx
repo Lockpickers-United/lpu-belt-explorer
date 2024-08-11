@@ -20,7 +20,7 @@ import ProfileNotFound from '../profile/ProfileNotFound'
 import SafelocksCollectionPage from './SafelocksCollectionPage.jsx'
 import SafelocksDataProvider from '../safelocks/SafelocksDataProvider.jsx'
 import allEntries from '../data/safelocks.json'
-import {safelockCollectionOptions} from '../data/collectionTypes'
+import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 
 function ProfileRoute() {
@@ -44,8 +44,7 @@ function ProfileRoute() {
 
     const entries = useMemo(() => {
         if (loading || !data) return []
-        const uniqueIds = new Set(safelockCollectionOptions
-            .flatMap(({key}) => data[key]))
+        const uniqueIds = new Set(collectionOptions.safelocks.getCollected(data))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
     }, [data, loading])
 

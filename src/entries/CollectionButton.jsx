@@ -13,7 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
-import {collectionOptions, validCollectionKeys} from '../data/collectionTypes'
+import collectionOptions from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import RecordingControls from './RecordingControls'
 import LoadingDisplay from '../misc/LoadingDisplay'
@@ -28,7 +28,7 @@ function CollectionButton({id, dense}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {isMobile} = useWindowSize()
 
-    const collected = Object.keys(lockCollection).some(key => validCollectionKeys.includes(key))
+    const collected = collectionOptions.locks.getCollected(lockCollection).includes(id)
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
     const handleChange = useCallback(key => async (event, checked) => {
@@ -88,7 +88,7 @@ function CollectionButton({id, dense}) {
                         :
                             <React.Fragment>
                                 <FormGroup>
-                                    {collectionOptions.filter(c => c.entry === 'checkbox').map(({key, label}) =>
+                                    {collectionOptions.locks.map.filter(c => c.entry === 'checkbox').map(({key, label}) =>
                                         <FormControlLabel
                                             key={key}
                                             control={

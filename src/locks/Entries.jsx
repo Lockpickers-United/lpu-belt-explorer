@@ -27,7 +27,7 @@ function Entries({profile}) {
 
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
-            <InlineFilterDisplay profile={profile}/>
+            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
 
             {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
