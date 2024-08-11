@@ -2,6 +2,7 @@ import React, {useState, useMemo, useContext, useCallback} from 'react'
 import {useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import DBContext from '../app/DBContext.jsx'
+import AppContext from '../app/AppContext'
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 import ScorecardListContext from './ScorecardListContext'
@@ -27,7 +28,8 @@ function Scorecard({owner, profile}) {
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
     const {expanded} = useContext(ScorecardListContext)
     const {filters, removeFilters} = useContext(FilterContext)
-    const {admin, createEvidenceForEntries, removeEvidence} = useContext(DBContext)
+    const {createEvidenceForEntries, removeEvidence} = useContext(DBContext)
+    const {admin} = useContext(AppContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)

@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
 import querystring from 'query-string'
-import DBContext from './DBContext'
+import AppContext from './AppContext'
 
 function Tracker({feature, ...extraParams}) {
-    const {admin} = useContext(DBContext)
+    const {admin} = useContext(AppContext)
     if (import.meta.env.DEV || admin) return null
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = files[feature] || 'lpu.gif'

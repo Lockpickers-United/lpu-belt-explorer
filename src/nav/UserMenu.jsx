@@ -8,10 +8,10 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
-import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import EditIcon from '@mui/icons-material/Edit'
@@ -22,12 +22,14 @@ import Tooltip from '@mui/material/Tooltip'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
+import AppContext from '../app/AppContext'
 import {useNavigate} from 'react-router-dom'
 
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {lockCollection} = useContext(DBContext)
+    const {adminRole, lockCollection} = useContext(DBContext)
+    const {admin, setAdmin} = useContext(AppContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -40,6 +42,10 @@ function UserMenu() {
         handleClose()
         navigate(url)
     }, [handleClose, navigate])
+
+    const handleToggleAdmin = useCallback(() => {
+        setAdmin(!admin)
+    }, [admin, setAdmin])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -88,7 +94,18 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>Edit Profile</ListItemText>
                         </MenuItem>
-
+                        {adminRole &&
+                            <MenuItem onClick={handleToggleAdmin}>
+                                <ListItemIcon>
+                                    <AdminPanelSettingsIcon/>
+                                </ListItemIcon>
+                                {admin ?
+                                    <ListItemText>Disable Admin</ListItemText>
+                                :
+                                    <ListItemText>Enable Admin</ListItemText>
+                                }
+                            </MenuItem>
+                        }
                         <Divider/>
 
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>

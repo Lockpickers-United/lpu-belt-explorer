@@ -10,14 +10,12 @@ import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 import {useNavigate} from 'react-router-dom'
 import AppContext from '../app/AppContext'
-import DBContext from '../app/DBContext'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
 
 function MainMenu() {
-    const {beta} = useContext(AppContext)
-    const {admin} = useContext(DBContext)
+    const {beta, admin} = useContext(AppContext)
     const [open, setOpen] = useState(false)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
     const navigate = useNavigate()
