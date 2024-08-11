@@ -25,14 +25,18 @@ function evidenceDB2State(id, dbRec) {
 }
 
 function profileDB2State(dbRec) {
-    const additionalFields = Object.keys(collectionOptions).reduce((acc, type) => {
-        const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any').key
-        const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any').map(c => c.key)
-        acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
-        return acc
-    }, {})
+    if (dbRec) {
+        const additionalFields = Object.keys(collectionOptions).reduce((acc, type) => {
+            const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any').key
+            const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any').map(c => c.key)
+            acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
+            return acc
+        }, {})
 
-    return {...dbRec, ...additionalFields}
+        return {...dbRec, ...additionalFields}
+    } else {
+        return dbRec
+    }
 }
 
 async function evidenceCache(userId) {

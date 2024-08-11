@@ -32,7 +32,9 @@ function ProfileRoute() {
     const loadFn = useCallback(async () => {
         try {
             const profile = await getProfile(userId)
-            document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
+            if (profile) {
+                document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
+            }
             return profile
         } catch (ex) {
             console.error('Error loading profile.', ex)
