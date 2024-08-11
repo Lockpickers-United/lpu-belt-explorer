@@ -28,7 +28,7 @@ function CollectionButton({id, dense}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {isMobile} = useWindowSize()
 
-    const collected = collectionOptions.locks.getCollected(lockCollection).includes(id)
+    const collected = collectionOptions.locks.getCollected(lockCollection)?.includes(id)
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
     const handleChange = useCallback(key => async (event, checked) => {

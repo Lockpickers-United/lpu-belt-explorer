@@ -25,7 +25,7 @@ function SafelockCollectionButton({id, dense}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {isMobile} = useWindowSize()
 
-    const collected = collectionOptions.safelocks.getCollected(lockCollection).includes(id)
+    const collected = collectionOptions.safelocks.getCollected(lockCollection)?.includes(id)
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
     const handleChange = useCallback(key => (event, checked) => {
