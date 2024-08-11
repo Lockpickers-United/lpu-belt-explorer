@@ -29,8 +29,8 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
                 collection: [
                     anyCollection.includes(entry.id) ? 'any' : 'Not in any Collection',
                     profile?.safelocksOwn?.includes?.(entry.id) ? 'safelocksOwn' : 'Don\'t safelocksOwn',
-                    profile?.safelockCracked?.includes?.(entry.id) ? 'safelockCracked' : 'Not safelockCracked',
-                    profile?.safelockWishlist?.includes?.(entry.id) ? 'safelockWishlist' : 'Not on safelockWishlist'
+                    profile?.safelocksCracked?.includes?.(entry.id) ? 'safelocksCracked' : 'Not safelocksCracked',
+                    profile?.safelocksWishlist?.includes?.(entry.id) ? 'safelocksWishlist' : 'Not on safelocksWishlist'
                 ]
             }))
     }, [allEntries, anyCollection, profile])

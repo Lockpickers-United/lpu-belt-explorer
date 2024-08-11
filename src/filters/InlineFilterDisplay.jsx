@@ -14,7 +14,6 @@ import useWindowSize from '../util/useWindowSize'
 import InputLabel from '@mui/material/InputLabel'
 
 function InlineFilterDisplay({profile = {}, collectionType}) {
-    //const collectionType = 'safelocks'
     const {userId} = useParams()
     const {filters, filterCount, addFilter} = useContext(FilterContext)
     const [open, setOpen] = React.useState(false)
