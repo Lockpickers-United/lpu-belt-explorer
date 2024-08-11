@@ -225,7 +225,7 @@ export function DBProvider({children}) {
             const profileDoc = await transaction.get(profileRef)
             const dateStr = bbDoc.data().awardedAt
 
-            const profileDelta = {awardedBelt: 'Black', blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
+            const profileDelta = {awardedBelt: 'Black', tabClaimed: tabName, blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
             if (!profileDoc.exists()) {
                 transaction.set(profileRef, profileDelta)
             } else {
