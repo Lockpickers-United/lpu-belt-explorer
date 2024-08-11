@@ -27,36 +27,54 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
 
     return (
         <React.Fragment>
-            <div style={{placeItems:'center', display:formDisplayStyle}}>
-                {importing ? 
+            <div style={{placeItems: 'center', display: formDisplayStyle}}>
+                {importing ?
                     <LoadingDisplay/>
-                :
+                    :
                     <React.Fragment>
-                        <div style={{padding: 20, width: 340}}>
-                            For Black Belts only. Specify your tab in the Dan Sheet to import. Please note that tab names are
-                            case sensitive.
+                        <div style={{padding: 20}}>
+                            <strong>For Black Belt pickers only.</strong><br/>
+                            Black Belt pickers currently use another scorecard system known as the Dan Sheet.
+                            This import allows them to bring their picking history over to the site.
+                            If you do not already have a tab in the Dan sheet, this import will not work for you.
+                            For those that do, specify the name of your tab in the sheet to import your history into
+                            your Scorecard.
+                            Please note that tab names are case sensitive.
+                            <br/><br/>
+
+                            <div style={{padding: '0px', alignItems:'center'}}>
+                                <div style={{padding: '0px', display: 'flex'}}>
+            <div style={{flexGrow:1}}> </div>
+                                    <TextField
+                                        id='tab-to-import'
+                                        label='Tab to Import'
+                                        value={tabToImport}
+                                        size='small'
+                                        margin='dense'
+                                        color='secondary'
+                                        onChange={e => {
+                                            setTabToImport(e.target.value)
+                                        }}
+                                    />
+                                    <Button style={{
+                                        color: '#000',
+                                        padding: 0,
+                                        lineHeight: '1rem',
+                                        height: 40,
+                                        marginTop: 8,
+                                        marginLeft: 10
+                                    }}
+                                            variant='contained'
+                                            onClick={handleImport}
+                                            edge='start'
+                                            color='secondary'
+                                    >
+                                        Import
+                                    </Button>
+                                </div>
+                            </div>
                         </div>
-                        <div style={{padding: '0px', textAlign: 'center', display: 'flex', marginLeft:20, width: 340}}>
-                            <TextField
-                                id='tab-to-import'
-                                label='Tab to Import'
-                                value={tabToImport}
-                                size='small'
-                                margin='dense'
-                                color='secondary'
-                                onChange={e => {
-                                    setTabToImport(e.target.value)
-                                }}
-                            />
-                            <Button style={{color: '#000', padding:0, lineHeight:'1rem', height:40, marginTop:8, marginLeft:10}}
-                                    variant='contained'
-                                    onClick={handleImport}
-                                    edge='start'
-                                    color='secondary'
-                            >
-                                Import
-                            </Button>
-                        </div>
+
                     </React.Fragment>
                 }
             </div>
