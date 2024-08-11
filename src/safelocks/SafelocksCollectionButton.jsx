@@ -25,15 +25,8 @@ function SafelockCollectionButton({id, dense}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {isMobile} = useWindowSize()
 
-    const isCollected = useMemo(() => {
-        return Object.keys(lockCollection)
-            .filter(key => safelocksValidCollectionKeys.includes(key))
-            .reduce((acc, key) => acc || lockCollection[key].includes(id), false)
-    }, [id, lockCollection])
-
-    const isChecked = useCallback(key => {
-        return !!lockCollection[key] && !!lockCollection[key].includes(id)
-    }, [id, lockCollection])
+    const collected = Object.keys(lockCollection).some(key => safelocksValidCollectionKeys.includes(key))
+    const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
     const handleChange = useCallback(key => (event, checked) => {
         event.preventDefault()
@@ -55,14 +48,14 @@ function SafelockCollectionButton({id, dense}) {
                             color='inherit'
                             onClick={handleOpen}
                         >
-                            <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'} fontSize='small'/>
+                            <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'} fontSize='small'/>
                         </IconButton>
                         : <Button
                             variant='outlined'
                             color='inherit'
                             onClick={handleOpen}
                             startIcon={
-                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}
+                                <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'}
                                                   fontSize={isMobile ? 'small' : 'medium'}/>
                             }
                         >
@@ -87,7 +80,7 @@ function SafelockCollectionButton({id, dense}) {
                     />
                     <CardContent style={{paddingTop: 0}}>
                         <FormGroup>
-                            {safelockCollectionOptions.map(({key, label}) =>
+                            {safelockCollectionOptions.filter(c => c.entry === 'checkbox').map(({key, label}) =>
                                 <FormControlLabel
                                     key={key}
                                     control={
