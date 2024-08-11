@@ -28,7 +28,7 @@ function Scorecard({owner, profile}) {
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
     const {expanded} = useContext(ScorecardListContext)
     const {filters, removeFilters} = useContext(FilterContext)
-    const {createEvidenceForEntries, removeEvidence} = useContext(DBContext)
+    const {createEvidenceForEntries, removeEvidence, removeProfileBlackBeltAwarded} = useContext(DBContext)
     const {admin} = useContext(AppContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
@@ -76,8 +76,9 @@ function Scorecard({owner, profile}) {
 
     const handleDeleteAll = useCallback(() => {
         removeEvidence(cardEvidence)
+        removeProfileBlackBeltAwarded(userId)
         handleClose()
-    }, [cardEvidence, removeEvidence, handleClose])
+    }, [cardEvidence, removeEvidence, handleClose, removeProfileBlackBeltAwarded, userId])
 
     const buttonsMargin = isMobile ? 10 : 40
     const headerDivStyle = isMobile ? 'block' : 'flex'

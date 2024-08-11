@@ -123,6 +123,12 @@ export function DBProvider({children}) {
         await updateDoc(ref, {blackBeltAwardedAt: Timestamp.fromDate(new Date(date))})
     }, [dbError])
 
+    const removeProfileBlackBeltAwarded = useCallback(async (userId) => {
+        if (dbError) return false
+        const ref = doc(db, 'lockcollections', userId)
+        await updateDoc(ref, {blackBeltAwardedAt: deleteField()})
+    }, [dbError])
+
     const clearProfile = useCallback(async () => {
         if (dbError) return false
         const ref = doc(db, 'lockcollections', user.uid)
@@ -369,6 +375,7 @@ export function DBProvider({children}) {
         getProfile,
         updateProfileVisibility,
         updateProfileBlackBeltAwardedAt,
+        removeProfileBlackBeltAwarded,
         clearProfile,
         evidence,
         addEvidence,
@@ -378,7 +385,7 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
+    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
 
     return (
         <DBContext.Provider value={value}>

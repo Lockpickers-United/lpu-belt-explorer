@@ -1,5 +1,5 @@
 import IconButton from '@mui/material/IconButton'
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -16,13 +16,11 @@ import DBContext from '../app/DBContext'
 import {collectionOptions, validCollectionKeys} from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import RecordingControls from './RecordingControls'
-import ScoringContext from '../context/ScoringContext.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay'
 
 function CollectionButton({id, dense}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
-    const {scoredEvidence} = useContext(ScoringContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const [checkboxUpdating, setCheckboxUpdating] = useState(false)
     const open = Boolean(anchorEl)
