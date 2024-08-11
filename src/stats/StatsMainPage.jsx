@@ -62,8 +62,7 @@ function StatsMainPage({data}) {
             <RedditBeltGrowth data={data}/>
 
             <div style={headerStyle}>Collection Stats</div>
-
-            <CollectionStatsBar lockCollection={lockCollection} userText={'You'} collectionBarHeight={collectionBarHeight}/>
+            <CollectionStatsBar data={data} lockCollection={lockCollection} userText={'You'} collectionBarHeight={collectionBarHeight}/>
 
             <div style={headerStyle}>Collections Top Locks</div>
             <CollectionTopLocks data={data}/>
