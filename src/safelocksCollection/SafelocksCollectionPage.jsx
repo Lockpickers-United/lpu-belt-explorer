@@ -15,7 +15,6 @@ function SafelocksCollectionPage({profile}) {
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
 
-            <ProfileHeader profile={profile} page={'safelocks'}/>
             <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
 
             { visibleEntries?.map(entry =>

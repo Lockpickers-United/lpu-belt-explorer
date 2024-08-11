@@ -167,7 +167,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                 <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
 
                     <DatePicker
-                        label='Pick date'
+                        label= 'Date'
                         value={evidenceDate}
                         onChange={(newValue) => {
                             setEvidenceDate(newValue)
