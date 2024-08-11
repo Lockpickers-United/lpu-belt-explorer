@@ -99,7 +99,7 @@ function BlackBeltAwardRow({owner, date}) {
                             <React.Fragment>
                                 <div style={{display: 'flex', width: '100%', marginBottom: 20}}>
                                     <DatePicker
-                                        label='Pick date'
+                                        label='Awarded date'
                                         value={evidenceDate}
                                         onChange={(newValue) => {
                                             setEvidenceDate(newValue)
