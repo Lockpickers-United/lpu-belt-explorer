@@ -6,7 +6,7 @@ function CollectionTopLocks({data}) {
     const {
         topLocksOwn,
         topLocksPicked,
-        topLocksRecorded,
+        topLocksScorecard,
         topLocksWishlist
     } = data.collectionsSummary.topLocksFull
 
@@ -30,8 +30,8 @@ function CollectionTopLocks({data}) {
                 <CollectionTopLocksList dataset={topLocksPicked.data} title='Picked'/>
             </div>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={topLocksRecorded.data} title='Recorded'/>
                 <CollectionTopLocksList dataset={topLocksWishlist.data} title='Wishlist'/>
+                <CollectionTopLocksList dataset={topLocksScorecard.data} title='Scorecard'/>
             </div>
         </div>
     )

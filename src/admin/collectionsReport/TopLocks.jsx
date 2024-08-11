@@ -7,7 +7,7 @@ const TopLocks = ({data}) => {
     const {
         topLocksOwn,
         topLocksPicked,
-        topLocksRecorded,
+        topLocksScorecard,
         topLocksWishlist
     } = data.topLocksFull
 
@@ -37,9 +37,9 @@ const TopLocks = ({data}) => {
                 <AdminStatsTable tableData={topLocksPicked} tableWidth={tableWidth} fontSize={fontSize} wrap={true}/>
             </div>
             <div style={combinedDivStyle}>
-                <AdminStatsTable tableData={topLocksRecorded} tableWidth={tableWidth} fontSize={fontSize} wrap={true}/>
-                <div style={{width: '75px'}}>&nbsp;</div>
                 <AdminStatsTable tableData={topLocksWishlist} tableWidth={tableWidth} fontSize={fontSize} wrap={true}/>
+                <div style={{width: '75px'}}>&nbsp;</div>
+                <AdminStatsTable tableData={topLocksScorecard} tableWidth={tableWidth} fontSize={fontSize} wrap={true}/>
             </div>
         </div>
     )

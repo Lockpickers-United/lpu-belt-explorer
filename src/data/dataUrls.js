@@ -7,8 +7,8 @@ if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
 }
 
 export const brandDistribution = `${url}/statsBrandDistribution.json`
-export const collectionsFull = `${url}/statsCollectionsFull.json`
-export const collectionsSummary = `${url}/statsCollectionsSummary.json`
+export const collectionsFull = `${url}/statsCollectionsFull2.json`
+export const collectionsSummary = `${url}/statsCollectionsSummary2.json`
 export const lockSummary = `${url}/statsLockSummary.json`
 export const popularAreas = `${url}/statsPopularAreas.json`
 export const redditGrowth = `${url}/statsRedditGrowth.json`
