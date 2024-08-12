@@ -1,4 +1,4 @@
-import React, {useContext, useCallback} from 'react'
+import React, {useContext, useCallback, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import dayjs from 'dayjs'
 import useData from '../util/useData.jsx'
@@ -32,7 +32,17 @@ function ScorecardRoute() {
     const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
+    const [triggerState, setTriggerState] = useState(false)
+    const handleAdminAction = useCallback(() => {
+        setTriggerState(!triggerState)
+    }, [triggerState])
+
     const loadFn = useCallback(async () => {
+        if (triggerState) {
+            // terrible hack to reload data when an admin takes 
+            // action to modify another user's scorecard
+            triggerState
+        }
         try {
             const profile = await getProfile(userId)
             const name = profile && profile.displayName ? profile.displayName : 'A Picker'
@@ -48,7 +58,7 @@ function ScorecardRoute() {
             console.error('Error loading profile and evidence.', ex)
             return null
         }
-    }, [user, userId, getProfile, getEvidence, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+    }, [triggerState, user, userId, getProfile, getEvidence, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
@@ -85,7 +95,7 @@ function ScorecardRoute() {
                         {loading && <LoadingDisplay/>}
 
                         {!loading && data && !error &&
-                            <Scorecard owner={user && user.uid === userId} profile={profile}/>}
+                            <Scorecard owner={user && user.uid === userId} profile={profile} adminAction={handleAdminAction}/>}
 
                         {!loading && (!data || error) && <ProfileNotFound/>}
 

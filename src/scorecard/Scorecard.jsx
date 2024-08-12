@@ -21,7 +21,7 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 
 
-function Scorecard({owner, profile}) {
+function Scorecard({owner, profile, adminAction}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
 
@@ -58,7 +58,8 @@ function Scorecard({owner, profile}) {
     const handleMergeRecorded = useCallback(() => {
         createEvidenceForEntries(userId, recordedIdsToMerge)
         setControlsExpanded(false)
-    }, [createEvidenceForEntries, userId, recordedIdsToMerge])
+        adminAction()
+    }, [createEvidenceForEntries, userId, recordedIdsToMerge, adminAction])
 
     const handleOpenControls = useCallback((controlForm) => {
         setControlForm(controlForm)
@@ -78,7 +79,8 @@ function Scorecard({owner, profile}) {
         removeEvidence(cardEvidence)
         removeProfileBlackBeltAwarded(userId)
         handleClose()
-    }, [cardEvidence, removeEvidence, handleClose, removeProfileBlackBeltAwarded, userId])
+        adminAction()
+    }, [cardEvidence, removeEvidence, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
 
     const buttonsMargin = isMobile ? 10 : 40
     const headerDivStyle = isMobile ? 'block' : 'flex'
@@ -194,7 +196,7 @@ function Scorecard({owner, profile}) {
 
                     <AccordionDetails style={{backgroundColor: '#333'}}>
                         {controlForm === 'import' &&
-                            <ImportDanSheetForm setControlsExpanded={setControlsExpanded}/>
+                            <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
                         }
                         {controlForm === 'project' &&
                             <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true}/>

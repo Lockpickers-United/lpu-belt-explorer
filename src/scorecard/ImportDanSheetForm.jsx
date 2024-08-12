@@ -7,7 +7,7 @@ import DBContext from '../app/DBContext'
 import useWindowSize from '../util/useWindowSize'
 
 
-export default function ImportDanSheetForm({setControlsExpanded}) {
+export default function ImportDanSheetForm({setControlsExpanded, adminAction}) {
     const {userId} = useParams()
     const {importUnclaimedEvidence} = useContext(DBContext)
     const {isMobile} = useWindowSize()
@@ -24,10 +24,11 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
         if (result) {
             setTabToImport('')
             setControlsExpanded(false)
+            adminAction()
         } else {
             setTabImportError('Cannot find dan sheet tab')
         }
-    }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded])
+    }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded, adminAction])
 
     const formDisplayStyle = isMobile ? 'block' : 'flex'
 

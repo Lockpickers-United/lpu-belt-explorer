@@ -10,7 +10,7 @@ export function AppProvider({children}) {
     const [admin, setAdmin] = useLocalStorage('admin', false)
 
     if (!adminRole && admin) {
-        setAdmin(false)
+//        setAdmin(false)
     }
 
     const handleSetBeta = useCallback(value => {
