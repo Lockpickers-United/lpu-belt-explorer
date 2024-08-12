@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useContext} from 'react'
+import React, {useCallback, useMemo, useContext, useEffect} from 'react'
 import {useLocalStorage} from 'usehooks-ts'
 import DBContext from './DBContext'
 
@@ -9,9 +9,11 @@ export function AppProvider({children}) {
     const [beta, setBeta] = useLocalStorage('beta', true)
     const [admin, setAdmin] = useLocalStorage('admin', false)
 
-    if (!adminRole && admin) {
-//        setAdmin(false)
-    }
+    useEffect(() => {
+        if (!adminRole && admin) {
+            setAdmin(false)
+        }
+    }, [adminRole, admin, setAdmin])
 
     const handleSetBeta = useCallback(value => {
         setBeta(value)
