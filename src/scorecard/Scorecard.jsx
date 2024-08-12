@@ -19,6 +19,7 @@ import Menu from '@mui/material/Menu'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
+import IntroCopy from '../misc/IntroCopy.jsx'
 
 
 function Scorecard({owner, profile, adminAction}) {
@@ -95,6 +96,12 @@ function Scorecard({owner, profile, adminAction}) {
         }}>
             <ProfileHeader profile={profile} page={'scorecard'}/>
 
+            {owner && visibleEntries.length > 0 && !profile.tabClaimed &&
+                <div style={{margin: 8, padding: '0px 0px'}}>
+                    <IntroCopy pageName={'scorecard'}/>
+                </div>
+            }
+
             {visibleEntries.length > 0 &&
                 <React.Fragment>
                     {!isMobile
@@ -144,7 +151,7 @@ function Scorecard({owner, profile, adminAction}) {
                                     <Button variant='outlined' color='secondary' size='small'
                                             style={{lineHeight: '1rem'}}
                                             onClick={() => handleOpenControls('project')}>
-                                    {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                        {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
                                     </Button>
                                 </div>
                             </div>
@@ -221,6 +228,7 @@ function Scorecard({owner, profile, adminAction}) {
                                   evid={ev}
                                   expanded={ev.id === entryExpanded}
                                   onExpand={handleEntryExpand}
+                                  profile={profile}
                     />
                 )}
             </div>

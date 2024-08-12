@@ -5,10 +5,10 @@ import DiscordIcon from '../resources/DiscordIcon.jsx'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
-import WarningIcon from '@mui/icons-material/Warning'
 import isValidUrl from '../util/isValidUrl'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 
-export default function ScorecardEvidenceButton({url, exceptionType, handleChange}) {
+export default function ScorecardEvidenceButton({url, exceptionType, handleChange, owner}) {
 
     const handleClick = useCallback(event => {
         event.preventDefault()
@@ -38,17 +38,17 @@ export default function ScorecardEvidenceButton({url, exceptionType, handleChang
                     </IconButton>
                 </Tooltip>
             }
-            {(exceptionType === 'badlink' && !!url) &&
+            {(exceptionType === 'badlink' && !!url && owner) &&
                 <Tooltip title='Documentation link is not valid' arrow disableFocusListener>
                     <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
-                        <WarningIcon style={{width: 22, height: 22, color:'#ef3939'}}/>
+                        <ErrorOutlineIcon style={{width: 22, height: 22, color:'#c07b32'}}/>
                     </IconButton>
                 </Tooltip>
             }
-            {(exceptionType === 'badlink' && !url) &&
+            {(exceptionType === 'badlink' && !url && owner) &&
                 <Tooltip title='Documentation link is missing' arrow disableFocusListener>
                     <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
-                        <WarningIcon style={{width: 22, height: 22, color:'#ef3939'}}/>
+                        <ErrorOutlineIcon style={{width: 22, height: 22, color:'#e55940'}}/>
                     </IconButton>
                 </Tooltip>
             }
