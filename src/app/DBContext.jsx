@@ -241,57 +241,65 @@ export function DBProvider({children}) {
     const importUnclaimedEvidence = useCallback(async (userId, tabName) => {
         const bbRef = doc(db, 'unclaimed-blackbelts', tabName.trim())
         const profileRef = doc(db, 'lockcollections', userId)
+        let beltSet = false
 
         await runTransaction(db, async transaction => {
             const bbDoc = await transaction.get(bbRef)
             const profileDoc = await transaction.get(profileRef)
-            const dateStr = bbDoc.data().awardedAt
 
-            const profileDelta = {awardedBelt: 'Black', tabClaimed: tabName.trim(), blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
-            if (!profileDoc.exists()) {
-                transaction.set(profileRef, profileDelta)
-            } else {
-                transaction.update(profileRef, profileDelta)
+            if (bbDoc.exists()) {
+                const dateStr = bbDoc.data().awardedAt
+
+                const profileDelta = {awardedBelt: 'Black', tabClaimed: tabName.trim(), blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
+                if (!profileDoc.exists()) {
+                    transaction.set(profileRef, profileDelta)
+                } else {
+                    transaction.update(profileRef, profileDelta)
+                }
+                transaction.update(bbRef, {claimed: true})
+                beltSet = true
             }
-            transaction.update(bbRef, {claimed: true})
         })
 
-        const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName.trim()))
-        const querySnapshot = await getDocs(q)
-        const newEvidence = querySnapshot.docs.map(d => d.data())
-        const newMatchIds = newEvidence.map(e => e.projectId)
-        const toReplace = await evidenceCache(userId)
-        const toReplaceIds = toReplace.filter(ev => ev.link === '' && newMatchIds.includes(ev.matchId)).map(ev => ev.id)
+        if (beltSet) {
+            const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName.trim()))
+            const querySnapshot = await getDocs(q)
+            const newEvidence = querySnapshot.docs.map(d => d.data())
+            const newMatchIds = newEvidence.map(e => e.projectId)
+            const toReplace = await evidenceCache(userId)
+            const toReplaceIds = toReplace.filter(ev => ev.link === '' && newMatchIds.includes(ev.matchId)).map(ev => ev.id)
 
-        const batch = writeBatch(db)
-        let result = []
-        toReplaceIds.forEach(id => batch.delete(doc(db, 'evidence', id)))
+            const batch = writeBatch(db)
+            let result = []
+            toReplaceIds.forEach(id => batch.delete(doc(db, 'evidence', id)))
 
-        newEvidence.forEach(rec => {
-            let newDoc = {
-                userId: userId,
-                evidenceNotes: rec.evidenceNotes,
-                evidenceUrl: rec.evidenceUrl,
-                modifier: rec.modifier
+            newEvidence.forEach(rec => {
+                let newDoc = {
+                    userId: userId,
+                    evidenceNotes: rec.evidenceNotes,
+                    evidenceUrl: rec.evidenceUrl,
+                    modifier: rec.modifier
+                }
+                if (rec.projectId) {
+                    newDoc.projectId = rec.projectId
+                }
+                if (rec.evidenceCreatedAt) {
+                    newDoc.evidenceCreatedAt = Timestamp.fromDate(new Date(rec.evidenceCreatedAt))
+                }
+                const docRef = doc(collection(db, 'evidence'))
+                batch.set(docRef, newDoc)
+                result = result.concat([evidenceDB2State(docRef.id, newDoc)])
+            })
+
+            await batch.commit()
+            await invalidateEvidenceCache(userId)
+            await updateUserStatistics(userId)
+
+            if (user.uid === userId) {
+                setEvidence(e => e.filter(ev => !toReplaceIds.includes(ev.id)).concat(result))
             }
-            if (rec.projectId) {
-                newDoc.projectId = rec.projectId
-            }
-            if (rec.evidenceCreatedAt) {
-                newDoc.evidenceCreatedAt = Timestamp.fromDate(new Date(rec.evidenceCreatedAt))
-            }
-            const docRef = doc(collection(db, 'evidence'))
-            batch.set(docRef, newDoc)
-            result = result.concat([evidenceDB2State(docRef.id, newDoc)])
-        })
-
-        await batch.commit()
-        await invalidateEvidenceCache(userId)
-        await updateUserStatistics(userId)
-
-        if (user.uid === userId) {
-            setEvidence(e => e.filter(ev => !toReplaceIds.includes(ev.id)).concat(result))
         }
+        return beltSet
     }, [user, updateUserStatistics])
 
     const createEvidenceForEntries = useCallback(async (userId, ids) => {

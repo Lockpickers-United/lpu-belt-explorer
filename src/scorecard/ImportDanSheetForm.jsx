@@ -14,13 +14,19 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
     const [importing, setImporting] = useState(false)
 
     const [tabToImport, setTabToImport] = useState('')
+    const [tabImportError, setTabImportError] = useState(null)
 
     const handleImport = useCallback(async () => {
         setImporting(true)
-        await importUnclaimedEvidence(userId, tabToImport)
-        setTabToImport('')
+        const result = await importUnclaimedEvidence(userId, tabToImport)
         setImporting(false)
-        setControlsExpanded(false)
+
+        if (result) {
+            setTabToImport('')
+            setControlsExpanded(false)
+        } else {
+            setTabImportError('Cannot find dan sheet tab')
+        }
     }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded])
 
     const formDisplayStyle = isMobile ? 'block' : 'flex'
@@ -50,6 +56,8 @@ export default function ImportDanSheetForm({setControlsExpanded}) {
                                         label='Tab to Import'
                                         value={tabToImport}
                                         size='small'
+                                        error={!!tabImportError}
+                                        helperText={tabImportError}
                                         margin='dense'
                                         color='secondary'
                                         onChange={e => {
