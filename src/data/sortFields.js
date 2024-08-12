@@ -21,7 +21,8 @@ export const dialSortFields = [
 
 export const scorecardSortFields = [
     {label: 'Default', value: undefined},
-    {label: 'Dan Points', value: 'danPoints'},
+    {label: 'Dan Points (Ascending)', value: 'danPointsAscending'},
+    {label: 'Dan Points (Descending)', value: 'danPointsDescending'},
     {label: 'Date (Ascending)', value: 'dateAscending'},
     {label: 'Date (Descending)', value: 'dateDescending'},
     {label: 'Belt (Ascending)', value: 'beltAscending'},

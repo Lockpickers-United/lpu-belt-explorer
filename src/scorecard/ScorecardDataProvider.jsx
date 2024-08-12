@@ -73,8 +73,11 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
 
         return sort
             ? searched.sort((a, b) => {
-                if (sort === 'danPoints') {
+                if (sort === 'danPointsAscending') {
                     return a.points - b.points
+                        || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
+                } else if (sort === 'danPointsDescending') {
+                    return b.points - a.points
                         || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
                 } else if (sort === 'dateAscending') {
                     return dayjs(a.date).valueOf() - dayjs(b.date).valueOf()
