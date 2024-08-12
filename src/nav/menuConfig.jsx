@@ -74,10 +74,16 @@ export default [
                 admin: true,
                 title: 'Site Report',
                 path: '/admin/siteReport'
-            }, {
+            },
+            {
                 admin: true,
                 title: 'Collections Report',
                 path: '/admin/collectionsReport'
+            },
+            {
+                admin: true,
+                title: 'Black Belt Report',
+                path: '/admin/blackBelts'
             }
         ]
     },

@@ -76,7 +76,6 @@ export default [
         }
     },
     {
-        admin: true,
         path: '/admin',
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
@@ -89,11 +88,19 @@ export default [
                     const {default: CollectionsReportMain} = await import('../admin/CollectionsReportMain')
                     return {element: <CollectionsReportMain/>}
                 }
-            }, {
+            },
+            {
                 path: '/admin/siteReport',
                 lazy: async () => {
                     const {default: SiteReportMain} = await import('../admin/SiteReportMain')
                     return {element: <SiteReportMain/>}
+                }
+            },
+            {
+                path: '/admin/blackBelts',
+                lazy: async () => {
+                    const {default: BlackBeltsMain} = await import('../admin/BlackBeltsMain')
+                    return {element: <BlackBeltsMain/>}
                 }
             }
         ]
