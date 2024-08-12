@@ -33,7 +33,12 @@ function ProfileRoute() {
         try {
             const profile = user?.uid !== userId ? await getProfile(userId) : lockCollection
             if (profile) {
-                document.title = `LPU Belt Explorer - ${profile.displayName}'s Safe Locks`
+                const ownerName = profile.displayName
+                    ? profile.displayName.toLowerCase().endsWith('s')
+                        ? `${profile.displayName}'`
+                        : `${profile.displayName}'s`
+                    : 'Anonymous'
+                document.title = `LPU Belt Explorer - ${ownerName} Safe Locks`
             }
             return profile
         } catch (ex) {

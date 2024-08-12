@@ -24,7 +24,7 @@ export default function ProfileHeader({profile = {}, page}) {
         ? profile.displayName.toLowerCase().endsWith('s')
             ? `${profile.displayName}'`
             : `${profile.displayName}'s`
-        : 'Private'
+        : 'Anonymous'
 
     const title = userId
         ? `${ownerName} ${pageName}`
@@ -60,7 +60,7 @@ export default function ProfileHeader({profile = {}, page}) {
         <div style={style}>
             <div style={{marginTop: 6, display:'flex'}}>
                 <div>{title}</div>
-                <div style={{marginTop: -2}}><CopyProfileLinkButton/></div>
+                <div style={{marginTop: -2}}><CopyProfileLinkButton page={page}/></div>
             </div>
             <div style={{flexGrow: 1, textAlign: 'right'}}>
                 <ToggleButtonGroup

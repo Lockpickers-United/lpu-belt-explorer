@@ -31,7 +31,13 @@ function ProfileRoute() {
         try {
             const profile = await getProfile(userId)
             if (profile) {
-                document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
+                const ownerName = profile.displayName
+                    ? profile.displayName.toLowerCase().endsWith('s')
+                        ? `${profile.displayName}'`
+                        : `${profile.displayName}'s`
+                    : 'Anonymous'
+
+                document.title = `LPU Belt Explorer - ${ownerName} Profile`
             }
             return profile
         } catch (ex) {

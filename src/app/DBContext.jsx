@@ -105,19 +105,14 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
-    const updateProfileVisibility = useCallback(async (visibility, displayName) => {
-        if (dbError) return false
+    const updateProfileDisplayName = useCallback(async (displayName) => {
         const ref = doc(db, 'lockcollections', user.uid)
-        await runTransaction(db, async transaction => {
-            const sfDoc = await transaction.get(ref)
-            const delta = {public: visibility, displayName}
-            if (!sfDoc.exists()) {
-                transaction.set(ref, delta)
-            } else {
-                transaction.update(ref, delta)
-            }
-        })
-    }, [dbError, user])
+        if (displayName) {
+            await setDoc(ref, {displayName}, {merge: true})
+        } else {
+            await updateDoc(ref, {displayName: deleteField()})
+        }
+    }, [user])
 
     const updateUserStatistics = useCallback(async (userId) => {
         const evids = await evidenceCache(userId)
@@ -144,17 +139,6 @@ export function DBProvider({children}) {
         const ref = doc(db, 'lockcollections', userId)
         await updateDoc(ref, {blackBeltAwardedAt: deleteField(), tabClaimed: deleteField(), awardedBelt: deleteField()})
     }, [dbError])
-
-    const clearProfile = useCallback(async () => {
-        if (dbError) return false
-        const ref = doc(db, 'lockcollections', user.uid)
-        await runTransaction(db, async transaction => {
-            transaction.update(ref, {
-                displayName: deleteField(),
-                public: deleteField()
-            })
-        })
-    }, [dbError, user])
 
     const getProfile = useCallback(async userId => {
         const ref = doc(db, 'lockcollections', userId)
@@ -342,9 +326,6 @@ export function DBProvider({children}) {
         if (profile.displayName) {
             cleanProfile.displayName = profile.displayName
         }
-        if (profile.public) {
-            cleanProfile.public = profile.public
-        }
         await setDoc(ref, cleanProfile)
     }, [removeEvidence])
 
@@ -397,10 +378,9 @@ export function DBProvider({children}) {
         addToLockCollection,
         removeFromLockCollection,
         getProfile,
-        updateProfileVisibility,
+        updateProfileDisplayName,
         updateProfileBlackBeltAwardedAt,
         removeProfileBlackBeltAwarded,
-        clearProfile,
         evidence,
         addEvidence,
         updateEvidence,
@@ -409,7 +389,7 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileVisibility, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, clearProfile, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
+    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
 
     return (
         <DBContext.Provider value={value}>

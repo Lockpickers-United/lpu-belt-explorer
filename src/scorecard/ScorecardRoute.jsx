@@ -45,8 +45,14 @@ function ScorecardRoute() {
         }
         try {
             const profile = await getProfile(userId)
-            const name = profile && profile.displayName ? profile.displayName : 'A Picker'
-            document.title = `LPU Belt Explorer - ${name}'s Scorecard`
+            if (profile) {
+                const ownerName = profile.displayName
+                    ? profile.displayName.toLowerCase().endsWith('s')
+                        ? `${profile.displayName}'`
+                        : `${profile.displayName}'s`
+                    : 'Anonymous'
+                document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
+            }
 
             if (user?.uid !== userId) {
                 const evidence = await getEvidence(userId)

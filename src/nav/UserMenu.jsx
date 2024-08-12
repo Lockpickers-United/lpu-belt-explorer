@@ -36,7 +36,7 @@ function UserMenu() {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const safeName = lockCollection.displayName
         ? lockCollection.displayName.replace(/\s/g, '_')
-        : 'Private'
+        : 'Anonymous'
 
     const handleClick = useCallback(url => () => {
         handleClose()

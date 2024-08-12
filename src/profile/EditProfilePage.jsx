@@ -13,18 +13,12 @@ import Menu from '@mui/material/Menu'
 import LoadingDisplay from '../misc/LoadingDisplay'
 
 function EditProfilePage() {
-    const {lockCollection, updateProfileVisibility, deleteAllUserData, clearProfile} = useContext(DBContext)
+    const {lockCollection, updateProfileDisplayName, deleteAllUserData} = useContext(DBContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
     const [anchorEl, setAnchorEl] = useState(null)
     const [deletingData, setDeletingData] = useState(false)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
-
-    const profileType = !lockCollection?.displayName
-        ? 'none'
-        : lockCollection?.public
-            ? 'public'
-            : 'private'
 
     const handleChange = useCallback(event => {
         const {value} = event.target
@@ -35,24 +29,24 @@ function EditProfilePage() {
 
     const handleSave = useCallback(async () => {
         try {
-            await updateProfileVisibility(true, displayName)
+            await updateProfileDisplayName(displayName)
             enqueueSnackbar('Profile updated')
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile')
         }
-    }, [updateProfileVisibility, displayName])
+    }, [updateProfileDisplayName, displayName])
 
-    const handleClearProfile = useCallback(async () => {
+    const handleClear = useCallback(async () => {
         try {
-            await clearProfile()
+            await updateProfileDisplayName(null)
             setDisplayName('')
             enqueueSnackbar('Display Name cleared')
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile')
         }
-    }, [clearProfile])
+    }, [updateProfileDisplayName])
 
     const handleViewProfile = useCallback(() => {
         navigate(`/profile/${user.uid}`)
@@ -73,8 +67,7 @@ function EditProfilePage() {
     }, [deleteAllUserData, user])
 
     const error = displayName.length > 0 && !pattern.test(displayName.toString())
-    const noSave = displayName.length === 0
-        || (displayName === lockCollection?.displayName && profileType !== 'private')
+    const noSave = displayName.length === 0 || displayName === lockCollection?.displayName
     const helperText = error
         ? 'Display name must only include A-Z, 0-9, _ and -.'
         : ''
@@ -85,12 +78,6 @@ function EditProfilePage() {
     const introNameText = displayName.length > 0
         ? ` (${displayName}) `
         : ''
-    const saveButtonText = profileType === 'private'
-        ? 'Save Public'
-        : 'Save'
-    const inputWidth = profileType === 'private'
-        ? 200
-        : 260
 
     return (
         <Card style={{
@@ -106,29 +93,19 @@ function EditProfilePage() {
             : 
                 <React.Fragment>
                     <CardContent>
-                        {profileType === 'none' &&
+                        {lockCollection?.displayName ?
+                            <div style={{marginBottom: 10}}>
+                                Your display name {introNameText} shows up on the leaderboard and
+                                your profile can be shared with others.
+                                <br/><br/>
+                                Your Google login information will never be displayed to other users.
+                            </div>
+                        :
                             <div style={{marginBottom: 10}}>
                                 Your display name will show up on the leaderboard and
                                 your profile can be shared with others.
                                 <br/><br/>
                                 Your Google login information will never be displayed to other users.
-                            </div>
-                        }
-                        {profileType === 'public' &&
-                            <div style={{marginBottom: 10}}>
-                                Your display name {introNameText} shows up on the leaderboard and
-                                your profile can be shared by clicking the link icon above.
-                                <br/><br/>
-                                Your Google login information will never be displayed to other users.
-                            </div>
-                        }
-                        {profileType === 'private' &&
-                            <div style={{marginBottom: 10}}>
-                                Private profiles are going away soon.
-                                Click Save to make your profile public or Clear to remove your display name.
-                                Public profiles can be shared and will appear on the leaderboard.
-                                <br/><br/>
-                                No matter what you choose, your Google login information will never be displayed to other users.
                             </div>
                         }
                         <br/>
@@ -146,7 +123,7 @@ function EditProfilePage() {
                                     maxLength: 32
                                 }}
                                 size='small'
-                                style={{width:inputWidth}}
+                                style={{width: 260}}
 
                             />
                                 <Button variant='outlined'
@@ -155,7 +132,7 @@ function EditProfilePage() {
                                         disabled={error || noSave}
                                         style={{marginLeft: 16, marginRight:0, marginBottom: 10, height:40}}
                                 >
-                                    {saveButtonText}
+                                    Save
                                 </Button>
                         </div>
                     </CardContent>
@@ -164,7 +141,7 @@ function EditProfilePage() {
                             {lockCollection?.displayName &&
                                     <Button variant='outlined'
                                             color='info'
-                                            onClick={handleClearProfile}
+                                            onClick={handleClear}
                                             disabled={error}
                                             style={{marginBottom: 10, color: '#4972ab', padding:'5px 19px'}}
                                     >
