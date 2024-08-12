@@ -9,7 +9,7 @@ export default function IntroCopy({pageName}) {
 
     if (intro) {
         return (
-            <div style={{maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: '0px 8px 20px 8px'}}>
+            <div style={{maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: '0px 8px 20px 8px', fontSize:'1rem', lineHeight:'1.35rem'}}>
                 <strong>{intro.title}</strong><br/>
                 {intro.copy}
 

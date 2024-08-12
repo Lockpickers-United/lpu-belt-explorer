@@ -18,12 +18,13 @@ import EvidenceForm from './EvidenceForm.jsx'
 
 import useWindowSize from '../util/useWindowSize.jsx'
 
-function ScorecardRow({owner, evid, expanded, onExpand}) {
+function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
     // console.log(`ScorecardRow ${evid.id}`)
 
+    const merged = profile.blackBeltAwardedAt > 0
     const entry = getEntryFromId(evid.matchId)
     const project = getProjectEntryFromId(evid.matchId)
     const entity = entry
@@ -61,7 +62,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
         ? evid.evidenceNotes
         : null
     entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.evidenceNotes} ]` : entryTitle
-    entryTitle = evid.exceptionType ? entryTitle + ' *' : entryTitle
+    entryTitle = evid.exceptionType && owner && merged ? entryTitle + ' *' : entryTitle
 
     const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
 
@@ -90,6 +91,7 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
     const dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
+    const dateColor = evid.date ? '#fff' : '#aaa'
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
@@ -146,13 +148,13 @@ function ScorecardRow({owner, evid, expanded, onExpand}) {
                         </div>
                         <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
                             <ScorecardEvidenceButton url={evid.link} handleChange={handleChange}
-                                                     exceptionType={evid.exceptionType}/>
+                                                     exceptionType={evid.exceptionType} owner={owner}/>
                         </div>
                     </div>
 
                     <div style={infoDivStyle}>
                         <div
-                            style={{margin: '0px 0px 0px 0px'}}>
+                            style={{margin: '0px 0px 0px 0px', color:dateColor, width: 90, textAlign: 'center'}}>
                             {dateText}
                         </div>
                         <div

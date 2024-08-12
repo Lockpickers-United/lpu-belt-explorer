@@ -4,7 +4,14 @@
     "copy": "A number of locks in the Dan system are considered upgrades of other, easier locks. You recieve points for the most difficult lock in the group.",
     "link": "Back to scorecard.",
     "destination": "/profile/view/scorecard"
+  },
+  "scorecard" : {
+    "title": "Welcome to your Scorecard!",
+    "copy": "Scorecard is an upgrade to the 'Recorded' list in your collection. You can now add dates and links to documentation videos, images, etc for each pick. We've taken the liberty of importing the locks from your collection and you can add details at any time. Black Belt pickers can use the 'Import Dan Sheet' button below to import their tab automatically.",
+    "link": "",
+    "destination": ""
   }
+
 }
 
 
