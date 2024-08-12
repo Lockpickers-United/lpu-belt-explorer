@@ -143,7 +143,9 @@ function Scorecard({owner, profile, adminAction}) {
                                 <div style={{width: addProjectDivWidth, textAlign: 'center'}}>
                                     <Button variant='outlined' color='secondary' size='small'
                                             style={{lineHeight: '1rem'}}
-                                            onClick={() => handleOpenControls('project')}>ADD PROJECT</Button>
+                                            onClick={() => handleOpenControls('project')}>
+                                    {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                    </Button>
                                 </div>
                             </div>
 
