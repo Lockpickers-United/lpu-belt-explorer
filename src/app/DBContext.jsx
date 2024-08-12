@@ -69,7 +69,7 @@ export function DBProvider({children}) {
     const [dbError, setDbError] = useState(null)
 
     const dbLoaded = collectionDBLoaded && evidenceDBLoaded
-    const adminRole = lockCollection && lockCollection.admin
+    const adminRole = isLoggedIn && lockCollection && lockCollection.admin
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false

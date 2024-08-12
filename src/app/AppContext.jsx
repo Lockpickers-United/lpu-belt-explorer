@@ -9,6 +9,10 @@ export function AppProvider({children}) {
     const [beta, setBeta] = useLocalStorage('beta', true)
     const [admin, setAdmin] = useLocalStorage('admin', false)
 
+    if (!adminRole && admin) {
+        setAdmin(false)
+    }
+
     const handleSetBeta = useCallback(value => {
         setBeta(value)
     }, [setBeta])
@@ -16,6 +20,8 @@ export function AppProvider({children}) {
     const handleSetAdmin = useCallback(value => {
         if (adminRole) {
             setAdmin(value)
+        } else {
+            setAdmin(false)
         }
     }, [setAdmin, adminRole])
 
