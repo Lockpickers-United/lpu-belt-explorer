@@ -311,8 +311,7 @@ export function DBProvider({children}) {
                 evidenceNotes: '',
                 evidenceUrl: '',
                 modifier: '',
-                projectId: matchId,
-                evidenceCreatedAt: Timestamp.fromDate(new Date())
+                projectId: matchId
             }
         })
         newDocs.forEach(newDoc => {
