@@ -225,10 +225,12 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
 
                 <div style={{display: 'flex'}}>
                     <div style={{marginLeft: 0}}>
-                        <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'
-                                disabled={!evid}>
-                            Delete
-                        </Button>
+                        {evid &&
+                            <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'
+                                    disabled={!evid}>
+                                Delete
+                            </Button>
+                        }
                         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                             <div style={{padding: 20, textAlign: 'center'}}>
                                 You cannot undo delete.<br/>
