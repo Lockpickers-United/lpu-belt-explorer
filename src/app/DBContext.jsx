@@ -142,7 +142,7 @@ export function DBProvider({children}) {
     const removeProfileBlackBeltAwarded = useCallback(async (userId) => {
         if (dbError) return false
         const ref = doc(db, 'lockcollections', userId)
-        await updateDoc(ref, {blackBeltAwardedAt: deleteField()})
+        await updateDoc(ref, {blackBeltAwardedAt: deleteField(), tabClaimed: deleteField(), awardedBelt: deleteField()})
     }, [dbError])
 
     const clearProfile = useCallback(async () => {
