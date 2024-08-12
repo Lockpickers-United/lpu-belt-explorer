@@ -1,6 +1,6 @@
 import fs from 'fs'
 import admin from 'firebase-admin'
-import {getFirestore} from 'firebase-admin/firestore'
+import {getFirestore, Firestore} from 'firebase-admin/firestore'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
 const app = admin.initializeApp({
@@ -40,6 +40,10 @@ for (let idx=0; idx < entries.length; idx++) {
         })
         await batch.commit()
 
-        await db.collection('lockcollections').doc(rec.userId).update({recordedLocks: rec.recorded})
+        await db.collection('lockcollections').doc(rec.userId)
+            .update({
+                recordedLocks: rec.recorded,
+                public: Firestore.FieldValue.delete()
+            })
     }
 }
