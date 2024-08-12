@@ -13,6 +13,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
+import LoadingDisplay from '../misc/LoadingDisplay'
 import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import EvidenceForm from './EvidenceForm.jsx'
 import Menu from '@mui/material/Menu'
@@ -35,6 +36,7 @@ function Scorecard({owner, profile, adminAction}) {
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
+    const [loading, setLoading] = useState(false)
 
     if (expanded && expanded !== entryExpanded) {
         setEntryExpanded(expanded)
@@ -56,9 +58,11 @@ function Scorecard({owner, profile, adminAction}) {
         setEntryExpanded(expand)
     }, [filters, removeFilters])
 
-    const handleMergeRecorded = useCallback(() => {
-        createEvidenceForEntries(userId, recordedIdsToMerge)
+    const handleMergeRecorded = useCallback(async () => {
+        setLoading(true)
+        await createEvidenceForEntries(userId, recordedIdsToMerge)
         setControlsExpanded(false)
+        setLoading(false)
         adminAction()
     }, [createEvidenceForEntries, userId, recordedIdsToMerge, adminAction])
 
@@ -76,10 +80,12 @@ function Scorecard({owner, profile, adminAction}) {
     }, [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const handleDeleteAll = useCallback(() => {
-        removeEvidence(cardEvidence)
-        removeProfileBlackBeltAwarded(userId)
+    const handleDeleteAll = useCallback(async () => {
+        setLoading(true)
+        await removeEvidence(cardEvidence)
+        await removeProfileBlackBeltAwarded(userId)
         handleClose()
+        setLoading(false)
         adminAction()
     }, [cardEvidence, removeEvidence, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
 
@@ -156,7 +162,9 @@ function Scorecard({owner, profile, adminAction}) {
                                 </div>
                             </div>
 
-                            {admin &&
+                            {loading && <LoadingDisplay/>}
+
+                            {admin && !loading &&
                                 <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
                                     <div style={{display: 'flex'}}>
                                         <div style={{width: '10%', textAlign: 'center'}}>

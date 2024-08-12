@@ -26,5 +26,7 @@ export const scorecardFilterFields = [
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Belt', fieldName: 'belt', sort: beltSort},
     {label: 'Features', fieldName: 'features'},
+    {label: 'Documentation', fieldName: 'documentation'},
+    {label: 'Scoring', fieldName: 'scoring'}
 ]
 

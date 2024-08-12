@@ -37,6 +37,18 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
                         .join(',')
                     + ' '
                 ),
+                documentation: [
+                    entry.exceptionType === 'badlink' ? 'Bad Link' : 'Valid Link',
+                    entry.date ? 'Valid Date' : 'No Date'
+                ],
+                scoring: [
+                    entry.exceptionType === 'nomatch' ? 'Unmatched' :
+                    entry.exceptionType === 'badlink' ? 'Bad Link' :
+                    entry.exceptionType === 'duplicate' ? 'Duplicate' :
+                    entry.exceptionType === 'upgraded' ? 'Upgraded' :
+                    ['White', 'Yellow', 'Orange', 'Green'].includes(entry.belt) ? 'Low Level' :
+                    'Worth Points'
+                ],
                 simpleBelt: entry?.belt?.replace(/\s\d/g, '')
             }))
     }, [allEvidenceEntries])

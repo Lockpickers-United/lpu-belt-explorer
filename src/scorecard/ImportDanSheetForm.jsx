@@ -51,7 +51,7 @@ export default function ImportDanSheetForm({setControlsExpanded, adminAction}) {
 
                             <div style={{padding: '0px', alignItems:'center'}}>
                                 <div style={{padding: '0px', display: 'flex'}}>
-            <div style={{flexGrow:1}}> </div>
+                                    <div style={{flexGrow:1}}> </div>
                                     <TextField
                                         id='tab-to-import'
                                         label='Tab to Import'
