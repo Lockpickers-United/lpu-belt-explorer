@@ -10,12 +10,14 @@ import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 import {useNavigate} from 'react-router-dom'
 import AppContext from '../app/AppContext'
+import DBContext from '../app/DBContext'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
 
 function MainMenu() {
-    const {beta, admin} = useContext(AppContext)
+    const {beta} = useContext(AppContext)
+    const {adminRole} = useContext(DBContext)
     const [open, setOpen] = useState(false)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
     const navigate = useNavigate()
@@ -65,7 +67,7 @@ function MainMenu() {
 
                     {menuConfig
                         .filter(menuItem => beta || !menuItem.beta)
-                        .filter(menuItem => admin || !menuItem.admin)
+                        .filter(menuItem => adminRole  || !menuItem.admin)
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>
                                 <MainMenuItem

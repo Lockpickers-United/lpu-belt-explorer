@@ -2,7 +2,7 @@ import LinearProgress from '@mui/material/LinearProgress'
 import React, {useContext, useEffect} from 'react'
 import {Outlet, useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
-import AppContext from '../app/AppContext'
+import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
@@ -10,14 +10,14 @@ import lpuLogoPath from '../resources/LPU.png'
 
 function AdminRoute() {
     const {authLoaded} = useContext(AuthContext)
-    const {admin} = useContext(AppContext)
+    const {adminRole} = useContext(DBContext)
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (authLoaded && !admin) {
+        if (authLoaded && !adminRole) {
             navigate('/locks')
         }
-    }, [admin, authLoaded, navigate])
+    }, [adminRole, authLoaded, navigate])
 
     return (
         <React.Fragment>
@@ -32,7 +32,7 @@ function AdminRoute() {
                 </React.Fragment>
             }
 
-            {authLoaded && admin && <Outlet/>}
+            {authLoaded && adminRole && <Outlet/>}
 
             <Footer/>
 
