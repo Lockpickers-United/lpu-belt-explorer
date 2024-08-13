@@ -90,7 +90,9 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
     }, [setFilters])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    const dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
+    let dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
+    dateText = dateText.replace('/202', '/2')
+    dateText = dateText.replace('/201', '/1')
     const dateColor = evid.date ? '#fff' : '#aaa'
 
     const handleChange = useCallback((_, isExpanded) => {
@@ -109,7 +111,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
         marginLeft: 0,
         placeItems: 'center'
     }
-    const nameDivWidth = !isMobile ? '58%' : '70%'
+    const nameDivWidth = !isMobile ? '58%' : '65%'
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
 
@@ -118,7 +120,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
             <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entity ? entity.belt : ''}/>
                 <div style={{
-                    margin: '12px 0px 0px 8px',
+                    margin: '8px 0px 0px 8px',
                     width: nameDivWidth,
                     flexShrink: 0,
                     flexDirection: 'column',
@@ -154,7 +156,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
 
                     <div style={infoDivStyle}>
                         <div
-                            style={{margin: '0px 0px 0px 0px', color:dateColor, width: 90, textAlign: 'center'}}>
+                            style={{margin: '0px 0px 3px 0px', color:dateColor, width: 90, textAlign: 'center'}}>
                             {dateText}
                         </div>
                         <div

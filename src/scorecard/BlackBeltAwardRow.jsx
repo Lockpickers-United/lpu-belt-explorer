@@ -25,7 +25,6 @@ function BlackBeltAwardRow({owner, date}) {
     const [updated, setUpdated] = useState(false)
     const [evidenceDate, setEvidenceDate] = useState(dayjs.utc(date))
 
-    const dateText = dayjs.utc(date).format('L')
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
@@ -49,18 +48,23 @@ function BlackBeltAwardRow({owner, date}) {
         }
     }, [userId, evidenceDate, updateProfileBlackBeltAwardedAt])
 
+
+    let dateText = date ? dayjs(date).format('L') : '(no date)'
+    dateText = dateText.replace('/202', '/2')
+    dateText = dateText.replace('/201', '/1')
+
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
     const cursorStyle = !owner ? {cursor: 'default'} : {}
     const expandIcon = owner ? <ExpandMoreIcon/> : null
 
+
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
-    const nameDivWidth = !isMobile ? '58%' : '70%'
-    const infoDivStyle = !isMobile ? {display: 'flex', margin: '0px 0px 0px 20px'} : {
-        display: 'block',
-        marginLeft: 0,
-        placeItems: 'center'
-    }
+    const nameDivWidth = !isMobile ? '58%' : '65%'
+    const infoDivStyle = !isMobile
+        ? {display: 'flex', margin: '0px 0px 0px 20px'}
+        : {display: 'block', marginLeft: 0, placeItems: 'center'}
+
     const saveEntryColor = updated ? '#fff' : '#555'
     const cancelColor = updated ? '#e15c07' : '#555'
 
@@ -71,7 +75,7 @@ function BlackBeltAwardRow({owner, date}) {
                 <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                     <BeltStripe value='Black'/>
                     <div style={{
-                        margin: '12px 0px 0px 8px',
+                        margin: '4px 0px 0px 8px',
                         width: nameDivWidth,
                         flexShrink: 0,
                         flexDirection: 'column'

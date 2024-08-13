@@ -12,8 +12,8 @@ function CollectionBeltBar({beltData}) {
             : 180
 
     const chartMargin = !smallWindow
-        ? {top: 0, right: 10, bottom: 60, left: 15}
-        : {top: 0, right: 20, bottom: 60, left: 15}
+        ? {top: 0, right: 0, bottom: 60, left: 15}
+        : {top: 0, right: 0, bottom: 60, left: 15}
 
     const beltColors =
         ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',

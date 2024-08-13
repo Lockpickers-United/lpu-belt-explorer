@@ -125,7 +125,7 @@ function Scorecard({owner, profile, adminAction}) {
                             {profile.danLevel > 0 &&
                                 <ScorecardDanStats/>
                             }
-                            <div style={{marginRight: 0, width: 350}}>
+                            <div style={{marginRight: 0, width: '95%'}}>
                                 <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                             </div>
                         </div>
