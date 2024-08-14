@@ -15,11 +15,13 @@ import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import collectionOptions from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
+import LoadingDisplay from '../misc/LoadingDisplay'
 
 function SafelockCollectionButton({id, dense}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
+    const [checkboxUpdating, setCheckboxUpdating] = useState(false)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
@@ -28,14 +30,15 @@ function SafelockCollectionButton({id, dense}) {
     const collected = collectionOptions.safelocks.getCollected(lockCollection)?.includes(id)
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
-    const handleChange = useCallback(key => (event, checked) => {
+    const handleChange = useCallback(key => async (event, checked) => {
         event.preventDefault()
-
+        setCheckboxUpdating(true)
         if (checked) {
-            addToLockCollection(key, id)
+            await addToLockCollection(key, id)
         } else {
-            removeFromLockCollection(key, id)
+            await removeFromLockCollection(key, id)
         }
+        setCheckboxUpdating(false)
     }, [id, addToLockCollection, removeFromLockCollection])
 
     return (
@@ -79,7 +82,10 @@ function SafelockCollectionButton({id, dense}) {
                         onClick={handleClose}
                     />
                     <CardContent style={{paddingTop: 0}}>
-                        <FormGroup>
+                        {checkboxUpdating ?
+                            <LoadingDisplay/>
+                            :
+                            <FormGroup>
                             {collectionOptions.safelocks.map.filter(c => c.entry === 'checkbox').map(({key, label}) =>
                                 <FormControlLabel
                                     key={key}
@@ -95,6 +101,7 @@ function SafelockCollectionButton({id, dense}) {
                                 />
                             )}
                         </FormGroup>
+                        }
                     </CardContent>
                     <div style={{marginTop: -8, marginBottom: 16}}>
                         <SignInButton onClick={handleClose}/>

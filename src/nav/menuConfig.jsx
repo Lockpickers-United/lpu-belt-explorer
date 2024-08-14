@@ -44,7 +44,6 @@ export default [
         path: '/glossary'
     },
     {
-        beta: true,
         title: 'Safe Locks',
         icon: <AvTimerIcon fontSize='small'/>,
         path: '/safelocks'
