@@ -111,7 +111,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
         marginLeft: 0,
         placeItems: 'center'
     }
-    const nameDivWidth = !isMobile ? '58%' : '65%'
+    const nameDivWidth = !isMobile ? '56%' : '65%'
+    const dateMargin = !isMobile ? '1px 0px 3px 0px' : '-2px 0px 3px 0px'
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
 
@@ -133,7 +134,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
                     />
                     {!!evidenceNotes &&
                         <span style={{
-                            marginLeft: 15,
+                            margin: '0px 0px 0px 15px',
+
                             fontSize: '0.95rem',
                             lineHeight: 1.25,
                             color: '#bbb'
@@ -143,7 +145,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
                 <div style={{display: flexType, placeItems: 'center', marginLeft: 10, opacity: rowOpacity}}>
 
                     <div style={{display: 'flex', width: 76}}>
-                        <div style={{margin: '2px 0px 0px 0px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
+                        <div style={{margin: '2px 0px 0px 6px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
                             {entry &&
                                 <ViewLockButton entry={entry}/>
                             }
@@ -156,11 +158,11 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
 
                     <div style={infoDivStyle}>
                         <div
-                            style={{margin: '0px 0px 3px 0px', color:dateColor, width: 90, textAlign: 'center'}}>
+                            style={{margin: dateMargin, color:dateColor, width: 90, textAlign: 'center'}}>
                             {dateText}
                         </div>
                         <div
-                            style={{margin: '0px 0px 0px 20px'}}>
+                            style={{margin: '1px 0px 0px 22px'}}>
                             <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
                                 style={{color: '#666'}}>{pointsText}</span></nobr>
                         </div>

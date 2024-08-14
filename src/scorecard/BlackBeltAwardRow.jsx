@@ -60,7 +60,7 @@ function BlackBeltAwardRow({owner, date}) {
 
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
-    const nameDivWidth = !isMobile ? '58%' : '65%'
+    const nameDivWidth = !isMobile ? '56%' : '65%'
     const infoDivStyle = !isMobile
         ? {display: 'flex', margin: '0px 0px 0px 20px'}
         : {display: 'block', marginLeft: 0, placeItems: 'center'}
@@ -90,8 +90,7 @@ function BlackBeltAwardRow({owner, date}) {
                     <div style={{display: flexType, placeItems: 'center', marginLeft: 10}}>
                         <div style={{display: 'flex', width: 76}}/>
                         <div style={infoDivStyle}>
-                            <div
-                                style={{margin: '0px 0px 0px 0px'}}>
+                            <div style={{margin: '4px 0px 0px 10px'}}>
                                 {dateText}
                             </div>
                         </div>
