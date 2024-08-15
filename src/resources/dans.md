@@ -76,8 +76,7 @@ Picking locks of blue belt or above will earn the following Dan Points
 | Black 4 | 36     |
 | Black 5 | 50     |
 
-Locks that are upgrades of each other (MT5 -> MT5+) will be recorded once for the highest points. (MT5+ points but not
-MT5 points)
+Locks that are upgrades of each other will be recorded once for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements as well as one with 7, then only points for the 11 will be awarded.
 
 Locks that are the same lock or only arbitrarily different will be placed on the same line and you may only gain points
 for one of them. (3KS/4KS)
