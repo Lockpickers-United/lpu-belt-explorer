@@ -121,6 +121,16 @@ export const projectSchema = Joi.array().items(
     }).unknown()
 )
 
+export const introCopySchema = Joi.array().items(
+    Joi.object({
+        Page: Joi.string().min(1),
+        Title: Joi.string().min(1),
+        'Intro Copy': Joi.string().min(1),
+        'Link Text': Joi.string().allow(''),
+        'Link Destination': Joi.string().allow('')
+    }).unknown()
+)
+
 export const upgradeSchema = Joi.array().items(
     Joi.object({
         'Base ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),

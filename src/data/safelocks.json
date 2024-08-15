@@ -20,7 +20,13 @@
     "wheels": "3",
     "digits": "0-99",
     "tier": "Tier 2",
-    "features": [],
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
     "media": [
       {
         "title": "By: Insomniaclockpicker",
@@ -51,7 +57,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-28T21:39:23.262Z"
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "761d2fe8",
@@ -62,8 +68,15 @@
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
-    "features": [],
-    "lastUpdated": "2024-08-01T05:04:29.090Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Fence Lever Control Device"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "693fd901",
@@ -74,7 +87,13 @@
     "wheels": "4",
     "digits": "0-99",
     "tier": "",
-    "features": [],
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
     "media": [
       {
         "title": "By: Octane",
@@ -105,7 +124,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-07-26T19:28:51.948Z"
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "0638d9d8",
@@ -116,8 +135,15 @@
     "wheels": "4",
     "digits": "0-99",
     "tier": "",
-    "features": [],
-    "lastUpdated": "2024-08-01T05:04:29.090Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Fence Lever Control Device"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "e3a922f0",
@@ -128,13 +154,19 @@
     "wheels": "3",
     "digits": "0-99",
     "tier": "Tier 3",
-    "features": [],
-    "lastUpdated": "2024-07-27T12:29:35.703Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "e24e62b7",
     "make": "Chubb",
-    "model": "7L50",
+    "model": "7K64",
     "group": "not rated",
     "fence": "Gravity Lever",
     "wheels": "4",
@@ -146,7 +178,7 @@
       "Anti-Punch Relocker",
       "Vault Format"
     ],
-    "lastUpdated": "2024-07-28T21:10:25.492Z"
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "75ddbd51",
@@ -157,8 +189,12 @@
     "wheels": "4",
     "digits": "0-99",
     "tier": "Tier 3",
-    "features": [],
-    "lastUpdated": "2024-07-26T17:16:08.352Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Vault Format"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "f5703ac0",
@@ -199,19 +235,26 @@
     "id": "19359f35",
     "make": "Chubb",
     "model": "Manifoil MK3",
-    "group": "",
+    "group": "not rated",
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-30T18:17:05.632Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Eccentric Double-Cam",
+      "LOBC Cover",
+      "Lead Shielding",
+      "Noise Rollers"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.699Z"
   },
   {
     "id": "087f41e9",
     "make": "Chubb",
     "model": "Manifoil MK4",
-    "group": "",
+    "group": "not rated",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
@@ -219,13 +262,12 @@
     "features": [
       "Moveable Flies",
       "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "False Gates",
       "Eccentric Double-Cam",
-      "LOBC"
+      "LOBC Cover",
+      "Lead Shielding",
+      "Noise Rollers"
     ],
-    "lastUpdated": "2024-07-30T18:17:05.632Z"
+    "lastUpdated": "2024-08-15T16:40:01.700Z"
   },
   {
     "id": "58441a32",
@@ -281,12 +323,18 @@
     "make": "Diebold",
     "model": "177-23B",
     "group": "2",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-28T21:10:25.492Z"
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.700Z"
   },
   {
     "id": "91242adb",
@@ -377,12 +425,30 @@
     "make": "Federal",
     "model": "800",
     "group": "2",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
+    "lastUpdated": "2024-08-15T16:40:01.700Z"
+  },
+  {
+    "id": "2f6b4c23",
+    "make": "Fichet-Bauche",
+    "model": "C.a.3 C.",
+    "group": "not rated",
+    "fence": "",
+    "wheels": "3",
+    "digits": "1-19",
+    "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-28T21:10:25.492Z"
+    "lastUpdated": "2024-08-15T16:40:01.700Z"
   },
   {
     "id": "995fe19d",
