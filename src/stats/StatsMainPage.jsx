@@ -3,7 +3,6 @@ import useWindowSize from '../util/useWindowSize'
 import LockViewsLine from './LockViewsLine'
 import SiteStats from './SiteStats'
 import PhotoStats from './PhotoStats'
-import PopularAreas from './PopularAreas'
 import BeltDistribution from './BeltDistribution'
 import LockingMechanisms from './LockingMechanisms'
 import RedditBeltGrowth from './RedditBeltGrowth'
@@ -42,9 +41,6 @@ function StatsMainPage({data}) {
 
             <div style={headerStyle}>Weekly Lock Views</div>
             <LockViewsLine data={data.siteSummary}/>
-
-            <div style={headerStyle}>Popular Countries</div>
-            <PopularAreas data={data}/>
 
             <div style={headerStyle}>Photo Stats</div>
             <PhotoStats data={data}/>
