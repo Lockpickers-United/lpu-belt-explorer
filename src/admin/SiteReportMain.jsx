@@ -4,12 +4,13 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFull, siteSummary} from '../data/dataUrls'
+import {siteFull, siteSummary, popularAreas} from '../data/dataUrls'
 import LockViewsLine from '../stats/LockViewsLine'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
 import PopularCountries from './siteReport/PopularCountries'
+import PopularAreas from '../stats/PopularAreas.jsx'
 
 function SiteReportMain() {
     usePageTitle('Site Report')
@@ -58,6 +59,9 @@ function SiteReportMain() {
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable data={siteFull}/>
 
+            <div style={headerStyle}>Popular Areas</div>
+            <PopularAreas data={data}/>
+
             {!!siteFull.popularCountries1 &&
                 <React.Fragment>
                     <div style={headerStyle}>Popular Countries</div>
@@ -71,7 +75,8 @@ function SiteReportMain() {
 
 const urls = {
     siteFull,
-    siteSummary
+    siteSummary,
+    popularAreas
 }
 
 export default SiteReportMain

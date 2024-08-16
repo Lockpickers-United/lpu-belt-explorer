@@ -125,11 +125,19 @@ export default [
             const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute/>}
         }
-    },{
+    },
+    {
         path: '/profile/scorecard/upgrades',
         lazy: async() => {
             const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')
             return {element: <UpgradesRoute/>}
+        }
+    },
+    {
+        path: '/profile/scorecard/howto',
+        lazy: async() => {
+            const {default: HowToRoute} = await import('../scorecard/HowToRoute')
+            return {element: <HowToRoute/>}
         }
     },
     {
