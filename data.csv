@@ -428,7 +428,7 @@ Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element",,db4de1bb
 Purple,Dierre,"New Power",,Wafer,,,a10711cc
 Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,Magic DOM drivers",,acde7f0c
-Purple,DOM,"ix Teco",,Dimple,"""Magic"" DOM drivers,Bottlenose keypins",,90e4bcc1
+Purple,DOM,"ix Teco",,Dimple,"Magic DOM drivers,Bottlenose keypins",,90e4bcc1
 Purple,DOM,"ix Twido",,Dimple,"Torpedo keypins,Interactive element,Magic DOM drivers",,fc4de1ff
 Purple,DOM,ix10,"without fins",Dimple,,,7b05dccc
 Purple,Eagle,"""Supr-Security""","without shutter",Wafer,,,e8901d1c
