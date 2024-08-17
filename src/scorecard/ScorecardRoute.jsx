@@ -39,8 +39,9 @@ function ScorecardRoute() {
 
     const loadFn = useCallback(async () => {
         if (triggerState) {
-            // terrible hack to reload data when an admin takes 
-            // action to modify another user's scorecard
+            // Terrible hack to reload data when an admin takes action to modify
+            // another user's scorecard. The dependency array will trigger eval,
+            // and this removes lint error without suppressing other dep problems.
             triggerState
         }
         try {
