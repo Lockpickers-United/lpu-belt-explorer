@@ -33,3 +33,4 @@ public/sitemap.xml
 public/data/*
 
 src/data/dancache/*
+src/data/linkCache.json
