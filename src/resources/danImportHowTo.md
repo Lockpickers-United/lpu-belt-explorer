@@ -1,6 +1,6 @@
 ## Hello Black Belts!
 
-In building towards a vision where core picking activities are integrated in one place, the Dan System is now running on lpubelts.com. Future lock and project additions should be made on lpubelts.com, and dan requests should reference your lpubelts.com Scorecard. The google dan sheet that you all know and love has been put into read-only mode, so you can use it as a check for this transition.
+In building towards a vision where core picking activities are integrated in one place, the Dan System is now running on lpubelts.com. Future lock and project additions should be made on lpubelts.com, and dan requests should reference your lpubelts.com Scorecard. The Google dan sheet that you all know and love has been put into read-only mode, so you can use it as a check for this transition.
 
 Follow these instructions to migrate your dan sheet to lpubelts.com:
 
@@ -8,7 +8,7 @@ Follow these instructions to migrate your dan sheet to lpubelts.com:
 
 2. **Select the Scorecard under the user menu in the upper right**
 3. **Click/tap the “Import Dan Sheet” button**
-4. **Type your tab name, exactly as it appears on the [Google Dan Sheet](https://docs.google.com/spreadsheets/d/1gXQvnFi5usYNcFJKqxxBXYzMczNZ0ml_UVHYrX4D90o/edit?usp=sharing)**
+4. **Type your tab name, exactly as it appears on the [Google Dan Sheet](https://docs.Google.com/spreadsheets/d/1gXQvnFi5usYNcFJKqxxBXYzMczNZ0ml_UVHYrX4D90o/edit?usp=sharing)**
 5. **Click/tap “Import” to confirm**
 
 **That’s it!**
@@ -19,7 +19,7 @@ You should now see your dan sheet on lpubelts.com, and can carry on! If you have
 
 ### 1. Log into lpubelts.com.
 
-If you have never used lpubelts.com before, it’s simple to get started. In the upper right corner you will find the user menu, and then select the option to “Sign In with Google”. You can use any google account you like for this purpose, and you don’t need to use the same google account that you have associated with your google dan sheet.
+If you have never used lpubelts.com before, it’s simple to get started. In the upper right corner you will find the user menu, and then select the option to “Sign In with Google”. You can use any Google account you like for this purpose, and you don’t need to use the same Google account that you have associated with your Google dan sheet.
 
 ![Log into lpubelts.com](https://dev.lpubelts.com/images/sign-in-+-scorecard-link-s.png)
 
@@ -37,7 +37,7 @@ By importing your dan sheet, we’re going to address that.
 
 ![Import Dan Sheet](https://dev.lpubelts.com/images/import-dan-+-import-form-s.png)
 
-### 4. Type your tab name, exactly as it appears on the google dan sheet.
+### 4. Type your tab name, exactly as it appears on the Google dan sheet.
 
    You need to match the tab name exactly as it appears on your dan sheet, paying attention to capital and lowercase letters.
 
@@ -55,13 +55,13 @@ A: For many people the calculations will match exactly. But in general the numbe
 
 ![Exceptions on Import Dan Sheet](https://dev.lpubelts.com/images/exceptions-s.png)
 
-**Could not match.** While the importer does a really good job overall, the lock classification that the dan sheets use is slightly different than the one in lpubelts.com. You may have a lock from your dan sheet that is too ambiguous to match clearly to the right entry in lpubelts.com. No worries, you just need to find that lock in lpubelts.com and add your video link and date manually. Other times the lock may not yet exist in lpubelts.com, because it has not yet been classified. Though this will never be the cause of a point difference, since such locks weren’t worth points there either.
+**Could not match.** While the importer does a really good job overall, the lock classification that the dan sheets use is slightly different from the one in lpubelts.com. You may have a lock from your dan sheet that is too ambiguous to match clearly to the right entry in lpubelts.com. No worries, you just need to find that lock in lpubelts.com and add your video link and date manually. Other times the lock may not yet exist in lpubelts.com, because it has not yet been classified. Though this will never be the cause of a point difference, since such locks weren’t worth points there either.
 
 **Missing or bad URLs.** If you had a bunch of Recorded locks before, there is a good chance you still have some of these, as the dan sheet does not usually contain green and below locks. Those aren’t responsible for lost dan points, but not providing a proper link in your dan sheet for a Blue lock or above will certainly do it. All cases are very easy to fix: just click on the lock to edit and add/fix the missing/bad link.
 
-**Upgrades.** This is probably the biggest source of legitimately different points. We have a lock upgrade system, where locks with fewer elements, more mastered pins and such are upgraded by locks with more elements, etc. To date, it hasn’t been very clear which locks upgrade others, and the burden has been on black belt pickers to figure it out and use the “upgraded” modifier in their google sheet so that only the points for the upgraded lock count. This has been applied very inconsistently across dan sheets, but no more! We now have a single upgrade taxonomy (click on “Upgrades list” towards the top of your scorecard, just below your dan point total, to see it) that is automatically applied consistently to everyone. Since this is the first time anyone has attempted to pull together such a taxonomy, I’m sure some people would judge a specific upgrade pair differently than others. If you disagree with a particular upgrade pair, then please raise the issue with #lock-classification for further review.
+**Upgrades.** This is probably the biggest source of legitimately different points. We have a lock upgrade system, where locks with fewer elements, more mastered pins and such are upgraded by locks with more elements, etc. To date, it hasn’t been very clear which locks upgrade others, and the burden has been on black belt pickers to figure it out and use the “upgraded” modifier in their Google sheet so that only the points for the upgraded lock count. This has been applied very inconsistently across dan sheets, but no more! We now have a single upgrade taxonomy (click on “Upgrades list” towards the top of your scorecard, just below your dan point total, to see it) that is automatically applied consistently to everyone. Since this is the first time anyone has attempted to pull together such a taxonomy, I’m sure some people would judge a specific upgrade pair differently than others. If you disagree with a particular upgrade pair, then please raise the issue with #lock-classification for further review.
 
-**Duplicates.** Some locks are samelined into the same entry, and therefore only one will count for dan points. The google dan sheet also did an accurate job of calculating this, so this should not result in different points. But it is called out here, to help explain how the math works.
+**Duplicates.** Some locks are samelined into the same entry, and therefore only one will count for dan points. The Google dan sheet also did an accurate job of calculating this, so this should not result in different points. But it is called out here, to help explain how the math works.
 
 **Q: The link/date/modifier/notes are wrong. Can I fix it?**
 
@@ -77,11 +77,11 @@ For new projects, go to the top of your Scorecard and click on the “Add Projec
 
 **Q: I’ve picked enough locks to get to the next dan while you were talking. How do I get my belt?**
 
-A: First, add all of your locks and projects to your Scorecard, so that it is up to date. We are still using **#belt-requests** on discord, and for the moment there is no way within lpubelts.com to request your belt. However, when you are ready for your next dan, then you can copy a link to your scorecard by clicking the link icon just to the right of the “Scorecard” title at the top. Then paste this link into #belt-requests, so your post should look something like this:
+A: First, add all of your locks and projects to your Scorecard, so that it is up-to-date. We are still using **#belt-requests** on discord, and for the moment there is no way within lpubelts.com to request your belt. However, when you are ready for your next dan, then you can copy a link to your scorecard by clicking the link icon just to the right of the “Scorecard” title at the top. Then paste this link into #belt-requests, so your post should look something like this:
 
 `@LPUBeltBot request 8th Dan https://lpubelts.com/#/profile/[YourID]/scorecard`
 
-The mods will receive your request, reviewing your Scorecard similar to how they previously reviewed your google dan sheet. And they will respond just as before, in #belt-requests.
+The mods will receive your request, reviewing your Scorecard similar to how they previously reviewed your Google dan sheet. And they will respond just as before, in #belt-requests.
 
 **Q: You still haven’t answered my question!**
 

@@ -1,17 +1,18 @@
 import React, {useCallback, useContext, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import DBContext from '../app/DBContext'
 import useWindowSize from '../util/useWindowSize'
-
+import Link from '@mui/material/Link'
 
 export default function ImportDanSheetForm({setControlsExpanded, adminAction}) {
     const {userId} = useParams()
     const {importUnclaimedEvidence} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [importing, setImporting] = useState(false)
+    const navigate = useNavigate()
 
     const [tabToImport, setTabToImport] = useState('')
     const [tabImportError, setTabImportError] = useState(null)
@@ -46,12 +47,15 @@ export default function ImportDanSheetForm({setControlsExpanded, adminAction}) {
                             If you do not already have a tab in the Dan sheet, this import will not work for you.
                             For those that do, specify the name of your tab in the sheet to import your history into
                             your Scorecard.
-                            Please note that tab names are case sensitive.
+                            Please note that tab names are case sensitive. <Link onClick={() => {
+                                navigate('/profile/scorecard/howto')
+                            }} style={{color: '#bbb', cursor: 'pointer'}}>Click here to learn more.</Link>
+
                             <br/><br/>
 
-                            <div style={{padding: '0px', alignItems:'center'}}>
+                            <div style={{padding: '0px', alignItems: 'center'}}>
                                 <div style={{padding: '0px', display: 'flex'}}>
-                                    <div style={{flexGrow:1}}> </div>
+                                    <div style={{flexGrow: 1}}></div>
                                     <TextField
                                         id='tab-to-import'
                                         label='Tab to Import'

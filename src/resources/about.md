@@ -100,11 +100,13 @@ The LPU Belt Ranking System, along with the Belt Explorer and other initiatives,
 
 Concept, creation and development: NiXXeD, PeaceWeapon, mgsecure
 
+New addition to the team! tonysansan
+
 For extraordinary help getting things started right: Holly, The Greenish One
 
 For allowing the broad use of images and information from their sites: Holly (Lockwiki), Datagram (Lockwiki), Luboš Čech (Catalocks), Marillion (Koksawiki), Jos Weyers (Toool NL), Mow (assamow)
 
-For collaborating with the original team in making this a better and more useful site for LPU participants as well as all locksport: Jan-Willem, Martin Hewitt, Nkt, Cheesehead, Red Wanderer, CajunLockpick, Mow, Crispix, Reinder Stegen, Ionawest, Tumbl3r, CorrectJeans.
+For collaborating with the original team in making this a better and more useful site for LPU participants as well as all locksport: DoNotDuplicate, Mick Emhurt, Jan-Willem, Martin Hewitt, Nkt, Cheesehead, Red Wanderer, CajunLockpick, Mow, Crispix, Reinder Stegen, Ionawest, Tumbl3r, CorrectJeans.
 
 There are over 200 different contributors who have supplied images for the site. The top 10 most prolific are mgsecure, PeaceWeapon, Luboš Čech, Reinder Stegen, Ben-on-reddit, Clefmentine, LockPickingFisherman, myktylgaan, Qikom, Yabende. For the complete list, visit the [**stats page**](https://lpubelts.com/#/stats).
 

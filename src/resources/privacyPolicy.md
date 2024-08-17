@@ -198,10 +198,6 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 
 # Contact Us
 
-If you have any questions about this Privacy Policy, You can contact us:
+If you have any questions about this Privacy Policy, You can contact us by email:
 
-
-- By email: lpubeltapp@gmail.com
-
-
-- By visiting this page on our website: [https://lpubelts.com/contact/](https://lpubelts.com/contact/)
+> [lpubeltapp@gmail.com](mailto://lpubeltapp@gmail.com)

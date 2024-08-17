@@ -146,7 +146,7 @@ function Scorecard({owner, profile, adminAction}) {
                             <div style={{display: 'flex', width: '100%', placeItems: 'center', textAlign: 'center'}}>
                                 {!danSheetImported &&
                                     <div style={{width: '50%', textAlign: 'center'}}>
-                                        <Button variant='outlined' color='secondary' size='small'
+                                        <Button variant='contained' color='secondary' size='small'
                                                 style={{lineHeight: '1rem'}}
                                                 onClick={() => handleOpenControls('import')}>
                                             IMPORT DAN SHEET
