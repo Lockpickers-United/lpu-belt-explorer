@@ -1327,10 +1327,10 @@
     "group": "1",
     "fence": "",
     "wheels": "6",
-    "digits": "1-10",
+    "digits": "0-12",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-28T21:10:25.493Z"
+    "lastUpdated": "2024-08-17T17:09:45.757Z"
   },
   {
     "id": "ae66f9a6",
@@ -1864,6 +1864,22 @@
     "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
+    "id": "aeeb2e0f",
+    "make": "Sargent & Greenleaf",
+    "model": "8065 Padlock",
+    "group": "not rated",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-59",
+    "tier": "",
+    "features": [
+      "Shutter Padlock",
+      "Removeable Shoe",
+      "Manipulation Resistant"
+    ],
+    "lastUpdated": "2024-08-17T17:09:45.758Z"
+  },
+  {
     "id": "3809d4a5",
     "make": "Sargent & Greenleaf",
     "model": "8077 Padlock",
@@ -1889,14 +1905,14 @@
   {
     "id": "b951fed1",
     "make": "Sargent & Greenleaf",
-    "model": "8088",
-    "group": "",
+    "model": "8088 Padlock",
+    "group": "not rated",
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-26T23:31:04.552Z"
+    "lastUpdated": "2024-08-17T17:09:45.758Z"
   },
   {
     "id": "bb279fda",
@@ -2265,18 +2281,6 @@
       }
     ],
     "lastUpdated": "2024-07-28T21:10:25.494Z"
-  },
-  {
-    "id": "da5d6407",
-    "make": "Yale",
-    "model": "OC-5M",
-    "group": "",
-    "fence": "",
-    "wheels": "3",
-    "digits": "0-99",
-    "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-26T23:31:04.553Z"
   },
   {
     "id": "86c1a98b",
