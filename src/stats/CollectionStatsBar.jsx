@@ -7,11 +7,7 @@ import AuthContext from '../app/AuthContext'
 function CollectionStatsBar({data, lockCollection, userText, collectionBarHeight}) {
     const {isLoggedIn} = useContext(AuthContext)
 
-    console.log('data', data.collectionsSummary.listStats.data[0])
-
-const listStats = data.collectionsSummary.listStats.data[0]
-
-
+    const listStats = data.collectionsSummary.listStats.data[0]
     const own = lockCollection.own ? lockCollection.own.length : 0
     const picked = lockCollection.picked ? lockCollection.picked.length : 0
     const scorecard = lockCollection.recordedLocks ? lockCollection.recordedLocks.length : 0

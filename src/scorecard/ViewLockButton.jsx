@@ -12,7 +12,6 @@ export default function ViewLockButton({entry}) {
         event.preventDefault()
         event.stopPropagation()
         const url = `${window.location.origin}/#/locks?id=${entry.id}&name=${safeName}`
-        console.log(url)
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }, [entry.id, safeName])

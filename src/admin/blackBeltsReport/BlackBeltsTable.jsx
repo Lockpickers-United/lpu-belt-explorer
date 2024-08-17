@@ -9,15 +9,10 @@ const BlackBeltsTable = ({tableData}) => {
     const bodyStyle = {}
 
     const blackBelts = tableData.map(user => {
-        console.log('user', user)
         const displayName = user.displayName ? user.displayName : 'No display name'
         const scorecardLink = `/profile/${user.userId}/scorecard`
         const tabClaims = tableData.filter(u => u.tabClaimed === user.tabClaimed)
         const cellColor = tabClaims.length > 1 ? '#f00' : '#eee'
-
-
-
-        console.log('tabClaims', tabClaims)
 
         return {
             displayName: displayName,

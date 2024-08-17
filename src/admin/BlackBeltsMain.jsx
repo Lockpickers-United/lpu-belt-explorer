@@ -21,8 +21,6 @@ function CollectionsReportMain() {
     const collectionsData = data?.collectionsFullBB
     const blackBeltData = data?.leaderboardData2?.blackBelts
 
-    console.log('blackBeltData', blackBeltData)
-
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(data?.leaderboardData2.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ')'
 

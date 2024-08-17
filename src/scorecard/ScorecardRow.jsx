@@ -22,8 +22,6 @@ function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    // console.log(`ScorecardRow ${evid.id}`)
-
     const merged = profile.blackBeltAwardedAt > 0
     const entry = getEntryFromId(evid.matchId)
     const project = getProjectEntryFromId(evid.matchId)

@@ -118,8 +118,6 @@ export function ScorecardDataProvider({children, cardEvidence, cardBBCount, card
             })
     }, [filters, mappedEntries, search, sort])
 
-//    console.log('visibleEntries', visibleEntries)
-
     const value = useMemo(() => ({
         allEntries,
         cardEvidence,
