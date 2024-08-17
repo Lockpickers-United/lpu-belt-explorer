@@ -49,7 +49,7 @@ function BlackBeltAwardRow({owner, date}) {
     }, [userId, evidenceDate, updateProfileBlackBeltAwardedAt])
 
 
-    let dateText = date ? dayjs(date).format('L') : '(no date)'
+    let dateText = date ? dayjs.utc(date).format('L') : '(no date)'
     dateText = dateText.replace('/202', '/2')
     dateText = dateText.replace('/201', '/1')
 

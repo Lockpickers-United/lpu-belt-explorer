@@ -13,7 +13,6 @@ function DansPage() {
     const updateTime = '8/15/2024'
 
     const {user} = useContext(AuthContext)
-console.log(user)
 
     const idText = user
         ? user.uid
