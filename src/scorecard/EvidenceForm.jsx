@@ -58,7 +58,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
 
     const handleSave = useCallback(async () => {
         try {
-            if (evid?.id && evid?.matchId) {
+            if (evid?.id) {
                 await updateEvidence(evid, {
                     matchId: evid.matchId,
                     evidenceNotes: evidenceNotes,
