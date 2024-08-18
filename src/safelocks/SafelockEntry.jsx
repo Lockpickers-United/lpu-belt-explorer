@@ -6,7 +6,6 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import queryString from 'query-string'
 import React, {useCallback, useEffect, useRef, useState} from 'react'
 import Tracker from '../app/Tracker'
 import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
@@ -29,8 +28,6 @@ function SafelockEntry({entry, expanded, onExpand}) {
         if (expanded && ref && !scrolled) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
-            const {id} = queryString.parse(location.search)
-            const isIdFiltered = id === entry.id
 
             setScrolled(true)
 
@@ -38,9 +35,9 @@ function SafelockEntry({entry, expanded, onExpand}) {
                 window.scrollTo({
                     left: 0,
                     top: ref.current.offsetTop - offset,
-                    behavior: isIdFiltered ? 'auto' : 'smooth'
+                    behavior: expanded ? 'auto' : 'smooth'
                 })
-            }, isIdFiltered ? 0 : 100)
+            }, expanded ? 0 : 100)
         } else if (!expanded) {
             setScrolled(false)
         }
@@ -190,4 +187,19 @@ function SafelockEntry({entry, expanded, onExpand}) {
     )
 }
 
-export default SafelockEntry
+
+export default React.memo(SafelockEntry, (prevProps, nextProps) => {
+    const prevEntryKeys = Object.keys(prevProps.entry)
+    const nextEntryKeys = Object.keys(nextProps.entry)
+
+    if (prevEntryKeys.length !== nextEntryKeys.length) {
+        return false
+    }
+    for (let idx = 0; idx < prevEntryKeys.length; idx++) {
+        if (prevProps.entry[idx] !== nextProps.entry[idx]) {
+            return false
+        }
+    }
+    return prevProps.expanded === nextProps.expanded &&
+        prevProps.onExpand === nextProps.onExpand
+})
