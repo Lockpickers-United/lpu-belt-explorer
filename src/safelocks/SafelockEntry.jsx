@@ -16,6 +16,8 @@ import BeltStripe from '../entries/BeltStripe.jsx'
 import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import SafelocksCollectionButton from './SafelocksCollectionButton.jsx'
+import ReactMarkdown from 'react-markdown'
+import rehypeExternalLinks from 'rehype-external-links'
 
 function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -135,6 +137,17 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                 <SafelocksCollectionButton id={entry?.id}/>
                             </div>
                         </div>
+                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
+                            {!!entry.notes &&
+                                <FieldValue name='Notes' value={
+                                    <Typography component='div' style={{marginTop: -16}}>
+                                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                                            {entry.notes}
+                                        </ReactMarkdown>
+                                    </Typography>
+                                }/>
+                            }
+                        </Stack>
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>

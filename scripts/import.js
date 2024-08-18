@@ -295,6 +295,7 @@ const dialsMainData = dialsData.map(datum => {
         fence: datum.Fence,
         wheels: datum.Wheels,
         digits: datum.Digits,
+        notes: datum.Notes,
         tier: datum['Quest Tier'],
         features: datum.Features ? datum.Features.split(',').filter(x => x) : []
     }
