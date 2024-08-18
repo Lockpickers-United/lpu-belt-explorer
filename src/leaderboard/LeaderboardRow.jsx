@@ -3,8 +3,11 @@ import React, {useContext, useEffect, useRef, useState} from 'react'
 import AuthContext from '../app/AuthContext'
 import LeaderboardCell from './LeaderboardCell'
 import LeaderboardName from './LeaderboardName'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
-function LeaderboardRow({index, leader, highlighted, scrollableRef}) {
+function LeaderboardRow({index, leader, highlighted, scrollableRef, columns}) {
     const ref = useRef()
     const {user} = useContext(AuthContext)
     const [scrolled, setScrolled] = useState(false)
@@ -37,10 +40,18 @@ function LeaderboardRow({index, leader, highlighted, scrollableRef}) {
             <LeaderboardCell isCurrentUser={isCurrentUser} value={
                 <LeaderboardName isCurrentUser={isCurrentUser} leader={leader}/>
             } align='left'/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.own}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.picked}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.recorded}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} value={leader.wishlist}/>
+
+            {columns.map((column, index) => {
+                const value = column.field === 'blackBeltAwardedAt'
+                    ? leader[column.field] > 0
+                        ? dayjs.utc(leader[column.field]*1000).format('MM/DD/YY')
+                        : '-'
+                    : leader[column.field]
+                return (
+                    <LeaderboardCell isCurrentUser={isCurrentUser} value={value} key={index}/>
+                )
+            })}
+
         </TableRow>
     )
 }

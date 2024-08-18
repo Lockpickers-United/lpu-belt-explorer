@@ -1,20 +1,26 @@
-import React, {useContext, useDeferredValue} from 'react'
+import React, {useState, useContext, useDeferredValue} from 'react'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import CompactEntries from '../locks/CompactEntries'
 import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
+import ProfileHeader from './ProfileHeader.jsx'
 
 function ProfilePage({profile}) {
-    const {compact, expanded, setExpanded} = useContext(LockListContext)
+    const {compact} = useContext(LockListContext)
+    const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
 
     return (
-        <div style={{margin: 8, paddingBottom: 32}}>
+        <div style={{
+            maxWidth: 700, padding: 0, backgroundColor: '#222',
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+        }}>
 
-            <InlineFilterDisplay profile={profile}/>
+            <ProfileHeader profile={profile} page={'collection'}/>
+            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
             <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 
             {compact

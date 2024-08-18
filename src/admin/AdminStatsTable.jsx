@@ -65,7 +65,8 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
                                                    color: '#eee'
                                                }}
                                                component='th' scope='row'>
-                                        {row[column.id].toLocaleString()}
+                                        {row[column.id] ? row[column.id].toLocaleString() : ''}
+
                                     </TableCell>
                                 )}
                             </TableRow>

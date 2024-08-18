@@ -3,6 +3,7 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
 import DansPage from './DansPage'
+import Tracker from '../app/Tracker.jsx'
 
 function InfoRoute() {
     usePageTitle('Dan System')
@@ -14,6 +15,9 @@ function InfoRoute() {
             <DansPage/>
 
             <Footer/>
+
+            <Tracker feature='dans'/>
+
         </React.Fragment>
     )
 }

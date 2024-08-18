@@ -9,18 +9,16 @@ import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import Button from '@mui/material/Button'
 import CardActions from '@mui/material/CardActions'
+import Menu from '@mui/material/Menu'
+import LoadingDisplay from '../misc/LoadingDisplay'
 
 function EditProfilePage() {
-    const {lockCollection, updateProfileVisibility, clearProfile} = useContext(DBContext)
+    const {lockCollection, updateProfileDisplayName, deleteAllUserData} = useContext(DBContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
+    const [anchorEl, setAnchorEl] = useState(null)
+    const [deletingData, setDeletingData] = useState(false)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
-
-    const profileType = !lockCollection?.displayName
-        ? 'none'
-        : lockCollection?.public
-            ? 'public'
-            : 'private'
 
     const handleChange = useCallback(event => {
         const {value} = event.target
@@ -31,32 +29,45 @@ function EditProfilePage() {
 
     const handleSave = useCallback(async () => {
         try {
-            await updateProfileVisibility(true, displayName)
+            await updateProfileDisplayName(displayName)
             enqueueSnackbar('Profile updated')
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile')
         }
-    }, [updateProfileVisibility, displayName])
+    }, [updateProfileDisplayName, displayName])
 
-    const handleClearProfile = useCallback(async () => {
+    const handleClear = useCallback(async () => {
         try {
-            await clearProfile()
+            await updateProfileDisplayName(null)
             setDisplayName('')
             enqueueSnackbar('Display Name cleared')
         } catch (ex) {
             console.error('Error while updating profile', ex)
             enqueueSnackbar('Error while updating profile')
         }
-    }, [clearProfile])
+    }, [updateProfileDisplayName])
 
     const handleViewProfile = useCallback(() => {
         navigate(`/profile/${user.uid}`)
     }, [navigate, user.uid])
 
+    const handleDeleteConfirm = useCallback((ev) => {
+        ev.preventDefault()
+        ev.stopPropagation()
+        setAnchorEl(ev.currentTarget)
+    }, [])
+
+    const handleDeleteAllData = useCallback(async () => {
+        setDeletingData(true)
+        await deleteAllUserData(user.uid)
+        setAnchorEl(null)
+        setDeletingData(false)
+        enqueueSnackbar('All data has been deleted')
+    }, [deleteAllUserData, user])
+
     const error = displayName.length > 0 && !pattern.test(displayName.toString())
-    const noSave = displayName.length === 0
-        || (displayName === lockCollection?.displayName && profileType !== 'private')
+    const noSave = displayName.length === 0 || displayName === lockCollection?.displayName
     const helperText = error
         ? 'Display name must only include A-Z, 0-9, _ and -.'
         : ''
@@ -67,12 +78,6 @@ function EditProfilePage() {
     const introNameText = displayName.length > 0
         ? ` (${displayName}) `
         : ''
-    const saveButtonText = profileType === 'private'
-        ? 'Save Public'
-        : 'Save'
-    const inputWidth = profileType === 'private'
-        ? 200
-        : 260
 
     return (
         <Card style={{
@@ -83,82 +88,103 @@ function EditProfilePage() {
             marginBottom: 46
         }}>
             <CardHeader title={cardTitleText} action={null}/>
-            <CardContent>
-                {profileType === 'none' &&
-                    <div style={{marginBottom: 10}}>
-                        Your display name will show up on the leaderboard and
-                        your profile can be shared with others.
-                        <br/><br/>
-                        Your Google login information will never be displayed to other users.
-                    </div>
-                }
-                {profileType === 'public' &&
-                    <div style={{marginBottom: 10}}>
-                        Your display name {introNameText} shows up on the leaderboard and
-                        your profile can be shared by clicking the link icon above.
-                        <br/><br/>
-                        Your Google login information will never be displayed to other users.
-                    </div>
-                }
-                {profileType === 'private' &&
-                    <div style={{marginBottom: 10}}>
-                        Private profiles are going away soon.
-                        Click Save to make your profile public or Clear to remove your display name.
-                        Public profiles can be shared and will appear on the leaderboard.
-                        <br/><br/>
-                        No matter what you choose, your Google login information will never be displayed to other users.
-                    </div>
-                }
-                <br/>
-                <div style={{width: '100%'}}>
-                    <TextField
-                        error={error}
-                        variant='outlined'
-                        color='secondary'
-                        label='Display Name'
-                        helperText={helperText}
-                        value={displayName || ''}
-                        onChange={handleChange}
-                        onFocus={handleFocus}
-                        inputProps={{
-                            maxLength: 32
-                        }}
-                        size='small'
-                        style={{width:inputWidth}}
+            {deletingData ? 
+                <LoadingDisplay/>
+            : 
+                <React.Fragment>
+                    <CardContent>
+                        {lockCollection?.displayName ?
+                            <div style={{marginBottom: 10}}>
+                                Your display name {introNameText} shows up on the leaderboard and
+                                your profile can be shared with others.
+                                <br/><br/>
+                                Your Google login information will never be displayed to other users.
+                            </div>
+                        :
+                            <div style={{marginBottom: 10}}>
+                                Your display name will show up on the leaderboard and
+                                your profile can be shared with others.
+                                <br/><br/>
+                                Your Google login information will never be displayed to other users.
+                            </div>
+                        }
+                        <br/>
+                        <div style={{width: '100%'}}>
+                            <TextField
+                                error={error}
+                                variant='outlined'
+                                color='secondary'
+                                label='Display Name'
+                                helperText={helperText}
+                                value={displayName || ''}
+                                onChange={handleChange}
+                                onFocus={handleFocus}
+                                inputProps={{
+                                    maxLength: 32
+                                }}
+                                size='small'
+                                style={{width: 260}}
 
-                    />
-                        <Button variant='outlined'
-                                color={error ? undefined : 'success'}
-                                onClick={handleSave}
-                                disabled={error || noSave}
-                                style={{marginLeft: 16, marginRight:0, marginBottom: 10, height:40}}
-                        >
-                            {saveButtonText}
-                        </Button>
-                </div>
-            </CardContent>
-            <CardActions>
-                <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
-                    {lockCollection?.displayName &&
-                            <Button variant='outlined'
-                                    color='info'
-                                    onClick={handleClearProfile}
-                                    disabled={error}
-                                    style={{marginBottom: 10, color: '#4972ab', padding:'5px 19px'}}
-                            >
-                                Clear Display Name
-                            </Button>
-                    }
+                            />
+                                <Button variant='outlined'
+                                        color={error ? undefined : 'success'}
+                                        onClick={handleSave}
+                                        disabled={error || noSave}
+                                        style={{marginLeft: 16, marginRight:0, marginBottom: 10, height:40}}
+                                >
+                                    Save
+                                </Button>
+                        </div>
+                    </CardContent>
+                    <CardActions>
+                        <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
+                            {lockCollection?.displayName &&
+                                    <Button variant='outlined'
+                                            color='info'
+                                            onClick={handleClear}
+                                            disabled={error}
+                                            style={{marginBottom: 10, color: '#4972ab', padding:'5px 19px'}}
+                                    >
+                                        Clear Display Name
+                                    </Button>
+                            }
+                                <Button variant='outlined'
+                                        color='info'
+                                        onClick={handleViewProfile}
+                                        style={{marginLeft: 15, marginBottom: 10,  color: '#4972ab', padding:'5px 19px'}}
+                                >
+                                    View Profile
+                                </Button>
+                        </div>
+
+                    </CardActions>
+                    <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
                         <Button variant='outlined'
                                 color='info'
-                                onClick={handleViewProfile}
-                                style={{marginLeft: 15, marginBottom: 10,  color: '#4972ab', padding:'5px 19px'}}
+                                onClick={handleDeleteConfirm}
+                                style={{marginBottom: 10,  color: '#4972ab', padding:'5px 110px'}}
                         >
-                            View Profile
+                            Delete All Data
                         </Button>
-                </div>
-
-            </CardActions>
+                        <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
+                            <div style={{padding: 20, textAlign: 'center'}}>
+                                This will permanently delete all of your data.<br/>
+                                Are you sure?
+                            </div>
+                            <div style={{textAlign: 'center'}}>
+                                <Button style={{marginBottom: 10, color: '#000'}}
+                                        variant='contained'
+                                        onClick={handleDeleteAllData}
+                                        edge='start'
+                                        color='error'
+                                >
+                                    Delete
+                                </Button>
+                            </div>
+                        </Menu>
+                    </div>
+                </React.Fragment>
+            }
         </Card>
     )
 }

@@ -5,12 +5,15 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import PersonIcon from '@mui/icons-material/Person'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import ListAltIcon from '@mui/icons-material/ListAlt'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
-import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
-import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
+
+import AvTimerIcon from '@mui/icons-material/AvTimer'
 import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
@@ -19,24 +22,30 @@ import Tooltip from '@mui/material/Tooltip'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
+import AppContext from '../app/AppContext'
 import {useNavigate} from 'react-router-dom'
 
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {lockCollection} = useContext(DBContext)
+    const {adminRole, lockCollection} = useContext(DBContext)
+    const {admin, setAdmin} = useContext(AppContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const safeName = lockCollection.displayName
         ? lockCollection.displayName.replace(/\s/g, '_')
-        : 'Private'
+        : 'Anonymous'
 
     const handleClick = useCallback(url => () => {
         handleClose()
         navigate(url)
     }, [handleClose, navigate])
+
+    const handleToggleAdmin = useCallback(() => {
+        setAdmin(!admin)
+    }, [admin, setAdmin])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -58,11 +67,18 @@ function UserMenu() {
                     }
                 </IconButton>
             </Tooltip>
+
             <Menu
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+                sx={{
+                    '.MuiMenuItem-root': {
+                        minHeight:'36px'
+                    }
+                }}
             >
+
                 {
                     isLoggedIn &&
                     <div>
@@ -78,36 +94,56 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>Edit Profile</ListItemText>
                         </MenuItem>
+                        {adminRole &&
+                            <MenuItem onClick={handleToggleAdmin}>
+                                <ListItemIcon>
+                                    <AdminPanelSettingsIcon/>
+                                </ListItemIcon>
+                                {admin ?
+                                    <ListItemText>Disable Admin</ListItemText>
+                                :
+                                    <ListItemText>Enable Admin</ListItemText>
+                                }
+                            </MenuItem>
+                        }
+                        <Divider/>
+
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
                             <ListItemIcon>
-                                <AccountBoxIcon/>
+                                <LibraryBooksIcon  fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>View Profile</ListItemText>
+                            <ListItemText>Lock Collection</ListItemText>
+                        </MenuItem>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}/safelocks?name=${safeName}`)}>
+                            <ListItemIcon>
+                                <AvTimerIcon/>
+                            </ListItemIcon>
+                            <ListItemText>Safe Locks</ListItemText>
+                        </MenuItem>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}/scorecard?name=${safeName}`)}>
+                            <ListItemIcon>
+                                <ListAltIcon/>
+                            </ListItemIcon>
+                            <ListItemText>Scorecard</ListItemText>
                         </MenuItem>
                         <Divider/>
 
                         <MenuItem disabled>
-                            <ListItemText>My Collection</ListItemText>
+                            <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Own`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=own`)}>
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Picked`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=picked`)}>
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Recorded`)}>
-                            <ListItemIcon>
-                                <VideocamOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Recorded ({lockCollection.recorded?.length || 0})</ListItemText>
-                        </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=wishlist`)}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
@@ -141,12 +177,6 @@ function UserMenu() {
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Picked</ListItemText>
-                        </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
-                                <VideocamOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Recorded</ListItemText>
                         </MenuItem>
                         <MenuItem disabled>
                             <ListItemIcon>

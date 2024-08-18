@@ -8,7 +8,10 @@ import {
     viewSchema,
     groupSchema,
     glossarySchema,
-    dialsSchema
+    dialsSchema,
+    projectSchema,
+    upgradeSchema,
+    introCopySchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -51,6 +54,9 @@ const glossaryData = await importValidate('Glossary', glossarySchema)
 const dialsData = await importValidate('Dials', dialsSchema)
 const dialsMediaData = await importValidate('Dials Media', mediaSchema)
 const dialsLinkData = await importValidate('Dials Links', linkSchema)
+const projectsData = await importValidate('Projects', projectSchema)
+const upgradeData = await importValidate('Upgrades', upgradeSchema)
+const introCopyData = await importValidate('Intro Copy', introCopySchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -114,6 +120,58 @@ const jsonData = mainData
             return beltNumberA < beltNumberB ? -1 : 1
         }
     })
+
+// Add projects data
+console.log('Processing project data...')
+const projects = projectsData
+    .map(item => {
+        const id = item['Unique ID']
+        const name = item.Name
+        const tier = item.Tier
+        const makeModels = [{make: '', model: item.Name}]
+        const projectBelts = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5']
+        const projectTiers = ['T1', 'T2', 'T3', 'T4', 'T5']
+        const belt = projectBelts[projectTiers.indexOf(item.Tier)]
+        return {
+            id,
+            tier,
+            name,
+            belt,
+            makeModels
+        }
+    })
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+console.log('Writing projects.json')
+fs.writeFileSync('./src/data/projects.json', JSON.stringify(projects, null, 2))
+
+// Add upgrade data
+console.log('Processing project data...')
+const upgrades = upgradeData
+    .reduce((acc, item) => {
+        const id = item['Base ID']
+        const upgrade1 = item['Upgrade ID 1'] ? item['Upgrade ID 1'].toString() : null
+        const upgrade2 = item['Upgrade ID 2'] ? item['Upgrade ID 2'].toString() : null
+        const upgrade3 = item['Upgrade ID 3'] ? item['Upgrade ID 3'].toString() : null
+        const upgrade4 = item['Upgrade ID 4'] ? item['Upgrade ID 4'].toString() : null
+
+        const upgradeArray = [upgrade1]
+        if (upgrade2) {
+            upgradeArray.push(upgrade2)
+        }
+        if (upgrade3) {
+            upgradeArray.push(upgrade3)
+        }
+        if (upgrade4) {
+            upgradeArray.push(upgrade4)
+        }
+
+        acc[id] = upgradeArray
+        return acc
+    }, {})
+
+console.log('Writing upgrades.json')
+fs.writeFileSync('./src/data/upgrades.json', JSON.stringify(upgrades, null, 2))
 
 // Add media data
 mediaData
@@ -237,6 +295,7 @@ const dialsMainData = dialsData.map(datum => {
         fence: datum.Fence,
         wheels: datum.Wheels,
         digits: datum.Digits,
+        notes: datum.Notes,
         tier: datum['Quest Tier'],
         features: datum.Features ? datum.Features.split(',').filter(x => x) : []
     }
@@ -285,6 +344,19 @@ dialsLinkData
             url: item.URL
         })
     })
+
+// Intro Copy Data
+console.log('Processing Intro Copy data...')
+const introCopyJson = introCopyData.reduce((acc, item) => {
+    acc[item.Page] = {
+        title: item.Title,
+        copy: item['Intro Copy'],
+        link: item['Link Text'],
+        destination: item['Link Destination']
+    }
+    return acc
+}, {})
+fs.writeFileSync('./src/data/introCopy.json', JSON.stringify(introCopyJson, null, 2))
 
 // Recently updated data
 console.log('Processing recenty updated data...')

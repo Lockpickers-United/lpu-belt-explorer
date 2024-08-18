@@ -7,11 +7,13 @@ if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
 }
 
 export const brandDistribution = `${url}/statsBrandDistribution.json`
-export const collectionsFull = `${url}/statsCollectionsFull.json`
-export const collectionsSummary = `${url}/statsCollectionsSummary.json`
+export const collectionsFull = `${url}/statsCollectionsFull2.json`
+export const collectionsSummary = `${url}/statsCollectionsSummary2.json`
+export const collectionsFullBB = `${url}/statsCollectionsFull2BB.json`
+export const collectionsSummaryBB = `${url}/statsCollectionsSummary2BB.json`
 export const lockSummary = `${url}/statsLockSummary.json`
 export const popularAreas = `${url}/statsPopularAreas.json`
 export const redditGrowth = `${url}/statsRedditGrowth.json`
 export const siteFull = `${url}/statsSiteFull.json`
 export const siteSummary = `${url}/statsSiteSummary.json`
-export const leaderboardData = `${url}/leaderboardData.json`
+export const leaderboardData2 = `${url}/leaderboardData2.json`

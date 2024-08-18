@@ -1,5 +1,5 @@
 import IconButton from '@mui/material/IconButton'
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -13,36 +13,32 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
-import {safelockCollectionOptions} from '../data/collectionTypes'
+import collectionOptions from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
+import LoadingDisplay from '../misc/LoadingDisplay'
 
 function SafelockCollectionButton({id, dense}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
+    const [checkboxUpdating, setCheckboxUpdating] = useState(false)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {isMobile} = useWindowSize()
 
-    const isCollected = useMemo(() => {
-        return Object.keys(lockCollection)
-            .filter(key => !excludedKeys.includes(key))
-            .reduce((acc, key) => acc || lockCollection[key].includes(id), false)
-    }, [id, lockCollection])
+    const collected = collectionOptions.safelocks.getCollected(lockCollection)?.includes(id)
+    const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
-    const isChecked = useCallback(key => {
-        return !!lockCollection[key] && !!lockCollection[key].includes(id)
-    }, [id, lockCollection])
-
-    const handleChange = useCallback(key => (event, checked) => {
+    const handleChange = useCallback(key => async (event, checked) => {
         event.preventDefault()
-
+        setCheckboxUpdating(true)
         if (checked) {
-            addToLockCollection(key, id)
+            await addToLockCollection(key, id)
         } else {
-            removeFromLockCollection(key, id)
+            await removeFromLockCollection(key, id)
         }
+        setCheckboxUpdating(false)
     }, [id, addToLockCollection, removeFromLockCollection])
 
     return (
@@ -55,14 +51,14 @@ function SafelockCollectionButton({id, dense}) {
                             color='inherit'
                             onClick={handleOpen}
                         >
-                            <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'} fontSize='small'/>
+                            <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'} fontSize='small'/>
                         </IconButton>
                         : <Button
                             variant='outlined'
                             color='inherit'
                             onClick={handleOpen}
                             startIcon={
-                                <LibraryBooksIcon color={isCollected ? 'secondary' : 'inherit'}
+                                <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'}
                                                   fontSize={isMobile ? 'small' : 'medium'}/>
                             }
                         >
@@ -86,8 +82,11 @@ function SafelockCollectionButton({id, dense}) {
                         onClick={handleClose}
                     />
                     <CardContent style={{paddingTop: 0}}>
-                        <FormGroup>
-                            {safelockCollectionOptions.map(({key, label}) =>
+                        {checkboxUpdating ?
+                            <LoadingDisplay/>
+                            :
+                            <FormGroup>
+                            {collectionOptions.safelocks.map.filter(c => c.entry === 'checkbox').map(({key, label}) =>
                                 <FormControlLabel
                                     key={key}
                                     control={
@@ -102,6 +101,7 @@ function SafelockCollectionButton({id, dense}) {
                                 />
                             )}
                         </FormGroup>
+                        }
                     </CardContent>
                     <div style={{marginTop: -8, marginBottom: 16}}>
                         <SignInButton onClick={handleClose}/>
@@ -111,10 +111,5 @@ function SafelockCollectionButton({id, dense}) {
         </React.Fragment>
     )
 }
-
-const excludedKeys = [
-    'public',
-    'displayName'
-]
 
 export default SafelockCollectionButton

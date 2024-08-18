@@ -1,22 +1,38 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useMemo, useContext, useEffect} from 'react'
 import {useLocalStorage} from 'usehooks-ts'
-import AuthContext from './AuthContext'
+import DBContext from './DBContext'
 
 const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
-    const {user} = useContext(AuthContext)
+    const {adminRole} = useContext(DBContext)
     const [beta, setBeta] = useLocalStorage('beta', true)
+    const [admin, setAdmin] = useLocalStorage('admin', adminRole && !!import.meta.env.DEV)
+
+    useEffect(() => {
+        if (!adminRole && admin) {
+            setAdmin(false)
+        }
+    }, [adminRole, admin, setAdmin])
 
     const handleSetBeta = useCallback(value => {
         setBeta(value)
     }, [setBeta])
 
+    const handleSetAdmin = useCallback(value => {
+        if (adminRole) {
+            setAdmin(value)
+        } else {
+            setAdmin(false)
+        }
+    }, [setAdmin, adminRole])
+
     const value = useMemo(() => ({
-        admin: adminUids.includes(user?.uid),
         beta,
-        setBeta: handleSetBeta
-    }), [user, beta, handleSetBeta])
+        setBeta: handleSetBeta,
+        admin,
+        setAdmin: handleSetAdmin
+    }), [beta, handleSetBeta, admin, handleSetAdmin])
 
     return (
         <AppContext.Provider value={value}>
@@ -24,13 +40,5 @@ export function AppProvider({children}) {
         </AppContext.Provider>
     )
 }
-
-const adminUids = [
-    'GGplAdctTfVDLVvYsfIADJmfp8f2',
-    'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-    'mZyfQIARjCP1uJJJc7ioMAALV9v2',
-    'XoUDXU5McjTuVnPA1xfmzytcKuy2',
-    'XX8BzLAvqmPeBTiqcdPZzojsTPF2'
-]
 
 export default AppContext

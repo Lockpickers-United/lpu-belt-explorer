@@ -13,6 +13,12 @@ const belts = {
     'Black 3': {color: '#000000', lineColor: '#acacac', danPoints: 30},
     'Black 4': {color: '#000000', lineColor: '#acacac', danPoints: 36},
     'Black 5': {color: '#000000', lineColor: '#acacac', danPoints: 50},
+    'Project': {color: '#000000', lineColor: '#c7c340', danPoints: 5},
+    'Project 1': {color: '#000000', lineColor: '#c7c340', danPoints: 5},
+    'Project 2': {color: '#000000', lineColor: '#c7c340', danPoints: 10},
+    'Project 3': {color: '#000000', lineColor: '#c7c340', danPoints: 20},
+    'Project 4': {color: '#000000', lineColor: '#c7c340', danPoints: 34},
+    'Project 5': {color: '#000000', lineColor: '#c7c340', danPoints: 50},
     Unranked: {color: '#000000', lineColor: '#d3d31c', danPoints: 0},
     'Tier 1': {color: '#000000', lineColor: '#80b535', danPoints: 5},
     'Tier 2': {color: '#000000', lineColor: '#80b535', danPoints: 10},
@@ -35,6 +41,24 @@ export const uniqueBelts = [
     'Brown',
     'Red',
     'Black'
+]
+
+export const danBelts = [
+    'White',
+    'Yellow',
+    'Orange',
+    'Green',
+    'Blue',
+    'Purple',
+    'Brown',
+    'Red',
+    'Black 1',
+    'Black 2',
+    'Black 3',
+    'Black 4',
+    'Black 5',
+    'Project',
+
 ]
 
 export const beltSort = (a, b) => {

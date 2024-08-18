@@ -2,7 +2,7 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
-import {collectionOptions} from '../data/collectionTypes'
+import collectionOptions from '../data/collectionTypes'
 import allEntries from '../data/data.json'
 import {lockFilterFields} from '../data/filterFields'
 import {lockSortFields} from '../data/sortFields'
@@ -18,7 +18,6 @@ import SearchBox from '../nav/SearchBox'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
-import CopyProfileLinkButton from './CopyProfileLinkButton'
 import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
@@ -31,7 +30,15 @@ function ProfileRoute() {
     const loadFn = useCallback(async () => {
         try {
             const profile = await getProfile(userId)
-            document.title = `LPU Belt Explorer - ${profile.displayName}'s Profile`
+            if (profile) {
+                const ownerName = profile.displayName
+                    ? profile.displayName.toLowerCase().endsWith('s')
+                        ? `${profile.displayName}'`
+                        : `${profile.displayName}'s`
+                    : 'Anonymous'
+
+                document.title = `LPU Belt Explorer - ${ownerName} Profile`
+            }
             return profile
         } catch (ex) {
             console.error('Error loading profile.', ex)
@@ -42,8 +49,7 @@ function ProfileRoute() {
 
     const entries = useMemo(() => {
         if (loading || !data) return []
-        const uniqueIds = new Set(collectionOptions
-            .flatMap(({key}) => data[key]))
+        const uniqueIds = new Set(collectionOptions.locks.getCollected(data))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
     }, [data, loading])
 
@@ -55,7 +61,6 @@ function ProfileRoute() {
 
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
-            <CopyProfileLinkButton/>
         </React.Fragment>
     )
 

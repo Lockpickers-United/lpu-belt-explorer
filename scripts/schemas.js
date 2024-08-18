@@ -88,6 +88,7 @@ export const dialsSchema = Joi.array().items(
         Wheels: Joi.string().allow(''),
         Digits: Joi.string().allow(''),
         Features: Joi.string().allow(''),
+        Notes: Joi.string().allow(''),
         'Quest Tier': Joi.string().allow(''),
         'Do Not Import': Joi.string().allow('')
     }).unknown()
@@ -120,3 +121,25 @@ export const projectSchema = Joi.array().items(
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
     }).unknown()
 )
+
+export const introCopySchema = Joi.array().items(
+    Joi.object({
+        Page: Joi.string().min(1),
+        Title: Joi.string().min(1),
+        'Intro Copy': Joi.string().min(1),
+        'Link Text': Joi.string().allow(''),
+        'Link Destination': Joi.string().allow('')
+    }).unknown()
+)
+
+export const upgradeSchema = Joi.array().items(
+    Joi.object({
+        'Base ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 1': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 2': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 3': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
+        'Upgrade ID 4': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
+    }).unknown()
+)
+
+

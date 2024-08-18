@@ -65,8 +65,8 @@ const sortValues = [
     {label: 'Default', value: undefined},
     {label: 'Own', value: 'own'},
     {label: 'Picked', value: 'picked'},
-    {label: 'Recorded', value: 'recorded'},
-    {label: 'Wishlist', value: 'wishlist'}
+    {label: 'Wishlist', value: 'wishlist'},
+    {label: 'Scorecard', value: 'recordedLocks'}
 ]
 
 export default LeaderboardSortButton

@@ -5,10 +5,11 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard'
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import FeedIcon from '@mui/icons-material/Feed'
-import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 import BuildIcon from '@mui/icons-material/Build'
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import LPU_logo from '../resources/LPU_logo'
+import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
+import ConstructionIcon from '@mui/icons-material/Construction'
 
 export default [
     {
@@ -29,8 +30,13 @@ export default [
     },
     {
         title: 'Dan System',
-        icon: <InsightsOutlinedIcon fontSize='small'/>,
+        icon: <SportsMartialArtsIcon fontSize='small'/>,
         path: '/dans'
+    },
+    {
+        title: "Master's Projects",
+        icon: <ConstructionIcon fontSize='small'/>,
+        path: '/projects'
     },
     {
         title: 'Glossary',
@@ -38,7 +44,6 @@ export default [
         path: '/glossary'
     },
     {
-        beta: true,
         title: 'Safe Locks',
         icon: <AvTimerIcon fontSize='small'/>,
         path: '/safelocks'
@@ -68,10 +73,16 @@ export default [
                 admin: true,
                 title: 'Site Report',
                 path: '/admin/siteReport'
-            }, {
+            },
+            {
                 admin: true,
                 title: 'Collections Report',
                 path: '/admin/collectionsReport'
+            },
+            {
+                admin: true,
+                title: 'Black Belt Report',
+                path: '/admin/blackBelts'
             }
         ]
     },

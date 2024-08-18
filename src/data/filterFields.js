@@ -17,5 +17,16 @@ export const dialFilterFields = [
     {label: 'Fence Type', fieldName: 'fence'},
     {label: 'Digits', fieldName: 'digits'},
     {label: 'Features', fieldName: 'features'},
-    {label: 'Content', fieldName: 'content'}
+    {label: 'Content', fieldName: 'content'},
+    {label: 'Collection', fieldName: 'collection', userBased: true}
 ]
+
+export const scorecardFilterFields = [
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Documentation', fieldName: 'documentation'},
+    {label: 'Scoring', fieldName: 'scoring'}
+]
+

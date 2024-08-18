@@ -1,0 +1,107 @@
+[
+  {
+    "level": 0,
+    "points": 0,
+    "bbLocks": 0
+  },
+  {
+    "level": 1,
+    "points": 56,
+    "bbLocks": 2
+  },
+  {
+    "level": 2,
+    "points": 190,
+    "bbLocks": 4
+  },
+  {
+    "level": 3,
+    "points": 260,
+    "bbLocks": 6
+  },
+  {
+    "level": 4,
+    "points": 335,
+    "bbLocks": 8
+  },
+  {
+    "level": 5,
+    "points": 415,
+    "bbLocks": 10
+  },
+  {
+    "level": 6,
+    "points": 500,
+    "bbLocks": 12
+  },
+  {
+    "level": 7,
+    "points": 590,
+    "bbLocks": 14
+  },
+  {
+    "level": 8,
+    "points": 685,
+    "bbLocks": 16
+  },
+  {
+    "level": 9,
+    "points": 785,
+    "bbLocks": 18
+  },
+  {
+    "level": 10,
+    "points": 890,
+    "bbLocks": 20
+  },
+  {
+    "level": 11,
+    "points": 1000,
+    "bbLocks": 22
+  },
+  {
+    "level": 12,
+    "points": 1115,
+    "bbLocks": 24
+  },
+  {
+    "level": 13,
+    "points": 1235,
+    "bbLocks": 26
+  },
+  {
+    "level": 14,
+    "points": 1360,
+    "bbLocks": 28
+  },
+  {
+    "level": 15,
+    "points": 1490,
+    "bbLocks": 30
+  },
+  {
+    "level": 16,
+    "points": 1625,
+    "bbLocks": 32
+  },
+  {
+    "level": 17,
+    "points": 1765,
+    "bbLocks": 34
+  },
+  {
+    "level": 18,
+    "points": 1910,
+    "bbLocks": 36
+  },
+  {
+    "level": 19,
+    "points": 2062,
+    "bbLocks": 38
+  },
+  {
+    "level": 20,
+    "points": 2215,
+    "bbLocks": 40
+  }
+]

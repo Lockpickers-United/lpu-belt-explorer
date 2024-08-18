@@ -4,18 +4,16 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
-import DBContext from '../app/DBContext'
 
 function LeaderboardFindMeButton() {
     const navigate = useNavigate()
     const {isLoggedIn} = useContext(AuthContext)
-    const {lockCollection} = useContext(DBContext)
 
     const handleClick = useCallback(() => {
         navigate('/leaderboard?user=me')
     }, [navigate])
 
-    if (!isLoggedIn || lockCollection?.public === false || !lockCollection?.displayName) return null
+    if (!isLoggedIn) return null
     return (
         <Tooltip title='Find Me' arrow disableFocusListener>
             <IconButton color='inherit' onClick={handleClick}>

@@ -9,7 +9,7 @@ const LockListContext = React.createContext({})
 export function LockListProvider({children}) {
     const {userId} = useParams()
     const {allEntries, getEntryFromId} = useContext(DataContext)
-    const {filters, addFilter, addFilters, removeFilters} = useContext(FilterContext)
+    const {filters, addFilters, removeFilters} = useContext(FilterContext)
 
     const expanded = filters.id
 
@@ -54,20 +54,16 @@ export function LockListProvider({children}) {
 
     const tab = useMemo(() => {
         if (!filters.tab && !userId) {
-            const {id} = filters
-            if (id && !filters.tab) {
-                const entry = allEntries.find(e => id === e.id)
+            if (filters.id) {
+                const entry = allEntries.find(e => filters.id === e.id)
                 if (entry) {
-                    const value = entry.belt.replace(/\s\d/g, '')
-                    addFilter('tab', value)
-                    return value
+                    return entry.belt.replace(/\s\d/g, '')
                 }
             }
             return 'White'
         }
-
         return filters.tab
-    }, [addFilter, allEntries, filters, userId])
+    }, [allEntries, filters, userId])
 
     const value = useMemo(() => ({
         compact,

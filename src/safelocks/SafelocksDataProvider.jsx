@@ -1,12 +1,13 @@
-import dayjs from 'dayjs'
 import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import removeAccents from 'remove-accents'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
+import dayjs from 'dayjs'
+import collectionOptions from '../data/collectionTypes'
+import removeAccents from 'remove-accents'
 import {groupSort, groupSortReverse} from './groups'
 
-export function SafelocksDataProvider({children, allEntries}) {
+export function SafelocksDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
 
@@ -23,9 +24,10 @@ export function SafelocksDataProvider({children, allEntries}) {
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
                     entry.links?.length > 0 ? 'Has Links' : 'No Links'
-                ].flat().filter(x => x)
+                ].flat().filter(x => x),
+                collection: collectionOptions.safelocks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
             }))
-    }, [allEntries])
+    }, [allEntries, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

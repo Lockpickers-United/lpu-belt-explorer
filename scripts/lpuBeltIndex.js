@@ -1,8 +1,7 @@
 import fs from 'fs'
-import {parse} from 'csv-parse/sync'
-import {projectSchema} from './schemas.js'
 
 const allLocks = JSON.parse(fs.readFileSync('./src/data/data.json'))
+const allProjects = JSON.parse(fs.readFileSync('./src/data/projects.json'))
 
 // Access any lock data uniquely by id
 
@@ -63,6 +62,7 @@ const codewordMap = [
     ['≥3', '>3'],
     ['≥4', '4+'],
     ['≥4', '>4'],
+    ['5', '>4'],
     ['≥5', '5+'],
     ['13+', '≥13'],
     ['x18', 'q18'],
@@ -87,6 +87,8 @@ const codewordMap = [
     ['≥2', 'with≥2'],
     ['elements', 'sliders'],
     ['4pinsserrateddrivers', '4serrateddrivers'],
+    ['4pins4serrated', '4serrated'],
+    ['4pins4spooled', '4pinsspooled'],
     ['championsc48', 'champions48'],
     ['≥4spooleddrivers', 'spooledinnerdrivers'],
     ['10leverpadlock', 'cs'],
@@ -149,18 +151,18 @@ const codewordMap = [
 function findCodewordVariants(cw) {
     const firstIter = codewordMap
         .map(pair => cw.replace(pair[0], pair[1]))
-        .filter(pos => pos != cw)
+        .filter(pos => pos !== cw)
 
     const secondIter = firstIter.map(cw1 => {
         return codewordMap
         .map(pair => cw1.replace(pair[0], pair[1]))
-        .filter(pos => pos != cw1)
+        .filter(pos => pos !== cw1)
     }).flat()
 
     const thirdIter = secondIter.map(cw2 => {
         return codewordMap
         .map(pair => cw2.replace(pair[0], pair[1]))
-        .filter(pos => pos != cw2)
+        .filter(pos => pos !== cw2)
     }).flat()
 
     return firstIter.concat(secondIter).concat(thirdIter)
@@ -238,32 +240,26 @@ const lockIndex = allLocks
         return group
     }, {})
 
-
-// The project index is simpler, as you can directly look up a
-// project from its name. TODO: For now the project definition
-// lives on the local filesystem, but ideally this would reside
-// in the LPU Belt List google sheet alongside the locks.
-
-const projectCSV = parse(fs.readFileSync('./src/data/projects.csv'), {
-    columns: true,
-    skip_empty_lines: true,
-    trim: true    
-})
-
-const results = projectSchema.validate(projectCSV)
-if (results.error) {
-    console.log('Parse error!', JSON.stringify(results.error.details, null, 2))
-    process.exit(1)
+const projectNameAlt = {
+    'Community Involvement': 'Community',
+    'Cutaway Making': 'Cutaways',
+    'Other Master\'s Project': 'Other',
+    'Pick Making': 'Pickmaking',
+    'Safe Lock Manipulation': 'safecracking'
 }
 
-const allProjects = projectCSV.map(datum => {
-    const name = datum.Name
-    const tier = datum.Tier
-    const id = datum['Unique Id']
-    const index = datum.Name.toLowerCase()
-    const codeword = ''
-    const value = {name, tier, id, index, codeword}
-    return value
+const projectList = allProjects.map(p => {
+    const match = p.name.match(/^([^,]+), tier (\d)$/)
+    const projName = projectNameAlt[match[1]] ? projectNameAlt[match[1]] : match[1]
+    const index = `Tier ${match[2]} Project ${projName}`
+
+    return {
+        id: p.id,
+        name: p.name,
+        tier: p.tier,
+        index: index.toLowerCase(),
+        codeword: ''
+    }
 })
 
 // Access any project uniquely by id
@@ -276,7 +272,7 @@ export const projectById = allProjects.reduce((group, term) => {
 
 // Build an index for the projects by name
 
-const projectIndex = allProjects.reduce((group, term) => {
+const projectIndex = projectList.reduce((group, term) => {
         const {index} = term
         group[index] = group[index] ?? []
         group[index].push(term)

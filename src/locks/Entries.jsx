@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue, useMemo} from 'react'
+import React, {useState, useContext, useDeferredValue, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
@@ -8,11 +8,11 @@ import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
 
 function Entries({profile}) {
-    const {compact, tab, expanded, setExpanded, displayAll} = useContext(LockListContext)
+    const {compact, tab, expanded, displayAll} = useContext(LockListContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
 
+    const [entryExpanded, setEntryExpanded] = useState(expanded)
     const defTab = useDeferredValue(tab)
-    const defExpanded = useDeferredValue(expanded)
     const defDisplayAll = useDeferredValue(displayAll)
 
     const entries = useMemo(() => {
@@ -27,7 +27,7 @@ function Entries({profile}) {
 
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
-            <InlineFilterDisplay profile={profile}/>
+            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
 
             {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
@@ -39,8 +39,8 @@ function Entries({profile}) {
                     <Entry
                         key={entry.id}
                         entry={entry}
-                        expanded={entry.id === defExpanded}
-                        onExpand={setExpanded}
+                        expanded={entry.id === entryExpanded}
+                        onExpand={setEntryExpanded}
                     />
                 )
             }

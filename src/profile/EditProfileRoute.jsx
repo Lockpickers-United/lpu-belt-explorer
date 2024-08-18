@@ -18,7 +18,7 @@ function ProfileRoute() {
 
     const nav = (
         <React.Fragment>
-            <CopyProfileLinkButton/>
+            <CopyProfileLinkButton page={'collection'}/>
         </React.Fragment>
     )
 

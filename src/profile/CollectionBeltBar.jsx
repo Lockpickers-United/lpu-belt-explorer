@@ -9,13 +9,13 @@ function CollectionBeltBar({beltData}) {
     const mobileSmall = width <= 360
     const smallWindow = width <= 560
 
-    const chartHeight = mobileSmall ? 190
-        : smallWindow ? 200
+    const chartHeight = mobileSmall ? 175
+        : smallWindow ? 175
             : 175
 
     const chartMargin = !smallWindow
         ? {top: 0, right: 10, bottom: 60, left: 10}
-        : {top: 0, right: 20, bottom: 50, left: 20}
+        : {top: 15, right: 20, bottom: 60, left: 20}
 
     const beltColors =
         ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
@@ -38,8 +38,9 @@ function CollectionBeltBar({beltData}) {
                 colors={(bar) => beltColors[bar.index % beltColors.length]}
                 animate={true}
                 axisBottom={{
-                    tickRotation: -45
+                    tickRotation: -45,
                 }}
+
                 axisLeft={null}
                 enableGridY={false}
                 theme={primaryTheme}

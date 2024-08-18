@@ -23,6 +23,7 @@ export function AuthProvider({children}) {
     }, [])
 
     const logout = useCallback(() => {
+        setUser({})
         return signOut(auth)
     }, [])
 

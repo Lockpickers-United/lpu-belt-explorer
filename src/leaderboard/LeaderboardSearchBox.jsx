@@ -6,18 +6,18 @@ import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
-import {useNavigate} from 'react-router-dom'
+import {useSearchParams} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize'
 
 function LeaderboardSearchBox({data}) {
     const style = {maxWidth: 450}
     const {isMobile} = useWindowSize()
-    const navigate = useNavigate()
     const inputEl = useRef()
+    const [searchParams, setSearchParams] = useSearchParams()
 
     const options = useMemo(() => {
         return data
-            ? data.data
+            ? data
                 .filter(item => item.displayName && item.displayName !== 'anonymous')
                 .map(item => item.displayName)
             : []
@@ -25,11 +25,12 @@ function LeaderboardSearchBox({data}) {
 
     const handleChange = useCallback((event, value) => {
         if (!value) {
-            navigate('/leaderboard')
+            searchParams.delete('user')
         } else if (options.includes(value)) {
-            navigate(`/leaderboard?user=${value}`)
+            searchParams.set('user', value)
         }
-    }, [navigate, options])
+        setSearchParams(searchParams)
+    }, [options, searchParams, setSearchParams])
 
     const [open, setOpen] = useState(false)
     const handleClick = useCallback(() => {

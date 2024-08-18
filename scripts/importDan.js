@@ -1,32 +1,64 @@
 import fs from 'fs'
 import {parse} from 'csv-parse/sync'
 import {danSchema} from './schemas.js'
-import beltDetails from '../src/data/belts.js'
-import {projectTiers, modifierMultiplier} from '../src/data/belts.js'
+import beltDetails, {projectTiers, modifierMultiplier} from '../src/data/belts.js'
 import fetch from 'node-fetch'
-import {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
-import masterIndex from './lpuBeltIndex.js'
-// import {allPickers} from '../src/data/allPickerDanTabs.js'
+import masterIndex, {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'
+import admin from 'firebase-admin'
+import {getFirestore} from 'firebase-admin/firestore'
 
-const DEBUG = true
-const FOLLOW_LINKS = false
+const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
+const app = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
+})
+const db = getFirestore(app, 'lpubelts-dev')
+
+const DEBUG = false
+const FOLLOW_LINKS = true
+const WRITE_TO_DB = true
 
 // Some folks take liberties with dan sheet format
 
 function startLine(tab) {
-    if (tab == 'Mick Emhurt') {
+    if (tab === 'Mick Emhurt') {
         return 7
     } else {
         return 3
     }
 }
 
+const importTabNames = async () => {
+    const {TAB_SHEET_ID: sheetId} = process.env
+    if (!sheetId) {
+        console.log('Config error! Set TAB_SHEET_ID env var to google sheet of dan tab names and black belt dates.')
+        process.exit(1)
+    }
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=Pickers&headers=1`
+    let csvData = await (await fetch(url)).text()
+
+    const data = parse(csvData, {
+        columns: true,
+        skip_empty_lines: true,
+        trim: true
+    })
+    const retval = data
+        .map(datum => {
+            return {
+                picker: datum.Picker,
+                date: datum.Date
+            }
+        })
+    return retval
+}
+
+
 // Pulls all necessary info from a specified dan sheet tab
 
 const importDanTab = async (tab) => {
     const {DAN_SHEET_ID: sheetId} = process.env
     if (!sheetId) {
-        console.log('Config error! Set DAN_SHEET_ID env var to import.')
+        console.log('Config error! Set DAN_SHEET_ID env var to dan google sheet.')
         process.exit(1)
     }
 
@@ -49,7 +81,7 @@ const importDanTab = async (tab) => {
     // we silently skip over lines that we can't parse, notably those
     // that lack either a lock or a link.
 
-    if (tab == 'Loose-Shirt') {
+    if (tab === 'Loose-Shirt') {
         // this sheet's header is split across two lines
         let csvLines = csvData.split('\n')
         csvLines[2] = csvLines[2].concat(csvLines[3])
@@ -64,15 +96,15 @@ const importDanTab = async (tab) => {
         trim: true,
         cast: (val, ctx) => {
             // some people change these header values
-            if (ctx.lines == startLine(tab)) {
-                if (ctx.index == 0) {
+            if (ctx.lines === startLine(tab)) {
+                if (ctx.index === 0) {
                     return 'Lock'
-                } else if (ctx.index == 2) {
+                } else if (ctx.index === 2) {
                     return 'Unique LPU id'
                 }
             }
             // overwrite a column to add row numbers
-            if (ctx.lines > startLine(tab) && ctx.index == 2) {
+            if (ctx.lines > startLine(tab) && ctx.index === 2) {
                 return ctx.lines
             } else {
                 return val
@@ -101,7 +133,7 @@ const importDanTab = async (tab) => {
                 lock,
                 link
             }
-            if (modifier != 'N/A') {
+            if (modifier !== 'N/A') {
                 value.modifier = modifier
             }
             return value
@@ -212,14 +244,14 @@ function matchDanSheet(danData) {
         .map(hit => {
             if (hit.key) {
                 // for deep debugging of specific lock
-                if (hit.entry.lock == 'XXX Corbin master ring (both shearlines in one take)') {
+                if (hit.entry.lock === 'XXX Corbin master ring (both shearlines in one take)') {
                     console.log(`hit on ${hit.key} and searching for ${hit.code}`)
                     console.log(masterIndex[hit.key])
                 }
 
                 // prefer an exact match
                 let vals = masterIndex[hit.key].filter(cw => {
-                    return cw.codeword == hit.code
+                    return cw.codeword === hit.code
                 })
                 if (vals.length > 0) {
                     let uniqIds = [...new Set(vals.map(el => el.id))]
@@ -231,7 +263,7 @@ function matchDanSheet(danData) {
 
                 // then prefer matching the source codeword as a prefix
                 vals = masterIndex[hit.key].filter(cw => {
-                    return 0 == cw.codeword.indexOf(hit.code)
+                    return 0 === cw.codeword.indexOf(hit.code)
                 })
                 if (vals.length > 0) {
                     let uniqIds = [...new Set(vals.map(el => el.id))]
@@ -255,7 +287,7 @@ function matchDanSheet(danData) {
 
                 // as a last hope, the codeword may be a prefix of the source
                 vals = masterIndex[hit.key].filter(cw => {
-                    return 0 == hit.code.indexOf(cw.codeword)
+                    return 0 === hit.code.indexOf(cw.codeword)
                 })
                 if (vals.length > 0) {
                     let uniqIds = [...new Set(vals.map(el => el.id))]
@@ -272,9 +304,9 @@ function matchDanSheet(danData) {
                     console.log(`WARN: unable to match ${hit.code} for ${hit.entry.lock}`)
                 }
 
-                masterIndex[hit.key].forEach(cw => {
-                    // console.log(`trying to match ${hit.code} to ${cw.codeword}`)
-                })
+                // masterIndex[hit.key].forEach(cw => {
+                //     console.log(`trying to match ${hit.code} to ${cw.codeword}`)
+                // })
             }
             return {entry: hit.entry}
         })
@@ -285,28 +317,6 @@ function matchDanSheet(danData) {
 // dan points properly, using our own logic. 
 
 function scoreEntries(target, header, matchedEntries) {
-
-    // TODO: Correct scoring relies on handling lock upgrades. 
-    // To do this, we need to specify the upgrade chains. We 
-    // currently have the concept of relatedIds, but this is not
-    // exactly correct, because locks are related that are not
-    // upgrades of each other. The code below sketches how to 
-    // do this, but is commented out as we will use user supplied
-    // upgrade modifiers for now. This is inaccurate in a different
-    // way.
-    //
-    // const entryIds = entries.map(row => row.id) 
-    // matchedEntries.forEach(row => {
-    //     if (row.id && lockById[row.id] && lockById[row.id].relatedIds) {
-    //         const commonIds = lockById[row.id].relatedIds.filter(val => entryIds.includes(val)).concat([row.id])
-    //         const topId = commonIds.map(id => [beltDetails[lockById[id].belt].danPoints, id]).sort().pop().pop()
-    //
-    //         if (topId != row.id && row.entry.modifier != 'Upgraded') {
-    //             console.log(`Entry ${row.id} should be upgraded by ${topId}!`)
-    //         }
-    //     }
-    // })
-
     let dedupIds = {}
     const danPtsArr = matchedEntries.reverse().map(row => {
         if (!row.id) {
@@ -352,10 +362,10 @@ function scoreEntries(target, header, matchedEntries) {
     // Compare our results with the dan sheet. They usually don't match
     // due to errors and stale data in the sheet. 
 
-    if (DEBUG && danPts != header.points) {
+    if (DEBUG && danPts !== header.points) {
         console.log(`WARN: point mismatch, ${danPts} vs ${header.points} in sheet`)
     }
-    if (DEBUG && numBlack != header.numBlack) {
+    if (DEBUG && numBlack !== header.numBlack) {
         console.log(`WARN: black count mismatch, ${numBlack} vs ${header.numBlack} in sheet`)
     }
  
@@ -424,7 +434,7 @@ function writeEntriesAsJSON(target, header, idEntries) {
 // To tune matching system, find unmatched and
 // compare new matches with existing
 
-function findUnmatched(idEntries) {
+function findUnmatched(idEntries) { //eslint-disable-line
     idEntries.toSorted((a1, a2) => a1.entry.row - a2.entry.row)
         .forEach(elem => {
             if (!elem.id) {
@@ -445,7 +455,7 @@ function compareMatches(idEntries) {
                 console.log(`${elem.entry.id} > -------- : ${elem.entry.lock}`)
 
             } else if (elem.id && elem.entry.id) {
-                if (elem.id == elem.entry.id) {
+                if (elem.id === elem.entry.id) {
                     numSame++
                 } else {
                     console.log(`${elem.entry.id} > ${elem.id} : ${elem.entry.lock}`)
@@ -470,7 +480,6 @@ function isYouTubeLink(link) {
     return ytUrls.map(url => link.startsWith(url)).some(val => val)
 }
 
-
 /** 
  * Try out a single tab or process the full sheet. 
  * Provided DAN_SHEET_ID is set, run:
@@ -483,14 +492,25 @@ function isYouTubeLink(link) {
 
 let target = undefined
 
-target = 'NiXXeD'
+// target = 'NiXXeD'
 // target = 'Tonysansan'
-// target = allPickers[100]
 
 let pickers = fs.readdirSync('./src/data/dancache/').map(fl => fl.replace(/\.json$/, ''))
 
+const allTabsAndDates = await importTabNames()
+const allPickers = allTabsAndDates.map(td => td.picker)
+const bbDatesByPicker = allTabsAndDates.reduce((group, term) => {
+    const match = term.date.match(/^(\d\d)\/(\d\d)\/(\d\d\d\d)$/)
+    if (match) {
+        group[term.picker] = `${match[3]}-${match[1]}-${match[2]}T00:00:00.000Z`
+    }
+    return group
+}, {})
+
 if (target) {
     pickers = [target]
+} else {
+    pickers = allPickers
 }
 
 for (let idx = 0; idx < pickers.length; idx++) {
@@ -504,42 +524,94 @@ for (let idx = 0; idx < pickers.length; idx++) {
         danData = await importDanTab(target)
     }
 
-    if (DEBUG) {
+    if (DEBUG || WRITE_TO_DB) {
         console.log(`Imported ${danData.entries.length} entries for ${target}...`)
     }
 
     // Find any YouTube links, follow and grab date published.
-    // This is slow.
+    // This is slow, but we have a cache.
 
+    const linkCacheFilename = './src/data/linkCache.json'
+    let linkCache = {}
+    if (fs.existsSync(linkCacheFilename)) {
+        linkCache = JSON.parse(fs.readFileSync(linkCacheFilename))
+    }
+ 
     for (let jdx = 0; jdx < danData.entries.length; jdx++) {
         const link = danData.entries[jdx].link
         let result = undefined
         let match = undefined
 
-        if (FOLLOW_LINKS && !danData.entries[jdx].publishDate && isYouTubeLink(link)) {
-            try {
-                result = await (await fetch(link)).text()
-            } catch (error) {
-                if (DEBUG) {
-                    console.log(`WARN: ${error.name} failed to fetch ${link}`)
+        if (FOLLOW_LINKS && !danData.entries[jdx].publishDate) {
+            if (!linkCache[link] && isYouTubeLink(link)) {
+                try {
+                    result = await (await fetch(link)).text()
+                } catch (error) {
+                    if (DEBUG) {
+                        console.log(`WARN: ${error.name} failed to fetch ${link}`)
+                    }
                 }
             }
             if (result) {
                 match = result.match(/"publishDate":"(\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d-\d\d:\d\d)"/)
                 if (match) {
-                    danData.entries[jdx].publishDate = match[1]
+                    linkCache[link] = match[1]
                 }
             }
+            if (linkCache[link]) {
+                danData.entries[jdx].publishDate = linkCache[link]
+            }
         }
+    }
+
+    if (FOLLOW_LINKS) {
+        const json = JSON.stringify(linkCache, null, 2)
+        fs.writeFileSync(linkCacheFilename, json)
     }
 
     const idEntries = matchDanSheet(danData)
     scoreEntries(target, danData.header, idEntries)
 
     compareMatches(idEntries)
+//    findUnmatched(idEntries)
 
     if (!fs.existsSync(filename)) {
         writeEntriesAsJSON(target, danData.header, idEntries)
+    }
+
+    if (WRITE_TO_DB) {
+        if (bbDatesByPicker[target]) {
+            await db.collection('unclaimed-blackbelts').doc(target.trim()).set({awardedAt: bbDatesByPicker[target], claimed: false})
+        }
+
+        const docs = await db.collection('unclaimed-evidence').where('tabName', '==', target.trim()).get()
+        docs.forEach(rec => rec.ref.delete())
+
+        for (let idx=0; idx < idEntries.length; idx++) {
+            const elem = idEntries[idx]
+            let rec = {
+                tabName: target.trim(),
+                evidenceNotes: elem.entry.lock,
+                evidenceUrl: elem.entry.link,
+                modifier: ''
+            }
+
+            if (['First Recorded Pick',
+                'First Recorded Pick (Notable)',
+                'Non-Picking Defeat',
+                'First Recorded Defeat',
+                'First Recorded Defeat (Notable)'].includes(elem.entry.modifier)) {
+                rec.modifier = elem.entry.modifier
+            }
+
+            if (elem.id) {
+                rec.projectId = elem.id
+            }
+            if (elem.entry.publishDate) {
+                rec.evidenceCreatedAt = elem.entry.publishDate
+            }
+            await db.collection('unclaimed-evidence').add(rec)
+        }
     }
 
     // await new Promise(r => setTimeout(r, 1000));

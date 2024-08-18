@@ -29,7 +29,7 @@ function BeltStripe({value}) {
                     }}/>
                 )
         }
-    }, [value])
+    }, [value, stripeColor])
 
     if (value === 'Unranked') return null
     return (

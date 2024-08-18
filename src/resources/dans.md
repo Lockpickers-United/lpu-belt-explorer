@@ -76,38 +76,41 @@ Picking locks of blue belt or above will earn the following Dan Points
 | Black 4 | 36     |
 | Black 5 | 50     |
 
-Locks that are upgrades of each other (MT5 -> MT5+) will be recorded once for the highest points. (MT5+ points but not
-MT5 points)
+Locks that are upgrades of each other will be recorded once for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements as well as one with 7, then only points for the 11 will be awarded.
 
 Locks that are the same lock or only arbitrarily different will be placed on the same line and you may only gain points
 for one of them. (3KS/4KS)
 
 Notable locks can and will be put up for a vote within “The Mat” channel.
 
-## The Mat
+## Master's Projects and The Mat
 
-The mat is a core part of the new Dan 2.0 system. It is used for collecting community judgment on non-lockpicking
-points, including new blackbelt applications.
+The mat is a core part of the new Dan 2.0 system. It is used for collecting community judgment on Master's Project submissions, which gain non-lockpicking
+points, and are included in most new Black Belt applications.
 
 Earning Dan Points “on the mat” can also be accomplished completing projects within the following Disciplines.
 
-- Impressioning
-- Picking Instruction
 - Challenge Locks
-- Tool Making
-- Tool Manufacturing
+- Community Involvement
+- Cutaway Making
+- Disc Detainer Pick Making
+- Impressioning
 - Lock Design
 - Lock Manufacturing
+- Pick Making
+- Picking Instruction
 - Safe Lock Manipulation
-- Cutaway Making
+- Tool Making
+- Tool Manufacturing
+- Other Approved Projects
 
 You can also nominate others to receive points through:
-Exceptional Knowledge of Locks
-Community Leadership
-Lock Distribution
+- Exceptional Knowledge of Locks
+- Community Leadership
+- Lock Distribution
 
 Completed projects will be submitted for a vote in the black belt community in “The Mat” channel to place them within
-the tier structure for that discipline. The generic tier point structure is below. Some Disciplines may have less tiers
+the tier structure for that discipline. The generic tier point structure is below. Some Disciplines may have fewer tiers
 and/or less point value based on their relative difficulty.
 
 | Tier   | Points | Desc       |
