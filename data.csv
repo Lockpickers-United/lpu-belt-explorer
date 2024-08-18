@@ -629,7 +629,7 @@ Red,"MIWA,MIWA","E6,83EC",,Magnet,"Magnetic pins",,9094ca58
 Red,MIWA,PR,"<7 unmastered levers",Lever/sidebar,"Partial gut",,fdb68dc4
 Red,"MIWA,Tostem","PS,DN","7-8 unmastered levers",Lever/sidebar,,,550a0c9d
 Red,Miwa,SR,,Wafer,"Active sidebar",,31cd85d7
-Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred false gates (old shallow false gates equals a belt below)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
+Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred false gates (old shallow false gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
 Red,Mottura,"Champions C55",,"Dimple,Other",,,3daff112
@@ -713,8 +713,8 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",d0c510c5
 "Black 2",MIWA,PR,"9-10 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",21b61a85
 "Black 3",MIWA,PR,"11 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",91f40022
-"Black 1",MIWA,U9,"8 unmastered elements, barred false gates (old shallow false gates equals a belt below)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
-"Black 2",MIWA,U9,"9 unmastered elements, barred false gates (old shallow false gates equals a belt below)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
+"Black 1",MIWA,U9,"8 unmastered elements, barred false gates (old shallow false gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
+"Black 2",MIWA,U9,"9 unmastered elements, barred false gates (old shallow false gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
 "Black 1","Mottura,Mottura,Mottura","Champions C43,Champions C44,Champions C48",,"Dimple,Other",Rotors,,ae7d3780
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5,R10","not mastered","Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
 "Black 5",NATO,Mersey,"10 lever, pre-1973",Lever,"Safe lock,Pin key,Double bitted",,4f2ed774
