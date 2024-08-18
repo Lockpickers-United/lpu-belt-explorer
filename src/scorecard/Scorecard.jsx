@@ -236,7 +236,7 @@ function Scorecard({owner, profile, adminAction}) {
                                   evid={ev}
                                   expanded={ev.id === entryExpanded}
                                   onExpand={handleEntryExpand}
-                                  profile={profile}
+                                  merged={profile.blackBeltAwardedAt > 0}
                     />
                 )}
             </div>

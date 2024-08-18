@@ -18,11 +18,10 @@ import EvidenceForm from './EvidenceForm.jsx'
 
 import useWindowSize from '../util/useWindowSize.jsx'
 
-function ScorecardRow({owner, evid, expanded, onExpand, profile}) {
+function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    const merged = profile.blackBeltAwardedAt > 0
     const entry = getEntryFromId(evid.matchId)
     const project = getProjectEntryFromId(evid.matchId)
     const entity = entry
@@ -213,5 +212,6 @@ export default React.memo(ScorecardRow, (prevProps, nextProps) => {
     }
     return prevProps.owner === nextProps.owner &&
         prevProps.expanded === nextProps.expanded &&
-        prevProps.onExpand === nextProps.onExpand
+        prevProps.onExpand === nextProps.onExpand &&
+        prevProps.merged === nextProps.merged
 })
