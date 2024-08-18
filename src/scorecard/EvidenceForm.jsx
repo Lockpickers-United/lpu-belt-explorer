@@ -32,9 +32,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const [updated, setUpdated] = useState(false)
 
     const [projectName, setProjectName] = useState('')
-    const projectValues = allProjects.map(project => {
-        return {label: project.name, value: project.id}
-    })
+    const projectValues = allProjects.map(project => project.name)
 
     const project = allProjects.find(item => {
         return item.name === projectName
@@ -58,6 +56,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
 
     const handleSave = useCallback(async () => {
         try {
+            setUpdated(false)
             if (evid?.id) {
                 await updateEvidence(evid, {
                     matchId: evid.matchId,
@@ -78,7 +77,6 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                 })
             }
             enqueueSnackbar('Scorecard updated')
-            setUpdated(false)
             handleUpdate()
         } catch (ex) {
             console.error('Error while updating scorecard', ex)
@@ -121,6 +119,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
     const cancelColor = updated ? '#e15c07' : '#555'
     const urlFieldColor = evidenceUrlError ? 'error' : 'secondary'
+    const entryError = evidenceUrlError || (addProject && !projectValues.includes(projectName))
 
     const {isMobile} = useWindowSize()
     const denseButton = !!isMobile
@@ -134,6 +133,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                 {addProject &&
                     <Autocomplete
                         disablePortal
+                        value={projectName}
                         options={projectValues}
                         style={{maxWidth: 400, marginBottom: 10}}
                         onInputChange={(event, newInputValue) => {
@@ -261,7 +261,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                         </Button>
                         <Button style={{marginRight: 0, color: saveEntryColor}}
                                 onClick={handleSave}
-                                disabled={!updated || evidenceUrlError}
+                                disabled={!updated || entryError}
                         >
                             Save
                         </Button>
