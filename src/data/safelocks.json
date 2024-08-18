@@ -57,7 +57,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.820Z"
   },
   {
     "id": "761d2fe8",
@@ -76,7 +76,7 @@
       "Standard Format",
       "Fence Lever Control Device"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.820Z"
   },
   {
     "id": "693fd901",
@@ -124,7 +124,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "0638d9d8",
@@ -143,7 +143,7 @@
       "Standard Format",
       "Fence Lever Control Device"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "e3a922f0",
@@ -161,7 +161,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "e24e62b7",
@@ -178,7 +178,7 @@
       "Anti-Punch Relocker",
       "Vault Format"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "75ddbd51",
@@ -194,7 +194,7 @@
       "Key Change",
       "Vault Format"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "f5703ac0",
@@ -248,7 +248,7 @@
       "Lead Shielding",
       "Noise Rollers"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.699Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "087f41e9",
@@ -267,7 +267,7 @@
       "Lead Shielding",
       "Noise Rollers"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.700Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "58441a32",
@@ -334,7 +334,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.700Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "91242adb",
@@ -436,7 +436,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-15T16:40:01.700Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "2f6b4c23",
@@ -448,7 +448,7 @@
     "digits": "1-19",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-08-15T16:40:01.700Z"
+    "lastUpdated": "2024-08-16T14:25:13.821Z"
   },
   {
     "id": "995fe19d",
@@ -1327,10 +1327,10 @@
     "group": "1",
     "fence": "",
     "wheels": "6",
-    "digits": "1-10",
+    "digits": "0-12",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-28T21:10:25.493Z"
+    "lastUpdated": "2024-08-17T17:09:45.757Z"
   },
   {
     "id": "ae66f9a6",
@@ -1443,7 +1443,58 @@
     "features": [
       "Indirect Drive"
     ],
-    "lastUpdated": "2024-08-01T05:04:29.091Z"
+    "media": [
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53927042439_7bc49fd911_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53927042439/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53927042439_bb4ed1c3d8_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53927043244_2dcfdd02ec_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53927043244/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53927043244_977c7ea0df_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53925795807_7ba87d0f3f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53925795807/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53925795807_4d444072d7_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53927143390_09e95463d7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53927143390/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53927143390_771cb3d94a_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53925796427_79377bde62_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53925796427/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53925796427_7cce5e4b85_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53927143910_0caf6546fc_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53927143910/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53927143910_054819edff_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53927144130_2983350f02_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53927144130/in/album-72177720319579198/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53927144130_390c46b63b_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-08-16T14:25:13.822Z"
   },
   {
     "id": "7c91d17c",
@@ -1520,7 +1571,37 @@
       "False Gates",
       "Eccentric Roller"
     ],
-    "lastUpdated": "2024-07-26T19:28:51.949Z"
+    "media": [
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53927052654_dcfe85b106_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53927052654/in/album-72177720319579298/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53927052654_8b26a0e76b_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53926946038_4fbcee44d0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53926946038/in/album-72177720319579298/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53926946038_17a483523a_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53926700001_ce0e44681a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53926700001/in/album-72177720319579298/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53926700001_fc0a4fabdd_o.jpg"
+      },
+      {
+        "title": "By: Insomniaclockpicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53926946403_4e2a2fd862_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53926946403/in/album-72177720319579298/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53926946403_4f591ac60a_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-08-16T14:25:13.822Z"
   },
   {
     "id": "9262a564",
@@ -1783,6 +1864,22 @@
     "lastUpdated": "2024-07-26T17:16:08.353Z"
   },
   {
+    "id": "aeeb2e0f",
+    "make": "Sargent & Greenleaf",
+    "model": "8065 Padlock",
+    "group": "not rated",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-59",
+    "tier": "",
+    "features": [
+      "Shutter Padlock",
+      "Removeable Shoe",
+      "Manipulation Resistant"
+    ],
+    "lastUpdated": "2024-08-17T17:09:45.758Z"
+  },
+  {
     "id": "3809d4a5",
     "make": "Sargent & Greenleaf",
     "model": "8077 Padlock",
@@ -1808,14 +1905,14 @@
   {
     "id": "b951fed1",
     "make": "Sargent & Greenleaf",
-    "model": "8088",
-    "group": "",
+    "model": "8088 Padlock",
+    "group": "not rated",
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-07-26T23:31:04.552Z"
+    "lastUpdated": "2024-08-17T17:09:45.758Z"
   },
   {
     "id": "bb279fda",
@@ -2184,18 +2281,6 @@
       }
     ],
     "lastUpdated": "2024-07-28T21:10:25.494Z"
-  },
-  {
-    "id": "da5d6407",
-    "make": "Yale",
-    "model": "OC-5M",
-    "group": "",
-    "fence": "",
-    "wheels": "3",
-    "digits": "0-99",
-    "tier": "",
-    "features": [],
-    "lastUpdated": "2024-07-26T23:31:04.553Z"
   },
   {
     "id": "86c1a98b",

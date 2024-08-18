@@ -817,7 +817,7 @@
   },
   {
     "term": "FSIC",
-    "definition": "Acronym for Full Size Interchangeable Core. Similar to LFIC, it's a type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). Unlike [SFIC](/#/glossary?term=SFIC), neither [LFIC](/#/glossary?term=LFIC) or FSIC are a universal formats. While in most LFIC's the control key lifts the pins to a second shear line, FSIC control key is usually longer and has an extra cut, that interacts with the last pin controling the holding bar or pin. See also [SFIC](/#/glossary?term=SFIC) and ."
+    "definition": "Acronym for Full Size Interchangeable Core. Similar to LFIC, it's a type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). Unlike [SFIC](/#/glossary?term=SFIC), neither [LFIC](/#/glossary?term=LFIC) or FSIC are a universal formats. While in most LFIC's the control key lifts the pins to a second shear line, FSIC control key is usually longer and has an extra cut, that interacts with the last pin controling the holding bar or pin. See also [SFIC](/#/glossary?term=SFIC) and [LFIC](/#/glossary?term=LFIC)."
   },
   {
     "term": "gate",
