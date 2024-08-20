@@ -17,6 +17,7 @@ import LeaderboardSortButton from './LeaderboardSortButton.jsx'
 import LeaderboardFindMeButton from './LeaderboardFindMeButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Nav from '../nav/Nav.jsx'
+import LeaderboardCompare from './LeaderboardCompare.jsx'
 
 function Leaderboard({data, loading}) {
     const location = useLocation()
@@ -84,6 +85,14 @@ function Leaderboard({data, loading}) {
             : allData
     }, [data.data, page, tab, tabData])
 
+    const blackBeltData = useMemo(() => {
+        return data.data
+            .filter(leader => leader['blackBeltAwardedAt'] > 0)
+            .sort((a, b) => {
+                return a['displayName'].localeCompare(b['displayName'])
+            })
+    }, [data.data])
+
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
             return b[sort] - a[sort]
@@ -130,7 +139,7 @@ function Leaderboard({data, loading}) {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16
             }}>
 
-                <div style={{flexGrow: 1, textAlign: 'center', marginBottom: 20}}>
+                <div style={{flexGrow: 1, textAlign: 'center', marginBottom: 10}}>
                     <ToggleButtonGroup
                         variant='outlined'
                         size='large'
@@ -159,6 +168,9 @@ function Leaderboard({data, loading}) {
                     </ToggleButtonGroup>
                 </div>
 
+                {page === 'blackBelts' &&
+                    <LeaderboardCompare blackBeltData={blackBeltData}/>
+                }
 
                 <TableContainer sx={{height: '78vh', backgroundColor: '#111'}} id='scrollable' ref={scrollableRef}>
                     <Table stickyHeader>
