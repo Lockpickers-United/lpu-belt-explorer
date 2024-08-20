@@ -218,7 +218,7 @@ export default React.memo(ScorecardRow, (prevProps, nextProps) => {
         return false
     }
     for (let idx = 0; idx < prevEvidKeys.length; idx++) {
-        if (prevProps.evid[idx] !== nextProps.evid[idx]) {
+        if (prevEvidKeys[idx] !== nextEvidKeys[idx] || prevProps.evid[prevEvidKeys[idx]] !== nextProps.evid[nextEvidKeys[idx]]) {
             return false
         }
     }

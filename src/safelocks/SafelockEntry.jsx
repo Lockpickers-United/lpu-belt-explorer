@@ -209,7 +209,7 @@ export default React.memo(SafelockEntry, (prevProps, nextProps) => {
         return false
     }
     for (let idx = 0; idx < prevEntryKeys.length; idx++) {
-        if (prevProps.entry[idx] !== nextProps.entry[idx]) {
+        if (prevEntryKeys[idx] !== nextEntryKeys[idx] || prevProps.entry[prevEntryKeys[idx]] !== nextProps.entry[nextEntryKeys[idx]]) {
             return false
         }
     }
