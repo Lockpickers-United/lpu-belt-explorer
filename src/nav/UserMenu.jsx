@@ -131,19 +131,19 @@ function UserMenu() {
                         <MenuItem disabled>
                             <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=own`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Own`)}>
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=picked`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Picked`)}>
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
                         </MenuItem>
-                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=wishlist`)}>
+                        <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
