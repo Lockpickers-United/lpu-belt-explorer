@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from 'react'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function CompareSelect({blackBeltData, fighter, setFighter, label}) {
 
@@ -12,8 +13,11 @@ function CompareSelect({blackBeltData, fighter, setFighter, label}) {
         handleClose()
     }, [handleClose, setFighter])
 
+    const {isMobile} = useWindowSize()
+    const minWidth = !isMobile ? 220 : 150
+
     return (
-        <FormControl style={{marginBottom: 10, minWidth: 200, textAlign: 'left'}} size='small'>
+        <FormControl style={{marginBottom: 10, minWidth: minWidth, textAlign: 'left'}} size='small'>
             <InputLabel color='info'>{label}</InputLabel>
             <Select
                 value={fighter}

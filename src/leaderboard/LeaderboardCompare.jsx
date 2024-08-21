@@ -7,6 +7,7 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import CompareSelect from './CompareSelect.jsx'
 import Button from '@mui/material/Button'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function LeaderboardCompare({blackBeltData}) {
 
@@ -27,20 +28,29 @@ function LeaderboardCompare({blackBeltData}) {
     const bg1 = fighter1?.danPoints > fighter2?.danPoints ? '#333' : '#222'
     const bg2 = fighter2?.danPoints > fighter1?.danPoints ? '#333' : '#222'
 
+    const {isMobile} = useWindowSize()
+    const divFlex = !isMobile ? 'flex' : 'block'
+    const divBlock = !isMobile ? 'block' : 'flex'
+    const cardWidth = !isMobile ? '50%' : '100%'
+    const nameMargin = !isMobile ? 10 : 0
+
+
     return (
         <React.Fragment>
-            <Accordion expanded={open} disableGutters={true} style={{marginBottom: 20, backgroundColor:bgcolor}}>
+            <Accordion expanded={open} disableGutters={true} style={{marginBottom: 20, backgroundColor: bgcolor}}>
                 <AccordionSummary style={{
                     placeItems: 'center',
                     textAlign: 'center',
                     width: '100%',
-                    backgroundColor:bgcolor
+                    backgroundColor: bgcolor
                 }}>
-                    <div style={{ width:'100%', textAlign: 'center'}}>
-                        <Button onClick={handleClick} variant='outlined' color='info' size='small'>Compare Mode!</Button>
+                    <div style={{width: '100%', textAlign: 'center'}}>
+                        <Button onClick={handleClick} variant='outlined' color='info' size='small'>Compare
+                            Mode!</Button>
                     </div>
                 </AccordionSummary>
-                <AccordionDetails style={{backgroundColor: '#111'}}>
+                <AccordionDetails style={{backgroundColor: '#111', padding: '8px 0px 0px 0px'}}>
+
                     <div style={{backgroundColor: '#111', padding: 0}}>
                         <div style={{display: 'flex'}}>
                             <div style={{width: '50%', padding: 0, margin: 4}}>
@@ -53,31 +63,31 @@ function LeaderboardCompare({blackBeltData}) {
                             </div>
                         </div>
 
-                        <div style={{display: 'flex'}}>
-                            <div style={{width: '50%', backgroundColor: bg1, padding: 8, margin: 4}}>
+                        <div style={{display: divFlex}}>
+                            <div style={{width: cardWidth, backgroundColor: bg1, padding: 8, margin: 4}}>
                                 <div style={{
                                     width: '100%',
                                     fontSize: '1.4rem',
                                     fontWeight: 700,
-                                    marginLeft: 10
+                                    marginLeft: nameMargin
                                 }}>{fighter1?.displayName}</div>
-                                <div style={{width: '100%', display: 'flex', placeItems: 'right'}}><CompareDanStats
-                                    userData={fighter1}/>
+                                <div style={{display: divBlock}}>
+                                    <CompareDanStats userData={fighter1}/>
+                                    <CompareBeltBar userData={fighter1} max={maxValue}/>
                                 </div>
-                                <CompareBeltBar userData={fighter1} max={maxValue}/>
                             </div>
 
-                            <div style={{width: '50%', backgroundColor: bg2, padding: 8, margin: 4}}>
+                            <div style={{width: cardWidth, backgroundColor: bg2, padding: 8, margin: 4}}>
                                 <div style={{
                                     width: '100%',
                                     fontSize: '1.4rem',
                                     fontWeight: 700,
-                                    marginLeft: 10
+                                    marginLeft: nameMargin
                                 }}>{fighter2?.displayName}</div>
-                                <div style={{width: '100%', display: 'flex', placeItems: 'right'}}><CompareDanStats
-                                    userData={fighter2}/>
+                                <div style={{display: divBlock}}>
+                                    <CompareDanStats userData={fighter2}/>
+                                    <CompareBeltBar userData={fighter2} max={maxValue}/>
                                 </div>
-                                <CompareBeltBar userData={fighter2} max={maxValue}/>
                             </div>
                         </div>
                     </div>
