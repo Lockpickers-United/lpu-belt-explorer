@@ -13,7 +13,7 @@ export default function CompareDanStats({userData}) {
                 </div>
                 <div style={{marginBottom: 5}}>Dan Points <strong>{userData.danPoints}</strong></div>
                 <div style={{marginBottom: 5}}>Eligible Black Belt Locks <strong>{userData.blackBeltCount}</strong></div>
-                <div style={{marginBottom: 5}}>Unique Locks <strong>{userData.recordedLocks}</strong></div>
+                <div style={{marginBottom: 5}}>Unique Locks <strong>{userData.uniqueLocks}</strong></div>
             </div>
     )
 

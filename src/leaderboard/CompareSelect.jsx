@@ -5,11 +5,9 @@ import MenuItem from '@mui/material/MenuItem'
 function CompareSelect({blackBeltData, fighter, setFighter, label}) {
 
     const [open, setOpen] = useState(false)
-
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleChange = useCallback(event => {
-        console.log('event.target', event.target)
         setFighter(event.target.value)
         handleClose()
     }, [handleClose, setFighter])
