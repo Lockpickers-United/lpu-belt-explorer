@@ -14,16 +14,14 @@ function CompareBeltBar({userData, max}) {
         return acc
     }, [])
 
+    const {isMobile} = useWindowSize()
 
-    const {width} = useWindowSize()
-    const smallWindow = width <= 560
+    const chartHeight = !isMobile ? 210 : 160
+    const tickRotation = !isMobile ? -45 : -90
 
-    const chartHeight = !smallWindow ? 225
-        : 180
-
-    const chartMargin = !smallWindow
+    const chartMargin = !isMobile
         ? {top: 0, right: 0, bottom: 60, left: 15}
-        : {top: 0, right: 0, bottom: 60, left: 15}
+        : {top: 0, right: 0, bottom: 60, left: 0}
 
     const beltColors =
         ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
@@ -39,7 +37,7 @@ function CompareBeltBar({userData, max}) {
 
     return (
         <div key='bar'
-             style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
+             style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%', flexGrow: 2, backgroundColor:'inherit'}}
         >
             <ResponsiveBar
                 data={beltData}
@@ -49,7 +47,7 @@ function CompareBeltBar({userData, max}) {
                 colors={(bar) => beltColors[bar.index % beltColors.length]}
                 animate={true}
                 axisBottom={{
-                    tickRotation: -45,
+                    tickRotation: tickRotation
                 }}
                 axisLeft={null}
                 enableGridY={false}
