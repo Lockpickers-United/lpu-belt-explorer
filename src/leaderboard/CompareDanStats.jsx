@@ -14,7 +14,6 @@ export default function CompareDanStats({userData}) {
 
     return (
         <div style={{ placeItems: 'right'}}>
-
             <div style={{
                 textAlign: 'right', padding: padding, backgroundColor: 'inherit', fontSize: statsSize
             }}>

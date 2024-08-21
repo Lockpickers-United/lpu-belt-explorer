@@ -50,7 +50,6 @@ function LeaderboardCompare({blackBeltData}) {
                     </div>
                 </AccordionSummary>
                 <AccordionDetails style={{backgroundColor: '#111', padding: '8px 0px 0px 0px'}}>
-
                     <div style={{backgroundColor: '#111', padding: 0}}>
                         <div style={{display: 'flex'}}>
                             <div style={{width: '50%', padding: 0, margin: 4}}>
@@ -88,6 +87,12 @@ function LeaderboardCompare({blackBeltData}) {
                                     <CompareDanStats userData={fighter2}/>
                                     <CompareBeltBar userData={fighter2} max={maxValue}/>
                                 </div>
+                                    marginLeft: 10
+                                }}>{fighter2?.displayName}</div>
+                                <div style={{width: '100%', display: 'flex', placeItems: 'right'}}><CompareDanStats
+                                    userData={fighter2}/>
+                                </div>
+                                <CompareBeltBar userData={fighter2} max={maxValue}/>
                             </div>
                         </div>
                     </div>
