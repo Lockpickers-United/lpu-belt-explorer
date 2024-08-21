@@ -5,7 +5,7 @@ import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDoc
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 import calculateScoreForUser from '../scorecard/scoring'
-import {isLock} from '../entries/entryutils'
+import {isLock, isProject} from '../entries/entryutils'
 import collectionOptions from '../data/collectionTypes'
 
 const DBContext = React.createContext({})
@@ -118,13 +118,15 @@ export function DBProvider({children}) {
         const evids = await evidenceCache(userId)
         const scored = calculateScoreForUser(evids)
         const recordedLocks = scored.scoredEvidence.filter(e => isLock(e.matchId)).map(e => e.matchId)
+        const projects = scored.scoredEvidence.filter(e => isProject(e.matchId)).map(e => e.matchId)
 
         const ref = doc(db, 'lockcollections', userId)
         await setDoc(ref, {
             danPoints: scored.danPoints,
             blackBeltCount: scored.bbCount,
             danLevel: scored.eligibleDan,
-            recordedLocks: recordedLocks
+            recordedLocks: recordedLocks,
+            projects: projects
         }, {merge: true})
     }, [])
 
