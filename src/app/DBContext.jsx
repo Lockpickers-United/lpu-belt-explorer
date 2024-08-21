@@ -119,7 +119,6 @@ export function DBProvider({children}) {
         const scored = calculateScoreForUser(evids)
         const recordedLocks = scored.scoredEvidence.filter(e => isLock(e.matchId)).map(e => e.matchId)
         const projects = scored.scoredEvidence.filter(e => isProject(e.matchId)).map(e => e.matchId)
-
         const ref = doc(db, 'lockcollections', userId)
         await setDoc(ref, {
             danPoints: scored.danPoints,
@@ -383,6 +382,7 @@ export function DBProvider({children}) {
         updateProfileDisplayName,
         updateProfileBlackBeltAwardedAt,
         removeProfileBlackBeltAwarded,
+        updateUserStatistics,
         evidence,
         addEvidence,
         updateEvidence,
@@ -391,7 +391,7 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
+    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
 
     return (
         <DBContext.Provider value={value}>

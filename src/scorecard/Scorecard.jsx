@@ -30,7 +30,7 @@ function Scorecard({owner, profile, adminAction}) {
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
     const {expanded} = useContext(ScorecardListContext)
     const {filters, removeFilters} = useContext(FilterContext)
-    const {createEvidenceForEntries, removeEvidence, removeProfileBlackBeltAwarded} = useContext(DBContext)
+    const {createEvidenceForEntries, removeEvidence, removeProfileBlackBeltAwarded, updateUserStatistics} = useContext(DBContext)
     const {admin} = useContext(AppContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
@@ -79,6 +79,12 @@ function Scorecard({owner, profile, adminAction}) {
         setAnchorEl(event.currentTarget)
     }, [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+
+    const handleUpdateUserStats = useCallback(async () => {
+        setLoading(true)
+        await updateUserStatistics(userId)
+        setLoading(false)
+    }, [updateUserStatistics, userId])
 
     const handleDeleteAll = useCallback(async () => {
         setLoading(true)
@@ -170,21 +176,26 @@ function Scorecard({owner, profile, adminAction}) {
                                         <div style={{width: '10%', textAlign: 'center'}}>
                                             admin
                                         </div>
-                                        <div style={{width: '30%', textAlign: 'center'}}>
+                                        <div style={{width: '20%', textAlign: 'center'}}>
                                             <Button color='secondary' size='small'
                                                     style={{lineHeight: '1rem'}}
                                                     onClick={() => handleOpenControls('import')}>
                                                 IMPORT DAN SHEET
                                             </Button>
                                         </div>
-
-                                        <div style={{width: '30%', textAlign: 'center'}}>
+                                        <div style={{width: '20%', textAlign: 'center'}}>
+                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                                    onClick={handleUpdateUserStats}>
+                                                    UPDATE STATS
+                                            </Button>
+                                        </div>
+                                        <div style={{width: '20%', textAlign: 'center'}}>
                                             <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
                                                     onClick={handleMergeRecorded}>MERGE
                                                 RECORDED&nbsp;({recordedIdsToMerge.length})
                                             </Button>
                                         </div>
-                                        <div style={{width: '30%', textAlign: 'center'}}>
+                                        <div style={{width: '20%', textAlign: 'center'}}>
                                             <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
                                                     onClick={handleOpen}>DELETE SCORECARD</Button>
                                             <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
