@@ -2,16 +2,19 @@ import React, {useCallback, useState} from 'react'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 import useWindowSize from '../util/useWindowSize.jsx'
+import {useSearchParams} from 'react-router-dom'
 
-function CompareSelect({blackBeltData, fighter, setFighter, label}) {
+function CompareSelect({blackBeltData, fighter, label, param}) {
+    const [searchParams, setSearchParams] = useSearchParams()
 
     const [open, setOpen] = useState(false)
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleChange = useCallback(event => {
-        setFighter(event.target.value)
+        searchParams.set(param, event.target.value.id)
+        setSearchParams(searchParams)
         handleClose()
-    }, [handleClose, setFighter])
+    }, [handleClose, param, searchParams, setSearchParams])
 
     const {isMobile} = useWindowSize()
     const minWidth = !isMobile ? 220 : 150
