@@ -87,12 +87,6 @@ function LeaderboardCompare({blackBeltData}) {
                                     <CompareDanStats userData={fighter2}/>
                                     <CompareBeltBar userData={fighter2} max={maxValue}/>
                                 </div>
-                                    marginLeft: 10
-                                }}>{fighter2?.displayName}</div>
-                                <div style={{width: '100%', display: 'flex', placeItems: 'right'}}><CompareDanStats
-                                    userData={fighter2}/>
-                                </div>
-                                <CompareBeltBar userData={fighter2} max={maxValue}/>
                             </div>
                         </div>
                     </div>
