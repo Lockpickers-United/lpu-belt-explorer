@@ -17,6 +17,7 @@ import Link from '@mui/material/Link'
 import EvidenceForm from './EvidenceForm.jsx'
 
 import useWindowSize from '../util/useWindowSize.jsx'
+import Typography from '@mui/material/Typography'
 
 function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const {setFilters} = useContext(FilterContext)
@@ -136,8 +137,19 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             fontSize: '0.95rem',
                             lineHeight: 1.25,
                             color: '#bbb'
-                        }}>{evidenceNotes}</span>}
+                        }}>{evidenceNotes}</span>
+                    }
+                    {
+                        !!entity && !!entity?.version &&
+                        <FieldValue
+                            name='Version'
+                            value={<Typography
+                                style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entity?.version}</Typography>}
+                            textStyle={entity?.belt === 'Unranked' ? {color: '#aaa'} : {}}
+                        />
+                    }
                 </div>
+
 
                 <div style={{display: flexType, placeItems: 'center', marginLeft: 10, opacity: rowOpacity}}>
 
@@ -155,7 +167,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
 
                     <div style={infoDivStyle}>
                         <div
-                            style={{margin: dateMargin, color:dateColor, width: 90, textAlign: 'center'}}>
+                            style={{margin: dateMargin, color: dateColor, width: 90, textAlign: 'center'}}>
                             {dateText}
                         </div>
                         <div
@@ -206,7 +218,7 @@ export default React.memo(ScorecardRow, (prevProps, nextProps) => {
         return false
     }
     for (let idx = 0; idx < prevEvidKeys.length; idx++) {
-        if (prevProps.evid[idx] !== nextProps.evid[idx]) {
+        if (prevEvidKeys[idx] !== nextEvidKeys[idx] || prevProps.evid[prevEvidKeys[idx]] !== nextProps.evid[nextEvidKeys[idx]]) {
             return false
         }
     }
