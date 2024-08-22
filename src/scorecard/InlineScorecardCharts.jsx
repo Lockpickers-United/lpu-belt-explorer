@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react'
 import ScorecardBeltBar from './ScorecardBeltBar'
-import {danBelts} from '../data/belts'
+import {danBelts, danBeltsFull} from '../data/belts'
 
 function InlineCollectionCharts({entries}) {
 
@@ -8,7 +8,7 @@ function InlineCollectionCharts({entries}) {
 
         const beltDistribution = entries
             .map(({belt}) => belt && belt.includes('Project')
-                ? 'Project'
+                ? belt //was 'Project'
                 : belt
             )
             .reduce((acc, val) => {
@@ -17,7 +17,21 @@ function InlineCollectionCharts({entries}) {
                 return acc
             }, {})
 
-        return danBelts.map(belt => ({
+        beltDistribution['Project'] = entries.reduce((acc, entry) => {
+            return (entry.simpleBelt === 'Project')
+                ? acc + 1
+                : acc
+        }, 0)
+
+        let beltList = beltDistribution['Project'] > 0
+            ? danBeltsFull
+            : danBelts
+
+        if (!beltDistribution['Unranked']) {
+            beltList = beltList.filter(belt => belt !== 'Unranked')
+        }
+
+        return beltList.map(belt => ({
             id: belt,
             label: belt,
             count: beltDistribution[belt] || 0,

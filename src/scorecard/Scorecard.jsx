@@ -22,7 +22,6 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 
-
 function Scorecard({owner, profile, adminAction}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
@@ -118,7 +117,7 @@ function Scorecard({owner, profile, adminAction}) {
                 <React.Fragment>
                     {!isMobile
                         ? <div style={{display: headerDivStyle, padding: '10px 8px 0px 16px'}}>
-                            <div style={{marginRight: 0, width: 350}}>
+                            <div style={{marginRight: 0, width: 380}}>
                                 <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                             </div>
                             {profile.danLevel > 0 &&

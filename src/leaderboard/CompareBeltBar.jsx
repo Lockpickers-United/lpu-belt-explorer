@@ -15,10 +15,8 @@ function CompareBeltBar({userData, max}) {
     }, [])
 
     const {isMobile} = useWindowSize()
-
     const chartHeight = !isMobile ? 210 : 160
     const tickRotation = !isMobile ? -45 : -90
-
     const chartMargin = !isMobile
         ? {top: 0, right: 0, bottom: 60, left: 15}
         : {top: 0, right: 0, bottom: 60, left: 0}
@@ -27,13 +25,19 @@ function CompareBeltBar({userData, max}) {
         ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
             '#0090de', '#634b9f', '#9d5918',
             '#ba0303', '#000', '#000', '#000',
-            '#000', '#000', '#a5a93c']
+            '#000', '#000', '#3e3e3e',
+            '#a5a93c', '#a5a93c', '#a5a93c',
+            '#a5a93c', '#a5a93c', '#a5a93c'
+        ]
 
     const labelColors =
         ['#000', '#000', '#000', '#ddd',
             '#ddd', '#ddd', '#ddd',
             '#ddd', '#ddd', '#ddd', '#ddd',
-            '#ddd', '#ddd', '#ddd', ]
+            '#ddd', '#ddd', '#aaa',
+            '#000', '#000','#000'
+            ,'#000','#000','#000',
+        ]
 
     return (
         <div key='bar'
