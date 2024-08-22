@@ -94,11 +94,11 @@ function LeaderboardCompare({blackBeltData}) {
                         <div style={{display: 'flex'}}>
                             <div style={{width: '50%', padding: 0, margin: 4}}>
                                 <CompareSelect blackBeltData={blackBeltData} fighter={fighter1}
-                                               label={'Fighter #1'} param={'bb1'}/>
+                                               label={'Fighter #1'} param={'bb1'} opponent={bb2}/>
                             </div>
                             <div style={{width: '50%', padding: 0, margin: 4}}>
                                 <CompareSelect blackBeltData={blackBeltData} fighter={fighter2}
-                                               label={'Fighter #2'} param={'bb2'}/>
+                                               label={'Fighter #2'} param={'bb2'} opponent={bb1}/>
                             </div>
                         </div>
 

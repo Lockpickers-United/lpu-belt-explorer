@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {useSearchParams} from 'react-router-dom'
 
-function CompareSelect({blackBeltData, fighter, label, param}) {
+function CompareSelect({blackBeltData, fighter, label, param, opponent}) {
     const [searchParams, setSearchParams] = useSearchParams()
 
     const [open, setOpen] = useState(false)
@@ -33,7 +33,7 @@ function CompareSelect({blackBeltData, fighter, label, param}) {
                 style={{fontWeight: 400, color: '#eee'}}
                 color='info'
             >
-                {blackBeltData.map((blackbelt, index) =>
+                {blackBeltData.filter(bb => bb.id !== opponent).map((blackbelt, index) =>
                     <MenuItem key={index} value={blackbelt}>{blackbelt.displayName}</MenuItem>
                 )}
             </Select>
