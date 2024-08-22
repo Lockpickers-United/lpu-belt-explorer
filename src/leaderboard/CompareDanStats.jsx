@@ -5,6 +5,7 @@ export default function CompareDanStats({userData}) {
 
     if (!userData) return null
 
+    console.log(userData)
     const {isMobile} = useWindowSize()
     const danSize = !isMobile ? '1.8rem' : '1.3rem'
     const statsSize = !isMobile ? '1rem' : '0.83rem'
@@ -24,6 +25,7 @@ export default function CompareDanStats({userData}) {
                 <div style={{marginBottom: 5}}><nobr>Dan Points <strong>{userData.danPoints}</strong></nobr></div>
                 <div style={{marginBottom: 5}}><nobr>{bbText} <strong>{userData.blackBeltCount}</strong></nobr></div>
                 <div style={{marginBottom: 5}}><nobr>Unique Locks <strong>{userData['uniqueLocks']}</strong></nobr></div>
+                <div style={{marginBottom: 5}}><nobr>Masters Projects <strong>{userData['projects']}</strong></nobr></div>
             </div>
         </div>
     )

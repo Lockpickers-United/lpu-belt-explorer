@@ -47,7 +47,7 @@ function ScoringExceptions() {
     if (totalNum > 0) {
         return (
             <React.Fragment>
-                <IconButton onClick={handleOverlayOpen} style={{marginRight:5}}>
+                <IconButton onClick={handleOverlayOpen} style={{marginRight:0}}>
                     <HelpOutlineIcon fontSize='small'/>
                 </IconButton>
                 <Drawer

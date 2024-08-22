@@ -89,7 +89,7 @@ function LeaderboardCompare({blackBeltData}) {
                         }
                     </div>
                 </AccordionSummary>
-                <AccordionDetails style={{backgroundColor: '#111', padding: '8px 0px 0px 0px'}}>
+                <AccordionDetails style={{backgroundColor: '#111', padding: '16px 0px 0px 0px'}}>
                     <div style={{backgroundColor: '#111', padding: 0}}>
                         <div style={{display: 'flex'}}>
                             <div style={{width: '50%', padding: 0, margin: 4}}>

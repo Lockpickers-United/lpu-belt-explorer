@@ -57,8 +57,30 @@ export const danBelts = [
     'Black 3',
     'Black 4',
     'Black 5',
-    'Project',
+    'Unranked',
+    'Project'
+]
 
+export const danBeltsFull = [
+    'White',
+    'Yellow',
+    'Orange',
+    'Green',
+    'Blue',
+    'Purple',
+    'Brown',
+    'Red',
+    'Black 1',
+    'Black 2',
+    'Black 3',
+    'Black 4',
+    'Black 5',
+    'Unranked',
+    'Project 1',
+    'Project 2',
+    'Project 3',
+    'Project 4',
+    'Project 5'
 ]
 
 export const beltSort = (a, b) => {
