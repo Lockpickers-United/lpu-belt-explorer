@@ -6,10 +6,11 @@ Follow these instructions to migrate your dan sheet to lpubelts.com:
 
 1. **Log into lpubelts.com**
 
-2. **Select the Scorecard under the user menu in the upper right**
-3. **Click/tap the “Import Dan Sheet” button**
-4. **Type your tab name, exactly as it appears on the [Google Dan Sheet](https://docs.Google.com/spreadsheets/d/1gXQvnFi5usYNcFJKqxxBXYzMczNZ0ml_UVHYrX4D90o/edit?usp=sharing)**
-5. **Click/tap “Import” to confirm**
+2. **If you're creating a new account, got to "Edit Profile"  in the menu to set the name that will show up on your Scorecard and the Leaderboard.**
+3. **Select the Scorecard under the user menu in the upper right**
+4. **Click/tap the “Import Dan Sheet” button**
+5. **Type your tab name, exactly as it appears on the [Google Dan Sheet](https://docs.Google.com/spreadsheets/d/1gXQvnFi5usYNcFJKqxxBXYzMczNZ0ml_UVHYrX4D90o/edit?usp=sharing)**
+6. **Click/tap “Import” to confirm**
 
 **That’s it!**
 
@@ -19,7 +20,9 @@ You should now see your dan sheet on lpubelts.com, and can carry on! If you have
 
 ### 1. Log into lpubelts.com.
 
-If you have never used lpubelts.com before, it’s simple to get started. In the upper right corner you will find the user menu, and then select the option to “Sign In with Google”. You can use any Google account you like for this purpose, and you don’t need to use the same Google account that you have associated with your Google dan sheet.
+It’s simple to get started. In the upper right corner you will find the user menu, and then select the option to “Sign In with Google”. You can use any Google account you like for this purpose, and you don’t need to use the same Google account that you have associated with your Google dan sheet.
+
+**If you have never used lpubelts.com before**, go to "Edit Profile" in the same menu to set the Display Name people will see if you share your scorecard. This same name is used to show your spot on the Leaderboard.
 
 ![Log into lpubelts.com](https://dev.lpubelts.com/images/sign-in-+-scorecard-link-s.png)
 
