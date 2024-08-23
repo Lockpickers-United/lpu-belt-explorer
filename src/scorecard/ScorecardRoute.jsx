@@ -14,7 +14,6 @@ import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import calculateScoreForUser from '../scorecard/scoring'
-
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
 import {LocalizationProvider} from '@mui/x-date-pickers'
@@ -24,6 +23,7 @@ import SortButton from '../filters/SortButton.jsx'
 import {scorecardSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import ScorecardExportButton from './ScorecardExportButton.jsx'
 
 function ScorecardRoute() {
     const {userId} = useParams()
@@ -85,6 +85,13 @@ function ScorecardRoute() {
         </React.Fragment>
     )
 
+    const footer = (
+        <React.Fragment>
+            <br/>
+            <ScorecardExportButton/>
+        </React.Fragment>
+    )
+
     const title = loading ? 'Loading...' : 'Profile'
 
     if (loading || error) {
@@ -106,7 +113,8 @@ function ScorecardRoute() {
 
                         {!loading && (!data || error) && <ProfileNotFound/>}
 
-                        <Footer/>
+                        <Footer extras={footer}/>
+
                     </LocalizationProvider>
                     <Tracker feature='scorecard'/>
                 </ScorecardListProvider>
