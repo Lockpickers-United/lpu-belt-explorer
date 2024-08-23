@@ -1,24 +1,18 @@
 ## Preamble:
 
-The three-fold purpose of the Dan system is to:
+**The three-fold purpose of the Dan system is to:**
 
-Give Black Belts further levels of mastery to aspire to and achieve, to incentivize Black Belts to remain in the
-community and enrich it with knowledge and to increase the scope of what is possible within picking and locksport in
-general.
+- Give Black Belts further levels of mastery to aspire to and achieve.
+- To incentivize Black Belts to remain in the community and enrich it with knowledge.
+- To increase the scope of what is possible within picking and locksport in general.
 
 ## Overview
 
-You must earn Black Belt using the belt system to participate in the Dan System. (wearing the belt in the LPU discord or
-/r/lockpicking subreddit is not a requirement to participate)
+You must earn Black Belt using the belt system to participate in the Dan System. (Wearing the belt in the LPU discord or /r/lockpicking subreddit is not a requirement to participate.)
 
-It is not required that black belts participate. The “Black Belt” role will be used for those that do-not wish to
-participate in the Dan system.
-All new participants join on 1st Dan and will be rewarded with Dan Points for achievements within Locksport across two
-realms Picking and Disciplines.
+It is not required that black belts participate. The “Black Belt” role will be used for those that do-not wish to participate in the Dan system. All new participants join on 1st Dan and will be rewarded with Dan Points for achievements within Locksport across two realms: Picking and Disciplines.
 
-Total accumulated points will earn Dan Levels based on a point scale. Additionally, progression into each higher Dan
-Level will be limited by total number of black belt locks picked.
-Dan levels will be granted by the LPU moderation team upon request. (requirements must be met)
+Total accumulated points will earn Dan Levels based on a point scale. Additionally, progression into each higher Dan Level will be limited by total number of black belt locks picked. Dan levels will be granted by the LPU moderation team upon request. (requirements must be met)
 
 Stripes are earned through the acquisition of points.
 
@@ -76,10 +70,9 @@ Picking locks of blue belt or above will earn the following Dan Points
 | Black 4 | 36     |
 | Black 5 | 50     |
 
-Locks that are upgrades of each other will be recorded once for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements as well as one with 7, then only points for the 11 will be awarded.
+Locks that are upgrades of each other will be recorded once for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements and one with 7, then only points for the 11 will be awarded.
 
-Locks that are the same lock or only arbitrarily different will be placed on the same line and you may only gain points
-for one of them. (3KS/4KS)
+Locks that are the same lock or only arbitrarily different will be placed on the same line, and you may only gain points for one of them. (e.g. 3KS/4KS)
 
 Notable locks can and will be put up for a vote within “The Mat” channel.
 
@@ -129,12 +122,12 @@ the black belt community in “The Mat” channel.
 - That moderator will place it in the channel along with an @Black Belt mention as soon as possible so long as there
 aren’t already several votes taking place.
 - If you hate being pinged, change your settings. This is necessary to ensure each project is seen.
-- All Black Belt members will have 5 days from post time to vote using number emoji’s 0 thru 5. If two or more Tiers are
+- All Black Belt members will have 5 days from post time to vote using number emojis 0 through 5. If two or more Tiers are
 tied, the vote will round up to the highest Tier.
 - After 5 days a moderator will close out the vote by posting the result of the vote and confirming the point value of
 that project.
 - The submitter can then use that point value and date/time to enter the project into their tab of the Dan Sheet. You
-should also add a link to that post to make it easier for fact checkers.
+should also add a link to that post to make it easier for fact-checkers.
 
 Those who emote anything other than a number to represent a Tier will forfeit their vote. Repeated offenses will result
 in suspension of access to the channel.
@@ -172,9 +165,7 @@ before the classification of the lock, x1.5 points.
     - a date/time of the mod confirmation of Tier rank from “The Mat” Channel.
     - No unsubstantiated entries or entries with disqualified videos will count for Dan Points.
 - New Dan Levels will be assigned upon completion if required.
-- You cannot lose your Dan level due to belt ranking changes however, Dan sheet tabs that are not up to date with
-  current
-- lock rankings are not eligible for review or upgrade to the next level.
+- You cannot lose your Dan level due to belt ranking changes however, Dan sheet tabs that are not up-to-date with current lock rankings are not eligible for review or upgrade to the next level.
 - Review is only done upon request through the lpu belt bot
 
 Earning points through skills and community involvement
