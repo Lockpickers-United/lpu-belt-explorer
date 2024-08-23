@@ -11,7 +11,7 @@ import {
     dialsSchema,
     projectSchema,
     upgradeSchema,
-    introCopySchema
+    introCopySchema, userExceptionsSchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -44,7 +44,7 @@ const importValidate = async (tab, schema) => {
     return data
 }
 
-// Load all 3 data files
+// Load all 3 data files (LOL)
 const mainData = await importValidate('App Data', mainSchema)
 const mediaData = await importValidate('Media', mediaSchema)
 const linkData = await importValidate('Links', linkSchema)
@@ -57,6 +57,7 @@ const dialsLinkData = await importValidate('Dials Links', linkSchema)
 const projectsData = await importValidate('Projects', projectSchema)
 const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
+const userExceptionsData = await importValidate('User Exceptions', userExceptionsSchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -357,6 +358,16 @@ const introCopyJson = introCopyData.reduce((acc, item) => {
     return acc
 }, {})
 fs.writeFileSync('./src/data/introCopy.json', JSON.stringify(introCopyJson, null, 2))
+
+// User Exceptions data
+console.log('Processing User Exceptions data...')
+const userExceptions = userExceptionsData.reduce((acc, item) => {
+    const exceptions = item['No Leaderboard'] ? ['noLeaderboard'] : []
+    if (item['No Tracker']) { exceptions.push('noTracker') }
+    acc[item['User ID']] =  exceptions
+    return acc
+},{})
+fs.writeFileSync('./src/data/userExceptions.json', JSON.stringify(userExceptions, null, 2))
 
 // Recently updated data
 console.log('Processing recenty updated data...')
