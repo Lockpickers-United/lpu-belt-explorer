@@ -5,7 +5,6 @@ export default function CompareDanStats({userData}) {
 
     if (!userData) return null
 
-    console.log(userData)
     const {isMobile} = useWindowSize()
     const danSize = !isMobile ? '1.8rem' : '1.3rem'
     const statsSize = !isMobile ? '1rem' : '0.83rem'

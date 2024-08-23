@@ -142,4 +142,11 @@ export const upgradeSchema = Joi.array().items(
     }).unknown()
 )
 
+export const userExceptionsSchema = Joi.array().items(
+    Joi.object({
+        'User ID': Joi.string().regex(/^[0-9a-zA-Z]{28}$/),
+        'No Leaderboard': Joi.string().allow(''),
+        'No Tracker': Joi.string().allow(''),
+    }).unknown()
+)
 

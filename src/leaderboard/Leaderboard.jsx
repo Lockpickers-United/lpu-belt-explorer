@@ -18,6 +18,7 @@ import LeaderboardFindMeButton from './LeaderboardFindMeButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Nav from '../nav/Nav.jsx'
 import LeaderboardCompare from './LeaderboardCompare.jsx'
+import UserExceptions from '../data/userExceptions.json'
 
 function Leaderboard({data, loading}) {
     const location = useLocation()
@@ -76,6 +77,7 @@ function Leaderboard({data, loading}) {
 
     const filteredData = useMemo(() => {
         const allData = data.data
+            .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
             .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
             .sort((a, b) => {
                 return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
@@ -87,6 +89,7 @@ function Leaderboard({data, loading}) {
 
     const blackBeltData = useMemo(() => {
         return data.data
+            .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
             .filter(leader => leader['blackBeltAwardedAt'] > 0)
             .sort((a, b) => {
                 return a['displayName'].localeCompare(b['displayName'])
@@ -114,6 +117,9 @@ function Leaderboard({data, loading}) {
             searchParams.delete('tab')
         }
         searchParams.delete('sort')
+        searchParams.delete('bb1')
+        searchParams.delete('bb2')
+        searchParams.delete('title')
         setSearchParams(searchParams)
         setPage(value)
     }, [searchParams, setSearchParams, tab])
