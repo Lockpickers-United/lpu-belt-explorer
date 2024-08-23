@@ -51,7 +51,7 @@ function ExportButton() {
     }, [handleClose, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
-        const csvColumns = ['id', 'name', 'version', 'belt', 'points', 'date', 'link']
+        const csvColumns = ['id', 'name', 'version', 'belt', 'modifier', 'points', 'date', 'link']
         const data = visibleEntries.map(datum => ({
             id: datum.matchId,
             make: datum.makeModels.map(e => e.make).join(','),
@@ -59,6 +59,7 @@ function ExportButton() {
             version: datum.version,
             belt: datum.belt,
             link: datum.link,
+            modifier: datum.modifier,
             points: datum.points,
             date: datum.date ? dayjs(datum.date).format('L') : '',
             name: entryName(datum)
