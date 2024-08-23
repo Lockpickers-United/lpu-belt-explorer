@@ -1,6 +1,8 @@
 ## Hello Black Belts!
 
-In building towards a vision where core picking activities are integrated in one place, the Dan System is now running on lpubelts.com. Future lock and project additions should be made on lpubelts.com, and dan requests should reference your lpubelts.com Scorecard. The Google dan sheet that you all know and love has been put into read-only mode, so you can use it as a check for this transition.
+In building towards a vision where core picking activities are integrated in one place, the Dan System is now also available on lpubelts.com. We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects.
+
+Worth noting: because the Dan Sheet cannont be actively connected to the Dan Sheet, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date. All of your lock and project additions can be made on lpubelts.com, and dan requests would reference your lpubelts.com Scorecard.
 
 Follow these instructions to migrate your dan sheet to lpubelts.com:
 
