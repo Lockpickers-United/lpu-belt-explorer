@@ -1,0 +1,112 @@
+import React, {useMemo, useState} from 'react'
+import dayjs from 'dayjs'
+import useData from '../../util/useData.jsx'
+import Nav from '../../nav/Nav.jsx'
+import Footer from '../../nav/Footer.jsx'
+import PreviewScorecard from './PreviewScorecard.jsx'
+
+import {ScorecardDataProvider} from '../ScorecardDataProvider.jsx'
+import {FilterProvider} from '../../context/FilterContext.jsx'
+import calculateScoreForUser from '../../scorecard/scoring'
+import {ScorecardListProvider} from '../ScorecardListContext.jsx'
+import {scorecardFilterFields} from '../../data/filterFields'
+import {LocalizationProvider} from '@mui/x-date-pickers'
+import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+import SearchBox from '../../nav/SearchBox.jsx'
+import SortButton from '../../filters/SortButton.jsx'
+import {scorecardSortFields} from '../../data/sortFields'
+import FilterButton from '../../filters/FilterButton.jsx'
+import useWindowSize from '../../util/useWindowSize.jsx'
+import {unclaimedEvidence} from '../../data/dataUrls'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import {useLocation} from 'react-router-dom'
+import queryString from 'query-string'
+
+function PreviewImportRoute() {
+    const {isMobile} = useWindowSize()
+    const location = useLocation()
+
+    const tabName = useMemo(() => {
+        const query = queryString.parse(location.search)
+        return query.tab ? query.tab : ''
+    }, [location.search])
+    const [tab, setTab] = useState(tabName)
+
+    const {data, loading, error} = useData({urls})
+    const dataReady = (!!data && !loading && !error)
+
+    const allEvidence = data?.unclaimedEvidence
+
+    const evidence = useMemo(() => {
+        let evidenceArray = []
+        if (allEvidence) {
+            evidenceArray = Object.keys(allEvidence).reduce((acc, key) => {
+                let entry = allEvidence[key]
+                if (entry.tabName === tab) {
+                    acc.push(
+                        {
+                            'date': entry.evidenceCreatedAt,
+                            'evidenceNotes': entry.evidenceNotes,
+                            'link': entry.evidenceUrl,
+                            'modifier': entry.modifier,
+                            'matchId': entry.projectId,
+                            'userId': entry.tabName
+                        }
+                    )
+                }
+                return acc
+            }, [])
+        }
+        return evidenceArray
+    }, [allEvidence, tab])
+
+    const {
+        scoredEvidence,
+        bbCount,
+        danPoints,
+        eligibleDan,
+        nextDanPoints,
+        nextDanLocks
+    } = calculateScoreForUser(evidence)
+
+    const nav = (
+        <React.Fragment>
+            <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
+            <SortButton sortValues={scorecardSortFields}/>
+            <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+        </React.Fragment>
+    )
+
+    const footer = ('')
+
+    const title = 'Preview Dan Import'
+    document.title = 'LPU Belt Explorer - Preview Dan Import'
+
+    return (
+        <FilterProvider filterFields={scorecardFilterFields}>
+            <ScorecardDataProvider cardEvidence={scoredEvidence} cardBBCount={bbCount} cardDanPoints={danPoints}
+                                   cardEligibleDan={eligibleDan} cardNextDanPoints={nextDanPoints}
+                                   cardNextDanLocks={nextDanLocks}>
+                <ScorecardListProvider>
+                    <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
+
+                        <Nav title={title} extras={nav}/>
+
+                        {!dataReady && <LoadingDisplay/>}
+                        {dataReady && <PreviewScorecard tab={tab} setTab={setTab}/>}
+
+                        <Footer extras={footer}/>
+
+                    </LocalizationProvider>
+                </ScorecardListProvider>
+            </ScorecardDataProvider>
+        </FilterProvider>
+    )
+}
+
+
+const urls = {unclaimedEvidence}
+
+
+export default PreviewImportRoute

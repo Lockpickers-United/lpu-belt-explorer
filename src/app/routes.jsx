@@ -160,6 +160,18 @@ export default [
             const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
             return {element: <ViewScorecardRoute/>}
         }
+    },{
+        path: '/profile/scorecard',
+        lazy: async () => {
+            const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
+            return {element: <ViewScorecardRoute/>}
+        }
+    },{
+        path: '/profile/scorecard/preview',
+        lazy: async () => {
+            const {default: PreviewImportRoute} = await import('../scorecard/preview/PreviewImportRoute')
+            return {element: <PreviewImportRoute/>}
+        }
     },
     {
         path: '/safelocks',
