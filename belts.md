@@ -1105,7 +1105,7 @@ Examples of "Master's Projects":
 - [MIWA U9](https://lpubelts.com/?id=d1272b9f) (9 unmastered elements, barred false gates (old shallow false gates counts as BB1))
 - [Mottura Champions C43 / Mottura Champions C44 / Mottura Champions C48](https://lpubelts.com/?id=ae7d3780)
 - [Mul-T-Lock MT5+ / Mul-T-Lock 800 / Lockwood MT5 / IKON R10](https://lpubelts.com/?id=649eaebc) (not mastered)
-- [NATO Mersey](https://lpubelts.com/?id=4f2ed774) (10 lever, pre-1973)
+- [NATO Mersey](https://lpubelts.com/?id=4f2ed774) (10 lever)
 - [NATO Mersey](https://lpubelts.com/?id=f29a212f) (14 lever)
 - [Opnus Memolis](https://lpubelts.com/?id=6c0ec943)
 - [Opnus MMXII](https://lpubelts.com/?id=e151c916)
