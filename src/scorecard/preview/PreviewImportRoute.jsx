@@ -4,7 +4,6 @@ import useData from '../../util/useData.jsx'
 import Nav from '../../nav/Nav.jsx'
 import Footer from '../../nav/Footer.jsx'
 import PreviewScorecard from './PreviewScorecard.jsx'
-
 import {ScorecardDataProvider} from '../ScorecardDataProvider.jsx'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import calculateScoreForUser from '../../scorecard/scoring'
@@ -21,16 +20,19 @@ import {unclaimedEvidence} from '../../data/dataUrls'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import {useLocation} from 'react-router-dom'
 import queryString from 'query-string'
+import blackBelts from './blackBelts.json'
 
 function PreviewImportRoute() {
     const {isMobile} = useWindowSize()
     const location = useLocation()
 
-    const tabName = useMemo(() => {
+    const tabId = useMemo(() => {
         const query = queryString.parse(location.search)
         return query.tab ? query.tab : ''
     }, [location.search])
-    const [tab, setTab] = useState(tabName)
+    const tabName = blackBelts[tabId]
+
+    const [tab, setTab] = useState(tabId)
 
     const {data, loading, error} = useData({urls})
     const dataReady = (!!data && !loading && !error)
@@ -42,7 +44,7 @@ function PreviewImportRoute() {
         if (allEvidence) {
             evidenceArray = Object.keys(allEvidence).reduce((acc, key) => {
                 let entry = allEvidence[key]
-                if (entry.tabName === tab) {
+                if (entry.tabName === tabName) {
                     acc.push(
                         {
                             'date': entry.evidenceCreatedAt,
@@ -80,7 +82,7 @@ function PreviewImportRoute() {
 
     const footer = ('')
 
-    const title = 'Preview Dan Import'
+    const title = 'Preview'
     document.title = 'LPU Belt Explorer - Preview Dan Import'
 
     return (

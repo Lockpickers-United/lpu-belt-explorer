@@ -27,10 +27,6 @@ function InlineCollectionCharts({entries}) {
             ? danBeltsFull
             : danBelts
 
-        if (!beltDistribution['Unranked']) {
-            beltList = beltList.filter(belt => belt !== 'Unranked')
-        }
-
         return beltList.map(belt => ({
             id: belt,
             label: belt,
