@@ -37022,13 +37022,6 @@
     ],
     "media": [
       {
-        "title": "Michael Gilchrist Guts the Miwa U9",
-        "subtitle": "Lock Pickers United",
-        "thumbnailUrl": "https://img.youtube.com/vi/OBM-sTvOUtM/0.jpg",
-        "fullUrl": "https://www.youtube.com/watch?v=OBM-sTvOUtM",
-        "subtitleUrl": "https://www.youtube.com/@LockPickersUnited"
-      },
-      {
         "title": "By: PeaceWeapon",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52756135200_784c2b1da1_w_d.jpg",
@@ -37057,18 +37050,32 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52817529206_6dea776692_o.jpg"
       },
       {
+        "title": "Michael Gilchrist Guts the Miwa U9",
+        "subtitle": "Lock Pickers United",
+        "thumbnailUrl": "https://img.youtube.com/vi/OBM-sTvOUtM/0.jpg",
+        "fullUrl": "https://www.youtube.com/watch?v=OBM-sTvOUtM",
+        "subtitleUrl": "https://www.youtube.com/@LockPickersUnited"
+      },
+      {
         "title": "MIWA U9 inner workings",
         "subtitle": "PeaceWeapon Picks",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52816967827_35cd019abf_w_d.jpg",
         "fullUrl": "https://www.youtube.com/shorts/0kAZxa3XCgQ",
         "subtitleUrl": "https://www.youtube.com/shorts/0kAZxa3XCgQ"
+      },
+      {
+        "title": "MIWA U9 explained and recreated in 3D",
+        "subtitle": "NicheTimeMakers",
+        "thumbnailUrl": "https://i3.ytimg.com/vi/8QjTX3m0M2E/maxresdefault.jpg",
+        "fullUrl": "https://www.youtube.com/watch?v=8QjTX3m0M2E",
+        "subtitleUrl": "https://www.youtube.com/watch?v=8QjTX3m0M2E"
       }
     ],
     "views": 746,
     "relatedIds": [
       "71c7270b"
     ],
-    "lastUpdated": "2024-08-18T20:16:49.121Z"
+    "lastUpdated": "2024-08-25T23:00:21.098Z"
   },
   {
     "id": "ae7d3780",
@@ -37268,7 +37275,7 @@
         "model": "Mersey"
       }
     ],
-    "version": "10 lever, pre-1973",
+    "version": "10 lever",
     "lockingMechanisms": [
       "Lever"
     ],
@@ -37310,7 +37317,7 @@
     "relatedIds": [
       "f29a212f"
     ],
-    "lastUpdated": "2024-04-16T18:36:32.150Z"
+    "lastUpdated": "2024-08-25T23:00:21.098Z"
   },
   {
     "id": "f29a212f",
