@@ -43,6 +43,7 @@
         "fuzzysort": "^2.0.4",
         "joi": "^17.10.1",
         "notistack": "^3.0.1",
+        "pdf-lib": "^1.17.1",
         "query-string": "^8.1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",

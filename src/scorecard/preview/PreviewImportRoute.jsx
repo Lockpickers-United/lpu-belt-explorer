@@ -60,7 +60,7 @@ function PreviewImportRoute() {
             }, [])
         }
         return evidenceArray
-    }, [allEvidence, tab])
+    }, [allEvidence, tabName])
 
     const {
         scoredEvidence,
