@@ -9,8 +9,8 @@ function CopyLinkToEntryButton({entry, nameType}) {
     const handleClick = useCallback(async () => {
         const name =  entryName(entry, nameType)
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-        const link = `${window.location.origin}/#/locks?id=${entry.id}&name=${safeName}`
-
+        const link = `https://share.lpubelts.com/?id=${entry.id}&name=${safeName}`
+        
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link to entry copied to clipboard.')
     }, [entry, nameType])
