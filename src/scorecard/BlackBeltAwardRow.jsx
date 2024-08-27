@@ -1,5 +1,5 @@
 import React, {useState, useCallback, useContext} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import BeltStripe from '../entries/BeltStripe.jsx'
 import FieldValue from '../entries/FieldValue.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -17,6 +17,9 @@ import {enqueueSnackbar} from 'notistack'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 dayjs.extend(utc)
+import PrintIcon from '@mui/icons-material/Print'
+import Tooltip from '@mui/material/Tooltip'
+import IconButton from '@mui/material/IconButton'
 
 function BlackBeltAwardRow({owner, date}) {
     const {userId} = useParams()
@@ -24,7 +27,7 @@ function BlackBeltAwardRow({owner, date}) {
     const [expanded, setExpanded] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [evidenceDate, setEvidenceDate] = useState(dayjs.utc(date))
-
+    const navigate = useNavigate()
 
     const handleChange = useCallback((_, isExpanded) => {
         if (owner) {
@@ -48,6 +51,12 @@ function BlackBeltAwardRow({owner, date}) {
         }
     }, [userId, evidenceDate, updateProfileBlackBeltAwardedAt])
 
+
+    const handleClick = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
+        navigate('/award')
+    },[navigate])
 
     let dateText = date ? dayjs.utc(date).format('L') : '(no date)'
     dateText = dateText.replace('/202', '/2')
@@ -94,6 +103,12 @@ function BlackBeltAwardRow({owner, date}) {
                                 {dateText}
                             </div>
                         </div>
+                        <Tooltip title='Print Certificate' arrow disableFocusListener>
+                            <IconButton onClick={handleClick} style={{marginLeft:30}}>
+                                <PrintIcon/>
+                            </IconButton>
+                        </Tooltip>
+
                     </div>
                 </AccordionSummary>
                 {expanded &&
