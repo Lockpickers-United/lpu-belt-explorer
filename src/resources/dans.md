@@ -70,7 +70,7 @@ Picking locks of blue belt or above will earn the following Dan Points
 | Black 4 | 36     |
 | Black 5 | 50     |
 
-Locks that are upgrades of each other will be recorded once for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements and one with 7, then only points for the 11 will be awarded.
+Locks that are upgrades of each other will be awarded points only for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements and one with 7, then only points for the 11 will be awarded. The list of official upgrades can be found [here](https://lpubelts.com/#/profile/scorecard/upgrades).
 
 Locks that are the same lock or only arbitrarily different will be placed on the same line, and you may only gain points for one of them. (e.g. 3KS/4KS)
 
@@ -149,14 +149,29 @@ before the classification of the lock, x1.5 points.
 - Non-picking defeat (first defeat): Demonstrating a non-picking method of defeating a lock which has no known prior
   defeats receives x1.5 points (x2, notable lock), however the lock will still be considered unpicked.
 
-## Dan Sheet 2.0
+## Dan Sheet 2.0 & Scorecard
 
-- Dan Sheet will be utilized
-- Add/edit permissions will be gated by e-mail accounts
-- Each Black Belt will be given their own tab within this sheet.
-- Each member will be responsible for
-    - filling out their own tab in the new sheet with the new point values and any further entries going forward.
+Both Scorecard and Dan Sheets can be used to request Dan Levels. The two systems are **not** linked, so we recommend choosing one or the other to keep current. Alternately, you may choose to update both.
+
+Scorecard
+
+- Scorecard entries can be added at any time.
+- You must be already be approved for Black Belt through the normal request process.
+- Create an account & set Display Name on lpubelts.com if you don't have one.
+- Contact the LPUbelts team directly or in #belt-explorer to have your belt approval entered into the system.
+- For more info, [click here](https://lpubelts.com/#/profile/scorecard/howto).
+
+Dan Sheet
+
+- Dan Sheet add/edit permissions are gated by Google e-mail accounts sent to the mods.
+
+Overall
+
+- Dan requests continue to be made through #belt-requests. Please include a link to your Scorecard *or* Dan Sheet, not both.
+- Each member will be responsible for filling out their own locks & projects to participate.
+- Prior users must check/update their entries to make sure they are scored appropriately.
 - New point values will apply to everyone participating in Dan 2.0
+
 - Grandfathered black belt points are no longer valid.
 - Each Picking entry requires:
     - an active link to the video.

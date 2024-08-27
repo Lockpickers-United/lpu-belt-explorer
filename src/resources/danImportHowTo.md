@@ -1,14 +1,14 @@
 ## Hello Black Belts!
 
-In building towards a vision where core picking activities are integrated in one place, the Dan System is now also available on lpubelts.com. We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects.
+In building towards a vision where core picking activities are integrated in one place, the Dan System is now also available on lpubelts.com. We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects as well as requesting Dan Levels through #belt-requests.
 
-Worth noting: because the Dan Sheet cannont be actively connected to the Dan Sheet, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date. All of your lock and project additions can be made on lpubelts.com, and dan requests would reference your lpubelts.com Scorecard.
+Worth noting: because the Dan Sheet cannont be actively connected to the Dan Sheet, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date. All of your lock and project additions can be made on lpubelts.com, and Dan Requests would reference your lpubelts.com Scorecard.
 
 Follow these instructions to migrate your dan sheet to lpubelts.com:
 
 1. **Log into lpubelts.com**
 
-2. **If you're creating a new account, got to "Edit Profile"  in the menu to set the name that will show up on your Scorecard and the Leaderboard.**
+2. **If you're creating a new LPUbelts account, got to "Edit Profile"  in the menu to set the name that will show up on your Scorecard and the Leaderboard.**
 3. **Select the Scorecard under the user menu in the upper right**
 4. **Click/tap the “Import Dan Sheet” button**
 5. **Type your tab name, exactly as it appears on the [Google Dan Sheet](https://docs.Google.com/spreadsheets/d/1gXQvnFi5usYNcFJKqxxBXYzMczNZ0ml_UVHYrX4D90o/edit?usp=sharing)**
@@ -17,6 +17,14 @@ Follow these instructions to migrate your dan sheet to lpubelts.com:
 **That’s it!**
 
 You should now see your dan sheet on lpubelts.com, and can carry on! If you have further interest or questions, then keep on reading, as we go through each step in more detail.
+
+**For new Black Belts without a Dan Sheet:**
+
+- Scorecard entries can be added at any time.
+- You must be already be approved for Black Belt through the normal request process.
+- Create an account & set Display Name on lpubelts.com if you don't have one.
+- Contact the LPUbelts team directly or in #belt-explorer to have your belt approval entered into the system.
+
 
 ## DETAILED INSTRUCTIONS
 
