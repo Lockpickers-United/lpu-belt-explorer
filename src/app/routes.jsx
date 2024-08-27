@@ -186,6 +186,12 @@ export default [
             const {default: SafelocksRoute} = await import('../safelocks/SafelocksRoute.jsx')
             return {element: <SafelocksRoute/>}
         }
+    },{
+        path: '/award',
+        lazy: async () => {
+            const {default: AwardRoute} = await import('../award/AwardRoute.jsx')
+            return {element: <AwardRoute/>}
+        }
     },
     {
         path: '*',
