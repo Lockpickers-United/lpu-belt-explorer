@@ -1,5 +1,6 @@
 import React from 'react'
-import {PDFDocument, StandardFonts, rgb} from 'pdf-lib'
+import {PDFDocument, rgb} from 'pdf-lib'
+import fontkit from '@pdf-lib/fontkit'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -21,41 +22,46 @@ function Award({profile}) {
             : '/images/black-belt-award.pdf'
         const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
 
+        const fontUrl = '/fonts/LibreBaskerville-Regular.ttf'
+        const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer())
+
         const pdfDoc = await PDFDocument.load(existingPdfBytes)
         const pages = pdfDoc.getPages()
         const firstPage = pages[0]
         const {width, height} = firstPage.getSize()
 
-        const serifFont = await pdfDoc.embedFont(StandardFonts.TimesRoman)
-        let text = profile?.displayName
-        const textSize = 45
+        pdfDoc.registerFontkit(fontkit)
+        const serifFont = await pdfDoc.embedFont(fontBytes)
+
+        let text = profile?.displayName ? profile?.displayName : 'No Display Name Set'
+        const textSize = 42
         const textWidth = serifFont.widthOfTextAtSize(text, textSize)
         const textHeight = serifFont.heightAtSize(textSize)
 
         let dateText = dayjs(profile?.blackBeltAwardedAt.seconds * 1000).format('MMMM D, YYYY')
-        const dateTextSize = 12
+        const dateTextSize = 11
         const dateTextWidth = serifFont.widthOfTextAtSize(dateText, dateTextSize)
 
         firstPage.drawText(text, {
             x: (width - textWidth) / 2,
-            y: (height - textHeight) / 2 + 27,
+            y: (height - textHeight) / 2 + 32,
             size: textSize,
             font: serifFont,
             color: rgb(0, 0, 0)
         })
 
         firstPage.drawText(dateText, {
-            x: 188 - (dateTextWidth / 2),
+            x: 190 - (dateTextWidth / 2),
             y: 120,
-            size: 13,
+            size: dateTextSize,
             font: serifFont,
             color: rgb(0.2, 0.2, 0.2)
         })
 
         firstPage.drawText('The LPU Community', {
-            x: 545,
+            x: 540,
             y: 120,
-            size: 13,
+            size: dateTextSize,
             font: serifFont,
             color: rgb(0, 0, 0)
         })
@@ -69,7 +75,6 @@ function Award({profile}) {
     const {isMobile} = useWindowSize()
     const mobileTransform = isMobile ? {transform: 'scale(0.5) translateX(-340px) translateY(-270px)'} : {}
 
-    console.log('profile', profile)
     const height = 541
     const spacerTop = 208
     const nameHeight = 80
@@ -104,7 +109,7 @@ function Award({profile}) {
                     </div>
                     <div>
                         <Button onClick={() => modifyPdf('bw')} color='primary' style={{color: '#fff'}} disabled>
-                            Download:
+                            Download PDF:
                         </Button>
                     </div>
                     <Button onClick={() => modifyPdf()} color='secondary' variant='outlined'
@@ -171,10 +176,8 @@ function Award({profile}) {
                     <tr>
                         <td style={{height: spacerBot}} colSpan={5}>&nbsp;</td>
                     </tr>
-
                     </tbody>
                 </table>
-
 
             </div>
         </React.Fragment>
