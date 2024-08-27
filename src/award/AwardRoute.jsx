@@ -9,24 +9,24 @@ import Award from './Award.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-import {enqueueSnackbar} from 'notistack'
 
 function AwardRoute() {
     const {user} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
+    document.title = 'LPU Belt Explorer - Black Belt Certificate'
+
     const userId = user?.uid
     const loadFn = useCallback(async () => {
-        if (!user) return null
+        if (!userId) return null
         try {
             return await getProfile(userId)
         } catch (ex) {
             console.error('Error loading profile.', ex)
-            enqueueSnackbar('Error loading profile, please log in and try again.')
             return null
         }
-    }, [user, getProfile, userId])
+    }, [getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
 
     const isBlackBelt = !!data?.blackBeltAwardedAt
