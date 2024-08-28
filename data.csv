@@ -155,7 +155,6 @@ Green,ABUS,"80TI Titalium",,Pin-tumbler,Unguttable,,e1625c4d
 Green,ABUS,"Brady 71/40 LOTO (Lock Out Tag Out)",,Pin-tumbler,,,9da8ebe0
 Green,ABUS,"Bravus 1000",,Dimple,,,6b2e5290
 Green,ABUS,"Bravus 2000",,Dimple,,,8d1ebc79
-Green,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated and spooled t-pins",Pin-tumbler,,,85d93eb1
 Green,ABUS,D6,,Dimple,,,f97700ff
 Green,"ABUS,ABUS","EC750,EC850","spool pin version, not 700/800",Dimple,,,cf5bd73b
 Green,ABUS,GDS,"with trees and tapered pins",Pin-tumbler,"Xmas tree drivers",,13b06cba
@@ -293,6 +292,7 @@ Blue,Any,"HQ High Security Interactive clone","4 pins",Dimple,"Pin-in-pin,Intera
 Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",c6529d9c
 Blue,"ABUS,ABUS","75/50,75IB/50",,Dimple,Unguttable,,9ec8706c
 Blue,ABUS,"Bravus 3000",,Dimple,,,ea0efaca
+Blue,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated and spooled t-pins",Pin-tumbler,Changelog,,85d93eb1
 Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,E90",,Pin-tumbler,,,5c0d870b
 Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515caae
@@ -410,7 +410,6 @@ Purple,ABA,Pagoda,,Other,,,a17a6cf3
 Purple,ABUS,"Bravus 4000",,Dimple,,,a062f1ee
 Purple,ABUS,EP10,,Dimple,,,20adf729
 Purple,ABUS,TS5000,,Pin-tumbler,,,dd1dd313
-Purple,"ABUS,ABUS,CISA,CISA,Bricard,Bricard","XP20s,XP2s,AP3,AP4S,XP S2,Mistral S",,Dimple,"Interactive element",,da8331ef
 Purple,"Agent,Agent,Agent","LS3,LS4,LS5",,Dimple,,,557b2f45
 Purple,"Aldon Corporation","Hot Dog Lock",,Pump/push,,,0723bdc2
 Purple,"Anchor Las","Disc Detainer",,"Disc detainer","Front tension,False gates",,bbce33e0
@@ -517,6 +516,7 @@ Brown,Any,"SFIC with security pins",**,Pin-tumbler,,"** **Special Picking Requir
 Brown,Abloy,Classic,,"Disc detainer","Rear tension,False gates","Old models can be front tensioned",da09d849
 Brown,ABUS,Plus,"no butterfly discs","Disc detainer","Random mid tension,False gates",,b8350900
 Brown,ABUS,X-Plus,,"Disc detainer",,,c9d6d06d
+Brown,"ABUS,ABUS,CISA,CISA,Bricard,Bricard","XP20s,XP2s,AP3,AP4S,XP S2,Mistral S",,Dimple,"Interactive element,Changelog",,da8331ef
 Brown,,Aegis,"18 pin, 3 rows all spools",Dimple,"High pin count",,19fce24d
 Brown,Agent,GMD-500,,Dimple,,,db380ba0
 Brown,,Alke,,,,,d8abe040
