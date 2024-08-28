@@ -657,8 +657,8 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",ASSA,700,"gin/tree pins and matching countermilling in ≥ 4 chambers, ≥ 2 tree pins",Pin-tumbler,"Gin spool drivers,Tapered drivers,Undercut milling,Tree drivers",,f133510b
 "Black 3","ASSA,ASSA,TrioVing,Ruko","dp4400,dp11,dp,Garant+","6 pin with 10 sliders","Pin-tumbler,Slider","Unsprung sliders,Barrel drivers,Serrated/threaded milling,Active sidebar",,6e59ba12
 "Black 2",ASSA,"Twin 6000","gin drivers, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,104776ef
-"Black 2",ASSA,"Twin Combi","with gin drivers","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Gin spool drivers,Undercut milling",,fb51b475
 "Black 2","ASSA,ASSA,ASSA,TrioVing","Twin Combi,Triton,Neptun 4900,Twin Control","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Barrel drivers,Serrated/threaded milling",,7168d463
+"Black 2","ASSA,Ruko","Twin Combi,Garant","with gin drivers","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Gin spool drivers,Undercut milling",,fb51b475
 "Black 1",ASSA,"Twin Exclusive 5700 (Baltic)","6 pin with 5 side pins with 4 possible heights each","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,f7ad4c89
 "Black 1","ASSA,ASSA","Twin Exclusive,Twin 6000","6 barrel drivers, 5 side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,55053299
 "Black 1","ASSA,ASSA,ASSA,ASSA,ASSA","Twin Maximum,Twin Pro,Twin v10,Twin 2,Twin Global","barrel driver, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Active sidebar,Sidepins",,3f73d2ce
@@ -740,10 +740,11 @@ Unranked,ABA,108418,,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,41,,,"Under Review ⚑",,18ecc45b
-Unranked,ABUS,"5/45 Silver Rock",,Pin-tumbler,"Under Review ⚑",,0feafca7
+Unranked,ABUS,"5/45 Silver Rock",,Pin-tumbler,Changelog,,0feafca7
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
 Unranked,ABUS,P1R,,,"Under Review ⚑",,d005e7b8
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
+Unranked,ACE,Tubular,,,Changelog,,bf8970de
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑","mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
@@ -755,11 +756,12 @@ Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
 Unranked,,Bond,,Pin-tumbler,"Under Review ⚑",,4062aefb
 Unranked,Bowley,Rotasera,,"Disc detainer,Other",,,e35772c9
+Unranked,Brinks,"164 padlock",,,Changelog,,d974b48f
 Unranked,"Burg Wächter","Profi 116/25",,Pin-tumbler,"Under Review ⚑",,c77a4ac8
 Unranked,"Burg Wächter","Profi 116/30",,Pin-tumbler,"Under Review ⚑",,35adb4d6
 Unranked,"Burg Wächter","Profi 116/50","50mm or larger",Pin-tumbler,"Under Review ⚑",,bbfd4108
 Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 padlock",033ab190
-Unranked,CAVEO,TS007,"all standards","Dimple,Slider","Under Review ⚑","Seven pins with standard drivers, five slider sidebar",60964e9f
+Unranked,CAVEO,TS007,"all standards","Dimple,Slider",Changelog,"Seven pins with standard drivers, five slider sidebar",60964e9f
 Unranked,"CAWI,CAWI","7113,7123",,,"Under Review ⚑",,c6a14e93
 Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
 Unranked,,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑","Various brands",111062fc
@@ -768,7 +770,7 @@ Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",Wafer,"Under Review ⚑",,dbc6
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
 Unranked,Chubb,"GPO No.6",,,"Under Review ⚑",,c2c1f8e0
 Unranked,CISA,810,,,"Under Review ⚑",,22d70f2e
-Unranked,Cobra,"C3 Sidewinder",,Slider,"Under Review ⚑",,1add3dd0
+Unranked,Cobra,"C3 Sidewinder",,Slider,Changelog,,1add3dd0
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
@@ -776,16 +778,16 @@ Unranked,DOM,"RS Sirius",,,"Under Review ⚑",,406ac672
 Unranked,DOM,"S pp1024","6 pins",,"Under Review ⚑",,d0632926
 Unranked,Ezcurra,DS-15,,Dimple,"Under Review ⚑",,abe6074c
 Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
-Unranked,Fichet,787,interior,"Pump/push,Lever/sidebar","Under Review ⚑,Active sidebar,Shutter",,10ab07eb
+Unranked,Fichet,787,"no blocker","Pump/push,Lever/sidebar","Changelog,Active sidebar,Shutter",,10ab07eb
 Unranked,Fichet-Bauche,M2i,,Pump/push,"Under Review ⚑",,d6e6039e
 Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates",,89207b78
-Unranked,"FTH Thirard",Pacific,,,"Under Review ⚑",,a57c1e9b
+Unranked,"FTH Thirard",Pacific,,,Changelog,,a57c1e9b
 Unranked,,Gaab,"6-pin dimple",Dimple,"Under Review ⚑",,cd5acff8
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,GSK,"dual row sidebar lock",,"Under Review ⚑",,6b220699
 Unranked,,"Helason ","16-pin round key",Dimple,"Under Review ⚑",,93324d19
-Unranked,Heracles,5G,,,"Under Review ⚑",,3e5236c7
-Unranked,Heracles,y7,,,"Under Review ⚑",,7a7833f3
+Unranked,Heracles,5G,,,Changelog,,3e5236c7
+Unranked,Heracles,y7,,,Changelog,,7a7833f3
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624
 Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no false gates",Lever,"Under Review ⚑,Cabinet lock,Uncurtained,Pipe key",,81c91d86
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
@@ -797,13 +799,13 @@ Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count"
 Unranked,"Kawaha,Magmaus","(any),(any)",,Dimple,"Under Review ⚑",,ab9df828
 Unranked,Keso,1000,,Dimple,"Under Review ⚑","High pin count",110c872d
 Unranked,Kibb,"5 lever",,Lever,"Under Review ⚑",,991c6c07
-Unranked,Kromer,Novum,,Lever,"Under Review ⚑,Pipe key,Double bitted,False gates",,281aa393
+Unranked,Kromer,Novum,,Lever,"Changelog,Pipe key,Double bitted,False gates",,281aa393
 Unranked,"La Gard",2270,,,"Under Review ⚑",,c65959a3
 Unranked,Laperche,Diam,,Dimple,,,64662298
 Unranked,Lince,"C plus alarm",,,"Under Review ⚑",,8e11009a
 Unranked,Locksys,"Codkey L52","factory split core, 24 pins",Dimple,"Under Review ⚑",,7c6efd49
 Unranked,Locksys,"Codkey MME (micro magnetic element)",,"Dimple,Magnet","Under Review ⚑",,45bb95df
-Unranked,,Maglok,,Magnet,"Under Review ⚑",,2d1adbaf
+Unranked,,Maglok,,Magnet,Changelog,,2d1adbaf
 Unranked,Marks,"high security SFIC",,Pin-tumbler,"Under Review ⚑",,f74e0e97
 Unranked,"Master Lock",160,,"Pin-tumbler,Slider","Under Review ⚑",,7b69a331
 Unranked,"Master Lock",2950EURD,,Dimple,"Under Review ⚑",,a6f31065
@@ -811,6 +813,8 @@ Unranked,MCM,SS,,Dimple,"Under Review ⚑","requires 360º",85f92137
 Unranked,Medeco,KeyMark,,Pin-tumbler,"Under Review ⚑",,01c9e8d1
 Unranked,Medeco,X4,,Pin-tumbler,"Under Review ⚑",,0684a655
 Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872b30
+Unranked,MIWA,LS10,,,Changelog,,f0e31f32
+Unranked,MIWA,LS7,,,Changelog,,814c5368
 Unranked,MIWA,"Star Orion","6 rows",Dimple,"High pin count",,4150776b
 Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Double bitted",,e9d77a86
 Unranked,Mul-T-Lock,Interactive,"4 pins, 4 spooled drivers",Dimple,,,1798ca06
@@ -827,7 +831,6 @@ Unranked,Rosengrens,24K,,"Disc detainer","Under Review ⚑",,9b528165
 Unranked,Rosengrens,RKL-10,,,"Under Review ⚑,Swappable bitting",,5646568c
 Unranked,Ross,102,,Lever,"Pin key,Single bitted",,d78c58be
 Unranked,Ross,600,,Lever,"Pin key,Single bitted",,9a20e22d
-Unranked,Ruko,Garant,"with gins","Pin-tumbler,Slider","Under Review ⚑,Rotating fingerpins,Gin spool drivers,Serrated/threaded milling,Active sidebar",,61a01892
 Unranked,S&G,4163,"8 levers",Lever,"Flat steel key,Single bitted,False gates",,b4d87196
 Unranked,S&G,6804,"7 levers",Lever,"Pin key,Single bitted,False gates",,8a7eee5c
 Unranked,S&G,6870,,Lever,"Under Review ⚑",,894238be
@@ -835,7 +838,7 @@ Unranked,S&G,6880,,Lever,"Double bitted,False gates",,62cbb01c
 Unranked,SAG,"5 pin tubular",,Pump/push,"Under Review ⚑",,e713e7e6
 Unranked,"Schlage,Keiden","Cor-Key,M40",,Magnet,"Under Review ⚑",,a72739bc
 Unranked,Segal,"Six Lever",,Lever,"Under Review ⚑",,452aaa17
-Unranked,Sepa,5000,,Dimple,"Under Review ⚑","Three row dimple lock",a8fd470a
+Unranked,Sepa,5000,,Dimple,Changelog,"Three row dimple lock",a8fd470a
 Unranked,SOL,2500,"10mm (2pins)",Pin-tumbler,"Under Review ⚑",,97baf67b
 Unranked,SOL,2500,"15mm up to 35mm (3pins)",Pin-tumbler,"Under Review ⚑",,0d0bf1a5
 Unranked,SOL,2500,"40mm up to 45mm (4pins / spools)",Pin-tumbler,"Under Review ⚑",,29d423c8
@@ -850,6 +853,7 @@ Unranked,Tann,Vardeskydd,"8? levers",Lever,"Pipe key,Double bitted,False gates,S
 Unranked,Trelock,"SUPER Padlock",,,"Under Review ⚑",,9a99a0a7
 Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(simliar to the blue belt StrongBOLT 2100)",8dc5dbb4
 Unranked,Union,2134e,"5 lever",Lever,"Pin key,False gates",,45cadc22
+Unranked,Vachette,HDI,,,Changelog,,8cca70d0
 Unranked,Vachette,Radial,"18 or more pins",Dimple,"Under Review ⚑,High pin count",,ab1e3974
 Unranked,Vachette,"Radial S",,Dimple,,,5d1bbb5f
 Unranked,Vachette,"Radial SI",,Dimple,"Under Review ⚑,High pin count,Interactive element",,708256e9
@@ -859,7 +863,8 @@ Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e
 Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5
 Unranked,Winkhaus,XR,,,"Under Review ⚑",,0e1cabed
-Unranked,Yale,112,,"Disc detainer","Under Review ⚑",,222bd1fa
+Unranked,Yale,112,,"Disc detainer",Changelog,,222bd1fa
+Unranked,Yale,122/50,,,,,fb246ac0
 Unranked,Yale,"2000 Plus",,"Dimple,Sidebar,Slider","Under Review ⚑","dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
 Unranked,Yale,500+,,Pin-tumbler,"Under Review ⚑",,37951bc4
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
@@ -867,4 +872,4 @@ Unranked,Yale,YE3B,,,"Under Review ⚑",,ad6b0d8f
 Unranked,Yardeni,10,,Dimple,"Under Review ⚑","9 pins, 2 spools more restricted keyway than XL model",0757b1ed
 Unranked,Yardeni,"Super XL",,Dimple,"Under Review ⚑","8 pin dimple with interactive element on the key",2b6dd267
 Unranked,Yardeni,XL,,Dimple,"Under Review ⚑","8 pin dimple with more restrictive keyway than 6 pin yardeni",a7ffa199
-Unranked,,"Zeta Padlock",,,"Under Review ⚑",,5e3397a9
+Unranked,Zeta,Padlock,,,"Under Review ⚑",,5e3397a9

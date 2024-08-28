@@ -32653,108 +32653,6 @@
     "lastUpdated": "2024-02-08T02:04:15.209Z"
   },
   {
-    "id": "fb51b475",
-    "belt": "Black 2",
-    "makeModels": [
-      {
-        "make": "ASSA",
-        "model": "Twin Combi"
-      }
-    ],
-    "version": "with gin drivers",
-    "lockingMechanisms": [
-      "Pin-tumbler",
-      "Sidepins"
-    ],
-    "features": [
-      "Rotating fingerpins",
-      "Active sidebar",
-      "Gin spool drivers",
-      "Undercut milling"
-    ],
-    "media": [
-      {
-        "title": "By: m.c.",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52933872077_0c305327d9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52933872077/in/album-72177720308647926/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52933872077_fd7a841163_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934354574_d3863fff8f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934354574/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934354574_353846df3f_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934650458_e496da2da6_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934650458/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934650458_01403c8f99_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934353269_505cdf2ffb_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934353269/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934353269_9a7f104db8_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934596645_37d4b0b6e6_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934596645/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934596645_518d595de8_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934353699_1f88095878_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934353699/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934353699_099faf6fbd_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934202936_76bbae7285_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934202936/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934202936_f84763edf6_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934597045_307ee4f290_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934597045/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934597045_8530f7d526_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934203141_7009f26996_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934203141/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934203141_ab6a21ec69_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934649993_5d137afc57_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934649993/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934649993_4763f96145_o.jpg"
-      },
-      {
-        "title": "By: Reinder Stegen",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52934203456_761db884a4_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934203456/in/album-72177720308647352/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52934203456_bcbb0a7af5_o.jpg"
-      }
-    ],
-    "views": 1507,
-    "lastUpdated": "2024-02-08T02:04:15.209Z"
-  },
-  {
     "id": "7168d463",
     "belt": "Black 2",
     "makeModels": [
@@ -32941,6 +32839,112 @@
     ],
     "views": 1682,
     "lastUpdated": "2024-07-12T20:01:50.460Z"
+  },
+  {
+    "id": "fb51b475",
+    "belt": "Black 2",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin Combi"
+      },
+      {
+        "make": "Ruko",
+        "model": "Garant"
+      }
+    ],
+    "version": "with gin drivers",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Rotating fingerpins",
+      "Active sidebar",
+      "Gin spool drivers",
+      "Undercut milling"
+    ],
+    "media": [
+      {
+        "title": "By: m.c.",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52933872077_0c305327d9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52933872077/in/album-72177720308647926/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52933872077_fd7a841163_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934354574_d3863fff8f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934354574/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934354574_353846df3f_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934650458_e496da2da6_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934650458/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934650458_01403c8f99_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934353269_505cdf2ffb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934353269/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934353269_9a7f104db8_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934596645_37d4b0b6e6_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934596645/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934596645_518d595de8_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934353699_1f88095878_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934353699/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934353699_099faf6fbd_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934202936_76bbae7285_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934202936/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934202936_f84763edf6_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934597045_307ee4f290_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934597045/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934597045_8530f7d526_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934203141_7009f26996_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934203141/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934203141_ab6a21ec69_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934649993_5d137afc57_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934649993/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934649993_4763f96145_o.jpg"
+      },
+      {
+        "title": "By: Reinder Stegen",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52934203456_761db884a4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52934203456/in/album-72177720308647352/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52934203456_bcbb0a7af5_o.jpg"
+      }
+    ],
+    "views": 1507,
+    "lastUpdated": "2024-08-28T15:54:44.773Z"
   },
   {
     "id": "f7ad4c89",
@@ -38734,7 +38738,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "media": [
       {
@@ -38767,7 +38771,7 @@
       }
     ],
     "views": 223,
-    "lastUpdated": "2023-08-03T13:21:20.097Z"
+    "lastUpdated": "2024-08-28T15:54:44.776Z"
   },
   {
     "id": "05d357bb",
@@ -38867,6 +38871,20 @@
     ],
     "views": 83,
     "lastUpdated": "2023-08-03T13:21:20.098Z"
+  },
+  {
+    "id": "bf8970de",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ACE",
+        "model": "Tubular"
+      }
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "lastUpdated": "2024-08-28T15:54:44.776Z"
   },
   {
     "id": "fd93632b",
@@ -39321,6 +39339,20 @@
     "lastUpdated": "2023-08-10T00:09:36.302Z"
   },
   {
+    "id": "d974b48f",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Brinks",
+        "model": "164 padlock"
+      }
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "lastUpdated": "2024-08-28T15:54:44.777Z"
+  },
+  {
     "id": "c77a4ac8",
     "belt": "Unranked",
     "makeModels": [
@@ -39495,7 +39527,7 @@
       "Slider"
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "notes": "Seven pins with standard drivers, five slider sidebar",
     "media": [
@@ -39508,7 +39540,7 @@
       }
     ],
     "views": 61,
-    "lastUpdated": "2024-03-29T20:50:58.765Z"
+    "lastUpdated": "2024-08-28T15:54:44.777Z"
   },
   {
     "id": "c6a14e93",
@@ -39928,7 +39960,7 @@
       "Slider"
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "media": [
       {
@@ -39989,7 +40021,7 @@
       }
     ],
     "views": 14,
-    "lastUpdated": "2024-07-12T20:01:50.463Z"
+    "lastUpdated": "2024-08-28T15:54:44.777Z"
   },
   {
     "id": "bf43348b",
@@ -40244,13 +40276,13 @@
         "model": "787"
       }
     ],
-    "version": "interior",
+    "version": "no blocker",
     "lockingMechanisms": [
       "Pump/push",
       "Lever/sidebar"
     ],
     "features": [
-      "Under Review ⚑",
+      "Changelog",
       "Active sidebar",
       "Shutter"
     ],
@@ -40306,7 +40338,7 @@
       }
     ],
     "views": 238,
-    "lastUpdated": "2023-08-10T00:09:36.305Z"
+    "lastUpdated": "2024-08-28T15:54:44.778Z"
   },
   {
     "id": "d6e6039e",
@@ -40386,7 +40418,7 @@
       }
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "media": [
       {
@@ -40413,7 +40445,7 @@
       }
     ],
     "views": 35,
-    "lastUpdated": "2023-09-05T18:05:50.839Z"
+    "lastUpdated": "2024-08-28T15:54:44.778Z"
   },
   {
     "id": "cd5acff8",
@@ -40592,10 +40624,10 @@
       }
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "views": 21,
-    "lastUpdated": "2024-01-01T20:16:24.999Z"
+    "lastUpdated": "2024-08-28T15:54:44.778Z"
   },
   {
     "id": "7a7833f3",
@@ -40607,7 +40639,7 @@
       }
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "media": [
       {
@@ -40640,7 +40672,7 @@
       }
     ],
     "views": 35,
-    "lastUpdated": "2024-01-26T15:05:58.894Z"
+    "lastUpdated": "2024-08-28T15:54:44.778Z"
   },
   {
     "id": "352d0624",
@@ -40981,7 +41013,7 @@
       "Lever"
     ],
     "features": [
-      "Under Review ⚑",
+      "Changelog",
       "Pipe key",
       "Double bitted",
       "False gates"
@@ -41017,7 +41049,7 @@
       }
     ],
     "views": 53,
-    "lastUpdated": "2023-08-10T00:09:36.306Z"
+    "lastUpdated": "2024-08-28T15:54:44.779Z"
   },
   {
     "id": "c65959a3",
@@ -41241,10 +41273,10 @@
       "Magnet"
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "views": 45,
-    "lastUpdated": "2023-08-10T00:09:36.306Z"
+    "lastUpdated": "2024-08-28T15:54:44.779Z"
   },
   {
     "id": "f74e0e97",
@@ -41525,6 +41557,34 @@
     ],
     "views": 99,
     "lastUpdated": "2023-09-07T12:00:17.118Z"
+  },
+  {
+    "id": "f0e31f32",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "LS10"
+      }
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "lastUpdated": "2024-08-28T15:54:44.779Z"
+  },
+  {
+    "id": "814c5368",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "LS7"
+      }
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "lastUpdated": "2024-08-28T15:54:44.780Z"
   },
   {
     "id": "4150776b",
@@ -42272,53 +42332,6 @@
     "lastUpdated": "2023-08-05T14:23:23.166Z"
   },
   {
-    "id": "61a01892",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Ruko",
-        "model": "Garant"
-      }
-    ],
-    "version": "with gins",
-    "lockingMechanisms": [
-      "Pin-tumbler",
-      "Slider"
-    ],
-    "features": [
-      "Under Review ⚑",
-      "Rotating fingerpins",
-      "Gin spool drivers",
-      "Serrated/threaded milling",
-      "Active sidebar"
-    ],
-    "media": [
-      {
-        "title": "By: Yagias",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53215037007_40bb20bd08_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53215037007/in/album-72177720311493573/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53215037007_ac447461c9_o.jpg"
-      },
-      {
-        "title": "By: Yagias",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53216305264_9fd273b8da_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53216305264/in/album-72177720311493573/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53216305264_886f31189c_o.jpg"
-      },
-      {
-        "title": "By: Yagias",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53216222733_af068d6ca0_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53216222733/in/album-72177720311493573/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53216222733_42aa63883f_o.jpg"
-      }
-    ],
-    "views": 162,
-    "lastUpdated": "2024-03-29T20:50:58.766Z"
-  },
-  {
     "id": "b4d87196",
     "belt": "Unranked",
     "makeModels": [
@@ -42581,7 +42594,7 @@
       "Dimple"
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "notes": "Three row dimple lock",
     "media": [
@@ -42629,7 +42642,7 @@
       }
     ],
     "views": 48,
-    "lastUpdated": "2023-09-01T14:34:16.578Z"
+    "lastUpdated": "2024-08-28T15:54:44.780Z"
   },
   {
     "id": "97baf67b",
@@ -43211,6 +43224,20 @@
     "lastUpdated": "2023-08-09T22:49:21.910Z"
   },
   {
+    "id": "8cca70d0",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Vachette",
+        "model": "HDI"
+      }
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "lastUpdated": "2024-08-28T15:54:44.781Z"
+  },
+  {
     "id": "ab1e3974",
     "belt": "Unranked",
     "makeModels": [
@@ -43565,7 +43592,7 @@
       "Disc detainer"
     ],
     "features": [
-      "Under Review ⚑"
+      "Changelog"
     ],
     "media": [
       {
@@ -43591,7 +43618,18 @@
       }
     ],
     "views": 235,
-    "lastUpdated": "2024-01-10T20:50:18.622Z"
+    "lastUpdated": "2024-08-28T15:54:44.781Z"
+  },
+  {
+    "id": "fb246ac0",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "122/50"
+      }
+    ],
+    "lastUpdated": "2024-08-28T15:54:44.781Z"
   },
   {
     "id": "a42a815e",
@@ -43841,7 +43879,8 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "model": "Zeta Padlock"
+        "make": "Zeta",
+        "model": "Padlock"
       }
     ],
     "features": [
@@ -43906,6 +43945,6 @@
       }
     ],
     "views": 51,
-    "lastUpdated": "2024-07-12T01:23:04.313Z"
+    "lastUpdated": "2024-08-28T15:54:44.782Z"
   }
 ]
