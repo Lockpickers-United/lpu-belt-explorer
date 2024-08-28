@@ -16,6 +16,7 @@
         "import": "node ./scripts/import.js",
         "import-dan": "node ./scripts/importDan.js",
         "migrate-recorded": "node ./scripts/migrateRecorded.js",
+        "process-changelog": "node ./scripts/processChangelog.js",
         "exportCsv": "node scripts/exportCsv.js",
         "exportMd": "node ./scripts/exportMarkdown.js",
         "exportHtml": "node ./scripts/exportHtml.js",
