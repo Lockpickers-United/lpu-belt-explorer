@@ -64,7 +64,7 @@ function CollectionsReportMain() {
                 Black Belt Report<br/>
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
-            <BlackBeltsTable tableData={blackBeltData}/>
+            <BlackBeltsTable tableData={blackBeltData} collectionsData={collectionsData}/>
 
             <div style={headerStyle}>Collection Summary</div>
             <CollectionsSummaryTable data={collectionsData}/>
