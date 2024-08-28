@@ -101,7 +101,7 @@ const BlackBeltsTable = ({tableData, collectionsData}) => {
                                     color: '#fff'
                                 }}
                                 component='th' scope='row'>
-                                <Link onClick={() => setSort('date')} style={{color:'#d9d9ff'}}>Display Name</Link>
+                                <Link onClick={() => setSort('date')} style={{color:'#d9d9ff'}}>Acquired</Link>
                             </TableCell>
                         </TableRow>
                     </TableHead>
