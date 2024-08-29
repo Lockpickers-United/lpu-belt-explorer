@@ -14,10 +14,10 @@ import TopLocks from './collectionsReport/TopLocks'
 import {collectionsFullBB, leaderboardData2} from '../data/dataUrls'
 import BlackBeltsTable from './blackBeltsReport/BlackBeltsTable.jsx'
 
-function CollectionsReportMain() {
+function BlackBeltsMain() {
     usePageTitle('Black Belts Report')
     const {data, loading, error} = useData({urls})
-
+    
     const collectionsData = data?.collectionsFullBB
     const blackBeltData = data?.leaderboardData2?.blackBelts
 
@@ -27,7 +27,7 @@ function CollectionsReportMain() {
     // build line data
     const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'pickedLocks', 'ownLocks']
 
-    const filteredData = collectionsData.dailyTableData.data.filter(datum => dayjs(datum.date).isAfter(dayjs('2024-08-17')))
+    const filteredData = collectionsData?.dailyTableData.data.filter(datum => dayjs(datum.date).isAfter(dayjs('2024-08-17')))
     const lineMetrics = metricsList.reduce((acc, metricName) => {
         if (!data) return {}
         const metricData = filteredData.map(value => ({
@@ -97,4 +97,4 @@ const urls = {
     leaderboardData2
 }
 
-export default CollectionsReportMain
+export default BlackBeltsMain

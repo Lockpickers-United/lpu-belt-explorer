@@ -16,6 +16,7 @@ import Divider from '@mui/material/Divider'
 import {enqueueSnackbar} from 'notistack'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+
 dayjs.extend(utc)
 import PrintIcon from '@mui/icons-material/Print'
 import Tooltip from '@mui/material/Tooltip'
@@ -56,7 +57,7 @@ function BlackBeltAwardRow({owner, date}) {
         event.preventDefault()
         event.stopPropagation()
         navigate('/award')
-    },[navigate])
+    }, [navigate])
 
     let dateText = date ? dayjs.utc(date).format('L') : '(no date)'
     dateText = dateText.replace('/202', '/2')
@@ -103,12 +104,13 @@ function BlackBeltAwardRow({owner, date}) {
                                 {dateText}
                             </div>
                         </div>
-                        <Tooltip title='Print Certificate' arrow disableFocusListener>
-                            <IconButton onClick={handleClick} style={{marginLeft:30}}>
-                                <PrintIcon/>
-                            </IconButton>
-                        </Tooltip>
-
+                        {owner &&
+                            <Tooltip title='Print Certificate' arrow disableFocusListener>
+                                <IconButton onClick={handleClick} style={{marginLeft: 30}}>
+                                    <PrintIcon/>
+                                </IconButton>
+                            </Tooltip>
+                        }
                     </div>
                 </AccordionSummary>
                 {expanded &&
