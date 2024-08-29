@@ -3,9 +3,11 @@ import DataContext from '../context/DataContext'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import NoEntriesCard from '../locks/NoEntriesCard'
 import SafelockEntry from './SafelockEntry.jsx'
+import FilterContext from '../context/FilterContext'
 
 function SafelocksPage({profile}) {
-    const [expanded, setExpanded] = useState(false)
+    const {filters} = useContext(FilterContext)
+    const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries} = useContext(DataContext)
 
     const defExpanded = useDeferredValue(expanded)

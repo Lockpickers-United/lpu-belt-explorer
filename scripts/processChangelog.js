@@ -1,6 +1,6 @@
 import fs from 'fs'
 import admin from 'firebase-admin'
-import {getFirestore, Firestore} from 'firebase-admin/firestore'
+import {getFirestore} from 'firebase-admin/firestore'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
 const app = admin.initializeApp({
