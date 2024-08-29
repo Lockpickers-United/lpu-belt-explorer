@@ -19,7 +19,6 @@ function MainMenu() {
     const {beta} = useContext(AppContext)
     const {adminRole} = useContext(DBContext)
     const [open, setOpen] = useState(false)
-    const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
     const navigate = useNavigate()
 
     const handleHotkey = useCallback(() => setOpen(!open), [open])
@@ -31,7 +30,6 @@ function MainMenu() {
 
     const openDrawer = useCallback(() => {
         setOpen(true)
-
         // Clear current focus to prevent weird issues on mobile
         document.activeElement.blur()
     }, [])
@@ -72,8 +70,6 @@ function MainMenu() {
                             <React.Fragment key={index}>
                                 <MainMenuItem
                                     menuItem={menuItem}
-                                    openTitle={openTitle}
-                                    onOpen={setOpenTitle}
                                     onClose={closeDrawer}
                                 />
                                 <Divider style={{margin: 0}}/>

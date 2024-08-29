@@ -29,14 +29,29 @@ export default [
         path: '/info'
     },
     {
-        title: 'Dan System',
-        icon: <SportsMartialArtsIcon fontSize='small'/>,
-        path: '/dans'
+        title: 'Safe Locks',
+        icon: <AvTimerIcon fontSize='small'/>,
+        path: '/safelocks'
     },
     {
-        title: "Master's Projects",
-        icon: <ConstructionIcon fontSize='small'/>,
-        path: '/projects'
+        title: 'Leaderboards',
+        icon: <LeaderboardIcon fontSize='small'/>,
+        path: '/leaderboard',
+        expanded: true,
+        children: [
+            {
+                title: 'Locks',
+                path: '/leaderboard'
+            },
+            {
+                title: 'Safe Locks',
+                path: '/leaderboard?tab=safelocks'
+            },
+            {
+                title: 'Black Belts',
+                path: '/leaderboard?tab=blackBelts'
+            },
+        ]
     },
     {
         title: 'Glossary',
@@ -44,9 +59,14 @@ export default [
         path: '/glossary'
     },
     {
-        title: 'Safe Locks',
-        icon: <AvTimerIcon fontSize='small'/>,
-        path: '/safelocks'
+        title: 'Dan System',
+        icon: <SportsMartialArtsIcon fontSize='small'/>,
+        path: '/dans'
+    },
+    {
+        title: 'Master\'s Projects',
+        icon: <ConstructionIcon fontSize='small'/>,
+        path: '/projects'
     },
     {
         title: 'Stats & Insights',
@@ -54,20 +74,15 @@ export default [
         path: '/stats'
     },
     {
-        title: 'Leaderboard',
-        icon: <LeaderboardIcon fontSize='small'/>,
-        path: '/leaderboard'
-    },
-    {
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
     },
     {
-        admin: true,
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
         path: '/admin',
+        admin: true,
         children: [
             {
                 admin: true,
@@ -88,8 +103,9 @@ export default [
     },
     {
         title: 'More from LPU',
-        icon: <LPU_logo style={{height:20}}/>,
+        icon: <LPU_logo style={{height: 20}}/>,
         expanded: true,
+        separator: true,
         children: [
             {
                 title: 'LPUlocks.com Lock Bazaar',
