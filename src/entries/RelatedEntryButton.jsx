@@ -2,20 +2,18 @@ import IconButton from '@mui/material/IconButton'
 import React, {useCallback, useContext, useMemo} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import DataContext from '../locks/LockDataProvider'
-import FilterContext from '../context/FilterContext'
 import BeltIcon from './BeltIcon'
+import {useNavigate} from 'react-router-dom'
 
 function RelatedEntryButton({id, onExpand}) {
-    const {getEntryFromId, visibleEntries} = useContext(DataContext)
-    const {addFilters} = useContext(FilterContext)
+    const {getEntryFromId} = useContext(DataContext)
     const entry = useMemo(() => getEntryFromId(id), [getEntryFromId, id])
+    const navigate = useNavigate()
 
     const handleClick = useCallback(async () => {
-        if (!visibleEntries.some(e => e.id === id)) {
-            addFilters([{tab: entry.belt.replace(/\s\d/g, '')}])
-        }
+        navigate(`/locks?id=${id}`)
         onExpand(id)
-    }, [visibleEntries, id, addFilters, entry.belt, onExpand])
+    }, [id, navigate, onExpand])
 
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>
