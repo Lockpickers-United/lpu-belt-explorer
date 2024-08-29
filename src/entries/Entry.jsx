@@ -165,7 +165,7 @@ function Entry({entry, expanded, onExpand}) {
                             <FieldValue name='Other Versions' value={
                                 <React.Fragment>
                                     {allRelatedIds.map(relatedId =>
-                                        <RelatedEntryButton key={relatedId} id={relatedId}/>
+                                        <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand}/>
                                     )}
                                 </React.Fragment>
                             }/>
