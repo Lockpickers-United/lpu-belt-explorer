@@ -26,9 +26,11 @@ function CollectionsReportMain() {
 
     // build line data
     const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'pickedLocks', 'ownLocks']
+
+    const filteredData = collectionsData.dailyTableData.data.filter(datum => dayjs(datum.date).isAfter(dayjs('2024-08-17')))
     const lineMetrics = metricsList.reduce((acc, metricName) => {
         if (!data) return {}
-        const metricData = collectionsData.dailyTableData.data.map(value => ({
+        const metricData = filteredData.map(value => ({
             x: value.date,
             y: value[metricName]
         }))

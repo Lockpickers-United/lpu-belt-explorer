@@ -1,11 +1,11 @@
-const { initializeApp, cert } = require("firebase-admin/app")
+const { initializeApp, cert } = require('firebase-admin/app')
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore')
 const serviceAccount = require('../../lpu-belt-explorer-firebase-adminsdk.json')
 
 const config = {
     credential: cert(serviceAccount)
 }
-const firebaseApp = initializeApp(config);
+const firebaseApp = initializeApp(config)
 const db = getFirestore(firebaseApp)
 
 
@@ -14,8 +14,8 @@ const db = getFirestore(firebaseApp)
 const userId = '4qqxB0nW8dczUws5XuAyhEkgZEj2'
 const approvedDate = '2024-08-18'
 
-addBlackBelt()
-//removeBlackBelt()
+//addBlackBelt()
+removeBlackBelt()
 
 
 //update profile
