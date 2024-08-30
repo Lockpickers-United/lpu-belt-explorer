@@ -41,15 +41,15 @@ export default [
         children: [
             {
                 title: 'Locks',
-                path: '/leaderboard'
+                path: '/leaderboard/locks'
             },
             {
                 title: 'Safe Locks',
-                path: '/leaderboard?tab=safelocks'
+                path: '/leaderboard/safelocks'
             },
             {
                 title: 'Black Belts',
-                path: '/leaderboard?tab=blackBelts'
+                path: '/leaderboard/blackBelts'
             },
         ]
     },

@@ -1,11 +1,7 @@
 import React from 'react'
 import makeStyles from '@mui/styles/makeStyles'
-import {useSearchParams} from 'react-router-dom'
 
-function LeaderboardName({leader, isCurrentUser}) {
-
-    const [searchParams] = useSearchParams()
-    const tab = searchParams.get('tab')
+function LeaderboardName({leader, isCurrentUser, tab}) {
 
     const classes = useStyles()
     const style = isCurrentUser ? {color: '#4db013'} : {}

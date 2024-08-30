@@ -5,9 +5,10 @@ import LeaderboardCell from './LeaderboardCell'
 import LeaderboardName from './LeaderboardName'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+
 dayjs.extend(utc)
 
-function LeaderboardRow({index, leader, highlighted, scrollableRef, columns}) {
+function LeaderboardRow({index, leader, highlighted, scrollableRef, columns, tab}) {
     const ref = useRef()
     const {user} = useContext(AuthContext)
     const [scrolled, setScrolled] = useState(false)
@@ -38,13 +39,14 @@ function LeaderboardRow({index, leader, highlighted, scrollableRef, columns}) {
         >
             <LeaderboardCell isCurrentUser={isCurrentUser} value={index + 1}/>
             <LeaderboardCell isCurrentUser={isCurrentUser} value={
-                <LeaderboardName isCurrentUser={isCurrentUser} leader={leader}/>
+                <LeaderboardName isCurrentUser={isCurrentUser} leader={leader} tab={tab}
+                />
             } align='left'/>
 
             {columns.map((column, index) => {
                 const value = column.field === 'blackBeltAwardedAt'
                     ? leader[column.field] > 0
-                        ? dayjs.utc(leader[column.field]*1000).format('MM/DD/YY')
+                        ? dayjs.utc(leader[column.field] * 1000).format('MM/DD/YY')
                         : '-'
                     : leader[column.field]
                 return (
