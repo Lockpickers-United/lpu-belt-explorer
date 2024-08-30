@@ -24,6 +24,7 @@ import LockImageGallery from './LockImageGallery'
 import RelatedEntryButton from './RelatedEntryButton'
 import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
+import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 
 function Entry({entry, expanded, onExpand}) {
     const {userId} = useParams()
@@ -200,6 +201,7 @@ function Entry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker feature='lock' id={entry.id}/>
+                        <CopyEntryIdButton entry={entry}/>
                         <CopyEntryTextButton entry={entry}/>
                         <CopyLinkToEntryButton entry={entry}/>
                     </AccordionActions>
