@@ -23,7 +23,30 @@ export default [
         lazy: async () => {
             const {default: LeaderboardRoute} = await import('../leaderboard/LeaderboardRoute')
             return {element: <LeaderboardRoute/>}
-        }
+        },
+        children: [
+            {
+                path: '/leaderboard/locks',
+                lazy: async () => {
+                    const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
+                    return {element: <Leaderboard tab={'locks'}/>}
+                }
+            },
+            {
+                path: '/leaderboard/safelocks',
+                lazy: async () => {
+                    const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
+                    return {element: <Leaderboard tab={'safelocks'}/>}
+                }
+            },
+            {
+                path: '/leaderboard/blackBelts',
+                lazy: async () => {
+                    const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
+                    return {element: <Leaderboard tab={'blackBelts'}/>}
+                }
+            }
+        ]
     },
     {
         path: '/info',

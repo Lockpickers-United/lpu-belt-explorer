@@ -1,8 +1,7 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
-import LinearProgress from '@mui/material/LinearProgress'
+import React, {useCallback, useContext, useMemo, useRef} from 'react'
 import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
-import {useLocation, useSearchParams} from 'react-router-dom'
+import {useLocation, useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -19,28 +18,27 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Nav from '../nav/Nav.jsx'
 import LeaderboardCompare from './LeaderboardCompare.jsx'
 import UserExceptions from '../data/userExceptions.json'
+import {leaderboardData2} from '../data/dataUrls'
+import useData from '../util/useData.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
 
-function Leaderboard({data, loading}) {
+function Leaderboard({tab}) {
+
+    const {data, loading, error} = useData({url})
+
     const location = useLocation()
     const {user} = useContext(AuthContext)
     const scrollableRef = useRef()
-    const [searchParams, setSearchParams] = useSearchParams()
     const {isMobile} = useWindowSize()
+    const navigate = useNavigate()
 
-    const {highlightedUser, sort, tab} = useMemo(() => {
+    const {highlightedUser, sort} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
             highlightedUser: query.user,
-            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined,
-            tab: (query.tab && validTab.includes(query.tab)) ? query.tab : 'locks'
+            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined
         }
     }, [location.search])
-
-    const [page, setPage] = useState(tab)
-
-    useEffect(() => {
-        setPage(tab)
-    }, [tab])
 
     const tabData = useMemo(() => {
         return {
@@ -76,25 +74,27 @@ function Leaderboard({data, loading}) {
     const sortOrder = tabData[tab]['columns'].find(col => col.field === sort) ? tabData[tab]['columns'].find(col => col.field === sort)['order'] : 'desc'
 
     const filteredData = useMemo(() => {
-        const allData = data.data
-            .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
-            .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
-            .sort((a, b) => {
-                return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
-            })
-        return page === 'blackBelts'
+        const allData = data?.data ?
+            data?.data
+                .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
+                .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
+                .sort((a, b) => {
+                    return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
+                })
+            : []
+        return tab === 'blackBelts'
             ? allData.filter(leader => leader['blackBeltAwardedAt'] > 0)
             : allData
-    }, [data.data, page, tab, tabData])
+    }, [data?.data, tab, tabData])
 
     const blackBeltData = useMemo(() => {
-        return data.data
+        return data?.data
             .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
             .filter(leader => leader['blackBeltAwardedAt'] > 0)
             .sort((a, b) => {
                 return a['displayName'].localeCompare(b['displayName'])
             })
-    }, [data.data])
+    }, [data?.data])
 
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
@@ -108,21 +108,13 @@ function Leaderboard({data, loading}) {
             })
     }, [sort, sortOrder, filteredData, tabData, tab])
 
-    const updateTime = dayjs(data.metadata['updatedDateTime']).format('MM/DD/YY HH:mm')
+    const updateTime = dayjs(data?.metadata['updatedDateTime']).format('MM/DD/YY HH:mm')
 
     const handleClick = useCallback(value => {
         if (value && value !== tab) {
-            searchParams.set('tab', value)
-        } else {
-            searchParams.delete('tab')
+            navigate('/leaderboard/' + value)
         }
-        searchParams.delete('sort')
-        searchParams.delete('bb1')
-        searchParams.delete('bb2')
-        searchParams.delete('title')
-        setSearchParams(searchParams)
-        setPage(value)
-    }, [searchParams, setSearchParams, tab])
+    }, [navigate, tab])
 
     const nav = (
         <React.Fragment>
@@ -134,11 +126,13 @@ function Leaderboard({data, loading}) {
     )
     const title = loading ? 'Loading...' : 'Leaderboard'
 
-    return (
+    if (loading) {
+        return <LoadingDisplay/>
+    }
+
+    if (data && !error) return (
         <React.Fragment>
             <Nav title={title} extras={nav}/>
-
-            {loading && <LinearProgress variant='indeterminate' color='secondary'/>}
 
             <div style={{
                 maxWidth: 700, padding: 8, backgroundColor: '#000',
@@ -151,22 +145,22 @@ function Leaderboard({data, loading}) {
                         size='large'
                     >
                         <ToggleButton onClick={() => handleClick('locks')}
-                                      selected={page === 'locks'}
-                                      disabled={page === 'locks'}
+                                      selected={tab === 'locks'}
+                                      disabled={tab === 'locks'}
                                       value='collection'
                                       style={{padding: '2px 12px 2px 12px'}}>
                             Locks
                         </ToggleButton>
                         <ToggleButton onClick={() => handleClick('safelocks')}
-                                      selected={page === 'safelocks'}
-                                      disabled={page === 'safelocks'}
+                                      selected={tab === 'safelocks'}
+                                      disabled={tab === 'safelocks'}
                                       value='safelocks'
                                       style={{padding: '2px 12px 2px 12px'}}>
                             Safe Locks
                         </ToggleButton>
                         <ToggleButton onClick={() => handleClick('blackBelts')}
-                                      selected={page === 'blackBelts'}
-                                      disabled={page === 'blackBelts'}
+                                      selected={tab === 'blackBelts'}
+                                      disabled={tab === 'blackBelts'}
                                       value='scorecard'
                                       style={{padding: '2px 12px 2px 12px'}}>
                             Black Belts
@@ -174,7 +168,7 @@ function Leaderboard({data, loading}) {
                     </ToggleButtonGroup>
                 </div>
 
-                {page === 'blackBelts' &&
+                {tab === 'blackBelts' &&
                     <LeaderboardCompare blackBeltData={blackBeltData}/>
                 }
 
@@ -196,6 +190,7 @@ function Leaderboard({data, loading}) {
                                         scrollableRef={scrollableRef}
                                         highlighted={isHighlighted}
                                         columns={tabData[tab]['columns']}
+                                        tab={tab}
                                     />
                                 )
                             })}
@@ -211,6 +206,8 @@ function Leaderboard({data, loading}) {
     )
 }
 
+const url = leaderboardData2
+
 const validSort = [
     'own',
     'picked',
@@ -223,12 +220,6 @@ const validSort = [
     'danPoints',
     'blackBeltCount',
     'blackBeltAwardedAt'
-]
-
-const validTab = [
-    'locks',
-    'safelocks',
-    'blackBelts'
 ]
 
 export default Leaderboard
