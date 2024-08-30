@@ -19,6 +19,29 @@ export default [
         }
     },
     {
+        path: '/scorecard/info',
+        lazy: async () => {
+            const {default: ScorecardInfoRoute} = await import('../scorecard/ScorecardInfoRoute.jsx')
+            return {element: <ScorecardInfoRoute/>}
+        },
+        children: [
+            {
+                path: '/scorecard/info/FAQ',
+                lazy: async () => {
+                    const {default: InfoFaqBB} = await import('../scorecard/InfoFaqBB.jsx')
+                    return {element: <InfoFaqBB/>}
+                }
+            },
+            {
+                path: '/scorecard/info/howto',
+                lazy: async () => {
+                    const {default: HowToPage} = await import('../scorecard/HowToPage.jsx')
+                    return {element: <HowToPage/>}
+                }
+            },
+        ]
+    },
+    {
         path: '/leaderboard',
         lazy: async () => {
             const {default: LeaderboardRoute} = await import('../leaderboard/LeaderboardRoute')

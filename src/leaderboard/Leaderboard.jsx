@@ -32,11 +32,13 @@ function Leaderboard({tab}) {
     const {isMobile} = useWindowSize()
     const navigate = useNavigate()
 
-    const {highlightedUser, sort} = useMemo(() => {
+    const {highlightedUser, sort, compare} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
             highlightedUser: query.user,
-            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined
+            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined,
+            compare: query.compare
+
         }
     }, [location.search])
 
@@ -169,7 +171,7 @@ function Leaderboard({tab}) {
                 </div>
 
                 {tab === 'blackBelts' &&
-                    <LeaderboardCompare blackBeltData={blackBeltData}/>
+                    <LeaderboardCompare blackBeltData={blackBeltData} compare={compare}/>
                 }
 
                 <TableContainer sx={{height: '78vh', backgroundColor: '#111'}} id='scrollable' ref={scrollableRef}>
