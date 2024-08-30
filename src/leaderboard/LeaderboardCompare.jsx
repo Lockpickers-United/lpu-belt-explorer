@@ -11,7 +11,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {useLocation, useSearchParams} from 'react-router-dom'
 import queryString from 'query-string'
 
-function LeaderboardCompare({blackBeltData}) {
+function LeaderboardCompare({blackBeltData, compare}) {
     const location = useLocation()
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -28,7 +28,7 @@ function LeaderboardCompare({blackBeltData}) {
     const fighter1 = blackBeltData.find(bb => bb.id === bb1) || ''
     const fighter2 = blackBeltData.find(bb => bb.id === bb2) || ''
 
-    const [open, setOpen] = useState(!!bb1 || !!bb2)
+    const [open, setOpen] = useState(!!bb1 || !!bb2 || compare)
     const handleClick = useCallback(() => setOpen(!open), [open])
     const handleReset = useCallback(() => {
         searchParams.delete('bb1')
@@ -83,7 +83,7 @@ function LeaderboardCompare({blackBeltData}) {
                             <React.Fragment>
                                 <Button onClick={handleReset} variant='outlined' color='info' size='small'
                                         style={{marginLeft: 10}}>
-                                    Close
+                                    Close Compare
                                 </Button>
                             </React.Fragment>
                         }

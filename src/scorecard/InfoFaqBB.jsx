@@ -1,22 +1,20 @@
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import React, {useContext} from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
-import howToMd from '../resources/danImportHowTo.md?raw'
+import markdown from '../resources/scorcardInfoFaqBB.md?raw'
 import '../resources/md-tables.css'
 import AuthContext from '../app/AuthContext.jsx'
 
-function HowToPage() {
-    const updateTime = '8/15/2024'
+function InfoFaqBB() {
 
     const {user} = useContext(AuthContext)
     const idText = user
         ? user.uid
         : '(your id)'
-    const howToMdParsed = howToMd.replace('[YourID]', idText)
+    const markdownParsed = markdown.replace('[YourID]', idText)
 
     return (
         <React.Fragment>
@@ -29,15 +27,12 @@ function HowToPage() {
             }}>
                 <CardContent>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]} remarkPlugins={[remarkGfm]}>
-                        {howToMdParsed}
+                        {markdownParsed}
                     </ReactMarkdown>
                 </CardContent>
-                <CardActions>
-                    Updated: {updateTime}
-                </CardActions>
             </Card>
         </React.Fragment>
     )
 }
 
-export default HowToPage
+export default InfoFaqBB
