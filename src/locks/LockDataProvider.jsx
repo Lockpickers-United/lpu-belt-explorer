@@ -63,14 +63,20 @@ export function DataProvider({children, allEntries, profile}) {
                 })
             })
 
-        // If there is a search term, fuzzy match that
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
+        // Check for exact search match by id
+        const exactMatch = search && filtered.find(e => e.id === search)
+        let searched = filtered
+
+        if (exactMatch) {
+            searched = [exactMatch]
+        } else if (search) {
+            // If there is a search term, fuzzy match that
+            searched = fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-            : filtered
+        }
 
         return sort
             ? searched.sort((a, b) => {
