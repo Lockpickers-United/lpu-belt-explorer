@@ -1376,10 +1376,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
-    "lastUpdated": "2024-08-28T17:41:48.714Z"
+    "lastUpdated": "2024-08-30T12:50:00.326Z"
   },
   {
     "id": "58307da0",
@@ -2288,9 +2285,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Clefmentine",
@@ -2322,7 +2316,7 @@
       }
     ],
     "views": 35,
-    "lastUpdated": "2024-08-28T17:41:48.715Z"
+    "lastUpdated": "2024-08-30T12:50:00.326Z"
   },
   {
     "id": "033f8958",
@@ -3239,9 +3233,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: LockFumbler",
@@ -3273,7 +3264,7 @@
       }
     ],
     "views": 223,
-    "lastUpdated": "2024-08-28T17:41:48.715Z"
+    "lastUpdated": "2024-08-30T12:50:00.326Z"
   },
   {
     "id": "16e9d2ab",
@@ -3981,10 +3972,7 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Changelog"
-    ],
-    "lastUpdated": "2024-08-28T17:41:48.715Z"
+    "lastUpdated": "2024-08-30T12:50:00.327Z"
   },
   {
     "id": "bac43ba7",
@@ -4831,11 +4819,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
     "views": 21,
-    "lastUpdated": "2024-08-28T17:41:48.716Z"
+    "lastUpdated": "2024-08-30T12:50:00.327Z"
   },
   {
     "id": "2bdcb8c7",
@@ -5736,9 +5721,6 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Crispix",
@@ -5763,7 +5745,7 @@
       }
     ],
     "views": 235,
-    "lastUpdated": "2024-08-28T17:41:48.716Z"
+    "lastUpdated": "2024-08-30T12:50:00.328Z"
   },
   {
     "id": "fb246ac0",
@@ -5777,10 +5759,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
-    "lastUpdated": "2024-08-28T17:41:48.716Z"
+    "lastUpdated": "2024-08-30T12:50:00.328Z"
   },
   {
     "id": "0f0dcd42",
@@ -11460,7 +11439,6 @@
       "Dimple"
     ],
     "features": [
-      "Changelog",
       "High pin count"
     ],
     "notes": "Three row dimple lock",
@@ -11509,7 +11487,7 @@
       }
     ],
     "views": 48,
-    "lastUpdated": "2024-08-28T17:41:48.720Z"
+    "lastUpdated": "2024-08-30T12:50:00.330Z"
   },
   {
     "id": "2e5eeddb",
@@ -12554,9 +12532,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -12591,7 +12566,7 @@
     "relatedIds": [
       "95a9d73c"
     ],
-    "lastUpdated": "2024-08-28T17:48:40.501Z"
+    "lastUpdated": "2024-08-30T12:50:00.331Z"
   },
   {
     "id": "f96de7cc",
@@ -13627,7 +13602,6 @@
       "Slider"
     ],
     "features": [
-      "Changelog",
       "Sprung sliders",
       "Active sidebar"
     ],
@@ -13642,7 +13616,7 @@
       }
     ],
     "views": 61,
-    "lastUpdated": "2024-08-28T17:41:48.721Z"
+    "lastUpdated": "2024-08-30T12:50:00.332Z"
   },
   {
     "id": "32c85438",
@@ -14038,7 +14012,6 @@
       "Slider"
     ],
     "features": [
-      "Changelog",
       "Sprung sliders"
     ],
     "media": [
@@ -14100,7 +14073,7 @@
       }
     ],
     "views": 14,
-    "lastUpdated": "2024-08-28T17:41:48.722Z"
+    "lastUpdated": "2024-08-30T12:50:00.332Z"
   },
   {
     "id": "b91162e7",
@@ -17019,8 +16992,24 @@
     "features": [
       "Pin-in-pin"
     ],
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-SA 3.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-MTL_Interactive_front_view_-_FXE48058.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:MTL_Interactive_front_view_-_FXE48058.jpg",
+        "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/MTL_Interactive_front_view_-_FXE48058.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52824809280_63d2c4d4a8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52824809280/in/album-72177720307562631/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52824809280_dd7536f01d_o.jpg"
+      }
+    ],
     "views": 56,
-    "lastUpdated": "2024-03-29T21:45:41.245Z"
+    "lastUpdated": "2024-08-30T13:17:56.227Z"
   },
   {
     "id": "6e0bfdd2",
@@ -17669,10 +17658,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
-    "lastUpdated": "2024-08-28T17:41:48.723Z"
+    "lastUpdated": "2024-08-30T12:50:00.334Z"
   },
   {
     "id": "67c4159c",
@@ -22759,9 +22745,7 @@
       "Dimple"
     ],
     "features": [
-      "Pin-in-pin",
-      "Undercut milling",
-      "Changelog"
+      "Interactive element"
     ],
     "media": [
       {
@@ -22770,27 +22754,6 @@
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-MTL_Interactive_front_view_-_FXE48058.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:MTL_Interactive_front_view_-_FXE48058.jpg",
         "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/MTL_Interactive_front_view_-_FXE48058.jpg"
-      },
-      {
-        "title": "By: Legendofthesamurai",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52693016823_e10eab8a29_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52693016823/in/album-72177720306056527/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52693016823_45a622af4a_o.jpg"
-      },
-      {
-        "title": "By: L0ckJockey",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52737839356_a577753e8a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737839356/in/album-72177720306617453/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52737839356_66beb384a5_o.jpg"
-      },
-      {
-        "title": "By: L0ckJockey",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52737839316_f6de68bbec_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737839316/in/album-72177720306617453/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52737839316_611185833a_o.jpg"
       },
       {
         "title": "By: mgsecure",
@@ -22821,13 +22784,6 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53801212667_a7dc0b75d2_o.jpg"
       },
       {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-MTL_Interactive_front_view_-_FXE48058.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:MTL_Interactive_front_view_-_FXE48058.jpg",
-        "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/MTL_Interactive_front_view_-_FXE48058.jpg"
-      },
-      {
         "title": "By: PeaceWeapon",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://images.lpubelts.com/i/fl/52686938667_bcf53691db.jpg",
@@ -22847,6 +22803,20 @@
         "thumbnailUrl": "https://images.lpubelts.com/i/fl/52687457636_173e8a338f_b.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52687457636/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52687457636_dc53f38dca_o.jpg"
+      },
+      {
+        "title": "By: L0ckJockey",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52737839356_a577753e8a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737839356/in/album-72177720306617453/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52737839356_66beb384a5_o.jpg"
+      },
+      {
+        "title": "By: L0ckJockey",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52737839316_f6de68bbec_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737839316/in/album-72177720306617453/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52737839316_611185833a_o.jpg"
       }
     ],
     "links": [
@@ -22864,7 +22834,7 @@
       }
     ],
     "views": 1215,
-    "lastUpdated": "2024-08-28T17:59:39.002Z"
+    "lastUpdated": "2024-08-30T12:50:00.336Z"
   },
   {
     "id": "16906a6c",
@@ -24363,8 +24333,7 @@
       "Dimple"
     ],
     "features": [
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "media": [
       {
@@ -24424,7 +24393,7 @@
       }
     ],
     "views": 1116,
-    "lastUpdated": "2024-08-28T17:48:40.508Z"
+    "lastUpdated": "2024-08-30T12:50:00.339Z"
   },
   {
     "id": "19fce24d",
@@ -27694,9 +27663,9 @@
       {
         "title": "By: mgsecure",
         "subtitle": "CC BY-SA 3.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52913754216_993ae76363_w_d.jpg",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52913754216_05401fdd01_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52913754216/in/album-72177720308437217/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52913754216_c5a6e5bc89_o.jpg"
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52913754216_b608c1f1c0_o.jpg"
       },
       {
         "title": "By: Lock Pickers United",
@@ -27725,7 +27694,7 @@
       "aec0c82d",
       "48323cde"
     ],
-    "lastUpdated": "2024-08-28T17:59:39.005Z"
+    "lastUpdated": "2024-08-30T13:17:56.235Z"
   },
   {
     "id": "cc5bbb68",
@@ -30151,9 +30120,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -30179,7 +30145,7 @@
       }
     ],
     "views": 35,
-    "lastUpdated": "2024-08-28T17:41:48.729Z"
+    "lastUpdated": "2024-08-30T12:50:00.342Z"
   },
   {
     "id": "1f6cb393",
@@ -31111,7 +31077,6 @@
       "Lever"
     ],
     "features": [
-      "Changelog",
       "Pipe key",
       "Double bitted",
       "False gates"
@@ -31147,7 +31112,7 @@
       }
     ],
     "views": 53,
-    "lastUpdated": "2024-08-28T17:41:48.730Z"
+    "lastUpdated": "2024-08-30T12:50:00.343Z"
   },
   {
     "id": "2d1adbaf",
@@ -31160,11 +31125,8 @@
     "lockingMechanisms": [
       "Magnet"
     ],
-    "features": [
-      "Changelog"
-    ],
     "views": 45,
-    "lastUpdated": "2024-08-28T17:41:48.730Z"
+    "lastUpdated": "2024-08-30T12:50:00.343Z"
   },
   {
     "id": "169b80e3",
@@ -31333,10 +31295,9 @@
       "Slider"
     ],
     "features": [
-      "Changelog",
       "Sprung sliders"
     ],
-    "lastUpdated": "2024-08-28T17:41:48.730Z"
+    "lastUpdated": "2024-08-30T12:50:00.343Z"
   },
   {
     "id": "fdb68dc4",
@@ -33564,8 +33525,7 @@
       "Rotating fingerpins",
       "Active sidebar",
       "Gin spool drivers",
-      "Undercut milling",
-      "Changelog"
+      "Undercut milling"
     ],
     "media": [
       {
@@ -33647,7 +33607,7 @@
       }
     ],
     "views": 1507,
-    "lastUpdated": "2024-08-28T17:59:39.008Z"
+    "lastUpdated": "2024-08-30T12:50:00.344Z"
   },
   {
     "id": "f7ad4c89",
@@ -35638,7 +35598,6 @@
       "Lever/sidebar"
     ],
     "features": [
-      "Changelog",
       "Active sidebar",
       "Shutter"
     ],
@@ -35694,7 +35653,7 @@
       }
     ],
     "views": 238,
-    "lastUpdated": "2024-08-28T17:41:48.735Z"
+    "lastUpdated": "2024-08-30T12:50:00.345Z"
   },
   {
     "id": "33056c0f",
@@ -37514,10 +37473,9 @@
       "Slider"
     ],
     "features": [
-      "Changelog",
       "Sprung sliders"
     ],
-    "lastUpdated": "2024-08-28T17:41:48.736Z"
+    "lastUpdated": "2024-08-30T12:50:00.346Z"
   },
   {
     "id": "d0c510c5",
