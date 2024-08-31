@@ -17,7 +17,6 @@ import LeaderboardFindMeButton from './LeaderboardFindMeButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Nav from '../nav/Nav.jsx'
 import LeaderboardCompare from './LeaderboardCompare.jsx'
-import UserExceptions from '../data/userExceptions.json'
 import {leaderboardData2} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
@@ -78,7 +77,7 @@ function Leaderboard({tab}) {
     const filteredData = useMemo(() => {
         const allData = data?.data ?
             data?.data
-                .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
+                .filter(leader => !leader['privacyNoLeaderboard'])
                 .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
                 .sort((a, b) => {
                     return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
@@ -91,12 +90,14 @@ function Leaderboard({tab}) {
 
     const blackBeltData = useMemo(() => {
         return data?.data
-            .filter(leader => !UserExceptions[leader.id]?.includes('noLeaderboard'))
+            .filter(leader => !leader['privacyNoLeaderboard'])
             .filter(leader => leader['blackBeltAwardedAt'] > 0)
             .sort((a, b) => {
                 return a['displayName'].localeCompare(b['displayName'])
             })
     }, [data?.data])
+
+    console.log('filteredData', filteredData)
 
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
