@@ -4,6 +4,8 @@ import fontkit from '@pdf-lib/fontkit'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import useWindowSize from '../util/useWindowSize.jsx'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
 function Award({profile}) {
 
@@ -15,6 +17,9 @@ function Award({profile}) {
         el.click()
         window.URL.revokeObjectURL(URL)
     }
+
+    const text = profile?.displayName ? profile?.displayName : 'No Display Name Set'
+    const dateText = dayjs.utc(profile?.blackBeltAwardedAt.seconds * 1000).format('MMMM D, YYYY')
 
     async function modifyPdf(mode) {
         const url = mode === 'bw'
@@ -33,12 +38,10 @@ function Award({profile}) {
         pdfDoc.registerFontkit(fontkit)
         const serifFont = await pdfDoc.embedFont(fontBytes)
 
-        let text = profile?.displayName ? profile?.displayName : 'No Display Name Set'
         const textSize = 42
         const textWidth = serifFont.widthOfTextAtSize(text, textSize)
         const textHeight = serifFont.heightAtSize(textSize)
 
-        let dateText = dayjs(profile?.blackBeltAwardedAt.seconds * 1000).format('MMMM D, YYYY')
         const dateTextSize = 11
         const dateTextWidth = serifFont.widthOfTextAtSize(dateText, dateTextSize)
 
@@ -159,7 +162,7 @@ function Award({profile}) {
                             fontSize: '0.6rem',
                             width: hDetails
                         }}>
-                            {dayjs(profile?.blackBeltAwardedAt.seconds * 1000).format('MMMM D, YYYY')}
+                            {dayjs.utc(profile?.blackBeltAwardedAt.seconds * 1000).format('MMMM D, YYYY')}
                         </td>
                         <td style={{width: hSpacerMid}}>&nbsp;</td>
                         <td style={{
