@@ -13,9 +13,11 @@ export default function ProfileHeader({profile = {}, page}) {
         ? 'anonymous'
         : profile.displayName
 
-    const profileLink = '/profile/' + userId + '?name=' + profileName
-    const safelocksLink = '/profile/' + userId + '/safelocks?name=' + profileName
-    const scorecardLink = '/profile/' + userId + '/scorecard?name=' + profileName
+    const safeName = profileName.replace(/\s/g, '_')
+
+    const profileLink = '/profile/' + userId + '?name=' + safeName
+    const safelocksLink = '/profile/' + userId + '/safelocks?name=' + safeName
+    const scorecardLink = '/profile/' + userId + '/scorecard?name=' + safeName
 
     let pageName = page.charAt(0).toUpperCase() + page.slice(1)
     pageName = pageName.replace('Safelocks', 'Safe Locks')
@@ -66,7 +68,7 @@ export default function ProfileHeader({profile = {}, page}) {
         <div style={style}>
             <div style={{marginTop: 6, display: 'flex'}}>
                 <div>{title}</div>
-                <div style={{marginTop: -2}}><CopyProfileLinkButton page={page}/></div>
+                <div style={{marginTop: -2}}><CopyProfileLinkButton page={page} safeName={safeName}/></div>
             </div>
             <div style={{flexGrow: 1, textAlign: 'right'}}>
                 <ToggleButtonGroup
