@@ -11,7 +11,7 @@ function SafelocksCollectionPage({profile}) {
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#222',
-            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 0
         }}>
 
             <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>

@@ -4,14 +4,15 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
 import CopyProfileLinkButton from './CopyProfileLinkButton.jsx'
+import Link from '@mui/material/Link'
 
 export default function ProfileHeader({profile = {}, page}) {
     const {userId} = useParams()
     const navigate = useNavigate()
 
-    const profileName = profile['privacyAnonymous']
+    const profileName = profile['privacyAnonymous'] || !profile?.displayName
         ? 'anonymous'
-        : profile.displayName
+        : profile?.displayName
 
     const safeName = profileName.replace(/\s/g, '_')
 
@@ -32,7 +33,7 @@ export default function ProfileHeader({profile = {}, page}) {
             ? profile.displayName.toLowerCase().endsWith('s')
                 ? `${profile.displayName}'`
                 : `${profile.displayName}'s`
-            : 'No Display Name'
+            : 'No Name'
 
     const title = userId
         ? `${ownerName} ${pageName}`
@@ -64,44 +65,50 @@ export default function ProfileHeader({profile = {}, page}) {
         }
 
     return (
+        <React.Fragment>
+            <div style={style}>
+                <div style={{marginTop: 6, display: 'flex'}}>
+                    <div>{title}</div>
+                    <div style={{marginTop: -2}}><CopyProfileLinkButton page={page} safeName={safeName}/></div>
+                </div>
+                <div style={{flexGrow: 1, textAlign: 'right'}}>
+                    <ToggleButtonGroup
+                        variant='outlined'
+                        size='large'
+                    >
+                        <ToggleButton onClick={() => handleClick(profileLink)}
+                                      selected={page === 'collection'}
+                                      disabled={page === 'collection'}
+                                      value='collection'
+                                      style={{padding: '2px 12px 2px 12px'}}>
+                            Locks
+                        </ToggleButton>
 
-        <div style={style}>
-            <div style={{marginTop: 6, display: 'flex'}}>
-                <div>{title}</div>
-                <div style={{marginTop: -2}}><CopyProfileLinkButton page={page} safeName={safeName}/></div>
+                        <ToggleButton onClick={() => handleClick(safelocksLink)}
+                                      selected={page === 'safelocks'}
+                                      disabled={page === 'safelocks'}
+                                      value='safelocks'
+                                      style={{padding: '2px 12px 2px 12px'}}>
+                            Safes
+                        </ToggleButton>
+
+                        <ToggleButton onClick={() => handleClick(scorecardLink)}
+                                      selected={page === 'scorecard'}
+                                      disabled={page === 'scorecard'}
+                                      value='scorecard'
+                                      style={{padding: '2px 12px 2px 12px'}}>
+                            Scorecard
+                        </ToggleButton>
+                    </ToggleButtonGroup>
+                </div>
             </div>
-            <div style={{flexGrow: 1, textAlign: 'right'}}>
-                <ToggleButtonGroup
-                    variant='outlined'
-                    size='large'
-                >
-                    <ToggleButton onClick={() => handleClick(profileLink)}
-                                  selected={page === 'collection'}
-                                  disabled={page === 'collection'}
-                                  value='collection'
-                                  style={{padding: '2px 12px 2px 12px'}}>
-                        Locks
-                    </ToggleButton>
-
-                    <ToggleButton onClick={() => handleClick(safelocksLink)}
-                                  selected={page === 'safelocks'}
-                                  disabled={page === 'safelocks'}
-                                  value='safelocks'
-                                  style={{padding: '2px 12px 2px 12px'}}>
-                        Safes
-                    </ToggleButton>
-
-                    <ToggleButton onClick={() => handleClick(scorecardLink)}
-                                  selected={page === 'scorecard'}
-                                  disabled={page === 'scorecard'}
-                                  value='scorecard'
-                                  style={{padding: '2px 12px 2px 12px'}}>
-                        Scorecard
-                    </ToggleButton>
-                </ToggleButtonGroup>
-            </div>
-        </div>
-
+            {!profile['privacyAnonymous'] &&
+                <div style={{backgroundColor: '#202020',padding: '0px 0px 20px 16px'}}>
+                    Looks like you haven&#39;t set your Display Name yet. To set it now, <Link
+                    onClick={() => navigate('/profile/edit')} style={{color:'#0a0'}}>click here.</Link>
+                </div>
+            }
+        </React.Fragment>
     )
 
 }
