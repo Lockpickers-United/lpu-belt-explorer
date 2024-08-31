@@ -1,1 +1,0 @@
-import{j as r,V as t,a7 as o,W as n,w as i}from"./index-83934d36.js";function s(){const a={marginTop:16,maxWidth:350,marginLeft:"auto",marginRight:"auto",borderRadius:0};return r.jsxs(t,{style:a,children:[r.jsx(o,{title:"Profile Not Found!"}),r.jsx(n,{children:r.jsx(i,{variant:"h6",align:"center",children:"This profile was not found."})})]})}export{s as P};
