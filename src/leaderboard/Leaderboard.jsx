@@ -97,8 +97,6 @@ function Leaderboard({tab}) {
             })
     }, [data?.data])
 
-    console.log('filteredData', filteredData)
-
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
             return b[sort] - a[sort]
@@ -123,7 +121,7 @@ function Leaderboard({tab}) {
         <React.Fragment>
             <LeaderboardSearchBox data={sortedData}/>
             <LeaderboardSortButton/>
-            <LeaderboardFindMeButton/>
+            <LeaderboardFindMeButton tab={tab}/>
             {!isMobile && <div style={{flexGrow: 1}}/>}
         </React.Fragment>
     )
