@@ -34,9 +34,9 @@ function UserMenu() {
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
-    const safeName = lockCollection.displayName
+    const safeName = lockCollection.displayName && !lockCollection.privacyAnonymous
         ? lockCollection.displayName.replace(/\s/g, '_')
-        : 'Anonymous'
+        : 'anonymous'
 
     const handleClick = useCallback(url => () => {
         handleClose()
@@ -164,27 +164,23 @@ function UserMenu() {
                     !isLoggedIn &&
                     <div>
                         <MenuItem disabled>
-                            <ListItemText>My Collection</ListItemText>
+                            <ListItemIcon>
+                                <LibraryBooksIcon  fontSize='small'/>
+                            </ListItemIcon>
+                            <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
                         <MenuItem disabled>
                             <ListItemIcon>
-                                <LockIcon fontSize='small'/>
+                                <AvTimerIcon/>
                             </ListItemIcon>
-                            <ListItemText>Own</ListItemText>
+                            <ListItemText>Safe Locks</ListItemText>
                         </MenuItem>
                         <MenuItem disabled>
                             <ListItemIcon>
-                                <LockOpenOutlinedIcon fontSize='small'/>
+                                <ListAltIcon/>
                             </ListItemIcon>
-                            <ListItemText>Picked</ListItemText>
+                            <ListItemText>Scorecard</ListItemText>
                         </MenuItem>
-                        <MenuItem disabled>
-                            <ListItemIcon>
-                                <SavingsOutlinedIcon fontSize='small'/>
-                            </ListItemIcon>
-                            <ListItemText>Wishlist</ListItemText>
-                        </MenuItem>
-
                         <Divider/>
 
                         <SignInButton onClick={handleClose}/>

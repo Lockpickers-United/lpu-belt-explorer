@@ -6,8 +6,9 @@ function LeaderboardName({leader, isCurrentUser, tab}) {
     const classes = useStyles()
     const style = isCurrentUser ? {color: '#4db013'} : {}
 
-    if (leader.displayName) {
+    if (leader.displayName && !leader.privacyAnonymous) {
         const safeName = leader.displayName.replace(/\s/g, '_')
+
         const href = tab === 'blackBelts'
             ? `/#/profile/${leader.id}/scorecard?name=${safeName}`
             : tab === 'safelocks'

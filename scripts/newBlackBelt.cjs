@@ -1,5 +1,5 @@
-const { initializeApp, cert } = require('firebase-admin/app')
-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore')
+const {initializeApp, cert} = require('firebase-admin/app')
+const {getFirestore, Timestamp, FieldValue} = require('firebase-admin/firestore')
 const serviceAccount = require('../../lpu-belt-explorer-firebase-adminsdk.json')
 
 const config = {
@@ -14,9 +14,15 @@ const db = getFirestore(firebaseApp)
 const userId = '4qqxB0nW8dczUws5XuAyhEkgZEj2'
 const approvedDate = '2024-08-18'
 
-//addBlackBelt()
-removeBlackBelt()
+const addAttributes = true
+const removeAttributes = !addAttributes
 
+
+if (addAttributes) {
+    addBlackBelt()
+} else if (removeAttributes) {
+    removeBlackBelt()
+}
 
 //update profile
 function addBlackBelt() {
@@ -32,5 +38,9 @@ function addBlackBelt() {
 
 function removeBlackBelt() {
     const ref = db.doc(`/lockcollections/${userId}`)
-    ref.update({blackBeltAwardedAt: FieldValue.delete(), tabClaimed: FieldValue.delete(), awardedBelt: FieldValue.delete()})
+    ref.update({
+        blackBeltAwardedAt: FieldValue.delete(),
+        tabClaimed: FieldValue.delete(),
+        awardedBelt: FieldValue.delete()
+    })
 }

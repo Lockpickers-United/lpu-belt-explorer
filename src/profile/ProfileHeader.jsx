@@ -9,9 +9,13 @@ export default function ProfileHeader({profile = {}, page}) {
     const {userId} = useParams()
     const navigate = useNavigate()
 
-    const profileLink = '/profile/' + userId + '?name=' + profile.displayName
-    const safelocksLink = '/profile/' + userId + '/safelocks?name=' + profile.displayName
-    const scorecardLink = '/profile/' + userId + '/scorecard?name=' + profile.displayName
+    const profileName = profile['privacyAnonymous']
+        ? 'anonymous'
+        : profile.displayName
+
+    const profileLink = '/profile/' + userId + '?name=' + profileName
+    const safelocksLink = '/profile/' + userId + '/safelocks?name=' + profileName
+    const scorecardLink = '/profile/' + userId + '/scorecard?name=' + profileName
 
     let pageName = page.charAt(0).toUpperCase() + page.slice(1)
     pageName = pageName.replace('Safelocks', 'Safe Locks')
@@ -20,11 +24,13 @@ export default function ProfileHeader({profile = {}, page}) {
         navigate(link)
     }, [navigate])
 
-    const ownerName = profile.displayName
-        ? profile.displayName.toLowerCase().endsWith('s')
-            ? `${profile.displayName}'`
-            : `${profile.displayName}'s`
-        : 'Anonymous'
+    const ownerName = profile['privacyAnonymous']
+        ? 'Anonymous'
+        : profile.displayName
+            ? profile.displayName.toLowerCase().endsWith('s')
+                ? `${profile.displayName}'`
+                : `${profile.displayName}'s`
+            : 'No Display Name'
 
     const title = userId
         ? `${ownerName} ${pageName}`
@@ -58,7 +64,7 @@ export default function ProfileHeader({profile = {}, page}) {
     return (
 
         <div style={style}>
-            <div style={{marginTop: 6, display:'flex'}}>
+            <div style={{marginTop: 6, display: 'flex'}}>
                 <div>{title}</div>
                 <div style={{marginTop: -2}}><CopyProfileLinkButton page={page}/></div>
             </div>
