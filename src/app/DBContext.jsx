@@ -1,7 +1,25 @@
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
-import {doc, arrayUnion, arrayRemove, onSnapshot, runTransaction, getDoc, getDocs, updateDoc, deleteField, writeBatch, addDoc, setDoc, deleteDoc, query, collection, where, Timestamp} from 'firebase/firestore'
+import {
+    doc,
+    arrayUnion,
+    arrayRemove,
+    onSnapshot,
+    runTransaction,
+    getDoc,
+    getDocs,
+    updateDoc,
+    deleteField,
+    writeBatch,
+    addDoc,
+    setDoc,
+    deleteDoc,
+    query,
+    collection,
+    where,
+    Timestamp
+} from 'firebase/firestore'
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 import calculateScoreForUser from '../scorecard/scoring'
@@ -67,6 +85,7 @@ export function DBProvider({children}) {
     const [collectionDBLoaded, setCollectionDBLoaded] = useState(false)
     const [evidenceDBLoaded, setEvidenceDBLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
+    const [systemMessages, setSystemMessages] = useState([])
 
     const dbLoaded = collectionDBLoaded && evidenceDBLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
@@ -200,7 +219,7 @@ export function DBProvider({children}) {
             const userIds = evids.reduce((acc, ev) => {
                 return acc.includes(ev.userId) ? acc : [...acc, ev.userId]
             }, [])
-            for (let idx=0; idx < userIds.length; idx++) {
+            for (let idx = 0; idx < userIds.length; idx++) {
                 await invalidateEvidenceCache(userIds[idx])
                 await updateUserStatistics(userIds[idx])
             }
@@ -235,7 +254,11 @@ export function DBProvider({children}) {
             if (bbDoc.exists()) {
                 const dateStr = bbDoc.data().awardedAt
 
-                const profileDelta = {awardedBelt: 'Black', tabClaimed: tabName.trim(), blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))}
+                const profileDelta = {
+                    awardedBelt: 'Black',
+                    tabClaimed: tabName.trim(),
+                    blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))
+                }
                 if (!profileDoc.exists()) {
                     transaction.set(profileRef, profileDelta)
                 } else {
@@ -357,6 +380,18 @@ export function DBProvider({children}) {
         }
     }, [authLoaded, isLoggedIn, user])
 
+
+    // System Messages Subscription
+    useEffect(() => {
+        const query = collection(db, 'system-messages')
+        return onSnapshot(query, querySnapshot => {
+            setSystemMessages(querySnapshot.docs.map(doc => doc.data()))
+        }, error => {
+            console.error('Error getting system messages from DB:', error)
+        })
+    }, [])
+
+
     // Evidence Load
     useEffect(() => {
         async function loadEvidence() {
@@ -369,6 +404,7 @@ export function DBProvider({children}) {
                 setEvidenceDBLoaded(true)
             }
         }
+
         loadEvidence()
     }, [authLoaded, isLoggedIn, user])
 
@@ -391,7 +427,8 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData])
+        systemMessages
+    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, systemMessages])
 
     return (
         <DBContext.Provider value={value}>

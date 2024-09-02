@@ -1,5 +1,5 @@
 const {initializeApp, cert} = require('firebase-admin/app')
-const {getFirestore, Timestamp, FieldValue} = require('firebase-admin/firestore')
+const {getFirestore} = require('firebase-admin/firestore')
 const serviceAccount = require('../../lpu-belt-explorer-firebase-adminsdk.json')
 
 const config = {
@@ -11,16 +11,16 @@ const db = getFirestore(firebaseApp, 'lpubelts-dev')
 
 // SET USER ID & DATE AWARDED
 
-const messageId = '12e1a0db'
+const messageId = 'da2ed729'
 const messsageData = {
     'id': messageId,
-    'description': 'scorecard announce',
+    'description': 'test neutral',
     'active': true,
-    'priority': '10',
-    'messageType': 'Good News',
-    'messageHeadline': 'Introducing Scorecard!',
+    'priority': '1',
+    'messageType': 'Neutral',
+    'messageHeadline': 'Neutral message.',
     'messageText': 'Keep track of the locks you have picked (and the projects you have completed) complete with documentation links and dates!',
-    'linkText': 'Check it out',
+    'linkText': 'OK',
     'linkDestination': '/profile/view/scorecard',
     'pageIds': ['*'],
     'excludePageIds': ['/profile/scorecard', '/profile/edit'],

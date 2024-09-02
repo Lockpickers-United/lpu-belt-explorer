@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-import systemMessages from '../data/systemMessages.json'
+//import systemMessages from '../data/systemMessages.json'
 import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 
@@ -7,7 +7,7 @@ const SystemMessageContext = React.createContext({})
 
 export function SystemMessageProvider({children}) {
     const {authLoaded, user} = useContext(AuthContext)
-    const {dbLoaded, adminRole, lockCollection} = useContext(DBContext)
+    const {dbLoaded, adminRole, lockCollection, systemMessages} = useContext(DBContext)
     const profile = lockCollection
 
     const filteredMessages = useMemo(() => systemMessages.map(message => {
@@ -41,7 +41,7 @@ export function SystemMessageProvider({children}) {
             .sort((a, b) => {
                 return b.priority - a.priority
             })
-        , [profile, user, adminRole])
+        , [systemMessages, profile, user, adminRole])
 
     const getMessage = useCallback((location) => {
         const baseDir = /\/\w*\//.test(location) ? /\/\w*\//.exec(location)[0] + '*' : location + '/*'

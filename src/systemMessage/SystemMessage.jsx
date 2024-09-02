@@ -7,6 +7,7 @@ import MoodIcon from '@mui/icons-material/Mood'
 import InfoIcon from '@mui/icons-material/Info'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
 import DBContext from '../app/DBContext.jsx'
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 
 function SystemMessage() {
     const {lockCollection, addToLockCollection} = useContext(DBContext)
@@ -30,7 +31,7 @@ function SystemMessage() {
     const messageColors = {'Good News': '#75ae55', 'Neutral': '#999', 'Info': '#609cce', 'Alert': '#d03f3f'}
     const messageIcons = {
         'Good News': <MoodIcon fontSize='medium'/>,
-        'Neutral': <InfoIcon fontSize='medium'/>,
+        'Neutral': <InfoOutlinedIcon fontSize='medium'/>,
         'Info': <InfoIcon fontSize='medium'/>,
         'Alert': <ReportProblemIcon fontSize='small'/>
     }
