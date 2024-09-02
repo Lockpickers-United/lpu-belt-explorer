@@ -12,12 +12,12 @@ function CopyProfileLinkButton({page, safeName}) {
 
     const handleClick = useCallback(async () => {
         const link = page === 'collection'
-            ? `https://lpubelts.com/#/profile/${userId || user.uid}?name=${safeName}`
-            : `https://lpubelts.com/#/profile/${userId || user.uid}/${page}?name=${safeName}`
+            ? `https://lpubelts.com/#/profile/${userId || user?.uid}?name=${safeName}`
+            : `https://lpubelts.com/#/profile/${userId || user?.uid}/${page}?name=${safeName}`
 
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link copied to clipboard.')
-    }, [page, userId, user.uid, safeName])
+    }, [page, userId, user, safeName])
 
     if (!user) return null
     return (

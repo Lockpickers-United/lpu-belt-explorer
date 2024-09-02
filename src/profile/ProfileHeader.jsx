@@ -102,7 +102,7 @@ export default function ProfileHeader({profile = {}, page}) {
                     </ToggleButtonGroup>
                 </div>
             </div>
-            {!profile['privacyAnonymous'] &&
+            {!profile['privacyAnonymous'] && !profile?.displayName && false &&
                 <div style={{backgroundColor: '#202020',padding: '0px 0px 20px 16px'}}>
                     Looks like you haven&#39;t set your Display Name yet. To set it now, <Link
                     onClick={() => navigate('/profile/edit')} style={{color:'#0a0'}}>click here.</Link>
