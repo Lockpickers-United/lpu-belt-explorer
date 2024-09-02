@@ -10,6 +10,8 @@ import lpuLogoPath from '../resources/LPU.png'
 import CopyProfileLinkButton from './CopyProfileLinkButton'
 import EditProfilePage from './EditProfilePage'
 import MustBeLoggedIn from './MustBeLoggedIn'
+import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
+import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfileRoute() {
     const {authLoaded, isLoggedIn} = useContext(AuthContext)
@@ -23,8 +25,9 @@ function ProfileRoute() {
     )
 
     return (
-        <React.Fragment>
+        <SystemMessageProvider>
             <Nav title='Edit Profile' extras={nav}/>
+            <SystemMessage/>
 
             {(!authLoaded || !dbLoaded) &&
                 <React.Fragment>
@@ -41,7 +44,7 @@ function ProfileRoute() {
             <Footer/>
 
             <Tracker feature='editprofile'/>
-        </React.Fragment>
+        </SystemMessageProvider>
     )
 }
 

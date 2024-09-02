@@ -24,6 +24,8 @@ import {scorecardSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
+import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
+import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ScorecardRoute() {
     const {userId} = useParams()
@@ -100,21 +102,26 @@ function ScorecardRoute() {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints} cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints} cardNextDanLocks={cardNextDanLocks}>
+            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}
+                                   cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
+                                   cardNextDanLocks={cardNextDanLocks}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
+                        <SystemMessageProvider>
 
-                        <Nav title={title} extras={nav}/>
+                            <Nav title={title} extras={nav}/>
+                            <SystemMessage/>
 
-                        {loading && <LoadingDisplay/>}
+                            {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error &&
-                            <Scorecard owner={user && user.uid === userId} profile={profile} adminAction={handleAdminAction}/>}
+                            {!loading && data && !error &&
+                                <Scorecard owner={user && user.uid === userId} profile={profile}
+                                           adminAction={handleAdminAction}/>}
 
-                        {!loading && (!data || error) && <ProfileNotFound/>}
+                            {!loading && (!data || error) && <ProfileNotFound/>}
 
-                        <Footer extras={footer}/>
-
+                            <Footer extras={footer}/>
+                        </SystemMessageProvider>
                     </LocalizationProvider>
                     <Tracker feature='scorecard'/>
                 </ScorecardListProvider>

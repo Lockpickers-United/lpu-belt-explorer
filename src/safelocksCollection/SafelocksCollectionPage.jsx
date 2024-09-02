@@ -9,14 +9,15 @@ function SafelocksCollectionPage({profile}) {
     const defExpanded = useDeferredValue(expanded)
 
     return (
-        <div style={{
-            maxWidth: 700, padding: 0, backgroundColor: '#222',
-            marginLeft: 'auto', marginRight: 'auto', marginTop: 0
-        }}>
+        <React.Fragment>
+            <div style={{
+                maxWidth: 700, padding: 0, backgroundColor: '#222',
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 0
+            }}>
 
-            <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
+                <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
 
-            { visibleEntries?.map(entry =>
+                {visibleEntries?.map(entry =>
                     <SafelockEntry
                         key={entry.id}
                         entry={entry}
@@ -24,8 +25,9 @@ function SafelocksCollectionPage({profile}) {
                         onExpand={setExpanded}
                     />
                 )
-            }
-        </div>
+                }
+            </div>
+        </React.Fragment>
     )
 }
 

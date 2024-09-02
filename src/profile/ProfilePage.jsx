@@ -6,6 +6,7 @@ import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
 import ProfileHeader from './ProfileHeader.jsx'
+import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfilePage({profile}) {
     const {compact} = useContext(LockListContext)
@@ -14,27 +15,30 @@ function ProfilePage({profile}) {
     const defExpanded = useDeferredValue(expanded)
 
     return (
-        <div style={{
-            maxWidth: 700, padding: 0, backgroundColor: '#222',
-            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
-        }}>
+        <React.Fragment>
+            <SystemMessage/>
+            <div style={{
+                maxWidth: 700, padding: 0, backgroundColor: '#222',
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+            }}>
 
-            <ProfileHeader profile={profile} page={'collection'}/>
-            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
-            <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
+                <ProfileHeader profile={profile} page={'collection'}/>
+                <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
+                <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 
-            {compact
-                ? <CompactEntries entries={visibleEntries}/>
-                : visibleEntries.map(entry =>
-                    <Entry
-                        key={entry.id}
-                        entry={entry}
-                        expanded={entry.id === defExpanded}
-                        onExpand={setExpanded}
-                    />
-                )
-            }
-        </div>
+                {compact
+                    ? <CompactEntries entries={visibleEntries}/>
+                    : visibleEntries.map(entry =>
+                        <Entry
+                            key={entry.id}
+                            entry={entry}
+                            expanded={entry.id === defExpanded}
+                            onExpand={setExpanded}
+                        />
+                    )
+                }
+            </div>
+        </React.Fragment>
     )
 }
 
