@@ -380,18 +380,6 @@ export function DBProvider({children}) {
         }
     }, [authLoaded, isLoggedIn, user])
 
-
-    // System Messages Subscription
-    useEffect(() => {
-        const query = collection(db, 'system-messages')
-        return onSnapshot(query, querySnapshot => {
-            setSystemMessages(querySnapshot.docs.map(doc => doc.data()))
-        }, error => {
-            console.error('Error getting system messages from DB:', error)
-        })
-    }, [])
-
-
     // Evidence Load
     useEffect(() => {
         async function loadEvidence() {
@@ -407,6 +395,41 @@ export function DBProvider({children}) {
 
         loadEvidence()
     }, [authLoaded, isLoggedIn, user])
+
+    // System Messages Subscription
+    useEffect(() => {
+        const q = query(collection(db, 'system-messages'), where('status', '==', 'active'))
+        return onSnapshot(q, querySnapshot => {
+            setSystemMessages(querySnapshot.docs.map(doc => doc.data()))
+        }, error => {
+            console.error('Error getting system messages from DB:', error)
+        })
+    }, [])
+
+    const getAllSystemMessages = useCallback(async () => {
+        const q = query(collection(db, 'system-messages'))
+        const querySnapshot = await getDocs(q)
+        return querySnapshot.docs.map(d => d.data())
+    }, [])
+
+    const updateSystemMessage = useCallback(async (message) => {
+        if (dbError) return false
+        const ref = doc(db, 'system-messages', message.id)
+        await setDoc(ref, message)
+    }, [dbError])
+
+    const updateSystemMessageStatus = useCallback(async (messageId, status, timeStamp) => {
+        if (dbError) return false
+        const ref = doc(db, 'system-messages', messageId)
+        await updateDoc(ref, {status: status, modified: timeStamp})
+    }, [dbError])
+
+    const removeDismissedMessages = useCallback(async (userId) => {
+        if (dbError) return false
+        const ref = doc(db, 'lockcollections', userId)
+        await updateDoc(ref, {dismissedMessages: deleteField()})
+    }, [dbError])
+
 
     const value = useMemo(() => ({
         dbLoaded,
@@ -427,8 +450,12 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
-        systemMessages
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, systemMessages])
+        systemMessages,
+        getAllSystemMessages,
+        updateSystemMessage,
+        updateSystemMessageStatus,
+        removeDismissedMessages
+    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, systemMessages, getAllSystemMessages, updateSystemMessage, updateSystemMessageStatus, removeDismissedMessages])
 
     return (
         <DBContext.Provider value={value}>

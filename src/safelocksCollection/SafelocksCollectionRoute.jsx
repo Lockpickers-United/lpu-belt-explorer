@@ -22,7 +22,6 @@ import SafelocksDataProvider from '../safelocks/SafelocksDataProvider.jsx'
 import allEntries from '../data/safelocks.json'
 import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
-import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfileRoute() {
@@ -76,7 +75,6 @@ function ProfileRoute() {
         <FilterProvider filterFields={dialFilterFields}>
             <SafelocksDataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
-                    <SystemMessageProvider>
                         <div style={{
                             maxWidth: 700, padding: 0, backgroundColor: '#000',
                             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
@@ -98,7 +96,6 @@ function ProfileRoute() {
 
                             <Tracker feature='profile'/>
                         </div>
-                    </SystemMessageProvider>
                 </LockListProvider>
             </SafelocksDataProvider>
         </FilterProvider>

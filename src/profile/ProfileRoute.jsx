@@ -21,7 +21,6 @@ import useWindowSize from '../util/useWindowSize'
 import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
-import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 
 function ProfileRoute() {
     const {userId} = useParams()
@@ -71,7 +70,6 @@ function ProfileRoute() {
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
-                    <SystemMessageProvider>
                         <Nav title={title} extras={nav}/>
 
                         {loading && <LoadingDisplay/>}
@@ -83,7 +81,6 @@ function ProfileRoute() {
                         <Footer/>
 
                         <Tracker feature='profile'/>
-                    </SystemMessageProvider>
                 </LockListProvider>
             </DataProvider>
         </FilterProvider>

@@ -10,7 +10,6 @@ import lpuLogoPath from '../resources/LPU.png'
 import CopyProfileLinkButton from './CopyProfileLinkButton'
 import EditProfilePage from './EditProfilePage'
 import MustBeLoggedIn from './MustBeLoggedIn'
-import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfileRoute() {
@@ -25,7 +24,7 @@ function ProfileRoute() {
     )
 
     return (
-        <SystemMessageProvider>
+        <React.Fragment>
             <Nav title='Edit Profile' extras={nav}/>
             <SystemMessage/>
 
@@ -44,7 +43,7 @@ function ProfileRoute() {
             <Footer/>
 
             <Tracker feature='editprofile'/>
-        </SystemMessageProvider>
+        </React.Fragment>
     )
 }
 

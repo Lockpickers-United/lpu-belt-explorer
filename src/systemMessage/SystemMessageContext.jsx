@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-//import systemMessages from '../data/systemMessages.json'
 import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 
@@ -30,9 +29,7 @@ export function SystemMessageProvider({children}) {
             if (!message['noDismiss'] && !message['ignoreDismiss']) {
                 valid = !profile?.dismissedMessages?.includes(message.id) ? valid : 0
             }
-            if (!message.active) {
-                valid = 0
-            }
+
             const thisMessage = {...message}
             thisMessage.priority = message['targetUserIds'] ? message.priority * 2 : message.priority
             return valid === 1 ? thisMessage : null

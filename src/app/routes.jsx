@@ -148,6 +148,13 @@ export default [
                     const {default: BlackBeltsMain} = await import('../admin/BlackBeltsMain')
                     return {element: <BlackBeltsMain/>}
                 }
+            },
+            {
+                path: '/admin/systemMessages',
+                lazy: async () => {
+                    const {default: SystemMessageAdmin} = await import('../admin/SystemMessageAdmin')
+                    return {element: <SystemMessageAdmin/>}
+                }
             }
         ]
     },

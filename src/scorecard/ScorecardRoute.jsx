@@ -24,7 +24,6 @@ import {scorecardSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
-import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ScorecardRoute() {
@@ -107,7 +106,6 @@ function ScorecardRoute() {
                                    cardNextDanLocks={cardNextDanLocks}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
-                        <SystemMessageProvider>
 
                             <Nav title={title} extras={nav}/>
                             <SystemMessage/>
@@ -121,7 +119,6 @@ function ScorecardRoute() {
                             {!loading && (!data || error) && <ProfileNotFound/>}
 
                             <Footer extras={footer}/>
-                        </SystemMessageProvider>
                     </LocalizationProvider>
                     <Tracker feature='scorecard'/>
                 </ScorecardListProvider>

@@ -14,7 +14,6 @@ import useWindowSize from '../util/useWindowSize'
 import SafelocksDataProvider from './SafelocksDataProvider.jsx'
 import SafelocksPage from './SafelocksPage.jsx'
 import dials from '../data/safelocks.json'
-import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 
 function SafelocksRoute() {
     const {isMobile} = useWindowSize()
@@ -33,7 +32,6 @@ function SafelocksRoute() {
     return (
         <FilterProvider filterFields={dialFilterFields}>
             <SafelocksDataProvider allEntries={dials} profile={lockCollection}>
-                <SystemMessageProvider>
                     <Nav title='Safe Locks' extras={nav}/>
 
                     <SafelocksPage profile={lockCollection}/>
@@ -41,7 +39,6 @@ function SafelocksRoute() {
                     <Footer/>
 
                     <Tracker feature='dials'/>
-                </SystemMessageProvider>
             </SafelocksDataProvider>
         </FilterProvider>
     )
