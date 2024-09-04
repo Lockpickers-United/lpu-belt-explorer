@@ -7,7 +7,7 @@ import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
 import ProfileHeader from './ProfileHeader.jsx'
 
-function ProfilePage({profile}) {
+function ProfilePage({profile, owner}) {
     const {compact} = useContext(LockListContext)
     const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
@@ -19,7 +19,7 @@ function ProfilePage({profile}) {
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
 
-            <ProfileHeader profile={profile} page={'collection'}/>
+            <ProfileHeader profile={profile} page={'collection'} owner={owner}/>
             <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
             <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 

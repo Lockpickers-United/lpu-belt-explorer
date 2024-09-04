@@ -80,7 +80,7 @@ function ProfileRoute() {
                     }}>
 
                         <Nav title={title} extras={nav}/>
-                        <ProfileHeader profile={data} page={'safelocks'}/>
+                        <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
 
                         {loading && <LoadingDisplay/>}
 
