@@ -61,7 +61,7 @@ function ProfileRoute() {
             <FilterButton/>
             <SortButton sortValues={lockSortFields}/>
 
-            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ToggleCompactButton/>
         </React.Fragment>
     )
@@ -72,17 +72,17 @@ function ProfileRoute() {
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
-                    <Nav title={title} extras={nav}/>
+                        <Nav title={title} extras={nav}/>
 
-                    {loading && <LoadingDisplay/>}
+                        {loading && <LoadingDisplay/>}
 
                     {!loading && data && !error && <ProfilePage profile={data} owner={user && user.uid === userId}/>}
                     {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
                     {!loading && (!data || error) && <ProfileNotFound/>}
 
-                    <Footer/>
+                        <Footer/>
 
-                    <Tracker feature='profile'/>
+                        <Tracker feature='profile'/>
                 </LockListProvider>
             </DataProvider>
         </FilterProvider>

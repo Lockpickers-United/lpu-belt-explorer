@@ -98,6 +98,11 @@ export default [
                 admin: true,
                 title: 'Black Belt Report',
                 path: '/admin/blackBelts'
+            },
+            {
+                admin: true,
+                title: 'System Message Admin',
+                path: '/admin/systemMessages'
             }
         ]
     },

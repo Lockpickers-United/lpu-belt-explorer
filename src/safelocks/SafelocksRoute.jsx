@@ -25,20 +25,20 @@ function SafelocksRoute() {
             <SearchBox label='Safe Locks'/>
             <SortButton sortValues={dialSortFields}/>
             <FilterButton/>
-            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
 
     return (
         <FilterProvider filterFields={dialFilterFields}>
             <SafelocksDataProvider allEntries={dials} profile={lockCollection}>
-                <Nav title='Safe Locks' extras={nav}/>
+                    <Nav title='Safe Locks' extras={nav}/>
 
-                <SafelocksPage profile={lockCollection}/>
+                    <SafelocksPage profile={lockCollection}/>
 
-                <Footer/>
+                    <Footer/>
 
-                <Tracker feature='dials'/>
+                    <Tracker feature='dials'/>
             </SafelocksDataProvider>
         </FilterProvider>
     )

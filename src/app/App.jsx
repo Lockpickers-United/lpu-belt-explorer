@@ -8,6 +8,7 @@ import {AuthProvider} from './AuthContext'
 import {DBProvider} from './DBContext'
 import {ScoringProvider} from '../context/ScoringContext.jsx'
 import initializeLocales from '../util/datetime'
+import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 
 initializeLocales()
 
@@ -40,9 +41,11 @@ function App() {
                 <AuthProvider>
                     <DBProvider>
                         <AppProvider>
-                            <ScoringProvider>
-                                <AppRoutes/>
-                            </ScoringProvider>
+                            <SystemMessageProvider>
+                                <ScoringProvider>
+                                    <AppRoutes/>
+                                </ScoringProvider>
+                            </SystemMessageProvider>
                         </AppProvider>
                     </DBProvider>
                 </AuthProvider>

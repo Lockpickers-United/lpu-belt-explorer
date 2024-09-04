@@ -22,6 +22,7 @@ import SafelocksDataProvider from '../safelocks/SafelocksDataProvider.jsx'
 import allEntries from '../data/safelocks.json'
 import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
+import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfileRoute() {
     const {userId} = useParams()
@@ -64,7 +65,7 @@ function ProfileRoute() {
         </React.Fragment>
     )
 
-    const title = loading ? 'Loading...' : 'Safe Locks'
+    const title = loading ? 'Loading...' : 'Profile'
 
     if (loading || !data) {
         return <LoadingDisplay/>
@@ -74,25 +75,28 @@ function ProfileRoute() {
         <FilterProvider filterFields={dialFilterFields}>
             <SafelocksDataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
-                    <div style={{
-                        maxWidth: 700, padding: 0, backgroundColor: '#000',
-                        marginLeft: 'auto', marginRight: 'auto', marginTop: 16
-                    }}>
+                        <div style={{
+                            maxWidth: 700, padding: 0, backgroundColor: '#000',
+                            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+                        }}>
 
                         <Nav title={title} extras={nav}/>
                         <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
 
-                        {loading && <LoadingDisplay/>}
+                            <SystemMessage/>
 
-                        {!loading && data && !error && entries.length > 0 && <SafelocksCollectionPage profile={data}/>}
-                        {!loading && data && !error && entries.length === 0 &&
-                            <NoProfileData collectionType={'safelocks'}/>}
-                        {!loading && (!data || error) && <ProfileNotFound/>}
+                            {loading && <LoadingDisplay/>}
 
-                        <Footer/>
+                            {!loading && data && !error && entries.length > 0 &&
+                                <SafelocksCollectionPage profile={data}/>}
+                            {!loading && data && !error && entries.length === 0 &&
+                                <NoProfileData collectionType={'safelocks'}/>}
+                            {!loading && (!data || error) && <ProfileNotFound/>}
 
-                        <Tracker feature='profile'/>
-                    </div>
+                            <Footer/>
+
+                            <Tracker feature='profile'/>
+                        </div>
                 </LockListProvider>
             </SafelocksDataProvider>
         </FilterProvider>
