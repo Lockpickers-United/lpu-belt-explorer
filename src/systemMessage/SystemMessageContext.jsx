@@ -20,6 +20,9 @@ export function SystemMessageProvider({children}) {
             if (message['targetLoggedIn']) {
                 valid = user ? valid : 0
             }
+            if (message['targetCollectionUsersOnly']) {
+                valid = profile?.any?.length > 0 ? valid : 0
+            }
             if (message['targetBlackBeltsOnly']) {
                 valid = profile?.blackBeltAwardedAt > 0 ? valid : 0
             }
