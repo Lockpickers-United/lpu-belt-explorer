@@ -8,19 +8,6 @@ import {Collapse} from '@mui/material'
 
 export default function SystemMessagePreview() {
 
-    const allPages = [...new Set(routes.reduce((acc, route) => {
-        const noId = route.path.replace('/:userId', '')
-        acc.push(noId)
-
-        if (route.children) {
-            route.children.map(child => {
-                const noId = child.path.replace('/:userId', '')
-                acc.push(noId)
-            })
-        }
-        return acc
-    }, []))].sort()
-
     const [pageId, setPageId] = useState('*')
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const handleToggleControls = useCallback(() => {
@@ -99,3 +86,16 @@ export default function SystemMessagePreview() {
         </div>
     )
 }
+
+const allPages = [...new Set(routes.reduce((acc, route) => {
+    const noId = route.path.replace('/:userId', '')
+    acc.push(noId)
+    if (route.children) {
+        route.children.map(child => {
+            const noId = child.path.replace('/:userId', '')
+            acc.push(noId)
+        })
+    }
+    return acc
+}, []))].sort()
+
