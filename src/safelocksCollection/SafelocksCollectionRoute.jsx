@@ -83,6 +83,8 @@ function ProfileRoute() {
                         <Nav title={title} extras={nav}/>
                         <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
 
+                            <SystemMessage/>
+
                             {loading && <LoadingDisplay/>}
 
                             {!loading && data && !error && entries.length > 0 &&
