@@ -6,7 +6,7 @@ import ToggleButton from '@mui/material/ToggleButton'
 import CopyProfileLinkButton from './CopyProfileLinkButton.jsx'
 import Link from '@mui/material/Link'
 
-export default function ProfileHeader({profile = {}, page}) {
+export default function ProfileHeader({profile = {}, page, owner}) {
     const {userId} = useParams()
     const navigate = useNavigate()
 
@@ -27,13 +27,13 @@ export default function ProfileHeader({profile = {}, page}) {
         navigate(link)
     }, [navigate])
 
-    const ownerName = profile['privacyAnonymous']
-        ? 'Anonymous'
-        : profile.displayName
+    const ownerName = profile.displayName && !profile['privacyAnonymous']
             ? profile.displayName.toLowerCase().endsWith('s')
                 ? `${profile.displayName}'`
                 : `${profile.displayName}'s`
-            : 'No Name'
+            : owner && !profile['privacyAnonymous']
+                ? 'No Name'
+                : 'Anonymous'
 
     const title = userId
         ? `${ownerName} ${pageName}`
@@ -102,10 +102,10 @@ export default function ProfileHeader({profile = {}, page}) {
                     </ToggleButtonGroup>
                 </div>
             </div>
-            {!profile['privacyAnonymous'] && !profile?.displayName && false &&
-                <div style={{backgroundColor: '#202020',padding: '0px 0px 20px 16px'}}>
+            {!profile['privacyAnonymous'] && !profile?.displayName && owner &&
+                <div style={{backgroundColor: '#202020', padding: '0px 0px 20px 16px'}}>
                     Looks like you haven&#39;t set your Display Name yet. To set it now, <Link
-                    onClick={() => navigate('/profile/edit')} style={{color:'#0a0'}}>click here.</Link>
+                    onClick={() => navigate('/profile/edit')} style={{color: '#0a0'}}>click here.</Link>
                 </div>
             }
         </React.Fragment>

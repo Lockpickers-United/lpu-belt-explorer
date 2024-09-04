@@ -105,7 +105,7 @@ function Scorecard({owner, profile, adminAction}) {
             maxWidth: 700, padding: 0, backgroundColor: '#222',
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
-            <ProfileHeader profile={profile} page={'scorecard'}/>
+            <ProfileHeader profile={profile} page={'scorecard'} owner={owner}/>
 
             {owner && visibleEntries.length > 0 && !profile.tabClaimed &&
                 <div style={{margin: 8, padding: '0px 0px'}}>

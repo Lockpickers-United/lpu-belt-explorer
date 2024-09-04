@@ -80,9 +80,8 @@ function ProfileRoute() {
                             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
                         }}>
 
-                            <Nav title={title} extras={nav}/>
-                            <SystemMessage/>
-                            <ProfileHeader profile={data} page={'safelocks'}/>
+                        <Nav title={title} extras={nav}/>
+                        <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
 
                             {loading && <LoadingDisplay/>}
 

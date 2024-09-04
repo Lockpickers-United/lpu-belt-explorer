@@ -21,8 +21,10 @@ import useWindowSize from '../util/useWindowSize'
 import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
+import AuthContext from '../app/AuthContext.jsx'
 
 function ProfileRoute() {
+    const {user} = useContext(AuthContext)
     const {userId} = useParams()
     const {getProfile} = useContext(DBContext)
     const {isMobile} = useWindowSize()
@@ -74,9 +76,9 @@ function ProfileRoute() {
 
                         {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error && <ProfilePage profile={data}/>}
-                        {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
-                        {!loading && (!data || error) && <ProfileNotFound/>}
+                    {!loading && data && !error && <ProfilePage profile={data} owner={user && user.uid === userId}/>}
+                    {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
+                    {!loading && (!data || error) && <ProfileNotFound/>}
 
                         <Footer/>
 
