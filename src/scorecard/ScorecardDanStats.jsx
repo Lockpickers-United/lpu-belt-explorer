@@ -1,10 +1,17 @@
 import React, {useCallback, useContext} from 'react'
 import ScoringExceptions from './ScoringExceptions.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
+import {enqueueSnackbar} from 'notistack'
+import AuthContext from '../app/AuthContext.jsx'
 
-export default function ScorecardDanStats({profile}) {
+export default function ScorecardDanStats({profile, owner}) {
+    const {userId} = useParams()
+    const {user} = useContext(AuthContext)
+
+    const safeName = profile.displayName?.replace(/\s/g, '_')
+
     const {
         cardDanPoints,
         cardBBCount,
@@ -17,6 +24,18 @@ export default function ScorecardDanStats({profile}) {
     const openUpgrades = useCallback(() => {
         navigate('/profile/scorecard/upgrades')
     }, [navigate])
+
+    const suffixes = {1: 'st', 2: 'nd', 3: 'rd'}
+    const requestLevel = suffixes[[cardEligibleDan]]
+        ? cardEligibleDan + suffixes[[cardEligibleDan]]
+        : cardEligibleDan + 'th'
+
+    const copyRequest = useCallback(async () => {
+        const link = `@LPUBeltBot request ${requestLevel} Dan https://lpubelts.com/#/profile/${userId || user?.uid}/scorecard?name=${safeName}`
+
+        await navigator.clipboard.writeText(link)
+        enqueueSnackbar('Request copied to clipboard. Take it over to #belt-requests!')
+    }, [requestLevel, safeName, user?.uid, userId])
 
 
     const danText = profile.blackBeltAwardedAt > 0 && cardEligibleDan === 1
@@ -38,6 +57,13 @@ export default function ScorecardDanStats({profile}) {
                     lock{cardNextDanLocks !== 1 && 's'} to next Dan
                 </div>
                 <div style={{margin: '10px 0px', fontSize: '0.85rem'}}>
+                    {cardEligibleDan > 1 && owner &&
+                        <span>
+                            <Link onClick={copyRequest}
+                                  style={{color: '#99c2e5', cursor: 'pointer'}}>Copy Request</Link>
+                            &nbsp;•&nbsp;
+                        </span>
+                    }
                     <Link onClick={openUpgrades} style={{color: '#99c2e5', cursor: 'pointer'}}>Upgrades list</Link>
                 </div>
 
