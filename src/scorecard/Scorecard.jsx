@@ -122,13 +122,13 @@ function Scorecard({owner, profile, adminAction}) {
                             </div>
                             {profile.danLevel > 0 &&
                                 <div style={{flexGrow: 1, marginRight: 0}}>
-                                    <ScorecardDanStats/>
+                                    <ScorecardDanStats profile={profile}/>
                                 </div>
                             }
                         </div>
                         : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
                             {profile.danLevel > 0 &&
-                                <ScorecardDanStats/>
+                                <ScorecardDanStats profile={profile}/>
                             }
                             <div style={{marginRight: 0, width: '95%'}}>
                                 <InlineScorecardCharts profile={profile} entries={visibleEntries}/>

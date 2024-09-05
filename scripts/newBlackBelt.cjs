@@ -12,7 +12,7 @@ const db = getFirestore(firebaseApp)
 // SET USER ID & DATE AWARDED
 
 const userId = '4qqxB0nW8dczUws5XuAyhEkgZEj2'
-const approvedDate = '2024-08-18'
+const approvedDate = '2024-05-30'
 
 const addAttributes = true
 const removeAttributes = !addAttributes
@@ -30,7 +30,7 @@ function addBlackBelt() {
     const data = {
         awardedBelt: 'Black',
         blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr)),
-        tabClaimed: `(new black belt: ${userId})`
+        tabClaimed: `(new bb: ${userId})`
     }
     const ref = db.doc(`/lockcollections/${userId}`)
     ref.update(data)

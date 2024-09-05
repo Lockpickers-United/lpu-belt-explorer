@@ -74,7 +74,7 @@ function SystemMessageRow({message, expanded, onExpand, setControlsExpanded}) {
                             flexGrow: 1
                         }}>
                             {description} <span style={{fontWeight: 400, color: '#bbb', fontSize: '1rem'}}>({id})</span><br/>
-                            <span style={{fontWeight: 400, color: '#bbb', fontSize: '0.93rem'}}>{pageIds.join(', ')}</span>
+                            <span style={{fontWeight: 400, color: '#bbb', fontSize: '0.93rem'}}>{pageIds?.join(', ')}</span>
                         </div>
                         <div style={{fontWeight: 400, color: '#bbb', fontSize: '1rem'}}>
                             <FieldValue

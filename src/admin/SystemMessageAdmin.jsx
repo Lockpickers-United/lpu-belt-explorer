@@ -18,7 +18,7 @@ function SystemMessageAdmin() {
     usePageTitle('System Message Admin')
 
     const {user} = useContext(AuthContext)
-    const {getAllSystemMessages, removeDismissedMessages} = useContext(DBContext)
+    const {systemMessages, getAllSystemMessages, removeDismissedMessages} = useContext(DBContext)
     const [allMessages, setAllMessages] = useState([])
     const [expanded, setExpanded] = useState(null)
     const [controlsExpanded, setControlsExpanded] = useState(false)
@@ -27,7 +27,7 @@ function SystemMessageAdmin() {
 
     useEffect(() => {
         getAllSystemMessages().then(r => setAllMessages(r))
-    }, [getAllSystemMessages])
+    }, [getAllSystemMessages, systemMessages])
 
     const filteredMessages = useMemo(() => allMessages.filter(message => {
         if (filter === 'all') {
@@ -35,10 +35,9 @@ function SystemMessageAdmin() {
         } else if (filter === 'active' && message.status === 'active') {
             return true
         } else return filter === 'recent' && ['active', 'pending', 'completed'].includes(message.status)
-
     }), [allMessages, filter])
 
-    const sortedMessages = useMemo(() => filteredMessages.sort((a, b) => {
+    const sortedMessages = useMemo(() => filteredMessages?.sort((a, b) => {
         const statuses = ['active', 'pending', 'completed', 'archived']
         if (sort === 'priority') {
             return b.priority - a.priority
@@ -161,10 +160,10 @@ function SystemMessageAdmin() {
                             </Button>
                         }
                         {controlsExpanded &&
-                            <Button variant='outlined' color='warning' size='small'
+                            <Button variant='outlined' color='info' size='small'
                                     style={{lineHeight: '1rem'}}
                                     onClick={() => handleToggleControls()}>
-                                Cancel New Message
+                                Close New Message
                             </Button>
                         }
                     </div>
