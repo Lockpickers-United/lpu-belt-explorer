@@ -180,6 +180,13 @@ export default [
         }
     },
     {
+        path: '/profile/:userId/scorecard/no-tracking',
+        lazy: async() => {
+            const {default: ScorecardNoTrackRoute} = await import('../scorecard/ScorecardNoTrackRoute')
+            return {element: <ScorecardNoTrackRoute/>}
+        }
+    },
+    {
         path: '/profile/scorecard/upgrades',
         lazy: async() => {
             const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')

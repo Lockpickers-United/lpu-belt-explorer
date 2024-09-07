@@ -24,6 +24,7 @@ import {scorecardSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
+import ScorecardNoTrackButton from './ScorecardNoTrackButton.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ScorecardRoute() {
@@ -89,7 +90,7 @@ function ScorecardRoute() {
     const footer = (
         <React.Fragment>
             <br/>
-            <ScorecardExportButton/>
+            <ScorecardExportButton/><ScorecardNoTrackButton/>
         </React.Fragment>
     )
 
