@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 export default function ScorecardNoTrackButton() {
     const {userId} = useParams()
 
-    const linkText = `http://localhost:3000/#/profile/${userId}/scorecard/no-tracking`
+    const linkText = `https://lpubelts.com/#/profile/${userId}/scorecard/no-tracking`
 
     const openInNewTab = useCallback((url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
