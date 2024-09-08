@@ -8,6 +8,7 @@ import InfoIcon from '@mui/icons-material/Info'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
 import DBContext from '../app/DBContext.jsx'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import querystring from 'query-string'
 
 function SystemMessage({override, overridePageId, placeholder}) {
     const {lockCollection, addToLockCollection} = useContext(DBContext)
@@ -22,18 +23,26 @@ function SystemMessage({override, overridePageId, placeholder}) {
                 : placeholder
         , [getMessage, override, pageId, placeholder])
 
+    console.log(message)
+
+    const noId = pageId.replace(/\/\w{28}/, 'uid')
+    const query = useMemo(() =>querystring.stringify({id: message?.id, p: noId, r: randomStuff}),[message, noId])
+    const url = `https://img.lpubelts.com/i/message/message.png?${query}`
+
     const navigate = useNavigate()
     const handleClick = useCallback(() => {
         if (!override) {
+            document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/click.png?${query}`
             navigate(message['linkDestination'])
         }
-    }, [message, navigate, override])
+    }, [message, navigate, override, query])
 
     const handleDismiss = useCallback(async () => {
         if (!override) {
+            document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/dismiss.png?${query}`
             await addToLockCollection('dismissedMessages', message?.id)
         }
-    }, [addToLockCollection, message, override])
+    }, [addToLockCollection, message, override, query])
 
     const messageHeader = message?.messageHeadline
     const messageText = message?.messageText
@@ -73,53 +82,65 @@ function SystemMessage({override, overridePageId, placeholder}) {
 
     if (!message) return null
     return (
-        <div style={{
-            minWidth: '320px', maxWidth: 680,
-            margin: mainMargin,
-            textAlign: 'center'
-        }}>
-            <div style={{
-                fontSize: '1rem',
-                lineHeight: '1.2rem',
-                width: '100%',
-                textAlign: 'left',
-                marginTop: 15,
-                border: `1px solid ${messageColor}`,
-                display: 'flex',
-                alignItems: 'center', position: 'relative'
-            }}>
-                <div style={messageTypeStyle}>{messageIcon}</div>
-                <div style={{width: '100%'}}>
-                    <div style={{height: '100%', width: '100%', padding: '10px 20px 5px 50px', color: textColor}}>
-                        <b>{messageHeader}</b> {messageText}
-                    </div>
-                    <div style={{width: '100%', textAlign: 'right', padding: '3px 20px 8px 0px'}}>
-                        {message.linkText &&
-                            <Button variant='text' size='small'
-                                    style={{
-                                        lineHeight: '.9rem',
-                                        textAlign: 'left',
-                                        marginRight: 10,
-                                        color: messageColor
-                                    }}
-                                    onClick={handleClick}
-                            >{message.linkText}</Button>
-                        }
-                        {!message.noDismiss && Object.keys(lockCollection).length > 0 &&
-                            <Button variant='text' size='small'
-                                    style={{
-                                        lineHeight: '.9rem',
-                                        textAlign: 'left',
-                                        color: '#999'
-                                    }}
-                                    onClick={handleDismiss}
-                            >Dismiss</Button>
-                        }
+        <React.Fragment>
+            {message &&
+                <div style={{
+                    minWidth: '320px', maxWidth: 680,
+                    margin: mainMargin,
+                    textAlign: 'center'
+                }}>
+                    <div style={{
+                        fontSize: '1rem',
+                        lineHeight: '1.2rem',
+                        width: '100%',
+                        textAlign: 'left',
+                        marginTop: 15,
+                        border: `1px solid ${messageColor}`,
+                        display: 'flex',
+                        alignItems: 'center', position: 'relative'
+                    }}>
+                        <div style={messageTypeStyle}>{messageIcon}</div>
+                        <div style={{width: '100%'}}>
+                            <div style={{
+                                height: '100%',
+                                width: '100%',
+                                padding: '10px 20px 5px 50px',
+                                color: textColor
+                            }}>
+                                <b>{messageHeader}</b> {messageText}
+                            </div>
+                            <div style={{width: '100%', textAlign: 'right', padding: '3px 20px 8px 0px'}}>
+                                {message.linkText &&
+                                    <Button variant='text' size='small'
+                                            style={{
+                                                lineHeight: '.9rem',
+                                                textAlign: 'left',
+                                                marginRight: 10,
+                                                color: messageColor
+                                            }}
+                                            onClick={handleClick}
+                                    >{message.linkText}</Button>
+                                }
+                                {!message.noDismiss && Object.keys(lockCollection).length > 0 &&
+                                    <Button variant='text' size='small'
+                                            style={{
+                                                lineHeight: '.9rem',
+                                                textAlign: 'left',
+                                                color: '#999'
+                                            }}
+                                            onClick={handleDismiss}
+                                    >Dismiss</Button>
+                                }
+                                <img id='messageImage' src={url} height='22' width='22' alt='message'/>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            }
+        </React.Fragment>
     )
 }
 
 export default SystemMessage
+
+const randomStuff = (Math.random()).toString(36).substring(2, 10)
