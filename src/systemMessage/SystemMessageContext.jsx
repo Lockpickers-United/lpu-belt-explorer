@@ -35,7 +35,7 @@ export function SystemMessageProvider({children}) {
 
             const thisMessage = {...message}
             thisMessage.priority = message['targetUserIds'] ? message.priority * 2 : message.priority
-            return valid === 1 ? thisMessage : null
+            return valid === 1 ? thisMessage : undefined
         })
             .filter(x => x)
             .sort((a, b) => {
@@ -56,7 +56,7 @@ export function SystemMessageProvider({children}) {
                     return message?.pageIds?.some(r => pageIds.includes(r)) && !excludedPages.some(r => pageIds.includes(r))
                 }
             )
-            : []
+            : undefined
     }, [authLoaded, filteredMessages, dbLoaded])
 
 
