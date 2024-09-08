@@ -1,15 +1,14 @@
 ## Scorecard FAQ for Black Belts
 
-In building towards a vision where core picking activities are integrated in one place, the Dan System is now also available on lpubelts.com. We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects as well as requesting Dan Levels through #belt-requests.
-
-Worth noting: because the Scorecard and the Dan Sheet cannot be actively connected, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date. All of your lock and project additions can be made on lpubelts.com, and Dan Requests would reference your lpubelts.com Scorecard.
-
 ### Q: What is the Scorecard anyway?
 
 Scorecard is a major overhaul of the “Recorded” list in LPUbelts collections. Instead of just keeping track of the locks you’ve recorded, you can now capture all the information used in the Dan Sheet. That includes: Lock, Date Picked, Link to Documentation, Modifiers (like First Recorded Pick), as well as Notes if you wish to add them.
 
 Scorecard also implements the Dan scoring system for Black Belt pickers and calculates exact Dan Points based on locks with documentation, including modifiers and upgrades. Moving forward, you can use a link to your scorecard as evidence for Dan Level requests.
 
+We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects as well as requesting Dan Levels through #belt-requests.
+
+Worth noting: because the Scorecard and the Dan Sheet cannot be actively connected, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date. All of your lock and project additions can be made on lpubelts.com, and Dan Requests would reference your lpubelts.com Scorecard.
 
 ### Q: What are the main benefits of the Scorecard?
 
@@ -46,6 +45,10 @@ You do, just as you do to edit your Dan Sheet. You can use the exact same Google
 ### Q: How do I get my existing Dan Sheet record into the Scorecard?
 
 It’s easy! We’ve built an automated import that does all the work for folks who have a tab in the Dan Sheet already. Simply hit the “Import Dan Sheet” button, identify your tab, and we’ll do the rest. Complete details can be found at https://lpubelts.com/#/profile/scorecard/howto
+
+### Q: What if I'm new and/or don't have a Dan sheet tab?
+
+Simply send us your LPUbelts display name along with a link to your Black Belt announcement, and we'll set you up in the system.
 
 ### Q: How do I add new entries to my Scorecard?
 
@@ -85,15 +88,11 @@ Yes! We’ve built several new features to allow for just that. The **[Black Bel
 
 Sure! Any lock, even one that is not eligible for Dan Points, can be added by anyone who wants to keep track. The Scorecard will make the transition to Black Belt even easier for these people since their Dan-eligible locks will already be cataloged.
 
-### Q. Can I keep using the Dan Sheet?
-
-Yes. We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects. Worth noting: because the Dan Sheet cannot be actively connected to LPUbelts, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date.
-
 ### Q: Why did you build it?
 
 LPUbelts was originally built to directly address community needs, and we are always looking for ways to improve the LPU and lockpicking experience. The initial site (launched in Feb. 2022) was built to replace a static spreadsheet that was previously used to keep track of the Belt Ranking list. We had great success in migrating this static spreadsheet to a dynamic site, so that now LPUbelts has become the central source of a ton of lock information.
 
-The success with the Belt Ranking list led us to look at other parts of the core picking experience to see what we could improve. We saw the Dan Sheet as an obvious area where there are a number of rough edges and errors, as well as a bunch of manual work needed to maintain it. Overall, we have made scoring locks and projects more intuitive to manage, more accurate, less prone to errors as locks are reclassified, more secure, and easier to maintain.
+The success with the Belt Ranking list led us to look at other parts of the core picking experience to see what we could improve. We saw the Dan Sheet as an obvious area where there are a number of rough edges and errors, as well as a bunch of manual work needed to maintain it. Overall, we have made scoring locks and projects more intuitive to manage, more accurate, less prone to errors as locks are reclassified, more secure, and easier to maintain. In building towards a vision where core picking activities are integrated in one place, the Dan System is now also available on lpubelts.com.
 
 ### Q: The Dan Sheet has been around for a while, why change it?
 
@@ -111,6 +110,9 @@ As Black Belts ourselves, we’re very familiar with the Dan Sheet. It’s stren
 
 - **Poor visibility into achievements**. On the Dan Sheet it is hard to share your videos with others, but on LPUbelts we have built leaderboards and tools to make it easy to share your accomplishments.
 
+### Q. Can I keep using the Dan Sheet?
+
+Yes. We hope Scorecard will become the official successor to the Dan Sheet but for now both systems are active and can be used for tracking your picks and projects. Worth noting: because the Dan Sheet cannot be actively connected to LPUbelts, changes in one place are not reflected in the other. It’s best to choose one or the other though of course you can keep both up-to-date.
 
 ### Q: What if I don’t want to use lpubelts.com anymore, what happens to my data?
 

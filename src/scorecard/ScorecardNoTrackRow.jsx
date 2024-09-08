@@ -6,7 +6,7 @@ import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
 import Link from '@mui/material/Link'
 
-function ScorecardNoTrackRow({owner, evid, merged}) {
+function ScorecardNoTrackRow({evid}) {
     const {getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
     const entry = getEntryFromId(evid.matchId)
@@ -15,16 +15,10 @@ function ScorecardNoTrackRow({owner, evid, merged}) {
         ? entry
         : project
 
-    let entryTitle = entity
-        ? entryName(entity)
-        : evid.evidenceNotes
-    entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.evidenceNotes} ]` : entryTitle
-    entryTitle = evid.exceptionType && owner && merged ? entryTitle + ' *' : entryTitle
+    let entryTitle = entryName(entity)
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    let dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
-    dateText = dateText.replace('/202', '/2')
-    dateText = dateText.replace('/201', '/1')
+    let dateText = evid.date ? dayjs(evid.date).format('MM/DD/YY') : '(no date)'
 
     const linkText = evid.link.substring(0, 20)
     const openInNewTab = (url) => {
@@ -51,7 +45,7 @@ function ScorecardNoTrackRow({owner, evid, merged}) {
                     padding: '8px',
                     backgroundColor: backgroundColor,
                     color: color,
-                    fontWeight:600
+                    fontWeight: 600
                 }}
                            component='th' scope='row'>
                     {entryTitle}
