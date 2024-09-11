@@ -127,6 +127,8 @@ function Leaderboard({tab}) {
     )
     const title = loading ? 'Loading...' : 'Leaderboard'
 
+    const tableHeight = tab === 'blackBelts' ? '100%' :'78vh'
+
     if (loading) {
         return <LoadingDisplay/>
     }
@@ -173,7 +175,7 @@ function Leaderboard({tab}) {
                     <LeaderboardCompare blackBeltData={blackBeltData} compare={compare}/>
                 }
 
-                <TableContainer sx={{height: '78vh', backgroundColor: '#111'}} id='scrollable' ref={scrollableRef}>
+                <TableContainer sx={{height: tableHeight, backgroundColor: '#111'}} id='scrollable' ref={scrollableRef}>
                     <Table stickyHeader>
                         <LeaderboardHeader columns={tabData[tab]['columns']}/>
 
