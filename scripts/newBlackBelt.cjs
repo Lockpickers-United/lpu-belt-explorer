@@ -11,8 +11,8 @@ const db = getFirestore(firebaseApp)
 
 // SET USER ID & DATE AWARDED
 
-const userId = '4qqxB0nW8dczUws5XuAyhEkgZEj2'
-const approvedDate = '2024-05-30'
+const userId = 'BlQBaytglSfa2ExVbvg4itQPrbB2'
+const approvedDate = '2024-08-29'
 
 const addAttributes = true
 const removeAttributes = !addAttributes

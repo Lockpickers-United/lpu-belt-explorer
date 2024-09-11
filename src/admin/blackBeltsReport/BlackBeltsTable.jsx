@@ -47,7 +47,7 @@ const BlackBeltsTable = ({tableData, collectionsData}) => {
             <TableContainer id='statsTable'
                             style={{
                                 padding: '0px 0px 0px 4px',
-                                width: 500,
+                                width: 700,
                                 marginLeft: 'auto',
                                 marginRight: 'auto'
                             }}
