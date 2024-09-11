@@ -93,7 +93,7 @@ function PreviewScorecard({owner, profile, tab, setTab}) {
                                   evid={ev}
                                   expanded={false}
                                   onExpand={undefined}
-                                  merged={profile?.blackBeltAwardedAt > 0}
+                                  merged={false}
                     />
                 )}
             </div>

@@ -10,7 +10,7 @@ export default function ScorecardDanStats({profile, owner}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
 
-    const safeName = profile.displayName?.replace(/\s/g, '_')
+    const safeName = profile?.displayName?.replace(/\s/g, '_')
 
     const {
         cardDanPoints,
@@ -38,7 +38,7 @@ export default function ScorecardDanStats({profile, owner}) {
     }, [requestLevel, safeName, user?.uid, userId])
 
 
-    const danText = profile.blackBeltAwardedAt > 0 && cardEligibleDan === 1
+    const danText = profile?.blackBeltAwardedAt > 0 && cardEligibleDan === 1
         ? 'DAN'
         : 'Eligible for Dan'
 
