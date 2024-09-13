@@ -1000,6 +1000,26 @@
     "lastUpdated": "2024-09-12T23:45:30.179Z"
   },
   {
+    "id": "048058c3",
+    "make": "La Gard",
+    "model": "1548",
+    "group": "2",
+    "fence": "Spring Lever",
+    "wheels": "3",
+    "digits": "0-99",
+    "notes": "",
+    "tier": "",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format",
+      "Wheel Shadowing"
+    ],
+    "lastUpdated": "2024-09-13T23:48:06.595Z"
+  },
+  {
     "id": "218529be",
     "make": "La Gard",
     "model": "1800(RL)",
