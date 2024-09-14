@@ -42,16 +42,18 @@ function PopularEntries({owner}) {
             : []
     }, [error, getEntryFromId, getEvidenceFromId, scorecardLocks])
 
+    const topEntries = useMemo(() => popularEntries.slice(0, topN),[popularEntries, topN])
+
     const filteredEntries = useMemo(() => {
         return filter === 'picked'
-            ? popularEntries.filter(e => e.evidence)
+            ? topEntries.filter(e => e.evidence)
             : filter === 'notPicked'
-                ? popularEntries.filter(e => !e.evidence)
-                : popularEntries
-    }, [filter, popularEntries]).slice(0, topN)
+                ? topEntries.filter(e => !e.evidence)
+                : topEntries
+    }, [filter, topEntries])
 
-    const pickedEntries = filteredEntries.filter(e => e.evidence).length
-    const pickedPercent = Math.floor(pickedEntries / topN * 1000) / 10
+    const pickedEntries = topEntries.filter(e => e.evidence).length
+    const pickedPercent = Math.floor(pickedEntries / topN * 100)
     const description = owner
         ? 'You\'ve picked'
         : 'Picked'

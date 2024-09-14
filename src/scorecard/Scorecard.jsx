@@ -116,12 +116,21 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const myLocksButton = mostPopular ? 'text' : 'contained'
     const mostPopularButton = !mostPopular ? 'text' : 'contained'
 
+    const ownerName = profile.displayName && !profile.privacyAnonymous
+        ? profile.displayName.toLowerCase().endsWith('s')
+            ? `${profile.displayName}'`
+            : `${profile.displayName}'s`
+        : 'Anonymous'
+
+    const buttonText = owner ? 'My Locks' : `${ownerName} Locks`
+    const buttonWidth = owner ? 86 : 124
+
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#222',
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
-            <ProfileHeader profile={profile} page={'scorecard'} owner={owner}/>
+            <ProfileHeader profile={profile} page={'scorecard'} owner={owner} mostPopular={mostPopular}/>
 
             {owner && visibleEntries.length > 0 && !profile.tabClaimed &&
                 <div style={{margin: 8, padding: '0px 0px'}}>
@@ -154,7 +163,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </React.Fragment>
             }
 
-            {(owner || admin) &&
                 <Accordion expanded={controlsExpanded} disableGutters={true}>
                     <AccordionSummary style={{
                         paddingLeft: buttonsMargin,
@@ -170,6 +178,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 placeItems: 'center',
                                 textAlign: 'center'
                             }}>
+                                {(owner || admin) &&
                                 <div style={{width: '100%', textAlign: 'left'}}>
                                     {!danSheetImported &&
                                         <Button variant='outlined' color='secondary' size='small'
@@ -186,6 +195,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                         </Button>
                                     }
                                 </div>
+                                }
                                 <div style={{
                                     width: '100%',
                                     textAlign: 'right',
@@ -194,9 +204,9 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 }}>
                                     <div style={{flexGrow: 1}}/>
                                     <Button variant={myLocksButton} color='secondary' size='small'
-                                            style={{lineHeight: '1.2rem', width: 86}}
+                                            style={{lineHeight: '1.2rem', width: buttonWidth}}
                                             onClick={() => handleLocksToggle()}>
-                                        MY&nbsp;LOCKS
+                                        {buttonText}
                                     </Button>
                                     <Button variant={mostPopularButton} color='info' size='small'
                                             style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
@@ -270,7 +280,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                         }
                     </AccordionDetails>
                 </Accordion>
-            }
+
             {!mostPopular &&
                 <React.Fragment>
                     {visibleEntries.length === 0 &&

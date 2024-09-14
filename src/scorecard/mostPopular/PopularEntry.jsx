@@ -1,6 +1,6 @@
+import React from 'react'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import React from 'react'
 import BeltStripe from '../../entries/BeltStripe'
 import entryName from '../../entries/entryName'
 import ViewLockButton from '../ViewLockButton.jsx'
@@ -23,13 +23,12 @@ function PopularEntry({entry}) {
                 secondary={entry.version}
                 secondaryTypographyProps={{color:rowColor}}
                 style={{padding: '0px 0px 0px 10px'}}
-
             />
 
             <ViewLockButton entry={entry} color={rowColor}/>
-            <EvidenceButton id={entry.id} dense={true}/>
+            <EvidenceButton id={entry.id}/>
         </ListItem>
     )
 }
 
-export default PopularEntry
+export default React.memo(PopularEntry)

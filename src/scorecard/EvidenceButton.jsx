@@ -45,29 +45,30 @@ function EvidenceButton({id}) {
                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={!!editRecId} onClick={null}
             >
-
-                <Card style={{
-                    maxWidth: 600,
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    border: '1px solid #666',
-                    opacity: 1
-                }}>
-                    <CardHeader title={'Documentation'}
-                                action={<HighlightOffIcon sx={{cursor: 'pointer'}}/>}
-                                style={{paddingBottom: 0}}
-                                onClick={handleOverlayClose}/>
-                    <CardContent>
-                        {recordings.map((rec, index) =>
-                            <EvidenceForm evid={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}
-                                          key={index}/>
-                        )}
-                        {recordings.length===0 &&
-                            <EvidenceForm evid={null} lockId={id} handleUpdate={handleOverlayClose}
-                                          source={'collectionButton'}/>
-                        }
-                    </CardContent>
-                </Card>
+                {!!editRecId &&
+                    <Card style={{
+                        maxWidth: 600,
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        border: '1px solid #666',
+                        opacity: 1
+                    }}>
+                        <CardHeader title={'Documentation'}
+                                    action={<HighlightOffIcon sx={{cursor: 'pointer'}}/>}
+                                    style={{paddingBottom: 0}}
+                                    onClick={handleOverlayClose}/>
+                        <CardContent>
+                            {recordings.map((rec, index) =>
+                                <EvidenceForm evid={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}
+                                              key={index}/>
+                            )}
+                            {recordings.length === 0 &&
+                                <EvidenceForm evid={null} lockId={id} handleUpdate={handleOverlayClose}
+                                              source={'collectionButton'}/>
+                            }
+                        </CardContent>
+                    </Card>
+                }
             </Backdrop>
 
         </React.Fragment>

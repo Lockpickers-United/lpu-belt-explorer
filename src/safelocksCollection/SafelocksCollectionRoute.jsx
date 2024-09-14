@@ -77,7 +77,7 @@ function ProfileRoute() {
                 <LockListProvider>
                     <div style={{
                         maxWidth: 700, padding: 0, backgroundColor: '#000',
-                        marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+                        marginLeft: 'auto', marginRight: 'auto', marginTop: 0
                     }}>
 
                         <Nav title={title} extras={nav}/>

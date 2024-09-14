@@ -49,7 +49,7 @@ function ScorecardRoute({mostPopular}) {
         try {
             const profile = await getProfile(userId)
             if (profile) {
-                const ownerName = profile.displayName
+                const ownerName = profile.displayName && !profile.privacyAnonymous
                     ? profile.displayName.toLowerCase().endsWith('s')
                         ? `${profile.displayName}'`
                         : `${profile.displayName}'s`
