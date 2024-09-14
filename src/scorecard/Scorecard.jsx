@@ -21,21 +21,30 @@ import ProfileHeader from '../profile/ProfileHeader.jsx'
 import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
+import PopularEntries from './mostPopular/PopularEntries.jsx'
 
-function Scorecard({owner, profile, adminAction}) {
+function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
 
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
     const {expanded} = useContext(ScorecardListContext)
-    const {filters, removeFilters} = useContext(FilterContext)
-    const {createEvidenceForEntries, removeEvidence, removeProfileBlackBeltAwarded, updateUserStatistics} = useContext(DBContext)
+    const {filters, setFilters, removeFilters} = useContext(FilterContext)
+    const {name, tab} = filters
+    const {
+        createEvidenceForEntries,
+        removeEvidence,
+        removeProfileBlackBeltAwarded,
+        updateUserStatistics
+    } = useContext(DBContext)
     const {admin} = useContext(AppContext)
+    const danSheetImported = profile?.blackBeltAwardedAt > 0
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
     const [loading, setLoading] = useState(false)
+    const [mostPopular, setMostPopular] = useState(tab==='mostPopular' || popular)
 
     if (expanded && expanded !== entryExpanded) {
         setEntryExpanded(expanded)
@@ -94,11 +103,18 @@ function Scorecard({owner, profile, adminAction}) {
         adminAction()
     }, [cardEvidence, removeEvidence, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
 
-    const buttonsMargin = isMobile ? 10 : 40
+    const buttonsMargin = 15
     const headerDivStyle = isMobile ? 'block' : 'flex'
+    const buttonMarginTop = isMobile ? 6 : 0
 
-    const danSheetImported = profile?.blackBeltAwardedAt > 0
-    const addProjectDivWidth = danSheetImported ? '100%' : '50%'
+    const handleLocksToggle = useCallback(() => {
+        const newFilters = mostPopular ? {name: name} : {tab:'mostPopular', name:name}
+        setFilters(newFilters)
+        setMostPopular(!mostPopular)
+    }, [mostPopular, name, setFilters])
+
+    const myLocksButton = mostPopular ? 'text' : 'contained'
+    const mostPopularButton = !mostPopular ? 'text' : 'contained'
 
     return (
         <div style={{
@@ -148,24 +164,48 @@ function Scorecard({owner, profile, adminAction}) {
                     }}>
                         <div style={{width: '100%', placeItems: 'center', textAlign: 'center'}}>
 
-                            <div style={{display: 'flex', width: '100%', placeItems: 'center', textAlign: 'center'}}>
-                                {!danSheetImported &&
-                                    <div style={{width: '50%', textAlign: 'center'}}>
-                                        <Button variant='contained' color='secondary' size='small'
-                                                style={{lineHeight: '1rem'}}
+                            <div style={{
+                                display: headerDivStyle,
+                                width: '100%',
+                                placeItems: 'center',
+                                textAlign: 'center'
+                            }}>
+                                <div style={{width: '100%', textAlign: 'left'}}>
+                                    {!danSheetImported &&
+                                        <Button variant='outlined' color='secondary' size='small'
+                                                style={{lineHeight: '1.2rem', marginRight: 6}}
                                                 onClick={() => handleOpenControls('import')}>
-                                            IMPORT DAN SHEET
+                                            IMPORT&nbsp;DAN&nbsp;SHEET
                                         </Button>
-                                    </div>
-                                }
-                                <div style={{width: addProjectDivWidth, textAlign: 'center'}}>
-                                    <Button variant='outlined' color='secondary' size='small'
-                                            style={{lineHeight: '1rem'}}
-                                            onClick={() => handleOpenControls('project')}>
-                                        {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                    }
+                                    {!mostPopular &&
+                                        <Button variant='outlined' color='secondary' size='small'
+                                                style={{lineHeight: '1.2rem'}}
+                                                onClick={() => handleOpenControls('project')}>
+                                            {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                        </Button>
+                                    }
+                                </div>
+                                <div style={{
+                                    width: '100%',
+                                    textAlign: 'right',
+                                    display: 'flex',
+                                    marginTop: buttonMarginTop
+                                }}>
+                                    <div style={{flexGrow: 1}}/>
+                                    <Button variant={myLocksButton} color='secondary' size='small'
+                                            style={{lineHeight: '1.2rem', width: 86}}
+                                            onClick={() => handleLocksToggle()}>
+                                        MY&nbsp;LOCKS
+                                    </Button>
+                                    <Button variant={mostPopularButton} color='info' size='small'
+                                            style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
+                                            onClick={() => handleLocksToggle()}>
+                                        MOST&nbsp;POPULAR
                                     </Button>
                                 </div>
                             </div>
+
 
                             {loading && <LoadingDisplay/>}
 
@@ -185,7 +225,7 @@ function Scorecard({owner, profile, adminAction}) {
                                         <div style={{width: '20%', textAlign: 'center'}}>
                                             <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
                                                     onClick={handleUpdateUserStats}>
-                                                    UPDATE STATS
+                                                UPDATE STATS
                                             </Button>
                                         </div>
                                         <div style={{width: '20%', textAlign: 'center'}}>
@@ -231,25 +271,31 @@ function Scorecard({owner, profile, adminAction}) {
                     </AccordionDetails>
                 </Accordion>
             }
+            {!mostPopular &&
+                <React.Fragment>
+                    {visibleEntries.length === 0 &&
+                        <NoScorecardData/>
+                    }
 
-            {visibleEntries.length === 0 &&
-                <NoScorecardData/>
+                    {profile && profile.blackBeltAwardedAt &&
+                        <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
+                    }
+                    <div>
+                        {visibleEntries.map(ev =>
+                            <ScorecardRow key={ev.id}
+                                          owner={owner}
+                                          evid={ev}
+                                          expanded={ev.id === entryExpanded}
+                                          onExpand={handleEntryExpand}
+                                          merged={profile.blackBeltAwardedAt > 0}
+                            />
+                        )}
+                    </div>
+                </React.Fragment>
             }
-
-            {profile && profile.blackBeltAwardedAt &&
-                <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
+            {mostPopular &&
+                <PopularEntries owner={owner} profile={profile} adminAction={adminAction}/>
             }
-            <div>
-                {visibleEntries.map(ev =>
-                    <ScorecardRow key={ev.id}
-                                  owner={owner}
-                                  evid={ev}
-                                  expanded={ev.id === entryExpanded}
-                                  onExpand={handleEntryExpand}
-                                  merged={profile.blackBeltAwardedAt > 0}
-                    />
-                )}
-            </div>
         </div>
     )
 }

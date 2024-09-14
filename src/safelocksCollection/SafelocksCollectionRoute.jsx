@@ -75,28 +75,28 @@ function ProfileRoute() {
         <FilterProvider filterFields={dialFilterFields}>
             <SafelocksDataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
-                        <div style={{
-                            maxWidth: 700, padding: 0, backgroundColor: '#000',
-                            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
-                        }}>
+                    <div style={{
+                        maxWidth: 700, padding: 0, backgroundColor: '#000',
+                        marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+                    }}>
 
                         <Nav title={title} extras={nav}/>
+                        <SystemMessage/>
+
                         <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
+                        
+                        {loading && <LoadingDisplay/>}
 
-                            <SystemMessage/>
+                        {!loading && data && !error && entries.length > 0 &&
+                            <SafelocksCollectionPage profile={data}/>}
+                        {!loading && data && !error && entries.length === 0 &&
+                            <NoProfileData collectionType={'safelocks'}/>}
+                        {!loading && (!data || error) && <ProfileNotFound/>}
 
-                            {loading && <LoadingDisplay/>}
+                        <Footer/>
 
-                            {!loading && data && !error && entries.length > 0 &&
-                                <SafelocksCollectionPage profile={data}/>}
-                            {!loading && data && !error && entries.length === 0 &&
-                                <NoProfileData collectionType={'safelocks'}/>}
-                            {!loading && (!data || error) && <ProfileNotFound/>}
-
-                            <Footer/>
-
-                            <Tracker feature='profile'/>
-                        </div>
+                        <Tracker feature='profile'/>
+                    </div>
                 </LockListProvider>
             </SafelocksDataProvider>
         </FilterProvider>

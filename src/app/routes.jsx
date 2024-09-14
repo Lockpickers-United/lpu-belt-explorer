@@ -180,9 +180,16 @@ export default [
         }
     },
     {
+        path: '/profile/:userId/scorecard/popular',
+        lazy: async() => {
+            const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
+            return {element: <ScorecardRoute mostPopular={true}/>}
+        }
+    },
+    {
         path: '/profile/:userId/scorecard/no-tracking',
         lazy: async() => {
-            const {default: ScorecardNoTrackRoute} = await import('../scorecard/ScorecardNoTrackRoute')
+            const {default: ScorecardNoTrackRoute} = await import('../scorecard/noTrack/ScorecardNoTrackRoute.jsx')
             return {element: <ScorecardNoTrackRoute/>}
         }
     },
@@ -220,13 +227,22 @@ export default [
             const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
             return {element: <ViewScorecardRoute/>}
         }
-    },{
+    },
+    {
         path: '/profile/scorecard',
         lazy: async () => {
             const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
             return {element: <ViewScorecardRoute/>}
         }
-    },{
+    },
+    {
+        path: '/profile/scorecard/popular',
+        lazy: async () => {
+            const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
+            return {element: <ViewScorecardRoute mostPopular={true}/>}
+        }
+    },
+    {
         path: '/profile/scorecard/preview',
         lazy: async () => {
             const {default: PreviewImportRoute} = await import('../scorecard/preview/PreviewImportRoute')
