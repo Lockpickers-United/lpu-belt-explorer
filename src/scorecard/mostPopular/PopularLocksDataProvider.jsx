@@ -1,6 +1,6 @@
 import React, {useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DataContext from '../../context/DataContext'
+import PopularLocksDataContext from '../../context/DataContext'
 import FilterContext from '../../context/FilterContext'
 import dayjs from 'dayjs'
 import {beltSort, beltSortReverse} from '../../data/belts'
@@ -122,9 +122,9 @@ export function PopularLocksDataProvider({children}) {
     }), [allPopularEntries, popularEntries, foo])
 
     return (
-        <DataContext.Provider value={value}>
+        <PopularLocksDataContext.Provider value={value}>
             {children}
-        </DataContext.Provider>
+        </PopularLocksDataContext.Provider>
     )
 }
 
@@ -134,4 +134,4 @@ const urls = {
     collectionsFullBB
 }
 
-export default PopularLocksDataProvider
+export default PopularLocksDataContext

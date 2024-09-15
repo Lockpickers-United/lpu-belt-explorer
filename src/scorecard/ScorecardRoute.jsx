@@ -26,8 +26,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
 import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
-import PopularLocksDataProvider from './mostPopular/PopularLocksDataProvider.jsx'
-import DataContext from '../context/DataContext.jsx'
+import {PopularLocksDataProvider} from './mostPopular/PopularLocksDataProvider.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
@@ -35,9 +34,6 @@ function ScorecardRoute({mostPopular}) {
     const {getProfile, getEvidence} = useContext(DBContext)
     const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
-
-    const {foo} = useContext(DataContext)
-    console.log('foo', foo)
 
     const [triggerState, setTriggerState] = useState(false)
     const handleAdminAction = useCallback(() => {

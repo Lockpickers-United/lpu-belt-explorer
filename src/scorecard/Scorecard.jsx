@@ -22,7 +22,7 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
-import DataContext from '../context/DataContext.jsx'
+import PopularLocksDataContext from './mostPopular/PopularLocksDataProvider'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
@@ -30,7 +30,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
 
-    const {foo} = useContext(DataContext)
+    const {foo} = useContext(PopularLocksDataContext)
     console.log('foo', foo)
 
     const {expanded} = useContext(ScorecardListContext)
