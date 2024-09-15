@@ -22,12 +22,17 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
+import DataContext from '../context/DataContext.jsx'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
 
     const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
+
+    const {foo} = useContext(DataContext)
+    console.log('foo', foo)
+
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, tab} = filters
