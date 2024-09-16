@@ -119,7 +119,8 @@ const nonFilters = [
     'search',
     'tab',
     'sort',
-    'image'
+    'image',
+    'locks'
 ]
 
 export default FilterContext

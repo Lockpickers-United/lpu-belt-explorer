@@ -1,46 +1,19 @@
 import React, {useState, useMemo, useContext, useCallback} from 'react'
 import Button from '@mui/material/Button'
-import ScorecardDataContext from '../ScorecardDataProvider'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import allEntries from '../../data/data.json'
 import PopularEntry from './PopularEntry.jsx'
 import List from '@mui/material/List'
-import {collectionsFullBB} from '../../data/dataUrls'
-import useData from '../../util/useData.jsx'
 import Fade from '@mui/material/Fade'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import FilterContext from '../../context/FilterContext.jsx'
 
-function PopularEntries({owner}) {
+function PopularEntries({owner, popularEntries}) {
     const {isMobile} = useWindowSize()
-
-    const {visibleEntries = []} = useContext(ScorecardDataContext)
-    const {data, loading, error} = useData({urls})
-    const scorecardLocks = useMemo(() => data?.collectionsFullBB?.scorecardLocks,[data])
-
-    const getEntryFromId = useCallback(id => {
-        return allEntries.find(e => e.id === id)
-    }, [])
-
-    const getEvidenceFromId = useCallback(id => {
-        return visibleEntries.find(e => e.matchId === id)
-    }, [visibleEntries])
+    const {filters} = useContext(FilterContext)
 
     const [topN, setTopN] = useState(25)
     const [filter, setFilter] = useState('all')
     const [transition, setTransition] = useState(true)
-
-    const popularEntries = useMemo(() => {
-        return scorecardLocks && !error
-            ? scorecardLocks?.reduce((acc, lock) => {
-                const entry = getEntryFromId(lock.lockID)
-                const evidence = getEvidenceFromId(lock.lockID)
-                if (entry && !evidence?.exceptionType) {
-                    acc.push({...entry, evidence: evidence, popularityRank: lock.rank, userCount: lock.userCount})
-                }
-                return acc
-            }, []).filter(x => x)
-            : []
-    }, [error, getEntryFromId, getEvidenceFromId, scorecardLocks])
 
     const topEntries = useMemo(() => popularEntries.slice(0, topN),[popularEntries, topN])
 
@@ -52,11 +25,12 @@ function PopularEntries({owner}) {
                 : topEntries
     }, [filter, topEntries])
 
-    const pickedEntries = topEntries.filter(e => e.evidence).length
-    const pickedPercent = Math.floor(pickedEntries / topN * 100)
+    const pickedEntries = filteredEntries.filter(e => e.evidence).length
+    const pickedPercent = filteredEntries.length > 0 ? Math.floor(pickedEntries / topEntries.length * 100) : 0
     const description = owner
         ? 'You\'ve picked'
         : 'Picked'
+    const setText = Object.keys(filters).filter(f => f !=='locks' && f !== 'tab').length > 0 ? 'matching' : 'most popular'
 
     const handleToggle = useCallback(value => () => {
         setTransition(false)
@@ -74,13 +48,12 @@ function PopularEntries({owner}) {
     const buttonPicked = filter === 'picked' ? 'contained' : 'text'
     const buttonNotPicked = filter === 'notPicked' ? 'contained' : 'text'
 
-    if (loading) return <LoadingDisplay/>
+    if (!popularEntries) return <LoadingDisplay/>
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#222',
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
-
 
             <div style={{
                 width: '100%',
@@ -89,8 +62,9 @@ function PopularEntries({owner}) {
             }}>
 
                 <Fade in={transition}>
-                    <div style={{fontSize: '1.2rem', fontWeight: 700}}>{description} {pickedEntries} of the {topN} most
-                        popular locks in BB Scorecards ({pickedPercent}%)
+                    <div style={{fontSize: '1.2rem', fontWeight: 700}}>{description} {pickedEntries} of
+                        the {topEntries.length} {setText} locks
+                        in BB Scorecards ({pickedPercent}%)
                     </div>
                 </Fade>
                 (only entries with documentation are counted)
@@ -158,10 +132,6 @@ function PopularEntries({owner}) {
             </div>
         </div>
     )
-}
-
-const urls = {
-    collectionsFullBB
 }
 
 export default PopularEntries

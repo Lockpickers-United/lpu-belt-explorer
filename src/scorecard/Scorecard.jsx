@@ -22,20 +22,16 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
-import PopularLocksDataContext from './mostPopular/PopularLocksDataProvider'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
 
-    const {visibleEntries = [], cardEvidence} = useContext(ScorecardDataContext)
-
-    const {foo} = useContext(PopularLocksDataContext)
-    console.log('foo', foo)
+    const {visibleEntries = [], popularEntries = [], cardEvidence} = useContext(ScorecardDataContext)
 
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
-    const {name, tab} = filters
+    const {name, locks} = filters
     const {
         createEvidenceForEntries,
         removeEvidence,
@@ -49,7 +45,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
     const [loading, setLoading] = useState(false)
-    const [mostPopular, setMostPopular] = useState(tab==='mostPopular' || popular)
+    const [mostPopular, setMostPopular] = useState(locks==='mostPopular' || popular)
 
     if (expanded && expanded !== entryExpanded) {
         setEntryExpanded(expanded)
@@ -113,7 +109,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const buttonMarginTop = isMobile ? 6 : 0
 
     const handleLocksToggle = useCallback(() => {
-        const newFilters = mostPopular ? {name: name} : {tab:'mostPopular', name:name}
+        const newFilters = mostPopular ? {name: name} : {locks:'mostPopular', name:name}
         setFilters(newFilters)
         setMostPopular(!mostPopular)
     }, [mostPopular, name, setFilters])
@@ -121,7 +117,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const myLocksButton = mostPopular ? 'text' : 'contained'
     const mostPopularButton = !mostPopular ? 'text' : 'contained'
 
-    const ownerName = profile.displayName && !profile.privacyAnonymous
+    const ownerName = profile.displayName && !profile['privacyAnonymous']
         ? profile.displayName.toLowerCase().endsWith('s')
             ? `${profile.displayName}'`
             : `${profile.displayName}'s`
@@ -309,7 +305,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </React.Fragment>
             }
             {mostPopular &&
-                <PopularEntries owner={owner} profile={profile} adminAction={adminAction}/>
+                <PopularEntries owner={owner} profile={profile} adminAction={adminAction} popularEntries={popularEntries}/>
             }
         </div>
     )

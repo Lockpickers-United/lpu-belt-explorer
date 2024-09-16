@@ -26,7 +26,6 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
 import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
-import {PopularLocksDataProvider} from './mostPopular/PopularLocksDataProvider.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
@@ -103,7 +102,6 @@ function ScorecardRoute({mostPopular}) {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <PopularLocksDataProvider>
                 <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount}
                                        cardDanPoints={cardDanPoints}
                                        cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
@@ -126,7 +124,6 @@ function ScorecardRoute({mostPopular}) {
                         <Tracker feature='scorecard'/>
                     </ScorecardListProvider>
                 </ScorecardDataProvider>
-            </PopularLocksDataProvider>
         </FilterProvider>
     )
 }
