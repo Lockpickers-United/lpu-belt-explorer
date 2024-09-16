@@ -8,17 +8,18 @@ import {useNavigate} from 'react-router-dom'
 import ProfileNotFound from '../profile/MustBeLoggedIn.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 
-function ViewScorecardRoute() {
+function ViewScorecardRoute({mostPopular}) {
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const navigate = useNavigate()
 
     useDocumentTitle('LPU Belt Explorer - View Scorecard')
 
+    const subdir = mostPopular ? '/popular' : ''
     useEffect(() => {
         if (authLoaded && user) {
-            navigate(`/profile/${user.uid}/scorecard`)
+            navigate(`/profile/${user.uid}/scorecard${subdir}`)
         }
-    }, [authLoaded, navigate, user])
+    }, [authLoaded, navigate, subdir, user])
 
     return (
         <React.Fragment>
