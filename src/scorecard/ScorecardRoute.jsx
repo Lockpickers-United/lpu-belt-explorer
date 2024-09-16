@@ -78,7 +78,8 @@ function ScorecardRoute({mostPopular}) {
     const cardNextDanPoints = data ? data.nextDanPoints : 0
     const cardNextDanLocks = data ? data.nextDanLocks : 0
 
-    const nav = (
+    const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
+    ? (
         <React.Fragment>
             <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
             <SortButton sortValues={scorecardSortFields}/>
@@ -86,6 +87,7 @@ function ScorecardRoute({mostPopular}) {
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
+    : null
 
     const footer = (
         <React.Fragment>
