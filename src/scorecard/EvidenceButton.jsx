@@ -9,14 +9,14 @@ import ListAltIcon from '@mui/icons-material/ListAlt'
 import EvidenceForm from './EvidenceForm.jsx'
 import Backdrop from '@mui/material/Backdrop'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import ScoringContext from '../context/ScoringContext.jsx'
+import ScorecardDataContext from './ScorecardDataProvider'
 
 function EvidenceButton({id}) {
 
     const [editRecId, setEditRecId] = useState(null)
-    const {scoredEvidence} = useContext(ScoringContext)
+    const {cardEvidence} = useContext(ScorecardDataContext)
 
-    const recordings = scoredEvidence
+    const recordings = cardEvidence
         .filter(evid => evid.matchId === id)
         .sort((a, b) => {
             return b.points - a.points
