@@ -25,7 +25,7 @@ function PopularEntries({owner, popularEntries}) {
                 : topEntries
     }, [filter, topEntries])
 
-    const pickedEntries = filteredEntries.filter(e => e.evidence).length
+    const pickedEntries = topEntries.filter(e => e.evidence).length
     const pickedPercent = filteredEntries.length > 0 ? Math.floor(pickedEntries / topEntries.length * 100) : 0
     const description = owner
         ? 'You\'ve picked'
@@ -34,7 +34,7 @@ function PopularEntries({owner, popularEntries}) {
 
     const handleToggle = useCallback(value => () => {
         setTransition(false)
-        setTopN(value)
+        setTimeout(() => setTopN(value),150)
         setTimeout(() => setTransition(true), 300)
     }, [])
 

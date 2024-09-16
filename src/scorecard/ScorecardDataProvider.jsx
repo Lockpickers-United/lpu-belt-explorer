@@ -34,18 +34,7 @@ export function ScorecardDataProvider({
             .map(entry => ({
                 ...entry,
                 makes: entry?.makeModels?.map(({make}) => make),
-                fuzzy: removeAccents(
-                    entry?.makeModels?.map(({make, model}) => [make, model])
-                        .flat()
-                        .filter(a => a)
-                        .concat([
-                            entry.version,
-                            entry.notes,
-                            entry.belt
-                        ])
-                        .join(',')
-                    + ' '
-                ),
+                fuzzy: getFuzzy(entry),
                 documentation: [
                     entry.exceptionType === 'badlink' ? 'Bad Link' : 'Valid Link',
                     entry.date ? 'Valid Date' : 'No Date'
@@ -83,31 +72,20 @@ export function ScorecardDataProvider({
 
     const allPopularEntries = useMemo(() => {
         return popularLocks && !loading && !error
-            ? popularLocks?.reduce((acc, lock) => {
+            ? popularLocks?.map(lock => {
                 const entry = allEntries.find(e => e.id === lock['lockID'])
                 const evidence = getEvidenceFromId(lock.lockID)
                 if (entry && !evidence?.exceptionType) {
-                    acc.push({
+                    return {
                         ...entry,
                         evidence: evidence,
                         popularityRank: lock.rank,
                         userCount: lock.userCount,
-                        fuzzy: removeAccents(
-                            entry?.makeModels?.map(({make, model}) => [make, model])
-                                .flat()
-                                .filter(a => a)
-                                .concat([
-                                    entry.version,
-                                    entry.notes,
-                                    entry.belt
-                                ])
-                                .join(',')
-                            + ' '
-                        ),
-                    })
+                        fuzzy: getFuzzy(entry),
+                        simpleBelt: entry?.belt?.replace(/\s\d/g, '')
+                    }
                 }
-                return acc
-            }, []).filter(x => x)
+            }).filter(x => x)
             : []
     }, [error, getEvidenceFromId, loading, popularLocks])
 
@@ -136,6 +114,21 @@ export function ScorecardDataProvider({
 
 const urls = {
     collectionsFullBB
+}
+
+function getFuzzy(entry) {
+    return removeAccents(
+        entry?.makeModels?.map(({make, model}) => [make, model])
+            .flat()
+            .filter(a => a)
+            .concat([
+                entry.version,
+                entry.notes,
+                entry.belt
+            ])
+            .join(',')
+        + ' '
+    )
 }
 
 function processEntries(entries, filterArray, entryType, search, sort) {
