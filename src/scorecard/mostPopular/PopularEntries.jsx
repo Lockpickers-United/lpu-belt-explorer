@@ -19,13 +19,13 @@ function PopularEntries({owner, popularEntries}) {
 
     const filteredEntries = useMemo(() => {
         return filter === 'picked'
-            ? topEntries.filter(e => e.evidence)
+            ? topEntries.filter(e => e.link)
             : filter === 'notPicked'
-                ? topEntries.filter(e => !e.evidence)
+                ? topEntries.filter(e => !e.link)
                 : topEntries
     }, [filter, topEntries])
 
-    const pickedEntries = topEntries.filter(e => e.evidence).length
+    const pickedEntries = topEntries.filter(e => e.link).length
     const pickedPercent = filteredEntries.length > 0 ? Math.floor(pickedEntries / topEntries.length * 100) : 0
     const description = owner
         ? 'You\'ve picked'

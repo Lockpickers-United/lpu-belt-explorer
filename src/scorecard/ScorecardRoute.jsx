@@ -26,6 +26,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
 import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
+import {collectionsFullBB} from '../data/dataUrls'
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
@@ -78,6 +79,9 @@ function ScorecardRoute({mostPopular}) {
     const cardNextDanPoints = data ? data.nextDanPoints : 0
     const cardNextDanLocks = data ? data.nextDanLocks : 0
 
+    const bbDataResult = useData({url: collectionsFullBB})
+    const popularLocks = bbDataResult.data ? bbDataResult.data.scorecardLocks : []
+
     const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
     ? (
         <React.Fragment>
@@ -107,7 +111,7 @@ function ScorecardRoute({mostPopular}) {
                 <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount}
                                        cardDanPoints={cardDanPoints}
                                        cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                       cardNextDanLocks={cardNextDanLocks}>
+                                       cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
                     <ScorecardListProvider>
                         <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                             <Nav title={title} extras={nav}/>

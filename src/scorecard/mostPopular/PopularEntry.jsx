@@ -8,7 +8,7 @@ import EvidenceButton from '../EvidenceButton.jsx'
 
 function PopularEntry({entry}) {
 
-    const rowColor= entry.evidence ? '#fff' : '#888'
+    const rowColor= entry.link ? '#fff' : '#888'
 
     return (
         <ListItem
