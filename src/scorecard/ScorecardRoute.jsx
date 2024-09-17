@@ -24,10 +24,11 @@ import {scorecardSortFields} from '../data/sortFields'
 import FilterButton from '../filters/FilterButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
-import ScorecardNoTrackButton from './ScorecardNoTrackButton.jsx'
+import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
+import {collectionsFullBB} from '../data/dataUrls'
 
-function ScorecardRoute() {
+function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, getEvidence} = useContext(DBContext)
@@ -49,7 +50,7 @@ function ScorecardRoute() {
         try {
             const profile = await getProfile(userId)
             if (profile) {
-                const ownerName = profile.displayName
+                const ownerName = profile.displayName && !profile.privacyAnonymous
                     ? profile.displayName.toLowerCase().endsWith('s')
                         ? `${profile.displayName}'`
                         : `${profile.displayName}'s`
@@ -78,7 +79,11 @@ function ScorecardRoute() {
     const cardNextDanPoints = data ? data.nextDanPoints : 0
     const cardNextDanLocks = data ? data.nextDanLocks : 0
 
-    const nav = (
+    const bbDataResult = useData({url: collectionsFullBB})
+    const popularLocks = bbDataResult.data ? bbDataResult.data.scorecardLocks : []
+
+    const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
+    ? (
         <React.Fragment>
             <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
             <SortButton sortValues={scorecardSortFields}/>
@@ -86,6 +91,7 @@ function ScorecardRoute() {
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
+    : null
 
     const footer = (
         <React.Fragment>
@@ -102,12 +108,12 @@ function ScorecardRoute() {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}
-                                   cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                   cardNextDanLocks={cardNextDanLocks}>
-                <ScorecardListProvider>
-                    <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
-
+                <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount}
+                                       cardDanPoints={cardDanPoints}
+                                       cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
+                                       cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
+                    <ScorecardListProvider>
+                        <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                             <Nav title={title} extras={nav}/>
                             <SystemMessage/>
 
@@ -115,15 +121,15 @@ function ScorecardRoute() {
 
                             {!loading && data && !error &&
                                 <Scorecard owner={user && user.uid === userId} profile={profile}
-                                           adminAction={handleAdminAction}/>}
+                                           adminAction={handleAdminAction} popular={mostPopular}/>}
 
                             {!loading && (!data || error) && <ProfileNotFound/>}
 
                             <Footer extras={footer}/>
-                    </LocalizationProvider>
-                    <Tracker feature='scorecard'/>
-                </ScorecardListProvider>
-            </ScorecardDataProvider>
+                        </LocalizationProvider>
+                        <Tracker feature='scorecard'/>
+                    </ScorecardListProvider>
+                </ScorecardDataProvider>
         </FilterProvider>
     )
 }

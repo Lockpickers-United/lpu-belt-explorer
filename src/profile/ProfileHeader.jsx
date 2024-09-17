@@ -6,7 +6,7 @@ import ToggleButton from '@mui/material/ToggleButton'
 import CopyProfileLinkButton from './CopyProfileLinkButton.jsx'
 import Link from '@mui/material/Link'
 
-export default function ProfileHeader({profile = {}, page, owner}) {
+export default function ProfileHeader({profile = {}, page, owner, mostPopular}) {
     const {userId} = useParams()
     const navigate = useNavigate()
 
@@ -28,12 +28,12 @@ export default function ProfileHeader({profile = {}, page, owner}) {
     }, [navigate])
 
     const ownerName = profile.displayName && !profile['privacyAnonymous']
-            ? profile.displayName.toLowerCase().endsWith('s')
-                ? `${profile.displayName}'`
-                : `${profile.displayName}'s`
-            : owner && !profile['privacyAnonymous']
-                ? 'No Name'
-                : 'Anonymous'
+        ? profile.displayName.toLowerCase().endsWith('s')
+            ? `${profile.displayName}'`
+            : `${profile.displayName}'s`
+        : owner && !profile['privacyAnonymous']
+            ? 'No Name'
+            : 'Anonymous'
 
     const title = userId
         ? `${ownerName} ${pageName}`
@@ -69,7 +69,7 @@ export default function ProfileHeader({profile = {}, page, owner}) {
             <div style={style}>
                 <div style={{marginTop: 6, display: 'flex'}}>
                     <div>{title}</div>
-                    <div style={{marginTop: -2}}><CopyProfileLinkButton page={page} safeName={safeName}/></div>
+                    <div style={{marginTop: -2}}><CopyProfileLinkButton page={page} safeName={safeName} mostPopular={mostPopular}/></div>
                 </div>
                 <div style={{flexGrow: 1, textAlign: 'right'}}>
                     <ToggleButtonGroup
