@@ -21,10 +21,14 @@ import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import {useLocation} from 'react-router-dom'
 import queryString from 'query-string'
 import blackBelts from './blackBelts.json'
+import {collectionsFullBB} from '../../data/dataUrls'
 
 function PreviewImportRoute() {
     const {isMobile} = useWindowSize()
     const location = useLocation()
+
+    const bbDataResult = useData({url: collectionsFullBB})
+    const popularLocks = bbDataResult.data ? bbDataResult.data.scorecardLocks : []
 
     const tabId = useMemo(() => {
         const query = queryString.parse(location.search)
@@ -89,7 +93,7 @@ function PreviewImportRoute() {
         <FilterProvider filterFields={scorecardFilterFields}>
             <ScorecardDataProvider cardEvidence={scoredEvidence} cardBBCount={bbCount} cardDanPoints={danPoints}
                                    cardEligibleDan={eligibleDan} cardNextDanPoints={nextDanPoints}
-                                   cardNextDanLocks={nextDanLocks}>
+                                   cardNextDanLocks={nextDanLocks} popularLocks={popularLocks}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
