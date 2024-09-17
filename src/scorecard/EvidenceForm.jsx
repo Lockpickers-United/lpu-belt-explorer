@@ -19,10 +19,13 @@ import Autocomplete from '@mui/material/Autocomplete'
 import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId} from '../entries/entryutils'
+import AppContext from '../app/AppContext.jsx'
 
-export default function EvidenceForm({evid, lockId, handleUpdate, addProject, source}) {
+export default function EvidenceForm({evid, lockId, handleUpdate, addProject, source, owner}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
+    const {admin} = useContext(AppContext)
+    const editEnabled = (owner || admin)
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
@@ -157,6 +160,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                         margin='dense'
                         color={urlFieldColor}
                         onChange={processURL}
+                        disabled={!editEnabled}
                     />
                     <IconButton disabled={evidenceUrlError || !evidenceUrl}>
                         <a href={evidenceUrl} target='_blank' rel='noreferrer'>
@@ -167,7 +171,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                 <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
 
                     <DatePicker
-                        label= 'Date'
+                        label='Date'
                         value={evidenceDate}
                         onChange={(newValue) => {
                             setEvidenceDate(newValue)
@@ -175,6 +179,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                         }}
                         sx={{width: 250}}
                         disableFuture
+                        disabled={!editEnabled}
                     />
 
                     <TextField
@@ -188,6 +193,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                             setModifier(e.target.value)
                             setUpdated(true)
                         }}
+                        disabled={!editEnabled}
                     >
                         <MenuItem value=''>(None)</MenuItem>
                         <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
@@ -215,59 +221,60 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                             setUpdated(true)
                         }}
                         sx={{input: {color: '#999'}}}
+                        disabled={!editEnabled}
                     />
-                    {(!!entry && source !== 'collectionButton') &&
+                    {(!!entry && source !== 'collectionButton' && editEnabled) &&
                         <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
                             <CollectionButton id={evid?.matchId || lockId} dense={denseButton}/>
                         </div>
                     }
                 </div>
-
-                <div style={{display: 'flex'}}>
-                    <div style={{marginLeft: 0}}>
-                        {evid &&
-                            <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'
-                                    disabled={!evid}>
-                                Delete
-                            </Button>
-                        }
-                        <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                            <div style={{padding: 20, textAlign: 'center'}}>
-                                You cannot undo delete.<br/>
-                                Are you sure?
-                            </div>
-                            <div style={{textAlign: 'center'}}>
-                                <Button style={{marginBottom: 10, color: '#000'}}
-                                        variant='contained'
-                                        onClick={handleDelete}
-                                        edge='start'
-                                        color='error'
-                                >
+                {editEnabled &&
+                    <div style={{display: 'flex'}}>
+                        <div style={{marginLeft: 0}}>
+                            {evid &&
+                                <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'
+                                        disabled={!evid}>
                                     Delete
                                 </Button>
-                            </div>
-                        </Menu>
+                            }
+                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                <div style={{padding: 20, textAlign: 'center'}}>
+                                    You cannot undo delete.<br/>
+                                    Are you sure?
+                                </div>
+                                <div style={{textAlign: 'center'}}>
+                                    <Button style={{marginBottom: 10, color: '#000'}}
+                                            variant='contained'
+                                            onClick={handleDelete}
+                                            edge='start'
+                                            color='error'
+                                    >
+                                        Delete
+                                    </Button>
+                                </div>
+                            </Menu>
+                        </div>
+                        <div style={{
+                            width: '100%',
+                            textAlign: 'right',
+                            padding: '0px 12px 8px 0px'
+                        }}>
+                            <Button style={{marginRight: 10, color: cancelColor}}
+                                    onClick={cancelEdit}
+                                    disabled={!updated}
+                            >
+                                Cancel
+                            </Button>
+                            <Button style={{marginRight: 0, color: saveEntryColor}}
+                                    onClick={handleSave}
+                                    disabled={!updated || entryError}
+                            >
+                                Save
+                            </Button>
+                        </div>
                     </div>
-                    <div style={{
-                        width: '100%',
-                        textAlign: 'right',
-                        padding: '0px 12px 8px 0px'
-                    }}>
-                        <Button style={{marginRight: 10, color: cancelColor}}
-                                onClick={cancelEdit}
-                                disabled={!updated}
-                        >
-                            Cancel
-                        </Button>
-                        <Button style={{marginRight: 0, color: saveEntryColor}}
-                                onClick={handleSave}
-                                disabled={!updated || entryError}
-                        >
-                            Save
-                        </Button>
-                    </div>
-                </div>
-
+                }
             </React.Fragment>
 
         </LocalizationProvider>
