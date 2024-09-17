@@ -17,10 +17,10 @@ function EvidenceButton({id}) {
     const {cardEvidence} = useContext(ScorecardDataContext)
 
     const recordings = cardEvidence
-        .filter(evid => evid.matchId === id)
-        .sort((a, b) => {
-            return b.points - a.points
-        }).filter(x => x)
+        .filter(evid => evid.id === id)
+        .filter(x => x)
+
+    console.log('id', id)
 
     const handleOverlayOpen = useCallback(id => {
         setEditRecId(id)
