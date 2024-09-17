@@ -2,6 +2,27 @@
 
 Master's Projects -- also known as Epic Quests -- are an integral part of Black Belt requirements and Dan System advancement. They give Black Belts further levels of mastery to aspire to and achieve, to incentivize them to remain in the community and enrich it with knowledge, and to increase the scope of what is possible within picking and locksport in general.
 
+Earning Dan Points can be accomplished completing projects within the following Disciplines.
+
+- Challenge Locks
+- Community Involvement
+- Cutaway Making
+- Disc Detainer Pick Making
+- Impressioning
+- Lock Design
+- Lock Manufacturing
+- Pick Making
+- Picking Instruction
+- Safe Lock Manipulation
+- Tool Making
+- Tool Manufacturing
+- Other Approved Projects
+
+You can also nominate others to receive points through:
+- Exceptional Knowledge of Locks
+- Community Leadership
+- Lock Distribution
+
 Completed projects will be submitted for a vote in the Black Belt community in “The Mat” Discord channel to place them within the tier structure for that discipline. The generic tier point structure is below. Some Disciplines may have fewer tiers and/or less point value based on their relative difficulty.
 
 ### Tier levels
@@ -33,7 +54,7 @@ Note: evidence should be images/text/video links etc, ideally in a pdf document 
 - **Tier 1** - Portfolio of 3 good CLs or a very high quality one-off
 - **Tier 2** - Portfolio of 5 well constructed CLs of high level craftsmanship including minimum 2 locks with unusual security features*. Artistic merit can help elevate a standard mid level CL to high level craftsmanship.
   - Example of a tier 2 challenge lock project: [Challenge Lock Evidence](https://docs.google.com/document/d/1CSDu3E3V9ljTW4ADj_tRX4cNr7Q7VAUum_1h_u0LZyg/edit)
-- **Tier 3** - Portfolio of at least 10 well constructed CLs featuring minimum of 5 locks with unusual security features*. Thematic sets, high quality artistic merit, or an attempt at technical innovation can help elevate a mid level quality CL to high level craftsmanship.
+- **Tier 3** - Portfolio of at least 10 well constructed CLs featuring minimum of 5 locks with unusual security features*. Thematic sets, high quality artistic merit, or an attempt at technical innovation can help elevate a mid-level quality CL to high level craftsmanship.
 - **Tier 4** - Relevant contribution to the pool of advanced high quality CLs (at least 20 CLs, many of which with advanced or unusual security features). Verifiable technical innovation in pin making or locking mechanisms. Significant contribution with mentoring the production and distribution of high quality challenge locks.
 - **Tier 5** - Significant portfolio of advanced challenge locks (at least 40 CLs, many of which with advanced or unusual security features). Recognized community wide as an expert challenge lock maker, innovator, mentor, promoter and distributor.
 
@@ -74,14 +95,14 @@ The cutaway locks should be completely functional with a working key. Exceptions
 
 ### Impressioning
 
-- **Tier 1** - Blind impressioning* of a simple wafer lock or 4 or less pins pin tumbler.
+- **Tier 1** - Blind impressioning* of a simple wafer lock or 4 or fewer pins in a pin tumbler.
 - **Tier 2** - Blind impressioning of 5 or more pins, simple pin tumbler or dimple lock.
   - Example of a tier 2 impressioning project: https://youtu.be/NWfle86S6oQ
 - **Tier 3** - Blind impressioning of at least 2 pin tumblers or dimple locks, that include 2+ keypins with significant security features, or false gated elements.
 - **Tier 4** - Blind impressioning of 2 locks of each of 3 different types of locks (wafer, pin tumbler, dimple, lever...).
 - **Tier 5** - Portfolio of advanced impressioning skill including various impressioned lock types. Must include demonstration of lever impressioning ability OR impressioning of a complex locking mechanism (example: rotating pin mechanisms).
 
-*Blind impressioning is defined as impressioned without access to the key or possibility to disassemble the lock. All Tiers must fulfill the previous ones. Being provided a lock from a trusted source (e.g. a member of LPU staff or a black belt) who can vouch for it being keyless is acceptable. Unguttable padlocks are acceptable, as are other formats provided they can be made tamper proof, for example by sealing screws with wax or intentionally stripping screws to make them unremovable. 
+*Blind impressioning is defined as impressioned without access to the key or possibility to disassemble the lock. All Tiers must fulfill the previous ones. Being provided a lock from a trusted source (e.g. a member of LPU staff or a black belt) who can vouch for it being keyless is acceptable. Unguttable padlocks are acceptable, as are other formats provided they can be made tamperproof, for example by sealing screws with wax or intentionally stripping screws to make them unremovable. 
 
 ### Pick Making
 

@@ -16,12 +16,11 @@ import SortButton from '../../filters/SortButton.jsx'
 import {scorecardSortFields} from '../../data/sortFields'
 import FilterButton from '../../filters/FilterButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import {unclaimedEvidence} from '../../data/dataUrls'
+import {unclaimedEvidence, collectionsFullBB} from '../../data/dataUrls'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import {useLocation} from 'react-router-dom'
 import queryString from 'query-string'
 import blackBelts from './blackBelts.json'
-import {collectionsFullBB} from '../../data/dataUrls'
 
 function PreviewImportRoute() {
     const {isMobile} = useWindowSize()
