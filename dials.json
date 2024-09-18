@@ -70,7 +70,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -79,7 +79,7 @@
       "Standard Format",
       "Fence Lever Control Device"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "693fd901",
@@ -90,7 +90,7 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -128,7 +128,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "0638d9d8",
@@ -139,7 +139,7 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -148,13 +148,13 @@
       "Standard Format",
       "Fence Lever Control Device"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "e3a922f0",
     "make": "Chubb",
     "model": "7L08",
-    "group": "",
+    "group": "not rated",
     "fence": "",
     "wheels": "3",
     "digits": "0-99",
@@ -167,7 +167,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "e24e62b7",
@@ -178,13 +178,13 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "Tier 5",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
       "Vault Format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.177Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "75ddbd51",
@@ -208,13 +208,17 @@
     "id": "f5703ac0",
     "make": "Chubb",
     "model": "7K50",
-    "group": "",
-    "fence": "",
-    "wheels": "",
+    "group": "not rated",
+    "fence": "Gravity Lever",
+    "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
-    "features": [],
+    "tier": "Tier 3",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Vault Format"
+    ],
     "media": [
       {
         "title": "By: Cheesehead",
@@ -238,7 +242,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "19359f35",
@@ -249,7 +253,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -302,7 +306,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956795523_4831dfc727_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-29T18:27:37.318Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "087f41e9",
@@ -313,7 +317,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -331,7 +335,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955620502_2d16cbdaa3_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-29T18:27:37.318Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "58441a32",
@@ -342,7 +346,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -381,7 +385,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "74ac6513",
@@ -392,7 +396,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -400,7 +404,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "91242adb",
@@ -411,9 +415,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "9ba1d776",
@@ -424,9 +428,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
     "id": "4c87c9aa",
@@ -437,9 +441,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "0c0fcaa3",
@@ -450,9 +454,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "5801c35c",
@@ -463,7 +467,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
     "media": [
       {
@@ -488,7 +492,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53988930936_34de3b738f_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T02:37:13.781Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "183de4b2",
@@ -499,9 +503,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "531f16d1",
@@ -512,9 +516,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "48b6f239",
@@ -525,7 +529,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -533,7 +537,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "2f6b4c23",
@@ -552,14 +556,14 @@
     "id": "995fe19d",
     "make": "Fichet-Bauche",
     "model": "Moneo",
-    "group": "",
+    "group": "not rated",
     "fence": "",
     "wheels": "7",
     "digits": "1-13",
     "notes": "",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "b8ad025e",
@@ -570,9 +574,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "9e99b0ed",
@@ -583,9 +587,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "539f0577",
@@ -596,9 +600,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.308Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "6ac1cea2",
@@ -609,9 +613,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "cbeab2a1",
@@ -756,9 +760,9 @@
     "wheels": "4",
     "digits": "1-100",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "610d201c",
@@ -1048,9 +1052,9 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "82847ba5",
@@ -1348,7 +1352,7 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 3",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1357,7 +1361,7 @@
       "Indirect drive",
       "LOBC"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "0e6f7715",
@@ -1381,9 +1385,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "66e4c71a",
@@ -1394,9 +1398,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-09-18T01:44:48.010Z"
   },
   {
     "id": "a377c77f",
@@ -1420,9 +1424,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "2c418e8a",
@@ -1433,9 +1437,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "c427020e",
@@ -1446,7 +1450,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "Tier 5",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -1500,7 +1504,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "56fed723",
@@ -1511,7 +1515,7 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 4",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -1521,7 +1525,7 @@
       "False Gates",
       "Sprung Double-Cam"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "c51157c7",
@@ -1549,7 +1553,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -1557,13 +1561,13 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "7bdc4f32",
     "make": "Rench",
     "model": "4031",
-    "group": "",
+    "group": "2",
     "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
@@ -1576,7 +1580,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "ad3b6507",
@@ -2120,7 +2124,7 @@
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 2",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -2128,7 +2132,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "8a2dc6e5",
@@ -2547,7 +2551,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -2555,7 +2559,7 @@
       "Friction Fence",
       "Anti-manipulation Mechanisms"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "ac15ffba",
@@ -2566,7 +2570,7 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -2574,7 +2578,7 @@
       "Friction Fence",
       "Anti-manipulation Mechanisms"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "7ce746ae",
@@ -2582,10 +2586,10 @@
     "model": "B40",
     "group": "1R",
     "fence": "Friction Fence",
-    "wheels": "3",
+    "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Mesh Change",
@@ -2593,7 +2597,7 @@
       "Friction Fence",
       "Anti-manipulation Mechanisms"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-09-18T01:44:48.011Z"
   },
   {
     "id": "b6f20651",
@@ -2601,10 +2605,10 @@
     "model": "B41",
     "group": "1",
     "fence": "Friction Fence",
-    "wheels": "3",
+    "wheels": "4",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 5",
     "features": [
       "Moveable Flies",
       "Key Change",
@@ -2612,7 +2616,7 @@
       "Friction Fence",
       "Anti-manipulation Mechanisms"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-09-18T01:44:48.012Z"
   },
   {
     "id": "6eeba243",

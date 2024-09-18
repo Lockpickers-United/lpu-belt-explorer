@@ -11,10 +11,6 @@
     }
   },
   {
-    "term": "ACF",
-    "definition": "Acronym for \"Association des Crocheteurs de France\", the French Lockpickers Association, founded by enthusiasts of non-destructive entry. The Association promotes research and education in locksport, as well as championships."
-  },
-  {
     "term": "active sidebar",
     "definition": "Sidebar that has an active role in the locking mechanism, i.e., interacts with coding elements of the lock that must be picked.",
     "media": {
@@ -59,18 +55,6 @@
     }
   },
   {
-    "term": "AWL",
-    "definition": "Acronym for All Wheels Left, indicating dialling all wheels CCW while taking readings."
-  },
-  {
-    "term": "AWR",
-    "definition": "Acronym for All Wheels Right, indicating dialling all wheels CW while taking readings."
-  },
-  {
-    "term": "balanced stacks",
-    "definition": "Pin stacks where key pin and driver pin length are matched so that all stacks in the lock are roughly of equal height. Intended to reduce spring wear and make a lock resistant to decoding attacks that rely on knowing driver length."
-  },
-  {
     "term": "ball bearing locking mechanism (padlocks)",
     "definition": "Unshimmable mechanism in padlocks where ball bearings are pushed into the shackle to prevent opening.",
     "media": {
@@ -93,10 +77,6 @@
     }
   },
   {
-    "term": "bi-directional",
-    "definition": "Lock which can turn either clockwise or counter clockwise from the locked position to unlock the mechanism. "
-  },
-  {
     "term": "bible",
     "definition": "The part of a pin tumbler lock where the driver pins and springs reside.",
     "media": {
@@ -117,10 +97,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448597624/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53448597624_ac642550d8_o.jpg"
     }
-  },
-  {
-    "term": "binding",
-    "definition": "The resistance to motion of an unset pin due to friction, usually against the sides of the bible chamber, when tensioning."
   },
   {
     "term": "bitting",
@@ -171,10 +147,6 @@
     }
   },
   {
-    "term": "BOK",
-    "definition": "Acronym for [bottom of the keyway](/#/glossary?term=bottom%20of%20the%20keyway)."
-  },
-  {
     "term": "BOK tensioner",
     "definition": "The nickname used for a tensioner used in the bottom of the keyway. Sometimes just called BOK.",
     "media": {
@@ -208,10 +180,6 @@
     }
   },
   {
-    "term": "bottom of the keyway",
-    "definition": "The area of the keyway opposite to the pins in a normal pin tumbler; corresponds to the inferior area of the keyway when the bible is upwards; in regular euro cylinder installation, with the bible downwards, will be the top part of the keyway."
-  },
-  {
     "term": "bow",
     "definition": "The part of a key which is held, at the end of the blade/shaft.",
     "media": {
@@ -223,10 +191,6 @@
     }
   },
   {
-    "term": "brick",
-    "definition": "To prevent a lock from functioning or gutting without physical damage. Dropping a driver pin in the plug is a common way to brick a lock."
-  },
-  {
     "term": "BS",
     "definition": "Initials for \"British Standard\", from \"British Standards Institution\" (BSI), a ratings and standards organization that develops standards for locks and lock cylinders, based in United Kingdom. Present in the face or label of many locks (example: Yale Superior), the well known BSI [Kitemark](/#/glossary?term=kitemark) (\"heart\") logo identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked either one or three stars. In some of the LPU ranked lever locks, BS in the model name identifies this certification.",
     "media": {
@@ -236,14 +200,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53482369033/in/album-72177720314210693/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53482369033_7056031725_o.jpg"
     }
-  },
-  {
-    "term": "butterfly discs",
-    "definition": "Discs from a disc detainer lock which have an internal profile with angled reliefs at the point of contact with the key, reducing the clockwise motion of the disc during operation. Used as a picking defence in Abus disc detainer locks to allow the front and rear discs to be operated by an uncut portion of key but will over rotate if used for tension."
-  },
-  {
-    "term": "c-rake",
-    "definition": "Same as [snake rake](/#/glossary?term=snake%20rake)."
   },
   {
     "term": "cabinet lock",
@@ -334,10 +290,6 @@
     }
   },
   {
-    "term": "CL",
-    "definition": "Acronym for [Challenge Lock](/#/glossary?term=challenge%20lock)."
-  },
-  {
     "term": "comb pick",
     "definition": "Tool used to overlift all pin stacks, opening some low-security locks.",
     "media": {
@@ -371,10 +323,6 @@
     }
   },
   {
-    "term": "control key",
-    "definition": "Key used to remove a lock from its housing. Makes it easy to rekey a lock simply by swapping cores."
-  },
-  {
     "term": "core",
     "definition": "The term 'core' has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context.",
     "media": {
@@ -384,10 +332,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53465908136/in/album-72177720313985501/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53465908136_8c3d958b63_o.jpg"
     }
-  },
-  {
-    "term": "core bias",
-    "definition": "The use of springs or similar to keep the plug at a neutral position."
   },
   {
     "term": "core shims",
@@ -401,14 +345,6 @@
     }
   },
   {
-    "term": "countermilling",
-    "definition": "Regular cut in the chamber of a lock, widening the diameter in a portion of it. Sometimes refering to [undercut](/#/glossary?term=undercut%20milling) type of milling."
-  },
-  {
-    "term": "counterrotation",
-    "definition": "To rotate the plug towards neutral from a false set. Can be caused by the lock elements, usually spools, or done manually. Sometimes written counter-rotation."
-  },
-  {
     "term": "curtain",
     "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs.",
     "media": {
@@ -418,10 +354,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53467772702/in/album-72177720313985501/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53467772702_4cfdfe091b_o.jpg"
     }
-  },
-  {
-    "term": "cut",
-    "definition": "A single part of the bitting to interface with a single element."
   },
   {
     "term": "cutaway",
@@ -479,18 +411,6 @@
     }
   },
   {
-    "term": "DBS",
-    "definition": "Short for [disc blocker system](/#/glossary?term=disc%20blocker%20system)."
-  },
-  {
-    "term": "DD",
-    "definition": "Short for [Disc Detainer](/#/glossary?term=disc%20detainer)."
-  },
-  {
-    "term": "DD Pick / Disc Pick",
-    "definition": "Pick that has tensioner and tip rotating independently co-axially, used to pick disc detainer locks."
-  },
-  {
     "term": "deforest",
     "definition": "Pick profile with an offset shank, usually ending in a diamond style tip; in this case also called deforest (or DeForest) diamond or offset diamond. Named for its designer, Bill DeForrest, the name used by most manufacturers for this profile has since lost one of the 'r's. Deforest balls and gems exist also.",
     "media": {
@@ -524,18 +444,6 @@
     }
   },
   {
-    "term": "dial (picking)",
-    "definition": "To pick a lock with unsprung tumblers such as a disc detainer by moving tumblers directly to their correct position, mimicking the key."
-  },
-  {
-    "term": "dial ring",
-    "definition": "The outer disc with the reference marking(s) for aligning the dial numbers."
-  },
-  {
-    "term": "differs",
-    "definition": "An abbreviation of “different combinations\", meaning the number of different keys that can be made for a specific model of lock. This will depend on the design of the key, the number of locking components, the number of available positions for each component, and the tolerances of the lock."
-  },
-  {
     "term": "dimple",
     "definition": "Generally used to identify a certain subtype of pin tumblers in which the coding is marked on the key mainly on the flat side; this distinction is useful from a tool choice perspective; although used to refer to the lock type itself, this isn’t technically correct, as the word “dimple” actually designates the round markings on the wide face of the key where the keypins make contact.",
     "media": {
@@ -545,26 +453,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53449197029/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53449197029_e23183e517_o.jpg"
     }
-  },
-  {
-    "term": "dimple pick",
-    "definition": "See [flag](/#/glossary?term=flag)."
-  },
-  {
-    "term": "disc blocker system",
-    "definition": "Often abbreviated to DBS. A system in disc detainer locks which locks the discs in position when tension is applied. Versions are included in Abloy Protec and Protec2, and Tokoz Pro."
-  },
-  {
-    "term": "disc controller",
-    "definition": "Sometimes abbeviated to DC. Bars in the keyway of a disc detainer lock which center the key and restrict access for picking tools."
-  },
-  {
-    "term": "disc detainer",
-    "definition": "A type of lock that uses unsprung rotating discs and a sidebar. The key repositions the discs so that gates align, the sidebar drops into them and the plug can rotate."
-  },
-  {
-    "term": "disc steering system",
-    "definition": "Often abbreviated to DSS, consists of 2 half moon shaped sliders that interact with dimples on the key, retracting into them to allow for plug rotation. The inner nubs of these sliders restrict picking space, and the nubs in the outer edge will block the plug rotation unless the sliders drop properly in place."
   },
   {
     "term": "double bitted",
@@ -633,10 +521,6 @@
     }
   },
   {
-    "term": "DSS",
-    "definition": "See [disc steering system](/#/glossary?term=disc%20steering%20system)."
-  },
-  {
     "term": "dumbbell pin",
     "definition": "A type of DOM pin, similar to a spool, but with an t-pin-like extension on each side, that is flared out at the tip. It's one of the \"magic\" DOM pins.",
     "media": {
@@ -654,12 +538,9 @@
       "title": "By: Mick777Oz",
       "subtitle": "CC BY-NC-SA 4.0",
       "thumbnailUrl": "https://live.staticflickr.com/65535/53896991514_45d5780663_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896991514/in/album-72177720319269835/"
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896991514/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896991514_bc9495e562_o.jpg"
     }
-  },
-  {
-    "term": "element",
-    "definition": "Movable part of the locking mechanism preventing the lock from opening. See [tumbler](/#/glossary?term=tumbler)."
   },
   {
     "term": "euro-profile cylinder",
@@ -717,10 +598,6 @@
     }
   },
   {
-    "term": "feedback",
-    "definition": "The auditory, visual, and tactile sensations from a lock during picking."
-  },
-  {
     "term": "fence (safe locks)",
     "definition": "The portion of the lever that slots into the wheels when the gate of the wheel directly faces it.",
     "media": {
@@ -730,18 +607,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896892538/in/album-72177720319269835/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53896892538_abba41fd64_o.jpg"
     }
-  },
-  {
-    "term": "fingerpin",
-    "definition": "See [rotating fingerpin](/#/glossary?term=rotating%20fingerpin)."
-  },
-  {
-    "term": "fixed disc",
-    "definition": "A disc in a DD that can't be turned, fixed in place."
-  },
-  {
-    "term": "fixed fly",
-    "definition": "Simple peg that \"catches\" the next wheel, mostly seen on older or cheaper locks."
   },
   {
     "term": "flag",
@@ -766,22 +631,6 @@
     }
   },
   {
-    "term": "float picking",
-    "definition": "A special technique for picking pin tumblers where the picker completely controls the plug movement. This allows for careful manual counterrotation, for instance, to set a gin spool from the countermilling without dropping other pins. Can be done using one very well fitting tensioner, or two tensioners."
-  },
-  {
-    "term": "fly",
-    "definition": "The linkage between wheels, a simple version would be a peg protruding which catches a peg on the next wheel."
-  },
-  {
-    "term": "follower",
-    "definition": "See [plug follower](/#/glossary?term=plug%20follower)."
-  },
-  {
-    "term": "forbidden zone",
-    "definition": "A zone in which the last number of the combination must not be set to, as it can cause a mechanical malfunction."
-  },
-  {
     "term": "forked keypins",
     "definition": "Keypins that have been shaped with a forked extremity where they contacts the key. This is usually to make mastering easier without the addition of mastering wafers.",
     "media": {
@@ -804,22 +653,6 @@
     }
   },
   {
-    "term": "front tension",
-    "definition": "A disc detainer lock that can be front tensioned can be picked while tensioned from the front disc."
-  },
-  {
-    "term": "front-reading",
-    "definition": "Dial is read from the face of the dial (parallel with spindle orientation)."
-  },
-  {
-    "term": "front/rear tension",
-    "definition": "A disc detainer lock that can be front or rear tensioned can be picked while tensioned from either the front or rearmost disc."
-  },
-  {
-    "term": "FSIC",
-    "definition": "Acronym for Full Size Interchangeable Core. Similar to LFIC, it's a type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). Unlike [SFIC](/#/glossary?term=SFIC), neither [LFIC](/#/glossary?term=LFIC) or FSIC are a universal formats. While in most LFIC's the control key lifts the pins to a second shear line, FSIC control key is usually longer and has an extra cut, that interacts with the last pin controling the holding bar or pin. See also [SFIC](/#/glossary?term=SFIC) and [LFIC](/#/glossary?term=LFIC)."
-  },
-  {
     "term": "gate",
     "definition": "A divot on a slider or disc that allows the sidebar to fall into it.",
     "media": {
@@ -831,10 +664,6 @@
     }
   },
   {
-    "term": "gate (dials)",
-    "definition": "The portion of the wheel cut to allow the fence to fall in."
-  },
-  {
     "term": "gin spool drivers",
     "definition": "Spools that have a thinner lip at one end than at the other, usually to interact with countermilling. So called because they loosely resemble a gin bottle. Also called gin bottle spool, gin spool or just gin.",
     "media": {
@@ -844,10 +673,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451579976/in/album-72177720313919453/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53451579976_fb2ab812a3_o.jpg"
     }
-  },
-  {
-    "term": "graduated spools",
-    "definition": "Spools with a gradual taper in diameter reducing from the ends to the center. Also known as hourglass spools."
   },
   {
     "term": "grubbing",
@@ -916,10 +741,6 @@
     }
   },
   {
-    "term": "holding pin / bar",
-    "definition": "Element in [FSICs](/#/glossary?term=FSIC) and some [LFICs](/#/glossary?term=LFIC) that hold the lock cylinder inside the housing."
-  },
-  {
     "term": "hook",
     "definition": "Tool used for single pin picking, shaped like a thin flat metal bar with a raised hook at the end to lift pins.",
     "media": {
@@ -931,10 +752,6 @@
     }
   },
   {
-    "term": "hourglass spools",
-    "definition": "Spools with a gradual taper in diameter reducing from the ends to the center. Also known as graduated spools."
-  },
-  {
     "term": "housing",
     "definition": "The part of a lock the plug is placed into, containing the bible.",
     "media": {
@@ -944,14 +761,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455331238/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455331238_7759d0c1fc_o.jpg"
     }
-  },
-  {
-    "term": "HPC",
-    "definition": "Acronym for [high pin count](/#/glossary?term=high%20pin%20count). Also a well-established brand of picks sold mainly in the United States."
-  },
-  {
-    "term": "impressioning",
-    "definition": "A method for creating a key without gutting or picking, using binding and jiggle tests and a file."
   },
   {
     "term": "interactive element",
@@ -974,18 +783,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53471523318/in/album-72177720314155751/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53471523318_636da2e716_o.jpg"
     }
-  },
-  {
-    "term": "jiggle",
-    "definition": "The allowed motion of a set element due to lock tolerances. See [Jiggle Test](/#/glossary?term=jiggle%20test)."
-  },
-  {
-    "term": "jiggle test",
-    "definition": "A test to see whether an element is set or not by seeing if it has a small jiggle to it, corresponding to the spring movement. If there is none, it is binding or under/overset."
-  },
-  {
-    "term": "jigglers",
-    "definition": "Tools that are meant to emulate different types of bitting, usually for water locks, and to be used as a key. The user will try to jiggle various of these jigglers inside a lock in turn until they get the lock opened."
   },
   {
     "term": "key blank",
@@ -1065,14 +862,6 @@
     }
   },
   {
-    "term": "kitemark",
-    "definition": "Present in the face or label of many locks (example: Yale Superior), the well known [BSI](#/glossary?term=BS) certification Kitemark (\"heart\" logo) identifies safety and security systems and devices that have been certified as meeting those standards of safety or security. In the case of lock cylinders they can be ranked one star (protection against physical attack, key security, fire resistance, durability, plug extraction, and lock bumping) or three stars (additional snap protection)."
-  },
-  {
-    "term": "l-rake",
-    "definition": "Same as [city rake](/#/glossary?term=city%20rake)."
-  },
-  {
     "term": "laminated padlock",
     "definition": "Padlock constructed from multiple layers of metal plates, usually steel, laminated and riveted together. The laminated lock body contains a traditional core, locking mechanism, and shackle.",
     "media": {
@@ -1117,30 +906,6 @@
     }
   },
   {
-    "term": "lever pick",
-    "definition": "A tool used to pick levers, either similar to a disc detainer pick or an L shaped wire."
-  },
-  {
-    "term": "lever/sidebar",
-    "definition": "Type of locking mechanism where levers interact with a sidebar, generally through gates, instead of a talon, allowing the sidebar to drop into the gates when the correct key is inserted and the plug to rotate"
-  },
-  {
-    "term": "LFIC",
-    "definition": "Acronym for Large Format Interchangeable Core. A type of lock that can be removed from its housing with one key, and opened with another, called the [control key](/#/glossary?term=control%20key). This key's action usually lifts the pins to a second shear line, allowing for the retraction of the holding pin or bar. See also [FSIC](/#/glossary?term=FSIC) and the smaller [SFIC](/#/glossary?term=SFIC)"
-  },
-  {
-    "term": "LOBC",
-    "definition": "Acronym for Locked On By Combination. Backplate cannot be removed without the proper combination."
-  },
-  {
-    "term": "lock",
-    "definition": "I hope you know what this means."
-  },
-  {
-    "term": "locking mechanism",
-    "definition": "A set of elements inside the lock that prevent it from being opened without the insertion of the correct key."
-  },
-  {
     "term": "LOTO",
     "definition": "Lock Out Tag Out locks, used for maintenance work and safety applications. Should NEVER be picked in the field, are often inexpensive.",
     "media": {
@@ -1150,10 +915,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53454890160/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53454890160_953a75bdde_o.jpg"
     }
-  },
-  {
-    "term": "MACS",
-    "definition": "Maximum Adjacent Cut Specification. A rule for maximum height difference between adjacent bitting heights on a key. These vary with each lock model. Violation of MACS does not result in an unusable lock but does increase probablility that the key will not work properly in the lock."
   },
   {
     "term": "magic DOM drivers",
@@ -1167,30 +928,6 @@
     }
   },
   {
-    "term": "magic-module-footprint",
-    "definition": "A standard format for safe locks implemented originally by Sargent and Greenleaf."
-  },
-  {
-    "term": "magnetic pins",
-    "definition": "Ferromagnetic pins or magnetized pins in a lock, or that are subject to a magnet placed on the key."
-  },
-  {
-    "term": "magnetic rotors",
-    "definition": "Ferromagnetic rotors or magnetized rotors in a lock, or that are subject to a magnet placed on the key. See [rotors(/#/glossary?term=rotors)."
-  },
-  {
-    "term": "magnetic sliders",
-    "definition": "Ferromagnetic rotors or magnetized rotors in a lock, or that are subject to a magnet placed on the key. See [slider(/#/glossary?term=slider)."
-  },
-  {
-    "term": "master ring",
-    "definition": "A unique mechanism similar to SFIC, but allowing 2 unique control keys instead of a control and operating key."
-  },
-  {
-    "term": "master wafer",
-    "definition": "Very thin pins used to facilitate mastering in pin tumbler locks."
-  },
-  {
     "term": "mastering",
     "definition": "Adding (or removing) components within a lock to allow more than 1 unique key to work in the same lock.",
     "media": {
@@ -1200,10 +937,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470466569/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53470466569_06cfee0cda_o.jpg"
     }
-  },
-  {
-    "term": "mesh change",
-    "definition": "Inner and outer wheels with a toothed mesh between them, pop them apart and turn them to desired combo, reassemble."
   },
   {
     "term": "mortise",
@@ -1261,14 +994,6 @@
     }
   },
   {
-    "term": "music wire",
-    "definition": "A type of wire used in pianos, that is a good material to construct lever lock picks and similar tools."
-  },
-  {
-    "term": "nipple pins",
-    "definition": "Another name for [bottlenose pins](/#/glossary?term=bottlenose%20pins)"
-  },
-  {
     "term": "nose",
     "definition": "The portion of the lever that rests on the cam wheel.",
     "media": {
@@ -1278,18 +1003,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53897075710/in/album-72177720319269835/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53897075710_05123ddc27_o.jpg"
     }
-  },
-  {
-    "term": "offset diamond",
-    "definition": "See [DeForest(/#/glossary?term=deforest)."
-  },
-  {
-    "term": "open keyway",
-    "definition": "A keyway that has little or no significant warding in the direction of the middle line. Not [paracentric](/#/glossary?term=paracentric)"
-  },
-  {
-    "term": "operating key",
-    "definition": "A key used to turn the plug. Only used when a control key also exists."
   },
   {
     "term": "opposing overset stacks",
@@ -1347,22 +1060,6 @@
     }
   },
   {
-    "term": "paracentric keyway",
-    "definition": "A paracentric keyway is a security feature, most commonly seen in european and australian pin tumblers, in which the warding in the keyway protrudes past the vertical centerline of the keyway. The goal of this feature is to reduce the space available for inserting a picking tool and moving it in a way that allows the elements to be picked."
-  },
-  {
-    "term": "parking (wheel isolation)",
-    "definition": "Technique used to isolate contact point readings to a single wheel."
-  },
-  {
-    "term": "partial gut",
-    "definition": "Denotes a lock which is difficult to fully disassemble and can be used in a belt request without documentation of full gutting."
-  },
-  {
-    "term": "passive pin",
-    "definition": "A pin that doesn't have a coding role in the lock and doesn't need to be picked to open the lock. Generally used for key control."
-  },
-  {
     "term": "passive sidebar",
     "definition": "A sidebar that does not interact with coding elements of the lock needing to be picked. Usually related with key control function.",
     "media": {
@@ -1372,10 +1069,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470409520/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53470409520_8f5cba6e07_o.jpg"
     }
-  },
-  {
-    "term": "pin change",
-    "definition": "Pin used for the fly is put in one of a series of holes around the wheel circumference, changing the fly's position changes the combination number for that wheel."
   },
   {
     "term": "pin key",
@@ -1455,10 +1148,6 @@
     }
   },
   {
-    "term": "PIP",
-    "definition": "Acronym for [pin-in-pin](/#/glossary?term=pin-in-pin)."
-  },
-  {
     "term": "pipe key",
     "definition": "A lever key with hollow cylindrical shaft, to interface with a drill pin.",
     "media": {
@@ -1468,14 +1157,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458113446/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458113446_1e1c1bc9a0_o.jpg"
     }
-  },
-  {
-    "term": "plate key",
-    "definition": "A [flat steel key](/#/glossary?term=flat%20steel%20key)."
-  },
-  {
-    "term": "plongus",
-    "definition": "That's a really interesting question. The fact of the matter is that the question itself is very interesting. Is it a plongus, or to plongus? Or do plongus plongus? Before we get stuck in the superficial meaning of plongus, we might want to deep dive into the philosophical issue of how plongus came to be. But that might be a matter for another day."
   },
   {
     "term": "plug",
@@ -1500,14 +1181,6 @@
     }
   },
   {
-    "term": "plug retention",
-    "definition": "The use of circlips or similar to prevent a plug from falling out by itself or when pulled."
-  },
-  {
-    "term": "PP",
-    "definition": "Acronym for [progressive pinning](/#/glossary?term=progressive%20pinning)."
-  },
-  {
     "term": "probe",
     "definition": "Simple tool used for manipulating and testing lock components. Can be used to open inexpensive [cam locks](/#/glossary?term=cam%20locks) and padlocks by directly moving the locking pawl.",
     "media": {
@@ -1530,18 +1203,6 @@
     }
   },
   {
-    "term": "profile discs",
-    "definition": "Discs which have additional material in the keyway to restrict access for unauthorised key profiles or picking tools."
-  },
-  {
-    "term": "prog",
-    "definition": "Colloquial for [progressive pinning](/#/glossary?term=progressive%20pinning)."
-  },
-  {
-    "term": "progressive pinning",
-    "definition": "Learning how to open a lock by removing tumblers, slowly replacing them as you pick until fully pinned."
-  },
-  {
     "term": "prybar",
     "definition": "Tool generally used for TOK tensioning.",
     "media": {
@@ -1551,10 +1212,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458237508/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458237508_7f7e0dd1a8_o.jpg"
     }
-  },
-  {
-    "term": "pump lock",
-    "definition": "See [push](/#/glossary?term=push)."
   },
   {
     "term": "push",
@@ -1579,26 +1236,6 @@
     }
   },
   {
-    "term": "random mid tension",
-    "definition": "A disc detainer lock that is random mid tensioned can be picked while tensioned from an unknown disc  (not the front or rear disc)"
-  },
-  {
-    "term": "rattle club",
-    "definition": "One enters the \"rattle club\" by purposefully or, most commonly, accidentally, turning a Masterlock 410 LOTO's core 180º, or enough so that the keypins drop from the lock body into the inside of the plastic housing of the padlock. Because the keypins are now freely jiggling inside a mostly empty padlock body, you can listen to the rattling noise they make as you wiggle it around. It is said the padlock has turned into a rattle."
-  },
-  {
-    "term": "rear tension",
-    "definition": "To tension a disc detainer or similar lock by reaching in with a tool and turning an element at the back of the lock."
-  },
-  {
-    "term": "return bars",
-    "definition": "A pair of bars in a bi-directional disc detainer lock which limit the rotation and return the discs to a neutral position as the lock is relocked "
-  },
-  {
-    "term": "reverse sidebar",
-    "definition": "Sidebar that is spring biased into the plug with weaker springs than the sliders, preventing setting and feedback."
-  },
-  {
     "term": "rim cylinder",
     "definition": "Cylinder similar to a mortise cylinder to be installed directly in a door, with the use of screws.",
     "media": {
@@ -1621,10 +1258,6 @@
     }
   },
   {
-    "term": "rotary gear fence",
-    "definition": "A fence looking much like a wing nut with a gear mounted to it. The gear is not fused to the fence but can turn independantly but with some friction. Also known as a [Friction Fence](/#/glossary?term=Friction%20Fence)."
-  },
-  {
     "term": "rotating fingerpins",
     "definition": "Subtype of sidepin with extended prong that interacts with the key, with rotational as well as vertical lift coding (must be lifted and rotated). Generally associated to a sidebar. Also called simply fingerpin.",
     "media": {
@@ -1634,18 +1267,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448885038/in/album-72177720313869627/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53448885038_db6a86e52e_o.jpg"
     }
-  },
-  {
-    "term": "rotating gated keypins",
-    "definition": "Keypins that have gates that interact with a sidebar, rotating to the true gate when the correct key is inserted. "
-  },
-  {
-    "term": "rotors",
-    "definition": "Generally rounded or disc-like elements featuring a prong to interact with the key, another part of it interacting with another locking mechanism, like a sidebar. As the key is inserted, the prong moves along a laser cut track rotating the disc to the correct position to drop the sidebar into the gate."
-  },
-  {
-    "term": "sad assa",
-    "definition": "Known in LPU as the act of accidentally removing an unretained plug of a lock from the body while trying to remove the key, consequently causing pins and springs to jump everywhere. Was made infamous by the talented lockpicker Culper, who accidentally gutted an ASSA on video in this way. Video that was turned into a frequently used gif."
   },
   {
     "term": "safe lock",
@@ -1679,10 +1300,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53496823347/in/album-72177720314444642/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53496823347_e6095cb6f9_o.jpg"
     }
-  },
-  {
-    "term": "SCEC",
-    "definition": "The Security Construction and Equipment Committee (SCEC) is a standing interdepartmental committee responsible for the evaluation and endorsement of security equipment for use by Australian Commonwealth departments and agencies. Under SCEC rating different certifications are issued to locking systems, being approved for areas of different threat levels."
   },
   {
     "term": "security card",
@@ -1795,10 +1412,6 @@
     }
   },
   {
-    "term": "shark fin keypins",
-    "definition": "Keypins that have been shaped with a thin flat vertical tip, similar to a shark fin, where they contact the key. This is usually to prevent foil impressioning in dimple locks."
-  },
-  {
     "term": "shearline / shear line",
     "definition": "A line representing the height to which pins must be lifted for the lock to open.",
     "media": {
@@ -1887,10 +1500,6 @@
     }
   },
   {
-    "term": "single pin picking",
-    "definition": "Picking a lock by moving one element at a time under tension."
-  },
-  {
     "term": "skeletonized core",
     "definition": "Lock cylinder design where portions of the cylinder's material are removed or cut away, leaving a more open or 'skeleton-like' structure. Common in cheap locks, as a way to save money on material.",
     "media": {
@@ -1935,10 +1544,6 @@
     }
   },
   {
-    "term": "slider fork",
-    "definition": "Specialized pick, generaly custom made from a blank or broken pick, with the tip shaped like a two prong fork, as to grab both sides of a slider nub. Helps test for jiggle in unsprung sliders or wafers."
-  },
-  {
     "term": "slider track",
     "definition": "Sometimes called laser track (although many are milled), consists of a continuous cut forming a more or less wiggly line along the blade of the key where the nubs for sliders, wafers or rotors travel and move to their correct positions.",
     "media": {
@@ -1950,10 +1555,6 @@
     }
   },
   {
-    "term": "sliding levers",
-    "definition": "Type of lever typical of italian lever locks. Technically not levers as they don't rotate about one point, but traditionally called so, for they are moved by the key in the same manner, allowing the talon of the bolt to pass through them to open the lock."
-  },
-  {
     "term": "snake rake",
     "definition": "Pick profile featuring two rounded waves at the tip, the first one wider and deeper, the other one shallower. Also called C-rake.",
     "media": {
@@ -1963,22 +1564,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498034866/in/album-72177720314444642/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53498034866_cc9710658b_o.jpg"
     }
-  },
-  {
-    "term": "spacer",
-    "definition": "Sheet metal between 2 discs or levers that remains stationary, allowing the rotation of one element to not affect adjacent one."
-  },
-  {
-    "term": "spindle",
-    "definition": "The shaft that the dial is mounted to, which transfers movement to the cam"
-  },
-  {
-    "term": "spline",
-    "definition": "The groove cut along the spindle."
-  },
-  {
-    "term": "spline key",
-    "definition": "Small 'key' used to lock the drive cam to the spindle."
   },
   {
     "term": "spool",
@@ -2003,16 +1588,15 @@
     }
   },
   {
-    "term": "SPP",
-    "definition": "Short for [Single Pin Picking](/#/glossary?term=single%20pin%20picking)."
-  },
-  {
-    "term": "sprung sliders",
-    "definition": "[Sliders](/#/glossary?term=slider) that are subject to spring tension keeping them in place."
-  },
-  {
-    "term": "spy guard",
-    "definition": "Use with top reading dials, leaves only a window from the top from which to read the dial."
+    "term": "spring lever",
+    "definition": "A lever fence that is pressed towards the wheel pack via spring pressure.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53896649476_8a7357a45b_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896649476/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53896649476_00a3605251_o.jpg"
+    }
   },
   {
     "term": "SSDeV",
@@ -2024,14 +1608,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53498338309/in/album-72177720314444642/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53498338309_47547f8bde_o.jpg"
     }
-  },
-  {
-    "term": "standard format",
-    "definition": "The smaller magic-module size."
-  },
-  {
-    "term": "standard pin",
-    "definition": "Pin which is shaped like a regular cylinder (with a bevel if it is a keypin)."
   },
   {
     "term": "swappable bitting",
@@ -2056,10 +1632,6 @@
     }
   },
   {
-    "term": "talon",
-    "definition": "The part of a bolt in a lever lock that slides into the levers when unlocked."
-  },
-  {
     "term": "tapered drivers",
     "definition": "Driver pins in which a few milimeters from one or both extremities, the diameter tapers to a slightly smaller one.",
     "media": {
@@ -2069,10 +1641,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451897689/in/album-72177720313919453/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53451897689_379955964e_o.jpg"
     }
-  },
-  {
-    "term": "telescoping pin",
-    "definition": "Same as [pin-in-pin](/#/glossary?term=pin-in-pin)."
   },
   {
     "term": "tensioner",
@@ -2086,14 +1654,6 @@
     }
   },
   {
-    "term": "throw",
-    "definition": "The movement of a bolt as the key rotates."
-  },
-  {
-    "term": "TOK",
-    "definition": "See [top of the keyway](/#/glossary?term=top%20of%20the%20keyway). (2) TOK tensioner: name coloquially given to a tensioner used in the top of the keyway"
-  },
-  {
     "term": "TOK tensioner",
     "definition": "The nickname for a tensioner used in the top of the keyway. Sometimes just called TOK (see [TOK](/#/glossary?term=TOK))",
     "media": {
@@ -2105,14 +1665,6 @@
     }
   },
   {
-    "term": "tolerances",
-    "definition": "(Machining) tolerance is defined as the total amount of variation a specific dimension can have from the given value. In locks, we refer to tolerances as the combined variation of, for example, the chamber diameters, or element or parts dimensions, to each other, or relative to the elements they interact with. This variation influences the way the lock binds and works. The better (tighter) the tolerences, the smaller the variation between the element dimensions, usually increasing the difficulty of a pick."
-  },
-  {
-    "term": "TOOOL",
-    "definition": "Acronym for \"The Open Organisation Of Lockpickers\", an international group of lockpicking enthusiasts dedicated to advancing the general public knowledge about locks and lockpicking through teaching, research, and competition. They organize in national groups, and in chapters. Largest and most important national TOOOL groups are in the US, UK and The Netherlands."
-  },
-  {
     "term": "top gutting",
     "definition": "Gutting a lock by removing covers or grubs on the bible and emptying pin stacks out from the top of the bible.",
     "media": {
@@ -2122,14 +1674,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53448406083/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53448406083_2afe4e6e33_o.jpg"
     }
-  },
-  {
-    "term": "top of the keyway",
-    "definition": "The area of the keyway on the same side of the pins in a normal pin-tumbler lock. Is positioned at the top of the lock when the bible is upwards. In regular euro cylinder installation with the bible downwards, it will be the bottom part of the keyway."
-  },
-  {
-    "term": "top-reading",
-    "definition": "Dial is read from above the dial (perpendicular with spindle orientation)."
   },
   {
     "term": "torpedo keypins",
@@ -2152,10 +1696,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451705603/in/album-72177720313919453/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53451705603_ed374da2a8_o.jpg"
     }
-  },
-  {
-    "term": "trap element",
-    "definition": "A pin or sidebar that blocks the rotation of the plug after picking and as one starts to rotate the plug if no key is inserted."
   },
   {
     "term": "tree drivers",
@@ -2191,10 +1731,6 @@
     }
   },
   {
-    "term": "tumbler",
-    "definition": "A moving element on a lock that prevents opening until the correct key is inserted."
-  },
-  {
     "term": "UL",
     "definition": "Initials for \"Underwriters Laboratories\", a ratings and standards organization that develops standards for locks, lock cylinders, and associated hardware, such as bolts and latches, based in United States. Present in the face of many locks (example: Medeco Biaxial), identifies safety and security systems and devices that have been certified as meeting those standards of security. In locks, different UL ratings exist, depending on the type of lock.",
     "media": {
@@ -2204,22 +1740,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53481327427/in/album-72177720314210693/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53481327427_0517c32e2f_o.jpg"
     }
-  },
-  {
-    "term": "UL 437",
-    "definition": "Underwriters Laboratories certification for key locks."
-  },
-  {
-    "term": "UL 768",
-    "definition": "Underwriters Laboratories certification for combination locks. Divides combination locks between groups according to resistance to unauthorized opening, either into Group 2 or 2M - moderately resistant - or Group 1 (1R if also resistant to radiological attacks) - highly resistant."
-  },
-  {
-    "term": "uncurtained",
-    "definition": "Lock without a [curtain](/#/glossary?term=curtain), generally referring to a lever lock."
-  },
-  {
-    "term": "under review ⚑",
-    "definition": "A lock that is currently in the classification queue, waiting for enough votes to be ranked."
   },
   {
     "term": "undercut milling",
@@ -2253,30 +1773,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53470358003/in/album-72177720314012610/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53470358003_ceda1c48b7_o.jpg"
     }
-  },
-  {
-    "term": "unsprung sliders",
-    "definition": "[Sliders](/#/glossary?term=slider) that are not subject to spring tension keeping them in place"
-  },
-  {
-    "term": "various formats",
-    "definition": "Describes a lock that is available in different physical formats, such as padlocks as well as door cylinders."
-  },
-  {
-    "term": "vault format",
-    "definition": "The larger magic-module size."
-  },
-  {
-    "term": "VdS",
-    "definition": "VdS certification is assigned by VdS Schadenverhütung GmbH, a german based institution specialising in fire protection, security and natural disaster prevention. Among other services, tests security products and certifies them by assigning them to classes which are used by insurance companies and the police. In locks, it's most commonly used for certification of security cabinets, safes, safe locks and strongboxes, but also comercial and residence locking systems and cylinders."
-  },
-  {
-    "term": "wafer",
-    "definition": "A tumbler shaped like a flat piece of metal, generally found in many mailbox locks. (2) A tumbler that slides in one direction, that is the size of the plug chamber it occupies. At rest it blocks the rotation of the plug by locking into grooves in the lock housing. As the correct key is inserted, it retracts into the plug completely. This definition does not consider the 'wafer-shaped' condition of the tumbler. Although somewhat controversial for that reason, it is the most accepted definition. (3) For some, a subset of sliders that block the rotation of the plug by locking into grooves in the housing. This is also somewhat controversial. (4) A lock that uses wafers as main locking mechanism."
-  },
-  {
-    "term": "ward",
-    "definition": "A fixed metalic obstruction inside a lock case used to block the rotation of a blank or a key that was not cut to pass around it. Used in lever or [warded locks](/#/glossary?term=warded%20lock)."
   },
   {
     "term": "warded lock",
@@ -2323,10 +1819,6 @@
     }
   },
   {
-    "term": "wheel shadowing",
-    "definition": "When a wheel hides a gate by having a side sitting above a gate, so the gate is never tried by the fence. Usually used when referring to locks with out-of-round wheels."
-  },
-  {
     "term": "wiper insert",
     "definition": "Steel insert from a windscreen wiper, often used to make tensioners - Or the tensioner made in the shape of such, usually BOK tensioners.",
     "media": {
@@ -2358,10 +1850,6 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455518409/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455518409_ca41b88b9f_o.jpg"
     }
-  },
-  {
-    "term": "zero change",
-    "definition": "When the change index is the same as the dialling index on key change locks. This requires a mechanism to hold the fence away from the wheels when the lock is in change mode."
   },
   {
     "term": "zero-bitted",
