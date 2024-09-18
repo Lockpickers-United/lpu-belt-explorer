@@ -277,7 +277,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                             <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
                         }
                         {controlForm === 'project' &&
-                            <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true}/>
+                            <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
                         }
                     </AccordionDetails>
                 </Accordion>

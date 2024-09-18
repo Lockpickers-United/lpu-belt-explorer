@@ -6,7 +6,7 @@ import entryName from '../../entries/entryName'
 import ViewLockButton from '../ViewLockButton.jsx'
 import EvidenceButton from '../EvidenceButton.jsx'
 
-function PopularEntry({entry}) {
+function PopularEntry({entry, owner}) {
 
     const rowColor= entry.link ? '#fff' : '#888'
 
@@ -26,7 +26,7 @@ function PopularEntry({entry}) {
             />
 
             <ViewLockButton entry={entry} color={rowColor}/>
-            <EvidenceButton id={entry.id}/>
+            <EvidenceButton id={entry.id} owner={owner}/>
         </ListItem>
     )
 }

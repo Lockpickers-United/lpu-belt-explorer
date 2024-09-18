@@ -120,7 +120,7 @@ function RecordingControls({lockId}) {
                                             style={{paddingBottom: 0}}
                                             onClick={handleOverlayClose}/>
                                 <CardContent>
-                                    <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose} source={'collectionButton'}/>
+                                    <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose} source={'collectionButton'} owner={true}/>
                                 </CardContent>
                             </Card>
                         </Backdrop>
