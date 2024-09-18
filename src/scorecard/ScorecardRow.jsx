@@ -18,12 +18,10 @@ import EvidenceForm from './EvidenceForm.jsx'
 
 import useWindowSize from '../util/useWindowSize.jsx'
 import Typography from '@mui/material/Typography'
-import AppContext from '../app/AppContext.jsx'
 
 function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
-    const {admin} = useContext(AppContext)
 
     const entry = getEntryFromId(evid.matchId)
     const project = getProjectEntryFromId(evid.matchId)
@@ -78,7 +76,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     let exceptionNote = evid.exceptionType === 'nomatch'
         ? 'Could not be matched to a lock or project'
         : evid.exceptionType === 'badlink'
-            ? 'Must provide a valid link.'
+            ? 'You must provide a valid link.'
             : evid.exceptionType === 'duplicate'
                 ? 'Duplicate of '
                 : evid.exceptionType === 'upgraded'
@@ -96,13 +94,13 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const dateColor = evid.date ? '#fff' : '#aaa'
 
     const handleChange = useCallback((_, isExpanded) => {
-        if (owner || admin) {
+        if (owner) {
             onExpand(isExpanded ? evid.id : false)
         }
-    }, [admin, evid.id, onExpand, owner])
+    }, [evid.id, onExpand, owner])
 
     const cursorStyle = !owner ? {cursor: 'default'} : {}
-    const expandIcon = owner || admin ? <ExpandMoreIcon/> : null
+    const expandIcon = owner ? <ExpandMoreIcon/> : null
 
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
@@ -201,7 +199,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             </div>
                         }
 
-                        <EvidenceForm evid={evid} owner={owner} handleUpdate={() => {
+                        <EvidenceForm evid={evid} handleUpdate={() => {
                         }}/>
 
                     </AccordionDetails>
