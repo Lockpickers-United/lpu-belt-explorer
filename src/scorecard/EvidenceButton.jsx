@@ -11,7 +11,7 @@ import Backdrop from '@mui/material/Backdrop'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import ScorecardDataContext from './ScorecardDataProvider'
 
-function EvidenceButton({id}) {
+function EvidenceButton({id, owner}) {
 
     const [editRecId, setEditRecId] = useState(null)
     const {cardEvidence} = useContext(ScorecardDataContext)
@@ -19,8 +19,6 @@ function EvidenceButton({id}) {
     const recordings = cardEvidence
         .filter(evid => evid.id === id)
         .filter(x => x)
-
-    console.log('id', id)
 
     const handleOverlayOpen = useCallback(id => {
         setEditRecId(id)
@@ -60,11 +58,11 @@ function EvidenceButton({id}) {
                         <CardContent>
                             {recordings.map((rec, index) =>
                                 <EvidenceForm evid={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}
-                                              key={index}/>
+                                              key={index} owner={owner}/>
                             )}
                             {recordings.length === 0 &&
                                 <EvidenceForm evid={null} lockId={id} handleUpdate={handleOverlayClose}
-                                              source={'collectionButton'}/>
+                                              source={'collectionButton'} owner={owner}/>
                             }
                         </CardContent>
                     </Card>
