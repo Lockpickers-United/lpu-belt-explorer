@@ -33,6 +33,16 @@
     }
   },
   {
+    "term": "anti-manipulation double-lever",
+    "definition": "A type of fence lever control device which lifts the lever fence away from the cam with rotation and requires the operator to trigger the mechanism.",
+    "media": {
+      "title": "By: Insomniaclockpicker",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/54004997980_9359dcc387_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54004997980/in/album-72177720319269835/"
+    }
+  },
+  {
     "term": "anti-punch relocker",
     "definition": "A spring loaded device which when the backplate removes, blocks the bolt with a lever. When the relocker is engaged, the lock will not open, even with the correct combination.",
     "media": {
@@ -199,6 +209,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53482369033_01110a92a7_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53482369033/in/album-72177720314210693/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53482369033_7056031725_o.jpg"
+    }
+  },
+  {
+    "term": "butterfly anti-manipulation cam",
+    "definition": "A drive cam which is mechanically operated. It prevents testing the wheel pack unless the dial is correctly positioned and the cam mechanism is operated.",
+    "media": {
+      "title": "By: Lock Manipulator",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/54004997805_15cff8e596_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54004997805/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/54004997805_419e321a1d_o.jpg"
     }
   },
   {
@@ -455,6 +476,10 @@
     }
   },
   {
+    "term": "direct-entry lever",
+    "definition": "A lever fence which is integral to the lock boltwork; making the boltwork the fence. The wheel pack directly prevents the boltwork being retracted."
+  },
+  {
     "term": "double bitted",
     "definition": "Reffering to lever lock keys, one that has two sets of bittings from each side of the key shaft.",
     "media": {
@@ -609,6 +634,17 @@
     }
   },
   {
+    "term": "fence lever control device",
+    "definition": "A device designed to only tension the lever fence against the wheel pack within a specific range on the dial. La Gard 3332 shown as example.",
+    "media": {
+      "title": "By: Mick777Oz",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/53897075195_a519d468b1_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53897075195/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/53897075195_2f552c8455_o.jpg"
+    }
+  },
+  {
     "term": "flag",
     "definition": "Lock pick used for dimple locks, shaped like a rod with a protrusion at the side of the tip. Also called dimple pick.",
     "media": {
@@ -642,6 +678,16 @@
     }
   },
   {
+    "term": "friction lever",
+    "definition": "A lever fence that is pressed towards the wheel pack via friction. With this type of lever fence the wheel pack is only tested when the dial is rotated CCW and thus only gives one contact point.",
+    "media": {
+      "title": "By: Cheesehead",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/54004806248_7c5c5415ca_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54004806248/in/album-72177720319269835/"
+    }
+  },
+  {
     "term": "front loader",
     "definition": "A piece of lock disassembly and reassembly equipment, rarely seen as a commercial tool, that allows for carefully removing and resetting pins in the the bible chambers of a full euro profile cylinder from the front. It includes a groove that will travel over the different chambers as you rotate the piece.",
     "media": {
@@ -672,6 +718,17 @@
       "thumbnailUrl": "https://live.staticflickr.com/65535/53451579976_c4ea5a020a_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53451579976/in/album-72177720313919453/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53451579976_fb2ab812a3_o.jpg"
+    }
+  },
+  {
+    "term": "gravity lever",
+    "definition": "A lever fence that is pressed towards the wheel pack via gravity.",
+    "media": {
+      "title": "By: InsomniacLockPicker",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/54004575811_0a9bc8dac4_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54004575811/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/54004575811_84010d6039_o.jpg"
     }
   },
   {
@@ -761,6 +818,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53455331238/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53455331238_7759d0c1fc_o.jpg"
     }
+  },
+  {
+    "term": "indirect drive",
+    "definition": "Rotating the wheel pack is done via intermediary gears. Implemented to make manipulation more difficult."
   },
   {
     "term": "interactive element",
@@ -1593,9 +1654,9 @@
     "media": {
       "title": "By: Mick777Oz",
       "subtitle": "CC BY-NC-SA 4.0",
-      "thumbnailUrl": "https://live.staticflickr.com/65535/53896649476_8a7357a45b_w_d.jpg",
-      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53896649476/in/album-72177720319269835/",
-      "fullSizeUrl": "https://live.staticflickr.com/65535/53896649476_00a3605251_o.jpg"
+      "thumbnailUrl": "https://live.staticflickr.com/65535/54004613192_7122e864a2_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54004613192/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/54004613192_4a11a77851_o.jpg"
     }
   },
   {
