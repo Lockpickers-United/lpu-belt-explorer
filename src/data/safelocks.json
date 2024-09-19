@@ -151,25 +151,6 @@
     "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
-    "id": "e3a922f0",
-    "make": "Chubb",
-    "model": "7L08",
-    "group": "not rated",
-    "fence": "",
-    "wheels": "3",
-    "digits": "0-99",
-    "notes": "",
-    "tier": "Tier 3",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
-    ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
-  },
-  {
     "id": "e24e62b7",
     "make": "Chubb",
     "model": "7K64",
@@ -187,27 +168,9 @@
     "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
-    "id": "75ddbd51",
-    "make": "Chubb",
-    "model": "7L51",
-    "group": "not rated",
-    "fence": "Spring Lever",
-    "wheels": "4",
-    "digits": "0-99",
-    "notes": "Standard size wheels",
-    "tier": "Tier 3",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Vault Format",
-      "Internal Indirect Drive"
-    ],
-    "lastUpdated": "2024-09-12T23:45:30.177Z"
-  },
-  {
     "id": "f5703ac0",
     "make": "Chubb",
-    "model": "7K50",
+    "model": "Brass Vault Lock (e.g 7K50/7K64)",
     "group": "not rated",
     "fence": "Gravity Lever",
     "wheels": "4",
@@ -220,6 +183,27 @@
       "Vault Format"
     ],
     "media": [
+      {
+        "title": "By: MartinHewitt",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54006528871_219084f860_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006528871/in/album-72177720314921522/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54006528871_436b49a629_o.jpg"
+      },
+      {
+        "title": "By: MartinHewitt",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54006855254_914af0235c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006855254/in/album-72177720314921522/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54006855254_246d4305cb_o.jpg"
+      },
+      {
+        "title": "By: MartinHewitt",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54005613537_0ac3712305_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54005613537/in/album-72177720314921522/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54005613537_89d6670879_o.jpg"
+      },
       {
         "title": "By: Cheesehead",
         "subtitle": "CC BY-NC-SA 4.0",
@@ -242,7 +226,44 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
     ],
+    "lastUpdated": "2024-09-19T15:58:18.908Z"
+  },
+  {
+    "id": "e3a922f0",
+    "make": "Chubb",
+    "model": "7L08",
+    "group": "not rated",
+    "fence": "",
+    "wheels": "3",
+    "digits": "0-99",
+    "notes": "",
+    "tier": "Tier 3",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Multi-Orientation Cam",
+      "Standard Format"
+    ],
     "lastUpdated": "2024-09-18T01:44:48.009Z"
+  },
+  {
+    "id": "75ddbd51",
+    "make": "Chubb",
+    "model": "7L51",
+    "group": "not rated",
+    "fence": "Spring Lever",
+    "wheels": "4",
+    "digits": "0-99",
+    "notes": "Standard size wheels",
+    "tier": "Tier 3",
+    "features": [
+      "Moveable Flies",
+      "Key Change",
+      "Vault Format",
+      "Internal Indirect Drive"
+    ],
+    "lastUpdated": "2024-09-12T23:45:30.177Z"
   },
   {
     "id": "19359f35",
@@ -1021,7 +1042,23 @@
       "Standard Format",
       "Wheel Shadowing"
     ],
-    "lastUpdated": "2024-09-13T23:48:06.595Z"
+    "media": [
+      {
+        "title": "By: HVLogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54006722648_020ceb4722_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006722648/in/album-72177720320459563/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54006722648_b9506a1463_o.jpg"
+      },
+      {
+        "title": "By: HVLogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54006913450_ae41bf75ea_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006913450/in/album-72177720320459563/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54006913450_44c1f6f858_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-09-19T15:58:18.909Z"
   },
   {
     "id": "218529be",
@@ -2497,7 +2534,30 @@
       "Multi-Orientation Cam",
       "Spring Loaded \"Direct Entry\" Fence"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "media": [
+      {
+        "title": "By: HVLogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54005585387_691e4c68cf_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54005585387/in/album-72177720320459628/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54005585387_8d05a22e15_o.jpg"
+      },
+      {
+        "title": "By: HVLogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54006917530_7b26931cca_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006917530/in/album-72177720320459628/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54006917530_05fdae0217_o.jpg"
+      },
+      {
+        "title": "By: HVLogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54006499756_4f99196171_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006499756/in/album-72177720320459628/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54006499756_bac06264ce_o.jpg"
+      }
+    ],
+    "lastUpdated": "2024-09-19T15:58:18.909Z"
   },
   {
     "id": "9250529e",
