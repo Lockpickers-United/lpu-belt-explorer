@@ -782,6 +782,8 @@ Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",Wafer,"Under Review ⚑",,dbc6
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
 Unranked,Chubb,"GPO No.6",,,"Under Review ⚑",,c2c1f8e0
 Unranked,CISA,810,,,"Under Review ⚑",,22d70f2e
+Unranked,Codkey,"Locksys L52","factory split core, 24 pins",Dimple,"Under Review ⚑",,7c6efd49
+Unranked,Codkey,"Locksys MME (micro magnetic element)",,"Dimple,Magnet","Under Review ⚑",,45bb95df
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
@@ -810,8 +812,6 @@ Unranked,Kibb,"5 lever",,Lever,"Under Review ⚑",,991c6c07
 Unranked,"La Gard",2270,,,"Under Review ⚑",,c65959a3
 Unranked,Laperche,Diam,,Dimple,,,64662298
 Unranked,Lince,"C plus alarm",,,"Under Review ⚑",,8e11009a
-Unranked,Locksys,"Codkey L52","factory split core, 24 pins",Dimple,"Under Review ⚑",,7c6efd49
-Unranked,Locksys,"Codkey MME (micro magnetic element)",,"Dimple,Magnet","Under Review ⚑",,45bb95df
 Unranked,Marks,"high security SFIC",,Pin-tumbler,"Under Review ⚑",,f74e0e97
 Unranked,"Master Lock",160,,"Pin-tumbler,Slider","Under Review ⚑",,7b69a331
 Unranked,"Master Lock",2950EURD,,Dimple,"Under Review ⚑",,a6f31065
