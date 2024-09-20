@@ -9,7 +9,7 @@ import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import Scorecard from './Scorecard.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
-import ProfileNotFound from '../profile/ProfileNotFound.jsx'
+import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
@@ -123,7 +123,7 @@ function ScorecardRoute({mostPopular}) {
                                 <Scorecard owner={user && user.uid === userId} profile={profile}
                                            adminAction={handleAdminAction} popular={mostPopular}/>}
 
-                            {!loading && (!data || error) && <ProfileNotFound/>}
+                            {!loading && (!data || error) && <ScorecardProfileNotFound/>}
 
                             <Footer extras={footer}/>
                         </LocalizationProvider>

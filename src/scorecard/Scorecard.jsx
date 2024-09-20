@@ -205,9 +205,9 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 }}>
                                     <div style={{flexGrow: 1}}/>
                                     <Button variant={myLocksButton} color='secondary' size='small'
-                                            style={{lineHeight: '1.2rem', width: buttonWidth}}
+                                            style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding:'4px 10px'}}
                                             onClick={() => handleLocksToggle()}>
-                                        {buttonText}
+                                        <nobr>{buttonText}</nobr>
                                     </Button>
                                     <Button variant={mostPopularButton} color='info' size='small'
                                             style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}

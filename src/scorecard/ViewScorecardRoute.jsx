@@ -5,7 +5,7 @@ import Nav from '../nav/Nav'
 import Tracker from '../app/Tracker'
 import {useDocumentTitle} from 'usehooks-ts'
 import {useNavigate} from 'react-router-dom'
-import ProfileNotFound from '../profile/MustBeLoggedIn.jsx'
+import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 
 function ViewScorecardRoute({mostPopular}) {
@@ -25,7 +25,7 @@ function ViewScorecardRoute({mostPopular}) {
         <React.Fragment>
             <Nav title='View Scorecard'/>
             {!authLoaded && <LoadingDisplay/>}
-            {authLoaded && !isLoggedIn && <ProfileNotFound/>}
+            {authLoaded && !isLoggedIn && <ScorecardProfileNotFound/>}
             <Footer/>
             <Tracker feature='viewscorecardredirect'/>
         </React.Fragment>
