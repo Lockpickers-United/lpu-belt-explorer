@@ -1,5 +1,5 @@
 import React, {useState, useMemo, useContext, useCallback} from 'react'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import DBContext from '../app/DBContext.jsx'
 import AppContext from '../app/AppContext'
@@ -26,6 +26,7 @@ import PopularEntries from './mostPopular/PopularEntries.jsx'
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
+    const navigate = useNavigate()
 
     const {visibleEntries = [], popularEntries = [], cardEvidence} = useContext(ScorecardDataContext)
 
@@ -114,6 +115,11 @@ function Scorecard({owner, profile, adminAction, popular}) {
         setMostPopular(!mostPopular)
     }, [mostPopular, name, setFilters])
 
+    const handleClick = useCallback((link) => {
+        navigate(link)
+    }, [navigate])
+
+
     const myLocksButton = mostPopular ? 'text' : 'contained'
     const mostPopularButton = !mostPopular ? 'text' : 'contained'
 
@@ -193,6 +199,13 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                                 style={{lineHeight: '1.2rem'}}
                                                 onClick={() => handleOpenControls('project')}>
                                             {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                        </Button>
+                                    }
+                                    {profile && profile.blackBeltAwardedAt &&
+                                        <Button variant='outlined' color='secondary' size='small'
+                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
+                                                onClick={() => handleClick('/scorecard/info/FAQ')}>
+                                            Black Belt FAQ
                                         </Button>
                                     }
                                 </div>
