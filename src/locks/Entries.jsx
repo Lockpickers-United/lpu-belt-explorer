@@ -6,6 +6,11 @@ import BeltRequirements from '../info/BeltRequirements'
 import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
+import HotkeyInfoButton from './HotkeyInfoButton'
+import RandomEntryButton from './RandomEntryButton'
+import SlideshowButton from './SlideshowButton'
+import ExportButton from './ExportButton'
+import Footer from '../nav/Footer'
 
 function Entries({profile}) {
     const {compact, tab, expanded, displayAll} = useContext(LockListContext)
@@ -25,27 +30,43 @@ function Entries({profile}) {
         }
     }, [defDisplayAll, defTab, allEntries, visibleEntries])
 
+    const footer = (
+        <React.Fragment>
+            <br/>
+            <HotkeyInfoButton/>
+            &nbsp;•&nbsp;
+            <RandomEntryButton onSelect={setEntryExpanded}/>
+            &nbsp;•&nbsp;
+            <ExportButton/>
+            &nbsp;•&nbsp;
+            <SlideshowButton/>
+        </React.Fragment>
+    )
+
     return (
-        <div style={{margin: 8, paddingBottom: 32}}>
-            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
+        <React.Fragment>
+            <div style={{margin: 8, paddingBottom: 32}}>
+                <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
 
-            {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
+                {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
-            {entries.length === 0 && <NoEntriesCard label='Locks'/>}
+                {entries.length === 0 && <NoEntriesCard label='Locks'/>}
 
-            {compact
-                ? <CompactEntries entries={entries}/>
-                : entries.map(entry =>
-                    <Entry
-                        key={entry.id}
-                        entry={entry}
-                        expanded={entry.id === entryExpanded}
-                        onExpand={setEntryExpanded}
-                    />
-                )
-            }
+                {compact
+                    ? <CompactEntries entries={entries}/>
+                    : entries.map(entry =>
+                        <Entry
+                            key={entry.id}
+                            entry={entry}
+                            expanded={entry.id === entryExpanded}
+                            onExpand={setEntryExpanded}
+                        />
+                    )
+                }
 
-        </div>
+            </div>
+            <Footer extras={footer}/>
+        </React.Fragment>
     )
 }
 

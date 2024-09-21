@@ -11,12 +11,7 @@ import Entries from './Entries'
 import ToggleCompactButton from './ToggleCompactButton'
 import FilterButton from '../filters/FilterButton'
 import SortButton from '../filters/SortButton'
-import ExportButton from './ExportButton'
-import HotkeyInfoButton from './HotkeyInfoButton'
-import RandomEntryButton from './RandomEntryButton'
-import SlideshowButton from './SlideshowButton'
 import BeltToolbar from './BeltToolbar'
-import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import allEntries from '../data/data.json'
@@ -36,19 +31,6 @@ function LockListRoute() {
             <ToggleCompactButton/>
         </React.Fragment>
     )
-    const footer = (
-        <React.Fragment>
-            <br/>
-            <HotkeyInfoButton/>
-            &nbsp;•&nbsp;
-            <RandomEntryButton/>
-            &nbsp;•&nbsp;
-            <ExportButton/>
-            &nbsp;•&nbsp;
-            <SlideshowButton/>
-        </React.Fragment>
-    )
-
     return (
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={allEntries} profile={lockCollection}>
@@ -58,8 +40,6 @@ function LockListRoute() {
                     <BeltToolbar/>
 
                     <Entries profile={lockCollection}/>
-
-                    <Footer extras={footer}/>
 
                     <Tracker feature='locks'/>
                 </LockListProvider>
