@@ -99,8 +99,17 @@ function processEntries(entries, filterArray, search, sort) {
                             case 'badlink': return 'Bad Link'
                             case 'duplicate': return 'Duplicate'
                             case 'upgraded': return 'Upgraded'
-                            default: return ['White', 'Yellow', 'Orange', 'Green'].includes(entry.belt) ? 'Low Level' : 'Worth Points'
                         }
+                        switch(entry.belt) {
+                            case 'White':
+                            case 'Yellow':
+                            case 'Orange':
+                            case 'Green':
+                                return 'Low Level'
+                            case 'Unranked':
+                                return 'Unranked'
+                        }
+                        return 'Worth Points'
                     })()
                 ],
                 simpleBelt: entry?.belt?.replace(/\s\d/g, '')
