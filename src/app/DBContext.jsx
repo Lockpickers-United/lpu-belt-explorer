@@ -458,8 +458,6 @@ export function DBProvider({children}) {
         }
     }, [isLoggedIn, user])
 
-    console.log('awards', awards)
-
     const value = useMemo(() => ({
         dbLoaded,
         adminRole,

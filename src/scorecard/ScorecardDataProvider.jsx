@@ -32,8 +32,6 @@ export function ScorecardDataProvider({
         id: entry.id
     })), [allEvidence])
 
-    console.log('allEvidence', allEvidence)
-
     const evidenceByMatchId = useMemo(() => allEvidenceEntries.reduce((acc, evid) => {
         acc[evid.matchId] = evid
         return acc
@@ -68,7 +66,7 @@ export function ScorecardDataProvider({
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, getAwardEntryFromId])
+    }), [cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries])
 
     return (
         <ScorecardDataContext.Provider value={value}>

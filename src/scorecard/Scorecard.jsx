@@ -30,7 +30,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const {visibleEntries = [], popularEntries = [], cardEvidence} = useContext(ScorecardDataContext)
 
-    console.log('visibleEntries', visibleEntries)
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters

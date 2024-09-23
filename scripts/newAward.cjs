@@ -8,21 +8,95 @@ const config = {
 const firebaseApp = initializeApp(config)
 const db = getFirestore(firebaseApp, 'lpubelts-dev')
 
-const userId = 'GGplAdctTfVDLVvYsfIADJmfp8f2'
-const approvedDate = '2024-09-02'
+const awardImport = [
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '249dd56f',
+        'description': 'Orange',
+        'date': '2022-06-28',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/991220403240456202'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '8ad90321',
+        'description': 'Green',
+        'date': '2022-08-06',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1005539603089981460'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '39d91da5',
+        'description': 'Blue',
+        'date': '2022-09-29',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1025026216484421735'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '893d378f',
+        'description': 'Purple',
+        'date': '2022-10-06',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1027803402819874836'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': 'b8e10620',
+        'description': 'Brown',
+        'date': '2022-11-30',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1047742802894802984'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': 'da7759a9',
+        'description': 'Black',
+        'date': '2023-10-12',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282170926064336907/1162106114540830801'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '80e8bd11',
+        'description': '2nd',
+        'date': '2024-01-03',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1192301864788693013'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '3a71ab4c',
+        'description': '3rd',
+        'date': '2024-04-26',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1226354894911570001'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': 'c3a1b4e6',
+        'description': '4th',
+        'date': '2024-08-21',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1275832191263182900'
+    },
+    {
+        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'matchId': '46366349',
+        'description': '5th',
+        'date': '2024-08-24',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1276876549806882856'
+    }
+]
 
-const award = {
-    date: approvedDate + 'T00:00:00.000Z',
-    matchId: '80e8bd11',
-    awardUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1070709813568348170',
-    userId: userId
-}
 
-addAward()
 
-function addAward() { // eslint-disable-line
-    const collection = db.collection(`awards`)
-    collection.add(award)
+awardImport.map(awardData => {
+    const award = {
+        date: awardData.date + 'T00:00:00.000Z',
+        matchId: awardData.matchId,
+        awardUrl: awardData.awardUrl,
+        userId: awardData.userId
+    }
+    addAward(award)
+})
+
+
+async function addAward(award) {
+    const collection = db.collection('awards')
+    await collection.add(award)
 }
 
 /*
@@ -67,3 +141,4 @@ fcc79c63	Dan 26
 0004e56c	Dan 29
 753181fd	Dan 30
 */
+
