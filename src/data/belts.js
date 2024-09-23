@@ -24,7 +24,8 @@ const belts = {
     'Tier 2': {color: '#000000', lineColor: '#80b535', danPoints: 10},
     'Tier 3': {color: '#000000', lineColor: '#80b535', danPoints: 20},
     'Tier 4': {color: '#000000', lineColor: '#80b535', danPoints: 34},
-    'Tier 5': {color: '#000000', lineColor: '#80b535', danPoints: 50}
+    'Tier 5': {color: '#000000', lineColor: '#80b535', danPoints: 50},
+    Dan: {color: '#8eb354', lineColor: '#000', danPoints: 50}
 }
 export default belts
 export const allBelts = Object.keys(belts)

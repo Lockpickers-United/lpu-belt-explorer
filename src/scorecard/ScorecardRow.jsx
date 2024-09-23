@@ -18,16 +18,21 @@ import EvidenceForm from './EvidenceForm.jsx'
 
 import useWindowSize from '../util/useWindowSize.jsx'
 import Typography from '@mui/material/Typography'
+import BeltIcon from '../entries/BeltIcon.jsx'
+import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 
 function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const {setFilters} = useContext(FilterContext)
-    const {cardEvidence, getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
+    const {cardEvidence, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
 
     const entry = getEntryFromId(evid.matchId)
     const project = getProjectEntryFromId(evid.matchId)
+    const award = getAwardEntryFromId(evid.matchId)
     const entity = entry
         ? entry
         : project
+            ? project
+            : award
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -112,7 +117,11 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const nameDivWidth = !isMobile ? '56%' : '65%'
     const dateMargin = !isMobile ? '1px 0px 3px 0px' : '-2px 0px 3px 0px'
 
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center'}
+    const titleSize = ['belt', 'dan'].includes(evid['awardType']) ? '1.1rem' : '1rem'
+    const bgColor = ['belt', 'dan'].includes(evid['awardType']) ? '#121212' : ''
+
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center', backgroundColor:bgColor}
+
 
     return (
         <Accordion key={evid.id} expanded={expanded} onChange={handleChange} ref={ref}>
@@ -125,11 +134,19 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                     flexDirection: 'column',
                     opacity: rowOpacity
                 }}>
-                    <FieldValue
-                        value={entryTitle}
-                        textStyle={{marginLeft: '0px', fontWeight: 700}}
-                        style={{marginBottom: '2px'}}
-                    />
+                    <div style={{display: 'flex'}}>
+                        {entity.awardType === 'belt' &&
+                            <div style={{marginTop: -4, marginRight:10}}><BeltIcon value={entity.belt} style={{paddingTop: 2}}/></div>
+                        }
+                        {entity.awardType === 'dan' &&
+                            <div style={{margin:'0px 12px 0px 5px'}}><SportsMartialArtsIcon style={{color:'#87c048'}}/></div>
+                        }
+                        <FieldValue
+                            value={entryTitle}
+                            textStyle={{marginLeft: '0px', fontWeight: 700, fontSize: titleSize}}
+                            style={{marginBottom: '2px'}}
+                        />
+                    </div>
                     {!!evidenceNotes &&
                         <span style={{
                             margin: '0px 0px 0px 15px',
@@ -139,8 +156,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             color: '#bbb'
                         }}>{evidenceNotes}</span>
                     }
-                    {
-                        !!entity && !!entity?.version &&
+                    {!!entity && !!entity?.version &&
                         <FieldValue
                             name='Version'
                             value={<Typography
@@ -170,11 +186,13 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             style={{margin: dateMargin, color: dateColor, width: 90, textAlign: 'center'}}>
                             {dateText}
                         </div>
-                        <div
-                            style={{margin: '1px 0px 0px 22px'}}>
-                            <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
-                                style={{color: '#666'}}>{pointsText}</span></nobr>
-                        </div>
+                        {!['belt', 'dan'].includes(evid['awardType']) &&
+                            <div
+                                style={{margin: '1px 0px 0px 22px'}}>
+                                <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
+                                    style={{color: '#666'}}>{pointsText}</span></nobr>
+                            </div>
+                        }
                     </div>
 
                 </div>

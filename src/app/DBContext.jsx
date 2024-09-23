@@ -86,6 +86,7 @@ export function DBProvider({children}) {
     const [evidenceDBLoaded, setEvidenceDBLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
     const [systemMessages, setSystemMessages] = useState([])
+    const [awards, setAwards] = useState([])
 
     const dbLoaded = collectionDBLoaded && evidenceDBLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
@@ -431,6 +432,34 @@ export function DBProvider({children}) {
     }, [dbError])
 
 
+
+    const getAwards = useCallback(async userId => {
+        const q = query(collection(db, 'awards'), where('userId', '==', userId))
+        const querySnapshot = await getDocs(q)
+        return querySnapshot.docs.map(doc => {
+            return {...doc.data(), id: doc.id, link: doc.data().awardUrl}
+        },[])
+    }, [])
+
+
+    // Awards Subscription
+    useEffect(() => {
+        if (isLoggedIn) {
+            const q = query(collection(db, 'awards'), where('userId', '==', user.uid))
+            return onSnapshot(q, querySnapshot => {
+                //setAwards(querySnapshot.docs.map(doc => [...doc.data(), id: doc.id]))
+                const userAwards = querySnapshot.docs.map(doc => {
+                    return {...doc.data(), id: doc.id, link: doc.data().awardUrl}
+                },[])
+                setAwards(userAwards)
+            }, error => {
+                console.error('Error getting awards from DB:', error)
+            })
+        }
+    }, [isLoggedIn, user])
+
+    console.log('awards', awards)
+
     const value = useMemo(() => ({
         dbLoaded,
         adminRole,
@@ -454,8 +483,10 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, systemMessages, getAllSystemMessages, updateSystemMessage, updateSystemMessageStatus, removeDismissedMessages])
+        removeDismissedMessages,
+        awards,
+        getAwards
+    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, systemMessages, getAllSystemMessages, updateSystemMessage, updateSystemMessageStatus, removeDismissedMessages, awards, getAwards])
 
     return (
         <DBContext.Provider value={value}>

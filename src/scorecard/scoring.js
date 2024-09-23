@@ -1,12 +1,13 @@
 import belts, {modifierMultiplier, projectTiers} from '../data/belts'
 import isValidUrl from '../util/isValidUrl'
-import {allEntriesById, allProjectsById, possibleUpgrades, isUpgradeOf} from '../entries/entryutils'
+import {allEntriesById, allProjectsById, allAwardsById, possibleUpgrades, isUpgradeOf} from '../entries/entryutils'
 import dans from '../data/dans.json'
 
 function calculateScoreForUser(allEvidence) {
     const annotatedEvidence = allEvidence.map(ev => {
         const entry = allEntriesById[ev.matchId]
         const project = allProjectsById[ev.matchId]
+        const award = allAwardsById[ev.matchId]
         const modifier = ev.modifier && ev.modifier !== 'Upgraded' ? ev.modifier : null
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
@@ -24,6 +25,13 @@ function calculateScoreForUser(allEvidence) {
                 matchId: project.id,
                 modifier: modifier,
                 points: multiplier * projectTiers[project.tier].danPoints,
+                bbCount: 0
+            }
+        }  else if (award) {
+            return {
+                ...ev,
+                matchId: award.id,
+                points: 0,
                 bbCount: 0
             }
         } else {

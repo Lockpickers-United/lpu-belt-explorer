@@ -1,5 +1,6 @@
 import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
+import allAwards from '../data/awards.json'
 import nextUpgrades from '../data/upgrades.json'
 import {beltSort} from '../data/belts'
 
@@ -32,6 +33,23 @@ export function getProjectEntryFromId(id) {
 export function isProject(id) {
     return Boolean(allProjectsById[id])
 }
+
+
+export const allAwardsById = allAwards
+    .reduce((group, term) => {
+        const {id} = term
+        group[id] = term
+        return group
+    }, {})
+
+export function getAwardEntryFromId(id) {
+    return allAwardsById[id]
+}
+
+export function isAward(id) {
+    return Boolean(allAwardsById[id])
+}
+
 
 export const possibleUpgrades = Object.keys(nextUpgrades)
     .reduce((group, term) => {

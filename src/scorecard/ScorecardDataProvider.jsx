@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
-import {getEntryFromId, getProjectEntryFromId} from '../entries/entryutils'
+import {getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} from '../entries/entryutils'
 
 export function ScorecardDataProvider({
                                           children,
@@ -16,17 +16,23 @@ export function ScorecardDataProvider({
                                           cardEligibleDan,
                                           cardNextDanPoints,
                                           cardNextDanLocks,
-                                          popularLocks
+                                          popularLocks,
+                                          awards
                                       }) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
 
-    const allEvidenceEntries = useMemo(() => cardEvidence.map(entry => ({
-        ...getEntryFromId(entry.matchId),
+    const allEvidence = useMemo(() => cardEvidence ? [...cardEvidence, ...awards] : [],[awards, cardEvidence])
+
+    const allEvidenceEntries = useMemo(() => allEvidence.map(entry => ({
         ...entry,
+        ...getEntryFromId(entry.matchId),
         ...getProjectEntryFromId(entry.matchId),
+        ...getAwardEntryFromId(entry.matchId),
         id: entry.id
-    })), [cardEvidence])
+    })), [allEvidence])
+
+    console.log('allEvidence', allEvidence)
 
     const evidenceByMatchId = useMemo(() => allEvidenceEntries.reduce((acc, evid) => {
         acc[evid.matchId] = evid
@@ -60,8 +66,9 @@ export function ScorecardDataProvider({
         visibleEntries,
         popularEntries,
         getEntryFromId,
-        getProjectEntryFromId
-    }), [cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries])
+        getProjectEntryFromId,
+        getAwardEntryFromId
+    }), [cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, getAwardEntryFromId])
 
     return (
         <ScorecardDataContext.Provider value={value}>

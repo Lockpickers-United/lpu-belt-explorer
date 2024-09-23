@@ -30,6 +30,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const {visibleEntries = [], popularEntries = [], cardEvidence} = useContext(ScorecardDataContext)
 
+    console.log('visibleEntries', visibleEntries)
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters
@@ -301,7 +302,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                         <NoScorecardData/>
                     }
 
-                    {profile && profile.blackBeltAwardedAt &&
+                    {profile && profile.blackBeltAwardedAt && false &&
                         <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
                     }
                     <div>

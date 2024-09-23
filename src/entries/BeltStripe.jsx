@@ -2,14 +2,21 @@ import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
 function BeltStripe({value}) {
-    const {color: backgroundColor} = belts[value] || {}
+
+    const bgColor = belts[value]
+        ? belts[value]
+        : value.includes('Dan')
+            ? '#769e49'
+            : ''
+
+    //const {color: backgroundColor} = belts[value] || {color: '#769e49'}
     const style = {
         width: 8,
         height: '100%',
         position: 'absolute',
         left: 0,
         top: 0,
-        backgroundColor
+        backgroundColor: bgColor
     }
 
     const {lineColor: stripeColor} = belts[value] || {}
