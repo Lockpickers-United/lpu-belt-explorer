@@ -20,8 +20,15 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Typography from '@mui/material/Typography'
 import BeltIcon from '../entries/BeltIcon.jsx'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
+import utc from 'dayjs/plugin/utc'
+import {useNavigate} from 'react-router-dom'
+import Tooltip from '@mui/material/Tooltip'
+import IconButton from '@mui/material/IconButton'
+import PrintIcon from '@mui/icons-material/Print'
+dayjs.extend(utc)
 
 function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
+    const navigate = useNavigate()
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
 
@@ -93,7 +100,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     }, [setFilters])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    let dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
+    let dateText = evid.date ? dayjs.utc(evid.date).format('L') : '(no date)'
     dateText = dateText.replace('/202', '/2')
     dateText = dateText.replace('/201', '/1')
     const dateColor = evid.date ? '#fff' : '#aaa'
@@ -103,6 +110,12 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
             onExpand(isExpanded ? evid.id : false)
         }
     }, [evid.id, onExpand, owner])
+
+    const handleClick = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
+        navigate('/award')
+    }, [navigate])
 
     const cursorStyle = !owner ? {cursor: 'default'} : {}
     const expandIcon = owner ? <ExpandMoreIcon/> : null
@@ -115,7 +128,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         placeItems: 'center'
     }
     const nameDivWidth = !isMobile ? '56%' : '65%'
-    const dateMargin = !isMobile ? '1px 0px 3px 0px' : '-2px 0px 3px 0px'
+    const dateMargin = !isMobile ? '3px 0px 3px 0px' : '-2px 0px 3px 0px'
 
     const titleSize = ['belt', 'dan'].includes(evid['awardType']) ? '1.1rem' : '1rem'
     const bgColor = ['belt', 'dan'].includes(evid['awardType']) ? '#121212' : ''
@@ -135,10 +148,10 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                     opacity: rowOpacity
                 }}>
                     <div style={{display: 'flex'}}>
-                        {entity.awardType === 'belt' &&
+                        {evid.awardType === 'belt' &&
                             <div style={{marginTop: -4, marginRight:10}}><BeltIcon value={entity.belt} style={{paddingTop: 2}}/></div>
                         }
-                        {entity.awardType === 'dan' &&
+                        {evid.awardType === 'dan' &&
                             <div style={{margin:'0px 12px 0px 5px'}}><SportsMartialArtsIcon style={{color:'#87c048'}}/></div>
                         }
                         <FieldValue
@@ -192,6 +205,13 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                                 <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
                                     style={{color: '#666'}}>{pointsText}</span></nobr>
                             </div>
+                        }
+                        {owner && evid['matchId'] === 'da7759a9' &&
+                            <Tooltip title='Print Certificate' arrow disableFocusListener>
+                                <IconButton onClick={handleClick} style={{marginLeft: 30}}>
+                                    <PrintIcon/>
+                                </IconButton>
+                            </Tooltip>
                         }
                     </div>
 

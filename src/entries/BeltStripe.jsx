@@ -4,7 +4,7 @@ import belts from '../data/belts'
 function BeltStripe({value}) {
 
     const bgColor = belts[value]
-        ? belts[value]
+        ? belts[value].color
         : value.includes('Dan')
             ? '#769e49'
             : ''

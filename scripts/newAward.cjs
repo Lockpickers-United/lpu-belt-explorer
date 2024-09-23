@@ -1,6 +1,7 @@
 const {initializeApp, cert} = require('firebase-admin/app')
 const {getFirestore} = require('firebase-admin/firestore')
 const serviceAccount = require('../../lpu-belt-explorer-firebase-adminsdk.json')
+const {query, collection, where, getDocs} = require('firebase/firestore')
 
 const config = {
     credential: cert(serviceAccount)
@@ -10,74 +11,60 @@ const db = getFirestore(firebaseApp, 'lpubelts-dev')
 
 const awardImport = [
     {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-        'matchId': '249dd56f',
-        'description': 'Orange',
-        'date': '2022-06-28',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/991220403240456202'
-    },
-    {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-        'matchId': '8ad90321',
-        'description': 'Green',
-        'date': '2022-08-06',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1005539603089981460'
-    },
-    {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-        'matchId': '39d91da5',
-        'description': 'Blue',
-        'date': '2022-09-29',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1025026216484421735'
-    },
-    {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-        'matchId': '893d378f',
-        'description': 'Purple',
-        'date': '2022-10-06',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1027803402819874836'
-    },
-    {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-        'matchId': 'b8e10620',
-        'description': 'Brown',
-        'date': '2022-11-30',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1047742802894802984'
-    },
-    {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
-        'matchId': 'da7759a9',
-        'description': 'Black',
-        'date': '2023-10-12',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282170926064336907/1162106114540830801'
-    },
-    {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
         'matchId': '80e8bd11',
-        'description': '2nd',
-        'date': '2024-01-03',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1192301864788693013'
+        'description': 'Dan 2',
+        'date': '2023-07-02',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1125230415364509810'
     },
     {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
         'matchId': '3a71ab4c',
-        'description': '3rd',
-        'date': '2024-04-26',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1226354894911570001'
+        'description': 'Dan 3',
+        'date': '2023-09-16',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1152795135227203734'
     },
     {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
         'matchId': 'c3a1b4e6',
-        'description': '4th',
-        'date': '2024-08-21',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1275832191263182900'
+        'description': 'Dan 4',
+        'date': '2024-01-09',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1194422117475823656'
     },
     {
-        'userId': 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
         'matchId': '46366349',
-        'description': '5th',
-        'date': '2024-08-24',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1276876549806882856'
+        'description': 'Dan 5',
+        'date': '2024-02-17',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1208486055490224159'
+    },
+    {
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
+        'matchId': '1636ddbe',
+        'description': 'Dan 6',
+        'date': '2024-03-31',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1224031738196660277'
+    },
+    {
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
+        'matchId': '92398aa5',
+        'description': 'Dan 7',
+        'date': '2024-04-23',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1232468747390947328'
+    },
+    {
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
+        'matchId': '69d67112',
+        'description': 'Dan 8',
+        'date': '2024-06-14',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1251128014016745512'
+    },
+    {
+        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
+        'matchId': '24c543eb',
+        'description': 'Dan 9',
+        'date': '2024-09-15',
+        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1284955864561619057'
     }
 ]
 
@@ -85,7 +72,7 @@ const awardImport = [
 
 awardImport.map(awardData => {
     const award = {
-        date: awardData.date + 'T00:00:00.000Z',
+        date: awardData.date + 'T23:59:59.000Z',
         matchId: awardData.matchId,
         awardUrl: awardData.awardUrl,
         userId: awardData.userId
@@ -93,11 +80,23 @@ awardImport.map(awardData => {
     addAward(award)
 })
 
+//deleteAwards('WMSvvuutyShfvBBYB3PmDe4fmeS2')
 
 async function addAward(award) {
     const collection = db.collection('awards')
     await collection.add(award)
 }
+
+async function deleteAwards (userId) {
+    const docs = await db.collection('awards').where('userId', '==', userId).get()
+    docs.forEach(doc => {
+        console.log('doc id', doc.id)
+        db.collection('awards').doc(doc.id).delete();
+    },[])
+
+}
+
+
 
 /*
 id	        name
