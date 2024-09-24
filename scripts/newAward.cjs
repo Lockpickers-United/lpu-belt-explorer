@@ -11,60 +11,11 @@ const db = getFirestore(firebaseApp, 'lpubelts-dev')
 
 const awardImport = [
     {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
+        'userId': 'GGplAdctTfVDLVvYsfIADJmfp8f2',
         'matchId': '80e8bd11',
         'description': 'Dan 2',
-        'date': '2023-07-02',
+        'date': '2024-09-23',
         'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1125230415364509810'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': '3a71ab4c',
-        'description': 'Dan 3',
-        'date': '2023-09-16',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1152795135227203734'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': 'c3a1b4e6',
-        'description': 'Dan 4',
-        'date': '2024-01-09',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1194422117475823656'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': '46366349',
-        'description': 'Dan 5',
-        'date': '2024-02-17',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1208486055490224159'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': '1636ddbe',
-        'description': 'Dan 6',
-        'date': '2024-03-31',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1224031738196660277'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': '92398aa5',
-        'description': 'Dan 7',
-        'date': '2024-04-23',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1232468747390947328'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': '69d67112',
-        'description': 'Dan 8',
-        'date': '2024-06-14',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1251128014016745512'
-    },
-    {
-        'userId': 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3',
-        'matchId': '24c543eb',
-        'description': 'Dan 9',
-        'date': '2024-09-15',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1284955864561619057'
     }
 ]
 

@@ -100,16 +100,17 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     }, [setFilters])
 
     const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    let dateText = evid.date ? dayjs.utc(evid.date).format('L') : '(no date)'
+    let dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
     dateText = dateText.replace('/202', '/2')
     dateText = dateText.replace('/201', '/1')
     const dateColor = evid.date ? '#fff' : '#aaa'
 
+    const expandable = owner && !['belt', 'dan'].includes(evid['awardType'])
     const handleChange = useCallback((_, isExpanded) => {
-        if (owner) {
+        if (expandable) {
             onExpand(isExpanded ? evid.id : false)
         }
-    }, [evid.id, onExpand, owner])
+    }, [evid.id, expandable, onExpand])
 
     const handleClick = useCallback(event => {
         event.preventDefault()
@@ -117,8 +118,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         navigate('/award')
     }, [navigate])
 
-    const cursorStyle = !owner ? {cursor: 'default'} : {}
-    const expandIcon = owner ? <ExpandMoreIcon/> : null
+    const cursorStyle = !expandable ? {cursor: 'default'} : {}
+    const expandIcon = expandable ? <ExpandMoreIcon/> : null
 
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
