@@ -62,9 +62,9 @@ function ScorecardRoute({mostPopular}) {
 
             if (user?.uid !== userId) {
                 const evidence = await getEvidence(userId)
-                return {profile, ...calculateScoreForUser(evidence), awards}
+                return {profile, ...calculateScoreForUser([...evidence, ...awards])}
             } else {
-                return {profile, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, awards}
+                return {profile, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
             }
         } catch (ex) {
             console.error('Error loading profile and evidence.', ex)
@@ -114,7 +114,7 @@ function ScorecardRoute({mostPopular}) {
                 <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount}
                                        cardDanPoints={cardDanPoints}
                                        cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                       cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks} awards={awards}>
+                                       cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
                     <ScorecardListProvider>
                         <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                             <Nav title={title} extras={nav}/>

@@ -16,21 +16,19 @@ export function ScorecardDataProvider({
                                           cardEligibleDan,
                                           cardNextDanPoints,
                                           cardNextDanLocks,
-                                          popularLocks,
-                                          awards
+                                          popularLocks
                                       }) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
 
-    const allEvidence = useMemo(() => cardEvidence ? [...cardEvidence, ...awards] : [],[awards, cardEvidence])
 
-    const allEvidenceEntries = useMemo(() => allEvidence.map(entry => ({
+    const allEvidenceEntries = useMemo(() => cardEvidence.map(entry => ({
         ...entry,
         ...getEntryFromId(entry.matchId),
         ...getProjectEntryFromId(entry.matchId),
         ...getAwardEntryFromId(entry.matchId),
         id: entry.id
-    })), [allEvidence])
+    })), [cardEvidence])
 
     const evidenceByMatchId = useMemo(() => allEvidenceEntries.reduce((acc, evid) => {
         acc[evid.matchId] = evid
@@ -114,7 +112,12 @@ function processEntries(entries, filterArray, search, sort) {
                             case 'Unranked':
                                 return 'Unranked'
                         }
-                        return 'Worth Points'
+                        switch(entry.awardType) {
+                            case 'belt':
+                            case 'dan':
+                                return 'Belts & Dans'
+                        }
+                            return 'Worth Points'
                     })()
                 ],
                 simpleBelt: entry?.belt?.replace(/\s\d/g, '')
@@ -145,9 +148,9 @@ function processEntries(entries, filterArray, search, sort) {
             case 'popular':
                 return (a,b) => {return a.popularityRank - b.popularityRank || a.fuzzy.localeCompare(b.fuzzy)}
             case 'danPointsAscending':
-                return (a,b) => {return a.points - b.points || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()}
+                return (a,b) => {return a.points - b.points || beltSort(a.belt, b.belt) || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()}
             case 'danPointsDescending':
-                return (a,b) => {return b.points - a.points || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()}
+                return (a,b) => {return b.points - a.points || beltSortReverse(a.belt, b.belt) || dayjs(b.date).valueOf() - dayjs(a.date).valueOf()}
             case 'dateAscending':
                 return (a,b) => {return dayjs(a.date).valueOf() - dayjs(b.date).valueOf() || beltSortReverse(a.simpleBelt, b.simpleBelt)}
             case 'dateDescending':
