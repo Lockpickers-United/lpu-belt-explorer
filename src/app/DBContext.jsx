@@ -63,7 +63,7 @@ async function evidenceCache(userId) {
     const docRef = doc(db, 'query-cache', queryStr)
     const cached = await getDoc(docRef)
 
-    if (cached.exists() && false) { //eslint-disable-line
+    if (cached.exists()) {
         return JSON.parse(cached.data().payload)
     } else {
         const q = query(collection(db, 'evidence'), where('userId', '==', userId))
@@ -79,11 +79,6 @@ async function evidenceCache(userId) {
     }
 }
 
-async function invalidateEvidenceCache(userId) {
-    const queryStr = `evidence: userId == ${userId}`
-    await deleteDoc(doc(db, 'query-cache', queryStr))
-}
-
 export function DBProvider({children}) {
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
@@ -95,6 +90,11 @@ export function DBProvider({children}) {
 
     const dbLoaded = collectionDBLoaded && evidenceDBLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
+
+    const invalidateEvidenceCache = useCallback(async (userId) => {
+        const queryStr = `evidence: userId == ${userId}`
+        await deleteDoc(doc(db, 'query-cache', queryStr))
+    },[])
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
@@ -179,16 +179,18 @@ export function DBProvider({children}) {
             evidenceNotes: evid.evidenceNotes,
             evidenceUrl: evid.link,
             evidenceCreatedAt: Timestamp.fromDate(new Date(evid.date)),
-            modifier: evid.modifier
+            modifier: evid.modifier,
+            collectionDB: evid.collectionDB
         }
-        const docRef = await addDoc(collection(db, 'evidence'), rec)
+        const collectionDB = evid.collectionDB
+        const docRef = await addDoc(collection(db, collectionDB), rec)
         await invalidateEvidenceCache(userId)
         await updateUserStatistics(userId)
 
         if (user.uid === userId) {
             setEvidence(e => e.concat(evidenceDB2State(docRef.id, rec)))
         }
-    }, [user, updateUserStatistics])
+    }, [user, updateUserStatistics, invalidateEvidenceCache])
 
     const updateEvidence = useCallback(async (oldEvid, newEvid) => {
         let rec = {
@@ -216,7 +218,7 @@ export function DBProvider({children}) {
                 }
             }))
         }
-    }, [user, updateUserStatistics])
+    }, [user, updateUserStatistics, invalidateEvidenceCache])
 
     const removeEvidence = useCallback(async (evids) => {
         if (Array.isArray(evids)) {
@@ -248,7 +250,7 @@ export function DBProvider({children}) {
                 setEvidence(e => e.filter(ev => evids.id !== ev.id))
             }
         }
-    }, [user, updateUserStatistics])
+    }, [user, updateUserStatistics, invalidateEvidenceCache])
 
     const getEvidence = useCallback(async userId => {
         return await evidenceCache(userId)
@@ -320,7 +322,7 @@ export function DBProvider({children}) {
             }
         }
         return beltSet
-    }, [user, updateUserStatistics])
+    }, [user, updateUserStatistics, invalidateEvidenceCache])
 
     const createEvidenceForEntries = useCallback(async (userId, ids) => {
         const batch = writeBatch(db)
@@ -346,7 +348,7 @@ export function DBProvider({children}) {
         if (user.uid === userId) {
             setEvidence(e => e.concat(result))
         }
-    }, [user, updateUserStatistics])
+    }, [user, updateUserStatistics, invalidateEvidenceCache])
 
     const deleteAllUserData = useCallback(async (userId) => {
         await invalidateEvidenceCache(userId)
@@ -363,7 +365,7 @@ export function DBProvider({children}) {
             cleanProfile.displayName = profile.displayName
         }
         await setDoc(ref, cleanProfile)
-    }, [removeEvidence])
+    }, [removeEvidence, invalidateEvidenceCache])
 
     // Lock Collection Subscription
     useEffect(() => {
@@ -465,7 +467,8 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
+        removeDismissedMessages,
+        invalidateEvidenceCache
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -488,7 +491,8 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
+        removeDismissedMessages,
+        invalidateEvidenceCache
         ])
 
     return (

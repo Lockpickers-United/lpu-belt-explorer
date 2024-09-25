@@ -39,7 +39,7 @@ function ScoringExceptions() {
     })
 
     const unmatchedEvid = annotatedEvidence.filter(ev => 'nomatch' === ev.exceptionType)
-    const badlinkEvid = annotatedEvidence.filter(ev => 'badlink' === ev.exceptionType)
+    const badlinkEvid = annotatedEvidence.filter(ev => 'badlink' === ev.exceptionType && ev.collectionDB !== 'awards')
     const samelinedEvid = annotatedEvidence.filter(ev => 'duplicate' === ev.exceptionType)
     const supersededEvid = annotatedEvidence.filter(ev => 'upgraded' === ev.exceptionType)
     const totalNum = unmatchedEvid.length + badlinkEvid.length + samelinedEvid.length + supersededEvid.length

@@ -15,12 +15,13 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import isValidUrl from '../util/isValidUrl'
 import allProjects from '../data/projects.json'
+import allAwards from '../data/awards.json'
 import Autocomplete from '@mui/material/Autocomplete'
 import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId} from '../entries/entryutils'
 
-export default function EvidenceForm({evid, lockId, handleUpdate, addProject, source}) {
+export default function EvidenceForm({evid, lockId, handleUpdate, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
@@ -31,20 +32,27 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
     const [updated, setUpdated] = useState(false)
 
-    const [projectName, setProjectName] = useState('')
-    const projectValues = allProjects.map(project => project.name)
-
-    const project = allProjects.find(item => {
-        return item.name === projectName
-    })
+    const [entryName, setEntryName] = useState(null)
     const entry = getEntryFromId(evid?.matchId || lockId)
+    const project = allProjects.find(item => {
+        return item.name === entryName
+    })
+    const award = allAwards.find(item => {
+        return item.makeModels[0].model === entryName
+    })
+    const entryValues = addAward
+        ? allAwards.map(award => award.makeModels[0].model)
+        : allProjects.map(project => project.name)
 
     const entryId = entry
         ? entry.id
         : project
             ? project.id
-            : null
-
+            : award
+                ? award.id
+                : null
+    const fieldLabel = addAward ? 'Belt/Dan' : 'Project'
+    
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => {
@@ -73,7 +81,8 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                     notes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
-                    modifier: modifier
+                    modifier: modifier,
+                    collectionDB: addAward ? 'awards' : 'evidence'
                 })
             }
             enqueueSnackbar('Scorecard updated')
@@ -82,7 +91,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [user, userId, addEvidence, entryId, evid, evidenceDate, evidenceNotes, evidenceUrl, handleUpdate, modifier, updateEvidence])
+    }, [evid, handleUpdate, updateEvidence, evidenceNotes, evidenceUrl, evidenceDate, modifier, userId, user.uid, addEvidence, entryId, addAward])
 
     const handleDelete = useCallback(async () => {
         try {
@@ -103,8 +112,11 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
             setModifier(evid?.modifier ? evid?.modifier : '')
             setEvidenceNotes(evid?.evidenceNotes ? evid.evidenceNotes : '')
             setUpdated(false)
+            handleUpdate()
+        } else {
+            handleUpdate()
         }
-    }, [evid?.link, evid?.date, evid?.modifier, evid?.evidenceNotes, updated])
+    }, [evid, handleUpdate, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target
@@ -113,13 +125,13 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
     }, [])
 
     const evidenceUrlValid = isValidUrl(evidenceUrl)
-    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl)) || (updated && !evidenceUrl)
+    const evidenceUrlError = ((!!evidenceUrl && !isValidUrl(evidenceUrl)) || (updated && !evidenceUrl)) && !addAward
     const evidenceURLHelperText = evidenceUrlError ? 'Documentation link is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
-    const cancelColor = updated ? '#e15c07' : '#555'
+    const cancelColor = '#e15c07'
     const urlFieldColor = evidenceUrlError ? 'error' : 'secondary'
-    const entryError = evidenceUrlError || (addProject && !projectValues.includes(projectName))
+    const entryError = evidenceUrlError || (addProject && !entryValues.includes(entryName))
 
     const {isMobile} = useWindowSize()
     const denseButton = !!isMobile
@@ -132,17 +144,17 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
 
             <React.Fragment>
 
-                {addProject &&
+                {(addProject || addAward) &&
                     <Autocomplete
                         disablePortal
-                        value={projectName}
-                        options={projectValues}
-                        style={{maxWidth: 400, marginBottom: 10}}
+                        value={entryName}
+                        options={entryValues}
+                        style={{maxWidth: 400, marginBottom: 10, marginTop: 5}}
                         onInputChange={(event, newInputValue) => {
-                            setProjectName(newInputValue)
+                            setEntryName(newInputValue)
                             setUpdated(true)
                         }}
-                        renderInput={(params) => <TextField {...params} label='Project' color='secondary'/>}
+                        renderInput={(params) => <TextField {...params} label={fieldLabel} color='secondary'/>}
                     />
                 }
 
@@ -169,7 +181,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                 <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
 
                     <DatePicker
-                        label= 'Date'
+                        label='Date'
                         value={evidenceDate}
                         onChange={(newValue) => {
                             setEvidenceDate(newValue)
@@ -257,7 +269,6 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, so
                     }}>
                         <Button style={{marginRight: 10, color: cancelColor}}
                                 onClick={cancelEdit}
-                                disabled={!updated}
                         >
                             Cancel
                         </Button>

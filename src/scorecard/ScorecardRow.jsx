@@ -76,7 +76,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         ? evid.evidenceNotes
         : null
     entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.evidenceNotes} ]` : entryTitle
-    entryTitle = evid.exceptionType && owner && merged ? entryTitle + ' *' : entryTitle
+    entryTitle = evid.exceptionType && owner && merged && !award ? entryTitle + ' *' : entryTitle
 
     const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
 
@@ -91,7 +91,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         : null
     let exceptionNote = evid.exceptionType === 'nomatch'
         ? 'Could not be matched to a lock or project'
-        : evid.exceptionType === 'badlink'
+        : evid.exceptionType === 'badlink' && !award
             ? 'You must provide a valid link.'
             : evid.exceptionType === 'duplicate'
                 ? 'Duplicate of '
@@ -175,7 +175,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             style={{marginBottom: '2px'}}
                         />
                     </div>
-                    {!!evidenceNotes &&
+                    {!!evidenceNotes && !award &&
                         <span style={{
                             margin: '0px 0px 0px 15px',
 
@@ -204,7 +204,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             }
                         </div>
                         <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
-                            <ScorecardEvidenceButton url={evid.link} handleChange={handleChange}
+                            <ScorecardEvidenceButton evid={evid} handleChange={handleChange}
                                                      exceptionType={evid.exceptionType} owner={owner}/>
                         </div>
                     </div>

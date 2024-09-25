@@ -22,6 +22,8 @@ import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
+import CachedIcon from '@mui/icons-material/Cached'
+import IconButton from '@mui/material/IconButton'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
@@ -37,7 +39,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
         createEvidenceForEntries,
         removeEvidence,
         removeProfileBlackBeltAwarded,
-        updateUserStatistics
+        updateUserStatistics,
+        invalidateEvidenceCache
     } = useContext(DBContext)
     const {admin} = useContext(AppContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
@@ -46,7 +49,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
     const [loading, setLoading] = useState(false)
-    const [mostPopular, setMostPopular] = useState(locks==='mostPopular' || popular)
+    const [mostPopular, setMostPopular] = useState(locks === 'mostPopular' || popular)
 
     if (expanded && expanded !== entryExpanded) {
         setEntryExpanded(expanded)
@@ -110,7 +113,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const buttonMarginTop = isMobile ? 6 : 0
 
     const handleLocksToggle = useCallback(() => {
-        const newFilters = mostPopular ? {name: name} : {locks:'mostPopular', name:name}
+        const newFilters = mostPopular ? {name: name} : {locks: 'mostPopular', name: name}
         setFilters(newFilters)
         setMostPopular(!mostPopular)
     }, [mostPopular, name, setFilters])
@@ -118,6 +121,15 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const handleClick = useCallback((link) => {
         navigate(link)
     }, [navigate])
+
+    const handleRefresh = useCallback(async () => {
+        console.log('userId', userId)
+        setLoading(true)
+        await invalidateEvidenceCache(userId)
+        setLoading(false)
+        adminAction()
+        window.location.reload()
+    }, [adminAction, invalidateEvidenceCache, userId])
 
 
     const myLocksButton = mostPopular ? 'text' : 'contained'
@@ -170,22 +182,22 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </React.Fragment>
             }
 
-                <Accordion expanded={controlsExpanded} disableGutters={true}>
-                    <AccordionSummary style={{
-                        paddingLeft: buttonsMargin,
-                        paddingRight: buttonsMargin,
-                        placeItems: 'center',
-                        width: '100%'
-                    }}>
-                        <div style={{width: '100%', placeItems: 'center', textAlign: 'center'}}>
+            <Accordion expanded={controlsExpanded} disableGutters={true}>
+                <AccordionSummary style={{
+                    paddingLeft: buttonsMargin,
+                    paddingRight: buttonsMargin,
+                    placeItems: 'center',
+                    width: '100%'
+                }}>
+                    <div style={{width: '100%', placeItems: 'center', textAlign: 'center'}}>
 
-                            <div style={{
-                                display: headerDivStyle,
-                                width: '100%',
-                                placeItems: 'center',
-                                textAlign: 'center'
-                            }}>
-                                {(owner || admin) &&
+                        <div style={{
+                            display: headerDivStyle,
+                            width: '100%',
+                            placeItems: 'center',
+                            textAlign: 'center'
+                        }}>
+                            {(owner || admin) &&
                                 <div style={{width: '100%', textAlign: 'left'}}>
                                     {!danSheetImported &&
                                         <Button variant='outlined' color='secondary' size='small'
@@ -198,7 +210,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                         <Button variant='outlined' color='secondary' size='small'
                                                 style={{lineHeight: '1.2rem'}}
                                                 onClick={() => handleOpenControls('project')}>
-                                            {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                            ADD PROJECT
                                         </Button>
                                     }
                                     {profile && profile.blackBeltAwardedAt &&
@@ -209,91 +221,95 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                         </Button>
                                     }
                                 </div>
-                                }
-                                <div style={{
-                                    width: '100%',
-                                    textAlign: 'right',
-                                    display: 'flex',
-                                    marginTop: buttonMarginTop
-                                }}>
-                                    <div style={{flexGrow: 1}}/>
-                                    <Button variant={myLocksButton} color='secondary' size='small'
-                                            style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding:'4px 10px'}}
-                                            onClick={() => handleLocksToggle()}>
-                                        <nobr>{buttonText}</nobr>
+                            }
+                            <div style={{
+                                width: '100%',
+                                textAlign: 'right',
+                                display: 'flex',
+                                marginTop: buttonMarginTop
+                            }}>
+                                <div style={{flexGrow: 1}}/>
+                                <Button variant={myLocksButton} color='secondary' size='small'
+                                        style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding: '4px 10px'}}
+                                        onClick={() => handleLocksToggle()}>
+                                    <nobr>{buttonText}</nobr>
+                                </Button>
+                                <Button variant={mostPopularButton} color='info' size='small'
+                                        style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
+                                        onClick={() => handleLocksToggle()}>
+                                    MOST&nbsp;POPULAR
+                                </Button>
+                            </div>
+                        </div>
+
+
+                        {loading && <LoadingDisplay/>}
+
+                        {admin && !loading &&
+                            <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
+                                <div style={{display: 'flex'}}>
+                                    <div style={{width: '10%', textAlign: 'center'}}>
+                                        ADMIN
+                                    </div>
+                                    <Button color='secondary' size='small'
+                                            style={{lineHeight: '1.2rem', marginLeft: 6}}
+                                            onClick={() => handleOpenControls('award')}>
+                                        ADD BELT
                                     </Button>
-                                    <Button variant={mostPopularButton} color='info' size='small'
-                                            style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
-                                            onClick={() => handleLocksToggle()}>
-                                        MOST&nbsp;POPULAR
+
+                                    <Button color='secondary' size='small'
+                                            style={{lineHeight: '1rem'}}
+                                            onClick={() => handleOpenControls('import')}>
+                                        IMPORT DAN SHEET
                                     </Button>
+                                    <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                            onClick={handleUpdateUserStats}>
+                                        UPDATE STATS
+                                    </Button>
+                                    <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                            onClick={handleMergeRecorded}>MERGE
+                                        RECORDED&nbsp;({recordedIdsToMerge.length})
+                                    </Button>
+                                    <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                            onClick={handleOpen}>DELETE SCORECARD</Button>
+                                    <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                        <div style={{padding: 20, textAlign: 'center'}}>
+                                            You cannot undo delete.<br/>
+                                            Are you sure?
+                                        </div>
+                                        <div style={{textAlign: 'center'}}>
+                                            <Button style={{marginBottom: 10, color: '#000'}}
+                                                    variant='contained'
+                                                    onClick={handleDeleteAll}
+                                                    edge='start'
+                                                    color='error'
+                                            >
+                                                Delete
+                                            </Button>
+                                        </div>
+                                    </Menu>
+                                    <IconButton color='secondary' onClick={handleRefresh}>
+                                        <CachedIcon/>
+                                    </IconButton>
                                 </div>
                             </div>
-
-
-                            {loading && <LoadingDisplay/>}
-
-                            {admin && !loading &&
-                                <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
-                                    <div style={{display: 'flex'}}>
-                                        <div style={{width: '10%', textAlign: 'center'}}>
-                                            admin
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small'
-                                                    style={{lineHeight: '1rem'}}
-                                                    onClick={() => handleOpenControls('import')}>
-                                                IMPORT DAN SHEET
-                                            </Button>
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                                    onClick={handleUpdateUserStats}>
-                                                UPDATE STATS
-                                            </Button>
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                                    onClick={handleMergeRecorded}>MERGE
-                                                RECORDED&nbsp;({recordedIdsToMerge.length})
-                                            </Button>
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                                    onClick={handleOpen}>DELETE SCORECARD</Button>
-                                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                                <div style={{padding: 20, textAlign: 'center'}}>
-                                                    You cannot undo delete.<br/>
-                                                    Are you sure?
-                                                </div>
-                                                <div style={{textAlign: 'center'}}>
-                                                    <Button style={{marginBottom: 10, color: '#000'}}
-                                                            variant='contained'
-                                                            onClick={handleDeleteAll}
-                                                            edge='start'
-                                                            color='error'
-                                                    >
-                                                        Delete
-                                                    </Button>
-                                                </div>
-                                            </Menu>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-
-                        </div>
-                    </AccordionSummary>
-
-                    <AccordionDetails style={{backgroundColor: '#333'}}>
-                        {controlForm === 'import' &&
-                            <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
                         }
-                        {controlForm === 'project' &&
-                            <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
-                        }
-                    </AccordionDetails>
-                </Accordion>
+
+                    </div>
+                </AccordionSummary>
+
+                <AccordionDetails style={{backgroundColor: '#333'}}>
+                    {controlForm === 'import' &&
+                        <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
+                    }
+                    {controlForm === 'project' &&
+                        <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
+                    }
+                    {controlForm === 'award' &&
+                        <EvidenceForm evid={null} handleUpdate={handleOpenControls} addAward={true} owner={owner}/>
+                    }
+                </AccordionDetails>
+            </Accordion>
 
             {!mostPopular &&
                 <React.Fragment>
@@ -318,7 +334,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </React.Fragment>
             }
             {mostPopular &&
-                <PopularEntries owner={owner} profile={profile} adminAction={adminAction} popularEntries={popularEntries}/>
+                <PopularEntries owner={owner} profile={profile} adminAction={adminAction}
+                                popularEntries={popularEntries}/>
             }
         </div>
     )
