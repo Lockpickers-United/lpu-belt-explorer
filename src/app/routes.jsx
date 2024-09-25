@@ -12,6 +12,13 @@ export default [
         loader: () => redirect('/locks')
     },
     {
+        path: '/_',
+        lazy: async () => {
+            const {default: AuthRedditRoute} = await import ('../auth/AuthRedditRoute')
+            return {element: <AuthRedditRoute/>}
+        }
+    },
+    {
         path: '/locks',
         lazy: async () => {
             const {default: LockListRoute} = await import('../locks/LockListRoute')
