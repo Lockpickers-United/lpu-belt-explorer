@@ -412,6 +412,13 @@ export function DBProvider({children}) {
         }
     }, [user])
 
+    const setDiscordUserInfo = useCallback(async (id, username) => {
+        if (id && username) {
+            const ref = doc(db, 'lockcollections', user.uid)
+            await setDoc(ref, {discordId: id, discordUsername: username}, {merge: true})
+        }
+    }, [user])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -511,6 +518,7 @@ export function DBProvider({children}) {
         oauthState,
         getBookmarkForRedditUser,
         advanceBookmarkForRedditUser,
+        setDiscordUserInfo,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,
@@ -538,6 +546,7 @@ export function DBProvider({children}) {
         oauthState,
         getBookmarkForRedditUser,
         advanceBookmarkForRedditUser,
+        setDiscordUserInfo,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,

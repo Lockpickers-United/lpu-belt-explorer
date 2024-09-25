@@ -58,6 +58,16 @@ function EditProfilePage() {
         setAnchorEl(ev.currentTarget)
     }, [])
 
+    const handleDiscordAuth = useCallback(() => {
+        const {VITE_DISCORD_CLIENT_ID: clientId} = import.meta.env
+        const scope = encodeURIComponent('identify')
+        const hostname = location.host.startsWith('localhost') ? 'dev.lpubelts.com' : location.host
+        const redirectUri = encodeURIComponent(`https://${hostname}/auth/discord`)
+
+        const url = `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`
+        window.location.assign(url)
+    }, [])
+
     const handleRedditAuth = useCallback(async () => {
         const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
         const newState = await oauthState()
@@ -169,6 +179,15 @@ function EditProfilePage() {
                         </div>
 
                     </CardActions>
+                    <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
+                        <Button variant='outlined'
+                                color='info'
+                                onClick={handleDiscordAuth}
+                                style={{marginBottom: 10,  color: '#4972ab', padding:'5px 86px'}}
+                        >
+                            Link Discord Account
+                        </Button>
+                    </div>
                     <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
                         <Button variant='outlined'
                                 color='info'
