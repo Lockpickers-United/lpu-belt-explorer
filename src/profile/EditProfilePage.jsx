@@ -13,7 +13,7 @@ import Menu from '@mui/material/Menu'
 import LoadingDisplay from '../misc/LoadingDisplay'
 
 function EditProfilePage() {
-    const {lockCollection, updateProfileDisplayName, deleteAllUserData} = useContext(DBContext)
+    const {lockCollection, updateProfileDisplayName, deleteAllUserData, oauthState} = useContext(DBContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
     const [anchorEl, setAnchorEl] = useState(null)
     const [deletingData, setDeletingData] = useState(false)
@@ -57,6 +57,17 @@ function EditProfilePage() {
         ev.stopPropagation()
         setAnchorEl(ev.currentTarget)
     }, [])
+
+    const handleRedditAuth = useCallback(async () => {
+        const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
+        const newState = await oauthState()
+        const scope = encodeURIComponent('identity flair privatemessages')
+        const hostname = location.host.startsWith('localhost') ? 'dev.lpubelts.com' : location.host
+        const redirectUri = encodeURIComponent(`https://${hostname}/auth/reddit`)
+
+        const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
+        window.location.assign(url)
+    }, [oauthState])
 
     const handleDeleteAllData = useCallback(async () => {
         setDeletingData(true)
@@ -158,6 +169,15 @@ function EditProfilePage() {
                         </div>
 
                     </CardActions>
+                    <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
+                        <Button variant='outlined'
+                                color='info'
+                                onClick={handleRedditAuth}
+                                style={{marginBottom: 10,  color: '#4972ab', padding:'5px 86px'}}
+                        >
+                            Link Reddit Account
+                        </Button>
+                    </div>
                     <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
                         <Button variant='outlined'
                                 color='info'

@@ -46,6 +46,26 @@ export function getAwardEntryFromId(id) {
     return allAwardsById[id]
 }
 
+export function lookupAwardByBelt(belt, danLevel) {
+    if (danLevel) {
+        return allAwards.find(a => a.belt === 'Dan ' + danLevel)
+    } else {
+        return allAwards.find(a => a.belt.toLowerCase() === belt.toLowerCase())
+    }
+}
+
+export function awardGreaterThan(awardA, awardB) {
+    if (!awardA) {
+        return false
+    } else if (!awardB || awardA.awardType === 'dan' && awardB.awardType === 'belt') {
+        return true
+    } else if (awardA.awardType === awardB.awardType) {
+        return awardA.rank > awardB.rank
+    } else {
+        return false
+    }
+}
+
 export function isAward(id) {
     return Boolean(allAwardsById[id])
 }

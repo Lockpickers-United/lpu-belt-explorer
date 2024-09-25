@@ -365,6 +365,51 @@ export function DBProvider({children}) {
         await setDoc(ref, cleanProfile)
     }, [removeEvidence])
 
+    const oauthState = useCallback(async (state) => {
+        if (!user.uid) return false
+        const ref = doc(db, 'lockcollections', user.uid)
+        if (state) {
+            const userDoc = await getDoc(ref)
+            const profile = userDoc.data()
+            return state === profile?.oauthState
+        } else {
+            const newState = (Math.random()+1).toString(36).substring(2)
+            await setDoc(ref, {oauthState: newState}, {merge: true})
+            return newState
+        }
+    }, [user.uid])
+
+    const getBookmarkForRedditUser = useCallback(async (username) => {
+        const ref = doc(db, 'lockcollections', user.uid)
+        const userDoc = await getDoc(ref)
+        const profile = userDoc.data()
+        if (profile && username === profile.redditUsername) {
+            return profile.redditBookmark
+        } else {
+            return null
+        }
+    }, [user])
+
+    const advanceBookmarkForRedditUser = useCallback(async (username, bookmark, awards) => {
+        const batch = writeBatch(db)
+        awards.forEach(aw => {
+            const newDoc = {
+                userId: user.uid,
+                awardId: aw.matchId,
+                awardUrl: aw.link,
+                awardCreatedAt: Timestamp.fromDate(new Date(aw.awardedAt))
+            }
+            const ref = doc(db, 'awards-reddit', btoa(user.uid + aw.matchId))
+            batch.set(ref, newDoc)
+        })
+        await batch.commit()
+
+        if (username && bookmark) {
+            const ref = doc(db, 'lockcollections', user.uid)
+            await setDoc(ref, {redditUsername: username, redditBookmark: bookmark}, {merge: true})
+        }
+    }, [user])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -461,6 +506,9 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
+        oauthState,
+        getBookmarkForRedditUser,
+        advanceBookmarkForRedditUser,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,
@@ -484,12 +532,15 @@ export function DBProvider({children}) {
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
+        oauthState,
+        getBookmarkForRedditUser,
+        advanceBookmarkForRedditUser,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
         removeDismissedMessages
-        ])
+    ])
 
     return (
         <DBContext.Provider value={value}>
