@@ -32,6 +32,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
     const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
     const [updated, setUpdated] = useState(false)
 
+    const isAward = addAward || evid.collectionDB === 'awards'
     const [entryName, setEntryName] = useState(null)
     const entry = getEntryFromId(evid?.matchId || lockId)
     const project = allProjects.find(item => {
@@ -52,7 +53,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
                 ? award.id
                 : null
     const fieldLabel = addAward ? 'Belt/Dan' : 'Project'
-    
+
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => {
@@ -125,7 +126,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
     }, [])
 
     const evidenceUrlValid = isValidUrl(evidenceUrl)
-    const evidenceUrlError = ((!!evidenceUrl && !isValidUrl(evidenceUrl)) || (updated && !evidenceUrl)) && !addAward
+    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl) || ((updated && !evidenceUrl) ) && !isAward)
     const evidenceURLHelperText = evidenceUrlError ? 'Documentation link is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
@@ -191,27 +192,28 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
                         disableFuture
                     />
 
-                    <TextField
-                        select
-                        style={{marginLeft: 30, width: 250}}
-                        id='modifier'
-                        label='Modifier'
-                        value={modifier ?? ''}
-                        color='secondary'
-                        onChange={e => {
-                            setModifier(e.target.value)
-                            setUpdated(true)
-                        }}
-                    >
-                        <MenuItem value=''>(None)</MenuItem>
-                        <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
-                        <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
-                        <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
-                        <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
-                        <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
-                            (Notable)</MenuItem>
-                    </TextField>
-
+                    {!isAward &&
+                        <TextField
+                            select
+                            style={{marginLeft: 30, width: 250}}
+                            id='modifier'
+                            label='Modifier'
+                            value={modifier ?? ''}
+                            color='secondary'
+                            onChange={e => {
+                                setModifier(e.target.value)
+                                setUpdated(true)
+                            }}
+                        >
+                            <MenuItem value=''>(None)</MenuItem>
+                            <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
+                            <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
+                            <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
+                            <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
+                            <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
+                                (Notable)</MenuItem>
+                        </TextField>
+                    }
                 </div>
 
                 <div style={{display: 'flex', width: '90%', marginBottom: 20}}>
