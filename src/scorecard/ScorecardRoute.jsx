@@ -31,7 +31,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, getEvidence, getAwards} = useContext(DBContext)
+    const {getProfile, getEvidence} = useContext(DBContext)
     const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
@@ -57,12 +57,9 @@ function ScorecardRoute({mostPopular}) {
                     : 'Anonymous'
                 document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
             }
-
-            const awards = await getAwards(userId)
-
             if (user?.uid !== userId) {
                 const evidence = await getEvidence(userId)
-                return {profile, ...calculateScoreForUser([...evidence, ...awards])}
+                return {profile, ...calculateScoreForUser(evidence)}
             } else {
                 return {profile, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
             }
@@ -70,11 +67,10 @@ function ScorecardRoute({mostPopular}) {
             console.error('Error loading profile and evidence.', ex)
             return null
         }
-    }, [triggerState, getProfile, userId, user, getEvidence, getAwards, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+    }, [triggerState, getProfile, userId, user, getEvidence, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
-    const awards = data ? data.awards : []
     const cardEvidence = data ? data.scoredEvidence : []
     const cardBBCount = data ? data.bbCount : 0
     const cardDanPoints = data ? data.danPoints : 0

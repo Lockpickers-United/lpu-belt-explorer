@@ -1,7 +1,6 @@
 const {initializeApp, cert} = require('firebase-admin/app')
-const {getFirestore} = require('firebase-admin/firestore')
+const {getFirestore, Timestamp} = require('firebase-admin/firestore')
 const serviceAccount = require('../../lpu-belt-explorer-firebase-adminsdk.json')
-const {query, collection, where, getDocs} = require('firebase/firestore')
 
 const config = {
     credential: cert(serviceAccount)
@@ -11,22 +10,26 @@ const db = getFirestore(firebaseApp, 'lpubelts-dev')
 
 const awardImport = [
     {
-        'userId': 'GGplAdctTfVDLVvYsfIADJmfp8f2',
-        'matchId': '80e8bd11',
-        'description': 'Dan 2',
-        'date': '2024-09-23',
-        'awardUrl': 'https://discord.com/channels/140129091796992000/282173282546089985/1125230415364509810'
+        userId: 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        projectId: 'da7759a9',
+        description: 'black',
+        date: '2024-09-24',
+        evidenceUrl: 'https://google.com',
+        collectionDB: 'awards'
     }
+
 ]
 
-
-
 awardImport.map(awardData => {
+
+    const timestamp = Timestamp.fromDate(new Date(awardData.date + 'T23:59:59.000Z'))
+
     const award = {
-        date: awardData.date + 'T23:59:59.000Z',
-        matchId: awardData.matchId,
-        awardUrl: awardData.awardUrl,
-        userId: awardData.userId
+        evidenceCreatedAt: timestamp,
+        projectId: awardData.projectId,
+        evidenceUrl: awardData.evidenceUrl,
+        userId: awardData.userId,
+        collectionDB: awardData.collectionDB
     }
     addAward(award)
 })
@@ -38,11 +41,11 @@ async function addAward(award) {
     await collection.add(award)
 }
 
-async function deleteAwards (userId) {
+async function deleteAwards (userId) { //eslint-disable-line
     const docs = await db.collection('awards').where('userId', '==', userId).get()
     docs.forEach(doc => {
         console.log('doc id', doc.id)
-        db.collection('awards').doc(doc.id).delete();
+        db.collection('awards').doc(doc.id).delete()
     },[])
 
 }

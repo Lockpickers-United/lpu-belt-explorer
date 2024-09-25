@@ -25,12 +25,16 @@ import {useNavigate} from 'react-router-dom'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import PrintIcon from '@mui/icons-material/Print'
+import AppContext from '../app/AppContext.jsx'
+
 dayjs.extend(utc)
 
 function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
+
     const navigate = useNavigate()
     const {setFilters} = useContext(FilterContext)
     const {cardEvidence, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
+    const {admin} = useContext(AppContext)
 
     const entry = getEntryFromId(evid.matchId)
     const project = getProjectEntryFromId(evid.matchId)
@@ -68,7 +72,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     let entryTitle = entity
         ? entryName(entity)
         : evid.evidenceNotes
-    const evidenceNotes = evid.exceptionType && (evid.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
+    const evidenceNotes = evid.exceptionType && evid.evidenceNotes && (evid.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
         ? evid.evidenceNotes
         : null
     entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.evidenceNotes} ]` : entryTitle
@@ -105,12 +109,13 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     dateText = dateText.replace('/201', '/1')
     const dateColor = evid.date ? '#fff' : '#aaa'
 
-    const expandable = owner && !['belt', 'dan'].includes(evid['awardType'])
+    const expandable = (owner && !['belt', 'dan'].includes(evid['awardType'])) || admin
+
     const handleChange = useCallback((_, isExpanded) => {
         if (expandable) {
             onExpand(isExpanded ? evid.id : false)
         }
-    }, [evid.id, expandable, onExpand])
+    }, [evid, expandable, onExpand])
 
     const handleClick = useCallback(event => {
         event.preventDefault()
@@ -134,7 +139,14 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const titleSize = ['belt', 'dan'].includes(evid['awardType']) ? '1.1rem' : '1rem'
     const bgColor = ['belt', 'dan'].includes(evid['awardType']) ? '#121212' : ''
 
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', display: 'flex', placeItems: 'center', backgroundColor:bgColor}
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        display: 'flex',
+        placeItems: 'center',
+        backgroundColor: bgColor
+    }
 
 
     return (
@@ -150,10 +162,12 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                 }}>
                     <div style={{display: 'flex'}}>
                         {evid.awardType === 'belt' &&
-                            <div style={{marginTop: -4, marginRight:10}}><BeltIcon value={entity.belt} style={{paddingTop: 2}}/></div>
+                            <div style={{marginTop: -4, marginRight: 10}}><BeltIcon value={entity.belt}
+                                                                                    style={{paddingTop: 2}}/></div>
                         }
                         {evid.awardType === 'dan' &&
-                            <div style={{margin:'0px 12px 0px 5px'}}><SportsMartialArtsIcon style={{color:'#87c048'}}/></div>
+                            <div style={{margin: '0px 12px 0px 5px'}}><SportsMartialArtsIcon
+                                style={{color: '#87c048'}}/></div>
                         }
                         <FieldValue
                             value={entryTitle}

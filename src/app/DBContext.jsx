@@ -38,7 +38,8 @@ function evidenceDB2State(id, dbRec) {
         evidenceNotes: dbRec.evidenceNotes,
         link: dbRec.evidenceUrl,
         date: dateStr,
-        modifier: dbRec.modifier
+        modifier: dbRec.modifier,
+        collectionDB: dbRec.collectionDB ? dbRec.collectionDB : 'evidence'
     }
 }
 
@@ -62,14 +63,19 @@ async function evidenceCache(userId) {
     const docRef = doc(db, 'query-cache', queryStr)
     const cached = await getDoc(docRef)
 
-    if (cached.exists()) {
+    if (cached.exists() && false) { //eslint-disable-line
         return JSON.parse(cached.data().payload)
     } else {
         const q = query(collection(db, 'evidence'), where('userId', '==', userId))
         const querySnapshot = await getDocs(q)
-        const retval = querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
-        await setDoc(docRef, {payload: JSON.stringify(retval)})
-        return retval
+        const evidence = querySnapshot.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
+
+        const q2 = query(collection(db, 'awards'), where('userId', '==', userId))
+        const querySnapshot2 = await getDocs(q2)
+        const awards = querySnapshot2.docs.map(rec => evidenceDB2State(rec.id, rec.data()))
+
+        await setDoc(docRef, {payload: JSON.stringify([...evidence, ...awards])})
+        return [...evidence, ...awards]
     }
 }
 
@@ -86,7 +92,6 @@ export function DBProvider({children}) {
     const [evidenceDBLoaded, setEvidenceDBLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
     const [systemMessages, setSystemMessages] = useState([])
-    const [awards, setAwards] = useState([])
 
     const dbLoaded = collectionDBLoaded && evidenceDBLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
@@ -191,12 +196,14 @@ export function DBProvider({children}) {
             evidenceNotes: newEvid.evidenceNotes,
             evidenceUrl: newEvid.link,
             evidenceCreatedAt: Timestamp.fromDate(new Date(newEvid.date)),
-            modifier: newEvid.modifier
+            modifier: newEvid.modifier,
+            collectionDB: oldEvid.collectionDB
         }
         if (newEvid.matchId) {
             rec.projectId = newEvid.matchId
         }
-        await setDoc(doc(db, 'evidence', oldEvid.id), rec)
+        const collectionName = oldEvid.collectionDB
+        await setDoc(doc(db, collectionName, oldEvid.id), rec)
         await invalidateEvidenceCache(oldEvid.userId)
         await updateUserStatistics(oldEvid.userId)
 
@@ -214,7 +221,10 @@ export function DBProvider({children}) {
     const removeEvidence = useCallback(async (evids) => {
         if (Array.isArray(evids)) {
             const batch = writeBatch(db)
-            evids.forEach(ev => batch.delete(doc(db, 'evidence', ev.id)))
+            evids.forEach(ev => {
+                const collectionName = ev.collectionDB
+                batch.delete(doc(db, collectionName, ev.id))
+            })
             await batch.commit()
 
             const userIds = evids.reduce((acc, ev) => {
@@ -230,7 +240,8 @@ export function DBProvider({children}) {
                 setEvidence(e => e.filter(ev => !currentIds.includes(ev.id)))
             }
         } else {
-            await deleteDoc(doc(db, 'evidence', evids.id))
+            const collectionName = evids.collectionDB
+            await deleteDoc(doc(db, collectionName, evids.id))
             await invalidateEvidenceCache(evids.userId)
             await updateUserStatistics(evids.userId)
             if (user.uid === evids.userId) {
@@ -431,33 +442,6 @@ export function DBProvider({children}) {
         await updateDoc(ref, {dismissedMessages: deleteField()})
     }, [dbError])
 
-
-
-    const getAwards = useCallback(async userId => {
-        const q = query(collection(db, 'awards'), where('userId', '==', userId))
-        const querySnapshot = await getDocs(q)
-        return querySnapshot.docs.map(doc => {
-            return {...doc.data(), id: doc.id, link: doc.data().awardUrl}
-        },[])
-    }, [])
-
-
-    // Awards Subscription
-    useEffect(() => {
-        if (isLoggedIn) {
-            const q = query(collection(db, 'awards'), where('userId', '==', user.uid))
-            return onSnapshot(q, querySnapshot => {
-                //setAwards(querySnapshot.docs.map(doc => [...doc.data(), id: doc.id]))
-                const userAwards = querySnapshot.docs.map(doc => {
-                    return {...doc.data(), id: doc.id, link: doc.data().awardUrl}
-                },[])
-                setAwards(userAwards)
-            }, error => {
-                console.error('Error getting awards from DB:', error)
-            })
-        }
-    }, [isLoggedIn, user])
-
     const value = useMemo(() => ({
         dbLoaded,
         adminRole,
@@ -481,10 +465,31 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages,
-        awards,
-        getAwards
-    }), [dbLoaded, adminRole, lockCollection, addToLockCollection, removeFromLockCollection, getProfile, updateProfileDisplayName, updateProfileBlackBeltAwardedAt, removeProfileBlackBeltAwarded, updateUserStatistics, evidence, addEvidence, updateEvidence, removeEvidence, getEvidence, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, systemMessages, getAllSystemMessages, updateSystemMessage, updateSystemMessageStatus, removeDismissedMessages, awards, getAwards])
+        removeDismissedMessages
+    }), [dbLoaded,
+        adminRole,
+        lockCollection,
+        addToLockCollection,
+        removeFromLockCollection,
+        getProfile,
+        updateProfileDisplayName,
+        updateProfileBlackBeltAwardedAt,
+        removeProfileBlackBeltAwarded,
+        updateUserStatistics,
+        evidence,
+        addEvidence,
+        updateEvidence,
+        removeEvidence,
+        getEvidence,
+        importUnclaimedEvidence,
+        createEvidenceForEntries,
+        deleteAllUserData,
+        systemMessages,
+        getAllSystemMessages,
+        updateSystemMessage,
+        updateSystemMessageStatus,
+        removeDismissedMessages
+        ])
 
     return (
         <DBContext.Provider value={value}>
