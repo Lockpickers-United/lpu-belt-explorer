@@ -71,8 +71,7 @@ function EditProfilePage() {
         const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
         const newState = await oauthState()
         const scope = encodeURIComponent('identity flair privatemessages')
-        const hostname = location.host.startsWith('localhost') ? 'dev.lpubelts.com' : location.host
-        const redirectUri = encodeURIComponent(`https://${hostname}/auth/reddit`)
+        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/reddit`)
 
         const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
         window.location.assign(url)

@@ -10,7 +10,7 @@ function AuthRedditRoute() {
     const {getBookmarkForRedditUser, advanceBookmarkForRedditUser, oauthState} = useContext(DBContext)
     const {VITE_REDDIT_CLIENT_ID: clientId, VITE_REDDIT_CLIENT_SECRET: clientSecret} = import.meta.env
 
-    const urlMatch = window.location.href.match(/auth\/reddit\?state=([^&]+)&code=([^#]+)#/)
+    const urlMatch = window.location.href.match(/\?state=([^&]+)&code=([^#]+)#/)
     const urlState = urlMatch ? urlMatch[1] : null
     const urlCode = urlMatch ? urlMatch[2] : null
 
@@ -20,13 +20,12 @@ function AuthRedditRoute() {
     useEffect(() => {
         async function getAccessToken() {
             if (await oauthState(urlState)) {
-                const hostname = location.host.startsWith('localhost') ? 'dev.lpubelts.com' : location.host
                 const resp = await fetch('https://www.reddit.com/api/v1/access_token', {
                     method: 'POST',
                     body: new URLSearchParams({
                         grant_type: 'authorization_code',
                         code: encodeURIComponent(urlCode),
-                        redirect_uri: `https://${hostname}/auth/reddit`
+                        redirect_uri: `${location.origin}/#/auth/reddit`
                     }).toString(),
                     headers: {
                         'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
