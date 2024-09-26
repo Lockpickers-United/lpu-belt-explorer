@@ -4,7 +4,7 @@ import DBContext from '../app/DBContext'
 function AuthDiscordRoute() {
     const {setDiscordUserInfo} = useContext(DBContext)
     const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
-    const urlMatch = window.location.href.match(/auth\/discord\?code=([^#]+)#/)
+    const urlMatch = window.location.href.match(/\?code=([^#]+)#/)
     const urlCode = urlMatch ? urlMatch[1] : null
 
     const [credentials, setCredentials] = useState(null)
@@ -12,13 +12,12 @@ function AuthDiscordRoute() {
 
     useEffect(() => {
         async function getAccessToken() {
-            const hostname = location.host.startsWith('localhost') ? 'dev.lpubelts.com' : location.host
             const resp = await fetch('https://discord.com/api/oauth2/token', {
                 method: 'POST',
                 body: new URLSearchParams({
                     grant_type: 'authorization_code',
                     code: urlCode,
-                    redirect_uri: `https://${hostname}/auth/discord`
+                    redirect_uri: `${location.origin}/#/auth/discord`
                 }).toString(),
                 headers: {
                     'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),

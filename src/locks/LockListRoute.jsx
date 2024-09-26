@@ -1,5 +1,4 @@
-import React, {useContext, useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+import React, {useContext} from 'react'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
 import {lockFilterFields} from '../data/filterFields'
@@ -19,19 +18,6 @@ import allEntries from '../data/data.json'
 import {lockSortFields} from '../data/sortFields'
 
 function LockListRoute() {
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        if (window.location.href.match(/auth\/discord/)) {
-            // help hash router, which can't handle real urls from oauth redirect
-            navigate('/auth/discord')
-        }
-    }, [navigate])
-
-    if (window.location.href.match(/auth\/discord/)) {
-        return <React.Fragment/>
-    }
-
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
     usePageTitle('Locks')

@@ -61,8 +61,7 @@ function EditProfilePage() {
     const handleDiscordAuth = useCallback(() => {
         const {VITE_DISCORD_CLIENT_ID: clientId} = import.meta.env
         const scope = encodeURIComponent('identify')
-        const hostname = location.host.startsWith('localhost') ? 'dev.lpubelts.com' : location.host
-        const redirectUri = encodeURIComponent(`https://${hostname}/auth/discord`)
+        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/discord`)
 
         const url = `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`
         window.location.assign(url)
