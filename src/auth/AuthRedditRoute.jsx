@@ -30,7 +30,7 @@ function AuthRedditRoute() {
                     headers: {
                         'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
                         'Content-Type': 'application/x-www-form-urlencoded'
-                    },
+                    }
                 })
                 if (200 === resp.status) {
                     const data = await resp.json()
@@ -122,11 +122,23 @@ function AuthRedditRoute() {
             }
             await advanceBookmarkForRedditUser(username, nextBookmark, awards)
             setSyncResult({username: username, flair: flairBelt, awards: awards})
+
+            await fetch('https://www.reddit.com/api/v1/revoke_token', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    token: token,
+                    token_type_hint: type
+                }).toString(),
+                headers: {
+                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
         }
         if (credentials) {
             syncRedditBeltAwards(credentials.type, credentials.token)
         }
-    }, [credentials, advanceBookmarkForRedditUser, getBookmarkForRedditUser])
+    }, [credentials, advanceBookmarkForRedditUser, getBookmarkForRedditUser, clientId, clientSecret])
 
     return (
         <React.Fragment>
