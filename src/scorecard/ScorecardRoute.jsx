@@ -23,7 +23,6 @@ import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import SearchBox from '../nav/SearchBox.jsx'
 import SortButton from '../filters/SortButton.jsx'
-import SystemMessage from '../systemMessage/SystemMessage.jsx'
 import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -114,7 +113,6 @@ function ScorecardRoute({mostPopular}) {
                     <ScorecardListProvider>
                         <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                             <Nav title={title} extras={nav}/>
-                            <SystemMessage/>
 
                             {loading && <LoadingDisplay/>}
 

@@ -5,6 +5,7 @@ import VersionChecker from '../app/VersionChecker'
 import MainMenu from './MainMenu'
 import ScrollToTopButton from './ScrollToTopButton'
 import UserMenu from './UserMenu'
+import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function Nav({extras, title}) {
     return (
@@ -30,6 +31,8 @@ function Nav({extras, title}) {
 
             {/* Dummy toolbar to help content place correctly below this */}
             <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)'}}/>
+
+            <SystemMessage/>
 
             <ScrollToTopButton/>
         </React.Fragment>

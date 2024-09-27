@@ -22,7 +22,6 @@ import SafelocksDataProvider from '../safelocks/SafelocksDataProvider.jsx'
 import allEntries from '../data/safelocks.json'
 import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
-import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfileRoute() {
     const {userId} = useParams()
@@ -81,7 +80,6 @@ function ProfileRoute() {
                     }}>
 
                         <Nav title={title} extras={nav}/>
-                        <SystemMessage/>
 
                         <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
                         
