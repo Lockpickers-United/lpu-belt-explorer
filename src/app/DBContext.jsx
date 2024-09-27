@@ -379,7 +379,7 @@ export function DBProvider({children}) {
             await setDoc(ref, {oauthState: newState}, {merge: true})
             return newState
         }
-    }, [user.uid])
+    }, [user])
 
     const getBookmarkForRedditUser = useCallback(async (username) => {
         const ref = doc(db, 'lockcollections', user.uid)
