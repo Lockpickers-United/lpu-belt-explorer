@@ -4,7 +4,6 @@ import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import BeltStripe from '../entries/BeltStripe.jsx'
 import FieldValue from '../entries/FieldValue.jsx'
-
 import dayjs from 'dayjs'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ScorecardEvidenceButton from './ScorecardEvidenceButton.jsx'
@@ -15,13 +14,11 @@ import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Link from '@mui/material/Link'
 import EvidenceForm from './EvidenceForm.jsx'
-
 import useWindowSize from '../util/useWindowSize.jsx'
 import Typography from '@mui/material/Typography'
 import BeltIcon from '../entries/BeltIcon.jsx'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
-
 import utc from 'dayjs/plugin/utc'
 import {useNavigate} from 'react-router-dom'
 import Tooltip from '@mui/material/Tooltip'
@@ -138,8 +135,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const nameDivWidth = !isMobile ? '56%' : '65%'
     const dateMargin = !isMobile ? '3px 0px 3px 0px' : '-2px 0px 3px 0px'
 
-    const titleSize = ['belt', 'dan'].includes(evid['awardType']) ? '1.1rem' : '1rem'
-    const bgColor = ['belt', 'dan'].includes(evid['awardType']) ? '#121212' : ''
+    const titleSize = ['belt', 'dan', 'hof'].includes(evid['awardType']) ? '1.1rem' : '1rem'
+    const bgColor = ['belt', 'dan', 'hof'].includes(evid['awardType']) ? '#121212' : ''
 
     const style = {
         maxWidth: 700,
@@ -184,7 +181,6 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                     {!!evidenceNotes && !award &&
                         <span style={{
                             margin: '0px 0px 0px 15px',
-
                             fontSize: '0.95rem',
                             lineHeight: 1.25,
                             color: '#bbb'
