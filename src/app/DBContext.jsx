@@ -23,7 +23,7 @@ import {
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 import calculateScoreForUser from '../scorecard/scoring'
-import {isLock, isProject} from '../entries/entryutils'
+import {isLock, isProject, lookupAwardByBelt} from '../entries/entryutils'
 import collectionOptions from '../data/collectionTypes'
 
 const DBContext = React.createContext({})
@@ -412,12 +412,44 @@ export function DBProvider({children}) {
         }
     }, [user])
 
+    const updateDiscordAwards = useCallback(async (userId, discordId) => {
+        const userRef = doc(db, 'lockcollections', userId)
+        const userDoc = await getDoc(userRef)
+        const profile = userDoc.data()
+
+        if (profile && profile.discordId) {
+            const q = query(collection(db, 'awards-discord'), where('discordUserId', '==', discordId))
+            const querySnapshot = await getDocs(q)
+
+            if (querySnapshot.docs.length > 0) {
+                const batch = writeBatch(db)
+                let bookmark = null
+                querySnapshot.docs.forEach(awDoc => {
+                    const aw = awDoc.data()
+                    const award = lookupAwardByBelt(aw.discordAwardName, aw.discordAwardName.match(/^(\d+)/)?.[1])
+                    const newDoc = {
+                        userId: userId,
+                        awardId: award.id,
+                        awardCreatedAt: aw.awardCreatedAt,
+                        awardUrl: aw.awardUrl
+                    }
+                    bookmark = !bookmark || newDoc.awardCreatedAt > bookmark ? newDoc.awardCreatedAt : bookmark
+                    const destRef = doc(db, 'awards-reddit', btoa(newDoc.userId + newDoc.awardId))
+                    batch.set(destRef, newDoc)
+                })
+                await batch.commit()
+                await setDoc(userRef, {discordBookmark: bookmark}, {merge: true})
+            }
+        }
+    }, [])
+
     const setDiscordUserInfo = useCallback(async (id, username) => {
         if (id && username) {
             const ref = doc(db, 'lockcollections', user.uid)
-            await setDoc(ref, {discordId: id, discordUsername: username}, {merge: true})
+            await setDoc(ref, {discordId: id, discordUsername: username, discordBookmark: deleteField()}, {merge: true})
+            await updateDiscordAwards(user.uid, id)
         }
-    }, [user])
+    }, [user, updateDiscordAwards])
 
     // Lock Collection Subscription
     useEffect(() => {
