@@ -20,6 +20,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Typography from '@mui/material/Typography'
 import BeltIcon from '../entries/BeltIcon.jsx'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+
 import utc from 'dayjs/plugin/utc'
 import {useNavigate} from 'react-router-dom'
 import Tooltip from '@mui/material/Tooltip'
@@ -168,6 +170,10 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                         {evid.awardType === 'dan' &&
                             <div style={{margin: '0px 12px 0px 5px'}}><SportsMartialArtsIcon
                                 style={{color: '#87c048'}}/></div>
+                        }
+                        {evid.awardType === 'hof' &&
+                            <div style={{margin: '0px 12px 0px 5px'}}><EmojiEventsIcon
+                                style={{color: '#f8f52f'}}/></div>
                         }
                         <FieldValue
                             value={entryTitle}

@@ -505,5 +505,18 @@
         "model": "30th Dan"
       }
     ]
+  },
+  {
+    "id": "39a4699f",
+    "name": "Hall of Fame",
+    "awardType": "hof",
+    "rank": 31,
+    "belt": "Hall of Fame",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Hall of Fame"
+      }
+    ]
   }
 ]

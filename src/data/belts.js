@@ -56,6 +56,7 @@ const belts = {
     'Dan 28': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 29': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 30': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
+    'Hall of Fame': {color: '#e3e13a', lineColor: '#e3e13a', danPoints: 50},
 
 }
 export default belts

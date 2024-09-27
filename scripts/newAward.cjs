@@ -10,15 +10,134 @@ const db = getFirestore(firebaseApp, 'lpubelts-dev')
 
 const awardImport = [
     {
-        userId: 'WMSvvuutyShfvBBYB3PmDe4fmeS2',
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '5a69f6cc',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1269308574476009494',
+        date: '2024-08-03',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '54f3bd1f',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1093471080024379422',
+        date: '2023-04-06',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '13543ef8',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1067787904300109894',
+        date: '2023-01-25',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '58e6650f',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1041272842253258822',
+        date: '2022-11-13',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '24c543eb',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1030451347570565230',
+        date: '2022-10-14',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '69d67112',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1018837741301157889',
+        date: '2022-09-12',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '92398aa5',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1013669970288320602',
+        date: '2022-08-28',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '1636ddbe',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/1008953403386368060',
+        date: '2022-08-15',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '46366349',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/984755607091441725',
+        date: '2022-06-10',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: 'c3a1b4e6',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/975649651753615490',
+        date: '2022-05-15',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '3a71ab4c',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/954835341364330539',
+        date: '2022-03-19',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '80e8bd11',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/952687657895489608',
+        date: '2022-03-13',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '373342ef',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/913736182620381184',
+        date: '2021-11-26',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
         projectId: 'da7759a9',
-        description: 'black',
-        date: '2024-09-24',
-        evidenceUrl: 'https://google.com',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/900017754432757821',
+        date: '2021-10-19',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '752781a0',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/892763615055208508',
+        date: '2021-09-29',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '8ad90321',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/876472698639904848',
+        date: '2021-08-15',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: '6ce30c57',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/865945359813050378',
+        date: '2021-07-17',
+        collectionDB: 'awards'
+    },
+    {
+        userId: 'XKPQaAR525XV2JsqGn12eEKwxD62',
+        projectId: 'a5599aee',
+        evidenceUrl: 'https://discord.com/channels/140129091796992000/282173282546089985/863788206067548201',
+        date: '2021-07-11',
         collectionDB: 'awards'
     }
-
 ]
+
+
 
 awardImport.map(awardData => {
 
@@ -31,10 +150,11 @@ awardImport.map(awardData => {
         userId: awardData.userId,
         collectionDB: awardData.collectionDB
     }
+
     addAward(award)
 })
 
-//deleteAwards('WMSvvuutyShfvBBYB3PmDe4fmeS2')
+//deleteAwards('XKPQaAR525XV2JsqGn12eEKwxD62')
 
 async function addAward(award) {
     const collection = db.collection('awards')
