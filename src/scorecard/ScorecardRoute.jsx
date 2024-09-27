@@ -25,7 +25,6 @@ import FilterButton from '../filters/FilterButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
 import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
-import SystemMessage from '../systemMessage/SystemMessage.jsx'
 import {collectionsFullBB} from '../data/dataUrls'
 
 function ScorecardRoute({mostPopular}) {
@@ -115,7 +114,6 @@ function ScorecardRoute({mostPopular}) {
                     <ScorecardListProvider>
                         <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                             <Nav title={title} extras={nav}/>
-                            <SystemMessage/>
 
                             {loading && <LoadingDisplay/>}
 

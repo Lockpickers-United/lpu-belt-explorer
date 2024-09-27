@@ -4,7 +4,6 @@ import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import NoEntriesCard from '../locks/NoEntriesCard'
 import SafelockEntry from './SafelockEntry.jsx'
 import FilterContext from '../context/FilterContext'
-import SystemMessage from '../systemMessage/SystemMessage.jsx'
 function SafelocksPage({profile}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
@@ -22,7 +21,6 @@ function SafelocksPage({profile}) {
 
         <div style={{margin: 8, paddingBottom: 32}}>
 
-            <SystemMessage/>
 
             <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
 
