@@ -16,7 +16,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 
 function ScorecardRoute() {
     const {userId} = useParams()
-    const {getProfile, getEvidence} = useContext(DBContext)
+    const {getProfile, getPickerActivity} = useContext(DBContext)
 
     const [triggerState, setTriggerState] = useState(false)
     const handleAdminAction = useCallback(() => {
@@ -35,17 +35,17 @@ function ScorecardRoute() {
                 document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
             }
 
-            const evidence = await getEvidence(userId)
-            return {profile, ...calculateScoreForUser(evidence)}
+            const activity = await getPickerActivity(userId)
+            return {profile, ...calculateScoreForUser(activity)}
         } catch (ex) {
-            console.error('Error loading profile and evidence.', ex)
+            console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [userId, getProfile, getEvidence])
+    }, [userId, getProfile, getPickerActivity])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
-    const cardEvidence = data ? data.scoredEvidence : []
+    const cardActivity = data ? data.scoredActivity : []
     const cardBBCount = data ? data.bbCount : 0
     const cardDanPoints = data ? data.danPoints : 0
     const cardEligibleDan = data ? data.eligibleDan : 0
@@ -108,7 +108,7 @@ function ScorecardRoute() {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}
+            <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
                                    cardNextDanLocks={cardNextDanLocks}>
                 <ScorecardListProvider>

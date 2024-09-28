@@ -18,7 +18,6 @@ import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import EvidenceForm from './EvidenceForm.jsx'
 import Menu from '@mui/material/Menu'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
-import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
@@ -30,17 +29,17 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const {userId} = useParams()
     const navigate = useNavigate()
 
-    const {visibleEntries = [], popularEntries = [], cardEvidence} = useContext(ScorecardDataContext)
+    const {visibleEntries = [], popularEntries = [], cardActivity} = useContext(ScorecardDataContext)
 
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters
     const {
         createEvidenceForEntries,
-        removeEvidence,
+        removePickerActivity,
         removeProfileBlackBeltAwarded,
         updateUserStatistics,
-        invalidateEvidenceCache
+        invalidatePickerActivityCache
     } = useContext(DBContext)
     const {admin} = useContext(AppContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
@@ -57,12 +56,12 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const recordedIdsToMerge = useMemo(() => {
         if (profile && profile.recorded) {
-            const evIds = cardEvidence.map(ev => ev.matchId)
+            const evIds = cardActivity.map(ev => ev.matchId)
             return profile.recorded.filter(id => !evIds.includes(id))
         } else {
             return []
         }
-    }, [profile, cardEvidence])
+    }, [profile, cardActivity])
 
     const handleEntryExpand = useCallback((expand) => {
         if (filters['id']) {
@@ -101,12 +100,12 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const handleDeleteAll = useCallback(async () => {
         setLoading(true)
-        await removeEvidence(cardEvidence)
+        await removePickerActivity(cardActivity)
         await removeProfileBlackBeltAwarded(userId)
         handleClose()
         setLoading(false)
         adminAction()
-    }, [cardEvidence, removeEvidence, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
+    }, [cardActivity, removePickerActivity, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
 
     const buttonsMargin = 15
     const headerDivStyle = isMobile ? 'block' : 'flex'
@@ -125,11 +124,11 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const handleRefresh = useCallback(async () => {
         console.log('userId', userId)
         setLoading(true)
-        await invalidateEvidenceCache(userId)
+        await invalidatePickerActivityCache(userId)
         setLoading(false)
         adminAction()
         window.location.reload()
-    }, [adminAction, invalidateEvidenceCache, userId])
+    }, [adminAction, invalidatePickerActivityCache, userId])
 
 
     const myLocksButton = mostPopular ? 'text' : 'contained'
@@ -303,10 +302,10 @@ function Scorecard({owner, profile, adminAction, popular}) {
                         <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
                     }
                     {controlForm === 'project' &&
-                        <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
+                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
                     }
                     {controlForm === 'award' &&
-                        <EvidenceForm evid={null} handleUpdate={handleOpenControls} addAward={true} owner={owner}/>
+                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addAward={true} owner={owner}/>
                     }
                 </AccordionDetails>
             </Accordion>
@@ -316,16 +315,12 @@ function Scorecard({owner, profile, adminAction, popular}) {
                     {visibleEntries.length === 0 &&
                         <NoScorecardData/>
                     }
-
-                    {profile && profile.blackBeltAwardedAt && false &&
-                        <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
-                    }
                     <div>
-                        {visibleEntries.map(ev =>
-                            <ScorecardRow key={ev.id}
+                        {visibleEntries.map(act =>
+                            <ScorecardRow key={act.id}
                                           owner={owner}
-                                          evid={ev}
-                                          expanded={ev.id === entryExpanded}
+                                          activity={act}
+                                          expanded={act.id === entryExpanded}
                                           onExpand={handleEntryExpand}
                                           merged={profile.blackBeltAwardedAt > 0}
                             />

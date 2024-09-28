@@ -28,21 +28,17 @@ import AppContext from '../app/AppContext.jsx'
 
 dayjs.extend(utc)
 
-function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
+function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
 
     const navigate = useNavigate()
     const {setFilters} = useContext(FilterContext)
-    const {cardEvidence, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
+    const {cardActivity, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
     const {admin} = useContext(AppContext)
 
-    const entry = getEntryFromId(evid.matchId)
-    const project = getProjectEntryFromId(evid.matchId)
-    const award = getAwardEntryFromId(evid.matchId)
-    const entity = entry
-        ? entry
-        : project
-            ? project
-            : award
+    const entry = getEntryFromId(activity.matchId)
+    const project = getProjectEntryFromId(activity.matchId)
+    const award = getAwardEntryFromId(activity.matchId)
+    const entity = entry || project || award
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -52,7 +48,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             const {id} = queryString.parse(location.search)
-            const isIdFiltered = id === evid.id
+            const isIdFiltered = id === activity.id
 
             setScrolled(true)
 
@@ -66,21 +62,18 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [expanded, entity, scrolled, evid.id])
+    }, [expanded, entity, scrolled, activity.id])
 
-    let entryTitle = entity
-        ? entryName(entity)
-        : evid.evidenceNotes
-    const evidenceNotes = evid.exceptionType && evid.evidenceNotes && (evid.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
-        ? evid.evidenceNotes
-        : null
-    entryTitle = evid.exceptionType === 'nomatch' ? `[ ${evid.evidenceNotes} ]` : entryTitle
-    entryTitle = evid.exceptionType && owner && merged && !award ? entryTitle + ' *' : entryTitle
+    let entryTitle = entity ? entryName(entity) : activity.evidenceNotes
+    const evidenceNotes = activity.exceptionType && activity.evidenceNotes && (activity.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
+        ? activity.evidenceNotes : null
+    entryTitle = activity.exceptionType === 'nomatch' ? `[ ${activity.evidenceNotes} ]` : entryTitle
+    entryTitle = activity.exceptionType && owner && merged && !award ? entryTitle + ' *' : entryTitle
 
-    const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(evid.exceptionType) ? 0.5 : 1
+    const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(activity.exceptionType) ? 0.5 : 1
 
-    const supersedingEntryId = evid.exceptionId
-    const supersedingEntry = supersedingEntryId ? cardEvidence.find(e => e.id === supersedingEntryId) : {}
+    const supersedingEntryId = activity.exceptionId
+    const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
     const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [getEntryFromId, supersedingEntry.matchId]) : {}
     const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
     const supersedingLink = supersedingEntryId
@@ -88,13 +81,13 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
             navigateToEntry(supersedingEntryId)
         }}>{supersedingLockName}</Link>
         : null
-    let exceptionNote = evid.exceptionType === 'nomatch'
+    let exceptionNote = activity.exceptionType === 'nomatch'
         ? 'Could not be matched to a lock or project'
-        : evid.exceptionType === 'badlink' && !award
+        : activity.exceptionType === 'badlink' && !award
             ? 'You must provide a valid link.'
-            : evid.exceptionType === 'duplicate'
+            : activity.exceptionType === 'duplicate'
                 ? 'Duplicate of '
-                : evid.exceptionType === 'upgraded'
+                : activity.exceptionType === 'upgraded'
                     ? 'Upgraded to '
                     : null
 
@@ -102,19 +95,19 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         setFilters({id: id})
     }, [setFilters])
 
-    const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    let dateText = evid.date ? dayjs(evid.date).format('L') : '(no date)'
+    const pointsText = activity.points === 1 ? 'pt' : 'pts'
+    let dateText = activity.date ? dayjs(activity.date).format('L') : '(no date)'
     dateText = dateText.replace('/202', '/2')
     dateText = dateText.replace('/201', '/1')
-    const dateColor = evid.date ? '#fff' : '#aaa'
+    const dateColor = activity.date ? '#fff' : '#aaa'
 
-    const expandable = (owner && !['belt', 'dan'].includes(evid['awardType'])) || admin
+    const expandable = (owner && !['belt', 'dan'].includes(activity['awardType'])) || admin
 
     const handleChange = useCallback((_, isExpanded) => {
         if (expandable) {
-            onExpand(isExpanded ? evid.id : false)
+            onExpand(isExpanded ? activity.id : false)
         }
-    }, [evid, expandable, onExpand])
+    }, [activity, expandable, onExpand])
 
     const handleClick = useCallback(event => {
         event.preventDefault()
@@ -135,8 +128,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
     const nameDivWidth = !isMobile ? '56%' : '65%'
     const dateMargin = !isMobile ? '3px 0px 3px 0px' : '-2px 0px 3px 0px'
 
-    const titleSize = ['belt', 'dan', 'hof'].includes(evid['awardType']) ? '1.1rem' : '1rem'
-    const bgColor = ['belt', 'dan', 'hof'].includes(evid['awardType']) ? '#121212' : ''
+    const titleSize = ['belt', 'dan', 'hof'].includes(activity['awardType']) ? '1.1rem' : '1rem'
+    const bgColor = ['belt', 'dan', 'hof'].includes(activity['awardType']) ? '#121212' : ''
 
     const style = {
         maxWidth: 700,
@@ -149,7 +142,7 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
 
 
     return (
-        <Accordion key={evid.id} expanded={expanded} onChange={handleChange} ref={ref}>
+        <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}>
             <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entity ? entity.belt : ''}/>
                 <div style={{
@@ -160,15 +153,15 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                     opacity: rowOpacity
                 }}>
                     <div style={{display: 'flex'}}>
-                        {evid.awardType === 'belt' &&
+                        {activity.awardType === 'belt' &&
                             <div style={{marginTop: -4, marginRight: 10}}><BeltIcon value={entity.belt}
                                                                                     style={{paddingTop: 2}}/></div>
                         }
-                        {evid.awardType === 'dan' &&
+                        {activity.awardType === 'dan' &&
                             <div style={{margin: '0px 12px 0px 5px'}}><SportsMartialArtsIcon
                                 style={{color: '#87c048'}}/></div>
                         }
-                        {evid.awardType === 'hof' &&
+                        {activity.awardType === 'hof' &&
                             <div style={{margin: '0px 12px 0px 5px'}}><EmojiEventsIcon
                                 style={{color: '#f8f52f'}}/></div>
                         }
@@ -206,8 +199,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             }
                         </div>
                         <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
-                            <ScorecardEvidenceButton evid={evid} handleChange={handleChange}
-                                                     exceptionType={evid.exceptionType} owner={owner}/>
+                            <ScorecardEvidenceButton activity={activity} handleChange={handleChange}
+                                                     exceptionType={activity.exceptionType} owner={owner}/>
                         </div>
                     </div>
 
@@ -216,14 +209,14 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                             style={{margin: dateMargin, color: dateColor, width: 90, textAlign: 'center'}}>
                             {dateText}
                         </div>
-                        {!['belt', 'dan'].includes(evid['awardType']) &&
+                        {!['belt', 'dan'].includes(activity['awardType']) &&
                             <div
                                 style={{margin: '1px 0px 0px 22px'}}>
-                                <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
+                                <nobr><span style={{fontWeight: 700}}>{activity.points} </span><span
                                     style={{color: '#666'}}>{pointsText}</span></nobr>
                             </div>
                         }
-                        {owner && evid['matchId'] === 'da7759a9' &&
+                        {owner && activity['matchId'] === 'da7759a9' &&
                             <Tooltip title='Print Certificate' arrow disableFocusListener>
                                 <IconButton onClick={handleClick} style={{marginLeft: 30}}>
                                     <PrintIcon/>
@@ -239,23 +232,21 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
 
-                        {(exceptionNote || evid.modifier) &&
+                        {(exceptionNote || activity.evidenceModifier) &&
                             <div style={{
                                 margin: '0px 0px 20px 20px',
                                 fontWeight: 600,
                                 fontSize: '.95rem'
                             }}>
-                                {evid.modifier &&
-                                    <span>{evid.modifier}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                {activity.evidenceModifier &&
+                                    <span>{activity.evidenceModifier}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                 }
                                 {exceptionNote &&
                                     <span>* {exceptionNote} {supersedingLink}</span>
                                 }
                             </div>
                         }
-
-                        <EvidenceForm evid={evid} handleUpdate={() => {
-                        }}/>
+                        <EvidenceForm activity={activity} handleUpdate={() => {}}/>
 
                     </AccordionDetails>
                 </React.Fragment>
@@ -266,14 +257,14 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
 }
 
 export default React.memo(ScorecardRow, (prevProps, nextProps) => {
-    const prevEvidKeys = Object.keys(prevProps.evid)
-    const nextEvidKeys = Object.keys(nextProps.evid)
+    const prevActKeys = Object.keys(prevProps.activity)
+    const nextActKeys = Object.keys(nextProps.activity)
 
-    if (prevEvidKeys.length !== nextEvidKeys.length) {
+    if (prevActKeys.length !== nextActKeys.length) {
         return false
     }
-    for (let idx = 0; idx < prevEvidKeys.length; idx++) {
-        if (prevEvidKeys[idx] !== nextEvidKeys[idx] || prevProps.evid[prevEvidKeys[idx]] !== nextProps.evid[nextEvidKeys[idx]]) {
+    for (let idx = 0; idx < prevActKeys.length; idx++) {
+        if (prevActKeys[idx] !== nextActKeys[idx] || prevProps.activity[prevActKeys[idx]] !== nextProps.activity[nextActKeys[idx]]) {
             return false
         }
     }

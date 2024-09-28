@@ -10,7 +10,7 @@ import {getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} from '../ent
 
 export function ScorecardDataProvider({
                                           children,
-                                          cardEvidence,
+                                          cardActivity,
                                           cardBBCount,
                                           cardDanPoints,
                                           cardEligibleDan,
@@ -22,38 +22,38 @@ export function ScorecardDataProvider({
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
 
 
-    const allEvidenceEntries = useMemo(() => cardEvidence.map(entry => ({
+    const allActivityEntries = useMemo(() => cardActivity.map(entry => ({
         ...entry,
         ...getEntryFromId(entry.matchId),
         ...getProjectEntryFromId(entry.matchId),
         ...getAwardEntryFromId(entry.matchId),
         id: entry.id
-    })), [cardEvidence])
+    })), [cardActivity])
 
-    const evidenceByMatchId = useMemo(() => allEvidenceEntries.reduce((acc, evid) => {
+    const activityByMatchId = useMemo(() => allActivityEntries.reduce((acc, evid) => {
         acc[evid.matchId] = evid
         return acc
-    }, {}), [allEvidenceEntries])
+    }, {}), [allActivityEntries])
 
     const allPopularEntries = useMemo(() => popularLocks.map(lock => ({
         ...getEntryFromId(lock.lockID),
-        ...evidenceByMatchId[lock.lockID],
+        ...activityByMatchId[lock.lockID],
         popularityRank: lock.rank,
         userCount: lock.count
-    })), [popularLocks, evidenceByMatchId])
+    })), [popularLocks, activityByMatchId])
 
     const filterArray = useMemo(() => Object.keys(filters).map(key => {
         const value = filters[key]
         return Array.isArray(value) ? value.map(sk => ({key, value: sk})) : {key, value}
     }).flat(), [filters])
 
-    const visibleEntries = useMemo(() => processEntries(allEvidenceEntries, filterArray, search, sort), [allEvidenceEntries, filterArray, search, sort])
+    const visibleEntries = useMemo(() => processEntries(allActivityEntries, filterArray, search, sort), [allActivityEntries, filterArray, search, sort])
 
     const popularEntries = useMemo(() => processEntries(allPopularEntries, filterArray.concat({key: 'exceptionType', value: undefined}), search, 'popular'), [allPopularEntries, filterArray, search])
 
     const value = useMemo(() => ({
         allEntries,
-        cardEvidence,
+        cardActivity,
         cardBBCount,
         cardDanPoints,
         cardEligibleDan,
@@ -64,7 +64,7 @@ export function ScorecardDataProvider({
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardEvidence, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries])
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries])
 
     return (
         <ScorecardDataContext.Provider value={value}>

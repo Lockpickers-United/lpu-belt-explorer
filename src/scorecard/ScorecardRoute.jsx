@@ -30,8 +30,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, getEvidence} = useContext(DBContext)
-    const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
+    const {getProfile, getPickerActivity} = useContext(DBContext)
+    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
     const [triggerState, setTriggerState] = useState(false)
@@ -57,20 +57,20 @@ function ScorecardRoute({mostPopular}) {
                 document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
             }
             if (user?.uid !== userId) {
-                const evidence = await getEvidence(userId)
-                return {profile, ...calculateScoreForUser(evidence)}
+                const activity = await getPickerActivity(userId)
+                return {profile, ...calculateScoreForUser(activity)}
             } else {
-                return {profile, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
+                return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
             }
         } catch (ex) {
-            console.error('Error loading profile and evidence.', ex)
+            console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [triggerState, getProfile, userId, user, getEvidence, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+    }, [triggerState, getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
-    const cardEvidence = data ? data.scoredEvidence : []
+    const cardActivity = data ? data.scoredActivity : []
     const cardBBCount = data ? data.bbCount : 0
     const cardDanPoints = data ? data.danPoints : 0
     const cardEligibleDan = data ? data.eligibleDan : 0
@@ -106,7 +106,7 @@ function ScorecardRoute({mostPopular}) {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-                <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount}
+                <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                        cardDanPoints={cardDanPoints}
                                        cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
                                        cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>

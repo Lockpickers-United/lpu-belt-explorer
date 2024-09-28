@@ -6,11 +6,12 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
+import {isAward} from '../entries/entryutils'
 
-export default function ScorecardEvidenceButton({evid, exceptionType, handleChange, owner}) {
+export default function ScorecardEvidenceButton({activity, exceptionType, handleChange, owner}) {
 
-    const url = evid.link
-    const award = evid.collectionDB === 'awards'
+    const url = activity.link
+    const award = isAward(activity.matchId)
 
     const handleClick = useCallback(event => {
         event.preventDefault()

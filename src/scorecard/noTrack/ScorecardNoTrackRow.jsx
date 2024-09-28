@@ -6,21 +6,21 @@ import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
 import Link from '@mui/material/Link'
 
-function ScorecardNoTrackRow({evid}) {
+function ScorecardNoTrackRow({activity}) {
     const {getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
 
-    const entry = getEntryFromId(evid.matchId)
-    const project = getProjectEntryFromId(evid.matchId)
+    const entry = getEntryFromId(activity.matchId)
+    const project = getProjectEntryFromId(activity.matchId)
     const entity = entry
         ? entry
         : project
 
     let entryTitle = entryName(entity)
 
-    const pointsText = evid.points === 1 ? 'pt' : 'pts'
-    let dateText = evid.date ? dayjs(evid.date).format('MM/DD/YY') : '(no date)'
+    const pointsText = activity.points === 1 ? 'pt' : 'pts'
+    let dateText = activity.date ? dayjs(activity.date).format('MM/DD/YY') : '(no date)'
 
-    const linkText = evid.link.substring(0, 20)
+    const linkText = activity.link.substring(0, 20)
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
@@ -33,7 +33,7 @@ function ScorecardNoTrackRow({evid}) {
     return (
 
         <React.Fragment>
-            <TableRow key={evid.id}
+            <TableRow key={activity.id}
                       sx={{
                           '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#eee'},
                           'td, th': {}
@@ -96,7 +96,7 @@ function ScorecardNoTrackRow({evid}) {
                     color: color
                 }}
                            component='th' scope='row'>
-                    <Link onClick={() => openInNewTab(evid.link)}>{linkText}</Link>
+                    <Link onClick={() => openInNewTab(activity.link)}>{linkText}</Link>
                 </TableCell>
 
                 <TableCell sx={{
@@ -108,7 +108,7 @@ function ScorecardNoTrackRow({evid}) {
                     color: color
                 }}
                            component='th' scope='row'>
-                    {evid.modifier}
+                    {activity.evidenceModifier}
                 </TableCell>
 
                 <TableCell sx={{
@@ -120,7 +120,7 @@ function ScorecardNoTrackRow({evid}) {
                     color: color
                 }}
                            component='th' scope='row'>
-                    <nobr><span style={{fontWeight: 700}}>{evid.points} </span><span
+                    <nobr><span style={{fontWeight: 700}}>{activity.points} </span><span
                         style={{color: '#666'}}>{pointsText}</span></nobr>
                 </TableCell>
             </TableRow>

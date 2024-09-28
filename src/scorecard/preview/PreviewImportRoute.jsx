@@ -53,7 +53,7 @@ function PreviewImportRoute() {
                             'date': entry.evidenceCreatedAt,
                             'evidenceNotes': entry.evidenceNotes,
                             'link': entry.evidenceUrl,
-                            'modifier': entry.modifier,
+                            'evidenceModifier': entry.evidenceModifier,
                             'matchId': entry.projectId,
                             'userId': entry.tabName
                         }
@@ -66,7 +66,7 @@ function PreviewImportRoute() {
     }, [allEvidence, tabName])
 
     const {
-        scoredEvidence,
+        scoredActivity,
         bbCount,
         danPoints,
         eligibleDan,
@@ -90,7 +90,7 @@ function PreviewImportRoute() {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-            <ScorecardDataProvider cardEvidence={scoredEvidence} cardBBCount={bbCount} cardDanPoints={danPoints}
+            <ScorecardDataProvider cardActivity={scoredActivity} cardBBCount={bbCount} cardDanPoints={danPoints}
                                    cardEligibleDan={eligibleDan} cardNextDanPoints={nextDanPoints}
                                    cardNextDanLocks={nextDanLocks} popularLocks={popularLocks}>
                 <ScorecardListProvider>

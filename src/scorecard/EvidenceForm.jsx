@@ -19,22 +19,22 @@ import allAwards from '../data/awards.json'
 import Autocomplete from '@mui/material/Autocomplete'
 import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-import {getEntryFromId} from '../entries/entryutils'
+import {getEntryFromId, isAward} from '../entries/entryutils'
 
-export default function EvidenceForm({evid, lockId, handleUpdate, addProject, addAward, source}) {
+export default function EvidenceForm({activity, lockId, handleUpdate, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {addEvidence, updateEvidence, removeEvidence} = useContext(DBContext)
+    const {addPickerActivity, updatePickerActivity, removePickerActivity} = useContext(DBContext)
 
-    const [evidenceNotes, setEvidenceNotes] = useState(evid?.evidenceNotes ? evid?.evidenceNotes : '')
-    const [evidenceUrl, setEvidenceUrl] = useState(evid?.link ? evid?.link + '' : '')
-    const [evidenceDate, setEvidenceDate] = useState(evid?.date ? dayjs(evid.date) : dayjs())
-    const [modifier, setModifier] = useState(evid?.modifier ? evid?.modifier : '')
+    const [evidenceNotes, setEvidenceNotes] = useState(activity?.evidenceNotes ? activity.evidenceNotes : '')
+    const [evidenceUrl, setEvidenceUrl] = useState(activity?.link ? activity.link + '' : '')
+    const [evidenceDate, setEvidenceDate] = useState(activity?.date ? dayjs(activity.date) : dayjs())
+    const [modifier, setModifier] = useState(activity?.evidenceModifier ? activity.evidenceModifier : '')
     const [updated, setUpdated] = useState(false)
 
-    const isAward = addAward || evid.collectionDB === 'awards'
+    const awardMode = addAward || isAward(activity?.matchId)
     const [entryName, setEntryName] = useState(null)
-    const entry = getEntryFromId(evid?.matchId || lockId)
+    const entry = getEntryFromId(activity?.matchId || lockId)
     const project = allProjects.find(item => {
         return item.name === entryName
     })
@@ -66,24 +66,22 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
     const handleSave = useCallback(async () => {
         try {
             setUpdated(false)
-            if (evid?.id) {
-                await updateEvidence(evid, {
-                    matchId: evid.matchId,
+            if (activity?.id) {
+                await updatePickerActivity(activity, {
+                    matchId: activity.matchId,
                     evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
-                    modifier: modifier
+                    evidenceModifier: modifier
                 })
             } else {
                 const evidUserId = userId || user.uid
-                await addEvidence(evidUserId, {
+                await addPickerActivity(evidUserId, {
                     matchId: entryId,
                     evidenceNotes: evidenceNotes,
-                    notes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
-                    modifier: modifier,
-                    collectionDB: addAward ? 'awards' : 'evidence'
+                    evidenceModifier: modifier
                 })
             }
             enqueueSnackbar('Scorecard updated')
@@ -92,11 +90,11 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [evid, handleUpdate, updateEvidence, evidenceNotes, evidenceUrl, evidenceDate, modifier, userId, user.uid, addEvidence, entryId, addAward])
+    }, [activity, handleUpdate, updatePickerActivity, evidenceNotes, evidenceUrl, evidenceDate, modifier, userId, user.uid, addPickerActivity, entryId])
 
     const handleDelete = useCallback(async () => {
         try {
-            await removeEvidence(evid)
+            await removePickerActivity(activity)
             enqueueSnackbar('Entry deleted')
             handleUpdate()
         } catch (ex) {
@@ -104,20 +102,20 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
             enqueueSnackbar('Error while deleting entry')
         }
         setAnchorEl(null)
-    }, [evid, handleUpdate, removeEvidence])
+    }, [activity, handleUpdate, removePickerActivity])
 
     const cancelEdit = useCallback(() => {
         if (updated) {
-            setEvidenceUrl(evid?.link ? evid.link : '')
-            setEvidenceDate(evid?.date ? dayjs(evid.date) : dayjs())
-            setModifier(evid?.modifier ? evid?.modifier : '')
-            setEvidenceNotes(evid?.evidenceNotes ? evid.evidenceNotes : '')
+            setEvidenceUrl(activity?.link ? activity.link : '')
+            setEvidenceDate(activity?.date ? dayjs(activity.date) : dayjs())
+            setModifier(activity?.evidenceModifier ? activity.evidenceModifier : '')
+            setEvidenceNotes(activity?.evidenceNotes ? activity.evidenceNotes : '')
             setUpdated(false)
             handleUpdate()
         } else {
             handleUpdate()
         }
-    }, [evid, handleUpdate, updated])
+    }, [activity, handleUpdate, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target
@@ -126,7 +124,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
     }, [])
 
     const evidenceUrlValid = isValidUrl(evidenceUrl)
-    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl) || ((updated && !evidenceUrl) ) && !isAward)
+    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl) || ((updated && !evidenceUrl) ) && !awardMode)
     const evidenceURLHelperText = evidenceUrlError ? 'Documentation link is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
@@ -192,7 +190,7 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
                         disableFuture
                     />
 
-                    {!isAward &&
+                    {!awardMode &&
                         <TextField
                             select
                             style={{marginLeft: 30, width: 250}}
@@ -234,16 +232,16 @@ export default function EvidenceForm({evid, lockId, handleUpdate, addProject, ad
                     />
                     {(!!entry && source !== 'collectionButton') &&
                         <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
-                            <CollectionButton id={evid?.matchId || lockId} dense={denseButton}/>
+                            <CollectionButton id={activity?.matchId || lockId} dense={denseButton}/>
                         </div>
                     }
                 </div>
 
                 <div style={{display: 'flex'}}>
                     <div style={{marginLeft: 0}}>
-                        {evid &&
+                        {activity &&
                             <Button style={{marginRight: 10, color: '#d00'}} onClick={handleOpen} edge='start'
-                                    disabled={!evid}>
+                                    disabled={!activity}>
                                 Delete
                             </Button>
                         }

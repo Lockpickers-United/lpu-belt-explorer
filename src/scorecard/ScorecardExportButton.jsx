@@ -59,7 +59,7 @@ function ExportButton() {
             version: datum.version,
             belt: datum.belt,
             link: datum.link,
-            modifier: datum.modifier,
+            modifier: datum.evidenceModifier,
             points: datum.points,
             date: datum.date ? dayjs(datum.date).format('L') : '',
             name: entryName(datum)

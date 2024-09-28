@@ -87,10 +87,10 @@ function PreviewScorecard({owner, profile, tab, setTab}) {
             }
 
             <div>
-                {visibleEntries.map((ev, index) =>
+                {visibleEntries.map((act, index) =>
                     <ScorecardRow key={index}
                                   owner={owner}
-                                  evid={ev}
+                                  activity={act}
                                   expanded={false}
                                   onExpand={undefined}
                                   merged={false}

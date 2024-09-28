@@ -14,9 +14,9 @@ import ScorecardDataContext from './ScorecardDataProvider'
 function EvidenceButton({id, owner}) {
 
     const [editRecId, setEditRecId] = useState(null)
-    const {cardEvidence} = useContext(ScorecardDataContext)
+    const {cardActivity} = useContext(ScorecardDataContext)
 
-    const recordings = cardEvidence
+    const recordings = cardActivity
         .filter(evid => evid.id === id)
         .filter(x => x)
 
@@ -57,11 +57,11 @@ function EvidenceButton({id, owner}) {
                                     onClick={handleOverlayClose}/>
                         <CardContent>
                             {recordings.map((rec, index) =>
-                                <EvidenceForm evid={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}
+                                <EvidenceForm activity={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}
                                               key={index} owner={owner}/>
                             )}
                             {recordings.length === 0 &&
-                                <EvidenceForm evid={null} lockId={id} handleUpdate={handleOverlayClose}
+                                <EvidenceForm activity={null} lockId={id} handleUpdate={handleOverlayClose}
                                               source={'collectionButton'} owner={owner}/>
                             }
                         </CardContent>

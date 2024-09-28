@@ -3,48 +3,48 @@ import isValidUrl from '../util/isValidUrl'
 import {allEntriesById, allProjectsById, allAwardsById, possibleUpgrades, isUpgradeOf} from '../entries/entryutils'
 import dans from '../data/dans.json'
 
-function calculateScoreForUser(allEvidence) {
-    const annotatedEvidence = allEvidence.map(ev => {
-        const entry = allEntriesById[ev.matchId]
-        const project = allProjectsById[ev.matchId]
-        const award = allAwardsById[ev.matchId]
-        const modifier = ev.modifier && ev.modifier !== 'Upgraded' ? ev.modifier : null
+function calculateScoreForUser(allActivity) {
+    const annotatedActivity = allActivity.map(act => {
+        const entry = allEntriesById[act.matchId]
+        const project = allProjectsById[act.matchId]
+        const award = allAwardsById[act.matchId]
+        const modifier = act.evidenceModifier && act.evidenceModifier !== 'Upgraded' ? act.evidenceModifier : null
         const multiplier = modifier ? modifierMultiplier[modifier] : 1
 
         if (entry) {
             return {
-                ...ev,
+                ...act,
                 matchId: entry.id,
-                modifier: modifier,
+                evidenceModifier: modifier,
                 points: multiplier * belts[entry.belt].danPoints,
                 bbCount: entry.belt.startsWith('Black') ? 1 : 0
             }
         } else if (project) {
             return {
-                ...ev,
+                ...act,
                 matchId: project.id,
-                modifier: modifier,
+                evidenceModifier: modifier,
                 points: multiplier * projectTiers[project.tier].danPoints,
                 bbCount: 0
             }
         }  else if (award) {
             return {
-                ...ev,
+                ...act,
                 matchId: award.id,
                 points: 0,
                 bbCount: 0
             }
         } else {
             return {
-                ...ev,
-                modifier: modifier,
+                ...act,
+                evidenceModifier: modifier,
                 points: 0,
                 bbCount: 0
             }
         }
     })
 
-    const sortedEvidence = annotatedEvidence.sort((a, b) => {
+    const sortedActivity = annotatedActivity.sort((a, b) => {
         const aDate = new Date(a.date)
         const bDate = new Date(b.date)
         if (aDate > bDate) {
@@ -56,87 +56,87 @@ function calculateScoreForUser(allEvidence) {
         }
     })
 
-    let scoredEvidence = []
+    let scoredActivity = []
     let usedIds = {}
     let upgradeableIdIdx = []
 
-    for (let idx = sortedEvidence.length - 1; idx >= 0; idx--) {
-        const ev = sortedEvidence[idx]
+    for (let idx = sortedActivity.length - 1; idx >= 0; idx--) {
+        const act = sortedActivity[idx]
 
-        if (!ev.matchId) {
-            scoredEvidence[idx] = {
-                ...ev,
+        if (!act.matchId) {
+            scoredActivity[idx] = {
+                ...act,
                 exceptionType: 'nomatch'
             }
-        } else if (!isValidUrl(ev.link)) {
-            scoredEvidence[idx] = {
-                ...ev,
+        } else if (!isValidUrl(act.link)) {
+            scoredActivity[idx] = {
+                ...act,
                 exceptionType: 'badlink',
                 points: 0,
                 bbCount: 0
             }
         } else {
-            const [collidedIdx, collidedId] = usedIds[ev.matchId] ? usedIds[ev.matchId] : [null, null]
+            const [collidedIdx, collidedId] = usedIds[act.matchId] ? usedIds[act.matchId] : [null, null]
 
-            if (collidedIdx && ev.points <= scoredEvidence[collidedIdx].points) {
-                scoredEvidence[idx] = {
-                    ...ev,
+            if (collidedIdx && act.points <= scoredActivity[collidedIdx].points) {
+                scoredActivity[idx] = {
+                    ...act,
                     exceptionType: 'duplicate',
                     exceptionId: collidedId,
                     points: 0
                 }
             } else {
                 if (collidedIdx) {
-                    scoredEvidence[collidedIdx] = {
-                        ...sortedEvidence[collidedIdx],
+                    scoredActivity[collidedIdx] = {
+                        ...sortedActivity[collidedIdx],
                         exceptionType: 'duplicate',
-                        exceptionId: ev.id,
+                        exceptionId: act.id,
                         points: 0
                     }
                 }
 
-                usedIds[ev.matchId] = [idx, ev.id]
+                usedIds[act.matchId] = [idx, act.id]
                 let superseded = false
 
-                if (possibleUpgrades[ev.matchId]) {
+                if (possibleUpgrades[act.matchId]) {
                     for (let jdx = 0; !superseded && jdx < upgradeableIdIdx.length; jdx++) {
                         const [upMatchId, upIdx, upId] = upgradeableIdIdx[jdx]
 
-                        if (isUpgradeOf(upMatchId, ev.matchId)) {
+                        if (isUpgradeOf(upMatchId, act.matchId)) {
                             superseded = true
 
-                            scoredEvidence[idx] = {
-                                ...ev,
+                            scoredActivity[idx] = {
+                                ...act,
                                 exceptionType: 'upgraded',
                                 exceptionId: upId,
                                 points: 0
                             }
 
-                        } else if (isUpgradeOf(ev.matchId, upMatchId)) {
+                        } else if (isUpgradeOf(act.matchId, upMatchId)) {
 
-                            if (!scoredEvidence[upIdx].exceptionType) {
-                                scoredEvidence[upIdx] = {
-                                    ...scoredEvidence[upIdx],
+                            if (!scoredActivity[upIdx].exceptionType) {
+                                scoredActivity[upIdx] = {
+                                    ...scoredActivity[upIdx],
                                     exceptionType: 'upgraded',
-                                    exceptionId: ev.id,
+                                    exceptionId: act.id,
                                     points: 0
                                 }
                             }
                         }
                     }
-                    upgradeableIdIdx.push([ev.matchId, idx, ev.id])
+                    upgradeableIdIdx.push([act.matchId, idx, act.id])
                 }
 
                 if (!superseded) {
-                    scoredEvidence[idx] = ev
+                    scoredActivity[idx] = act
                 }
             }
         }
     }
 
-    const [bbCount, danPoints] = scoredEvidence.reduce((group, ev) => {
-        group[0] = group[0] + ev.bbCount
-        group[1] = group[1] + ev.points
+    const [bbCount, danPoints] = scoredActivity.reduce((group, act) => {
+        group[0] = group[0] + act.bbCount
+        group[1] = group[1] + act.points
         return group
     }, [0, 0])
 
@@ -146,7 +146,7 @@ function calculateScoreForUser(allEvidence) {
     const nextDanLocks = nextDan ? Math.max(0, nextDan.bbLocks - bbCount) : 0
 
     return ({
-        scoredEvidence,
+        scoredActivity,
         bbCount,
         danPoints,
         eligibleDan,

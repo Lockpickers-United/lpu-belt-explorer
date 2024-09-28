@@ -5,18 +5,18 @@ import calculateScoreForUser from '../scorecard/scoring'
 const ScoringContext = React.createContext({})
 
 export function ScoringProvider({children}) {
-    const {evidence} = useContext(DBContext)
+    const {pickerActivity} = useContext(DBContext)
 
-    const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = calculateScoreForUser(evidence)
+    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = calculateScoreForUser(pickerActivity)
 
     const value = useMemo(() => ({
-        scoredEvidence,
+        scoredActivity,
         bbCount,
         danPoints,
         eligibleDan,
         nextDanPoints,
         nextDanLocks
-    }), [scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+    }), [scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
 
     return (
         <ScoringContext.Provider value={value}>

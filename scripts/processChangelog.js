@@ -41,7 +41,7 @@ if (WRITE_TO_DB) {
 
 // clear all impacted users from the query cache
 
-const cacheKeys = [...new Set(impactedUsers)].map(id => `evidence: userId == ${id}`)
+const cacheKeys = [...new Set(impactedUsers)].map(id => `activity: userId == ${id}`)
 const cacheBatch = db.batch()
 cacheKeys.forEach(key => {
     const ref = db.collection('query-cache').doc(key)
