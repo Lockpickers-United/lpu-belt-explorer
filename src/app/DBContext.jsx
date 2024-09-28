@@ -393,15 +393,24 @@ export function DBProvider({children}) {
     }, [user])
 
     const advanceBookmarkForRedditUser = useCallback(async (username, bookmark, awards) => {
+        const newAwards = awards.map(aw => ({
+            userId: user.uid,
+            awardId: aw.matchId,
+            awardUrl: aw.link,
+            awardCreatedAt: Timestamp.fromDate(new Date(aw.awardedAt))
+        }))
+        const existQ = query(collection(db, 'awards-reddit'), where('userId', '==', user.uid))
+        const existSnapshot = await getDocs(existQ)
+        const existAwards = existSnapshot.docs.map(awDoc => awDoc.data())
+
+        const awardsToAdd = newAwards.filter(awd => {
+            const collision = existAwards.find(ea => ea.awardId === awd.awardId)
+            return !collision || awd.awardCreatedAt < collision.awardCreatedAt
+        })
+
         const batch = writeBatch(db)
-        awards.forEach(aw => {
-            const newDoc = {
-                userId: user.uid,
-                awardId: aw.matchId,
-                awardUrl: aw.link,
-                awardCreatedAt: Timestamp.fromDate(new Date(aw.awardedAt))
-            }
-            const ref = doc(db, 'awards-reddit', btoa(user.uid + aw.matchId))
+        awardsToAdd.forEach(newDoc => {
+            const ref = doc(db, 'awards-reddit', btoa(newDoc.userId + newDoc.awardId))
             batch.set(ref, newDoc)
         })
         await batch.commit()
@@ -422,9 +431,8 @@ export function DBProvider({children}) {
             const querySnapshot = await getDocs(q)
 
             if (querySnapshot.docs.length > 0) {
-                const batch = writeBatch(db)
                 let bookmark = null
-                querySnapshot.docs.forEach(awDoc => {
+                const newAwards = querySnapshot.docs.map(awDoc => {
                     const aw = awDoc.data()
                     const award = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1])
                     const newDoc = {
@@ -434,6 +442,19 @@ export function DBProvider({children}) {
                         awardUrl: aw.awardUrl
                     }
                     bookmark = !bookmark || newDoc.awardCreatedAt > bookmark ? newDoc.awardCreatedAt : bookmark
+                    return newDoc
+                })
+                const existQ = query(collection(db, 'awards-reddit'), where('userId', '==', userId))
+                const existSnapshot = await getDocs(existQ)
+                const existAwards = existSnapshot.docs.map(awDoc => awDoc.data())
+
+                const awardsToAdd = newAwards.filter(awd => {
+                    const collision = existAwards.find(ea => ea.awardId === awd.awardId)
+                    return !collision || awd.awardCreatedAt < collision.awardCreatedAt
+                })
+
+                const batch = writeBatch(db)
+                awardsToAdd.forEach(newDoc => {
                     const destRef = doc(db, 'awards-reddit', btoa(newDoc.userId + newDoc.awardId))
                     batch.set(destRef, newDoc)
                 })
