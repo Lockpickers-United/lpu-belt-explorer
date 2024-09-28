@@ -1,14 +1,15 @@
 import React, {useState, useContext, useEffect} from 'react'
 import DBContext from '../app/DBContext'
+import {getAwardEntryFromId, lookupAwardByBelt} from '../entries/entryutils'
 
 function AuthDiscordRoute() {
-    const {setDiscordUserInfo} = useContext(DBContext)
+    const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
     const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
     const urlMatch = window.location.href.match(/\?code=([^#]+)#/)
     const urlCode = urlMatch ? urlMatch[1] : null
 
     const [credentials, setCredentials] = useState(null)
-    const [discordInfo, setDiscordInfo] = useState({})
+    const [syncResult, setSyncResult] = useState({})
 
     useEffect(() => {
         async function getAccessToken() {
@@ -41,19 +42,48 @@ function AuthDiscordRoute() {
             })
             if (200 === resp.status) {
                 const data = await resp.json()
+                const awardDocs = await peekAtDiscordAwards(data.id)
+                const awards = awardDocs.map(aw => {
+                    const entry = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1], aw.discordAwardName)
+                    return {
+                        matchId: entry.id,
+                        awardedAt: aw.awardCreatedAt.toDate().toUTCString(),
+                        link: aw.awardUrl
+                    }
+                })
                 await setDiscordUserInfo(data.id, data.username)
-                setDiscordInfo({id: data.id, username: data.username})
+                setSyncResult({id: data.id, username: data.username, awards: awards})
             }
         }
         if (credentials) {
             syncDiscordUsername(credentials.type, credentials.token)
         }
-    }, [credentials, setDiscordUserInfo])
+    }, [credentials, setDiscordUserInfo, peekAtDiscordAwards])
 
     return (
-        <p>
-        {discordInfo.id} {discordInfo.username}
-        </p>
+        <React.Fragment>
+            <p>
+            {syncResult.id} {syncResult.username}
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Award</th>
+                        <th>AwardedAt</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {syncResult.awards?.map(msg =>
+                        <tr key={msg.matchId}>
+                            <td>{getAwardEntryFromId(msg.matchId).name}</td>
+                            <td>{msg.awardedAt}</td>
+                            <td>{msg.link}</td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </React.Fragment>
     )
 }
 

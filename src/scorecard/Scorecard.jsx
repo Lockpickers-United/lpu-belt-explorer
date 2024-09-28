@@ -34,13 +34,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters
-    const {
-        createEvidenceForEntries,
-        removePickerActivity,
-        removeProfileBlackBeltAwarded,
-        updateUserStatistics,
-        invalidatePickerActivityCache
-    } = useContext(DBContext)
+    const {createEvidenceForEntries, removePickerActivity, refreshPickerActivity} = useContext(DBContext)
     const {admin} = useContext(AppContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
 
@@ -92,20 +86,13 @@ function Scorecard({owner, profile, adminAction, popular}) {
     }, [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const handleUpdateUserStats = useCallback(async () => {
-        setLoading(true)
-        await updateUserStatistics(userId)
-        setLoading(false)
-    }, [updateUserStatistics, userId])
-
     const handleDeleteAll = useCallback(async () => {
         setLoading(true)
         await removePickerActivity(cardActivity)
-        await removeProfileBlackBeltAwarded(userId)
         handleClose()
         setLoading(false)
         adminAction()
-    }, [cardActivity, removePickerActivity, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
+    }, [cardActivity, removePickerActivity, handleClose, adminAction])
 
     const buttonsMargin = 15
     const headerDivStyle = isMobile ? 'block' : 'flex'
@@ -122,14 +109,12 @@ function Scorecard({owner, profile, adminAction, popular}) {
     }, [navigate])
 
     const handleRefresh = useCallback(async () => {
-        console.log('userId', userId)
         setLoading(true)
-        await invalidatePickerActivityCache(userId)
+        await refreshPickerActivity(userId)
         setLoading(false)
         adminAction()
         window.location.reload()
-    }, [adminAction, invalidatePickerActivityCache, userId])
-
+    }, [adminAction, refreshPickerActivity, userId])
 
     const myLocksButton = mostPopular ? 'text' : 'contained'
     const mostPopularButton = !mostPopular ? 'text' : 'contained'
@@ -260,10 +245,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                             style={{lineHeight: '1rem'}}
                                             onClick={() => handleOpenControls('import')}>
                                         IMPORT DAN SHEET
-                                    </Button>
-                                    <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                            onClick={handleUpdateUserStats}>
-                                        UPDATE STATS
                                     </Button>
                                     <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
                                             onClick={handleMergeRecorded}>MERGE

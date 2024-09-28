@@ -25,6 +25,7 @@ import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import PrintIcon from '@mui/icons-material/Print'
 import AppContext from '../app/AppContext.jsx'
+import {blackBeltAwardId} from '../entries/entryutils'
 
 dayjs.extend(utc)
 
@@ -216,7 +217,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                                     style={{color: '#666'}}>{pointsText}</span></nobr>
                             </div>
                         }
-                        {owner && activity['matchId'] === 'da7759a9' &&
+                        {owner && activity['matchId'] === blackBeltAwardId &&
                             <Tooltip title='Print Certificate' arrow disableFocusListener>
                                 <IconButton onClick={handleClick} style={{marginLeft: 30}}>
                                     <PrintIcon/>

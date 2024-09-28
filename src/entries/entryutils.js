@@ -46,11 +46,17 @@ export function getAwardEntryFromId(id) {
     return allAwardsById[id]
 }
 
-export function lookupAwardByBelt(belt, danLevel) {
+export const blackBeltAwardId = 'da7759a9'
+
+export function lookupAwardByBelt(belt, danLevel, fullname) {
     if (danLevel) {
         return allAwards.find(a => a.belt === 'Dan ' + danLevel)
-    } else {
+    } else if (belt) {
         return allAwards.find(a => a.belt.toLowerCase() === belt.toLowerCase())
+    } else if (fullname) {
+        return allAwards.find(a => a.belt.toLowerCase() === fullname.toLowerCase())
+    } else {
+        return null
     }
 }
 

@@ -23,8 +23,9 @@ import {
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 import calculateScoreForUser from '../scorecard/scoring'
-import {isLock, isProject, isAward, lookupAwardByBelt} from '../entries/entryutils'
+import {isLock, isProject, isAward, lookupAwardByBelt, blackBeltAwardId} from '../entries/entryutils'
 import collectionOptions from '../data/collectionTypes'
+import isValidUrl from '../util/isValidUrl'
 
 const DBContext = React.createContext({})
 
@@ -39,11 +40,6 @@ export function DBProvider({children}) {
 
     const dbLoaded = collectionDBLoaded && activityLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
-
-    const invalidatePickerActivityCache = useCallback(async (userId) => {
-        const queryStr = `activity: userId == ${userId}`
-        await deleteDoc(doc(db, 'query-cache', queryStr))
-    },[])
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
@@ -88,33 +84,6 @@ export function DBProvider({children}) {
         }
     }, [user])
 
-    const updateUserStatistics = useCallback(async (userId) => {
-        const activity = await pickerActivityCache(userId)
-        const scored = calculateScoreForUser(activity)
-        const recordedLocks = scored.scoredActivity.filter(a => isLock(a.matchId)).map(a => a.matchId)
-        const projects = scored.scoredActivity.filter(a => isProject(a.matchId)).map(a => a.matchId)
-        const ref = doc(db, 'lockcollections', userId)
-        await setDoc(ref, {
-            danPoints: scored.danPoints,
-            blackBeltCount: scored.bbCount,
-            danLevel: scored.eligibleDan,
-            recordedLocks: recordedLocks,
-            projects: projects
-        }, {merge: true})
-    }, [])
-
-    const updateProfileBlackBeltAwardedAt = useCallback(async (userId, date) => {
-        if (dbError) return false
-        const ref = doc(db, 'lockcollections', userId)
-        await updateDoc(ref, {blackBeltAwardedAt: Timestamp.fromDate(new Date(date))})
-    }, [dbError])
-
-    const removeProfileBlackBeltAwarded = useCallback(async (userId) => {
-        if (dbError) return false
-        const ref = doc(db, 'lockcollections', userId)
-        await updateDoc(ref, {blackBeltAwardedAt: deleteField(), tabClaimed: deleteField(), awardedBelt: deleteField()})
-    }, [dbError])
-
     const getProfile = useCallback(async userId => {
         const ref = doc(db, 'lockcollections', userId)
         const value = await getDoc(ref)
@@ -130,7 +99,7 @@ export function DBProvider({children}) {
         if (user.uid === userId) {
             setPickerActivity(a => a.concat(dbRec2Activity(collectName, docRef.id, rec)))
         }
-    }, [user, updateUserStatistics, invalidatePickerActivityCache])
+    }, [user])
 
     const updatePickerActivity = useCallback(async (oldAct, newAct) => {
         const [collectName, rec] = activity2DBRec({...newAct, userId: oldAct.userId})
@@ -147,7 +116,7 @@ export function DBProvider({children}) {
                 }
             }))
         }
-    }, [user, updateUserStatistics, invalidatePickerActivityCache])
+    }, [user])
 
     const removePickerActivity = useCallback(async (acts) => {
         if (Array.isArray(acts)) {
@@ -175,40 +144,37 @@ export function DBProvider({children}) {
                 setPickerActivity(a => a.filter(act => acts.id !== act.id))
             }
         }
-    }, [user, updateUserStatistics, invalidatePickerActivityCache])
+    }, [user])
 
     const getPickerActivity = useCallback(async userId => {
         return await pickerActivityCache(userId)
     }, [])
 
+    const refreshPickerActivity = useCallback(async userId => {
+        await invalidatePickerActivityCache(userId)
+        await updateUserStatistics(userId)
+    }, [])
+
     const importUnclaimedEvidence = useCallback(async (userId, tabName) => {
         const bbRef = doc(db, 'unclaimed-blackbelts', tabName.trim())
-        const profileRef = doc(db, 'lockcollections', userId)
-        let beltSet = false
-
-        await runTransaction(db, async transaction => {
-            const bbDoc = await transaction.get(bbRef)
-            const profileDoc = await transaction.get(profileRef)
-
-            if (bbDoc.exists()) {
-                const dateStr = bbDoc.data().awardedAt
-
-                const profileDelta = {
-                    awardedBelt: 'Black',
-                    tabClaimed: tabName.trim(),
-                    blackBeltAwardedAt: Timestamp.fromDate(new Date(dateStr))
+        const bbDoc = await getDoc(bbRef)
+        if (bbDoc.exists()) {
+            let result = []
+            const awardRef = doc(db, 'awards', btoa(userId + blackBeltAwardId))
+            const awardDoc = await getDoc(awardRef)
+            if (!awardDoc.exists()) {
+                const newDoc = {
+                    awardCreatedAt: Timestamp.fromDate(new Date(bbDoc.data().awardedAt)),
+                    awardId: blackBeltAwardId,
+                    awardUrl: 'admin',
+                    userId: userId
                 }
-                if (!profileDoc.exists()) {
-                    transaction.set(profileRef, profileDelta)
-                } else {
-                    transaction.update(profileRef, profileDelta)
-                }
-                transaction.update(bbRef, {claimed: true})
-                beltSet = true
+                result = result.concat([awardDB2Activity(awardRef.id, newDoc)])
+                await setDoc(awardRef, newDoc)
             }
-        })
+            await setDoc(doc(db, 'lockcollections', userId), {tabClaimed: tabName.trim()}, {merge: true})
+            await updateDoc(bbRef, {claimed: true})
 
-        if (beltSet) {
             const q = query(collection(db, 'unclaimed-evidence'), where('tabName', '==', tabName.trim()))
             const querySnapshot = await getDocs(q)
             const newEvidence = querySnapshot.docs.map(d => d.data())
@@ -217,7 +183,6 @@ export function DBProvider({children}) {
             const toReplaceIds = toReplace.filter(act => act.link === '' && newMatchIds.includes(act.matchId)).map(act => act.id)
 
             const batch = writeBatch(db)
-            let result = []
             toReplaceIds.forEach(id => batch.delete(doc(db, 'evidence', id)))
 
             newEvidence.forEach(rec => {
@@ -237,9 +202,10 @@ export function DBProvider({children}) {
             if (user.uid === userId) {
                 setPickerActivity(a => a.filter(act => !toReplaceIds.includes(act.id)).concat(result))
             }
+            return true
         }
-        return beltSet
-    }, [user, updateUserStatistics, invalidatePickerActivityCache])
+        return false
+    }, [user])
 
     const createEvidenceForEntries = useCallback(async (userId, ids) => {
         const batch = writeBatch(db)
@@ -257,7 +223,7 @@ export function DBProvider({children}) {
         if (user.uid === userId) {
             setPickerActivity(a => a.concat(result))
         }
-    }, [user, updateUserStatistics, invalidatePickerActivityCache])
+    }, [user])
 
     const deleteAllUserData = useCallback(async (userId) => {
         await invalidatePickerActivityCache(userId)
@@ -274,7 +240,7 @@ export function DBProvider({children}) {
             cleanProfile.displayName = profile.displayName
         }
         await setDoc(ref, cleanProfile)
-    }, [removePickerActivity, invalidatePickerActivityCache])
+    }, [removePickerActivity])
 
     const oauthState = useCallback(async (state) => {
         if (!user.uid) return false
@@ -308,13 +274,16 @@ export function DBProvider({children}) {
             awardUrl: aw.link,
             awardCreatedAt: Timestamp.fromDate(new Date(aw.awardedAt))
         }))
+        const lastAwardAt = newAwards.reduce((acc, aw) => {
+            return !acc || aw.awardCreatedAt > acc ? aw.awardCreatedAt : acc
+        }, null)
         const existQ = query(collection(db, 'awards'), where('userId', '==', user.uid))
         const existSnapshot = await getDocs(existQ)
         const existAwards = existSnapshot.docs.map(awDoc => awDoc.data())
 
         const awardsToAdd = newAwards.filter(awd => {
             const collision = existAwards.find(ea => ea.awardId === awd.awardId)
-            return !collision || awd.awardCreatedAt < collision.awardCreatedAt || !collision.awardUrl
+            return !collision || awd.awardCreatedAt < collision.awardCreatedAt || !isValidUrl(collision.awardUrl)
         })
 
         const batch = writeBatch(db)
@@ -328,12 +297,22 @@ export function DBProvider({children}) {
             await invalidatePickerActivityCache(user.uid)
             const activity = await pickerActivityCache(user.uid)
             setPickerActivity(activity)
+            await updateUserStatistics(user.uid)
         }
         if (username && bookmark) {
-            const ref = doc(db, 'lockcollections', user.uid)
-            await setDoc(ref, {redditUsername: username, redditBookmark: bookmark}, {merge: true})
+            let delta = {redditUsername: username, redditBookmark: bookmark}
+            if (lastAwardAt) {
+                delta.redditLastAwardAt = lastAwardAt
+            }
+            await setDoc(doc(db, 'lockcollections', user.uid), delta, {merge: true})
         }
-    }, [user, invalidatePickerActivityCache])
+    }, [user])
+
+    const peekAtDiscordAwards = useCallback(async discordId => {
+        const q = query(collection(db, 'awards-discord'), where('discordUserId', '==', discordId))
+        const querySnapshot = await getDocs(q)
+        return querySnapshot.docs.map(awDoc => awDoc.data())
+    }, [])
 
     const setDiscordUserInfo = useCallback(async (id, username) => {
         if (id && username) {
@@ -343,8 +322,9 @@ export function DBProvider({children}) {
             await invalidatePickerActivityCache(user.uid)
             const activity = await pickerActivityCache(user.uid)
             setPickerActivity(activity)
+            await updateUserStatistics(user.uid)
         }
-    }, [user, invalidatePickerActivityCache])
+    }, [user])
 
     // Lock Collection Subscription
     useEffect(() => {
@@ -430,14 +410,12 @@ export function DBProvider({children}) {
         removeFromLockCollection,
         getProfile,
         updateProfileDisplayName,
-        updateProfileBlackBeltAwardedAt,
-        removeProfileBlackBeltAwarded,
-        updateUserStatistics,
         pickerActivity,
         addPickerActivity,
         updatePickerActivity,
         removePickerActivity,
         getPickerActivity,
+        refreshPickerActivity,
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
@@ -445,12 +423,12 @@ export function DBProvider({children}) {
         getBookmarkForRedditUser,
         advanceBookmarkForRedditUser,
         setDiscordUserInfo,
+        peekAtDiscordAwards,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages,
-        invalidatePickerActivityCache
+        removeDismissedMessages
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -458,14 +436,12 @@ export function DBProvider({children}) {
         removeFromLockCollection,
         getProfile,
         updateProfileDisplayName,
-        updateProfileBlackBeltAwardedAt,
-        removeProfileBlackBeltAwarded,
-        updateUserStatistics,
         pickerActivity,
         addPickerActivity,
         updatePickerActivity,
         removePickerActivity,
         getPickerActivity,
+        refreshPickerActivity,
         importUnclaimedEvidence,
         createEvidenceForEntries,
         deleteAllUserData,
@@ -473,12 +449,12 @@ export function DBProvider({children}) {
         getBookmarkForRedditUser,
         advanceBookmarkForRedditUser,
         setDiscordUserInfo,
+        peekAtDiscordAwards,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages,
-        invalidatePickerActivityCache
+        removeDismissedMessages
         ])
 
     return (
@@ -578,7 +554,7 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
         let bookmark = null
         const newAwards = querySnapshot.docs.map(awDoc => {
             const aw = awDoc.data()
-            const award = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1])
+            const award = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1], aw.discordAwardName)
             const newDoc = {
                 userId: userId,
                 awardId: award.id,
@@ -590,7 +566,7 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
         })
         const awardsToAdd = newAwards.filter(awd => {
             const collision = existingAwardDocs.find(ea => ea.awardId === awd.awardId)
-            return !collision || awd.awardCreatedAt < collision.awardCreatedAt || !collision.awardUrl
+            return !collision || awd.awardCreatedAt < collision.awardCreatedAt || !isValidUrl(collision.awardUrl)
         })
 
         const batch = writeBatch(db)
@@ -600,7 +576,9 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
             retval.push(awardDB2Activity(destRef.id, newDoc))
         })
         await batch.commit()
-        await setDoc(userRef, {discordBookmark: bookmark}, {merge: true})
+        if (bookmark) {
+            await setDoc(userRef, {discordBookmark: bookmark}, {merge: true})
+        }
     }
     return retval
 }
@@ -627,6 +605,30 @@ async function pickerActivityCache(userId) {
         await setDoc(docRef, {payload: JSON.stringify(result)})
         return result
     }
+}
+
+async function invalidatePickerActivityCache(userId) {
+    const queryStr = `activity: userId == ${userId}`
+    await deleteDoc(doc(db, 'query-cache', queryStr))
+}
+
+async function updateUserStatistics(userId) {
+    const activity = await pickerActivityCache(userId)
+    const scored = calculateScoreForUser(activity)
+    const recordedLocks = scored.scoredActivity.filter(a => isLock(a.matchId)).map(a => a.matchId)
+    const projects = scored.scoredActivity.filter(a => isProject(a.matchId)).map(a => a.matchId)
+    let newDoc = {
+        danPoints: scored.danPoints,
+        blackBeltCount: scored.bbCount,
+        danLevel: scored.eligibleDan,
+        recordedLocks: recordedLocks,
+        projects: projects
+    }
+    const blackBelt = activity.find(a => a.matchId === blackBeltAwardId)
+    if (blackBelt) {
+        newDoc.blackBeltAwardedAt = Timestamp.fromDate(new Date(blackBelt.date))
+    }
+    await setDoc(doc(db, 'lockcollections', userId), newDoc, {merge: true})
 }
 
 export default DBContext
