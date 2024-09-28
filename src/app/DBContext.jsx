@@ -426,7 +426,7 @@ export function DBProvider({children}) {
                 let bookmark = null
                 querySnapshot.docs.forEach(awDoc => {
                     const aw = awDoc.data()
-                    const award = lookupAwardByBelt(aw.discordAwardName, aw.discordAwardName.match(/^(\d+)/)?.[1])
+                    const award = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1])
                     const newDoc = {
                         userId: userId,
                         awardId: award.id,
