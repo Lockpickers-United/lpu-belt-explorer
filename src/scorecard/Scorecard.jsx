@@ -23,6 +23,7 @@ import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
 import CachedIcon from '@mui/icons-material/Cached'
 import IconButton from '@mui/material/IconButton'
+import ImportButton from './ImportButton.jsx'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
@@ -116,8 +117,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
         window.location.reload()
     }, [adminAction, refreshPickerActivity, userId])
 
-    const myLocksButton = mostPopular ? 'text' : 'contained'
-    const mostPopularButton = !mostPopular ? 'text' : 'contained'
+    const myLocksButton = mostPopular ? 'text' : 'outlined'
+    const mostPopularButton = !mostPopular ? 'text' : 'outlined'
 
     const ownerName = profile.displayName && !profile['privacyAnonymous']
         ? profile.displayName.toLowerCase().endsWith('s')
@@ -127,6 +128,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const buttonText = owner ? 'My Locks' : `${ownerName} Locks`
     const buttonWidth = owner ? 86 : 124
+
+    console.log('visibleEntries', visibleEntries)
 
     return (
         <div style={{
@@ -183,16 +186,19 @@ function Scorecard({owner, profile, adminAction, popular}) {
                         }}>
                             {(owner || admin) &&
                                 <div style={{width: '100%', textAlign: 'left'}}>
+
+                                    <ImportButton/>
+
                                     {!danSheetImported &&
                                         <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem', marginRight: 6}}
+                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
                                                 onClick={() => handleOpenControls('import')}>
                                             IMPORT&nbsp;DAN&nbsp;SHEET
                                         </Button>
                                     }
                                     {!mostPopular &&
                                         <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem'}}
+                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
                                                 onClick={() => handleOpenControls('project')}>
                                             ADD PROJECT
                                         </Button>
@@ -213,7 +219,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 marginTop: buttonMarginTop
                             }}>
                                 <div style={{flexGrow: 1}}/>
-                                <Button variant={myLocksButton} color='secondary' size='small'
+                                <Button variant={myLocksButton} color='info' size='small'
                                         style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding: '4px 10px'}}
                                         onClick={() => handleLocksToggle()}>
                                     <nobr>{buttonText}</nobr>

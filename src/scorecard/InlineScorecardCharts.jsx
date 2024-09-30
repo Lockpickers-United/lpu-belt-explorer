@@ -6,7 +6,9 @@ function InlineCollectionCharts({entries}) {
 
     const chartData = useMemo(() => {
 
-        const beltDistribution = entries
+        const lockProjectEntries = entries.filter(e => !e.awardType)
+
+        const beltDistribution = lockProjectEntries
             .map(({belt}) => belt && belt.includes('Project')
                 ? belt //was 'Project'
                 : belt

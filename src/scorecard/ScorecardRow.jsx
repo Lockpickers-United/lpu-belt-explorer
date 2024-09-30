@@ -102,7 +102,8 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     dateText = dateText.replace('/201', '/1')
     const dateColor = activity.date ? '#fff' : '#aaa'
 
-    const expandable = (owner && !['belt', 'dan'].includes(activity['awardType'])) || admin
+    const isAward = ['belt', 'dan', 'hof'].includes(activity['awardType'])
+    const expandable = (owner && !isAward) || admin
 
     const handleChange = useCallback((_, isExpanded) => {
         if (expandable) {
@@ -117,7 +118,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     }, [navigate])
 
     const cursorStyle = !expandable ? {cursor: 'default'} : {}
-    const expandIcon = expandable ? <ExpandMoreIcon/> : null
+    const expandIcon = expandable ? <ExpandMoreIcon/> : <div style={{width:24}}/>
 
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
@@ -129,8 +130,8 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     const nameDivWidth = !isMobile ? '56%' : '65%'
     const dateMargin = !isMobile ? '3px 0px 3px 0px' : '-2px 0px 3px 0px'
 
-    const titleSize = ['belt', 'dan', 'hof'].includes(activity['awardType']) ? '1.1rem' : '1rem'
-    const bgColor = ['belt', 'dan', 'hof'].includes(activity['awardType']) ? '#121212' : ''
+    const titleSize = isAward ? '1.1rem' : '1rem'
+    const bgColor = isAward ? '#121212' : ''
 
     const style = {
         maxWidth: 700,
@@ -200,8 +201,10 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                             }
                         </div>
                         <div style={{margin: '0px 0px 0px 6px', flexShrink: 0, flexDirection: 'column'}}>
-                            <ScorecardEvidenceButton activity={activity} handleChange={handleChange}
-                                                     exceptionType={activity.exceptionType} owner={owner}/>
+                            {(owner || !isAward) &&
+                                <ScorecardEvidenceButton activity={activity} handleChange={handleChange}
+                                                         exceptionType={activity.exceptionType} owner={owner}/>
+                            }
                         </div>
                     </div>
 
@@ -247,7 +250,8 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                                 }
                             </div>
                         }
-                        <EvidenceForm activity={activity} handleUpdate={() => {}}/>
+                        <EvidenceForm activity={activity} handleUpdate={() => {
+                        }}/>
 
                     </AccordionDetails>
                 </React.Fragment>

@@ -1,6 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react'
 import DBContext from '../app/DBContext'
-import {getAwardEntryFromId, lookupAwardByBelt} from '../entries/entryutils'
+import {lookupAwardByBelt} from '../entries/entryutils'
+import ImportPreview from '../scorecard/ImportPreview.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 
 function AuthDiscordRoute() {
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
@@ -10,6 +12,8 @@ function AuthDiscordRoute() {
 
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
+
+    const syncComplete = Object.keys(syncResult).length > 0
 
     useEffect(() => {
         async function getAccessToken() {
@@ -30,6 +34,7 @@ function AuthDiscordRoute() {
                 setCredentials({token: data.access_token, type: data.token_type})
             }
         }
+
         if (urlCode) {
             getAccessToken()
         }
@@ -55,6 +60,7 @@ function AuthDiscordRoute() {
                 setSyncResult({id: data.id, username: data.username, awards: awards})
             }
         }
+
         if (credentials) {
             syncDiscordUsername(credentials.type, credentials.token)
         }
@@ -62,27 +68,12 @@ function AuthDiscordRoute() {
 
     return (
         <React.Fragment>
-            <p>
-            {syncResult.id} {syncResult.username}
-            </p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Award</th>
-                        <th>AwardedAt</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {syncResult.awards?.map(msg =>
-                        <tr key={msg.matchId}>
-                            <td>{getAwardEntryFromId(msg.matchId).name}</td>
-                            <td>{msg.awardedAt}</td>
-                            <td>{msg.link}</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+
+
+            {syncComplete &&
+                <ImportPreview syncComplete={syncComplete} syncResult={syncResult} service={'Discord'}/>
+            }
+
         </React.Fragment>
     )
 }
