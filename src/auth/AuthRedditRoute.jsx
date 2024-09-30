@@ -67,12 +67,14 @@ function AuthRedditRoute() {
             if (200 === flairResp.status) {
                 const data = await flairResp.json()
                 const flair = data.current.flair_text
-                const danMatch = flair.match(/^Black Belt (\d+)th Dan/)
-                const beltMatch = flair.match(/^(\w+) Belt/)
-                if (danMatch) {
-                    flairBelt = lookupAwardByBelt(null, danMatch[1])
-                } else if (beltMatch) {
-                    flairBelt = lookupAwardByBelt(beltMatch[1], null)
+                if (flair) {
+                    const danMatch = flair.match(/^Black Belt (\d+)th Dan/)
+                    const beltMatch = flair.match(/^(\w+) Belt/)
+                    if (danMatch) {
+                        flairBelt = lookupAwardByBelt(null, danMatch[1])
+                    } else if (beltMatch) {
+                        flairBelt = lookupAwardByBelt(beltMatch[1], null)
+                    }
                 }
             }
 
