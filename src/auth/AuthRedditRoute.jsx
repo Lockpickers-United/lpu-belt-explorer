@@ -76,28 +76,47 @@ function AuthRedditRoute() {
                 }
             }
 
-            const beforeParam = bookmark ? `&before=${bookmark}` : ''
+            const batchSize = 100
             let reachedEndOfStream = false
+            let beforeMark = bookmark
             let afterMark = null
             let nextBookmark = null
             let awards = []
 
             while (!reachedEndOfStream) {
+                const beforeParam = beforeMark ? `&before=${beforeMark}` : ''
                 const afterParam = afterMark ? `&after=${afterMark}` : ''
-                const url = 'https://oauth.reddit.com/message/inbox?limit=100' + beforeParam + afterParam
+                const url = `https://oauth.reddit.com/message/inbox?limit=${batchSize}` + beforeParam + afterParam
                 const messageResp = await fetch(url, {
                     headers: {authorization: `${type} ${token}`}
                 })
                 if (200 === messageResp.status) {
                     const respObj = await messageResp.json()
                     const data = respObj.data
-                    afterMark = data.after
 
-                    if (!afterMark || data.children.length === 0) {
-                        reachedEndOfStream = true
+                    if (data.children.length > 0) {
+                        if (bookmark) {
+                            // Paging forwards in time, must update beforeParam.
+                            // Within batch, messages appear to go backwards in time.
+                            beforeMark = data.children.reduce((acc, msg) => {
+                                return !acc.time || msg.data.created_utc > acc.time ? {time: msg.data.created_utc, mark: msg.data.name} : acc
+                            }, {}).mark
+
+                            nextBookmark = beforeMark
+                        } else {
+                            // Paging backwards in time, must update afterParam.
+                            // Within batch, messages appear to go backwards in time.
+                            afterMark = data.children.reduce((acc, msg) => {
+                                return !acc.time || msg.data.created_utc <= acc.time ? {time: msg.data.created_utc, mark: msg.data.name} : acc
+                            }, {}).mark
+
+                            if (!nextBookmark) {
+                                nextBookmark = data.children[0].data.name
+                            }
+                        }
                     }
-                    if (!nextBookmark && data.children.length > 0) {
-                        nextBookmark = data.children[0].data.name
+                    if (data.children.length < batchSize) {
+                        reachedEndOfStream = true
                     }
 
                     const newAwards = data.children
