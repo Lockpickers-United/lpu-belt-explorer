@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
-import {getAwardEntryFromId, lookupAwardByBelt, awardGreaterThan} from '../entries/entryutils'
+import {lookupAwardByBelt, awardGreaterThan} from '../entries/entryutils'
 import DBContext from '../app/DBContext'
+import ImportPreview from '../scorecard/ImportPreview.jsx'
 
 const idealRegExp = /(white|yellow|orange|green|blue|purple|brown|red|black|(\d\d?)[th\s]*dan|dan[th\s]*(\d\d?))\s*(belt)?\s*(approved|granted)/i
 const positiveRegExp = /approved|granted|congrat/i
@@ -16,6 +17,8 @@ function AuthRedditRoute() {
 
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
+
+    const syncComplete = Object.keys(syncResult).length > 0
 
     useEffect(() => {
         async function getAccessToken() {
@@ -141,29 +144,9 @@ function AuthRedditRoute() {
     }, [credentials, advanceBookmarkForRedditUser, getBookmarkForRedditUser, clientId, clientSecret])
 
     return (
-        <React.Fragment>
-            <p>
-            {syncResult.username} : {syncResult.flair?.name}
-            </p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Award</th>
-                        <th>AwardedAt</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {syncResult.awards?.map(msg =>
-                        <tr key={msg.matchId}>
-                            <td>{getAwardEntryFromId(msg.matchId).name}</td>
-                            <td>{msg.awardedAt}</td>
-                            <td>{msg.link}</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-        </React.Fragment>
+
+            <ImportPreview syncComplete={syncComplete} syncResult={syncResult} service={'Reddit'}/>
+
     )
 }
 

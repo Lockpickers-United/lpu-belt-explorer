@@ -6,36 +6,21 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
-import {scorecardSortFields} from '../data/sortFields'
-import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
-import calculateScoreForUser from '../scorecard/scoring'
 import dayjs from 'dayjs'
 import DBContext from '../app/DBContext.jsx'
-import FilterButton from '../filters/FilterButton.jsx'
 import Footer from '../nav/Footer.jsx'
-import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
-import Scorecard from './Scorecard.jsx'
-import ScorecardExportButton from './ScorecardExportButton.jsx'
-import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
-import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
-import SearchBox from '../nav/SearchBox.jsx'
-import SortButton from '../filters/SortButton.jsx'
 import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
-import {getAwardEntryFromId} from '../entries/entryutils'
-import ScorecardRow from './ScorecardRow.jsx'
 import ImportPreviewDisplay from './ImportPreviewDisplay.jsx'
 
 function ImportPreview({syncComplete, syncResult, service}) {
-    const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, getPickerActivity} = useContext(DBContext)
+    const {getProfile} = useContext(DBContext)
     const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
-    const {isMobile} = useWindowSize()
 
     const [triggerState, setTriggerState] = useState(false)
     const handleAdminAction = useCallback(() => {
@@ -50,7 +35,7 @@ function ImportPreview({syncComplete, syncResult, service}) {
             triggerState
         }
         try {
-            const profile = await getProfile(user?.uid)
+            const profile = user?.uid ? await getProfile(user?.uid) : {}
             return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
 
         } catch (ex) {
@@ -76,7 +61,6 @@ function ImportPreview({syncComplete, syncResult, service}) {
     const footer = (
         <React.Fragment>
             <br/>
-            <ScorecardExportButton/><ScorecardNoTrackButton/>
         </React.Fragment>
     )
 
@@ -85,13 +69,6 @@ function ImportPreview({syncComplete, syncResult, service}) {
     if (loading || error) {
         return null
     }
-
-
-    console.log('syncResult', syncResult)
-
-    const awards = syncResult.awards?.map(msg => {
-        return getAwardEntryFromId(msg.matchId)
-    })
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
@@ -107,9 +84,9 @@ function ImportPreview({syncComplete, syncResult, service}) {
                         {!syncComplete && <LoadingDisplay/>}
 
                         {syncComplete &&
-                            <ImportPreviewDisplay owner={user && user.uid === userId} profile={profile}
+                            <ImportPreviewDisplay profile={profile}
                                                   adminAction={handleAdminAction} importResults={syncResult}
-                                                  service={service}/>
+                                                  service={service} />
                         }
 
                         <Footer extras={footer}/>

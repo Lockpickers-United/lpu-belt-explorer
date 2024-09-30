@@ -129,8 +129,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const buttonText = owner ? 'My Locks' : `${ownerName} Locks`
     const buttonWidth = owner ? 86 : 124
 
-    console.log('visibleEntries', visibleEntries)
-
     return (
         <div style={{
             maxWidth: 700, padding: 0, backgroundColor: '#222',

@@ -22,6 +22,7 @@ export const dialFilterFields = [
 ]
 
 export const scorecardFilterFields = [
+    {label: 'Type', fieldName: 'type'},
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Belt', fieldName: 'belt', sort: beltSort},

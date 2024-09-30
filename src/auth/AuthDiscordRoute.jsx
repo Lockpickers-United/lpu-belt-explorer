@@ -2,7 +2,6 @@ import React, {useState, useContext, useEffect} from 'react'
 import DBContext from '../app/DBContext'
 import {lookupAwardByBelt} from '../entries/entryutils'
 import ImportPreview from '../scorecard/ImportPreview.jsx'
-import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 
 function AuthDiscordRoute() {
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
@@ -67,14 +66,9 @@ function AuthDiscordRoute() {
     }, [credentials, setDiscordUserInfo, peekAtDiscordAwards])
 
     return (
-        <React.Fragment>
 
+            <ImportPreview syncComplete={syncComplete} syncResult={syncResult} service={'Discord'}/>
 
-            {syncComplete &&
-                <ImportPreview syncComplete={syncComplete} syncResult={syncResult} service={'Discord'}/>
-            }
-
-        </React.Fragment>
     )
 }
 
