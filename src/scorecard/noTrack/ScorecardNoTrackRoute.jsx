@@ -110,7 +110,7 @@ function ScorecardRoute() {
         <FilterProvider filterFields={scorecardFilterFields}>
             <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount} cardDanPoints={cardDanPoints}
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                   cardNextDanLocks={cardNextDanLocks}>
+                                   cardNextDanLocks={cardNextDanLocks} popularLocks={[]}>
                 <ScorecardListProvider>
 
                     <ColorModeProvider>
