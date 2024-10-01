@@ -205,7 +205,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                         <Button variant='outlined' color='secondary' size='small'
                                                 style={{lineHeight: '1.2rem', marginLeft: 6}}
                                                 onClick={() => handleClick('/scorecard/info/FAQ')}>
-                                            Black Belt FAQ
+                                            BB FAQ
                                         </Button>
                                     }
                                 </div>

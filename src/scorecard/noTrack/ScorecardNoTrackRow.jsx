@@ -7,13 +7,12 @@ import TableRow from '@mui/material/TableRow'
 import Link from '@mui/material/Link'
 
 function ScorecardNoTrackRow({activity}) {
-    const {getEntryFromId, getProjectEntryFromId} = useContext(ScorecardDataContext)
+    const {getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
 
     const entry = getEntryFromId(activity.matchId)
     const project = getProjectEntryFromId(activity.matchId)
-    const entity = entry
-        ? entry
-        : project
+    const award = getAwardEntryFromId(activity.matchId)
+    const entity = entry || project || award
 
     let entryTitle = entryName(entity)
 
@@ -33,99 +32,117 @@ function ScorecardNoTrackRow({activity}) {
     return (
 
         <React.Fragment>
-            <TableRow key={activity.id}
-                      sx={{
-                          '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#eee'},
-                          'td, th': {}
-                      }}>
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color,
-                    fontWeight: 600
-                }}
-                           component='th' scope='row'>
-                    {entryTitle}
-                </TableCell>
+            {!activity.awardType &&
+                <TableRow key={activity.id}
+                          sx={{
+                              '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#eee'},
+                              'td, th': {}
+                          }}>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color,
+                        fontWeight: 600
+                    }}
+                               component='th' scope='row'>
+                        {entryTitle}
+                    </TableCell>
 
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color
-                }}
-                           component='th' scope='row'>
-                    {entity?.version}
-                </TableCell>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color
+                    }}
+                               component='th' scope='row'>
+                        {entity?.version}
+                    </TableCell>
 
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color
-                }}
-                           component='th' scope='row'>
-                    <nobr>{entity?.belt}</nobr>
-                </TableCell>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color
+                    }}
+                               component='th' scope='row'>
+                        <nobr>{entity?.belt}</nobr>
+                    </TableCell>
 
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color
-                }}
-                           component='th' scope='row'>
-                    {dateText}
-                </TableCell>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color
+                    }}
+                               component='th' scope='row'>
+                        {dateText}
+                    </TableCell>
 
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color
-                }}
-                           component='th' scope='row'>
-                    <Link onClick={() => openInNewTab(activity.link)}>{linkText}</Link>
-                </TableCell>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color
+                    }}
+                               component='th' scope='row'>
+                        <Link onClick={() => openInNewTab(activity.link)}>{linkText}</Link>
+                    </TableCell>
 
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color
-                }}
-                           component='th' scope='row'>
-                    {activity.evidenceModifier}
-                </TableCell>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color
+                    }}
+                               component='th' scope='row'>
+                        {activity.evidenceModifier}
+                    </TableCell>
 
-                <TableCell sx={{
-                    textAlign: 'left',
-                    fontSize: fontSize,
-                    lineHeight: '1.1rem',
-                    padding: '8px',
-                    backgroundColor: backgroundColor,
-                    color: color
-                }}
-                           component='th' scope='row'>
-                    <nobr><span style={{fontWeight: 700}}>{activity.points} </span><span
-                        style={{color: '#666'}}>{pointsText}</span></nobr>
-                </TableCell>
-            </TableRow>
+                    <TableCell sx={{
+                        textAlign: 'left',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: backgroundColor,
+                        color: color
+                    }}
+                               component='th' scope='row'>
+                        <nobr><span style={{fontWeight: 700}}>{activity.points} </span><span
+                            style={{color: '#666'}}>{pointsText}</span></nobr>
+                    </TableCell>
+                </TableRow>
+            }
+            {activity.awardType &&
+                <TableRow key={activity.id}>
+                    <TableCell colSpan={7} sx={{
+                        textAlign: 'center',
+                        fontSize: fontSize,
+                        lineHeight: '1.1rem',
+                        padding: '8px',
+                        backgroundColor: '#bbb',
+                        color: color,
+                        fontWeight: 600
+                    }}
+                               component='th' scope='row'>
+                        {entryTitle}
+                    </TableCell>
+                </TableRow>
+            }
 
-        </React.Fragment>
+                </React.Fragment>
     )
 
 }

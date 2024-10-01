@@ -41,7 +41,7 @@ function ImportPreviewDisplay({profile, importResults, service}) {
     }, {})
 
     const previousAwards = serviceAwards.filter(award => !awardsLookup[award.matchId])
-    const descriptor = previousAwards ? 'new ' : ''
+    const descriptor = previousAwards.length > 0 ? 'new ' : ''
 
     const {expanded} = useContext(ScorecardListContext)
     const {filters, removeFilters} = useContext(FilterContext)
@@ -53,6 +53,7 @@ function ImportPreviewDisplay({profile, importResults, service}) {
     }
 
     const handleLink = useCallback(link => {
+        // TODO: remove extra params from URL, like http://localhost:3000/?state=a2f4kr9zlk&code=E4VxekjpTxZzDbrpf8iSzCXXQrJBJw#_
         navigate(link)
     }, [navigate])
 
@@ -83,7 +84,10 @@ function ImportPreviewDisplay({profile, importResults, service}) {
             </div>
 
             <div style={{fontSize: '1rem', padding: '0px 16px'}}>
-                <strong>Congratulations {importResults.username}!</strong> Here are your rankings from {service}.
+                {awards.length > 0 &&
+                    <strong>Congratulations {importResults.username}!</strong>
+                }
+                Here are your rankings from {service}.
                 <div style={{height: 8}}/>
 
                 {service === 'Discord' &&
@@ -141,7 +145,7 @@ function ImportPreviewDisplay({profile, importResults, service}) {
 
                 {previousAwards.length > 0 &&
                     <div style={{}}>
-                        <div style={{padding: 16, fontWeight: 700, fontSize: '1.2rem'}}>Previous Belts</div>
+                        <div style={{padding: 16, fontWeight: 700, fontSize: '1.2rem'}}>Existing Belts</div>
                         {previousAwards?.map(act =>
                             <ScorecardRow key={act.id}
                                           owner={true}

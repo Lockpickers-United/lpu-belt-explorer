@@ -9,8 +9,10 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import Button from '@mui/material/Button'
 import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import DBContext from '../app/DBContext.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function ImportButton() {
+    const {isMobile} = useWindowSize()
     const {oauthState} = useContext(DBContext)
 
     const [open, setOpen] = useState(false)
@@ -40,6 +42,8 @@ function ImportButton() {
         window.location.assign(url)
     }, [oauthState])
 
+    const fontSize = isMobile ? '0.95rem' : '1rem'
+
     return (
         <React.Fragment>
             <Tooltip title='My Collection' arrow disableFocusListener>
@@ -49,7 +53,7 @@ function ImportButton() {
                     style={{lineHeight: '1.2rem', marginLeft: 6}}
                     onClick={handleOpen}
                 >
-                    IMPORT
+                    IMPORT BELTS
                 </Button>
             </Tooltip>
             <Backdrop
@@ -64,13 +68,13 @@ function ImportButton() {
                         border: '1px solid #666',
                         opacity: 1
                     }}>
-                        <CardHeader title={'Import'}
+                        <CardHeader title={'Import Belts'}
                                     action={<HighlightOffIcon sx={{cursor: 'pointer'}}/>}
                                     style={{paddingBottom: 0}}
                                     onClick={handleClose}/>
                         <CardContent>
-                            <div style={{padding: 20}}>
-                                New! Add your Belt (and Dan Level) approvals to your Scorecard.
+                            <div style={{padding: '0px 20px', fontSize:fontSize}}>
+                                <strong>New!</strong> Add your approved Belts (and Dan Levels) to your Scorecard.
                                 You&#39;ll need to authorize for each site, and we&#39;ll pull your username and
                                 approvals for you. Please note: you can only import belts already approved through the official process.
                                 <i>Click here for info</i>.
@@ -95,6 +99,7 @@ function ImportButton() {
                             </div>
 
                             <ImportDanSheetForm/>
+
                         </CardContent>
                     </Card>
                 }

@@ -81,12 +81,17 @@ function ImportPreview({syncComplete, syncResult, service}) {
 
                         <Nav title={title} extras={nav}/>
 
-                        {!syncComplete && <LoadingDisplay/>}
+                        {!syncComplete &&
+                            <div style={{textAlign:'center'}}>
+                                <LoadingDisplay/>
+                                Please wait, this may take a minute or so.<br/><br/>
+                            </div>
+                        }
 
                         {syncComplete &&
                             <ImportPreviewDisplay profile={profile}
                                                   adminAction={handleAdminAction} importResults={syncResult}
-                                                  service={service} />
+                                                  service={service}/>
                         }
 
                         <Footer extras={footer}/>
