@@ -6,7 +6,6 @@ import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
 import ProfileHeader from './ProfileHeader.jsx'
-import SystemMessage from '../systemMessage/SystemMessage.jsx'
 
 function ProfilePage({profile, owner}) {
     const {compact} = useContext(LockListContext)
@@ -16,7 +15,6 @@ function ProfilePage({profile, owner}) {
 
     return (
         <React.Fragment>
-            <SystemMessage/>
             <div style={{
                 maxWidth: 700, padding: 0, backgroundColor: '#222',
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16
