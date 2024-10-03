@@ -29,6 +29,8 @@ function ScorecardRow({owner, evid, expanded, onExpand, merged}) {
         ? entry
         : project
 
+    if (!entity) return
+
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 
