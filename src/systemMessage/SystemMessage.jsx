@@ -24,14 +24,23 @@ function SystemMessage({override, overridePageId, placeholder}) {
         , [getMessage, override, pageId, placeholder])
 
     const noId = pageId.replace(/\/\w{28}/, 'uid')
-    const query = useMemo(() =>querystring.stringify({id: message?.id, p: noId, r: randomStuff}),[message, noId])
+    const query = useMemo(() => querystring.stringify({id: message?.id, p: noId, r: randomStuff}), [message, noId])
     const url = `https://img.lpubelts.com/i/message/message.png?${query}`
 
     const navigate = useNavigate()
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
+
     const handleClick = useCallback(() => {
         if (!override) {
             document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/click.png?${query}`
-            navigate(message['linkDestination'])
+            if (message['linkDestination'].slice(0, 4) === 'http') {
+                openInNewTab(message['linkDestination'])
+            } else {
+                navigate(message['linkDestination'])
+            }
         }
     }, [message, navigate, override, query])
 
