@@ -2,17 +2,14 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import Button from '@mui/material/Button'
 import {useLocation, useNavigate} from 'react-router-dom'
 import SystemMessageContext from './SystemMessageContext.jsx'
-
 import MoodIcon from '@mui/icons-material/Mood'
 import InfoIcon from '@mui/icons-material/Info'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
-import DBContext from '../app/DBContext.jsx'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import querystring from 'query-string'
 
 function SystemMessage({override, overridePageId, placeholder}) {
-    const {lockCollection, addToLockCollection} = useContext(DBContext)
-    const {getMessage} = useContext(SystemMessageContext)
+    const {getMessage, dismissMessage} = useContext(SystemMessageContext)
 
     const location = useLocation()
     const pageId = overridePageId ? overridePageId : location.pathname
@@ -47,9 +44,9 @@ function SystemMessage({override, overridePageId, placeholder}) {
     const handleDismiss = useCallback(async () => {
         if (!override) {
             document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/dismiss.png?${query}`
-            await addToLockCollection('dismissedMessages', message?.id)
+            await dismissMessage(message)
         }
-    }, [addToLockCollection, message, override, query])
+    }, [dismissMessage, message, override, query])
 
     const messageHeader = message?.messageHeadline
     const messageText = message?.messageText
@@ -128,7 +125,7 @@ function SystemMessage({override, overridePageId, placeholder}) {
                                             onClick={handleClick}
                                     >{message.linkText}</Button>
                                 }
-                                {!message.noDismiss && Object.keys(lockCollection).length > 0 &&
+                                {!message.noDismiss &&
                                     <Button variant='text' size='small'
                                             style={{
                                                 lineHeight: '.9rem',
