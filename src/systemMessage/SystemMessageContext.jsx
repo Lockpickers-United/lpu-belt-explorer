@@ -1,15 +1,30 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
+import {useLocalStorage} from 'usehooks-ts'
 
 const SystemMessageContext = React.createContext({})
 
 export function SystemMessageProvider({children}) {
-    const {authLoaded, user} = useContext(AuthContext)
-    const {dbLoaded, adminRole, lockCollection, systemMessages} = useContext(DBContext)
+    const {authLoaded, user, isLoggedIn} = useContext(AuthContext)
+    const {dbLoaded, adminRole, lockCollection, addToLockCollection, systemMessages, } = useContext(DBContext)
     const profile = lockCollection
+    const [dismissedMessages, setDismissedMessages] = useLocalStorage('dismissedMessages', [])
+
+    const dismissMessage = useCallback(async (message) => {
+        if (isLoggedIn) {
+            await addToLockCollection('dismissedMessages', message?.id)
+        } else {
+            const newMessages = [...dismissedMessages, message?.id]
+            setDismissedMessages(newMessages)
+        }
+    }, [addToLockCollection, dismissedMessages, isLoggedIn, setDismissedMessages])
 
     const filteredMessages = useMemo(() => systemMessages.map(message => {
+
+            const profileMessages = profile?.dismissedMessages || []
+            const allDismissedMessages = [...new Set([...profileMessages, ...dismissedMessages])]
+
             let valid = 1
             if (message['targetAnonymousNotOK']) {
                 valid = !profile?.privacyAnonymous ? valid : 0
@@ -30,7 +45,7 @@ export function SystemMessageProvider({children}) {
                 valid = message['targetUserIds'].includes(user?.uid) ? 1 : 0
             }
             if (!message['noDismiss'] && !message['ignoreDismiss']) {
-                valid = !profile?.dismissedMessages?.includes(message.id) ? valid : 0
+                valid = !allDismissedMessages.includes(message.id) ? valid : 0
             }
 
             const thisMessage = {...message}
@@ -41,7 +56,7 @@ export function SystemMessageProvider({children}) {
             .sort((a, b) => {
                 return b.priority - a.priority
             })
-        , [systemMessages, profile, user, adminRole])
+        , [dismissedMessages, systemMessages, profile, user, adminRole])
 
     const getMessage = useCallback((location) => {
         const baseDir = /\/\w*\//.test(location) ? /\/\w*\//.exec(location)[0] + '*' : location + '/*'
@@ -61,9 +76,9 @@ export function SystemMessageProvider({children}) {
 
 
     const value = useMemo(() => ({
-        getMessage
+        getMessage, dismissMessage
     }), [
-        getMessage
+        getMessage, dismissMessage
     ])
 
     return (
