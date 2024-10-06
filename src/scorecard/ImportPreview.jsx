@@ -17,7 +17,7 @@ import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import ImportPreviewDisplay from './ImportPreviewDisplay.jsx'
 
-function ImportPreview({syncComplete, syncResult, service}) {
+function ImportPreview({syncStatus, syncResult, service}) {
     const {user} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
     const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
@@ -81,17 +81,42 @@ function ImportPreview({syncComplete, syncResult, service}) {
 
                         <Nav title={title} extras={nav}/>
 
-                        {!syncComplete &&
+                        {!syncStatus &&
                             <div style={{textAlign:'center'}}>
                                 <LoadingDisplay/>
                                 Please wait, this may take a minute or so.<br/><br/>
                             </div>
                         }
 
-                        {syncComplete &&
+                        {syncStatus === 'complete' &&
                             <ImportPreviewDisplay profile={profile}
                                                   adminAction={handleAdminAction} importResults={syncResult}
                                                   service={service}/>
+                        }
+
+                        {syncStatus === 'token_failed' &&
+                            <div style={{textAlign:'center'}}>
+                                Something prevented us from talking to the server.
+                                Ad blockers? Privacy extensions? Try another browser?
+                            </div>
+                        }
+
+                        {syncStatus === 'access_denied' &&
+                            <div style={{textAlign:'center'}}>
+                                Why did you cancel? We are safe, really.
+                            </div>
+                        }
+
+                        {syncStatus === 'none_found' &&
+                            <div style={{textAlign:'center'}}>
+                                We linked your account but could not find any awards. Double check right account?
+                            </div>
+                        }
+
+                        {syncStatus === 'data_failed' &&
+                            <div style={{textAlign:'center'}}>
+                                Something bad happened, sorry our fault. Try again later.
+                            </div>
                         }
 
                         <Footer extras={footer}/>

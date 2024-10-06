@@ -11,14 +11,17 @@ function AuthRedditRoute() {
     const {getBookmarkForRedditUser, advanceBookmarkForRedditUser, oauthState} = useContext(DBContext)
     const {VITE_REDDIT_CLIENT_ID: clientId, VITE_REDDIT_CLIENT_SECRET: clientSecret} = import.meta.env
 
-    const urlMatch = window.location.href.match(/\?state=([^&]+)&code=([^#]+)#/)
-    const urlState = urlMatch ? urlMatch[1] : null
-    const urlCode = urlMatch ? urlMatch[2] : null
+    const urlMatchCode = window.location.href.match(/\?state=([^&]+)&code=([^#]+)#/)
+    const urlState = urlMatchCode ? urlMatchCode[1] : null
+    const urlCode = urlMatchCode ? urlMatchCode[2] : null
+    const urlMatchError = window.location.href.match(/\?state=([^&]+)&error=([^#]+)#/)
+    const urlError = urlMatchError ? urlMatchError[2] : null
 
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
+    const [syncException, setSyncException] = useState(false)
 
-    const syncComplete = Object.keys(syncResult).length > 0
+    const syncStatus = syncException || (Object.keys(syncResult).length > 0 ? 'complete' : false)
 
     useEffect(() => {
         async function getAccessToken() {
@@ -38,13 +41,17 @@ function AuthRedditRoute() {
                 if (200 === resp.status) {
                     const data = await resp.json()
                     setCredentials({token: data.access_token, type: data.token_type})
+                } else {
+                    setSyncException('token_failed')
                 }
             }
         }
         if (urlCode && urlState) {
             getAccessToken()
+        } else if (urlError) {
+            setSyncException('access_denied')
         }
-    }, [urlCode, urlState, clientId, clientSecret, oauthState])
+    }, [urlCode, urlState, urlError, clientId, clientSecret, oauthState])
 
     useEffect(() => {
         async function syncRedditBeltAwards(type, token) {
@@ -142,10 +149,16 @@ function AuthRedditRoute() {
                     awards = [...awards, ...newAwards]
                 } else {
                     reachedEndOfStream = true
+                    setSyncException('data_failed')
                 }
             }
-            await advanceBookmarkForRedditUser(username, nextBookmark, awards)
-            setSyncResult({username: username, flair: flairBelt, awards: awards})
+
+            if (awards.length > 0) {
+                await advanceBookmarkForRedditUser(username, nextBookmark, awards)
+                setSyncResult({username: username, flair: flairBelt, awards: awards})
+            } else {
+                setSyncException('none_found')
+            }
 
             await fetch('https://www.reddit.com/api/v1/revoke_token', {
                 method: 'POST',
@@ -166,7 +179,7 @@ function AuthRedditRoute() {
 
     return (
 
-            <ImportPreview syncComplete={syncComplete} syncResult={syncResult} service={'Reddit'}/>
+            <ImportPreview syncStatus={syncStatus} syncResult={syncResult} service={'Reddit'}/>
 
     )
 }

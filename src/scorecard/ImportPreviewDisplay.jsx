@@ -53,8 +53,6 @@ function ImportPreviewDisplay({profile, importResults, service}) {
         setEntryExpanded(expanded)
     }
 
-    console.log('loc', window.location)
-
     const handleLink = useCallback(() => {
 
         // MESSY: remove extra params from URL, like http://localhost:3000/?state=a2f4kr9zlk&code=E4VxekjpTxZzDbrpf8iSzCXXQrJBJw#_

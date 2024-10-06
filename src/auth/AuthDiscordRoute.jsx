@@ -6,13 +6,16 @@ import ImportPreview from '../scorecard/ImportPreview.jsx'
 function AuthDiscordRoute() {
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
     const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
-    const urlMatch = window.location.href.match(/\?code=([^#]+)#/)
-    const urlCode = urlMatch ? urlMatch[1] : null
+    const urlMatchCode = window.location.href.match(/\?code=([^#]+)#/)
+    const urlCode = urlMatchCode ? urlMatchCode[1] : null
+    const urlMatchError = window.location.href.match(/\?error=([^&]+)&error_description/)
+    const urlError = urlMatchError ? urlMatchError[1] : null
 
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
+    const [syncException, setSyncException] = useState(false)
 
-    const syncComplete = Object.keys(syncResult).length > 0
+    const syncStatus = syncException || (Object.keys(syncResult).length > 0 ? 'complete' : false)
 
     useEffect(() => {
         async function getAccessToken() {
@@ -31,13 +34,20 @@ function AuthDiscordRoute() {
             if (200 === resp.status) {
                 const data = await resp.json()
                 setCredentials({token: data.access_token, type: data.token_type})
+            } else if (400 === resp.status) {
+                // ignore: code was rejected, which happens when used a
+                // second time, for example when double-rendered
+            } else {
+                setSyncException('token_failed')
             }
         }
 
         if (urlCode) {
             getAccessToken()
+        } else if (urlError) {
+            setSyncException('access_denied')
         }
-    }, [urlCode, clientId, clientSecret])
+    }, [urlCode, urlError, clientId, clientSecret])
 
     useEffect(() => {
         async function syncDiscordUsername(type, token) {
@@ -55,8 +65,14 @@ function AuthDiscordRoute() {
                         link: aw.awardUrl
                     }
                 })
-                await setDiscordUserInfo(data.id, data.username)
-                setSyncResult({id: data.id, username: data.username, awards: awards})
+                if (awards.length > 0) {
+                    await setDiscordUserInfo(data.id, data.username)
+                    setSyncResult({id: data.id, username: data.username, awards: awards})
+                } else {
+                    setSyncException('none_found')
+                }
+            } else {
+                setSyncException('data_failed')
             }
         }
 
@@ -67,7 +83,7 @@ function AuthDiscordRoute() {
 
     return (
 
-            <ImportPreview syncComplete={syncComplete} syncResult={syncResult} service={'Discord'}/>
+            <ImportPreview syncStatus={syncStatus} syncResult={syncResult} service={'Discord'}/>
 
     )
 }
