@@ -210,7 +210,13 @@ export function DBProvider({children}) {
     const createEvidenceForEntries = useCallback(async (userId, ids) => {
         const batch = writeBatch(db)
         let result = []
-        const newDocs = ids.map(matchId => ({userId, projectId: matchId, evidenceUrl: '', evidenceNotes: '', modifier: ''}))
+        const newDocs = ids.map(matchId => ({
+            userId,
+            projectId: matchId,
+            evidenceUrl: '',
+            evidenceNotes: '',
+            modifier: ''
+        }))
         newDocs.forEach(nd => {
             const docRef = doc(collection(db, 'evidence'))
             batch.set(docRef, nd)
@@ -250,7 +256,7 @@ export function DBProvider({children}) {
             const profile = userDoc.data()
             return state === profile?.oauthState
         } else {
-            const newState = (Math.random()+1).toString(36).substring(2)
+            const newState = (Math.random() + 1).toString(36).substring(2)
             await setDoc(ref, {oauthState: newState}, {merge: true})
             return newState
         }
@@ -326,6 +332,23 @@ export function DBProvider({children}) {
         }
     }, [user])
 
+    const removeServiceAuth = useCallback(async (service) => {
+        const ref = doc(db, 'lockcollections', user.uid)
+        if (service === 'Discord') {
+            await setDoc(ref, {
+                discordId: deleteField(),
+                discordUsername: deleteField(),
+                discordBookmark: deleteField()
+            }, {merge: true})
+        } else if (service === 'Reddit') {
+            await setDoc(ref, {
+                redditUsername: deleteField(),
+                redditLastAwardAt: deleteField(),
+                redditBookmark: deleteField()
+            }, {merge: true})
+        }
+    }, [user])
+
     // Lock Collection Subscription
     useEffect(() => {
         if (isLoggedIn) {
@@ -365,6 +388,7 @@ export function DBProvider({children}) {
                 setActivityLoaded(true)
             }
         }
+
         loadActivity()
     }, [authLoaded, isLoggedIn, user])
 
@@ -423,6 +447,7 @@ export function DBProvider({children}) {
         getBookmarkForRedditUser,
         advanceBookmarkForRedditUser,
         setDiscordUserInfo,
+        removeServiceAuth,
         peekAtDiscordAwards,
         systemMessages,
         getAllSystemMessages,
@@ -449,13 +474,14 @@ export function DBProvider({children}) {
         getBookmarkForRedditUser,
         advanceBookmarkForRedditUser,
         setDiscordUserInfo,
+        removeServiceAuth,
         peekAtDiscordAwards,
         systemMessages,
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
         removeDismissedMessages
-        ])
+    ])
 
     return (
         <DBContext.Provider value={value}>

@@ -10,14 +10,24 @@ import Button from '@mui/material/Button'
 import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import Link from '@mui/material/Link'
+import {Collapse} from '@mui/material'
 
-function ImportButton() {
+function ImportButton({profile}) {
     const {isMobile} = useWindowSize()
     const {oauthState} = useContext(DBContext)
+    const danSheetImported = profile?.blackBeltAwardedAt > 0
+
+    const [danImportOpen, setDanImportOpen] = useState(false)
+    const toggleDanImport = useCallback(() => {
+        setDanImportOpen(!danImportOpen)
+    }, [danImportOpen])
+
 
     const [open, setOpen] = useState(false)
     const handleClose = () => {
         setOpen(false)
+        setDanImportOpen(false)
     }
     const handleOpen = () => {
         setOpen(true)
@@ -73,32 +83,66 @@ function ImportButton() {
                                     style={{paddingBottom: 0}}
                                     onClick={handleClose}/>
                         <CardContent>
-                            <div style={{padding: '0px 20px', fontSize:fontSize}}>
-                                <strong>New!</strong> Add your approved Belts (and Dan Levels) to your Scorecard.
-                                You&#39;ll need to authorize for each site, and we&#39;ll pull your username and
-                                approvals for you. Please note: you can only import belts already approved through the official process.
-                                <i>Click here for info</i>.
-                            </div>
-                            <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
-                                Import From<br/>
+                            <Collapse in={!danImportOpen}>
 
-                                <div style={{marginTop:8}}>
-                                    <Button
-                                        variant='contained'
-                                        color='secondary'
-                                        style={{lineHeight: '1.2rem'}}
-                                        onClick={handleDiscordAuth}
-                                    >DISCORD</Button>
-                                    <Button
-                                        variant='contained'
-                                        color='secondary'
-                                        style={{lineHeight: '1.2rem', marginLeft: 16}}
-                                        onClick={handleRedditAuth}
-                                    >REDDIT</Button>
+                                <div style={{padding: '0px 0px', fontSize: fontSize}}>
+                                    <strong>New!</strong> Add your approved Belts (and Dan Levels) to your Scorecard.
+                                    You&#39;ll need to authorize for each site, and we&#39;ll pull your username and
+                                    approvals for you. Please note: you can only import belts already approved through
+                                    the official process.
                                 </div>
-                            </div>
 
-                            <ImportDanSheetForm/>
+                                {profile?.discordUsername &&
+                                    <div style={{padding: '20px 0px 0px 0px', textAlign: 'left', fontWeight: 500}}>
+                                        New Discord rankings will be automatically added to your scorecard
+                                        as long as there is a Discord username in your Profile.
+
+                                        You only need to re-import from Discord if you want to
+                                        add belts from an additional username.
+                                    </div>
+                                }
+                                <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
+                                    Import From<br/>
+
+                                    <div style={{marginTop: 8}}>
+                                        <Button
+                                            variant='contained'
+                                            color='secondary'
+                                            style={{lineHeight: '1.2rem'}}
+                                            onClick={handleDiscordAuth}
+                                        >DISCORD</Button>
+                                        <Button
+                                            variant='contained'
+                                            color='secondary'
+                                            style={{lineHeight: '1.2rem', marginLeft: 16}}
+                                            onClick={handleRedditAuth}
+                                        >REDDIT</Button>
+                                    </div>
+                                </div>
+
+                                {!danSheetImported &&
+                                    <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
+                                        Black Belts only: <Link onClick={toggleDanImport}
+                                                                style={{color: '#99c2e5', cursor: 'pointer'}}>
+                                        Import your Dan Sheet
+                                    </Link>
+                                    </div>
+                                }
+                            </Collapse>
+
+                            <Collapse in={danImportOpen}>
+                                {danImportOpen &&
+                                    <React.Fragment>
+                                        <ImportDanSheetForm/>
+                                        <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
+                                            Return to <Link onClick={toggleDanImport}
+                                                            style={{color: '#99c2e5', cursor: 'pointer'}}>
+                                            Import Belts
+                                        </Link>
+                                        </div>
+                                    </React.Fragment>
+                                }
+                            </Collapse>
 
                         </CardContent>
                     </Card>

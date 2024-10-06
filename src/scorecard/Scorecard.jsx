@@ -37,7 +37,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const {name, locks} = filters
     const {createEvidenceForEntries, removePickerActivity, refreshPickerActivity} = useContext(DBContext)
     const {admin} = useContext(AppContext)
-    const danSheetImported = profile?.blackBeltAwardedAt > 0
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
@@ -185,15 +184,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
                             {(owner || admin) &&
                                 <div style={{width: '100%', textAlign: 'left'}}>
 
-                                    <ImportButton/>
+                                    <ImportButton profile={profile}/>
 
-                                    {!danSheetImported &&
-                                        <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
-                                                onClick={() => handleOpenControls('import')}>
-                                            IMPORT&nbsp;DAN&nbsp;SHEET
-                                        </Button>
-                                    }
                                     {!mostPopular &&
                                         <Button variant='outlined' color='secondary' size='small'
                                                 style={{lineHeight: '1.2rem', marginLeft: 6}}

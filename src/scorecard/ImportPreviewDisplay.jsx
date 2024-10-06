@@ -1,5 +1,4 @@
 import React, {useState, useMemo, useContext, useCallback} from 'react'
-import {useNavigate} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import ScorecardRow from './ScorecardRow.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
@@ -8,10 +7,12 @@ import FilterContext from '../context/FilterContext'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getAwardEntryFromId} from '../entries/entryutils'
 import dayjs from 'dayjs'
+import usePageTitle from '../util/usePageTitle.jsx'
 
 function ImportPreviewDisplay({profile, importResults, service}) {
     const {isMobile} = useWindowSize()
-    const navigate = useNavigate()
+
+    usePageTitle('Import Results')
 
     const {cardActivity = []} = useContext(ScorecardDataContext)
     const serviceAwards = useMemo(() => {
@@ -52,10 +53,14 @@ function ImportPreviewDisplay({profile, importResults, service}) {
         setEntryExpanded(expanded)
     }
 
-    const handleLink = useCallback(link => {
-        // TODO: remove extra params from URL, like http://localhost:3000/?state=a2f4kr9zlk&code=E4VxekjpTxZzDbrpf8iSzCXXQrJBJw#_
-        navigate(link)
-    }, [navigate])
+    console.log('loc', window.location)
+
+    const handleLink = useCallback(() => {
+
+        // MESSY: remove extra params from URL, like http://localhost:3000/?state=a2f4kr9zlk&code=E4VxekjpTxZzDbrpf8iSzCXXQrJBJw#_
+        window.location = window.location.origin + '/#/profile/scorecard'
+
+    }, [])
 
     const handleEntryExpand = useCallback((expand) => {
         if (filters['id']) {
@@ -71,21 +76,21 @@ function ImportPreviewDisplay({profile, importResults, service}) {
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
 
-            <div style={{display: flexStyle}}>
-                <div style={{fontSize: '1.5rem', padding: '16px 16px', flexGrow: 1}}>{service} Import Results</div>
+            <div style={{display: flexStyle, padding: '16px 16px'}}>
+                <div style={{fontSize: '1.5rem', flexGrow: 1}}>{service} Import Results</div>
                 <div style={{padding: 16}}>
                     <Button
                         variant='contained'
                         color='secondary'
                         style={{lineHeight: '1.2rem'}}
-                        onClick={() => handleLink('/profile/scorecard/')}
+                        onClick={() => handleLink()}
                     >VIEW SCORECARD</Button>
                 </div>
             </div>
 
             <div style={{fontSize: '1rem', padding: '0px 16px'}}>
                 {awards.length > 0 &&
-                    <strong>Congratulations {importResults.username}!</strong>
+                    <strong>Congratulations {importResults.username}! </strong>
                 }
                 Here are your rankings from {service}.
                 <div style={{height: 8}}/>
