@@ -40,9 +40,9 @@ the line as we move oldest requests out first.**
 **HOW TO SEND A MODMAIL**
 
 Click the "Message the moderators" Link on the sidebar just above the list of moderators for this subreddit, Or
-use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
+use [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 
-### Discord
+### Discord (do not use this formatting for Reddit)
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 
