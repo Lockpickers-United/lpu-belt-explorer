@@ -19,18 +19,24 @@ function AuthDiscordRoute() {
 
     useEffect(() => {
         async function getAccessToken() {
-            const resp = await fetch('https://discord.com/api/oauth2/token', {
-                method: 'POST',
-                body: new URLSearchParams({
-                    grant_type: 'authorization_code',
-                    code: urlCode,
-                    redirect_uri: `${location.origin}/#/auth/discord`
-                }).toString(),
-                headers: {
-                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            })
+            let resp = null
+            try {
+                resp = await fetch('https://discord.com/api/oauth2/token', {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        grant_type: 'authorization_code',
+                        code: urlCode,
+                        redirect_uri: `${location.origin}/#/auth/discord`
+                    }).toString(),
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+            } catch (error) {
+                setSyncException('token_failed')
+                return
+            }
             if (200 === resp.status) {
                 const data = await resp.json()
                 setCredentials({token: data.access_token, type: data.token_type})
@@ -51,9 +57,15 @@ function AuthDiscordRoute() {
 
     useEffect(() => {
         async function syncDiscordUsername(type, token) {
-            const resp = await fetch('https://discord.com/api/users/@me', {
-                headers: {authorization: `${type} ${token}`}
-            })
+            let resp = null
+            try {
+                resp = await fetch('https://discord.com/api/users/@me', {
+                    headers: {authorization: `${type} ${token}`}
+                })
+            } catch (error) {
+                setSyncException('data_failed')
+                return
+            }
             if (200 === resp.status) {
                 const data = await resp.json()
                 const awardDocs = await peekAtDiscordAwards(data.id)

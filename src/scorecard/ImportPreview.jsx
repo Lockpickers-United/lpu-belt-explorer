@@ -67,8 +67,6 @@ function ImportPreview({syncStatus, syncResult, service}) {
     }
     const msg = getMessageById(statusMessages[[syncStatus]])
 
-    console.log('msg', msg)
-
     const footer = (
         <React.Fragment>
             <br/>

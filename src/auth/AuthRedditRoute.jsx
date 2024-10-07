@@ -26,21 +26,30 @@ function AuthRedditRoute() {
     useEffect(() => {
         async function getAccessToken() {
             if (await oauthState(urlState)) {
-                const resp = await fetch('https://www.reddit.com/api/v1/access_token', {
-                    method: 'POST',
-                    body: new URLSearchParams({
-                        grant_type: 'authorization_code',
-                        code: encodeURIComponent(urlCode),
-                        redirect_uri: `${location.origin}/#/auth/reddit`
-                    }).toString(),
-                    headers: {
-                        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
+                let resp = null
+                try {
+                    resp = await fetch('https://www.reddit.com/api/v1/access_token', {
+                        method: 'POST',
+                        body: new URLSearchParams({
+                            grant_type: 'authorization_code',
+                            code: encodeURIComponent(urlCode),
+                            redirect_uri: `${location.origin}/#/auth/reddit`
+                        }).toString(),
+                        headers: {
+                            'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
+                } catch (error) {
+                    setSyncException('token_failed')
+                    return
+                }
                 if (200 === resp.status) {
                     const data = await resp.json()
                     setCredentials({token: data.access_token, type: data.token_type})
+                } else if (404 === resp.status) {
+                    // ignore: code was rejected, which happens when used a
+                    // second time, for example when double-rendered
                 } else {
                     setSyncException('token_failed')
                 }
@@ -57,20 +66,33 @@ function AuthRedditRoute() {
         async function syncRedditBeltAwards(type, token) {
             let username = null
             let flairBelt = null
+            let dataError = false
 
-            const userResp = await fetch('https://oauth.reddit.com/api/v1/me', {
-                headers: {authorization: `${type} ${token}`}
-            })
+            let userResp = null
+            try {
+                userResp = await fetch('https://oauth.reddit.com/api/v1/me', {
+                    headers: {authorization: `${type} ${token}`}
+                })
+            } catch (error) {
+                dataError = true
+            }
             if (200 === userResp.status) {
                 const data = await userResp.json()
                 username = data.name
+            } else {
+                dataError = true
             }
             const bookmark = await getBookmarkForRedditUser(username)
 
-            const flairResp = await fetch('https://oauth.reddit.com/r/lockpicking/api/flairselector', {
-                method: 'POST',
-                headers: {authorization: `${type} ${token}`}
-            })
+            let flairResp = null
+            try {
+                flairResp = await fetch('https://oauth.reddit.com/r/lockpicking/api/flairselector', {
+                    method: 'POST',
+                    headers: {authorization: `${type} ${token}`}
+                })
+            } catch (error) {
+                dataError = true
+            }
             if (200 === flairResp.status) {
                 const data = await flairResp.json()
                 const flair = data.current.flair_text
@@ -83,6 +105,8 @@ function AuthRedditRoute() {
                         flairBelt = lookupAwardByBelt(beltMatch[1], null)
                     }
                 }
+            } else {
+                dataError = true
             }
 
             const batchSize = 100
@@ -92,13 +116,19 @@ function AuthRedditRoute() {
             let nextBookmark = null
             let awards = []
 
-            while (!reachedEndOfStream) {
+            while (!dataError && !reachedEndOfStream) {
                 const beforeParam = beforeMark ? `&before=${beforeMark}` : ''
                 const afterParam = afterMark ? `&after=${afterMark}` : ''
                 const url = `https://oauth.reddit.com/message/inbox?limit=${batchSize}` + beforeParam + afterParam
-                const messageResp = await fetch(url, {
-                    headers: {authorization: `${type} ${token}`}
-                })
+                let messageResp = null
+
+                try {
+                    messageResp = await fetch(url, {
+                        headers: {authorization: `${type} ${token}`}
+                    })
+                } catch (error) {
+                    dataError = true
+                }
                 if (200 === messageResp.status) {
                     const respObj = await messageResp.json()
                     const data = respObj.data
@@ -148,29 +178,34 @@ function AuthRedditRoute() {
 
                     awards = [...awards, ...newAwards]
                 } else {
-                    reachedEndOfStream = true
-                    setSyncException('data_failed')
+                    dataError = true
                 }
             }
 
-            if (awards.length > 0) {
+            if (dataError) {
+                setSyncException('data_failed')
+            } else if (awards.length > 0) {
                 await advanceBookmarkForRedditUser(username, nextBookmark, awards)
                 setSyncResult({username: username, flair: flairBelt, awards: awards})
             } else {
                 setSyncException('none_found')
             }
 
-            await fetch('https://www.reddit.com/api/v1/revoke_token', {
-                method: 'POST',
-                body: new URLSearchParams({
-                    token: token,
-                    token_type_hint: type
-                }).toString(),
-                headers: {
-                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            })
+            try {
+                await fetch('https://www.reddit.com/api/v1/revoke_token', {
+                    method: 'POST',
+                    body: new URLSearchParams({
+                        token: token,
+                        token_type_hint: type
+                    }).toString(),
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+            } catch (error) {
+                // ignore
+            }
         }
         if (credentials) {
             syncRedditBeltAwards(credentials.type, credentials.token)
