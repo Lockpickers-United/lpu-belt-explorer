@@ -16,11 +16,14 @@ import ScoringContext from '../context/ScoringContext.jsx'
 import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import ImportPreviewDisplay from './ImportPreviewDisplay.jsx'
+import SystemMessage from '../systemMessage/SystemMessage.jsx'
+import SystemMessageContext from '../systemMessage/SystemMessageContext.jsx'
 
 function ImportPreview({syncStatus, syncResult, service}) {
     const {user} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
     const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
+    const {getMessageById} = useContext(SystemMessageContext)
 
     const [triggerState, setTriggerState] = useState(false)
     const handleAdminAction = useCallback(() => {
@@ -58,6 +61,14 @@ function ImportPreview({syncStatus, syncResult, service}) {
 
     const nav = null
 
+    const statusMessages = {
+        none_found: '183f2198',
+        access_denied: '4d522380'
+    }
+    const msg = getMessageById(statusMessages[[syncStatus]])
+
+    console.log('msg', msg)
+
     const footer = (
         <React.Fragment>
             <br/>
@@ -82,7 +93,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
                         <Nav title={title} extras={nav}/>
 
                         {!syncStatus &&
-                            <div style={{textAlign:'center'}}>
+                            <div style={{textAlign: 'center'}}>
                                 <LoadingDisplay/>
                                 Please wait, this may take a minute or so.<br/><br/>
                             </div>
@@ -91,30 +102,41 @@ function ImportPreview({syncStatus, syncResult, service}) {
                         {syncStatus === 'complete' &&
                             <ImportPreviewDisplay profile={profile}
                                                   adminAction={handleAdminAction} importResults={syncResult}
-                                                  service={service}/>
+                                                  syncStatus={syncStatus} service={service}/>
                         }
 
                         {syncStatus === 'token_failed' &&
-                            <div style={{textAlign:'center'}}>
+                            <div>
                                 Something prevented us from talking to the server.
                                 Ad blockers? Privacy extensions? Try another browser?
+                                <ImportPreviewDisplay profile={profile}
+                                                      adminAction={handleAdminAction} importResults={syncResult}
+                                                      syncStatus={syncStatus} service={service}/>
+
                             </div>
                         }
 
                         {syncStatus === 'access_denied' &&
-                            <div style={{textAlign:'center'}}>
-                                Why did you cancel? We are safe, really.
+                            <div style={{textAlign: 'left'}}>
+                                <SystemMessage override={msg}/>
+                                <ImportPreviewDisplay profile={profile}
+                                                      adminAction={handleAdminAction} importResults={syncResult}
+                                                      syncStatus={syncStatus} service={service}/>
                             </div>
                         }
 
                         {syncStatus === 'none_found' &&
-                            <div style={{textAlign:'center'}}>
-                                We linked your account but could not find any awards. Double check right account?
+                            <div style={{textAlign: 'left'}}>
+                                <SystemMessage override={msg}/>
+                                <ImportPreviewDisplay profile={profile}
+                                                      adminAction={handleAdminAction} importResults={syncResult}
+                                                      syncStatus={syncStatus} service={service}/>
+
                             </div>
                         }
 
                         {syncStatus === 'data_failed' &&
-                            <div style={{textAlign:'center'}}>
+                            <div style={{textAlign: 'center'}}>
                                 Something bad happened, sorry our fault. Try again later.
                             </div>
                         }

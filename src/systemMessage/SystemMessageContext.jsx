@@ -59,11 +59,14 @@ export function SystemMessageProvider({children}) {
             : undefined
     }, [authLoaded, filteredMessages, dbLoaded])
 
+    const getMessageById = useCallback((id) => {
+        return systemMessages.find(m => m.id === id)
+    }, [systemMessages])
 
     const value = useMemo(() => ({
-        getMessage
+        getMessage, getMessageById
     }), [
-        getMessage
+        getMessage, getMessageById
     ])
 
     return (

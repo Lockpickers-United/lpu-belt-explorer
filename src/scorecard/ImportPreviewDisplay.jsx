@@ -8,11 +8,15 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {getAwardEntryFromId} from '../entries/entryutils'
 import dayjs from 'dayjs'
 import usePageTitle from '../util/usePageTitle.jsx'
+import {useNavigate} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
-function ImportPreviewDisplay({profile, importResults, service}) {
-    const {isMobile} = useWindowSize()
-
+function ImportPreviewDisplay({profile, importResults, syncStatus, service}) {
     usePageTitle('Import Results')
+    const {isMobile} = useWindowSize()
+    const navigate = useNavigate()
+
+    console.log('syncStatus', syncStatus)
 
     const {cardActivity = []} = useContext(ScorecardDataContext)
     const serviceAwards = useMemo(() => {
@@ -54,13 +58,16 @@ function ImportPreviewDisplay({profile, importResults, service}) {
     }
 
     const handleLink = useCallback(() => {
-
         // MESSY: remove extra params from URL, like http://localhost:3000/?state=a2f4kr9zlk&code=E4VxekjpTxZzDbrpf8iSzCXXQrJBJw#_
         window.location = window.location.origin + '/#/profile/scorecard'
-
     }, [])
 
-    const handleEntryExpand = useCallback((expand) => {
+    const handleProfileLink = useCallback(() => {
+        navigate('/profile/edit')
+    },[navigate])
+
+
+        const handleEntryExpand = useCallback((expand) => {
         if (filters['id']) {
             removeFilters(['id'])
         }
@@ -113,7 +120,7 @@ function ImportPreviewDisplay({profile, importResults, service}) {
 
                         We save your username and it will never be shown to other users.
 
-                        You can remove (edit??) it at any time in <i>Edit Profile</i>.
+                        You can remove it at any time in <Link onClick={() => handleProfileLink()} style={{color:'#d9d9ff'}}>Edit Profile</Link>.
 
                     </span>
                 }

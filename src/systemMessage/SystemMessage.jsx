@@ -24,7 +24,7 @@ function SystemMessage({override, overridePageId, placeholder}) {
         , [getMessage, override, pageId, placeholder])
 
     const noId = pageId.replace(/\/\w{28}/, 'uid')
-    const query = useMemo(() =>querystring.stringify({id: message?.id, p: noId, r: randomStuff}),[message, noId])
+    const query = useMemo(() => querystring.stringify({id: message?.id, p: noId, r: randomStuff}), [message, noId])
     const url = `https://img.lpubelts.com/i/message/message.png?${query}`
 
     const navigate = useNavigate()
@@ -102,35 +102,37 @@ function SystemMessage({override, overridePageId, placeholder}) {
                             <div style={{
                                 height: '100%',
                                 width: '100%',
-                                padding: '10px 20px 5px 50px',
+                                padding: '10px 20px 12px 50px',
                                 color: textColor
                             }}>
                                 <b>{messageHeader}</b> {messageText}
+                                <img id='messageImage' src={url} height='1' width='1' alt='message'/>
                             </div>
-                            <div style={{width: '100%', textAlign: 'right', padding: '3px 20px 8px 0px'}}>
-                                {message.linkText &&
-                                    <Button variant='text' size='small'
-                                            style={{
-                                                lineHeight: '.9rem',
-                                                textAlign: 'left',
-                                                marginRight: 10,
-                                                color: messageColor
-                                            }}
-                                            onClick={handleClick}
-                                    >{message.linkText}</Button>
-                                }
-                                {!message.noDismiss && Object.keys(lockCollection).length > 0 &&
-                                    <Button variant='text' size='small'
-                                            style={{
-                                                lineHeight: '.9rem',
-                                                textAlign: 'left',
-                                                color: '#999'
-                                            }}
-                                            onClick={handleDismiss}
-                                    >Dismiss</Button>
-                                }
-                                <img id='messageImage' src={url} height='22' width='22' alt='message'/>
-                            </div>
+                            {(message.linkText || !message.noDismiss) &&
+                                <div style={{width: '100%', textAlign: 'right', padding: '0px 20px 8px 0px'}}>
+                                    {message.linkText &&
+                                        <Button variant='text' size='small'
+                                                style={{
+                                                    lineHeight: '.9rem',
+                                                    textAlign: 'left',
+                                                    color: messageColor
+                                                }}
+                                                onClick={handleClick}
+                                        >{message.linkText}</Button>
+                                    }
+                                    {!message.noDismiss && Object.keys(lockCollection).length > 0 &&
+                                        <Button variant='text' size='small'
+                                                style={{
+                                                    lineHeight: '.9rem',
+                                                    textAlign: 'left',
+                                                    color: '#999',
+                                                    marginLeft: 10,
+                                                }}
+                                                onClick={handleDismiss}
+                                        >Dismiss</Button>
+                                    }
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
