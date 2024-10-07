@@ -248,9 +248,9 @@ export function DBProvider({children}) {
         await setDoc(ref, cleanProfile)
     }, [removePickerActivity])
 
-    const oauthState = useCallback(async (state) => {
-        if (!user.uid) return false
-        const ref = doc(db, 'lockcollections', user.uid)
+    const oauthState = useCallback(async (userId, state) => {
+        if (!userId) return false
+        const ref = doc(db, 'lockcollections', userId)
         if (state) {
             const userDoc = await getDoc(ref)
             const profile = userDoc.data()
@@ -260,7 +260,7 @@ export function DBProvider({children}) {
             await setDoc(ref, {oauthState: newState}, {merge: true})
             return newState
         }
-    }, [user])
+    }, [])
 
     const getBookmarkForRedditUser = useCallback(async (username) => {
         const ref = doc(db, 'lockcollections', user.uid)

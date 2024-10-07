@@ -8,6 +8,7 @@ import Backdrop from '@mui/material/Backdrop'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import Button from '@mui/material/Button'
 import ImportDanSheetForm from './ImportDanSheetForm.jsx'
+import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
@@ -15,6 +16,7 @@ import {Collapse} from '@mui/material'
 
 function ImportButton({profile}) {
     const {isMobile} = useWindowSize()
+    const {user} = useContext(AuthContext)
     const {oauthState} = useContext(DBContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
 
@@ -44,13 +46,13 @@ function ImportButton({profile}) {
 
     const handleRedditAuth = useCallback(async () => {
         const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
-        const newState = await oauthState()
+        const newState = await oauthState(user.uid)
         const scope = encodeURIComponent('identity flair privatemessages')
         const redirectUri = encodeURIComponent(`${location.origin}/#/auth/reddit`)
 
         const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
         window.location.assign(url)
-    }, [oauthState])
+    }, [user, oauthState])
 
     const fontSize = isMobile ? '0.95rem' : '1rem'
 

@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect, useRef} from 'react'
 import DBContext from '../app/DBContext'
 import {lookupAwardByBelt} from '../entries/entryutils'
 import ImportPreview from '../scorecard/ImportPreview.jsx'
@@ -14,6 +14,7 @@ function AuthDiscordRoute() {
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
     const [syncException, setSyncException] = useState(false)
+    const usedCode = useRef(false)
 
     const syncStatus = syncException || (Object.keys(syncResult).length > 0 ? 'complete' : false)
 
@@ -41,14 +42,14 @@ function AuthDiscordRoute() {
                 const data = await resp.json()
                 setCredentials({token: data.access_token, type: data.token_type})
             } else if (400 === resp.status) {
-                // ignore: code was rejected, which happens when used a
-                // second time, for example when double-rendered
+                setSyncException('token_expired')
             } else {
                 setSyncException('token_failed')
             }
         }
 
-        if (urlCode) {
+        if (urlCode && !usedCode.current) {
+            usedCode.current = true
             getAccessToken()
         } else if (urlError) {
             setSyncException('access_denied')

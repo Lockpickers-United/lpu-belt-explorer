@@ -1,5 +1,6 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect, useContext, useRef} from 'react'
 import {lookupAwardByBelt, awardGreaterThan} from '../entries/entryutils'
+import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import ImportPreview from '../scorecard/ImportPreview.jsx'
 
@@ -9,6 +10,7 @@ const beltRegExps = [/white/i, /yellow/i, /orange/i, /green/i, /blue/i, /purple/
 
 function AuthRedditRoute() {
     const {getBookmarkForRedditUser, advanceBookmarkForRedditUser, oauthState} = useContext(DBContext)
+    const {user} = useContext(AuthContext)
     const {VITE_REDDIT_CLIENT_ID: clientId, VITE_REDDIT_CLIENT_SECRET: clientSecret} = import.meta.env
 
     const urlMatchCode = window.location.href.match(/\?state=([^&]+)&code=([^#]+)#/)
@@ -20,12 +22,13 @@ function AuthRedditRoute() {
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
     const [syncException, setSyncException] = useState(false)
+    const usedCode = useRef(false)
 
     const syncStatus = syncException || (Object.keys(syncResult).length > 0 ? 'complete' : false)
 
     useEffect(() => {
-        async function getAccessToken() {
-            if (await oauthState(urlState)) {
+        async function getAccessToken(userId) {
+            if (await oauthState(userId, urlState)) {
                 let resp = null
                 try {
                     resp = await fetch('https://www.reddit.com/api/v1/access_token', {
@@ -44,23 +47,25 @@ function AuthRedditRoute() {
                     setSyncException('token_failed')
                     return
                 }
+
                 if (200 === resp.status) {
                     const data = await resp.json()
                     setCredentials({token: data.access_token, type: data.token_type})
                 } else if (404 === resp.status) {
-                    // ignore: code was rejected, which happens when used a
-                    // second time, for example when double-rendered
+                    setSyncException('token_expired')
                 } else {
                     setSyncException('token_failed')
                 }
             }
         }
-        if (urlCode && urlState) {
-            getAccessToken()
+
+        if (urlCode && urlState && user.uid && !usedCode.current) {
+            usedCode.current = true
+            getAccessToken(user.uid)
         } else if (urlError) {
             setSyncException('access_denied')
         }
-    }, [urlCode, urlState, urlError, clientId, clientSecret, oauthState])
+    }, [urlCode, urlState, urlError, user, clientId, clientSecret, oauthState])
 
     useEffect(() => {
         async function syncRedditBeltAwards(type, token) {

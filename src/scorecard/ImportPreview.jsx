@@ -103,6 +103,16 @@ function ImportPreview({syncStatus, syncResult, service}) {
                                                   syncStatus={syncStatus} service={service}/>
                         }
 
+                        {syncStatus === 'token_expired' &&
+                            <div>
+                                Token expired. Did you hit the back button?
+                                <ImportPreviewDisplay profile={profile}
+                                                      adminAction={handleAdminAction} importResults={syncResult}
+                                                      syncStatus={syncStatus} service={service}/>
+
+                            </div>
+                        }
+
                         {syncStatus === 'token_failed' &&
                             <div>
                                 Something prevented us from talking to the server.
