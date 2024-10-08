@@ -27,14 +27,14 @@ Completed projects will be submitted for a vote in the Black Belt community in â
 
 ### Tier levels
 
-|  Tier  |  Points  | Description                                                           |
-|:------:|:--------:|:----------------------------------------------------------------------|
-|   0    |    0     | Not applicable as a quest                                             |
-|   1    |    5     | Novice                                                                |
-|   2    |    10    | Apprentice - **minimum acceptable level for a black belt epic quest** |
-|   3    |    10    | Journeyman                                                            |
-|   4    |    34    | Expert                                                                |
-|   5    |    50    | Mastery                                                               |
+|  Tier  | Points | Description                                                           |
+|:------:|:------:|:----------------------------------------------------------------------|
+|   0    |   0    | Not applicable as a quest                                             |
+|   1    |   5    | Novice                                                                |
+|   2    |   10   | Apprentice - **minimum acceptable level for a black belt epic quest** |
+|   3    |   20   | Journeyman                                                            |
+|   4    |   34   | Expert                                                                |
+|   5    |   50   | Mastery                                                               |
 
 
 ### To request

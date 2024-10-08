@@ -41,6 +41,8 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     const award = getAwardEntryFromId(activity.matchId)
     const entity = entry || project || award
 
+    if (!entity) return
+
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 

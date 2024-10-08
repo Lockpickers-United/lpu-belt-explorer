@@ -2,17 +2,14 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import Button from '@mui/material/Button'
 import {useLocation, useNavigate} from 'react-router-dom'
 import SystemMessageContext from './SystemMessageContext.jsx'
-
 import MoodIcon from '@mui/icons-material/Mood'
 import InfoIcon from '@mui/icons-material/Info'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
-import DBContext from '../app/DBContext.jsx'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import querystring from 'query-string'
 
 function SystemMessage({override, overridePageId, placeholder}) {
-    const {lockCollection, addToLockCollection} = useContext(DBContext)
-    const {getMessage} = useContext(SystemMessageContext)
+    const {getMessage, dismissMessage} = useContext(SystemMessageContext)
 
     const location = useLocation()
     const pageId = overridePageId ? overridePageId : location.pathname
@@ -28,19 +25,28 @@ function SystemMessage({override, overridePageId, placeholder}) {
     const url = `https://img.lpubelts.com/i/message/message.png?${query}`
 
     const navigate = useNavigate()
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
+
     const handleClick = useCallback(() => {
         if (!override) {
             document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/click.png?${query}`
-            navigate(message['linkDestination'])
+            if (message['linkDestination'].slice(0, 4) === 'http') {
+                openInNewTab(message['linkDestination'])
+            } else {
+                navigate(message['linkDestination'])
+            }
         }
     }, [message, navigate, override, query])
 
     const handleDismiss = useCallback(async () => {
         if (!override) {
             document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/dismiss.png?${query}`
-            await addToLockCollection('dismissedMessages', message?.id)
+            await dismissMessage(message)
         }
-    }, [addToLockCollection, message, override, query])
+    }, [dismissMessage, message, override, query])
 
     const messageHeader = message?.messageHeadline
     const messageText = message?.messageText
@@ -108,31 +114,31 @@ function SystemMessage({override, overridePageId, placeholder}) {
                                 <b>{messageHeader}</b> {messageText}
                                 <img id='messageImage' src={url} height='1' width='1' alt='message'/>
                             </div>
-                            {(message.linkText || !message.noDismiss) &&
-                                <div style={{width: '100%', textAlign: 'right', padding: '0px 20px 8px 0px'}}>
-                                    {message.linkText &&
-                                        <Button variant='text' size='small'
-                                                style={{
-                                                    lineHeight: '.9rem',
-                                                    textAlign: 'left',
-                                                    color: messageColor
-                                                }}
-                                                onClick={handleClick}
-                                        >{message.linkText}</Button>
-                                    }
-                                    {!message.noDismiss && Object.keys(lockCollection).length > 0 &&
-                                        <Button variant='text' size='small'
-                                                style={{
-                                                    lineHeight: '.9rem',
-                                                    textAlign: 'left',
-                                                    color: '#999',
-                                                    marginLeft: 10,
-                                                }}
-                                                onClick={handleDismiss}
-                                        >Dismiss</Button>
-                                    }
-                                </div>
-                            }
+
+                            <div style={{width: '100%', textAlign: 'right', padding: '3px 20px 8px 0px'}}>
+                                {message.linkText &&
+                                    <Button variant='text' size='small'
+                                            style={{
+                                                lineHeight: '.9rem',
+                                                textAlign: 'left',
+                                                marginRight: 10,
+                                                color: messageColor
+                                            }}
+                                            onClick={handleClick}
+                                    >{message.linkText}</Button>
+                                }
+                                {!message.noDismiss &&
+                                    <Button variant='text' size='small'
+                                            style={{
+                                                lineHeight: '.9rem',
+                                                textAlign: 'left',
+                                                color: '#999'
+                                            }}
+                                            onClick={handleDismiss}
+                                    >Dismiss</Button>
+                                }
+                                <img id='messageImage' src={url} height='22' width='22' alt='message'/>
+                            </div>
                         </div>
                     </div>
                 </div>
