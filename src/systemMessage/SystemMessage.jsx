@@ -31,22 +31,18 @@ function SystemMessage({override, overridePageId, placeholder}) {
     }
 
     const handleClick = useCallback(() => {
-        if (!override) {
             document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/click.png?${query}`
             if (message['linkDestination'].slice(0, 4) === 'http') {
                 openInNewTab(message['linkDestination'])
             } else {
                 navigate(message['linkDestination'])
             }
-        }
-    }, [message, navigate, override, query])
+    }, [message, navigate, query])
 
     const handleDismiss = useCallback(async () => {
-        if (!override) {
             document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/dismiss.png?${query}`
             await dismissMessage(message)
-        }
-    }, [dismissMessage, message, override, query])
+    }, [dismissMessage, message, query])
 
     const messageHeader = message?.messageHeadline
     const messageText = message?.messageText

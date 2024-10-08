@@ -27,9 +27,6 @@ import SortButton from '../filters/SortButton.jsx'
 import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-//
-import {collectionsFullBB} from '../data/dataUrls'
-// main
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
