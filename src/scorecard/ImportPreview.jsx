@@ -63,7 +63,10 @@ function ImportPreview({syncStatus, syncResult, service}) {
 
     const statusMessages = {
         none_found: '183f2198',
-        access_denied: '4d522380'
+        access_denied: '4d522380',
+        token_failed: 'd48bd892',
+        data_failed: '1a20e412',
+        token_expired: '54d23803'
     }
     const msg = getMessageById(statusMessages[[syncStatus]])
 
@@ -105,7 +108,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
 
                         {syncStatus === 'token_expired' &&
                             <div>
-                                Token expired. Did you hit the back button?
+                                <SystemMessage override={msg}/>
                                 <ImportPreviewDisplay profile={profile}
                                                       adminAction={handleAdminAction} importResults={syncResult}
                                                       syncStatus={syncStatus} service={service}/>
@@ -115,12 +118,11 @@ function ImportPreview({syncStatus, syncResult, service}) {
 
                         {syncStatus === 'token_failed' &&
                             <div>
-                                Something prevented us from talking to the server.
-                                Ad blockers? Privacy extensions? Try another browser?
+                                <SystemMessage override={msg}/>
                                 <ImportPreviewDisplay profile={profile}
                                                       adminAction={handleAdminAction} importResults={syncResult}
                                                       syncStatus={syncStatus} service={service}/>
-
+                                <Tracker feature='authError-token_failed'/>
                             </div>
                         }
 
@@ -130,6 +132,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
                                 <ImportPreviewDisplay profile={profile}
                                                       adminAction={handleAdminAction} importResults={syncResult}
                                                       syncStatus={syncStatus} service={service}/>
+                                <Tracker feature='authError-access_denied'/>
                             </div>
                         }
 
@@ -139,20 +142,23 @@ function ImportPreview({syncStatus, syncResult, service}) {
                                 <ImportPreviewDisplay profile={profile}
                                                       adminAction={handleAdminAction} importResults={syncResult}
                                                       syncStatus={syncStatus} service={service}/>
-
                             </div>
                         }
 
                         {syncStatus === 'data_failed' &&
                             <div style={{textAlign: 'center'}}>
-                                Something bad happened, sorry our fault. Try again later.
+                                <SystemMessage override={msg}/>
+                                <ImportPreviewDisplay profile={profile}
+                                                      adminAction={handleAdminAction} importResults={syncResult}
+                                                      syncStatus={syncStatus} service={service}/>
+                                <Tracker feature='authError-data_failed'/>
                             </div>
                         }
 
                         <Footer extras={footer}/>
 
                     </LocalizationProvider>
-                    <Tracker feature='scorecard'/>
+                    <Tracker feature='importPreview'/>
                 </ScorecardListProvider>
             </ScorecardDataProvider>
         </FilterProvider>

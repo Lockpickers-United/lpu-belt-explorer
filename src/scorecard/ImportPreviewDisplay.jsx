@@ -105,7 +105,8 @@ function ImportPreviewDisplay({profile, importResults, syncStatus, service}) {
                         Your approved rankings will be updated automatically as long as
                         you have your Discord username in your Profile.
 
-                        You can remove (edit??) it at any time in <i>Edit Profile</i>.
+                        You can remove it at any time
+                        in <Link onClick={() => handleProfileLink()} style={{color:'#d9d9ff'}}>Edit Profile</Link>.
 
                         If you have more than one Discord username,
                         please run the import under both names to get all of your rankings.
@@ -120,7 +121,8 @@ function ImportPreviewDisplay({profile, importResults, syncStatus, service}) {
 
                         We save your username and it will never be shown to other users.
 
-                        You can remove it at any time in <Link onClick={() => handleProfileLink()} style={{color:'#d9d9ff'}}>Edit Profile</Link>.
+                        You can remove it at any time
+                        in <Link onClick={() => handleProfileLink()} style={{color:'#d9d9ff'}}>Edit Profile</Link>.
 
                     </span>
                 }
