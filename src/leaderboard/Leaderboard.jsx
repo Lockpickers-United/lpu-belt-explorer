@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useRef} from 'react'
+import React, {useCallback, useContext, useMemo, useRef, useState} from 'react'
 import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
 import {useLocation, useNavigate} from 'react-router-dom'
@@ -31,13 +31,21 @@ function Leaderboard({tab}) {
     const {isMobile} = useWindowSize()
     const navigate = useNavigate()
 
-    const {highlightedUser, sort, compare} = useMemo(() => {
+    const {bb1, bb2} = useMemo(() => {
+        const query = queryString.parse(location.search)
+        return {
+            bb1: query.bb1 ? query.bb1 : undefined,
+            bb2: query.bb2 ? query.bb2 : undefined
+        }
+    }, [location.search])
+
+    const [compare, setCompare] = useState(!!bb1 || !!bb2)
+
+    const {highlightedUser, sort} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
             highlightedUser: query.user,
-            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined,
-            compare: query.compare
-
+            sort: (query.sort && validSort.includes(query.sort)) ? query.sort : undefined
         }
     }, [location.search])
 
@@ -117,17 +125,20 @@ function Leaderboard({tab}) {
         }
     }, [navigate, tab])
 
-    const nav = (
-        <React.Fragment>
-            <LeaderboardSearchBox data={sortedData}/>
-            <LeaderboardSortButton/>
-            <LeaderboardFindMeButton tab={tab}/>
-            {!isMobile && <div style={{flexGrow: 1}}/>}
-        </React.Fragment>
-    )
+    const nav = !compare
+        ? (
+            <React.Fragment>
+                <LeaderboardSearchBox data={sortedData}/>
+                <LeaderboardSortButton/>
+                <LeaderboardFindMeButton tab={tab}/>
+                {!isMobile && <div style={{flexGrow: 1}}/>}
+            </React.Fragment>
+        )
+        : null
+
     const title = loading ? 'Loading...' : 'Leaderboard'
 
-    const tableHeight = tab === 'blackBelts' ? '100%' :'78vh'
+    const tableHeight = tab === 'blackBelts' ? '100%' : '78vh'
 
     if (loading) {
         return <LoadingDisplay/>
@@ -172,34 +183,37 @@ function Leaderboard({tab}) {
                 </div>
 
                 {tab === 'blackBelts' &&
-                    <LeaderboardCompare blackBeltData={blackBeltData} compare={compare}/>
+                    <LeaderboardCompare blackBeltData={blackBeltData} compare={compare} setCompare={setCompare}/>
                 }
 
-                <TableContainer sx={{height: tableHeight, backgroundColor: '#111'}} id='scrollable' ref={scrollableRef}>
-                    <Table stickyHeader>
-                        <LeaderboardHeader columns={tabData[tab]['columns']}/>
+                {!compare &&
+                    <TableContainer sx={{height: tableHeight, backgroundColor: '#111'}} id='scrollable'
+                                    ref={scrollableRef}>
+                        <Table stickyHeader>
+                            <LeaderboardHeader columns={tabData[tab]['columns']}/>
 
-                        <TableBody>
-                            {sortedData.map((leader, index) => {
-                                const isHighlighted = !!highlightedUser && (
-                                    (highlightedUser === 'me' && leader.id === user?.uid)
-                                    || (highlightedUser === leader.displayName)
-                                )
-                                return (
-                                    <LeaderboardRow
-                                        key={leader.id}
-                                        index={index}
-                                        leader={leader}
-                                        scrollableRef={scrollableRef}
-                                        highlighted={isHighlighted}
-                                        columns={tabData[tab]['columns']}
-                                        tab={tab}
-                                    />
-                                )
-                            })}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                            <TableBody>
+                                {sortedData.map((leader, index) => {
+                                    const isHighlighted = !!highlightedUser && (
+                                        (highlightedUser === 'me' && leader.id === user?.uid)
+                                        || (highlightedUser === leader.displayName)
+                                    )
+                                    return (
+                                        <LeaderboardRow
+                                            key={leader.id}
+                                            index={index}
+                                            leader={leader}
+                                            scrollableRef={scrollableRef}
+                                            highlighted={isHighlighted}
+                                            columns={tabData[tab]['columns']}
+                                            tab={tab}
+                                        />
+                                    )
+                                })}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                }
 
                 <Typography variant='caption' align='right' component='div' style={{width: '100%', marginTop: 8}}>
                     Last update: {updateTime} GMT
