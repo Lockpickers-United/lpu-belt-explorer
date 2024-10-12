@@ -15,7 +15,7 @@ function LeaderboardCompareTable({data}) {
         ...getEntryFromId(lock['lockID']),
         popularityRank: lock.rank,
         userCount: lock.count
-    })), [popularLocks]).slice(0, 20)
+    })), [popularLocks]).slice(0, 100)
 
     return (
         <React.Fragment>
