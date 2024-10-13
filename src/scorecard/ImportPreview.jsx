@@ -62,11 +62,11 @@ function ImportPreview({syncStatus, syncResult, service}) {
     const nav = null
 
     const statusMessages = {
-        none_found: '183f2198',
-        access_denied: '4d522380',
-        token_failed: 'd48bd892',
-        data_failed: '1a20e412',
-        token_expired: '54d23803'
+        none_found: 'none_found',
+        access_denied: 'access_denied',
+        token_failed: 'token_failed',
+        data_failed: 'data_failed',
+        token_expired: 'token_expired'
     }
     const msg = getMessageById(statusMessages[[syncStatus]])
 
