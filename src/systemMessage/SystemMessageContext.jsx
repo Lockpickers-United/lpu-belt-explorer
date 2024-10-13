@@ -7,7 +7,7 @@ const SystemMessageContext = React.createContext({})
 
 export function SystemMessageProvider({children}) {
     const {authLoaded, user, isLoggedIn} = useContext(AuthContext)
-    const {dbLoaded, adminRole, lockCollection, addToLockCollection, systemMessages, } = useContext(DBContext)
+    const {dbLoaded, adminRole, lockCollection, addToLockCollection, systemMessages} = useContext(DBContext)
     const profile = lockCollection
     const [dismissedMessages, setDismissedMessages] = useLocalStorage('dismissedMessages', [])
 

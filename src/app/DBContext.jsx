@@ -396,7 +396,10 @@ export function DBProvider({children}) {
     useEffect(() => {
         const q = query(collection(db, 'system-messages'), where('status', '==', 'active'))
         return onSnapshot(q, querySnapshot => {
-            setSystemMessages(querySnapshot.docs.map(doc => doc.data()))
+            const messages = querySnapshot.docs.map(doc => {
+                return {...doc.data(), dbId: doc.id }
+            })
+            setSystemMessages(messages)
         }, error => {
             console.error('Error getting system messages from DB:', error)
         })
@@ -405,12 +408,14 @@ export function DBProvider({children}) {
     const getAllSystemMessages = useCallback(async () => {
         const q = query(collection(db, 'system-messages'))
         const querySnapshot = await getDocs(q)
-        return querySnapshot.docs.map(d => d.data())
+        return querySnapshot.docs.map(doc => {
+            return {...doc.data(), dbId: doc.id }
+        })
     }, [])
 
     const updateSystemMessage = useCallback(async (message) => {
         if (dbError) return false
-        const ref = doc(db, 'system-messages', message.id)
+        const ref = doc(db, 'system-messages', message.dbId)
         await setDoc(ref, message)
     }, [dbError])
 
