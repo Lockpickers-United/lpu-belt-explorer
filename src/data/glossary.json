@@ -366,6 +366,10 @@
     }
   },
   {
+    "term": "counterrotation",
+    "definition": "When in a [false set](/#/glossary?term=false%20set), and you push the element (usually a spool or false gate), causing the plug to rotate back against direction of tension."
+  },
+  {
     "term": "curtain",
     "definition": "Shroud inside the lock which fits closely around the key and limits access to locking elements such as levers or discs.",
     "media": {
@@ -685,6 +689,17 @@
       "subtitle": "CC BY-NC-SA 4.0",
       "thumbnailUrl": "https://live.staticflickr.com/65535/54004806248_7c5c5415ca_w_d.jpg",
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54004806248/in/album-72177720319269835/"
+    }
+  },
+  {
+    "term": "friction roller",
+    "definition": "Levers with rollers to add friction/noise to mask feedback from the nose to cam interaction. As found on Chubb Manifoil safe locks.",
+    "media": {
+      "title": "By: Skwiggledork",
+      "subtitle": "CC BY-NC-SA 4.0",
+      "thumbnailUrl": "https://live.staticflickr.com/65535/54006881709_887dfffb47_w_d.jpg",
+      "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54006881709/in/album-72177720319269835/",
+      "fullSizeUrl": "https://live.staticflickr.com/65535/54006881709_124ecbb718_o.jpg"
     }
   },
   {
@@ -1295,6 +1310,10 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53458422619/in/album-72177720313944555/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53458422619_b67eb701a1_o.jpg"
     }
+  },
+  {
+    "term": "rattlesnake pin",
+    "definition": "A type of driver pin usually found on some DOM locks, that consists on a thin spool-type element, featuring variable number of loose discs between the top and bottom sections"
   },
   {
     "term": "rim cylinder",
