@@ -13,14 +13,18 @@ import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
 import {Collapse} from '@mui/material'
+import AppContext from '../app/AppContext.jsx'
 
 function ImportButton({profile}) {
     const {isMobile} = useWindowSize()
     const {user} = useContext(AuthContext)
     const {oauthState} = useContext(DBContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
+    const {beta} = useContext(AppContext)
 
-    const [danImportOpen, setDanImportOpen] = useState(false)
+    // useState(false) when removing beta
+    const [danImportOpen, setDanImportOpen] = useState(!beta)
+
     const toggleDanImport = useCallback(() => {
         setDanImportOpen(!danImportOpen)
     }, [danImportOpen])
@@ -33,6 +37,10 @@ function ImportButton({profile}) {
     }
     const handleOpen = () => {
         setOpen(true)
+        // remove line when removing beta
+        if (!beta) {
+            setDanImportOpen(true)
+        }
     }
 
     const handleDiscordAuth = useCallback(() => {
@@ -56,18 +64,24 @@ function ImportButton({profile}) {
 
     const fontSize = isMobile ? '0.95rem' : '1rem'
 
+    // just 'IMPORT BELTS' when removing beta
+    const buttonText = beta ? 'IMPORT BELTS' : 'IMPORT'
+
+    // remove check { !danSheetImported || beta && } when removing beta
     return (
         <React.Fragment>
-            <Tooltip title='My Collection' arrow disableFocusListener>
-                <Button
-                    variant='contained'
-                    color='secondary' size='small'
-                    style={{lineHeight: '1.2rem', marginLeft: 6}}
-                    onClick={handleOpen}
-                >
-                    IMPORT BELTS
-                </Button>
-            </Tooltip>
+            {(!danSheetImported || beta) &&
+                <Tooltip title='Import' arrow disableFocusListener>
+                    <Button
+                        variant='contained'
+                        color='secondary' size='small'
+                        style={{lineHeight: '1.2rem', marginLeft: 6}}
+                        onClick={handleOpen}
+                    >
+                        {buttonText}
+                    </Button>
+                </Tooltip>
+            }
             <Backdrop
                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={open} onClick={null}
@@ -136,16 +150,23 @@ function ImportButton({profile}) {
                                 {danImportOpen &&
                                     <React.Fragment>
                                         <ImportDanSheetForm/>
-                                        <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
-                                            Return to <Link onClick={toggleDanImport}
-                                                            style={{color: '#99c2e5', cursor: 'pointer'}}>
-                                            Import Belts
-                                        </Link>
+
+                                        <div style={{display: 'none'}}>
+                                            REMOVE beta check when not beta
                                         </div>
+
+                                        {beta &&
+                                            <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
+                                                Return to <Link onClick={toggleDanImport}
+                                                                style={{color: '#99c2e5', cursor: 'pointer'}}>
+                                                Import Belts
+                                            </Link>
+                                            </div>
+                                        }
+
                                     </React.Fragment>
                                 }
                             </Collapse>
-
                         </CardContent>
                     </Card>
                 }

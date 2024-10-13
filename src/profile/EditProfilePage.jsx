@@ -8,6 +8,7 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import useWindowSize from '../util/useWindowSize.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 function EditProfilePage() {
     const {
@@ -17,6 +18,7 @@ function EditProfilePage() {
         oauthState,
         removeServiceAuth
     } = useContext(DBContext)
+    const {beta} = useContext(AppContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
     const [anchorEl, setAnchorEl] = useState(null)
     const [deletingData, setDeletingData] = useState(false)
@@ -188,6 +190,7 @@ function EditProfilePage() {
                         </div>
                     </div>
 
+                    {beta &&
                     <div style={{display: flexStyle, padding: 16}}>
 
                         <div style={{marginBottom: 10, marginRight: 20, maxWidth: 325}}>
@@ -276,6 +279,7 @@ function EditProfilePage() {
                             }
                         </div>
                     </div>
+                    }
 
                     <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
                         <Button variant='outlined'
