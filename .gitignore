@@ -11,7 +11,7 @@ package-lock.json
 node_modules
 dist
 dist-ssr
-*.local
+
 scripts/*.csv
 scripts/*.json
 scripts/*.md
