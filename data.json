@@ -16193,10 +16193,38 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52754851227_2227a8feb5_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52754851227/in/album-72177720306808232/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52754851227_5aacaa44b4_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53407127782_b84aff51cb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53407127782/in/album-72177720306808232/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53407127782_ed882b3ce9_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53408486050_87876c2f6b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53408486050/in/album-72177720306808232/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53408486050_6877b3435c_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53408050006_bf7452ddff_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53408050006/in/album-72177720306808232/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53408050006_0e254f42fc_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53408049996_08a958f8f7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53408049996/in/album-72177720306808232/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53408049996_b744d9dbcd_o.jpg"
       }
     ],
     "views": 184,
-    "lastUpdated": "2023-07-25T11:20:19.891Z"
+    "lastUpdated": "2024-10-13T18:21:49.658Z"
   },
   {
     "id": "331c9d36",
@@ -18146,6 +18174,9 @@
       "Sidebar",
       "Slider"
     ],
+    "features": [
+      "Sprung sliders"
+    ],
     "notes": "dimple, similar to Superior, but 6 pin stacks vertically aligned",
     "media": [
       {
@@ -18178,7 +18209,7 @@
       }
     ],
     "views": 890,
-    "lastUpdated": "2023-12-04T20:12:20.150Z"
+    "lastUpdated": "2024-10-13T18:21:49.659Z"
   },
   {
     "id": "779e7dcb",
