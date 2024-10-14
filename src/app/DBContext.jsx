@@ -631,8 +631,10 @@ async function pickerActivityCache(userId) {
         const existingAwardDocs = awardSnapshot.docs.map(rec => rec.data())
         const existingAwards = awardSnapshot.docs.map(rec => awardDB2Activity(rec.id, rec.data()))
         const newAwards = await matchNewDiscordAwards(userId, existingAwardDocs)
+        const newAwardIds = newAwards.map(aw => aw.matchId)
+        const preserveAwards = existingAwards.filter(aw => !newAwardIds.includes(aw.matchId))
 
-        const result = [...evidence, ...existingAwards, ...newAwards]
+        const result = [...evidence, ...preserveAwards, ...newAwards]
         await setDoc(docRef, {payload: JSON.stringify(result)})
         return result
     }
