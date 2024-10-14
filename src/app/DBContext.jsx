@@ -274,20 +274,26 @@ export function DBProvider({children}) {
     }, [user])
 
     const advanceBookmarkForRedditUser = useCallback(async (username, bookmark, awards) => {
-        const newAwards = awards.map(aw => ({
+        const newAwardsById = awards.map(aw => ({
             userId: user.uid,
             awardId: aw.matchId,
             awardUrl: aw.link,
             awardCreatedAt: Timestamp.fromDate(new Date(aw.awardedAt))
-        }))
-        const lastAwardAt = newAwards.reduce((acc, aw) => {
+        })).reduce((acc, awd) => {
+            if (!acc[awd.awardId] || awd.awardCreatedAt < acc[awd.awardId].awardCreatedAt) {
+                acc[awd.awardId] = awd
+            }
+            return acc
+        }, {})
+
+        const lastAwardAt = Object.values(newAwardsById).reduce((acc, aw) => {
             return !acc || aw.awardCreatedAt > acc ? aw.awardCreatedAt : acc
         }, null)
         const existQ = query(collection(db, 'awards'), where('userId', '==', user.uid))
         const existSnapshot = await getDocs(existQ)
         const existAwards = existSnapshot.docs.map(awDoc => awDoc.data())
 
-        const awardsToAdd = newAwards.filter(awd => {
+        const awardsToAdd = Object.values(newAwardsById).filter(awd => {
             const collision = existAwards.find(ea => ea.awardId === awd.awardId)
             return !collision || awd.awardCreatedAt < collision.awardCreatedAt || !isValidUrl(collision.awardUrl)
         })
