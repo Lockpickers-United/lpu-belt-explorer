@@ -13,12 +13,11 @@ import queryString from 'query-string'
 import LeaderboardCompareTable from './LeaderboardCompareTable.jsx'
 import calculateScoreForUser from '../scorecard/scoring'
 import DBContext from '../app/DBContext.jsx'
-import useData from '../util/useData.jsx'
 
 function LeaderboardCompare({blackBeltData, compare, setCompare}) {
     const location = useLocation()
     const [searchParams, setSearchParams] = useSearchParams()
-    const {getEvidence} = useContext(DBContext)
+    const {getPickerActivity} = useContext(DBContext)
 
     const {bb1, bb2, title} = useMemo(() => {
         const query = queryString.parse(location.search)
@@ -29,18 +28,21 @@ function LeaderboardCompare({blackBeltData, compare, setCompare}) {
         }
     }, [location.search])
 
-    const loadFn = useCallback(async () => {
-        const evidence1 = await getEvidence(bb1)
-        const scoredEvidence1 = calculateScoreForUser(evidence1).scoredEvidence
-            .filter(e => e.matchId && !e.exceptionType)
+    const [compareData, setCompareData] = useState([])
 
-        const evidence2 = await getEvidence(bb2)
-        const scoredEvidence2 = calculateScoreForUser(evidence2).scoredEvidence
-            .filter(e => e.matchId && !e.exceptionType)
-        return [scoredEvidence1, scoredEvidence2]
+    useEffect(() => {
+        async function fetchData() {
+            const evidence1 = await getPickerActivity(bb1)
+            const scoredEvidence1 = calculateScoreForUser(evidence1).scoredActivity
+                .filter(e => e.matchId && !e.exceptionType)
 
-    }, [bb1, bb2, getEvidence])
-    const {data = {}} = useData({loadFn})
+            const evidence2 = await getPickerActivity(bb2)
+            const scoredEvidence2 = calculateScoreForUser(evidence2).scoredActivity
+                .filter(e => e.matchId && !e.exceptionType)
+            setCompareData([scoredEvidence1, scoredEvidence2])
+        }
+        fetchData()
+    }, [bb1, bb2, getPickerActivity])
 
     const fighter1 = useMemo(() => {
         return blackBeltData.find(bb => bb.id === bb1) || ''
@@ -182,7 +184,7 @@ function LeaderboardCompare({blackBeltData, compare, setCompare}) {
             </div>
 
             {compare &&
-                <LeaderboardCompareTable data={data}/>
+                <LeaderboardCompareTable data={compareData}/>
             }
 
         </React.Fragment>
