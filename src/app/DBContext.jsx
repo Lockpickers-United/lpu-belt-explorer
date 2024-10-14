@@ -583,7 +583,7 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
 
     if (querySnapshot.docs.length > 0) {
         let bookmark = null
-        const newAwards = querySnapshot.docs.map(awDoc => {
+        const newAwardsById = querySnapshot.docs.map(awDoc => {
             const aw = awDoc.data()
             const award = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1], aw.discordAwardName)
             const newDoc = {
@@ -594,8 +594,13 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
             }
             bookmark = !bookmark || newDoc.awardCreatedAt > bookmark ? newDoc.awardCreatedAt : bookmark
             return newDoc
-        })
-        const awardsToAdd = newAwards.filter(awd => {
+        }).reduce((acc, awd) => {
+            if (!acc[awd.awardId] || awd.awardCreatedAt < acc[awd.awardId].awardCreatedAt) {
+                acc[awd.awardId] = awd
+            }
+            return acc
+        }, {})
+        const awardsToAdd = Object.values(newAwardsById).filter(awd => {
             const collision = existingAwardDocs.find(ea => ea.awardId === awd.awardId)
             return !collision || awd.awardCreatedAt < collision.awardCreatedAt || !isValidUrl(collision.awardUrl)
         })
