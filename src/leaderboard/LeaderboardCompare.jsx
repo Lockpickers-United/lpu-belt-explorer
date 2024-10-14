@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {danBelts} from '../data/belts'
 import CompareBeltBar from './CompareBeltBar.jsx'
 import CompareDanStats from './CompareDanStats.jsx'
@@ -10,26 +10,55 @@ import Button from '@mui/material/Button'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {useLocation, useSearchParams} from 'react-router-dom'
 import queryString from 'query-string'
+import LeaderboardCompareTable from './LeaderboardCompareTable.jsx'
+import calculateScoreForUser from '../scorecard/scoring'
+import DBContext from '../app/DBContext.jsx'
+import useData from '../util/useData.jsx'
 
-function LeaderboardCompare({blackBeltData, compare}) {
+function LeaderboardCompare({blackBeltData, compare, setCompare}) {
     const location = useLocation()
     const [searchParams, setSearchParams] = useSearchParams()
+    const {getEvidence} = useContext(DBContext)
 
-    const {tab, bb1, bb2, title} = useMemo(() => {
+    const {bb1, bb2, title} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
-            tab: query.tab ? query.tab : undefined,
             bb1: query.bb1 ? query.bb1 : undefined,
             bb2: query.bb2 ? query.bb2 : undefined,
             title: query.title ? query.title : undefined
         }
     }, [location.search])
 
-    const fighter1 = blackBeltData.find(bb => bb.id === bb1) || ''
-    const fighter2 = blackBeltData.find(bb => bb.id === bb2) || ''
+    const loadFn = useCallback(async () => {
+        const evidence1 = await getEvidence(bb1)
+        const scoredEvidence1 = calculateScoreForUser(evidence1).scoredEvidence
+            .filter(e => e.matchId && !e.exceptionType)
+
+        const evidence2 = await getEvidence(bb2)
+        const scoredEvidence2 = calculateScoreForUser(evidence2).scoredEvidence
+            .filter(e => e.matchId && !e.exceptionType)
+        return [scoredEvidence1, scoredEvidence2]
+
+    }, [bb1, bb2, getEvidence])
+    const {data = {}} = useData({loadFn})
+
+    const fighter1 = useMemo(() => {
+        return blackBeltData.find(bb => bb.id === bb1) || ''
+    }, [bb1, blackBeltData])
+    const fighter2 = useMemo(() => {
+        return blackBeltData.find(bb => bb.id === bb2) || ''
+    }, [bb2, blackBeltData])
 
     const [open, setOpen] = useState(!!bb1 || !!bb2 || compare)
-    const handleClick = useCallback(() => setOpen(!open), [open])
+
+    useEffect(() => {
+        setCompare(!!bb1 || !!bb2 || open)
+    }, [bb1, bb2, open, setCompare])
+
+    const handleClick = useCallback(() => {
+        setOpen(!open)
+    }, [open])
+
     const handleReset = useCallback(() => {
         searchParams.delete('bb1')
         searchParams.delete('bb2')
@@ -43,7 +72,7 @@ function LeaderboardCompare({blackBeltData, compare}) {
     const safeNames = (!!bb1 || !!bb2) ? name1 + '-vs-' + name2 : null
 
     if ((!!bb1 || !!bb2) && (title !== safeNames)) {
-        setTimeout(() => setSearchParams({'tab': tab, 'bb1': bb1, 'bb2': bb2, 'title': safeNames}), 250)
+        setTimeout(() => setSearchParams({'bb1': bb1, 'bb2': bb2, 'title': safeNames}), 250)
     }
 
     const maxValue = danBelts.reduce((acc, belt) => {
@@ -92,11 +121,11 @@ function LeaderboardCompare({blackBeltData, compare}) {
                 <AccordionDetails style={{backgroundColor: '#111', padding: '16px 0px 0px 0px'}}>
                     <div style={{backgroundColor: '#111', padding: 0}}>
                         <div style={{display: 'flex'}}>
-                            <div style={{width: '50%', padding: 0, margin: 4}}>
+                            <div style={{width: '50%', padding: 0, margin: 4, textAlign: 'center'}}>
                                 <CompareSelect blackBeltData={blackBeltData} fighter={fighter1}
                                                label={'Fighter #1'} param={'bb1'} opponent={bb2}/>
                             </div>
-                            <div style={{width: '50%', padding: 0, margin: 4}}>
+                            <div style={{width: '50%', padding: 0, margin: 4, textAlign: 'center'}}>
                                 <CompareSelect blackBeltData={blackBeltData} fighter={fighter2}
                                                label={'Fighter #2'} param={'bb2'} opponent={bb1}/>
                             </div>
@@ -132,6 +161,30 @@ function LeaderboardCompare({blackBeltData, compare}) {
                     </div>
                 </AccordionDetails>
             </Accordion>
+
+            {compare &&
+                <div style={{textAlign: 'center', width: '100%', fontWeight: 700, fontSize: '1.1rem', marginBottom: 8}}>
+                    MOST POPULAR LOCKS
+                </div>
+            }
+
+            <div style={{display: 'flex', width: '100%', fontWeight: 700, fontSize: '1.1rem', marginBottom: 8}}>
+                <div style={{flexGrow: 1, color: '#1d801d'}}>
+                    {name1 !== 'Unknown' &&
+                        <span>{name1}</span>
+                    }
+                </div>
+                <div style={{textAlign: 'right', color: '#4e4ed0'}}>
+                    {name2 !== 'Unknown' &&
+                        <span>{name2}</span>
+                    }
+                </div>
+            </div>
+
+            {compare &&
+                <LeaderboardCompareTable data={data}/>
+            }
+
         </React.Fragment>
     )
 }

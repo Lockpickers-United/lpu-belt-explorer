@@ -8,9 +8,9 @@
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
-    "tier": "",
+    "tier": "Tier 3",
     "features": [],
-    "lastUpdated": "2024-08-18T14:27:37.307Z"
+    "lastUpdated": "2024-10-13T18:21:49.690Z"
   },
   {
     "id": "f1bee574",
@@ -151,23 +151,6 @@
     "lastUpdated": "2024-09-18T01:44:48.009Z"
   },
   {
-    "id": "e24e62b7",
-    "make": "Chubb",
-    "model": "7K64",
-    "group": "not rated",
-    "fence": "Gravity Lever",
-    "wheels": "4",
-    "digits": "0-99",
-    "notes": "",
-    "tier": "Tier 3",
-    "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Vault Format"
-    ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
-  },
-  {
     "id": "f5703ac0",
     "make": "Chubb",
     "model": "Brass Vault Lock (e.g 7K50/7K64)",
@@ -229,11 +212,24 @@
     "lastUpdated": "2024-09-19T15:58:18.908Z"
   },
   {
+    "id": "8a50bbb0",
+    "make": "Chubb",
+    "model": "7L05 (?)",
+    "group": "not rated",
+    "fence": "",
+    "wheels": "",
+    "digits": "",
+    "notes": "Older version of the L708",
+    "tier": "",
+    "features": [],
+    "lastUpdated": "2024-10-13T18:21:49.690Z"
+  },
+  {
     "id": "e3a922f0",
     "make": "Chubb",
     "model": "7L08",
     "group": "not rated",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -245,7 +241,7 @@
       "Multi-Orientation Cam",
       "Standard Format"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-10-13T18:21:49.690Z"
   },
   {
     "id": "75ddbd51",
@@ -270,7 +266,7 @@
     "make": "Chubb",
     "model": "Manifoil MK3",
     "group": "not rated",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -327,7 +323,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956795523_4831dfc727_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-10-13T18:21:49.690Z"
   },
   {
     "id": "087f41e9",
