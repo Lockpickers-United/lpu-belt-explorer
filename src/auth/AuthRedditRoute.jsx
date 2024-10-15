@@ -190,8 +190,16 @@ function AuthRedditRoute() {
             if (dataError) {
                 setSyncException('data_failed')
             } else if (awards.length > 0) {
-                await advanceBookmarkForRedditUser(username, nextBookmark, awards)
-                setSyncResult({username: username, flair: flairBelt, awards: awards})
+                const dedupAwards = Object.values(
+                    awards.reduce((acc, msg) => {
+                        if (!acc[msg.matchId] || new Date(msg.awardedAt) < new Date(acc[msg.matchId].awardedAt)) {
+                            acc[msg.matchId] = msg
+                        }
+                        return acc
+                    }, {})
+                )
+                await advanceBookmarkForRedditUser(username, nextBookmark, dedupAwards)
+                setSyncResult({username: username, flair: flairBelt, awards: dedupAwards})
             } else {
                 setSyncException('none_found')
             }

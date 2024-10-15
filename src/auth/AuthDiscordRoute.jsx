@@ -79,8 +79,16 @@ function AuthDiscordRoute() {
                     }
                 })
                 if (awards.length > 0) {
+                    const dedupAwards = Object.values(
+                        awards.reduce((acc, msg) => {
+                            if (!acc[msg.matchId] || new Date(msg.awardedAt) < new Date(acc[msg.matchId].awardedAt)) {
+                                acc[msg.matchId] = msg
+                            }
+                            return acc
+                        }, {})
+                    )
                     await setDiscordUserInfo(data.id, data.username)
-                    setSyncResult({id: data.id, username: data.username, awards: awards})
+                    setSyncResult({id: data.id, username: data.username, awards: dedupAwards})
                 } else {
                     setSyncException('none_found')
                 }
