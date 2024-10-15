@@ -6,12 +6,12 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox'
 
 function LeaderboardCompareRow({entry, data}) {
 
-    const picked1 = data && data[0].find(e => entry.id === e.matchId)
+    const picked1 = data && data[0]?.find(e => entry.id === e.matchId)
     const bgcolor1 = picked1
         ? '#1d801d'
         : '#000'
 
-    const picked2 = data && data[1].find(e => entry.id === e.matchId)
+    const picked2 = data && data[1]?.find(e => entry.id === e.matchId)
     const bgcolor2 = picked2
         ? '#4d4dc1'
         : '#000'
