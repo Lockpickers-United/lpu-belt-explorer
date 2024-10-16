@@ -31,15 +31,16 @@ function Leaderboard({tab}) {
     const {isMobile} = useWindowSize()
     const navigate = useNavigate()
 
-    const {bb1, bb2} = useMemo(() => {
+    const {bb1, bb2, compareMode} = useMemo(() => {
         const query = queryString.parse(location.search)
         return {
             bb1: query.bb1 ? query.bb1 : undefined,
-            bb2: query.bb2 ? query.bb2 : undefined
+            bb2: query.bb2 ? query.bb2 : undefined,
+            compareMode: !!query.compare
         }
     }, [location.search])
 
-    const [compare, setCompare] = useState(!!bb1 || !!bb2)
+    const [compare, setCompare] = useState(!!bb1 || !!bb2 || compareMode)
 
     const {highlightedUser, sort} = useMemo(() => {
         const query = queryString.parse(location.search)
