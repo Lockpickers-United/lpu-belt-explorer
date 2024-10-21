@@ -11,7 +11,8 @@ function Tracker({feature, ...extraParams}) {
     const page = window.location.href.replace(/.*\/#\/(\w+)\?*.*/,'$1')
     const query = querystring.stringify({trk: feature, r: randomStuff, w: screen.width, ref, page, ...extraParams})
     const url = `https://images.lpubelts.com/i/${file}?${query}`
-    return <img alt='lpu' src={url} width={0} height={0}/>
+    const urlDH = `https://img.lpubelts.com/i/${file}?${query}`
+    return <span><img alt='lpu' src={url} width={0} height={0}/><img alt='lpu' src={urlDH} width={0} height={0}/></span>
 }
 
 const files = {
