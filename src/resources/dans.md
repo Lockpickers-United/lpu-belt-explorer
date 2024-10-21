@@ -83,6 +83,7 @@ points, and are included in most new Black Belt applications.
 
 Earning Dan Points “on the mat” can also be accomplished completing projects within the following Disciplines.
 
+- Case Making
 - Challenge Locks
 - Community Involvement
 - Cutaway Making
