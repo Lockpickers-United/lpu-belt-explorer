@@ -48,7 +48,7 @@ function LockViewsLine({data}) {
                 enableGridX={false}
                 enablePoints={false}
                 useMesh={true}
-                isInteractive={false}
+                isInteractive={true}
             />
         </div>
     )

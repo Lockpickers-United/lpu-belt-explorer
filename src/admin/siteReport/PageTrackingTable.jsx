@@ -5,6 +5,19 @@ import useWindowSize from '../../util/useWindowSize'
 const PageTrackingTable = ({data}) => {
     const {pageTracking} = data
 
+    const totals = Object.keys(pageTracking.data[13]).sort((a, b) => {
+        return pageTracking.data[13][b] - pageTracking.data[13][a]
+    }).filter(page => page !== 'total' && page !== 'date')
+    totals.unshift('date')
+    totals.push('total')
+
+    const columns = totals.reduce((acc,page) => {
+        const col = pageTracking.columns.find(c => c.id === page)
+        acc.push(col)
+        return acc
+    },[])
+    const orderedPages = {columns: columns, data: pageTracking.data}
+
     const {width} = useWindowSize()
     const mobile360 = width <= 360
     const mobile395 = width <= 395
@@ -22,7 +35,7 @@ const PageTrackingTable = ({data}) => {
     const tableWidth = '100%'
 
     return (
-        <AdminStatsTable tableData={pageTracking} tableWidth={tableWidth} fontSize={fontSize}/>
+        <AdminStatsTable tableData={orderedPages} tableWidth={tableWidth} fontSize={fontSize}/>
     )
 }
 

@@ -5,8 +5,8 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import ChoiceButtonGroup from '../util/ChoiceButtonGroup'
-import useWindowSize from '../util/useWindowSize'
+import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 function PopularAreas({data}) {
 
