@@ -11,6 +11,7 @@ import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
 import PopularCountries from './siteReport/PopularCountries'
 import PopularAreas from './siteReport/PopularAreas.jsx'
+import ScreenWidthsTable from './siteReport/ScreenWidthsTable.jsx'
 
 function SiteReportMain() {
     usePageTitle('Site Report')
@@ -68,6 +69,9 @@ function SiteReportMain() {
                     <PopularCountries data={siteFullNew}/>
                 </React.Fragment>
             }
+
+            <div style={headerStyle}>Lock Views by Screen Width</div>
+            <ScreenWidthsTable data={siteFullNew}/>
 
         </div>
     )
