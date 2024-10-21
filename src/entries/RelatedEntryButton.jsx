@@ -18,7 +18,7 @@ function RelatedEntryButton({id, onExpand}) {
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>
             <IconButton onClick={handleClick}>
-                <BeltIcon value={entry.belt}/>
+                <BeltIcon value={entry.belt} related={true}/>
             </IconButton>
         </Tooltip>
     )
