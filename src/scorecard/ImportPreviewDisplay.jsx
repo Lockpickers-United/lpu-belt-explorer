@@ -127,6 +127,11 @@ function ImportPreviewDisplay({profile, importResults, syncStatus, service}) {
                     </span>
                 }
 
+                <div style={{margin:'20px 0px'}}>
+                    If you have an approved belt that is not showing up here,
+                    reach out to us in #belt-explorer on the LPU Discord server for help.
+                    Mods and #belt-requests are a different team who won&#39;t be able to help.</div>
+
                 <div style={{height: 16}}/>
             </div>
             <div style={{height: 8, backgroundColor: '#000'}}/>

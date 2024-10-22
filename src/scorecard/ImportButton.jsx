@@ -106,8 +106,12 @@ function ImportButton({profile}) {
                                     You&#39;ll need to authorize for each site, and we&#39;ll pull your username and
                                     approvals for you. Please note: you can only import belts already approved through
                                     the official process.
+                                <br/><br/>
+                                    You&#39;ll need to give us permission us to briefly access you account to verify your
+                                    username and to get Reddit messages from Mods approving your belts.
+                                    We only make that connection once and your accounts will not remained linked.
+                                    We cannot access and do not store your password.
                                 </div>
-
                                 {profile?.discordUsername &&
                                     <div style={{padding: '20px 0px 0px 0px', textAlign: 'left', fontWeight: 500}}>
                                         New Discord rankings will be automatically added to your scorecard
