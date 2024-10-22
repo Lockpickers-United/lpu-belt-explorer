@@ -1,13 +1,14 @@
 import React from 'react'
 import belts from '../data/belts'
 
-function BeltIcon({value, style, related}) {
+function BeltIcon({value, style, related, disabled}) {
     const rank = parseInt(value.slice(-1)) > 1 ? parseInt(value.slice(-1)) : ''
     const {color, lineColor = '#010101'} = belts[value]
     if (value === 'Unranked') return null
+    const rankColor = !disabled ? '#fff' : '#bbb'
     return (
         <div style={{position: 'relative', minWidth: 32, height: 32 }}>
-            <div style={{display: 'inline-block', minWidth: 32, height: 32, ...style,position: 'absolute', top: 0, left: 0}}>
+            <div style={{display: 'inline-block', minWidth: 32, height: 32, ...style,position: 'absolute', top: 0, left: 1}}>
                 <svg x='0' y='0' viewBox='0 -2 32 32'>
                     <path
                         d='M10.91 25.6c-.23 0-.46-.06-.65-.18l-4.47-2.73c-.6-.37-.79-1.15-.43-1.74l7.02-11.51c.23-.37.64-.6 1.08-.6.23 0 .46.06.65.18l4.48 2.73c.29.18.49.45.57.78s.03.67-.15.95l-7.02 11.51c-.23.38-.64.61-1.08.61z'
@@ -44,7 +45,7 @@ function BeltIcon({value, style, related}) {
                 </svg>
             </div>
             {related &&
-            <div style={{position: 'absolute', top: 6, left: 13.5, fontSize: '0.58rem'}}>{rank}</div>
+            <div style={{position: 'absolute', top: 6, left: 14.5, fontSize: '0.58rem', color:rankColor}}>{rank}</div>
             }
         </div>
     )

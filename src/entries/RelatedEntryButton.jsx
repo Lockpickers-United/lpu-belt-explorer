@@ -5,7 +5,7 @@ import DataContext from '../locks/LockDataProvider'
 import BeltIcon from './BeltIcon'
 import {useNavigate} from 'react-router-dom'
 
-function RelatedEntryButton({id, onExpand}) {
+function RelatedEntryButton({id, onExpand, entryId}) {
     const {getEntryFromId} = useContext(DataContext)
     const entry = useMemo(() => getEntryFromId(id), [getEntryFromId, id])
     const navigate = useNavigate()
@@ -15,10 +15,13 @@ function RelatedEntryButton({id, onExpand}) {
         onExpand(id)
     }, [id, navigate, onExpand])
 
+    const style = id === entryId ? {border:'1px solid #777'} : {}
+    const disabled = id === entryId
+
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>
-            <IconButton onClick={handleClick}>
-                <BeltIcon value={entry.belt} related={true}/>
+            <IconButton onClick={handleClick} style={style} disabled={disabled}>
+                <BeltIcon value={entry.belt} related={true} disabled={disabled}/>
             </IconButton>
         </Tooltip>
     )
