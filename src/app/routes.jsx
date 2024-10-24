@@ -155,6 +155,13 @@ export default [
                     const {default: SystemMessageAdmin} = await import('../admin/SystemMessageAdmin')
                     return {element: <SystemMessageAdmin/>}
                 }
+            },
+            {
+                path: '/admin/testing',
+                lazy: async () => {
+                    const {default: TestingMain} = await import('../admin/TestingMain')
+                    return {element: <TestingMain/>}
+                }
             }
         ]
     },

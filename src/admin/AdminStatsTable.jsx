@@ -56,7 +56,6 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
                                           'td, th': {}
                                       }}>
                                 {tableData.columns.map((column, index) =>
-
                                     <TableCell key={index + 1} style={bodyStyle}
                                                sx={{
                                                    textAlign: column.align,
@@ -68,7 +67,6 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
                                                }}
                                                component='th' scope='row'>
                                         {row[column.id] ? row[column.id].toLocaleString() : ''}
-
                                     </TableCell>
                                 )}
                             </TableRow>
