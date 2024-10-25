@@ -32,6 +32,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const {visibleEntries = [], popularEntries = [], cardActivity} = useContext(ScorecardDataContext)
 
+
+
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters
@@ -145,7 +147,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 <React.Fragment>
                     {!isMobile
                         ? <div style={{display: headerDivStyle, padding: '10px 8px 0px 16px'}}>
-                            <div style={{marginRight: 0, width: 380}}>
+                            <div style={{marginRight: 10, width: 370}}>
                                 <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                             </div>
                             {profile.danLevel > 0 &&
@@ -155,7 +157,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                             }
                         </div>
                         : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
-                            {profile.danLevel > 0 &&
+                            {profile?.blackBeltAwardedAt > 0 &&
                                 <ScorecardDanStats profile={profile} owner={owner}/>
                             }
                             <div style={{marginRight: 0, width: '95%'}}>

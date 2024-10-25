@@ -62,7 +62,8 @@ function ImportButton({profile}) {
         window.location.assign(url)
     }, [user, oauthState])
 
-    const fontSize = isMobile ? '0.95rem' : '1rem'
+    const fontSize = isMobile ? '0.91rem' : '1rem'
+    const lineHeight = isMobile ? '1.3rem' : '1.5rem'
 
     // just 'IMPORT BELTS' when removing beta
     const buttonText = beta ? 'IMPORT BELTS' : 'IMPORT'
@@ -101,28 +102,30 @@ function ImportButton({profile}) {
                         <CardContent>
                             <Collapse in={!danImportOpen}>
 
-                                <div style={{padding: '0px 0px', fontSize: fontSize}}>
+                                <div style={{padding: '0px 0px', fontSize: fontSize, lineHeight: lineHeight}}>
                                     <strong>New!</strong> Add your approved Belts (and Dan Levels) to your Scorecard.
                                     You&#39;ll need to authorize for each site, and we&#39;ll pull your username and
                                     approvals for you. Please note: you can only import belts already approved through
                                     the official process.
-                                <br/><br/>
-                                    You&#39;ll need to give us permission us to briefly access you account to verify your
-                                    username and to get Reddit messages from Mods approving your belts.
-                                    We only make that connection once and your accounts will not remained linked.
-                                    We cannot access and do not store your password.
-                                </div>
-                                {profile?.discordUsername &&
-                                    <div style={{padding: '20px 0px 0px 0px', textAlign: 'left', fontWeight: 500}}>
-                                        New Discord rankings will be automatically added to your scorecard
-                                        as long as there is a Discord username in your Profile.
+                                    <br/><br/>
 
-                                        You only need to re-import from Discord if you want to
-                                        add belts from an additional username.
-                                    </div>
-                                }
+                                    You&#39;ll need to briefly authorize for each platform you use for belts (Discord and/or Reddit) to verify your username. For Discord, we get the belt approvals from the #belt-requests channel. For Reddit, we need to read your messages to find the Mod approvals. We only make a connection once per import and your accounts will not remained linked. We cannot access and do not store your password.
+
+                                    <br/><br/>
+                                    <span style={{fontWeight: 400}}>
+                                    New Discord approvals will be automatically added to your scorecard
+                                    as long as there is a Discord username in your Profile.
+                                    You only need to re-import from Discord if you want to
+                                    add belts from an additional username.<br/><br/>
+
+                                    You&#39;ll need to import from Reddit again to pick up newly approved belts.
+
+                                </span>
+
+                                </div>
+
                                 <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
-                                    Import From<br/>
+                                    <span style={{fontWeight: 700}}>Import From</span><br/>
 
                                     <div style={{marginTop: 8}}>
                                         <Button

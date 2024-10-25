@@ -23,7 +23,14 @@ import {
 import AuthContext from './AuthContext'
 import {enqueueSnackbar} from 'notistack'
 import calculateScoreForUser from '../scorecard/scoring'
-import {isLock, isProject, isAward, lookupAwardByBelt, blackBeltAwardId} from '../entries/entryutils'
+import {
+    isLock,
+    isProject,
+    isAward,
+    lookupAwardByBelt,
+    blackBeltAwardId,
+    getAwardEntryFromId
+} from '../entries/entryutils'
 import collectionOptions from '../data/collectionTypes'
 import isValidUrl from '../util/isValidUrl'
 
@@ -661,12 +668,21 @@ async function updateUserStatistics(userId) {
     const scored = calculateScoreForUser(activity)
     const recordedLocks = scored.scoredActivity.filter(a => isLock(a.matchId)).map(a => a.matchId)
     const projects = scored.scoredActivity.filter(a => isProject(a.matchId)).map(a => a.matchId)
+    const awards = scored.scoredActivity.filter(a => isAward(a.matchId)).map(a => a.matchId)
+    const awardedDan = awards.reduce((acc, activity) => {
+        const award = getAwardEntryFromId(activity.matchId)
+        return award.awardType === 'dan'
+            ? Math.max(acc, award.rank)
+            : acc
+    }, 0)
     let newDoc = {
         danPoints: scored.danPoints,
         blackBeltCount: scored.bbCount,
         danLevel: scored.eligibleDan,
+        awardedDan: awardedDan,
         recordedLocks: recordedLocks,
-        projects: projects
+        projects: projects,
+        awards: awards
     }
     const blackBelt = activity.find(a => a.matchId === blackBeltAwardId)
     if (blackBelt) {
