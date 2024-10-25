@@ -48,6 +48,8 @@ export default function ScorecardDanStats({profile, owner}) {
         enqueueSnackbar('Request copied to clipboard. Take it over to #belt-requests!')
     }, [cardEligibleDan, safeName, user?.uid, userId])
 
+    const nextBBLocks = Math.max(0, nextDan.bbLocks - cardBBCount)
+    const nextBBPoints = Math.max(0, nextDan.points - cardDanPoints)
 
     return (
         <div style={{display: 'flex'}}>
@@ -60,7 +62,7 @@ export default function ScorecardDanStats({profile, owner}) {
                 <div style={{marginBottom: 5}}>Dan Points <strong>{cardDanPoints}</strong></div>
                 <div style={{marginBottom: 5}}>Black Belt Locks <strong>{cardBBCount}</strong></div>
                 <div style={{fontSize: '0.85rem'}}>
-                    {nextDan.points - cardDanPoints} point{cardNextDanPoints !== 1 && 's'} and {nextDan.bbLocks - cardBBCount} BB
+                    {nextBBPoints} point{nextBBPoints !== 1 && 's'} and {nextBBLocks} BB
                     lock{cardNextDanLocks !== 1 && 's'} to {addOrdinal(displayDan+1)} Dan
                 </div>
                 <div style={{margin: '10px 0px', fontSize: '0.85rem'}}>
