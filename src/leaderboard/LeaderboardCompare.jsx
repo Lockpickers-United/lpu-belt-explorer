@@ -32,11 +32,11 @@ function LeaderboardCompare({blackBeltData, compare, setCompare}) {
 
     useEffect(() => {
         async function fetchData() {
-            const evidence1 = await getPickerActivity(bb1)
+            const evidence1 = bb1 ? await getPickerActivity(bb1) : []
             const scoredEvidence1 = calculateScoreForUser(evidence1).scoredActivity
                 .filter(e => e.matchId && !e.exceptionType)
 
-            const evidence2 = await getPickerActivity(bb2)
+            const evidence2 = bb2 ? await getPickerActivity(bb2) : []
             const scoredEvidence2 = calculateScoreForUser(evidence2).scoredActivity
                 .filter(e => e.matchId && !e.exceptionType)
             setCompareData([scoredEvidence1, scoredEvidence2])

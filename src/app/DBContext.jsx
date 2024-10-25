@@ -669,9 +669,9 @@ async function updateUserStatistics(userId) {
     const recordedLocks = scored.scoredActivity.filter(a => isLock(a.matchId)).map(a => a.matchId)
     const projects = scored.scoredActivity.filter(a => isProject(a.matchId)).map(a => a.matchId)
     const awards = scored.scoredActivity.filter(a => isAward(a.matchId)).map(a => a.matchId)
-    const awardedDan = awards.reduce((acc, activity) => {
-        const award = getAwardEntryFromId(activity.matchId)
-        return award.awardType === 'dan'
+    const awardedDan = awards.reduce((acc, awardId) => {
+        const award = getAwardEntryFromId(awardId)
+        return award?.awardType === 'dan'
             ? Math.max(acc, award.rank)
             : acc
     }, 0)
