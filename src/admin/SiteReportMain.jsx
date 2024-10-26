@@ -4,18 +4,19 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFull, siteSummary, popularAreas} from '../data/dataUrls'
+import {siteFullNew} from '../data/dataUrls'
 import LockViewsLine from '../stats/LockViewsLine'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
 import PopularCountries from './siteReport/PopularCountries'
-import PopularAreas from '../stats/PopularAreas.jsx'
+import PopularAreas from './siteReport/PopularAreas.jsx'
+import ScreenWidthsTable from './siteReport/ScreenWidthsTable.jsx'
 
 function SiteReportMain() {
     usePageTitle('Site Report')
     const {data, loading, error} = useData({urls})
-    const {siteFull, siteSummary} = data || {}
+    const {siteFullNew} = data || {}
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -24,12 +25,12 @@ function SiteReportMain() {
 
     const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
     const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
-    const summaryHeaderStyle = siteFull?.firstVistsLastSevenDays?.countryCount
+    const summaryHeaderStyle = siteFullNew?.firstVistsLastSevenDays?.countryCount
         ? headerStyle
         : firstHeaderStyle
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(siteFull?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFull?.metadata.timezone})`
+        : '(updated: ' + dayjs(siteFullNew?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFullNew?.metadata.timezone})`
 
     if (loading) return <LoadingDisplay/>
     else if (error) return null
@@ -40,10 +41,10 @@ function SiteReportMain() {
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>
-            {!!siteFull.firstVistsLastSevenDays.countryCount &&
+            {!!siteFullNew.firstVistsLastSevenDays.countryCount &&
                 <React.Fragment>
                     <div style={firstHeaderStyle}>First Visits (Last Seven Days)</div>
-                    <FirstVisitsLastSevenTable data={siteFull} tableWidth={'50%'}/>
+                    <FirstVisitsLastSevenTable data={siteFullNew} tableWidth={'50%'}/>
                 </React.Fragment>
             }
 
@@ -51,32 +52,33 @@ function SiteReportMain() {
                 Site Summary<br/>
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
-            <SiteReportSummary data={siteFull}/>
+            <SiteReportSummary data={siteFullNew}/>
 
             <div style={headerStyle}>Weekly Lock Views</div>
-            <LockViewsLine data={siteSummary}/>
+            <LockViewsLine data={siteFullNew}/>
 
             <div style={headerStyle}>Page Tracking</div>
-            <PageTrackingTable data={siteFull}/>
+            <PageTrackingTable data={siteFullNew}/>
 
             <div style={headerStyle}>Popular Areas</div>
-            <PopularAreas data={data}/>
+            <PopularAreas data={siteFullNew}/>
 
-            {!!siteFull.popularCountries1 &&
+            {!!siteFullNew.popularCountries1 &&
                 <React.Fragment>
                     <div style={headerStyle}>Popular Countries</div>
-                    <PopularCountries data={siteFull}/>
+                    <PopularCountries data={siteFullNew}/>
                 </React.Fragment>
             }
+
+            <div style={headerStyle}>Lock Views by Screen Width</div>
+            <ScreenWidthsTable data={siteFullNew}/>
 
         </div>
     )
 }
 
 const urls = {
-    siteFull,
-    siteSummary,
-    popularAreas
+    siteFullNew
 }
 
 export default SiteReportMain

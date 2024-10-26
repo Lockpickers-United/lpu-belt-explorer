@@ -20,7 +20,8 @@ function SystemMessage({override, overridePageId, placeholder}) {
                 : placeholder
         , [getMessage, override, pageId, placeholder])
 
-    const noId = pageId.replace(/\/\w{28}/, 'uid')
+    const noId = pageId.slice(1).replace(/\/\w{28}/, '/uid').replace(/\//, '-')
+
     const query = useMemo(() => querystring.stringify({id: message?.id, p: noId, r: randomStuff}), [message, noId])
     const url = `https://img.lpubelts.com/i/message/message.png?${query}`
 

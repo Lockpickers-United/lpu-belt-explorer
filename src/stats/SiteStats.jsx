@@ -16,7 +16,7 @@ function SiteStats({data}) {
 
     const {
         lockSummary: {lockCounts},
-        siteSummary: {dailyAverages, totals}
+        siteFullNew: {dailyAverages, totals}
     } = data
 
     return (

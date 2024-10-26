@@ -4,7 +4,7 @@ import {primaryTheme} from './chartDefaults'
 import useWindowSize from '../util/useWindowSize'
 
 function HourlyRequestsLine({data}) {
-    const {hourlyRequests} = data.siteSummary
+    const {hourlyRequests} = data.siteFullNew
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -30,7 +30,7 @@ function HourlyRequestsLine({data}) {
                 data={hourlyRequests}
                 colors={['#007de2', '#16325d']}
                 lineWidth={3}
-                margin={{top: 10, right: 20, bottom: 75, left: 55}}
+                margin={{top: 10, right: 20, bottom: 70, left: 58}}
                 curve='natural'
                 xScale={{
                     type: 'point'

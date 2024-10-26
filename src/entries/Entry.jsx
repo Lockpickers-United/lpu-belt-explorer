@@ -33,8 +33,9 @@ function Entry({entry, expanded, onExpand}) {
     const ref = useRef(null)
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
-                            .filter(id => id !== entry.id)
-                            .sort((a, b) => beltSort(allEntriesById[a].belt, allEntriesById[b].belt))
+                            .sort((a, b) => {
+                                return beltSort(allEntriesById[a].belt, allEntriesById[b].belt) || a.localeCompare(b)
+                            })
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
@@ -162,11 +163,11 @@ function Entry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
-                        {!!allRelatedIds && !userId &&
+                        {allRelatedIds?.length > 1 && !userId &&
                             <FieldValue name='Other Versions' value={
                                 <React.Fragment>
                                     {allRelatedIds.map(relatedId =>
-                                        <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand}/>
+                                        <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand} entryId={entry.id}/>
                                     )}
                                 </React.Fragment>
                             }/>
@@ -212,11 +213,7 @@ function Entry({entry, expanded, onExpand}) {
 }
 
 export default React.memo(Entry, (prevProps, nextProps) => {
-    if (prevProps.entry.id === nextProps.entry.id &&
+    return prevProps.entry.id === nextProps.entry.id &&
         prevProps.expanded === nextProps.expanded &&
-        prevProps.onExpand === nextProps.onExpand) {
-        return true
-    } else {
-        return false
-    }
+        prevProps.onExpand === nextProps.onExpand
 })

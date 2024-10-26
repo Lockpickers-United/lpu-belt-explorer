@@ -6,10 +6,12 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
 
     const whiteSpace = wrap ? 'inherit' : 'nowrap'
 
+    tableData.columns.filter(x => x?.id && x?.align)
+
     // don't show 'date' column if 'dateString' column exists
     const [hasDateString, setHasDateString] = useState(false)
     tableData.columns.map(
-        column => column.id === 'dateString' && !hasDateString ? setHasDateString(true) : null
+        column => column?.id === 'dateString' && !hasDateString ? setHasDateString(true) : null
     )
     tableData.columns = hasDateString
         ? tableData.columns.filter((column => column.id !== 'date'))
@@ -54,7 +56,6 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
                                           'td, th': {}
                                       }}>
                                 {tableData.columns.map((column, index) =>
-
                                     <TableCell key={index + 1} style={bodyStyle}
                                                sx={{
                                                    textAlign: column.align,
@@ -66,7 +67,6 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
                                                }}
                                                component='th' scope='row'>
                                         {row[column.id] ? row[column.id].toLocaleString() : ''}
-
                                     </TableCell>
                                 )}
                             </TableRow>

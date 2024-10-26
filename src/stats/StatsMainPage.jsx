@@ -40,7 +40,7 @@ function StatsMainPage({data}) {
             <SiteStats data={data}/>
 
             <div style={headerStyle}>Weekly Lock Views</div>
-            <LockViewsLine data={data.siteSummary}/>
+            <LockViewsLine data={data.siteFullNew}/>
 
             <div style={headerStyle}>Photo Stats</div>
             <PhotoStats data={data}/>

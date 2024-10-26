@@ -3,7 +3,7 @@ import TrafficPie from './TrafficPie'
 import useWindowSize from '../util/useWindowSize'
 
 function TrafficStats({data}) {
-    const {trafficTotals: {platform, browser}} = data.siteSummary
+    const {trafficTotals: {platform, browser}} = data.siteFullNew
 
     const platformColors = ['#007de2', '#0367ba', '#005ba0', '#004fa4',
         '#063b87', '#062f6b']

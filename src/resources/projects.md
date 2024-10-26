@@ -4,6 +4,7 @@ Master's Projects -- also known as Epic Quests -- are an integral part of Black 
 
 Earning Dan Points can be accomplished completing projects within the following Disciplines.
 
+- Case Making
 - Challenge Locks
 - Community Involvement
 - Cutaway Making
@@ -48,6 +49,16 @@ Please send the following information in PM to a mod, or include in your black b
 Note: evidence should be images/text/video links etc, ideally in a pdf document format
 
 ## Voting Guidelines
+
+
+### Case Making Quest Guidelines
+Each progressive tier must fulfill all prior tier requirements.
+
+- **Tier 1** - Portfolio of at least 1 case of any material (cloth, canvas, leather, etc.) of satisfactory quality.
+- **Tier 2** - Portfolio of at least 2 cases of differing materials or components and a well-thought-out design of superior quality. One of which must be a full size case. Basic skills are well-developed. Such as straight stitches.
+- **Tier 3** - Portfolio of at least 4 cases with exceptional craftsmanship. A higher level of artistic merit in design and material choices. Demonstrates ability to perform common techniques well. At least two significantly different designs.
+- **Tier 4** - Portfolio of at least 7 cases, including reproducing accurately at least two reasonably identical cases or producing a set of two or more cases with a (well planned and easily identifiable) theme at a high technical and artistic level. Examples of cases made of different groups of materials or components that demonstrate a high caliber of skills in a variety of advanced techniques. An emerging brand identity.
+- **Tier 5** - Portfolio of at least 10 high quality cases that utilize a multitude of techniques both basic and advanced in nature, ability to reproduce cases with high accuracy. A well-defined and refined brand identity.
 
 ### Challenge Lock Making
 

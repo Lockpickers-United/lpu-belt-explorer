@@ -6,7 +6,7 @@ function BeltDistribution({data}) {
     const options = useMemo(() => {
         const {
             lockSummary: {locksByBelt},
-            siteSummary: {lockViewsByBelt},
+            siteFullNew: {lockViewsByBelt},
             collectionsSummary: {savesByBelt}
         } = data
         return [

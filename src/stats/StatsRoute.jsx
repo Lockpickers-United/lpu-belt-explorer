@@ -12,7 +12,7 @@ import {
     lockSummary,
     popularAreas,
     redditGrowth,
-    siteSummary
+    siteFullNew
 } from '../data/dataUrls'
 
 function StatsRoute() {
@@ -39,7 +39,7 @@ const urls = {
     lockSummary,
     popularAreas,
     redditGrowth,
-    siteSummary
+    siteFullNew
 }
 
 export default StatsRoute
