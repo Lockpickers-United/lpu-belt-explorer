@@ -5,10 +5,13 @@ import DiscordIcon from '../resources/DiscordIcon.jsx'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
-import isValidUrl from '../util/isValidUrl'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
+import {isAward} from '../entries/entryutils'
 
-export default function ScorecardEvidenceButton({url, exceptionType, handleChange, owner}) {
+export default function ScorecardEvidenceButton({activity, exceptionType, handleChange, owner}) {
+
+    const url = activity.link
+    const award = isAward(activity.matchId)
 
     const handleClick = useCallback(event => {
         event.preventDefault()
@@ -16,8 +19,6 @@ export default function ScorecardEvidenceButton({url, exceptionType, handleChang
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }, [url])
-
-    const notValidUrl = !isValidUrl(url)
 
     let icon = <SubjectIcon style={{width: 20, height: 20}}/>
 
@@ -31,21 +32,21 @@ export default function ScorecardEvidenceButton({url, exceptionType, handleChang
 
     return (
         <React.Fragment>
-            {exceptionType !== 'badlink' &&
+            {(exceptionType !== 'badlink') &&
                 <Tooltip title='View Documentation' arrow disableFocusListener>
-                    <IconButton style={{width: 40, height: 40}} onClick={handleClick} disabled={notValidUrl}>
+                    <IconButton style={{width: 40, height: 40}} onClick={handleClick}>
                         {icon}
                     </IconButton>
                 </Tooltip>
             }
-            {(exceptionType === 'badlink' && !!url && owner) &&
+            {(exceptionType === 'badlink' && !!url && owner && !award) &&
                 <Tooltip title='Documentation link is not valid' arrow disableFocusListener>
                     <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
                         <ErrorOutlineIcon style={{width: 22, height: 22, color:'#c07b32'}}/>
                     </IconButton>
                 </Tooltip>
             }
-            {(exceptionType === 'badlink' && !url && owner) &&
+            {(exceptionType === 'badlink' && !url && owner && !award) &&
                 <Tooltip title='Documentation link is missing' arrow disableFocusListener>
                     <IconButton style={{width: 40, height: 40}} onClick={handleChange}>
                         <ErrorOutlineIcon style={{width: 22, height: 22, color:'#e55940'}}/>

@@ -32,6 +32,7 @@ export default function ImportDanSheetForm({setControlsExpanded, adminAction}) {
     }, [importUnclaimedEvidence, userId, tabToImport, setControlsExpanded, adminAction])
 
     const formDisplayStyle = isMobile ? 'block' : 'flex'
+    const fontSize = isMobile ? '0.95rem' : '1rem'
 
     return (
         <React.Fragment>
@@ -40,7 +41,7 @@ export default function ImportDanSheetForm({setControlsExpanded, adminAction}) {
                     <LoadingDisplay/>
                     :
                     <React.Fragment>
-                        <div style={{padding: 20}}>
+                        <div style={{padding: 20, fontSize}}>
                             <strong>For Black Belt pickers only.</strong><br/>
                             Black Belt pickers currently use another scorecard system known as the Dan Sheet.
                             This import allows them to bring their picking history over to the site.

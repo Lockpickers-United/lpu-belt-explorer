@@ -16,7 +16,7 @@ import utc from 'dayjs/plugin/utc'
 dayjs.extend(utc)
 
 function SystemMessageRow({message, expanded, onExpand, setControlsExpanded}) {
-    const {id, description, pageIds} = message
+    const {id, dbId, description, pageIds} = message
     const {updateSystemMessageStatus} = useContext(DBContext)
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -51,8 +51,8 @@ function SystemMessageRow({message, expanded, onExpand, setControlsExpanded}) {
         e.stopPropagation()
         const dt = dayjs().utc().format()
         setTemp({...temp, status: e.target.value, modified: dt})
-        updateSystemMessageStatus(id, e.target.value, dt)
-    }, [id, temp, updateSystemMessageStatus])
+        updateSystemMessageStatus(dbId, e.target.value, dt)
+    }, [dbId, temp, updateSystemMessageStatus])
 
     const style = {width: 760, marginLeft: 'auto', marginRight: 'auto'}
     const rowOpactity = temp.status === 'archived'

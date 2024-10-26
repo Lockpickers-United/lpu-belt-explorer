@@ -14,7 +14,7 @@ function ScorecardNoTrack({profile}) {
     const {userId} = useParams()
 
     const {visibleEntries = []} = useContext(ScorecardDataContext)
-const filteredEntries = visibleEntries.filter(e => e.points > 0)
+    const filteredEntries = visibleEntries.filter(e => e.points > 0 || e.awardType)
 
     const tableColumns = [
         {id: 'lock', name: 'lock', align: 'left'},
@@ -87,7 +87,7 @@ const filteredEntries = visibleEntries.filter(e => e.points > 0)
                                                    fontSize: '1rem',
                                                    lineHeight: '1.1rem',
                                                    padding: '8px',
-                                                   backgroundColor: '#ddd',
+                                                   backgroundColor: '#bbb',
                                                    color: '#000'
                                                }}
                                                component='th' scope='row'>
@@ -97,9 +97,9 @@ const filteredEntries = visibleEntries.filter(e => e.points > 0)
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {filteredEntries.map(ev =>
-                                <ScorecardNoTrackRow key={ev.id}
-                                                     evid={ev}
+                            {filteredEntries.map(act =>
+                                <ScorecardNoTrackRow key={act.id}
+                                                     activity={act}
                                 />
                             )}
 

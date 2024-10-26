@@ -6,7 +6,7 @@ const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
     const {adminRole} = useContext(DBContext)
-    const [beta, setBeta] = useLocalStorage('beta', true)
+    const [beta, setBeta] = useLocalStorage('beta2024', false)
     const [admin, setAdmin] = useLocalStorage('admin', adminRole && !!import.meta.env.DEV)
 
     useEffect(() => {

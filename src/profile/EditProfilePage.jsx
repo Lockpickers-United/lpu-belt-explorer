@@ -1,24 +1,30 @@
 import React, {useCallback, useContext, useState} from 'react'
 import {enqueueSnackbar} from 'notistack'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import CardHeader from '@mui/material/CardHeader'
 import TextField from '@mui/material/TextField'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import Button from '@mui/material/Button'
-import CardActions from '@mui/material/CardActions'
 import Menu from '@mui/material/Menu'
 import LoadingDisplay from '../misc/LoadingDisplay'
+import useWindowSize from '../util/useWindowSize.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 function EditProfilePage() {
-    const {lockCollection, updateProfileDisplayName, deleteAllUserData} = useContext(DBContext)
+    const {
+        lockCollection,
+        updateProfileDisplayName,
+        deleteAllUserData,
+        oauthState,
+        removeServiceAuth
+    } = useContext(DBContext)
+    const {beta} = useContext(AppContext)
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
     const [anchorEl, setAnchorEl] = useState(null)
     const [deletingData, setDeletingData] = useState(false)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
+    const {isMobile} = useWindowSize()
 
     const handleChange = useCallback(event => {
         const {value} = event.target
@@ -58,6 +64,31 @@ function EditProfilePage() {
         setAnchorEl(ev.currentTarget)
     }, [])
 
+
+    const removeService = useCallback(async (service) => {
+        await removeServiceAuth(service)
+        enqueueSnackbar(`${service} account removed.`)
+    }, [removeServiceAuth])
+
+    const handleDiscordAuth = useCallback(() => {
+        const {VITE_DISCORD_CLIENT_ID: clientId} = import.meta.env
+        const scope = encodeURIComponent('identify')
+        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/discord`)
+
+        const url = `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`
+        window.location.assign(url)
+    }, [])
+
+    const handleRedditAuth = useCallback(async () => {
+        const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
+        const newState = await oauthState(user.uid)
+        const scope = encodeURIComponent('identity flair privatemessages')
+        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/reddit`)
+
+        const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
+        window.location.assign(url)
+    }, [oauthState, user])
+
     const handleDeleteAllData = useCallback(async () => {
         setDeletingData(true)
         await deleteAllUserData(user.uid)
@@ -72,44 +103,42 @@ function EditProfilePage() {
         ? 'Display name must only include A-Z, 0-9, _ and -.'
         : ''
 
-    const cardTitleText = displayName.length > 0
-        ? 'Edit Profile'
-        : 'Create Profile'
     const introNameText = displayName.length > 0
         ? ` (${displayName}) `
         : ''
 
+    const flexStyle = !isMobile ? 'flex' : 'block'
+
     return (
-        <Card style={{
-            maxWidth: 380,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            marginTop: 16,
-            marginBottom: 46
+        <div style={{
+            maxWidth: 700, padding: 0, backgroundColor: '#222',
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
-            <CardHeader title={cardTitleText} action={null}/>
-            {deletingData ? 
+
+            {deletingData ?
                 <LoadingDisplay/>
-            : 
+                :
                 <React.Fragment>
-                    <CardContent>
+                    <div style={{display: flexStyle, padding: 16}}>
                         {lockCollection?.displayName ?
-                            <div style={{marginBottom: 10}}>
+                            <div style={{marginBottom: 10, marginRight: 20, maxWidth: 325}}>
+                                <span style={{fontSize: '1.2rem', fontWeight: 500}}>Display Name<br/></span>
                                 Your display name {introNameText} shows up on the leaderboard and
                                 your profile can be shared with others.
                                 <br/><br/>
                                 Your Google login information will never be displayed to other users.
                             </div>
-                        :
-                            <div style={{marginBottom: 10}}>
+                            :
+                            <div style={{marginBottom: 10, marginRight: 20, maxWidth: 325}}>
+                                <span style={{fontSize: '1.2rem', fontWeight: 500}}>Display Name<br/></span>
                                 Your display name will show up on the leaderboard and
                                 your profile can be shared with others.
                                 <br/><br/>
                                 Your Google login information will never be displayed to other users.
                             </div>
                         }
-                        <br/>
-                        <div style={{width: '100%'}}>
+
+                        <div style={{width: '100%', marginTop: 40}}>
                             <TextField
                                 error={error}
                                 variant='outlined'
@@ -123,46 +152,140 @@ function EditProfilePage() {
                                     maxLength: 32
                                 }}
                                 size='small'
-                                style={{width: 260}}
+                                style={{width: 220}}
 
                             />
-                                <Button variant='outlined'
-                                        color={error ? undefined : 'success'}
-                                        onClick={handleSave}
-                                        disabled={error || noSave}
-                                        style={{marginLeft: 16, marginRight:0, marginBottom: 10, height:40}}
-                                >
-                                    Save
-                                </Button>
-                        </div>
-                    </CardContent>
-                    <CardActions>
-                        <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
-                            {lockCollection?.displayName &&
+                            <Button variant='outlined'
+                                    color={error ? undefined : 'success'}
+                                    onClick={handleSave}
+                                    disabled={error || noSave}
+                                    style={{marginLeft: 16, marginRight: 0, marginBottom: 10, height: 40}}
+                            >
+                                Save
+                            </Button>
+
+                            <div style={{width: '100%', textAlign: 'left', margin: '10px 0px 28px 0px'}}>
+                                {lockCollection?.displayName &&
                                     <Button variant='outlined'
                                             color='info'
                                             onClick={handleClear}
                                             disabled={error}
-                                            style={{marginBottom: 10, color: '#4972ab', padding:'5px 19px'}}
+                                            style={{marginBottom: 10, color: '#4972ab', padding: '5px 10px'}}
                                     >
                                         Clear Display Name
                                     </Button>
-                            }
+                                }
                                 <Button variant='outlined'
                                         color='info'
                                         onClick={handleViewProfile}
-                                        style={{marginLeft: 15, marginBottom: 10,  color: '#4972ab', padding:'5px 19px'}}
+                                        style={{
+                                            marginLeft: 15,
+                                            marginBottom: 10,
+                                            padding: '5px 10px'
+                                        }}
                                 >
                                     View Profile
                                 </Button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {beta &&
+                    <div style={{display: flexStyle, padding: 16}}>
+
+                        <div style={{marginBottom: 10, marginRight: 20, maxWidth: 325}}>
+                            <span style={{fontSize: '1.2rem', fontWeight: 500}}>Linked Accounts<br/></span>
+                            Linked accounts are used to import your approved Belt and Dan Rankings.
+                            Rankings from Discord will update automatically as long as your account is linked.
+                            You will need to re-authorize with Reddit to update new approved belts.
                         </div>
 
-                    </CardActions>
+                        <div style={{width: '100%', marginTop: 40}}>
+                            {!lockCollection?.discordUsername ?
+                                <Button variant='outlined'
+                                        color='warning'
+                                        style={{
+                                            marginBottom: 16,
+                                            height: 40
+                                        }}
+                                        onClick={handleDiscordAuth}
+                                >LINK DISCORD ACCOUNT</Button>
+                                : <div style={{width: '100%', marginBottom:10}}>
+                                    <TextField
+                                        variant='outlined'
+                                        label='Discord Username'
+                                        value={lockCollection?.discordUsername || ''}
+                                        inputProps={{
+                                            maxLength: 32,
+                                            readOnly: true
+                                        }}
+                                        size='small'
+                                        style={{width: 200}}
+                                        color='warning'
+                                    />
+                                    <Button variant='outlined'
+                                            color='warning'
+                                            onClick={() => removeService('Discord')}
+                                            disabled={!lockCollection?.discordUsername}
+                                            style={{
+                                                marginLeft: 16,
+                                                marginRight: 0,
+                                                marginBottom: 10,
+                                                height: 40
+                                            }}
+                                    >
+                                        Remove
+                                    </Button>
+                                </div>
+                            }
+
+                            {!lockCollection?.redditUsername ?
+                                <Button variant='outlined'
+                                        color='warning'
+                                        style={{
+                                            marginBottom: 16,
+                                            height: 40
+                                        }}
+                                        onClick={handleRedditAuth}
+                                >LINK REDDIT ACCOUNT</Button>
+                                : <div style={{width: '100%', padding: '8px 0px'}}>
+                                    <TextField
+                                        variant='outlined'
+                                        label='Reddit Username'
+                                        value={lockCollection?.redditUsername || ''}
+                                        inputProps={{
+                                            maxLength: 32,
+                                            readOnly: true
+                                        }}
+                                        size='small'
+                                        style={{width: 200}}
+                                        color='warning'
+                                        readOnly
+                                    />
+                                    <Button variant='outlined'
+                                            color='warning'
+                                            onClick={() => removeService('Reddit')}
+                                            disabled={!lockCollection?.redditUsername}
+                                            style={{
+                                                marginLeft: 16,
+                                                marginRight: 0,
+                                                marginBottom: 10,
+                                                height: 40
+                                            }}
+                                    >
+                                        Remove
+                                    </Button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    }
+
                     <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>
                         <Button variant='outlined'
-                                color='info'
+                                color='error'
                                 onClick={handleDeleteConfirm}
-                                style={{marginBottom: 10,  color: '#4972ab', padding:'5px 110px'}}
+                                style={{marginBottom: 10, color: '#d31f1f', padding: '5px 110px'}}
                         >
                             Delete All Data
                         </Button>
@@ -183,9 +306,10 @@ function EditProfilePage() {
                             </div>
                         </Menu>
                     </div>
+                    <div style={{height: 20}}/>
                 </React.Fragment>
             }
-        </Card>
+        </div>
     )
 }
 

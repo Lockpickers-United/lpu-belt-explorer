@@ -1,5 +1,6 @@
 import allEntries from '../data/data.json'
 import allProjects from '../data/projects.json'
+import allAwards from '../data/awards.json'
 import nextUpgrades from '../data/upgrades.json'
 import {beltSort} from '../data/belts'
 
@@ -32,6 +33,49 @@ export function getProjectEntryFromId(id) {
 export function isProject(id) {
     return Boolean(allProjectsById[id])
 }
+
+
+export const allAwardsById = allAwards
+    .reduce((group, term) => {
+        const {id} = term
+        group[id] = term
+        return group
+    }, {})
+
+export function getAwardEntryFromId(id) {
+    return allAwardsById[id]
+}
+
+export const blackBeltAwardId = 'da7759a9'
+
+export function lookupAwardByBelt(belt, danLevel, fullname) {
+    if (danLevel) {
+        return allAwards.find(a => a.belt === 'Dan ' + danLevel)
+    } else if (belt) {
+        return allAwards.find(a => a.belt.toLowerCase() === belt.toLowerCase())
+    } else if (fullname) {
+        return allAwards.find(a => a.belt.toLowerCase() === fullname.toLowerCase())
+    } else {
+        return null
+    }
+}
+
+export function awardGreaterThan(awardA, awardB) {
+    if (!awardA) {
+        return false
+    } else if (!awardB || awardA.awardType === 'dan' && awardB.awardType === 'belt') {
+        return true
+    } else if (awardA.awardType === awardB.awardType) {
+        return awardA.rank > awardB.rank
+    } else {
+        return false
+    }
+}
+
+export function isAward(id) {
+    return Boolean(allAwardsById[id])
+}
+
 
 export const possibleUpgrades = Object.keys(nextUpgrades)
     .reduce((group, term) => {

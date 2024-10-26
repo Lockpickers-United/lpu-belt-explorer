@@ -7,7 +7,7 @@ const SystemMessageContext = React.createContext({})
 
 export function SystemMessageProvider({children}) {
     const {authLoaded, user, isLoggedIn} = useContext(AuthContext)
-    const {dbLoaded, adminRole, lockCollection, addToLockCollection, systemMessages, } = useContext(DBContext)
+    const {dbLoaded, adminRole, lockCollection, addToLockCollection, systemMessages} = useContext(DBContext)
     const profile = lockCollection
     const [dismissedMessages, setDismissedMessages] = useLocalStorage('dismissedMessages', [])
 
@@ -74,11 +74,14 @@ export function SystemMessageProvider({children}) {
             : undefined
     }, [authLoaded, filteredMessages, dbLoaded])
 
+    const getMessageById = useCallback((id) => {
+        return systemMessages.find(m => m.id === id)
+    }, [systemMessages])
 
     const value = useMemo(() => ({
-        getMessage, dismissMessage
+        getMessage, getMessageById, dismissMessage
     }), [
-        getMessage, dismissMessage
+        getMessage, getMessageById, dismissMessage
     ])
 
     return (

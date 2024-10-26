@@ -18,9 +18,9 @@ import ScoringContext from '../context/ScoringContext.jsx'
 function RecordingControls({lockId}) {
     const {isLoggedIn} = useContext(AuthContext)
     const [editRecId, setEditRecId] = useState(null)
-    const {scoredEvidence} = useContext(ScoringContext)
+    const {scoredActivity} = useContext(ScoringContext)
 
-    const recordings = scoredEvidence
+    const recordings = scoredActivity
         .filter(evid => evid.matchId === lockId)
         .sort((a, b) => {
             return b.points - a.points
@@ -63,7 +63,7 @@ function RecordingControls({lockId}) {
                                 <IconButton edge='start' onClick={() => handleOverlayOpen(rec.id)}>
                                     <EditIcon style={{width: 22, height: 22}}/>
                                 </IconButton>
-                                <ScorecardEvidenceButton url={rec.link}/>
+                                <ScorecardEvidenceButton activity={rec}/>
                             </Stack>
                             <Backdrop
                                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
@@ -77,7 +77,7 @@ function RecordingControls({lockId}) {
                                 }}>
                                     <CardHeader title={'Documentation'} action={<HighlightOffIcon sx={{cursor:'pointer'}}/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
                                     <CardContent>
-                                        <EvidenceForm evid={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}/>
+                                        <EvidenceForm activity={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}/>
                                     </CardContent>
                                 </Card>
                             </Backdrop>
@@ -120,7 +120,7 @@ function RecordingControls({lockId}) {
                                             style={{paddingBottom: 0}}
                                             onClick={handleOverlayClose}/>
                                 <CardContent>
-                                    <EvidenceForm evid={null} lockId={lockId} handleUpdate={handleOverlayClose} source={'collectionButton'} owner={true}/>
+                                    <EvidenceForm activity={null} lockId={lockId} handleUpdate={handleOverlayClose} source={'collectionButton'} owner={true}/>
                                 </CardContent>
                             </Card>
                         </Backdrop>

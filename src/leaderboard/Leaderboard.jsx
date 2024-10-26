@@ -121,6 +121,7 @@ function Leaderboard({tab}) {
     const updateTime = dayjs(data?.metadata['updatedDateTime']).format('MM/DD/YY HH:mm')
 
     const handleClick = useCallback(value => {
+        setCompare(false)
         if (value && value !== tab) {
             navigate('/leaderboard/' + value)
         }

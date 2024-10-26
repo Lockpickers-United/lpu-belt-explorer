@@ -9,10 +9,11 @@ import entryName from '../entries/entryName'
 import Link from '@mui/material/Link'
 import FilterContext from '../context/FilterContext.jsx'
 import Drawer from '@mui/material/Drawer'
+import {isAward} from '../entries/entryutils'
 
 function ScoringExceptions() {
     const {setFilters} = useContext(FilterContext)
-    const {cardEvidence, getEntryFromId} = useContext(ScorecardDataContext)
+    const {cardActivity, getEntryFromId} = useContext(ScorecardDataContext)
 
     const [overlayIsOpen, setOverlayIsOpen] = useState(false)
     const handleOverlayOpen = useCallback(() => {
@@ -28,21 +29,21 @@ function ScoringExceptions() {
         setOverlayIsOpen(false)
     }, [setFilters])
 
-    const annotatedEvidence = cardEvidence.map(evid => {
-        const supersedingEntryId = evid.exceptionId
-        const supersedingEntry = supersedingEntryId ? cardEvidence.find(e => e.id === supersedingEntryId) : {}
+    const annotatedActivity = cardActivity.map(act => {
+        const supersedingEntryId = act.exceptionId
+        const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
         const supersedingLock = supersedingEntry ? getEntryFromId(supersedingEntry.matchId) : {}
         const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
-        const matchLock = evid.matchId ? getEntryFromId(evid.matchId) : null
+        const matchLock = act.matchId ? getEntryFromId(act.matchId) : null
         const matchLockName = matchLock ? entryName(matchLock, 'short') : ''
-        return {...evid, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName, matchLockName:matchLockName}
+        return {...act, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName, matchLockName:matchLockName}
     })
 
-    const unmatchedEvid = annotatedEvidence.filter(ev => 'nomatch' === ev.exceptionType)
-    const badlinkEvid = annotatedEvidence.filter(ev => 'badlink' === ev.exceptionType)
-    const samelinedEvid = annotatedEvidence.filter(ev => 'duplicate' === ev.exceptionType)
-    const supersededEvid = annotatedEvidence.filter(ev => 'upgraded' === ev.exceptionType)
-    const totalNum = unmatchedEvid.length + badlinkEvid.length + samelinedEvid.length + supersededEvid.length
+    const unmatchedAct = annotatedActivity.filter(act => 'nomatch' === act.exceptionType)
+    const badlinkAct = annotatedActivity.filter(act => 'badlink' === act.exceptionType && !isAward(act.matchId))
+    const samelinedAct = annotatedActivity.filter(act => 'duplicate' === act.exceptionType)
+    const supersededAct = annotatedActivity.filter(act => 'upgraded' === act.exceptionType)
+    const totalNum = unmatchedAct.length + badlinkAct.length + samelinedAct.length + supersededAct.length
 
     if (totalNum > 0) {
         return (
@@ -74,7 +75,7 @@ function ScoringExceptions() {
                             or an entry may have been replaced by an upgrade of the same lock.
                             Locks ranked below Blue Belt are never eligible for Dan Points.
                         </div>
-                        {unmatchedEvid.length > 0 &&
+                        {unmatchedAct.length > 0 &&
                             <React.Fragment>
                                 <Divider style={{marginBottom: 20}}/>
                                 <Typography
@@ -84,18 +85,18 @@ function ScoringExceptions() {
                                     Could not be matched to a lock or project
                                 </Typography>
                                 <ul style={{padding: 0, marginLeft: 20}}>
-                                    {unmatchedEvid.map((ev, index) =>
+                                    {unmatchedAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
                                             <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                                navigateToEntry(ev.id)
-                                            }}>{ev.evidenceNotes}</Link>
+                                                navigateToEntry(act.id)
+                                            }}>{act.evidenceNotes}</Link>
                                         </li>
                                     )}
                                 </ul>
                             </React.Fragment>
                         }
 
-                        {badlinkEvid.length > 0 &&
+                        {badlinkAct.length > 0 &&
                             <React.Fragment>
                                 <Typography
                                     style={{
@@ -104,18 +105,18 @@ function ScoringExceptions() {
                                     Missing or invalid URLs
                                 </Typography>
                                 <ul style={{padding: 0, marginLeft: 20}}>
-                                    {badlinkEvid.map((ev, index) =>
+                                    {badlinkAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
                                             <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                                navigateToEntry(ev.id)
-                                            }}>{ev.matchLockName}</Link>
+                                                navigateToEntry(act.id)
+                                            }}>{act.matchLockName}</Link>
                                         </li>
                                     )}
                                 </ul>
                             </React.Fragment>
                         }
 
-                        {samelinedEvid.length > 0 &&
+                        {samelinedAct.length > 0 &&
                             <React.Fragment>
                                 <Typography
                                     style={{
@@ -124,19 +125,19 @@ function ScoringExceptions() {
                                     Duplicated by another entry
                                 </Typography>
                                 <ul style={{padding: 0, marginLeft: 20}}>
-                                    {samelinedEvid.map((ev, index) =>
+                                    {samelinedAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {ev.evidenceNotes} is a duplicate
+                                            {act.evidenceNotes} is a duplicate
                                             of <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                            navigateToEntry(ev.supersedingEntryId)
-                                        }}>{ev.supersedingLockName}</Link>
+                                            navigateToEntry(act.supersedingEntryId)
+                                        }}>{act.supersedingLockName}</Link>
                                         </li>
                                     )}
                                 </ul>
                             </React.Fragment>
                         }
 
-                        {supersededEvid.length > 0 &&
+                        {supersededAct.length > 0 &&
                             <React.Fragment>
                                 <Typography
                                     style={{
@@ -145,12 +146,12 @@ function ScoringExceptions() {
                                     Upgraded by another lock
                                 </Typography>
                                 <ul style={{padding: 0, marginLeft: 20}}>
-                                    {supersededEvid.map((ev, index) =>
+                                    {supersededAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {ev.evidenceNotes} is upgraded by <Link
+                                            {act.evidenceNotes} is upgraded by <Link
                                             style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                            navigateToEntry(ev.supersedingEntryId)
-                                        }}>{ev.supersedingLockName}</Link>
+                                            navigateToEntry(act.supersedingEntryId)
+                                        }}>{act.supersedingLockName}</Link>
                                         </li>
                                     )}
                                 </ul>

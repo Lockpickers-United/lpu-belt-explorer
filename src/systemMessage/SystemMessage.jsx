@@ -32,22 +32,18 @@ function SystemMessage({override, overridePageId, placeholder}) {
     }
 
     const handleClick = useCallback(() => {
-        if (!override) {
-            document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/click.png?${query}`
-            if (message['linkDestination'].slice(0, 4) === 'http') {
-                openInNewTab(message['linkDestination'])
-            } else {
-                navigate(message['linkDestination'])
-            }
+        document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/click.png?${query}`
+        if (message['linkDestination'].slice(0, 4) === 'http') {
+            openInNewTab(message['linkDestination'])
+        } else {
+            navigate(message['linkDestination'])
         }
-    }, [message, navigate, override, query])
+    }, [message, navigate, query])
 
     const handleDismiss = useCallback(async () => {
-        if (!override) {
-            document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/dismiss.png?${query}`
-            await dismissMessage(message)
-        }
-    }, [dismissMessage, message, override, query])
+        document.getElementById('messageImage').src = `https://img.lpubelts.com/i/message/dismiss.png?${query}`
+        await dismissMessage(message)
+    }, [dismissMessage, message, query])
 
     const messageHeader = message?.messageHeadline
     const messageText = message?.messageText
@@ -109,35 +105,38 @@ function SystemMessage({override, overridePageId, placeholder}) {
                             <div style={{
                                 height: '100%',
                                 width: '100%',
-                                padding: '10px 20px 5px 50px',
+                                padding: '10px 20px 12px 50px',
                                 color: textColor
                             }}>
                                 <b>{messageHeader}</b> {messageText}
+                                <img id='messageImage' src={url} height='1' width='1' alt='message'/>
                             </div>
-                            <div style={{width: '100%', textAlign: 'right', padding: '3px 20px 8px 0px'}}>
-                                {message.linkText &&
-                                    <Button variant='text' size='small'
-                                            style={{
-                                                lineHeight: '.9rem',
-                                                textAlign: 'left',
-                                                marginRight: 10,
-                                                color: messageColor
-                                            }}
-                                            onClick={handleClick}
-                                    >{message.linkText}</Button>
-                                }
-                                {!message.noDismiss &&
-                                    <Button variant='text' size='small'
-                                            style={{
-                                                lineHeight: '.9rem',
-                                                textAlign: 'left',
-                                                color: '#999'
-                                            }}
-                                            onClick={handleDismiss}
-                                    >Dismiss</Button>
-                                }
-                                <img id='messageImage' src={url} height='22' width='22' alt='message'/>
-                            </div>
+
+                            {(message.linkText || !message.noDismiss) &&
+                                <div style={{width: '100%', textAlign: 'right', padding: '3px 20px 8px 0px'}}>
+                                    {message.linkText &&
+                                        <Button variant='text' size='small'
+                                                style={{
+                                                    lineHeight: '.9rem',
+                                                    textAlign: 'left',
+                                                    marginRight: 10,
+                                                    color: messageColor
+                                                }}
+                                                onClick={handleClick}
+                                        >{message.linkText}</Button>
+                                    }
+                                    {!message.noDismiss &&
+                                        <Button variant='text' size='small'
+                                                style={{
+                                                    lineHeight: '.9rem',
+                                                    textAlign: 'left',
+                                                    color: '#999'
+                                                }}
+                                                onClick={handleDismiss}
+                                        >Dismiss</Button>
+                                    }
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

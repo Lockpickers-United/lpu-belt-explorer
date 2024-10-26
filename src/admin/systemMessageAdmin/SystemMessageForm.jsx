@@ -240,6 +240,7 @@ export default function SystemMessageForm({message, temp, setTemp, updated, setU
                 textAlign: 'right',
                 padding: '0px 12px 8px 0px'
             }}>
+                <span style={{fontSize:'0.9rem', marginRight:100}}>{temp?.id}</span>
                 <Button style={{marginRight: 10, color: cancelColor}}
                         onClick={handleCancel}
                         disabled={!updated}

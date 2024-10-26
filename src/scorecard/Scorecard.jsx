@@ -18,35 +18,33 @@ import ImportDanSheetForm from './ImportDanSheetForm.jsx'
 import EvidenceForm from './EvidenceForm.jsx'
 import Menu from '@mui/material/Menu'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
-import BlackBeltAwardRow from './BlackBeltAwardRow'
 import NoScorecardData from './NoScorecardData.jsx'
 import IntroCopy from '../misc/IntroCopy.jsx'
 import PopularEntries from './mostPopular/PopularEntries.jsx'
+import CachedIcon from '@mui/icons-material/Cached'
+import IconButton from '@mui/material/IconButton'
+import ImportButton from './ImportButton.jsx'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
     const navigate = useNavigate()
 
-    const {visibleEntries = [], popularEntries = [], cardEvidence} = useContext(ScorecardDataContext)
+    const {visibleEntries = [], popularEntries = [], cardActivity} = useContext(ScorecardDataContext)
+
+
 
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters
-    const {
-        createEvidenceForEntries,
-        removeEvidence,
-        removeProfileBlackBeltAwarded,
-        updateUserStatistics
-    } = useContext(DBContext)
+    const {createEvidenceForEntries, removePickerActivity, refreshPickerActivity} = useContext(DBContext)
     const {admin} = useContext(AppContext)
-    const danSheetImported = profile?.blackBeltAwardedAt > 0
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
     const [loading, setLoading] = useState(false)
-    const [mostPopular, setMostPopular] = useState(locks==='mostPopular' || popular)
+    const [mostPopular, setMostPopular] = useState(locks === 'mostPopular' || popular)
 
     if (expanded && expanded !== entryExpanded) {
         setEntryExpanded(expanded)
@@ -54,12 +52,12 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
     const recordedIdsToMerge = useMemo(() => {
         if (profile && profile.recorded) {
-            const evIds = cardEvidence.map(ev => ev.matchId)
+            const evIds = cardActivity.map(ev => ev.matchId)
             return profile.recorded.filter(id => !evIds.includes(id))
         } else {
             return []
         }
-    }, [profile, cardEvidence])
+    }, [profile, cardActivity])
 
     const handleEntryExpand = useCallback((expand) => {
         if (filters['id']) {
@@ -90,27 +88,20 @@ function Scorecard({owner, profile, adminAction, popular}) {
     }, [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const handleUpdateUserStats = useCallback(async () => {
-        setLoading(true)
-        await updateUserStatistics(userId)
-        setLoading(false)
-    }, [updateUserStatistics, userId])
-
     const handleDeleteAll = useCallback(async () => {
         setLoading(true)
-        await removeEvidence(cardEvidence)
-        await removeProfileBlackBeltAwarded(userId)
+        await removePickerActivity(cardActivity)
         handleClose()
         setLoading(false)
         adminAction()
-    }, [cardEvidence, removeEvidence, handleClose, adminAction, removeProfileBlackBeltAwarded, userId])
+    }, [cardActivity, removePickerActivity, handleClose, adminAction])
 
     const buttonsMargin = 15
     const headerDivStyle = isMobile ? 'block' : 'flex'
     const buttonMarginTop = isMobile ? 6 : 0
 
     const handleLocksToggle = useCallback(() => {
-        const newFilters = mostPopular ? {name: name} : {locks:'mostPopular', name:name}
+        const newFilters = mostPopular ? {name: name} : {locks: 'mostPopular', name: name}
         setFilters(newFilters)
         setMostPopular(!mostPopular)
     }, [mostPopular, name, setFilters])
@@ -119,9 +110,16 @@ function Scorecard({owner, profile, adminAction, popular}) {
         navigate(link)
     }, [navigate])
 
+    const handleRefresh = useCallback(async () => {
+        setLoading(true)
+        await refreshPickerActivity(userId)
+        setLoading(false)
+        adminAction()
+        window.location.reload()
+    }, [adminAction, refreshPickerActivity, userId])
 
-    const myLocksButton = mostPopular ? 'text' : 'contained'
-    const mostPopularButton = !mostPopular ? 'text' : 'contained'
+    const myLocksButton = mostPopular ? 'text' : 'outlined'
+    const mostPopularButton = !mostPopular ? 'text' : 'outlined'
 
     const ownerName = profile.displayName && !profile['privacyAnonymous']
         ? profile.displayName.toLowerCase().endsWith('s')
@@ -149,7 +147,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 <React.Fragment>
                     {!isMobile
                         ? <div style={{display: headerDivStyle, padding: '10px 8px 0px 16px'}}>
-                            <div style={{marginRight: 0, width: 380}}>
+                            <div style={{marginRight: 10, width: 370}}>
                                 <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                             </div>
                             {profile.danLevel > 0 &&
@@ -159,7 +157,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                             }
                         </div>
                         : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
-                            {profile.danLevel > 0 &&
+                            {profile?.blackBeltAwardedAt > 0 &&
                                 <ScorecardDanStats profile={profile} owner={owner}/>
                             }
                             <div style={{marginRight: 0, width: '95%'}}>
@@ -170,146 +168,138 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </React.Fragment>
             }
 
-                <Accordion expanded={controlsExpanded} disableGutters={true}>
-                    <AccordionSummary style={{
-                        paddingLeft: buttonsMargin,
-                        paddingRight: buttonsMargin,
-                        placeItems: 'center',
-                        width: '100%'
-                    }}>
-                        <div style={{width: '100%', placeItems: 'center', textAlign: 'center'}}>
+            <Accordion expanded={controlsExpanded} disableGutters={true}>
+                <AccordionSummary style={{
+                    paddingLeft: buttonsMargin,
+                    paddingRight: buttonsMargin,
+                    placeItems: 'center',
+                    width: '100%'
+                }}>
+                    <div style={{width: '100%', placeItems: 'center', textAlign: 'center'}}>
 
-                            <div style={{
-                                display: headerDivStyle,
-                                width: '100%',
-                                placeItems: 'center',
-                                textAlign: 'center'
-                            }}>
-                                {(owner || admin) &&
+                        <div style={{
+                            display: headerDivStyle,
+                            width: '100%',
+                            placeItems: 'center',
+                            textAlign: 'center'
+                        }}>
+                            {(owner || admin) &&
                                 <div style={{width: '100%', textAlign: 'left'}}>
-                                    {!danSheetImported &&
-                                        <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem', marginRight: 6}}
-                                                onClick={() => handleOpenControls('import')}>
-                                            IMPORT&nbsp;DAN&nbsp;SHEET
-                                        </Button>
-                                    }
+
+                                    <ImportButton profile={profile}/>
+
                                     {!mostPopular &&
                                         <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem'}}
+                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
                                                 onClick={() => handleOpenControls('project')}>
-                                            {controlsExpanded && controlForm === 'project' ? 'CANCEL ADD PROJECT' : 'ADD PROJECT'}
+                                            ADD PROJECT
                                         </Button>
                                     }
                                     {profile && profile.blackBeltAwardedAt &&
                                         <Button variant='outlined' color='secondary' size='small'
                                                 style={{lineHeight: '1.2rem', marginLeft: 6}}
                                                 onClick={() => handleClick('/scorecard/info/FAQ')}>
-                                            Black Belt FAQ
+                                            BB FAQ
                                         </Button>
                                     }
                                 </div>
-                                }
-                                <div style={{
-                                    width: '100%',
-                                    textAlign: 'right',
-                                    display: 'flex',
-                                    marginTop: buttonMarginTop
-                                }}>
-                                    <div style={{flexGrow: 1}}/>
-                                    <Button variant={myLocksButton} color='secondary' size='small'
-                                            style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding:'4px 10px'}}
-                                            onClick={() => handleLocksToggle()}>
-                                        <nobr>{buttonText}</nobr>
+                            }
+                            <div style={{
+                                width: '100%',
+                                textAlign: 'right',
+                                display: 'flex',
+                                marginTop: buttonMarginTop
+                            }}>
+                                <div style={{flexGrow: 1}}/>
+                                <Button variant={myLocksButton} color='info' size='small'
+                                        style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding: '4px 10px'}}
+                                        onClick={() => handleLocksToggle()}>
+                                    <nobr>{buttonText}</nobr>
+                                </Button>
+                                <Button variant={mostPopularButton} color='info' size='small'
+                                        style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
+                                        onClick={() => handleLocksToggle()}>
+                                    MOST&nbsp;POPULAR
+                                </Button>
+                            </div>
+                        </div>
+
+
+                        {loading && <LoadingDisplay/>}
+
+                        {admin && !loading &&
+                            <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
+                                <div style={{display: 'flex'}}>
+                                    <div style={{width: '10%', textAlign: 'center'}}>
+                                        ADMIN
+                                    </div>
+                                    <Button color='secondary' size='small'
+                                            style={{lineHeight: '1.2rem', marginLeft: 6}}
+                                            onClick={() => handleOpenControls('award')}>
+                                        ADD BELT
                                     </Button>
-                                    <Button variant={mostPopularButton} color='info' size='small'
-                                            style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
-                                            onClick={() => handleLocksToggle()}>
-                                        MOST&nbsp;POPULAR
+
+                                    <Button color='secondary' size='small'
+                                            style={{lineHeight: '1rem'}}
+                                            onClick={() => handleOpenControls('import')}>
+                                        IMPORT DAN SHEET
                                     </Button>
+                                    <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                            onClick={handleMergeRecorded}>MERGE
+                                        RECORDED&nbsp;({recordedIdsToMerge.length})
+                                    </Button>
+                                    <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
+                                            onClick={handleOpen}>DELETE SCORECARD</Button>
+                                    <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                                        <div style={{padding: 20, textAlign: 'center'}}>
+                                            You cannot undo delete.<br/>
+                                            Are you sure?
+                                        </div>
+                                        <div style={{textAlign: 'center'}}>
+                                            <Button style={{marginBottom: 10, color: '#000'}}
+                                                    variant='contained'
+                                                    onClick={handleDeleteAll}
+                                                    edge='start'
+                                                    color='error'
+                                            >
+                                                Delete
+                                            </Button>
+                                        </div>
+                                    </Menu>
+                                    <IconButton color='secondary' onClick={handleRefresh}>
+                                        <CachedIcon/>
+                                    </IconButton>
                                 </div>
                             </div>
-
-
-                            {loading && <LoadingDisplay/>}
-
-                            {admin && !loading &&
-                                <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
-                                    <div style={{display: 'flex'}}>
-                                        <div style={{width: '10%', textAlign: 'center'}}>
-                                            admin
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small'
-                                                    style={{lineHeight: '1rem'}}
-                                                    onClick={() => handleOpenControls('import')}>
-                                                IMPORT DAN SHEET
-                                            </Button>
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                                    onClick={handleUpdateUserStats}>
-                                                UPDATE STATS
-                                            </Button>
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                                    onClick={handleMergeRecorded}>MERGE
-                                                RECORDED&nbsp;({recordedIdsToMerge.length})
-                                            </Button>
-                                        </div>
-                                        <div style={{width: '20%', textAlign: 'center'}}>
-                                            <Button color='secondary' size='small' style={{lineHeight: '1rem'}}
-                                                    onClick={handleOpen}>DELETE SCORECARD</Button>
-                                            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                                                <div style={{padding: 20, textAlign: 'center'}}>
-                                                    You cannot undo delete.<br/>
-                                                    Are you sure?
-                                                </div>
-                                                <div style={{textAlign: 'center'}}>
-                                                    <Button style={{marginBottom: 10, color: '#000'}}
-                                                            variant='contained'
-                                                            onClick={handleDeleteAll}
-                                                            edge='start'
-                                                            color='error'
-                                                    >
-                                                        Delete
-                                                    </Button>
-                                                </div>
-                                            </Menu>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-
-                        </div>
-                    </AccordionSummary>
-
-                    <AccordionDetails style={{backgroundColor: '#333'}}>
-                        {controlForm === 'import' &&
-                            <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
                         }
-                        {controlForm === 'project' &&
-                            <EvidenceForm evid={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
-                        }
-                    </AccordionDetails>
-                </Accordion>
+
+                    </div>
+                </AccordionSummary>
+
+                <AccordionDetails style={{backgroundColor: '#333'}}>
+                    {controlForm === 'import' &&
+                        <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
+                    }
+                    {controlForm === 'project' &&
+                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
+                    }
+                    {controlForm === 'award' &&
+                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addAward={true} owner={owner}/>
+                    }
+                </AccordionDetails>
+            </Accordion>
 
             {!mostPopular &&
                 <React.Fragment>
                     {visibleEntries.length === 0 &&
                         <NoScorecardData/>
                     }
-
-                    {profile && profile.blackBeltAwardedAt &&
-                        <BlackBeltAwardRow owner={owner} date={profile.blackBeltAwardedAt.toDate().toJSON()}/>
-                    }
                     <div>
-                        {visibleEntries.map(ev =>
-                            <ScorecardRow key={ev.id}
+                        {visibleEntries.map(act =>
+                            <ScorecardRow key={act.id}
                                           owner={owner}
-                                          evid={ev}
-                                          expanded={ev.id === entryExpanded}
+                                          activity={act}
+                                          expanded={act.id === entryExpanded}
                                           onExpand={handleEntryExpand}
                                           merged={profile.blackBeltAwardedAt > 0}
                             />
@@ -318,7 +308,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </React.Fragment>
             }
             {mostPopular &&
-                <PopularEntries owner={owner} profile={profile} adminAction={adminAction} popularEntries={popularEntries}/>
+                <PopularEntries owner={owner} profile={profile} adminAction={adminAction}
+                                popularEntries={popularEntries}/>
             }
         </div>
     )

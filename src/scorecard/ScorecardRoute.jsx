@@ -1,37 +1,38 @@
 import React, {useContext, useCallback, useState} from 'react'
-import {useParams} from 'react-router-dom'
-import dayjs from 'dayjs'
-import useData from '../util/useData.jsx'
-import Nav from '../nav/Nav.jsx'
-import Footer from '../nav/Footer.jsx'
-import Tracker from '../app/Tracker.jsx'
-import DBContext from '../app/DBContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
-import Scorecard from './Scorecard.jsx'
-import LoadingDisplay from '../util/LoadingDisplay.jsx'
-import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
-import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
-import {FilterProvider} from '../context/FilterContext.jsx'
-import ScoringContext from '../context/ScoringContext.jsx'
-import calculateScoreForUser from '../scorecard/scoring'
-import {ScorecardListProvider} from './ScorecardListContext.jsx'
-import {scorecardFilterFields} from '../data/filterFields'
-import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
-import SearchBox from '../nav/SearchBox.jsx'
-import SortButton from '../filters/SortButton.jsx'
+import {collectionsFullBB} from '../data/dataUrls'
+import {FilterProvider} from '../context/FilterContext.jsx'
+import {LocalizationProvider} from '@mui/x-date-pickers'
+import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
+import {scorecardFilterFields} from '../data/filterFields'
+import {ScorecardListProvider} from './ScorecardListContext.jsx'
 import {scorecardSortFields} from '../data/sortFields'
+import {useParams} from 'react-router-dom'
+import AuthContext from '../app/AuthContext.jsx'
+import calculateScoreForUser from '../scorecard/scoring'
+import dayjs from 'dayjs'
+import DBContext from '../app/DBContext.jsx'
 import FilterButton from '../filters/FilterButton.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
+import Footer from '../nav/Footer.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import Nav from '../nav/Nav.jsx'
+import Scorecard from './Scorecard.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
 import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
-import {collectionsFullBB} from '../data/dataUrls'
+// HEAD
+import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
+import ScoringContext from '../context/ScoringContext.jsx'
+import SearchBox from '../nav/SearchBox.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import Tracker from '../app/Tracker.jsx'
+import useData from '../util/useData.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, getEvidence} = useContext(DBContext)
-    const {scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
+    const {getProfile, getPickerActivity} = useContext(DBContext)
+    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
     const [triggerState, setTriggerState] = useState(false)
@@ -56,22 +57,21 @@ function ScorecardRoute({mostPopular}) {
                     : 'Anonymous'
                 document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
             }
-
             if (user?.uid !== userId) {
-                const evidence = await getEvidence(userId)
-                return {profile, ...calculateScoreForUser(evidence)}
+                const activity = await getPickerActivity(userId)
+                return {profile, ...calculateScoreForUser(activity)}
             } else {
-                return {profile, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
+                return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
             }
         } catch (ex) {
-            console.error('Error loading profile and evidence.', ex)
+            console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [triggerState, user, userId, getProfile, getEvidence, scoredEvidence, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+    }, [triggerState, getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
-    const cardEvidence = data ? data.scoredEvidence : []
+    const cardActivity = data ? data.scoredActivity : []
     const cardBBCount = data ? data.bbCount : 0
     const cardDanPoints = data ? data.danPoints : 0
     const cardEligibleDan = data ? data.eligibleDan : 0
@@ -107,7 +107,7 @@ function ScorecardRoute({mostPopular}) {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-                <ScorecardDataProvider cardEvidence={cardEvidence} cardBBCount={cardBBCount}
+                <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                        cardDanPoints={cardDanPoints}
                                        cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
                                        cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
