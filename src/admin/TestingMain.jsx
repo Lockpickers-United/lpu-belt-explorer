@@ -29,7 +29,7 @@ function TestingMain() {
         ? headerStyle
         : firstHeaderStyle
 
-    const stats = ['visitors', 'visits', 'beacons', 'logEntries']
+    const stats = ['visitors', 'visits', 'beacons']
     const columns = [
         {'name': 'Metric', 'align': 'left', 'id': 'metric'},
         {'name': 'GD ' + dailydataDH.date, 'align': 'left', 'id': 'col1'},
@@ -59,7 +59,7 @@ function TestingMain() {
 
 
     // SELECT
-    const metrics =['requestsByServerHour', 'pageViews', 'lockViewsByIP', 'lockViewsById', 'browsers', 'platforms', 'states', 'countries']
+    const metrics =['requestsByServerHour', 'pageViews', 'lockViewsByIP', 'lockViewsById', 'browsers', 'platforms', 'states', 'lockViewsByCountry']
     const [metric, setMetric] = useState('requestsByServerHour')
 
     const rows2 = [{'metric': '', col1: '', col2: ''}]
