@@ -12,6 +12,7 @@ import CollectionSavesByBeltBar from './collectionsReport/CollectionSavesByBeltB
 import CollectionsLast28Table from './collectionsReport/CollectionsLast28Table'
 import TopLocks from './collectionsReport/TopLocks'
 import {collectionsFull} from '../data/dataUrls'
+import AwardsSummaryTable from './collectionsReport/AwardsSummaryTable.jsx'
 
 function CollectionsReportMain() {
     usePageTitle('Collection Report')
@@ -62,6 +63,13 @@ function CollectionsReportMain() {
             </div>
             <CollectionsSummaryTable data={data}/>
 
+            {data.dailyAwardsTableData &&
+                <React.Fragment>
+                    <div style={headerStyle}>Awards Summary</div>
+                    <AwardsSummaryTable data={data}/>
+                </React.Fragment>
+            }
+
             <div style={headerStyle}>List Users</div>
             <CollectionsListUsersSavesLine data={lineMetrics}/>
 
@@ -74,7 +82,7 @@ function CollectionsReportMain() {
             <div style={headerStyle}>List Saves by Belt Ranking</div>
             <CollectionSavesByBeltBar data={data}/>
 
-            <div style={headerStyle}>Last 28 Days</div>
+            <div style={headerStyle}>Last 14 Days</div>
             <CollectionsLast28Table data={data}/>
 
             <div style={headerStyle}>Top Locks</div>
