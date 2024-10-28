@@ -7,7 +7,7 @@ const CollectionsListCountsLine = ({data}) => {
     const lineData = [
         data.ownLocks,
         data.pickedLocks,
-        data.recordedLocks,
+        data.scorecardLocks,
         data.wishlistLocks
     ]
 
