@@ -14,6 +14,7 @@ import TopLocks from './collectionsReport/TopLocks'
 import {collectionsFull} from '../data/dataUrls'
 import AwardsSummaryTable from './collectionsReport/AwardsSummaryTable.jsx'
 import BeltCountMaxBar from './collectionsReport/BeltCountMaxBar.jsx'
+import ImportUsersTable from './collectionsReport/ImportUsersTable.jsx'
 
 function CollectionsReportMain() {
     usePageTitle('Collection Report')
@@ -67,8 +68,11 @@ function CollectionsReportMain() {
             <div style={headerStyle}>Awards Summary</div>
             <AwardsSummaryTable data={data}/>
 
-            <div style={headerStyle}>Users by Belt</div>
+            <div style={headerStyle}>Import Users by Belt</div>
             <BeltCountMaxBar data={data}/>
+
+            <div style={headerStyle}>Import Users</div>
+            <ImportUsersTable data={data}/>
 
             <div style={headerStyle}>List Users</div>
             <CollectionsListUsersSavesLine data={lineMetrics}/>
