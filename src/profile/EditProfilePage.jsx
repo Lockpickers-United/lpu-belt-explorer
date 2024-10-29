@@ -89,6 +89,16 @@ function EditProfilePage() {
         window.location.assign(url)
     }, [oauthState, user])
 
+    const handleRedditDebugDownload = useCallback(async () => {
+        const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
+        const newState = 'DEBUG_DOWNLOAD' + await oauthState(user.uid)
+        const scope = encodeURIComponent('identity flair privatemessages')
+        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/reddit`)
+
+        const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
+        window.location.assign(url)
+    }, [oauthState, user])
+
     const handleDeleteAllData = useCallback(async () => {
         setDeletingData(true)
         await deleteAllUserData(user.uid)
@@ -238,6 +248,15 @@ function EditProfilePage() {
                                     </Button>
                                 </div>
                             }
+
+                            <Button variant='outlined'
+                                    color='warning'
+                                    style={{
+                                        marginBottom: 16,
+                                        height: 40
+                                    }}
+                                    onClick={handleRedditDebugDownload}
+                            >DEBUG REDDIT ACCOUNT</Button>
 
                             {!lockCollection?.redditUsername ?
                                 <Button variant='outlined'

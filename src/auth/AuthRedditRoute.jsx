@@ -14,7 +14,11 @@ function AuthRedditRoute() {
     const {VITE_REDDIT_CLIENT_ID: clientId, VITE_REDDIT_CLIENT_SECRET: clientSecret} = import.meta.env
 
     const urlMatchCode = window.location.href.match(/\?state=([^&]+)&code=([^#]+)#/)
-    const urlState = urlMatchCode ? urlMatchCode[1] : null
+    let urlState = urlMatchCode ? urlMatchCode[1] : null
+    const debugDownload = urlState && urlState.startsWith('DEBUG_DOWNLOAD')
+    if (debugDownload) {
+        urlState = urlState.slice('DEBUG_DOWNLOAD'.length)
+    }
     const urlCode = urlMatchCode ? urlMatchCode[2] : null
     const urlMatchError = window.location.href.match(/\?state=([^&]+)&error=([^#]+)#/)
     const urlError = urlMatchError ? urlMatchError[2] : null
@@ -120,6 +124,7 @@ function AuthRedditRoute() {
             let afterMark = null
             let nextBookmark = null
             let awards = []
+            let rawMessages = []
 
             while (!dataError && !reachedEndOfStream) {
                 const beforeParam = beforeMark ? `&before=${beforeMark}` : ''
@@ -163,8 +168,8 @@ function AuthRedditRoute() {
                         reachedEndOfStream = true
                     }
 
-                    const newAwards = data.children
-                        .filter(msg => msg.kind === 't4' && msg.data.distinguished === 'moderator' && msg.data.subreddit === 'lockpicking')
+                    const newMessages = data.children.filter(msg => msg.kind === 't4' && msg.data.distinguished === 'moderator' && msg.data.subreddit === 'lockpicking')
+                    const newAwards = newMessages
                         .map(msg => {
                             let matchId = null
                             const matchedAward = matchToBeltAward(msg.data.subject, msg.data.body)
@@ -181,6 +186,7 @@ function AuthRedditRoute() {
                         })
                         .filter(msg => msg.matchId)
 
+                    rawMessages = [...rawMessages, ...newMessages]
                     awards = [...awards, ...newAwards]
                 } else {
                     dataError = true
@@ -189,6 +195,24 @@ function AuthRedditRoute() {
 
             if (dataError) {
                 setSyncException('data_failed')
+            } else if (debugDownload) {
+                const messages = rawMessages.map(msg => ({
+                    id: msg.data.id,
+                    subject: msg.data.subject,
+                    created_utc: msg.data.created_utc,
+                    body: msg.data.body
+                }))
+
+                const b64Chunk = 'data:application/json;base64,' + btoa(JSON.stringify(messages))
+                const blob = await (await fetch(b64Chunk)).blob()
+                const URL = window.URL.createObjectURL(blob)
+                const el = document.createElement('a')
+                el.download = 'reddit-modmail-debug.json'
+                el.href = URL
+                el.click()
+                window.URL.revokeObjectURL(URL)
+
+                setSyncException('debug_download')
             } else if (awards.length > 0) {
                 const dedupAwards = Object.values(
                     awards.reduce((acc, msg) => {
@@ -223,7 +247,7 @@ function AuthRedditRoute() {
         if (credentials) {
             syncRedditBeltAwards(credentials.type, credentials.token)
         }
-    }, [credentials, advanceBookmarkForRedditUser, getBookmarkForRedditUser, clientId, clientSecret])
+    }, [credentials, advanceBookmarkForRedditUser, getBookmarkForRedditUser, clientId, clientSecret, debugDownload])
 
     return (
 

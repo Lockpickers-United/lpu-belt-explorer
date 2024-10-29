@@ -66,7 +66,8 @@ function ImportPreview({syncStatus, syncResult, service}) {
         access_denied: 'access_denied',
         token_failed: 'token_failed',
         data_failed: 'data_failed',
-        token_expired: 'token_expired'
+        token_expired: 'token_expired',
+        debug_download: 'debug_download'
     }
     const msg = getMessageById(statusMessages[[syncStatus]])
 
@@ -104,6 +105,10 @@ function ImportPreview({syncStatus, syncResult, service}) {
                             <ImportPreviewDisplay profile={profile}
                                                   adminAction={handleAdminAction} importResults={syncResult}
                                                   syncStatus={syncStatus} service={service}/>
+                        }
+
+                        {syncStatus === 'debug_download' &&
+                                <SystemMessage override={msg}/>
                         }
 
                         {syncStatus === 'token_expired' &&
