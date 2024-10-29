@@ -1094,7 +1094,7 @@
     "make": "La Gard",
     "model": "1947",
     "group": "1",
-    "fence": "",
+    "fence": "Spring Lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1107,7 +1107,7 @@
       "Standard Format",
       "Fence Lever Control Device"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-10-29T02:42:22.164Z"
   },
   {
     "id": "0e5acb82",
@@ -1713,10 +1713,9 @@
       "Key Change",
       "Anti-Punch Relocker",
       "Right/Left Handed open",
-      "Vault Format",
-      "Indirect drive"
+      "Vault Format"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-10-29T02:42:22.165Z"
   },
   {
     "id": "350e09f9",
@@ -1754,9 +1753,9 @@
       "Anti-Punch Relocker",
       "Right/Left Handed open",
       "Vault Format",
-      "Indirect drive"
+      "Eccentric Roller"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-10-29T02:42:22.165Z"
   },
   {
     "id": "bd3e18ae",
@@ -1769,9 +1768,13 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Indirect Drive",
-      "Multi-Orientation Cam",
-      "Vault Format"
+      "Moveable Flies",
+      "Key Change",
+      "Anti-Punch Relocker",
+      "Right/Left Handed open",
+      "Vault Format",
+      "Eccentric Roller",
+      "Indirect Drive"
     ],
     "media": [
       {
@@ -1824,7 +1827,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53927144130_390c46b63b_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-10-29T02:42:22.165Z"
   },
   {
     "id": "7c91d17c",
