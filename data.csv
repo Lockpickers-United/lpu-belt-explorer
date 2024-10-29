@@ -565,7 +565,7 @@ Brown,Kaba,14,"<13 pins",Dimple,"High pin count",,f61461ed
 Brown,Kaba,Ace,"<13 pins",Dimple,"High pin count",,41b91a0e
 Brown,Kaba,Gemini,"<13 pins",Dimple,"High pin count",,e0191c45
 Brown,Kaba,"Gemini pluS","<14 pins",Dimple,"High pin count",,2efc9257
-Brown,Kaken,KXR,,"Slider,Pin-tumbler","Active sidebar,False gates",,9375df98
+Brown,Kaken,KXR,,"Slider,Pin-tumbler","Gin spool drivers,Undercut milling,Active sidebar,False gates",,9375df98
 Brown,"Kale Kilit","164 CEC",,Dimple,,,660a840e
 Brown,Laperche,Rols,,Pump/push,,,f5cc6ace
 Brown,"LIPS,LIPS","Keso (door cylinder),Octro","≥13 pins",Dimple,"High pin count",,514c7ec4
@@ -622,7 +622,7 @@ Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
 Red,"FTH Thirard",Pacific,,Pump/push,,,a57c1e9b
 Red,"FTH Thirard",Surveyor,,Pump/push,,,1f6cb393
 Red,"GOAL,GOAL","V18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
-Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut Milling",,937eb7a8
+Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut milling",,937eb7a8
 Red,Hori,Trident,spools,Dimple,,,49b2c746
 Red,IKON,"tk5 sperwellenprofil","with serrated fingerpins","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",34d27803
 Red,IKON,Verso,,Slider,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",843896be
@@ -707,7 +707,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 3",GOAL,"Grand V",,Dimple,"High pin count",,3ca098da
 "Black 1","GOAL,GOAL","V18,GP","14-16 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,63b2e02b
 "Black 2","GOAL,GOAL","V18,GP","≥17 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,109531f4
-"Black 1",GOAL,Z,"< 2 standard drivers",Pin-tumbler,"Gin spool drivers,Torpedo keypins,Overmilling,Undercut Milling",,5103e650
+"Black 1",GOAL,Z,"< 2 standard drivers",Pin-tumbler,"Gin spool drivers,Torpedo keypins,Overmilling,Undercut milling",,5103e650
 "Black 2",Hori,Trident,"T-spool drivers",Dimple,"High pin count,Torpedo keypins",,e8c7dd5b
 "Black 2",IKON,"SK6 Sperrwelle Extra Code","6 pin with 5 finger pins","Sidepins,Pin-tumbler","Rotating fingerpins,Active sidebar,Tapered drivers","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",108549ba
 "Black 1",IKON,WSW,"5 sliders","Pin-tumbler,Slider","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",7e967792
@@ -819,6 +819,7 @@ Unranked,MCM,SS,,Dimple,"Under Review ⚑","requires 360º",85f92137
 Unranked,Medeco,KeyMark,,Pin-tumbler,"Under Review ⚑",,01c9e8d1
 Unranked,Medeco,X4,,Pin-tumbler,"Under Review ⚑",,0684a655
 Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872b30
+Unranked,MIWA,PX,,Pin-tumbler,,,fb472463
 Unranked,MIWA,"Star Orion","6 rows",Dimple,"High pin count",,4150776b
 Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Double bitted",,e9d77a86
 Unranked,Mul-T-Lock,Interactive,"4 pins, 4 spooled drivers",Dimple,,,1798ca06
@@ -854,6 +855,7 @@ Unranked,"Takigen,Clover","Wavelock disc detainer,Wavelock disc detainer","9 dis
 Unranked,Tann,"9 lever","9 levers",Lever,"Pin key,Single bitted,Swappable bitting,False gates",,624d7e96
 Unranked,Tann,Vardeskydd,"8? levers",Lever,"Pipe key,Double bitted,False gates,Sliding levers",,a2074b7f
 Unranked,Trelock,"SUPER Padlock",,,"Under Review ⚑",,9a99a0a7
+Unranked,,U-Change,,Pin-tumbler,,,9d35efa9
 Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(simliar to the blue belt StrongBOLT 2100)",8dc5dbb4
 Unranked,Union,2134e,"5 lever",Lever,"Pin key,False gates",,45cadc22
 Unranked,Vachette,Radial,"18 or more pins",Dimple,"Under Review ⚑,High pin count",,ab1e3974
