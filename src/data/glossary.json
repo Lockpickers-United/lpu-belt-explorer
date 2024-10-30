@@ -344,6 +344,14 @@
     }
   },
   {
+    "term": "control (pick to)",
+    "definition": "Some cylinders can both be opened in a regular way with an [operating key](/#/glossary?term=operating%20key), or opened with a [control key](/#/glossary?term=control%20key) to allow for the removal of the cylinder from the housing. Picking to control allows for the latter action. Most common in [SFIC](/#/glossary?term=sfic), but also in other types of locks. "
+  },
+  {
+    "term": "control key",
+    "definition": "Key that allows certain types of cylinders to be removed easily from the housing without fully disassembling the lock system, by causing a log to move or other similar locking element that keeps the cylinder in the housing. Most common in [SFIC](/#/glossary?term=sfic), but also in other types of locks. "
+  },
+  {
     "term": "core",
     "definition": "The term 'core' has two similar usages. It can be used to refer to the [plug](/#/glossary?term=plug) (the central part of a lock cylinder that turns) or to refer to the [cylinder](/#/glossary?term=cylinder) itself depending on the context.",
     "media": {
@@ -1079,6 +1087,14 @@
       "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53897075710/in/album-72177720319269835/",
       "fullSizeUrl": "https://live.staticflickr.com/65535/53897075710_05123ddc27_o.jpg"
     }
+  },
+  {
+    "term": "operating (pick to)",
+    "definition": "Some cylinders can both be opened in a regular way with an [operating key](/#/glossary?term=operating%20key), or opened with a [control key](/#/glossary?term=control%20key) to allow for the removal of the cylinder from the housing. Picking to operating allows for the latter action, generally responsible for the normal function of the lock. Most common in [SFIC](/#/glossary?term=sfic), but also in other types of locks. "
+  },
+  {
+    "term": "operating key",
+    "definition": "Some cylinders can both be opened in a regular way, or opened to allow for the removal of the cylinder from the housing. The [operating key](/#/glossary?term=operating%20key) allows for the former action, generally responsible for the normal function of the lock, while the latter action will require a [control key](/#/glossary?term=control%20key). Most common in [SFIC](/#/glossary?term=sfic), but also in other types of locks. "
   },
   {
     "term": "opposing overset stacks",
