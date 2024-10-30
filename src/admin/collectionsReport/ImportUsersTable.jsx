@@ -18,7 +18,7 @@ const ImportUsersTable = ({data}) => {
     const rowData = Object.keys(awardsDisplayNames).filter(x => x)
         .map(user => {
             return {
-                displayName: awardsDisplayNames[user]['displayName'],
+                displayName: awardsDisplayNames[user]['displayName'] || 'no display name',
                 acquired: awardsDisplayNames[user]['acquired'],
                 maxAward: awards[awardsDisplayNames[user]['maxAward']].makeModels[0].model.replace(' Belt', ''),
                 beltName: awards[awardsDisplayNames[user]['maxAward']].name.replace(' Belt', ''),
@@ -50,9 +50,7 @@ const ImportUsersTable = ({data}) => {
             : string
     },[navigate, rows])
 
-
-
-    console.log('rows', rows)
+    //console.log('rows', rows)
 
     const tableData = {
         columns: [
