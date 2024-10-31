@@ -22,7 +22,6 @@ export default function ScorecardDanStats({profile, owner}) {
         cardDanPoints,
         cardBBCount,
         cardEligibleDan,
-        cardNextDanPoints,
         cardNextDanLocks,
         cardActivity
     } = useContext(ScorecardDataContext)
@@ -38,9 +37,13 @@ export default function ScorecardDanStats({profile, owner}) {
 
     const nextDan = Dans.find(dan => dan.level === displayDan + 1)
 
-    const danText = cardEligibleDan <= currentDanLevel
+    const danPreText = cardEligibleDan <= currentDanLevel
+        ? ''
+        : 'Eligible for '
+
+    const danPostText = cardEligibleDan <= currentDanLevel
         ? 'DAN'
-        : 'Eligible for Dan'
+        : 'DAN'
 
     const copyRequest = useCallback(async () => {
         const link = `@LPUBeltBot request ${addOrdinal(cardEligibleDan)} Dan https://lpubelts.com/#/profile/${userId || user?.uid}/scorecard?name=${safeName}`
@@ -57,7 +60,7 @@ export default function ScorecardDanStats({profile, owner}) {
                 textAlign: 'right', padding: '10px 0px 18px 0px', flexGrow: 1
             }}>
                 <div style={{fontWeight: 700, marginBottom: 6}}>
-                    {danText} <span style={{fontSize: '1.8rem', lineHeight: '1rem'}}>{displayDan}</span>
+                    {danPreText} <span style={{fontSize: '1.8rem', lineHeight: '1rem'}}>{addOrdinal(displayDan)}</span> {danPostText}
                 </div>
                 <div style={{marginBottom: 5}}>Dan Points <strong>{cardDanPoints}</strong></div>
                 <div style={{marginBottom: 5}}>Black Belt Locks <strong>{cardBBCount}</strong></div>

@@ -121,7 +121,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const myLocksButton = mostPopular ? 'text' : 'outlined'
     const mostPopularButton = !mostPopular ? 'text' : 'outlined'
 
-    const ownerName = profile.displayName && !profile['privacyAnonymous']
+    const ownerName = profile?.displayName && !profile['privacyAnonymous']
         ? profile.displayName.toLowerCase().endsWith('s')
             ? `${profile.displayName}'`
             : `${profile.displayName}'s`

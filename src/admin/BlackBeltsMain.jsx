@@ -25,9 +25,10 @@ function BlackBeltsMain() {
         : '(updated: ' + dayjs(data?.leaderboardData2.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ')'
 
     // build line data
-    const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'pickedLocks', 'ownLocks']
+    const metricsList = ['listUsers', 'wishlistLocks', 'scorecardLocks', 'pickedLocks', 'ownLocks']
 
     const filteredData = collectionsData?.dailyTableData.data.filter(datum => dayjs(datum.date).isAfter(dayjs('2024-08-17')))
+
     const lineMetrics = metricsList.reduce((acc, metricName) => {
         if (!data) return {}
         const metricData = filteredData.map(value => ({

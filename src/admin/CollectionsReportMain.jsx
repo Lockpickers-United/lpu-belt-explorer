@@ -12,6 +12,9 @@ import CollectionSavesByBeltBar from './collectionsReport/CollectionSavesByBeltB
 import CollectionsLast28Table from './collectionsReport/CollectionsLast28Table'
 import TopLocks from './collectionsReport/TopLocks'
 import {collectionsFull} from '../data/dataUrls'
+import AwardsSummaryTable from './collectionsReport/AwardsSummaryTable.jsx'
+import BeltCountMaxBar from './collectionsReport/BeltCountMaxBar.jsx'
+import ImportUsersTable from './collectionsReport/ImportUsersTable.jsx'
 
 function CollectionsReportMain() {
     usePageTitle('Collection Report')
@@ -21,7 +24,7 @@ function CollectionsReportMain() {
         : '(updated: ' + dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${data.metadata.timezone})`
 
     // build line data
-    const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'pickedLocks', 'ownLocks']
+    const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'scorecardLocks', 'pickedLocks', 'ownLocks']
     const lineMetrics = metricsList.reduce((acc, metricName) => {
         if (!data) return {}
         const metricData = data.dailyTableData.data.map(value => ({
@@ -62,6 +65,15 @@ function CollectionsReportMain() {
             </div>
             <CollectionsSummaryTable data={data}/>
 
+            <div style={headerStyle}>Awards Summary</div>
+            <AwardsSummaryTable data={data}/>
+
+            <div style={headerStyle}>Import Users by Belt</div>
+            <BeltCountMaxBar data={data}/>
+
+            <div style={headerStyle}>Import Users</div>
+            <ImportUsersTable data={data}/>
+
             <div style={headerStyle}>List Users</div>
             <CollectionsListUsersSavesLine data={lineMetrics}/>
 
@@ -74,7 +86,7 @@ function CollectionsReportMain() {
             <div style={headerStyle}>List Saves by Belt Ranking</div>
             <CollectionSavesByBeltBar data={data}/>
 
-            <div style={headerStyle}>Last 28 Days</div>
+            <div style={headerStyle}>Last 14 Days</div>
             <CollectionsLast28Table data={data}/>
 
             <div style={headerStyle}>Top Locks</div>

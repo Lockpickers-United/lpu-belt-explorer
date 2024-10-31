@@ -11,10 +11,11 @@ function ToggleBetaButton() {
         setBeta(!beta)
     }, [beta, setBeta])
 
+    const color = beta ? '#82c70a' : '#3b3b3b'
     return (
         <Tooltip title={`Toggle Beta Features ${beta ? 'Off' : 'On'}`} arrow disableFocusListener>
             <IconButton onClick={handleClick}>
-                <BugReportOutlined fontSize='small' color={beta ? 'secondary' : 'primary'}/>
+                <BugReportOutlined fontSize='small' style={{color:color}}/>
             </IconButton>
         </Tooltip>
     )

@@ -11,7 +11,7 @@ import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
 
 function InfoPage() {
-    const updateTime = '12/4/2023'
+    const updateTime = '10/20/2024'
 
     return (
         <React.Fragment>

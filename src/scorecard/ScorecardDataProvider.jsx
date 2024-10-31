@@ -202,7 +202,9 @@ function processEntries(entries, filterArray, search, sort) {
                 }
             default:
                 return (a, b) => {
-                    return dayjs(b.date).valueOf() - dayjs(a.date).valueOf() || beltSortReverse(a.belt, b.belt) || a.fuzzy.localeCompare(b.fuzzy)
+                    return dayjs(dayjs(b.date).format('YYYY-MM-DD')).valueOf() - dayjs(dayjs(a.date).format('YYYY-MM-DD')).valueOf()
+                        || beltSortReverse(a.belt, b.belt)
+                        || a.fuzzy.localeCompare(b.fuzzy)
                 }
         }
     })()

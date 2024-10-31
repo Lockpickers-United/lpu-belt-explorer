@@ -4413,6 +4413,41 @@
     "lastUpdated": "2023-07-25T11:20:19.883Z"
   },
   {
+    "id": "606275d8",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Commando",
+        "model": "Peacemaker"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable",
+      "Changelog"
+    ],
+    "media": [
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52948843327_f7cda981d8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52948843327/in/album-72177720308798755/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52948843327_60ae6ef443_o.jpg"
+      },
+      {
+        "title": "By: Ben-on-reddit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52949823060_dff6f84d64_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52949823060/in/album-72177720308798755/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52949823060_cb20309637_o.jpg"
+      }
+    ],
+    "views": 637,
+    "lastUpdated": "2024-10-30T20:09:22.869Z"
+  },
+  {
     "id": "99057c44",
     "belt": "Orange",
     "makeModels": [
@@ -6335,6 +6370,11 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Trap element",
+      "Changelog"
+    ],
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
       {
         "title": "By: Yamakasi",
@@ -6358,7 +6398,7 @@
       }
     ],
     "views": 1400,
-    "lastUpdated": "2023-07-25T11:20:19.885Z"
+    "lastUpdated": "2024-10-30T20:09:22.870Z"
   },
   {
     "id": "8d1ebc79",
@@ -6372,6 +6412,11 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Trap element",
+      "Changelog"
+    ],
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -6416,7 +6461,7 @@
       }
     ],
     "views": 847,
-    "lastUpdated": "2023-10-18T11:50:45.259Z"
+    "lastUpdated": "2024-10-30T20:09:22.870Z"
   },
   {
     "id": "f97700ff",
@@ -7739,6 +7784,21 @@
     "lastUpdated": "2023-12-06T11:28:34.724Z"
   },
   {
+    "id": "e2fd1519",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "AXA",
+        "model": "Clinch"
+      }
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "views": 21,
+    "lastUpdated": "2024-10-30T20:09:22.870Z"
+  },
+  {
     "id": "ca6ce763",
     "belt": "Green",
     "makeModels": [
@@ -8723,40 +8783,6 @@
       }
     ],
     "views": 654,
-    "lastUpdated": "2023-07-25T11:20:19.886Z"
-  },
-  {
-    "id": "606275d8",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "Commando",
-        "model": "Peacemaker"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Unguttable"
-    ],
-    "media": [
-      {
-        "title": "By: Ben-on-reddit",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52948843327_f7cda981d8_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52948843327/in/album-72177720308798755/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52948843327_60ae6ef443_o.jpg"
-      },
-      {
-        "title": "By: Ben-on-reddit",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52949823060_dff6f84d64_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52949823060/in/album-72177720308798755/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52949823060_cb20309637_o.jpg"
-      }
-    ],
-    "views": 637,
     "lastUpdated": "2023-07-25T11:20:19.886Z"
   },
   {
@@ -11018,6 +11044,10 @@
       {
         "make": "Mauer",
         "model": "Elite 1"
+      },
+      {
+        "make": "Mauer",
+        "model": "Elite 2"
       }
     ],
     "lockingMechanisms": [
@@ -11047,7 +11077,7 @@
       }
     ],
     "views": 461,
-    "lastUpdated": "2024-02-09T12:11:20.186Z"
+    "lastUpdated": "2024-10-30T20:09:22.872Z"
   },
   {
     "id": "1f4e3e05",
@@ -12650,6 +12680,11 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Trap element",
+      "Changelog"
+    ],
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
       {
         "title": "By: Alexio_Xela",
@@ -12681,7 +12716,7 @@
       }
     ],
     "views": 1821,
-    "lastUpdated": "2024-04-16T18:36:32.137Z"
+    "lastUpdated": "2024-10-30T20:09:22.873Z"
   },
   {
     "id": "85d93eb1",
@@ -15853,7 +15888,7 @@
     "lastUpdated": "2023-11-23T18:53:56.021Z"
   },
   {
-    "id": "1fda76a8",
+    "id": "5c2f5101",
     "belt": "Blue",
     "makeModels": [
       {
@@ -15861,9 +15896,12 @@
         "model": "8"
       }
     ],
-    "version": "2 row",
+    "version": "2 row and 3 row, <9 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Changelog"
     ],
     "media": [
       {
@@ -15874,61 +15912,18 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53072535944_ee46071fa6_o.jpg"
       },
       {
-        "title": "By: Ed McBane",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53072343801_d8920b9041_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53072343801/in/album-72177720310037039/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53072343801_92391851e1_o.jpg"
-      },
-      {
-        "title": "By: Ed McBane",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53072847288_4a48bbf662_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53072847288/in/album-72177720310037039/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53072847288_063e77b2b2_o.jpg"
-      },
-      {
-        "title": "By: Clefmentine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53071608031_600e31a483_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53071608031/in/album-72177720310037039/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53071608031_b95a6a343f_o.jpg"
-      },
-      {
-        "title": "By: Frosty",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52814206447_6ec7532cab_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52814206447/in/album-72177720310037039/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52814206447_54587c8d31_o.jpg"
-      }
-    ],
-    "views": 563,
-    "relatedIds": [
-      "5c2f5101",
-      "779d74f5"
-    ],
-    "lastUpdated": "2023-11-23T18:53:56.021Z"
-  },
-  {
-    "id": "5c2f5101",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "Kaba",
-        "model": "8"
-      }
-    ],
-    "version": "3 row, <9 pins",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "media": [
-      {
         "title": "By: CastleLock",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52812333823_d2028296a9_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52812333823/in/album-72177720306280864/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52812333823_32feee3943_o.jpg"
+      },
+      {
+        "title": "By: Ed McBane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53072343801_d8920b9041_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53072343801/in/album-72177720310037039/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53072343801_92391851e1_o.jpg"
       },
       {
         "title": "By: Legendofthesamurai",
@@ -15938,6 +15933,13 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52692008292_17f37e6885_o.jpg"
       },
       {
+        "title": "By: Ed McBane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53072847288_4a48bbf662_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53072847288/in/album-72177720310037039/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53072847288_063e77b2b2_o.jpg"
+      },
+      {
         "title": "By: JayDee",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52812043415_47137cc6f5_w_d.jpg",
@@ -15945,19 +15947,32 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52812043415_a8be503e9c_o.jpg"
       },
       {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53071608031_600e31a483_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53071608031/in/album-72177720310037039/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53071608031_b95a6a343f_o.jpg"
+      },
+      {
         "title": "By: JayDee",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52812086663_bfa579a0c4_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52812086663/in/album-72177720306280864/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52812086663_096ae110a5_o.jpg"
+      },
+      {
+        "title": "By: Frosty",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52814206447_6ec7532cab_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52814206447/in/album-72177720310037039/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52814206447_54587c8d31_o.jpg"
       }
     ],
     "views": 331,
     "relatedIds": [
-      "1fda76a8",
       "779d74f5"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.021Z"
+    "lastUpdated": "2024-10-30T20:09:22.874Z"
   },
   {
     "id": "40e50dd4",
@@ -16429,14 +16444,24 @@
       {
         "make": "Lucznik",
         "model": "LC"
+      },
+      {
+        "make": "GTV",
+        "model": "MPS"
+      },
+      {
+        "make": "Mila",
+        "model": "Evo"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
-      "Trap element"
+      "Trap element",
+      "Changelog"
     ],
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
       {
         "title": "By: Reinder Stegen",
@@ -16489,7 +16514,7 @@
       }
     ],
     "views": 186,
-    "lastUpdated": "2024-01-30T12:50:01.402Z"
+    "lastUpdated": "2024-10-30T20:09:22.875Z"
   },
   {
     "id": "1fe0ba0d",
@@ -16592,10 +16617,17 @@
       {
         "make": "Mauer",
         "model": "Red Line G"
+      },
+      {
+        "make": "Dekaba",
+        "model": "Guard"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Changelog"
     ],
     "media": [
       {
@@ -16645,7 +16677,7 @@
       }
     ],
     "views": 333,
-    "lastUpdated": "2024-02-09T12:11:20.188Z"
+    "lastUpdated": "2024-10-30T20:09:22.875Z"
   },
   {
     "id": "72675596",
@@ -16853,24 +16885,6 @@
     ],
     "views": 215,
     "lastUpdated": "2024-09-12T02:37:13.747Z"
-  },
-  {
-    "id": "f9f2d983",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "Mila",
-        "model": "Evolution"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Trap element"
-    ],
-    "views": 252,
-    "lastUpdated": "2024-01-30T12:50:01.402Z"
   },
   {
     "id": "c0af329b",
@@ -18514,6 +18528,11 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Trap element",
+      "Changelog"
+    ],
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -18552,46 +18571,7 @@
       }
     ],
     "views": 1550,
-    "lastUpdated": "2024-01-09T14:35:11.891Z"
-  },
-  {
-    "id": "20adf729",
-    "belt": "Purple",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "EP10"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-55_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/55/1.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/55/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-55_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/55/2.jpg",
-        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/55/2.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html"
-      }
-    ],
-    "views": 1131,
-    "lastUpdated": "2023-07-25T11:20:19.893Z"
+    "lastUpdated": "2024-10-30T20:09:22.876Z"
   },
   {
     "id": "dd1dd313",
@@ -19359,6 +19339,10 @@
         "model": "ABS"
       },
       {
+        "make": "ERA",
+        "model": "Professional Cylinder"
+      },
+      {
         "make": "Federal Locks",
         "model": "U-systems (UCF/UCH/UCS/UUS)-3100"
       },
@@ -19378,8 +19362,10 @@
     "features": [
       "Magnetic pins",
       "Pin-in-pin",
-      "Trap element"
+      "Trap element",
+      "Changelog"
     ],
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
       {
         "title": "By: DQ",
@@ -19477,7 +19463,7 @@
       }
     ],
     "views": 510,
-    "lastUpdated": "2024-03-29T21:45:41.246Z"
+    "lastUpdated": "2024-10-30T23:59:18.214Z"
   },
   {
     "id": "8f004bf0",
@@ -19486,11 +19472,18 @@
       {
         "make": "Bricard",
         "model": "Chifral"
+      },
+      {
+        "make": "ABUS",
+        "model": "EP10"
       }
     ],
     "version": "all versions, <15 pins",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Changelog"
     ],
     "media": [
       {
@@ -19516,6 +19509,38 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52837100319/in/album-72177720307708818/",
         "subtitleUrl": "https://www.catalocks.eu/BRICARD%2C/BRICARD%20CHIFRAL%20S2_737.html",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52837100319_a48fecef35_o.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-55_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/55/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/55/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-55_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/55/1.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/55/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-55_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/55/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/55/2.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-55_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/55/2.jpg",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/55/2.jpg"
       }
     ],
     "links": [
@@ -19528,7 +19553,7 @@
     "relatedIds": [
       "9b00fb5e"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.022Z"
+    "lastUpdated": "2024-10-30T20:09:22.876Z"
   },
   {
     "id": "98ba98ae",
@@ -19916,6 +19941,10 @@
       {
         "make": "CompX Chicago",
         "model": "TuBAR"
+      },
+      {
+        "make": "Inceca",
+        "model": "Plana"
       }
     ],
     "lockingMechanisms": [
@@ -19925,6 +19954,7 @@
     "features": [
       "Active sidebar"
     ],
+    "notes": "Changelog",
     "media": [
       {
         "title": "By: Datagram",
@@ -19932,6 +19962,48 @@
         "thumbnailUrl": "https://images.lpubelts.com/i/lw/300px-Tubar_cylinder.jpg",
         "fullUrl": "https://www.lockwiki.com/index.php/File:Tubar_cylinder.jpg",
         "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Tubar_cylinder.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53425757062_920d113d9a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53425757062/in/album-72177720313659187/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53425757062_9d22f31f9c_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53427011254_c41160fc49_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53427011254/in/album-72177720313659187/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53427011254_1efa9e5256_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53426844493_376e84867f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53426844493/in/album-72177720313659187/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53426844493_69371f133e_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53427113775_7ba82c2f76_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53427113775/in/album-72177720313659187/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53427113775_7444969fa6_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53426844453_30f759d969_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53426844453/in/album-72177720313659187/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53426844453_d68ca99df6_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53427011119_60f2b03429_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53427011119/in/album-72177720313659187/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53427011119_d21d717b88_o.jpg"
       },
       {
         "title": "Tubar Teardown",
@@ -19948,7 +20020,7 @@
       }
     ],
     "views": 344,
-    "lastUpdated": "2023-08-29T11:27:22.289Z"
+    "lastUpdated": "2024-10-30T20:09:22.877Z"
   },
   {
     "id": "71bce5b7",
@@ -20249,6 +20321,23 @@
     ],
     "views": 192,
     "lastUpdated": "2024-03-29T21:45:41.247Z"
+  },
+  {
+    "id": "69eec822",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "DOM",
+        "model": "ix 6 kg"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "lastUpdated": "2024-10-30T20:09:22.877Z"
   },
   {
     "id": "acde7f0c",
@@ -20895,6 +20984,56 @@
     "lastUpdated": "2024-08-29T18:27:37.286Z"
   },
   {
+    "id": "6b220699",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "GSK",
+        "model": "GSK-301 Rabbit Lock"
+      }
+    ],
+    "version": "Dual row, single sidebar",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidebar"
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "media": [
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53593148871_1bec2824f8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593148871/in/album-72177720315500186/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53593148871_4ddbdb215a_o.jpg"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53593149456_17957700ff_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593149456/in/album-72177720315500186/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53593149456_87e0008c29_o.jpg"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53593149606_eab8c6b3b0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593149606/in/album-72177720315500186/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53593149606_81fed21e24_o.jpg"
+      },
+      {
+        "title": "By: Septclues",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53593469974_ae35d8ac54_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593469974/in/album-72177720315500186/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53593469974_0ae616b0e5_o.jpg"
+      }
+    ],
+    "views": 49,
+    "lastUpdated": "2024-10-30T20:09:22.877Z"
+  },
+  {
     "id": "3b848976",
     "belt": "Purple",
     "makeModels": [
@@ -21262,10 +21401,9 @@
     ],
     "views": 366,
     "relatedIds": [
-      "1fda76a8",
       "5c2f5101"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.023Z"
+    "lastUpdated": "2024-10-30T20:09:22.878Z"
   },
   {
     "id": "898a7138",
@@ -23286,46 +23424,6 @@
     "lastUpdated": "2024-05-13T18:10:42.881Z"
   },
   {
-    "id": "4debdca1",
-    "belt": "Purple",
-    "makeModels": [
-      {
-        "make": "Nemef",
-        "model": "NF4"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Tapered drivers"
-    ],
-    "media": [
-      {
-        "title": "By: TOOOL NL",
-        "subtitle": "CC BY-SA 2.0",
-        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Nemef_T1112-front-toool.jpg",
-        "fullUrl": "https://www.lockwiki.com/index.php/File:Nemef_T1112-front-toool.jpg",
-        "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Nemef_T1112-front-toool.jpg"
-      },
-      {
-        "title": "By: Peregrine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53167747727_52a8e74760_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53167747727/in/album-72177720311007713/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53167747727_b47a8de853_o.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Nemef_NF4"
-      }
-    ],
-    "views": 272,
-    "lastUpdated": "2023-09-07T12:00:17.101Z"
-  },
-  {
     "id": "f8aaa0ef",
     "belt": "Purple",
     "makeModels": [
@@ -23800,6 +23898,18 @@
       {
         "make": "TESA",
         "model": "TX80"
+      },
+      {
+        "make": "Nemef",
+        "model": "NF4"
+      },
+      {
+        "make": "Yale",
+        "model": "HS-K"
+      },
+      {
+        "make": "Azbe",
+        "model": "HS-K"
       }
     ],
     "lockingMechanisms": [
@@ -23807,7 +23917,8 @@
     ],
     "features": [
       "Tapered drivers",
-      "Interactive element"
+      "Interactive element",
+      "Changelog"
     ],
     "media": [
       {
@@ -23844,10 +23955,24 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52687733684_437b3604c6_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52687733684/in/album-72177720305994701/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52687733684_cb88740f04_o.jpg"
+      },
+      {
+        "title": "By: TOOOL NL",
+        "subtitle": "CC BY-SA 2.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/lw/Nemef_T1112-front-toool.jpg",
+        "fullUrl": "https://www.lockwiki.com/index.php/File:Nemef_T1112-front-toool.jpg",
+        "fullSizeUrl": "https://img.lpubelts.com/i/lw/full/Nemef_T1112-front-toool.jpg"
+      },
+      {
+        "title": "By: Peregrine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53167747727_52a8e74760_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53167747727/in/album-72177720311007713/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53167747727_b47a8de853_o.jpg"
       }
     ],
     "views": 413,
-    "lastUpdated": "2023-07-25T11:20:19.896Z"
+    "lastUpdated": "2024-10-30T20:09:22.879Z"
   },
   {
     "id": "9a9ae8df",
@@ -24694,7 +24819,12 @@
     "belt": "Brown",
     "makeModels": [
       {
-        "model": "Aegis"
+        "make": "Aegis",
+        "model": "HPC lock"
+      },
+      {
+        "make": "Kodai",
+        "model": "G15"
       }
     ],
     "version": "18 pin, 3 rows all spools",
@@ -24702,7 +24832,8 @@
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "media": [
       {
@@ -24735,7 +24866,7 @@
       }
     ],
     "views": 483,
-    "lastUpdated": "2023-07-25T11:20:19.897Z"
+    "lastUpdated": "2024-10-30T20:09:22.880Z"
   },
   {
     "id": "db380ba0",
@@ -24838,12 +24969,13 @@
         "model": "FB"
       }
     ],
-    "version": "<15 pins",
+    "version": "<12 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "media": [
       {
@@ -24886,7 +25018,7 @@
     "relatedIds": [
       "4223eb26"
     ],
-    "lastUpdated": "2024-09-12T02:37:13.753Z"
+    "lastUpdated": "2024-10-30T20:09:22.880Z"
   },
   {
     "id": "2c58f220",
@@ -25656,11 +25788,18 @@
       {
         "make": "Bricard",
         "model": "Chifral"
+      },
+      {
+        "make": "ABUS",
+        "model": "EP10"
       }
     ],
     "version": "all versions, fully pinned",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "Changelog"
     ],
     "media": [
       {
@@ -25698,7 +25837,7 @@
     "relatedIds": [
       "8f004bf0"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2024-10-30T20:09:22.880Z"
   },
   {
     "id": "e38d015b",
@@ -25900,12 +26039,125 @@
     "lastUpdated": "2024-09-19T15:58:18.880Z"
   },
   {
+    "id": "4403a73f",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "Diamond",
+        "model": "K3"
+      },
+      {
+        "make": "Gerda",
+        "model": "Exxo"
+      },
+      {
+        "make": "Securemme",
+        "model": "Evo K64"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Slider"
+    ],
+    "features": [
+      "Sprung sliders",
+      "Reverse sidebar",
+      "Changelog"
+    ],
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52735000790_67a8e0c29a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52735000790/in/album-72177720306544651/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52735000790_94caa4f0f8_o.jpg"
+      },
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52734062857_4cacffa63e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52734062857/in/album-72177720306544651/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52734062857_52f6800721_o.jpg"
+      },
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52733952829_32937d4245_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52733952829/in/album-72177720306544651/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52733952829_baeb0cd7ec_o.jpg"
+      }
+    ],
+    "views": 107,
+    "lastUpdated": "2024-10-30T20:09:22.880Z"
+  },
+  {
+    "id": "dd6a3683",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "DOM",
+        "model": "ix 10 kg"
+      },
+      {
+        "make": "STS",
+        "model": " IX bola"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Torpedo keypins",
+      "Interactive element",
+      "Changelog"
+    ],
+    "media": [
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52756972674_5e2b80a2e8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756972674/in/album-72177720306834999/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52756972674_b2ce41583b_o.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52756972629_776638df6e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756972629/in/album-72177720306834999/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52756972629_89a8ecd538_o.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757211073_0581e3e473_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757211073/in/album-72177720306834999/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52757211073_db02f1b2b8_o.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "Qikom.fr",
+        "url": "http://qikom.free.fr/"
+      },
+      {
+        "title": "HanFey",
+        "url": "https://toool.nl/images/c/c0/Dom-ix.pdf"
+      }
+    ],
+    "views": 588,
+    "lastUpdated": "2024-10-30T20:09:22.881Z"
+  },
+  {
     "id": "e39885f3",
     "belt": "Brown",
     "makeModels": [
       {
         "make": "DOM",
         "model": "ix 10"
+      },
+      {
+        "make": "STS",
+        "model": "IX"
       }
     ],
     "version": "with shark fins",
@@ -25914,7 +26166,8 @@
     ],
     "features": [
       "Shark fin keypins",
-      "Torpedo keypins"
+      "Torpedo keypins",
+      "Changelog"
     ],
     "media": [
       {
@@ -25967,59 +26220,7 @@
       }
     ],
     "views": 607,
-    "lastUpdated": "2023-07-25T11:20:19.898Z"
-  },
-  {
-    "id": "dd6a3683",
-    "belt": "Brown",
-    "makeModels": [
-      {
-        "make": "DOM",
-        "model": "ix 10 kg"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Torpedo keypins",
-      "Interactive element"
-    ],
-    "media": [
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52756972674_5e2b80a2e8_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756972674/in/album-72177720306834999/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52756972674_b2ce41583b_o.jpg"
-      },
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52756972629_776638df6e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756972629/in/album-72177720306834999/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52756972629_89a8ecd538_o.jpg"
-      },
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52757211073_0581e3e473_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757211073/in/album-72177720306834999/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52757211073_db02f1b2b8_o.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Qikom.fr",
-        "url": "http://qikom.free.fr/"
-      },
-      {
-        "title": "HanFey",
-        "url": "https://toool.nl/images/c/c0/Dom-ix.pdf"
-      }
-    ],
-    "views": 588,
-    "lastUpdated": "2023-07-25T11:20:19.898Z"
+    "lastUpdated": "2024-10-30T20:09:22.881Z"
   },
   {
     "id": "61247b32",
@@ -26466,6 +26667,71 @@
     ],
     "views": 199,
     "lastUpdated": "2023-09-05T18:05:50.821Z"
+  },
+  {
+    "id": "1f6cb393",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "FTH Thirard",
+        "model": "Surveyor"
+      },
+      {
+        "make": "Profalux",
+        "model": "pump lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "media": [
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52756972254_5444506178_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756972254/in/album-72177720306818771/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52756972254_e7603f6454_o.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52756187522_9b7765d1a9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756187522/in/album-72177720306818771/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52756187522_63915797eb_o.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757210568_f41204a938_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757210568/in/album-72177720306818771/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52757210568_18733f8336_o.jpg"
+      },
+      {
+        "title": "By: Qikom",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52757131575_e0e6b7b680_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757131575/in/album-72177720306818771/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52757131575_13cb397406_o.jpg"
+      },
+      {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53067688676_cf9988072f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53067688676/in/album-72177720306818771/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53067688676_aa10a2c73d_o.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "Qikom fr",
+        "url": "http://qikom.free.fr"
+      }
+    ],
+    "views": 189,
+    "lastUpdated": "2024-10-30T20:09:22.884Z"
   },
   {
     "id": "7298a640",
@@ -27210,6 +27476,8 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Gin spool drivers",
+      "Undercut milling",
       "Active sidebar",
       "False gates"
     ],
@@ -27230,7 +27498,7 @@
       }
     ],
     "views": 234,
-    "lastUpdated": "2023-07-25T11:20:19.899Z"
+    "lastUpdated": "2024-10-29T02:42:22.136Z"
   },
   {
     "id": "660a840e",
@@ -28324,52 +28592,13 @@
     "lastUpdated": "2023-07-25T11:20:19.900Z"
   },
   {
-    "id": "4403a73f",
-    "belt": "Brown",
-    "makeModels": [
-      {
-        "make": "Securemme",
-        "model": "Evo K64"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Slider"
-    ],
-    "features": [
-      "Sprung sliders",
-      "Reverse sidebar"
-    ],
-    "media": [
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52735000790_67a8e0c29a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52735000790/in/album-72177720306544651/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52735000790_94caa4f0f8_o.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52734062857_4cacffa63e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52734062857/in/album-72177720306544651/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52734062857_52f6800721_o.jpg"
-      },
-      {
-        "title": "By: Yabende",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52733952829_32937d4245_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52733952829/in/album-72177720306544651/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52733952829_baeb0cd7ec_o.jpg"
-      }
-    ],
-    "views": 107,
-    "lastUpdated": "2023-12-04T20:12:20.155Z"
-  },
-  {
     "id": "0bc03ee8",
     "belt": "Brown",
     "makeModels": [
+      {
+        "make": "STS",
+        "model": "T-10"
+      },
       {
         "make": "TESA",
         "model": "T-10"
@@ -28384,7 +28613,8 @@
     ],
     "features": [
       "Opposing overset stacks",
-      "Interactive element"
+      "Interactive element",
+      "Changelog"
     ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
     "media": [
@@ -28411,7 +28641,7 @@
       }
     ],
     "views": 150,
-    "lastUpdated": "2024-08-29T18:46:29.905Z"
+    "lastUpdated": "2024-10-30T20:09:22.885Z"
   },
   {
     "id": "b91890bf",
@@ -29135,12 +29365,13 @@
         "model": "FB"
       }
     ],
-    "version": "≥15 pins",
+    "version": "≥12 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "media": [
       {
@@ -29169,7 +29400,7 @@
     "relatedIds": [
       "054731a5"
     ],
-    "lastUpdated": "2024-09-12T02:37:13.756Z"
+    "lastUpdated": "2024-10-30T20:09:22.885Z"
   },
   {
     "id": "29ab2852",
@@ -29893,6 +30124,10 @@
       {
         "make": "DOM",
         "model": "ix Saturn"
+      },
+      {
+        "make": "INN",
+        "model": "Key Smart"
       }
     ],
     "lockingMechanisms": [
@@ -29901,7 +30136,8 @@
     "features": [
       "Interactive element",
       "Torpedo keypins",
-      "Shark fin keypins"
+      "Shark fin keypins",
+      "Changelog"
     ],
     "media": [
       {
@@ -29940,7 +30176,7 @@
       }
     ],
     "views": 671,
-    "lastUpdated": "2023-07-25T11:20:19.901Z"
+    "lastUpdated": "2024-10-30T20:09:22.886Z"
   },
   {
     "id": "4993a918",
@@ -30011,14 +30247,15 @@
     "makeModels": [
       {
         "make": "Elzett",
-        "model": "Magnet"
+        "model": "M"
       }
     ],
     "lockingMechanisms": [
       "Magnet"
     ],
     "features": [
-      "Magnetic rotors"
+      "Magnetic rotors",
+      "Changelog"
     ],
     "media": [
       {
@@ -30068,7 +30305,7 @@
       }
     ],
     "views": 251,
-    "lastUpdated": "2023-07-25T11:20:19.901Z"
+    "lastUpdated": "2024-10-30T20:09:22.886Z"
   },
   {
     "id": "265226b1",
@@ -30540,64 +30777,6 @@
     "lastUpdated": "2024-08-30T12:50:00.342Z"
   },
   {
-    "id": "1f6cb393",
-    "belt": "Red",
-    "makeModels": [
-      {
-        "make": "FTH Thirard",
-        "model": "Surveyor"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pump/push"
-    ],
-    "media": [
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52756972254_5444506178_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756972254/in/album-72177720306818771/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52756972254_e7603f6454_o.jpg"
-      },
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52756187522_9b7765d1a9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756187522/in/album-72177720306818771/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52756187522_63915797eb_o.jpg"
-      },
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52757210568_f41204a938_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757210568/in/album-72177720306818771/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52757210568_18733f8336_o.jpg"
-      },
-      {
-        "title": "By: Qikom",
-        "subtitle": "CC BY-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52757131575_e0e6b7b680_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52757131575/in/album-72177720306818771/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52757131575_13cb397406_o.jpg"
-      },
-      {
-        "title": "By: Clefmentine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53067688676_cf9988072f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53067688676/in/album-72177720306818771/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53067688676_aa10a2c73d_o.jpg"
-      }
-    ],
-    "links": [
-      {
-        "title": "Qikom fr",
-        "url": "http://qikom.free.fr"
-      }
-    ],
-    "views": 189,
-    "lastUpdated": "2023-09-05T18:05:50.824Z"
-  },
-  {
     "id": "9f613c4a",
     "belt": "Red",
     "makeModels": [
@@ -30734,7 +30913,7 @@
     "features": [
       "Gin spool drivers",
       "Overmilling",
-      "Undercut Milling"
+      "Undercut milling"
     ],
     "media": [
       {
@@ -30769,7 +30948,7 @@
     "relatedIds": [
       "5103e650"
     ],
-    "lastUpdated": "2024-05-13T18:10:42.885Z"
+    "lastUpdated": "2024-10-29T02:42:22.140Z"
   },
   {
     "id": "49b2c746",
@@ -32257,11 +32436,15 @@
       },
       {
         "make": "Heracles",
-        "model": "Vigie"
+        "model": "Pericles"
       }
     ],
+    "version": "euro profile",
     "lockingMechanisms": [
       "Pump/push"
+    ],
+    "features": [
+      "Changelog"
     ],
     "media": [
       {
@@ -32291,17 +32474,10 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52768424857_9b26c758ef_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52768424857/in/album-72177720306968781/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52768424857_e66f1b6191_o.jpg"
-      },
-      {
-        "title": "By: Moon-UA",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53063475880_149e125b00_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53063475880/in/album-72177720306968781/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53063475880_984284caa6_o.jpg"
       }
     ],
     "views": 191,
-    "lastUpdated": "2023-09-02T16:12:59.723Z"
+    "lastUpdated": "2024-10-30T23:59:18.223Z"
   },
   {
     "id": "9da7a5f2",
@@ -34634,7 +34810,7 @@
     "makeModels": [
       {
         "make": "Australian Lock Co.",
-        "model": "BiLock ASIO"
+        "model": "Bilock (SCEC approved; formerly known as ASIO)"
       }
     ],
     "version": "2nd/3rd gen",
@@ -34644,8 +34820,10 @@
     "features": [
       "False gates",
       "Sprung sliders",
-      "Active sidebar"
+      "Active sidebar",
+      "Changelog"
     ],
+    "notes": "two false gates per pin, staggered rows",
     "media": [
       {
         "title": "By: Reinder Stegen",
@@ -34701,7 +34879,7 @@
       "ab1e901f",
       "6d2555aa"
     ],
-    "lastUpdated": "2023-07-25T11:20:19.904Z"
+    "lastUpdated": "2024-10-30T20:09:22.888Z"
   },
   {
     "id": "6d2555aa",
@@ -36773,7 +36951,7 @@
       "Gin spool drivers",
       "Torpedo keypins",
       "Overmilling",
-      "Undercut Milling"
+      "Undercut milling"
     ],
     "media": [
       {
@@ -36808,7 +36986,7 @@
     "relatedIds": [
       "937eb7a8"
     ],
-    "lastUpdated": "2024-05-13T18:10:42.888Z"
+    "lastUpdated": "2024-10-29T02:42:22.143Z"
   },
   {
     "id": "e8c7dd5b",
@@ -40142,6 +40320,30 @@
     "lastUpdated": "2024-01-01T20:16:24.997Z"
   },
   {
+    "id": "20adf729",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "EP10"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html"
+      }
+    ],
+    "views": 1131,
+    "lastUpdated": "2024-10-30T20:09:22.891Z"
+  },
+  {
     "id": "d005e7b8",
     "belt": "Unranked",
     "makeModels": [
@@ -40377,21 +40579,6 @@
     ],
     "views": 49,
     "lastUpdated": "2024-01-02T17:58:57.081Z"
-  },
-  {
-    "id": "e2fd1519",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "AXA",
-        "model": "Clinch"
-      }
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "views": 21,
-    "lastUpdated": "2023-08-03T13:21:20.100Z"
   },
   {
     "id": "ee04714f",
@@ -41930,51 +42117,6 @@
     "lastUpdated": "2023-08-03T13:21:20.104Z"
   },
   {
-    "id": "6b220699",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "GSK"
-      }
-    ],
-    "version": "dual row sidebar lock",
-    "features": [
-      "Under Review ⚑"
-    ],
-    "media": [
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53593148871_1bec2824f8_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593148871/in/album-72177720315500186/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53593148871_4ddbdb215a_o.jpg"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53593149456_17957700ff_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593149456/in/album-72177720315500186/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53593149456_87e0008c29_o.jpg"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53593149606_eab8c6b3b0_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593149606/in/album-72177720315500186/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53593149606_81fed21e24_o.jpg"
-      },
-      {
-        "title": "By: Septclues",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53593469974_ae35d8ac54_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53593469974/in/album-72177720315500186/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53593469974_0ae616b0e5_o.jpg"
-      }
-    ],
-    "views": 49,
-    "lastUpdated": "2024-03-17T15:15:54.410Z"
-  },
-  {
     "id": "93324d19",
     "belt": "Unranked",
     "makeModels": [
@@ -42165,58 +42307,15 @@
     "makeModels": [
       {
         "make": "Inceca",
-        "model": "pump lock with flat key"
+        "model": "Plana"
       }
     ],
+    "version": "pump lock with flat key",
     "features": [
-      "Under Review ⚑"
-    ],
-    "media": [
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53425757062_920d113d9a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53425757062/in/album-72177720313659187/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53425757062_9d22f31f9c_o.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53427011254_c41160fc49_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53427011254/in/album-72177720313659187/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53427011254_1efa9e5256_o.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53426844493_376e84867f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53426844493/in/album-72177720313659187/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53426844493_69371f133e_o.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53427113775_7ba82c2f76_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53427113775/in/album-72177720313659187/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53427113775_7444969fa6_o.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53426844453_30f759d969_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53426844453/in/album-72177720313659187/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53426844453_d68ca99df6_o.jpg"
-      },
-      {
-        "title": "By: PeaceWeapon",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53427011119_60f2b03429_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53427011119/in/album-72177720313659187/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53427011119_d21d717b88_o.jpg"
-      }
+      "Changelog"
     ],
     "views": 16,
-    "lastUpdated": "2024-01-01T20:16:24.999Z"
+    "lastUpdated": "2024-10-30T20:09:22.892Z"
   },
   {
     "id": "895be796",
@@ -42627,9 +42726,9 @@
     "features": [
       "Under Review ⚑"
     ],
-    "notes": "requires 360º",
+    "notes": "Requires 360º",
     "views": 14,
-    "lastUpdated": "2024-01-13T16:01:18.315Z"
+    "lastUpdated": "2024-10-30T20:09:22.893Z"
   },
   {
     "id": "01c9e8d1",
@@ -42714,6 +42813,25 @@
     "lastUpdated": "2023-08-03T13:21:20.107Z"
   },
   {
+    "id": "f9f2d983",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Mila",
+        "model": "Evo"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Trap element",
+      "Changelog"
+    ],
+    "views": 252,
+    "lastUpdated": "2024-10-30T20:09:22.893Z"
+  },
+  {
     "id": "e6872b30",
     "belt": "Unranked",
     "makeModels": [
@@ -42739,6 +42857,20 @@
     ],
     "views": 99,
     "lastUpdated": "2023-09-07T12:00:17.118Z"
+  },
+  {
+    "id": "fb472463",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "PX"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2024-10-29T02:42:22.147Z"
   },
   {
     "id": "4150776b",
@@ -42945,6 +43077,31 @@
     ],
     "views": 19,
     "lastUpdated": "2023-08-10T00:09:36.307Z"
+  },
+  {
+    "id": "4debdca1",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Nemef",
+        "model": "NF4"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Tapered drivers",
+      "Changelog"
+    ],
+    "links": [
+      {
+        "title": "LockWiki",
+        "url": "http://lockwiki.com/index.php/Nemef_NF4"
+      }
+    ],
+    "views": 272,
+    "lastUpdated": "2024-10-30T20:09:22.893Z"
   },
   {
     "id": "ea4834c8",
@@ -44236,6 +44393,19 @@
     ],
     "views": 30,
     "lastUpdated": "2023-08-03T13:21:20.110Z"
+  },
+  {
+    "id": "9d35efa9",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "model": "U-Change"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2024-10-29T02:42:22.148Z"
   },
   {
     "id": "8dc5dbb4",
