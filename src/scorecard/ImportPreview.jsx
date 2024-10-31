@@ -66,7 +66,8 @@ function ImportPreview({syncStatus, syncResult, service}) {
         access_denied: 'access_denied',
         token_failed: 'token_failed',
         data_failed: 'data_failed',
-        token_expired: 'token_expired'
+        token_expired: 'token_expired',
+        debug_download: 'debug_download'
     }
     const msg = getMessageById(statusMessages[[syncStatus]])
 
@@ -82,6 +83,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
         return null
     }
 
+    console.log('syncStatus', syncStatus)
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
             <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
@@ -92,7 +94,6 @@ function ImportPreview({syncStatus, syncResult, service}) {
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
                         <Nav title={title} extras={nav}/>
-
                         {!syncStatus &&
                             <div style={{textAlign: 'center'}}>
                                 <LoadingDisplay/>
@@ -100,10 +101,29 @@ function ImportPreview({syncStatus, syncResult, service}) {
                             </div>
                         }
 
+
+
+                        {syncStatus === 'debug_download' &&
+                            <div style={{
+                                maxWidth: 500, padding: 40, backgroundColor: '#222',
+                                marginLeft: 'auto', marginRight: 'auto', marginTop: 16,
+                                textAlign: 'center'
+                            }}>
+                                <strong>Your Reddit modmail has been downloaded!</strong><br/><br/>
+                                Please send the <strong>reddit-modmail-debug.json</strong> file to your friendly LPU Belts developers
+                                so they can help fix the problem we are debugging.
+
+                            </div>
+
+                        }
                         {syncStatus === 'complete' &&
                             <ImportPreviewDisplay profile={profile}
                                                   adminAction={handleAdminAction} importResults={syncResult}
                                                   syncStatus={syncStatus} service={service}/>
+                        }
+
+                        {syncStatus === 'debug_download' &&
+                                <SystemMessage override={msg}/>
                         }
 
                         {syncStatus === 'token_expired' &&

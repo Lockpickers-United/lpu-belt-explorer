@@ -10,16 +10,16 @@ function CopyProfileLinkButton({page, safeName, mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
 
+    const hostname = `${window.location.protocol}//${window.location.host}`
     const handleClick = useCallback(async () => {
         const link = page === 'collection'
-            ? `https://lpubelts.com/#/profile/${userId || user?.uid}?name=${safeName}`
+            ? `${hostname}/#/profile/${userId || user?.uid}?name=${safeName}`
             : !mostPopular
-                ? `https://lpubelts.com/#/profile/${userId || user?.uid}/${page}?name=${safeName}`
-                : `https://lpubelts.com/#/profile/${userId || user?.uid}/scorecard/popular?name=${safeName}`
-
+                ? `${hostname}/#/profile/${userId || user?.uid}/${page}?name=${safeName}`
+                : `${hostname}/#/profile/${userId || user?.uid}/scorecard/popular?name=${safeName}`
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link copied to clipboard.')
-    }, [page, userId, user, safeName, mostPopular])
+    }, [page, hostname, userId, user?.uid, safeName, mostPopular])
 
     if (!user) return null
     return (

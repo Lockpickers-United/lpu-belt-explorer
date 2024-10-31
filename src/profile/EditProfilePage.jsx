@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useState} from 'react'
 import {enqueueSnackbar} from 'notistack'
 import TextField from '@mui/material/TextField'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import Button from '@mui/material/Button'
@@ -19,6 +19,10 @@ function EditProfilePage() {
         removeServiceAuth
     } = useContext(DBContext)
     const {beta} = useContext(AppContext)
+
+    const [searchParams] = useSearchParams()
+    const debug = searchParams.get('debug')
+
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
     const [anchorEl, setAnchorEl] = useState(null)
     const [deletingData, setDeletingData] = useState(false)
@@ -88,6 +92,16 @@ function EditProfilePage() {
         const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
         window.location.assign(url)
     }, [oauthState, user])
+
+    const handleRedditDebugDownload = useCallback(async () => {
+        const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env
+        const newState = 'DEBUG_DOWNLOAD' + await oauthState(user.uid)
+        const scope = encodeURIComponent('identity flair privatemessages')
+        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/reddit`)
+
+        const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
+        window.location.assign(url)
+    }, [oauthState, user.uid])
 
     const handleDeleteAllData = useCallback(async () => {
         setDeletingData(true)
@@ -191,94 +205,106 @@ function EditProfilePage() {
                     </div>
 
                     {beta &&
-                    <div style={{display: flexStyle, padding: 16}}>
+                        <div style={{display: flexStyle, padding: 16}}>
 
-                        <div style={{marginBottom: 10, marginRight: 20, maxWidth: 325}}>
-                            <span style={{fontSize: '1.2rem', fontWeight: 500}}>Linked Accounts<br/></span>
-                            Linked accounts are used to import your approved Belt and Dan Rankings.
-                            Rankings from Discord will update automatically as long as your account is linked.
-                            You will need to re-authorize with Reddit to update new approved belts.
-                        </div>
+                            <div style={{marginBottom: 10, marginRight: 20, maxWidth: 325}}>
+                                <span style={{fontSize: '1.2rem', fontWeight: 500}}>Linked Accounts<br/></span>
+                                Linked accounts are used to import your approved Belt and Dan Rankings.
+                                Rankings from Discord will update automatically as long as your account is linked.
+                                You will need to re-authorize with Reddit to update new approved belts.
+                            </div>
 
-                        <div style={{width: '100%', marginTop: 40}}>
-                            {!lockCollection?.discordUsername ?
-                                <Button variant='outlined'
-                                        color='warning'
-                                        style={{
-                                            marginBottom: 16,
-                                            height: 40
-                                        }}
-                                        onClick={handleDiscordAuth}
-                                >LINK DISCORD ACCOUNT</Button>
-                                : <div style={{width: '100%', marginBottom:10}}>
-                                    <TextField
-                                        variant='outlined'
-                                        label='Discord Username'
-                                        value={lockCollection?.discordUsername || ''}
-                                        inputProps={{
-                                            maxLength: 32,
-                                            readOnly: true
-                                        }}
-                                        size='small'
-                                        style={{width: 200}}
-                                        color='warning'
-                                    />
+                            <div style={{width: '100%', marginTop: 40}}>
+                                {!lockCollection?.discordUsername ?
                                     <Button variant='outlined'
                                             color='warning'
-                                            onClick={() => removeService('Discord')}
-                                            disabled={!lockCollection?.discordUsername}
                                             style={{
-                                                marginLeft: 16,
-                                                marginRight: 0,
-                                                marginBottom: 10,
+                                                marginBottom: 16,
                                                 height: 40
                                             }}
-                                    >
-                                        Remove
-                                    </Button>
-                                </div>
-                            }
+                                            onClick={handleDiscordAuth}
+                                    >LINK DISCORD ACCOUNT</Button>
+                                    : <div style={{width: '100%', marginBottom: 10}}>
+                                        <TextField
+                                            variant='outlined'
+                                            label='Discord Username'
+                                            value={lockCollection?.discordUsername || ''}
+                                            inputProps={{
+                                                maxLength: 32,
+                                                readOnly: true
+                                            }}
+                                            size='small'
+                                            style={{width: 200}}
+                                            color='warning'
+                                        />
+                                        <Button variant='outlined'
+                                                color='warning'
+                                                onClick={() => removeService('Discord')}
+                                                disabled={!lockCollection?.discordUsername}
+                                                style={{
+                                                    marginLeft: 16,
+                                                    marginRight: 0,
+                                                    marginBottom: 10,
+                                                    height: 40
+                                                }}
+                                        >
+                                            Remove
+                                        </Button>
+                                    </div>
+                                }
 
-                            {!lockCollection?.redditUsername ?
-                                <Button variant='outlined'
-                                        color='warning'
-                                        style={{
-                                            marginBottom: 16,
-                                            height: 40
-                                        }}
-                                        onClick={handleRedditAuth}
-                                >LINK REDDIT ACCOUNT</Button>
-                                : <div style={{width: '100%', padding: '8px 0px'}}>
-                                    <TextField
-                                        variant='outlined'
-                                        label='Reddit Username'
-                                        value={lockCollection?.redditUsername || ''}
-                                        inputProps={{
-                                            maxLength: 32,
-                                            readOnly: true
-                                        }}
-                                        size='small'
-                                        style={{width: 200}}
-                                        color='warning'
-                                        readOnly
-                                    />
+                                {!lockCollection?.redditUsername ?
                                     <Button variant='outlined'
                                             color='warning'
-                                            onClick={() => removeService('Reddit')}
-                                            disabled={!lockCollection?.redditUsername}
                                             style={{
-                                                marginLeft: 16,
-                                                marginRight: 0,
-                                                marginBottom: 10,
+                                                marginBottom: 16,
                                                 height: 40
                                             }}
-                                    >
-                                        Remove
-                                    </Button>
-                                </div>
-                            }
+                                            onClick={handleRedditAuth}
+                                    >LINK REDDIT ACCOUNT</Button>
+                                    : <div style={{width: '100%', padding: '8px 0px'}}>
+                                        <TextField
+                                            variant='outlined'
+                                            label='Reddit Username'
+                                            value={lockCollection?.redditUsername || ''}
+                                            inputProps={{
+                                                maxLength: 32,
+                                                readOnly: true
+                                            }}
+                                            size='small'
+                                            style={{width: 200}}
+                                            color='warning'
+                                            readOnly
+                                        />
+                                        <Button variant='outlined'
+                                                color='warning'
+                                                onClick={() => removeService('Reddit')}
+                                                disabled={!lockCollection?.redditUsername}
+                                                style={{
+                                                    marginLeft: 16,
+                                                    marginRight: 0,
+                                                    marginBottom: 10,
+                                                    height: 40
+                                                }}
+                                        >
+                                            Remove
+                                        </Button>
+                                    </div>
+                                }
+
+                                {debug &&
+                                    <Button variant='contained'
+                                            color='warning'
+                                            style={{
+                                                marginBottom: 16,
+                                                marginTop: 10,
+                                                height: 40
+                                            }}
+                                            onClick={handleRedditDebugDownload}
+                                    >DEBUG REDDIT ACCOUNT</Button>
+                                }
+                            </div>
                         </div>
-                    </div>
                     }
 
                     <div style={{width: '100%', textAlign: 'center', margin: '10px 0px 10px 0px'}}>

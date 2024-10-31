@@ -120,7 +120,8 @@ const nonFilters = [
     'tab',
     'sort',
     'image',
-    'locks'
+    'locks',
+    'debug'
 ]
 
 export default FilterContext
