@@ -19363,7 +19363,7 @@
       "Magnetic pins",
       "Pin-in-pin",
       "Trap element",
-      "Chagelog"
+      "Changelog"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -19463,7 +19463,7 @@
       }
     ],
     "views": 510,
-    "lastUpdated": "2024-10-30T20:09:22.876Z"
+    "lastUpdated": "2024-10-30T23:59:18.214Z"
   },
   {
     "id": "8f004bf0",
@@ -32443,6 +32443,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
+    "features": [
+      "Changelog"
+    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -32474,7 +32477,7 @@
       }
     ],
     "views": 191,
-    "lastUpdated": "2024-10-30T20:09:22.887Z"
+    "lastUpdated": "2024-10-30T23:59:18.223Z"
   },
   {
     "id": "9da7a5f2",

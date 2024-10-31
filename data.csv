@@ -419,7 +419,7 @@ Purple,ASSA,Desmo,"8 sliders, 1-3 mastered",Slider,,,e2742f70
 Purple,ASSA,Guideline,"6 pin with active side pins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Sidepins",,122b5621
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
-Purple,"Avocet,ERA,Federal Locks,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element,Chagelog","Requires 360° picking: these locks have traps that require some work to pick",f3666121
+Purple,"Avocet,ERA,Federal Locks,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element,Changelog","Requires 360° picking: these locks have traps that require some work to pick",f3666121
 Purple,"Bricard,ABUS","Chifral,EP10","all versions, <15 pins",Dimple,Changelog,,8f004bf0
 Purple,Bricard,Supersureté,,Wafer,,,98ba98ae
 Purple,Capitol,"magnetic cam lock",,Magnet,,,85591581
@@ -646,7 +646,7 @@ Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred false gates (old shallow f
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
 Red,Mottura,"Champions C55",,"Dimple,Other",,,3daff112
-Red,"Picard,Heracles","Vigie,Pericles","euro profile",Pump/push,,,9c5f4539
+Red,"Picard,Heracles","Vigie,Pericles","euro profile",Pump/push,Changelog,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,112d0034
 Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no false gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
