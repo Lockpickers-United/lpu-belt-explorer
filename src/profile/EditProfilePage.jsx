@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useState} from 'react'
 import {enqueueSnackbar} from 'notistack'
 import TextField from '@mui/material/TextField'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import Button from '@mui/material/Button'
@@ -9,6 +9,7 @@ import Menu from '@mui/material/Menu'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import useWindowSize from '../util/useWindowSize.jsx'
 import AppContext from '../app/AppContext.jsx'
+import queryString from 'query-string'
 
 function EditProfilePage() {
     const {
@@ -19,6 +20,13 @@ function EditProfilePage() {
         removeServiceAuth
     } = useContext(DBContext)
     const {beta} = useContext(AppContext)
+
+    const {debug} = useParams()
+    console.log('useParams: ', useParams())
+    console.log('location.search: ', location.search)
+
+
+
     const [displayName, setDisplayName] = useState(lockCollection.displayName || '')
     const [anchorEl, setAnchorEl] = useState(null)
     const [deletingData, setDeletingData] = useState(false)
@@ -97,7 +105,7 @@ function EditProfilePage() {
 
         const url = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${newState}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`
         window.location.assign(url)
-    }, [oauthState, user])
+    }, [oauthState, removeService, user.uid])
 
     const handleDeleteAllData = useCallback(async () => {
         setDeletingData(true)
