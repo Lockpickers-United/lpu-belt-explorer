@@ -654,8 +654,6 @@ async function pickerActivityCache(userId, update) {
         const result = [...evidence, ...preserveAwards, ...newAwards]
         if (update) {
             await setDoc(docRef, {payload: JSON.stringify(result)})
-        }
-        if (newAwards.length > 0) {
             updateUserStatistics(userId)
         }
         return result
