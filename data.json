@@ -40698,30 +40698,6 @@
     "lastUpdated": "2024-01-01T20:16:24.997Z"
   },
   {
-    "id": "20adf729",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "EP10"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Changelog"
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/ABUS/ABUS%20EP%2010_55.html"
-      }
-    ],
-    "views": 1131,
-    "lastUpdated": "2024-10-30T20:09:22.891Z"
-  },
-  {
     "id": "d005e7b8",
     "belt": "Unranked",
     "makeModels": [
@@ -42680,22 +42656,6 @@
     "lastUpdated": "2023-11-23T18:53:56.031Z"
   },
   {
-    "id": "e92d344d",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Inceca",
-        "model": "Plana"
-      }
-    ],
-    "version": "pump lock with flat key",
-    "features": [
-      "Changelog"
-    ],
-    "views": 16,
-    "lastUpdated": "2024-10-30T20:09:22.892Z"
-  },
-  {
     "id": "895be796",
     "belt": "Unranked",
     "makeModels": [
@@ -43212,25 +43172,6 @@
     "lastUpdated": "2023-08-03T13:21:20.107Z"
   },
   {
-    "id": "f9f2d983",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Mila",
-        "model": "Evo"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Trap element",
-      "Changelog"
-    ],
-    "views": 252,
-    "lastUpdated": "2024-10-30T20:09:22.893Z"
-  },
-  {
     "id": "e6872b30",
     "belt": "Unranked",
     "makeModels": [
@@ -43506,31 +43447,6 @@
     ],
     "views": 19,
     "lastUpdated": "2023-08-10T00:09:36.307Z"
-  },
-  {
-    "id": "4debdca1",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Nemef",
-        "model": "NF4"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Tapered drivers",
-      "Changelog"
-    ],
-    "links": [
-      {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/Nemef_NF4"
-      }
-    ],
-    "views": 272,
-    "lastUpdated": "2024-10-30T20:09:22.893Z"
   },
   {
     "id": "ea4834c8",
