@@ -154,8 +154,8 @@ export function DBProvider({children}) {
     }, [user])
 
     const getPickerActivity = useCallback(async userId => {
-        return await pickerActivityCache(userId)
-    }, [])
+        return await pickerActivityCache(userId, user.uid === userId)
+    }, [user])
 
     const refreshPickerActivity = useCallback(async userId => {
         await invalidatePickerActivityCache(userId)
@@ -186,7 +186,7 @@ export function DBProvider({children}) {
             const querySnapshot = await getDocs(q)
             const newEvidence = querySnapshot.docs.map(d => d.data())
             const newMatchIds = newEvidence.map(e => e.projectId)
-            const toReplace = await pickerActivityCache(userId)
+            const toReplace = await pickerActivityCache(userId, false)
             const toReplaceIds = toReplace.filter(act => act.link === '' && newMatchIds.includes(act.matchId)).map(act => act.id)
 
             const batch = writeBatch(db)
@@ -240,7 +240,7 @@ export function DBProvider({children}) {
 
     const deleteAllUserData = useCallback(async (userId) => {
         await invalidatePickerActivityCache(userId)
-        const acts = await pickerActivityCache(userId)
+        const acts = await pickerActivityCache(userId, false)
         await removePickerActivity(acts)
 
         const ref = doc(db, 'lockcollections', userId)
@@ -314,7 +314,7 @@ export function DBProvider({children}) {
 
         if (awardsToAdd.length > 0) {
             await invalidatePickerActivityCache(user.uid)
-            const activity = await pickerActivityCache(user.uid)
+            const activity = await pickerActivityCache(user.uid, true)
             setPickerActivity(activity)
             await updateUserStatistics(user.uid)
         }
@@ -339,9 +339,8 @@ export function DBProvider({children}) {
             await setDoc(ref, {discordId: id, discordUsername: username, discordBookmark: deleteField()}, {merge: true})
 
             await invalidatePickerActivityCache(user.uid)
-            const activity = await pickerActivityCache(user.uid)
+            const activity = await pickerActivityCache(user.uid, true)
             setPickerActivity(activity)
-            await updateUserStatistics(user.uid)
         }
     }, [user])
 
@@ -393,7 +392,7 @@ export function DBProvider({children}) {
     useEffect(() => {
         async function loadActivity() {
             if (isLoggedIn) {
-                const activity = await pickerActivityCache(user.uid)
+                const activity = await pickerActivityCache(user.uid, true)
                 setPickerActivity(activity)
                 setActivityLoaded(true)
             } else if (authLoaded) {
@@ -632,7 +631,7 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
     return retval
 }
 
-async function pickerActivityCache(userId) {
+async function pickerActivityCache(userId, update) {
     const queryStr = `activity: userId == ${userId}`
     const docRef = doc(db, 'query-cache', queryStr)
     const cached = await getDoc(docRef)
@@ -648,12 +647,17 @@ async function pickerActivityCache(userId) {
         const awardSnapshot = await getDocs(awardQ)
         const existingAwardDocs = awardSnapshot.docs.map(rec => rec.data())
         const existingAwards = awardSnapshot.docs.map(rec => awardDB2Activity(rec.id, rec.data()))
-        const newAwards = await matchNewDiscordAwards(userId, existingAwardDocs)
+        const newAwards = update ? await matchNewDiscordAwards(userId, existingAwardDocs) : []
         const newAwardIds = newAwards.map(aw => aw.matchId)
         const preserveAwards = existingAwards.filter(aw => !newAwardIds.includes(aw.matchId))
 
         const result = [...evidence, ...preserveAwards, ...newAwards]
-        await setDoc(docRef, {payload: JSON.stringify(result)})
+        if (update) {
+            await setDoc(docRef, {payload: JSON.stringify(result)})
+        }
+        if (newAwards.length > 0) {
+            updateUserStatistics(userId)
+        }
         return result
     }
 }
@@ -664,7 +668,7 @@ async function invalidatePickerActivityCache(userId) {
 }
 
 async function updateUserStatistics(userId) {
-    const activity = await pickerActivityCache(userId)
+    const activity = await pickerActivityCache(userId, false)
     const scored = calculateScoreForUser(activity)
     const recordedLocks = scored.scoredActivity.filter(a => isLock(a.matchId)).map(a => a.matchId)
     const projects = scored.scoredActivity.filter(a => isProject(a.matchId)).map(a => a.matchId)
