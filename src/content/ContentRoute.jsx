@@ -29,8 +29,6 @@ function ContentRoute() {
     }, [getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
 
-    const isBlackBelt = !!data?.blackBeltAwardedAt
-
     const nav = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
     )
@@ -39,10 +37,9 @@ function ContentRoute() {
         <React.Fragment>
             <Nav title='Submit Photos' extras={nav}/>
             {loading && <LoadingDisplay/>}
-            {!loading && data && !error && isBlackBelt &&
+            {!loading && data && !error &&
                 <ContentSubmit profile={data}/>
             }
-            {!loading && (!data || error || !isBlackBelt) && <ProfileNotFound/>}
             <Footer/>
             <Tracker feature='award'/>
         </React.Fragment>

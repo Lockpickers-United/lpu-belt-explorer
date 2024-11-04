@@ -11,10 +11,13 @@
     transition: all .15s linear;
     border: 2px solid #bbb;
     border-radius: 4px;
+    justify-content: center;
+    text-align: center;
+
 }
 
 .dzu-dropzoneActive {
-    background-color: #DEEBFF;
+    background-color: #b2c3dc;
     border-color: #2484FF;
 }
 
@@ -40,7 +43,7 @@
     left: 0;
     right: 0;
     font-family: 'Helvetica', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: #2484FF;
     -moz-osx-font-smoothing: grayscale;
@@ -65,7 +68,7 @@
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 3%;
+    margin-left: 72px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
