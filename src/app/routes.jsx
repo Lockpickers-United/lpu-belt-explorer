@@ -289,6 +289,12 @@ export default [
             const {default: AwardRoute} = await import('../award/AwardRoute.jsx')
             return {element: <AwardRoute/>}
         }
+    },{
+        path: '/content',
+        lazy: async () => {
+            const {default: ContentRoute} = await import('../content/ContentRoute.jsx')
+            return {element: <ContentRoute/>}
+        }
     },
     {
         path: '*',
