@@ -4,30 +4,28 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import LockEntrySearchBox from './LockEntrySearchBox.jsx'
 import axios from 'axios'
-import Dropzone from 'react-dropzone-uploader'
-import './dropzone.css'
 import allEntries from '../data/data.json'
 import BeltIcon from '../entries/BeltIcon.jsx'
+import Dropzone from './Dropzone.jsx'
 
 function ContentSubmit({profile}) {
 
     const [lockDetails, setLockDetails] = useState({})
     const [userName, setUserName] = useState(profile?.displayName)
-    const [droppedFiles, setDroppedFiles] = useState([])
-    const [update, setUpdate] = useState(false)
+    const [files, setFiles] = useState([])
     const [response, setResponse] = useState(null)
 
     const dt = dayjs().format('YYYYMMDD-HHMMss')
     const entry = allEntries.find(e => e.id === lockDetails?.lockId)
-    const uploadable = (!!lockDetails?.lockName && !!lockDetails?.lockId && !!userName && droppedFiles.length > 0)
+    const uploadable = (!!lockDetails?.lockName && !!lockDetails?.lockId && !!userName && files.length > 0)
 
     const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_${userName}`.replace('/', '+')
 
-    const droppedFileNames = droppedFiles.map(file => {
+    const droppedFileNames = files.map(file => {
         return file.name
     })
 
-    const title = droppedFiles.length === 1 ? 'File' : 'Files'
+    const title = files.length === 1 ? 'File' : 'Files'
 
     const handleFileUpload = async (event) => {
         event.preventDefault()
@@ -35,7 +33,7 @@ function ContentSubmit({profile}) {
         const uploadsDir = `${dt}_${prefix}`
 
         const formData = new FormData()
-        droppedFiles.forEach((file) => {
+        files.forEach((file) => {
             formData.append('files', file, `${uploadsDir}/${prefix}_${file.name}`)
         })
         formData.append('droppedFileNames', droppedFileNames)
@@ -54,29 +52,12 @@ function ContentSubmit({profile}) {
             {headers: {'Content-Type': 'multipart/form-data'}}
         )
             .then(response => {
-                console.log('response', response.data)
                 setResponse(response.data)
             })
             .catch(error => {
+                // TODO: display error screen
                 console.error('error', error)
             })
-    }
-
-    const handleChangeStatus = ({meta, file}, status) => {
-        console.log(status, meta, file)
-        if (status === 'done') {
-            setDroppedFiles([...droppedFiles, file])
-        } else if (status === 'removed') {
-            setDroppedFiles(droppedFiles.filter(e => e.name !== file.name))
-        }
-        setUpdate(!update)
-    }
-
-    const handleSubmit = (files, allFiles) => {
-        console.log('files', files.map(f => f.meta))
-        setDroppedFiles(files.map(f => f.file))
-        handleFileUpload()
-        allFiles.forEach(f => f.remove())
     }
 
     const handleChange = useCallback(event => {
@@ -84,7 +65,12 @@ function ContentSubmit({profile}) {
         setUserName(value)
     }, [])
 
-    const handleReload = useCallback(() => location.reload(), [])
+    const handleReload = useCallback(() => {
+        setLockDetails([])
+        files.forEach(file => URL.revokeObjectURL(file.preview))
+        setFiles([])
+        setResponse(null)
+    }, [files])
 
     return (
 
@@ -94,7 +80,7 @@ function ContentSubmit({profile}) {
         }}>
 
             {!response &&
-                <form action='http://content.lpubelts.com:8080/api/upload' encType='multipart/form-data' method='post'
+                <form action={null} encType='multipart/form-data' method='post'
                       onSubmit={handleFileUpload}>
 
                     <div>
@@ -109,20 +95,8 @@ function ContentSubmit({profile}) {
                                 <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                     Upload<br/>
                                 </div>
-                                <Dropzone
-                                    //getUploadParams={getUploadParams}
-                                    onChangeStatus={handleChangeStatus}
-                                    onSubmit={handleSubmit}
-                                    accept='image/*'
-                                    SubmitButtonComponent={null}
-                                    styles={{
-                                        dropzone: {minHeight: 200, maxHeight: 500, width: 250},
-                                        inputLabel: (files, extra) => (extra.reject ? {color: '#666'} : {})
-                                    }}
-                                    disabled={files => files.some(f => ['preparing', 'getting_upload_params', 'uploading'].includes(f.meta.status))}
-                                    inputContent={(files, extra) =>
-                                        (extra.reject ? 'Image files only, please.' : 'Drag Files Here or Click to Browse')}
-                                />
+                                <Dropzone files={files} setFiles={setFiles}/>
+
                             </div>
                             <div>
                                 <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Details<br/></div>
@@ -149,7 +123,6 @@ function ContentSubmit({profile}) {
                                 <TextField type='text' name='notes' multiline fullWidth rows={3} color='info'/>
 
                                 <br/><br/>
-
 
                                 <Button type='submit' variant='contained' color='info' disabled={!uploadable}>
                                     Upload
