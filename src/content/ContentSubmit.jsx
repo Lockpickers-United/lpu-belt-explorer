@@ -27,6 +27,8 @@ function ContentSubmit({profile}) {
         return file.name
     })
 
+    const title = droppedFiles.length === 1 ? 'File' : 'Files'
+
     const handleFileUpload = async (event) => {
         event.preventDefault()
 
@@ -40,15 +42,17 @@ function ContentSubmit({profile}) {
         formData.append('lockFullName', lockDetails.lockFullName)
         formData.append('lockName', lockDetails.lockName)
         formData.append('version', entry.version)
+        formData.append('belt', entry.belt)
         formData.append('lockId', lockDetails.lockId)
         formData.append('userName', userName)
         formData.append('displayName', profile.displayName)
         formData.append('uploadsDir', `${dt}_${prefix}`)
         formData.append('notes', event.target.notes.value)
 
-        await axios.post('http://content.lpubelts.com:8080/api/upload', formData, {
-            headers: {'Content-Type': 'multipart/form-data'}
-        })
+        await axios.post(
+            'https://content.lpubelts.com:8443/api/upload', formData,
+            {headers: {'Content-Type': 'multipart/form-data'}}
+        )
             .then(response => {
                 console.log('response', response.data)
                 setResponse(response.data)
@@ -56,7 +60,6 @@ function ContentSubmit({profile}) {
             .catch(error => {
                 console.error('error', error)
             })
-
     }
 
     const handleChangeStatus = ({meta, file}, status) => {
@@ -126,15 +129,19 @@ function ContentSubmit({profile}) {
                                 {lockDetails.lockFullName &&
                                     <span>
                                     <span style={{fontSize: '0.9rem'}}>Lock Name</span><br/>
-                                        <div style={{display:'flex'}}>
+                                        <div style={{display: 'flex'}}>
                                         <BeltIcon value={entry?.belt} style={{marginBottom: -10}}/>
-                                        <div style={{fontWeight: 700, fontSize: '1.2rem', marginLeft:10}}>{lockDetails.lockFullName}</div>
+                                        <div style={{
+                                            fontWeight: 700,
+                                            fontSize: '1.2rem',
+                                            marginLeft: 10
+                                        }}>{lockDetails.lockFullName}</div>
                                     </div>
 
                                             <br/>
                                 </span>
                                 }
-                                <span style={{fontSize: '0.9rem'}}>Credit to:</span><br/>
+                                <span style={{fontSize: '0.9rem'}}>Credit to</span><br/>
                                 <TextField type='text' name='userName' value={userName} style={{width: 400}}
                                            onChange={handleChange} color='info'/>
                                 <br/><br/>
@@ -158,7 +165,7 @@ function ContentSubmit({profile}) {
             {response &&
                 <div style={{display: 'flex'}}>
                     <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
-                        <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files Uploaded!</div>
+                        <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>{title} Uploaded!</div>
 
                         <span style={{fontWeight: 700, fontSize: '0.8rem'}}>Lock Name</span><br/>
 
@@ -166,7 +173,7 @@ function ContentSubmit({profile}) {
                             style={{fontSize: '1.1rem'}}>{response['lockFullName']}</span>
                         <br/><br/>
 
-                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>Files</span><br/>
+                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>{title}</span><br/>
                         <span
                             style={{fontSize: '1.1rem'}}>
                         {droppedFileNames.map(file =>
@@ -175,15 +182,18 @@ function ContentSubmit({profile}) {
                     </span>
                         <br/>
 
-                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>Credit to:</span><br/>
+                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>Credit to</span><br/>
                         <span
                             style={{fontSize: '1.1rem'}}>{response['userName']}</span>
                         <br/><br/>
 
-                        <Button onClick={handleReload} variant='contained' color='info'
-                                style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                            Submit more photos!
-                        </Button>
+                        <div style={{width: '100%', textAlign: 'right'}}>
+                            <Button onClick={handleReload} variant='contained' color='info'
+                                    style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                                Submit more photos!
+                            </Button>
+                        </div>
+
                     </div>
                 </div>
             }
