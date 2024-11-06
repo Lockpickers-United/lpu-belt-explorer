@@ -13,17 +13,14 @@ import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
 import {Collapse} from '@mui/material'
-import AppContext from '../app/AppContext.jsx'
 
 function ImportButton({profile}) {
     const {isMobile} = useWindowSize()
     const {user} = useContext(AuthContext)
     const {oauthState} = useContext(DBContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
-    const {beta} = useContext(AppContext)
 
-    // useState(false) when removing beta
-    const [danImportOpen, setDanImportOpen] = useState(!beta)
+    const [danImportOpen, setDanImportOpen] = useState(false)
 
     const toggleDanImport = useCallback(() => {
         setDanImportOpen(!danImportOpen)
@@ -37,10 +34,6 @@ function ImportButton({profile}) {
     }
     const handleOpen = () => {
         setOpen(true)
-        // remove line when removing beta
-        if (!beta) {
-            setDanImportOpen(true)
-        }
     }
 
     const handleDiscordAuth = useCallback(() => {
@@ -65,24 +58,21 @@ function ImportButton({profile}) {
     const fontSize = isMobile ? '0.91rem' : '1rem'
     const lineHeight = isMobile ? '1.3rem' : '1.5rem'
 
-    // just 'IMPORT BELTS' when removing beta
-    const buttonText = beta ? 'IMPORT BELTS' : 'IMPORT'
+    const buttonText = 'IMPORT'
 
-    // remove check { !danSheetImported || beta && } when removing beta
     return (
         <React.Fragment>
-            {(!danSheetImported || beta) &&
-                <Tooltip title='Import' arrow disableFocusListener>
-                    <Button
-                        variant='contained'
-                        color='secondary' size='small'
-                        style={{lineHeight: '1.2rem', marginLeft: 6}}
-                        onClick={handleOpen}
-                    >
-                        {buttonText}
-                    </Button>
-                </Tooltip>
-            }
+            <Tooltip title='Import' arrow disableFocusListener>
+                <Button
+                    variant='contained'
+                    color='secondary' size='small'
+                    style={{lineHeight: '1.2rem', marginLeft: 6}}
+                    onClick={handleOpen}
+                >
+                    {buttonText}
+                </Button>
+            </Tooltip>
+
             <Backdrop
                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={open} onClick={null}
@@ -109,7 +99,11 @@ function ImportButton({profile}) {
                                     the official process.
                                     <br/><br/>
 
-                                    You&#39;ll need to briefly authorize for each platform you use for belts (Discord and/or Reddit) to verify your username. For Discord, we get the belt approvals from the #belt-requests channel. For Reddit, we need to read your messages to find the Mod approvals. We only make a connection once per import and your accounts will not remained linked. We cannot access and do not store your password.
+                                    You&#39;ll need to briefly authorize for each platform you use for belts (Discord
+                                    and/or Reddit) to verify your username. For Discord, we get the belt approvals from
+                                    the #belt-requests channel. For Reddit, we need to read your messages to find the
+                                    Mod approvals. We only make a connection once per import and your accounts will not
+                                    remained linked. We cannot access and do not store your password.
 
                                     <br/><br/>
                                     <span style={{fontWeight: 400}}>
@@ -156,21 +150,15 @@ function ImportButton({profile}) {
                             <Collapse in={danImportOpen}>
                                 {danImportOpen &&
                                     <React.Fragment>
+
                                         <ImportDanSheetForm/>
 
-                                        <div style={{display: 'none'}}>
-                                            REMOVE beta check when not beta
+                                        <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
+                                            Return to <Link onClick={toggleDanImport}
+                                                            style={{color: '#99c2e5', cursor: 'pointer'}}>
+                                            Import Belts
+                                        </Link>
                                         </div>
-
-                                        {beta &&
-                                            <div style={{padding: 20, width: '100%', textAlign: 'center'}}>
-                                                Return to <Link onClick={toggleDanImport}
-                                                                style={{color: '#99c2e5', cursor: 'pointer'}}>
-                                                Import Belts
-                                            </Link>
-                                            </div>
-                                        }
-
                                     </React.Fragment>
                                 }
                             </Collapse>
