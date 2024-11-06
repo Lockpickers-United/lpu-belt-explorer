@@ -99,11 +99,11 @@ function ImportButton({profile}) {
                                     the official process.
                                     <br/><br/>
 
-                                    You&#39;ll need to briefly authorize for each platform you use for belts (Discord
-                                    and/or Reddit) to verify your username. For Discord, we get the belt approvals from
-                                    the #belt-requests channel. For Reddit, we need to read your messages to find the
-                                    Mod approvals. We only make a connection once per import and your accounts will not
-                                    remained linked. We cannot access and do not store your password.
+                                    You&#39;ll need to briefly authorize for each platform you use for belts.
+                                    For Discord, we use the publicly available awards in #belt-requests so that
+                                    linking is a simple confirmation of your username to determine which belts are yours.
+                                    Reddit requests temporary permission in order to scan direct messages for belt awards.
+                                    We cannot access and do not store your password.
 
                                     <br/><br/>
                                     <span style={{fontWeight: 400}}>
