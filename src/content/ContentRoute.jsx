@@ -7,8 +7,9 @@ import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import ContentSubmit from './ContentSubmit.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import SignInButton from '../auth/SignInButton.jsx'
+import Button from '@mui/material/Button'
 
 function ContentRoute() {
     const {user} = useContext(AuthContext)
@@ -17,7 +18,7 @@ function ContentRoute() {
 
     document.title = 'LPU Belt Explorer - Submit Photos'
 
-    const userId = user?.uid
+    const userId = user ? user.uid : null
     const loadFn = useCallback(async () => {
         if (!userId) return null
         try {
@@ -37,8 +38,24 @@ function ContentRoute() {
         <React.Fragment>
             <Nav title='Submit Photos' extras={nav}/>
             {loading && <LoadingDisplay/>}
+
             {!loading && data && !error &&
                 <ContentSubmit profile={data}/>
+            }
+
+            {!loading && !data && !error &&
+                <div style={{
+                    maxWidth: 700, padding: 0,
+                    marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
+                }}>
+                    <div style={{textAlign: 'center', marginTop: 40}}>
+                        We&#39;re sorry, you must be signed in to submit content.
+                        <br/><br/>
+                        <Button style={{color: '#fff'}}>
+                            <SignInButton/>
+                        </Button>
+                    </div>
+                </div>
             }
             <Footer/>
             <Tracker feature='award'/>

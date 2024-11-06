@@ -10,7 +10,7 @@ import useWindowSize from '../util/useWindowSize'
 import entryName from '../entries/entryName'
 import {beltSort} from '../data/belts'
 
-function LockEntrySearchBox({setLockDetails, allEntries}) {
+function LockEntrySearchBox({setLockDetails, allEntries, disabled}) {
     const style = {maxWidth: 700}
     const {isMobile} = useWindowSize()
     const inputEl = useRef()
@@ -99,6 +99,8 @@ function LockEntrySearchBox({setLockDetails, allEntries}) {
                 </IconButton>
             </Tooltip>}
             {(open || !isMobile) && <Autocomplete
+                disabled={disabled}
+                key={disabled}
                 selectOnFocus
                 clearOnEscape
                 handleHomeEndKeys
