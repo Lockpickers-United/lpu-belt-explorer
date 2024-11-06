@@ -58,7 +58,7 @@ function ImportButton({profile}) {
     const fontSize = isMobile ? '0.91rem' : '1rem'
     const lineHeight = isMobile ? '1.3rem' : '1.5rem'
 
-    const buttonText = 'IMPORT'
+    const buttonText = 'IMPORT BELTS'
 
     return (
         <React.Fragment>
