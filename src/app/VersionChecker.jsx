@@ -8,7 +8,7 @@ import Button from '@mui/material/Button'
 import dayjs from 'dayjs'
 
 function VersionChecker() {
-    //if (import.meta.env.DEV) return null
+    if (import.meta.env.DEV) return null
     const [initial, setInitial] = useState()
     const [version, setVersion] = useState()
     const [minVersion, setMinVersion] = useState()
@@ -37,7 +37,7 @@ function VersionChecker() {
     useEffectOnce(() => {
         checkVersion(true)
     })
-    useInterval(checkVersion, 1 * 60 * 1000) // 10 minutes
+    useInterval(checkVersion, 10 * 60 * 1000) // 10 minutes
 
     const handleClick = useCallback(() => location.reload(), [])
 
