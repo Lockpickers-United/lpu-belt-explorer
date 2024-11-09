@@ -430,7 +430,7 @@ Purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
 Purple,Clavis,"10 pin","dual row, all spools",Dimple,,,0e5adf31
 Purple,Codkey,Locksys,"<15 pins",Dimple,"High pin count",,8a0c4b07
 Purple,"CompX Chicago,Inceca","TuBAR,Plana",,"Other,Sidebar","Active sidebar",Changelog,8d4632d9
-Purple,"Corbin Russwin",Emhart,"4 pins",Pin-tumbler,"Interlocking pins",,71bce5b7
+Purple,"Corbin Russwin",Emhart,"4 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",71bce5b7
 Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element",,db4de1bb
@@ -751,7 +751,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2",Yanai,"R 2200M",,Dimple,"High pin count",,a8e79394
 "Black 5","Yuema,Forte","750,Enigma",,Slider,"Reverse sidebar",,0b604114
 Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element",,6f837bb4
-Unranked,ABA,108418,,"Disc detainer","Under Review ⚑",,3b7643da
+Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,41,,,"Under Review ⚑",,18ecc45b

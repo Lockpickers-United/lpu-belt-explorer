@@ -665,7 +665,7 @@ your lock in the picking video. Please read more below for filming requirements.
 - [Clavis 10 pin](https://lpubelts.com/#/locks?id=0e5adf31) (dual row, all spools)
 - [Codkey Locksys](https://lpubelts.com/#/locks?id=8a0c4b07) (&lt;15 pins)
 - [CompX Chicago TuBAR / Inceca Plana](https://lpubelts.com/#/locks?id=8d4632d9)
-- [Corbin Russwin Emhart](https://lpubelts.com/#/locks?id=71bce5b7) (4 pins)
+- [Corbin Russwin Emhart](https://lpubelts.com/#/locks?id=71bce5b7) (4 pins **)
 - [Corbin Russwin Master Ring](https://lpubelts.com/#/locks?id=50fd7a98) (***)
 - [DAF Kilit DBS02](https://lpubelts.com/#/locks?id=5e264777)
 - [DeGuard Interactive clone / HQ High Security interactive clone](https://lpubelts.com/#/locks?id=db4de1bb) (5 pins)

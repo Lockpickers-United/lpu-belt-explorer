@@ -20241,13 +20241,14 @@
         "model": "Emhart"
       }
     ],
-    "version": "4 pins",
+    "version": "4 pins **",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
       "Interlocking pins"
     ],
+    "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
     "media": [
       {
         "title": "By: Datagram",
@@ -20322,7 +20323,7 @@
       "c266d57b",
       "bf43348b"
     ],
-    "lastUpdated": "2024-07-12T20:01:50.450Z"
+    "lastUpdated": "2024-11-09T18:43:06.301Z"
   },
   {
     "id": "50fd7a98",
@@ -40569,6 +40570,7 @@
         "model": "108418"
       }
     ],
+    "version": "5+",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -40609,7 +40611,7 @@
       }
     ],
     "views": 132,
-    "lastUpdated": "2023-07-25T23:56:01.036Z"
+    "lastUpdated": "2024-11-09T18:43:06.313Z"
   },
   {
     "id": "9ae8b650",
