@@ -7,7 +7,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import FilterContext from '../context/FilterContext'
 
-function SortButton({sortValues}) {
+function SortButton({sortValues, text}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -20,6 +20,11 @@ function SortButton({sortValues}) {
         setTimeout(() => addFilter('sort', value, true), 0)
     }, [addFilter, handleClose])
 
+    const display = text ? <div style={{fontSize:'0.9rem', fontWeight:700, marginRight:10}}>SORT</div> : <SortIcon/>
+    const badgeAnchor = text
+        ? {vertical: 'top', horizontal: 'right'}
+        : {vertical: 'bottom', horizontal: 'right'}
+
     return (
         <React.Fragment>
             <Tooltip title='Sort' arrow disableFocusListener>
@@ -29,11 +34,9 @@ function SortButton({sortValues}) {
                         color='secondary'
                         overlap='circular'
                         invisible={!sort}
-                        anchorOrigin={{
-                            vertical: 'bottom', horizontal: 'right'
-                        }}
+                        anchorOrigin={badgeAnchor}
                     >
-                        <SortIcon/>
+                        {display}
                     </Badge>
                 </IconButton>
             </Tooltip>

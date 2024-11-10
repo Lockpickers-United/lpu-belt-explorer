@@ -10,8 +10,18 @@ import FilterContext from '../context/FilterContext'
 import {uniqueBelts} from '../data/belts'
 import BeltIcon from '../entries/BeltIcon'
 import useWindowSize from '../util/useWindowSize'
+import SortButton from '../filters/SortButton'
+import {lockSortFields} from '../data/sortFields'
+import FilterButton from '../filters/FilterButton.jsx'
+import Button from '@mui/material/Button'
 
 function BeltToolbar() {
+    const {tab, setTab} = useContext(LockListContext)
+    const {filters, addFilter, filterCount, clearAllFilters} = useContext(FilterContext)
+    const {sort} = filters
+
+    const reset = sort || filterCount > 0
+
     const tabWidth = Math.floor(window.innerWidth / 10)
     const {width} = useWindowSize()
     const smallWidth = width <= 500
@@ -23,10 +33,15 @@ function BeltToolbar() {
         setTab(uniqueBelts[key - 1])
     })
 
-    const {tab, setTab} = useContext(LockListContext)
-    const {addFilter} = useContext(FilterContext)
+    const flexStyle = !smallWidth ? 'flex' : 'block'
+    const buttonPaddingTop = !smallWidth ? 3 : 3
+    const buttonMarginBottom = !smallWidth ? 0 : 2
 
     const handleTabClick = useCallback((event, value) => setTab(value), [setTab])
+
+    const handleReset = useCallback(() => {
+        clearAllFilters()
+    }, [clearAllFilters])
 
     const handleClick = useCallback(value => () => {
         if (tab === value) addFilter('tab', tab, true)
@@ -34,44 +49,62 @@ function BeltToolbar() {
 
     return (
         <AppBar position='relative' style={{boxShadow: 'none'}}>
-            <Tabs
-                value={tab}
-                onChange={handleTabClick}
-                indicatorColor='secondary'
-                variant={smallWidth ? 'fullWidth' : 'standard'}
-                centered={!smallWidth}
-                textColor='inherit'
-            >
-                {uniqueBelts.map(belt =>
-                    <CloneProps key={belt} value={belt}>
-                        {tabProps => (
-                            <Tooltip title={`${belt} Belt`} arrow disableFocusListener>
-                                <Tab
-                                    {...tabProps}
-                                    icon={
-                                        <BeltIcon value={belt} style={{paddingTop: 2}}/>
-                                    }
-                                    sx={tabWidthStyle}
-                                    onClick={handleClick(belt)}
-                                />
-                            </Tooltip>
+            <div style={{display: flexStyle, justifyContent: 'center'}}>
+                <div>
+                    <Tabs
+                        value={tab}
+                        onChange={handleTabClick}
+                        indicatorColor='secondary'
+                        variant={smallWidth ? 'fullWidth' : 'standard'}
+                        centered={!smallWidth}
+                        textColor='inherit'
+                    >
+                        {uniqueBelts.map(belt =>
+                            <CloneProps key={belt} value={belt}>
+                                {tabProps => (
+                                    <Tooltip title={`${belt} Belt`} arrow disableFocusListener>
+                                        <Tab
+                                            {...tabProps}
+                                            icon={
+                                                <BeltIcon value={belt} style={{paddingTop: 2}}/>
+                                            }
+                                            sx={tabWidthStyle}
+                                            onClick={handleClick(belt)}
+                                        />
+                                    </Tooltip>
+                                )}
+                            </CloneProps>
                         )}
-                    </CloneProps>
-                )}
-                <CloneProps value='search'>
-                    {tabProps => (
-                        <Tooltip title='Search Results' arrow disableFocusListener>
-                            <Tab
-                                {...tabProps}
-                                icon={
-                                    <ManageSearchIcon/>
-                                }
-                                sx={tabWidthStyle}
-                            />
-                        </Tooltip>
-                    )}
-                </CloneProps>
-            </Tabs>
+                        <CloneProps value='search'>
+                            {tabProps => (
+                                <Tooltip title='Search Results' arrow disableFocusListener>
+                                    <Tab
+                                        {...tabProps}
+                                        icon={
+                                            <ManageSearchIcon/>
+                                        }
+                                        sx={tabWidthStyle}
+                                    />
+                                </Tooltip>
+                            )}
+                        </CloneProps>
+                    </Tabs>
+                </div>
+                <div style={{
+                    display: 'flex',
+                    paddingTop: buttonPaddingTop,
+                    marginBottom: buttonMarginBottom,
+                    marginLeft: 15,
+                    justifyContent: 'center'
+                }}>
+                    <SortButton sortValues={lockSortFields} text={true}/>
+                    <FilterButton extraFilters={[{key: 'tab', value: 'search'}]} text={true}/>
+                    {reset &&
+                        <Button style={{color: '#bbb', fontSize: '0.9rem', fontWeight: 700}} onClick={handleReset}>
+                            RESET</Button>
+                    }
+                </div>
+            </div>
         </AppBar>
     )
 }

@@ -25,8 +25,10 @@ function LockListRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]}/>
+            <div style={{display:'none'}}>
             <SortButton sortValues={lockSortFields}/>
             <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
+            </div>
             {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
             <ToggleCompactButton/>
         </React.Fragment>
