@@ -87,6 +87,7 @@ function SystemMessage({override, overridePageId, placeholder}) {
             {message &&
                 <div style={{
                     minWidth: '320px', maxWidth: 680,
+                    padding:'0px 6px',
                     margin: mainMargin,
                     textAlign: 'center'
                 }}>

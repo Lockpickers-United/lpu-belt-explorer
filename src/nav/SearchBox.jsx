@@ -87,7 +87,7 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
     const focusStyle = open && isMobile ? {
         width: 'auto',
         position: 'fixed',
-        left: 60,
+        left: 50,
         right: 0,
         paddingRight: 16,
         maxWidth: 'unset',

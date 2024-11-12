@@ -34,7 +34,7 @@ function GlossarySearchBox() {
     const focusStyle = open && isMobile ? {
         width: 'auto',
         position: 'fixed',
-        left: 60,
+        left: 40,
         right: 0,
         paddingRight: 16,
         maxWidth: 'unset',
