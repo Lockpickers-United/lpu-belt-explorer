@@ -12,7 +12,6 @@ import useWindowSize from '../util/useWindowSize'
 
 function GlossarySearchBox() {
     const {isMobile} = useWindowSize()
-    const style = {maxWidth: 450}
     const navigate = useNavigate()
     const inputEl = useRef()
 
@@ -31,6 +30,7 @@ function GlossarySearchBox() {
     }, [])
     const handleBlur = useCallback(() => setOpen(false), [])
 
+    const style = {maxWidth: 450, margin: 8}
     const focusStyle = open && isMobile ? {
         width: 'auto',
         position: 'fixed',

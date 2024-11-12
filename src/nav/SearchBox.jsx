@@ -13,7 +13,7 @@ import FilterContext from '../context/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
 
-function SearchBox({label, extraFilters = []}) {
+function SearchBox({label, extraFilters = [], keepOpen}) {
     const [searchParams] = useSearchParams()
     const {filters, addFilters, removeFilter} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
@@ -81,8 +81,8 @@ function SearchBox({label, extraFilters = []}) {
 
 
     const style = isMobile
-        ? {maxWidth: 450, marginRight: 8}
-        : {maxWidth: 450, paddingLeft: 60, marginRight: 8}
+        ? {maxWidth: 450, marginTop: 8,marginRight: 8}
+        : {maxWidth: 450, marginTop: 6, marginRight: 8}
 
     const focusStyle = open && isMobile ? {
         width: 'auto',
@@ -97,7 +97,7 @@ function SearchBox({label, extraFilters = []}) {
 
     return (
         <React.Fragment>
-            {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
+            {(!open && isMobile && !keepOpen) && <Tooltip title='Search' arrow disableFocusListener>
                 <IconButton color='inherit' onClick={handleClick}>
                     <Badge
                         invisible={text.length === 0}
@@ -112,7 +112,7 @@ function SearchBox({label, extraFilters = []}) {
                     </Badge>
                 </IconButton>
             </Tooltip>}
-            {(open || !isMobile) && <TextField
+            {(open || !isMobile || keepOpen) && <TextField
                 placeholder={`Search ${label}`}
                 InputProps={{
                     inputProps: {

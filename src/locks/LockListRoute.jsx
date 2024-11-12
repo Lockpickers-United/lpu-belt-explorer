@@ -8,36 +8,28 @@ import {LockListProvider} from './LockListContext'
 import {DataProvider} from './LockDataProvider'
 import {FilterProvider} from '../context/FilterContext'
 import Entries from './Entries'
-import ToggleCompactButton from './ToggleCompactButton'
-import FilterButton from '../filters/FilterButton'
-import SortButton from '../filters/SortButton'
 import BeltToolbar from './BeltToolbar'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import allEntries from '../data/data.json'
-import {lockSortFields} from '../data/sortFields'
 
 function LockListRoute() {
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
     usePageTitle('Locks')
 
-    const nav = (
+    const extras = (
         <React.Fragment>
-            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]}/>
-            <div style={{display:'none'}}>
-            <SortButton sortValues={lockSortFields}/>
-            <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
-            </div>
-            {!isMobile && <div style={{flexGrow: 1, minWidth:'10px'}}/>}
-            <ToggleCompactButton/>
+            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={true}/>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
+
     return (
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={allEntries} profile={lockCollection}>
                 <LockListProvider>
-                    <Nav title='Locks' extras={nav}/>
+                    <Nav title='Locks' extras={extras}/>
 
                     <BeltToolbar/>
 

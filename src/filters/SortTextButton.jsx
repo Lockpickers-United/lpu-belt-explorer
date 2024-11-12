@@ -1,15 +1,14 @@
 import React, {useCallback, useContext, useState} from 'react'
 import Badge from '@mui/material/Badge'
-import SortIcon from '@mui/icons-material/Sort'
-import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import FilterContext from '../context/FilterContext'
 import Divider from '@mui/material/Divider'
 import LockListContext from '../locks/LockListContext.jsx'
+import Button from '@mui/material/Button'
 
-function SortButton({sortValues, text}) {
+function SortTextButton({sortValues}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -29,25 +28,21 @@ function SortButton({sortValues, text}) {
         setTimeout(() => addFilter('sort', value, true), 0)
     }, [addFilter, handleClose])
 
-    const display = text ? <div style={{fontSize: '0.9rem', fontWeight: 700, marginRight: 10}}>VIEW</div> : <SortIcon/>
-    const badgeAnchor = text
-        ? {vertical: 'top', horizontal: 'right'}
-        : {vertical: 'bottom', horizontal: 'right'}
+    const badgeAnchor = {vertical: 'top', horizontal: 'right'}
 
     return (
         <React.Fragment>
-            <Tooltip title='Sort' arrow disableFocusListener>
-                <IconButton color='inherit' onClick={handleOpen}>
+            <Tooltip title='View Options' arrow disableFocusListener>
+                <Button color='inherit' onClick={handleOpen} style={{color:'#ddd'}}>
                     <Badge
                         variant='dot'
                         color='secondary'
-                        overlap='circular'
                         invisible={!sort}
                         anchorOrigin={badgeAnchor}
                     >
-                        {display}
+                        VIEW
                     </Badge>
-                </IconButton>
+                </Button>
             </Tooltip>
             <Menu
                 anchorEl={anchorEl}
@@ -75,4 +70,4 @@ function SortButton({sortValues, text}) {
     )
 }
 
-export default SortButton
+export default SortTextButton

@@ -10,21 +10,17 @@ import FilterContext from '../context/FilterContext'
 import {uniqueBelts} from '../data/belts'
 import BeltIcon from '../entries/BeltIcon'
 import useWindowSize from '../util/useWindowSize'
-import SortButton from '../filters/SortButton'
 import {lockSortFields} from '../data/sortFields'
-import FilterButton from '../filters/FilterButton.jsx'
-import Button from '@mui/material/Button'
+import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 
 function BeltToolbar() {
     const {tab, setTab} = useContext(LockListContext)
-    const {filters, addFilter, filterCount, clearAllFilters} = useContext(FilterContext)
-    const {sort} = filters
-
-    const reset = sort || filterCount > 0
+    const {addFilter} = useContext(FilterContext)
 
     const tabWidth = Math.floor(window.innerWidth / 10)
     const {width} = useWindowSize()
     const smallWidth = width <= 500
+    const flexStyle = !smallWidth ? 'flex' : 'block'
 
     const tabWidthStyle = smallWidth
         ? {minWidth: tabWidth, maxWidth: tabWidth, opacity: 1}
@@ -33,15 +29,7 @@ function BeltToolbar() {
         setTab(uniqueBelts[key - 1])
     })
 
-    const flexStyle = !smallWidth ? 'flex' : 'block'
-    const buttonPaddingTop = !smallWidth ? 3 : 3
-    const buttonMarginBottom = !smallWidth ? 0 : 2
-
     const handleTabClick = useCallback((event, value) => setTab(value), [setTab])
-
-    const handleReset = useCallback(() => {
-        clearAllFilters()
-    }, [clearAllFilters])
 
     const handleClick = useCallback(value => () => {
         if (tab === value) addFilter('tab', tab, true)
@@ -90,20 +78,7 @@ function BeltToolbar() {
                         </CloneProps>
                     </Tabs>
                 </div>
-                <div style={{
-                    display: 'flex',
-                    paddingTop: buttonPaddingTop,
-                    marginBottom: buttonMarginBottom,
-                    marginLeft: 15,
-                    justifyContent: 'center'
-                }}>
-                    <SortButton sortValues={lockSortFields} text={true}/>
-                    <FilterButton extraFilters={[{key: 'tab', value: 'search'}]} text={true}/>
-                    {reset &&
-                        <Button style={{color: '#bbb', fontSize: '0.9rem', fontWeight: 700}} onClick={handleReset}>
-                            RESET</Button>
-                    }
-                </div>
+                <ViewFilterButtons sortValues={lockSortFields} extraFilters={[{key: 'tab', value: 'search'}]}/>
             </div>
         </AppBar>
     )

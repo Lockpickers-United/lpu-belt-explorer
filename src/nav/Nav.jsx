@@ -6,31 +6,51 @@ import MainMenu from './MainMenu'
 import ScrollToTopButton from './ScrollToTopButton'
 import UserMenu from './UserMenu'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
-function Nav({extras, title}) {
+function Nav({extras, extrasTwo, title}) {
+
+    const {isMobile} = useWindowSize()
+    const spacer = isMobile && extrasTwo ? 20 : 0
+    const flexStyle = !isMobile ? 'flex' : 'block'
+
     return (
         <React.Fragment>
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
-                <Toolbar>
-                    <MainMenu/>
+                <Toolbar style={{marginTop:0, minHeight:56}}>
+                    <div style={{display: flexStyle, width:'100%'}}>
+                        <div style={{display: 'flex', flexGrow:1}}>
+                            <MainMenu/>
+                            <VersionChecker/>
+                            <div style={{
+                                flexGrow: 1,
+                                fontWeight: 500,
+                                fontSize: '1.5rem',
+                                paddingLeft: 8,
+                                paddingRight: 16,
+                                marginTop: 6
+                            }}>
+                                <nobr>{title}</nobr>
+                            </div>
+                            {extras}
 
-                    <VersionChecker/>
+                            {!isMobile && extrasTwo &&
+                                extrasTwo
+                            }
 
-                    <div style={{
-                        flexGrow: 1,
-                        fontWeight: 500,
-                        fontSize: '1.5rem',
-                        paddingLeft: 16
-                    }}><nobr>{title}</nobr></div>
-
-                    {extras}
-
-                    <UserMenu/>
+                            <UserMenu/>
+                        </div>
+                        {isMobile && extrasTwo &&
+                        <div style={{display: 'flex', justifyContent:'center'}}>
+                            {extrasTwo}
+                        </div>
+                        }
+                    </div>
                 </Toolbar>
             </AppBar>
 
             {/* Dummy toolbar to help content place correctly below this */}
-            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)'}}/>
+            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', marginTop: spacer}}/>
 
             <SystemMessage/>
 

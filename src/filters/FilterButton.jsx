@@ -15,7 +15,6 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
-import SortIcon from '@mui/icons-material/Sort.js'
 
 function FilterButton({onFiltersChanged, extraFilters = [], text}) {
     const {isLoggedIn} = useContext(AuthContext)
