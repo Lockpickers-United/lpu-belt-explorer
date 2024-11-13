@@ -20,7 +20,7 @@ function ViewFilterButtons({sortValues, extraFilters = []}) {
     const {width} = useWindowSize()
     const smallWidth = width <= 500
 
-    const buttonPaddingTop = !smallWidth ? 3 : 3
+    const buttonPaddingTop = !smallWidth ? 0 : 3
     const buttonMarginBottom = !smallWidth ? 0 : 2
     const buttonWidth = !smallWidth ? 60 : 80
 

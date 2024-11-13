@@ -40,6 +40,7 @@ function FilterTextButton({onFiltersChanged}) {
         setInitialBelt(beltScope)
     } else if (scope === 'belt' && beltScope === 'search') {
         setScope('all')
+        setInitialBelt(beltScope)
     }
 
     const {color, lineColor = '#999'} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
@@ -63,7 +64,6 @@ function FilterTextButton({onFiltersChanged}) {
             {key: keyToAdd, value: valueToAdd},
             {key: 'id', value: undefined},
             {key: 'name', value: undefined}
-            //...extraFilters
         ], true)
         onFiltersChanged && onFiltersChanged()
     }, [addFilters, onFiltersChanged])

@@ -17,9 +17,9 @@ function Nav({extras, extrasTwo, title}) {
     return (
         <React.Fragment>
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
-                <Toolbar style={{marginTop:0, minHeight:56}}>
-                    <div style={{display: flexStyle, width:'100%'}}>
-                        <div style={{display: 'flex', flexGrow:1}}>
+                <Toolbar style={{marginTop: 6, minHeight: 40}}>
+                    <div style={{display: flexStyle, width: '100%'}}>
+                        <div style={{display: 'flex', flexGrow: 1}}>
                             <MainMenu/>
                             <VersionChecker/>
                             <div style={{
@@ -41,9 +41,9 @@ function Nav({extras, extrasTwo, title}) {
                             <UserMenu/>
                         </div>
                         {isMobile && extrasTwo &&
-                        <div style={{display: 'flex', justifyContent:'center'}}>
-                            {extrasTwo}
-                        </div>
+                            <div style={{display: 'flex', justifyContent: 'center'}}>
+                                {extrasTwo}
+                            </div>
                         }
                     </div>
                 </Toolbar>
