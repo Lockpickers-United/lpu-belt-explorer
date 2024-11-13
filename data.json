@@ -1144,7 +1144,7 @@
         "model": "Laminated padlock"
       }
     ],
-    "version": "40mm or larger",
+    "version": "40mm or larger, 4 pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -1185,7 +1185,7 @@
     "relatedIds": [
       "200605b9"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.017Z"
+    "lastUpdated": "2024-11-13T14:40:00.545Z"
   },
   {
     "id": "82ea52a4",
@@ -7333,7 +7333,7 @@
         "model": "Laminated padlock"
       }
     ],
-    "version": "44mm or larger",
+    "version": "44mm or larger, 5 pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -7374,7 +7374,7 @@
     "relatedIds": [
       "abdf3acd"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.019Z"
+    "lastUpdated": "2024-11-13T14:40:00.549Z"
   },
   {
     "id": "2ae1e0b8",

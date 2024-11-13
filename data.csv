@@ -24,7 +24,7 @@ Yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
 Yellow,ABUS,84/35,,Pin-tumbler,Unguttable,,805fc883
 Yellow,ABUS,"MyLock / T65AL",,Pin-tumbler,Unguttable,,423dbebe
 Yellow,ABUS,"Nautic T84MB/40",,Pin-tumbler,,,9d830052
-Yellow,ACE,"Laminated padlock","40mm or larger",Pin-tumbler,Unguttable,,abdf3acd
+Yellow,ACE,"Laminated padlock","40mm or larger, 4 pins",Pin-tumbler,Unguttable,,abdf3acd
 Yellow,ALPHA,1000,"40mm up to 45mm (4pins / spools)",Pin-tumbler,,,82ea52a4
 Yellow,"American Lock",5200,"bump stop model: all standards + 1 anti-bump pin",Pin-tumbler,,"The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",a0d1bf97
 Yellow,,ARFE,,Pin-tumbler,Unguttable,,a1581afe
@@ -170,7 +170,7 @@ Green,ABUS,XD25,,Dimple,,,1b10225b
 Green,ABUS,Xp10,,Pin-tumbler,,,9adbc90f
 Green,ACE,A527,,Pin-tumbler,,,3af47daf
 Green,ACE,"Brass Padlock","38mm or larger",Pin-tumbler,Unguttable,,1dafd552
-Green,ACE,"Laminated padlock","44mm or larger",Pin-tumbler,Unguttable,,200605b9
+Green,ACE,"Laminated padlock","44mm or larger, 5 pins",Pin-tumbler,Unguttable,,200605b9
 Green,"American Lock","1100 / A1100",,Pin-tumbler,,,2ae1e0b8
 Green,"American Lock",1160,"1100 but with 6 pin stacks",Pin-tumbler,,,1ae40987
 Green,"American Lock","2000 puck lock",,Pin-tumbler,,,b16ffe3f
