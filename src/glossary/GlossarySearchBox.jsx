@@ -26,7 +26,10 @@ function GlossarySearchBox() {
     const [open, setOpen] = useState(false)
     const handleClick = useCallback(() => {
         setOpen(true)
-        setTimeout(() => inputEl.current.focus(), 15)
+        setTimeout(() => {
+            inputEl.current.focus()
+            inputEl.current.select()
+        }, 0)
     }, [])
     const handleBlur = useCallback(() => setOpen(false), [])
 

@@ -15,7 +15,7 @@ import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 
 function BeltToolbar() {
     const {tab, setTab} = useContext(LockListContext)
-    const {addFilter} = useContext(FilterContext)
+    const {addFilter, removeFilters} = useContext(FilterContext)
 
     const tabWidth = Math.floor(window.innerWidth / 10)
     const {width} = useWindowSize()
@@ -32,8 +32,12 @@ function BeltToolbar() {
     const handleTabClick = useCallback((event, value) => setTab(value), [setTab])
 
     const handleClick = useCallback(value => () => {
-        if (tab === value) addFilter('tab', tab, true)
-    }, [addFilter, tab])
+        if (tab === value) {
+            addFilter('tab', tab, true)
+        } else {
+            removeFilters(['belt'])
+        }
+    }, [addFilter, removeFilters, tab])
 
     return (
         <AppBar position='relative' style={{boxShadow: 'none'}}>
