@@ -14,8 +14,10 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import ScoringContext from '../context/ScoringContext.jsx'
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 
-function RecordingControls({lockId}) {
+function RecordingControls({lockId, dense}) {
+
     const {isLoggedIn} = useContext(AuthContext)
     const [editRecId, setEditRecId] = useState(null)
     const {scoredActivity} = useContext(ScoringContext)
@@ -27,6 +29,7 @@ function RecordingControls({lockId}) {
         })
 
     const handleOverlayOpen = useCallback(id => {
+        console.log('handleOverlayOpen', id)
         setEditRecId(id)
     }, [])
 
@@ -35,79 +38,66 @@ function RecordingControls({lockId}) {
     }, [])
 
     return (
-        <React.Fragment> {
-            recordings.map((rec, index) => {
-                    return (
-                        <div key={rec.id}>
-                            <Stack direction='row' alignItems='center'>
-                                {index===0 &&
-                                <FormGroup>
-                                    <FormControlLabel
-                                        key={'scorecard'}
-                                        control={
-                                            <Checkbox
-                                                id={'scorecard'}
-                                                disabled={!isLoggedIn}
-                                                color='secondary'
-                                                checked={recordings.length > 0}
-                                                onChange={() => handleOverlayOpen(rec.id)}
-                                            />
-                                        }
-                                        label={'Scorecard'}
-                                    />
-                                </FormGroup>
-                                }
-                                {index > 0 &&
-                                <div style={{margin:'0px 15px 0px 38px', color:'#bbb'}}>Duplicate</div>
-                                }
-                                <IconButton edge='start' onClick={() => handleOverlayOpen(rec.id)}>
-                                    <EditIcon style={{width: 22, height: 22}}/>
-                                </IconButton>
-                                <ScorecardEvidenceButton activity={rec}/>
-                            </Stack>
-                            <Backdrop
-                                sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
-                                open={editRecId === rec.id} onClick={null}
-                            >
-                                <Card style={{
-                                    maxWidth: 600,
-                                    marginLeft: 'auto',
-                                    marginRight: 'auto',
-                                    border: '1px solid #666'
-                                }}>
-                                    <CardHeader title={'Documentation'} action={<HighlightOffIcon sx={{cursor:'pointer'}}/>} style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
-                                    <CardContent>
-                                        <EvidenceForm activity={rec} handleUpdate={handleOverlayClose} source={'collectionButton'}/>
-                                    </CardContent>
-                                </Card>
-                            </Backdrop>
+        <React.Fragment>
 
-                        </div>
-                    )
-
-            }).concat([
-                recordings.length === 0 &&
-                    <div key='0'>
-                        <Stack direction='row' alignItems='center' onClick={() => setEditRecId(0)}>
-                            <FormGroup>
-                                <FormControlLabel
-                                    key={'scorecard'}
-                                    control={
-                                        <Checkbox
-                                            id={'scorecard'}
-                                            disabled={!isLoggedIn}
-                                            color='secondary'
-                                            checked={recordings.length > 0}
-                                            onClick={() => handleOverlayOpen(0)}
-                                        />
+            {recordings.map((rec, index) => {
+                return (
+                    <div key={rec.id}>
+                        <Stack direction='row' alignItems='center'>
+                            {index === 0 &&
+                                <React.Fragment>
+                                    {dense &&
+                                        <React.Fragment>
+                                            {recordings.map((rec, index) => {
+                                                    return (
+                                                        <div key={rec.id}>
+                                                            {index === 0 &&
+                                                                <IconButton onClick={() => handleOverlayOpen(rec.id)}
+                                                                            style={{color: '#18aa18', padding:4}}>
+                                                                    <VideocamOutlinedIcon/>
+                                                                </IconButton>
+                                                            }
+                                                        </div>
+                                                    )
+                                                }
+                                            )}
+                                        </React.Fragment>
                                     }
-                                    label={'Scorecard'}
-                                />
-                            </FormGroup>
+                                    {!dense &&
+                                        <FormGroup>
+                                            <FormControlLabel
+                                                key={'scorecard'}
+                                                control={
+                                                    <Checkbox
+                                                        id={'scorecard'}
+                                                        disabled={!isLoggedIn}
+                                                        color='secondary'
+                                                        checked={recordings.length > 0}
+                                                        onChange={() => handleOverlayOpen(rec.id)}
+                                                    />
+                                                }
+                                                label={'Scorecard'}
+                                            />
+                                        </FormGroup>
+                                    }
+                                </React.Fragment>
+
+                            }
+                            {index > 0 &&
+                                <div style={{margin: '0px 15px 0px 38px', color: '#bbb'}}>Duplicate</div>
+                            }
+                            {!dense &&
+                                <React.Fragment>
+                                    <IconButton edge='start' onClick={() => handleOverlayOpen(rec.id)}>
+                                        <EditIcon style={{width: 22, height: 22}}/>
+                                    </IconButton>
+                                    <ScorecardEvidenceButton activity={rec}/>
+                                </React.Fragment>
+                            }
                         </Stack>
                         <Backdrop
                             sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
-                            open={editRecId === 0} onClick={null}
+                            open={editRecId === rec.id} onClick={null}
                         >
                             <Card style={{
                                 maxWidth: 600,
@@ -116,16 +106,69 @@ function RecordingControls({lockId}) {
                                 border: '1px solid #666'
                             }}>
                                 <CardHeader title={'Documentation'}
-                                            action={<HighlightOffIcon sx={{cursor:'pointer'}}/>}
-                                            style={{paddingBottom: 0}}
-                                            onClick={handleOverlayClose}/>
+                                            action={<HighlightOffIcon sx={{cursor: 'pointer'}}/>}
+                                            style={{paddingBottom: 0}} onClick={handleOverlayClose}/>
                                 <CardContent>
-                                    <EvidenceForm activity={null} lockId={lockId} handleUpdate={handleOverlayClose} source={'collectionButton'} owner={true}/>
+                                    <EvidenceForm activity={rec} handleUpdate={handleOverlayClose}
+                                                  source={'collectionButton'}/>
                                 </CardContent>
                             </Card>
                         </Backdrop>
 
                     </div>
+                )
+
+            }).concat([
+                recordings.length === 0 &&
+                <div key='0'>
+                    {dense &&
+                        <div>
+                            <IconButton onClick={() => handleOverlayOpen(0)} style={{padding:4}}>
+                                <VideocamOutlinedIcon style={{cursor: 'pointer'}}/>
+                            </IconButton>
+                        </div>
+                    }
+                    {!dense &&
+                        <Stack direction='row' alignItems='center' onClick={() => setEditRecId(0)}>
+                        <FormGroup>
+                            <FormControlLabel
+                                key={'scorecard'}
+                                control={
+                                    <Checkbox
+                                        id={'scorecard'}
+                                        disabled={!isLoggedIn}
+                                        color='secondary'
+                                        checked={recordings.length > 0}
+                                        onClick={() => handleOverlayOpen(0)}
+                                    />
+                                }
+                                label={'Scorecard'}
+                            />
+                        </FormGroup>
+                    </Stack>
+                    }
+                    <Backdrop
+                        sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
+                        open={editRecId === 0} onClick={null}
+                    >
+                        <Card style={{
+                            maxWidth: 600,
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            border: '1px solid #666'
+                        }}>
+                            <CardHeader title={'Documentation'}
+                                        action={<HighlightOffIcon sx={{cursor: 'pointer'}}/>}
+                                        style={{paddingBottom: 0}}
+                                        onClick={handleOverlayClose}/>
+                            <CardContent>
+                                <EvidenceForm activity={null} lockId={lockId} handleUpdate={handleOverlayClose}
+                                              source={'collectionButton'} owner={true}/>
+                            </CardContent>
+                        </Card>
+                    </Backdrop>
+
+                </div>
             ])}
         </React.Fragment>
     )

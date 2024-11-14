@@ -29,7 +29,7 @@ function CompactEntries({entries}) {
                         />
 
                         <ListItemIcon style={{minWidth: 20, marginLeft: 16}}>
-                            <CollectionButton id={entry.id} dense/>
+                            <CollectionButton id={entry.id} dense exposed/>
                         </ListItemIcon>
                     </ListItem>
                 )}
