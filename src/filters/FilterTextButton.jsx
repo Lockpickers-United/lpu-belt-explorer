@@ -110,6 +110,7 @@ function FilterTextButton({onFiltersChanged}) {
                                         padding: '6px 12px', borderColor: '#666'
                                     }}
                                     value={'belt'}
+                                    disabled={scope === 'belt'}
                                 >
                                     <div style={{
                                         backgroundColor: color,
@@ -131,6 +132,7 @@ function FilterTextButton({onFiltersChanged}) {
                                         padding: '6px 12px', borderColor: '#666'
                                     }}
                                     value={'all'}
+                                    disabled={scope === 'all'}
                                 >ALL LOCKS</ToggleButton>
                             </ToggleButtonGroup>
                         </div>
