@@ -17,6 +17,7 @@ function Entries({profile}) {
     const {compact, tab, expanded, displayAll} = useContext(LockListContext)
     const {allEntries, visibleEntries = []} = useContext(DataContext)
     const {filterCount} = useContext(FilterContext)
+    const isSearch = /search=/.test(location.hash)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const defTab = useDeferredValue(tab)
@@ -50,9 +51,9 @@ function Entries({profile}) {
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
 
-                {(defTab !== 'search' && filterCount === 0 && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
+                {(defTab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
 
-                {entries.length === 0 && <NoEntriesCard label='Locks'/>}
+                {entries.length === 0 && <NoEntriesCard label='Locks' isSearch={isSearch}/>}
 
                 {compact
                     ? <CompactEntries entries={entries}/>

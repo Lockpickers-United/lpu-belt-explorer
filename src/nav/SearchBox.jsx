@@ -95,6 +95,8 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
         backgroundColor: '#272727'
     } : {}
 
+    const iconColor = text ? 'secondary' : 'inherit'
+
     return (
         <React.Fragment>
             {(!open && isMobile && !keepOpen) && <Tooltip title='Search' arrow disableFocusListener>
@@ -120,7 +122,7 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
                     },
                     startAdornment: (
                         <InputAdornment position='start'>
-                            <SearchIcon/>
+                            <SearchIcon color={iconColor}/>
                         </InputAdornment>
                     ),
                     endAdornment

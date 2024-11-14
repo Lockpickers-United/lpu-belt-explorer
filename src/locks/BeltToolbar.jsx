@@ -1,4 +1,3 @@
-import ManageSearchIcon from '@mui/icons-material/ManageSearch'
 import AppBar from '@mui/material/AppBar'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
@@ -12,6 +11,7 @@ import BeltIcon from '../entries/BeltIcon'
 import useWindowSize from '../util/useWindowSize'
 import {lockSortFields} from '../data/sortFields'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
+import IconAll from '../resources/iconAll.jsx'
 
 function BeltToolbar() {
     const {tab, setTab} = useContext(LockListContext)
@@ -38,6 +38,8 @@ function BeltToolbar() {
             removeFilters(['belt'])
         }
     }, [addFilter, removeFilters, tab])
+
+    const allColor = tab === 'search' ? '#eee' : '#aaa'
 
     return (
         <AppBar position='relative' style={{boxShadow: 'none'}}>
@@ -69,16 +71,16 @@ function BeltToolbar() {
                         )}
                         <CloneProps value='search'>
                             {tabProps => (
-                                <Tooltip title='Search Results' arrow disableFocusListener>
+                                <Tooltip title='All Matching Locks' arrow disableFocusListener>
                                     <Tab
                                         {...tabProps}
                                         icon={
-                                            <ManageSearchIcon/>
+                                            <IconAll fill={allColor}/>
                                         }
                                         sx={tabWidthStyle}
                                     />
                                 </Tooltip>
-                            )}
+                                )}
                         </CloneProps>
                     </Tabs>
                 </div>

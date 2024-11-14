@@ -16,7 +16,6 @@ function ViewFilterButtons({sortValues, extraFilters = []}) {
         clearAllFilters()
     }, [clearAllFilters])
 
-
     const {width} = useWindowSize()
     const smallWidth = width <= 500
 
@@ -34,7 +33,7 @@ function ViewFilterButtons({sortValues, extraFilters = []}) {
         }}
              sx={{
                  '.MuiBadge-anchorOriginTopRightRectangular': {
-                     marginBottom: '5px'
+                     marginTop: '5px'
                  },
                  '.MuiButton-root': {
                      minWidth: buttonWidth
