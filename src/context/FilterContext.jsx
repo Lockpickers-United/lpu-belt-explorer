@@ -75,6 +75,11 @@ export function FilterProvider({children, filterFields = []}) {
         setFilters({tab, sort})
     }, [filters, setFilters])
 
+    const clearAllFilters = useCallback(() => {
+        const {tab} = filters
+        setFilters({tab})
+    }, [filters, setFilters])
+
     const filterCount = useMemo(() => {
         const keys = Array.from(searchParams.keys())
         return keys.filter(key => !nonFilters.includes(key)).length
@@ -89,6 +94,7 @@ export function FilterProvider({children, filterFields = []}) {
         removeFilters,
         setFilters,
         clearFilters,
+        clearAllFilters,
         filterFields,
         filterFieldsByFieldName: filterFields.reduce((acc, value) => ({
             ...acc,
@@ -98,6 +104,7 @@ export function FilterProvider({children, filterFields = []}) {
         addFilter,
         addFilters,
         clearFilters,
+        clearAllFilters,
         filterCount,
         filters,
         removeFilter,

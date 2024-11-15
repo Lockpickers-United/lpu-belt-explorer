@@ -39,7 +39,7 @@ function MainMenu() {
         <React.Fragment>
             <Tooltip title='Main Menu' arrow disableFocusListener>
                 <IconButton edge='start' color='inherit' onClick={openDrawer}
-                            style={{backgroundColor: '#181818', height: '36px', width: '36px', marginLeft: '-8px'}}
+                            style={{backgroundColor: '#181818', height: '36px', width: '36px', marginLeft: '-8px', marginTop:6}}
                 >
                     <MenuIcon/>
                 </IconButton>

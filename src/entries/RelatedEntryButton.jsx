@@ -15,14 +15,16 @@ function RelatedEntryButton({id, onExpand, entryId}) {
         onExpand(id)
     }, [id, navigate, onExpand])
 
-    const style = id === entryId ? {border:'1px solid #777'} : {}
+    const style = id === entryId ? {border: '1px solid #777'} : {}
     const disabled = id === entryId
 
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>
-            <IconButton onClick={handleClick} style={style} disabled={disabled}>
-                <BeltIcon value={entry.belt} related={true} disabled={disabled}/>
-            </IconButton>
+            <span>
+                <IconButton onClick={handleClick} style={style} disabled={disabled}>
+                    <BeltIcon value={entry.belt} related={true} disabled={disabled}/>
+                </IconButton>
+            </span>
         </Tooltip>
     )
 }

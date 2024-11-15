@@ -427,7 +427,8 @@ export function DBProvider({children}) {
 
     const updateSystemMessage = useCallback(async (message) => {
         if (dbError) return false
-        const ref = doc(db, 'system-messages', message.dbId)
+        const id = message.dbId ? message.dbId : message.id
+        const ref = doc(db, 'system-messages', id)
         await setDoc(ref, message)
     }, [dbError])
 
