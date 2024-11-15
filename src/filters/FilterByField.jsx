@@ -11,9 +11,9 @@ import Chip from '@mui/material/Chip'
 function FilterByField({label, fieldName, onFilter, sort, tab}) {
     const {visibleEntries} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
-
+    
     const entries = useMemo(() => {
-        if (tab === 'search') {
+        if (tab === 'search' || !tab) {
             return visibleEntries
         } else {
             return visibleEntries.filter(entry => entry.simpleBelt === tab)
