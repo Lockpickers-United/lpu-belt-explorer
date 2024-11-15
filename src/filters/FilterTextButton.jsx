@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import Tooltip from '@mui/material/Tooltip'
@@ -26,24 +26,22 @@ function FilterTextButton({onFiltersChanged}) {
     const {belt} = filters
 
     const isLocks = /\/locks/.test(location.hash)
-    const beltScope = tab
-        ? tab
-        : belt
-            ? belt
-            : 'White'
+    const beltScope = useMemo(() => {
+        return tab
+            ? tab
+            : belt
+                ? belt
+                : 'White'
+    }, [belt, tab])
+    const scope = useMemo(() => beltScope !== 'search' ? 'belt' : 'all', [beltScope])
 
     const [initialBelt, setInitialBelt] = useState(beltScope)
-    const [scope, setScope] = useState('belt')
 
     if (beltScope !== initialBelt && beltScope !== 'search') {
-        setScope('belt')
         setInitialBelt(beltScope)
     } else if (scope === 'belt' && beltScope === 'search') {
-        setScope('all')
-        setInitialBelt(beltScope)
+        setInitialBelt('search')
     }
-
-    const {color, lineColor = '#999'} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
 
     const [open, setOpen] = useState(false)
     const handleHotkey = useCallback(() => setOpen(!open), [open])
@@ -56,7 +54,6 @@ function FilterTextButton({onFiltersChanged}) {
             removeFilters(['belt'])
             addFilter('tab', initialBelt, true)
         }
-        setScope(value)
     }, [addFilter, initialBelt, removeFilters])
 
     const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
@@ -70,6 +67,9 @@ function FilterTextButton({onFiltersChanged}) {
 
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
+
+    const {color, lineColor = '#999'} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
+    const beltOpacity = scope === 'belt' ? 1 : 0.7
 
     return (
         <React.Fragment>
@@ -119,7 +119,8 @@ function FilterTextButton({onFiltersChanged}) {
                                         borderColor: lineColor,
                                         borderRadius: 8,
                                         border: '1px solid',
-                                        marginRight: 8
+                                        marginRight: 8,
+                                        opacity: beltOpacity
                                     }}/>
                                     {initialBelt} BELT
                                 </ToggleButton>
