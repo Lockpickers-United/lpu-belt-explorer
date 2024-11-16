@@ -19,7 +19,7 @@ function Nav({extras, extrasTwo, title}) {
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
                 <Toolbar style={{marginTop: 6, minHeight: 40}}>
                     <div style={{display: flexStyle, width: '100%'}}>
-                        <div style={{display: 'flex', flexGrow: 1}}>
+                        <div style={{display: 'flex', flexGrow: 1, marginBottom:8}}>
                             <MainMenu/>
                             <VersionChecker/>
                             <div style={{
