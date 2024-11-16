@@ -13,6 +13,7 @@ import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
+import Collapse from '@mui/material/Collapse'
 
 function Entries({profile}) {
     const {compact, tab, expanded} = useContext(LockListContext)
@@ -31,16 +32,18 @@ function Entries({profile}) {
         }
     }, [defTab, visibleEntries])
 
-    const [lastLoaded, setLastLoaded] = useState(true)
+    const [loaded, setLoaded] = useState(true)
+
+    console.log('Entries render')
+
     useEffect(() => {
         if (tab === 'search') {
-            setLastLoaded(false)
+            setLoaded(false)
         }
-        if (defTab === 'search') {
-            setLastLoaded(true)
+        if (tab !== 'search' || defTab === 'search') {
+            setLoaded(true)
         }
-    }, [defTab, lastLoaded, tab])
-
+    }, [defTab, tab])
 
     const footer = (
         <React.Fragment>
@@ -59,12 +62,10 @@ function Entries({profile}) {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
-                {!lastLoaded && !isSearch && filterCount === 0 &&
-                    <div style={{textAlign: 'center'}}>
+                <Collapse in={!loaded && !isSearch && filterCount === 0} style={{textAlign: 'center'}}>
                         <LoadingDisplay/>
                         Please wait while we load up all <b>{visibleEntries.length}</b> locks.<br/><br/>
-                    </div>
-                }
+                </Collapse>
 
                 {(defTab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
                     <BeltRequirements belt={defTab}/>}
