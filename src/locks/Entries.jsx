@@ -18,8 +18,7 @@ import Collapse from '@mui/material/Collapse'
 function Entries({profile}) {
     const {compact, tab, expanded} = useContext(LockListContext)
     const {visibleEntries = []} = useContext(DataContext)
-    const {filterCount} = useContext(FilterContext)
-    const isSearch = /search=/.test(location.hash)
+    const {filterCount, isSearch} = useContext(FilterContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
     const defTab = useDeferredValue(tab)
@@ -34,16 +33,22 @@ function Entries({profile}) {
 
     const [loaded, setLoaded] = useState(true)
 
-    console.log('Entries render')
+    console.log(`Entries render     tab: ${tab}    defTab: ${defTab}       loaded: ${loaded}`)
 
-    useEffect(() => {
-        if (tab === 'search') {
-            setLoaded(false)
-        }
-        if (tab !== 'search' || defTab === 'search') {
-            setLoaded(true)
-        }
-    }, [defTab, tab])
+    const [initialTab, setInitialTab] = useState(tab)
+    const [initialDefTab, setInitialDefTab] = useState(tab)
+
+    if (initialTab !== tab && tab === 'search') {
+        setLoaded(false)
+        setInitialTab(tab)
+    } else if (initialTab !== tab && tab !== 'search') {
+        setLoaded(true)
+        setInitialTab(tab)
+    }
+    if (defTab !== initialDefTab && defTab === tab) {
+        setLoaded(true)
+        setInitialDefTab(defTab)
+    }
 
     const footer = (
         <React.Fragment>
@@ -63,8 +68,8 @@ function Entries({profile}) {
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
                 <Collapse in={!loaded && !isSearch && filterCount === 0} style={{textAlign: 'center'}}>
-                        <LoadingDisplay/>
-                        Please wait while we load up all <b>{visibleEntries.length}</b> locks.<br/><br/>
+                    <LoadingDisplay/>
+                    Please wait while we load up all <b>{visibleEntries.length}</b> locks.<br/><br/>
                 </Collapse>
 
                 {(defTab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
