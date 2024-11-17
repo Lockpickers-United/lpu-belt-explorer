@@ -26,7 +26,7 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 function CollectionButton({id, dense, exposed}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
-    const [anchorEl, setAnchorEl] = useState(null)
+    const [anchorEl, setAnchorEl] = useState(() => undefined)
     const [checkboxUpdating, setCheckboxUpdating] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -48,18 +48,17 @@ function CollectionButton({id, dense, exposed}) {
         setCheckboxUpdating(null)
     }, [id, addToLockCollection, removeFromLockCollection])
 
-    // <LockIcon color={isChecked(key) ? 'secondary' : undefined} onClick={handleSort('own')} style={{cursor: 'pointer'}}/>
-
     const listIcons = {
-        own: <LockIcon style={{cursor: 'pointer'}}/>,
-        picked: <LockOpenOutlinedIcon style={{cursor: 'pointer'}}/>,
-        wishlist: <SavingsOutlinedIcon style={{cursor: 'pointer'}}/>,
-        recordedLocks: <VideocamOutlinedIcon style={{cursor: 'pointer'}}/>
+        own: <LockIcon fontSize={isMobile ? 'small' : 'medium'}/>,
+        picked: <LockOpenOutlinedIcon fontSize={isMobile ? 'small' : 'medium'}/>,
+        wishlist: <SavingsOutlinedIcon fontSize={isMobile ? 'small' : 'medium'}/>,
+        recordedLocks: <VideocamOutlinedIcon fontSize={isMobile ? 'small' : 'medium'}/>
     }
+
+    const iconPadding = isMobile ? 5 : 7
 
     return (
         <React.Fragment>
-
             {exposed && isLoggedIn &&
                 <div style={{display: 'flex'}}>
                     {collectionOptions.locks.map.filter(c => c.entry === 'checkbox').map(({key}) =>
@@ -67,7 +66,7 @@ function CollectionButton({id, dense, exposed}) {
                             {checkboxUpdating === key
                                 ? <LoadingDisplaySmall/>
                                 : <IconButton key={key} onClick={handleChange(key, isChecked(key))}
-                                              style={{color: isChecked(key) ? '#18aa18' : undefined, padding: 4}}>
+                                              style={{color: isChecked(key) ? '#18aa18' : undefined, padding: iconPadding}}>
                                     {listIcons[key]}
                                 </IconButton>
                             }
