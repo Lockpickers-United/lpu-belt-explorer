@@ -11,7 +11,7 @@ import usePageTitle from '../util/usePageTitle.jsx'
 import {useNavigate} from 'react-router-dom'
 import Link from '@mui/material/Link'
 
-function ImportPreviewDisplay({profile, importResults, syncStatus, service}) {
+function ImportPreviewDisplay({profile, importResults, service}) {
     usePageTitle('Import Results')
     const {isMobile} = useWindowSize()
     const navigate = useNavigate()
