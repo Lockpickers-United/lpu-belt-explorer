@@ -7,6 +7,7 @@ import FilterContext from '../context/FilterContext'
 import Divider from '@mui/material/Divider'
 import LockListContext from '../locks/LockListContext.jsx'
 import Button from '@mui/material/Button'
+import AppContext from '../app/AppContext.jsx'
 
 function SortTextButton({sortValues}) {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -16,7 +17,7 @@ function SortTextButton({sortValues}) {
     const {filters, addFilter} = useContext(FilterContext)
     const {sort} = filters
 
-    const {compact, setCompact} = useContext(LockListContext)
+    const {compact, setCompact} = useContext(AppContext)
 
     const handleCompactClick = useCallback(value => () => {
         handleClose()
