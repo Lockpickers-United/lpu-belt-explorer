@@ -37,7 +37,6 @@ function CollectionButton({id, dense, exposed}) {
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
     const handleChange = useCallback((key, collected) => async (event, checked) => {
-        console.log('handleChange', collected)
         event.preventDefault()
         setCheckboxUpdating(key)
         if (checked || !collected) {

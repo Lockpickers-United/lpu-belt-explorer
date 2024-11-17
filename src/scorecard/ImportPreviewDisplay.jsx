@@ -16,8 +16,6 @@ function ImportPreviewDisplay({profile, importResults, syncStatus, service}) {
     const {isMobile} = useWindowSize()
     const navigate = useNavigate()
 
-    console.log('syncStatus', syncStatus)
-
     const {cardActivity = []} = useContext(ScorecardDataContext)
     const serviceAwards = useMemo(() => {
         const re = service === 'Reddit'

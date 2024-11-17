@@ -31,7 +31,6 @@ function RecordingControls({lockId, dense}) {
         })
 
     const handleOverlayOpen = useCallback(id => {
-        console.log('handleOverlayOpen', id)
         setEditRecId(id)
     }, [])
 

@@ -229,7 +229,6 @@ export default function SystemMessageForm({message, temp, setTemp, updated, setU
                 color='secondary'
                 onChange={e => {
                     const idArray = e.target.value.split(',')
-                    console.log('idArray', idArray)
                     setTemp({...temp, pageIds: idArray})
                     setUpdated(true)
                 }}
