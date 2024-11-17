@@ -27,7 +27,7 @@ export function AppProvider({children}) {
             setAdmin(false)
         }
     }, [setAdmin, adminRole])
-    
+
     const [initial, setInitial] = useState()
     const [version, setVersion] = useState()
     const [initalMinVersion, setInitialMinVersion] = useState()
@@ -57,7 +57,6 @@ export function AppProvider({children}) {
     }
 
     const multiplier = 60
-    //const multiplier = 1 // for testing
 
     useEffectOnce(() => {
         checkVersion(true).then()
@@ -73,7 +72,6 @@ export function AppProvider({children}) {
             setUpdateRequired(true)
         }, multiplier * 1000) // 60 * 1000 = 1 min
     }
-    
     
     const value = useMemo(() => ({
         beta,
