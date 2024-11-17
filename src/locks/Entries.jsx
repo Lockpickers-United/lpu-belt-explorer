@@ -1,4 +1,4 @@
-import React, {useState, useContext, useDeferredValue, useMemo} from 'react'
+import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
@@ -11,24 +11,22 @@ import RandomEntryButton from './RandomEntryButton'
 import SlideshowButton from './SlideshowButton'
 import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
+import FilterContext from '../context/FilterContext.jsx'
 
 function Entries({profile}) {
-    const {compact, tab, expanded, displayAll} = useContext(LockListContext)
-    const {allEntries, visibleEntries = []} = useContext(DataContext)
+    const {compact, tab, expanded} = useContext(LockListContext)
+    const {visibleEntries = []} = useContext(DataContext)
+    const {filterCount, isSearch} = useContext(FilterContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
-    const defTab = useDeferredValue(tab)
-    const defDisplayAll = useDeferredValue(displayAll)
 
     const entries = useMemo(() => {
-        if (defTab === 'search') {
-            return defDisplayAll || allEntries.length !== visibleEntries.length
-                ? visibleEntries
-                : []
+        if (tab === 'search') {
+            return visibleEntries
         } else {
-            return visibleEntries.filter(entry => entry.simpleBelt === defTab)
+            return visibleEntries.filter(entry => entry.simpleBelt === tab)
         }
-    }, [defDisplayAll, defTab, allEntries, visibleEntries])
+    }, [tab, visibleEntries])
 
     const footer = (
         <React.Fragment>
@@ -48,13 +46,14 @@ function Entries({profile}) {
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
 
-                {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
+                {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
+                    <BeltRequirements belt={tab}/>}
 
-                {entries.length === 0 && <NoEntriesCard label='Locks'/>}
+                {entries.length === 0 && <NoEntriesCard label='Locks' isSearch={isSearch}/>}
 
                 {compact
                     ? <CompactEntries entries={entries}/>
-                    : entries.map(entry =>
+                    : entries.map((entry) =>
                         <Entry
                             key={entry.id}
                             entry={entry}

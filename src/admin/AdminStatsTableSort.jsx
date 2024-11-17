@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react'
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import Link from '@mui/material/Link'
-import {useNavigate} from 'react-router-dom'
 
 const AdminStatsTableSort = ({
                                  tableData,
@@ -16,7 +15,6 @@ const AdminStatsTableSort = ({
                                  setAscending,
                                  linkFunction
                              }) => {
-    const navigate = useNavigate()
 
     const whiteSpace = wrap ? 'inherit' : 'nowrap'
 

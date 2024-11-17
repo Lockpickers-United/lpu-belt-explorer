@@ -10,7 +10,6 @@ import {useSearchParams} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize'
 
 function LeaderboardSearchBox({data}) {
-    const style = {maxWidth: 450}
     const {isMobile} = useWindowSize()
     const inputEl = useRef()
     const [searchParams, setSearchParams] = useSearchParams()
@@ -39,6 +38,7 @@ function LeaderboardSearchBox({data}) {
     }, [])
     const handleBlur = useCallback(() => setOpen(false), [])
 
+    const style = {maxWidth: 450, margin: 8}
     const focusStyle = open && isMobile ? {
         width: 'auto',
         position: 'fixed',

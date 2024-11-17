@@ -17,11 +17,12 @@ const ImportUsersTable = ({data}) => {
 
     const rowData = Object.keys(awardsDisplayNames).filter(x => x)
         .map(user => {
+            const maxAward = awardsDisplayNames[user]['maxAward'] ? awardsDisplayNames[user]['maxAward'] : 0
             return {
                 displayName: awardsDisplayNames[user]['displayName'] || 'no display name',
                 acquired: awardsDisplayNames[user]['acquired'],
-                maxAward: awards[awardsDisplayNames[user]['maxAward']].makeModels[0].model.replace(' Belt', ''),
-                beltName: awards[awardsDisplayNames[user]['maxAward']].name.replace(' Belt', ''),
+                maxAward: awards[maxAward].makeModels[0].model.replace(' Belt', ''),
+                beltName: awards[maxAward].name.replace(' Belt', ''),
                 userId: user
             }
         })

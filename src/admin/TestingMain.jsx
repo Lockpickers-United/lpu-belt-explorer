@@ -3,7 +3,6 @@ import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
-import dayjs from 'dayjs'
 import {siteFullNew} from '../data/dataUrls'
 import AdminStatsTable from './AdminStatsTable.jsx'
 
