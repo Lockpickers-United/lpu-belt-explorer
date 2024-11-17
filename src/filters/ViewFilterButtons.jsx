@@ -8,13 +8,13 @@ import Box from '@mui/material/Box'
 
 function ViewFilterButtons({sortValues, extraFilters = []}) {
 
-    const {filters, filterCount, clearAllFilters} = useContext(FilterContext)
-    const {sort} = filters
+    const {filters, filterCount, setFilters} = useContext(FilterContext)
+    const {tab, sort, search} = filters
 
     const reset = sort || filterCount > 0
     const handleReset = useCallback(() => {
-        clearAllFilters()
-    }, [clearAllFilters])
+        setFilters({tab: tab, search: search})
+    }, [search, setFilters, tab])
 
     const {width} = useWindowSize()
     const smallWidth = width <= 500

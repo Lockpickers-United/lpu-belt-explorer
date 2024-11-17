@@ -1,4 +1,4 @@
-import React, {useState, useContext, useDeferredValue, useMemo, useEffect} from 'react'
+import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
@@ -12,35 +12,21 @@ import SlideshowButton from './SlideshowButton'
 import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
-import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 
 function Entries({profile}) {
     const {compact, tab, expanded} = useContext(LockListContext)
     const {visibleEntries = []} = useContext(DataContext)
-    const {filterCount} = useContext(FilterContext)
-    const isSearch = /search=/.test(location.hash)
+    const {filterCount, isSearch} = useContext(FilterContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
-    const defTab = useDeferredValue(tab)
 
     const entries = useMemo(() => {
-        if (defTab === 'search') {
+        if (tab === 'search') {
             return visibleEntries
         } else {
-            return visibleEntries.filter(entry => entry.simpleBelt === defTab)
+            return visibleEntries.filter(entry => entry.simpleBelt === tab)
         }
-    }, [defTab, visibleEntries])
-
-    const [lastLoaded, setLastLoaded] = useState(true)
-    useEffect(() => {
-        if (tab === 'search') {
-            setLastLoaded(false)
-        }
-        if (defTab === 'search') {
-            setLastLoaded(true)
-        }
-    }, [defTab, lastLoaded, tab])
-
+    }, [tab, visibleEntries])
 
     const footer = (
         <React.Fragment>
@@ -59,15 +45,9 @@ function Entries({profile}) {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
-                {!lastLoaded && !isSearch && filterCount === 0 &&
-                    <div style={{textAlign: 'center'}}>
-                        <LoadingDisplay/>
-                        Please wait while we load up all <b>{visibleEntries.length}</b> locks.<br/><br/>
-                    </div>
-                }
 
-                {(defTab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
-                    <BeltRequirements belt={defTab}/>}
+                {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
+                    <BeltRequirements belt={tab}/>}
 
                 {entries.length === 0 && <NoEntriesCard label='Locks' isSearch={isSearch}/>}
 
