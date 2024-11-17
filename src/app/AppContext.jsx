@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useContext, useEffect} from 'react'
+import React, {useCallback, useMemo, useContext, useEffect, useState} from 'react'
 import {useLocalStorage} from 'usehooks-ts'
 import DBContext from './DBContext'
 
@@ -27,12 +27,16 @@ export function AppProvider({children}) {
         }
     }, [setAdmin, adminRole])
 
+    const [compact, setCompact] = useState(false)
+
     const value = useMemo(() => ({
         beta,
         setBeta: handleSetBeta,
         admin,
-        setAdmin: handleSetAdmin
-    }), [beta, handleSetBeta, admin, handleSetAdmin])
+        setAdmin: handleSetAdmin,
+        compact,
+        setCompact
+    }), [beta, handleSetBeta, admin, handleSetAdmin, compact, setCompact])
 
     return (
         <AppContext.Provider value={value}>

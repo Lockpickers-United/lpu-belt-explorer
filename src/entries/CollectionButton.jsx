@@ -17,12 +17,17 @@ import collectionOptions from '../data/collectionTypes'
 import useWindowSize from '../util/useWindowSize'
 import RecordingControls from './RecordingControls'
 import LoadingDisplay from '../misc/LoadingDisplay'
+import LoadingDisplaySmall from '../misc/LoadingDisplaySmall'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
+import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 
-function CollectionButton({id, dense}) {
+function CollectionButton({id, dense, exposed}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
-    const [anchorEl, setAnchorEl] = useState(null)
-    const [checkboxUpdating, setCheckboxUpdating] = useState(false)
+    const [anchorEl, setAnchorEl] = useState(() => undefined)
+    const [checkboxUpdating, setCheckboxUpdating] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
@@ -31,91 +36,121 @@ function CollectionButton({id, dense}) {
     const collected = collectionOptions.locks.getCollected(lockCollection)?.includes(id)
     const isChecked = useCallback(key => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
 
-    const handleChange = useCallback(key => async (event, checked) => {
+    const handleChange = useCallback((key, collected) => async (event, checked) => {
         event.preventDefault()
-        setCheckboxUpdating(true)
-        if (checked) {
+        setCheckboxUpdating(key)
+        if (checked || !collected) {
             await addToLockCollection(key, id)
         } else {
             await removeFromLockCollection(key, id)
         }
-        setCheckboxUpdating(false)
+        setCheckboxUpdating(null)
     }, [id, addToLockCollection, removeFromLockCollection])
+
+    const listIcons = {
+        own: <LockIcon fontSize={isMobile ? 'small' : 'medium'}/>,
+        picked: <LockOpenOutlinedIcon fontSize={isMobile ? 'small' : 'medium'}/>,
+        wishlist: <SavingsOutlinedIcon fontSize={isMobile ? 'small' : 'medium'}/>,
+        recordedLocks: <VideocamOutlinedIcon fontSize={isMobile ? 'small' : 'medium'}/>
+    }
+
+    const iconPadding = isMobile ? 5 : 7
 
     return (
         <React.Fragment>
-            <Tooltip title='My Collection' arrow disableFocusListener>
-                {
-                    dense
-                        ? <IconButton
-                            variant='outlined'
-                            color='inherit'
-                            onClick={handleOpen}
-                        >
-                            <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'} fontSize='small'/>
-                        </IconButton>
-                        : <Button
-                            variant='outlined'
-                            color='inherit'
-                            onClick={handleOpen}
-                            startIcon={
-                                <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'}
-                                                  fontSize={isMobile ? 'small' : 'medium'}/>
+            {exposed && isLoggedIn &&
+                <div style={{display: 'flex'}}>
+                    {collectionOptions.locks.map.filter(c => c.entry === 'checkbox').map(({key}) =>
+                        <React.Fragment key={key}>
+                            {checkboxUpdating === key
+                                ? <LoadingDisplaySmall/>
+                                : <IconButton key={key} onClick={handleChange(key, isChecked(key))}
+                                              style={{color: isChecked(key) ? '#18aa18' : undefined, padding: iconPadding}}>
+                                    {listIcons[key]}
+                                </IconButton>
                             }
-                        >
-                            My Collection
-                        </Button>
-                }
-            </Tooltip>
-            <Popover
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left'
-                }}
-            >
-                <Card style={{backgroundColor: '#222'}}>
-                    <CardHeader
-                        title='My Collection'
-                        style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
-                        onClick={handleClose}
-                    />
-                    <CardContent style={{paddingTop: 0}}>
-                        {checkboxUpdating ?
-                            <LoadingDisplay/>
-                        :
-                            <React.Fragment>
-                                <FormGroup>
-                                    {collectionOptions.locks.map.filter(c => c.entry === 'checkbox').map(({key, label}) =>
-                                        <FormControlLabel
-                                            key={key}
-                                            control={
-                                                <Checkbox
-                                                    id={key}
-                                                    disabled={!isLoggedIn}
-                                                    color='secondary'
-                                                    checked={isChecked(key)}
-                                                    onChange={handleChange(key)}
-                                                />
-                                            }
-                                            label={label}
-                                        />
-                                    )}
-                                </FormGroup>
-
-                                {isLoggedIn &&
-                                    <RecordingControls lockId={id}/>
-                                }
-                            </React.Fragment>
+                        </React.Fragment>
+                    )}
+                    <RecordingControls lockId={id} dense/>
+                </div>
+            }
+            {!exposed &&
+                <React.Fragment>
+                    <Tooltip title='My Collection' arrow disableFocusListener>
+                        {
+                            dense
+                                ? <IconButton
+                                    variant='outlined'
+                                    color='inherit'
+                                    onClick={handleOpen}
+                                >
+                                    <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'} fontSize='small'/>
+                                </IconButton>
+                                : <Button
+                                    variant='outlined'
+                                    color='inherit'
+                                    onClick={handleOpen}
+                                    startIcon={
+                                        <LibraryBooksIcon color={collected ? 'secondary' : 'inherit'}
+                                                          fontSize={isMobile ? 'small' : 'medium'}/>
+                                    }
+                                >
+                                    My Collection
+                                </Button>
                         }
-                    </CardContent>
-                    <div style={{marginTop: -8, marginBottom: 16}}>
-                        <SignInButton onClick={handleClose}/>
-                    </div>
-                </Card>
-            </Popover>
+                    </Tooltip>
+                    <Popover
+                        open={open}
+                        anchorEl={anchorEl}
+                        onClose={handleClose}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'left'
+                        }}
+                    >
+                        <Card style={{backgroundColor: '#222'}}>
+                            <CardHeader
+                                title='My Collection'
+                                style={{color: isLoggedIn ? null : 'rgba(255, 255, 255, 0.5)'}}
+                                onClick={handleClose}
+                            />
+                            <CardContent style={{paddingTop: 0}}>
+                                {checkboxUpdating ?
+                                    <LoadingDisplay/>
+                                    :
+                                    <React.Fragment>
+                                        <FormGroup>
+                                            {collectionOptions.locks.map.filter(c => c.entry === 'checkbox')
+                                                .map(({key, label}) =>
+                                                    <FormControlLabel
+                                                        key={key}
+                                                        control={
+                                                            <Checkbox
+                                                                id={key}
+                                                                disabled={!isLoggedIn}
+                                                                color='secondary'
+                                                                checked={isChecked(key)}
+                                                                onChange={handleChange(key, isChecked(key))}
+                                                            />
+                                                        }
+                                                        label={label}
+                                                    />
+                                                )}
+                                        </FormGroup>
+
+                                        {isLoggedIn &&
+                                            <RecordingControls lockId={id}/>
+                                        }
+                                    </React.Fragment>
+                                }
+                            </CardContent>
+                            <div style={{marginTop: -8, marginBottom: 16}}>
+                                <SignInButton onClick={handleClose}/>
+                            </div>
+                        </Card>
+                    </Popover>
+                </React.Fragment>
+            }
         </React.Fragment>
     )
 }
