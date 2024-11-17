@@ -12,10 +12,17 @@ import useWindowSize from '../util/useWindowSize'
 import {lockSortFields} from '../data/sortFields'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import IconAll from '../resources/iconAll.jsx'
+import DataContext from './LockDataProvider.jsx'
 
 function BeltToolbar() {
     const {tab, setTab} = useContext(LockListContext)
     const {addFilter, removeFilters} = useContext(FilterContext)
+    const {visibleEntries = []} = useContext(DataContext)
+
+    const beltCounts = visibleEntries.reduce((acc, entry) => {
+        acc[entry.belt] = acc[entry.belt] ? acc[entry.belt]+1 : 1
+        return acc
+    },{})
 
     const tabWidth = Math.floor(window.innerWidth / 10)
     const {width} = useWindowSize()
@@ -60,7 +67,7 @@ function BeltToolbar() {
                                         <Tab
                                             {...tabProps}
                                             icon={
-                                                <BeltIcon value={belt} style={{paddingTop: 2}}/>
+                                                <BeltIcon value={belt} style={{paddingTop: 2, opacity: beltCounts[belt] ? 1 : 0.2}}/>
                                             }
                                             sx={tabWidthStyle}
                                             onClick={handleClick(belt)}
