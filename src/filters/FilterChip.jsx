@@ -53,6 +53,7 @@ function FilterChip({field, value, label = value, ...props}) {
                 onClick={handleOpen}
                 {...props}
             />
+            {!!open &&
             <Menu
                 open={!!open}
                 anchorEl={open}
@@ -66,6 +67,7 @@ function FilterChip({field, value, label = value, ...props}) {
                     Go to Glossary
                 </MenuItem>
             </Menu>
+            }
         </React.Fragment>
     )
 }
