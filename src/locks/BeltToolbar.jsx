@@ -20,7 +20,8 @@ function BeltToolbar() {
     const {visibleEntries = []} = useContext(DataContext)
 
     const beltCounts = visibleEntries.reduce((acc, entry) => {
-        acc[entry.belt] = acc[entry.belt] ? acc[entry.belt]+1 : 1
+        const belt = entry.belt.replace(/ \d/,'')
+        acc[belt] = acc[belt] ? acc[belt]+1 : 1
         return acc
     },{})
 
