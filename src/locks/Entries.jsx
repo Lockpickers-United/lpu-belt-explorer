@@ -12,9 +12,11 @@ import SlideshowButton from './SlideshowButton'
 import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 function Entries({profile}) {
-    const {compact, tab, expanded} = useContext(LockListContext)
+    const {tab, expanded} = useContext(LockListContext)
+    const {compact} = useContext(AppContext)
     const {visibleEntries = []} = useContext(DataContext)
     const {filterCount, isSearch} = useContext(FilterContext)
 

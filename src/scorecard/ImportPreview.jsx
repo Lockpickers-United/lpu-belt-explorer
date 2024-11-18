@@ -83,7 +83,6 @@ function ImportPreview({syncStatus, syncResult, service}) {
         return null
     }
 
-    console.log('syncStatus', syncStatus)
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
             <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}

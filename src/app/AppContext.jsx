@@ -73,14 +73,18 @@ export function AppProvider({children}) {
         }, multiplier * 1000) // 60 * 1000 = 1 min
     }
 
+  const [compact, setCompact] = useState(false)
+
     const value = useMemo(() => ({
         beta,
         setBeta: handleSetBeta,
         admin,
         setAdmin: handleSetAdmin,
         updateRequired,
-        updateAvailable
-    }), [beta, handleSetBeta, admin, handleSetAdmin, updateRequired, updateAvailable])
+        updateAvailable,
+        compact,
+        setCompact
+    }), [beta, handleSetBeta, admin, handleSetAdmin, compact, setCompact, updateRequired, updateAvailable])
 
     return (
         <AppContext.Provider value={value}>
