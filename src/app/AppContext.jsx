@@ -38,10 +38,9 @@ export function AppProvider({children}) {
     const checkVersion = async first => {
         try {
             const response = await fetch('/version.json', {cache: 'no-cache'})
-            const {version: newVersion} = (await response.json())
+            const {version: newVersion, minVersion} = (await response.json())
 
-            const min = await fetch('/minVersion.json', {cache: 'no-cache'})
-            const {version: minVersion} = (await min.json())
+            //if (!/\d{4}-\d\d-\d\d/.test(newVersion)) setUpdateRequired(true) //check for old version format
 
             if (first) {
                 setInitial(newVersion)
@@ -56,7 +55,7 @@ export function AppProvider({children}) {
         }
     }
 
-    const multiplier = 60
+    const multiplier = 60 // set to 1 for testing, 60 for production
 
     useEffectOnce(() => {
         checkVersion(true).then()
@@ -64,15 +63,16 @@ export function AppProvider({children}) {
     useInterval(checkVersion, 10 * multiplier * 1000) // 10 * 60 * 1000 = 10 minutes
 
     if (!error
-        && initial && version && initalMinVersion
-        && dayjs(initial) < dayjs(version)
-        && dayjs(initial) < dayjs(initalMinVersion)
+        && (initial && version && initalMinVersion
+            && dayjs(initial) < dayjs(version)
+            && dayjs(initial) < dayjs(initalMinVersion))
+
     ) {
         setTimeout(() => {
             setUpdateRequired(true)
         }, multiplier * 1000) // 60 * 1000 = 1 min
     }
-    
+
     const value = useMemo(() => ({
         beta,
         setBeta: handleSetBeta,
