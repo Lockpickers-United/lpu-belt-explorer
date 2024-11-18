@@ -79,7 +79,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                 yScale={{
                     type: 'linear',
                     min: 0,
-                    max: 4500,
+                    max: 'auto',
                     stacked: false,
                     reverse: false
                 }}
