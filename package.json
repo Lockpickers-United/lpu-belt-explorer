@@ -11,7 +11,7 @@
     "scripts": {
         "dev": "vite",
         "build": "NODE_ENV=production vite build",
-        "build-dev": "NODE_ENV=production vite build --mode dev",
+        "build-dev": "NODE_ENV=production yarn versionFile && vite build --mode dev",
         "preview": "vite preview",
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
@@ -25,6 +25,7 @@
         "generateSitemap": "node ./scripts/generateSitemap.js",
         "generateSitemap-xml": "node ./scripts/generateSitemap-xml.js",
         "versionFile": "node ./scripts/version.js",
+        "min-version": "node ./scripts/minVersion.js",
         "copyData": "node ./scripts/copyData.js",
         "copyFiles": "node ./scripts/copyFiles.js",
         "ci-pr": "yarn lint && yarn build",
