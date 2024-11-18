@@ -42,7 +42,7 @@ the line as we move oldest requests out first.**
 Click the "Message the moderators" Link on the sidebar just above the list of moderators for this subreddit, Or
 use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 
-### Discord
+### Discord - DO NOT USE FORMATTING BELOW FOR REQUESTS THROUGH REDDIT MODMAIL
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 
@@ -1470,6 +1470,9 @@ Brown belt:
 - LockPickNic
 - RubberBanned
 - L0ckJocKey
+
+### Corbin Master Ring
+While similar to SFIC in that they have 2 shear lines, the Corbin Master Ring can be gutted without special tools and thus videos do not need to follow the special SFIC filming requirements. A visual demonstration of both shear lines rotating should be included for a purple belt submission. An example of a purple belt Master Ring video can be [seen here](https://youtu.be/w2e8IgWUrX0?si=djLZgWkiEOAUliq9).
 
 ----------
 
