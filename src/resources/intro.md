@@ -42,7 +42,7 @@ the line as we move oldest requests out first.**
 Click the "Message the moderators" Link on the sidebar just above the list of moderators for this subreddit, Or
 use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 
-### Discord
+### Discord - DO NOT USE FORMATTING BELOW FOR REQUESTS THROUGH REDDIT MODMAIL
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 
