@@ -12,6 +12,7 @@
         "dev": "vite",
         "build": "NODE_ENV=production vite build",
         "build-dev": "NODE_ENV=production yarn lint && yarn versionFile && vite build --mode dev",
+        "build-dev-import": "NODE_ENV=production yarn versionFile && yarn run import && vite build --mode dev && yarn copyFiles",
         "preview": "vite preview",
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
