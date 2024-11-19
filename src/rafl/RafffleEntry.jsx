@@ -16,7 +16,6 @@ import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
-import Link from '@mui/material/Link'
 
 function RaffleEntry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
@@ -59,19 +58,19 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         <div style={{margin: '12px 0px 8px 8px', display: 'flex'}}>
                             <div style={{
                                 borderRadius: '50%',
-                                backgroundColor:'#fff',
-                                color:'#000',
-                                height:32,
-                                width:32,
-                                marginTop:2,
-                                marginRight:10,
+                                backgroundColor: '#fff',
+                                color: '#000',
+                                height: 32,
+                                width: 32,
+                                marginTop: 2,
+                                marginRight: 10,
                                 fontWeight: 700,
                                 fontSize: '1.3rem',
-                                lineHeight:'2.0rem',
-                                textAlign:'center'
+                                lineHeight: '2.0rem',
+                                textAlign: 'center'
                             }}>{entry.potNumber}</div>
-                            <div style={{fontWeight: 500, fontSize: '1.5rem', marginTop:0, marginBottom: '4px'}}>
-                                {entry.name}
+                            <div style={{fontWeight: 500, fontSize: '1.5rem', marginTop: 0, marginBottom: '4px'}}>
+                                {entry.title}
                             </div>
                         </div>
                     </div>
@@ -119,10 +118,19 @@ function RaffleEntry({entry, expanded, onExpand}) {
                                 }
                             </Stack>
                         </div>
-                        {entry.shippingInfo &&
-                            <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                        value={entry.shippingInfo}/>
-                        }
+
+                        <div style={{display: 'flex', marginTop:6}}>
+                            {entry.country &&
+                                <FieldValue name='Country' headerStyle={{marginBottom: 4}}
+                                            value={entry.country} textStyle={{marginRight:20}}/>
+                            }
+
+                            {entry.shippingInfo &&
+                                <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
+                                            value={entry.shippingInfo}/>
+                            }
+
+                        </div>
 
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
                             {!!entry.notes &&

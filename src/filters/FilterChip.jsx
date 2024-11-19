@@ -87,7 +87,6 @@ function FilterChip({field, value, label = value, mode, ...props}) {
             }
             {(mode === 'text') &&
                 <Link
-                    clickable
                     style={{color:'#fff'}}
                     onClick={handleFilter}
                     {...props}

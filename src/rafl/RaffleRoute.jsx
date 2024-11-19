@@ -13,7 +13,7 @@ import RaffleDataProvider from './RaffleDataProvider.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import RafflePage from './RafflePage.jsx'
 
-import raflPots from './raflData.json'
+import raflPots from '../data/rafl.json'
 
 function RaffleRoute() {
     const {isMobile} = useWindowSize()
