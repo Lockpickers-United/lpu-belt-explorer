@@ -6,7 +6,6 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
 import Tracker from '../app/Tracker'
 import CopyLinkToRaflPotButton from './CopyLinkToRaflPotButton.jsx'
 import FieldValue from '../entries/FieldValue'
@@ -18,6 +17,7 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleTitle from './RaffleTitle.jsx'
 import useData from '../util/useData.jsx'
+import {Collapse} from '@mui/material'
 
 function RaffleEntry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
@@ -27,8 +27,8 @@ function RaffleEntry({entry, expanded, onExpand}) {
 
     const hostname = `${window.location.protocol}//${window.location.host}`
     const url = `${hostname}/raflContents/033.md`
-    const {data, loading, error} = useData({url, text: true})
-    const contents = !loading && !error ? data.toString() : ''
+    const {data, loading, error} = useData({url: expanded ? url : undefined, text: true})
+    const contents = data && !loading && !error ? data.toString() : ''
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -130,13 +130,13 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </div>
 
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop:'4px'}}>
-                            {entry.id === '85d33e6a' &&
+                            {entry.id === '5dcf0aaa' &&
                                 <FieldValue name='Contents' value={
-                                    <Typography component='div' style={{marginTop: -16}}>
+                                    <Collapse in={contents.length > 0} style={{marginTop: -16}}>
                                         <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                             {contents}
                                         </ReactMarkdown>
-                                    </Typography>
+                                    </Collapse>
                                 }/>
                             }
                         </Stack>

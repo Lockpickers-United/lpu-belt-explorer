@@ -20,7 +20,7 @@ function useData({url, urls, loadFn, text}) {
                 const promises = Object.keys(urls)
                     .map(async key => {
                         const response = await fetch(urls[key], {cache: 'no-store'})
-                        value[key] = await response.json()
+                        value[key] = !text ? await response.json() : await response.text()
                     })
                 await Promise.all(promises)
             } else if (loadFn) {
@@ -30,6 +30,7 @@ function useData({url, urls, loadFn, text}) {
             setData(value)
             setLoading(false)
             setError(false)
+
         } catch (ex) {
             console.error('Error loading data.', ex)
             enqueueSnackbar('Error loading data. Please reload the page.', {
@@ -42,7 +43,7 @@ function useData({url, urls, loadFn, text}) {
     }, [url, urls, loadFn, text])
 
     useEffect(() => {
-        loadData()
+        loadData().then()
     }, [loadData])
 
     return useMemo(() => ({
