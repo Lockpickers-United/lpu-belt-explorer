@@ -399,7 +399,7 @@ const raflMainData = raflData.map(datum => ({
     potNumber: datum['Pot Number'],
     title: datum['Title'],
     description: datum['Description'],
-    contributedBy: datum['Contributed By'],
+    contributedBy: datum['Contributed By'] ? datum['Contributed By'].split(',').filter(x => x) : [],
     tags: datum.Tags ? datum.Tags.split(',').filter(x => x) : [],
     country: datum['Country'],
     shippingInfo: datum['Shipping Info'],

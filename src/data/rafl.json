@@ -5,7 +5,9 @@
     "potNumber": "1",
     "title": "Multipick Pot",
     "description": "This pot features one Kronos pick gun. Thanks to Multipick for providing raffle prizes this year!",
-    "contributedBy": "Multipick",
+    "contributedBy": [
+      "Multipick"
+    ],
     "tags": [
       "Specialty Picks"
     ],
