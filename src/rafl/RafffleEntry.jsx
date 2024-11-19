@@ -82,9 +82,6 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </ReactMarkdown>
                     </div>
                 </div>
-                <div style={{marginTop: 'auto', marginBottom: 'auto', marginRight: 10}}>
-                    <CopyLinkToRaflPotButton entry={entry}/>
-                </div>
             </AccordionSummary>
             {
                 expanded &&
@@ -112,7 +109,13 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         <div style={{display: 'flex', marginTop: 6}}>
                             {entry.country &&
                                 <FieldValue name='Country' headerStyle={{marginBottom: 4}}
-                                            value={entry.country} textStyle={{marginRight: 20}}/>
+                                            value={
+                                                <FilterChip
+                                                    value={entry.country}
+                                                    field='country'
+                                                    mode={'text'}
+                                                />
+                                            } textStyle={{marginRight: 20}}/>
                             }
 
                             {entry.shippingInfo &&
@@ -122,16 +125,16 @@ function RaffleEntry({entry, expanded, onExpand}) {
 
                         </div>
 
-                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
-                            {entry.potContents &&
+                        {
+                            entry.potContents &&
+                            <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
                                 <FieldValue name='Contents' value={
                                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                         {entry.potContents}
                                     </ReactMarkdown>
                                 }/>
-                            }
-                        </Stack>
-
+                            </Stack>
+                        }
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
@@ -163,13 +166,13 @@ function RaffleEntry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <CopyPotTextButton entry={entry}/>
+                        <CopyLinkToRaflPotButton entry={entry}/>
                     </AccordionActions>
                 </React.Fragment>
             }
         </Accordion>
     )
 }
-
 
 export default React.memo(RaffleEntry, (prevProps, nextProps) => {
     const prevEntryKeys = Object.keys(prevProps.entry)
