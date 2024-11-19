@@ -11,7 +11,7 @@ import Tracker from '../app/Tracker'
 import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
-import SafelockImageGallery from '../safelocks/SafelockImageGallery'
+import RaffleImageGallery from './RaffleImageGallery.jsx'
 import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
@@ -149,7 +149,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
-                                <SafelockImageGallery entry={entry}/>
+                                <RaffleImageGallery entry={entry}/>
                             }/>
                         }
                         {

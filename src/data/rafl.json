@@ -31,7 +31,23 @@
     ],
     "country": "Australia",
     "shippingInfo": "International Shipping Included",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: HVlogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54151053384_e5e002868d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54151053384/in/album-72177720322033465/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54151053384_c95b46fc5c_o.jpg"
+      },
+      {
+        "title": "By: HVlogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54150727411_c95759b656_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54150727411/in/album-72177720322033465/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54150727411_0c17e25c88_o.jpg"
+      }
+    ]
   },
   {
     "id": "5dcf0aaa",
