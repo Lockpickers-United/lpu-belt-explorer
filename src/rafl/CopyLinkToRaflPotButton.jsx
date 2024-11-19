@@ -4,8 +4,10 @@ import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 
-function CopyLinkToRaflPotButton({entry, nameType}) {
-    const handleClick = useCallback(async () => {
+function CopyLinkToRaflPotButton({entry}) {
+    const handleClick = useCallback(async (event) => {
+        event.preventDefault()
+        event.stopPropagation()
         const name =  entry.title
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
         const hostname = `${window.location.protocol}//${window.location.host}`
@@ -17,7 +19,7 @@ function CopyLinkToRaflPotButton({entry, nameType}) {
 
     return (
         <Tooltip title='Copy Link to Pot' arrow disableFocusListener>
-            <IconButton onClick={handleClick}>
+            <IconButton onClick={handleClick} style={{height:36, width:36}}>
                 <LinkIcon/>
             </IconButton>
         </Tooltip>

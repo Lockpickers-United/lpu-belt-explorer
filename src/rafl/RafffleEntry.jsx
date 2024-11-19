@@ -53,7 +53,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-                <div style={{display: 'block', marginBottom: 8}}>
+                <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
                     <div style={{display: 'flex', width: '100%'}}>
                         <div style={{margin: '12px 0px 8px 8px', display: 'flex'}}>
                             <div style={{
@@ -62,7 +62,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                                 color: '#000',
                                 height: 32,
                                 width: 32,
-                                marginTop: 2,
+                                marginTop: 1,
                                 marginRight: 10,
                                 fontWeight: 700,
                                 fontSize: '1.3rem',
@@ -97,6 +97,9 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </ReactMarkdown>
                     </div>
                 </div>
+                <div style={{marginTop: 'auto', marginBottom: 'auto', marginRight:10}}>
+                    <CopyLinkToRaflPotButton entry={entry}/>
+                </div>
             </AccordionSummary>
             {
                 expanded &&
@@ -121,10 +124,10 @@ function RaffleEntry({entry, expanded, onExpand}) {
                             </Stack>
                         </div>
 
-                        <div style={{display: 'flex', marginTop:6}}>
+                        <div style={{display: 'flex', marginTop: 6}}>
                             {entry.country &&
                                 <FieldValue name='Country' headerStyle={{marginBottom: 4}}
-                                            value={entry.country} textStyle={{marginRight:20}}/>
+                                            value={entry.country} textStyle={{marginRight: 20}}/>
                             }
 
                             {entry.shippingInfo &&
@@ -135,11 +138,11 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </div>
 
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
-                            {!!entry.notes &&
-                                <FieldValue name='Notes' value={
+                            {!!entry.contents &&
+                                <FieldValue name='Contents' value={
                                     <Typography component='div' style={{marginTop: -16}}>
                                         <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                                            {entry.notes}
+                                            {entry.contents}
                                         </ReactMarkdown>
                                     </Typography>
                                 }/>
@@ -173,11 +176,10 @@ function RaffleEntry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
+                        <Tracker feature='rafl-pot' id={entry.potNumber}/>
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <Tracker feature='rafl-pot' id={entry.potNumber}/>
                         <CopyPotTextButton entry={entry}/>
-                        <CopyLinkToRaflPotButton entry={entry}/>
                     </AccordionActions>
                 </React.Fragment>
             }
