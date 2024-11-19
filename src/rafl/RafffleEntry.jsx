@@ -16,19 +16,12 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleTitle from './RaffleTitle.jsx'
-import useData from '../util/useData.jsx'
-import {Collapse} from '@mui/material'
 
 function RaffleEntry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {isMobile} = useWindowSize()
     const ref = useRef(null)
-
-    const hostname = `${window.location.protocol}//${window.location.host}`
-    const url = `${hostname}/raflContents/033.md`
-    const {data, loading, error} = useData({url: expanded ? url : undefined, text: true})
-    const contents = data && !loading && !error ? data.toString() : ''
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -67,7 +60,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </div>
                     </div>
                     <div style={{margin: '0px 0px 18px 8px', display: 'flex'}}>
-                        <div style={{marginRight: 8, textAlign:'right', color:'#bbb'}}>Contributed by</div>
+                        <div style={{marginRight: 8, textAlign: 'right', color: '#bbb'}}>Contributed by</div>
                         <div>
                             {entry.contributedBy.map((contrib, index) => {
                                 const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
@@ -89,7 +82,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </ReactMarkdown>
                     </div>
                 </div>
-                <div style={{marginTop: 'auto', marginBottom: 'auto', marginRight:10}}>
+                <div style={{marginTop: 'auto', marginBottom: 'auto', marginRight: 10}}>
                     <CopyLinkToRaflPotButton entry={entry}/>
                 </div>
             </AccordionSummary>
@@ -129,14 +122,12 @@ function RaffleEntry({entry, expanded, onExpand}) {
 
                         </div>
 
-                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop:'4px'}}>
-                            {entry.id === '5dcf0aaa' &&
+                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
+                            {entry.potContents &&
                                 <FieldValue name='Contents' value={
-                                    <Collapse in={contents.length > 0} style={{marginTop: -16}}>
-                                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                                            {contents}
-                                        </ReactMarkdown>
-                                    </Collapse>
+                                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                                        {entry.potContents}
+                                    </ReactMarkdown>
                                 }/>
                             }
                         </Stack>

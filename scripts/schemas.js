@@ -149,10 +149,18 @@ export const raflSchema = Joi.array().items(
         'Pot Number': Joi.number().min(1).max(999),
         'Title': Joi.string().min(1).max(100),
         'Description': Joi.string().allow(''),
+        'Contents File': Joi.string().allow(''),
         'Contributed By': Joi.string().min(1),
         'Tags': Joi.string().allow(''),
         'Country': Joi.string(),
         'Shipping Info': Joi.string(),
         'Winner': Joi.string().allow('')
+    }).unknown()
+)
+
+export const raflContentsSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Pot Contents': Joi.string().allow('')
     }).unknown()
 )

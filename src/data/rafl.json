@@ -5,6 +5,7 @@
     "potNumber": "1",
     "title": "Multipick Pot",
     "description": "**This pot features one Kronos pick gun.** Thanks to Multipick for providing raffle prizes this year!",
+    "contentsFile": "",
     "contributedBy": [
       "Multipick"
     ],
@@ -18,9 +19,10 @@
   {
     "id": "85d33e6a",
     "year": 2024,
-    "potNumber": "33",
+    "potNumber": "2",
     "title": "Basically Every Lockwood",
     "description": "",
+    "contentsFile": "basically-every-lockwood.md",
     "contributedBy": [
       "downundermonkey",
       "HVlogic"
@@ -32,6 +34,7 @@
     "country": "Australia",
     "shippingInfo": "International Shipping Included",
     "winner": "",
+    "potContents": "- 1x Lockwood 334B45 Bilock QCC core with operating/QCC key\n- 1x Lockwood 232 6 pin with keys\n- 1x Lockwood/ASSA 110/35 with keys\n- 1x Lockwood 120/40 with keys\n- 1x Lockwood 120/60 with keys\n- 1x Lockwood 234B45 with keys\n- 1x Lockwood 215A40 with keys\n- 1x Lockwood/ASSA 365S63 with keys\n- 1x Lockwood/ASSA 270S70 with key\n- 2x Lockwood 312 loto padlocks (rarer 4 pin version)\n- 1x Lockwood 232 all brass padlock\n- 1x Lockwood V7 oval\n- 1x Lockwood restricted LP keyway with key\n- 1x Vintage Lockwood 234 padlock\n- 1x Lockwood handy lock new in package\n- 2x Lockwood 225 wafer locks with impressioned keys",
     "media": [
       {
         "title": "By: HVlogic",
@@ -52,9 +55,10 @@
   {
     "id": "5dcf0aaa",
     "year": 2024,
-    "potNumber": "2",
+    "potNumber": "99",
     "title": "Gentleman’s Weaspick",
     "description": "",
+    "contentsFile": "",
     "contributedBy": [
       "Doktor Weasel"
     ],

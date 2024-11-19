@@ -11,7 +11,9 @@ import {
     dialsSchema,
     projectSchema,
     upgradeSchema,
-    introCopySchema, raflSchema
+    introCopySchema,
+    raflSchema,
+    raflContentsSchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -20,15 +22,18 @@ import validate from './validate.js'
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
     console.log(`Importing ${tab}...`)
-    const {GOOGLE_SHEET_ID: sheetId} = process.env
-    if (!sheetId) {
-        console.log('Config error! Set GOOGLE_SHEET_ID env var to run Import.')
+    const {GOOGLE_SHEET_ID: sheetId, RAFL_SHEET_ID: raflSheetId} = process.env
+    if (!sheetId || !raflSheetId) {
+        console.log('Config error! Set GOOGLE_SHEET_ID & RAFL_SHEET_ID env vars to run Import.')
         process.exit(1)
     }
 
     // Download file
     const safeTab = encodeURI(tab)
-    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
+
+    const url = (!['RAFL', 'RAFL Media', 'RAFL Pot Contents'].includes(tab))
+        ? `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
+        : `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
     const csvData = await (await fetch(url)).text()
 
     // Parse CSV into JSON
@@ -58,6 +63,7 @@ const projectsData = await importValidate('Projects', projectSchema)
 const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
 const raflData = await importValidate('RAFL', raflSchema)
+const raflPotContentsData = await importValidate('RAFL Pot Contents', raflContentsSchema)
 const raflMediaData = await importValidate('RAFL Media', mediaSchema)
 
 // Transform fields into internal JSON format
@@ -399,12 +405,23 @@ const raflMainData = raflData.map(datum => ({
     potNumber: datum['Pot Number'],
     title: datum['Title'],
     description: datum['Description'],
+    contentsFile: datum['Contents File'],
     contributedBy: datum['Contributed By'] ? datum['Contributed By'].split(',').filter(x => x) : [],
     tags: datum.Tags ? datum.Tags.split(',').filter(x => x) : [],
     country: datum['Country'],
     shippingInfo: datum['Shipping Info'],
     winner: datum['Winner']
 })).filter(x => x)
+
+// RAFL Pot Contents
+console.log('Processing RAFL Pot Contents data...')
+raflPotContentsData
+    .forEach(item => {
+        const entry = raflMainData.find(e => e?.id === item['Unique ID'])
+        if (!entry) return console.log('Pot not found trying to add contents', item)
+        entry.potContents = item['Pot Contents']
+    })
+
 
 // RAFL Media data
 console.log('Processing RAFL Media data...')
