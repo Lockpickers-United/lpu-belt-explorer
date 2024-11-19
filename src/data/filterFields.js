@@ -31,3 +31,8 @@ export const scorecardFilterFields = [
     {label: 'Scoring', fieldName: 'scoring'}
 ]
 
+export const raffleFilterFields = [
+    {label: 'Tag', fieldName: 'tags'},
+    {label: 'Contributor', fieldName: 'contributedBy'}
+]
+

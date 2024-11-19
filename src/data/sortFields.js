@@ -31,3 +31,9 @@ export const scorecardSortFields = [
     {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
 ]
 
+export const raffleSortFields = [
+    {label: 'Default', value: undefined},
+    {label: 'Pot Name', value: 'potName'},
+    {label: 'Contributed By (?)', value: 'contributedBy'}
+]
+
