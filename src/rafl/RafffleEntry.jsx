@@ -16,6 +16,7 @@ import CopyPotTextButton from './CopyPotTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
+import RaffleTitle from './RaffleTitle.jsx'
 
 function RaffleEntry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
@@ -56,26 +57,11 @@ function RaffleEntry({entry, expanded, onExpand}) {
                 <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
                     <div style={{display: 'flex', width: '100%'}}>
                         <div style={{margin: '12px 0px 8px 8px', display: 'flex'}}>
-                            <div style={{
-                                borderRadius: '50%',
-                                backgroundColor: '#fff',
-                                color: '#000',
-                                height: 32,
-                                width: 32,
-                                marginTop: 1,
-                                marginRight: 10,
-                                fontWeight: 700,
-                                fontSize: '1.3rem',
-                                lineHeight: '2.0rem',
-                                textAlign: 'center'
-                            }}>{entry.potNumber}</div>
-                            <div style={{fontWeight: 500, fontSize: '1.5rem', marginTop: 0, marginBottom: '4px'}}>
-                                {entry.title}
-                            </div>
+                            <RaffleTitle entry={entry}/>
                         </div>
                     </div>
                     <div style={{margin: '0px 0px 18px 8px', display: 'flex'}}>
-                        <div style={{marginRight: 8}}>Contributed By:</div>
+                        <div style={{marginRight: 8, textAlign:'right', color:'#bbb'}}>Contributed by</div>
                         <div>
                             {entry.contributedBy.map((contrib, index) => {
                                 const separator = index < entry.contributedBy.length - 1 ? ', ' : ''

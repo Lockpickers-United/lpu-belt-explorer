@@ -19,7 +19,7 @@ function RafflePage({profile}) {
     return (
 
         <div style={{margin: 8, paddingBottom: 32}}>
-
+            <div style={{height:8}}/>
             <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
