@@ -5,7 +5,6 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import FilterContext from '../context/FilterContext'
 import Divider from '@mui/material/Divider'
-import LockListContext from '../locks/LockListContext.jsx'
 import Button from '@mui/material/Button'
 import AppContext from '../app/AppContext.jsx'
 
