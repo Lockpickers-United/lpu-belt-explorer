@@ -8,11 +8,11 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Tracker from '../app/Tracker'
-import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton'
+import CopyLinkToRaflPotButton from './CopyLinkToRaflPotButton.jsx'
 import FieldValue from '../entries/FieldValue'
 import FilterChip from '../filters/FilterChip'
 import RaffleImageGallery from './RaffleImageGallery.jsx'
-import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
+import CopyPotTextButton from './CopyPotTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
@@ -176,8 +176,8 @@ function RaffleEntry({entry, expanded, onExpand}) {
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <Tracker feature='rafl-pot' id={entry.potNumber}/>
-                        <CopyEntryTextButton entry={entry}/>
-                        <CopyLinkToEntryButton entry={entry} nameType='dial'/>
+                        <CopyPotTextButton entry={entry}/>
+                        <CopyLinkToRaflPotButton entry={entry}/>
                     </AccordionActions>
                 </React.Fragment>
             }
