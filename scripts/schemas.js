@@ -141,3 +141,18 @@ export const upgradeSchema = Joi.array().items(
         'Upgrade ID 4': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
     }).unknown()
 )
+
+export const raflSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Year': Joi.number().allow('2024'),
+        'Pot Number': Joi.number().min(1).max(999),
+        'Title': Joi.string().min(1).max(100),
+        'Description': Joi.string().min(1),
+        'Contributed By': Joi.string().min(1),
+        'Tags': Joi.string().allow(''),
+        'Country': Joi.string(),
+        'Shipping Info': Joi.string(),
+        'Winner': Joi.string().allow('')
+    }).unknown()
+)

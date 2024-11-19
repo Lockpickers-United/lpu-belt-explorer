@@ -11,7 +11,7 @@ import {
     dialsSchema,
     projectSchema,
     upgradeSchema,
-    introCopySchema
+    introCopySchema, raflSchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -57,6 +57,8 @@ const dialsLinkData = await importValidate('Dials Links', linkSchema)
 const projectsData = await importValidate('Projects', projectSchema)
 const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
+const raflData = await importValidate('RAFL', raflSchema)
+const raflMediaData = await importValidate('RAFL Media', mediaSchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -388,5 +390,47 @@ new Set(lockFeatures.concat(dialFeatures))
         const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
         if (!item) console.log('Term not defined in Glossary: ', term)
     })
+
+// RAFL Data
+console.log('Processing RAFL data...')
+const raflMainData = raflData.map(datum => ({
+    id: datum['Unique ID'],
+    year: +datum['Year'],
+    potNumber: datum['Pot Number'],
+    title: datum['Title'],
+    description: datum['Description'],
+    contributedBy: datum['Contributed By'],
+    tags: datum.Tags ? datum.Tags.split(',').filter(x => x) : [],
+    country: datum['Country'],
+    shippingInfo: datum['Shipping Info'],
+    winner: datum['Winner']
+})).filter(x => x)
+
+// RAFL Media data
+console.log('Processing RAFL Media data...')
+raflMediaData
+    .sort((a, b) => {
+        const one = a['Sequence ID']
+        const two = b['Sequence ID']
+        if (one === two) return 0
+        else if (one > two) return 1
+        else return -1
+    })
+    .forEach(item => {
+        const entry = raflMainData.find(e => e?.id === item['Unique ID'])
+        if (!entry) return console.log('Entry not found!', item)
+        if (!entry.media) entry.media = []
+        const media = {
+            title: item.Title,
+            subtitle: item.Subtitle,
+            thumbnailUrl: item['Thumbnail URL'],
+            fullUrl: item['Full URL']
+        }
+        if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
+        if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
+        entry.media.push(media)
+    })
+
+fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
 
 console.log('Complete.')
