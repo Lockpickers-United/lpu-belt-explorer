@@ -55,7 +55,7 @@ export function RaffleDataProvider({children, allEntries, profile}) {
         return sort
             ? searched.sort((a, b) => {
                 if (sort === 'potName') {
-                    return a.name.localeCompare(b.name)
+                    return a.title.localeCompare(b.title)
                 } else if (sort === 'contributedBy') {
                     return a.contributedBy[0].localeCompare(b.contributedBy[0])
                 } else {

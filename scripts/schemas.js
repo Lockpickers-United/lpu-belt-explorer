@@ -148,7 +148,7 @@ export const raflSchema = Joi.array().items(
         'Year': Joi.number().allow('2024'),
         'Pot Number': Joi.number().min(1).max(999),
         'Title': Joi.string().min(1).max(100),
-        'Description': Joi.string().min(1),
+        'Description': Joi.string().allow(''),
         'Contributed By': Joi.string().min(1),
         'Tags': Joi.string().allow(''),
         'Country': Joi.string(),

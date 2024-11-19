@@ -92,7 +92,9 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </div>
                     </div>
                     <div style={{margin: '12px 30px 8px 8px', fontSize: '1.1rem'}}>
-                        {entry.description}
+                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                            {entry.description}
+                        </ReactMarkdown>
                     </div>
                 </div>
             </AccordionSummary>

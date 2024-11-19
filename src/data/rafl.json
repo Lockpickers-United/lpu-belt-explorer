@@ -4,7 +4,7 @@
     "year": 2024,
     "potNumber": "1",
     "title": "Multipick Pot",
-    "description": "This pot features one Kronos pick gun. Thanks to Multipick for providing raffle prizes this year!",
+    "description": "**This pot features one Kronos pick gun.** Thanks to Multipick for providing raffle prizes this year!",
     "contributedBy": [
       "Multipick"
     ],
@@ -13,6 +13,40 @@
     ],
     "country": "Germany",
     "shippingInfo": "International Shipping Included",
+    "winner": ""
+  },
+  {
+    "id": "85d33e6a",
+    "year": 2024,
+    "potNumber": "33",
+    "title": "Basically Every Lockwood",
+    "description": "",
+    "contributedBy": [
+      "downundermonkey",
+      "HVlogic"
+    ],
+    "tags": [
+      "Beginner/Intermediate Locks",
+      "Advanced Locks"
+    ],
+    "country": "Australia",
+    "shippingInfo": "International Shipping Included",
+    "winner": ""
+  },
+  {
+    "id": "5dcf0aaa",
+    "year": 2024,
+    "potNumber": "2",
+    "title": "Gentleman’s Weaspick",
+    "description": "",
+    "contributedBy": [
+      "Doktor Weasel"
+    ],
+    "tags": [
+      "Custom Picks"
+    ],
+    "country": "USA",
+    "shippingInfo": "No international shipping included",
     "winner": ""
   }
 ]
