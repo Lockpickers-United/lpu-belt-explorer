@@ -16,6 +16,7 @@ import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
+import Link from '@mui/material/Link'
 
 function RaffleEntry({entry, expanded, onExpand}) {
     const [scrolled, setScrolled] = useState(false)
@@ -55,17 +56,23 @@ function RaffleEntry({entry, expanded, onExpand}) {
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <div style={{display: 'block', marginBottom: 8}}>
                     <div style={{display: 'flex', width: '100%'}}>
-                        <div style={{margin: '12px 0px 8px 8px', flexGrow: 3}}>
-                        <span style={{
-                            fontWeight: 400,
-                            fontSize: '1.0rem',
-                            lineHeight: 1.25,
-                            marginBottom: '4px',
-                            marginRight: 10
-                        }}>#{entry.potNumber}</span>
-                            <span style={{fontWeight: 500, fontSize: '1.5rem', lineHeight: 1.25, marginBottom: '4px'}}>
+                        <div style={{margin: '12px 0px 8px 8px', display: 'flex'}}>
+                            <div style={{
+                                borderRadius: '50%',
+                                backgroundColor:'#fff',
+                                color:'#000',
+                                height:32,
+                                width:32,
+                                marginTop:2,
+                                marginRight:10,
+                                fontWeight: 700,
+                                fontSize: '1.3rem',
+                                lineHeight:'2.0rem',
+                                textAlign:'center'
+                            }}>{entry.potNumber}</div>
+                            <div style={{fontWeight: 500, fontSize: '1.5rem', marginTop:0, marginBottom: '4px'}}>
                                 {entry.name}
-                        </span>
+                            </div>
                         </div>
                     </div>
                     <div style={{margin: '0px 0px 18px 8px', display: 'flex'}}>
@@ -73,7 +80,15 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         <div>
                             {entry.contributedBy.map((contrib, index) => {
                                 const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
-                                return contrib + separator
+                                return (
+                                    <span key={index}>
+                                    <FilterChip
+                                        value={contrib}
+                                        field='contributedBy'
+                                        mode={'text'}
+                                    />{separator}
+                                </span>
+                                )
                             })}
                         </div>
                     </div>
@@ -96,7 +111,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                                                     key={index}
                                                     value={tag}
                                                     field='tags'
-                                                    simple={true}
+                                                    mode={'simple'}
                                                 />
                                             )}
                                         </Stack>
@@ -104,10 +119,10 @@ function RaffleEntry({entry, expanded, onExpand}) {
                                 }
                             </Stack>
                         </div>
-                            {entry.shippingInfo &&
-                                <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                            value={entry.shippingInfo}/>
-                            }
+                        {entry.shippingInfo &&
+                            <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
+                                        value={entry.shippingInfo}/>
+                        }
 
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
                             {!!entry.notes &&
@@ -150,7 +165,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         }
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <Tracker feature='dial' id={entry.id}/>
+                        <Tracker feature='rafl-pot' id={entry.potNumber}/>
                         <CopyEntryTextButton entry={entry}/>
                         <CopyLinkToEntryButton entry={entry} nameType='dial'/>
                     </AccordionActions>
