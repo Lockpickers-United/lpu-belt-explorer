@@ -15,7 +15,42 @@
       "Germany"
     ],
     "shippingInfo": "International Shipping Included",
-    "winner": ""
+    "winner": "",
+    "potContents": "- [Multipick Kronos EPG](https://multipick.com/en/multipick-kronos-epg-the-electric-pick-gun-for-all)",
+    "media": [
+      {
+        "title": "By: Multipick",
+        "subtitle": "Commercial",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54153317803_fa30ae4880_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54153317803/in/album-72177720322070933/",
+        "subtitleUrl": "https://multipick.com/en/multipick-kronos-epg-the-electric-pick-gun-for-all",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54153317803_9d368a288f_o.jpg"
+      },
+      {
+        "title": "By: Multipick",
+        "subtitle": "Commercial",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54153029676_4ed69dda83_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54153029676/in/album-72177720322070933/",
+        "subtitleUrl": "https://multipick.com/en/multipick-kronos-epg-the-electric-pick-gun-for-all",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54153029676_3705bb68c5_o.jpg"
+      },
+      {
+        "title": "By: Multipick",
+        "subtitle": "Commercial",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54153488385_5965e72fc2_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54153488385/in/album-72177720322070933/",
+        "subtitleUrl": "https://multipick.com/en/multipick-kronos-epg-the-electric-pick-gun-for-all",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54153488385_7d71f74463_o.jpg"
+      },
+      {
+        "title": "By: Multipick",
+        "subtitle": "Commercial",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54153030186_547eabcf6f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54153030186/in/album-72177720322070933/",
+        "subtitleUrl": "https://multipick.com/en/multipick-kronos-epg-the-electric-pick-gun-for-all",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54153030186_2744a67e7f_o.jpg"
+      }
+    ]
   },
   {
     "id": "85d33e6a",
@@ -60,11 +95,13 @@
     "year": 2025,
     "potNumber": "3",
     "title": "Gentleman’s Weaspick",
-    "description": "Custom Picks",
+    "description": "",
     "contributedBy": [
       "Doktor Weasel"
     ],
-    "tags": [],
+    "tags": [
+      "Custom Picks"
+    ],
     "country": [
       "USA"
     ],
@@ -112,6 +149,7 @@
       "Portugal"
     ],
     "shippingInfo": "$15 towards international shipping",
-    "winner": ""
+    "winner": "",
+    "potContents": "Portuguese Triple Dare Challenge Set\n- Set of 3 CLs, based on identical DOM cylinders (varying difficulty), DOMt DARE series: \"Doubt\", \"Dread\", and \"Despair\"\n- 2 double euro cylinders to use as base CLs, one with 2 working keys, one with a working key and a blank\n- 1 meter of 3mm brass rod in 20cm sections\n- A box of 6 figure 2, 2.3mm burs for countermilling\n- M3, M3.5, and M4 taps and handle\n- Bags of grub screws (M3.5, M4, x50)\n- 2 engraving tips of different sizes for dremel\n- Shims x5\n- Replacement springs x15\n- Blank tags x4\n- 2 sheets of sandpaper, 600 and 1000 grit\n- Peace sticker\n- Rein tray\n- Small bag of replacement E-clips and brass C-clips\n- Mystery prize\n\nGerman Triple Dare Lock Set\n- Evva Dual euro module, 1 key, mastered (Red)\n- Kaba Quattro keyless, 16 pins (Black)\n- Corona M, nasty keyway (Green)"
   }
 ]

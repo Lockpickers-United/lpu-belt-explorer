@@ -125,7 +125,8 @@ const nonFilters = [
     'sort',
     'image',
     'locks',
-    'debug'
+    'debug',
+    'preview'
 ]
 
 export default FilterContext
