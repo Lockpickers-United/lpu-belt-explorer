@@ -50,10 +50,6 @@ const importValidate = async (tab, schema) => {
     return data
 }
 
-const splitCommaValues = (string) => {
-    return string.replace(/\s+,|,\s+/g, ',').split(',').filter(x => x)
-}
-
 // Load all 3 data files (LOL)
 const mainData = await importValidate('App Data', mainSchema)
 const mediaData = await importValidate('Media', mediaSchema)
@@ -412,9 +408,9 @@ const raflMainData = raflData.map(datum => ({
     title: datum['Title'],
     description: datum['Description'],
     contentsFile: datum['Contents File'],
-    contributedBy: datum['Contributed By'] ? splitCommaValues(datum['Contributed By']) : [],
-    tags: datum.Tags ? splitCommaValues(datum['Tags']) : [],
-    country: datum['Country'] ? splitCommaValues(datum['Country']) : [],
+    contributedBy: splitCommaValues(datum['Contributed By']),
+    tags: splitCommaValues(datum['Tags']),
+    country: splitCommaValues(datum['Country']),
     shippingInfo: datum['Shipping Info'],
     winner: datum['Winner']
 })).filter(x => x)
@@ -468,3 +464,8 @@ const raflCharities = raflCharityData.map(datum => ({
 fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
 
 console.log('Complete.')
+
+function splitCommaValues(string) {
+    if (!string) return []
+    return string.replace(/\s+,|,\s+/g, ',').split(',').filter(x => x)
+}

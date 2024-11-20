@@ -60,13 +60,11 @@
     "year": 2025,
     "potNumber": "3",
     "title": "Gentleman’s Weaspick",
-    "description": "",
+    "description": "Custom Picks",
     "contributedBy": [
       "Doktor Weasel"
     ],
-    "tags": [
-      "Custom Picks"
-    ],
+    "tags": [],
     "country": [
       "USA"
     ],
