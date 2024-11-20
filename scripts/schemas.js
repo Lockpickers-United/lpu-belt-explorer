@@ -164,3 +164,13 @@ export const raflContentsSchema = Joi.array().items(
         'Pot Contents': Joi.string().allow('')
     }).unknown()
 )
+
+export const raflCharitySchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Charity Name': Joi.string(),
+        'URL': Joi.string().allow('').uri(),
+        'Total Donations 2024': Joi.string().allow(''),
+        'Total Donations 2025': Joi.string().allow('')
+    }).unknown()
+)

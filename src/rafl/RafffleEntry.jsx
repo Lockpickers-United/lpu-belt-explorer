@@ -107,15 +107,25 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         </div>
 
                         <div style={{display: 'flex', marginTop: 6}}>
+
                             {entry.country &&
-                                <FieldValue name='Country' headerStyle={{marginBottom: 4}}
-                                            value={
-                                                <FilterChip
-                                                    value={entry.country}
-                                                    field='country'
-                                                    mode={'text'}
-                                                />
-                                            } textStyle={{marginRight: 20}}/>
+                                <div style={{marginRight: 10}}>
+                                    <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                        entry.country.map((country, index) => {
+                                            const separator = index < entry.country.length - 1 ? ', ' : ''
+                                            return (
+                                                <span key={index}>
+                                                    <FilterChip
+                                                        value={country}
+                                                        field='country'
+                                                        mode={'text'}
+                                                    />{separator}
+                                                </span>
+                                            )
+                                        })
+                                    }
+                                    />
+                                </div>
                             }
 
                             {entry.shippingInfo &&

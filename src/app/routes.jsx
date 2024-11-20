@@ -52,7 +52,7 @@ export default [
                     const {default: HowToPage} = await import('../scorecard/HowToPage.jsx')
                     return {element: <HowToPage/>}
                 }
-            },
+            }
         ]
     },
     {
@@ -98,7 +98,7 @@ export default [
             const {default: DansRoute} = await import('../info/DansRoute')
             return {element: <DansRoute/>}
         }
-    },{
+    }, {
         path: '/projects',
         lazy: async () => {
             const {default: ProjectsRoute} = await import('../info/ProjectsRoute')
@@ -195,42 +195,42 @@ export default [
     },
     {
         path: '/profile/:userId/scorecard',
-        lazy: async() => {
+        lazy: async () => {
             const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute/>}
         }
     },
     {
         path: '/profile/:userId/scorecard/popular',
-        lazy: async() => {
+        lazy: async () => {
             const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute mostPopular={true}/>}
         }
     },
     {
         path: '/profile/:userId/scorecard/no-tracking',
-        lazy: async() => {
+        lazy: async () => {
             const {default: ScorecardNoTrackRoute} = await import('../scorecard/noTrack/ScorecardNoTrackRoute.jsx')
             return {element: <ScorecardNoTrackRoute/>}
         }
     },
     {
         path: '/profile/scorecard/upgrades',
-        lazy: async() => {
+        lazy: async () => {
             const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')
             return {element: <UpgradesRoute/>}
         }
     },
     {
         path: '/profile/scorecard/howto',
-        lazy: async() => {
+        lazy: async () => {
             const {default: HowToRoute} = await import('../scorecard/HowToRoute')
             return {element: <HowToRoute/>}
         }
     },
     {
         path: '/profile/:userId/safelocks',
-        lazy: async() => {
+        lazy: async () => {
             const {default: SafelocksCollectionRoute} = await import('../safelocksCollection/SafelocksCollectionRoute')
             return {element: <SafelocksCollectionRoute/>}
         }
@@ -299,8 +299,16 @@ export default [
         }
     },
     {
-        path: '*',
-        loader: () => redirect('/locks')
+        path: '/rafl/charities',
+        lazy: async () => {
+            const {default: RaffleCharitiesRoute} = await import('../rafl/RaffleCharitiesRoute.jsx')
+            return {element: <RaffleCharitiesRoute/>}
+        }
     },
+    {
+        path: '*',
+        loader:
+            () => redirect('/locks')
+    }
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

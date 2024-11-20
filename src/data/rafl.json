@@ -1,37 +1,40 @@
 [
   {
     "id": "8ddafce0",
-    "year": 2024,
+    "year": 2025,
     "potNumber": "1",
     "title": "Multipick Pot",
     "description": "**This pot features one Kronos pick gun.** Thanks to Multipick for providing raffle prizes this year!",
-    "contentsFile": "",
     "contributedBy": [
       "Multipick"
     ],
     "tags": [
       "Specialty Picks"
     ],
-    "country": "Germany",
+    "country": [
+      "Germany"
+    ],
     "shippingInfo": "International Shipping Included",
     "winner": ""
   },
   {
     "id": "85d33e6a",
-    "year": 2024,
+    "year": 2025,
     "potNumber": "2",
     "title": "Basically Every Lockwood",
     "description": "",
-    "contentsFile": "basically-every-lockwood.md",
     "contributedBy": [
       "downundermonkey",
       "HVlogic"
     ],
     "tags": [
-      "Beginner/Intermediate Locks",
+      "Beginner Locks",
+      "Intermediate Locks",
       "Advanced Locks"
     ],
-    "country": "Australia",
+    "country": [
+      "Australia"
+    ],
     "shippingInfo": "International Shipping Included",
     "winner": "",
     "potContents": "- 1x Lockwood 334B45 Bilock QCC core with operating/QCC key\n- 1x Lockwood 232 6 pin with keys\n- 1x Lockwood/ASSA 110/35 with keys\n- 1x Lockwood 120/40 with keys\n- 1x Lockwood 120/60 with keys\n- 1x Lockwood 234B45 with keys\n- 1x Lockwood 215A40 with keys\n- 1x Lockwood/ASSA 365S63 with keys\n- 1x Lockwood/ASSA 270S70 with key\n- 2x Lockwood 312 loto padlocks (rarer 4 pin version)\n- 1x Lockwood 232 all brass padlock\n- 1x Lockwood V7 oval\n- 1x Lockwood restricted LP keyway with key\n- 1x Vintage Lockwood 234 padlock\n- 1x Lockwood handy lock new in package\n- 2x Lockwood 225 wafer locks with impressioned keys",
@@ -54,19 +57,63 @@
   },
   {
     "id": "5dcf0aaa",
-    "year": 2024,
-    "potNumber": "99",
+    "year": 2025,
+    "potNumber": "3",
     "title": "Gentleman’s Weaspick",
     "description": "",
-    "contentsFile": "",
     "contributedBy": [
       "Doktor Weasel"
     ],
     "tags": [
       "Custom Picks"
     ],
-    "country": "USA",
-    "shippingInfo": "No international shipping included",
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "No International Shipping Included",
+    "winner": ""
+  },
+  {
+    "id": "31cc484b",
+    "year": 2025,
+    "potNumber": "4",
+    "title": "The SPARROWS Pot",
+    "description": "The THUNDERBIRD pick set is the first foray into wood handled picks of any major pick manufacturer. Thanks again to SPARROWS for providing an awesome prize to the raffle this year! ",
+    "contributedBy": [
+      "SPARROWS"
+    ],
+    "tags": [
+      "Pick Sets",
+      "Swag"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "winner": "",
+    "potContents": "- [THUNDERBIRD Pick Set](https://www.sparrowslockpicks.com/products/thunderbird?_pos=1&_sid=2ea5330f6&_ss=r)\n- SPARROWS coin\n"
+  },
+  {
+    "id": "5e03dd01",
+    "year": 2025,
+    "potNumber": "5",
+    "title": "Luso-German Double Triple Dare Box",
+    "description": "",
+    "contributedBy": [
+      "Peaceweapon",
+      "Moon-UA"
+    ],
+    "tags": [
+      "Mystery",
+      "Swag",
+      "Advanced Locks",
+      "Tools and Materials"
+    ],
+    "country": [
+      "Germany",
+      "Portugal"
+    ],
+    "shippingInfo": "$15 towards international shipping",
     "winner": ""
   }
 ]

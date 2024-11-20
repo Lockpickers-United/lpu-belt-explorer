@@ -13,7 +13,8 @@ import {
     upgradeSchema,
     introCopySchema,
     raflSchema,
-    raflContentsSchema
+    raflContentsSchema,
+    raflCharitySchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
@@ -31,7 +32,7 @@ const importValidate = async (tab, schema) => {
     // Download file
     const safeTab = encodeURI(tab)
 
-    const url = (!['RAFL', 'RAFL Media', 'RAFL Pot Contents'].includes(tab))
+    const url = (!['RAFL', 'RAFL Media', 'RAFL Pot Contents', 'RAFL Charities'].includes(tab))
         ? `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
         : `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
     const csvData = await (await fetch(url)).text()
@@ -47,6 +48,10 @@ const importValidate = async (tab, schema) => {
     validate(data, schema)
 
     return data
+}
+
+const splitCommaValues = (string) => {
+    return string.replace(/\s+,|,\s+/g, ',').split(',').filter(x => x)
 }
 
 // Load all 3 data files (LOL)
@@ -65,6 +70,7 @@ const introCopyData = await importValidate('Intro Copy', introCopySchema)
 const raflData = await importValidate('RAFL', raflSchema)
 const raflPotContentsData = await importValidate('RAFL Pot Contents', raflContentsSchema)
 const raflMediaData = await importValidate('RAFL Media', mediaSchema)
+const raflCharityData = await importValidate('RAFL Charities', raflCharitySchema)
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -406,9 +412,9 @@ const raflMainData = raflData.map(datum => ({
     title: datum['Title'],
     description: datum['Description'],
     contentsFile: datum['Contents File'],
-    contributedBy: datum['Contributed By'] ? datum['Contributed By'].split(',').filter(x => x) : [],
-    tags: datum.Tags ? datum.Tags.split(',').filter(x => x) : [],
-    country: datum['Country'],
+    contributedBy: datum['Contributed By'] ? splitCommaValues(datum['Contributed By']) : [],
+    tags: datum.Tags ? splitCommaValues(datum['Tags']) : [],
+    country: datum['Country'] ? splitCommaValues(datum['Country']) : [],
     shippingInfo: datum['Shipping Info'],
     winner: datum['Winner']
 })).filter(x => x)
@@ -421,7 +427,6 @@ raflPotContentsData
         if (!entry) return console.log('Pot not found trying to add contents', item)
         entry.potContents = item['Pot Contents']
     })
-
 
 // RAFL Media data
 console.log('Processing RAFL Media data...')
@@ -449,5 +454,17 @@ raflMediaData
     })
 
 fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
+
+// RAFL Charity Data
+console.log('Processing RAFL data...')
+const raflCharities = raflCharityData.map(datum => ({
+    id: datum['Unique ID'],
+    name: datum['Charity Name'],
+    url: datum['URL'],
+    donations2024: datum['Total Donations 2024'],
+    donations2025: datum['Total Donations 2025'],
+})).filter(x => x)
+
+fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
 
 console.log('Complete.')
