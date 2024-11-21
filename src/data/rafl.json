@@ -3,7 +3,7 @@
     "id": "8ddafce0",
     "year": 2025,
     "potNumber": "1",
-    "title": "Multipick Pot",
+    "title": "Multipick Pot (preview change)",
     "description": "**This pot features one Kronos pick gun.** Thanks to Multipick for providing raffle prizes this year!",
     "contributedBy": [
       "Multipick"
@@ -151,5 +151,24 @@
     "shippingInfo": "$15 towards international shipping",
     "winner": "",
     "potContents": "Portuguese Triple Dare Challenge Set\n- Set of 3 CLs, based on identical DOM cylinders (varying difficulty), DOMt DARE series: \"Doubt\", \"Dread\", and \"Despair\"\n- 2 double euro cylinders to use as base CLs, one with 2 working keys, one with a working key and a blank\n- 1 meter of 3mm brass rod in 20cm sections\n- A box of 6 figure 2, 2.3mm burs for countermilling\n- M3, M3.5, and M4 taps and handle\n- Bags of grub screws (M3.5, M4, x50)\n- 2 engraving tips of different sizes for dremel\n- Shims x5\n- Replacement springs x15\n- Blank tags x4\n- 2 sheets of sandpaper, 600 and 1000 grit\n- Peace sticker\n- Rein tray\n- Small bag of replacement E-clips and brass C-clips\n- Mystery prize\n\nGerman Triple Dare Lock Set\n- Evva Dual euro module, 1 key, mastered (Red)\n- Kaba Quattro keyless, 16 pins (Black)\n- Corona M, nasty keyway (Green)"
+  },
+  {
+    "id": "7399edae",
+    "year": 2025,
+    "potNumber": "6",
+    "title": "Le Pumps",
+    "description": "",
+    "contributedBy": [
+      "Nitiflor"
+    ],
+    "tags": [
+      "Advanced Locks"
+    ],
+    "country": [
+      "France"
+    ],
+    "shippingInfo": "Split international shipping",
+    "winner": "",
+    "potContents": "Images: [https://imgur.com/a/ODcwGtz](https://imgur.com/a/ODcwGtz)\n- Pollux GMO8, new, 2 keys (standalone half, not cut)\n- Pollux 5, new, 2 keys (standalone half, not cut)\n- FTH Surveyor, used, 1 key (double)\n- Fontaine, unknown (old dynaxis maybe, key is neat), used, 1 key (double)"
   }
 ]

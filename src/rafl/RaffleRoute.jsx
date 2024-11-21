@@ -21,12 +21,17 @@ import PreviewButton from './PreviewButton.jsx'
 import IconButton from '@mui/material/IconButton'
 import CachedIcon from '@mui/icons-material/Cached'
 import Tooltip from '@mui/material/Tooltip'
+import {useSearchParams} from 'react-router-dom'
+import RafffleEntry from './RafffleEntry.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL')
     const {preview} = useContext(AppContext)
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
+    const [searchParams] = useSearchParams()
+    const single = searchParams.get('single')
+    const id = searchParams.get('id')
 
     const {data, loading, error, refresh} = useData({url: raflJsonUrl})
     const dataReady = (data && !loading && !error)
@@ -36,10 +41,14 @@ function RaffleRoute() {
             : []
         : raflData
 
+    const individualPot = allEntries.find(e => e.id === id)
+    console.log('individualPot', individualPot)
+    const showSingle = (!!single && individualPot)
+
     const refreshPreview = useCallback(async () => {
         const url = window.location.protocol === 'http:'
-        ? 'http://explore.lpubelts.com:8080/refresh-preview'
-        : 'https://explore.lpubelts.com:8443/refresh-preview'
+            ? 'http://explore.lpubelts.com:8080/refresh-preview'
+            : 'https://explore.lpubelts.com:8443/refresh-preview'
 
         const response = await fetch(url, {cache: 'no-store'})
         console.log('preview response', url, await response.json())
@@ -63,37 +72,45 @@ function RaffleRoute() {
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleDataProvider allEntries={allEntries} profile={lockCollection}>
 
-                <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
-
-                {preview &&
-                    <div style={{
-                        maxWidth: 700,
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        marginTop: 20,
-                        padding: 2,
-                        fontWeight: 700,
-                        fontSize: '1.2rem',
-                        backgroundColor: '#900',
-                        display: 'flex',
-                        alignItems: 'center'
-                    }}>
-                        <div style={{flexGrow: 1, marginLeft: 20}}>PREVIEW MODE</div>
-                        <Tooltip title={'Refresh From Sheet'} arrow disableFocusListener>
-                            <IconButton onClick={refreshPreview} style={{marginRight: 10}}>
-                                <CachedIcon/>
-                            </IconButton>
-                        </Tooltip>
-                    </div>
+                {showSingle &&
+                    <RafffleEntry entry={individualPot} expanded={true}/>
                 }
 
-                {preview && !dataReady
-                    ? <LoadingDisplay/>
-                    : <RafflePage profile={lockCollection}/>
+                {!showSingle &&
+                    <React.Fragment>
+
+                        <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
+
+                        {preview &&
+                            <div style={{
+                                maxWidth: 700,
+                                marginLeft: 'auto',
+                                marginRight: 'auto',
+                                marginTop: 20,
+                                padding: 2,
+                                fontWeight: 700,
+                                fontSize: '1.2rem',
+                                backgroundColor: '#900',
+                                display: 'flex',
+                                alignItems: 'center'
+                            }}>
+                                <div style={{flexGrow: 1, marginLeft: 20}}>PREVIEW MODE</div>
+                                <Tooltip title={'Refresh From Sheet'} arrow disableFocusListener>
+                                    <IconButton onClick={refreshPreview} style={{marginRight: 10}}>
+                                        <CachedIcon/>
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
+                        }
+
+                        {preview && !dataReady
+                            ? <LoadingDisplay/>
+                            : <RafflePage profile={lockCollection}/>
+                        }
+
+                        <Footer/>
+                    </React.Fragment>
                 }
-
-                <Footer/>
-
                 <Tracker feature='rafl'/>
             </RaffleDataProvider>
         </FilterProvider>

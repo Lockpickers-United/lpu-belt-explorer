@@ -7,7 +7,7 @@ import removeAccents from 'remove-accents'
 
 export function RaffleDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, preview, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, preview, single, ...filters} = allFilters
 
     const mappedEntries = useMemo(() => {
         return allEntries
