@@ -20,6 +20,7 @@ import AppContext from '../app/AppContext.jsx'
 import PreviewButton from './PreviewButton.jsx'
 import IconButton from '@mui/material/IconButton'
 import CachedIcon from '@mui/icons-material/Cached'
+import Tooltip from '@mui/material/Tooltip'
 
 function RaffleRoute() {
     usePageTitle('RAFL')
@@ -36,11 +37,14 @@ function RaffleRoute() {
         : raflData
 
     const refreshPreview = useCallback(async () => {
-        const url = 'http://explore.lpubelts.com:8080/refresh-preview'
+        const url = window.location.protocol === 'http:'
+        ? 'http://explore.lpubelts.com:8080/refresh-preview'
+        : 'https://explore.lpubelts.com:8443/refresh-preview'
+
         const response = await fetch(url, {cache: 'no-store'})
-        console.log(await response.json())
+        console.log('preview response', url, await response.json())
         await refresh()
-    },[refresh])
+    }, [refresh])
 
     const extras = (
         <React.Fragment>
@@ -68,16 +72,18 @@ function RaffleRoute() {
                         marginRight: 'auto',
                         marginTop: 20,
                         padding: 2,
-                        fontWeight:700,
-                        fontSize:'1.2rem',
+                        fontWeight: 700,
+                        fontSize: '1.2rem',
                         backgroundColor: '#900',
-                        display:'flex',
-                        alignItems:'center'
+                        display: 'flex',
+                        alignItems: 'center'
                     }}>
-                        <div style={{flexGrow:1, marginLeft:20}}>PREVIEW MODE</div>
-                        <IconButton onClick={refreshPreview} style={{marginRight:10}}>
-                            <CachedIcon/>
-                        </IconButton>
+                        <div style={{flexGrow: 1, marginLeft: 20}}>PREVIEW MODE</div>
+                        <Tooltip title={'Refresh From Sheet'} arrow disableFocusListener>
+                            <IconButton onClick={refreshPreview} style={{marginRight: 10}}>
+                                <CachedIcon/>
+                            </IconButton>
+                        </Tooltip>
                     </div>
                 }
 
