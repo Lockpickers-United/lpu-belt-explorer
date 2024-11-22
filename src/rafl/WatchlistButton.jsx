@@ -5,11 +5,15 @@ import StarIcon from '@mui/icons-material/Star'
 import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 import LoadingDisplaySmall from '../misc/LoadingDisplaySmall.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
+import Popover from '@mui/material/Popover'
+import SignInButton from '../auth/SignInButton.jsx'
 
 function WatchlistButton({id}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {lockCollection, addToLockCollection, removeFromLockCollection} = useContext(DBContext)
+    const [anchorEl, setAnchorEl] = useState(() => undefined)
+    const open = Boolean(anchorEl)
+
     const [checkboxUpdating, setCheckboxUpdating] = useState(null)
 
     const key = 'raffleWatchlist'
@@ -27,17 +31,26 @@ function WatchlistButton({id}) {
         }
         setCheckboxUpdating(null)
     }, [id, addToLockCollection, removeFromLockCollection])
+    const handleOpen = useCallback(event => {
+        event.preventDefault()
+        event.stopPropagation()
+        setAnchorEl(event.currentTarget)
+    }, [])
+    const handleClose = useCallback((event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        setAnchorEl(null)
+    }, [])
 
-    const {isMobile} = useWindowSize()
-    const style = !isMobile ? {marginTop:-4, marginRight:15, width: 36, minWidth: 36, height: 36} : {marginTop:-4, marginRight:8, width: 30, minWidth: 30, height: 30}
+    const style =  {marginTop: -4, width: 32, minWidth: 32, height: 32}
 
     return (
         <React.Fragment>
             {isLoggedIn &&
-                <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', justifyItems: 'left'}}>
                     <React.Fragment key={key}>
                         {checkboxUpdating === key
-                            ? <div style={{marginLeft:-48}}><LoadingDisplaySmall/></div>
+                            ? <div style={{marginTop: -4}}><LoadingDisplaySmall/></div>
                             : <Tooltip title={tooltipText} arrow disableFocusListener>
                                 <IconButton key={key} onClick={handleChange(key, isChecked())}
                                             style={{
@@ -50,6 +63,35 @@ function WatchlistButton({id}) {
                     </React.Fragment>
                 </div>
             }
+            {!isLoggedIn &&
+                <React.Fragment>
+                    <Tooltip title={tooltipText} arrow disableFocusListener>
+                        <IconButton key={key} onClick={handleOpen}
+                                    style={{
+                                        color: isChecked() ? '#13e113' : '#999', ...style
+                                    }}>
+                            <StarIcon/>
+                        </IconButton>
+                    </Tooltip>
+                    <Popover
+                        open={open}
+                        anchorEl={anchorEl}
+                        onClose={handleClose}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'left'
+                        }}
+                    >
+                        <div style={{display:'flex', padding: 30, width: 300, placeItems: 'center'}} onClick={handleClose}>
+                            <div>
+                                <strong>Log in to keep a RAFL Watchlist!</strong><br/><br/>
+                                <SignInButton/>
+                            </div>
+                        </div>
+                    </Popover>
+                </React.Fragment>
+            }
+
         </React.Fragment>
     )
 }
