@@ -10,6 +10,7 @@ import useWindowSize from '../util/useWindowSize'
 import RaffleCharitiesProvider from './RaffleCharitiesProvider.jsx'
 import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
 import raflCharities from '../data/raflCharities.json'
+import RaffleHeader from './RaffleHeader.jsx'
 
 function RaffleCharitiesRoute() {
     const {isMobile} = useWindowSize()
@@ -23,14 +24,21 @@ function RaffleCharitiesRoute() {
         </React.Fragment>
     )
 
+    const spacer = !isMobile ? 0 : 8
     return (
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleCharitiesProvider allEntries={raflCharities}>
 
-                <Nav title='RAFL!' extras={extras}/>
+                <Nav title='RAFL Charities' extras={extras}/>
+                <div style={{height:spacer}}/>
+                <RaffleHeader page={'charities'}/>
 
-                <RaffleCharitiesPage/>
-
+                <div style={{
+                    maxWidth: 700, padding: 0,
+                    marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+                }}>
+                    <RaffleCharitiesPage/>
+                </div>
                 <Footer/>
 
                 <Tracker feature='raflCharities'/>

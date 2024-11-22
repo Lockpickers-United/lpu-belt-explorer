@@ -17,11 +17,13 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleTitle from './RaffleTitle.jsx'
 
-function RaffleEntry({entry, expanded, onExpand}) {
+function RaffleEntry({entry, expanded, onExpand, single}) {
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {isMobile} = useWindowSize()
     const ref = useRef(null)
+
+    const showSimple = single === '2'
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -52,7 +54,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+            <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null}>
                 <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
                     <div style={{display: 'flex', width: '100%'}}>
                         <div style={{margin: '12px 0px 8px 8px', display: 'flex'}}>
@@ -89,7 +91,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                     <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
                         <div style={{display: infoFlexStyle}}>
                             <Stack direction='row' alignItems='flex-start' style={{}}>
-                                {!!entry.tags?.length &&
+                                {!!entry.tags?.length && !showSimple &&
                                     <FieldValue name='Tags' value={
                                         <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                             {entry.tags.map((tag, index) =>
@@ -108,7 +110,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
 
                         <div style={{display: 'flex', marginTop: 6}}>
 
-                            {entry.country &&
+                            {entry.country && !showSimple &&
                                 <div style={{marginRight: 10}}>
                                     <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
                                         entry.country.map((country, index) => {
@@ -128,7 +130,7 @@ function RaffleEntry({entry, expanded, onExpand}) {
                                 </div>
                             }
 
-                            {entry.shippingInfo &&
+                            {entry.shippingInfo && !showSimple &&
                                 <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
                                             value={entry.shippingInfo}/>
                             }
@@ -174,10 +176,12 @@ function RaffleEntry({entry, expanded, onExpand}) {
                         }
                         <Tracker feature='rafl-pot' id={entry.potNumber}/>
                     </AccordionDetails>
-                    <AccordionActions disableSpacing>
-                        <CopyPotTextButton entry={entry}/>
-                        <CopyLinkToRaflPotButton entry={entry}/>
-                    </AccordionActions>
+                    {!showSimple &&
+                        <AccordionActions disableSpacing>
+                            <CopyPotTextButton entry={entry}/>
+                            <CopyLinkToRaflPotButton entry={entry}/>
+                        </AccordionActions>
+                    }
                 </React.Fragment>
             }
         </Accordion>

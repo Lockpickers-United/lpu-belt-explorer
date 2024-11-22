@@ -23,6 +23,7 @@ import CachedIcon from '@mui/icons-material/Cached'
 import Tooltip from '@mui/material/Tooltip'
 import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RafffleEntry.jsx'
+import RaffleHeader from './RaffleHeader.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL')
@@ -42,7 +43,6 @@ function RaffleRoute() {
         : raflData
 
     const individualPot = allEntries.find(e => e.id === id)
-    console.log('individualPot', individualPot)
     const showSingle = (!!single && individualPot)
 
     const refreshPreview = useCallback(async () => {
@@ -73,13 +73,14 @@ function RaffleRoute() {
             <RaffleDataProvider allEntries={allEntries} profile={lockCollection}>
 
                 {showSingle &&
-                    <RafffleEntry entry={individualPot} expanded={true}/>
+                    <RafffleEntry entry={individualPot} expanded={true} single={single}/>
                 }
 
                 {!showSingle &&
                     <React.Fragment>
 
                         <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
+                        <RaffleHeader page={'pots'}/>
 
                         {preview &&
                             <div style={{
