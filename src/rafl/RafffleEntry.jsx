@@ -16,11 +16,11 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleTitle from './RaffleTitle.jsx'
+import WatchlistButton from './WatchlistButton.jsx'
 
 function RaffleEntry({entry, expanded, onExpand, single}) {
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-    const {isMobile} = useWindowSize()
     const ref = useRef(null)
 
     const showSimple = single === '2'
@@ -48,41 +48,48 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry.id, onExpand])
 
-    const infoFlexStyle = isMobile
-        ? 'block'
-        : 'flex'
+    const {isMobile} = useWindowSize()
+    const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
+    const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
+
+    const infoFlexStyle = isMobile ? 'block' : 'flex'
+    const descriptionFontSize = isMobile ? '0.95rem' : '1.1rem'
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null}>
-                <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
-                    <div style={{display: 'flex', width: '100%'}}>
-                        <div style={{margin: '12px 0px 8px 8px', display: 'flex'}}>
-                            <RaffleTitle entry={entry}/>
+                <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
+                    <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
+                        <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
+                            <div style={{margin: titleMargin, display: 'flex', flexGrow: 1}}>
+                                <RaffleTitle entry={entry}/>
+                            </div>
+                        </div>
+                        <div style={{margin: contribMargin, display: 'flex'}}>
+                            <div style={{marginRight: 8, textAlign: 'right', color: '#bbb', fontSize: descriptionFontSize}}>Contributed by</div>
+                            <div>
+                                {entry.contributedBy.map((contrib, index) => {
+                                    const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
+                                    return (
+                                        <span key={index}>
+                                            <FilterChip
+                                                value={contrib}
+                                                field='contributedBy'
+                                                mode={'text'}
+                                            />{separator}
+                                        </span>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <div style={{margin: '12px 30px 8px 8px', fontSize: descriptionFontSize}}>
+                            <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                                {entry.description}
+                            </ReactMarkdown>
                         </div>
                     </div>
-                    <div style={{margin: '0px 0px 18px 8px', display: 'flex'}}>
-                        <div style={{marginRight: 8, textAlign: 'right', color: '#bbb'}}>Contributed by</div>
-                        <div>
-                            {entry.contributedBy.map((contrib, index) => {
-                                const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
-                                return (
-                                    <span key={index}>
-                                    <FilterChip
-                                        value={contrib}
-                                        field='contributedBy'
-                                        mode={'text'}
-                                    />{separator}
-                                </span>
-                                )
-                            })}
-                        </div>
-                    </div>
-                    <div style={{margin: '12px 30px 8px 8px', fontSize: '1.1rem'}}>
-                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                            {entry.description}
-                        </ReactMarkdown>
-                    </div>
+                    <WatchlistButton id={entry.id}/>
+
                 </div>
             </AccordionSummary>
             {
@@ -140,7 +147,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                         {
                             entry.potContents &&
                             <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
-                                <FieldValue name='Contents' value={
+                                <FieldValue name='Contents' textStyle={{fontSize: descriptionFontSize}} value={
                                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                         {entry.potContents}
                                     </ReactMarkdown>

@@ -17,7 +17,7 @@ export function RaffleDataProvider({children, allEntries, profile}) {
                     entry.name,
                     entry.description
                 ].join(',')),
-                collection: collectionOptions.safelocks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
+                collection: collectionOptions.raffle.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
             }))
     }, [allEntries, profile])
 

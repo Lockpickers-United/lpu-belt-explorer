@@ -34,6 +34,7 @@ export const scorecardFilterFields = [
 export const raffleFilterFields = [
     {label: 'Tag', fieldName: 'tags'},
     {label: 'Contributor', fieldName: 'contributedBy'},
-    {label: 'Country', fieldName: 'country'}
+    {label: 'Country', fieldName: 'country'},
+    {label: 'Watchlist', fieldName: 'collection', userBased: true}
 ]
 
