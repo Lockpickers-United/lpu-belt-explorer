@@ -20,8 +20,6 @@ function RafflePage({profile}) {
     const {isMobile} = useWindowSize()
     const listMargin = !isMobile ? 8 : 0
 
-    console.log('visibleEntries', visibleEntries)
-
     return (
 
         <div style={{margin: listMargin, paddingBottom: 32}}>

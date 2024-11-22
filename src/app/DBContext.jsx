@@ -570,9 +570,9 @@ function activity2DBRec(act) {
 function profileDB2State(dbRec) {
     if (dbRec) {
         const additionalFields = Object.keys(collectionOptions).reduce((acc, type) => {
-            const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any').key
-            const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any').map(c => c.key)
-            acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
+            const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any')?.key
+            const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any')?.map(c => c.key)
+            if (anyKey) acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
             return acc
         }, {})
 

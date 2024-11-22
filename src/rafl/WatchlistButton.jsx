@@ -17,7 +17,7 @@ function WatchlistButton({id}) {
     const [checkboxUpdating, setCheckboxUpdating] = useState(null)
 
     const key = 'raffleWatchlist'
-    const isChecked = useCallback(() => !!lockCollection[key] && !!lockCollection[key].includes(id), [id, lockCollection])
+    const isChecked = useCallback(() => !!lockCollection[key] && lockCollection[key].includes(id), [id, lockCollection])
     const tooltipText = isChecked() ? 'Remove from Watchlist' : 'Add to Watchlist'
 
     const handleChange = useCallback((key, collected) => async (event, checked) => {

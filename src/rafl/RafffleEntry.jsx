@@ -53,7 +53,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
 
     const infoFlexStyle = isMobile ? 'block' : 'flex'
-    const descriptionFontSize = isMobile ? '0.95rem' : '1.1rem'
+    const descriptionFontSize = isMobile ? '0.95rem' : '1.0rem'
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -66,7 +66,13 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
                         </div>
                         <div style={{margin: contribMargin, display: 'flex'}}>
-                            <div style={{marginRight: 8, textAlign: 'right', color: '#bbb', fontSize: descriptionFontSize}}>Contributed by</div>
+                            <div style={{
+                                marginRight: 8,
+                                textAlign: 'right',
+                                color: '#bbb',
+                                fontSize: descriptionFontSize
+                            }}>Contributed by
+                            </div>
                             <div>
                                 {entry.contributedBy.map((contrib, index) => {
                                     const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
