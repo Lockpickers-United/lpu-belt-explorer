@@ -452,13 +452,12 @@ raflMediaData
 fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
 
 // RAFL Charity Data
-console.log('Processing RAFL data...')
+console.log('Processing RAFL Charity data...')
 const raflCharities = raflCharityData.map(datum => ({
     id: datum['Unique ID'],
     name: datum['Charity Name'],
     url: datum['URL'],
     donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/,'')) || 0,
-    donations2025: parseInt(datum['Total Donations 2025'].replace(/[^0-9]/,'')) || 0,
 })).filter(x => x)
 
 fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))

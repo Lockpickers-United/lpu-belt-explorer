@@ -11,7 +11,7 @@ import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RafflePage from './RafflePage.jsx'
 import raflData from '../data/rafl.json'
 import useData from '../util/useData.jsx'
-import {raflStatsPots, raflJsonUrl} from '../data/dataUrls'
+import {raflJsonUrl, raflStats} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import AppContext from '../app/AppContext.jsx'
 import PreviewButton from './PreviewButton.jsx'
@@ -36,14 +36,12 @@ function RaffleRoute() {
         : raflData
 
     const allEntriesMapped = allEntries.map(entry => {
-        const entryStats = data?.raflStatsPots?.find(stat => stat['Unique ID'] === entry.id)
-
+        const entryStats = data?.raflStats?.potStats.find(stat => stat.id === entry.id)
         return {
             ...entry,
-            tickets: entryStats?.Tickets,
-            donors: entryStats?.Donors,
+            tickets: entryStats?.tickets,
+            donors: entryStats?.donors
         }
-
     })
 
     const individualPot = allEntries.find(e => e.id === id)
@@ -56,7 +54,6 @@ function RaffleRoute() {
         </React.Fragment>
     )
     const extrasTwo = undefined
-
 
 
     return (
@@ -93,7 +90,7 @@ function RaffleRoute() {
 
 const urls = {
     raflJsonUrl,
-    raflStatsPots
+    raflStats
 }
 
 export default RaffleRoute

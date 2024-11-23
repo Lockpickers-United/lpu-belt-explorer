@@ -25,6 +25,8 @@ function RaffleCharitesPage() {
         }
     }, [setSort, sort])
 
+
+
     const visibleCharities = visibleEntries
         .sort((a, b) => {
             switch (sort) {

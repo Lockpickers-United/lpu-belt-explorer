@@ -18,4 +18,4 @@ export const leaderboardData2 = `${url}/leaderboardData2.json`
 export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
 
 export const raflJsonUrl = `${url}/rafl.json`
-export const raflStatsPots = `${url}/raflStatsPots.json`
+export const raflStats = `${url}/raflStats.json`
