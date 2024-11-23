@@ -58,6 +58,8 @@ export function RaffleDataProvider({children, allEntries, profile}) {
                     return a.title.localeCompare(b.title)
                 } else if (sort === 'contributedBy') {
                     return a.contributedBy[0].localeCompare(b.contributedBy[0])
+                } else if (sort === 'tickets') {
+                    return parseInt(b.tickets) - parseInt(a.tickets)
                 } else {
                     return a.potNumber < b.potNumber
                 }

@@ -14,7 +14,7 @@ import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import RafflePage from './RafflePage.jsx'
 import raflData from '../data/rafl.json'
 import useData from '../util/useData.jsx'
-import {raflJsonUrl} from '../data/dataUrls'
+import {raflStatsPots, raflJsonUrl} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import AppContext from '../app/AppContext.jsx'
 import PreviewButton from './PreviewButton.jsx'
@@ -34,13 +34,22 @@ function RaffleRoute() {
     const single = searchParams.get('single')
     const id = searchParams.get('id')
 
-    const {data, loading, error, refresh} = useData({url: raflJsonUrl})
+    const {data, loading, error, refresh} = useData({urls})
     const dataReady = (data && !loading && !error)
     const allEntries = preview
-        ? dataReady
-            ? data
-            : []
+        ? data.raflJsonUrl || []
         : raflData
+
+    const allEntriesMapped = allEntries.map(entry => {
+        const entryStats = data?.raflStatsPots?.find(stat => stat['Unique ID'] === entry.id)
+
+        return {
+            ...entry,
+            tickets: entryStats?.Tickets,
+            donors: entryStats?.Donors,
+        }
+
+    })
 
     const individualPot = allEntries.find(e => e.id === id)
     const showSingle = (!!single && individualPot)
@@ -68,9 +77,11 @@ function RaffleRoute() {
         </React.Fragment>
     )
 
+
+
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allEntries} profile={lockCollection}>
+            <RaffleDataProvider allEntries={allEntriesMapped} profile={lockCollection}>
 
                 {showSingle &&
                     <RafffleEntry entry={individualPot} expanded={true} single={single}/>
@@ -116,6 +127,11 @@ function RaffleRoute() {
             </RaffleDataProvider>
         </FilterProvider>
     )
+}
+
+const urls = {
+    raflJsonUrl,
+    raflStatsPots
 }
 
 export default RaffleRoute

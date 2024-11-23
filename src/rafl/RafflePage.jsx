@@ -12,7 +12,6 @@ function RafflePage({profile}) {
     const {visibleEntries} = useContext(DataContext)
 
     const defExpanded = useDeferredValue(expanded)
-
     const handleExpand = useCallback(id => {
         setExpanded(id)
     }, [])
@@ -24,7 +23,7 @@ function RafflePage({profile}) {
 
         <div style={{margin: listMargin, paddingBottom: 32}}>
             <div style={{height:8}}/>
-            <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
+            <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 

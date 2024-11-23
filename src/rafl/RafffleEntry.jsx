@@ -22,8 +22,12 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
-
     const showSimple = single === '2'
+
+    const ticketCount = entry.tickets
+        ? new Intl.NumberFormat('en-US', {
+        }).format(entry.tickets)
+        : '---'
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -88,11 +92,17 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 })}
                             </div>
                         </div>
-                        <div style={{margin: '12px 30px 8px 8px', fontSize: descriptionFontSize}}>
+                        <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                 {entry.description}
                             </ReactMarkdown>
                         </div>
+                        <div style={{margin: '12px 30px 8px 8px', fontSize: descriptionFontSize, textAlign: 'right'}}>
+                            <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                            &nbsp;&nbsp;&nbsp;
+                            <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                        </div>
+
                     </div>
                     <WatchlistButton id={entry.id}/>
 
