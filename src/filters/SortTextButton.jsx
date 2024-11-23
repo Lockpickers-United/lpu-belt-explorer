@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider'
 import Button from '@mui/material/Button'
 import AppContext from '../app/AppContext.jsx'
 
-function SortTextButton({sortValues}) {
+function SortTextButton({sortValues, compactMode}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -33,7 +33,7 @@ function SortTextButton({sortValues}) {
     return (
         <React.Fragment>
             <Tooltip title='View Options' arrow disableFocusListener>
-                <Button color='inherit' onClick={handleOpen} style={{color:'#ddd'}}>
+                <Button color='inherit' onClick={handleOpen} style={{color: '#ddd'}}>
                     <Badge
                         variant='dot'
                         color='secondary'
@@ -60,11 +60,14 @@ function SortTextButton({sortValues}) {
                     </MenuItem>
                 )}
 
-                <Divider/>
-                <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>MODE</div>
-                <MenuItem onClick={handleCompactClick(false)} selected={!compact}>Normal</MenuItem>
-                <MenuItem onClick={handleCompactClick(true)} selected={compact}>Compact</MenuItem>
-
+                {compactMode &&
+                    <React.Fragment>
+                        <Divider/>
+                        <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>MODE</div>
+                        <MenuItem onClick={handleCompactClick(false)} selected={!compact}>Normal</MenuItem>
+                        <MenuItem onClick={handleCompactClick(true)} selected={compact}>Compact</MenuItem>
+                    </React.Fragment>
+                }
             </Menu>
         </React.Fragment>
     )

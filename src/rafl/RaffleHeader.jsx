@@ -48,7 +48,7 @@ function RaffleHeader({page}) {
                     <Button onClick={() => navigate('/rafl/about')}
                             style={{marginRight: 0, color: page === 'about' ? '#fff' : '#ccc', fontSize: buttonFontSize}}
                             disabled={true}>
-                        ABOUT
+                        ENTER
                     </Button>
                 </span>
                 </Tooltip>

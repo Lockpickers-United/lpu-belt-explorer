@@ -20,7 +20,7 @@ export default function RaffleSearchBar({label, sortValues}) {
             </div>
             {!!sortValues &&
                 <div style={{margin: '12px 20px 0px 20px'}}>
-                    <ViewFilterButtons sortValues={sortValues}/>
+                    <ViewFilterButtons sortValues={sortValues} compactMode={false}/>
                 </div>
             }
         </div>
