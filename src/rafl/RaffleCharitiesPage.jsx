@@ -10,6 +10,7 @@ import TableBody from '@mui/material/TableBody'
 import RaffleCharityRow from './RaffleCharityRow.jsx'
 import Link from '@mui/material/Link'
 import useWindowSize from '../util/useWindowSize.jsx'
+import RaffleSearchBar from './RaffleSearchBar.jsx'
 
 function RaffleCharitesPage() {
     const {visibleEntries} = useContext(DataContext)
@@ -44,55 +45,61 @@ function RaffleCharitesPage() {
 
     return (
 
-        <div style={{...style, margin: 0, paddingBottom: 32}}>
-            <div style={{height: 8}}/>
+        <div style={{...style, paddingBottom: 32}}>
+            <div style={{height:8}}/>
+
+            <RaffleSearchBar label='Approved Charities' sortValues={null}/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Charities'/>}
 
-            <TableContainer sx={{height: '100%', backgroundColor: '#111'}} id='scrollable'
-                            ref={scrollableRef}>
-                <Table stickyHeader>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell
-                                key='Charity Name'
-                                style={{
-                                    fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                    backgroundColor: '#000'
-                                }}
-                            >
-                                <Link onClick={() => handleSort('name')} style={{color: sort === 'name' ? '#fff' : '#ccc'}}>Charity Name</Link>
-                            </TableCell>
-                            <TableCell
-                                key='2024'
-                                style={{
-                                    fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                    backgroundColor: '#000',
-                                    textAlign: 'center'
-                                }}
-                            >
-                                <Link onClick={() => handleSort('2024')} style={{color: sort === '2024' ? '#fff' : '#ccc'}}>2024 Contributions</Link>
-                            </TableCell>
-                            <TableCell
-                                key='2025'
-                                style={{
-                                    fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                    backgroundColor: '#000',
-                                    textAlign: 'center'
-                                }}
-                            >
-                                <Link onClick={() => handleSort('2025')} style={{color: sort === '2025' ? '#fff' : '#ccc'}}>2025 So&nbsp;Far</Link>
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {visibleCharities.map((charity, index) =>
-                            <RaffleCharityRow charity={charity} key={index}/>
-                        )}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-
+            {visibleEntries.length > 0 &&
+                <TableContainer sx={{height: '100%', backgroundColor: '#111'}} id='scrollable'
+                                ref={scrollableRef}>
+                    <Table stickyHeader style={style}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell
+                                    key='Charity Name'
+                                    style={{
+                                        fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
+                                        backgroundColor: '#222'
+                                    }}
+                                >
+                                    <Link onClick={() => handleSort('name')}
+                                          style={{color: sort === 'name' ? '#fff' : '#ccc'}}>Charity Name</Link>
+                                </TableCell>
+                                <TableCell
+                                    key='2024'
+                                    style={{
+                                        fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
+                                        backgroundColor: '#222',
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    <Link onClick={() => handleSort('2024')}
+                                          style={{color: sort === '2024' ? '#fff' : '#ccc'}}>2024 Contributions</Link>
+                                </TableCell>
+                                <TableCell
+                                    key='2025'
+                                    style={{
+                                        fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
+                                        backgroundColor: '#222',
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    <Link onClick={() => handleSort('2025')}
+                                          style={{color: sort === '2025' ? '#fff' : '#ccc'}}>2025 So&nbsp;Far</Link>
+                                </TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {visibleCharities.map((charity, index) =>
+                                <RaffleCharityRow charity={charity} key={index}/>
+                            )}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            }
         </div>
     )
 }

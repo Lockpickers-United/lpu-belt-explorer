@@ -9,25 +9,26 @@ function RaffleHeader({page}) {
     const {isMobile} = useWindowSize()
 
     const flexStyle = !isMobile ? 'flex' : 'block'
-    const bottonTop = !isMobile ? 8 : 0
+    const buttonTop = !isMobile ? 4 : 0
+    const buttonFontSize = !isMobile ? '1.05rem' : '1.0rem'
 
     return (
         <div style={{
             maxWidth: 700,
             marginLeft: 'auto',
             marginRight: 'auto',
-            marginTop: 20,
+            marginTop: 10,
             padding: '14px 8px 0px 8px',
             fontWeight: 700,
             display: flexStyle
         }}>
             <div style={{flexGrow: 1, fontSize: '1.7rem', marginTop: 0}}>LPU Annual Raffle</div>
-            <div style={{marginTop: bottonTop, justifyItems: 'right'}}>
+            <div style={{marginTop: buttonTop, justifyItems: 'right'}}>
                 <div style={{flexGrow: 1}}/>
                 <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
                 <span>
                     <Button onClick={() => navigate('/rafl')}
-                            style={{marginRight: 10, color: page === 'pots' ? '#fff' : '#ccc'}}
+                            style={{marginRight: 10, color: page === 'pots' ? '#fff' : '#ccc', fontSize: buttonFontSize}}
                             disabled={page === 'pots'}>
                         PRIZES
                     </Button>
@@ -36,7 +37,7 @@ function RaffleHeader({page}) {
                 <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
                 <span>
                     <Button onClick={() => navigate('/rafl/charities')}
-                            style={{marginRight: 10, color: page === 'charities' ? '#fff' : '#ccc'}}
+                            style={{marginRight: 10, color: page === 'charities' ? '#fff' : '#ccc', fontSize: buttonFontSize}}
                             disabled={page === 'charities'}>
                         CHARITIES
                     </Button>
@@ -45,7 +46,7 @@ function RaffleHeader({page}) {
                 <Tooltip title={'About RAFL'} arrow disableFocusListener style={{}}>
                 <span>
                     <Button onClick={() => navigate('/rafl/about')}
-                            style={{marginRight: 0, color: page === 'about' ? '#fff' : '#ccc'}}
+                            style={{marginRight: 0, color: page === 'about' ? '#fff' : '#ccc', fontSize: buttonFontSize}}
                             disabled={true}>
                         ABOUT
                     </Button>

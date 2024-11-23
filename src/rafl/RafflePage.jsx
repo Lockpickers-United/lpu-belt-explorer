@@ -5,6 +5,8 @@ import NoEntriesCard from '../locks/NoEntriesCard.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import RaffleEntry from './RafffleEntry.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import RaffleSearchBar from './RaffleSearchBar.jsx'
+import {raffleSortFields} from '../data/sortFields'
 
 function RafflePage({profile}) {
     const {filters} = useContext(FilterContext)
@@ -22,7 +24,9 @@ function RafflePage({profile}) {
     return (
 
         <div style={{margin: listMargin, paddingBottom: 32}}>
-            <div style={{height:8}}/>
+
+            <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
+
             <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}

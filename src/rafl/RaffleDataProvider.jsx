@@ -14,7 +14,7 @@ export function RaffleDataProvider({children, allEntries, profile}) {
             .map(entry => ({
                 ...entry,
                 fuzzy: removeAccents([
-                    entry.name,
+                    entry.title,
                     entry.description
                 ].join(',')),
                 collection: collectionOptions.raffle.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
