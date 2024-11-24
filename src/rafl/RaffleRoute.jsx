@@ -31,7 +31,7 @@ function RaffleRoute() {
 
     const {data, loading, error, refresh} = useData({urls})
     const dataReady = (data && !loading && !error)
-    const allEntries = preview
+    const allEntries = preview && dataReady
         ? data.raflJsonUrl || []
         : raflData
 
