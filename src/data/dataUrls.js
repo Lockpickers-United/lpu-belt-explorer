@@ -19,3 +19,4 @@ export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
 
 export const raflJsonUrl = `${url}/rafl.json`
 export const raflStats = `${url}/raflStats.json`
+export const raflSummaryStats = `${url}/raflSummaryStats.json`

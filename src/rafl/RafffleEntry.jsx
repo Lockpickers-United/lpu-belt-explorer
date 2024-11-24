@@ -25,8 +25,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const showSimple = single === '2'
 
     const ticketCount = entry.tickets
-        ? new Intl.NumberFormat('en-US', {
-        }).format(entry.tickets)
+        ? new Intl.NumberFormat().format(entry.tickets)
         : '---'
 
     useEffect(() => {
@@ -70,14 +69,12 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
                         </div>
                         <div style={{margin: contribMargin, display: 'flex'}}>
+                           <div style={{flexGrow:1}}>
                             <div style={{
                                 marginRight: 8,
-                                textAlign: 'right',
                                 color: '#bbb',
                                 fontSize: descriptionFontSize
-                            }}>Contributed by
-                            </div>
-                            <div>
+                            }}>Contributed by &nbsp;
                                 {entry.contributedBy.map((contrib, index) => {
                                     const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
                                     return (
@@ -92,17 +89,21 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 })}
                             </div>
                         </div>
+                            <div style={{
+                                marginRight: 20,
+                                fontSize: descriptionFontSize,
+                                textAlign: 'right'
+                            }}>
+                                <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                                &nbsp;&nbsp;&nbsp;
+                                <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                            </div>
+                        </div>
                         <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                 {entry.description}
                             </ReactMarkdown>
                         </div>
-                        <div style={{margin: '12px 30px 8px 8px', fontSize: descriptionFontSize, textAlign: 'right'}}>
-                            <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
-                            &nbsp;&nbsp;&nbsp;
-                            <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
-                        </div>
-
                     </div>
                     <WatchlistButton id={entry.id}/>
 
