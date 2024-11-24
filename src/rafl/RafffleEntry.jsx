@@ -69,34 +69,38 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
                         </div>
                         <div style={{margin: contribMargin, display: 'flex'}}>
-                           <div style={{flexGrow:1}}>
-                            <div style={{
-                                marginRight: 8,
-                                color: '#bbb',
-                                fontSize: descriptionFontSize
-                            }}>Contributed by &nbsp;
-                                {entry.contributedBy.map((contrib, index) => {
-                                    const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
-                                    return (
-                                        <span key={index}>
+                            <div style={{flexGrow: 1}}>
+                                <div style={{
+                                    marginRight: 8,
+                                    color: '#bbb',
+                                    fontSize: descriptionFontSize
+                                }}>Contributed by &nbsp;
+                                    {entry.contributedBy.map((contrib, index) => {
+                                        const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
+                                        return (
+                                            <span key={index}>
                                             <FilterChip
                                                 value={contrib}
                                                 field='contributedBy'
                                                 mode={'text'}
                                             />{separator}
                                         </span>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
                             <div style={{
                                 marginRight: 20,
                                 fontSize: descriptionFontSize,
-                                textAlign: 'right'
+                                textAlign: 'right',
+                                display: infoFlexStyle
                             }}>
-                                <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
-                                &nbsp;&nbsp;&nbsp;
-                                <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                                <div>
+                                    <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                                </div>
+                                <div style={{marginLeft:8}}>
+                                    <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                                </div>
                             </div>
                         </div>
                         <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize}}>

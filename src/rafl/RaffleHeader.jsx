@@ -23,7 +23,7 @@ function RaffleHeader({page}) {
         ? <span style={{fontSize: '1.8rem'}}>$<CountUp end={donationsTotal} duration={1.5}/></span>
         : <span style={{fontSize: '1.8rem'}}>${donationsTotal}</span>
 
-    const chartWidth = 330
+    const chartWidth = 300
     const discordWidth = dataReady && (data[0].donationsDiscord / (data[0].donationsDiscord + data[0].donationsReddit)) * chartWidth
     const redditWidth = dataReady && (data[0].donationsReddit / (data[0].donationsDiscord + data[0].donationsReddit)) * chartWidth
 
@@ -118,9 +118,9 @@ function RaffleHeader({page}) {
                         borderTop: '1px solid #aaa',
                         borderBottom: '1px solid #aaa',
                         marginBottom: 20,
-                        padding: '14px 20px 20px 20px'
+                        padding: '14px 20px 12px 20px'
                     }}>
-                        <div style={{flexGrow: 1, marginTop: 0}}>
+                        <div style={{flexGrow: 1, marginTop: 0, marginBottom:8}}>
                             <div style={{marginBottom: 5}}>
                                 Total Donations &nbsp; {totalDisplay}
                             </div>
@@ -131,7 +131,7 @@ function RaffleHeader({page}) {
                             </div>
                         </div>
                         <div style={{width: chartWidth, display: 'block', textAlign: 'center', marginTop: 2}}>
-                            <span style={{fontWeight: 400}}>Source</span>
+                            {!isMobile && <span style={{fontWeight: 400}}>Source</span> }
                             <div style={{display: 'flex', textAlign: 'left'}}>
                                 <div style={{flexGrow: 1, paddingLeft: 8}}>Discord</div>
                                 <div style={{paddingRight: 8}}>Reddit</div>
