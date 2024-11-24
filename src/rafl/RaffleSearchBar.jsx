@@ -8,7 +8,7 @@ export default function RaffleSearchBar({label, sortValues}) {
     const {isMobile} = useWindowSize()
     const flexStyle = !isMobile ? 'flex' : 'block'
     const style = isMobile
-        ? {maxWidth: 700, padding: 8}
+        ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12}
 
     const borderstyle = label === 'Approved Charities' ? {borderBottom: '1px #555 solid'} : {}
@@ -20,7 +20,7 @@ export default function RaffleSearchBar({label, sortValues}) {
             </div>
             {!!sortValues &&
                 <div style={{margin: '12px 20px 0px 20px'}}>
-                    <ViewFilterButtons sortValues={sortValues} compactMode={false}/>
+                    <ViewFilterButtons sortValues={sortValues}/>
                 </div>
             }
         </div>

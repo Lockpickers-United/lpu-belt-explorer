@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
 import AccordionActions from '@mui/material/AccordionActions'
@@ -17,8 +17,12 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleTitle from './RaffleTitle.jsx'
 import WatchlistButton from './WatchlistButton.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 function RaffleEntry({entry, expanded, onExpand, single}) {
+    const {filters} = useContext(FilterContext)
+    const shippingFiltered = !!filters.shippingType || !!filters.splitShipping
+
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
@@ -98,11 +102,28 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 <div>
                                     <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
                                 </div>
-                                <div style={{marginLeft:8}}>
+                                <div style={{marginLeft: 8}}>
                                     <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
                                 </div>
                             </div>
                         </div>
+                        {!showSimple && shippingFiltered &&
+                            <div style={{display: 'flex', marginTop: 6}}>
+                                <div style={{marginRight: 10}}>
+                                    <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                        entry.country.map((country, index) => {
+                                            const separator = index < entry.country.length - 1 ? ', ' : ''
+                                            return (
+                                                <span key={index}><FilterChip value={country} field='country'
+                                                                              mode={'text'}/>{separator}</span>
+                                            )
+                                        })}
+                                    />
+                                </div>
+                                <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
+                                            value={entry.shippingInfo}/>
+                            </div>
+                        }
                         <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                 {entry.description}
@@ -136,34 +157,23 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </Stack>
                         </div>
 
-                        <div style={{display: 'flex', marginTop: 6}}>
-
-                            {entry.country && !showSimple &&
+                        {!showSimple && !shippingFiltered &&
+                            <div style={{display: 'flex', marginTop: 6}}>
                                 <div style={{marginRight: 10}}>
                                     <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
                                         entry.country.map((country, index) => {
                                             const separator = index < entry.country.length - 1 ? ', ' : ''
                                             return (
-                                                <span key={index}>
-                                                    <FilterChip
-                                                        value={country}
-                                                        field='country'
-                                                        mode={'text'}
-                                                    />{separator}
-                                                </span>
+                                                <span key={index}><FilterChip value={country} field='country'
+                                                                              mode={'text'}/>{separator}</span>
                                             )
-                                        })
-                                    }
+                                        })}
                                     />
                                 </div>
-                            }
-
-                            {entry.shippingInfo && !showSimple &&
                                 <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
                                             value={entry.shippingInfo}/>
-                            }
-
-                        </div>
+                            </div>
+                        }
 
                         {
                             entry.potContents &&

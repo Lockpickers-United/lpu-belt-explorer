@@ -411,7 +411,10 @@ const raflMainData = raflData.map(datum => ({
     contributedBy: splitCommaValues(datum['Contributed By']),
     tags: splitCommaValues(datum['Tags']),
     country: splitCommaValues(datum['Country']),
-    shippingInfo: datum['Shipping Info'],
+    shippingInfo: datum['Shipping Info Text'],
+    splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
+    splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
+    shippingType: datum['Shipping Type'],
     winner: datum['Winner']
 })).filter(x => x)
 
