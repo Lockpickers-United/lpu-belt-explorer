@@ -7,6 +7,7 @@ import DBContext from '../app/DBContext.jsx'
 import LoadingDisplaySmall from '../misc/LoadingDisplaySmall.jsx'
 import Popover from '@mui/material/Popover'
 import SignInButton from '../auth/SignInButton.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function WatchlistButton({id}) {
     const {isLoggedIn} = useContext(AuthContext)
@@ -14,6 +15,7 @@ function WatchlistButton({id}) {
     const [anchorEl, setAnchorEl] = useState(() => undefined)
     const open = Boolean(anchorEl)
 
+    const {isMobile} = useWindowSize()
     const [checkboxUpdating, setCheckboxUpdating] = useState(null)
 
     const key = 'raffleWatchlist'
@@ -42,15 +44,17 @@ function WatchlistButton({id}) {
         setAnchorEl(null)
     }, [])
 
-    const style =  {marginTop: -4, width: 32, minWidth: 32, height: 32}
+    const diameter = 36
+    const watchlistButtonSpacing = isMobile ? 4 : 8
+    const style =  {marginTop: -2, marginRight: watchlistButtonSpacing, width: diameter, minWidth: diameter, height: diameter}
 
     return (
-        <React.Fragment>
+        <div style={style}>
             {isLoggedIn &&
                 <div style={{display: 'flex', justifyItems: 'left'}}>
                     <React.Fragment key={key}>
                         {checkboxUpdating === key
-                            ? <div style={{marginTop: -4}}><LoadingDisplaySmall/></div>
+                            ? <div style={{marginTop: 1}}><LoadingDisplaySmall/></div>
                             : <Tooltip title={tooltipText} arrow disableFocusListener>
                                 <IconButton key={key} onClick={handleChange(key, isChecked())}
                                             style={{
@@ -92,7 +96,7 @@ function WatchlistButton({id}) {
                 </React.Fragment>
             }
 
-        </React.Fragment>
+        </div>
     )
 }
 

@@ -55,14 +55,13 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry.id, onExpand])
 
-    const {isMobile} = useWindowSize()
+    const {isMobile, flexStyle} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
-
-    const infoFlexStyle = isMobile ? 'block' : 'flex'
     const descriptionFontSize = isMobile ? '0.95rem' : '1.0rem'
+    const infoOpactiy = entry.winner && !expanded ? 0.6 : 1
 
-    return (
+        return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null}>
                 <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
@@ -73,7 +72,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
                         </div>
                         <div style={{margin: contribMargin, display: 'flex'}}>
-                            <div style={{flexGrow: 1}}>
+                            <div style={{flexGrow: 1, opacity: infoOpactiy}}>
                                 <div style={{
                                     marginRight: 8,
                                     color: '#bbb',
@@ -93,11 +92,12 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                     })}
                                 </div>
                             </div>
+
                             <div style={{
-                                marginRight: 20,
+                                marginRight: 10,
                                 fontSize: descriptionFontSize,
                                 textAlign: 'right',
-                                display: infoFlexStyle
+                                display: flexStyle
                             }}>
                                 <div>
                                     <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
@@ -108,7 +108,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
                         </div>
                         {!showSimple && shippingFiltered &&
-                            <div style={{display: 'flex', marginTop: 6}}>
+                            <div style={{display: 'flex', marginTop: 6, opacity: infoOpactiy}}>
                                 <div style={{marginRight: 10}}>
                                     <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
                                         entry.country.map((country, index) => {
@@ -124,7 +124,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                             value={entry.shippingInfo}/>
                             </div>
                         }
-                        <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize}}>
+                        <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize, opacity: infoOpactiy}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                 {entry.description}
                             </ReactMarkdown>
@@ -138,7 +138,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                 expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
-                        <div style={{display: infoFlexStyle}}>
+                        <div style={{display: flexStyle}}>
                             <Stack direction='row' alignItems='flex-start' style={{}}>
                                 {!!entry.tags?.length && !showSimple &&
                                     <FieldValue name='Tags' value={

@@ -98,7 +98,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "mgsecure",
+    "winner": "",
     "potContents": "- 1x Lockwood 334B45 Bilock QCC core with operating/QCC key\n- 1x Lockwood 232 6 pin with keys\n- 1x Lockwood/ASSA 110/35 with keys\n- 1x Lockwood 120/40 with keys\n- 1x Lockwood 120/60 with keys\n- 1x Lockwood 234B45 with keys\n- 1x Lockwood 215A40 with keys\n- 1x Lockwood/ASSA 365S63 with keys\n- 1x Lockwood/ASSA 270S70 with key\n- 2x Lockwood 312 loto padlocks (rarer 4 pin version)\n- 1x Lockwood 232 all brass padlock\n- 1x Lockwood V7 oval\n- 1x Lockwood restricted LP keyway with key\n- 1x Vintage Lockwood 234 padlock\n- 1x Lockwood handy lock new in package\n- 2x Lockwood 225 wafer locks with impressioned keys",
     "media": [
       {
@@ -158,7 +158,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Ships to the USA only",
-    "winner": "",
+    "winner": "mgsecure",
     "potContents": "- [THUNDERBIRD Pick Set](https://www.sparrowslockpicks.com/products/thunderbird?_pos=1&_sid=2ea5330f6&_ss=r)\n- SPARROWS coin\n"
   },
   {
