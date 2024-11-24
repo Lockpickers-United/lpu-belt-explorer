@@ -21,7 +21,7 @@ export function RaffleDataProvider({children, allEntries, profile}) {
                 collection: collectionOptions.raffle.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
             }))
     }, [allEntries, profile])
-    
+
     const visibleEntries = useMemo(() => {
         // Filters as an array
         const filterArray = Object.keys(filters)

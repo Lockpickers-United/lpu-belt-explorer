@@ -6,6 +6,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import useData from '../util/useData.jsx'
 import {raflSummaryStats} from '../data/dataUrls'
 import {Collapse} from '@mui/material'
+import CountUp from 'react-countup'
 
 function RaffleHeader({page}) {
     const navigate = useNavigate()
@@ -14,13 +15,17 @@ function RaffleHeader({page}) {
     const dataReady = (data && !loading && !error)
 
     const donors = dataReady && data[0].donors
-    const donationsTotal = dataReady && new Intl.NumberFormat().format(data[0].donationsTotal)
+    const donationsTotal = dataReady && data[0].donationsTotal
     const averageDonation = dataReady && Math.floor(data[0].donationsTotal / donors)
     //const donationsTotal2024 = data && new Intl.NumberFormat().format(data[0].donationsTotal2024)
 
+    const totalDisplay = donationsTotal > 1000
+        ? <span style={{fontSize: '1.8rem'}}>$<CountUp end={donationsTotal} duration={1.5}/></span>
+        : <span style={{fontSize: '1.8rem'}}>${donationsTotal}</span>
+
     const chartWidth = 330
-    const discordWidth = dataReady && (data[0].donationsDiscord / (data[0].donationsDiscord + data[0].donationsReddit) ) * chartWidth
-    const redditWidth = dataReady && (data[0].donationsReddit / (data[0].donationsDiscord + data[0].donationsReddit) ) * chartWidth
+    const discordWidth = dataReady && (data[0].donationsDiscord / (data[0].donationsDiscord + data[0].donationsReddit)) * chartWidth
+    const redditWidth = dataReady && (data[0].donationsReddit / (data[0].donationsDiscord + data[0].donationsReddit)) * chartWidth
 
 
     const [open, setOpen] = useState(false)
@@ -43,8 +48,8 @@ function RaffleHeader({page}) {
         display: flexStyle
     }
 
-    const discordStyle = { border: '1px solid #ccc', borderTopLeftRadius:10, borderBottomLeftRadius:10}
-    const redditStyle = { border: '1px solid #ccc', borderTopRightRadius:10, borderBottomRightRadius:10}
+    const discordStyle = {border: '1px solid #ccc', borderTopLeftRadius: 10, borderBottomLeftRadius: 10}
+    const redditStyle = {border: '1px solid #ccc', borderTopRightRadius: 10, borderBottomRightRadius: 10}
 
 
     return (
@@ -107,7 +112,7 @@ function RaffleHeader({page}) {
                 </div>
             </div>
             {open &&
-                <Collapse in={open} style={{padding:'0px 12px'}}>
+                <Collapse in={open} style={{padding: '0px 12px'}}>
                     <div style={{
                         ...style,
                         borderTop: '1px solid #aaa',
@@ -117,20 +122,33 @@ function RaffleHeader({page}) {
                     }}>
                         <div style={{flexGrow: 1, marginTop: 0}}>
                             <div style={{marginBottom: 5}}>
-                                Total Donations &nbsp; <span style={{fontSize: '1.8rem'}}>${donationsTotal}</span>
+                                Total Donations &nbsp; {totalDisplay}
                             </div>
-                            <div><span style={{fontWeight: 400, color:'#ddd'}}>Donors</span> {donors} &nbsp;&nbsp;&nbsp;
-                                <span style={{fontWeight: 400, color:'#ddd'}}>Average Donation</span> ${averageDonation}</div>
+                            <div><span
+                                style={{fontWeight: 400, color: '#ddd'}}>Donors</span> {donors} &nbsp;&nbsp;&nbsp;
+                                <span
+                                    style={{fontWeight: 400, color: '#ddd'}}>Average Donation</span> ${averageDonation}
+                            </div>
                         </div>
-                        <div style={{width: chartWidth, display: 'block', textAlign: 'center', marginTop:2}}>
-                            <span style={{fontWeight:400}}>Source</span>
+                        <div style={{width: chartWidth, display: 'block', textAlign: 'center', marginTop: 2}}>
+                            <span style={{fontWeight: 400}}>Source</span>
                             <div style={{display: 'flex', textAlign: 'left'}}>
                                 <div style={{flexGrow: 1, paddingLeft: 8}}>Discord</div>
-                                <div style={{paddingRight:8}}>Reddit</div>
+                                <div style={{paddingRight: 8}}>Reddit</div>
                             </div>
                             <div style={{display: 'flex'}}>
-                                <div style={{...discordStyle, width: discordWidth, backgroundColor: '#2d52b0', height: 20}}></div>
-                                <div style={{... redditStyle, width: redditWidth, backgroundColor: '#587ee6', height: 20}}></div>
+                                <div style={{
+                                    ...discordStyle,
+                                    width: discordWidth,
+                                    backgroundColor: '#2d52b0',
+                                    height: 20
+                                }}></div>
+                                <div style={{
+                                    ...redditStyle,
+                                    width: redditWidth,
+                                    backgroundColor: '#587ee6',
+                                    height: 20
+                                }}></div>
                             </div>
                         </div>
                     </div>
