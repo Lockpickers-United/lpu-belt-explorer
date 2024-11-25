@@ -1,37 +1,34 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import {useNavigate} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize.jsx'
-import useData from '../util/useData.jsx'
-import {raflSummaryStats} from '../data/dataUrls'
 import {Collapse} from '@mui/material'
 import CountUp from 'react-countup'
+import RaffleStatsContext from './RaffleStatsContext.jsx'
 
 function RaffleHeader({page}) {
     const navigate = useNavigate()
+    const {summaryStats, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleStatsContext)
 
-    const {data, loading, error} = useData({url: raflSummaryStats})
-    const dataReady = (data && !loading && !error)
-
-    const donors = dataReady && data[0].donors
-    const donationsTotal = dataReady && data[0].donationsTotal
-    const averageDonation = dataReady && Math.floor(data[0].donationsTotal / donors)
+    const donors = summaryStats && summaryStats[0].donors
+    const donationsTotal = summaryStats && summaryStats[0].donationsTotal
+    const donationsTotalStr = summaryStats && new Intl.NumberFormat().format(summaryStats[0].donationsTotal)
+    const averageDonation = summaryStats && Math.floor(summaryStats[0].donationsTotal / donors)
     //const donationsTotal2024 = data && new Intl.NumberFormat().format(data[0].donationsTotal2024)
 
-    const totalDisplay = donationsTotal > 1000
-        ? <span style={{fontSize: '1.8rem'}}>$<CountUp end={donationsTotal} duration={1.5}/></span>
-        : <span style={{fontSize: '1.8rem'}}>${donationsTotal}</span>
-
     const chartWidth = 300
-    const discordWidth = dataReady && (data[0].donationsDiscord / (data[0].donationsDiscord + data[0].donationsReddit)) * chartWidth
-    const redditWidth = dataReady && (data[0].donationsReddit / (data[0].donationsDiscord + data[0].donationsReddit)) * chartWidth
+    const discordWidth = summaryStats && (summaryStats[0].donationsDiscord / (summaryStats[0].donationsDiscord + summaryStats[0].donationsReddit)) * chartWidth
+    const redditWidth = summaryStats && (summaryStats[0].donationsReddit / (summaryStats[0].donationsDiscord + summaryStats[0].donationsReddit)) * chartWidth
 
-
-    const [open, setOpen] = useState(false)
     const toggleOpen = useCallback(() => {
-        setOpen(!open)
-    }, [open])
+        toggleStats()
+    }, [toggleStats])
+
+    const handleChange = useCallback((page) => {
+        navigate(page)
+        setAnimateTotal(false)
+    }, [navigate, setAnimateTotal])
 
     const {isMobile} = useWindowSize()
     const flexStyle = !isMobile ? 'flex' : 'block'
@@ -60,7 +57,7 @@ function RaffleHeader({page}) {
                     <div style={{flexGrow: 1}}/>
                     <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
                 <span>
-                    <Button onClick={() => navigate('/rafl')}
+                    <Button onClick={() => handleChange('/rafl')}
                             style={{
                                 marginRight: 10,
                                 color: page === 'pots' ? '#fff' : '#ccc',
@@ -73,7 +70,7 @@ function RaffleHeader({page}) {
                     </Tooltip>
                     <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
                 <span>
-                    <Button onClick={() => navigate('/rafl/charities')}
+                    <Button onClick={() => handleChange('/rafl/charities')}
                             style={{
                                 marginRight: 10,
                                 color: page === 'charities' ? '#fff' : '#ccc',
@@ -89,7 +86,7 @@ function RaffleHeader({page}) {
                     <Button onClick={toggleOpen}
                             style={{
                                 marginRight: 10,
-                                color: open ? '#96ace5' : '#ccc',
+                                color: displayStats ? '#96ace5' : '#ccc',
                                 fontSize: buttonFontSize
                             }}>
                         STATS
@@ -111,8 +108,8 @@ function RaffleHeader({page}) {
                     </Tooltip>
                 </div>
             </div>
-            {open &&
-                <Collapse in={open} style={{padding: '0px 12px'}}>
+            {displayStats &&
+                <Collapse in={displayStats} style={{padding: '0px 12px'}}>
                     <div style={{
                         ...style,
                         borderTop: '1px solid #aaa',
@@ -122,7 +119,11 @@ function RaffleHeader({page}) {
                     }}>
                         <div style={{flexGrow: 1, marginTop: 0, marginBottom:8}}>
                             <div style={{marginBottom: 5}}>
-                                Total Donations &nbsp; {totalDisplay}
+                                Total Donations &nbsp; {
+                                donationsTotal > 1000 && animateTotal
+                                    ? <span style={{fontSize: '1.8rem'}}>$<CountUp end={donationsTotal} duration={1.5}/></span>
+                                    : <span style={{fontSize: '1.8rem'}}>${donationsTotalStr}</span>
+                            }
                             </div>
                             <div><span
                                 style={{fontWeight: 400, color: '#ddd'}}>Donors</span> {donors} &nbsp;&nbsp;&nbsp;

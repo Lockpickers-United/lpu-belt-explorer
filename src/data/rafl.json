@@ -1,29 +1,8 @@
 [
   {
-    "id": "c690762a",
-    "year": 2025,
-    "potNumber": "1",
-    "title": "Preview Test Pot",
-    "description": "",
-    "contributedBy": [
-      "LPUBelts"
-    ],
-    "tags": [
-      "Mystery"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "International Shipping Included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
-    "winner": ""
-  },
-  {
     "id": "8ddafce0",
     "year": 2025,
-    "potNumber": "2",
+    "potNumber": "1",
     "title": "Multipick Pot (preview mode)",
     "description": "**This pot features one Kronos pick gun.** Thanks to Multipick for providing raffle prizes this year!",
     "contributedBy": [
@@ -79,7 +58,7 @@
   {
     "id": "85d33e6a",
     "year": 2025,
-    "potNumber": "3",
+    "potNumber": "2",
     "title": "Basically Every Lockwood",
     "description": "",
     "contributedBy": [
@@ -120,7 +99,7 @@
   {
     "id": "5dcf0aaa",
     "year": 2025,
-    "potNumber": "4",
+    "potNumber": "3",
     "title": "Gentleman’s Weaspick",
     "description": "",
     "contributedBy": [
@@ -141,7 +120,7 @@
   {
     "id": "31cc484b",
     "year": 2025,
-    "potNumber": "5",
+    "potNumber": "4",
     "title": "The SPARROWS Pot",
     "description": "The THUNDERBIRD pick set is the first foray into wood handled picks of any major pick manufacturer. Thanks again to SPARROWS for providing an awesome prize to the raffle this year! ",
     "contributedBy": [
@@ -164,7 +143,7 @@
   {
     "id": "5e03dd01",
     "year": 2025,
-    "potNumber": "6",
+    "potNumber": "5",
     "title": "Luso-German Double Triple Dare Box",
     "description": "",
     "contributedBy": [
@@ -191,7 +170,7 @@
   {
     "id": "7399edae",
     "year": 2025,
-    "potNumber": "7",
+    "potNumber": "6",
     "title": "Le Pumps",
     "description": "",
     "contributedBy": [

@@ -18,6 +18,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import RaffleTitle from './RaffleTitle.jsx'
 import WatchlistButton from './WatchlistButton.jsx'
 import FilterContext from '../context/FilterContext.jsx'
+import {Collapse} from '@mui/material'
 
 function RaffleEntry({entry, expanded, onExpand, single}) {
     const {filters} = useContext(FilterContext)
@@ -61,7 +62,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const descriptionFontSize = isMobile ? '0.95rem' : '1.0rem'
     const infoOpactiy = entry.winner && !expanded ? 0.6 : 1
 
-        return (
+    return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null}>
                 <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
@@ -93,19 +94,21 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 </div>
                             </div>
 
-                            <div style={{
-                                marginRight: 10,
-                                fontSize: descriptionFontSize,
-                                textAlign: 'right',
-                                display: flexStyle
-                            }}>
-                                <div>
-                                    <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                            <Collapse in={entry.donors}>
+                                <div style={{
+                                    marginRight: 10,
+                                    fontSize: descriptionFontSize,
+                                    textAlign: 'right',
+                                    display: flexStyle
+                                }}>
+                                    <div>
+                                        <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                                    </div>
+                                    <div style={{marginLeft: 8}}>
+                                        <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                                    </div>
                                 </div>
-                                <div style={{marginLeft: 8}}>
-                                    <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
-                                </div>
-                            </div>
+                            </Collapse>
                         </div>
                         {!showSimple && shippingFiltered &&
                             <div style={{display: 'flex', marginTop: 6, opacity: infoOpactiy}}>

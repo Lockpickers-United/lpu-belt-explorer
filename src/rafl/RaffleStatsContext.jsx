@@ -1,27 +1,39 @@
-import React, {useMemo} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import useData from '../util/useData'
 import {raflStats} from '../data/dataUrls'
 
 const RaffleStatsContext = React.createContext({})
-const url = {raflStats}
 
-export function StatsProvider({children}) {
-    const {data, loading, error} = useData({url})
-    const {charityStats} = data || {}
-    const jsonLoaded = (!loading && !error && !!data)
+export function RaffleStatsProvider({children}) {
+    const {data, loading, error} = useData({url: raflStats})
+    const {potStats, charityStats, summaryStats} = data || {}
+    const allDataLoaded = (!loading && !error && !!data)
+    
+    const [displayStats, setDisplayStats] = useState(false)
+    const [animateTotal, setAnimateTotal] = useState(true)
 
-    const foo = 'bar'
-
-    const allDataLoaded = ((jsonLoaded))
+    const toggleStats = useCallback(() => {
+            setDisplayStats(!displayStats)
+    },[displayStats])
 
     const value = useMemo(() => ({
         allDataLoaded,
+        potStats,
         charityStats,
-        foo
+        summaryStats,
+        displayStats,
+        toggleStats,
+        animateTotal,
+        setAnimateTotal
     }), [
         allDataLoaded,
+        potStats,
         charityStats,
-        foo
+        summaryStats,
+        displayStats,
+        toggleStats,
+        animateTotal,
+        setAnimateTotal
     ])
 
     return (
@@ -32,4 +44,3 @@ export function StatsProvider({children}) {
 }
 
 export default RaffleStatsContext
-

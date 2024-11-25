@@ -1,14 +1,12 @@
 import React from 'react'
-import usePageTitle from '../util/usePageTitle'
 import {Outlet} from 'react-router-dom'
+import {RaffleStatsProvider} from './RaffleStatsContext.jsx'
 
 function RaffleParentRoute() {
-    usePageTitle('RAFL')
-
-    console.log('parent')
-
     return (
-        <Outlet/>
+        <RaffleStatsProvider>
+            <Outlet/>
+        </RaffleStatsProvider>
     )
 }
 

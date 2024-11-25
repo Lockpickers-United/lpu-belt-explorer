@@ -294,17 +294,27 @@ export default [
     {
         path: '/rafl',
         lazy: async () => {
-            const {default: RaffleRoute} = await import('../rafl/RaffleRoute.jsx')
-            return {element: <RaffleRoute/>}
-        }
+            const {default: RaffleParentRoute} = await import('../rafl/RaffleParentRoute.jsx')
+            return {element: <RaffleParentRoute/>}
+        },
+        children: [
+            {
+                path: '/rafl',
+                lazy: async () => {
+                    const {default: RaffleRoute} = await import('../rafl/RaffleRoute.jsx')
+                    return {element: <RaffleRoute/>}
+                }
+            },
+            {
+                path: '/rafl/charities',
+                lazy: async () => {
+                    const {default: RaffleCharitiesRoute} = await import('../rafl/RaffleCharitiesRoute.jsx')
+                    return {element: <RaffleCharitiesRoute/>}
+                }
+            }
+        ]
     },
-    {
-        path: '/rafl/charities',
-        lazy: async () => {
-            const {default: RaffleCharitiesRoute} = await import('../rafl/RaffleCharitiesRoute.jsx')
-            return {element: <RaffleCharitiesRoute/>}
-        }
-    },
+
     {
         path: '*',
         loader:

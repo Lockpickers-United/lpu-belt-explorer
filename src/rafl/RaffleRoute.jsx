@@ -11,7 +11,7 @@ import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RafflePage from './RafflePage.jsx'
 import raflData from '../data/rafl.json'
 import useData from '../util/useData.jsx'
-import {raflJsonUrl, raflStats} from '../data/dataUrls'
+import {raflJsonUrl} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import AppContext from '../app/AppContext.jsx'
 import PreviewButton from './PreviewButton.jsx'
@@ -19,9 +19,10 @@ import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RafffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RafflePreviewBar from './RafflePreviewBar.jsx'
+import RaffleStatsContext from './RaffleStatsContext.jsx'
 
 function RaffleRoute() {
-    usePageTitle('RAFL')
+    usePageTitle('RAFL Prizes')
     const {preview} = useContext(AppContext)
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
@@ -29,14 +30,16 @@ function RaffleRoute() {
     const single = searchParams.get('single')
     const id = searchParams.get('id')
 
-    const {data, loading, error, refresh} = useData({urls})
+    const {potStats} = useContext(RaffleStatsContext)
+
+    const {data, loading, error, refresh} = useData({url: raflJsonUrl})
     const dataReady = (data && !loading && !error)
     const allEntries = preview && dataReady
-        ? data.raflJsonUrl || []
+        ? data || []
         : raflData
 
     const allEntriesMapped = allEntries.map(entry => {
-        const entryStats = data?.raflStats?.potStats.find(stat => stat.id === entry.id)
+        const entryStats = potStats?.find(stat => stat.id === entry.id)
         return {
             ...entry,
             tickets: entryStats?.tickets,
@@ -86,11 +89,6 @@ function RaffleRoute() {
             </RaffleDataProvider>
         </FilterProvider>
     )
-}
-
-const urls = {
-    raflJsonUrl,
-    raflStats
 }
 
 export default RaffleRoute

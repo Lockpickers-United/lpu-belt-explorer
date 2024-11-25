@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Tracker from '../app/Tracker'
 import {raffleFilterFields} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext'
@@ -10,26 +10,20 @@ import RaffleCharitiesProvider from './RaffleCharitiesProvider.jsx'
 import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
 import raflCharities from '../data/raflCharities.json'
 import RaffleHeader from './RaffleHeader.jsx'
-import useData from '../util/useData.jsx'
-import {raflStats} from '../data/dataUrls'
+import RaffleStatsContext from './RaffleStatsContext.jsx'
 
 function RaffleCharitiesRoute() {
     const {isMobile} = useWindowSize()
+    const {charityStats} = useContext(RaffleStatsContext)
 
-    usePageTitle('RAFL')
-    const extras = (
-        <React.Fragment>
-        </React.Fragment>
-    )
-
-    const {data, loading, error} = useData({url: raflStats})
-    const dataReady = (data && !loading && !error)
+    usePageTitle('RAFL Charities')
+    const extras = null
 
     const raflCharitiesMapped = raflCharities.map(entry => {
-        const entryStats = data?.charityStats.find(stat => stat.id === entry.id)
+        const entryStats = charityStats?.find(stat => stat.id === entry.id)
         return {
             ...entry,
-            donations2025: dataReady ? entryStats?.donations2025 : '--'
+            donations2025: entryStats ? entryStats?.donations2025 : '--'
         }
     })
 
