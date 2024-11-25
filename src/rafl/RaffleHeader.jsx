@@ -40,7 +40,7 @@ function RaffleHeader({page}) {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 10,
-        padding: '14px 8px 0px 8px',
+        padding: '14px 0px 0px 0px',
         fontWeight: 700,
         display: flexStyle
     }
@@ -56,55 +56,57 @@ function RaffleHeader({page}) {
                 <div style={{marginTop: buttonTop, justifyItems: 'right'}}>
                     <div style={{flexGrow: 1}}/>
                     <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
-                <span>
-                    <Button onClick={() => handleChange('/rafl')}
-                            style={{
-                                marginRight: 10,
-                                color: page === 'pots' ? '#fff' : '#ccc',
-                                fontSize: buttonFontSize
-                            }}
-                            disabled={page === 'pots'}>
-                        PRIZES
-                    </Button>
-                    </span>
+                        <span>
+                            <Button onClick={() => handleChange('/rafl')}
+                                    style={{
+                                        marginRight: 10,
+                                        color: page === 'pots' ? '#fff' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}
+                                    disabled={page === 'pots'}>
+                                PRIZES
+                            </Button>
+                        </span>
                     </Tooltip>
+
                     <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
-                <span>
-                    <Button onClick={() => handleChange('/rafl/charities')}
-                            style={{
-                                marginRight: 10,
-                                color: page === 'charities' ? '#fff' : '#ccc',
-                                fontSize: buttonFontSize
-                            }}
-                            disabled={page === 'charities'}>
-                        CHARITIES
-                    </Button>
-                </span>
+                        <span>
+                            <Button onClick={() => handleChange('/rafl/charities')}
+                                    style={{
+                                        marginRight: 10,
+                                        color: page === 'charities' ? '#fff' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}
+                                    disabled={page === 'charities'}>
+                                CHARITIES
+                            </Button>
+                        </span>
                     </Tooltip>
-                    <Tooltip title={'Real-time Stats'} arrow disableFocusListener style={{}}>
-                <span>
-                    <Button onClick={toggleOpen}
-                            style={{
-                                marginRight: 10,
-                                color: displayStats ? '#96ace5' : '#ccc',
-                                fontSize: buttonFontSize
-                            }}>
-                        STATS
-                    </Button>
-                </span>
-                    </Tooltip>
+
                     <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
-                <span>
-                    <Button onClick={() => navigate('/rafl/about')}
-                            style={{
-                                marginRight: 0,
-                                color: page === 'about' ? '#fff' : '#ccc',
-                                fontSize: buttonFontSize
-                            }}
-                            disabled={true}>
-                        ENTER
-                    </Button>
-                </span>
+                        <span>
+                            <Button onClick={() => handleChange('/rafl/entryform')}
+                                    style={{
+                                        marginRight: 10,
+                                        color: page === 'entryform' ? '#fff' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}>
+                                ENTER
+                            </Button>
+                        </span>
+                    </Tooltip>
+
+                    <Tooltip title={'Real-time Stats'} arrow disableFocusListener style={{}}>
+                        <span>
+                            <Button onClick={toggleOpen}
+                                    style={{
+                                        marginRight: 0,
+                                        color: displayStats ? '#96ace5' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}>
+                                STATS
+                            </Button>
+                        </span>
                     </Tooltip>
                 </div>
             </div>
@@ -117,7 +119,7 @@ function RaffleHeader({page}) {
                         marginBottom: 20,
                         padding: '14px 20px 12px 20px'
                     }}>
-                        <div style={{flexGrow: 1, marginTop: 0, marginBottom:8}}>
+                        <div style={{flexGrow: 1, marginTop: 0, marginBottom: 8}}>
                             <div style={{marginBottom: 5}}>
                                 Total Donations &nbsp; {
                                 donationsTotal > 1000 && animateTotal
@@ -132,7 +134,7 @@ function RaffleHeader({page}) {
                             </div>
                         </div>
                         <div style={{width: chartWidth, display: 'block', textAlign: 'center', marginTop: 2}}>
-                            {!isMobile && <span style={{fontWeight: 400}}>Source</span> }
+                            {!isMobile && <span style={{fontWeight: 400}}>Source</span>}
                             <div style={{display: 'flex', textAlign: 'left'}}>
                                 <div style={{flexGrow: 1, paddingLeft: 8}}>Discord</div>
                                 <div style={{paddingRight: 8}}>Reddit</div>
