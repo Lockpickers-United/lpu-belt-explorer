@@ -4,7 +4,6 @@ import InlineFilterDisplay from '../filters/InlineFilterDisplay.jsx'
 import NoEntriesCard from '../locks/NoEntriesCard.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import RaffleEntry from './RafffleEntry.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import {raffleSortFields} from '../data/sortFields'
 
@@ -18,12 +17,9 @@ function RafflePage({profile}) {
         setExpanded(id)
     }, [])
 
-    const {isMobile} = useWindowSize()
-    const listMargin = !isMobile ? 8 : 0
-
     return (
 
-        <div style={{margin: listMargin, paddingBottom: 32}}>
+        <div style={{paddingBottom: 32}}>
 
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
 

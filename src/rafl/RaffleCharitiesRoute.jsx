@@ -27,24 +27,34 @@ function RaffleCharitiesRoute() {
         }
     })
 
-    const spacer = !isMobile ? 0 : 8
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleCharitiesProvider allEntries={raflCharitiesMapped}>
 
-                <Nav title='RAFL Charities' extras={extras}/>
+                <div style={style}>
 
-                <div style={{height:spacer}}/>
-                <RaffleHeader page={'charities'}/>
+                    <Nav title='RAFL Charities' extras={extras}/>
 
-                <RaffleCharitiesPage/>
+                    <RaffleHeader page={'charities'}/>
 
-                <Footer/>
+                    <RaffleCharitiesPage/>
 
-                <Tracker feature='raflCharities'/>
+                    <Footer/>
+
+                    <Tracker feature='raflCharities'/>
+                </div>
             </RaffleCharitiesProvider>
         </FilterProvider>
-    )
+)
 }
 
 export default RaffleCharitiesRoute

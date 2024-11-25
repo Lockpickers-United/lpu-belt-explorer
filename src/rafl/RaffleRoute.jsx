@@ -58,34 +58,44 @@ function RaffleRoute() {
     )
     const extrasTwo = undefined
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleDataProvider allEntries={allEntriesMapped} profile={lockCollection}>
 
-                {showSingle &&
-                    <RafffleEntry entry={individualPot} expanded={true} single={single}/>
-                }
+                <div style={style}>
+                    {showSingle &&
+                        <RafffleEntry entry={individualPot} expanded={true} single={single}/>
+                    }
 
-                {!showSingle &&
-                    <React.Fragment>
+                    {!showSingle &&
+                        <React.Fragment>
 
-                        <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
-                        <RaffleHeader page={'pots'}/>
+                            <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
+                            <RaffleHeader page={'pots'}/>
 
-                        {preview &&
-                            <RafflePreviewBar refresh={refresh}/>
-                        }
+                            {preview &&
+                                <RafflePreviewBar refresh={refresh}/>
+                            }
 
-                        {preview && !dataReady
-                            ? <LoadingDisplay/>
-                            : <RafflePage profile={lockCollection}/>
-                        }
+                            {preview && !dataReady
+                                ? <LoadingDisplay/>
+                                : <RafflePage profile={lockCollection}/>
+                            }
 
-                        <Footer/>
-                    </React.Fragment>
-                }
-                <Tracker feature='rafl'/>
+                            <Footer/>
+                        </React.Fragment>
+                    }
+                    <Tracker feature='rafl'/>
+                </div>
             </RaffleDataProvider>
         </FilterProvider>
     )

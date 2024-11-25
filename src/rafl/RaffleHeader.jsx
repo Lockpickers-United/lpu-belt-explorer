@@ -34,6 +34,8 @@ function RaffleHeader({page}) {
     const flexStyle = !isMobile ? 'flex' : 'block'
     const buttonTop = !isMobile ? 4 : 0
     const buttonFontSize = !isMobile ? '1.03rem' : '1.0rem'
+    const statsPadding = !isMobile ? '14px 20px 12px 20px' : '10px 10px 16px 10px'
+    const statsAlign = !isMobile ? 'left' : 'center'
 
     const style = {
         maxWidth: 700,
@@ -85,10 +87,10 @@ function RaffleHeader({page}) {
 
                     <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
                         <span>
-                            <Button onClick={() => handleChange('/rafl/entryform')}
+                            <Button onClick={() => handleChange('/rafl/enter')}
                                     style={{
                                         marginRight: 10,
-                                        color: page === 'entryform' ? '#fff' : '#ccc',
+                                        color: page === 'enter' ? '#fff' : '#ccc',
                                         fontSize: buttonFontSize
                                     }}>
                                 ENTER
@@ -114,10 +116,11 @@ function RaffleHeader({page}) {
                 <Collapse in={displayStats} style={{padding: '0px 12px'}}>
                     <div style={{
                         ...style,
-                        borderTop: '1px solid #aaa',
-                        borderBottom: '1px solid #aaa',
+                        border: '1px solid #aaa',
+                        borderRadius: 8,
                         marginBottom: 20,
-                        padding: '14px 20px 12px 20px'
+                        padding: statsPadding,
+                        textAlign: statsAlign
                     }}>
                         <div style={{flexGrow: 1, marginTop: 0, marginBottom: 8}}>
                             <div style={{marginBottom: 5}}>
@@ -157,6 +160,8 @@ function RaffleHeader({page}) {
                     </div>
                 </Collapse>
             }
+
+            <div style={{height:8}}/>
         </React.Fragment>
     )
 

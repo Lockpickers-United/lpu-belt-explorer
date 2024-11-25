@@ -47,8 +47,7 @@ function RaffleCharitesPage() {
 
     return (
 
-        <div style={{...style, paddingBottom: 32}}>
-            <div style={{height:8}}/>
+        <div style={{paddingBottom: 32}}>
 
             <RaffleSearchBar label='Approved Charities' sortValues={null}/>
 

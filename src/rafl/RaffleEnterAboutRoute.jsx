@@ -1,49 +1,82 @@
-import React, {useContext} from 'react'
+import React, {useCallback} from 'react'
 import Tracker from '../app/Tracker'
-import {raffleFilterFields} from '../data/filterFields'
-import {FilterProvider} from '../context/FilterContext'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
-import RaffleCharitiesProvider from './RaffleCharitiesProvider.jsx'
-import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
-import raflCharities from '../data/raflCharities.json'
 import RaffleHeader from './RaffleHeader.jsx'
-import RaffleStatsContext from './RaffleStatsContext.jsx'
+import ReactMarkdown from 'react-markdown'
+import rehypeExternalLinks from 'rehype-external-links'
+import RaffleInfoIntro from './RaffleInfoIntro.md?raw'
+import RaffleInfoDetails from './RaffleInfoDetails.md?raw'
+import Button from '@mui/material/Button'
+import RaffleSubHead from './RaffleSubHead.jsx'
 
 function RaffleEnterAboutRoute() {
-    const {isMobile} = useWindowSize()
-    const {charityStats} = useContext(RaffleStatsContext)
 
-    usePageTitle('RAFL Charities')
+    usePageTitle('Enter the RAFL')
+
+    const openInNewTab = useCallback((url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }, [])
+
+
     const extras = null
 
-    const raflCharitiesMapped = raflCharities.map(entry => {
-        const entryStats = charityStats?.find(stat => stat.id === entry.id)
-        return {
-            ...entry,
-            donations2025: entryStats ? entryStats?.donations2025 : '--'
-        }
-    })
+    const {isMobile} = useWindowSize()
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+    const contentPadding = !isMobile ? '0px 20px' : '0px 10px'
+    const linebreak = !isMobile ? ' ' : <br/>
 
-    const spacer = !isMobile ? 0 : 8
     return (
-        <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleCharitiesProvider allEntries={raflCharitiesMapped}>
+        <React.Fragment>
 
-                <Nav title='RAFL Charities' extras={extras}/>
+            <Nav title='Enter the RAFL' extras={extras}/>
 
-                <div style={{height:spacer}}/>
-                <RaffleHeader page={'charities'}/>
+            <div style={style}>
+                <RaffleHeader page={'enter'}/>
+                <RaffleSubHead text={'About the LPU Raffle'}/>
 
-                <RaffleCharitiesPage/>
+                <div style={{padding: contentPadding}}>
+                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                        {RaffleInfoIntro}
+                    </ReactMarkdown>
+                </div>
+            </div>
 
-                <Footer/>
+            <div style={{...style, textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
 
-                <Tracker feature='raflCharities'/>
-            </RaffleCharitiesProvider>
-        </FilterProvider>
+                Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
+
+                <Button variant='contained' color='success'
+                        onClick={() => openInNewTab('https://forms.gle/cqwJ84DeXGayhuYA9')}>
+                    Click here to enter the RAFL
+                </Button>
+
+            </div>
+
+            <div style={style}>
+                <div style={{padding: contentPadding}}>
+                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                        {RaffleInfoDetails}
+                    </ReactMarkdown>
+                </div>
+            </div>
+
+            <div style={{height: 32}}/>
+
+            <Footer/>
+
+            <Tracker feature='raflEnterAbout'/>
+        </React.Fragment>
     )
 }
 
