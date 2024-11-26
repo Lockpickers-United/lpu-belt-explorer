@@ -61,12 +61,12 @@ function SortTextButton({sortValues, compactMode}) {
                 )}
 
                 {compactMode &&
-                    <React.Fragment>
+                    <div>
                         <Divider/>
-                        <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>MODE</div>
+                        <div style={{marginLeft: 5, marginTop:5, padding: 5, fontWeight: 700}}>MODE</div>
                         <MenuItem onClick={handleCompactClick(false)} selected={!compact}>Normal</MenuItem>
                         <MenuItem onClick={handleCompactClick(true)} selected={compact}>Compact</MenuItem>
-                    </React.Fragment>
+                    </div>
                 }
             </Menu>
         </React.Fragment>

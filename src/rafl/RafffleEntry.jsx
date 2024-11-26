@@ -94,7 +94,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 </div>
                             </div>
 
-                            <Collapse in={entry.donors}>
+                            <Collapse in={!!entry.donors}>
                                 <div style={{
                                     marginRight: 10,
                                     fontSize: descriptionFontSize,

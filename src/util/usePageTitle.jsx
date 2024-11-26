@@ -1,7 +1,15 @@
 import {useDocumentTitle} from 'usehooks-ts'
 
 function usePageTitle(value) {
-    const title = value ? `LPU Belt Explorer - ${value}` : 'LPU Belt Explorer'
+
+
+    const environment = /^localhost.*/.test(window.location.host)
+        ? 'LOCAL'
+        : /^dev.*/.test(window.location.host)
+            ? 'DEV'
+            : 'LPU Belt Explorer'
+
+    const title = value ? `${environment} - ${value}` : 'LPU Belt Explorer'
     return useDocumentTitle(title)
 }
 
