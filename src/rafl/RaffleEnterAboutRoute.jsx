@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React from 'react'
 import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
@@ -11,18 +11,12 @@ import RaffleInfoIntro from './RaffleInfoIntro.md?raw'
 import RaffleInfoDetails from './RaffleInfoDetails.md?raw'
 import Button from '@mui/material/Button'
 import RaffleSubHead from './RaffleSubHead.jsx'
+import {useNavigate} from 'react-router-dom'
 
 function RaffleEnterAboutRoute() {
 
     usePageTitle('Enter the RAFL')
-
-    const openInNewTab = useCallback((url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }, [])
-
-
-    const extras = null
+    const navigate = useNavigate()
 
     const {isMobile} = useWindowSize()
     const sideSpacing = !isMobile ? 0 : 8
@@ -36,6 +30,8 @@ function RaffleEnterAboutRoute() {
     const contentPadding = !isMobile ? '0px 20px' : '0px 10px'
     const linebreak = !isMobile ? ' ' : <br/>
 
+    const extras = null
+
     return (
         <React.Fragment>
 
@@ -47,7 +43,7 @@ function RaffleEnterAboutRoute() {
 
                 <div style={{padding: contentPadding}}>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                        {RaffleInfoIntro}
+                        {`${RaffleInfoIntro}`}
                     </ReactMarkdown>
                 </div>
             </div>
@@ -57,7 +53,7 @@ function RaffleEnterAboutRoute() {
                 Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
 
                 <Button variant='contained' color='success'
-                        onClick={() => openInNewTab('https://forms.gle/cqwJ84DeXGayhuYA9')}>
+                        onClick={() => navigate('/rafl/entryform')}>
                     Click here to enter the RAFL
                 </Button>
 
@@ -66,7 +62,7 @@ function RaffleEnterAboutRoute() {
             <div style={style}>
                 <div style={{padding: contentPadding}}>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                        {RaffleInfoDetails}
+                        {`${RaffleInfoDetails}`}
                     </ReactMarkdown>
                 </div>
             </div>
