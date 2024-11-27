@@ -19,7 +19,7 @@ import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RafffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RafflePreviewBar from './RafflePreviewBar.jsx'
-import RaffleStatsContext from './RaffleStatsContext.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
@@ -30,7 +30,7 @@ function RaffleRoute() {
     const single = searchParams.get('single')
     const id = searchParams.get('id')
 
-    const {potStats} = useContext(RaffleStatsContext)
+    const {potStats} = useContext(RaffleContext)
 
     const {data, loading, error, refresh} = useData({url: raflJsonUrl})
     const dataReady = (data && !loading && !error)

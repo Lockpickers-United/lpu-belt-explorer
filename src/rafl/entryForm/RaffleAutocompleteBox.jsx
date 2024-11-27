@@ -12,7 +12,7 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
     const {isMobile} = false
     const inputEl = useRef()
 
-    const itemDetails = useMemo(() => {
+    const itemMap = useMemo(() => {
 
         let options = []
         let itemIds = {}
@@ -33,7 +33,7 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
 
     }, [allItems, getOptionTitle])
 
-    const {options, itemIds, itemTitles} = itemDetails
+    const {options, itemIds, itemTitles} = itemMap
 
     const handleChange = useCallback((event, value) => {
         if (!value) {

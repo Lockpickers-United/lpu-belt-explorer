@@ -10,11 +10,11 @@ import RaffleCharitiesProvider from './RaffleCharitiesProvider.jsx'
 import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
 import raflCharities from '../data/raflCharities.json'
 import RaffleHeader from './RaffleHeader.jsx'
-import RaffleStatsContext from './RaffleStatsContext.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleCharitiesRoute() {
     const {isMobile} = useWindowSize()
-    const {charityStats} = useContext(RaffleStatsContext)
+    const {charityStats} = useContext(RaffleContext)
 
     usePageTitle('RAFL Charities')
     const extras = null

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Outlet} from 'react-router-dom'
-import {RaffleStatsProvider} from './RaffleStatsContext.jsx'
+import {RaffleStatsProvider} from './RaffleContext.jsx'
 
 function RaffleParentRoute() {
     return (

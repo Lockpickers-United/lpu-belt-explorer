@@ -5,11 +5,11 @@ import {useNavigate} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {Collapse} from '@mui/material'
 import CountUp from 'react-countup'
-import RaffleStatsContext from './RaffleStatsContext.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleHeader({page}) {
     const navigate = useNavigate()
-    const {summaryStats, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleStatsContext)
+    const {summaryStats, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleContext)
 
     const donors = summaryStats && summaryStats[0].donors
     const donationsTotal = summaryStats && summaryStats[0].donationsTotal
@@ -30,8 +30,7 @@ function RaffleHeader({page}) {
         setAnimateTotal(false)
     }, [navigate, setAnimateTotal])
 
-    const {isMobile} = useWindowSize()
-    const flexStyle = !isMobile ? 'flex' : 'block'
+    const {isMobile, flexStyle} = useWindowSize()
     const buttonTop = !isMobile ? 4 : 0
     const buttonFontSize = !isMobile ? '1.03rem' : '1.0rem'
     const statsPadding = !isMobile ? '14px 20px 12px 20px' : '10px 10px 16px 10px'

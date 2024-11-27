@@ -2,19 +2,24 @@ import React, {useCallback, useMemo, useState} from 'react'
 import useData from '../util/useData'
 import {raflStats} from '../data/dataUrls'
 
-const RaffleStatsContext = React.createContext({})
+const RaffleContext = React.createContext({})
 
 export function RaffleStatsProvider({children}) {
     const {data, loading, error} = useData({url: raflStats})
     const {potStats, charityStats, summaryStats} = data || {}
     const allDataLoaded = (!loading && !error && !!data)
-    
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(true)
 
     const toggleStats = useCallback(() => {
             setDisplayStats(!displayStats)
     },[displayStats])
+
+    const [formPots, setFormPots] = useState({})
+
+    const updateFormPots = useCallback(pots => {
+        setFormPots(pots)
+    },[])
 
     const value = useMemo(() => ({
         allDataLoaded,
@@ -23,8 +28,9 @@ export function RaffleStatsProvider({children}) {
         summaryStats,
         displayStats,
         toggleStats,
-        animateTotal,
-        setAnimateTotal
+        animateTotal, setAnimateTotal,
+        formPots, setFormPots,
+        updateFormPots
     }), [
         allDataLoaded,
         potStats,
@@ -32,15 +38,16 @@ export function RaffleStatsProvider({children}) {
         summaryStats,
         displayStats,
         toggleStats,
-        animateTotal,
-        setAnimateTotal
+        animateTotal, setAnimateTotal,
+        formPots, setFormPots,
+        updateFormPots
     ])
 
     return (
-        <RaffleStatsContext.Provider value={value}>
+        <RaffleContext.Provider value={value}>
             {children}
-        </RaffleStatsContext.Provider>
+        </RaffleContext.Provider>
     )
 }
 
-export default RaffleStatsContext
+export default RaffleContext
