@@ -11,7 +11,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Backdrop from '@mui/material/Backdrop'
 
 export default function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues}) {
-    const {isMobile, flexStyle} = useWindowSize()
+    const {flexStyle} = useWindowSize()
+    const isMobileFalse = false
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
@@ -74,7 +75,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
     }, [])
     const handleBlur = useCallback(() => setOpen(false), [])
 
-    const focusStyle = open && isMobile ? {
+    const focusStyle = open && isMobileFalse ? {
         width: 'auto',
         position: 'fixed',
         left: 60,
@@ -89,16 +90,16 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     return (
         <div style={{display: flexStyle, margin: 12}}>
-            <div style={{flexGrow: 1, marginRight: 40}}>
+            <div style={{flexGrow: 1, marginRight: 40, height:100}}>
                 <div style={questionStyle}>Selected Pot</div>
                 <div style={{height: 12}}/>
                 <React.Fragment>
-                    {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
+                    {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>
                         <IconButton color='inherit' onClick={handleClick}>
                             <SearchIcon/>
                         </IconButton>
                     </Tooltip>}
-                    {(open || !isMobile) &&
+                    {(open || !isMobileFalse) &&
                         <Autocomplete
                             selectOnFocus
                             clearOnEscape
@@ -128,7 +129,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                         />}
                     <Backdrop
                         invisible
-                        open={open && isMobile}
+                        open={open && isMobileFalse}
                         onClick={handleBlur}
                     />
                 </React.Fragment>
@@ -145,7 +146,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                     <TextField type='text' name='donation' label='Donation Amount'
                                value={potDetails.donation ? potDetails.donation : ''}
                                error={showIssues && !potDetails.donation}
-                               helperText={showIssues && !potDetails.donation ? 'Required Field' : ''}
+                               helperText={showIssues && !potDetails.donation ? 'Required Field' : ' '}
                                onChange={handleTicketsChange} color='info' size='small'/>
                 </FormControl>
             </div>

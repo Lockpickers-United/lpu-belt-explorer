@@ -74,7 +74,8 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
                     <SearchIcon/>
                 </IconButton>
             </Tooltip>}
-            {(open || !isMobile) && <Autocomplete
+            {(open || !isMobile) &&
+                <Autocomplete
                 selectOnFocus
                 clearOnEscape
                 handleHomeEndKeys

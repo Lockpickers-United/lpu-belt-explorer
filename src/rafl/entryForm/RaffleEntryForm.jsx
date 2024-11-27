@@ -84,7 +84,7 @@ function RaffleEntryForm() {
         return requiredFields.includes(field) && !formData[field] && showIssues
     })
     const receiptUrlError = (formData.receipt || showIssues) && !isValidUrl(formData.receipt)
-    const receiptURLHelperText = receiptUrlError ? 'Receipt link is not a valid URL' : ''
+    const receiptURLHelperText = receiptUrlError ? 'Receipt link is not a valid URL' : ' '
     const charityError = showIssues && !charityData.itemFullTitle
 
     const errors = (
@@ -109,7 +109,7 @@ function RaffleEntryForm() {
             <div style={{...style, padding: 20}}>
                 <div style={sectionStyle}>About You</div>
 
-                <div style={{display: flexStyle, margin: 12}}>
+                <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
                     <FormControl style={{width: 250, marginRight: 16}} size='small' error={isRequired('platform')}>
                         <InputLabel color='info'>Preferred Platform</InputLabel>
                         <Select
@@ -122,14 +122,14 @@ function RaffleEntryForm() {
                             <MenuItem value={'Discord'}>Discord</MenuItem>
                             <MenuItem value={'Reddit'}>Reddit</MenuItem>
                         </Select>
-                        <FormHelperText>{isRequired('platform') ? 'Required Field' : ''}</FormHelperText>
+                        <FormHelperText>{isRequired('platform') ? 'Required Field' : ' '}</FormHelperText>
                     </FormControl>
 
                     <FormControl style={{width: 250}} size='small'>
                         <TextField type='text' name='username' label='Username'
                                    value={formData.username ? formData.username : ''}
                                    error={isRequired('username')}
-                                   helperText={isRequired('username') ? 'Required Field' : ''}
+                                   helperText={isRequired('username') ? 'Required Field' : ' '}
                                    onChange={handleChange} color='info' size='small'/>
                     </FormControl>
                 </div>
@@ -139,8 +139,8 @@ function RaffleEntryForm() {
             <div style={{...style, padding: '0px 20px 20px 20px'}}>
                 <div style={sectionStyle}>Your Donation</div>
 
-                <div style={{display: flexStyle, margin: 12}}>
-                    <div style={{flexGrow: 1, marginRight: 40}}>
+                <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
+                    <div style={{flexGrow: 1, marginRight: 40, height:100}}>
                         <div style={questionStyle}>Selected Charity</div>
                         <div style={{height: 12}}/>
                         <RaffleAutocompleteBox allItems={mappedCharities}
@@ -159,13 +159,13 @@ function RaffleEntryForm() {
                             <TextField type='text' name='donation' label='Donation Amount'
                                        value={formData.donation ? formData.donation : ''}
                                        error={isRequired('donation')}
-                                       helperText={isRequired('donation') ? 'Required Field' : ''}
+                                       helperText={isRequired('donation') ? 'Required Field' : ' '}
                                        onChange={handleChange} color='info' size='small'/>
                         </FormControl>
                     </div>
-
                 </div>
-                <div style={{display: flexStyle, margin: 12, marginTop: 24}}>
+
+                <div style={{display: flexStyle, margin: '0px 12px 0px 12px'}}>
                     <div style={questionStyle}>
                         Receipt from approved charity <span style={{fontWeight: 400}}>(hosted image link, must contain a visible date)</span>
                         <FormControl style={{margin: 8}} fullWidth>
@@ -178,28 +178,36 @@ function RaffleEntryForm() {
                 </div>
             </div>
 
-            <div style={{...style, padding: '0px 20px 20px 20px'}}>
+            <div style={{...style, padding: '0px 20px 0px 20px'}}>
                 <div style={sectionStyle}>Your Pots</div>
                 <RafflePotForm questionStyle={questionStyle} index={0} potData={potData}
                                handlePotChange={handlePotChange} showIssues={showIssues} setPotError={setPotError}/>
             </div>
 
             <div style={{...style, justifyContent: 'center', marginTop: 16, display: 'flex'}}>
-                <Button variant='outlined' onClick={() => {
-                    setShowIssues(!showIssues)
-                }}
-                        style={{
-                            marginRight: 20,
-                            color: showIssues ? '#de2323' : '#999',
-                            borderColor: showIssues ? '#de2323' : '#999'
-                        }}
-                >Show Issues</Button>
+                <div style={{display: errors ? 'flex' : 'none'}}>
+                    <Button variant='outlined' onClick={() => {
+                        setShowIssues(!showIssues)
+                    }}
+                            style={{
+                                marginRight: 20,
+                                color: showIssues ? '#de2323' : '#999',
+                                borderColor: showIssues ? '#de2323' : '#999'
+                            }}
+                    >Show Issues</Button>
+                </div>
                 <Button color='success' variant='contained' onClick={handleSubmit}
                 >CONTINUE</Button>
             </div>
 
-            <div style={{...style, justifyContent: 'center', marginTop: 16, color: '#de2323', display: errors ? 'flex' : 'none'}}>
-            (errors)
+            <div style={{
+                ...style,
+                justifyContent: 'center',
+                marginTop: 16,
+                color: '#de2323',
+                display: errors ? 'flex' : 'none'
+            }}>
+                (errors)
             </div>
         </div>
 
