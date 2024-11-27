@@ -10,16 +10,16 @@ import Autocomplete from '@mui/material/Autocomplete'
 import InputAdornment from '@mui/material/InputAdornment'
 import Backdrop from '@mui/material/Backdrop'
 
-export default function RafflePotForm({questionStyle, index, potData, handlePotChange}) {
+export default function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues}) {
     const {isMobile, flexStyle} = useWindowSize()
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
     const [potDetails, setPotDetails] = useState({})
 
-    if ( potData[index] && (potData[index].donation !== potDetails.donation || potData[index].itemFullTitle !== potDetails.itemFullTitle)) {
-        console.log('change detected')
-        handlePotChange(index, potDetails)
+    if (potData[index] && (potData[index].donation !== potDetails.donation || potData[index].itemFullTitle !== potDetails.itemFullTitle)) {
+        const complete = (potDetails.itemFullTitle && potDetails.donation)
+        handlePotChange(index, potDetails, complete)
     }
 
     const potFullTitle = useCallback((pot) => {
@@ -47,7 +47,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
     const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
 
     const handleTicketsChange = useCallback(event => {
-        setPotDetails({...potDetails, donation: event.target.value})
+        setPotDetails({...potDetails, donation: event.target.value.replace(/[^0-9]/, '')})
         if (!potData[index]) handlePotChange(index, potDetails)
     }, [handlePotChange, index, potData, potDetails])
 
@@ -85,12 +85,13 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         backgroundColor: '#272727'
     } : {}
 
+    const errorStyle = showIssues && !potDetails.itemFullTitle ? {borderBottom:'#b00 solid 4px'} : {}
+
     return (
         <div style={{display: flexStyle, margin: 12}}>
             <div style={{flexGrow: 1, marginRight: 40}}>
                 <div style={questionStyle}>Selected Pot</div>
                 <div style={{height: 12}}/>
-
                 <React.Fragment>
                     {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
                         <IconButton color='inherit' onClick={handleClick}>
@@ -109,6 +110,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                             renderInput={(params) =>
                                 <TextField
                                     {...params}
+                                    style={errorStyle}
                                     placeholder={'Search Pots'}
                                     variant='standard'
                                     color='info'
@@ -130,6 +132,10 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                         onClick={handleBlur}
                     />
                 </React.Fragment>
+                <div style={{display: showIssues && !potDetails.itemFullTitle ? 'block' : 'none'}}
+                     className='MuiFormHelperText-root Mui-error MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-cxf8aw-MuiFormHelperText-root'>
+                    Required Field
+                </div>
 
 
             </div>
@@ -138,6 +144,8 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                 <FormControl style={{margin: 8}}>
                     <TextField type='text' name='donation' label='Donation Amount'
                                value={potDetails.donation ? potDetails.donation : ''}
+                               error={showIssues && !potDetails.donation}
+                               helperText={showIssues && !potDetails.donation ? 'Required Field' : ''}
                                onChange={handleTicketsChange} color='info' size='small'/>
                 </FormControl>
             </div>

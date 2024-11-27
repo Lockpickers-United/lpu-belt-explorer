@@ -7,7 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
 
-function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, searchText}) {
+function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, searchText, error}) {
     const style = {maxWidth: 700}
     const {isMobile} = false
     const inputEl = useRef()
@@ -65,6 +65,8 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
         backgroundColor: '#272727'
     } : {}
 
+    const errorStyle = error ? {borderBottom:'#b00 solid 4px'} : {}
+
     return (
         <React.Fragment>
             {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
@@ -86,6 +88,7 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
                         placeholder={searchText ? searchText : 'Search'}
                         variant='standard'
                         color='info'
+                        style={errorStyle}
                         inputRef={inputEl}
                         InputProps={{
                             ...params.InputProps,
