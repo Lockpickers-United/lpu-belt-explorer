@@ -10,9 +10,9 @@ export default function RafflePotConfigurator({
                                                   setPotData
                                               }) {
 
-    const [pots, setPots] = useState([0, 1])
+    const [pots, setPots] = useState([0, 1]) // eslint-disable-line
     const [allocated, setAllocated] = useState(0)
-    const difference = donation - allocated
+    const difference = donation ? donation - allocated : 0 - allocated
 
     const handleAllocated = useCallback(() => {
         console.log('handleAllocated potData[0].tickets', potData[0]?.tickets)
