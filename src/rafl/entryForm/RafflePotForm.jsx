@@ -18,14 +18,10 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     const [potDetails, setPotDetails] = useState({})
 
-    if (potData[index] && (potData[index].donation !== potDetails.donation || potData[index].itemFullTitle !== potDetails.itemFullTitle)) {
-        const complete = (potDetails.itemFullTitle && potDetails.donation)
+    if (potData[index] && (potData[index].tickets !== potDetails.tickets || potData[index].itemFullTitle !== potDetails.itemFullTitle)) {
+        const complete = (potDetails.itemFullTitle && potDetails.tickets)
         handlePotChange(index, potDetails, complete)
     }
-
-    const potFullTitle = useCallback((pot) => {
-        return `Pot ${pot.potNumber} - ${pot.title}`
-    }, [])
 
     const itemMap = useMemo(() => {
         let options = []
@@ -36,7 +32,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             a.title.localeCompare(b.title)
         })
             .map(item => {
-                const fullTitle = potFullTitle(item)
+                const fullTitle = `Pot ${item.potNumber} - ${item.title}`
                 itemTitles[fullTitle] = item.title
                 itemIds[fullTitle] = item.id
                 itemPotNumbers[fullTitle] = item.potNumber
@@ -44,12 +40,12 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             })
             .filter(x => x)
         return {options, itemIds, itemTitles, itemPotNumbers}
-    }, [potFullTitle])
+    }, [])
     const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
 
     const handleTicketsChange = useCallback(event => {
-        setPotDetails({...potDetails, donation: event.target.value.replace(/[^0-9]/, '')})
-        if (!potData[index]) handlePotChange(index, potDetails)
+        setPotDetails({...potDetails, tickets: event.target.value.replace(/[^0-9]/, '')})
+        if (!potData[index]) handlePotChange(index, potDetails, false)
     }, [handlePotChange, index, potData, potDetails])
 
     const handlePotChoiceChange = useCallback((event, value) => {
@@ -65,7 +61,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             item = {}
         }
         setPotDetails({...potDetails, ...item})
-        if (!potData[index]) handlePotChange(index, potDetails)
+        if (!potData[index]) handlePotChange(index, potDetails, false)
     }, [options, potDetails, potData, index, handlePotChange, itemTitles, itemIds, itemPotNumbers])
 
     const [open, setOpen] = useState(false)
@@ -86,13 +82,13 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         backgroundColor: '#272727'
     } : {}
 
-    const errorStyle = showIssues && !potDetails.itemFullTitle ? {borderBottom:'#b00 solid 4px'} : {}
+    const errorStyle = showIssues && !potDetails.itemFullTitle ? {borderBottom: '#b00 solid 4px'} : {}
 
     return (
         <div style={{display: flexStyle, margin: 12}}>
-            <div style={{flexGrow: 1, marginRight: 40, height:100}}>
+            <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
                 <div style={questionStyle}>Selected Pot</div>
-                <div style={{height: 12}}/>
+                <div style={{height: 6}}/>
                 <React.Fragment>
                     {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>
                         <IconButton color='inherit' onClick={handleClick}>
@@ -140,13 +136,13 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
 
             </div>
-            <div>
+            <div style={{justifyContent: 'right'}}>
                 <div style={{...questionStyle}}>Tickets invested</div>
-                <FormControl style={{margin: 8}}>
-                    <TextField type='text' name='donation' label='Donation Amount'
-                               value={potDetails.donation ? potDetails.donation : ''}
-                               error={showIssues && !potDetails.donation}
-                               helperText={showIssues && !potDetails.donation ? 'Required Field' : ' '}
+                <FormControl>
+                    <TextField type='text' name='tickets' label='Tickets'
+                               value={potDetails.tickets ? potDetails.tickets : ''}
+                               error={showIssues && !potDetails.tickets}
+                               helperText={showIssues && !potDetails.tickets ? 'Required Field' : ' '}
                                onChange={handleTicketsChange} color='info' size='small'/>
                 </FormControl>
             </div>

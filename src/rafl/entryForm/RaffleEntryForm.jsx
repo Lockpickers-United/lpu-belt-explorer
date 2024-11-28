@@ -10,16 +10,18 @@ import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import formMap from './FormMappings'
-import RafflePotForm from './RafflePotForm.jsx'
 import isValidUrl from '../../util/isValidUrl'
 import {FormHelperText} from '@mui/material'
+import RafflePotConfigurator from './RafflePotConfigurator.jsx'
 
 function RaffleEntryForm() {
 
     const [formData, setFormData] = useState({})
+    const [charityData, setCharityData] = useState({})
     const [potData, setPotData] = useState({})
     const [potError, setPotError] = useState({})
-    const [charityData, setCharityData] = useState({})
+
+    console.log('potData', potData)
 
     const openInNewTab = useCallback((url) => { //eslint-disable-line
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -55,8 +57,6 @@ function RaffleEntryForm() {
 
         const charityParam = `&entry.${formMap.charity}=${encodeURIComponent(charityData.itemTitle)}`
 
-        console.log('handleSubmit potData', potData)
-
         const potParams = Object.keys(potData).reduce((acc, key) => {
             const paramId = formMap[`pot${potData[key].itemPotNumber}`]
             const param = `&entry.${paramId}=${potData[key].donation}`
@@ -66,8 +66,8 @@ function RaffleEntryForm() {
 
         console.log('p', `${base}${charityParam}${params}${potParams}`)
 
-        //openInNewTab(url + params)
-    }, [charityData, formData, potData])
+        openInNewTab(`${base}${charityParam}${params}${potParams}`)
+    }, [charityData.itemTitle, formData, openInNewTab, potData])
 
     const mappedCharities = allCharities.map(c => {
         return {...c, title: c.name}
@@ -99,7 +99,7 @@ function RaffleEntryForm() {
     const {flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const sectionStyle = {fontSize: '1.5rem', fontWeight: 700, marginBottom: 8}
-    const questionStyle = {fontSize: '1.1rem', fontWeight: 400, marginBottom: 0}
+    const questionStyle = {fontSize: '1.1rem', fontWeight: 400, marginBottom: 8}
 
     return (
 
@@ -140,9 +140,9 @@ function RaffleEntryForm() {
                 <div style={sectionStyle}>Your Donation</div>
 
                 <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
-                    <div style={{flexGrow: 1, marginRight: 40, height:100}}>
+                    <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
                         <div style={questionStyle}>Selected Charity</div>
-                        <div style={{height: 12}}/>
+                        <div style={{height: 6}}/>
                         <RaffleAutocompleteBox allItems={mappedCharities}
                                                setItemDetails={setCharityData}
                                                getOptionTitle={charityFullTitle}
@@ -155,7 +155,7 @@ function RaffleEntryForm() {
                     </div>
                     <div>
                         <div style={{...questionStyle}}>Total donation in USD</div>
-                        <FormControl style={{margin: 8}}>
+                        <FormControl>
                             <TextField type='text' name='donation' label='Donation Amount'
                                        value={formData.donation ? formData.donation : ''}
                                        error={isRequired('donation')}
@@ -165,24 +165,31 @@ function RaffleEntryForm() {
                     </div>
                 </div>
 
-                <div style={{display: flexStyle, margin: '0px 12px 0px 12px'}}>
+                <div style={{margin: '0px 12px 0px 12px'}}>
                     <div style={questionStyle}>
                         Receipt from approved charity <span style={{fontWeight: 400}}>(hosted image link, must contain a visible date)</span>
-                        <FormControl style={{margin: 8}} fullWidth>
+                    </div>
+
+                        <FormControl fullWidth>
                             <TextField type='text' name='receipt' label='Receipt Link'
                                        error={receiptUrlError} helperText={receiptURLHelperText}
                                        value={formData.receipt ? formData.receipt : ''}
                                        onChange={handleChange} color='info' size='small' fullWidth/>
                         </FormControl>
-                    </div>
+
                 </div>
             </div>
 
+
             <div style={{...style, padding: '0px 20px 0px 20px'}}>
                 <div style={sectionStyle}>Your Pots</div>
-                <RafflePotForm questionStyle={questionStyle} index={0} potData={potData}
-                               handlePotChange={handlePotChange} showIssues={showIssues} setPotError={setPotError}/>
+
+                <RafflePotConfigurator donation={formData.donation} potData={potData}
+                                       handlePotChange={handlePotChange} questionStyle={questionStyle}
+                                       showIssues={showIssues} setPotError={setPotError} setPotData={setPotData}/>
+
             </div>
+
 
             <div style={{...style, justifyContent: 'center', marginTop: 16, display: 'flex'}}>
                 <div style={{display: errors ? 'flex' : 'none'}}>
