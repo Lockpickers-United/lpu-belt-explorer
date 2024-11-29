@@ -66,17 +66,13 @@ function RaffleEntryForm() {
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
         }, '')
-
         const charityParam = `&entry.${formMap.charity}=${encodeURIComponent(charityData.itemTitle)}`
-
         const potParams = Object.keys(potData).reduce((acc, key) => {
             const paramId = potData[key].itemFormId
             const param = `&entry.${paramId}=${potData[key].tickets}`
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
         }, '')
-
-        console.log('p', `${base}${charityParam}${params}${potParams}`)
 
         openInNewTab(`${base}${charityParam}${params}${potParams}`)
 
