@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import RaffleAutocompleteBox from './RaffleAutocompleteBox.jsx'
 import allCharities from '../../data/raflCharities.json'
@@ -9,7 +9,7 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import formMap from './FormMappings'
+import formMap from './FormMap'
 import isValidUrl from '../../util/isValidUrl'
 import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
@@ -18,10 +18,23 @@ function RaffleEntryForm() {
 
     const [formData, setFormData] = useState({})
     const [charityData, setCharityData] = useState({})
-    const [potData, setPotData] = useState({})
-    const [potError, setPotError] = useState({})
+    const [potData, setPotData] = useState({0: {tickets:0}})
 
-    console.log('potData', potData)
+    const potKeys = Array.from(Object.keys(potData))
+
+    const allocated = useMemo(() => {
+        return potKeys.reduce((acc, pot) => {
+            const potTickets = parseInt(potData[pot].tickets) ? parseInt(potData[pot].tickets) : 0
+            acc = acc ? acc + potTickets : potTickets
+            return acc
+        }, 0)
+    }, [potData, potKeys])
+
+    const potError = useMemo(() => {
+        return potKeys.reduce((acc, pot) => {
+            return !(potData[pot].tickets && potData[pot].tickets)
+        }, false)
+    }, [potData, potKeys])
 
     const openInNewTab = useCallback((url) => { //eslint-disable-line
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -39,11 +52,10 @@ function RaffleEntryForm() {
         setFormData(newFormData)
     }, [formData])
 
-    const handlePotChange = useCallback((index, potDetails, complete) => {
+    const handlePotChange = useCallback((index, potDetails) => {
         const newPotData = {...potData}
         newPotData[index] = potDetails
         setPotData(newPotData)
-        setPotError(!complete)
     }, [potData])
 
     const handleSubmit = useCallback(() => {
@@ -59,7 +71,7 @@ function RaffleEntryForm() {
 
         const potParams = Object.keys(potData).reduce((acc, key) => {
             const paramId = formMap[`pot${potData[key].itemPotNumber}`]
-            const param = `&entry.${paramId}=${potData[key].donation}`
+            const param = `&entry.${paramId}=${potData[key].tickets}`
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
         }, '')
@@ -67,6 +79,7 @@ function RaffleEntryForm() {
         console.log('p', `${base}${charityParam}${params}${potParams}`)
 
         openInNewTab(`${base}${charityParam}${params}${potParams}`)
+
     }, [charityData.itemTitle, formData, openInNewTab, potData])
 
     const mappedCharities = allCharities.map(c => {
@@ -75,7 +88,6 @@ function RaffleEntryForm() {
     const charityFullTitle = useCallback((charity) => {
         return charity.name
     }, [])
-
 
     const [showIssues, setShowIssues] = useState(false)
 
@@ -86,6 +98,7 @@ function RaffleEntryForm() {
     const receiptUrlError = (formData.receipt || showIssues) && !isValidUrl(formData.receipt)
     const receiptURLHelperText = receiptUrlError ? 'Receipt link is not a valid URL' : ' '
     const charityError = showIssues && !charityData.itemFullTitle
+    const allocationError = parseInt(formData.donation) !== parseInt(allocated)
 
     const errors = (
         !formData['platform']
@@ -94,7 +107,9 @@ function RaffleEntryForm() {
         || !formData['donation']
         || (!formData.receipt || receiptUrlError)
         || !!potError
+        || allocationError
     )
+    const continueColor = !errors ? '#4dd04d' : '#666'
 
     const {flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -148,8 +163,7 @@ function RaffleEntryForm() {
                                                getOptionTitle={charityFullTitle}
                                                searchText={'Search Charities'}
                                                error={charityError}/>
-                        <div style={{display: showIssues && !charityData.itemFullTitle ? 'block' : 'none'}}
-                             className='MuiFormHelperText-root Mui-error MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-cxf8aw-MuiFormHelperText-root'>
+                        <div style={{fontSize:'0.75rem', color:'#f44336', margin:'4px 14px 0px 14px', display: showIssues && !charityData.itemFullTitle ? 'block' : 'none'}}>
                             Required Field
                         </div>
                     </div>
@@ -165,17 +179,17 @@ function RaffleEntryForm() {
                     </div>
                 </div>
 
-                <div style={{margin: '0px 12px 0px 12px'}}>
+                <div style={{margin: '6px 12px 0px 12px'}}>
                     <div style={questionStyle}>
                         Receipt from approved charity <span style={{fontWeight: 400}}>(hosted image link, must contain a visible date)</span>
                     </div>
 
-                        <FormControl fullWidth>
-                            <TextField type='text' name='receipt' label='Receipt Link'
-                                       error={receiptUrlError} helperText={receiptURLHelperText}
-                                       value={formData.receipt ? formData.receipt : ''}
-                                       onChange={handleChange} color='info' size='small' fullWidth/>
-                        </FormControl>
+                    <FormControl fullWidth>
+                        <TextField type='text' name='receipt' label='Receipt Link'
+                                   error={receiptUrlError} helperText={receiptURLHelperText}
+                                   value={formData.receipt ? formData.receipt : ''}
+                                   onChange={handleChange} color='info' size='small' fullWidth/>
+                    </FormControl>
 
                 </div>
             </div>
@@ -186,38 +200,44 @@ function RaffleEntryForm() {
 
                 <RafflePotConfigurator donation={formData.donation} potData={potData}
                                        handlePotChange={handlePotChange} questionStyle={questionStyle}
-                                       showIssues={showIssues} setPotError={setPotError} setPotData={setPotData}/>
+                                       showIssues={showIssues} setPotData={setPotData}
+                                       allocated={allocated} />
 
             </div>
 
 
-            <div style={{...style, justifyContent: 'center', marginTop: 16, display: 'flex'}}>
-                <div style={{display: errors ? 'flex' : 'none'}}>
-                    <Button variant='outlined' onClick={() => {
-                        setShowIssues(!showIssues)
-                    }}
-                            style={{
-                                marginRight: 20,
-                                color: showIssues ? '#de2323' : '#999',
-                                borderColor: showIssues ? '#de2323' : '#999'
-                            }}
-                    >Show Issues</Button>
+            <div style={{...style, padding: '15px 20px 20px 20px'}}>
+                <div style={{...sectionStyle, textAlign:'center'}}>All Done?</div>
+
+                <div style={{...style, justifyContent: 'center', marginTop: 0, display: 'flex'}}>
+                    <div style={{display: errors ? 'flex' : 'none'}}>
+                        <Button variant='outlined' onClick={() => {
+                            setShowIssues(!showIssues)
+                        }}
+                                style={{
+                                    marginRight: 20,
+                                    color: showIssues ? '#de2323' : '#999',
+                                    borderColor: showIssues ? '#de2323' : '#999'
+                                }}
+                        >Show Issues</Button>
+                    </div>
+                    <Button style={{backgroundColor:continueColor, color:'#000'}} variant='contained'
+                            disabled={errors} onClick={handleSubmit}
+                    >CONTINUE</Button>
                 </div>
-                <Button color='success' variant='contained' onClick={handleSubmit}
-                >CONTINUE</Button>
-            </div>
 
-            <div style={{
-                ...style,
-                justifyContent: 'center',
-                marginTop: 16,
-                color: '#de2323',
-                display: errors ? 'flex' : 'none'
-            }}>
-                (errors)
+                <div style={{
+                    ...style,
+                    justifyContent: 'center',
+                    marginTop: 16,
+                    color: '#de2323',
+                    display: errors ? 'flex' : 'none'
+                }}>
+                    <Button style={{color:'#b00'}} variant='text' onClick={handleSubmit}
+                    >Send Incomplete</Button>
+                </div>
             </div>
         </div>
-
     )
 }
 

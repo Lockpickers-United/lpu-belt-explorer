@@ -9,16 +9,19 @@ import SearchIcon from '@mui/icons-material/Search'
 import Autocomplete from '@mui/material/Autocomplete'
 import InputAdornment from '@mui/material/InputAdornment'
 import Backdrop from '@mui/material/Backdrop'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
-export default function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues}) {
-    const {flexStyle} = useWindowSize()
+export default function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
+    const {isMobile, flexStyle} = useWindowSize()
     const isMobileFalse = false
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
     const [potDetails, setPotDetails] = useState({})
 
-    if (potData[index] && (potData[index].tickets !== potDetails.tickets || potData[index].itemFullTitle !== potDetails.itemFullTitle)) {
+    const showDelete = Array.from(Object.keys(potData)).length > 1
+
+    if ((potData[index].tickets !== potDetails.tickets) || potData[index].itemFullTitle !== potDetails.itemFullTitle) {
         const complete = (potDetails.itemFullTitle && potDetails.tickets)
         handlePotChange(index, potDetails, complete)
     }
@@ -45,17 +48,9 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     const handleTicketsChange = useCallback(event => {
         const tickets = event.target.value.replace(/[^0-9]/, '')
-        console.log('handleTicketsChange tickets', tickets)
-
         const tempPotDetails = {...potDetails, tickets: tickets}
-        console.log('handleTicketsChange tempPotDetails tickets', tempPotDetails.tickets)
-
         setPotDetails(tempPotDetails)
-        console.log('handleTicketsChange potDetails tickets', potDetails.tickets)
-
-        if (!potData[index]) handlePotChange(index, potDetails, false)
-
-    }, [handlePotChange, index, potData, potDetails])
+    }, [potDetails])
 
     const handlePotChoiceChange = useCallback((event, value) => {
         let item
@@ -70,8 +65,8 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             item = {}
         }
         setPotDetails({...potDetails, ...item})
-        if (!potData[index]) handlePotChange(index, potDetails, false)
-    }, [options, potDetails, potData, index, handlePotChange, itemTitles, itemIds, itemPotNumbers])
+        //if (!potData[index]) handlePotChange(index, potDetails, false)
+    }, [options, potDetails, itemTitles, itemIds, itemPotNumbers])
 
     const [open, setOpen] = useState(false)
     const handleClick = useCallback(() => {
@@ -97,7 +92,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         <div style={{display: flexStyle, margin: 12}}>
             <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
                 <div style={questionStyle}>Selected Pot</div>
-                <div style={{height: 6}}/>
+                <div style={{height: 4}}/>
                 <React.Fragment>
                     {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>
                         <IconButton color='inherit' onClick={handleClick}>
@@ -138,23 +133,38 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                         onClick={handleBlur}
                     />
                 </React.Fragment>
-                <div style={{display: showIssues && !potDetails.itemFullTitle ? 'block' : 'none'}}
-                     className='MuiFormHelperText-root Mui-error MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-cxf8aw-MuiFormHelperText-root'>
+                <div style={{
+                    fontSize: '0.75rem',
+                    color: '#f44336',
+                    margin: '4px 14px 0px 14px',
+                    display: showIssues && !potDetails.itemFullTitle ? 'block' : 'none'
+                }}>
                     Required Field
                 </div>
-
-
             </div>
-            <div style={{justifyContent: 'right'}}>
-                <div style={{...questionStyle}}>Tickets invested</div>
+            <div style={{display: 'flex'}}>
+                <div style={{flexGrow: 1}}></div>
+
                 <FormControl>
+                    {!isMobile && <div style={questionStyle}>&nbsp;</div> }
                     <TextField type='text' name='tickets' label='Tickets'
-                               value={potDetails.tickets ? potDetails.tickets : ''}
+                               value={potData[index].tickets ? potData[index].tickets : ''}
                                error={showIssues && !potDetails.tickets}
-                               helperText={showIssues && !potDetails.tickets ? 'Required Field' : ' '}
-                               onChange={handleTicketsChange} color='info' size='small'/>
+                               helperText={showIssues && !potData[index].tickets ? 'Required Field' : ' '}
+                               onChange={handleTicketsChange} color='info' size='small'
+                                style={{width:120}}/>
                 </FormControl>
+                {showDelete &&
+
+                    <div style={{marginLeft: 10}}>
+                        {!isMobile && <div style={questionStyle}>&nbsp;</div> }
+                        <IconButton color='warning' onClick={() => removePot(index)}>
+                            <DeleteForeverIcon/>
+                        </IconButton>
+                    </div>
+                }
             </div>
+
         </div>
     )
 }
