@@ -31,6 +31,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         let itemIds = {}
         let itemTitles = {}
         let itemPotNumbers = {}
+        let itemFormIds = {}
         allItems?.sort((a, b) => {
             a.title.localeCompare(b.title)
         })
@@ -39,12 +40,13 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                 itemTitles[fullTitle] = item.title
                 itemIds[fullTitle] = item.id
                 itemPotNumbers[fullTitle] = item.potNumber
+                itemFormIds[fullTitle] = item.formId
                 options.push(fullTitle)
             })
             .filter(x => x)
-        return {options, itemIds, itemTitles, itemPotNumbers}
+        return {options, itemIds, itemTitles, itemPotNumbers, itemFormIds}
     }, [])
-    const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
+    const {options, itemIds, itemTitles, itemPotNumbers, itemFormIds} = itemMap
 
     const handleTicketsChange = useCallback(event => {
         const tickets = event.target.value.replace(/[^0-9]/, '')
@@ -59,14 +61,15 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                 itemFullTitle: value,
                 itemTitle: itemTitles[value],
                 itemId: itemIds[value],
-                itemPotNumber: itemPotNumbers[value]
+                itemPotNumber: itemPotNumbers[value],
+                itemFormId: itemFormIds[value]
             }
         } else {
             item = {}
         }
         setPotDetails({...potDetails, ...item})
         //if (!potData[index]) handlePotChange(index, potDetails, false)
-    }, [options, potDetails, itemTitles, itemIds, itemPotNumbers])
+    }, [options, potDetails, itemTitles, itemIds, itemPotNumbers, itemFormIds])
 
     const [open, setOpen] = useState(false)
     const handleClick = useCallback(() => {
@@ -90,8 +93,8 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     return (
         <div style={{display: flexStyle, margin: 12}}>
-            <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
-                <div style={questionStyle}>Selected Pot</div>
+            <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth:280}}>
+                <div style={{...questionStyle}}>Selected Pot</div>
                 <div style={{height: 4}}/>
                 <React.Fragment>
                     {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>

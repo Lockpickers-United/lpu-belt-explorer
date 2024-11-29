@@ -14,6 +14,7 @@ import {
     introCopySchema,
     raflSchema,
     raflContentsSchema,
+    raflMediaSchema,
     raflCharitySchema
 } from './schemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
@@ -65,7 +66,7 @@ const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
 const raflData = await importValidate('RAFL', raflSchema)
 const raflPotContentsData = await importValidate('RAFL Pot Contents', raflContentsSchema)
-const raflMediaData = await importValidate('RAFL Media', mediaSchema)
+const raflMediaData = await importValidate('RAFL Media', raflMediaSchema)
 const raflCharityData = await importValidate('RAFL Charities', raflCharitySchema)
 
 // Transform fields into internal JSON format
@@ -401,22 +402,25 @@ new Set(lockFeatures.concat(dialFeatures))
 
 // RAFL Data
 console.log('Processing RAFL data...')
-const raflMainData = raflData.map(datum => ({
-    id: datum['Unique ID'],
-    year: +datum['Year'],
-    potNumber: datum['Pot Number'],
-    title: datum['Title'],
-    description: datum['Description'],
-    contentsFile: datum['Contents File'],
-    contributedBy: splitCommaValues(datum['Contributed By']),
-    tags: splitCommaValues(datum['Tags']),
-    country: splitCommaValues(datum['Country']),
-    shippingInfo: datum['Shipping Info Text'],
-    splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
-    splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
-    shippingType: datum['Shipping Type'],
-    winner: datum['Winner']
-})).filter(x => x)
+const raflMainData = raflData
+    .filter(datum => datum['Year'] === '2025')
+    .map(datum => ({
+        id: datum['Unique ID'],
+        year: +datum['Year'],
+        potNumber: datum['Pot Number'],
+        formId: datum['Form ID'],
+        title: datum['Title'],
+        description: datum['Description'],
+        contentsFile: datum['Contents File'],
+        contributedBy: splitCommaValues(datum['Contributed By']),
+        tags: splitCommaValues(datum['Tags']),
+        country: splitCommaValues(datum['Country']),
+        shippingInfo: datum['Shipping Info Text'],
+        splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
+        splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
+        shippingType: datum['Shipping Type'],
+        winner: datum['Winner']
+    })).filter(x => x)
 
 // RAFL Pot Contents
 console.log('Processing RAFL Pot Contents data...')
@@ -456,12 +460,12 @@ fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
 
 // RAFL Charity Data
 console.log('Processing RAFL Charity data...')
-const raflCharities = raflCharityData.map(datum => ({
-    id: datum['Unique ID'],
-    name: datum['Charity Name'],
-    url: datum['URL'],
-    donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/,'')) || 0,
-})).filter(x => x)
+const raflCharities = raflCharityData
+    .map(datum => ({
+        name: datum['Charity Name'],
+        url: datum['URL'],
+        donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
+    })).filter(x => x)
 
 fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
 

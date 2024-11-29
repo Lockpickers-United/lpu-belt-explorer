@@ -70,7 +70,7 @@ function RaffleEntryForm() {
         const charityParam = `&entry.${formMap.charity}=${encodeURIComponent(charityData.itemTitle)}`
 
         const potParams = Object.keys(potData).reduce((acc, key) => {
-            const paramId = formMap[`pot${potData[key].itemPotNumber}`]
+            const paramId = potData[key].itemFormId
             const param = `&entry.${paramId}=${potData[key].tickets}`
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
@@ -119,9 +119,17 @@ function RaffleEntryForm() {
     return (
 
         <div style={{paddingBottom: 32}}>
-            <RaffleSubHead text={'ENTRY FORM - Testing Only'}/>
+            <RaffleSubHead text={'ENTRY FORM'}/>
 
-            <div style={{...style, padding: 20}}>
+                <div style={{
+                    ...style,
+                    backgroundColor: '#222',
+                    minHeight: 72,
+                    alignItems: 'center',
+                    borderBottom: '1px #555 solid',
+                    padding: '20px 20px'
+                }}>
+
                 <div style={sectionStyle}>About You</div>
 
                 <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
@@ -151,7 +159,14 @@ function RaffleEntryForm() {
             </div>
 
 
-            <div style={{...style, padding: '0px 20px 20px 20px'}}>
+            <div style={{
+                ...style,
+                backgroundColor: '#222',
+                minHeight: 72,
+                alignItems: 'center',
+                borderBottom: '1px #555 solid',
+                padding: '20px 20px'
+            }}>
                 <div style={sectionStyle}>Your Donation</div>
 
                 <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
@@ -194,8 +209,14 @@ function RaffleEntryForm() {
                 </div>
             </div>
 
-
-            <div style={{...style, padding: '0px 20px 0px 20px'}}>
+            <div style={{
+                ...style,
+                backgroundColor: '#222',
+                minHeight: 72,
+                alignItems: 'center',
+                borderBottom: '1px #555 solid',
+                padding: '20px 20px'
+            }}>
                 <div style={sectionStyle}>Your Pots</div>
 
                 <RafflePotConfigurator donation={formData.donation} potData={potData}
@@ -206,7 +227,7 @@ function RaffleEntryForm() {
             </div>
 
 
-            <div style={{...style, padding: '15px 20px 20px 20px'}}>
+            <div style={{...style, padding: '20px 20px 20px 20px'}}>
                 <div style={{...sectionStyle, textAlign:'center'}}>All Done?</div>
 
                 <div style={{...style, justifyContent: 'center', marginTop: 0, display: 'flex'}}>
@@ -234,7 +255,7 @@ function RaffleEntryForm() {
                     display: errors ? 'flex' : 'none'
                 }}>
                     <Button style={{color:'#b00'}} variant='text' onClick={handleSubmit}
-                    >Send Incomplete</Button>
+                    >Test Send Incomplete</Button>
                 </div>
             </div>
         </div>

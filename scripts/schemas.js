@@ -144,9 +144,10 @@ export const upgradeSchema = Joi.array().items(
 
 export const raflSchema = Joi.array().items(
     Joi.object({
-        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
-        'Year': Joi.number().min(2020).max(2030),
+        'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
+        'Year': Joi.number().min(1000).max(2030),
         'Pot Number': Joi.number().min(1).max(999),
+        'Form ID': Joi.number(),
         'Title': Joi.string().min(1).max(100),
         'Description': Joi.string().allow(''),
         'Contents File': Joi.string().allow(''),
@@ -162,14 +163,26 @@ export const raflSchema = Joi.array().items(
 
 export const raflContentsSchema = Joi.array().items(
     Joi.object({
-        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
         'Pot Contents': Joi.string().allow('')
+    }).unknown()
+)
+
+export const raflMediaSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
+        'Sequence ID': Joi.number().min(1).max(50),
+        Title: Joi.string().min(1),
+        Subtitle: Joi.string().allow(''),
+        'Thumbnail URL': Joi.string(),
+        'Full URL': Joi.string().allow('').uri(),
+        'Subtitle URL': Joi.string().allow('').uri(),
+        'Full Image Direct URL': Joi.string().allow('').uri()
     }).unknown()
 )
 
 export const raflCharitySchema = Joi.array().items(
     Joi.object({
-        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
         'Charity Name': Joi.string(),
         'URL': Joi.string().allow('').uri(),
         'Total Donations 2024': Joi.string().allow(''),
