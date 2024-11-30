@@ -26,7 +26,6 @@ function RaffleCharitesPage() {
     }, [setSort, sort])
 
 
-
     const visibleCharities = visibleEntries
         .sort((a, b) => {
             switch (sort) {
@@ -43,7 +42,11 @@ function RaffleCharitesPage() {
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
 
-    const headerSize = !isMobile ? '1.0rem' : '0.85rem'
+    const headerSize = !isMobile ? '1.0rem' : '0.9rem'
+    const headerPadding = !isMobile ? '16px 16px' : '10px 10px'
+
+    const prevText = !isMobile ? '2024 Contributions' : '2024'
+    const currText = !isMobile ? '2025 Currently' : '2025'
 
     return (
 
@@ -63,7 +66,7 @@ function RaffleCharitesPage() {
                                     key='Charity Name'
                                     style={{
                                         fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                        backgroundColor: '#222'
+                                        backgroundColor: '#222', padding: headerPadding
                                     }}
                                 >
                                     <Link onClick={() => handleSort('name')}
@@ -78,7 +81,7 @@ function RaffleCharitesPage() {
                                     }}
                                 >
                                     <Link onClick={() => handleSort('2024')}
-                                          style={{color: sort === '2024' ? '#fff' : '#ccc'}}>2024 Contributions</Link>
+                                          style={{color: sort === '2024' ? '#fff' : '#ccc'}}>{prevText}</Link>
                                 </TableCell>
                                 <TableCell
                                     key='2025'
@@ -89,7 +92,7 @@ function RaffleCharitesPage() {
                                     }}
                                 >
                                     <Link onClick={() => handleSort('2025')}
-                                          style={{color: sort === '2025' ? '#fff' : '#ccc'}}>2025 So&nbsp;Far</Link>
+                                          style={{color: sort === '2025' ? '#fff' : '#ccc'}}>{currText}</Link>
                                 </TableCell>
                             </TableRow>
                         </TableHead>

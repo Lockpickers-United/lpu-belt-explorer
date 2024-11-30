@@ -17,9 +17,11 @@ function RaffleCharityRow({charity}) {
                 style={{color: '#fff', fontWeight:500}}>{charity.name}</Link>
         : <span style={{color:'#ddd'}}>{charity.name}</span>
 
-    const fontSize = !isMobile ? '1.0rem' : '0.9rem'
+    const fontSize = !isMobile ? '1.0rem' : '0.95rem'
 
-    const cellStyle = {fontSize: fontSize, border:0, padding:'10px 16px'}
+    const cellStyle = !isMobile
+        ? {fontSize: fontSize, border:0, padding:'10px 16px'}
+        : {fontSize: fontSize, border:0, padding:'6px 10px'}
 
     return (
 

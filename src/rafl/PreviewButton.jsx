@@ -11,7 +11,7 @@ function PreviewButton() {
 
     useHotkeys('p', () => togglePreview(), {preventDefault: true})
 
-    const color = preview ? '#d00' : '#fff'
+    const color = preview ? '#983de6' : '#fff'
 
     return (
         <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>

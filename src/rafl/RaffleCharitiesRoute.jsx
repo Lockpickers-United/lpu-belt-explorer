@@ -20,7 +20,7 @@ function RaffleCharitiesRoute() {
     const extras = null
 
     const raflCharitiesMapped = raflCharities.map(entry => {
-        const entryStats = charityStats?.find(stat => stat.id === entry.id)
+        const entryStats = charityStats?.find(stat => stat.name === entry.name)
         return {
             ...entry,
             donations2025: entryStats ? entryStats?.donations2025 : '--'

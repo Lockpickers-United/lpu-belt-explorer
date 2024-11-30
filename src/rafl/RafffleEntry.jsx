@@ -96,7 +96,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
 
                             <Collapse in={!!entry.donors}>
                                 <div style={{
-                                    marginRight: 10,
+                                    marginRight: 15,
                                     fontSize: descriptionFontSize,
                                     textAlign: 'right',
                                     display: flexStyle

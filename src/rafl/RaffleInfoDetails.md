@@ -10,8 +10,7 @@
 
 4. Check out the [**list of prizes**](/#/rafl)
 
-5. Go to the form below to specify your charity, add the link to your screenshot, and allocate your tickets among the pots:
-[**https://forms.gle/cqwJ84DeXGayhuYA9**](https://forms.gle/cqwJ84DeXGayhuYA9)
+5. Go to the form below to specify your charity, add the link to your screenshot, and [**allocate your tickets among the pots**](/#/rafl/entryform).
 
 6. You’re done! A raffle organizer should contact you on your platform of choice to notify you that your submission was either approved or requires an adjustment.
 
@@ -20,9 +19,6 @@
 ### Rules
 
 Each US dollar equivalent (rounded down) donated counts as one “ticket” in the drawing.
-
-A list of charities that have been vetted in previous raffles can be found here: https://docs.google.com/document/d/1UW9_qNxzfnPB-cDWIO6E0MC1wyrJL3ddBHW-7SfJH6I/.
-Unfortunately, we are not adding new charities to the list this year, as it is a time-consuming process, and we do not have the bandwidth available this time around. However, there are plenty of wonderful choices already present!
 
 Members of the raffle team with access to internal info about donations are not allowed to participate. This is done to ensure that the process remains fair.
 
@@ -57,10 +53,10 @@ Totals and breakdowns shown on the site may be delayed by up to 10 minutes. Live
 ### Raffle Entry Form
 Adding this another time for maximum visibility. Thanks for reading all the way down, now go here to enter the raffle!
 
-[**https://forms.gle/cqwJ84DeXGayhuYA9**](https://forms.gle/cqwJ84DeXGayhuYA9)
+[**https://lpubelts.com/#/rafl/entryform**](https://forms.gle/cqwJ84DeXGayhuYA9)
 
 -----
 
-Big thanks to the people who have helped with the pre-raffle organization and infrastructure this year -- LoganIsOnDiscord has been instrumental in building the charity list, PandaFrog created the infrastructure, mgsecure and the LPUbelts team created the wesite, and Naswek both created our extensive spreadsheet system, and this year has freed us from under the thumb of Mathworks in creating a new drawing program.
+Big thanks to the people who have helped with the pre-raffle organization and infrastructure this year -- LoganIsOnDiscord has been instrumental in building the charity list, mgsecure and the LPUbelts team created the wesite, PandaFrog created the infrastructure, and Naswek both created our extensive spreadsheet system, and this year has freed us from under the thumb of Mathworks in creating a new drawing program.
 
 An extra big thanks as well to the 40 prize contributors who made it possible for us to have 41 prizes this year: 7woZ3RO51x, amvgaert, banditobrandino07, Bonx, Clefmentine, CollateralTech, CorrectJeans, Craig 3.0, Deadhammer (Cronolock), Devo, Don, Downundermonkey, EdMcBane, elocksmith, f-eq-ma, Gullinbursti, H.J, Hazzert (Nosu), HVLogic, imaginary_unit, ipaidmyrentman, JayDee, knowthebird, MelBrooksKA, Mick777Oz, Moki, Mugatu, Peaceweapon, qikom, ravenrules99, Red Wanderer, SasPes, SgrA8, Sisko, thatonenottrollguy, ThomasH, Trucking Lock, Wyte, Yabende, and Yagias!
