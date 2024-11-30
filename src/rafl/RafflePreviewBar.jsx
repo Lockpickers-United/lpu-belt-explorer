@@ -1,18 +1,26 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import CachedIcon from '@mui/icons-material/Cached'
+import LoadingDisplayWhite from '../misc/LoadingDisplayWhite.jsx'
 
 export default function RafflePreviewBar({refresh}) {
+
+    const [requestingPreview, setRequestingPreview] = useState(false)
 
     const refreshPreview = useCallback(async () => {
         const url = window.location.protocol === 'http:'
             ? 'http://explore.lpubelts.com:8080/refresh-preview'
             : 'https://explore.lpubelts.com:8443/refresh-preview'
 
-        const response = await fetch(url, {cache: 'no-store'})
-        console.log('preview response', url, await response.json())
+        setRequestingPreview(true)
+        await fetch(url, {cache: 'no-store'}).then(async res => {
+            setRequestingPreview(false)
+            console.log('preview response\n', await res.json())
+        })
+
         await refresh()
+
     }, [refresh])
 
     return (
@@ -29,11 +37,17 @@ export default function RafflePreviewBar({refresh}) {
             alignItems: 'center'
         }}>
             <div style={{flexGrow: 1, marginLeft: 20}}>PREVIEW MODE</div>
-            <Tooltip title={'Refresh From Sheet'} arrow disableFocusListener>
-                <IconButton onClick={refreshPreview} style={{marginRight: 10}}>
-                    <CachedIcon/>
-                </IconButton>
-            </Tooltip>
+
+            {requestingPreview
+                ? <LoadingDisplayWhite/>
+                : <Tooltip title={'Refresh From Sheet'} arrow disableFocusListener>
+                    <IconButton onClick={refreshPreview} style={{marginRight: 10}}>
+                        <CachedIcon/>
+                    </IconButton>
+                </Tooltip>
+
+            }
+
         </div>
 
     )

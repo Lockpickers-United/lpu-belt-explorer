@@ -15,7 +15,7 @@ function PreviewButton() {
 
     return (
         <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>
-            <IconButton onClick={togglePreview}>
+            <IconButton onClick={togglePreview} style={{height:48, width:48}}>
                 <VisibilityIcon style={{color:color}}/>
             </IconButton>
         </Tooltip>

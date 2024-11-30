@@ -39,31 +39,43 @@ function RaffleEnterAboutRoute() {
 
             <div style={style}>
                 <RaffleHeader page={'enter'}/>
-                <RaffleSubHead text={'About the LPU Raffle'}/>
+                <RaffleSubHead text={'About the Raffle'}/>
+            </div>
+
+
+            <div style={{
+                ...style,
+                backgroundColor: '#222',
+                minHeight: 72,
+                alignItems: 'center',
+                borderBottom: '1px #555 solid',
+                padding: '20px 20px'
+            }}>
 
                 <div style={{padding: contentPadding}}>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                         {`${RaffleInfoIntro}`}
                     </ReactMarkdown>
                 </div>
-            </div>
 
-            <div style={{...style, textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
 
-                Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
+                <div style={{...style, textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
 
-                <Button variant='contained' color='success'
-                        onClick={() => navigate('/rafl/entryform')}>
-                    Click here to enter the RAFL
-                </Button>
+                    Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
 
-            </div>
+                    <Button variant='contained' color='success'
+                            onClick={() => navigate('/rafl/entryform')}>
+                        Click here to enter the RAFL
+                    </Button>
 
-            <div style={style}>
-                <div style={{padding: contentPadding}}>
-                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                        {`${RaffleInfoDetails}`}
-                    </ReactMarkdown>
+                </div>
+
+                <div style={style}>
+                    <div style={{padding: contentPadding}}>
+                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                            {`${RaffleInfoDetails}`}
+                        </ReactMarkdown>
+                    </div>
                 </div>
             </div>
 
