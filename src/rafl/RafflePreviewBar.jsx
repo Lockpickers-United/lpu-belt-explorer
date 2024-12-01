@@ -9,7 +9,6 @@ import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 
 export default function RafflePreviewBar({refresh}) {
-
     const [requestingPreview, setRequestingPreview] = useState(false)
     const [response, setResponse] = useState('')
     const [open, setOpen] = useState(false)

@@ -10266,7 +10266,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
+      "Dimple",
       "Magnet"
     ],
     "features": [
@@ -10303,7 +10303,7 @@
       }
     ],
     "views": 298,
-    "lastUpdated": "2024-09-12T02:37:13.744Z"
+    "lastUpdated": "2024-11-30T17:49:42.620Z"
   },
   {
     "id": "95902951",

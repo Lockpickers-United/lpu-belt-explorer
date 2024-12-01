@@ -4,19 +4,32 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../app/AppContext.jsx'
+import {useSearchParams} from 'react-router-dom'
 
 function PreviewButton() {
     const {preview, setPreview} = useContext(AppContext)
-    const togglePreview = useCallback(() => setPreview(!preview), [preview, setPreview])
+    const [searchParams, setSearchParams] = useSearchParams()
+    const previewMode = searchParams.has('preview')
+    const showPreview = preview || previewMode
+
+    const togglePreview = useCallback(() => {
+        if (previewMode) {
+            searchParams.delete('preview')
+            setSearchParams(searchParams)
+            setPreview(false)
+        } else {
+            setPreview(!preview)
+        }
+    }, [preview, previewMode, searchParams, setPreview, setSearchParams])
 
     useHotkeys('p', () => togglePreview(), {preventDefault: true})
 
-    const color = preview ? '#983de6' : '#fff'
+    const color = showPreview ? '#983de6' : '#fff'
 
     return (
         <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>
-            <IconButton onClick={togglePreview} style={{height:48, width:48}}>
-                <VisibilityIcon style={{color:color}}/>
+            <IconButton onClick={togglePreview} style={{height: 48, width: 48}}>
+                <VisibilityIcon style={{color: color}}/>
             </IconButton>
         </Tooltip>
     )

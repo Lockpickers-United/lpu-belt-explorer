@@ -24,13 +24,14 @@ import RaffleContext from './RaffleContext.jsx'
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
     const {preview} = useContext(AppContext)
-    const {isMobile} = useWindowSize()
+    const {potStats} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
+    const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()
     const single = searchParams.get('single')
     const id = searchParams.get('id')
-
-    const {potStats} = useContext(RaffleContext)
+    const previewMode = searchParams.has('preview')
+    const showPreview = preview || previewMode
 
     const {data, loading, error, refresh} = useData({url: raflJsonUrl})
     const dataReady = (data && !loading && !error)
@@ -82,11 +83,11 @@ function RaffleRoute() {
                             <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
                             <RaffleHeader page={'pots'}/>
 
-                            {preview &&
+                            {showPreview &&
                                 <RafflePreviewBar refresh={refresh}/>
                             }
 
-                            {preview && !dataReady
+                            {showPreview && !dataReady
                                 ? <LoadingDisplay/>
                                 : <RafflePage profile={lockCollection}/>
                             }
