@@ -443,7 +443,7 @@ Purple,DOM,ix10,"without fins",Dimple,,,7b05dccc
 Purple,Eagle,"""Supr-Security""","without shutter",Wafer,,,e8901d1c
 Purple,Elzett,X11,,Dimple,,,04a402d6
 Purple,"EVVA,EVVA,EVVA,EVVA","DPI,DPS,DPX,EPS","slider version",Slider,"Trap element,False gates,Active sidebar",,8c2983b5
-Purple,Fichet,450,"no false gates",Lever/sidebar,,,93871dad
+Purple,Fichet,450,"no False gates",Lever/sidebar,,,93871dad
 Purple,"Gege,Alfa","pExtra,""pExtra""","6-7 pin",Pin-tumbler,Overmilling,,4cd09b3b
 Purple,Generic/Unknown,"6 or 7 Lever lock",,Lever,,,a6a225e5
 Purple,Godrej,Ultra,"14 pins in 3 rows",Dimple,,,3fbd7b3d
@@ -546,7 +546,7 @@ Brown,"Dorma,Dorma","DC500,DC5400",,Pin-tumbler,"Tree drivers,Gin spool drivers,
 Brown,Eagle,"""Supr-Security"" (with shutter)",,Wafer,,,33588917
 Brown,FAB,Dynamic,,"Slider,Pin-tumbler","Unsprung sliders",,e0255299
 Brown,"Federal Lock",11KDCF3110,,Pin-tumbler,,,e8150a27
-Brown,"Fichet,Fichet","450,484","with false gates, 4-6 mastered levers",Lever/sidebar,"False gates,Active sidebar",,58cbc037
+Brown,"Fichet,Fichet","450,484","with False gates, 4-6 mastered levers",Lever/sidebar,"False gates,Active sidebar",,58cbc037
 Brown,Fichet,666,,Slider,,,9c627ebd
 Brown,Fichet-Bauche,Monopole,,Pump/push,"Under Review ⚑",,3bd433d7
 Brown,"FTH Thirard",Cobra,,Pump/push,,,86e86a1d
@@ -613,11 +613,11 @@ Red,"Corbin Russwin",Emhart,"6 pins **",Pin-tumbler,"Interlocking pins","** **Sp
 Red,"DOM,INN","ix Saturn,Key Smart",,Dimple,"Interactive element,Torpedo keypins,Shark fin keypins,Changelog",,6b06f591
 Red,DOM,"RS 8",,Pin-tumbler,"Magic DOM drivers,Sidepins,Torpedo keypins",,4993a918
 Red,Elzett,M,,Magnet,"Magnetic rotors,Changelog",,ff0be785
-Red,"EVVA,EVVA,EVVA","3KS,3KS+,4KS","without false gates or 1-3 mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,265226b1
+Red,"EVVA,EVVA,EVVA","3KS,3KS+,4KS","without False gates or 1-3 mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,265226b1
 Red,EVVA,Dual,">4 mastered elements",Slider,"False gates,Active sidebar",,00b569f2
 Red,EVVA,ICS,">2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,6852489f
 Red,FAB,NZS3,,Pin-tumbler,,,3b797ff2
-Red,"Fichet,Fichet","450,484","w/ false gates, 2-3 mastered levers",Lever/sidebar,"False gates,Active sidebar",,03cbfaa5
+Red,"Fichet,Fichet","450,484","w/ False gates, 2-3 mastered levers",Lever/sidebar,"False gates,Active sidebar",,03cbfaa5
 Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
 Red,"FTH Thirard",Pacific,,Pump/push,,,a57c1e9b
 Red,"GOAL,GOAL","V18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
@@ -642,14 +642,14 @@ Red,MIWA,LS7,,Slider,"Sprung sliders",,814c5368
 Red,MIWA,PR,"<7 unmastered levers",Lever/sidebar,"Partial gut",,fdb68dc4
 Red,"MIWA,Tostem","PS,DN","7-8 unmastered levers",Lever/sidebar,,,550a0c9d
 Red,Miwa,SR,,Wafer,"Active sidebar",,31cd85d7
-Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred false gates (old shallow false gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
+Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
 Red,Mottura,"Champions C55",,"Dimple,Other",,,3daff112
 Red,"Picard,Heracles","Vigie,Pericles","euro profile",Pump/push,Changelog,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,112d0034
-Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no false gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
+Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no False gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
 Red,"S&G,S&G","4544,4440 series",,Lever,"Safe lock,Flat steel key,False gates","S&G=Sargent & Greenleaf",2ff8a738
 Red,Schlage,"Everest 29 SL Primus XP",,Slider,,,cf76cfde
 Red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
@@ -678,7 +678,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2",ASSA,"Twin v10","gin drivers, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar","upgrade of ASSA Twin v10",c8694f3a
 "Black 1","Australian Lock Co.",BiLock,"12 sliders, 1-2 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,e3058619
 "Black 2","Australian Lock Co.",BiLock,"12 sliders, 0 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,ab1e901f
-"Black 2","Australian Lock Co.","Bilock (SCEC approved; formerly known as ASIO)","2nd/3rd gen",Slider,"False gates,Sprung sliders,Active sidebar,Changelog","two false gates per pin, staggered rows",12846cc6
+"Black 2","Australian Lock Co.","Bilock (SCEC approved; formerly known as ASIO)","2nd/3rd gen",Slider,"False gates,Sprung sliders,Active sidebar,Changelog","two False gates per pin, staggered rows",12846cc6
 "Black 2","Australian Lock Co.","BiLock Exclusive","picked to control",Slider,"False gates,Sprung sliders,Active sidebar",,6d2555aa
 "Black 1",BKS,Janus,"14 or more pins",Dimple,"High pin count",,f09ce6b3
 "Black 1",Bowley,"Door Lock",,Pin-tumbler,,,78336fc0
@@ -691,14 +691,14 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1","Corbin Russwin",Emhart,"≥ 2 mastered chambers **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c266d57b
 "Black 1",DOM,Diamant,"With sprung rear disc","Disc detainer","Front tension,False gates",,57fbcb1b
 "Black 1",DOM,"ix Twinstar",,Dimple,"Shark fin keypins,Torpedo keypins,Interactive element",,3c73c705
-"Black 1","EVVA,EVVA","3KS,3KS+","with false gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
+"Black 1","EVVA,EVVA","3KS,3KS+","with False gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
 "Black 1",EVVA,Dual,"1-4 mastered elements",Slider,"Active sidebar,False gates",,1e197456
 "Black 2",EVVA,Dual,"0 (zero) mastered elements",Slider,"False gates,Active sidebar",,533c7408
 "Black 1",EVVA,ICS,"1-2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,db749615
 "Black 2",EVVA,ICS,"0 (zero) mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,8ea170d2
 "Black 3","EVVA,EVVA,IKON","MCS gen 1,MCS gen 2,M",,"Pin-tumbler,Magnet","Magnetic rotors","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",5ab25363
-"Black 1","Fichet,Fichet","450,484","w/ false gates, 1 mastered lever",Lever/sidebar,"False gates,Active sidebar",,4abcb403
-"Black 2","Fichet,Fichet","450,484","w/ false gates, 0 mastered levers",Lever/sidebar,"False gates,Active sidebar",,340154fa
+"Black 1","Fichet,Fichet","450,484","w/ False gates, 1 mastered lever",Lever/sidebar,"False gates,Active sidebar",,4abcb403
+"Black 2","Fichet,Fichet","450,484","w/ False gates, 0 mastered levers",Lever/sidebar,"False gates,Active sidebar",,340154fa
 "Black 3",Fichet,787,"no blocker","Pump/push,Lever/sidebar","Active sidebar,Shutter",,10ab07eb
 "Black 1",Fichet,F3D,"indoor cylinder",Pump/push,,,33056c0f
 "Black 5",Fichet,F3D,"outside cylinder - upgrade of indoor cylinder",Pump/push,,,c0af45f4
@@ -728,8 +728,8 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",d0c510c5
 "Black 2",MIWA,PR,"9-10 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",21b61a85
 "Black 3",MIWA,PR,"11 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",91f40022
-"Black 1",MIWA,U9,"8 unmastered elements, barred false gates (old shallow false gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
-"Black 2",MIWA,U9,"9 unmastered elements, barred false gates (old shallow false gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
+"Black 1",MIWA,U9,"8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
+"Black 2",MIWA,U9,"9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
 "Black 1","Mottura,Mottura,Mottura","Champions C43,Champions C44,Champions C48",,"Dimple,Other",Rotors,,ae7d3780
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5,R10","not mastered","Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
 "Black 5",NATO,Mersey,"10 lever",Lever,"Safe lock,Pin key,Double bitted",,4f2ed774
@@ -737,7 +737,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 4",Opnus,Memolis,,Lever/sidebar,,,6c0ec943
 "Black 4",Opnus,MMXII,,Lever/sidebar,,,e151c916
 "Black 2",Robur,"Disc Detainer Safe Deposit Lock",,"Disc detainer","Front/rear tension,False gates,Curtain","Curtain needs to be overcome. No means of correcting an overset known",5cba063b
-"Black 1","Rosengrens,Rosengrens","32A81S,32C81P","triangular central posts and many false gates","Disc detainer","Front/rear tension,False gates","Hard to navigate and manipulate and often poor feedback",db63c882
+"Black 1","Rosengrens,Rosengrens","32A81S,32C81P","triangular central posts and many False gates","Disc detainer","Front/rear tension,False gates","Hard to navigate and manipulate and often poor feedback",db63c882
 "Black 1","Ruko,Ruko,FAB","Combi 2,Garant 10,Variant","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Active sidebar,Barrel drivers,Serrated/threaded milling,Rotating fingerpins",,63a9a2b1
 "Black 1",Sargent,Keso,,Dimple,"High pin count",,00cf7717
 "Black 1",Tokoz,Pro,,"Disc detainer","Front/rear tension,Profile discs,Disc steering system,Disc blocker system,Bi-directional",,3198fffc
@@ -795,7 +795,7 @@ Unranked,,Gaab,"6-pin dimple",Dimple,"Under Review ⚑",,cd5acff8
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,"Helason ","16-pin round key",Dimple,"Under Review ⚑",,93324d19
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624
-Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no false gates",Lever,"Under Review ⚑,Cabinet lock,Uncurtained,Pipe key",,81c91d86
+Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under Review ⚑,Cabinet lock,Uncurtained,Pipe key",,81c91d86
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f

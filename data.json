@@ -20989,7 +20989,7 @@
         "model": "450"
       }
     ],
-    "version": "no false gates",
+    "version": "no False gates",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -21024,7 +21024,7 @@
       }
     ],
     "views": 360,
-    "lastUpdated": "2023-07-25T11:20:19.894Z"
+    "lastUpdated": "2024-12-01T00:26:32.254Z"
   },
   {
     "id": "4cd09b3b",
@@ -26804,7 +26804,7 @@
         "model": "484"
       }
     ],
-    "version": "with false gates, 4-6 mastered levers",
+    "version": "with False gates, 4-6 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -26848,7 +26848,7 @@
       "4abcb403",
       "340154fa"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2024-12-01T00:26:32.260Z"
   },
   {
     "id": "9c627ebd",
@@ -30696,7 +30696,7 @@
         "model": "4KS"
       }
     ],
-    "version": "without false gates or 1-3 mastered sliders",
+    "version": "without False gates or 1-3 mastered sliders",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -30764,7 +30764,7 @@
       }
     ],
     "views": 466,
-    "lastUpdated": "2023-11-13T11:31:22.719Z"
+    "lastUpdated": "2024-12-01T00:26:32.262Z"
   },
   {
     "id": "00b569f2",
@@ -30983,7 +30983,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates, 2-3 mastered levers",
+    "version": "w/ False gates, 2-3 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -31034,7 +31034,7 @@
       "4abcb403",
       "340154fa"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.025Z"
+    "lastUpdated": "2024-12-01T00:26:32.262Z"
   },
   {
     "id": "9d7faa15",
@@ -32533,7 +32533,7 @@
         "model": "UR"
       }
     ],
-    "version": "<8 unmastered levers, barred false gates (old shallow false gates counts as Brown Belt)",
+    "version": "<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -32594,7 +32594,7 @@
       }
     ],
     "views": 352,
-    "lastUpdated": "2024-08-25T23:06:32.336Z"
+    "lastUpdated": "2024-12-01T00:26:32.263Z"
   },
   {
     "id": "cc8cfd45",
@@ -32970,7 +32970,7 @@
         "model": "32A8"
       }
     ],
-    "version": "thin round center posts, few or no false gates",
+    "version": "thin round center posts, few or no False gates",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -33054,7 +33054,7 @@
       }
     ],
     "views": 440,
-    "lastUpdated": "2024-02-21T19:02:02.020Z"
+    "lastUpdated": "2024-12-01T00:26:32.263Z"
   },
   {
     "id": "2ff8a738",
@@ -35209,7 +35209,7 @@
       "Active sidebar",
       "Changelog"
     ],
-    "notes": "two false gates per pin, staggered rows",
+    "notes": "two False gates per pin, staggered rows",
     "media": [
       {
         "title": "By: Reinder Stegen",
@@ -35265,7 +35265,7 @@
       "ab1e901f",
       "6d2555aa"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.888Z"
+    "lastUpdated": "2024-12-01T00:26:32.264Z"
   },
   {
     "id": "6d2555aa",
@@ -35962,7 +35962,7 @@
         "model": "3KS+"
       }
     ],
-    "version": "with false gates and no mastered sliders",
+    "version": "with False gates and no mastered sliders",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -36051,7 +36051,7 @@
       }
     ],
     "views": 1027,
-    "lastUpdated": "2024-02-08T02:04:15.209Z"
+    "lastUpdated": "2024-12-01T00:26:32.265Z"
   },
   {
     "id": "1e197456",
@@ -36578,7 +36578,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates, 1 mastered lever",
+    "version": "w/ False gates, 1 mastered lever",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -36629,7 +36629,7 @@
       "03cbfaa5",
       "340154fa"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.027Z"
+    "lastUpdated": "2024-12-01T00:26:32.265Z"
   },
   {
     "id": "340154fa",
@@ -36644,7 +36644,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates, 0 mastered levers",
+    "version": "w/ False gates, 0 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -36695,7 +36695,7 @@
       "03cbfaa5",
       "4abcb403"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.027Z"
+    "lastUpdated": "2024-12-01T00:26:32.265Z"
   },
   {
     "id": "10ab07eb",
@@ -38899,7 +38899,7 @@
         "model": "U9"
       }
     ],
-    "version": "8 unmastered elements, barred false gates (old shallow false gates counts as Red Belt)",
+    "version": "8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -38963,7 +38963,7 @@
     "relatedIds": [
       "d1272b9f"
     ],
-    "lastUpdated": "2024-08-25T23:06:32.342Z"
+    "lastUpdated": "2024-12-01T00:26:32.267Z"
   },
   {
     "id": "d1272b9f",
@@ -38974,7 +38974,7 @@
         "model": "U9"
       }
     ],
-    "version": "9 unmastered elements, barred false gates (old shallow false gates counts as BB1)",
+    "version": "9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -39038,7 +39038,7 @@
     "relatedIds": [
       "71c7270b"
     ],
-    "lastUpdated": "2024-08-25T23:00:21.098Z"
+    "lastUpdated": "2024-12-01T00:26:32.267Z"
   },
   {
     "id": "ae7d3780",
@@ -39581,7 +39581,7 @@
         "model": "32C81P"
       }
     ],
-    "version": "triangular central posts and many false gates",
+    "version": "triangular central posts and many False gates",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -39645,7 +39645,7 @@
       }
     ],
     "views": 869,
-    "lastUpdated": "2024-02-22T00:38:32.083Z"
+    "lastUpdated": "2024-12-01T00:26:32.267Z"
   },
   {
     "id": "63a9a2b1",
@@ -42594,7 +42594,7 @@
         "model": "4 lever cabinet lock"
       }
     ],
-    "version": "uncurtained, no false gates",
+    "version": "uncurtained, no False gates",
     "lockingMechanisms": [
       "Lever"
     ],
@@ -42605,7 +42605,7 @@
       "Pipe key"
     ],
     "views": 67,
-    "lastUpdated": "2024-01-15T21:27:04.414Z"
+    "lastUpdated": "2024-12-01T00:26:32.269Z"
   },
   {
     "id": "4c90dcbd",

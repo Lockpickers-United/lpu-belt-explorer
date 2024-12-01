@@ -34,7 +34,7 @@
   },
   {
     "term": "anti-manipulation double-lever",
-    "definition": "A type of fence lever control device which lifts the lever fence away from the cam with rotation and requires the operator to trigger the mechanism.",
+    "definition": "A type of Fence lever control device which lifts the lever fence away from the cam with rotation and requires the operator to trigger the mechanism.",
     "media": {
       "title": "By: Insomniaclockpicker",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -43,7 +43,7 @@
     }
   },
   {
-    "term": "anti-punch relocker",
+    "term": "Anti-punch relocker",
     "definition": "A spring loaded device which when the backplate removes, blocks the bolt with a lever. When the relocker is engaged, the lock will not open, even with the correct combination.",
     "media": {
       "title": "By: Mick777Oz",
@@ -602,7 +602,7 @@
     }
   },
   {
-    "term": "false gates",
+    "term": "False gates",
     "definition": "Gates on a tumbler which are not deep enough for the core to turn if the sidebar falls in.",
     "media": {
       "title": "By: mgsecure",
@@ -613,7 +613,7 @@
     }
   },
   {
-    "term": "false gates (safe locks)",
+    "term": "False gates (safe locks)",
     "definition": "A portion of the wheel with a shallow cut designed to mimick a gate, that are not deep enough for the fence to drop completely.",
     "media": {
       "title": "By: Mick777Oz",
@@ -625,7 +625,7 @@
   },
   {
     "term": "false set",
-    "definition": "The small rotation of a plug as elements (particularly spools or false gates) look partially set, that does not allow the lock to open.",
+    "definition": "The small rotation of a plug as elements (particularly spools or False gates) look partially set, that does not allow the lock to open.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -646,7 +646,7 @@
     }
   },
   {
-    "term": "fence lever control device",
+    "term": "Fence lever control device",
     "definition": "A device designed to only tension the lever fence against the wheel pack within a specific range on the dial. La Gard 3332 shown as example.",
     "media": {
       "title": "By: Mick777Oz",
@@ -843,7 +843,7 @@
     }
   },
   {
-    "term": "indirect drive",
+    "term": "Indirect drive",
     "definition": "Rotating the wheel pack is done via intermediary gears. Implemented to make manipulation more difficult."
   },
   {
@@ -880,7 +880,7 @@
     }
   },
   {
-    "term": "key change",
+    "term": "Key change",
     "definition": "Insert a warded combo change key through all the wheels with gates aligned at the change index. Turn key, dial new combination at change index, turn key back and remove.",
     "media": {
       "title": "By: Mick777Oz",
@@ -1034,7 +1034,7 @@
     }
   },
   {
-    "term": "moveable flies",
+    "term": "Moveable flies",
     "definition": "Fly that can move about 8 increments, used to allow the whole keyspace of a wheel.",
     "media": {
       "title": "By: Mick777Oz",
@@ -1045,7 +1045,7 @@
     }
   },
   {
-    "term": "multi-orientation cam",
+    "term": "Multi-orientation cam",
     "definition": "A cam wheel that accepts a spline key in more than one position, to allow the drop-in area to remain at the same index point while orienting the lock body in.",
     "media": {
       "title": "By: Mick777Oz",
