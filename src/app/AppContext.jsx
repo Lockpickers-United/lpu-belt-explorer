@@ -40,8 +40,6 @@ export function AppProvider({children}) {
             const response = await fetch('/version.json', {cache: 'no-cache'})
             const {version: newVersion, minVersion} = (await response.json())
 
-            //if (!/\d{4}-\d\d-\d\d/.test(newVersion)) setUpdateRequired(true) //check for old version format
-
             if (first) {
                 setInitial(newVersion)
                 setInitialMinVersion(minVersion)
@@ -80,11 +78,12 @@ export function AppProvider({children}) {
         setBeta: handleSetBeta,
         admin,
         setAdmin: handleSetAdmin,
+        version: initial,
         updateRequired,
         updateAvailable,
         compact,
         setCompact
-    }), [beta, handleSetBeta, admin, handleSetAdmin, compact, setCompact, updateRequired, updateAvailable])
+    }), [beta, handleSetBeta, admin, handleSetAdmin, initial, updateRequired, updateAvailable, compact])
 
     return (
         <AppContext.Provider value={value}>
