@@ -302,8 +302,8 @@ const dialsMainData = dialsData.map(datum => {
         id: datum['Unique ID'],
         make: datum.Make,
         model: datum.Model,
-        group: datum.Group,
-        fence: datum.Fence,
+        group: datum['Group'],
+        fence: datum['Fence'],
         wheels: datum.Wheels,
         digits: datum.Digits,
         notes: datum.Notes,
@@ -394,11 +394,16 @@ const lockFeatures = jsonData
 const dialFeatures = dialsMainData
     .map(({features = []}) => features)
     .flat()
-new Set(lockFeatures.concat(dialFeatures))
-    .forEach(term => {
-        const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
-        if (!item) console.log('Term not defined in Glossary: ', term)
-    })
+
+new Set(lockFeatures).forEach(term => {
+    const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
+    if (!item) console.log('Term not defined in Glossary: ', term)
+})
+
+new Set(dialFeatures).forEach(term => {
+    const item = glossary.find(entry => entry.term.toLowerCase() === term.toLowerCase())
+    if (!item) console.log('Safe locks term not defined in Glossary: ', term)
+})
 
 // RAFL Data
 console.log('Processing RAFL data...')

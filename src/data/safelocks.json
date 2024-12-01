@@ -17,17 +17,17 @@
     "make": "Big Red",
     "model": "CDL-3",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
     "media": [
       {
@@ -59,44 +59,44 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.307Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "761d2fe8",
     "make": "Big Red",
     "model": "CDL-3M",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "693fd901",
     "make": "Big Red",
     "model": "CDL-4",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
     "media": [
       {
@@ -128,42 +128,42 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "0638d9d8",
     "make": "Big Red",
     "model": "CDL-4M",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "f5703ac0",
     "make": "Chubb",
     "model": "Brass Vault Lock (e.g 7K50/7K64)",
     "group": "not rated",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Vault Format"
+      "Moveable flies",
+      "Key change",
+      "Vault format"
     ],
     "media": [
       {
@@ -209,7 +209,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-19T15:58:18.908Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "8a50bbb0",
@@ -229,55 +229,55 @@
     "make": "Chubb",
     "model": "7L08",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-10-13T18:21:49.690Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "75ddbd51",
     "make": "Chubb",
     "model": "7L51",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "Standard size wheels",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Vault Format",
-      "Internal Indirect Drive"
+      "Moveable flies",
+      "Key change",
+      "Vault format",
+      "Internal Indirect drive"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.177Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "19359f35",
     "make": "Chubb",
     "model": "Manifoil MK3",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Eccentric Double-Cam",
-      "LOBC Cover",
-      "Lead Shielding",
-      "Noise Rollers"
+      "Moveable flies",
+      "Key change",
+      "Eccentric double-cam",
+      "LOBC cover",
+      "Lead shielding",
+      "Friction rollers"
     ],
     "media": [
       {
@@ -323,25 +323,25 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956795523_4831dfc727_o.jpg"
       }
     ],
-    "lastUpdated": "2024-10-13T18:21:49.690Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "087f41e9",
     "make": "Chubb",
     "model": "Manifoil MK4",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Eccentric Double-Cam",
-      "LOBC Cover",
-      "Lead Shielding",
-      "Noise Rollers"
+      "Moveable flies",
+      "Key change",
+      "Eccentric double-cam",
+      "LOBC cover",
+      "Lead shielding",
+      "Friction rollers"
     ],
     "media": [
       {
@@ -352,25 +352,25 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955620502_2d16cbdaa3_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "58441a32",
     "make": "Diebold",
     "model": "177",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Zero Change"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Zero change"
     ],
     "media": [
       {
@@ -402,26 +402,26 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "74ac6513",
     "make": "Diebold",
     "model": "177-23B",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.009Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "91242adb",
@@ -542,19 +542,19 @@
     "make": "Federal",
     "model": "800",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.010Z"
+    "lastUpdated": "2024-12-01T01:08:05.691Z"
   },
   {
     "id": "2f6b4c23",
@@ -678,23 +678,23 @@
     "make": "Kromer",
     "model": "14a",
     "group": "not rated",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "3",
     "digits": "A-Z",
     "notes": "There are at least 2, probably 3 different versions. Dial interacts with all wheels directly. Possibly spring loaded pin interacting with one wheel to make feeling harder.",
     "tier": "",
     "features": [
-      "Enforced Wheel Scrambling",
-      "False Gates"
+      "Enforced wheel scrambling",
+      "False gates"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "cc91e358",
     "make": "Kromer",
     "model": "15b",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3 or 4",
     "digits": "1-100",
     "notes": "Copy of S&G lock. W1 may be replaced by spacer ring to create 3-wheel version.",
@@ -703,16 +703,16 @@
       "Movable flies",
       "Key change",
       "Vault format",
-      "Optional indirect drive"
+      "Optional Indirect drive"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "3ad83c5d",
     "make": "Kromer",
     "model": "3001",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Update of model 15b.",
@@ -721,8 +721,8 @@
       "Movable flies",
       "Key change",
       "Vault format",
-      "Zero Change",
-      "Optional indirect drive"
+      "Zero change",
+      "Optional Indirect drive"
     ],
     "media": [
       {
@@ -747,14 +747,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "6b301968",
     "make": "Kromer",
     "model": "3002",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "1-100",
     "notes": "Update of model 15b.",
@@ -763,10 +763,10 @@
       "Movable flies",
       "Key change",
       "Vault format",
-      "Zero Change",
-      "Optional indirect drive"
+      "Zero change",
+      "Optional Indirect drive"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "e393e3d5",
@@ -786,7 +786,7 @@
     "make": "Kromer",
     "model": "3011",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Update of model 3001.",
@@ -795,8 +795,8 @@
       "Movable flies",
       "Key change",
       "Vault format",
-      "Zero Change",
-      "Optional indirect drive"
+      "Zero change",
+      "Optional Indirect drive"
     ],
     "media": [
       {
@@ -835,14 +835,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "f59d47b3",
     "make": "Kromer",
     "model": "3012",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "1-100",
     "notes": "Update of model 3002.",
@@ -851,8 +851,8 @@
       "Movable flies",
       "Key change",
       "Vault format",
-      "Zero Change",
-      "Optional indirect drive"
+      "Zero change",
+      "Optional Indirect drive"
     ],
     "media": [
       {
@@ -877,14 +877,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53543551118_fc1f2597f1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "93b9e6f5",
     "make": "Kromer",
     "model": "3031",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Small format, but proprietary.",
@@ -893,16 +893,16 @@
       "Movable flies",
       "Key change",
       "Small format",
-      "Zero Change"
+      "Zero change"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "c32aa445",
     "make": "Kromer",
     "model": "3055",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "1-100",
     "notes": "",
@@ -913,14 +913,14 @@
       "Vault format",
       "Magnetic double cam"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "cf527800",
     "make": "Kromer",
     "model": "3065",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "At least three versions. Double pins with 2L-1R-1L-R sequence.",
@@ -931,14 +931,14 @@
       "Double pins",
       "Proprietary locker"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "8f0e636e",
     "make": "Kromer",
     "model": "3090",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Small format, but proprietary.",
@@ -947,17 +947,17 @@
       "Movable flies",
       "Key change",
       "Small format",
-      "Zero Change",
+      "Zero change",
       "Fence lever control device"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "8aa74b36",
     "make": "Kromer",
     "model": "3095",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "Update of model 3031.",
@@ -967,14 +967,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "d183640f",
     "make": "Kromer",
     "model": "3096",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "Update of model 3032.",
@@ -984,14 +984,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "c07f8b5c",
     "make": "Kromer",
     "model": "3097",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1001,14 +1001,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "e2f66615",
     "make": "Kromer",
     "model": "3098",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1018,25 +1018,25 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "048058c3",
     "make": "La Gard",
     "model": "1548",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Wheel Shadowing"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Wheel shadowing"
     ],
     "media": [
       {
@@ -1054,27 +1054,27 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54006913450_44c1f6f858_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-19T15:58:18.909Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "218529be",
     "make": "La Gard",
     "model": "1800(RL)",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Wheel Shadowing"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Wheel shadowing"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "ea7b53e2",
@@ -1094,38 +1094,38 @@
     "make": "La Gard",
     "model": "1947",
     "group": "1",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
-    "lastUpdated": "2024-10-29T02:42:22.164Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "0e5acb82",
     "make": "La Gard",
     "model": "1985",
     "group": "1",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
     "media": [
       {
@@ -1143,24 +1143,24 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "cffd6d42",
     "make": "La Gard",
     "model": "2050",
     "group": "2",
-    "fence": "Gravity Fence",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Vault Format"
+      "Moveable flies",
+      "Key change",
+      "Vault format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "7d060e16",
@@ -1196,18 +1196,18 @@
     "make": "La Gard",
     "model": "3330",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Wheel Shadowing"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Wheel shadowing"
     ],
     "media": [
       {
@@ -1274,25 +1274,25 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764643_e569d850ab_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "baa53440",
     "make": "La Gard",
     "model": "3332",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
     "media": [
       {
@@ -1338,25 +1338,25 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "0b1fc984",
     "make": "La Gard",
     "model": "3390",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
     "media": [
       {
@@ -1374,40 +1374,40 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.309Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "e8bfa9ff",
     "make": "Mosler",
     "model": "1830",
     "group": "2",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Right/Left Handed open",
-      "Vault Format",
+      "Moveable flies",
+      "Key change",
+      "Right/left handed open",
+      "Vault format",
       "Indirect drive",
-      "LOBC"
+      "LOBC cover"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.010Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "0e6f7715",
     "make": "Mosler",
     "model": "5-H",
     "group": "",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "58be25bb",
@@ -1479,19 +1479,19 @@
     "make": "Mosler",
     "model": "MR(K)-302",
     "group": "1R",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Sprung Double-Cam"
+      "Moveable flies",
+      "Mesh change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates",
+      "Sprung double-cam"
     ],
     "media": [
       {
@@ -1537,83 +1537,83 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "56fed723",
     "make": "Mosler",
     "model": "MR-402",
     "group": "1R",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Sprung Double-Cam"
+      "Moveable flies",
+      "Mesh change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates",
+      "Sprung double-cam"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "c51157c7",
     "make": "Mosler",
     "model": "no.11",
     "group": "",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Friction Fence"
+      "Moveable flies",
+      "Mesh change",
+      "Friction fence"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "e2f3be34",
     "make": "Precision",
     "model": "P67",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "7bdc4f32",
     "make": "Rench",
     "model": "4031",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "ad3b6507",
@@ -1626,14 +1626,14 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "Fence Lever Control Device"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "Fence lever control device"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "369205da",
@@ -1659,11 +1659,11 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
       "Anti-manipulation double-lever"
     ],
     "media": [
@@ -1696,85 +1696,85 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583438689_3d27ab0734_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "a7258495",
     "make": "Sargent & Greenleaf",
     "model": "6430",
     "group": "2M",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Right/Left Handed open",
-      "Vault Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Right/left handed open",
+      "Vault format"
     ],
-    "lastUpdated": "2024-10-29T02:42:22.165Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "350e09f9",
     "make": "Sargent & Greenleaf",
     "model": "6435",
     "group": "1",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Right/Left Handed open",
-      "Vault Format",
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Right/left handed open",
+      "Vault format",
       "Indirect drive"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "c2f54e5c",
     "make": "Sargent & Greenleaf",
     "model": "6530",
     "group": "2",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Right/Left Handed open",
-      "Vault Format",
-      "Eccentric Roller"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Right/left handed open",
+      "Vault format",
+      "Eccentric roller"
     ],
-    "lastUpdated": "2024-10-29T02:42:22.165Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "bd3e18ae",
     "make": "Sargent & Greenleaf",
     "model": "6535",
     "group": "2",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Right/Left Handed open",
-      "Vault Format",
-      "Eccentric Roller",
-      "Indirect Drive"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Right/left handed open",
+      "Vault format",
+      "Eccentric roller",
+      "Indirect drive"
     ],
     "media": [
       {
@@ -1827,26 +1827,26 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53927144130_390c46b63b_o.jpg"
       }
     ],
-    "lastUpdated": "2024-10-29T02:42:22.165Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "7c91d17c",
     "make": "Sargent & Greenleaf",
     "model": "6630",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Eccentric Roller"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates",
+      "Eccentric roller"
     ],
     "media": [
       {
@@ -1885,27 +1885,26 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521500463_afffa12ba1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "ffffb9fa",
     "make": "Sargent & Greenleaf",
     "model": "6631",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Eccentric Roller",
-      "False Gates"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates",
+      "Eccentric roller"
     ],
     "media": [
       {
@@ -1937,25 +1936,25 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53926946403_4f591ac60a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "9262a564",
     "make": "Sargent & Greenleaf",
     "model": "6642",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates"
     ],
     "media": [
       {
@@ -1994,46 +1993,46 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "edb5f9e3",
     "make": "Sargent & Greenleaf",
     "model": "6643",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.310Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "082b9b1f",
     "make": "Sargent & Greenleaf",
     "model": "6651",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
-      "False Gates",
-      "Eccentric Roller"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
+      "False gates",
+      "Eccentric roller"
     ],
     "media": [
       {
@@ -2100,24 +2099,24 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "ae84d433",
     "make": "Sargent & Greenleaf",
     "model": "6730",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
     "media": [
       {
@@ -2149,43 +2148,43 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "15d969bb",
     "make": "Sargent & Greenleaf",
     "model": "6731",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "8a2dc6e5",
     "make": "Sargent & Greenleaf",
     "model": "6741",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
     "media": [
       {
@@ -2203,7 +2202,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "aeeb2e0f",
@@ -2216,11 +2215,11 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Shutter Padlock",
-      "Removeable Shoe",
-      "Manipulation Resistant"
+      "Shutter padlock",
+      "Removeable shoe",
+      "Manipulation resistant"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "3809d4a5",
@@ -2266,7 +2265,7 @@
     "make": "Sargent & Greenleaf",
     "model": "8100",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "2 or 3",
     "digits": "0-99",
     "notes": "",
@@ -2274,24 +2273,24 @@
     "features": [
       "Dial change and pin change."
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "211383d8",
     "make": "Sargent & Greenleaf",
     "model": "841x",
     "group": "1",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
       "Butterfly anti-manipulation cam"
     ],
     "media": [
@@ -2310,27 +2309,27 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "daa48991",
     "make": "Sargent & Greenleaf",
     "model": "843x",
     "group": "1R",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
       "Butterfly anti-manipulation cam"
     ],
-    "lastUpdated": "2024-08-18T14:27:37.311Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "87af3a83",
@@ -2343,11 +2342,11 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
       "Anti-manipulation double-lever"
     ],
     "media": [
@@ -2366,7 +2365,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912384_de34d8b5c5_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "0004c8cc",
@@ -2379,11 +2378,11 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format",
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format",
       "Anti-manipulation double-lever"
     ],
     "media": [
@@ -2402,7 +2401,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "e2c63188",
@@ -2435,17 +2434,17 @@
     "make": "Sargent & Greenleaf",
     "model": "R6730",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
     "media": [
       {
@@ -2477,26 +2476,26 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "06555f12",
     "make": "Sargent & Greenleaf",
     "model": "R6731",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Standard Format"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "cc7e7e41",
@@ -2509,12 +2508,12 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Spring (or Friction) Loaded Rotary Fence"
+      "Moveable flies",
+      "Mesh change",
+      "Anti-punch relocker",
+      "Spring loaded (or friction) rotary fence"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "75ae5685",
@@ -2527,11 +2526,11 @@
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Multi-Orientation Cam",
-      "Spring Loaded \"Direct Entry\" Fence"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Multi-orientation cam",
+      "Spring loaded \"direct entry\" fence"
     ],
     "media": [
       {
@@ -2556,7 +2555,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54006499756_bac06264ce_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-19T15:58:18.909Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "9250529e",
@@ -2576,17 +2575,17 @@
     "make": "Yale",
     "model": "025 1/2",
     "group": "not rated",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Friction Fence"
+      "Moveable flies",
+      "Mesh change",
+      "Friction fence"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "ba90d477",
@@ -2606,55 +2605,55 @@
     "make": "Yale",
     "model": "B30",
     "group": "1R",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Friction Fence",
-      "Anti-manipulation Mechanisms"
+      "Moveable flies",
+      "Mesh change",
+      "Anti-punch relocker",
+      "Friction fence",
+      "Anti-manipulation mechanisms"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "ac15ffba",
     "make": "Yale",
     "model": "B31",
     "group": "1",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Friction Fence",
-      "Anti-manipulation Mechanisms"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Friction fence",
+      "Anti-manipulation mechanisms"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.011Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "7ce746ae",
     "make": "Yale",
     "model": "B40",
     "group": "1R",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Friction Fence",
-      "Anti-manipulation Mechanisms"
+      "Moveable flies",
+      "Mesh change",
+      "Anti-punch relocker",
+      "Friction fence",
+      "Anti-manipulation mechanisms"
     ],
     "media": [
       {
@@ -2679,42 +2678,42 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54106917002_7ea7782256_o.jpg"
       }
     ],
-    "lastUpdated": "2024-10-31T23:48:20.555Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "b6f20651",
     "make": "Yale",
     "model": "B41",
     "group": "1",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
     "features": [
-      "Moveable Flies",
-      "Key Change",
-      "Anti-Punch Relocker",
-      "Friction Fence",
-      "Anti-manipulation Mechanisms"
+      "Moveable flies",
+      "Key change",
+      "Anti-punch relocker",
+      "Friction fence",
+      "Anti-manipulation mechanisms"
     ],
-    "lastUpdated": "2024-09-18T01:44:48.012Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "6eeba243",
     "make": "Yale",
     "model": "OC-5",
     "group": "not rated",
-    "fence": "Friction Fence",
+    "fence": "Friction fence",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
     "tier": "",
     "features": [
-      "Moveable Flies",
-      "Mesh Change",
-      "Anti-Punch Relocker",
-      "Friction Fence"
+      "Moveable flies",
+      "Mesh change",
+      "Anti-punch relocker",
+      "Friction fence"
     ],
     "media": [
       {
@@ -2746,7 +2745,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541737351_c475dd7200_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-01T01:08:05.692Z"
   },
   {
     "id": "86c1a98b",

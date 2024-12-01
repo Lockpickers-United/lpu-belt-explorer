@@ -17,7 +17,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
-    const [potDetails, setPotDetails] = useState({})
+    const [potDetails, setPotDetails] = useState(potData[index])
 
     const showDelete = Array.from(Object.keys(potData)).length > 1
 
@@ -68,7 +68,6 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             item = {}
         }
         setPotDetails({...potDetails, ...item})
-        //if (!potData[index]) handlePotChange(index, potDetails, false)
     }, [options, potDetails, itemTitles, itemIds, itemPotNumbers, itemFormIds])
 
     const [open, setOpen] = useState(false)

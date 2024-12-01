@@ -4481,8 +4481,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable",
-      "Changelog"
+      "Unguttable"
     ],
     "media": [
       {
@@ -4501,7 +4500,7 @@
       }
     ],
     "views": 637,
-    "lastUpdated": "2024-10-30T20:09:22.869Z"
+    "lastUpdated": "2024-12-01T01:08:05.674Z"
   },
   {
     "id": "99057c44",
@@ -6448,8 +6447,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -6475,7 +6473,7 @@
       }
     ],
     "views": 1400,
-    "lastUpdated": "2024-10-30T20:09:22.870Z"
+    "lastUpdated": "2024-12-01T01:08:05.675Z"
   },
   {
     "id": "8d1ebc79",
@@ -6490,8 +6488,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -6538,7 +6535,7 @@
       }
     ],
     "views": 847,
-    "lastUpdated": "2024-10-30T20:09:22.870Z"
+    "lastUpdated": "2024-12-01T01:08:05.675Z"
   },
   {
     "id": "f97700ff",
@@ -7876,11 +7873,8 @@
         "model": "Clinch"
       }
     ],
-    "features": [
-      "Changelog"
-    ],
     "views": 21,
-    "lastUpdated": "2024-10-30T20:09:22.870Z"
+    "lastUpdated": "2024-12-01T01:08:05.675Z"
   },
   {
     "id": "ca6ce763",
@@ -12793,8 +12787,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -12828,7 +12821,7 @@
       }
     ],
     "views": 1821,
-    "lastUpdated": "2024-10-30T20:09:22.873Z"
+    "lastUpdated": "2024-12-01T01:08:05.676Z"
   },
   {
     "id": "85d93eb1",
@@ -16012,9 +16005,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Ed McBane",
@@ -16084,7 +16074,7 @@
     "relatedIds": [
       "779d74f5"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.874Z"
+    "lastUpdated": "2024-12-01T01:08:05.677Z"
   },
   {
     "id": "40e50dd4",
@@ -16570,8 +16560,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -16626,7 +16615,7 @@
       }
     ],
     "views": 186,
-    "lastUpdated": "2024-10-30T20:09:22.875Z"
+    "lastUpdated": "2024-12-01T01:08:05.677Z"
   },
   {
     "id": "1fe0ba0d",
@@ -16738,9 +16727,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Toool NL",
@@ -16789,7 +16775,7 @@
       }
     ],
     "views": 333,
-    "lastUpdated": "2024-10-30T20:09:22.875Z"
+    "lastUpdated": "2024-12-01T01:08:05.677Z"
   },
   {
     "id": "72675596",
@@ -18739,8 +18725,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -18781,7 +18766,7 @@
       }
     ],
     "views": 1550,
-    "lastUpdated": "2024-10-30T20:09:22.876Z"
+    "lastUpdated": "2024-12-01T01:08:05.677Z"
   },
   {
     "id": "dd1dd313",
@@ -19572,8 +19557,7 @@
     "features": [
       "Magnetic pins",
       "Pin-in-pin",
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -19673,7 +19657,7 @@
       }
     ],
     "views": 510,
-    "lastUpdated": "2024-10-30T23:59:18.214Z"
+    "lastUpdated": "2024-12-01T01:08:05.678Z"
   },
   {
     "id": "8f004bf0",
@@ -19691,9 +19675,6 @@
     "version": "all versions, <15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [
-      "Changelog"
     ],
     "media": [
       {
@@ -19763,7 +19744,7 @@
     "relatedIds": [
       "9b00fb5e"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.876Z"
+    "lastUpdated": "2024-12-01T01:08:05.678Z"
   },
   {
     "id": "98ba98ae",
@@ -20164,7 +20145,6 @@
     "features": [
       "Active sidebar"
     ],
-    "notes": "Changelog",
     "media": [
       {
         "title": "By: Datagram",
@@ -20230,7 +20210,7 @@
       }
     ],
     "views": 344,
-    "lastUpdated": "2024-10-30T20:09:22.877Z"
+    "lastUpdated": "2024-12-01T01:08:05.678Z"
   },
   {
     "id": "71bce5b7",
@@ -20545,10 +20525,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
-    "lastUpdated": "2024-10-30T20:09:22.877Z"
+    "lastUpdated": "2024-12-01T01:08:05.678Z"
   },
   {
     "id": "acde7f0c",
@@ -20989,7 +20966,7 @@
         "model": "450"
       }
     ],
-    "version": "no false gates",
+    "version": "no False gates",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -21024,7 +21001,7 @@
       }
     ],
     "views": 360,
-    "lastUpdated": "2023-07-25T11:20:19.894Z"
+    "lastUpdated": "2024-12-01T01:08:05.678Z"
   },
   {
     "id": "4cd09b3b",
@@ -21229,9 +21206,6 @@
       "Pin-tumbler",
       "Sidebar"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Septclues",
@@ -21263,7 +21237,7 @@
       }
     ],
     "views": 49,
-    "lastUpdated": "2024-10-30T20:09:22.877Z"
+    "lastUpdated": "2024-12-01T01:08:05.678Z"
   },
   {
     "id": "3b848976",
@@ -24198,8 +24172,7 @@
     ],
     "features": [
       "Tapered drivers",
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "media": [
       {
@@ -24253,7 +24226,7 @@
       }
     ],
     "views": 413,
-    "lastUpdated": "2024-10-30T20:09:22.879Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "9a9ae8df",
@@ -25176,8 +25149,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -25210,7 +25182,7 @@
       }
     ],
     "views": 483,
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "db380ba0",
@@ -25318,8 +25290,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -25362,7 +25333,7 @@
     "relatedIds": [
       "4223eb26"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "2c58f220",
@@ -26142,9 +26113,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -26181,7 +26149,7 @@
     "relatedIds": [
       "8f004bf0"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "e38d015b",
@@ -26405,8 +26373,7 @@
     ],
     "features": [
       "Sprung sliders",
-      "Reverse sidebar",
-      "Changelog"
+      "Reverse sidebar"
     ],
     "media": [
       {
@@ -26432,7 +26399,7 @@
       }
     ],
     "views": 107,
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "dd6a3683",
@@ -26452,8 +26419,7 @@
     ],
     "features": [
       "Torpedo keypins",
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "media": [
       {
@@ -26489,7 +26455,7 @@
       }
     ],
     "views": 588,
-    "lastUpdated": "2024-10-30T20:09:22.881Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "e39885f3",
@@ -26510,8 +26476,7 @@
     ],
     "features": [
       "Shark fin keypins",
-      "Torpedo keypins",
-      "Changelog"
+      "Torpedo keypins"
     ],
     "media": [
       {
@@ -26564,7 +26529,7 @@
       }
     ],
     "views": 607,
-    "lastUpdated": "2024-10-30T20:09:22.881Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "61247b32",
@@ -26804,7 +26769,7 @@
         "model": "484"
       }
     ],
-    "version": "with false gates, 4-6 mastered levers",
+    "version": "with False gates, 4-6 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -26848,7 +26813,7 @@
       "4abcb403",
       "340154fa"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "9c627ebd",
@@ -27028,9 +26993,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Qikom",
@@ -27075,7 +27037,7 @@
       }
     ],
     "views": 189,
-    "lastUpdated": "2024-10-30T20:09:22.884Z"
+    "lastUpdated": "2024-12-01T01:08:05.679Z"
   },
   {
     "id": "7298a640",
@@ -28964,8 +28926,7 @@
     ],
     "features": [
       "Opposing overset stacks",
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
     "media": [
@@ -28992,7 +28953,7 @@
       }
     ],
     "views": 150,
-    "lastUpdated": "2024-10-30T20:09:22.885Z"
+    "lastUpdated": "2024-12-01T01:08:05.680Z"
   },
   {
     "id": "b91890bf",
@@ -29742,8 +29703,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -29772,7 +29732,7 @@
     "relatedIds": [
       "054731a5"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.885Z"
+    "lastUpdated": "2024-12-01T01:08:05.680Z"
   },
   {
     "id": "29ab2852",
@@ -30508,8 +30468,7 @@
     "features": [
       "Interactive element",
       "Torpedo keypins",
-      "Shark fin keypins",
-      "Changelog"
+      "Shark fin keypins"
     ],
     "media": [
       {
@@ -30548,7 +30507,7 @@
       }
     ],
     "views": 671,
-    "lastUpdated": "2024-10-30T20:09:22.886Z"
+    "lastUpdated": "2024-12-01T01:08:05.680Z"
   },
   {
     "id": "4993a918",
@@ -30626,8 +30585,7 @@
       "Magnet"
     ],
     "features": [
-      "Magnetic rotors",
-      "Changelog"
+      "Magnetic rotors"
     ],
     "media": [
       {
@@ -30677,7 +30635,7 @@
       }
     ],
     "views": 251,
-    "lastUpdated": "2024-10-30T20:09:22.886Z"
+    "lastUpdated": "2024-12-01T01:08:05.682Z"
   },
   {
     "id": "265226b1",
@@ -30696,7 +30654,7 @@
         "model": "4KS"
       }
     ],
-    "version": "without false gates or 1-3 mastered sliders",
+    "version": "without False gates or 1-3 mastered sliders",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -30764,7 +30722,7 @@
       }
     ],
     "views": 466,
-    "lastUpdated": "2023-11-13T11:31:22.719Z"
+    "lastUpdated": "2024-12-01T01:08:05.682Z"
   },
   {
     "id": "00b569f2",
@@ -30983,7 +30941,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates, 2-3 mastered levers",
+    "version": "w/ False gates, 2-3 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -31034,7 +30992,7 @@
       "4abcb403",
       "340154fa"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.025Z"
+    "lastUpdated": "2024-12-01T01:08:05.682Z"
   },
   {
     "id": "9d7faa15",
@@ -32533,7 +32491,7 @@
         "model": "UR"
       }
     ],
-    "version": "<8 unmastered levers, barred false gates (old shallow false gates counts as Brown Belt)",
+    "version": "<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -32594,7 +32552,7 @@
       }
     ],
     "views": 352,
-    "lastUpdated": "2024-08-25T23:06:32.336Z"
+    "lastUpdated": "2024-12-01T01:08:05.682Z"
   },
   {
     "id": "cc8cfd45",
@@ -32815,9 +32773,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -32849,7 +32804,7 @@
       }
     ],
     "views": 191,
-    "lastUpdated": "2024-10-30T23:59:18.223Z"
+    "lastUpdated": "2024-12-01T01:08:05.682Z"
   },
   {
     "id": "9da7a5f2",
@@ -32970,7 +32925,7 @@
         "model": "32A8"
       }
     ],
-    "version": "thin round center posts, few or no false gates",
+    "version": "thin round center posts, few or no False gates",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -33054,7 +33009,7 @@
       }
     ],
     "views": 440,
-    "lastUpdated": "2024-02-21T19:02:02.020Z"
+    "lastUpdated": "2024-12-01T01:08:05.682Z"
   },
   {
     "id": "2ff8a738",
@@ -35206,10 +35161,9 @@
     "features": [
       "False gates",
       "Sprung sliders",
-      "Active sidebar",
-      "Changelog"
+      "Active sidebar"
     ],
-    "notes": "two false gates per pin, staggered rows",
+    "notes": "two False gates per pin, staggered rows",
     "media": [
       {
         "title": "By: Reinder Stegen",
@@ -35265,7 +35219,7 @@
       "ab1e901f",
       "6d2555aa"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.888Z"
+    "lastUpdated": "2024-12-01T01:08:05.683Z"
   },
   {
     "id": "6d2555aa",
@@ -35962,7 +35916,7 @@
         "model": "3KS+"
       }
     ],
-    "version": "with false gates and no mastered sliders",
+    "version": "with False gates and no mastered sliders",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -36051,7 +36005,7 @@
       }
     ],
     "views": 1027,
-    "lastUpdated": "2024-02-08T02:04:15.209Z"
+    "lastUpdated": "2024-12-01T01:08:05.683Z"
   },
   {
     "id": "1e197456",
@@ -36578,7 +36532,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates, 1 mastered lever",
+    "version": "w/ False gates, 1 mastered lever",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -36629,7 +36583,7 @@
       "03cbfaa5",
       "340154fa"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.027Z"
+    "lastUpdated": "2024-12-01T01:08:05.683Z"
   },
   {
     "id": "340154fa",
@@ -36644,7 +36598,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ false gates, 0 mastered levers",
+    "version": "w/ False gates, 0 mastered levers",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -36695,7 +36649,7 @@
       "03cbfaa5",
       "4abcb403"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.027Z"
+    "lastUpdated": "2024-12-01T01:08:05.683Z"
   },
   {
     "id": "10ab07eb",
@@ -38899,7 +38853,7 @@
         "model": "U9"
       }
     ],
-    "version": "8 unmastered elements, barred false gates (old shallow false gates counts as Red Belt)",
+    "version": "8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -38963,7 +38917,7 @@
     "relatedIds": [
       "d1272b9f"
     ],
-    "lastUpdated": "2024-08-25T23:06:32.342Z"
+    "lastUpdated": "2024-12-01T01:08:05.684Z"
   },
   {
     "id": "d1272b9f",
@@ -38974,7 +38928,7 @@
         "model": "U9"
       }
     ],
-    "version": "9 unmastered elements, barred false gates (old shallow false gates counts as BB1)",
+    "version": "9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -39038,7 +38992,7 @@
     "relatedIds": [
       "71c7270b"
     ],
-    "lastUpdated": "2024-08-25T23:00:21.098Z"
+    "lastUpdated": "2024-12-01T01:08:05.684Z"
   },
   {
     "id": "ae7d3780",
@@ -39581,7 +39535,7 @@
         "model": "32C81P"
       }
     ],
-    "version": "triangular central posts and many false gates",
+    "version": "triangular central posts and many False gates",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -39645,7 +39599,7 @@
       }
     ],
     "views": 869,
-    "lastUpdated": "2024-02-22T00:38:32.083Z"
+    "lastUpdated": "2024-12-01T01:08:05.684Z"
   },
   {
     "id": "63a9a2b1",
@@ -42594,7 +42548,7 @@
         "model": "4 lever cabinet lock"
       }
     ],
-    "version": "uncurtained, no false gates",
+    "version": "uncurtained, no False gates",
     "lockingMechanisms": [
       "Lever"
     ],
@@ -42605,7 +42559,7 @@
       "Pipe key"
     ],
     "views": 67,
-    "lastUpdated": "2024-01-15T21:27:04.414Z"
+    "lastUpdated": "2024-12-01T01:08:05.685Z"
   },
   {
     "id": "4c90dcbd",

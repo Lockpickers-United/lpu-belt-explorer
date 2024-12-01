@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import RaffleAutocompleteBox from './RaffleAutocompleteBox.jsx'
 import allCharities from '../../data/raflCharities.json'
@@ -13,14 +13,20 @@ import formMap from './FormMap'
 import isValidUrl from '../../util/isValidUrl'
 import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
+import RaffleContext from '../RaffleContext.jsx'
 
 function RaffleEntryForm() {
-
     const [formData, setFormData] = useState({})
     const [charityData, setCharityData] = useState({})
     const [potData, setPotData] = useState({0: {tickets:0}})
-
     const potKeys = Array.from(Object.keys(potData))
+
+    const {displayStats, setDisplayStats} = useContext(RaffleContext)
+    const [initial, setInitial] = useState(true)
+    if (initial && displayStats) {
+        setDisplayStats(false)
+        setInitial(false)
+    }
 
     const allocated = useMemo(() => {
         return potKeys.reduce((acc, pot) => {
@@ -233,8 +239,8 @@ function RaffleEntryForm() {
                         }}
                                 style={{
                                     marginRight: 20,
-                                    color: showIssues ? '#de2323' : '#999',
-                                    borderColor: showIssues ? '#de2323' : '#999'
+                                    color: showIssues ? '#de2323' : '#bbb',
+                                    borderColor: showIssues ? '#de2323' : '#bbb'
                                 }}
                         >Show Issues</Button>
                     </div>
