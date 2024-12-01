@@ -18,7 +18,8 @@ function Tracker({feature, ...extraParams}) {
 
 const files = {
     locks: 'welcome.gif',
-    lock: 'clear.gif'
+    lock: 'clear.gif',
+    raflPot: 'rafl.gif'
 }
 
 export default React.memo(Tracker)
