@@ -11,7 +11,9 @@ function CopyLinkToRaflPotButton({entry}) {
         const name =  entry.title
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
         const hostname = `${window.location.protocol}//${window.location.host}`
-        const link = `${hostname}/#/rafl/?id=${entry.id}&name=${safeName}`
+        const param = window.location.host !== 'lpubelts.com' ? `&h=${hostname}` : '' //eslint-disable-line
+
+        const link = `https://share.lpubelts.com/?id=${entry.id}&name=${safeName}`
         
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link to RAFL pot copied to clipboard.')
