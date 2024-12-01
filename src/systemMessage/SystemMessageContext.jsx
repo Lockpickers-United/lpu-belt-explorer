@@ -2,6 +2,8 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 import {useLocalStorage} from 'usehooks-ts'
+import dayjs from 'dayjs'
+import AppContext from '../app/AppContext.jsx'
 
 const SystemMessageContext = React.createContext({})
 
@@ -10,6 +12,8 @@ export function SystemMessageProvider({children}) {
     const {dbLoaded, adminRole, lockCollection, addToLockCollection, systemMessages} = useContext(DBContext)
     const profile = lockCollection
     const [dismissedMessages, setDismissedMessages] = useLocalStorage('dismissedMessages', [])
+
+    const {version} = useContext(AppContext)
 
     const dismissMessage = useCallback(async (message) => {
         if (isLoggedIn) {
@@ -41,13 +45,15 @@ export function SystemMessageProvider({children}) {
             if (message['targetBlackBeltsOnly']) {
                 valid = profile?.blackBeltAwardedAt > 0 ? valid : 0
             }
-            if (message['targetUserIds']) {
-                valid = message['targetUserIds'].includes(user?.uid) ? 1 : 0
+            if (message['minVersion']) {
+                valid = dayjs(message['minVersion']) <= dayjs(version) ? valid : 0
             }
             if (!message['noDismiss'] && !message['ignoreDismiss']) {
                 valid = !allDismissedMessages.includes(message.id) ? valid : 0
             }
-
+            if (message['targetUserIds']) {
+                valid = message['targetUserIds'].includes(user?.uid) ? 1 : 0
+            }
             const thisMessage = {...message}
             thisMessage.priority = message['targetUserIds'] ? message.priority * 2 : message.priority
             return valid === 1 ? thisMessage : undefined
@@ -56,7 +62,7 @@ export function SystemMessageProvider({children}) {
             .sort((a, b) => {
                 return b.priority - a.priority
             })
-        , [dismissedMessages, systemMessages, profile, user, adminRole])
+        , [systemMessages, profile, dismissedMessages, adminRole, user, version])
 
     const getMessage = useCallback((location) => {
         const baseDir = /\/\w*\//.test(location) ? /\/\w*\//.exec(location)[0] + '*' : location + '/*'
