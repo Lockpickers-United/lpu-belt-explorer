@@ -90,7 +90,7 @@ function RaffleEntryForm() {
     const charityFullTitle = useCallback((charity) => {
         return charity.name
     }, [])
-
+    
     const [showIssues, setShowIssues] = useState(false)
 
     const requiredFields = ['platform', 'username', 'charity', 'donation']
@@ -246,7 +246,7 @@ function RaffleEntryForm() {
                     </div>
                     <Button style={{backgroundColor:continueColor, color:'#000'}} variant='contained'
                             disabled={errors} onClick={handleSubmit}
-                    >Review on Google</Button>
+                    >Review Entry on Google</Button>
                 </div>
 
                 <div style={{
