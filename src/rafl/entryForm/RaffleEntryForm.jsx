@@ -246,7 +246,7 @@ function RaffleEntryForm() {
                     </div>
                     <Button style={{backgroundColor:continueColor, color:'#000'}} variant='contained'
                             disabled={errors} onClick={handleSubmit}
-                    >CONTINUE</Button>
+                    >Review on Google</Button>
                 </div>
 
                 <div style={{

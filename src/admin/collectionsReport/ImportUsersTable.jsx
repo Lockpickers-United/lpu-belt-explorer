@@ -63,6 +63,8 @@ const ImportUsersTable = ({data}) => {
         data: rows
     }
 
+    console.log('awardsDisplayNames', tableData)
+
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
     const mobileMedium = width <= 395
@@ -77,7 +79,7 @@ const ImportUsersTable = ({data}) => {
                     : midWindow ? '.9rem'
                         : '.9rem'
 
-    const tableWidth = '80%'
+    const tableWidth = '60%'
 
     return (
         <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}

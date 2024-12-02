@@ -325,6 +325,13 @@ export default [
                     const {default: RaffleEntryFormRoute} = await import('../rafl/entryForm/RaffleEntryFormRoute.jsx')
                     return {element: <RaffleEntryFormRoute/>}
                 }
+            },
+            {
+                path: '/rafl/reports',
+                lazy: async () => {
+                    const {default: RaffleReportRoute} = await import('../rafl/reports/RaffleReportRoute.jsx')
+                    return {element: <RaffleReportRoute/>}
+                }
             }
         ]
     },
