@@ -90,7 +90,7 @@ function RaffleEntryForm() {
     const charityFullTitle = useCallback((charity) => {
         return charity.name
     }, [])
-    
+
     const [showIssues, setShowIssues] = useState(false)
 
     const requiredFields = ['platform', 'username', 'charity', 'donation']

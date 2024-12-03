@@ -14,12 +14,13 @@ import useData from '../util/useData.jsx'
 import {raflJsonUrl} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import AppContext from '../app/AppContext.jsx'
-import PreviewButton from './PreviewButton.jsx'
 import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RafffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RafflePreviewBar from './RafflePreviewBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
+import PreviewButton from './PreviewButton.jsx'
+import ReportButton from './ReportButton.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
@@ -55,6 +56,7 @@ function RaffleRoute() {
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <PreviewButton/>
+            <ReportButton/>
         </React.Fragment>
     )
     const extrasTwo = undefined

@@ -12,6 +12,7 @@ import RaffleInfoDetails from './RaffleInfoDetails.md?raw'
 import Button from '@mui/material/Button'
 import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
+import ReportButton from './ReportButton.jsx'
 
 function RaffleEnterAboutRoute() {
 
@@ -30,7 +31,12 @@ function RaffleEnterAboutRoute() {
     const contentPadding = !isMobile ? '0px 20px' : '0px 10px'
     const linebreak = !isMobile ? ' ' : <br/>
 
-    const extras = null
+    const extras = (
+        <React.Fragment>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            <ReportButton/>
+        </React.Fragment>
+    )
 
     return (
         <React.Fragment>

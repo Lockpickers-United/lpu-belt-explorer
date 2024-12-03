@@ -6,12 +6,21 @@ import usePageTitle from '../../util/usePageTitle.jsx'
 import RaffleHeader from '../RaffleHeader.jsx'
 import RaffleEntryForm from './RaffleEntryForm.jsx'
 import DBContext from '../../app/DBContext.jsx'
+import ReportButton from '../ReportButton.jsx'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 function RaffleEntryFormRoute() {
     const {lockCollection} = useContext(DBContext)
+    const {isMobile} = useWindowSize()
 
     usePageTitle('RAFL Entry Form')
-    const extras = null
+
+    const extras = (
+        <React.Fragment>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            <ReportButton/>
+        </React.Fragment>
+    )
 
     return (
         <React.Fragment>

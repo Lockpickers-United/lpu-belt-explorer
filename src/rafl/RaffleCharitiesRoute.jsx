@@ -11,13 +11,13 @@ import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
 import raflCharities from '../data/raflCharities.json'
 import RaffleHeader from './RaffleHeader.jsx'
 import RaffleContext from './RaffleContext.jsx'
+import ReportButton from './ReportButton.jsx'
 
 function RaffleCharitiesRoute() {
     const {isMobile} = useWindowSize()
     const {charityStats} = useContext(RaffleContext)
 
     usePageTitle('RAFL Charities')
-    const extras = null
 
     const raflCharitiesMapped = raflCharities.map(entry => {
         const entryStats = charityStats?.find(stat => stat.name === entry.name)
@@ -35,6 +35,13 @@ function RaffleCharitiesRoute() {
         paddingLeft: sideSpacing,
         paddingRight: sideSpacing
     }
+
+    const extras = (
+        <React.Fragment>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            <ReportButton/>
+        </React.Fragment>
+    )
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
