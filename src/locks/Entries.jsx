@@ -30,14 +30,18 @@ function Entries({profile}) {
         }
     }, [tab, visibleEntries])
 
+    const footerBefore = (
+        <div style={{margin:'30px 0px'}}>
+            <ExportButton text={true}/>
+        </div>
+    )
+
     const footer = (
         <React.Fragment>
             <br/>
             <HotkeyInfoButton/>
             &nbsp;•&nbsp;
             <RandomEntryButton onSelect={setEntryExpanded}/>
-            &nbsp;•&nbsp;
-            <ExportButton/>
             &nbsp;•&nbsp;
             <SlideshowButton/>
         </React.Fragment>
@@ -66,7 +70,7 @@ function Entries({profile}) {
                 }
 
             </div>
-            <Footer extras={footer}/>
+            <Footer extras={footer} before={footerBefore}/>
         </React.Fragment>
     )
 }

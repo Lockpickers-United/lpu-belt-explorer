@@ -18,7 +18,6 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
 import Scorecard from './Scorecard.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
-import ScorecardNoTrackButton from './noTrack/ScorecardNoTrackButton.jsx'
 // HEAD
 import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
@@ -50,7 +49,7 @@ function ScorecardRoute({mostPopular}) {
         try {
             const profile = await getProfile(userId)
             if (profile) {
-                const ownerName = profile.displayName && !profile.privacyAnonymous
+                const ownerName = profile.displayName && !profile['privacyAnonymous']
                     ? profile.displayName.toLowerCase().endsWith('s')
                         ? `${profile.displayName}'`
                         : `${profile.displayName}'s`
@@ -82,22 +81,17 @@ function ScorecardRoute({mostPopular}) {
     const popularLocks = bbDataResult.data ? bbDataResult.data.scorecardLocks : []
 
     const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
-    ? (
-        <React.Fragment>
-            <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
-            <SortButton sortValues={scorecardSortFields}/>
-            <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
-            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-        </React.Fragment>
-    )
-    : null
+        ? (
+            <React.Fragment>
+                <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
+                <SortButton sortValues={scorecardSortFields}/>
+                <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
+                {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            </React.Fragment>
+        )
+        : null
 
-    const footer = (
-        <React.Fragment>
-            <br/>
-            <ScorecardExportButton/><ScorecardNoTrackButton/>
-        </React.Fragment>
-    )
+    const footerBefore = (<div style={{margin: '30px 0px'}}><ScorecardExportButton text={true}/></div>)
 
     const title = loading ? 'Loading...' : 'Profile'
 
@@ -107,27 +101,27 @@ function ScorecardRoute({mostPopular}) {
 
     return (
         <FilterProvider filterFields={scorecardFilterFields}>
-                <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
-                                       cardDanPoints={cardDanPoints}
-                                       cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                       cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
-                    <ScorecardListProvider>
-                        <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
-                            <Nav title={title} extras={nav}/>
+            <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
+                                   cardDanPoints={cardDanPoints}
+                                   cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
+                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
+                <ScorecardListProvider>
+                    <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
+                        <Nav title={title} extras={nav}/>
 
-                            {loading && <LoadingDisplay/>}
+                        {loading && <LoadingDisplay/>}
 
-                            {!loading && data && !error &&
-                                <Scorecard owner={user && user.uid === userId} profile={profile}
-                                           adminAction={handleAdminAction} popular={mostPopular}/>}
+                        {!loading && data && !error &&
+                            <Scorecard owner={user && user.uid === userId} profile={profile}
+                                       adminAction={handleAdminAction} popular={mostPopular}/>}
 
-                            {!loading && (!data || error) && <ScorecardProfileNotFound/>}
+                        {!loading && (!data || error) && <ScorecardProfileNotFound/>}
 
-                            <Footer extras={footer}/>
-                        </LocalizationProvider>
-                        <Tracker feature='scorecard'/>
-                    </ScorecardListProvider>
-                </ScorecardDataProvider>
+                        <Footer before={footerBefore}/>
+                    </LocalizationProvider>
+                    <Tracker feature='scorecard'/>
+                </ScorecardListProvider>
+            </ScorecardDataProvider>
         </FilterProvider>
     )
 }
