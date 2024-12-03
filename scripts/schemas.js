@@ -145,26 +145,19 @@ export const upgradeSchema = Joi.array().items(
 export const raflSchema = Joi.array().items(
     Joi.object({
         'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
-        'Year': Joi.number().min(1000).max(2030),
-        'Pot Number': Joi.number().min(1).max(999),
-        'Form ID': Joi.number(),
-        'Title': Joi.string().min(1).max(100),
+        'Year': Joi.number().max(2030),
+        'Pot Number': Joi.number().max(999),
+        'Form ID': Joi.number().allow(''),
+        'Title': Joi.string(),
         'Description': Joi.string().allow(''),
-        'Contents File': Joi.string().allow(''),
+        'Pot Contents': Joi.string().allow(''),
         'Contributed By': Joi.string(),
         'Tags': Joi.string().allow(''),
-        'Country': Joi.string(),
-        'Shipping Info Text': Joi.string(),
+        'Country': Joi.string().allow(''),
+        'Shipping Info Text': Joi.string().allow(''),
         'Split Shipping': Joi.string().allow(''),
-        'Shipping Type': Joi.string(),
+        'Shipping Type': Joi.string().allow(''),
         'Winner': Joi.string().allow('')
-    }).unknown()
-)
-
-export const raflContentsSchema = Joi.array().items(
-    Joi.object({
-        'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
-        'Pot Contents': Joi.string().allow('')
     }).unknown()
 )
 

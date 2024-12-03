@@ -2,25 +2,23 @@
   {
     "id": "2025-001",
     "year": 2025,
-    "potNumber": "1",
+    "potNumber": "0",
     "formId": "991079714",
-    "title": "Multipick Kronos Pot",
-    "description": "**This pot features one Kronos pick gun.** Thanks to Multipick for providing raffle prizes this year!",
+    "title": "TBD Pot",
+    "description": "",
+    "potContents": "???",
     "contributedBy": [
-      "Multipick"
+      "SasPes"
     ],
-    "tags": [
-      "Specialty Picks"
-    ],
+    "tags": [],
     "country": [
-      "Germany"
+      "Sweden"
     ],
-    "shippingInfo": "Worldwide Shipping Included",
+    "shippingInfo": "International Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "potContents": "- [Multipick Kronos EPG](https://multipick.com/en/multipick-kronos-epg-the-electric-pick-gun-for-all)",
     "media": [
       {
         "title": "By: Multipick",
@@ -59,28 +57,23 @@
   {
     "id": "2025-002",
     "year": 2025,
-    "potNumber": "2",
+    "potNumber": "0",
     "formId": "878340115",
-    "title": "Basically Every Lockwood",
+    "title": "Seven Scandi Ovals",
     "description": "",
+    "potContents": "7 Scandinavian ovals and 2 stands (keys included)\n- 500\n- 700\n- 6k\n- d12\n- 2 KABAs\n- Abus with trees",
     "contributedBy": [
-      "downundermonkey",
-      "HVlogic"
+      "H.J"
     ],
-    "tags": [
-      "Beginner Locks",
-      "Intermediate Locks",
-      "Advanced Locks"
-    ],
+    "tags": [],
     "country": [
-      "Australia"
+      "Sweden"
     ],
     "shippingInfo": "International Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "potContents": "- 1x Lockwood 334B45 Bilock QCC core with operating/QCC key\n- 1x Lockwood 232 6 pin with keys\n- 1x Lockwood/ASSA 110/35 with keys\n- 1x Lockwood 120/40 with keys\n- 1x Lockwood 120/60 with keys\n- 1x Lockwood 234B45 with keys\n- 1x Lockwood 215A40 with keys\n- 1x Lockwood/ASSA 365S63 with keys\n- 1x Lockwood/ASSA 270S70 with key\n- 2x Lockwood 312 loto padlocks (rarer 4 pin version)\n- 1x Lockwood 232 all brass padlock\n- 1x Lockwood V7 oval\n- 1x Lockwood restricted LP keyway with key\n- 1x Vintage Lockwood 234 padlock\n- 1x Lockwood handy lock new in package\n- 2x Lockwood 225 wafer locks with impressioned keys",
     "media": [
       {
         "title": "By: HVlogic",
@@ -101,98 +94,128 @@
   {
     "id": "2025-003",
     "year": 2025,
-    "potNumber": "3",
+    "potNumber": "0",
     "formId": "575730469",
-    "title": "Gentleman’s Weaspick",
+    "title": "Ratyoke Custom Pick",
     "description": "",
+    "potContents": "Pick, tbd",
     "contributedBy": [
-      "Doktor Weasel"
+      "Ratyoke"
     ],
-    "tags": [
-      "Custom Picks"
-    ],
+    "tags": [],
     "country": [
       "USA"
     ],
-    "shippingInfo": "No International Shipping Included",
+    "shippingInfo": "$20 towards international shipping",
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
-    "shippingType": "Domestic shipping included",
+    "shippingType": "Split international shipping",
     "winner": ""
   },
   {
     "id": "2025-004",
     "year": 2025,
-    "potNumber": "4",
+    "potNumber": "0",
     "formId": "1347753646",
-    "title": "The SPARROWS Pot",
-    "description": "The THUNDERBIRD pick set is the first foray into wood handled picks of any major pick manufacturer. Thanks again to SPARROWS for providing an awesome prize to the raffle this year! ",
+    "title": "Gifts From Granny",
+    "description": "",
+    "potContents": "- Anchor Las 802-2 padlock\n- ASSA 500 oval with barrels\n- ASSA 600 oval with barrels\n- Ruko 500 oval with 4 gins, 1 standard\n- ASSA 700 oval with trees and gins",
     "contributedBy": [
-      "SPARROWS"
+      "Granny"
     ],
-    "tags": [
-      "Pick Sets",
-      "Swag"
-    ],
+    "tags": [],
     "country": [
-      "USA"
+      "Canada"
     ],
-    "shippingInfo": "Ships to the USA only",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Ships to the USA only",
-    "winner": "mgsecure",
-    "potContents": "- [THUNDERBIRD Pick Set](https://www.sparrowslockpicks.com/products/thunderbird?_pos=1&_sid=2ea5330f6&_ss=r)\n- SPARROWS coin\n"
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": ""
   },
   {
     "id": "2025-005",
     "year": 2025,
-    "potNumber": "5",
+    "potNumber": "0",
     "formId": "913345405",
-    "title": "Luso-German Double Triple Dare Box",
+    "title": "Bare Bones Dimple Picks",
     "description": "",
+    "potContents": "Bare Bones bone casket case with 6 dimple picks",
     "contributedBy": [
-      "Peaceweapon",
-      "Moon-UA"
+      "455"
     ],
-    "tags": [
-      "Mystery",
-      "Swag",
-      "Advanced Locks",
-      "Tools and Materials"
-    ],
+    "tags": [],
     "country": [
-      "Germany",
-      "Portugal"
+      "USA"
     ],
-    "shippingInfo": "$15 towards international shipping",
+    "shippingInfo": "$50 towards international shipping",
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
-    "potContents": "Portuguese Triple Dare Challenge Set\n- Set of 3 CLs, based on identical DOM cylinders (varying difficulty), DOMt DARE series: \"Doubt\", \"Dread\", and \"Despair\"\n- 2 double euro cylinders to use as base CLs, one with 2 working keys, one with a working key and a blank\n- 1 meter of 3mm brass rod in 20cm sections\n- A box of 6 figure 2, 2.3mm burs for countermilling\n- M3, M3.5, and M4 taps and handle\n- Bags of grub screws (M3.5, M4, x50)\n- 2 engraving tips of different sizes for dremel\n- Shims x5\n- Replacement springs x15\n- Blank tags x4\n- 2 sheets of sandpaper, 600 and 1000 grit\n- Peace sticker\n- Rein tray\n- Small bag of replacement E-clips and brass C-clips\n- Mystery prize\n\nGerman Triple Dare Lock Set\n- Evva Dual euro module, 1 key, mastered (Red)\n- Kaba Quattro keyless, 16 pins (Black)\n- Corona M, nasty keyway (Green)"
+    "winner": ""
   },
   {
     "id": "2025-006",
     "year": 2025,
-    "potNumber": "6",
+    "potNumber": "0",
     "formId": "1773429951",
-    "title": "Le Pumps",
-    "description": "",
+    "title": "Bulgarian Squatty Potty",
+    "description": "Scream If You Love Bulgaria!",
+    "potContents": "1. Abloy protec2 double euro cylinder with gear 1 half is a cutaway, the other is stock, also 1 half is unmastered and one is mastered, keyways 5 and 7 (the winner can swap them if needed)\n2. Abus the Rock 100th anniversary padlock (new)\n3. Sargent signature LFIC (with operating and control key)\n4. Mauer MLS redline (cut euro) with 1 key\n5. Yale 500+ (cut euro) with 1 key\n6. Metal Zx5j (cut euro) with 1 key\n7. Foil dimple impressiining starter kit with all the tools needed to open the lock in the kit",
     "contributedBy": [
-      "Nitiflor"
+      "D.Q",
+      "Pudes"
     ],
-    "tags": [
-      "Advanced Locks"
-    ],
+    "tags": [],
     "country": [
-      "France"
+      "Bulgaria"
     ],
-    "shippingInfo": "Winner pays shipping, cost is 35€ worldwide",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Winner pays shipping",
-    "winner": "",
-    "potContents": "Images: [https://imgur.com/a/ODcwGtz](https://imgur.com/a/ODcwGtz)\n- Pollux GMO8, new, 2 keys (standalone half, not cut)\n- Pollux 5, new, 2 keys (standalone half, not cut)\n- FTH Surveyor, used, 1 key (double)\n- Fontaine, unknown (old dynaxis maybe, key is neat), used, 1 key (double)"
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": ""
+  },
+  {
+    "id": "2025-007",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "Lockpickersbench x Multipick Flag Set",
+    "description": "",
+    "potContents": "Lockpickersbench x Multipick Community Edition flag set with a Lawlock prybar set",
+    "contributedBy": [
+      "Joey69692568"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": ""
+  },
+  {
+    "id": "2025-008",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "Honey Badger Knife Kit",
+    "description": "",
+    "potContents": "Donated by the US distributors of honeybadgerknives.com\n-Silicone takedown mat\n-newly formulated synthetic oil with needle oiler\n-small drop point knife https://honeybadgerknives.com/collections/drop-point-blade-knives/products/honey-badger-knives-small-drop-point-flipper-knife-8cr13mov-steel?_pos=1&_fid=ef9f219f0&_ss=c",
+    "contributedBy": [
+      "Badger"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "No International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": ""
   }
 ]

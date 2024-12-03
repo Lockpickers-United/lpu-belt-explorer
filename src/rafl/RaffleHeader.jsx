@@ -70,7 +70,7 @@ function RaffleHeader({page}) {
                             SNEAK PEEK</div>
                     }
 
-                    {live || raffleAdminRole &&
+                    {(live || raffleAdminRole) &&
                         <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl')}
@@ -86,7 +86,7 @@ function RaffleHeader({page}) {
                         </Tooltip>
                     }
 
-                    {live || raffleAdminRole &&
+                    {(live || raffleAdminRole) &&
                         <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/charities')}
@@ -102,7 +102,7 @@ function RaffleHeader({page}) {
                         </Tooltip>
                     }
 
-                    {live || raffleAdminRole &&
+                    {(live || raffleAdminRole) &&
                         <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/enter')}
@@ -117,7 +117,7 @@ function RaffleHeader({page}) {
                         </Tooltip>
                     }
 
-                    {live || raffleAdminRole &&
+                    {(live || raffleAdminRole) &&
                         <Tooltip title={toolTip} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={toggleOpen}

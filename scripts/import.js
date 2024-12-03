@@ -13,7 +13,6 @@ import {
     upgradeSchema,
     introCopySchema,
     raflSchema,
-    raflContentsSchema,
     raflMediaSchema,
     raflCharitySchema
 } from './schemas.js'
@@ -65,7 +64,6 @@ const projectsData = await importValidate('Projects', projectSchema)
 const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
 const raflData = await importValidate('RAFL', raflSchema)
-const raflPotContentsData = await importValidate('RAFL Pot Contents', raflContentsSchema)
 const raflMediaData = await importValidate('RAFL Media', raflMediaSchema)
 const raflCharityData = await importValidate('RAFL Charities', raflCharitySchema)
 
@@ -416,7 +414,7 @@ const raflMainData = raflData
         formId: datum['Form ID'],
         title: datum['Title'],
         description: datum['Description'],
-        contentsFile: datum['Contents File'],
+        potContents: datum['Pot Contents'],
         contributedBy: splitCommaValues(datum['Contributed By']),
         tags: splitCommaValues(datum['Tags']),
         country: splitCommaValues(datum['Country']),
@@ -426,15 +424,6 @@ const raflMainData = raflData
         shippingType: datum['Shipping Type'],
         winner: datum['Winner']
     })).filter(x => x)
-
-// RAFL Pot Contents
-console.log('Processing RAFL Pot Contents data...')
-raflPotContentsData
-    .forEach(item => {
-        const entry = raflMainData.find(e => e?.id === item['Unique ID'])
-        if (!entry) return console.log('Pot not found trying to add contents', item)
-        entry.potContents = item['Pot Contents']
-    })
 
 // RAFL Media data
 console.log('Processing RAFL Media data...')

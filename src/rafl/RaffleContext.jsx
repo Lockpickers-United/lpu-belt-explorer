@@ -7,7 +7,7 @@ const RaffleContext = React.createContext({})
 
 export function RaffleStatsProvider({children}) {
 
-    const live = false
+    const live = true
     const {lockCollection} = useContext(DBContext)
     const {data, loading, error} = useData({url: raflStats})
     const {potStats, charityStats, summaryStats} = data || {}
