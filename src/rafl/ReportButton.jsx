@@ -1,10 +1,12 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import {useNavigate} from 'react-router-dom'
 import PollIcon from '@mui/icons-material/Poll'
+import RaffleContext from './RaffleContext.jsx'
 
 function ReportButton({active}) {
+    const {raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
 
     const handleClick = useCallback(() => {
@@ -15,6 +17,7 @@ function ReportButton({active}) {
     const toolTip = active ? 'Return to RAFL' : 'View Reports'
     const color = active ? '#0b0' : '#fff'
 
+    if (!raffleAdminRole) return null
 
     return (
         <Tooltip title={toolTip} arrow disableFocusListener>

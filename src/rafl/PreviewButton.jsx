@@ -5,8 +5,10 @@ import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../app/AppContext.jsx'
 import {useSearchParams} from 'react-router-dom'
+import RaffleContext from './RaffleContext.jsx'
 
 function PreviewButton() {
+    const {raffleAdminRole} = useContext(RaffleContext)
     const {preview, setPreview} = useContext(AppContext)
     const [searchParams, setSearchParams] = useSearchParams()
     const previewMode = searchParams.has('preview')
@@ -25,6 +27,8 @@ function PreviewButton() {
     useHotkeys('p', () => togglePreview(), {preventDefault: true})
 
     const color = showPreview ? '#983de6' : '#fff'
+
+    if (!raffleAdminRole) return null
 
     return (
         <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>

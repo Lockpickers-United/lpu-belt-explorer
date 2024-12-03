@@ -1,15 +1,23 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
 import {raflStats} from '../data/dataUrls'
+import DBContext from '../app/DBContext.jsx'
 
 const RaffleContext = React.createContext({})
 
 export function RaffleStatsProvider({children}) {
+
+    const live = false
+    const {lockCollection} = useContext(DBContext)
     const {data, loading, error} = useData({url: raflStats})
     const {potStats, charityStats, summaryStats} = data || {}
     const allDataLoaded = (!loading && !error && !!data)
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(true)
+
+    const profileLoaded = Object.keys(lockCollection).length > 0
+    const raffleAdmin = lockCollection?.adminRaffle
+    const [raffleAdminRole, setRaffleAdminRole] = useState(false)
 
     const toggleStats = useCallback(() => {
             setDisplayStats(!displayStats)
@@ -30,7 +38,10 @@ export function RaffleStatsProvider({children}) {
         toggleStats,
         animateTotal, setAnimateTotal,
         formPots, setFormPots,
-        updateFormPots
+        updateFormPots,
+        profileLoaded,
+        raffleAdmin, raffleAdminRole, setRaffleAdminRole,
+        live
     }), [
         allDataLoaded,
         potStats,
@@ -40,7 +51,10 @@ export function RaffleStatsProvider({children}) {
         toggleStats,
         animateTotal, setAnimateTotal,
         formPots, setFormPots,
-        updateFormPots
+        updateFormPots,
+        profileLoaded,
+        raffleAdmin, raffleAdminRole, setRaffleAdminRole,
+        live
     ])
 
     return (

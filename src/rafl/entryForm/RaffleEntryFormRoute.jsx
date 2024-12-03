@@ -8,6 +8,8 @@ import RaffleEntryForm from './RaffleEntryForm.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import ReportButton from '../ReportButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import AdminRoleButton from '../AdminRoleButton.jsx'
+import RaffleComingSoon from '../RaffleComingSoon.jsx'
 
 function RaffleEntryFormRoute() {
     const {lockCollection} = useContext(DBContext)
@@ -19,6 +21,7 @@ function RaffleEntryFormRoute() {
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ReportButton/>
+            <AdminRoleButton/>
         </React.Fragment>
     )
 
@@ -34,6 +37,9 @@ function RaffleEntryFormRoute() {
             <Footer/>
 
             <Tracker feature='raflForm'/>
+
+            <RaffleComingSoon/>
+
         </React.Fragment>
     )
 }

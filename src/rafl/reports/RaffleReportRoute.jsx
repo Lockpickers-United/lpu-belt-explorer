@@ -7,6 +7,7 @@ import Nav from '../../nav/Nav'
 import RaffleReport from './RaffleReport.jsx'
 import ReportButton from '../ReportButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import AdminRoleButton from '../AdminRoleButton.jsx'
 
 function RaffleReportRoute() {
     const {authLoaded} = useContext(AuthContext)
@@ -17,6 +18,7 @@ function RaffleReportRoute() {
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ReportButton active={true}/>
+            <AdminRoleButton/>
         </React.Fragment>
     )
 

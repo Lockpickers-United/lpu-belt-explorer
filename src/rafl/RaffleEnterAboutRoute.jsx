@@ -13,6 +13,8 @@ import Button from '@mui/material/Button'
 import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
 import ReportButton from './ReportButton.jsx'
+import AdminRoleButton from './AdminRoleButton.jsx'
+import RaffleComingSoon from './RaffleComingSoon.jsx'
 
 function RaffleEnterAboutRoute() {
 
@@ -35,6 +37,7 @@ function RaffleEnterAboutRoute() {
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ReportButton/>
+            <AdminRoleButton/>
         </React.Fragment>
     )
 
@@ -88,8 +91,10 @@ function RaffleEnterAboutRoute() {
             <div style={{height: 32}}/>
 
             <Footer/>
-
             <Tracker feature='raflEnterAbout'/>
+
+            <RaffleComingSoon/>
+
         </React.Fragment>
     )
 }

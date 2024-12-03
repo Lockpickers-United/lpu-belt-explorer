@@ -12,6 +12,8 @@ import raflCharities from '../data/raflCharities.json'
 import RaffleHeader from './RaffleHeader.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import ReportButton from './ReportButton.jsx'
+import AdminRoleButton from './AdminRoleButton.jsx'
+import RaffleComingSoon from './RaffleComingSoon.jsx'
 
 function RaffleCharitiesRoute() {
     const {isMobile} = useWindowSize()
@@ -40,6 +42,7 @@ function RaffleCharitiesRoute() {
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ReportButton/>
+            <AdminRoleButton/>
         </React.Fragment>
     )
 
@@ -58,10 +61,13 @@ function RaffleCharitiesRoute() {
                     <Footer/>
 
                     <Tracker feature='raflCharities'/>
+
+                    <RaffleComingSoon/>
+
                 </div>
             </RaffleCharitiesProvider>
         </FilterProvider>
-)
+    )
 }
 
 export default RaffleCharitiesRoute

@@ -21,6 +21,7 @@ import RafflePreviewBar from './RafflePreviewBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import PreviewButton from './PreviewButton.jsx'
 import ReportButton from './ReportButton.jsx'
+import AdminRoleButton from './AdminRoleButton.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
@@ -54,9 +55,12 @@ function RaffleRoute() {
 
     const extras = (
         <React.Fragment>
-            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <PreviewButton/>
-            <ReportButton/>
+                <React.Fragment>
+                    {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+                    <PreviewButton/>
+                    <ReportButton/>
+                    <AdminRoleButton/>
+                </React.Fragment>
         </React.Fragment>
     )
     const extrasTwo = undefined
