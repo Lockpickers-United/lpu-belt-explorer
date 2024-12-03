@@ -7,7 +7,15 @@ import {Collapse} from '@mui/material'
 import CountUp from 'react-countup'
 import RaffleContext from './RaffleContext.jsx'
 
+/**
+ * @param summaryStats
+ * @property summaryStats.donationsTotal
+ * @property summaryStats.donationsDiscord
+ * @property summaryStats.donationsReddit
+ */
+
 function RaffleHeader({page}) {
+    const {live, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
     const {summaryStats, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleContext)
 
@@ -56,7 +64,14 @@ function RaffleHeader({page}) {
                 <div style={{flexGrow: 1, fontSize: '1.7rem', marginTop: 0}}>LPU Annual Raffle</div>
                 <div style={{marginTop: buttonTop, justifyItems: 'right'}}>
                     <div style={{flexGrow: 1}}/>
-                    <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
+
+                    {!live && !raffleAdminRole &&
+                        <div style={{fontSize: '1.4rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
+                            SNEAK PEEK</div>
+                    }
+
+                    {live || raffleAdminRole &&
+                        <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl')}
                                     style={{
@@ -68,9 +83,11 @@ function RaffleHeader({page}) {
                                 PRIZES
                             </Button>
                         </span>
-                    </Tooltip>
+                        </Tooltip>
+                    }
 
-                    <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
+                    {live || raffleAdminRole &&
+                        <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/charities')}
                                     style={{
@@ -82,9 +99,11 @@ function RaffleHeader({page}) {
                                 CHARITIES
                             </Button>
                         </span>
-                    </Tooltip>
+                        </Tooltip>
+                    }
 
-                    <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
+                    {live || raffleAdminRole &&
+                        <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/enter')}
                                     style={{
@@ -95,9 +114,11 @@ function RaffleHeader({page}) {
                                 ENTER
                             </Button>
                         </span>
-                    </Tooltip>
+                        </Tooltip>
+                    }
 
-                    <Tooltip title={toolTip} arrow disableFocusListener style={{}}>
+                    {live || raffleAdminRole &&
+                        <Tooltip title={toolTip} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={toggleOpen}
                                     style={{
@@ -108,7 +129,9 @@ function RaffleHeader({page}) {
                                 STATS
                             </Button>
                         </span>
-                    </Tooltip>
+                        </Tooltip>
+                    }
+
                 </div>
             </div>
             {displayStats &&
@@ -160,7 +183,7 @@ function RaffleHeader({page}) {
                 </Collapse>
             }
 
-            <div style={{height:8}}/>
+            <div style={{height: 8}}/>
         </React.Fragment>
     )
 

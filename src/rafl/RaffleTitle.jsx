@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleTitle({entry}) {
+    const {live, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = live || raffleAdminRole
 
     const {isMobile, flexStyle} = useWindowSize()
 
@@ -15,6 +18,7 @@ function RaffleTitle({entry}) {
 
     return (
         <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
+            { showFull &&
             <div style={{
                 borderRadius: '50%',
                 backgroundColor: '#fff',
@@ -27,7 +31,7 @@ function RaffleTitle({entry}) {
                 marginRight: 12,
                 display: 'flex'
             }}>
-                <div style={{
+                    <div style={{
                     margin: 'auto',
                     paddingTop: 0,
                     paddingLeft: paddingLeft,
@@ -37,6 +41,7 @@ function RaffleTitle({entry}) {
                     lineHeight: lineHeight
                 }}>{entry.potNumber}</div>
             </div>
+            }
             <div style={{display: flexStyle, flexGrow: 1}}>
                 <div style={{
                     display: 'flex',

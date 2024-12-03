@@ -16,7 +16,9 @@ export function RaffleStatsProvider({children}) {
     const [animateTotal, setAnimateTotal] = useState(true)
 
     const profileLoaded = Object.keys(lockCollection).length > 0
-    const raffleAdmin = lockCollection?.adminRaffle
+    const {admin, adminRaffle} = lockCollection
+    const raffleAdmin = admin || adminRaffle
+
     const [raffleAdminRole, setRaffleAdminRole] = useState(false)
 
     const toggleStats = useCallback(() => {

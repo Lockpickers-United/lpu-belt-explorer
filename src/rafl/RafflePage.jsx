@@ -6,8 +6,11 @@ import FilterContext from '../context/FilterContext.jsx'
 import RaffleEntry from './RafffleEntry.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import {raffleSortFields} from '../data/sortFields'
+import RaffleContext from './RaffleContext.jsx'
+import RaffleComingSoonBar from './RaffleComingSoonBar.jsx'
 
 function RafflePage({profile}) {
+    const {live, raffleAdminRole} = useContext(RaffleContext)
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries} = useContext(DataContext)
@@ -21,8 +24,10 @@ function RafflePage({profile}) {
 
         <div style={{paddingBottom: 32}}>
 
-            <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
-
+            {live || raffleAdminRole
+                ? <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
+                : <RaffleComingSoonBar/>
+            }
             <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}

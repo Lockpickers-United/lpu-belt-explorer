@@ -19,8 +19,12 @@ import RaffleTitle from './RaffleTitle.jsx'
 import WatchlistButton from './WatchlistButton.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import {Collapse} from '@mui/material'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleEntry({entry, expanded, onExpand, single}) {
+    const {live, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = live || raffleAdminRole
+
     const {filters} = useContext(FilterContext)
     const shippingFiltered = !!filters.shippingType || !!filters.splitShipping
 
@@ -94,22 +98,25 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 </div>
                             </div>
 
-                            <Collapse in={!!entry.donors}>
-                                <div style={{
-                                    marginRight: 15,
-                                    fontSize: descriptionFontSize,
-                                    textAlign: 'right',
-                                    display: flexStyle
-                                }}>
-                                    <div>
-                                        <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                            {showFull &&
+                                <Collapse in={!!entry.donors}>
+                                    <div style={{
+                                        marginRight: 15,
+                                        fontSize: descriptionFontSize,
+                                        textAlign: 'right',
+                                        display: flexStyle
+                                    }}>
+                                        <div>
+                                            <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                                        </div>
+                                        <div style={{marginLeft: 8}}>
+                                            <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                                        </div>
                                     </div>
-                                    <div style={{marginLeft: 8}}>
-                                        <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
-                                    </div>
-                                </div>
-                            </Collapse>
+                                </Collapse>
+                            }
                         </div>
+
                         {!showSimple && shippingFiltered &&
                             <div style={{display: 'flex', marginTop: 6, opacity: infoOpactiy}}>
                                 <div style={{marginRight: 10}}>
@@ -133,7 +140,10 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </ReactMarkdown>
                         </div>
                     </div>
-                    <WatchlistButton id={entry.id}/>
+
+                    {showFull &&
+                        <WatchlistButton id={entry.id}/>
+                    }
 
                 </div>
             </AccordionSummary>
@@ -220,7 +230,9 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                     {!showSimple &&
                         <AccordionActions disableSpacing>
                             <CopyPotTextButton entry={entry}/>
-                            <CopyLinkToRaflPotButton entry={entry}/>
+                            {showFull &&
+                                <CopyLinkToRaflPotButton entry={entry}/>
+                            }
                         </AccordionActions>
                     }
                 </React.Fragment>
