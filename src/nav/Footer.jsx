@@ -2,10 +2,14 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import ToggleBetaButton from './ToggleBetaButton'
 
-function Footer({extras}) {
+function Footer({extras, before}) {
     return (
-        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
-            <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
+
+    <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
+
+        {before}
+
+        <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
                 Discord
             </a>
             &nbsp;•&nbsp;

@@ -22,6 +22,7 @@ import NoProfileData from './NoProfileData'
 import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
 import AuthContext from '../app/AuthContext.jsx'
+import ExportButton from '../locks/ExportButton.jsx'
 
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
@@ -68,6 +69,12 @@ function ProfileRoute() {
 
     const title = loading ? 'Loading...' : 'Profile'
 
+    const footerBefore = (
+        <div style={{margin:'30px 0px'}}>
+            <ExportButton text={true}/>
+        </div>
+    )
+
     return (
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={entries} profile={data}>
@@ -80,7 +87,7 @@ function ProfileRoute() {
                     {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
                     {!loading && (!data || error) && <ProfileNotFound/>}
 
-                        <Footer/>
+                    <Footer before={footerBefore}/>
 
                         <Tracker feature='profile'/>
                 </LockListProvider>
