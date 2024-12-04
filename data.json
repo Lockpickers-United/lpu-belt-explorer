@@ -4481,8 +4481,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable",
-      "Changelog"
+      "Unguttable"
     ],
     "media": [
       {
@@ -4501,7 +4500,7 @@
       }
     ],
     "views": 637,
-    "lastUpdated": "2024-10-30T20:09:22.869Z"
+    "lastUpdated": "2024-12-04T02:26:32.401Z"
   },
   {
     "id": "99057c44",
@@ -6448,8 +6447,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -6475,7 +6473,7 @@
       }
     ],
     "views": 1400,
-    "lastUpdated": "2024-10-30T20:09:22.870Z"
+    "lastUpdated": "2024-12-04T02:26:32.402Z"
   },
   {
     "id": "8d1ebc79",
@@ -6490,8 +6488,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -6538,7 +6535,7 @@
       }
     ],
     "views": 847,
-    "lastUpdated": "2024-10-30T20:09:22.870Z"
+    "lastUpdated": "2024-12-04T02:26:32.402Z"
   },
   {
     "id": "f97700ff",
@@ -7876,11 +7873,8 @@
         "model": "Clinch"
       }
     ],
-    "features": [
-      "Changelog"
-    ],
     "views": 21,
-    "lastUpdated": "2024-10-30T20:09:22.870Z"
+    "lastUpdated": "2024-12-04T02:26:32.403Z"
   },
   {
     "id": "ca6ce763",
@@ -12793,8 +12787,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -12828,7 +12821,7 @@
       }
     ],
     "views": 1821,
-    "lastUpdated": "2024-10-30T20:09:22.873Z"
+    "lastUpdated": "2024-12-04T02:26:32.405Z"
   },
   {
     "id": "85d93eb1",
@@ -16012,9 +16005,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Ed McBane",
@@ -16084,7 +16074,7 @@
     "relatedIds": [
       "779d74f5"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.874Z"
+    "lastUpdated": "2024-12-04T02:26:32.406Z"
   },
   {
     "id": "40e50dd4",
@@ -16570,8 +16560,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -16626,7 +16615,7 @@
       }
     ],
     "views": 186,
-    "lastUpdated": "2024-10-30T20:09:22.875Z"
+    "lastUpdated": "2024-12-04T02:26:32.407Z"
   },
   {
     "id": "1fe0ba0d",
@@ -16738,9 +16727,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Toool NL",
@@ -16789,7 +16775,7 @@
       }
     ],
     "views": 333,
-    "lastUpdated": "2024-10-30T20:09:22.875Z"
+    "lastUpdated": "2024-12-04T02:26:32.407Z"
   },
   {
     "id": "72675596",
@@ -18739,8 +18725,7 @@
       "Dimple"
     ],
     "features": [
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -18781,7 +18766,7 @@
       }
     ],
     "views": 1550,
-    "lastUpdated": "2024-10-30T20:09:22.876Z"
+    "lastUpdated": "2024-12-04T02:26:32.408Z"
   },
   {
     "id": "dd1dd313",
@@ -19572,8 +19557,7 @@
     "features": [
       "Magnetic pins",
       "Pin-in-pin",
-      "Trap element",
-      "Changelog"
+      "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "media": [
@@ -19673,7 +19657,7 @@
       }
     ],
     "views": 510,
-    "lastUpdated": "2024-10-30T23:59:18.214Z"
+    "lastUpdated": "2024-12-04T02:26:32.408Z"
   },
   {
     "id": "8f004bf0",
@@ -19691,9 +19675,6 @@
     "version": "all versions, <15 pins",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [
-      "Changelog"
     ],
     "media": [
       {
@@ -19763,7 +19744,7 @@
     "relatedIds": [
       "9b00fb5e"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.876Z"
+    "lastUpdated": "2024-12-04T02:26:32.408Z"
   },
   {
     "id": "98ba98ae",
@@ -20164,7 +20145,6 @@
     "features": [
       "Active sidebar"
     ],
-    "notes": "Changelog",
     "media": [
       {
         "title": "By: Datagram",
@@ -20230,7 +20210,7 @@
       }
     ],
     "views": 344,
-    "lastUpdated": "2024-10-30T20:09:22.877Z"
+    "lastUpdated": "2024-12-04T02:26:32.409Z"
   },
   {
     "id": "71bce5b7",
@@ -20545,10 +20525,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
-    "lastUpdated": "2024-10-30T20:09:22.877Z"
+    "lastUpdated": "2024-12-04T02:26:32.409Z"
   },
   {
     "id": "acde7f0c",
@@ -21229,9 +21206,6 @@
       "Pin-tumbler",
       "Sidebar"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Septclues",
@@ -21263,7 +21237,7 @@
       }
     ],
     "views": 49,
-    "lastUpdated": "2024-10-30T20:09:22.877Z"
+    "lastUpdated": "2024-12-04T02:26:32.409Z"
   },
   {
     "id": "3b848976",
@@ -24198,8 +24172,7 @@
     ],
     "features": [
       "Tapered drivers",
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "media": [
       {
@@ -24253,7 +24226,7 @@
       }
     ],
     "views": 413,
-    "lastUpdated": "2024-10-30T20:09:22.879Z"
+    "lastUpdated": "2024-12-04T02:26:32.414Z"
   },
   {
     "id": "9a9ae8df",
@@ -25176,8 +25149,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -25210,7 +25182,7 @@
       }
     ],
     "views": 483,
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-04T02:26:32.414Z"
   },
   {
     "id": "db380ba0",
@@ -25318,8 +25290,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -25362,7 +25333,7 @@
     "relatedIds": [
       "4223eb26"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-04T02:26:32.414Z"
   },
   {
     "id": "2c58f220",
@@ -26142,9 +26113,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -26181,7 +26149,7 @@
     "relatedIds": [
       "8f004bf0"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-04T02:26:32.415Z"
   },
   {
     "id": "e38d015b",
@@ -26405,8 +26373,7 @@
     ],
     "features": [
       "Sprung sliders",
-      "Reverse sidebar",
-      "Changelog"
+      "Reverse sidebar"
     ],
     "media": [
       {
@@ -26432,7 +26399,7 @@
       }
     ],
     "views": 107,
-    "lastUpdated": "2024-10-30T20:09:22.880Z"
+    "lastUpdated": "2024-12-04T02:26:32.415Z"
   },
   {
     "id": "dd6a3683",
@@ -26452,8 +26419,7 @@
     ],
     "features": [
       "Torpedo keypins",
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "media": [
       {
@@ -26489,7 +26455,7 @@
       }
     ],
     "views": 588,
-    "lastUpdated": "2024-10-30T20:09:22.881Z"
+    "lastUpdated": "2024-12-04T02:26:32.415Z"
   },
   {
     "id": "e39885f3",
@@ -26510,8 +26476,7 @@
     ],
     "features": [
       "Shark fin keypins",
-      "Torpedo keypins",
-      "Changelog"
+      "Torpedo keypins"
     ],
     "media": [
       {
@@ -26564,7 +26529,7 @@
       }
     ],
     "views": 607,
-    "lastUpdated": "2024-10-30T20:09:22.881Z"
+    "lastUpdated": "2024-12-04T02:26:32.415Z"
   },
   {
     "id": "61247b32",
@@ -27028,9 +26993,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: Qikom",
@@ -27075,7 +27037,7 @@
       }
     ],
     "views": 189,
-    "lastUpdated": "2024-10-30T20:09:22.884Z"
+    "lastUpdated": "2024-12-04T02:26:32.416Z"
   },
   {
     "id": "7298a640",
@@ -28964,8 +28926,7 @@
     ],
     "features": [
       "Opposing overset stacks",
-      "Interactive element",
-      "Changelog"
+      "Interactive element"
     ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
     "media": [
@@ -28992,7 +28953,7 @@
       }
     ],
     "views": 150,
-    "lastUpdated": "2024-10-30T20:09:22.885Z"
+    "lastUpdated": "2024-12-04T02:26:32.417Z"
   },
   {
     "id": "b91890bf",
@@ -29742,8 +29703,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -29772,7 +29732,7 @@
     "relatedIds": [
       "054731a5"
     ],
-    "lastUpdated": "2024-10-30T20:09:22.885Z"
+    "lastUpdated": "2024-12-04T02:26:32.417Z"
   },
   {
     "id": "29ab2852",
@@ -30508,8 +30468,7 @@
     "features": [
       "Interactive element",
       "Torpedo keypins",
-      "Shark fin keypins",
-      "Changelog"
+      "Shark fin keypins"
     ],
     "media": [
       {
@@ -30548,7 +30507,7 @@
       }
     ],
     "views": 671,
-    "lastUpdated": "2024-10-30T20:09:22.886Z"
+    "lastUpdated": "2024-12-04T02:26:32.418Z"
   },
   {
     "id": "4993a918",
@@ -30626,8 +30585,7 @@
       "Magnet"
     ],
     "features": [
-      "Magnetic rotors",
-      "Changelog"
+      "Magnetic rotors"
     ],
     "media": [
       {
@@ -30677,7 +30635,7 @@
       }
     ],
     "views": 251,
-    "lastUpdated": "2024-10-30T20:09:22.886Z"
+    "lastUpdated": "2024-12-04T02:26:32.418Z"
   },
   {
     "id": "265226b1",
@@ -31298,13 +31256,6 @@
       {
         "title": "By: Dra9i",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52756382648_549708ca35_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52756382648/in/album-72177720306831168/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52756382648_f27b11c5ef_o.jpg"
-      },
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/52755897776_95979dcc18_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52755897776/in/album-72177720306831168/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52755897776_5a5bd936e5_o.jpg"
@@ -31320,7 +31271,7 @@
     "relatedIds": [
       "5103e650"
     ],
-    "lastUpdated": "2024-10-29T02:42:22.140Z"
+    "lastUpdated": "2024-12-04T02:26:32.418Z"
   },
   {
     "id": "49b2c746",
@@ -32815,9 +32766,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Changelog"
-    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -32849,7 +32797,7 @@
       }
     ],
     "views": 191,
-    "lastUpdated": "2024-10-30T23:59:18.223Z"
+    "lastUpdated": "2024-12-04T02:26:32.419Z"
   },
   {
     "id": "9da7a5f2",
@@ -35206,8 +35154,7 @@
     "features": [
       "False gates",
       "Sprung sliders",
-      "Active sidebar",
-      "Changelog"
+      "Active sidebar"
     ],
     "notes": "two False gates per pin, staggered rows",
     "media": [
@@ -35265,7 +35212,7 @@
       "ab1e901f",
       "6d2555aa"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.264Z"
+    "lastUpdated": "2024-12-04T02:26:32.420Z"
   },
   {
     "id": "6d2555aa",
