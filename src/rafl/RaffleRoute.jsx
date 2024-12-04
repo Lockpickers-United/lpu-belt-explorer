@@ -26,7 +26,7 @@ import AdminRoleButton from './AdminRoleButton.jsx'
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
     const {preview} = useContext(AppContext)
-    const {potStats, raffleAdminRole} = useContext(RaffleContext)
+    const {potStats} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()
@@ -89,7 +89,7 @@ function RaffleRoute() {
                             <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
                             <RaffleHeader page={'pots'}/>
 
-                            {showPreview && raffleAdminRole &&
+                            {showPreview &&
                                 <RafflePreviewBar refresh={refresh}/>
                             }
 

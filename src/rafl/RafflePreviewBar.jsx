@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import CachedIcon from '@mui/icons-material/Cached'
@@ -7,11 +7,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
+import AppContext from '../app/AppContext.jsx'
+import {useSearchParams} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 export default function RafflePreviewBar({refresh}) {
     const [requestingPreview, setRequestingPreview] = useState(false)
     const [response, setResponse] = useState('')
     const [open, setOpen] = useState(false)
+
+    const {preview, setPreview} = useContext(AppContext)
+    const [searchParams, setSearchParams] = useSearchParams()
+    const previewMode = searchParams.has('preview')
 
     const refreshPreview = useCallback(async () => {
         const url = window.location.protocol === 'http:'
@@ -29,10 +36,18 @@ export default function RafflePreviewBar({refresh}) {
                 setResponse(response)
                 console.log('preview response\n', response)
             })
-
         await refresh()
-
     }, [refresh])
+
+    const togglePreview = useCallback(() => {
+        if (previewMode) {
+            searchParams.delete('preview')
+            setSearchParams(searchParams)
+            setPreview(false)
+        } else {
+            setPreview(!preview)
+        }
+    }, [preview, previewMode, searchParams, setPreview, setSearchParams])
 
     return (
         <React.Fragment>
@@ -46,7 +61,11 @@ export default function RafflePreviewBar({refresh}) {
                 display: 'flex',
                 alignItems: 'center'
             }}>
-                <div style={{flexGrow: 1, marginLeft: 20}}>PREVIEW MODE</div>
+                <div style={{flexGrow: 1, marginLeft: 20}}>
+                    <Link onClick={() =>togglePreview()} style={{color:'#fff', textDecorationColor:'#bbb'}}>
+                        PREVIEW MODE
+                    </Link>
+                </div>
 
                 {requestingPreview
                     ? <LoadingDisplayWhite/>
