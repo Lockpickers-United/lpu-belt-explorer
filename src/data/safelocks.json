@@ -17,7 +17,7 @@
     "make": "Big Red",
     "model": "CDL-3",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -59,14 +59,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "761d2fe8",
     "make": "Big Red",
     "model": "CDL-3M",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -79,14 +79,14 @@
       "Standard format",
       "Fence lever control device"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "693fd901",
     "make": "Big Red",
     "model": "CDL-4",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -128,14 +128,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "0638d9d8",
     "make": "Big Red",
     "model": "CDL-4M",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -148,14 +148,14 @@
       "Standard format",
       "Fence lever control device"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "f5703ac0",
     "make": "Chubb",
     "model": "Brass Vault Lock (e.g 7K50/7K64)",
     "group": "not rated",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -209,7 +209,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "8a50bbb0",
@@ -229,7 +229,7 @@
     "make": "Chubb",
     "model": "7L08",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -241,14 +241,14 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "75ddbd51",
     "make": "Chubb",
     "model": "7L51",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "Standard size wheels",
@@ -259,14 +259,14 @@
       "Vault format",
       "Internal Indirect drive"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "19359f35",
     "make": "Chubb",
     "model": "Manifoil MK3",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -323,14 +323,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956795523_4831dfc727_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "087f41e9",
     "make": "Chubb",
     "model": "Manifoil MK4",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -352,14 +352,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955620502_2d16cbdaa3_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "58441a32",
     "make": "Diebold",
     "model": "177",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -402,14 +402,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.288Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "74ac6513",
     "make": "Diebold",
     "model": "177-23B",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -421,7 +421,7 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "91242adb",
@@ -542,7 +542,7 @@
     "make": "Federal",
     "model": "800",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -554,7 +554,7 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "2f6b4c23",
@@ -678,7 +678,7 @@
     "make": "Kromer",
     "model": "14a",
     "group": "not rated",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "3",
     "digits": "A-Z",
     "notes": "There are at least 2, probably 3 different versions. Dial interacts with all wheels directly. Possibly spring loaded pin interacting with one wheel to make feeling harder.",
@@ -687,14 +687,14 @@
       "Enforced wheel scrambling",
       "False gates"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "cc91e358",
     "make": "Kromer",
     "model": "15b",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3 or 4",
     "digits": "1-100",
     "notes": "Copy of S&G lock. W1 may be replaced by spacer ring to create 3-wheel version.",
@@ -705,14 +705,14 @@
       "Vault format",
       "Optional Indirect drive"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.443Z"
   },
   {
     "id": "3ad83c5d",
     "make": "Kromer",
     "model": "3001",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Update of model 15b.",
@@ -747,14 +747,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "6b301968",
     "make": "Kromer",
     "model": "3002",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "1-100",
     "notes": "Update of model 15b.",
@@ -766,7 +766,7 @@
       "Zero change",
       "Optional Indirect drive"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "e393e3d5",
@@ -786,7 +786,7 @@
     "make": "Kromer",
     "model": "3011",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Update of model 3001.",
@@ -835,14 +835,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "f59d47b3",
     "make": "Kromer",
     "model": "3012",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "1-100",
     "notes": "Update of model 3002.",
@@ -877,14 +877,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53543551118_fc1f2597f1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "93b9e6f5",
     "make": "Kromer",
     "model": "3031",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Small format, but proprietary.",
@@ -895,14 +895,14 @@
       "Small format",
       "Zero change"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "c32aa445",
     "make": "Kromer",
     "model": "3055",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "1-100",
     "notes": "",
@@ -913,14 +913,14 @@
       "Vault format",
       "Magnetic double cam"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "cf527800",
     "make": "Kromer",
     "model": "3065",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "At least three versions. Double pins with 2L-1R-1L-R sequence.",
@@ -931,14 +931,14 @@
       "Double pins",
       "Proprietary locker"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "8f0e636e",
     "make": "Kromer",
     "model": "3090",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "1-100",
     "notes": "Small format, but proprietary.",
@@ -950,14 +950,14 @@
       "Zero change",
       "Fence lever control device"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "8aa74b36",
     "make": "Kromer",
     "model": "3095",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "Update of model 3031.",
@@ -967,14 +967,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "d183640f",
     "make": "Kromer",
     "model": "3096",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "Update of model 3032.",
@@ -984,14 +984,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "c07f8b5c",
     "make": "Kromer",
     "model": "3097",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1001,14 +1001,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.178Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "e2f66615",
     "make": "Kromer",
     "model": "3098",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1018,14 +1018,14 @@
       "Key change",
       "Standard format"
     ],
-    "lastUpdated": "2024-09-12T23:45:30.179Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "048058c3",
     "make": "La Gard",
     "model": "1548",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1054,14 +1054,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54006913450_44c1f6f858_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "218529be",
     "make": "La Gard",
     "model": "1800(RL)",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1074,7 +1074,7 @@
       "Standard format",
       "Wheel shadowing"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "ea7b53e2",
@@ -1094,7 +1094,7 @@
     "make": "La Gard",
     "model": "1947",
     "group": "1",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1107,14 +1107,14 @@
       "Standard format",
       "Fence lever control device"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "0e5acb82",
     "make": "La Gard",
     "model": "1985",
     "group": "1",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1143,14 +1143,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "cffd6d42",
     "make": "La Gard",
     "model": "2050",
     "group": "2",
-    "fence": "Gravity Fence",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1160,7 +1160,7 @@
       "Key change",
       "Vault format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "7d060e16",
@@ -1196,7 +1196,7 @@
     "make": "La Gard",
     "model": "3330",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1274,14 +1274,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764643_e569d850ab_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "baa53440",
     "make": "La Gard",
     "model": "3332",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1338,14 +1338,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.289Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "0b1fc984",
     "make": "La Gard",
     "model": "3390",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1374,14 +1374,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "e8bfa9ff",
     "make": "Mosler",
     "model": "1830",
     "group": "2",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1394,7 +1394,7 @@
       "Indirect drive",
       "LOBC cover"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.444Z"
   },
   {
     "id": "0e6f7715",
@@ -1479,7 +1479,7 @@
     "make": "Mosler",
     "model": "MR(K)-302",
     "group": "1R",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1537,14 +1537,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "56fed723",
     "make": "Mosler",
     "model": "MR-402",
     "group": "1R",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1558,7 +1558,7 @@
       "False gates",
       "Sprung double-cam"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "c51157c7",
@@ -1582,7 +1582,7 @@
     "make": "Precision",
     "model": "P67",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1594,14 +1594,14 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "7bdc4f32",
     "make": "Rench",
     "model": "4031",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1613,7 +1613,7 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "ad3b6507",
@@ -1703,7 +1703,7 @@
     "make": "Sargent & Greenleaf",
     "model": "6430",
     "group": "2M",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1715,14 +1715,14 @@
       "Right/left handed open",
       "Vault format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "350e09f9",
     "make": "Sargent & Greenleaf",
     "model": "6435",
     "group": "1",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1735,14 +1735,14 @@
       "Vault format",
       "Indirect drive"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "c2f54e5c",
     "make": "Sargent & Greenleaf",
     "model": "6530",
     "group": "2",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1755,14 +1755,14 @@
       "Vault format",
       "Eccentric roller"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "bd3e18ae",
     "make": "Sargent & Greenleaf",
     "model": "6535",
     "group": "2",
-    "fence": "Gravity Lever",
+    "fence": "Gravity lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1827,14 +1827,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53927144130_390c46b63b_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "7c91d17c",
     "make": "Sargent & Greenleaf",
     "model": "6630",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1885,14 +1885,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521500463_afffa12ba1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "ffffb9fa",
     "make": "Sargent & Greenleaf",
     "model": "6631",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -1936,14 +1936,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53926946403_4f591ac60a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "9262a564",
     "make": "Sargent & Greenleaf",
     "model": "6642",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -1993,14 +1993,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "edb5f9e3",
     "make": "Sargent & Greenleaf",
     "model": "6643",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -2013,14 +2013,14 @@
       "Standard format",
       "False gates"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "082b9b1f",
     "make": "Sargent & Greenleaf",
     "model": "6651",
     "group": "2M",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -2099,14 +2099,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "ae84d433",
     "make": "Sargent & Greenleaf",
     "model": "6730",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -2148,14 +2148,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "15d969bb",
     "make": "Sargent & Greenleaf",
     "model": "6731",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -2167,14 +2167,14 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "8a2dc6e5",
     "make": "Sargent & Greenleaf",
     "model": "6741",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -2202,7 +2202,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "aeeb2e0f",
@@ -2265,7 +2265,7 @@
     "make": "Sargent & Greenleaf",
     "model": "8100",
     "group": "not rated",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "2 or 3",
     "digits": "0-99",
     "notes": "",
@@ -2273,14 +2273,14 @@
     "features": [
       "Dial change and pin change."
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2024-12-04T02:26:32.445Z"
   },
   {
     "id": "211383d8",
     "make": "Sargent & Greenleaf",
     "model": "841x",
     "group": "1",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -2309,14 +2309,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.446Z"
   },
   {
     "id": "daa48991",
     "make": "Sargent & Greenleaf",
     "model": "843x",
     "group": "1R",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -2329,7 +2329,7 @@
       "Standard format",
       "Butterfly anti-manipulation cam"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.446Z"
   },
   {
     "id": "87af3a83",
@@ -2434,7 +2434,7 @@
     "make": "Sargent & Greenleaf",
     "model": "R6730",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "3",
     "digits": "0-99",
     "notes": "",
@@ -2476,14 +2476,14 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.446Z"
   },
   {
     "id": "06555f12",
     "make": "Sargent & Greenleaf",
     "model": "R6731",
     "group": "2",
-    "fence": "Spring Lever",
+    "fence": "Spring lever",
     "wheels": "4",
     "digits": "0-99",
     "notes": "",
@@ -2495,7 +2495,7 @@
       "Multi-orientation cam",
       "Standard format"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2024-12-04T02:26:32.446Z"
   },
   {
     "id": "cc7e7e41",
