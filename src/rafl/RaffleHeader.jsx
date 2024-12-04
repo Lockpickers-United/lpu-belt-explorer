@@ -57,7 +57,9 @@ function RaffleHeader({page}) {
     const discordStyle = {border: '1px solid #ccc', borderTopLeftRadius: 10, borderBottomLeftRadius: 10}
     const redditStyle = {border: '1px solid #ccc', borderTopRightRadius: 10, borderBottomRightRadius: 10}
 
+    const prizeButtonText = live || raffleAdminRole ? 'PRIZES' : 'PRIZE PREVIEW'
     const toolTip = displayStats ? 'Hide Real-time Stats' : 'Show Real-time Stats'
+    
     return (
         <React.Fragment>
             <div style={style}>
@@ -65,13 +67,7 @@ function RaffleHeader({page}) {
                 <div style={{marginTop: buttonTop, justifyItems: 'right'}}>
                     <div style={{flexGrow: 1}}/>
 
-                    {!live && !raffleAdminRole &&
-                        <div style={{fontSize: '1.4rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
-                            SNEAK PEEK</div>
-                    }
-
-                    {(live || raffleAdminRole) &&
-                        <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
+                    <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl')}
                                     style={{
@@ -80,7 +76,22 @@ function RaffleHeader({page}) {
                                         fontSize: buttonFontSize
                                     }}
                                     disabled={page === 'pots'}>
-                                PRIZES
+                                {prizeButtonText}
+                            </Button>
+                        </span>
+                    </Tooltip>
+
+                    {(!live && !raffleAdminRole) &&
+                        <Tooltip title={'Call For Contributions'} arrow disableFocusListener style={{}}>
+                        <span>
+                            <Button onClick={() => handleChange('/rafl/announce')}
+                                    style={{
+                                        marginRight: 10,
+                                        color: page === 'announce' ? '#fff' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}
+                                    disabled={page === 'announce'}>
+                                CONTRIBUTE
                             </Button>
                         </span>
                         </Tooltip>

@@ -332,6 +332,13 @@ export default [
                     const {default: RaffleReportRoute} = await import('../rafl/reports/RaffleReportRoute.jsx')
                     return {element: <RaffleReportRoute/>}
                 }
+            },
+            {
+                path: '/rafl/announce',
+                lazy: async () => {
+                    const {default: RaffleAnnounceRoute} = await import('../rafl/RaffleAnnounceRoute.jsx')
+                    return {element: <RaffleAnnounceRoute/>}
+                }
             }
         ]
     },

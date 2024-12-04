@@ -86,7 +86,7 @@ function RaffleRoute() {
                     {!showSingle &&
                         <React.Fragment>
 
-                            <Nav title='RAFL' extras={extras} extrasTwo={extrasTwo}/>
+                            <Nav title='Announcing RAFL 2025!' extras={extras} extrasTwo={extrasTwo}/>
                             <RaffleHeader page={'pots'}/>
 
                             {showPreview &&
