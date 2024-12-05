@@ -1,0 +1,17 @@
+{
+  "name": "explorelpubeltsserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exploreLPUbeltsServer.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "mgsecure",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}
