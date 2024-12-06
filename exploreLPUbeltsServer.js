@@ -6,6 +6,7 @@ import https from 'https'
 import EventEmitter from 'events'
 
 import importRaflData from './projects/importRaflData/importRaflData.js'
+import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
@@ -24,6 +25,16 @@ app.get('/refresh-preview', async (req, res) => {
     await importRaflData().then(results => {
         res.send(results)
     })
+})
+
+app.get('/flickr-info', async (req, res) => {
+    myEmitter.emit('myEvent', 'Flickr info requested')
+
+    await getFlickrInfo(req.query.id).then(results => {
+        res.send(results)
+    })
+
+
 })
 
 const httpServer = http.createServer(app)
