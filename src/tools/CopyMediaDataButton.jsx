@@ -1,6 +1,4 @@
 import React, {useCallback} from 'react'
-import IconButton from '@mui/material/IconButton'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import Tooltip from '@mui/material/Tooltip'
 import {enqueueSnackbar} from 'notistack'
 import Button from '@mui/material/Button'

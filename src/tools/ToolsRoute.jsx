@@ -1,34 +1,15 @@
-import React, {useContext, useCallback} from 'react'
-import useData from '../util/useData.jsx'
+import React from 'react'
 import Nav from '../nav/Nav.jsx'
 import Footer from '../nav/Footer.jsx'
 import Tracker from '../app/Tracker.jsx'
-import DBContext from '../app/DBContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
-import FlickrInfoSubmit from './FlickrInfoSubmit.jsx'
-import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
-import SignInButton from '../auth/SignInButton.jsx'
-import Button from '@mui/material/Button'
+import Link from '@mui/material/Link'
+import {useNavigate} from 'react-router-dom'
+import usePageTitle from '../util/usePageTitle.jsx'
 
 function ToolsRoute() {
-    const {user} = useContext(AuthContext)
-    const {getProfile} = useContext(DBContext)
-    const {isMobile} = useWindowSize()
+    const navigate = useNavigate()
 
-    document.title = 'LPU Belt Explorer - Tools'
-
-    const userId = user ? user.uid : null
-    const loadFn = useCallback(async () => {
-        if (!userId) return null
-        try {
-            return await getProfile(userId)
-        } catch (ex) {
-            console.error('Error loading profile.', ex)
-            return null
-        }
-    }, [getProfile, userId])
-    const {data = {}, loading, error} = useData({loadFn})
+    usePageTitle('Tools')
 
     const nav = (
         <React.Fragment></React.Fragment>
@@ -37,26 +18,20 @@ function ToolsRoute() {
     return (
         <React.Fragment>
             <Nav title='Tools' extras={nav}/>
-            {loading && <LoadingDisplay/>}
-
-            {!loading && data && !error &&
-                <FlickrInfoSubmit profile={data}/>
-            }
-
-            {!loading && !data && !error &&
-                <div style={{
-                    maxWidth: 700, padding: 0,
-                    marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
-                }}>
-                    <div style={{textAlign: 'center', marginTop: 40}}>
-                        We&#39;re sorry, you must be signed in to submit content.
-                        <br/><br/>
-                        <Button style={{color: '#fff'}}>
-                            <SignInButton/>
-                        </Button>
-                    </div>
+            <div style={{
+                maxWidth: 500, padding: 0,
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
+            }}>
+                <div style={{marginTop: 40}}>
+                    <Link onClick={() =>navigate('/tools/flickrinfo')}
+                          style={{color:'#fff', textDecorationColor:'#bbb', cursor:'pointer', fontSize:'1.1rem', fontWeight:700}}>
+                        Get Flickr Media Info
+                    </Link>
                 </div>
-            }
+                <div>
+                    Retrieves photo data formatted for media tabs for a selected Flickr photoset by ID.
+                </div>
+            </div>
             <Footer/>
             <Tracker feature='flickrInfo'/>
         </React.Fragment>

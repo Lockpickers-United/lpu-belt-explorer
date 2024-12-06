@@ -349,6 +349,12 @@ export default [
         },
         children: [
             {
+                path: '/tools',
+                lazy: async () => {
+                    const {default: ToolsRoute} = await import('../tools/ToolsRoute.jsx')
+                    return {element: <ToolsRoute/>}
+                }
+            },{
                 path: '/tools/flickrinfo',
                 lazy: async () => {
                     const {default: FlickrInfoRoute} = await import('../tools/FlickrInfoRoute')

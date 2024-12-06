@@ -107,6 +107,11 @@ export default [
             },
             {
                 admin: true,
+                title: 'Tools',
+                path: '/tools'
+            },
+            {
+                admin: true,
                 title: 'System Message Admin',
                 path: '/admin/systemMessages'
             }
