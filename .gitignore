@@ -35,3 +35,5 @@ public/data/*
 src/data/dancache/*
 src/data/linkCache.json
 /public/test
+src/data/data.json
+src/data/rafl.json

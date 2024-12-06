@@ -10,6 +10,9 @@ export function AppProvider({children}) {
     const [beta, setBeta] = useLocalStorage('beta2024', false)
     const [admin, setAdmin] = useLocalStorage('admin', adminRole && !!import.meta.env.DEV)
 
+    const [compact, setCompact] = useState(false)
+    const [preview, setPreview] = useLocalStorage('previewMode', false)
+
     useEffect(() => {
         if (!adminRole && admin) {
             setAdmin(false)
@@ -71,8 +74,6 @@ export function AppProvider({children}) {
         }, multiplier * 1000) // 60 * 1000 = 1 min
     }
 
-  const [compact, setCompact] = useState(false)
-
     const value = useMemo(() => ({
         beta,
         setBeta: handleSetBeta,
@@ -81,9 +82,9 @@ export function AppProvider({children}) {
         version: initial,
         updateRequired,
         updateAvailable,
-        compact,
-        setCompact
-    }), [beta, handleSetBeta, admin, handleSetAdmin, initial, updateRequired, updateAvailable, compact])
+        compact, setCompact,
+        preview, setPreview
+    }), [beta, handleSetBeta, admin, handleSetAdmin, initial, updateRequired, updateAvailable, compact, preview, setPreview])
 
     return (
         <AppContext.Provider value={value}>

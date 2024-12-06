@@ -1,6 +1,9 @@
 import React, {useCallback, useState} from 'react'
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import Link from '@mui/material/Link'
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import IconButton from '@mui/material/IconButton'
 
 const AdminStatsTableSort = ({
                                  tableData,
@@ -38,6 +41,10 @@ const AdminStatsTableSort = ({
         }
     }, [ascending, setAscending, setSort, sort])
 
+    const sortIcon = ascending
+        ? <ArrowDropUpIcon/>
+        : <ArrowDropDownIcon/>
+
     return (
         <div>
             <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
@@ -59,18 +66,27 @@ const AdminStatsTableSort = ({
                                                textAlign: column.align,
                                                fontSize: fontSize,
                                                lineHeight: '1.1rem',
-                                               padding: '8px',
+                                               padding: '6px 2px',
                                                backgroundColor: '#111',
                                                color: '#fff'
                                            }}
                                            component='th' scope='row'>
 
                                     {sortable && column.id !== 'index' &&
-                                        <div>
+                                        <div style={{display: 'flex', alignItems: 'center'}}>
+                                            {column.align === 'center'
+                                                ? <div style={{width: 24}}/>
+                                                : <div style={{width: 6}}/>
+                                            }
                                             <Link onClick={() => handleSort(column.id)}
                                                   style={{color: sort === column.id ? '#fff' : '#bbb'}}>
-                                                {column.name}
+                                                <nobr>{column.name}</nobr>
                                             </Link>
+                                            {sort === column.id
+                                                ? <IconButton onClick={() => handleSort(column.id)} style={{padding: 0}}>
+                                                    {sortIcon}</IconButton>
+                                                : <div style={{width: 24}}/>
+                                            }
                                         </div>
                                         || <div>{column.name}</div>
                                     }

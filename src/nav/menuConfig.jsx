@@ -10,6 +10,7 @@ import AvTimerIcon from '@mui/icons-material/AvTimer'
 import LPU_logo from '../resources/LPU_logo'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import ConstructionIcon from '@mui/icons-material/Construction'
+import NewReleasesIcon from '@mui/icons-material/NewReleases'
 
 export default [
     {
@@ -32,6 +33,11 @@ export default [
         title: 'Safe Locks',
         icon: <AvTimerIcon fontSize='small'/>,
         path: '/safelocks'
+    },
+    {
+        title: 'RAFL',
+        icon: <NewReleasesIcon fontSize='small'/>,
+        path: '/rafl'
     },
     {
         title: 'Leaderboards',

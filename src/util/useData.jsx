@@ -2,7 +2,7 @@ import Button from '@mui/material/Button'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
 
-function useData({url, urls, loadFn}) {
+function useData({url, urls, loadFn, text}) {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
     const [error, setError] = useState(false)
@@ -14,13 +14,13 @@ function useData({url, urls, loadFn}) {
             let value
             if (url) {
                 const response = await fetch(url, {cache: 'no-store'})
-                value = await response.json()
+                value = !text ? await response.json() : await response.text()
             } else if (urls) {
                 value = {}
                 const promises = Object.keys(urls)
                     .map(async key => {
                         const response = await fetch(urls[key], {cache: 'no-store'})
-                        value[key] = await response.json()
+                        value[key] = !text ? await response.json() : await response.text()
                     })
                 await Promise.all(promises)
             } else if (loadFn) {
@@ -30,6 +30,7 @@ function useData({url, urls, loadFn}) {
             setData(value)
             setLoading(false)
             setError(false)
+
         } catch (ex) {
             console.error('Error loading data.', ex)
             enqueueSnackbar('Error loading data. Please reload the page.', {
@@ -39,10 +40,10 @@ function useData({url, urls, loadFn}) {
             setLoading(false)
             setError(true)
         }
-    }, [url, urls, loadFn])
+    }, [url, urls, loadFn, text])
 
     useEffect(() => {
-        loadData()
+        loadData().then()
     }, [loadData])
 
     return useMemo(() => ({

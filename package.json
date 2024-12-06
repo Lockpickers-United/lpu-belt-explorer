@@ -11,7 +11,8 @@
     "scripts": {
         "dev": "vite",
         "build": "NODE_ENV=production vite build",
-        "build-dev": "NODE_ENV=production yarn versionFile && vite build --mode dev",
+        "build-dev": "NODE_ENV=production yarn lint && yarn versionFile && vite build --mode dev",
+        "build-dev-import": "NODE_ENV=production yarn versionFile && yarn run import && vite build --mode dev && yarn copyFiles",
         "preview": "vite preview",
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
@@ -51,6 +52,7 @@
         "pdf-lib": "^1.17.1",
         "query-string": "^8.1.0",
         "react": "^18.2.0",
+        "react-countup": "^6.5.3",
         "react-dom": "^18.2.0",
         "react-full-screen": "^1.1.1",
         "react-hotkeys-hook": "^4.4.1",

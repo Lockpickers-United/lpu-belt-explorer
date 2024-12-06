@@ -27,7 +27,7 @@ function SafelocksRoute() {
     )
     const extrasTwo = (
         <React.Fragment>
-            <ViewFilterButtons sortValues={dialSortFields}/>
+            <ViewFilterButtons sortValues={dialSortFields} compactMode={false}/>
         </React.Fragment>
     )
 

@@ -7,6 +7,8 @@ import DataContext from '../locks/LockDataProvider'
 import FilterContext from '../context/FilterContext'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
+import {filterValueNames} from '../data/filterValues'
+
 
 function FilterByField({label, fieldName, onFilter, sort, tab}) {
     const {visibleEntries} = useContext(DataContext)
@@ -92,14 +94,14 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
                 renderValue={selected =>
                     <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
                         {selected.map((value) => (
-                            <Chip key={value} label={value}/>
+                            <Chip key={value} label={filterValueNames[value] ? filterValueNames[value] : value}/>
                         ))}
                     </Box>
                 }
             >
                 {options.map((value, index) =>
                     <MenuItem key={index} value={value}>
-                        {`${value} (${counts[value] || 0})`}
+                        {filterValueNames[value] ? filterValueNames[value] : value + ` (${counts[value] || 0})`}
                     </MenuItem>
                 )}
             </Select>

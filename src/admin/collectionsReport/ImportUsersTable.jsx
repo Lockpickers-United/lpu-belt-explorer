@@ -51,8 +51,6 @@ const ImportUsersTable = ({data}) => {
             : string
     },[navigate, rows])
 
-    //console.log('rows', rows)
-
     const tableData = {
         columns: [
             {'name': '#', 'align': 'center', 'id': 'index'},
@@ -77,7 +75,7 @@ const ImportUsersTable = ({data}) => {
                     : midWindow ? '.9rem'
                         : '.9rem'
 
-    const tableWidth = '80%'
+    const tableWidth = '60%'
 
     return (
         <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}
