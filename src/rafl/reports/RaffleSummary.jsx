@@ -16,8 +16,6 @@ function RaffleSummary({data}) {
         ...divFlexStyle
     }
 
-    //                    <SiteReport7daysTable fullData={data}/>
-
     return (
         <React.Fragment>
             <div style={{textAlign: 'center'}}>

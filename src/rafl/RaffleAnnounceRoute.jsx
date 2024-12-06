@@ -35,10 +35,12 @@ function RaffleAnnouncetRoute() {
         </React.Fragment>
     )
 
+    const navTitle = !isMobile ? 'Announcing RAFL 2025!' : 'RAFL 2025!'
+
     return (
         <React.Fragment>
 
-            <Nav title='Announcing RAFL 2025!' extras={extras}/>
+            <Nav title={navTitle} extras={extras}/>
 
             <div style={style}>
                 <RaffleHeader page={'announce'}/>

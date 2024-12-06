@@ -20,7 +20,6 @@ const RaffleReport28DaysLine = ({lineData}) => {
             const entryFormArray = []
 
             for (let i = 0; i < value.length; i++) {
-                //const date = value[i]['date'].replaceAll('/','-').replace(/(\d\d)-(\d\d)-(\d\d)$/,'20$3-$1-$2')
                 const date = value[i]['date']
                 if (dayjs(date) < dayjs('2024-11-25')) continue
 
@@ -42,7 +41,6 @@ const RaffleReport28DaysLine = ({lineData}) => {
             raflHash['id'] = 'Pot List'
             raflHash['data'] = raflArray
 
-
             raflPotsHash['id'] = 'Pot Views'
             raflPotsHash['data'] = raflPotsArray
 
@@ -52,7 +50,6 @@ const RaffleReport28DaysLine = ({lineData}) => {
             siteLineData.push(raflPotsHash)
             siteLineData.push(raflHash)
             siteLineData.push(entryFormHash)
-
         })
 
     const {width} = useWindowSize()

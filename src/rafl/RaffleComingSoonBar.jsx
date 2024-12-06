@@ -18,7 +18,7 @@ export default function RaffleComingSoonBar() {
                 We will start accepting entries on January 1st. In the meantime,
                 here&#39;s a preview of the pots that folks are developing.
                 Please note that <strong>all pots and contents are subject to change</strong> until
-                we go live in January.
+                the raffle begins in January.
             </div>
         </div>
 

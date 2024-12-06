@@ -23,7 +23,6 @@ function RaffleHeader({page}) {
     const donationsTotal = summaryStats && summaryStats[0].donationsTotal
     const donationsTotalStr = summaryStats && new Intl.NumberFormat().format(summaryStats[0].donationsTotal)
     const averageDonation = summaryStats && Math.floor(summaryStats[0].donationsTotal / donors)
-    //const donationsTotal2024 = data && new Intl.NumberFormat().format(data[0].donationsTotal2024)
 
     const chartWidth = 300
     const discordWidth = summaryStats && (summaryStats[0].donationsDiscord / (summaryStats[0].donationsDiscord + summaryStats[0].donationsReddit)) * chartWidth

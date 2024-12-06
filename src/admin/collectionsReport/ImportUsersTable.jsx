@@ -51,8 +51,6 @@ const ImportUsersTable = ({data}) => {
             : string
     },[navigate, rows])
 
-    //console.log('rows', rows)
-
     const tableData = {
         columns: [
             {'name': '#', 'align': 'center', 'id': 'index'},
@@ -62,8 +60,6 @@ const ImportUsersTable = ({data}) => {
         ],
         data: rows
     }
-
-    console.log('awardsDisplayNames', tableData)
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360

@@ -15,7 +15,7 @@ import {raflJsonUrl} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import AppContext from '../app/AppContext.jsx'
 import {useSearchParams} from 'react-router-dom'
-import RafffleEntry from './RafffleEntry.jsx'
+import RafffleEntry from './RaffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RafflePreviewBar from './RafflePreviewBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
@@ -74,6 +74,8 @@ function RaffleRoute() {
         paddingRight: sideSpacing
     }
 
+    const navTitle = !isMobile ? 'Announcing RAFL 2025!' : 'RAFL 2025!'
+
     return (
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleDataProvider allEntries={allEntriesMapped} profile={lockCollection}>
@@ -86,7 +88,7 @@ function RaffleRoute() {
                     {!showSingle &&
                         <React.Fragment>
 
-                            <Nav title='Announcing RAFL 2025!' extras={extras} extrasTwo={extrasTwo}/>
+                            <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
                             <RaffleHeader page={'pots'}/>
 
                             {showPreview &&
