@@ -341,6 +341,30 @@ export default [
                 }
             }
         ]
+    },{
+        path: '/tools',
+        lazy: async () => {
+            const {default: ToolsParentRoute} = await import('../tools/ToolsParentRoute.jsx')
+            return {element: <ToolsParentRoute/>}
+        },
+        children: [
+            {
+                path: '/tools/flickrinfo',
+                lazy: async () => {
+                    const {default: FlickrInfoRoute} = await import('../tools/FlickrInfoRoute')
+                    return {element: <FlickrInfoRoute/>}
+                }
+            }, {
+                path: '/tools/flickrinfo',
+                lazy: async () => {
+                    const {default: FlickrInfoRoute} = await import('../tools/FlickrInfoRoute')
+                    return {element: <FlickrInfoRoute/>}
+                }
+            }
+        ]
+    },{
+        path: '*',
+        loader: () => redirect('/locks')
     },
 
     {
