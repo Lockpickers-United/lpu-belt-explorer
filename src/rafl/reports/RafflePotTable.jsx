@@ -5,11 +5,13 @@ import AdminStatsTableSort from '../../admin/AdminStatsTableSort.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import RaffleAutocompleteBox from '../entryForm/RaffleAutocompleteBox.jsx'
+import DataContext from '../../context/DataContext.jsx'
 
 const RafflePotTable = ({data}) => {
     const navigate = useNavigate()
     const {potViewsById} = data
     const {potStats} = useContext(RaffleContext)
+    const {getPotFromId} = useContext(DataContext)
 
     const columns = [
         {name: 'Pot ID', align: 'left', id: 'id'},
@@ -26,8 +28,16 @@ const RafflePotTable = ({data}) => {
     const [searched, setSeached] = useState({})
 
     const potData = potViewsById.data.map(pot => {
+        const dataPot = getPotFromId(pot.id)
         const statsPot = potStats.find(p => p.id === pot.id)
-        return {...pot, ...statsPot, percentViews: (Math.floor(pot.percentViews * 100) + '%')}
+        return {
+            ...pot,
+            donors: statsPot.donors,
+            tickets: statsPot.tickets,
+            percentViews: (Math.floor(pot.percentViews * 100) + '%'),
+            title: dataPot?.title ? dataPot.title : `unknown (${pot.id})`,
+            ...dataPot
+        }
     })
         .sort((a, b) => {
             switch (sort) {
@@ -58,7 +68,7 @@ const RafflePotTable = ({data}) => {
     }, [navigate, potData])
 
     const potTitle = useCallback((pot) => {
-        return pot.title
+        return pot?.title ? pot.title : 'unknown'
     }, [])
 
     const {width} = useWindowSize()

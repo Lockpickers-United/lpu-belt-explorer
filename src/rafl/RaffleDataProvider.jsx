@@ -1,4 +1,4 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
@@ -69,10 +69,15 @@ export function RaffleDataProvider({children, allEntries, profile}) {
             : searched
     }, [filters, mappedEntries, search, sort])
 
+    const getPotFromId = useCallback(id => {
+        return allEntries.find(e => e.id === id)
+    }, [allEntries])
+
     const value = useMemo(() => ({
         allEntries,
-        visibleEntries
-    }), [allEntries, visibleEntries])
+        visibleEntries,
+        getPotFromId
+    }), [allEntries, visibleEntries, getPotFromId])
 
     return (
         <DataContext.Provider value={value}>
