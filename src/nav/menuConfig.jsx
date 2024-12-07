@@ -102,6 +102,11 @@ export default [
             },
             {
                 admin: true,
+                title: 'RAFL Report',
+                path: '/rafl/reports'
+            },
+            {
+                admin: true,
                 title: 'Black Belt Report',
                 path: '/admin/blackBelts'
             },
