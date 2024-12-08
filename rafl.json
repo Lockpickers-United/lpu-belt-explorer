@@ -6,7 +6,7 @@
     "formId": "878340115",
     "title": "Seven Scandi Ovals",
     "description": "7 Scandinavian ovals and 2 stands (keys included)",
-    "potContents": "7 Scandinavian ovals and 2 stands (keys included)\n- 500\n- 700\n- 6k\n- d12\n- 2 KABAs\n- Abus with trees",
+    "potContents": "7 Scandinavian ovals and 2 stands (keys included)\n- 500\n- 700\n- 6k\n- d12\n- 2 KABAs\n- Abus 7-pin",
     "contributedBy": [
       "H.J"
     ],
@@ -284,5 +284,131 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54185303779_d3f2427e20_o.jpg"
       }
     ]
+  },
+  {
+    "id": "2025-018",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "The Burn (2 winners)",
+    "description": "These pots represent an official psychology study aiming to identify picker preference between smooth and knurled dimple flags. Such studies benefit greatly by large participation numbers.",
+    "potContents": "Each pot contains:\n-1 set of 4 custom dimple flags (tall, short, left and right)\n-One with knurling, one set smooth. Both 10mm diameter.\n-Leather case made by TheGamingBug (TheMothMan) ",
+    "contributedBy": [
+      "BurnB1"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$30 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": ""
+  },
+  {
+    "id": "2025-019",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "Dutch Training Kit (2 winners)",
+    "description": "",
+    "potContents": "Each winner receives:\n-1 Skylender training lock: https://lockpickwebwinkel.nl/lockpick-oefening/training-skylender/ \n-Pin and spring kit (6 pin types and 4 spring types): https://lockpickwebwinkel.nl/lockpick-oefening/skylender-pins-and-springs/ \n-Trampoline pin kit: https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-trampoline-pins/ \n-Rod stock for custom pins: https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-doe-het-zelf-pinnen/ ",
+    "contributedBy": [
+      "Lockpickwebwinkel.nl"
+    ],
+    "tags": [],
+    "country": [
+      "Netherlands"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": ""
+  },
+  {
+    "id": "2025-020",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "The Lockpickwebwinkel main prize",
+    "description": "",
+    "potContents": "Contents TBD",
+    "contributedBy": [
+      "Lockpickwebwinkel.nl"
+    ],
+    "tags": [],
+    "country": [
+      "Netherlands"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": ""
+  },
+  {
+    "id": "2025-021",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "Wyte's Box to Shit Belt",
+    "description": "",
+    "potContents": "Jimylongs:\n-Starter set v4 .022\n-.015 flat hooks v4\n-.015 round hooks v4\n-Basic set v5 .019\n-Intermediate set v5 .019\n-Tool roll\nLOCKS:\n-Sega wafer lock\n-Schlage residential KiK (yellow)\n-Showa pt lock (white)\n-Yale 122/50 padlock (orange)\n-SFIC with both keys (purple/brown)\n-Paclock 90a (new-green)\n-American 1107 (new-green)\n-Goal s (blue)\n-Goal p (brown)\n-West pt (white but can be used for CL easily)",
+    "contributedBy": [
+      "Wyte"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": ""
+  },
+  {
+    "id": "2025-022",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "Ablo-ho-ho",
+    "description": "",
+    "potContents": "Each of 3 winners receives an Abloy 340 Protec2",
+    "contributedBy": [
+      "ViceGrip"
+    ],
+    "tags": [],
+    "country": [
+      "UK"
+    ],
+    "shippingInfo": "Domestic Shipping Included",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Winner pays international shipping",
+    "winner": ""
+  },
+  {
+    "id": "2025-023",
+    "year": 2025,
+    "potNumber": "0",
+    "formId": "",
+    "title": "Dazzling Pick and Coaster set",
+    "description": "",
+    "potContents": "0.5mm 301hy steel custom pick with matching coaster",
+    "contributedBy": [
+      "Reckedx"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": ""
   }
 ]
