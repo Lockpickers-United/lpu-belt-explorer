@@ -1,0 +1,10 @@
+{
+  "name": "getRaflGoogleForm",
+  "version": "1.0.0",
+  "main": "createRaflGoogleForm.js",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
