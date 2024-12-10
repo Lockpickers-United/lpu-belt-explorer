@@ -17,6 +17,7 @@
         "lint": "eslint \"./src/**\" \"./scripts/**\"",
         "import": "node ./scripts/import.js",
         "import-dan": "node ./scripts/importDan.js",
+        "refreshRaflPreview": "node ./scripts/refreshRaflPreview.js",
         "migrate-recorded": "node ./scripts/migrateRecorded.js",
         "migrate-black-belts": "node ./scripts/migrateBlackBelts.js",
         "process-changelog": "node ./scripts/processChangelog.js",
@@ -30,7 +31,7 @@
         "copyData": "node ./scripts/copyData.js",
         "copyFiles": "node ./scripts/copyFiles.js",
         "ci-pr": "yarn lint && yarn build",
-        "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
+        "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles && yarn refreshRaflPreview"
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",
