@@ -1,8 +1,6 @@
 import fetch from 'node-fetch'
 
-console.log('env', process.env)
-
-const url = process.env.USER === 'nealbayless'
+const url = process.env.USER !== 'runner'
     ? 'http' + '://explore.lpubelts.com:8080/refresh-preview'
     : 'https://explore.lpubelts.com:8443/refresh-preview'
 
