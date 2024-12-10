@@ -1,0 +1,1 @@
+import{j as t,$ as r}from"./index-e55a35db.js";import{R as e}from"./RaffleContext-421c8333.js";import"./useData-a61ddea8.js";import"./dataUrls-02b67476.js";function i(){return t.jsx(e,{children:t.jsx(r,{})})}export{i as default};
