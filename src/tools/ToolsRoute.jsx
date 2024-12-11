@@ -22,14 +22,26 @@ function ToolsRoute() {
                 maxWidth: 500, padding: 0,
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
             }}>
-                <div style={{marginTop: 40}}>
+                <div style={{marginTop: 40, backgroundColor:'#222', padding:30}}>
                     <Link onClick={() =>navigate('/tools/flickrinfo')}
                           style={{color:'#fff', textDecorationColor:'#bbb', cursor:'pointer', fontSize:'1.1rem', fontWeight:700}}>
                         Get Flickr Media Info
-                    </Link>
-                </div>
-                <div>
+                    </Link><br/>
                     Retrieves photo data formatted for media tabs for a selected Flickr photoset by ID.
+                </div>
+
+                <div style={{marginTop: 20, backgroundColor: '#222', padding: 30}}>
+                    <Link onClick={() => navigate('/tools/rafl-charities')}
+                          style={{
+                              color: '#fff',
+                              textDecorationColor: '#bbb',
+                              cursor: 'pointer',
+                              fontSize: '1.1rem',
+                              fontWeight: 700
+                          }}>
+                        Compare RAFL Charities
+                    </Link><br/>
+                    Compares charity info from site and form to find mismatches.
                 </div>
             </div>
             <Footer/>

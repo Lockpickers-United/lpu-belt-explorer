@@ -1,9 +1,9 @@
 import React from 'react'
-import Nav from '../nav/Nav.jsx'
-import Footer from '../nav/Footer.jsx'
-import Tracker from '../app/Tracker.jsx'
+import Nav from '../../nav/Nav.jsx'
+import Footer from '../../nav/Footer.jsx'
+import Tracker from '../../app/Tracker.jsx'
 import FlickrInfoSubmit from './FlickrInfoSubmit.jsx'
-import usePageTitle from '../util/usePageTitle.jsx'
+import usePageTitle from '../../util/usePageTitle.jsx'
 
 function FlickrInfoRoute() {
 

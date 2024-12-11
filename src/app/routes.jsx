@@ -357,14 +357,14 @@ export default [
             },{
                 path: '/tools/flickrinfo',
                 lazy: async () => {
-                    const {default: FlickrInfoRoute} = await import('../tools/FlickrInfoRoute')
+                    const {default: FlickrInfoRoute} = await import('../tools/flickrInfo/FlickrInfoRoute.jsx')
                     return {element: <FlickrInfoRoute/>}
                 }
             }, {
-                path: '/tools/flickrinfo',
+                path: '/tools/rafl-charities',
                 lazy: async () => {
-                    const {default: FlickrInfoRoute} = await import('../tools/FlickrInfoRoute')
-                    return {element: <FlickrInfoRoute/>}
+                    const {default: RaflCharitiesRoute} = await import('../tools/raflCharities/RaflCharitiesRoute.jsx')
+                    return {element: <RaflCharitiesRoute/>}
                 }
             }
         ]

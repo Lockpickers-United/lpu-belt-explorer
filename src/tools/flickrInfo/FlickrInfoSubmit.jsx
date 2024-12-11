@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField'
 import axios from 'axios'
 import {enqueueSnackbar} from 'notistack'
 import CopyMediaDataButton from './CopyMediaDataButton.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 function ContentSubmit() {
 
