@@ -7,6 +7,7 @@ import EventEmitter from 'events'
 
 import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
+import {getCharities} from './projects/getRaflGoogleForm/createRaflGoogleForm.js'
 
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
@@ -22,19 +23,26 @@ myEmitter.on('myEvent', (data) => {
 
 app.get('/refresh-preview', async (req, res) => {
     myEmitter.emit('myEvent', 'Preview refresh requested')
-    await importRaflData().then(results => {
+
+    const compare = !!req?.query?.compare || false
+
+    await importRaflData(compare).then(results => {
         res.send(results)
     })
 })
 
 app.get('/flickr-info', async (req, res) => {
     myEmitter.emit('myEvent', 'Flickr info requested')
-
     await getFlickrInfo(req.query.id).then(results => {
         res.send(results)
     })
+})
 
-
+app.get('/rafl-charities', async (req, res) => {
+    myEmitter.emit('myEvent', 'Rafl charities requested')
+    await getCharities().then(results => {
+        res.send(results)
+    })
 })
 
 const httpServer = http.createServer(app)
