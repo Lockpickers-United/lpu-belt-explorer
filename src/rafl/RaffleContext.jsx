@@ -15,7 +15,7 @@ export function RaffleStatsProvider({children}) {
 
     const {raflStats, raflQuestionMap, raflResponseSummary} = data || {}
 
-    const {charityStats, summaryStats} = raflStats || {}
+    const {potStats, charityStats, summaryStats} = raflStats || {}
     const allDataLoaded = (!loading && !error && !!data)
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(true)
@@ -64,7 +64,7 @@ export function RaffleStatsProvider({children}) {
         raflResponseSummary,
         potSummaryStats,
         charitySummaryStats,
-
+        potStats,
         charityStats,
         summaryStats,
         displayStats, setDisplayStats,
@@ -81,7 +81,7 @@ export function RaffleStatsProvider({children}) {
         raflResponseSummary,
         potSummaryStats,
         charitySummaryStats,
-
+        potStats,
         charityStats,
         summaryStats,
         displayStats, setDisplayStats,

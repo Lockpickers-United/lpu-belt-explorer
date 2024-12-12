@@ -411,7 +411,6 @@ const raflMainData = raflData
         id: datum['Unique ID'],
         year: +datum['Year'],
         potNumber: datum['Pot Number'],
-        formId: datum['Form ID'],
         title: datum['Title'],
         description: datum['Description'],
         potContents: datum['Pot Contents'],
