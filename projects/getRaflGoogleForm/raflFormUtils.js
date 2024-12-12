@@ -7,6 +7,10 @@ const keysDir = production
     ? '/home/dh_m5s5pf/explore-lpubelts-com-node/keys'
     : '/Users/nealbayless/Documents/GitHub/explore-lpubelts-com-node/keys'
 
+const serverDir = production
+    ? '/home/dh_m5s5pf/explore.lpubelts.com/public/data/'
+    : '/Users/nealbayless/Documents/GitHub/explore-lpubelts-com-node/projects/getRaflGoogleForm'
+
 // MAIN DATA OBJECT
 let error = false
 
@@ -185,6 +189,10 @@ async function createQuestions(auth, formId, raflData, charitiesData) {
 
     const potQuestions =
         raflData
+            .sort((a, b) => {
+                return parseInt(a.potNumber) - parseInt(b.potNumber)
+                    || a.title.localeCompare(b.title)
+            })
             .filter(pot => pot.potNumber !== '99')
             .map((pot, index) =>
                 textQuestion(`Pot ${index + 1} - ${pot.title}`, requests.length + index)
@@ -197,12 +205,11 @@ async function createQuestions(auth, formId, raflData, charitiesData) {
         formId: formId,
         requestBody: {requests: requests}
     })
-    console.log(updateResponse.data)
     return updateResponse.data
 }
 
 
-async function getFormResponses(auth, formId) {
+async function getFormResponses(auth, formId, raflData) {
 
     const formItems = await getFormItems(auth, formId)
     const questionMap = formItems.reduce((acc, item) => {
@@ -215,35 +222,33 @@ async function getFormResponses(auth, formId) {
         formId: formId
     })).data.responses
 
-    //jsonIt(questionMap)
+    //jsonIt('questionMap', questionMap)
     //jsonIt(formItems)
-    jsonIt(responses)
+    //jsonIt('responses', responses)
 
     const responseData = responses.map(res => {
-            return Object.keys(res.answers).reduce((acc, key) => {
-                if (questionMap[key] === 'Your Preferred Platform') {
-                    acc.platform = res.answers[key].textAnswers.answers[0].value
-                } else if (questionMap[key] === 'Platform Username') {
-                    acc.username = res.answers[key].textAnswers.answers[0].value
-                } else if (questionMap[key] === 'Selected charity') {
-                    acc.charity = res.answers[key].textAnswers.answers[0].value
-                } else if (questionMap[key] === 'Receipt from approved charity (hosted image link, must contain a visible date)') {
-                    acc.receipt = res.answers[key].textAnswers.answers[0].value
-                } else if (questionMap[key] === 'Total donation in USD') {
-                    acc.donation = parseInt(res.answers[key].textAnswers.answers[0].value)
-                } else {
-                    acc.pots = acc.pots
-                        ? {...acc.pots, [questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
-                        : {[questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
 
-                }
-                acc.donor = `${acc.platform}-${acc.username}`
-                return acc
-            }, {})
-        }
-    )
+        return Object.keys(res.answers).reduce((acc, key) => {
+            if (questionMap[key] === 'Your Preferred Platform') {
+                acc.platform = res.answers[key].textAnswers.answers[0].value
+            } else if (questionMap[key] === 'Platform Username') {
+                acc.username = res.answers[key].textAnswers.answers[0].value
+            } else if (questionMap[key] === 'Selected charity') {
+                acc.charity = res.answers[key].textAnswers.answers[0].value
+            } else if (questionMap[key] === 'Receipt from approved charity (hosted image link, must contain a visible date)') {
+                acc.receipt = res.answers[key].textAnswers.answers[0].value
+            } else if (questionMap[key] === 'Total donation in USD') {
+                acc.donation = parseInt(res.answers[key].textAnswers.answers[0].value)
+            } else {
+                acc.pots = acc.pots
+                    ? {...acc.pots, [questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
+                    : {[questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
+            }
+            acc.donor = `${acc.platform}-${acc.username}`
+            return acc
+        }, {})
 
-    console.log('responseData', responseData)
+    })
 
     const summaryData = responseData.reduce((acc, res) => {
 
@@ -266,7 +271,7 @@ async function getFormResponses(auth, formId) {
             : [res.donor]
         acc.platformDonorCount = acc.platformDonorCount ? acc.platformDonorCount : {}
         acc.platformDonorCount[res.platform] = acc.platformDonors[res.platform].length
-        
+
         acc.charityDonations = acc.charityDonations ? acc.charityDonations : {}
         acc.charityDonations[res.charity] = acc.charityDonations[res.charity] + res.donation
             || res.donation
@@ -296,16 +301,54 @@ async function getFormResponses(auth, formId) {
         })
 
 
-
-
-
         return acc
     }, {})
 
+    delete summaryData.uniqueDonors
+    delete summaryData.platformDonors
+    delete summaryData.charityDonors
+    delete summaryData.potDonors
 
+    await fs.writeFile(`${serverDir}/raflResponseSummary.json`, JSON.stringify(summaryData, null, 2), function (err) {
+        if (err) {
+            console.error('save raflResponseSummary error:', err)
+        }
+    })
 
-    console.log('summaryData', summaryData)
+    return summaryData
 }
+
+async function buildQuestionMap(raflData) {
+
+    const formSourceFetch = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSe0Rr8mykkE5FAgzUACzGsGYq_mN-vS34arr2uL0QDEFHBSNQ/viewform')
+    const formSource = await formSourceFetch.text()
+
+    const regex = /var FB_PUBLIC_LOAD_DATA_ = (.*);<\/script>/g
+    const exec = regex.exec(formSource)
+    const questionData = JSON.parse(exec[1])[1][1]
+
+    const questionMap = questionData.map((q, index) => {
+
+        const questionPotTitle = q[1].replace(/Pot.*- /,'')
+        const pot = raflData.find(pot => pot.title === questionPotTitle)
+
+        return {
+            text: q[1],
+            formId: q[4][0][0],
+            index: index,
+            potId: pot?.id
+        }
+    })
+
+    await fs.writeFile(`${serverDir}/raflQuestionMap.json`, JSON.stringify(questionMap, null, 2), function (err) {
+        if (err) {
+            console.error('save questionMap error:', err)
+        }
+    })
+
+    return questionMap
+}
+
 
 ///////////////////////////////////////
 //              MAIN                 //
@@ -313,14 +356,10 @@ async function getFormResponses(auth, formId) {
 
 (async function () {
 
-    const raflFetch = await fetch('https://lpubelts.com/rafl.json')
-    const raflData = await raflFetch.json()
-
-    const charitiesFetch = await fetch('https://lpubelts.com/raflCharities.json')
-    const charitiesData = await charitiesFetch.json()
+    const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
+    const charitiesData = await (await fetch('https://lpubelts.com/raflCharities.json')).json()
 
     const formId = '1_k_xv0hv-EkVSTTXLLfw6Vt5O4JXirYCRQrazWHDBko'
-
     const auth = await authorize()
 
     //await getFormItems(auth, formId)
@@ -329,8 +368,12 @@ async function getFormResponses(auth, formId) {
 
     //await deleteAllQuestions(auth, formId)
     //await createQuestions(auth, formId, raflData, charitiesData)
+    //const questionMap = await buildQuestionMap(raflData)
 
-    await getFormResponses(auth, formId)
+    //jsonIt('questionMap', questionMap)
+
+    const raflResponseSummary = await getFormResponses(auth, formId, raflData)
+    jsonIt('raflResponseSummary', raflResponseSummary)
 
 })()
 
@@ -340,7 +383,8 @@ export async function getCharities(formId) {
     return charities ? charities : [{error: 'error'}]
 }
 
-function jsonIt(object) {
+function jsonIt(string, object) {
+    console.log(string)
     console.log(JSON.stringify(object, null, 2))
     console.log('--------')
 }

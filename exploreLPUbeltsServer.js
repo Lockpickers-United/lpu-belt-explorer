@@ -7,7 +7,7 @@ import EventEmitter from 'events'
 
 import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
-import {getCharities} from './projects/getRaflGoogleForm/createRaflGoogleForm.js'
+import {getCharities} from './projects/getRaflGoogleForm/raflFormUtils.js'
 
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')

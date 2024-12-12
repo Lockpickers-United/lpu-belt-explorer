@@ -1,0 +1,63 @@
+{
+  "totalDonorCount": 8,
+  "uniqueDonorCount": 7,
+  "totalDonations": 12650,
+  "platformDonations": {
+    "Discord": 9450,
+    "Reddit": 3200
+  },
+  "platformDonorCount": {
+    "Discord": 6,
+    "Reddit": 1
+  },
+  "charityDonations": {
+    "Mental Health Association": 500,
+    "total": 12650,
+    "Polar Bears International": 7342,
+    "Alight": 24,
+    "Canadian Whale Instatute": 50,
+    "American Civil Liberties Union": 4434,
+    "Alzheimer’s Association": 300
+  },
+  "charityDonorCount": {
+    "Mental Health Association": 1,
+    "Polar Bears International": 1,
+    "Alight": 1,
+    "Canadian Whale Instatute": 1,
+    "American Civil Liberties Union": 2,
+    "Alzheimer’s Association": 1
+  },
+  "potTickets": {
+    "Pot 8 - Honey Badger Knife Kit": 127,
+    "total": 12644,
+    "Pot 13 - The Burn (2 winners)": 687,
+    "Pot 3 - Bare Bones Dimple Picks": 125,
+    "Pot 9 - Lockpickersbench x Multipick Flag Set": 135,
+    "Pot 10 - Ratyoke Custom Pick": 580,
+    "Pot 7 - Gifts From Granny": 1402,
+    "Pot 11 - RWB DD Pick": 643,
+    "Pot 4 - Bulgarian Squatty Potty": 4025,
+    "Pot 2 - Ablo-ho-ho": 1105,
+    "Pot 16 - Wyte's Box to Shit Belt": 36,
+    "Pot 14 - The Lockpickwebwinkel main prize": 2,
+    "Pot 15 - The Measure of Success": 502,
+    "Pot 12 - Seven Scandi Ovals": 225,
+    "Pot 1 - $$$ of Locc": 3050
+  },
+  "potDonorCount": {
+    "Pot 8 - Honey Badger Knife Kit": 2,
+    "Pot 13 - The Burn (2 winners)": 4,
+    "Pot 3 - Bare Bones Dimple Picks": 1,
+    "Pot 9 - Lockpickersbench x Multipick Flag Set": 2,
+    "Pot 10 - Ratyoke Custom Pick": 2,
+    "Pot 7 - Gifts From Granny": 3,
+    "Pot 11 - RWB DD Pick": 1,
+    "Pot 4 - Bulgarian Squatty Potty": 2,
+    "Pot 2 - Ablo-ho-ho": 3,
+    "Pot 16 - Wyte's Box to Shit Belt": 2,
+    "Pot 14 - The Lockpickwebwinkel main prize": 1,
+    "Pot 15 - The Measure of Success": 2,
+    "Pot 12 - Seven Scandi Ovals": 2,
+    "Pot 1 - $$$ of Locc": 3
+  }
+}

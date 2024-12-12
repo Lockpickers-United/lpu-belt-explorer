@@ -2,7 +2,7 @@
   "name": "getRaflGoogleForm",
   "author": "mgsecure <125900659+mgsecure@users.noreply.github.com>",
   "version": "1.0.0",
-  "main": "createRaflGoogleForm.js",
+  "main": "raflFormUtils.js",
   "type": "module",
   "license": "MIT",
   "dependencies": {

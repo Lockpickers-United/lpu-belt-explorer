@@ -1,0 +1,123 @@
+[
+  {
+    "text": "Your Preferred Platform",
+    "formId": 2097205233,
+    "index": 0
+  },
+  {
+    "text": "Platform Username",
+    "formId": 1922683366,
+    "index": 1
+  },
+  {
+    "text": "Selected charity",
+    "formId": 1533383825,
+    "index": 2
+  },
+  {
+    "text": "Receipt from approved charity (hosted image link, must contain a visible date)",
+    "formId": 930690846,
+    "index": 3
+  },
+  {
+    "text": "Total donation in USD",
+    "formId": 423529476,
+    "index": 4
+  },
+  {
+    "text": "Pot 1 - $$$ of Locc",
+    "formId": 1639034912,
+    "index": 5,
+    "potId": "2025-025"
+  },
+  {
+    "text": "Pot 2 - Ablo-ho-ho",
+    "formId": 152100698,
+    "index": 6,
+    "potId": "2025-022"
+  },
+  {
+    "text": "Pot 3 - Bare Bones Dimple Picks",
+    "formId": 1665101077,
+    "index": 7,
+    "potId": "2025-005"
+  },
+  {
+    "text": "Pot 4 - Bulgarian Squatty Potty",
+    "formId": 670543117,
+    "index": 8,
+    "potId": "2025-006"
+  },
+  {
+    "text": "Pot 5 - Dazzling Pick and Coaster set",
+    "formId": 28471586,
+    "index": 9,
+    "potId": "2025-023"
+  },
+  {
+    "text": "Pot 6 - Dutch Training Kit (2 winners)",
+    "formId": 197751050,
+    "index": 10,
+    "potId": "2025-019"
+  },
+  {
+    "text": "Pot 7 - Gifts From Granny",
+    "formId": 89563778,
+    "index": 11,
+    "potId": "2025-004"
+  },
+  {
+    "text": "Pot 8 - Honey Badger Knife Kit",
+    "formId": 484942687,
+    "index": 12,
+    "potId": "2025-008"
+  },
+  {
+    "text": "Pot 9 - Lockpickersbench x Multipick Flag Set",
+    "formId": 323912255,
+    "index": 13,
+    "potId": "2025-007"
+  },
+  {
+    "text": "Pot 10 - Ratyoke Custom Pick",
+    "formId": 1143035778,
+    "index": 14,
+    "potId": "2025-003"
+  },
+  {
+    "text": "Pot 11 - RWB DD Pick",
+    "formId": 494888333,
+    "index": 15,
+    "potId": "2025-015"
+  },
+  {
+    "text": "Pot 12 - Seven Scandi Ovals",
+    "formId": 1452557883,
+    "index": 16,
+    "potId": "2025-002"
+  },
+  {
+    "text": "Pot 13 - The Burn (2 winners)",
+    "formId": 738306755,
+    "index": 17,
+    "potId": "2025-018"
+  },
+  {
+    "text": "Pot 14 - The Lockpickwebwinkel main prize",
+    "formId": 1015303215,
+    "index": 18,
+    "potId": "2025-020"
+  },
+  {
+    "text": "Pot 15 - The Measure of Success",
+    "formId": 842335223,
+    "index": 19,
+    "potId": "2025-013"
+  },
+  {
+    "text": "Pot 16 - Wyte's Box to Shit Belt",
+    "formId": 1666713355,
+    "index": 20,
+    "potId": "2025-021"
+  }
+]
