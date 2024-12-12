@@ -32,7 +32,7 @@ function RaffleCharitesPage() {
                 case '2024':
                     return b.donations2024 - a.donations2024
                 case '2025':
-                    return b.donations2025 - a.donations2025
+                    return b.donations - a.donations
                 case 'name':
                     return a['name'].localeCompare(b['name'])
                 default:

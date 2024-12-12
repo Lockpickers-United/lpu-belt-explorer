@@ -3,10 +3,12 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
+import RaffleContext from './RaffleContext.jsx'
 
 export function RaffleCharitiesProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
+    const {charitySummaryStats} = useContext(RaffleContext)
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -15,8 +17,10 @@ export function RaffleCharitiesProvider({children, allEntries}) {
                 fuzzy: removeAccents([
                     entry.name
                 ].join(',')),
+                donors: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donors : 0,
+                donations: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donations : 0,
             }))
-    }, [allEntries])
+    }, [allEntries, charitySummaryStats])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array

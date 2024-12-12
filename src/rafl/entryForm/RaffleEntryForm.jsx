@@ -9,7 +9,6 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import formMap from './FormMap'
 import isValidUrl from '../../util/isValidUrl'
 import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
@@ -21,7 +20,7 @@ function RaffleEntryForm() {
     const [potData, setPotData] = useState({0: {tickets:0}})
     const potKeys = Array.from(Object.keys(potData))
 
-    const {displayStats, setDisplayStats} = useContext(RaffleContext)
+    const {raflQuestionMap, displayStats, setDisplayStats} = useContext(RaffleContext)
     const [initial, setInitial] = useState(true)
     if (initial && displayStats) {
         setDisplayStats(false)
@@ -64,25 +63,36 @@ function RaffleEntryForm() {
         setPotData(newPotData)
     }, [potData])
 
+    console.log('potData', potData)
+
     const handleSubmit = useCallback(() => {
 
-        const base = 'https://docs.google.com/forms/d/e/1FAIpQLScNaJioyXOUkd-JSLuiH-RX18N-bQPodTrhwSgtjlQIaXaxBA/viewform?usp=pp_url'
+        const base = 'https://docs.google.com/forms/d/e/1FAIpQLSe0Rr8mykkE5FAgzUACzGsGYq_mN-vS34arr2uL0QDEFHBSNQ/viewform?usp=pp_url'
         const params = Object.keys(formData).reduce((acc, key) => {
-            const param = `&entry.${formMap[key]}=${encodeURIComponent(formData[key])}`
+            const param = `&entry.${raflQuestionMap[key]}=${encodeURIComponent(formData[key])}`
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
         }, '')
-        const charityParam = `&entry.${formMap.charity}=${encodeURIComponent(charityData.itemTitle)}`
+
+        const platform = `&entry.${raflQuestionMap[0].formId}=${encodeURIComponent(formData.platform)}`
+        const username = `&entry.${raflQuestionMap[1].formId}=${encodeURIComponent(formData.username)}`
+        const charity = `&entry.${raflQuestionMap[2].formId}=${encodeURIComponent(charityData.itemTitle)}`
+        const receipt = `&entry.${raflQuestionMap[3].formId}=${encodeURIComponent(formData.receipt)}`
+        const donation = `&entry.${raflQuestionMap[4].formId}=${encodeURIComponent(formData.donation)}`
+        const parameters = [platform, username, charity, receipt, donation]
+
         const potParams = Object.keys(potData).reduce((acc, key) => {
-            const paramId = potData[key].itemFormId
+            const paramId = raflQuestionMap[potData[key].itemIndex+5].formId
             const param = `&entry.${paramId}=${potData[key].tickets}`
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
         }, '')
 
-        openInNewTab(`${base}${charityParam}${params}${potParams}`)
+        console.log('params',params)
+        console.log('url', `${parameters.join('')}${potParams}`)
+        openInNewTab(`${base}${parameters.join('')}${potParams}`)
 
-    }, [charityData.itemTitle, formData, openInNewTab, potData])
+    }, [charityData, formData, openInNewTab, potData, raflQuestionMap])
 
     const mappedCharities = allCharities.map(c => {
         return {...c, title: c.name}

@@ -40,11 +40,11 @@ function RaffleCharityRow({charity}) {
                 }).format(charity.donations2024)}
             </TableCell>
             <TableCell align={'center'} style={cellStyle}>
-                {charity.donations2025 > 0 && new Intl.NumberFormat('en-US', {
+                {charity.donations > 0 && new Intl.NumberFormat('en-US', {
                     style: 'currency',
                     currency: 'USD',
                     maximumSignificantDigits: 3
-                }).format(charity.donations2025)}
+                }).format(charity.donations)}
             </TableCell>
         </TableRow>
 

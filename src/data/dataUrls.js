@@ -18,5 +18,8 @@ export const leaderboardData2 = `${url}/leaderboardData2.json`
 export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
 
 export const raflJsonUrl = `${url}/rafl.json`
+export const raflQuestionMap = `${url}/raflQuestionMap.json`
+export const raflResponseSummary = `${url}/raflResponseSummary.json`
+
 export const raflStats = `${url}/raflStats.json`
 export const raflSummaryStats = `${url}/raflSummaryStats.json`

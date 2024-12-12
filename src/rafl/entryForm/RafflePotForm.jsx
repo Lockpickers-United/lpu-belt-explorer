@@ -32,21 +32,26 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         let itemTitles = {}
         let itemPotNumbers = {}
         let itemFormIds = {}
-        allItems?.sort((a, b) => {
-            a.title.localeCompare(b.title)
-        })
-            .map(item => {
+
+        allItems
+            .sort((a, b) => {
+                return parseInt(a.potNumber) - parseInt(b.potNumber)
+                || a.title.localeCompare(b.title)
+            })
+            .map((item) => {
                 const fullTitle = `Pot ${item.potNumber} - ${item.title}`
                 itemTitles[fullTitle] = item.title
                 itemIds[fullTitle] = item.id
                 itemPotNumbers[fullTitle] = item.potNumber
-                itemFormIds[fullTitle] = item.formId
                 options.push(fullTitle)
             })
             .filter(x => x)
         return {options, itemIds, itemTitles, itemPotNumbers, itemFormIds}
     }, [])
-    const {options, itemIds, itemTitles, itemPotNumbers, itemFormIds} = itemMap
+
+
+    const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
+
 
     const handleTicketsChange = useCallback(event => {
         const tickets = event.target.value.replace(/[^0-9]/, '')
@@ -62,13 +67,13 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                 itemTitle: itemTitles[value],
                 itemId: itemIds[value],
                 itemPotNumber: itemPotNumbers[value],
-                itemFormId: itemFormIds[value]
+                itemIndex: options.indexOf(value)
             }
         } else {
             item = {}
         }
         setPotDetails({...potDetails, ...item})
-    }, [options, potDetails, itemTitles, itemIds, itemPotNumbers, itemFormIds])
+    }, [options, potDetails, itemTitles, itemIds, itemPotNumbers])
 
     const [open, setOpen] = useState(false)
     const handleClick = useCallback(() => {
@@ -92,7 +97,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     return (
         <div style={{display: flexStyle, margin: 12}}>
-            <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth:280}}>
+            <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth: 280}}>
                 <div style={{...questionStyle}}>Selected Pot</div>
                 <div style={{height: 4}}/>
                 <React.Fragment>
@@ -148,18 +153,18 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                 <div style={{flexGrow: 1}}></div>
 
                 <FormControl>
-                    {!isMobile && <div style={questionStyle}>&nbsp;</div> }
+                    {!isMobile && <div style={questionStyle}>&nbsp;</div>}
                     <TextField type='text' name='tickets' label='Tickets'
                                value={potData[index].tickets ? potData[index].tickets : ''}
                                error={showIssues && !potDetails.tickets}
                                helperText={showIssues && !potData[index].tickets ? 'Required Field' : ' '}
                                onChange={handleTicketsChange} color='info' size='small'
-                                style={{width:120}}/>
+                               style={{width: 120}}/>
                 </FormControl>
                 {showDelete &&
 
                     <div style={{marginLeft: 10}}>
-                        {!isMobile && <div style={questionStyle}>&nbsp;</div> }
+                        {!isMobile && <div style={questionStyle}>&nbsp;</div>}
                         <IconButton color='warning' onClick={() => removePot(index)}>
                             <DeleteForeverIcon/>
                         </IconButton>

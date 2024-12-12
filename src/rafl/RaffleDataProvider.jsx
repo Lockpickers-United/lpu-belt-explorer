@@ -4,10 +4,12 @@ import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
+import RaffleContext from './RaffleContext.jsx'
 
 export function RaffleDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, ...filters} = allFilters
+    const {potSummaryStats} = useContext(RaffleContext)
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -20,8 +22,10 @@ export function RaffleDataProvider({children, allEntries, profile}) {
                     entry.potContents,
                 ].join(',')),
                 collection: collectionOptions.raffle.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
+                tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
+                donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0
             }))
-    }, [allEntries, profile])
+    }, [allEntries, potSummaryStats, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -62,11 +66,15 @@ export function RaffleDataProvider({children, allEntries, profile}) {
                     return a.contributedBy[0].localeCompare(b.contributedBy[0])
                 } else if (sort === 'tickets') {
                     return parseInt(b.tickets) - parseInt(a.tickets)
+                } else if (sort === 'donors') {
+                    return parseInt(b.donors) - parseInt(a.donors)
                 } else {
-                    return a.potNumber < b.potNumber
+                    return a.potNumber < b.potNumber || a.title.localeCompare(b.title)
                 }
             })
-            : searched
+            : searched.sort((a, b) => {
+                return a.potNumber < b.potNumber || a.title.localeCompare(b.title)
+            })
     }, [filters, mappedEntries, search, sort])
 
     const getPotFromId = useCallback(id => {

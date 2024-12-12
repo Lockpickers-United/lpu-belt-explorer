@@ -8,25 +8,30 @@ import CountUp from 'react-countup'
 import RaffleContext from './RaffleContext.jsx'
 
 /**
- * @param summaryStats
- * @property summaryStats.donationsTotal
- * @property summaryStats.donationsDiscord
- * @property summaryStats.donationsReddit
+ * @param raflResponseSummary
+ * @property raflResponseSummary.uniqueDonorCount
+ * @property raflResponseSummary.totalDonations
+ * @property raflResponseSummary.platformDonations
+ * @property raflResponseSummary.platformDonations.Discord
+ * @property raflResponseSummary.platformDonations.Reddit
  */
 
 function RaffleHeader({page}) {
     const {live, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
-    const {summaryStats, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleContext)
+    const {raflResponseSummary, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleContext)
 
-    const donors = summaryStats && summaryStats[0].donors
-    const donationsTotal = summaryStats && summaryStats[0].donationsTotal
-    const donationsTotalStr = summaryStats && new Intl.NumberFormat().format(summaryStats[0].donationsTotal)
-    const averageDonation = summaryStats && Math.floor(summaryStats[0].donationsTotal / donors)
+    const donors = raflResponseSummary && raflResponseSummary.uniqueDonorCount
+    const donationsTotal = raflResponseSummary && raflResponseSummary.totalDonations
+    const donationsTotalStr = raflResponseSummary && new Intl.NumberFormat().format(donationsTotal)
+    const averageDonation = raflResponseSummary && Math.floor(donationsTotal / donors)
 
     const chartWidth = 300
-    const discordWidth = summaryStats && (summaryStats[0].donationsDiscord / (summaryStats[0].donationsDiscord + summaryStats[0].donationsReddit)) * chartWidth
-    const redditWidth = summaryStats && (summaryStats[0].donationsReddit / (summaryStats[0].donationsDiscord + summaryStats[0].donationsReddit)) * chartWidth
+    const discordDonations = raflResponseSummary && raflResponseSummary.platformDonations.Discord || 0
+    const redditDonations = raflResponseSummary && raflResponseSummary.platformDonations.Reddit || 0
+    const totalDonations = raflResponseSummary && discordDonations + redditDonations
+    const discordWidth = raflResponseSummary && (discordDonations / totalDonations) * chartWidth
+    const redditWidth = raflResponseSummary && (redditDonations / totalDonations) * chartWidth
 
     const toggleOpen = useCallback(() => {
         toggleStats()

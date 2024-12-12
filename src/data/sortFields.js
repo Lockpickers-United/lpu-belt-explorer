@@ -34,7 +34,8 @@ export const scorecardSortFields = [
 export const raffleSortFields = [
     {label: 'Default', value: undefined},
     {label: 'Pot Name', value: 'potName'},
-    {label: 'Current Tickets', value: 'tickets'},
+    {label: 'Tickets', value: 'tickets'},
+    {label: 'Donors', value: 'donors'},
     {label: 'Contributed By', value: 'contributedBy'}
 ]
 
