@@ -7,7 +7,9 @@ import EventEmitter from 'events'
 
 import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
-import {getCharities} from './projects/getRaflGoogleForm/raflFormUtils.js'
+import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
+
+//pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
@@ -23,10 +25,7 @@ myEmitter.on('myEvent', (data) => {
 
 app.get('/refresh-preview', async (req, res) => {
     myEmitter.emit('myEvent', 'Preview refresh requested')
-
-    const compare = !!req?.query?.compare || false
-
-    await importRaflData(compare).then(results => {
+    await importRaflData().then(results => {
         res.send(results)
     })
 })
@@ -40,10 +39,19 @@ app.get('/flickr-info', async (req, res) => {
 
 app.get('/rafl-charities', async (req, res) => {
     myEmitter.emit('myEvent', 'Rafl charities requested')
-    await getCharities().then(results => {
+    await raflUtils('getCharities').then(results => {
         res.send(results)
     })
 })
+
+app.get('/rafl-stats', async (req, res) => {
+    myEmitter.emit('myEvent', 'Rafl STATS requested')
+    await raflUtils('raflResponseSummary').then(results => {
+        res.send(results)
+    })
+})
+
+
 
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)

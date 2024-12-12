@@ -9,10 +9,11 @@ const keysDir = production
 
 const serverDir = production
     ? '/home/dh_m5s5pf/explore.lpubelts.com/public/data/'
-    : '/Users/nealbayless/Documents/GitHub/explore-lpubelts-com-node/projects/getRaflGoogleForm'
+    : '/Users/nealbayless/Documents/GitHub/explore-lpubelts-com-node/projects/raflFormUtilities'
 
-// MAIN DATA OBJECT
-let error = false
+////////////////////////////
+// GOOGLE AUTH FUNCTIONS //
+//////////////////////////
 
 import {authenticate} from '@google-cloud/local-auth'
 import {google} from 'googleapis'
@@ -29,7 +30,6 @@ async function loadSavedCredentialsIfExist() {
         const credentials = JSON.parse(content)
         return google.auth.fromJSON(credentials)
     } catch (err) {
-        error = true
         console.error(err)
         return null
     }
@@ -65,6 +65,11 @@ async function authorize() {
     return client
 }
 
+
+/////////////////////
+//   FORM UTILS   //
+///////////////////
+
 async function getFormItems(auth, formId) {
     const forms = google.forms({version: 'v1', auth})
     const res = await forms.forms.get({
@@ -79,9 +84,7 @@ async function getFormCharities(auth, formId) {
     const res = await forms.forms.get({
         formId: formId
     })
-
     const formItems = res.data.items
-
     const charitiesItem = formItems?.find(item => item.title === 'Selected charity')
     const charities = charitiesItem?.questionItem.question.choiceQuestion.options
 
@@ -91,29 +94,30 @@ async function getFormCharities(auth, formId) {
 
 }
 
-
-async function deleteAllQuestions(auth, formId) {
+async function deleteAllQuestions(auth, formId, reset) {
+    if (!reset) return 'reset is off, canceling'
 
     const forms = google.forms({version: 'v1', auth})
     const form = await forms.forms.get({
         formId: formId
     })
-
     const requests = form.data.items.map(() => {
         return {'deleteItem': {'location': {'index': 0}}}
     })
-
     const updateResponse = await forms.forms.batchUpdate({
         formId: formId,
         requestBody: {requests: requests}
     })
     console.log(updateResponse.data)
+    return updateResponse.data
+
 }
 
-async function createQuestions(auth, formId, raflData, charitiesData) {
+async function createQuestions(auth, formId, raflData, charitiesData, reset) {
+
+    if (!reset) return 'reset is off, canceling'
 
     const forms = google.forms({version: 'v1', auth})
-
     const textQuestion = ((title, location) =>
             [
                 {
@@ -197,19 +201,19 @@ async function createQuestions(auth, formId, raflData, charitiesData) {
             .map((pot, index) =>
                 textQuestion(`Pot ${index + 1} - ${pot.title}`, requests.length + index)
             )
-
     requests.push(...potQuestions)
-
 
     const updateResponse = await forms.forms.batchUpdate({
         formId: formId,
-        requestBody: {requests: requests}
+        requestBody: {}
     })
     return updateResponse.data
 }
 
 
-async function getFormResponses(auth, formId, raflData) {
+export async function getFormResponses(auth, formId) {
+
+    console.log('Starting getFormResponses...')
 
     const formItems = await getFormItems(auth, formId)
     const questionMap = formItems.reduce((acc, item) => {
@@ -222,12 +226,7 @@ async function getFormResponses(auth, formId, raflData) {
         formId: formId
     })).data.responses
 
-    //jsonIt('questionMap', questionMap)
-    //jsonIt(formItems)
-    //jsonIt('responses', responses)
-
     const responseData = responses.map(res => {
-
         return Object.keys(res.answers).reduce((acc, key) => {
             if (questionMap[key] === 'Your Preferred Platform') {
                 acc.platform = res.answers[key].textAnswers.answers[0].value
@@ -247,7 +246,6 @@ async function getFormResponses(auth, formId, raflData) {
             acc.donor = `${acc.platform}-${acc.username}`
             return acc
         }, {})
-
     })
 
     const summaryData = responseData.reduce((acc, res) => {
@@ -300,8 +298,8 @@ async function getFormResponses(auth, formId, raflData) {
 
         })
 
-
         return acc
+
     }, {})
 
     delete summaryData.uniqueDonors
@@ -329,7 +327,7 @@ async function buildQuestionMap(raflData) {
 
     const questionMap = questionData.map((q, index) => {
 
-        const questionPotTitle = q[1].replace(/Pot.*- /,'')
+        const questionPotTitle = q[1].replace(/Pot.*- /, '')
         const pot = raflData.find(pot => pot.title === questionPotTitle)
 
         return {
@@ -349,39 +347,50 @@ async function buildQuestionMap(raflData) {
     return questionMap
 }
 
+export async function getCharities(auth, formId) {
+    const charities = await getFormCharities(auth, formId)
+    return charities ? charities : [{error: 'getCharities error'}]
+}
+
 
 ///////////////////////////////////////
 //              MAIN                 //
 ///////////////////////////////////////
 
-(async function () {
+export async function raflUtils(util) {
 
+    console.log('Starting main.')
     const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
     const charitiesData = await (await fetch('https://lpubelts.com/raflCharities.json')).json()
 
     const formId = '1_k_xv0hv-EkVSTTXLLfw6Vt5O4JXirYCRQrazWHDBko'
     const auth = await authorize()
 
-    //await getFormItems(auth, formId)
+    let response
 
-    //await getCharities(formId)
+    if (util ==='getFormItems') response = await getFormItems(auth, formId)
+    if (util ==='getCharities') response = await getCharities(auth, formId)
+    if (util ==='buildQuestionMap') response = await buildQuestionMap(raflData)
+    if (util ==='raflResponseSummary') response = await getFormResponses(auth, formId, raflData)
 
-    //await deleteAllQuestions(auth, formId)
-    //await createQuestions(auth, formId, raflData, charitiesData)
-    //const questionMap = await buildQuestionMap(raflData)
+    //jsonIt('response', response)
 
-    //jsonIt('questionMap', questionMap)
 
-    const raflResponseSummary = await getFormResponses(auth, formId, raflData)
-    jsonIt('raflResponseSummary', raflResponseSummary)
+    // DANGER //
 
-})()
+    // only set this to true if you *really* want to delete the questions and rebuild!
+    const reset = false
 
-export async function getCharities(formId) {
-    const auth = await authorize()
-    const charities = await getFormCharities(auth, formId)
-    return charities ? charities : [{error: 'error'}]
+    // only uncomment these if you really, REALLY want to delete the questions and rebuild!
+    //const deleteAllResponse = await deleteAllQuestions(auth, formId, reset)
+    //const createQuestionsResponse = await createQuestions(auth, formId, raflData, charitiesData, reset)
+    //jsonIt('createQuestionsResponse', createQuestionsResponse)
+
+    return response
+
 }
+
+//await raflUtils('buildQuestionMap').then()
 
 function jsonIt(string, object) {
     console.log(string)
