@@ -523,7 +523,58 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54201598782_d8f99f4d52_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54201598782/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54201598782_99f172ace3_o.jpg"
+      },
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202751179_3e2eee81b2_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202751179/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202751179_a5f33b9530_o.jpg"
+      },
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202495831_f8eee2dcf1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202495831/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202495831_bfb02ecde3_o.jpg"
+      },
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54201599362_4fde300067_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54201599362/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54201599362_5227db0c62_o.jpg"
+      },
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202496276_c5eb5f67a4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202496276/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202496276_265fd90f48_o.jpg"
+      },
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202745843_b4c41b4652_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202745843/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202745843_e7aa9b15ea_o.jpg"
+      },
+      {
+        "title": "By: Deadhammer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202746148_8fda9afcc2_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202746148/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202746148_4ee8676b77_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-027",
@@ -543,7 +594,30 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: Craig 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202744013_036b7e8ae1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202744013/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202744013_737470deb3_o.jpg"
+      },
+      {
+        "title": "By: Craig 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202495096_e29524db8d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202495096/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202495096_477c498a85_o.jpg"
+      },
+      {
+        "title": "By: Craig 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54201598592_709fa68354_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54201598592/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54201598592_081207aba8_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-028",
@@ -563,7 +637,16 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202496956_eb8223a801_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202496956/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202496956_27d4d08b24_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-031",
@@ -583,6 +666,15 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: Mugatu",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54202497211_4396abbcae_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202497211/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54202497211_099117e5ae_o.jpg"
+      }
+    ]
   }
 ]
