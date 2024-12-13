@@ -2,30 +2,11 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
-import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
-import RaffleContext from './RaffleContext.jsx'
 
-export function RaffleDataProvider({children, allEntries, profile}) {
+export function RaffleDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, ...filters} = allFilters
-    const {potSummaryStats} = useContext(RaffleContext)
-
-    const mappedEntries = useMemo(() => {
-        return allEntries
-            .map(entry => ({
-                ...entry,
-                fuzzy: removeAccents([
-                    entry.title,
-                    entry.winner,
-                    entry.description,
-                    entry.potContents,
-                ].join(',')),
-                collection: collectionOptions.raffle.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
-                tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
-                donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0
-            }))
-    }, [allEntries, potSummaryStats, profile])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -39,7 +20,7 @@ export function RaffleDataProvider({children, allEntries, profile}) {
             .flat()
 
         // Filter the data
-        const filtered = mappedEntries
+        const filtered = allEntries
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -73,9 +54,9 @@ export function RaffleDataProvider({children, allEntries, profile}) {
                 }
             })
             : searched.sort((a, b) => {
-                return a.potNumber < b.potNumber || a.title.localeCompare(b.title)
+                return a.potNumber - b.potNumber || a.title.localeCompare(b.title)
             })
-    }, [filters, mappedEntries, search, sort])
+    }, [allEntries, filters, search, sort])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)

@@ -63,8 +63,6 @@ function RaffleEntryForm() {
         setPotData(newPotData)
     }, [potData])
 
-    console.log('potData', potData)
-
     const handleSubmit = useCallback(() => {
 
         const base = 'https://docs.google.com/forms/d/e/1FAIpQLSe0Rr8mykkE5FAgzUACzGsGYq_mN-vS34arr2uL0QDEFHBSNQ/viewform?usp=pp_url'

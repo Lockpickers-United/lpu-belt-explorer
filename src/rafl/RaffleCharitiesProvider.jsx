@@ -5,22 +5,10 @@ import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
 import RaffleContext from './RaffleContext.jsx'
 
-export function RaffleCharitiesProvider({children, allEntries}) {
+export function RaffleCharitiesProvider({children}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, ...filters} = allFilters
-    const {charitySummaryStats} = useContext(RaffleContext)
-
-    const mappedEntries = useMemo(() => {
-        return allEntries
-            .map(entry => ({
-                ...entry,
-                fuzzy: removeAccents([
-                    entry.name
-                ].join(',')),
-                donors: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donors : 0,
-                donations: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donations : 0,
-            }))
-    }, [allEntries, charitySummaryStats])
+    const {allCharities} = useContext(RaffleContext)
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -34,7 +22,7 @@ export function RaffleCharitiesProvider({children, allEntries}) {
             .flat()
 
         // Filter the data
-        const filtered = mappedEntries
+        const filtered = allCharities
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -64,12 +52,12 @@ export function RaffleCharitiesProvider({children, allEntries}) {
                 }
             })
             : searched
-    }, [filters, mappedEntries, search, sort])
+    }, [allCharities, filters, search, sort])
 
     const value = useMemo(() => ({
-        allEntries,
+        allCharities,
         visibleEntries
-    }), [allEntries, visibleEntries])
+    }), [allCharities, visibleEntries])
 
     return (
         <DataContext.Provider value={value}>

@@ -1,6 +1,5 @@
 import React, {useCallback, useContext, useState} from 'react'
 import useWindowSize from '../../util/useWindowSize'
-import RaffleContext from '../RaffleContext.jsx'
 import AdminStatsTableSort from '../../admin/AdminStatsTableSort.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
@@ -10,44 +9,51 @@ import DataContext from '../../context/DataContext.jsx'
 const RafflePotTable = ({data}) => {
     const navigate = useNavigate()
     const {potViewsById} = data
-    const {potStats} = useContext(RaffleContext)
     const {getPotFromId} = useContext(DataContext)
 
     const columns = [
+        {name: 'Pot #', align: 'center', id: 'potNumber'},
         {name: 'Pot ID', align: 'left', id: 'id'},
-        {id: 'title', align: 'left', name: 'Pot Title'},
-        {id: 'views', align: 'center', name: 'Pot Views'},
+        {id: 'title', align: 'left', name: 'Title'},
+        {id: 'views', align: 'center', name: 'Views'},
         {id: 'percentViews', name: '% Views', align: 'center'},
         {id: 'donors', name: 'Donors', align: 'center'},
         {id: 'tickets', name: 'Tickets', align: 'center'}
     ]
 
     const sortable = true
-    const [sort, setSort] = useState('id')
+    const [sort, setSort] = useState('potNumber')
     const [ascending, setAscending] = useState(true)
     const [searched, setSeached] = useState({})
 
+
     const potData = potViewsById.data.map(pot => {
         const dataPot = getPotFromId(pot.id)
-        const statsPot = potStats.find(p => p.id === pot.id)
+        let potTitle = dataPot?.title ? dataPot.title.substring(0,32) : `unknown (${pot.id})`
+        potTitle = dataPot?.title?.length < 32 || !dataPot?.title ? potTitle : potTitle + '...'
+
+        const potNumber = dataPot ? dataPot.potNumber : 999
+
         return {
+            potNumber: potNumber,
             ...pot,
-            donors: statsPot.donors,
-            tickets: statsPot.tickets,
             percentViews: (Math.floor(pot.percentViews * 100) + '%'),
-            title: dataPot?.title ? dataPot.title : `unknown (${pot.id})`,
-            ...dataPot
+            ...dataPot,
+            title: potTitle,
         }
     })
         .sort((a, b) => {
             switch (sort) {
+                case 'potNumber':
+                    return a['potNumber'] - b['potNumber']
+                        || a['title'].localeCompare(b['title'])
                 case 'id':
                     return a[sort].localeCompare(b[sort])
                 case 'title':
                     return a[sort].localeCompare(b[sort])
                 default:
-                    return b[sort] - a[sort]
-                        || a['id'].localeCompare(b['id'])
+                    return a['potNumber'].localeCompare(b['potNumber'])
+                    || a['title'].localeCompare(b['title'])
             }
         })
     const sortedPots = ascending ? potData : potData.reverse()

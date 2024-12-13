@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Tracker from '../app/Tracker'
 import {raffleFilterFields} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext'
@@ -8,27 +8,16 @@ import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import RaffleCharitiesProvider from './RaffleCharitiesProvider.jsx'
 import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
-import raflCharities from '../data/raflCharities.json'
 import RaffleHeader from './RaffleHeader.jsx'
-import RaffleContext from './RaffleContext.jsx'
 import ReportButton from './ReportButton.jsx'
 import AdminRoleButton from './AdminRoleButton.jsx'
 import RaffleComingSoon from './RaffleComingSoon.jsx'
 
 function RaffleCharitiesRoute() {
-    const {isMobile} = useWindowSize()
-    const {charityStats} = useContext(RaffleContext)
 
     usePageTitle('RAFL Charities')
 
-    const raflCharitiesMapped = raflCharities.map(entry => {
-        const entryStats = charityStats?.find(stat => stat.name === entry.name)
-        return {
-            ...entry,
-            donations2025: entryStats ? entryStats?.donations2025 : '--'
-        }
-    })
-
+    const {isMobile} = useWindowSize()
     const sideSpacing = !isMobile ? 0 : 8
     const style = {
         maxWidth: 700,
@@ -48,7 +37,7 @@ function RaffleCharitiesRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleCharitiesProvider allEntries={raflCharitiesMapped}>
+            <RaffleCharitiesProvider>
 
                 <div style={style}>
 

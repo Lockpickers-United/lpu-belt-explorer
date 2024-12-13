@@ -1,22 +1,76 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
-import {raflStats, raflQuestionMap, raflResponseSummary} from '../data/dataUrls'
+import {raflQuestionMap, raflResponseSummary} from '../data/dataUrls'
 import raflData from '../data/rafl.json'
+import raflCharities from '../data/raflCharities.json'
 
 import DBContext from '../app/DBContext.jsx'
+import removeAccents from 'remove-accents'
+import collectionOptions from '../data/collectionTypes'
 
 const RaffleContext = React.createContext({})
 
-export function RaffleStatsProvider({children}) {
+export function RaffleProvider({children}) {
 
     const live = false
+
     const {lockCollection} = useContext(DBContext)
     const {data, loading, error} = useData({urls})
-
-    const {raflStats, raflQuestionMap, raflResponseSummary} = data || {}
-
-    const {potStats, charityStats, summaryStats} = raflStats || {}
     const allDataLoaded = (!loading && !error && !!data)
+
+    const {raflQuestionMap, raflResponseSummary} = data || {}
+
+    const potSummaryStats = useMemo(() => raflResponseSummary && Object.keys(raflResponseSummary?.potDonorCount).reduce((acc, key) => {
+            const questionPotTitle = key.replace(/Pot.*- /, '')
+            const sitePot = raflData.find(pot => pot.title === questionPotTitle)
+            if (sitePot) {
+                acc[sitePot.id] = {
+                    donors: raflResponseSummary?.potDonorCount[key],
+                    tickets: raflResponseSummary?.potTickets[key]
+                }
+            }
+            return acc
+        }, {}),[raflResponseSummary]
+    )
+
+    const allPots = useMemo(() => {
+        return raflData
+            .map(entry => ({
+                ...entry,
+                fuzzy: removeAccents([
+                    entry.title,
+                    entry.winner,
+                    entry.description,
+                    entry.potContents,
+                ].join(',')),
+                collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
+                tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
+                donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0
+            }))
+    }, [potSummaryStats, lockCollection])
+
+    const charitySummaryStats = useMemo(() => raflResponseSummary && Object.keys(raflResponseSummary?.charityDonorCount).reduce((acc, key) => {
+            acc[key] = {
+                donors: raflResponseSummary?.charityDonorCount[key],
+                donations: raflResponseSummary?.charityDonations[key]
+            }
+            return acc
+        }, {}),[raflResponseSummary]
+    )
+
+    const allCharities = useMemo(() => {
+        return raflCharities
+            .map(entry => ({
+                ...entry,
+                fuzzy: removeAccents([
+                    entry.name
+                ].join(',')),
+                donors: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donors : 0,
+                donations: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donations : 0,
+            }))
+    }, [charitySummaryStats])
+
+
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(true)
 
@@ -36,37 +90,16 @@ export function RaffleStatsProvider({children}) {
         setFormPots(pots)
     }, [])
 
-    const potSummaryStats = useMemo(() => raflResponseSummary && Object.keys(raflResponseSummary?.potDonorCount).reduce((acc, key) => {
-            const questionPotTitle = key.replace(/Pot.*- /, '')
-            const sitePot = raflData.find(pot => pot.title === questionPotTitle)
-            if (sitePot) {
-                acc[sitePot.id] = {
-                    donors: raflResponseSummary?.potDonorCount[key],
-                    tickets: raflResponseSummary?.potTickets[key]
-                }
-            }
-            return acc
-        }, {}),[raflResponseSummary]
-    )
-
-    const charitySummaryStats = useMemo(() => raflResponseSummary && Object.keys(raflResponseSummary?.charityDonorCount).reduce((acc, key) => {
-                acc[key] = {
-                    donors: raflResponseSummary?.charityDonorCount[key],
-                    donations: raflResponseSummary?.charityDonations[key]
-                }
-            return acc
-        }, {}),[raflResponseSummary]
-    )
 
     const value = useMemo(() => ({
         allDataLoaded,
+        allPots,
+        allCharities,
         raflQuestionMap,
         raflResponseSummary,
         potSummaryStats,
         charitySummaryStats,
-        potStats,
-        charityStats,
-        summaryStats,
+
         displayStats, setDisplayStats,
         toggleStats,
         animateTotal, setAnimateTotal,
@@ -77,13 +110,13 @@ export function RaffleStatsProvider({children}) {
         live
     }), [
         allDataLoaded,
+        allPots,
+        allCharities,
         raflQuestionMap,
         raflResponseSummary,
         potSummaryStats,
         charitySummaryStats,
-        potStats,
-        charityStats,
-        summaryStats,
+
         displayStats, setDisplayStats,
         toggleStats,
         animateTotal, setAnimateTotal,
@@ -102,7 +135,6 @@ export function RaffleStatsProvider({children}) {
 }
 
 const urls = {
-    raflStats,
     raflQuestionMap,
     raflResponseSummary
 }

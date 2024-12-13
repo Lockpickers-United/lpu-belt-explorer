@@ -11,23 +11,13 @@ import ReportButton from '../ReportButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminRoleButton from '../AdminRoleButton.jsx'
 import RaffleDataProvider from '../RaffleDataProvider.jsx'
-import raflData from '../../data/rafl.json'
 import RaffleContext from '../RaffleContext.jsx'
 
 function RaffleReportRoute() {
     const {authLoaded} = useContext(AuthContext)
     const {adminRole} = useContext(DBContext)
     const {isMobile} = useWindowSize()
-    const {potStats} = useContext(RaffleContext)
-
-    const allEntriesMapped = raflData.map(entry => {
-        const entryStats = potStats?.find(stat => stat.id === entry.id)
-        return {
-            ...entry,
-            tickets: entryStats?.tickets,
-            donors: entryStats?.donors
-        }
-    })
+    const {allPots} = useContext(RaffleContext)
 
     const extras = (
         <React.Fragment>
@@ -39,7 +29,7 @@ function RaffleReportRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allEntriesMapped}>
+            <RaffleDataProvider allEntries={allPots}>
                 <React.Fragment>
                     <Nav title='RAFL Report' extras={extras}/>
                     {authLoaded && adminRole && <RaffleReport/>}

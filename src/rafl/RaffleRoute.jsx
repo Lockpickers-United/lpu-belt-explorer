@@ -9,7 +9,6 @@ import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RafflePage from './RafflePage.jsx'
-import raflData from '../data/rafl.json'
 import useData from '../util/useData.jsx'
 import {raflJsonUrl} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
@@ -26,7 +25,7 @@ import AdminRoleButton from './AdminRoleButton.jsx'
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
     const {preview} = useContext(AppContext)
-    const {potStats} = useContext(RaffleContext)
+    const {allPots} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()
@@ -39,16 +38,7 @@ function RaffleRoute() {
     const dataReady = (data && !loading && !error)
     const allEntries = preview && dataReady
         ? data || []
-        : raflData
-
-    const allEntriesMapped = allEntries.map(entry => {
-        const entryStats = potStats?.find(stat => stat.id === entry.id)
-        return {
-            ...entry,
-            tickets: entryStats?.tickets,
-            donors: entryStats?.donors
-        }
-    })
+        : allPots
 
     const individualPot = allEntries.find(e => e.id === id)
     const showSingle = (!!single && individualPot)
@@ -78,7 +68,7 @@ function RaffleRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allEntriesMapped} profile={lockCollection}>
+            <RaffleDataProvider allEntries={allEntries} profile={lockCollection}>
 
                 <div style={style}>
                     {showSingle &&
