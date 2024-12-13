@@ -20,8 +20,10 @@ const RaffleReport28DaysLine = ({lineData}) => {
             const entryFormArray = []
 
             for (let i = 0; i < value.length; i++) {
-                const date = value[i]['date']
+                let date = value[i]['date']
                 if (dayjs(date) < dayjs('2024-11-25')) continue
+
+                date = date + ' 23:59:59'
 
                 const dataPoint = new Map()
                 dataPoint['x'] = date
@@ -99,7 +101,7 @@ const RaffleReport28DaysLine = ({lineData}) => {
                 }}
                 xScale={{
                     type: 'time',
-                    format: '%Y-%m-%d'
+                    format: '%Y-%m-%d %H:%M:%S'
                 }}
                 xFormat='time:%m/%d/%y'
                 axisBottom={{

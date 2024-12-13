@@ -5,13 +5,10 @@ import usePageTitle from '../../util/usePageTitle'
 import useWindowSize from '../../util/useWindowSize'
 import dayjs from 'dayjs'
 import {siteFullNew} from '../../data/dataUrls'
-import LockViewsLine from '../../stats/LockViewsLine'
-import PopularCountries from '../../admin/siteReport/PopularCountries'
-import PopularAreas from '../../admin/siteReport/PopularAreas.jsx'
-import ScreenWidthsTable from '../../admin/siteReport/ScreenWidthsTable.jsx'
 import RaffleSummary from './RaffleSummary.jsx'
 import RafflePageTrackingTable from './RafflePageTrackingTable.jsx'
 import RafflePotTable from './RafflePotTable.jsx'
+import RaffleCharityTable from './RaffleCharityTable.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
@@ -53,28 +50,8 @@ function RaffleReport() {
             <div style={headerStyle}>Pot Details</div>
             <RafflePotTable data={siteFullNew}/>
 
-            <React.Fragment>
-                {1 === 0 &&
-                    <React.Fragment>
-
-                        <div style={headerStyle}>Weekly Lock Views</div>
-                        <LockViewsLine data={siteFullNew}/>
-
-                        <div style={headerStyle}>Popular Areas</div>
-                        <PopularAreas data={siteFullNew}/>
-
-                        {!!siteFullNew.popularCountries1 &&
-                            <React.Fragment>
-                                <div style={headerStyle}>Popular Countries</div>
-                                <PopularCountries data={siteFullNew}/>
-                            </React.Fragment>
-                        }
-
-                        <div style={headerStyle}>Lock Views by Screen Width</div>
-                        <ScreenWidthsTable data={siteFullNew}/>
-                    </React.Fragment>
-                }
-            </React.Fragment>
+            <div style={headerStyle}>Charity Details</div>
+            <RaffleCharityTable data={siteFullNew}/>
 
         </div>
     )

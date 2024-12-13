@@ -17,18 +17,21 @@ const SiteReport28DaysLine = ({lineData}) => {
         const lockViewsArray = []
 
         for (let i = 0; i < value.length; i++) {
+            let date = value[i]['date']
+            date = date + ' 23:59:59'
+
             const dataPoint = new Map()
-            dataPoint['x'] = value[i]['date']
+            dataPoint['x'] = date
             dataPoint['y'] = value[i]['visitors']
             visitorsArray.push(dataPoint)
 
             const dataPoint2 = new Map()
-            dataPoint2['x'] = value[i]['date']
+            dataPoint2['x'] = date
             dataPoint2['y'] = value[i]['visits']
             visitsArray.push(dataPoint2)
 
             const dataPoint3 = new Map()
-            dataPoint3['x'] = value[i]['date']
+            dataPoint3['x'] = date
             dataPoint3['y'] = value[i]['lockViews']
             lockViewsArray.push(dataPoint3)
         }
@@ -61,7 +64,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                         : 350
 
     const chartMargin = !smallWindow
-        ? {top: 10, right: 20, bottom: 70, left: 50}
+        ? {top: 25, right: 20, bottom: 70, left: 50}
         : {top: 10, right: 20, bottom: 50, left: 50}
 
     return (
@@ -93,7 +96,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                 }}
                 xScale={{
                     type: 'time',
-                    format: '%Y-%m-%d'
+                    format: '%Y-%m-%d %H:%M:%S'
                 }}
                 xFormat='time:%m/%d/%y'
                 axisBottom={{

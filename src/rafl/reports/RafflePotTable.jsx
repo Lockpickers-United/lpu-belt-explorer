@@ -13,7 +13,7 @@ const RafflePotTable = ({data}) => {
 
     const columns = [
         {name: 'Pot #', align: 'center', id: 'potNumber'},
-        {name: 'Pot ID', align: 'left', id: 'id'},
+        {name: 'ID', align: 'center', id: 'id'},
         {id: 'title', align: 'left', name: 'Title'},
         {id: 'views', align: 'center', name: 'Views'},
         {id: 'percentViews', name: '% Views', align: 'center'},
@@ -26,22 +26,24 @@ const RafflePotTable = ({data}) => {
     const [ascending, setAscending] = useState(true)
     const [searched, setSeached] = useState({})
 
-
     const potData = potViewsById.data.map(pot => {
         const dataPot = getPotFromId(pot.id)
+
+        if (!dataPot) return null
+
         let potTitle = dataPot?.title ? dataPot.title.substring(0,32) : `unknown (${pot.id})`
         potTitle = dataPot?.title?.length < 32 || !dataPot?.title ? potTitle : potTitle + '...'
 
-        const potNumber = dataPot ? dataPot.potNumber : 999
-
+        const id = pot?.id?.replace('2025-', '')
         return {
-            potNumber: potNumber,
             ...pot,
             percentViews: (Math.floor(pot.percentViews * 100) + '%'),
             ...dataPot,
             title: potTitle,
+            id: id
         }
     })
+        .filter(x => x)
         .sort((a, b) => {
             switch (sort) {
                 case 'potNumber':
@@ -51,18 +53,31 @@ const RafflePotTable = ({data}) => {
                     return a[sort].localeCompare(b[sort])
                 case 'title':
                     return a[sort].localeCompare(b[sort])
+                case 'donors':
+                    return parseInt(b[sort]) - parseInt(a[sort])
+                        || a['title'].localeCompare(b['title'])
+                case 'percentViews':
+                    return parseInt(b[sort]) - parseInt(a[sort])
+                        || a['views'] - (b['views'])
                 default:
-                    return a['potNumber'].localeCompare(b['potNumber'])
-                    || a['title'].localeCompare(b['title'])
+                    return parseInt(b[sort]) - parseInt(a[sort])
+                        || a['title'].localeCompare(b['title'])
             }
         })
+
     const sortedPots = ascending ? potData : potData.reverse()
 
     const rows = Object.keys(searched).length > 0
         ? [sortedPots?.find(pot => pot.title === searched.itemTitle)] || []
         : sortedPots || []
 
-    const tableData = {columns: columns, data: rows}
+    const mappedRows = rows.map(row => {
+        return row.donors && row.donors > 0
+            ? {...row}
+            : {...row, donors: 0, tickets: 0}
+    })
+
+    const tableData = {columns: columns, data: mappedRows}
 
     const linkFunction = useCallback((id, string) => {
         const pot = potData.find(row => row.title === string)
