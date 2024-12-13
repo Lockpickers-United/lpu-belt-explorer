@@ -61,9 +61,9 @@ function RaffleHeader({page}) {
     const discordStyle = {border: '1px solid #ccc', borderTopLeftRadius: 10, borderBottomLeftRadius: 10}
     const redditStyle = {border: '1px solid #ccc', borderTopRightRadius: 10, borderBottomRightRadius: 10}
 
-    const prizeButtonText = live || raffleAdminRole ? 'PRIZES' : 'PRIZE PREVIEW'
+    const prizeButtonText = live || raffleAdminRole || isMobile ? 'PRIZES' : 'PRIZE PREVIEW'
     const toolTip = displayStats ? 'Hide Real-time Stats' : 'Show Real-time Stats'
-    
+
     return (
         <React.Fragment>
             <div style={style}>
@@ -101,8 +101,7 @@ function RaffleHeader({page}) {
                         </Tooltip>
                     }
 
-                    {(live || raffleAdminRole) &&
-                        <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
+                    <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/charities')}
                                     style={{
@@ -114,8 +113,7 @@ function RaffleHeader({page}) {
                                 CHARITIES
                             </Button>
                         </span>
-                        </Tooltip>
-                    }
+                    </Tooltip>
 
                     {(live || raffleAdminRole) &&
                         <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>

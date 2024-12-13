@@ -1,11 +1,14 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useContext} from 'react'
 import TableRow from '@mui/material/TableRow'
 import TableCell from '@mui/material/TableCell'
 import Link from '@mui/material/Link'
 import useWindowSize from '../util/useWindowSize.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleCharityRow({charity}) {
     const {isMobile} = useWindowSize()
+    const {live, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = live || raffleAdminRole
 
     const openInNewTab = useCallback((url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -14,14 +17,14 @@ function RaffleCharityRow({charity}) {
 
     const charityName = charity.url
         ? <Link onClick={() => openInNewTab(charity.url)}
-                style={{color: '#fff', fontWeight:500}}>{charity.name}</Link>
-        : <span style={{color:'#ddd'}}>{charity.name}</span>
+                style={{color: '#fff', fontWeight: 500}}>{charity.name}</Link>
+        : <span style={{color: '#ddd'}}>{charity.name}</span>
 
     const fontSize = !isMobile ? '1.0rem' : '0.95rem'
 
     const cellStyle = !isMobile
-        ? {fontSize: fontSize, border:0, padding:'10px 16px'}
-        : {fontSize: fontSize, border:0, padding:'6px 10px'}
+        ? {fontSize: fontSize, border: 0, padding: '10px 16px'}
+        : {fontSize: fontSize, border: 0, padding: '6px 10px'}
 
     return (
 
@@ -32,20 +35,25 @@ function RaffleCharityRow({charity}) {
             <TableCell align={'left'} style={cellStyle}>
                 {charityName}
             </TableCell>
-            <TableCell align={'center'} style={cellStyle}>
-                {charity.donations2024 > 0 && new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    maximumSignificantDigits: 3
-                }).format(charity.donations2024)}
-            </TableCell>
-            <TableCell align={'center'} style={cellStyle}>
-                {charity.donations > 0 && new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    maximumSignificantDigits: 3
-                }).format(charity.donations)}
-            </TableCell>
+            {showFull &&
+                <React.Fragment>
+
+                    <TableCell align={'center'} style={cellStyle}>
+                        {charity.donations2024 > 0 && new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                            maximumSignificantDigits: 3
+                        }).format(charity.donations2024)}
+                    </TableCell>
+                    <TableCell align={'center'} style={cellStyle}>
+                        {charity.donations > 0 && new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                            maximumSignificantDigits: 3
+                        }).format(charity.donations)}
+                    </TableCell>
+                </React.Fragment>
+            }
         </TableRow>
 
     )

@@ -11,7 +11,6 @@ import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import ReportButton from './ReportButton.jsx'
 import AdminRoleButton from './AdminRoleButton.jsx'
-import RaffleComingSoon from './RaffleComingSoon.jsx'
 
 function RaffleCharitiesRoute() {
 
@@ -50,8 +49,6 @@ function RaffleCharitiesRoute() {
                     <Footer/>
 
                     <Tracker feature='raflCharities'/>
-
-                    <RaffleComingSoon/>
 
                 </div>
             </RaffleCharitiesProvider>

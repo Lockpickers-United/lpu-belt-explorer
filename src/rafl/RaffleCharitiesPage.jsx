@@ -11,9 +11,13 @@ import RaffleCharityRow from './RaffleCharityRow.jsx'
 import Link from '@mui/material/Link'
 import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleCharitesPage() {
     const {visibleEntries} = useContext(DataContext)
+    const {live, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = live || raffleAdminRole
+
     const {isMobile} = useWindowSize()
     const scrollableRef = useRef()
 
@@ -72,28 +76,32 @@ function RaffleCharitesPage() {
                                     <Link onClick={() => handleSort('name')}
                                           style={{color: sort === 'name' ? '#fff' : '#ccc'}}>Charity Name</Link>
                                 </TableCell>
-                                <TableCell
-                                    key='2024'
-                                    style={{
-                                        fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                        backgroundColor: '#222',
-                                        textAlign: 'center'
-                                    }}
-                                >
-                                    <Link onClick={() => handleSort('2024')}
-                                          style={{color: sort === '2024' ? '#fff' : '#ccc'}}>{prevText}</Link>
-                                </TableCell>
-                                <TableCell
-                                    key='2025'
-                                    style={{
-                                        fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                        backgroundColor: '#222',
-                                        textAlign: 'center'
-                                    }}
-                                >
-                                    <Link onClick={() => handleSort('2025')}
-                                          style={{color: sort === '2025' ? '#fff' : '#ccc'}}>{currText}</Link>
-                                </TableCell>
+                                {showFull &&
+                                    <React.Fragment>
+                                        <TableCell
+                                            key='2024'
+                                            style={{
+                                                fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
+                                                backgroundColor: '#222',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            <Link onClick={() => handleSort('2024')}
+                                                  style={{color: sort === '2024' ? '#fff' : '#ccc'}}>{prevText}</Link>
+                                        </TableCell>
+                                        <TableCell
+                                            key='2025'
+                                            style={{
+                                                fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
+                                                backgroundColor: '#222',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            <Link onClick={() => handleSort('2025')}
+                                                  style={{color: sort === '2025' ? '#fff' : '#ccc'}}>{currText}</Link>
+                                        </TableCell>
+                                    </React.Fragment>
+                                }
                             </TableRow>
                         </TableHead>
                         <TableBody>
