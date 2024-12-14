@@ -1,1 +1,0 @@
-import{j as r,$ as t}from"./index-db773d42.js";import{R as o}from"./RaffleContext-fd674128.js";import"./useData-94bdc2be.js";import"./dataUrls-4eb203c4.js";import"./index-0ec3aa61.js";function s(){return r.jsx(o,{children:r.jsx(t,{})})}export{s as default};
