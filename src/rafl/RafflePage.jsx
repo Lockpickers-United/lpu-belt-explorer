@@ -6,7 +6,7 @@ import FilterContext from '../context/FilterContext.jsx'
 import RaffleEntry from './RaffleEntry.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import {raffleSortFields} from '../data/sortFields'
-import RaffleComingSoonBar from './RaffleComingSoonBar.jsx'
+import RaffleIntroBar from './RaffleIntroBar.jsx'
 
 function RafflePage({profile}) {
     const {filters} = useContext(FilterContext)
@@ -22,7 +22,8 @@ function RafflePage({profile}) {
 
         <div style={{paddingBottom: 32}}>
 
-            <RaffleComingSoonBar/>
+            <RaffleIntroBar/>
+
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
 
             <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
