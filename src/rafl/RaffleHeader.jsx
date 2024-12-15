@@ -21,10 +21,10 @@ function RaffleHeader({page}) {
     const navigate = useNavigate()
     const {raflResponseSummary, displayStats, toggleStats, animateTotal, setAnimateTotal} = useContext(RaffleContext)
 
-    const donors = raflResponseSummary && raflResponseSummary.uniqueDonorCount
-    const donationsTotal = raflResponseSummary && raflResponseSummary.totalDonations
+    const donors = raflResponseSummary && raflResponseSummary.uniqueDonorCount || 0
+    const donationsTotal = raflResponseSummary && raflResponseSummary.totalDonations || 0
     const donationsTotalStr = raflResponseSummary && new Intl.NumberFormat().format(donationsTotal)
-    const averageDonation = raflResponseSummary && Math.floor(donationsTotal / donors)
+    const averageDonation = raflResponseSummary && Math.floor(donationsTotal / donors) || 0
 
     const chartWidth = 300
     const discordDonations = raflResponseSummary && raflResponseSummary.platformDonations.Discord || 0
@@ -180,13 +180,13 @@ function RaffleHeader({page}) {
                             <div style={{display: 'flex'}}>
                                 <div style={{
                                     ...discordStyle,
-                                    width: discordWidth,
+                                    width: discordWidth || 0,
                                     backgroundColor: '#2d52b0',
                                     height: 20
                                 }}></div>
                                 <div style={{
                                     ...redditStyle,
-                                    width: redditWidth,
+                                    width: redditWidth || 0,
                                     backgroundColor: '#587ee6',
                                     height: 20
                                 }}></div>
