@@ -695,7 +695,37 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "No international shipping",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54206123874_29911b5c27_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54206123874/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54206123874_8ee7f88084_o.jpg"
+      },
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54206120308_2b6a40936f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54206120308/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54206120308_e4893da286_o.jpg"
+      },
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54206124339_0400c3ccb5_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54206124339/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54206124339_438ba04731_o.jpg"
+      },
+      {
+        "title": "By: PickSmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54205878976_1e660e3ab2_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54205878976/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54205878976_8d6e256f33_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-035",
@@ -715,7 +745,16 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: f-eq-ma",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54204983617_a822581703_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54204983617/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54204983617_8c52066b1c_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-036",
@@ -735,7 +774,16 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: banditobrandino07",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54206119853_59e0b15a4b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54206119853/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54206119853_ce796f53a1_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-037",
@@ -755,6 +803,15 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": ""
+    "winner": "",
+    "media": [
+      {
+        "title": "By: HVLogic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54205879486_30d39b2001_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54205879486/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54205879486_aa30e1f585_o.jpg"
+      }
+    ]
   }
 ]
