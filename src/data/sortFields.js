@@ -36,6 +36,7 @@ export const raffleSortFields = [
     {label: 'Pot Name', value: 'potName'},
     {label: 'Tickets', value: 'tickets'},
     {label: 'Donors', value: 'donors'},
-    {label: 'Contributed By', value: 'contributedBy'}
+    {label: 'Contributed By', value: 'contributedBy'},
+    {label: 'Date Added', value: 'dateAdded'}
 ]
 

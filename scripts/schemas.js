@@ -147,7 +147,6 @@ export const raflSchema = Joi.array().items(
         'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
         'Year': Joi.number().max(2030),
         'Pot Number': Joi.number().max(999),
-        'Form ID': Joi.number().allow(''),
         'Title': Joi.string(),
         'Description': Joi.string().allow(''),
         'Pot Contents': Joi.string().allow(''),
@@ -157,7 +156,9 @@ export const raflSchema = Joi.array().items(
         'Shipping Info Text': Joi.string().allow(''),
         'Split Shipping': Joi.string().allow(''),
         'Shipping Type': Joi.string().allow(''),
-        'Winner': Joi.string().allow('')
+        'Winner': Joi.string().allow(''),
+        'Date Added': Joi.number().allow(''),
+
     }).unknown()
 )
 

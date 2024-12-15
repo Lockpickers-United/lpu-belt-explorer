@@ -44,17 +44,19 @@ export function RaffleDataProvider({children, allEntries}) {
                 if (sort === 'potName') {
                     return a.title.localeCompare(b.title)
                 } else if (sort === 'contributedBy') {
-                    return a.contributedBy[0].localeCompare(b.contributedBy[0])
+                    return a.contributedBy[0].localeCompare(b.contributedBy[0]) || a.title.localeCompare(b.title)
                 } else if (sort === 'tickets') {
-                    return parseInt(b.tickets) - parseInt(a.tickets)
+                    return parseInt(b.tickets) - parseInt(a.tickets) || a.title.localeCompare(b.title)
                 } else if (sort === 'donors') {
-                    return parseInt(b.donors) - parseInt(a.donors)
+                    return parseInt(b.donors) - parseInt(a.donors) || a.title.localeCompare(b.title)
+                } else if (sort === 'dateAdded') {
+                    return parseInt(b.dateAdded) - parseInt(a.dateAdded) || a.title.localeCompare(b.title)
                 } else {
-                    return a.potNumber < b.potNumber || a.title.localeCompare(b.title)
+                    return parseInt(a[sort]) - parseInt(b[sort]) || a.title.localeCompare(b.title)
                 }
             })
             : searched.sort((a, b) => {
-                return a.potNumber - b.potNumber || a.title.localeCompare(b.title)
+                return parseInt(a.donors) - parseInt(b.donors) || a.title.localeCompare(b.title)
             })
     }, [allEntries, filters, search, sort])
 
