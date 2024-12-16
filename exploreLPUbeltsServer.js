@@ -9,7 +9,8 @@ import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
 
-//pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
+// pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
+// https://explore.lpubelts.com:8443/rafl-stats
 
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
@@ -51,7 +52,7 @@ app.get('/rafl-stats', async (req, res) => {
     })
 })
 
-
+/////////////
 
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)
