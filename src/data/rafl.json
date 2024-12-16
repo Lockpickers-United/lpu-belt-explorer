@@ -527,7 +527,7 @@
     "potNumber": "0",
     "title": "Hammer’s Ultimate RAFL Locksport Kit",
     "description": "",
-    "potContents": "Reaper Lockpick Sheath\nProtec2 w/ 2 Keys\nCX5 w/ 2 Keys\nMTL Interactive w/ 1 Key\nMiwa U9 w/ 1 Key\nSargent LA w/ 1 Key\nWR5 w/ 1 Key\nSparrows Mini Pinning Trays\nSparrows Tweezers\nStainless Steel Follower\n\nLockpicks:\nMultipick Hooks:\n- PN03\n- PN04\n- PN05\n- PN06\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\nMoki:\n- Deep Round Hook\n\nCustom Stainless Steel Handles and Screws made by Nosu\nBook of Bones Sticker",
+    "potContents": "- Reaper Lockpick Sheath\n- Protec2 w/ 2 Keys\n- CX5 w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Stainless Steel Follower\n\nLockpicks:\n\nMultipick Hooks:\n\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n\n- SP26\n- SP27\n- SP30\n- SP31\n\nMoki:\n\n- Deep Round Hook\n\nCustom Stainless Steel Handles and Screws made by Nosu\nBook of Bones Sticker",
     "contributedBy": [
       "Deadhammer"
     ],
@@ -837,5 +837,26 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54205879486_aa30e1f585_o.jpg"
       }
     ]
+  },
+  {
+    "id": "2025-038",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Poser Swag",
+    "description": "You don’t have put in the long hours it takes to be the cool guy picker that gets the ladies purrrring when you can much more easily get the same effect by winning this picking swag",
+    "potContents": "- Stickers and poker chips donated by LadyLocks\n- A new Yeti tumbler with various pickers stickers\n- One Large size green LPU hoodie\n- One copy of Locksport, A Hackers Guide to Lockpicking, Impressioning, & Safe Cracking.",
+    "contributedBy": [
+      "banditobrandino07"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
   }
 ]
