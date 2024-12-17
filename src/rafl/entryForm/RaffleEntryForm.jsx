@@ -13,11 +13,18 @@ import isValidUrl from '../../util/isValidUrl'
 import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
 import RaffleContext from '../RaffleContext.jsx'
+import Dialog from '@mui/material/Dialog'
+import Link from '@mui/material/Link'
+import AdminRoleButton from '../AdminRoleButton.jsx'
+import {useNavigate} from 'react-router-dom'
 
 function RaffleEntryForm() {
+    const navigate = useNavigate()
+    const {raffleAdminRole} = useContext(RaffleContext)
+    const [submitted, setSumbitted] = useState(false)
     const [formData, setFormData] = useState({})
     const [charityData, setCharityData] = useState({})
-    const [potData, setPotData] = useState({0: {tickets:0}})
+    const [potData, setPotData] = useState({0: {tickets: 0}})
     const potKeys = Array.from(Object.keys(potData))
 
     const {raflQuestionMap, displayStats, setDisplayStats} = useContext(RaffleContext)
@@ -66,11 +73,6 @@ function RaffleEntryForm() {
     const handleSubmit = useCallback(() => {
 
         const base = 'https://docs.google.com/forms/d/e/1FAIpQLSe0Rr8mykkE5FAgzUACzGsGYq_mN-vS34arr2uL0QDEFHBSNQ/viewform?usp=pp_url'
-        const params = Object.keys(formData).reduce((acc, key) => {
-            const param = `&entry.${raflQuestionMap[key]}=${encodeURIComponent(formData[key])}`
-            acc = acc?.length > 0 ? `${acc}${param}` : param
-            return acc
-        }, '')
 
         const platform = `&entry.${raflQuestionMap[0].formId}=${encodeURIComponent(formData.platform)}`
         const username = `&entry.${raflQuestionMap[1].formId}=${encodeURIComponent(formData.username)}`
@@ -80,14 +82,15 @@ function RaffleEntryForm() {
         const parameters = [platform, username, charity, receipt, donation]
 
         const potParams = Object.keys(potData).reduce((acc, key) => {
-            const paramId = raflQuestionMap[potData[key].itemIndex+5].formId
+            const formQuestion = raflQuestionMap.find(q => q.text === potData[key].itemFullTitle)
+            const paramId = formQuestion?.formId || 'undefined'
             const param = `&entry.${paramId}=${potData[key].tickets}`
             acc = acc?.length > 0 ? `${acc}${param}` : param
             return acc
         }, '')
 
-        console.log('params',params)
         console.log('url', `${parameters.join('')}${potParams}`)
+        setSumbitted(true)
         openInNewTab(`${base}${parameters.join('')}${potParams}`)
 
     }, [charityData, formData, openInNewTab, potData, raflQuestionMap])
@@ -127,9 +130,9 @@ function RaffleEntryForm() {
     const questionStyle = {fontSize: '1.1rem', fontWeight: 400, marginBottom: 8}
 
     return (
-
-        <div style={{paddingBottom: 32}}>
-            <RaffleSubHead text={'ENTRY FORM'}/>
+        <React.Fragment>
+            <div style={{paddingBottom: 32}}>
+                <RaffleSubHead text={'ENTRY FORM'}/>
 
                 <div style={{
                     ...style,
@@ -140,135 +143,162 @@ function RaffleEntryForm() {
                     padding: '20px 20px'
                 }}>
 
-                <div style={sectionStyle}>About You</div>
+                    <div style={sectionStyle}>About You</div>
 
-                <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
-                    <FormControl style={{width: 250, marginRight: 16}} size='small' error={isRequired('platform')}>
-                        <InputLabel color='info'>Preferred Platform</InputLabel>
-                        <Select
-                            value={formData.platform ? formData.platform : ''}
-                            label='Preferred Platform'
-                            onChange={handleChange}
-                            color='info'
-                            name='platform'
-                        >
-                            <MenuItem value={'Discord'}>Discord</MenuItem>
-                            <MenuItem value={'Reddit'}>Reddit</MenuItem>
-                        </Select>
-                        <FormHelperText>{isRequired('platform') ? 'Required Field' : ' '}</FormHelperText>
-                    </FormControl>
+                    <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
+                        <FormControl style={{width: 250, marginRight: 16}} size='small' error={isRequired('platform')}>
+                            <InputLabel color='info'>Preferred Platform</InputLabel>
+                            <Select
+                                value={formData.platform ? formData.platform : ''}
+                                label='Preferred Platform'
+                                onChange={handleChange}
+                                color='info'
+                                name='platform'
+                            >
+                                <MenuItem value={'Discord'}>Discord</MenuItem>
+                                <MenuItem value={'Reddit'}>Reddit</MenuItem>
+                            </Select>
+                            <FormHelperText>{isRequired('platform') ? 'Required Field' : ' '}</FormHelperText>
+                        </FormControl>
 
-                    <FormControl style={{width: 250}} size='small'>
-                        <TextField type='text' name='username' label='Username'
-                                   value={formData.username ? formData.username : ''}
-                                   error={isRequired('username')}
-                                   helperText={isRequired('username') ? 'Required Field' : ' '}
-                                   onChange={handleChange} color='info' size='small'/>
-                    </FormControl>
-                </div>
-            </div>
-
-
-            <div style={{
-                ...style,
-                backgroundColor: '#222',
-                minHeight: 72,
-                alignItems: 'center',
-                borderBottom: '1px #555 solid',
-                padding: '20px 20px'
-            }}>
-                <div style={sectionStyle}>Your Donation</div>
-
-                <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
-                    <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
-                        <div style={questionStyle}>Selected Charity</div>
-                        <div style={{height: 6}}/>
-                        <RaffleAutocompleteBox allItems={mappedCharities}
-                                               setItemDetails={setCharityData}
-                                               getOptionTitle={charityFullTitle}
-                                               searchText={'Search Charities'}
-                                               error={charityError}/>
-                        <div style={{fontSize:'0.75rem', color:'#f44336', margin:'4px 14px 0px 14px', display: showIssues && !charityData.itemFullTitle ? 'block' : 'none'}}>
-                            Required Field
-                        </div>
-                    </div>
-                    <div>
-                        <div style={{...questionStyle}}>Total donation in USD</div>
-                        <FormControl>
-                            <TextField type='text' name='donation' label='Donation Amount'
-                                       value={formData.donation ? formData.donation : ''}
-                                       error={isRequired('donation')}
-                                       helperText={isRequired('donation') ? 'Required Field' : ' '}
+                        <FormControl style={{width: 250}} size='small'>
+                            <TextField type='text' name='username' label='Username'
+                                       value={formData.username ? formData.username : ''}
+                                       error={isRequired('username')}
+                                       helperText={isRequired('username') ? 'Required Field' : ' '}
                                        onChange={handleChange} color='info' size='small'/>
                         </FormControl>
                     </div>
                 </div>
 
-                <div style={{margin: '6px 12px 0px 12px'}}>
-                    <div style={questionStyle}>
-                        Receipt from approved charity <span style={{fontWeight: 400}}>(hosted image link, must contain a visible date)</span>
+
+                <div style={{
+                    ...style,
+                    backgroundColor: '#222',
+                    minHeight: 72,
+                    alignItems: 'center',
+                    borderBottom: '1px #555 solid',
+                    padding: '20px 20px'
+                }}>
+                    <div style={sectionStyle}>Your Donation</div>
+
+                    <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
+                        <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
+                            <div style={questionStyle}>Selected Charity</div>
+                            <div style={{height: 6}}/>
+                            <RaffleAutocompleteBox allItems={mappedCharities}
+                                                   setItemDetails={setCharityData}
+                                                   getOptionTitle={charityFullTitle}
+                                                   searchText={'Search Charities'}
+                                                   error={charityError}/>
+                            <div style={{
+                                fontSize: '0.75rem',
+                                color: '#f44336',
+                                margin: '4px 14px 0px 14px',
+                                display: showIssues && !charityData.itemFullTitle ? 'block' : 'none'
+                            }}>
+                                Required Field
+                            </div>
+                        </div>
+                        <div>
+                            <div style={{...questionStyle}}>Total donation in USD</div>
+                            <FormControl>
+                                <TextField type='text' name='donation' label='Donation Amount'
+                                           value={formData.donation ? formData.donation : ''}
+                                           error={isRequired('donation')}
+                                           helperText={isRequired('donation') ? 'Required Field' : ' '}
+                                           onChange={handleChange} color='info' size='small'/>
+                            </FormControl>
+                        </div>
                     </div>
 
-                    <FormControl fullWidth>
-                        <TextField type='text' name='receipt' label='Receipt Link'
-                                   error={receiptUrlError} helperText={receiptURLHelperText}
-                                   value={formData.receipt ? formData.receipt : ''}
-                                   onChange={handleChange} color='info' size='small' fullWidth/>
-                    </FormControl>
+                    <div style={{margin: '6px 12px 0px 12px'}}>
+                        <div style={questionStyle}>
+                            Receipt from approved charity <span style={{fontWeight: 400}}>(hosted image link, must contain a visible date)</span>
+                        </div>
 
-                </div>
-            </div>
+                        <FormControl fullWidth>
+                            <TextField type='text' name='receipt' label='Receipt Link'
+                                       error={receiptUrlError} helperText={receiptURLHelperText}
+                                       value={formData.receipt ? formData.receipt : ''}
+                                       onChange={handleChange} color='info' size='small' fullWidth/>
+                        </FormControl>
 
-            <div style={{
-                ...style,
-                backgroundColor: '#222',
-                minHeight: 72,
-                alignItems: 'center',
-                borderBottom: '1px #555 solid',
-                padding: '20px 20px'
-            }}>
-                <div style={sectionStyle}>Your Pots</div>
-
-                <RafflePotConfigurator donation={formData.donation} potData={potData}
-                                       handlePotChange={handlePotChange} questionStyle={questionStyle}
-                                       showIssues={showIssues} setPotData={setPotData}
-                                       allocated={allocated} />
-
-            </div>
-
-
-            <div style={{...style, padding: '20px 20px 20px 20px'}}>
-                <div style={{...sectionStyle, textAlign:'center'}}>All Done?</div>
-
-                <div style={{...style, justifyContent: 'center', marginTop: 0, display: 'flex'}}>
-                    <div style={{display: errors ? 'flex' : 'none'}}>
-                        <Button variant='outlined' onClick={() => {
-                            setShowIssues(!showIssues)
-                        }}
-                                style={{
-                                    marginRight: 20,
-                                    color: showIssues ? '#de2323' : '#bbb',
-                                    borderColor: showIssues ? '#de2323' : '#bbb'
-                                }}
-                        >Show Issues</Button>
                     </div>
-                    <Button style={{backgroundColor:continueColor, color:'#000'}} variant='contained'
-                            disabled={errors} onClick={handleSubmit}
-                    >Review Entry on Google</Button>
                 </div>
 
                 <div style={{
                     ...style,
-                    justifyContent: 'center',
-                    marginTop: 16,
-                    color: '#de2323',
-                    display: errors ? 'flex' : 'none'
+                    backgroundColor: '#222',
+                    minHeight: 72,
+                    alignItems: 'center',
+                    borderBottom: '1px #555 solid',
+                    padding: '20px 20px'
                 }}>
-                    <Button style={{color:'#b00'}} variant='text' onClick={handleSubmit}
-                    >Test Send Incomplete</Button>
+                    <div style={sectionStyle}>Your Pots</div>
+
+                    <RafflePotConfigurator donation={formData.donation} potData={potData}
+                                           handlePotChange={handlePotChange} questionStyle={questionStyle}
+                                           showIssues={showIssues} setPotData={setPotData}
+                                           allocated={allocated}/>
+
+                </div>
+
+
+                <div style={{...style, padding: '20px 20px 20px 20px'}}>
+                    <div style={{...sectionStyle, textAlign: 'center'}}>All Done?</div>
+
+                    <div style={{...style, justifyContent: 'center', marginTop: 0, display: 'flex'}}>
+                        <div style={{display: errors ? 'flex' : 'none'}}>
+                            <Button variant='outlined' onClick={() => {
+                                setShowIssues(!showIssues)
+                            }}
+                                    style={{
+                                        marginRight: 20,
+                                        color: showIssues ? '#de2323' : '#bbb',
+                                        borderColor: showIssues ? '#de2323' : '#bbb'
+                                    }}
+                            >Show Issues</Button>
+                        </div>
+                        <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
+                                disabled={errors} onClick={handleSubmit}
+                        >Review Entry on Google</Button>
+                    </div>
+                    {raffleAdminRole &&
+                        <div style={{
+                            ...style,
+                            justifyContent: 'center',
+                            marginTop: 16,
+                            color: '#de2323',
+                            display: errors ? 'flex' : 'none'
+                        }}>
+                            <Button style={{color: '#b00'}} variant='text' onClick={handleSubmit}
+                            >Test Send Incomplete</Button>
+                        </div>
+                    }
                 </div>
             </div>
-        </div>
+
+            <Dialog open={submitted} componentsProps={{
+                backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
+            }}>
+                <div style={{width: 320, textAlign: 'center', padding: 30, fontSize: '1.1rem'}}>
+                    <span style={{fontSize: '1.3rem', fontWeight: 700}}>Thanks for entering!</span><br/><br/>
+                    <span style={{fontSize: '1.2rem', lineHeight: '1.2rem'}}>
+                        Make sure you hit <strong>SUBMIT</strong> on the google review form
+                        or your entry will not be counted.
+                        <br/><br/></span>
+
+                    You can always make another donation and submit
+                    again... <Link onClick={() => navigate('/rafl')}
+                                   style={{color: '#ddd', textDecorationColor: '#888', cursor: 'pointer'}}>
+                    Take another look at the pots!
+                </Link><br/><br/>
+
+                    <Link onClick={() => setSumbitted(false)}>(close)</Link>
+                </div>
+            </Dialog>
+        </React.Fragment>
     )
 }
 

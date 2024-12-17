@@ -49,9 +49,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         return {options, itemIds, itemTitles, itemPotNumbers, itemFormIds}
     }, [])
 
-
     const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
-
 
     const handleTicketsChange = useCallback(event => {
         const tickets = event.target.value.replace(/[^0-9]/, '')

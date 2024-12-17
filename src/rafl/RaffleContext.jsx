@@ -45,9 +45,10 @@ export function RaffleProvider({children}) {
                 ].join(',')),
                 collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
                 tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
-                donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0
+                donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0,
+                formId: raflQuestionMap?.find(q => q.text.includes(entry.title)).formId
             }))
-    }, [potSummaryStats, lockCollection])
+    }, [potSummaryStats, raflQuestionMap, lockCollection])
 
     const charitySummaryStats = useMemo(() => raflResponseSummary && Object.keys(raflResponseSummary?.charityDonorCount).reduce((acc, key) => {
             acc[key] = {
@@ -69,7 +70,6 @@ export function RaffleProvider({children}) {
                 donations: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donations : 0,
             }))
     }, [charitySummaryStats])
-
 
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(true)
