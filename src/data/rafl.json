@@ -686,7 +686,16 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: Yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54213777170_8c140329ae_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54213777170/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54213777170_d2f1c76d11_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-031",
