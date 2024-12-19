@@ -86,7 +86,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                     stacked: false,
                     reverse: false
                 }}
-                yFormat=' >-.2f'
+                yFormat=' >-.0f'
                 axisLeft={{
                     tickValues: 5,
                     tickSize: 5,

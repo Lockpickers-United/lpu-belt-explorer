@@ -4,16 +4,17 @@ import useData from '../../util/useData'
 import usePageTitle from '../../util/usePageTitle'
 import useWindowSize from '../../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew} from '../../data/dataUrls'
+import {siteFullNew, raflResponseDetails} from '../../data/dataUrls'
 import RaffleSummary from './RaffleSummary.jsx'
 import RafflePageTrackingTable from './RafflePageTrackingTable.jsx'
 import RafflePotTable from './RafflePotTable.jsx'
 import RaffleCharityTable from './RaffleCharityTable.jsx'
+import RaffleReportHistoricalLines from './RaffleReportHistoricalLines.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
     const {data, loading, error} = useData({urls})
-    const {siteFullNew} = data || {}
+    const {siteFullNew, raflResponseDetails} = data || {}
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -22,9 +23,7 @@ function RaffleReport() {
 
     const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
     const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
-    const summaryHeaderStyle = siteFullNew?.firstVistsLastSevenDays?.countryCount
-        ? headerStyle
-        : firstHeaderStyle
+    const summaryHeaderStyle = firstHeaderStyle
 
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(siteFullNew?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFullNew?.metadata.timezone})`
@@ -44,6 +43,9 @@ function RaffleReport() {
             </div>
             <RaffleSummary data={siteFullNew}/>
 
+            <div style={headerStyle}>Totals Over Time</div>
+            <RaffleReportHistoricalLines data={raflResponseDetails}/>
+
             <div style={headerStyle}>Page Tracking</div>
             <RafflePageTrackingTable data={siteFullNew}/>
 
@@ -58,7 +60,8 @@ function RaffleReport() {
 }
 
 const urls = {
-    siteFullNew
+    siteFullNew,
+    raflResponseDetails
 }
 
 export default RaffleReport

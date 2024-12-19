@@ -15,7 +15,6 @@ import RafflePotConfigurator from './RafflePotConfigurator.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import Dialog from '@mui/material/Dialog'
 import Link from '@mui/material/Link'
-import AdminRoleButton from '../AdminRoleButton.jsx'
 import {useNavigate} from 'react-router-dom'
 
 function RaffleEntryForm() {
