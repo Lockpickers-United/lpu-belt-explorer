@@ -1,11 +1,12 @@
 {
-  "name": "getRaflGoogleForm",
+  "name": "raflFormUtilities",
   "author": "mgsecure <125900659+mgsecure@users.noreply.github.com>",
   "version": "1.0.0",
   "main": "raflFormUtils.js",
   "type": "module",
   "license": "MIT",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "googleapis": "^144.0.0"
   }
 }

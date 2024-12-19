@@ -29,6 +29,7 @@ app.get('/refresh-preview', async (req, res) => {
     await importRaflData().then(results => {
         res.send(results)
     })
+    await raflUtils('addQuestions')
 })
 
 app.get('/flickr-info', async (req, res) => {

@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import fetch from 'node-fetch'
+import dayjs from 'dayjs'
 
 const production = process.env.USER !== 'nealbayless'
 
@@ -95,6 +96,12 @@ async function getFormCharities(auth, formId) {
 
 }
 
+export async function getCharities(auth, formId) {
+    const charities = await getFormCharities(auth, formId)
+    return charities ? charities : [{error: 'getCharities error'}]
+}
+
+
 async function deleteAllQuestions(auth, formId, reset) {
     if (!reset) return 'reset is off, canceling'
 
@@ -116,30 +123,14 @@ async function deleteAllQuestions(auth, formId, reset) {
     }
 }
 
+
 async function createQuestions(auth, formId, raflData, charitiesData, reset) {
 
     if (!reset) return 'reset is off, canceling'
 
+    console.log('creating questions')
+
     const forms = google.forms({version: 'v1', auth})
-    const textQuestion = ((title, location) =>
-            [
-                {
-                    'createItem': {
-                        'item': {
-                            'title': (
-                                title
-                            ),
-                            'questionItem': {
-                                'question': {
-                                    'textQuestion': {}
-                                }
-                            }
-                        },
-                        'location': {'index': location}
-                    }
-                }
-            ]
-    )
 
     const dropDownQuestion = ((title, options, location) => [
         {
@@ -206,11 +197,49 @@ async function createQuestions(auth, formId, raflData, charitiesData, reset) {
             )
     requests.push(...potQuestions)
 
+    jsonIt('requests', requests)
+
     const updateResponse = await forms.forms.batchUpdate({
         formId: formId,
         requestBody: {requests: requests}
     })
     return updateResponse.data
+}
+
+async function addQuestions(auth, formId, raflData) {
+
+    const formItems = await getFormItems(auth, formId)
+    let nextIndex = formItems.length
+
+    const potQuestions =
+        raflData
+            .filter(pot => pot.potNumber !== '99')
+            .sort((a, b) => {
+                return parseInt(a.potNumber) - parseInt(b.potNumber)
+                    || a.title.localeCompare(b.title)
+            })
+            .map((pot) => {
+                    if (!formItems.find(fpot => fpot.title.includes(pot.title))) {
+                        const q = textQuestion(`Pot ${pot.potNumber} - ${pot.title}`, nextIndex)
+                        nextIndex++
+                        return q
+                    }
+                }
+            )
+            .filter(x => x)
+
+    jsonIt('potQuestions', potQuestions)
+
+    if (potQuestions.length > 0) {
+        const forms = google.forms({version: 'v1', auth})
+        const updateResponse = await forms.forms.batchUpdate({
+            formId: formId,
+            requestBody: {requests: potQuestions}
+        })
+        return updateResponse.data
+    } else {
+        return {warning: 'No questions to add'}
+    }
 }
 
 
@@ -246,11 +275,12 @@ export async function getFormResponses(auth, formId) {
                         : {[questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
                 }
                 acc.donor = `${acc.platform}-${acc.username}`
+                acc.lastSubmittedTime = res.lastSubmittedTime
                 return acc
             }, {})
         })
 
-        const summaryData = responseData.reduce((acc, res) => {
+        const summaryData = responseData?.reduce((acc, res) => {
 
             acc.totalDonorCount = acc.totalDonorCount + 1 || 1
 
@@ -304,15 +334,39 @@ export async function getFormResponses(auth, formId) {
 
         }, {})
 
+
+        const detailedData = responseData?.reduce((acc, res) => {
+            const date = dayjs(res.lastSubmittedTime).format('YYYY-MM-DD')
+
+            setDeepAdd(acc, [date, 'totalDonors'], 1)
+            setDeepAdd(acc, [date, 'totalDonations'], res.donation)
+            setDeepAdd(acc, [date, 'platforms', res.platform, 'donors'], 1)
+            setDeepAdd(acc, [date, 'platforms', res.platform, 'donations'], res.donation)
+            setDeepAdd(acc, [date, 'charities', res.charity, 'donors'], 1)
+            setDeepAdd(acc, [date, 'charities', res.charity, 'donations'], res.donation)
+            Object.keys(res.pots).forEach(key => {
+                setDeepAdd(acc, [date, 'pots', key, 'tickets'], res.pots[key])
+                setDeepAdd(acc, [date, 'pots', key, 'donors'], 1)
+            })
+
+            return acc
+
+        }, {})
+
+
         delete summaryData.uniqueDonors
         delete summaryData.platformDonors
         delete summaryData.charityDonors
         delete summaryData.potDonors
         summaryData.status = 'success'
 
-        let dateString = new Date().toLocaleDateString()
-        dateString = dateString.replace(/(\d\d)\/(\d\d)\/(\d{4})/, '$3-$1-$2')
+        let dateString = dayjs().format('YYYY-MM-DD')
 
+        await fs.writeFile(`${serverDir}/raflResponseDetails.json`, JSON.stringify(detailedData, null, 2), function (err) {
+            if (err) {
+                console.error('save raflResponseDetails error:', err)
+            }
+        })
 
         await fs.writeFile(`${serverDir}/raflResponseSummary.json`, JSON.stringify(summaryData, null, 2), function (err) {
             if (err) {
@@ -364,17 +418,14 @@ async function buildQuestionMap(raflData) {
     return questionMap
 }
 
-export async function getCharities(auth, formId) {
-    const charities = await getFormCharities(auth, formId)
-    return charities ? charities : [{error: 'getCharities error'}]
-}
-
 async function processResponses() {
 
     try {
-        let filenames = await fs.readdir(archiveDir)
-
+        let filenames = (await fs.readdir(archiveDir))
+            .filter(filename => filename.endsWith('.json'))
         const responses = []
+        //console.log('filenames', filenames)
+
         for (const item of filenames) {
             const date = /.*-(\d{4}-\d{2}-\d{2})/.exec(item)[1]
             await fs.readFile(`${archiveDir}/${item}`, 'utf8').then((data) => {
@@ -383,7 +434,6 @@ async function processResponses() {
                 responses.push(dateResponses)
             })
         }
-
         await fs.writeFile(`${serverDir}/raflHistoricalResponses.json`, JSON.stringify(responses, null, 2), function (err) {
             if (err) {
                 console.error('save raflHistoricalResponses error:', err)
@@ -400,6 +450,9 @@ async function processResponses() {
         } else {
             console.error('Error reading directory:', error.message)
         }
+
+        return {status: 'error', message: error.message}
+
     }
 }
 
@@ -423,6 +476,15 @@ export async function raflUtils(util) {
     if (util === 'buildQuestionMap') response = await buildQuestionMap(raflData)
     if (util === 'raflResponseSummary') response = await getFormResponses(auth, formId, raflData)
     if (util === 'processResponses') response = await processResponses()
+    if (util === 'addQuestions') {
+        const addQuestionsResponse = await addQuestions(auth, formId, raflData)
+        if (!addQuestionsResponse.warning && !addQuestionsResponse.error) {
+            const buildQuestionMapResponse = await buildQuestionMap(raflData)
+            response = {addQuestionsResponse, buildQuestionMapResponse}
+        } else {
+            response = addQuestionsResponse
+        }
+    }
 
     //jsonIt('response', response)
 
@@ -439,11 +501,48 @@ export async function raflUtils(util) {
         response = await buildQuestionMap(raflData)
     }
 
+    //await createQuestions(auth, formId, raflData, charitiesData, true)
+
     return response
 
 }
 
 //await raflUtils('processResponses')
+
+
+////// HELPERS //////
+
+function textQuestion(title, location) {
+    return [
+        {
+            'createItem': {
+                'item': {
+                    'title': (
+                        title
+                    ),
+                    'questionItem': {
+                        'question': {
+                            'textQuestion': {}
+                        }
+                    }
+                },
+                'location': {'index': location}
+            }
+        }
+    ]
+}
+
+function setDeepAdd(obj, path, value) {
+    if (path.length === 1) {
+        obj[path[0]] = obj[path[0]] ? obj[path[0]] + value : value
+        return
+    }
+    const key = path[0]
+    if (!obj[key]) {
+        obj[key] = {}
+    }
+    setDeepAdd(obj[key], path.slice(1), value)
+}
 
 function jsonIt(string, object) {
     console.log(string)
