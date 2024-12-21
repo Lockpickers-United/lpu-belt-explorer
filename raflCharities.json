@@ -100,7 +100,7 @@
     "donations2024": 0
   },
   {
-    "name": "Canadian Whale Instatute",
+    "name": "Canadian Whale Institute",
     "url": "",
     "donations2024": 320
   },
@@ -185,7 +185,7 @@
     "donations2024": 127
   },
   {
-    "name": "Doctors Without Borders / Medecins Sans Frontieres",
+    "name": "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser",
     "url": "",
     "donations2024": 1675
   },
@@ -260,7 +260,7 @@
     "donations2024": 0
   },
   {
-    "name": "Girl's Who Code",
+    "name": "Girls Who Code",
     "url": "",
     "donations2024": 302
   },
@@ -290,7 +290,7 @@
     "donations2024": 100
   },
   {
-    "name": "Hardcore-Help",
+    "name": "Hardcore Help",
     "url": "",
     "donations2024": 174
   },
@@ -485,8 +485,8 @@
     "donations2024": 293
   },
   {
-    "name": "Seattle Children’s Hospital",
-    "url": "",
+    "name": "Seattle Children's Hospital",
+    "url": "https://give.seattlechildrens.org/",
     "donations2024": 200
   },
   {
@@ -582,6 +582,11 @@
   {
     "name": "The Leukemia and Lymphoma Society",
     "url": "https://givenow.lls.org/give/342076/#!/donation/checkout",
+    "donations2024": 0
+  },
+  {
+    "name": "The Michael J. Fox Foundation for Parkinson's Research",
+    "url": "https://www.michaeljfox.org/",
     "donations2024": 0
   },
   {
