@@ -938,7 +938,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241221",
     "media": [
       {
         "title": "By: Bare Bones Lock Picking",
@@ -975,7 +975,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241221",
     "media": [
       {
         "title": "By: Doktor Weasel",
@@ -1005,7 +1005,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241221",
     "media": [
       {
         "title": "By: Doktor Weasel",
@@ -1035,7 +1035,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241221",
     "media": [
       {
         "title": "By: Doktor Weasel",
@@ -1065,7 +1065,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241221"
   },
   {
     "id": "2025-047",
@@ -1086,7 +1086,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241221"
   },
   {
     "id": "2025-048",
@@ -1107,7 +1107,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241221"
   },
   {
     "id": "2025-049",
@@ -1128,6 +1128,6 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241221"
   }
 ]
