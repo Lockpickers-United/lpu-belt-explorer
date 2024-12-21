@@ -1129,26 +1129,5 @@
     "shippingType": "Split international shipping",
     "winner": "",
     "dateAdded": "20241221"
-  },
-  {
-    "id": "2025-900",
-    "year": 2025,
-    "potNumber": "0",
-    "title": "testing",
-    "description": "TEST",
-    "potContents": "testing",
-    "contributedBy": [
-      "testing"
-    ],
-    "tags": [],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "$10 towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
-    "winner": "",
-    "dateAdded": "20241213"
   }
 ]
