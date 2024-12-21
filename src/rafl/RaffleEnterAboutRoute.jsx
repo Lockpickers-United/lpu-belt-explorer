@@ -14,7 +14,7 @@ import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
 import ReportButton from './ReportButton.jsx'
 import AdminRoleButton from './AdminRoleButton.jsx'
-import RaffleComingSoon from './RaffleComingSoon.jsx'
+import RaffleNotLiveDialog from './RaffleNotLiveDialog.jsx'
 
 function RaffleEnterAboutRoute() {
 
@@ -93,7 +93,7 @@ function RaffleEnterAboutRoute() {
             <Footer/>
             <Tracker feature='raflEnterAbout'/>
 
-            <RaffleComingSoon/>
+            <RaffleNotLiveDialog/>
 
         </React.Fragment>
     )

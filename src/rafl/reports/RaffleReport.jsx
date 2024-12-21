@@ -10,6 +10,7 @@ import RafflePageTrackingTable from './RafflePageTrackingTable.jsx'
 import RafflePotTable from './RafflePotTable.jsx'
 import RaffleCharityTable from './RaffleCharityTable.jsx'
 import RaffleReportHistoricalLines from './RaffleReportHistoricalLines.jsx'
+import RaffleStatsHeader from '../RaffleStatsHeader.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
@@ -21,12 +22,22 @@ function RaffleReport() {
         ? '24px 24px 32px 24px'
         : '8px 8px 32px 8px'
 
-    const firstHeaderStyle = {margin: '0px 0px 36px 0px', width: '100%', textAlign: 'center', color: '#fff'}
-    const headerStyle = {margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff'}
+    const firstHeaderStyle = {
+        margin: '0px 0px 36px 0px',
+        width: '100%',
+        textAlign: 'center',
+        color: '#fff',
+        fontSize: '1.3rem',
+        fontWeight: 700
+    }
+    const headerStyle = {
+        margin: '46px 0px 18px 0px', width: '100%', textAlign: 'center', color: '#fff', fontSize: '1.3rem',
+        fontWeight: 700
+    }
     const summaryHeaderStyle = firstHeaderStyle
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(siteFullNew?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFullNew?.metadata.timezone})`
+        : '(updated: ' + dayjs(siteFullNew?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ` ${siteFullNew?.metadata.timezone})`
 
     if (loading) return <LoadingDisplay/>
     else if (error) return null
@@ -35,12 +46,15 @@ function RaffleReport() {
             minWidth: '320px', maxWidth: 900, height: '100%',
             padding: pagePadding, backgroundColor: '#292929',
             marginLeft: 'auto', marginRight: 'auto',
-            fontSize: '1.5rem', lineHeight: 0.8
+            fontSize: '1.0rem'
         }}>
             <div style={summaryHeaderStyle}>
-                RAFL Summary<br/>
+                RAFL REPORT<br/>
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
+
+            <RaffleStatsHeader/>
+            <div style={{height:20}}/>
             <RaffleSummary data={siteFullNew}/>
 
             <div style={headerStyle}>Totals Over Time</div>

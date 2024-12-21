@@ -12,7 +12,7 @@ import RaffleContext from './RaffleContext.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RaffleStats from './RaffleStats.jsx'
 import RaffleSubHead from './RaffleSubHead.jsx'
-import RaffleComingSoon from './RaffleComingSoon.jsx'
+import RaffleNotLiveDialog from './RaffleNotLiveDialog.jsx'
 
 function RaffleReportRoute() {
     const {isMobile} = useWindowSize()
@@ -40,7 +40,7 @@ function RaffleReportRoute() {
 
                     <Tracker feature='raflStats'/>
 
-                    <RaffleComingSoon/>
+                    <RaffleNotLiveDialog/>
 
                 </React.Fragment>
             </RaffleDataProvider>

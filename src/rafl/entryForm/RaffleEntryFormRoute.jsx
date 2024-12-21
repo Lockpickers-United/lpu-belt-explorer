@@ -9,7 +9,7 @@ import DBContext from '../../app/DBContext.jsx'
 import ReportButton from '../ReportButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminRoleButton from '../AdminRoleButton.jsx'
-import RaffleComingSoon from '../RaffleComingSoon.jsx'
+import RaffleNotLiveDialog from '../RaffleNotLiveDialog.jsx'
 
 function RaffleEntryFormRoute() {
     const {lockCollection} = useContext(DBContext)
@@ -38,7 +38,7 @@ function RaffleEntryFormRoute() {
 
             <Tracker feature='raflForm'/>
 
-            <RaffleComingSoon/>
+            <RaffleNotLiveDialog/>
 
         </React.Fragment>
     )
