@@ -55,7 +55,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Gifts From Granny",
-    "description": "",
+    "description": "Ancor Las padlock and four ASSA/Ruko ovals",
     "potContents": "- Anchor Las 802-2 padlock\n- ASSA 500 oval with barrels\n- ASSA 600 oval with barrels\n- Ruko 500 oval with 4 gins, 1 standard\n- ASSA 700 oval with trees and gins",
     "contributedBy": [
       "Granny"
@@ -113,7 +113,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Bulgarian Squatty Potty",
-    "description": "Scream If You Love Bulgaria!",
+    "description": "",
     "potContents": "1. Abloy protec2 double euro cylinder with gear 1 half is a cutaway, the other is stock, also 1 half is unmastered and one is mastered, keyways 5 and 7 (the winner can swap them if needed)\n2. Abus the Rock 100th anniversary padlock (new)\n3. Sargent signature LFIC (with operating and control key)\n4. Mauer MLS redline (cut euro) with 1 key\n5. Yale 500+ (cut euro) with 1 key\n6. Metal Zx5j (cut euro) with 1 key\n7. Foil dimple impressiining starter kit with all the tools needed to open the lock in the kit",
     "contributedBy": [
       "D.Q",
@@ -235,12 +235,33 @@
     ]
   },
   {
+    "id": "2025-009",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Packet of Finland",
+    "description": "Nearly 2 kg of locks from Finland, including examples of all major historical manufacturers and large selection of samples from Abloy. As a bonus, includes appropriately themed mug for your beverage of choice. ",
+    "potContents": "Abloy:\r\n-PL231 Exec\r\n-PL240 Classic\r\n-No model marked, size between PL240 and PL250 DL \"pro\" (no DC). Non-guttable. With detachable shackle\r\n-PL340 Sentry, 2 keys\r\n-PL340 Protec\r\n-PL340 Easy, 2 keys + keycard\r\n\nBoda:\r\n-428 -- Still non-ranked Finnish lever lock\r\n\nAVA:\r\n-Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys",
+    "contributedBy": [
+      "imaginary_unit"
+    ],
+    "tags": [],
+    "country": [
+      "Finland"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": "20241214"
+  },
+  {
     "id": "2025-013",
     "year": 2025,
     "potNumber": "0",
     "title": "The Measure of Success",
     "description": "Mitutoyo Digimatic Caliper",
-    "potContents": "Mitutoyo MIT500-196-30 Absolute AOS Digimatic Caliper, 0mm-150mm/0\"-6\" Range",
+    "potContents": "Mitutoyo MIT500-196-30 Absolute AOS Digimatic Caliper, 0mm-150mm/0\"-6\" Range\nRein pinning tray",
     "contributedBy": [
       "MarkUK"
     ],
@@ -334,7 +355,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Skylender Lock & Pin Set by Lockpickwebwinkel.nl",
-    "description": "<More detailed content description TBD>",
+    "description": "Configurable training lock with security pins and pin stock for making your own.",
     "potContents": "Each winner receives:\n- 1 Skylender training lock: https://lockpickwebwinkel.nl/lockpick-oefening/training-skylender/ \n- Pin and spring kit (6 pin types and 4 spring types): https://lockpickwebwinkel.nl/lockpick-oefening/skylender-pins-and-springs/ \n- Trampoline pin kit: https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-trampoline-pins/ \n- Rod stock for custom pins: https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-doe-het-zelf-pinnen/ ",
     "contributedBy": [
       "Lockpickwebwinkel.nl"
@@ -364,7 +385,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Complete Lockpick and Abus Lock Set by Lockpickwebwinkel.nl",
-    "description": "",
+    "description": "Sounthord picks and Abus 72/40 padlocks",
     "potContents": "-SouthOrd Slimline C2010 lockpick set\n-Three Abus 72/40 padlocks",
     "contributedBy": [
       "Lockpickwebwinkel.nl"
@@ -436,7 +457,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Ablo-ho-ho",
-    "description": "",
+    "description": "Abloy 340 Protec2, three winners!",
     "potContents": "Each of 3 winners receives an Abloy 340 Protec2",
     "contributedBy": [
       "ViceGrip"
@@ -598,7 +619,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "A Symantec branded denim jacket",
-    "description": "",
+    "description": "Jacket filled with 5.5 pounds of locks",
     "potContents": "An XL denim jacket with the Symantec logo on it.\nIt also contains 5.5lb of mystery locks",
     "contributedBy": [
       "Craig 3.0"
@@ -1024,5 +1045,89 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54213376556_9c894c3e67_o.jpg"
       }
     ]
+  },
+  {
+    "id": "2025-046",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Moki Bespoki",
+    "description": "",
+    "potContents": "Custom Moki pick case",
+    "contributedBy": [
+      "Sarius"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "10eur towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-047",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "elocksmith elockwood Pot",
+    "description": "Our friends at elocksmith are back once again this year with a pair of staple Lockwood padlocks! ",
+    "potContents": "Two popular Lockwood padlocks:\n-1 x 334B45\n-1 x 234S45\r\n\r\nDonated by elocksmith Pty Ltd - elocksmiths.com.au ",
+    "contributedBy": [
+      "elocksmith"
+    ],
+    "tags": [],
+    "country": [
+      "Australia"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-048",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "elocksmith esafe Pot",
+    "description": "A never-before-seen addition to the raffle--elocksmith is offering a prize containing two brand new digital safe locks!",
+    "potContents": "Two NOS digital safe locks, both in the original box with instructions:\n-1 x Kaba Mas T52 \n-1 x Mas Hamilton 100R\n\nDonated by elocksmith Pty Ltd - elocksmiths.com.au",
+    "contributedBy": [
+      "elocksmith"
+    ],
+    "tags": [],
+    "country": [
+      "Australia"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-049",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "C&C: Cat Hair and Coasters",
+    "description": "This pot has some coasters in it, but really it's for the cat hair connoisseurs out there who need another bag for their collection",
+    "potContents": "-3 slate hand coasters (definitely not roon) \n-a bag of Stormy and Link hair (in progress of being collected)",
+    "contributedBy": [
+      "Tsubaki"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$10 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
   }
 ]
