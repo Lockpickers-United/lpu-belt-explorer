@@ -3,11 +3,9 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import RaffleContext from './RaffleContext.jsx'
-import AppContext from '../app/AppContext.jsx'
 
 function AdminRoleButton({active}) {
-    const {raffleAdmin, raffleAdminRole, setRaffleAdminRole} = useContext(RaffleContext)
-    const {preview, setPreview} = useContext(AppContext)
+    const {raffleAdmin, raffleAdminRole, setRaffleAdminRole, preview, setPreview} = useContext(RaffleContext)
 
     const handleClick = useCallback(() => {
         if (preview && raffleAdminRole) setPreview(false)

@@ -3,13 +3,11 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
-import AppContext from '../app/AppContext.jsx'
 import {useSearchParams} from 'react-router-dom'
 import RaffleContext from './RaffleContext.jsx'
 
 function PreviewButton() {
-    const {raffleAdminRole} = useContext(RaffleContext)
-    const {preview, setPreview} = useContext(AppContext)
+    const {raffleAdminRole, preview, setPreview} = useContext(RaffleContext)
     const [searchParams, setSearchParams] = useSearchParams()
     const previewMode = searchParams.has('preview')
     const showPreview = preview || previewMode

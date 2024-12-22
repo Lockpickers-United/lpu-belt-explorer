@@ -11,7 +11,6 @@ export function AppProvider({children}) {
     const [admin, setAdmin] = useLocalStorage('admin', adminRole && !!import.meta.env.DEV)
 
     const [compact, setCompact] = useState(false)
-    const [preview, setPreview] = useLocalStorage('previewMode', false)
 
     useEffect(() => {
         if (!adminRole && admin) {
@@ -83,8 +82,7 @@ export function AppProvider({children}) {
         updateRequired,
         updateAvailable,
         compact, setCompact,
-        preview, setPreview
-    }), [beta, handleSetBeta, admin, handleSetAdmin, initial, updateRequired, updateAvailable, compact, preview, setPreview])
+    }), [beta, handleSetBeta, admin, handleSetAdmin, initial, updateRequired, updateAvailable, compact])
 
     return (
         <AppContext.Provider value={value}>

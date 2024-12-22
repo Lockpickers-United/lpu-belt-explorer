@@ -24,8 +24,7 @@ import AdminRoleButton from './AdminRoleButton.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
-    const {preview} = useContext(AppContext)
-    const {allPots} = useContext(RaffleContext)
+    const {preview, allPots} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()

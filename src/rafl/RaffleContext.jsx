@@ -7,6 +7,7 @@ import raflCharities from '../data/raflCharities.json'
 import DBContext from '../app/DBContext.jsx'
 import removeAccents from 'remove-accents'
 import collectionOptions from '../data/collectionTypes'
+import {useLocalStorage} from 'usehooks-ts'
 
 const RaffleContext = React.createContext({})
 
@@ -16,6 +17,7 @@ export function RaffleProvider({children}) {
     // preview, live, post, hidden
 
     const live = false
+    const [preview, setPreview] = useLocalStorage('previewMode', false)
 
     const {lockCollection} = useContext(DBContext)
     const {data, loading, error} = useData({urls})
@@ -113,7 +115,8 @@ export function RaffleProvider({children}) {
         updateFormPots,
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
-        live, raflState
+        live, raflState,
+        preview, setPreview
     }), [
         allDataLoaded,
         allPots,
@@ -130,7 +133,8 @@ export function RaffleProvider({children}) {
         updateFormPots,
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
-        live, raflState
+        live, raflState,
+        preview, setPreview
     ])
 
     return (

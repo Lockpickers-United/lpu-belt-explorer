@@ -7,16 +7,16 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
-import AppContext from '../app/AppContext.jsx'
 import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
+import RaffleContext from './RaffleContext.jsx'
 
 export default function RafflePreviewBar({refresh}) {
     const [requestingPreview, setRequestingPreview] = useState(false)
     const [response, setResponse] = useState('')
     const [open, setOpen] = useState(false)
 
-    const {preview, setPreview} = useContext(AppContext)
+    const {preview, setPreview} = useContext(RaffleContext)
     const [searchParams, setSearchParams] = useSearchParams()
     const previewMode = searchParams.has('preview')
 
