@@ -5,7 +5,11 @@ import {useNavigate} from 'react-router-dom'
 import Link from '@mui/material/Link'
 
 export default function RaffleIntroBar() {
+<<<<<<< Updated upstream
     const {live, raffleAdminRole} = useContext(RaffleContext)
+=======
+    const {raflState} = useContext(RaffleContext)
+>>>>>>> Stashed changes
     const navigate = useNavigate()
 
     const {isMobile} = useWindowSize()
@@ -16,8 +20,27 @@ export default function RaffleIntroBar() {
 
     return (
         <React.Fragment>
+<<<<<<< Updated upstream
             {live || raffleAdminRole
                 ? <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+=======
+            {(raflState === 'preview') &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+                    <div style={{padding: '4px 4px 10px 4px'}}>
+                        <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
+                            RAFL is coming soon!
+                        </div>
+                        We will start accepting entries on January 1st. In the meantime,
+                        here&#39;s a preview of the pots that folks are developing.
+                        Please note that <strong>all pots and contents are subject to change</strong> until
+                        the raffle begins in January.
+                    </div>
+                </div>
+            }
+
+            {(raflState === 'live') &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+>>>>>>> Stashed changes
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 700, marginTop: 1, marginBottom: 7}}>
                             RAFL is on!
@@ -41,7 +64,12 @@ export default function RaffleIntroBar() {
                     </div>
                 </div>
 
+<<<<<<< Updated upstream
                 : <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+=======
+            {(raflState === 'post') &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+>>>>>>> Stashed changes
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
                             RAFL is coming soon!

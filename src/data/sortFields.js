@@ -1,3 +1,6 @@
+const {VITE_RAFL_STATE: raflState} = import.meta.env
+// preview, live, post, hidden
+
 export const lockSortFields = [
     {label: 'Default', value: undefined},
     {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
@@ -28,15 +31,23 @@ export const scorecardSortFields = [
     {label: 'Belt (Ascending)', value: 'beltAscending'},
     {label: 'Belt (Descending)', value: 'beltDescending'},
     {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
-    {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
+    {label: 'Alphabetical (Descending)', value: 'alphaDescending'}
 ]
 
-export const raffleSortFields = [
-    {label: 'Default', value: undefined},
-    {label: 'Pot Name', value: 'potName'},
-    {label: 'Tickets', value: 'tickets'},
-    {label: 'Donors', value: 'donors'},
-    {label: 'Contributed By', value: 'contributedBy'},
-    {label: 'Date Added', value: 'dateAdded'}
-]
+export const raffleSortFields = raflState === 'preview'
+    ? [
+        {label: 'Default', value: undefined},
+        {label: 'Pot Name', value: 'potName'},
+        {label: 'Tickets', value: 'tickets'},
+        {label: 'Donors', value: 'donors'},
+        {label: 'Contributed By', value: 'contributedBy'},
+        {label: 'Date Added', value: 'dateAdded'}
+    ]
+    : [
+        {label: 'Default', value: undefined},
+        {label: 'Pot Name', value: 'potName'},
+        {label: 'Tickets', value: 'tickets'},
+        {label: 'Donors', value: 'donors'},
+        {label: 'Contributed By', value: 'contributedBy'},
+    ]
 

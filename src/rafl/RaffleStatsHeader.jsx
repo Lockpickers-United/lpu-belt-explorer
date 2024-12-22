@@ -79,13 +79,13 @@ function RaffleHeader() {
                         <div style={{
                             ...discordStyle,
                             width: discordWidth || 0,
-                            backgroundColor: '#2d52b0',
+                            backgroundColor: '#587ee6',
                             height: 20
                         }}></div>
                         <div style={{
                             ...redditStyle,
                             width: redditWidth || 0,
-                            backgroundColor: '#587ee6',
+                            backgroundColor: '#2d52b0',
                             height: 20
                         }}></div>
                     </div>
