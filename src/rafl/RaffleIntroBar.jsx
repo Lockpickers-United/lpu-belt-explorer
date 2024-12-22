@@ -5,19 +5,31 @@ import {useNavigate} from 'react-router-dom'
 import Link from '@mui/material/Link'
 
 export default function RaffleIntroBar() {
-    const {live, raffleAdminRole} = useContext(RaffleContext)
+    const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
-
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12}
 
-
     return (
         <React.Fragment>
-            {live || raffleAdminRole
-                ? <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+            {(raflState === 'preview' || raffleAdminRole) &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+                    <div style={{padding: '4px 4px 10px 4px'}}>
+                        <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
+                            RAFL is coming soon!
+                        </div>
+                        We will start accepting entries on January 1st. In the meantime,
+                        here&#39;s a preview of the pots that folks are developing.
+                        Please note that <strong>all pots and contents are subject to change</strong> until
+                        the raffle begins in January.
+                    </div>
+                </div>
+            }
+
+            {(raflState === 'live' || raffleAdminRole) &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 700, marginTop: 1, marginBottom: 7}}>
                             RAFL is on!
@@ -29,9 +41,14 @@ export default function RaffleIntroBar() {
                             the community has donated this year.
                             To read the full details
                             (and enter to win) <Link onClick={() => navigate('/rafl/enter')}
-                                  style={{color: '#fff', textDecorationColor: '#fff', fontWeight:700, cursor:'pointer'}}>
-                                click here.
-                            </Link>
+                                                     style={{
+                                                         color: '#fff',
+                                                         textDecorationColor: '#fff',
+                                                         fontWeight: 700,
+                                                         cursor: 'pointer'
+                                                     }}>
+                            click here.
+                        </Link>
                         </div>
                         <div style={{fontSize: '1rem', fontWeight: 700}}>
                             Entries will be accepted through January 31,
@@ -40,19 +57,17 @@ export default function RaffleIntroBar() {
                         </div>
                     </div>
                 </div>
+            }
 
-                : <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+            {(raflState === 'post' || raffleAdminRole) &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
-                            RAFL is coming soon!
+                            RAFL 2025 has ended
                         </div>
-                        We will start accepting entries on January 1st. In the meantime,
-                        here&#39;s a preview of the pots that folks are developing.
-                        Please note that <strong>all pots and contents are subject to change</strong> until
-                        the raffle begins in January.
+                        Check out the winners below, see you next year!
                     </div>
                 </div>
-
             }
         </React.Fragment>
     )

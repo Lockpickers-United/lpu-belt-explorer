@@ -12,6 +12,8 @@ import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import ConstructionIcon from '@mui/icons-material/Construction'
 import NewReleasesIcon from '@mui/icons-material/NewReleases'
 
+const {VITE_RAFL_STATE: raflState} = import.meta.env
+
 export default [
     {
         title: 'Locks',
@@ -37,7 +39,8 @@ export default [
     {
         title: 'RAFL',
         icon: <NewReleasesIcon fontSize='small'/>,
-        path: '/rafl'
+        path: '/rafl',
+        hidden: raflState === 'hidden'
     },
     {
         title: 'Leaderboards',

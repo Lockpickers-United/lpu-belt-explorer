@@ -7,8 +7,8 @@ import RaffleContext from './RaffleContext.jsx'
 
 function RaffleCharityRow({charity}) {
     const {isMobile} = useWindowSize()
-    const {live, raffleAdminRole} = useContext(RaffleContext)
-    const showFull = live || raffleAdminRole
+    const {raflState, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
 
     const openInNewTab = useCallback((url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')

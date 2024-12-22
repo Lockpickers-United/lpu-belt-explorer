@@ -6,7 +6,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleContext from './RaffleContext.jsx'
 
 function RaffleHeader({page}) {
-    const {live, raffleAdminRole} = useContext(RaffleContext)
+    const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
     const {displayStats, setAnimateTotal} = useContext(RaffleContext)
 
@@ -29,7 +29,10 @@ function RaffleHeader({page}) {
         display: flexStyle
     }
 
-    const prizeButtonText = live || raffleAdminRole || isMobile ? 'PRIZES' : 'PRIZE PREVIEW'
+    let prizeButtonText = raflState !== 'preview' || raffleAdminRole || isMobile ? 'PRIZES' : 'PRIZE PREVIEW'
+    prizeButtonText = ['hidden', 'post'].includes(raflState) ? prizeButtonText.replace('PRIZES', '2025 PRIZES') : prizeButtonText
+
+
     const toolTip = displayStats ? 'Hide Real-time Stats' : 'Show Real-time Stats'
 
     return (
@@ -53,7 +56,7 @@ function RaffleHeader({page}) {
                         </span>
                     </Tooltip>
 
-                    {(!live && !raffleAdminRole) &&
+                    {(raflState === 'preview' && !raffleAdminRole) &&
                         <Tooltip title={'Call For Contributions'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/announce')}
@@ -69,6 +72,7 @@ function RaffleHeader({page}) {
                         </Tooltip>
                     }
 
+                    {(raflState !== 'hidden' || raffleAdminRole) &&
                     <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/charities')}
@@ -82,8 +86,9 @@ function RaffleHeader({page}) {
                             </Button>
                         </span>
                     </Tooltip>
+                    }
 
-                    {(live || raffleAdminRole) &&
+                    {(['live', 'post'].includes(raflState) || raffleAdminRole) &&
                         <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/enter')}
@@ -98,7 +103,7 @@ function RaffleHeader({page}) {
                         </Tooltip>
                     }
 
-                    {(live || raffleAdminRole) &&
+                    {(['live', 'post'].includes(raflState) || raffleAdminRole) &&
                         <Tooltip title={toolTip} arrow disableFocusListener style={{}}>
                         <span>
                             <Button onClick={() => handleChange('/rafl/stats')}
