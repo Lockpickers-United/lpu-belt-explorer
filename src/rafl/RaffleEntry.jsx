@@ -22,8 +22,8 @@ import {Collapse} from '@mui/material'
 import RaffleContext from './RaffleContext.jsx'
 
 function RaffleEntry({entry, expanded, onExpand, single}) {
-    const {live, raffleAdminRole} = useContext(RaffleContext)
-    const showFull = live || raffleAdminRole
+    const {raflState, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
 
     const {filters} = useContext(FilterContext)
     const shippingFiltered = !!filters.shippingType || !!filters.splitShipping
