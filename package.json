@@ -18,6 +18,7 @@
         "import": "node ./scripts/import.js",
         "import-dan": "node ./scripts/importDan.js",
         "refreshRaflPreview": "node ./scripts/refreshRaflPreview.js",
+        "updateRaflForm": "node ./scripts/updateRaflForm.js",
         "migrate-recorded": "node ./scripts/migrateRecorded.js",
         "migrate-black-belts": "node ./scripts/migrateBlackBelts.js",
         "process-changelog": "node ./scripts/processChangelog.js",
@@ -31,7 +32,7 @@
         "copyData": "node ./scripts/copyData.js",
         "copyFiles": "node ./scripts/copyFiles.js",
         "ci-pr": "yarn lint && yarn build",
-        "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles && yarn refreshRaflPreview"
+        "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles && yarn refreshRaflPreview && yarn updateRaflForm"
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",

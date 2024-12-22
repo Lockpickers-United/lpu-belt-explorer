@@ -37,7 +37,7 @@ function RaffleRoute() {
     const {data, loading, error, refresh} = useData({url: raflJsonUrl})
     const dataReady = (data && !loading && !error)
     const allEntries = preview && dataReady
-        ? data || []
+        ? data ?? []
         : allPots
 
     const individualPot = allEntries.find(e => e.id === id)

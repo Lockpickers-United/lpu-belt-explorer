@@ -1,5 +1,4 @@
-import React, {useCallback, useMemo, useRef, useState} from 'react'
-import allItems from '../../data/rafl.json'
+import React, {useCallback, useContext, useMemo, useRef, useState} from 'react'
 import FormControl from '@mui/material/FormControl'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../../util/useWindowSize.jsx'
@@ -10,8 +9,10 @@ import Autocomplete from '@mui/material/Autocomplete'
 import InputAdornment from '@mui/material/InputAdornment'
 import Backdrop from '@mui/material/Backdrop'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import RaffleContext from '../RaffleContext.jsx'
 
 export default function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
+    const allPots = useContext(RaffleContext)
     const {isMobile, flexStyle} = useWindowSize()
     const isMobileFalse = false
     const style = {maxWidth: 700}
@@ -33,7 +34,8 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         let itemPotNumbers = {}
         let itemFormIds = {}
 
-        allItems
+        allPots.allPots
+            .filter(item => item.formId > 0)
             .sort((a, b) => {
                 return parseInt(a.potNumber) - parseInt(b.potNumber)
                 || a.title.localeCompare(b.title)
@@ -47,7 +49,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             })
             .filter(x => x)
         return {options, itemIds, itemTitles, itemPotNumbers, itemFormIds}
-    }, [])
+    }, [allPots])
 
     const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
 
