@@ -706,7 +706,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": "Test Winner",
     "dateAdded": "20241214",
     "media": [
       {
