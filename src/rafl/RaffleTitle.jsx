@@ -3,8 +3,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleContext from './RaffleContext.jsx'
 
 function RaffleTitle({entry}) {
-    const {live, raffleAdminRole} = useContext(RaffleContext)
-    const showFull = live || raffleAdminRole
+    const {raflState, raffleAdminRole} = useContext(RaffleContext)
+    const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
 
     const {isMobile, flexStyle} = useWindowSize()
 
@@ -61,7 +61,7 @@ function RaffleTitle({entry}) {
                         marginTop: !isMobile ? -3 : 8,
                         marginRight: 10,
                         fontWeight: 400
-                    }}>Winner: <strong>&nbsp;mgsecure</strong></div>
+                    }}>Winner: <strong>&nbsp;{entry.winner}</strong></div>
                 }
             </div>
         </div>

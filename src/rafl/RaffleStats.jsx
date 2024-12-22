@@ -8,6 +8,7 @@ import {siteFullNew, raflResponseDetails} from '../data/dataUrls'
 import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
+import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
@@ -47,24 +48,27 @@ function RaffleReport() {
     if (loading) return <LoadingDisplay/>
     else if (error) return null
     return (
-        <div style={{
-            minWidth: '320px', maxWidth: 700, height: '100%',
-            padding: pagePadding, backgroundColor: '#292929',
-            marginLeft: 'auto', marginRight: 'auto'
-        }}>
-            <RaffleStatsHeader/>
+        <React.Fragment>
+            <div style={{
+                minWidth: '320px', maxWidth: 700, height: '100%',
+                padding: pagePadding, backgroundColor: '#292929',
+                marginLeft: 'auto', marginRight: 'auto'
+            }}>
+                <RaffleStatsHeader/>
 
-            <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
-                <span style={{fontSize: '0.8rem', marginTop: 10}}>{updateTime}</span>
+                <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
+                    <span style={{fontSize: '0.8rem', marginTop: 10}}>{updateTime}</span>
+                </div>
+
+                <div style={firstHeaderStyle}>Pots</div>
+                <RaffleStatsPotTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
+
+                <div style={headerStyle}>Charities</div>
+                <RaffleStatsCharityTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
+
             </div>
-
-            <div style={firstHeaderStyle}>Pots</div>
-            <RaffleStatsPotTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
-
-            <div style={headerStyle}>Charities</div>
-            <RaffleStatsCharityTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
-
-        </div>
+            <RaffleHiddenDialog/>
+        </React.Fragment>
     )
 }
 

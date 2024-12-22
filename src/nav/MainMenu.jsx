@@ -66,6 +66,7 @@ function MainMenu() {
                     {menuConfig
                         .filter(menuItem => beta || !menuItem.beta)
                         .filter(menuItem => adminRole  || !menuItem.admin)
+                        .filter(menuItem => !menuItem.hidden)
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>
                                 <MainMenuItem

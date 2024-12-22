@@ -11,12 +11,20 @@ import {useLocalStorage} from 'usehooks-ts'
 
 const RaffleContext = React.createContext({})
 
+/**
+ * @property raflResponseSummary
+ * @property raflResponseSummary.potDonorCount
+ * @property raflResponseSummary.potTickets
+ * @property raflResponseSummary.charityDonorCount
+ * @property raflResponseSummary.charityDonations
+ */
+
+
 export function RaffleProvider({children}) {
 
     const {VITE_RAFL_STATE: raflState} = import.meta.env
     // preview, live, post, hidden
 
-    const live = false
     const [preview, setPreview] = useLocalStorage('previewMode', false)
 
     const {lockCollection} = useContext(DBContext)
@@ -115,7 +123,7 @@ export function RaffleProvider({children}) {
         updateFormPots,
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
-        live, raflState,
+        raflState,
         preview, setPreview
     }), [
         allDataLoaded,
@@ -133,7 +141,7 @@ export function RaffleProvider({children}) {
         updateFormPots,
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
-        live, raflState,
+        raflState,
         preview, setPreview
     ])
 

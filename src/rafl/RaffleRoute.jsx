@@ -12,7 +12,6 @@ import RafflePage from './RafflePage.jsx'
 import useData from '../util/useData.jsx'
 import {raflJsonUrl} from '../data/dataUrls'
 import LoadingDisplay from '../misc/LoadingDisplay'
-import AppContext from '../app/AppContext.jsx'
 import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RaffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
@@ -24,7 +23,7 @@ import AdminRoleButton from './AdminRoleButton.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
-    const {preview, allPots} = useContext(RaffleContext)
+    const {preview, allPots, raflState} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()
@@ -44,12 +43,12 @@ function RaffleRoute() {
 
     const extras = (
         <React.Fragment>
-                <React.Fragment>
-                    {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-                    <PreviewButton/>
-                    <ReportButton/>
-                    <AdminRoleButton/>
-                </React.Fragment>
+            <React.Fragment>
+                {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+                <PreviewButton/>
+                <ReportButton/>
+                <AdminRoleButton/>
+            </React.Fragment>
         </React.Fragment>
     )
     const extrasTwo = undefined
@@ -63,7 +62,11 @@ function RaffleRoute() {
         paddingRight: sideSpacing
     }
 
-    const navTitle = !isMobile ? 'Announcing RAFL 2025!' : 'RAFL 2025!'
+    let navTitle = raflState === 'hidden'
+        ? 'RAFL 2025 has ended'
+        : ['live', 'post'].includes(raflState) || !isMobile
+            ? 'Announcing RAFL 2025!'
+            : 'RAFL 2025!'
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
