@@ -706,7 +706,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "Test Winner",
+    "winner": "",
     "dateAdded": "20241214",
     "media": [
       {
@@ -1047,10 +1047,31 @@
     ]
   },
   {
+    "id": "2025-045",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Lockbooks",
+    "description": "",
+    "potContents": "- Locks and Keys throughout the Ages\n- Locks, Safes and Security: An International Police Reference (2 volume set)\n- Locksport: A Hackers Guide to Lockpicking, Impressioning, and Safe Cracking\n- High-Security Mechanical Locks: An Encyclopedic Reference",
+    "contributedBy": [
+      "knowthebird"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": "20241221"
+  },
+  {
     "id": "2025-046",
     "year": 2025,
     "potNumber": "0",
-    "title": "Moki Bespoki",
+    "title": "The Mokeeper",
     "description": "",
     "potContents": "Custom Moki pick case",
     "contributedBy": [
@@ -1073,7 +1094,7 @@
     "potNumber": "0",
     "title": "elocksmith elockwood Pot",
     "description": "Our friends at elocksmith are back once again this year with a pair of staple Lockwood padlocks! ",
-    "potContents": "Two popular Lockwood padlocks:\n-1 x 334B45\n-1 x 234S45\r\n\r\nDonated by elocksmith Pty Ltd - elocksmiths.com.au ",
+    "potContents": "Two popular Lockwood padlocks:\n- 1 x 334B45\n- 1 x 234S45\n\nDonated by elocksmith Pty Ltd - elocksmiths.com.au ",
     "contributedBy": [
       "elocksmith"
     ],
@@ -1094,7 +1115,7 @@
     "potNumber": "0",
     "title": "elocksmith esafe Pot",
     "description": "A never-before-seen addition to the raffle--elocksmith is offering a prize containing two brand new digital safe locks!",
-    "potContents": "Two NOS digital safe locks, both in the original box with instructions:\n-1 x Kaba Mas T52 \n-1 x Mas Hamilton 100R\n\nDonated by elocksmith Pty Ltd - elocksmiths.com.au",
+    "potContents": "Two NOS digital safe locks, both in the original box with instructions:\n- 1 x Kaba Mas T52 \n- 1 x Mas Hamilton 100R\n\nDonated by elocksmith Pty Ltd - elocksmiths.com.au",
     "contributedBy": [
       "elocksmith"
     ],
@@ -1115,7 +1136,7 @@
     "potNumber": "0",
     "title": "C&C: Cat Hair and Coasters",
     "description": "This pot has some coasters in it, but really it's for the cat hair connoisseurs out there who need another bag for their collection",
-    "potContents": "-3 slate hand coasters (definitely not roon) \n-a bag of Stormy and Link hair (in progress of being collected)",
+    "potContents": "- 3 slate hand coasters (definitely not roon) \n- a bag of Stormy and Link hair (in progress of being collected)",
     "contributedBy": [
       "Tsubaki"
     ],
@@ -1129,5 +1150,215 @@
     "shippingType": "Split international shipping",
     "winner": "",
     "dateAdded": "20241221"
+  },
+  {
+    "id": "2025-050",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Unprotected Kromer Protector",
+    "description": "A beautifully made cutaway of one of the most infamous locks ever manufactured",
+    "potContents": "Kromer Protector BP55K-Cutaway",
+    "contributedBy": [
+      "Don"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-051",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Fireshaped Dice Sets",
+    "description": "Choose the lock you want to pick today by rolling one or more of Fireshaper's handmade dice! Pot contains two beautiful dice sets and a spindown die.",
+    "potContents": "Two dice sets, handmade by Fireshaper:\n- Set of 8 red die (1d4, 1d6, 1d8, 1d10, 1d100, 1d12, 2d20)\n- Set of 7 white die (1d4, 1d6, 1d8, 1d10, 1d100, 1d12, 2d20)\n- 1x spindown d20",
+    "contributedBy": [
+      "Fireshaper"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-052",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Big Box o Locks",
+    "description": "",
+    "potContents": "It's a big box of locks, all of which are in the picture. Look at em, there's so many!\n+A mystery holiday box",
+    "contributedBy": [
+      "locksmitharmy"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic Shipping Included",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Winner pays international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-053",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "More Lockbooks!",
+    "description": "",
+    "potContents": "Two books on locks and pen testing\n- Professional Penetration Testing\n- Practical Lock Picking",
+    "contributedBy": [
+      "locksmitharmy"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-054",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "LPU Pet Pillow Pot",
+    "description": "What could anyone possibly want with 18 ugly pillows of pets that aren't even their's? How expensive is it going to be to ship this internationally?\nLife is full of questions that don't matter, so just put your tickets in the pet pillow pot.",
+    "potContents": "18 ugly pet pillows of various sizes, made using the photos shown below. Pets and owners include:\nBrian - Yohapii\nCharlie - DQ\nCharn - sisko\nDella - BurnB1\nGomez - birdie\nIshtar - Musketeer\nKitty - Craig 3.0\nRiley - Craig 3.0\nKroogs & Mozzie - f-eq-ma\nLuna - Dra9i\nLuna - Red Wanderer\nMia - DoNotDuplicate\nMiwa - CorrectJeans\nNala - Two06\nPenny - NiXXed\nRio - Reid\nSamus - Pantoufle\nStanley - Pantoufle",
+    "contributedBy": [
+      "CorrectJeans"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-055",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Crazy Rainbow Pot",
+    "description": "",
+    "potContents": "1 x Crazy Rainbow Split/Solid Follower Set (4 different sizes)\r\n1 x Crazy Rainbow Chuck Vise (Generic)\r\n1 x SmallRig \"Super\" Clamp (plus hardware)\r\n1 x Padlock Plug Holder Set (Silky Black)\r\n1 x SFIC Vise Lock Holder (Silky Black)\r\n1 x KIK Vise Lock Holder (Silky Black)\r\n1 x Euro Vise Lock Holder (Silky Black)\r\n1 x LPL Pinning Tray (Black to White Gradient)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-056",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Glow in the Dark Pot",
+    "description": "",
+    "potContents": "1 x Fluorescent Green/Glow in the Dark Green Split/Solid Follower Set (4 different sizes)\r\n1 x Fluorescent Green/Glow in the Dark Green Split/Split Follower Set (4 different sizes)\r\n1 x Fluorescent Green/Glow in the Dark Green Chuck Vise (Exotic)\r\n1 x SmallRig \"Crab\" Clamp (plus hardware)\r\n1 x Padlock Plug Holder Set (Fluorescent Green/Glow in the Dark Green)\r\n1 x KIK Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\r\n1 x Euro Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-057",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Chipped Belts",
+    "description": "",
+    "potContents": "1 x Complete Set of Belt Chips\r\n1 x Belt Chip Stand (Black)\r\n1 x Display Case\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-058",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "\"The Mechanism\"",
+    "description": "",
+    "potContents": "1 x \"The Mechanism\" - A Custom Etched American Lock 1100 (Black)\r\n2 x Keys (etched on both sides)\r\n1 x Stainless Steel Dog Tag (etched on both sides)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-059",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Peace's Pot of Stolen Spanish Locks II",
+    "description": "",
+    "potContents": "LOCKS:\n- Ezcurra DS-10\n- Ezcurra SEA 23\n- Tesa TE-5\n- Tesa T60\n- Tesa TX80\n- Tesa TK100\n- Tesa T-10\n- MCM SCX\n- Lince C4 padlock\n- STS IX con bola\n\nLOOT:\n- Peace tray\n- Tiny Peace tray\n- Portable Peace tray\n- Follower set\n- Stickers and the rare Peace poker chip",
+    "contributedBy": [
+      "PeaceWeapon"
+    ],
+    "tags": [],
+    "country": [
+      "Portugal"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
   }
 ]
