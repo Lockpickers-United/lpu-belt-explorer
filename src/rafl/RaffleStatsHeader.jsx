@@ -4,27 +4,28 @@ import CountUp from 'react-countup'
 import RaffleContext from './RaffleContext.jsx'
 
 /**
- * @property raflResponseSummary.uniqueDonorCount
- * @property raflResponseSummary.totalDonations
- * @property raflResponseSummary.platformDonations
- * @property raflResponseSummary.platformDonations.Discord
- * @property raflResponseSummary.platformDonations.Reddit
+ * @property raflSummaryStats.uniqueDonorCount
+ * @property raflSummaryStats.totalDonors
+ * @property raflSummaryStats.totalDonations
+ * @property raflSummaryStats.platformDonations
+ * @property raflSummaryStats.platformDonations.Discord
+ * @property raflSummaryStats.platformDonations.Reddit
  */
 
-function RaffleHeader() {
-    const {raflResponseSummary, animateTotal} = useContext(RaffleContext)
+function RaffleStatsHeader() {
+    const {raflSummaryStats, animateTotal} = useContext(RaffleContext)
 
-    const donors = raflResponseSummary && raflResponseSummary.uniqueDonorCount || 0
-    const donationsTotal = raflResponseSummary && raflResponseSummary.totalDonations || 0
-    const donationsTotalStr = raflResponseSummary && new Intl.NumberFormat().format(donationsTotal)
-    const averageDonation = raflResponseSummary && Math.floor(donationsTotal / donors) || 0
+    const donors = raflSummaryStats && raflSummaryStats.totalDonors || 0
+    const donationsTotal = raflSummaryStats && raflSummaryStats.totalDonations || 0
+    const donationsTotalStr = raflSummaryStats && new Intl.NumberFormat().format(donationsTotal)
+    const averageDonation = raflSummaryStats && Math.floor(donationsTotal / donors) || 0
 
     const chartWidth = 300
-    const discordDonations = raflResponseSummary && raflResponseSummary.platformDonations.Discord || 0
-    const redditDonations = raflResponseSummary && raflResponseSummary.platformDonations.Reddit || 0
-    const totalDonations = raflResponseSummary && discordDonations + redditDonations
-    const discordWidth = raflResponseSummary && (discordDonations / totalDonations) * chartWidth
-    const redditWidth = raflResponseSummary && (redditDonations / totalDonations) * chartWidth
+    const discordDonations = raflSummaryStats && raflSummaryStats.platformDonations?.Discord || 0
+    const redditDonations = raflSummaryStats && raflSummaryStats.platformDonations?.Reddit || 0
+    const totalDonations = raflSummaryStats && discordDonations + redditDonations
+    const discordWidth = raflSummaryStats && (discordDonations / totalDonations) * chartWidth
+    const redditWidth = raflSummaryStats && (redditDonations / totalDonations) * chartWidth
 
 
     const {isMobile, flexStyle} = useWindowSize()
@@ -98,6 +99,6 @@ function RaffleHeader() {
 
 }
 
-export default RaffleHeader
+export default RaffleStatsHeader
 
 

@@ -4,7 +4,7 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew, raflResponseDetails} from '../data/dataUrls'
+import {siteFullNew} from '../data/dataUrls'
 import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
@@ -73,8 +73,7 @@ function RaffleReport() {
 }
 
 const urls = {
-    siteFullNew,
-    raflResponseDetails
+    siteFullNew
 }
 
 export default RaffleReport

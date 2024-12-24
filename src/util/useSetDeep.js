@@ -1,3 +1,15 @@
+export function setDeep(obj, path, value) {
+    if (path.length === 1) {
+        obj[path[0]] = value
+        return
+    }
+    const key = path[0]
+    if (!obj[key]) {
+        obj[key] = {}
+    }
+    setDeep(obj[key], path.slice(1), value)
+}
+
 export function setDeepAdd(obj, path, value) {
     if (path.length === 1) {
         obj[path[0]] = obj[path[0]] ? obj[path[0]] + value : value

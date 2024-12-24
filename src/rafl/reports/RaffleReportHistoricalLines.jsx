@@ -24,7 +24,6 @@ const RaffleReportHistoricalLines = ({data}) => {
     const chartHeight = 120
 
     return (
-
         <React.Fragment>
 
             <div style={subHeadStyle}>Donations</div>
@@ -60,7 +59,6 @@ const RaffleReportHistoricalLines = ({data}) => {
             </div>
 
         </React.Fragment>
-
     )
 }
 
