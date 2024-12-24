@@ -1309,7 +1309,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: Don",
@@ -1346,7 +1346,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: Fireshaper",
@@ -1390,7 +1390,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Winner pays international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: locksmitharmy",
@@ -1420,7 +1420,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: locksmitharmy",
@@ -1450,7 +1450,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: CorrectJeans",
@@ -1480,7 +1480,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: 44 Delta",
@@ -1517,7 +1517,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: 44 Delta",
@@ -1554,7 +1554,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: 44 Delta",
@@ -1591,7 +1591,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: 44 Delta",
@@ -1642,7 +1642,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241224",
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -1672,7 +1672,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241224"
   },
   {
     "id": "2025-061",
@@ -1693,7 +1693,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241224"
   },
   {
     "id": "2025-062",
@@ -1714,6 +1714,6 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241224"
   }
 ]
