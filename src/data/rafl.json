@@ -958,13 +958,6 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/54206119853_59e0b15a4b_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54206119853/in/album-72177720322551452/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54206119853_ce796f53a1_o.jpg"
-      },
-      {
-        "title": "By: banditobrandino07",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54228425786_4940e85e1b_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54228425786/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54228425786_6e4d4e5ca1_o.jpg"
       }
     ]
   },
@@ -1735,13 +1728,6 @@
       {
         "title": "By: Gorg the Blacksmith",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54228663919_8daede271e_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54228663919/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54228663919_858615de03_o.jpg"
-      },
-      {
-        "title": "By: Gorg the Blacksmith",
-        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54228825565_e9f69b5713_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54228825565/in/album-72177720322786293/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54228825565_1d7a19deec_o.jpg"
@@ -1832,7 +1818,16 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "20241224"
+    "dateAdded": "20241224",
+    "media": [
+      {
+        "title": "By: Gorg the Blacksmith",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54228663919_8daede271e_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54228663919/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54228663919_858615de03_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-063",
