@@ -305,7 +305,7 @@
     "potNumber": "0",
     "title": "Big Collateral",
     "description": "",
-    "potContents": "Jimy Longs sets:\r\n-Beginner\r\n-Intermediate\r\n-Gem\r\n-Tool Roll\r\n\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench",
+    "potContents": "Jimy Longs sets:\n-Beginner\n-Intermediate\n-Gem\n-Tool Roll\n\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench",
     "contributedBy": [
       "CollateralTech"
     ],
@@ -326,9 +326,10 @@
     "potNumber": "0",
     "title": "Dispersed Collateral",
     "description": "",
-    "potContents": "Lock Picker's Bench: \n-LPB Edition SP-57 BOK wrench\r\n\nSouthern Specialties (0.020\"): \r\n-Elephant Trunk\r\n-Euro Modified Curve\r\n-Quint Cycloid\r\n-Euro Hollow Half Diamond\r\n\nSouthOrd (0.022\"): \r\n-Snake Rake\r\n-Stretched Snake\r\n-Short Hook\r\n-Low Hook",
+    "potContents": "8 winners will receive (from CollateralTech):\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench\n\nSouthern Specialties (0.020\"): \n-Elephant Trunk\n-Euro Modified Curve\n-Quint Cycloid\n-Euro Hollow Half Diamond\n\nSouthOrd (0.022\"): \n-Snake Rake\n-Stretched Snake\n-Short Hook\n-Low Hook\n\nThe first 4 winners will also receive (from RakSMT):\n-LawLockTools Pry Bar set (4x TOK tools, 0.8mm, 1.0mm, 1.2mm, and 2mm)",
     "contributedBy": [
-      "CollateralTech"
+      "CollateralTech",
+      "RakSMT"
     ],
     "tags": [],
     "country": [
@@ -409,12 +410,33 @@
     ]
   },
   {
+    "id": "2025-017",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Two Group 1's don't make a Group 2",
+    "description": "",
+    "potContents": "Each winner gets a Mosler 302 MR Group 1R Safe Lock, mounted, cleaned, and lubricated. First winner gets their choice between the variations, which include:\n\nDial 1:\n-Silver dial with black center\n-Key change wheel pack + change key\n-Hand change wheel pack\n\nDial 2:\n-Black dial with silver center\n-2x hand change wheel packs",
+    "contributedBy": [
+      "Pyrolock"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No international shipping",
+    "winner": "",
+    "dateAdded": "20241214"
+  },
+  {
     "id": "2025-018",
     "year": 2025,
     "potNumber": "0",
-    "title": "The Burn (2 winners)",
+    "title": "The Burn",
     "description": "These pots represent an official psychology study aiming to identify picker preference between smooth and knurled dimple flags. Such studies benefit greatly by large participation numbers.",
-    "potContents": "Each pot contains:\n- 1 set of 4 custom dimple flags (tall, short, left and right)\n- One with knurling, one set smooth. Both 10mm diameter.\n- Leather case made by TheGamingBug (TheMothMan) ",
+    "potContents": "2 winners receive:\n- 1 set of 4 custom dimple flags (tall, short, left and right)\n- One with knurling, one set smooth. Both 10mm diameter.\n- Leather case made by TheGamingBug (TheMothMan) \n\nFirst winner gets their pick of the options",
     "contributedBy": [
       "BurnB1"
     ],
@@ -559,7 +581,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Ablo-ho-ho",
-    "description": "Abloy 340 Protec2, three winners!",
+    "description": "**Three winners!** Each will receive a Abloy 340 Protec2.",
     "potContents": "Each of 3 winners receives an Abloy 340 Protec2",
     "contributedBy": [
       "ViceGrip"
@@ -847,6 +869,36 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/54202497211_4396abbcae_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202497211/in/album-72177720322551452/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54202497211_099117e5ae_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2025-033",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Amvgaert shopping spree",
+    "description": "A $400 gift card to go crazy at Amvgaert's lock store!",
+    "potContents": "$400 gift card to Amvgaert's lock store! https://docs.google.com/spreadsheets/d/1_Dk619Y3Zj_zsLHKLxGZlRdgSUH1pF0u2BxFScgJPXc/edit?gid=32499356#gid=32499356",
+    "contributedBy": [
+      "amvgaert"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "N/A",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "N/A",
+    "winner": "",
+    "dateAdded": "20241215",
+    "media": [
+      {
+        "title": "By: amvgaert",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54206166124_bc58447b6a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54206166124/in/album-72177720322551452/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54206166124_d7ed7cd3c3_o.jpg"
       }
     ]
   },
@@ -1206,7 +1258,7 @@
     "potNumber": "0",
     "title": "The Mokeeper",
     "description": "",
-    "potContents": "Custom Moki pick case",
+    "potContents": "Custom Moki pick case made from cork fabric",
     "contributedBy": [
       "Sarius"
     ],
@@ -1775,7 +1827,7 @@
     "potNumber": "0",
     "title": "Father and Son Swords",
     "description": "Been lockpicking all night? Go outside and touch some grass. Gorg the blacksmith doesn't just make picks, he makes foam swords for simulated medieval combat. Put your tickets on these if you want to have some fun with your partner, kids, or hand them over to settle disputes in the office.\n\nwww.gorgtheblacksmith.com the cutting edge of foam sword technology",
-    "potContents": "2 professionally-made foam swords, one a bit longer than the other",
+    "potContents": "2 professionally-made foam swords, one father, and one son",
     "contributedBy": [
       "Gorg the Blacksmith"
     ],
@@ -1858,5 +1910,131 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54228824960_c629e2b2cd_o.jpg"
       }
     ]
+  },
+  {
+    "id": "2025-065",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Į̴̰̤̣͙͔̹̺̦̣͋̅̄͒̂͜͜T̸̨̪̪̲̬̦͊̑̇̀͑̿͑̕ͅ ̷̖̼͇͎̥̫̣̜͔̬̙͈̐C̵̨̢̡̜̝͉͓̜͈̺̫̟̘͒̆A̷͔̩̦̳̟̭̯̿͊͂̐̍͌̄͂̈́̾̚̚̕͘͠͝Ṇ̶̙̜̺̞͐͒͂̂̀͆̃̆͆̉̌͋̿́͘̕̕ ̵̧̭̞̼̲̩̙͙͕̙͌͜Ș̵̡̢̫̖̣̗̘͙̺͎̠̦̘̰͖̉̆̔͆̿͌͘͝ͅE̵̪̥̖̤̿̋͋͌E̵̦̺̺̬̘̭̠͌̐̎̏͜ ̸͕̼͕͖̝̠͙͇͕̲̹̯̫̩̇͌̈́͜Y̸̨̹͛͛̂̔͂̏͐̋̈́̑͂̿̋̄͆̚͘Ơ̸̧̫̹͇̦͔̟̄̀̾̍͊̾͗͝͝U̴̢͎̦̤͙̦̦̗͉͂̽̾̐̉̓ͅ",
+    "description": "",
+    "potContents": "- A rake with many waves and many eyes that see in the dark",
+    "contributedBy": [
+      "LockpickingDev"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$10 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-066",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Server-grade Nixie clock kit",
+    "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed!\nNeeds 12vdc power supply to complete and case made for it\n\nThese are really nice nixie tubes, too",
+    "potContents": "-A nixie kit with server-grade NL841 tubes (200k hour life) and a kit to assemble",
+    "contributedBy": [
+      "V Pinball"
+    ],
+    "tags": [],
+    "country": [
+      "New Zealand"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-067",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Naked Americans",
+    "description": "",
+    "potContents": "3 winners receive a custom American 1100 cutaway (will also contain cores, not shown in photo)",
+    "contributedBy": [
+      "MelBrooksKA"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-068",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Mysterious Moki Pot",
+    "description": "",
+    "potContents": "Picks, some moki merch, pouch, stickers, voucher for my shop\n\nYou know, Moki stuff",
+    "contributedBy": [
+      "Moki"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-070",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Fabianoh130.nl raffle pack",
+    "description": "",
+    "potContents": "-General euro cilinder cutaway\n-Abus 65/40 cutaway\n-Assa desmo 6p\n-Lips 30mm padlock\n-Trioving 55xx \n-Kaba Aura \n-Pfaffenhain v14\n-Dom RN\n-Winkhaus XR\n-Abus Brady Loto 30mm",
+    "contributedBy": [
+      "fabianoh130"
+    ],
+    "tags": [],
+    "country": [
+      "Netherlands"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-071",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "(kiridashii pot)",
+    "description": "",
+    "potContents": "-New Moki Gold digger set with custom handles\n-SSDeV hooks with custom handles \n-Padlock body which can hold a half euro cylinder\n-Travel Pinning Tray + Storage from 44 Delta\n-a few more tensioners\r\n\nA few grubbed half euro cylinders: \n-no name (maybe yellow)\n-Abus E50 (orange)\n-Abus XP10 (green)\n-Abus C83 (blue)",
+    "contributedBy": [
+      "kiridashii"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
   }
 ]
