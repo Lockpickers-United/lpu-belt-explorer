@@ -69,7 +69,8 @@ export function RaffleProvider({children}) {
                     collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
                     tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
                     donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0,
-                    formId: question ? question.formId : 0
+                    formId: question ? question.formId : 0,
+                    sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber)
                 }
             })
     }, [potSummaryStats, raflQuestionMap, lockCollection])

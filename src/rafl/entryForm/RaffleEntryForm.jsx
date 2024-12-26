@@ -9,13 +9,13 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import isValidUrl from '../../util/isValidUrl'
 import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import Dialog from '@mui/material/Dialog'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
+import validator from 'validator'
 
 function RaffleEntryForm() {
     const navigate = useNavigate()
@@ -107,7 +107,7 @@ function RaffleEntryForm() {
     const isRequired = (field => {
         return requiredFields.includes(field) && !formData[field] && showIssues
     })
-    const receiptUrlError = (formData.receipt || showIssues) && !isValidUrl(formData.receipt)
+    const receiptUrlError = (formData.receipt || showIssues) && !validator.isURL(formData.receipt)
     const receiptURLHelperText = receiptUrlError ? 'Receipt link is not a valid URL' : ' '
     const charityError = showIssues && !charityData.itemFullTitle
     const allocationError = parseInt(formData.donation) !== parseInt(allocated)

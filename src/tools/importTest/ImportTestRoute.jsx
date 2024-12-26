@@ -1,12 +1,12 @@
 import React from 'react'
 import Nav from '../../nav/Nav.jsx'
 import Footer from '../../nav/Footer.jsx'
-import RaflCharitiesCheck from './RaflCharitiesCheck.jsx'
+import ImportTest from './ImportTest.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
 
-function RaflCharitiesRoute() {
+function ImportTestRoute() {
 
-    usePageTitle('Check Rafl Charities')
+    usePageTitle('Test Import')
 
     const nav = (
         <React.Fragment></React.Fragment>
@@ -14,13 +14,13 @@ function RaflCharitiesRoute() {
 
     return (
         <React.Fragment>
-            <Nav title='Check Rafl Charities' extras={nav}/>
+            <Nav title='Test Import' extras={nav}/>
 
-                <RaflCharitiesCheck/>
+            ImportTest
 
             <Footer/>
         </React.Fragment>
     )
 }
 
-export default RaflCharitiesRoute
+export default ImportTestRoute
