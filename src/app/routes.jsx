@@ -373,12 +373,6 @@ export default [
                     const {default: RaflCharitiesRoute} = await import('../tools/raflCharities/RaflCharitiesRoute.jsx')
                     return {element: <RaflCharitiesRoute/>}
                 }
-            },{
-                path: '/tools/importTest',
-                lazy: async () => {
-                    const {default: ImportTestRoute} = await import('../tools/importTest/ImportTestRoute.jsx')
-                    return {element: <ImportTestRoute/>}
-                }
             }
         ]
     },{
