@@ -268,9 +268,10 @@
     "potNumber": "0",
     "title": "Packet of Finland",
     "description": "Nearly 2 kg of locks from Finland, including examples of all major historical manufacturers and large selection of samples from Abloy. As a bonus, includes appropriately themed mug for your beverage of choice. ",
-    "potContents": "Abloy:\n- PL231 Exec\n- PL240 Classic\n- No model marked, size between PL240 and PL250 DL \"pro\" (no DC). Non-guttable. With detachable shackle\n- PL340 Sentry, 2 keys\n- PL340 Protec\n- PL340 Easy, 2 keys + keycard\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys",
+    "potContents": "Abloy:\n- PL231 Exec\n- PL240 Classic\n- No model marked, size between PL240 and PL250 DL \"pro\" (no DC). Non-guttable. With detachable shackle\n- PL340 Sentry, 2 keys\n- PL340 Protec\n- PL340 Easy, 2 keys + keycard\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys\n\nMore AVA (from Escape Goat):\n- Chubb AVA padlock\n- AVA camlock",
     "contributedBy": [
-      "imaginary_unit"
+      "imaginary_unit",
+      "escape goat"
     ],
     "tags": [],
     "country": [
@@ -318,7 +319,23 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229277472_cd0aeb40f6_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229277472/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229277472_5183e6b707_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230417003_1297d43ef4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230417003/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230417003_8fa347526f_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-011",
@@ -326,7 +343,7 @@
     "potNumber": "0",
     "title": "Dispersed Collateral",
     "description": "",
-    "potContents": "8 winners will receive (from CollateralTech):\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench\n\nSouthern Specialties (0.020\"): \n-Elephant Trunk\n-Euro Modified Curve\n-Quint Cycloid\n-Euro Hollow Half Diamond\n\nSouthOrd (0.022\"): \n-Snake Rake\n-Stretched Snake\n-Short Hook\n-Low Hook\n\nThe first 4 winners will also receive (from RakSMT):\n-LawLockTools Pry Bar set (4x TOK tools, 0.8mm, 1.0mm, 1.2mm, and 2mm)",
+    "potContents": "8 winners will receive (from CollateralTech):\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench\n\nSouthern Specialties (0.020\"): \n-Elephant Trunk\n-Euro Modified Curve\n-Quint Cycloid\n-Euro Hollow Half Diamond\n\nSouthern Specialties (0.025\"):\n-Low Reach (welded handle)\n\nSouthOrd (0.022\"): \n-Snake Rake\n-Stretched Snake\n-Short Hook\n-Low Hook\n\nThe first 4 winners will also receive (from RakSMT):\n-LawLockTools Pry Bar set (4x TOK tools, 0.8mm, 1.0mm, 1.2mm, and 2mm)",
     "contributedBy": [
       "CollateralTech",
       "RakSMT"
@@ -340,7 +357,44 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230589560_22d91e05eb_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230589560/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230589560_11e154e4f0_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229278657_df18bccc5a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229278657/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229278657_212226c5f5_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230432844_e62ecd34c6_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230432844/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230432844_dcb2e1bf7f_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230418023_f59fa6bd10_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230418023/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230418023_6b5ef11b5c_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229279322_19cd288b72_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229279322/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229279322_fb7ab164e9_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-013",
@@ -428,7 +482,51 @@
     "splitShippingBoolean": false,
     "shippingType": "No international shipping",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: Pyrolock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230435619_671b882c31_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230435619/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230435619_c5487a9b35_o.jpg"
+      },
+      {
+        "title": "By: Pyrolock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229281917_a56cbd1dbf_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229281917/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229281917_3a39e0af1a_o.jpg"
+      },
+      {
+        "title": "By: Pyrolock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230194626_fff60b4ede_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230194626/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230194626_0a112d2059_o.jpg"
+      },
+      {
+        "title": "By: Pyrolock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230594135_1bf0e94436_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230594135/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230594135_552bf425dd_o.jpg"
+      },
+      {
+        "title": "By: Pyrolock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229282942_9069d597f5_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229282942/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229282942_cba95e9ea1_o.jpg"
+      },
+      {
+        "title": "By: Pyrolock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230422123_d36d54238a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230422123/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230422123_f44e769069_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-018",
@@ -581,7 +679,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Ablo-ho-ho",
-    "description": "**Three winners!** Each will receive a Abloy 340 Protec2.",
+    "description": "**Three winners!** \nEach will receive a Abloy 340 Protec2.",
     "potContents": "Each of 3 winners receives an Abloy 340 Protec2",
     "contributedBy": [
       "ViceGrip"
@@ -843,6 +941,27 @@
     ]
   },
   {
+    "id": "2025-030",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "(lockpickersbench)",
+    "description": "2 winners receive a $100 ticket to a shopping spree at LPU's favorite one-stop shop! With anything and everything you'd possibly want from the best brands in the industry, what would you use it on?",
+    "potContents": "2x winners receive a $100 gift card for anything on lockpickersbench.com!",
+    "contributedBy": [
+      "lockpickersbench.com"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "winner": "",
+    "dateAdded": "20241214"
+  },
+  {
     "id": "2025-031",
     "year": 2025,
     "potNumber": "0",
@@ -1074,6 +1193,27 @@
     ]
   },
   {
+    "id": "2025-039",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Untitled Goose Pot",
+    "description": "",
+    "potContents": "Pinning trays:\n-Mini Portable Pinning Trays (x8)\n-Mini Portable Pinning Tray Dresser\n-Pin Tumbler Gutting Tray\n-Disc Detainer Gutting Tray\n\nFollowers:\n-10mm, 12.5mm, 12.8mm, & 14mm Split/Solid Plug Followers\n-10mm, 12.5mm, & 14mm Segmented Plug Followers (x6 each size)\n-Plug Follower Stand\n\nVise and vise accessories:\n-Chuck Vise (with Smallrig super clamp and hardware)\n-KiK Vise Holder\n-Euro Vise Holder\n-SFIC Vise Holder\n-Cam Vise Holder\n\nCore holders:\n-12.5mm Core Holder\n-10mm Core Holder\n\nSpeed Reloaders:\n-ASSA 700 Speed Reloader\n-GOAL P Speed Reloader\n-GOAL S Speed Reloader\n\nQuality of life:\n-Disc Detainer Turner\n-Small Pick Stand\n-Key Mummy for Challenge Locks \n\nCool stuff:\n-Educational Lock and Pins (With spool pin, mushroom pin, serrated pin, and master wafers) \n-Four NCR \"goose\" stickers",
+    "contributedBy": [
+      "NCR"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": "20241216"
+  },
+  {
     "id": "2025-040",
     "year": 2025,
     "potNumber": "0",
@@ -1221,6 +1361,27 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54213376556_9c894c3e67_o.jpg"
       }
     ]
+  },
+  {
+    "id": "2025-072",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Extra Nutted Weaspick",
+    "description": "",
+    "potContents": "Custom pick by Doktor Weasel with handle made from tagua nut and acrylic",
+    "contributedBy": [
+      "Doktor Weasel"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$10 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": "20241227"
   },
   {
     "id": "2025-045",
@@ -1915,7 +2076,7 @@
     "id": "2025-065",
     "year": 2025,
     "potNumber": "0",
-    "title": "Į̴̰̤̣͙͔̹̺̦̣͋̅̄͒̂͜͜T̸̨̪̪̲̬̦͊̑̇̀͑̿͑̕ͅ ̷̖̼͇͎̥̫̣̜͔̬̙͈̐C̵̨̢̡̜̝͉͓̜͈̺̫̟̘͒̆A̷͔̩̦̳̟̭̯̿͊͂̐̍͌̄͂̈́̾̚̚̕͘͠͝Ṇ̶̙̜̺̞͐͒͂̂̀͆̃̆͆̉̌͋̿́͘̕̕ ̵̧̭̞̼̲̩̙͙͕̙͌͜Ș̵̡̢̫̖̣̗̘͙̺͎̠̦̘̰͖̉̆̔͆̿͌͘͝ͅE̵̪̥̖̤̿̋͋͌E̵̦̺̺̬̘̭̠͌̐̎̏͜ ̸͕̼͕͖̝̠͙͇͕̲̹̯̫̩̇͌̈́͜Y̸̨̹͛͛̂̔͂̏͐̋̈́̑͂̿̋̄͆̚͘Ơ̸̧̫̹͇̦͔̟̄̀̾̍͊̾͗͝͝U̴̢͎̦̤͙̦̦̗͉͂̽̾̐̉̓ͅ",
+    "title": "It Can See You",
     "description": "",
     "potContents": "- A rake with many waves and many eyes that see in the dark",
     "contributedBy": [
@@ -1930,7 +2091,30 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230419148_d19dd51f87_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230419148/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230419148_aa5c20c1dd_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230434594_62a8cb409d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230434594/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230434594_1b8f8ac880_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229280807_ea7db9d85f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229280807/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229280807_eae5a8bddc_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-066",
@@ -1938,7 +2122,7 @@
     "potNumber": "0",
     "title": "Server-grade Nixie clock kit",
     "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed!\nNeeds 12vdc power supply to complete and case made for it\n\nThese are really nice nixie tubes, too",
-    "potContents": "-A nixie kit with server-grade NL841 tubes (200k hour life) and a kit to assemble",
+    "potContents": "- A nixie kit with server-grade NL841 tubes (200k hour life) and a kit to assemble",
     "contributedBy": [
       "V Pinball"
     ],
@@ -1951,7 +2135,23 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: V Pinball",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230595040_9ccc85b12a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230595040/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230595040_8dfbb707ee_o.jpg"
+      },
+      {
+        "title": "By: V Pinball",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230595390_eb11f95e03_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230595390/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230595390_1a7f2f0cc2_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-067",
@@ -1972,7 +2172,16 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: MelBrooksKA",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230435179_48fe02f186_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230435179/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230435179_6834c5d4d8_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-068",
@@ -2001,7 +2210,7 @@
     "potNumber": "0",
     "title": "Fabianoh130.nl raffle pack",
     "description": "",
-    "potContents": "-General euro cilinder cutaway\n-Abus 65/40 cutaway\n-Assa desmo 6p\n-Lips 30mm padlock\n-Trioving 55xx \n-Kaba Aura \n-Pfaffenhain v14\n-Dom RN\n-Winkhaus XR\n-Abus Brady Loto 30mm",
+    "potContents": "- General euro cilinder cutaway\n- Abus 65/40 cutaway\n- Assa desmo 6p\n- Lips 30mm padlock\n- Trioving 55xx \n- Kaba Aura \n- Pfaffenhain v14\n- Dom RN\n- Winkhaus XR\n- Abus Brady Loto 30mm",
     "contributedBy": [
       "fabianoh130"
     ],
@@ -2014,7 +2223,16 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: fabianoh130",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54230433934_b0caff9449_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54230433934/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54230433934_9ab07bb878_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-071",
@@ -2022,7 +2240,7 @@
     "potNumber": "0",
     "title": "(kiridashii pot)",
     "description": "",
-    "potContents": "-New Moki Gold digger set with custom handles\n-SSDeV hooks with custom handles \n-Padlock body which can hold a half euro cylinder\n-Travel Pinning Tray + Storage from 44 Delta\n-a few more tensioners\r\n\nA few grubbed half euro cylinders: \n-no name (maybe yellow)\n-Abus E50 (orange)\n-Abus XP10 (green)\n-Abus C83 (blue)",
+    "potContents": "- New Moki Gold digger set with custom handles\n- SSDeV hooks with custom handles \n- Padlock body which can hold a half euro cylinder\n- Travel Pinning Tray + Storage from 44 Delta\n- a few more tensioners\n\nA few grubbed half euro cylinders: \n- no name (maybe yellow)\n- Abus E50 (orange)\n- Abus XP10 (green)\n- Abus C83 (blue)",
     "contributedBy": [
       "kiridashii"
     ],
@@ -2034,6 +2252,25 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2025-073",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "(thatonenottrollguy pot)",
+    "description": "",
+    "potContents": "",
+    "contributedBy": [
+      "thatonenottrollguy"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
     "winner": "",
     "dateAdded": ""
   }
