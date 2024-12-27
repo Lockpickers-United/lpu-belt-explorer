@@ -34,7 +34,7 @@ export default function RafflePreviewBar({refresh}) {
             })
             .then(async response => {
                 setResponse(response)
-                console.log('preview response\n', response)
+                console.log('preview response\n', JSON.stringify(response, null, 2))
             })
         await refresh()
     }, [refresh])

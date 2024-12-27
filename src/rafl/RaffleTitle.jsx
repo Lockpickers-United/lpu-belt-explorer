@@ -51,7 +51,7 @@ function RaffleTitle({entry}) {
                     marginTop: !isMobile ? -3 : 0,
                     flexGrow: 1
                 }}>
-                    {entry.title}
+                    {entry.displayName ? entry.displayName : entry.title}
                 </div>
                 {entry.winner &&
                     <div style={{
