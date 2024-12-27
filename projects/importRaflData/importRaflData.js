@@ -4,32 +4,26 @@ import fetch from 'node-fetch'
 import {
     raflSchema,
     raflCharitySchema,
-    raflPotStatsSchema,
     raflMediaSchema,
-    raflCharityStatsSchema,
-    raflSummaryStatsSchema
 } from './src/schemas.js'
 import validate from './src/validate.js'
 
-import {sheetIds} from '../../keys/importRaflSheetIds.js'
-const {raflSheetId, raflStatsId} = sheetIds
+import {sheetIds} from '../../keys/raflSheetIds.js'
+const {raflSheetId} = sheetIds
 export default async function importRaflData() {
     let errors = []
 
     try {
-
         // Helper to load and validate a file
         const importValidate = async (tab, schema) => {
 
-            if (!raflStatsId || !raflSheetId) {
-                console.log('Config error! Set RAFL_SHEET_ID & RAFL_STATS_ID env vars to run Import.')
+            if (!raflSheetId) {
+                console.log('Config error! Set RAFL_SHEET_ID var to run Import.')
                 process.exit(1)
             }
 
             const safeTab = encodeURI(tab)
-            const url = (['RAFL', 'RAFL Media', 'RAFL Pot Contents', 'RAFL Charities'].includes(tab))
-                ? `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
-                : `https://docs.google.com/spreadsheets/d/${raflStatsId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
+            const url = `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
             const csvData = await (await fetch(url)).text()
 
             // Parse CSV into JSON
@@ -49,10 +43,6 @@ export default async function importRaflData() {
         const raflData = await importValidate('RAFL', raflSchema)
         const raflMediaData = await importValidate('RAFL Media', raflMediaSchema)
         const raflCharityData = await importValidate('RAFL Charities', raflCharitySchema)
-
-        const raflPotStats = await importValidate('RAFL Pot Stats', raflPotStatsSchema)
-        const raflCharityStats = await importValidate('RAFL Charity Stats', raflCharityStatsSchema)
-        const raflSummaryStats = await importValidate('RAFL Summary Stats', raflSummaryStatsSchema)
 
         // RAFL Data
         //console.log('Processing RAFL data...')
@@ -74,7 +64,6 @@ export default async function importRaflData() {
                 shippingType: datum['Shipping Type'],
                 winner: datum['Winner']
             })).filter(x => x)
-
 
         // RAFL Media data
         //console.log('Processing RAFL Media data...')
@@ -113,48 +102,12 @@ export default async function importRaflData() {
             donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
         })).filter(x => x)
 
-        // RAFL Pot Stats
-        const raflPotStatsData = raflPotStats.map(datum => ({
-            id: datum['Unique ID'],
-            year: +datum['Year'],
-            potNumber: datum['Pot Number'],
-            title: datum['Pot Title'],
-            tickets: datum['Tickets'],
-            donors: datum['Donors']
-        })).filter(x => x)
-
-        // RAFL Charity Stats
-        const raflCharityStatsData = raflCharityStats.map(datum => ({
-            id: datum['Unique ID'],
-            name: datum['Charity Name'],
-            donations2025: parseInt(datum['Total Donations 2025'].replace(/[^0-9]/, '')) || 0
-        })).filter(x => x)
-
-        // RAFL Summary Stats
-        const raflSummaryStatsData = raflSummaryStats.map(datum => ({
-            donors: datum['Donors'],
-            donationsTotal: parseInt(datum['Donation Total']?.replace(/[^0-9]/, '')) || 0,
-            donationsReddit: parseInt(datum['From Reddit']?.replace(/[^0-9]/, '')) || 0,
-            donationsDiscord: parseInt(datum['From Discord']?.replace(/[^0-9]/, '')) || 0,
-            donationsTotal2024: parseInt(datum['2024 Raffle Total']?.replace(/[^0-9]/, '')) || 0
-        })).filter(x => x)
-
-
-        // All RAFL Stats
-        const raflStatsData = {
-            potStats: raflPotStatsData,
-            charityStats: raflCharityStatsData,
-            summaryStats: raflSummaryStatsData
-        }
-
         const serverPath = process.env.LOGNAME === 'dh_m5s5pf'
             ? '/home/dh_m5s5pf/explore.lpubelts.com/public/data'
             : './'
 
         fs.writeFileSync(`${serverPath}/rafl.json`, JSON.stringify(raflMainData, null, 2))
         fs.writeFileSync(`${serverPath}/raflCharities.json`, JSON.stringify(raflCharities, null, 2))
-
-        fs.writeFileSync(`${serverPath}/raflStats.json`, JSON.stringify(raflStatsData, null, 2))
 
     } catch (err) {
         console.log('err', err)

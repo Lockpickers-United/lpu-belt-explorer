@@ -1,101 +1,81 @@
-import fs from 'fs'
-import {parse} from 'csv-parse/sync'
-import fetch from 'node-fetch'
-import {
-    raflPotStatsSchema,
-    raflCharityStatsSchema,
-    raflSummaryStatsSchema
-} from './src/schemas.js'
-import validate from './src/validate.js'
+import {raflUtils} from '../raflFormUtilities/raflFormUtils.js'
+import fs from 'node:fs/promises'
+import dayjs from 'dayjs'
+import {localUser, prodUser} from '../../keys/users.js'
+import validator from 'validator'
 
-import {sheetIds} from '../../keys/importRaflSheetIds.js'
-const {raflStatsId} = sheetIds
+export async function updateRaflStats() {
 
-export default async function updateRaflStats() {
-    let errors = []
+    const production = process.env.USER !== localUser
+    const tempDir = production
+        ? `/home/${prodUser}/rafl-stats-temp/`
+        : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL`
 
     try {
 
-        // Helper to load and validate a file
-        const importValidate = async (tab, schema) => {
+        // save current stats
+        await raflUtils('processSheetsResponses').then()
 
-            if (!raflStatsId) {
-                console.log('Config error! Set RAFL_STATS_ID var to run update.')
-                process.exit(1)
-            }
+        // compare to previous
+        const previousResponses = JSON.parse(await fs.readFile(`${tempDir}/sheetsResponses.json`, 'utf8'))
+        const previousLast = dayjs(previousResponses[previousResponses.length - 1].Timestamp)
 
-            const safeTab = encodeURI(tab)
-            const url = `https://docs.google.com/spreadsheets/d/${raflStatsId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
-            const csvData = await (await fetch(url)).text()
+        const currentResponses = await raflUtils('getSheetsResponses')
 
-            // Parse CSV into JSON
-            const data = parse(csvData, {
-                columns: true,
-                skip_empty_lines: true,
-                trim: true
+        const newResponses = currentResponses.filter(res => dayjs(res.Timestamp) > previousLast)
+        if (newResponses.length > 0) console.log('New Responses')
+        const newResponseInfo = newResponses.length > 0
+            ? newResponses.map(res => {
+                const tickets = Object.keys(res)
+                    .filter(key => (/Pot/.test(key) && res[key] !== ''))
+                    .reduce((acc, key) => {
+                        acc = acc ? acc + parseInt(res[key]) : parseInt(res[key])
+                        return acc
+                    }, 0)
+                const user = res['Platform Username'].charAt(0) + '...' + res['Platform Username'].slice(-1)
+                let proof = res['Receipt from approved charity (hosted image link, must contain a visible date)']
+                    .toLowerCase()
+                proof = validator.isURL(proof) ? proof : proof.replace(/https*:\/\//g, '') + ' (bad url)'
+
+                const match = (tickets === parseInt(res['Total donation in USD'])) ? 'totals match' : 'DONATION & TICKETS DO NOT MATCH'
+
+                console.log('timestamp: ' + dayjs(res.Timestamp).format('MM/DD/YYYY HH:MM:ss'))
+                console.log('  platform: ' + res['Your Preferred Platform'])
+                console.log('  user: ' + user)
+                console.log('  charity: ' + res['Selected charity'])
+                console.log('  donation: $' + parseInt(res['Total donation in USD']))
+                console.log('  proof: ' + proof)
+                console.log('  tickets: ' + tickets)
+                console.log('  match: ' + match)
+                console.log(' ')
+
+                return {
+                    timestamp: dayjs(res.Timestamp).format('MM/DD/YYYY HH:MM:ss'),
+                    platform: res['Your Preferred Platform'],
+                    user: user,
+                    charity: res['Selected charity'],
+                    donation: parseInt(res['Total donation in USD']),
+                    donationProof: proof,
+                    tickets: tickets,
+                    match: tickets === parseInt(res['Total donation in USD']) ? 'totals match' : 'DONATION & TICKETS DO NOT MATCH'
+                }
             })
+            : ''
 
-            // Validate data before merging in
-            const error = validate(data, schema)
-            if (error) errors.push(error)
-
-            return data
+        if (newResponses.length > 0) {
+            //jsonIt('New responses since last update', newResponseInfo)
+            await fs.writeFile(`${tempDir}/sheetsResponses.json`, JSON.stringify(currentResponses, null, 2))
         }
-
-        const raflPotStats = await importValidate('RAFL Pot Stats', raflPotStatsSchema)
-        const raflCharityStats = await importValidate('RAFL Charity Stats', raflCharityStatsSchema)
-        const raflSummaryStats = await importValidate('RAFL Summary Stats', raflSummaryStatsSchema)
-
-        // RAFL Pot Stats
-        const raflPotStatsData = raflPotStats.map(datum => ({
-            id: datum['Unique ID'],
-            year: +datum['Year'],
-            potNumber: datum['Pot Number'],
-            title: datum['Pot Title'],
-            tickets: datum['Tickets'],
-            donors: datum['Donors']
-        })).filter(x => x)
-
-        // RAFL Charity Stats
-        const raflCharityStatsData = raflCharityStats.map(datum => ({
-            id: datum['Unique ID'],
-            name: datum['Charity Name'],
-            donations2025: parseInt(datum['Total Donations 2025'].replace(/[^0-9]/, '')) || 0
-        })).filter(x => x)
-
-        // RAFL Summary Stats
-        const raflSummaryStatsData = raflSummaryStats.map(datum => ({
-            donors: datum['Donors'],
-            donationsTotal: parseInt(datum['Donation Total']?.replace(/[^0-9]/, '')) || 0,
-            donationsReddit: parseInt(datum['From Reddit']?.replace(/[^0-9]/, '')) || 0,
-            donationsDiscord: parseInt(datum['From Discord']?.replace(/[^0-9]/, '')) || 0,
-            donationsTotal2024: parseInt(datum['2024 Raffle Total']?.replace(/[^0-9]/, '')) || 0
-        })).filter(x => x)
-
-        // All RAFL Stats
-        const raflStatsData = {
-            potStats: raflPotStatsData,
-            charityStats: raflCharityStatsData,
-            summaryStats: raflSummaryStatsData
-        }
-
-        const serverPath = process.env.LOGNAME === 'dh_m5s5pf'
-            ? '/home/dh_m5s5pf/explore.lpubelts.com/public/data'
-            : './'
-
-        fs.writeFileSync(`${serverPath}/raflStats.json`, JSON.stringify(raflStatsData, null, 2))
 
     } catch (err) {
         console.log('err', err)
-        errors.push(err)
     }
-
-    return errors.length > 0
-        ? {status: 'Errors', errors: errors}
-        : {status: 'All Good!'}
-
 }
 
-updateRaflStats().then()
+await updateRaflStats()
 
-//console.log('Complete.', {raflData: raflMainData, raflCharities: raflCharities})
+function jsonIt(string, object) {
+    console.log(string)
+    console.log(JSON.stringify(object, null, 2))
+    console.log('--------')
+}

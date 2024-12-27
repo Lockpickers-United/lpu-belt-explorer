@@ -29,12 +29,11 @@ app.get('/refresh-preview', async (req, res) => {
     await importRaflData().then(results => {
         res.send(results)
     })
-    await raflUtils('addQuestions')
 })
 
-app.get('/flickr-info', async (req, res) => {
-    myEmitter.emit('myEvent', 'Flickr info requested')
-    await getFlickrInfo(req.query.id).then(results => {
+app.get('/update-rafl-form', async (req, res) => {
+    myEmitter.emit('myEvent', 'RAFL form update requested')
+    await raflUtils('addQuestions').then(results => {
         res.send(results)
     })
 })
@@ -48,10 +47,18 @@ app.get('/rafl-charities', async (req, res) => {
 
 app.get('/rafl-stats', async (req, res) => {
     myEmitter.emit('myEvent', 'Rafl STATS requested')
-    await raflUtils('raflResponseSummary').then(results => {
+    await raflUtils('getSheetsResponses').then(results => {
         res.send(results)
     })
 })
+
+app.get('/flickr-info', async (req, res) => {
+    myEmitter.emit('myEvent', 'Flickr info requested')
+    await getFlickrInfo(req.query.id).then(results => {
+        res.send(results)
+    })
+})
+
 
 /////////////
 
