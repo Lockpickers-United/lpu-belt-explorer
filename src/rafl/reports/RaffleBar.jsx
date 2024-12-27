@@ -5,8 +5,6 @@ import dayjs from 'dayjs'
 
 const RaffleBar = ({data}) => {
 
-    console.log('data', data)
-
     const barData = data.map(day => {
         return {
             id: dayjs(day.x).format('MM/DD'),

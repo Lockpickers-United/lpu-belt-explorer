@@ -28,6 +28,17 @@ export default function RaffleIntroBar() {
                 </div>
             }
 
+            {(raflState === 'setup') &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+                    <div style={{padding: '4px 4px 10px 4px'}}>
+                        <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
+                            RAFL is coming soon!
+                        </div>
+                        We will start accepting entries on January 1st. See you then!
+                    </div>
+                </div>
+            }
+
             {(raflState === 'live') &&
                 <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>

@@ -20,7 +20,7 @@ function RaffleReportRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <ReportButton active={true}/>
+            <ReportButton active={false}/>
             <AdminRoleButton/>
         </React.Fragment>
     )

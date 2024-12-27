@@ -11,16 +11,19 @@ export default function RaffleNotLiveDialog() {
 
     return (
         <React.Fragment>
-            <Dialog open={raflState === 'preview' && !raffleAdminRole} componentsProps={{
+            <Dialog open={(raflState === 'preview' || raflState === 'setup') && !raffleAdminRole} componentsProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30}}>
                     <span style={{fontSize: '1.3rem', fontWeight: 700}}>RAFL is launching soon!</span><br/><br/>
-                    <span style={{fontSize: '1.2rem'}}>Come back in January<br/> to enter.<br/><br/></span>
+                    <span style={{fontSize: '1.2rem'}}>Come back on January 1st<br/> to enter.<br/><br/></span>
+                    {raflState === 'preview' &&
                     <Link onClick={() => navigate('/rafl')}
                           style={{color: '#ddd', textDecorationColor: '#888', fontSize: '0.9rem', cursor: 'pointer'}}>
                         Take a sneak peek at the pots!
-                    </Link><br/>
+                    </Link>
+                    }
+                    <br/>
                     <AdminRoleButton/>
                 </div>
             </Dialog>

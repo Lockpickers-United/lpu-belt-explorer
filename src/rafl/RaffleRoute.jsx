@@ -62,11 +62,11 @@ function RaffleRoute() {
         paddingRight: sideSpacing
     }
 
-    let navTitle = raflState === 'hidden'
+    let navTitle = raflState === 'post'
         ? 'RAFL 2025 has ended'
-        : ['live', 'post'].includes(raflState) || !isMobile
-            ? 'Announcing RAFL 2025!'
-            : 'RAFL 2025!'
+        : ['live','setup'].includes(raflState) || !isMobile
+            ? 'RAFL 2025!'
+            : 'Announcing RAFL 2025!'
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
@@ -91,6 +91,7 @@ function RaffleRoute() {
                                 ? <LoadingDisplay/>
                                 : <RafflePage profile={lockCollection}/>
                             }
+
 
                             <Footer/>
                         </React.Fragment>

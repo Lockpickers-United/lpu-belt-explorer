@@ -60,8 +60,6 @@ export function RaffleDataProvider({children, allEntries}) {
             })
     }, [allEntries, filters, search, sort])
 
-    console.log('visibleEntries', visibleEntries)
-
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
