@@ -174,7 +174,6 @@
     ],
     "tags": [
       "Locks (intermediate/advanced)",
-      "Locks (collectable)",
       "Locks (pin tumbler)",
       "Locks (dimple)",
       "Locks (disc detainer)",
@@ -987,25 +986,33 @@
     "title": "Hammer’s Ultimate RAFL Locksport Kit",
     "displayName": "",
     "description": "",
-    "potContents": "Locks: \n- Protec2 w/ 2 Keys\n- CX5 w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n\nMoki Hooks:\n- Deep Round Hook\n\nMultipick Hooks:\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\n\nTools:\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Stainless Steel Follower\n- Reaper Lockpick Sheath\n\nSwag:\n- Custom Stainless Steel Handles and Screws made by Nosu\n- Book of Bones Sticker",
+    "potContents": "Pick cases:\n- Reaper Lockpick Sheath\n- Deadhammer OG Prototype Moki Case\n\nLocks:\n- Protec2 w/ 2 Keys\n- CX5 w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n- American 1105 Red w/ 2 Keys\n- Schlage Everest No Keys\n- Best SFIC No Keys\n\nSparrows:\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Tubular Tensioner\n\nMultipick Hooks\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\n- TNT-20-V3 w/ additional tips\n- BMS 9\n- BMS 10\n\nMoki:\n- Deep Round Hook\n- Custom Stainless Steel Handles and Screws made by Nosu\n- 2x BoK Tensioners\n\nBare Bones\n- Custom Book of Bones Scales\n- Medium Gem Hook 23 Thou\n\nMisc:\n- 2x Pieces of Wiper Insert for Custom Tensioners\n- 3x Pieces of 301HY from Law Lock Tools\n-1 Piece of Desert Iron Wood Knife Handle Blank\n- Stainless Steel Follower\n- Lab .398 Follower\n- Lab .550 Follower\n- Book of Bones Sticker",
     "contributedBy": [
       "Deadhammer"
     ],
     "tags": [
+      "Artisan piece",
+      "Locks (beginner)",
       "Locks (intermediate/advanced)",
       "Locks (pin tumbler)",
       "Locks (disc detainer)",
       "Locks (dimple)",
       "Locks (sliders/fingerpins)",
       "Locks (wafer)",
+      "Locks (padlocks)",
       "Picks (hooks)",
       "Picks (dimple)",
+      "Tensioners (BOK)",
       "Tensioners (TOK)",
+      "Tensioners (tubular)",
+      "Tensioners (other)",
       "Organization (pick cases)",
       "Organization (mats/trays)",
       "Tools (gutting)",
       "Swag (stickers)",
-      "Swag (misc)"
+      "Swag (misc)",
+      "Materials (pick making)",
+      "Materials (other)"
     ],
     "country": [
       "Canada"
@@ -1618,7 +1625,7 @@
     "title": "Nutted Weaspick",
     "displayName": "",
     "description": "",
-    "potContents": "Custom pick by Doktor Weasel with handle made from tagua nut and purple dyed ash wood",
+    "potContents": "- Custom pick by Doktor Weasel with handle made from tagua nut and purple dyed ash wood",
     "contributedBy": [
       "Doktor Weasel"
     ],
@@ -1653,7 +1660,7 @@
     "title": "Brassed Weaspick",
     "displayName": "",
     "description": "",
-    "potContents": "Custom pick by Doktor Weasel with etched brass handle and nickel inlay",
+    "potContents": "- Custom pick by Doktor Weasel with etched brass handle and nickel inlay",
     "contributedBy": [
       "Doktor Weasel"
     ],
@@ -1688,7 +1695,7 @@
     "title": "Aluminummed Weaspick",
     "displayName": "",
     "description": "",
-    "potContents": "Custom pick by Doktor Weasel with etched aluminum handle",
+    "potContents": "- Custom pick by Doktor Weasel with etched aluminum handle",
     "contributedBy": [
       "Doktor Weasel"
     ],
@@ -1723,7 +1730,7 @@
     "title": "Extra Nutted Weaspick",
     "displayName": "",
     "description": "",
-    "potContents": "Custom pick by Doktor Weasel with handle made from tagua nut and acrylic",
+    "potContents": "- Custom pick by Doktor Weasel with handle made from tagua nut and acrylic",
     "contributedBy": [
       "Doktor Weasel"
     ],
@@ -1841,7 +1848,10 @@
     "contributedBy": [
       "elocksmith"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (padlocks)",
+      "Locks (pin tumbler)"
+    ],
     "country": [
       "Australia"
     ],
@@ -1872,7 +1882,9 @@
     "contributedBy": [
       "elocksmith"
     ],
-    "tags": [],
+    "tags": [
+      "Safe locks (digital)"
+    ],
     "country": [
       "Australia"
     ],
@@ -1903,7 +1915,10 @@
     "contributedBy": [
       "Tsubaki"
     ],
-    "tags": [],
+    "tags": [
+      "Swag (art)",
+      "Swag (misc)"
+    ],
     "country": [
       "USA"
     ],
@@ -1930,11 +1945,16 @@
     "title": "Unprotected Kromer Protector",
     "displayName": "",
     "description": "A beautifully made cutaway of one of the most infamous locks ever manufactured",
-    "potContents": "Kromer Protector BP55K-Cutaway",
+    "potContents": "- Kromer Protector BP55K-Cutaway",
     "contributedBy": [
       "Don"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Locks (cutaway)",
+      "Locks (intermediate/advanced)",
+      "Locks (lever)"
+    ],
     "country": [
       "Germany"
     ],
@@ -1972,7 +1992,10 @@
     "contributedBy": [
       "Fireshaper"
     ],
-    "tags": [],
+    "tags": [
+      "Tools (misc)",
+      "Swag (misc)"
+    ],
     "country": [
       "USA"
     ],
@@ -2013,11 +2036,19 @@
     "title": "Big Box o Locks",
     "displayName": "",
     "description": "",
-    "potContents": "It's a big box of locks, all of which are in the picture. Look at em, there's so many!\n+A mystery holiday box",
+    "potContents": "- A big box of locks, all of which are in the picture. Look at em, there's so many!\n- A mystery holiday box",
     "contributedBy": [
       "locksmitharmy"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)",
+      "Safe locks (group 2)",
+      "Locks (dial)",
+      "Locks (padlocks)",
+      "Locks (lever)",
+      "Mystery pot"
+    ],
     "country": [
       "USA"
     ],
@@ -2048,7 +2079,9 @@
     "contributedBy": [
       "locksmitharmy"
     ],
-    "tags": [],
+    "tags": [
+      "Books"
+    ],
     "country": [
       "USA"
     ],
@@ -2075,11 +2108,16 @@
     "title": "LPU Pet Pillow Pot",
     "displayName": "",
     "description": "What could anyone possibly want with 18 ugly pillows of pets that aren't even their's? How expensive is it going to be to ship this internationally?\nLife is full of questions that don't matter, so just put your tickets in the pet pillow pot.",
-    "potContents": "18 ugly pet pillows of various sizes, made using the photos shown below. Pets and owners include:\nBrian - Yohapii\nCharlie - DQ\nCharn - sisko\nDella - BurnB1\nGomez - birdie\nIshtar - Musketeer\nKitty - Craig 3.0\nRiley - Craig 3.0\nKroogs & Mozzie - f-eq-ma\nLuna - Dra9i\nLuna - Red Wanderer\nMia - DoNotDuplicate\nMiwa - CorrectJeans\nNala - Two06\nPenny - NiXXed\nRio - Reid\nSamus - Pantoufle\nStanley - Pantoufle",
+    "potContents": "18 ugly pet pillows of various sizes, made using the photos shown below. Pets and owners include:\n- Brian - Yohapii\n- Charlie - DQ\n- Charn - sisko\n- Della - BurnB1\n- Gomez - birdie\n- Ishtar - Musketeer\n- Kitty - Craig 3.0\n- Riley - Craig 3.0\n- Kroogs & Mozzie - f-eq-ma\n- Luna - Dra9i\n- Luna - Red Wanderer\n- Mia - DoNotDuplicate\n- Miwa - CorrectJeans\n- Nala - Two06\n- Penny - NiXXed\n- Rio - Reid\n- Samus - Pantoufle\n- Stanley - Pantoufle",
     "contributedBy": [
       "CorrectJeans"
     ],
-    "tags": [],
+    "tags": [
+      "Swag (art)",
+      "Swag (misc)",
+      "Swag (LPU)",
+      "Tools (other)"
+    ],
     "country": [
       "USA"
     ],
@@ -2106,7 +2144,7 @@
     "title": "Crazy Rainbow Pot",
     "displayName": "",
     "description": "",
-    "potContents": "1 x Crazy Rainbow Split/Solid Follower Set (4 different sizes)\r\n1 x Crazy Rainbow Chuck Vise (Generic)\r\n1 x SmallRig \"Super\" Clamp (plus hardware)\r\n1 x Padlock Plug Holder Set (Silky Black)\r\n1 x SFIC Vise Lock Holder (Silky Black)\r\n1 x KIK Vise Lock Holder (Silky Black)\r\n1 x Euro Vise Lock Holder (Silky Black)\r\n1 x LPL Pinning Tray (Black to White Gradient)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
+    "potContents": "- Crazy Rainbow Split/Solid Follower Set (4 different sizes)\n- Crazy Rainbow Chuck Vise (Generic)\n- SmallRig \"Super\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Silky Black)\n- SFIC Vise Lock Holder (Silky Black)\n- KIK Vise Lock Holder (Silky Black)\n- Euro Vise Lock Holder (Silky Black)\n- LPL Pinning Tray (Black to White Gradient)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
     "contributedBy": [
       "44 Delta"
     ],
