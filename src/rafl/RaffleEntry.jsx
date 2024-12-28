@@ -62,6 +62,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
 
     const {isMobile, flexStyle} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
+    const descriptionMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '0.95rem' : '1.0rem'
     const infoOpactiy = entry.winner && !expanded ? 0.6 : 1
@@ -134,7 +135,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                             value={entry.shippingInfo}/>
                             </div>
                         }
-                        <div style={{margin: '12px 12px 8px 8px', fontSize: descriptionFontSize, opacity: infoOpactiy}}>
+                        <div style={{margin: descriptionMargin, fontSize: descriptionFontSize, opacity: infoOpactiy}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                 {entry.description}
                             </ReactMarkdown>

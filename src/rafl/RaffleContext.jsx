@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
-import {raflQuestionMap, raflResponseDetails2} from '../data/dataUrls'
+import {raflJsonUrl, raflQuestionMap, raflResponseDetails2} from '../data/dataUrls'
 import raflData from '../data/rafl.json'
 import raflCharities from '../data/raflCharities.json'
 import DBContext from '../app/DBContext.jsx'
@@ -14,23 +14,20 @@ const RaffleContext = React.createContext({})
 export function RaffleProvider({children}) {
 
     const {VITE_RAFL_STATE: raflState} = import.meta.env
-    // preview, live, post, hidden
+    // preview, setup, live, post, hidden
     const [preview, setPreview] = useLocalStorage('previewMode', false)
 
     const {lockCollection} = useContext(DBContext)
-    const {data, loading, error} = useData({urls})
+    const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
 
-    const {raflQuestionMap, raflResponseDetails2} = data || {}
+    const {raflQuestionMap, raflResponseDetails2, raflJsonUrl} = data || {}
 
     const raflSummaryStats = useMemo(() => {
         return raflResponseDetails2
             ? Object.keys(raflResponseDetails2).reduce((acc, day) => {
-
                 setDeepAdd(acc, ['totalDonors'], raflResponseDetails2[day]['totalDonors'])
                 setDeepAdd(acc, ['totalDonations'], raflResponseDetails2[day]['totalDonations'])
-
-
                 Object.keys(raflResponseDetails2[day]['platforms']).forEach(platform => {
                     setDeepAdd(acc, ['platformDonations', platform], raflResponseDetails2[day]['platforms'][platform].donations)
                     setDeepAdd(acc, ['platformDonors', platform], raflResponseDetails2[day]['platforms'][platform].donors)
@@ -52,10 +49,11 @@ export function RaffleProvider({children}) {
             : {}
     },[raflResponseDetails2])
 
-    //console.log('potSummaryStats', potSummaryStats)
-
     const allPots = useMemo(() => {
-        return raflData
+        const potEntries = preview && allDataLoaded
+            ? raflJsonUrl ?? []
+            : raflData
+        return potEntries
             .map(entry => {
                 const question = raflQuestionMap?.find(q => q.text.includes(entry.title))
                 return {
@@ -73,7 +71,7 @@ export function RaffleProvider({children}) {
                     sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber)
                 }
             })
-    }, [potSummaryStats, raflQuestionMap, lockCollection])
+    }, [preview, allDataLoaded, raflJsonUrl, raflQuestionMap, potSummaryStats, lockCollection])
 
     const charitySummaryStats = useMemo(() => {
         return raflResponseDetails2
@@ -135,7 +133,7 @@ export function RaffleProvider({children}) {
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
         raflState,
-        preview, setPreview
+        preview, setPreview, refresh
     }), [
         allDataLoaded,
         allPots,
@@ -152,7 +150,7 @@ export function RaffleProvider({children}) {
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
         raflState,
-        preview, setPreview
+        preview, setPreview, refresh
     ])
 
     return (
@@ -164,7 +162,8 @@ export function RaffleProvider({children}) {
 
 const urls = {
     raflQuestionMap,
-    raflResponseDetails2
+    raflResponseDetails2,
+    raflJsonUrl
 }
 
 export default RaffleContext

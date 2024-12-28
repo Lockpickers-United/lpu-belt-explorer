@@ -1,15 +1,53 @@
 [
   {
+    "id": "2025-001",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "SasPack 2025",
+    "displayName": "",
+    "description": "",
+    "potContents": "- Lock Wall Art - Titan Frame\n- Disk Lock Pinning Tray (Abloy Classic)\n- Vintage Abloy Classic (new old stock)\n- SQUIRE 440 Old English padlocks\n- Lock Pinning Tray (ASSA 7 pins)\n- ASSA Twin Combi\n- ASSA D12",
+    "contributedBy": [
+      "SasPes"
+    ],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (lever)",
+      "Locks (padlocks)",
+      "Locks (sliders/fingerpins)",
+      "Organization (mats/trays)",
+      "Swag (branded)",
+      "Swag (art)"
+    ],
+    "country": [
+      "Sweden"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": "20241214"
+  },
+  {
     "id": "2025-002",
     "year": 2025,
     "potNumber": "1",
     "title": "Seven Scandi Ovals",
+    "displayName": "",
     "description": "7 Scandinavian ovals and 2 stands (keys included)",
     "potContents": "7 Scandinavian ovals and 2 stands (keys included)\n- 500\n- 700\n- 6k\n- d12\n- 2 KABAs\n- Abus 7-pin",
     "contributedBy": [
       "H.J"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (high-pin-count)",
+      "Locks (sliders/fingerpins)",
+      "Organization (for locks)"
+    ],
     "country": [
       "Sweden"
     ],
@@ -34,12 +72,17 @@
     "year": 2025,
     "potNumber": "2",
     "title": "Ratyoke Custom Pick",
+    "displayName": "",
     "description": "",
     "potContents": "Pick, tbd",
     "contributedBy": [
       "Ratyoke"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (custom)",
+      "Picks (hooks)"
+    ],
     "country": [
       "USA"
     ],
@@ -55,12 +98,17 @@
     "year": 2025,
     "potNumber": "3",
     "title": "Gifts From Granny",
+    "displayName": "",
     "description": "Ancor Las padlock and four ASSA/Ruko ovals",
     "potContents": "- Anchor Las 802-2 padlock\n- ASSA 500 oval with barrels\n- ASSA 600 oval with barrels\n- Ruko 500 oval with 4 gins, 1 standard\n- ASSA 700 oval with trees and gins",
     "contributedBy": [
       "Granny"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (padlocks)"
+    ],
     "country": [
       "Canada"
     ],
@@ -76,12 +124,16 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Bare Bones Dimple Picks",
+    "displayName": "",
     "description": "Bare Bones bone casket case with 6 dimple picks",
     "potContents": "Bare Bones bone casket case with 6 dimple picks",
     "contributedBy": [
       "455"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (dimple)",
+      "Organization (pick cases)"
+    ],
     "country": [
       "USA"
     ],
@@ -113,13 +165,24 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Bulgarian Squatty Potty",
+    "displayName": "",
     "description": "",
-    "potContents": "1. Abloy protec2 double euro cylinder with gear 1 half is a cutaway, the other is stock, also 1 half is unmastered and one is mastered, keyways 5 and 7 (the winner can swap them if needed)\n2. Abus the Rock 100th anniversary padlock (new)\n3. Sargent signature LFIC (with operating and control key)\n4. Mauer MLS redline (cut euro) with 1 key\n5. Yale 500+ (cut euro) with 1 key\n6. Metal Zx5j (cut euro) with 1 key\n7. Foil dimple impressiining starter kit with all the tools needed to open the lock in the kit",
+    "potContents": "- Abloy protec2 double euro cylinder with gear 1 half is a cutaway, the other is stock, also 1 half is unmastered and one is mastered, keyways 5 and 7 (the winner can swap them if needed)\n- Abus the Rock 100th anniversary padlock (new)\n- Sargent signature LFIC (with operating and control key)\n- Mauer MLS redline (cut euro) with 1 key\n- Yale 500+ (cut euro) with 1 key\n- Metal Zx5j (cut euro) with 1 key\n- Foil dimple impressiining starter kit with all the tools needed to open the lock in the kit",
     "contributedBy": [
       "D.Q",
       "Pudes"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (collectable)",
+      "Locks (pin tumbler)",
+      "Locks (dimple)",
+      "Locks (disc detainer)",
+      "Locks (cutaway)",
+      "Locks (sliders/fingerpins)",
+      "Locks (padlocks)",
+      "Tools (impressioning)"
+    ],
     "country": [
       "Bulgaria"
     ],
@@ -207,12 +270,18 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Lockpickersbench x Multipick Flag Set",
+    "displayName": "",
     "description": "Lockpickersbench x Multipick Community Edition flag set",
     "potContents": "Lockpickersbench x Multipick Community Edition flag set with a Lawlock prybar set",
     "contributedBy": [
       "Joey69692568"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (dimple)",
+      "Tensioners (BOK)",
+      "Tensioners (TOK)",
+      "Organization (pick cases)"
+    ],
     "country": [
       "USA"
     ],
@@ -237,12 +306,16 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Honey Badger Knife Kit",
+    "displayName": "",
     "description": "",
     "potContents": "Donated by the US distributors of honeybadgerknives.com\n- Silicone takedown mat\n- Newly formulated synthetic oil with needle oiler\n- [Small drop point knife](https://honeybadgerknives.com/collections/drop-point-blade-knives/products/honey-badger-knives-small-drop-point-flipper-knife-8cr13mov-steel?_pos=1&_fid=ef9f219f0&_ss=c)",
     "contributedBy": [
       "Badger"
     ],
-    "tags": [],
+    "tags": [
+      "Tools (misc)",
+      "Organization (mats/trays)"
+    ],
     "country": [
       "USA"
     ],
@@ -267,13 +340,22 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Packet of Finland",
+    "displayName": "",
     "description": "Nearly 2 kg of locks from Finland, including examples of all major historical manufacturers and large selection of samples from Abloy. As a bonus, includes appropriately themed mug for your beverage of choice. ",
     "potContents": "Abloy:\n- PL231 Exec\n- PL240 Classic\n- No model marked, size between PL240 and PL250 DL \"pro\" (no DC). Non-guttable. With detachable shackle\n- PL340 Sentry, 2 keys\n- PL340 Protec\n- PL340 Easy, 2 keys + keycard\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys\n\nMore AVA (from Escape Goat):\n- Chubb AVA padlock\n- AVA camlock",
     "contributedBy": [
       "imaginary_unit",
       "escape goat"
     ],
-    "tags": [],
+    "tags": [
+      "Swag (branded)",
+      "Swag (misc)",
+      "Locks (padlocks)",
+      "Locks (disc detainer)",
+      "Locks (wafer)",
+      "Locks (lever)",
+      "Locks (intermediate/advanced)"
+    ],
     "country": [
       "Finland"
     ],
@@ -305,12 +387,19 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Big Collateral",
+    "displayName": "",
     "description": "",
     "potContents": "Jimy Longs sets:\n-Beginner\n-Intermediate\n-Gem\n-Tool Roll\n\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench",
     "contributedBy": [
       "CollateralTech"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Organization (pick cases)",
+      "Tensioners (BOK)",
+      "Tensioners (TOK)"
+    ],
     "country": [
       "USA"
     ],
@@ -341,14 +430,21 @@
     "id": "2025-011",
     "year": 2025,
     "potNumber": "0",
-    "title": "Dispersed Collateral",
+    "title": "Dispersed Collateral (8 winners)",
+    "displayName": "",
     "description": "",
     "potContents": "8 winners will receive (from CollateralTech):\nLock Picker's Bench: \n-LPB Edition SP-57 BOK wrench\n\nSouthern Specialties (0.020\"): \n-Elephant Trunk\n-Euro Modified Curve\n-Quint Cycloid\n-Euro Hollow Half Diamond\n\nSouthern Specialties (0.025\"):\n-Low Reach (welded handle)\n\nSouthOrd (0.022\"): \n-Snake Rake\n-Stretched Snake\n-Short Hook\n-Low Hook\n\nThe first 4 winners will also receive (from RakSMT):\n-LawLockTools Pry Bar set (4x TOK tools, 0.8mm, 1.0mm, 1.2mm, and 2mm)",
     "contributedBy": [
       "CollateralTech",
       "RakSMT"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Tensioners (BOK)",
+      "Tensioners (TOK)",
+      "Multiple winners"
+    ],
     "country": [
       "USA"
     ],
@@ -401,12 +497,16 @@
     "year": 2025,
     "potNumber": "0",
     "title": "The Measure of Success",
-    "description": "Mitutoyo Digimatic Caliper",
+    "displayName": "",
+    "description": "Mitutoyo Digimatic Caliper and a Rein wooden pinning tray",
     "potContents": "Mitutoyo MIT500-196-30 Absolute AOS Digimatic Caliper, 0mm-150mm/0\"-6\" Range\nRein pinning tray",
     "contributedBy": [
       "MarkUK"
     ],
-    "tags": [],
+    "tags": [
+      "Tools (misc)",
+      "Organization (mats/trays)"
+    ],
     "country": [
       "UK"
     ],
@@ -438,12 +538,20 @@
     "year": 2025,
     "potNumber": "0",
     "title": "RWB DD Pick",
+    "displayName": "",
     "description": "Custom DD pick from RWB Custom Picks",
     "potContents": "Gen 3 front tension DD pick from RWB Custom Picks",
     "contributedBy": [
       "rwb yan"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (disc detainer)",
+      "Picks (custom)",
+      "Swag (stickers)",
+      "Swag (branded)",
+      "Tools (misc)"
+    ],
     "country": [
       "UK"
     ],
@@ -464,16 +572,48 @@
     ]
   },
   {
+    "id": "2025-016",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "The return of Frankenrobur",
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "contributedBy": [
+      "Yagias"
+    ],
+    "tags": [
+      "Locks (padlocks)",
+      "Locks (pin tumbler)",
+      "Locks (sliders/fingerpins)",
+      "Locks (intermediate/advanced)"
+    ],
+    "country": [
+      "Denmark"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": "20241214"
+  },
+  {
     "id": "2025-017",
     "year": 2025,
     "potNumber": "0",
-    "title": "Two Group 1's don't make a Group 2",
+    "title": "Two Group 1's don't make a Group 2 (2 winners)",
+    "displayName": "",
     "description": "",
-    "potContents": "Each winner gets a Mosler 302 MR Group 1R Safe Lock, mounted, cleaned, and lubricated. First winner gets their choice between the variations, which include:\n\nDial 1:\n-Silver dial with black center\n-Key change wheel pack + change key\n-Hand change wheel pack\n\nDial 2:\n-Black dial with silver center\n-2x hand change wheel packs",
+    "potContents": "Each winner gets a Mosler 302 MR Group 1R Safe Lock, mounted, cleaned, and lubricated. First winner gets their choice between the variations, which include:\n\nDial 1:\n- Silver dial with black center\n- Key change wheel pack + change key\n- Hand change wheel pack\n\nDial 2:\n- Black dial with silver center\n- 2x hand change wheel packs",
     "contributedBy": [
       "Pyrolock"
     ],
-    "tags": [],
+    "tags": [
+      "Safe locks (group 1R)",
+      "Locks (dial)",
+      "Multiple winners"
+    ],
     "country": [
       "USA"
     ],
@@ -532,13 +672,20 @@
     "id": "2025-018",
     "year": 2025,
     "potNumber": "0",
-    "title": "The Burn",
+    "title": "The Burn (2 winners)",
+    "displayName": "",
     "description": "These pots represent an official psychology study aiming to identify picker preference between smooth and knurled dimple flags. Such studies benefit greatly by large participation numbers.",
     "potContents": "2 winners receive:\n- 1 set of 4 custom dimple flags (tall, short, left and right)\n- One with knurling, one set smooth. Both 10mm diameter.\n- Leather case made by TheGamingBug (TheMothMan) \n\nFirst winner gets their pick of the options",
     "contributedBy": [
       "BurnB1"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (dimple)",
+      "Picks (custom)",
+      "Organization (pick cases)",
+      "Multiple winners"
+    ],
     "country": [
       "USA"
     ],
@@ -576,13 +723,20 @@
     "id": "2025-019",
     "year": 2025,
     "potNumber": "0",
-    "title": "Skylender Lock & Pin Set by Lockpickwebwinkel.nl",
+    "title": "Skylender Lock & Pin Set by Lockpickwebwinkel.nl (3 winners)",
+    "displayName": "",
     "description": "Configurable training lock with security pins and pin stock for making your own.",
     "potContents": "Each winner receives:\n- 1 Skylender training lock: https://lockpickwebwinkel.nl/lockpick-oefening/training-skylender/ \n- Pin and spring kit (6 pin types and 4 spring types): https://lockpickwebwinkel.nl/lockpick-oefening/skylender-pins-and-springs/ \n- Trampoline pin kit: https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-trampoline-pins/ \n- Rod stock for custom pins: https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-doe-het-zelf-pinnen/ ",
     "contributedBy": [
       "Lockpickwebwinkel.nl"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Tools (training)",
+      "Materials (pin kits)",
+      "Materials (pin making)",
+      "Multiple winners"
+    ],
     "country": [
       "Netherlands"
     ],
@@ -607,12 +761,21 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Complete Lockpick and Abus Lock Set by Lockpickwebwinkel.nl",
+    "displayName": "",
     "description": "Sounthord picks and Abus 72/40 padlocks",
-    "potContents": "-SouthOrd Slimline C2010 lockpick set\n-Three Abus 72/40 padlocks",
+    "potContents": "- SouthOrd Slimline C2010 lockpick set (22-piece)\n- Three Abus 72/40 padlocks",
     "contributedBy": [
       "Lockpickwebwinkel.nl"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Locks (padlocks)",
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Organization (pick cases)",
+      "Tensioners (BOK)",
+      "Tensioners (other)"
+    ],
     "country": [
       "Netherlands"
     ],
@@ -628,12 +791,24 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Wyte's Box to Shit Belt",
+    "displayName": "",
     "description": "",
-    "potContents": "Jimylongs:\n- Starter set v4 .022\n- .015 flat hooks v4\n- .015 round hooks v4\n- Basic set v5 .019\n- Intermediate set v5 .019\n- Tool roll\nLOCKS:\n- Sega wafer lock\n- Schlage residential KiK (yellow)\n- Showa pt lock (white)\n- Yale 122/50 padlock (orange)\n- SFIC with both keys (purple/brown)\n- Paclock 90a (new-green)\n- American 1107 (new-green)\n- Goal s (blue)\n- Goal p (brown)\n- West pt (white but can be used for CL easily)",
+    "potContents": "Jimylongs:\n- Starter set v4 .022\n- .015 flat hooks v4\n- .015 round hooks v4\n- Basic set v5 .019\n- Intermediate set v5 .019\n- Tool roll\n\nLOCKS:\n- Sega wafer lock\n- Schlage residential KiK (yellow)\n- Showa pt lock (white)\n- Yale 122/50 padlock (orange)\n- SFIC with both keys (purple/brown)\n- Paclock 90a (new-green)\n- American 1107 (new-green)\n- Goal s (blue)\n- Goal p (brown)\n- West pt (white but can be used for CL easily)",
     "contributedBy": [
       "Wyte"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Tensioners (BOK)",
+      "Tensioners (TOK)",
+      "Organization (pick cases)",
+      "Locks (wafer)",
+      "Locks (padlocks)",
+      "Locks (pin tumbler)",
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)"
+    ],
     "country": [
       "USA"
     ],
@@ -678,13 +853,19 @@
     "id": "2025-022",
     "year": 2025,
     "potNumber": "0",
-    "title": "Ablo-ho-ho",
-    "description": "**Three winners!** \nEach will receive a Abloy 340 Protec2.",
-    "potContents": "Each of 3 winners receives an Abloy 340 Protec2",
+    "title": "Ablo-ho-ho (3 winners)",
+    "displayName": "",
+    "description": "Each of 3 winners will receive a Abloy 340 Protec2.",
+    "potContents": "Each of 3 winners receives:\n- 1x Abloy 340 Protec2 padlock",
     "contributedBy": [
       "ViceGrip"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (disc detainer)",
+      "Locks (padlocks)",
+      "Multiple winners"
+    ],
     "country": [
       "UK"
     ],
@@ -709,12 +890,19 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Dazzling Pick and Coaster set",
+    "displayName": "",
     "description": "",
-    "potContents": "0.5mm 301hy steel custom pick with matching coaster",
+    "potContents": "- 0.5mm 301hy steel custom pick\n- Matching coaster",
     "contributedBy": [
       "Reckedx"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (hooks)",
+      "Picks (custom)",
+      "Swag (art)",
+      "Swag (misc)"
+    ],
     "country": [
       "USA"
     ],
@@ -735,16 +923,44 @@
     ]
   },
   {
+    "id": "2025-024",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Locksticc",
+    "displayName": "",
+    "description": "",
+    "potContents": "- 1x Lockstick\n- 1x small Bonx box",
+    "contributedBy": [
+      "Bonx"
+    ],
+    "tags": [
+      "Artisan piece",
+      "Mystery pot"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": "20241214"
+  },
+  {
     "id": "2025-025",
     "year": 2025,
     "potNumber": "0",
     "title": "$$$ of Locc",
+    "displayName": "",
     "description": "$150 RAFL Gift Certificate at  lpulocks.com/rafl",
     "potContents": "$150 RAFL Gift Certificate. Good for a single purchase of available items from a single participating seller. **Please see details at [lpulocks.com/rafl](http://lpulocks.com/#/rafl)**",
     "contributedBy": [
       "LPUbelts.com Team"
     ],
-    "tags": [],
+    "tags": [
+      "Gift certificates"
+    ],
     "country": [
       "USA"
     ],
@@ -769,12 +985,28 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Hammer’s Ultimate RAFL Locksport Kit",
+    "displayName": "",
     "description": "",
-    "potContents": "- Reaper Lockpick Sheath\n- Protec2 w/ 2 Keys\n- CX5 w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Stainless Steel Follower\n\nLockpicks:\n\nMultipick Hooks:\n\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n\n- SP26\n- SP27\n- SP30\n- SP31\n\nMoki:\n\n- Deep Round Hook\n\nCustom Stainless Steel Handles and Screws made by Nosu\nBook of Bones Sticker",
+    "potContents": "Locks: \n- Protec2 w/ 2 Keys\n- CX5 w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n\nMoki Hooks:\n- Deep Round Hook\n\nMultipick Hooks:\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\n\nTools:\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Stainless Steel Follower\n- Reaper Lockpick Sheath\n\nSwag:\n- Custom Stainless Steel Handles and Screws made by Nosu\n- Book of Bones Sticker",
     "contributedBy": [
       "Deadhammer"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (disc detainer)",
+      "Locks (dimple)",
+      "Locks (sliders/fingerpins)",
+      "Locks (wafer)",
+      "Picks (hooks)",
+      "Picks (dimple)",
+      "Tensioners (TOK)",
+      "Organization (pick cases)",
+      "Organization (mats/trays)",
+      "Tools (gutting)",
+      "Swag (stickers)",
+      "Swag (misc)"
+    ],
     "country": [
       "Canada"
     ],
@@ -841,12 +1073,17 @@
     "year": 2025,
     "potNumber": "0",
     "title": "A Symantec branded denim jacket",
+    "displayName": "",
     "description": "Jacket filled with 5.5 pounds of locks",
     "potContents": "An XL denim jacket with the Symantec logo on it.\nIt also contains 5.5lb of mystery locks",
     "contributedBy": [
       "Craig 3.0"
     ],
-    "tags": [],
+    "tags": [
+      "Swag (misc)",
+      "Swag (branded)",
+      "Mystery pot"
+    ],
     "country": [
       "USA"
     ],
@@ -885,12 +1122,18 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Buga buga",
+    "displayName": "",
     "description": "",
-    "potContents": "2 x Buga euro cylinders, rebranded GeGe ANS-2, mastered with keys\r\n1 x CES WM 5, euro cylinder, with key\r\n1 x Zeiss Ikon rim cylinder (Mail box), SK6, Z531, with key\r\n1 x Winkhaus double euro cylinder, standard cylinder, with keys",
+    "potContents": "- 2 x Buga euro cylinders, rebranded GeGe ANS-2, mastered with keys\n- 1 x CES WM 5, euro cylinder, with key\n- 1 x Zeiss Ikon rim cylinder (Mail box), SK6, Z531, with key\n- 1 x Winkhaus double euro cylinder, standard cylinder, with keys",
     "contributedBy": [
       "hunson"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (dimple)"
+    ],
     "country": [
       "Germany"
     ],
@@ -915,12 +1158,19 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Yabended my picks",
+    "displayName": "",
     "description": "",
     "potContents": "1. Abloy Classic cabinet lock\r\n2. Miwa JN\r\n3. West 917\r\n4. West 916\r\n5. Goal V18\r\n6. Wilka 6 pin double euro cylinder\r\n7. BKS 5 pin cylinder double euro\r\n8. BUVA SKG 6 pin cylinder double euro\r\n9. GeGe AP2000 6 pin half euro cylinder\r\n10. Trioving 7 pin cylinder",
     "contributedBy": [
       "Yabende"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (disc detainer)",
+      "Locks (high-pin-count)"
+    ],
     "country": [
       "Poland"
     ],
@@ -944,13 +1194,17 @@
     "id": "2025-030",
     "year": 2025,
     "potNumber": "0",
-    "title": "(lockpickersbench)",
+    "title": "Lockpickersbench shopping spree (2 winners)",
+    "displayName": "",
     "description": "2 winners receive a $100 ticket to a shopping spree at LPU's favorite one-stop shop! With anything and everything you'd possibly want from the best brands in the industry, what would you use it on?",
     "potContents": "2x winners receive a $100 gift card for anything on lockpickersbench.com!",
     "contributedBy": [
       "lockpickersbench.com"
     ],
-    "tags": [],
+    "tags": [
+      "Gift certificates",
+      "Multiple winners"
+    ],
     "country": [
       "USA"
     ],
@@ -966,12 +1220,22 @@
     "year": 2025,
     "potNumber": "0",
     "title": "(Clever Medeco-related title)",
+    "displayName": "",
     "description": "",
-    "potContents": "- Medeco M3 pinning mat\n- Medeco Steelguard dropbolt with Biaxial 5 pin cylinder, 2 keys\n- Medeco M3 deadbolt cylinder with barrel countermilling and barrel drivers, 2 keys\n- Sargent & Greenleaf 8088 combinaison padlock\n- Squire 440, one key and 3 wires of different diameters to make the opening tools",
+    "potContents": "- Medeco M3 pinning mat\n- Medeco Steelguard dropbolt with Biaxial 5 pin cylinder, 2 keys\n- Medeco M3 deadbolt cylinder with barrel countermilling and barrel drivers, 2 keys\n- Sargent & Greenleaf 8088 combinasion padlock w/ change key\n- Squire 440, one key and 3 wires of different diameters to make the opening tools",
     "contributedBy": [
       "Mugatu"
     ],
-    "tags": [],
+    "tags": [
+      "Organization (mats/trays)",
+      "Locks (intermediate/advanced)",
+      "Locks (padlocks)",
+      "Locks (dial)",
+      "Locks (pin tumbler)",
+      "Locks (lever)",
+      "Materials (pick making)",
+      "Swag (branded)"
+    ],
     "country": [
       "Canada"
     ],
@@ -996,12 +1260,15 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Amvgaert shopping spree",
+    "displayName": "",
     "description": "A $400 gift card to go crazy at Amvgaert's lock store!",
     "potContents": "$400 gift card to Amvgaert's lock store! https://docs.google.com/spreadsheets/d/1_Dk619Y3Zj_zsLHKLxGZlRdgSUH1pF0u2BxFScgJPXc/edit?gid=32499356#gid=32499356",
     "contributedBy": [
       "amvgaert"
     ],
-    "tags": [],
+    "tags": [
+      "Gift certificates"
+    ],
     "country": [
       "USA"
     ],
@@ -1025,13 +1292,19 @@
     "id": "2025-034",
     "year": 2025,
     "potNumber": "0",
-    "title": "Beginner's Boxes",
+    "title": "Beginner's Boxes (2 winners)",
+    "displayName": "",
     "description": "",
-    "potContents": "2 winners will receive a large box containing US cylinders of all sorts, some with keys most without\nYou will get what you see in each box plus additional locks on top in lieu of padding! Locks range from basic simple locks to some collector items that even the Black belts in this community can’t seem to pick!",
+    "potContents": "2 winners will receive a large box containing US cylinders of all sorts, some with keys most without. \nYou will get what you see in each box plus additional locks on top in lieu of padding! Locks range from basic simple locks to some collector items that even the Black belts in this community can’t seem to pick!",
     "contributedBy": [
       "PickSmith"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)",
+      "Multiple winners",
+      "Mystery pot"
+    ],
     "country": [
       "USA"
     ],
@@ -1077,12 +1350,15 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Wera waiting for…",
+    "displayName": "",
     "description": "Step up your tool collection with these Wera standard and precision screwdrivers.  The three standard screwdrivers have the Wera laser cut tips that make stripping screw heads a thing of the past.  American 1100 security screws with Loctite are no match.  Trust me, you will never pick up a cheap screwdriver again.   The precision set does not have that great laser cut tip, but still are a pleasure to use for those damn tiny screws.  All are brand new, and you will be their forever home.",
     "potContents": "Standard Set:\n- Flat head, 4mm\n- Phillips #1 and #2 (supports JIS screws as well, for those Japanese lock fans)\n\nPrecision Set\n- Flat head, 1.5mm, 2.0mm, 2.5mm, and 3.0mm\n- Phillips #00, #0, and #1\n\nDo not lend these out, as they will not return.  They are that good.",
     "contributedBy": [
       "f-eq-ma"
     ],
-    "tags": [],
+    "tags": [
+      "Tools (misc)"
+    ],
     "country": [
       "USA"
     ],
@@ -1107,12 +1383,20 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Disc-Oh Fever",
+    "displayName": "",
     "description": "",
-    "potContents": "Custom painted Sparrows DD pick\r\nHaoshi ABLOY Classic Pick\r\nABLOY Classic 3020 \r\nGuttable Unity 40mm Marine DD Padlock\r\nZarker J45S DD Padlock\r\nEschlenz 3d printed DD pinning tray",
+    "potContents": "- Custom painted Sparrows DD pick\n- Haoshi ABLOY Classic Pick\n- ABLOY Classic 3020 \n- Guttable Unity 40mm Marine DD Padlock\n- Zarker J45S DD Padlock\n- Eschlenz 3d printed DD pinning tray",
     "contributedBy": [
       "banditobrandino07"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (disc detainer)",
+      "Picks (custom)",
+      "Organization (mats/trays)",
+      "Locks (padlocks)",
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)"
+    ],
     "country": [
       "USA"
     ],
@@ -1137,12 +1421,20 @@
     "year": 2025,
     "potNumber": "0",
     "title": "The Annual Lockwood Pot",
+    "displayName": "",
     "description": "",
-    "potContents": "Lockwood 334B45 - Tapered Pins - With Key\r\nLockwood Spool pins to repin 334B45 \r\nLockwood 225 Wafer locks x2 - Keyless \r\nLockwood 232 Padlocks x2 - Keyless\r\nLockwood 234 Padlocks x2 - With Key\r\nLockwood 312 Padlock - Keyless\r\nLockwood Oval LP Restricted Keyway - Keyless\r\nLockwood Rim BF Restricted Keyway - Keyless\r\nLockwood V7 Oval Cylinder - With key\r\nLockwood Handy Lock new in pack\r\nCirlock LOTO hasp\r\nCirlock LOTO lock - With Key",
+    "potContents": "- Lockwood 334B45 - Tapered Pins - With Key\n- Lockwood Spool pins to repin 334B45 \n- Lockwood 225 Wafer locks x2 - Keyless \n- Lockwood 232 Padlocks x2 - Keyless\n- Lockwood 234 Padlocks x2 - With Key\n- Lockwood 312 Padlock - Keyless\n- Lockwood Oval LP Restricted Keyway - Keyless\n- Lockwood Rim BF Restricted Keyway - Keyless\n- Lockwood V7 Oval Cylinder - With key\n- Lockwood Handy Lock new in pack\n- Cirlock LOTO hasp\n- Cirlock LOTO lock - With Key",
     "contributedBy": [
       "HVLogic"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (beginner)",
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (wafer)",
+      "Materials (pin kits)",
+      "Tools (misc)"
+    ],
     "country": [
       "Australia"
     ],
@@ -1167,12 +1459,19 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Poser Swag",
+    "displayName": "",
     "description": "You don’t have put in the long hours it takes to be the cool guy picker that gets the ladies purrrring when you can much more easily get the same effect by winning this picking swag",
     "potContents": "- Stickers and poker chips donated by LadyLocks\n- A new Yeti tumbler with various pickers stickers\n- One Large size green LPU hoodie\n- One copy of Locksport, A Hackers Guide to Lockpicking, Impressioning, & Safe Cracking.",
     "contributedBy": [
       "banditobrandino07"
     ],
-    "tags": [],
+    "tags": [
+      "Swag (stickers)",
+      "Swag (branded)",
+      "Swag (LPU)",
+      "Swag (misc)",
+      "Books"
+    ],
     "country": [
       "USA"
     ],
@@ -1197,12 +1496,25 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Untitled Goose Pot",
+    "displayName": "",
     "description": "",
-    "potContents": "Pinning trays:\n-Mini Portable Pinning Trays (x8)\n-Mini Portable Pinning Tray Dresser\n-Pin Tumbler Gutting Tray\n-Disc Detainer Gutting Tray\n\nFollowers:\n-10mm, 12.5mm, 12.8mm, & 14mm Split/Solid Plug Followers\n-10mm, 12.5mm, & 14mm Segmented Plug Followers (x6 each size)\n-Plug Follower Stand\n\nVise and vise accessories:\n-Chuck Vise (with Smallrig super clamp and hardware)\n-KiK Vise Holder\n-Euro Vise Holder\n-SFIC Vise Holder\n-Cam Vise Holder\n\nCore holders:\n-12.5mm Core Holder\n-10mm Core Holder\n\nSpeed Reloaders:\n-ASSA 700 Speed Reloader\n-GOAL P Speed Reloader\n-GOAL S Speed Reloader\n\nQuality of life:\n-Disc Detainer Turner\n-Small Pick Stand\n-Key Mummy for Challenge Locks \n\nCool stuff:\n-Educational Lock and Pins (With spool pin, mushroom pin, serrated pin, and master wafers) \n-Four NCR \"goose\" stickers",
+    "potContents": "Pinning trays:\n- Mini Portable Pinning Trays (x8)\n- Mini Portable Pinning Tray Dresser\n- Pin Tumbler Gutting Tray\n- Disc Detainer Gutting Tray\n\nFollowers:\n- 10mm, 12.5mm, 12.8mm, & 14mm Split/Solid Plug Followers\n- 10mm, 12.5mm, & 14mm Segmented Plug Followers (x6 each size)\n- Plug Follower Stand\n\nVise and vise accessories:\n- Chuck Vise (with Smallrig super clamp and hardware)\n- KiK Vise Holder\n- Euro Vise Holder\n- SFIC Vise Holder\n- Cam Vise Holder\n\nCore holders:\n- 12.5mm Core Holder\n- 10mm Core Holder\n\nSpeed Reloaders:\n- ASSA 700 Speed Reloader\n- GOAL P Speed Reloader\n- GOAL S Speed Reloader\n\nQuality of life:\n- Disc Detainer Turner\n- Small Pick Stand\n- Key Mummy for Challenge Locks \n\nCool stuff:\n- Educational Lock and Pins (With spool pin, mushroom pin, serrated pin, and master wafers) \n- Four NCR \"goose\" stickers",
     "contributedBy": [
       "NCR"
     ],
-    "tags": [],
+    "tags": [
+      "Organization (mats/trays)",
+      "Organization (for tools)",
+      "Organization (pick stands)",
+      "Organization (misc)",
+      "Tools (gutting)",
+      "Tools (vises)",
+      "Tools (core holders)",
+      "Tools (training)",
+      "Tools (misc)",
+      "Swag (stickers)",
+      "Swag (LPU)"
+    ],
     "country": [
       "USA"
     ],
@@ -1218,13 +1530,33 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Beginner Smeginner Pot",
+    "displayName": "",
     "description": "",
     "potContents": "From todd:\n- Rollup Case\n- Gutting Set (C Clip Removal Tool, Follower, Pinning Tweezers)\n- 3D Printed Gutting Station\n- 3D Printed Disc Detainer Turning Tool\n- CI Bare Sport Trainer (Mortise & Euro Inserts included)\n- CI .025 Starter Set in 44 Delta Handles (already shimmed)\n- Jimy Long's .023 Starter Set v5\n- Aliexpress Disc Detainer Pick + Extra Parts\n- Challenge Lock Kit\n- 2 Unknown Locks w/Keys (Possibly Auto)\n- Unranked Ademco Tubular\n- Unranked American Tubular\n- White Laminated Premier Padlock\n- Yellow Schlage Commercial KIK\n- Orange Abus 55/40\n\nFrom Sidepicks:\n- 3D Printed Follower Set\n- Green HPP Disc Detainer Padlock\n- Green American Lock 1100\n- Blue Abus C83 Euro KIK",
     "contributedBy": [
       "todd",
       "Sidepicks"
     ],
-    "tags": [],
+    "tags": [
+      "Organization (pick cases)",
+      "Organization (for locks)",
+      "Organization (for tools)",
+      "Organization (mats/trays)",
+      "Tools (gutting)",
+      "Tools (misc)",
+      "Tools (training)",
+      "Tools (core holders)",
+      "Materials (pin kits)",
+      "Materials (pin making)",
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Picks (disc detainer)",
+      "Tensioners (BOK)",
+      "Locks (beginner)",
+      "Locks (pin tumbler)",
+      "Locks (tubular)",
+      "Locks (padlocks)"
+    ],
     "country": [
       "USA"
     ],
@@ -1240,12 +1572,19 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Unpurchaseable Bones Pack",
+    "displayName": "",
     "description": "The titular skellies in Bare Bones' promo images have been only previously given away to select individuals for there contributions to lock sport (Snake, Pocket Woman, Cranky Lockpicker, Knox Locks, etc). However, just for the raffle, the folks at Bare Bones Lock Picking will make one old and one new version of these unpurchaseable skellies.",
     "potContents": "- Skellie, old style\n- Skellie, new style with interchangeable heads/caps\n- Clear femur pick handle \n- Some other ‘unobtainable bone items’ (early model designs,one off prototypes,etc)",
     "contributedBy": [
       "Bare Bones Lock Picking"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Swag (art)",
+      "Swag (misc)",
+      "Swag (branded)",
+      "Mystery pot"
+    ],
     "country": [
       "Australia"
     ],
@@ -1277,12 +1616,17 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Nutted Weaspick",
+    "displayName": "",
     "description": "",
     "potContents": "Custom pick by Doktor Weasel with handle made from tagua nut and purple dyed ash wood",
     "contributedBy": [
       "Doktor Weasel"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (custom)",
+      "Picks (hooks)"
+    ],
     "country": [
       "USA"
     ],
@@ -1307,12 +1651,17 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Brassed Weaspick",
+    "displayName": "",
     "description": "",
     "potContents": "Custom pick by Doktor Weasel with etched brass handle and nickel inlay",
     "contributedBy": [
       "Doktor Weasel"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (custom)",
+      "Picks (hooks)"
+    ],
     "country": [
       "USA"
     ],
@@ -1337,12 +1686,17 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Aluminummed Weaspick",
+    "displayName": "",
     "description": "",
     "potContents": "Custom pick by Doktor Weasel with etched aluminum handle",
     "contributedBy": [
       "Doktor Weasel"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (custom)",
+      "Picks (hooks)"
+    ],
     "country": [
       "USA"
     ],
@@ -1367,12 +1721,17 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Extra Nutted Weaspick",
+    "displayName": "",
     "description": "",
     "potContents": "Custom pick by Doktor Weasel with handle made from tagua nut and acrylic",
     "contributedBy": [
       "Doktor Weasel"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Picks (custom)",
+      "Picks (hooks)"
+    ],
     "country": [
       "USA"
     ],
@@ -1388,12 +1747,15 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Lockbooks",
+    "displayName": "",
     "description": "",
     "potContents": "- Locks and Keys throughout the Ages\n- Locks, Safes and Security: An International Police Reference (2 volume set)\n- Locksport: A Hackers Guide to Lockpicking, Impressioning, and Safe Cracking\n- High-Security Mechanical Locks: An Encyclopedic Reference",
     "contributedBy": [
       "knowthebird"
     ],
-    "tags": [],
+    "tags": [
+      "Books"
+    ],
     "country": [
       "USA"
     ],
@@ -1418,12 +1780,16 @@
     "year": 2025,
     "potNumber": "0",
     "title": "The Mokeeper",
+    "displayName": "",
     "description": "",
     "potContents": "Custom Moki pick case made from cork fabric",
     "contributedBy": [
       "Sarius"
     ],
-    "tags": [],
+    "tags": [
+      "Artisan piece",
+      "Organization (pick cases)"
+    ],
     "country": [
       "Germany"
     ],
@@ -1469,6 +1835,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "elocksmith elockwood Pot",
+    "displayName": "",
     "description": "Our friends at elocksmith are back once again this year with a pair of staple Lockwood padlocks! ",
     "potContents": "Two popular Lockwood padlocks:\n- 1 x 334B45\n- 1 x 234S45\n\nDonated by elocksmith Pty Ltd - elocksmiths.com.au ",
     "contributedBy": [
@@ -1499,6 +1866,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "elocksmith esafe Pot",
+    "displayName": "",
     "description": "A never-before-seen addition to the raffle--elocksmith is offering a prize containing two brand new digital safe locks!",
     "potContents": "Two NOS digital safe locks, both in the original box with instructions:\n- 1 x Kaba Mas T52 \n- 1 x Mas Hamilton 100R\n\nDonated by elocksmith Pty Ltd - elocksmiths.com.au",
     "contributedBy": [
@@ -1529,6 +1897,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "C&C: Cat Hair and Coasters",
+    "displayName": "",
     "description": "This pot has some coasters in it, but really it's for the cat hair connoisseurs out there who need another bag for their collection",
     "potContents": "- 3 slate hand coasters (definitely not roon) \n- a bag of Stormy and Link hair (in progress of being collected)",
     "contributedBy": [
@@ -1559,6 +1928,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Unprotected Kromer Protector",
+    "displayName": "",
     "description": "A beautifully made cutaway of one of the most infamous locks ever manufactured",
     "potContents": "Kromer Protector BP55K-Cutaway",
     "contributedBy": [
@@ -1596,6 +1966,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Fireshaped Dice Sets",
+    "displayName": "",
     "description": "Choose the lock you want to pick today by rolling one or more of Fireshaper's handmade dice! Pot contains two beautiful dice sets and a spindown die.",
     "potContents": "Two dice sets, handmade by Fireshaper:\n- Set of 8 red die (1d4, 1d6, 1d8, 1d10, 1d100, 1d12, 2d20)\n- Set of 7 white die (1d4, 1d6, 1d8, 1d10, 1d100, 1d12, 2d20)\n- 1x spindown d20",
     "contributedBy": [
@@ -1640,6 +2011,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Big Box o Locks",
+    "displayName": "",
     "description": "",
     "potContents": "It's a big box of locks, all of which are in the picture. Look at em, there's so many!\n+A mystery holiday box",
     "contributedBy": [
@@ -1670,6 +2042,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "More Lockbooks!",
+    "displayName": "",
     "description": "",
     "potContents": "Two books on locks and pen testing\n- Professional Penetration Testing\n- Practical Lock Picking",
     "contributedBy": [
@@ -1700,6 +2073,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "LPU Pet Pillow Pot",
+    "displayName": "",
     "description": "What could anyone possibly want with 18 ugly pillows of pets that aren't even their's? How expensive is it going to be to ship this internationally?\nLife is full of questions that don't matter, so just put your tickets in the pet pillow pot.",
     "potContents": "18 ugly pet pillows of various sizes, made using the photos shown below. Pets and owners include:\nBrian - Yohapii\nCharlie - DQ\nCharn - sisko\nDella - BurnB1\nGomez - birdie\nIshtar - Musketeer\nKitty - Craig 3.0\nRiley - Craig 3.0\nKroogs & Mozzie - f-eq-ma\nLuna - Dra9i\nLuna - Red Wanderer\nMia - DoNotDuplicate\nMiwa - CorrectJeans\nNala - Two06\nPenny - NiXXed\nRio - Reid\nSamus - Pantoufle\nStanley - Pantoufle",
     "contributedBy": [
@@ -1730,6 +2104,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Crazy Rainbow Pot",
+    "displayName": "",
     "description": "",
     "potContents": "1 x Crazy Rainbow Split/Solid Follower Set (4 different sizes)\r\n1 x Crazy Rainbow Chuck Vise (Generic)\r\n1 x SmallRig \"Super\" Clamp (plus hardware)\r\n1 x Padlock Plug Holder Set (Silky Black)\r\n1 x SFIC Vise Lock Holder (Silky Black)\r\n1 x KIK Vise Lock Holder (Silky Black)\r\n1 x Euro Vise Lock Holder (Silky Black)\r\n1 x LPL Pinning Tray (Black to White Gradient)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
     "contributedBy": [
@@ -1767,6 +2142,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Glow in the Dark Pot",
+    "displayName": "",
     "description": "",
     "potContents": "1 x Fluorescent Green/Glow in the Dark Green Split/Solid Follower Set (4 different sizes)\r\n1 x Fluorescent Green/Glow in the Dark Green Split/Split Follower Set (4 different sizes)\r\n1 x Fluorescent Green/Glow in the Dark Green Chuck Vise (Exotic)\r\n1 x SmallRig \"Crab\" Clamp (plus hardware)\r\n1 x Padlock Plug Holder Set (Fluorescent Green/Glow in the Dark Green)\r\n1 x KIK Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\r\n1 x Euro Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
     "contributedBy": [
@@ -1804,6 +2180,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Chipped Belts",
+    "displayName": "",
     "description": "",
     "potContents": "1 x Complete Set of Belt Chips\r\n1 x Belt Chip Stand (Black)\r\n1 x Display Case\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
     "contributedBy": [
@@ -1841,6 +2218,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "\"The Mechanism\"",
+    "displayName": "",
     "description": "",
     "potContents": "1 x \"The Mechanism\" - A Custom Etched American Lock 1100 (Black)\r\n2 x Keys (etched on both sides)\r\n1 x Stainless Steel Dog Tag (etched on both sides)\r\n1 x 44 Delta Poker Chip\r\n1 x 44 Delta Maker Chip\r\n1 x 44 Delta Sticker",
     "contributedBy": [
@@ -1892,6 +2270,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Peace's Pot of Stolen Spanish Locks II",
+    "displayName": "",
     "description": "",
     "potContents": "LOCKS:\n- Ezcurra DS-10\n- Ezcurra SEA 23\n- Tesa TE-5\n- Tesa T60\n- Tesa TX80\n- Tesa TK100\n- Tesa T-10\n- MCM SCX\n- Lince C4 padlock\n- STS IX con bola\n\nLOOT:\n- Peace tray\n- Tiny Peace tray\n- Portable Peace tray\n- Follower set\n- Stickers and the rare Peace poker chip",
     "contributedBy": [
@@ -1921,7 +2300,8 @@
     "id": "2025-060",
     "year": 2025,
     "potNumber": "0",
-    "title": "Gorg's Medium Hooks",
+    "title": "Gorg's Medium Hooks (3 winners)",
+    "displayName": "",
     "description": "Been touching grass all day? Go inside and pick some locks. Gorg the blacksmith doesn't just make foam swords for simulated midieval combat, he also makes lockpicks. Put your tickets on these if you want to have some fun alone with your locks, or hand them over to settle whatever lockpicks settle.\n\nwww.gorgtheblacksmith.com the cutting edge of foam sword technology",
     "potContents": "3 winners will receive:\n- 1 custom medium hook, made by Gorg the Blacksmith\n- 1 custom tention tool\n\nWinners will receive their choice of the picks in the order in which they won",
     "contributedBy": [
@@ -1987,6 +2367,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Father and Son Swords",
+    "displayName": "",
     "description": "Been lockpicking all night? Go outside and touch some grass. Gorg the blacksmith doesn't just make picks, he makes foam swords for simulated medieval combat. Put your tickets on these if you want to have some fun with your partner, kids, or hand them over to settle disputes in the office.\n\nwww.gorgtheblacksmith.com the cutting edge of foam sword technology",
     "potContents": "2 professionally-made foam swords, one father, and one son",
     "contributedBy": [
@@ -2017,6 +2398,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Gorg and Jimy",
+    "displayName": "",
     "description": "",
     "potContents": "- Jimylongs .023 starter set\n- 3x custom tensioners",
     "contributedBy": [
@@ -2047,6 +2429,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Sage Add-Vise",
+    "displayName": "",
     "description": "",
     "potContents": "0.019 Jimy Longs pick set with TOK tensioners.\nSafety Lockout LOTO padlock.\nBrady LOTO padlock\nKenaurd dimple mortise lock\nASSA Max +\nEschlenz printed LockChuck Vise with custom brass knob.\nEschlenz printed pinning trays w/ cabinet",
     "contributedBy": [
@@ -2077,6 +2460,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "It Can See You",
+    "displayName": "Į̴̰̤̣͙͔̹̺̦̣͋̅̄͒̂͜͜T̸̨̪̪̲̬̦͊̑̇̀͑̿͑̕ͅ ̷̖̼͇͎̥̫̣̜͔̬̙͈̐C̵̨̢̡̜̝͉͓̜͈̺̫̟̘͒̆A̷͔̩̦̳̟̭̯̿͊͂̐̍͌̄͂̈́̾̚̚̕͘͠͝Ṇ̶̙̜̺̞͐͒͂̂̀͆̃̆͆̉̌͋̿́͘̕̕ ̵̧̭̞̼̲̩̙͙͕̙͌͜Ș̵̡̢̫̖̣̗̘͙̺͎̠̦̘̰͖̉̆̔͆̿͌͘͝ͅE̵̪̥̖̤̿̋͋͌E̵̦̺̺̬̘̭̠͌̐̎̏͜ ̸͕̼͕͖̝̠͙͇͕̲̹̯̫̩̇͌̈́͜Y̸̨̹͛͛̂̔͂̏͐̋̈́̑͂̿̋̄͆̚͘Ơ̸̧̫̹͇̦͔̟̄̀̾̍͊̾͗͝͝U̴̢͎̦̤͙̦̦̗͉͂̽̾̐̉̓ͅ",
     "description": "",
     "potContents": "- A rake with many waves and many eyes that see in the dark",
     "contributedBy": [
@@ -2091,7 +2475,7 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241227",
     "media": [
       {
         "title": "By: LockpickingDev",
@@ -2121,6 +2505,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Server-grade Nixie clock kit",
+    "displayName": "",
     "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed!\nNeeds 12vdc power supply to complete and case made for it\n\nThese are really nice nixie tubes, too",
     "potContents": "- A nixie kit with server-grade NL841 tubes (200k hour life) and a kit to assemble",
     "contributedBy": [
@@ -2135,7 +2520,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241227",
     "media": [
       {
         "title": "By: V Pinball",
@@ -2157,7 +2542,8 @@
     "id": "2025-067",
     "year": 2025,
     "potNumber": "0",
-    "title": "Naked Americans",
+    "title": "Naked Americans (3 winners)",
+    "displayName": "",
     "description": "",
     "potContents": "3 winners receive a custom American 1100 cutaway (will also contain cores, not shown in photo)",
     "contributedBy": [
@@ -2172,7 +2558,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241227",
     "media": [
       {
         "title": "By: MelBrooksKA",
@@ -2188,6 +2574,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "Mysterious Moki Pot",
+    "displayName": "",
     "description": "",
     "potContents": "Picks, some moki merch, pouch, stickers, voucher for my shop\n\nYou know, Moki stuff",
     "contributedBy": [
@@ -2202,13 +2589,45 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241227"
+  },
+  {
+    "id": "2025-069",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Sargent&(custom color)leaf 6741",
+    "displayName": "",
+    "description": "Sargent & Greenleaf, 6741, mounted, your choice of color (if available), with change key and dial ring key",
+    "potContents": "S&G 6741 with change key and dial ring key, 3D-printed mount of winner's choice of color",
+    "contributedBy": [
+      "DWeb"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International Shipping Included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "winner": "",
+    "dateAdded": "20241227",
+    "media": [
+      {
+        "title": "By: DWeb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54229279677_0de8421a10_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54229279677/in/album-72177720322810647/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54229279677_895e7c55c7_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-070",
     "year": 2025,
     "potNumber": "0",
     "title": "Fabianoh130.nl raffle pack",
+    "displayName": "",
     "description": "",
     "potContents": "- General euro cilinder cutaway\n- Abus 65/40 cutaway\n- Assa desmo 6p\n- Lips 30mm padlock\n- Trioving 55xx \n- Kaba Aura \n- Pfaffenhain v14\n- Dom RN\n- Winkhaus XR\n- Abus Brady Loto 30mm",
     "contributedBy": [
@@ -2223,7 +2642,7 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "",
+    "dateAdded": "20241227",
     "media": [
       {
         "title": "By: fabianoh130",
@@ -2239,6 +2658,7 @@
     "year": 2025,
     "potNumber": "0",
     "title": "(kiridashii pot)",
+    "displayName": "",
     "description": "",
     "potContents": "- New Moki Gold digger set with custom handles\n- SSDeV hooks with custom handles \n- Padlock body which can hold a half euro cylinder\n- Travel Pinning Tray + Storage from 44 Delta\n- a few more tensioners\n\nA few grubbed half euro cylinders: \n- no name (maybe yellow)\n- Abus E50 (orange)\n- Abus XP10 (green)\n- Abus C83 (blue)",
     "contributedBy": [
@@ -2253,25 +2673,28 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241227"
   },
   {
     "id": "2025-073",
     "year": 2025,
     "potNumber": "0",
-    "title": "(thatonenottrollguy pot)",
+    "title": "Big box of metal shaped like locks",
+    "displayName": "",
     "description": "",
-    "potContents": "",
+    "potContents": "A big box of postal lock cores",
     "contributedBy": [
       "thatonenottrollguy"
     ],
     "tags": [],
-    "country": [],
-    "shippingInfo": "",
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "",
+    "shippingType": "No international shipping",
     "winner": "",
-    "dateAdded": ""
+    "dateAdded": "20241227"
   }
 ]

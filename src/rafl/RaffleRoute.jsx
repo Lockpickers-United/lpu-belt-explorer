@@ -9,9 +9,6 @@ import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RafflePage from './RafflePage.jsx'
-import useData from '../util/useData.jsx'
-import {raflJsonUrl} from '../data/dataUrls'
-import LoadingDisplay from '../misc/LoadingDisplay'
 import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RaffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
@@ -23,7 +20,7 @@ import AdminRoleButton from './AdminRoleButton.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
-    const {preview, allPots, raflState} = useContext(RaffleContext)
+    const {preview, allPots, raflState, refresh} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()
@@ -32,11 +29,7 @@ function RaffleRoute() {
     const previewMode = searchParams.has('preview')
     const showPreview = preview || previewMode
 
-    const {data, loading, error, refresh} = useData({url: raflJsonUrl})
-    const dataReady = (data && !loading && !error)
-    const allEntries = preview && dataReady
-        ? data ?? []
-        : allPots
+    const allEntries = allPots
 
     const individualPot = allEntries.find(e => e.id === id)
     const showSingle = (!!single && individualPot)
@@ -87,11 +80,7 @@ function RaffleRoute() {
                                 <RafflePreviewBar refresh={refresh}/>
                             }
 
-                            {showPreview && !dataReady
-                                ? <LoadingDisplay/>
-                                : <RafflePage profile={lockCollection}/>
-                            }
-
+                            <RafflePage profile={lockCollection}/>
 
                             <Footer/>
                         </React.Fragment>

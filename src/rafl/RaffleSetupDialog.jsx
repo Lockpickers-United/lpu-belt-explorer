@@ -10,8 +10,8 @@ export default function RaffleSetupDialog() {
         <Dialog open={raflState === 'setup' && !raffleAdminRole} componentsProps={{
             backdrop: {style: {backgroundColor: '#000', opacity: 1}}
         }}>
-            <div style={{width: 350, textAlign: 'center', padding: 30}}>
-                <div style={{fontSize: '1.3rem', fontWeight: 700}}>Almost there...</div>
+            <div style={{width: 320, textAlign: 'center', padding: 20}}>
+                <div style={{fontSize: '1.3rem', fontWeight: 700}}>Pardon our dust...</div>
                 <br/>
                 <div style={{fontSize: '1.2rem'}}>RAFL launches on January 1st!</div>
                 <br/>
