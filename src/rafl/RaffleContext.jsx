@@ -48,7 +48,7 @@ export function RaffleProvider({children}) {
             }, {})
             : {}
     },[raflResponseDetails2])
-
+    
     const allPots = useMemo(() => {
         const potEntries = preview && allDataLoaded
             ? raflJsonUrl ?? []
@@ -60,9 +60,10 @@ export function RaffleProvider({children}) {
                     ...entry,
                     fuzzy: removeAccents([
                         entry.title,
+                        entry.contributedBy.join(','),
                         entry.winner,
                         entry.description,
-                        entry.potContents
+                        entry.potContents,
                     ].join(',')),
                     collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
                     tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
