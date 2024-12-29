@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import {sheetIds} from '../../keys/raflSheetIds.js'
 import {localUser, prodUser} from '../../keys/users.js'
 
-const live = true
+const live = false
 
 const production = process.env.USER !== localUser
 
@@ -236,8 +236,6 @@ async function addQuestions(auth, formId, raflData) {
             )
             .filter(x => x)
 
-    jsonIt('potQuestions', potQuestions)
-
     if (potQuestions.length > 0) {
         const forms = google.forms({version: 'v1', auth})
         const updateResponse = await forms.forms.batchUpdate({
@@ -279,6 +277,47 @@ async function buildQuestionMap(raflData) {
     return questionMap
 }
 
+
+export async function getFormResponses(auth, formId) {
+
+    const formItems = await getFormItems(auth, formId)
+    const questionMap = formItems.reduce((acc, item) => {
+        acc[item.questionItem.question.questionId] = item.title
+        return acc
+    }, {})
+
+    const forms = google.forms({version: 'v1', auth})
+    const responses = (await forms.forms.responses.list({
+        formId: formId
+    })).data.responses
+
+    return responses?.length > 0
+        ? responses.map(res => {
+            return Object.keys(res.answers).reduce((acc, key) => {
+                if (questionMap[key] === 'Your Preferred Platform') {
+                    acc.platform = res.answers[key].textAnswers.answers[0].value
+                } else if (questionMap[key] === 'Platform Username') {
+                    acc.username = res.answers[key].textAnswers.answers[0].value
+                } else if (questionMap[key] === 'Selected charity') {
+                    acc.charity = res.answers[key].textAnswers.answers[0].value
+                } else if (questionMap[key] === 'Receipt from approved charity (hosted image link, must contain a visible date)') {
+                    acc.receipt = res.answers[key].textAnswers.answers[0].value
+                } else if (questionMap[key] === 'Total donation in USD') {
+                    acc.donation = parseInt(res.answers[key].textAnswers.answers[0].value)
+                } else {
+                    acc.pots = acc.pots
+                        ? {...acc.pots, [questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
+                        : {[questionMap[key]]: parseInt(res.answers[key].textAnswers.answers[0].value)}
+                }
+                acc.donor = `${acc.platform}-${acc.username}`
+                acc.lastSubmittedTime = res.lastSubmittedTime
+                return acc
+            }, {})
+        })
+        : []
+
+}
+
 async function getSheetsResponses(auth, useReview) {
     const service = google.sheets({version: 'v4', auth})
     try {
@@ -288,6 +327,8 @@ async function getSheetsResponses(auth, useReview) {
             spreadsheetId: '1bGLLlSlGTRqLODNGrK-jrkQ7_lCBxCMuZ6pBWTxP98U',
             range: range
         })
+
+        console.log('result', result.data.values)
 
         const [headers, ...rows] = result.data.values
         let items = []
@@ -299,10 +340,6 @@ async function getSheetsResponses(auth, useReview) {
             items.push(obj)
         })
 
-        if (useReview) {
-            items = items.filter(x => x['Good to go'] === 'TRUE')
-        }
-
         return items
 
     } catch (err) {
@@ -313,9 +350,9 @@ async function getSheetsResponses(auth, useReview) {
 
 async function processSheetsResponses(sheetResponses, raflData, useReview) {
 
-    //jsonIt('sheetResponses', sheetResponses)
-
     const summaryData = sheetResponses.reduce((acc, res) => {
+        acc = acc ? acc : {}
+        if (res['Good to go'] !== 'TRUE') return acc
 
         let platform = useReview
             ? res['Platform']
@@ -329,7 +366,6 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
         let charity = useReview
             ? res['Charity Name']
             : res['Selected charity']
-
 
         setDeepAdd(acc, ['totalDonations'], donation)
         setDeepAdd(acc, ['totalDonorCount'], 1)
@@ -356,12 +392,23 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
         return acc
     }, {})
 
-    delete summaryData.uniqueDonors
-    delete summaryData.platformDonors
+    if (summaryData?.uniqueDonors) delete summaryData.uniqueDonors
+    if (summaryData?.platformDonors) delete summaryData.platformDonors
 
+    //jsonIt('sheetResponses', sheetResponses)
+    //jsonIt('summaryData', summaryData)
 
     const detailedData = sheetResponses?.reduce((acc, res) => {
-        const date = dayjs(res.Timestamp).format('YYYY-MM-DD')
+        acc = acc ? acc : {}
+        if (res['Good to go'] !== 'TRUE') return acc
+
+        const date = dayjs(res['Date']).format('YYYY-MM-DD')
+
+        const tz = "America/Los_Angeles"
+        const date1 = dayjs('12/20/2024 7:28:02').tz(tz).format('YYYY-MM-DD HH:mm:ss')
+        const date2 = dayjs("2024-12-20T15:28:02.495826Z").format('YYYY-MM-DD HH:mm:ss')
+        //console.log(date1 === date2 ? 'date1 === date2' : 'NO MATCH')
+
         let platform = useReview
             ? res['Platform']
             : res['Your Preferred Platform']
@@ -404,7 +451,7 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
         }
     })
 
-    return summaryData
+    return detailedData
 
 }
 
@@ -430,11 +477,10 @@ export async function raflUtils(util) {
 
     // TODO: why from explore.lpubelts.com??
     const fullRaflData = await (await fetch('https://explore.lpubelts.com/data/rafl.json')).json()
-    const raflData = fullRaflData.filter(x => x.year === 2025)
+    const raflDataPreview = fullRaflData.filter(x => x.year === 2025)
 
     let prodRaflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
-    prodRaflData = prodRaflData.filter(x => x.year === 2025)
-
+    const raflData = prodRaflData.filter(x => x.year === 2025)
 
     const charitiesData = await (await fetch('https://lpubelts.com/raflCharities.json')).json()
 
@@ -458,6 +504,10 @@ export async function raflUtils(util) {
     }
     if (util === 'getSheetsResponses') {
         response = await getSheetsResponses(auth)
+    }
+
+    if (util === 'getFormResponses') {
+        response = await getFormResponses(auth, formId)
     }
 
     if (util === 'processSheetsResponses') {
@@ -487,10 +537,15 @@ export async function raflUtils(util) {
 
 }
 
-//await raflUtils('getSheetsResponses').then(r => jsonIt('response', r))
+////// ONE-TIME COMMAND //////
+
+//await raflUtils('getFormResponses').then(r => jsonIt('response', r))
 
 
-////// HELPERS //////
+///////////////////////////////////////
+//            HELPERS                //
+///////////////////////////////////////
+
 
 function textQuestion(title, location) {
     return [
