@@ -213,6 +213,7 @@ async function createQuestions(auth, formId, raflData, charitiesData, reset) {
 }
 
 async function addQuestions(auth, formId, raflData) {
+    return {warning: 'addQuestions should not be called, action canceled'}
 
     if (live) return {warning: 'RAFL is live, action canceled'}
 
@@ -250,11 +251,16 @@ async function addQuestions(auth, formId, raflData) {
 
 async function buildQuestionMap(raflData) {
 
-    const formSourceFetch = await fetch(`https://docs.google.com/forms/d/e/${sheetIds.raflFormId}/viewform`)
+    const formSourceFetch = await fetch(`https://docs.google.com/forms/d/e/${sheetIds.raflViewFormId}/viewform`)
     const formSource = await formSourceFetch.text()
 
     const regex = /FB_PUBLIC_LOAD_DATA_ = (.*);<\/script>/g
     const exec = regex.exec(formSource)
+
+    console.log('formSource', formSource)
+
+    if (!exec) return {error: 'buildQuestionMap error: exec failed, no form data found'}
+
     const questionData = JSON.parse(exec[1])[1][1]
 
     const questionMap = questionData.map((q, index) => {
@@ -484,7 +490,7 @@ export async function raflUtils(util) {
 
     const charitiesData = await (await fetch('https://lpubelts.com/raflCharities.json')).json()
 
-    const formId = sheetIds.raflResponsesId
+    const formId = sheetIds.raflMainFormId
     const auth = await authorize()
 
     let response
@@ -520,12 +526,30 @@ export async function raflUtils(util) {
     // DANGER //
 
     // only set this to true if you *really* want to delete the questions and rebuild!
-    const reset = false
+    const reset = true
+
+    if (util === 'createQuestions') {
+        if (reset && !live) {
+            await createQuestions(auth, formId, raflData, charitiesData, reset)
+            //response = await buildQuestionMap(raflData)
+        } else {
+            return 'rafl is live and/or reset is off, action canceled'
+        }
+    }
+
+    if (util === 'deleteAllQuestions') {
+        if (reset && !live) {
+            await deleteAllQuestions(auth, formId, reset)
+            response = await buildQuestionMap(raflData)
+        } else {
+            return 'rafl is live and/or reset is off, action canceled'
+        }
+    }
 
     if (util === 'rebuildForm') {
         if (reset && !live) {
             const deleteAllResponse = await deleteAllQuestions(auth, formId, reset)
-            const createQuestionsResponse = await createQuestions(auth, formId, raflData, charitiesData, reset)
+            //const createQuestionsResponse = await createQuestions(auth, formId, raflData, charitiesData, reset)
             //jsonIt('createQuestionsResponse', createQuestionsResponse)
             response = await buildQuestionMap(raflData)
         } else {
@@ -539,7 +563,7 @@ export async function raflUtils(util) {
 
 ////// ONE-TIME COMMAND //////
 
-//await raflUtils('getFormResponses').then(r => jsonIt('response', r))
+await raflUtils('buildQuestionMap').then(r => jsonIt('response', r))
 
 
 ///////////////////////////////////////

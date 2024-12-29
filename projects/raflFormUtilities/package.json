@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "dayjs": "^1.11.13",
-    "googleapis": "^144.0.0"
+    "googleapis": "^144.0.0",
+    "node-fetch-cookies": "^2.1.1"
   }
 }
