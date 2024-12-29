@@ -7,6 +7,7 @@ import RaffleEntry from './RaffleEntry.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import {raffleSortFields} from '../data/sortFields'
 import RaffleIntroBar from './RaffleIntroBar.jsx'
+import RaffleExportButton from './RaffleExportButton.jsx'
 
 function RafflePage({profile}) {
     const {filters} = useContext(FilterContext)
@@ -38,6 +39,10 @@ function RafflePage({profile}) {
                     expanded={entry.id === defExpanded}
                 />
             )}
+
+            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems:'center', marginTop:30}}>
+                <RaffleExportButton text={true}/>
+            </div>
 
         </div>
     )
