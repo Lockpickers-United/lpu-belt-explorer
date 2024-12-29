@@ -109,7 +109,7 @@
     "title": "Gifts From Granny",
     "displayName": "",
     "description": "Ancor Las oval-bearing padlock and four ASSA/Ruko ovals, sure to challenge and delight.",
-    "potContents": "- [Anchor Las 802-2 padlock](/#/locks?id=bbce33e0)\n- [ASSA 500 oval with barrels](/#/locks?id=f8445741)\n- [ASSA 600 oval with barrels](/#/locks?id=45e3cde7)\n- [Ruko 500 oval with 4 gins, 1 standard](/#/locks?id=f2d41749)\n- [ASSA 700 oval with trees and gins](/#/locks?id=f133510b)",
+    "potContents": "- [Anchor Las 802-2 padlock](/#/locks?id=bbce33e0)\n- [ASSA 500 oval with barrels](/#/locks?id=f8445741)\n- [ASSA 600 oval with barrels](/#/locks?id=45e3cde7)\n- [Ruko 500 oval with 4 gins, 1 standard](/#/locks?id=f2d41749) (photo coming soon)\n- [ASSA 700 oval with trees and gins](/#/locks?id=f133510b) (photo coming soon)",
     "contributedBy": [
       "Granny"
     ],
@@ -126,7 +126,30 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: Granny",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54233463717_404654eb07_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54233463717/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54233463717_6a6a2c618c_o.jpg"
+      },
+      {
+        "title": "By: Granny",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54233465242_1c4015b181_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54233465242/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54233465242_1a430b5f16_o.jpg"
+      },
+      {
+        "title": "By: Granny",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234371311_b304b323c9_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234371311/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234371311_57f36c531f_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-005",
@@ -1018,14 +1041,16 @@
     "title": "Hammer’s Ultimate RAFL Locksport Kit",
     "displayName": "",
     "description": "",
-    "potContents": "Pick cases:\n- Reaper Lockpick Sheath\n- Deadhammer OG Prototype Moki Case\n\nLocks:\n- [Abloy Protec2](/#/locks?id=e87f0ca2&name=Abloy_Protec2) w/ 2 Keys\n- [Scorpion CX5](/#/locks?id=626da374&name=Scorpion_CX5) w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n- [American 1105](/#/locks?id=2ae1e0b8) Red w/ 2 Keys\n- [Schlage Everest](/#/locks?id=ea1d1d8c) No Keys\n- [Best SFIC](/#/locks?id=c6529d9c) No Keys\n\nSparrows:\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Tubular Tensioner\n\nMultipick Hooks\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\n- TNT-20-V3 w/ additional tips\n- BMS 9\n- BMS 10\n\nMoki:\n- Deep Round Hook\n- Custom Stainless Steel Handles and Screws made by Nosu\n- 2x BoK Tensioners\n\nBare Bones\n- Custom Book of Bones Scales\n- Medium Gem Hook 23 Thou\n\nMisc:\n- 2x Pieces of Wiper Insert for Custom Tensioners\n- 3x Pieces of 301HY from Law Lock Tools\n-1 Piece of Desert Iron Wood Knife Handle Blank\n- Stainless Steel Follower\n- Lab .398 Follower\n- Lab .550 Follower\n- Book of Bones Sticker",
+    "potContents": "Pick cases:\n- Reaper Lockpick Sheath\n- Deadhammer OG Prototype Moki Case\n- Authentic Leather Multipick Dimple Pick Case\n\nLocks:\n- [Abloy Protec2](/#/locks?id=e87f0ca2&name=Abloy_Protec2) w/ 2 Keys\n- [Scorpion CX5](/#/locks?id=626da374&name=Scorpion_CX5) w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n- Weiser Gen3 SmartKey Cylinder + 2 Keys\n- Dorex Mailbox Lock w/ 2 Keys\n- [American 1105](/#/locks?id=2ae1e0b8) Red w/ 2 Keys\n- [Schlage Everest](/#/locks?id=ea1d1d8c) No Keys\n- [Best SFIC](/#/locks?id=c6529d9c) No Keys\n\nImpressioning materials:\n- SC1 Euro Cylinder + SC1 Blanks\n- Chrysler Wafer Lock + Blanks\n- Square needle file\n\nSparrows:\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Tubular Tensioner\n\nMultipick Hooks\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\n- TNT-20-V3 w/ additional tips\n- BMS 9\n- BMS 10\n\nMoki:\n- Deep Round Hook\n- Custom Stainless Steel Handles and Screws made by Nosu\n- 2x BoK Tensioners\n\nBare Bones\n- Custom Book of Bones Scales\n- Medium Gem Hook 23 Thou\n- OG Reaper Snake Rake\n\nMisc:\n- 2x Pieces of Wiper Insert for Custom Tensioners\n- 3x Pieces of 301HY from Law Lock Tools\n-1 Piece of Desert Iron Wood Knife Handle Blank\n- Stainless Steel Follower\n- Lab .398 Follower\n- Lab .550 Follower\n- Book of Bones Sticker\n- Locksmith Ledger from 1979\n- Various CX5 pins for challenge locks or reloads\n- 3D Printed Mortise Stands (2x) and Euro Lock Stand (1x)\n- 2x Shims",
     "contributedBy": [
       "Deadhammer"
     ],
     "tags": [
       "Artisan piece",
+      "Books",
       "Locks (beginner)",
       "Locks (intermediate/advanced)",
+      "Locks (wafer)",
       "Locks (pin tumbler)",
       "Locks (disc detainer)",
       "Locks (dimple)",
@@ -1033,6 +1058,7 @@
       "Locks (padlocks)",
       "Picks (hooks)",
       "Picks (dimple)",
+      "Picks (rakes)",
       "Tensioners (BOK)",
       "Tensioners (TOK)",
       "Tensioners (tubular)",
@@ -1040,10 +1066,14 @@
       "Organization (pick cases)",
       "Organization (mats/trays)",
       "Tools (gutting)",
+      "Tools (impressioning)",
+      "Tools (other)",
       "Swag (stickers)",
       "Swag (other)",
       "Materials (pick making)",
-      "Materials (other)"
+      "Materials (other)",
+      "Materials (pin making)",
+      "Materials (pin kits)"
     ],
     "country": [
       "Canada"
@@ -1058,93 +1088,58 @@
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54201598782_d8f99f4d52_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54201598782/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54201598782_99f172ace3_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234775780_984e70a107_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234775780/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234775780_c68e34a673_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54232935834_396eba0903_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54232935834/in/album-72177720322810647/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54232935834_016fe4bb05_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234777870_5dd13169d3_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234777870/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234777870_4857a5e7a7_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54232936054_2b1f73fd81_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54232936054/in/album-72177720322810647/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54232936054_b912156d17_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54233460847_c1e1d4c0b4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54233460847/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54233460847_04b64441f7_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54231788052_0311fa132b_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54231788052/in/album-72177720322810647/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54231788052_9e993ca795_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54233461757_da11bbae47_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54233461757/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54233461757_0aa03ae63e_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54232936454_fd0de04f2b_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54232936454/in/album-72177720322810647/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54232936454_33c5f6af59_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54233462122_62d5d306ce_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54233462122/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54233462122_a9c3582dc3_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54202751179_3e2eee81b2_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202751179/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54202751179_a5f33b9530_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234369701_9d735bf21a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234369701/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234369701_e61bf11218_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54202495831_f8eee2dcf1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202495831/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54202495831_bfb02ecde3_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234598543_8bb1c689ce_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234598543/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234598543_21131e7f31_o.jpg"
       },
       {
         "title": "By: Deadhammer",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54201599362_4fde300067_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54201599362/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54201599362_5227db0c62_o.jpg"
-      },
-      {
-        "title": "By: Deadhammer",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54202496276_c5eb5f67a4_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202496276/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54202496276_265fd90f48_o.jpg"
-      },
-      {
-        "title": "By: Deadhammer",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54202745843_b4c41b4652_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202745843/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54202745843_e7aa9b15ea_o.jpg"
-      },
-      {
-        "title": "By: Deadhammer",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54202746148_8fda9afcc2_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54202746148/in/album-72177720322551452/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54202746148_4ee8676b77_o.jpg"
-      },
-      {
-        "title": "By: Deadhammer",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54231787342_5a98e9373a_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54231787342/in/album-72177720322810647/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54231787342_754913e6d0_o.jpg"
-      },
-      {
-        "title": "By: Deadhammer",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54231787557_f486f4fdd4_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54231787557/in/album-72177720322810647/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54231787557_ea7ae8284b_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234608329_cc9082e73c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234608329/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234608329_97217fcdc9_o.jpg"
       }
     ]
   },
@@ -1293,7 +1288,23 @@
     "splitShippingBoolean": false,
     "shippingType": "",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: lockpickersbench",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://img.lpubelts.com/rafl/lpb-certificate-100.png",
+        "fullUrl": "https://img.lpubelts.com/rafl/lpb-certificate-100-large.png",
+        "fullSizeUrl": "https://img.lpubelts.com/rafl/lpb-certificate-100-large.png"
+      },
+      {
+        "title": "By: lockpickersbench",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://img.lpubelts.com/rafl/lpb-certificate-100.png",
+        "fullUrl": "https://img.lpubelts.com/rafl/lpb-certificate-100-large.png",
+        "fullSizeUrl": "https://img.lpubelts.com/rafl/lpb-certificate-100-large.png"
+      }
+    ]
   },
   {
     "id": "2025-031",
@@ -2100,7 +2111,7 @@
     "potNumber": "0",
     "title": "Unprotected Kromer Protector",
     "displayName": "",
-    "description": "A beautifully made cutaway of one of the most infamous locks ever manufactured",
+    "description": "A beautifully made cutaway of one of the most infamous locks ever manufactured--the Kromer Protector",
     "potContents": "- Kromer Protector BP55K-Cutaway",
     "contributedBy": [
       "Don"
@@ -2191,7 +2202,7 @@
     "potNumber": "0",
     "title": "Big Box o Locks",
     "displayName": "",
-    "description": "",
+    "description": "A giant box of locks, too many to count. Click to see all these wonderful locks. And what's that in the upper left corner? A mystery holiday box?",
     "potContents": "- A big box of locks, all of which are in the picture. Look at em, there's so many!\n- A mystery holiday box",
     "contributedBy": [
       "locksmitharmy"
@@ -2230,7 +2241,7 @@
     "potNumber": "0",
     "title": "More Lockbooks!",
     "displayName": "",
-    "description": "",
+    "description": "Everyone has bookshelves, and whether or not you've read every book on them cover-to-cover, any lock enthusiast worth their salt has got to have a few lock books. Winner receives a copy of Professional Penetration Testing by Thomas Wilhelm, and Practical Lock Picking by Deviant Ollam",
     "potContents": "Two books on locks and pen testing\n- Professional Penetration Testing\n- Practical Lock Picking",
     "contributedBy": [
       "locksmitharmy"
@@ -2299,7 +2310,7 @@
     "potNumber": "0",
     "title": "Crazy Rainbow Pot",
     "displayName": "",
-    "description": "",
+    "description": "There are not very many pickers who enjoy picking all formats without a vise. The rare exceptions to that rule all have specialized claw hands which originally evolved to help them hang on tree branches for long periods of time. For the rest of us normal humans, a vise is highly recommended, and this pot from 44 Delta delivers it in vibrant style. Winner receives a rainbow vise base, vise clamp, collection of plug holders, followers, pinning tray, and some swag.",
     "potContents": "- Crazy Rainbow Split/Solid Follower Set (4 different sizes)\n- Crazy Rainbow Chuck Vise (Generic)\n- SmallRig \"Super\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Silky Black)\n- SFIC Vise Lock Holder (Silky Black)\n- KIK Vise Lock Holder (Silky Black)\n- Euro Vise Lock Holder (Silky Black)\n- LPL Pinning Tray (Black to White Gradient)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
     "contributedBy": [
       "44 Delta"
@@ -2346,7 +2357,7 @@
     "potNumber": "0",
     "title": "Glow in the Dark Pot",
     "displayName": "",
-    "description": "",
+    "description": "Vises are important, see above. This pot is very similar, but glow-in-the-dark and with a European flavor. Vise base + clamp, solid and split followers, core holders (now with euro), and swag.",
     "potContents": "- Fluorescent Green/Glow in the Dark Green Split/Solid Follower Set (4 different sizes)\n- Fluorescent Green/Glow in the Dark Green Split/Split Follower Set (4 different sizes)\n- Fluorescent Green/Glow in the Dark Green Chuck Vise (Exotic)\n- SmallRig \"Crab\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Fluorescent Green/Glow in the Dark Green)\n- KIK Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\n- Euro Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
     "contributedBy": [
       "44 Delta"
@@ -2392,7 +2403,7 @@
     "potNumber": "0",
     "title": "Chipped Belts",
     "displayName": "",
-    "description": "",
+    "description": "Up the ante with these beautiful stylized chips representing each of the lock belts. Comes complete with a stand, display case, and extra swag.",
     "potContents": "- Complete Set of Belt Chips\n- Belt Chip Stand (Black)\n- Display Case\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
     "contributedBy": [
       "44 Delta"
@@ -2435,7 +2446,7 @@
     "potNumber": "0",
     "title": "\"The Mechanism\"",
     "displayName": "",
-    "description": "",
+    "description": "An American 1100 that's almost too beautiful to pick. Contains \"The Mechanism\", a custom etched 1100 alongside etched keys, etched dog tags, and some extra swag.",
     "potContents": "- \"The Mechanism\" - A Custom Etched American Lock 1100 (Black)\n- Keys (etched on both sides)\n- Stainless Steel Dog Tag (etched on both sides)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
     "contributedBy": [
       "44 Delta"
@@ -2724,16 +2735,16 @@
     "id": "2025-064",
     "year": 2025,
     "potNumber": "0",
-    "title": "The levers of power",
+    "title": "The Levers of Power",
     "displayName": "",
     "description": "",
-    "potContents": "- \"A bunch of lever locks\"",
+    "potContents": "3 British curtained 5-lever locks:\n- Chubb 114\n- Union StrongBolt\n- Kibb 5-lever",
     "contributedBy": [
       "NKT"
     ],
     "tags": [
-      "Mystery pot",
-      "Locks (lever)"
+      "Locks (lever)",
+      "Locks (intermediate/advanced)"
     ],
     "country": [
       "UK"
@@ -2743,7 +2754,23 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "20241227"
+    "dateAdded": "20241227",
+    "media": [
+      {
+        "title": "By: NKT",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54233465867_99498f7b1e_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54233465867/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54233465867_bc5b5602c4_o.jpg"
+      },
+      {
+        "title": "By: NKT",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54234601608_56fd9d7bd3_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54234601608/in/album-72177720322846146/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54234601608_088cb8e8db_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-065",
@@ -2798,7 +2825,7 @@
     "id": "2025-066",
     "year": 2025,
     "potNumber": "0",
-    "title": "Server-grade Nixie clock kit",
+    "title": "Server-grade Nixie Clock Kit",
     "displayName": "",
     "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed!\nNeeds 12vdc power supply to complete and case made for it\n\nThese are really nice nixie tubes, too",
     "potContents": "- A nixie kit with server-grade NL841 tubes (200k hour life) and a kit to assemble",
