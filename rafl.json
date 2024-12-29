@@ -2,7 +2,7 @@
   {
     "id": "2025-001",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "1",
     "title": "SasPack 2025",
     "displayName": "",
     "description": "A staple of every rafl, SasPes returns with a selection of advanced locks, pinning trays, and a beautifully framed exploded padlock to put on your wall.",
@@ -42,7 +42,7 @@
   {
     "id": "2025-002",
     "year": 2025,
-    "potNumber": "1",
+    "potNumber": "2",
     "title": "Seven Scandi Ovals",
     "displayName": "",
     "description": "7 Scandinavian ovals, simple yet frustrating, alongside two mounts, each of which hold 4 locks.",
@@ -79,7 +79,7 @@
   {
     "id": "2025-003",
     "year": 2025,
-    "potNumber": "2",
+    "potNumber": "3",
     "title": "Ratyoke Custom Pick",
     "displayName": "",
     "description": "A new piece by a legend of pickmaking. Short hook with a chechen wood handle in a brand new design.",
@@ -105,7 +105,7 @@
   {
     "id": "2025-004",
     "year": 2025,
-    "potNumber": "3",
+    "potNumber": "4",
     "title": "Gifts From Granny",
     "displayName": "",
     "description": "Ancor Las oval-bearing padlock and four ASSA/Ruko ovals, sure to challenge and delight.",
@@ -154,7 +154,7 @@
   {
     "id": "2025-005",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "5",
     "title": "Bare Bones Dimple Picks",
     "displayName": "",
     "description": "Go out and murder some dimple locks with this set of 6 flags, packaged conveniently in a casket.",
@@ -195,7 +195,7 @@
   {
     "id": "2025-006",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "6",
     "title": "Bulgarian Squatty Potty",
     "displayName": "",
     "description": "A Bulgarian squatty potty full of locks that are sure to be naughty. Features a Protec2 cutaway, Abus Rock 100th anniversary padlock, foil dimple impressioning starter kit, and a number of nice locks.",
@@ -299,7 +299,7 @@
   {
     "id": "2025-007",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "7",
     "title": "Lockpickersbench x Multipick Flag Set",
     "displayName": "",
     "description": "Destroy an entire community of dimple locks with this 6-flag set of MP flags, complete with case, handles, Z-bars, and a bonus set of LLT prybars ",
@@ -349,7 +349,7 @@
   {
     "id": "2025-008",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "8",
     "title": "Honey Badger Knife Kit",
     "displayName": "",
     "description": "Contributed by Badger themselves, a drop point flipper knife complete with oil and takedown mat (good for both locks and knives).",
@@ -383,7 +383,7 @@
   {
     "id": "2025-009",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "9",
     "title": "Packet of Finland",
     "displayName": "",
     "description": "Nearly 2 kg of locks from Finland, including examples of all major historical manufacturers and large selection of samples from Abloy. As a bonus, includes appropriately themed mug for your beverage of choice. ",
@@ -430,7 +430,7 @@
   {
     "id": "2025-010",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "10",
     "title": "Big Collateral",
     "displayName": "",
     "description": "Jimy galore! This prize contains a total of 11 Jimy picks, a full complement of tensioners, and a very nice tool roll",
@@ -474,7 +474,7 @@
   {
     "id": "2025-011",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "11",
     "title": "Dispersed Collateral (8 winners)",
     "displayName": "",
     "description": "**8 winners!** A veritable crowd of winners will each receive 9 picks from a mixture of Southern Specialties and SouthOrd, complete with an LPB BOK wrench. The **first 4 winners** will also get the full set of LawLockTools prybars!",
@@ -540,7 +540,7 @@
   {
     "id": "2025-013",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "12",
     "title": "The Measure of Success",
     "displayName": "",
     "description": "The Mitutoyo Digimatic Caliper is a **really** nice caliper. You can use it to very precisely measure the beautiful wooden Rein pinning tray also included in this prize.",
@@ -581,7 +581,7 @@
   {
     "id": "2025-015",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "13",
     "title": "RWB DD Pick",
     "displayName": "",
     "description": "There are nice disc detainer picks, and then there are _nice_ disc detainer picks. One lucky winner will receive a Gen 3 front-tensioning DD pick from RWB Custom Picks.",
@@ -619,7 +619,7 @@
   {
     "id": "2025-016",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "14",
     "title": "The Return of Frankenrobur",
     "displayName": "",
     "description": "This disgusting bastardization of all that is good and properis back. This pot contains an Anchor Las 802-2 padlock and Robur SDB lock horrifically fused together into some sort of grotesque hybrid.",
@@ -655,10 +655,10 @@
   {
     "id": "2025-017",
     "year": 2025,
-    "potNumber": "0",
-    "title": "Two Group 1's don't make a Group 2 (2 winners)",
+    "potNumber": "15",
+    "title": "Two Group 1R's don't make a Group 2 (2 winners)",
     "displayName": "",
-    "description": "",
+    "description": "Chock full of anti-manipulation mechanisms, two winners will receive a Mosler 302 Group 1R safe lock--mounted, cleaned, and lubricated. There are slight differences between the two locks, so first winner gets their choice between them.",
     "potContents": "Each winner gets a [Mosler 302 MR Group 1R Safe Lock](/#/dials?id=c427020e&name=Mosler_MRK302), mounted, cleaned, and lubricated. First winner gets their choice between the variations, which include:\n\nDial 1:\n- Silver dial with black center\n- Key change wheel pack + change key\n- Hand change wheel pack\n\nDial 2:\n- Black dial with silver center\n- 2x hand change wheel packs",
     "contributedBy": [
       "Pyrolock"
@@ -725,10 +725,10 @@
   {
     "id": "2025-018",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "16",
     "title": "The Burn (2 winners)",
     "displayName": "",
-    "description": "These pots represent an official psychology study aiming to identify picker preference between smooth and knurled dimple flags. Such studies benefit greatly by large participation numbers.",
+    "description": "These pots represent an official psychology study aiming to identify picker preference between smooth and knurled dimple flags. Such studies benefit greatly by large participation numbers. Winner receives a set of 4 custom dimple flags (one knurled, one smooth), and a leather pick case made by TheGamingBug. First winner gets their pick between the two options.",
     "potContents": "2 winners receive:\n- 1 set of 4 custom dimple flags (tall, short, left and right)\n- One with knurling, one set smooth. Both 10mm diameter.\n- Leather case made by TheGamingBug (TheMothMan) \n\nFirst winner gets their pick of the options",
     "contributedBy": [
       "BurnB1"
@@ -776,10 +776,10 @@
   {
     "id": "2025-019",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "17",
     "title": "Skylender Lock & Pin Set by Lockpickwebwinkel.nl (3 winners)",
     "displayName": "",
-    "description": "Configurable training lock with security pins and pin stock for making your own.",
+    "description": "Our friends at [lockpickwebwinkel.nl](lockpickwebwinkel.nl) have returned again! 3 winners will receive a Skylender configurable training lock with a variety of security pins and pin stock for making your own.",
     "potContents": "Each winner receives:\n- [Skylender training lock](https://lockpickwebwinkel.nl/lockpick-oefening/training-skylender/)\n- [Pin and spring kit](https://lockpickwebwinkel.nl/lockpick-oefening/skylender-pins-and-springs/) (6 pin types and 4 spring types) \n- [Trampoline pin kit](https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-trampoline-pins/)\n- [Rod stock for custom pins](https://lockpickwebwinkel.nl/lockpick-oefening/grimgo-skylender-doe-het-zelf-pinnen/)",
     "contributedBy": [
       "Lockpickwebwinkel.nl"
@@ -813,11 +813,11 @@
   {
     "id": "2025-020",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "18",
     "title": "Complete Lockpick and Abus Lock Set by Lockpickwebwinkel.nl",
     "displayName": "",
-    "description": "Sounthord picks and Abus 72/40 padlocks",
-    "potContents": "- SouthOrd Slimline C2010 lockpick set (22-piece)\n- Three [Abus 72/40 padlocks](/#/locks?id=74a00ae3&name=ABUS_72_40)",
+    "description": "[lockpickwebwinkel.nl](lockpickwebwinkel.nl) has provided the tools for a beginner to dive deep into the 72/40. This pot contains **3** Abus 72/40 padlocks, and a 22-piece SouthOrd pick set. Surely at least one of those picks will get those locks open.",
+    "potContents": "- [SouthOrd Slimline C2010 lockpick set](https://www.southord.com/products/lock-pick-set-slim-line-twenty-two-piece-2010) (22-piece)\n- Three [Abus 72/40 padlocks](/#/locks?id=74a00ae3&name=ABUS_72_40)",
     "contributedBy": [
       "Lockpickwebwinkel.nl"
     ],
@@ -843,13 +843,13 @@
   {
     "id": "2025-021",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "19",
     "title": "Wyte's Box to Shit Belt",
     "displayName": "",
-    "description": "",
+    "description": "For those of you who are just starting out and want to get shit done, this prize will do the job. The winner will receive all the tools and locks needed to get some brown on their waist. Includes a set of 10 Jimy picks, tensioners, tool roll, and 10 locks.",
     "potContents": "Jimylongs:\n- Starter set v4 .022\n- .015 flat hooks v4\n- .015 round hooks v4\n- Basic set v5 .019\n- Intermediate set v5 .019\n- Tool roll\n\nLOCKS:\n- Sega wafer lock\n- [Schlage residential KiK](/#/locks?id=40f7d7c7&name=Schlage_Original_Commercial_Residential) (yellow)\n- Showa PT lock (unranked)\n- [Yale 122/50](/#/locks?id=fb246ac0) padlock (orange)\n- [SFIC with both keys](/#/locks?id=c6529d9c) (purple/brown)\n- [Paclock 90a](/#/locks?id=8ad36e8a) (new-green)\n- [American 1107](/#/locks?id=2ae1e0b8) (new-green)\n- [GOAL S](/#/locks?id=959a6b9d) (blue)\n- [GOAL P](/#/locks?id=a1233156) (brown)\n- West PT (white but can be used for CL easily)",
     "contributedBy": [
-      "2025"
+      "Wyte"
     ],
     "tags": [
       "Picks (hooks)",
@@ -906,10 +906,10 @@
   {
     "id": "2025-022",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "20",
     "title": "Ablo-ho-ho (3 winners)",
     "displayName": "",
-    "description": "Each of 3 winners will receive a Abloy 340 Protec2.",
+    "description": "You can either put it on a wall, secure something very important, or have a fun afternoon bypassing the DBS--the Abloy 340 Protec2 padlock has all sorts of uses. **3 winners** will receive one!",
     "potContents": "Each of 3 winners receives:\n- One [Abloy 340 Protec2](/#/locks?id=e87f0ca2&name=Abloy_Protec2) padlock",
     "contributedBy": [
       "ViceGrip"
@@ -942,10 +942,10 @@
   {
     "id": "2025-023",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "21",
     "title": "Dazzling Pick and Coaster set",
     "displayName": "",
-    "description": "",
+    "description": "Pick locks and sip drinks in matching style with this custom pick and coaster set by Reckedx.",
     "potContents": "- 0.5mm 301hy steel custom pick\n- Matching coaster",
     "contributedBy": [
       "Reckedx"
@@ -979,11 +979,11 @@
   {
     "id": "2025-024",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "22",
     "title": "Locksticc",
     "displayName": "",
-    "description": "",
-    "potContents": "- 1x Lockstick\n- 1x small Bonx box",
+    "description": "You know that drinking game where you make a long wizard's staff by taping together empty cans? Imagine that, but it's locks.",
+    "potContents": "- 1x Locksticc\n- 1x small Bonx box",
     "contributedBy": [
       "Bonx"
     ],
@@ -1004,7 +1004,7 @@
   {
     "id": "2025-025",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "23",
     "title": "$$$ of Locc",
     "displayName": "",
     "description": "$150 RAFL Gift Certificate at  lpulocks.com/rafl",
@@ -1037,10 +1037,10 @@
   {
     "id": "2025-026",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "24",
     "title": "Hammer’s Ultimate RAFL Locksport Kit",
     "displayName": "",
-    "description": "",
+    "description": "Having a bit of everything turns into quite a lot. This monster of a prize is difficult to describe in few words. There's nice pick cases, locks, pinning trays, hooks, flags, shims, books, and so much more. Seriously, check out how many tags this pot has.",
     "potContents": "Pick cases:\n- Reaper Lockpick Sheath\n- Deadhammer OG Prototype Moki Case\n- Authentic Leather Multipick Dimple Pick Case\n\nLocks:\n- [Abloy Protec2](/#/locks?id=e87f0ca2&name=Abloy_Protec2) w/ 2 Keys\n- [Scorpion CX5](/#/locks?id=626da374&name=Scorpion_CX5) w/ 2 Keys\n- MTL Interactive w/ 1 Key\n- Miwa U9 w/ 1 Key\n- Sargent LA w/ 1 Key\n- WR5 w/ 1 Key\n- Weiser Gen3 SmartKey Cylinder + 2 Keys\n- Dorex Mailbox Lock w/ 2 Keys\n- [American 1105](/#/locks?id=2ae1e0b8) Red w/ 2 Keys\n- [Schlage Everest](/#/locks?id=ea1d1d8c) No Keys\n- [Best SFIC](/#/locks?id=c6529d9c) No Keys\n\nImpressioning materials:\n- SC1 Euro Cylinder + SC1 Blanks\n- Chrysler Wafer Lock + Blanks\n- Square needle file\n\nSparrows:\n- Sparrows Mini Pinning Trays\n- Sparrows Tweezers\n- Tubular Tensioner\n\nMultipick Hooks\n- PN03\n- PN04\n- PN05\n- PN06\n\nMultipick Dimples w/ Handles:\n- #4\n- #5\n- #10\n- #11\n\nMultipick Tensioners:\n- SP26\n- SP27\n- SP30\n- SP31\n- TNT-20-V3 w/ additional tips\n- BMS 9\n- BMS 10\n\nMoki:\n- Deep Round Hook\n- Custom Stainless Steel Handles and Screws made by Nosu\n- 2x BoK Tensioners\n\nBare Bones\n- Custom Book of Bones Scales\n- Medium Gem Hook 23 Thou\n- OG Reaper Snake Rake\n\nMisc:\n- 2x Pieces of Wiper Insert for Custom Tensioners\n- 3x Pieces of 301HY from Law Lock Tools\n-1 Piece of Desert Iron Wood Knife Handle Blank\n- Stainless Steel Follower\n- Lab .398 Follower\n- Lab .550 Follower\n- Book of Bones Sticker\n- Locksmith Ledger from 1979\n- Various CX5 pins for challenge locks or reloads\n- 3D Printed Mortise Stands (2x) and Euro Lock Stand (1x)\n- 2x Shims",
     "contributedBy": [
       "Deadhammer"
@@ -1146,10 +1146,10 @@
   {
     "id": "2025-027",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "25",
     "title": "A Symantec branded denim jacket",
     "displayName": "",
-    "description": "Jacket filled with 5.5 pounds of locks",
+    "description": "A nice functional denim jacket with plenty of pockets. Pockets full of locks.",
     "potContents": "An XL denim jacket with the Symantec logo on it.\nIt also contains 5.5lb of mystery locks",
     "contributedBy": [
       "Craig 3.0"
@@ -1195,7 +1195,7 @@
   {
     "id": "2025-028",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "26",
     "title": "Buga buga",
     "displayName": "",
     "description": "",
@@ -1231,7 +1231,7 @@
   {
     "id": "2025-029",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "27",
     "title": "Yabended my picks",
     "displayName": "",
     "description": "",
@@ -1268,7 +1268,7 @@
   {
     "id": "2025-030",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "28",
     "title": "Lockpickersbench shopping spree (2 winners)",
     "displayName": "",
     "description": "2 winners receive a $100 ticket to a shopping spree at LPU's favorite one-stop shop! With anything and everything you'd possibly want from the best brands in the industry, what would you use it on?",
@@ -1309,7 +1309,7 @@
   {
     "id": "2025-031",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "29",
     "title": "(Clever Medeco-related title)",
     "displayName": "",
     "description": "",
@@ -1349,7 +1349,7 @@
   {
     "id": "2025-033",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "30",
     "title": "Amvgaert shopping spree",
     "displayName": "",
     "description": "A $400 gift card to go crazy at Amvgaert's lock store!",
@@ -1382,7 +1382,7 @@
   {
     "id": "2025-034",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "31",
     "title": "Beginner's Boxes (2 winners)",
     "displayName": "",
     "description": "",
@@ -1439,7 +1439,7 @@
   {
     "id": "2025-035",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "32",
     "title": "Wera waiting for…",
     "displayName": "",
     "description": "Step up your tool collection with these Wera standard and precision screwdrivers.  The three standard screwdrivers have the Wera laser cut tips that make stripping screw heads a thing of the past.  American 1100 security screws with Loctite are no match.  Trust me, you will never pick up a cheap screwdriver again.   The precision set does not have that great laser cut tip, but still are a pleasure to use for those damn tiny screws.  All are brand new, and you will be their forever home.",
@@ -1472,7 +1472,7 @@
   {
     "id": "2025-036",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "33",
     "title": "Disc-Oh Fever",
     "displayName": "",
     "description": "",
@@ -1510,7 +1510,7 @@
   {
     "id": "2025-037",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "34",
     "title": "The Annual Lockwood Pot",
     "displayName": "",
     "description": "",
@@ -1548,7 +1548,7 @@
   {
     "id": "2025-038",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "35",
     "title": "Poser Swag",
     "displayName": "",
     "description": "You don’t have put in the long hours it takes to be the cool guy picker that gets the ladies purrrring when you can much more easily get the same effect by winning this picking swag",
@@ -1585,7 +1585,7 @@
   {
     "id": "2025-039",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "36",
     "title": "Untitled Goose Pot",
     "displayName": "",
     "description": "",
@@ -1663,7 +1663,7 @@
   {
     "id": "2025-040",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "37",
     "title": "Beginner Smeginner Pot",
     "displayName": "",
     "description": "",
@@ -1735,7 +1735,7 @@
   {
     "id": "2025-041",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "38",
     "title": "Unpurchaseable Bones Pack",
     "displayName": "",
     "description": "The titular skellies in Bare Bones' promo images have been only previously given away to select individuals for there contributions to lock sport (Snake, Pocket Woman, Cranky Lockpicker, Knox Locks, etc). However, just for the raffle, the folks at Bare Bones Lock Picking will make one old and one new version of these unpurchaseable skellies.",
@@ -1779,7 +1779,7 @@
   {
     "id": "2025-042",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "39",
     "title": "Nutted Weaspick",
     "displayName": "",
     "description": "",
@@ -1814,7 +1814,7 @@
   {
     "id": "2025-043",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "40",
     "title": "Brassed Weaspick",
     "displayName": "",
     "description": "",
@@ -1849,7 +1849,7 @@
   {
     "id": "2025-044",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "41",
     "title": "Aluminummed Weaspick",
     "displayName": "",
     "description": "",
@@ -1884,7 +1884,7 @@
   {
     "id": "2025-072",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "42",
     "title": "Extra Nutted Weaspick",
     "displayName": "",
     "description": "",
@@ -1919,7 +1919,7 @@
   {
     "id": "2025-045",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "43",
     "title": "Lockbooks",
     "displayName": "",
     "description": "",
@@ -1952,7 +1952,7 @@
   {
     "id": "2025-046",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "44",
     "title": "The Mokeeper",
     "displayName": "",
     "description": "",
@@ -2007,7 +2007,7 @@
   {
     "id": "2025-047",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "45",
     "title": "elocksmith elockwood Pot",
     "displayName": "",
     "description": "Our friends at elocksmith are back once again this year with a pair of staple Lockwood padlocks! ",
@@ -2041,7 +2041,7 @@
   {
     "id": "2025-048",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "46",
     "title": "elocksmith esafe Pot",
     "displayName": "",
     "description": "A never-before-seen addition to the raffle--elocksmith is offering a prize containing two brand new digital safe locks!",
@@ -2074,7 +2074,7 @@
   {
     "id": "2025-049",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "47",
     "title": "C&C: Cat Hair and Coasters",
     "displayName": "",
     "description": "This pot has some coasters in it, but really it's for the cat hair connoisseurs out there who need another bag for their collection",
@@ -2108,7 +2108,7 @@
   {
     "id": "2025-050",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "48",
     "title": "Unprotected Kromer Protector",
     "displayName": "",
     "description": "A beautifully made cutaway of one of the most infamous locks ever manufactured--the Kromer Protector",
@@ -2151,7 +2151,7 @@
   {
     "id": "2025-051",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "49",
     "title": "Fireshaped Dice Sets",
     "displayName": "",
     "description": "Choose the lock you want to pick today by rolling one or more of Fireshaper's handmade dice! Pot contains two beautiful dice sets and a spindown die.",
@@ -2199,7 +2199,7 @@
   {
     "id": "2025-052",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "50",
     "title": "Big Box o Locks",
     "displayName": "",
     "description": "A giant box of locks, too many to count. Click to see all these wonderful locks. And what's that in the upper left corner? A mystery holiday box?",
@@ -2238,7 +2238,7 @@
   {
     "id": "2025-053",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "51",
     "title": "More Lockbooks!",
     "displayName": "",
     "description": "Everyone has bookshelves, and whether or not you've read every book on them cover-to-cover, any lock enthusiast worth their salt has got to have a few lock books. Winner receives a copy of Professional Penetration Testing by Thomas Wilhelm, and Practical Lock Picking by Deviant Ollam",
@@ -2271,7 +2271,7 @@
   {
     "id": "2025-054",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "52",
     "title": "LPU Pet Pillow Pot",
     "displayName": "",
     "description": "What could anyone possibly want with 18 ugly pillows of pets that aren't even their's? How expensive is it going to be to ship this internationally?\nLife is full of questions that don't matter, so just put your tickets in the pet pillow pot.",
@@ -2307,7 +2307,7 @@
   {
     "id": "2025-055",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "53",
     "title": "Crazy Rainbow Pot",
     "displayName": "",
     "description": "There are not very many pickers who enjoy picking all formats without a vise. The rare exceptions to that rule all have specialized claw hands which originally evolved to help them hang on tree branches for long periods of time. For the rest of us normal humans, a vise is highly recommended, and this pot from 44 Delta delivers it in vibrant style. Winner receives a rainbow vise base, vise clamp, collection of plug holders, followers, pinning tray, and some swag.",
@@ -2354,7 +2354,7 @@
   {
     "id": "2025-056",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "54",
     "title": "Glow in the Dark Pot",
     "displayName": "",
     "description": "Vises are important, see above. This pot is very similar, but glow-in-the-dark and with a European flavor. Vise base + clamp, solid and split followers, core holders (now with euro), and swag.",
@@ -2400,7 +2400,7 @@
   {
     "id": "2025-057",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "55",
     "title": "Chipped Belts",
     "displayName": "",
     "description": "Up the ante with these beautiful stylized chips representing each of the lock belts. Comes complete with a stand, display case, and extra swag.",
@@ -2443,7 +2443,7 @@
   {
     "id": "2025-058",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "56",
     "title": "\"The Mechanism\"",
     "displayName": "",
     "description": "An American 1100 that's almost too beautiful to pick. Contains \"The Mechanism\", a custom etched 1100 alongside etched keys, etched dog tags, and some extra swag.",
@@ -2502,10 +2502,10 @@
   {
     "id": "2025-059",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "57",
     "title": "Peace's Pot of Stolen Spanish Locks II",
     "displayName": "",
-    "description": "",
+    "description": "As a rule, we don't ask too many questions about where our prizes come from. There are rumors that these Spanish locks may have been obtained nefariously by an infamous Portugese criminal, but that's really none of our business. This prize contains 10 quality Spanish locks, 3 varieties of pinning tray, a follower set, and some rare swag.",
     "potContents": "LOCKS:\n- Ezcurra DS-10\n- Ezcurra SEA 23\n- Tesa TE-5\n- Tesa T60\n- Tesa TX80\n- Tesa TK100\n- Tesa T-10\n- MCM SCX\n- Lince C4 padlock\n- STS IX con bola\n\nLOOT:\n- Peace tray\n- Tiny Peace tray\n- Portable Peace tray\n- Follower set\n- Stickers and the rare Peace poker chip",
     "contributedBy": [
       "PeaceWeapon"
@@ -2544,10 +2544,10 @@
   {
     "id": "2025-060",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "58",
     "title": "Gorg's Medium Hooks (3 winners)",
     "displayName": "",
-    "description": "Been touching grass all day? Go inside and pick some locks. Gorg the blacksmith doesn't just make foam swords for simulated midieval combat, he also makes lockpicks. Put your tickets on these if you want to have some fun alone with your locks, or hand them over to settle whatever lockpicks settle.\n\nwww.gorgtheblacksmith.com the cutting edge of foam sword technology",
+    "description": "Been touching grass all day? Go inside and pick some locks. Gorg the blacksmith doesn't just make foam swords for simulated midieval combat, he also makes lockpicks. Put your tickets on these if you want to have some fun alone with your locks, or hand them over to settle whatever lockpicks settle.\n\n[www.gorgtheblacksmith.com](www.gorgtheblacksmith.com), the cutting edge of foam sword technology",
     "potContents": "3 winners will receive:\n- 1 custom medium hook, made by Gorg the Blacksmith\n- 1 custom tention tool\n\nWinners will receive their choice of the picks in the order in which they won",
     "contributedBy": [
       "Gorg the Blacksmith"
@@ -2617,10 +2617,10 @@
   {
     "id": "2025-061",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "59",
     "title": "Father and Son Swords",
     "displayName": "",
-    "description": "Been lockpicking all night? Go outside and touch some grass. Gorg the blacksmith doesn't just make picks, he makes foam swords for simulated medieval combat. Put your tickets on these if you want to have some fun with your partner, kids, or hand them over to settle disputes in the office.\n\nwww.gorgtheblacksmith.com the cutting edge of foam sword technology",
+    "description": "Been lockpicking all night? Go outside and touch some grass. Gorg the blacksmith doesn't just make picks, he makes foam swords for simulated medieval combat. Put your tickets on these if you want to have some fun with your partner, kids, or hand them over to settle disputes in the office.\n\n[www.gorgtheblacksmith.com](www.gorgtheblacksmith.com), the cutting edge of foam sword technology",
     "potContents": "- 2 professionally-made foam swords, one father, and one son",
     "contributedBy": [
       "Gorg the Blacksmith"
@@ -2651,7 +2651,7 @@
   {
     "id": "2025-062",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "60",
     "title": "Gorg and Jimy",
     "displayName": "",
     "description": "",
@@ -2689,7 +2689,7 @@
   {
     "id": "2025-063",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "61",
     "title": "Sage Add-Vise",
     "displayName": "",
     "description": "",
@@ -2734,7 +2734,7 @@
   {
     "id": "2025-064",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "62",
     "title": "The Levers of Power",
     "displayName": "",
     "description": "",
@@ -2775,7 +2775,7 @@
   {
     "id": "2025-065",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "63",
     "title": "It Can See You",
     "displayName": "Į̴̰̤̣͙͔̹̺̦̣͋̅̄͒̂͜͜T̸̨̪̪̲̬̦͊̑̇̀͑̿͑̕ͅ ̷̖̼͇͎̥̫̣̜͔̬̙͈̐C̵̨̢̡̜̝͉͓̜͈̺̫̟̘͒̆A̷͔̩̦̳̟̭̯̿͊͂̐̍͌̄͂̈́̾̚̚̕͘͠͝Ṇ̶̙̜̺̞͐͒͂̂̀͆̃̆͆̉̌͋̿́͘̕̕ ̵̧̭̞̼̲̩̙͙͕̙͌͜Ș̵̡̢̫̖̣̗̘͙̺͎̠̦̘̰͖̉̆̔͆̿͌͘͝ͅE̵̪̥̖̤̿̋͋͌E̵̦̺̺̬̘̭̠͌̐̎̏͜ ̸͕̼͕͖̝̠͙͇͕̲̹̯̫̩̇͌̈́͜Y̸̨̹͛͛̂̔͂̏͐̋̈́̑͂̿̋̄͆̚͘Ơ̸̧̫̹͇̦͔̟̄̀̾̍͊̾͗͝͝U̴̢͎̦̤͙̦̦̗͉͂̽̾̐̉̓ͅ",
     "description": "",
@@ -2824,7 +2824,7 @@
   {
     "id": "2025-066",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "64",
     "title": "Server-grade Nixie Clock Kit",
     "displayName": "",
     "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed!\nNeeds 12vdc power supply to complete and case made for it\n\nThese are really nice nixie tubes, too",
@@ -2865,7 +2865,7 @@
   {
     "id": "2025-067",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "65",
     "title": "Naked Americans (3 winners)",
     "displayName": "",
     "description": "",
@@ -2901,7 +2901,7 @@
   {
     "id": "2025-068",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "66",
     "title": "Mysterious Moki Pot",
     "displayName": "",
     "description": "",
@@ -2925,7 +2925,7 @@
   {
     "id": "2025-069",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "67",
     "title": "Sargent&(custom color)leaf 6741",
     "displayName": "",
     "description": "Sargent & Greenleaf, 6741, mounted, your choice of color (if available), with change key and dial ring key",
@@ -2958,7 +2958,7 @@
   {
     "id": "2025-070",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "68",
     "title": "Fabianoh130.nl raffle pack",
     "displayName": "",
     "description": "",
@@ -2996,7 +2996,7 @@
   {
     "id": "2025-071",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "69",
     "title": "(kiridashii pot)",
     "displayName": "",
     "description": "",
@@ -3027,7 +3027,7 @@
   {
     "id": "2025-073",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "70",
     "title": "Big box of metal shaped like locks",
     "displayName": "",
     "description": "",
