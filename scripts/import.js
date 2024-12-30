@@ -412,6 +412,7 @@ const raflMainData = raflData
         year: +datum['Year'],
         potNumber: datum['Pot Number'],
         title: datum['Title'],
+        winnerCount: datum['Winner Count'],
         displayName: datum['Display Name'],
         description: datum['Description'],
         potContents: datum['Pot Contents'],

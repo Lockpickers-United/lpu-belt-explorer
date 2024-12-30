@@ -65,6 +65,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const descriptionMargin = !isMobile ? '12px 0px 12px 8px' : '12px 0px 12px 0px'
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
+    const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
     const infoOpactiy = entry.winner && !expanded ? 0.6 : 1
 
     return (
@@ -82,7 +83,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 <div style={{
                                     marginRight: 8,
                                     color: '#bbb',
-                                    fontSize: descriptionFontSize
+                                    fontSize: '1.0rem'
                                 }}>Contributed by &nbsp;
                                     {entry.contributedBy.map((contrib, index) => {
                                         const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
@@ -192,7 +193,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                         {
                             entry.potContents &&
                             <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
-                                <FieldValue name='Contents' textStyle={{fontSize: descriptionFontSize}} value={
+                                <FieldValue name='Contents' textStyle={{fontSize: contentsFontSize}} value={
                                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                         {entry.potContents}
                                     </ReactMarkdown>

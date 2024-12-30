@@ -148,6 +148,7 @@ export const raflSchema = Joi.array().items(
         'Year': Joi.number().max(2030),
         'Pot Number': Joi.number().max(999),
         'Title': Joi.string(),
+        'Winner Count': Joi.number().allow(''),
         'Display Name': Joi.string().allow(''),
         'Description': Joi.string().allow(''),
         'Pot Contents': Joi.string().allow(''),
