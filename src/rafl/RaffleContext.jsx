@@ -48,7 +48,7 @@ export function RaffleProvider({children}) {
             }, {})
             : {}
     },[raflResponseDetails2])
-    
+
     const allPots = useMemo(() => {
         const potEntries = preview && allDataLoaded
             ? raflJsonUrl ?? []

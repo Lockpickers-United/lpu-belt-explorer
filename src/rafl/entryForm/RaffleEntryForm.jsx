@@ -26,6 +26,7 @@ function RaffleEntryForm() {
     const [potData, setPotData] = useState({0: {tickets: 0}})
     const potKeys = Array.from(Object.keys(potData))
 
+    const {VITE_RAFL_VIEW_FORM_ID: raflFormId} = import.meta.env
     const {raflQuestionMap, displayStats, setDisplayStats} = useContext(RaffleContext)
     const [initial, setInitial] = useState(true)
     if (initial && displayStats) {
@@ -69,9 +70,10 @@ function RaffleEntryForm() {
         setPotData(newPotData)
     }, [potData])
 
+
     const handleSubmit = useCallback(() => {
 
-        const base = 'https://docs.google.com/forms/d/e/1FAIpQLSe0Rr8mykkE5FAgzUACzGsGYq_mN-vS34arr2uL0QDEFHBSNQ/viewform?usp=pp_url'
+        const base = `https://docs.google.com/forms/d/e/${raflFormId}/viewform?usp=pp_url`
 
         const platform = `&entry.${raflQuestionMap[0].formId}=${encodeURIComponent(formData.platform)}`
         const username = `&entry.${raflQuestionMap[1].formId}=${encodeURIComponent(formData.username)}`
@@ -92,7 +94,7 @@ function RaffleEntryForm() {
         setSumbitted(true)
         openInNewTab(`${base}${parameters.join('')}${potParams}`)
 
-    }, [charityData, formData, openInNewTab, potData, raflQuestionMap])
+    }, [charityData.itemTitle, formData.donation, formData.platform, formData.receipt, formData.username, openInNewTab, potData, raflFormId, raflQuestionMap])
 
     const mappedCharities = allCharities.map(c => {
         return {...c, title: c.name}
