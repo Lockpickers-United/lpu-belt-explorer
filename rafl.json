@@ -2,7 +2,7 @@
   {
     "id": "2025-025",
     "year": 2025,
-    "potNumber": "0",
+    "potNumber": "1",
     "title": "$$$ of Locc",
     "winnerCount": "",
     "displayName": "",
@@ -36,11 +36,11 @@
   {
     "id": "2025-033",
     "year": 2025,
-    "potNumber": "0",
-    "title": "Amvgaert shopping spree",
+    "potNumber": "2",
+    "title": "Amvgaert Shopping Spree",
     "winnerCount": "",
     "displayName": "",
-    "description": "A $400 gift card to go crazy at Amvgaert's lock store!",
+    "description": "A $400 gift card to go crazy at Amvgaert's [lock store](https://docs.google.com/spreadsheets/d/1_Dk619Y3Zj_zsLHKLxGZlRdgSUH1pF0u2BxFScgJPXc/edit?gid=32499356#gid=32499356)!",
     "potContents": "$400 gift card to Amvgaert's [lock store](https://docs.google.com/spreadsheets/d/1_Dk619Y3Zj_zsLHKLxGZlRdgSUH1pF0u2BxFScgJPXc/edit?gid=32499356#gid=32499356)!",
     "contributedBy": [
       "amvgaert"
@@ -70,12 +70,12 @@
   {
     "id": "2025-030",
     "year": 2025,
-    "potNumber": "0",
-    "title": "Lockpickersbench shopping spree",
+    "potNumber": "3",
+    "title": "Lockpickersbench Shopping Spree",
     "winnerCount": "2",
     "displayName": "",
-    "description": "2 winners receive a $100 ticket to a shopping spree at LPU's favorite one-stop shop! With anything and everything you'd possibly want from the best brands in the industry, what would you use it on?",
-    "potContents": "2x winners receive a $100 gift card for anything on lockpickersbench.com!",
+    "description": "2 winners receive a $100 ticket to a shopping spree at LPU's favorite one-stop shop, the [lockpicker's bench](https://lockpickersbench.com/)! With anything and everything you'd possibly want from the best brands in the industry, what would you use it on?",
+    "potContents": "2x winners receive a $100 gift card for anything on [lockpickersbench.com](https://lockpickersbench.com/)!",
     "contributedBy": [
       "lockpickersbench.com"
     ],
@@ -289,7 +289,7 @@
     "title": "elocksmith elockwood Pot",
     "winnerCount": "",
     "displayName": "",
-    "description": "Our friends at elocksmith are back once again this year with a pair of staple Lockwood padlocks! ",
+    "description": "Our friends at [elocksmith](https://elocksmiths.com.au) are back once again this year with a pair of staple Lockwood padlocks! ",
     "potContents": "Two popular Lockwood padlocks:\n- 1 x 334B45\n- 1 x 234S45\n\nDonated by [elocksmith Pty Ltd](https://elocksmiths.com.au)",
     "contributedBy": [
       "elocksmith"
@@ -324,7 +324,7 @@
     "title": "elocksmith esafe Pot",
     "winnerCount": "",
     "displayName": "",
-    "description": "A never-before-seen addition to the raffle--elocksmith is offering a prize containing two brand new digital safe locks!",
+    "description": "A lock format never seen before in the raffle--[elocksmith](https://elocksmiths.com.au) is offering a prize containing two brand new digital safe locks!",
     "potContents": "Two NOS digital safe locks, both in the original box with instructions:\n- 1 x Kaba Mas T52 \n- 1 x Mas Hamilton 100R\n\nDonated by [elocksmith Pty Ltd](https://elocksmiths.com.au)",
     "contributedBy": [
       "elocksmith"
@@ -358,8 +358,8 @@
     "title": "Unpurchaseable Bones Pack",
     "winnerCount": "",
     "displayName": "",
-    "description": "The titular skellies in Bare Bones' promo images have been only previously given away to select individuals for there contributions to lock sport (Snake, Pocket Woman, Cranky Lockpicker, Knox Locks, etc). However, just for the raffle, the folks at Bare Bones Lock Picking will make one old and one new version of these unpurchaseable skellies.",
-    "potContents": "Contributed by Bare Bones Lock Picking themselves\n- Skellie, old style\n- Skellie, new style with interchangeable heads/caps\n- Clear femur pick handle \n- Some other ‘unobtainable bone items’ (early model designs,one off prototypes,etc)",
+    "description": "The titular skellies in [Bare Bones'](https://bareboneslockpicking.com/) promo images have been only previously given away to select individuals for there contributions to lock sport (Snake, Pocket Woman, Cranky Lockpicker, Knox Locks, etc). However, just for the raffle, the folks at [Bare Bones Lock Picking](https://bareboneslockpicking.com/) will make one old and one new version of these unpurchaseable skellies.",
+    "potContents": "Contributed by [Bare Bones Lock Picking](https://bareboneslockpicking.com/) themselves\n- Skellie, old style\n- Skellie, new style with interchangeable heads/caps\n- Clear femur pick handle \n- Some other ‘unobtainable bone items’ (early model designs,one off prototypes,etc)",
     "contributedBy": [
       "Bare Bones Lock Picking"
     ],
@@ -445,7 +445,7 @@
     "title": "Honey Badger Knife Kit",
     "winnerCount": "",
     "displayName": "",
-    "description": "Contributed by Badger themselves, a drop point flipper knife complete with oil and takedown mat (good for both locks and knives).",
+    "description": "Contributed by [Badger](https://honeybadgerknives.com/) themselves, a drop point flipper knife complete with oil and takedown mat (good for both locks and knives).",
     "potContents": "Donated by the US distributors of [honeybadgerknives.com](https://honeybadgerknives.com/)\n- Silicone takedown mat\n- Newly formulated synthetic oil with needle oiler\n- [Small drop point knife](https://honeybadgerknives.com/collections/drop-point-blade-knives/products/honey-badger-knives-small-drop-point-flipper-knife-8cr13mov-steel?_pos=1&_fid=ef9f219f0&_ss=c)",
     "contributedBy": [
       "Badger"
@@ -518,7 +518,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "A staple of every rafl, SasPes returns with a selection of advanced locks, pinning trays, and a beautifully framed exploded padlock to put on your wall.",
-    "potContents": "- Lock Wall Art - Titan Frame\n- Disk Lock Pinning Tray (Abloy Classic)\n- [Vintage Abloy Classic](/#/locks?id=da09d849&name=Abloy_Classic) (new old stock)\n- Squire 440 Old English padlocks\n- Lock Pinning Tray (ASSA 7 pins)\n- ASSA Twin Combi\n- [ASSA D12](#/locks?id=d3ad5a73)",
+    "potContents": "- Lock Wall Art - Titan Frame\n- Disk Lock Pinning Tray (Abloy Classic)\n- [Vintage Abloy Classic](/#/locks?id=da09d849&name=Abloy_Classic) (new old stock)\n- [Squire 440](/#/locks?id=a460c971) Old English padlocks\n- Lock Pinning Tray (ASSA 7 pins)\n- [ASSA Twin Combi](/#/locks?id=fd7b514a)\n- [ASSA D12](/#/locks?id=d3ad5a73)",
     "contributedBy": [
       "SasPes"
     ],
@@ -559,7 +559,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "A Bulgarian squatty potty full of locks that are sure to be naughty. Features a Protec2 cutaway, Abus Rock 100th anniversary padlock, foil dimple impressioning starter kit, and a number of nice locks.",
-    "potContents": "- [Abloy protec2](/#/locks?id=e87f0ca2&name=Abloy_Protec2) double euro cylinder with gear 1 half is a cutaway, the other is stock, also 1 half is unmastered and one is mastered, keyways 5 and 7 (the winner can swap them if needed)\n- Abus the Rock 100th anniversary padlock (new)\n- Sargent signature LFIC (with operating and control key)\n- Mauer MLS redline (cut euro) with 1 key\n- [Yale 500+](/#/locks?id=37951bc4&name=Yale_500) (cut euro) with 1 key\n- [Metal Zx5j](/#/locks?id=f3a2aa78&name=Metal_Zx5J) (cut euro) with 1 key\n- Foil dimple impressiining starter kit with all the tools needed to open the lock in the kit",
+    "potContents": "- [Abloy protec2](/#/locks?id=e87f0ca2&name=Abloy_Protec2) double euro cylinder with gear 1 half is a cutaway, the other is stock, also 1 half is unmastered and one is mastered, keyways 5 and 7 (the winner can swap them if needed)\n- Abus the Rock 100th anniversary padlock (new)\n- Sargent signature LFIC (with operating and control key)\n- Mauer MLS Red Line (cut euro) with 1 key\n- [Yale 500+](/#/locks?id=37951bc4&name=Yale_500) (cut euro) with 1 key\n- [Metal Zx5j](/#/locks?id=f3a2aa78&name=Metal_Zx5J) (cut euro) with 1 key\n- Foil dimple impressiining starter kit with all the tools needed to open the lock in the kit",
     "contributedBy": [
       "D.Q",
       "Pudes"
@@ -663,8 +663,8 @@
     "title": "Ratyoke Custom Pick",
     "winnerCount": "",
     "displayName": "",
-    "description": "A new piece by a legend of pickmaking. Short hook with a chechen wood handle in a brand new design.",
-    "potContents": "Pick, tbd",
+    "description": "A new piece by a legend of pickmaking, [Ratyoke](https://ratyoke.com/). Short hook with a chechen wood handle in a brand new design.",
+    "potContents": "It's a [Ratyoke](https://ratyoke.com/), you know it's good\n- Short hook, chechen wood handle, new design",
     "contributedBy": [
       "Ratyoke"
     ],
@@ -770,6 +770,205 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/54193758089_03a792f5e7_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54193758089/in/album-72177720322353676/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54193758089_faeb2cf280_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2025-055",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Clamp the Rainbow",
+    "winnerCount": "",
+    "displayName": "",
+    "description": "There are not very many pickers who enjoy picking all formats without a vise. The rare exceptions to that rule all have specialized claw hands which originally evolved to help them hang on tree branches for long periods of time. For the rest of us normal humans, a vise is highly recommended, and this pot from 44 Delta delivers it in vibrant style. Winner receives a rainbow vise base, vise clamp, collection of plug holders, followers, pinning tray, and some swag.",
+    "potContents": "- Crazy Rainbow Split/Solid Follower Set (4 different sizes)\n- Crazy Rainbow Chuck Vise (Generic)\n- SmallRig \"Super\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Silky Black)\n- SFIC Vise Lock Holder (Silky Black)\n- KIK Vise Lock Holder (Silky Black)\n- Euro Vise Lock Holder (Silky Black)\n- LPL Pinning Tray (Black to White Gradient)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [
+      "Tools (gutting)",
+      "Tools (vises)",
+      "Swag (LPU)",
+      "Swag (other)",
+      "Swag (stickers)",
+      "Organization (mats/trays)",
+      "Tools (core holders)",
+      "Tools (other)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": "20241224",
+    "media": [
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225018941_81a9d53f30_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225018941/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225018941_6496295279_o.jpg"
+      },
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225415260_033e922702_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225415260/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225415260_bf9a52930d_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2025-056",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Clamp in the Dark",
+    "winnerCount": "",
+    "displayName": "",
+    "description": "Vises are important, see above. This pot is very similar, but glow-in-the-dark and with a European flavor. Vise base + clamp, solid and split followers, core holders (now with euro), and swag.",
+    "potContents": "- Fluorescent Green/Glow in the Dark Green Split/Solid Follower Set (4 different sizes)\n- Fluorescent Green/Glow in the Dark Green Split/Split Follower Set (4 different sizes)\n- Fluorescent Green/Glow in the Dark Green Chuck Vise (Exotic)\n- SmallRig \"Crab\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Fluorescent Green/Glow in the Dark Green)\n- KIK Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\n- Euro Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [
+      "Tools (gutting)",
+      "Tools (vises)",
+      "Swag (LPU)",
+      "Swag (other)",
+      "Swag (stickers)",
+      "Tools (core holders)",
+      "Tools (other)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": "20241224",
+    "media": [
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225019396_3fdcdbd6f1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225019396/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225019396_84876cd6e7_o.jpg"
+      },
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254599_2d2aff3503_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254599/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254599_404d528807_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2025-057",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "Chipped Belts",
+    "winnerCount": "",
+    "displayName": "",
+    "description": "Up the ante with these beautiful stylized chips representing each of the lock belts. Comes complete with a stand, display case, and extra swag.",
+    "potContents": "- Complete Set of Belt Chips\n- Belt Chip Stand (Black)\n- Display Case\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [
+      " Swag (LPU)",
+      "Swag (other)",
+      "Swag (stickers)",
+      "Swag (art)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": "20241224",
+    "media": [
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225019791_ea9061e34c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225019791/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225019791_50d03a2f1a_o.jpg"
+      },
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254829_63f26d8fe7_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254829/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254829_a950d4f2b7_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2025-058",
+    "year": 2025,
+    "potNumber": "0",
+    "title": "\"The Mechanism\"",
+    "winnerCount": "",
+    "displayName": "",
+    "description": "An American 1100 that's almost too beautiful to pick. Contains \"The Mechanism\", a custom etched 1100 alongside etched keys, etched dog tags, and some extra swag.",
+    "potContents": "- \"The Mechanism\" - A Custom Etched [American Lock 1100](/#/locks?id=2ae1e0b8&name=American_Lock_1100) (Black)\n- Keys (etched on both sides)\n- Stainless Steel Dog Tag (etched on both sides)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
+    "contributedBy": [
+      "44 Delta"
+    ],
+    "tags": [
+      "Locks (intermediate/advanced)",
+      "Locks (pin tumbler)",
+      "Locks (padlocks)",
+      "Swag (LPU)",
+      "Swag (art)",
+      "Swag (stickers"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "winner": "",
+    "dateAdded": "20241224",
+    "media": [
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254473_ec4fc37f96_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254473/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254473_23f96590f3_o.jpg"
+      },
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254663_ac14eb5cfa_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254663/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254663_e81e76ac2b_o.jpg"
+      },
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225416305_be7cc17392_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225416305/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225416305_f99386412f_o.jpg"
+      },
+      {
+        "title": "By: 44 Delta",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54225416470_89ef275972_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225416470/in/album-72177720322786293/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54225416470_396847bc95_o.jpg"
       }
     ]
   },
@@ -1492,7 +1691,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "Nearly 2 kg of locks from Finland, including examples of all major historical manufacturers and large selection of samples from Abloy. As a bonus, includes appropriately themed mug for your beverage of choice. ",
-    "potContents": "Abloy:\n- [PL231 Exec](#/locks?id=fc627b17)\n- [PL240 Classic](#/locks?id=da09d849)\n- No model marked, size between PL240 and PL250 DL \"\"pro\"\" (no DC). Non-guttable. With detachable shackle\n- [PL340 Sentry](#/locks?id=2ae6a691), 2 keys\n- [PL340 Protec](#/locks?id=735439dd)\n- [PL340 Easy](#/locks?id=12ff8c25), 2 keys + keycard\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys\n\nMore AVA (from Escape Goat):\n- [Chubb AVA padlock](#/locks?id=dbc6670b)\n- [AVA camlock](#/locks?id=9ae8b650)",
+    "potContents": "Abloy:\n- [PL231 Exec](/#/locks?id=fc627b17)\n- [PL240 Classic](/#/locks?id=da09d849)\n- No model marked, size between PL240 and PL250 DL \"\"pro\"\" (no DC). Non-guttable. With detachable shackle\n- [PL340 Sentry](/#/locks?id=2ae6a691), 2 keys\n- [PL340 Protec](/#/locks?id=735439dd)\n- [PL340 Easy](/#/locks?id=12ff8c25), 2 keys + keycard\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys\n\nMore AVA (from Escape Goat):\n- [Chubb AVA padlock](/#/locks?id=dbc6670b)\n- [AVA camlock](/#/locks?id=9ae8b650)",
     "contributedBy": [
       "imaginary_unit",
       "escape goat"
@@ -1529,6 +1728,27 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/54224104557_9dfb6b40c9_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54224104557/in/album-72177720322786293/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54224104557_ed1afb6666_o.jpg"
+      },
+      {
+        "title": "By: escape goat",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54236689268_ec52894e2e_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54236689268/in/album-72177720322849466/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54236689268_0edaf0e365_o.jpg"
+      },
+      {
+        "title": "By: escape goat",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54236454456_5e0545c8fd_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54236454456/in/album-72177720322849466/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54236454456_126ea30b58_o.jpg"
+      },
+      {
+        "title": "By: escape goat",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54235553092_897bc919b8_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54235553092/in/album-72177720322849466/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54235553092_db3dae7156_o.jpg"
       }
     ]
   },
@@ -1540,7 +1760,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "7 Scandinavian ovals, simple yet frustrating, alongside two mounts, each of which hold 4 locks.",
-    "potContents": "7 Scandinavian ovals and 2 stands (keys included)\n- [ASSA 500](#/locks?id=e84582aa)\n- [ASSA 700](#/locks?id=f133510b)\n- [ASSA Twin 6000](#/locks?id=104776ef)\n- [ASSA D12](#/locks?id=d3ad5a73)\n- KABA Titan Combi\n- KABA experT\n- Abus 7-pin",
+    "potContents": "7 Scandinavian ovals and 2 stands (keys included)\n- [ASSA 500](/#/locks?id=e84582aa)\n- [ASSA 700](/#/locks?id=f133510b)\n- [ASSA Twin 6000](/#/locks?id=104776ef)\n- [ASSA D12](/#/locks?id=d3ad5a73)\n- KABA Titan Combi\n- KABA experT\n- Abus 7-pin",
     "contributedBy": [
       "H.J"
     ],
@@ -1761,7 +1981,7 @@
     "title": "Server-grade Nixie Clock Kit",
     "winnerCount": "",
     "displayName": "",
-    "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed!\nNeeds 12vdc power supply to complete and case made for it\n\nThese are really nice nixie tubes, too",
+    "description": "Build your own Nixie clock kit, comes with 6x 200k hour NL841 tubes, circuit boards and components, soldering experience needed! Needs 12vdc power supply to complete and case made for it. These are really nice nixie tubes, too.",
     "potContents": "- A nixie kit with server-grade NL841 tubes (200k hour life) and a kit to assemble",
     "contributedBy": [
       "V Pinball"
@@ -2140,205 +2360,6 @@
     ]
   },
   {
-    "id": "2025-055",
-    "year": 2025,
-    "potNumber": "0",
-    "title": "Crazy Rainbow Pot",
-    "winnerCount": "",
-    "displayName": "",
-    "description": "There are not very many pickers who enjoy picking all formats without a vise. The rare exceptions to that rule all have specialized claw hands which originally evolved to help them hang on tree branches for long periods of time. For the rest of us normal humans, a vise is highly recommended, and this pot from 44 Delta delivers it in vibrant style. Winner receives a rainbow vise base, vise clamp, collection of plug holders, followers, pinning tray, and some swag.",
-    "potContents": "- Crazy Rainbow Split/Solid Follower Set (4 different sizes)\n- Crazy Rainbow Chuck Vise (Generic)\n- SmallRig \"Super\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Silky Black)\n- SFIC Vise Lock Holder (Silky Black)\n- KIK Vise Lock Holder (Silky Black)\n- Euro Vise Lock Holder (Silky Black)\n- LPL Pinning Tray (Black to White Gradient)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
-    "contributedBy": [
-      "44 Delta"
-    ],
-    "tags": [
-      "Tools (gutting)",
-      "Tools (vises)",
-      "Swag (LPU)",
-      "Swag (other)",
-      "Swag (stickers)",
-      "Organization (mats/trays)",
-      "Tools (core holders)",
-      "Tools (other)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "$20 towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
-    "winner": "",
-    "dateAdded": "20241224",
-    "media": [
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225018941_81a9d53f30_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225018941/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225018941_6496295279_o.jpg"
-      },
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225415260_033e922702_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225415260/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225415260_bf9a52930d_o.jpg"
-      }
-    ]
-  },
-  {
-    "id": "2025-056",
-    "year": 2025,
-    "potNumber": "0",
-    "title": "Glow in the Dark Pot",
-    "winnerCount": "",
-    "displayName": "",
-    "description": "Vises are important, see above. This pot is very similar, but glow-in-the-dark and with a European flavor. Vise base + clamp, solid and split followers, core holders (now with euro), and swag.",
-    "potContents": "- Fluorescent Green/Glow in the Dark Green Split/Solid Follower Set (4 different sizes)\n- Fluorescent Green/Glow in the Dark Green Split/Split Follower Set (4 different sizes)\n- Fluorescent Green/Glow in the Dark Green Chuck Vise (Exotic)\n- SmallRig \"Crab\" Clamp (plus hardware)\n- Padlock Plug Holder Set (Fluorescent Green/Glow in the Dark Green)\n- KIK Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\n- Euro Vise Lock Holder (Fluorescent Green/Glow in the Dark Green)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
-    "contributedBy": [
-      "44 Delta"
-    ],
-    "tags": [
-      "Tools (gutting)",
-      "Tools (vises)",
-      "Swag (LPU)",
-      "Swag (other)",
-      "Swag (stickers)",
-      "Tools (core holders)",
-      "Tools (other)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "$20 towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
-    "winner": "",
-    "dateAdded": "20241224",
-    "media": [
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225019396_3fdcdbd6f1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225019396/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225019396_84876cd6e7_o.jpg"
-      },
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254599_2d2aff3503_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254599/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254599_404d528807_o.jpg"
-      }
-    ]
-  },
-  {
-    "id": "2025-057",
-    "year": 2025,
-    "potNumber": "0",
-    "title": "Chipped Belts",
-    "winnerCount": "",
-    "displayName": "",
-    "description": "Up the ante with these beautiful stylized chips representing each of the lock belts. Comes complete with a stand, display case, and extra swag.",
-    "potContents": "- Complete Set of Belt Chips\n- Belt Chip Stand (Black)\n- Display Case\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
-    "contributedBy": [
-      "44 Delta"
-    ],
-    "tags": [
-      " Swag (LPU)",
-      "Swag (other)",
-      "Swag (stickers)",
-      "Swag (art)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "$20 towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
-    "winner": "",
-    "dateAdded": "20241224",
-    "media": [
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225019791_ea9061e34c_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225019791/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225019791_50d03a2f1a_o.jpg"
-      },
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254829_63f26d8fe7_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254829/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254829_a950d4f2b7_o.jpg"
-      }
-    ]
-  },
-  {
-    "id": "2025-058",
-    "year": 2025,
-    "potNumber": "0",
-    "title": "\"The Mechanism\"",
-    "winnerCount": "",
-    "displayName": "",
-    "description": "An American 1100 that's almost too beautiful to pick. Contains \"The Mechanism\", a custom etched 1100 alongside etched keys, etched dog tags, and some extra swag.",
-    "potContents": "- \"The Mechanism\" - A Custom Etched [American Lock 1100](/#/locks?id=2ae1e0b8&name=American_Lock_1100) (Black)\n- Keys (etched on both sides)\n- Stainless Steel Dog Tag (etched on both sides)\n- 44 Delta Poker Chip\n- 44 Delta Maker Chip\n- 44 Delta Sticker",
-    "contributedBy": [
-      "44 Delta"
-    ],
-    "tags": [
-      "Locks (intermediate/advanced)",
-      "Locks (pin tumbler)",
-      "Locks (padlocks)",
-      "Swag (LPU)",
-      "Swag (art)",
-      "Swag (stickers"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "$20 towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
-    "winner": "",
-    "dateAdded": "20241224",
-    "media": [
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254473_ec4fc37f96_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254473/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254473_23f96590f3_o.jpg"
-      },
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225254663_ac14eb5cfa_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225254663/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225254663_e81e76ac2b_o.jpg"
-      },
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225416305_be7cc17392_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225416305/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225416305_f99386412f_o.jpg"
-      },
-      {
-        "title": "By: 44 Delta",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54225416470_89ef275972_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54225416470/in/album-72177720322786293/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54225416470_396847bc95_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2025-039",
     "year": 2025,
     "potNumber": "0",
@@ -2544,7 +2565,7 @@
     "id": "2025-028",
     "year": 2025,
     "potNumber": "0",
-    "title": "Buga buga",
+    "title": "Buga Buga",
     "winnerCount": "",
     "displayName": "",
     "description": "5 German-made locks including two Buga's. Buga Buga. ",
@@ -2580,7 +2601,7 @@
     "id": "2025-029",
     "year": 2025,
     "potNumber": "0",
-    "title": "Yabended my picks",
+    "title": "Yabended my Picks",
     "winnerCount": "",
     "displayName": "",
     "description": "A collection of 10 intimidating locks, inbound from Poland",
@@ -2654,7 +2675,7 @@
     "id": "2025-031",
     "year": 2025,
     "potNumber": "0",
-    "title": "English-speaking locks",
+    "title": "English-speaking Locks",
     "winnerCount": "",
     "displayName": "",
     "description": "Two Medecos, an S&G, and a Squire walk into a bar--and none of them are even dented. Winner receives a Medeco Steelguard dropbolt (Biaxial), Medeco M3, S&G 8088, Squire 440 (+wires), and a Medeco pinning mat.",
@@ -2788,7 +2809,7 @@
     "id": "2025-049",
     "year": 2025,
     "potNumber": "0",
-    "title": "C&C: Cat Hair and Coasters",
+    "title": "Cat Hair and Coasters",
     "winnerCount": "",
     "displayName": "",
     "description": "This pot has some coasters in it, but really it's for the cat hair connoisseurs out there who need another bag for their collection",
@@ -2918,7 +2939,7 @@
     "id": "2025-052",
     "year": 2025,
     "potNumber": "0",
-    "title": "Big Box o Locks",
+    "title": "Big Box o' Locks",
     "winnerCount": "",
     "displayName": "",
     "description": "A giant box of locks, too many to count. Click to see all these wonderful locks. And what's that in the upper left corner? A mystery holiday box?",
@@ -2989,8 +3010,8 @@
   {
     "id": "2025-027",
     "year": 2025,
-    "potNumber": "0",
-    "title": "A Symantec branded denim jacket",
+    "potNumber": "69",
+    "title": "Symantec-branded Denim Jacket",
     "winnerCount": "",
     "displayName": "",
     "description": "A nice functional denim jacket with plenty of pockets. Pockets full of locks.",
