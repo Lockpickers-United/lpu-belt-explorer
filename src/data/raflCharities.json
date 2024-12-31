@@ -1,18 +1,13 @@
 [
   {
     "name": "A.C.N.M Foundation",
-    "url": "https://www.midwife.org/acnm-foundation",
+    "url": "http://acnmf.org/",
     "donations2024": 50
   },
   {
     "name": "Abandoned Pet Project",
     "url": "https://www.abandonedpetproject.org/donate-here/",
     "donations2024": 290
-  },
-  {
-    "name": "Abroga Katthem",
-    "url": "",
-    "donations2024": 300
   },
   {
     "name": "Against Malaria Foundation",
@@ -26,23 +21,13 @@
   },
   {
     "name": "Alight",
-    "url": "https://wearealight.org/",
+    "url": "https://www.wearealight.org/",
     "donations2024": 400
   },
   {
-    "name": "Alzheimer’s Association",
-    "url": "",
-    "donations2024": 332
-  },
-  {
     "name": "American Civil Liberties Union",
-    "url": "",
+    "url": "https://www.charitynavigator.org/ein/136213516",
     "donations2024": 1408
-  },
-  {
-    "name": "American Foundation for Suicide Prevention",
-    "url": "",
-    "donations2024": 390
   },
   {
     "name": "American Humane",
@@ -53,11 +38,6 @@
     "name": "Autistic Self Advocacy Network",
     "url": "https://secure.everyaction.com/uEXr_TqeBkqmQMlvi7itXg2",
     "donations2024": 325
-  },
-  {
-    "name": "Aware Wildlife Center",
-    "url": "",
-    "donations2024": 200
   },
   {
     "name": "Big Brothers Big Sisters",
@@ -90,18 +70,13 @@
     "donations2024": 0
   },
   {
-    "name": "California Masonic Foundation",
-    "url": "",
-    "donations2024": 0
-  },
-  {
     "name": "Camp One Step",
     "url": "https://camponestep.org/donate/",
     "donations2024": 0
   },
   {
     "name": "Canadian Whale Institute",
-    "url": "",
+    "url": "https://www.canadianwhaleinstitute.ca/donate",
     "donations2024": 320
   },
   {
@@ -171,7 +146,7 @@
   },
   {
     "name": "Diabetes Fonds",
-    "url": "https://formulier.diabetesfonds.nl/doneren",
+    "url": "https://www.diabetesfonds.nl/home",
     "donations2024": 127
   },
   {
@@ -186,7 +161,7 @@
   },
   {
     "name": "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser",
-    "url": "",
+    "url": "https://donate.doctorswithoutborders.org/onetime.cfm",
     "donations2024": 1675
   },
   {
@@ -230,11 +205,6 @@
     "donations2024": 103
   },
   {
-    "name": "Fire Department",
-    "url": "",
-    "donations2024": 0
-  },
-  {
     "name": "Fisher House Foundation",
     "url": "https://engage.fisherhouse.org/site/Donation2?2262.donation=form1&df_id=2262&mfc_pref=T",
     "donations2024": 0
@@ -251,7 +221,7 @@
   },
   {
     "name": "Frankie’s Friends",
-    "url": "",
+    "url": "https://www.frankiesfriends.org/donate",
     "donations2024": 50
   },
   {
@@ -261,7 +231,7 @@
   },
   {
     "name": "Girls Who Code",
-    "url": "",
+    "url": "https://girlswhocode.com/",
     "donations2024": 302
   },
   {
@@ -291,12 +261,17 @@
   },
   {
     "name": "Hardcore Help",
-    "url": "",
+    "url": "https://www.hardcore-help.org/donate/",
     "donations2024": 174
   },
   {
     "name": "Heard County Humane Society",
     "url": "https://heardcountyhumanesociety.wordpress.com/",
+    "donations2024": 0
+  },
+  {
+    "name": "Hilarity for Charity",
+    "url": "https://wearehfc.org/",
     "donations2024": 0
   },
   {
@@ -345,9 +320,19 @@
     "donations2024": 30
   },
   {
+    "name": "Michael J. Fox Foundation for Parkinson's Research",
+    "url": "https://www.michaeljfox.org/",
+    "donations2024": 0
+  },
+  {
     "name": "Mind",
     "url": "https://www.mind.org.uk/donate/",
     "donations2024": 63
+  },
+  {
+    "name": "Minus18",
+    "url": "https://www.minus18.org.au/",
+    "donations2024": 0
   },
   {
     "name": "Mozilla",
@@ -392,11 +377,6 @@
   {
     "name": "Niagara's Cancer Care Run Foundation",
     "url": "https://secure.rankincancerrun.com/donate",
-    "donations2024": 0
-  },
-  {
-    "name": "Noah's Ark Animal Shelter",
-    "url": "",
     "donations2024": 0
   },
   {
@@ -571,7 +551,7 @@
   },
   {
     "name": "The Food Bank of Contra Costa and Solano",
-    "url": "",
+    "url": "https://www.foodbankccs.org/",
     "donations2024": 350
   },
   {
@@ -582,11 +562,6 @@
   {
     "name": "The Leukemia and Lymphoma Society",
     "url": "https://givenow.lls.org/give/342076/#!/donation/checkout",
-    "donations2024": 0
-  },
-  {
-    "name": "Michael J. Fox Foundation for Parkinson's Research",
-    "url": "https://www.michaeljfox.org/",
     "donations2024": 0
   },
   {
