@@ -68,7 +68,7 @@ export function RaffleDataProvider({children, allEntries}) {
         allEntries,
         visibleEntries,
         getPotFromId,
-        expandAll
+        expandAll,
     }), [allEntries, visibleEntries, getPotFromId, expandAll])
 
     return (

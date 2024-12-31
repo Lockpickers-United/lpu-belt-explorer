@@ -56,7 +56,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [expanded, entry, scrolled])
+    }, [expanded, entry, scrolled, expandAll])
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)

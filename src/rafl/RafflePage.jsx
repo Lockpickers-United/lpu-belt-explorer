@@ -8,6 +8,7 @@ import RaffleSearchBar from './RaffleSearchBar.jsx'
 import {raffleSortFields} from '../data/sortFields'
 import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
+import ExpandAllButton from './ExpandAllButton.jsx'
 
 function RafflePage({profile}) {
     const {filters} = useContext(FilterContext)
@@ -29,6 +30,10 @@ function RafflePage({profile}) {
 
             <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
 
+            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems: 'center', marginTop: 4, marginBottom: 4}}>
+                <ExpandAllButton/>
+            </div>
+
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
             {visibleEntries.map(entry =>
@@ -40,7 +45,7 @@ function RafflePage({profile}) {
                 />
             )}
 
-            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems:'center', marginTop:30}}>
+            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems: 'center', marginTop: 30}}>
                 <RaffleExportButton text={true}/>
             </div>
 
