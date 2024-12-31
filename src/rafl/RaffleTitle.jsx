@@ -5,7 +5,7 @@ import RaffleContext from './RaffleContext.jsx'
 function RaffleTitle({entry}) {
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
-    
+
     let entryName = entry.displayName ? entry.displayName : entry.title
     const winnersText = entry.winnerCount ? ` (${entry.winnerCount} winners)` : ''
     entryName = entryName + winnersText
