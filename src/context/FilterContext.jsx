@@ -127,7 +127,8 @@ const nonFilters = [
     'locks',
     'debug',
     'preview',
-    'single'
+    'single',
+    'expandAll'
 ]
 
 export default FilterContext

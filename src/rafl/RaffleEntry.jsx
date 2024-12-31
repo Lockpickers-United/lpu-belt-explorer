@@ -20,9 +20,11 @@ import WatchlistButton from './WatchlistButton.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import {Collapse} from '@mui/material'
 import RaffleContext from './RaffleContext.jsx'
+import DataContext from '../context/DataContext.jsx'
 
 function RaffleEntry({entry, expanded, onExpand, single}) {
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
+    const {expandAll} = useContext(DataContext)
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
 
     const {filters} = useContext(FilterContext)
@@ -38,7 +40,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
         : '---'
 
     useEffect(() => {
-        if (expanded && ref && !scrolled) {
+        if (expanded && ref && !scrolled && !expandAll) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
 

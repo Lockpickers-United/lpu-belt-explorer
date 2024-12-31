@@ -6,7 +6,7 @@ import removeAccents from 'remove-accents'
 
 export function RaffleDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, preview, single, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -67,8 +67,9 @@ export function RaffleDataProvider({children, allEntries}) {
     const value = useMemo(() => ({
         allEntries,
         visibleEntries,
-        getPotFromId
-    }), [allEntries, visibleEntries, getPotFromId])
+        getPotFromId,
+        expandAll
+    }), [allEntries, visibleEntries, getPotFromId, expandAll])
 
     return (
         <DataContext.Provider value={value}>

@@ -12,7 +12,7 @@ import RaffleExportButton from './RaffleExportButton.jsx'
 function RafflePage({profile}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
-    const {visibleEntries} = useContext(DataContext)
+    const {visibleEntries, expandAll} = useContext(DataContext)
 
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
@@ -36,7 +36,7 @@ function RafflePage({profile}) {
                     key={entry.id}
                     entry={entry}
                     onExpand={handleExpand}
-                    expanded={entry.id === defExpanded}
+                    expanded={entry.id === defExpanded || !!expandAll}
                 />
             )}
 
