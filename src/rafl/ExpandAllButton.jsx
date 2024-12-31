@@ -6,7 +6,6 @@ import FilterContext from '../context/FilterContext.jsx'
 function ExpandAllButton() {
     const {filters, addFilter, removeFilter} = useContext(FilterContext)
     const {expandAll} = filters
-    console.log('filters', filters)
 
     const handleClick = useCallback(() => {
         if (!expandAll || expandAll === 'false') {
