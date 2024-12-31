@@ -15,9 +15,9 @@ import RaffleContext from '../RaffleContext.jsx'
 
 function RaffleReportRoute() {
     const {authLoaded} = useContext(AuthContext)
-    const {adminRole} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const {allPots} = useContext(RaffleContext)
+    const {raffleAdmin} = useContext(RaffleContext)
 
     const extras = (
         <React.Fragment>
@@ -32,7 +32,7 @@ function RaffleReportRoute() {
             <RaffleDataProvider allEntries={allPots}>
                 <React.Fragment>
                     <Nav title='RAFL Report' extras={extras}/>
-                    {authLoaded && adminRole && <RaffleReport/>}
+                    {authLoaded && raffleAdmin && <RaffleReport/>}
                     <Footer/>
 
                     <Tracker feature='raflReport'/>

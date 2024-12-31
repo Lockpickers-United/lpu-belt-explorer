@@ -44,7 +44,7 @@ function RaffleEntryForm() {
 
     const potError = useMemo(() => {
         return potKeys.reduce((acc, pot) => {
-            return !(potData[pot].tickets && potData[pot].tickets)
+            return !(potData[pot].itemTitle && potData[pot].tickets)
         }, false)
     }, [potData, potKeys])
 

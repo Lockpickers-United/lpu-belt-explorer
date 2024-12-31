@@ -23,7 +23,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
     const showDelete = Array.from(Object.keys(potData)).length > 1
 
     if ((potData[index].tickets !== potDetails.tickets) || potData[index].itemFullTitle !== potDetails.itemFullTitle) {
-        const complete = (potDetails.itemFullTitle && potDetails.tickets)
+        const complete = (!!potDetails.itemFullTitle && !!potDetails.tickets)
         handlePotChange(index, potDetails, complete)
     }
 
