@@ -56,9 +56,11 @@ function RaffleReport() {
             }}>
                 <RaffleStatsHeader/>
 
-                <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
-                    <span style={{fontSize: '0.8rem', marginTop: 10}}>{updateTime}</span>
-                </div>
+                {1===0 &&
+                    <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
+                        <span style={{fontSize: '0.8rem', marginTop: 10}}>{updateTime}</span>
+                    </div>
+                }
 
                 <div style={firstHeaderStyle}>Pots</div>
                 <RaffleStatsPotTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
