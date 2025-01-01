@@ -251,7 +251,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "Our friends at [elocksmith](https://elocksmiths.com.au) are back once again this year with a pair of staple Lockwood padlocks! ",
-    "potContents": "Two popular Lockwood padlocks:\n- 1 x [Lockwood 334B45](/#/locks?id=331c9d36&name=Lockwood_334B45_356S63_214A40_215A40_270S70) (spools)\n- 1 x Lockwood 234S45 (spools)\n\nDonated by [elocksmith Pty Ltd](https://elocksmiths.com.au)",
+    "potContents": "Two popular Lockwood padlocks:\n- 1 x [Lockwood 334B45](/#/locks?id=331c9d36&name=Lockwood_334B45_356S63_214A40_215A40_270S70) (spools)\n- 1 x [Lockwood 234S45](/#/locks?id=ae023398&name=Lockwood_334B45) (picking equivalent to the 234B45)\n\nDonated by [elocksmith Pty Ltd](https://elocksmiths.com.au)",
     "contributedBy": [
       "elocksmith"
     ],
@@ -445,7 +445,7 @@
     "description": "Go out and murder some dimple locks with this set of [6 flags](https://bareboneslockpicking.com/product/bone-casket-with-6-bone-dimple-picks/), packaged conveniently in a casket.",
     "potContents": "- [Bare Bones bone casket case with 6 dimple picks](https://bareboneslockpicking.com/product/bone-casket-with-6-bone-dimple-picks/)",
     "contributedBy": [
-      "455"
+      "4550"
     ],
     "tags": [
       "Picks (dimple)",
@@ -499,7 +499,7 @@
     "shippingInfo": "Domestic Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "Domestic only",
     "winner": "",
     "dateAdded": "20241214",
     "media": [
@@ -2247,7 +2247,7 @@
     "shippingInfo": "Domestic Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "Domestic only",
     "winner": "",
     "dateAdded": "20241214",
     "media": [
@@ -2776,7 +2776,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "What could anyone possibly want with 18 ugly pillows of pets that aren't even their's? How expensive is it going to be to ship this internationally?\nLife is full of questions that don't matter, so just put your tickets in the pet pillow pot.",
-    "potContents": "18 ugly pet pillows of various sizes, made using the photos shown below. Pets and owners include:\n- Brian - Yohapii\n- Charlie - DQ\n- Charn - sisko\n- Della - BurnB1\n- Gomez - birdie\n- Ishtar - Musketeer\n- Kitty - Craig 3.0\n- Riley - Craig 3.0\n- Kroogs & Mozzie - f-eq-ma\n- Luna - Dra9i\n- Luna - Red Wanderer\n- Mia - DoNotDuplicate\n- Miwa - CorrectJeans\n- Nala - Two06\n- Penny - NiXXed\n- Rio - Reid\n- Samus - Pantoufle\n- Stanley - Pantoufle",
+    "potContents": "18 ugly pet pillows of various sizes, made using the photos shown below. Pillows vary in size, but are all around 12\". Pets and owners include:\n- Brian - Yohapii\n- Charlie - DQ\n- Charn - sisko\n- Della - BurnB1\n- Gomez - birdie\n- Ishtar - Musketeer\n- Kitty - Craig 3.0\n- Riley - Craig 3.0\n- Kroogs & Mozzie - f-eq-ma\n- Luna - Dra9i\n- Luna - Red Wanderer\n- Mia - DoNotDuplicate\n- Miwa - CorrectJeans\n- Nala - Two06\n- Penny - NiXXed\n- Rio - Reid\n- Samus - Pantoufle\n- Stanley - Pantoufle",
     "contributedBy": [
       "CorrectJeans"
     ],
@@ -2864,7 +2864,7 @@
     "shippingInfo": "Domestic Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "Domestic only",
     "winner": "",
     "dateAdded": "20241215",
     "media": [
@@ -2922,7 +2922,7 @@
     "shippingInfo": "Domestic Shipping Included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "Domestic only",
     "winner": "",
     "dateAdded": "20241227",
     "media": [
