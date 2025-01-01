@@ -40,8 +40,7 @@ export function RaffleProvider({children}) {
     const potSummaryStats = useMemo(() => {
         return raflResponseDetails2
             ? Object.keys(raflResponseDetails2).reduce((acc, day) => {
-
-                const pots = raflResponseDetails2[day]['pots'] ? Object.keys(raflResponseDetails2[day]['pots']) : {}
+                const pots = raflResponseDetails2[day]['pots'] ? raflResponseDetails2[day]['pots'] : {}
                 Object.keys(pots).forEach(potId => {
                     setDeepAdd(acc, [potId, 'donors'], pots[potId].donors)
                     setDeepAdd(acc, [potId, 'tickets'], pots[potId].tickets)
