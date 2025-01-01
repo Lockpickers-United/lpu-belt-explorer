@@ -720,7 +720,16 @@
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
     "winner": "",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: Ratyoke",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54239466302_ebba2ef317_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54239466302/in/album-72177720322849466/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54239466302_c1eba1080c_o.jpg"
+      }
+    ]
   },
   {
     "id": "2025-018",
