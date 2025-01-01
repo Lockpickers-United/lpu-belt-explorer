@@ -229,7 +229,9 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                 </Stack>
                             }/>
                         }
-                        <Tracker feature='raflPot' id={entry.id}/>
+                        {!expandAll &&
+                            <Tracker feature='raflPot' id={entry.id}/>
+                        }
                     </AccordionDetails>
                     {!showSimple &&
                         <AccordionActions disableSpacing>
