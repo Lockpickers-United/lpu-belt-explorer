@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises'
-import fetch from 'node-fetch'
+import {fetch, CookieJar} from 'node-fetch-cookies'
 import dayjs from 'dayjs'
 
 import {sheetIds} from '../../keys/raflSheetIds.js'
@@ -16,6 +16,9 @@ const keysDir = production
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data/`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL`
+
+const cookieJar = new CookieJar(keysDir + '/jar.json')
+
 
 ////////////////////////////
 // GOOGLE AUTH FUNCTIONS //
@@ -123,7 +126,6 @@ async function deleteAllQuestions(auth, formId, reset) {
             formId: formId,
             requestBody: {requests: requests}
         })
-        console.log(updateResponse.data)
         return updateResponse.data
     }
 }
@@ -213,7 +215,6 @@ async function createQuestions(auth, formId, raflData, charitiesData, reset) {
 }
 
 async function addQuestions(auth, formId, raflData) {
-    return {warning: 'addQuestions should not be called, action canceled'}
 
     if (live) return {warning: 'RAFL is live, action canceled'}
 
@@ -251,13 +252,15 @@ async function addQuestions(auth, formId, raflData) {
 
 async function buildQuestionMap(raflData) {
 
-    const formSourceFetch = await fetch(`https://docs.google.com/forms/d/e/${sheetIds.raflViewFormId}/viewform`)
-    const formSource = await formSourceFetch.text()
+    // usual fetch usage, except with one or multiple cookie jars as first parameter
+    const formSourceFetch = await fetch(cookieJar, `https://docs.google.com/forms/d/e/${sheetIds.raflViewFormId}/viewform`)
 
+    // save the received cookies to disk
+    await cookieJar.save()
+
+    const formSource = await formSourceFetch.text()
     const regex = /FB_PUBLIC_LOAD_DATA_ = (.*);<\/script>/g
     const exec = regex.exec(formSource)
-
-    console.log('formSource', formSource)
 
     if (!exec) return {error: 'buildQuestionMap error: exec failed, no form data found'}
 
@@ -324,17 +327,15 @@ export async function getFormResponses(auth, formId) {
 
 }
 
-async function getSheetsResponses(auth, useReview) {
+async function getSheetsResponses(auth, raflStatsId) {
     const service = google.sheets({version: 'v4', auth})
     try {
 
-        const range = useReview ? 'Review!A:ZZ' : 'A:ZZ'
+        const range = 'Review!A:ZZ'
         const result = await service.spreadsheets.values.get({
-            spreadsheetId: '1bGLLlSlGTRqLODNGrK-jrkQ7_lCBxCMuZ6pBWTxP98U',
+            spreadsheetId: raflStatsId,
             range: range
         })
-
-        console.log('result', result.data.values)
 
         const [headers, ...rows] = result.data.values
         let items = []
@@ -410,9 +411,9 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
 
         const date = dayjs(res['Date']).format('YYYY-MM-DD')
 
-        const tz = "America/Los_Angeles"
-        const date1 = dayjs('12/20/2024 7:28:02').tz(tz).format('YYYY-MM-DD HH:mm:ss')
-        const date2 = dayjs("2024-12-20T15:28:02.495826Z").format('YYYY-MM-DD HH:mm:ss')
+        //const tz = "America/Los_Angeles"
+        //const date1 = dayjs('12/20/2024 7:28:02').tz(tz).format('YYYY-MM-DD HH:mm:ss')
+        //const date2 = dayjs("2024-12-20T15:28:02.495826Z").format('YYYY-MM-DD HH:mm:ss')
         //console.log(date1 === date2 ? 'date1 === date2' : 'NO MATCH')
 
         let platform = useReview
@@ -429,6 +430,11 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
             : res['Selected charity']
 
         setDeepAdd(acc, [date, 'totalDonors'], 1)
+        acc.uniqueDonors = acc.uniqueDonors
+            ? [...new Set([...acc.uniqueDonors, donor])]
+            : [donor]
+        setDeep(acc, [date, 'uniqueDonorCount'], acc.uniqueDonors.length)
+
         setDeepAdd(acc, [date, 'totalDonations'], donation)
         setDeepAdd(acc, [date, 'platforms', platform, 'donors'], 1)
         setDeepAdd(acc, [date, 'platforms', platform, 'donations'], donation)
@@ -449,7 +455,7 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
 
     }, {})
 
-    //jsonIt('detailedData', detailedData)
+    if (detailedData?.uniqueDonors) delete detailedData.uniqueDonors
 
     await fs.writeFile(`${serverDir}/raflResponseDetails2.json`, JSON.stringify(detailedData, null, 2), function (err) {
         if (err) {
@@ -482,23 +488,25 @@ function getPotIdFromNumber(title, raflData) {
 export async function raflUtils(util) {
 
     // TODO: why from explore.lpubelts.com??
-    const fullRaflData = await (await fetch('https://explore.lpubelts.com/data/rafl.json')).json()
+    const fullRaflData = await (await fetch(cookieJar, 'https://explore.lpubelts.com/data/rafl.json')).json()
     const raflDataPreview = fullRaflData.filter(x => x.year === 2025)
 
-    let prodRaflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
+    let prodRaflData = await (await fetch(cookieJar, 'https://lpubelts.com/rafl.json')).json()
     const raflData = prodRaflData.filter(x => x.year === 2025)
 
-    const charitiesData = await (await fetch('https://lpubelts.com/raflCharities.json')).json()
+    const charitiesData = await (await fetch(cookieJar, 'https://lpubelts.com/raflCharities.json')).json()
 
-    const formId = sheetIds.raflMainFormId
+    const {raflMainFormId: formId, raflStatsId} = sheetIds
     const auth = await authorize()
 
     let response
     if (util === 'getFormItems') response = await getFormItems(auth, formId)
     if (util === 'getCharities') response = await getCharities(auth, formId)
     if (util === 'buildQuestionMap') response = await buildQuestionMap(raflData)
+
     //if (util === 'raflResponseSummary') response = await getFormResponses(auth, formId, raflData)
     //if (util === 'processResponses') response = await processResponses()
+
     if (util === 'addQuestions') {
         const addQuestionsResponse = await addQuestions(auth, formId, raflData)
         if (!addQuestionsResponse.warning && !addQuestionsResponse.error) {
@@ -508,8 +516,9 @@ export async function raflUtils(util) {
             response = addQuestionsResponse
         }
     }
+
     if (util === 'getSheetsResponses') {
-        response = await getSheetsResponses(auth)
+        response = await getSheetsResponses(auth, raflStatsId)
     }
 
     if (util === 'getFormResponses') {
@@ -518,7 +527,7 @@ export async function raflUtils(util) {
 
     if (util === 'processSheetsResponses') {
         const useReview = true // 'Review' vs. 'Form Responses 1'
-        const sheetResponses = await getSheetsResponses(auth, useReview)
+        const sheetResponses = await getSheetsResponses(auth, raflStatsId)
         response = await processSheetsResponses(sheetResponses, raflData, useReview)
     }
 
@@ -563,7 +572,7 @@ export async function raflUtils(util) {
 
 ////// ONE-TIME COMMAND //////
 
-await raflUtils('buildQuestionMap').then(r => jsonIt('response', r))
+await raflUtils('processSheetsResponses').then(r => {if (!production) jsonIt('response', r)})
 
 
 ///////////////////////////////////////

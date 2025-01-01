@@ -59,6 +59,12 @@ app.get('/flickr-info', async (req, res) => {
     })
 })
 
+app.get('/test', async (req, res) => {
+    myEmitter.emit('myEvent', 'Flickr info requested')
+    res.send({msg: 'test'})
+})
+
+
 
 /////////////
 

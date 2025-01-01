@@ -53,6 +53,8 @@ export default async function importRaflData() {
                 potNumber: datum['Pot Number'],
                 formId: datum['Form ID'],
                 title: datum['Title'],
+                winnerCount: datum['Winner Count'],
+                displayName: datum['Display Name'],
                 description: datum['Description'],
                 potContents: datum['Pot Contents'],
                 contributedBy: splitCommaValues(datum['Contributed By']),

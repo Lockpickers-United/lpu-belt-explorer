@@ -11,7 +11,6 @@ const transporter = nodemailer.createTransport({
     },
 })
 
-
 // async_await is not allowed in global scope, must use a wrapper
 export async function sendEmail(subject, text, html, to) {
     // send mail with defined transport object
@@ -23,7 +22,7 @@ export async function sendEmail(subject, text, html, to) {
         html: html,                     // html body
     })
 
-    console.log("Message sent: %s", info.messageId)
+    //console.log("Message sent: %s", info.messageId)
 }
 
 //await sendEmail('New RAFL Entries - gmail','message body', 'baylessdesign@gmail.com')

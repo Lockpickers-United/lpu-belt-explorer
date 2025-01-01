@@ -19,34 +19,35 @@ export async function updateRaflStats() {
 
         // compare to previous
         const previousResponses = JSON.parse(await fs.readFile(`${tempDir}/sheetsResponses.json`, 'utf8'))
-        const previousLast = dayjs(previousResponses[previousResponses.length - 1].Timestamp)
+        const previousLast = dayjs(previousResponses[previousResponses.length - 1].Date)
 
         const currentResponses = await raflUtils('getSheetsResponses')
 
-        const newResponses = currentResponses.filter(res => dayjs(res.Timestamp) > previousLast)
-        if (newResponses.length > 0) console.log('New Responses')
+        const newResponses = currentResponses.filter(res => dayjs(res.Date) > previousLast)
         const newResponseInfo = newResponses.length > 0
             ? newResponses.reduce((acc, res) => {
+
+                console.log('res', res)
                 const tickets = Object.keys(res)
                     .filter(key => (/Pot/.test(key) && res[key] !== ''))
                     .reduce((acc, key) => {
                         acc = acc ? acc + parseInt(res[key]) : parseInt(res[key])
                         return acc
                     }, 0)
-                const user = res['Platform Username'].charAt(0) + '...' + res['Platform Username'].slice(-1)
-                let proof = res['Receipt from approved charity (hosted image link, must contain a visible date)']
+                const user = res['Name or Email'].charAt(0) + '...' + res['Name or Email'].slice(-1)
+                let proof = res['Receipt']
                     .toLowerCase()
                 proof = validator.isURL(proof) ? proof : proof.replace(/https*:\/\//g, '') + ' (bad url)'
 
                 const text = {
-                    timestamp: dayjs(res.Timestamp).format('MM/DD/YYYY HH:MM:ss'),
-                    platform: res['Your Preferred Platform'],
+                    timestamp: dayjs(res.Date).format('MM/DD/YYYY HH:MM:ss'),
+                    platform: res['Platform'],
                     user: user,
-                    charity: res['Selected charity'],
-                    donation: parseInt(res['Total donation in USD']),
+                    charity: res['Charity Name'],
+                    donation: parseInt(res['Donation']),
                     donationProof: proof,
                     tickets: tickets,
-                    match: tickets === parseInt(res['Total donation in USD']) ? 'totals match' : 'DONATION & TICKETS DO NOT MATCH'
+                    match: tickets === parseInt(res['Donation']) ? 'totals match' : 'DONATION & TICKETS DO NOT MATCH'
                 }
 
                 let html = '<h3>New Response</h3>'
@@ -72,9 +73,9 @@ export async function updateRaflStats() {
         if (newResponses.length > 0) {
             jsonIt('html', newResponseInfo)
 
+            await fs.writeFile(`${tempDir}/sheetsResponses.json`, JSON.stringify(currentResponses, null, 2))
             await sendEmail(`New RAFL Entries since last update`, JSON.stringify(newResponseInfo.text, null, 2), newResponseInfo.html, responseRecipients)
 
-            //await fs.writeFile(`${tempDir}/sheetsResponses.json`, JSON.stringify(currentResponses, null, 2))
 
         }
 
