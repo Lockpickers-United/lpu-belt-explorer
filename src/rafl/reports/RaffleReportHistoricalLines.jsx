@@ -23,6 +23,13 @@ const RaffleReportHistoricalLines = ({data}) => {
 
     const chartHeight = 120
 
+    if (Object.keys(data).length === 0) return (
+        <div style={{color: '#fff', textAlign: 'center', fontSize: '1.2rem', margin: '20px 0px 0px 0px'}}>
+            No data available
+        </div>
+    )
+
+
     return (
         <React.Fragment>
 
