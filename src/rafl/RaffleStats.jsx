@@ -4,7 +4,7 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew} from '../data/dataUrls'
+import {siteFullNew, raflResponseDetails} from '../data/dataUrls'
 import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
@@ -13,10 +13,10 @@ import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
 function RaffleReport() {
     usePageTitle('RAFL Report')
     const {data, loading, error} = useData({urls})
-    const {siteFullNew} = data || {}
+    const {siteFullNew, raflResponseDetails} = data || {}
     const {width, isMobile} = useWindowSize()
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(siteFullNew?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ` ${siteFullNew?.metadata.timezone})`
+        : '(updated: ' + dayjs(raflResponseDetails?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ')'
 
     const firstHeaderStyle = {
         margin: '26px 0px 18px 0px',
@@ -56,11 +56,9 @@ function RaffleReport() {
             }}>
                 <RaffleStatsHeader/>
 
-                {1===0 &&
-                    <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
-                        <span style={{fontSize: '0.8rem', marginTop: 10}}>{updateTime}</span>
-                    </div>
-                }
+                <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
+                    <span style={{fontSize: '0.8rem', marginTop: 0}}>{updateTime}</span>
+                </div>
 
                 <div style={firstHeaderStyle}>Pots</div>
                 <RaffleStatsPotTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
@@ -75,7 +73,8 @@ function RaffleReport() {
 }
 
 const urls = {
-    siteFullNew
+    siteFullNew,
+    raflResponseDetails
 }
 
 export default RaffleReport

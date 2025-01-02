@@ -37,7 +37,7 @@ function RaffleReport() {
     const summaryHeaderStyle = firstHeaderStyle
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(siteFullNew?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ` ${siteFullNew?.metadata.timezone})`
+        : '(updated: ' + dayjs(raflResponseDetails?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ')'
 
     if (loading) return <LoadingDisplay/>
     else if (error) return null
