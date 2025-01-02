@@ -4,7 +4,7 @@ import useData from '../../util/useData'
 import usePageTitle from '../../util/usePageTitle'
 import useWindowSize from '../../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew, raflResponseDetails2} from '../../data/dataUrls'
+import {siteFullNew, raflResponseDetails} from '../../data/dataUrls'
 import RaffleSummary from './RaffleSummary.jsx'
 import RafflePageTrackingTable from './RafflePageTrackingTable.jsx'
 import RafflePotTable from './RafflePotTable.jsx'
@@ -15,7 +15,7 @@ import RaffleStatsHeader from '../RaffleStatsHeader.jsx'
 function RaffleReport() {
     usePageTitle('RAFL Report')
     const {data, loading, error} = useData({urls})
-    const {siteFullNew, raflResponseDetails2} = data || {}
+    const {siteFullNew, raflResponseDetails} = data || {}
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -58,7 +58,7 @@ function RaffleReport() {
             <RaffleSummary data={siteFullNew}/>
 
             <div style={headerStyle}>Totals Over Time</div>
-            <RaffleReportHistoricalLines data={raflResponseDetails2}/>
+            <RaffleReportHistoricalLines data={raflResponseDetails?.detailedData}/>
 
             <div style={headerStyle}>Page Tracking</div>
             <RafflePageTrackingTable data={siteFullNew}/>
@@ -75,7 +75,7 @@ function RaffleReport() {
 
 const urls = {
     siteFullNew,
-    raflResponseDetails2
+    raflResponseDetails
 }
 
 export default RaffleReport

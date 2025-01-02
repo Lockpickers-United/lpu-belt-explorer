@@ -2,6 +2,12 @@ import React from 'react'
 import RaffleReportLine from './RaffleReportLine'
 import {setDeepPush} from '../../util/useSetDeep'
 
+/**
+ * @property cumDonorsUnique
+ * @property cumulativeDonations
+ * @property cumulativeDonors
+ */
+
 const RaffleReportHistoricalLines = ({data}) => {
 
     const lineData = Object.keys(data)
@@ -10,7 +16,7 @@ const RaffleReportHistoricalLines = ({data}) => {
             const date = day + ' 23:59:59'
             acc.donorsCum = acc.donorsCum + data[day].totalDonors ||data[day].totalDonors
             setDeepPush(acc, ['totalDonors'], {x: date, y: data[day].totalDonors})
-            setDeepPush(acc, ['cumulativeDonors'], {x: date, y: acc.donorsCum})
+            setDeepPush(acc, ['cumulativeDonors'], {x: date, y: data[day].cumDonorsUnique})
 
             acc.donationsCum = acc.donationsCum + data[day].totalDonations ||data[day].totalDonations
             setDeepPush(acc, ['totalDonations'], {x: date, y: data[day].totalDonations})
@@ -48,7 +54,7 @@ const RaffleReportHistoricalLines = ({data}) => {
                     colors={['#3a7919']} tickValues={2} curve={'step'}
                 />
             </div>
-            <div style={subHeadStyle}>Donors</div>
+            <div style={subHeadStyle}>Unique Donors</div>
 
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleReportLine

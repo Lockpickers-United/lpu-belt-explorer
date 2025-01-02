@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
-import {raflJsonUrl, raflQuestionMap, raflResponseDetails2} from '../data/dataUrls'
+import {raflJsonUrl, raflQuestionMap, raflResponseDetails} from '../data/dataUrls'
 import raflData from '../data/rafl.json'
 import raflCharities from '../data/raflCharities.json'
 import DBContext from '../app/DBContext.jsx'
@@ -8,6 +8,16 @@ import removeAccents from 'remove-accents'
 import collectionOptions from '../data/collectionTypes'
 import {useLocalStorage} from 'usehooks-ts'
 import {setDeepAdd} from '../util/useSetDeep'
+
+/**
+ * @property summaryData
+ * @property totalDonorCount
+ * @property totalDonorCountUnique
+ * @property platformDonorCount
+ * @property platformDonorCountUnique
+ * @property detailedData
+ * @property donorsUnique
+ */
 
 const RaffleContext = React.createContext({})
 
@@ -21,34 +31,31 @@ export function RaffleProvider({children}) {
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
 
-    const {raflQuestionMap, raflResponseDetails2, raflJsonUrl} = data || {}
+    const {raflQuestionMap, raflResponseDetails, raflJsonUrl} = data || {}
 
     const raflSummaryStats = useMemo(() => {
-        return raflResponseDetails2
-            ? Object.keys(raflResponseDetails2).reduce((acc, day) => {
-                setDeepAdd(acc, ['totalDonors'], raflResponseDetails2[day]['totalDonors'])
-                setDeepAdd(acc, ['totalDonations'], raflResponseDetails2[day]['totalDonations'])
-                Object.keys(raflResponseDetails2[day]['platforms']).forEach(platform => {
-                    setDeepAdd(acc, ['platformDonations', platform], raflResponseDetails2[day]['platforms'][platform].donations)
-                    setDeepAdd(acc, ['platformDonors', platform], raflResponseDetails2[day]['platforms'][platform].donors)
-                })
-                return acc
-            }, {})
-            : {}
-    },[raflResponseDetails2])
+        const totalDonors = raflResponseDetails?.summaryData?.totalDonorCount
+        const uniqueDonors = raflResponseDetails?.summaryData?.totalDonorCountUnique
+        const totalDonations = raflResponseDetails?.summaryData?.totalDonations
+        const platformDonations = raflResponseDetails?.summaryData?.platformDonations
+        const platformDonors = raflResponseDetails?.summaryData?.platformDonorCount
+        const platformDonorsUnique = raflResponseDetails?.summaryData?.platformDonorCountUnique
+
+        return {totalDonors, uniqueDonors, totalDonations, platformDonations, platformDonors, platformDonorsUnique}
+    }, [raflResponseDetails])
 
     const potSummaryStats = useMemo(() => {
-        return raflResponseDetails2
-            ? Object.keys(raflResponseDetails2).reduce((acc, day) => {
-                const pots = raflResponseDetails2[day]['pots'] ? raflResponseDetails2[day]['pots'] : {}
+        return raflResponseDetails
+            ? Object.keys(raflResponseDetails.detailedData).reduce((acc, day) => {
+                const pots = raflResponseDetails.detailedData[day]['pots'] ? raflResponseDetails.detailedData[day]['pots'] : {}
                 Object.keys(pots).forEach(potId => {
-                    setDeepAdd(acc, [potId, 'donors'], pots[potId].donors)
+                    setDeepAdd(acc, [potId, 'donors'], pots[potId].donorsUnique)
                     setDeepAdd(acc, [potId, 'tickets'], pots[potId].tickets)
                 })
                 return acc
             }, {})
             : {}
-    },[raflResponseDetails2])
+    },[raflResponseDetails])
 
     const allPots = useMemo(() => {
         const potEntries = preview && allDataLoaded
@@ -76,16 +83,16 @@ export function RaffleProvider({children}) {
     }, [preview, allDataLoaded, raflJsonUrl, raflQuestionMap, potSummaryStats, lockCollection])
 
     const charitySummaryStats = useMemo(() => {
-        return raflResponseDetails2
-            ? Object.keys(raflResponseDetails2).reduce((acc, day) => {
-                Object.keys(raflResponseDetails2[day]['charities']).forEach(charity => {
-                    setDeepAdd(acc, [charity, 'donors'], raflResponseDetails2[day]['charities'][charity].donors)
-                    setDeepAdd(acc, [charity, 'donations'], raflResponseDetails2[day]['charities'][charity].donations)
+        return raflResponseDetails
+            ? Object.keys(raflResponseDetails.detailedData).reduce((acc, day) => {
+                Object.keys(raflResponseDetails.detailedData[day]['charities']).forEach(charity => {
+                    setDeepAdd(acc, [charity, 'donors'], raflResponseDetails.detailedData[day]['charities'][charity].donorsUnique)
+                    setDeepAdd(acc, [charity, 'donations'], raflResponseDetails.detailedData[day]['charities'][charity].donations)
                 })
                 return acc
             }, {})
             : {}
-    },[raflResponseDetails2])
+    },[raflResponseDetails])
 
     const allCharities = useMemo(() => {
         return raflCharities
@@ -164,7 +171,7 @@ export function RaffleProvider({children}) {
 
 const urls = {
     raflQuestionMap,
-    raflResponseDetails2,
+    raflResponseDetails,
     raflJsonUrl
 }
 

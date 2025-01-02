@@ -4,7 +4,7 @@ import CountUp from 'react-countup'
 import RaffleContext from './RaffleContext.jsx'
 
 /**
- * @property raflSummaryStats.uniqueDonorCount
+ * @property raflSummaryStats.uniqueDonors
  * @property raflSummaryStats.totalDonors
  * @property raflSummaryStats.totalDonations
  * @property raflSummaryStats.platformDonations
@@ -15,7 +15,7 @@ import RaffleContext from './RaffleContext.jsx'
 function RaffleStatsHeader() {
     const {raflSummaryStats, animateTotal} = useContext(RaffleContext)
 
-    const donors = raflSummaryStats && raflSummaryStats.totalDonors || 0
+    const donors = raflSummaryStats && raflSummaryStats.uniqueDonors || 0
     const donationsTotal = raflSummaryStats && raflSummaryStats.totalDonations || 0
     const donationsTotalStr = raflSummaryStats && new Intl.NumberFormat().format(donationsTotal)
     const averageDonation = raflSummaryStats && Math.floor(donationsTotal / donors) || 0
