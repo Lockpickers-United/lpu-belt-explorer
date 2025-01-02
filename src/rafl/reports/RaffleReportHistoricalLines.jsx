@@ -15,7 +15,7 @@ const RaffleReportHistoricalLines = ({data}) => {
         .reduce((acc, day) => {
             const date = day + ' 23:59:59'
             acc.donorsCum = acc.donorsCum + data[day].totalDonors ||data[day].totalDonors
-            setDeepPush(acc, ['totalDonors'], {x: date, y: data[day].totalDonors})
+            setDeepPush(acc, ['totalDonors'], {x: date, y: data[day].totalDonorCountUnique})
             setDeepPush(acc, ['cumulativeDonors'], {x: date, y: data[day].cumDonorsUnique})
 
             acc.donationsCum = acc.donationsCum + data[day].totalDonations ||data[day].totalDonations
