@@ -12,6 +12,7 @@ import RaffleCharityTable from './RaffleCharityTable.jsx'
 import RaffleReportHistoricalLines from './RaffleReportHistoricalLines.jsx'
 import RaffleStatsHeader from '../RaffleStatsHeader.jsx'
 import RaffleBeltDistribution from './RaffleBeltDistribution.jsx'
+import RaffleYOYLines from './RaffleYOYLines.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
@@ -60,6 +61,7 @@ function RaffleReport() {
 
             <div style={headerStyle}>Totals Over Time</div>
             <RaffleReportHistoricalLines data={raflResponseDetails?.detailedData}/>
+            <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
 
             <div style={headerStyle}>Belt Distribution</div>
             <RaffleBeltDistribution data={raflResponseDetails?.summaryData}/>
