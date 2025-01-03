@@ -60,8 +60,8 @@ function RaffleReport() {
             <RaffleSummary data={siteFullNew}/>
 
             <div style={headerStyle}>Totals Over Time</div>
-            <RaffleReportHistoricalLines data={raflResponseDetails?.detailedData}/>
             <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
+            <RaffleReportHistoricalLines data={raflResponseDetails?.detailedData}/>
 
             <div style={headerStyle}>Belt Distribution</div>
             <RaffleBeltDistribution data={raflResponseDetails?.summaryData}/>

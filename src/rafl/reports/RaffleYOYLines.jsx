@@ -37,7 +37,7 @@ const RaffleYOYLines = ({data}) => {
 
     return (
         <React.Fragment>
-            <div style={subHeadStyle}>YOY</div>
+            <div style={subHeadStyle}>YOY Donations (cumulative)</div>
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleReportLine
                     chartdata={[
