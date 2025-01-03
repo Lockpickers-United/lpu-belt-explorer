@@ -229,7 +229,7 @@
     "media": [
       {
         "title": "By: Southord",
-        "subtitle": "CC BY-NC-SA 4.0",
+        "subtitle": "Copyright",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54235020143_6e4957a402_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54235020143/in/album-72177720322849466/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54235020143_eedcc412ac_o.jpg"
@@ -421,14 +421,14 @@
     "media": [
       {
         "title": "By: Bare Bones Lock Picking",
-        "subtitle": "CC BY-NC-SA 4.0",
+        "subtitle": "Copyright",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54213603248_2c3d6c4ecc_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54213603248/in/album-72177720322551452/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54213603248_a98bd4d0bb_o.jpg"
       },
       {
         "title": "By: Bare Bones Lock Picking",
-        "subtitle": "CC BY-NC-SA 4.0",
+        "subtitle": "Copyright",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54213376171_059e72117c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54213376171/in/album-72177720322551452/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54213376171_01bccfaaee_o.jpg"
@@ -462,14 +462,14 @@
     "dateAdded": "20241214",
     "media": [
       {
-        "title": "By: 455",
+        "title": "By: 4550",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54185284678_e308bb2fbd_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54185284678/in/album-72177720322353676/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54185284678_6c8c3151ff_o.jpg"
       },
       {
-        "title": "By: 455",
+        "title": "By: 4550",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54185012301_38cf5d000f_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54185012301/in/album-72177720322353676/",
@@ -1480,14 +1480,14 @@
       },
       {
         "title": "By: Law Lock Tools",
-        "subtitle": "CC BY-NC-SA 4.0",
+        "subtitle": "Copyright",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54232936894_687976b9e6_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54232936894/in/album-72177720322810647/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54232936894_abe4ce96d3_o.jpg"
       },
       {
         "title": "By: Law Lock Tools",
-        "subtitle": "CC BY-NC-SA 4.0",
+        "subtitle": "Copyright",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54232937094_e122161805_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54232937094/in/album-72177720322810647/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54232937094_9cf04b24e6_o.jpg"
@@ -1700,7 +1700,7 @@
     "winnerCount": "",
     "displayName": "",
     "description": "Nearly 2 kg of locks from Finland, including examples of all major historical manufacturers and large selection of samples from Abloy. As a bonus, includes appropriately themed mug for your beverage of choice. ",
-    "potContents": "Abloy:\n- [PL231 Exec](/#/locks?id=fc627b17)\n- [PL240 Classic](/#/locks?id=da09d849)\n- No model marked, size between PL240 and PL250 DL \"\"pro\"\" (no DC). Non-guttable. With detachable shackle\n- [PL340 Sentry](/#/locks?id=2ae6a691), 2 keys\n- [PL340 Protec](/#/locks?id=735439dd)\n- [PL340 Easy](/#/locks?id=12ff8c25), 2 keys + keycard\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys\n\nMore AVA (from Escape Goat):\n- [Chubb AVA padlock](/#/locks?id=dbc6670b)\n- [AVA camlock](/#/locks?id=9ae8b650)",
+    "potContents": "Abloy:\n- [PL231 Exec](/#/locks?id=fc627b17)\n- [PL240 Classic](/#/locks?id=da09d849)\n- No model marked, size between PL240 and PL250 DL \"\"pro\"\" (no DC). Non-guttable. With detachable shackle\n- [PL340 Sentry](/#/locks?id=2ae6a691), 2 keys\n- [PL340 Protec](/#/locks?id=735439dd)\n- [PL340 Easy](/#/locks?id=12ff8c25), 2 keys + keycard\n- [PL330 Sento](/#/locks?id=cad3eff0) with custom engraving\n\nBoda:\n- 428 -- Still non-ranked Finnish lever lock\n\nAVA:\n- Finnish cabinet AVA. Not guttable by design, but can be made guttable pretty easily. Two keys\n\nMore AVA (from Escape Goat):\n- [Chubb AVA padlock](/#/locks?id=dbc6670b)\n- [AVA camlock](/#/locks?id=9ae8b650)",
     "contributedBy": [
       "imaginary_unit",
       "escape goat"
@@ -1758,6 +1758,13 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/54235553092_897bc919b8_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54235553092/in/album-72177720322849466/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54235553092_db3dae7156_o.jpg"
+      },
+      {
+        "title": "By: ImaginaryUnit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54242974504_e50a97d3cc_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54242974504/in/album-72177720322849466/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54242974504_6c505d8992_o.jpg"
       }
     ]
   },
@@ -1888,13 +1895,17 @@
     "title": "Locksticc",
     "winnerCount": "",
     "displayName": "",
-    "description": "You know that drinking game where you make a long wizard's staff by taping together empty cans? Imagine that, but it's locks.",
-    "potContents": "- 1x Locksticc\n- 1x small Bonx box",
+    "description": "A one-of-a-kind creation designed to awe and inspire, the Lock Stick is a handcrafted wooden staff meticulously fitted with some of the finest high-security locks in the world. Each lock is a masterpiece of engineering, transforming the humble stick into a symbol of ingenuity, strength, and the art of security itself. The Lock Stick proudly features [ASSA 6K GINS](/#/locks?id=104776ef), [Medeco Biaxial](/#/locks?id=826c31e0), [Schlage Primus](/#/locks?id=ea1afad0), [Lockwood 334B45](/#/locks?id=331c9d36), and [Miwa U9](/#/locks?id=d1272b9f)—a collection of legendary locks installed with care and precision. Whether you're a lock enthusiast, a seeker of mysteries, or simply someone with an eye for the extraordinary, the Lock Stick is more than a prize—it's a testament to craftsmanship and imagination. Contributed by Bonx, it stands ready to find its rightful keeper through the 2025 Rafl!",
+    "potContents": "The Lockstick, which contains:\n- [ASSA 6K, gins](/#/locks?id=104776ef)\n- [Medeco Biaxial](/#/locks?id=826c31e0)\n- [Schlage Primus](/#/locks?id=ea1afad0)\n- [Lockwood 334B45](/#/locks?id=331c9d36)\n- [Miwa U9](/#/locks?id=d1272b9f)\n\nAnd a bonus small Bonx box",
     "contributedBy": [
       "Bonx"
     ],
     "tags": [
       "Artisan piece",
+      "Locks (intermediate/advanced)",
+      "Locks (padlocks)",
+      "Locks (pin tumbler)",
+      "Locks (sliders/fingerpins)",
       "Mystery pot"
     ],
     "country": [
@@ -1917,7 +1928,8 @@
     "description": "The [Mitutoyo Digimatic Caliper](https://www.amazon.com/Mitutoyo-500-196-30-Advanced-Measuring-Resolution/dp/B00IG46NL2) is a **really** nice caliper. You can use it to very precisely measure the rich [mahogany Rein pinning tray](https://hazzertousmfg.com/Padauk-Rein-Lock-Pinning-Tray-p542155809) also included in this prize.",
     "potContents": "- [Mitutoyo MIT500-196-30 Absolute AOS Digimatic Caliper](https://www.amazon.com/Mitutoyo-500-196-30-Advanced-Measuring-Resolution/dp/B00IG46NL2), 0mm-150mm/0\"-6\" Range\n- [Large Mahogany Rein pinning tray](https://hazzertousmfg.com/Padauk-Rein-Lock-Pinning-Tray-p542155809) (link is to padauk version)",
     "contributedBy": [
-      "MarkUK"
+      "MarkUK",
+      "Two06"
     ],
     "tags": [
       "Tools (other)",
@@ -2158,7 +2170,16 @@
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
     "winner": "",
-    "dateAdded": "20241227"
+    "dateAdded": "20241227",
+    "media": [
+      {
+        "title": "By: Moki",
+        "subtitle": "Copyright",
+        "thumbnailUrl": "https://img.lpubelts.com/rafl/moki-logo.png",
+        "fullUrl": "https://img.lpubelts.com/rafl/moki-logo.png",
+        "fullSizeUrl": "https://img.lpubelts.com/rafl/moki-logo.png"
+      }
+    ]
   },
   {
     "id": "2025-070",
