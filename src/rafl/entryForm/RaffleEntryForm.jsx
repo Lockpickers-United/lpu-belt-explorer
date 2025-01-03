@@ -80,7 +80,8 @@ function RaffleEntryForm() {
         const charity = `&entry.${raflQuestionMap[2].formId}=${encodeURIComponent(charityData.itemTitle)}`
         const receipt = `&entry.${raflQuestionMap[3].formId}=${encodeURIComponent(formData.receipt)}`
         const donation = `&entry.${raflQuestionMap[4].formId}=${encodeURIComponent(formData.donation)}`
-        const parameters = [platform, username, charity, receipt, donation]
+        const belt = `&entry.${raflQuestionMap[75].formId}=${encodeURIComponent(formData.belt)}`
+        const parameters = [platform, username, charity, receipt, donation, belt]
 
         const potParams = Object.keys(potData).reduce((acc, key) => {
             const formQuestion = raflQuestionMap.find(q => q.text === potData[key].itemFullTitle)
@@ -94,7 +95,7 @@ function RaffleEntryForm() {
         setSumbitted(true)
         openInNewTab(`${base}${parameters.join('')}${potParams}`)
 
-    }, [charityData.itemTitle, formData.donation, formData.platform, formData.receipt, formData.username, openInNewTab, potData, raflFormId, raflQuestionMap])
+    }, [charityData, formData, openInNewTab, potData, raflFormId, raflQuestionMap])
 
     const mappedCharities = allCharities.map(c => {
         return {...c, title: c.name}
@@ -162,12 +163,33 @@ function RaffleEntryForm() {
                             <FormHelperText>{isRequired('platform') ? 'Required Field' : ' '}</FormHelperText>
                         </FormControl>
 
-                        <FormControl style={{width: 250}} size='small'>
+                        <FormControl style={{width: 250, marginRight: 16}} size='small'>
                             <TextField type='text' name='username' label='Username'
                                        value={formData.username ? formData.username : ''}
                                        error={isRequired('username')}
                                        helperText={isRequired('username') ? 'Required Field' : ' '}
                                        onChange={handleChange} color='info' size='small'/>
+                        </FormControl>
+
+                        <FormControl style={{width: 180}} size='small'>
+                            <InputLabel color='info'>Belt (optional)</InputLabel>
+                            <Select
+                                value={formData.belt ? formData.belt : ''}
+                                label='Belt (optional)'
+                                onChange={handleChange}
+                                color='info'
+                                name='belt'
+                            >
+                                <MenuItem value={'White'}>White</MenuItem>
+                                <MenuItem value={'Yellow'}>Yellow</MenuItem>
+                                <MenuItem value={'Orange'}>Orange</MenuItem>
+                                <MenuItem value={'Green'}>Green</MenuItem>
+                                <MenuItem value={'Blue'}>Blue</MenuItem>
+                                <MenuItem value={'Purple'}>Purple</MenuItem>
+                                <MenuItem value={'Brown'}>Brown</MenuItem>
+                                <MenuItem value={'Red'}>Red</MenuItem>
+                                <MenuItem value={'Black'}>Black</MenuItem>
+                            </Select>
                         </FormControl>
                     </div>
                 </div>
