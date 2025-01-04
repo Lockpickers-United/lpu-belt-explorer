@@ -70,7 +70,7 @@ function RaffleReport() {
             <RafflePageTrackingTable data={siteFullNew}/>
 
             <div style={headerStyle}>Pot Details</div>
-            <RafflePotTable data={siteFullNew}/>
+            <RafflePotTable statsData={siteFullNew}/>
 
             <div style={headerStyle}>Charity Details</div>
             <RaffleCharityTable data={siteFullNew}/>

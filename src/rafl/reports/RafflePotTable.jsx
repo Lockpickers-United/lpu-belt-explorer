@@ -5,20 +5,25 @@ import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import RaffleAutocompleteBox from '../entryForm/RaffleAutocompleteBox.jsx'
 import DataContext from '../../context/DataContext.jsx'
+import useData from '../../util/useData.jsx'
+import {raflCollectionDetails} from '../../data/dataUrls'
 
-const RafflePotTable = ({data}) => {
+const RafflePotTable = ({statsData}) => {
     const navigate = useNavigate()
-    const {potViewsById} = data
+    const {potViewsById} = statsData
     const {getPotFromId} = useContext(DataContext)
+    const {data} = useData({url: raflCollectionDetails})
+    const {potWatches} = data || {}
 
     const columns = [
         {name: 'Pot #', align: 'center', id: 'potNumber'},
-        {name: 'ID', align: 'center', id: 'id'},
+        //{name: 'ID', align: 'center', id: 'id'},
         {id: 'title', align: 'left', name: 'Title'},
         {id: 'views', align: 'center', name: 'Views'},
-        {id: 'percentViews', name: '% Views', align: 'center'},
+        //{id: 'percentViews', name: '% Views', align: 'center'},
         {id: 'donors', name: 'Donors', align: 'center'},
-        {id: 'tickets', name: 'Tickets', align: 'center'}
+        {id: 'tickets', name: 'Tickets', align: 'center'},
+        {id: 'watchlists', name: 'Watchlists', align: 'center'}
     ]
 
     const sortable = true
@@ -40,7 +45,8 @@ const RafflePotTable = ({data}) => {
             percentViews: (Math.floor(pot.percentViews * 100) + '%'),
             ...dataPot,
             title: potTitle,
-            id: id
+            id: id,
+            watchlists: potWatches?.[pot.id] || 0
         }
     })
         .filter(x => x)
