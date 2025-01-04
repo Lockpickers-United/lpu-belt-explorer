@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import {sheetIds} from '../../keys/raflSheetIds.js'
 import {localUser, prodUser} from '../../keys/users.js'
 
-const live = false
+const live = true
 
 const production = process.env.USER !== localUser
 
@@ -330,13 +330,11 @@ export async function getFormResponses(auth, formId) {
 async function getSheetsResponses(auth, raflStatsId) {
     const service = google.sheets({version: 'v4', auth})
     try {
-
         const range = 'Review!A:ZZ'
         const result = await service.spreadsheets.values.get({
             spreadsheetId: raflStatsId,
             range: range
         })
-
         const [headers, ...rows] = result.data.values
         let items = []
         rows.forEach(function (row) {
@@ -346,9 +344,7 @@ async function getSheetsResponses(auth, raflStatsId) {
             })
             items.push(obj)
         })
-
         return items
-
     } catch (err) {
         // TODO (developer) - Handle exception
         throw err
@@ -361,30 +357,30 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
         acc = acc ? acc : {}
         if (res['Good to go'] !== 'TRUE') return acc
 
-        let platform = useReview
-            ? res['Platform']
-            : res['Your Preferred Platform']
-        let donor = useReview
-            ? `${platform}-${res['Name or Email']}`
-            : `${platform}-${res['Platform Username']}`
-        let donation = useReview
-            ? parseInt(res['Donation'])
-            : parseInt(res['Total donation in USD'])
-        let charity = useReview
-            ? res['Charity Name']
-            : res['Selected charity']
+        let platform = res['Platform']
+        let donor = `${platform}-${res['Name or Email']}`
+        let donation = parseInt(res['Donation'])
+        let charity = res['Charity Name']
+        let belt = res['Belt']
 
         setDeepAdd(acc, ['totalDonations'], donation)
         setDeepAdd(acc, ['totalDonorCount'], 1)
-        acc.uniqueDonors = acc.uniqueDonors
-            ? [...new Set([...acc.uniqueDonors, donor])]
-            : [donor]
-        setDeep(acc, ['uniqueDonorCount'], acc.uniqueDonors.length)
+        setDeepUnique(acc, ['uniqueValues', 'totalDonorsUnique'], donor)
+        setDeep(acc, ['totalDonorCountUnique'], acc.uniqueValues.totalDonorsUnique.length)
 
         setDeepAdd(acc, ['platformDonations', platform], donation)
         setDeepAdd(acc, ['platformDonorCount', platform], 1)
+        setDeepUnique(acc, ['uniqueValues', 'platformDonorsUnique', platform], donor)
+        setDeep(acc, ['platformDonorCountUnique', platform], acc.uniqueValues.platformDonorsUnique[platform].length)
+
         setDeepAdd(acc, ['charityDonations', charity], donation)
         setDeepAdd(acc, ['charityDonorCount', charity], 1)
+        setDeepUnique(acc, ['uniqueValues', 'charityDonorsUnique', charity], donor)
+        setDeep(acc, ['charityDonorCountUnique', charity], acc.uniqueValues.charityDonorsUnique[charity].length)
+
+        setDeepAdd(acc, ['beltDonations', belt], donation)
+        setDeepUnique(acc, ['uniqueValues', 'beltDonorsUnique', belt], donor)
+        setDeep(acc, ['beltDonorCountUnique', belt], acc.uniqueValues.beltDonorsUnique[belt].length)
 
         Object.keys(res)
             .filter(key => (/Pot/.test(key) && res[key] !== ''))
@@ -394,16 +390,17 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
                     : getPotIdFromTitle(key, raflData)
                 setDeepAdd(acc, ['potTickets', potId], parseInt(res[key]))
                 setDeepAdd(acc, ['potDonorCount', potId], 1)
+
+                setDeepUnique(acc, ['uniqueValues', 'potDonorsUnique', potId], donor)
+                setDeep(acc, ['potDonorCountUnique', potId], acc.uniqueValues.potDonorsUnique[potId].length)
+
+
             })
 
         return acc
     }, {})
 
-    if (summaryData?.uniqueDonors) delete summaryData.uniqueDonors
-    if (summaryData?.platformDonors) delete summaryData.platformDonors
-
-    //jsonIt('sheetResponses', sheetResponses)
-    //jsonIt('summaryData', summaryData)
+    if (summaryData?.uniqueValues) delete summaryData.uniqueValues
 
     const detailedData = sheetResponses?.reduce((acc, res) => {
         acc = acc ? acc : {}
@@ -411,35 +408,29 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
 
         const date = dayjs(res['Date']).format('YYYY-MM-DD')
 
-        //const tz = "America/Los_Angeles"
-        //const date1 = dayjs('12/20/2024 7:28:02').tz(tz).format('YYYY-MM-DD HH:mm:ss')
-        //const date2 = dayjs("2024-12-20T15:28:02.495826Z").format('YYYY-MM-DD HH:mm:ss')
-        //console.log(date1 === date2 ? 'date1 === date2' : 'NO MATCH')
+        let platform = res['Platform']
+        let donor = `${platform}-${res['Name or Email']}`
+        let donation = parseInt(res['Donation'])
+        let charity = res['Charity Name']
+        let belt = res['Belt']
 
-        let platform = useReview
-            ? res['Platform']
-            : res['Your Preferred Platform']
-        let donor = useReview
-            ? `${platform}-${res['Name or Email']}`
-            : `${platform}-${res['Platform Username']}`
-        let donation = useReview
-            ? parseInt(res['Donation'])
-            : parseInt(res['Total donation in USD'])
-        let charity = useReview
-            ? res['Charity Name']
-            : res['Selected charity']
-
-        setDeepAdd(acc, [date, 'totalDonors'], 1)
-        acc.uniqueDonors = acc.uniqueDonors
-            ? [...new Set([...acc.uniqueDonors, donor])]
-            : [donor]
-        setDeep(acc, [date, 'uniqueDonorCount'], acc.uniqueDonors.length)
+        setDeepUnique(acc, ['uniqueValues', 'cumDonorsUnique'], donor)
+        setDeep(acc, [date, 'cumDonorsUnique'], acc.uniqueValues.cumDonorsUnique.length)
 
         setDeepAdd(acc, [date, 'totalDonations'], donation)
-        setDeepAdd(acc, [date, 'platforms', platform, 'donors'], 1)
+        setDeepAdd(acc, [date, 'totalDonors'], 1)
+        setDeepUnique(acc, ['uniqueValues', date, 'totalDonorsUnique'], donor)
+        setDeep(acc, [date, 'totalDonorCountUnique'], acc.uniqueValues[date].totalDonorsUnique.length)
+
         setDeepAdd(acc, [date, 'platforms', platform, 'donations'], donation)
-        setDeepAdd(acc, [date, 'charities', charity, 'donors'], 1)
+        setDeepAdd(acc, [date, 'platforms', platform, 'donors'], 1)
+        setDeepUnique(acc, ['uniqueValues', date, 'platformDonorsUnique', platform], donor)
+        setDeep(acc, [date, 'platforms', platform, 'donorsUnique'], acc.uniqueValues[date].platformDonorsUnique[platform].length)
+
         setDeepAdd(acc, [date, 'charities', charity, 'donations'], donation)
+        setDeepAdd(acc, [date, 'charities', charity, 'donors'], 1)
+        setDeepUnique(acc, ['uniqueValues', date, 'charityDonorsUnique', charity], donor)
+        setDeep(acc, [date, 'charities', charity, 'donorsUnique'], acc.uniqueValues[date].charityDonorsUnique[charity].length)
 
         Object.keys(res)
             .filter(key => (/Pot/.test(key) && res[key] !== ''))
@@ -449,21 +440,29 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
                     : getPotIdFromTitle(key, raflData)
                 setDeepAdd(acc, [date, 'pots', potId, 'tickets'], parseInt(res[key]))
                 setDeepAdd(acc, [date, 'pots', potId, 'donors'], 1)
+
+                setDeepUnique(acc, ['uniqueValues', date, 'potDonorsUnique', potId], donor)
+                setDeep(acc, [date, 'pots', potId, 'donorsUnique'], acc.uniqueValues[date].potDonorsUnique[potId].length)
+
             })
 
         return acc
 
     }, {})
 
-    if (detailedData?.uniqueDonors) delete detailedData.uniqueDonors
+    if (detailedData?.uniqueValues) delete detailedData.uniqueValues
 
-    await fs.writeFile(`${serverDir}/raflResponseDetails2.json`, JSON.stringify(detailedData, null, 2), function (err) {
+    const metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+
+    const raflResponseDetails = { summaryData, detailedData, metadata }
+    await fs.writeFile(`${serverDir}/raflResponseDetails.json`, JSON.stringify(raflResponseDetails, null, 2), function (err) {
         if (err) {
-            console.error('save raflResponseDetails2 error:', err)
+            console.error('save raflResponseDetails error:', err)
         }
     })
 
-    return detailedData
+
+    return raflResponseDetails
 
 }
 
@@ -535,7 +534,7 @@ export async function raflUtils(util) {
     // DANGER //
 
     // only set this to true if you *really* want to delete the questions and rebuild!
-    const reset = true
+    const reset = false
 
     if (util === 'createQuestions') {
         if (reset && !live) {
@@ -610,6 +609,20 @@ function setDeep(obj, path, value) {
         obj[key] = {}
     }
     setDeep(obj[key], path.slice(1), value)
+}
+
+function setDeepUnique(obj, path, value) {
+    if (path.length === 1) {
+        obj[path[0]] = obj[path[0]]
+            ? [...new Set([...obj[path[0]], value])]
+            : [value]
+        return
+    }
+    const key = path[0]
+    if (!obj[key]) {
+        obj[key] = {}
+    }
+    setDeepUnique(obj[key], path.slice(1), value)
 }
 
 function setDeepAdd(obj, path, value) {
