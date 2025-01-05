@@ -22,13 +22,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Insomniaclockpicker",
@@ -59,7 +53,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583091526_c4fc625170_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "lastUpdated": "2025-01-05T19:50:04.287Z"
   },
   {
     "id": "761d2fe8",
@@ -71,15 +65,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "693fd901",
@@ -91,13 +78,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Octane",
@@ -128,7 +109,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541613125_3f67e16060_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "0638d9d8",
@@ -140,15 +121,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "f5703ac0",
@@ -160,11 +134,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Vault format"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: MartinHewitt",
@@ -209,7 +179,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541905018_e733f5f18d_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "8a50bbb0",
@@ -234,14 +204,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "75ddbd51",
@@ -253,13 +217,8 @@
     "digits": "0-99",
     "notes": "Standard size wheels",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Vault format",
-      "Internal Indirect drive"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "19359f35",
@@ -271,14 +230,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Eccentric double-cam",
-      "LOBC cover",
-      "Lead shielding",
-      "Friction rollers"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Rxpert",
@@ -323,7 +275,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956795523_4831dfc727_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "087f41e9",
@@ -335,14 +287,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Eccentric double-cam",
-      "LOBC cover",
-      "Lead shielding",
-      "Friction rollers"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Rxpert",
@@ -352,7 +297,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955620502_2d16cbdaa3_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "58441a32",
@@ -364,14 +309,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Zero change"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -402,7 +340,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522597556_ece70225f9_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "74ac6513",
@@ -414,14 +352,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "91242adb",
@@ -547,14 +479,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "2f6b4c23",
@@ -683,11 +609,8 @@
     "digits": "A-Z",
     "notes": "There are at least 2, probably 3 different versions. Dial interacts with all wheels directly. Possibly spring loaded pin interacting with one wheel to make feeling harder.",
     "tier": "",
-    "features": [
-      "Enforced wheel scrambling",
-      "False gates"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "cc91e358",
@@ -699,13 +622,8 @@
     "digits": "1-100",
     "notes": "Copy of S&G lock. W1 may be replaced by spacer ring to create 3-wheel version.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Vault format",
-      "Optional Indirect drive"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.443Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "3ad83c5d",
@@ -717,13 +635,7 @@
     "digits": "1-100",
     "notes": "Update of model 15b.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Vault format",
-      "Zero change",
-      "Optional Indirect drive"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Octane",
@@ -747,7 +659,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583469899_398e91c47a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "6b301968",
@@ -759,14 +671,8 @@
     "digits": "1-100",
     "notes": "Update of model 15b.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Vault format",
-      "Zero change",
-      "Optional Indirect drive"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "e393e3d5",
@@ -791,13 +697,7 @@
     "digits": "1-100",
     "notes": "Update of model 3001.",
     "tier": "Tier 4",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Vault format",
-      "Zero change",
-      "Optional Indirect drive"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Octane",
@@ -835,7 +735,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53582263557_ff34d74f96_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "f59d47b3",
@@ -847,13 +747,7 @@
     "digits": "1-100",
     "notes": "Update of model 3002.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Vault format",
-      "Zero change",
-      "Optional Indirect drive"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Cheesehead",
@@ -877,7 +771,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53543551118_fc1f2597f1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.288Z"
   },
   {
     "id": "93b9e6f5",
@@ -889,13 +783,8 @@
     "digits": "1-100",
     "notes": "Small format, but proprietary.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Small format",
-      "Zero change"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "c32aa445",
@@ -907,13 +796,8 @@
     "digits": "1-100",
     "notes": "",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Vault format",
-      "Magnetic double cam"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "cf527800",
@@ -925,13 +809,8 @@
     "digits": "0-99",
     "notes": "At least three versions. Double pins with 2L-1R-1L-R sequence.",
     "tier": "",
-    "features": [
-      "Fixed flies",
-      "Dial change",
-      "Double pins",
-      "Proprietary locker"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "8f0e636e",
@@ -943,14 +822,8 @@
     "digits": "1-100",
     "notes": "Small format, but proprietary.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Small format",
-      "Zero change",
-      "Fence lever control device"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "8aa74b36",
@@ -962,12 +835,8 @@
     "digits": "0-99",
     "notes": "Update of model 3031.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "d183640f",
@@ -979,12 +848,8 @@
     "digits": "0-99",
     "notes": "Update of model 3032.",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "c07f8b5c",
@@ -996,12 +861,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "e2f66615",
@@ -1013,12 +874,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Movable flies",
-      "Key change",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "048058c3",
@@ -1030,14 +887,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Wheel shadowing"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: HVLogic",
@@ -1054,7 +904,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54006913450_44c1f6f858_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "218529be",
@@ -1066,15 +916,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Wheel shadowing"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "ea7b53e2",
@@ -1099,15 +942,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "0e5acb82",
@@ -1119,14 +955,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -1143,7 +972,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521696567_f3a9385406_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "cffd6d42",
@@ -1155,12 +984,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Vault format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "7d060e16",
@@ -1201,14 +1026,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Wheel shadowing"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Mick Emhurt",
@@ -1274,7 +1092,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764643_e569d850ab_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "baa53440",
@@ -1286,14 +1104,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Mick Emhurt",
@@ -1338,7 +1149,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541632280_aeb66909be_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "0b1fc984",
@@ -1350,14 +1161,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -1374,7 +1178,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522764253_5b4acf1c72_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "e8bfa9ff",
@@ -1386,15 +1190,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Right/left handed open",
-      "Vault format",
-      "Indirect drive",
-      "LOBC cover"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.444Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "0e6f7715",
@@ -1484,15 +1281,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates",
-      "Sprung double-cam"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -1537,7 +1326,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53540852337_e23b8b2a8c_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "56fed723",
@@ -1549,16 +1338,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates",
-      "Sprung double-cam"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "c51157c7",
@@ -1570,12 +1351,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Friction fence"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "e2f3be34",
@@ -1587,14 +1364,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "7bdc4f32",
@@ -1606,14 +1377,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "ad3b6507",
@@ -1625,15 +1390,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Fence lever control device"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "369205da",
@@ -1658,14 +1416,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Anti-manipulation double-lever"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Insomniaclockpicker",
@@ -1696,7 +1447,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53583438689_3d27ab0734_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.290Z"
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "a7258495",
@@ -1708,14 +1459,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Right/left handed open",
-      "Vault format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "350e09f9",
@@ -1727,15 +1472,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 4",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Right/left handed open",
-      "Vault format",
-      "Indirect drive"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.289Z"
   },
   {
     "id": "c2f54e5c",
@@ -1747,15 +1485,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Right/left handed open",
-      "Vault format",
-      "Eccentric roller"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "bd3e18ae",
@@ -1767,15 +1498,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Right/left handed open",
-      "Vault format",
-      "Eccentric roller",
-      "Indirect drive"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Insomniaclockpicker",
@@ -1827,7 +1550,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53927144130_390c46b63b_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "7c91d17c",
@@ -1839,15 +1562,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates",
-      "Eccentric roller"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: mgsecure",
@@ -1885,7 +1600,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53521500463_afffa12ba1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "ffffb9fa",
@@ -1897,15 +1612,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates",
-      "Eccentric roller"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Insomniaclockpicker",
@@ -1936,7 +1643,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53926946403_4f591ac60a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "9262a564",
@@ -1948,14 +1655,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Octane",
@@ -1993,7 +1693,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541171936_98f0d97051_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "edb5f9e3",
@@ -2005,15 +1705,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "082b9b1f",
@@ -2025,15 +1718,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 3",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "False gates",
-      "Eccentric roller"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Mick Emhurt",
@@ -2099,7 +1784,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541197126_47e18cabc0_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "ae84d433",
@@ -2111,13 +1796,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: mgsecure",
@@ -2148,7 +1827,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53517816255_1d253bb1dc_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "15d969bb",
@@ -2160,14 +1839,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "8a2dc6e5",
@@ -2179,13 +1852,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 2",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -2202,7 +1869,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541346008_11fb4d199e_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "aeeb2e0f",
@@ -2214,12 +1881,8 @@
     "digits": "0-59",
     "notes": "",
     "tier": "",
-    "features": [
-      "Shutter padlock",
-      "Removeable shoe",
-      "Manipulation resistant"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "3809d4a5",
@@ -2231,9 +1894,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Padlock"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -2243,7 +1904,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522762218_66ce717570_o.jpg"
       }
     ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "b951fed1",
@@ -2255,10 +1916,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Padlock"
-    ],
-    "lastUpdated": "2024-09-12T23:45:30.180Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "bb279fda",
@@ -2270,10 +1929,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 1",
-    "features": [
-      "Dial change and pin change."
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.445Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "211383d8",
@@ -2285,14 +1942,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Butterfly anti-manipulation cam"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -2309,7 +1959,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53523022660_81cb96ce9a_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.446Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "daa48991",
@@ -2321,15 +1971,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Butterfly anti-manipulation cam"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.446Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "87af3a83",
@@ -2341,14 +1984,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Anti-manipulation double-lever"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -2365,7 +2001,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912384_de34d8b5c5_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "0004c8cc",
@@ -2377,14 +2013,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format",
-      "Anti-manipulation double-lever"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Lock Manipulator",
@@ -2401,7 +2030,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53522912574_2382c9c0d1_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "e2c63188",
@@ -2439,13 +2068,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Octane",
@@ -2476,7 +2099,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541360948_114c7765fb_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-04T02:26:32.446Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "06555f12",
@@ -2488,14 +2111,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Standard format"
-    ],
-    "lastUpdated": "2024-12-04T02:26:32.446Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "cc7e7e41",
@@ -2507,13 +2124,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Anti-punch relocker",
-      "Spring loaded (or friction) rotary fence"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "75ae5685",
@@ -2525,13 +2137,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Multi-orientation cam",
-      "Spring loaded \"direct entry\" fence"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: HVLogic",
@@ -2555,7 +2161,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54006499756_bac06264ce_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2025-01-05T19:50:04.290Z"
   },
   {
     "id": "9250529e",
@@ -2580,12 +2186,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Friction fence"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.291Z"
   },
   {
     "id": "ba90d477",
@@ -2610,14 +2212,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Anti-punch relocker",
-      "Friction fence",
-      "Anti-manipulation mechanisms"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.291Z"
   },
   {
     "id": "ac15ffba",
@@ -2629,14 +2225,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Friction fence",
-      "Anti-manipulation mechanisms"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.291Z"
   },
   {
     "id": "7ce746ae",
@@ -2648,13 +2238,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Anti-punch relocker",
-      "Friction fence",
-      "Anti-manipulation mechanisms"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: MartinHewitt",
@@ -2678,7 +2262,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54106917002_7ea7782256_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2025-01-05T19:50:04.291Z"
   },
   {
     "id": "b6f20651",
@@ -2690,14 +2274,8 @@
     "digits": "0-99",
     "notes": "",
     "tier": "Tier 5",
-    "features": [
-      "Moveable flies",
-      "Key change",
-      "Anti-punch relocker",
-      "Friction fence",
-      "Anti-manipulation mechanisms"
-    ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "features": [],
+    "lastUpdated": "2025-01-05T19:50:04.291Z"
   },
   {
     "id": "6eeba243",
@@ -2709,12 +2287,7 @@
     "digits": "0-99",
     "notes": "",
     "tier": "",
-    "features": [
-      "Moveable flies",
-      "Mesh change",
-      "Anti-punch relocker",
-      "Friction fence"
-    ],
+    "features": [],
     "media": [
       {
         "title": "By: Cheesehead",
@@ -2745,7 +2318,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53541737351_c475dd7200_o.jpg"
       }
     ],
-    "lastUpdated": "2024-12-01T00:26:32.291Z"
+    "lastUpdated": "2025-01-05T19:50:04.291Z"
   },
   {
     "id": "86c1a98b",
