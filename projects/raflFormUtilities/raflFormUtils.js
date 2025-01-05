@@ -93,7 +93,6 @@ async function getFormItems(auth, formId) {
 }
 
 async function getFormCharities(auth, formId) {
-
     const forms = google.forms({version: 'v1', auth})
     const res = await forms.forms.get({
         formId: formId
@@ -351,7 +350,7 @@ async function getSheetsResponses(auth, raflStatsId) {
     }
 }
 
-async function processSheetsResponses(sheetResponses, raflData, useReview) {
+async function processSheetsResponses(sheetResponses, raflData) {
 
     const summaryData = sheetResponses.reduce((acc, res) => {
         acc = acc ? acc : {}
@@ -385,9 +384,7 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
         Object.keys(res)
             .filter(key => (/Pot/.test(key) && res[key] !== ''))
             .map(key => {
-                const potId = useReview
-                    ? getPotIdFromNumber(key, raflData)
-                    : getPotIdFromTitle(key, raflData)
+                const potId = getPotIdFromNumber(key, raflData)
                 setDeepAdd(acc, ['potTickets', potId], parseInt(res[key]))
                 setDeepAdd(acc, ['potDonorCount', potId], 1)
 
@@ -435,9 +432,7 @@ async function processSheetsResponses(sheetResponses, raflData, useReview) {
         Object.keys(res)
             .filter(key => (/Pot/.test(key) && res[key] !== ''))
             .map(key => {
-                const potId = useReview
-                    ? getPotIdFromNumber(key, raflData)
-                    : getPotIdFromTitle(key, raflData)
+                const potId = getPotIdFromNumber(key, raflData)
                 setDeepAdd(acc, [date, 'pots', potId, 'tickets'], parseInt(res[key]))
                 setDeepAdd(acc, [date, 'pots', potId, 'donors'], 1)
 
@@ -525,9 +520,8 @@ export async function raflUtils(util) {
     }
 
     if (util === 'processSheetsResponses') {
-        const useReview = true // 'Review' vs. 'Form Responses 1'
         const sheetResponses = await getSheetsResponses(auth, raflStatsId)
-        response = await processSheetsResponses(sheetResponses, raflData, useReview)
+        response = await processSheetsResponses(sheetResponses, raflData)
     }
 
 
@@ -571,7 +565,7 @@ export async function raflUtils(util) {
 
 ////// ONE-TIME COMMAND //////
 
-await raflUtils('processSheetsResponses').then(r => {if (!production) jsonIt('response', r)})
+await raflUtils('getCharities').then(r => {if (!production) jsonIt('response', r)})
 
 
 ///////////////////////////////////////
