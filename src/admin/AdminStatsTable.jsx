@@ -14,8 +14,8 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
         column => column?.id === 'dateString' && !hasDateString ? setHasDateString(true) : null
     )
     tableData.columns = hasDateString
-        ? tableData.columns.filter((column => column.id !== 'date'))
-        : tableData.columns
+        ? tableData.columns.filter((column => column.id !== 'date')).filter(x => x)
+        : tableData.columns.filter(x => x)
 
     return (
         <div>
@@ -35,7 +35,7 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
                             {tableData.columns.map((column, index) =>
                                 <TableCell key={index + 1}
                                            sx={{
-                                               textAlign: column.align,
+                                               textAlign: column?.align,
                                                fontSize: fontSize,
                                                lineHeight: '1.1rem',
                                                padding: '8px',

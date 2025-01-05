@@ -10,7 +10,7 @@
 
 4. Check out the [**list of prizes**](/#/rafl)
 
-5. Go to the form below to specify your charity, add the link to your screenshot, and [**allocate your tickets among the pots**](/#/rafl/entryform).
+5. Go to the entry form to specify your charity, add the link to your screenshot, and [**allocate your tickets among the pots**](/#/rafl/entryform).
 
 6. You’re done! A raffle organizer should contact you on your platform of choice to notify you that your submission was either approved or requires an adjustment.
 

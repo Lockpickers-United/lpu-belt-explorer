@@ -72,15 +72,15 @@ console.log('Processing main data...')
 const jsonData = mainData
     .map(datum => {
         const belt = datum.Belt
-        const makes = datum.Make.split(',').filter(x => x)
-        const models = datum.Model.split(',').filter(x => x)
+        const makes = splitCommaValues(datum.Make)
+        const models = splitCommaValues(datum.Model)
         const makeModels = models.map((model, index) => ({
             make: makes[index],
             model: model
         }))
         const version = datum.Version
-        const lockingMechanisms = datum['Locking Mechanisms'].split(',').filter(x => x)
-        const features = datum.Features.split(',').filter(x => x)
+        const lockingMechanisms = splitCommaValues(datum['Locking Mechanisms'])
+        const features = splitCommaValues(datum.Features)
         const notes = datum.Notes
         const id = datum['Unique ID']
 
@@ -241,7 +241,7 @@ viewData
 // Lock Group data
 console.log('Processing group data...')
 groupData.forEach(group => {
-    const relatedIds = group['Related IDs'].split(',').map(s => s.trim())
+    const relatedIds = splitCommaValues(group['Related IDs']).map(s => s.trim())
     const entries = relatedIds
         .map(id => jsonData.find(e => e.id === id))
         .filter(x => x)
@@ -306,7 +306,7 @@ const dialsMainData = dialsData.map(datum => {
         digits: datum.Digits,
         notes: datum.Notes,
         tier: datum['Quest Tier'],
-        features: datum.Features ? datum.Features.split(',').filter(x => x) : []
+        features: splitCommaValues(datum.Features) && []
     }
 }).filter(x => x)
 
