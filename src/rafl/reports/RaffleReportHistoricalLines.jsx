@@ -1,6 +1,6 @@
 import React from 'react'
 import RaffleReportLine from './RaffleReportLine'
-import {setDeepPush} from '../../util/useSetDeep'
+import {setDeepPush} from '../../util/setDeep'
 
 /**
  * @property cumDonorsUnique

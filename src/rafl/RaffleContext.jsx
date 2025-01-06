@@ -7,7 +7,7 @@ import DBContext from '../app/DBContext.jsx'
 import removeAccents from 'remove-accents'
 import collectionOptions from '../data/collectionTypes'
 import {useLocalStorage} from 'usehooks-ts'
-import {setDeepAdd} from '../util/useSetDeep'
+import {setDeepAdd} from '../util/setDeep'
 
 /**
  * @property summaryData

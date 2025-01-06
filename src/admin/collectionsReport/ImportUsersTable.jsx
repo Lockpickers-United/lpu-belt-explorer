@@ -78,7 +78,7 @@ const ImportUsersTable = ({data}) => {
     const tableWidth = '60%'
 
     return (
-        <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}
+        <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} tableHeight={600} fontSize={fontSize}
                              sortable={sortable} sort={sort} setSort={setSort}
                              ascending={ascending} setAscending={setAscending} linkFunction={linkFunction}/>
     )

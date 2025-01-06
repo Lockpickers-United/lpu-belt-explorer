@@ -111,7 +111,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                 legends={[
                     {
                         anchor: 'bottom',
-                        itemTextColor: '#444',
+                        itemTextColor: '#b4b4b4',
                         direction: 'row',
                         justify: false,
                         translateX: 0,
