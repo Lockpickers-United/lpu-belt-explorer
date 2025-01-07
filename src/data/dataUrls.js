@@ -10,6 +10,10 @@ export const brandDistribution = `${url}/statsBrandDistribution.json`
 export const collectionsFull = `${url}/statsCollectionsFull2.json`
 export const collectionsSummary = `${url}/statsCollectionsSummary2.json`
 export const collectionsFullBB = `${url}/statsCollectionsFull2BB.json`
+
+export const collectionsStatsCurrent = `${url}/collectionStatsCurrent.json`
+
+
 export const lockSummary = `${url}/statsLockSummary.json`
 export const popularAreas = `${url}/statsPopularAreas.json`
 export const redditGrowth = `${url}/statsRedditGrowth.json`

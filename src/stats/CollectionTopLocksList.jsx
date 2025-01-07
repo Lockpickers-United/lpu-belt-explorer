@@ -45,8 +45,8 @@ const CollectionTopLocksList = ({dataset, title}) => {
                                                width: 34,
                                                verticalAlign:'top'
                                            }}>{index + 1}</TableCell>
-                                <TableCell key={topLock.lock} style={bodyStyle} sx={{textOverflow: 'ellipsis'}}>
-                                    {topLock.lock}
+                                <TableCell key={topLock.name} style={bodyStyle} sx={{textOverflow: 'ellipsis'}}>
+                                    {topLock.name}
                                 </TableCell>
                             </TableRow>
                         )}

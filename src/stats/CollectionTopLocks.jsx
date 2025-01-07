@@ -3,13 +3,13 @@ import useWindowSize from '../util/useWindowSize'
 import CollectionTopLocksList from './CollectionTopLocksList'
 
 function CollectionTopLocks({data}) {
-    const {
-        topLocksOwn,
-        topLocksPicked,
-        topLocksScorecard,
-        topLocksWishlist
-    } = data.collectionsSummary.topLocksFull
 
+    const topLocksOwn = data.collectionsStatsCurrent.allUsers.listStats.own.topItems
+    const topLocksPicked = data.collectionsStatsCurrent.allUsers.listStats.picked.topItems
+    const topLocksWishlist = data.collectionsStatsCurrent.allUsers.listStats.wishlist.topItems
+    const topLocksScorecard = data.collectionsStatsCurrent.allUsers.listStats.recordedLocks.topItems.slice(0, 25)
+
+    console.log('topLocksWishlist', topLocksWishlist)
     const {width} = useWindowSize()
     const smallWindow = width <= 560
 
@@ -26,12 +26,12 @@ function CollectionTopLocks({data}) {
     return (
         <div style={{textAlign: 'center'}}>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={topLocksOwn.data} title='Owned'/>
-                <CollectionTopLocksList dataset={topLocksPicked.data} title='Picked'/>
+                <CollectionTopLocksList dataset={topLocksOwn} title='Owned'/>
+                <CollectionTopLocksList dataset={topLocksPicked} title='Picked'/>
             </div>
             <div style={combinedDivStyle}>
-                <CollectionTopLocksList dataset={topLocksWishlist.data} title='Wishlist'/>
-                <CollectionTopLocksList dataset={topLocksScorecard.data} title='Scorecard'/>
+                <CollectionTopLocksList dataset={topLocksWishlist} title='Wishlist'/>
+                <CollectionTopLocksList dataset={topLocksScorecard} title='Scorecard'/>
             </div>
         </div>
     )
