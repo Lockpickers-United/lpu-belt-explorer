@@ -4182,6 +4182,20 @@
     "lastUpdated": "2023-07-26T21:50:31.655Z"
   },
   {
+    "id": "1bba03a6",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "V50"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.775Z"
+  },
+  {
     "id": "d49f60fe",
     "belt": "Orange",
     "makeModels": [
@@ -5071,6 +5085,20 @@
     ],
     "views": 410,
     "lastUpdated": "2023-07-25T11:20:19.884Z"
+  },
+  {
+    "id": "4f0e4a4b",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "LOB",
+        "model": "Standard"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.776Z"
   },
   {
     "id": "a5a164ad",
@@ -8075,6 +8103,23 @@
     "lastUpdated": "2023-07-25T11:20:19.886Z"
   },
   {
+    "id": "747c00fd",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "BM"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "DOM torpedos and drivers"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.777Z"
+  },
+  {
     "id": "a6e954a6",
     "belt": "Green",
     "makeModels": [
@@ -8104,6 +8149,20 @@
     ],
     "views": 311,
     "lastUpdated": "2023-07-25T11:20:19.886Z"
+  },
+  {
+    "id": "59f78114",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "V55"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.778Z"
   },
   {
     "id": "b099c88a",
@@ -8649,6 +8708,21 @@
     ],
     "views": 96,
     "lastUpdated": "2024-01-14T22:32:35.935Z"
+  },
+  {
+    "id": "826fc531",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "CES",
+        "model": "Standard"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "Also known as CES 810",
+    "lastUpdated": "2025-01-09T16:22:28.778Z"
   },
   {
     "id": "83ac6e00",
@@ -10112,6 +10186,50 @@
     ],
     "views": 342,
     "lastUpdated": "2023-07-25T11:20:19.887Z"
+  },
+  {
+    "id": "c2125761",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Greenteq \"Q\"",
+        "model": "Standard"
+      }
+    ],
+    "version": "6-pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.779Z"
+  },
+  {
+    "id": "07151e91",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "GTV",
+        "model": "APS"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.779Z"
+  },
+  {
+    "id": "156734db",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "GTV",
+        "model": "Dimple"
+      }
+    ],
+    "version": "6-pin",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.779Z"
   },
   {
     "id": "3316c7d0",
@@ -12328,6 +12446,58 @@
     "lastUpdated": "2023-07-25T11:20:19.889Z"
   },
   {
+    "id": "0e1cabed",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Winkhaus",
+        "model": "XR"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: fabianoh130",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53336541235_5f84556553_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53336541235/in/album-72177720312718420/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53336541235_b9e303e1ef_o.jpg"
+      },
+      {
+        "title": "By: fabianoh130",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53336312423_48cc3081c5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53336312423/in/album-72177720312718420/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53336312423_a820026708_o.jpg"
+      },
+      {
+        "title": "By: fabianoh130",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53336076961_b959def7e9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53336076961/in/album-72177720312718420/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53336076961_b3d932ce4a_o.jpg"
+      },
+      {
+        "title": "By: BlackMoone845",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53719204359_5814e045b7_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53719204359/in/album-72177720312718420/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53719204359_c344020979_o.jpg"
+      },
+      {
+        "title": "By: BlackMoone845",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53719204699_8365f9ba5b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53719204699/in/album-72177720312718420/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53719204699_627c630949_o.jpg"
+      }
+    ],
+    "views": 49,
+    "lastUpdated": "2025-01-09T16:22:28.780Z"
+  },
+  {
     "id": "a609fdb1",
     "belt": "Green",
     "makeModels": [
@@ -13054,6 +13224,24 @@
     "lastUpdated": "2023-09-09T11:27:38.145Z"
   },
   {
+    "id": "7130d7c3",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "EC550"
+      },
+      {
+        "make": "ABUS",
+        "model": "EC660"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.780Z"
+  },
+  {
     "id": "3515caae",
     "belt": "Blue",
     "makeModels": [
@@ -13097,6 +13285,29 @@
       "cf5bd73b"
     ],
     "lastUpdated": "2023-11-23T18:53:56.020Z"
+  },
+  {
+    "id": "d005e7b8",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "EC880"
+      },
+      {
+        "make": "ABUS",
+        "model": "P12R"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Trap element"
+    ],
+    "notes": "require 360° picking",
+    "views": 55,
+    "lastUpdated": "2025-01-09T16:22:28.780Z"
   },
   {
     "id": "3df9c95f",
@@ -13683,6 +13894,49 @@
     ],
     "views": 679,
     "lastUpdated": "2023-03-23T03:24:22.388Z"
+  },
+  {
+    "id": "ee04714f",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "K6-RT"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Active element"
+    ],
+    "notes": "6-pin",
+    "media": [
+      {
+        "title": "By: gigawalt",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53098022302_735522c685_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53098022302/in/album-72177720310302926/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53098022302_182433c6f3_o.jpg"
+      },
+      {
+        "title": "By: gigawalt",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53099083583_4ae750db90_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53099083583/in/album-72177720310302926/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53099083583_4069ec7ec8_o.jpg"
+      },
+      {
+        "title": "By: gigawalt",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53098022882_a4cbc7ceb3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53098022882/in/album-72177720310302926/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53098022882_e952a5a3ef_o.jpg"
+      }
+    ],
+    "views": 41,
+    "lastUpdated": "2025-01-09T16:22:28.781Z"
   },
   {
     "id": "ae0d35bc",
@@ -15701,6 +15955,21 @@
       "4cd09b3b"
     ],
     "lastUpdated": "2024-05-11T00:09:12.185Z"
+  },
+  {
+    "id": "8f219086",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Gera",
+        "model": "3000"
+      }
+    ],
+    "version": "6 pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-01-09T16:22:28.782Z"
   },
   {
     "id": "959a6b9d",
@@ -40719,21 +40988,6 @@
     "lastUpdated": "2024-01-01T20:16:24.997Z"
   },
   {
-    "id": "d005e7b8",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "P1R"
-      }
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "views": 55,
-    "lastUpdated": "2023-08-03T13:21:20.098Z"
-  },
-  {
     "id": "b370e57b",
     "belt": "Unranked",
     "makeModels": [
@@ -40954,45 +41208,6 @@
     ],
     "views": 49,
     "lastUpdated": "2024-01-02T17:58:57.081Z"
-  },
-  {
-    "id": "ee04714f",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "BASI",
-        "model": "K6-RT"
-      }
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "notes": "6-pin",
-    "media": [
-      {
-        "title": "By: gigawalt",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53098022302_735522c685_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53098022302/in/album-72177720310302926/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53098022302_182433c6f3_o.jpg"
-      },
-      {
-        "title": "By: gigawalt",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53099083583_4ae750db90_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53099083583/in/album-72177720310302926/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53099083583_4069ec7ec8_o.jpg"
-      },
-      {
-        "title": "By: gigawalt",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53098022882_a4cbc7ceb3_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53098022882/in/album-72177720310302926/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53098022882_e952a5a3ef_o.jpg"
-      }
-    ],
-    "views": 41,
-    "lastUpdated": "2023-08-07T00:40:56.368Z"
   },
   {
     "id": "b68b677c",
@@ -45150,58 +45365,6 @@
     ],
     "views": 76,
     "lastUpdated": "2023-08-31T21:47:34.788Z"
-  },
-  {
-    "id": "0e1cabed",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Winkhaus",
-        "model": "XR"
-      }
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "media": [
-      {
-        "title": "By: fabianoh130",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53336541235_5f84556553_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53336541235/in/album-72177720312718420/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53336541235_b9e303e1ef_o.jpg"
-      },
-      {
-        "title": "By: fabianoh130",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53336312423_48cc3081c5_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53336312423/in/album-72177720312718420/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53336312423_a820026708_o.jpg"
-      },
-      {
-        "title": "By: fabianoh130",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53336076961_b959def7e9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53336076961/in/album-72177720312718420/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53336076961_b3d932ce4a_o.jpg"
-      },
-      {
-        "title": "By: BlackMoone845",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53719204359_5814e045b7_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53719204359/in/album-72177720312718420/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53719204359_c344020979_o.jpg"
-      },
-      {
-        "title": "By: BlackMoone845",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53719204699_8365f9ba5b_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53719204699/in/album-72177720312718420/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53719204699_627c630949_o.jpg"
-      }
-    ],
-    "views": 49,
-    "lastUpdated": "2024-05-13T18:10:42.895Z"
   },
   {
     "id": "a42a815e",

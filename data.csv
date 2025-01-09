@@ -97,6 +97,7 @@ Orange,ACE,Tubular,,Pump/push,,,bf8970de
 Orange,ALPHA,1000,"50mm 60mm (5pins / spools)",Pin-tumbler,,,bac43ba7
 Orange,BASI,CO,,Pin-tumbler,,,aa15b066
 Orange,BASI,ST,,Pin-tumbler,,,7b4ce02a
+Orange,BASI,V50,,Pin-tumbler,,,1bba03a6
 Orange,Brinks,"House Key",,Pin-tumbler,,,d49f60fe
 Orange,"Burg Wächter",Boccia,,Dimple,Unguttable,,171f76e9
 Orange,CES,KB,,Pin-tumbler,,,1a8afeac
@@ -122,6 +123,7 @@ Orange,Heracles,5G,,Pin-tumbler,,,3e5236c7
 Orange,IKON,DS,,Pin-tumbler,,,2bdcb8c7
 Orange,ISEO,F5,,Pin-tumbler,,,d261a3ba
 Orange,Kasp,"160 series Diskus",,Pin-tumbler,,,9bc8809e
+Orange,LOB,Standard,,Pin-tumbler,,,4f0e4a4b
 Orange,Lockwood,110/40,,Pin-tumbler,,,a5a164ad
 Orange,Mailboss,"""12"" wafer mailbox camlock",,Wafer,,,380aeb89
 Orange,"Master Lock","1145 - 1165D",,Dimple,,,237f29c9
@@ -186,7 +188,9 @@ Green,"Bab IKON",DS,,Pin-tumbler,,,ca6ce763
 Green,"Bab IKON",P031,,Pin-tumbler,,,bfc7c700
 Green,BASI,3AX,,Pin-tumbler,,,bea71188
 Green,BASI,"AS Pro",,Pin-tumbler,,,27f1aaae
+Green,BASI,BM,,Dimple,"DOM torpedos and drivers",,747c00fd
 Green,BASI,CX6,,Dimple,,,a6e954a6
+Green,BASI,V55,,Dimple,,,59f78114
 Green,,"BiLock Clone",,Pin-tumbler,,,b099c88a
 Green,BKS,"51-SL (Livius)",,Pin-tumbler,,,569dd487
 Green,BKS,88,,Pin-tumbler,,"Also known as BKS PZ 88",135ef1c0
@@ -198,6 +202,7 @@ Green,"Burg Wächter",Atlantic,,Pin-tumbler,,,14f021bb
 Green,"Burg Wächter",Karat,,Pin-tumbler,,,bd9dc1e4
 Green,"Burg Wächter","Profi 116/40",,Pin-tumbler,Unguttable,,dd155241
 Green,CCL,"Sesamee 900 series",,Pin-tumbler,Overmilling,,1fbf6a7a
+Green,CES,Standard,,Pin-tumbler,,"Also known as CES 810",826fc531
 Green,CES,"with dustcover",,Pin-tumbler,,,83ac6e00
 Green,Chateau,"C970 disk padlock",,Pin-tumbler,Unguttable,,20f3575c
 Green,CISA,285,,Pin-tumbler,,,a832e82d
@@ -229,6 +234,9 @@ Green,Gege,ANS-2,,Pin-tumbler,,,92f98042
 Green,"Gege,Alfa","AP 1000,""AP 1000""",,Pin-tumbler,,,3129ee7e
 Green,Generic/Unknown,"4 Lever Curtained lock",,Lever,Curtain,,0e97c099
 Green,Generic/Unknown,"4 Lever Uncurtained lock",,Lever,Uncurtained,,d46ac711
+Green,"Greenteq ""Q""",Standard,6-pin,Pin-tumbler,,,c2125761
+Green,GTV,APS,,Pin-tumbler,,,07151e91
+Green,GTV,Dimple,6-pin,Dimple,,,156734db
 Green,,"Guett Dern",,,,,3316c7d0
 Green,IKON,"K2 (with IKON Core)",,Pin-tumbler,,,648a3742
 Green,IKON,N1,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",b25e23fd
@@ -283,6 +291,7 @@ Green,Wilka,"Primus HX",,Dimple,,,0a7b9888
 Green,Winkhaus,RAP,,Pin-tumbler,,,69c4dbf2
 Green,Winkhaus,RAP+,,Pin-tumbler,,,574e9854
 Green,Winkhaus,VS,6-pin,Pin-tumbler,,,de53cff7
+Green,Winkhaus,XR,,Pin-tumbler,,,0e1cabed
 Green,Winkhaus,ZRV,,Pin-tumbler,,,a609fdb1
 Green,Winkhaus,ZRV6,,Pin-tumbler,,,bd9e85b5
 Green,"Yale,Yale","1000,1500",,Dimple,,"1 tapered spool and 5 tapered drivers , keypins tapered as well",efca4bf9
@@ -296,7 +305,9 @@ Blue,ABUS,"Bravus 3000",,Dimple,"Trap element","Requires 360° picking: these lo
 Blue,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated and spooled t-pins",Pin-tumbler,,,85d93eb1
 Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,E90",,Pin-tumbler,,,5c0d870b
+Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
 Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515caae
+Blue,"ABUS,ABUS","EC880,P12R",,Dimple,"Trap element","require 360° picking",d005e7b8
 Blue,ABUS,GDS,"with barrels",Pin-tumbler,"Barrel drivers",,3df9c95f
 Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
 Blue,ABUS,KW14,,Pin-tumbler,,,4382d650
@@ -309,6 +320,7 @@ Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched co
 Blue,ASSA,700,"7 pin with spools and no countermilling",Pin-tumbler,,,d08aa492
 Blue,ASSA,700,"7 pin with tapered drivers",Pin-tumbler,"Tapered drivers",,f1e92541
 Blue,ASSA,R502,,Pin-tumbler,,,1bee7a66
+Blue,BASI,K6-RT,,"Pin-tumbler,Sidepins","Active element",6-pin,ee04714f
 Blue,Baton,"6000 series","not Abloy keyway","Disc detainer",,,ae0d35bc
 Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
@@ -349,6 +361,7 @@ Blue,,Fontaine,,Pump/push,,,7786832f
 Blue,Gege,AP2000,,Pin-tumbler,,,8ad6939a
 Blue,Gege,AP3000,,Pin-tumbler,,,0037a89f
 Blue,"Gege,Alfa","pExtra,""pExtra""","5 pin",Pin-tumbler,Overmilling,,aa7fc00e
+Blue,Gera,3000,"6 pin",Pin-tumbler,,,8f219086
 Blue,GOAL,S,"5 pins",Pin-tumbler,,,959a6b9d
 Blue,Guard,NVL,,Pin-tumbler,,,62bdbd5e
 Blue,IKON,P031,"N6 profile",Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",d1896bf9
@@ -756,13 +769,11 @@ Unranked,Abloy,AVA,"flat key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,41,,,"Under Review ⚑",,18ecc45b
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
-Unranked,ABUS,P1R,,,"Under Review ⚑",,d005e7b8
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑","mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
 Unranked,"ASSA,ASSA","H5,H7",,,"Under Review ⚑",,e10b4a20
-Unranked,BASI,K6-RT,,,"Under Review ⚑",6-pin,ee04714f
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
@@ -861,7 +872,6 @@ Unranked,WEST,941,,Dimple,,,ca6c2e4c
 Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e
 Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5
-Unranked,Winkhaus,XR,,,"Under Review ⚑",,0e1cabed
 Unranked,Yale,"2000 Plus",,"Dimple,Sidebar,Slider","Under Review ⚑","dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
 Unranked,Yale,500+,,Pin-tumbler,"Under Review ⚑",,37951bc4
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
