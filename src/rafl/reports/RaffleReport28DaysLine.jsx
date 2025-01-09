@@ -21,7 +21,7 @@ const RaffleReport28DaysLine = ({lineData}) => {
 
             for (let i = 0; i < value.length; i++) {
                 let date = value[i]['date']
-                if (dayjs(date) < dayjs('2024-11-25')) continue
+                if (dayjs(date) < dayjs('2024-12-25')) continue
 
                 date = date + ' 23:59:59'
 
@@ -87,7 +87,7 @@ const RaffleReport28DaysLine = ({lineData}) => {
                 yScale={{
                     type: 'linear',
                     min: 0,
-                    max: 'auto',
+                    max: '5000',
                     stacked: false,
                     reverse: false
                 }}
