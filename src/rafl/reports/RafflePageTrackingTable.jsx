@@ -9,7 +9,7 @@ const RafflePageTrackingTable = ({data}) => {
 
 
     const chartData = rafl28days.data.filter(dayData => {
-        return dayjs(dayData.date) > dayjs('2024-11-27')
+        return dayjs(dayData.date) > dayjs('2024-12-28')
     })
 
     const pageTotals = chartData.reduce((acc, dayData) => {
