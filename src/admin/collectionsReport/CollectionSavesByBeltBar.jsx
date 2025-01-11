@@ -1,24 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {ResponsiveBar} from '@nivo/bar'
 import useWindowSize from '../../util/useWindowSize'
 import {beltColors, primaryTheme} from '../adminChartDefaults'
+import ReportsContext from '../ReportsContext.jsx'
 
-const CollectionSavesByBeltBar = ({data}) => {
-    const {listSavesByBelt} = data
+const CollectionSavesByBeltBar = () => {
+
+    const {data, collectionListLabels} = useContext(ReportsContext)
+    const listSaves = data.collectionsStatsCurrent.allUsers.listSavesByBelt
+
+
+    const lists = ['own', 'picked', 'wishlist', 'recordedLocks']
+    const listSavesByBelt = lists.map(list => {
+        return {...listSaves[list], list: collectionListLabels[list]}
+    })
 
     const {width} = useWindowSize()
-    const mobileSmall = width <= 360
-    const mobileMedium = width <= 395
-    const mobileLarge = width <= 428  // but test also at 412
     const smallWindow = width <= 560
-    const midWindow = width <= 820
 
-    const chartHeight =
-        mobileSmall ? 200
-            : mobileMedium ? 200
-                : mobileLarge ? 200
-                    : midWindow ? 250
-                        : 290
+    const chartHeight = 270
 
     const borderRadius = !smallWindow ? 2 : 1
     const chartMargin = {top: 0, right: 20, bottom: 30, left: 50}

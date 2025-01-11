@@ -6,7 +6,7 @@ const AdminStatsTable = ({tableData, tableWidth, tableHeight, fontSize, wrap}) =
 
     const whiteSpace = wrap ? 'inherit' : 'nowrap'
 
-    tableData.columns.filter(x => x?.id && x?.align)
+    //tableData.columns.filter(x => x?.id && x?.align)
 
     // don't show 'date' column if 'dateString' column exists
     const [hasDateString, setHasDateString] = useState(false)

@@ -9,7 +9,6 @@ function CollectionTopLocks({data}) {
     const topLocksWishlist = data.collectionsStatsCurrent.allUsers.listStats.wishlist.topItems
     const topLocksScorecard = data.collectionsStatsCurrent.allUsers.listStats.recordedLocks.topItems.slice(0, 25)
 
-    console.log('topLocksWishlist', topLocksWishlist)
     const {width} = useWindowSize()
     const smallWindow = width <= 560
 

@@ -12,6 +12,7 @@ export const collectionsSummary = `${url}/statsCollectionsSummary2.json`
 export const collectionsFullBB = `${url}/statsCollectionsFull2BB.json`
 
 export const collectionsStatsCurrent = `${url}/collectionStatsCurrent.json`
+export const collectionStatsDaily = `${url}/collectionStatsDaily.json`
 
 
 export const lockSummary = `${url}/statsLockSummary.json`

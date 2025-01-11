@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import AdminStatsTable from '../AdminStatsTable'
 import useWindowSize from '../../util/useWindowSize'
+import ReportsContext from '../ReportsContext.jsx'
 
-const CollectionsSummaryTable = ({data}) => {
-    const {summary} = data
+const CollectionsSummaryTable = () => {
+
+    const {collectionSummary} = useContext(ReportsContext)
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -22,7 +24,9 @@ const CollectionsSummaryTable = ({data}) => {
     const tableWidth = '100%'
 
     return (
-        <AdminStatsTable tableData={summary} tableWidth={tableWidth} fontSize={fontSize}/>
+        <React.Fragment>
+            <AdminStatsTable tableData={collectionSummary} tableWidth={tableWidth} fontSize={fontSize}/>
+        </React.Fragment>
     )
 }
 

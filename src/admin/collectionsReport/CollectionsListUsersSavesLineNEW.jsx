@@ -4,17 +4,30 @@ import {primaryTheme} from '../adminChartDefaults'
 import useWindowSize from '../../util/useWindowSize'
 import ReportsContext from '../ReportsContext.jsx'
 
-const CollectionsListUsersSavesLine = () => {
-
+const CollectionsListUsersSavesLine = ({lineMetrics}) => {
     const {data} = useContext(ReportsContext)
     const {collectionStatsDaily} = data
+
+    //{x: '2023-11-19', y: 54}
     const listUserValues = collectionStatsDaily.map(day => {
         return {
-            x: day.date,
-            y: day.listUsers || 0
+                x: day.date,
+                y: day.listUsers || 0
         }
     })
-    const listUserLine = [{id: 'listUsers', data: listUserValues}]
+
+    const listUserArray = Array.from([{x: '2023-11-19', y: 54}])
+
+    console.log('listUserArray', listUserArray)
+
+    const listUserData = {
+        id: 'listUsers',
+        data: [{x: '2023-11-19', y: 54}]
+    }
+
+
+    console.log('listUserData', listUserData)
+
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -40,7 +53,7 @@ const CollectionsListUsersSavesLine = () => {
         <div style={{height: chartHeight}}>
             <ResponsiveLine
                 theme={combinedTheme}
-                data={listUserLine}
+                data={lineMetrics}
                 enableGridX={false}
                 enableGridY={false}
                 colors={['#007de2', '#16325d']}
@@ -94,7 +107,7 @@ const CollectionsListUsersSavesLine = () => {
                 ]}
                 enablePoints={false}
                 useMesh={true}
-                isInteractive={true}
+                isInteractive={false}
             />
         </div>
     )
