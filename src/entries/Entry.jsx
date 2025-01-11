@@ -25,6 +25,7 @@ import RelatedEntryButton from './RelatedEntryButton'
 import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
+import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 
 function Entry({entry, expanded, onExpand}) {
     const {userId} = useParams()
@@ -33,9 +34,9 @@ function Entry({entry, expanded, onExpand}) {
     const ref = useRef(null)
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
-                            .sort((a, b) => {
-                                return beltSort(allEntriesById[a].belt, allEntriesById[b].belt) || a.localeCompare(b)
-                            })
+        .sort((a, b) => {
+            return beltSort(allEntriesById[a].belt, allEntriesById[b].belt) || a.localeCompare(b)
+        })
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
@@ -167,7 +168,8 @@ function Entry({entry, expanded, onExpand}) {
                             <FieldValue name='Other Versions' value={
                                 <React.Fragment>
                                     {allRelatedIds.map(relatedId =>
-                                        <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand} entryId={entry.id}/>
+                                        <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand}
+                                                            entryId={entry.id}/>
                                     )}
                                 </React.Fragment>
                             }/>
@@ -201,10 +203,18 @@ function Entry({entry, expanded, onExpand}) {
                         }
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <Tracker feature='lock' id={entry.id}/>
-                        <CopyEntryIdButton entry={entry}/>
-                        <CopyEntryTextButton entry={entry}/>
-                        <CopyLinkToEntryButton entry={entry}/>
+                        <div style={{display: 'flex', width:'100%'}}>
+                            <div style={{flexGrow: 1, justifyItems:'left'}}>
+                                <Tracker feature='lock' id={entry.id}/>
+                                <CopyEntryIdButton entry={entry}/>
+                                <OpenLinkToEntryButton entry={entry}/>
+                            </div>
+                            <div style={{display: 'flex'}}>
+                                <CopyEntryTextButton entry={entry}/>
+                                <CopyLinkToEntryButton entry={entry}/>
+                            </div>
+                        </div>
+
                     </AccordionActions>
                 </React.Fragment>
             }
