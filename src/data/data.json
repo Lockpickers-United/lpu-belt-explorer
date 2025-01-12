@@ -6377,56 +6377,6 @@
     "lastUpdated": "2024-01-18T11:44:42.979Z"
   },
   {
-    "id": "6b2e5290",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "Bravus 1000"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Trap element"
-    ],
-    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "links": [
-      {
-        "title": "KoksaWiki",
-        "url": "https://wiki.koksa.org/Abus_BRAVUS_1000"
-      }
-    ],
-    "views": 1400,
-    "lastUpdated": "2025-01-12T17:30:04.046Z"
-  },
-  {
-    "id": "8d1ebc79",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "Bravus 2000"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Trap element"
-    ],
-    "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/ABUS/%20ABUS%20BRAVUS%202000_297.html"
-      }
-    ],
-    "views": 847,
-    "lastUpdated": "2025-01-12T17:30:04.046Z"
-  },
-  {
     "id": "95a9d73c",
     "belt": "Green",
     "makeModels": [
@@ -12867,6 +12817,14 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "Bravus 1000"
+      },
+      {
+        "make": "ABUS",
+        "model": "Bravus 2000"
+      },
+      {
+        "make": "ABUS",
         "model": "Bravus 3000"
       }
     ],
@@ -12957,7 +12915,7 @@
       }
     ],
     "views": 1821,
-    "lastUpdated": "2025-01-12T17:30:04.050Z"
+    "lastUpdated": "2025-01-12T17:46:12.877Z"
   },
   {
     "id": "85d93eb1",
