@@ -1,14 +1,13 @@
 import React, {useContext} from 'react'
 import {ResponsiveBar} from '@nivo/bar'
 import {primaryTheme} from '../adminChartDefaults'
-import useWindowSize from '../../util/useWindowSize'
 import ReportsContext from '../ReportsContext.jsx'
 
-const CollectionListAveragesBar = () => {
+const CollectionListAveragesBar = ({cohort}) => {
 
     const {collectionSummary} = useContext(ReportsContext)
 
-    const averageData = collectionSummary.data
+    const averageData = collectionSummary(cohort).data
         .filter(list => !['Raffle Watchlist','Awards', 'Projects'].includes(list.list))
         .map(list => ({
             id: list.list,

@@ -4,10 +4,10 @@ import useWindowSize from '../../util/useWindowSize'
 import {beltColors, primaryTheme} from '../adminChartDefaults'
 import ReportsContext from '../ReportsContext.jsx'
 
-const CollectionSavesByBeltBar = () => {
+const CollectionSavesByBeltBar = ({cohort}) => {
 
     const {data, collectionListLabels} = useContext(ReportsContext)
-    const listSaves = data.collectionsStatsCurrent.allUsers.listSavesByBelt
+    const listSaves = data.collectionsStatsCurrent[cohort].listSavesByBelt
 
 
     const lists = ['own', 'picked', 'wishlist', 'recordedLocks']

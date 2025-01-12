@@ -1,29 +1,22 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import {useNavigate} from 'react-router-dom'
 import Link from '@mui/material/Link'
 import dayjs from 'dayjs'
+import ReportsContext from '../ReportsContext.jsx'
 
-const BlackBeltsTable = ({tableData, collectionsData}) => {
+const BlackBeltsTable = () => {
     const navigate = useNavigate()
-
     const [sort, setSort] = useState('')
+    const {data} = useContext(ReportsContext)
 
-    const blackBelts = tableData.map(user => {
-        const displayName = user.displayName ? user.displayName : 'No display name'
-        const scorecardLink = `/profile/${user.userId}/scorecard`
-        const tabClaims = tableData.filter(u => u.tabClaimed === user.tabClaimed)
-        const cellColor = tabClaims.length > 1 ? '#f00' : '#eee'
-        const firstSeen = collectionsData.firstSeen[user.userId]
-
-        return {
-            displayName: displayName,
-            tabClaimed: user.tabClaimed,
-            cellColor: cellColor,
-            scorecardLink: scorecardLink,
-            firstSeen: firstSeen
-        }
-    })
+    const blackBelts = useMemo(() => Object.keys(data?.collectionStatsDaily?.blackBelts || {}).map(userId => {
+        const displayName = data?.collectionStatsDaily?.blackBelts[userId].displayName
+        const scorecardLink = `/profile/${userId}/scorecard`
+        const tabClaimed = data?.collectionStatsDaily?.blackBelts[userId].tabClaimed
+        const firstSeen = data?.collectionStatsDaily?.blackBelts[userId].acquired
+        return {userId, displayName, scorecardLink, tabClaimed, firstSeen}
+    }),[data?.collectionStatsDaily?.blackBelts])
 
     const sortedBlackBelts = (sort === 'name')
         ? blackBelts.sort((a, b) => {
@@ -40,10 +33,8 @@ const BlackBeltsTable = ({tableData, collectionsData}) => {
         navigate(link)
     }, [navigate])
 
-
     return (
         <div>
-            <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
             <TableContainer id='statsTable'
                             style={{
                                 padding: '0px 0px 0px 4px',
@@ -118,7 +109,6 @@ const BlackBeltsTable = ({tableData, collectionsData}) => {
                                                fontSize: '0.9rem',
                                                padding: '8px',
                                                border: 0,
-                                               color: row.cellColor
                                            }}
                                            component='th' scope='row'>
                                     {index + 1}
@@ -142,7 +132,6 @@ const BlackBeltsTable = ({tableData, collectionsData}) => {
                                                fontSize: '0.9rem',
                                                padding: '8px',
                                                border: 0,
-                                               color: row.cellColor
                                            }}
                                            component='th' scope='row'>
                                     {row.tabClaimed}

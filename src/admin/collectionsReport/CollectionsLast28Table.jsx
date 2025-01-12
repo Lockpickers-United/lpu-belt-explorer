@@ -3,13 +3,13 @@ import AdminStatsTable from '../AdminStatsTable'
 import dayjs from 'dayjs'
 import ReportsContext from '../ReportsContext.jsx'
 
-function CollectionsLast28Table() {
+function CollectionsLast28Table({cohort}) {
 
     const {data} = useContext(ReportsContext)
     const {collectionStatsDaily} = data
 
     const last28 = useMemo(() => {
-        const dates = collectionStatsDaily.map(value => value.date)
+        const dates = collectionStatsDaily.dayData.map(dayData => dayData.date)
         const latest = dayjs(dates.reduce((max, c) => c > max ? c : max))
         const startDay = latest.subtract(14, 'day')
 
@@ -25,17 +25,17 @@ function CollectionsLast28Table() {
             {id: 'newUsers', align: 'center', name: 'New Users'}
         ]
 
-        const tableData = collectionStatsDaily.map(value => {
+        const tableData = collectionStatsDaily.dayData.map(dayData => {
             return {
-                date: value.date,
-                totalUsers: value.totalProfiles,
-                listUsers: value.listUsers,
-                totalSaves: value.totalSaves,
-                ownUsers: value.listStats.find(list => list.listName === 'own')?.userCount,
-                pickedUsers: value.listStats.find(list => list.listName === 'picked')?.userCount,
-                scorecardUsers: value.listStats.find(list => list.listName === 'recordedLocks')?.userCount,
-                wishlistUsers: value.listStats.find(list => list.listName === 'wishlist')?.userCount,
-                newUsers: value.newListUsers
+                date: dayData[cohort].date,
+                totalUsers: dayData[cohort].totalProfiles,
+                listUsers: dayData[cohort].listUsers,
+                totalSaves: dayData[cohort].totalSaves,
+                ownUsers: dayData[cohort].listStats.find(list => list.listName === 'own')?.userCount,
+                pickedUsers: dayData[cohort].listStats.find(list => list.listName === 'picked')?.userCount,
+                scorecardUsers: dayData[cohort].listStats.find(list => list.listName === 'recordedLocks')?.userCount,
+                wishlistUsers: dayData[cohort].listStats.find(list => list.listName === 'wishlist')?.userCount,
+                newUsers: dayData[cohort].newListUsers
             }
 
         })
@@ -48,7 +48,7 @@ function CollectionsLast28Table() {
                 return dayjs(dayData.date).isAfter(startDay)
             })
         }
-    }, [collectionStatsDaily])
+    }, [cohort, collectionStatsDaily])
 
     const tableWidth = '100%'
     const fontSize = '.83rem'

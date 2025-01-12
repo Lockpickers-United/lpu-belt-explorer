@@ -1,9 +1,7 @@
-import React, {useMemo} from 'react'
+import React, {useCallback, useMemo} from 'react'
 import {
     brandDistribution,
     collectionsStatsCurrent,
-    collectionsSummary,
-    collectionsFull,
     lockSummary,
     popularAreas, redditGrowth, siteFullNew, collectionStatsDaily
 } from '../data/dataUrls'
@@ -16,6 +14,15 @@ export function ReportsProvider({children}) {
     const {data, loading, error} = useData({urls})
     const allDataLoaded = !loading && !error && !!data
 
+    const {
+        brandDistribution,
+        collectionsStatsCurrent,
+        collectionStatsDaily,
+        lockSummary,
+        popularAreas,
+        redditGrowth,
+        siteFullNew,
+    } = data || {}
 
     const collectionListLabels = useMemo(() => ({
         allLists: 'All Lists',
@@ -48,7 +55,8 @@ export function ReportsProvider({children}) {
         {listName: 'projects', label: 'Projects'}
     ]), [])
 
-    const collectionSummary = useMemo(() => (allDataLoaded
+    const collectionSummary = useCallback((cohort) => (
+        allDataLoaded
             ? {
                 columns: [
                     {name: 'List Name', id: 'list', align: 'left'},
@@ -63,14 +71,14 @@ export function ReportsProvider({children}) {
                         userCount,
                         totalSaves,
                         averageSaves
-                    } = data.collectionsStatsCurrent.allUsers.listStats[list.listName]
+                    } = data.collectionsStatsCurrent[cohort].listStats[list.listName]
                     return {
-                        totalUsers: data.collectionsStatsCurrent.allUsers.totalProfiles,
+                        totalUsers: data.collectionsStatsCurrent[cohort].totalProfiles,
                         list: list.label,
                         userCount,
                         listUsers: userCount,
                         totalSaves,
-                        percentListUsers: Math.round(100 * userCount / data.collectionsStatsCurrent.allUsers.listStats.allLists.userCount) + '%',
+                        percentListUsers: Math.round(100 * userCount / data.collectionsStatsCurrent[cohort].listStats.allLists.userCount) + '%',
                         averageSaves: Math.round(averageSaves)
                     }
                 })
@@ -80,11 +88,29 @@ export function ReportsProvider({children}) {
 
     const value = useMemo(() => ({
         data, loading, error,
+        allDataLoaded,
+        brandDistribution,
+        collectionsStatsCurrent,
+        collectionStatsDaily,
+        lockSummary,
+        popularAreas,
+        redditGrowth,
+        siteFullNew,
         collectionListLabels,
         collectionSummary
-    }), [data, loading, error,
+    }), [
+        data, loading, error,
+        allDataLoaded,
+        brandDistribution,
+        collectionsStatsCurrent,
+        collectionStatsDaily,
+        lockSummary,
+        popularAreas,
+        redditGrowth,
+        siteFullNew,
         collectionListLabels,
-        collectionSummary])
+        collectionSummary
+    ])
 
     return (
         <ReportsContext.Provider value={value}>
@@ -97,12 +123,10 @@ const urls = {
     brandDistribution,
     collectionsStatsCurrent,
     collectionStatsDaily,
-    collectionsSummary,
-    collectionsFull,
     lockSummary,
     popularAreas,
     redditGrowth,
-    siteFullNew
+    siteFullNew,
 }
 
 export default ReportsContext

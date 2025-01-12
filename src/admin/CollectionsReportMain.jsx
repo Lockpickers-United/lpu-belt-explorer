@@ -19,8 +19,7 @@ function CollectionsReportMain() {
     const {data, loading, error} = useContext(ReportsContext)
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(data.collectionsFull.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ' PST)'
-
+        : '(updated: ' + dayjs(data.collectionsStatsCurrent.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ' PST)'
 
     const {width} = useWindowSize()
     const smallWindow = width < 560
@@ -47,28 +46,28 @@ function CollectionsReportMain() {
             </div>
 
             <div style={headerStyle}>List Users</div>
-            <CollectionsListUsersSavesLine/>
+            <CollectionsListUsersSavesLine cohort={'allUsers'}/>
 
             <div style={headerStyle}>Average Items Per List</div>
-            <CollectionListAveragesBar/>
+            <CollectionListAveragesBar cohort={'allUsers'}/>
 
             <div style={headerStyle}>List Details</div>
-            <CollectionsSummaryTable/>
+            <CollectionsSummaryTable cohort={'allUsers'}/>
 
-            <div style={headerStyle}>Awards Summary</div>
-            <AwardsSummaryTable data={data}/>
+            <div style={headerStyle}>Import & Awards Summary</div>
+            <AwardsSummaryTable cohort={'allUsers'}/>
 
             <div style={headerStyle}>Import Users by Belt</div>
             <BeltCountMaxBar/>
 
             <div style={headerStyle}>List Saves by Belt Ranking</div>
-            <CollectionSavesByBeltBar/>
+            <CollectionSavesByBeltBar cohort={'allUsers'}/>
 
             <div style={headerStyle}>Last 14 Days</div>
-            <CollectionsLast28Table/>
+            <CollectionsLast28Table cohort={'allUsers'}/>
 
             <div style={headerStyle}>Top Locks</div>
-            <TopLocks/>
+            <TopLocks cohort={'allUsers'}/>
 
         </div>
     )

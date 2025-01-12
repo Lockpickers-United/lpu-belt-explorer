@@ -3,17 +3,25 @@ import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from '../adminChartDefaults'
 import useWindowSize from '../../util/useWindowSize'
 import ReportsContext from '../ReportsContext.jsx'
+import dayjs from 'dayjs'
 
-const CollectionsListUsersSavesLine = () => {
+const CollectionsListUsersSavesLine = ({cohort}) => {
 
     const {data} = useContext(ReportsContext)
     const {collectionStatsDaily} = data
-    const listUserValues = collectionStatsDaily.map(day => {
+    const listUserData = collectionStatsDaily.dayData.map(day => {
         return {
-            x: day.date,
-            y: day.listUsers || 0
+            x: day[cohort].date,
+            y: day[cohort].listUsers || 0
         }
     })
+
+    const listUserValues = cohort === 'blackBeltOnly'
+        ? listUserData.filter(day => {
+            return dayjs(day.x) > dayjs('2024-07-15')
+        })
+        : listUserData
+
     const listUserLine = [{id: 'listUsers', data: listUserValues}]
 
     const {width} = useWindowSize()
