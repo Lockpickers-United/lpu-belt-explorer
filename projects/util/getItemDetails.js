@@ -1,83 +1,17 @@
 import fetch from 'node-fetch'
 import entryName from '../util/entryName.js'
-import {setDeep, setDeepPush, setDeepUnique} from './useSetDeep.js'
+import {setDeep, setDeepPush, setDeepUnique} from './setDeep.js'
 import {json} from 'express'
 
+let allMedia = []
 
-export async function potDetails() {
-    const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
-    return raflData.reduce((acc, item) => {
-        acc[item.id] = {...item, shortName: item.title, potName: item.title, fullName: item.title}
-        return acc
-    }, {})
-}
-
-
-
-
-export async function getItemDetails() {
-
-    let allMedia = []
-
-    // get RAFL details
-    const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
-    const potDetails = raflData.reduce((acc, item) => {
-        acc[item.id] = {...item, shortName: item.title, potName: item.title, fullName: item.title}
-        return acc
-    }, {})
-
-    // get SAFE LOCK details
-    const safelockData = await (await fetch('https://lpubelts.com/dials.json')).json()
-    const safelockDetails = safelockData.reduce((acc, item) => {
-        const sep = item.make ? ' ' : ''
-        acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`}
-        return acc
-    }, {})
-
-    // get PROJECT details
-    const projectData = await (await fetch('https://lpubelts.com/projects.json')).json()
-    const projectDetails = projectData.reduce((acc, item) => {
-        acc[item.id] = {
-            ...item,
-            fullName: item.name,
-            shortName: item.name,
-            projectName: item.name,
-            fullBelt: item.belt,
-            rank: item.tier.charAt(item.tier.length - 1)
-        }
-        return acc
-    }, {})
-
-    // get AWARD details
-    const awardData = await (await fetch('https://lpubelts.com/awards.json')).json()
-    const awardDetails = awardData.reduce((acc, item, index) => {
-        acc[item.id] = {
-            ...item,
-            shortName: item.name,
-            awardName: item.name,
-            fullBelt: item.belt,
-            fullName: item.makeModels[0].model,
-            absRank: index
-        }
-        return acc
-    }, {})
-
-    // get GLOSSARY details
-    const glossaryData = await (await fetch('https://lpubelts.com/glossary.json')).json()
-    const glossaryDetails = glossaryData.reduce((acc, item) => {
-        allMedia.push(item.media)
-        acc[item.term] = item
-        return acc
-    }, {})
-
-
-    // get LOCK details
+export async function lockDetails() {
     const lockData = await (await fetch('https://lpubelts.com/data.json')).json()
 
     let allSamelineNames = {}
-
     const lockDetails = lockData.reduce((acc, item) => {
 
+        //TODO entries with no make, only model
         const lockName = entryName(item, 'short').replaceAll('"', '\'')
         const lockFullName = entryName(item, 'short', {includeVersion: true}).replaceAll('"', '\'')
 
@@ -86,7 +20,7 @@ export async function getItemDetails() {
             : [item.belt, null]
 
         // sameline names
-        setDeep(acc, ['allSamelineNames', item.id], lockName)
+        allSamelineNames[item.id] = lockName
 
         const allBrands = item.makeModels.reduce((acc, makeModel) => {
             acc.push(makeModel.make ? makeModel.make : makeModel.model)
@@ -102,7 +36,7 @@ export async function getItemDetails() {
             return acc
         }, [])
 
-        allMedia = item.media ? [allMedia, ...item.media] : allMedia
+        allMedia = item.media ? [...allMedia, ...item.media] : allMedia
 
         acc[item.id] = {
             ...item,
@@ -116,22 +50,101 @@ export async function getItemDetails() {
             lockViewCount: item.views,
             lockBrands: lockBrands,
             samelineNames: samelineNames,
+            type: 'lock'
         }
         return acc
     }, {})
 
 
-    lockDetails.allSamelineNames = [...lockDetails.allSamelineNames, ...allSamelineNames]
-
-    jsonIt('lockDetails', lockDetails.allSamelineNames)
+    //lockDetails.allSamelineNames = new Map([...lockDetails.allSamelineNames, ...allSamelineNames])
+    //allSamelineNames.forEach((value, key) => lockDetails.allSamelineNames.set(key, value));
+    // jsonIt('allSamelineNames', allSamelineNames)
 
     return lockDetails
+}
 
+export async function potDetails() {
+    const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
+    return raflData.reduce((acc, item) => {
+        acc[item.id] = {...item, shortName: item.title, potName: item.title, fullName: item.title, type: 'raflPot'}
+        return acc
+    }, {})
+}
+
+export async function safelockDetails() {
+    const safelockData = await (await fetch('https://lpubelts.com/dials.json')).json()
+    return safelockData.reduce((acc, item) => {
+        const sep = item.make ? ' ' : ''
+        acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`, type: 'safelock'}
+        return acc
+    }, {})
+}
+
+export async function projectDetails() {
+    const projectData = await (await fetch('https://lpubelts.com/projects.json')).json()
+    return projectData.reduce((acc, item) => {
+        acc[item.id] = {
+            ...item,
+            fullName: item.name,
+            shortName: item.name,
+            projectName: item.name,
+            fullBelt: item.belt,
+            rank: item.tier.charAt(item.tier.length - 1),
+            type: 'project'
+        }
+        return acc
+    }, {})
+}
+
+export async function awardDetails() {
+    const awardData = await (await fetch('https://lpubelts.com/awards.json')).json()
+    return awardData.reduce((acc, item, index) => {
+        acc[item.id] = {
+            ...item,
+            shortName: item.name,
+            awardName: item.name,
+            fullBelt: item.belt,
+            fullName: item.makeModels[0].model,
+            absRank: index,
+            type: 'award'
+        }
+        return acc
+    }, {})
+}
+
+export async function glossaryDetails() {
+    const glossaryData = await (await fetch('https://lpubelts.com/glossary.json')).json()
+    return glossaryData.reduce((acc, item) => {
+        allMedia.push(item.media)
+        acc[item.term] = {...item, shortName: item.term, type: 'glossary'}
+        return acc
+    }, {})
+}
+
+export async function itemDetails() {
+
+    const locks = await lockDetails()
+    const safelocks = await safelockDetails()
+    const projects = await projectDetails()
+    //console.log('projects', projects)
+
+    return {
+        ...await lockDetails(),
+        ...await safelockDetails(),
+        ...await projectDetails(),
+        ...await awardDetails(),
+        ...await glossaryDetails()
+    }
+}
+
+export async function getItemDetails() {
+
+    let allMedia = []
 
 }
 
 
-await getItemDetails().then(r => {
+await awardDetails().then(r => {
     //console.log('response', r)
 })
 
