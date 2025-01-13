@@ -48,10 +48,10 @@ export function ScorecardDataProvider({
     }, {}), [allActivityEntries])
 
     const allPopularEntries = useMemo(() => popularLocks.map(lock => ({
-        ...getEntryFromId(lock.lockID),
-        ...activityByMatchId[lock.lockID],
+        ...getEntryFromId(lock.id),
+        ...activityByMatchId[lock.id],
         popularityRank: lock.rank,
-        userCount: lock.count
+        userCount: lock.saveCount
     })), [popularLocks, activityByMatchId])
 
     const filterArray = useMemo(() => Object.keys(filters).map(key => {

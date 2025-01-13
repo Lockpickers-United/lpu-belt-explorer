@@ -16,18 +16,22 @@ import SortButton from '../../filters/SortButton.jsx'
 import {scorecardSortFields} from '../../data/sortFields'
 import FilterButton from '../../filters/FilterButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import {unclaimedEvidence, collectionsFullBB} from '../../data/dataUrls'
+import {unclaimedEvidence, collectionsStatsCurrent} from '../../data/dataUrls'
+
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import {useLocation} from 'react-router-dom'
 import queryString from 'query-string'
 import blackBelts from './blackBelts.json'
 
 function PreviewImportRoute() {
+
+    // https://lpubelts.com/#/profile/scorecard/preview?tab=ff1da1a0
+
     const {isMobile} = useWindowSize()
     const location = useLocation()
 
-    const bbDataResult = useData({url: collectionsFullBB})
-    const popularLocks = bbDataResult.data ? bbDataResult.data.scorecardLocks : []
+    const collectionsStats = useData({url: collectionsStatsCurrent})
+    const popularLocks = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
 
     const tabId = useMemo(() => {
         const query = queryString.parse(location.search)

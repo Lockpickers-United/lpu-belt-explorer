@@ -8,7 +8,6 @@ import usePageTitle from '../util/usePageTitle'
 import StatsMainPage from './StatsMainPage'
 import {
     brandDistribution,
-    collectionsSummary,
     collectionsStatsCurrent,
     lockSummary,
     popularAreas,
@@ -41,7 +40,6 @@ function StatsRoute() {
 const urls = {
     brandDistribution,
     collectionsStatsCurrent,
-    collectionsSummary,
     lockSummary,
     popularAreas,
     redditGrowth,
