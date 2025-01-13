@@ -1,44 +1,25 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
-import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
 import CollectionsSummaryTable from './collectionsReport/CollectionsSummaryTable'
 import CollectionListAveragesBar from './collectionsReport/CollectionListAveragesBar'
 import CollectionsListUsersSavesLine from './collectionsReport/CollectionsListUsersSavesLine'
-import CollectionsListCountsLine from './collectionsReport/CollectionsListCountsLine'
 import CollectionSavesByBeltBar from './collectionsReport/CollectionSavesByBeltBar'
 import CollectionsLast28Table from './collectionsReport/CollectionsLast28Table'
 import TopLocks from './collectionsReport/TopLocks'
-import {collectionsFull} from '../data/dataUrls'
 import AwardsSummaryTable from './collectionsReport/AwardsSummaryTable.jsx'
 import BeltCountMaxBar from './collectionsReport/BeltCountMaxBar.jsx'
-import ImportUsersTable from './collectionsReport/ImportUsersTable.jsx'
+import ReportsContext from './ReportsContext.jsx'
 
 function CollectionsReportMain() {
     usePageTitle('Collection Report')
-    const {data, loading, error} = useData({url: collectionsFull})
+
+    const {data, loading, error} = useContext(ReportsContext)
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(data.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${data.metadata.timezone})`
-
-    // build line data
-    const metricsList = ['listUsers', 'wishlistLocks', 'recordedLocks', 'scorecardLocks', 'pickedLocks', 'ownLocks']
-    const lineMetrics = metricsList.reduce((acc, metricName) => {
-        if (!data) return {}
-        const metricData = data.dailyTableData.data.map(value => ({
-            x: value.date,
-            y: value[metricName]
-        }))
-
-        acc[metricName] = {
-            data: metricData,
-            id: metricName
-        }
-
-        return acc
-    }, {})
+        : '(updated: ' + dayjs(data.collectionsStatsCurrent.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ' PST)'
 
     const {width} = useWindowSize()
     const smallWindow = width < 560
@@ -63,34 +44,31 @@ function CollectionsReportMain() {
                 Collections Summary<br/>
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
-            <CollectionsSummaryTable data={data}/>
-
-            <div style={headerStyle}>Awards Summary</div>
-            <AwardsSummaryTable data={data}/>
-
-            <div style={headerStyle}>Import Users by Belt</div>
-            <BeltCountMaxBar data={data}/>
-
-            <div style={headerStyle}>Import Users</div>
-            <ImportUsersTable data={data}/>
 
             <div style={headerStyle}>List Users</div>
-            <CollectionsListUsersSavesLine data={lineMetrics}/>
-
-            <div style={headerStyle}>List Locks by Date</div>
-            <CollectionsListCountsLine data={lineMetrics}/>
+            <CollectionsListUsersSavesLine cohort={'allUsers'}/>
 
             <div style={headerStyle}>Average Items Per List</div>
-            <CollectionListAveragesBar data={data}/>
+            <CollectionListAveragesBar cohort={'allUsers'}/>
+
+            <div style={headerStyle}>List Details</div>
+            <CollectionsSummaryTable cohort={'allUsers'}/>
+
+            <div style={headerStyle}>Import & Awards Summary</div>
+            <AwardsSummaryTable cohort={'allUsers'}/>
+
+            <div style={headerStyle}>Import Users by Belt</div>
+            <BeltCountMaxBar/>
 
             <div style={headerStyle}>List Saves by Belt Ranking</div>
-            <CollectionSavesByBeltBar data={data}/>
+            <CollectionSavesByBeltBar cohort={'allUsers'}/>
 
             <div style={headerStyle}>Last 14 Days</div>
-            <CollectionsLast28Table data={data}/>
+            <CollectionsLast28Table cohort={'allUsers'}/>
 
             <div style={headerStyle}>Top Locks</div>
-            <TopLocks data={data}/>
+            <TopLocks cohort={'allUsers'}/>
+
         </div>
     )
 }

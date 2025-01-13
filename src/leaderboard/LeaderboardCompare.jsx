@@ -41,7 +41,7 @@ function LeaderboardCompare({blackBeltData, compare, setCompare}) {
                 .filter(e => e.matchId && !e.exceptionType)
             setCompareData([scoredEvidence1, scoredEvidence2])
         }
-        fetchData()
+        fetchData().then()
     }, [bb1, bb2, getPickerActivity])
 
     const fighter1 = useMemo(() => {

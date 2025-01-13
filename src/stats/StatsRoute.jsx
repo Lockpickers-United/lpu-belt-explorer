@@ -8,7 +8,7 @@ import usePageTitle from '../util/usePageTitle'
 import StatsMainPage from './StatsMainPage'
 import {
     brandDistribution,
-    collectionsSummary,
+    collectionsStatsCurrent,
     lockSummary,
     popularAreas,
     redditGrowth,
@@ -16,26 +16,30 @@ import {
 } from '../data/dataUrls'
 
 function StatsRoute() {
-    const {data, loading, error} = useData({urls})
+
     usePageTitle('Stats & Insights')
+    const {data, loading, error} = useData({urls})
 
     return (
-        <React.Fragment>
-            <Nav title='Stats & Insights'/>
+            <React.Fragment>
+                <Nav title='Stats & Insights'/>
 
-            {!loading && !error && data && <StatsMainPage data={data}/>}
-            {loading && <LoadingDisplay/>}
+                {loading && <LoadingDisplay/>}
 
-            <Footer/>
+                {!loading && !error && data &&
+                    <StatsMainPage data={data}/>
+                }
 
-            <Tracker feature='stats'/>
-        </React.Fragment>
+                <Footer/>
+
+                <Tracker feature='stats'/>
+            </React.Fragment>
     )
 }
 
 const urls = {
     brandDistribution,
-    collectionsSummary,
+    collectionsStatsCurrent,
     lockSummary,
     popularAreas,
     redditGrowth,

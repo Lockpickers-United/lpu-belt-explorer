@@ -7,7 +7,19 @@ import AuthContext from '../app/AuthContext'
 function CollectionStatsBar({data, lockCollection, userText, collectionBarHeight}) {
     const {isLoggedIn} = useContext(AuthContext)
 
-    const listStats = data.collectionsSummary.listStats.data[0]
+    const listStats = {
+        aveOwn: data.collectionsStatsCurrent.allUsers.listStats.own.averageSaves,
+        maxOwn: data.collectionsStatsCurrent.allUsers.listStats.own.maxSaves,
+        avePicked: data.collectionsStatsCurrent.allUsers.listStats.picked.averageSaves,
+        maxPicked: data.collectionsStatsCurrent.allUsers.listStats.picked.maxSaves,
+        aveRecorded: data.collectionsStatsCurrent.allUsers.listStats.recorded.averageSaves,
+        maxRecorded: data.collectionsStatsCurrent.allUsers.listStats.recorded.maxSaves,
+        aveWishlist: data.collectionsStatsCurrent.allUsers.listStats.wishlist.averageSaves,
+        maxWishlist: data.collectionsStatsCurrent.allUsers.listStats.wishlist.maxSaves,
+        aveScorecard: data.collectionsStatsCurrent.allUsers.listStats.recordedLocks.averageSaves,
+        maxScorecard: data.collectionsStatsCurrent.allUsers.listStats.recordedLocks.maxSaves,
+    }
+
     const own = lockCollection.own ? lockCollection.own.length : 0
     const picked = lockCollection.picked ? lockCollection.picked.length : 0
     const scorecard = lockCollection.recordedLocks ? lockCollection.recordedLocks.length : 0

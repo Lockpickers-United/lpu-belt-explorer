@@ -1,20 +1,21 @@
 import React, {useMemo} from 'react'
 import useData from '../util/useData.jsx'
-import {collectionsFullBB} from '../data/dataUrls'
+import {collectionsStatsCurrent} from '../data/dataUrls'
 import {getEntryFromId} from '../entries/entryutils'
 import LeaderboardCompareRow from './LeaderboardCompareRow.jsx'
 
 function LeaderboardCompareTable({data}) {
 
-    const bbDataResult = useData({url: collectionsFullBB})
+    const collectionsStats = useData({url: collectionsStatsCurrent})
     const popularLocks = useMemo(() => {
-        return bbDataResult.data ? bbDataResult.data['scorecardLocks'] : []
-    }, [bbDataResult.data])
+        return collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    }, [collectionsStats])
 
     const popularEntries = useMemo(() => popularLocks.map(lock => ({
-        ...getEntryFromId(lock['lockID']),
+        ...getEntryFromId(lock['id']),
+        lockName: lock.name,
         popularityRank: lock.rank,
-        userCount: lock.count
+        userCount: lock.saveCount
     })), [popularLocks]).slice(0, 100)
 
     return (

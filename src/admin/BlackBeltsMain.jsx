@@ -1,48 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
-import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
 import CollectionsSummaryTable from './collectionsReport/CollectionsSummaryTable'
 import CollectionListAveragesBar from './collectionsReport/CollectionListAveragesBar'
 import CollectionsListUsersSavesLine from './collectionsReport/CollectionsListUsersSavesLine'
-import CollectionsListCountsLine from './collectionsReport/CollectionsListCountsLine'
 import CollectionSavesByBeltBar from './collectionsReport/CollectionSavesByBeltBar'
 import CollectionsLast28Table from './collectionsReport/CollectionsLast28Table'
 import TopLocks from './collectionsReport/TopLocks'
-import {collectionsFullBB, leaderboardData2} from '../data/dataUrls'
 import BlackBeltsTable from './blackBeltsReport/BlackBeltsTable.jsx'
+import ReportsContext from './ReportsContext.jsx'
 
 function BlackBeltsMain() {
     usePageTitle('Black Belts Report')
-    const {data, loading, error} = useData({urls})
-    
-    const collectionsData = data?.collectionsFullBB
-    const blackBeltData = data?.leaderboardData2?.blackBelts
+    const {data, loading, error} = useContext(ReportsContext)
 
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(data?.leaderboardData2.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ')'
+        : '(updated: ' + dayjs(data.collectionsStatsCurrent.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ' PST)'
 
-    // build line data
-    const metricsList = ['listUsers', 'wishlistLocks', 'scorecardLocks', 'pickedLocks', 'ownLocks']
-
-    const filteredData = collectionsData?.dailyTableData.data.filter(datum => dayjs(datum.date).isAfter(dayjs('2024-08-17')))
-
-    const lineMetrics = metricsList.reduce((acc, metricName) => {
-        if (!data) return {}
-        const metricData = filteredData.map(value => ({
-            x: value.date,
-            y: value[metricName]
-        }))
-
-        acc[metricName] = {
-            data: metricData,
-            id: metricName
-        }
-
-        return acc
-    }, {})
 
     const {width} = useWindowSize()
     const smallWindow = width < 560
@@ -67,35 +43,31 @@ function BlackBeltsMain() {
                 Black Belt Report<br/>
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
-            <BlackBeltsTable tableData={blackBeltData} collectionsData={collectionsData}/>
+            <BlackBeltsTable/>
 
             <div style={headerStyle}>Collection Summary</div>
-            <CollectionsSummaryTable data={collectionsData}/>
+            <CollectionsSummaryTable cohort={'blackBeltOnly'}/>
 
             <div style={headerStyle}>List Users</div>
-            <CollectionsListUsersSavesLine data={lineMetrics}/>
+            <CollectionsListUsersSavesLine cohort={'blackBeltOnly'}/>
 
-            <div style={headerStyle}>List Locks by Date</div>
-            <CollectionsListCountsLine data={lineMetrics}/>
+            <div style={headerStyle}>List Details</div>
+            <CollectionsSummaryTable cohort={'blackBeltOnly'}/>
 
             <div style={headerStyle}>Average Items Per List</div>
-            <CollectionListAveragesBar data={collectionsData}/>
+            <CollectionListAveragesBar cohort={'blackBeltOnly'}/>
 
             <div style={headerStyle}>List Saves by Belt Ranking</div>
-            <CollectionSavesByBeltBar data={collectionsData}/>
+            <CollectionSavesByBeltBar cohort={'blackBeltOnly'}/>
 
-            <div style={headerStyle}>Last 28 Days</div>
-            <CollectionsLast28Table data={collectionsData}/>
+            <div style={headerStyle}>Last 14 Days</div>
+            <CollectionsLast28Table cohort={'blackBeltOnly'}/>
 
             <div style={headerStyle}>Top Locks</div>
-            <TopLocks data={collectionsData}/>
+            <TopLocks cohort={'blackBeltOnly'}/>
+
         </div>
     )
-}
-
-const urls = {
-    collectionsFullBB,
-    leaderboardData2
 }
 
 export default BlackBeltsMain

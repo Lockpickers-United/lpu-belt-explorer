@@ -7,7 +7,7 @@ const BeltDistributionBar = ({beltDistribution}) => {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
-    const chartHeight = !midWidth ? 375: !smallWidth ? 325 : 275
+    const chartHeight = !midWidth ? 350: !smallWidth ? 325 : 275
     const chartMargin = !smallWidth
         ? {top: 30, right: 20, bottom: 30, left: 50}
         : {top: 30, right: 5, bottom: 55, left: 48}

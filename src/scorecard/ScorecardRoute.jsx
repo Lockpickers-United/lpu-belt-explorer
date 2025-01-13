@@ -1,6 +1,6 @@
 import React, {useContext, useCallback, useState} from 'react'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
-import {collectionsFullBB} from '../data/dataUrls'
+import {collectionsStatsCurrent} from '../data/dataUrls'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
@@ -77,8 +77,8 @@ function ScorecardRoute({mostPopular}) {
     const cardNextDanPoints = data ? data.nextDanPoints : 0
     const cardNextDanLocks = data ? data.nextDanLocks : 0
 
-    const bbDataResult = useData({url: collectionsFullBB})
-    const popularLocks = bbDataResult.data ? bbDataResult.data.scorecardLocks : []
+    const collectionsStats = useData({url: collectionsStatsCurrent})
+    const popularLocks = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
 
     const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
         ? (
