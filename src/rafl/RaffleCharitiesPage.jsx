@@ -13,6 +13,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
+import RaffleLACharities from './RaffleLACharities.jsx'
 
 function RaffleCharitesPage() {
     const {visibleEntries} = useContext(DataContext)
@@ -44,6 +45,8 @@ function RaffleCharitesPage() {
             }
         })
 
+    const LACharities = visibleCharities.filter(charity => charity['tags'].includes('Los Angeles Wildfires'))
+
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
 
     const headerSize = !isMobile ? '1.0rem' : '0.9rem'
@@ -58,7 +61,9 @@ function RaffleCharitesPage() {
         <React.Fragment>
             <div style={{paddingBottom: 32}}>
 
-                <RaffleSearchBar label='Approved Charities' sortValues={null}/>
+                <RaffleLACharities charities={LACharities}/>
+
+                <RaffleSearchBar label='All Approved Charities' sortValues={null}/>
 
                 {visibleEntries.length === 0 && <NoEntriesCard label='Charities'/>}
 

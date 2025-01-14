@@ -23,7 +23,7 @@ function RaffleCharityRow({charity}) {
     const fontSize = !isMobile ? '1.0rem' : '0.95rem'
 
     const cellStyle = !isMobile
-        ? {fontSize: fontSize, border: 0, padding: '10px 16px'}
+        ? {fontSize: fontSize, border: 0, padding: '8px 16px'}
         : {fontSize: fontSize, border: 0, padding: '6px 10px'}
 
     return (

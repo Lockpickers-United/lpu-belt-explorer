@@ -99,7 +99,8 @@ export function RaffleProvider({children}) {
             .map(entry => ({
                 ...entry,
                 fuzzy: removeAccents([
-                    entry.name
+                    entry.name,
+                    entry.tags
                 ].join(',')),
                 donors: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donors : 0,
                 donations: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donations : 0
