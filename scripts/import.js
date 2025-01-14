@@ -460,6 +460,7 @@ const raflCharities = raflCharityData
     .map(datum => ({
         name: datum['Charity Name'],
         url: datum['URL'],
+        tags: splitCommaValues(datum['Tags']),
         donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
     })).filter(x => x)
 

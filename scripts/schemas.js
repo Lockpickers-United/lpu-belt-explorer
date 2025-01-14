@@ -181,6 +181,7 @@ export const raflCharitySchema = Joi.array().items(
     Joi.object({
         'Charity Name': Joi.string(),
         'URL': Joi.string().allow('').uri(),
+        'Tags': Joi.string().allow(''),
         'Total Donations 2024': Joi.string().allow(''),
     }).unknown()
 )
