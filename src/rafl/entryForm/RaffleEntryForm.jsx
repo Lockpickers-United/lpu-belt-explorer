@@ -97,7 +97,11 @@ function RaffleEntryForm() {
 
     }, [charityData, formData, openInNewTab, potData, raflFormId, raflQuestionMap])
 
-    const mappedCharities = allCharities.map(c => {
+    const mappedCharities = allCharities
+        .sort((a, b) => {
+            return a.name.localeCompare(b.name)
+        })
+        .map(c => {
         return {...c, title: c.name}
     })
     const charityFullTitle = useCallback((charity) => {
