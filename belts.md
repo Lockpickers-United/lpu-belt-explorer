@@ -45,15 +45,13 @@ use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 ### Discord - DO NOT USE FORMATTING BELOW FOR REQUESTS THROUGH REDDIT MODMAIL
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
-
 ```
-@LPUBeltBot request BELTCOLOR https://image_or_video_link_here
+@LPUBeltBot request {BELTCOLOR} {Model Of Lock} https://image_or_video_link_here
 ```
 
 If you wish to sync the belt to your user on Reddit you should use the following structure:
-
 ```
-@LPUBeltBot request BELTCOLOR sync to /u/redditusername https://image_or_video_link_here
+@LPUBeltBot request {BELTCOLOR} {Model Of Lock} sync to /u/redditusername https://image_or_video_link_here
 ```
 
 Any additional information can be added below in different lines if necessary, but the above formula must be in one
@@ -1218,10 +1216,8 @@ Reddit post, or one using a service like imgur.com
 
 Q: **How do I share a Challenge Lock? How do I make sure it qualifies?**
 
-> A: It is recommended that, before you send out a challenge lock, you send photos of the modifications you made
-of the lock to a mod and receive confirmation that the lock qualifies. Once you've sent the lock, you'll need the
-recipient to confirm to a mod that the lock has been received (or you can provide a link to a YouTube video where the
-recipient is picking it; anything that proves the lock has been received by someone else)
+> A: It is recommended that, before you send out a challenge lock, you send photos of the modifications you made of the lock to a mod and receive confirmation that the lock qualifies. To find someone to share the challenge lock with, we recommend creating a post on the sub looking for someone to send it to, you should include your country and where you're willing to ship it to, you can also recommend it for a certain belt level if you feel it has a level of difficulty. Also be mindful to look at the belt of people looking to receive your lock, this can be a good indicator of whether they will be able to pick your lock and their engagement level with the community (unfortunately, there is no guarantee they will send it on after they are done with it, but you may have better luck with someone more engaged). Once you've sent the lock, you'll need the recipient to confirm to a mod that the lock has been received (or you can provide a link to a YouTube video where the recipient is picking it; anything that proves the lock has been received by someone else).
+
 
 Q: **My lock is SFIC or some other really difficult to gut core and I don't want to risk ruining it. Can I still
 use this to qualify for a belt?**
@@ -1317,11 +1313,7 @@ the internet. Check it out [here](/#/dans).
 - Some of the higher belts require you to have made a tool. This requirement cannot be met by having used a paper clip,
   bobby pin or the like. You must actually make a specialized tool.
   
-- All lock picking must take place through "normally accessible" means. What this means is that lock tools should be 
-  inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the 
-  lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the 
-  lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get 
-  in the way of the camera.
+- All lock picking must take place through "normally accessible" means. What this means is that lock tools should be inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the lock, having extra lighting behind the lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get in the way of the camera.
 
 - The list of locks is a living document. If you believe you have picked a lock that is equivalent to one of those
   listed in the requirements, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking). We
