@@ -12,7 +12,7 @@ import RaffleContext from './RaffleContext.jsx'
  * @property raflSummaryStats.platformDonations.Reddit
  */
 
-function RaffleStatsHeader() {
+function RaffleStatsHeader({animate}) {
     const {raflSummaryStats, animateTotal} = useContext(RaffleContext)
 
     const donors = raflSummaryStats && raflSummaryStats.uniqueDonors || 0
@@ -59,7 +59,7 @@ function RaffleStatsHeader() {
                 <div style={{flexGrow: 1, marginTop: 0, marginBottom: 8}}>
                     <div style={{marginBottom: 5}}>
                         Total Donations &nbsp; {
-                        donationsTotal > 1000 && animateTotal
+                        donationsTotal > 1000 && (animateTotal || animate)
                             ? <span style={{fontSize: '1.8rem'}}>$<CountUp end={donationsTotal} duration={1.5}/></span>
                             : <span style={{fontSize: '1.8rem'}}>${donationsTotalStr}</span>
                     }

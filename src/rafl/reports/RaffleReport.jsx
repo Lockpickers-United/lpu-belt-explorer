@@ -55,13 +55,15 @@ function RaffleReport() {
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>
 
-            <RaffleStatsHeader/>
-            <div style={{height:20}}/>
-            <RaffleSummary data={siteFullNew}/>
+            <RaffleStatsHeader animate={false}/>
 
-            <div style={headerStyle}>Totals Over Time</div>
+            <div style={firstHeaderStyle}>Totals Over Time</div>
             <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
             <RaffleReportHistoricalLines data={raflResponseDetails?.detailedData}/>
+
+            <div style={headerStyle}>Site Traffic</div>
+            <RaffleSummary data={siteFullNew}/>
+
 
             <div style={headerStyle}>Belt Distribution</div>
             <RaffleBeltDistribution data={raflResponseDetails?.summaryData}/>
