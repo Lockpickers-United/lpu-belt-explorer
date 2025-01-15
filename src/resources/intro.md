@@ -45,15 +45,13 @@ use  [THIS LINK.](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking)
 ### Discord - DO NOT USE FORMATTING BELOW FOR REQUESTS THROUGH REDDIT MODMAIL
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
-
 ```
-@LPUBeltBot request BELTCOLOR https://image_or_video_link_here
+@LPUBeltBot request {BELTCOLOR} {Model Of Lock} https://image_or_video_link_here
 ```
 
 If you wish to sync the belt to your user on Reddit you should use the following structure:
-
 ```
-@LPUBeltBot request BELTCOLOR sync to /u/redditusername https://image_or_video_link_here
+@LPUBeltBot request {BELTCOLOR} {Model Of Lock} sync to /u/redditusername https://image_or_video_link_here
 ```
 
 Any additional information can be added below in different lines if necessary, but the above formula must be in one
