@@ -1,6 +1,7 @@
 import React from 'react'
-import RaffleReportLine from './RaffleReportLine'
+import RaffleYOYLine from './RaffleYOYLine'
 import {setDeepPush} from '../../util/setDeep'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 /**
  * @property cumDonorsUnique
@@ -9,6 +10,7 @@ import {setDeepPush} from '../../util/setDeep'
  */
 
 const RaffleYOYLines = ({data}) => {
+    const {isMobile} = useWindowSize()
 
     const lineData = Object.keys(data)
         .sort((a, b) => a.localeCompare(b))
@@ -27,7 +29,7 @@ const RaffleYOYLines = ({data}) => {
 
     const subHeadStyle = {margin: '30px 0px 0px 0px', width: '100%', textAlign: 'center', color: '#fff', fontSize:'1.2rem'}
 
-    const chartHeight = 300
+    const chartHeight = !isMobile ? 300 : 240
 
     if (Object.keys(data).length === 0) return (
         <div style={{color: '#fff', textAlign: 'center', fontSize: '1.2rem', margin: '20px 0px 0px 0px'}}>
@@ -37,9 +39,9 @@ const RaffleYOYLines = ({data}) => {
 
     return (
         <React.Fragment>
-            <div style={subHeadStyle}>YOY Donations (cumulative)</div>
+            <div style={subHeadStyle}>Donations (cumulative)</div>
             <div style={{height: chartHeight, width: '100%'}}>
-                <RaffleReportLine
+                <RaffleYOYLine
                     chartdata={[
                         {id: '2025', data: lineData.cumulativeDonations},
                         {id: '2024', data: cumulativeDonations2024}

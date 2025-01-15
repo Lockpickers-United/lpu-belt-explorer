@@ -9,6 +9,7 @@ import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
 import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
+import RaffleYOYLines from './reports/RaffleYOYLines.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
@@ -59,6 +60,8 @@ function RaffleReport() {
                 <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
                     <span style={{fontSize: '0.8rem', marginTop: 0}}>{updateTime}</span>
                 </div>
+
+                <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
 
                 <div style={firstHeaderStyle}>Pots</div>
                 <RaffleStatsPotTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
