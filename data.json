@@ -6727,7 +6727,10 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "lastUpdated": "2025-01-12T17:30:04.047Z"
+    "relatedIds": [
+      "4382d650"
+    ],
+    "lastUpdated": "2025-01-15T21:49:55.712Z"
   },
   {
     "id": "5c5a2309",
@@ -13410,7 +13413,10 @@
       }
     ],
     "views": 1574,
-    "lastUpdated": "2025-01-12T17:30:04.051Z"
+    "relatedIds": [
+      "53796b40"
+    ],
+    "lastUpdated": "2025-01-15T21:49:55.716Z"
   },
   {
     "id": "f93c57fc",

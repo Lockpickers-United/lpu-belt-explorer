@@ -1,1 +1,0 @@
-import{j as r,R as e,N as a,$ as o,F as t,T as s}from"./index-19033cd8.js";import{u as c}from"./usePageTitle-98330d19.js";import"./useDocumentTitle-fe0fa247.js";function u(){return c("Scorecard Info"),r.jsxs(e.Fragment,{children:[r.jsx(a,{title:"Scorecard Info"}),r.jsx(o,{}),r.jsx(t,{}),r.jsx(s,{feature:"scorecard-info"})]})}export{u as default};
