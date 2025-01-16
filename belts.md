@@ -968,7 +968,7 @@ as a mentor to folks at the blue, purple and brown belt levels.
 - [MIWA/Anker 3800](https://lpubelts.com/#/locks?id=cc8cfd45)
 - [Mottura 52](https://lpubelts.com/#/locks?id=5e090448) (7 lever)
 - [Mottura Champions C55](https://lpubelts.com/#/locks?id=3daff112)
-- [Picard Vigie / Heracles Pericles](https://lpubelts.com/#/locks?id=9c5f4539) (euro profile)
+- [Picard Vigie / Heracles Pericles](https://lpubelts.com/#/locks?id=9c5f4539) (7 pins, euro profile)
 - [Robur 2391 Safe Deposit Lock](https://lpubelts.com/#/locks?id=9da7a5f2) (barrels &ge; 3 chambers with matched milling)
 - [Robur 2391 Safe Deposit Lock](https://lpubelts.com/#/locks?id=112d0034) (gins &ge; 3 chambers with matched milling)
 - [Rosengrens 32A / Rosengrens 32A8](https://lpubelts.com/#/locks?id=4a7db3c6) (thin round center posts, few or no False gates)
