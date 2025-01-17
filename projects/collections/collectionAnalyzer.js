@@ -3,6 +3,7 @@ import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../util/setDeep.js
 import {itemDetails} from '../util/getItemDetails.js'
 import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
+import {jsonIt} from '../util/jsonIt.js'
 
 const production = process.env.USER !== localUser
 
@@ -33,7 +34,7 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
             .reduce((acc, key) => {
                 acc[key] = collectionData[key]
                 return acc
-            },{})
+            }, {})
         : collectionData
 
     const collectionStatsCurrent = Object.keys(profiles).reduce((acc, userId) => {
@@ -42,7 +43,10 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
         setDeepAdd(acc, ['totalProfiles'], 1)
 
         if (blackBeltOnly) {
-            setDeep(acc, ['blackBelts', userId], {displayName: profile.displayName || '(no display name', tabClaimed: profile.tabClaimed || 'no tab claimed'})
+            setDeep(acc, ['blackBelts', userId], {
+                displayName: profile.displayName || 'no display name',
+                tabClaimed: profile.tabClaimed || 'no tab claimed'
+            })
         }
 
         listNames.forEach(listName => {
@@ -56,7 +60,6 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                 setDeepUnique(acc, ['listStats', 'allLists', 'userIds'], userId)
                 setDeep(acc, ['listStats', 'allLists', 'userCount'], acc.listStats.allLists.userIds.length)
                 setDeepMax(acc, ['listStats', 'allLists', 'maxSaves'], profile[listName].length)
-
 
                 profile[listName].forEach(itemId => {
                     setDeepAdd(acc, ['totalSaves'], 1)
@@ -137,6 +140,7 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
 
 }
 
+
 async function analyzeCollection(date) {
     const allUsers = await collectionAnalyzer({blackBeltOnly: false, date})
     const blackBeltOnly = await collectionAnalyzer({blackBeltOnly: true, date})
@@ -158,6 +162,10 @@ async function analyzeCollection(date) {
     })
 }
 
+// LEADERBOARD
+
+
+
 const backupFiles = (await fs.readdir(backupDir)).filter(file => file.includes('backup_'))
 const statsFiles = (await fs.readdir(dailyDir)).filter(file => file.includes('collectionStats'))
 
@@ -165,18 +173,10 @@ const backupDates = backupFiles.map(file => file.replace('backup_', '').replace(
 const statsDates = statsFiles.map(file => file.replace('collectionStats_', '').replace('.json', ''))
 
 const today = dayjs().format('YYYY-MM-DD')
-const notProcessed = backupDates.filter(item => !statsDates.includes(item) || item === today);
+const notProcessed = backupDates.filter(item => !statsDates.includes(item) || item === today)
 
 //console.log('notProcessed', notProcessed)
-
 notProcessed.forEach(date => {
     analyzeCollection(date).then()
 })
 
-////////////////////////////////////////
-
-function jsonIt(string, object) {
-    console.log(string)
-    console.log(JSON.stringify(object, null, 2))
-    console.log('--------')
-}
