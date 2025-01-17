@@ -17,7 +17,7 @@ import LeaderboardFindMeButton from './LeaderboardFindMeButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Nav from '../nav/Nav.jsx'
 import LeaderboardCompare from './LeaderboardCompare.jsx'
-import {leaderboardData2} from '../data/dataUrls'
+import {leaderboardData} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 
@@ -225,7 +225,7 @@ function Leaderboard({tab}) {
     )
 }
 
-const url = leaderboardData2
+const url = leaderboardData
 
 const validSort = [
     'own',
