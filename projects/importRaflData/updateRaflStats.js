@@ -14,10 +14,13 @@ export async function updateRaflStats() {
 
     try {
 
-        // save current stats
+        // UPDATE STATS FOR SITE
         await raflUtils('processSheetsResponses').then()
 
-        // compare to previous
+        // GET RAFL DATA
+        const raflData = await raflUtils('getRaflData').then()
+
+        // COMPARE TO PREVIOUS
         const previousResponses = JSON.parse(await fs.readFile(`${tempDir}/sheetsResponses.json`, 'utf8'))
         const previousLast = dayjs(previousResponses[previousResponses.length - 1]['Date'])
 
@@ -38,6 +41,7 @@ export async function updateRaflStats() {
         },0)
 
         const newResponses = currentResponses.filter(res => dayjs(res['Date']) > previousLast)
+
         const newResponseInfo = newResponses.length > 0
             ? newResponses.reduce((acc, res) => {
                 const tickets = Object.keys(res)
@@ -50,6 +54,13 @@ export async function updateRaflStats() {
                 let proof = res['Receipt']
                     .toLowerCase()
                 proof = validator.isURL(proof) ? proof : proof.replace(/https*:\/\//g, '') + ' (bad url)'
+
+                const potTickets = Object.keys(res)
+                    .filter(key => (/Pot/.test(key) && res[key] !== ''))
+                    .map(key => {
+                        const pot = raflData.find(pot => pot.potNumber === key.replace('Pot ', ''))
+                        return pot ? {pot: key, title: pot.title, tickets: parseInt(res[key])} : {pot: key, tickets: parseInt(res[key])}
+                    })
 
                 const text = {
                     totalResponses: currentResponses.length,
@@ -85,6 +96,12 @@ export async function updateRaflStats() {
                 html += `<b>Proof:</b> ${text.donationProof}<br>`
                 html += `<b>Tickets:</b> ${text.tickets}<br>`
                 html += `<b>Match?</b> ${text.match}<br>`
+
+                html += '<b>POTS</b><br>'
+                potTickets.map(pot => {
+                    html += `<b>${pot.title}:</b> ${pot.tickets}<br>`
+                })
+
                 html += '</div>'
 
                 acc.text = acc.text ? [...acc.text, text] : [text]

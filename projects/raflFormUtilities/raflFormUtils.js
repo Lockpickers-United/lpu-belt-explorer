@@ -524,6 +524,9 @@ export async function raflUtils(util) {
         response = await processSheetsResponses(sheetResponses, raflData)
     }
 
+    if (util === 'getRaflData') {
+        return raflData
+    }
 
     // DANGER //
 
@@ -565,7 +568,7 @@ export async function raflUtils(util) {
 
 ////// ONE-TIME COMMAND //////
 
-await raflUtils('getCharities').then(r => {if (!production) jsonIt('response', r)})
+//await raflUtils('getCharities').then(r => {if (!production) jsonIt('response', r)})
 
 
 ///////////////////////////////////////

@@ -13,7 +13,6 @@ const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data/`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
 
-
 export async function collectionStatsProcess() {
 
     const dailyFiles = (await readFilesInDirectory(dailyDir))

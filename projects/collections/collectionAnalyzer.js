@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../util/setDeep.js'
 import {itemDetails} from '../util/getItemDetails.js'
 import {localUser, prodUser} from '../../keys/users.js'
+import dayjs from 'dayjs'
 
 const production = process.env.USER !== localUser
 
@@ -163,11 +164,10 @@ const statsFiles = (await fs.readdir(dailyDir)).filter(file => file.includes('co
 const backupDates = backupFiles.map(file => file.replace('backup_', '').replace('.json', ''))
 const statsDates = statsFiles.map(file => file.replace('collectionStats_', '').replace('.json', ''))
 
-const today = new Date().toISOString().slice(0, 10)
-console.log('today', today)
+const today = dayjs().format('YYYY-MM-DD')
 const notProcessed = backupDates.filter(item => !statsDates.includes(item) || item === today);
 
-console.log('notProcessed', notProcessed)
+//console.log('notProcessed', notProcessed)
 
 notProcessed.forEach(date => {
     analyzeCollection(date).then()
