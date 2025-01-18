@@ -102,13 +102,13 @@ function Leaderboard({tab}) {
 
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
-            return b[sort] - a[sort]
+            return (b[sort] || 0) - (a[sort] || 0)
         })
         else if (sort && sortOrder === 'asc') return filteredData.sort((a, b) => {
-            return a[sort] - b[sort]
+            return (a[sort] || 0) - (b[sort] || 0)
         })
         else return filteredData.sort((a, b) => {
-                return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
+                return (b[tabData[tab]['defaultSort']] || 0) - (a[tabData[tab]['defaultSort']] || 0)
             })
     }, [sort, sortOrder, filteredData, tabData, tab])
 
