@@ -8,7 +8,7 @@ export async function raflCollectionUtils() {
     const backupDir = production
         ? `/home/${prodUser}/firebase`
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL`
-    const backupFile = 'backup2.json'
+    const backupFile = 'backup.json'
 
     const saveDir = production
         ? `/home/${prodUser}/explore.lpubelts.com/public/data/`

@@ -31,7 +31,9 @@ async function saveLeaderboard() {
         listNames.forEach(listName => {
             if (profile[listName]?.length > 0) {
                 setDeep(userStats, [listName], profile[listName].length)
-            } // ELSE SET TO 0?
+            } else {
+                setDeep(userStats, [listName], 0)
+            }
         })
 
         const locksCollection = [...new Set([...profile.own || [], ...profile.picked || [], ...profile.recorded || [], ...profile.recordedLocks || []])]
