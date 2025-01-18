@@ -88,9 +88,6 @@ function Leaderboard({tab}) {
             data?.data
                 .filter(leader => !leader['privacyNoLeaderboard'])
                 .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
-                .sort((a, b) => {
-                    return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
-                })
             : []
         return tab === 'blackBelts'
             ? allData.filter(leader => leader['blackBeltAwardedAt'] > 0)
@@ -101,9 +98,6 @@ function Leaderboard({tab}) {
         return data?.data
             .filter(leader => !leader['privacyNoLeaderboard'])
             .filter(leader => leader['blackBeltAwardedAt'] > 0)
-            .sort((a, b) => {
-                return a['displayName'].localeCompare(b['displayName'])
-            })
     }, [data?.data])
 
     const sortedData = useMemo(() => {
