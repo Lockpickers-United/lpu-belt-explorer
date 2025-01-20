@@ -17,7 +17,9 @@ export function ScorecardDataProvider({
                                           cardNextDanPoints,
                                           cardNextDanLocks,
                                           cardUniqueLocks,
-                                          popularLocks
+                                          cardMaxBelt,
+                                          popularLocks,
+                                          popularLocksBB
                                       }) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
@@ -54,6 +56,13 @@ export function ScorecardDataProvider({
         userCount: lock.saveCount
     })), [popularLocks, activityByMatchId])
 
+    const bbPopularEntries = useMemo(() => popularLocksBB.map(lock => ({
+        ...getEntryFromId(lock.id),
+        ...activityByMatchId[lock.id],
+        popularityRank: lock.rank,
+        userCount: lock.saveCount
+    })), [popularLocksBB, activityByMatchId])
+
     const filterArray = useMemo(() => Object.keys(filters).map(key => {
         const value = filters[key]
         return Array.isArray(value) ? value.map(sk => ({key, value: sk})) : {key, value}
@@ -76,11 +85,13 @@ export function ScorecardDataProvider({
         cardNextDanLocks,
         visibleEntries,
         popularEntries,
+        bbPopularEntries,
         cardUniqueLocks,
+        cardMaxBelt,
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, cardUniqueLocks])
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt])
 
     return (
         <ScorecardDataContext.Provider value={value}>

@@ -154,7 +154,7 @@ export function DBProvider({children}) {
     }, [user])
 
     const getPickerActivity = useCallback(async userId => {
-        return await pickerActivityCache(userId, user.uid === userId)
+        return await pickerActivityCache(userId, user?.uid === userId)
     }, [user])
 
     const refreshPickerActivity = useCallback(async userId => {
