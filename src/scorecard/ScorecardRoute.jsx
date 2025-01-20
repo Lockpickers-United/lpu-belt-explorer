@@ -18,7 +18,6 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
 import Scorecard from './Scorecard.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
-// HEAD
 import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import SearchBox from '../nav/SearchBox.jsx'
@@ -31,7 +30,7 @@ function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, getPickerActivity} = useContext(DBContext)
-    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
+    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks} = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
     const [triggerState, setTriggerState] = useState(false)
@@ -60,13 +59,13 @@ function ScorecardRoute({mostPopular}) {
                 const activity = await getPickerActivity(userId)
                 return {profile, ...calculateScoreForUser(activity)}
             } else {
-                return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
+                return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks}
             }
         } catch (ex) {
             console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [triggerState, getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+    }, [triggerState, getProfile, userId, user?.uid, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks])
     const {data = {}, loading, error} = useData({loadFn})
 
     const profile = data ? data.profile : {}
@@ -76,6 +75,7 @@ function ScorecardRoute({mostPopular}) {
     const cardEligibleDan = data ? data.eligibleDan : 0
     const cardNextDanPoints = data ? data.nextDanPoints : 0
     const cardNextDanLocks = data ? data.nextDanLocks : 0
+    const cardUniqueLocks = data ? data.uniqueLocks : 0
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
     const popularLocks = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
@@ -104,7 +104,7 @@ function ScorecardRoute({mostPopular}) {
             <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                    cardDanPoints={cardDanPoints}
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
+                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks} cardUniqueLocks={cardUniqueLocks}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                         <Nav title={title} extras={nav}/>

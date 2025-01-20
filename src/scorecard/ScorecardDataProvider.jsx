@@ -16,11 +16,11 @@ export function ScorecardDataProvider({
                                           cardEligibleDan,
                                           cardNextDanPoints,
                                           cardNextDanLocks,
+                                          cardUniqueLocks,
                                           popularLocks
                                       }) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
-
 
     const allActivityEntries = useMemo(() => cardActivity.map(act => {
             const entry = getEntryFromId(act.matchId)
@@ -76,10 +76,11 @@ export function ScorecardDataProvider({
         cardNextDanLocks,
         visibleEntries,
         popularEntries,
+        cardUniqueLocks,
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries])
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, cardUniqueLocks])
 
     return (
         <ScorecardDataContext.Provider value={value}>

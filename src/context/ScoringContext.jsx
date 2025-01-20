@@ -7,7 +7,8 @@ const ScoringContext = React.createContext({})
 export function ScoringProvider({children}) {
     const {pickerActivity} = useContext(DBContext)
 
-    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = calculateScoreForUser(pickerActivity)
+
+    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks} = calculateScoreForUser(pickerActivity)
 
     const value = useMemo(() => ({
         scoredActivity,
@@ -15,8 +16,10 @@ export function ScoringProvider({children}) {
         danPoints,
         eligibleDan,
         nextDanPoints,
-        nextDanLocks
-    }), [scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
+        nextDanLocks,
+        uniqueLocks
+    }), [scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks])
+
 
     return (
         <ScoringContext.Provider value={value}>
