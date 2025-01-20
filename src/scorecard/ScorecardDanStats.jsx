@@ -23,6 +23,7 @@ export default function ScorecardDanStats({profile, owner}) {
         cardBBCount,
         cardEligibleDan,
         cardNextDanLocks,
+        cardUniqueLocks,
         cardActivity
     } = useContext(ScorecardDataContext)
 
@@ -63,6 +64,7 @@ export default function ScorecardDanStats({profile, owner}) {
                     {danPreText} <span style={{fontSize: '1.8rem', lineHeight: '1rem'}}>{addOrdinal(displayDan)}</span> {danPostText}
                 </div>
                 <div style={{marginBottom: 5}}>Dan Points <strong>{cardDanPoints}</strong></div>
+                <div style={{marginBottom: 5}}>Unique Locks <strong>{cardUniqueLocks}</strong></div>
                 <div style={{marginBottom: 5}}>Black Belt Locks <strong>{cardBBCount}</strong></div>
                 <div style={{fontSize: '0.85rem'}}>
                     {nextBBPoints} point{nextBBPoints !== 1 && 's'} and {nextBBLocks} BB
