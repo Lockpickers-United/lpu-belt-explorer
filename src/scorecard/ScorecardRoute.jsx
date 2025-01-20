@@ -25,12 +25,22 @@ import SortButton from '../filters/SortButton.jsx'
 import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import {allAwardsById} from '../entries/entryutils'
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, getPickerActivity} = useContext(DBContext)
-    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks} = useContext(ScoringContext)
+    const {
+        scoredActivity,
+        bbCount,
+        danPoints,
+        eligibleDan,
+        nextDanPoints,
+        nextDanLocks,
+        uniqueLocks,
+        maxBelt
+    } = useContext(ScoringContext)
     const {isMobile} = useWindowSize()
 
     const [triggerState, setTriggerState] = useState(false)
@@ -59,14 +69,26 @@ function ScorecardRoute({mostPopular}) {
                 const activity = await getPickerActivity(userId)
                 return {profile, ...calculateScoreForUser(activity)}
             } else {
-                return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks}
+                return {
+                    profile,
+                    scoredActivity,
+                    bbCount,
+                    danPoints,
+                    eligibleDan,
+                    nextDanPoints,
+                    nextDanLocks,
+                    uniqueLocks,
+                    maxBelt
+                }
             }
         } catch (ex) {
             console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [triggerState, getProfile, userId, user?.uid, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks])
+    }, [triggerState, getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks, maxBelt])
     const {data = {}, loading, error} = useData({loadFn})
+
+    const owner = user?.uid === userId
 
     const profile = data ? data.profile : {}
     const cardActivity = data ? data.scoredActivity : []
@@ -76,9 +98,18 @@ function ScorecardRoute({mostPopular}) {
     const cardNextDanPoints = data ? data.nextDanPoints : 0
     const cardNextDanLocks = data ? data.nextDanLocks : 0
     const cardUniqueLocks = data ? data.uniqueLocks : 0
+    const beltAwards = data
+        ? data.scoredActivity
+            .filter(activity => activity.collectionDB === 'awards')
+            .map(activity => allAwardsById[activity.matchId])
+            .filter(award => award['awardType'] === 'belt')
+            .sort((a, b) => a.rank - b.rank)
+        : []
+    const cardMaxBelt = data ? beltAwards[beltAwards.length - 1] : {}
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
-    const popularLocks = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    const popularLocks = collectionsStats.data ? collectionsStats.data.allUsers.listStats.recordedLocks.topItems : []
 
     const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
         ? (
@@ -104,7 +135,9 @@ function ScorecardRoute({mostPopular}) {
             <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                    cardDanPoints={cardDanPoints}
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks} cardUniqueLocks={cardUniqueLocks}>
+                                   cardNextDanLocks={cardNextDanLocks} cardUniqueLocks={cardUniqueLocks}
+                                   cardMaxBelt={cardMaxBelt}
+                                   popularLocks={popularLocks} popularLocksBB={popularLocksBB}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                         <Nav title={title} extras={nav}/>
@@ -112,14 +145,14 @@ function ScorecardRoute({mostPopular}) {
                         {loading && <LoadingDisplay/>}
 
                         {!loading && data && !error &&
-                            <Scorecard owner={user && user.uid === userId} profile={profile}
+                            <Scorecard owner={user && user?.uid === userId} profile={profile}
                                        adminAction={handleAdminAction} popular={mostPopular}/>}
 
                         {!loading && (!data || error) && <ScorecardProfileNotFound/>}
 
                         <Footer before={footerBefore}/>
                     </LocalizationProvider>
-                    <Tracker feature='scorecard'/>
+                    <Tracker feature='scorecard' own={owner}/>
                 </ScorecardListProvider>
             </ScorecardDataProvider>
         </FilterProvider>
