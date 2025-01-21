@@ -9,6 +9,7 @@ if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
 export const collectionsStatsCurrent = `${url}/collectionStatsCurrent.json`
 export const collectionStatsDaily = `${url}/collectionStatsDaily.json`
 export const leaderboardData = `${url}/leaderboardData.json`
+export const recentAwardsEvidence = `${url}/recentAwardsEvidence.json`
 
 export const brandDistribution = `${url}/statsBrandDistribution.json`
 export const lockSummary = `${url}/statsLockSummary.json`

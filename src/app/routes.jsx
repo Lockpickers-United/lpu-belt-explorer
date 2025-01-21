@@ -82,6 +82,13 @@ export default [
                     const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
                     return {element: <Leaderboard tab={'blackBelts'}/>}
                 }
+            },
+            {
+                path: '/leaderboard/recent',
+                lazy: async () => {
+                    const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
+                    return {element: <Leaderboard tab={'recent'}/>}
+                }
             }
         ]
     },
