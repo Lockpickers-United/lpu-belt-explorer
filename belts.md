@@ -139,7 +139,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [American Lock 5200](https://lpubelts.com/#/locks?id=a0d1bf97) (bump stop model: all standards + 1 anti-bump pin)
 - [ARFE](https://lpubelts.com/#/locks?id=a1581afe)
 - [Befa](https://lpubelts.com/#/locks?id=32244161)
-- [Braslock](https://lpubelts.com/#/locks?id=d6d43c00)
+- [Braslok](https://lpubelts.com/#/locks?id=d6d43c00)
 - [Brinks 164 padlock](https://lpubelts.com/#/locks?id=d974b48f)
 - [Brinks Brass Padlocks](https://lpubelts.com/#/locks?id=58307da0)
 - [Brinks laminated padlock](https://lpubelts.com/#/locks?id=9215a45f) (40mm or larger, Weatherproof or not)
