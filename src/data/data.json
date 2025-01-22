@@ -1373,7 +1373,7 @@
     "belt": "Yellow",
     "makeModels": [
       {
-        "model": "Braslock"
+        "model": "Braslok"
       }
     ],
     "lockingMechanisms": [
@@ -1383,7 +1383,7 @@
       "Unguttable"
     ],
     "views": 1644,
-    "lastUpdated": "2023-03-23T03:24:22.385Z"
+    "lastUpdated": "2025-01-22T21:50:54.864Z"
   },
   {
     "id": "d974b48f",
