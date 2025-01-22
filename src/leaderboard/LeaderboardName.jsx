@@ -12,12 +12,12 @@ function LeaderboardName({leader, isCurrentUser, tab, maxLength}) {
 
     if (leader.displayName && !leader.privacyAnonymous) {
         const safeName = leader.displayName.replace(/\s/g, '_')
-
+        const id = leader.id || leader.userId
         const href = tab === 'blackBelts'
-            ? `/#/profile/${leader.id}/scorecard?name=${safeName}`
+            ? `/#/profile/${id}/scorecard?name=${safeName}`
             : tab === 'safelocks'
-                ? `/#/profile/${leader.id}/safelocks?name=${safeName}`
-                : `/#/profile/${leader.id}?name=${safeName}`
+                ? `/#/profile/${id}/safelocks?name=${safeName}`
+                : `/#/profile/${id}?name=${safeName}`
 
         return <a className={classes.name} style={style} href={href}>{leaderName}</a>
     } else {

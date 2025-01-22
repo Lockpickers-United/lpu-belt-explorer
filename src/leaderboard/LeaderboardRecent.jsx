@@ -58,10 +58,14 @@ function LeaderboardRecent({data}) {
         } else if (sort && value === sort) {
             setReverseSort(!evSort ? !reverseSort : reverseSort)
             setReverseEvSort(evSort ? !reverseEvSort : reverseEvSort)
-        } else {
+        } else if (value === 'date') {
             searchParams.set('sort', value)
             setReverseSort(true)
+        } else if (value === 'evDate') {
+            searchParams.set('sort', value)
             setReverseEvSort(true)
+        } else {
+            searchParams.set('sort', value)
         }
         setSearchParams(searchParams)
     }, [evSort, reverseEvSort, reverseSort, searchParams, setSearchParams, sort])
