@@ -8736,7 +8736,58 @@
       "Pin-tumbler"
     ],
     "notes": "Also known as CES 810",
-    "lastUpdated": "2025-01-09T16:22:28.778Z"
+    "media": [
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54281984810_83ee213d68_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54281984810/in/album-72177720323337617/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54281984810_e94b53a5f5_o.jpg"
+      },
+      {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53092872056_3c7f2c8b7f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53092872056/in/album-72177720310243725/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53092872056_5830c120b2_o.jpg"
+      },
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54281985300_bd7697ce64_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54281985300/in/album-72177720323337617/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54281985300_5a7080e8c4_o.jpg"
+      },
+      {
+        "title": "By: DifficultZebra",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851378435_26b3b5fa18_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851378435/in/album-72177720310243725/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851378435_736f7536c2_o.jpg"
+      },
+      {
+        "title": "By: DifficultZebra",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53850049787_0322b937fa_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850049787/in/album-72177720310243725/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53850049787_231fefc291_o.jpg"
+      },
+      {
+        "title": "By: DifficultZebra",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53850049867_d22a7f3b61_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850049867/in/album-72177720310243725/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53850049867_298a7f1391_o.jpg"
+      },
+      {
+        "title": "By: DifficultZebra",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851378815_ec0f12af00_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851378815/in/album-72177720310243725/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851378815_40d28290e6_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-01-22T18:57:26.070Z"
   },
   {
     "id": "83ac6e00",
@@ -13581,13 +13632,6 @@
         "thumbnailUrl": "https://www.catalocks.eu/photos/303/1.jpg",
         "fullUrl": "https://www.catalocks.eu/photos/303/1.jpg",
         "fullSizeUrl": "https://www.catalocks.eu/photos/303/1.jpg"
-      },
-      {
-        "title": "By: LockFumbler",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54275792091_396e5ebc29_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54275792091/in/album-72177720323277947/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54275792091_a151b3be61_o.jpg"
       }
     ],
     "links": [
@@ -13597,7 +13641,7 @@
       }
     ],
     "views": 1595,
-    "lastUpdated": "2025-01-19T22:00:12.325Z"
+    "lastUpdated": "2025-01-22T18:57:26.073Z"
   },
   {
     "id": "4382d650",
@@ -19641,8 +19685,24 @@
     "lockingMechanisms": [
       "Other"
     ],
+    "media": [
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54281989010_d37cba22d1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54281989010/in/album-72177720323356519/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54281989010_fec9328243_o.jpg"
+      },
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54281559976_34f53c6296_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54281559976/in/album-72177720323356519/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54281559976_bd78e2a6ce_o.jpg"
+      }
+    ],
     "views": 460,
-    "lastUpdated": "2024-01-13T16:01:18.300Z"
+    "lastUpdated": "2025-01-22T18:57:26.078Z"
   },
   {
     "id": "a062f1ee",
