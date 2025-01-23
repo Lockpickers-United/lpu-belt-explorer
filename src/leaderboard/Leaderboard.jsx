@@ -20,16 +20,11 @@ import {leaderboardData, recentAwardsEvidence} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import LeaderboardRecent from './LeaderboardRecent.jsx'
-import AppContext from '../app/AppContext.jsx'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
 
 function Leaderboard({tab}) {
 
     const {data, loading, error, errorMessage} = useData({urls})
-    const {admin} = useContext(AppContext)
-
-    console.log('errorMessage', errorMessage)
-
     const location = useLocation()
     const {user} = useContext(AuthContext)
     const scrollableRef = useRef()
@@ -189,15 +184,13 @@ function Leaderboard({tab}) {
                                       style={{padding: '2px 12px 2px 12px'}}>
                             Black Belts
                         </ToggleButton>
-                        {admin &&
-                            <ToggleButton onClick={() => handleClick('recent')}
-                                          selected={tab === 'recent'}
-                                          disabled={tab === 'recent'}
-                                          value='recent'
-                                          style={{padding: '2px 12px 2px 12px'}}>
-                                Recent
-                            </ToggleButton>
-                        }
+                        <ToggleButton onClick={() => handleClick('recent')}
+                                      selected={tab === 'recent'}
+                                      disabled={tab === 'recent'}
+                                      value='recent'
+                                      style={{padding: '2px 12px 2px 12px'}}>
+                            Recent
+                        </ToggleButton>
                     </ToggleButtonGroup>
                 </div>
 

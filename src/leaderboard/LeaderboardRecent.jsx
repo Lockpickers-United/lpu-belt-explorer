@@ -11,6 +11,7 @@ import TableHead from '@mui/material/TableHead'
 import LeaderboardName from './LeaderboardName.jsx'
 import belts, {beltSortReverse} from '../data/belts'
 import {useSearchParams} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 function LeaderboardRecent({data}) {
     const {user} = useContext(AuthContext)
@@ -20,6 +21,7 @@ function LeaderboardRecent({data}) {
         return data
             ? data.awards
                 .filter(award => award.displayName)
+                .filter(award => dayjs().diff(award.date, 'day') <= 14)
                 .map(award => {
                     const isCurrentUser = user?.uid === award.userId
                     return {...award, isCurrentUser}
@@ -33,12 +35,13 @@ function LeaderboardRecent({data}) {
         return data
             ? data.evidence
                 .filter(evidence => evidence.displayName)
+                .filter(evidence => dayjs().diff(evidence.date, 'day') <= 14)
                 .map(evidence => {
                     const isCurrentUser = user?.uid === evidence.userId
                     return {...evidence, isCurrentUser}
                 })
                 .sort((a, b) => dayjs(b.date).valueOf() - dayjs(a.date).valueOf())
-                .slice(0, 125)
+                .slice(0, 900)
             : []
     }, [data, user?.uid])
 
@@ -129,20 +132,25 @@ function LeaderboardRecent({data}) {
                 : '#b00'
     }, [])
 
+    const openInNewTab = useCallback((url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    },[])
+
 
     return (
         <React.Fragment>
             <div style={{justifyItems: 'center'}}>
                 <div style={{
                     fontWeight: 700,
-                    fontSize: '1.3rem',
+                    fontSize: '1.2rem',
                     width: '100%',
                     textAlign: 'center',
                     margin: '20px 0px'
                 }}>Recent Belts & Dans
                 </div>
                 <TableContainer sx={{backgroundColor: '#111', maxWidth: 500}}>
-                    <Table sx={{minWidth: 360, align: 'left'}} size='small'>
+                    <Table sx={{minWidth: 360, align: 'left'}}>
                         <TableHead>
                             <TableRow>
                                 <TableCell align='left' style={{
@@ -195,7 +203,7 @@ function LeaderboardRecent({data}) {
                                         <div style={{fontWeight: 500, marginLeft: 5}}>{row.awardName}</div>
                                     </TableCell>
                                     <TableCell align='center' style={{fontWeight: 500}}>
-                                        {dayjs(row.date).format('MM/DD/YY')}
+                                        {dayjs(row.date).format('MMM DD')}
                                     </TableCell>
                                 </TableRow>
                             ))}
@@ -207,14 +215,14 @@ function LeaderboardRecent({data}) {
             <div style={{justifyItems: 'center', marginTop: 40}}>
                 <div style={{
                     fontWeight: 700,
-                    fontSize: '1.3rem',
+                    fontSize: '1.2rem',
                     width: '100%',
                     textAlign: 'center',
                     margin: '20px 0px'
                 }}>Recent Picks and Projects
                 </div>
                 <TableContainer sx={{backgroundColor: '#111', maxWidth: 650}}>
-                    <Table sx={{minWidth: 360, align: 'left'}} size='small'>
+                    <Table sx={{minWidth: 360, align: 'left'}}>
                         <TableHead>
                             <TableRow>
                                 <TableCell align='left' style={{
@@ -266,10 +274,13 @@ function LeaderboardRecent({data}) {
                                     }}/>
 
                                     <TableCell align='left'>
-                                        <div style={{fontWeight: 500, marginLeft: 5}}>{row.evidenceName}</div>
+                                        <div style={{fontWeight: 500, marginLeft: 5}}>
+                                            <Link onClick={() => openInNewTab(row.evidenceUrl)} style={{color:'#fff'}}>{row.evidenceName}</Link>
+                                        </div>
                                     </TableCell>
+
                                     <TableCell align='center'>
-                                        {dayjs(row.date).format('MM/DD/YY')}
+                                        <nobr>{dayjs(row.date).format('MMM DD')}</nobr>
                                     </TableCell>
                                 </TableRow>
                             ))}
