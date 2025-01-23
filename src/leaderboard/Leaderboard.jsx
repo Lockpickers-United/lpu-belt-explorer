@@ -21,11 +21,14 @@ import useData from '../util/useData.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import LeaderboardRecent from './LeaderboardRecent.jsx'
 import AppContext from '../app/AppContext.jsx'
+import ErrorMessage from '../misc/ErrorMessage.jsx'
 
 function Leaderboard({tab}) {
 
-    const {data, loading, error} = useData({urls})
+    const {data, loading, error, errorMessage} = useData({urls})
     const {admin} = useContext(AppContext)
+
+    console.log('errorMessage', errorMessage)
 
     const location = useLocation()
     const {user} = useContext(AuthContext)
@@ -145,6 +148,10 @@ function Leaderboard({tab}) {
 
     if (loading) {
         return <LoadingDisplay/>
+    }
+
+    if (error) {
+        return <ErrorMessage errorMessage={errorMessage}/>
     }
 
     if (data && !error) return (

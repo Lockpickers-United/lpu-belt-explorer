@@ -6,6 +6,7 @@ function useData({url, urls, loadFn, text}) {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
     const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(false)
 
     const loadData = useCallback(async () => {
         try {
@@ -39,6 +40,7 @@ function useData({url, urls, loadFn, text}) {
             })
             setLoading(false)
             setError(true)
+            setErrorMessage(ex.message)
         }
     }, [url, urls, loadFn, text])
 
@@ -50,8 +52,9 @@ function useData({url, urls, loadFn, text}) {
         loading,
         data,
         error,
+        errorMessage,
         refresh: loadData
-    }), [data, error, loadData, loading])
+    }), [data, error, loadData, loading, errorMessage])
 }
 
 export default useData
