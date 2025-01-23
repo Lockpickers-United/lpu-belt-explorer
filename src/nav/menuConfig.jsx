@@ -60,6 +60,10 @@ export default [
                 title: 'Black Belts',
                 path: '/leaderboard/blackBelts'
             },
+            {
+                title: 'Recent Belts & Picks',
+                path: '/leaderboard/recent'
+            }
         ]
     },
     {
