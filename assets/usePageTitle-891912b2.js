@@ -1,0 +1,1 @@
+import"./index-6b3d02d2.js";import{u as n}from"./useDocumentTitle-aef964cb.js";function s(t){const o=/^localhost.*/.test(window.location.host)?"LOCAL":/^dev.*/.test(window.location.host)?"DEV":"LPU Belt Explorer",e=t?`${o} - ${t}`:"LPU Belt Explorer";return n(e)}export{s as u};
