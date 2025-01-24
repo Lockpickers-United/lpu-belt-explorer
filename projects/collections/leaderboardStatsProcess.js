@@ -31,19 +31,17 @@ async function saveLeaderboard() {
         listNames.forEach(listName => {
             if (profile[listName]?.length > 0) {
                 setDeep(userStats, [listName], profile[listName].length)
-            } else {
-                setDeep(userStats, [listName], 0)
             }
         })
 
         const locksCollection = [...new Set([...profile.own || [], ...profile.picked || [], ...profile.recorded || [], ...profile.recordedLocks || []])]
-        setDeep(userStats, ['locksCollection'], locksCollection.length || 0)
+        if (locksCollection.length > 0) setDeep(userStats, ['locksCollection'], locksCollection.length)
 
         const uniqueLocks = [...new Set([...profile.recordedLocks || []])]
-        setDeep(userStats, ['uniqueLocks'], uniqueLocks.length || 0)
+        if (uniqueLocks.length > 0) setDeep(userStats, ['uniqueLocks'], uniqueLocks.length)
 
         const safelocksCollection = [...new Set([...profile.safelocksOwn || [], ...profile.safelocksCracked || []])]
-        setDeep(userStats, ['safelocksCollection'], safelocksCollection.length || 0)
+        if (safelocksCollection.length > 0) setDeep(userStats, ['safelocksCollection'], safelocksCollection.length)
 
         if (profile.blackBeltAwardedAt?._seconds > 0) {
             uniqueLocks.forEach(lockId => {
@@ -57,9 +55,9 @@ async function saveLeaderboard() {
 
         }
 
-        setDeep(userStats, ['danLevel'], profile.danLevel || 0)
-        setDeep(userStats, ['danPoints'], profile.danPoints || 0)
-        setDeep(userStats, ['blackBeltCount'], profile.blackBeltCount || 0)
+        if (profile.danLevel) setDeep(userStats, ['danLevel'], profile.danLevel || 0)
+        if (profile.danPoints)  setDeep(userStats, ['danPoints'], profile.danPoints || 0)
+        if (profile.blackBeltCount) setDeep(userStats, ['blackBeltCount'], profile.blackBeltCount)
         setDeep(userStats, ['blackBeltAwardedAt'], profile?.blackBeltAwardedAt?._seconds || 0)
 
         if (profile.privacyNoLeaderboard) {
@@ -71,11 +69,16 @@ async function saveLeaderboard() {
 
         acc.push(userStats)
         return acc
-    },[])
+    }, [])
 
-    const leaderboardData = {data: leaderboard, metadata: {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    const leaderboardData = {
+        data: leaderboard, metadata: {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
     }
-    await fs.writeFile(`${serverDir}/leaderboardData.json`, JSON.stringify(leaderboardData, null, 2), function (err) {if (err) {console.error('save leaderboardData error:', err)}})
+    await fs.writeFile(`${serverDir}/leaderboardData.json`, JSON.stringify(leaderboardData, null, 2), function (err) {
+        if (err) {
+            console.error('save leaderboardData error:', err)
+        }
+    })
 
     return leaderboardData
 

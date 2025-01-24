@@ -1,18 +1,23 @@
-
 import fs from 'node:fs/promises'
-import { initializeApp, cert } from 'firebase-admin/app'
-import { getFirestore } from 'firebase-admin/firestore'
+import {initializeApp, cert} from 'firebase-admin/app'
+import {getFirestore} from 'firebase-admin/firestore'
 import {setDeep} from '../util/setDeep.js'
 
 import {localUser, prodUser} from '../../keys/users.js'
+import dayjs from 'dayjs'
+
 const production = process.env.USER !== localUser
 
-const serviceAccount = JSON.parse(await fs.readFile('../../keys/service-account.json', 'utf8'))
+const keysDir = production
+    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
+    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
+
+const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
 
 const config = {
     credential: cert(serviceAccount)
 }
-const firebaseApp = initializeApp(config);
+const firebaseApp = initializeApp(config)
 //const dbDev = getFirestore(firebaseApp, 'lpubelts-dev')
 const dbProd = getFirestore(firebaseApp)
 
@@ -22,7 +27,7 @@ const backupDir = production
 
 async function getAllData() {
 
-    const lockcollections = await dbProd.collection('lockcollections').get();
+    const lockcollections = await dbProd.collection('lockcollections').get()
 
     const fullDb = new Map()
 
@@ -37,8 +42,14 @@ async function getAllData() {
             console.log(err)
         }
     })
-
     await fs.writeFile(`${backupDir}/archive/backup.json`, jsonString, function (err) {
+        if (err) {
+            console.log(err)
+        }
+    })
+
+    const today = dayjs().format('YYYY-MM-DD')
+    await fs.writeFile(`${backupDir}/archive/backup_${today}.json`, jsonString, function (err) {
         if (err) {
             console.log(err)
         }
