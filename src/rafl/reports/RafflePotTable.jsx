@@ -89,7 +89,7 @@ const RafflePotTable = ({statsData}) => {
         const pot = potData.find(row => row.title === string)
         const safeName = pot?.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
         return id === 'title'
-            ? <Link onClick={() => navigate(`/rafl/?id=${pot.id}&name=${safeName}`)}
+            ? <Link onClick={() => navigate(`/rafl/?id=2025-${pot.id}&name=${safeName}`)}
                     style={{color: '#fff'}}>{string}</Link>
             : string
     }, [navigate, potData])
