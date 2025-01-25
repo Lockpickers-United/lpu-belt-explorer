@@ -6159,8 +6159,34 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54287368570_e1981f3865_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54287368570/in/album-72177720323389195/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54287368570_4cee1060b2_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54287183093_116b199117_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54287183093/in/album-72177720323389195/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54287183093_024dde0dd3_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54287183368_21b31c40ff_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54287183368/in/album-72177720323389195/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54287183368_2e5921a4e5_o.jpg"
+      }
+    ],
     "views": 2101,
-    "lastUpdated": "2024-03-29T21:45:41.236Z"
+    "lastUpdated": "2025-01-25T18:02:28.378Z"
   },
   {
     "id": "74a00ae3",
