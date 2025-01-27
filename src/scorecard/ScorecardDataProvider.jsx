@@ -56,7 +56,7 @@ export function ScorecardDataProvider({
         userCount: lock.saveCount
     })), [popularLocks, activityByMatchId])
 
-    const bbPopularEntries = useMemo(() => popularLocksBB.map(lock => ({
+    const bbPopularEntries = useMemo(() => popularLocksBB?.map(lock => ({
         ...getEntryFromId(lock.id),
         ...activityByMatchId[lock.id],
         popularityRank: lock.rank,
