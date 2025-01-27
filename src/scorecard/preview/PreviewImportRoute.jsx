@@ -31,7 +31,8 @@ function PreviewImportRoute() {
     const location = useLocation()
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
-    const popularLocks = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    const popularLocks = collectionsStats.data ? collectionsStats.data.allUsers.listStats.recordedLocks.topItems : []
 
     const tabId = useMemo(() => {
         const query = queryString.parse(location.search)
@@ -96,7 +97,7 @@ function PreviewImportRoute() {
         <FilterProvider filterFields={scorecardFilterFields}>
             <ScorecardDataProvider cardActivity={scoredActivity} cardBBCount={bbCount} cardDanPoints={danPoints}
                                    cardEligibleDan={eligibleDan} cardNextDanPoints={nextDanPoints}
-                                   cardNextDanLocks={nextDanLocks} popularLocks={popularLocks}>
+                                   cardNextDanLocks={nextDanLocks} popularLocks={popularLocks} popularLocksBB={popularLocksBB}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 

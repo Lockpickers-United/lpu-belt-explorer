@@ -57,7 +57,8 @@ function ImportPreview({syncStatus, syncResult, service}) {
     const cardNextDanLocks = data ? data.nextDanLocks : 0
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
-    const popularLocks = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
+    const popularLocks = collectionsStats.data ? collectionsStats.data.allUsers.listStats.recordedLocks.topItems : []
 
     const nav = null
 
@@ -88,7 +89,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
             <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                    cardDanPoints={cardDanPoints}
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks}>
+                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks} popularLocksBB={popularLocksBB}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
