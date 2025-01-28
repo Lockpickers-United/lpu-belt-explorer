@@ -26,7 +26,7 @@ export default function RaffleYOYLine({chartHeight, chartdata, colors, curve}) {
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}
-                curve={curve ?? 'natural'}
+                curve={curve ?? 'basis'}
                 yScale={{
                     type: 'linear',
                     min: 0,

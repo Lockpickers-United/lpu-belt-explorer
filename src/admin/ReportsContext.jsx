@@ -2,7 +2,6 @@ import React, {useCallback, useMemo} from 'react'
 import {
     brandDistribution,
     collectionsStatsCurrent,
-    lockSummary,
     popularAreas, redditGrowth, siteFullNew, collectionStatsDaily
 } from '../data/dataUrls'
 import useData from '../util/useData.jsx'
@@ -18,7 +17,6 @@ export function ReportsProvider({children}) {
         brandDistribution,
         collectionsStatsCurrent,
         collectionStatsDaily,
-        lockSummary,
         popularAreas,
         redditGrowth,
         siteFullNew,
@@ -92,7 +90,6 @@ export function ReportsProvider({children}) {
         brandDistribution,
         collectionsStatsCurrent,
         collectionStatsDaily,
-        lockSummary,
         popularAreas,
         redditGrowth,
         siteFullNew,
@@ -104,7 +101,6 @@ export function ReportsProvider({children}) {
         brandDistribution,
         collectionsStatsCurrent,
         collectionStatsDaily,
-        lockSummary,
         popularAreas,
         redditGrowth,
         siteFullNew,
@@ -123,7 +119,6 @@ const urls = {
     brandDistribution,
     collectionsStatsCurrent,
     collectionStatsDaily,
-    lockSummary,
     popularAreas,
     redditGrowth,
     siteFullNew,

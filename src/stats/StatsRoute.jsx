@@ -7,40 +7,43 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import StatsMainPage from './StatsMainPage'
 import {
+    lockStats,
     brandDistribution,
     collectionsStatsCurrent,
-    lockSummary,
     popularAreas,
     redditGrowth,
     siteFullNew
 } from '../data/dataUrls'
+import ErrorMessage from '../misc/ErrorMessage.jsx'
 
 function StatsRoute() {
 
     usePageTitle('Stats & Insights')
-    const {data, loading, error} = useData({urls})
+    const {data, loading, error, errorMessage} = useData({urls})
 
     return (
-            <React.Fragment>
-                <Nav title='Stats & Insights'/>
+        <React.Fragment>
+            <Nav title='Stats & Insights'/>
 
-                {loading && <LoadingDisplay/>}
+            {error && <ErrorMessage errorMessage={errorMessage}/>}
 
-                {!loading && !error && data &&
-                    <StatsMainPage data={data}/>
-                }
+            {loading && <LoadingDisplay/>}
 
-                <Footer/>
+            {!loading && !error && data &&
+                <StatsMainPage data={data}/>
+            }
 
-                <Tracker feature='stats'/>
-            </React.Fragment>
+            <Footer/>
+
+            <Tracker feature='stats'/>
+        </React.Fragment>
     )
 }
 
 const urls = {
+    lockStats,
     brandDistribution,
     collectionsStatsCurrent,
-    lockSummary,
     popularAreas,
     redditGrowth,
     siteFullNew

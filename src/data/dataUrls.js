@@ -11,8 +11,9 @@ export const collectionStatsDaily = `${url}/collectionStatsDaily.json`
 export const leaderboardData = `${url}/leaderboardData.json`
 export const recentAwardsEvidence = `${url}/recentAwardsEvidence.json`
 
+export const lockStats = `${url}/lockStats.json`
+
 export const brandDistribution = `${url}/statsBrandDistribution.json`
-export const lockSummary = `${url}/statsLockSummary.json`
 export const popularAreas = `${url}/statsPopularAreas.json`
 export const redditGrowth = `${url}/statsRedditGrowth.json`
 export const siteFullNew = `${url}/statsSiteFullNew.json`

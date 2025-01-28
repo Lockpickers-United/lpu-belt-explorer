@@ -6,7 +6,7 @@ import {uniqueBelts} from '../data/belts'
 function BeltDistribution({data}) {
     const options = useMemo(() => {
         const {
-            lockSummary: {locksByBelt},
+            lockStats: {locksByBelt},
             siteFullNew: {lockViewsByBelt},
             collectionsStatsCurrent,
         } = data
