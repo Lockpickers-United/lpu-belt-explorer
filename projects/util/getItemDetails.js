@@ -116,7 +116,7 @@ export async function glossaryDetails() {
     const glossaryData = await (await fetch('https://lpubelts.com/glossary.json')).json()
     return glossaryData.reduce((acc, item) => {
         allMedia.push(item.media)
-        acc[item.term] = {...item, shortName: item.term, type: 'glossary'}
+        acc[item.term] = {...item, shortName: item.term, type: 'glossary', media: item.media ? [item.media] : undefined}
         return acc
     }, {})
 }
@@ -126,7 +126,6 @@ export async function itemDetails() {
     const locks = await lockDetails()
     const safelocks = await safelockDetails()
     const projects = await projectDetails()
-    //console.log('projects', projects)
 
     return {
         ...await lockDetails(),
@@ -138,9 +137,7 @@ export async function itemDetails() {
 }
 
 export async function getItemDetails() {
-
     let allMedia = []
-
 }
 
 

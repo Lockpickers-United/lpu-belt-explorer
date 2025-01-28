@@ -118,6 +118,12 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
             collectionStatsCurrent.listStats[listName].averageSaves =
                 collectionStatsCurrent.listStats[listName].totalSaves / collectionStatsCurrent.listStats[listName].userCount
             const savesById = collectionStatsCurrent.listStats[listName].savesById
+
+
+            //console.log(listName, savesById)
+            //setDeep(collectionStatsCurrent, ['savesById', listName], savesById)
+
+
             const topItems = Object.keys(savesById)
                 .sort((a, b) => {
                     return savesById[b] - savesById[a] ||
