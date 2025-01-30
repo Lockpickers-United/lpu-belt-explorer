@@ -21,7 +21,7 @@ export default function RaffleYOYLine({chartHeight, chartdata, colors, curve}) {
                 theme={primaryTheme}
                 data={chartdata}
                 enableGridX={false}
-                enableGridY={false}
+                enableGridY={true}
                 colors={colors}
                 lineWidth={3}
                 margin={chartMargin}
