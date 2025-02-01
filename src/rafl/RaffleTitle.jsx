@@ -5,15 +5,17 @@ import RaffleContext from './RaffleContext.jsx'
 function RaffleTitle({entry}) {
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
+    const {isMobile, flexStyle} = useWindowSize()
 
     let entryName = entry.displayName ? entry.displayName : entry.title
-    const winnersText = entry.winnerCount ? ` (${entry.winnerCount} winners)` : ''
+    const winnersText = (entry.winnerCount && !entry.winner) ? ` (${entry.winnerCount} winners)` : ''
     entryName = entryName + winnersText
 
-    const winnerList = entry.winner.join(', ')
-    console.log('winnerList', winnerList)
+    const marginBottom = entry.winner ? 15 : 0
 
-    const {isMobile, flexStyle} = useWindowSize()
+    const winnerList = entry.winner.join(', ')
+    const winnerSuffix = entry.winner.length > 1 ? 's' : ''
+    const winnerAlign = isMobile ? 'left' : 'right'
 
     const diameter = !isMobile ? 30 : 28
     const fontSize = !isMobile ? '1.3rem' : '1.1rem'
@@ -22,9 +24,10 @@ function RaffleTitle({entry}) {
 
     const titleSize = !isMobile ? '1.4rem' : '1.3rem'
     const titleLineHeight = !isMobile ? '1.8rem' : '1.6rem'
+    const winnerSize = !isMobile ? '1.3rem' : '1.2rem'
 
     return (
-        <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
+        <div style={{display: 'flex', alignItems: 'center', width: '100%', marginBottom: marginBottom}}>
             { showFull &&
             <div style={{
                 borderRadius: '50%',
@@ -63,12 +66,13 @@ function RaffleTitle({entry}) {
                 {entry.winner &&
                     <div style={{
                         display: 'flex',
-                        fontSize: titleSize,
+                        fontSize: winnerSize,
                         lineHeight: titleLineHeight,
                         marginTop: !isMobile ? -3 : 8,
                         marginRight: 10,
-                        fontWeight: 400
-                    }}>Winner: <strong>&nbsp;{winnerList}</strong></div>
+                        fontWeight: 600,
+                        textAlign: winnerAlign
+                    }}><span><span style={{fontWeight:400}}>Winner{winnerSuffix}</span>: {winnerList}</span></div>
                 }
             </div>
         </div>

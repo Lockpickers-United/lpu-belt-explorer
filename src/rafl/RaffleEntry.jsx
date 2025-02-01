@@ -68,7 +68,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const infoOpactiy = entry.winner && !expanded ? 0.6 : 1
+    const infoOpacity = entry.winner && !expanded ? 0.6 : 1
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -81,7 +81,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
                         </div>
                         <div style={{margin: contribMargin, display: 'flex'}}>
-                            <div style={{flexGrow: 1, opacity: infoOpactiy}}>
+                            <div style={{flexGrow: 1, opacity: infoOpacity}}>
                                 <div style={{
                                     marginRight: 8,
                                     color: '#bbb',
@@ -108,7 +108,8 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                         marginRight: 15,
                                         fontSize: descriptionFontSize,
                                         textAlign: 'right',
-                                        display: flexStyle
+                                        display: flexStyle,
+                                        opacity: infoOpacity
                                     }}>
                                         <div>
                                             <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
@@ -122,7 +123,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                         </div>
 
                         {!showSimple && shippingFiltered &&
-                            <div style={{display: 'flex', marginTop: 6, opacity: infoOpactiy}}>
+                            <div style={{display: 'flex', marginTop: 6, opacity: infoOpacity}}>
                                 <div style={{marginRight: 10}}>
                                     <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
                                         entry.country.map((country, index) => {
@@ -138,7 +139,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                             value={entry.shippingInfo}/>
                             </div>
                         }
-                        <div style={{margin: descriptionMargin, fontSize: descriptionFontSize, opacity: infoOpactiy}}>
+                        <div style={{margin: descriptionMargin, fontSize: descriptionFontSize, opacity: infoOpacity}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                 {entry.description}
                             </ReactMarkdown>
