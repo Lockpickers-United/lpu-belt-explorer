@@ -10,6 +10,9 @@ function RaffleTitle({entry}) {
     const winnersText = entry.winnerCount ? ` (${entry.winnerCount} winners)` : ''
     entryName = entryName + winnersText
 
+    const winnerList = entry.winner.join(', ')
+    console.log('winnerList', winnerList)
+
     const {isMobile, flexStyle} = useWindowSize()
 
     const diameter = !isMobile ? 30 : 28
@@ -65,7 +68,7 @@ function RaffleTitle({entry}) {
                         marginTop: !isMobile ? -3 : 8,
                         marginRight: 10,
                         fontWeight: 400
-                    }}>Winner: <strong>&nbsp;{entry.winner}</strong></div>
+                    }}>Winner: <strong>&nbsp;{winnerList}</strong></div>
                 }
             </div>
         </div>

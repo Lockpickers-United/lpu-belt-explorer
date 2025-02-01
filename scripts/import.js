@@ -423,7 +423,7 @@ const raflMainData = raflData
         splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
         splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
         shippingType: datum['Shipping Type'],
-        winner: datum['Winner'],
+        winner: splitCommaValues(datum['Winner']),
         dateAdded: datum['Date Added'],
     })).filter(x => x)
 

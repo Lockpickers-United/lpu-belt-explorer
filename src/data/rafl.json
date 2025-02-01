@@ -21,7 +21,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Digital prize",
-    "winner": "",
+    "winner": [
+      "kentworth1419"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -55,7 +57,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Digital prize",
-    "winner": "",
+    "winner": [
+      "Alpama"
+    ],
     "dateAdded": "20241215",
     "media": [
       {
@@ -90,7 +94,10 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Digital prize",
-    "winner": "",
+    "winner": [
+      "gibsonkd",
+      "kentworth1419"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -132,7 +139,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "imaginary_unit"
+    ],
     "dateAdded": "20241224",
     "media": [
       {
@@ -184,7 +193,11 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "kentworth1419",
+      "Alternative_Donut_62",
+      "Banditobrandino07"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -224,7 +237,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "emilchawww_"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -266,7 +281,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "Erik Weisz"
+    ],
     "dateAdded": "20241221",
     "media": [
       {
@@ -300,7 +317,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "HVLogic"
+    ],
     "dateAdded": "20241221",
     "media": [
       {
@@ -339,7 +358,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "Cucumber7777"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -378,7 +399,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "zestyzesty"
+    ],
     "dateAdded": "20241215",
     "media": [
       {
@@ -416,7 +439,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "Miyako"
+    ],
     "dateAdded": "20241221",
     "media": [
       {
@@ -479,7 +504,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "Jb Muramatsu"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -521,7 +548,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Domestic only",
-    "winner": "",
+    "winner": [
+      "Banditobrandino07"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -562,7 +591,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "PandaFrog"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -604,7 +635,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "benson18_18"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -704,7 +737,9 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [
+      "infinitelyExplosive"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -740,7 +775,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "GORGxBLACKSMITH"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -778,7 +815,10 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "sgra8",
+      "ser3n1ty"
+    ],
     "dateAdded": "20241214",
     "media": [
       {
@@ -827,7 +867,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "imaginary_unit"
+    ],
     "dateAdded": "20241224",
     "media": [
       {
@@ -866,7 +908,11 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "evilspacecow",
+      "daredenner",
+      "virigould"
+    ],
     "dateAdded": "20241224",
     "media": [
       {
@@ -940,7 +986,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "brando915"
+    ],
     "dateAdded": "20241224",
     "media": [
       {
@@ -976,7 +1024,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "PandaFrog"
+    ],
     "dateAdded": "20241221",
     "media": [
       {
@@ -1012,7 +1062,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "virigould"
+    ],
     "dateAdded": "20241227",
     "media": [
       {
@@ -1048,7 +1100,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "Banditobrandino07"
+    ],
     "dateAdded": "20241221",
     "media": [
       {
@@ -1084,7 +1138,9 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [
+      "Mick777Oz"
+    ],
     "dateAdded": "20241221",
     "media": [
       {
@@ -1122,7 +1178,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -1158,7 +1214,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -1211,7 +1267,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -1273,7 +1329,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -1320,7 +1376,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -1364,7 +1420,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -1408,7 +1464,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -1452,7 +1508,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -1496,7 +1552,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -1549,7 +1605,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -1596,7 +1652,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -1662,7 +1718,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241216",
     "media": [
       {
@@ -1708,7 +1764,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241216",
     "media": [
       {
@@ -1749,7 +1805,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -1822,7 +1878,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -1861,7 +1917,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241215",
     "media": [
       {
@@ -1904,7 +1960,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -2041,7 +2097,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2091,7 +2147,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2132,7 +2188,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241215",
     "media": [
       {
@@ -2167,7 +2223,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -2208,7 +2264,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241221",
     "media": [
       {
@@ -2242,7 +2298,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -2277,7 +2333,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -2318,7 +2374,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -2357,7 +2413,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -2391,7 +2447,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -2427,7 +2483,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Domestic only",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2505,7 +2561,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2570,7 +2626,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241216",
     "media": [
       {
@@ -2657,7 +2713,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241216",
     "media": [
       {
@@ -2714,7 +2770,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2778,7 +2834,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2816,7 +2872,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2853,7 +2909,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Winner pays international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2894,7 +2950,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -2929,7 +2985,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241221",
     "media": [
       {
@@ -2987,7 +3043,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -3155,7 +3211,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241221",
     "media": [
       {
@@ -3192,7 +3248,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Domestic only",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241215",
     "media": [
       {
@@ -3250,7 +3306,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Domestic only",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227",
     "media": [
       {
@@ -3291,7 +3347,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Winner pays international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241224",
     "media": [
       {
@@ -3332,7 +3388,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241227"
   },
   {
@@ -3359,7 +3415,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
@@ -3434,7 +3490,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "winner": "",
+    "winner": [],
     "dateAdded": "20241214",
     "media": [
       {
