@@ -12,6 +12,11 @@ export default function RaffleIntroBar() {
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12}
 
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
+
     return (
         <React.Fragment>
             {(raflState === 'preview') &&
@@ -70,8 +75,24 @@ export default function RaffleIntroBar() {
                 </div>
             }
 
-
             {(raflState === 'post') &&
+                <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
+                    <div style={{padding: '4px 4px 10px 4px'}}>
+                        <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
+                            Entries for RAFL 2025 are no longer being accepted.
+                        </div>
+                        Tune in to the livestream at 11am US Pacific Time (PDT) on February 1 to see if you won:&nbsp;
+                        <Link onClick={() => openInNewTab('https://www.youtube.com/live/5ZCMkFkv_Rc')} style={{
+                            color: '#ffffff',
+                            fontWeight: 600
+                        }}>https://www.youtube.com/live/5ZCMkFkv_Rc</Link>
+                        <br/><br/>
+                        The winners will be posted here soon.
+                    </div>
+                </div>
+            }
+
+            {(raflState === 'REAL-POST') &&
                 <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
