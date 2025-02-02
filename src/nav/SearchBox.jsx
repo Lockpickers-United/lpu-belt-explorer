@@ -33,7 +33,7 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
         setText(value)
     }, [])
 
-    const debounceText = useDebounce(text, 250)
+    const debounceText = useDebounce(text, 250).replaceAll('\t', ' ')
     useEffect(() => {
         if (debounceText !== searchParams.get('search')) {
             if (debounceText) {
