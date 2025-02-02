@@ -13,7 +13,7 @@ function RaffleTitle({entry}) {
 
     const marginBottom = entry.winner ? 15 : 0
 
-    const winnerList = entry.winner.join(', ')
+    const winnerList = Array.isArray(entry.winner) ? entry.winner.join(', ') : undefined
     const winnerSuffix = entry.winner.length > 1 ? 's' : ''
     const winnerAlign = isMobile ? 'left' : 'right'
 
@@ -28,29 +28,29 @@ function RaffleTitle({entry}) {
 
     return (
         <div style={{display: 'flex', alignItems: 'center', width: '100%', marginBottom: marginBottom}}>
-            { showFull &&
-            <div style={{
-                borderRadius: '50%',
-                backgroundColor: '#fff',
-                color: '#000',
-                height: diameter,
-                width: diameter,
-                minWidth: diameter,
-                marginTop: 0,
-                marginBottom: 4,
-                marginRight: 12,
-                display: 'flex'
-            }}>
+            {showFull &&
+                <div style={{
+                    borderRadius: '50%',
+                    backgroundColor: '#fff',
+                    color: '#000',
+                    height: diameter,
+                    width: diameter,
+                    minWidth: diameter,
+                    marginTop: 0,
+                    marginBottom: 4,
+                    marginRight: 12,
+                    display: 'flex'
+                }}>
                     <div style={{
-                    margin: 'auto',
-                    paddingTop: 0,
-                    paddingLeft: paddingLeft,
-                    paddingRight:1,
-                    fontWeight: 700,
-                    fontSize: fontSize,
-                    lineHeight: lineHeight
-                }}>{entry.potNumber}</div>
-            </div>
+                        margin: 'auto',
+                        paddingTop: 0,
+                        paddingLeft: paddingLeft,
+                        paddingRight: 1,
+                        fontWeight: 700,
+                        fontSize: fontSize,
+                        lineHeight: lineHeight
+                    }}>{entry.potNumber}</div>
+                </div>
             }
             <div style={{display: flexStyle, flexGrow: 1}}>
                 <div style={{
@@ -63,7 +63,7 @@ function RaffleTitle({entry}) {
                 }}>
                     {entryName}
                 </div>
-                {entry.winner &&
+                {entry.winner.length > 0 &&
                     <div style={{
                         display: 'flex',
                         fontSize: winnerSize,
@@ -72,7 +72,7 @@ function RaffleTitle({entry}) {
                         marginRight: 10,
                         fontWeight: 600,
                         textAlign: winnerAlign
-                    }}><span><span style={{fontWeight:400}}>Winner{winnerSuffix}</span>: {winnerList}</span></div>
+                    }}><span><span style={{fontWeight: 400}}>Winner{winnerSuffix}</span>: {winnerList}</span></div>
                 }
             </div>
         </div>

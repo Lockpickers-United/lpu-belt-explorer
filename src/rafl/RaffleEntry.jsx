@@ -68,7 +68,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const infoOpacity = entry.winner && !expanded ? 0.6 : 1
+    const infoOpacity = entry.winner.length > 0 && !expanded ? 0.6 : 1
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>

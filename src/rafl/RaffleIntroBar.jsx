@@ -17,6 +17,8 @@ export default function RaffleIntroBar() {
         if (newWindow) newWindow.opener = null
     }
 
+    // TODO: Make a new state for drawing
+    
     return (
         <React.Fragment>
             {(raflState === 'preview') &&
@@ -75,7 +77,7 @@ export default function RaffleIntroBar() {
                 </div>
             }
 
-            {(raflState === 'post') &&
+            {(raflState === 'DRAWING') &&
                 <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
@@ -92,11 +94,11 @@ export default function RaffleIntroBar() {
                 </div>
             }
 
-            {(raflState === 'REAL-POST') &&
+            {(raflState === 'post') &&
                 <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
-                            RAFL 2025 has ended
+                            RAFL 2025 has ended.
                         </div>
                         Check out the winners below, see you next year!
                     </div>
