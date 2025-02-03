@@ -17,7 +17,9 @@ export default function RaffleIntroBar() {
         if (newWindow) newWindow.opener = null
     }
 
-    // TODO: Make a new state for drawing
+    // TODO: Make a new state for drawing?
+
+    const preDrawing = false
     
     return (
         <React.Fragment>
@@ -77,7 +79,7 @@ export default function RaffleIntroBar() {
                 </div>
             }
 
-            {(raflState === 'DRAWING') &&
+            {(raflState === 'post' && preDrawing) &&
                 <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
@@ -94,7 +96,7 @@ export default function RaffleIntroBar() {
                 </div>
             }
 
-            {(raflState === 'post') &&
+            {(raflState === 'post' && !preDrawing) &&
                 <div style={{...style, backgroundColor: '#333', minHeight: 72}}>
                     <div style={{padding: '4px 4px 10px 4px'}}>
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>

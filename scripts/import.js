@@ -20,6 +20,8 @@ import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
 
+const importRaflData = true
+
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
     console.log(`Importing ${tab}...`)
@@ -63,9 +65,9 @@ const dialsLinkData = await importValidate('Dials Links', linkSchema)
 const projectsData = await importValidate('Projects', projectSchema)
 const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
-const raflData = await importValidate('RAFL', raflSchema)
-const raflMediaData = await importValidate('RAFL Media', raflMediaSchema)
-const raflCharityData = await importValidate('RAFL Charities', raflCharitySchema)
+const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
+const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
+const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -403,68 +405,70 @@ new Set(dialFeatures).forEach(term => {
     if (!item) console.log('Safe locks term not defined in Glossary: ', term)
 })
 
-// RAFL Data
-console.log('Processing RAFL data...')
-const raflMainData = raflData
-    .filter(datum => datum['Year'] === '2025')
-    .map(datum => ({
-        id: datum['Unique ID'],
-        year: +datum['Year'],
-        potNumber: datum['Pot Number'],
-        title: datum['Title'],
-        winnerCount: datum['Winner Count'],
-        displayName: datum['Display Name'],
-        description: datum['Description'],
-        potContents: datum['Pot Contents'],
-        contributedBy: splitCommaValues(datum['Contributed By']),
-        tags: splitCommaValues(datum['Tags']),
-        country: splitCommaValues(datum['Country']),
-        shippingInfo: datum['Shipping Info Text'],
-        splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
-        splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
-        shippingType: datum['Shipping Type'],
-        winner: splitCommaValues(datum['Winner']),
-        dateAdded: datum['Date Added'],
-    })).filter(x => x)
+if (importRaflData) {
+    // RAFL Data
+    console.log('Processing RAFL data...')
+    const raflMainData = raflData
+        .filter(datum => datum['Year'] === '2025')
+        .map(datum => ({
+            id: datum['Unique ID'],
+            year: +datum['Year'],
+            potNumber: datum['Pot Number'],
+            title: datum['Title'],
+            winnerCount: datum['Winner Count'],
+            displayName: datum['Display Name'],
+            description: datum['Description'],
+            potContents: datum['Pot Contents'],
+            contributedBy: splitCommaValues(datum['Contributed By']),
+            tags: splitCommaValues(datum['Tags']),
+            country: splitCommaValues(datum['Country']),
+            shippingInfo: datum['Shipping Info Text'],
+            splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
+            splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
+            shippingType: datum['Shipping Type'],
+            winner: splitCommaValues(datum['Winner']),
+            dateAdded: datum['Date Added']
+        })).filter(x => x)
 
-// RAFL Media data
-console.log('Processing RAFL Media data...')
-raflMediaData
-    .sort((a, b) => {
-        const one = a['Sequence ID']
-        const two = b['Sequence ID']
-        if (one === two) return 0
-        else if (one > two) return 1
-        else return -1
-    })
-    .forEach(item => {
-        const entry = raflMainData.find(e => e?.id === item['Unique ID'])
-        if (!entry) return console.log('Entry not found!', item)
-        if (!entry.media) entry.media = []
-        const media = {
-            title: item.Title,
-            subtitle: item.Subtitle,
-            thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL']
-        }
-        if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
-        if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
-        entry.media.push(media)
-    })
+    // RAFL Media data
+    console.log('Processing RAFL Media data...')
+    raflMediaData
+        .sort((a, b) => {
+            const one = a['Sequence ID']
+            const two = b['Sequence ID']
+            if (one === two) return 0
+            else if (one > two) return 1
+            else return -1
+        })
+        .forEach(item => {
+            const entry = raflMainData.find(e => e?.id === item['Unique ID'])
+            if (!entry) return console.log('Entry not found!', item)
+            if (!entry.media) entry.media = []
+            const media = {
+                title: item.Title,
+                subtitle: item.Subtitle,
+                thumbnailUrl: item['Thumbnail URL'],
+                fullUrl: item['Full URL']
+            }
+            if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
+            if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
+            entry.media.push(media)
+        })
 
-fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
+    fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
 
-// RAFL Charity Data
-console.log('Processing RAFL Charity data...')
-const raflCharities = raflCharityData
-    .map(datum => ({
-        name: datum['Charity Name'],
-        url: datum['URL'],
-        tags: splitCommaValues(datum['Tags']),
-        donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
-    })).filter(x => x)
+    // RAFL Charity Data
+    console.log('Processing RAFL Charity data...')
+    const raflCharities = raflCharityData
+        .map(datum => ({
+            name: datum['Charity Name'],
+            url: datum['URL'],
+            tags: splitCommaValues(datum['Tags']),
+            donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
+        })).filter(x => x)
 
-fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
+    fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
+}
 
 console.log('Complete.')
 
