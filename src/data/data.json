@@ -7795,6 +7795,10 @@
       {
         "make": "ASSA",
         "model": "500"
+      },
+      {
+        "make": "Ruko",
+        "model": "500"
       }
     ],
     "version": "graduated spools",
@@ -7821,7 +7825,7 @@
       "ef221c67",
       "f2d41749"
     ],
-    "lastUpdated": "2024-01-17T15:21:42.548Z"
+    "lastUpdated": "2025-02-03T16:17:44.933Z"
   },
   {
     "id": "0b82681f",
