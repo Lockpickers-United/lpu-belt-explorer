@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
-import {raflJsonUrl, raflQuestionMap, raflResponseDetails} from '../data/dataUrls'
+import {raflPreviewPots, raflQuestionMap, raflResponseDetails} from '../data/dataUrls'
 import raflData from '../data/rafl.json'
 import raflCharities from '../data/raflCharities.json'
 import DBContext from '../app/DBContext.jsx'
@@ -31,7 +31,7 @@ export function RaffleProvider({children}) {
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
 
-    const {raflQuestionMap, raflResponseDetails, raflJsonUrl} = data || {}
+    const {raflQuestionMap, raflResponseDetails, raflPreviewPots} = data || {}
 
     const raflSummaryStats = useMemo(() => {
         const totalDonors = raflResponseDetails?.summaryData?.totalDonorCount
@@ -59,7 +59,7 @@ export function RaffleProvider({children}) {
 
     const allPots = useMemo(() => {
         const potEntries = preview && allDataLoaded
-            ? raflJsonUrl ?? []
+            ? raflPreviewPots ?? []
             : raflData
         return potEntries
             .map(entry => {
@@ -80,7 +80,7 @@ export function RaffleProvider({children}) {
                     sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber)
                 }
             })
-    }, [preview, allDataLoaded, raflJsonUrl, raflQuestionMap, potSummaryStats, lockCollection])
+    }, [preview, allDataLoaded, raflPreviewPots, raflQuestionMap, potSummaryStats, lockCollection])
 
     const charitySummaryStats = useMemo(() => {
         return raflResponseDetails
@@ -173,7 +173,7 @@ export function RaffleProvider({children}) {
 const urls = {
     raflQuestionMap,
     raflResponseDetails,
-    raflJsonUrl
+    raflPreviewPots
 }
 
 export default RaffleContext

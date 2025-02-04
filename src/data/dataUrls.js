@@ -20,7 +20,8 @@ export const siteFullNew = `${url}/statsSiteFullNew.json`
 
 export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
 
-export const raflJsonUrl = `${url}/rafl.json`
+export const raflSiteStats2025 = `${url}/statsSiteRafl2025.json`
+export const raflPreviewPots = `${url}/raflPreviewPots.json`
 export const raflQuestionMap = `${url}/raflQuestionMap.json`
 export const raflResponseDetails = `${url}/raflResponseDetails.json`
 export const raflCollectionDetails = `${url}/raflCollectionDetails.json`
