@@ -108,8 +108,8 @@ export default async function importRaflData() {
             ? '/home/dh_m5s5pf/explore.lpubelts.com/public/data'
             : './'
 
-        fs.writeFileSync(`${serverPath}/rafl.json`, JSON.stringify(raflMainData, null, 2))
-        fs.writeFileSync(`${serverPath}/raflCharities.json`, JSON.stringify(raflCharities, null, 2))
+        fs.writeFileSync(`${serverPath}/raflPreviewPots.json`, JSON.stringify(raflMainData, null, 2))
+        fs.writeFileSync(`${serverPath}/raflPreviewCharities.json`, JSON.stringify(raflCharities, null, 2))
 
     } catch (err) {
         console.log('err', err)
