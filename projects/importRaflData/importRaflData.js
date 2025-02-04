@@ -64,7 +64,7 @@ export default async function importRaflData() {
                 splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
                 splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
                 shippingType: datum['Shipping Type'],
-                winner: datum['Winner']
+                winner: splitCommaValues(datum['Winner'])
             })).filter(x => x)
 
         // RAFL Media data
