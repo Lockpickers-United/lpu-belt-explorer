@@ -878,7 +878,8 @@
     "belt": "White",
     "makeModels": [
       {
-        "model": "Tri-Nine Padlock"
+        "make": "Tri-Nine",
+        "model": "Brass Padlock"
       }
     ],
     "lockingMechanisms": [
@@ -897,7 +898,7 @@
       }
     ],
     "views": 7761,
-    "lastUpdated": "2023-07-25T11:20:19.881Z"
+    "lastUpdated": "2025-02-05T21:50:20.935Z"
   },
   {
     "id": "c7d2eca1",
@@ -10220,7 +10221,7 @@
     "belt": "Green",
     "makeModels": [
       {
-        "make": "Greenteq \"Q\"",
+        "make": "greenteQ",
         "model": "Standard"
       }
     ],
@@ -10279,7 +10280,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54268603356_7ed8aef37d_o.jpg"
       }
     ],
-    "lastUpdated": "2025-01-15T23:27:20.179Z"
+    "lastUpdated": "2025-02-05T21:50:20.939Z"
   },
   {
     "id": "07151e91",
@@ -20611,7 +20612,7 @@
         "model": "Professional Cylinder"
       },
       {
-        "make": "Federal Locks",
+        "make": "Federal Lock",
         "model": "U-systems (UCF/UCH/UCS/UUS)-3100"
       },
       {
@@ -20730,7 +20731,7 @@
       }
     ],
     "views": 1344,
-    "lastUpdated": "2024-12-04T02:26:32.408Z"
+    "lastUpdated": "2025-02-05T21:50:20.947Z"
   },
   {
     "id": "8f004bf0",
@@ -31197,7 +31198,7 @@
         "model": "dp10"
       },
       {
-        "make": "Trioving",
+        "make": "TrioVing",
         "model": "System 10"
       },
       {
@@ -31241,7 +31242,7 @@
       }
     ],
     "views": 1030,
-    "lastUpdated": "2025-01-12T17:30:04.062Z"
+    "lastUpdated": "2025-02-05T21:50:20.952Z"
   },
   {
     "id": "5b60be8a",
@@ -33697,7 +33698,7 @@
     "belt": "Red",
     "makeModels": [
       {
-        "make": "Miwa",
+        "make": "MIWA",
         "model": "SR"
       }
     ],
@@ -33766,7 +33767,7 @@
       }
     ],
     "views": 673,
-    "lastUpdated": "2024-07-12T20:01:50.456Z"
+    "lastUpdated": "2025-02-05T21:50:20.953Z"
   },
   {
     "id": "31431c49",
@@ -33848,7 +33849,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52757283498_34fb826827_o.jpg"
       },
       {
-        "title": "Michael Gilchrist Guts the Miwa U9",
+        "title": "Michael Gilchrist Guts the MIWA U9",
         "subtitle": "Lock Pickers United",
         "thumbnailUrl": "https://img.youtube.com/vi/OBM-sTvOUtM/0.jpg",
         "fullUrl": "https://www.youtube.com/watch?v=OBM-sTvOUtM",
@@ -33877,7 +33878,7 @@
       }
     ],
     "views": 942,
-    "lastUpdated": "2025-01-12T17:30:04.064Z"
+    "lastUpdated": "2025-02-05T21:50:20.953Z"
   },
   {
     "id": "cc8cfd45",
@@ -40028,7 +40029,7 @@
     "features": [
       "Partial gut"
     ],
-    "notes": "upgrade of Miwa PS",
+    "notes": "upgrade of MIWA PS",
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -40085,7 +40086,7 @@
       "21b61a85",
       "91f40022"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.028Z"
+    "lastUpdated": "2025-02-05T21:50:20.957Z"
   },
   {
     "id": "21b61a85",
@@ -40103,7 +40104,7 @@
     "features": [
       "Partial gut"
     ],
-    "notes": "upgrade of Miwa PS",
+    "notes": "upgrade of MIWA PS",
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -40154,7 +40155,7 @@
       "d0c510c5",
       "91f40022"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.028Z"
+    "lastUpdated": "2025-02-05T21:50:20.957Z"
   },
   {
     "id": "91f40022",
@@ -40172,7 +40173,7 @@
     "features": [
       "Partial gut"
     ],
-    "notes": "upgrade of Miwa PS",
+    "notes": "upgrade of MIWA PS",
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -40230,7 +40231,7 @@
       "d0c510c5",
       "21b61a85"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.028Z"
+    "lastUpdated": "2025-02-05T21:50:20.957Z"
   },
   {
     "id": "71c7270b",
@@ -40259,7 +40260,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52756135200_8bf312b74b_o.jpg"
       },
       {
-        "title": "Michael Gilchrist Guts the Miwa U9",
+        "title": "Michael Gilchrist Guts the MIWA U9",
         "subtitle": "Lock Pickers United",
         "thumbnailUrl": "https://img.youtube.com/vi/OBM-sTvOUtM/0.jpg",
         "fullUrl": "https://www.youtube.com/watch?v=OBM-sTvOUtM",
@@ -40305,7 +40306,7 @@
     "relatedIds": [
       "d1272b9f"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.267Z"
+    "lastUpdated": "2025-02-05T21:50:20.957Z"
   },
   {
     "id": "d1272b9f",
@@ -40355,7 +40356,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52817529206_6dea776692_o.jpg"
       },
       {
-        "title": "Michael Gilchrist Guts the Miwa U9",
+        "title": "Michael Gilchrist Guts the MIWA U9",
         "subtitle": "Lock Pickers United",
         "thumbnailUrl": "https://img.youtube.com/vi/OBM-sTvOUtM/0.jpg",
         "fullUrl": "https://www.youtube.com/watch?v=OBM-sTvOUtM",
@@ -40380,7 +40381,7 @@
     "relatedIds": [
       "71c7270b"
     ],
-    "lastUpdated": "2024-12-01T00:26:32.267Z"
+    "lastUpdated": "2025-02-05T21:50:20.958Z"
   },
   {
     "id": "ae7d3780",
