@@ -1,0 +1,1 @@
+import{j as e,R as r,$ as a,F as t,T as s}from"./index-f8c5aafa.js";import{u as o}from"./usePageTitle-d264875d.js";import"./useDocumentTitle-21250c22.js";function m(){return o("Leaderboard"),e.jsxs(r.Fragment,{children:[e.jsx(a,{}),e.jsx(t,{}),e.jsx(s,{feature:"leaderboard"})]})}export{m as default};

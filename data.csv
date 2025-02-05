@@ -17,7 +17,7 @@ White,"Master Lock",#6,"laminated brass",Pin-tumbler,Unguttable,,f10deed6
 White,"Master Lock",#7,,Pin-tumbler,Unguttable,,4bbeeb48
 White,"Master Lock",#8,"laminated brass",Pin-tumbler,Unguttable,,79adf554
 White,Timpson,"Special Brass Padlock",,Pin-tumbler,Unguttable,,36d4123c
-White,,"Tri-Nine Padlock",,Pin-tumbler,Unguttable,,2201a1b1
+White,Tri-Nine,"Brass Padlock",,Pin-tumbler,Unguttable,,2201a1b1
 Yellow,ABUS,55/30,,Pin-tumbler,Unguttable,,c7d2eca1
 Yellow,ABUS,64Ti/30,"30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,"Includes 64Ti/20, 64Ti/25, 64Ti/30",693abee0
 Yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
@@ -229,7 +229,7 @@ Green,FJM,Padlock,,"Disc detainer",,,639c4f0b
 Green,"Gege,Alfa","AP 1000,""AP 1000""",,Pin-tumbler,,,3129ee7e
 Green,Generic/Unknown,"4 Lever Curtained lock",,Lever,Curtain,,0e97c099
 Green,Generic/Unknown,"4 Lever Uncurtained lock",,Lever,Uncurtained,,d46ac711
-Green,"Greenteq ""Q""",Standard,6-pin,Pin-tumbler,,,c2125761
+Green,greenteQ,Standard,6-pin,Pin-tumbler,,,c2125761
 Green,GTV,APS,,Pin-tumbler,,,07151e91
 Green,GTV,Dimple,6-pin,Dimple,,,156734db
 Green,,"Guett Dern",,,,,3316c7d0
@@ -432,7 +432,7 @@ Purple,ASSA,Desmo,"8 sliders, 1-3 mastered",Slider,,,e2742f70
 Purple,ASSA,Guideline,"6 pin with active side pins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Sidepins",,122b5621
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
-Purple,"Avocet,ERA,Federal Locks,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
+Purple,"Avocet,ERA,Federal Lock,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
 Purple,"Bricard,ABUS","Chifral,EP10","all versions, <15 pins",Dimple,,,8f004bf0
 Purple,Bricard,Supersureté,,Wafer,,,98ba98ae
 Purple,Capitol,"magnetic cam lock",,Magnet,,,85591581
@@ -614,7 +614,7 @@ Red,ALPHA,FB,"≥12 pins",Dimple,"High pin count",,4223eb26
 Red,"ASSA,Ruko","600,600","6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,29ab2852
 Red,ASSA,700,"7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins",Pin-tumbler,"Tree drivers,Gin spool drivers,Undercut milling,Tapered drivers",,e3bd3faf
 Red,"ASSA,Ruko","700,700","with gin drivers and matched sleeve",Pin-tumbler,,,ef4e0295
-Red,"ASSA,ASSA,Trioving,Ruko","dp2400,dp10,System 10,DP2","6 pin 4 slider","Sidepins,Pin-tumbler","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
+Red,"ASSA,ASSA,TrioVing,Ruko","dp2400,dp10,System 10,DP2","6 pin 4 slider","Sidepins,Pin-tumbler","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
 Red,"Australian Lock Co.",BiLock,"12 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,5b60be8a
 Red,Banham,m2002,,Dimple,"Opposing overset stacks",,9eb3e9c4
 Red,BKS,Janus,"< 14 pins",Dimple,,,3af2407a
@@ -654,7 +654,7 @@ Red,"MIWA,MIWA","E6,83EC",,Magnet,"Magnetic pins",,9094ca58
 Red,MIWA,LS7,,Slider,"Sprung sliders",,814c5368
 Red,MIWA,PR,"<7 unmastered levers",Lever/sidebar,"Partial gut",,fdb68dc4
 Red,"MIWA,Tostem","PS,DN","7-8 unmastered levers",Lever/sidebar,,,550a0c9d
-Red,Miwa,SR,,Wafer,"Active sidebar",,31cd85d7
+Red,MIWA,SR,,Wafer,"Active sidebar",,31cd85d7
 Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
@@ -738,9 +738,9 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",Lockman,Megacross,"with pyramid drivers (SP?)",Dimple,"High pin count",,f1857cef
 "Black 1",MIWA,LB,,Slider,,,a2bd7f1e
 "Black 1",MIWA,LS10,,Slider,"Sprung sliders",,f0e31f32
-"Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",d0c510c5
-"Black 2",MIWA,PR,"9-10 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",21b61a85
-"Black 3",MIWA,PR,"11 unmastered elements",Lever/sidebar,"Partial gut","upgrade of Miwa PS",91f40022
+"Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of MIWA PS",d0c510c5
+"Black 2",MIWA,PR,"9-10 unmastered elements",Lever/sidebar,"Partial gut","upgrade of MIWA PS",21b61a85
+"Black 3",MIWA,PR,"11 unmastered elements",Lever/sidebar,"Partial gut","upgrade of MIWA PS",91f40022
 "Black 1",MIWA,U9,"8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
 "Black 2",MIWA,U9,"9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
 "Black 1","Mottura,Mottura,Mottura","Champions C43,Champions C44,Champions C48",,"Dimple,Other",Rotors,,ae7d3780
