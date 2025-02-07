@@ -28138,9 +28138,6 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "features": [
-      "Under Review ⚑"
-    ],
     "media": [
       {
         "title": "By: Melanie",
@@ -28179,7 +28176,7 @@
       }
     ],
     "views": 424,
-    "lastUpdated": "2024-03-29T20:50:58.759Z"
+    "lastUpdated": "2025-02-07T22:04:14.145Z"
   },
   {
     "id": "86e86a1d",
@@ -46858,6 +46855,33 @@
     ],
     "views": 282,
     "lastUpdated": "2024-07-12T01:23:04.313Z"
+  },
+  {
+    "id": "074db05e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Zarker",
+        "model": "J55/J55S"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
+    "features": [
+      "Rear tension"
+    ],
+    "notes": "Can be front tensioned and counterrotated",
+    "media": [
+      {
+        "title": "By: Moturist",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54313103836_b4fa023fed_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54313103836/in/album-72177720323672005/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54313103836_ac7f64a6a2_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-02-07T22:04:14.157Z"
   },
   {
     "id": "5e3397a9",

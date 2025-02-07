@@ -561,7 +561,7 @@ Brown,FAB,Dynamic,,"Slider,Pin-tumbler","Unsprung sliders",,e0255299
 Brown,"Federal Lock",11KDCF3110,,Pin-tumbler,,,e8150a27
 Brown,"Fichet,Fichet","450,484","with False gates, 4-6 mastered levers",Lever/sidebar,"False gates,Active sidebar",,58cbc037
 Brown,Fichet,666,,Slider,,,9c627ebd
-Brown,Fichet-Bauche,Monopole,,Pump/push,"Under Review ⚑",,3bd433d7
+Brown,Fichet-Bauche,Monopole,,Pump/push,,,3bd433d7
 Brown,"FTH Thirard",Cobra,,Pump/push,,,86e86a1d
 Brown,"FTH Thirard,Profalux","Surveyor,pump lock",,Pump/push,,,1f6cb393
 Brown,Fuki,Tierkey,,Dimple,"High pin count",,7298a640
@@ -879,4 +879,5 @@ Unranked,Yale,YE3B,,,"Under Review ⚑",,ad6b0d8f
 Unranked,Yardeni,10,,Dimple,"Under Review ⚑","9 pins, 2 spools more restricted keyway than XL model",0757b1ed
 Unranked,Yardeni,"Super XL",,Dimple,"Under Review ⚑","8 pin dimple with interactive element on the key",2b6dd267
 Unranked,Yardeni,XL,,Dimple,"Under Review ⚑","8 pin dimple with more restrictive keyway than 6 pin yardeni",a7ffa199
+Unranked,Zarker,J55/J55S,,"Disc detainer","Rear tension","Can be front tensioned and counterrotated",074db05e
 Unranked,Zeta,Padlock,,,"Under Review ⚑",,5e3397a9
