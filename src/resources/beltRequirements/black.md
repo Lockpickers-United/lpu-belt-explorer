@@ -1,5 +1,5 @@
 Zen music plays when you enter the room. You wake up from dreams in which you are trying to figure out ways to pick the
-unpickable. You have mentored two or more pickers at the brown and red belt levels and you have published the specs to
+unpickable. You have mentored two or more pickers at the brown and red belt levels, and you have published the specs to
 at least one custom tool of your own design.
 
 To earn a black belt, world-class picking is necessary but not sufficient. Mentoring others is necessary but not
@@ -42,7 +42,7 @@ is required to gut.
 Examples of "Extra Skills":
 
 - Group 2 safe lock manipulation
-  - Document the process for opening a Group 2 safe dial of easier type (eg. S&G 6700)
+  - Document the process for opening a Group 2 safe dial of easier type (e.g. S&G 6700)
 - Key impressioning
   - Blind impressioning of 5 or more pins, simple pin tumbler or dimple lock
 - Advanced and refined pick making

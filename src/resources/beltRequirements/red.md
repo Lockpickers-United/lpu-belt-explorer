@@ -1,7 +1,4 @@
-Ultra high security is your middle name. Your lock collection is worth more than
-your first car and you constantly troll eBay for deals on insane European locks.
-You are frequently making custom tools to pick difficult locks, and you are acting
-as a mentor to folks at the blue, purple and brown belt levels.
+Ultra-high security is your middle name. Your lock collection is worth more than your first car, and you constantly troll eBay for deals on insane European locks. You are frequently making custom tools to pick difficult locks, and you are acting as a mentor to folks at the blue, purple and brown belt levels.
 
 **Picking Requirements**
 
@@ -13,7 +10,7 @@ as a mentor to folks at the blue, purple and brown belt levels.
 - All previous non-picking requirements must have been fulfilled:
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
-  - Built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
+  - Built a "Challenge Lock" or completed similar project. *(Blue Belt Requirement)*
   - Made at least one specialized tool and publish the specs *(Brown Belt Requirement)*
 
 **Evidence Format**

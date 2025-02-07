@@ -14,7 +14,7 @@ keypins, and countermilling are the norm for you.
 - All previous non-picking requirements must have been fulfilled:
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
-  - Built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
+  - Built a "Challenge Lock" or completed similar project. *(Blue Belt Requirement)*
 
 **Evidence Format**
 
