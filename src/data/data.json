@@ -28643,7 +28643,7 @@
       "Sidepins"
     ],
     "features": [
-      "Rotating Fingerpins"
+      "Rotating fingerpins"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
@@ -28686,7 +28686,7 @@
     "relatedIds": [
       "34d27803"
     ],
-    "lastUpdated": "2025-02-08T00:56:26.739Z"
+    "lastUpdated": "2025-02-08T21:33:38.559Z"
   },
   {
     "id": "9659ad59",
@@ -30008,8 +30008,8 @@
     ],
     "version": "<3 barrels or gins with matched milling",
     "lockingMechanisms": [
-      "Sidepins",
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Sidepins"
     ],
     "media": [
       {
@@ -30059,7 +30059,7 @@
       "9da7a5f2",
       "112d0034"
     ],
-    "lastUpdated": "2024-04-16T18:36:32.145Z"
+    "lastUpdated": "2025-02-08T21:33:38.560Z"
   },
   {
     "id": "ea1afad0",
@@ -30079,7 +30079,7 @@
       "Sidepins"
     ],
     "features": [
-      "Rotating Fingerpins"
+      "Rotating fingerpins"
     ],
     "media": [
       {
@@ -30122,7 +30122,7 @@
       }
     ],
     "views": 3204,
-    "lastUpdated": "2025-02-08T00:56:26.740Z"
+    "lastUpdated": "2025-02-08T21:33:38.560Z"
   },
   {
     "id": "626da374",
@@ -32639,7 +32639,7 @@
       "Sidepins"
     ],
     "features": [
-      "Rotating Fingerpins"
+      "Rotating fingerpins"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
@@ -32703,7 +32703,7 @@
     "relatedIds": [
       "f38cafca"
     ],
-    "lastUpdated": "2025-02-08T00:56:26.741Z"
+    "lastUpdated": "2025-02-08T21:33:38.561Z"
   },
   {
     "id": "843896be",
@@ -34412,7 +34412,7 @@
       "Sidepins"
     ],
     "features": [
-      "Rotating Fingerpins"
+      "Rotating fingerpins"
     ],
     "media": [
       {
@@ -34493,7 +34493,7 @@
       }
     ],
     "views": 2369,
-    "lastUpdated": "2025-02-08T00:56:26.742Z"
+    "lastUpdated": "2025-02-08T21:33:38.562Z"
   },
   {
     "id": "80b0044b",
