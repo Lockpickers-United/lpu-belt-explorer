@@ -271,7 +271,7 @@ Green,Sargent,Mortise,"standard pins",Pin-tumbler,,,4071176d
 Green,Sargent,Mortise,"with security pins",Pin-tumbler,,,8f3f18d8
 Green,Schlage,Everest,,Pin-tumbler,,,ea1d1d8c
 Green,Sepa,5000,,Dimple,"High pin count","Three row dimple lock",a8fd470a
-Green,"Solon Super-Lock Company","Nix Pix",,"Pump/push,Sliders",,,2e5eeddb
+Green,"Solon Super-Lock Company","Nix Pix",,"Pump/push,Slider",,,2e5eeddb
 Green,Squire,440,"4 lever, pipe key",Lever,"Padlock,Pipe key,Uncurtained",,44bdfa06
 Green,Tokoz,Beta,,Pin-tumbler,Unguttable,,5260b396
 Green,Unity,"Disc Detainer Padlock",,"Disc detainer",,,06353788
@@ -540,7 +540,7 @@ Brown,Ankerslot,"Infinity K",,"Pin-tumbler,Magnet",,,5329b0f3
 Brown,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,f2d41749
 Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
 Brown,ASSA,Desmo,"8 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar",,1459e2c6
-Brown,"ASSA,ASSA,ASSA","Twin Combi,1800,4800","barrel drivers, 2 or 3 finger pins","Sidepins,Pin-tumbler,Sidebar","Barrel drivers,Serrated/threaded milling,Active sidebar,Rotating fingerpins",,fd7b514a
+Brown,"ASSA,ASSA,ASSA","Twin Combi,1800,4800","barrel drivers, 2 or 3 finger pins","Pin-tumbler,Sidepins,Sidebar","Barrel drivers,Serrated/threaded milling,Active sidebar,Rotating fingerpins",,fd7b514a
 Brown,"Australian Lock Co.",BiLock,"12 sliders, 5-6 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,9ed006d4
 Brown,"Australian Lock Co.",BiLock,"8 sliders, 0-2 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,0b1a28ce
 Brown,"Australian Lock Co.",Galaxy,,Other,,,33d6e0df
@@ -570,7 +570,7 @@ Brown,Gerda,HSS,,"Disc detainer","Rear tension,False gates","Can be picked with 
 Brown,"Gerda,Gerda","Tytan ZX,Rim 6000",,Dimple,"High pin count",,2929f922
 Brown,GOAL,D9,"9 pin",Dimple,"Overmilling,Torpedo keypins,High pin count",,7194cc26
 Brown,GOAL,P,"6 pin",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut milling",,a1233156
-Brown,IKON,"tk5 sperwellenprofil","with smooth fingerpins","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",f38cafca
+Brown,IKON,"tk5 sperwellenprofil","with smooth fingerpins","Pin-tumbler,Sidepins","Rotating Fingerpins","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",f38cafca
 Brown,iNAHO,Tierkey,,Dimple,,,9659ad59
 Brown,,Izis,,Pump/push,,,d64be6f7
 Brown,JPM,405,,Pump/push,,,1ee01369
@@ -596,7 +596,7 @@ Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
 Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, 5 serrated drivers",Dimple,Pin-in-pin,,5c5701d7
 Brown,Pollux,7,,Pump/push,,,cc5bbb68
 Brown,Robur,"2391 Safe Deposit Lock","<3 barrels or gins with matched milling","Sidepins,Pin-tumbler",,,94ee12b7
-Brown,"Schlage,Schlage","Primus,Everest Primus",,"Sidepins,Pin-tumbler",,,ea1afad0
+Brown,"Schlage,Schlage","Primus,Everest Primus",,"Pin-tumbler,Sidepins","Rotating Fingerpins",,ea1afad0
 Brown,"Scorpion,Marks","CX-5,High Security Lock",,"Pin-tumbler,Slider","Gin spool drivers,Active sidebar,Unsprung sliders,False gates,Undercut milling",,626da374
 Brown,"STS,TESA,TESA","T-10,T-10,T-12",,Dimple,"Opposing overset stacks,Interactive element","5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",0bc03ee8
 Brown,U-Shin,"Showa NX","<13 pins",Dimple,,,b91890bf
@@ -614,7 +614,7 @@ Red,ALPHA,FB,"≥12 pins",Dimple,"High pin count",,4223eb26
 Red,"ASSA,Ruko","600,600","6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,29ab2852
 Red,ASSA,700,"7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins",Pin-tumbler,"Tree drivers,Gin spool drivers,Undercut milling,Tapered drivers",,e3bd3faf
 Red,"ASSA,Ruko","700,700","with gin drivers and matched sleeve",Pin-tumbler,,,ef4e0295
-Red,"ASSA,ASSA,TrioVing,Ruko","dp2400,dp10,System 10,DP2","6 pin 4 slider","Sidepins,Pin-tumbler","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
+Red,"ASSA,ASSA,TrioVing,Ruko","dp2400,dp10,System 10,DP2","6 pin 4 slider","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
 Red,"Australian Lock Co.",BiLock,"12 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,5b60be8a
 Red,Banham,m2002,,Dimple,"Opposing overset stacks",,9eb3e9c4
 Red,BKS,Janus,"< 14 pins",Dimple,,,3af2407a
@@ -636,7 +636,7 @@ Red,"FTH Thirard",Pacific,,Pump/push,,,a57c1e9b
 Red,"GOAL,GOAL","V18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
 Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut milling",,937eb7a8
 Red,Hori,Trident,spools,Dimple,,,49b2c746
-Red,IKON,"tk5 sperwellenprofil","with serrated fingerpins","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",34d27803
+Red,IKON,"tk5 sperwellenprofil","with serrated fingerpins","Pin-tumbler,Sidepins","Rotating Fingerpins","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",34d27803
 Red,IKON,Verso,,Slider,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",843896be
 Red,Kaba,14,"13+ pins",Dimple,"High pin count",,aa4c402d
 Red,"Kaba,MIWA,Kaba","20,JN,Star","4 directions, < 15 pins",Dimple,"High pin count",,eed91da5
@@ -664,7 +664,7 @@ Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling"
 Red,Robur,"2391 Safe Deposit Lock","gins ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,112d0034
 Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no False gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
 Red,"S&G,S&G","4544,4440 series",,Lever,"Safe lock,Flat steel key,False gates","S&G=Sargent & Greenleaf",2ff8a738
-Red,Schlage,"Everest 29 SL Primus XP",,Slider,,,cf76cfde
+Red,Schlage,"Everest 29 SL Primus XP",,"Slider,Sidepins","Rotating Fingerpins",,cf76cfde
 Red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
 Red,,Tann,"10 lever",Lever,"Safe lock,False gates",,b5df156e
 Red,"Tann,Chubb","Detector,Detector from 1950's",,Lever,"Various formats,False gates","Usually 5 levers",69668831
@@ -708,7 +708,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",EVVA,Dual,"1-4 mastered elements",Slider,"Active sidebar,False gates",,1e197456
 "Black 2",EVVA,Dual,"0 (zero) mastered elements",Slider,"False gates,Active sidebar",,533c7408
 "Black 1",EVVA,ICS,"1-2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,db749615
-"Black 2",EVVA,ICS,"0 (zero) mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,8ea170d2
+"Black 2",EVVA,ICS,"0 (zero) mastered elements","Pin-tumbler,Slider","False gates,Active sidebar",,8ea170d2
 "Black 3","EVVA,EVVA,IKON","MCS gen 1,MCS gen 2,M",,"Pin-tumbler,Magnet","Magnetic rotors","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",5ab25363
 "Black 1","Fichet,Fichet","450,484","w/ False gates, 1 mastered lever",Lever/sidebar,"False gates,Active sidebar",,4abcb403
 "Black 2","Fichet,Fichet","450,484","w/ False gates, 0 mastered levers",Lever/sidebar,"False gates,Active sidebar",,340154fa
@@ -721,9 +721,9 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2","GOAL,GOAL","V18,GP","≥17 pins",Dimple,"Overmilling,High pin count,Torpedo keypins",,109531f4
 "Black 1",GOAL,Z,"< 2 standard drivers",Pin-tumbler,"Gin spool drivers,Torpedo keypins,Overmilling,Undercut milling",,5103e650
 "Black 2",Hori,Trident,"T-spool drivers",Dimple,"High pin count,Torpedo keypins",,e8c7dd5b
-"Black 2",IKON,"SK6 Sperrwelle Extra Code","6 pin with 5 finger pins","Sidepins,Pin-tumbler","Rotating fingerpins,Active sidebar,Tapered drivers","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",108549ba
+"Black 2",IKON,"SK6 Sperrwelle Extra Code","6 pin with 5 finger pins","Pin-tumbler,Sidepins","Rotating fingerpins,Active sidebar,Tapered drivers","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON); upgrade of TK5 Sperrwellenprofil)",108549ba
 "Black 1",IKON,WSW,"5 sliders","Pin-tumbler,Slider","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",7e967792
-"Black 2",IKON,WSW,"7 sliders, upgrade of WSW with 5 sliders","Pin-tumbler,Sidepins","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",c9494ee8
+"Black 2",IKON,WSW,"7 sliders, upgrade of WSW with 5 sliders","Pin-tumbler,Slider","High pin count,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",c9494ee8
 "Black 1","JPM,Ruko","Surf,Combi Plus","6 pin with 5 side pins with 3 possible heights each","Pin-tumbler,Sidepins","Sidepins,Active sidebar,Barrel drivers,Serrated/threaded milling",,0082fa4c
 "Black 1","Kaba,MIWA,Kaba","20,JN,Star","4 directions, ≥ 15 pins",Dimple,"High pin count",,8f99236e
 "Black 1",Kaba,Matrix,"16 pins (fully pinned)",Dimple,"High pin count","High pin count",7d5c53c4
