@@ -12,7 +12,7 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 
 **Blue Belt Project Requirements** (Updated February 2025)
 
-To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We recognize that this is a diverse community and encourage new and creative approaches.** You can choose from a variety of projects, please see/click below for the "Blue Belt Project Requirements" section with detailed information. Accepted projects include:
+To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
 
 - Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker. Please see/click below for the "Challenge Lock Requirements" section with detailed information.
 
@@ -24,7 +24,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 
 - Picking Any Lever Lock with Homemade Wires: Use self-made tools to pick a lever lock.
 
-- Homemade Tension Tool: Design and build a functional tension tool for lockpicking - note this needs to be a useful item for long-term use. #NoPaperclips.
+- Homemade Tension Tool: Design and build a functional tension tool for lockpicking - note this needs to be a useful item for long-term use. Please see/click below for the "Homemade Tension Tool Requirements" section with detailed information. #NoPaperclips.
 
 - New Pinning Tray Designed and Made: Create a custom pinning tray for organizing lock components.
 
