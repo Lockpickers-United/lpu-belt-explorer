@@ -1477,17 +1477,13 @@ Number of modifications must  **total or exceed SIX**  and may include any or al
 
 Stipulations:
 
-- Each  **"turned, sculpted or shaped" key pin**  counts as one modification. Pins must be shaped BY the builder,  **
-  removing no less than 15%**  of the original material
-- Each  **"turned, sculpted or shaped" driver pin**  counts as one modification. Pins must be shaped BY the builder,  **
-  removing no less than 15%**  of the original material
-- **Pin-in-pin**  counts as one "turned, sculpted or shaped" pin per pin modified. Shaping a pin and also making it
-  pin-in-pin does not count as two modifications
+- Each  **"turned, sculpted or shaped" key pin**  counts as one modification. Pins must be shaped BY the builder,  **removing no less than 15%**  of the original material
+- Each  **"turned, sculpted or shaped" driver pin**  counts as one modification. Pins must be shaped BY the builder,  **removing no less than 15%**  of the original material
+- **Pin-in-pin**  counts as one "turned, sculpted or shaped" pin per pin modified. Shaping a pin and also making it pin-in-pin does not count as two modifications
 - **Chamber threading**  counts as one "modification" regardless of the number of chambers augmented
 - **Chamber counter-milling**  counts as one "modification" regardless of the number of chambers augmented
 - Each  **improvised secondary locking mechanism**  counts as one modification (latches, check pins, etc.)
-- **"Distinguishing mark" engraved into the lock**  counts as one modification (**Simple scratches do not count**.
-  Engraving must be a symbol or mark of the maker)
+- **"Distinguishing mark" engraved into the lock**  counts as one modification (**Simple scratches do not count**. Engraving must be a symbol or mark of the maker)
 - **Hand cut key** counts as one "modification". The key must be cut using hand tools from a blank, and must be a
   reasonable bitting. Locks made with 0-bitted, or minimally bitted keys do not count.
 
