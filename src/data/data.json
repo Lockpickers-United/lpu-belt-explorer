@@ -12042,7 +12042,7 @@
     ],
     "lockingMechanisms": [
       "Pump/push",
-      "Sliders"
+      "Slider"
     ],
     "media": [
       {
@@ -12102,7 +12102,7 @@
       }
     ],
     "views": 435,
-    "lastUpdated": "2024-09-12T02:37:13.744Z"
+    "lastUpdated": "2025-02-08T00:56:26.729Z"
   },
   {
     "id": "44bdfa06",
@@ -26974,8 +26974,8 @@
     ],
     "version": "barrel drivers, 2 or 3 finger pins",
     "lockingMechanisms": [
-      "Sidepins",
       "Pin-tumbler",
+      "Sidepins",
       "Sidebar"
     ],
     "features": [
@@ -27049,7 +27049,7 @@
       }
     ],
     "views": 1565,
-    "lastUpdated": "2025-01-12T17:30:04.059Z"
+    "lastUpdated": "2025-02-08T00:56:26.738Z"
   },
   {
     "id": "9ed006d4",
@@ -28642,6 +28642,9 @@
       "Pin-tumbler",
       "Sidepins"
     ],
+    "features": [
+      "Rotating Fingerpins"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
       {
@@ -28683,7 +28686,7 @@
     "relatedIds": [
       "34d27803"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.024Z"
+    "lastUpdated": "2025-02-08T00:56:26.739Z"
   },
   {
     "id": "9659ad59",
@@ -30072,8 +30075,11 @@
       }
     ],
     "lockingMechanisms": [
-      "Sidepins",
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "features": [
+      "Rotating Fingerpins"
     ],
     "media": [
       {
@@ -30116,7 +30122,7 @@
       }
     ],
     "views": 3204,
-    "lastUpdated": "2024-02-21T17:31:01.895Z"
+    "lastUpdated": "2025-02-08T00:56:26.740Z"
   },
   {
     "id": "626da374",
@@ -31205,8 +31211,8 @@
     ],
     "version": "6 pin 4 slider",
     "lockingMechanisms": [
-      "Sidepins",
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Sidepins"
     ],
     "features": [
       "Barrel drivers",
@@ -31239,7 +31245,7 @@
       }
     ],
     "views": 1030,
-    "lastUpdated": "2025-02-05T21:50:20.952Z"
+    "lastUpdated": "2025-02-08T00:56:26.741Z"
   },
   {
     "id": "5b60be8a",
@@ -32632,6 +32638,9 @@
       "Pin-tumbler",
       "Sidepins"
     ],
+    "features": [
+      "Rotating Fingerpins"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
       {
@@ -32694,7 +32703,7 @@
     "relatedIds": [
       "f38cafca"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.026Z"
+    "lastUpdated": "2025-02-08T00:56:26.741Z"
   },
   {
     "id": "843896be",
@@ -34399,7 +34408,11 @@
       }
     ],
     "lockingMechanisms": [
-      "Slider"
+      "Slider",
+      "Sidepins"
+    ],
+    "features": [
+      "Rotating Fingerpins"
     ],
     "media": [
       {
@@ -34480,7 +34493,7 @@
       }
     ],
     "views": 2369,
-    "lastUpdated": "2025-01-12T17:30:04.064Z"
+    "lastUpdated": "2025-02-08T00:56:26.742Z"
   },
   {
     "id": "80b0044b",
@@ -37663,8 +37676,8 @@
     ],
     "version": "0 (zero) mastered elements",
     "lockingMechanisms": [
-      "Slider",
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Slider"
     ],
     "features": [
       "False gates",
@@ -37732,7 +37745,7 @@
       "6852489f",
       "db749615"
     ],
-    "lastUpdated": "2023-11-23T18:53:56.027Z"
+    "lastUpdated": "2025-02-08T00:56:26.744Z"
   },
   {
     "id": "5ab25363",
@@ -38814,8 +38827,8 @@
     ],
     "version": "6 pin with 5 finger pins",
     "lockingMechanisms": [
-      "Sidepins",
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Sidepins"
     ],
     "features": [
       "Rotating fingerpins",
@@ -38889,7 +38902,7 @@
       }
     ],
     "views": 1748,
-    "lastUpdated": "2024-01-18T11:44:42.996Z"
+    "lastUpdated": "2025-02-08T00:56:26.745Z"
   },
   {
     "id": "7e967792",
@@ -38992,7 +39005,7 @@
     "version": "7 sliders, upgrade of WSW with 5 sliders",
     "lockingMechanisms": [
       "Pin-tumbler",
-      "Sidepins"
+      "Slider"
     ],
     "features": [
       "High pin count",
@@ -39060,7 +39073,7 @@
     "relatedIds": [
       "7e967792"
     ],
-    "lastUpdated": "2024-02-08T02:04:15.210Z"
+    "lastUpdated": "2025-02-08T00:56:26.745Z"
   },
   {
     "id": "0082fa4c",
