@@ -138,8 +138,8 @@ Safe dials should have the code set by another source (does not have to be an LP
 
 ### Tool Making
 
-- **Tier 1** - Portfolio of 2 good quality specialized tools
-- **Tier 2** - Portfolio of at least 3 unique tools plus unusual designs or artistic merit
+- **Tier 1** - Portfolio of 2 good quality specialized tools.
+- **Tier 2** - Portfolio of at least 3 unique tools plus unusual designs or artistic merit.
 - **Tier 3** - Portfolio of at least 5 tools, including some with new innovations or high level artistic/production merit.
 - **Tier 4** - Portfolio of at least 7 tools, including reproducing accurately at least two reasonably identical tools or producing a set of two or more tools with a (well planned and easily identifiable) theme at a high technical and artistic level. Examples of tools made of different groups of materials or components that demonstrate a high caliber of skills in a variety of advanced techniques. An emerging brand identity.
 - **Tier 5** - Portfolio of at least 10 high quality tools that utilize a multitude of techniques both basic and advanced in nature, ability to reproduce tools with high accuracy. A well-defined and refined brand identity.
@@ -147,6 +147,7 @@ Safe dials should have the code set by another source (does not have to be an LP
 
 ### Other Master's Projects
 
-Other projects may be evaluated for Dan points on a case by case basis. 
+- Other projects may be evaluated for Dan points on a case by case basis. 
 
 
+##### Updated: Feb. 9, 2025

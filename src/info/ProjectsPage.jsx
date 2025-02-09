@@ -10,7 +10,6 @@ import projectsMd from '../resources/projects.md?raw'
 import '../resources/md-tables.css'
 
 export default function ProjectsPage() {
-    const updateTime = '7/23/2024'
 
     return (
         <React.Fragment>
@@ -28,7 +27,6 @@ export default function ProjectsPage() {
                     </ReactMarkdown>
                 </CardContent>
                 <CardActions>
-                    Updated: {updateTime}
                 </CardActions>
             </Card>
         </React.Fragment>
