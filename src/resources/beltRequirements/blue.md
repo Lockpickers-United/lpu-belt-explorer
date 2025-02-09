@@ -12,19 +12,19 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 
 **Blue Belt Project Requirements** (Updated February 2025)
 
-To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
+To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please be sure to see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
 
-- Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker. Please see/click below for the "Challenge Lock Requirements" section with detailed information.
+- Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker.
+
+- Lock Write-Up: Provide a detailed breakdown of a lock, its design, pins, security features, and picking techniques.
 
 - First Public Pick of a Lock: Successfully pick a lock that has not been picked before (i.e., the first pick of a lock model, brand, or specific design).
-
-- Lock Write-Up: Provide a detailed breakdown of a lock, its design, pins, security features, and picking techniques. Please see/click below for the "Blue Belt Submission Requirements" section with detailed information.
 
 - Combination Lock Decoded: Show a video of successfully decoding a combination lock.
 
 - Picking Any Lever Lock with Homemade Wires: Use self-made tools to pick a lever lock.
 
-- Homemade Tension Tool: Design and build a functional tension tool for lockpicking - note this needs to be a useful item for long-term use. Please see/click below for the "Homemade Tension Tool Requirements" section with detailed information. #NoPaperclips.
+- Homemade Tension Tool: Design and build a functional tension tool for lockpicking - note this needs to be a useful item for long-term use. #NoPaperclips.
 
 - New Pinning Tray Designed and Made: Create a custom pinning tray for organizing lock components.
 
