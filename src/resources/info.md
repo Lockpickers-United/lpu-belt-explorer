@@ -234,7 +234,7 @@ Tension tools for the Blue Belt project need to have **at least three** of the f
 
 This detailed write-up of the ASSA Desmo is a perfect example of what we are looking for: [https://assamow.com/desmow-rev-1.4.pdf](https://assamow.com/desmow-rev-1.4.pdf). Make sure that you describe the security features, potential flaws or limits, and give a general overview of the lock and how it works.
 
-### Guide to Documenting the First Pick of an Unknown Lock
+### Documenting the First Pick of an Unknown Lock
 
 Note: If the lock is a standard form pin tumbler lock it should have 5 pins or more, or be of unique interest. (Sorry, no dollar-store clones)
 
@@ -244,9 +244,6 @@ Note: If the lock is a standard form pin tumbler lock it should have 5 pins or m
 4. Gut the Lock (If Possible) -  Show the lock being disassembled, ensuring no modifications were made. Identify Components. Consider Measuring Key Components. If the lock cannot be gutted, use a bright light into the keyway and use a borescope if available.
 5. Document the Findings - Summarize your findings in a write-up including suggestions on difficulty, etc.
 6. Share with the Lockpicking Community - Share on YouTube or social media to document for future reference. Submit to databases like LockWiki and lpubelts.com if the lock is of significant interest.
-
-
-
 
 
 ----------
