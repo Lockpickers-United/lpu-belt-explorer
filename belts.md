@@ -514,19 +514,19 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 
 **Blue Belt Project Requirements** (Updated February 2025)
 
-To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
+To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please be sure to see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
 
-- Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker. Please see/click below for the "Challenge Lock Requirements" section with detailed information.
+- Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker.
+
+- Lock Write-Up: Provide a detailed breakdown of a lock, its design, pins, security features, and picking techniques.
 
 - First Public Pick of a Lock: Successfully pick a lock that has not been picked before (i.e., the first pick of a lock model, brand, or specific design).
-
-- Lock Write-Up: Provide a detailed breakdown of a lock, its design, pins, security features, and picking techniques. Please see/click below for the "Blue Belt Submission Requirements" section with detailed information.
 
 - Combination Lock Decoded: Show a video of successfully decoding a combination lock.
 
 - Picking Any Lever Lock with Homemade Wires: Use self-made tools to pick a lever lock.
 
-- Homemade Tension Tool: Design and build a functional tension tool for lockpicking - note this needs to be a useful item for long-term use. Please see/click below for the "Homemade Tension Tool Requirements" section with detailed information. #NoPaperclips.
+- Homemade Tension Tool: Design and build a functional tension tool for lockpicking - note this needs to be a useful item for long-term use. #NoPaperclips.
 
 - New Pinning Tray Designed and Made: Create a custom pinning tray for organizing lock components.
 
@@ -1474,6 +1474,8 @@ For submissions, please follow these guidelines:
 
 ## Blue Belt Project Requirements
 
+To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these project**. If you have an idea for another project you would like to complete that’s not listed here, contact us through modmail or #mod-requests on Discord to discuss it.
+
 ### Challenge Lock Requirements
 
 Blue Belt requests require that you have completed and advanced project, which may be a custom pinned "Challenge Lock" shared with another picker (Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you to the fun of exchanging locks designed not for security but specifically to defeat picking.
@@ -1523,6 +1525,20 @@ Tension tools for the Blue Belt project need to have **at least three** of the f
 ### Example Lock Write-up
 
 This detailed write-up of the ASSA Desmo is a perfect example of what we are looking for: [https://assamow.com/desmow-rev-1.4.pdf](https://assamow.com/desmow-rev-1.4.pdf). Make sure that you describe the security features, potential flaws or limits, and give a general overview of the lock and how it works.
+
+### Guide to Documenting the First Pick of an Unknown Lock
+
+Note: If the lock is a standard form pin tumbler lock it should have 5 pins or more, or be of unique interest. (Sorry, no dollar-store clones)
+
+1. Provide Context for the Lock - Brand, model, origin, use case, manufacturer info, dimensions, material, keyway, mechanism, unusual features.
+2. Show the Lock Before Picking - Show lock and key if possible.
+3. Record a Continuous Picking Attempt - show special tools etc. clearly.
+4. Gut the Lock (If Possible) -  Show the lock being disassembled, ensuring no modifications were made. Identify Components. Consider Measuring Key Components. If the lock cannot be gutted, use a bright light into the keyway and use a borescope if available.
+5. Document the Findings - Summarize your findings in a write-up including suggestions on difficulty, etc.
+6. Share with the Lockpicking Community - Share on YouTube or social media to document for future reference. Submit to databases like LockWiki and lpubelts.com if the lock is of significant interest.
+
+
+
 
 
 ----------
