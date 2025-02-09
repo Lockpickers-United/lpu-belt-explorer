@@ -41,20 +41,32 @@ function InfoPage() {
         )
     }
 
-    const sections = ['Earn Lockpicking Karate Flair', 'Belt Request Instructions', 'FAQ', 'General Rules', 'Video Requirements', 'Blue Belt Project Requirements', 'SFIC Filming Requirements', 'Changes to Lock Rankings']
+    const sections = [
+        'Earn Lockpicking Karate Flair',
+        'Belt Request Instructions',
+        'FAQ',
+        'General Rules',
+        'Video Requirements',
+        'Blue Belt Project Requirements',
+        'SFIC Filming Requirements',
+        'Changes to Lock Rankings'
+    ]
     const toc = sections.map(section => {
         const id = section.toLowerCase().replace(/ /g, '-')
         return (
-            <li key={id}><Link onClick={() => scrollIntoView(id)}
-                               style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>{section}</Link></li>
+            <li key={id}>
+                <Link onClick={() => scrollIntoView(id)}
+                       style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>{section}</Link>
+            </li>
         )
     })
 
     const scrollIntoView = (id) => {
-        document.getElementById(id).scrollIntoView({behavior: 'smooth', block: 'start'})
-        document.getElementById(id).scrollBy({   // doesn't work
-            top: -100,
-            left: 0
+        const domElement = document.getElementById(id)
+        window.scrollTo({
+            left: 0,
+            top: domElement.offsetTop - 75,
+            behavior: 'smooth'
         })
     }
 
