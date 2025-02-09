@@ -43,6 +43,21 @@ function ToolsRoute() {
                     </Link><br/>
                     Compares charity info from site and form to find mismatches.
                 </div>
+
+                <div style={{marginTop: 20, backgroundColor: '#222', padding: 30}}>
+                    <Link onClick={() => navigate('/beltsMarkdown')}
+                          style={{
+                              color: '#fff',
+                              textDecorationColor: '#bbb',
+                              cursor: 'pointer',
+                              fontSize: '1.1rem',
+                              fontWeight: 700
+                          }}>
+                        Export Belt Requirements Markdown
+                    </Link><br/>
+                    Preview Belt Requirements and export them to clipboard/markdown file.
+                </div>
+
             </div>
             <Footer/>
             <Tracker feature='flickrInfo'/>

@@ -100,6 +100,13 @@ export default [
         }
     },
     {
+        path: '/beltsMarkdown',
+        lazy: async () => {
+            const {default: BeltsMarkdownRoute} = await import('../info/BeltsMarkdownRoute')
+            return {element: <BeltsMarkdownRoute/>}
+        }
+    },
+    {
         path: '/dans',
         lazy: async () => {
             const {default: DansRoute} = await import('../info/DansRoute')

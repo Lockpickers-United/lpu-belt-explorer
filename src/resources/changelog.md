@@ -1,3 +1,22 @@
+## Changes to Lock Rankings
+
+From time to time we may change the rankings of certain locks. These changes may be due to refined or new picking
+techniques making locks that were once difficult to pick, less so, or simply because we've decided they were improperly
+ranked in the first place.
+
+If a lock moves up a rank (e.g. from yellow belt to orange belt) that change will take effect immediately. If you notice
+a lock you picked last week has been moved up a rank and would now qualify you for a higher belt rank, do request the
+new rank.
+
+If a lock moves down a rank (e.g. from orange belt to yellow belt) and you've already picked it, fear not, you've earned
+that rank, and we have no intention to revoke a belt rank that was well-earned. We also understand that some locks
+require a significant financial and time investment, and you may have already purchased a lock and started working on it
+before we announced the lock is being reclassified. When we move a lock down a rank, we will make every effort to state
+that we are doing so publicly, and provide an appropriate grace period (generally one month) to allow anyone currently
+working on that lock to have time to get their accomplishment ranked at the old belt level.
+
+Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
+
 ### November - December 2024
 
 **NEW ADDITIONS**
