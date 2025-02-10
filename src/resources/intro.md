@@ -96,4 +96,4 @@ Once your post is live, send a modmail to the r/lockpicking subreddit with a lin
 
 ### Brown & Black Belt Request Submissions
 
-Please note that Brown and Black Belt requests also use a different structure to accomodate the requirements for those belts. Once your videos and **[Tier 2 Project](/#/projects)** are ready, you need to submit a request with sufficient detail to document your project. Please be sure to follow the general requirements above. Contact a mod through #mod-requests or Modmail if you have questions about the information required. Please be sure to follow the general requirements above.
+Please note that Brown and Black Belt requests also use a different structure to accomodate the requirements for those belts. Once your videos and Epic Quests ([Tier 2 Projects](/#/projects) and/or additional Black Belt locks) are ready, you need to submit a request with sufficient detail to document your project. Please be sure to follow the general requirements above. Contact a mod through #mod-requests or Modmail if you have questions about the information required. Please be sure to follow the general requirements above.
