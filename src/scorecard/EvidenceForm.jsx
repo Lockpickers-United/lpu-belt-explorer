@@ -191,7 +191,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
                         disableFuture
                     />
 
-                    {!awardMode &&
+                    {(!awardMode && !addProject) &&
                         <TextField
                             select
                             style={{marginLeft: 30, width: 250}}
