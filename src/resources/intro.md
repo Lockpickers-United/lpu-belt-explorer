@@ -69,12 +69,12 @@ Specific instructions for submitting your request through Reddit and Discord are
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 ```
- @LPUBeltBot request BLUE [Link to Lock picking video] + [Link to documentation of your Project Type]
+ @LPUBeltBot request BLUE [Link to picking video] + [Link to Project documentation]
 ```
 
 If you wish to sync the belt to your user on Reddit you should use the following structure:
 ```
- @LPUBeltBot request BLUE sync to /u/redditusername [Link to Pick & Gut video] + [Link to Documentation of Your Project]
+ @LPUBeltBot request BLUE sync to /u/redditusername [Link to picking video] + [Link to Project documentation]
 ```
 
 #### Posting Your Blue Belt Request on Reddit
@@ -93,3 +93,7 @@ Post Content:
 Once your post is live, send a modmail to the r/lockpicking subreddit with a link to your post. The mods will review your submission and award your belt if it meets the requirements.
 
 *Note:* Your Reddit account must be **at least 30 days old** and have **some post/comment history** to prevent spam issues.
+
+### Brown & Black Belt Request Submissions
+
+Please note that Brown and Black Belt requests also use a different structure to accomodate the requirements for those belts. Once your videos and **[Tier 2 Project](/#/projects)** are ready, you need to submit a request with sufficient detail to document your project. Please be sure to follow the general requirements above. Contact a mod through #mod-requests or Modmail if you have questions about the information required. Please be sure to follow the general requirements above.

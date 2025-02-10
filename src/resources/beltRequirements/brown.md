@@ -10,7 +10,9 @@ keypins, and countermilling are the norm for you.
 
 **Non-Picking Requirements**
 
-- Make at least one specialized tool and publish the specs
+- Complete a Project/Quest at **Tier 1** level or above.
+  - **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
+
 - All previous non-picking requirements must have been fulfilled:
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*

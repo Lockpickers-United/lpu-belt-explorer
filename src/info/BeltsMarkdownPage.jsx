@@ -87,6 +87,7 @@ function BeltsMarkdownPage() {
         footerMd
     ].join('\n\n---\n\n')
 
+    const markdownLinks = markdown.replace(/(\/#\/\w*)/g, 'https://lpubelts.com$1')
 
     return (
         <React.Fragment>
@@ -121,7 +122,7 @@ function BeltsMarkdownPage() {
                 marginBottom: 16
             }}>
                 <CardHeader title='Belt Requirements' action={
-                    <CopyMarkdownButton content={markdown}/>
+                    <CopyMarkdownButton content={markdownLinks}/>
                 }/>
                 <CardContent>
 
@@ -133,7 +134,7 @@ function BeltsMarkdownPage() {
                                 rel: ['nofollow', 'noopener', 'noreferrer']
                             }]]}>{markdown.replace(/!\[]\(%%\w*%%\)/g, '')}</ReactMarkdown>
                         : <div style={{fontSize: '0.9rem'}}>
-                            <pre>{markdown}</pre>
+                            <pre>{markdownLinks}</pre>
                         </div>
                     }
                 </CardContent>
