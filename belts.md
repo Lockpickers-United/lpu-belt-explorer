@@ -69,12 +69,12 @@ Specific instructions for submitting your request through Reddit and Discord are
 
 All requests are made in #belt-requests throught the belt bot using the following structure:
 ```
- @LPUBeltBot request BLUE [Link to Lock picking video] + [Link to documentation of your Project Type]
+ @LPUBeltBot request BLUE [Link to picking video] + [Link to Project documentation]
 ```
 
 If you wish to sync the belt to your user on Reddit you should use the following structure:
 ```
- @LPUBeltBot request BLUE sync to /u/redditusername [Link to Pick & Gut video] + [Link to Documentation of Your Project]
+ @LPUBeltBot request BLUE sync to /u/redditusername [Link to picking video] + [Link to Project documentation]
 ```
 
 #### Posting Your Blue Belt Request on Reddit
@@ -94,6 +94,9 @@ Once your post is live, send a modmail to the r/lockpicking subreddit with a lin
 
 *Note:* Your Reddit account must be **at least 30 days old** and have **some post/comment history** to prevent spam issues.
 
+### Brown & Black Belt Request Submissions
+
+Please note that Brown and Black Belt requests also use a different structure to accomodate the requirements for those belts. Once your videos and **[Tier 2 Project](/#/projects)** are ready, you need to submit a request with sufficient detail to document your project. Please be sure to follow the general requirements above. Contact a mod through #mod-requests or Modmail if you have questions about the information required. Please be sure to follow the general requirements above.
 
 ---
 
@@ -843,7 +846,9 @@ keypins, and countermilling are the norm for you.
 
 **Non-Picking Requirements**
 
-- Make at least one specialized tool and publish the specs
+- Complete a Project/Quest at **Tier 1** level or above.
+  - **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
+
 - All previous non-picking requirements must have been fulfilled:
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
@@ -1066,7 +1071,7 @@ is required to gut.
 **Non-Picking Requirements**
 
 - Mentor at least **two** advanced pickers through the process of getting into a difficult lock.
-- Complete at least two of the "Epic Quest Options" listed below.
+- Complete **two** of the "Epic Quest Options" listed below.
 - All previous non-picking requirements must have been fulfilled:
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
@@ -1079,36 +1084,10 @@ is required to gut.
 
 **Epic Quest Options** (all subject to approval):
 
-- Develop and demonstrate an "Extra Skill" that is related to picking or physical security.
-- Complete and document a "Master's Project" of sufficient difficulty and complexity.
-- Select and pick two additional Black Belt level locks from the list.
+1. Complete a Master's Project at **Tier 2** level or above. **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
+2. Select and pick two additional Black Belt level locks. (Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project)
 
-Examples of "Extra Skills":
-
-- Group 2 safe lock manipulation
-  - Document the process for opening a Group 2 safe dial of easier type (e.g. S&G 6700)
-- Key impressioning
-  - Blind impressioning of 5 or more pins, simple pin tumbler or dimple lock
-- Advanced and refined pick making
-  - Portfolio of at least 3 picks, including unusual designs or artistic merit
-- Disc detainer pick making
-  - Create BOTH front-tensioning **as well as** rear- or random-tensioning Disc Detainer pick tip/tensioner sets from stock material or using parts from existing near-functional pick designs capable of picking specific locks they were designed for
-  - OR create a Disc Detainer pick tip and handle from stock material or using parts from existing near-functional pick designs capable of picking a specific lock it was designed for
-- Making cutaway locks
-  - Two good cutaways of separate locks or one of extraordinary quality; leniency for handmade
-- Challenge locks portfolio
-  - Portfolio of at least five Challenge Locks, including unusual designs or artistic merit
-- Exceptional knowledge of locks and keyways
-- Electronics projects that decode or bypass locks
-- Other projects, subject to prior approval
-
-*Please ask LPU staff if you need further information about extra skills.*
-
-Examples of "Master's Projects":
-
-- Make a lock from scratch
-- Formation and leadership of a TOOOL chapter or other community organization
-- Community engagement, interaction or improvement projects
+*Please ask LPU staff if you need further information about Epic Quests.*
 
 
 **Black Belt Locks**
