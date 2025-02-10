@@ -1084,8 +1084,9 @@ is required to gut.
 
 **Epic Quest Options** (all subject to approval):
 
-1. Complete a Master's Project at **Tier 2** level or above. **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
-2. Select and pick two additional Black Belt level locks. (Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project)
+- Complete a Master's Project at **Tier 2** level or above.
+  - **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
+- Select and pick two additional Black Belt level locks. (Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project)
 
 *Please ask LPU staff if you need further information about Epic Quests.*
 
