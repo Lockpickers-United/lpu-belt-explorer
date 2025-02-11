@@ -87,7 +87,7 @@ function BeltsMarkdownPage() {
         footerMd
     ].join('\n\n---\n\n')
 
-    const markdownLinks = markdown.replace(/(\/#\/\w*)/g, 'https://lpubelts.com$1')
+    const markdownLinks = markdown.replace(/\((\/#\/\w+)\)/g, '(https://lpubelts.com$1)')
 
     return (
         <React.Fragment>
