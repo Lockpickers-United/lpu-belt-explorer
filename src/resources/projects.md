@@ -76,7 +76,7 @@ Each progressive tier must fulfill all prior tier requirements.
 - **Tier 1** - Demonstrates a well-developed skill, community project, or other unique and novel project. Must show a clear influence to personal advancement (e.g. skills, certifications and experience) or community improvement.
 - **Tier 2** - Demonstrates advanced skills, community projects or other unique and novel projects. Must show a higher level of self or community improvement and demonstrate a commitment outside the interest of being a black belt.
 - **Tier 3** - Demonstrates advanced skills, community projects or other unique and novel projects. Must demonstrate a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 3 months of devotion to said project.
-  - Recently Accepted [Tier 3 Submission](https://docs.google.com/document/d/1s8xf3AheRSNeiu3RH0jpHIv8_NAR6PfbrxMpqbYB_pA/edit?tab=t.0)
+  - Recently Accepted [Tier 3 Submission](/#/view?pageId=tierThreeExample)
   - Recently Accepted [Tier 3 Submission #2](https://docs.google.com/spreadsheets/d/1OJSQki_FDe8KtgQ0b1BJ9I21R6bnyNcFAZmQVtgx438/edit#gid=978775567)
 - **Tier 4** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 6 months of devotion to said project.
 - **Tier 5** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to a year of devotion to said project.
@@ -125,7 +125,7 @@ The cutaway locks should be completely functional with a working key. Exceptions
 
 ### Safe Lock Manipulation
 
-- **Tier 1** - Unrated safe or complex combination lock - e.g. from the "decodable by sight" column.
+- **Tier 1** - Unrated safe or complex combination lock. **[A list of Tier 1 locks](/#/view?pageId=safeLocksTierOne)** is available.
 - **Tier 2** - Group 2 safe of easier type e.g. S&G 6700, Big Red CDL3. Dials with false gates, such as a 6642, also count as tier 2.
   - Example of a tier 2 safecracking project: [Group 2 Safe Manipulation](https://docs.google.com/document/d/1xyrVUziE0umP-zhbpzN42ZpvexI-JhGwoonjgZTjyiI/edit?usp=sharing).
   - Cutaways will not be accepted.

@@ -389,7 +389,15 @@ export default [
                 }
             }
         ]
-    },{
+    },
+    {
+        path: '/view',
+        lazy: async () => {
+            const {default: ViewPageRoute} = await import('../ViewPage/ViewPageRoute.jsx')
+            return {element: <ViewPageRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },
