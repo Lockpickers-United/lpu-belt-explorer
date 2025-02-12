@@ -4,7 +4,7 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew, raflResponseDetails} from '../data/dataUrls'
+import {siteFullNew, raflResponseDetails, raflSiteStats2025} from '../data/dataUrls'
 import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
@@ -14,7 +14,7 @@ import RaffleYOYLines from './reports/RaffleYOYLines.jsx'
 function RaffleReport() {
     usePageTitle('RAFL Report')
     const {data, loading, error} = useData({urls})
-    const {siteFullNew, raflResponseDetails} = data || {}
+    const {siteFullNew, raflResponseDetails, raflSiteStats2025} = data || {} //eslint-disable-line
     const {width, isMobile} = useWindowSize()
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(raflResponseDetails?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ')'
@@ -64,7 +64,7 @@ function RaffleReport() {
                 <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
 
                 <div style={firstHeaderStyle}>Pots</div>
-                <RaffleStatsPotTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
+                <RaffleStatsPotTable data={raflSiteStats2025} tableWidth={tableWidth} nameLength={nameLength}/>
 
                 <div style={headerStyle}>Charities</div>
                 <RaffleStatsCharityTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
@@ -77,7 +77,8 @@ function RaffleReport() {
 
 const urls = {
     siteFullNew,
-    raflResponseDetails
+    raflResponseDetails,
+    raflSiteStats2025
 }
 
 export default RaffleReport
