@@ -5,7 +5,6 @@ White,Any,"lock with any tool",,Various,,,b22bdd44
 White,ABUS,45,"laminated padlock",Pin-tumbler,Unguttable,,5ff7457c
 White,ALPHA,1000,"10mm (2pins)",Pin-tumbler,,,9423b4a4
 White,ALPHA,1000,"15mm up to 35mm (3pins)",Pin-tumbler,,,d000f733
-White,Brinks,"R80 disk lock",,Pin-tumbler,Unguttable,,a8c9aa08
 White,"Brüder Mannesmann","Brass Padlocks","<50mm (<5pins)",Pin-tumbler,Unguttable,,8cb1a776
 White,Generic/Unknown,"1 or 2 Lever Cabinet lock",,Lever,"Cabinet lock",,5dc117cd
 White,"Master Lock",#1,,Pin-tumbler,Unguttable,,5a91e6a5
@@ -33,6 +32,7 @@ Yellow,,Braslok,,Pin-tumbler,Unguttable,,d6d43c00
 Yellow,Brinks,"164 padlock",,Pin-tumbler,,,d974b48f
 Yellow,Brinks,"Brass Padlocks",,Pin-tumbler,Unguttable,,58307da0
 Yellow,Brinks,"laminated padlock","40mm or larger, Weatherproof or not",Pin-tumbler,Unguttable,,9215a45f
+Yellow,"Brinks,Brinks","R70 disk lock,R80 disk lock",,Pin-tumbler,Unguttable,,a8c9aa08
 Yellow,"Brüder Mannesmann","Brass Padlocks","50mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,1cad075e
 Yellow,,BSS,,Pin-tumbler,,,50fbf666
 Yellow,"Burg Wächter","""Alutitan"" 770 40",,Pin-tumbler,,,4d7dd1a0
@@ -93,6 +93,8 @@ Orange,ABUS,Monobloc,,Pin-tumbler,,,204d85a7
 Orange,ABUS,"Ti12 Titalium",,Pin-tumbler,,,1050a58c
 Orange,ACE,Tubular,,Pump/push,,,bf8970de
 Orange,ALPHA,1000,"50mm 60mm (5pins / spools)",Pin-tumbler,,,bac43ba7
+Orange,BAB,DESS5,,Pin-tumbler,,,9ea2c500
+Orange,BASI,AS,,Pin-tumbler,,,46ec197e
 Orange,BASI,CO,,Pin-tumbler,,,aa15b066
 Orange,BASI,ST,,Pin-tumbler,,,7b4ce02a
 Orange,BASI,V50,,Pin-tumbler,,,1bba03a6
@@ -281,6 +283,7 @@ Green,Wetzel,Pfaffenhain,,Pin-tumbler,,,ba627c40
 Green,Wilka,1400,"6 pin",Pin-tumbler,,,8cc092f5
 Green,Wilka,3600,,Dimple,,,736386f4
 Green,Wilka,3VE,,Dimple,,,9b275fcc
+Green,Wilka,"PR100 Series","6 pin",Pin-tumbler,"Active Element",,7dd6dfc2
 Green,Winkhaus,RAP,,Pin-tumbler,,,69c4dbf2
 Green,Winkhaus,RAP+,,Pin-tumbler,,,574e9854
 Green,Winkhaus,VS,6-pin,Pin-tumbler,,,de53cff7
@@ -289,6 +292,7 @@ Green,Winkhaus,ZRV,,Pin-tumbler,,,a609fdb1
 Green,Winkhaus,ZRV6,,Pin-tumbler,,,bd9e85b5
 Green,"Yale,Yale","1000,1500",,Dimple,,"1 tapered spool and 5 tapered drivers , keypins tapered as well",efca4bf9
 Green,Yale,210C/51,,Pin-tumbler,,,1105b55d
+Green,Yale,500+,"without overmilling",Pin-tumbler,,,a0bfa615
 Green,Yardeni,6,,Dimple,,,34532c45
 Green,Zarker,J45/J45S,,"Disc detainer","Rear tension","Can be front tensioned and counterrotated",4f6bcdb7
 Blue,Any,"HQ High Security Interactive clone","4 pins",Dimple,"Pin-in-pin,Interactive element",,c1d09460
@@ -300,12 +304,13 @@ Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,E90",,Pin-tumbler,,,5c0d870b
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
 Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515caae
-Blue,"ABUS,ABUS","EC880,P12R",,Dimple,"Trap element","require 360° picking",d005e7b8
+Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element","require 360° picking",d005e7b8
 Blue,ABUS,GDS,"with barrels",Pin-tumbler,"Barrel drivers",,3df9c95f
 Blue,"ABUS,ABUS","Integral,Pfaffenhain Integral","with 6 main row pins and >= 5 side pins",Pin-tumbler,,,8606220a
 Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
 Blue,ABUS,KW14,"6-pin version with 5 side elements",Pin-tumbler,,,4382d650
 Blue,ABUS,S6+,,Pin-tumbler,,,f93c57fc
+Blue,"ABUS,,","V14,XV14,Y14","6-pin version with AS pins or Pfaffenhain pins",Pin-tumbler,,,294807f4
 Blue,ABUS,XP1,,Pin-tumbler,,,34c0dfe4
 Blue,ALPHA,"Z cam lock",,Dimple,,,3ebbc1f4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
@@ -411,9 +416,10 @@ Blue,"Vachette,Vachette","VIP,VIP+",,Pin-tumbler,,,67c4159c
 Blue,VSR,2-row,,Dimple,"High pin count",,97c2b9be
 Blue,Wilka,"Primus HX",,Dimple,,,0a7b9888
 Blue,Winkhaus,N-Tra,,Dimple,,,2c9d12fc
+Blue,Winkhaus,RPE,,Pin-tumbler,,,c643eca2
 Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,2100,,"Dimple,Sidebar,Slider","Sprung sliders","dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
-Blue,Yale,500,,Pin-tumbler,Overmilling,,779e7dcb
+Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,,779e7dcb
 Blue,Yale,"KM 1 star Superior",,Pin-tumbler,,"spooled key pins with 6 gege style drivers",c1e91978
 Blue,"Yale,Yale,Milencio","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
@@ -510,7 +516,7 @@ Purple,Rielda,"rekeyable lock",,Pin-tumbler,,,6d754a0a
 Purple,Ruko,"Combi 900",,Pin-tumbler,,,6dd5a34b
 Purple,Sargent,Signature,,"Pin-tumbler,Sidebar",,,e1e595b9
 Purple,Schlage,"Everest 29SL",,Slider,,,3dabf132
-Purple,Securemme,K22,,Dimple,,,ccd19ba8
+Purple,"Securemme,Securemme","K22,K2",,Dimple,,,ccd19ba8
 Purple,Securemme,K5,,Dimple,,,479f1d73
 Purple,Sepa,HDS,,Dimple,"High pin count",,e0a9caf4
 Purple,"TESA,TESA,Nemef,Yale,Azbe","T80,TX80,NF4,HS-K,HS-K",,Dimple,"Tapered drivers,Interactive element",,3f49ccc1
@@ -658,7 +664,7 @@ Red,MIWA,SR,,Wafer,"Active sidebar",,31cd85d7
 Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
-Red,Mottura,"Champions C55",,"Dimple,Other",,,3daff112
+Red,"Mottura,Mottura","Champions C55,Champions CP6",,"Dimple,Other",,,3daff112
 Red,"Picard,Heracles","Vigie,Pericles","7 pins, euro profile",Pump/push,,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,112d0034
@@ -755,7 +761,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",Sargent,Keso,,Dimple,"High pin count",,00cf7717
 "Black 1",Tokoz,Pro,,"Disc detainer","Front/rear tension,Profile discs,Disc steering system,Disc blocker system,Bi-directional",,3198fffc
 "Black 1",UrbanAlps,"Stealth Key SK1",,Lever/sidebar,"Partial gut",,e4bb0668
-"Black 1",UrbanAlps,"Stealth Key SK2",,Lever/sidebar,"Partial gut",,284bf0b0
+"Black 2",UrbanAlps,"Stealth Key SK2",,Lever/sidebar,"Partial gut",,284bf0b0
 "Black 1","Vachette,Vachette","Radial NT,Radial NT+","≥ 18 pins",Dimple,"High pin count",,5def87d0
 "Black 2",WEST,917,,Dimple,"High pin count",,23437955
 "Black 5","Western Electric",30B,,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,e718b140

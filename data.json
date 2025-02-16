@@ -243,33 +243,6 @@
     "lastUpdated": "2024-04-15T20:42:06.472Z"
   },
   {
-    "id": "a8c9aa08",
-    "belt": "White",
-    "makeModels": [
-      {
-        "make": "Brinks",
-        "model": "R80 disk lock"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Unguttable"
-    ],
-    "media": [
-      {
-        "title": "By: myktylgaan",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52729704293_da3c352663_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729704293/in/album-72177720306493537/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52729704293_05d65e524d_o.jpg"
-      }
-    ],
-    "views": 8232,
-    "lastUpdated": "2023-07-25T11:20:19.880Z"
-  },
-  {
     "id": "8cb1a776",
     "belt": "White",
     "makeModels": [
@@ -1570,6 +1543,37 @@
     ],
     "views": 6689,
     "lastUpdated": "2024-04-16T18:36:32.132Z"
+  },
+  {
+    "id": "a8c9aa08",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Brinks",
+        "model": "R70 disk lock"
+      },
+      {
+        "make": "Brinks",
+        "model": "R80 disk lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52729704293_da3c352663_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52729704293/in/album-72177720306493537/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52729704293_05d65e524d_o.jpg"
+      }
+    ],
+    "views": 8232,
+    "lastUpdated": "2025-02-16T07:00:26.255Z"
   },
   {
     "id": "1cad075e",
@@ -4045,6 +4049,34 @@
       "82ea52a4"
     ],
     "lastUpdated": "2024-04-15T20:42:06.474Z"
+  },
+  {
+    "id": "9ea2c500",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "BAB",
+        "model": "DESS5"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-02-16T07:00:26.256Z"
+  },
+  {
+    "id": "46ec197e",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "AS"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-02-16T07:00:26.256Z"
   },
   {
     "id": "aa15b066",
@@ -12524,6 +12556,24 @@
     "lastUpdated": "2025-01-12T17:30:04.050Z"
   },
   {
+    "id": "7dd6dfc2",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Wilka",
+        "model": "PR100 Series"
+      }
+    ],
+    "version": "6 pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Active Element"
+    ],
+    "lastUpdated": "2025-02-16T07:00:26.260Z"
+  },
+  {
     "id": "69c4dbf2",
     "belt": "Green",
     "makeModels": [
@@ -12792,6 +12842,21 @@
     ],
     "views": 2542,
     "lastUpdated": "2023-07-25T11:20:19.889Z"
+  },
+  {
+    "id": "a0bfa615",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "500+"
+      }
+    ],
+    "version": "without overmilling",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-02-16T07:00:26.260Z"
   },
   {
     "id": "34532c45",
@@ -13494,6 +13559,10 @@
       {
         "make": "ABUS",
         "model": "P12R"
+      },
+      {
+        "make": "ABUS",
+        "model": "X12R"
       }
     ],
     "lockingMechanisms": [
@@ -13548,7 +13617,7 @@
       }
     ],
     "views": 278,
-    "lastUpdated": "2025-01-15T23:27:20.180Z"
+    "lastUpdated": "2025-02-16T07:00:26.261Z"
   },
   {
     "id": "3df9c95f",
@@ -13820,6 +13889,27 @@
     ],
     "views": 2895,
     "lastUpdated": "2023-07-25T11:20:19.889Z"
+  },
+  {
+    "id": "294807f4",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "V14"
+      },
+      {
+        "model": "XV14"
+      },
+      {
+        "model": "Y14"
+      }
+    ],
+    "version": "6-pin version with AS pins or Pfaffenhain pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-02-16T07:00:26.261Z"
   },
   {
     "id": "34c0dfe4",
@@ -19233,6 +19323,20 @@
     "lastUpdated": "2023-07-25T11:20:19.893Z"
   },
   {
+    "id": "c643eca2",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Winkhaus",
+        "model": "RPE"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "lastUpdated": "2025-02-16T07:00:26.266Z"
+  },
+  {
     "id": "fe088de0",
     "belt": "Blue",
     "makeModels": [
@@ -19395,6 +19499,10 @@
       {
         "make": "Yale",
         "model": "500"
+      },
+      {
+        "make": "Yale",
+        "model": "B"
       }
     ],
     "lockingMechanisms": [
@@ -19434,7 +19542,7 @@
       }
     ],
     "views": 5879,
-    "lastUpdated": "2024-07-12T20:01:50.449Z"
+    "lastUpdated": "2025-02-16T07:00:26.266Z"
   },
   {
     "id": "c1e91978",
@@ -25187,6 +25295,10 @@
       {
         "make": "Securemme",
         "model": "K22"
+      },
+      {
+        "make": "Securemme",
+        "model": "K2"
       }
     ],
     "lockingMechanisms": [
@@ -25216,7 +25328,7 @@
       }
     ],
     "views": 462,
-    "lastUpdated": "2024-03-29T20:50:58.758Z"
+    "lastUpdated": "2025-02-16T07:00:26.269Z"
   },
   {
     "id": "479f1d73",
@@ -34021,6 +34133,10 @@
       {
         "make": "Mottura",
         "model": "Champions C55"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions CP6"
       }
     ],
     "lockingMechanisms": [
@@ -34086,7 +34202,7 @@
       }
     ],
     "views": 605,
-    "lastUpdated": "2023-09-08T10:29:35.226Z"
+    "lastUpdated": "2025-02-16T07:00:26.273Z"
   },
   {
     "id": "9c5f4539",
@@ -41340,7 +41456,7 @@
   },
   {
     "id": "284bf0b0",
-    "belt": "Black 1",
+    "belt": "Black 2",
     "makeModels": [
       {
         "make": "UrbanAlps",
@@ -41377,7 +41493,7 @@
       }
     ],
     "views": 1182,
-    "lastUpdated": "2023-07-25T11:20:19.908Z"
+    "lastUpdated": "2025-02-16T07:00:26.277Z"
   },
   {
     "id": "5def87d0",
