@@ -308,7 +308,7 @@ const dialsMainData = dialsData.map(datum => {
         digits: datum.Digits,
         notes: datum.Notes,
         tier: datum['Quest Tier'],
-        features: splitCommaValues(datum.Features) && []
+        features: splitCommaValues(datum.Features)
     }
 }).filter(x => x)
 
