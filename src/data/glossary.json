@@ -43,7 +43,7 @@
     }
   },
   {
-    "term": "Anti-punch relocker",
+    "term": "anti-punch relocker",
     "definition": "A spring loaded device which when the backplate removes, blocks the bolt with a lever. When the relocker is engaged, the lock will not open, even with the correct combination.",
     "media": {
       "title": "By: Mick777Oz",
@@ -602,7 +602,7 @@
     }
   },
   {
-    "term": "False gates",
+    "term": "false gates",
     "definition": "Gates on a tumbler which are not deep enough for the core to turn if the sidebar falls in.",
     "media": {
       "title": "By: mgsecure",
@@ -613,7 +613,7 @@
     }
   },
   {
-    "term": "False gates (safe locks)",
+    "term": "false gates (safe locks)",
     "definition": "A portion of the wheel with a shallow cut designed to mimick a gate, that are not deep enough for the fence to drop completely.",
     "media": {
       "title": "By: Mick777Oz",
@@ -646,7 +646,7 @@
     }
   },
   {
-    "term": "Fence lever control device",
+    "term": "fence lever control device",
     "definition": "A device designed to only tension the lever fence against the wheel pack within a specific range on the dial. La Gard 3332 shown as example.",
     "media": {
       "title": "By: Mick777Oz",
@@ -744,7 +744,7 @@
     }
   },
   {
-    "term": "Gravity lever",
+    "term": "gravity lever",
     "definition": "A lever fence that is pressed towards the wheel pack via gravity.",
     "media": {
       "title": "By: InsomniacLockPicker",
@@ -880,7 +880,7 @@
     }
   },
   {
-    "term": "Key change",
+    "term": "key change",
     "definition": "Insert a warded combo change key through all the wheels with gates aligned at the change index. Turn key, dial new combination at change index, turn key back and remove.",
     "media": {
       "title": "By: Mick777Oz",
@@ -1034,7 +1034,7 @@
     }
   },
   {
-    "term": "Moveable flies",
+    "term": "moveable flies",
     "definition": "Flies that have some rotational freedom, to allow use of the whole range of each wheel.",
     "media": {
       "title": "By: Mick777Oz",
@@ -1045,7 +1045,7 @@
     }
   },
   {
-    "term": "Multi-orientation cam",
+    "term": "multi-orientation cam",
     "definition": "A cam wheel that accepts a spline key in more than one position, to allow the drop-in area to remain at the same index point while orienting the lock body in.",
     "media": {
       "title": "By: Mick777Oz",
@@ -1684,7 +1684,7 @@
     }
   },
   {
-    "term": "Spring lever",
+    "term": "spring lever",
     "definition": "A lever fence that is pressed towards the wheel pack via spring pressure.",
     "media": {
       "title": "By: Mick777Oz",
