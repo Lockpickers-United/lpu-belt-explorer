@@ -22,7 +22,7 @@ function ContentSubmit({profile}) {
     const [lockDetails, setLockDetails] = useState({})
     const [lock, setLock] = useState(undefined)
     const [files, setFiles] = useState([])
-    const [response, setResponse] = useState(null)
+    const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(false)
     const [altLock, setAltLock] = useState(false)
@@ -75,7 +75,6 @@ function ContentSubmit({profile}) {
             {headers: {'Content-Type': 'multipart/form-data'}}
         )
             .then(response => {
-                console.log('response', response)
                 setResponse(response.data)
             })
             .catch(error => {
@@ -108,13 +107,11 @@ function ContentSubmit({profile}) {
         setLock(undefined)
         files.forEach(file => URL.revokeObjectURL(file.preview))
         setFiles([])
-        setResponse(null)
+        setResponse(undefined)
         setUploading(false)
         setUploadError(false)
         setAltLock(false)
-        setAltLockName(null)
-        document.getElementById('notInList').checked = false
-        document.getElementById('notes').value = ''
+        setAltLockName(undefined)
     }, [files])
 
     const handleAltLockToggle = useCallback(() => {
