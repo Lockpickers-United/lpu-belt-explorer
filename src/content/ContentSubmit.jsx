@@ -168,7 +168,7 @@ function ContentSubmit({profile}) {
                         </Collapse>
                         <br/><br/>
 
-                        <div style={flexStyle}>
+                        <div style={{display:flexStyle}}>
                             <div style={{marginRight: 50, width: 350}}>
                                 <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                     Upload<br/>
