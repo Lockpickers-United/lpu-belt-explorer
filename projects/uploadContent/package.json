@@ -1,0 +1,17 @@
+{
+  "name": "uploadContent",
+  "version": "1.0.0",
+  "description": "Upload content from lpubelts.com",
+  "main": "uploadContent.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "mgsecure",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "formidable": "^3.5.2"
+  }
+}
