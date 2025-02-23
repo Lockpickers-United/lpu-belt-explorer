@@ -82,6 +82,26 @@ export function DBProvider({children}) {
         })
     }, [dbError, user])
 
+    const getProfile = useCallback(async userId => {
+        const ref = doc(db, 'lockcollections', userId)
+        const value = await getDoc(ref)
+        return profileDB2State(value.data())
+    }, [])
+
+    const updateProfileField = useCallback(async (key, value) => {
+        if (dbError) return false
+        console.log('updating', user.uid, key, value)
+        const ref = doc(db, 'lockcollections', user.uid)
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(ref)
+            if (!sfDoc.exists()) {
+                transaction.set(ref, {[key]: value})
+            } else {
+                transaction.update(ref, {[key]: value})
+            }
+        })
+    }, [dbError, user])
+
     const updateProfileDisplayName = useCallback(async (displayName) => {
         const ref = doc(db, 'lockcollections', user.uid)
         if (displayName) {
@@ -90,12 +110,6 @@ export function DBProvider({children}) {
             await updateDoc(ref, {displayName: deleteField()})
         }
     }, [user])
-
-    const getProfile = useCallback(async userId => {
-        const ref = doc(db, 'lockcollections', userId)
-        const value = await getDoc(ref)
-        return profileDB2State(value.data())
-    }, [])
 
     const addPickerActivity = useCallback(async (userId, act) => {
         const [collectName, rec] = activity2DBRec({...act, userId})
@@ -451,6 +465,7 @@ export function DBProvider({children}) {
         addToLockCollection,
         removeFromLockCollection,
         getProfile,
+        updateProfileField,
         updateProfileDisplayName,
         pickerActivity,
         addPickerActivity,
@@ -478,6 +493,7 @@ export function DBProvider({children}) {
         addToLockCollection,
         removeFromLockCollection,
         getProfile,
+        updateProfileField,
         updateProfileDisplayName,
         pickerActivity,
         addPickerActivity,
