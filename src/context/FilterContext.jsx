@@ -80,6 +80,8 @@ export function FilterProvider({children, filterFields = []}) {
         return keys.filter(key => !nonFilters.includes(key)).length
     }, [searchParams])
 
+    const isSearch = !!filters?.search
+
     const value = useMemo(() => ({
         filters,
         filterCount,
@@ -93,7 +95,8 @@ export function FilterProvider({children, filterFields = []}) {
         filterFieldsByFieldName: filterFields.reduce((acc, value) => ({
             ...acc,
             [value.fieldName]: value
-        }), {id: {label: 'ID'}})
+        }), {id: {label: 'ID'}}),
+        isSearch
     }), [
         addFilter,
         addFilters,
@@ -103,7 +106,8 @@ export function FilterProvider({children, filterFields = []}) {
         removeFilter,
         removeFilters,
         setFilters,
-        filterFields
+        filterFields,
+        isSearch
     ])
 
     return (
@@ -121,7 +125,10 @@ const nonFilters = [
     'sort',
     'image',
     'locks',
-    'debug'
+    'debug',
+    'preview',
+    'single',
+    'expandAll'
 ]
 
 export default FilterContext

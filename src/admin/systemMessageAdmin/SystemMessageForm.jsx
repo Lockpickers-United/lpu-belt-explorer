@@ -10,6 +10,7 @@ import Checkbox from '@mui/material/Checkbox'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import {enqueueSnackbar} from 'notistack'
+
 dayjs.extend(utc)
 
 export default function SystemMessageForm({message, temp, setTemp, updated, setUpdated}) {
@@ -185,62 +186,99 @@ export default function SystemMessageForm({message, temp, setTemp, updated, setU
             <div style={{display: 'flex', fontSize: '1rem'}}>
                 <div style={{display: 'flex', alignItems: 'center', width: 250}}>
                     <Checkbox checked={temp.targetAdminOnly} color='secondary'
-                              onChange={() => { handleToggle('targetAdminOnly') }}/>
-                    <Link style={{color:'#fff'}} onClick={() => { handleToggle('targetAdminOnly') }}>Target Admin Only</Link>
+                              onChange={() => {
+                                  handleToggle('targetAdminOnly')
+                              }}/>
+                    <Link style={{color: '#fff'}} onClick={() => {
+                        handleToggle('targetAdminOnly')
+                    }}>Target Admin Only</Link>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <Checkbox checked={temp.targetCollectionUsersOnly} color='secondary'
-                              onChange={() => { handleToggle('targetCollectionUsersOnly') }}/>
-                    <Link style={{color:'#fff'}} onClick={() => { handleToggle('targetCollectionUsersOnly') }}>Target Collection Users Only</Link>
+                              onChange={() => {
+                                  handleToggle('targetCollectionUsersOnly')
+                              }}/>
+                    <Link style={{color: '#fff'}} onClick={() => {
+                        handleToggle('targetCollectionUsersOnly')
+                    }}>Target Collection Users Only</Link>
                 </div>
 
             </div>
             <div style={{display: 'flex', fontSize: '1rem'}}>
                 <div style={{display: 'flex', alignItems: 'center', width: 250}}>
                     <Checkbox checked={temp.targetLoggedIn} color='secondary'
-                              onChange={() => { handleToggle('targetLoggedIn') }}/>
-                    <Link style={{color:'#fff'}} onClick={() => { handleToggle('targetLoggedIn') }}>Target Logged In Only</Link>
+                              onChange={() => {
+                                  handleToggle('targetLoggedIn')
+                              }}/>
+                    <Link style={{color: '#fff'}} onClick={() => {
+                        handleToggle('targetLoggedIn')
+                    }}>Target Logged In Only</Link>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <Checkbox checked={temp.targetAnonymousNotOK} color='secondary'
-                              onChange={() => { handleToggle('targetAnonymousNotOK') }}/>
-                    <Link style={{color:'#fff'}} onClick={() => { handleToggle('targetAnonymousNotOK') }}>Target Anonymous NOT ok</Link>
+                              onChange={() => {
+                                  handleToggle('targetAnonymousNotOK')
+                              }}/>
+                    <Link style={{color: '#fff'}} onClick={() => {
+                        handleToggle('targetAnonymousNotOK')
+                    }}>Target Anonymous NOT ok</Link>
                 </div>
             </div>
             <div style={{display: 'flex', fontSize: '1rem'}}>
                 <div style={{display: 'flex', alignItems: 'center', width: 250}}>
                     <Checkbox checked={temp.targetBlackBeltsOnly} color='secondary'
-                              onChange={() => { handleToggle('targetBlackBeltsOnly') }}/>
-                    <Link style={{color:'#fff'}} onClick={() => { handleToggle('targetBlackBeltsOnly') }}>Target Black Belts Only</Link>
+                              onChange={() => {
+                                  handleToggle('targetBlackBeltsOnly')
+                              }}/>
+                    <Link style={{color: '#fff'}} onClick={() => {
+                        handleToggle('targetBlackBeltsOnly')
+                    }}>Target Black Belts Only</Link>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <Checkbox checked={temp.noDismiss} color='secondary'
-                              onChange={() => { handleToggle('noDismiss') }}/>
-                    <Link style={{color:'#fff'}} onClick={() => { handleToggle('noDismiss') }}>No Dismiss Button</Link>
+                              onChange={() => {
+                                  handleToggle('noDismiss')
+                              }}/>
+                    <Link style={{color: '#fff'}} onClick={() => {
+                        handleToggle('noDismiss')
+                    }}>No Dismiss Button</Link>
                 </div>
             </div>
-            <TextField
-                id='targetUserIds'
-                label='Target User Ids'
-                value={temp.targetUserIds || ''}
-                fullWidth
-                size='small'
-                margin='dense'
-                color='secondary'
-                onChange={e => {
-                    const idArray = e.target.value.split(',')
-                    console.log('idArray', idArray)
-                    setTemp({...temp, pageIds: idArray})
-                    setUpdated(true)
-                }}
-            />
-
+            <div style={{display: 'flex', fontSize: '1rem'}}>
+                <TextField
+                    id='minVersion'
+                    label='Minimum Version'
+                    value={temp.minVersion || ''}
+                    size='small'
+                    margin='dense'
+                    color='secondary'
+                    onChange={e => {
+                        setTemp({...temp, minVersion: e.target.value})
+                        setUpdated(true)
+                    }}
+                    style={{width:350, marginRight:20}}
+                />
+                <TextField
+                    id='targetUserIds'
+                    label='Target User Ids'
+                    value={temp.targetUserIds || ''}
+                    fullWidth
+                    size='small'
+                    margin='dense'
+                    color='secondary'
+                    onChange={e => {
+                        const idArray = e.target.value.split(',')
+                        setTemp({...temp, pageIds: idArray})
+                        setUpdated(true)
+                    }}
+                />
+            </div>
             <div style={{
                 width: '100%',
                 textAlign: 'right',
                 padding: '0px 12px 8px 0px'
             }}>
-                <span style={{fontSize:'0.9rem', marginRight:100}}>{temp?.id}</span>
+                <span style={{fontSize: '0.9rem', marginRight: 100}}>ID: {temp?.id}</span>
                 <Button style={{marginRight: 10, color: cancelColor}}
                         onClick={handleCancel}
                         disabled={!updated}

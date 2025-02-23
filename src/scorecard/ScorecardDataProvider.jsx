@@ -16,11 +16,13 @@ export function ScorecardDataProvider({
                                           cardEligibleDan,
                                           cardNextDanPoints,
                                           cardNextDanLocks,
-                                          popularLocks
+                                          cardUniqueLocks,
+                                          cardMaxBelt,
+                                          popularLocks,
+                                          popularLocksBB
                                       }) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
-
 
     const allActivityEntries = useMemo(() => cardActivity.map(act => {
             const entry = getEntryFromId(act.matchId)
@@ -48,11 +50,18 @@ export function ScorecardDataProvider({
     }, {}), [allActivityEntries])
 
     const allPopularEntries = useMemo(() => popularLocks.map(lock => ({
-        ...getEntryFromId(lock.lockID),
-        ...activityByMatchId[lock.lockID],
+        ...getEntryFromId(lock.id),
+        ...activityByMatchId[lock.id],
         popularityRank: lock.rank,
-        userCount: lock.count
+        userCount: lock.saveCount
     })), [popularLocks, activityByMatchId])
+
+    const bbPopularEntries = useMemo(() => popularLocksBB?.map(lock => ({
+        ...getEntryFromId(lock.id),
+        ...activityByMatchId[lock.id],
+        popularityRank: lock.rank,
+        userCount: lock.saveCount
+    })), [popularLocksBB, activityByMatchId])
 
     const filterArray = useMemo(() => Object.keys(filters).map(key => {
         const value = filters[key]
@@ -76,10 +85,13 @@ export function ScorecardDataProvider({
         cardNextDanLocks,
         visibleEntries,
         popularEntries,
+        bbPopularEntries,
+        cardUniqueLocks,
+        cardMaxBelt,
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries])
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt])
 
     return (
         <ScorecardDataContext.Provider value={value}>

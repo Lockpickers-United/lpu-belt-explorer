@@ -17,6 +17,6 @@ export default function useWindowSize() {
     return useMemo(() => ({
         width,
         isMobile: width < 650,
-        flexStyle: width < 650 ? {} : {display: 'flex'}
+        flexStyle: width < 650 ? 'block' : 'flex'
     }), [width])
 }

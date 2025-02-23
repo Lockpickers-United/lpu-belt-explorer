@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography'
 import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
 
-function FilterButton({onFiltersChanged, extraFilters = []}) {
+function FilterButton({onFiltersChanged, extraFilters = [], text}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
     const {filterCount, addFilters, filterFields} = useContext(FilterContext)
@@ -37,19 +37,25 @@ function FilterButton({onFiltersChanged, extraFilters = []}) {
         onFiltersChanged && onFiltersChanged()
     }, [addFilters, onFiltersChanged, extraFilters])
 
+    const display = text ? <div style={{fontSize:'0.9rem', fontWeight:700, marginRight:10}}>FILTER</div> : <FilterAltIcon/>
+    const badgeAnchor = text
+        ? {vertical: 'top', horizontal: 'right'}
+        : {vertical: 'bottom', horizontal: 'right'}
+    const badgeVariant = text ? 'dot' : null
+
+
     return (
         <React.Fragment>
             <Tooltip title='Filter' arrow disableFocusListener>
                 <IconButton color='inherit' onClick={openDrawer}>
                     <Badge
+                        variant={badgeVariant}
                         badgeContent={filterCount}
                         color='secondary'
                         overlap='circular'
-                        anchorOrigin={{
-                            vertical: 'bottom', horizontal: 'right'
-                        }}
+                        anchorOrigin={badgeAnchor}
                     >
-                        <FilterAltIcon/>
+                        {display}
                     </Badge>
                 </IconButton>
             </Tooltip>

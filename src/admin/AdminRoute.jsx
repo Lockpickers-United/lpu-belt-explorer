@@ -7,6 +7,7 @@ import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import lpuLogoPath from '../resources/LPU.png'
+import {ReportsProvider} from './ReportsContext.jsx'
 
 function AdminRoute() {
     const {authLoaded} = useContext(AuthContext)
@@ -25,7 +26,11 @@ function AdminRoute() {
                 </React.Fragment>
             }
 
-            {authLoaded && adminRole && <Outlet/>}
+            {authLoaded && adminRole &&
+                <ReportsProvider>
+                    <Outlet/>
+                </ReportsProvider>
+            }
 
             <Footer/>
 

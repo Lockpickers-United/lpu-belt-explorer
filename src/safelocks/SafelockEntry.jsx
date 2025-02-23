@@ -102,7 +102,7 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                     <FieldValue
                                         name={questLabel}
                                         value={
-                                            <FilterChip field='fence' value={entry.tier || 'Unknown'}/>
+                                            <FilterChip field='tier' value={entry.tier || 'Unknown'}/>
                                         }
                                         style={{flexGrow: 1}}
                                     />

@@ -17,7 +17,8 @@ function calculateScoreForUser(allActivity) {
                 matchId: entry.id,
                 evidenceModifier: modifier,
                 points: multiplier * belts[entry.belt].danPoints,
-                bbCount: entry.belt.startsWith('Black') ? 1 : 0
+                bbCount: entry.belt.startsWith('Black') ? 1 : 0,
+                isLock: true
             }
         } else if (project) {
             return {
@@ -144,6 +145,7 @@ function calculateScoreForUser(allActivity) {
     const nextDan = eligibleDan + 1 < dans.length && dans[eligibleDan + 1]
     const nextDanPoints = nextDan ? Math.max(0, nextDan.points - danPoints) : 0
     const nextDanLocks = nextDan ? Math.max(0, nextDan.bbLocks - bbCount) : 0
+    const uniqueLocks = scoredActivity.filter(e => e.isLock).length
 
     return ({
         scoredActivity,
@@ -151,7 +153,8 @@ function calculateScoreForUser(allActivity) {
         danPoints,
         eligibleDan,
         nextDanPoints,
-        nextDanLocks
+        nextDanLocks,
+        uniqueLocks
     })
 }
 

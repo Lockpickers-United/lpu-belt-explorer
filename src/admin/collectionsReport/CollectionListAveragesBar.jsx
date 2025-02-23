@@ -1,35 +1,27 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {ResponsiveBar} from '@nivo/bar'
 import {primaryTheme} from '../adminChartDefaults'
-import useWindowSize from '../../util/useWindowSize'
+import ReportsContext from '../ReportsContext.jsx'
 
-const CollectionListAveragesBar = ({data}) => {
-    const {summary: {data: summaryData}} = data
+const CollectionListAveragesBar = ({cohort}) => {
 
-    const averageData = summaryData
-        .map(value => ({
-            id: value.list,
-            label: value.list,
-            count: value.averageItems,
-            value: value.averageItems
+    const {collectionSummary} = useContext(ReportsContext)
+
+    const averageData = collectionSummary(cohort).data
+        .filter(list => !['Raffle Watchlist','Awards', 'Projects'].includes(list.list))
+        .map(list => ({
+            id: list.list,
+            label: list.list,
+            count: list.averageSaves,
+            value: list.averageSaves
         }))
 
-    const {width} = useWindowSize()
-    const mobileSmall = width <= 360
-    const mobileMedium = width <= 395
-    const mobileLarge = width <= 428  // but test also at 412
-    const midWindow = width <= 820
+    const chartHeight = 270
+    const chartMargin = {top: 0, right: 20, bottom: 100, left: 50}
 
-    const chartHeight =
-        mobileSmall ? 180
-            : mobileMedium ? 190
-                : mobileLarge ? 200
-                    : midWindow ? 240
-                        : 250
-
-    const chartMargin = {top: 0, right: 20, bottom: 30, left: 50}
-
-    const blueColors = ['#aeaeae', '#0364ac', '#0364ac', '#0364ac', '#0364ac', '#0364ac']
+    const blueColors = ['#aeaeae', '#0364ac', '#0364ac',
+        '#0364ac', '#0364ac', '#0364ac', '#0364ac',
+        '#0364ac', '#0364ac', '#0364ac']
 
     return (
         <div style={{height: chartHeight, width: '100%'}}>
@@ -44,6 +36,9 @@ const CollectionListAveragesBar = ({data}) => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0
+                }}
+                axisBottom={{
+                    tickRotation: -45
                 }}
                 enableGridY={false}
                 theme={primaryTheme}

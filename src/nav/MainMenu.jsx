@@ -39,7 +39,7 @@ function MainMenu() {
         <React.Fragment>
             <Tooltip title='Main Menu' arrow disableFocusListener>
                 <IconButton edge='start' color='inherit' onClick={openDrawer}
-                            style={{backgroundColor: '#181818', height: '36px', width: '36px', marginLeft: '-8px'}}
+                            style={{backgroundColor: '#181818', height: '36px', width: '36px', marginLeft: '-8px', marginTop:6}}
                 >
                     <MenuIcon/>
                 </IconButton>
@@ -66,6 +66,7 @@ function MainMenu() {
                     {menuConfig
                         .filter(menuItem => beta || !menuItem.beta)
                         .filter(menuItem => adminRole  || !menuItem.admin)
+                        .filter(menuItem => !menuItem.hidden)
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>
                                 <MainMenuItem

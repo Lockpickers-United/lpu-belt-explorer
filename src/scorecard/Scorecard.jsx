@@ -30,9 +30,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const {userId} = useParams()
     const navigate = useNavigate()
 
-    const {visibleEntries = [], popularEntries = [], cardActivity} = useContext(ScorecardDataContext)
-
-
+    const {visibleEntries = [], popularEntries = [], bbPopularEntries = [], cardActivity, cardMaxBelt} = useContext(ScorecardDataContext)
 
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
@@ -137,7 +135,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
         }}>
             <ProfileHeader profile={profile} page={'scorecard'} owner={owner} mostPopular={mostPopular}/>
 
-            {owner && visibleEntries.length > 0 && !profile.tabClaimed &&
+            {owner && visibleEntries.length === 0 && !profile?.tabClaimed &&
                 <div style={{margin: 8, padding: '0px 0px'}}>
                     <IntroCopy pageName={'scorecard'}/>
                 </div>
@@ -150,7 +148,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                             <div style={{marginRight: 10, width: 370}}>
                                 <InlineScorecardCharts profile={profile} entries={visibleEntries}/>
                             </div>
-                            {profile.danLevel > 0 &&
+                            {profile.danLevel >= 0 &&
                                 <div style={{flexGrow: 1, marginRight: 0}}>
                                     <ScorecardDanStats profile={profile} owner={owner}/>
                                 </div>
@@ -309,7 +307,8 @@ function Scorecard({owner, profile, adminAction, popular}) {
             }
             {mostPopular &&
                 <PopularEntries owner={owner} profile={profile} adminAction={adminAction}
-                                popularEntries={popularEntries}/>
+                                popularType={cardMaxBelt?.rank < 9 ? 'all' : 'BB'}
+                                popularEntries={cardMaxBelt?.rank < 9 ? popularEntries : bbPopularEntries}/>
             }
         </div>
     )

@@ -168,7 +168,7 @@ export function DBProvider({children}) {
     }, [user])
 
     const getPickerActivity = useCallback(async userId => {
-        return await pickerActivityCache(userId, user.uid === userId)
+        return await pickerActivityCache(userId, user?.uid === userId)
     }, [user])
 
     const refreshPickerActivity = useCallback(async userId => {
@@ -441,7 +441,8 @@ export function DBProvider({children}) {
 
     const updateSystemMessage = useCallback(async (message) => {
         if (dbError) return false
-        const ref = doc(db, 'system-messages', message.dbId)
+        const id = message.dbId ? message.dbId : message.id
+        const ref = doc(db, 'system-messages', id)
         await setDoc(ref, message)
     }, [dbError])
 
@@ -585,9 +586,9 @@ function activity2DBRec(act) {
 function profileDB2State(dbRec) {
     if (dbRec) {
         const additionalFields = Object.keys(collectionOptions).reduce((acc, type) => {
-            const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any').key
-            const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any').map(c => c.key)
-            acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
+            const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any')?.key
+            const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any')?.map(c => c.key)
+            if (anyKey) acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
             return acc
         }, {})
 

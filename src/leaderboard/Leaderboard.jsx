@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useMemo, useRef, useState} from 'react'
-import Typography from '@mui/material/Typography'
 import queryString from 'query-string'
 import {useLocation, useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
@@ -17,14 +16,15 @@ import LeaderboardFindMeButton from './LeaderboardFindMeButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Nav from '../nav/Nav.jsx'
 import LeaderboardCompare from './LeaderboardCompare.jsx'
-import {leaderboardData2} from '../data/dataUrls'
+import {leaderboardData, recentAwardsEvidence} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import LeaderboardRecent from './LeaderboardRecent.jsx'
+import ErrorMessage from '../misc/ErrorMessage.jsx'
 
 function Leaderboard({tab}) {
 
-    const {data, loading, error} = useData({url})
-
+    const {data, loading, error, errorMessage} = useData({urls})
     const location = useLocation()
     const {user} = useContext(AuthContext)
     const scrollableRef = useRef()
@@ -77,6 +77,10 @@ function Leaderboard({tab}) {
                     {field: 'blackBeltCount', order: 'desc', tooltip: 'Sort by Black Belt Locks'},
                     {field: 'blackBeltAwardedAt', order: 'asc', tooltip: 'Sort by Date'}
                 ]
+            },
+            recent: {
+                defaultSort: '',
+                columns: []
             }
         }
     }, [])
@@ -84,41 +88,35 @@ function Leaderboard({tab}) {
     const sortOrder = tabData[tab]['columns'].find(col => col.field === sort) ? tabData[tab]['columns'].find(col => col.field === sort)['order'] : 'desc'
 
     const filteredData = useMemo(() => {
-        const allData = data?.data ?
-            data?.data
+        const allData = data ?
+            data?.leaderboardData.data
                 .filter(leader => !leader['privacyNoLeaderboard'])
                 .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
-                .sort((a, b) => {
-                    return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
-                })
             : []
         return tab === 'blackBelts'
             ? allData.filter(leader => leader['blackBeltAwardedAt'] > 0)
             : allData
-    }, [data?.data, tab, tabData])
+    }, [data, tab, tabData])
 
     const blackBeltData = useMemo(() => {
-        return data?.data
+        return data?.leaderboardData.data
             .filter(leader => !leader['privacyNoLeaderboard'])
             .filter(leader => leader['blackBeltAwardedAt'] > 0)
-            .sort((a, b) => {
-                return a['displayName'].localeCompare(b['displayName'])
-            })
-    }, [data?.data])
+    }, [data])
 
     const sortedData = useMemo(() => {
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
-            return b[sort] - a[sort]
+            return (b[sort] || 0) - (a[sort] || 0)
         })
         else if (sort && sortOrder === 'asc') return filteredData.sort((a, b) => {
-            return a[sort] - b[sort]
+            return (a[sort] || 0) - (b[sort] || 0)
         })
         else return filteredData.sort((a, b) => {
-                return b[tabData[tab]['defaultSort']] - a[tabData[tab]['defaultSort']]
+                return (b[tabData[tab]['defaultSort']] || 0) - (a[tabData[tab]['defaultSort']] || 0)
             })
     }, [sort, sortOrder, filteredData, tabData, tab])
 
-    const updateTime = dayjs(data?.metadata['updatedDateTime']).format('MM/DD/YY HH:mm')
+    const updateTime = dayjs(data?.leaderboardData.metadata['updatedDateTime']).format('MM/DD/YY HH:mm')
 
     const handleClick = useCallback(value => {
         setCompare(false)
@@ -139,11 +137,16 @@ function Leaderboard({tab}) {
         : null
 
     const title = loading ? 'Loading...' : 'Leaderboard'
+    const safelocksText = isMobile ? 'Safes' : 'Safe Locks'
 
     const tableHeight = tab === 'blackBelts' ? '100%' : '78vh'
 
     if (loading) {
         return <LoadingDisplay/>
+    }
+
+    if (error) {
+        return <ErrorMessage errorMessage={errorMessage}/>
     }
 
     if (data && !error) return (
@@ -172,7 +175,7 @@ function Leaderboard({tab}) {
                                       disabled={tab === 'safelocks'}
                                       value='safelocks'
                                       style={{padding: '2px 12px 2px 12px'}}>
-                            Safe Locks
+                            {safelocksText}
                         </ToggleButton>
                         <ToggleButton onClick={() => handleClick('blackBelts')}
                                       selected={tab === 'blackBelts'}
@@ -181,6 +184,13 @@ function Leaderboard({tab}) {
                                       style={{padding: '2px 12px 2px 12px'}}>
                             Black Belts
                         </ToggleButton>
+                        <ToggleButton onClick={() => handleClick('recent')}
+                                      selected={tab === 'recent'}
+                                      disabled={tab === 'recent'}
+                                      value='recent'
+                                      style={{padding: '2px 12px 2px 12px'}}>
+                            Recent
+                        </ToggleButton>
                     </ToggleButtonGroup>
                 </div>
 
@@ -188,44 +198,49 @@ function Leaderboard({tab}) {
                     <LeaderboardCompare blackBeltData={blackBeltData} compare={compare} setCompare={setCompare}/>
                 }
 
-                {!compare &&
-                    <TableContainer sx={{height: tableHeight, backgroundColor: '#111'}} id='scrollable'
-                                    ref={scrollableRef}>
-                        <Table stickyHeader>
-                            <LeaderboardHeader columns={tabData[tab]['columns']}/>
+                {!compare && tab !== 'recent' &&
+                    <React.Fragment>
+                        <TableContainer sx={{height: tableHeight, backgroundColor: '#111'}} id='scrollable'
+                                        ref={scrollableRef}>
+                            <Table stickyHeader>
+                                <LeaderboardHeader columns={tabData[tab]['columns']}/>
+                                <TableBody>
+                                    {sortedData.map((leader, index) => {
+                                        const isHighlighted = !!highlightedUser && (
+                                            (highlightedUser === 'me' && leader.id === user?.uid)
+                                            || (highlightedUser === leader.displayName)
+                                        )
+                                        return (
+                                            <LeaderboardRow
+                                                key={leader.id}
+                                                index={index}
+                                                leader={leader}
+                                                scrollableRef={scrollableRef}
+                                                highlighted={isHighlighted}
+                                                columns={tabData[tab]['columns']}
+                                                tab={tab}
+                                            />
+                                        )
+                                    })}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                        <div style={{width: '100%', marginTop: 12, fontSize: '0.8rem', textAlign: 'center'}}>
+                            Last update: {updateTime} GMT
+                        </div>
+                    </React.Fragment>}
 
-                            <TableBody>
-                                {sortedData.map((leader, index) => {
-                                    const isHighlighted = !!highlightedUser && (
-                                        (highlightedUser === 'me' && leader.id === user?.uid)
-                                        || (highlightedUser === leader.displayName)
-                                    )
-                                    return (
-                                        <LeaderboardRow
-                                            key={leader.id}
-                                            index={index}
-                                            leader={leader}
-                                            scrollableRef={scrollableRef}
-                                            highlighted={isHighlighted}
-                                            columns={tabData[tab]['columns']}
-                                            tab={tab}
-                                        />
-                                    )
-                                })}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                {tab === 'recent' &&
+                    <LeaderboardRecent data={data.recentAwardsEvidence}/>
                 }
 
-                <Typography variant='caption' align='right' component='div' style={{width: '100%', marginTop: 8}}>
-                    Last update: {updateTime} GMT
-                </Typography>
+
             </div>
         </React.Fragment>
     )
 }
 
-const url = leaderboardData2
+const urls = {leaderboardData, recentAwardsEvidence}
 
 const validSort = [
     'own',

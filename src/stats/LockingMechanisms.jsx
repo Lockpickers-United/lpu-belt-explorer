@@ -4,7 +4,7 @@ import {pieTheme} from './chartDefaults'
 import useWindowSize from '../util/useWindowSize'
 
 function LockingMechanisms({data}) {
-    const {lockingMechanisms} = data.lockSummary
+    const {lockingMechanisms} = data.lockStats
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360

@@ -1,10 +1,28 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from '../adminChartDefaults'
 import useWindowSize from '../../util/useWindowSize'
+import ReportsContext from '../ReportsContext.jsx'
+import dayjs from 'dayjs'
 
-const CollectionsListUsersSavesLine = ({data}) => {
-    const listUserData = [data.listUsers]
+const CollectionsListUsersSavesLine = ({cohort}) => {
+
+    const {data} = useContext(ReportsContext)
+    const {collectionStatsDaily} = data
+    const listUserData = collectionStatsDaily.dayData.map(day => {
+        return {
+            x: day[cohort].date,
+            y: day[cohort].listUsers || 0
+        }
+    })
+
+    const listUserValues = cohort === 'blackBeltOnly'
+        ? listUserData.filter(day => {
+            return dayjs(day.x) > dayjs('2024-07-15')
+        })
+        : listUserData
+
+    const listUserLine = [{id: 'listUsers', data: listUserValues}]
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -30,7 +48,7 @@ const CollectionsListUsersSavesLine = ({data}) => {
         <div style={{height: chartHeight}}>
             <ResponsiveLine
                 theme={combinedTheme}
-                data={listUserData}
+                data={listUserLine}
                 enableGridX={false}
                 enableGridY={false}
                 colors={['#007de2', '#16325d']}
@@ -45,7 +63,7 @@ const CollectionsListUsersSavesLine = ({data}) => {
                     stacked: false,
                     reverse: false
                 }}
-                yFormat=' >-.2f'
+                yFormat=' >-.0f'
                 axisLeft={{
                     tickValues: 5,
                     tickSize: 5,
@@ -84,7 +102,7 @@ const CollectionsListUsersSavesLine = ({data}) => {
                 ]}
                 enablePoints={false}
                 useMesh={true}
-                isInteractive={false}
+                isInteractive={true}
             />
         </div>
     )

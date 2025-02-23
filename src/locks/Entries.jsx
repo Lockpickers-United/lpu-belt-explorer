@@ -1,8 +1,8 @@
-import React, {useState, useContext, useDeferredValue, useMemo} from 'react'
+import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
 import InlineFilterDisplay from '../filters/InlineFilterDisplay'
-import BeltRequirements from '../info/BeltRequirements'
+import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
 import NoEntriesCard from './NoEntriesCard'
@@ -11,24 +11,30 @@ import RandomEntryButton from './RandomEntryButton'
 import SlideshowButton from './SlideshowButton'
 import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
+import FilterContext from '../context/FilterContext.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 function Entries({profile}) {
-    const {compact, tab, expanded, displayAll} = useContext(LockListContext)
-    const {allEntries, visibleEntries = []} = useContext(DataContext)
+    const {tab, expanded} = useContext(LockListContext)
+    const {compact} = useContext(AppContext)
+    const {visibleEntries = []} = useContext(DataContext)
+    const {filterCount, isSearch} = useContext(FilterContext)
 
     const [entryExpanded, setEntryExpanded] = useState(expanded)
-    const defTab = useDeferredValue(tab)
-    const defDisplayAll = useDeferredValue(displayAll)
 
     const entries = useMemo(() => {
-        if (defTab === 'search') {
-            return defDisplayAll || allEntries.length !== visibleEntries.length
-                ? visibleEntries
-                : []
+        if (tab === 'search') {
+            return visibleEntries
         } else {
-            return visibleEntries.filter(entry => entry.simpleBelt === defTab)
+            return visibleEntries.filter(entry => entry.simpleBelt === tab)
         }
-    }, [defDisplayAll, defTab, allEntries, visibleEntries])
+    }, [tab, visibleEntries])
+
+    const footerBefore = (
+        <div style={{margin:'30px 0px'}}>
+            <ExportButton text={true}/>
+        </div>
+    )
 
     const footer = (
         <React.Fragment>
@@ -36,8 +42,6 @@ function Entries({profile}) {
             <HotkeyInfoButton/>
             &nbsp;•&nbsp;
             <RandomEntryButton onSelect={setEntryExpanded}/>
-            &nbsp;•&nbsp;
-            <ExportButton/>
             &nbsp;•&nbsp;
             <SlideshowButton/>
         </React.Fragment>
@@ -48,13 +52,14 @@ function Entries({profile}) {
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
 
-                {(defTab !== 'search' && entries.length !== 0) && <BeltRequirements belt={defTab}/>}
+                {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
+                    <BeltRequirements belt={tab}/>}
 
-                {entries.length === 0 && <NoEntriesCard label='Locks'/>}
+                {entries.length === 0 && <NoEntriesCard label='Locks' isSearch={isSearch}/>}
 
                 {compact
                     ? <CompactEntries entries={entries}/>
-                    : entries.map(entry =>
+                    : entries.map((entry) =>
                         <Entry
                             key={entry.id}
                             entry={entry}
@@ -65,7 +70,7 @@ function Entries({profile}) {
                 }
 
             </div>
-            <Footer extras={footer}/>
+            <Footer extras={footer} before={footerBefore}/>
         </React.Fragment>
     )
 }

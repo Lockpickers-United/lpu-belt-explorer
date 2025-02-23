@@ -13,6 +13,10 @@ const safelockMap = [
     {key: 'safelocksWishlist', label: 'Wishlist', entry: 'checkbox'}
 ]
 
+const raffleMap = [
+    {key: 'raffleWatchlist', label: 'Watchlist', entry: 'checkbox'}
+]
+
 const collectionOptions = {
     locks: {
         map: lockMap,
@@ -34,6 +38,21 @@ const collectionOptions = {
             return acc
         }, {}),
         getCollected: (profile) => profile ? profile[safelockMap.find(l => l.entry === 'system:any').key] : []
+    },
+
+    raffle: {
+        map: raffleMap,
+        keys: raffleMap.map(l => l.key),
+        labels: raffleMap.map(l => l.label),
+        keyByLabel: raffleMap.reduce((acc, row) => {
+            acc[row.label] = row.key
+            return acc
+        }, {}),
+        getCollected: (profile) => profile
+            ? raffleMap.length > 1
+                ? profile[raffleMap.find(l => l.entry === 'system:any')?.key]
+                : profile[raffleMap[0]?.key]
+            : []
     }
 }
 

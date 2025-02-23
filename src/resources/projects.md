@@ -76,7 +76,7 @@ Each progressive tier must fulfill all prior tier requirements.
 - **Tier 1** - Demonstrates a well-developed skill, community project, or other unique and novel project. Must show a clear influence to personal advancement (e.g. skills, certifications and experience) or community improvement.
 - **Tier 2** - Demonstrates advanced skills, community projects or other unique and novel projects. Must show a higher level of self or community improvement and demonstrate a commitment outside the interest of being a black belt.
 - **Tier 3** - Demonstrates advanced skills, community projects or other unique and novel projects. Must demonstrate a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 3 months of devotion to said project.
-  - Recently Accepted [Tier 3 Submission](https://docs.google.com/document/d/12PvwvAOtikzY97C0U8_AsPS5bz1WHDp5C1Cwpq_qG9g/edit)
+  - Recently Accepted [Tier 3 Submission](/#/view?pageId=tierThreeExample)
   - Recently Accepted [Tier 3 Submission #2](https://docs.google.com/spreadsheets/d/1OJSQki_FDe8KtgQ0b1BJ9I21R6bnyNcFAZmQVtgx438/edit#gid=978775567)
 - **Tier 4** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 6 months of devotion to said project.
 - **Tier 5** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to a year of devotion to said project.
@@ -86,7 +86,6 @@ Each progressive tier must fulfill all prior tier requirements.
 - **Tier 1** - At least one good quality cutaway
 - **Tier 2** - 2 good cutaways of separate locks or one of extraordinary quality. Leniency for handmade.
   - Example of a tier 2 cutaway project: [Loose_Shirt6551 BB1 Quest Cutaways](https://docs.google.com/presentation/d/1Y7PGX88xdMlEWOWhMb7oRjJ1FBs62NNrCkwEJ0bjM5Q)
-  - Other Examples of Recently Accepted Cutaways By Tier
 - **Tier 3** - Portfolio of at least 5 good quality cutaways, including two from mechanisms other than pin tumbler, or a double locking mechanism.
 - **Tier 4** - Portfolio of at least 10 cutaways of high quality, including complex mechanisms, innovations, and various non pin tumbler mechanisms.
 - **Tier 5** - Significant portfolio of advanced cutaways. Recognized community wide as an expert cutaway lockmaker. Fabrication and distribution of rare high quality cutaways.
@@ -96,7 +95,7 @@ The cutaway locks should be completely functional with a working key. Exceptions
 ### Disc Detainer Pick Making
 
 - **Tier 1** - Create any functional front tensioning Disc Detainer pick tip/tensioner set from stock material or using parts from existing near-functional pick designs capable of picking the lock it was designed for.
-- **Tier 2** - Create any functional rear or random tensioning Disc Detainer pick tip/tensioner set from scratch or using parts from existing near-functional pick designs, able to pick the lock it was designed for. Previous Tier must be fulfilled. OR Create any functional pick tip and handle from stock material or using parts from existing near-functional pick designs capable of picking the lock it was designed for.
+- **Tier 2** - Create BOTH front-tensioning **as well as** rear- or random-tensioning Disc Detainer pick tip/tensioner sets from stock material or using parts from existing near-functional pick designs capable of picking specific locks they were designed for. **OR** Create any functional pick tip and handle from stock material or using parts from existing near-functional pick designs capable of picking the lock it was designed for.
   -- Recently Accepted [Tier 2 Submission](https://www.youtube.com/watch?v=F9bHUqpbcpA)
 - **Tier 3** - At least 2 additional advanced pick tips* for at least 2 different locks with at least 2 different tensioning methods. All tips must demonstrate working to pick the locks they were designed for.
 - **Tier 4** - Added 2 more advanced tips* for 2 different locks, fulfilling previous tiers. Must have created a handle for each of two different tensioning methods OR a handle capable of different types of tensioning. Must be of high quality of build.
@@ -126,7 +125,7 @@ The cutaway locks should be completely functional with a working key. Exceptions
 
 ### Safe Lock Manipulation
 
-- **Tier 1** - Unrated safe or complex combination lock - e.g. from the "decodable by sight" column.
+- **Tier 1** - Unrated safe or complex combination lock. **[A list of Tier 1 locks](/#/view?pageId=safeLocksTierOne)** is available.
 - **Tier 2** - Group 2 safe of easier type e.g. S&G 6700, Big Red CDL3. Dials with false gates, such as a 6642, also count as tier 2.
   - Example of a tier 2 safecracking project: [Group 2 Safe Manipulation](https://docs.google.com/document/d/1xyrVUziE0umP-zhbpzN42ZpvexI-JhGwoonjgZTjyiI/edit?usp=sharing).
   - Cutaways will not be accepted.
@@ -136,8 +135,23 @@ The cutaway locks should be completely functional with a working key. Exceptions
 
 Safe dials should have the code set by another source (does not have to be an LPU member) and the cracker should be able to describe their process and show work for how the code was determined.
 
+### Tool Making
+
+- **Tier 1** - Portfolio of 2 good quality specialized tools.
+- **Tier 2** - Portfolio of at least 3 unique tools plus unusual designs or artistic merit.
+- **Tier 3** - Portfolio of at least 5 tools, including some with new innovations or high level artistic/production merit.
+- **Tier 4** - Portfolio of at least 7 tools, including reproducing accurately at least two reasonably identical tools or producing a set of two or more tools with a (well planned and easily identifiable) theme at a high technical and artistic level. Examples of tools made of different groups of materials or components that demonstrate a high caliber of skills in a variety of advanced techniques. An emerging brand identity.
+- **Tier 5** - Portfolio of at least 10 high quality tools that utilize a multitude of techniques both basic and advanced in nature, ability to reproduce tools with high accuracy. A well-defined and refined brand identity.
+
 ### Other Master's Projects
+Please contact LPU staff about the Tier levels for your project in advance.
 
-Other projects may be evaluated for Dan points on a case by case basis. 
+- Exceptional knowledge of locks and keyways
+- Electronics projects that decode or bypass locks
+- Make a lock from scratch
+- Formation and leadership of a TOOOL chapter or other community organization
+- Community engagement, interaction or improvement projects
+- Other projects may be evaluated for Dan points on a case by case basis. 
 
 
+##### Updated: Feb. 9, 2025

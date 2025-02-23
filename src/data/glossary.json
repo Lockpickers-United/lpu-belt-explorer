@@ -34,7 +34,7 @@
   },
   {
     "term": "anti-manipulation double-lever",
-    "definition": "A type of fence lever control device which lifts the lever fence away from the cam with rotation and requires the operator to trigger the mechanism.",
+    "definition": "A type of Fence lever control device which lifts the lever fence away from the cam with rotation and requires the operator to trigger the mechanism.",
     "media": {
       "title": "By: Insomniaclockpicker",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -625,7 +625,7 @@
   },
   {
     "term": "false set",
-    "definition": "The small rotation of a plug as elements (particularly spools or false gates) look partially set, that does not allow the lock to open.",
+    "definition": "The small rotation of a plug as elements (particularly spools or False gates) look partially set, that does not allow the lock to open.",
     "media": {
       "title": "By: mgsecure",
       "subtitle": "CC BY-NC-SA 4.0",
@@ -843,7 +843,7 @@
     }
   },
   {
-    "term": "indirect drive",
+    "term": "Indirect drive",
     "definition": "Rotating the wheel pack is done via intermediary gears. Implemented to make manipulation more difficult."
   },
   {
@@ -1035,7 +1035,7 @@
   },
   {
     "term": "moveable flies",
-    "definition": "Fly that can move about 8 increments, used to allow the whole keyspace of a wheel.",
+    "definition": "Flies that have some rotational freedom, to allow use of the whole range of each wheel.",
     "media": {
       "title": "By: Mick777Oz",
       "subtitle": "CC BY-NC-SA 4.0",

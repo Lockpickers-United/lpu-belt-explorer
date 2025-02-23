@@ -52,7 +52,7 @@ export default [
                     const {default: HowToPage} = await import('../scorecard/HowToPage.jsx')
                     return {element: <HowToPage/>}
                 }
-            },
+            }
         ]
     },
     {
@@ -82,6 +82,13 @@ export default [
                     const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
                     return {element: <Leaderboard tab={'blackBelts'}/>}
                 }
+            },
+            {
+                path: '/leaderboard/recent',
+                lazy: async () => {
+                    const {default: Leaderboard} = await import('../leaderboard/Leaderboard')
+                    return {element: <Leaderboard tab={'recent'}/>}
+                }
             }
         ]
     },
@@ -93,12 +100,19 @@ export default [
         }
     },
     {
+        path: '/beltsMarkdown',
+        lazy: async () => {
+            const {default: BeltsMarkdownRoute} = await import('../info/BeltsMarkdownRoute')
+            return {element: <BeltsMarkdownRoute/>}
+        }
+    },
+    {
         path: '/dans',
         lazy: async () => {
             const {default: DansRoute} = await import('../info/DansRoute')
             return {element: <DansRoute/>}
         }
-    },{
+    }, {
         path: '/projects',
         lazy: async () => {
             const {default: ProjectsRoute} = await import('../info/ProjectsRoute')
@@ -195,42 +209,42 @@ export default [
     },
     {
         path: '/profile/:userId/scorecard',
-        lazy: async() => {
+        lazy: async () => {
             const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute/>}
         }
     },
     {
         path: '/profile/:userId/scorecard/popular',
-        lazy: async() => {
+        lazy: async () => {
             const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
             return {element: <ScorecardRoute mostPopular={true}/>}
         }
     },
     {
         path: '/profile/:userId/scorecard/no-tracking',
-        lazy: async() => {
+        lazy: async () => {
             const {default: ScorecardNoTrackRoute} = await import('../scorecard/noTrack/ScorecardNoTrackRoute.jsx')
             return {element: <ScorecardNoTrackRoute/>}
         }
     },
     {
         path: '/profile/scorecard/upgrades',
-        lazy: async() => {
+        lazy: async () => {
             const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')
             return {element: <UpgradesRoute/>}
         }
     },
     {
         path: '/profile/scorecard/howto',
-        lazy: async() => {
+        lazy: async () => {
             const {default: HowToRoute} = await import('../scorecard/HowToRoute')
             return {element: <HowToRoute/>}
         }
     },
     {
         path: '/profile/:userId/safelocks',
-        lazy: async() => {
+        lazy: async () => {
             const {default: SafelocksCollectionRoute} = await import('../safelocksCollection/SafelocksCollectionRoute')
             return {element: <SafelocksCollectionRoute/>}
         }
@@ -283,7 +297,8 @@ export default [
             const {default: SafelocksRoute} = await import('../safelocks/SafelocksRoute.jsx')
             return {element: <SafelocksRoute/>}
         }
-    },{
+    },
+    {
         path: '/award',
         lazy: async () => {
             const {default: AwardRoute} = await import('../award/AwardRoute.jsx')
@@ -297,8 +312,106 @@ export default [
         }
     },
     {
+        path: '/rafl',
+        lazy: async () => {
+            const {default: RaffleParentRoute} = await import('../rafl/RaffleParentRoute.jsx')
+            return {element: <RaffleParentRoute/>}
+        },
+        children: [
+            {
+                path: '/rafl',
+                lazy: async () => {
+                    const {default: RaffleRoute} = await import('../rafl/RaffleRoute.jsx')
+                    return {element: <RaffleRoute/>}
+                }
+            },
+            {
+                path: '/rafl/charities',
+                lazy: async () => {
+                    const {default: RaffleCharitiesRoute} = await import('../rafl/RaffleCharitiesRoute.jsx')
+                    return {element: <RaffleCharitiesRoute/>}
+                }
+            },
+            {
+                path: '/rafl/enter',
+                lazy: async () => {
+                    const {default: RaffleEnterAboutRoute} = await import('../rafl/RaffleEnterAboutRoute.jsx')
+                    return {element: <RaffleEnterAboutRoute/>}
+                }
+            },
+            {
+                path: '/rafl/entryform',
+                lazy: async () => {
+                    const {default: RaffleEntryFormRoute} = await import('../rafl/entryForm/RaffleEntryFormRoute.jsx')
+                    return {element: <RaffleEntryFormRoute/>}
+                }
+            },
+            {
+                path: '/rafl/reports',
+                lazy: async () => {
+                    const {default: RaffleReportRoute} = await import('../rafl/reports/RaffleReportRoute.jsx')
+                    return {element: <RaffleReportRoute/>}
+                }
+            },
+            {
+                path: '/rafl/announce',
+                lazy: async () => {
+                    const {default: RaffleAnnounceRoute} = await import('../rafl/RaffleAnnounceRoute.jsx')
+                    return {element: <RaffleAnnounceRoute/>}
+                }
+            },
+            {
+                path: '/rafl/stats',
+                lazy: async () => {
+                    const {default: RaffleStatsRoute} = await import('../rafl/RaffleStatsRoute.jsx')
+                    return {element: <RaffleStatsRoute/>}
+                }
+            }
+        ]
+    },{
+        path: '/tools',
+        lazy: async () => {
+            const {default: ToolsParentRoute} = await import('../tools/ToolsParentRoute.jsx')
+            return {element: <ToolsParentRoute/>}
+        },
+        children: [
+            {
+                path: '/tools',
+                lazy: async () => {
+                    const {default: ToolsRoute} = await import('../tools/ToolsRoute.jsx')
+                    return {element: <ToolsRoute/>}
+                }
+            },{
+                path: '/tools/flickrinfo',
+                lazy: async () => {
+                    const {default: FlickrInfoRoute} = await import('../tools/flickrInfo/FlickrInfoRoute.jsx')
+                    return {element: <FlickrInfoRoute/>}
+                }
+            },{
+                path: '/tools/rafl-charities',
+                lazy: async () => {
+                    const {default: RaflCharitiesRoute} = await import('../tools/raflCharities/RaflCharitiesRoute.jsx')
+                    return {element: <RaflCharitiesRoute/>}
+                }
+            }
+        ]
+    },
+    {
+        path: '/view',
+        lazy: async () => {
+            const {default: ViewPageRoute} = await import('../viewPage/ViewPageRoute.jsx')
+            return {element: <ViewPageRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },
+
+    {
+        path: '*',
+        loader:
+            () => redirect('/locks')
+    }
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

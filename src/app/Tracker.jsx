@@ -3,8 +3,11 @@ import querystring from 'query-string'
 import AppContext from './AppContext'
 
 function Tracker({feature, ...extraParams}) {
-    const {admin} = useContext(AppContext)
+    const {admin} = useContext(AppContext) //eslint-disable-line
+
+    // disable for rafl testing/reporting
     if (import.meta.env.DEV || admin) return null
+
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = files[feature] || 'lpu.gif'
     const ref = document.referrer || 'none'
@@ -17,7 +20,8 @@ function Tracker({feature, ...extraParams}) {
 
 const files = {
     locks: 'welcome.gif',
-    lock: 'clear.gif'
+    lock: 'clear.gif',
+    raflPot: 'rafl.gif'
 }
 
 export default React.memo(Tracker)

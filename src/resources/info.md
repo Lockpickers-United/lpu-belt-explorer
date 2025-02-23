@@ -13,10 +13,8 @@ Reddit post, or one using a service like imgur.com
 
 Q: **How do I share a Challenge Lock? How do I make sure it qualifies?**
 
-> A: It is recommended that, before you send out a challenge lock, you send photos of the modifications you made
-of the lock to a mod and receive confirmation that the lock qualifies. Once you've sent the lock, you'll need the
-recipient to confirm to a mod that the lock has been received (or you can provide a link to a YouTube video where the
-recipient is picking it; anything that proves the lock has been received by someone else)
+> A: It is recommended that, before you send out a challenge lock, you send photos of the modifications you made of the lock to a mod and receive confirmation that the lock qualifies. To find someone to share the challenge lock with, we recommend creating a post on the sub looking for someone to send it to, you should include your country and where you're willing to ship it to, you can also recommend it for a certain belt level if you feel it has a level of difficulty. Also be mindful to look at the belt of people looking to receive your lock, this can be a good indicator of whether they will be able to pick your lock and their engagement level with the community (unfortunately, there is no guarantee they will send it on after they are done with it, but you may have better luck with someone more engaged). Once you've sent the lock, you'll need the recipient to confirm to a mod that the lock has been received (or you can provide a link to a YouTube video where the recipient is picking it; anything that proves the lock has been received by someone else).
+
 
 Q: **My lock is SFIC or some other really difficult to gut core and I don't want to risk ruining it. Can I still
 use this to qualify for a belt?**
@@ -63,7 +61,7 @@ a larger variant.)
 Q: **Do I have to submit for my belt on Discord and Reddit if I use both?**
 
 > A: Please only submit your request on one platform and ask for your belt to be sync'd to the other platform by
-providing your username there. Eg. if you have a belt on Reddit you'd like sync'd to Discord, provide your Discord
+providing your username there. E.g. if you have a belt on Reddit you'd like sync'd to Discord, provide your Discord
 username via modmail. If you have a belt on Discord you'd like sync'd to Reddit, provide your Reddit username via
 @LPUBeltBot in #belt-requests.
 
@@ -76,9 +74,7 @@ you will be ineligible for promotion for 30 days.
 
 Q: **Are there any more goals to work towards after achieving black belt?**
 
-> A: Yep! We have an entirely separate rule system for earning stripes after you've achieved black. It takes into
-account everything you've done throughout your lockpicking career, so we advise you don't delete any of your videos from
-the internet. Check it out [here](/#/dans).
+> A: Yes! We have an entirely separate rule system for earning stripes after you've achieved Black. It takes into account everything you've done throughout your lockpicking career, so we advise you don't delete any of your videos from the internet. Check it out [here](/#/dans).
 
 ----------
 
@@ -102,7 +98,7 @@ the internet. Check it out [here](/#/dans).
   provides an option to password protect your
   videos.  [/u/Kitteh_of_Dovrefjel](https://www.reddit.com/u/Kitteh_of_Dovrefjel)
   has  [created a great video guide](https://youtu.be/gcekRz-7If8)  to explain how to pick and gut your locks on video.
-  Also, [please say "no" to vertical video.](https://www.youtube.com/watch?v=dechvhb0Meo). Please avoid using the Shorts
+  Also, [please say "no" to vertical video](https://www.youtube.com/watch?v=dechvhb0Meo). Please avoid using the Shorts
   format on YouTube, it does not allow for rewinding to see anything that was missed without watching the whole video
   over.
 
@@ -112,11 +108,7 @@ the internet. Check it out [here](/#/dans).
 - Some of the higher belts require you to have made a tool. This requirement cannot be met by having used a paper clip,
   bobby pin or the like. You must actually make a specialized tool.
   
-- All lock picking must take place through "normally accessible" means. What this means is that lock tools should be 
-  inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the 
-  lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the 
-  lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get 
-  in the way of the camera.
+- All lock picking must take place through "normally accessible" means. What this means is that lock tools should be inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the lock, having extra lighting behind the lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get in the way of the camera.
 
 - The list of locks is a living document. If you believe you have picked a lock that is equivalent to one of those
   listed in the requirements, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking). We
@@ -142,7 +134,7 @@ the internet. Check it out [here](/#/dans).
 
 - Kung Fu Panda Clause: In some extremely rare cases, a member's accomplishment will be noteworthy to the point that it
   changes the state of the art with respect to lock picking. Generally this involves developing a highly complex tool, method and
-  technique that results in a "first time in history" opening of a lock that had long stood as pick proof. Since there
+  technique that results in a "first time in history" opening of a lock that had long stood as pickproof. Since there
   is usually no precedent for the work having been accomplished, these cases will be evaluated individually as they
   arise by the moderation team, and the member ranked at the belt deemed appropriate.
 
@@ -174,7 +166,7 @@ the internet. Check it out [here](/#/dans).
 For submissions, please follow these guidelines:
 
 - Videos must consist of a pick and gut in a single take. Length is unimportant - do not remove sections to make the video "cleaner."
-- Videos must be in an easily reviewable format. Standard Youtube (not Shorts) videos are preferred. If another format/host is used please ensure it does not require downloading the video or other accommodations to view.
+- Videos must be in an easily reviewable format. Standard YouTube (not Shorts) videos are preferred. If another format/host is used please ensure it does not require downloading the video or other accommodations to view.
 - Video elements such as obscuring graphics, speed adjustments, quick zooms (which can look like cuts), etc. during the pick and gut may result in the invalidation of the submission. While these may be added to a video for social media, please submit the raw footage for belt purposes.
   - If you have any concerns about zooms or lighting changes being misconstrued as cuts, consider placing a timer in view of the camera to provide evidence the pick and gut is continuous.
 - All important elements of the lock must be shown clearly during the video. This includes but is not limited to:
@@ -188,16 +180,17 @@ For submissions, please follow these guidelines:
 
 ----------
 
-## Challenge Lock Requirements
+## Blue Belt Project Requirements
 
-Blue Belt Picker and higher require that you have custom pinned a "Challenge Lock" and shared it with another picker (
-Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you
-to the fun of exchanging locks designed not for security but specifically to defeat picking.
+To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these project**. If you have an idea for another project you would like to complete that’s not listed here, contact us through modmail or #mod-requests on Discord to discuss it.
 
-If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain
-the more in-depth knowledge of how locks function that comes from building your own.
+### Challenge Lock Requirements
 
-[Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to. Having no interest in building a challenge lock is not grounds for an exception.
+Blue Belt requests require that you have completed an advanced project, which may be a custom pinned "Challenge Lock" shared with another picker (Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you to the fun of exchanging locks designed not for security but specifically to defeat picking.
+
+If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain the more in-depth knowledge of how locks function that comes from building your own.
+
+[Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to.
 
 A "**Challenge Lock**" is defined as:
 
@@ -213,19 +206,45 @@ Number of modifications must  **total or exceed SIX**  and may include any or al
 
 Stipulations:
 
-- Each  **"turned, sculpted or shaped" key pin**  counts as one modification. Pins must be shaped BY the builder,  **
-  removing no less than 15%**  of the original material
-- Each  **"turned, sculpted or shaped" driver pin**  counts as one modification. Pins must be shaped BY the builder,  **
-  removing no less than 15%**  of the original material
-- **Pin-in-pin**  counts as one "turned, sculpted or shaped" pin per pin modified. Shaping a pin and also making it
-  pin-in-pin does not count as two modifications
+- Each  **"turned, sculpted or shaped" key pin**  counts as one modification. Pins must be shaped BY the builder,  **removing no less than 15%**  of the original material
+- Each  **"turned, sculpted or shaped" driver pin**  counts as one modification. Pins must be shaped BY the builder,  **removing no less than 15%**  of the original material
+- **Pin-in-pin**  counts as one "turned, sculpted or shaped" pin per pin modified. Shaping a pin and also making it pin-in-pin does not count as two modifications
 - **Chamber threading**  counts as one "modification" regardless of the number of chambers augmented
 - **Chamber counter-milling**  counts as one "modification" regardless of the number of chambers augmented
-- Each  **improvised secondary locking mechanism**  counts as one modification (latches, check pins, etc)
-- **"Distinguishing mark" engraved into the lock**  counts as one modification (**Simple scratches do not count**.
-  Engraving must be a symbol or mark of the maker)
+- Each  **improvised secondary locking mechanism**  counts as one modification (latches, check pins, etc.)
+- **"Distinguishing mark" engraved into the lock**  counts as one modification (**Simple scratches do not count**. Engraving must be a symbol or mark of the maker)
 - **Hand cut key** counts as one "modification". The key must be cut using hand tools from a blank, and must be a
   reasonable bitting. Locks made with 0-bitted, or minimally bitted keys do not count.
+
+
+### Homemade Tension Tool Requirements
+
+Tension tools for the Blue Belt project need to have **at least three** of the following characteristics in order to be considered:
+
+- Made from stock material (e.g. not a bent wiper blade)
+- Feature a finished handle
+- Be designed for a specific, hard to tension lock
+- Have a design purpose to make tensioning more ergonomic
+- Be dual sided
+- Be specifically made for TOK (top of keyway) tension
+- Have a design theme (this must be immediately recognizable)
+
+
+### Example Lock Write-up
+
+This detailed write-up of the ASSA Desmo is a perfect example of what we are looking for: [https://assamow.com/desmow-rev-1.4.pdf](https://assamow.com/desmow-rev-1.4.pdf). Make sure that you describe the security features, potential flaws or limits, and give a general overview of the lock and how it works.
+
+### Documenting the First Pick of an Unknown Lock
+
+Note: If the lock is a standard form pin tumbler lock it should have 5 pins or more, or be of unique interest. (Sorry, no dollar-store clones)
+
+1. Provide Context for the Lock - Brand, model, origin, use case, manufacturer info, dimensions, material, keyway, mechanism, unusual features.
+2. Show the Lock Before Picking - Show lock and key if possible.
+3. Record a Continuous Picking Attempt - show special tools etc. clearly.
+4. Gut the Lock (If Possible) -  Show the lock being disassembled, ensuring no modifications were made. Identify Components. Consider Measuring Key Components. If the lock cannot be gutted, use a bright light into the keyway and use a borescope if available.
+5. Document the Findings - Summarize your findings in a write-up including suggestions on difficulty, etc.
+6. Share with the Lockpicking Community - Share on YouTube or social media to document for future reference. Submit to databases like LockWiki and lpubelts.com if the lock is of significant interest.
+
 
 ----------
 
@@ -243,7 +262,7 @@ to  [u/stab_in_the_eye](https://www.reddit.com/u/stab_in_the_eye)  for the video
 to  [u/Tko5479](https://www.reddit.com/u/Tko5479)  for the photo example.
 
 1. Show the keyway of the lock clearly on the video so we can identify the lock.
-2. Use the Operating key to show that the lock opens up with the use of the Operating key  
+2. Use the Operating key to show that the lock opens up with the use of the Operating key.
    NOTE: The lock must remain in frame for the remainder of your video past this point
 
 3. If the SFIC lock is currently in a lock body, such as a padlock, use the Control key to remove the core
@@ -279,23 +298,6 @@ Brown belt:
 - RubberBanned
 - L0ckJocKey
 
-----------
+### Corbin Master Ring
+While similar to SFIC in that they have 2 shear lines, the Corbin Master Ring can be gutted without special tools and thus videos do not need to follow the special SFIC filming requirements. A visual demonstration of both shear lines rotating should be included for a purple belt submission. An example of a purple belt Master Ring video can be [seen here](https://youtu.be/w2e8IgWUrX0?si=djLZgWkiEOAUliq9).
 
-## Changes to Lock Rankings
-
-From time to time we may change the rankings of certain locks. These changes may be due to refined or new picking
-techniques making locks that were once difficult to pick, less so, or simply because we've decided they were improperly
-ranked in the first place.
-
-If a lock moves up a rank (e.g. from yellow belt to orange belt) that change will take effect immediately. If you notice
-a lock you picked last week has been moved up a rank and would now qualify you for a higher belt rank, do request the
-new rank.
-
-If a lock moves down a rank (e.g. from orange belt to yellow belt) and you've already picked it, fear not, you've earned
-that rank, and we have no intention to revoke a belt rank that was well earned. We also understand that some locks
-require a significant financial and time investment, and you may have already purchased a lock and started working on it
-before we announced the lock is being reclassified. When we move a lock down a rank, we will make every effort to state
-that we are doing so publicly, and provide an appropriate grace period (generally one month) to allow anyone currently
-working on that lock to have time to get their accomplishment ranked at the old belt level.
-
-Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.

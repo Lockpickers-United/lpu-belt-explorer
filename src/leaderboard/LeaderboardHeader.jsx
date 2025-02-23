@@ -48,9 +48,7 @@ function LeaderboardHeader({columns}) {
         blackBeltCount: <LockOpenOutlinedIcon color={sort === 'blackBeltCount' ? 'secondary' : undefined} onClick={handleSort('blackBeltCount')}
                                               style={{cursor: 'pointer'}}/>,
         blackBeltAwardedAt: <EventAvailableIcon color={sort === 'blackBeltAwardedAt' ? 'secondary' : undefined} onClick={handleSort('blackBeltAwardedAt')}
-                       style={{cursor: 'pointer'}}/>,
-
-
+                       style={{cursor: 'pointer'}}/>
     }
 
     return (

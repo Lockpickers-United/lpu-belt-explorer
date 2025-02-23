@@ -15,7 +15,7 @@ function SiteStats({data}) {
     const divSpacing = !midWidth ? '10px' : !smallWidth ? '26px' : '26px'
 
     const {
-        lockSummary: {lockCounts},
+        lockStats: {lockCounts},
         siteFullNew: {dailyAverages, totals}
     } = data
 

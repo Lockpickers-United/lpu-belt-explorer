@@ -7,7 +7,7 @@ import Fade from '@mui/material/Fade'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
 
-function PopularEntries({owner, popularEntries}) {
+function PopularEntries({owner, popularEntries, popularType}) {
     const {isMobile} = useWindowSize()
     const {filters} = useContext(FilterContext)
 
@@ -64,7 +64,7 @@ function PopularEntries({owner, popularEntries}) {
                 <Fade in={transition}>
                     <div style={{fontSize: '1.2rem', fontWeight: 700}}>{description} {pickedEntries} of
                         the {topEntries.length} {setText} locks
-                        in BB Scorecards ({pickedPercent}%)
+                        in {popularType} Scorecards ({pickedPercent}%)
                     </div>
                 </Fade>
                 (only entries with documentation are counted)

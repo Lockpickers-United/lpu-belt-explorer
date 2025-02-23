@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 env:
   GOOGLE_SHEET_ID: ${{ vars.GOOGLE_SHEET_ID }}
+  RAFL_SHEET_ID: ${{ vars.RAFL_SHEET_ID }}
   
 jobs:
   deploy:

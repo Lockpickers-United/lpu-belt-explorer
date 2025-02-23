@@ -17,7 +17,7 @@ function PhotoStats({data}) {
     const bodyStyle = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 400}
     const bodyStyleBold = {border: 0, padding: '4px 8px 0px 0px', fontWeight: 700}
 
-    const {photoSegments, topPhotographers, uniqueImages, contributors} = data.lockSummary.photoStats
+    const {photoSegments, topPhotographers, uniqueImages, contributors} = data.lockStats.photoStats
 
     return (
         <React.Fragment>

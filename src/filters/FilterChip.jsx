@@ -6,11 +6,12 @@ import Chip from '@mui/material/Chip'
 import {useNavigate} from 'react-router-dom'
 import FilterContext from '../context/FilterContext'
 import glossary from '../data/glossary.json'
+import Link from '@mui/material/Link'
 
-function FilterChip({field, value, label = value, ...props}) {
+function FilterChip({field, value, label = value, mode, ...props}) {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
-    const {addFilter} = useContext(FilterContext)
+    const {filters, addFilter} = useContext(FilterContext)
 
     const handleClose = useCallback(event => {
         event.preventDefault()
@@ -22,9 +23,11 @@ function FilterChip({field, value, label = value, ...props}) {
         event.preventDefault()
         event.stopPropagation()
         setOpen(false)
-        addFilter(field, value)
+        if (!filters[field]?.includes(value)) {
+            addFilter(field, value)
+        }
         window.scrollTo({top: 0, behavior: 'smooth'})
-    }, [addFilter, field, value])
+    }, [addFilter, field, filters, value])
 
     const handleOpen = useCallback(event => {
         event.preventDefault()
@@ -45,27 +48,52 @@ function FilterChip({field, value, label = value, ...props}) {
 
     return (
         <React.Fragment>
-            <Chip
-                clickable
-                variant='outlined'
-                label={label}
-                style={{marginRight: 4, marginBottom: 4}}
-                onClick={handleOpen}
-                {...props}
-            />
-            <Menu
-                open={!!open}
-                anchorEl={open}
-                anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
-                onClose={handleClose}
-            >
-                <MenuItem disabled>Term: {value}</MenuItem>
-                <Divider/>
-                <MenuItem onClick={handleFilter}>Add Filter</MenuItem>
-                <MenuItem onClick={handleGoToGlossary} disabled={!termFound}>
-                    Go to Glossary
-                </MenuItem>
-            </Menu>
+            {(!mode || mode === 'full') && termFound &&
+                <React.Fragment>
+                    <Chip
+                        clickable
+                        variant='outlined'
+                        label={label}
+                        style={{marginRight: 4, marginBottom: 4}}
+                        onClick={handleOpen}
+                        {...props}
+                    />
+                    {!!open &&
+                        <Menu
+                            open={!!open}
+                            anchorEl={open}
+                            anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
+                            onClose={handleClose}
+                        >
+                            <MenuItem disabled>Term: {value}</MenuItem>
+                            <Divider/>
+                            <MenuItem onClick={handleFilter}>Add Filter</MenuItem>
+                            <MenuItem onClick={handleGoToGlossary} disabled={!termFound}>
+                                Go to Glossary
+                            </MenuItem>
+                        </Menu>
+                    }
+                </React.Fragment>
+            }
+            {(mode === 'simple' || ((!mode || mode === 'full') && !termFound)) &&
+                <Chip
+                    clickable
+                    variant='outlined'
+                    label={label}
+                    style={{marginRight: 4, marginBottom: 4}}
+                    onClick={handleFilter}
+                    {...props}
+                />
+            }
+            {(mode === 'text') &&
+                <Link
+                    style={{color:'#fff'}}
+                    onClick={handleFilter}
+                    {...props}
+                >
+                    {label}
+                </Link>
+            }
         </React.Fragment>
     )
 }

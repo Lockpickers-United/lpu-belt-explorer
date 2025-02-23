@@ -1,43 +1,46 @@
-### August-October 2024
+## Changes to Lock Rankings
+
+From time to time we may change the rankings of certain locks. These changes may be due to refined or new picking
+techniques making locks that were once difficult to pick, less so, or simply because we've decided they were improperly
+ranked in the first place.
+
+If a lock moves up a rank (e.g. from yellow belt to orange belt) that change will take effect immediately. If you notice
+a lock you picked last week has been moved up a rank and would now qualify you for a higher belt rank, do request the
+new rank.
+
+If a lock moves down a rank (e.g. from orange belt to yellow belt) and you've already picked it, fear not, you've earned
+that rank, and we have no intention to revoke a belt rank that was well-earned. We also understand that some locks
+require a significant financial and time investment, and you may have already purchased a lock and started working on it
+before we announced the lock is being reclassified. When we move a lock down a rank, we will make every effort to state
+that we are doing so publicly, and provide an appropriate grace period (generally one month) to allow anyone currently
+working on that lock to have time to get their accomplishment ranked at the old belt level.
+
+Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
+
+### January 2025
+
+First change for the new year! We have some adjustments in the higher belts as well as some community votes being implemented.
 
 **NEW ADDITIONS**
 
-- **Axa Clinch** (GREEN) basic DD lock - Beginner level DD
-- **GSK dual row sidebar lock** (PURPLE) - another interesting lock with tapered elements
-- **DOM IX 6 KG** (PURPLE) - Another DOM enters the family, this time similar to an ix 5kg, but with 6 nasty pin stacks
+- **Basi AS** - ORANGE - Standard 5-pin with two spools, similar to V50.
+- **BAB DESS5** - ORANGE - Very old standard 5-pin with two spools and friendly profile.
+- **Yale 500+** - GREEN - Version of Yale 500 without overmilling.
+- **Wilka PR100 Series** - GREEN - 6-pin Wilka with spools and copy protection element, like 3VE but vertical profile.
+- **Winkhaus keyTec RPE** - BLUE - Very complicated profile with newer Winkhaus pinning makes this tricky.
 
+**UPGRADES**
 
-**DOWNGRADES**
-- **Commando Peacemaker** downgrade to ORANGE -  so these have security pins but tolerances don't seem to make it that hard to pick
-- **FTH Thirard Surveyor** downgrade to BROWN - These pump locks are mostly destined to be downgraded as more people pick them - they are fun y'all!
+- **Brinks R70/R80** - YELLOW - A 4-pin lock with two spools.
+- **Abus Pfaffenhain V14** (with 6 pins and Pfaffenhain pin or AS pins) - BLUE - The combination of pins, profile and trap pin make this difficult enough for blue. Requires 360° pick.
+- **Keso 10RS / 2000S / 4000S** with >= 13 pins - BROWN - Align with LIPS Keso.
+- **Urban Alps Stealth Key Gen2** - BLACK2 - This is more difficult than Gen1 which is currently BLACK.
 
+**SAMELINING**
 
-**UPGRADE**
-
-- **Alpha FB (<15 pins)** - change to <12 for BROWN, upgrade 12 or more pins to RED. As 15+ pins FB seem like a unicorn, they are still very challenging to pick, so a new division was decided on
-
-
-**SAMELINES AND CHANGES**
-
-- **Profalux** sameline with FTH Surveyor
-- **STS IX and STS IX bola** sameline with DOM ix 10 and STS ix 10kg respectively (no fins) (most say "LIC DOM" on the package, cylinder or key)
-- **STS T10** sameline with TESA T10
-- **Inceca Plana** sameline with Tubar
-- **Inn Key Smart** sameline with DOM IX Saturn
-- **Dekaba Guard** sameline with Mauer Red Line G
-- **Mauer Elite 2** sameline with Mauer Elite 1
-- **Mila Evolution** change to Mila Evo and sameline with Lucznik LC
-- **GTV MPS** sameline with Lucznik LC
-- **Heracles Pericles** instead of Heracles Vigie (named wrong before)
-  Picard Vigie / Heracles Pericles - add "euro profile" in version (euro profile and deadbolt are VERY different in construction, all ranked ones are euros)
-- **Kodai G15** sameline with Aegis
-  Gerda Exxo / Diamond K3 - sameline with Securemme K64
-- **Kaba 8** sameline 2 row and 3 row <9 pins
-- **Abus EP10** sameline with Bricard Chiffral
-- **Elzett Magnet** change to Elzett M
-- **ERA professional cylinder** sameline with ABS Avocet
-- **Nemef NF4** sameline with Tesa T80
- - **Yale & Azbe HS-K** - sameline with Tesa T80
- - **Abus bravus locks**, the **Avocet and similar variants**, and the **Lucznik LC and similar variants** - require 360°: these locks have traps that require some work to pick
-- **Bilock ASIO** change to Bilock (SCEC approved; formerly known as ASIO), added note: two false gates per pin, staggered rows
-
+- Remove **Clavis f22** as an upgrade from Clavis q18 to align with other locks like Kaba.
+- **Securemme K2** - Sameline with Securemme K22.
+- **Yale B (6-pin with overmilling)** - Sameline with Yale 500.
+- **Vachette Radial** - Sameline Radial, Radial SI, Radial NT and NT+ as they are all very similar.
+- **ABUS X12R** - Sameline with EC880, same lock.
+- **Mottura Champion CP6** - Sameline with C55, same lock without interactive element.

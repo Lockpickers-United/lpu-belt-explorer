@@ -17,11 +17,12 @@ const ImportUsersTable = ({data}) => {
 
     const rowData = Object.keys(awardsDisplayNames).filter(x => x)
         .map(user => {
+            const maxAward = awardsDisplayNames[user]['maxAward'] ? awardsDisplayNames[user]['maxAward'] : 0
             return {
                 displayName: awardsDisplayNames[user]['displayName'] || 'no display name',
                 acquired: awardsDisplayNames[user]['acquired'],
-                maxAward: awards[awardsDisplayNames[user]['maxAward']].makeModels[0].model.replace(' Belt', ''),
-                beltName: awards[awardsDisplayNames[user]['maxAward']].name.replace(' Belt', ''),
+                maxAward: awards[maxAward].makeModels[0].model.replace(' Belt', ''),
+                beltName: awards[maxAward].name.replace(' Belt', ''),
                 userId: user
             }
         })
@@ -50,8 +51,6 @@ const ImportUsersTable = ({data}) => {
             : string
     },[navigate, rows])
 
-    //console.log('rows', rows)
-
     const tableData = {
         columns: [
             {'name': '#', 'align': 'center', 'id': 'index'},
@@ -76,10 +75,10 @@ const ImportUsersTable = ({data}) => {
                     : midWindow ? '.9rem'
                         : '.9rem'
 
-    const tableWidth = '80%'
+    const tableWidth = '60%'
 
     return (
-        <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}
+        <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} tableHeight={600} fontSize={fontSize}
                              sortable={sortable} sort={sort} setSort={setSort}
                              ascending={ascending} setAscending={setAscending} linkFunction={linkFunction}/>
     )

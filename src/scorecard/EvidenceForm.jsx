@@ -170,6 +170,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
                         margin='dense'
                         color={urlFieldColor}
                         onChange={processURL}
+                        focused
                     />
                     <IconButton disabled={evidenceUrlError || !evidenceUrl}>
                         <a href={evidenceUrl} target='_blank' rel='noreferrer'>
@@ -190,7 +191,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
                         disableFuture
                     />
 
-                    {!awardMode &&
+                    {(!awardMode && !addProject) &&
                         <TextField
                             select
                             style={{marginLeft: 30, width: 250}}

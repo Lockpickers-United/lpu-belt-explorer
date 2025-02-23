@@ -10,6 +10,9 @@ import AvTimerIcon from '@mui/icons-material/AvTimer'
 import LPU_logo from '../resources/LPU_logo'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import ConstructionIcon from '@mui/icons-material/Construction'
+import NewReleasesIcon from '@mui/icons-material/NewReleases'
+
+const {VITE_RAFL_STATE: raflState} = import.meta.env
 
 export default [
     {
@@ -34,6 +37,12 @@ export default [
         path: '/safelocks'
     },
     {
+        title: 'RAFL',
+        icon: <NewReleasesIcon fontSize='small'/>,
+        path: '/rafl',
+        hidden: raflState === 'hidden'
+    },
+    {
         title: 'Leaderboards',
         icon: <LeaderboardIcon fontSize='small'/>,
         path: '/leaderboard',
@@ -51,6 +60,10 @@ export default [
                 title: 'Black Belts',
                 path: '/leaderboard/blackBelts'
             },
+            {
+                title: 'Recent Belts & Picks',
+                path: '/leaderboard/recent'
+            }
         ]
     },
     {
@@ -96,8 +109,18 @@ export default [
             },
             {
                 admin: true,
+                title: 'RAFL Report',
+                path: '/rafl/reports'
+            },
+            {
+                admin: true,
                 title: 'Black Belt Report',
                 path: '/admin/blackBelts'
+            },
+            {
+                admin: true,
+                title: 'Tools',
+                path: '/tools'
             },
             {
                 admin: true,
