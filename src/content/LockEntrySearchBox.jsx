@@ -1,6 +1,4 @@
 import Backdrop from '@mui/material/Backdrop'
-import IconButton from '@mui/material/IconButton'
-import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useMemo, useRef, useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -10,14 +8,12 @@ import useWindowSize from '../util/useWindowSize'
 import entryName from '../entries/entryName'
 import {beltSort} from '../data/belts'
 
-function LockEntrySearchBox({setLockDetails, allEntries, disabled}) {
+function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
     const style = {maxWidth: 700}
     const {isMobile} = useWindowSize()
     const inputEl = useRef()
 
-
     const lockDetails = useMemo(() => {
-
         let options = []
         let lockIds = {}
         let lockNames = {}
@@ -61,9 +57,9 @@ function LockEntrySearchBox({setLockDetails, allEntries, disabled}) {
 
     const handleChange = useCallback((event, value) => {
         if (!value) {
-            setLockDetails({})
+            handleChangeLock({})
         } else if (options.includes(value)) {
-            setLockDetails({
+            handleChangeLock({
                 lockFullName: value,
                 lockName: lockNames[value],
                 lockId: lockIds[value],
@@ -71,41 +67,21 @@ function LockEntrySearchBox({setLockDetails, allEntries, disabled}) {
                 lockMaxSameline: lockMaxSamelines[value]
             })
         }
-    }, [lockIds, lockMaxSamelines, lockNames, lockSamelines, options, setLockDetails])
+    }, [lockIds, lockMaxSamelines, lockNames, lockSamelines, options, handleChangeLock])
 
     const [open, setOpen] = useState(false)
-    const handleClick = useCallback(() => {
-        setOpen(true)
-        setTimeout(() => inputEl.current.focus(), 15)
-    }, [])
     const handleBlur = useCallback(() => setOpen(false), [])
-
-    const focusStyle = open && isMobile ? {
-        width: 'auto',
-        position: 'fixed',
-        left: 60,
-        right: 0,
-        paddingRight: 16,
-        maxWidth: 'unset',
-        zIndex: 9999999,
-        backgroundColor: '#272727'
-    } : {}
 
     return (
         <React.Fragment>
-            {!open && isMobile && <Tooltip title='Search' arrow disableFocusListener>
-                <IconButton color='inherit' onClick={handleClick}>
-                    <SearchIcon/>
-                </IconButton>
-            </Tooltip>}
-            {(open || !isMobile) && <Autocomplete
+            <Autocomplete
                 disabled={disabled}
                 key={disabled}
                 selectOnFocus
                 clearOnEscape
                 handleHomeEndKeys
                 fullWidth
-                style={{...style, ...focusStyle}}
+                style={style}
                 options={options}
                 onChange={handleChange}
                 renderInput={(params) =>
@@ -125,7 +101,7 @@ function LockEntrySearchBox({setLockDetails, allEntries, disabled}) {
                         }}
                     />
                 }
-            />}
+            />
             <Backdrop
                 invisible
                 open={open && isMobile}

@@ -60,7 +60,7 @@ export default function Dropzone({files, setFiles}) {
         marginBottom: 12,
         marginRight: 8,
         //width: 100,
-        height: 100,
+        height: 140,
         padding: 4,
         boxSizing: 'border-box'
     }

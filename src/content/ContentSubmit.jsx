@@ -12,16 +12,21 @@ import {enqueueSnackbar} from 'notistack'
 import {Collapse} from '@mui/material'
 import Checkbox from '@mui/material/Checkbox'
 
+import ImageList from '@mui/material/ImageList'
+import ImageListItem from '@mui/material/ImageListItem'
+import useWindowSize from '../util/useWindowSize.jsx'
+
 function ContentSubmit({profile}) {
 
     const {updateProfileField} = useContext(DBContext)
     const [lockDetails, setLockDetails] = useState({})
+    const [lock, setLock] = useState(undefined)
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(null)
+    const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(false)
     const [altLock, setAltLock] = useState(false)
     const [altLockName, setAltLockName] = useState('')
-
 
     const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName)
     const [initialCredit, setInitialCredit] = useState(photoCredit)
@@ -40,6 +45,7 @@ function ContentSubmit({profile}) {
 
     const handleFileUpload = async (event) => {
         event.preventDefault()
+        setUploading(true)
 
         const uploadsDir = `${dt}_${prefix}`
 
@@ -50,8 +56,8 @@ function ContentSubmit({profile}) {
         formData.append('droppedFileNames', droppedFileNames)
         formData.append('lockFullName', lockDetails.lockFullName)
         formData.append('lockName', lockDetails.lockName)
-        formData.append('version', entry.version)
-        formData.append('belt', entry.belt)
+        formData.append('version', entry?.version)
+        formData.append('belt', entry?.belt)
         formData.append('lockId', lockDetails.lockId)
         formData.append('photoCredit', photoCredit)
         formData.append('displayName', profile.displayName)
@@ -65,15 +71,16 @@ function ContentSubmit({profile}) {
         }
 
         await axios.post(
-            'https://content.lpubelts.com:8443/api/upload', formData,
+            'https://explore.lpubelts.com:8443/upload-content', formData,
             {headers: {'Content-Type': 'multipart/form-data'}}
         )
             .then(response => {
+                console.log('response', response)
                 setResponse(response.data)
             })
             .catch(error => {
                 setUploadError(true)
-                console.error('error', error)
+                console.error('upload error', error)
             })
 
         if (uploadError) {
@@ -86,16 +93,28 @@ function ContentSubmit({profile}) {
 
     }
 
+    const handleChangeLock = useCallback(details => {
+        setLockDetails(details)
+        setLock(allEntries.find(e => e.id === details.lockId))
+    }, [])
+
     const handleChangeCredit = useCallback(event => {
         const {value} = event.target
         setPhotoCredit(value)
     }, [])
 
     const handleReload = useCallback(() => {
-        setLockDetails([])
+        setLockDetails({})
+        setLock(undefined)
         files.forEach(file => URL.revokeObjectURL(file.preview))
         setFiles([])
         setResponse(null)
+        setUploading(false)
+        setUploadError(false)
+        setAltLock(false)
+        setAltLockName(null)
+        document.getElementById('notInList').checked = false
+        document.getElementById('notes').value = ''
     }, [files])
 
     const handleAltLockToggle = useCallback(() => {
@@ -117,11 +136,13 @@ function ContentSubmit({profile}) {
 
 
     const searchBoxOpacity = altLock ? 0.5 : 1
+    const {flexStyle} = useWindowSize()
+
     return (
 
         <div style={{
-            maxWidth: 700, padding: 0,
-            marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
+            maxWidth: 800, padding: 0,
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft:8
         }}>
 
             {!response &&
@@ -131,30 +152,63 @@ function ContentSubmit({profile}) {
                     <div>
                         <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Select Lock</div>
                         <div style={{opacity: searchBoxOpacity}}>
-                            <LockEntrySearchBox setLockDetails={setLockDetails} allEntries={allEntries}
+                            <LockEntrySearchBox handleChangeLock={handleChangeLock} allEntries={allEntries}
                                                 disabled={altLock}/>
                         </div>
 
                         <div style={{marginTop: 8}}>
-                            <Checkbox onChange={handleAltLockToggle} color='info' size='small'/> Submit photos for a lock
+                            <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'/> Submit photos for a
+                            lock
                             not on the site.
                         </div>
                         <Collapse in={altLock} style={{marginTop: 10}}>
                             <span style={{fontSize: '0.9rem'}}>Lock Name</span><br/>
-                            <TextField type='text' name='altLockName' value={altLockName} style={{width: 400}}
-                                       onChange={handleAltLockName} color='info'/>
+                            <TextField type='text' id='altLockName' name='altLockName' value={altLockName}
+                                       style={{width: 400}} onChange={handleAltLockName} color='info'/>
                         </Collapse>
                         <br/><br/>
 
-                        <div style={{display: 'flex'}}>
-                            <div style={{marginRight: 50}}>
+                        <div style={flexStyle}>
+                            <div style={{marginRight: 50, width: 350}}>
                                 <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                     Upload<br/>
                                 </div>
                                 <Dropzone files={files} setFiles={setFiles}/>
 
+                                {lock &&
+                                    <div>
+                                        <div style={{
+                                            fontSize: '1.5rem',
+                                            fontWeight: 500,
+                                            marginBottom: 10,
+                                            marginTop: 20
+                                        }}>
+                                            Existing Images<br/>
+                                        </div>
+                                        {lock.media ?
+
+                                            <div>
+                                                <ImageList sx={{width: 350}} variant='masonry' cols={2} gap={8}>
+                                                    {lock.media.map((item) => (
+                                                        <ImageListItem key={item.thumbnailUrl}>
+                                                            <img
+                                                                srcSet={`${item.thumbnailUrl}?w=164&fit=crop&auto=format&dpr=2 2x`}
+                                                                src={`${item.thumbnailUrl}?w=164&fit=crop&auto=format`}
+                                                                alt={item.title}
+                                                                loading='lazy'
+                                                            />
+                                                        </ImageListItem>
+                                                    ))}
+                                                </ImageList>
+                                            </div>
+                                            : <span>no images</span>
+                                        }
+                                    </div>
+                                }
+
                             </div>
-                            <div>
+
+                            <div style={{width: 350}}>
                                 <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Details<br/></div>
                                 {lockDetails.lockFullName &&
                                     <span>
@@ -174,16 +228,16 @@ function ContentSubmit({profile}) {
                                 </span>
                                 }
                                 <span style={{fontSize: '0.9rem'}}>Credit to</span><br/>
-                                <TextField type='text' name='photoCredit' value={photoCredit} style={{width: 400}}
+                                <TextField type='text' name='photoCredit' value={photoCredit} style={{width: 350}}
                                            onChange={handleChangeCredit} color='info'/>
                                 <br/><br/>
                                 <span style={{fontSize: '0.9rem'}}>Notes</span><br/>
                                 <TextField type='text' name='notes' multiline fullWidth rows={3} color='info'
-                                           maxLength={1000}/>
+                                           maxLength={1000} id='notes'/>
 
                                 <br/><br/>
 
-                                <Button type='submit' variant='contained' color='info' disabled={!uploadable}>
+                                <Button type='submit' variant='contained' color='info' disabled={!uploadable||uploading}>
                                     Upload
                                 </Button>
 
@@ -198,32 +252,12 @@ function ContentSubmit({profile}) {
                 response &&
                 <div style={{display: 'flex'}}>
                     <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
-                        <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>{title} Uploaded!</div>
-
-                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>Lock Name</span><br/>
-
-                        <span
-                            style={{fontSize: '1.1rem'}}>{response['lockFullName']}</span>
-                        <br/><br/>
-
-                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>{title}</span><br/>
-                        <span
-                            style={{fontSize: '1.1rem'}}>
-                        {droppedFileNames.map(file =>
-                            <div key={file}>• {file}</div>
-                        )}
-                    </span>
-                        <br/>
-
-                        <span style={{fontWeight: 700, fontSize: '0.8rem'}}>Credit to</span><br/>
-                        <span
-                            style={{fontSize: '1.1rem'}}>{response['photoCredit']}</span>
-                        <br/><br/>
+                        <div style={{fontSize: '1.7rem', fontWeight: 500, marginBottom: 60, textAlign: 'center'}}>{title} Uploaded!</div>
 
                         <div style={{width: '100%', textAlign: 'right'}}>
                             <Button onClick={handleReload} variant='contained' color='info'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                Submit more photos!
+                                Submit more photos
                             </Button>
                         </div>
 
