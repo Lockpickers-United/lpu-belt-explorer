@@ -1284,9 +1284,8 @@ Q: **I already have a Six Sigma black belt. Can I trade this for a lockpicking b
 
 Q: **Can I use this belting system for my club or picking group?**
 
-> A: Of course. This work is licensed under a 
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
-Just be sure to credit us.
+> A: Of course. This work is licensed under a
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International [License](http://creativecommons.org/licenses/by-nc-sa/4.0/). The latest version of this page and lock list is available at [https://github.com/Lockpickers-United/lpu-belt-explorer/blob/gh-pages/belts.md](https://github.com/Lockpickers-United/lpu-belt-explorer/blob/gh-pages/belts.md). Just be sure to credit us.
 
 Q: **Will I be disqualified if I shoot the video vertically?**
 
@@ -1411,7 +1410,7 @@ Q: **Are there any more goals to work towards after achieving black belt?**
 ## Video Requirements
 
 For submissions, please follow these guidelines:
-
+- The lock and all components must remain within the frame and clearly visible throughout the video.
 - Videos must consist of a pick and gut in a single take. Length is unimportant - do not remove sections to make the video "cleaner."
 - Videos must be in an easily reviewable format. Standard YouTube (not Shorts) videos are preferred. If another format/host is used please ensure it does not require downloading the video or other accommodations to view.
 - Video elements such as obscuring graphics, speed adjustments, quick zooms (which can look like cuts), etc. during the pick and gut may result in the invalidation of the submission. While these may be added to a video for social media, please submit the raw footage for belt purposes.
