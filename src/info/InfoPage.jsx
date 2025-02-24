@@ -81,7 +81,7 @@ function InfoPage() {
             }}>
                 <CardHeader title='Belt Requirements' action={
                     <GithubButton
-                        url='https://github.com/Lockpickers-United/lpu-belt-explorer/blob/main/src/resources/info.md'/>
+                        url='https://github.com/Lockpickers-United/lpu-belt-explorer/blob/gh-pages/belts.md'/>
                 }/>
                 <CardContent>
 
