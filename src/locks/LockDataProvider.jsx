@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
+import collectionStatsById from '../data/collectionStatsById.json'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -38,6 +39,7 @@ export function DataProvider({children, allEntries, profile}) {
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
+                collectionSaves: collectionStatsById[entry.id] || 0,
                 simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
     }, [allEntries, profile])
@@ -81,7 +83,9 @@ export function DataProvider({children, allEntries, profile}) {
         return sort
             ? searched.sort((a, b) => {
                 if (sort === 'popularity') {
-                    return b.views - a.views
+                    return b.collectionSaves - a.collectionSaves
+                    || b.views - a.views
+                    || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'recentlyUpdated') {
                     const dayA = dayjs(a.lastUpdated)
                     const dayB = dayjs(b.lastUpdated)

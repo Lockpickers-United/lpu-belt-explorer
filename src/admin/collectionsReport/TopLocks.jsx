@@ -19,7 +19,7 @@ const TopLocks = ({cohort}) => {
     const topLocksScorecard = {
         title: 'Scorecard',
         columns: columns,
-        data: data.collectionsStatsCurrent[cohort].listStats.wishlist.topItems.slice(0, 25)
+        data: data.collectionsStatsCurrent[cohort].listStats.recordedLocks.topItems.slice(0, 25)
     }
 
     const {width} = useWindowSize()
