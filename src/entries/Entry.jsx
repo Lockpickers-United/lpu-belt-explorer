@@ -26,7 +26,6 @@ import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
-import remarkGfm from 'remark-gfm'
 
 function Entry({entry, expanded, onExpand}) {
     const {userId} = useParams()
