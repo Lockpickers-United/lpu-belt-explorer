@@ -26,6 +26,7 @@ import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
+import remarkGfm from 'remark-gfm'
 
 function Entry({entry, expanded, onExpand}) {
     const {userId} = useParams()
@@ -174,6 +175,16 @@ function Entry({entry, expanded, onExpand}) {
                                 </React.Fragment>
                             }/>
                         }
+                        {!!entry.description &&
+                            <div style={{margin: 8}}>
+                                <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {
+                                    target: '_blank',
+                                    rel: ['nofollow', 'noopener', 'noreferrer']
+                                }]]}>
+                                    {entry.description}
+                                </ReactMarkdown>
+                            </div>
+                        }
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
@@ -203,8 +214,8 @@ function Entry({entry, expanded, onExpand}) {
                         }
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <div style={{display: 'flex', width:'100%'}}>
-                            <div style={{flexGrow: 1, justifyItems:'left'}}>
+                        <div style={{display: 'flex', width: '100%'}}>
+                            <div style={{flexGrow: 1, justifyItems: 'left'}}>
                                 <Tracker feature='lock' id={entry.id}/>
                                 <CopyEntryIdButton entry={entry}/>
                                 <OpenLinkToEntryButton entry={entry}/>

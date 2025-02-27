@@ -58,6 +58,13 @@ export const viewSchema = Joi.array().items(
     }).unknown()
 )
 
+export const descriptionSchema = Joi.array().items(
+    Joi.object({
+        'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),
+        'Description': Joi.string().min(1)
+    }).unknown()
+)
+
 export const groupSchema = Joi.array().items(
     Joi.object({
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/),

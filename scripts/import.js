@@ -5,6 +5,7 @@ import {
     mainSchema,
     mediaSchema,
     linkSchema,
+    descriptionSchema,
     viewSchema,
     groupSchema,
     glossarySchema,
@@ -56,6 +57,7 @@ const importValidate = async (tab, schema) => {
 const mainData = await importValidate('App Data', mainSchema)
 const mediaData = await importValidate('Media', mediaSchema)
 const linkData = await importValidate('Links', linkSchema)
+const descriptionData = await importValidate('Descriptions', descriptionSchema)
 const viewData = await importValidate('Lock Views', viewSchema)
 const groupData = await importValidate('Groups', groupSchema)
 const glossaryData = await importValidate('Glossary', glossarySchema)
@@ -229,6 +231,15 @@ linkData
         } else {
             console.log('Entry not found:', item)
         }
+    })
+
+// Add description data
+console.log('Processing description data...')
+descriptionData
+    .forEach(item => {
+        const entry = jsonData.find(e => e.id === item['Unique ID'])
+        if (!entry) return console.log('descriptionData Import; Entry not found:', item)
+        entry.description = item['Description']
     })
 
 // Add view data
