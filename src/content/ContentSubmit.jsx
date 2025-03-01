@@ -15,6 +15,8 @@ import Checkbox from '@mui/material/Checkbox'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import useWindowSize from '../util/useWindowSize.jsx'
+import Dialog from '@mui/material/Dialog'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 
 function ContentSubmit({profile}) {
 
@@ -88,6 +90,7 @@ function ContentSubmit({profile}) {
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
+            setUploading(false)
         }
 
     }
@@ -244,6 +247,15 @@ function ContentSubmit({profile}) {
                     </div>
                 </form>
             }
+
+                <Dialog open={uploading} componentsProps={{
+                    backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
+                }}>
+                    <div style={{width: 320, textAlign: 'center', padding: 30}}>
+                        <LoadingDisplay/>
+                    </div>
+                </Dialog>
+
 
             {
                 response &&

@@ -77,7 +77,6 @@ Each progressive tier must fulfill all prior tier requirements.
 - **Tier 2** - Demonstrates advanced skills, community projects or other unique and novel projects. Must show a higher level of self or community improvement and demonstrate a commitment outside the interest of being a black belt.
 - **Tier 3** - Demonstrates advanced skills, community projects or other unique and novel projects. Must demonstrate a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 3 months of devotion to said project.
   - Recently Accepted [Tier 3 Submission](/#/view?pageId=tierThreeExample)
-  - Recently Accepted [Tier 3 Submission #2](https://docs.google.com/spreadsheets/d/1OJSQki_FDe8KtgQ0b1BJ9I21R6bnyNcFAZmQVtgx438/edit#gid=978775567)
 - **Tier 4** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 6 months of devotion to said project.
 - **Tier 5** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to a year of devotion to said project.
 
