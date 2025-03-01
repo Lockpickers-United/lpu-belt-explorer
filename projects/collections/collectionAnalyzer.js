@@ -3,7 +3,13 @@ import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../util/setDeep.js
 import {itemDetails} from '../util/getItemDetails.js'
 import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
-import {jsonIt} from '../util/jsonIt.js'
+
+/**
+ * @property blackBeltAwardedAt
+ * @property userIds
+ * @property listUserIds
+ * @property allLists
+ */
 
 const production = process.env.USER !== localUser
 
@@ -68,6 +74,9 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                     setDeepAdd(acc, ['listStats', 'allLists', 'totalSaves'], 1)
                     setDeepAdd(acc, ['listStats', 'allLists', 'savesById', itemId], 1)
 
+                    if (!blackBeltOnly) {
+                        setDeepAdd(acc, ['allSavesById', itemId], 1)
+                    }
                     if (items[itemId]) {
                         if (items[itemId].type === 'lock') {
                             setDeepAdd(acc, ['lockSaves'], 1)
@@ -146,14 +155,21 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
 
 }
 
-
 async function analyzeCollection(date) {
     const allUsers = await collectionAnalyzer({blackBeltOnly: false, date})
+
+    await fs.writeFile(`${serverDir}/collectionStatsById.json`, JSON.stringify(allUsers.allSavesById, null, 2), function (err) {
+        if (err) {
+            console.error('save collectionStatsById error:', err)
+        }
+    })
+    delete allUsers.allSavesById
+
+
     const blackBeltOnly = await collectionAnalyzer({blackBeltOnly: true, date})
     const metadata = {updatedDateTime: new Date().toISOString()}
     const collectionStatsCurrent = {metadata, allUsers, blackBeltOnly}
 
-    //console.log('collectionStatsCurrent', collectionStatsCurrent)
 
     await fs.writeFile(`${dailyDir}/collectionStats_${date}.json`, JSON.stringify(collectionStatsCurrent, null, 2), function (err) {
         if (err) {

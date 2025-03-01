@@ -4,6 +4,7 @@ import fs from 'fs'
 import http from 'http'
 import https from 'https'
 import EventEmitter from 'events'
+import dayjs from 'dayjs'
 
 import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
@@ -22,7 +23,8 @@ app.use(cors())
 
 const myEmitter = new EventEmitter()
 myEmitter.on('myEvent', (data) => {
-    console.log('Event triggered:', data)
+    const timestamp = dayjs().format('YYYY-MM-DDTHH:mm:ssZ[Z]')
+    console.log(timestamp, '-', data)
 })
 
 app.get('/refresh-preview', async (req, res) => {
@@ -54,7 +56,6 @@ app.get('/rafl-stats', async (req, res) => {
 })
 
 app.get('/flickr-info', async (req, res) => {
-    myEmitter.emit('myEvent', 'Flickr info requested')
     await getFlickrInfo(req.query.id).then(results => {
         res.send(results)
     })
@@ -62,12 +63,11 @@ app.get('/flickr-info', async (req, res) => {
 
 
 app.post('/upload-content', async (req, res) => {
-    myEmitter.emit('myEvent', 'upload content requested')
+    myEmitter.emit('myEvent', 'Upload content requested')
     await uploadContent(req).then(results => {
         res.send(results)
     })
 })
-
 
 app.get('/test', async (req, res) => {
     myEmitter.emit('myEvent', 'Flickr info requested')

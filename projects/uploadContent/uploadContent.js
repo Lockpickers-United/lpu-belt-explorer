@@ -17,7 +17,7 @@ export default async function uploadContent(req) {
         createDirsFromUploads: true,
         allowEmptyFiles: true,
         minFileSize: 0,
-        filename(name, ext, part, form) {
+        filename(name, ext, part) {
             const {originalFilename} = part
             if (!originalFilename) {
                 return 'invalid'
@@ -33,10 +33,11 @@ export default async function uploadContent(req) {
                 return slugify(subdir)
             })
 
+            console.log('save location', `${subdirs}/${basename}`)
             return `${subdirs}/${basename}`
 
         },
-        filter: function ({name, originalFilename, mimetype}) {
+        filter: function ({mimetype}) {
             // return Boolean(originalFilename)
             // or, keep only images
             return mimetype?.includes('image')
@@ -44,11 +45,12 @@ export default async function uploadContent(req) {
 
         // maxTotalFileSize: 4000,
         // maxFileSize: 1000,
-
     })
 
-
-    await form.parse(req, async function (err, fields, files) {
+    await form.parse(req, async function (err, fields) {
+        if (err) {
+            console.error('formidable error', err)
+        }
 
         responseJson = JSON.stringify(fields, null, 2)
 
@@ -60,7 +62,6 @@ export default async function uploadContent(req) {
         })
 
         const destinationFile = 'uploads/' + `${subdirs}.zip`
-
         const output = fs.createWriteStream(destinationFile)
         const archive = archiver('zip', {
             zlib: {level: 9} // Sets the compression level.
@@ -74,11 +75,19 @@ export default async function uploadContent(req) {
         // 'close' event is fired only when a file descriptor is involved
         output.on('close', async function () {
             console.log(archive.pointer() + ' total bytes')
-            await sendEmail(`Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
-                `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit} (text)`,
-                `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
-                contentUploadRecipients,
-                {filename: `${subdirs}.zip`, path: destinationFile})
+            try {
+                const email = await sendEmail({
+                    emailConfig: 'content',
+                    to: contentUploadRecipients,
+                    subject: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
+                    text: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit} (text)`,
+                    html: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
+                    attachments: {filename: `${subdirs}.zip`, path: destinationFile}
+                })
+                console.log("Message sent: %s", email.messageId)
+            } catch (error) {
+                console.error('An error occurred sending email', error.message)
+            }
 
             try {
                 fs.rmSync(`uploads/${subdirs}/`, {recursive: true, force: true})
