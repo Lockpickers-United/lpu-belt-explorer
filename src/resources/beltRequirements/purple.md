@@ -18,7 +18,7 @@ You must video picking and gutting accomplishments in one continuous take.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock in frame. Your video should include a clear close-up of the pins from the lock.
 
 Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review the guidelines listed under SFIC Filming Requirements for validating
 your lock in the picking video. Please read more below for filming requirements.

@@ -15,7 +15,7 @@ together again.
 
 **Evidence format**
 
-- You must **video** picking and gutting accomplishments in one continuous take, **pictures are no longer accepted at this rank**, even for locks that cannot be disassembled.
+- You must **video** picking and gutting accomplishments in one continuous take, **pictures are no longer accepted at this rank**, even for locks that cannot be disassembled. Your video should include a clear close-up of the pins from the lock.
 - For locks that cannot be gutted -- e.g. Master Lock #410 LOTO -- video documentation of gutting and reassembling a different lock will be accepted.
 - Reassembly can be a different lock and even in a separate video
 

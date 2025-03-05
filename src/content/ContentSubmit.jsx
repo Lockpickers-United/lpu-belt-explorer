@@ -73,7 +73,8 @@ function ContentSubmit({profile}) {
         }
 
         await axios.post(
-            'https://explore.lpubelts.com:8443/upload-content', formData,
+            //'https://explore.lpubelts.com:8443/upload-content', formData,
+            'https://explore.lpubelts.com:7443/upload', formData,
             {headers: {'Content-Type': 'multipart/form-data'}}
         )
             .then(response => {
@@ -257,8 +258,7 @@ function ContentSubmit({profile}) {
                 </Dialog>
 
 
-            {
-                response &&
+            {response &&
                 <div style={{display: 'flex'}}>
                     <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
                         <div style={{fontSize: '1.7rem', fontWeight: 500, marginBottom: 60, textAlign: 'center'}}>{title} Uploaded!</div>
