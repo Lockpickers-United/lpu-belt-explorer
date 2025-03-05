@@ -43079,6 +43079,103 @@
     "lastUpdated": "2023-11-23T18:53:56.030Z"
   },
   {
+    "id": "08c823ed",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Boda",
+        "model": "428/429"
+      }
+    ],
+    "version": "8 levers",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "media": [
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54366591702_3b8f296690_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54366591702/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54366591702_e2a547e051_o.jpg"
+      },
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367707928_564ed27e09_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367707928/in/album-72177720324254574/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367707928_433a516c32_o.jpg"
+      },
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367475116_2138314bec_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367475116/in/album-72177720324254574/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367475116_a1cf945588_o.jpg"
+      },
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367670509_503068a9ae_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367670509/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367670509_95c19a7a4f_o.jpg"
+      },
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53475862860_1e9e352c5c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53475862860/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53475862860_31d5545bf2_o.jpg"
+      },
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367670799_24e3c32595_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367670799/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367670799_d44aeedb3f_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365575836_bc4b1f6897_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365575836/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365575836_533be69e6b_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365576291_b4034f776b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365576291/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365576291_fc836c0201_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365805058_4c5aab2521_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365805058/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365805058_4bc4ed691c_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365779564_4be43d1ffd_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365779564/in/album-72177720324235504/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365779564_676b234954_o.jpg"
+      },
+      {
+        "title": "By: Imaginary Unit",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367879200_9bfd16da4a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367879200/in/album-72177720324254574/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367879200_766b66a0a8_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-03-05T20:44:18.225Z"
+  },
+  {
     "id": "4062aefb",
     "belt": "Unranked",
     "makeModels": [
@@ -43127,10 +43224,6 @@
         "model": "Rotasera"
       }
     ],
-    "lockingMechanisms": [
-      "Disc detainer",
-      "Other"
-    ],
     "media": [
       {
         "title": "By: Ben-on-reddit",
@@ -43176,7 +43269,7 @@
       }
     ],
     "views": 579,
-    "lastUpdated": "2023-08-10T00:09:36.302Z"
+    "lastUpdated": "2025-03-05T20:44:18.225Z"
   },
   {
     "id": "c77a4ac8",
@@ -43445,82 +43538,6 @@
     ],
     "views": 168,
     "lastUpdated": "2023-08-09T22:49:21.901Z"
-  },
-  {
-    "id": "111062fc",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "model": "Chain Key Lock"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "notes": "Various brands",
-    "media": [
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52906616737_c5b7058022_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52906616737/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52906616737_a6539a8ee2_o.jpg"
-      },
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52907576285_09ba4864ae_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907576285/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52907576285_daf2d4b9db_o.jpg"
-      },
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52907339499_0c4f7f1fe9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907339499/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52907339499_b237c91a59_o.jpg"
-      },
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52907643143_5f8c42e880_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907643143/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52907643143_ef2dac7683_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760232_54ea081961_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760232/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760232_f1b70c577f_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632246_02ae77b53c_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632246/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632246_96f33fb229_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632466_5c3175c999_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632466/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632466_487b7ae1d3_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760817_915d5a97ee_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760817/in/album-72177720308371182/",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760817_dcb24925e8_o.jpg"
-      }
-    ],
-    "views": 210,
-    "lastUpdated": "2025-03-04T20:56:06.631Z"
   },
   {
     "id": "267e47c4",
@@ -44307,10 +44324,10 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "model": "Gaab"
+        "make": "Gaab",
+        "model": "6-pin Dimple Lock"
       }
     ],
-    "version": "6-pin dimple",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -44341,7 +44358,7 @@
       }
     ],
     "views": 250,
-    "lastUpdated": "2023-12-19T11:35:31.131Z"
+    "lastUpdated": "2025-03-05T20:44:18.226Z"
   },
   {
     "id": "88085257",
@@ -44648,6 +44665,83 @@
       "e8c7dd5b"
     ],
     "lastUpdated": "2023-11-23T18:53:56.031Z"
+  },
+  {
+    "id": "111062fc",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "HYT/Lays/Bison/Olsy",
+        "model": "Chain Key Lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "notes": "Various brands",
+    "media": [
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52906616737_c5b7058022_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52906616737/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52906616737_a6539a8ee2_o.jpg"
+      },
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52907576285_09ba4864ae_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907576285/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52907576285_daf2d4b9db_o.jpg"
+      },
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52907339499_0c4f7f1fe9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907339499/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52907339499_b237c91a59_o.jpg"
+      },
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52907643143_5f8c42e880_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907643143/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52907643143_ef2dac7683_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760232_54ea081961_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760232/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760232_f1b70c577f_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632246_02ae77b53c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632246/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632246_96f33fb229_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632466_5c3175c999_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632466/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632466_487b7ae1d3_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760817_915d5a97ee_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760817/in/album-72177720308371182/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760817_dcb24925e8_o.jpg"
+      }
+    ],
+    "views": 210,
+    "lastUpdated": "2025-03-05T20:44:18.228Z"
   },
   {
     "id": "895be796",

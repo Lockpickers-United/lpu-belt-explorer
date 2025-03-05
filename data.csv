@@ -785,15 +785,15 @@ Unranked,"ASSA,ASSA","H5,H7",,,"Under Review ⚑",,e10b4a20
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
+Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑",,08c823ed
 Unranked,,Bond,,Pin-tumbler,"Under Review ⚑",,4062aefb
-Unranked,Bowley,Rotasera,,"Disc detainer,Other",,,e35772c9
+Unranked,Bowley,Rotasera,,,,,e35772c9
 Unranked,"Burg Wächter","Profi 116/25",,Pin-tumbler,"Under Review ⚑",,c77a4ac8
 Unranked,"Burg Wächter","Profi 116/30",,Pin-tumbler,"Under Review ⚑",,35adb4d6
 Unranked,"Burg Wächter","Profi 116/50","50mm or larger",Pin-tumbler,"Under Review ⚑",,bbfd4108
 Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 padlock",033ab190
 Unranked,"CAWI,CAWI","7113,7123",,,"Under Review ⚑",,c6a14e93
 Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
-Unranked,,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑","Various brands",111062fc
 Unranked,Chubb,6k202,"7 lever with anti-pick",Lever,"Under Review ⚑",,267e47c4
 Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",Wafer,"Under Review ⚑",,dbc6670b
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
@@ -810,7 +810,7 @@ Unranked,Ezcurra,DS-15,,Dimple,"Under Review ⚑",,abe6074c
 Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
 Unranked,Fichet-Bauche,M2i,,Pump/push,"Under Review ⚑",,d6e6039e
 Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates",,89207b78
-Unranked,,Gaab,"6-pin dimple",Dimple,"Under Review ⚑",,cd5acff8
+Unranked,Gaab,"6-pin Dimple Lock",,Dimple,"Under Review ⚑",,cd5acff8
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,"Helason ","16-pin round key",Dimple,"Under Review ⚑",,93324d19
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624
@@ -818,6 +818,7 @@ Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
+Unranked,HYT/Lays/Bison/Olsy,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑","Various brands",111062fc
 Unranked,ISEO,"F6 extra S3",,,"Under Review ⚑",,895be796
 Unranked,ISEO,R50,,Dimple,"Under Review ⚑",,42bebf45
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count",a7d98df3
