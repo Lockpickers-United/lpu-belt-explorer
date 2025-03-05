@@ -341,7 +341,7 @@ together again.
 
 **Evidence format**
 
-- You must **video** picking and gutting accomplishments in one continuous take, **pictures are no longer accepted at this rank**, even for locks that cannot be disassembled.
+- You must **video** picking and gutting accomplishments in one continuous take, **pictures are no longer accepted at this rank**, even for locks that cannot be disassembled. Your video should include a clear close-up of the pins from the lock.
 - For locks that cannot be gutted -- e.g. Master Lock #410 LOTO -- video documentation of gutting and reassembling a different lock will be accepted.
 - Reassembly can be a different lock and even in a separate video
 
@@ -517,7 +517,7 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 
 **Picking Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
 
 **Blue Belt Project Requirements** (Updated February 2025)
 
@@ -707,7 +707,7 @@ You must video picking and gutting accomplishments in one continuous take.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock in frame. Your video should include a clear close-up of the pins from the lock.
 
 Note: If picking an SFIC (Small Format Interchangeable Core), be sure to review the guidelines listed under SFIC Filming Requirements for validating
 your lock in the picking video. Please read more below for filming requirements.
@@ -862,7 +862,7 @@ keypins, and countermilling are the norm for you.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
 
 
 **Brown Belt Locks**
@@ -976,7 +976,7 @@ Ultra-high security is your middle name. Your lock collection is worth more than
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
 
 
 **Red Belt Locks**
@@ -1087,7 +1087,7 @@ is required to gut.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
 
 **Epic Quest Options** (all subject to approval):
 
