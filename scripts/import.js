@@ -195,15 +195,17 @@ mediaData
         else if (one > two) return 1
         else return -1
     })
-    .forEach(item => {
+    .forEach((item, index) => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
         const media = {
             title: item.Title,
             subtitle: item.Subtitle,
+            label: item.Label || undefined,
             thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL']
+            fullUrl: item['Full URL'],
+            sequenceId: index + 1
         }
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']

@@ -35,6 +35,7 @@ export const mediaSchema = Joi.array().items(
         'Sequence ID': Joi.number().min(1).max(50),
         Title: Joi.string().min(1),
         Subtitle: Joi.string().allow(''),
+        Label: Joi.string().allow(''),
         'Thumbnail URL': Joi.string(),
         'Full URL': Joi.string().allow('').uri(),
         'Subtitle URL': Joi.string().allow('').uri(),

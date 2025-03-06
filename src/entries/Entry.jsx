@@ -76,6 +76,29 @@ function Entry({entry, expanded, onExpand}) {
         )
     }, [entry.makeModels])
 
+    const mediaLabels = [...new Set(entry.media?.map(({label}) => label))].sort((a, b) => a.localeCompare(b)).filter(x => x)
+    //console.log('mediaLabels', mediaLabels, mediaLabels.length)
+
+    const labeledMedia = mediaLabels.length > 0
+        ? mediaLabels.map((label) => {
+            return {label: label, media: entry.media.filter(({label: l}) => l === label)}
+        })
+        : [{label: 'allMedia', media: entry.media}]
+    if (mediaLabels.length > 0 && entry.media.filter(media => !media.label).length > 0) {
+        labeledMedia.push({label: 'Other', media: entry.media.filter(media => !media.label)})
+    }
+    //console.log('labeledMedia', labeledMedia)
+
+    const sortedMedia = entry.media
+        .sort((a, b) => {
+            return a.label?.localeCompare(b.label || '')
+                || a.sequenceId - b.sequenceId
+        })
+        .map((media, index) => {
+            return {...media, sort: index}
+        })
+    //console.log('sortedMedia', sortedMedia)
+
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
@@ -184,11 +207,25 @@ function Entry({entry, expanded, onExpand}) {
                                 </ReactMarkdown>
                             </div>
                         }
-                        {
-                            !!entry.media?.length &&
-                            <FieldValue value={
-                                <LockImageGallery entry={entry}/>
-                            }/>
+                        {!!entry.media?.length &&
+                            <React.Fragment>
+                                {labeledMedia.map((group, index) =>
+                                    <React.Fragment key={index}>
+                                        <div key={index}>
+                                            {group.label !== 'allMedia' &&
+                                                <div style={{
+                                                    borderBottom: '1px solid #bbb',
+                                                    marginLeft: 10,
+                                                    fontWeight: 500
+                                                }}>{group.label}</div>
+                                            }
+                                            <FieldValue value={
+                                                <LockImageGallery entry={{id: entry.id, media: group.media}}/>
+                                            }/>
+                                        </div>
+                                    </React.Fragment>
+                                )}
+                            </React.Fragment>
                         }
                         {
                             !!entry.links?.length &&
