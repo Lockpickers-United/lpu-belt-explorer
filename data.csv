@@ -870,6 +870,7 @@ Unranked,Tann,"9 lever","9 levers",Lever,"Pin key,Single bitted,Swappable bittin
 Unranked,Tann,Vardeskydd,"8? levers",Lever,"Pipe key,Double bitted,False gates,Sliding levers",,a2074b7f
 Unranked,Trelock,"SUPER Padlock",,,"Under Review ⚑",,9a99a0a7
 Unranked,,U-Change,,Pin-tumbler,,,9d35efa9
+Unranked,U-Shin,"Showa Mortise","6 spools, torpedo keypins",Pin-tumbler,"Under Review ⚑",,49c381dc
 Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(simliar to the blue belt StrongBOLT 2100)",8dc5dbb4
 Unranked,Union,2134e,"5 lever",Lever,"Pin key,False gates",,45cadc22
 Unranked,Voga,X18,,,"Under Review ⚑",,90b4ade7
@@ -879,6 +880,7 @@ Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e
 Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5
 Unranked,Yale,"2000 Plus",,"Dimple,Sidebar,Slider","Under Review ⚑","dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
+Unranked,Yale,B-ED,,Pin-tumbler,"Under Review ⚑",,5bbe7375
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
 Unranked,Yale,YE3B,,,"Under Review ⚑",,ad6b0d8f
 Unranked,Yardeni,10,,Dimple,"Under Review ⚑","9 pins, 2 spools more restricted keyway than XL model",0757b1ed
