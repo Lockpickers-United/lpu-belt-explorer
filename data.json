@@ -25139,10 +25139,17 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52938075906_5dff19f17e_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52938075906/in/album-72177720308695959/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52938075906_998327b5d8_o.jpg"
+      },
+      {
+        "title": "By: Dynamic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367093857_099ea0bd28_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367093857/in/album-72177720308695959/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367093857_23158f04e6_o.jpg"
       }
     ],
     "views": 544,
-    "lastUpdated": "2023-09-02T16:12:59.714Z"
+    "lastUpdated": "2025-03-06T02:11:04.271Z"
   },
   {
     "id": "ed3ae6cf",
@@ -43316,6 +43323,81 @@
     "lastUpdated": "2023-08-03T13:21:20.100Z"
   },
   {
+    "id": "e35a3c91",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Bovii",
+        "model": "LOTO"
+      }
+    ],
+    "version": "dimple lock",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "media": [
+      {
+        "title": "By: MonteFox89",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54368182473_73bc43abd1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54368182473/in/album-72177720324258909/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54368182473_949799689c_o.jpg"
+      },
+      {
+        "title": "By: MonteFox89",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54368162664_91c0800078_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54368162664/in/album-72177720324258909/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54368162664_1cb347a523_o.jpg"
+      },
+      {
+        "title": "By: MonteFox89",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54368184793_29e85de43c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54368184793/in/album-72177720324258909/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54368184793_579bda235f_o.jpg"
+      },
+      {
+        "title": "By: MonteFox89",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367949471_d9b3f2c42d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367949471/in/album-72177720324258909/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367949471_9270687d05_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-03-06T02:11:04.284Z"
+  },
+  {
+    "id": "b1949215",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Bowley",
+        "model": "543"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Amvgaert",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54368168284_940850e5d9_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54368168284/in/album-72177720324253388/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54368168284_61b244d571_o.jpg"
+      },
+      {
+        "title": "By: Amvgaert",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367953491_e3406cb47b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367953491/in/album-72177720324253388/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367953491_7eb5150161_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-03-06T02:11:04.284Z"
+  },
+  {
     "id": "e35772c9",
     "belt": "Unranked",
     "makeModels": [
@@ -44987,10 +45069,24 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/53093073434_4700ea6bf4_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53093073434/in/album-72177720310260893/",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53093073434_6cfd4853cc_o.jpg"
+      },
+      {
+        "title": "By: Dynamic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54367956531_61d0a59b4c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54367956531/in/album-72177720310260893/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54367956531_5d9f97d005_o.jpg"
+      },
+      {
+        "title": "By: Dynamic",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54368171909_2fd2877eb9_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54368171909/in/album-72177720310260893/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54368171909_2f24d6b5b0_o.jpg"
       }
     ],
     "views": 292,
-    "lastUpdated": "2023-08-10T00:09:36.306Z"
+    "lastUpdated": "2025-03-06T02:11:04.285Z"
   },
   {
     "id": "991c6c07",
