@@ -9,7 +9,7 @@ function LockImageGallery({entry}) {
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
     const handleOpenImage = useCallback(index => {
-        addFilter('image', index + 1, true)
+        addFilter('image', index, true)
     }, [addFilter])
 
     const handleCloseImage = useCallback(() => {
@@ -22,12 +22,16 @@ function LockImageGallery({entry}) {
     }, [entry, location])
 
     const openIndex = useMemo(() => {
-        return filters.image ? +filters.image - 1 : -1
+        return filters.image ? +filters.image : -1
     }, [filters])
+    console.log('entry', entry)
+    console.log('openIndex', openIndex)
+
+    //const initiallyOpen = true
     const initiallyOpen = isValidImage(openIndex, entry)
+    console.log('initiallyOpen', initiallyOpen)
 
     const mediaLabels = [...new Set(entry.media?.map(({label}) => label))].sort((a, b) => a.localeCompare(b)).filter(x => x)
-    console.log('mediaLabels', mediaLabels, mediaLabels.length)
 
     const labeledMedia = mediaLabels.length > 0
         ? mediaLabels.map((label) => {
@@ -37,7 +41,6 @@ function LockImageGallery({entry}) {
     if (mediaLabels.length > 0 && entry.media.filter(media => !media.label).length > 0) {
         labeledMedia.push({label: 'Other', media: entry.media.filter(media => !media.label)})
     }
-    console.log('labeledMedia', labeledMedia)
 
     const sortedMedia = entry.media
         .sort((a, b) => {
@@ -45,8 +48,9 @@ function LockImageGallery({entry}) {
                 || a.sequenceId - b.sequenceId
         })
         .map((media, index) => {
-            return {...media, sort: index}
+            return {...media, sort: index + 1}
         })
+
     console.log('sortedMedia', sortedMedia)
 
 
@@ -58,14 +62,15 @@ function LockImageGallery({entry}) {
                         {group.label !== 'allMedia' &&
                             <div style={{
                                 borderBottom: '1px solid #bbb',
-                                marginLeft: 10,
+                                marginLeft: 0,
                                 fontWeight: 500
                             }}>{group.label}</div>
                         }
                         <ImageGallery
-                            media={entry.media}
+                            media={group.media}
+                            allMedia={sortedMedia}
                             openIndex={openIndex}
-                            initiallyOpen={initiallyOpen}
+                            initiallyOpen={initiallyOpen && index === 0}
                             onOpenImage={handleOpenImage}
                             onCloseImage={handleCloseImage}
                             onBackButton={handleBackButton}
@@ -75,10 +80,9 @@ function LockImageGallery({entry}) {
                 </React.Fragment>
             )}
         </React.Fragment>
-
     )
 }
 
-const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media[image]
+const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media.find(m => m.sequenceId === image)
 
 export default LockImageGallery

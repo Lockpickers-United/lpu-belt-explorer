@@ -35,8 +35,13 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     const [zoom, setZoom] = useState(1)
     const [moving, setMoving] = useState(false)
 
-    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = media[openIndex] || {}
+    const currentMedia = media.find(m => m.sequenceId === openIndex)
+    const currentMediaIndex = media.indexOf(currentMedia)
+    console.log('currentMediaIndex', currentMediaIndex)
+
+    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = currentMedia || {}
     const {isMobile} = useWindowSize()
+
 
     const handleLoaded = useCallback(() => setLoading(false), [])
     const handleClose = useCallback(() => {
@@ -54,17 +59,17 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     }, [])
 
     const handleNavigatePrevious = useCallback(() => {
-        const nextIndex = openIndex === 0 ? media.length - 1 : openIndex - 1
-        onOpenImage(nextIndex)
+        const nextIndex = currentMediaIndex === 0 ? media.length - 1 : currentMediaIndex - 1
+        onOpenImage(media[nextIndex].sequenceId)
         handleReset()
         setLoading(true)
-    }, [openIndex, media.length, onOpenImage, handleReset])
+    }, [currentMediaIndex, media, onOpenImage, handleReset])
     const handleNavigateNext = useCallback(() => {
-        const nextIndex = openIndex === media.length - 1 ? 0 : openIndex + 1
-        onOpenImage(nextIndex)
+        const nextIndex = currentMediaIndex === media.length - 1 ? 0 : currentMediaIndex + 1
+        onOpenImage(media[nextIndex].sequenceId)
         handleReset()
         setLoading(true)
-    }, [openIndex, media.length, onOpenImage, handleReset])
+    }, [currentMediaIndex, media, onOpenImage, handleReset])
 
     const handleMoveStart = useCallback(event => {
         if (zoom !== 1) {
