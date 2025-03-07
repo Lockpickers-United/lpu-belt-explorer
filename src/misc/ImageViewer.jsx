@@ -34,14 +34,13 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     const [{x, y}, setXY] = useState({x: 0, y: 0})
     const [zoom, setZoom] = useState(1)
     const [moving, setMoving] = useState(false)
+    const {isMobile} = useWindowSize()
 
     const currentMedia = media.find(m => m.sequenceId === openIndex)
     const currentMediaIndex = media.indexOf(currentMedia)
-    console.log('currentMediaIndex', currentMediaIndex)
 
-    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl} = currentMedia || {}
-    const {isMobile} = useWindowSize()
-
+    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl, label} = currentMedia || {}
+    const imageTitle = label ? `${label} - ${title}` : title
 
     const handleLoaded = useCallback(() => setLoading(false), [])
     const handleClose = useCallback(() => {
@@ -108,7 +107,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     })
 
     const handleCopyLink = useCallback(async () => {
-        const query = queryString.stringify({...shareParams, image: openIndex + 1})
+        const query = queryString.stringify({...shareParams, image: openIndex})
         const href = `https://share.lpubelts.com/?${query}`
 
         await navigator.clipboard.writeText(href)
@@ -135,7 +134,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
 
                     <Stack direction='column' sx={{marginLeft: 2, width: '100%'}}>
                         <Typography variant='subtitle1' component='div'>
-                            {title}
+                            {imageTitle}
                         </Typography>
                         <Typography variant='subtitle2' component='div' style={{color: '#777'}}>
                             <a href={subtitleUrl || licenses[subtitle]} target='_blank' rel='noopener noreferrer'>

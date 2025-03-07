@@ -8,8 +8,8 @@ function LockImageGallery({entry}) {
     const location = useLocation()
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
-    const handleOpenImage = useCallback(index => {
-        addFilter('image', index, true)
+    const handleOpenImage = useCallback(imageNum => {
+        addFilter('image', imageNum, true)
     }, [addFilter])
 
     const handleCloseImage = useCallback(() => {
