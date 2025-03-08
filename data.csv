@@ -304,7 +304,7 @@ Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,E90",,Pin-tumbler,,,5c0d870b
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
 Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515caae
-Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element","require 360° picking",d005e7b8
+Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element,Image Test","require 360° picking",d005e7b8
 Blue,ABUS,GDS,"with barrels",Pin-tumbler,"Barrel drivers",,3df9c95f
 Blue,"ABUS,ABUS","Integral,Pfaffenhain Integral","with 6 main row pins and >= 5 side pins",Pin-tumbler,,,8606220a
 Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
@@ -419,7 +419,7 @@ Blue,Winkhaus,N-Tra,,Dimple,,,2c9d12fc
 Blue,Winkhaus,RPE,,Pin-tumbler,,,c643eca2
 Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,2100,,"Dimple,Sidebar,Slider","Sprung sliders","dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
-Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,,779e7dcb
+Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,"Image Test",779e7dcb
 Blue,Yale,"KM 1 star Superior",,Pin-tumbler,,"spooled key pins with 6 gege style drivers",c1e91978
 Blue,"Yale,Yale,Milencio","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
@@ -452,7 +452,7 @@ Purple,"CompX Chicago,Inceca","TuBAR,Plana",,"Other,Sidebar","Active sidebar",,8
 Purple,"Corbin Russwin",Emhart,"4 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",71bce5b7
 Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
-Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element",,db4de1bb
+Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element,Image Test",,db4de1bb
 Purple,Dierre,"New Power",,Wafer,,,a10711cc
 Purple,DOM,"ix 6 kg",,Dimple,,,69eec822
 Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,Magic DOM drivers",,acde7f0c
@@ -772,7 +772,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 5","Yuema,Forte","750,Enigma",,Slider,"Reverse sidebar",,0b604114
 Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element",,6f837bb4
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
-Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650
+Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑,Image Test",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,41,,,"Under Review ⚑",,18ecc45b
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
@@ -785,9 +785,9 @@ Unranked,"ASSA,ASSA","H5,H7",,,"Under Review ⚑",,e10b4a20
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
-Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑",,08c823ed
+Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑,Image Test",,08c823ed
 Unranked,,Bond,,Pin-tumbler,"Under Review ⚑",,4062aefb
-Unranked,Bovii,LOTO,"dimple lock",Dimple,,,e35a3c91
+Unranked,Bovii,LOTO,"dimple lock",Dimple,"Image Test",,e35a3c91
 Unranked,Bowley,543,,Pin-tumbler,,,b1949215
 Unranked,Bowley,Rotasera,,,,,e35772c9
 Unranked,"Burg Wächter","Profi 116/25",,Pin-tumbler,"Under Review ⚑",,c77a4ac8
@@ -820,7 +820,7 @@ Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
-Unranked,HYT/Lays/Bison/Olsy,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑","Various brands",111062fc
+Unranked,HYT/Lays/Bison/Qlsy,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑,Image Test","Various brands",111062fc
 Unranked,ISEO,"F6 extra S3",,,"Under Review ⚑",,895be796
 Unranked,ISEO,R50,,Dimple,"Under Review ⚑",,42bebf45
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count",a7d98df3
