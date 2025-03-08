@@ -19,7 +19,7 @@ import SafelocksCollectionButton from './SafelocksCollectionButton.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import entryName from '../entries/entryName'
-import getPageTitle from '../util/usePageTitle'
+import {getPageTitle} from '../util/usePageTitle'
 
 function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
