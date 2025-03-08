@@ -8,8 +8,8 @@ function LockImageGallery({entry}) {
     const location = useLocation()
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
-    const handleOpenImage = useCallback(index => {
-        addFilter('image', index + 1, true)
+    const handleOpenImage = useCallback(imageNum => {
+        addFilter('image', imageNum, true)
     }, [addFilter])
 
     const handleCloseImage = useCallback(() => {
@@ -22,23 +22,57 @@ function LockImageGallery({entry}) {
     }, [entry, location])
 
     const openIndex = useMemo(() => {
-        return filters.image ? +filters.image - 1 : -1
+        return filters.image ? +filters.image : -1
     }, [filters])
+
     const initiallyOpen = isValidImage(openIndex, entry)
 
+    const mediaLabels = [...new Set(entry.media?.map(({label}) => label))].sort((a, b) => a.localeCompare(b)).filter(x => x)
+
+    const labeledMedia = mediaLabels.length > 0
+        ? mediaLabels.map((label) => {
+            return {label: label, media: entry.media.filter(({label: l}) => l === label)}
+        })
+        : [{label: 'allMedia', media: entry.media}]
+    if (mediaLabels.length > 0 && entry.media.filter(media => !media.label).length > 0) {
+        labeledMedia.push({label: 'Other', media: entry.media.filter(media => !media.label)})
+    }
+
+    const sortedMedia = entry.media
+        .sort((a, b) => {
+            return a.label?.localeCompare(b.label || '')
+                || a.sequenceId - b.sequenceId
+        })
+
     return (
-        <ImageGallery
-            media={entry.media}
-            openIndex={openIndex}
-            initiallyOpen={initiallyOpen}
-            onOpenImage={handleOpenImage}
-            onCloseImage={handleCloseImage}
-            onBackButton={handleBackButton}
-            shareParams={{id: entry.id, name: filters.name}}
-        />
+        <React.Fragment>
+            {labeledMedia.map((group, index) =>
+                <React.Fragment key={index}>
+                    <div key={index}>
+                        {group.label !== 'allMedia' &&
+                            <div style={{
+                                borderBottom: '1px solid #bbb',
+                                marginLeft: 0,
+                                fontWeight: 500
+                            }}>{group.label}</div>
+                        }
+                        <ImageGallery
+                            media={group.media}
+                            allMedia={sortedMedia}
+                            openIndex={openIndex}
+                            initiallyOpen={initiallyOpen && index === 0}
+                            onOpenImage={handleOpenImage}
+                            onCloseImage={handleCloseImage}
+                            onBackButton={handleBackButton}
+                            shareParams={{id: entry.id, name: filters.name}}
+                        />
+                    </div>
+                </React.Fragment>
+            )}
+        </React.Fragment>
     )
 }
 
-const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media[image]
+const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media.find(m => m.sequenceId === image)
 
 export default LockImageGallery

@@ -14,6 +14,7 @@ function ImageGallery(props) {
     const {
         columns,
         media,
+        allMedia,
         initiallyOpen,
         openIndex,
         onOpenImage,
@@ -21,16 +22,18 @@ function ImageGallery(props) {
         onBackButton,
         shareParams
     } = props
-    const {isMobile} = useWindowSize()
 
+    const {isMobile} = useWindowSize()
     const [open, setOpen] = useState(initiallyOpen)
+
+    const fullMedia = allMedia ?? media
 
     const handleVideoClick = useCallback(url => () => {
         return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
-    const handleOpen = useCallback(index => () => {
-        onOpenImage(index)
+    const handleOpen = useCallback(sequenceId => () => {
+        onOpenImage(sequenceId)
         setOpen(true)
     }, [onOpenImage])
 
@@ -58,7 +61,7 @@ function ImageGallery(props) {
         <React.Fragment>
             {open &&
                 <ImageViewer
-                    media={media}
+                    media={fullMedia}
                     openIndex={openIndex}
                     onOpenImage={onOpenImage}
                     onClose={handleClose}
@@ -66,13 +69,13 @@ function ImageGallery(props) {
                 />
             }
             <ImageList variant='masonry' cols={cols} sx={{marginTop: 2}}>
-                {media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl}, index) =>
+                {media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl, sequenceId}, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>
                         <img
                             src={thumbnailUrl}
                             alt={title}
                             style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
-                            onClick={handleOpen(index)}
+                            onClick={handleOpen(sequenceId)}
                         />
                         {
                             fullUrl?.match(/youtube\.com/) &&

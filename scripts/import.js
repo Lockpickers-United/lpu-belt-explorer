@@ -195,15 +195,17 @@ mediaData
         else if (one > two) return 1
         else return -1
     })
-    .forEach(item => {
+    .forEach((item, index) => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
         const media = {
             title: item.Title,
             subtitle: item.Subtitle,
+            label: item.Label || undefined,
             thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL']
+            fullUrl: item['Full URL'],
+            sequenceId: index + 1
         }
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
@@ -287,7 +289,7 @@ fs.writeFileSync('./src/data/data.json', JSON.stringify(jsonData, null, 2))
 // Glossary Data
 console.log('Processing glossary data...')
 const glossary = glossaryData
-    .map(item => {
+    .map((item, index) => {
         const term = item.Term
         const definition = item.Definition
         const hasMedia = item.Title && item.Subtitle && item['Thumbnail URL'] && item['Full URL']
@@ -295,7 +297,9 @@ const glossary = glossaryData
             title: item.Title,
             subtitle: item.Subtitle,
             thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL']
+            fullUrl: item['Full URL'],
+            sequenceId: index + 1,
+            label: item.Term
         } : undefined
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
@@ -333,7 +337,7 @@ dialsMediaData
         else if (one > two) return 1
         else return -1
     })
-    .forEach(item => {
+    .forEach((item, index) => {
         const entry = dialsMainData.find(e => e?.id === item['Unique ID'])
         if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
@@ -341,7 +345,8 @@ dialsMediaData
             title: item.Title,
             subtitle: item.Subtitle,
             thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL']
+            fullUrl: item['Full URL'],
+            sequenceId: index + 1
         }
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
@@ -451,7 +456,7 @@ if (importRaflData) {
             else if (one > two) return 1
             else return -1
         })
-        .forEach(item => {
+        .forEach((item, index) => {
             const entry = raflMainData.find(e => e?.id === item['Unique ID'])
             if (!entry) return console.log('Entry not found!', item)
             if (!entry.media) entry.media = []
@@ -459,7 +464,8 @@ if (importRaflData) {
                 title: item.Title,
                 subtitle: item.Subtitle,
                 thumbnailUrl: item['Thumbnail URL'],
-                fullUrl: item['Full URL']
+                fullUrl: item['Full URL'],
+                sequenceId: index + 1
             }
             if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
             if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
