@@ -26,6 +26,8 @@ import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
+import entryName from './entryName'
+import {getPageTitle} from '../util/usePageTitle.jsx'
 
 function Entry({entry, expanded, onExpand}) {
     const {userId} = useParams()
@@ -33,6 +35,9 @@ function Entry({entry, expanded, onExpand}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
 
+    if (expanded) {
+        document.title = getPageTitle(entryName(entry, 'short'))
+    }
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
         .sort((a, b) => {
             return beltSort(allEntriesById[a].belt, allEntriesById[b].belt) || a.localeCompare(b)

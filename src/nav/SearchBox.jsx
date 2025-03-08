@@ -35,7 +35,7 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
 
     const debounceText = useDebounce(text, 250).replaceAll('\t', ' ')
     useEffect(() => {
-        if (debounceText !== searchParams.get('search')) {
+        if (!!debounceText && debounceText !== searchParams.get('search')) {
             if (debounceText) {
                 window.scrollTo({top: 0})
                 addFilters([

@@ -18,6 +18,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import SafelocksCollectionButton from './SafelocksCollectionButton.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
+import entryName from '../entries/entryName'
+import getPageTitle from '../util/usePageTitle'
 
 function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -25,6 +27,10 @@ function SafelockEntry({entry, expanded, onExpand}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {isMobile} = useWindowSize()
     const ref = useRef(null)
+
+    if (expanded) {
+        document.title = getPageTitle(entryName(entry, 'short'))
+    }
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {

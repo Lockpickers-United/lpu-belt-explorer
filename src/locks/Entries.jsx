@@ -13,14 +13,20 @@ import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
+import getPageTitle from '../util/usePageTitle'
 
 function Entries({profile}) {
     const {tab, expanded} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
     const {visibleEntries = []} = useContext(DataContext)
     const {filterCount, isSearch} = useContext(FilterContext)
-
     const [entryExpanded, setEntryExpanded] = useState(expanded)
+
+    const pageTitle = tab === 'search'
+        ? 'Search Results'
+        : tab + ' Belt'
+
+   document.title = getPageTitle(pageTitle)
 
     const entries = useMemo(() => {
         if (tab === 'search') {
