@@ -24,12 +24,8 @@ function LockImageGallery({entry}) {
     const openIndex = useMemo(() => {
         return filters.image ? +filters.image : -1
     }, [filters])
-    console.log('entry', entry)
-    console.log('openIndex', openIndex)
 
-    //const initiallyOpen = true
     const initiallyOpen = isValidImage(openIndex, entry)
-    console.log('initiallyOpen', initiallyOpen)
 
     const mediaLabels = [...new Set(entry.media?.map(({label}) => label))].sort((a, b) => a.localeCompare(b)).filter(x => x)
 
@@ -47,12 +43,6 @@ function LockImageGallery({entry}) {
             return a.label?.localeCompare(b.label || '')
                 || a.sequenceId - b.sequenceId
         })
-        .map((media, index) => {
-            return {...media, sort: index + 1}
-        })
-
-    console.log('sortedMedia', sortedMedia)
-
 
     return (
         <React.Fragment>

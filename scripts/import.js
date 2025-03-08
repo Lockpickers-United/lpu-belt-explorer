@@ -298,7 +298,8 @@ const glossary = glossaryData
             subtitle: item.Subtitle,
             thumbnailUrl: item['Thumbnail URL'],
             fullUrl: item['Full URL'],
-            sequenceId: index + 1
+            sequenceId: index + 1,
+            label: item.Term
         } : undefined
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
