@@ -22,7 +22,7 @@ function ExpandAllButton() {
         <div>
 
             <Tooltip title={toolTip} arrow disableFocusListener>
-                <Button onClick={() => handleClick()} style={{color: '#ddd'}} size='small'>
+                <Button onClick={() => handleClick()} style={{color: '#aaa'}} size='small'>
                     {toolTip}
                 </Button>
             </Tooltip>
