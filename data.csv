@@ -29,7 +29,7 @@ Yellow,"American Lock",5200,"bump stop model: all standards + 1 anti-bump pin",P
 Yellow,,ARFE,,Pin-tumbler,Unguttable,,a1581afe
 Yellow,,Befa,,Pin-tumbler,,,32244161
 Yellow,,Braslok,,Pin-tumbler,Unguttable,,d6d43c00
-Yellow,Brinks,"164 padlock",,Pin-tumbler,,,d974b48f
+Yellow,Brinks,"164 padlock",,Pin-tumbler,Unguttable,,d974b48f
 Yellow,Brinks,"Brass Padlocks",,Pin-tumbler,Unguttable,,58307da0
 Yellow,Brinks,"Laminated Padlock","Pin-Tumbler only, 40mm or larger, Weatherproof or not",Pin-tumbler,Unguttable,,9215a45f
 Yellow,"Brinks,Brinks","R70 disk lock,R80 disk lock",,Pin-tumbler,Unguttable,,a8c9aa08
@@ -37,7 +37,7 @@ Yellow,"Brüder Mannesmann","Brass Padlocks","50mm or larger (≥5 pins)",Pin-tu
 Yellow,,BSS,,Pin-tumbler,,,50fbf666
 Yellow,"Burg Wächter","""Alutitan"" 770 40",,Pin-tumbler,,,4d7dd1a0
 Yellow,"Burg Wächter","""C-Line"" 222 40",,Pin-tumbler,Unguttable,,6ca3420d
-Yellow,"Burg Wächter","""Look"" 402 40",,Pin-tumbler,,,7f56acb9
+Yellow,"Burg Wächter","""Look"" 402 40",,Pin-tumbler,Unguttable,,7f56acb9
 Yellow,"Burg Wächter","""SecuLock"" 405 40",,Pin-tumbler,,,b517a7ef
 Yellow,"Burg Wächter","""Yacht"" 460 Ni 40",,Pin-tumbler,,,9a5b3f53
 Yellow,,Börkey,,Pin-tumbler,,,90267144
