@@ -4,6 +4,7 @@
     entryName(entry, 'short') -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control
     entryName(entry, 'long')  -> ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / TrioVing System 10 / TrioVing Twin Control
     entryName(entry, 'data')  -> ASSA,ASSA,ASSA,TrioVing,TrioVing	Twin Combi,Triton,Neptun 4900,System 10,Twin Control
+    entryName(entry, 'dial')  -> Big Red CDL-3
     entryName(entry, 'array') -> ['ASSA,ASSA,ASSA,TrioVing,TrioVing', 'Twin Combi,Triton,Neptun 4900,System 10,Twin Control']
 */
 
@@ -18,10 +19,10 @@ function entryName(entry, nameType = 'short', options = {}) {
         const searchStr = match ? match[1] : options.matchTo
 
         const closest = makeModels.reduce((group, {make, model}) => {
-            let target = model
-            if (make && make !== model) {
-                target = make.concat(' ').concat(model)
-            }
+            let target = make && model
+                ? `${make} ${model}`
+                : make ? make : model
+
             const dist = levenshtein.get(searchStr.toLowerCase(), target.toLowerCase())
 
             if (group.min === undefined || dist < group.min) {
@@ -35,13 +36,17 @@ function entryName(entry, nameType = 'short', options = {}) {
 
         if (closest.winners.length === 1) {
             const {make, model} = closest.winners[0]
-            return make && make !== model ? make.concat(' ').concat(model) : model
+            return make && model
+                ? `${make} ${model}`
+                : make ? make : model
         }
     }
 
     if (nameType === 'long') {
         const lockName = makeModels.map((makeModel) => {
-            return makeModel.make + ' ' + makeModel.model
+            return makeModel.make && makeModel.model
+                ? `${makeModel.make} ${makeModel.model}`
+                : makeModel.make ? makeModel.make : makeModel.model
         }).join(' / ')
         return lockName + versionString
     } else if (nameType === 'data') {
@@ -56,13 +61,13 @@ function entryName(entry, nameType = 'short', options = {}) {
     } else if (nameType === 'dial') {
         return entry.make && entry.model
             ? `${entry.make} ${entry.model}`
-            : entry.model
+            : entry.make ? entry.make : entry.model
     } else {
         const lockName = makeModels
             .reduce((acc, {make, model}) => {
                 const group = make || model
-                const item = make ? model : ''
-                let toAppend = `${group} ${item}`
+                const item = model ? model : ''
+                let toAppend = group.concat(' ').concat(item)
                 if (acc.last?.group === group) {
                     toAppend = `, ${item}`
                 } else if (acc.last) {

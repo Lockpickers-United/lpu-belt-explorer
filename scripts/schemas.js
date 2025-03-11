@@ -19,14 +19,14 @@ export const mainSchema = Joi.array().items(
                 'Black 5',
                 'Unranked'
             ),
-        Make: Joi.string().allow(''),
-        Model: Joi.string().min(1),
+        Make: Joi.string().allow('').empty(null),
+        Model: Joi.string().allow('').empty(null),
         Version: Joi.string().allow(''),
         'Locking Mechanisms': Joi.string().allow(''),
         Features: Joi.string().allow(''),
         Notes: Joi.string().allow(''),
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/)
-    }).unknown()
+    }).or('Make', 'Model').unknown()
 )
 
 export const mediaSchema = Joi.array().items(

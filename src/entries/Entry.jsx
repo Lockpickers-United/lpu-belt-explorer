@@ -28,6 +28,8 @@ import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 
+import entryName from './entryName'
+
 function Entry({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
     const {userId} = useParams()
@@ -42,7 +44,11 @@ function Entry({entry, expanded, onExpand}) {
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
-    }, [entry.id, onExpand])
+        console.log('long', entryName(entry, 'long'))
+        console.log('short', entryName(entry, 'short'))
+        console.log('data', entryName(entry, 'data'))
+        console.log('array', entryName(entry, 'array'))
+    }, [entry, onExpand])
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
@@ -71,7 +77,10 @@ function Entry({entry, expanded, onExpand}) {
                 {entry.makeModels?.map(({make, model}, index) =>
                     <Typography key={index}
                                 style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '4px'}}>
-                        {make && make !== model ? `${make} ${model}` : model}
+                        {make && model
+                            ? `${make} ${model}`
+                            : make ? make : model
+                        }
                     </Typography>
                 )}
             </Stack>

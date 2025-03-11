@@ -76,11 +76,12 @@ console.log('Processing main data...')
 const jsonData = mainData
     .map(datum => {
         const belt = datum.Belt
-        const makes = splitCommaValues(datum.Make)
-        const models = splitCommaValues(datum.Model)
-        const makeModels = models.map((model, index) => ({
-            make: makes[index],
-            model: model
+        let makes = datum.Make ? splitCommaValues(datum.Make) : splitCommaValues(datum.Model)
+        let models = datum.Make ? splitCommaValues(datum.Model) : []
+
+        const makeModels = makes.map((make, index) => ({
+            make: make,
+            model: models[index]
         }))
         const version = datum.Version
         const lockingMechanisms = splitCommaValues(datum['Locking Mechanisms'])
