@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -26,8 +26,10 @@ import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
+import DataContext from '../context/DataContext.jsx'
 
 function Entry({entry, expanded, onExpand}) {
+    const {expandAll} = useContext(DataContext)
     const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -43,7 +45,7 @@ function Entry({entry, expanded, onExpand}) {
     }, [entry.id, onExpand])
 
     useEffect(() => {
-        if (expanded && ref && !scrolled) {
+        if (expanded && ref && !scrolled && !expandAll) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             const {id} = queryString.parse(location.search)
@@ -61,7 +63,7 @@ function Entry({entry, expanded, onExpand}) {
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [expanded, entry, scrolled])
+    }, [expanded, entry, scrolled, expandAll])
 
     const makeModels = useMemo(() => {
         return (
@@ -215,7 +217,10 @@ function Entry({entry, expanded, onExpand}) {
                     <AccordionActions disableSpacing>
                         <div style={{display: 'flex', width: '100%'}}>
                             <div style={{flexGrow: 1, justifyItems: 'left'}}>
-                                <Tracker feature='lock' id={entry.id}/>
+                                {!expandAll &&
+
+                                    <Tracker feature='lock' id={entry.id}/>
+                                }
                                 <CopyEntryIdButton entry={entry}/>
                                 <OpenLinkToEntryButton entry={entry}/>
                             </div>

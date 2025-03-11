@@ -15,11 +15,12 @@ import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 
 function Entries({profile}) {
-    const {tab, expanded} = useContext(LockListContext)
+    const {tab} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
-    const {visibleEntries = []} = useContext(DataContext)
-    const {filterCount, isSearch} = useContext(FilterContext)
-    const [entryExpanded, setEntryExpanded] = useState(expanded)
+    const {visibleEntries = [], expandAll} = useContext(DataContext)
+    const {filters, filterCount, isSearch} = useContext(FilterContext)
+//    const [entryExpanded, setEntryExpanded] = useState(expanded)
+    const [entryExpanded, setEntryExpanded] = useState(filters.id)
 
 
     const entries = useMemo(() => {
@@ -63,7 +64,8 @@ function Entries({profile}) {
                         <Entry
                             key={entry.id}
                             entry={entry}
-                            expanded={entry.id === entryExpanded}
+                            //expanded={entry.id === entryExpanded}
+                            expanded={entry.id === entryExpanded || !!expandAll}
                             onExpand={setEntryExpanded}
                         />
                     )

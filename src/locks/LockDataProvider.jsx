@@ -10,7 +10,7 @@ import collectionStatsById from '../data/collectionStatsById.json'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -112,7 +112,8 @@ export function DataProvider({children, allEntries, profile}) {
         allEntries,
         visibleEntries,
         getEntryFromId,
-    }), [allEntries, getEntryFromId, visibleEntries])
+        expandAll
+    }), [allEntries, getEntryFromId, visibleEntries, expandAll])
 
     return (
         <DataContext.Provider value={value}>
