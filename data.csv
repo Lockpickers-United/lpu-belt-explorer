@@ -106,6 +106,7 @@ Orange,CISA,220/50,,Pin-tumbler,,,b7b0fdbd
 Orange,Cocraft,"6-Pin Padlock","non-guttable version",Pin-tumbler,Unguttable,,3b3e78b0
 Orange,Commando,Peacemaker,,Pin-tumbler,Unguttable,,606275d8
 Orange,Corbin,"Arco Cromato",,Pin-tumbler,Unguttable,,99057c44
+Orange,DOM,RN,"standard cylinder",Pin-tumbler,,"Pinning does not meet the requirements for either Green or Blue Belt versions",2b948dc5
 Orange,Eclipse,"(any model)","British Standard - 5 lever, 2007+",Lever,"Mortise,Pin key,Curtain,False gates",,677afce6
 Orange,"Eurospec (E*S)",Easi-T,"British Standard - 5 lever, Brass key, 2004+",Lever,"Mortise,Pin key,Curtain,False gates",,26315d0f
 Orange,FAB,100,,Pin-tumbler,,,140d2878
@@ -213,8 +214,8 @@ Green,Corbin,"Standard cylinder",,Pin-tumbler,,,96bb2cf7
 Green,Corona,Cylinder,,Pin-tumbler,,,6c9a666e
 Green,Corona,M,,Pin-tumbler,,,6b472dc2
 Green,"Digby Lock and Tool",Bravo,,Pin-tumbler,,,19573781
-Green,DOM,"333 RNT","standard cylinder",Pin-tumbler,,"with either 3 spools or dom pin and torpedo, otherwise counts only as orange",eaba4dd9
 Green,DOM,"ix 5 N",,Dimple,,,04970fee
+Green,DOM,RN,"standard cylinder",Pin-tumbler,,"with either 3 spools or dom pin and torpedo, otherwise counts only as orange",eaba4dd9
 Green,DOM,"RS 5",,Pin-tumbler,,,5241369e
 Green,Dény,"3 lever with trapdoor",,Lever,,,204066fa
 Green,,Elca,,Pin-tumbler,,,8e18bd5f
@@ -340,7 +341,7 @@ Blue,DOM,"ix 5 HT",,Dimple,,,a165bc09
 Blue,DOM,"IX 5KG",,Dimple,"Interactive element",,eec4bd4a
 Blue,DOM,Plura,,Pin-tumbler,"Magic DOM drivers",,96591a8f
 Blue,DOM,"R Plus",,Pin-tumbler,,,2e67118d
-Blue,DOM,RN,,Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
+Blue,DOM,RN,"standard cylinder",Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
 Blue,DOM,"RS Sigma",,Pin-tumbler,"Magic DOM drivers",,1dd28bf9
 Blue,DOM,"S (with circle)",,Pin-tumbler,,,9aa8821a
 Blue,DOM,SC,,Pin-tumbler,,,05979a42
