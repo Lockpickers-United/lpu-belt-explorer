@@ -55,6 +55,7 @@ function entryName(entry, nameType = 'short', options = {}) {
         return `${makes}\t${models}` + versionString
     } else if (nameType === 'array') {
         return [
+            // TODO: when would this be used??
             makeModels.map(e => e.make).join(','),
             makeModels.map(e => e.model).join(',')
         ]
@@ -66,8 +67,8 @@ function entryName(entry, nameType = 'short', options = {}) {
         const lockName = makeModels
             .reduce((acc, {make, model}) => {
                 const group = make || model
-                const item = model ? model : ''
-                let toAppend = group.concat(' ').concat(item)
+                const item = make && model ? model : undefined
+                let toAppend = item ? group.concat(' ').concat(item) : group
                 if (acc.last?.group === group) {
                     toAppend = `, ${item}`
                 } else if (acc.last) {

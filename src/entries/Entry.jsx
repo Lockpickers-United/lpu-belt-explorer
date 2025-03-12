@@ -28,8 +28,6 @@ import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 
-import entryName from './entryName'
-
 function Entry({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
     const {userId} = useParams()
@@ -44,10 +42,6 @@ function Entry({entry, expanded, onExpand}) {
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
-        console.log('long', entryName(entry, 'long'))
-        console.log('short', entryName(entry, 'short'))
-        console.log('data', entryName(entry, 'data'))
-        console.log('array', entryName(entry, 'array'))
     }, [entry, onExpand])
 
     useEffect(() => {
