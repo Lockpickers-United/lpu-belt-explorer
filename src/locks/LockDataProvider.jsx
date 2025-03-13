@@ -16,7 +16,7 @@ export function DataProvider({children, allEntries, profile}) {
         return allEntries
             .map(entry => ({
                 ...entry,
-                makes: entry.makeModels.map(({make}) => make),
+                makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 fuzzy: removeAccents(
                     entry.makeModels
                         .map(({make, model}) => [make, model])
