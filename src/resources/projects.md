@@ -118,9 +118,9 @@ The cutaway locks should be completely functional with a working key. Exceptions
 - **Tier 1** - portfolio of 2 good quality picks
 - **Tier 2** - Portfolio of at least 3 picks plus unusual designs or artistic merit
   - Examples of [Recently Accepted Picks By Tier](https://imgur.com/a/fqheYLF)
-- **Tier 3** - Portfolio of at least 5 picks, including some with new innovations or high level artistic/picking merit. Examples of picks made with both full and partial tangs. Examples of both hooks and rakes or other useful profiles
-- **Tier 4** - Portfolio of at least 7 picks, including matched sets (at least 2 picks) of high technical and artistic level. Examples of handles made of different groups of materials, and examples of combinations of at least 2 different materials (pins excluded)
-- **Tier 5** - Portfolio of at least 10 high quality picks, fulfilling criteria for previous tiers. Demonstration of different inlay and sculpting techniques. Additional matched sets (at least 3 picks) of high technical and artistic level using multiple materials and inlays for the same pick.
+- **Tier 3** - Portfolio of at least 5 picks, including some with new innovations or high level artistic/technical merit. Examples of picks made with both full and partial tangs. Examples of both hooks and rakes or other useful profiles
+- **Tier 4** - Portfolio of at least 7 picks, including matched sets (at least 2 picks) of exceptional technical and artistic level. Examples of handles made of different groups of materials, and examples of combinations of at least 2 different materials (pins excluded)
+- **Tier 5** - Portfolio of at least 10 high quality picks, fulfilling criteria for previous tiers. Demonstration of different inlay and sculpting techniques. Additional matched sets (at least 3 picks) of professional-level technical and artistic level using multiple materials and inlays for the same pick.
 
 ### Safe Lock Manipulation
 
