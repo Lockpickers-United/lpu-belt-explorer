@@ -7,6 +7,8 @@ import FilterContext from '../context/FilterContext'
 import Divider from '@mui/material/Divider'
 import Button from '@mui/material/Button'
 import AppContext from '../app/AppContext.jsx'
+import ExpandAllButton from '../rafl/ExpandAllButton.jsx'
+import DBContext from '../app/DBContext.jsx'
 
 function SortTextButton({sortValues, compactMode}) {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -15,6 +17,7 @@ function SortTextButton({sortValues, compactMode}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {filters, addFilter} = useContext(FilterContext)
     const {sort} = filters
+    const {adminRole} = useContext(DBContext)
 
     const {compact, setCompact} = useContext(AppContext)
 
@@ -68,6 +71,14 @@ function SortTextButton({sortValues, compactMode}) {
                         <MenuItem onClick={handleCompactClick(true)} selected={compact}>Compact</MenuItem>
                     </div>
                 }
+
+                { adminRole &&
+                    <div>
+                        <Divider/>
+                        <ExpandAllButton text={true}/>
+                    </div>
+                }
+
             </Menu>
         </React.Fragment>
     )

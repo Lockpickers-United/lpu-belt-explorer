@@ -13,8 +13,6 @@ import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
-import ExpandAllButton from '../rafl/ExpandAllButton.jsx'
-import DBContext from '../app/DBContext.jsx'
 
 function Entries({profile}) {
     const {tab} = useContext(LockListContext)
@@ -22,9 +20,7 @@ function Entries({profile}) {
     const {visibleEntries = [], expandAll} = useContext(DataContext)
     const {filters, filterCount, isSearch} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
-    const {adminRole} = useContext(DBContext)
-
-
+    
     const entries = useMemo(() => {
         if (tab === 'search') {
             return visibleEntries
@@ -54,13 +50,6 @@ function Entries({profile}) {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
                 <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
-
-                { adminRole &&
-                <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems: 'center',
-                    marginTop: 4, marginBottom: 4}}>
-                    <ExpandAllButton/>
-                </div>
-                }
 
                 {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
                     <BeltRequirements belt={tab}/>}
