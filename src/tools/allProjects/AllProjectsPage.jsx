@@ -11,20 +11,13 @@ import LeaderboardName from '../../leaderboard/LeaderboardName.jsx'
 import belts, {beltSortReverse} from '../../data/belts'
 import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
-import allProjectEvidence from './allProjectEvidence.json'
-import allUnclaimedProjects from './unclaimedProjects.json'
 
 /**
  * @property evidenceName
-*/
+ */
 
-function LeaderboardRecent() {
+function AllProjectsPage({projects, updated}) {
     const {isMobile} = useWindowSize()
-
-    const unclaimedProjects = allUnclaimedProjects.map(p => {
-        return {...p, displayName: p.tabName}
-    })
-    const data = [...unclaimedProjects, ...allProjectEvidence]
 
     const [searchParams, setSearchParams] = useSearchParams()
     const sort = searchParams.get('sort')
@@ -53,10 +46,10 @@ function LeaderboardRecent() {
     }, [evSort, reverseEvSort, reverseSort, searchParams, setSearchParams, sort])
 
     const baseSortEvidence = useMemo(() => {
-        if (sort) {
-            return data.sort((a, b) => {
+        if (projects.length > 1 && sort) {
+            return projects.sort((a, b) => {
                 if (sort === 'evName') {
-                    return a.displayName.localeCompare(b.displayName)
+                    return (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evLock') {
                     return a.evidenceName.localeCompare(b.evidenceName) || a.displayName.localeCompare(b.displayName)
                 } else if (sort === 'evBelt') {
@@ -66,16 +59,15 @@ function LeaderboardRecent() {
                 }
             })
         } else {
-            return data.sort((a, b) => {
+            return projects.sort((a, b) => {
                 return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
             })
         }
-    }, [sort, reverseEvSort]) //eslint-disable-line
+    }, [sort, projects, reverseEvSort]) // eslint-disable-line
 
     const sortedEvidence = useMemo(() => {
         return reverseEvSort ? baseSortEvidence.reverse() : baseSortEvidence
     }, [baseSortEvidence, reverseEvSort])
-
 
     const nameWidth = isMobile ? 'auto' : '170px'
     const maxLength = isMobile ? 16 : 20
@@ -111,14 +103,14 @@ function LeaderboardRecent() {
                         width: '100%',
                         textAlign: 'center',
                         margin: '0px 0px'
-                    }}>Through March 14, 2025
+                    }}>Through {dayjs(updated).format('MMM DD, YYYY')}
                     </div>
                 </div>
                 <TableContainer sx={{backgroundColor: '#111', maxWidth: 650}}>
                     <Table sx={{minWidth: 360, align: 'left'}}>
                         <TableHead>
                             <TableRow>
-                            <TableCell align='left' style={{
+                                <TableCell align='left' style={{
                                     fontWeight: 700, fontSize: '1.0rem', border: 0,
                                     padding: '4px 0px 4px 16px',
                                     backgroundColor: '#222', width: nameWidth
@@ -156,8 +148,8 @@ function LeaderboardRecent() {
                                 >
                                     <TableCell align='left' style={{padding: '0px 0px 0px 16px'}}>
                                     <span style={{fontWeight: 500, width: nameWidth}}>
-                                        <LeaderboardName leader={row} isCurrentUser={row.isCurrentUser}
-                                                         tab='blackBelts' maxLength={maxLength}/>
+                                       <LeaderboardName leader={row} isCurrentUser={row.isCurrentUser}
+                                                        tab='blackBelts' maxLength={maxLength}/>
                                     </span>
                                     </TableCell>
 
@@ -187,4 +179,4 @@ function LeaderboardRecent() {
 }
 
 
-export default LeaderboardRecent
+export default AllProjectsPage

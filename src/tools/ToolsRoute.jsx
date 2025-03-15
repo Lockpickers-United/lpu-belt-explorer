@@ -67,7 +67,7 @@ function ToolsRoute() {
                 </div>
 
                 <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
-                    <Link onClick={() => navigate('/tools/all-projects')}
+                    <Link onClick={() => navigate('/all-projects')}
                           style={{
                               color: '#fff',
                               textDecorationColor: '#bbb',

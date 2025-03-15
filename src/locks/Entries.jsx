@@ -20,7 +20,7 @@ function Entries({profile}) {
     const {visibleEntries = [], expandAll} = useContext(DataContext)
     const {filters, filterCount, isSearch} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
-    
+
     const entries = useMemo(() => {
         if (tab === 'search') {
             return visibleEntries
