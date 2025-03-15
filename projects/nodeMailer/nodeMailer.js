@@ -4,7 +4,7 @@ import {emailConfigs} from '../../keys/users.js'
 // async_await is not allowed in global scope, must use a wrapper
 export async function sendEmail(content) {
 
-    console.log('content', content)
+    //console.log('content', content)
 
     const transporter = nodemailer.createTransport({
         host: "smtp.dreamhost.com",

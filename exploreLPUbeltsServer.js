@@ -10,6 +10,7 @@ import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
 import uploadContent from './projects/uploadContent/uploadContent.js'
+import saveRequest from './projects/saveRequest/saveRequest.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -56,21 +57,28 @@ app.get('/rafl-stats', async (req, res) => {
 })
 
 app.get('/flickr-info', async (req, res) => {
+    myEmitter.emit('myEvent', 'Flickr info requested')
     await getFlickrInfo(req.query.id).then(results => {
         res.send(results)
+    })
+})
+
+app.get('/save-request', async (req, res) => {
+    myEmitter.emit('myEvent', 'message save requested')
+    await saveRequest(req, res).then(results => {
+        //res.send(results)
     })
 })
 
 
 app.post('/upload-content', async (req, res) => {
     myEmitter.emit('myEvent', 'Upload content requested')
-    await uploadContent(req).then(results => {
-        res.send(results)
-    })
+    // TODO: re-enable now that uploads are in a separate directory?
+    // await uploadContent(req, res).then()
 })
 
 app.get('/test', async (req, res) => {
-    myEmitter.emit('myEvent', 'Flickr info requested')
+    myEmitter.emit('myEvent', 'TEST')
     res.send({msg: 'test'})
 })
 

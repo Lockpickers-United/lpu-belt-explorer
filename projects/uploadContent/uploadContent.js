@@ -4,15 +4,16 @@ import archiver from 'archiver'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import {contentUploadRecipients} from '../../keys/users.js'
 
+export default async function uploadContent(req, res) {
 
-export default async function uploadContent(req) {
-
+    const uploadDir = '/home/dh_m5s5pf/uploads'
     let subdirs = ''
     let responseJson = {}
 
+
     const form = formidable({
         defaultInvalidName: 'invalid',
-        uploadDir: `uploads`,
+        uploadDir: uploadDir,
         keepExtensions: true,
         createDirsFromUploads: true,
         allowEmptyFiles: true,
@@ -28,40 +29,36 @@ export default async function uploadContent(req) {
             const filenameParts = filename.split('.')
             const fileExt = filenameParts.pop()
             const basename = slugify(filenameParts.join('.')) + '.' + slugify(fileExt)
-
             subdirs = originaFilenameParts.map((subdir) => {
                 return slugify(subdir)
             })
-
             console.log('save location', `${subdirs}/${basename}`)
             return `${subdirs}/${basename}`
-
         },
-        filter: function ({mimetype}) {
-            // return Boolean(originalFilename)
-            // or, keep only images
-            return mimetype?.includes('image')
-        }
+        filter: ({mimetype}) => mimetype && mimetype.includes('image')
 
         // maxTotalFileSize: 4000,
         // maxFileSize: 1000,
     })
 
+
     await form.parse(req, async function (err, fields) {
         if (err) {
             console.error('formidable error', err)
+            res.status(500).send('An error occurred')
+            return
         }
 
         responseJson = JSON.stringify(fields, null, 2)
 
-        await fs.writeFile(`uploads/${subdirs}/uploadData.json`, responseJson, function (err) {
+        await fs.writeFile(`${uploadDir}/${subdirs}/uploadData.json`, responseJson, function (err) {
             if (err) {
                 console.log('writeFile error', err)
-                responseJson.error = 'json write error'
+                res.status(500).send({status: 500, message: 'json write error'})
             }
         })
 
-        const destinationFile = 'uploads/' + `${subdirs}.zip`
+        const destinationFile = `${uploadDir}/${subdirs}.zip`
         const output = fs.createWriteStream(destinationFile)
         const archive = archiver('zip', {
             zlib: {level: 9} // Sets the compression level.
@@ -84,16 +81,19 @@ export default async function uploadContent(req) {
                     html: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
                     attachments: {filename: `${subdirs}.zip`, path: destinationFile}
                 })
-                console.log("Message sent: %s", email.messageId)
+                console.log('Message sent: %s', email.messageId)
             } catch (error) {
+                error = 'An error occurred sending email'
                 console.error('An error occurred sending email', error.message)
+                res.status(500).send({status: 500, message: 'An error occurred sending email'})
             }
 
             try {
-                fs.rmSync(`uploads/${subdirs}/`, {recursive: true, force: true})
+                fs.rmSync(`${uploadDir}/${subdirs}/`, {recursive: true, force: true})
                 console.log('Temp directory removed successfully')
             } catch (error) {
                 console.error('An error occurred deleteing temp directory', error.message)
+                res.status(500).send({status: 500, message: 'An error occurred deleteing temp directory'})
             }
             console.log('done')
         })
@@ -123,18 +123,23 @@ export default async function uploadContent(req) {
         archive.pipe(output)
 
         // append files from a subdirectory, putting its contents at the root of archive
-        archive.directory(`uploads/${subdirs}/`, false)
+        archive.directory(`${uploadDir}/${subdirs}/`, false)
 
         // finalize the archive (ie we are done appending files but streams have to finish yet)
         // 'close', 'end' or 'finish' may be fired right after calling this method so register to them beforehand
         await archive.finalize()
 
-        return responseJson
 
-    }).then()
+    }).then(() => {
+        console.log('no error')
+    }).catch(error => {
+        console.log('error catch', error)
+    })
+
+    res.status(200).send({status: 200, message: 'success'})
 
     // TODO: why isn't this working?
-    return responseJson
+    //return {status: 'success'}
 
 }
 
