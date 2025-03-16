@@ -67,7 +67,7 @@ function ToolsRoute() {
                 </div>
 
                 <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
-                    <Link onClick={() => navigate('/all-projects')}
+                    <Link onClick={() => navigate('/evidence-review')}
                           style={{
                               color: '#fff',
                               textDecorationColor: '#bbb',
@@ -75,9 +75,10 @@ function ToolsRoute() {
                               fontSize: '1.1rem',
                               fontWeight: 700
                           }}>
-                        All Projects List
+                        Evidence Review
                     </Link><br/>
-                    Displays all Projects from Scorecards as well as unclaimed dan tabs.
+                    Displays All Projects (all Projects from Scorecards as well as unclaimed dan tabs),
+                    Scorecard Projects, All Modified Picks, and Black Belt Picks with Modifiers .
                 </div>
 
                 <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
