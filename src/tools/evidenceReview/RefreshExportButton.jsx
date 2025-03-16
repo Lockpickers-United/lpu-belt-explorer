@@ -47,7 +47,7 @@ export default function RefreshExportButton({refresh}) {
 
                 {requestingExport
                     ? <LoadingDisplayWhite/>
-                    : <Tooltip title={'Refresh From Sheet'} arrow disableFocusListener>
+                    : <Tooltip title={'Refresh Evidence Data'} arrow disableFocusListener>
                         <IconButton onClick={refreshPreview} style={{marginRight: 10}}>
                             <CachedIcon/>
                         </IconButton>

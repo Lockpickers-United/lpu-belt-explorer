@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableContainer from '@mui/material/TableContainer'
@@ -13,6 +13,7 @@ import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
 import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
 import RefreshExportButton from './RefreshExportButton'
+import AppContext from '../../app/AppContext.jsx'
 
 /**
  * @property evidenceName
@@ -21,6 +22,7 @@ import RefreshExportButton from './RefreshExportButton'
 
 function EvidenceReviewPage({data, updated}) {
     const {isMobile} = useWindowSize()
+    const {admin} = useContext(AppContext)
 
     const options = useMemo(() => {
         return [
@@ -45,7 +47,7 @@ function EvidenceReviewPage({data, updated}) {
             filteredEvidence = data.modifiers
             break
         default:
-            filteredEvidence =  data.modifiers.filter(evidence => evidence.blackBelt)
+            filteredEvidence = data.modifiers.filter(evidence => evidence.blackBelt)
     }
 
     const evName = selected.label.includes('Modified') ? 'Lock' : 'Project'
@@ -141,7 +143,6 @@ function EvidenceReviewPage({data, updated}) {
                         margin: '0px 0px'
                     }}>Through {dayjs(updated).format('MMM DD, YYYY')}
                     </div>
-                    <RefreshExportButton/>
                 </div>
                 <div style={{marginBottom: 20}}>
                     <ChoiceButtonGroup options={options} onChange={handleChange}/>
@@ -232,6 +233,9 @@ function EvidenceReviewPage({data, updated}) {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                {admin &&
+                    <RefreshExportButton/>
+                }
             </div>
         </React.Fragment>
     )
