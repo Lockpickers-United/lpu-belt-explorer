@@ -4,7 +4,7 @@ import {Timestamp, getFirestore} from 'firebase-admin/firestore'
 import {setDeepPush} from '../util/setDeep.js'
 import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
-import {projectDetails} from '../util/getItemDetails.js'
+import {projectDetails, lockDetails} from '../util/getItemDetails.js'
 import entryName from '../util/entryName.js'
 
 const production = process.env.USER !== localUser
@@ -26,7 +26,7 @@ const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
 
-async function getAllData() {
+export default async function getAllEvidence() {
 
     const backupDir = production
         ? `/home/${prodUser}/firebase`
@@ -37,6 +37,7 @@ async function getAllData() {
     const scorecardEvidence = await dbProd.collection('evidence').get()
     const allEvidence = [...scorecardEvidence.docs, ...unclaimedEvidence.docs]
     const projectData = await projectDetails()
+    const lockData = await lockDetails()
 
     const fullDb = new Map()
     allEvidence.reduce((acc, doc) => {
@@ -52,6 +53,8 @@ async function getAllData() {
                 ? doc.data().tabName
                 : 'unknown'
         const belt = entry.belt || null
+        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
+        const evidenceName = entryName(entry, 'short')
         const date = doc.data().evidenceCreatedAt
             ? doc.data().evidenceCreatedAt instanceof Timestamp
                 ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
@@ -62,19 +65,58 @@ async function getAllData() {
         if (acc[evInfo]) {
             return acc
         }
-
         acc[evInfo] = true
-        setDeepPush(fullDb, ['evidence'], {
+
+        setDeepPush(fullDb, ['projects'], {
             ...doc.data(),
-            evidenceName: entryName(entry, 'short'),
+            evidenceName,
             displayName,
             belt,
+            blackBelt,
             date
         })
         return acc
 
     }, {})
 
+    scorecardEvidence.docs.reduce((acc, doc) => {
+        acc = acc ? acc : {}
+        const project = projectData[doc.data().projectId]
+        const lock = lockData[doc.data().projectId]
+        const entry = lock || project
+
+        if (!entry) {
+            return acc
+        }
+
+        const displayName = doc.data().userId
+            ? collectionData[doc.data().userId].displayName
+            : doc.data().tabName
+                ? doc.data().tabName
+                : 'unknown'
+        const belt = entry.belt || null
+        const evidenceName = entryName(entry, 'short')
+        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
+        const date = doc.data().evidenceCreatedAt
+            ? doc.data().evidenceCreatedAt instanceof Timestamp
+                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
+                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
+            : '---'
+
+        if (doc.data().modifier) {
+            setDeepPush(fullDb, ['modifiers'], {
+                ...doc.data(),
+                evidenceName,
+                displayName,
+                belt,
+                blackBelt,
+                date
+            })
+        }
+
+        return acc
+
+    },{})
 
     fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
@@ -89,4 +131,4 @@ async function getAllData() {
 
 }
 
-await getAllData().then()
+await getAllEvidence().then()

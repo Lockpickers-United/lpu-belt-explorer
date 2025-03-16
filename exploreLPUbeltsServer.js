@@ -11,6 +11,7 @@ import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
 import uploadContent from './projects/uploadContent/uploadContent.js'
 import saveRequest from './projects/saveRequest/saveRequest.js'
+import getAllEvidence from './projects/collections/allEvidenceExport.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -75,6 +76,14 @@ app.post('/upload-content', async (req, res) => {
     myEmitter.emit('myEvent', 'Upload content requested')
     // TODO: re-enable now that uploads are in a separate directory?
     // await uploadContent(req, res).then()
+})
+
+
+app.get('/export-evidence', async (req, res) => {
+    myEmitter.emit('myEvent', 'Evidence export requested')
+    await getAllEvidence(req, res).then(() => {
+        res.status(201).send(`Evidence successfully exported.`)
+    })
 })
 
 app.get('/test', async (req, res) => {
