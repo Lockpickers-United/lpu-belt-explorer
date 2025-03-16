@@ -52,7 +52,7 @@ async function upload(req, res) {
         uploadDir: uploadDir,
         keepExtensions: true,
         createDirsFromUploads: true,
-        maxFileSize: 5 * 1024 * 1024, // 5MB
+        maxFileSize: 10 * 1024 * 1024, // 10MB
         filter: ({ mimetype }) => mimetype && mimetype.includes('image'),
         filename(name, ext, part) {
             const {originalFilename} = part

@@ -62,7 +62,6 @@ async function getAllData() {
         const lock = lockData[doc.data().projectId]
         const safelock = safelockDdata[doc.data().projectId]
         const project = projectData[doc.data().projectId]
-        if (!project) { return }
         const entry = lock || safelock || project
         const belt = entry.belt || null
         const date = dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
