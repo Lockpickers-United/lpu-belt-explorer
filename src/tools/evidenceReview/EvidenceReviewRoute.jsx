@@ -2,17 +2,14 @@ import React from 'react'
 import Nav from '../../nav/Nav.jsx'
 import Footer from '../../nav/Footer.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
-import AllProjectsPage from './AllProjectsPage.jsx'
+import EvidenceReviewPage from './EvidenceReviewPage.jsx'
 import useData from '../../util/useData.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 
-function AllProjectsRoute() {
+function EvidenceReviewRoute() {
     usePageTitle('All Projects')
 
     const {data, loading, error} = useData({url})
-    const projects = data
-        ? data?.evidence
-        : []
 
     const nav = (
         <React.Fragment></React.Fragment>
@@ -26,8 +23,8 @@ function AllProjectsRoute() {
                 <LoadingDisplay/>
             }
 
-            {!loading && projects.length > 0 &&
-                <AllProjectsPage projects={projects} updated={data?.metadata?.updatedDateTime}/>
+            {!loading && data &&
+                <EvidenceReviewPage data={data} updated={data?.metadata?.updatedDateTime}/>
             }
 
             <Footer/>
@@ -35,6 +32,6 @@ function AllProjectsRoute() {
     )
 }
 
-export default AllProjectsRoute
+export default EvidenceReviewRoute
 
 const url = 'https://explore.lpubelts.com/data/allProjects.json'

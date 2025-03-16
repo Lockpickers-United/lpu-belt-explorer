@@ -15,25 +15,40 @@ import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
 
 /**
  * @property evidenceName
+ * @property blackBelt
  */
 
-
-
-function AllProjectsPage({projects, updated}) {
+function EvidenceReviewPage({data, updated}) {
     const {isMobile} = useWindowSize()
 
     const options = useMemo(() => {
         return [
-            {label: 'All'},
-            {label: 'Scorecard Only'},
+            {label: 'Scorecard Projects'},
+            {label: 'All Projects'},
+            {label: 'Modified Picks'},
+            {label: 'BB Modified'}
         ]
     }, [])
     const [selected, setSelected] = useState(options[0])
     const handleChange = useCallback(newValue => setSelected(newValue), [])
 
-    const filteredProjects = selected.label === 'Scorecard Only'
-        ? projects.filter(evidence => !evidence.tabName)
-        : projects
+    let filteredEvidence
+    switch (selected.label) {
+        case 'Scorecard Projects':
+            filteredEvidence = data.projects.filter(evidence => !evidence.tabName)
+            break
+        case 'All Projects':
+            filteredEvidence = data.projects
+            break
+        case 'Modified Picks':
+            filteredEvidence = data.modifiers
+            break
+        default:
+            filteredEvidence =  data.modifiers.filter(evidence => evidence.blackBelt)
+    }
+
+    const evName = selected.label.includes('Modified') ? 'Lock' : 'Project'
+    const evType = selected.label.includes('Modified') ? 'Belt' : 'Tier'
 
     const [searchParams, setSearchParams] = useSearchParams()
     const sort = searchParams.get('sort')
@@ -62,24 +77,29 @@ function AllProjectsPage({projects, updated}) {
     }, [evSort, reverseEvSort, reverseSort, searchParams, setSearchParams, sort])
 
     const baseSortEvidence = useMemo(() => {
-        if (projects.length > 1 && sort) {
-            return filteredProjects.sort((a, b) => {
+        if (filteredEvidence && sort) {
+            return filteredEvidence.sort((a, b) => {
                 if (sort === 'evName') {
                     return (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evLock') {
-                    return a.evidenceName.localeCompare(b.evidenceName) || a.displayName.localeCompare(b.displayName)
+                    return a.evidenceName.localeCompare(b.evidenceName)
+                        || (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evBelt') {
-                    return beltSortReverse(a.belt.replace(' Belt', ''), b.belt.replace(' Belt', '')) || a.displayName.localeCompare(b.displayName)
+                    return beltSortReverse(a.belt.replace(' Belt', ''), b.belt.replace(' Belt', ''))
+                        || (a.displayName || '').localeCompare(b.displayName || '')
+                } else if (sort === 'evModifier') {
+                    return a.modifier.localeCompare(b.modifier)
+                        || (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evDate') {
                     return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
                 }
             })
         } else {
-            return filteredProjects.sort((a, b) => {
+            return filteredEvidence.sort((a, b) => {
                 return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
             })
         }
-    }, [sort, projects, reverseEvSort]) // eslint-disable-line
+    }, [sort, filteredEvidence, reverseEvSort]) // eslint-disable-line
 
     const sortedEvidence = useMemo(() => {
         return reverseEvSort ? baseSortEvidence.reverse() : baseSortEvidence
@@ -111,7 +131,7 @@ function AllProjectsPage({projects, updated}) {
                     width: '100%',
                     textAlign: 'center',
                     margin: '20px 0px'
-                }}>Recent Projects
+                }}>Project & Pick Review
                     <div style={{
                         fontWeight: 400,
                         fontSize: '0.9rem',
@@ -121,10 +141,10 @@ function AllProjectsPage({projects, updated}) {
                     }}>Through {dayjs(updated).format('MMM DD, YYYY')}
                     </div>
                 </div>
-                <div style={{marginBottom:20}}>
-                <ChoiceButtonGroup options={options} onChange={handleChange}/>
+                <div style={{marginBottom: 20}}>
+                    <ChoiceButtonGroup options={options} onChange={handleChange}/>
                 </div>
-                <TableContainer sx={{backgroundColor: '#111', maxWidth: 650}}>
+                <TableContainer sx={{backgroundColor: '#111', maxWidth: 800, margin: 'auto'}}>
                     <Table sx={{minWidth: 360, align: 'left'}}>
                         <TableHead>
                             <TableRow>
@@ -141,10 +161,20 @@ function AllProjectsPage({projects, updated}) {
                                     backgroundColor: '#222'
                                 }}
                                 ><span style={sort === 'evLock' ? {} : {cursor: 'pointer', color: '#ccc'}}
-                                       onClick={handleSort('evLock')}>Project</span>
+                                       onClick={handleSort('evLock')}>{evName}</span>
                                     <span style={sort === 'evBelt' ? {} : {cursor: 'pointer', color: '#ccc'}}
-                                          onClick={handleSort('evBelt')}>&nbsp;(Tier)</span>
+                                          onClick={handleSort('evBelt')}>&nbsp;({evType})</span>
                                 </TableCell>
+                                {selected.label === 'Modified Picks' &&
+                                    <TableCell align='left' style={{
+                                        fontWeight: 700, fontSize: '1.0rem', border: 0,
+                                        padding: 0,
+                                        backgroundColor: '#222'
+                                    }}
+                                    >
+                                    <span style={!evSort || sort === 'evDate' ? {} : {cursor: 'pointer', color: '#ccc'}}
+                                          onClick={handleSort('evModifier')}>Modifier</span></TableCell>
+                                }
                                 <TableCell align='center' style={{
                                     fontWeight: 700, fontSize: '1.0rem', border: 0,
                                     padding: 0,
@@ -183,6 +213,15 @@ function AllProjectsPage({projects, updated}) {
                                         </div>
                                     </TableCell>
 
+                                    {selected.label === 'Modified Picks' &&
+                                        <TableCell align='left'>
+                                            <div style={{fontWeight: 500, marginLeft: 5, marginRight: 5}}>
+                                                <Link onClick={() => openInNewTab(row.evidenceUrl)}
+                                                      style={{color: '#fff'}}>{row.modifier}</Link>
+                                            </div>
+                                        </TableCell>
+                                    }
+
                                     <TableCell align='center'>
                                         <nobr>{dayjs(row.date).format('MMM DD, YYYY')}</nobr>
                                     </TableCell>
@@ -196,5 +235,4 @@ function AllProjectsPage({projects, updated}) {
     )
 }
 
-
-export default AllProjectsPage
+export default EvidenceReviewPage

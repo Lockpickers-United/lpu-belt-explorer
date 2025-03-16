@@ -396,10 +396,10 @@ export default [
             }
         ]
     },{
-        path: '/all-projects',
+        path: '/evidence-review',
         lazy: async () => {
-            const {default: AllProjectsRoute} = await import('../tools/allProjects/AllProjectsRoute.jsx')
-            return {element: <AllProjectsRoute/>}
+            const {default: EvidenceReviewRoute} = await import('../tools/evidenceReview/EvidenceReviewRoute.jsx')
+            return {element: <EvidenceReviewRoute/>}
         }
     },
     {
