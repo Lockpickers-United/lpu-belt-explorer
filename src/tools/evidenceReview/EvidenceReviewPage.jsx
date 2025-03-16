@@ -12,6 +12,7 @@ import belts, {beltSortReverse} from '../../data/belts'
 import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
 import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
+import RefreshExportButton from './RefreshExportButton'
 
 /**
  * @property evidenceName
@@ -91,12 +92,12 @@ function EvidenceReviewPage({data, updated}) {
                     return a.modifier.localeCompare(b.modifier)
                         || (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evDate') {
-                    return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
+                    return b.date.localeCompare(a.date)
                 }
             })
         } else {
             return filteredEvidence.sort((a, b) => {
-                return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
+                return b.date.localeCompare(a.date)
             })
         }
     }, [sort, filteredEvidence, reverseEvSort]) // eslint-disable-line
@@ -140,6 +141,7 @@ function EvidenceReviewPage({data, updated}) {
                         margin: '0px 0px'
                     }}>Through {dayjs(updated).format('MMM DD, YYYY')}
                     </div>
+                    <RefreshExportButton/>
                 </div>
                 <div style={{marginBottom: 20}}>
                     <ChoiceButtonGroup options={options} onChange={handleChange}/>
