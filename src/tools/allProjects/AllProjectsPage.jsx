@@ -31,6 +31,10 @@ function AllProjectsPage({projects, updated}) {
     const [selected, setSelected] = useState(options[0])
     const handleChange = useCallback(newValue => setSelected(newValue), [])
 
+    const filteredProjects = selected.label === 'Scorecard Only'
+        ? projects.filter(evidence => !evidence.tabName)
+        : projects
+
     const [searchParams, setSearchParams] = useSearchParams()
     const sort = searchParams.get('sort')
     const evSort = sort && sort.includes('ev')
@@ -59,7 +63,7 @@ function AllProjectsPage({projects, updated}) {
 
     const baseSortEvidence = useMemo(() => {
         if (projects.length > 1 && sort) {
-            return projects.sort((a, b) => {
+            return filteredProjects.sort((a, b) => {
                 if (sort === 'evName') {
                     return (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evLock') {
@@ -71,18 +75,15 @@ function AllProjectsPage({projects, updated}) {
                 }
             })
         } else {
-            return projects.sort((a, b) => {
+            return filteredProjects.sort((a, b) => {
                 return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
             })
         }
     }, [sort, projects, reverseEvSort]) // eslint-disable-line
 
     const sortedEvidence = useMemo(() => {
-        const filteredEvidence = selected.label === 'Scorecard Only'
-            ? baseSortEvidence.filter(evidence => !evidence.tabName)
-            : baseSortEvidence
-        return reverseEvSort ? filteredEvidence.reverse() : filteredEvidence
-    }, [baseSortEvidence, reverseEvSort, selected.label])
+        return reverseEvSort ? baseSortEvidence.reverse() : baseSortEvidence
+    }, [baseSortEvidence, reverseEvSort])
 
     const nameWidth = isMobile ? 'auto' : '170px'
     const maxLength = isMobile ? 16 : 20
@@ -165,7 +166,7 @@ function AllProjectsPage({projects, updated}) {
                                 >
                                     <TableCell align='left' style={{padding: '0px 0px 0px 16px'}}>
                                     <span style={{fontWeight: 500, width: nameWidth}}>
-                                      {index} <LeaderboardName leader={row} isCurrentUser={row.isCurrentUser}
+                                       <LeaderboardName leader={row} isCurrentUser={row.isCurrentUser}
                                                         tab='blackBelts' maxLength={maxLength}/>
                                     </span>
                                     </TableCell>
