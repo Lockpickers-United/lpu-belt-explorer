@@ -11,13 +11,25 @@ import LeaderboardName from '../../leaderboard/LeaderboardName.jsx'
 import belts, {beltSortReverse} from '../../data/belts'
 import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
+import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
 
 /**
  * @property evidenceName
  */
 
+
+
 function AllProjectsPage({projects, updated}) {
     const {isMobile} = useWindowSize()
+
+    const options = useMemo(() => {
+        return [
+            {label: 'All'},
+            {label: 'Scorecard Only'},
+        ]
+    }, [])
+    const [selected, setSelected] = useState(options[0])
+    const handleChange = useCallback(newValue => setSelected(newValue), [])
 
     const [searchParams, setSearchParams] = useSearchParams()
     const sort = searchParams.get('sort')
@@ -66,8 +78,11 @@ function AllProjectsPage({projects, updated}) {
     }, [sort, projects, reverseEvSort]) // eslint-disable-line
 
     const sortedEvidence = useMemo(() => {
-        return reverseEvSort ? baseSortEvidence.reverse() : baseSortEvidence
-    }, [baseSortEvidence, reverseEvSort])
+        const filteredEvidence = selected.label === 'Scorecard Only'
+            ? baseSortEvidence.filter(evidence => !evidence.tabName)
+            : baseSortEvidence
+        return reverseEvSort ? filteredEvidence.reverse() : filteredEvidence
+    }, [baseSortEvidence, reverseEvSort, selected.label])
 
     const nameWidth = isMobile ? 'auto' : '170px'
     const maxLength = isMobile ? 16 : 20
@@ -85,7 +100,6 @@ function AllProjectsPage({projects, updated}) {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }, [])
-
 
     return (
         <React.Fragment>
@@ -105,6 +119,9 @@ function AllProjectsPage({projects, updated}) {
                         margin: '0px 0px'
                     }}>Through {dayjs(updated).format('MMM DD, YYYY')}
                     </div>
+                </div>
+                <div style={{marginBottom:20}}>
+                <ChoiceButtonGroup options={options} onChange={handleChange}/>
                 </div>
                 <TableContainer sx={{backgroundColor: '#111', maxWidth: 650}}>
                     <Table sx={{minWidth: 360, align: 'left'}}>
@@ -148,7 +165,7 @@ function AllProjectsPage({projects, updated}) {
                                 >
                                     <TableCell align='left' style={{padding: '0px 0px 0px 16px'}}>
                                     <span style={{fontWeight: 500, width: nameWidth}}>
-                                       <LeaderboardName leader={row} isCurrentUser={row.isCurrentUser}
+                                      {index} <LeaderboardName leader={row} isCurrentUser={row.isCurrentUser}
                                                         tab='blackBelts' maxLength={maxLength}/>
                                     </span>
                                     </TableCell>
