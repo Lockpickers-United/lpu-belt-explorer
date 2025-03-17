@@ -14,46 +14,42 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
     const inputEl = useRef()
 
     const lockDetails = useMemo(() => {
-        let options = []
+        let allLocks = []
         let lockIds = {}
         let lockNames = {}
-        let lockSamelines = {}
-        let entryMaxSamelines = {}
 
         allEntries?.sort((a, b) => {
             beltSort(a.belt, b.belt) || entryName(a, 'short').localeCompare(entryName(b, 'short'))
         })
             .map(entry => {
                 const versionText = entry.version ? ' - ' + entry.version : ''
-                entry.makeModels.map((lock, index) => {
+                entry.makeModels.map(lock => {
                     const make = lock.make ? lock.make + ' ' : ''
                     const model = lock.model || ''
                     const lockName = `${make}${model}${versionText}`
-
-                    options.push(lockName)
-                    lockIds[lockName] = entry.id
-                    lockSamelines[lockName] = index + 1
-                    lockNames[lockName] = `${make}${model}`
-                    entryMaxSamelines[entry.id] = entryMaxSamelines[entry.id]
-                        ? Math.max(index + 1, entryMaxSamelines[entry.id])
-                        : index + 1
+                    allLocks.push({id: entry.id, lockName: lockName, make: make, model: model})
                 })
             })
             .filter(x => x)
 
-        //options.unshift(' ')
-
-        return {options, lockIds, lockNames, lockSamelines, entryMaxSamelines}
+        return {allLocks, lockIds, lockNames}
 
     }, [allEntries])
 
-    const {options, lockIds, lockNames, lockSamelines, entryMaxSamelines} = lockDetails
+    const {allLocks, lockIds, lockNames} = lockDetails
+    const duplicateLocks = allLocks.filter((lock, index) => allLocks.findIndex(l => l.lockName === lock.lockName) !== index)
 
-    const lockMaxSamelines = options.reduce((acc,lockName) => {
-        const foo = lockIds[lockName]
-        acc[lockName] = entryMaxSamelines[foo]
-        return acc
-    },{})
+    const options = allLocks?.map(lock => {
+            lock.lockName = duplicateLocks.find(dupe => dupe.lockName === lock.lockName)
+                ? lock.lockName + ` (${allEntries.find(entry => entry.id === lock.id).belt})`
+                : lock.lockName
+            return lock
+        })
+        .map((lock) => {
+            lockIds[lock.lockName] = lock.id
+            lockNames[lock.lockName] = `${lock.make}${lock.model}`
+            return lock.lockName
+        })
 
     const handleChange = useCallback((event, value) => {
         if (!value) {
@@ -63,11 +59,9 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
                 lockFullName: value,
                 lockName: lockNames[value],
                 lockId: lockIds[value],
-                lockSameline: lockSamelines[value],
-                lockMaxSameline: lockMaxSamelines[value]
             })
         }
-    }, [lockIds, lockMaxSamelines, lockNames, lockSamelines, options, handleChangeLock])
+    }, [lockIds, lockNames, options, handleChangeLock])
 
     const [open, setOpen] = useState(false)
     const handleBlur = useCallback(() => setOpen(false), [])

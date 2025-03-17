@@ -130,8 +130,6 @@ function ContentSubmit({profile}) {
             lockFullName: value,
             lockName: value,
             lockId: 'NOTINLIST',
-            lockSameline: null,
-            lockMaxSameline: null
         })
     }, [])
 
