@@ -14,22 +14,22 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
     const inputEl = useRef()
 
     const lockDetails = useMemo(() => {
-        let allLocks = []
         let lockIds = {}
         let lockNames = {}
 
-        allEntries?.sort((a, b) => {
+        const allLocks = allEntries?.sort((a, b) => {
             beltSort(a.belt, b.belt) || entryName(a, 'short').localeCompare(entryName(b, 'short'))
         })
-            .map(entry => {
+            .reduce((acc, entry) => {
                 const versionText = entry.version ? ' - ' + entry.version : ''
                 entry.makeModels.map(lock => {
-                    const make = lock.make ? lock.make + ' ' : ''
-                    const model = lock.model || ''
+                    const make = lock.make ? lock.make : ''
+                    const model = ` ${lock.model}` || ''
                     const lockName = `${make}${model}${versionText}`
-                    allLocks.push({id: entry.id, lockName: lockName, make: make, model: model})
+                    acc.push({id: entry.id, lockName: lockName, make: make, model: model})
                 })
-            })
+                return acc
+            },[])
             .filter(x => x)
 
         return {allLocks, lockIds, lockNames}

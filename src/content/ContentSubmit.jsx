@@ -11,7 +11,6 @@ import DBContext from '../app/DBContext.jsx'
 import {enqueueSnackbar} from 'notistack'
 import {Collapse} from '@mui/material'
 import Checkbox from '@mui/material/Checkbox'
-
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -37,7 +36,8 @@ function ContentSubmit({profile}) {
     const entry = allEntries.find(e => e.id === lockDetails?.lockId)
     const uploadable = (!!lockDetails?.lockName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
 
-    const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_${photoCredit}`.replace('/', '+')
+    const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_`.replace('/', '+')
+    const suffix = `${photoCredit}`.replace('/', '+')
 
     const droppedFileNames = files.map(file => {
         return file.name
@@ -49,11 +49,12 @@ function ContentSubmit({profile}) {
         event.preventDefault()
         setUploading(true)
 
-        const uploadsDir = `${dt}_${prefix}`
+        const uploadsDir = `${dt}_${prefix}_${suffix}`
 
         const formData = new FormData()
         files.forEach((file) => {
-            formData.append('files', file, `${uploadsDir}/${prefix}_${file.name}`)
+            const {base, ext} = separateBasename(file.name)
+            formData.append('files', file, `${uploadsDir}/${prefix}_${base}_${suffix}.${ext}`)
         })
         formData.append('droppedFileNames', droppedFileNames)
         formData.append('lockFullName', lockDetails.lockFullName)
@@ -63,7 +64,7 @@ function ContentSubmit({profile}) {
         formData.append('lockId', lockDetails.lockId)
         formData.append('photoCredit', photoCredit)
         formData.append('displayName', profile.displayName)
-        formData.append('uploadsDir', `${dt}_${prefix}`)
+        formData.append('uploadsDir', uploadsDir)
         formData.append('notes', event.target.notes.value)
 
         if (initialCredit !== photoCredit) {
@@ -73,8 +74,7 @@ function ContentSubmit({profile}) {
         }
 
         await axios.post(
-            //'https://explore.lpubelts.com:8443/upload-content', formData,
-            'https://explore.lpubelts.com:7443/upload', formData,
+            'https://explore.lpubelts.com:8443/upload', formData,
             {headers: {'Content-Type': 'multipart/form-data'}}
         )
             .then(response => {
@@ -132,7 +132,6 @@ function ContentSubmit({profile}) {
             lockId: 'NOTINLIST',
         })
     }, [])
-
 
     const searchBoxOpacity = altLock ? 0.5 : 1
     const {flexStyle} = useWindowSize()
@@ -279,3 +278,10 @@ function ContentSubmit({profile}) {
 
 export default ContentSubmit
 
+function separateBasename(file) {
+    const lastDotIndex = file.lastIndexOf('.')
+    if (lastDotIndex === -1) {
+        return { base: file, ext: '' }
+    }
+    return { base: file.substring(0, lastDotIndex), ext: file.substring(lastDotIndex) }
+}
