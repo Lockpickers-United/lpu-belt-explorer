@@ -9,7 +9,7 @@ import dayjs from 'dayjs'
 import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
-import uploadContent from './projects/uploadContent/uploadContent.js'
+import upload from './projects/uploadContent/uploadContent.js'
 import saveRequest from './projects/saveRequest/saveRequest.js'
 import getAllEvidence from './projects/collections/allEvidenceExport.js'
 
@@ -72,10 +72,10 @@ app.get('/save-request', async (req, res) => {
 })
 
 
-app.post('/upload-content', async (req, res) => {
+app.post('/upload', async (req, res) => {
     myEmitter.emit('myEvent', 'Upload content requested')
     // TODO: re-enable now that uploads are in a separate directory?
-    // await uploadContent(req, res).then()
+    await upload(req, res).then()
 })
 
 
