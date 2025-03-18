@@ -496,7 +496,7 @@ Purple,"Master Lock",#19,,Pin-tumbler,,,8f7f1830
 Purple,Mauer,"Red Line GM",,Dimple,,,0a70d67f
 Purple,Medeco,"Original Camlock","≥ 5 pins ******","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",aeaa6a09
 Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","≥ 5 pins ******","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",826c31e0
-Purple,Mindy,"Pagoda AF 16-50","flat key",Other,,,06a28ac7
+Purple,Mindy,"Pagoda AF 16-50","flat key",Other,Unguttable,,06a28ac7
 Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
 Purple,Mottura,"3D Key",,"Dimple,Other","Rotors,Active sidebar",,0a2c7044
@@ -822,6 +822,7 @@ Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Re
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
 Unranked,HYT/Lays/Bison/Qlsy,"Chain Key Lock",,Pin-tumbler,"Under Review ⚑,Image Test","Various brands",111062fc
+Unranked,IKON,"SK6 Sperrwelleprofil","4 Serrated Fingerpins, Non-Chamfered Sidebar",Pin-tumbler,"Rotating fingerpins,Active sidebar,Under Review ⚑",,66d1ab72
 Unranked,ISEO,"F6 extra S3",,,"Under Review ⚑",,895be796
 Unranked,ISEO,R50,,Dimple,"Under Review ⚑",,42bebf45
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count",a7d98df3
