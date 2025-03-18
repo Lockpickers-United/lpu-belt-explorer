@@ -176,8 +176,8 @@ Green,"American Lock","1100 / A1100",,Pin-tumbler,,,2ae1e0b8
 Green,"American Lock",1160,"1100 but with 6 pin stacks",Pin-tumbler,,,1ae40987
 Green,"American Lock","2000 puck lock",,Pin-tumbler,,,b16ffe3f
 Green,"American Lock",5200,,Pin-tumbler,,"The standard, non-bumpstop model of the American Lock 5200 can be distinguished by the angular shape of the bow of its key, compared to the rounded shape of the bumpstop keybow.",81fbd528
+Green,"American Lock","700 / A700",,Pin-tumbler,,,6f954c60
 Green,"American Lock",Clone,,Pin-tumbler,,,b3af5e62
-Green,"American Lock","Lock 700 / A700",,Pin-tumbler,,,6f954c60
 Green,"American Lock",S1100,,Pin-tumbler,,,5a6170fb
 Green,"An Jia Bao,HPP,Ming Gao","padlock,padlock,padlock","5-6 disc generic disc detainer padlock with same style keybow","Disc detainer",,,dbc1279d
 Green,"ASSA,Ruko","500,500","graduated spools",Pin-tumbler,"Graduated spools",,e84582aa
@@ -422,7 +422,7 @@ Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,2100,,"Dimple,Sidebar,Slider","Sprung sliders","dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
 Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,"Image Test",779e7dcb
 Blue,Yale,"KM 1 star Superior",,Pin-tumbler,,"spooled key pins with 6 gege style drivers",c1e91978
-Blue,"Yale,Yale,Milencio","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
+Blue,"Yale,Yale,Millenco","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
 Purple,ABA,109582,,Dimple,,,96fd610e
 Purple,ABA,Pagoda,,Other,,,a17a6cf3
@@ -530,7 +530,7 @@ Purple,"Walsall Locks","Ace (S1311)","7 lever safe",Lever,"Safe lock,False gates
 Purple,WEST,"YKK AP",,Dimple,"High pin count",,1220174e
 Purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,5958a65b
 Purple,Yale,5000,,"Pin-tumbler,Slider",,,1be10736
-Purple,"Yale,Yale,Milencio","Superior,Platinum,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
+Purple,"Yale,Yale,Millenco","Superior,Platinum,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
 Brown,Any,"SFIC with security pins",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
 Brown,Abloy,Classic,,"Disc detainer","Rear tension,False gates","Old models can be front tensioned",da09d849
 Brown,ABUS,Plus,"no butterfly discs","Disc detainer","Random mid tension,False gates",,b8350900

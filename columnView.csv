@@ -26,8 +26,8 @@
 ,Citadel,"Burg Wächter Boccia","American Lock 1160 (1100 but with 6 pin stacks)","BASI K6-RT","Clavis 10 pin (dual row, all spools)","Cavers Cavith","Fichet 450 / Fichet 484 (w/ False gates, 2-3 mastered levers)","Chubb 6K174 Isolator"
 ,"Dulimex DX","CES KB","American Lock 2000 puck lock","Baton 6000 series (not Abloy keyway)","Codkey Locksys (<15 pins)","Clavis T-20 (<15 pins)","Fontaine Dynaxis","Clavis F-22"
 ,"Eagle 37110","CES PS5","American Lock 5200","Bricard Bloctout","CompX Chicago TuBAR / Inceca Plana","Codkey Locksys (≥15 pins)","FTH Thirard Pacific","Clavis Q-18"
-,"Egret 5-pin Padlock","CISA 220/50","American Lock Clone","Bricard Serial S","Corbin Russwin Emhart (4 pins **)","Diamond K3 / Gerda Exxo / Securemme Evo K64","GOAL V18 / GOAL GP (<14 pins)","Clavis T-20 (20 pins)"
-,"ERA Mortice (2 lever)","Cocraft 6-Pin Padlock (non-guttable version)","American Lock Lock 700 / A700","Burg Wächter Diamant","Corbin Russwin Master Ring (***)","DOM ix 10 kg / STS IX bola","GOAL Z (≥2 standard drivers)","Corbin Russwin Emhart (≥ 2 mastered chambers **)"
+,"Egret 5-pin Padlock","CISA 220/50","American Lock 700 / A700","Bricard Serial S","Corbin Russwin Emhart (4 pins **)","Diamond K3 / Gerda Exxo / Securemme Evo K64","GOAL V18 / GOAL GP (<14 pins)","Clavis T-20 (20 pins)"
+,"ERA Mortice (2 lever)","Cocraft 6-Pin Padlock (non-guttable version)","American Lock Clone","Burg Wächter Diamant","Corbin Russwin Master Ring (***)","DOM ix 10 kg / STS IX bola","GOAL Z (≥2 standard drivers)","Corbin Russwin Emhart (≥ 2 mastered chambers **)"
 ,Esco,"Commando Peacemaker","American Lock S1100","Burg Wächter Gamma 700 (non-removable core)","DAF Kilit DBS02","DOM ix 10 / STS IX (with shark fins)","Hori Trident (spools)","DOM Diamant (With sprung rear disc)"
 ,Faithfull,"Corbin Arco Cromato","An Jia Bao padlock / HPP padlock / Ming Gao padlock (5-6 disc generic disc detainer padlock with same style keybow)","Cantol high-security line  (10-pin dimple)","DeGuard Interactive clone / HQ High Security interactive clone (5 pins)","DOM System D","IKON tk5 sperwellenprofil (with serrated fingerpins)","DOM ix Twinstar"
 ,FF,"DOM RN (standard cylinder)","ASSA 500 / Ruko 500 (graduated spools)","CAVEO TS007 (all standards)","Dierre New Power","Dorma DC500 / Dorma DC5400","IKON Verso","EVVA 3KS / EVVA 3KS+ (with False gates and no mastered sliders)"
@@ -106,7 +106,7 @@
 ,,,"Master Lock 410 LOTO (Lockout Tagout)","PACLOCK 90A Pro","WEST YKK AP",,,
 ,,,"Master Lock 6835","PACLOCK PL410","Western Electric 29A / Western Electric 29B",,,
 ,,,"Master Lock 911","Pisla 860","Yale 5000",,,
-,,,"Master Lock 931","Ruko R501","Yale Superior / Yale Platinum / Milencio Magnum (7 or 9 pins)",,,
+,,,"Master Lock 931","Ruko R501","Yale Superior / Yale Platinum / Millenco Magnum (7 or 9 pins)",,,
 ,,,"Master Lock Pro Series","Securit S20##",,,,
 ,,,"Master Lock S32 LOTO (Lockout Tagout)","Stanley Vidmar SEA SL-10 / Ezcurra SEA 23 / Ezcurra SEA 3 / SEA Locking System (Original)",,,,
 ,,,"Mauer Elite 1 / Mauer Elite 2","Takigen 10-pin",,,,
@@ -125,7 +125,7 @@
 ,,,"Schlage Everest","Yale 2100",,,,
 ,,,"Sepa 5000","Yale 500 / Yale B",,,,
 ,,,"Solon Super-Lock Company Nix Pix","Yale KM 1 star Superior",,,,
-,,,"Squire 440 (4 lever, pipe key)","Yale Superior / Yale Platinum / Milencio Magnum (<7 pins)",,,,
+,,,"Squire 440 (4 lever, pipe key)","Yale Superior / Yale Platinum / Millenco Magnum (<7 pins)",,,,
 ,,,"Tokoz Beta",,,,,
 ,,,"Unity Disc Detainer Padlock",,,,,
 ,,,"Vachette Standard cylinder",,,,,

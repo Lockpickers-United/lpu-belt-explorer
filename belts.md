@@ -379,8 +379,8 @@ process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvh
 - [American Lock 1160](https://lpubelts.com/#/locks?id=1ae40987) (1100 but with 6 pin stacks)
 - [American Lock 2000 puck lock](https://lpubelts.com/#/locks?id=b16ffe3f)
 - [American Lock 5200](https://lpubelts.com/#/locks?id=81fbd528)
+- [American Lock 700 / A700](https://lpubelts.com/#/locks?id=6f954c60)
 - [American Lock Clone](https://lpubelts.com/#/locks?id=b3af5e62)
-- [American Lock Lock 700 / A700](https://lpubelts.com/#/locks?id=6f954c60)
 - [American Lock S1100](https://lpubelts.com/#/locks?id=5a6170fb)
 - [An Jia Bao padlock / HPP padlock / Ming Gao padlock](https://lpubelts.com/#/locks?id=dbc1279d) (5-6 disc generic disc detainer padlock with same style keybow)
 - [ASSA 500 / Ruko 500](https://lpubelts.com/#/locks?id=e84582aa) (graduated spools)
@@ -681,7 +681,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [Yale 2100](https://lpubelts.com/#/locks?id=7164f69d)
 - [Yale 500 / Yale B](https://lpubelts.com/#/locks?id=779e7dcb)
 - [Yale KM 1 star Superior](https://lpubelts.com/#/locks?id=c1e91978)
-- [Yale Superior / Yale Platinum / Milencio Magnum](https://lpubelts.com/#/locks?id=30a4fef5) (&lt;7 pins)
+- [Yale Superior / Yale Platinum / Millenco Magnum](https://lpubelts.com/#/locks?id=30a4fef5) (&lt;7 pins)
 
 ** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).
 
@@ -823,7 +823,7 @@ your lock in the picking video. Please read more below for filming requirements.
 - [WEST YKK AP](https://lpubelts.com/#/locks?id=1220174e)
 - [Western Electric 29A / Western Electric 29B](https://lpubelts.com/#/locks?id=5958a65b)
 - [Yale 5000](https://lpubelts.com/#/locks?id=1be10736)
-- [Yale Superior / Yale Platinum / Milencio Magnum](https://lpubelts.com/#/locks?id=ebe9ee59) (7 or 9 pins)
+- [Yale Superior / Yale Platinum / Millenco Magnum](https://lpubelts.com/#/locks?id=ebe9ee59) (7 or 9 pins)
 
 ** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers
 
