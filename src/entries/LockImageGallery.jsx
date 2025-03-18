@@ -27,8 +27,11 @@ function LockImageGallery({entry}) {
 
     const initiallyOpen = isValidImage(openIndex, entry)
 
-    const mediaLabels = [...new Set(entry.media?.map(({label}) => label))].sort((a, b) => a.localeCompare(b)).filter(x => x)
-
+    const sequencedMedia = entry.media
+        .sort((a, b) => {
+            return a.sequenceId - b.sequenceId
+        })
+    const mediaLabels = [...new Set(sequencedMedia?.map(({label}) => label))].filter(x => x)
     const labeledMedia = mediaLabels.length > 0
         ? mediaLabels.map((label) => {
             return {label: label, media: entry.media.filter(({label: l}) => l === label)}
@@ -43,6 +46,8 @@ function LockImageGallery({entry}) {
             return a.label?.localeCompare(b.label || '')
                 || a.sequenceId - b.sequenceId
         })
+
+    console.log('sortedMedia', sortedMedia)
 
     return (
         <React.Fragment>
