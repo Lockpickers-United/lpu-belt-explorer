@@ -23,8 +23,8 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
             .reduce((acc, entry) => {
                 const versionText = entry.version ? ' - ' + entry.version : ''
                 entry.makeModels.map(lock => {
-                    const make = lock.make ? lock.make : ''
-                    const model = ` ${lock.model}` || ''
+                    const make = lock.make ? lock.make : lock.model
+                    const model = lock.make ? ` ${lock.model}` : ''
                     const lockName = `${make}${model}${versionText}`
                     acc.push({id: entry.id, lockName: lockName, make: make, model: model})
                 })

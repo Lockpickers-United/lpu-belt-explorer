@@ -79,10 +79,13 @@ function ContentSubmit({profile}) {
         )
             .then(response => {
                 setResponse(response.data)
+                console.log('response.data', response.data)
             })
             .catch(error => {
-                setUploadError(true)
+                //setUploadError(true)
                 console.error('upload error', error)
+                setUploadError(error)
+                enqueueSnackbar('Something went wrong! Please try again later.')
             })
 
         if (uploadError) {
@@ -113,7 +116,7 @@ function ContentSubmit({profile}) {
         setFiles([])
         setResponse(undefined)
         setUploading(false)
-        setUploadError(false)
+        setUploadError(undefined)
         setAltLock(false)
         setAltLockName(undefined)
     }, [files])
@@ -129,7 +132,7 @@ function ContentSubmit({profile}) {
         setLockDetails({
             lockFullName: value,
             lockName: value,
-            lockId: 'NOTINLIST',
+            lockId: 'NOTINLIST'
         })
     }, [])
 
@@ -140,10 +143,10 @@ function ContentSubmit({profile}) {
 
         <div style={{
             maxWidth: 800, padding: 0,
-            marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft:8
+            marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
         }}>
 
-            {!response &&
+            {!response && !uploadError &&
                 <form action={null} encType='multipart/form-data' method='post'
                       onSubmit={handleFileUpload}>
 
@@ -155,9 +158,8 @@ function ContentSubmit({profile}) {
                         </div>
 
                         <div style={{marginTop: 8}}>
-                            <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'/> Submit photos for a
-                            lock
-                            not on the site.
+                            <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'/> Submit
+                            photos for a lock not on the site.
                         </div>
                         <Collapse in={altLock} style={{marginTop: 10}}>
                             <span style={{fontSize: '0.9rem'}}>Lock Name</span><br/>
@@ -166,7 +168,7 @@ function ContentSubmit({profile}) {
                         </Collapse>
                         <br/><br/>
 
-                        <div style={{display:flexStyle}}>
+                        <div style={{display: flexStyle}}>
                             <div style={{marginRight: 50, width: 350}}>
                                 <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                     Upload<br/>
@@ -235,7 +237,8 @@ function ContentSubmit({profile}) {
 
                                 <br/><br/>
 
-                                <Button type='submit' variant='contained' color='info' disabled={!uploadable||uploading}>
+                                <Button type='submit' variant='contained' color='info'
+                                        disabled={!uploadable || uploading}>
                                     Upload
                                 </Button>
 
@@ -246,30 +249,64 @@ function ContentSubmit({profile}) {
                 </form>
             }
 
-                <Dialog open={uploading} componentsProps={{
+            <Dialog open={uploading} componentsProps={{
+                backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
+            }}>
+                <div style={{width: 320, textAlign: 'center', padding: 30}}>
+                    <LoadingDisplay/>
+                </div>
+            </Dialog>
+
+
+                <Dialog open={!!response} componentsProps={{
                     backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
                 }}>
-                    <div style={{width: 320, textAlign: 'center', padding: 30}}>
-                        <LoadingDisplay/>
+                    <div style={{display: 'flex'}}>
+                        <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
+                            <div style={{
+                                fontSize: '1.7rem',
+                                fontWeight: 500,
+                                marginBottom: 60,
+                                textAlign: 'center'
+                            }}>{title} Uploaded Succesfully!
+                            </div>
+
+                            <div style={{width: '100%', textAlign: 'center'}}>
+                                <Button onClick={handleReload} variant='contained' color='info'
+                                        style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                                    Submit more photos
+                                </Button>
+                            </div>
+
+                        </div>
                     </div>
                 </Dialog>
 
 
-            {response &&
+            <Dialog open={!!uploadError} componentsProps={{
+                backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
+            }}>
                 <div style={{display: 'flex'}}>
                     <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
-                        <div style={{fontSize: '1.7rem', fontWeight: 500, marginBottom: 60, textAlign: 'center'}}>{title} Uploaded!</div>
+                        <div style={{fontSize: '1.7rem', fontWeight: 500, marginBottom: 20, textAlign: 'center'}}>
+                            Something went wrong.<br/>
+                            Please try again later.<br/>
+                        </div>
+                        <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
+                            Error message: {uploadError?.response?.data}
+                        </div>
 
-                        <div style={{width: '100%', textAlign: 'right'}}>
-                            <Button onClick={handleReload} variant='contained' color='info'
+
+                        <div style={{width: '100%', textAlign: 'center'}}>
+                            <Button onClick={handleReload} variant='contained' color='error'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                Submit more photos
+                                OK
                             </Button>
                         </div>
 
                     </div>
                 </div>
-            }
+            </Dialog>
 
         </div>
 
@@ -281,7 +318,7 @@ export default ContentSubmit
 function separateBasename(file) {
     const lastDotIndex = file.lastIndexOf('.')
     if (lastDotIndex === -1) {
-        return { base: file, ext: '' }
+        return {base: file, ext: ''}
     }
-    return { base: file.substring(0, lastDotIndex), ext: file.substring(lastDotIndex) }
+    return {base: file.substring(0, lastDotIndex), ext: file.substring(lastDotIndex)}
 }
