@@ -189,11 +189,8 @@ fs.writeFileSync('./src/data/upgrades.json', JSON.stringify(upgrades, null, 2))
 // Add media data
 mediaData
     .sort((a, b) => {
-        const one = a['Sequence ID']
-        const two = b['Sequence ID']
-        if (one === two) return 0
-        else if (one > two) return 1
-        else return -1
+    return a['Unique ID'].localeCompare(b['Unique ID'])
+        || a['Sequence ID'] - b['Sequence ID']
     })
     .forEach((item, index) => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
