@@ -9,7 +9,7 @@ function CopyLinkToEntryButton({entry, nameType}) {
     const openInNewTab = useCallback(() => {
         const name =  entryName(entry, nameType)
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-        const link = `https://lpubelts.com/#/locks?id=${entry.id}&name=${safeName}`
+        const link = `https://lpubelts.com/#/locks?tab=search&search=${entry.id}&id=${entry.id}&name=${safeName}`
         const newWindow = window.open(link, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }, [entry, nameType])

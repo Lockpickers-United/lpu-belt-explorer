@@ -11,6 +11,7 @@ import LPU_logo from '../resources/LPU_logo'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import ConstructionIcon from '@mui/icons-material/Construction'
 import NewReleasesIcon from '@mui/icons-material/NewReleases'
+import CameraAltIcon from '@mui/icons-material/CameraAlt'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -90,6 +91,12 @@ export default [
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
+    },
+    {
+        title: 'Contibute Photos',
+        icon: <CameraAltIcon fontSize='small'/>,
+        path: '/content',
+        beta: true
     },
     {
         title: 'Admin Tools',

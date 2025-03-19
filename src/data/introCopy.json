@@ -10,5 +10,11 @@
     "copy": "Scorecard is an upgrade to the 'Recorded' list in your collection. You can now add dates and links to documentation videos, images, etc for each pick. We've taken the liberty of importing the locks from your collection and you can add details at any time. Black Belt pickers can use the 'Import Dan Sheet' button below to import their tab automatically.",
     "link": "",
     "destination": ""
+  },
+  "photoUpload": {
+    "title": "Upload Photos",
+    "copy": "You can use this page to send us photos to consider adding to the site. Please note that we may not use all photos contributed, especially where they are low-quality or they duplicate images already in place. Our priorities are generally:\n\n1. Locks with no photos\n2. Photos showing gutting or views of lock not already on site\n3. Photos of locks not already on the site, if the lock is of **particular interest**\n\nWe really appreciate photo contributions from the community and now feature over 3500 unique images from nearly 250 different contributors. Thank you!",
+    "link": "",
+    "destination": ""
   }
 }

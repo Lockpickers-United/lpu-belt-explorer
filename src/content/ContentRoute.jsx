@@ -10,13 +10,15 @@ import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import SignInButton from '../auth/SignInButton.jsx'
 import Button from '@mui/material/Button'
+import IntroCopy from '../misc/IntroCopy.jsx'
+import usePageTitle from '../util/usePageTitle.jsx'
 
 function ContentRoute() {
     const {user} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
-    document.title = 'LPU Belt Explorer - Submit Photos'
+    usePageTitle('LPU Belt Explorer - Submit Photos')
 
     const userId = user ? user.uid : null
     const loadFn = useCallback(async () => {
@@ -37,13 +39,19 @@ function ContentRoute() {
     return (
         <React.Fragment>
             <Nav title='Submit Photos' extras={nav}/>
+
+            {(data && !data.photoCredit) || !user &&
+                <div style={{marginTop: 20, padding: '0px 0px'}}>
+                    <IntroCopy pageName={'photoUpload'} maxWidth={820}/>
+                </div>
+            }
             {loading && <LoadingDisplay/>}
 
             {!loading && data && !error &&
                 <ContentSubmit profile={data}/>
             }
 
-            {!loading && !data && !error &&
+            {!loading && !data && !error && !user &&
                 <div style={{
                     maxWidth: 700, padding: 0,
                     marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
@@ -58,7 +66,7 @@ function ContentRoute() {
                 </div>
             }
             <Footer/>
-            <Tracker feature='award'/>
+            <Tracker feature='uploadPhotos'/>
         </React.Fragment>
     )
 }

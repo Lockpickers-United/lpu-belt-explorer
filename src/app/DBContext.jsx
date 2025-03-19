@@ -90,7 +90,7 @@ export function DBProvider({children}) {
 
     const updateProfileField = useCallback(async (key, value) => {
         if (dbError) return false
-        console.log('updating', user.uid, key, value)
+        //console.log('updating', user.uid, key, value)
         const ref = doc(db, 'lockcollections', user.uid)
         await runTransaction(db, async transaction => {
             const sfDoc = await transaction.get(ref)

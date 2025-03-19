@@ -8,7 +8,7 @@ import useWindowSize from '../util/useWindowSize'
 import entryName from '../entries/entryName'
 import {beltSort} from '../data/belts'
 
-function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
+function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset=false}) {
     const style = {maxWidth: 700}
     const {isMobile} = useWindowSize()
     const inputEl = useRef()
@@ -70,7 +70,7 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled}) {
         <React.Fragment>
             <Autocomplete
                 disabled={disabled}
-                key={disabled}
+                key={reset || disabled}
                 selectOnFocus
                 clearOnEscape
                 handleHomeEndKeys

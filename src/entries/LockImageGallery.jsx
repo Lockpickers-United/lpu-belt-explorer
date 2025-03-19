@@ -47,8 +47,6 @@ function LockImageGallery({entry}) {
                 || a.sequenceId - b.sequenceId
         })
 
-    console.log('sortedMedia', sortedMedia)
-
     return (
         <React.Fragment>
             {labeledMedia.map((group, index) =>
