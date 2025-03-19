@@ -84,13 +84,12 @@ export function DataProvider({children, allEntries, profile}) {
             ? searched.sort((a, b) => {
                 if (sort === 'popularity') {
                     return b.collectionSaves - a.collectionSaves
-                    || b.views - a.views
-                    || a.fuzzy.localeCompare(b.fuzzy)
+                        || b.views - a.views
+                        || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'recentlyUpdated') {
-                    const dayA = dayjs(a.lastUpdated)
-                    const dayB = dayjs(b.lastUpdated)
-                    if (dayA.isAfter(dayB)) return -1
-                    else if (dayB.isAfter(dayA)) return 1
+                    return Math.floor(dayjs(b.lastUpdated).valueOf()/360) - Math.floor(dayjs(a.lastUpdated).valueOf()/360)
+                        || beltSort(a.belt, b.belt)
+                        || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'beltAscending') {
                     return beltSort(a.belt, b.belt)
                 } else if (sort === 'beltDescending') {

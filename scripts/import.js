@@ -269,15 +269,19 @@ console.log('Processing recenty updated data...')
 const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
 jsonData
     .forEach(entry => {
-        const {lastUpdated, views: oldViews, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
-        const {views: newViews, ...newEntry} = entry
-        if (JSON.stringify(newEntry) !== JSON.stringify(oldEntry)) {
-            console.log(`Lock Entry updated ${newEntry.id}`)
+        const {lastUpdated, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
+        if (JSON.stringify(keyAttributes(entry)) !== JSON.stringify(keyAttributes(oldEntry))) {
+            console.log(`Lock Entry updated ${entry.id}`)
             entry.lastUpdated = dayjs().toISOString()
         } else {
             entry.lastUpdated = lastUpdated
         }
     })
+
+function keyAttributes(entry) {
+    const {belt, makeModels, lockingMechanisms, media} = entry
+    return {belt, makeModels, lockingMechanisms, mediaCount: media?.length}
+}
 
 // Write out to src location for usage
 console.log('Writing data.json...')
