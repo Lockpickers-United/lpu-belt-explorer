@@ -87,7 +87,7 @@ export function DataProvider({children, allEntries, profile}) {
                         || b.views - a.views
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'recentlyUpdated') {
-                    return Math.floor(dayjs(b.lastUpdated).valueOf()/360) - Math.floor(dayjs(a.lastUpdated).valueOf()/360)
+                    return Math.floor(dayjs(b.lastUpdated).valueOf()/3600) - Math.floor(dayjs(a.lastUpdated).valueOf()/3600)
                         || beltSort(a.belt, b.belt)
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'beltAscending') {
