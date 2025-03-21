@@ -486,7 +486,7 @@ Purple,"LIPS,LIPS","Keso (door cylinder),Octro","<13 pins",Dimple,"High pin coun
 Purple,LIPS,"Keso padlock",,Dimple,,,434b5b25
 Purple,Liquidonics,"Miracle Magnetic",,"Magnet,Pin-tumbler","Magnetic pins",,50d411f4
 Purple,Lockman,Megacross,"9-pins, mushroom drivers",Dimple,"High pin count",,9982c0eb
-Purple,Lockwood,MT5,"VPI, heavily mastered *****","Dimple,Slider",,"***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",883fb3cd
+Purple,Lockwood,MT5,"VPI, heavily mastered *****","Dimple,Slider","Pin-in-pin,Interactive element","***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",883fb3cd
 Purple,Lockwood,Twin,,"Pin-tumbler,Sidepins","Active sidebar,False gates",,71833308
 Purple,"M&C,M&C,M&C,Vachette,Vachette","Color,Color Pro,Color+,V-DIS,V-DIS+","≥4 sliders","Dimple,Slider","False gates,Active sidebar",,6efe5f67
 Purple,"M&C,M&C","Condor,Move",,"Dimple,Slider","Active sidebar,False gates",,be22f5f1
@@ -503,9 +503,9 @@ Purple,Mottura,"3D Key",,"Dimple,Other","Rotors,Active sidebar",,0a2c7044
 Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
 Purple,"Mul-T-Lock,Mul-T-Lock","Classic Pro,400",,Dimple,Pin-in-pin,,fd2b533e
-Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 serrated drivers",Dimple,Pin-in-pin,,48323cde
-Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, ≥ 4 spooled drivers",Dimple,"Interactive element",,3335df97
-Purple,Mul-T-Lock,MT5,,Dimple,Pin-in-pin,,16906a6c
+Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 serrated drivers",Dimple,"Pin-in-pin,Interactive element",,48323cde
+Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, ≥ 4 spooled drivers",Dimple,"Pin-in-pin,Interactive element",,3335df97
+Purple,Mul-T-Lock,MT5,,Dimple,"Pin-in-pin,Interactive element",,16906a6c
 Purple,Mul-T-Lock,"Omega Plus",,Dimple,,,8a65b956
 Purple,Nagasawa,"Kodai KCY-31","6 pin",Pin-tumbler,,,3efc97ad
 Purple,"Nemef,Nemef,LIPS","NF2,NF3,8300",,Pin-tumbler,"Tapered drivers",,94466c21

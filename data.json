@@ -25857,6 +25857,10 @@
       "Dimple",
       "Slider"
     ],
+    "features": [
+      "Pin-in-pin",
+      "Interactive element"
+    ],
     "notes": "***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",
     "media": [
       {
@@ -26935,7 +26939,8 @@
       "Dimple"
     ],
     "features": [
-      "Pin-in-pin"
+      "Pin-in-pin",
+      "Interactive element"
     ],
     "media": [
       {
@@ -27016,6 +27021,7 @@
       "Dimple"
     ],
     "features": [
+      "Pin-in-pin",
       "Interactive element"
     ],
     "media": [
@@ -27130,7 +27136,8 @@
       "Dimple"
     ],
     "features": [
-      "Pin-in-pin"
+      "Pin-in-pin",
+      "Interactive element"
     ],
     "media": [
       {
