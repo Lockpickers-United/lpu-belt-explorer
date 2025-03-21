@@ -71,6 +71,9 @@ const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
 const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
+// Load previous JSON for recently updated checks
+const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
+
 // Transform fields into internal JSON format
 console.log('Processing main data...')
 const jsonData = mainData
@@ -186,23 +189,38 @@ const upgrades = upgradeData
 console.log('Writing upgrades.json')
 fs.writeFileSync('./src/data/upgrades.json', JSON.stringify(upgrades, null, 2))
 
+// Collect previous media for updated comparison
+
+const previousMedia = originalData.reduce((acc, entry) => {
+    if (entry.media) {
+        entry.media.forEach(media => {
+            acc.push(media.thumbnailUrl)
+        })
+    }
+    return acc
+}, [])
+
 // Add media data
 mediaData
     .sort((a, b) => {
-    return a['Unique ID'].localeCompare(b['Unique ID'])
-        || a['Sequence ID'] - b['Sequence ID']
+        return a['Unique ID'].localeCompare(b['Unique ID'])
+            || a['Sequence ID'] - b['Sequence ID']
     })
     .forEach((item, index) => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
+        const dateAdded = previousMedia.includes(item['Thumbnail URL'])
+            ? item.dateAdded || dayjs('2025-03-06T16:00:00.000Z').toISOString()
+            : dayjs().toISOString()
         const media = {
             title: item.Title,
             subtitle: item.Subtitle,
             label: item.Label || undefined,
             thumbnailUrl: item['Thumbnail URL'],
             fullUrl: item['Full URL'],
-            sequenceId: index + 1
+            sequenceId: index + 1,
+            dateAdded
         }
         if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
         if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
@@ -266,7 +284,6 @@ groupData.forEach(group => {
 
 // Recently updated data
 console.log('Processing recenty updated data...')
-const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
 jsonData
     .forEach(entry => {
         const {lastUpdated, ...oldEntry} = originalData.find(e => e.id === entry.id) || {}
