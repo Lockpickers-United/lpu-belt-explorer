@@ -12,6 +12,7 @@ import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import ConstructionIcon from '@mui/icons-material/Construction'
 import NewReleasesIcon from '@mui/icons-material/NewReleases'
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
+import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -96,6 +97,12 @@ export default [
         title: 'Contibute Photos',
         icon: <CameraAltIcon fontSize='small'/>,
         path: '/content',
+        beta: true
+    },
+    {
+        title: 'Recent Changes',
+        icon: <ChangeCircleIcon fontSize='small'/>,
+        path: '/recent',
         beta: true
     },
     {

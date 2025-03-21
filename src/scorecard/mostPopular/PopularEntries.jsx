@@ -124,11 +124,11 @@ function PopularEntries({owner, popularEntries, popularType}) {
             </div>
 
             <div>
+                <List dense style={{padding: 0}}>
                 {filteredEntries.map(entry =>
-                    <List dense style={{padding: 0}} key={entry.id}>
-                        <PopularEntry entry={entry} owner={owner}/>
-                    </List>
+                        <PopularEntry entry={entry} owner={owner} key={entry.id}/>
                 )}
+                </List>
             </div>
         </div>
     )
