@@ -395,11 +395,19 @@ export default [
                 }
             }
         ]
-    },{
+    },
+    {
         path: '/evidence-review',
         lazy: async () => {
             const {default: EvidenceReviewRoute} = await import('../tools/evidenceReview/EvidenceReviewRoute.jsx')
             return {element: <EvidenceReviewRoute/>}
+        }
+    },
+    {
+        path: '/recent',
+        lazy: async () => {
+            const {default: RecentChangesRoute} = await import('../recent/RecentChangesRoute.jsx')
+            return {element: <RecentChangesRoute/>}
         }
     },
     {
