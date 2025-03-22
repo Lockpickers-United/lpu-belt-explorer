@@ -1,3 +1,5 @@
+// setDeepPush(acc, ['newImageEntries'], object)
+
 function setDeepBase(obj, path, value, customizer) {
     if (path.length === 1) {
         obj[path[0]] = customizer ? customizer(obj[path[0]], value) : value
