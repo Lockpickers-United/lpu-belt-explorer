@@ -194,7 +194,7 @@ fs.writeFileSync('./src/data/upgrades.json', JSON.stringify(upgrades, null, 2))
 const previousMedia = originalData.reduce((acc, entry) => {
     if (entry.media) {
         entry.media.forEach(media => {
-            acc.push(media.thumbnailUrl)
+            acc.push(media)
         })
     }
     return acc
@@ -208,11 +208,16 @@ mediaData
     })
     .forEach((item, index) => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
+        const previousItem = previousMedia.find(m => m.fullUrl === item['Full URL'])
         if (!entry) return console.log('Entry not found!', item)
         if (!entry.media) entry.media = []
-        const dateAdded = previousMedia.includes(item['Thumbnail URL'])
-            ? item.dateAdded || dayjs('2025-03-06T16:00:00.000Z').toISOString()
-            : dayjs().toISOString()
+        let dateAdded
+        if (previousItem) {
+            dateAdded = previousItem.dateAdded
+        } else {
+            dateAdded = dayjs().toISOString()
+        }
+
         const media = {
             title: item.Title,
             subtitle: item.Subtitle,
