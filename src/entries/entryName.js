@@ -48,6 +48,8 @@ function entryName(entry, nameType = 'short', options = {}) {
         const makes = makeModels.map(e => e.make).join(',')
         const models = makeModels.map(e => e.model).join(',')
         return `${makes}\t${models}` + versionString
+    } else if (nameType === 'safe') {
+        return entryName(entry).replace(/[\s*]/g, '_').replace(/\//g, '-').replace(/[^a-zA-Z0-9-_]+/g, '')
     } else if (nameType === 'array') {
         return [
             makeModels.map(e => e.make).join(','),
