@@ -973,7 +973,7 @@ Ultra-high security is your middle name. Your lock collection is worth more than
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
   - Built a "Challenge Lock" or completed similar project. *(Blue Belt Requirement)*
-  - Made at least one specialized tool and publish the specs *(Brown Belt Requirement)*
+  - Complete a Project/Quest at Tier 1 level or above. *(Brown Belt Requirement)*
 
 **Evidence Format**
 
@@ -1084,7 +1084,7 @@ is required to gut.
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
   - Built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
-  - Made at least one specialized tool and publish the specs *(Brown Belt Requirement)*
+  - Complete a Project/Quest at Tier 1 level or above. *(Brown Belt Requirement)*
 
 **Evidence Format**
 
