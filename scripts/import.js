@@ -151,6 +151,7 @@ jsonData.forEach(entry => {
         delete historicalData[entry.id].dateDeleted
         historicalData[entry.id] = {...historicalData[entry.id], ...entry}
     }
+    entry.dateAdded = historicalData[entry.id].dateAdded
 })
 originalData.forEach(entry => {
     const currentEntry = jsonData.find(e => e.id === entry.id)
@@ -159,9 +160,11 @@ originalData.forEach(entry => {
         changedEntries++
     }
 })
-console.log('Writing historicalData.json')
-if (changedEntries > 0) { console.log(`${changedEntries} additions or deletions found`) }
-fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
+if (changedEntries > 0) {
+    console.log('Writing historicalData.json')
+    console.log(`${changedEntries} additions or deletions found`)
+    fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
+}
 
 // Add projects data
 console.log('Processing project data...')
@@ -235,7 +238,7 @@ mediaData
     .forEach((item, index) => {
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         const previousItem = previousMedia.find(m => m.fullUrl === item['Full URL'])
-        if (!entry) return console.log('Entry not found!', item)
+        if (!entry) return console.log('Entry not found!', historicalData[item['Unique ID']].name, item)
         if (!entry.media) entry.media = []
         let dateAdded
         if (previousItem) {
@@ -277,7 +280,7 @@ linkData
                 url: item.URL
             })
         } else {
-            console.log('Entry not found:', item)
+            console.log('Entry not found!', historicalData[item['Unique ID']].name, item)
         }
     })
 

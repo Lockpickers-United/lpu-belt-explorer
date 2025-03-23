@@ -8,7 +8,8 @@ export const lockSortFields = [
     {label: 'Belt (Ascending)', value: 'beltAscending'},
     {label: 'Belt (Descending)', value: 'beltDescending'},
     {label: 'Popularity', value: 'popularity'},
-    {label: 'Recently Updated', value: 'recentlyUpdated'}
+    {label: 'Recently Updated', value: 'recentlyUpdated'},
+    {label: 'Date Added', value: 'dateAdded'}
 ]
 
 export const dialSortFields = [
