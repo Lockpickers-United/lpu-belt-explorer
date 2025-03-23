@@ -4,7 +4,7 @@ import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
 import PrivacyPage from './PrivacyPage'
 
-function InfoRoute() {
+function PrivacyRoute() {
     usePageTitle('Privacy Policy')
 
     return (
@@ -18,4 +18,4 @@ function InfoRoute() {
     )
 }
 
-export default InfoRoute
+export default PrivacyRoute

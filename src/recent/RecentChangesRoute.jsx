@@ -9,7 +9,7 @@ import {lockFilterFields} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../locks/LockDataProvider'
 
-function InfoRoute() {
+function RecentChangesRoute() {
     usePageTitle('Recent Changes')
 
     return (
@@ -30,4 +30,4 @@ function InfoRoute() {
     )
 }
 
-export default InfoRoute
+export default RecentChangesRoute

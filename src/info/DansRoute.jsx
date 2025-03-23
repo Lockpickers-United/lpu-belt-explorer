@@ -5,7 +5,7 @@ import usePageTitle from '../util/usePageTitle'
 import DansPage from './DansPage'
 import Tracker from '../app/Tracker.jsx'
 
-function InfoRoute() {
+function DansRoute() {
     usePageTitle('Dan System')
 
     return (
@@ -22,4 +22,4 @@ function InfoRoute() {
     )
 }
 
-export default InfoRoute
+export default DansRoute
