@@ -20,8 +20,9 @@ import {
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
+import entryName from '../src/entries/entryName.js'
 
-const importRaflData = true
+const importRaflData = false
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -136,6 +137,31 @@ const jsonData = mainData
             return beltNumberA < beltNumberB ? -1 : 1
         }
     })
+
+// Find any added or deleted entries
+const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json'))
+let changedEntries = 0
+jsonData.forEach(entry => {
+    const name = entryName(entry, 'short')
+    const previousEntry = originalData.find(e => e.id === entry.id)
+    if (!previousEntry && !historicalData[entry.id]) {
+        historicalData[entry.id] = {...entry, name, dateAdded: dayjs().toISOString()}
+        changedEntries++
+    } else if (historicalData[entry.id]) {
+        delete historicalData[entry.id].dateDeleted
+        historicalData[entry.id] = {...historicalData[entry.id], ...entry}
+    }
+})
+originalData.forEach(entry => {
+    const currentEntry = jsonData.find(e => e.id === entry.id)
+    if (!currentEntry) {
+        historicalData[entry.id] = {...historicalData[entry.id], dateDeleted: dayjs().toISOString()}
+        changedEntries++
+    }
+})
+console.log('Writing historicalData.json')
+if (changedEntries > 0) { console.log(`${changedEntries} additions or deletions found`) }
+fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
 
 // Add projects data
 console.log('Processing project data...')

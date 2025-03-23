@@ -32,7 +32,7 @@ function RecentChangesPage({allEntries}) {
         : 'No new contributors found\n'
     const links = newImageEntries
         ? newImageEntries.map((entry) => {
-            return `https://lpubelts.com/#/locks?tab=search&search=${entry.id}&id=${entry.id}&name=${entryName(entry, 'safe')}`
+            return `[${entryName(entry)}](https://lpubelts.com/#/locks?tab=search&search=${entry.id}&id=${entry.id}&name=${entryName(entry, 'safe')})`
         })
         : []
     const thanksText = [thanks, ...links].join('\n- ') +
@@ -57,7 +57,7 @@ function RecentChangesPage({allEntries}) {
             </div>
             {newImageEntries.length > 0
                 ? <List style={{padding: 0, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}}>
-                    {newImageEntries.map((entry) =>
+                    {newImageEntries.map(entry =>
                         <RecentMediaEntry entry={entry} key={entry.id}/>
                     )}
                 </List>
