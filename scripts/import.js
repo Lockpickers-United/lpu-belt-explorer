@@ -142,14 +142,14 @@ const jsonData = mainData
 const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json'))
 let changedEntries = 0
 jsonData.forEach(entry => {
-    const name = entryName(entry, 'short')
+    const name = entryName(entry, 'short').trim()
     const previousEntry = originalData.find(e => e.id === entry.id)
     if (!previousEntry && !historicalData[entry.id]) {
         historicalData[entry.id] = {...entry, name, dateAdded: dayjs().toISOString()}
         changedEntries++
     } else if (historicalData[entry.id]) {
         delete historicalData[entry.id].dateDeleted
-        historicalData[entry.id] = {...historicalData[entry.id], ...entry}
+        historicalData[entry.id] = {...historicalData[entry.id], ...entry, name}
     }
     entry.dateAdded = historicalData[entry.id].dateAdded
 })
@@ -160,11 +160,15 @@ originalData.forEach(entry => {
         changedEntries++
     }
 })
-if (changedEntries > 0) {
-    console.log('Writing historicalData.json')
-    console.log(`${changedEntries} additions or deletions found`)
-    fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
-}
+
+// Save historical data & deleted entries
+console.log('Writing historicalData.json')
+console.log(`${changedEntries} additions or deletions found`)
+fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
+
+console.log('Writing deletedEntries.json')
+const deletedEntries = Object.values(historicalData).filter(entry => entry.dateDeleted) || []
+fs.writeFileSync('./src/data/deletedEntries.json', JSON.stringify(deletedEntries, null, 2))
 
 // Add projects data
 console.log('Processing project data...')
