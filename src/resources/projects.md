@@ -46,7 +46,7 @@ Please send the following information in PM to a mod, or include in your black b
 - Hoped for Tier: (1-5)
 - Evidence:
 
-Note: evidence should be images/text/video links etc, ideally in a pdf document format
+Note: evidence should be images/text/video links etc., ideally in a pdf document format
 
 ## Voting Guidelines
 
@@ -73,12 +73,12 @@ Each progressive tier must fulfill all prior tier requirements.
 
 ### Community Involvement
 
-- **Tier 1** - Demonstrates a well-developed skill, community project, or other unique and novel project. Must show a clear influence to personal advancement (e.g. skills, certifications and experience) or community improvement.
-- **Tier 2** - Demonstrates advanced skills, community projects or other unique and novel projects. Must show a higher level of self or community improvement and demonstrate a commitment outside the interest of being a black belt.
-- **Tier 3** - Demonstrates advanced skills, community projects or other unique and novel projects. Must demonstrate a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 3 months of devotion to said project.
+- **Tier 1** - Demonstrates a well-developed project with a recognizable community impact.
+- **Tier 2** - Demonstrates advanced community projects. Must show a higher level of community improvement and demonstrate a commitment outside the interest of being a black belt.
+- **Tier 3** - Demonstrates a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would be equivalent to 3 months of devotion to said project.
   - Recently Accepted [Tier 3 Submission](/#/view?pageId=tierThreeExample)
-- **Tier 4** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to 6 months of devotion to said project.
-- **Tier 5** - Demonstrates a mastery of skills, community projects or other unique and novel projects. Must demonstrate a unique and lasting impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would quantify effort similar to a year of devotion to said project.
+- **Tier 4** - Demonstrates a unique and lasting impression on the community through the efforts of a community-based project. Usually, the effort of this level would be equivalent to 6 months of devotion to said project.
+- **Tier 5** - Demonstrates a mastery of community projects that create a unique and lasting impression on the community. Usually, the effort of this level would be equivalent to a year of devotion to said project.
 
 ### Cutaway Making
 
@@ -143,14 +143,21 @@ Safe dials should have the code set by another source (does not have to be an LP
 - **Tier 5** - Portfolio of at least 10 high quality tools that utilize a multitude of techniques both basic and advanced in nature, ability to reproduce tools with high accuracy. A well-defined and refined brand identity.
 
 ### Other Master's Projects
-Please contact LPU staff about the Tier levels for your project in advance.
 
+Below are general guidelines for Other Projects, though each will be evaluated on a case-by-case basis. Please contact LPU staff about the Tier levels for your project in advance.
+
+- **Tier 1** - Demonstrates a well-developed skill or other unique and novel project. Must show a clear influence to personal advancement (e.g. skills, certifications and experience).
+- **Tier 2** - Demonstrates advanced skills or other unique and novel projects. Must show a higher level of self or community improvement and demonstrate a commitment outside the interest of being a black belt.
+- **Tier 3** - Demonstrates advanced skills or other unique and novel projects. Must demonstrate a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would be equivalent to 3 months of devotion to said project.
+- **Tier 4** - Demonstrates a mastery of skills on unique and novel projects. Must demonstrate a unique and lasting impression on the community. Usually, the effort of this level would be equivalent to 6 months of devotion to said project.
+- **Tier 5** - Demonstrates a mastery of skills or other unique and novel projects. Must demonstrate a unique and lasting impression on the community and advance the boundaries of locksport. Usually, the effort of this level would be equivalent to a year of devotion to said project.
+
+**Candidates include:**
 - Exceptional knowledge of locks and keyways
 - Electronics projects that decode or bypass locks
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
-- Community engagement, interaction or improvement projects
-- Other projects may be evaluated for Dan points on a case by case basis. 
+- Other projects may be evaluated for Dan points with prior LPU staff approval.
 
 
-##### Updated: Feb. 9, 2025
+##### Updated: March 24, 2025
