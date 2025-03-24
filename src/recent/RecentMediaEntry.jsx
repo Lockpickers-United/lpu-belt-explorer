@@ -6,11 +6,12 @@ import LockImageGallery from '../entries/LockImageGallery'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import entryName from '../entries/entryName'
+import dayjs from 'dayjs'
 
 function RecentMediaEntry({entry}) {
 
     const navigate = useNavigate()
-    const name =  entryName(entry)
+    const name = entryName(entry)
     const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
     const handleClick = useCallback(event => {
@@ -30,15 +31,24 @@ function RecentMediaEntry({entry}) {
                     margin: '20px 0px'
                 }}
             >
-                <div style={{display: 'flex', width: '100%', cursor: 'pointer'}} onClick={handleClick}>
+                <div style={{display: 'flex', width: '100%'}}>
                     <BeltStripe value={entry.belt}/>
                     <ListItemText
                         primary={entryName(entry)}
                         primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
                         secondary={entry.version}
                         secondaryTypographyProps={{fontSize: '1rem'}}
-                        style={{padding: '0px 0px 0px 10px'}}
+                        style={{padding: '0px 0px 0px 10px', cursor: 'pointer'}}
+                        onClick={handleClick}
                     />
+                    {entry.dateDeleted &&
+                        <div style={{marginRight:20}}>
+                            <FieldValue name='Date Deleted' value={dayjs(entry.dateDeleted).format('YYYY-MM-DD')}/>
+                        </div>
+                    }
+                    <div>
+                        <FieldValue name='Entry ID' value={entry.id}/>
+                    </div>
                 </div>
                 {
                     !!entry.media?.length &&
