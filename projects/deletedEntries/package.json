@@ -1,0 +1,11 @@
+{
+  "name": "deletedEntries",
+  "version": "1.0.0",
+  "description": "find deleted entries",
+  "type": "module",
+  "main": "findDeletedEntries.js",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  }
+}

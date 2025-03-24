@@ -4,7 +4,6 @@
 // REQUIRED MODULES
 const fs = require('fs');
 const path = require('path');
-const os = require('os');
 const url = require('url');
 const useragent = require('express-useragent');
 
@@ -60,7 +59,7 @@ const countryTZ = require(path.join(componentsDir, "lpu-country-timezones.json")
 
 // Arrays for processing
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const ignoreFiles = ['.', '..', '.DS_Store'];
+const ignoreFiles = ['.', '..', '.DS_Store', 'New Folder With Items'];
 
 // GLOBAL VARIABLES
 let logLines = 0;
@@ -384,12 +383,10 @@ Object.keys(temp).forEach(requestDateText => {
 });
 
 // RUNTIME INFO
-const endTime = Date.now();
-const runTime = endTime - startTime;
-const minutes = Math.floor(runTime / 60000);
-const seconds = Math.floor((runTime % 60000) / 1000);
-console.log(`Log Analysis Runtime: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`);
+console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0,2)}`);
 console.log(`Processed ${logLines} log entries`);
+
+
 
 // Optionally, use a system command to announce completion (macOS only)
 if (local) {

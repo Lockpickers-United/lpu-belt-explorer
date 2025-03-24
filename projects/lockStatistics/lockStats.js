@@ -1,8 +1,7 @@
 import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
 import fetch from 'node-fetch'
-import {setDeep, setDeepAdd, setDeepUnique} from '../util/setDeep.js'
-import {jsonIt} from '../util/jsonIt.js'
+import {setDeep, setDeepAdd} from '../util/setDeep.js'
 import {itemDetails} from '../util/getItemDetails.js'
 import fs from 'node:fs/promises'
 
@@ -146,6 +145,6 @@ lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
 await fs.writeFile(`${serverDir}/lockStats.json`, JSON.stringify(lockStats, null, 2), function (err) {
     if (err) {
-        console.error('save collectionStatsCurrent error:', err)
+        console.error('save lockStats error:', err)
     }
 })

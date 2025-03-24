@@ -1,13 +1,13 @@
 "use strict";
 
-//const fetch = require("node-fetch"); // npm install node-fetch@2
-const { URL } = require("url");
+import { URL } from "url";
+import fetch from "node-fetch"; // npm install node-fetch@2
 
 // ----------------------
 // GLOBAL DATA OBJECTS
 // ----------------------
-let lockDetails = {};       // Will store an array of values per lock ID
-let lockDetailsNew = {};    // Will store a detailed object per lock ID
+let lockDetails = {};       // Array-like data per lock ID
+let lockDetailsNew = {};    // Detailed object per lock ID
 let allSamelineNames = {};
 let mediaDetails = {};
 let lockMechanismDetails = {};
@@ -26,7 +26,7 @@ let potDetails = {};
 
 // Internal accumulators
 let locksHash = {};         // Merged lock objects from data.json and dials.json
-let allLocks = {};          // For tracking existence (used in Perl as a counter)
+let allLocks = {};          // For tracking existence (like a counter)
 let allSafelocks = {};
 let allMedia = [];          // Array of media entries
 
@@ -57,7 +57,6 @@ async function getJson(url) {
 // getShortName replicates the Perl subroutine.
 // It concatenates make and model information from the lock’s makeModels array.
 function getShortName(lock) {
-    // Build a mapping of make => array of models
     const lockMakes = {};
     if (!lock.makeModels || !Array.isArray(lock.makeModels)) return "";
     for (const mm of lock.makeModels) {
@@ -72,7 +71,7 @@ function getShortName(lock) {
         lockMakes[mm.make].push(mm.model);
     }
     // Build a short name from each make and its models
-    let parts = [];
+    const parts = [];
     for (const make of Object.keys(lockMakes).sort()) {
         const models = lockMakes[make].filter(m => m && m.trim().length > 0);
         let part = make;
@@ -98,7 +97,6 @@ async function initLockDetails() {
             locksHash[UniqueID] = lock;
             // Add a shortName property
             locksHash[UniqueID].shortName = getShortName(locksHash[UniqueID]);
-            // In Perl, they increment a counter; here we simply mark existence
             allLocks[UniqueID] = true;
         }
     }
@@ -182,7 +180,6 @@ async function initLockDetails() {
             awardsHash[UniqueID].absRank = absRank;
             absRank++;
             allAwards[UniqueID] = true;
-            // Also, store a list of award IDs in awardDetails.awardList (if needed)
             if (!awardDetails.awardList) {
                 awardDetails.awardList = [];
             }
@@ -204,7 +201,6 @@ async function initLockDetails() {
     }
 
     // --- PROCESS ALL LOCKS ---
-    // Iterate over each lock in locksHash to build our exported data objects.
     for (const lockID of Object.keys(locksHash)) {
         const lock = locksHash[lockID];
         const UniqueID = lock.id;
@@ -213,12 +209,10 @@ async function initLockDetails() {
         let belt = lock.belt ? lock.belt.charAt(0).toUpperCase() + lock.belt.slice(1) : "Unranked";
         let rank = undefined;
         if (/Black \d/.test(belt)) {
-            // Split into belt and rank
             const parts = belt.split(" ");
             belt = parts[0];
             rank = parts[1];
         }
-
         // Prepare arrays for names and brands
         let samelineNames = [];
         let lockBrands = [];
@@ -234,7 +228,6 @@ async function initLockDetails() {
                 }
                 let sameline = [mm.make, mm.model].filter(Boolean).join(" ");
                 samelineNames.push(sameline);
-                // Also store an entry keyed by lockID-samelineIndex
                 const samelineId = `${lockID}-${samelineNames.length}`;
                 allSamelineNames[samelineId] = sameline;
             }
@@ -247,18 +240,15 @@ async function initLockDetails() {
             lockFullName = `${lockFullName} (${version})`;
         }
         allSamelineNames[lockID] = lockName;
-        // Get view count and media info
         const lockViewCount = lock.views || 0;
         const lockMedia = lock.media;
         let mediaCount = lockMedia && Array.isArray(lockMedia) ? lockMedia.length : undefined;
         if (lockMedia && Array.isArray(lockMedia)) {
             locksWithMedia++;
-            // Append each media entry to allMedia array
             for (const mediaEntry of lockMedia) {
                 allMedia.push(mediaEntry);
             }
         }
-        // Process locking mechanisms
         if (lock.lockingMechanisms && Array.isArray(lock.lockingMechanisms)) {
             if (lock.lockingMechanisms.length > 1) {
                 lockMechanismDetails[UniqueID] = "Multiple";
@@ -274,7 +264,7 @@ async function initLockDetails() {
         }
         totalLocks++;
         locksByBelt[belt] = (locksByBelt[belt] || 0) + 1;
-        // Save into lockDetails (as an array of key values, similar to Perl)
+        // Save into lockDetails (as an array similar to the Perl version)
         lockDetails[UniqueID] = [
             lockName,
             version,
@@ -284,7 +274,7 @@ async function initLockDetails() {
             lockViewCount,
             lockBrands[0] || "",
             lockFullName,
-            lockBrands
+            lockBrands,
         ];
         // Save detailed data in lockDetailsNew
         lockDetailsNew[UniqueID] = {
@@ -297,31 +287,26 @@ async function initLockDetails() {
             lockViewCount,
             lockBrands,
             lockFullName,
-            samelineNames
+            samelineNames,
         };
     }
 
     // --- GET GLOSSARY DATA ---
     const glossaryUrl = "https://lpubelts.com/glossary.json";
     const glossaryArray = await getJson(glossaryUrl);
-    // (In Perl, they simply print the JSON array.)
-    // --- PROCESS GLOSSARY MEDIA ---
     if (glossaryArray && Array.isArray(glossaryArray)) {
         for (const term of glossaryArray) {
             if (term.media) {
-                // term.media could be an object; add it to allMedia
                 allMedia.push(term.media);
             }
         }
     }
 
     // --- PROCESS MEDIA DETAILS ---
-    // For each media entry in allMedia, extract mediaID and related info.
     for (const mediaEntry of allMedia) {
         const media = mediaEntry.fullUrl;
-        if (mediaDetails[media]) continue; // already processed
+        if (mediaDetails[media]) continue;
         const thumbnail = mediaEntry.thumbnailUrl;
-        // Parse host using URL
         let mediaID = undefined, galleryID = undefined;
         try {
             const parsedUrl = new URL(media);
@@ -364,12 +349,7 @@ async function initLockDetails() {
             console.error("Error parsing media URL:", media, err);
         }
         const contributor = mediaEntry.title;
-        const details = {
-            mediaID,
-            galleryID,
-            thumbnail,
-            contributor
-        };
+        const details = { mediaID, galleryID, thumbnail, contributor };
         mediaDetails[media] = details;
         uniqueImages[media] = details;
         uniqueContributors[contributor] = (uniqueContributors[contributor] || 0) + 1;
@@ -382,8 +362,6 @@ const initPromise = initLockDetails();
 // ----------------------
 // EXPORT FUNCTIONS
 // ----------------------
-// Each exported function returns the corresponding data (once the initialization promise is resolved).
-
 async function lockDetailsPM() {
     await initPromise;
     return lockDetails;
@@ -445,7 +423,7 @@ async function potDetailsPM() {
     return potDetails;
 }
 
-module.exports = {
+export {
     lockDetailsPM,
     lockDetailsNewPM,
     allSamelineNamesPM,
