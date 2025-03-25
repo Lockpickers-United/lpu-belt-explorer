@@ -4,7 +4,6 @@ import LockViewsLine from './LockViewsLine'
 import SiteStats from './SiteStats'
 import PhotoStats from './PhotoStats'
 import BeltDistribution from './BeltDistribution'
-import LockingMechanisms from './LockingMechanisms'
 import RedditBeltGrowth from './RedditBeltGrowth'
 import CollectionStatsBar from './CollectionStatsBar'
 import CollectionTopLocks from './CollectionTopLocks'
@@ -12,6 +11,7 @@ import HourlyRequestsLine from './HourlyRequestsLine'
 import TrafficStats from './TrafficStats'
 import BrandDistribution from './BrandDistribution'
 import DBContext from '../app/DBContext.jsx'
+import LockingMechanismsByBelt from './LockingMechanismsByBelt.jsx'
 
 function StatsMainPage({data}) {
 
@@ -51,17 +51,18 @@ function StatsMainPage({data}) {
             <div style={headerStyle}>Brand Lock Distribution</div>
             <BrandDistribution data={data}/>
 
-            <div style={headerStyle}>Locking Mechanisms</div>
-            <LockingMechanisms data={data}/>
-
-            <div style={headerStyle}>Reddit User Belt Rankings</div>
-            <RedditBeltGrowth data={data}/>
+            <div style={headerStyle}>Locking Mechanisms By Belt</div>
+            <LockingMechanismsByBelt data={data}/>
 
             <div style={headerStyle}>Collection Stats</div>
-            <CollectionStatsBar data={data} lockCollection={lockCollection} userText={'You'} collectionBarHeight={collectionBarHeight}/>
+            <CollectionStatsBar data={data} lockCollection={lockCollection} userText={'You'}
+                                collectionBarHeight={collectionBarHeight}/>
 
             <div style={headerStyle}>Collections Top Locks</div>
             <CollectionTopLocks data={data}/>
+
+            <div style={headerStyle}>Reddit User Belt Rankings</div>
+            <RedditBeltGrowth data={data}/>
 
             <div style={headerStyle}>Hourly Traffic</div>
             <HourlyRequestsLine data={data}/>

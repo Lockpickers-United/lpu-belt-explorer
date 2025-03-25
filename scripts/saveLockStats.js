@@ -3,6 +3,10 @@ import {setDeep, setDeepAdd} from '../src/util/setDeep.js'
 import fs from 'fs'
 import {itemDetails} from './getEntityDetails.js'
 
+/**
+ * @prop lockBySegmentCounts
+ */
+
 export async function saveLockStats() {
 
     const lockData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
@@ -18,13 +22,12 @@ export async function saveLockStats() {
             setDeepAdd(acc, ['locksByBeltCounts', lock.belt.replace(/ \d/, '')], 1)
 
             if (lock.lockingMechanisms) {
-                if (lock.lockingMechanisms.length === 1) {
-                    setDeepAdd(acc, ['locksByMechanism', lock.lockingMechanisms[0]], 1)
-                } else {
-                    setDeepAdd(acc, ['locksByMechanism', 'Multiple'], 1)
-                }
+                const lockingMechanism = lock.lockingMechanisms.length === 1
+                    ? lock.lockingMechanisms[0]
+                    : 'Multiple'
+                    setDeepAdd(acc, ['locksByMechanism', lockingMechanism], 1)
+                    setDeepAdd(acc, ['locksByMechanismByBelt', lock.belt.replace(/ \d/, ''),lockingMechanism], 1)
             }
-
             return acc
         }, {})
 
@@ -57,6 +60,18 @@ export async function saveLockStats() {
     }).sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
     delete lockStats.locksByMechanism
 
+    lockStats.lockingMechanismsByBelt = Object.keys(lockStats.locksByMechanismByBelt).reduce((acc, belt) => {
+        acc[belt] = Object.keys(lockStats.locksByMechanismByBelt[belt]).map(mechanism => {
+            const id = mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
+            return {
+                label: mechanism,
+                value: lockStats.locksByMechanismByBelt[belt][mechanism],
+                id
+            }
+        }).sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+        return acc
+    }, {})
+    delete lockStats.locksByMechanismByBelt
 
 // PHOTO STATS
     const topN = 250
@@ -103,7 +118,6 @@ export async function saveLockStats() {
     setDeep(lockStats, ['photoStats', 'photoSegments'], photoSegments)
     delete lockStats.lockBySegmentCounts
 
-
 // IMAGE CONTRIBUTORS
     const allEntries = await itemDetails()
     const imageContributors = Object.keys(allEntries)
@@ -131,12 +145,10 @@ export async function saveLockStats() {
 
     setDeep(lockStats, ['photoStats', 'topPhotographers'], topPhotographers)
 
-
 // METADATA
     lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
-//jsonIt('lockStats', lockStats)
-
+// WRITE TO FILE
     await fs.writeFile('./src/data/lockStats.json', JSON.stringify(lockStats, null, 2), function (err) {
         if (err) {
             console.error('save lockStats.json error:', err)

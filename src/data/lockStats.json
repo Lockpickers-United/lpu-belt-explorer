@@ -140,6 +140,408 @@
       "id": "various"
     }
   ],
+  "lockingMechanismsByBelt": {
+    "White": [
+      {
+        "label": "Pin-tumbler",
+        "value": 15,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Various",
+        "value": 3,
+        "id": "various"
+      },
+      {
+        "label": "Lever",
+        "value": 1,
+        "id": "lever"
+      }
+    ],
+    "Yellow": [
+      {
+        "label": "Pin-tumbler",
+        "value": 48,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Lever",
+        "value": 8,
+        "id": "lever"
+      },
+      {
+        "label": "Dimple",
+        "value": 2,
+        "id": "dimple"
+      }
+    ],
+    "Orange": [
+      {
+        "label": "Pin-tumbler",
+        "value": 65,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Lever",
+        "value": 3,
+        "id": "lever"
+      },
+      {
+        "label": "Dimple",
+        "value": 2,
+        "id": "dimple"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 1,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Pump/push",
+        "value": 1,
+        "id": "pump-push"
+      },
+      {
+        "label": "Wafer",
+        "value": 1,
+        "id": "wafer"
+      }
+    ],
+    "Green": [
+      {
+        "label": "Pin-tumbler",
+        "value": 100,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Dimple",
+        "value": 24,
+        "id": "dimple"
+      },
+      {
+        "label": "Lever",
+        "value": 8,
+        "id": "lever"
+      },
+      {
+        "label": "Multiple",
+        "value": 7,
+        "id": "multiple"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 4,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Pump/push",
+        "value": 1,
+        "id": "pump-push"
+      }
+    ],
+    "Blue": [
+      {
+        "label": "Pin-tumbler",
+        "value": 63,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Dimple",
+        "value": 33,
+        "id": "dimple"
+      },
+      {
+        "label": "Multiple",
+        "value": 13,
+        "id": "multiple"
+      },
+      {
+        "label": "Lever",
+        "value": 8,
+        "id": "lever"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 3,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Wafer",
+        "value": 3,
+        "id": "wafer"
+      },
+      {
+        "label": "Other",
+        "value": 1,
+        "id": "other"
+      },
+      {
+        "label": "Pump/push",
+        "value": 1,
+        "id": "pump-push"
+      },
+      {
+        "label": "Slider",
+        "value": 1,
+        "id": "slider"
+      }
+    ],
+    "Purple": [
+      {
+        "label": "Dimple",
+        "value": 41,
+        "id": "dimple"
+      },
+      {
+        "label": "Multiple",
+        "value": 24,
+        "id": "multiple"
+      },
+      {
+        "label": "Pin-tumbler",
+        "value": 13,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Slider",
+        "value": 9,
+        "id": "slider"
+      },
+      {
+        "label": "Lever",
+        "value": 6,
+        "id": "lever"
+      },
+      {
+        "label": "Wafer",
+        "value": 4,
+        "id": "wafer"
+      },
+      {
+        "label": "Pump/push",
+        "value": 3,
+        "id": "pump-push"
+      },
+      {
+        "label": "Lever/sidebar",
+        "value": 2,
+        "id": "lever-sidebar"
+      },
+      {
+        "label": "Magnet",
+        "value": 2,
+        "id": "magnet"
+      },
+      {
+        "label": "Other",
+        "value": 2,
+        "id": "other"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 1,
+        "id": "disc-detainer"
+      }
+    ],
+    "Brown": [
+      {
+        "label": "Dimple",
+        "value": 33,
+        "id": "dimple"
+      },
+      {
+        "label": "Multiple",
+        "value": 13,
+        "id": "multiple"
+      },
+      {
+        "label": "Pin-tumbler",
+        "value": 8,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Pump/push",
+        "value": 8,
+        "id": "pump-push"
+      },
+      {
+        "label": "Slider",
+        "value": 5,
+        "id": "slider"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 4,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Lever",
+        "value": 4,
+        "id": "lever"
+      },
+      {
+        "label": "Wafer",
+        "value": 3,
+        "id": "wafer"
+      },
+      {
+        "label": "Magnet",
+        "value": 2,
+        "id": "magnet"
+      },
+      {
+        "label": "Lever/sidebar",
+        "value": 1,
+        "id": "lever-sidebar"
+      },
+      {
+        "label": "Other",
+        "value": 1,
+        "id": "other"
+      }
+    ],
+    "Red": [
+      {
+        "label": "Dimple",
+        "value": 20,
+        "id": "dimple"
+      },
+      {
+        "label": "Multiple",
+        "value": 11,
+        "id": "multiple"
+      },
+      {
+        "label": "Pin-tumbler",
+        "value": 8,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Lever",
+        "value": 7,
+        "id": "lever"
+      },
+      {
+        "label": "Slider",
+        "value": 5,
+        "id": "slider"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 4,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Lever/sidebar",
+        "value": 4,
+        "id": "lever-sidebar"
+      },
+      {
+        "label": "Pump/push",
+        "value": 4,
+        "id": "pump-push"
+      },
+      {
+        "label": "Magnet",
+        "value": 3,
+        "id": "magnet"
+      },
+      {
+        "label": "Wafer",
+        "value": 1,
+        "id": "wafer"
+      }
+    ],
+    "Black": [
+      {
+        "label": "Dimple",
+        "value": 23,
+        "id": "dimple"
+      },
+      {
+        "label": "Multiple",
+        "value": 19,
+        "id": "multiple"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 11,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Lever/sidebar",
+        "value": 11,
+        "id": "lever-sidebar"
+      },
+      {
+        "label": "Slider",
+        "value": 10,
+        "id": "slider"
+      },
+      {
+        "label": "Lever",
+        "value": 7,
+        "id": "lever"
+      },
+      {
+        "label": "Pin-tumbler",
+        "value": 4,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Wafer",
+        "value": 3,
+        "id": "wafer"
+      },
+      {
+        "label": "Pump/push",
+        "value": 2,
+        "id": "pump-push"
+      }
+    ],
+    "Unranked": [
+      {
+        "label": "Dimple",
+        "value": 26,
+        "id": "dimple"
+      },
+      {
+        "label": "Lever",
+        "value": 24,
+        "id": "lever"
+      },
+      {
+        "label": "Pin-tumbler",
+        "value": 23,
+        "id": "pin-tumbler"
+      },
+      {
+        "label": "Multiple",
+        "value": 6,
+        "id": "multiple"
+      },
+      {
+        "label": "Disc detainer",
+        "value": 4,
+        "id": "disc-detainer"
+      },
+      {
+        "label": "Pump/push",
+        "value": 4,
+        "id": "pump-push"
+      },
+      {
+        "label": "Wafer",
+        "value": 2,
+        "id": "wafer"
+      },
+      {
+        "label": "Magnet",
+        "value": 1,
+        "id": "magnet"
+      }
+    ]
+  },
   "photoStats": {
     "photoSegments": [
       {
@@ -1335,6 +1737,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-03-24 17:24"
+    "updatedDateTime": "2025-03-25 12:02"
   }
 }

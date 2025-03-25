@@ -3,6 +3,9 @@ export const beltColors =
         '#0090de', '#634b9f', '#9d5918',
         '#ba0303', '#2c2c2c', '#464646']
 
+export const pieColors =
+    ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', '#66a61e', '#e6ab02', '#a6761d', '#444', '#666666', '#888', '#d00', '#f00', '#a00']
+
 export const primaryTheme = {
     text: {
         'fontSize': 11,
