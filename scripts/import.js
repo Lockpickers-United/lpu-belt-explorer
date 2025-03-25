@@ -21,6 +21,7 @@ import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
+import {saveLockStats} from './saveLockStats.js'
 
 const importRaflData = false
 
@@ -73,7 +74,7 @@ const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMe
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 // Load previous JSON for recently updated checks
-const originalData = JSON.parse(fs.readFileSync('./src/data/data.json'))
+const originalData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -139,7 +140,7 @@ const jsonData = mainData
     })
 
 // Find any added or deleted entries
-const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json'))
+const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json', 'utf8'))
 let changedEntries = 0
 jsonData.forEach(entry => {
     const name = entryName(entry, 'short').trim()
@@ -443,7 +444,7 @@ fs.writeFileSync('./src/data/introCopy.json', JSON.stringify(introCopyJson, null
 
 // Recently updated data
 console.log('Processing recenty updated data...')
-const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/safelocks.json'))
+const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/safelocks.json', 'utf8'))
 dialsMainData
     .forEach(entry => {
         const {lastUpdated, ...oldEntry} = orginalDialsData.find(e => e?.id === entry?.id) || {}
@@ -542,6 +543,9 @@ if (importRaflData) {
 
     fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
 }
+
+console.log('Saving lockStats.json...')
+await saveLockStats().then()
 
 console.log('Complete.')
 

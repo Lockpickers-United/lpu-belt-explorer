@@ -91,7 +91,7 @@ function RecentChangesPage() {
             }}>
                 {title}
             </div>
-            {newImageEntries.length > 0
+            {visibleEntries.length > 0
                 ? <List style={{padding: 0, maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}}>
                     {visibleEntries.map(entry =>
                         <RecentMediaEntry entry={entry} key={entry.id}/>

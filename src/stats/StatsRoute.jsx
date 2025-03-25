@@ -6,8 +6,8 @@ import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import StatsMainPage from './StatsMainPage'
+import lockStats from '../data/lockStats.json'
 import {
-    lockStats,
     brandDistribution,
     collectionsStatsCurrent,
     popularAreas,
@@ -29,8 +29,8 @@ function StatsRoute() {
 
             {loading && <LoadingDisplay/>}
 
-            {!loading && !error && data &&
-                <StatsMainPage data={data}/>
+            {!loading && !error && !!data &&
+                <StatsMainPage data={{...data, lockStats}}/>
             }
 
             <Footer/>
@@ -41,7 +41,6 @@ function StatsRoute() {
 }
 
 const urls = {
-    lockStats,
     brandDistribution,
     collectionsStatsCurrent,
     popularAreas,
