@@ -54,7 +54,7 @@ async function getAllData() {
         setDeepPush(fullDb, ['awards'], {
             ...doc.data(),
             awardName: award.name,
-            displayName: collectionData[doc.data().userId].displayName,
+            displayName: collectionData[doc.data().userId]?.displayName ? collectionData[doc.data().userId].displayName : 'no display name',
             date
         })
     })
@@ -69,15 +69,14 @@ async function getAllData() {
             ...doc.data(),
             evidenceName: entryName(entry, 'short'),
             belt,
-            displayName: collectionData[doc.data().userId].displayName,
+            displayName: collectionData[doc.data().userId]?.displayName ? collectionData[doc.data().userId].displayName : 'no display name',
             date
         })
     })
 
     fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
-    const jsonString = JSON.stringify(fullDb, null, 2)
-    await fs.writeFile(`${serverDir}/recentAwardsEvidence.json`, jsonString, function (err) {
+    await fs.writeFile(`${serverDir}/recentAwardsEvidence.json`, JSON.stringify(fullDb, null, 2), function (err) {
         if (err) {
             console.log(err)
         }

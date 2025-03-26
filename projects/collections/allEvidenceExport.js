@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {Timestamp, getFirestore} from 'firebase-admin/firestore'
-import {setDeepPush} from '../util/setDeep.js'
+import {setDeepAdd, setDeepPush} from '../util/setDeep.js'
 import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
 import {projectDetails, lockDetails} from '../util/getItemDetails.js'
@@ -79,7 +79,7 @@ export default async function getAllEvidence() {
 
     }, {})
 
-    scorecardEvidence.docs.reduce((acc, doc) => {
+    const pickStats = scorecardEvidence.docs.reduce((acc, doc) => {
         acc = acc ? acc : {}
         const project = projectData[doc.data().projectId]
         const lock = lockData[doc.data().projectId]
@@ -90,7 +90,7 @@ export default async function getAllEvidence() {
         }
 
         const displayName = doc.data().userId
-            ? collectionData[doc.data().userId].displayName
+            ? collectionData[doc.data().userId]?.displayName
             : doc.data().tabName
                 ? doc.data().tabName
                 : 'unknown'
@@ -114,14 +114,44 @@ export default async function getAllEvidence() {
             })
         }
 
+        if (lock && belt && lock.lockingMechanisms) {
+                const lockingMechanism = lock.lockingMechanisms.length === 1
+                    ? lock.lockingMechanisms[0]
+                    : 'Multiple'
+                setDeepAdd(acc, ['byBeltByMechanism', belt, lockingMechanism], 1)
+                setDeepAdd(acc, ['byBelt', belt], 1)
+                setDeepAdd(acc, ['byMechanism', lockingMechanism], 1)
+                setDeepAdd(acc, ['byLock', doc.data().projectId], 1)
+        }
         return acc
-
     },{})
 
-    fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    pickStats.lockDetails = Object.keys(pickStats.byLock).map(id => {
+        const lock = lockData[id]
+        if (!lock) return
+        const name = entryName(lock, 'short')
+        const lockingMechanism = lock.lockingMechanisms.length === 1
+            ? lock.lockingMechanisms[0]
+            : 'Multiple'
 
-    const jsonString = JSON.stringify(fullDb, null, 2)
-    await fs.writeFile(`${serverDir}/allProjects.json`, jsonString, function (err) {
+        return {
+            id,
+            name,
+            belt: lock.belt.replace(/ \d/, ''),
+            fullBelt: lock.belt,
+            lockingMechanism,
+            pickCount: pickStats.byLock[id]
+        }
+    }).sort((a, b) => b.pickCount - a.pickCount)
+
+    fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    await fs.writeFile(`${serverDir}/allProjects.json`, JSON.stringify(fullDb, null, 2), function (err) {
+        if (err) {
+            console.log(err)
+        }
+    })
+
+    await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats, null, 2), function (err) {
         if (err) {
             console.log(err)
         }

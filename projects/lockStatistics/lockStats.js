@@ -24,11 +24,12 @@ const lockStats = lockData
         setDeepAdd(acc, ['locksByBeltCounts', lock.belt.replace(/ \d/, '')], 1)
 
         if (lock.lockingMechanisms) {
-            if (lock.lockingMechanisms.length === 1) {
-                setDeepAdd(acc, ['locksByMechanism', lock.lockingMechanisms[0]], 1)
-            } else {
-                setDeepAdd(acc, ['locksByMechanism', 'Multiple'], 1)
-            }
+            const lockingMechanism = lock.lockingMechanisms.length === 1
+                ? lock.lockingMechanisms[0]
+                : 'Multiple'
+
+            setDeepAdd(acc, ['locksByMechanism', lockingMechanism], 1)
+            setDeepAdd(acc, ['locksByMechanismByBelt', lock.belt.replace(/ \d/, ''),lockingMechanism], 1)
         }
         
         return acc
@@ -62,6 +63,20 @@ lockStats.lockingMechanisms = Object.keys(lockStats.locksByMechanism).map(mechan
     }
 }).sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
 delete lockStats.locksByMechanism
+
+lockStats.lockingMechanismsByBelt = Object.keys(lockStats.locksByMechanismByBelt).reduce((acc, belt) => {
+    acc[belt] = Object.keys(lockStats.locksByMechanismByBelt[belt]).map(mechanism => {
+        const id = mechanism.replaceAll(/[ |\/]/g, '-').toLowerCase()
+        return {
+            label: mechanism,
+            value: lockStats.locksByMechanismByBelt[belt][mechanism],
+            id
+        }
+    }).sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+    return acc
+}, {})
+delete lockStats.locksByMechanismByBelt
+
 
 
 // PHOTO STATS
