@@ -27,6 +27,7 @@ function ContentSubmit({profile}) {
     const [uploadError, setUploadError] = useState(false)
     const [altLock, setAltLock] = useState(false)
     const [altLockName, setAltLockName] = useState('')
+    const [notes, setNotes] = useState('')
 
     const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName)
     const [reset, setReset] = useState(false)
@@ -64,7 +65,7 @@ function ContentSubmit({profile}) {
         formData.append('photoCredit', photoCredit)
         formData.append('displayName', profile.displayName)
         formData.append('uploadsDir', uploadsDir)
-        formData.append('notes', event.target.notes.value)
+        formData.append('notes', notes)
 
         await axios.post(
             'https://explore.lpubelts.com:8443/upload', formData,
@@ -97,10 +98,14 @@ function ContentSubmit({profile}) {
         updateProfileField('photoCredit', photoCredit)
     }, [updateProfileField])
 
-
     const handleChangeCredit = useCallback(event => {
         const {value} = event.target
         setPhotoCredit(value)
+    }, [])
+
+    const handleChangeNotes = useCallback(event => {
+        const {value} = event.target
+        setNotes(value)
     }, [])
 
     const handleReload = useCallback(() => {
@@ -113,6 +118,7 @@ function ContentSubmit({profile}) {
         setUploadError(undefined)
         setAltLock(false)
         setAltLockName('')
+        setNotes('')
         setReset(!reset)
     }, [files, reset])
 
@@ -225,7 +231,7 @@ function ContentSubmit({profile}) {
                             <br/><br/>
                             <span style={{fontSize: '0.9rem'}}>Notes</span><br/>
                             <TextField type='text' name='notes' multiline fullWidth rows={3} color='info'
-                                       maxLength={1000} id='notes'/>
+                                       maxLength={1000} id='notes' value={notes} onChange={handleChangeNotes}/>
 
                             <br/><br/>
 
