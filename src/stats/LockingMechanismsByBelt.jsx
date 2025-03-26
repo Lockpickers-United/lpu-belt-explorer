@@ -90,8 +90,8 @@ function LockingMechanismsByBelt({data}) {
                         alignItems: 'center'
                     }}>
                         <FormControl id='beltPulldown' size='small' variant='outlined'
-                                     style={{marginBottom: 0, width: 120}}>
-                            <InputLabel style={{color: '#aaa'}}>Belt</InputLabel>
+                                     style={{marginBottom: 0, width: 140}}>
+                            <InputLabel style={{color:'#bbb'}}>Belt</InputLabel>
                             <Select
                                 id='beltSelect'
                                 value={uniqueBeltsAll[belt]}
@@ -104,11 +104,7 @@ function LockingMechanismsByBelt({data}) {
                                     fontWeight: 700,
                                     color: '#eee',
                                     fontSize: '1.1rem',
-                                    display: 'flex',
-                                    alignItems: 'top',
-                                    backgroundColor: '#333'
                                 }}
-
                             >
                                 {uniqueBeltsAll.map((beltName, index) =>
                                     <MenuItem key={index}
@@ -136,7 +132,6 @@ function LockingMechanismsByBelt({data}) {
                     top: 0,
                     left: 0
                 }}>
-
                     <ResponsivePie
                         data={chartData}
                         theme={pieTheme}

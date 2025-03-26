@@ -67,7 +67,7 @@ function BrandDistribution({data}) {
     return (
         <React.Fragment>
             <div style={{marginTop: 24, textAlign: 'center'}}>
-                <FormControl id='brandPulldown' style={{marginBottom: buttonMargin, minWidth: 200, textAlign: 'left'}}>
+                <FormControl id='brandPulldown'  size='small' style={{marginBottom: buttonMargin, minWidth: 200, textAlign: 'left'}}>
                     <InputLabel>Brand</InputLabel>
                     <Select
                         id='brandSelect'
