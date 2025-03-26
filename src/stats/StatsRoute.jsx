@@ -12,7 +12,8 @@ import {
     collectionsStatsCurrent,
     popularAreas,
     redditGrowth,
-    siteFullNew
+    siteFullNew,
+    pickStatsData
 } from '../data/dataUrls'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
 
@@ -45,7 +46,8 @@ const urls = {
     collectionsStatsCurrent,
     popularAreas,
     redditGrowth,
-    siteFullNew
+    siteFullNew,
+    pickStatsData
 }
 
 export default StatsRoute

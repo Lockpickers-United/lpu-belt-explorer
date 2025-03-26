@@ -9,6 +9,7 @@ import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
+import PicksByLockingMechanism from './PicksByLockingMechanism'
 
 function LockingMechanismsByBelt({data}) {
     const {lockingMechanismsByBelt, lockingMechanisms} = data.lockStats
@@ -27,7 +28,7 @@ function LockingMechanismsByBelt({data}) {
         const mechanisms = ['Pin-tumbler', 'Dimple', 'Multiple', 'Lever', 'Disc detainer', 'Slider',
             'Pump/push', 'Lever/sidebar', 'Wafer', 'Magnet', 'Other', 'Various']
         return lockingMechanismsByBeltAll[uniqueBeltsAll[belt]]
-                .sort((a, b) => mechanisms.indexOf(a.label) - mechanisms.indexOf(b.label))
+            .sort((a, b) => mechanisms.indexOf(a.label) - mechanisms.indexOf(b.label))
     }, [lockingMechanismsByBelt, lockingMechanisms, uniqueBeltsAll, belt])
 
     const totalLocks = useMemo(() => {
@@ -110,7 +111,8 @@ function LockingMechanismsByBelt({data}) {
 
                             >
                                 {uniqueBeltsAll.map((beltName, index) =>
-                                    <MenuItem key={index} value={uniqueBeltsAll[index]}>{uniqueBeltsAll[index]}</MenuItem>
+                                    <MenuItem key={index}
+                                              value={uniqueBeltsAll[index]}>{uniqueBeltsAll[index]}</MenuItem>
                                 )}
                             </Select>
                         </FormControl>
@@ -124,54 +126,57 @@ function LockingMechanismsByBelt({data}) {
                 </div>
             </div>
 
-            <div key='waffle'
-                 style={{height: chartHeight, margin: '20px 8px 0px 8px', width: '100%'}}
+            <div key='lockPie'
+                 style={{height: chartHeight, margin: '20px 8px 0px 8px', width: '100%', position: 'relative'}}
             >
-                <ResponsivePie
-                    data={chartData}
-                    theme={pieTheme}
-                    colors={pieColors}
-                    margin={chartMargin}
-                    startAngle={-70}
-                    endAngle={360}
-                    innerRadius={0.5}
-                    padAngle={0.7}
-                    cornerRadius={3}
-                    activeOuterRadiusOffset={8}
-                    arcLinkLabelsSkipAngle={arcLinkLabelsSkipAngle}
-                    arcLinkLabelsTextColor='#ccc'
-                    arcLinkLabelsThickness={2}
-                    arcLinkLabelsColor={{from: 'color'}}
-                    arcLinkLabel={e => e.label + ': ' + e.value + ''}
-                    arcLinkLabelsDiagonalLength={14}
-                    arcLinkLabelsStraightLength={arcLinkLabelsStraightLength}
-                    enableArcLabels={false}
-                    arcLabelsRadiusOffset={0.5}
-                    arcLabelsSkipAngle={arcLabelsSkipAngle}
-                    arcLabelsTextColor='#111'
-                    isInteractive={true}
-                    sortByValue={false}
-                    tooltip={(datum) => {
-                        const label = datum.datum.arc.angleDeg < arcLinkLabelsSkipAngle
-                            ? datum.datum.label + ': '
-                            : ''
-                        const value = Math.round(datum.datum.value / totalLocks * 100)
-                        return (
-                            <div
-                                style={{
-                                    fontSize: '0.8rem',
-                                    background: '#444',
-                                    padding: '3px 4px',
-                                    color: '#ddd',
-                                    borderRadius: '5px'
-                                }}
-                            >
-                                <div>{label}{value}%</div>
-                            </div>
-                        )
-                    }}
-                />
+                <div style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0
+                }}>
+
+                    <ResponsivePie
+                        data={chartData}
+                        theme={pieTheme}
+                        colors={pieColors}
+                        margin={chartMargin}
+                        startAngle={-70}
+                        endAngle={360}
+                        innerRadius={0.5}
+                        padAngle={0.7}
+                        cornerRadius={3}
+                        activeOuterRadiusOffset={8}
+                        arcLinkLabelsSkipAngle={arcLinkLabelsSkipAngle}
+                        arcLinkLabelsTextColor='#ccc'
+                        arcLinkLabelsThickness={2}
+                        arcLinkLabelsColor={{from: 'color'}}
+                        arcLinkLabel={e => e.label + ': ' + Math.round(e.value / totalLocks * 100) + '%'}
+                        arcLinkLabelsDiagonalLength={14}
+                        arcLinkLabelsStraightLength={arcLinkLabelsStraightLength}
+                        enableArcLabels={false}
+                        arcLabelsRadiusOffset={0.5}
+                        arcLabelsSkipAngle={arcLabelsSkipAngle}
+                        arcLabelsTextColor='#111'
+                        isInteractive={true}
+                        sortByValue={false}
+                    />
+                </div>
+                <div style={{
+                    width: '100%',
+                    position: 'absolute',
+                    top: chartHeight / 2 - 14,
+                    left: 0,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    fontSize: '1.1rem',
+                }}>
+                    Locks
+                </div>
             </div>
+
+            <PicksByLockingMechanism data={data} belt={belt}/>
         </React.Fragment>
     )
 }
