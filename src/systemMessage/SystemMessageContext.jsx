@@ -71,10 +71,11 @@ export function SystemMessageProvider({children}) {
 
         return filteredMessages && authLoaded && dbLoaded
             ? filteredMessages.find(message => {
-                    const excludedPages = message.excludePageIds
-                        ? [message.linkDestination, ...message.excludePageIds]
+                    const excludePageIds = message?.excludePageIds.map(str => str.trim())
+                    const excludedPages = excludePageIds
+                        ? [message.linkDestination, ...excludePageIds]
                         : [message.linkDestination]
-                    return message?.pageIds?.some(r => pageIds.includes(r)) && !excludedPages.some(r => pageIds.includes(r))
+                    return message?.pageIds?.map(str => str.trim()).some(r => pageIds.includes(r)) && !excludedPages.some(r => pageIds.includes(r))
                 }
             )
             : undefined
