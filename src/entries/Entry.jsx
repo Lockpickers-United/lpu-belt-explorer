@@ -23,7 +23,7 @@ import queryString from 'query-string'
 import LockImageGallery from './LockImageGallery'
 import RelatedEntryButton from './RelatedEntryButton'
 import {allEntriesById, upgradeTree} from './entryutils'
-import {beltSort} from '../data/belts'
+import {beltSort, uniqueBelts} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import DataContext from '../context/DataContext.jsx'
@@ -77,6 +77,9 @@ function Entry({entry, expanded, onExpand}) {
             </Stack>
         )
     }, [entry.makeModels])
+
+    const pinks = ['Baby Pink', 'Hot Pink', 'Fuchsia', 'Blush Pink', 'Rose Pink', 'Coral Pink', 'Pastel Pink', 'Bubblegum Pink', 'Peachy Pink', 'Magenta']
+    const pinkBelt = pinks[uniqueBelts.indexOf(entry.belt)]
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -132,7 +135,7 @@ function Entry({entry, expanded, onExpand}) {
                                         lineHeight: 1.25,
                                         fontWeight: 500
                                     }}>
-                                        {entry.belt}
+                                        {pinkBelt}
                                         <DanPoints belt={entry.belt}/>
                                     </Typography>
                                     <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
