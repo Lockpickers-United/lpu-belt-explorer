@@ -6,6 +6,7 @@ import MoodIcon from '@mui/icons-material/Mood'
 import InfoIcon from '@mui/icons-material/Info'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import querystring from 'query-string'
 
 function SystemMessage({override, overridePageId, placeholder}) {
@@ -53,6 +54,7 @@ function SystemMessage({override, overridePageId, placeholder}) {
         'Neutral': '#999',
         'Info': '#609cce',
         'Alert': '#d03f3f',
+        'Pink': '#FF66CC',
         'Placeholder': '#555'
     }
     const messageIcons = {
@@ -60,6 +62,7 @@ function SystemMessage({override, overridePageId, placeholder}) {
         'Neutral': <InfoOutlinedIcon fontSize='medium'/>,
         'Info': <InfoIcon fontSize='medium'/>,
         'Alert': <ReportProblemIcon fontSize='small'/>,
+        'Pink': <FavoriteIcon fontSize='small'/>,
         'Placeholder': null
     }
 

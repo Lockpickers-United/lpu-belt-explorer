@@ -61,6 +61,7 @@ export default function SystemMessageForm({message, temp, setTemp, updated, setU
                     <MenuItem value='Info'>Info</MenuItem>
                     <MenuItem value='Alert'>Alert</MenuItem>
                     <MenuItem value='Neutral'>Neutral</MenuItem>
+                    <MenuItem value='Pink'>Pink</MenuItem>
                 </TextField>
                 <TextField
                     id='priority'
