@@ -1,4 +1,4 @@
-// setDeepPush(acc, ['newImageEntries'], object)
+// example: setDeepPush(acc, ['newImageEntries'], object)
 
 function setDeepBase(obj, path, value, customizer) {
     if (path.length === 1) {
@@ -14,6 +14,10 @@ function setDeepBase(obj, path, value, customizer) {
 
 export function setDeep(obj, path, value) {
     setDeepBase(obj, path, value)
+}
+
+export function setDeepCreate(obj, path) {
+    setDeepBase(obj, path, undefined, (a, b) => a ?? b)
 }
 
 export function setDeepAdd(obj, path, value) {
