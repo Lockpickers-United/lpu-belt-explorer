@@ -396,7 +396,7 @@ export default [
             },{
                 path: '/tools/testpage',
                 lazy: async () => {
-                    const {default: TestPageRoute} = await import('../tools/testpage/TestPageRoute.jsx')
+                    const {default: TestPageRoute} = await import('../tools/testPage/TestPageRoute.jsx')
                     return {element: <TestPageRoute/>}
                 }
             }
