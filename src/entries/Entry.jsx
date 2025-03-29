@@ -79,8 +79,6 @@ function Entry({entry, expanded, onExpand}) {
         )
     }, [entry.makeModels])
 
-    const pinkBelt = pinkify(entry.belt)
-
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
@@ -135,7 +133,7 @@ function Entry({entry, expanded, onExpand}) {
                                         lineHeight: 1.25,
                                         fontWeight: 500
                                     }}>
-                                        {pinkBelt}
+                                        {pinkify(entry.belt)}
                                         <DanPoints belt={entry.belt}/>
                                     </Typography>
                                     <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>

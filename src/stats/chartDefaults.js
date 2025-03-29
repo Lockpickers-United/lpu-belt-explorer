@@ -1,10 +1,17 @@
-export const beltColorsORIG =
-    ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import isBetween from 'dayjs/plugin/isBetween'
+dayjs.extend(utc)
+dayjs.extend(isBetween)
+const start = dayjs.utc('2025-03-28T00:01:00Z')
+const end = dayjs.utc('2025-04-02T07:01:00Z')
+const pinkify = dayjs().isBetween(start, end)
+
+export const beltColors = pinkify
+    ? ['ffdbe4', 'fcc8d4', 'FFB6C1', 'eaa5a4', 'F88379', 'FF69B4', 'FF66CC', 'FF00AA', 'FF00FF']
+    : ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
         '#0090de', '#634b9f', '#9d5918',
         '#ba0303', '#2c2c2c', '#464646']
-
-export const beltColors =
-    ['#FFC0CB', '#FF69B4', '#FF00FF', '#F9AFAE', '#FF66CC', '#F88379', '#FFD1DC', '#FFB6C1', '#FFCCCB', '#FF00AA']
 
 export const pieColors =
     ['#1b9e77', '#d95f02', '#7570b3', '#e7298a', '#66a61e', '#e6ab02', '#a6761d', '#444', '#666666', '#888', '#d00', '#f00', '#a00']
