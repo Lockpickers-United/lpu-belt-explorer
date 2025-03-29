@@ -13,6 +13,7 @@ import {lockSortFields} from '../data/sortFields'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import IconAll from '../resources/iconAll.jsx'
 import DataContext from './LockDataProvider.jsx'
+import pinkify from '../util/pinkify'
 
 function BeltToolbar() {
     const {tab, setTab} = useContext(LockListContext)
@@ -64,7 +65,7 @@ function BeltToolbar() {
                         {uniqueBelts.map(belt =>
                             <CloneProps key={belt} value={belt}>
                                 {tabProps => (
-                                    <Tooltip title={`${belt} Belt`} arrow disableFocusListener>
+                                    <Tooltip title={`${pinkify(belt)} Belt`} arrow disableFocusListener>
                                         <Tab
                                             {...tabProps}
                                             icon={

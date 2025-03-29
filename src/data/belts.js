@@ -1,21 +1,32 @@
 //#FFC0CB, #FF69B4, #FF00FF, #F9AFAE, #FF66CC, #F88379, #FFD1DC, #FFB6C1, #FFCCCB, #FF00AA
 
-const belts = {
-    White: {color: '#FFC0CB', danPoints: 0},
-    Yellow: {color: '#FF69B4', danPoints: 0},
-    Orange: {color: '#FF00FF', danPoints: 0},
-    Green: {color: '#F9AFAE', danPoints: 0},
-    Blue: {color: '#FFCCCB', danPoints: 1},
-    Purple: {color: '#F88379', danPoints: 3},
-    Brown: {color: '#FFD1DC', danPoints: 6},
-    Red: {color: '#FFB6C1', danPoints: 10},
-    Black: {color: '#FF66CC', lineColor: '#000', danPoints: 18},
-    'Black 1': {color: '#FF66CC', lineColor: '#000', danPoints: 18},
-    'Black 2': {color: '#FF66CC', lineColor: '#000', danPoints: 24},
-    'Black 3': {color: '#FF66CC', lineColor: '#000', danPoints: 30},
-    'Black 4': {color: '#FF66CC', lineColor: '#000', danPoints: 36},
-    'Black 5': {color: '#FF66CC', lineColor: '#000', danPoints: 50},
-    'Project': {color: '#FF66CC', lineColor: '#c7c340', danPoints: 5},
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import isBetween from 'dayjs/plugin/isBetween'
+
+dayjs.extend(utc)
+dayjs.extend(isBetween)
+
+const start = dayjs.utc('2025-03-28T00:01:00Z')
+const end = dayjs.utc('2025-03-30T07:01:00Z')
+const pink = dayjs().isBetween(start, end)
+
+const beltsPINK = {
+    White: {color: '#ffdbe4', danPoints: 0},
+    Yellow: {color: '#fcc8d4', danPoints: 0},
+    Orange: {color: '#FFB6C1', danPoints: 0},
+    Green: {color: '#eaa5a4', danPoints: 0},
+    Blue: {color: '#F88379', danPoints: 1},
+    Purple: {color: '#FF69B4', danPoints: 3},
+    Brown: {color: '#FF66CC', danPoints: 6},
+    Red: {color: '#FF00AA', danPoints: 10},
+    Black: {color: '#FF00FF', lineColor: '#000', danPoints: 18},
+    'Black 1': {color: '#FF00FF', lineColor: '#000', danPoints: 18},
+    'Black 2': {color: '#FF00FF', lineColor: '#000', danPoints: 24},
+    'Black 3': {color: '#FF00FF', lineColor: '#000', danPoints: 30},
+    'Black 4': {color: '#FF00FF', lineColor: '#000', danPoints: 36},
+    'Black 5': {color: '#FF00FF', lineColor: '#000', danPoints: 50},
+    'Project': {color: '#FF00FF', lineColor: '#c7c340', danPoints: 5},
     'Project 1': {color: '#000000', lineColor: '#c7c340', danPoints: 5},
     'Project 2': {color: '#000000', lineColor: '#c7c340', danPoints: 10},
     'Project 3': {color: '#000000', lineColor: '#c7c340', danPoints: 20},
@@ -58,7 +69,7 @@ const belts = {
     'Dan 28': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 29': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 30': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
-    'Hall of Fame': {color: '#e3e13a', lineColor: '#e3e13a', danPoints: 50},
+    'Hall of Fame': {color: '#e3e13a', lineColor: '#e3e13a', danPoints: 50}
 }
 
 const beltsORIG = {
@@ -119,8 +130,12 @@ const beltsORIG = {
     'Dan 28': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 29': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 30': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
-    'Hall of Fame': {color: '#e3e13a', lineColor: '#e3e13a', danPoints: 50},
+    'Hall of Fame': {color: '#e3e13a', lineColor: '#e3e13a', danPoints: 50}
 }
+
+const belts = pink
+    ? beltsPINK
+    : beltsORIG
 
 export default belts
 export const allBelts = Object.keys(belts)

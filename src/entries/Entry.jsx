@@ -23,10 +23,11 @@ import queryString from 'query-string'
 import LockImageGallery from './LockImageGallery'
 import RelatedEntryButton from './RelatedEntryButton'
 import {allEntriesById, upgradeTree} from './entryutils'
-import {beltSort, uniqueBelts} from '../data/belts'
+import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import DataContext from '../context/DataContext.jsx'
+import pinkify from '../util/pinkify'
 
 function Entry({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
@@ -78,8 +79,7 @@ function Entry({entry, expanded, onExpand}) {
         )
     }, [entry.makeModels])
 
-    const pinks = ['Baby Pink', 'Hot Pink', 'Fuchsia', 'Blush Pink', 'Rose Pink', 'Coral Pink', 'Pastel Pink', 'Bubblegum Pink', 'Peachy Pink', 'Magenta']
-    const pinkBelt = pinks[uniqueBelts.indexOf(entry.belt)]
+    const pinkBelt = pinkify(entry.belt)
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
