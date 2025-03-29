@@ -13,9 +13,9 @@ const pink = dayjs().isBetween(start, end)
 //console.log(`Pinkify is ${pink ? 'on' : 'off'}`, dayjs.utc().format('YYYY-MM-DDTHH:mm:ssZ[Z]'))
 
 export default function (input) {
-    const pinks = ['Baby Pink', 'Pastel Pink', 'Blush Pink', 'Rose Pink', 'Coral Pink', 'Hot Pink', 'Bubblegum Pink', 'Magenta', 'Fuchsia']
+    const pinks = ['Baby Pink', 'Pastel Pink', 'Blush Pink', 'Rose Pink', 'Coral Pink', 'Hot Pink', 'Bubblegum', 'Magenta', 'Fuchsia', 'Unranked']
     return pink
-        ? replaceWholeWords(input, uniqueBelts, pinks)
+        ? replaceWholeWords(input, [...uniqueBelts,'Unranked'], pinks)
         : input
 }
 
