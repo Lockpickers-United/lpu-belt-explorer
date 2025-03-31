@@ -38,6 +38,7 @@ import redSpecial from '../resources/specialRequirements/red.md?raw'
 import blackSpecial from '../resources/specialRequirements/black.md?raw'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
+import pinkify from '../util/pinkify'
 
 const specialRequirements = {
     green: greenSpecial,
@@ -132,7 +133,7 @@ function BeltsMarkdownPage() {
                             rehypePlugins={[[rehypeExternalLinks, {
                                 target: '_blank',
                                 rel: ['nofollow', 'noopener', 'noreferrer']
-                            }]]}>{markdown.replace(/!\[]\(%%\w*%%\)/g, '')}</ReactMarkdown>
+                            }]]}>{pinkify(markdown.replace(/!\[]\(%%\w*%%\)/g, ''))}</ReactMarkdown>
                         : <div style={{fontSize: '0.9rem'}}>
                             <pre>{markdownLinks}</pre>
                         </div>

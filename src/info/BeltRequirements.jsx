@@ -11,6 +11,7 @@ import LockListContext from '../locks/LockListContext'
 import InfoButton from './InfoButton'
 import LinkToRequirementsButton from './CopyLinkToRequirementsButton'
 import beltRequirements from '../data/beltRequirements'
+import pinkify from '../util/pinkify'
 
 function BeltRequirements({belt}) {
     const {expanded, setExpanded} = useContext(LockListContext)
@@ -26,11 +27,11 @@ function BeltRequirements({belt}) {
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={belt}/>
-                <Typography variant='h6' style={{margin: '0px 0px 0px 12px'}}>{belt} Belt Requirements</Typography>
+                <Typography variant='h6' style={{margin: '0px 0px 0px 12px'}}>{pinkify(belt)} Belt Requirements</Typography>
             </AccordionSummary>
             <AccordionDetails style={{margin: '0px 0px 0px 12px'}}>
                 <ReactMarkdown>
-                    {markdown}
+                    {pinkify(markdown)}
                 </ReactMarkdown>
             </AccordionDetails>
             <AccordionActions>
