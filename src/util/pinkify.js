@@ -1,7 +1,7 @@
 import {uniqueBelts} from '../data/belts'
 import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import isBetween from 'dayjs/plugin/isBetween'
+import utc from 'dayjs/plugin/utc.js' //eslint-disable-line
+import isBetween from 'dayjs/plugin/isBetween.js' //eslint-disable-line
 
 dayjs.extend(utc)
 dayjs.extend(isBetween)

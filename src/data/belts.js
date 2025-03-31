@@ -1,8 +1,8 @@
 //#FFC0CB, #FF69B4, #FF00FF, #F9AFAE, #FF66CC, #F88379, #FFD1DC, #FFB6C1, #FFCCCB, #FF00AA
 
 import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import isBetween from 'dayjs/plugin/isBetween'
+import utc from 'dayjs/plugin/utc.js' //eslint-disable-line
+import isBetween from 'dayjs/plugin/isBetween.js' //eslint-disable-line
 
 dayjs.extend(utc)
 dayjs.extend(isBetween)
