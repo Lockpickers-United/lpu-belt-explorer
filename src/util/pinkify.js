@@ -1,14 +1,15 @@
 import {uniqueBelts} from '../data/belts'
+
+/*
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc.js' //eslint-disable-line
 import isBetween from 'dayjs/plugin/isBetween.js' //eslint-disable-line
-
 dayjs.extend(utc)
 dayjs.extend(isBetween)
-
 const start = dayjs.utc('2025-03-28T00:01:00Z')
 const end = dayjs.utc('2025-04-02T07:01:00Z')
-const pink = dayjs().isBetween(start, end)
+*/
+const pink = true
 
 //console.log(`Pinkify is ${pink ? 'on' : 'off'}`, dayjs.utc().format('YYYY-MM-DDTHH:mm:ssZ[Z]'))
 

@@ -1,15 +1,15 @@
 //#FFC0CB, #FF69B4, #FF00FF, #F9AFAE, #FF66CC, #F88379, #FFD1DC, #FFB6C1, #FFCCCB, #FF00AA
 
+/*
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc.js' //eslint-disable-line
 import isBetween from 'dayjs/plugin/isBetween.js' //eslint-disable-line
-
 dayjs.extend(utc)
 dayjs.extend(isBetween)
-
 const start = dayjs.utc('2025-03-28T00:01:00Z')
-const end = dayjs.utc('2025-03-30T07:01:00Z')
-const pinkify = dayjs().isBetween(start, end)
+const end = dayjs.utc('2025-04-02T07:01:00Z')
+*/
+const pinkify = true
 
 const belts = pinkify
     ? {
