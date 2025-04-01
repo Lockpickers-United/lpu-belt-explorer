@@ -1,24 +1,16 @@
 import React, {useContext, useCallback} from 'react'
 import useData from '../util/useData.jsx'
-import Nav from '../nav/Nav.jsx'
 import Footer from '../nav/Footer.jsx'
-import Tracker from '../app/Tracker.jsx'
 import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
-import ContentSubmit from './ContentSubmit.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import SignInButton from '../auth/SignInButton.jsx'
 import Button from '@mui/material/Button'
-import IntroCopy from '../misc/IntroCopy.jsx'
-import usePageTitle from '../util/usePageTitle.jsx'
+import {Outlet} from 'react-router-dom'
 
-function ContentRoute() {
+function ContentParentRoute() {
     const {user} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
-    const {isMobile} = useWindowSize()
-
-    usePageTitle('LPU Belt Explorer - Submit Photos')
 
     const userId = user ? user.uid : null
     const loadFn = useCallback(async () => {
@@ -30,25 +22,16 @@ function ContentRoute() {
             return null
         }
     }, [getProfile, userId])
+
     const {data = {}, loading, error} = useData({loadFn})
 
-    const nav = (
-        <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
-    )
 
     return (
         <React.Fragment>
-            <Nav title='Submit Photos' extras={nav}/>
-
-            {(data && !data.photoCredit) || !user &&
-                <div style={{marginTop: 20, padding: '0px 0px'}}>
-                    <IntroCopy pageName={'photoUpload'} maxWidth={820}/>
-                </div>
-            }
             {loading && <LoadingDisplay/>}
 
             {!loading && data && !error &&
-                <ContentSubmit profile={data}/>
+                <Outlet/>
             }
 
             {!loading && !data && !error && !user &&
@@ -66,9 +49,8 @@ function ContentRoute() {
                 </div>
             }
             <Footer/>
-            <Tracker feature='uploadPhotos'/>
         </React.Fragment>
     )
 }
 
-export default ContentRoute
+export default ContentParentRoute

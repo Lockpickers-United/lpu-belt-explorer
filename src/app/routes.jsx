@@ -307,9 +307,33 @@ export default [
     },{
         path: '/content',
         lazy: async () => {
-            const {default: ContentRoute} = await import('../content/ContentRoute.jsx')
-            return {element: <ContentRoute/>}
-        }
+            const {default: ContentParentRoute} = await import('../content/ContentParentRoute.jsx')
+            return {element: <ContentParentRoute/>}
+        },
+        children: [
+            {
+                path: '/content',
+                lazy: async () => {
+                    const {default: PhotoSubmitRoute} = await import('../content/photoSubmit/PhotoSubmitRoute.jsx')
+                    return {element: <PhotoSubmitRoute/>}
+                }
+            },
+            {
+                path: '/content/photos',
+                lazy: async () => {
+                    const {default: PhotoSubmitRoute} = await import('../content/photoSubmit/PhotoSubmitRoute.jsx')
+                    return {element: <PhotoSubmitRoute/>}
+                }
+            },
+            {
+                path: '/content/lockrequest',
+                lazy: async () => {
+                    const {default: LockRequestsRoute} = await import('../content/lockRequests/LockRequestsRoute.jsx')
+                    return {element: <LockRequestsRoute/>}
+                }
+            }
+    ]
+
     },
     {
         path: '/rafl',

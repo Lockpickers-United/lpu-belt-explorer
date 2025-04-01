@@ -41,3 +41,12 @@ export const raffleFilterFields = [
     {label: 'Split Shipping', fieldName: 'splitShipping'},
 ]
 
+export const lockRequestFilterFields = [
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Content', fieldName: 'content'},
+]
+
+

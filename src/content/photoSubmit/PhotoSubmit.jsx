@@ -2,22 +2,27 @@ import React, {useCallback, useContext, useState} from 'react'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import LockEntrySearchBox from './LockEntrySearchBox.jsx'
+import LockEntrySearchBox from '../LockEntrySearchBox.jsx'
 import axios from 'axios'
-import allEntries from '../data/data.json'
-import BeltIcon from '../entries/BeltIcon.jsx'
-import Dropzone from './Dropzone.jsx'
-import DBContext from '../app/DBContext.jsx'
+import BeltIcon from '../../entries/BeltIcon.jsx'
+import Dropzone from '../Dropzone.jsx'
+import DBContext from '../../app/DBContext.jsx'
 import {Collapse} from '@mui/material'
 import Checkbox from '@mui/material/Checkbox'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
-import useWindowSize from '../util/useWindowSize.jsx'
+import useWindowSize from '../../util/useWindowSize.jsx'
 import Dialog from '@mui/material/Dialog'
-import LoadingDisplay from '../misc/LoadingDisplay.jsx'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import Tracker from '../../app/Tracker.jsx'
+import DataContext from '../../locks/LockDataProvider.jsx'
 
-function ContentSubmit({profile}) {
+/**
+ * @prop photoCredit
+ */
 
+function PhotoSubmit({profile}) {
+    const {allEntries} = useContext(DataContext)
     const {updateProfileField} = useContext(DBContext)
     const [lockDetails, setLockDetails] = useState({})
     const [lock, setLock] = useState(undefined)
@@ -92,7 +97,7 @@ function ContentSubmit({profile}) {
     const handleChangeLock = useCallback(details => {
         setLockDetails(details)
         setLock(allEntries.find(e => e.id === details.lockId))
-    }, [])
+    }, [allEntries])
 
     const savePhotoCredit = useCallback(photoCredit => {
         updateProfileField('photoCredit', photoCredit)
@@ -304,13 +309,12 @@ function ContentSubmit({profile}) {
                     </div>
                 </div>
             </Dialog>
-
+            <Tracker feature='uploadPhotos'/>
         </div>
-
     )
 }
 
-export default ContentSubmit
+export default PhotoSubmit
 
 function separateBasename(file) {
     const lastDotIndex = file.lastIndexOf('.')

@@ -1,12 +1,9 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DataContext from '../context/DataContext'
-import FilterContext from '../context/FilterContext'
+import DataContext from '../../context/DataContext'
+import FilterContext from '../../context/FilterContext'
 import dayjs from 'dayjs'
-import belts, {beltSort, beltSortReverse} from '../data/belts'
-import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
-import collectionStatsById from '../data/collectionStatsById.json'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -29,20 +26,13 @@ export function DataProvider({children, allEntries, profile}) {
                         ])
                         .join(',')
                 ),
+                hasDetails: !!entry.features?.length || !!entry.lockingMechanisms?.length || !!entry.approximateBelt,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
-                    entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
-                    entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
                     dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
-                    entry.belt.startsWith('Black') ? 'Is Black' : undefined,
-                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                 ].flat().filter(x => x),
-                collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
-                collectionSaves: collectionStatsById[entry.id] || 0,
-                simpleBelt: entry.belt.replace(/\s\d/g, '')
             }))
-    }, [allEntries, profile])
+    }, [allEntries])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -86,25 +76,21 @@ export function DataProvider({children, allEntries, profile}) {
                     return b.collectionSaves - a.collectionSaves
                         || b.views - a.views
                         || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'beltAscending') {
-                    return beltSort(a.belt, b.belt)
-                } else if (sort === 'beltDescending') {
-                    return beltSortReverse(a.belt, b.belt)
                 } else if (sort === 'alphaAscending') {
-                    return a.fuzzy.localeCompare(b.fuzzy)
+                    return a.lockName.localeCompare(b.lockName)
                 } else if (sort === 'alphaDescending') {
-                    return b.fuzzy.localeCompare(a.fuzzy)
+                    return b.lockName.localeCompare(a.lockName)
                 } else if (sort === 'recentlyUpdated') {
                     return Math.floor(dayjs(b.lastUpdated).valueOf()/3600) - Math.floor(dayjs(a.lastUpdated).valueOf()/3600)
-                        || beltSort(a.belt, b.belt)
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'dateAdded') {
                     return Math.floor(dayjs(b.dateAdded).valueOf()/3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf()/3600 * 24)
-                        || beltSort(a.belt, b.belt)
                         || a.fuzzy.localeCompare(b.fuzzy)
+                } else {
+                    return a.lockName.localeCompare(b.lockName)
                 }
             })
-            : searched
+            : searched.sort((a, b) => a.lockName.localeCompare(b.lockName))
     }, [filters, mappedEntries, search, sort])
 
     const getEntryFromId = useCallback(id => {
@@ -128,4 +114,3 @@ export function DataProvider({children, allEntries, profile}) {
 
 const fuzzySortKeys = ['fuzzy']
 
-export default DataContext
