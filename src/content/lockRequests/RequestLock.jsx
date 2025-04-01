@@ -16,20 +16,26 @@ import Link from '@mui/material/Link'
 import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
 import allEntries from '../../data/data.json'
+import Accordion from '@mui/material/Accordion'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
+import {useNavigate} from 'react-router-dom'
 
 /**
  * @prop newBrand
  * @prop allMakes
  */
 
-function RequestLock({profile}) {
+function RequestLock({profile, refresh}) {
 
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(false)
     const [acReset, setAcReset] = useState(false)
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState({id: genHexString(8)})
 
     const handleFormChange = useCallback((event) => {
         const {name, value} = event.target
@@ -80,16 +86,17 @@ function RequestLock({profile}) {
         const formCopy = {...form}
         delete formCopy.altBrand
         delete formCopy.newBrand
+
         setForm(formCopy)
 
         setForm({
             ...form,
             displayName: profile?.displayName,
-            id: genHexString(8),
+
             make: form.make || form.newBrand,
             droppedFileNames: files.map(file => {
                 return file.name
-            }),
+            })
         })
 
         console.log('form', form)
@@ -130,11 +137,12 @@ function RequestLock({profile}) {
         files.forEach(file => URL.revokeObjectURL(file.preview))
         setFiles([])
         setAcReset(!acReset)
-        setForm({})
+        setForm({id: genHexString(8)})
         setResponse(undefined)
         setUploading(false)
         setUploadError(undefined)
-    }, [acReset, files])
+        refresh()
+    }, [acReset, files, refresh])
 
     const handleClose = useCallback(() => {
         setResponse(undefined)
@@ -142,213 +150,261 @@ function RequestLock({profile}) {
         setUploadError(undefined)
     }, [])
 
+    const options = useMemo(() => {
+        return [
+            {label: 'Request a Lock', page: '/content/lockrequest'},
+            {label: 'View Requests', page: '/content/lockrequest/view'}
+        ]
+    }, [])
+    const navigate = useNavigate()
+    const [selected, setSelected] = useState(options[0]) //eslint-disable-line
+    const handleChange = useCallback(newValue => {
+        setSelected(newValue)
+        navigate(newValue.page)
+    }, [navigate])
+
     const brandBoxOpacity = form.altBrand > 0 ? 0.5 : 1
     const {isMobile, flexStyle} = useWindowSize()
 
-    const gutter = isMobile ? 4 : 30
+    const gutter = isMobile ? 4 : 40
 
     return (
 
-        <div style={{
-            maxWidth: 720, padding: 0,
-            marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
-        }}>
+        <React.Fragment>
 
-            <Link onClick={() => console.log('form', form)} style={{color: '#444', cursor: 'pointer'}}>LOG</Link>
-            &nbsp; &nbsp; <Link onClick={() => handleReload()} style={{color: '#444', cursor: 'pointer'}}>RELOAD</Link>
+            <div style={{marginBottom: 20, marginTop: 1}}>
+                <ChoiceButtonGroup options={options} onChange={handleChange} defaultValue={options[0].label}/>
+            </div>
 
-            <form action={null} encType='multipart/form-data' method='post'
-                  onSubmit={handleSubmit}>
-                <div style={{display: flexStyle, marginBottom: 20}}>
+            <div style={{
+                maxWidth: 720, padding: 0,
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
+            }}>
+
+                <Link onClick={() => console.log('form', form)} style={{color: '#444', cursor: 'pointer'}}>LOG</Link>
+                &nbsp; &nbsp; <Link onClick={() => handleReload()}
+                                    style={{color: '#444', cursor: 'pointer'}}>RELOAD</Link>
+
+                <div style={{
+                    fontSize: '1.5rem',
+                    fontWeight: 500,
+                    padding: '10px 16px',
+                    backgroundColor: '#222',
+                    marginBottom: 20
+                }}>
+                    Lock Request Info
+                </div>
+                <form action={null} encType='multipart/form-data' method='post'
+                      onSubmit={handleSubmit}>
+                    <div style={{display: flexStyle, marginLeft: 16}}>
+                        <div style={{display: flexStyle}}>
+                            <div>
+                                <div style={{marginRight: 20}}>
+                                    <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom: 5}}>Choose Brand
+                                    </div>
+                                    <AutoCompleteBox changeHandler={handleFormChange} options={lockData.allMakes.sort()}
+                                                     name={'make'} style={{width: 300, opacity: brandBoxOpacity}}
+                                                     reset={acReset} disabled={form.altBrand}/>
+                                </div>
+
+                                <div style={{marginTop: 8}}>
+                                    <Checkbox onChange={handleAltBrandToggle} id='altBrand' name='altBrand'
+                                              checked={form.altBrand || false} color='info' size='small'/>
+                                    <Link onClick={() => handleAltBrandToggle()} style={{color: '#fff'}}>
+                                        Submit a lock for a new brand.
+                                    </Link>
+                                </div>
+                                <Collapse in={form.altBrand}>
+                                    <div style={{fontSize: '0.9rem'}}>Enter New Brand</div>
+                                    <TextField type='text' id='newBrand' name='newBrand' value={form.newBrand || ''}
+                                               style={{width: 300, marginBottom: 10}} onChange={handleFormChange}
+                                               color='info'/>
+                                </Collapse>
+
+                                <div style={{marginTop: 20}}>
+                                    <div style={{fontSize: '1.1rem', fontWeight: 500}}>Model Name</div>
+                                    <TextField type='text' name='model' style={{width: 300}}
+                                               onChange={handleFormChange} value={form.model || ''} color='info'/>
+                                </div>
+
+                            </div>
+                            <div>
+                                <div style={{marginLeft: gutter, marginBottom: 40}}>
+
+                                    <div style={{marginRight: 50, width: 300}}>
+                                        <div style={{fontSize: '1.1rem', fontWeight: 500}}>
+                                            Contact Info
+                                        </div>
+                                    </div>
+
+                                    <div style={{marginTop: 10}}>
+                                        <div style={{fontSize: '1rem'}}>Discord Username</div>
+                                        <TextField type='text' name='discordUsername' style={{width: 300}}
+                                                   onChange={handleFormChange} value={form.discordUsername || ''}
+                                                   color='info'/>
+                                    </div>
+
+                                    <div style={{marginTop: 5}}>
+                                        <div style={{fontSize: '1rem'}}>AND/OR Reddit Username</div>
+                                        <TextField type='text' name='redditUsername' style={{width: 300}}
+                                                   onChange={handleFormChange} value={form.redditUsername || ''}
+                                                   color='info'/>
+                                    </div>
+
+                                    <div style={{marginTop: 20}}>
+                                        <div style={{fontSize: '1rem'}}>
+                                            Your current belt <span style={{color: '#aaa'}}>(optional)</span>
+                                        </div>
+                                        <SelectBox changeHandler={handleFormChange}
+                                                   name='userBelt' form={form}
+                                                   optionsList={['Unranked', ...uniqueBelts]}
+                                                   multiple={false} defaultValue={''}
+                                                   size={'large'} width={300}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div>
-                        <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 20, marginTop: 20}}>
-                            Lock Request Info
-                        </div>
+                        <Accordion>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+                                <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 0, marginTop: 0}}>
+                                    Add Details (optional)
+                                </div>
+                            </AccordionSummary>
+                            <AccordionDetails>
 
-                        <div style={{marginRight: 20}}>
-                            <div style={{fontSize: '1.1rem', fontWeight: 500}}>Choose Brand</div>
-                            <AutoCompleteBox changeHandler={handleFormChange} options={lockData.allMakes.sort()}
-                                             name={'make'} style={{width: 300, opacity: brandBoxOpacity}}
-                                             reset={acReset} disabled={form.altBrand}/>
-                        </div>
+                                <div style={{display: flexStyle, marginLeft: 2}}>
+                                    <div>
+                                        <div style={{marginTop: 0}}>
+                                            <div style={{fontSize: '1rem'}}>
+                                                Locking Mechanism <span style={{color: '#aaa'}}>(optional)</span>
+                                            </div>
+                                            <SelectBox changeHandler={handleFormChange}
+                                                       name='lockingMechanisms' form={form}
+                                                       optionsList={lockData.lockingMechanisms} size={'large'}
+                                                       width={300}
+                                                       multiple={true} defaultValue={[]}/>
+                                        </div>
 
-                        <div style={{marginTop: 8}}>
-                            <Checkbox onChange={handleAltBrandToggle} id='altBrand' name='altBrand'
-                                      checked={form.altBrand || false} color='info' size='small'/>
-                            <Link onClick={() => handleAltBrandToggle()} style={{color: '#fff'}}>
-                                Submit a lock for a new brand.
-                            </Link>
-                        </div>
-                        <Collapse in={form.altBrand}>
-                            <div style={{fontSize: '0.9rem'}}>Enter New Brand</div>
-                            <TextField type='text' id='newBrand' name='newBrand' value={form.newBrand || ''}
-                                       style={{width: 300, marginBottom: 10}} onChange={handleFormChange}
-                                       color='info'/>
-                        </Collapse>
+                                        <div style={{marginTop: 20}}>
+                                            <div style={{fontSize: '1rem'}}>
+                                                Features <span style={{color: '#aaa'}}>(optional)</span>
+                                            </div>
+                                            <SelectBox changeHandler={handleFormChange}
+                                                       name='features' form={form} optionsList={lockData.features}
+                                                       multiple={true} defaultValue={[]}
+                                                       size={'large'} width={300}/>
+                                        </div>
 
-                        <div style={{marginTop: 20}}>
-                            <div style={{fontSize: '1.1rem', fontWeight: 500}}>Model Name</div>
-                            <TextField type='text' name='model' style={{width: 300}}
-                                       onChange={handleFormChange} value={form.model || ''} color='info'/>
-                        </div>
+                                    </div>
+                                    <div style={{marginLeft: gutter}}>
+                                        <div>
+                                            <div style={{fontSize: '1rem'}}>
+                                                Approximate Belt <span style={{color: '#aaa'}}>(optional)</span></div>
+                                            <SelectBox changeHandler={handleFormChange}
+                                                       name='approxBelt' form={form} optionsList={uniqueBelts}
+                                                       multiple={false} defaultValue={''}
+                                                       size={'large'} width={300}/>
+                                        </div>
 
-                        <div style={{marginRight: 50, width: 300, marginTop: 30}}>
-                            <div style={{fontSize: '1.1rem', fontWeight: 500}}>
-                                Contact Info
-                            </div>
-                        </div>
+                                        <div style={{marginTop: 20}}>
+                                            <div style={{fontSize: '1rem'}}>
+                                                Notes <span style={{color: '#aaa'}}>(optional)</span>
+                                            </div>
+                                            <TextField type='text' name='notes' multiline fullWidth rows={3}
+                                                       color='info'
+                                                       style={{width: 300}} value={form.notes || ''}
+                                                       maxLength={1000} id='notes' onChange={handleFormChange}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style={{width: '100%', marginTop: 20}}>
+                                    <div style={{fontSize: '1.1rem', marginBottom: 10}}>
+                                        Please upload photos if you can
+                                    </div>
+                                    <Dropzone files={files} setFiles={setFiles}/>
+                                </div>
 
-                        <div style={{marginTop: 10}}>
-                            <div style={{fontSize: '1rem'}}>Discord Username</div>
-                            <TextField type='text' name='discordUsername' style={{width: 300}}
-                                       onChange={handleFormChange} value={form.discordUsername || ''}
-                                       color='info'/>
-                        </div>
+                            </AccordionDetails>
+                        </Accordion>
 
-                        <div style={{marginTop: 5}}>
-                            <div style={{fontSize: '1rem'}}>AND/OR Reddit Username</div>
-                            <TextField type='text' name='redditUsername' style={{width: 300}}
-                                       onChange={handleFormChange} value={form.redditUsername || ''}
-                                       color='info'/>
-                        </div>
-
-                        <div style={{marginTop: 20}}>
-                            <div style={{fontSize: '1rem'}}>
-                                Your current belt <span style={{color: '#aaa'}}>(optional)</span>
-                            </div>
-                            <SelectBox changeHandler={handleFormChange}
-                                       name='userBelt' form={form}
-                                       optionsList={['Unranked', ...uniqueBelts]}
-                                       multiple={false} defaultValue={''}
-                                       size={'large'} width={300}/>
-                        </div>
 
                     </div>
-
-                    <div style={{marginLeft: gutter}}>
-                        <div style={{marginTop: 0}}>
-                            <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 20, marginTop: 20}}>
-                                Optional Details
-                            </div>
-
-                            <div style={{fontSize: '1rem'}}>
-                                Locking Mechanism <span style={{color: '#aaa'}}>(optional)</span>
-                            </div>
-                            <SelectBox changeHandler={handleFormChange}
-                                       name='lockingMechanisms' form={form}
-                                       optionsList={lockData.lockingMechanisms} size={'large'} width={300}
-                                       multiple={true} defaultValue={[]}/>
-                        </div>
-
-                        <div style={{marginTop: 20}}>
-                            <div style={{fontSize: '1rem'}}>
-                                Features <span style={{color: '#aaa'}}>(optional)</span>
-                            </div>
-                            <SelectBox changeHandler={handleFormChange}
-                                       name='features' form={form} optionsList={lockData.features}
-                                       multiple={true} defaultValue={[]}
-                                       size={'large'} width={300}/>
-                        </div>
-
-                        <div style={{marginTop: 20}}>
-                            <div style={{fontSize: '1rem'}}>
-                                Approximate Belt <span style={{color: '#aaa'}}>(optional)</span></div>
-                            <SelectBox changeHandler={handleFormChange}
-                                       name='approxBelt' form={form} optionsList={uniqueBelts}
-                                       multiple={false} defaultValue={''}
-                                       size={'large'} width={300}/>
-                        </div>
-
-                        <div style={{marginTop: 20}}>
-                            <div style={{fontSize: '1rem'}}>
-                                Notes <span style={{color: '#aaa'}}>(optional)</span>
-                            </div>
-                            <TextField type='text' name='notes' multiline fullWidth rows={3} color='info'
-                                       style={{width: 300}} value={form.notes || ''}
-                                       maxLength={1000} id='notes' onChange={handleFormChange}/>
-                        </div>
-
-                        <div style={{marginRight: 50, width: 300, marginTop: 30}}>
-                            <div style={{fontSize: '1.1rem', marginBottom: 10}}>
-                                Please upload photos if you can
-                            </div>
-                            <Dropzone files={files} setFiles={setFiles}/>
-                        </div>
-
+                    <div style={{marginTop: 30, width: '100%', display: 'flex', justifyContent: 'center'}}>
+                        <Button type='submit' variant='contained' color='info'
+                                disabled={!uploadable || uploading}>
+                            Submit
+                        </Button>
                     </div>
-                </div>
-                <div style={{marginTop: 30, width:'100%', display:'flex', justifyContent:'center'}}>
-                    <Button type='submit' variant='contained' color='info'
-                            disabled={!uploadable || uploading}>
-                        Submit
-                    </Button>
-                </div>
 
-            </form>
+                </form>
 
 
-            <Dialog open={uploading} componentsProps={{backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}}}>
-                <div style={{width: 320, textAlign: 'center', padding: 30}}>
-                    <LoadingDisplay/>
-                </div>
-            </Dialog>
-
-            <Dialog open={!!response && !uploadError} componentsProps={{
-                backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
-            }}>
-                <div style={{display: 'flex'}}>
-                    <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
-                        <div style={{
-                            fontSize: '1.7rem',
-                            fontWeight: 500,
-                            marginBottom: 60,
-                            textAlign: 'center'
-                        }}>Lock request submitted!
-                        </div>
-
-                        <div style={{width: '100%', textAlign: 'center'}}>
-                            <Button onClick={handleReload} variant='contained' color='info'
-                                    style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                Submit another request
-                            </Button>
-                            <br/><br/>
-                            <Button onClick={handleClose} variant='contained' color='warning'
-                                    style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                Close Only
-                            </Button>
-                        </div>
-
+                <Dialog open={uploading} componentsProps={{backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}}}>
+                    <div style={{width: 320, textAlign: 'center', padding: 30}}>
+                        <LoadingDisplay/>
                     </div>
-                </div>
-            </Dialog>
+                </Dialog>
 
+                <Dialog open={!!response && !uploadError} componentsProps={{
+                    backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
+                }}>
+                    <div style={{display: 'flex'}}>
+                        <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
+                            <div style={{
+                                fontSize: '1.7rem',
+                                fontWeight: 500,
+                                marginBottom: 60,
+                                textAlign: 'center'
+                            }}>Lock request submitted!
+                            </div>
 
-            <Dialog open={!!uploadError} componentsProps={{
-                backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
-            }}>
-                <div style={{display: 'flex'}}>
-                    <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
-                        <div style={{fontSize: '1.7rem', fontWeight: 500, marginBottom: 20, textAlign: 'center'}}>
-                            Something went wrong.<br/>
-                            Please try again later.<br/>
+                            <div style={{width: '100%', textAlign: 'center'}}>
+                                <Button onClick={handleReload} variant='contained' color='info'
+                                        style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                                    Submit another request
+                                </Button>
+                                <br/><br/>
+                                <Button onClick={handleClose} variant='contained' color='warning'
+                                        style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                                    Close Only
+                                </Button>
+                            </div>
+
                         </div>
-                        <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                            Error message: {uploadError?.response?.data}
-                        </div>
-
-
-                        <div style={{width: '100%', textAlign: 'center'}}>
-                            <Button onClick={handleClose} variant='contained' color='error'
-                                    style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                OK
-                            </Button>
-                        </div>
-
                     </div>
-                </div>
-            </Dialog>
-            <Tracker feature='uploadPhotos'/>
-        </div>
+                </Dialog>
+
+
+                <Dialog open={!!uploadError} componentsProps={{
+                    backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
+                }}>
+                    <div style={{display: 'flex'}}>
+                        <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
+                            <div style={{fontSize: '1.7rem', fontWeight: 500, marginBottom: 20, textAlign: 'center'}}>
+                                Something went wrong.<br/>
+                                Please try again later.<br/>
+                            </div>
+                            <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
+                                Error message: {uploadError?.response?.data}
+                            </div>
+
+
+                            <div style={{width: '100%', textAlign: 'center'}}>
+                                <Button onClick={handleClose} variant='contained' color='error'
+                                        style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                                    OK
+                                </Button>
+                            </div>
+
+                        </div>
+                    </div>
+                </Dialog>
+                <Tracker feature='uploadPhotos'/>
+            </div>
+        </React.Fragment>
+
     )
 }
 

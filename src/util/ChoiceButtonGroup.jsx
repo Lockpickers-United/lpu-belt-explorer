@@ -2,8 +2,8 @@ import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import React, {useCallback, useState} from 'react'
 
-function ChoiceButtonGroup({options, onChange}) {
-    const [value, setValue] = useState(options[0].label)
+function ChoiceButtonGroup({options, onChange, defaultValue}) {
+    const [value, setValue] = useState(defaultValue || options[0].label)
 
     const handleButtonClick = useCallback(newValue => () => {
         const selected = options.find(option => option.label === newValue)

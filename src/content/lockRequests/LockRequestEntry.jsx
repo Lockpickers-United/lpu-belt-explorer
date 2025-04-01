@@ -17,6 +17,7 @@ import SubjectIcon from '@mui/icons-material/Subject'
  * @typedef {object} entry
  * @typedef {object} usernames
  * @prop usernames
+ * @prop usernames.discord
  * @prop discord
  * @prop userBelt
  */
@@ -54,11 +55,11 @@ function LockRequestEntry({entry, expanded, onExpand}) {
         }
     }, [expanded, entry, scrolled, expandAll])
 
-    const discordUsername = entry.usernames.discord ? `@${entry.usernames.discord.replace(/^@/, '')}` : undefined
+    const discordUsername = entry.usernames.discord ? entry.usernames.discord : undefined
     const redditUsername = entry.usernames.reddit ? `u/${entry.usernames.reddit.replace(/^\/*u\//, '')}` : undefined
 
     const userName = discordUsername || redditUsername || undefined
-    const userBelt = entry.userBelt ? ` ${entry.userBelt}` : 'Unspecified'
+    const userBelt = entry.userBelt ? ` ${entry.userBelt}` : '---'
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -74,7 +75,7 @@ function LockRequestEntry({entry, expanded, onExpand}) {
                     <div style={{display: 'flex', alignItems: 'center', marginTop: 6}}>
 
                         <FieldValue name='Requested By' value={userName}/>
-                        {entry.userBelt &&
+                        {userBelt &&
                             <FieldValue name='User Belt' value={userBelt} style={{marginLeft: 10}}/>
                         }
                         <div style={{marginLeft: 25, marginRight: 15, width: 40, display: 'flex'}}>

@@ -5,7 +5,7 @@ import usePageTitle from '../../util/usePageTitle.jsx'
 import DataContext from '../../context/DataContext.jsx'
 import {requestedLocks} from '../../data/dataUrls'
 import useData from '../../util/useData.jsx'
-import LockRequests from './LockRequests.jsx'
+import ViewLockRequests from './ViewLockRequests.jsx'
 import ErrorMessage from '../../misc/ErrorMessage.jsx'
 import LoadingDisplay from '../../util/LoadingDisplay.jsx'
 import {FilterProvider} from '../../context/FilterContext.jsx'
@@ -13,13 +13,13 @@ import {DataProvider} from './LockRequestsDataProvider.jsx'
 import {lockRequestFilterFields} from '../../data/filterFields'
 
 
-export default function LockRequestsRoute() {
+export default function ViewLockRequestsRoute() {
     const {profile} = useContext(DataContext)
     const {isMobile} = useWindowSize()
 
-    usePageTitle('LPU Belt Explorer - Review Lock Requests')
+    usePageTitle('LPU Belt Explorer - View Ranking Requests')
 
-    const {data, loading, error, errorMessage} = useData({url})
+    const {data, loading, error, errorMessage, refresh} = useData({url})
 
     const requestCounts = data?.reduce((acc, request) => {
         acc[request.lockName] = (acc[request.lockName] || 0) + 1
@@ -39,14 +39,14 @@ export default function LockRequestsRoute() {
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
             <DataProvider allEntries={requestData}>
-                <Nav title='Review Lock Requests' extras={extras}/>
+                <Nav title='View Ranking Requests' extras={extras}/>
 
                 {error && <ErrorMessage errorMessage={errorMessage}/>}
 
                 {loading && <LoadingDisplay/>}
 
                 {!loading && !error && !!data &&
-                    <LockRequests data={requestData} profile={profile}/>
+                    <ViewLockRequests data={requestData} profile={profile} refresh={refresh}/>
                 }
 
             </DataProvider>
