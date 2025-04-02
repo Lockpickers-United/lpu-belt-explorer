@@ -9,7 +9,7 @@ dayjs.extend(isBetween)
 const start = dayjs.utc('2025-03-28T00:01:00Z')
 const end = dayjs.utc('2025-04-02T07:01:00Z')
 */
-const pinkify = true
+const pinkify = false
 
 const belts = pinkify
     ? {
