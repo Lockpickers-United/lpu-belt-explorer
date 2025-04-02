@@ -6,15 +6,9 @@ import pinkify, {pink} from '../util/pinkify'
 
 function BrandBeltBar({beltData}) {
 
-    console.log('BrandBeltBar', beltData)
+    //console.log('BrandBeltBar', beltData)
 
-    const beltDistributionData = beltData.map((item) => ({
-        id: (item.id !== 'Unranked') ? pinkify(item.id) : item.id,
-        label: pinkify(item.label || item.belt),
-        value: item.value,
-        count: item.count
-    }))
-
+    const beltDistributionData = beltData
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
