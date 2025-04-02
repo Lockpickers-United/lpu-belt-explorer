@@ -14,11 +14,7 @@ const BeltDistributionBar = ({beltDistribution}) => {
         : {top: 30, right: 5, bottom: 60, left: 48}
     const tickRotation = !smallWidth && !pinkify ? 0 : -45
 
-    const beltDistributionData = beltDistribution.map((item) => ({
-        id: (item.id !== 'Unranked') ? pinkify(item.id) : item.id,
-        label: pinkify(item.label || item.belt),
-        value: item.value,
-    }))
+    const beltDistributionData = beltDistribution
 
     return (
         <div style={{height: chartHeight}}>
