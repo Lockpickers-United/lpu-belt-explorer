@@ -7,7 +7,7 @@ dayjs.extend(isBetween)
 const start = dayjs.utc('2025-03-28T00:01:00Z')
 const end = dayjs.utc('2025-04-02T07:01:00Z')
 */
-const pinkify = true
+const pinkify = false
 
 export const beltColors = pinkify
     ? ['#ffdbe4', '#fcc8d4', '#FFB6C1', '#eaa5a4', '#F88379', '#FF69B4', '#FF66CC', '#FF00AA', '#FF00FF']
