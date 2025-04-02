@@ -10,7 +10,7 @@ dayjs.extend(isBetween)
 const start = dayjs.utc('2025-03-28T00:01:00Z')
 const end = dayjs.utc('2025-04-02T07:01:00Z')
 */
-export const pink = true
+export const pink = false
 
 //console.log(`Pinkify is ${pink ? 'on' : 'off'}`, dayjs.utc().format('YYYY-MM-DDTHH:mm:ssZ[Z]'))
 
