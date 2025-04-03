@@ -41606,8 +41606,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Magnet"
+      "Magnet",
+      "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
@@ -48921,8 +48921,7 @@
     "name": "Master Lock 160",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Slider"
+      "Pin-tumbler"
     ],
     "views": 1347,
     "lastUpdated": "2025-03-19T15:44:57.323Z",

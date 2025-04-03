@@ -717,7 +717,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2",EVVA,Dual,"0 (zero) mastered elements",Slider,"False gates,Active sidebar",,533c7408
 "Black 1",EVVA,ICS,"1-2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,db749615
 "Black 2",EVVA,ICS,"0 (zero) mastered elements","Pin-tumbler,Slider","False gates,Active sidebar",,8ea170d2
-"Black 3","EVVA,EVVA,IKON","MCS gen 1,MCS gen 2,M",,"Pin-tumbler,Magnet","Magnetic rotors","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",5ab25363
+"Black 3","EVVA,EVVA,IKON","MCS gen 1,MCS gen 2,M",,"Magnet,Pin-tumbler","Magnetic rotors","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",5ab25363
 "Black 1","Fichet,Fichet","450,484","w/ False gates, 1 mastered lever",Lever/sidebar,"False gates,Active sidebar",,4abcb403
 "Black 2","Fichet,Fichet","450,484","w/ False gates, 0 mastered levers",Lever/sidebar,"False gates,Active sidebar",,340154fa
 "Black 3",Fichet,787,"no blocker","Pump/push,Lever/sidebar","Active sidebar,Shutter",,10ab07eb
@@ -833,7 +833,7 @@ Unranked,"La Gard",2270,,,"Under Review ⚑",,c65959a3
 Unranked,Laperche,Diam,,Dimple,,,64662298
 Unranked,Lince,"C plus alarm",,,"Under Review ⚑",,8e11009a
 Unranked,Marks,"high security SFIC",,Pin-tumbler,"Under Review ⚑",,f74e0e97
-Unranked,"Master Lock",160,,"Pin-tumbler,Slider","Under Review ⚑",,7b69a331
+Unranked,"Master Lock",160,,Pin-tumbler,"Under Review ⚑",,7b69a331
 Unranked,"Master Lock",2950EURD,,Dimple,"Under Review ⚑",,a6f31065
 Unranked,MCM,SS,,Dimple,"Under Review ⚑","Requires 360º",85f92137
 Unranked,Medeco,KeyMark,,Pin-tumbler,"Under Review ⚑",,01c9e8d1
