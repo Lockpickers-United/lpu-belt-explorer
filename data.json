@@ -44980,7 +44980,7 @@
         "model": "3KS+"
       }
     ],
-    "version": "with False gates and no mastered sliders",
+    "version": "false gates and no mastered sliders",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -45730,7 +45730,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ False gates, 1 mastered lever",
+    "version": "false gates, 1 mastered lever",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -48063,7 +48063,7 @@
         "model": "Megacross"
       }
     ],
-    "version": "with pyramid drivers (SP?)",
+    "version": "with pyramid drivers",
     "lockingMechanisms": [
       "Dimple"
     ],

@@ -712,13 +712,13 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1","Corbin Russwin",Emhart,"≥ 2 mastered chambers **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c266d57b
 "Black 1",DOM,Diamant,"With sprung rear disc","Disc detainer","Front tension,False gates",,57fbcb1b
 "Black 1",DOM,"ix Twinstar",,Dimple,"Shark fin keypins,Torpedo keypins,Interactive element",,3c73c705
-"Black 1","EVVA,EVVA","3KS,3KS+","with False gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
+"Black 1","EVVA,EVVA","3KS,3KS+","false gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
 "Black 1",EVVA,Dual,"1-4 mastered elements",Slider,"Active sidebar,False gates",,1e197456
 "Black 2",EVVA,Dual,"0 (zero) mastered elements",Slider,"False gates,Active sidebar",,533c7408
 "Black 1",EVVA,ICS,"1-2 mastered elements","Slider,Pin-tumbler","False gates,Active sidebar",,db749615
 "Black 2",EVVA,ICS,"0 (zero) mastered elements","Pin-tumbler,Slider","False gates,Active sidebar",,8ea170d2
 "Black 3","EVVA,EVVA,IKON","MCS gen 1,MCS gen 2,M",,"Magnet,Pin-tumbler","Magnetic rotors","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",5ab25363
-"Black 1","Fichet,Fichet","450,484","w/ False gates, 1 mastered lever",Lever/sidebar,"False gates,Active sidebar",,4abcb403
+"Black 1","Fichet,Fichet","450,484","false gates, 1 mastered lever",Lever/sidebar,"False gates,Active sidebar",,4abcb403
 "Black 2","Fichet,Fichet","450,484","w/ False gates, 0 mastered levers",Lever/sidebar,"False gates,Active sidebar",,340154fa
 "Black 3",Fichet,787,"no blocker","Pump/push,Lever/sidebar","Active sidebar,Shutter",,10ab07eb
 "Black 1",Fichet,F3D,"indoor cylinder",Pump/push,,,33056c0f
@@ -743,7 +743,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2",Kaba,Star,"≥ 5 rows, 21 or more pins",Dimple,"High pin count",,dfa88b94
 "Black 5",Kromer,"Protector (BP55K)",,Wafer,,,f87db705
 "Black 5",Kromer,"Protector (Non-BP55K)",,Wafer,,,50a463eb
-"Black 1",Lockman,Megacross,"with pyramid drivers (SP?)",Dimple,"High pin count",,f1857cef
+"Black 1",Lockman,Megacross,"with pyramid drivers",Dimple,"High pin count",,f1857cef
 "Black 1",MIWA,LB,,Slider,,,a2bd7f1e
 "Black 1",MIWA,LS10,,Slider,"Sprung sliders",,f0e31f32
 "Black 1",MIWA,PR,"7-8 unmastered elements",Lever/sidebar,"Partial gut","upgrade of MIWA PS",d0c510c5
