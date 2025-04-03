@@ -45538,8 +45538,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Magnet"
+      "Magnet",
+      "Pin-tumbler"
     ],
     "features": [
       "Magnetic rotors"
@@ -45715,7 +45715,7 @@
       }
     ],
     "views": 2133,
-    "lastUpdated": "2025-03-19T01:20:51.392Z"
+    "lastUpdated": "2025-04-03T13:00:52.667Z"
   },
   {
     "id": "4abcb403",
@@ -54141,8 +54141,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Slider"
+      "Pin-tumbler"
     ],
     "features": [
       "Under Review ⚑"
@@ -54178,7 +54177,7 @@
       }
     ],
     "views": 1347,
-    "lastUpdated": "2025-03-19T15:44:57.323Z"
+    "lastUpdated": "2025-04-03T13:00:52.670Z"
   },
   {
     "id": "a6f31065",
