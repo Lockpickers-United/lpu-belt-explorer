@@ -41163,7 +41163,7 @@
     ],
     "name": "EVVA 3KS, 3KS+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "version": "with False gates and no mastered sliders",
+    "version": "false gates and no mastered sliders",
     "features": [
       "Unsprung sliders",
       "False gates",
@@ -41799,7 +41799,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ False gates, 1 mastered lever",
+    "version": "false gates, 1 mastered lever",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -43797,7 +43797,7 @@
         "model": "Megacross"
       }
     ],
-    "version": "with pyramid drivers (SP?)",
+    "version": "with pyramid drivers",
     "lockingMechanisms": [
       "Dimple"
     ],
