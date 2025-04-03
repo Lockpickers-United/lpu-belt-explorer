@@ -2,13 +2,8 @@ import React from 'react'
 import {beltColors, primaryTheme} from './chartDefaults'
 import useWindowSize from '../util/useWindowSize'
 import {ResponsiveBar} from '@nivo/bar'
-import pinkify, {pink} from '../util/pinkify'
 
 function BrandBeltBar({beltData}) {
-
-    //console.log('BrandBeltBar', beltData)
-
-    const beltDistributionData = beltData
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -18,7 +13,7 @@ function BrandBeltBar({beltData}) {
         : smallWindow ? 200
             :  180
 
-    const mb = pink ? 60 : 50
+    const mb = 50
     const chartMargin = !smallWindow
         ? {top: 0, right: 10, bottom: mb, left: 10}
         : {top: 0, right: 20, bottom: mb, left: 20}
@@ -33,7 +28,7 @@ function BrandBeltBar({beltData}) {
              style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
         >
             <ResponsiveBar
-                data={beltDistributionData}
+                data={beltData}
                 //maxValue={0.20}
                 margin={chartMargin}
                 padding={0.15}

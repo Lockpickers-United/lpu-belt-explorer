@@ -12,7 +12,6 @@ import introMd from '../resources/intro.md?raw'
 import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
 
-import pinkify from '../util/pinkify'
 function InfoPage() {
     const updateTime = '02/10/2025'
 
@@ -57,7 +56,7 @@ function InfoPage() {
         return (
             <li key={id}>
                 <Link onClick={() => scrollIntoView(id)}
-                       style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>{pinkify(section)}</Link>
+                       style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>{section}</Link>
             </li>
         )
     })
@@ -88,7 +87,7 @@ function InfoPage() {
 
                     <h2>Table of Contents</h2>
                     <ul>{toc}</ul>
-                    <MarkdownRenderer content={pinkify(markdown)}/>
+                    <MarkdownRenderer content={markdown}/>
 
                 </CardContent>
                 <CardActions>
