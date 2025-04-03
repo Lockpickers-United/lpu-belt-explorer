@@ -29,7 +29,7 @@ export function DataProvider({children, allEntries, profile}) {
                 hasDetails: !!entry.features?.length || !!entry.lockingMechanisms?.length || !!entry.approximateBelt,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
-                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
+                    dayjs(entry.dateRequested).isAfter(dayjs().subtract(1, 'days')) ? 'Requested Recently' : undefined,
                 ].flat().filter(x => x),
             }))
     }, [allEntries])
@@ -77,14 +77,14 @@ export function DataProvider({children, allEntries, profile}) {
                         || b.views - a.views
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaAscending') {
-                    return a.lockName.localeCompare(b.lockName)
+                    return a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaDescending') {
-                    return b.lockName.localeCompare(a.lockName)
+                    return b.fuzzy.localeCompare(a.fuzzy)
                 } else if (sort === 'recentlyUpdated') {
                     return Math.floor(dayjs(b.lastUpdated).valueOf()/3600) - Math.floor(dayjs(a.lastUpdated).valueOf()/3600)
                         || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'dateAdded') {
-                    return Math.floor(dayjs(b.dateAdded).valueOf()/3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf()/3600 * 24)
+                } else if (sort === 'dateRequested') {
+                    return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else {
                     return a.lockName.localeCompare(b.lockName)

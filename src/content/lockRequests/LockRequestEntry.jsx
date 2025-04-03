@@ -17,8 +17,9 @@ import SubjectIcon from '@mui/icons-material/Subject'
  * @typedef {object} entry
  * @typedef {object} usernames
  * @prop usernames
+ * @prop usernames.reddit
  * @prop usernames.discord
- * @prop discord
+ * @prop approximateBelt
  * @prop userBelt
  */
 
@@ -61,16 +62,23 @@ function LockRequestEntry({entry, expanded, onExpand}) {
     const userName = discordUsername || redditUsername || undefined
     const userBelt = entry.userBelt ? ` ${entry.userBelt}` : '---'
 
+    const hasDetails =
+        !!entry.lockingMechanisms?.length ||
+        !!entry.features?.length ||
+        !!entry.approximateBelt ||
+        !!entry.notes?.length ||
+        !!entry.media?.length
+
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+        <Accordion expanded={expanded} onChange={hasDetails ? handleChange : undefined} style={style} ref={ref}>
+            <AccordionSummary expandIcon={hasDetails ? <ExpandMoreIcon/> : <div style={{width:24}}/>} style={{cursor: hasDetails ? 'pointer' : 'default'}}>
                 <div style={{display: flexStyle, width: '100%', alignItems: 'center'}}>
                     <ListItemText
                         primary={entryName(entry)}
                         primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
                         secondary={entry.version}
                         secondaryTypographyProps={{fontSize: '1rem'}}
-                        style={{padding: '0px 0px 0px 10px', cursor: 'pointer'}}
+                        style={{padding: '0px 0px 0px 10px'}}
                     />
                     <div style={{display: 'flex', alignItems: 'center', marginTop: 6}}>
 
@@ -95,12 +103,6 @@ function LockRequestEntry({entry, expanded, onExpand}) {
                     <div style={{display: flexStyle, width: '100%'}}>
                         <div style={{display: 'flex'}}>
                             {
-                                !!entry.approximateBelt &&
-                                <FieldValue value={
-                                    <FieldValue name='Suggested Belt' value={`${entry.approximateBelt} Belt`}/>
-                                }/>
-                            }
-                            {
                                 !!entry.lockingMechanisms?.length &&
                                 <FieldValue value={
                                     <FieldValue name='Locking Mechanisms' value={entry.lockingMechanisms.join(', ')}/>
@@ -110,7 +112,13 @@ function LockRequestEntry({entry, expanded, onExpand}) {
                         {
                             !!entry.features?.length &&
                             <FieldValue value={
-                                <FieldValue name='Locking Mechanisms' value={entry.features.join(', ')}/>
+                                <FieldValue name='Features' value={entry.features.join(', ')}/>
+                            }/>
+                        }
+                        {
+                            !!entry.approximateBelt &&
+                            <FieldValue value={
+                                <FieldValue name='Suggested Belt' value={`${entry.approximateBelt} Belt`}/>
                             }/>
                         }
                     </div>

@@ -180,10 +180,13 @@ function RequestLock({profile, refresh}) {
                 maxWidth: 720, padding: 0,
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
             }}>
+                <div style={{marginBottom: 30}}>Some intro copy here explaining the process and setting expectations.
+                </div>
 
                 <Link onClick={() => console.log('form', form)} style={{color: '#444', cursor: 'pointer'}}>LOG</Link>
                 &nbsp; &nbsp; <Link onClick={() => handleReload()}
                                     style={{color: '#444', cursor: 'pointer'}}>RELOAD</Link>
+
 
                 <div style={{
                     fontSize: '1.5rem',
@@ -278,7 +281,7 @@ function RequestLock({profile, refresh}) {
                                     <div>
                                         <div style={{marginTop: 0}}>
                                             <div style={{fontSize: '1rem'}}>
-                                                Locking Mechanism <span style={{color: '#aaa'}}>(optional)</span>
+                                                Locking Mechanisms <span style={{color: '#aaa'}}>(optional)</span>
                                             </div>
                                             <SelectBox changeHandler={handleFormChange}
                                                        name='lockingMechanisms' form={form}
@@ -363,12 +366,7 @@ function RequestLock({profile, refresh}) {
                             <div style={{width: '100%', textAlign: 'center'}}>
                                 <Button onClick={handleReload} variant='contained' color='info'
                                         style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                    Submit another request
-                                </Button>
-                                <br/><br/>
-                                <Button onClick={handleClose} variant='contained' color='warning'
-                                        style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                    Close Only
+                                    OK
                                 </Button>
                             </div>
 
