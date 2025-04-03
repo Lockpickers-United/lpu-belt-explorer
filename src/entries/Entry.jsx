@@ -27,7 +27,6 @@ import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import DataContext from '../context/DataContext.jsx'
-import pinkify from '../util/pinkify'
 
 function Entry({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
@@ -133,7 +132,7 @@ function Entry({entry, expanded, onExpand}) {
                                         lineHeight: 1.25,
                                         fontWeight: 500
                                     }}>
-                                        {pinkify(entry.belt)}
+                                        {entry.belt}
                                         <DanPoints belt={entry.belt}/>
                                     </Typography>
                                     <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>

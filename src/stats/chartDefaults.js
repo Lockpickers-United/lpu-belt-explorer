@@ -1,17 +1,9 @@
-/*
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc.js' //eslint-disable-line
-import isBetween from 'dayjs/plugin/isBetween.js' //eslint-disable-line
-dayjs.extend(utc)
-dayjs.extend(isBetween)
-const start = dayjs.utc('2025-03-28T00:01:00Z')
-const end = dayjs.utc('2025-04-02T07:01:00Z')
-*/
-const pinkify = false
 
-export const beltColors = pinkify
-    ? ['#ffdbe4', '#fcc8d4', '#FFB6C1', '#eaa5a4', '#F88379', '#FF69B4', '#FF66CC', '#FF00AA', '#FF00FF']
-    : ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
+export const beltColors = ['#e1e1e1', '#d3d31c', '#dc6532', '#34732f',
+        '#3e71bd', '#9f21e5', '#ab713d',
+        '#c52323', '#2c2c2c', '#525252']
+
+export const beltColorsOrig = ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
         '#0090de', '#634b9f', '#9d5918',
         '#ba0303', '#2c2c2c', '#464646']
 
