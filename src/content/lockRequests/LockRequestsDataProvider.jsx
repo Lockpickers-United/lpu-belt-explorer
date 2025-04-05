@@ -5,6 +5,14 @@ import FilterContext from '../../context/FilterContext'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
 
+/**
+ * @typedef {object} entry
+ * @typedef {object} usernames
+ * @prop entry.approximateBelt
+ * @prop entry.dateRequested
+ * @prop approximateBelt
+ */
+
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
@@ -87,10 +95,10 @@ export function DataProvider({children, allEntries, profile}) {
                     return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else {
-                    return a.lockName.localeCompare(b.lockName)
+                    return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                 }
             })
-            : searched.sort((a, b) => a.lockName.localeCompare(b.lockName))
+            : searched.sort((a, b) => dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf())
     }, [filters, mappedEntries, search, sort])
 
     const getEntryFromId = useCallback(id => {

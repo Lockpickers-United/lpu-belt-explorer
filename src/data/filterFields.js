@@ -45,7 +45,6 @@ export const lockRequestFilterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Belt', fieldName: 'belt', sort: beltSort},
-    {label: 'Features', fieldName: 'features'},
     {label: 'User Belt', fieldName: 'userBelt'},
     {label: 'Content', fieldName: 'content'},
 ]

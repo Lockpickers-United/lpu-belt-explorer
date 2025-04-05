@@ -12,13 +12,16 @@ import DataContext from '../../context/DataContext.jsx'
 import queryString from 'query-string'
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import SubjectIcon from '@mui/icons-material/Subject'
+import dayjs from 'dayjs'
+import CopyLinkToRequestButton from './CopyLinkToRequestButton.jsx'
+import AccordionActions from '@mui/material/AccordionActions'
 
 /**
  * @typedef {object} entry
  * @typedef {object} usernames
- * @prop usernames
  * @prop usernames.reddit
  * @prop usernames.discord
+ * @prop entry.dateRequested
  * @prop approximateBelt
  * @prop userBelt
  */
@@ -60,7 +63,7 @@ function LockRequestEntry({entry, expanded, onExpand}) {
     const redditUsername = entry.usernames.reddit ? `u/${entry.usernames.reddit.replace(/^\/*u\//, '')}` : undefined
 
     const userName = discordUsername || redditUsername || undefined
-    const userBelt = entry.userBelt ? ` ${entry.userBelt}` : '---'
+    const userBelt = entry.userBelt ? ` (${entry.userBelt})` : ''
 
     const hasDetails =
         !!entry.lockingMechanisms?.length ||
@@ -71,21 +74,19 @@ function LockRequestEntry({entry, expanded, onExpand}) {
 
     return (
         <Accordion expanded={expanded} onChange={hasDetails ? handleChange : undefined} style={style} ref={ref}>
-            <AccordionSummary expandIcon={hasDetails ? <ExpandMoreIcon/> : <div style={{width:24}}/>} style={{cursor: hasDetails ? 'pointer' : 'default'}}>
+            <AccordionSummary expandIcon={hasDetails ? <ExpandMoreIcon/> : <div style={{width: 24}}/>}
+                              style={{cursor: hasDetails ? 'pointer' : 'default'}}>
                 <div style={{display: flexStyle, width: '100%', alignItems: 'center'}}>
                     <ListItemText
                         primary={entryName(entry)}
                         primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
-                        secondary={entry.version}
-                        secondaryTypographyProps={{fontSize: '1rem'}}
+                        secondary={entry.lockingMechanisms.join(', ')}
+                        secondaryTypographyProps={{fontSize: '0.9rem'}}
                         style={{padding: '0px 0px 0px 10px'}}
                     />
-                    <div style={{display: 'flex', alignItems: 'center', marginTop: 6}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'right', marginTop: 6}}>
 
-                        <FieldValue name='Requested By' value={userName}/>
-                        {userBelt &&
-                            <FieldValue name='User Belt' value={userBelt} style={{marginLeft: 10}}/>
-                        }
+                        <FieldValue name='Request Date' value={dayjs(entry.dateRequested).format('MMM DD, YYYY')}/>
                         <div style={{marginLeft: 25, marginRight: 15, width: 40, display: 'flex'}}>
                             <div style={{width: 20}}>
                                 {!!entry.media?.length && <CameraAltIcon fontSize='small'/>}
@@ -99,41 +100,41 @@ function LockRequestEntry({entry, expanded, onExpand}) {
             </AccordionSummary>
             {
                 expanded &&
-                <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
+                <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
+
                     <div style={{display: flexStyle, width: '100%'}}>
-                        <div style={{display: 'flex'}}>
-                            {
-                                !!entry.lockingMechanisms?.length &&
-                                <FieldValue value={
-                                    <FieldValue name='Locking Mechanisms' value={entry.lockingMechanisms.join(', ')}/>
-                                }/>
-                            }
-                        </div>
                         {
-                            !!entry.features?.length &&
-                            <FieldValue value={
-                                <FieldValue name='Features' value={entry.features.join(', ')}/>
-                            }/>
+                            !!entry.features?.length && entry.features?.length > 99 &&
+                            <FieldValue name='Features' value={entry.features.join(', ')} style={{marginRight: 10}}/>
+
                         }
                         {
                             !!entry.approximateBelt &&
-                            <FieldValue value={
-                                <FieldValue name='Suggested Belt' value={`${entry.approximateBelt} Belt`}/>
-                            }/>
+                            <FieldValue name='Suggested Belt' value={`${entry.approximateBelt} Belt`}
+                                        style={{marginRight: 10}}/>
                         }
+                        {
+                            !!entry.hazLocc &&
+                            <FieldValue name='Has Lock(s)' value={entry.hazLocc} style={{marginRight: 10}}/>
+                        }
+                        <div style={{display: flexStyle, flexGrow: 1, justifyContent: 'right', marginRight: 15}}>
+                            <FieldValue name='Requested By' value={userName + userBelt}/>
+                        </div>
+
                     </div>
                     {
                         !!entry.notes?.length &&
-                        <FieldValue value={
-                            <FieldValue name='Notes' value={entry.notes}/>
-                        }/>
+                        <FieldValue name='Notes' value={entry.notes}/>
                     }
                     {
                         !!entry.media?.length &&
-                        <FieldValue value={
+                        <div style={{marginLeft: 6}}>
                             <LockImageGallery entry={entry}/>
-                        }/>
+                        </div>
                     }
+                    <AccordionActions>
+                        <CopyLinkToRequestButton entry={entry}/>
+                    </AccordionActions>
                 </AccordionDetails>
             }
         </Accordion>
