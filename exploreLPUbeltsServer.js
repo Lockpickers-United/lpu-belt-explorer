@@ -9,9 +9,10 @@ import dayjs from 'dayjs'
 import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
-import upload from './projects/uploadContent/uploadContent.js'
 import saveRequest from './projects/saveRequest/saveRequest.js'
 import getAllEvidence from './projects/collections/allEvidenceExport.js'
+import upload from './projects/uploadContent/uploadContent.js'
+import requestLock from './projects/uploadContent/requestLock.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -66,16 +67,18 @@ app.get('/flickr-info', async (req, res) => {
 
 app.get('/save-request', async (req, res) => {
     myEmitter.emit('myEvent', 'message save requested')
-    await saveRequest(req, res).then(results => {
-        //res.send(results)
-    })
+    await saveRequest(req, res).then()
 })
 
 
 app.post('/upload', async (req, res) => {
     myEmitter.emit('myEvent', 'Upload content requested')
-    // TODO: re-enable now that uploads are in a separate directory?
     await upload(req, res).then()
+})
+
+app.post('/request-lock', async (req, res) => {
+    myEmitter.emit('myEvent', 'Lock Request requested')
+    await requestLock(req, res).then()
 })
 
 

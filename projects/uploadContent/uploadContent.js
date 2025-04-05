@@ -5,8 +5,12 @@ import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import {contentUploadRecipients} from '../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
-
 const execAsync = util.promisify(exec)
+
+/**
+ * @prop photoCredit
+ * @prop lockId
+ */
 
 const uploadDir = '/home/dh_m5s5pf/uploads'
 
@@ -44,7 +48,6 @@ export default async function upload(req, res) {
     })
 
     await form.parse(req, async function (err, fields) {
-
         if (err) {
             console.error('Form Parse Error', err)
             res.status(500).send('A error occurred parsing the form')
@@ -69,11 +72,17 @@ export default async function upload(req, res) {
             return
         }
 
-
         const output = await fs.createWriteStream(destinationFile)
         const archive = archiver('zip', {
             zlib: {level: 9} // Sets the compression level.
         })
+
+        const html = `<strong>Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}</strong><br/><br/>`
+        let fieldsHtml = html + "<table>"
+        Object.keys(fields).map((key) => {
+            fieldsHtml += `<tr><td>${key}</td><td>${fields[key]}</td></tr>`
+        })
+        fieldsHtml += '</table>'
 
         output.on('close', async function () {
             console.log('Files zipped successfully to', destinationFile)
@@ -84,7 +93,7 @@ export default async function upload(req, res) {
                     to: contentUploadRecipients,
                     subject: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
                     text: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit} (text)`,
-                    html: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
+                    html: fieldsHtml,
                     attachments: {filename: `${subdirs}.zip`, path: destinationFile}
                 })
                 console.log('Message sent: %s', email.messageId)
