@@ -11,6 +11,7 @@ import {prodUser} from '../../keys/users.js'
 import {spaceJoin} from '../util/stringUtils.js'
 import dayjs from 'dayjs'
 import {jsonIt} from '../util/jsonIt.js'
+import createThumbnails from '../util/createThumbnails.js'
 
 const execAsync = util.promisify(exec)
 
@@ -29,7 +30,6 @@ function handleError(res, message, error, status = 500) {
 
 export default async function upload(req, res) {
     let subdirs = ''
-    let detailsJson = {}
     let filepaths = []
 
     const form = formidable({
@@ -44,9 +44,8 @@ export default async function upload(req, res) {
 
             const originaFilenameParts = originalFilename.split('/')
             const filename = originaFilenameParts.pop()
-            const filenameParts = filename.split('.')
-            const fileExt = filenameParts.pop()
-            const basename = slugify(filenameParts.join('.')) + '.' + slugify(fileExt)
+            const filenameParts = filename.match(/(.*)(\..\w*$)/)
+            const basename = slugify(filenameParts[1]) + '.' + slugify(filenameParts[2])
 
             subdirs = originaFilenameParts.map(slugify).join('').replace(/\s+/g, '-')
             filepaths.push(`${serverPath}/${subdirs}/${basename}`)
@@ -54,10 +53,24 @@ export default async function upload(req, res) {
         }
     })
 
-    await form.parse(req, async function (err, fields) {
+    await form.parse(req, async function (err, fields, files) {
         if (err) return handleError(res, 'Form Parse Error', err)
 
-        //jsonIt('form fields', fields)
+        /*
+        const sizes = [400, 1600]
+        const images = {}
+        await Promise.all(files.files.map(file => {
+            createThumbnails({inputFile: file.filepath, sizes})
+                .then(info => {
+                    console.log('Thumbnail info:', info)
+                    info.forEach(thumbnail => {
+                        setDeep(images, [file, thumbnail.size], thumbnail.filename)
+                    })
+                })
+        })).then(() => {
+            jsonIt('images', images)
+        })
+        */
 
         for (const fieldName in fields) {
             if (!Array.isArray(fields[fieldName])) {
@@ -83,27 +96,22 @@ export default async function upload(req, res) {
             },
             userBelt: fields.userBelt?.firstValue(),
             notes: fields.notes?.firstValue(),
-            media: filepaths.map((filepath, index) => ({
-                title: `By: ${fields.discordUsername || fields.redditUsername}`,
-                fullUrl: filepath,
-                fullSizeUrl: filepath,
-                thumbnailUrl: filepath,
-                sequenceId: index+1,
-                dateAdded: dayjs().toISOString(),
-                subtitle: 'CC BY-NC-SA 4.0'
-            })),
             hazLocc: fields.hazLocc?.firstValue(),
-            dateRequested: dayjs().toISOString()
+            dateRequested: dayjs().toISOString(),
+            status: 'Requested'
         }
 
-        let currentRequests = []
-        try {
-            const freshJson = fs.readFileSync(datafile, 'utf8')
-            currentRequests = JSON.parse(freshJson)
-        } catch (error) {
-            console.warn('No existing JSON or failed to parse:', error.message)
-        }
+        entry.media = await Promise.all(filepaths.map(async (filepath, index) => ({
+            title: `By: ${fields.discordUsername || fields.redditUsername}`,
+            fullUrl: filepath,
+            fullSizeUrl: (await createThumbnails({inputFile: files.files[index].filepath, width: 1024})).replace(uploadDir, serverPath),
+            thumbnailUrl: (await createThumbnails({inputFile: files.files[index].filepath, width: 500})).replace(uploadDir, serverPath),
+            sequenceId: index + 1,
+            dateAdded: dayjs().toISOString(),
+            subtitle: 'CC BY-NC-SA 4.0'
+        })))
 
+        let currentRequests = getCurrentRequests()
         currentRequests.push(entry)
 
         try {
@@ -112,39 +120,18 @@ export default async function upload(req, res) {
             return handleError(res, 'JSON write error', err)
         }
 
-        let csv = 'Lock Name,Locking Mechanisms,Approximate Belt,Discord Username,Reddit Username,User Belt,Has Lock(s),Notes,Date Requested,Link\n'
-        currentRequests
-            .sort((a, b) => {
-                return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
-            })
-            .forEach(item => {
-                const {
-                    id,
-                    lockName,
-                    lockingMechanisms,
-                    approximateBelt,
-                    usernames,
-                    userBelt,
-                    hazLocc,
-                    notes,
-                    dateRequested
-                } = item
-                csv += `${lockName},${lockingMechanisms.join('; ')},${approximateBelt || ''},${usernames.discord || ''},${usernames.reddit || ''},${userBelt || ''},${hazLocc || ''},${notes || ''},`
-                    + `${dayjs(dateRequested).format('MMM DD YYYY hh:mma') || ''},`
-                    + `https://dev.lpubelts.com/#/content/lockrequest/view?id=${id}\n`
-            })
-
         try {
-            await writeFile(datafile.replace('.json', '.csv'), csv, 'utf8')
+            await saveRequestsCsv(currentRequests)
         } catch (err) {
-            return handleError(res, 'JSON write error', err)
+            return handleError(res, 'CSV write error', err)
         }
+
 
         const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
         const destinationFile = `${destination}.zip`
 
         if (subdirs) {
-            detailsJson = JSON.stringify(fields, null, 2)
+            const detailsJson = JSON.stringify(fields, null, 2)
 
             await runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.discordUsername || fields.redditUsername}' -Title='${lockName}' -gps:all= -UserComment='${fields.id}' '${destination}'`)
 
@@ -199,8 +186,54 @@ export default async function upload(req, res) {
         }
 
         console.log('done')
-        res.status(200).send('Files uploaded successfully')
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(entry, null, 2));
     })
+}
+
+async function saveRequestsCsv(currentRequests) {
+    if (!currentRequests || !currentRequests.length) {
+        currentRequests = getCurrentRequests()
+    }
+    let csv = 'Lock Name,Locking Mechanisms,Approximate Belt,Discord Username,Reddit Username,User Belt,Has Lock(s),Notes,Date Requested,Status,Link\n'
+    currentRequests
+        .sort((a, b) => {
+            return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
+        })
+        .forEach(item => {
+            const {
+                id,
+                lockName,
+                lockingMechanisms,
+                approximateBelt,
+                usernames,
+                userBelt,
+                hazLocc,
+                notes,
+                dateRequested,
+                status
+            } = item
+            csv += `${lockName},${lockingMechanisms.join('; ')},${approximateBelt || ''},${usernames.discord || ''},${usernames.reddit || ''},${userBelt || ''},${hazLocc || ''},${notes || ''},`
+                + `${dayjs(dateRequested).format('MMM DD YYYY hh:mma') || ''},${status || ''},`
+                + `https://dev.lpubelts.com/#/content/lockrequest/view?id=${id}\n`
+        })
+
+    try {
+        await writeFile(datafile.replace('.json', '.csv'), csv, 'utf8')
+    } catch (err) {
+        return err
+    }
+}
+
+function getCurrentRequests() {
+    let currentRequests = []
+    try {
+        const freshJson = fs.readFileSync(datafile, 'utf8')
+        currentRequests = JSON.parse(freshJson)
+    } catch (error) {
+        console.warn('No existing JSON or failed to parse:', error.message)
+    }
+    return currentRequests
 }
 
 async function runCommand(command) {

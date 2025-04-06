@@ -1,14 +1,20 @@
 import sharp from 'sharp'
 
-export default function createThumbnails({inputFile, outputFile}) {
-    sharp(inputFile)
-        .resize(400)
-        .toFile(outputFile, function(err) {
-            if (err) {
-                console.error('Error creating thumbnail:', err)
-            } else {
-                console.log('Thumbnail created:', outputFile)
-            }
-        })
+export default async function createThumbnails({inputFile, width = 400}) {
+
+    const pathComponents = inputFile.split('/')
+    const filename = pathComponents.pop()
+    const filenameParts = filename.match(/(.*)\.(.\w*$)/)
+    const outputFile = `${pathComponents.join('/')}/${filenameParts[1]}-${width}.${filenameParts[2]}`
+    try {
+        // Resize and save all sizes in parallel
+            return await sharp(inputFile)
+                .resize({width: width, withoutEnlargement: true})
+                .toFile(outputFile)
+                .then(info => (outputFile))
+    } catch (err) {
+        console.error('Image processing failed, details:', err.message)
+    }
+
 }
 
