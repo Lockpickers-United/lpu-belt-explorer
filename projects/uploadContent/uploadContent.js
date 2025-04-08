@@ -1,4 +1,4 @@
-import formidable from './src/index.js'
+import formidable from '../util/formidable/src/index.js'
 import fs from 'fs'
 import archiver from 'archiver'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'

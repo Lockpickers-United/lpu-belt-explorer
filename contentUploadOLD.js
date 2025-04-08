@@ -2,7 +2,7 @@ import express from 'express';
 import http from 'http'
 import https from 'https'
 import cors from 'cors'
-import formidable from 'formidable';
+import formidable from 'src';
 import fs from 'fs';
 import EventEmitter from 'events'
 import dayjs from 'dayjs'

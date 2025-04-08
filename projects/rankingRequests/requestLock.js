@@ -1,8 +1,7 @@
-import formidable from './src/index.js'
+import formidable from '../util/formidable/src/index.js'
 import fs from 'fs'
 
 const {writeFile} = fs.promises
-import archiver from 'archiver'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import {contentUploadRecipients} from '../../keys/users.js'
 import util from 'util'
@@ -28,7 +27,7 @@ function handleError(res, message, error, status = 500) {
     res.status(status).send({status, message})
 }
 
-export default async function upload(req, res) {
+export default async function requestLock(req, res) {
     let subdirs = ''
     let filepaths = []
 
@@ -56,22 +55,6 @@ export default async function upload(req, res) {
     await form.parse(req, async function (err, fields, files) {
         if (err) return handleError(res, 'Form Parse Error', err)
 
-        /*
-        const sizes = [400, 1600]
-        const images = {}
-        await Promise.all(files.files.map(file => {
-            createThumbnails({inputFile: file.filepath, sizes})
-                .then(info => {
-                    console.log('Thumbnail info:', info)
-                    info.forEach(thumbnail => {
-                        setDeep(images, [file, thumbnail.size], thumbnail.filename)
-                    })
-                })
-        })).then(() => {
-            jsonIt('images', images)
-        })
-        */
-
         for (const fieldName in fields) {
             if (!Array.isArray(fields[fieldName])) {
                 fields[fieldName] = [fields[fieldName]]
@@ -81,24 +64,23 @@ export default async function upload(req, res) {
         const lockName = spaceJoin(fields.make || fields.newBrand, fields.model)
 
         const entry = {
-            lockName,
             makeModels: [{
                 make: fields.make?.firstValue() || fields.newBrand?.firstValue(),
                 model: fields.model.firstValue()
             }],
             lockingMechanisms: fields.lockingMechanisms?.[0]?.split(',') || [],
-            features: fields.features?.[0]?.split(',') || [],
             id: fields.id?.firstValue(),
             approximateBelt: fields.approxBelt?.firstValue(),
             usernames: {
                 discord: fields.discordUsername?.firstValue(),
                 reddit: fields.redditUsername?.firstValue()
             },
+            displayName: fields.displayName?.firstValue(),
             userBelt: fields.userBelt?.firstValue(),
             notes: fields.notes?.firstValue(),
             hazLocc: fields.hazLocc?.firstValue(),
+            requestStatus: 'Pending',
             dateRequested: dayjs().toISOString(),
-            status: 'Requested'
         }
 
         entry.media = await Promise.all(filepaths.map(async (filepath, index) => ({
@@ -126,11 +108,8 @@ export default async function upload(req, res) {
             return handleError(res, 'CSV write error', err)
         }
 
-
-        const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
-        const destinationFile = `${destination}.zip`
-
         if (subdirs) {
+            const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
             const detailsJson = JSON.stringify(fields, null, 2)
 
             await runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.discordUsername || fields.redditUsername}' -Title='${lockName}' -gps:all= -UserComment='${fields.id}' '${destination}'`)
@@ -141,20 +120,6 @@ export default async function upload(req, res) {
                 return handleError(res, 'uploadData writeFile error', err)
             }
 
-            const output = fs.createWriteStream(destinationFile)
-            const archive = archiver('zip', {zlib: {level: 9}})
-
-            archive.pipe(output)
-            archive.directory(destination, false)
-
-            archive.on('error', err => handleError(res, 'File compression error', err))
-
-            try {
-                await archive.finalize()
-                console.log('Files zipped successfully to', destinationFile)
-            } catch (err) {
-                return handleError(res, 'Failed to finalize zip', err)
-            }
         }
 
         const html = `<strong>Lock addition request for ${sanitizeHTML(lockName)} by ${sanitizeHTML(fields.discordUsername || fields.redditUsername)}</strong><br/><br/>`
@@ -171,18 +136,10 @@ export default async function upload(req, res) {
                 subject: `Lock Request: ${lockName}`,
                 text: `Lock Request: ${lockName}`,
                 html: fieldsHtml,
-                attachments: subdirs ? {filename: `${subdirs}.zip`, path: destinationFile} : null
             })
             console.log('Message sent: %s', email.messageId)
         } catch (error) {
             return handleError(res, 'Email send error', error)
-        }
-
-        try {
-            fs.rmSync(destinationFile, {recursive: true, force: true})
-            console.log('Zip file removed successfully')
-        } catch (error) {
-            console.error('Error deleting zip file:', error.message)
         }
 
         console.log('done')

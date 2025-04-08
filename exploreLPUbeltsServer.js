@@ -12,7 +12,8 @@ import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtil
 import saveRequest from './projects/saveRequest/saveRequest.js'
 import getAllEvidence from './projects/collections/allEvidenceExport.js'
 import upload from './projects/uploadContent/uploadContent.js'
-import requestLock from './projects/uploadContent/requestLock.js'
+import requestLock from './projects/rankingRequests/requestLock.js'
+import updateRequest from './projects/rankingRequests/updateRequest.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -23,6 +24,7 @@ const credentials = {key: privateKey, cert: certificate}
 
 const app = express()
 app.use(cors())
+app.use(express.json())
 
 const myEmitter = new EventEmitter()
 myEmitter.on('myEvent', (data) => {
@@ -77,8 +79,13 @@ app.post('/upload', async (req, res) => {
 })
 
 app.post('/request-lock', async (req, res) => {
-    myEmitter.emit('myEvent', 'Lock Request requested')
+    myEmitter.emit('myEvent', 'Ranking Request submitted')
     await requestLock(req, res).then()
+})
+
+app.post('/update-request', async (req, res) => {
+    myEmitter.emit('myEvent', 'Ranking request update requested')
+    await updateRequest(req, res).then()
 })
 
 
