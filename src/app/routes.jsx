@@ -328,14 +328,14 @@ export default [
             {
                 path: '/content/lockrequest',
                 lazy: async () => {
-                    const {default: RequestLockRoute} = await import('../content/lockRequests/RequestLockRoute.jsx')
+                    const {default: RequestLockRoute} = await import('../rankingRequests/RequestLockRoute.jsx')
                     return {element: <RequestLockRoute/>}
                 }
             },
             {
                 path: '/content/lockrequest/view',
                 lazy: async () => {
-                    const {default: ViewLockRequestsRoute} = await import('../content/lockRequests/ViewLockRequestsRoute.jsx')
+                    const {default: ViewLockRequestsRoute} = await import('../rankingRequests/ViewLockRequestsRoute.jsx')
                     return {element: <ViewLockRequestsRoute/>}
                 }
             }

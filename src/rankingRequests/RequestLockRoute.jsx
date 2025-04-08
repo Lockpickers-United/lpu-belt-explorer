@@ -1,23 +1,23 @@
 import React, {useContext} from 'react'
-import Nav from '../../nav/Nav.jsx'
-import useWindowSize from '../../util/useWindowSize.jsx'
-import usePageTitle from '../../util/usePageTitle.jsx'
-import DataContext from '../../context/DataContext.jsx'
-import {requestedLocks} from '../../data/dataUrls'
-import useData from '../../util/useData.jsx'
-import ViewLockRequests from './ViewLockRequests.jsx'
-import ErrorMessage from '../../misc/ErrorMessage.jsx'
-import LoadingDisplay from '../../util/LoadingDisplay.jsx'
-import {FilterProvider} from '../../context/FilterContext.jsx'
+import Nav from '../nav/Nav.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
+import usePageTitle from '../util/usePageTitle.jsx'
+import DataContext from '../context/DataContext.jsx'
+import {requestedLocks} from '../data/dataUrls'
+import useData from '../util/useData.jsx'
+import ErrorMessage from '../misc/ErrorMessage.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from './LockRequestsDataProvider.jsx'
-import {lockRequestFilterFields} from '../../data/filterFields'
+import {lockRequestFilterFields} from '../data/filterFields'
+import RequestLock from './RequestLock.jsx'
 
 
-export default function ViewLockRequestsRoute() {
+export default function RequestLockRoute() {
     const {profile} = useContext(DataContext)
     const {isMobile} = useWindowSize()
 
-    usePageTitle('LPU Belt Explorer - View Ranking Requests')
+    usePageTitle('LPU Belt Explorer - Lock Ranking Request')
 
     const {data, loading, error, errorMessage, refresh} = useData({url})
 
@@ -39,14 +39,14 @@ export default function ViewLockRequestsRoute() {
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
             <DataProvider allEntries={requestData}>
-                <Nav title='View Ranking Requests' extras={extras}/>
+                <Nav title='Lock Ranking Request' extras={extras}/>
 
                 {error && <ErrorMessage errorMessage={errorMessage}/>}
 
                 {loading && <LoadingDisplay/>}
 
                 {!loading && !error && !!data &&
-                    <ViewLockRequests data={requestData} profile={profile} refresh={refresh}/>
+                    <RequestLock data={requestData} profile={profile} refresh={refresh}/>
                 }
 
             </DataProvider>

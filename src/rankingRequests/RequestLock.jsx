@@ -1,23 +1,24 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import axios from 'axios'
-import Dropzone from '../Dropzone.jsx'
-import useWindowSize from '../../util/useWindowSize.jsx'
+import Dropzone from '../content/Dropzone.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 import Dialog from '@mui/material/Dialog'
-import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
-import Tracker from '../../app/Tracker.jsx'
-import SelectBox from '../SelectBox.jsx'
-import {uniqueBelts} from '../../data/belts'
-import entryName from '../../entries/entryName'
-import {setDeep, setDeepPush, setDeepUnique} from '../../util/setDeep'
-import AutoCompleteBox from '../AutoCompleteBox.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
+import Tracker from '../app/Tracker.jsx'
+import SelectBox from '../content/SelectBox.jsx'
+import {uniqueBelts} from '../data/belts'
+import entryName from '../entries/entryName'
+import {setDeep, setDeepPush, setDeepUnique} from '../util/setDeep'
+import AutoCompleteBox from '../content/AutoCompleteBox.jsx'
 import Link from '@mui/material/Link'
 import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
-import allEntries from '../../data/data.json'
-import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
+import allEntries from '../data/data.json'
+import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import {useNavigate} from 'react-router-dom'
+import DBContext from '../app/DBContext.jsx'
 
 /**
  * @prop newBrand
@@ -25,6 +26,7 @@ import {useNavigate} from 'react-router-dom'
  */
 
 function RequestLock({profile, refresh}) {
+    const {rankingRequests, updateRankingRequest} = useContext(DBContext)
 
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
@@ -69,10 +71,26 @@ function RequestLock({profile, refresh}) {
             }, {})
     }, [])
 
+    const requestedMakes = useMemo(() => {
+        return rankingRequests
+            .filter(request => request.makeModels && request.makeModels[0].make && request.makeModels[0].model)
+            .map(request => request.makeModels[0].make)
+            .filter(x => x)
+    }, [rankingRequests])
+
+    const allMakes = useMemo(() => {
+        return [...new Set([...lockData.allMakes, ...requestedMakes])]
+            .sort((a,b) => {
+                return a.localeCompare(b)
+            })
+    }, [lockData, requestedMakes])
+
     const uploadable = ((form['make'] || form.newBrand)
-        && form.model
-        && form.lockingMechanisms && form.lockingMechanisms.length > 0
-        && (form.redditUsername || form.discordUsername))
+            && form.model
+            && form.lockingMechanisms && form.lockingMechanisms.length > 0
+            && (form.redditUsername || form.discordUsername))
+        && files.length > 0
+
     const prefix = `${form.make || form.newBrand}_${form.model}`.replace('/', '+')
     const suffix = form.redditUsername && form.discordUsername
         ? [form.redditUsername, form.discordUsername].join('_').replace('/', '+')
@@ -81,24 +99,23 @@ function RequestLock({profile, refresh}) {
     const handleSubmit = async (event) => {
         event.preventDefault()
         setUploading(true)
-        const formCopy = {...form}
-        delete formCopy.altBrand
-        delete formCopy.newBrand
-        setForm(formCopy)
-
-        setForm({
+        const formCopy = {
             ...form,
             displayName: profile?.displayName,
             make: form.make || form.newBrand,
             droppedFileNames: files.map(file => {
                 return file.name
-            })
-        })
+            }),
+            requestStatus : 'Pending',
+        }
+        delete formCopy.altBrand
+        delete formCopy.newBrand
 
         const formData = new FormData()
-        Object.keys(form).forEach(key => {
-            formData.append(key, form[key])
+        Object.keys(formCopy).forEach(key => {
+            formData.append(key, formCopy[key])
         })
+        setForm(formCopy)
 
         const uploadsDir = `${prefix}-${suffix}`.toLowerCase()
 
@@ -113,7 +130,8 @@ function RequestLock({profile, refresh}) {
         )
             .then(response => {
                 setResponse(response.data)
-                //console.log('response.data', response.data)
+                console.log('response.data', response.data)
+                updateRankingRequest(response.data)
             })
             .catch(error => {
                 console.error('upload error', error)
@@ -182,7 +200,6 @@ function RequestLock({profile, refresh}) {
                 &nbsp; &nbsp; <Link onClick={() => handleReload()}
                                     style={{color: '#444', cursor: 'pointer'}}>RELOAD</Link>
 
-
                 <div style={{
                     fontSize: '1.5rem',
                     fontWeight: 500,
@@ -204,7 +221,7 @@ function RequestLock({profile, refresh}) {
                                             Choose Brand
                                         </div>
                                         <AutoCompleteBox changeHandler={handleFormChange}
-                                                         options={lockData.allMakes.sort()}
+                                                         options={allMakes}
                                                          name={'make'} style={{width: 300, opacity: brandBoxOpacity}}
                                                          reset={acReset} disabled={form.altBrand}/>
                                     </div>

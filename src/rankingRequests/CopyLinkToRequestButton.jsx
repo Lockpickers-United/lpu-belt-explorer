@@ -3,7 +3,7 @@ import {enqueueSnackbar} from 'notistack'
 import LinkIcon from '@mui/icons-material/Link'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import entryName from '../../entries/entryName'
+import entryName from '../entries/entryName'
 
 function CopyLinkToRequestButton({entry, nameType}) {
     const handleClick = useCallback(async () => {

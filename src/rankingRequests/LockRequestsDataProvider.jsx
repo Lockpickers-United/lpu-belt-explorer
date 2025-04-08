@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DataContext from '../../context/DataContext'
-import FilterContext from '../../context/FilterContext'
+import DataContext from '../context/DataContext.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
 
@@ -17,10 +17,14 @@ export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
 
+    const serverUrl = useMemo(() => 'https://explore.lpubelts.com:8443',[])
+    const requestStatuses = useMemo(() => ['Pending', 'Submitted', 'Under Review', 'Ranked', 'Declined', 'Deleted'],[])
+
     const mappedEntries = useMemo(() => {
         return allEntries
             .map(entry => ({
                 ...entry,
+                originalEntry: entry,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 fuzzy: removeAccents(
                     entry.makeModels
@@ -34,7 +38,6 @@ export function DataProvider({children, allEntries, profile}) {
                         ])
                         .join(',')
                 ),
-                hasDetails: !!entry.features?.length || !!entry.lockingMechanisms?.length || !!entry.approximateBelt,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     dayjs(entry.dateRequested).isAfter(dayjs().subtract(1, 'days')) ? 'Requested Recently' : undefined,
@@ -110,8 +113,10 @@ export function DataProvider({children, allEntries, profile}) {
         visibleEntries,
         getEntryFromId,
         expandAll,
-        profile
-    }), [allEntries, getEntryFromId, visibleEntries, expandAll, profile])
+        profile,
+        requestStatuses,
+        serverUrl
+    }), [allEntries, visibleEntries, getEntryFromId, expandAll, profile, requestStatuses, serverUrl])
 
     return (
         <DataContext.Provider value={value}>

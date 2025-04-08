@@ -44,6 +44,8 @@ export function DBProvider({children}) {
     const [activityLoaded, setActivityLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
     const [systemMessages, setSystemMessages] = useState([])
+    const [rankingRequests, setRankingRequests] = useState([])
+    const [rankingRequestsAccepted, setRankingRequestsAccepted] = useState([])
 
     const dbLoaded = collectionDBLoaded && activityLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
@@ -415,7 +417,7 @@ export function DBProvider({children}) {
             }
         }
 
-        loadActivity()
+        loadActivity().then()
     }, [authLoaded, isLoggedIn, user])
 
     // System Messages Subscription
@@ -458,6 +460,56 @@ export function DBProvider({children}) {
         await updateDoc(ref, {dismissedMessages: deleteField()})
     }, [dbError])
 
+    // Ranking Request Subscriptions
+    useEffect(() => {
+        const q = query(collection(db, 'ranking-requests'))
+        onSnapshot(q, querySnapshot => {
+            const requests = querySnapshot.docs.map(doc => doc.data())
+            setRankingRequests(requests)
+        }, error => {
+            console.error('Error getting ranking requests from DB:', error)
+        })
+
+        const q2 = query(collection(db, 'ranking-requests-accepted'))
+        onSnapshot(q2, querySnapshot => {
+            const requests = querySnapshot.docs.map(doc => doc.data())
+            setRankingRequestsAccepted(requests)
+        }, error => {
+            console.error('Error getting ranking requests from DB:', error)
+        })
+    }, [])
+
+    const updateRankingRequest = useCallback(async (request) => {
+        if (dbError) return false
+        const id = request.id
+        const ref = doc(db, 'ranking-requests', id)
+        await setDoc(ref, request)
+    }, [dbError])
+
+    const updateAcceptedRankingRequest = useCallback(async (request) => {
+        if (dbError) return false
+        const id = request.id
+        const ref = doc(db, 'ranking-requests-accepted', id)
+        await setDoc(ref, request)
+    }, [dbError])
+
+    const acceptRankingRequest = useCallback(async (request) => {
+        if (dbError) return false
+        const id = request.id
+        const batch = writeBatch(db)
+        const acceptedRef = doc(db, 'ranking-requests-accepted', id)
+        const requestRef = doc(db, 'ranking-requests', id)
+        batch.set(acceptedRef, request)
+        batch.delete(requestRef)
+        try {
+            await batch.commit()
+            return true
+        } catch (error) {
+            console.error('Batch commit failed: ', error)
+            return false
+        }
+    }, [dbError])
+
     const value = useMemo(() => ({
         dbLoaded,
         adminRole,
@@ -486,7 +538,12 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
+        removeDismissedMessages,
+        rankingRequests,
+        rankingRequestsAccepted,
+        updateRankingRequest,
+        acceptRankingRequest,
+        updateAcceptedRankingRequest
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -514,7 +571,12 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
+        removeDismissedMessages,
+        rankingRequests,
+        rankingRequestsAccepted,
+        updateRankingRequest,
+        acceptRankingRequest,
+        updateAcceptedRankingRequest
     ])
 
     return (
@@ -671,7 +733,7 @@ async function pickerActivityCache(userId, update) {
         const result = [...evidence, ...preserveAwards, ...newAwards]
         if (update) {
             await setDoc(docRef, {payload: JSON.stringify(result)})
-            updateUserStatistics(userId)
+            await updateUserStatistics(userId)
         }
         return result
     }

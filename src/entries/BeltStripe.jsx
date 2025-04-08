@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
-function BeltStripe({value}) {
+function BeltStripe({value = 'Unranked'}) {
 
     const bgColor = belts[value]
         ? belts[value].color

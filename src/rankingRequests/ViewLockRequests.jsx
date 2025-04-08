@@ -1,15 +1,15 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import LockRequestEntry from './LockRequestEntry.jsx'
-import DataContext from '../../locks/LockDataProvider.jsx'
-import FilterContext from '../../context/FilterContext.jsx'
-import SearchFilterBar from '../../filters/SearchFilterBar.jsx'
-import {lockRequestSortFields} from '../../data/sortFields'
-import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
+import DataContext from '../locks/LockDataProvider.jsx'
+import FilterContext from '../context/FilterContext.jsx'
+import SearchFilterBar from '../filters/SearchFilterBar.jsx'
+import {lockRequestSortFields} from '../data/sortFields'
+import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 
 
-export default function ViewLockRequests({refresh}) {
+export default function ViewLockRequests({requestMod}) {
 
     const {visibleEntries = [], expandAll} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
@@ -41,7 +41,6 @@ export default function ViewLockRequests({refresh}) {
 
                 <Link onClick={() => console.log('visibleEntries', visibleEntries)}
                       style={{color: '#444', cursor: 'pointer'}}>LOG</Link>
-                &nbsp; &nbsp; <Link onClick={() => refresh()} style={{color: '#444', cursor: 'pointer'}}>RELOAD</Link>
 
                 <SearchFilterBar sortValues={lockRequestSortFields} label={'Lock Requests'} resetAll={true}/>
 
@@ -51,6 +50,7 @@ export default function ViewLockRequests({refresh}) {
                         entry={entry}
                         expanded={entry.id === entryExpanded || !!expandAll}
                         onExpand={setEntryExpanded}
+                        requestMod={requestMod}
                     />
 
                 ))}
