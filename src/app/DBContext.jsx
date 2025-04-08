@@ -34,6 +34,12 @@ import {
 import collectionOptions from '../data/collectionTypes'
 import isValidUrl from '../util/isValidUrl'
 
+/**
+ * @typedef {object} award
+ * @prop award.awardType
+ * @prop awardType
+ */
+
 const DBContext = React.createContext({})
 
 export function DBProvider({children}) {
@@ -462,7 +468,7 @@ export function DBProvider({children}) {
 
     // Ranking Request Subscriptions
     useEffect(() => {
-        const q = query(collection(db, 'ranking-requests'))
+        const q = query(collection(db, 'ranking-requests'), where('requestStatus', '!=', 'Deleted'))
         onSnapshot(q, querySnapshot => {
             const requests = querySnapshot.docs.map(doc => doc.data())
             setRankingRequests(requests)
@@ -470,7 +476,7 @@ export function DBProvider({children}) {
             console.error('Error getting ranking requests from DB:', error)
         })
 
-        const q2 = query(collection(db, 'ranking-requests-accepted'))
+        const q2 = query(collection(db, 'ranking-requests-accepted'), where('requestStatus', '!=', 'Deleted'))
         onSnapshot(q2, querySnapshot => {
             const requests = querySnapshot.docs.map(doc => doc.data())
             setRankingRequestsAccepted(requests)
@@ -480,10 +486,19 @@ export function DBProvider({children}) {
     }, [])
 
     const updateRankingRequest = useCallback(async (request) => {
-        if (dbError) return false
+        if (dbError) return { success: false, message: 'Database error.' }
         const id = request.id
-        const ref = doc(db, 'ranking-requests', id)
-        await setDoc(ref, request)
+        const ref = doc(db, 'ranking-requests-accepted', id)
+        try {
+            await setDoc(ref, request)
+            return { success: true, message: 'Request updated successfully.' }
+        } catch (error) {
+            console.error('Error updating ranking request: ', error)
+            if (error.code === 'permission-denied') {
+                return { success: false, message: 'You do not have permission to update this request.' }
+            }
+            return { success: false, message: `Error updating request: ${error.message}` }
+        }
     }, [dbError])
 
     const updateAcceptedRankingRequest = useCallback(async (request) => {
@@ -491,6 +506,13 @@ export function DBProvider({children}) {
         const id = request.id
         const ref = doc(db, 'ranking-requests-accepted', id)
         await setDoc(ref, request)
+    }, [dbError])
+
+    const deleteRankingRequest = useCallback(async (request) => {
+        if (dbError) return false
+        const id = request.id
+        const ref = doc(db, 'ranking-requests-accepted', id)
+        await deleteDoc(ref)
     }, [dbError])
 
     const acceptRankingRequest = useCallback(async (request) => {
@@ -541,9 +563,10 @@ export function DBProvider({children}) {
         removeDismissedMessages,
         rankingRequests,
         rankingRequestsAccepted,
-        updateRankingRequest,
         acceptRankingRequest,
-        updateAcceptedRankingRequest
+        updateRankingRequest,
+        updateAcceptedRankingRequest,
+        deleteRankingRequest,
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -574,9 +597,10 @@ export function DBProvider({children}) {
         removeDismissedMessages,
         rankingRequests,
         rankingRequestsAccepted,
-        updateRankingRequest,
         acceptRankingRequest,
-        updateAcceptedRankingRequest
+        updateRankingRequest,
+        updateAcceptedRankingRequest,
+        deleteRankingRequest,
     ])
 
     return (

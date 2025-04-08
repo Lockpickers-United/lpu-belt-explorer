@@ -4,7 +4,7 @@ import DataContext from '../context/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
-import {statusSort} from './requestData'
+import {statusSort} from './rankingRequestData'
 
 /**
  * @typedef {object} entry

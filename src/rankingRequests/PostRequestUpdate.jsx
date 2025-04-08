@@ -1,5 +1,5 @@
 import {enqueueSnackbar} from 'notistack'
-import {serverUrl} from './requestData'
+import {serverUrl} from './rankingRequestData'
 
 export default async function postRequestUpdate({ entry, user }) {
     try {

@@ -1,5 +1,5 @@
 import {beltSort} from './belts'
-import {statusSort} from '../rankingRequests/requestData'
+import {statusSort} from '../rankingRequests/rankingRequestData'
 
 export const lockFilterFields = [
     {label: 'Make', fieldName: 'makes'},
