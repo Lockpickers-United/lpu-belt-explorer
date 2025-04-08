@@ -1,5 +1,9 @@
-export const beltColors =
-    ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
+
+export const beltColors = ['#e1e1e1', '#d3d31c', '#dc6532', '#34732f',
+        '#3e71bd', '#9f21e5', '#ab713d',
+        '#c52323', '#2c2c2c', '#525252']
+
+export const beltColorsOrig = ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
         '#0090de', '#634b9f', '#9d5918',
         '#ba0303', '#2c2c2c', '#464646']
 

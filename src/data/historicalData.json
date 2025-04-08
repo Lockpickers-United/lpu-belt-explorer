@@ -41163,7 +41163,7 @@
     ],
     "name": "EVVA 3KS, 3KS+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "version": "with False gates and no mastered sliders",
+    "version": "false gates and no mastered sliders",
     "features": [
       "Unsprung sliders",
       "False gates",
@@ -41606,8 +41606,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Magnet"
+      "Magnet",
+      "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "media": [
@@ -41799,7 +41799,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ False gates, 1 mastered lever",
+    "version": "false gates, 1 mastered lever",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -43797,7 +43797,7 @@
         "model": "Megacross"
       }
     ],
-    "version": "with pyramid drivers (SP?)",
+    "version": "with pyramid drivers",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -48921,8 +48921,7 @@
     "name": "Master Lock 160",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Slider"
+      "Pin-tumbler"
     ],
     "views": 1347,
     "lastUpdated": "2025-03-19T15:44:57.323Z",

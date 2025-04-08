@@ -13,9 +13,10 @@ function BrandBeltBar({beltData}) {
         : smallWindow ? 200
             :  180
 
+    const mb = 50
     const chartMargin = !smallWindow
-        ? {top: 0, right: 10, bottom: 50, left: 10}
-        : {top: 0, right: 20, bottom: 50, left: 20}
+        ? {top: 0, right: 10, bottom: mb, left: 10}
+        : {top: 0, right: 20, bottom: mb, left: 20}
 
     const labelColors =
         ['#000','#000','#000','#000',

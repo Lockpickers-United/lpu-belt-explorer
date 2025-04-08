@@ -44980,7 +44980,7 @@
         "model": "3KS+"
       }
     ],
-    "version": "with False gates and no mastered sliders",
+    "version": "false gates and no mastered sliders",
     "lockingMechanisms": [
       "Slider"
     ],
@@ -45538,8 +45538,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Magnet"
+      "Magnet",
+      "Pin-tumbler"
     ],
     "features": [
       "Magnetic rotors"
@@ -45715,7 +45715,7 @@
       }
     ],
     "views": 2133,
-    "lastUpdated": "2025-03-19T01:20:51.392Z"
+    "lastUpdated": "2025-04-03T13:00:52.667Z"
   },
   {
     "id": "4abcb403",
@@ -45730,7 +45730,7 @@
         "model": "484"
       }
     ],
-    "version": "w/ False gates, 1 mastered lever",
+    "version": "false gates, 1 mastered lever",
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
@@ -48063,7 +48063,7 @@
         "model": "Megacross"
       }
     ],
-    "version": "with pyramid drivers (SP?)",
+    "version": "with pyramid drivers",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -54141,8 +54141,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler",
-      "Slider"
+      "Pin-tumbler"
     ],
     "features": [
       "Under Review ⚑"
@@ -54178,7 +54177,7 @@
       }
     ],
     "views": 1347,
-    "lastUpdated": "2025-03-19T15:44:57.323Z"
+    "lastUpdated": "2025-04-03T13:00:52.670Z"
   },
   {
     "id": "a6f31065",

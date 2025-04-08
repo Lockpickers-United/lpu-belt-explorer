@@ -81,7 +81,7 @@
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 347,
+      "value": 348,
       "id": "pin-tumbler"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "label": "Multiple",
-      "value": 93,
+      "value": 92,
       "id": "multiple"
     },
     {
@@ -512,12 +512,12 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 23,
+        "value": 24,
         "id": "pin-tumbler"
       },
       {
         "label": "Multiple",
-        "value": 6,
+        "value": 5,
         "id": "multiple"
       },
       {
@@ -1737,6 +1737,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-03-27 12:40"
+    "updatedDateTime": "2025-04-03 21:17"
   }
 }
