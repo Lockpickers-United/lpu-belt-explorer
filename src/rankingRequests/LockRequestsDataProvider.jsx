@@ -4,6 +4,7 @@ import DataContext from '../context/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
+import {statusSort} from './requestData'
 
 /**
  * @typedef {object} entry
@@ -16,9 +17,6 @@ import removeAccents from 'remove-accents'
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
-
-    const serverUrl = useMemo(() => 'https://explore.lpubelts.com:8443',[])
-    const requestStatuses = useMemo(() => ['Pending', 'Submitted', 'Under Review', 'Ranked', 'Declined', 'Deleted'],[])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -40,8 +38,8 @@ export function DataProvider({children, allEntries, profile}) {
                 ),
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
-                    dayjs(entry.dateRequested).isAfter(dayjs().subtract(1, 'days')) ? 'Requested Recently' : undefined,
-                ].flat().filter(x => x),
+                    dayjs(entry.dateRequested).isAfter(dayjs().subtract(1, 'days')) ? 'Requested Recently' : undefined
+                ].flat().filter(x => x)
             }))
     }, [allEntries])
 
@@ -83,40 +81,39 @@ export function DataProvider({children, allEntries, profile}) {
 
         return sort
             ? searched.sort((a, b) => {
-                if (sort === 'popularity') {
-                    return b.collectionSaves - a.collectionSaves
-                        || b.views - a.views
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'alphaAscending') {
+                if (sort === 'alphaAscending') {
                     return a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaDescending') {
                     return b.fuzzy.localeCompare(a.fuzzy)
-                } else if (sort === 'recentlyUpdated') {
-                    return Math.floor(dayjs(b.lastUpdated).valueOf()/3600) - Math.floor(dayjs(a.lastUpdated).valueOf()/3600)
+                } else if (sort === 'requestStatus') {
+                     return statusSort(a.requestStatus, b.requestStatus)
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                }else if (sort === 'recentlyUpdated') {
+                    return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'dateRequested') {
                     return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else {
-                    return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
+                    return a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-            : searched.sort((a, b) => dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf())
+            : searched.sort((a, b) => a.fuzzy.localeCompare(b.fuzzy))
     }, [filters, mappedEntries, search, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
-    const value = useMemo(() => ({
-        allEntries,
-        visibleEntries,
-        getEntryFromId,
-        expandAll,
-        profile,
-        requestStatuses,
-        serverUrl
-    }), [allEntries, visibleEntries, getEntryFromId, expandAll, profile, requestStatuses, serverUrl])
+    const value = useMemo(() => {
+        return {
+            allEntries,
+            visibleEntries,
+            getEntryFromId,
+            expandAll,
+            profile,
+        }
+    }, [allEntries, visibleEntries, getEntryFromId, expandAll, profile])
 
     return (
         <DataContext.Provider value={value}>

@@ -1,6 +1,7 @@
 import {enqueueSnackbar} from 'notistack'
+import {serverUrl} from './requestData'
 
-export default async function postRequestUpdate({ entry, user, serverUrl }) {
+export default async function postRequestUpdate({ entry, user }) {
     try {
         const idToken = await user.getIdToken()
         const response = await fetch(`${serverUrl}/update-request`, {

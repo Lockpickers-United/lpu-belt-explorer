@@ -26,11 +26,10 @@ import BeltStripe from '../entries/BeltStripe.jsx'
  * @prop hazLocc
  */
 
-function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
+export default function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
     const ref = useRef(null)
     const {expandAll} = useContext(DataContext)
     const [scrolled, setScrolled] = useState(false)
-    const [form, setForm] = useState({requestStatus: entry.requestStatus})
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
@@ -60,6 +59,7 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
     const redditUsername = entry.usernames.reddit ? `u/${entry.usernames.reddit.replace(/^\/*u\//, '')}` : undefined
     const userName = discordUsername || redditUsername || undefined
     const userBelt = entry.userBelt ? ` (${entry.userBelt})` : ''
+    const rankedBelt = entry.belt && entry.belt !== 'Unranked' ? ` (${entry.belt})` : ''
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {flexStyle} = useWindowSize()
@@ -78,7 +78,7 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                         style={{padding: '0px 0px 0px 10px'}}
                     />
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'right', marginRight: 20}}>
-                        {form.requestStatus}
+                        {entry.requestStatus}{rankedBelt}
                     </div>
                 </div>
             </AccordionSummary>
@@ -111,7 +111,7 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                         </div>
                     }
                     <AccordionActions>
-                        <RequestStatusSelect entry={entry} requestMod={requestMod} form={form} setForm={setForm} />
+                        <RequestStatusSelect entry={entry} requestMod={requestMod} />
                         <CopyLinkToRequestButton entry={entry}/>
                     </AccordionActions>
                 </AccordionDetails>
@@ -120,8 +120,4 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
     )
 }
 
-export default React.memo(LockRequestEntry, (prevProps, nextProps) => {
-    return prevProps.entry.id === nextProps.entry.id &&
-        prevProps.expanded === nextProps.expanded &&
-        prevProps.onExpand === nextProps.onExpand
-})
+//export default React.memo(LockRequestEntry)

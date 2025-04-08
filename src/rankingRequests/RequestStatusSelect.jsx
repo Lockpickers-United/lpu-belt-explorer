@@ -2,37 +2,35 @@ import React, {useCallback, useContext, useState} from 'react'
 import DBContext from '../app/DBContext.jsx'
 import dayjs from 'dayjs'
 import SelectBox from '../content/SelectBox.jsx'
-import DataContext from '../context/DataContext.jsx'
 import RequestRankingSelect from './RequestRankingSelect.jsx'
 import postRequestUpdate from './PostRequestUpdate.jsx'
 import AuthContext from '../app/AuthContext.jsx'
+import {serverUrl, requestStatuses} from './requestData'
 
-export default function RequestStatusSelect({entry, requestMod, form, setForm}) {
+export default function RequestStatusSelect({entry, requestMod}) {
     const {user} = useContext(AuthContext)
-    const {serverUrl} = useContext(DataContext)
 
     const {acceptRankingRequest} = useContext(DBContext)
-    const {requestStatuses} = useContext(DataContext)
     const [showRankingSelect, setShowRankingSelect] = useState(false)
 
     const handleFormChange = useCallback(async (event) => {
-        const {name, value} = event.target
-        setForm({...form, [name]: value})
+        const newStatus = event.target.value
+
         const updatedEntry = {
             ...entry.originalEntry,
-            requestStatus: event.target.value,
+            requestStatus: newStatus,
             lastUpdated: dayjs().toISOString()
         }
         if (entry.requestStatus === 'Pending') {
             acceptRankingRequest(updatedEntry)
         }
 
-        if (event.target.value === 'Ranked') {
+        if (newStatus === 'Ranked') {
             setShowRankingSelect(true)
-        } else if (entry.requestStatus === 'Ranked') {
+        } else if (!['Ranked', 'Completed'].includes(newStatus)) {
             const updatedEntry = {
                 ...entry.originalEntry,
-                requestStatus: event.target.value,
+                requestStatus: newStatus,
                 lastUpdated: dayjs().toISOString()
             }
             delete updatedEntry.belt
@@ -40,11 +38,10 @@ export default function RequestStatusSelect({entry, requestMod, form, setForm}) 
                 .then(res => {
                     console.log('res', res)
                 })
-
         } else {
             const updatedEntry = {
                 ...entry.originalEntry,
-                requestStatus: event.target.value,
+                requestStatus: newStatus,
                 lastUpdated: dayjs().toISOString()
             }
             await postRequestUpdate({entry: updatedEntry, user, serverUrl})
@@ -52,22 +49,22 @@ export default function RequestStatusSelect({entry, requestMod, form, setForm}) 
                     console.log('res', res)
                 })
         }
-    }, [acceptRankingRequest, entry, form, serverUrl, setForm, user])
+    }, [acceptRankingRequest, entry, user])
 
 
     return (
         <React.Fragment>
             {requestMod
                 ? <SelectBox changeHandler={handleFormChange}
-                             name='requestStatus' form={form}
+                             name='requestStatus' form={{}}
                              optionsList={requestStatuses} multiple={false}
-                             value={entry.status} defaultValue={entry.status}
+                             value={entry.requestStatus} defaultValue={entry.requestStatus}
                              size={'small'} width={200}/>
                 : <span>{entry.status}</span>
             }
 
             {showRankingSelect &&
-                <RequestRankingSelect entry={entry} form={form} setForm={setForm}
+                <RequestRankingSelect entry={entry} form={{}}
                                       showRankingSelect={showRankingSelect}
                                       setShowRankingSelect={setShowRankingSelect} />
             }

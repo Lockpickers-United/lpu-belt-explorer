@@ -1,37 +1,36 @@
 import React, {useCallback, useContext, useState} from 'react'
 import Dialog from '@mui/material/Dialog'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import {uniqueBelts} from '../data/belts'
+import {danBelts} from '../data/belts'
 import SelectBox from '../content/SelectBox.jsx'
 import AuthContext from '../app/AuthContext.jsx'
-import DataContext from '../context/DataContext.jsx'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import postRequestUpdate from './PostRequestUpdate.jsx'
 
-export default function RequestRankingSelect({entry, form, setForm, setShowRankingSelect}) {
+export default function RequestRankingSelect({entry, showRankingSelect, setShowRankingSelect}) {
 
+    console.log('RequestRankingSelect', showRankingSelect, entry)
     const {user} = useContext(AuthContext)
-    const {serverUrl} = useContext(DataContext)
     const [loading, setLoading] = useState(false)
     const [resStatus, setResStatus] = useState(undefined)
+    const requestBelts = danBelts.filter(belt => !['Unranked', 'Project'].includes(belt))
 
     const handleFormChange = useCallback(async (event) => {
         setLoading(true)
-        const {name, value} = event.target
-        setForm({...form, [name]: value})
         const updatedEntry = {
             ...entry.originalEntry,
             requestStatus: 'Ranked',
             belt: event.target.value,
             lastUpdated: dayjs().toISOString()
         }
-        await postRequestUpdate({entry: updatedEntry, user, serverUrl})
+        await postRequestUpdate({entry: updatedEntry, user})
             .then(res => {
                 setResStatus(res.status)
             })
         setLoading(false)
-    }, [entry, form, serverUrl, setForm, user])
+        setShowRankingSelect(false)
+    }, [entry.originalEntry, setShowRankingSelect, user])
 
     const handleClose = useCallback(() => {
         setResStatus(undefined)
@@ -49,8 +48,8 @@ export default function RequestRankingSelect({entry, form, setForm, setShowRanki
                         Select ranking
                     </div>
                 <SelectBox changeHandler={handleFormChange}
-                           name='ranking' form={form}
-                           optionsList={uniqueBelts}
+                           name='ranking' form={{}}
+                           optionsList={requestBelts}
                            multiple={false} defaultValue={entry.belt || ''}
                            size={'large'} width={200}/>
                 </div>
