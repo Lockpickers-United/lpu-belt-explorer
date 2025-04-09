@@ -1,41 +1,23 @@
 import React, {useCallback, useContext} from 'react'
 import Dialog from '@mui/material/Dialog'
 import {danBelts} from '../data/belts'
-import SelectBox from '../content/SelectBox.jsx'
+import SelectBox from '../formUtils/SelectBox.jsx'
 import AuthContext from '../app/AuthContext.jsx'
-import dayjs from 'dayjs'
-import {enqueueSnackbar} from 'notistack'
-import DBContext from '../app/DBContext.jsx'
 
-export default function RequestRankingSelect({entry, showRankingSelect, setShowRankingSelect}) {
+export default function RequestRankingSelect({entry, showRankingSelect, setShowRankingSelect, form, setForm}) {
 
     const {userClaims} = useContext(AuthContext)
 
     if (!userClaims.admin && !userClaims.requestAdmin) {
         return null
     }
-    const {updateRankingRequest} = useContext(DBContext)
     const requestBelts = danBelts.filter(belt => !['Unranked', 'Project'].includes(belt))
 
-    const handleSnackbar = useCallback((response) => {
-        if (response.success) {
-            enqueueSnackbar('Request status updated')
-        } else {
-            enqueueSnackbar(`Error updating request status: ${response.message}`, {variant: 'error'})
-        }
-    }, [])
-
-    const handleFormChange = useCallback(async (event) => {
-        const updatedEntry = {
-            ...entry.originalEntry,
-            requestStatus: 'Ranked',
-            belt: event.target.value,
-            lastUpdated: dayjs().toISOString()
-        }
-        await updateRankingRequest(updatedEntry)
-            .then(response => handleSnackbar(response))
+    const handleFormChange = useCallback((event) => {
+        const {name, value} = event.target
+        setForm({...form, [name]: value})
         setShowRankingSelect(false)
-    }, [entry.originalEntry, handleSnackbar, setShowRankingSelect, updateRankingRequest])
+    }, [form, setForm, setShowRankingSelect])
 
     const handleClose = useCallback(() => {
         setShowRankingSelect(false)
@@ -51,7 +33,7 @@ export default function RequestRankingSelect({entry, showRankingSelect, setShowR
                         Select ranking
                     </div>
                 <SelectBox changeHandler={handleFormChange}
-                           name='ranking' form={{}}
+                           name='belt' form={form}
                            optionsList={requestBelts}
                            multiple={false} defaultValue={entry.belt || ''}
                            size={'large'} width={200}/>

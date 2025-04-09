@@ -135,10 +135,9 @@ export default function Dropzone({files, setFiles}) {
                     <Link onClick={() => {
                         clearAll()
                     }} style={{color: '#eee', marginTop: 6}}>Clear all</Link>
-
-
                 </div>
             }
+
         </section>
 
     )

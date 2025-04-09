@@ -12,10 +12,10 @@ export default function SelectBox({form, name, optionsList, label=null, variant=
     }, [changeHandler, handleClose, multiple])
 
     return (
-        <FormControl id={'foo'} size={size} color='info' variant={variant} style={{marginBottom: 0, width: width || 'auto' }}>
+        <FormControl id={`${name}FormControl`} size={size} color='info' variant={variant} style={{marginBottom: 0, width: width || 'auto' }}>
             {label && <InputLabel style={{color: '#bbb'}}>{label}</InputLabel>}
             <Select
-                id={'bar'}
+                id={`${name}Select`}
                 value={form[name] || defaultValue}
                 multiple={multiple}
                 name={name}

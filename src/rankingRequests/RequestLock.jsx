@@ -1,17 +1,16 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import axios from 'axios'
-import Dropzone from '../content/Dropzone.jsx'
+import Dropzone from '../formUtils/Dropzone.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Dialog from '@mui/material/Dialog'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import Tracker from '../app/Tracker.jsx'
-import SelectBox from '../content/SelectBox.jsx'
+import SelectBox from '../formUtils/SelectBox.jsx'
 import {uniqueBelts} from '../data/belts'
 import entryName from '../entries/entryName'
 import {setDeep, setDeepPush, setDeepUnique} from '../util/setDeep'
-import AutoCompleteBox from '../content/AutoCompleteBox.jsx'
+import AutoCompleteBox from '../formUtils/AutoCompleteBox.jsx'
 import Link from '@mui/material/Link'
 import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
@@ -19,6 +18,8 @@ import allEntries from '../data/data.json'
 import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import {useNavigate} from 'react-router-dom'
 import DBContext from '../app/DBContext.jsx'
+import postRequestCreate from './postRequestCreate.jsx'
+import AuthContext from '../app/AuthContext.jsx'
 
 /**
  * @prop newBrand
@@ -26,14 +27,15 @@ import DBContext from '../app/DBContext.jsx'
  */
 
 function RequestLock({profile, refresh}) {
-    const {rankingRequests, updateRankingRequest} = useContext(DBContext)
-
+    const {user} = useContext(AuthContext)
+    const {rankingRequests} = useContext(DBContext)
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(false)
     const [acReset, setAcReset] = useState(false)
     const [form, setForm] = useState({id: genHexString(8)})
+    const [inputValue, setInputValue] = useState('')
 
     const handleFormChange = useCallback((event) => {
         const {name, value} = event.target
@@ -43,11 +45,23 @@ function RequestLock({profile, refresh}) {
     const handleAltBrandToggle = useCallback(() => {
         setAcReset(!acReset)
         const formCopy = {...form}
-        delete formCopy['make']
-        delete formCopy.newBrand
         formCopy.altBrand = !formCopy.altBrand
-        setTimeout(() => setForm(formCopy), 10)
-    }, [acReset, form])
+        if (formCopy.altBrand) {
+            formCopy.newBrand = inputValue
+            delete formCopy['make']
+        } else {
+            delete formCopy.newBrand
+        }
+        setTimeout(() => {
+            setForm(formCopy)
+        }, 10)
+        setTimeout(() => {
+            if (formCopy.altBrand) {
+                document.getElementById('newBrand').focus()
+                document.getElementById('newBrand').select()
+            }
+        }, 100)
+    }, [acReset, form, inputValue])
 
     const lockData = useMemo(() => {
         return allEntries?.sort((a, b) => entryName(a, 'short').localeCompare(entryName(b, 'short')))
@@ -80,7 +94,7 @@ function RequestLock({profile, refresh}) {
 
     const allMakes = useMemo(() => {
         return [...new Set([...lockData.allMakes, ...requestedMakes])]
-            .sort((a,b) => {
+            .sort((a, b) => {
                 return a.localeCompare(b)
             })
     }, [lockData, requestedMakes])
@@ -106,7 +120,7 @@ function RequestLock({profile, refresh}) {
             droppedFileNames: files.map(file => {
                 return file.name
             }),
-            requestStatus : 'Pending',
+            requestStatus: 'Submitted'
         }
         delete formCopy.altBrand
         delete formCopy.newBrand
@@ -115,8 +129,6 @@ function RequestLock({profile, refresh}) {
         Object.keys(formCopy).forEach(key => {
             formData.append(key, formCopy[key])
         })
-        setForm(formCopy)
-
         const uploadsDir = `${prefix}-${suffix}`.toLowerCase()
 
         files.forEach((file) => {
@@ -124,25 +136,16 @@ function RequestLock({profile, refresh}) {
             formData.append('files', file, `${uploadsDir}/${prefix}_${base}_${suffix}.${ext}`.toLowerCase())
         })
 
-        await axios.post(
-            'https://explore.lpubelts.com:8443/request-lock', formData,
-            {headers: {'Content-Type': 'multipart/form-data'}}
-        )
-            .then(response => {
-                setResponse(response.data)
-                console.log('response.data', response.data)
-                updateRankingRequest(response.data)
-            })
-            .catch(error => {
-                console.error('upload error', error)
-                setUploadError(error)
-            })
+        setResponse(await postRequestCreate({formData, user, setUploadError}))
 
         if (!uploadError) {
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
             setUploading(false)
         }
+
+        setForm(formCopy)
+
     }
 
     const handleReload = useCallback(() => {
@@ -156,6 +159,7 @@ function RequestLock({profile, refresh}) {
         refresh()
     }, [acReset, files, refresh])
 
+    //TODO: clear form on error OK
     const handleClose = useCallback(() => {
         setResponse(undefined)
         setUploading(false)
@@ -223,7 +227,10 @@ function RequestLock({profile, refresh}) {
                                         <AutoCompleteBox changeHandler={handleFormChange}
                                                          options={allMakes}
                                                          name={'make'} style={{width: 300, opacity: brandBoxOpacity}}
-                                                         reset={acReset} disabled={form.altBrand}/>
+                                                         reset={acReset} disabled={form.altBrand}
+                                                         inputValueHandler={setInputValue}
+                                                         noOptionsMessage={'Add a brand'}
+                                                         noOptionsHandler={handleAltBrandToggle}/>
                                     </div>
                                 </Collapse>
                                 <Collapse in={form.altBrand}>
@@ -236,8 +243,11 @@ function RequestLock({profile, refresh}) {
                                 </Collapse>
                                 <div style={{marginTop: 8}}>
                                     <Checkbox onChange={handleAltBrandToggle} id='altBrand' name='altBrand'
-                                              checked={form.altBrand || false} color='info' size='small'/>
-                                    <Link onClick={() => handleAltBrandToggle()} style={{color: '#fff'}}>
+                                              checked={form.altBrand || false} color='info' size='small'
+                                              inputProps={{
+                                                  tabIndex: -1
+                                              }}/>
+                                    <Link onClick={handleAltBrandToggle} style={{color: '#fff'}}>
                                         Submit a lock for a new brand.
                                     </Link>
                                 </div>
@@ -259,18 +269,20 @@ function RequestLock({profile, refresh}) {
                                 <SelectBox changeHandler={handleFormChange}
                                            name='lockingMechanisms' form={form}
                                            optionsList={lockData.lockingMechanisms} size={'large'}
-                                           width={300}
+                                           width={200}
                                            multiple={true} defaultValue={[]}/>
                             </div>
 
-                            <div>
-                                <div style={{fontSize: '1.1rem', fontWeight: 400, marginBottom: 5}}>
-                                    Approximate Belt <span style={{color: '#aaa'}}>(optional)</span></div>
-                                <SelectBox changeHandler={handleFormChange}
-                                           name='approxBelt' form={form} optionsList={uniqueBelts}
-                                           multiple={false} defaultValue={''}
-                                           size={'large'} width={300}/>
+                            <div style={{flexGrow: 1, maxWidth: 440}}>
+                                <div style={{fontSize: '1.1rem'}}>
+                                    Notes <span style={{color: '#aaa'}}>(optional)</span>
+                                </div>
+                                <TextField type='text' name='notes' multiline fullWidth rows={3}
+                                           color='info'
+                                           style={{}} value={form.notes || ''}
+                                           maxLength={1200} id='notes' onChange={handleFormChange}/>
                             </div>
+
                         </div>
 
                         <div style={{width: fullWidth, marginTop: 30}}>
@@ -282,26 +294,26 @@ function RequestLock({profile, refresh}) {
                         </div>
 
                         <div style={{display: flexStyle, marginTop: 30, width: fullWidth}}>
-                            <div style={{marginTop: 0, width: 260, marginRight: 30}}>
-                                <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom: 5}}>
-                                    Do you have one or more locks you can provide for ranking?
+                            <div style={{marginRight: 20}}>
+                                <div style={{fontSize: '1.1rem', fontWeight: 400, marginBottom: 5}}>
+                                    Approximate Belt <span style={{color: '#aaa'}}>(optional)</span></div>
+                                <SelectBox changeHandler={handleFormChange}
+                                           name='approxBelt' form={form} optionsList={uniqueBelts}
+                                           multiple={false} defaultValue={''}
+                                           size={'large'} width={300}/>
+                            </div>
+
+                            <div style={{marginTop: 0, width: 300}}>
+                                <div style={{fontSize: '1.1rem', fontWeight: 400, marginBottom: 5}}>
+                                    Can you provide locks for review?
                                 </div>
                                 <SelectBox changeHandler={handleFormChange}
                                            name='hazLocc' form={form}
                                            optionsList={['Yes', 'No']}
                                            multiple={false} defaultValue={''}
-                                           size={'large'} width={200}/>
+                                           size={'large'} width={300}/>
                             </div>
 
-                            <div style={{flexGrow: 1}}>
-                                <div style={{fontSize: '1.1rem'}}>
-                                    Notes <span style={{color: '#aaa'}}>(optional)</span>
-                                </div>
-                                <TextField type='text' name='notes' multiline fullWidth rows={3}
-                                           color='info'
-                                           style={{}} value={form.notes || ''}
-                                           maxLength={1200} id='notes' onChange={handleFormChange}/>
-                            </div>
 
                         </div>
 
@@ -376,7 +388,6 @@ function RequestLock({profile, refresh}) {
                                     OK
                                 </Button>
                             </div>
-
                         </div>
                     </div>
                 </Dialog>
@@ -392,9 +403,8 @@ function RequestLock({profile, refresh}) {
                                 Please try again later.<br/>
                             </div>
                             <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                                Error message: {uploadError?.response?.data}
+                                Error message: {uploadError?.response?.data?.message} ({uploadError?.response?.data?.status})
                             </div>
-
 
                             <div style={{width: '100%', textAlign: 'center'}}>
                                 <Button onClick={handleClose} variant='contained' color='error'

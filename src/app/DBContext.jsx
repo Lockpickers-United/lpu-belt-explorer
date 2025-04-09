@@ -51,7 +51,6 @@ export function DBProvider({children}) {
     const [dbError, setDbError] = useState(null)
     const [systemMessages, setSystemMessages] = useState([])
     const [rankingRequests, setRankingRequests] = useState([])
-    const [rankingRequestsAccepted, setRankingRequestsAccepted] = useState([])
 
     const dbLoaded = collectionDBLoaded && activityLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
@@ -475,22 +474,14 @@ export function DBProvider({children}) {
         }, error => {
             console.error('Error getting ranking requests from DB:', error)
         })
-
-        const q2 = query(collection(db, 'ranking-requests-accepted'), where('requestStatus', '!=', 'Deleted'))
-        onSnapshot(q2, querySnapshot => {
-            const requests = querySnapshot.docs.map(doc => doc.data())
-            setRankingRequestsAccepted(requests)
-        }, error => {
-            console.error('Error getting ranking requests from DB:', error)
-        })
     }, [])
 
     const updateRankingRequest = useCallback(async (request) => {
         if (dbError) return { success: false, message: 'Database error.' }
         const id = request.id
-        const ref = doc(db, 'ranking-requests-accepted', id)
+        const ref = doc(db, 'ranking-requests', id)
         try {
-            await setDoc(ref, request)
+            await updateDoc(ref, request)
             return { success: true, message: 'Request updated successfully.' }
         } catch (error) {
             console.error('Error updating ranking request: ', error)
@@ -501,35 +492,11 @@ export function DBProvider({children}) {
         }
     }, [dbError])
 
-    const updateAcceptedRankingRequest = useCallback(async (request) => {
-        if (dbError) return false
-        const id = request.id
-        const ref = doc(db, 'ranking-requests-accepted', id)
-        await setDoc(ref, request)
-    }, [dbError])
-
     const deleteRankingRequest = useCallback(async (request) => {
         if (dbError) return false
         const id = request.id
-        const ref = doc(db, 'ranking-requests-accepted', id)
+        const ref = doc(db, 'ranking-requests', id)
         await deleteDoc(ref)
-    }, [dbError])
-
-    const acceptRankingRequest = useCallback(async (request) => {
-        if (dbError) return false
-        const id = request.id
-        const batch = writeBatch(db)
-        const acceptedRef = doc(db, 'ranking-requests-accepted', id)
-        const requestRef = doc(db, 'ranking-requests', id)
-        batch.set(acceptedRef, request)
-        batch.delete(requestRef)
-        try {
-            await batch.commit()
-            return true
-        } catch (error) {
-            console.error('Batch commit failed: ', error)
-            return false
-        }
     }, [dbError])
 
     const value = useMemo(() => ({
@@ -562,10 +529,7 @@ export function DBProvider({children}) {
         updateSystemMessageStatus,
         removeDismissedMessages,
         rankingRequests,
-        rankingRequestsAccepted,
-        acceptRankingRequest,
         updateRankingRequest,
-        updateAcceptedRankingRequest,
         deleteRankingRequest,
     }), [dbLoaded,
         adminRole,
@@ -596,10 +560,7 @@ export function DBProvider({children}) {
         updateSystemMessageStatus,
         removeDismissedMessages,
         rankingRequests,
-        rankingRequestsAccepted,
-        acceptRankingRequest,
         updateRankingRequest,
-        updateAcceptedRankingRequest,
         deleteRankingRequest,
     ])
 

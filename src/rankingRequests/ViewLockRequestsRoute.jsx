@@ -13,13 +13,14 @@ export default function ViewLockRequestsRoute() {
     usePageTitle('LPU Belt Explorer - View Ranking Requests')
 
     const {user, userClaims} = useContext(AuthContext)
-    const requestMod = userClaims?.requestAdmin || userClaims?.admin
-
+    //const requestMod = userClaims?.requestAdmin || userClaims?.admin
+    const requestMod = true
 
     const {isMobile} = useWindowSize()
-    const {rankingRequests, rankingRequestsAccepted} = useContext(DBContext)
+    const {rankingRequests} = useContext(DBContext)
 
-    const allRankingRequests = rankingRequestsAccepted?.concat(rankingRequests) || []
+    const allRankingRequests = rankingRequests || []
+
     const requestCounts = allRankingRequests?.reduce((acc, request) => {
         acc[request.lockName] = (acc[request.lockName] || 0) + 1
         return acc

@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import Nav from '../nav/Nav.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import usePageTitle from '../util/usePageTitle.jsx'
-import DataContext from '../context/DataContext.jsx'
 import {requestedLocks} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
@@ -11,10 +10,11 @@ import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from './LockRequestsDataProvider.jsx'
 import {lockRequestFilterFields} from '../data/filterFields'
 import RequestLock from './RequestLock.jsx'
+import DBContext from '../app/DBContext.jsx'
 
 
 export default function RequestLockRoute() {
-    const {profile} = useContext(DataContext)
+    const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
     usePageTitle('LPU Belt Explorer - Lock Ranking Request')
@@ -46,7 +46,7 @@ export default function RequestLockRoute() {
                 {loading && <LoadingDisplay/>}
 
                 {!loading && !error && !!data &&
-                    <RequestLock data={requestData} profile={profile} refresh={refresh}/>
+                    <RequestLock data={requestData} profile={lockCollection} refresh={refresh}/>
                 }
 
             </DataProvider>
