@@ -26,7 +26,7 @@ import AuthContext from '../app/AuthContext.jsx'
  * @prop allMakes
  */
 
-function RequestLock({profile, refresh}) {
+function RequestLock({profile}) {
     const {user} = useContext(AuthContext)
     const {rankingRequests} = useContext(DBContext)
     const [files, setFiles] = useState([])
@@ -156,8 +156,7 @@ function RequestLock({profile, refresh}) {
         setResponse(undefined)
         setUploading(false)
         setUploadError(undefined)
-        refresh()
-    }, [acReset, files, refresh])
+    }, [acReset, files])
 
     //TODO: clear form on error OK
     const handleClose = useCallback(() => {
@@ -269,8 +268,7 @@ function RequestLock({profile, refresh}) {
                                 <SelectBox changeHandler={handleFormChange}
                                            name='lockingMechanisms' form={form}
                                            optionsList={lockData.lockingMechanisms} size={'large'}
-                                           width={200}
-                                           multiple={true} defaultValue={[]}/>
+                                           width={200} multiple={false} defaultValue={''}/>
                             </div>
 
                             <div style={{flexGrow: 1, maxWidth: 440}}>

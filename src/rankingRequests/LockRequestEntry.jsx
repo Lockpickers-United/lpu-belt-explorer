@@ -18,9 +18,9 @@ import BeltStripe from '../entries/BeltStripe.jsx'
 import Dialog from '@mui/material/Dialog'
 import Button from '@mui/material/Button'
 import dayjs from 'dayjs'
-import {enqueueSnackbar} from 'notistack'
-import DBContext from '../app/DBContext.jsx'
 import TextField from '@mui/material/TextField'
+import AuthContext from '../app/AuthContext.jsx'
+import postRequestUpdate from './postRequestUpdate.jsx'
 
 /**
  * @typedef {object} entry
@@ -34,7 +34,7 @@ import TextField from '@mui/material/TextField'
  */
 
 export default function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
-    const {updateRankingRequest} = useContext(DBContext)
+    const {user} = useContext(AuthContext)
     const ref = useRef(null)
     const {expandAll} = useContext(DataContext)
     const [scrolled, setScrolled] = useState(false)
@@ -43,9 +43,21 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         {
             make: entry.makeModels ? entry.makeModels[0].make : '',
             model: entry.makeModels ? entry.makeModels[0].model : '',
+            requestStatus: entry.requestStatus,
             belt: entry.belt
         }
     )
+
+    useEffect(() => {
+        setTimeout(() => {
+            setForm({
+                make: entry.makeModels ? entry.makeModels[0].make : '',
+                model: entry.makeModels ? entry.makeModels[0].model : '',
+                requestStatus: entry.requestStatus,
+                belt: entry.belt
+            })
+        },100)
+    }, [entry, setForm])
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
@@ -66,18 +78,11 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         setForm({
             make: entry.makeModels ? entry.makeModels[0].make : '',
             model: entry.makeModels ? entry.makeModels[0].model : '',
+            requestStatus: entry.requestStatus,
             belt: entry.belt
         })
         setShowEditRequest(false)
-    }, [entry.belt, entry.makeModels])
-
-    const handleSnackbar = useCallback((response) => {
-        if (response.success) {
-            enqueueSnackbar('Request updated')
-        } else {
-            enqueueSnackbar(`Error updating request: ${response.message}`, {variant: 'error'})
-        }
-    }, [])
+    }, [entry])
 
     const handleEdit = useCallback(async () => {
         const updatedEntry = {
@@ -87,13 +92,13 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
             belt: form.belt || entry.belt,
             lastUpdated: dayjs().toISOString()
         }
-        if (!['Ranked', 'Completed'].includes(updatedEntry.requestStatus)) {
+        if (!['Ranked', 'Deleted'].includes(updatedEntry.requestStatus)) {
             delete updatedEntry.belt
         }
-        await updateRankingRequest(updatedEntry)
-            .then(response => handleSnackbar(response))
-        setShowEditRequest(false)
-    }, [entry, form, handleSnackbar, updateRankingRequest])
+        await postRequestUpdate({ entry: updatedEntry, user })
+            .then()
+        handleEditClose()
+    }, [entry, form, handleEditClose, user])
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import DBContext from '../app/DBContext.jsx'
 import dayjs from 'dayjs'
 import SelectBox from '../formUtils/SelectBox.jsx'
@@ -13,6 +13,18 @@ export default function RequestStatusSelect({entry, requestMod, form, setForm, s
     const [showRankingSelect, setShowRankingSelect] = useState(false)
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
     const requestBelts = danBelts.filter(belt => !['Unranked', 'Project'].includes(belt))
+
+    useEffect(() => {
+        setTimeout(() => {
+            setForm({
+                make: entry.makeModels ? entry.makeModels[0].make : '',
+                model: entry.makeModels ? entry.makeModels[0].model : '',
+                requestStatus: entry.requestStatus,
+                belt: entry.belt
+            })
+        },100)
+    }, [entry, setForm])
+
 
     const handleSnackbar = useCallback((response) => {
         if (response.success) {
