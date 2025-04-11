@@ -13,8 +13,7 @@ export default async function postRequestUpdate({ entry, user }) {
             body: JSON.stringify({ entry })
         })
             .then(response => {
-                console.log('response', response)
-
+                //console.log('response', response)
                 if (response.status !== 200) {
                     enqueueSnackbar('Error updating request status', {variant: 'error'})
                     return {response: {data: {status: 500, message: 'Error updating request'}}}

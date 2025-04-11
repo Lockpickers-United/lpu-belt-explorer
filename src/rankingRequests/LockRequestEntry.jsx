@@ -21,6 +21,7 @@ import dayjs from 'dayjs'
 import TextField from '@mui/material/TextField'
 import AuthContext from '../app/AuthContext.jsx'
 import postRequestUpdate from './postRequestUpdate.jsx'
+import AddVote from './AddVote.jsx'
 
 /**
  * @typedef {object} entry
@@ -56,7 +57,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                 requestStatus: entry.requestStatus,
                 belt: entry.belt
             })
-        },100)
+        }, 100)
     }, [entry, setForm])
 
     const handleChange = useCallback((_, isExpanded) => {
@@ -95,7 +96,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         if (!['Ranked', 'Deleted'].includes(updatedEntry.requestStatus)) {
             delete updatedEntry.belt
         }
-        await postRequestUpdate({ entry: updatedEntry, user })
+        await postRequestUpdate({entry: updatedEntry, user})
             .then()
         handleEditClose()
     }, [entry, form, handleEditClose, user])
@@ -132,7 +133,6 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {flexStyle} = useWindowSize()
-
     const opacity = entry.requestStatus === 'Declined' ? 0.5 : 1
 
     return (
@@ -142,18 +142,28 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                                   style={{cursor: 'pointer'}}>
                     <BeltStripe value={entry.belt}/>
                     <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
-                        <ListItemText
-                            primary={entryName(entry)}
-                            primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
-                            secondary={entry.lockingMechanisms.join(', ')}
-                            secondaryTypographyProps={{fontSize: '0.9rem'}}
-                            style={{padding: '0px 0px 0px 10px'}}
-                        />
-                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'right', marginRight: 20}}>
-                            {entry.requestStatus}{rankedBelt} &nbsp;
-                            <EditRequestButton handleClick={handleEditRequest} requestMod={requestMod}/>
+                        <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
+                            <ListItemText
+                                primary={entryName(entry)}
+                                primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
+                                secondary={entry.lockingMechanisms.join(', ')}
+                                secondaryTypographyProps={{fontSize: '0.9rem'}}
+                                style={{padding: '0px 0px 0px 10px'}}
+                            />
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'right',
+                                marginRight: 10
+                            }}>
+                                {entry.requestStatus !== 'Submitted' &&
+                                    <span>{entry.requestStatus}{rankedBelt}</span>
+                                }
+                            </div>
                         </div>
                     </div>
+                    <AddVote user={user} entry={entry} />
+                    <EditRequestButton handleClick={handleEditRequest} requestMod={requestMod}/>
                 </AccordionSummary>
                 {
                     expanded &&
@@ -238,5 +248,3 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         </React.Fragment>
     )
 }
-
-//export default React.memo(LockRequestEntry)

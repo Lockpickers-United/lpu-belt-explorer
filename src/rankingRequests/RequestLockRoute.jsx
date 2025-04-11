@@ -13,7 +13,7 @@ export default function RequestLockRoute() {
     const {rankingRequests} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
-    usePageTitle('LPU Belt Explorer - Lock Ranking Request')
+    usePageTitle('Lock Ranking Request')
 
 
     const requestCounts = rankingRequests.reduce((acc, request) => {

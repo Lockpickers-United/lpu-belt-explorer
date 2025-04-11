@@ -34,7 +34,7 @@ function RequestLock({profile}) {
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(false)
     const [acReset, setAcReset] = useState(false)
-    const [form, setForm] = useState({id: genHexString(8)})
+    const [form, setForm] = useState({id: genHexString(8), requestedBy: [user.uid]})
     const [inputValue, setInputValue] = useState('')
 
     const handleFormChange = useCallback((event) => {
@@ -172,9 +172,7 @@ function RequestLock({profile}) {
         ]
     }, [])
     const navigate = useNavigate()
-    const [selected, setSelected] = useState(options[0]) //eslint-disable-line
     const handleChange = useCallback(newValue => {
-        setSelected(newValue)
         navigate(newValue.page)
     }, [navigate])
 
@@ -195,13 +193,23 @@ function RequestLock({profile}) {
                 maxWidth: 720, padding: 0,
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
             }}>
-                <div style={{marginBottom: 30, marginRight: paddingLeft}}>
-                    Some intro copy here explaining the process and setting expectations.
-                </div>
+                <div style={{marginBottom: 30, marginRight: paddingLeft, lineHeight: '1.5rem'}}>
+                    <div style={{fontSize: '1.3rem', fontWeight: 700, marginBottom:10}}>Suggest a Lock</div>
+                    The lock ranking process for Lockpickers United is a detailed one. It&#39;s a community process and
+                    identifying new locks for ranking is a big part of it. Use the form below to submit a lock for
+                    ranking. A lot of work goes into adding a new lock to the belt rankings, please provide as much
+                    information as possible to do your part in the process.
+                    <br/><br/>
+                    Please note that while all requests will be considered, not all locks can be put into the ranking
+                    process. Factors include the availability of locks to review, general availability of locks to the
+                    community, access to photos and detailed lock information, and the projected value to the community
+                    of adding them to the list.
+                    Yellow & Orange locks are not added frequently.
+                    &nbsp;<Link onClick={() => navigate('/view?pageId=classificationProcess')}
+                                style={{color: '#aaa', cursor: 'pointer', fontWeight: 700}}>Click here to learn
+                    more</Link>
 
-                <Link onClick={() => console.log('form', form)} style={{color: '#444', cursor: 'pointer'}}>LOG</Link>
-                &nbsp; &nbsp; <Link onClick={() => handleReload()}
-                                    style={{color: '#444', cursor: 'pointer'}}>RELOAD</Link>
+                </div>
 
                 <div style={{
                     fontSize: '1.5rem',
@@ -275,7 +283,7 @@ function RequestLock({profile}) {
                                 <div style={{fontSize: '1.1rem'}}>
                                     Notes <span style={{color: '#aaa'}}>(optional)</span>
                                 </div>
-                                <TextField type='text' name='notes' multiline fullWidth rows={3}
+                                <TextField type='text' name='notes' multiline fullWidth rows={4}
                                            color='info'
                                            style={{}} value={form.notes || ''}
                                            maxLength={1200} id='notes' onChange={handleFormChange}/>

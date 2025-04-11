@@ -95,10 +95,15 @@ export function DataProvider({children, allEntries, profile}) {
                     return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else {
-                    return a.fuzzy.localeCompare(b.fuzzy)
+                    return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
+                        || a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-            : searched.sort((a, b) => a.fuzzy.localeCompare(b.fuzzy))
+            : searched.sort((a, b) => {
+                return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
+                    || a.fuzzy.localeCompare(b.fuzzy)
+
+            })
     }, [filters, mappedEntries, search, sort])
 
     const getEntryFromId = useCallback(id => {

@@ -10,11 +10,10 @@ import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 
 export default function ViewLockRequestsRoute() {
-    usePageTitle('LPU Belt Explorer - View Ranking Requests')
+    usePageTitle('View Ranking Requests')
 
     const {user, userClaims} = useContext(AuthContext)
-    //const requestMod = userClaims?.requestAdmin || userClaims?.admin
-    const requestMod = true
+    const requestMod = userClaims?.requestAdmin || userClaims?.admin
 
     const {isMobile} = useWindowSize()
     const {rankingRequests} = useContext(DBContext)
@@ -41,7 +40,7 @@ export default function ViewLockRequestsRoute() {
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
             <DataProvider allEntries={requestData}>
-                <Nav title='View Ranking Requests' extras={extras}/>
+                <Nav title='Ranking Requests' extras={extras}/>
 
                 <ViewLockRequests user={user} requestMod={requestMod}/>
 

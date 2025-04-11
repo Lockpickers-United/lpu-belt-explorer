@@ -22,9 +22,7 @@ export default function ViewLockRequests({requestMod}) {
         ]
     }, [])
     const navigate = useNavigate()
-    const [selected, setSelected] = useState(options[1]) //eslint-disable-line
     const handleChange = useCallback(newValue => {
-        setSelected(newValue)
         navigate(newValue.page)
     }, [navigate])
 
@@ -39,8 +37,10 @@ export default function ViewLockRequests({requestMod}) {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
             }}>
 
-                <Link onClick={() => console.log('visibleEntries', visibleEntries)}
-                      style={{color: '#444', cursor: 'pointer'}}>LOG</Link>
+                {requestMod &&
+                    <Link onClick={() => console.log('visibleEntries', visibleEntries)}
+                          style={{color: '#444', cursor: 'pointer', marginLeft:10}}>LOG</Link>
+                }
 
                 <SearchFilterBar sortValues={lockRequestSortFields} label={'Lock Requests'} resetAll={true}/>
 
