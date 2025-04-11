@@ -24,6 +24,7 @@ export function DataProvider({children, allEntries, profile}) {
                 ...entry,
                 originalEntry: entry,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
+                requestCount: entry.requestedBy.length,
                 fuzzy: removeAccents(
                     entry.makeModels
                         .map(({make, model}) => [make, model])
@@ -88,7 +89,10 @@ export function DataProvider({children, allEntries, profile}) {
                 } else if (sort === 'requestStatus') {
                      return statusSort(a.requestStatus, b.requestStatus)
                         || a.fuzzy.localeCompare(b.fuzzy)
-                }else if (sort === 'recentlyUpdated') {
+                } else if (sort === 'requestCount') {
+                     return b.requestCount - a.requestCount
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                } else if (sort === 'recentlyUpdated') {
                     return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'dateRequested') {

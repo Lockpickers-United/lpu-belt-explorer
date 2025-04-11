@@ -13,7 +13,7 @@ export function AuthProvider({children}) {
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
             setAuthLoaded(true)
             setUser(user)
-            auth.currentUser.getIdTokenResult()
+            auth.currentUser?.getIdTokenResult()
                 .then(idTokenResult => {
                     const {admin, requestAdmin} = idTokenResult.claims
                     setUserClaims({admin, requestAdmin})

@@ -19,10 +19,10 @@ export default async function postRequestCreate({formData, user, setUploadError}
             .then(response => {
                 //console.log('response.data', response.data)
                 if (response.status !== 200) {
-                    enqueueSnackbar('Error updating request status', {variant: 'error'})
+                    enqueueSnackbar('Error updating request status', {variant: 'error', autoHideDuration: 3000})
                     return {response: {data: {status: 500, message: 'Error updating request status'}}}
                 } else {
-                    enqueueSnackbar('Request submitted')
+                    enqueueSnackbar('Request submitted', {autoHideDuration: 3000})
                     return response
                 }
             })

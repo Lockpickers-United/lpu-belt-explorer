@@ -1,7 +1,7 @@
 import {enqueueSnackbar} from 'notistack'
 import {serverUrl} from './rankingRequestData'
 
-export default async function postRequestUpdate({ entry, user }) {
+export default async function postRequestUpdate({entry, user}) {
     try {
         const idToken = await user.getIdToken()
         return await fetch(`${serverUrl}/update-request`, {
@@ -10,23 +10,21 @@ export default async function postRequestUpdate({ entry, user }) {
                 'Authorization': 'Bearer ' + idToken,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ entry })
+            body: JSON.stringify({entry})
         })
             .then(response => {
                 //console.log('response', response)
                 if (response.status !== 200) {
-                    enqueueSnackbar('Error updating request status', {variant: 'error'})
+                    enqueueSnackbar('Error updating request status', {variant: 'error', autoHideDuration: 3000})
                     return {response: {data: {status: 500, message: 'Error updating request'}}}
                 } else {
-                    enqueueSnackbar('Request updated')
+                    enqueueSnackbar('Request updated', {autoHideDuration: 3000})
                     return response
                 }
             })
             .catch(error => {
                 console.error('Error updating request:', cleanError(error))
             })
-
-
     } catch (error) {
         console.error('Error during authentication or server request:', error)
         return Promise.reject(error)

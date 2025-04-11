@@ -28,7 +28,7 @@ export default async function postVoteUpdate({ entryId, user }) {
                 const errorData = await response.json()
                 console.log('errorData', errorData)
                 errorMessage = errorData.message || errorMessage
-                enqueueSnackbar(`Error updating votes: ${errorMessage}`, { variant: 'error' })
+                enqueueSnackbar(`Error updating votes: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
 
             } catch (e) {
                 // Fallback in case parsing fails
@@ -41,7 +41,7 @@ export default async function postVoteUpdate({ entryId, user }) {
     } catch (error) {
         clearTimeout(timeout)
         console.error('Error during authentication or server request:', error)
-        enqueueSnackbar('Error updating request', { variant: 'error' })
+        enqueueSnackbar('Error updating request', { variant: 'error', autoHideDuration: 3000 })
         throw error
     }
 }

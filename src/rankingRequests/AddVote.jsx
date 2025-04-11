@@ -4,6 +4,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import Tooltip from '@mui/material/Tooltip'
 import postVoteUpdate from './postVoteUpdate.jsx'
 import LoadingDisplayWhite from '../misc/LoadingDisplayWhite.jsx'
+import {enqueueSnackbar} from 'notistack'
 
 export default function AddVote({user, entry}) {
     const [isUpdating, setIsUpdating] = useState(false)
@@ -28,7 +29,11 @@ export default function AddVote({user, entry}) {
     const handleClick = useCallback(async (event) => {
         event.preventDefault()
         event.stopPropagation()
-        if (isOwner || isUpdating) return
+        if (isUpdating) return
+        if (isOwner) {
+            enqueueSnackbar('You requested this lock', { variant: 'info', autoHideDuration: 3000})
+            return
+        }
         setIsUpdating(true)
 
         const entryId = entry.id

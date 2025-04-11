@@ -7,6 +7,9 @@ import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import SignInButton from '../auth/SignInButton.jsx'
 import Button from '@mui/material/Button'
 import {Outlet} from 'react-router-dom'
+import Nav from '../nav/Nav.jsx'
+import {FilterProvider} from '../context/FilterContext.jsx'
+import {DataProvider} from '../locks/LockDataProvider.jsx'
 
 function ContentParentRoute() {
     const {user} = useContext(AuthContext)
@@ -35,9 +38,13 @@ function ContentParentRoute() {
             }
 
             {!loading && !data && !error && !user &&
-                <div style={{
+                <FilterProvider>
+                    <DataProvider allEntries={[]}>
+                        <Nav title='Please Sign In'/>
+
+                        <div style={{
                     maxWidth: 700, padding: 0,
-                    marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46
+                    marginLeft: 'auto', marginRight: 'auto', marginTop: 46, marginBottom: 46
                 }}>
                     <div style={{textAlign: 'center', marginTop: 40}}>
                         We&#39;re sorry, you must be signed in to submit content.
@@ -47,6 +54,8 @@ function ContentParentRoute() {
                         </Button>
                     </div>
                 </div>
+                    </DataProvider>
+                </FilterProvider>
             }
             <Footer/>
         </React.Fragment>

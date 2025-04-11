@@ -460,9 +460,18 @@ export function DBProvider({children}) {
     }, [dbError])
 
     const removeDismissedMessages = useCallback(async (userId) => {
-        if (dbError) return false
+        if (dbError) return { success: false, message: 'Database error.' }
         const ref = doc(db, 'lockcollections', userId)
-        await updateDoc(ref, {dismissedMessages: deleteField()})
+        try {
+            await updateDoc(ref, {dismissedMessages: deleteField()})
+            return { success: true, message: 'Request updated successfully.' }
+        } catch (error) {
+            console.error('Error updating ranking request: ', error)
+            if (error.code === 'permission-denied') {
+                return { success: false, message: 'You do not have permission to update this request.' }
+            }
+            return { success: false, message: `Error updating request: ${error.message}` }
+        }
     }, [dbError])
 
     // Ranking Request Subscriptions
@@ -476,28 +485,6 @@ export function DBProvider({children}) {
         })
     }, [])
 
-    const updateRankingRequest = useCallback(async (request) => {
-        if (dbError) return { success: false, message: 'Database error.' }
-        const id = request.id
-        const ref = doc(db, 'ranking-requests', id)
-        try {
-            await updateDoc(ref, request)
-            return { success: true, message: 'Request updated successfully.' }
-        } catch (error) {
-            console.error('Error updating ranking request: ', error)
-            if (error.code === 'permission-denied') {
-                return { success: false, message: 'You do not have permission to update this request.' }
-            }
-            return { success: false, message: `Error updating request: ${error.message}` }
-        }
-    }, [dbError])
-
-    const deleteRankingRequest = useCallback(async (request) => {
-        if (dbError) return false
-        const id = request.id
-        const ref = doc(db, 'ranking-requests', id)
-        await deleteDoc(ref)
-    }, [dbError])
 
     const value = useMemo(() => ({
         dbLoaded,
@@ -529,8 +516,6 @@ export function DBProvider({children}) {
         updateSystemMessageStatus,
         removeDismissedMessages,
         rankingRequests,
-        updateRankingRequest,
-        deleteRankingRequest,
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -560,8 +545,6 @@ export function DBProvider({children}) {
         updateSystemMessageStatus,
         removeDismissedMessages,
         rankingRequests,
-        updateRankingRequest,
-        deleteRankingRequest,
     ])
 
     return (

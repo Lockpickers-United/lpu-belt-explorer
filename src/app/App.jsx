@@ -37,7 +37,7 @@ function App() {
             <CssBaseline/>
             <style>{style}</style>
 
-            <SnackbarProvider>
+            <SnackbarProvider autoHideDuration={3000}>
                 <AuthProvider>
                     <DBProvider>
                         <AppProvider>

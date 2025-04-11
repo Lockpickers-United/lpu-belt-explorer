@@ -40,6 +40,8 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
     const {expandAll} = useContext(DataContext)
     const [scrolled, setScrolled] = useState(false)
     const [showEditRequest, setShowEditRequest] = useState(false)
+    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+    const [updated, setUpdated] = useState(false)
     const [form, setForm] = useState(
         {
             make: entry.makeModels ? entry.makeModels[0].make : '',
@@ -67,6 +69,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
     const handleFormChange = useCallback((event) => {
         const {name, value} = event.target
         setForm({...form, [name]: value})
+        setUpdated(true)
     }, [form])
 
     const handleEditRequest = useCallback((event) => {
@@ -83,9 +86,30 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
             belt: entry.belt
         })
         setShowEditRequest(false)
+        setShowDeleteConfirm(false)
     }, [entry])
 
+    const handleUpdate = useCallback(async (entry) => {
+        await postRequestUpdate({entry, user})
+            .then(() => {
+                handleEditClose()
+            })
+    }, [handleEditClose, user])
+
+    const handleDelete = useCallback(async () => {
+        const updatedEntry = {
+            ...entry.originalEntry,
+            requestStatus: 'Deleted',
+            lastUpdated: dayjs().toISOString()
+        }
+        await handleUpdate(updatedEntry)
+    }, [entry.originalEntry, handleUpdate])
+
     const handleEdit = useCallback(async () => {
+        if (!updated) return
+        if (form.requestStatus === 'Deleted') {
+            setShowDeleteConfirm(true)
+        }
         const updatedEntry = {
             ...entry.originalEntry,
             makeModels: [{make: form.make, model: form.model}],
@@ -96,10 +120,17 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         if (!['Ranked', 'Deleted'].includes(updatedEntry.requestStatus)) {
             delete updatedEntry.belt
         }
-        await postRequestUpdate({entry: updatedEntry, user})
-            .then()
-        handleEditClose()
-    }, [entry, form, handleEditClose, user])
+        if (form.requestStatus === 'Deleted') {
+            setShowDeleteConfirm(true)
+        } else {
+            await handleUpdate(updatedEntry)
+        }
+    }, [entry, form, handleUpdate, updated])
+
+
+    const handleClose = useCallback(() => {
+        setShowDeleteConfirm(false)
+    }, [setShowDeleteConfirm])
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
@@ -162,7 +193,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                             </div>
                         </div>
                     </div>
-                    <AddVote user={user} entry={entry} />
+                    <AddVote user={user} entry={entry}/>
                     <EditRequestButton handleClick={handleEditRequest} requestMod={requestMod}/>
                 </AccordionSummary>
                 {
@@ -216,7 +247,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
 
                     <div style={{marginTop: 0}}>
                         <RequestStatusSelect entry={entry} requestMod={requestMod} form={form} setForm={setForm}
-                                             setShowEditRequest={setShowEditRequest}/>
+                                             setShowEditRequest={setShowEditRequest} setUpdated={setUpdated}/>
                     </div>
 
                     <div style={{marginTop: 10}}>
@@ -238,8 +269,29 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                                 style={{marginRight: 20, backgroundColor: '#999'}}>
                             CANCEL
                         </Button>
-                        <Button onClick={handleEdit} variant='contained' color='success' disabled={formError}>
+                        <Button onClick={handleEdit} variant='contained' color='success'
+                                disabled={formError || !updated}>
                             SAVE
+                        </Button>
+                    </div>
+                </div>
+            </Dialog>
+
+            <Dialog open={showDeleteConfirm} onClose={handleClose} componentsProps={{
+                backdrop: {style: {backgroundColor: '#000', opacity: 0.5}}
+            }}>
+                <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>
+                    <div style={{fontSize: '1.3rem', fontWeight: 500, marginBottom: 20, textAlign: 'center'}}>
+                        Are you sure you want to delete?<br/>
+                        Action cannot be undone.<br/>
+                    </div>
+                    <div style={{width: '100%', textAlign: 'center'}}>
+                        <Button onClick={handleClose} variant='contained' color='success'
+                                style={{marginRight: 20, backgroundColor: '#999'}}>
+                            CANCEL
+                        </Button>
+                        <Button onClick={handleDelete} variant='contained' color='error'>
+                            DELETE
                         </Button>
                     </div>
                 </div>

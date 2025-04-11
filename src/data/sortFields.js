@@ -57,6 +57,7 @@ export const lockRequestSortFields = [
     {label: 'Alphabetical', value: 'alphaAscending'},
     {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
     {label: 'Status', value: 'requestStatus'},
+    {label: 'Request Count', value: 'requestCount'},
     {label: 'Recently Updated', value: 'recentlyUpdated'},
 ]
 
