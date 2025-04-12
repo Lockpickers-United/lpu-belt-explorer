@@ -63,6 +63,15 @@ export default async function requestLock(req, res) {
         return handleError(res, 'Unauthorized', 'Unauthorized', 403)
     }
     const idToken = authHeader.split('Bearer ')[1]
+    try {
+        const decodedToken = await admin.auth().verifyIdToken(idToken)
+        if (!decodedToken) {
+            return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
+        }
+        req.user = decodedToken
+    } catch (err) {
+        return handleError(res, 'Token verification failed', err, 403)
+    }
 
     const form = formidable({
         uploadDir,
@@ -71,40 +80,22 @@ export default async function requestLock(req, res) {
         maxFileSize: 30 * 1024 * 1024,
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
         filename(name, ext, part) {
-            const {originalFilename} = part
-            if (!originalFilename) return 'invalid'
-
-            const originaFilenameParts = originalFilename.split('/')
-            const filename = originaFilenameParts.pop()
-            const filenameParts = filename.match(/(.*)(\..\w*$)/)
-            const basename = slugify(filenameParts[1]) + '.' + slugify(filenameParts[2])
-
-            subdirs = originaFilenameParts.map(slugify).join('').replace(/\s+/g, '-')
-            filepaths.push(`${serverPath}/${subdirs}/${basename}`)
-            uploadSubDir = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
-            return `${subdirs}/${basename}`
+            const { fullFilename, filepath, uploadSubDir, localsubdirs } = createFilename(part, serverPath, uploadDir)
+            filepaths.push(filepath)
+            // Optionally, save uploadSubDir to a local variable (e.g. in closure) instead of global ??????
+            // was: localUploadSubDir = uploadSubDir ????
+            subdirs = localsubdirs
+            return fullFilename
         }
     })
 
     try {
-        const { fields, files } = await parseForm(req, form);
-        try {
-            const decodedToken = await admin.auth().verifyIdToken(idToken)
-            if (!decodedToken) {
-                return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
-            }
-            req.user = decodedToken
-        } catch (err) {
-            return handleError(res, 'Token verification failed', err, 403)
-        }
-
+        const { fields, files } = await parseForm(req, form)
         for (const fieldName in fields) {
             if (!Array.isArray(fields[fieldName])) {
                 fields[fieldName] = [fields[fieldName]]
             }
         }
-
-        const lockName = spaceJoin(fields.make || fields.newBrand, fields.model)
 
         const entry = {
             makeModels: [{
@@ -146,17 +137,18 @@ export default async function requestLock(req, res) {
             subtitle: 'CC BY-NC-SA 4.0'
         })))
 
+        const lockName = spaceJoin(fields.make || fields.newBrand, fields.model)
 
         if (subdirs) {
             const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
             const detailsJson = JSON.stringify(fields, null, 2)
-
-            await runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.discordUsername || fields.redditUsername}' -Title='${slugify(lockName)}' -gps:all= -UserComment='${fields.id}' '${destination}'`)
-
             try {
-                await writeFile(`${destination}/uploadData.json`, detailsJson, 'utf8')
+                await Promise.all([
+                    runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.discordUsername || fields.redditUsername}' -Title='${slugify(lockName)}' -gps:all= -UserComment='${fields.id}' '${destination}'`),
+                    writeFile(`${destination}/uploadData.json`, detailsJson, 'utf8')
+                ])
             } catch (err) {
-                return handleError(res, 'uploadData writeFile error', err)
+                return handleError(res, 'uploadData or thumbnail writeFile error', err)
             }
         }
 
@@ -193,7 +185,7 @@ export default async function requestLock(req, res) {
         return res.status(200).json(entry)
 
     } catch (err) {
-        return handleError(res, 'Form Parse Error', err);
+        return handleError(res, 'Form Parse Error', err)
     }
 }
 
@@ -268,15 +260,30 @@ export async function updateVotes(req, res) {
 
 ////////////
 
-// Helper to promisify form parsing
 function parseForm(req, form) {
     return new Promise((resolve, reject) => {
         form.parse(req, (err, fields, files) => {
-            if (err) return reject(err);
-            resolve({ fields, files });
+            if (err) return reject(err)
+            resolve({ fields, files })
         })
     })
 }
+
+function createFilename(part, serverPath, uploadDir) {
+    const { originalFilename } = part
+    if (!originalFilename) return 'invalid'
+
+    const filenameParts = originalFilename.split('/')
+    const filename = filenameParts.pop()
+    const matches = filename.match(/(.*)(\..\w*$)/)
+    const basename = slugify(matches[1]) + '.' + slugify(matches[2])
+    const localsubdirs = filenameParts.map(slugify).join('').replace(/\s+/g, '-')
+    const fullFilename = `${localsubdirs}/${basename}`
+    const filepath = `${serverPath}/${localsubdirs}/${basename}`
+    const uploadSubDir = `${uploadDir}/${localsubdirs}`.replace(/\s+/g, '-')
+    return { fullFilename, filepath, uploadSubDir, localsubdirs }
+}
+
 
 async function runCommand(command) {
     try {
