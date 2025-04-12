@@ -31,7 +31,7 @@ function Entries({profile}) {
 
     const footerBefore = (
         <div style={{margin:'30px 0px'}}>
-            <ExportButton text={true}/>
+            <ExportButton text={true} entries={entries}/>
         </div>
     )
 
