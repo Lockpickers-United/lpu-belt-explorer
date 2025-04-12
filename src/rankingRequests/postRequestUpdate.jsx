@@ -2,33 +2,49 @@ import {enqueueSnackbar} from 'notistack'
 import {serverUrl} from './rankingRequestData'
 
 export default async function postRequestUpdate({entry, user}) {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => {
+        controller.abort()
+    }, 10000)
+    const rand = Math.floor(Math.random() * 1000000)
+
     try {
         const idToken = await user.getIdToken()
-        return await fetch(`${serverUrl}/update-request`, {
+        const response = await fetch(`${serverUrl}/update-request?${rand}`, {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + idToken,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({entry})
+            body: JSON.stringify({entry}),
+            signal: controller.signal, // Link the abort controller
         })
-            .then(response => {
-                //console.log('response', response)
-                if (response.status !== 200) {
-                    enqueueSnackbar('Error updating request status', {variant: 'error', autoHideDuration: 3000})
-                    return {response: {data: {status: 500, message: 'Error updating request'}}}
-                } else {
-                    enqueueSnackbar('Request updated', {autoHideDuration: 3000})
-                    return response
-                }
-            })
-            .catch(error => {
-                console.error('Error updating request:', cleanError(error))
-            })
+
+        clearTimeout(timeout)
+
+        if (!response.ok) {
+            let errorMessage = 'Error updating request'
+            try {
+                const errorData = await response.json()
+                console.log('errorData', errorData)
+                errorMessage = errorData.message || errorMessage
+                enqueueSnackbar(`Error updating request: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
+
+            } catch (e) {
+                // Fallback in case parsing fails
+            }
+            return { response: { data: { status: response.status, message: errorMessage } } }
+        } else {
+            enqueueSnackbar('Request updated')
+            return await response.json().catch(() => ({}))
+        }
     } catch (error) {
-        console.error('Error during authentication or server request:', error)
-        return Promise.reject(error)
+        clearTimeout(timeout)
+        console.error('Error during authentication or server request:', cleanError(error))
+        enqueueSnackbar('Error updating request', { variant: 'error', autoHideDuration: 3000 })
+        throw error
     }
+
 }
 
 const cleanError = (error) => {

@@ -1,22 +1,22 @@
 import { enqueueSnackbar } from 'notistack'
 import { serverUrl } from './rankingRequestData'
 
-export default async function postVoteUpdate({ entryId, user }) {
+export default async function postVoteUpdate({ newVote, user }) {
     const controller = new AbortController()
     const timeout = setTimeout(() => {
         controller.abort()
     }, 10000)
+    const rand = Math.floor(Math.random() * 1000000)
 
     try {
         const idToken = await user.getIdToken()
-        const rand = Math.floor(Math.random() * 1000000)
         const response = await fetch(`${serverUrl}/request-vote?${rand}`, {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + idToken,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ entryId }),
+            body: JSON.stringify({ newVote }),
             signal: controller.signal, // Link the abort controller
         })
 
@@ -29,7 +29,6 @@ export default async function postVoteUpdate({ entryId, user }) {
                 console.log('errorData', errorData)
                 errorMessage = errorData.message || errorMessage
                 enqueueSnackbar(`Error updating votes: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
-
             } catch (e) {
                 // Fallback in case parsing fails
             }

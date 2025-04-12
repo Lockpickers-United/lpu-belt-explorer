@@ -20,21 +20,23 @@ import {useNavigate} from 'react-router-dom'
 import DBContext from '../app/DBContext.jsx'
 import postRequestCreate from './postRequestCreate.jsx'
 import AuthContext from '../app/AuthContext.jsx'
+import DataContext from '../context/DataContext.jsx'
 
 /**
  * @prop newBrand
  * @prop allMakes
  */
 
-function RequestLock({profile}) {
+function RequestLock() {
     const {user} = useContext(AuthContext)
     const {rankingRequests} = useContext(DBContext)
+    const {profile} = useContext(DataContext)
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(false)
     const [acReset, setAcReset] = useState(false)
-    const [form, setForm] = useState({id: genHexString(8), requestedBy: [user.uid]})
+    const [form, setForm] = useState({id: genHexString(8)})
     const [inputValue, setInputValue] = useState('')
 
     const handleFormChange = useCallback((event) => {
@@ -77,10 +79,6 @@ function RequestLock({profile}) {
                 setDeep(acc, ['lockingMechanisms'], entry.lockingMechanisms
                     ? [...new Set([...acc.lockingMechanisms, ...entry.lockingMechanisms, 'Multiple'])].sort()
                     : acc.lockingMechanisms)
-                acc.features = acc.features || []
-                setDeep(acc, ['features'], entry.features
-                    ? [...new Set([...acc.features, ...entry.features])].sort()
-                    : acc.features)
                 return acc
             }, {})
     }, [])
@@ -115,11 +113,9 @@ function RequestLock({profile}) {
         setUploading(true)
         const formCopy = {
             ...form,
-            displayName: profile?.displayName,
+            displayName: profile?.displayName || 'no display name',
             make: form.make || form.newBrand,
-            droppedFileNames: files.map(file => {
-                return file.name
-            }),
+            droppedFileNames: files.map(file => file.name),
             requestStatus: 'Submitted'
         }
         delete formCopy.altBrand
@@ -136,7 +132,16 @@ function RequestLock({profile}) {
             formData.append('files', file, `${uploadsDir}/${prefix}_${base}_${suffix}.${ext}`.toLowerCase())
         })
 
-        setResponse(await postRequestCreate({formData, user, setUploadError}))
+        try {
+            const result = await postRequestCreate({ formData, user, setUploadError })
+            setResponse(result)
+        } catch (error) {
+            //console.error('Error in postRequestCreate:', error)
+            setUploadError(error)
+        } finally {
+            // Whether success or error, stop the uploading state.
+            setUploading(false)
+        }
 
         if (!uploadError) {
             files.forEach(file => URL.revokeObjectURL(file.preview))
@@ -145,7 +150,6 @@ function RequestLock({profile}) {
         }
 
         setForm(formCopy)
-
     }
 
     const handleReload = useCallback(() => {
@@ -156,6 +160,14 @@ function RequestLock({profile}) {
         setResponse(undefined)
         setUploading(false)
         setUploadError(undefined)
+        setTimeout(() => {
+            window.scrollTo({
+                left: 0,
+                top:0,
+                behavior: 'smooth'
+            })
+        }, 100)
+
     }, [acReset, files])
 
     //TODO: clear form on error OK
@@ -271,7 +283,7 @@ function RequestLock({profile}) {
                         <div style={{display: flexStyle, marginTop: 20}}>
                             <div style={{marginRight: 20}}>
                                 <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom: 5}}>
-                                    Locking Mechanism(s)
+                                    Locking Mechanism
                                 </div>
                                 <SelectBox changeHandler={handleFormChange}
                                            name='lockingMechanisms' form={form}

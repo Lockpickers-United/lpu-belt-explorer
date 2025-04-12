@@ -22,6 +22,7 @@ import TextField from '@mui/material/TextField'
 import AuthContext from '../app/AuthContext.jsx'
 import postRequestUpdate from './postRequestUpdate.jsx'
 import AddVote from './AddVote.jsx'
+import Upvote from './Upvote.jsx'
 
 /**
  * @typedef {object} entry
@@ -50,6 +51,8 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
             belt: entry.belt
         }
     )
+    const {requestedBy = []} = entry
+    const upvotes = requestedBy.filter(req => !req.owner)
 
     useEffect(() => {
         setTimeout(() => {
@@ -152,9 +155,12 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         }
     }, [expanded, entry, scrolled, expandAll])
 
-    const discordUsername = entry.usernames.discord ? entry.usernames.discord : undefined
-    const redditUsername = entry.usernames.reddit ? `u/${entry.usernames.reddit.replace(/^\/*u\//, '')}` : undefined
-    const userName = discordUsername || redditUsername || undefined
+
+    const {discord, reddit} = entry.usernames || {}
+    const userName = [discord && `@${discord}`,
+        reddit && `u/${reddit.replace(/^\/*u\//, '')}`]
+        .filter(Boolean)
+        .join(' • ')
     const userBelt = entry.userBelt ? ` (${entry.userBelt})` : ''
     const rankedBelt = entry.belt && entry.belt !== 'Unranked' ? ` (${entry.belt})` : ''
 
@@ -206,22 +212,23 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                                 !!entry.notes?.length &&
                                 <FieldValue name='Notes' value={entry.notes} style={{marginRight: 20}}/>
                             }
-                            <div
-                                style={{display: flexStyle, flexGrow: 1, justifyContent: 'right', marginRight: 15}}>
-                                <FieldValue name='Requested By' value={userName + userBelt}
-                                            style={{minWidth: 100}}/>
-                            </div>
                         </div>
 
-                        <div style={{display: flexStyle, width: '100%'}}>
+                        <div style={{display: flexStyle, width: '100%', marginTop:15}}>
+                            <FieldValue name='Requested By' value={userName + userBelt}
+                                        style={{marginRight: 30}}
+                                        headerStyle={{color: '#aaa', fontSize: '0.9rem'}}/>
                             {
                                 !!entry.approximateBelt &&
                                 <FieldValue name='Suggested Belt' value={`${entry.approximateBelt} Belt`}
-                                            style={{marginRight: 10}}/>
+                                            style={{marginRight: 30}}
+                                            headerStyle={{color: '#aaa', fontSize: '0.9rem'}}/>
+
                             }
                             {
                                 !!entry.hazLocc &&
-                                <FieldValue name='Has Lock(s)' value={entry.hazLocc} style={{marginRight: 10}}/>
+                                <FieldValue name='Has Lock(s)' value={entry.hazLocc} style={{marginRight: 0}}
+                                            headerStyle={{color: '#aaa', fontSize: '0.9rem'}}/>
                             }
                         </div>
                         {
@@ -230,6 +237,17 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                                 <LockImageGallery entry={entry}/>
                             </div>
                         }
+
+                        {
+                            upvotes.length > 0 &&
+                            <FieldValue name='Upvotes' style={{marginRight: 20, marginTop: 10}}
+                                        headerStyle={{color: '#bbb', fontSize: '1rem'}}
+                                        value={
+                                            upvotes.map((upvote, index) => <Upvote key={upvote.userId} upvote={upvote}
+                                                                                   voteNum={index}/>)
+                                        }/>
+                        }
+
                         <AccordionActions>
                             <CopyLinkToRequestButton entry={entry}/>
                         </AccordionActions>

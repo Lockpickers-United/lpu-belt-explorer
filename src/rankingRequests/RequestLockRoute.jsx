@@ -10,22 +10,13 @@ import DBContext from '../app/DBContext.jsx'
 
 export default function RequestLockRoute() {
     const {lockCollection} = useContext(DBContext)
-    const {rankingRequests} = useContext(DBContext)
+    const {rankingRequests = []} = useContext(DBContext)
     const {isMobile} = useWindowSize()
 
     usePageTitle('Lock Ranking Request')
 
-
-    const requestCounts = rankingRequests.reduce((acc, request) => {
-        acc[request.lockName] = (acc[request.lockName] || 0) + 1
-        return acc
-    }, {})
-
-    const requestData = rankingRequests.map(request => ({
-        ...request,
-        requestCount: requestCounts[request.lockName],
-        danPoints: 0
-    })) || []
+    const requestData = rankingRequests
+        .filter(request => request.makeModels && request.makeModels[0].make && request.makeModels[0].model)
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
@@ -33,10 +24,10 @@ export default function RequestLockRoute() {
 
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
-            <DataProvider allEntries={requestData}>
+            <DataProvider allEntries={requestData} profile={lockCollection}>
 
                 <Nav title='Lock Ranking Request' extras={extras}/>
-                <RequestLock data={requestData} profile={lockCollection}/>
+                <RequestLock data={requestData}/>
 
             </DataProvider>
         </FilterProvider>

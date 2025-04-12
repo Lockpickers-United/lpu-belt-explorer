@@ -16,22 +16,10 @@ export default function ViewLockRequestsRoute() {
     const requestMod = userClaims?.requestAdmin || userClaims?.admin
 
     const {isMobile} = useWindowSize()
-    const {rankingRequests} = useContext(DBContext)
+    const {rankingRequests = []} = useContext(DBContext)
 
-    const allRankingRequests = rankingRequests || []
-
-    const requestCounts = allRankingRequests?.reduce((acc, request) => {
-        acc[request.lockName] = (acc[request.lockName] || 0) + 1
-        return acc
-    }, {})
-
-    const requestData = allRankingRequests
-        .filter(request => request.makeModels && request.makeModels[0].make && request.makeModels[0].model)
-        .map(request => ({
-        ...request,
-        requestCount: requestCounts[request.lockName],
-        danPoints: 0
-    })) || []
+    const requestData = rankingRequests
+            .filter(request => request.makeModels && request.makeModels[0].make && request.makeModels[0].model)
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
