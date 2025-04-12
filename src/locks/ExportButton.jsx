@@ -15,22 +15,24 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
 import Button from '@mui/material/Button'
 
-function ExportButton({text}) {
+function ExportButton({text, entries}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {visibleEntries} = useContext(DataContext)
 
+    const exportEntries = entries || visibleEntries
+
     const handleExportJson = useCallback(() => {
-        const data = JSON.stringify(visibleEntries)
+        const data = JSON.stringify(exportEntries)
         handleClose()
         download('lpubeltsdata.json', data)
         enqueueSnackbar('Current lock entries downloaded as lpubeltsdata.json')
-    }, [handleClose, visibleEntries])
+    }, [handleClose, exportEntries])
 
     const handleExportClipboard = useCallback(() => {
-        const data = visibleEntries.map(datum => ({
+        const data = exportEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
             model: datum.makeModels.map(e => e.model).join(','),
@@ -45,13 +47,13 @@ function ExportButton({text}) {
         }).join('\n')
 
         handleClose()
-        navigator.clipboard.writeText(clipboardText)
+        navigator.clipboard.writeText(clipboardText).then()
         enqueueSnackbar('Current lock entries copied to clipboard.')
-    }, [handleClose, visibleEntries])
+    }, [handleClose, exportEntries])
 
     const handleExportCsv = useCallback(() => {
         const csvColumns = ['id', 'name', 'version', 'belt']
-        const data = visibleEntries.map(datum => ({
+        const data = exportEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
             model: datum.makeModels.map(e => e.model).join(','),
@@ -74,7 +76,7 @@ function ExportButton({text}) {
         handleClose()
         download('lpubeltsdata.csv', csvFile)
         enqueueSnackbar('Current lock entries downloaded as lpubeltsdata.csv')
-    }, [handleClose, visibleEntries])
+    }, [handleClose, exportEntries])
 
     return (
         <React.Fragment>
