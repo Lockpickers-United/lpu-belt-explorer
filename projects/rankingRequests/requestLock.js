@@ -58,21 +58,11 @@ export default async function requestLock(req, res) {
     let subdirs = ''
     let filepaths = []
 
-    const authHeader = req.headers.authorization
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return handleError(res, 'Unauthorized', 'Unauthorized', 403)
-    }
-    const idToken = authHeader.split('Bearer ')[1]
     try {
-        const decodedToken = await admin.auth().verifyIdToken(idToken)
-        if (!decodedToken) {
-            return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
-        }
-        req.user = decodedToken
+        req.user = await authenticateRequest(req, res)
     } catch (err) {
-        return handleError(res, 'Token verification failed', err, 403)
+        return handleError(res, err.message, err, 403)
     }
-
     const form = formidable({
         uploadDir,
         keepExtensions: true,
@@ -193,20 +183,14 @@ export async function updateRequest(req, res) {
 
     const {entry} = req.body
 
-    const authHeader = req.headers.authorization
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(403).send('Unauthorized')
-    }
-    const idToken = authHeader.split('Bearer ')[1]
-
     try {
-        const decodedToken = await admin.auth().verifyIdToken(idToken)
-        if (!decodedToken.admin && !decodedToken.requestAdmin) {
-            return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
-        }
-        req.user = decodedToken
+        req.user = await authenticateRequest(req, res)
     } catch (err) {
-        return handleError(res, 'Token verification failed', err, 403)
+        return handleError(res, err.message, err, 403)
+    }
+
+    if (!(req.user.admin || req.user.requestAdmin)) {
+        return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
     }
 
     try {
@@ -226,13 +210,14 @@ export async function updateVotes(req, res) {
     const {newVote} = req.body
     const {entryId} = newVote
 
-    const authHeader = req.headers.authorization
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(403).send('Unauthorized')
+    try {
+        req.user = await authenticateRequest(req, res)
+    } catch (err) {
+        return handleError(res, err.message, err, 403)
     }
-    const idToken = authHeader.split('Bearer ')[1]
-    const decodedToken = await admin.auth().verifyIdToken(idToken)
-    const {user_id} = decodedToken
+
+    const {user_id} = req.user
+
     const ref = db.collection('ranking-requests').doc(entryId)
     let updatedVotes = []
 
@@ -250,8 +235,8 @@ export async function updateVotes(req, res) {
         await ref.update({requestedBy: updatedVotes})
 
     } catch (error) {
-        console.error('Error reading existing request: ', error)
-        return handleError(res, 'Database read error', error)
+        console.error('Error updating votes: ', error)
+        return handleError(res, 'Error updating votes', error)
     }
 
     console.log('done')
@@ -259,6 +244,19 @@ export async function updateVotes(req, res) {
 }
 
 ////////////
+
+async function authenticateRequest(req) {
+    const authHeader = req.headers.authorization
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        throw new Error('Unauthorized');
+    }
+    const idToken = authHeader.split('Bearer ')[1]
+    const decodedToken = await admin.auth().verifyIdToken(idToken)
+        if (!decodedToken) {
+            throw new Error('Insufficient permissions');
+        }
+    return decodedToken
+}
 
 function parseForm(req, form) {
     return new Promise((resolve, reject) => {
