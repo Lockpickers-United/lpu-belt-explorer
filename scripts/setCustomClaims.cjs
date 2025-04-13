@@ -39,7 +39,7 @@ async function updateCustomClaimsForUsers() {
         }
     }
     console.log('Finished updating custom claims for all users.')
-    //process.exit(0) // Exit process after finishing
+    process.exit(0) // Exit process after finishing
 }
 
 async function getCustomClaimsForUsers() {

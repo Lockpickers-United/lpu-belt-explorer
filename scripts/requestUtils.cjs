@@ -15,10 +15,8 @@ async function getDocument() { // eslint-disable-line
 
     try {
         const ref = db.doc(`/${collection}/${docId}`)
-        await ref.get().then((docRef) => {
-            console.log(JSON.stringify(docRef.data()))
-        })
-
+        const docRef = await ref.get()
+        console.log(JSON.stringify(docRef.data()))
     } catch (error) {
         console.error(`Error getting document ${docId}:`, error)
     }
