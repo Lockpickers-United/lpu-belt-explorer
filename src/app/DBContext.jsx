@@ -463,13 +463,13 @@ export function DBProvider({children}) {
         const ref = doc(db, 'lockcollections', userId)
         try {
             await updateDoc(ref, {dismissedMessages: deleteField()})
-            return { success: true, message: 'Request updated successfully.' }
+            return { success: true, message: 'Dismissed messages removed from user:',  userId}
         } catch (error) {
             console.error('Error updating ranking request: ', error)
             if (error.code === 'permission-denied') {
-                return { success: false, message: 'You do not have permission to update this request.' }
+                return { success: false, message: 'You do not have permission to preform this request.' }
             }
-            return { success: false, message: `Error updating request: ${error.message}` }
+            return { success: false, message: `Error removing dismissed messages: ${error.message}` }
         }
     }, [dbError])
 
@@ -502,7 +502,7 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages,
+        removeDismissedMessages
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -530,7 +530,7 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages,
+        removeDismissedMessages
     ])
 
     return (
