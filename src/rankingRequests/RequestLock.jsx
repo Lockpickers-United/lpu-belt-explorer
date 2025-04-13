@@ -14,10 +14,8 @@ import AutoCompleteBox from '../formUtils/AutoCompleteBox.jsx'
 import Link from '@mui/material/Link'
 import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
-import allEntries from '../data/data.json'
 import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import {useNavigate} from 'react-router-dom'
-import DBContext from '../app/DBContext.jsx'
 import postRequestCreate from './postRequestCreate.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import DataContext from '../context/DataContext.jsx'
@@ -28,8 +26,9 @@ import DataContext from '../context/DataContext.jsx'
  */
 
 function RequestLock() {
+
+    const {allEntries} = useContext(DataContext)
     const {user} = useContext(AuthContext)
-    const {rankingRequests} = useContext(DBContext)
     const {profile} = useContext(DataContext)
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
@@ -81,21 +80,13 @@ function RequestLock() {
                     : acc.lockingMechanisms)
                 return acc
             }, {})
-    }, [])
-
-    const requestedMakes = useMemo(() => {
-        return rankingRequests
-            .filter(request => request.makeModels && request.makeModels[0].make && request.makeModels[0].model)
-            .map(request => request.makeModels[0].make)
-            .filter(x => x)
-    }, [rankingRequests])
+    }, [allEntries])
 
     const allMakes = useMemo(() => {
-        return [...new Set([...lockData.allMakes, ...requestedMakes])]
-            .sort((a, b) => {
+        return lockData.allMakes?.sort((a, b) => {
                 return a.localeCompare(b)
             })
-    }, [lockData, requestedMakes])
+    }, [lockData])
 
     const uploadable = ((form['make'] || form.newBrand)
             && form.model
@@ -179,8 +170,8 @@ function RequestLock() {
 
     const options = useMemo(() => {
         return [
-            {label: 'Request a Lock', page: '/content/lockrequest'},
-            {label: 'View Requests', page: '/content/lockrequest/view'}
+            {label: 'Request a Lock', page: '/rankingrequests/submit'},
+            {label: 'View Requests', page: '/rankingrequests/view'}
         ]
     }, [])
     const navigate = useNavigate()

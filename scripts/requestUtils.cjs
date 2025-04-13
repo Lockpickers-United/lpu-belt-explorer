@@ -7,7 +7,7 @@ const app = admin.initializeApp({
 })
 const db = getFirestore(app, 'lpubelts-dev')
 
-const action = 'getDocument' // 'deleteDeletedDocuments' // 'getDocument'
+const action = 'deleteDeletedDocuments' // 'deleteDeletedDocuments' // 'getDocument'
 
 async function getDocument() { // eslint-disable-line
     const collection = 'ranking-requests'
@@ -37,7 +37,7 @@ async function deleteDeletedDocuments() { // eslint-disable-line
         batch.delete(doc.ref)
     })
     await batch.commit()
-    console.log(`Deleted ${querySnapshot.size} documents where Status === "Deleted".`)
+    console.log(`Deleted ${querySnapshot.size} documents where requestStatus === "Deleted".`)
 }
 
 if (action === 'deleteDeletedDocuments') {

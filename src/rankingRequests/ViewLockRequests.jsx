@@ -17,8 +17,8 @@ export default function ViewLockRequests({requestMod}) {
 
     const options = useMemo(() => {
         return [
-            {label: 'Request a Lock', page: '/content/lockrequest'},
-            {label: 'View Requests', page: '/content/lockrequest/view'}
+            {label: 'Request a Lock', page: '/rankingrequests/submit'},
+            {label: 'View Requests', page: '/rankingrequests/view'}
         ]
     }, [])
     const navigate = useNavigate()

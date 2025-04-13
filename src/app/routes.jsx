@@ -304,7 +304,8 @@ export default [
             const {default: AwardRoute} = await import('../award/AwardRoute.jsx')
             return {element: <AwardRoute/>}
         }
-    },{
+    },
+    {
         path: '/content',
         lazy: async () => {
             const {default: ContentParentRoute} = await import('../content/ContentParentRoute.jsx')
@@ -324,23 +325,38 @@ export default [
                     const {default: PhotoSubmitRoute} = await import('../content/photoSubmit/PhotoSubmitRoute.jsx')
                     return {element: <PhotoSubmitRoute/>}
                 }
-            },
+            }
+        ]
+    },
+    {
+        path: '/rankingrequests',
+        lazy: async () => {
+            const {default: RankingRequestsParentRoute} = await import('../rankingRequests/RankingRequestsParentRoute.jsx')
+            return {element: <RankingRequestsParentRoute/>}
+        },
+        children: [
             {
-                path: '/content/lockrequest',
+                path: '/rankingrequests',
                 lazy: async () => {
                     const {default: RequestLockRoute} = await import('../rankingRequests/RequestLockRoute.jsx')
                     return {element: <RequestLockRoute/>}
                 }
             },
             {
-                path: '/content/lockrequest/view',
+                path: '/rankingrequests/submit',
+                lazy: async () => {
+                    const {default: RequestLockRoute} = await import('../rankingRequests/RequestLockRoute.jsx')
+                    return {element: <RequestLockRoute/>}
+                }
+            },
+            {
+                path: '/rankingrequests/view',
                 lazy: async () => {
                     const {default: ViewLockRequestsRoute} = await import('../rankingRequests/ViewLockRequestsRoute.jsx')
                     return {element: <ViewLockRequestsRoute/>}
                 }
             }
-    ]
-
+        ]
     },
     {
         path: '/rafl',
@@ -399,7 +415,7 @@ export default [
                 }
             }
         ]
-    },{
+    }, {
         path: '/tools',
         lazy: async () => {
             const {default: ToolsParentRoute} = await import('../tools/ToolsParentRoute.jsx')
@@ -412,19 +428,19 @@ export default [
                     const {default: ToolsRoute} = await import('../tools/ToolsRoute.jsx')
                     return {element: <ToolsRoute/>}
                 }
-            },{
+            }, {
                 path: '/tools/flickrinfo',
                 lazy: async () => {
                     const {default: FlickrInfoRoute} = await import('../tools/flickrInfo/FlickrInfoRoute.jsx')
                     return {element: <FlickrInfoRoute/>}
                 }
-            },{
+            }, {
                 path: '/tools/rafl-charities',
                 lazy: async () => {
                     const {default: RaflCharitiesRoute} = await import('../tools/raflCharities/RaflCharitiesRoute.jsx')
                     return {element: <RaflCharitiesRoute/>}
                 }
-            },{
+            }, {
                 path: '/tools/testpage',
                 lazy: async () => {
                     const {default: TestPageRoute} = await import('../tools/testPage/TestPageRoute.jsx')

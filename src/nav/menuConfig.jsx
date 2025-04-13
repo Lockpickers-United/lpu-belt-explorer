@@ -103,7 +103,7 @@ export default [
     {
         title: 'Suggest a Lock',
         icon: <EnhancedEncryptionIcon fontSize='small'/>,
-        path: '/content/lockrequest',
+        path: '/rankingrequests/submit',
         beta: true
     },
     {

@@ -50,7 +50,6 @@ export function DBProvider({children}) {
     const [activityLoaded, setActivityLoaded] = useState(false)
     const [dbError, setDbError] = useState(null)
     const [systemMessages, setSystemMessages] = useState([])
-    const [rankingRequests, setRankingRequests] = useState([])
 
     const dbLoaded = collectionDBLoaded && activityLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
@@ -474,17 +473,6 @@ export function DBProvider({children}) {
         }
     }, [dbError])
 
-    // Ranking Request Subscriptions
-    useEffect(() => {
-        const q = query(collection(db, 'ranking-requests'), where('requestStatus', '!=', 'Deleted'))
-        onSnapshot(q, querySnapshot => {
-            const requests = querySnapshot.docs.map(doc => doc.data())
-            setRankingRequests(requests)
-        }, error => {
-            console.error('Error getting ranking requests from DB:', error)
-        })
-    }, [])
-
 
     const value = useMemo(() => ({
         dbLoaded,
@@ -515,7 +503,6 @@ export function DBProvider({children}) {
         updateSystemMessage,
         updateSystemMessageStatus,
         removeDismissedMessages,
-        rankingRequests,
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -544,7 +531,6 @@ export function DBProvider({children}) {
         updateSystemMessage,
         updateSystemMessageStatus,
         removeDismissedMessages,
-        rankingRequests,
     ])
 
     return (

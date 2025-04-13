@@ -11,7 +11,7 @@ import {statusSort} from './rankingRequestData'
  * @typedef {object} usernames
  * @prop entry.approximateBelt
  * @prop entry.dateRequested
- * @prop approximateBelt
+ * @prop requestedBy
  */
 
 export function DataProvider({children, allEntries, profile}) {
@@ -24,7 +24,7 @@ export function DataProvider({children, allEntries, profile}) {
                 ...entry,
                 originalEntry: entry,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
-                requestCount: entry.requestedBy.length,
+                requestCount: entry.requestedBy?.length,
                 danPoints: 0,
                 fuzzy: removeAccents(
                     entry.makeModels
