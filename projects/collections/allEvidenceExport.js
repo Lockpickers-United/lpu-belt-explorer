@@ -6,6 +6,7 @@ import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
 import {projectDetails, lockDetails} from '../util/getItemDetails.js'
 import entryName from '../util/entryName.js'
+import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
 
@@ -28,6 +29,8 @@ const serverDir = production
 
 export default async function getAllEvidence() {
 
+    console.log('Running getAllEvidence()')
+
     const backupDir = production
         ? `/home/${prodUser}/firebase`
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
@@ -35,6 +38,30 @@ export default async function getAllEvidence() {
     const collectionData = JSON.parse(await fs.readFile(`${backupDir}/backup.json`, 'utf8'))['__collections__']['lockcollections']
     const unclaimedEvidence = await dbProd.collection('unclaimed-evidence').get()
     const scorecardEvidence = await dbProd.collection('evidence').get()
+
+    const messages = [{
+        activity: 'READ',
+        activityCount: unclaimedEvidence.docs.length,
+        source: 'allEvidenceExport - unclaimed-evidence',
+        id: '',
+        displayName: 'cronjob',
+    },{
+        activity: 'READ',
+        activityCount: scorecardEvidence.docs.length,
+        source: 'allEvidenceExport - scorecardEvidence',
+        id: '',
+        displayName: 'cronjob',
+    }]
+
+    try {
+        await logToFirebaseLog(messages)
+    } catch (err) {
+        console.log('Logging Error', err)
+    }
+
+    //logToFirebaseLog(activityData[0])
+
+
     const allEvidence = [...scorecardEvidence.docs, ...unclaimedEvidence.docs]
     const projectData = await projectDetails()
     const lockData = await lockDetails()
@@ -145,20 +172,21 @@ export default async function getAllEvidence() {
     }).sort((a, b) => b.pickCount - a.pickCount)
 
     fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-    await fs.writeFile(`${serverDir}/allProjects.json`, JSON.stringify(fullDb, null, 2), function (err) {
-        if (err) {
-            console.log(err)
-        }
-    })
 
-    await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats, null, 2), function (err) {
-        if (err) {
-            console.log(err)
-        }
-    })
+    try {
+        await fs.writeFile(`${serverDir}/allProjects.json`, JSON.stringify(fullDb, null, 2))
+    } catch (err) {
+        console.log(err)
+    }
+
+    try {
+        await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats, null, 2))
+    } catch (err) {
+        console.log(err)
+    }
 
     return fullDb
 
 }
 
-await getAllEvidence().then()
+//await getAllEvidence().then()

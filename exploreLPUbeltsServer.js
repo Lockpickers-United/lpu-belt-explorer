@@ -13,6 +13,7 @@ import saveRequest from './projects/saveRequest/saveRequest.js'
 import getAllEvidence from './projects/collections/allEvidenceExport.js'
 import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
+import logFirebaseActivity from './projects/logFirebaseActivity/logFirebaseActivity.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -93,6 +94,10 @@ app.post('/request-vote', async (req, res) => {
     await updateVotes(req, res).then()
 })
 
+app.post('/log-activity', async (req, res) => {
+    myEmitter.emit('myEvent', 'Log Firebase Activity requested')
+    logFirebaseActivity(req, res)
+})
 
 app.get('/export-evidence', async (req, res) => {
     myEmitter.emit('myEvent', 'Evidence export requested')

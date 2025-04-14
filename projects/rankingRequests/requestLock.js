@@ -17,6 +17,7 @@ import {prodUser} from '../../keys/users.js'
 import {spaceJoin} from '../util/stringUtils.js'
 import dayjs from 'dayjs'
 import createThumbnails from '../util/createThumbnails.js'
+import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
@@ -70,7 +71,7 @@ export default async function requestLock(req, res) {
         maxFileSize: 30 * 1024 * 1024,
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
         filename(name, ext, part) {
-            const { fullFilename, filepath, uploadSubDir, localsubdirs } = createFilename(part, serverPath, uploadDir)
+            const {fullFilename, filepath, uploadSubDir, localsubdirs} = createFilename(part, serverPath, uploadDir)
             filepaths.push(filepath)
             // Optionally, save uploadSubDir to a local variable (e.g. in closure) instead of global ??????
             // was: localUploadSubDir = uploadSubDir ????
@@ -80,7 +81,7 @@ export default async function requestLock(req, res) {
     })
 
     try {
-        const { fields, files } = await parseForm(req, form)
+        const {fields, files} = await parseForm(req, form)
         for (const fieldName in fields) {
             if (!Array.isArray(fields[fieldName])) {
                 fields[fieldName] = [fields[fieldName]]
@@ -104,8 +105,11 @@ export default async function requestLock(req, res) {
             notes: fields.notes?.firstValue(),
             hazLocc: fields.hazLocc?.firstValue(),
             requestedBy: [{
-                owner: true, userId: req.user.user_id, displayName: fields.displayName?.firstValue(),
-                discordUsername: fields.discordUsername?.firstValue(), redditUsername: fields.redditUsername?.firstValue()
+                owner: true,
+                userId: req.user.user_id,
+                displayName: fields.displayName?.firstValue(),
+                discordUsername: fields.discordUsername?.firstValue(),
+                redditUsername: fields.redditUsername?.firstValue()
             }],
             requestStatus: 'Submitted',
             dateRequested: dayjs().toISOString()
@@ -142,13 +146,18 @@ export default async function requestLock(req, res) {
             }
         }
 
+        const ref = db.collection('ranking-requests').doc(entry.id)
         try {
-            const ref = db.collection('ranking-requests').doc(entry.id)
-            await ref.set(entry)
-            console.log('Request updated successfully')
+            await setRankingRequest(ref, entry, entry.id, entry.displayName)
+            await logToFirebaseLog([{
+                activity: 'READ',
+                activityCount: 1,
+                source: 'request-create',
+                id: entry.id,
+                displayName: entry.displayName,
+            }])
         } catch (error) {
-            console.error('Error writing document: ', error)
-            return handleError(res, 'Database write error', error)
+            handleError(res, 'Failed to set ranking request', error, 500)
         }
 
         const html = `<strong>Lock addition request for ${sanitizeHTML(lockName)} by ${sanitizeHTML(fields.discordUsername || fields.redditUsername)}</strong><br/><br/>`
@@ -181,25 +190,28 @@ export default async function requestLock(req, res) {
 
 export async function updateRequest(req, res) {
 
-    const {entry} = req.body
-
     try {
         req.user = await authenticateRequest(req, res)
     } catch (err) {
         return handleError(res, err.message, err, 403)
     }
-
     if (!(req.user.admin || req.user.requestAdmin)) {
         return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
     }
 
+    const {entry} = req.body
+    const ref = db.collection('ranking-requests').doc(entry.id)
     try {
-        const ref = db.collection('ranking-requests').doc(entry.id)
-        await ref.set(entry)
-        console.log('Request updated successfully')
+        await setRankingRequest(ref, entry, entry.id, entry.displayName)
+        await logToFirebaseLog([{
+            activity: 'WRITE',
+            activityCount: 1,
+            source: 'request-create',
+            id: entry.id,
+            displayName: entry.displayName,
+        }])
     } catch (error) {
-        console.error('Error writing document: ', error)
-        return handleError(res, 'Database write error', error)
+        handleError(res, 'Failed to set ranking request', error, 500)
     }
 
     console.log('done')
@@ -208,7 +220,7 @@ export async function updateRequest(req, res) {
 
 export async function updateVotes(req, res) {
     const {newVote} = req.body
-    const {entryId} = newVote
+    const {entryId, displayName} = newVote
 
     try {
         req.user = await authenticateRequest(req, res)
@@ -217,22 +229,41 @@ export async function updateVotes(req, res) {
     }
 
     const {user_id} = req.user
-
-    const ref = db.collection('ranking-requests').doc(entryId)
     let updatedVotes = []
 
+    const ref = db.collection('ranking-requests').doc(entryId)
     try {
-        const rankingRequest = await ref.get()
-        const previousVotes = rankingRequest.data().requestedBy || []
+        const rankingRequest = await fetchRankingRequest(ref, entryId)
+        if (!rankingRequest) return handleError(res, 'No ranking request found', new Error('No ranking request found'), 404)
+        await logToFirebaseLog([{
+            activity: 'READ',
+            activityCount: 1,
+            source: 'request-upvote',
+            id: entryId,
+            displayName: displayName,
+        }])
+
+        const previousVotes = rankingRequest.requestedBy || []
         const hasPreviousVote = previousVotes.find(vote => vote.userId === user_id)
 
-        if (hasPreviousVote) {
-            console.log('already requested, removing', user_id)
-            updatedVotes = previousVotes.filter(vote => vote.userId !== user_id)
-        } else {
-            updatedVotes = Array.from(new Set([...previousVotes, newVote]))
+        const updatedVotes = hasPreviousVote
+            ? previousVotes.filter(vote => vote.userId !== user_id)
+            : Array.from(new Set([...previousVotes, newVote]))
+
+        const updateData = {requestedBy: updatedVotes}
+        try {
+            await updateRankingRequest(ref, updateData, entryId)
+            await logToFirebaseLog([{
+                activity: 'WRITE',
+                activityCount: 1,
+                source: 'request-upvote',
+                id: entryId,
+                displayName: displayName,
+            }])
+
+        } catch (error) {
+            handleError(res, 'Failed to update ranking request', error, 500)
         }
-        await ref.update({requestedBy: updatedVotes})
 
     } catch (error) {
         console.error('Error updating votes: ', error)
@@ -245,16 +276,51 @@ export async function updateVotes(req, res) {
 
 ////////////
 
+async function fetchRankingRequest(ref, entryId) {
+    try {
+        const docSnap = await ref.get(entryId)
+        if (!docSnap) {
+            console.warn(`No ranking request found for entry: ${entryId}`)
+            return null
+        }
+        return docSnap.data()
+    } catch (error) {
+        console.error(`Error getting document ${entryId}:`, error)
+        return null
+    }
+}
+
+async function setRankingRequest(ref, entry, entryId) {
+    try {
+        await ref.set(entry)
+        return entry
+    } catch (error) {
+        console.error(`Error setting document ${entryId}:`, error)
+        throw error
+    }
+}
+
+async function updateRankingRequest(ref, data, entryId) {
+    try {
+        await ref.update(data)
+        return data
+    } catch (error) {
+        console.error(`Error updating document ${entryId}:`, error)
+        throw error
+    }
+}
+
+
 async function authenticateRequest(req) {
     const authHeader = req.headers.authorization
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        throw new Error('Unauthorized');
+        throw new Error('Unauthorized')
     }
     const idToken = authHeader.split('Bearer ')[1]
     const decodedToken = await admin.auth().verifyIdToken(idToken)
-        if (!decodedToken) {
-            throw new Error('Insufficient permissions');
-        }
+    if (!decodedToken) {
+        throw new Error('Insufficient permissions')
+    }
     return decodedToken
 }
 
@@ -262,13 +328,13 @@ function parseForm(req, form) {
     return new Promise((resolve, reject) => {
         form.parse(req, (err, fields, files) => {
             if (err) return reject(err)
-            resolve({ fields, files })
+            resolve({fields, files})
         })
     })
 }
 
 function createFilename(part, serverPath, uploadDir) {
-    const { originalFilename } = part
+    const {originalFilename} = part
     if (!originalFilename) return 'invalid'
 
     const filenameParts = originalFilename.split('/')
@@ -279,7 +345,7 @@ function createFilename(part, serverPath, uploadDir) {
     const fullFilename = `${localsubdirs}/${basename}`
     const filepath = `${serverPath}/${localsubdirs}/${basename}`
     const uploadSubDir = `${uploadDir}/${localsubdirs}`.replace(/\s+/g, '-')
-    return { fullFilename, filepath, uploadSubDir, localsubdirs }
+    return {fullFilename, filepath, uploadSubDir, localsubdirs}
 }
 
 
