@@ -13,6 +13,7 @@ import ConstructionIcon from '@mui/icons-material/Construction'
 import NewReleasesIcon from '@mui/icons-material/NewReleases'
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
+import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -100,6 +101,12 @@ export default [
         beta: true
     },
     {
+        title: 'Suggest a Lock',
+        icon: <EnhancedEncryptionIcon fontSize='small'/>,
+        path: '/rankingrequests/submit',
+        beta: true
+    },
+    {
         title: 'Recent Changes',
         icon: <ChangeCircleIcon fontSize='small'/>,
         path: '/recent',
@@ -133,13 +140,13 @@ export default [
             },
             {
                 admin: true,
-                title: 'Tools',
-                path: '/tools'
+                title: 'System Message Admin',
+                path: '/admin/systemMessages'
             },
             {
                 admin: true,
-                title: 'System Message Admin',
-                path: '/admin/systemMessages'
+                title: 'Tools',
+                path: '/tools'
             }
         ]
     },

@@ -14,11 +14,13 @@ import usePageTitle from '../util/usePageTitle.jsx'
 import safeLocksTierOne from './pages/safelocksTierOne.md?raw'
 import ladyLocksQuestInfo from './pages/ladyLocksQuestInfo.md?raw'
 import pinkBelts from './pages/pinkBelts.md?raw'
+import classificationProcess from './pages/classificationProcess.md?raw'
 
 const pages = {
     safeLocksTierOne: {title: 'Tier 1 Safe/Combination Locks', content: safeLocksTierOne},
     tierThreeExample: {title: 'Tier 3 Submission Example', content: ladyLocksQuestInfo},
-    pinkBelts: {title: 'Official Announcement: The Pink Belt Revolution!', content: pinkBelts}
+    pinkBelts: {title: 'Official Announcement: The Pink Belt Revolution!', content: pinkBelts},
+    classificationProcess : {title: 'Lockpickers United Belt Ranking Process', content: classificationProcess},
 }
 
 
@@ -42,11 +44,7 @@ export default function ViewPage() {
                 padding: '0px 30px'
             }}>
                 <CardContent>
-                    {pageId === 'pinkBelts' &&
-                    <div style={{color:'rgb(255, 102, 204)', fontSize:'1.5rem', fontWeight: 700}}>
-                        Official Announcement: The Pink Belt Revolution!
-                    </div>
-                    }
+                    <div style={{fontSize:'1.3rem', fontWeight: 700}}>{pages[pageId]?.title}</div>
 
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {
                         target: '_blank',

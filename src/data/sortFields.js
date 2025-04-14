@@ -52,3 +52,12 @@ export const raffleSortFields = raflState === 'preview'
         {label: 'Contributed By', value: 'contributedBy'},
     ]
 
+export const lockRequestSortFields = [
+    {label: 'Date Requested', value: undefined},
+    {label: 'Alphabetical', value: 'alphaAscending'},
+    {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
+    {label: 'Status', value: 'requestStatus'},
+    {label: 'Request Count', value: 'requestCount'},
+    {label: 'Recently Updated', value: 'recentlyUpdated'},
+]
+

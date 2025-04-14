@@ -31,7 +31,10 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
     const handleChange = useCallback(event => {
         const {value} = event.target
         setText(value)
-    }, [])
+        if (value.length === 0) {
+            removeFilter('search', '')
+        }
+    }, [removeFilter])
 
     const debounceText = useDebounce(text, 250).replaceAll('\t', ' ')
     useEffect(() => {

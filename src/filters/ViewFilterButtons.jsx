@@ -6,15 +6,16 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
 
-function ViewFilterButtons({sortValues, extraFilters = [], compactMode}) {
+function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll=false}) {
 
     const {filters, filterCount, setFilters} = useContext(FilterContext)
     const {tab, sort, search} = filters
 
-    const reset = sort || filterCount > 0
+    const reset = sort || filterCount > 0 || (search && resetAll)
     const handleReset = useCallback(() => {
-        setFilters({tab: tab, search: search})
-    }, [search, setFilters, tab])
+        const savedFilters = resetAll ? {tab: tab} : {tab: tab, search: search}
+        setFilters(savedFilters)
+    }, [resetAll, search, setFilters, tab])
 
     const {width} = useWindowSize()
     const smallWidth = width <= 500

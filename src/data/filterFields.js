@@ -1,4 +1,5 @@
 import {beltSort} from './belts'
+import {statusSort} from '../rankingRequests/rankingRequestData'
 
 export const lockFilterFields = [
     {label: 'Make', fieldName: 'makes'},
@@ -40,4 +41,14 @@ export const raffleFilterFields = [
     {label: 'Shipping Type', fieldName: 'shippingType'},
     {label: 'Split Shipping', fieldName: 'splitShipping'},
 ]
+
+export const lockRequestFilterFields = [
+    {label: 'Status', fieldName: 'requestStatus', sort: statusSort},
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Assigned Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Suggested Belt', fieldName: 'approximateBelt', sort: beltSort},
+    {label: 'User Belt', fieldName: 'userBelt', sort: beltSort},
+]
+
 

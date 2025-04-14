@@ -34,6 +34,12 @@ import {
 import collectionOptions from '../data/collectionTypes'
 import isValidUrl from '../util/isValidUrl'
 
+/**
+ * @typedef {object} award
+ * @prop award.awardType
+ * @prop awardType
+ */
+
 const DBContext = React.createContext({})
 
 export function DBProvider({children}) {
@@ -415,7 +421,7 @@ export function DBProvider({children}) {
             }
         }
 
-        loadActivity()
+        loadActivity().then()
     }, [authLoaded, isLoggedIn, user])
 
     // System Messages Subscription
@@ -453,10 +459,20 @@ export function DBProvider({children}) {
     }, [dbError])
 
     const removeDismissedMessages = useCallback(async (userId) => {
-        if (dbError) return false
+        if (dbError) return { success: false, message: 'Database error.' }
         const ref = doc(db, 'lockcollections', userId)
-        await updateDoc(ref, {dismissedMessages: deleteField()})
+        try {
+            await updateDoc(ref, {dismissedMessages: deleteField()})
+            return { success: true, message: 'Dismissed messages removed from user:',  userId}
+        } catch (error) {
+            console.error('Error updating ranking request: ', error)
+            if (error.code === 'permission-denied') {
+                return { success: false, message: 'You do not have permission to preform this request.' }
+            }
+            return { success: false, message: `Error removing dismissed messages: ${error.message}` }
+        }
     }, [dbError])
+
 
     const value = useMemo(() => ({
         dbLoaded,
@@ -671,7 +687,7 @@ async function pickerActivityCache(userId, update) {
         const result = [...evidence, ...preserveAwards, ...newAwards]
         if (update) {
             await setDoc(docRef, {payload: JSON.stringify(result)})
-            updateUserStatistics(userId)
+            await updateUserStatistics(userId)
         }
         return result
     }

@@ -6,12 +6,21 @@ const AuthContext = React.createContext({})
 
 export function AuthProvider({children}) {
     const [user, setUser] = useState({})
+    const [userClaims, setUserClaims] = useState({})
     const [authLoaded, setAuthLoaded] = useState(false)
 
     useEffect(() => {
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
             setAuthLoaded(true)
             setUser(user)
+            auth.currentUser?.getIdTokenResult()
+                .then(idTokenResult => {
+                    const {admin, requestAdmin} = idTokenResult.claims
+                    setUserClaims({admin, requestAdmin})
+                })
+                .catch(error => {
+                    console.error('Error getting token result:', error)
+                })
         })
         return () => unregisterAuthObserver()
     }, [])
@@ -31,9 +40,10 @@ export function AuthProvider({children}) {
         authLoaded,
         isLoggedIn: !!user?.uid,
         user,
+        userClaims,
         login,
         logout
-    }), [authLoaded, login, logout, user])
+    }), [authLoaded, login, logout, user, userClaims])
 
     return (
         <AuthContext.Provider value={value}>

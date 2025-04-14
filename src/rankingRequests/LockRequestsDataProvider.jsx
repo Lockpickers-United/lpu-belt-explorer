@@ -1,12 +1,18 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
-import DataContext from '../context/DataContext'
-import FilterContext from '../context/FilterContext'
+import DataContext from '../context/DataContext.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
-import belts, {beltSort, beltSortReverse} from '../data/belts'
-import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
-import collectionStatsById from '../data/collectionStatsById.json'
+import {statusSort} from './rankingRequestData'
+
+/**
+ * @typedef {object} entry
+ * @typedef {object} usernames
+ * @prop entry.approximateBelt
+ * @prop entry.dateRequested
+ * @prop requestedBy
+ */
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -16,7 +22,10 @@ export function DataProvider({children, allEntries, profile}) {
         return allEntries
             .map(entry => ({
                 ...entry,
+                originalEntry: entry,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
+                requestCount: entry.requestedBy?.length,
+                danPoints: 0,
                 fuzzy: removeAccents(
                     entry.makeModels
                         .map(({make, model}) => [make, model])
@@ -31,18 +40,10 @@ export function DataProvider({children, allEntries, profile}) {
                 ),
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
-                    entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
-                    entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
-                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
-                    entry.belt.startsWith('Black') ? 'Is Black' : undefined,
-                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
-                ].flat().filter(x => x),
-                collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
-                collectionSaves: collectionStatsById[entry.id] || 0,
-                simpleBelt: entry.belt.replace(/\s\d/g, '')
+                    dayjs(entry.dateRequested).isAfter(dayjs().subtract(1, 'days')) ? 'Requested Recently' : undefined
+                ].flat().filter(x => x)
             }))
-    }, [allEntries, profile])
+    }, [allEntries])
 
     const visibleEntries = useMemo(() => {
         // Filters as an array
@@ -82,42 +83,47 @@ export function DataProvider({children, allEntries, profile}) {
 
         return sort
             ? searched.sort((a, b) => {
-                if (sort === 'popularity') {
-                    return b.collectionSaves - a.collectionSaves
-                        || b.views - a.views
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'beltAscending') {
-                    return beltSort(a.belt, b.belt)
-                } else if (sort === 'beltDescending') {
-                    return beltSortReverse(a.belt, b.belt)
-                } else if (sort === 'alphaAscending') {
+                if (sort === 'alphaAscending') {
                     return a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaDescending') {
                     return b.fuzzy.localeCompare(a.fuzzy)
-                } else if (sort === 'recentlyUpdated') {
-                    return Math.floor(dayjs(b.lastUpdated).valueOf()/3600) - Math.floor(dayjs(a.lastUpdated).valueOf()/3600)
-                        || beltSort(a.belt, b.belt)
+                } else if (sort === 'requestStatus') {
+                     return statusSort(a.requestStatus, b.requestStatus)
                         || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'dateAdded') {
-                    return Math.floor(dayjs(b.dateAdded).valueOf()/3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf()/3600 * 24)
-                        || beltSort(a.belt, b.belt)
+                } else if (sort === 'requestCount') {
+                     return b.requestCount - a.requestCount
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                } else if (sort === 'recentlyUpdated') {
+                    return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                } else if (sort === 'dateRequested') {
+                    return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                } else {
+                    return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                         || a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-            : searched
+            : searched.sort((a, b) => {
+                return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
+                    || a.fuzzy.localeCompare(b.fuzzy)
+
+            })
     }, [filters, mappedEntries, search, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
-    const value = useMemo(() => ({
-        allEntries,
-        visibleEntries,
-        getEntryFromId,
-        expandAll,
-        profile
-    }), [allEntries, getEntryFromId, visibleEntries, expandAll, profile])
+    const value = useMemo(() => {
+        return {
+            allEntries,
+            visibleEntries,
+            getEntryFromId,
+            expandAll,
+            profile,
+        }
+    }, [allEntries, visibleEntries, getEntryFromId, expandAll, profile])
 
     return (
         <DataContext.Provider value={value}>
@@ -128,4 +134,3 @@ export function DataProvider({children, allEntries, profile}) {
 
 const fuzzySortKeys = ['fuzzy']
 
-export default DataContext
