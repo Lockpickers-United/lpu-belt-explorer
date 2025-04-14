@@ -16,7 +16,7 @@ import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
 import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import {useNavigate} from 'react-router-dom'
-import postRequestCreate from './postRequestCreate.jsx'
+import postRequestCreate from './postRequestCreate'
 import AuthContext from '../app/AuthContext.jsx'
 import DataContext from '../context/DataContext.jsx'
 

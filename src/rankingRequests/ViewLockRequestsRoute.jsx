@@ -8,10 +8,12 @@ import {DataProvider} from './LockRequestsDataProvider.jsx'
 import {lockRequestFilterFields} from '../data/filterFields'
 import AuthContext from '../app/AuthContext.jsx'
 import {useOutletContext} from 'react-router-dom'
+import DBContext from '../app/DBContext.jsx'
 
 export default function ViewLockRequestsRoute() {
     usePageTitle('View Ranking Requests')
     const {user, userClaims} = useContext(AuthContext)
+    const {lockCollection} = useContext(DBContext)
     const requestMod = userClaims?.requestAdmin || userClaims?.admin
     const {isMobile} = useWindowSize()
 
@@ -23,7 +25,7 @@ export default function ViewLockRequestsRoute() {
 
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
-            <DataProvider allEntries={rankingRequests}>
+            <DataProvider allEntries={rankingRequests} profile={lockCollection}>
                 <Nav title='Ranking Requests' extras={extras}/>
 
                 <ViewLockRequests user={user} requestMod={requestMod}/>

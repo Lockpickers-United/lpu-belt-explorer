@@ -20,7 +20,7 @@ import Button from '@mui/material/Button'
 import dayjs from 'dayjs'
 import TextField from '@mui/material/TextField'
 import AuthContext from '../app/AuthContext.jsx'
-import postRequestUpdate from './postRequestUpdate.jsx'
+import postRequestUpdate from './postRequestUpdate'
 import AddVote from './AddVote.jsx'
 import Upvote from './Upvote.jsx'
 
@@ -239,7 +239,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                         }
 
                         {
-                            upvotes.length > 0 &&
+                            upvotes.length > 0 && requestMod &&
                             <FieldValue name='Upvotes' style={{marginRight: 20, marginTop: 10}}
                                         headerStyle={{color: '#bbb', fontSize: '1rem'}}
                                         value={

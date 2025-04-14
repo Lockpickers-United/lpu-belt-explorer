@@ -1,8 +1,8 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import Tooltip from '@mui/material/Tooltip'
-import postVoteUpdate from './postVoteUpdate.jsx'
+import postVoteUpdate from './postVoteUpdate'
 import LoadingDisplayWhite from '../misc/LoadingDisplayWhite.jsx'
 import {enqueueSnackbar} from 'notistack'
 import TextField from '@mui/material/TextField'
@@ -10,12 +10,14 @@ import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 import SelectBox from '../formUtils/SelectBox.jsx'
 import {uniqueBelts} from '../data/belts'
+import DataContext from '../context/DataContext.jsx'
 
 export default function AddVote({user, entry}) {
     const [isUpdating, setIsUpdating] = useState(false)
     const [upvote, setUpvote] = useState(false)
     const [form, setForm] = useState({})
     const [updated, setUpdated] = useState(false)
+    const {profile} = useContext(DataContext)
 
 
     const {requestedBy = []} = entry
@@ -25,8 +27,9 @@ export default function AddVote({user, entry}) {
 
     const voteCount = requestedBy.length > 1 ? requestedBy.length : ''
     const voteCountBorder = requestedBy.length > 1 ? '2px solid #444' : ''
+    const iconColor = isOwner ?'#999' : '#fff'
     const voteCountIcon = hasVoted
-        ? <AddCircleIcon fontSize='small'/>
+        ? <AddCircleIcon fontSize='small' style={{color:iconColor}}/>
         : <AddCircleOutlineIcon fontSize='small'/>
 
     const tooltipText = isOwner
@@ -58,7 +61,7 @@ export default function AddVote({user, entry}) {
             return
         }
         setIsUpdating(true)
-        const newVote = {...form, entryId: entry.id, owner: false, userId: user.uid, displayName: user.displayName}
+        const newVote = {...form, entryId: entry.id, owner: false, userId: user.uid, displayName: profile.displayName}
         try {
             await postVoteUpdate({newVote, user})
         } catch (error) {
@@ -69,7 +72,7 @@ export default function AddVote({user, entry}) {
             setUpdated(false)
             setUpvote(false)
         }
-    }, [entry.id, form, isOwner, isUpdating, user])
+    }, [entry.id, form, isOwner, isUpdating, profile.displayName, user])
 
     const handleClick = useCallback((event) => {
         event.preventDefault()

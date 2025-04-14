@@ -10,9 +10,12 @@ import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../locks/LockDataProvider.jsx'
 import {collection, onSnapshot, query, where} from 'firebase/firestore'
 import {db} from '../auth/firebase'
+import postFirebaseActivity from './postFirebaseActivity'
+import DBContext from '../app/DBContext.jsx'
 
 function RankingRequestsParentRoute() {
     const {authLoaded, isLoggedIn} = useContext(AuthContext)
+    const {lockCollection} = useContext(DBContext)
 
     const [requestData, setRequestData] = useState([])
     const totalReadCount = useRef(0)
@@ -28,25 +31,37 @@ function RankingRequestsParentRoute() {
                 snapshot => {
                     const docsRead = snapshot.docs.length
                     totalReadCount.current += docsRead
-                    console.log(
-                        `Snapshot received: ${docsRead} documents read. Cumulative reads: ${totalReadCount.current}`
-                    )
+                    //console.log(`Snapshot received: ${docsRead} reads. Cumulative reads: ${totalReadCount.current}`)
+                    const activityData = [{
+                        activity: 'READ',
+                        activityCount: docsRead,
+                        source: 'request-subscription',
+                        id: '',
+                        displayName: lockCollection?.displayName,
+                    }]
+                    if (totalReadCount.current > docsRead) {
+                        activityData.push({
+                            activity: 'REFRESH',
+                            activityCount: docsRead,
+                            source: 'request-subscription',
+                            id: '',
+                            displayName: lockCollection?.displayName,
+                        })
+                    }
+
+                    postFirebaseActivity({activityData})
 
                     setRequestData(prevRequests => {
                         const currentRequests = new Map(prevRequests.map(doc => [doc.id, doc]))
                         snapshot.docChanges().forEach(change => {
                             const docData = {id: change.doc.id, ...change.doc.data()}
-
                             if (change.type === 'added') {
-                                console.log(`Document added: ${docData.id}`)
                                 if (!currentRequests.has(docData.id)) {
                                     currentRequests.set(docData.id, docData)
                                 }
                             } else if (change.type === 'modified') {
-                                console.log(`Document modified: ${docData.id}`)
                                 currentRequests.set(docData.id, docData)
                             } else if (change.type === 'removed') {
-                                console.log(`Document removed: ${docData.id}`)
                                 currentRequests.delete(docData.id)
                             }
                         })
@@ -58,9 +73,11 @@ function RankingRequestsParentRoute() {
                 }
             )
             : (()=>{})
+
         // Clean up the listener on component unmount
         return () => unsubscribe()
-    }, [isLoggedIn])
+
+    }, [isLoggedIn]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const rankingRequests = useMemo(() => {
         return requestData
