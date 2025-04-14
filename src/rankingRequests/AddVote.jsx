@@ -18,8 +18,6 @@ export default function AddVote({user, entry}) {
     const [form, setForm] = useState({})
     const [updated, setUpdated] = useState(false)
     const {profile} = useContext(DataContext)
-
-
     const {requestedBy = []} = entry
 
     const isOwner = requestedBy.find(req => (req.userId === user.uid && req.owner)) || false
@@ -37,7 +35,6 @@ export default function AddVote({user, entry}) {
         : hasVoted
             ? 'Click to remove your vote'
             : 'Add Your Vote'
-
     const cursor = isOwner || isUpdating ? 'default' : 'pointer'
 
     const handleFormChange = useCallback((event) => {
@@ -88,7 +85,6 @@ export default function AddVote({user, entry}) {
             setUpvote(true)
         }
     }, [handleVote, hasVoted, isOwner, isUpdating])
-
 
     return (
         <React.Fragment>
