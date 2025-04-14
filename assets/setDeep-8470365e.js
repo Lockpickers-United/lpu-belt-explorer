@@ -1,0 +1,1 @@
+function i(e,n,f,s){if(n.length===1){e[n[0]]=s?s(e[n[0]],f):f;return}const t=n[0];e[t]||(e[t]={}),i(e[t],n.slice(1),f,s)}function c(e,n,f){i(e,n,f)}function D(e,n,f){i(e,n,f,(s,t)=>s?s+t:t)}function u(e,n,f){i(e,n,f,(s,t)=>s?[...s,t]:[t])}function d(e,n,f){i(e,n,f,(s,t)=>s?[...new Set([...s,t])]:[t])}export{u as a,c as b,D as c,d as s};
