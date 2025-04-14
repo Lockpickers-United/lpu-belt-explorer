@@ -6,14 +6,14 @@ import https from 'https'
 import EventEmitter from 'events'
 import dayjs from 'dayjs'
 
-import importRaflData from './projects/importRaflData/importRaflData.js'
 import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
-import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
 import saveRequest from './projects/saveRequest/saveRequest.js'
-import getAllEvidence from './projects/collections/allEvidenceExport.js'
 import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
-import logFirebaseActivity from './projects/logFirebaseActivity/logFirebaseActivity.js'
+import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
+
+//import importRaflData from './projects/importRaflData/importRaflData.js'
+//import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -32,6 +32,7 @@ myEmitter.on('myEvent', (data) => {
     console.log(timestamp, '-', data)
 })
 
+/*
 app.get('/refresh-preview', async (req, res) => {
     myEmitter.emit('myEvent', 'Preview refresh requested')
     await importRaflData().then(results => {
@@ -59,6 +60,7 @@ app.get('/rafl-stats', async (req, res) => {
         res.send(results)
     })
 })
+*/
 
 app.get('/flickr-info', async (req, res) => {
     myEmitter.emit('myEvent', 'Flickr info requested')
@@ -96,21 +98,8 @@ app.post('/request-vote', async (req, res) => {
 
 app.post('/log-activity', async (req, res) => {
     myEmitter.emit('myEvent', 'Log Firebase Activity requested')
-    logFirebaseActivity(req, res)
+    handleFirebaseActivityPost(req, res)
 })
-
-app.get('/export-evidence', async (req, res) => {
-    myEmitter.emit('myEvent', 'Evidence export requested')
-    await getAllEvidence(req, res).then(() => {
-        res.status(201).send(`Evidence successfully exported.`)
-    })
-})
-
-app.get('/test', async (req, res) => {
-    myEmitter.emit('myEvent', 'TEST')
-    res.send({msg: 'test'})
-})
-
 
 
 /////////////

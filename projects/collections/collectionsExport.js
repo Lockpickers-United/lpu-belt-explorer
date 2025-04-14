@@ -5,6 +5,7 @@ import {setDeep} from '../util/setDeep.js'
 
 import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
+import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
 
@@ -28,6 +29,19 @@ const backupDir = production
 async function getAllData() {
 
     const lockcollections = await dbProd.collection('lockcollections').get()
+
+    const messages = [{
+        activity: 'READ',
+        activityCount: lockcollections.docs.length,
+        source: 'collectionsExport - lockcollections',
+        id: '',
+        displayName: 'cronjob',
+    }]
+    try {
+        await logToFirebaseLog(messages)
+    } catch (err) {
+        console.log('Logging Error', err)
+    }
 
     const fullDb = new Map()
 

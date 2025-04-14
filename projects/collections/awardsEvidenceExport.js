@@ -6,6 +6,7 @@ import {localUser, prodUser} from '../../keys/users.js'
 import dayjs from 'dayjs'
 import {awardDetails, lockDetails, projectDetails, safelockDetails} from '../util/getItemDetails.js'
 import entryName from '../util/entryName.js'
+import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
 
@@ -40,6 +41,26 @@ async function getAllData() {
 
     const awards = await dbProd.collection('awards').where('awardCreatedAt', '>=', startAwards).get()
     const evidence = await dbProd.collection('evidence').where('evidenceCreatedAt', '>=', startEvidence).get()
+
+    const messages = [{
+        activity: 'READ',
+        activityCount: awards.docs.length,
+        source: 'awardsEvidenceExport - awards',
+        id: '',
+        displayName: 'cronjob',
+    },{
+        activity: 'READ',
+        activityCount: evidence.docs.length,
+        source: 'awardsEvidenceExport - evidence',
+        id: '',
+        displayName: 'cronjob',
+    }]
+
+    try {
+        await logToFirebaseLog(messages)
+    } catch (err) {
+        console.log('Logging Error', err)
+    }
 
     const lockData = await lockDetails()
     const safelockDdata = await safelockDetails()

@@ -59,8 +59,6 @@ export default async function getAllEvidence() {
         console.log('Logging Error', err)
     }
 
-    //logToFirebaseLog(activityData[0])
-
 
     const allEvidence = [...scorecardEvidence.docs, ...unclaimedEvidence.docs]
     const projectData = await projectDetails()
@@ -189,4 +187,4 @@ export default async function getAllEvidence() {
 
 }
 
-//await getAllEvidence().then()
+await getAllEvidence().then()
