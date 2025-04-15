@@ -53825,9 +53825,6 @@
         "model": "(any)"
       }
     ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -53862,7 +53859,7 @@
       }
     ],
     "views": 411,
-    "lastUpdated": "2025-03-19T15:44:57.322Z"
+    "lastUpdated": "2025-04-15T01:54:26.342Z"
   },
   {
     "id": "110c872d",
