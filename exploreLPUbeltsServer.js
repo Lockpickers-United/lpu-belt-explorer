@@ -20,6 +20,7 @@ import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFireba
 
 const prod = true
 const ports = prod ? {http: 8080, https: 8443} : {http: 3000, https: 3443}
+const envText = prod ? '' : ' (DEV)'
 
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
@@ -56,25 +57,26 @@ app.post('/upload', async (req, res) => {
 
 app.post('/request-lock', async (req, res) => {
     req.body.prod = prod
-    myEmitter.emit('myEvent', 'Ranking Request submitted')
+    myEmitter.emit('myEvent', 'Ranking Request submitted' + envText)
     await requestLock(req, res).then()
 })
 
 app.post('/update-request', async (req, res) => {
     req.body.prod = prod
-    myEmitter.emit('myEvent', 'Ranking Request update')
+    myEmitter.emit('myEvent', 'Ranking Request update' + envText)
     await updateRequest(req, res).then()
 })
 
 app.post('/request-vote', async (req, res) => {
     req.body.prod = prod
-    myEmitter.emit('myEvent', 'Ranking Request vote update')
+    myEmitter.emit('myEvent', 'Ranking Request vote update' + envText)
     await updateVotes(req, res).then()
 })
 
 app.post('/log-activity', async (req, res) => {
-    req.body.prod = prod
-    myEmitter.emit('myEvent', 'Log Firebase Activity requested')
+    const {prod} = req.body
+    const logEnvText = prod ? '' : ' (from DEV)'
+    myEmitter.emit('myEvent', 'Log Firebase Activity requested' + logEnvText)
     handleFirebaseActivityPost(req, res)
 })
 

@@ -1,5 +1,5 @@
 
-export default async function postFirebaseActivity({ activityData }) {
+export default async function postFirebaseActivityDEPRECATED({ activityData }) {
 
     export const serverUrl = 'https://explore.lpubelts.com:8443'
 

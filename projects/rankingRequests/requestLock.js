@@ -24,10 +24,15 @@ import {getFirestore} from 'firebase-admin/firestore'
 
 import serviceAccount from '../../keys/service-account.json' with {type: 'json'}
 
-const app = admin.initializeApp({
+const requestapp = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
+const dbProd = getFirestore(requestapp)
+dbProd.settings({ignoreUndefinedProperties: true})
+
+const dbDev = getFirestore(requestapp, 'lpubelts-dev')
+dbDev.settings({ignoreUndefinedProperties: true})
 
 const execAsync = util.promisify(exec)
 
@@ -55,7 +60,6 @@ function handleError(res, message, error, status = 500) {
 
 export default async function requestLock(req, res) {
 
-
     let subdirs = ''
     let filepaths = []
 
@@ -66,8 +70,7 @@ export default async function requestLock(req, res) {
     }
 
     const {prod} = req.body
-    const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
-    db.settings({ignoreUndefinedProperties: true})
+    const db = prod ? dbProd : dbDev
 
     const form = formidable({
         uploadDir,
@@ -206,9 +209,9 @@ export async function updateRequest(req, res) {
     }
 
     const {entry,prod} = req.body
-    const dbB = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
+    const db = prod ? dbProd : dbDev
 
-    const ref = dbB.collection('ranking-requests').doc(entry.id)
+    const ref = db.collection('ranking-requests').doc(entry.id)
     try {
         await setRankingRequest(ref, entry, entry.id, entry.displayName)
         await logToFirebaseLog([{
@@ -237,12 +240,12 @@ export async function updateVotes(req, res) {
         return handleError(res, err.message, err, 403)
     }
 
-    const dbC = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
+    const db = prod ? dbProd : dbDev
 
     const {user_id} = req.user
     let updatedVotes = []
 
-    const ref = dbC.collection('ranking-requests').doc(entryId)
+    const ref = db.collection('ranking-requests').doc(entryId)
     try {
         const rankingRequest = await fetchRankingRequest(ref, entryId)
         if (!rankingRequest) return handleError(res, 'No ranking request found', new Error('No ranking request found'), 404)
