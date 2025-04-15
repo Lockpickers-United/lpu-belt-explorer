@@ -18,6 +18,9 @@ import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFireba
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
 
+const prod = true
+const ports = prod ? {http: 8080, https: 8443} : {http: 3000, https: 3443}
+
 const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
 const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
 const credentials = {key: privateKey, cert: certificate}
@@ -28,8 +31,51 @@ app.use(express.json())
 
 const myEmitter = new EventEmitter()
 myEmitter.on('myEvent', (data) => {
-    const timestamp = dayjs().format('YYYY-MM-DD HH:mm:ss')
+    const timestamp = dayjs().format('YYYY-MM-DD HH:mm:ss ZZ')
     console.log(timestamp, '-', data)
+})
+
+app.get('/flickr-info', async (req, res) => {
+    myEmitter.emit('myEvent', 'Flickr info requested')
+    await getFlickrInfo(req.query.id).then(results => {
+        res.send(results)
+    })
+})
+
+app.get('/save-request', async (req, res) => {
+    myEmitter.emit('myEvent', 'message save requested')
+    await saveRequest(req, res).then()
+})
+
+
+app.post('/upload', async (req, res) => {
+    myEmitter.emit('myEvent', 'Upload content requested')
+    await upload(req, res).then()
+})
+
+
+app.post('/request-lock', async (req, res) => {
+    req.body.prod = prod
+    myEmitter.emit('myEvent', 'Ranking Request submitted')
+    await requestLock(req, res).then()
+})
+
+app.post('/update-request', async (req, res) => {
+    req.body.prod = prod
+    myEmitter.emit('myEvent', 'Ranking Request update')
+    await updateRequest(req, res).then()
+})
+
+app.post('/request-vote', async (req, res) => {
+    req.body.prod = prod
+    myEmitter.emit('myEvent', 'Ranking Request vote update')
+    await updateVotes(req, res).then()
+})
+
+app.post('/log-activity', async (req, res) => {
+    req.body.prod = prod
+    myEmitter.emit('myEvent', 'Log Firebase Activity requested')
+    handleFirebaseActivityPost(req, res)
 })
 
 /*
@@ -62,52 +108,12 @@ app.get('/rafl-stats', async (req, res) => {
 })
 */
 
-app.get('/flickr-info', async (req, res) => {
-    myEmitter.emit('myEvent', 'Flickr info requested')
-    await getFlickrInfo(req.query.id).then(results => {
-        res.send(results)
-    })
-})
-
-app.get('/save-request', async (req, res) => {
-    myEmitter.emit('myEvent', 'message save requested')
-    await saveRequest(req, res).then()
-})
-
-
-app.post('/upload', async (req, res) => {
-    myEmitter.emit('myEvent', 'Upload content requested')
-    await upload(req, res).then()
-})
-
-
-app.post('/request-lock', async (req, res) => {
-    myEmitter.emit('myEvent', 'Ranking Request submitted')
-    await requestLock(req, res).then()
-})
-
-app.post('/update-request', async (req, res) => {
-    myEmitter.emit('myEvent', 'Ranking Request update')
-    await updateRequest(req, res).then()
-})
-
-app.post('/request-vote', async (req, res) => {
-    myEmitter.emit('myEvent', 'Ranking Request vote update')
-    await updateVotes(req, res).then()
-})
-
-app.post('/log-activity', async (req, res) => {
-    myEmitter.emit('myEvent', 'Log Firebase Activity requested')
-    handleFirebaseActivityPost(req, res)
-})
-
-
 /////////////
 
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)
-httpServer.listen(8080, () => {
+httpServer.listen(ports.http, () => {
 })
-httpsServer.listen(8443, () => {
+httpsServer.listen(ports.https, () => {
 })
 

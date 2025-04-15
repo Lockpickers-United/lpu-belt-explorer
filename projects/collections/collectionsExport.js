@@ -33,7 +33,7 @@ async function getAllData() {
     const messages = [{
         activity: 'READ',
         activityCount: lockcollections.docs.length,
-        source: 'collectionsExport - lockcollections',
+        source: 'collectionsExport_lockcollections',
         id: '',
         displayName: 'cronjob',
     }]

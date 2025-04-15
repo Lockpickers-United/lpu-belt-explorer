@@ -14,14 +14,26 @@ function handleError(res, message, error, status = 500) {
 }
 
 export default async function handleFirebaseActivityPost(req, res) {
-    const { activityData } = req.body;
+    // TODO fix??
+    const { activityData, prod } = req.body
+    const mappedActivity = activityData.map((activityItem) => {
+        const { activity, activityCount, source, id, displayName } = activityItem
+        return {
+            activity,
+            activityCount,
+            source,
+            id,
+            displayName,
+            prod
+        }
+    })
     try {
-        await logToFirebaseLog(activityData)
+        await logToFirebaseLog(mappedActivity, prod)
     } catch (err) {
         return handleError(res, 'Error logging activity', null, 500);
     }
-    console.log('done');
-    return res.status(200).json('Activity Logged');
+    console.log('handleFirebaseActivityPost done')
+    return res.status(200).json('Activity Logged')
 }
 
 export async function logToFirebaseLog(messages) {
@@ -32,8 +44,9 @@ export async function logToFirebaseLog(messages) {
     try {
         await Promise.all(
             messages?.map(async (message) => {
-                const { activity, activityCount, source, id, displayName } = message
-                const logMessage = `${dayjs().toISOString()},${[activity, activityCount, source, id, displayName].join(',')}\n`
+                const { activity, activityCount, source, id, displayName, prod } = message
+                const envString = prod ? '' : ',dev'
+                const logMessage = `${dayjs().format('YYYY-MM-DD HH:mm:ss ZZ')},${[activity, activityCount, source, id, displayName].join(',')}${envString}\n`
                 try {
                     await fs.promises.appendFile(`${logsDir}/firebase.log`, logMessage)
                     return logMessage

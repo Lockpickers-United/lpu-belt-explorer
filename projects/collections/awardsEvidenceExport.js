@@ -45,13 +45,13 @@ async function getAllData() {
     const messages = [{
         activity: 'READ',
         activityCount: awards.docs.length,
-        source: 'awardsEvidenceExport - awards',
+        source: 'awardsEvidenceExport_awards',
         id: '',
         displayName: 'cronjob',
     },{
         activity: 'READ',
         activityCount: evidence.docs.length,
-        source: 'awardsEvidenceExport - evidence',
+        source: 'awardsEvidenceExport_evidence',
         id: '',
         displayName: 'cronjob',
     }]

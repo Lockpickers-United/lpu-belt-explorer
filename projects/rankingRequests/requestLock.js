@@ -27,9 +27,7 @@ import serviceAccount from '../../keys/service-account.json' with {type: 'json'}
 const app = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
-}, 'dev')
-const db = getFirestore(app, 'lpubelts-dev')
-db.settings({ignoreUndefinedProperties: true})
+})
 
 const execAsync = util.promisify(exec)
 
@@ -56,6 +54,8 @@ function handleError(res, message, error, status = 500) {
 }
 
 export default async function requestLock(req, res) {
+
+
     let subdirs = ''
     let filepaths = []
 
@@ -64,6 +64,11 @@ export default async function requestLock(req, res) {
     } catch (err) {
         return handleError(res, err.message, err, 403)
     }
+
+    const {prod} = req.body
+    const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
+    db.settings({ignoreUndefinedProperties: true})
+
     const form = formidable({
         uploadDir,
         keepExtensions: true,
@@ -155,6 +160,7 @@ export default async function requestLock(req, res) {
                 source: 'request-create',
                 id: entry.id,
                 displayName: entry.displayName,
+                prod: prod
             }])
         } catch (error) {
             handleError(res, 'Failed to set ranking request', error, 500)
@@ -199,8 +205,10 @@ export async function updateRequest(req, res) {
         return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
     }
 
-    const {entry} = req.body
-    const ref = db.collection('ranking-requests').doc(entry.id)
+    const {entry,prod} = req.body
+    const dbB = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
+
+    const ref = dbB.collection('ranking-requests').doc(entry.id)
     try {
         await setRankingRequest(ref, entry, entry.id, entry.displayName)
         await logToFirebaseLog([{
@@ -209,6 +217,7 @@ export async function updateRequest(req, res) {
             source: 'request-create',
             id: entry.id,
             displayName: entry.displayName,
+            prod: prod
         }])
     } catch (error) {
         handleError(res, 'Failed to set ranking request', error, 500)
@@ -219,7 +228,7 @@ export async function updateRequest(req, res) {
 }
 
 export async function updateVotes(req, res) {
-    const {newVote} = req.body
+    const {newVote, prod} = req.body
     const {entryId, displayName} = newVote
 
     try {
@@ -228,10 +237,12 @@ export async function updateVotes(req, res) {
         return handleError(res, err.message, err, 403)
     }
 
+    const dbC = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
+
     const {user_id} = req.user
     let updatedVotes = []
 
-    const ref = db.collection('ranking-requests').doc(entryId)
+    const ref = dbC.collection('ranking-requests').doc(entryId)
     try {
         const rankingRequest = await fetchRankingRequest(ref, entryId)
         if (!rankingRequest) return handleError(res, 'No ranking request found', new Error('No ranking request found'), 404)
@@ -241,6 +252,7 @@ export async function updateVotes(req, res) {
             source: 'request-upvote',
             id: entryId,
             displayName: displayName,
+            prod: prod
         }])
 
         const previousVotes = rankingRequest.requestedBy || []
@@ -259,6 +271,7 @@ export async function updateVotes(req, res) {
                 source: 'request-upvote',
                 id: entryId,
                 displayName: displayName,
+                prod: prod
             }])
 
         } catch (error) {
