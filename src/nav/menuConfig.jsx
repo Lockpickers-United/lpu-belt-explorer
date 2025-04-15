@@ -98,7 +98,6 @@ export default [
         title: 'Contibute Photos',
         icon: <CameraAltIcon fontSize='small'/>,
         path: '/content',
-        beta: true
     },
     {
         title: 'Suggest a Lock',
