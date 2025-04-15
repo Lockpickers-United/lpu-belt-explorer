@@ -9,7 +9,7 @@ import Nav from '../nav/Nav.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../locks/LockDataProvider.jsx'
 import {collection, onSnapshot, query, where} from 'firebase/firestore'
-import {db} from '../auth/firebase'
+import {db, devFirestore} from '../auth/firebase'
 import postFirebaseActivity from './postFirebaseActivity'
 import DBContext from '../app/DBContext.jsx'
 
@@ -46,6 +46,7 @@ function RankingRequestsParentRoute() {
                             source: 'request-subscription',
                             id: '',
                             displayName: lockCollection?.displayName,
+                            prod: devFirestore
                         })
                     }
 

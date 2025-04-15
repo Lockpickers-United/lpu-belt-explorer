@@ -2,7 +2,7 @@ import {initializeApp} from 'firebase/app'
 import {getAuth} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 
-const {VITE_DEV_FIRESTORE: devFirestore} = import.meta.env
+export const {VITE_DEV_FIRESTORE: devFirestore} = import.meta.env
 
 // Firebase configuration
 let firebaseConfig

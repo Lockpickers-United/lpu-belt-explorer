@@ -6,7 +6,7 @@ const app = admin.initializeApp({
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
 
-const prod = false
+const prod = true
 const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
 
 const action = 'deleteDeletedDocuments' // 'deleteDeletedDocuments' // 'getDocument' // 'setDocument'
