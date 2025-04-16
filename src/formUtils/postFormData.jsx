@@ -1,13 +1,13 @@
 import axios from 'axios'
 import {enqueueSnackbar} from 'notistack'
 
-export const postFormData = async ({user, url, formData, snackBars}) => {
+export const postFormData = async ({user, url, formData, snackBars, timeoutDuration=10000}) => {
 
     const controller = new AbortController()
     const timeout = setTimeout(() => {
         controller.abort()
-    }, 10000)
-    const rand = Math.floor(Math.random() * 100000)
+    }, timeoutDuration)
+    const rand = Math.floor(Math.random() * 1000000)
 
     const idToken = user ? await user.getIdToken() : null
 

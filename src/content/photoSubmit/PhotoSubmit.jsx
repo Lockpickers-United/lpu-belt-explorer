@@ -74,10 +74,13 @@ function PhotoSubmit({profile, user}) {
 
         const url = 'https://explore.lpubelts.com:8443/upload'
         const snackBars = false
+        const timeoutDuration = 15000
         try {
-            setResponse( await postFormData({user, url, formData, snackBars}) )
+            setResponse( await postFormData({user, url, formData, snackBars, timeoutDuration}) )
             savePhotoCredit(photoCredit)
         } catch (error) {
+
+            // todo log error and then display it.
             setUploadError(error)
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
