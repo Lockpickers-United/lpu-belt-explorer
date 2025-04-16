@@ -23,6 +23,7 @@ import AuthContext from '../app/AuthContext.jsx'
 import postRequestUpdate from './postRequestUpdate'
 import AddVote from './AddVote.jsx'
 import Upvote from './Upvote.jsx'
+import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 
 /**
  * @typedef {object} entry
@@ -249,6 +250,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
                         }
 
                         <AccordionActions>
+                            <CopyEntryTextButton entry={entry}/>
                             <CopyLinkToRequestButton entry={entry}/>
                         </AccordionActions>
                     </AccordionDetails>

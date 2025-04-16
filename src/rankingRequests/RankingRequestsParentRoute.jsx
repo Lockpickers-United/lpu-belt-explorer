@@ -46,7 +46,7 @@ function RankingRequestsParentRoute() {
                             source: 'request-subscription',
                             id: '',
                             displayName: lockCollection?.displayName,
-                            prod: devFirestore
+                            prod: !devFirestore
                         })
                     }
 
