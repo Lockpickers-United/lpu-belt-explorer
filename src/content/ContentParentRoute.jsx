@@ -27,14 +27,14 @@ function ContentParentRoute() {
     }, [getProfile, userId])
 
     const {data = {}, loading, error} = useData({loadFn})
-
+    const profile = data
 
     return (
         <React.Fragment>
             {loading && <LoadingDisplay/>}
 
             {!loading && data && !error &&
-                <Outlet/>
+                <Outlet context={{profile, user}}/>
             }
 
             {!loading && !data && !error && !user &&

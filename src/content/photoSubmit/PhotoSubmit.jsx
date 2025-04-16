@@ -3,7 +3,6 @@ import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import LockEntrySearchBox from '../LockEntrySearchBox.jsx'
-import axios from 'axios'
 import BeltIcon from '../../entries/BeltIcon.jsx'
 import Dropzone from '../../formUtils/Dropzone.jsx'
 import DBContext from '../../app/DBContext.jsx'
@@ -16,12 +15,13 @@ import Dialog from '@mui/material/Dialog'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Tracker from '../../app/Tracker.jsx'
 import DataContext from '../../locks/LockDataProvider.jsx'
+import {postFormData} from '../../formUtils/postFormData.jsx'
 
 /**
  * @prop photoCredit
  */
 
-function PhotoSubmit({profile}) {
+function PhotoSubmit({profile, user}) {
     const {allEntries} = useContext(DataContext)
     const {updateProfileField} = useContext(DBContext)
     const [lockDetails, setLockDetails] = useState({})
@@ -34,7 +34,7 @@ function PhotoSubmit({profile}) {
     const [altLockName, setAltLockName] = useState('')
     const [notes, setNotes] = useState('')
 
-    const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName)
+    const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName || '')
     const [reset, setReset] = useState(false)
 
     const dt = dayjs().format('YYYYMMDD-HHMMss')
@@ -68,30 +68,24 @@ function PhotoSubmit({profile}) {
         formData.append('belt', entry?.belt)
         formData.append('lockId', lockDetails.lockId)
         formData.append('photoCredit', photoCredit)
-        formData.append('displayName', profile.displayName)
+        formData.append('displayName', profile?.displayName)
         formData.append('uploadsDir', uploadsDir)
         formData.append('notes', notes)
 
-        await axios.post(
-            'https://explore.lpubelts.com:8443/upload', formData,
-            {headers: {'Content-Type': 'multipart/form-data'}}
-        )
-            .then(response => {
-                setResponse(response.data)
-                //console.log('response.data', response.data)
-                savePhotoCredit(photoCredit)
-            })
-            .catch(error => {
-                console.error('upload error', error)
-                setUploadError(error)
-            })
-
-        if (!uploadError) {
+        const url = 'https://explore.lpubelts.com:8443/upload'
+        const snackBars = false
+        try {
+            setResponse( await postFormData({user, url, formData, snackBars}) )
+            savePhotoCredit(photoCredit)
+        } catch (error) {
+            setUploadError(error)
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
+        } finally {
             setUploading(false)
         }
+
     }
 
     const handleChangeLock = useCallback(details => {
@@ -162,7 +156,8 @@ function PhotoSubmit({profile}) {
                     </div>
 
                     <div style={{marginTop: 8}}>
-                        <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList' checked={altLock}/> Submit
+                        <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'
+                                  checked={altLock}/> Submit
                         photos for a lock not on the site.
                     </div>
                     <Collapse in={altLock} style={{marginTop: 10}}>

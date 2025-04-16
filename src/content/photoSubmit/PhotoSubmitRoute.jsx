@@ -1,17 +1,18 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Nav from '../../nav/Nav.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import IntroCopy from '../../misc/IntroCopy.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
 import PhotoSubmit from './PhotoSubmit.jsx'
-import DataContext from '../../context/DataContext.jsx'
 import allEntries from '../../data/data.json'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {DataProvider} from '../../locks/LockDataProvider.jsx'
+import {useOutletContext} from 'react-router-dom'
 
 export default function PhotoSubmitRoute() {
-    const {profile} = useContext(DataContext)
     const {isMobile} = useWindowSize()
+
+    const {profile, user} = useOutletContext()
 
     usePageTitle('LPU Belt Explorer - Submit Photos')
 
@@ -21,7 +22,7 @@ export default function PhotoSubmitRoute() {
 
     return (
         <FilterProvider>
-            <DataProvider allEntries={allEntries}>
+            <DataProvider allEntries={allEntries} profile={profile}>
                 <Nav title='Submit Photos' extras={extras}/>
 
                 {profile && !profile.photoCredit &&
@@ -30,7 +31,7 @@ export default function PhotoSubmitRoute() {
                     </div>
                 }
 
-                <PhotoSubmit profile={profile}/>
+                <PhotoSubmit profile={profile} user={user}/>
             </DataProvider>
         </FilterProvider>
     )
