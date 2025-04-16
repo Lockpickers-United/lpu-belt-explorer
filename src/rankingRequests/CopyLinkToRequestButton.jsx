@@ -9,7 +9,7 @@ function CopyLinkToRequestButton({entry, nameType}) {
     const handleClick = useCallback(async () => {
         const name =  entryName(entry, nameType)
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-        const link = `${window.location.origin}/#/content/lockrequest/view?id=${entry.id}&name=${safeName}`
+        const link = `${window.location.origin}/#/rankingrequests/view?id=${entry.id}&name=${safeName}`
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Link copied to clipboard.')
     }, [entry, nameType])

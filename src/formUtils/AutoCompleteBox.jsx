@@ -15,7 +15,7 @@ function AutoCompleteBox({name, changeHandler, options, style, disabled = false,
     const [inputValue, setInputValue] = useState('')
 
     const noOptionsText = noOptionsMessage && !!noOptionsHandler
-        ? <Button onClick={noOptionsHandler}  variant='contained' color='info'>
+        ? <Button onClick={noOptionsHandler}  variant='contained' color='success'>
             {noOptionsMessage}
         </Button>
         : null
