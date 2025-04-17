@@ -766,6 +766,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2",UrbanAlps,"Stealth Key SK2",,Lever/sidebar,"Partial gut",,284bf0b0
 "Black 1","Vachette,Vachette,Vachette,Vachette,Vachette","Radial NT,Radial NT+,Radial,Radial S,Radial SI","≥ 18 pins",Dimple,"High pin count",,5def87d0
 "Black 2",WEST,917,,Dimple,"High pin count",,23437955
+"Black 3",WEST,941,,Dimple,,,ca6c2e4c
 "Black 5","Western Electric",30B,,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,e718b140
 "Black 5","Western Electric",30C,,Lever,"Cabinet lock,Flat steel key,Curtain",,5a4310d5
 "Black 1",Winkhaus,X-Tra,"≥13 pins",Dimple,"High pin count",,d1a5cd90
@@ -879,7 +880,6 @@ Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(
 Unranked,Union,2134e,"5 lever",Lever,"Pin key,False gates",,45cadc22
 Unranked,Voga,X18,,,"Under Review ⚑",,90b4ade7
 Unranked,,War-Lok,,,"Under Review ⚑",,fa9fb7e1
-Unranked,WEST,941,,Dimple,,,ca6c2e4c
 Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e
 Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5

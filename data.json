@@ -50334,6 +50334,86 @@
     "lastUpdated": "2025-03-18T23:29:31.285Z"
   },
   {
+    "id": "ca6c2e4c",
+    "belt": "Black 3",
+    "makeModels": [
+      {
+        "make": "WEST",
+        "model": "941"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "dateAdded": "2024-08-29T18:27:38.000Z",
+    "media": [
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53956752903_df8e6e4314_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53956752903/in/album-72177720319889516/",
+        "sequenceId": 3085,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53956752903_3a74751491_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53956504746_1e5906a951_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53956504746/in/album-72177720319889516/",
+        "sequenceId": 3086,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53956504746_b087ecbe48_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53955606397_423fcda852_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53955606397/in/album-72177720319889516/",
+        "sequenceId": 3087,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53955606397_9ea02a873c_o.jpg"
+      },
+      {
+        "title": "By: yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108153626_cf1e9e932e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108153626/in/album-72177720319889516/",
+        "sequenceId": 3088,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108153626_e8991104b5_o.jpg"
+      },
+      {
+        "title": "By: yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54107283417_0dc573c773_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54107283417/in/album-72177720319889516/",
+        "sequenceId": 3089,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54107283417_f554c4e78e_o.jpg"
+      },
+      {
+        "title": "By: yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108604960_b347bbc44c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108604960/in/album-72177720319889516/",
+        "sequenceId": 3090,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108604960_3f763aba4e_o.jpg"
+      },
+      {
+        "title": "By: yabende",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108154146_72ae824454_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108154146/in/album-72177720319889516/",
+        "sequenceId": 3091,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108154146_de7c24ea4f_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-04-17T02:16:40.375Z"
+  },
+  {
     "id": "e718b140",
     "belt": "Black 5",
     "makeModels": [
@@ -56568,86 +56648,6 @@
       }
     ],
     "views": 187,
-    "lastUpdated": "2025-03-19T15:44:57.325Z"
-  },
-  {
-    "id": "ca6c2e4c",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "WEST",
-        "model": "941"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "dateAdded": "2024-08-29T18:27:38.000Z",
-    "media": [
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53956752903_df8e6e4314_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53956752903/in/album-72177720319889516/",
-        "sequenceId": 3085,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53956752903_3a74751491_o.jpg"
-      },
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53956504746_1e5906a951_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53956504746/in/album-72177720319889516/",
-        "sequenceId": 3086,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53956504746_b087ecbe48_o.jpg"
-      },
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53955606397_423fcda852_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53955606397/in/album-72177720319889516/",
-        "sequenceId": 3087,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53955606397_9ea02a873c_o.jpg"
-      },
-      {
-        "title": "By: yabende",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108153626_cf1e9e932e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108153626/in/album-72177720319889516/",
-        "sequenceId": 3088,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108153626_e8991104b5_o.jpg"
-      },
-      {
-        "title": "By: yabende",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54107283417_0dc573c773_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54107283417/in/album-72177720319889516/",
-        "sequenceId": 3089,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54107283417_f554c4e78e_o.jpg"
-      },
-      {
-        "title": "By: yabende",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108604960_b347bbc44c_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108604960/in/album-72177720319889516/",
-        "sequenceId": 3090,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108604960_3f763aba4e_o.jpg"
-      },
-      {
-        "title": "By: yabende",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108154146_72ae824454_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108154146/in/album-72177720319889516/",
-        "sequenceId": 3091,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108154146_de7c24ea4f_o.jpg"
-      }
-    ],
     "lastUpdated": "2025-03-19T15:44:57.325Z"
   },
   {

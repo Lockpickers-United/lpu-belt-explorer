@@ -1186,6 +1186,7 @@ is required to gut.
 - [UrbanAlps Stealth Key SK2](https://lpubelts.com/#/locks?id=284bf0b0)
 - [Vachette Radial NT / Vachette Radial NT+ / Vachette Radial / Vachette Radial S / Vachette Radial SI](https://lpubelts.com/#/locks?id=5def87d0) (&ge; 18 pins)
 - [WEST 917](https://lpubelts.com/#/locks?id=23437955)
+- [WEST 941](https://lpubelts.com/#/locks?id=ca6c2e4c)
 - [Western Electric 30B](https://lpubelts.com/#/locks?id=e718b140)
 - [Western Electric 30C](https://lpubelts.com/#/locks?id=5a4310d5)
 - [Winkhaus X-Tra](https://lpubelts.com/#/locks?id=d1a5cd90) (&ge;13 pins)
