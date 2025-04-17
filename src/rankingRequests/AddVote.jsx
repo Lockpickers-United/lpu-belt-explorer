@@ -2,7 +2,6 @@ import React, {useCallback, useContext, useState} from 'react'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import Tooltip from '@mui/material/Tooltip'
-import postVoteUpdate from './postVoteUpdate'
 import LoadingDisplayWhite from '../misc/LoadingDisplayWhite.jsx'
 import {enqueueSnackbar} from 'notistack'
 import TextField from '@mui/material/TextField'
@@ -11,6 +10,8 @@ import Dialog from '@mui/material/Dialog'
 import SelectBox from '../formUtils/SelectBox.jsx'
 import {uniqueBelts} from '../data/belts'
 import DataContext from '../context/DataContext.jsx'
+import {serverUrl} from './rankingRequestData'
+import {postData} from '../formUtils/postData.jsx'
 
 export default function AddVote({user, entry}) {
     const [isUpdating, setIsUpdating] = useState(false)
@@ -59,8 +60,11 @@ export default function AddVote({user, entry}) {
         }
         setIsUpdating(true)
         const newVote = {...form, entryId: entry.id, owner: false, userId: user.uid, displayName: profile.displayName}
+        const url = `${serverUrl}/request-vote`
+        const json= JSON.stringify({ newVote })
+
         try {
-            await postVoteUpdate({newVote, user})
+            await postData({user, url, json, snackBars: true})
         } catch (error) {
             console.error('Error updating vote:', error)
         } finally {

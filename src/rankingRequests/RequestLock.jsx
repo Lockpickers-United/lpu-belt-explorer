@@ -16,9 +16,11 @@ import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
 import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import {useNavigate} from 'react-router-dom'
-import postRequestCreate from './postRequestCreate'
 import AuthContext from '../app/AuthContext.jsx'
 import DataContext from '../context/DataContext.jsx'
+import {serverUrl} from './rankingRequestData'
+import {postData} from '../formUtils/postData.jsx'
+import {enqueueSnackbar} from 'notistack'
 
 /**
  * @prop newBrand
@@ -123,24 +125,25 @@ function RequestLock() {
             formData.append('files', file, `${uploadsDir}/${prefix}_${base}_${suffix}.${ext}`.toLowerCase())
         })
 
-        try {
-            const result = await postRequestCreate({ formData, user, setUploadError })
-            setResponse(result)
-        } catch (error) {
-            //console.error('Error in postRequestCreate:', error)
-            setUploadError(error)
-        } finally {
-            // Whether success or error, stop the uploading state.
-            setUploading(false)
-        }
 
-        if (!uploadError) {
+        const url = `${serverUrl}/request-lock`
+
+        try {
+            const results =  await postData({user, url, formData, snackBars: false})
+            enqueueSnackbar('Upload successful', {variant: 'success'})
+            setResponse(results)
+        } catch (error) {
+            setUploadError(error)
+            enqueueSnackbar(`Error creating request: ${error}`, {variant: 'error', autoHideDuration: 3000})
+            throw error
+        } finally {
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
             setUploading(false)
+            setForm(formCopy)
         }
 
-        setForm(formCopy)
+
     }
 
     const handleReload = useCallback(() => {

@@ -15,7 +15,7 @@ import Dialog from '@mui/material/Dialog'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Tracker from '../../app/Tracker.jsx'
 import DataContext from '../../locks/LockDataProvider.jsx'
-import {postFormData} from '../../formUtils/postFormData.jsx'
+import {postData, cleanError} from '../../formUtils/postData.jsx'
 
 /**
  * @prop photoCredit
@@ -29,7 +29,7 @@ function PhotoSubmit({profile, user}) {
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)
-    const [uploadError, setUploadError] = useState(false)
+    const [uploadError, setUploadError] = useState(undefined)
     const [altLock, setAltLock] = useState(false)
     const [altLockName, setAltLockName] = useState('')
     const [notes, setNotes] = useState('')
@@ -76,12 +76,10 @@ function PhotoSubmit({profile, user}) {
         const snackBars = false
         const timeoutDuration = 15000
         try {
-            setResponse( await postFormData({user, url, formData, snackBars, timeoutDuration}) )
+            setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
             savePhotoCredit(photoCredit)
         } catch (error) {
-
-            // todo log error and then display it.
-            setUploadError(error)
+            setUploadError(cleanError(error))
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
@@ -293,7 +291,9 @@ function PhotoSubmit({profile, user}) {
                             Please try again later.<br/>
                         </div>
                         <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                            Error message: {uploadError?.response?.data}
+                            Error message: {uploadError?.response?.data?.message || uploadError?.message}
+                            {uploadError?.response?.data?.status &&
+                                <span> ({uploadError?.response?.data?.status})</span> }
                         </div>
 
 

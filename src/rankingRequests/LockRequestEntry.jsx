@@ -20,10 +20,12 @@ import Button from '@mui/material/Button'
 import dayjs from 'dayjs'
 import TextField from '@mui/material/TextField'
 import AuthContext from '../app/AuthContext.jsx'
-import postRequestUpdate from './postRequestUpdate'
 import AddVote from './AddVote.jsx'
 import Upvote from './Upvote.jsx'
 import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
+import {serverUrl} from './rankingRequestData'
+import {postData} from '../formUtils/postData.jsx'
+import {enqueueSnackbar} from 'notistack'
 
 /**
  * @typedef {object} entry
@@ -94,10 +96,19 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
     }, [entry])
 
     const handleUpdate = useCallback(async (entry) => {
-        await postRequestUpdate({entry, user})
-            .then(() => {
-                handleEditClose()
-            })
+        const url = `${serverUrl}/update-request`
+        const json= JSON.stringify({ entry })
+
+        try {
+            await postData({user, url, json, snackBars: false})
+        } catch (error) {
+            console.error('Error updating vote:', error)
+            let errorMessage = error.response?.data?.message || error.message
+            enqueueSnackbar(`Error updating request: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
+        } finally {
+            handleEditClose()
+        }
+
     }, [handleEditClose, user])
 
     const handleDelete = useCallback(async () => {

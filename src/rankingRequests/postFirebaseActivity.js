@@ -1,41 +1,17 @@
 import { serverUrl } from './rankingRequestData'
+import {cleanError, postData} from '../formUtils/postData.jsx'
 
 export default async function postFirebaseActivity({ activityData }) {
 
-    const controller = new AbortController()
-    const timeout = setTimeout(() => {
-        controller.abort()
-    }, 10000)
-    const rand = Math.floor(Math.random() * 1000000)
+    const url = `${serverUrl}/log-activity`
+    const snackBars = false
+    const json= JSON.stringify({ activityData })
 
     try {
-        const response = await fetch(`${serverUrl}/log-activity?${rand}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ activityData }),
-            signal: controller.signal, // Link the abort controller
-        })
-
-        clearTimeout(timeout)
-
-        if (!response.ok) {
-            let errorMessage = 'Error updating request'
-            try {
-                const errorData = await response.json()
-                console.error('errorData', errorData)
-                errorMessage = errorData.message || errorMessage
-            } catch (e) {
-                // Fallback in case parsing fails
-            }
-            return { response: { data: { status: response.status, message: errorMessage } } }
-        } else {
-            return await response.json().catch(() => ({}))
-        }
+        return await postData({url, json, snackBars})
     } catch (error) {
-        clearTimeout(timeout)
-        console.error('Error during authentication or server request:', error)
+        console.error(cleanError(error))
         throw error
     }
+
 }

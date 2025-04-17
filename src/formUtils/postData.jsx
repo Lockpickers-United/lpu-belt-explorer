@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {enqueueSnackbar} from 'notistack'
 
-export const postFormData = async ({user, url, formData, snackBars, timeoutDuration=10000}) => {
+export const postData = async ({user, url, formData, json, snackBars, timeoutDuration = 10000}) => {
 
     const controller = new AbortController()
     const timeout = setTimeout(() => {
@@ -10,30 +10,26 @@ export const postFormData = async ({user, url, formData, snackBars, timeoutDurat
     const rand = Math.floor(Math.random() * 1000000)
 
     const idToken = user ? await user.getIdToken() : null
-
-    const headers = idToken
-        ? {
-            'Authorization': 'Bearer ' + idToken,
-            'Content-Type': 'multipart/form-data'
-        }
-        : {
-            'Content-Type': 'multipart/form-data'
-        }
+    const isJson = json !== undefined && formData === undefined
+    const headers = {
+        ...(idToken && { Authorization: `Bearer ${idToken}` }),
+        'Content-Type': isJson ? 'application/json' : 'multipart/form-data'
+    }
+    const data = isJson ? json : formData
 
     try {
         // Await the axios.post call, which returns the response.
         const response = await axios.post(
             `${url}?${rand}`,
-            formData,
+            data,
             {
-                headers,
-                signal: controller.signal // Link the abort controller
+                headers, signal: controller.signal // Link the abort controller
             }
         )
 
         clearTimeout(timeout)
         if (snackBars) {
-            enqueueSnackbar('Upload successful', {variant: 'success'})
+            enqueueSnackbar('Request successful', {variant: 'success'})
         }
         // Return the data property of the response.
         return response.data
@@ -44,11 +40,11 @@ export const postFormData = async ({user, url, formData, snackBars, timeoutDurat
         if (snackBars) {
             enqueueSnackbar('Error during authentication or server request', {variant: 'error', autoHideDuration: 3000})
         }
-        throw new Error(cleanError(error))
+        throw error
     }
 }
 
-const cleanError = (error) => {
+export const cleanError = (error) => {
     if (error.response?.data && typeof error.response.data === 'string') {
         const errorStatus = error.message.match(/code (\d+)/)?.[1]
         const errorText = error.response.data.match(/<pre>([\s\S]*?)<\/pre>/)?.[1]
