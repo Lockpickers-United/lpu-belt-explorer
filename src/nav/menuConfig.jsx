@@ -129,6 +129,11 @@ export default [
             },
             {
                 admin: true,
+                title: 'Firebase Report',
+                path: '/admin/firebaseReport'
+            },
+            {
+                admin: true,
                 title: 'RAFL Report',
                 path: '/rafl/reports'
             },

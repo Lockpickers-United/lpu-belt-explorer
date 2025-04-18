@@ -45,82 +45,84 @@ const AdminStatsTableSort = ({
         ? <ArrowDropUpIcon/>
         : <ArrowDropDownIcon/>
 
-    return (
-        <div>
-            <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
-            <TableContainer id='statsTable'
-                            style={{
-                                padding: '0px 0px 0px 4px',
-                                width: tableWidth,
-                                marginLeft: 'auto',
-                                marginRight: 'auto',
-                                height: tableHeight
-                            }}
-                            component={Paper} elevation={2}>
-                <Table size='small' stickyHeader={!!tableHeight}>
-                    <TableHead>
-                        <TableRow>
-                            {tableData.columns.map((column, index) =>
-                                <TableCell key={index + 1}
-                                           sx={{
-                                               textAlign: column.align,
-                                               fontSize: fontSize,
-                                               lineHeight: '1.1rem',
-                                               padding: '6px 2px',
-                                               backgroundColor: '#111',
-                                               color: '#fff'
-                                           }}
-                                           component='th' scope='row'>
+return (
+    <div>
+        <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
+        <TableContainer id='statsTable'
+                        style={{
+                            padding: '0px 0px 0px 4px',
+                            width: tableWidth,
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            height: tableHeight
+                        }}
+                        component={Paper} elevation={2}>
+            <Table size='small' stickyHeader={!!tableHeight}>
+                <TableHead>
+                    <TableRow style={{backgroundColor: '#111'}}>
+                        {tableData.columns.map((column, index) =>
+                            <TableCell key={index + 1}
+                                       sx={{
+                                           textAlign: column.align,
+                                           fontSize: fontSize,
+                                           lineHeight: '1.1rem',
+                                           padding: '6px 2px',
+                                           color: '#fff'
+                                       }}
+                                       component='th' scope='row'>
 
-                                    {sortable && column.id !== 'index' &&
-                                        <div style={{display: 'flex', alignItems: 'center'}}>
-                                            {column.align === 'center'
-                                                ? <div style={{width: 24}}/>
-                                                : <div style={{width: 6}}/>
-                                            }
-                                            <Link onClick={() => handleSort(column.id)}
-                                                  style={{color: sort === column.id ? '#fff' : '#bbb'}}>
-                                                <nobr>{column.name}</nobr>
-                                            </Link>
-                                            {sort === column.id
-                                                ? <IconButton onClick={() => handleSort(column.id)} style={{padding: 0}}>
-                                                    {sortIcon}</IconButton>
-                                                : <div style={{width: 24}}/>
-                                            }
-                                        </div>
-                                        || <div>{column.name}</div>
-                                    }
-                                </TableCell>
-                            )}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {tableData.data.map((row, index) =>
-                            <TableRow key={index} index={index}
-                                      sx={{
-                                          '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#191919'},
-                                          'td, th': {}
-                                      }}>
-                                {tableData.columns.map((column, index) =>
-                                    <TableCell key={index + 1}
-                                               sx={{
-                                                   textAlign: column.align,
-                                                   fontSize: fontSize,
-                                                   whiteSpace: whiteSpace,
-                                                   padding: '8px',
-                                                   border: 0,
-                                                   color: '#eee'
-                                               }}
-                                               component='th' scope='row'>
+                                {sortable && column.id !== 'index' &&
+                                    <div style={{display: 'flex', alignItems: 'center'}}>
+                                        {column.align === 'center'
+                                            ? <div style={{width: 24}}/>
+                                            : <div style={{width: 6}}/>
+                                        }
+                                        <Link onClick={() => handleSort(column.id)}
+                                              style={{color: sort === column.id ? '#fff' : '#bbb'}}>
+                                            <nobr>{column.name}</nobr>
+                                        </Link>
+                                        {sort === column.id
+                                            ?
+                                            <IconButton onClick={() => handleSort(column.id)} style={{padding: 0}}>
+                                                {sortIcon}</IconButton>
+                                            : <div style={{width: 24}}/>
+                                        }
+                                    </div>
+                                    || <div>{column.name}</div>
+                                }
+                            </TableCell>
+                        )}
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {tableData.data.map((row, index) =>
+                        <TableRow key={index} index={index}
+                                  sx={{
+                                      '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#191919'},
+                                      'td, th': {}
+                                  }}>
+                            {tableData.columns.map((column, index) =>
+                                column.id !== 'spacer'
+                                    ? <TableCell key={index + 1}
+                                                 sx={{
+                                                     textAlign: column.align,
+                                                     fontSize: fontSize,
+                                                     whiteSpace: whiteSpace,
+                                                     padding: '8px',
+                                                     border: 0,
+                                                     color: '#eee'
+                                                 }}
+                                                 component='th' scope='row'>
                                         {linkFunction(column.id, row[column.id] ? row[column.id].toLocaleString() : '')}
                                     </TableCell>
-                                )}
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
-    )
+                                    : <TableCell key={index + 1} style={{border: 0}}/>
+                            )}
+                        </TableRow>
+                    )}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    </div>
+)
 }
 export default AdminStatsTableSort

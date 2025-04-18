@@ -171,6 +171,13 @@ export default [
                 }
             },
             {
+                path: '/admin/firebaseReport',
+                lazy: async () => {
+                    const {default: FirebaseReport} = await import('../admin/firebaseReport/FirebaseReport')
+                    return {element: <FirebaseReport/>}
+                }
+            },
+            {
                 path: '/admin/blackBelts',
                 lazy: async () => {
                     const {default: BlackBeltsMain} = await import('../admin/BlackBeltsMain')
