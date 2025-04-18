@@ -25733,6 +25733,10 @@
       },
       {
         "make": "Keso",
+        "model": "1000"
+      },
+      {
+        "make": "Keso",
         "model": "2000S"
       },
       {
@@ -25743,7 +25747,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Keso 10RS, 2000S, 4000S (Omega)",
+    "name": "Keso 10RS, 1000, 2000S, 4000S (Omega)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1267,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
@@ -25786,7 +25790,8 @@
       }
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "version": "<13 pins"
   },
@@ -51682,7 +51687,8 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "notes": "High pin count"
+    "notes": "High pin count",
+    "dateDeleted": "2025-04-18T15:49:49.328Z"
   },
   "708256e9": {
     "id": "708256e9",
@@ -59232,6 +59238,10 @@
       },
       {
         "make": "Keso",
+        "model": "1000"
+      },
+      {
+        "make": "Keso",
         "model": "2000S"
       },
       {
@@ -59244,10 +59254,11 @@
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "lastUpdated": "2025-03-19T15:44:57.304Z",
-    "name": "Keso 10RS, 2000S, 4000S (Omega)",
+    "name": "Keso 10RS, 1000, 2000S, 4000S (Omega)",
     "dateAdded": "2025-02-17T13:29:55.000Z",
     "media": [
       {
