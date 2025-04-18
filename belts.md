@@ -1224,33 +1224,23 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
 
-### January 2025
-
-First change for the new year! We have some adjustments in the higher belts as well as some community votes being implemented.
+### February/March 2025
 
 **NEW ADDITIONS**
 
-- **Basi AS** - ORANGE - Standard 5-pin with two spools, similar to V50.
-- **BAB DESS5** - ORANGE - Very old standard 5-pin with two spools and friendly profile.
-- **Yale 500+** - GREEN - Version of Yale 500 without overmilling.
-- **Wilka PR100 Series** - GREEN - 6-pin Wilka with spools and copy protection element, like 3VE but vertical profile.
-- **Winkhaus keyTec RPE** - BLUE - Very complicated profile with newer Winkhaus pinning makes this tricky.
-
-**UPGRADES**
-
-- **Brinks R70/R80** - YELLOW - A 4-pin lock with two spools.
-- **Abus Pfaffenhain V14** (with 6 pins and Pfaffenhain pin or AS pins) - BLUE - The combination of pins, profile and trap pin make this difficult enough for blue. Requires 360° pick.
-- **Keso 10RS / 2000S / 4000S** with >= 13 pins - BROWN - Align with LIPS Keso.
-- **Urban Alps Stealth Key Gen2** - BLACK2 - This is more difficult than Gen1 which is currently BLACK.
+-  **Chain Key Lock** - BLUE - This lock has received some testing through the recent group buy and received 3 convincing blue community votes.
+- **Opnus XZ** - BLUE - as voted by our community.
+- **Delta 'DAF Kilit DBS02' Clone** - PURPLE - Has 3 votes to purple by our BB community and aligns with similar locks like Yale Superior.
+- **Yale 2000 Plus** - PURPLE - This is a 10 dimple + slider sidebar style lock with 3 community votes to purple. Similar to other purple locks, e.g. M&C Matrix or Color Pro, but generally considered slightly harder due to the higher amount of pins.
+- **U-Shin Showa mortise** (6 spools, torpedo keypins) - BLUE - as voted by our community.
+- **Keso 8000 Omega^2** - BROWN (< 13 pins) / RED (>= 13 pins). The 8000 is a true upgrade to previous Kesos in two ways: 1) The Omega^2 element is harder to set than the previous element and 2) (more importantly) since Keso 8000, Keso uses a sleeve (like Kaba) instead of trays. This method of manufacturing allows for much tighter tolerances (because sleeve and core are drilled in one pass) which is why Keso 8000 feels harder to pick. Since the pin count varies, we decided to apply a similar rule for pin count as for the other Kesos.
+- **Kaba Titan** - BB1 - Voted unanimously to BB1 by 3 community members.
+- **West 941** - BB3 - as voted by our community.
 
 **SAMELINING**
 
-- Remove **Clavis f22** as an upgrade from Clavis q18 to align with other locks like Kaba.
-- **Securemme K2** - Sameline with Securemme K22.
-- **Yale B (6-pin with overmilling)** - Sameline with Yale 500.
-- **Vachette Radial** - Sameline Radial, Radial SI, Radial NT and NT+ as they are all very similar.
-- **ABUS X12R** - Sameline with EC880, same lock.
-- **Mottura Champion CP6** - Sameline with C55, same lock without interactive element.
+- **Keso 1000** - sameline with 10RS/2000/4000. Even though these can be slightly more difficult, they are still about in the same difficulty range.
+
 
 
 ---
