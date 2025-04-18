@@ -50399,10 +50399,10 @@
     "makeModels": [
       {
         "make": "Voga",
-        "model": "X18mgs"
+        "model": "X18mgsec"
       }
     ],
-    "name": "Voga X18mgs",
+    "name": "Voga X18mgsec",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2023-08-03T13:21:20.110Z",
     "features": [
