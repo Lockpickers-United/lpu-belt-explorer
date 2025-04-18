@@ -23,11 +23,11 @@ const FirebaseDailyTable = ({data}) => {
     const [ascending, setAscending] = useState(true)
 
     const mappedData = Object.keys(dailyTotals).map(key => {
-        const date = dayjs(key)
-        const reads = dailyTotals[key]['READ']
-        const writes = dailyTotals[key]['WRITE']
-        const subscriptionReads = requestSubscriptions[key]['READ'] || 0
-        const subscriptionRefreshes = requestSubscriptions[key]['REFRESH'] || 0
+        const date = dayjs(key) || 0
+        const reads = dailyTotals[key]['READ'] || 0
+        const writes = dailyTotals[key]['WRITE'] || 0
+        const subscriptionReads = requestSubscriptions[key]?.READ || 0
+        const subscriptionRefreshes = requestSubscriptions[key]?.REFRESH || 0
 
         return {
             date: date.format('MM/DD/YYYY'),
