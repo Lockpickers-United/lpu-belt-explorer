@@ -553,17 +553,17 @@
       {
         "segment": "Ranked locks",
         "count": 782,
-        "media": 735,
-        "coverage": "93%"
+        "media": 739,
+        "coverage": "94%"
       },
       {
         "segment": "All locks",
         "count": 897,
-        "media": 824,
-        "coverage": "91%"
+        "media": 828,
+        "coverage": "92%"
       }
     ],
-    "uniqueImages": 3924,
+    "uniqueImages": 3938,
     "contributors": 297,
     "topPhotographers": [
       {
@@ -580,7 +580,7 @@
       },
       {
         "contributor": "Reinder Stegen",
-        "images": 216
+        "images": 223
       },
       {
         "contributor": "Luboš Čech",
@@ -751,6 +751,10 @@
         "images": 17
       },
       {
+        "contributor": "Dynamic",
+        "images": 17
+      },
+      {
         "contributor": "Mick777Oz",
         "images": 17
       },
@@ -780,10 +784,6 @@
       },
       {
         "contributor": "Devo",
-        "images": 14
-      },
-      {
-        "contributor": "Dynamic",
         "images": 14
       },
       {
@@ -936,6 +936,10 @@
       },
       {
         "contributor": "Lockpicking Dutchman",
+        "images": 8
+      },
+      {
+        "contributor": "Plz7",
         "images": 8
       },
       {
@@ -1120,10 +1124,6 @@
       },
       {
         "contributor": "Peaceweapon",
-        "images": 4
-      },
-      {
-        "contributor": "Plz7",
         "images": 4
       },
       {
@@ -1757,6 +1757,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-04-18 15:49"
+    "updatedDateTime": "2025-04-18 21:52"
   }
 }
