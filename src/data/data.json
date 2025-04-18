@@ -56915,7 +56915,7 @@
     "makeModels": [
       {
         "make": "Voga",
-        "model": "X18mgs"
+        "model": "X18mgsec"
       }
     ],
     "features": [
@@ -56923,7 +56923,7 @@
     ],
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "views": 100,
-    "lastUpdated": "2025-04-18T23:19:06.753Z"
+    "lastUpdated": "2025-04-18T23:25:48.794Z"
   },
   {
     "id": "fa9fb7e1",
