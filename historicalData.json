@@ -49693,7 +49693,7 @@
   },
   "3af6c54b": {
     "id": "3af6c54b",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Opnus",
@@ -49705,7 +49705,6 @@
     "lastUpdated": "2025-03-19T01:20:51.403Z",
     "views": 183,
     "features": [
-      "Under Review ⚑",
       "High pin count"
     ],
     "media": [
@@ -50628,7 +50627,7 @@
   },
   "a42a815e": {
     "id": "a42a815e",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Yale",
@@ -50645,9 +50644,6 @@
     ],
     "views": 617,
     "lastUpdated": "2025-03-19T15:44:57.326Z",
-    "features": [
-      "Under Review ⚑"
-    ],
     "media": [
       {
         "title": "By: Moon-UA",
@@ -52403,16 +52399,12 @@
   },
   "111062fc": {
     "id": "111062fc",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "HYT/Lays/Bison/Qlsy",
         "model": "Chain Key Lock"
       }
-    ],
-    "features": [
-      "Under Review ⚑",
-      "Image Test"
     ],
     "lastUpdated": "2025-03-18T23:29:31.286Z",
     "name": "HYT/Lays/Bison/Qlsy Chain Key Lock",
@@ -58256,7 +58248,10 @@
     ],
     "lastUpdated": "2025-03-19T15:44:57.325Z",
     "name": "WEST 941",
-    "dateAdded": "2024-08-29T18:27:38.000Z"
+    "dateAdded": "2024-08-29T18:27:38.000Z",
+    "features": [
+      "High pin count"
+    ]
   },
   "476995cc": {
     "id": "476995cc",
@@ -59485,7 +59480,7 @@
   },
   "49c381dc": {
     "id": "49c381dc",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "U-Shin",
@@ -59495,9 +59490,6 @@
     "version": "6 spools, torpedo keypins",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Under Review ⚑"
     ],
     "lastUpdated": "2025-03-06T00:34:58.468Z",
     "name": "U-Shin Showa Mortise",
@@ -59778,5 +59770,55 @@
     "lastUpdated": "2025-03-19T23:23:08.540Z",
     "name": "IKON SK6 Sperrwelleprofil",
     "dateAdded": "2025-03-18T02:44:04.000Z"
+  },
+  "95e779e0": {
+    "id": "95e779e0",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Delta",
+        "model": "`DAF Kilit DBS02` Clone"
+      }
+    ],
+    "name": "Delta `DAF Kilit DBS02` Clone",
+    "dateAdded": "2025-04-18T14:26:37.608Z"
+  },
+  "fe9889e2": {
+    "id": "fe9889e2",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "Keso",
+        "model": "8000Ω²"
+      }
+    ],
+    "version": "< 13 pins",
+    "name": "Keso 8000Ω²",
+    "dateAdded": "2025-04-18T14:26:37.610Z"
+  },
+  "deb35ee7": {
+    "id": "deb35ee7",
+    "belt": "Red",
+    "makeModels": [
+      {
+        "make": "Keso",
+        "model": "8000Ω²"
+      }
+    ],
+    "version": ">= 13 pins",
+    "name": "Keso 8000Ω²",
+    "dateAdded": "2025-04-18T14:26:37.611Z"
+  },
+  "d54a6b5f": {
+    "id": "d54a6b5f",
+    "belt": "Black 1",
+    "makeModels": [
+      {
+        "make": "Kaba",
+        "model": "Titan"
+      }
+    ],
+    "name": "Kaba Titan",
+    "dateAdded": "2025-04-18T14:26:37.612Z"
   }
 }
