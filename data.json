@@ -17328,6 +17328,108 @@
     "lastUpdated": "2025-03-19T15:44:57.289Z"
   },
   {
+    "id": "111062fc",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Bison/HYT/Lays/Qlsy",
+        "model": "Chain Key Lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Changelog"
+    ],
+    "notes": "Various brands",
+    "dateAdded": "2023-08-03T13:21:21.000Z",
+    "media": [
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52906616737_c5b7058022_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52906616737/in/album-72177720308371182/",
+        "sequenceId": 304,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52906616737_a6539a8ee2_o.jpg"
+      },
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52907576285_09ba4864ae_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907576285/in/album-72177720308371182/",
+        "sequenceId": 305,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52907576285_daf2d4b9db_o.jpg"
+      },
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52907339499_0c4f7f1fe9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907339499/in/album-72177720308371182/",
+        "sequenceId": 306,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52907339499_b237c91a59_o.jpg"
+      },
+      {
+        "title": "By: two06",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52907643143_5f8c42e880_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907643143/in/album-72177720308371182/",
+        "sequenceId": 307,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52907643143_ef2dac7683_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760232_54ea081961_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760232/in/album-72177720308371182/",
+        "sequenceId": 308,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760232_f1b70c577f_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632246_02ae77b53c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632246/in/album-72177720308371182/",
+        "sequenceId": 309,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632246_96f33fb229_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632466_5c3175c999_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632466/in/album-72177720308371182/",
+        "sequenceId": 310,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632466_487b7ae1d3_o.jpg"
+      },
+      {
+        "title": "By: NCR",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "label": "Qlsy Chain Lock",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760817_915d5a97ee_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760817/in/album-72177720308371182/",
+        "sequenceId": 311,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760817_dcb24925e8_o.jpg"
+      }
+    ],
+    "views": 210,
+    "lastUpdated": "2025-04-18T14:47:16.429Z"
+  },
+  {
     "id": "307e1f03",
     "belt": "Blue",
     "makeModels": [
@@ -20178,105 +20280,6 @@
     "lastUpdated": "2025-03-19T01:20:51.369Z"
   },
   {
-    "id": "111062fc",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "HYT/Lays/Bison/Qlsy",
-        "model": "Chain Key Lock"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "notes": "Various brands",
-    "dateAdded": "2023-08-03T13:21:21.000Z",
-    "media": [
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52906616737_c5b7058022_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52906616737/in/album-72177720308371182/",
-        "sequenceId": 304,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52906616737_a6539a8ee2_o.jpg"
-      },
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52907576285_09ba4864ae_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907576285/in/album-72177720308371182/",
-        "sequenceId": 305,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52907576285_daf2d4b9db_o.jpg"
-      },
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52907339499_0c4f7f1fe9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907339499/in/album-72177720308371182/",
-        "sequenceId": 306,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52907339499_b237c91a59_o.jpg"
-      },
-      {
-        "title": "By: two06",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52907643143_5f8c42e880_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52907643143/in/album-72177720308371182/",
-        "sequenceId": 307,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52907643143_ef2dac7683_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760232_54ea081961_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760232/in/album-72177720308371182/",
-        "sequenceId": 308,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760232_f1b70c577f_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632246_02ae77b53c_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632246/in/album-72177720308371182/",
-        "sequenceId": 309,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632246_96f33fb229_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54365632466_5c3175c999_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54365632466/in/album-72177720308371182/",
-        "sequenceId": 310,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54365632466_487b7ae1d3_o.jpg"
-      },
-      {
-        "title": "By: NCR",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "label": "Qlsy Chain Lock",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54364760817_915d5a97ee_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54364760817/in/album-72177720308371182/",
-        "sequenceId": 311,
-        "dateAdded": "2025-03-06T16:00:00.000Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54364760817_dcb24925e8_o.jpg"
-      }
-    ],
-    "views": 210,
-    "lastUpdated": "2025-04-18T14:26:37.975Z"
-  },
-  {
     "id": "d1896bf9",
     "belt": "Blue",
     "makeModels": [
@@ -22390,7 +22393,8 @@
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -23021,6 +23025,9 @@
     "version": "6 spools, torpedo keypins",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Changelog"
     ],
     "dateAdded": "2025-03-06T00:34:59.000Z",
     "lastUpdated": "2025-04-18T14:26:37.976Z"
@@ -26233,8 +26240,15 @@
         "model": "`DAF Kilit DBS02` Clone"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple",
+      "Slider"
+    ],
+    "features": [
+      "Changelog"
+    ],
     "dateAdded": "2025-04-18T14:26:37.608Z",
-    "lastUpdated": "2025-04-18T14:26:37.977Z"
+    "lastUpdated": "2025-04-18T14:47:16.430Z"
   },
   {
     "id": "a10711cc",
@@ -31233,6 +31247,9 @@
       "Sidebar",
       "Slider"
     ],
+    "features": [
+      "Changelog"
+    ],
     "notes": "dimple, 10 vertically aligned pins in 2 rows, 4 sliders",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -35533,8 +35550,15 @@
       }
     ],
     "version": "< 13 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Changelog"
+    ],
     "dateAdded": "2025-04-18T14:26:37.610Z",
-    "lastUpdated": "2025-04-18T14:26:37.979Z"
+    "lastUpdated": "2025-04-18T14:47:16.433Z"
   },
   {
     "id": "f5cc6ace",
@@ -40482,8 +40506,15 @@
       }
     ],
     "version": ">= 13 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Changelog"
+    ],
     "dateAdded": "2025-04-18T14:26:37.611Z",
-    "lastUpdated": "2025-04-18T14:26:37.980Z"
+    "lastUpdated": "2025-04-18T14:47:16.434Z"
   },
   {
     "id": "281aa393",
@@ -48314,8 +48345,15 @@
         "model": "Titan"
       }
     ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Changelog"
+    ],
     "dateAdded": "2025-04-18T14:26:37.612Z",
-    "lastUpdated": "2025-04-18T14:26:37.982Z"
+    "lastUpdated": "2025-04-18T14:47:16.436Z"
   },
   {
     "id": "f87db705",
@@ -50571,7 +50609,8 @@
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "dateAdded": "2024-08-29T18:27:38.000Z",
     "media": [

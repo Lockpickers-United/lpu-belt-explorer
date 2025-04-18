@@ -49705,7 +49705,8 @@
     "lastUpdated": "2025-03-19T01:20:51.403Z",
     "views": 183,
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ],
     "media": [
       {
@@ -50654,6 +50655,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53197461328_4bbcb6ebc7_o.jpg"
       }
+    ],
+    "features": [
+      "Changelog"
     ]
   },
   "7164f69d": {
@@ -52402,12 +52406,12 @@
     "belt": "Blue",
     "makeModels": [
       {
-        "make": "HYT/Lays/Bison/Qlsy",
+        "make": "Bison/HYT/Lays/Qlsy",
         "model": "Chain Key Lock"
       }
     ],
     "lastUpdated": "2025-03-18T23:29:31.286Z",
-    "name": "HYT/Lays/Bison/Qlsy Chain Key Lock",
+    "name": "Bison/HYT/Lays/Qlsy Chain Key Lock",
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "notes": "Various brands",
     "media": [
@@ -52495,7 +52499,10 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 210
+    "views": 210,
+    "features": [
+      "Changelog"
+    ]
   },
   "dbc6670b": {
     "id": "dbc6670b",
@@ -58250,7 +58257,8 @@
     "name": "WEST 941",
     "dateAdded": "2024-08-29T18:27:38.000Z",
     "features": [
-      "High pin count"
+      "High pin count",
+      "Changelog"
     ]
   },
   "476995cc": {
@@ -59493,7 +59501,10 @@
     ],
     "lastUpdated": "2025-03-06T00:34:58.468Z",
     "name": "U-Shin Showa Mortise",
-    "dateAdded": "2025-03-06T00:34:59.000Z"
+    "dateAdded": "2025-03-06T00:34:59.000Z",
+    "features": [
+      "Changelog"
+    ]
   },
   "5bbe7375": {
     "id": "5bbe7375",
@@ -59781,7 +59792,14 @@
       }
     ],
     "name": "Delta `DAF Kilit DBS02` Clone",
-    "dateAdded": "2025-04-18T14:26:37.608Z"
+    "dateAdded": "2025-04-18T14:26:37.608Z",
+    "lockingMechanisms": [
+      "Dimple",
+      "Slider"
+    ],
+    "features": [
+      "Changelog"
+    ]
   },
   "fe9889e2": {
     "id": "fe9889e2",
@@ -59794,7 +59812,14 @@
     ],
     "version": "< 13 pins",
     "name": "Keso 8000Ω²",
-    "dateAdded": "2025-04-18T14:26:37.610Z"
+    "dateAdded": "2025-04-18T14:26:37.610Z",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Changelog"
+    ]
   },
   "deb35ee7": {
     "id": "deb35ee7",
@@ -59807,7 +59832,14 @@
     ],
     "version": ">= 13 pins",
     "name": "Keso 8000Ω²",
-    "dateAdded": "2025-04-18T14:26:37.611Z"
+    "dateAdded": "2025-04-18T14:26:37.611Z",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Changelog"
+    ]
   },
   "d54a6b5f": {
     "id": "d54a6b5f",
@@ -59819,6 +59851,13 @@
       }
     ],
     "name": "Kaba Titan",
-    "dateAdded": "2025-04-18T14:26:37.612Z"
+    "dateAdded": "2025-04-18T14:26:37.612Z",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Changelog"
+    ]
   }
 }
