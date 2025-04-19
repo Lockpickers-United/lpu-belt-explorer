@@ -12,6 +12,8 @@ import BeltToolbar from './BeltToolbar'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import allEntries from '../data/data.json'
+import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
+import {lockSortFields} from '../data/sortFields'
 
 function LockListRoute() {
     const {isMobile} = useWindowSize()
@@ -20,7 +22,10 @@ function LockListRoute() {
 
     const extras = (
         <React.Fragment>
-            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={true}/>
+            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}/>
+            <ViewFilterButtons sortValues={lockSortFields}
+                               extraFilters={[{key: 'tab', value: 'search'}]}
+                               compactMode={true} resetAll={true}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )

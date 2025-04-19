@@ -92,8 +92,6 @@ function BeltToolbar() {
                         </CloneProps>
                     </Tabs>
                 </div>
-                <div style={{width: 15, height:0}}/>
-                <ViewFilterButtons sortValues={lockSortFields} extraFilters={[{key: 'tab', value: 'search'}]} compactMode={true}/>
             </div>
         </AppBar>
     )

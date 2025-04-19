@@ -22,12 +22,12 @@ function SafelocksRoute() {
     const extras = (
         <React.Fragment>
             <SearchBox label='Safe Locks'/>
+            <ViewFilterButtons sortValues={dialSortFields} compactMode={false}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
     const extrasTwo = (
         <React.Fragment>
-            <ViewFilterButtons sortValues={dialSortFields} compactMode={false}/>
         </React.Fragment>
     )
 

@@ -22,7 +22,7 @@ function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll
 
     const buttonPaddingTop = !smallWidth ? 0 : 3
     const buttonMarginBottom = !smallWidth ? 0 : 2
-    const buttonWidth = !smallWidth ? 60 : 80
+    const buttonWidth = !smallWidth ? 60 : 40
 
     return (
         <Box style={{
