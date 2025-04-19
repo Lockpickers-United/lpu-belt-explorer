@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import VersionChecker from '../app/VersionChecker'
@@ -7,10 +7,13 @@ import ScrollToTopButton from './ScrollToTopButton'
 import UserMenu from './UserMenu'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 function Nav({extras, extrasTwo, title}) {
 
-    const {isMobile} = useWindowSize()
+    const {isFiltered} = useContext(FilterContext)
+    const {isMobile, width} = useWindowSize()
+    const smallWidth = width <= 500
     const spacer = isMobile && extrasTwo ? 20 : 0
     const flexStyle = !isMobile ? 'flex' : 'block'
 
@@ -19,7 +22,7 @@ function Nav({extras, extrasTwo, title}) {
             <AppBar position='fixed' sx={{boxShadow: 'none'}}>
                 <Toolbar style={{marginTop: 6, minHeight: 40}}>
                     <div style={{display: flexStyle, width: '100%'}}>
-                        <div style={{display: 'flex', flexGrow: 1, marginBottom:8}}>
+                        <div style={{display: 'flex', flexGrow: 1, marginBottom: 8}}>
                             <MainMenu/>
                             <VersionChecker/>
                             <div style={{
@@ -30,7 +33,9 @@ function Nav({extras, extrasTwo, title}) {
                                 paddingRight: 16,
                                 marginTop: 6
                             }}>
-                                <nobr>{title}</nobr>
+                                {(!isFiltered || !smallWidth) &&
+                                    <nobr>{title}</nobr>
+                                }
                             </div>
                             {extras}
 

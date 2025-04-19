@@ -9,8 +9,6 @@ import FilterContext from '../context/FilterContext'
 import {uniqueBelts} from '../data/belts'
 import BeltIcon from '../entries/BeltIcon'
 import useWindowSize from '../util/useWindowSize'
-import {lockSortFields} from '../data/sortFields'
-import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import IconAll from '../resources/iconAll.jsx'
 import DataContext from './LockDataProvider.jsx'
 

@@ -9,6 +9,8 @@ import Button from '@mui/material/Button'
 import AppContext from '../app/AppContext.jsx'
 import ExpandAllButton from '../rafl/ExpandAllButton.jsx'
 import DBContext from '../app/DBContext.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
+import SortIcon from '@mui/icons-material/Sort'
 
 function SortTextButton({sortValues, compactMode}) {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -33,6 +35,9 @@ function SortTextButton({sortValues, compactMode}) {
 
     const badgeAnchor = {vertical: 'top', horizontal: 'right'}
 
+    const {width} = useWindowSize()
+    const smallWidth = width <= 500
+
     return (
         <React.Fragment>
             <Tooltip title='View Options' arrow disableFocusListener>
@@ -43,7 +48,7 @@ function SortTextButton({sortValues, compactMode}) {
                         invisible={!sort}
                         anchorOrigin={badgeAnchor}
                     >
-                        VIEW
+                        {!smallWidth ? 'VIEW' : <SortIcon/>}
                     </Badge>
                 </Button>
             </Tooltip>
@@ -66,13 +71,13 @@ function SortTextButton({sortValues, compactMode}) {
                 {compactMode &&
                     <div>
                         <Divider/>
-                        <div style={{marginLeft: 5, marginTop:5, padding: 5, fontWeight: 700}}>MODE</div>
+                        <div style={{marginLeft: 5, marginTop: 5, padding: 5, fontWeight: 700}}>MODE</div>
                         <MenuItem onClick={handleCompactClick(false)} selected={!compact}>Normal</MenuItem>
                         <MenuItem onClick={handleCompactClick(true)} selected={compact}>Compact</MenuItem>
                     </div>
                 }
 
-                { adminRole &&
+                {adminRole &&
                     <div>
                         <Divider/>
                         <ExpandAllButton text={true}/>

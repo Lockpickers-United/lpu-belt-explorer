@@ -81,6 +81,7 @@ export function FilterProvider({children, filterFields = []}) {
     }, [searchParams])
 
     const isSearch = !!filters?.search
+    const isFiltered = (!!filters?.search || !!filters?.sort || filterCount > 0)
 
     const value = useMemo(() => ({
         filters,
@@ -96,7 +97,7 @@ export function FilterProvider({children, filterFields = []}) {
             ...acc,
             [value.fieldName]: value
         }), {id: {label: 'ID'}}),
-        isSearch
+        isSearch, isFiltered
     }), [
         addFilter,
         addFilters,
@@ -107,7 +108,7 @@ export function FilterProvider({children, filterFields = []}) {
         removeFilters,
         setFilters,
         filterFields,
-        isSearch
+        isSearch, isFiltered
     ])
 
     return (

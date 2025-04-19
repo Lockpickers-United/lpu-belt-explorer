@@ -15,9 +15,11 @@ import {useHotkeys} from 'react-hotkeys-hook'
 
 function SearchBox({label, extraFilters = [], keepOpen}) {
     const [searchParams] = useSearchParams()
-    const {filters, addFilters, removeFilter} = useContext(FilterContext)
+    const {filters, addFilters, removeFilter, isFiltered} = useContext(FilterContext)
     const [text, setText] = useState(filters.search || '')
-    const {isMobile} = useWindowSize()
+    const {isMobile, width} = useWindowSize()
+    const smallWidth = width <= 500
+
     const inputEl = useRef()
     useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
@@ -102,7 +104,7 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
 
     return (
         <React.Fragment>
-            {(!open && isMobile && !keepOpen) && <Tooltip title='Search' arrow disableFocusListener>
+            {(!open && isMobile && !keepOpen && !isFiltered) && <Tooltip title='Search' arrow disableFocusListener>
                 <IconButton color='inherit' onClick={handleClick}>
                     <Badge
                         invisible={text.length === 0}
@@ -117,8 +119,8 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
                     </Badge>
                 </IconButton>
             </Tooltip>}
-            {(open || !isMobile || keepOpen) && <TextField
-                placeholder={`Search ${label}`}
+            {(open || !isMobile || keepOpen || isFiltered) && <TextField
+                placeholder={!smallWidth ? `Search ${label}` : label}
                 InputProps={{
                     inputProps: {
                         ref: inputEl

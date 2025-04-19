@@ -5,13 +5,14 @@ import React, {useCallback, useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
+import CancelIcon from '@mui/icons-material/Cancel'
 
 function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll=false}) {
 
-    const {filters, filterCount, setFilters} = useContext(FilterContext)
+    const {filters, filterCount, setFilters, isFiltered} = useContext(FilterContext)
     const {tab, sort, search} = filters
 
-    const reset = sort || filterCount > 0 || (search && resetAll)
+    const reset = sort || filterCount > 0 || (isFiltered && resetAll)
     const handleReset = useCallback(() => {
         const savedFilters = resetAll ? {tab: tab} : {tab: tab, search: search}
         setFilters(savedFilters)
@@ -45,7 +46,8 @@ function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll
             <FilterTextButton extraFilters={extraFilters}/>
             {reset &&
                 <Button color='inherit' style={{color: '#bbb'}} onClick={handleReset}>
-                    RESET</Button>
+                    { !smallWidth ? 'RESET' : <CancelIcon/> }
+                </Button>
             }
         </Box>
     )

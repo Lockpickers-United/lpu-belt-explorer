@@ -16,6 +16,8 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
 import belts from '../data/belts'
 import LockListContext from '../locks/LockListContext.jsx'
+import FilterAltIcon from '@mui/icons-material/FilterAlt'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function FilterTextButton({onFiltersChanged}) {
 
@@ -71,6 +73,9 @@ function FilterTextButton({onFiltersChanged}) {
     const {color, lineColor = '#999'} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
     const beltOpacity = scope === 'belt' ? 1 : 0.7
 
+    const {width} = useWindowSize()
+    const smallWidth = width <= 500
+
     return (
         <React.Fragment>
             <Tooltip title='Filter' arrow disableFocusListener>
@@ -81,7 +86,7 @@ function FilterTextButton({onFiltersChanged}) {
                         color='secondary'
                         anchorOrigin={{vertical: 'top', horizontal: 'right'}}
                     >
-                        FILTER
+                        {!smallWidth ? 'FILTER' : <FilterAltIcon/>}
                     </Badge>
                 </Button>
             </Tooltip>
