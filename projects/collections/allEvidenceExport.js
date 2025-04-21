@@ -44,13 +44,13 @@ export default async function getAllEvidence() {
         activityCount: unclaimedEvidence.docs.length,
         source: 'allEvidenceExport - unclaimed-evidence',
         id: '',
-        displayName: 'cronjob',
-    },{
+        displayName: 'cronjob'
+    }, {
         activity: 'READ',
         activityCount: scorecardEvidence.docs.length,
         source: 'allEvidenceExport - scorecardEvidence',
         id: '',
-        displayName: 'cronjob',
+        displayName: 'cronjob'
     }]
 
     try {
@@ -58,7 +58,6 @@ export default async function getAllEvidence() {
     } catch (err) {
         console.log('Logging Error', err)
     }
-
 
     const allEvidence = [...scorecardEvidence.docs, ...unclaimedEvidence.docs]
     const projectData = await projectDetails()
@@ -101,7 +100,6 @@ export default async function getAllEvidence() {
             date
         })
         return acc
-
     }, {})
 
     const pickStats = scorecardEvidence.docs.reduce((acc, doc) => {
@@ -140,16 +138,16 @@ export default async function getAllEvidence() {
         }
 
         if (lock && belt && lock.lockingMechanisms) {
-                const lockingMechanism = lock.lockingMechanisms.length === 1
-                    ? lock.lockingMechanisms[0]
-                    : 'Multiple'
-                setDeepAdd(acc, ['byBeltByMechanism', belt, lockingMechanism], 1)
-                setDeepAdd(acc, ['byBelt', belt], 1)
-                setDeepAdd(acc, ['byMechanism', lockingMechanism], 1)
-                setDeepAdd(acc, ['byLock', doc.data().projectId], 1)
+            const lockingMechanism = lock.lockingMechanisms.length === 1
+                ? lock.lockingMechanisms[0]
+                : 'Multiple'
+            setDeepAdd(acc, ['byBeltByMechanism', belt, lockingMechanism], 1)
+            setDeepAdd(acc, ['byBelt', belt], 1)
+            setDeepAdd(acc, ['byMechanism', lockingMechanism], 1)
+            setDeepAdd(acc, ['byLock', doc.data().projectId], 1)
         }
         return acc
-    },{})
+    }, {})
 
     pickStats.lockDetails = Object.keys(pickStats.byLock).map(id => {
         const lock = lockData[id]
@@ -179,6 +177,84 @@ export default async function getAllEvidence() {
 
     try {
         await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats, null, 2))
+    } catch (err) {
+        console.log(err)
+    }
+
+
+    const allScorecardEvidence = scorecardEvidence.docs.map(doc => {
+        const project = projectData[doc.data().projectId]
+        const lock = lockData[doc.data().projectId]
+        const entry = lock || project
+        if (!entry) {
+            return
+        }
+
+        const displayName = doc.data().userId
+            ? collectionData[doc.data().userId].displayName
+            : doc.data().tabName
+                ? doc.data().tabName
+                : 'unknown'
+        const belt = entry.belt || null
+        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
+        const evidenceName = entryName(entry, 'short')
+        const date = doc.data().evidenceCreatedAt
+            ? doc.data().evidenceCreatedAt instanceof Timestamp
+                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
+                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
+            : '---'
+
+        return {
+            ...doc.data(),
+            evidenceName,
+            displayName,
+            belt,
+            blackBelt,
+            date
+        }
+    }).filter(x => x)
+
+    const allUnclaimedEvidence = unclaimedEvidence.docs.map(doc => {
+        const project = projectData[doc.data().projectId]
+        const lock = lockData[doc.data().projectId]
+        const entry = lock || project
+        if (!entry) {
+            return
+        }
+
+        const displayName = doc.data().userId
+            ? collectionData[doc.data().userId].displayName
+            : doc.data().tabName
+                ? doc.data().tabName
+                : 'unknown'
+        const belt = entry.belt || null
+        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
+        const evidenceName = entryName(entry, 'short')
+        const date = doc.data().evidenceCreatedAt
+            ? doc.data().evidenceCreatedAt instanceof Timestamp
+                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
+                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
+            : '---'
+
+        return {
+            ...doc.data(),
+            evidenceName,
+            displayName,
+            belt,
+            blackBelt,
+            date
+        }
+    })
+
+
+    try {
+        await fs.writeFile(`${serverDir}/allScorecardEvidence.json`, JSON.stringify(allScorecardEvidence, null, 2))
+    } catch (err) {
+        console.log(err)
+    }
+
+    try {
+        await fs.writeFile(`${serverDir}/allUnclaimedEvidence.json`, JSON.stringify(allUnclaimedEvidence, null, 2))
     } catch (err) {
         console.log(err)
     }

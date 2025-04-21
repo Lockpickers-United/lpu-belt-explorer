@@ -11,6 +11,7 @@ import saveRequest from './projects/saveRequest/saveRequest.js'
 import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
 import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
+import processFirebaseActivityLog from './projects/logFirebaseActivity/processFirebaseActivityLog.js'
 
 //import importRaflData from './projects/importRaflData/importRaflData.js'
 //import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
@@ -45,7 +46,11 @@ app.get('/flickr-info', async (req, res) => {
 
 app.get('/save-request', async (req, res) => {
     myEmitter.emit('myEvent', 'message save requested')
-    await saveRequest(req, res).then()
+    try {
+        await saveRequest(req, res).then()
+    } catch (error) {
+        console.error(error)
+    }
 })
 
 
@@ -79,6 +84,17 @@ app.post('/log-activity', async (req, res) => {
     myEmitter.emit('myEvent', 'Log Firebase Activity requested' + logEnvText)
     handleFirebaseActivityPost(req, res)
 })
+
+app.get('/process-firebase-log', async (req, res) => {
+    console.log('process-firebase-log')
+    const prod = !req.query.dev
+    const logEnvText = prod ? '' : ' (from DEV)'
+    myEmitter.emit('myEvent', 'Process Firebase Activity Log' + logEnvText)
+    await processFirebaseActivityLog(req, res).then(results => {
+        return res.status(200).json(results)
+    })
+})
+
 
 /*
 app.get('/refresh-preview', async (req, res) => {

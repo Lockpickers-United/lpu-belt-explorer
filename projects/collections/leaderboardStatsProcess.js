@@ -45,11 +45,11 @@ async function saveLeaderboard() {
 
         if (profile.blackBeltAwardedAt?._seconds > 0) {
             uniqueLocks.forEach(lockId => {
-                setDeepAdd(userStats, ['beltCounts', items[lockId].fullBelt], 1)
+                setDeepAdd(userStats, ['beltCounts', items[lockId]?.fullBelt], 1)
             })
 
             profile?.projects?.forEach(projectId => {
-                setDeepAdd(userStats, ['beltCounts', projects[projectId].fullBelt], 1)
+                setDeepAdd(userStats, ['beltCounts', projects[projectId]?.fullBelt], 1)
                 setDeepAdd(userStats, ['beltCounts', 'Project'], 1)
             })
 

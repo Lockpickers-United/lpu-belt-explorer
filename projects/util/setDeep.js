@@ -1,3 +1,5 @@
+// example: setDeepPush(acc, ['newImageEntries'], object)
+
 function setDeepBase(obj, path, value, customizer) {
     if (path.length === 1) {
         obj[path[0]] = customizer ? customizer(obj[path[0]], value) : value;
@@ -28,4 +30,8 @@ export function setDeepPush(obj, path, value) {
 
 export function setDeepUnique(obj, path, value) {
     setDeepBase(obj, path, value, (a, b) => (a ? [...new Set([...a, b])] : [b]));
+}
+
+export function setDeepCreate(obj, path) {
+    setDeepBase(obj, path, undefined, (a, b) => a ?? b)
 }

@@ -211,13 +211,13 @@ export async function updateRequest(req, res) {
     const {entry,prod} = req.body
     const db = prod ? dbProd : dbDev
 
-    const ref = db.collection('ranking-requests').doc(entry.id)
     try {
+        const ref = db.collection('ranking-requests').doc(entry.id)
         await setRankingRequest(ref, entry, entry.id, entry.displayName)
         await logToFirebaseLog([{
             activity: 'WRITE',
             activityCount: 1,
-            source: 'request-create',
+            source: 'request-update',
             id: entry.id,
             displayName: entry.displayName,
             prod: prod
