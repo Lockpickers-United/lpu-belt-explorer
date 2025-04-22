@@ -12,13 +12,13 @@ export const leaderboardData = `${url}/leaderboardData.json`
 export const recentAwardsEvidence = `${url}/recentAwardsEvidence.json`
 
 export const pickStatsData = `${url}/pickStats.json`
+export const scorecardStats = `${url}/scorecardStats.json`
 
 export const brandDistribution = `${url}/statsBrandDistribution.json`
 export const popularAreas = `${url}/statsPopularAreas.json`
 export const redditGrowth = `${url}/statsRedditGrowth.json`
 export const siteFullNew = `${url}/statsSiteFullNew.json`
 
-export const requestedLocks = `${url}/requestedLocks.json`
 export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
 
 export const raflSiteStats2025 = `${url}/statsSiteRafl2025.json`

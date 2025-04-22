@@ -7,7 +7,7 @@ import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
 import CancelIcon from '@mui/icons-material/Cancel'
 
-function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll=false}) {
+function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll=false, expandAll=false, style}) {
 
     const {filters, filterCount, setFilters, isFiltered} = useContext(FilterContext)
     const {tab, sort, search} = filters
@@ -31,7 +31,8 @@ function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll
             paddingTop: buttonPaddingTop,
             marginBottom: buttonMarginBottom,
             marginLeft: 0,
-            justifyContent: 'center'
+            justifyContent: 'center',
+            ...style
         }}
              sx={{
                  '.MuiBadge-anchorOriginTopRightRectangular': {
@@ -42,7 +43,7 @@ function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll
                  }
              }}
         >
-            <SortTextButton sortValues={sortValues} compactMode={compactMode}/>
+            <SortTextButton sortValues={sortValues} compactMode={compactMode} expandAll={expandAll}/>
             <FilterTextButton extraFilters={extraFilters}/>
             {reset &&
                 <Button color='inherit' style={{color: '#bbb'}} onClick={handleReset}>

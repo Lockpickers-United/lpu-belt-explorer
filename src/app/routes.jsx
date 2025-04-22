@@ -478,6 +478,13 @@ export default [
         }
     },
     {
+        path: '/explore',
+        lazy: async () => {
+            const {default: ScorecardExploreRoute} = await import('../scorecard/explore/ScorecardExploreRoute.jsx')
+            return {element: <ScorecardExploreRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },

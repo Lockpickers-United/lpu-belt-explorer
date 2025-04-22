@@ -1,0 +1,26 @@
+{
+  "discord": {
+    "White": 340,
+    "Yellow": 681,
+    "Orange": 1182,
+    "Green": 668,
+    "Blue": 269,
+    "Purple": 150,
+    "Brown": 91,
+    "Red": 74,
+    "Black": 159,
+    "Total": 3614
+  },
+  "reddit": {
+    "White": 1232,
+    "Yellow": 2166,
+    "Orange": 2842,
+    "Green": 1121,
+    "Blue": 328,
+    "Purple": 147,
+    "Brown": 88,
+    "Red": 62,
+    "Black": 134,
+    "Total": 8120
+  }
+}

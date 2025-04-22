@@ -110,8 +110,8 @@ export const danSchema = Joi.object({
     'Lock Points': Joi.number().integer(),
     Modifier: Joi.string()
         .valid(
-            'N/A', 
-            'First Recorded Pick', 
+            'N/A',
+            'First Recorded Pick',
             'First Recorded Pick (Notable)',
             'Non-Picking Defeat',
             'First Recorded Defeat',
@@ -150,6 +150,14 @@ export const upgradeSchema = Joi.array().items(
     }).unknown()
 )
 
+export const platformBeltSchema = Joi.array().items(
+    Joi.object({
+        'Belt': Joi.string(),
+        'Reddit': Joi.number(),
+        'Discord': Joi.number(),
+    }).unknown()
+)
+
 export const raflSchema = Joi.array().items(
     Joi.object({
         'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
@@ -167,7 +175,7 @@ export const raflSchema = Joi.array().items(
         'Split Shipping': Joi.string().allow(''),
         'Shipping Type': Joi.string().allow(''),
         'Winner': Joi.string().allow(''),
-        'Date Added': Joi.number().allow(''),
+        'Date Added': Joi.number().allow('')
 
     }).unknown()
 )
@@ -190,6 +198,6 @@ export const raflCharitySchema = Joi.array().items(
         'Charity Name': Joi.string(),
         'URL': Joi.string().allow('').uri(),
         'Tags': Joi.string().allow(''),
-        'Total Donations 2024': Joi.string().allow(''),
+        'Total Donations 2024': Joi.string().allow('')
     }).unknown()
 )

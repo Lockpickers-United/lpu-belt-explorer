@@ -12,7 +12,7 @@ import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import SortIcon from '@mui/icons-material/Sort'
 
-function SortTextButton({sortValues, compactMode}) {
+function SortTextButton({sortValues, compactMode, expandAll}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -77,7 +77,7 @@ function SortTextButton({sortValues, compactMode}) {
                     </div>
                 }
 
-                {adminRole &&
+                {adminRole && expandAll &&
                     <div>
                         <Divider/>
                         <ExpandAllButton text={true}/>

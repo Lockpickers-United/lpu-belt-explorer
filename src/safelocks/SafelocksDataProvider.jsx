@@ -9,7 +9,7 @@ import {groupSort, groupSortReverse} from './groups'
 
 export function SafelocksDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
 
     const mappedEntries = useMemo(() => {
         return allEntries

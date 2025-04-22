@@ -13,6 +13,7 @@ import {
     projectSchema,
     upgradeSchema,
     introCopySchema,
+    platformBeltSchema,
     raflSchema,
     raflMediaSchema,
     raflCharitySchema
@@ -69,6 +70,8 @@ const dialsLinkData = await importValidate('Dials Links', linkSchema)
 const projectsData = await importValidate('Projects', projectSchema)
 const upgradeData = await importValidate('Upgrades', upgradeSchema)
 const introCopyData = await importValidate('Intro Copy', introCopySchema)
+const platformBeltData = await importValidate('Platform Belt Counts', platformBeltSchema)
+
 const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
 const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
@@ -441,6 +444,17 @@ const introCopyJson = introCopyData.reduce((acc, item) => {
     return acc
 }, {})
 fs.writeFileSync('./src/data/introCopy.json', JSON.stringify(introCopyJson, null, 2))
+
+// Platform Belt Count Data
+console.log('Processing Platform Belt Count data...')
+const platformBeltJson = platformBeltData.reduce((acc, item) => {
+    acc.discord = acc.discord ? acc.discord : {}
+    acc.reddit = acc.reddit ? acc.reddit : {}
+    acc.discord[item.Belt] = parseInt(item.Discord)
+    acc.reddit[item.Belt] = parseInt(item.Reddit)
+    return acc
+}, {})
+fs.writeFileSync('./src/data/platformBeltCounts.json', JSON.stringify(platformBeltJson, null, 2))
 
 // Recently updated data
 console.log('Processing recenty updated data...')

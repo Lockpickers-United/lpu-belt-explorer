@@ -61,3 +61,11 @@ export const lockRequestSortFields = [
     {label: 'Recently Updated', value: 'recentlyUpdated'},
 ]
 
+export const scorecardExploreSortFields = [
+    {label: 'Default', value: undefined},
+    {label: 'Alphabetical', value: 'alphaAscending'},
+    {label: 'Belt (Ascending)', value: 'beltAscending'},
+    {label: 'Belt (Descending)', value: 'beltDescending'},
+]
+
+

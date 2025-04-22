@@ -25,7 +25,7 @@ function LockListRoute() {
             <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}/>
             <ViewFilterButtons sortValues={lockSortFields}
                                extraFilters={[{key: 'tab', value: 'search'}]}
-                               compactMode={true} resetAll={true}/>
+                               compactMode={true} resetAll={true} expandAll={true}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
