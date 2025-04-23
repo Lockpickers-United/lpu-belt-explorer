@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../../context/DataContext'
 import FilterContext from '../../context/FilterContext'
 import dayjs from 'dayjs'
-import belts, {beltSort, beltSortReverse} from '../../data/belts'
+import belts, {danBeltSort, danBeltSortReverse} from '../../data/belts'
 import collectionOptions from '../../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import collectionStatsById from '../../data/collectionStatsById.json'
@@ -100,11 +100,11 @@ export function DataProvider({children, allEntries, scorecardEntries, profile}) 
         return sort
             ? searched.sort((a, b) => {
                 if (sort === 'beltAscending') {
-                    return beltSort(a.belt, b.belt)
+                    return danBeltSort(a.belt, b.belt)
                         || b.currentPicks - a.currentPicks
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'beltDescending') {
-                    return beltSortReverse(a.belt, b.belt)
+                    return danBeltSortReverse(a.belt, b.belt)
                         || b.currentPicks - a.currentPicks
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaAscending') {

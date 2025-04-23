@@ -2,36 +2,41 @@ import React, {useCallback} from 'react'
 import entryName from '../../entries/entryName'
 import TableCell from '@mui/material/TableCell'
 import TableRow from '@mui/material/TableRow'
-import belts from '../../data/belts'
+import BeltStripeMini from '../../entries/BeltStripeMini.jsx'
+import {useNavigate} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 export default function ScorecardPick({entry, index, collapse = false}) {
+    const navigate = useNavigate()
 
-    const bgColor = useCallback(value => {
-        const belt = value.replace(' Belt', '')
-        return belts[belt]
-            ? belts[belt].color
-            : value.includes('Dan')
-                ? '#769e49'
-                : '#b00'
-    }, [])
+    const name =  entryName(entry)
+    const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
+    const handleClick = useCallback((entry) => {
+        const link = `/locks?tab=search&search=${entry.id}&id=${entry.id}&name=${safeName}`
+        navigate(link)
+    },[navigate, safeName])
+
+
+    const nameColor = entry.belt === 'Unranked' ? '#bbb' : '#fff'
 
     return (
             <TableRow
                 key={index}
                 sx={{
                     '&:nth-of-type(odd) td, &:nth-of-type(odd) th': {backgroundColor: '#000'},
-                    'td, th': {padding: '6px 2px', border: 0}
+                    'td, th': {padding: 0, border: 0}
                 }}
                 style={{display: collapse ? 'table-row' : 'table-row'}}
             >
                 <TableCell align='left' style={{
-                    backgroundColor: bgColor(entry.belt),
-                    borderBottom: '1px solid #333', width: 4, marginLeft: 5,
-                    height: 0
-                }}/>
+                    borderBottom: '1px solid #000', width: 4, marginLeft: 5,
+                    height: 40, paddingBottom: 1,
+                }}><BeltStripeMini value={entry.belt}/></TableCell>
                 <TableCell align='left' style={{alignItems: 'center'}}>
-                        <div style={{fontWeight: 500, marginLeft: 5, fontSize:'0.9rem'}}>{entryName(entry)}</div>
+                        <div style={{fontWeight: 500, marginLeft: 10, fontSize:'0.9rem'}}>
+                            <Link onClick={() => handleClick(entry)} style={{color: nameColor}}>{entryName(entry)}</Link>
+                        </div>
                 </TableCell>
                 <TableCell align='center' style={{fontWeight: 500, fontSize:'0.9rem', paddingRight:5}}>
                         {entry.currentPicks}

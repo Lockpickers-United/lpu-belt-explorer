@@ -125,6 +125,15 @@ export const beltSortReverse = (a, b) => {
     return allBeltsReverse.indexOf(a) - allBeltsReverse.indexOf(b)
 }
 
+
+export const danBeltSort = (a, b) => {
+    return danBeltsFull.indexOf(a) - danBeltsFull.indexOf(b)
+}
+export const danBeltsFullReverse = moveToLast([...danBeltsFull].reverse(), 'Unranked')
+export const danBeltSortReverse = (a, b) => {
+    return danBeltsFullReverse.indexOf(a) - danBeltsFullReverse.indexOf(b)
+}
+
 export const projectTiers = {
     T1: {danPoints: 5},
     T2: {danPoints: 10},
@@ -140,4 +149,15 @@ export const modifierMultiplier = {
     'First Recorded Defeat': 1.5,
     'First Recorded Defeat (Notable)': 2,
     'Upgraded': 0
+}
+
+////
+
+function moveToLast(arr, value) {
+    const index = arr.indexOf(value)
+    if (index !== -1) {
+        arr.splice(index, 1)
+        arr.push(value)
+    }
+    return arr
 }
