@@ -20,8 +20,8 @@ export default function ScorecardPick({entry, index, collapse = false}) {
             <TableRow
                 key={index}
                 sx={{
-                    '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#000'},
-                    'td, th': {padding: '5px 2px', border: 0}
+                    '&:nth-of-type(odd) td, &:nth-of-type(odd) th': {backgroundColor: '#000'},
+                    'td, th': {padding: '6px 2px', border: 0}
                 }}
                 style={{display: collapse ? 'table-row' : 'table-row'}}
             >
@@ -31,9 +31,9 @@ export default function ScorecardPick({entry, index, collapse = false}) {
                     height: 0
                 }}/>
                 <TableCell align='left' style={{alignItems: 'center'}}>
-                        <div style={{fontWeight: 500, marginLeft: 5}}>{entryName(entry)}</div>
+                        <div style={{fontWeight: 500, marginLeft: 5, fontSize:'0.9rem'}}>{entryName(entry)}</div>
                 </TableCell>
-                <TableCell align='center' style={{fontWeight: 500}}>
+                <TableCell align='center' style={{fontWeight: 500, fontSize:'0.9rem', paddingRight:5}}>
                         {entry.currentPicks}
                 </TableCell>
             </TableRow>

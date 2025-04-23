@@ -4,7 +4,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
-import {Collapse, FormControl, InputLabel, Select} from '@mui/material'
+import {Collapse, FormControl, InputLabel, Select, TableHead, TableRow} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 import DataContext from '../../locks/LockDataProvider.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
@@ -15,17 +15,18 @@ import Table from '@mui/material/Table'
 import Link from '@mui/material/Link'
 import ViewFilterButtons from '../../filters/ViewFilterButtons.jsx'
 import {scorecardExploreSortFields} from '../../data/sortFields'
+import TableCell from '@mui/material/TableCell'
 
 export default function ScorecardLocks() {
     const {visibleEntries = []} = useContext(DataContext)
     const {filters, addFilter} = useContext(FilterContext)
-    const {userBelt='All Belts', sort} = filters
+    const {userBelt = 'All Belts', sort} = filters
 
     const [showMore, setShowMore] = useState(sort)
 
     useEffect(() => {
         setShowMore(!!sort)
-    },[sort])
+    }, [sort])
 
     const topN = 60
     let topPickCount = visibleEntries.find(entry => entry.displayRank === topN)?.currentPicks || 0
@@ -136,31 +137,26 @@ export default function ScorecardLocks() {
                 <div style={{border: '4px solid #1c1c1c', width: '100%', maxWidth: 600}}>
                     <TableContainer sx={{backgroundColor: '#111', width: '100%'}}>
                         <Table style={{backgroundColor: '#1c1c1c'}}>
+                            <TableHead>
+                                <TableRow style={{padding: '0px', fontWeight: 700}}>
+                                    <TableCell colSpan='2' style={{padding:1, fontWeight: 700, fontSize:'1.05rem'}}>Lock</TableCell>
+                                    <TableCell style={{padding:1, fontWeight: 700, fontSize:'1.05rem', paddingRight:5}}>Picks</TableCell>
+                                </TableRow>
+                            </TableHead>
                             <TableBody>
                                 {topPicks.map((entry, index) =>
                                     <ScorecardPick entry={entry} index={index} key={index}/>
                                 )}
-                                {showMore &&
-                                    <React.Fragment>
-                                        {
-                                            morePicks.map((entry, index) =>
-                                                <ScorecardPick entry={entry} index={index} key={index}/>
-                                            )
-                                        }
-                                    </React.Fragment>
-                                }
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <Collapse in={!!showMore} timeout="auto" unmountOnExit>
+                    <Collapse in={!!showMore} timeout='auto' unmountOnExit>
                         <TableContainer sx={{backgroundColor: '#111', width: '100%'}}>
                             <Table style={{backgroundColor: '#1c1c1c'}}>
                                 <TableBody>
-                                    {
-                                        morePicks.map((entry, index) =>
-                                            <ScorecardPick entry={entry} index={index} key={index}/>
-                                        )
-                                    }
+                                    {morePicks.map((entry, index) =>
+                                        <ScorecardPick entry={entry} index={index} key={index}/>
+                                    )}
                                 </TableBody>
                             </Table>
                         </TableContainer>

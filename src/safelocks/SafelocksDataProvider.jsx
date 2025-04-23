@@ -97,8 +97,9 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
 
     const value = useMemo(() => ({
         allEntries,
-        visibleEntries
-    }), [allEntries, visibleEntries])
+        visibleEntries,
+        expandAll
+    }), [allEntries, visibleEntries, expandAll])
 
     return (
         <DataContext.Provider value={value}>

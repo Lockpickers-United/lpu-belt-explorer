@@ -24,8 +24,9 @@ export default function UserCohorts({data}) {
                 {id: 'LPUbelts Users', label: 'LPUbelts Users', value: userCounts.totalUsers},
                 {id: 'Other LPU Pickers', label: 'Other LPU Pickers (approx)', value: otherPickers}
             ],
-            colors: ['#1ab486', '#175042'],
-            description: 'Click chart for more detail'
+            colors: ['#37bd17', '#17561b'],
+            description: 'Click chart for details',
+            startAngle: -65
         }
 
         const userData = {
@@ -39,8 +40,8 @@ export default function UserCohorts({data}) {
                 }
             ],
             colors: ['#d2bc18', '#444'],
-            description: 'LPUbelts Scorecard Usage'
-
+            description: 'LPUbelts Scorecard Usage',
+            startAngle: -35
         }
 
         const scorecardUserData = {
@@ -54,7 +55,8 @@ export default function UserCohorts({data}) {
                 }
             ],
             colors: ['#189ad2', '#444'],
-            description: 'Scorecard Belt Imports'
+            description: 'Scorecard Belt Imports',
+            startAngle: -120
         }
 
         const beltedData = {
@@ -71,7 +73,8 @@ export default function UserCohorts({data}) {
                     }
                 ),
             colors: beltColors,
-            description: 'Imported Belt Breakdown (click Black for Dan breakdown)'
+            description: 'Imported Belt Breakdown (click Black for Dan breakdown)',
+            startAngle: -10
         }
 
         const dansData = {
@@ -108,7 +111,7 @@ export default function UserCohorts({data}) {
                 .sort((a, b) => {
                     return beltSort(a, b)
                 }).map(belt => {
-                    const beltText= belt === 'Black' ? 'Black Belt' : belt
+                        const beltText = belt === 'Black' ? 'Black Belt' : belt
                         return {
                             id: beltText,
                             label: beltText,
@@ -117,7 +120,11 @@ export default function UserCohorts({data}) {
                     }
                 ),
             colors: beltColors,
-            description: 'Reddit Belt Breakdown'
+            description: <span>
+                Reddit Belt Breakdown | <Link onClick={() => setDataset('Discord')}
+                                               style={{color: '#189dea', textDecoration:'none', cursor: 'pointer'}}>Discord</Link>
+            </span>,
+            startAngle: -10
         }
 
         const discordBelts = {
@@ -127,7 +134,7 @@ export default function UserCohorts({data}) {
                 .sort((a, b) => {
                     return beltSort(a, b)
                 }).map(belt => {
-                    const beltText= belt === 'Black' ? 'Black Belt' : belt
+                        const beltText = belt === 'Black' ? 'Black Belt' : belt
                         return {
                             id: beltText,
                             label: beltText,
@@ -136,7 +143,11 @@ export default function UserCohorts({data}) {
                     }
                 ),
             colors: beltColors,
-            description: 'Discord Belt Breakdown'
+            description: <span>
+                Discord Belt Breakdown | <Link onClick={() => setDataset('Reddit')}
+                                               style={{color: '#189dea', textDecoration:'none', cursor: 'pointer'}}>Reddit</Link>
+            </span>,
+            startAngle: -10
         }
 
 
@@ -148,7 +159,7 @@ export default function UserCohorts({data}) {
             'Black': dansData,
             'Other LPU Pickers': otherPickerData,
             'Reddit': redditBelts,
-            'Discord': discordBelts,
+            'Discord': discordBelts
         }
     }, [otherPickers, userCounts])
 
@@ -206,7 +217,8 @@ export default function UserCohorts({data}) {
     return (
         <React.Fragment>
             <div
-                style={{fontSize: '0.95rem', fontWeight: 500, width: '100%', textAlign: 'center', marginBottom: 4,
+                style={{
+                    fontSize: '0.95rem', fontWeight: 500, width: '100%', textAlign: 'center', marginBottom: 4,
                     opacity: 1,
                     transitionProperty: 'opacity, left, top, height',
                     transitionDuration: '0.1s, 0.1s'
@@ -231,7 +243,7 @@ export default function UserCohorts({data}) {
                         theme={pieTheme}
                         colors={dataSets[dataset].colors}
                         margin={chartMargin}
-                        startAngle={-40}
+                        startAngle={dataSets[dataset].startAngle || -40}
                         endAngle={360}
                         innerRadius={0.5}
                         padAngle={0.7}
@@ -249,6 +261,8 @@ export default function UserCohorts({data}) {
                         arcLabelsSkipAngle={arcLabelsSkipAngle}
                         arcLabelsTextColor='#111'
                         isInteractive={true}
+                        transitionMode={'startAngle'}
+                        motionConfig={'slow'}
                         sortByValue={false}
                         onClick={(data) => {
                             handleClick(data)
@@ -257,28 +271,27 @@ export default function UserCohorts({data}) {
                             handleMouseEnter(_datum, event)
                         }}
 
-                        /*
-                                                // Saving for later
-                                                tooltip={(datum) => {
-                                                    const label = datum.datum.arc.angleDeg < arcLinkLabelsSkipAngle
-                                                        ? datum.datum.label + ': '
-                                                        : ''
-                                                    const value = Math.round(datum.datum.value / totalLocks * 100)
-                                                    return (
-                                                        <div
-                                                            style={{
-                                                                fontSize: '0.8rem',
-                                                                background: '#444',
-                                                                padding: '3px 4px',
-                                                                color: '#ddd',
-                                                                borderRadius: '5px'
-                                                            }}
-                                                        >
-                                                            <div>{label}{value}%</div>
-                                                        </div>
-                                                    )
-                                                }}
-                        */
+                        // Saving for later
+                        tooltip={(datum) => {
+                            const label = datum.datum.arc.angleDeg > arcLinkLabelsSkipAngle
+                                ? datum.datum.label + ': '
+                                : datum.datum.label + ': '
+                            const value = datum.datum.value
+                            return (
+                                <div
+                                    style={{
+                                        fontSize: '0.8rem',
+                                        background: '#555',
+                                        padding: '3px 4px',
+                                        color: '#ddd',
+                                        borderRadius: '5px',
+                                        display: smallWindow ? 'none' : 'block'
+                                    }}
+                                >
+                                    <div>{label}{value}</div>
+                                </div>
+                            )
+                        }}
                     />
                 </div>
                 <div style={{
@@ -291,7 +304,8 @@ export default function UserCohorts({data}) {
                     fontSize: '1.1rem'
                 }}>
                     {dataSets[dataset].parent &&
-                        <Link onClick={handleBack} style={{color: '#ccc', cursor: 'pointer', fontSize:backLinkSize}}>back</Link>
+                        <Link onClick={handleBack}
+                              style={{color: '#ccc', cursor: 'pointer', fontSize: backLinkSize}}>back</Link>
                     }
                 </div>
             </div>
