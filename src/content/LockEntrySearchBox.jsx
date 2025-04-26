@@ -10,6 +10,7 @@ import useWindowSize from '../util/useWindowSize'
 import entryName from '../entries/entryName'
 import {beltSort} from '../data/belts'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
+import Box from '@mui/material/Box'
 
 function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = false}) {
     const style = {maxWidth: 700}
@@ -104,18 +105,17 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
                     const matches = match(option.label, inputValue, {insideWords: true})
                     const parts = parse(option.label, matches)
                     return (
-                        <div
+                        <Box
                             key={key}
                             {...optionProps}
-                            style={{...props.style, height: 30, padding: 0, textOverflow: 'ellipsis'}}
+                            style={{...props.style, height: 34, padding: 0, overflow: 'elipsis', whiteSpace: 'nowrap',
+                            color: option.belt === 'Unranked' ? '#aaa' : '#fff', fontSize: '0.95rem'}}
                         >
                             <BeltStripeMini value={option.belt} style={{marginRight: 10}}/>
-                            {parts.map((part, index) => (
-                                <span key={index} style={{fontWeight: part.highlight ? 700 : 400}}>
-                                  {part.text}
-                                </span>
-                            ))}
-                        </div>
+
+                            {option.label}
+
+                        </Box>
                     )
                 }}
 

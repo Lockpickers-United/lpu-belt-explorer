@@ -3,23 +3,22 @@ import belts from '../data/belts'
 
 function BeltStripe({value = 'Unranked', style = {}}) {
 
-    const bgColor = belts[value]
-        ? belts[value].color
-        : value.includes('Dan')
-            ? '#769e49'
-            : ''
+    const bgColor = value.includes('Unranked')
+        ? 'inherit'
+        : belts[value]
+            ? belts[value].color
+            : value.includes('Dan')
+                ? '#769e49'
+                : ''
 
     //const {color: backgroundColor} = belts[value] || {color: '#769e49'}
-    const fullStyle = {
+    const stripeStyle = {
         width: 4,
         height: '100%',
         position: 'relative',
         left: 0,
         top: 0,
-        backgroundColor: bgColor,
-        //backgroundColor: '#b00',
-        padding:0,
-        ...style
+        padding: 0
     }
 
     const {lineColor: stripeColor} = belts[value] || {}
@@ -34,7 +33,7 @@ function BeltStripe({value = 'Unranked', style = {}}) {
                         height: 2,
                         position: 'relative',
                         left: 0,
-                        top: 8 + (index*3),
+                        top: 8 + (index * 3),
                         backgroundColor: stripeColor
                         //backgroundColor: '#b00'
                     }}/>
@@ -42,10 +41,9 @@ function BeltStripe({value = 'Unranked', style = {}}) {
         }
     }, [value, stripeColor])
 
-    if (value === 'Unranked') return null
     return (
-        <div style={{height: '100%', padding:0}}>
-            <div style={fullStyle}>{stripes}</div>
+        <div style={{height: '100%', padding: 0, backgroundColor: bgColor, ...style}}>
+            <div style={stripeStyle}>{stripes}</div>
         </div>
     )
 }
