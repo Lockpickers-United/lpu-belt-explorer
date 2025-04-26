@@ -1,7 +1,5 @@
 import fetch from 'node-fetch'
 import entryName from '../util/entryName.js'
-import {setDeep, setDeepPush, setDeepUnique} from './setDeep.js'
-import {json} from 'express'
 
 let allMedia = []
 
@@ -106,6 +104,7 @@ export async function awardDetails() {
             fullBelt: item.belt,
             fullName: item.makeModels[0].model,
             absRank: index,
+            awardType: item.awardType,
             type: 'award'
         }
         return acc
@@ -123,10 +122,6 @@ export async function glossaryDetails() {
 
 export async function itemDetails() {
 
-    const locks = await lockDetails()
-    const safelocks = await safelockDetails()
-    const projects = await projectDetails()
-
     return {
         ...await lockDetails(),
         ...await safelockDetails(),
@@ -136,20 +131,11 @@ export async function itemDetails() {
     }
 }
 
-export async function getItemDetails() {
-    let allMedia = []
-}
-
-
-await awardDetails().then(r => {
-    //console.log('response', r)
-})
 
 
 function ucfirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
-
 
 function jsonIt(string, object) {
     console.log(string)

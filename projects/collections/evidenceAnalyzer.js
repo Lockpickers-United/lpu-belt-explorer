@@ -29,7 +29,7 @@ const userInfo = Object.keys(collectionData).reduce((acc, userId) => {
 
 
 
-        
+
     }
 
 

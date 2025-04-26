@@ -26,6 +26,12 @@ const backupDir = production
     ? `/home/${prodUser}/firebase`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
 
+const exportDir = production
+    ? `/home/${prodUser}/collectionExports`
+    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/collectionExports`
+
+
+
 async function getAllData() {
 
     const lockcollections = await dbProd.collection('lockcollections').get()
@@ -49,7 +55,7 @@ async function getAllData() {
         setDeep(fullDb, ['__collections__', 'lockcollections', doc.id], doc.data())
     })
 
-    const jsonString = JSON.stringify(fullDb, null, 2)
+    let jsonString = JSON.stringify(fullDb, null, 2)
 
     await fs.writeFile(`${backupDir}/backup.json`, jsonString, function (err) {
         if (err) {
@@ -61,9 +67,26 @@ async function getAllData() {
             console.log(err)
         }
     })
-
     const today = dayjs().format('YYYY-MM-DD')
     await fs.writeFile(`${backupDir}/archive/backup_${today}.json`, jsonString, function (err) {
+        if (err) {
+            console.log(err)
+        }
+    })
+
+
+    const data = lockcollections.docs.map(doc => {
+        return {docId: doc.id, ...doc.data()}
+    })
+    const metadata = {
+        collection: 'lockcollections',
+        date: new Date().toISOString(),
+        docCount: data.length
+    }
+
+    jsonString = JSON.stringify({metadata, data}, null, 2)
+
+    await fs.writeFile(`${exportDir}/lockcollections.json`, jsonString, function (err) {
         if (err) {
             console.log(err)
         }
