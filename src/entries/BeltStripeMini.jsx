@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
-function BeltStripe({value = 'Unranked'}) {
+function BeltStripe({value = 'Unranked', style = {}}) {
 
     const bgColor = belts[value]
         ? belts[value].color
@@ -10,7 +10,7 @@ function BeltStripe({value = 'Unranked'}) {
             : ''
 
     //const {color: backgroundColor} = belts[value] || {color: '#769e49'}
-    const style = {
+    const fullStyle = {
         width: 4,
         height: '100%',
         position: 'relative',
@@ -18,7 +18,8 @@ function BeltStripe({value = 'Unranked'}) {
         top: 0,
         backgroundColor: bgColor,
         //backgroundColor: '#b00',
-        padding:0
+        padding:0,
+        ...style
     }
 
     const {lineColor: stripeColor} = belts[value] || {}
@@ -44,8 +45,7 @@ function BeltStripe({value = 'Unranked'}) {
     if (value === 'Unranked') return null
     return (
         <div style={{height: '100%', padding:0}}>
-            <div style={style}>{stripes}</div>
-
+            <div style={fullStyle}>{stripes}</div>
         </div>
     )
 }

@@ -21,7 +21,6 @@ export function DataProvider({children, allEntries, scorecardEntries, profile}) 
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
-
     const mappedEntries = useMemo(() => {
         return Object.keys(scorecardEntries)
             .map(key => {
