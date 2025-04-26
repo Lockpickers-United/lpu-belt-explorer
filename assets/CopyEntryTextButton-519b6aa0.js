@@ -1,2 +1,0 @@
-import{r as n,K as i,j as o,J as c,I as l}from"./index-1d9eaadd.js";import{d as u}from"./ContentCopy-8437c55a.js";function d({entry:a}){const r=n.useCallback(async()=>{const s=a.makeModels.map(({make:t,model:e})=>t&&t!==e?`${t} ${e}`:e).join(`
-`);await navigator.clipboard.writeText(s),i("Make/Model text copied to clipboard.")},[a.makeModels]);return o.jsx(c,{title:"Copy Make/Model Text",arrow:!0,disableFocusListener:!0,children:o.jsx(l,{onClick:r,children:o.jsx(u,{})})})}export{d as C};
