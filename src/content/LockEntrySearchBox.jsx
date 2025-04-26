@@ -3,14 +3,11 @@ import React, {useCallback, useMemo, useRef, useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import InputAdornment from '@mui/material/InputAdornment'
 import Autocomplete from '@mui/material/Autocomplete'
-import parse from 'autosuggest-highlight/parse'
-import match from 'autosuggest-highlight/match'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../util/useWindowSize'
 import entryName from '../entries/entryName'
 import {beltSort} from '../data/belts'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
-import Box from '@mui/material/Box'
 
 function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = false}) {
     const style = {maxWidth: 700}
@@ -18,7 +15,6 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
     const inputEl = useRef()
 
     const lockDetails = useMemo(() => {
-        let lockIds = {}
         let lockNames = {}
 
         const allLocks = allEntries?.sort((a, b) => {
@@ -36,11 +32,11 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
             }, [])
             .filter(x => x)
 
-        return {allLocks, lockIds, lockNames}
+        return {allLocks, lockNames}
 
     }, [allEntries])
 
-    const {allLocks, lockIds, lockNames} = lockDetails
+    const {allLocks, lockNames} = lockDetails
     const duplicateLocks = allLocks.filter((lock, index) => allLocks.findIndex(l => l.lockName === lock.lockName) !== index)
 
     const options = allLocks?.map(lock => {
@@ -50,22 +46,21 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
         return lock
     })
         .map((lock) => {
-            lockIds[lock.lockName] = lock.id
             lockNames[lock.lockName] = `${lock.make}${lock.model}`
-            return {label: lock.lockName, belt: allEntries.find(entry => entry.id === lock.id).belt}
+            return {label: lock.lockName, id: lock.id, belt: allEntries.find(entry => entry.id === lock.id).belt}
         })
 
     const handleChange = useCallback((event, value) => {
         if (!value) {
             handleChangeLock({})
-        } else if (options.includes(value.label)) {
+        } else {
             handleChangeLock({
                 lockFullName: value.label,
                 lockName: lockNames[value.label],
-                lockId: lockIds[value.label]
+                lockId: value.id
             })
         }
-    }, [lockIds, lockNames, options, handleChangeLock])
+    }, [lockNames, handleChangeLock])
 
     const [open, setOpen] = useState(false)
     const handleBlur = useCallback(() => setOpen(false), [])
@@ -99,13 +94,12 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
                         }}
                     />
                 }
+                isOptionEqualToValue={(option, value) => option.label === value.label}
                 getOptionLabel={(option) => option.label}
-                renderOption={(props, option, {inputValue}) => {
+                renderOption={(props, option) => {
                     const {key, ...optionProps} = props
-                    const matches = match(option.label, inputValue, {insideWords: true})
-                    const parts = parse(option.label, matches)
                     return (
-                        <Box
+                        <div
                             key={key}
                             {...optionProps}
                             style={{...props.style, height: 34, padding: 0, overflow: 'elipsis', whiteSpace: 'nowrap',
@@ -115,7 +109,7 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
 
                             {option.label}
 
-                        </Box>
+                        </div>
                     )
                 }}
 

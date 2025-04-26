@@ -20,8 +20,9 @@ import Autocomplete from '@mui/material/Autocomplete'
 import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId, isAward} from '../entries/entryutils'
+import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
 
-export default function EvidenceForm({activity, lockId, handleUpdate, addProject, addAward, source}) {
+export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {addPickerActivity, updatePickerActivity, removePickerActivity} = useContext(DBContext)
@@ -34,7 +35,9 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
 
     const awardMode = addAward || isAward(activity?.matchId)
     const [entryName, setEntryName] = useState(null)
+    const [lockSelectId, setLockSelectId] = useState(null)
     const entry = getEntryFromId(activity?.matchId || lockId)
+
     const project = allProjects.find(item => {
         return item.name === entryName
     })
@@ -47,12 +50,19 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
 
     const entryId = entry
         ? entry.id
-        : project
-            ? project.id
-            : award
-                ? award.id
-                : null
-    const fieldLabel = addAward ? 'Belt/Dan' : 'Project'
+        : lockSelectId
+            ? lockSelectId
+            : project
+                ? project.id
+                : award
+                    ? award.id
+                    : null
+
+    const fieldLabel = addAward
+        ? 'Belt/Dan'
+        : addProject
+            ? 'Project'
+            : 'Lock'
 
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -62,6 +72,10 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
         setAnchorEl(event.currentTarget)
     }, [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+
+    const handleChangeLock = useCallback(lockDetails => {
+        setLockSelectId(lockDetails.lockId)
+    }, [])
 
     const handleSave = useCallback(async () => {
         try {
@@ -124,7 +138,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
     }, [])
 
     const evidenceUrlValid = isValidUrl(evidenceUrl)
-    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl) || ((updated && !evidenceUrl) ) && !awardMode)
+    const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl) || ((updated && !evidenceUrl)) && !awardMode)
     const evidenceURLHelperText = evidenceUrlError ? 'Documentation link is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
     const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
@@ -143,18 +157,25 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addProject
 
             <React.Fragment>
 
+                {addLock &&
+                    <EvidenceLockSearchBox handleChangeLock={handleChangeLock}/>
+                }
+
                 {(addProject || addAward) &&
-                    <Autocomplete
-                        disablePortal
-                        value={entryName}
-                        options={entryValues}
-                        style={{maxWidth: 400, marginBottom: 10, marginTop: 5}}
-                        onInputChange={(event, newInputValue) => {
-                            setEntryName(newInputValue)
-                            setUpdated(true)
-                        }}
-                        renderInput={(params) => <TextField {...params} label={fieldLabel} color='secondary'/>}
-                    />
+                    <div style={{maxWidth: 630, marginBottom: 20, marginTop: 10}}>
+                        <div style={{fontWeight: 600, marginBottom: 5}}>Select {fieldLabel}</div>
+                        <Autocomplete
+                            disablePortal
+                            value={entryName}
+                            options={entryValues}
+                            style={{maxWidth: 400, marginBottom: 10, marginTop: 5}}
+                            onInputChange={(event, newInputValue) => {
+                                setEntryName(newInputValue)
+                                setUpdated(true)
+                            }}
+                            renderInput={(params) => <TextField {...params} label={fieldLabel} color='secondary'/>}
+                        />
+                    </div>
                 }
 
                 <div style={{display: 'flex', width: '95%', marginBottom: 10}}>

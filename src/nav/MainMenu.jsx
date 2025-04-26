@@ -24,7 +24,7 @@ function MainMenu() {
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('m', handleHotkey)
 
-    const goHome = useCallback(() => {
+    const goHome = useCallback(() => { // eslint-disable-line
         navigate('/locks')
     }, [navigate])
 
@@ -52,7 +52,7 @@ function MainMenu() {
                 onClose={closeDrawer}
             >
                 <Stack direction='column' style={{minWidth: 250}}>
-                    <MenuItem onClick={goHome} style={{
+                    <MenuItem onClick={closeDrawer} style={{
                         padding: '12px 0px 6px 10px',
                         margin: '0px',
                         backgroundColor: '#292929',

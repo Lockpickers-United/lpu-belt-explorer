@@ -1,5 +1,5 @@
 import React, {useState, useMemo, useContext, useCallback} from 'react'
-import {useNavigate, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import Button from '@mui/material/Button'
 import DBContext from '../app/DBContext.jsx'
 import AppContext from '../app/AppContext'
@@ -24,13 +24,22 @@ import PopularEntries from './mostPopular/PopularEntries.jsx'
 import CachedIcon from '@mui/icons-material/Cached'
 import IconButton from '@mui/material/IconButton'
 import ImportButton from './ImportButton.jsx'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import ToggleButton from '@mui/material/ToggleButton'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
     const {userId} = useParams()
-    const navigate = useNavigate()
 
-    const {visibleEntries = [], popularEntries = [], bbPopularEntries = [], cardActivity, cardMaxBelt} = useContext(ScorecardDataContext)
+    // 04/26/2025 - removed link to https://lpubelts.com/#/scorecard/info/FAQ
+
+    const {
+        visibleEntries = [],
+        popularEntries = [],
+        bbPopularEntries = [],
+        cardActivity,
+        cardMaxBelt
+    } = useContext(ScorecardDataContext)
 
     const {expanded} = useContext(ScorecardListContext)
     const {filters, setFilters, removeFilters} = useContext(FilterContext)
@@ -72,10 +81,17 @@ function Scorecard({owner, profile, adminAction, popular}) {
         adminAction()
     }, [createEvidenceForEntries, userId, recordedIdsToMerge, adminAction])
 
-    const handleOpenControls = useCallback((controlForm) => {
-        setControlForm(controlForm)
-        setControlsExpanded(!controlsExpanded)
-    }, [controlsExpanded])
+    const handleOpenControls = useCallback((newForm) => {
+        if (controlForm === newForm) {
+            setControlsExpanded(!controlsExpanded)
+            setControlForm(undefined)
+        } else if ((controlForm === 'lock' && newForm === 'project') || (controlForm === 'project' && newForm === 'lock')) {
+            setControlForm(newForm)
+        } else {
+            setControlForm(newForm)
+            setControlsExpanded(!controlsExpanded)
+        }
+    }, [controlForm, controlsExpanded])
 
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -94,19 +110,13 @@ function Scorecard({owner, profile, adminAction, popular}) {
         adminAction()
     }, [cardActivity, removePickerActivity, handleClose, adminAction])
 
-    const buttonsMargin = 15
-    const headerDivStyle = isMobile ? 'block' : 'flex'
-    const buttonMarginTop = isMobile ? 6 : 0
-
     const handleLocksToggle = useCallback(() => {
+        setControlsExpanded(false)
+        setControlForm(undefined)
         const newFilters = mostPopular ? {name: name} : {locks: 'mostPopular', name: name}
         setFilters(newFilters)
         setMostPopular(!mostPopular)
     }, [mostPopular, name, setFilters])
-
-    const handleClick = useCallback((link) => {
-        navigate(link)
-    }, [navigate])
 
     const handleRefresh = useCallback(async () => {
         setLoading(true)
@@ -116,9 +126,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
         window.location.reload()
     }, [adminAction, refreshPickerActivity, userId])
 
-    const myLocksButton = mostPopular ? 'text' : 'outlined'
-    const mostPopularButton = !mostPopular ? 'text' : 'outlined'
-
     const ownerName = profile?.displayName && !profile['privacyAnonymous']
         ? profile.displayName.toLowerCase().endsWith('s')
             ? `${profile.displayName}'`
@@ -126,7 +133,9 @@ function Scorecard({owner, profile, adminAction, popular}) {
         : 'Anonymous'
 
     const buttonText = owner ? 'My Locks' : `${ownerName} Locks`
-    const buttonWidth = owner ? 86 : 124
+    const buttonsMargin = 15
+    const headerDivStyle = isMobile ? 'block' : 'flex'
+    const buttonMarginTop = isMobile ? 6 : 0
 
     return (
         <div style={{
@@ -184,22 +193,18 @@ function Scorecard({owner, profile, adminAction, popular}) {
                             {(owner || admin) &&
                                 <div style={{width: '100%', textAlign: 'left'}}>
 
+                                    <Button variant='contained' size='small' color='secondary'
+                                            style={{lineHeight: '1.2rem', marginLeft: 6}}
+                                            onClick={() => handleOpenControls('lock')}>
+                                        ADD LOCK
+                                    </Button>
                                     <ImportButton profile={profile}/>
+                                    <Button variant='outlined' color='secondary' size='small'
+                                            style={{lineHeight: '1.2rem', marginLeft: 6}}
+                                            onClick={() => handleOpenControls('project')}>
+                                        ADD PROJECT
+                                    </Button>
 
-                                    {!mostPopular &&
-                                        <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
-                                                onClick={() => handleOpenControls('project')}>
-                                            ADD PROJECT
-                                        </Button>
-                                    }
-                                    {profile && profile.blackBeltAwardedAt &&
-                                        <Button variant='outlined' color='secondary' size='small'
-                                                style={{lineHeight: '1.2rem', marginLeft: 6}}
-                                                onClick={() => handleClick('/scorecard/info/FAQ')}>
-                                            BB FAQ
-                                        </Button>
-                                    }
                                 </div>
                             }
                             <div style={{
@@ -209,16 +214,23 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 marginTop: buttonMarginTop
                             }}>
                                 <div style={{flexGrow: 1}}/>
-                                <Button variant={myLocksButton} color='info' size='small'
-                                        style={{lineHeight: '1.2rem', minWidth: buttonWidth, padding: '4px 10px'}}
-                                        onClick={() => handleLocksToggle()}>
-                                    <nobr>{buttonText}</nobr>
-                                </Button>
-                                <Button variant={mostPopularButton} color='info' size='small'
-                                        style={{lineHeight: '1.2rem', marginLeft: 6, width: 122}}
-                                        onClick={() => handleLocksToggle()}>
-                                    MOST&nbsp;POPULAR
-                                </Button>
+                                <ToggleButtonGroup exclusive>
+                                    <ToggleButton variant='outlined' color='info' size='small' disabled={!mostPopular}
+                                            style={{
+                                                padding: '4px 10px', borderColor: '#236585',
+                                                color: !mostPopular ? '#38b9f6' : '#aaa',
+                                                backgroundColor: !mostPopular ? '#333' : 'transparent'}}
+                                            onClick={() => handleLocksToggle()} value={'myLocks'}>
+                                        <nobr>{buttonText}</nobr>
+                                    </ToggleButton>
+                                    <ToggleButton variant='outlined' color='info' size='small' disabled={mostPopular}
+                                            style={{padding: '4px 10px', borderColor: '#236585',
+                                                color: mostPopular ? '#38b9f6' : '#aaa',
+                                                backgroundColor: mostPopular ? '#333' : 'transparent'}}
+                                            onClick={() => handleLocksToggle()} value={'mostPopular'}>
+                                        MOST&nbsp;POPULAR
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
                             </div>
                         </div>
 
@@ -278,8 +290,12 @@ function Scorecard({owner, profile, adminAction, popular}) {
                     {controlForm === 'import' &&
                         <ImportDanSheetForm setControlsExpanded={setControlsExpanded} adminAction={adminAction}/>
                     }
+                    {controlForm === 'lock' &&
+                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addLock={true} owner={owner}/>
+                    }
                     {controlForm === 'project' &&
-                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addProject={true} owner={owner}/>
+                        <EvidenceForm activity={null} handleUpdate={handleOpenControls} addProject={true}
+                                      owner={owner}/>
                     }
                     {controlForm === 'award' &&
                         <EvidenceForm activity={null} handleUpdate={handleOpenControls} addAward={true} owner={owner}/>
