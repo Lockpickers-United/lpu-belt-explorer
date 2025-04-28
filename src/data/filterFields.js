@@ -36,7 +36,7 @@ export const scorecardExploreFilterFields = [
     {label: 'User Belt', fieldName: 'userBelt', sort: beltSort},
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
-    {label: 'Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Lock Belt', fieldName: 'belt', sort: beltSort},
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content'},
     {label: 'Collection', fieldName: 'collection', userBased: true}

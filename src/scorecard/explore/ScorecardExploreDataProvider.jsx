@@ -14,7 +14,7 @@ import collectionStatsById from '../../data/collectionStatsById.json'
 
 export function DataProvider({children, allEntries, scorecardEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, expandAll, dataset, ...filters} = allFilters
     const {userBelt} = filters
 
     const getEntryFromId = useCallback(id => {

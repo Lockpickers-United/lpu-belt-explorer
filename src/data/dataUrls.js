@@ -13,6 +13,7 @@ export const recentAwardsEvidence = `${url}/recentAwardsEvidence.json`
 
 export const pickStatsData = `${url}/pickStats.json`
 export const scorecardStats = `${url}/scorecardStats.json`
+export const discordRoleCounts = `${url}/discordRoleCounts.json`
 
 export const brandDistribution = `${url}/statsBrandDistribution.json`
 export const popularAreas = `${url}/statsPopularAreas.json`

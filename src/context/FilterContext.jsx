@@ -129,7 +129,8 @@ const nonFilters = [
     'debug',
     'preview',
     'single',
-    'expandAll'
+    'expandAll',
+    'dataset'
 ]
 
 export default FilterContext

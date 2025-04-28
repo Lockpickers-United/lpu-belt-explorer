@@ -1,10 +1,11 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import {ResponsivePie} from '@nivo/pie'
 import {pieTheme, beltColors} from '../../stats/chartDefaults'
 import useWindowSize from '../../util/useWindowSize'
 import Link from '@mui/material/Link'
 import platformBeltCounts from '../../data/platformBeltCounts.json'
 import {beltSort} from '../../data/belts'
+import FilterContext from '../../context/FilterContext.jsx'
 
 export default function UserCohorts({data}) {
 
@@ -14,8 +15,10 @@ export default function UserCohorts({data}) {
      * @prop dans
      */
 
-    const {scorecardStats} = data
+    const {scorecardStats, discordRoleCounts} = data
     const {userCounts} = scorecardStats
+
+    const {filters, addFilter, removeFilters} = useContext(FilterContext)
     const otherPickers = platformBeltCounts.reddit.Total - userCounts.totalUsers
 
     const dataSets = useMemo(() => {
@@ -104,6 +107,58 @@ export default function UserCohorts({data}) {
             description: 'Platforms users overlap, numbers shown for relative size'
         }
 
+        const discordRoleCountsData = Object.keys(discordRoleCounts).reduce((acc, role) => {
+            const belt = role.replace(' Belt', '').trim()
+            acc[belt] = discordRoleCounts[role]
+            return acc
+        },{})
+
+        const discordBelts = {
+            parent: 'Other LPU Pickers',
+            data: Object.keys(discordRoleCountsData)
+                .filter(belt => !belt.includes('Dan'))
+                .sort((a, b) => {
+                    return beltSort(a, b)
+                }).map(belt => {
+                        const beltText = belt === 'Black' ? 'Black Belt' : belt
+                        return {
+                            id: beltText,
+                            label: beltText,
+                            value: discordRoleCountsData[belt]
+                        }
+                    }
+                ),
+            colors: beltColors,
+            description: <span>
+                Discord Belt Breakdown | <Link onClick={() => setDataset('Reddit')}
+                                               style={{
+                                                   color: '#189dea',
+                                                   textDecoration: 'none',
+                                                   cursor: 'pointer'
+                                               }}>Reddit</Link>
+            </span>,
+            startAngle: -10
+        }
+
+        const discordDansData = {
+            parent: 'Discord',
+            data: Object.keys(discordRoleCounts)
+                .filter(belt => belt.includes('Dan'))
+                .sort((a, b) => {
+                    return parseInt(a) - parseInt(b)
+                }).map(dan => {
+                        return {
+                            id: dan,
+                            label: dan,
+                            value: discordRoleCounts[dan]
+                        }
+                    }
+                ),
+            colors: danColors,
+            description: 'Discord Dan Breakdown'
+        }
+
+
         const redditBelts = {
             parent: 'Other LPU Pickers',
             data: Object.keys(platformBeltCounts.reddit)
@@ -122,34 +177,14 @@ export default function UserCohorts({data}) {
             colors: beltColors,
             description: <span>
                 Reddit Belt Breakdown | <Link onClick={() => setDataset('Discord')}
-                                               style={{color: '#189dea', textDecoration:'none', cursor: 'pointer'}}>Discord</Link>
+                                              style={{
+                                                  color: '#189dea',
+                                                  textDecoration: 'none',
+                                                  cursor: 'pointer'
+                                              }}>Discord</Link>
             </span>,
             startAngle: -10
         }
-
-        const discordBelts = {
-            parent: 'Other LPU Pickers',
-            data: Object.keys(platformBeltCounts.discord)
-                .filter(belt => belt !== 'Total')
-                .sort((a, b) => {
-                    return beltSort(a, b)
-                }).map(belt => {
-                        const beltText = belt === 'Black' ? 'Black Belt' : belt
-                        return {
-                            id: beltText,
-                            label: beltText,
-                            value: platformBeltCounts.discord[belt]
-                        }
-                    }
-                ),
-            colors: beltColors,
-            description: <span>
-                Discord Belt Breakdown | <Link onClick={() => setDataset('Reddit')}
-                                               style={{color: '#189dea', textDecoration:'none', cursor: 'pointer'}}>Reddit</Link>
-            </span>,
-            startAngle: -10
-        }
-
 
         return {
             pickerData,
@@ -158,12 +193,19 @@ export default function UserCohorts({data}) {
             'Imported Belts': beltedData,
             'Black': dansData,
             'Other LPU Pickers': otherPickerData,
-            'Reddit': redditBelts,
-            'Discord': discordBelts
+            'Discord': discordBelts,
+            'Black Belt': discordDansData,
+            'Reddit': redditBelts
         }
-    }, [otherPickers, userCounts])
+    }, [discordRoleCounts, otherPickers, userCounts])
 
-    const [dataset, setDataset] = useState('pickerData')
+    const defaultDataset = filters?.dataset
+        ? dataSets[filters?.dataset]
+            ? filters?.dataset
+            : 'pickerData'
+        : 'pickerData'
+
+    const [dataset, setDataset] = useState(defaultDataset)
     const chartData = dataSets[dataset].data
 
     const totalCount = dataSets[dataset].data.reduce((acc, current) => {
@@ -175,14 +217,20 @@ export default function UserCohorts({data}) {
             document.getElementById('chartDescription').style.opacity = '0.2'
             setTimeout(() => {
                 document.getElementById('chartDescription').style.opacity = '1'
+                addFilter('dataset', data['id'], true)
                 setDataset(data['id'])
             }, 200)
         }
-    }, [dataSets])
+    }, [addFilter, dataSets])
 
     const handleBack = useCallback(() => {
+        if (!dataSets[dataSets[dataset].parent].parent) {
+            removeFilters(['dataset'])
+        } else {
+            addFilter('dataset', dataSets[dataset].parent, true)
+        }
         setDataset(dataSets[dataset].parent)
-    }, [dataSets, dataset])
+    }, [addFilter, dataSets, dataset, removeFilters])
 
     const handleMouseEnter = useCallback((datum, event) => {
         if (dataSets[datum['id']]) {
@@ -271,7 +319,6 @@ export default function UserCohorts({data}) {
                             handleMouseEnter(_datum, event)
                         }}
 
-                        // Saving for later
                         tooltip={(datum) => {
                             const label = datum.datum.arc.angleDeg > arcLinkLabelsSkipAngle
                                 ? datum.datum.label + ': '

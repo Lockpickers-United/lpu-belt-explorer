@@ -13,7 +13,8 @@ import {
     redditGrowth,
     siteFullNew,
     pickStatsData,
-    scorecardStats
+    scorecardStats,
+    discordRoleCounts
 } from '../../data/dataUrls'
 import ErrorMessage from '../../misc/ErrorMessage.jsx'
 import ScorecardExplore from './ScorecardExplore.jsx'
@@ -63,5 +64,6 @@ const urls = {
     redditGrowth,
     siteFullNew,
     pickStatsData,
-    scorecardStats
+    scorecardStats,
+    discordRoleCounts
 }
