@@ -137,7 +137,7 @@ export default function UserCohorts({data}) {
                                                    cursor: 'pointer'
                                                }}>Reddit</Link>
             </span>,
-            startAngle: -10
+            startAngle: -15
         }
 
         const discordDansData = {
@@ -166,7 +166,7 @@ export default function UserCohorts({data}) {
                 .sort((a, b) => {
                     return beltSort(a, b)
                 }).map(belt => {
-                        const beltText = belt === 'Black' ? 'Black Belt' : belt
+                        const beltText = belt === 'Black' ? 'Black Belts' : belt
                         return {
                             id: beltText,
                             label: beltText,
@@ -183,7 +183,7 @@ export default function UserCohorts({data}) {
                                                   cursor: 'pointer'
                                               }}>Discord</Link>
             </span>,
-            startAngle: -10
+            startAngle: -25
         }
 
         return {
