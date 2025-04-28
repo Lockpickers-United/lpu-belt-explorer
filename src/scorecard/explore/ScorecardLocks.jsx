@@ -21,9 +21,7 @@ export default function ScorecardLocks() {
     const {visibleEntries = []} = useContext(DataContext)
     const {filters, addFilter} = useContext(FilterContext)
     const {userBelt = 'All Belts', sort} = filters
-
-    console.log('visibleEntries', visibleEntries)
-
+    
     const [showMore, setShowMore] = useState(sort)
 
     useEffect(() => {
