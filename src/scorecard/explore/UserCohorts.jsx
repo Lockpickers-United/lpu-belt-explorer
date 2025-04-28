@@ -17,8 +17,22 @@ export default function UserCohorts({data}) {
 
     const {scorecardStats, discordRoleCounts} = data
     const {userCounts} = scorecardStats
-
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
+
+    const [touchTap, setTouchTap] = useState(false)
+
+
+
+    const defaultDataset = filters?.dataset
+        ? filters?.dataset
+        : 'pickerData'
+
+    const [dataset, setDataset] = useState(defaultDataset)
+    const handleChangeDataset = useCallback((dataset) => {
+        addFilter('dataset', dataset, true)
+        setDataset(dataset)
+    }, [addFilter])
+
     const otherPickers = platformBeltCounts.reddit.Total - userCounts.totalUsers
 
     const dataSets = useMemo(() => {
@@ -130,7 +144,7 @@ export default function UserCohorts({data}) {
                 ),
             colors: beltColors,
             description: <span>
-                Discord Belt Breakdown | <Link onClick={() => setDataset('Reddit')}
+                Discord Belt Breakdown | <Link onClick={() => handleChangeDataset('Reddit')}
                                                style={{
                                                    color: '#189dea',
                                                    textDecoration: 'none',
@@ -176,7 +190,7 @@ export default function UserCohorts({data}) {
                 ),
             colors: beltColors,
             description: <span>
-                Reddit Belt Breakdown | <Link onClick={() => setDataset('Discord')}
+                Reddit Belt Breakdown | <Link onClick={() => handleChangeDataset('Discord')}
                                               style={{
                                                   color: '#189dea',
                                                   textDecoration: 'none',
@@ -197,31 +211,26 @@ export default function UserCohorts({data}) {
             'Black Belt': discordDansData,
             'Reddit': redditBelts
         }
-    }, [discordRoleCounts, otherPickers, userCounts])
+    }, [discordRoleCounts, handleChangeDataset, otherPickers, userCounts])
 
-    const defaultDataset = filters?.dataset
-        ? dataSets[filters?.dataset]
-            ? filters?.dataset
-            : 'pickerData'
-        : 'pickerData'
-
-    const [dataset, setDataset] = useState(defaultDataset)
     const chartData = dataSets[dataset].data
-
     const totalCount = dataSets[dataset].data.reduce((acc, current) => {
         return acc + current.value
     }, 0)
 
-    const handleClick = useCallback(data => {
+    const handleClick = useCallback((data, event) => {
+        const native = event?.nativeEvent
+        const isTouch = typeof TouchEvent !== 'undefined' && native instanceof TouchEvent
+        if (isTouch) { setTouchTap(true) }
+
         if (dataSets[data['id']]) {
             document.getElementById('chartDescription').style.opacity = '0.2'
             setTimeout(() => {
                 document.getElementById('chartDescription').style.opacity = '1'
-                addFilter('dataset', data['id'], true)
-                setDataset(data['id'])
+                handleChangeDataset(data['id'])
             }, 200)
         }
-    }, [addFilter, dataSets])
+    }, [handleChangeDataset, dataSets])
 
     const handleBack = useCallback(() => {
         if (!dataSets[dataSets[dataset].parent].parent) {
@@ -249,7 +258,7 @@ export default function UserCohorts({data}) {
     if (mobileSmall) {
         chartHeight = 175
     } else if (mobileMedium) {
-        chartHeight = 180
+        chartHeight = 190
     } else if (mobileLarge) {
         chartHeight = 230
     } else if (smallWindow) {
@@ -332,7 +341,7 @@ export default function UserCohorts({data}) {
                                         padding: '3px 4px',
                                         color: '#ddd',
                                         borderRadius: '5px',
-                                        display: smallWindow ? 'none' : 'block'
+                                        display: (smallWindow || touchTap) ? 'none' : 'block'
                                     }}
                                 >
                                     <div>{label}{value}</div>
