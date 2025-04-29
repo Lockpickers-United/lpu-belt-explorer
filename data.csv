@@ -838,6 +838,7 @@ Unranked,"Kawaha,Magmaus","(any),(any)",,,"Under Review ⚑",,ab9df828
 Unranked,Kibb,"5 lever",,Lever,"Under Review ⚑",,991c6c07
 Unranked,"La Gard",2270,,,"Under Review ⚑",,c65959a3
 Unranked,Laperche,Diam,,Dimple,,,64662298
+Unranked,legallais,"Ancre 40 (632 002)",,Pin-tumbler,,,2eeb9bee
 Unranked,Lince,"C plus alarm",,,"Under Review ⚑",,8e11009a
 Unranked,Marks,"high security SFIC",,Pin-tumbler,"Under Review ⚑",,f74e0e97
 Unranked,"Master Lock",160,,Pin-tumbler,"Under Review ⚑",,7b69a331
@@ -852,7 +853,8 @@ Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Dou
 Unranked,Nagasawa,KCY-7x,"12 pin",Dimple,"Under Review ⚑,High pin count",,1ee9600e
 Unranked,,Ohshima,"3 row dimple",Dimple,"Under Review ⚑,High pin count",,ea4834c8
 Unranked,Omellow,R3,,Dimple,"Interlocking pins",,1d80c9bb
-Unranked,"Picard CR Serrature","3 points pump lock",,Pump/push,"Under Review ⚑",,2ac99741
+Unranked,Picard,"CR Serrature","3 points pump lock",Pump/push,"Under Review ⚑",,2ac99741
+Unranked,Picard,VAK10,,Pump/push,,,ed0a9b08
 Unranked,Pollux,gm05,,Pump/push,"Under Review ⚑",,3ca24202
 Unranked,"Rav Bariach",Dynamic,"with sliders",,"Under Review ⚑",,9637ddde
 Unranked,Ri-Key,"High Security (MTL clone)",,,"Under Review ⚑",,6cb514ea
@@ -878,6 +880,7 @@ Unranked,Takigen,T-999,"9 pins-standards in two opposing rows",,"Under Review �
 Unranked,"Takigen,Clover","Wavelock disc detainer,Wavelock disc detainer","9 discs","Disc detainer","Under Review ⚑",,174e20c0
 Unranked,Tann,"9 lever","9 levers",Lever,"Pin key,Single bitted,Swappable bitting,False gates",,624d7e96
 Unranked,Tann,Vardeskydd,"8? levers",Lever,"Pipe key,Double bitted,False gates,Sliding levers",,a2074b7f
+Unranked,Thirard,Axira,,Pump/push,,,db3b4b1c
 Unranked,Trelock,"SUPER Padlock",,,"Under Review ⚑",,9a99a0a7
 Unranked,,U-Change,,Pin-tumbler,,,9d35efa9
 Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(simliar to the blue belt StrongBOLT 2100)",8dc5dbb4

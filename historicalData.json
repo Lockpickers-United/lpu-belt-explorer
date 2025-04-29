@@ -56904,12 +56904,12 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Picard CR Serrature",
-        "model": "3 points pump lock"
+        "make": "Picard",
+        "model": "CR Serrature"
       }
     ],
     "lastUpdated": "2025-03-19T01:20:51.403Z",
-    "name": "Picard CR Serrature 3 points pump lock",
+    "name": "Picard CR Serrature",
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "features": [
       "Under Review ⚑"
@@ -56937,7 +56937,8 @@
     ],
     "lockingMechanisms": [
       "Pump/push"
-    ]
+    ],
+    "version": "3 points pump lock"
   },
   "6cb514ea": {
     "id": "6cb514ea",
@@ -59870,5 +59871,50 @@
       "High pin count",
       "Changelog"
     ]
+  },
+  "2eeb9bee": {
+    "id": "2eeb9bee",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "legallais",
+        "model": "Ancre 40 (632 002)"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "legallais Ancre 40 (632 002)",
+    "dateAdded": "2025-04-29T16:39:13.650Z"
+  },
+  "ed0a9b08": {
+    "id": "ed0a9b08",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Picard",
+        "model": "VAK10"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
+    "name": "Picard VAK10",
+    "dateAdded": "2025-04-29T16:39:13.651Z"
+  },
+  "db3b4b1c": {
+    "id": "db3b4b1c",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Thirard",
+        "model": "Axira"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
+    "name": "Thirard Axira",
+    "dateAdded": "2025-04-29T16:39:13.651Z"
   }
 }
