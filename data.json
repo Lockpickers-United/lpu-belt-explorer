@@ -27397,7 +27397,7 @@
       "Wafer"
     ],
     "features": [
-      "Partial gut"
+      "Some formats guttable"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -27480,6 +27480,7 @@
         "url": "http://lockwiki.com/index.php/Illinois_Duo"
       }
     ],
+    "description": "Padlock and cam lock are not guttable, the cabinet lock is if you drill out a pin, and the rim cylinder is fully guttable.",
     "views": 1334,
     "lastUpdated": "2025-03-18T23:29:31.276Z"
   },
