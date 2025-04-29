@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {enqueueSnackbar} from 'notistack'
 
-export const postData = async ({user, url, formData, json, snackBars, timeoutDuration = 10000}) => {
+export const postData = async ({user, url, formData, json, snackBars, timeoutDuration = 15000}) => {
 
     const controller = new AbortController()
     const timeout = setTimeout(() => {
@@ -36,11 +36,30 @@ export const postData = async ({user, url, formData, json, snackBars, timeoutDur
 
     } catch (error) {
         clearTimeout(timeout)
-        console.error('Error during authentication or server request:', cleanError(error))
+
+        const isTimeout =
+            error.name === 'CanceledError' ||
+            error.code === 'ERR_CANCELED' ||
+            error.message?.includes('aborted')
+
         if (snackBars) {
-            enqueueSnackbar('Error during authentication or server request', {variant: 'error', autoHideDuration: 3000})
+            enqueueSnackbar(
+                isTimeout
+                    ? 'Request timed out. Please try again.'
+                    : 'Error during authentication or server request',
+                {
+                    variant: 'error',
+                    autoHideDuration: isTimeout ? 5000 : 3000
+                }
+            )
         }
-        throw error
+
+        if (isTimeout) {
+            throw new Error('Request timed out')
+        }
+
+        console.error('Error during authentication or server request:', cleanError(error))
+        throw new Error('Error during authentication or server request')
     }
 }
 

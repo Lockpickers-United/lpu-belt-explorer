@@ -1,11 +1,11 @@
 import { enqueueSnackbar } from 'notistack'
 import { serverUrl } from './rankingRequestData'
 
-export default async function postVoteUpdate({ newVote, user }) {
+export default async function postVoteUpdate_deprecated({ newVote, user }) {
     const controller = new AbortController()
     const timeout = setTimeout(() => {
         controller.abort()
-    }, 10000)
+    }, 15000)
     const rand = Math.floor(Math.random() * 1000000)
 
     try {

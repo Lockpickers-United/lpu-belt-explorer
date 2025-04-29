@@ -35,7 +35,7 @@ function RequestLock() {
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)
-    const [uploadError, setUploadError] = useState(false)
+    const [uploadError, setUploadError] = useState(undefined)
     const [acReset, setAcReset] = useState(false)
     const [form, setForm] = useState({id: genHexString(8)})
     const [inputValue, setInputValue] = useState('')
@@ -133,7 +133,7 @@ function RequestLock() {
             enqueueSnackbar('Upload successful', {variant: 'success'})
             setResponse(results)
         } catch (error) {
-            setUploadError(error)
+            setUploadError(`${error}`.replace('Error: ', ''))
             enqueueSnackbar(`Error creating request: ${error}`, {variant: 'error', autoHideDuration: 3000})
             throw error
         } finally {
@@ -415,7 +415,10 @@ function RequestLock() {
                                 Please try again later.<br/>
                             </div>
                             <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                                Error message: {uploadError?.response?.data?.message} ({uploadError?.response?.data?.status})
+                                Error message: { uploadError?.response?.data?.message
+                                ? <span>{uploadError?.response?.data?.message} ({uploadError?.response?.data?.status})</span>
+                                : <span>{'' + uploadError}</span>
+                            }
                             </div>
 
                             <div style={{width: '100%', textAlign: 'center'}}>
