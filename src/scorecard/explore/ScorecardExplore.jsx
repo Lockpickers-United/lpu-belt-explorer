@@ -19,7 +19,7 @@ export default function ScorecardExplore({data}) {
             minWidth: '320px', maxWidth: 720, height: '100%',
             padding: pagePadding, backgroundColor: '#000',
             marginLeft: 'auto', marginRight: 'auto',
-            fontSize: '1.5rem', fontWeight:600
+            fontSize: '1.5rem', fontWeight: 600
         }}>
 
             <div style={firstHeaderStyle}>User Drilldown</div>
@@ -27,6 +27,7 @@ export default function ScorecardExplore({data}) {
 
             <div style={headerStyle}>Scorecard Locks</div>
             <ScorecardLocks data={data}/>
+
         </div>
     )
 }

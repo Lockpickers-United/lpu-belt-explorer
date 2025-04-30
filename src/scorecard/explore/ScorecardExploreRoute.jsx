@@ -6,6 +6,13 @@ import LoadingDisplay from '../../util/LoadingDisplay'
 import useData from '../../util/useData'
 import usePageTitle from '../../util/usePageTitle'
 import lockStats from '../../data/lockStats.json'
+import ErrorMessage from '../../misc/ErrorMessage.jsx'
+import ScorecardExplore from './ScorecardExplore.jsx'
+import {scorecardExploreFilterFields} from '../../data/filterFields'
+import allEntries from '../../data/data.json'
+import {DataProvider} from './ScorecardExploreDataProvider.jsx'
+import {FilterProvider} from '../../context/FilterContext.jsx'
+import DBContext from '../../app/DBContext.jsx'
 import {
     brandDistribution,
     collectionsStatsCurrent,
@@ -14,15 +21,9 @@ import {
     siteFullNew,
     pickStatsData,
     scorecardStats,
-    discordRoleCounts
+    discordBeltCounts,
+    redditBeltCounts,
 } from '../../data/dataUrls'
-import ErrorMessage from '../../misc/ErrorMessage.jsx'
-import ScorecardExplore from './ScorecardExplore.jsx'
-import {scorecardExploreFilterFields} from '../../data/filterFields'
-import allEntries from '../../data/data.json'
-import {DataProvider} from './ScorecardExploreDataProvider.jsx'
-import {FilterProvider} from '../../context/FilterContext.jsx'
-import DBContext from '../../app/DBContext.jsx'
 
 /**
  * @prop lockCountsByUserBelt
@@ -65,5 +66,6 @@ const urls = {
     siteFullNew,
     pickStatsData,
     scorecardStats,
-    discordRoleCounts
+    discordBeltCounts,
+    redditBeltCounts
 }

@@ -38,7 +38,8 @@ export const primaryTheme = {
             },
             text: {
                 fill: '#ccc',
-                fontSize: '0.83rem'
+                fontSize: '0.83rem',
+                fontWeight: 600
             }
         },
         grid: {

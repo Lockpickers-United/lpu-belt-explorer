@@ -12,6 +12,8 @@ import TrafficStats from './TrafficStats'
 import BrandDistribution from './BrandDistribution'
 import DBContext from '../app/DBContext.jsx'
 import LockingMechanismsByBelt from './LockingMechanismsByBelt.jsx'
+import PlatformBeltCountsChart from './PlatformBeltCountsChart.jsx'
+import PlatformBeltCountsTable from './PlatformBeltCountsTable.jsx'
 
 function StatsMainPage({data}) {
 
@@ -61,7 +63,11 @@ function StatsMainPage({data}) {
             <div style={headerStyle}>Collections Top Locks</div>
             <CollectionTopLocks data={data}/>
 
-            <div style={headerStyle}>Reddit User Belt Rankings</div>
+            <div style={headerStyle}>Discord & Reddit Belt Counts</div>
+            <PlatformBeltCountsChart data={data}/>
+            <PlatformBeltCountsTable data={data}/>
+
+            <div style={headerStyle}>Reddit Belts Over Time</div>
             <RedditBeltGrowth data={data}/>
 
             <div style={headerStyle}>Hourly Traffic</div>

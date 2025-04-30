@@ -112,6 +112,12 @@ export default [
         beta: true
     },
     {
+        title: 'Explore Scorecard Sats',
+        icon: <InsertChartOutlinedIcon fontSize='small'/>,
+        path: '/explore',
+        beta: true
+    },
+    {
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
         path: '/admin',

@@ -15,7 +15,7 @@ export default function UserCohorts({data}) {
      * @prop dans
      */
 
-    const {scorecardStats, discordRoleCounts} = data
+    const {scorecardStats, discordBeltCounts, redditBeltCounts} = data
     const {userCounts} = scorecardStats
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
@@ -121,15 +121,15 @@ export default function UserCohorts({data}) {
             description: 'Platforms users overlap, numbers shown for relative size'
         }
 
-        const discordRoleCountsData = Object.keys(discordRoleCounts).reduce((acc, role) => {
+        const discordBeltCountsData = Object.keys(discordBeltCounts).reduce((acc, role) => {
             const belt = role.replace(' Belt', '').trim()
-            acc[belt] = discordRoleCounts[role]
+            acc[belt] = discordBeltCounts[role]
             return acc
         },{})
 
         const discordBelts = {
             parent: 'Other LPU Pickers',
-            data: Object.keys(discordRoleCountsData)
+            data: Object.keys(discordBeltCountsData)
                 .filter(belt => !belt.includes('Dan'))
                 .sort((a, b) => {
                     return beltSort(a, b)
@@ -138,7 +138,7 @@ export default function UserCohorts({data}) {
                         return {
                             id: beltText,
                             label: beltText,
-                            value: discordRoleCountsData[belt]
+                            value: discordBeltCountsData[belt]
                         }
                     }
                 ),
@@ -156,7 +156,7 @@ export default function UserCohorts({data}) {
 
         const discordDansData = {
             parent: 'Discord',
-            data: Object.keys(discordRoleCounts)
+            data: Object.keys(discordBeltCounts)
                 .filter(belt => belt.includes('Dan'))
                 .sort((a, b) => {
                     return parseInt(a) - parseInt(b)
@@ -164,7 +164,7 @@ export default function UserCohorts({data}) {
                         return {
                             id: dan,
                             label: dan,
-                            value: discordRoleCounts[dan]
+                            value: discordBeltCounts[dan]
                         }
                     }
                 ),
@@ -173,18 +173,23 @@ export default function UserCohorts({data}) {
         }
 
 
+        const redditBeltCountsData = Object.keys(redditBeltCounts).reduce((acc, role) => {
+            const belt = role.replace(' Belt', '').trim()
+            acc[belt] = redditBeltCounts[role]
+            return acc
+        },{})
+
         const redditBelts = {
             parent: 'Other LPU Pickers',
-            data: Object.keys(platformBeltCounts.reddit)
-                .filter(belt => belt !== 'Total')
+            data: Object.keys(redditBeltCountsData)
+                .filter(belt => !belt.includes('Dan'))
                 .sort((a, b) => {
                     return beltSort(a, b)
                 }).map(belt => {
-                        const beltText = belt === 'Black' ? 'Black Belts' : belt
                         return {
-                            id: beltText,
-                            label: beltText,
-                            value: platformBeltCounts.reddit[belt]
+                            id: belt,
+                            label: belt,
+                            value: redditBeltCountsData[belt]
                         }
                     }
                 ),
@@ -211,7 +216,7 @@ export default function UserCohorts({data}) {
             'Black Belt': discordDansData,
             'Reddit': redditBelts
         }
-    }, [discordRoleCounts, handleChangeDataset, otherPickers, userCounts])
+    }, [discordBeltCounts, handleChangeDataset, otherPickers, redditBeltCounts, userCounts])
 
     const chartData = dataSets[dataset].data
     const totalCount = dataSets[dataset].data.reduce((acc, current) => {
