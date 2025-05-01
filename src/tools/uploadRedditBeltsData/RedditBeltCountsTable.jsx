@@ -31,7 +31,7 @@ export default function RedditBeltCountsTable({data}) {
     const tableData = {
         columns: [
             {'name': 'Belt', 'align': 'left', 'id': 'belt'},
-            {'name': 'Reddit', 'align': 'center', 'id': 'reddit'}
+            {'name': 'Reddit Count', 'align': 'center', 'id': 'reddit'}
         ],
         data: barData
     }

@@ -8,9 +8,9 @@ const PlatformBeltBar = ({beltDistribution}) => {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const midWidth = width < 700
-    const chartHeight = !midWidth ? 300 : !smallWidth ? 300 : 250
+    const chartHeight = !midWidth ? 250 : !smallWidth ? 250 : 250
     const chartMargin = !smallWidth
-        ? {top: 10, right: 20, bottom: 50, left: 45}
+        ? {top: 10, right: 75, bottom: 50, left: 85}
         : {top: 10, right: 5, bottom: 80, left: 48}
     const borderRadius = !smallWidth ? 1 : 1
     const tickRotation = !smallWidth ? 0 : -45
@@ -26,8 +26,8 @@ const PlatformBeltBar = ({beltDistribution}) => {
                 groupMode='grouped'
                 margin={chartMargin}
                 background={'#fff'}
-                padding={0.1}
-                innerPadding={0.5}
+                padding={0.12}
+                innerPadding={2}
                 borderRadius={borderRadius}
                 valueScale={{type: 'linear'}}
                 indexScale={{type: 'band', round: true}}
