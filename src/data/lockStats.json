@@ -563,7 +563,7 @@
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 3976,
+    "uniqueImages": 3975,
     "contributors": 303,
     "topPhotographers": [
       {
@@ -600,7 +600,7 @@
       },
       {
         "contributor": "DQ",
-        "images": 65
+        "images": 64
       },
       {
         "contributor": "fabianoh130",
@@ -1781,6 +1781,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-05-01 02:56"
+    "updatedDateTime": "2025-05-01 03:02"
   }
 }
