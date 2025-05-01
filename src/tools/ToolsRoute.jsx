@@ -58,7 +58,7 @@ function ToolsRoute() {
                     </div>
 
                     <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
-                        <Link onClick={() => navigate('/content')}
+                        <Link onClick={() => navigate('/tools/uploadRedditBeltData')}
                               style={{
                                   color: '#fff',
                                   textDecorationColor: '#bbb',
@@ -66,9 +66,9 @@ function ToolsRoute() {
                                   fontSize: '1.1rem',
                                   fontWeight: 700
                               }}>
-                            Photo Uploader
+                            Reddit Belt Data Uploader
                         </Link><br/>
-                        Allows user to choose a lock (or specify an unlisted one) and upload photos for it.
+                        Upload output of a Reddit flair script to update belt stats. Allows user to copy data to clipboard.
                     </div>
 
                     <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>

@@ -453,6 +453,12 @@ export default [
                     const {default: TestPageRoute} = await import('../tools/testPage/TestPageRoute.jsx')
                     return {element: <TestPageRoute/>}
                 }
+            }, {
+                path: '/tools/uploadRedditBeltData',
+                lazy: async () => {
+                    const {default: UploadRedditBeltDataRoute} = await import('../tools/uploadRedditBeltsData/UploadRedditBeltDataRoute.jsx')
+                    return {element: <UploadRedditBeltDataRoute/>}
+                }
             }
         ]
     },
