@@ -58,7 +58,7 @@ function ToolsRoute() {
                     </div>
 
                     <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
-                        <Link onClick={() => navigate('/tools/uploadRedditBeltData')}
+                        <Link onClick={() => navigate('/tools/reddit-belts')}
                               style={{
                                   color: '#fff',
                                   textDecorationColor: '#bbb',
@@ -66,9 +66,9 @@ function ToolsRoute() {
                                   fontSize: '1.1rem',
                                   fontWeight: 700
                               }}>
-                            Reddit Belt Data Uploader
+                            Fetch Reddit Belt Data
                         </Link><br/>
-                        Upload output of a Reddit flair script to update belt stats. Allows user to copy data to clipboard.
+                        Fetches Reddit flair data and saves details to server. Allows user to copy data to clipboard.
                     </div>
 
                     <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>

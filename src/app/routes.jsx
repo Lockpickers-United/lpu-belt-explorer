@@ -454,10 +454,10 @@ export default [
                     return {element: <TestPageRoute/>}
                 }
             }, {
-                path: '/tools/uploadRedditBeltData',
+                path: '/tools/reddit-belts',
                 lazy: async () => {
-                    const {default: UploadRedditBeltDataRoute} = await import('../tools/uploadRedditBeltsData/UploadRedditBeltDataRoute.jsx')
-                    return {element: <UploadRedditBeltDataRoute/>}
+                    const {default: FetchRedditBeltsRoute} = await import('../tools/fetchRedditBelts/FetchRedditBeltsRoute.jsx')
+                    return {element: <FetchRedditBeltsRoute/>}
                 }
             }
         ]
