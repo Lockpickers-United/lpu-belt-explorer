@@ -26,7 +26,7 @@ const PlatformBeltBar = ({beltDistribution}) => {
                 groupMode='grouped'
                 margin={chartMargin}
                 background={'#fff'}
-                padding={0.12}
+                padding={0.09}
                 innerPadding={2}
                 borderRadius={borderRadius}
                 valueScale={{type: 'linear'}}

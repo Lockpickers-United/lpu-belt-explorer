@@ -122,7 +122,8 @@ export default function PlatformBeltCountsTable({data}) {
                                                }}
                                                component='th' scope='row'>
                                         {column.id === 'belt' && row[column.id] !== 'Total'
-                                            ? <BeltIcon value={row[column.id]} style={{marginBottom: -10}}/>
+                                            ? <BeltIcon value={row[column.id]} style={{marginBottom: -10}}
+                                                        containerStyle={{width:32, maxWidth:32, marginRight:'auto', marginLeft:'auto'}}/>
                                             : row[column.id] ? row[column.id].toLocaleString() : ''
                                         }
                                     </TableCell>

@@ -4,6 +4,7 @@ import GetUserAndProfile from '../../auth/GetUserAndProfile.jsx'
 import CopyTextButton from './CopyTextButton.jsx'
 import {nodeServer} from '../../formUtils/nodeServerUrl'
 import PlatformBeltCountsTable from '../../stats/PlatformBeltCountsTable.jsx'
+import PlatformBeltCountsChart from '../../stats/PlatformBeltCountsChart.jsx'
 import {uniqueBelts} from '../../data/belts'
 import RefreshButton from './RefreshButton.jsx'
 import dayjs from 'dayjs'
@@ -59,15 +60,19 @@ const FetchRedditBelts = ({data, refresh}) => {
     return (
         <React.Fragment>
             <div style={{
-                maxWidth: 700, padding: 0,
-                marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, justifyItems: 'center'
+                maxWidth: 700, padding: 20, marginLeft: 'auto', marginRight: 'auto',
+                marginTop: 16, marginBottom: 46, justifyItems: 'center', backgroundColor: '#000',
+                textAlign: 'center'
             }}>
 
                 <h2>Belt Stats by Platform</h2>
 
+                <div style={{textAlign: 'center', width: '100%'}}>
+                <PlatformBeltCountsChart data={data}/>
                 <PlatformBeltCountsTable data={data}/>
+                </div>
 
-                <div style={{display: 'flex', alignItems: 'center', marginTop: 26, justifyContent: 'space-evenly'}}>
+                <div style={{display: 'flex', alignItems: 'center', marginTop: 40, justifyContent: 'center'}}>
                     <RefreshButton handleClick={handleRefresh}/>
                     <div style={{width: 16}}/>
                     <CopyTextButton text={beltText} title={'Reddit Counts'}/>
