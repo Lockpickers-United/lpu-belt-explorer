@@ -19,7 +19,7 @@ import TableCell from '@mui/material/TableCell'
 
 export default function ScorecardLocks() {
     const {visibleEntries = []} = useContext(DataContext)
-    const {filters, addFilter} = useContext(FilterContext)
+    const {filters, addFilter, removeFilters} = useContext(FilterContext)
     const {userBelt = 'All Belts', sort} = filters
     
     const [showMore, setShowMore] = useState(sort)
@@ -42,9 +42,7 @@ export default function ScorecardLocks() {
 
 
     const uniqueBeltsAll = useMemo(() => ['All Belts', ...uniqueBelts], [])
-
-    //const [belt, setBelt] = useState(userBelt ? uniqueBeltsAll.indexOf(userBelt) : 0)
-
+    
     const nextBelt = useCallback(() => {
         const currentBeltIndex = uniqueBeltsAll.findIndex(x => x === userBelt)
         const changeBeltIndex = currentBeltIndex < uniqueBeltsAll.length - 1 ? currentBeltIndex + 1 : 0
@@ -64,9 +62,13 @@ export default function ScorecardLocks() {
     const handleOpen = useCallback(() => setOpen(true), [])
 
     const handleChange = useCallback(event => {
-        addFilter('userBelt', event.target.value, true)
+        if (event.target.value !== 'All Belts') {
+            addFilter('userBelt', event.target.value, true)
+        } else {
+            removeFilters(['userBelt'])
+        }
         handleClose()
-    }, [addFilter, handleClose])
+    }, [addFilter, handleClose, removeFilters])
 
     const handleShowMore = useCallback(() => {
         setShowMore(!showMore)

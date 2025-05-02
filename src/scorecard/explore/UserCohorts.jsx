@@ -19,14 +19,11 @@ export default function UserCohorts({data}) {
     const {userCounts} = scorecardStats
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
 
-    const [touchTap, setTouchTap] = useState(false)
-
-
+    const touchTap = isTouchDevice()
 
     const defaultDataset = filters?.dataset
         ? filters?.dataset
         : 'pickerData'
-
     const [dataset, setDataset] = useState(defaultDataset)
     const handleChangeDataset = useCallback((dataset) => {
         addFilter('dataset', dataset, true)
@@ -125,7 +122,7 @@ export default function UserCohorts({data}) {
             const belt = role.replace(' Belt', '').trim()
             acc[belt] = discordBeltCounts[role]
             return acc
-        },{})
+        }, {})
 
         const discordBelts = {
             parent: 'Other LPU Pickers',
@@ -177,7 +174,7 @@ export default function UserCohorts({data}) {
             const belt = role.replace(' Belt', '').trim()
             acc[belt] = redditBeltCounts[role]
             return acc
-        },{})
+        }, {})
 
         const redditBelts = {
             parent: 'Other LPU Pickers',
@@ -223,11 +220,7 @@ export default function UserCohorts({data}) {
         return acc + current.value
     }, 0)
 
-    const handleClick = useCallback((data, event) => {
-        const native = event?.nativeEvent
-        const isTouch = typeof TouchEvent !== 'undefined' && native instanceof TouchEvent
-        if (isTouch) { setTouchTap(true) }
-
+    const handleClick = useCallback((data) => {
         if (dataSets[data['id']]) {
             document.getElementById('chartDescription').style.opacity = '0.2'
             setTimeout(() => {
@@ -384,3 +377,9 @@ const danColors = ['#222222', '#2E2E2E', '#3A3A3A', '#464646', '#525252', '#5E5E
     '#6A6A6A', '#767676', '#828282', '#8E8E8E', '#9A9A9A', '#A6A6A6', '#B2B2B2',
     '#BEBEBE', '#CACACA', '#D6D6D6', '#E2E2E2', '#EFEFEF', '#FAFAFA', '#FFFFFF']
 
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0) ||
+        window.matchMedia('(pointer: coarse)').matches)
+}
