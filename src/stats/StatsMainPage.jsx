@@ -19,7 +19,7 @@ function StatsMainPage({data}) {
 
     const {lockCollection} = useContext(DBContext)
 
-    const {width} = useWindowSize()
+    const {width, flexStyle} = useWindowSize()
     const mobileSmall = width <= 360
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -56,19 +56,23 @@ function StatsMainPage({data}) {
             <div style={headerStyle}>Locking Mechanisms By Belt</div>
             <LockingMechanismsByBelt data={data}/>
 
+            <div style={headerStyle}>
+                Discord & Reddit Belt Distribution
+            </div>
+            <div style={{display: flexStyle, marginTop: 0, justifyItems: 'center', backgroundColor: '#000'}}>
+                <PlatformBeltCountsTable data={data}/>
+                <PlatformBeltCountsChart data={data}/>
+            </div>
+
+            <div style={headerStyle}>Reddit Belts Over Time</div>
+            <RedditBeltGrowth data={data}/>
+
             <div style={headerStyle}>Collection Stats</div>
             <CollectionStatsBar data={data} lockCollection={lockCollection} userText={'You'}
                                 collectionBarHeight={collectionBarHeight}/>
 
             <div style={headerStyle}>Collections Top Locks</div>
             <CollectionTopLocks data={data}/>
-
-            <div style={headerStyle}>Discord & Reddit Belt Counts</div>
-            <PlatformBeltCountsChart data={data}/>
-            <PlatformBeltCountsTable data={data}/>
-
-            <div style={headerStyle}>Reddit Belts Over Time</div>
-            <RedditBeltGrowth data={data}/>
 
             <div style={headerStyle}>Hourly Traffic</div>
             <HourlyRequestsLine data={data}/>

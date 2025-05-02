@@ -12,6 +12,8 @@ function LockViewsLine({data}) {
 
     const chartHeight = mobileSmall ? 260
         : !smallWindow ? 350 : 300
+    const tickRotation = !smallWindow ? 0 : -45
+    const lineWidth = !smallWindow ? 3 : 2
 
     return (
         <div style={{height: chartHeight}}>
@@ -19,7 +21,7 @@ function LockViewsLine({data}) {
                 theme={combinedTheme}
                 data={lockViews}
                 colors={['#4fa720']}
-                lineWidth={3}
+                lineWidth={lineWidth}
                 margin={{top: 10, right: 20, bottom: 50, left: 55}}
                 xScale={{
                     type: 'time',
@@ -37,7 +39,8 @@ function LockViewsLine({data}) {
                 axisBottom={{
                     format: '%b',
                     tickValues: 'every 2 month',
-                    legendOffset: -12
+                    legendOffset: -12,
+                    tickRotation: tickRotation,
                 }}
                 axisLeft={{
                     tickSize: 0,

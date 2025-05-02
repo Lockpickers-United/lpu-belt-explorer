@@ -62,24 +62,26 @@ export default function PlatformBeltCountsTable({data}) {
                     : midWindow ? '.95rem'
                         : '.95rem'
 
-    const tableWidth = 320
+    const tableWidth = 250
     const bodyStyle = {}
     const whiteSpace = 'nowrap'
 
-
-    //         <AdminStatsTable tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}/>
-
     return (
 
-        <div>
-            <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
+        <div style={{marginLeft: 40, marginRight: 40}}>
+            <div style={{fontSize: '1.1rem', fontWeight: 700, textAlign: 'center', marginBottom: 5}}>
+                Belt Counts
+            </div>
+            {tableData.title &&
+                <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
+            }
             <TableContainer id='statsTable'
                             style={{
                                 padding: '0px 0px 0px 0px',
                                 width: tableWidth,
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
-                                border:'1px solid #444'
+                                border: '1px solid #444'
                             }}
                             component={Paper} elevation={2}>
                 <Table size='small'>
@@ -123,7 +125,12 @@ export default function PlatformBeltCountsTable({data}) {
                                                component='th' scope='row'>
                                         {column.id === 'belt' && row[column.id] !== 'Total'
                                             ? <BeltIcon value={row[column.id]} style={{marginBottom: -10}}
-                                                        containerStyle={{width:32, maxWidth:32, marginRight:'auto', marginLeft:'auto'}}/>
+                                                        containerStyle={{
+                                                            width: 32,
+                                                            maxWidth: 32,
+                                                            marginRight: 'auto',
+                                                            marginLeft: 'auto'
+                                                        }}/>
                                             : row[column.id] ? row[column.id].toLocaleString() : ''
                                         }
                                     </TableCell>

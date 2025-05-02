@@ -11,6 +11,7 @@ import dayjs from 'dayjs'
 import Dialog from '@mui/material/Dialog'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Button from '@mui/material/Button'
+import useWindowSize from '../../util/useWindowSize'
 
 const FetchRedditBelts = ({data, refresh}) => {
 
@@ -57,6 +58,10 @@ const FetchRedditBelts = ({data, refresh}) => {
         await refresh()
     }, [refresh])
 
+    const {flexStyle} = useWindowSize()
+    const headerStyle = {margin: '46px 0px 26px 0px', width: '100%', backgroundColor: '#000', textAlign: 'center'}
+
+
     return (
         <React.Fragment>
             <div style={{
@@ -65,11 +70,12 @@ const FetchRedditBelts = ({data, refresh}) => {
                 textAlign: 'center'
             }}>
 
-                <h2>Belt Stats by Platform</h2>
-
-                <div style={{textAlign: 'center', width: '100%'}}>
-                <PlatformBeltCountsChart data={data}/>
-                <PlatformBeltCountsTable data={data}/>
+                <div style={{fontSize: '1.5rem', ...headerStyle}}>
+                    Discord & Reddit Belt Distribution
+                </div>
+                <div style={{display: flexStyle, marginTop: 0, justifyItems: 'center', backgroundColor: '#000'}}>
+                    <PlatformBeltCountsTable data={data}/>
+                    <PlatformBeltCountsChart data={data}/>
                 </div>
 
                 <div style={{display: 'flex', alignItems: 'center', marginTop: 40, justifyContent: 'center'}}>
