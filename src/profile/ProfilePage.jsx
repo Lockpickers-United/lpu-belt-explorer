@@ -6,6 +6,7 @@ import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
 import ProfileHeader from './ProfileHeader.jsx'
+import RandomProfileEntryButton from './RandomProfileEntryButton.jsx'
 
 function ProfilePage({profile, owner}) {
     const {compact} = useContext(LockListContext)
@@ -13,11 +14,14 @@ function ProfilePage({profile, owner}) {
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
 
+
+
     return (
         <React.Fragment>
             <div style={{
                 maxWidth: 700, padding: 0, backgroundColor: '#222',
-                marginLeft: 'auto', marginRight: 'auto', marginTop: 16
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 16,
+                justifyItems: 'center',
             }}>
 
             <ProfileHeader profile={profile} page={'collection'} owner={owner}/>
@@ -35,7 +39,12 @@ function ProfilePage({profile, owner}) {
                         />
                     )
                 }
+
+                <RandomProfileEntryButton onSelect={setExpanded}/>
+
             </div>
+
+
         </React.Fragment>
     )
 }

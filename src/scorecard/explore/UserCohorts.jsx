@@ -30,7 +30,7 @@ export default function UserCohorts({data}) {
         setDataset(dataset)
     }, [addFilter])
 
-    const otherPickers = platformBeltCounts.reddit.Total - userCounts.totalUsers
+    const otherPickers = 9435 - userCounts.totalUsers
 
     const dataSets = useMemo(() => {
         const pickerData = {

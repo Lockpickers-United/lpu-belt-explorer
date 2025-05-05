@@ -70,7 +70,7 @@ function ProfileRoute() {
     const title = loading ? 'Loading...' : 'Profile'
 
     const footerBefore = (
-        <div style={{margin:'30px 0px'}}>
+        <div style={{margin: '30px 0px'}}>
             <ExportButton text={true}/>
         </div>
     )
@@ -79,9 +79,9 @@ function ProfileRoute() {
         <FilterProvider filterFields={lockFilterFields}>
             <DataProvider allEntries={entries} profile={data}>
                 <LockListProvider>
-                        <Nav title={title} extras={nav}/>
+                    <Nav title={title} extras={nav}/>
 
-                        {loading && <LoadingDisplay/>}
+                    {loading && <LoadingDisplay/>}
 
                     {!loading && data && !error && <ProfilePage profile={data} owner={user && user.uid === userId}/>}
                     {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
@@ -89,7 +89,7 @@ function ProfileRoute() {
 
                     <Footer before={footerBefore}/>
 
-                        <Tracker feature='profile'/>
+                    <Tracker feature='profile'/>
                 </LockListProvider>
             </DataProvider>
         </FilterProvider>
