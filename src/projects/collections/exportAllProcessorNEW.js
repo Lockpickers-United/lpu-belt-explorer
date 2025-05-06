@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises'
-import {setDeep, setDeepAdd, setDeepPush} from '../../util/setDeep.js'
+import {setDeep, setDeepAdd} from '../../util/setDeep.js'
 import {localUser, prodUser} from '../../../keys/users.js'
-import dayjs from 'dayjs'
 import {itemDetails} from '../../util/getItemDetails.js'
 import {uniqueBelts} from '../../util/belts.js'
 
@@ -11,9 +10,6 @@ const production = process.env.USER !== localUser
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/collectionExports`
-const backupDir = production
-    ? `/home/${prodUser}/firebase`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
 const exportDir = production
     ? `/home/${prodUser}/collectionExports`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/collectionExports`
@@ -25,7 +21,6 @@ export default async function processExportAll() {
 
     const allItemDetails = await itemDetails()
     const lockcollections = await JSON.parse(await fs.readFile(`${exportDir}/lockcollections.json`, 'utf8')).data
-    const evidenceData = await JSON.parse(await fs.readFile(`${exportDir}/evidence.json`, 'utf8')).data
     const awardsData = await JSON.parse(await fs.readFile(`${exportDir}/awards.json`, 'utf8')).data
 
     //TODO: fetch from server once live

@@ -1,31 +1,31 @@
-/* eslint-disable no-underscore-dangle */
+ 
 
-import fs from 'node:fs';
-import crypto from 'node:crypto';
-import { EventEmitter } from 'node:events';
+import fs from 'node:fs'
+import crypto from 'node:crypto'
+import { EventEmitter } from 'node:events'
 
 class PersistentFile extends EventEmitter {
   constructor({ filepath, newFilename, originalFilename, mimetype, hashAlgorithm }) {
-    super();
+    super()
 
-    this.lastModifiedDate = null;
-    Object.assign(this, { filepath, newFilename, originalFilename, mimetype, hashAlgorithm });
+    this.lastModifiedDate = null
+    Object.assign(this, { filepath, newFilename, originalFilename, mimetype, hashAlgorithm })
 
-    this.size = 0;
-    this._writeStream = null;
+    this.size = 0
+    this._writeStream = null
 
     if (typeof this.hashAlgorithm === 'string') {
-      this.hash = crypto.createHash(this.hashAlgorithm);
+      this.hash = crypto.createHash(this.hashAlgorithm)
     } else {
-      this.hash = null;
+      this.hash = null
     }
   }
 
   open() {
-    this._writeStream = fs.createWriteStream(this.filepath);
+    this._writeStream = fs.createWriteStream(this.filepath)
     this._writeStream.on('error', (err) => {
-      this.emit('error', err);
-    });
+      this.emit('error', err)
+    })
   }
 
   toJSON() {
@@ -37,52 +37,52 @@ class PersistentFile extends EventEmitter {
       mtime: this.lastModifiedDate,
       length: this.length,
       originalFilename: this.originalFilename,
-    };
-    if (this.hash && this.hash !== '') {
-      json.hash = this.hash;
     }
-    return json;
+    if (this.hash && this.hash !== '') {
+      json.hash = this.hash
+    }
+    return json
   }
 
   toString() {
-    return `PersistentFile: ${this.newFilename}, Original: ${this.originalFilename}, Path: ${this.filepath}`;
+    return `PersistentFile: ${this.newFilename}, Original: ${this.originalFilename}, Path: ${this.filepath}`
   }
 
   write(buffer, cb) {
     if (this.hash) {
-      this.hash.update(buffer);
+      this.hash.update(buffer)
     }
 
     if (this._writeStream.closed) {
-      cb();
-      return;
+      cb()
+      return
     }
 
     this._writeStream.write(buffer, () => {
-      this.lastModifiedDate = new Date();
-      this.size += buffer.length;
-      this.emit('progress', this.size);
-      cb();
-    });
+      this.lastModifiedDate = new Date()
+      this.size += buffer.length
+      this.emit('progress', this.size)
+      cb()
+    })
   }
 
   end(cb) {
     if (this.hash) {
-      this.hash = this.hash.digest('hex');
+      this.hash = this.hash.digest('hex')
     }
     this._writeStream.end(() => {
-      this.emit('end');
-      cb();
-    });
+      this.emit('end')
+      cb()
+    })
   }
 
   destroy() {
-    this._writeStream.destroy();
-    const filepath = this.filepath; 
+    this._writeStream.destroy()
+    const filepath = this.filepath 
     setTimeout(function () {
-        fs.unlink(filepath, () => {});
+        fs.unlink(filepath, () => {})
     }, 1)
   }
 }
 
-export default PersistentFile;
+export default PersistentFile

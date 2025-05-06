@@ -1,34 +1,34 @@
-/* eslint-disable no-underscore-dangle */
+ 
 
-import { createHash } from 'node:crypto';
-import { EventEmitter } from 'node:events';
+import { createHash } from 'node:crypto'
+import { EventEmitter } from 'node:events'
 
 class VolatileFile extends EventEmitter {
   constructor({ filepath, newFilename, originalFilename, mimetype, hashAlgorithm, createFileWriteStream }) {
-    super();
+    super()
 
-    this.lastModifiedDate = null;
-    Object.assign(this, { filepath, newFilename, originalFilename, mimetype, hashAlgorithm, createFileWriteStream });
+    this.lastModifiedDate = null
+    Object.assign(this, { filepath, newFilename, originalFilename, mimetype, hashAlgorithm, createFileWriteStream })
 
-    this.size = 0;
-    this._writeStream = null;
+    this.size = 0
+    this._writeStream = null
 
     if (typeof this.hashAlgorithm === 'string') {
-      this.hash = createHash(this.hashAlgorithm);
+      this.hash = createHash(this.hashAlgorithm)
     } else {
-      this.hash = null;
+      this.hash = null
     }
   }
 
   open() {
-    this._writeStream = this.createFileWriteStream(this);
+    this._writeStream = this.createFileWriteStream(this)
     this._writeStream.on('error', (err) => {
-      this.emit('error', err);
-    });
+      this.emit('error', err)
+    })
   }
 
   destroy() {
-    this._writeStream.destroy();
+    this._writeStream.destroy()
   }
 
   toJSON() {
@@ -38,43 +38,43 @@ class VolatileFile extends EventEmitter {
       length: this.length,
       originalFilename: this.originalFilename,
       mimetype: this.mimetype,
-    };
-    if (this.hash && this.hash !== '') {
-      json.hash = this.hash;
     }
-    return json;
+    if (this.hash && this.hash !== '') {
+      json.hash = this.hash
+    }
+    return json
   }
 
   toString() {
-    return `VolatileFile: ${this.originalFilename}`;
+    return `VolatileFile: ${this.originalFilename}`
   }
 
   write(buffer, cb) {
     if (this.hash) {
-      this.hash.update(buffer);
+      this.hash.update(buffer)
     }
 
     if (this._writeStream.closed || this._writeStream.destroyed) {
-      cb();
-      return;
+      cb()
+      return
     }
 
     this._writeStream.write(buffer, () => {
-      this.size += buffer.length;
-      this.emit('progress', this.size);
-      cb();
-    });
+      this.size += buffer.length
+      this.emit('progress', this.size)
+      cb()
+    })
   }
 
   end(cb) {
     if (this.hash) {
-      this.hash = this.hash.digest('hex');
+      this.hash = this.hash.digest('hex')
     }
     this._writeStream.end(() => {
-      this.emit('end');
-      cb();
-    });
+      this.emit('end')
+      cb()
+    })
   }
 }
 
-export default VolatileFile;
+export default VolatileFile

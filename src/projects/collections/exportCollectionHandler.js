@@ -19,7 +19,7 @@ const config = {
 }
 const firebaseApp = initializeApp(config)
 
-export default async function exportCollection({collection, devDb=false, desinationDir=''}) {
+export default async function exportCollection({collection, devDb=false}) {
 
 
     const db = !devDb ? getFirestore(firebaseApp) : getFirestore(firebaseApp, 'lpubelts-dev')

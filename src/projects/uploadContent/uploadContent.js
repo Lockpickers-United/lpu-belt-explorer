@@ -2,7 +2,7 @@ import formidable from '../../util/formidable/src/index.js'
 import fs from 'fs'
 import archiver from 'archiver'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients} from '../../../keys/users.js'
+import {contentUploadRecipients,prodUser} from '../../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
 const execAsync = util.promisify(exec)
@@ -12,7 +12,6 @@ const execAsync = util.promisify(exec)
  * @prop lockId
  */
 
-import {prodUser} from '../../../keys/users.js'
 const uploadDir = `/home/${prodUser}/uploads`
 
 // Ensure the upload directory exists
@@ -79,7 +78,7 @@ export default async function upload(req, res) {
         })
 
         const html = `<strong>Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}</strong><br/><br/>`
-        let fieldsHtml = html + "<table>"
+        let fieldsHtml = html + '<table>'
         Object.keys(fields).map((key) => {
             fieldsHtml += `<tr><td>${key}</td><td>${fields[key]}</td></tr>`
         })
@@ -99,8 +98,8 @@ export default async function upload(req, res) {
                 })
                 console.log('Message sent: %s', email.messageId)
             } catch (error) {
-                error = 'An error occurred sending email'
-                console.error('An error occurred sending email', error)
+                const errorMsg = 'An error occurred sending email'
+                console.error('An error occurred sending email', errorMsg)
                 res.status(500).send({status: 500, message: 'Email send error'})
                 return
             }

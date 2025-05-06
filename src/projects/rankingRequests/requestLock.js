@@ -10,10 +10,9 @@ import fs from 'fs'
 
 const {writeFile} = fs.promises
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients} from '../../../keys/users.js'
+import {contentUploadRecipients,prodUser} from '../../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
-import {prodUser} from '../../../keys/users.js'
 import {spaceJoin} from '../../util/stringUtils.js'
 import dayjs from 'dayjs'
 import createThumbnails from '../../util/createThumbnails.js'

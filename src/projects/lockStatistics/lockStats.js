@@ -55,7 +55,7 @@ lockStats.locksByBelt = Object.keys(lockStats.locksByBeltCounts).map(belt => {
 delete lockStats.locksByBeltCounts
 
 lockStats.lockingMechanisms = Object.keys(lockStats.locksByMechanism).map(mechanism => {
-    const id = mechanism.replaceAll(/[ |\/]/g, '-').toLowerCase()
+    const id = mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
     return {
         label: mechanism,
         value: lockStats.locksByMechanism[mechanism],
@@ -66,7 +66,7 @@ delete lockStats.locksByMechanism
 
 lockStats.lockingMechanismsByBelt = Object.keys(lockStats.locksByMechanismByBelt).reduce((acc, belt) => {
     acc[belt] = Object.keys(lockStats.locksByMechanismByBelt[belt]).map(mechanism => {
-        const id = mechanism.replaceAll(/[ |\/]/g, '-').toLowerCase()
+        const id = mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
         return {
             label: mechanism,
             value: lockStats.locksByMechanismByBelt[belt][mechanism],
@@ -155,8 +155,6 @@ setDeep(lockStats, ['photoStats', 'topPhotographers'], topPhotographers)
 
 // METADATA
 lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-
-//jsonIt('lockStats', lockStats)
 
 await fs.writeFile(`${serverDir}/lockStats.json`, JSON.stringify(lockStats, null, 2), function (err) {
     if (err) {

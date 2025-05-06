@@ -333,8 +333,6 @@ export async function getFormResponses(auth, formId) {
 
 async function getSheetsResponses(auth, raflStatsId) {
     const service = google.sheets({version: 'v4', auth})
-    try {
-
         const range = 'Review!A:ZZ'
         const result = await service.spreadsheets.values.get({
             spreadsheetId: raflStatsId,
@@ -352,11 +350,6 @@ async function getSheetsResponses(auth, raflStatsId) {
         })
 
         return items
-
-    } catch (err) {
-        // TODO (developer) - Handle exception
-        throw err
-    }
 }
 
 async function processSheetsResponses(sheetResponses, raflData, useReview) {

@@ -328,7 +328,6 @@ export async function getFormResponses(auth, formId) {
 
 async function getSheetsResponses(auth, raflStatsId) {
     const service = google.sheets({version: 'v4', auth})
-    try {
         const range = 'Review!A:ZZ'
         const result = await service.spreadsheets.values.get({
             spreadsheetId: raflStatsId,
@@ -344,10 +343,6 @@ async function getSheetsResponses(auth, raflStatsId) {
             items.push(obj)
         })
         return items
-    } catch (err) {
-        // TODO (developer) - Handle exception
-        throw err
-    }
 }
 
 async function processSheetsResponses(sheetResponses, raflData) {
@@ -409,7 +404,6 @@ async function processSheetsResponses(sheetResponses, raflData) {
         let donor = `${platform}-${res['Name or Email']}`
         let donation = parseInt(res['Donation'])
         let charity = res['Charity Name']
-        let belt = res['Belt']
 
         setDeepUnique(acc, ['uniqueValues', 'cumDonorsUnique'], donor)
         setDeep(acc, [date, 'cumDonorsUnique'], acc.uniqueValues.cumDonorsUnique.length)
@@ -461,12 +455,6 @@ async function processSheetsResponses(sheetResponses, raflData) {
 
 }
 
-function getPotIdFromTitle(title, raflData) {
-    const potTitle = title.replace(/Pot \d+ - /, '')
-    const pot = raflData.find(p => p.title === potTitle)
-    return pot ? pot.id : potTitle
-}
-
 function getPotIdFromNumber(title, raflData) {
     const potTitle = title.replace(/Pot \d+ - /, '')
     const potNum = title.match(/Pot (\d+)/)
@@ -482,8 +470,8 @@ function getPotIdFromNumber(title, raflData) {
 export async function raflUtils(util) {
 
     // TODO: why from explore.lpubelts.com??
-    const fullRaflData = await (await fetch(cookieJar, 'https://explore.lpubelts.com/data/rafl.json')).json()
-    const raflDataPreview = fullRaflData.filter(x => x.year === 2025)
+    //const fullRaflData = await (await fetch(cookieJar, 'https://explore.lpubelts.com/data/rafl.json')).json()
+    //const raflDataPreview = fullRaflData.filter(x => x.year === 2025)
 
     let prodRaflData = await (await fetch(cookieJar, 'https://lpubelts.com/rafl.json')).json()
     const raflData = prodRaflData.filter(x => x.year === 2025)
@@ -553,7 +541,7 @@ export async function raflUtils(util) {
 
     if (util === 'rebuildForm') {
         if (reset && !live) {
-            const deleteAllResponse = await deleteAllQuestions(auth, formId, reset)
+            //const deleteAllResponse = await deleteAllQuestions(auth, formId, reset)
             //const createQuestionsResponse = await createQuestions(auth, formId, raflData, charitiesData, reset)
             //jsonIt('createQuestionsResponse', createQuestionsResponse)
             response = await buildQuestionMap(raflData)

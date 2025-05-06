@@ -7,7 +7,7 @@ export async function sendEmail(content) {
     //console.log('content', content)
 
     const transporter = nodemailer.createTransport({
-        host: "smtp.dreamhost.com",
+        host: 'smtp.dreamhost.com',
         port: 587,
         secure: false, // true for port 465, false for other ports
         auth: {

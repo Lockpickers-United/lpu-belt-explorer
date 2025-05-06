@@ -30,7 +30,7 @@ export default async function handleFirebaseActivityPost(req, res) {
     try {
         await logToFirebaseLog(mappedActivity, prod)
     } catch (err) {
-        return handleError(res, 'Error logging activity', null, 500);
+        return handleError(res, 'Error logging activity', null, 500)
     }
     console.log('handleFirebaseActivityPost done')
     return res.status(200).json('Activity Logged')
@@ -55,7 +55,7 @@ export async function logToFirebaseLog(messages) {
                     return err
                 }
             })
-        );
+        )
     } catch (err) {
         console.log('Logging Error', err)
     }

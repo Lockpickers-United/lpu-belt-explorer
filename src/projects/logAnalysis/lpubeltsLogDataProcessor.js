@@ -47,14 +47,14 @@ const countryTZ = path.join(componentsDir, 'lpu-country-timezones.json')
 // Load lock details from JSON feed (module must export lockDetailsNewPM)
 
 
-import { lockDetailsNewPM } from "./getLockDetails.js";
+import { lockDetailsNewPM } from './getLockDetails.js'
 
 let lockDetailsNew
 await lockDetailsNewPM().then(data => {
     lockDetailsNew = data
 }).catch(err => {
-    console.error("Error:", err);
-});
+    console.error('Error:', err)
+})
 
 // --- DATA AGGREGATION OBJECTS ---
 let wip = {} // work-in-progress aggregates
@@ -122,7 +122,7 @@ for (const file of dataFiles) {
     }
 
     // Determine week key using week number and first day of week
-    const firstDay = dayjs(requestDate).startOf("week").format('YYYY-MM-DD')
+    const firstDay = dayjs(requestDate).startOf('week').format('YYYY-MM-DD')
     
     // Initialize aggregates for this day and week if needed
     if (!wip.days[dateString]) {
@@ -773,7 +773,7 @@ screenWidths()
 outputSiteFullJson()
 
 // --- RUNTIME INFO ---
-console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0,2)}`);
+console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0,2)}`)
 
 if (local) {
     exec('say \'done\'')

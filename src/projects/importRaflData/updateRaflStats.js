@@ -116,7 +116,7 @@ export async function updateRaflStats() {
             //jsonIt('text', newResponseInfo.text)
 
             await fs.writeFile(`${tempDir}/sheetsResponses.json`, JSON.stringify(currentResponses, null, 2))
-            await sendEmail(`New RAFL Entries since last update`, JSON.stringify(newResponseInfo.text, null, 2), newResponseInfo.html, responseRecipients)
+            await sendEmail('New RAFL Entries since last update', JSON.stringify(newResponseInfo.text, null, 2), newResponseInfo.html, responseRecipients)
 
         }
 

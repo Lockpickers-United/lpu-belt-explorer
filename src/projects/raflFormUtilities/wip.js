@@ -1,8 +1,10 @@
+/* eslint-disable */
+
 import {google} from 'googleapis'
 import dayjs from 'dayjs'
 import fs from 'node:fs/promises'
-
-const url = `https://docs.google.com/spreadsheets/d/1bGLLlSlGTRqLODNGrK-jrkQ7_lCBxCMuZ6pBWTxP98U/gviz/tq?tqx=out:csv&sheet=Form Responses 1&headers=1`
+import {setDeepAdd} from '../../util/setDeep.js'
+const url = 'https://docs.google.com/spreadsheets/d/1bGLLlSlGTRqLODNGrK-jrkQ7_lCBxCMuZ6pBWTxP98U/gviz/tq?tqx=out:csv&sheet=Form Responses 1&headers=1'
 const csvData = await (await fetch(url)).text()
 
 console.log('csvData', csvData)

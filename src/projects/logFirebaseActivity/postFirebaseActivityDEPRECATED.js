@@ -1,7 +1,7 @@
 
 export default async function postFirebaseActivityDEPRECATED({ activityData }) {
 
-    export const serverUrl = 'https://explore.lpubelts.com:8443'
+    const serverUrl = 'https://explore.lpubelts.com:8443'
 
     const controller = new AbortController()
     const timeout = setTimeout(() => {
