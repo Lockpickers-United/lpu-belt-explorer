@@ -41,7 +41,7 @@ module.exports = defineConfig([{
     },
 
     plugins: {
-        react,
+        //react,
         "react-hooks": fixupPluginRules(reactHooks),
         import: fixupPluginRules(_import),
     },
@@ -53,8 +53,10 @@ module.exports = defineConfig([{
     )),
 
     settings: {
-        react: {
-            version: "detect",
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".json"],
+            },
         },
     },
 
@@ -74,10 +76,15 @@ module.exports = defineConfig([{
         "eqeqeq": ["warn", "always"],
         "semi": ["warn", "never"],
 
-        "import/extensions": ["warn", "never", {
-            jsx: "never",
-            json: "always",
-        }],
+        "import/extensions": [
+            "warn",
+            "ignorePackages",
+            {
+                js:    "always",
+                jsx:   "always",
+                json:  "always",
+            },
+        ],
 
         "import/no-unresolved": "off",
         "import/namespace": "off",

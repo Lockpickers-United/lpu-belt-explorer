@@ -1,0 +1,10 @@
+{
+  "name": "lpubelts-rafl-preview-new",
+  "version": "1.0.0",
+  "description": "fetch RAFL preview data",
+  "main": "index.js",
+  "author": "mgsecure <125900659+mgsecure@users.noreply.github.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {}
+}
