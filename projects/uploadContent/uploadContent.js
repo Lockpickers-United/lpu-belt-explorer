@@ -12,7 +12,8 @@ const execAsync = util.promisify(exec)
  * @prop lockId
  */
 
-const uploadDir = '/home/dh_m5s5pf/uploads'
+import {prodUser} from '../../keys/users.js'
+const uploadDir = `/home/${prodUser}/uploads`
 
 // Ensure the upload directory exists
 if (!fs.existsSync(uploadDir)) {

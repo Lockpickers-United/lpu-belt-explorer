@@ -12,6 +12,8 @@ import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
 import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
 import processFirebaseActivityLog from './projects/logFirebaseActivity/processFirebaseActivityLog.js'
+import processRedditBeltsUpload from './projects/redditBeltsWIP/processRedditBeltsUpload.js'
+import getRedditBelts from './projects/redditBelts/getRedditBelts.js'
 
 //import importRaflData from './projects/importRaflData/importRaflData.js'
 //import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
@@ -95,6 +97,17 @@ app.get('/process-firebase-log', async (req, res) => {
     })
 })
 
+app.post('/uploadRedditBelts', async (req, res) => {
+    const {prod} = req.body
+    const logEnvText = prod ? '' : ' (from DEV)'
+    myEmitter.emit('myEvent', 'Reddit Belts Data uploaded' + logEnvText)
+    processRedditBeltsUpload(req, res)
+})
+
+app.post('/fetch-reddit-flairs', async (req, res) => {
+    myEmitter.emit('myEvent', 'Reddit flair fetch requested')
+    await getRedditBelts(req, res)
+})
 
 /*
 app.get('/refresh-preview', async (req, res) => {
