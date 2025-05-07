@@ -17,7 +17,7 @@ function TestPageRoute() {
             <Nav title='Test Page' extras={nav}/>
 
             <div style={{
-                maxWidth: 800,
+                maxWidth: 720,
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,

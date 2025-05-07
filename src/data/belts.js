@@ -1,4 +1,4 @@
-//#FFC0CB, #FF69B4, #FF00FF, #F9AFAE, #FF66CC, #F88379, #FFD1DC, #FFB6C1, #FFCCCB, #FF00AA
+// ['#eeeeee', '#dcdc1f', '#e16936', '#34732f', '#3e71bd', '#9f21e5', '#9d6837', '#c52323', '#000000']
 
 const belts = {
         White: {color: '#eeeeee', danPoints: 0},
