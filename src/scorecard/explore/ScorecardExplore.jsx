@@ -2,6 +2,7 @@ import React from 'react'
 import useWindowSize from '../../util/useWindowSize'
 import UserCohorts from './UserCohorts.jsx'
 import ScorecardLocks from './ScorecardLocks.jsx'
+import SankeyTest from '../../tools/testPage/SankeyTest.jsx'
 
 export default function ScorecardExplore({data}) {
 
@@ -24,6 +25,12 @@ export default function ScorecardExplore({data}) {
 
             <div style={firstHeaderStyle}>User Drilldown</div>
             <UserCohorts data={data}/>
+
+            <div style={headerStyle}>
+                User Belt Flows
+            <div style={{fontSize:'0.9rem', fontWeight:400}}>Users starting at White after Feb. 2021</div>
+            </div>
+            <SankeyTest/>
 
             <div style={headerStyle}>Scorecard Locks</div>
             <ScorecardLocks data={data}/>

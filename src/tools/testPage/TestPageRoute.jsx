@@ -2,7 +2,8 @@ import React from 'react'
 import Nav from '../../nav/Nav.jsx'
 import Footer from '../../nav/Footer.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
-import LockMechanismScopes from './LockMechanismScopes.jsx'
+//import LockMechanismScopes from './LockMechanismScopes.jsx'
+import SankeyTest from './SankeyTest.jsx'
 
 function TestPageRoute() {
     usePageTitle('Test Page')
@@ -23,7 +24,7 @@ function TestPageRoute() {
                 marginButtom: 16,
                 padding: '0px 30px'
             }}>
-                <LockMechanismScopes/>
+                <SankeyTest/>
             </div>
 
             <Footer/>
