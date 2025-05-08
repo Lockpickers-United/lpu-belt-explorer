@@ -39,3 +39,4 @@ src/data/dancache/*
 src/data/linkCache.json
 /public/test
 ecosystem.config.cjs
+/src/projects/redditBeltsWorking

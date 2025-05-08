@@ -98,13 +98,14 @@ app.get('/process-firebase-log', async (req, res) => {
     })
 })
 
+/*
+
 app.post('/fetch-reddit-flairs', async (req, res) => {
     myEmitter.emit('myEvent', 'Reddit flair fetch requested')
     await getRedditBelts(req, res)
 })
 
 
-/*
 app.get('/refresh-preview', async (req, res) => {
     myEmitter.emit('myEvent', 'Preview refresh requested')
     await importRaflData().then(results => {
