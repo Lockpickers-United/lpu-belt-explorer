@@ -11,34 +11,49 @@ export default function SankeyTest() {
     const fullData = useMemo(() => {
         return {
             nodes: [
-                {id: 'White', group: 1, total: 872},
-                {id: 'Yellow', group: 1, total: 440},
-                {id: 'Orange', group: 1, total: 305},
-                {id: 'Green', group: 1, total: 106},
-                {id: 'Blue', group: 1, total: 35},
-                {id: 'Purple', group: 1, total: 12},
-                {id: 'Brown', group: 1, total: 5},
-                {id: 'Red', group: 1, total: 4},
-                {id: 'Black', group: 1, total: 2}
+                { id: 'White', group: 1, total: 1094 },
+                { id: 'Yellow', group: 1, total: 1538 },
+                { id: 'Orange', group: 1, total: 1710 },
+                { id: 'Green', group: 1, total: 993 },
+                { id: 'Blue', group: 1, total: 467 },
+                { id: 'Purple', group: 1, total: 289 },
+                { id: 'Brown', group: 1, total: 199 },
+                { id: 'Red', group: 1, total: 160 },
+                { id: 'Black', group: 1, total: 152 }
             ],
             links: [
-                {source: 'White', target: 'Yellow', value: 440},
-                {source: 'White', target: 'Orange', value: 88},
-                {source: 'White', target: 'Green', value: 15},
-                {source: 'Yellow', target: 'Orange', value: 217},
-                {source: 'Yellow', target: 'Green', value: 18},
-                {source: 'Yellow', target: 'Blue', value: 1},
-                {source: 'Orange', target: 'Green', value: 73},
-                {source: 'Orange', target: 'Blue', value: 9},
-                {source: 'Green', target: 'Blue', value: 25},
-                {source: 'Green', target: 'Purple', value: 2},
-                {source: 'Green', target: 'Red', value: 1},
-                {source: 'Blue', target: 'Purple', value: 10},
-                {source: 'Blue', target: 'Brown', value: 2},
-                {source: 'Purple', target: 'Red', value: 1},
-                {source: 'Purple', target: 'Brown', value: 3},
-                {source: 'Red', target: 'Black', value: 1},
-                {source: 'Brown', target: 'Red', value: 2}
+                { source: 'White', target: 'Yellow', value: 511 },
+                { source: 'White', target: 'Orange', value: 119 },
+                { source: 'White', target: 'Green', value: 14 },
+                { source: 'White', target: 'Blue', value: 4 },
+                { source: 'White', target: 'Purple', value: 4 },
+                { source: 'White', target: 'Brown', value: 1 },
+                { source: 'White', target: 'Red', value: 1 },
+                { source: 'White', target: 'Black', value: 1 },
+                { source: 'Yellow', target: 'Orange', value: 698 },
+                { source: 'Yellow', target: 'Green', value: 79 },
+                { source: 'Yellow', target: 'Blue', value: 9 },
+                { source: 'Yellow', target: 'Purple', value: 1 },
+                { source: 'Yellow', target: 'Red', value: 1 },
+                { source: 'Orange', target: 'Green', value: 501 },
+                { source: 'Orange', target: 'Blue', value: 25 },
+                { source: 'Orange', target: 'Purple', value: 4 },
+                { source: 'Orange', target: 'Black', value: 1 },
+                { source: 'Green', target: 'Blue', value: 329 },
+                { source: 'Green', target: 'Purple', value: 39 },
+                { source: 'Green', target: 'Brown', value: 9 },
+                { source: 'Green', target: 'Red', value: 7 },
+                { source: 'Green', target: 'Black', value: 5 },
+                { source: 'Blue', target: 'Purple', value: 188 },
+                { source: 'Blue', target: 'Brown', value: 26 },
+                { source: 'Blue', target: 'Red', value: 7 },
+                { source: 'Blue', target: 'Black', value: 6 },
+                { source: 'Purple', target: 'Brown', value: 140 },
+                { source: 'Purple', target: 'Red', value: 16 },
+                { source: 'Purple', target: 'Black', value: 9 },
+                { source: 'Brown', target: 'Red', value: 104 },
+                { source: 'Brown', target: 'Black', value: 13 },
+                { source: 'Red', target: 'Black', value: 91 }
             ]
         }
     }, [])
@@ -49,7 +64,7 @@ export default function SankeyTest() {
     const beltColors = useMemo(() => {
         return ['#d5d5d5', '#dcdc1f', '#e16936', '#34732f',
             '#3e71bd', '#9f21e5', '#9d6837',
-            '#c52323', '#333', '#373737']
+            '#c52323', '#303030', '#373737']
     }, [])
 
 
@@ -65,7 +80,7 @@ export default function SankeyTest() {
 
 
     const handleClick = useCallback((data) => {
-        if (!data.label || data.label === 'White') return
+        if (!data.label || data.label === 'White' || data.label === 'Black') return
         if (data.label === filter) {
             handleReset()
             return
@@ -104,17 +119,23 @@ export default function SankeyTest() {
                     layout='vertical'
                     sort='input'
                     margin={{top: 10, right: 10, bottom: 20, left: 10}}
-                    align='justify'
+                    align='center'
                     colors={colors}
                     nodeOpacity={1}
                     nodeHoverOthersOpacity={0.2}
                     nodeThickness={22}
                     nodeInnerPadding={0}
-                    nodeSpacing={20}
-                    nodeBorderWidth={6}
-                    nodeBorderColor={{from: 'color'}}
+                    nodeSpacing={0}
+                    nodeBorderWidth={1}
+                    nodeBorderColor={{from: 'color',
+                        modifiers: [
+                            [
+                                'darker',
+                                0.5
+                            ]
+                        ]}}
                     nodeBorderRadius={3}
-                    linkOpacity={0.75}
+                    linkOpacity={0.6}
                     linkBlendMode={'normal'}
                     linkHoverOthersOpacity={0.1}
                     linkContract={-0.5}
@@ -127,7 +148,7 @@ export default function SankeyTest() {
                         modifiers: [
                             [
                                 'brighter',
-                                3
+                                5
                             ]
                         ]
                     }}
