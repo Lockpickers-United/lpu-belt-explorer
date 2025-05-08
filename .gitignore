@@ -40,3 +40,4 @@ src/data/linkCache.json
 /public/test
 ecosystem.config.cjs
 /src/projects/redditBeltsWorking
+/src/projects/beltInvestigationsWIP
