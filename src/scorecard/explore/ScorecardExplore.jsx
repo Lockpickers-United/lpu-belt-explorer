@@ -23,14 +23,15 @@ export default function ScorecardExplore({data}) {
             fontSize: '1.5rem', fontWeight: 600
         }}>
 
-            <div style={firstHeaderStyle}>User Drilldown</div>
-            <UserCohorts data={data}/>
-
-            <div style={headerStyle}>
+            <div style={firstHeaderStyle}>
                 User Belt Flows
-            <div style={{fontSize:'0.9rem', fontWeight:400}}>Users starting at White after Feb. 2021</div>
+                <div style={{fontSize: '0.9rem', fontWeight: 400}}>Discord users since Nov. 2019</div>
             </div>
             <SankeyTest/>
+
+            <div style={headerStyle}>User Drilldown</div>
+            <UserCohorts data={data}/>
+
 
             <div style={headerStyle}>Scorecard Locks</div>
             <ScorecardLocks data={data}/>
