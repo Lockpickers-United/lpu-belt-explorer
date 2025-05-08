@@ -6367,8 +6367,10 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Picking Risk"
     ],
+    "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7471,6 +7473,10 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Picking Risk"
+    ],
+    "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41720,8 +41726,13 @@
     ],
     "lockingMechanisms": [
       "Dimple",
+      "Trap Pins",
       "Other"
     ],
+    "features": [
+      "Picking Risk"
+    ],
+    "notes": "**** **Special Picking Requirement:** requires 360 for belting;",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41825,7 +41836,7 @@
       }
     ],
     "views": 605,
-    "lastUpdated": "2025-05-01T03:02:27.103Z"
+    "lastUpdated": "2025-05-08T01:13:16.388Z"
   },
   {
     "id": "9c5f4539",
@@ -41906,6 +41917,7 @@
       "Sidepins",
       "Active sidebar"
     ],
+    "notes": "Picking risk: Some versions may contain trap pins that will require gutting to fix.",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -51517,8 +51529,10 @@
     "features": [
       "Under Review ⚑",
       "Pin-in-pin",
-      "Trap element"
+      "Trap element",
+      "Picking Risk"
     ],
+    "notes": "If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "media": [
       {

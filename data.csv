@@ -128,7 +128,7 @@ Orange,"Master Lock","1145 - 1165D",,Dimple,,,237f29c9
 Orange,"Master Lock",150,,Pin-tumbler,Unguttable,,efc01233
 Orange,"Master Lock","1921D ""100 Anniversary"" Padlock",,Pin-tumbler,,"4 pins all spools",8d67f9b7
 Orange,"Master Lock",532,,Pin-tumbler,Unguttable,,e2e15f47
-Orange,"Master Lock,Master Lock,Master Lock","570,575,576",,Pin-tumbler,Unguttable,,9ca2c109
+Orange,"Master Lock,Master Lock,Master Lock","570,575,576",,Pin-tumbler,"Unguttable,Picking Risk","Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",9ca2c109
 Orange,"Master Lock","V-line 4150",,Pin-tumbler,Unguttable,,9441e2cc
 Orange,Schlage,"Original F-series KiK with collapsible bible",,Pin-tumbler,,,50fdf847
 Orange,,SIB,,Pin-tumbler,,,74f65a9c
@@ -149,7 +149,7 @@ Orange,Yale,"5 lever sashlock","5 Lever",Lever,"Mortise,Pin key,Curtain,False ga
 Orange,Yale,Mortise,,Pin-tumbler,,,db1040e5
 Orange,Yale,"Y110 series brass padlock","all formats 40mm or larger (includes Y113 and Y114, excludes iron body disc detainer Y112)",Pin-tumbler,Unguttable,,98a2ba2d
 Orange,Yale,"Y120 series brass padlock","all formats",Pin-tumbler,Unguttable,,ea6539c8
-Green,ABUS,72/40,,Pin-tumbler,,,74a00ae3
+Green,ABUS,72/40,,Pin-tumbler,"Picking Risk","Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",74a00ae3
 Green,ABUS,"74/40 LOTO",,Pin-tumbler,Unguttable,,e42853c7
 Green,ABUS,76/40,,Pin-tumbler,Unguttable,,47e7cf73
 Green,ABUS,"80TI Titalium",,Pin-tumbler,Unguttable,,e1625c4d
@@ -673,9 +673,9 @@ Red,MIWA,SR,,Wafer,"Active sidebar",,31cd85d7
 Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
-Red,"Mottura,Mottura","Champions C55,Champions CP6",,"Dimple,Other",,,3daff112
+Red,"Mottura,Mottura","Champions C55,Champions CP6",,"Dimple,Trap Pins,Other","Picking Risk","**** **Special Picking Requirement:** requires 360 for belting;",3daff112
 Red,"Picard,Heracles","Vigie,Pericles","7 pins, euro profile",Pump/push,,,9c5f4539
-Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,9da7a5f2
+Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar","Picking risk: Some versions may contain trap pins that will require gutting to fix.",9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,112d0034
 Red,"Rosengrens,Rosengrens","32A,32A8","thin round center posts, few or no False gates","Disc detainer","Front/rear tension","Hard to navigate and manipulate and often poor feedback",4a7db3c6
 Red,"S&G,S&G","4544,4440 series",,Lever,"Safe lock,Flat steel key,False gates","S&G=Sargent & Greenleaf",2ff8a738
@@ -780,7 +780,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 1",Winkhaus,X-Tra,"≥13 pins",Dimple,"High pin count",,d1a5cd90
 "Black 2",Yanai,"R 2200M",,Dimple,"High pin count",,a8e79394
 "Black 5","Yuema,Forte","750,Enigma",,Slider,"Reverse sidebar",,0b604114
-Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element",,6f837bb4
+Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element,Picking Risk","If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",6f837bb4
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑,Image Test",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2

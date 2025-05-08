@@ -7723,7 +7723,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Picking Risk"
     ],
     "name": "Master Lock 570, 575, 576",
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -7820,7 +7821,8 @@
       }
     ],
     "views": 13696,
-    "lastUpdated": "2025-03-19T15:44:57.280Z"
+    "lastUpdated": "2025-03-19T15:44:57.280Z",
+    "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked."
   },
   "9f832458": {
     "id": "9f832458",
@@ -8881,7 +8883,11 @@
     "name": "ABUS 72/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 14901,
-    "lastUpdated": "2025-03-19T15:44:57.281Z"
+    "lastUpdated": "2025-03-19T15:44:57.281Z",
+    "features": [
+      "Picking Risk"
+    ],
+    "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked."
   },
   "e42853c7": {
     "id": "e42853c7",
@@ -37333,6 +37339,7 @@
     ],
     "lockingMechanisms": [
       "Dimple",
+      "Trap Pins",
       "Other"
     ],
     "name": "Mottura Champions C55, Champions CP6",
@@ -37412,7 +37419,11 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53171884382_79a532ef65_o.jpg"
       }
-    ]
+    ],
+    "features": [
+      "Picking Risk"
+    ],
+    "notes": "**** **Special Picking Requirement:** requires 360 for belting;"
   },
   "9c5f4539": {
     "id": "9c5f4539",
@@ -37530,7 +37541,8 @@
     "relatedIds": [
       "94ee12b7",
       "112d0034"
-    ]
+    ],
+    "notes": "Picking risk: Some versions may contain trap pins that will require gutting to fix."
   },
   "112d0034": {
     "id": "112d0034",
@@ -57004,7 +57016,8 @@
     "features": [
       "Under Review ⚑",
       "Pin-in-pin",
-      "Trap element"
+      "Trap element",
+      "Picking Risk"
     ],
     "views": 279,
     "media": [
@@ -57044,7 +57057,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53440381423_55331d01a3_o.jpg"
       }
-    ]
+    ],
+    "notes": "If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix."
   },
   "e713e7e6": {
     "id": "e713e7e6",
