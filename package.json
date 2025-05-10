@@ -8,6 +8,9 @@
     "license": "Unlicense",
     "homepage": "https://lpubelts.com",
     "type": "module",
+    "engines": {
+        "node": "18"
+    },
     "scripts": {
         "dev": "vite",
         "build": "NODE_ENV=production vite build",
