@@ -118,6 +118,48 @@ export const danBeltsFull = [
     'Project 5'
 ]
 
+export const beltRoles = [
+    'White Belt',
+    'Yellow Belt',
+    'Orange Belt',
+    'Green Belt',
+    'Blue Belt',
+    'Purple Belt',
+    'Brown Belt',
+    'Red Belt',
+    'Black Belt',
+    '1st Dan',
+    '2nd Dan',
+    '3rd Dan',
+    '4th Dan',
+    '5th Dan',
+    '6th Dan',
+    '7th Dan',
+    '8th Dan',
+    '9th Dan',
+    '10th Dan',
+    '11th Dan',
+    '12th Dan',
+    '13th Dan',
+    '14th Dan',
+    '15th Dan',
+    '16th Dan',
+    '17th Dan',
+    '18th Dan',
+    '19th Dan',
+    '20th Dan',
+    '21th Dan',
+    '22th Dan',
+    '23th Dan',
+    '24th Dan',
+    '25th Dan',
+    '26th Dan',
+    '27th Dan',
+    '28th Dan',
+    '29th Dan',
+    '30th Dan',
+]
+
 export const beltSort = (a, b) => {
     return allBelts.indexOf(a) - allBelts.indexOf(b)
 }

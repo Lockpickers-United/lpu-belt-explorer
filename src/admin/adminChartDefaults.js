@@ -1,7 +1,12 @@
+
 export const beltColors =
     ['#d5d5d5', '#d8d801', '#ed7d01', '#389700',
         '#0090de', '#634b9f', '#9d5918',
         '#ba0303', '#1a1a1a', '#373737']
+
+export const beltColorsNew = ['#d5d5d5', '#dcdc1f', '#e16936', '#34732f',
+        '#3e71bd', '#9f21e5', '#9d6837',
+        '#c52323', '#303030', '#373737']
 
 export const platformColors = ['#007de2', '#0367ba', '#005ba0', '#004fa4',
     '#063b87', '#062f6b']

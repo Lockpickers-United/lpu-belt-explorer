@@ -2,7 +2,7 @@ import React from 'react'
 import useWindowSize from '../../util/useWindowSize'
 import UserCohorts from './UserCohorts.jsx'
 import ScorecardLocks from './ScorecardLocks.jsx'
-import SankeyTest from '../../tools/testPage/SankeyTest.jsx'
+import BeltFlowSankey from '../../tools/testPage/BeltFlowSankey.jsx'
 
 export default function ScorecardExplore({data}) {
 
@@ -27,7 +27,7 @@ export default function ScorecardExplore({data}) {
                 User Belt Flows
                 <div style={{fontSize: '0.9rem', fontWeight: 400}}>Discord users since Nov. 2019</div>
             </div>
-            <SankeyTest/>
+            <BeltFlowSankey/>
 
             <div style={headerStyle}>User Drilldown</div>
             <UserCohorts data={data}/>
