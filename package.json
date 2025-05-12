@@ -34,6 +34,9 @@
         "ci-pr": "yarn lint && yarn build",
         "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
     },
+    "engines": {
+        "node": "22"
+    },
     "dependencies": {
         "@emotion/react": "^11.11.3",
         "@emotion/styled": "^11.11.0",
