@@ -17,13 +17,8 @@ dayjs.extend(utc)
 dayjs.extend(timezone)
 
 // CONFIGURATION
-const debug = true
 const filterInternal = false
 const daysToReport = 999
-
-// Server configuration (you can toggle as needed)
-let server = 'dreamhost'
-server = 'godaddy'
 
 // Date configuration (using YYYYMMDD format)
 const startDateStr = '20230220'  // YYYYMMDD
@@ -49,9 +44,6 @@ const dataDir = local
     ? '/Users/nealbayless/Documents/LOCKPICK/LPU-Belt-Explorer/Log-Analysis/dailyData/'
     : '/home/dh_m5s5pf/log-analysis/dailyData/'
 
-const geoDir = local
-    ? '/usr/local/share/GeoIP'
-    : '/home/dh_m5s5pf/log-analysis'
 
 // For mapping countries to timezones, require a JS version of your country-timezones mapping.
 // Assume countryTZ is exported as a module (e.g. an object with country codes/names as keys and arrays as values).
@@ -65,7 +57,7 @@ const ignoreFiles = ['.', '..', '.DS_Store', 'New Folder With Items']
 let logLines = 0
 let stats = {}  // Will be keyed by requestDate (YYYY-MM-DD)
 let temp = {}   // Temporary storage for min/max times and IP addresses
-let duplicateLockViews = 0
+let duplicateLockViews = 0 // eslint-disable-line
 let duplicateLockViewsByDate = {}
 
 let previousLockViewed = {} // To track duplicate lock views per IP
@@ -108,9 +100,6 @@ allDataFiles.forEach(file => {
     }
 })
 
-// START TIME
-const startTime = Date.now()
-
 // PROCESS EACH LOG FILE
 logFiles.forEach(logFileName => {
     const fullLogPath = path.join(logsPath, logFileName)
@@ -131,12 +120,12 @@ logFiles.forEach(logFileName => {
 
         let [
             , clientAddress,
-            rfc1413,
-            username,
+            //rfc1413,
+            //username,
             localTime,
             httpRequest,
-            statusCode,
-            bytesSentToClient,
+            //statusCode,
+            //bytesSentToClient,
             referer,
             clientSoftware
         ] = match
@@ -157,7 +146,6 @@ logFiles.forEach(logFileName => {
         // Split httpRequest into parts
         const httpParts = httpRequest.split(' ')
         if (httpParts.length < 2) return
-        const getPost = httpParts[0]
         const fileRequested = httpParts[1]
 
         // Only process if fileRequested contains '/i/'

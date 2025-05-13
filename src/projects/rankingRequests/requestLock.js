@@ -5,7 +5,7 @@
  * @prop redditUsername
  */
 
-import formidable from '../../util/formidable/src/index.js'
+import {formidable} from '../../util/formidable/src/index.js'
 import fs from 'fs'
 
 const {writeFile} = fs.promises
@@ -78,7 +78,7 @@ export default async function requestLock(req, res) {
         maxFileSize: 30 * 1024 * 1024,
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
         filename(name, ext, part) {
-            const {fullFilename, filepath, uploadSubDir, localsubdirs} = createFilename(part, serverPath, uploadDir)
+            const {fullFilename, filepath, localsubdirs} = createFilename(part, serverPath, uploadDir)
             filepaths.push(filepath)
             // Optionally, save uploadSubDir to a local variable (e.g. in closure) instead of global ??????
             // was: localUploadSubDir = uploadSubDir ????

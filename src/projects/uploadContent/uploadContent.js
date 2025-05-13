@@ -1,4 +1,4 @@
-import formidable from '../../util/formidable/src/index.js'
+import {formidable} from '../../util/formidable/src/index.js'
 import fs from 'fs'
 import archiver from 'archiver'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
@@ -67,7 +67,7 @@ export default async function upload(req, res) {
                 }
             })
         } catch (error) {
-            console.error('writeFile error', err)
+            console.error('writeFile error', error)
             res.status(500).send({status: 500, message: 'JSON write error'})
             return
         }
@@ -99,8 +99,8 @@ export default async function upload(req, res) {
                 console.log('Message sent: %s', email.messageId)
             } catch (error) {
                 const errorMsg = 'An error occurred sending email'
-                console.error('An error occurred sending email', errorMsg)
-                res.status(500).send({status: 500, message: 'Email send error'})
+                console.error('An error occurred sending email', error)
+                res.status(500).send({status: 500, message: errorMsg})
                 return
             }
 

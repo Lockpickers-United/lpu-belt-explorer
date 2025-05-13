@@ -204,7 +204,7 @@ async function initLockDetails() {
     for (const lockID of Object.keys(locksHash)) {
         const lock = locksHash[lockID]
         const UniqueID = lock.id
-        const lastUpdated = lock.lastUpdated
+        //const lastUpdated = lock.lastUpdated
         let fullBelt = lock.belt ? lock.belt.charAt(0).toUpperCase() + lock.belt.slice(1) : ''
         let belt = lock.belt ? lock.belt.charAt(0).toUpperCase() + lock.belt.slice(1) : 'Unranked'
         let rank = undefined

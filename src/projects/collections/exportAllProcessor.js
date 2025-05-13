@@ -17,14 +17,11 @@ const exportDir = production
 
 export default async function processExportAll() {
 
-    console.log('Running processExportAll()')
+    if (!production) console.log('Running processExportAll()')
 
     const allItemDetails = await itemDetails()
     const lockcollections = await JSON.parse(await fs.readFile(`${exportDir}/lockcollections.json`, 'utf8')).data
     const awardsData = await JSON.parse(await fs.readFile(`${exportDir}/awards.json`, 'utf8')).data
-
-    //TODO: fetch from server once live
-    const platformBeltCounts = await JSON.parse(await fs.readFile(`${exportDir}/platformBeltCounts.json`, 'utf8'))
 
     const users = {}
 
@@ -69,9 +66,9 @@ export default async function processExportAll() {
 
         awards?.forEach((id) => {
             const award = awardsData.find(a => a.awardId === id && a.userId === user.docId)
-            if (award.awardUrl.includes('discord')) {
+            if (award?.awardUrl?.includes('discord')) {
                 setDeepAdd(acc, ['awardSources', 'discord'], 1)
-            } else if (award.awardUrl.includes('reddit')) {
+            } else if (award?.awardUrl?.includes('reddit')) {
                 setDeepAdd(acc, ['awardSources', 'reddit'], 1)
             }
         })
@@ -86,13 +83,27 @@ export default async function processExportAll() {
         return acc
     }, {})
 
-    scorecardStats.platformBeltCounts = platformBeltCounts
+    const redditBeltCounts = await JSON.parse(await fs.readFile(`${serverDir}/redditBeltCounts.json`, 'utf8'))
+    const discordBeltCounts = await JSON.parse(await fs.readFile(`${serverDir}/discordBeltCounts.json`, 'utf8'))
+
+    const redditBeltCountsClean = Object.keys(redditBeltCounts).reduce((acc, belt) => {
+        const cleanBelt = belt.replace(/ Belt/, '')
+        acc[cleanBelt] = redditBeltCounts[belt]
+        return acc
+    },{})
+    const discordBeltCountsClean = Object.keys(discordBeltCounts).reduce((acc, belt) => {
+        const cleanBelt = belt.replace(/ Belt/, '')
+        acc[cleanBelt] = discordBeltCounts[belt]
+        return acc
+    },{})
+
+    scorecardStats.platformBeltCounts = {discord: redditBeltCountsClean, reddit: discordBeltCountsClean}
 
     scorecardStats.metadata = {
         date: new Date().toISOString()
     }
 
-    console.log('scorecardStats', scorecardStats)
+    if (!production) console.log('scorecardStats', scorecardStats)
 
     try {
         await fs.writeFile(`${serverDir}/scorecardStats.json`, JSON.stringify(scorecardStats, null, 2))

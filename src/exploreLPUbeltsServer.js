@@ -12,8 +12,6 @@ import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
 import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
 import processFirebaseActivityLog from './projects/logFirebaseActivity/processFirebaseActivityLog.js'
-import getRedditBelts from './projects/redditBelts/getRedditBelts.js'
-
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats

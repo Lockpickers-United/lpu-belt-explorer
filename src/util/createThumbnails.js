@@ -11,7 +11,7 @@ export default async function createThumbnails({inputFile, width = 400}) {
             return await sharp(inputFile)
                 .resize({width: width, withoutEnlargement: true})
                 .toFile(outputFile)
-                .then(info => (outputFile))
+                .then(info => (outputFile)) // eslint-disable-line no-unused-vars
     } catch (err) {
         console.error('Image processing failed, details:', err.message)
     }

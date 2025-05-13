@@ -396,7 +396,7 @@ function raflByDate() {
     for (const date in wip.days) {
         const thisDate = dayjs(date, 'YYYY-MM-DD')
         if (thisDate.isBefore(endDate.subtract(daysToReportFiltered - 1, 'day'))) continue
-        const weekend = (thisDate.day() === 0 || thisDate.day() === 6) ? 1 : 0
+        //const weekend = (thisDate.day() === 0 || thisDate.day() === 6) ? 1 : 0
         const dataRow = {
             date: date,
             dateString: thisDate.format('MM/DD'),
@@ -595,7 +595,7 @@ function pageTracking() {
     let jsonData = {}
     let columnsArray = []
     let dataArray = []
-    const reportPages = ['glossary', 'leaderboard', 'stats', 'profile', 'editprofile', 'about', 'admin', 'dials', 'other']
+    //const reportPages = ['glossary', 'leaderboard', 'stats', 'profile', 'editprofile', 'about', 'admin', 'dials', 'other']
     const pageList = {
         total: 'total',
         profile: 'profile',

@@ -24,7 +24,7 @@ Object.keys(collectionData).reduce((acc, userId) => {
                 .map(activity => allAwardsById[activity.matchId]) // eslint-disable-line
                 .filter(award => award['awardType'] === 'belt')
                 .sort((a, b) => a.rank - b.rank)
-        const cardMaxBelt = beltAwards ? beltAwards[beltAwards.length - 1] : {}
+        const cardMaxBelt = beltAwards ? beltAwards[beltAwards.length - 1] : {} // eslint-disable-line
     }
     return acc
 },{})

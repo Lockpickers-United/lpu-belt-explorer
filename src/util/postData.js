@@ -3,6 +3,8 @@ import https from 'https'
 
 export const postData = async ({user, url, formData, json, timeoutDuration = 10000}) => {
 
+    const temp = user // eslint-disable-line no-unused-vars
+
     const controller = new AbortController()
     const timeout = setTimeout(() => {
         controller.abort()

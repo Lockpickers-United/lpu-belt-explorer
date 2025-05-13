@@ -4,7 +4,6 @@ import {cleanError, postData} from './postData.js'
 export default async function postFirebaseActivity({ activityData }) {
 
     const url = `${nodeServerUrl}/log-activity`
-    const snackBars = false
     const json= JSON.stringify({ activityData })
 
     try {

@@ -1,10 +1,13 @@
 import json
 import praw
 
+#from pathlib import Path
+#current_directory_pathlib = Path.cwd()
+#print(f"Current working directory (using pathlib): {current_directory_pathlib}")
 #import os
 #print('Current working directory:', os.getcwd())
 
-with open('keys/reddit-keys.json') as f:
+with open('../../../keys/reddit-keys.json') as f:
     keys = json.load(f)
 
 reddit = praw.Reddit(

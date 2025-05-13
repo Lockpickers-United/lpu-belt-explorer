@@ -8,9 +8,12 @@ const react = require("eslint-plugin-react");
 const reactHooks = require("eslint-plugin-react-hooks");
 const _import = require("eslint-plugin-import");
 
+const fileURLToPath = require("node:url")
+
 const {
     fixupPluginRules,
     fixupConfigRules,
+    includeIgnoreFile,
 } = require("@eslint/compat");
 
 const js = require("@eslint/js");
@@ -25,7 +28,21 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+
+
 module.exports = defineConfig([{
+    settings: {
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".json"],
+            },
+        },
+        "react": {
+            "version": "detect"
+        }
+    },
+
     languageOptions: {
         globals: {
             ...globals.browser,
@@ -41,7 +58,7 @@ module.exports = defineConfig([{
     },
 
     plugins: {
-        //react,
+        react: fixupPluginRules(react),
         "react-hooks": fixupPluginRules(reactHooks),
         import: fixupPluginRules(_import),
     },
@@ -51,14 +68,6 @@ module.exports = defineConfig([{
         "plugin:react/recommended",
         "plugin:import/recommended",
     )),
-
-    settings: {
-        "import/resolver": {
-            node: {
-                extensions: [".js", ".jsx", ".json"],
-            },
-        },
-    },
 
     rules: {
         "react/prop-types": "off",

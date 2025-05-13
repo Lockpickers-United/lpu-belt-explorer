@@ -11,25 +11,31 @@ export default async function getRedditBelts(req, res) {
 
     let flairs = []
 
-    execFile('python3', ['projects/redditBelts/fetch_reddit_flairs.py'], (error, stdout, stderr) => {
+    const production = process.env.USER !== localUser
+    const baseDir = production
+        ? `/home/${prodUser}/explore-lpubelts-com-node`
+        : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node`
+
+    const serverDir = production
+        ? `/home/${prodUser}/explore.lpubelts.com/public/data`
+        : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
+
+
+    execFile('python3', [`${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`], (error, stdout, stderr) => {
         if (error) {
             console.error('Python error:', error)
             console.error('stderr:', stderr)
             return
         }
         try {
+            console.log('trying to parse stdout:', stdout)
             flairs = JSON.parse(stdout)
-            console.log(`Fetched ${flairs.length} flair entries`)
+            if (!production) console.log(`Fetched ${flairs.length} flair entries`)
         } catch (err) {
             console.error('Error parsing output:', err)
             console.log('Raw output:', stdout)
             return handleError(res, 'Error parsing output', err)
         }
-
-        const production = process.env.USER !== localUser
-        const serverDir = production
-            ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-            : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
 
         const beltCounts = flairs.reduce((acc, user) => {
             let beltName = null

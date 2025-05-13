@@ -1,7 +1,7 @@
 import {localUser, prodUser} from '../../../keys/users.js'
 import fs from 'fs'
 import dayjs from 'dayjs'
-import {setDeep, setDeepAdd} from '../../util/setDeep.js'
+import {setDeepAdd} from '../../util/setDeep.js'
 
 const local = process.env.USER === localUser
 const logsDir = local

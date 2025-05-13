@@ -121,7 +121,6 @@ export async function glossaryDetails() {
 }
 
 export async function itemDetails() {
-
     return {
         ...await lockDetails(),
         ...await safelockDetails(),
@@ -131,14 +130,6 @@ export async function itemDetails() {
     }
 }
 
-
-
 function ucfirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
-}
-
-function jsonIt(string, object) {
-    console.log(string)
-    console.log(JSON.stringify(object, null, 2))
-    console.log('--------')
 }

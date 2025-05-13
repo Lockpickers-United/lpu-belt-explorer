@@ -32,6 +32,6 @@ export function setDeepUnique(obj, path, value) {
     setDeepBase(obj, path, value, (a, b) => (a ? [...new Set([...a, b])] : [b]))
 }
 
-export function setDeepCreate(obj, path) {
-    setDeepBase(obj, path, undefined, (a, b) => a ?? b)
+export function setDeepCreate(obj, path, value=undefined) {
+    setDeepBase(obj, path, value, (a, b) => a ?? b)
 }

@@ -46,5 +46,8 @@
     "snoowrap": "^1.23.0",
     "ssl-root-cas": "^1.3.1",
     "validator": "^13.15.0"
+  },
+  "devDependencies": {
+    "eslint-config-flat-gitignore": "^2.1.0"
   }
 }

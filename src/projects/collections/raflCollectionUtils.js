@@ -27,7 +27,7 @@ export async function raflCollectionUtils() {
         })
 
         const watchlistDetails = raffleWatchlists.reduce((acc, watchlist) => {
-            const {id, raffleWatchlist} = watchlist
+            const {raffleWatchlist} = watchlist
             raffleWatchlist.map(potId => {
                 setDeepAdd(acc, ['potWatches', potId], 1)
                 setDeepAdd(acc, ['allPotWatches'], 1)
