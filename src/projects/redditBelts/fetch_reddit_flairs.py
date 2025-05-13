@@ -1,13 +1,18 @@
 import json
 import praw
-
+import sys
 #from pathlib import Path
 #current_directory_pathlib = Path.cwd()
 #print(f"Current working directory (using pathlib): {current_directory_pathlib}")
 #import os
 #print('Current working directory:', os.getcwd())
 
-with open('../../../keys/reddit-keys.json') as f:
+if len(sys.argv) > 1:
+    baseDir = sys.argv[1]
+else:
+    baseDir = "/Users/error/path"
+
+with open(f"{baseDir}/keys/reddit-keys.json") as f:
     keys = json.load(f)
 
 reddit = praw.Reddit(

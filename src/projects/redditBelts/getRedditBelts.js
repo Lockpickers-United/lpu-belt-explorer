@@ -21,7 +21,7 @@ export default async function getRedditBelts(req, res) {
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
 
 
-    execFile('python3', [`${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`], (error, stdout, stderr) => {
+        execFile('python3', [`${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`, baseDir], (error, stdout, stderr) => {
         if (error) {
             console.error('Python error:', error)
             console.error('stderr:', stderr)
