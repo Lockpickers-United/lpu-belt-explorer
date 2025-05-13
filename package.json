@@ -86,7 +86,7 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "firebase-admin": "^11.11.1",
         "node-fetch": "^3.3.2",
-        "rollup-plugin-visualizer": "^5.9.2",
+        "rollup-plugin-visualizer": "^5.14.0",
         "uuid": "^9.0.1",
         "vite": "^4.5.14"
     }
