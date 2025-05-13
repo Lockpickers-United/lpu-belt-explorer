@@ -1,3 +1,4 @@
+/* eslint-disable */
 import fs from 'node:fs/promises'
 import {fetch, CookieJar} from 'node-fetch-cookies'
 import dayjs from 'dayjs'
