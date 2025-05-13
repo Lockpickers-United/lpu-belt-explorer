@@ -1,44 +1,206 @@
 {
-  nodes: [
-    { id: 'Unranked', group: 1 },
-    { id: 'White', group: 1 },
-    { id: 'Yellow', group: 1 },
-    { id: 'Orange', group: 1 },
-    { id: 'Green', group: 1 },
-    { id: 'Blue', group: 1 },
-    { id: 'Purple', group: 1 },
-    { id: 'Red', group: 1 },
-    { id: 'Black', group: 1 },
-    { id: 'Brown', group: 1 }
+  "nodes": [
+    {
+      "id": "White",
+      "group": 1,
+      "total": 430
+    },
+    {
+      "id": "Yellow",
+      "group": 1,
+      "total": 749
+    },
+    {
+      "id": "Orange",
+      "group": 1,
+      "total": 1204
+    },
+    {
+      "id": "Green",
+      "group": 1,
+      "total": 609
+    },
+    {
+      "id": "Blue",
+      "group": 1,
+      "total": 243
+    },
+    {
+      "id": "Purple",
+      "group": 1,
+      "total": 123
+    },
+    {
+      "id": "Brown",
+      "group": 1,
+      "total": 81
+    },
+    {
+      "id": "Red",
+      "group": 1,
+      "total": 70
+    },
+    {
+      "id": "Black",
+      "group": 1,
+      "total": 169
+    }
   ],
-  links: [
-    { source: 'Unranked', target: 'White', value: 872 },
-    { source: 'White', target: 'Total', value: 872 },
-    { source: 'White', target: 'Yellow', value: 440 },
-    { source: 'White', target: 'Orange', value: 88 },
-    { source: 'White', target: 'Black', value: 1 },
-    { source: 'White', target: 'Green', value: 15 },
-    { source: 'Yellow', target: 'Total', value: 440 },
-    { source: 'Yellow', target: 'Orange', value: 217 },
-    { source: 'Yellow', target: 'Green', value: 18 },
-    { source: 'Yellow', target: 'Blue', value: 1 },
-    { source: 'Orange', target: 'Total', value: 305 },
-    { source: 'Orange', target: 'Green', value: 73 },
-    { source: 'Orange', target: 'Blue', value: 9 },
-    { source: 'Green', target: 'Total', value: 106 },
-    { source: 'Green', target: 'Blue', value: 25 },
-    { source: 'Green', target: 'Purple', value: 2 },
-    { source: 'Green', target: 'Red', value: 1 },
-    { source: 'Blue', target: 'Total', value: 35 },
-    { source: 'Blue', target: 'Purple', value: 10 },
-    { source: 'Blue', target: 'Brown', value: 2 },
-    { source: 'Purple', target: 'Total', value: 12 },
-    { source: 'Purple', target: 'Red', value: 1 },
-    { source: 'Purple', target: 'Brown', value: 3 },
-    { source: 'Red', target: 'Total', value: 4 },
-    { source: 'Red', target: 'Black', value: 1 },
-    { source: 'Black', target: 'Total', value: 2 },
-    { source: 'Brown', target: 'Total', value: 5 },
-    { source: 'Brown', target: 'Red', value: 2 }
+  "links": [
+    {
+      "source": "White",
+      "target": "Yellow",
+      "value": 533
+    },
+    {
+      "source": "White",
+      "target": "Orange",
+      "value": 119
+    },
+    {
+      "source": "White",
+      "target": "Green",
+      "value": 13
+    },
+    {
+      "source": "White",
+      "target": "Blue",
+      "value": 4
+    },
+    {
+      "source": "White",
+      "target": "Purple",
+      "value": 3
+    },
+    {
+      "source": "White",
+      "target": "Brown",
+      "value": 1
+    },
+    {
+      "source": "White",
+      "target": "Red",
+      "value": 1
+    },
+    {
+      "source": "Yellow",
+      "target": "Orange",
+      "value": 728
+    },
+    {
+      "source": "Yellow",
+      "target": "Green",
+      "value": 82
+    },
+    {
+      "source": "Yellow",
+      "target": "Blue",
+      "value": 9
+    },
+    {
+      "source": "Yellow",
+      "target": "Purple",
+      "value": 1
+    },
+    {
+      "source": "Yellow",
+      "target": "Red",
+      "value": 1
+    },
+    {
+      "source": "Orange",
+      "target": "Green",
+      "value": 512
+    },
+    {
+      "source": "Orange",
+      "target": "Blue",
+      "value": 28
+    },
+    {
+      "source": "Orange",
+      "target": "Purple",
+      "value": 3
+    },
+    {
+      "source": "Orange",
+      "target": "Black",
+      "value": 2
+    },
+    {
+      "source": "Green",
+      "target": "Blue",
+      "value": 337
+    },
+    {
+      "source": "Green",
+      "target": "Purple",
+      "value": 41
+    },
+    {
+      "source": "Green",
+      "target": "Brown",
+      "value": 10
+    },
+    {
+      "source": "Green",
+      "target": "Red",
+      "value": 7
+    },
+    {
+      "source": "Green",
+      "target": "Black",
+      "value": 4
+    },
+    {
+      "source": "Blue",
+      "target": "Purple",
+      "value": 194
+    },
+    {
+      "source": "Blue",
+      "target": "Brown",
+      "value": 27
+    },
+    {
+      "source": "Blue",
+      "target": "Red",
+      "value": 6
+    },
+    {
+      "source": "Blue",
+      "target": "Black",
+      "value": 9
+    },
+    {
+      "source": "Purple",
+      "target": "Brown",
+      "value": 146
+    },
+    {
+      "source": "Purple",
+      "target": "Red",
+      "value": 15
+    },
+    {
+      "source": "Purple",
+      "target": "Black",
+      "value": 10
+    },
+    {
+      "source": "Brown",
+      "target": "Red",
+      "value": 117
+    },
+    {
+      "source": "Brown",
+      "target": "Black",
+      "value": 12
+    },
+    {
+      "source": "Red",
+      "target": "Black",
+      "value": 98
+    }
   ]
 }

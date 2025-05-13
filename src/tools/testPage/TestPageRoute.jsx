@@ -3,7 +3,7 @@ import Nav from '../../nav/Nav.jsx'
 import Footer from '../../nav/Footer.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
 //import LockMechanismScopes from './LockMechanismScopes.jsx'
-import BeltFlowSankey from './BeltFlowSankey.jsx'
+//import BeltFlowSankey from './BeltFlowSankey.jsx'
 import BeltFlowChord from './BeltFlowChord.jsx'
 
 function TestPageRoute() {

@@ -1,79 +1,27 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 //import {jsonIt} from '../../util/jsonIt' //eslint-disable-line
 import {ResponsiveSankey} from '@nivo/sankey'
-//import sankeyData from './sankeyData.json'
+import fullData from './sankeyData.json'
 import {beltColorsNew} from '../../admin/adminChartDefaults'
 import {uniqueBelts} from '../../data/belts'
 import Link from '@mui/material/Link'
 
 export default function BeltFlowSankey() {
 
-    const fullData = useMemo(() => {
-        return {
-            nodes: [
-                {id: 'White', group: 1, total: 430},
-                {id: 'Yellow', group: 1, total: 749},
-                {id: 'Orange', group: 1, total: 1204},
-                {id: 'Green', group: 1, total: 609},
-                {id: 'Blue', group: 1, total: 243},
-                {id: 'Purple', group: 1, total: 123},
-                {id: 'Brown', group: 1, total: 81},
-                {id: 'Red', group: 1, total: 70},
-                {id: 'Black', group: 1, total: 169}
-            ],
-            links: [
-                {source: 'White', target: 'Yellow', value: 533},
-                {source: 'White', target: 'Orange', value: 119},
-                {source: 'White', target: 'Green', value: 13},
-                {source: 'White', target: 'Blue', value: 4},
-                {source: 'White', target: 'Purple', value: 3},
-                {source: 'White', target: 'Brown', value: 1},
-                {source: 'White', target: 'Red', value: 1},
-                {source: 'Yellow', target: 'Orange', value: 728},
-                {source: 'Yellow', target: 'Green', value: 82},
-                {source: 'Yellow', target: 'Blue', value: 9},
-                {source: 'Yellow', target: 'Purple', value: 1},
-                {source: 'Yellow', target: 'Red', value: 1},
-                {source: 'Orange', target: 'Green', value: 512},
-                {source: 'Orange', target: 'Blue', value: 28},
-                {source: 'Orange', target: 'Purple', value: 3},
-                {source: 'Orange', target: 'Black', value: 2},
-                {source: 'Green', target: 'Blue', value: 337},
-                {source: 'Green', target: 'Purple', value: 41},
-                {source: 'Green', target: 'Brown', value: 10},
-                {source: 'Green', target: 'Red', value: 7},
-                {source: 'Green', target: 'Black', value: 4},
-                {source: 'Blue', target: 'Purple', value: 194},
-                {source: 'Blue', target: 'Brown', value: 27},
-                {source: 'Blue', target: 'Red', value: 6},
-                {source: 'Blue', target: 'Black', value: 9},
-                {source: 'Purple', target: 'Brown', value: 146},
-                {source: 'Purple', target: 'Red', value: 15},
-                {source: 'Purple', target: 'Black', value: 10},
-                {source: 'Brown', target: 'Red', value: 117},
-                {source: 'Brown', target: 'Black', value: 12},
-                {source: 'Red', target: 'Black', value: 98}
-            ]
-        }
-
-    }, [])
     const [sankeyData, setSankeyData] = useState(fullData)
-
-    //const beltColorsOld = useMemo(() => { return ['#d5d5d5', '#d8d801', '#ed7d01', '#389700', '#0090de', '#634b9f', '#9d5918', '#ba0303', '#333', '#373737'] }, [])
-
-
     const [colors, setColors] = useState(beltColorsNew)
-
     const [filter, setFilter] = useState(undefined)
+
+    const touchTap = isTouchDevice()
 
     const handleReset = useCallback(() => {
         setSankeyData(fullData)
         setColors(beltColorsNew)
         setFilter(undefined)
-    }, [fullData])
-
+    }, [])
 
     const handleClick = useCallback((data) => {
+        if (touchTap) return
         if (!data.label || data.label === 'White' || data.label === 'Black') return
         if (data.label === filter) {
             handleReset()
@@ -95,7 +43,7 @@ export default function BeltFlowSankey() {
         setColors(newColors)
         setFilter(data.label)
 
-    }, [filter, fullData, handleReset])
+    }, [filter, handleReset, touchTap])
 
 
     return (
@@ -178,3 +126,9 @@ export default function BeltFlowSankey() {
     )
 }
 
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0) ||
+        window.matchMedia('(pointer: coarse)').matches)
+}
