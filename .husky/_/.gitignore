@@ -1,3 +1,4 @@
 *
 !husky.sh
 !pre-commit
+!pre-push
