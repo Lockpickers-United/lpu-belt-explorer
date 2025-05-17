@@ -14,6 +14,7 @@ import NewReleasesIcon from '@mui/icons-material/NewReleases'
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption'
+import CampaignIcon from '@mui/icons-material/Campaign'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -112,7 +113,7 @@ export default [
         beta: true
     },
     {
-        title: 'Explore Scorecard Sats',
+        title: 'Explore Scorecard Stats',
         icon: <InsertChartOutlinedIcon fontSize='small'/>,
         path: '/explore',
         beta: true
@@ -150,15 +151,16 @@ export default [
             },
             {
                 admin: true,
-                title: 'System Message Admin',
-                path: '/admin/systemMessages'
-            },
-            {
-                admin: true,
                 title: 'Tools',
                 path: '/tools'
             }
         ]
+    },
+    {
+        title: 'System Message Admin',
+        icon: <CampaignIcon fontSize='small'/>,
+        path: '/admin/systemMessages',
+        admin: true,
     },
     {
         title: 'More from LPU',

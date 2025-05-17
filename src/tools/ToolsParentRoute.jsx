@@ -10,8 +10,9 @@ import useData from '../util/useData.jsx'
 function ToolsParentRoute() {
     const {authLoaded} = useContext(AuthContext)
     const {adminRole} = useContext(DBContext)
-    const {user} = useContext(AuthContext)
+    const {user, userClaims} = useContext(AuthContext)
     const {getProfile} = useContext(DBContext)
+    const navigate = useNavigate()
     const userId = user ? user.uid : null
     const loadFn = useCallback(async () => {
         if (!userId) return null
@@ -25,7 +26,8 @@ function ToolsParentRoute() {
     const {data = {}, loading, error} = useData({loadFn}) // eslint-disable-line
     const profile = data
 
-    const navigate = useNavigate()
+    const toolsUser = userClaims.lpuAdmin || userClaims.admin || adminRole
+
 
     return (
         <React.Fragment>
@@ -34,9 +36,9 @@ function ToolsParentRoute() {
                 <LoadingDisplay/>
             }
 
-            {authLoaded && adminRole && <Outlet context={{profile, user}}/>}
+            {authLoaded && toolsUser && <Outlet context={{profile, user}}/>}
 
-            {authLoaded && !adminRole &&
+            {authLoaded && !toolsUser &&
                 <Fade in={true} timeout={1000}>
                     <div style={{
                         width: '320px', textAlign: 'center',

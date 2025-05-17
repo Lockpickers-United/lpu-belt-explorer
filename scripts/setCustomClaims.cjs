@@ -5,17 +5,20 @@ const app = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
+
+
 const prod = true
+
+
 const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
 
 // Custom claims to set
-const newClaims = {admin:true, requestAdmin: true}
+const newClaims = {lpuAdmin:true}
 
 // List of user IDs to update
 const users = [
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
-    {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
-    {uid: 'WMSvvuutyShfvBBYB3PmDe4fmeS2', name: 'NiXXeD'},
+    {uid: 's5iyDrszY4Nc3zR7rILCQLO7I8v2', name: 'norlin'},
 ]
 
 const team = [ // eslint-disable-line
@@ -30,6 +33,7 @@ async function updateCustomClaimsForUsers() {
         try {
             const userRecord = await admin.auth().getUser(uid)
             const currentClaims = userRecord.customClaims || {}
+            delete currentClaims.lpuMod
             const updatedClaims = {...currentClaims, ...newClaims}
             await admin.auth().setCustomUserClaims(uid, updatedClaims)
 

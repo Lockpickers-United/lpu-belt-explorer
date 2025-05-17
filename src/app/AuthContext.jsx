@@ -15,8 +15,9 @@ export function AuthProvider({children}) {
             setUser(user)
             auth.currentUser?.getIdTokenResult()
                 .then(idTokenResult => {
-                    const {admin, requestAdmin} = idTokenResult.claims
-                    setUserClaims({admin, requestAdmin})
+                    setUserClaims(Object.keys(idTokenResult.claims)
+                        .filter(claim => idTokenResult.claims[claim] === true)
+                        .reduce((acc, claim) => (acc[claim] = true, acc), {}))
                 })
                 .catch(error => {
                     console.error('Error getting token result:', error)
