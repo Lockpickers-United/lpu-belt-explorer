@@ -7,16 +7,10 @@ echo "Installing Husky..."
 yarn add husky --dev
 
 echo "Setting up Husky Git hooks..."
-npx husky install
-
-echo "Adding 'prepare' script to package.json..."
-# Uses jq to avoid manual edits
-if ! grep -q '"prepare"' package.json; then
-  jq '.scripts.prepare = "husky install"' package.json > tmp.$$.json && mv tmp.$$.json package.json
-fi
+npx husky init
 
 echo "Adding pre-push lint hook..."
-npx husky add .husky/pre-push "yarn eslint \"./src/**\" \"./scripts/**\" --max-warnings=0"
+echo "yarn eslint \"./src/**\" \"./scripts/**\" --max-warnings=0" > .husky/_/pre-push
 
 echo "Ensuring .husky/_/husky.sh is included..."
 # Modify ignore rule so husky.sh is not excluded
