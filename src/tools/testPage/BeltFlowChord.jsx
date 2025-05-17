@@ -12,6 +12,8 @@ export const beltColorsNew = ['#d5d5d5', '#dcdc1f', '#e16936', '#34732f',
 
 export default function BeltFlowChord() {
 
+    const foo = 'bar'
+
     const months = Object.keys(monthlyChordData).sort((a, b) => {
         return dayjs(a).valueOf() - dayjs(b).valueOf()
     })
