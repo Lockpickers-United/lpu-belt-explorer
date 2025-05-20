@@ -7,10 +7,17 @@ import belts, {beltSort, beltSortReverse} from '../data/belts'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import collectionStatsById from '../data/collectionStatsById.json'
+import useData from '../util/useData.jsx'
+import {lockbazzarEntryIds} from '../data/dataUrls'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
+
+    const {data, loading, error} = useData({urls})
+    const lockbazzarIds = useMemo(() => {
+        return data && !loading && !error ? data.lockbazzarEntryIds : []
+    },[data, error, loading])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -40,7 +47,7 @@ export function DataProvider({children, allEntries, profile}) {
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 collectionSaves: collectionStatsById[entry.id] || 0,
-                simpleBelt: entry.belt.replace(/\s\d/g, '')
+                simpleBelt: entry.belt.replace(/\s\d/g, ''),
             }))
     }, [allEntries, profile])
 
@@ -111,13 +118,18 @@ export function DataProvider({children, allEntries, profile}) {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
+    const lockbazzarAvailable = useCallback(id => {
+        return lockbazzarIds?.includes(id)
+    }, [lockbazzarIds])
+
     const value = useMemo(() => ({
         allEntries,
         visibleEntries,
         getEntryFromId,
         expandAll,
-        profile
-    }), [allEntries, getEntryFromId, visibleEntries, expandAll, profile])
+        profile,
+        lockbazzarAvailable
+    }), [allEntries, getEntryFromId, visibleEntries, expandAll, profile, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>
@@ -127,5 +139,7 @@ export function DataProvider({children, allEntries, profile}) {
 }
 
 const fuzzySortKeys = ['fuzzy']
+
+const urls = {lockbazzarEntryIds}
 
 export default DataContext

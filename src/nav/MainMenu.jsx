@@ -8,25 +8,21 @@ import Stack from '@mui/material/Stack'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
-import {useNavigate} from 'react-router-dom'
 import AppContext from '../app/AppContext'
 import DBContext from '../app/DBContext'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
+import AuthContext from '../app/AuthContext.jsx'
 
 function MainMenu() {
     const {beta} = useContext(AppContext)
     const {adminRole} = useContext(DBContext)
+    const {userClaims} = useContext(AuthContext)
     const [open, setOpen] = useState(false)
-    const navigate = useNavigate()
 
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('m', handleHotkey)
-
-    const goHome = useCallback(() => { // eslint-disable-line
-        navigate('/locks')
-    }, [navigate])
 
     const openDrawer = useCallback(() => {
         setOpen(true)
@@ -39,7 +35,13 @@ function MainMenu() {
         <React.Fragment>
             <Tooltip title='Main Menu' arrow disableFocusListener>
                 <IconButton edge='start' color='inherit' onClick={openDrawer}
-                            style={{backgroundColor: '#181818', height: '36px', width: '36px', marginLeft: '-8px', marginTop:6}}
+                            style={{
+                                backgroundColor: '#181818',
+                                height: '36px',
+                                width: '36px',
+                                marginLeft: '-8px',
+                                marginTop: 6
+                            }}
                 >
                     <MenuIcon/>
                 </IconButton>
@@ -65,8 +67,11 @@ function MainMenu() {
 
                     {menuConfig
                         .filter(menuItem => beta || !menuItem.beta)
-                        .filter(menuItem => adminRole  || !menuItem.admin)
+                        .filter(menuItem => adminRole || !menuItem.admin)
                         .filter(menuItem => !menuItem.hidden)
+                        .filter(menuItem =>
+                            !(menuItem.userClaims && !menuItem.userClaims.some(claim => userClaims.includes(claim)))
+                        )
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>
                                 <MainMenuItem

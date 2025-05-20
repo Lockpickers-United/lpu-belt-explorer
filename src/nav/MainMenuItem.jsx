@@ -5,7 +5,7 @@ import queryString from 'query-string'
 import React, {useCallback} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 
-function MainMenuItem({menuItem, onClose, child}) {
+function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -38,13 +38,19 @@ function MainMenuItem({menuItem, onClose, child}) {
 
     const color = isCurrentRoute ? '#18aa18' : null
 
+    const finalDiv = childIndex + 1 === childCount
+        ? <div style={{height: 10}}/>
+        : undefined
+
     const style = child
-        ? {padding: '5px 0px 9px 48px', margin: '0px 0px 2px 0px', color}
+        ? {padding: '5px 0px 9px 48px', margin: '0px 15px 1px 28px', color}
         : {padding: '14px 0px 14px 24px', color}
 
     const coloredIcon = icon
         ? React.cloneElement(icon, {style: {color}})
         : null
+
+    const numChildren = children ? children.length : 0
 
     return (
         <React.Fragment>
@@ -56,6 +62,7 @@ function MainMenuItem({menuItem, onClose, child}) {
                 }
                 <ListItemText>{title}</ListItemText>
             </MenuItem>
+            {finalDiv}
 
             {children && children.map((childItem, childIndex) =>
                     <MainMenuItem
@@ -63,6 +70,9 @@ function MainMenuItem({menuItem, onClose, child}) {
                         key={childIndex}
                         menuItem={childItem}
                         onClose={onClose}
+                        style={style}
+                        childCount={numChildren}
+                        childIndex={childIndex}
                     />
             )}
         </React.Fragment>

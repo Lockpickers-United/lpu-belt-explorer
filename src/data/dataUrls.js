@@ -6,6 +6,8 @@ if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
     console.info('Attention: App is using LOCAL DATA.')
 }
 
+export const lockbazzarEntryIds = 'https://data.lpulocks.com/lockbazaar/lockbazzarEntryIds.json'
+
 export const collectionsStatsCurrent = `${url}/collectionStatsCurrent.json`
 export const collectionStatsDaily = `${url}/collectionStatsDaily.json`
 export const leaderboardData = `${url}/leaderboardData.json`

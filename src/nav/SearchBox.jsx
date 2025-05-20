@@ -15,8 +15,8 @@ import {useHotkeys} from 'react-hotkeys-hook'
 
 function SearchBox({label, extraFilters = [], keepOpen}) {
     const [searchParams] = useSearchParams()
-    const {filters, addFilters, removeFilter, isFiltered} = useContext(FilterContext)
-    const [text, setText] = useState(filters.search || '')
+    const {addFilters, removeFilter, isFiltered} = useContext(FilterContext)
+    const [text, setText] = useState(searchParams.get('search') || '')
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
 
@@ -33,12 +33,9 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
     const handleChange = useCallback(event => {
         const {value} = event.target
         setText(value)
-        if (value.length === 0) {
-            removeFilter('search', '')
-        }
-    }, [removeFilter])
+    }, [])
 
-    const debounceText = useDebounce(text, 250).replaceAll('\t', ' ')
+    const debounceText = useDebounce(text.replaceAll('\t', ' '), 250)
     useEffect(() => {
         if (!!debounceText && debounceText !== searchParams.get('search')) {
             if (debounceText) {
@@ -50,10 +47,14 @@ function SearchBox({label, extraFilters = [], keepOpen}) {
                     ...extraFilters
                 ], true)
             } else {
+                // TODO isn't this useless?
+                console.log('SearchBox: debounceText is empty')
                 addFilters([
                     {key: 'search', value: debounceText}
                 ], true)
             }
+        } else if (!debounceText) {
+            removeFilter('search', '')
         }
     }, [debounceText]) // eslint-disable-line
 

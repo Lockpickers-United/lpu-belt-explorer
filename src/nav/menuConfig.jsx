@@ -15,6 +15,7 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption'
 import CampaignIcon from '@mui/icons-material/Campaign'
+import AssessmentIcon from '@mui/icons-material/Assessment'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -91,6 +92,12 @@ export default [
         path: '/stats'
     },
     {
+        title: 'More Scorecard Stats',
+        icon: <InsertChartOutlinedIcon fontSize='small'/>,
+        path: '/explore',
+        beta: true
+    },
+    {
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
@@ -113,16 +120,16 @@ export default [
         beta: true
     },
     {
-        title: 'Explore Scorecard Stats',
-        icon: <InsertChartOutlinedIcon fontSize='small'/>,
-        path: '/explore',
-        beta: true
-    },
-    {
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
+        path: '/tools',
+        userClaims: ['admin', 'lpuAdmin'],
+    },
+    {
+        title: 'Reports',
+        icon: <AssessmentIcon fontSize='small'/>,
         path: '/admin',
-        admin: true,
+        userClaims: ['admin', 'lpuAdmin'],
         children: [
             {
                 admin: true,
@@ -148,11 +155,6 @@ export default [
                 admin: true,
                 title: 'Black Belt Report',
                 path: '/admin/blackBelts'
-            },
-            {
-                admin: true,
-                title: 'Tools',
-                path: '/tools'
             }
         ]
     },

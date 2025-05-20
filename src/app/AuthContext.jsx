@@ -6,7 +6,7 @@ const AuthContext = React.createContext({})
 
 export function AuthProvider({children}) {
     const [user, setUser] = useState({})
-    const [userClaims, setUserClaims] = useState({})
+    const [userClaims, setUserClaims] = useState([])
     const [authLoaded, setAuthLoaded] = useState(false)
 
     useEffect(() => {
@@ -16,8 +16,7 @@ export function AuthProvider({children}) {
             auth.currentUser?.getIdTokenResult()
                 .then(idTokenResult => {
                     setUserClaims(Object.keys(idTokenResult.claims)
-                        .filter(claim => idTokenResult.claims[claim] === true)
-                        .reduce((acc, claim) => (acc[claim] = true, acc), {}))
+                        .filter(claim => idTokenResult.claims[claim] === true))
                 })
                 .catch(error => {
                     console.error('Error getting token result:', error)

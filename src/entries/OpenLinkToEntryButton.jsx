@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip'
 import entryName from './entryName'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
-function CopyLinkToEntryButton({entry, nameType}) {
+function OpenLinkToEntryButton({entry, nameType}) {
 
     const openInNewTab = useCallback(() => {
         const name =  entryName(entry, nameType)
@@ -24,4 +24,4 @@ function CopyLinkToEntryButton({entry, nameType}) {
     )
 }
 
-export default CopyLinkToEntryButton
+export default OpenLinkToEntryButton

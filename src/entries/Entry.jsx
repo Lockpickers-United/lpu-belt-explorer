@@ -26,6 +26,7 @@ import {allEntriesById, upgradeTree} from './entryutils'
 import {beltSort} from '../data/belts'
 import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
+import OpenLinkToLockbazaarButton from './OpenLinkToLockbazaarButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 
 function Entry({entry, expanded, onExpand}) {
@@ -42,7 +43,7 @@ function Entry({entry, expanded, onExpand}) {
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
-    }, [entry.id, onExpand])
+    }, [entry, onExpand])
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
@@ -192,27 +193,36 @@ function Entry({entry, expanded, onExpand}) {
                                 <LockImageGallery entry={entry}/>
                             }/>
                         }
-                        {
-                            !!entry.links?.length &&
-                            <FieldValue name='Links' value={
-                                <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
-                                    {entry.links.map(({title, url}, index) =>
-                                        <Button
-                                            key={index}
-                                            href={url}
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                            color='secondary'
-                                            variant='outlined'
-                                            sx={{textTransform: 'none'}}
-                                            style={{margin: 4}}
-                                        >
-                                            {title}
-                                        </Button>
-                                    )}
-                                </Stack>
+
+                        <div style={{display: 'flex'}}>
+                            {
+                                !!entry.links?.length &&
+                                <FieldValue name='Links' value={
+                                    <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
+                                        {entry.links.map(({title, url}, index) =>
+                                            <Button
+                                                key={index}
+                                                href={url}
+                                                target='_blank'
+                                                rel='noopener noreferrer'
+                                                color='secondary'
+                                                variant='outlined'
+                                                sx={{textTransform: 'none'}}
+                                                style={{margin: 4}}
+                                            >
+                                                {title}
+                                            </Button>
+                                        )}
+                                    </Stack>
+                                }/>
+                            }
+
+                            <FieldValue name='For sale' style={{marginLeft: 15}} value={
+                                <OpenLinkToLockbazaarButton entry={entry} buttonType={'text'}/>
                             }/>
-                        }
+
+
+                        </div>
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
                         <div style={{display: 'flex', width: '100%'}}>
