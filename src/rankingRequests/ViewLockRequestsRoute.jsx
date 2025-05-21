@@ -14,7 +14,7 @@ export default function ViewLockRequestsRoute() {
     usePageTitle('View Ranking Requests')
     const {user, userClaims} = useContext(AuthContext)
     const {lockCollection} = useContext(DBContext)
-    const requestMod = userClaims?.requestAdmin || userClaims?.admin
+    const requestMod = ['requestAdmin', 'admin'].some(claim => userClaims.includes(claim))
     const {isMobile} = useWindowSize()
 
     const rankingRequests = useOutletContext()

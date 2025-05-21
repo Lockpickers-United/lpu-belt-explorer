@@ -26,8 +26,7 @@ function ToolsParentRoute() {
     const {data = {}, loading, error} = useData({loadFn}) // eslint-disable-line
     const profile = data
 
-    const toolsUser = userClaims.lpuAdmin || userClaims.admin || adminRole
-
+    const toolsUser = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole
 
     return (
         <React.Fragment>

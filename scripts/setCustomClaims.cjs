@@ -7,18 +7,17 @@ const app = admin.initializeApp({
 })
 
 
-const prod = true
+const prod = false
 
 
 const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
 
 // Custom claims to set
-const newClaims = {admin:true}
+const newClaims = {lpuAdmin:true}
 
 // List of user IDs to update
 const users = [
-    {uid: 'mZyfQIARjCP1uJJJc7ioMAALV9v2', name: 'peace'},
-    {uid: 'XoUDXU5McjTuVnPA1xfmzytcKuy2', name: 'Red Wanderer'},
+    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
 ]
 
 const team = [ // eslint-disable-line
@@ -43,7 +42,7 @@ async function updateCustomClaimsForUsers() {
             const ref = db.doc(`/user-claims-info/${uid}`)
             await ref.set({...updatedClaims, name})
 
-            //console.log(`Updated custom claims for user ${uid} (${userRecord.displayName})`, updatedClaims)
+            console.log(`Updated custom claims for user ${uid} (${userRecord.displayName})`, updatedClaims)
         } catch (error) {
             console.error(`Error updating custom claims for user ${uid}:`, error)
         }

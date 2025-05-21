@@ -17,7 +17,6 @@
     "lint": "eslint \"./src/**\" \"./scripts/**\"",
     "import": "node ./scripts/import.js",
     "import-dan": "node ./scripts/importDan.js",
-    "prepare": "husky",
     "refreshRaflPreview": "node ./scripts/refreshRaflPreview.js",
     "updateRaflForm": "node ./scripts/updateRaflForm.js",
     "migrate-recorded": "node ./scripts/migrateRecorded.js",
