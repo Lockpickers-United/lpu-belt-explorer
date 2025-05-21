@@ -129,7 +129,7 @@ function OpenLinkToLockbazaarButton({entry, buttonType = 'text', nameType}) {
                                     style={{margin: '8px 0px 3px 0px', height: 32}}>
                                 CLOSE
                             </Button>
-                            <Button variant='contained' size='small' color='info'
+                            <Button variant='outlined' size='small' color='info'
                                     onClick={() => openInNewTab(undefined)}
                                     style={{margin: '8px 0px 3px 10px', height: 32}}>
                                 Browse lpulocks.com
