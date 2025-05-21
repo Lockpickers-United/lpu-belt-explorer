@@ -225,39 +225,39 @@ function UserInfoRoute({mostPopular}) {
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>any</td>
-                                        <td>{profile.any.length}</td>
+                                        <td>{profile?.any?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>own</td>
-                                        <td>{profile.own.length}</td>
+                                        <td>{profile?.own?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>picked</td>
-                                        <td>{profile.picked.length}</td>
+                                        <td>{profile?.picked?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>recorded</td>
-                                        <td>{profile.recorded.length}</td>
+                                        <td>{profile?.recorded?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>wishlist</td>
-                                        <td>{profile.wishlist.length}</td>
+                                        <td>{profile?.wishlist?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>safelocksAny</td>
-                                        <td>{profile.safelocksAny.length}</td>
+                                        <td>{profile?.safelocksAny?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>safelocksCracked</td>
-                                        <td>{profile.safelocksCracked.length}</td>
+                                        <td>{profile?.safelocksCracked?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>safelocksOwn</td>
-                                        <td>{profile.safelocksOwn.length}</td>
+                                        <td>{profile?.safelocksOwn?.length}</td>
                                     </tr>
                                     <tr>
                                         <td style={varStyle}>safelocksWishlist</td>
-                                        <td>{profile.safelocksWishlist.length}</td>
+                                        <td>{profile?.safelocksWishlist?.length}</td>
                                     </tr>
 
 
