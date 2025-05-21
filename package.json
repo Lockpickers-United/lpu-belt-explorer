@@ -54,7 +54,7 @@
     "@pdf-lib/fontkit": "^1.1.1",
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.9.0",
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.13",
     "fast-levenshtein": "^3.0.0",
     "firebase": "^11.7.1",
     "fuzzysort": "^3.1.0",
