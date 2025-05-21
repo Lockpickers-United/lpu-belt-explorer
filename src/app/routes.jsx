@@ -491,6 +491,13 @@ export default [
         }
     },
     {
+        path: '/userinfo',
+        lazy: async () => {
+            const {default: UserInfoRoute} = await import('../userinfo/UserInfoRoute.jsx')
+            return {element: <UserInfoRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },

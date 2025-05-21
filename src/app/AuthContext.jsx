@@ -16,7 +16,8 @@ export function AuthProvider({children}) {
             auth.currentUser?.getIdTokenResult()
                 .then(idTokenResult => {
                     setUserClaims(Object.keys(idTokenResult.claims)
-                        .filter(claim => idTokenResult.claims[claim] === true))
+                        .filter(claim => idTokenResult.claims[claim] === true)
+                        .filter(claim => claim !== 'email_verified'))
                 })
                 .catch(error => {
                     console.error('Error getting token result:', error)
