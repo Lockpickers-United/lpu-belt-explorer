@@ -79,7 +79,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
-    "@vitejs/plugin-react": "^4.0.4",
+    "@vitejs/plugin-react": "^4.4.1",
     "csv-parse": "^5.5.0",
     "entities": "^4.5.0",
     "eslint": "^8.49.0",
