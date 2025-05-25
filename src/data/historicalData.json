@@ -37423,7 +37423,7 @@
     "features": [
       "Picking Risk"
     ],
-    "notes": "**** **Special Picking Requirement:** requires 360 for belting;"
+    "notes": "**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. "
   },
   "9c5f4539": {
     "id": "9c5f4539",
@@ -37541,8 +37541,7 @@
     "relatedIds": [
       "94ee12b7",
       "112d0034"
-    ],
-    "notes": "Picking risk: Some versions may contain trap pins that will require gutting to fix."
+    ]
   },
   "112d0034": {
     "id": "112d0034",
