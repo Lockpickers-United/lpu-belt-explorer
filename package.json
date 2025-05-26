@@ -38,7 +38,7 @@
     "globals": "^16.1.0",
     "googleapis": "^148.0.0",
     "joi": "^17.13.3",
-    "moment-timezone": "^0.5.48",
+    "moment-timezone": "^0.6.0",
     "node-fetch": "^3.3.2",
     "node-fetch-cookies": "^2.1.1",
     "nodemailer": "^7.0.3",
