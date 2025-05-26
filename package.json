@@ -58,7 +58,7 @@
     "firebase": "^11.7.1",
     "fuzzysort": "^3.1.0",
     "joi": "^17.10.1",
-    "notistack": "^3.0.1",
+    "notistack": "^3.0.2",
     "pdf-lib": "^1.17.1",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
