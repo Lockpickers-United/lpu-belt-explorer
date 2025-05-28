@@ -66,9 +66,9 @@ function ToolsRoute() {
                                   fontSize: '1.1rem',
                                   fontWeight: 700
                               }}>
-                            Fetch Reddit Belt Data
+                            Belt Distribution Data & Refresh
                         </Link><br/>
-                        Fetches Reddit flair data and saves details to server. Allows user to copy data to clipboard.
+                        Displays belt distribution data. Can refresh Reddit flairs, screenshot, copy data to clipboard.
                     </div>
 
                     <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>

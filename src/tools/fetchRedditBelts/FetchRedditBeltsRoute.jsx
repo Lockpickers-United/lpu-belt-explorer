@@ -23,8 +23,7 @@ export default function FetchRedditBeltsRoute() {
 
     return (
         <React.Fragment>
-            <Nav title='Fetch Reddit Belt Data' extras={nav}/>
-
+            <Nav title='Belt Distribution Data' extras={nav}/>
 
             {error && <ErrorMessage errorMessage={errorMessage}/>}
 
