@@ -1906,5 +1906,41 @@
     "name": "Yale 500+",
     "dateAdded": "2025-02-16T07:00:27.000Z",
     "dateDeleted": "2025-02-17T13:29:55.000Z"
+  },
+  {
+    "id": "5bbe7375",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Yale",
+        "model": "B-ED"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "media": [
+      {
+        "title": "By: fabianoh130",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53719086463_4986f05d3d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53719086463/in/album-72177720316941313/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53719086463_cdf3f4af97_o.jpg"
+      },
+      {
+        "title": "By: fabianoh130",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53719216429_ca5ffcccda_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53719216429/in/album-72177720316941313/",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53719216429_48b9565c6f_o.jpg"
+      }
+    ],
+    "lastUpdated": "2025-03-06T16:44:00.341Z",
+    "name": "Yale B-ED",
+    "dateAdded": "2025-03-06T00:34:59.000Z",
+    "dateDeleted": "2025-06-02T19:44:16.275Z"
   }
 ]
