@@ -16049,7 +16049,7 @@
         "model": "EC850"
       }
     ],
-    "version": "serrated pin version, not 700/800",
+    "version": "T-spools and recessed pins version, not 700/800",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -17715,13 +17715,13 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "S (with circle)"
+        "model": "S"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM S (with circle)",
+    "name": "DOM S",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -59564,7 +59564,8 @@
     ],
     "lastUpdated": "2025-03-06T16:44:00.341Z",
     "name": "Yale B-ED",
-    "dateAdded": "2025-03-06T00:34:59.000Z"
+    "dateAdded": "2025-03-06T00:34:59.000Z",
+    "dateDeleted": "2025-06-02T19:44:16.275Z"
   },
   "e35a3c91": {
     "id": "e35a3c91",

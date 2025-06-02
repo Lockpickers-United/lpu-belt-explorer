@@ -304,7 +304,7 @@ Blue,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated an
 Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,E90",,Pin-tumbler,,,5c0d870b
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
-Blue,"ABUS,ABUS","EC750,EC850","serrated pin version, not 700/800",Dimple,,,3515caae
+Blue,"ABUS,ABUS","EC750,EC850","T-spools and recessed pins version, not 700/800",Dimple,,,3515caae
 Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element,Image Test","require 360° picking",d005e7b8
 Blue,ABUS,GDS,"with barrels",Pin-tumbler,"Barrel drivers",,3df9c95f
 Blue,"ABUS,ABUS","Integral,Pfaffenhain Integral","with 6 main row pins and >= 5 side pins",Pin-tumbler,,,8606220a
@@ -344,7 +344,7 @@ Blue,DOM,Plura,,Pin-tumbler,"Magic DOM drivers",,96591a8f
 Blue,DOM,"R Plus",,Pin-tumbler,,,2e67118d
 Blue,DOM,RN,"standard cylinder",Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
 Blue,DOM,"RS Sigma",,Pin-tumbler,"Magic DOM drivers",,1dd28bf9
-Blue,DOM,"S (with circle)",,Pin-tumbler,,,9aa8821a
+Blue,DOM,S,,Pin-tumbler,,,9aa8821a
 Blue,DOM,SC,,Pin-tumbler,,,05979a42
 Blue,DOM,SV,,Pin-tumbler,,,95b2c7b0
 Blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
@@ -890,7 +890,6 @@ Unranked,,War-Lok,,,"Under Review ⚑",,fa9fb7e1
 Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e
 Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5
-Unranked,Yale,B-ED,,Pin-tumbler,"Under Review ⚑",,5bbe7375
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
 Unranked,Yale,YE3B,,,"Under Review ⚑",,ad6b0d8f
 Unranked,Yardeni,10,,Dimple,"Under Review ⚑","9 pins, 2 spools more restricted keyway than XL model",0757b1ed
