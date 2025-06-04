@@ -90,6 +90,6 @@
     "node-fetch": "^3.3.2",
     "rollup-plugin-visualizer": "^5.14.0",
     "uuid": "^9.0.1",
-    "vite": "^4.5.14"
+    "vite": "^6.3.5"
   }
 }
