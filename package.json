@@ -83,7 +83,7 @@
     "entities": "^4.5.0",
     "eslint": "^8.49.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "firebase-admin": "^11.11.1",
     "husky": "^9.1.7",
