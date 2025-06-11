@@ -12,6 +12,8 @@ import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
 import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
 import processFirebaseActivityLog from './projects/logFirebaseActivity/processFirebaseActivityLog.js'
+import getRedditBelts from './projects/redditBelts/getRedditBelts.js'
+//import {localUser} from '../keys/users.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
@@ -24,8 +26,15 @@ const prod = true
 const ports = prod ? {http: 8080, https: 8443} : {http: 3000, https: 3443}
 const envText = prod ? '' : ' (DEV)'
 
-const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
-const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
+const keysDir = prod
+    ? `/home/${process.env.USER}/explore-lpubelts-com-node/keys`
+    : `/Users/${process.env.USER}/Documents/GitHub/explore-lpubelts-com-node/keys`
+
+
+//  /home/dh_m5s5pf/explore-lpubelts-com-node/keys
+
+const privateKey = fs.readFileSync(`${keysDir}/server.key`, 'utf8')
+const certificate = fs.readFileSync(`${keysDir}/server.crt`, 'utf8')
 const credentials = {key: privateKey, cert: certificate}
 
 const app = express()
@@ -62,12 +71,14 @@ app.post('/upload', async (req, res) => {
 
 
 app.post('/request-lock', async (req, res) => {
+    req.body = req.body || {}
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request submitted' + envText)
     await requestLock(req, res).then()
 })
 
 app.post('/update-request', async (req, res) => {
+    req.body = req.body || {}
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request update' + envText)
     await updateRequest(req, res).then()
@@ -96,13 +107,13 @@ app.get('/process-firebase-log', async (req, res) => {
     })
 })
 
-/*
 
 app.post('/fetch-reddit-flairs', async (req, res) => {
     myEmitter.emit('myEvent', 'Reddit flair fetch requested')
     await getRedditBelts(req, res)
 })
 
+/*
 
 app.get('/refresh-preview', async (req, res) => {
     myEmitter.emit('myEvent', 'Preview refresh requested')

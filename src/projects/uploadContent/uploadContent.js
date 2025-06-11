@@ -26,7 +26,7 @@ export default async function upload(req, res) {
         uploadDir: uploadDir,
         keepExtensions: true,
         createDirsFromUploads: true,
-        maxFileSize: 30 * 1024 * 1024, // 30MB
+        maxFileSize: 100 * 1024 * 1024, // 100MB
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
         filename(name, ext, part) {
             const {originalFilename} = part

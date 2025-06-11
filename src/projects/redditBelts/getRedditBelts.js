@@ -20,15 +20,16 @@ export default async function getRedditBelts(req, res) {
         ? `/home/${prodUser}/explore.lpubelts.com/public/data`
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
 
+console.log('baseDir', `${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`)
 
-        execFile('python3', [`${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`, baseDir], (error, stdout, stderr) => {
+    execFile('python3', [`${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`, baseDir], (error, stdout, stderr) => {
         if (error) {
             console.error('Python error:', error)
             console.error('stderr:', stderr)
             return
         }
         try {
-            console.log('trying to parse stdout:', stdout)
+            //console.log('trying to parse stdout:', stdout)
             flairs = JSON.parse(stdout)
             if (!production) console.log(`Fetched ${flairs.length} flair entries`)
         } catch (err) {

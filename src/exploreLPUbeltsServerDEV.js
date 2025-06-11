@@ -12,6 +12,7 @@ import upload from './projects/uploadContent/uploadContent.js'
 import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
 import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
 import processFirebaseActivityLog from './projects/logFirebaseActivity/processFirebaseActivityLog.js'
+import getRedditBelts from './projects/redditBelts/getRedditBelts.js'
 
 //import importRaflData from './projects/importRaflData/importRaflData.js'
 //import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
@@ -23,8 +24,8 @@ const prod = false
 const ports = prod ? {http: 8080, https: 8443} : {http: 3000, https: 3443}
 const envText = prod ? '' : ' (DEV)'
 
-const privateKey = fs.readFileSync('./keys/server.key', 'utf8')
-const certificate = fs.readFileSync('./keys/server.crt', 'utf8')
+const privateKey = fs.readFileSync('../keys/server.key', 'utf8')
+const certificate = fs.readFileSync('../keys/server.crt', 'utf8')
 const credentials = {key: privateKey, cert: certificate}
 
 const app = express()
@@ -67,18 +68,21 @@ app.post('/request-lock', async (req, res) => {
 })
 
 app.post('/update-request', async (req, res) => {
+    req.body = req.body || {}
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request update' + envText)
     await updateRequest(req, res).then()
 })
 
 app.post('/request-vote', async (req, res) => {
+    req.body = req.body || {}
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request vote update' + envText)
     await updateVotes(req, res).then()
 })
 
 app.post('/log-activity', async (req, res) => {
+    console.log('req.body', req.body)
     const {prod} = req.body
     const logEnvText = prod ? '' : ' (from DEV)'
     myEmitter.emit('myEvent', 'Log Firebase Activity requested' + logEnvText)
@@ -95,6 +99,11 @@ app.get('/process-firebase-log', async (req, res) => {
     })
 })
 
+app.post('/fetch-reddit-flairs', async (req, res) => {
+    myEmitter.emit('myEvent', 'Reddit flair fetch requested')
+    await getRedditBelts(req, res)
+})
+
 /*
 
 app.post('/uploadRedditBelts', async (req, res) => {
@@ -104,11 +113,6 @@ app.post('/uploadRedditBelts', async (req, res) => {
     processRedditBeltsUpload(req, res)
 })
 
-
-app.post('/fetch-reddit-flairs', async (req, res) => {
-    myEmitter.emit('myEvent', 'Reddit flair fetch requested')
-    await getRedditBelts(req, res)
-})
 
 app.get('/refresh-preview', async (req, res) => {
     myEmitter.emit('myEvent', 'Preview refresh requested')

@@ -37,6 +37,7 @@
     "geoip-lite": "^1.4.10",
     "globals": "^16.1.0",
     "googleapis": "^148.0.0",
+    "hexoid": "^2.0.0",
     "joi": "^17.13.3",
     "moment-timezone": "^0.5.48",
     "node-fetch": "^3.3.2",

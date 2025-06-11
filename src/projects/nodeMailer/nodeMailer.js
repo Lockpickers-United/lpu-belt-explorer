@@ -23,7 +23,7 @@ export async function sendEmail(content) {
         subject: content.subject,               // Subject line
         text: content.text,                     // plain text body
         html: content.html,                     // html body
-        attachments: content.attachments,     // array of attachment objects
+        attachments: content.attachments,       // array of attachment objects
     })
 
 }

@@ -128,7 +128,15 @@ const monthlyChanges = roleChangesFlat.reduce((acc, change) => {
 
 // SANKEY DATA
 
-const nodes = belts.map(belt => {
+
+
+
+let tempBelts = ['Unranked', ...belts]
+
+console.log('belts', belts)
+
+
+const nodes = tempBelts.map(belt => {
     const beltName = belt.replace(' Belt', '')
     return {
         id: beltName,
@@ -138,6 +146,8 @@ const nodes = belts.map(belt => {
 }).sort((a, b) => {
     return beltSort(a.id, b.id)
 })
+
+
 
 
 const flowTotalsByMonth = roleChanges.flowsByTime
@@ -189,7 +199,7 @@ const flowsByMonth = roleChanges.flowsByTime
 
 // Sankey Totals Only
 
-const links = belts.reduce((acc, belt) => {
+const links = tempBelts.reduce((acc, belt) => {
     const beltName = belt.replace(' Belt', '')
 
     const month = dayjs().format('YYYY-MM')
@@ -212,6 +222,14 @@ const links = belts.reduce((acc, belt) => {
         || beltSort(a.target, b.target)
         || b.value - a.value
 })
+
+const sankeyDataTot = {nodes, links}
+
+jsonIt('sankeyDataTot', sankeyDataTot)
+
+process.exit()
+
+
 
 // Sankey Monthly
 

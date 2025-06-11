@@ -84,7 +84,8 @@ async function getAllData() {
         const safelock = safelockDdata[doc.data().projectId]
         const project = projectData[doc.data().projectId]
         const entry = lock || safelock || project
-        const belt = entry.belt || null
+        if (!entry) return
+        const belt = entry?.belt || null
         const date = dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
         setDeepPush(fullDb, ['evidence'], {
             ...doc.data(),
