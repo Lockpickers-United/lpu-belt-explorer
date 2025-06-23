@@ -111,7 +111,6 @@ export default [
         title: 'Suggest a Lock',
         icon: <EnhancedEncryptionIcon fontSize='small'/>,
         path: '/rankingrequests/submit',
-        beta: true
     },
     {
         title: 'Recent Changes',
