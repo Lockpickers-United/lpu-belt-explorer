@@ -6091,7 +6091,7 @@
   },
   "aa15b066": {
     "id": "aa15b066",
-    "belt": "Orange",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "BASI",
@@ -6134,7 +6134,7 @@
   },
   "7b4ce02a": {
     "id": "7b4ce02a",
-    "belt": "Orange",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "BASI",
@@ -6724,12 +6724,16 @@
       {
         "make": "DOM",
         "model": "RN"
+      },
+      {
+        "make": "DOM",
+        "model": "R"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM RN",
+    "name": "DOM RN, R",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1235,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
@@ -9806,6 +9810,18 @@
       {
         "make": "ABUS",
         "model": "Y14"
+      },
+      {
+        "make": "ABUS",
+        "model": "Vitess 1000"
+      },
+      {
+        "make": "ABUS",
+        "model": "Vitess 2000"
+      },
+      {
+        "make": "ABUS",
+        "model": "Vitess 4000"
       }
     ],
     "lockingMechanisms": [
@@ -9877,10 +9893,11 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20Y%2014%20DELTUS_310.html"
       }
     ],
-    "name": "ABUS V14, XV14, Y14",
+    "name": "ABUS V14, XV14, Y14, Vitess 1000, Vitess 2000, Vitess 4000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1296,
-    "lastUpdated": "2025-03-19T15:44:57.282Z"
+    "lastUpdated": "2025-03-19T15:44:57.282Z",
+    "version": "5-pin version"
   },
   "304df868": {
     "id": "304df868",
@@ -15969,12 +15986,16 @@
       {
         "make": "ABUS",
         "model": "E90"
+      },
+      {
+        "make": "Wuerth",
+        "model": "NP (6-pin)"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS E20, E30, E60, E70, E90",
+    "name": "ABUS E20, E30, E60, E70, E90 / Wuerth NP (6-pin)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 7343,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
@@ -16049,7 +16070,7 @@
         "model": "EC850"
       }
     ],
-    "version": "serrated pin version, not 700/800",
+    "version": "T-spools and recessed pins version, not 700/800",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -17715,13 +17736,13 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "S (with circle)"
+        "model": "S"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM S (with circle)",
+    "name": "DOM S",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -19693,6 +19714,10 @@
       {
         "make": "M&C",
         "model": "Color+"
+      },
+      {
+        "make": "M&C",
+        "model": "Minos"
       }
     ],
     "version": "<4 sliders",
@@ -19742,7 +19767,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52913773576_f0aa56067c_o.jpg"
       }
     ],
-    "name": "M&C Color, Color Pro, Color+",
+    "name": "M&C Color, Color Pro, Color+, Minos",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 765,
     "lastUpdated": "2025-03-18T23:29:31.274Z"
@@ -21060,6 +21085,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54259196048_355d617c56_o.jpg"
       }
+    ],
+    "features": [
+      "High pin count"
     ]
   },
   "8b5b655e": {
@@ -26491,6 +26519,10 @@
         "model": "Color+"
       },
       {
+        "make": "M&C",
+        "model": "Minos"
+      },
+      {
         "make": "Vachette",
         "model": "V-DIS"
       },
@@ -26508,7 +26540,7 @@
       "False gates",
       "Active sidebar"
     ],
-    "name": "M&C Color, Color Pro, Color+ / Vachette V-DIS, V-DIS+",
+    "name": "M&C Color, Color Pro, Color+, Minos / Vachette V-DIS, V-DIS+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 801,
     "lastUpdated": "2025-03-19T15:44:57.298Z",
@@ -42179,10 +42211,6 @@
       {
         "make": "Fichet-Bauche",
         "model": "M3B"
-      },
-      {
-        "make": "Fichet-Bauche",
-        "model": "MxB"
       }
     ],
     "lockingMechanisms": [
@@ -42295,7 +42323,7 @@
         "url": "http://lockwiki.com/index.php/Fichet_M3b"
       }
     ],
-    "name": "Fichet-Bauche M2B, M3B, MxB",
+    "name": "Fichet-Bauche M2B, M3B",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1248,
     "lastUpdated": "2025-03-19T15:44:57.313Z"
@@ -53245,9 +53273,6 @@
         "model": "5000"
       }
     ],
-    "features": [
-      "High pin count"
-    ],
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "name": "Sepa 5000",
     "dateAdded": "2023-08-03T13:21:21.000Z",
@@ -55335,13 +55360,17 @@
       {
         "make": "ABUS",
         "model": "E50"
+      },
+      {
+        "make": "Citadel",
+        "model": "N"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "lastUpdated": "2025-03-18T23:29:31.269Z",
-    "name": "ABUS E50",
+    "name": "ABUS E50 / Citadel N",
     "dateAdded": "2023-09-02T16:13:00.000Z",
     "media": [
       {
@@ -56746,7 +56775,7 @@
   },
   "7c6efd49": {
     "id": "7c6efd49",
-    "belt": "Unranked",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "Codkey",
@@ -56757,7 +56786,7 @@
     "name": "Codkey Locksys L52",
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "features": [
-      "Under Review ⚑"
+      "Dual core"
     ],
     "views": 203,
     "media": [
@@ -58611,6 +58640,10 @@
       {
         "make": "BASI",
         "model": "BM"
+      },
+      {
+        "make": "Titan",
+        "model": "i6"
       }
     ],
     "lockingMechanisms": [
@@ -58620,7 +58653,7 @@
       "DOM torpedos and drivers"
     ],
     "lastUpdated": "2025-03-19T15:44:57.283Z",
-    "name": "BASI BM",
+    "name": "BASI BM / Titan i6",
     "dateAdded": "2025-01-09T16:22:30.000Z",
     "media": [
       {
@@ -59212,10 +59245,24 @@
         "model": "V14"
       },
       {
+        "make": "ABUS",
         "model": "XV14"
       },
       {
+        "make": "ABUS",
         "model": "Y14"
+      },
+      {
+        "make": "ABUS",
+        "model": "Vitess 1000"
+      },
+      {
+        "make": "ABUS",
+        "model": "Vitess 2000"
+      },
+      {
+        "make": "ABUS",
+        "model": "Vitess 4000"
       }
     ],
     "version": "6-pin version with AS pins or Pfaffenhain pins",
@@ -59223,8 +59270,9 @@
       "Pin-tumbler"
     ],
     "lastUpdated": "2025-02-16T07:00:26.261Z",
-    "name": "ABUS V14 / XV14  / Y14",
-    "dateAdded": "2025-02-16T07:00:27.000Z"
+    "name": "ABUS V14, XV14, Y14, Vitess 1000, Vitess 2000, Vitess 4000",
+    "dateAdded": "2025-02-16T07:00:27.000Z",
+    "notes": "require 360° picking"
   },
   "c643eca2": {
     "id": "c643eca2",
@@ -59342,18 +59390,19 @@
   },
   "93c49314": {
     "id": "93c49314",
-    "belt": "Unranked",
+    "belt": "Brown",
     "makeModels": [
       {
         "make": "ASSA",
         "model": "Desmo RC"
       }
     ],
-    "version": "10 pins",
+    "version": "10 sliders, no mastered pins",
     "features": [
-      "Under Review ⚑"
+      "Unsprung sliders",
+      "Active sidebar"
     ],
-    "notes": "Removable Core",
+    "notes": "** **Special Picking Requirement:** Must be picked to control",
     "media": [
       {
         "title": "By: Sidepicks",
@@ -59376,7 +59425,10 @@
     ],
     "lastUpdated": "2025-03-19T15:44:57.319Z",
     "name": "ASSA Desmo RC",
-    "dateAdded": "2025-03-04T01:17:33.000Z"
+    "dateAdded": "2025-03-04T01:17:33.000Z",
+    "lockingMechanisms": [
+      "Slider"
+    ]
   },
   "08c823ed": {
     "id": "08c823ed",
@@ -59564,7 +59616,8 @@
     ],
     "lastUpdated": "2025-03-06T16:44:00.341Z",
     "name": "Yale B-ED",
-    "dateAdded": "2025-03-06T00:34:59.000Z"
+    "dateAdded": "2025-03-06T00:34:59.000Z",
+    "dateDeleted": "2025-06-02T19:44:16.275Z"
   },
   "e35a3c91": {
     "id": "e35a3c91",
@@ -59929,5 +59982,129 @@
     ],
     "name": "Thirard Axira",
     "dateAdded": "2025-04-29T16:39:13.651Z"
+  },
+  "6a51a8b7": {
+    "id": "6a51a8b7",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "GEZE",
+        "model": "Standard"
+      }
+    ],
+    "version": "5 standard pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "GEZE Standard",
+    "dateAdded": "2025-06-10T16:49:06.283Z"
+  },
+  "098cc99c": {
+    "id": "098cc99c",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Lockwood",
+        "model": "312"
+      },
+      {
+        "make": "Lockwood",
+        "model": "412"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "name": "Lockwood 312, 412",
+    "dateAdded": "2025-06-10T16:49:06.284Z"
+  },
+  "b8e2aa32": {
+    "id": "b8e2aa32",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Lockwood",
+        "model": "120/30"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Lockwood 120/30",
+    "dateAdded": "2025-06-10T16:49:06.284Z"
+  },
+  "e8bc5023": {
+    "id": "e8bc5023",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "A90"
+      },
+      {
+        "make": "ABUS",
+        "model": "C95"
+      }
+    ],
+    "version": "new pinning like C83, but 1-2 standard anti-drill stacks",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ABUS A90, C95",
+    "dateAdded": "2025-06-10T16:49:06.285Z"
+  },
+  "e5a61936": {
+    "id": "e5a61936",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Mauer",
+        "model": "MLS Redline"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Mauer MLS Redline",
+    "dateAdded": "2025-06-10T16:49:06.285Z"
+  },
+  "92482cc9": {
+    "id": "92482cc9",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Jixin",
+        "model": "Z03"
+      },
+      {
+        "make": "Jasafe",
+        "model": "Z03"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidepins"
+    ],
+    "name": "Jixin Z03 / Jasafe Z03",
+    "dateAdded": "2025-06-10T16:49:06.288Z"
+  },
+  "3b374cfc": {
+    "id": "3b374cfc",
+    "belt": "Black 3",
+    "makeModels": [
+      {
+        "make": "Fichet-Bauche",
+        "model": "MPX"
+      }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "notes": "** **Special Picking Requirement:** Must be picked clockwise.",
+    "name": "Fichet-Bauche MPX",
+    "dateAdded": "2025-06-10T16:49:06.292Z"
   }
 }
