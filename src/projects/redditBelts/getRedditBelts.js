@@ -20,7 +20,7 @@ export default async function getRedditBelts(req, res) {
         ? `/home/${prodUser}/explore.lpubelts.com/public/data`
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
 
-console.log('baseDir', `${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`)
+//console.log('baseDir', `${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`)
 
     execFile('python3', [`${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`, baseDir], (error, stdout, stderr) => {
         if (error) {
