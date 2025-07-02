@@ -21,7 +21,6 @@ function ProfilePage({profile, owner}) {
             <div style={{
                 maxWidth: 700, padding: 0, backgroundColor: '#222',
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16,
-                justifyItems: 'center',
             }}>
 
             <ProfileHeader profile={profile} page={'collection'} owner={owner}/>
