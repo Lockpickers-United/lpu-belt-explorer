@@ -15,17 +15,16 @@ function ProfilePage({profile, owner}) {
     const defExpanded = useDeferredValue(expanded)
 
 
-
     return (
         <React.Fragment>
             <div style={{
                 maxWidth: 700, padding: 0, backgroundColor: '#222',
-                marginLeft: 'auto', marginRight: 'auto', marginTop: 16,
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 16
             }}>
 
-            <ProfileHeader profile={profile} page={'collection'} owner={owner}/>
-            <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
-            <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
+                <ProfileHeader profile={profile} page={'collection'} owner={owner}/>
+                <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
+                <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
 
                 {compact
                     ? <CompactEntries entries={visibleEntries}/>
@@ -39,8 +38,9 @@ function ProfilePage({profile, owner}) {
                     )
                 }
 
-                <RandomProfileEntryButton onSelect={setExpanded}/>
-
+                <div style={{textAlign: 'center'}}>
+                    <RandomProfileEntryButton onSelect={setExpanded}/>
+                </div>
             </div>
 
 
