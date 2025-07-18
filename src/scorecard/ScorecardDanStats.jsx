@@ -53,8 +53,8 @@ export default function ScorecardDanStats({profile, owner}) {
         enqueueSnackbar('Request copied to clipboard. Take it over to #belt-requests!')
     }, [cardEligibleDan, safeName, user?.uid, userId])
 
-    const nextBBLocks = Math.max(0, nextDan.bbLocks - cardBBCount)
-    const nextBBPoints = Math.max(0, nextDan.points - cardDanPoints)
+    const nextBBLocks = currentDanLevel < 20 ? Math.max(0, nextDan?.bbLocks - cardBBCount) : 0
+    const nextBBPoints = currentDanLevel < 20 ? Math.max(0, nextDan?.points - cardDanPoints) : 0
 
     return (
         <div style={{display: 'flex'}}>
@@ -83,7 +83,8 @@ export default function ScorecardDanStats({profile, owner}) {
                 }
                 <div style={{marginBottom: 5}}>Unique Locks <strong>{cardUniqueLocks}</strong></div>
                 <div style={{marginBottom: 5}}>Black Belt Locks <strong>{cardBBCount}</strong></div>
-                {profile.danLevel > 0 &&
+
+                {currentDanLevel > 0 && currentDanLevel < 20 &&
                     <React.Fragment>
                         <div style={{fontSize: '0.85rem'}}>
                             {nextBBPoints} point{nextBBPoints !== 1 && 's'} and {nextBBLocks} BB
@@ -102,7 +103,14 @@ export default function ScorecardDanStats({profile, owner}) {
                         </div>
                     </React.Fragment>
                 }
-            </div>
+
+                {currentDanLevel === 20 &&
+                    <div style={{fontSize: '0.85rem'}}>
+                        You&#39;ve reached the highest Dan level. Congratulations!
+                    </div>
+                }
+
+                    </div>
             <div style={{textAlign: 'right', minWidth: 20}}>
                 <ScoringExceptions/>
             </div>

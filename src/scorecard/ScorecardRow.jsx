@@ -134,6 +134,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
 
     const titleSize = isAward ? '1.1rem' : '1rem'
     const bgColor = isAward ? '#121212' : ''
+    const iconColor = activity.name === 'Dan 20' ? 'ffff2c' : '#87c048'
 
     const style = {
         maxWidth: 700,
@@ -163,7 +164,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                         }
                         {activity.awardType === 'dan' &&
                             <div style={{margin: '0px 12px 0px 5px'}}><SportsMartialArtsIcon
-                                style={{color: '#87c048'}}/></div>
+                                style={{color: iconColor}}/></div>
                         }
                         {activity.awardType === 'hof' &&
                             <div style={{margin: '0px 12px 0px 5px'}}><EmojiEventsIcon

@@ -47,7 +47,7 @@ const belts = {
         'Dan 17': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
         'Dan 18': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
         'Dan 19': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
-        'Dan 20': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
+        'Dan 20': {color: '#ffff2c', lineColor: '#ffff2c', danPoints: 50},
         'Dan 21': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
         'Dan 22': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
         'Dan 23': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
