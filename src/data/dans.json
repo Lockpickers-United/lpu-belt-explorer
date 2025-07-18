@@ -103,5 +103,10 @@
     "level": 20,
     "points": 2215,
     "bbLocks": 40
+  },
+  {
+    "level": 21,
+    "points": 9999,
+    "bbLocks": 99
   }
 ]
