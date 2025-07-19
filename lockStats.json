@@ -553,26 +553,26 @@
       {
         "segment": "Ranked locks",
         "count": 791,
-        "media": 742,
-        "coverage": "93%"
+        "media": 747,
+        "coverage": "94%"
       },
       {
         "segment": "All locks",
         "count": 906,
-        "media": 833,
-        "coverage": "91%"
+        "media": 838,
+        "coverage": "92%"
       }
     ],
-    "uniqueImages": 4030,
-    "contributors": 305,
+    "uniqueImages": 4101,
+    "contributors": 306,
     "topPhotographers": [
+      {
+        "contributor": "LockPickingFisherman",
+        "images": 341
+      },
       {
         "contributor": "mgsecure",
         "images": 330
-      },
-      {
-        "contributor": "LockPickingFisherman",
-        "images": 291
       },
       {
         "contributor": "PeaceWeapon",
@@ -584,7 +584,7 @@
       },
       {
         "contributor": "Luboš Čech",
-        "images": 180
+        "images": 178
       },
       {
         "contributor": "Ben-on-reddit",
@@ -596,6 +596,10 @@
       },
       {
         "contributor": "Dra9i",
+        "images": 70
+      },
+      {
+        "contributor": "Sidepicks",
         "images": 70
       },
       {
@@ -615,10 +619,6 @@
         "images": 61
       },
       {
-        "contributor": "Sidepicks",
-        "images": 61
-      },
-      {
         "contributor": "Yabende",
         "images": 61
       },
@@ -631,12 +631,12 @@
         "images": 53
       },
       {
-        "contributor": "Septclues",
-        "images": 50
+        "contributor": "Erik Weisz",
+        "images": 52
       },
       {
-        "contributor": "Erik Weisz",
-        "images": 49
+        "contributor": "Septclues",
+        "images": 50
       },
       {
         "contributor": "NCR",
@@ -983,6 +983,14 @@
         "images": 6
       },
       {
+        "contributor": "Florida Man Picks",
+        "images": 6
+      },
+      {
+        "contributor": "Moturist",
+        "images": 6
+      },
+      {
         "contributor": "Pyrolock",
         "images": 6
       },
@@ -1064,6 +1072,10 @@
       },
       {
         "contributor": "Potti314",
+        "images": 5
+      },
+      {
+        "contributor": "SafeAF_orElse",
         "images": 5
       },
       {
@@ -1247,10 +1259,6 @@
         "images": 3
       },
       {
-        "contributor": "Florida Man Picks",
-        "images": 3
-      },
-      {
         "contributor": "Frosty",
         "images": 3
       },
@@ -1316,10 +1324,6 @@
       },
       {
         "contributor": "Plazz7",
-        "images": 3
-      },
-      {
-        "contributor": "SafeAF_orElse",
         "images": 3
       },
       {
@@ -1671,6 +1675,10 @@
         "images": 1
       },
       {
+        "contributor": "maxathousand",
+        "images": 1
+      },
+      {
         "contributor": "McFierce",
         "images": 1
       },
@@ -1684,10 +1692,6 @@
       },
       {
         "contributor": "Mick777oz",
-        "images": 1
-      },
-      {
-        "contributor": "Moturist",
         "images": 1
       },
       {
@@ -1789,6 +1793,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-06-30 17:22"
+    "updatedDateTime": "2025-07-19 00:46"
   }
 }
