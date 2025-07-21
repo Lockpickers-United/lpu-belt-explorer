@@ -240,6 +240,66 @@
     ]
   },
   {
+    "id": "103f91f3",
+    "tier": "T12",
+    "name": "Dan Points, Cease & Desist",
+    "belt": "Dan Points 25",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Dan Points, Cease & Desist"
+      }
+    ]
+  },
+  {
+    "id": "54590400",
+    "tier": "T13",
+    "name": "Dan Points, Lock Improvement",
+    "belt": "Dan Points 30",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Dan Points, Lock Improvement"
+      }
+    ]
+  },
+  {
+    "id": "a3e737c7",
+    "tier": "T11",
+    "name": "Dan Points, Picking guide",
+    "belt": "Dan Points 10",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Dan Points, Picking guide"
+      }
+    ]
+  },
+  {
+    "id": "faa80f3b",
+    "tier": "T11",
+    "name": "Dan Points, Public Talk",
+    "belt": "Dan Points 10",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Dan Points, Public Talk"
+      }
+    ]
+  },
+  {
+    "id": "7258227c",
+    "tier": "T10",
+    "name": "Dan Points, Reference Document",
+    "belt": "Dan Points 5",
+    "makeModels": [
+      {
+        "make": "",
+        "model": "Dan Points, Reference Document"
+      }
+    ]
+  },
+  {
     "id": "26889b66",
     "tier": "T1",
     "name": "Disc Detainer Pick Making, tier 1",
