@@ -182,8 +182,8 @@ const projects = projectsData
         const name = item.Name
         const tier = item.Tier
         const makeModels = [{make: '', model: item.Name}]
-        const projectBelts = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5']
-        const projectTiers = ['T1', 'T2', 'T3', 'T4', 'T5']
+        const projectBelts = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Dan Points 5', 'Dan Points 10', 'Dan Points 25', 'Dan Points 30']
+        const projectTiers = ['T1', 'T2', 'T3', 'T4', 'T5', 'T10', 'T11', 'T12', 'T13']
         const belt = projectBelts[projectTiers.indexOf(item.Tier)]
         return {
             id,

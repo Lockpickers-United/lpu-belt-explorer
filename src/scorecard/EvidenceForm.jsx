@@ -170,7 +170,11 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                             options={entryValues}
                             style={{maxWidth: 400, marginBottom: 10, marginTop: 5}}
                             onInputChange={(event, newInputValue) => {
-                                setEntryName(newInputValue)
+                                if (entryValues.includes(newInputValue)) {
+                                    setEntryName(newInputValue)
+                                } else {
+                                    setEntryName(null)
+                                }
                                 setUpdated(true)
                             }}
                             renderInput={(params) => <TextField {...params} label={fieldLabel} color='secondary'/>}

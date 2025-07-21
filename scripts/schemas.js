@@ -125,7 +125,7 @@ export const danSchema = Joi.object({
 export const projectSchema = Joi.array().items(
     Joi.object({
         Name: Joi.string().min(1),
-        Tier: Joi.string().valid('T1', 'T2', 'T3', 'T4', 'T5'),
+        Tier: Joi.string().valid('T1', 'T2', 'T3', 'T4', 'T5', 'T10', 'T11', 'T12', 'T13'),
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow('')
     }).unknown()
 )
