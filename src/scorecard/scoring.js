@@ -78,9 +78,9 @@ function calculateScoreForUser(allActivity) {
             }
         } else {
             const [collidedIdx, collidedId] = usedIds[act.matchId] ? usedIds[act.matchId] : [null, null]
-            const allowDuplicate = ['T10', 'T11', 'T12', 'T13'].includes(allProjectsById[act.matchId]?.tier)
+            const allowMultiple = allProjectsById[act.matchId]?.allowMultiple
 
-            if (collidedIdx && act.points <= scoredActivity[collidedIdx].points && !allowDuplicate) {
+            if (collidedIdx && act.points <= scoredActivity[collidedIdx].points && !allowMultiple) {
                 scoredActivity[idx] = {
                     ...act,
                     exceptionType: 'duplicate',
@@ -88,7 +88,7 @@ function calculateScoreForUser(allActivity) {
                     points: 0
                 }
             } else {
-                if (collidedIdx && !allowDuplicate) {
+                if (collidedIdx && !allowMultiple) {
                     scoredActivity[collidedIdx] = {
                         ...sortedActivity[collidedIdx],
                         exceptionType: 'duplicate',

@@ -179,19 +179,24 @@ console.log('Processing project data...')
 const projects = projectsData
     .map(item => {
         const id = item['Unique ID']
+        const allowMultiple = item['Allow Multiple']
         const name = item.Name
         const tier = item.Tier
         const makeModels = [{make: '', model: item.Name}]
         const projectBelts = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Dan Points 5', 'Dan Points 10', 'Dan Points 25', 'Dan Points 30']
         const projectTiers = ['T1', 'T2', 'T3', 'T4', 'T5', 'T10', 'T11', 'T12', 'T13']
         const belt = projectBelts[projectTiers.indexOf(item.Tier)]
-        return {
+        const project = {
             id,
             tier,
             name,
             belt,
             makeModels
         }
+        if (allowMultiple === 'Yes' || allowMultiple === 'TRUE') {
+            project.allowMultiple = true
+        }
+        return project
     })
     .sort((a, b) => a.name.localeCompare(b.name))
 

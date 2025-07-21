@@ -249,7 +249,8 @@
         "make": "",
         "model": "Dan Points, Cease & Desist"
       }
-    ]
+    ],
+    "allowMultiple": true
   },
   {
     "id": "54590400",
@@ -261,7 +262,8 @@
         "make": "",
         "model": "Dan Points, Lock Improvement"
       }
-    ]
+    ],
+    "allowMultiple": true
   },
   {
     "id": "a3e737c7",
@@ -273,7 +275,8 @@
         "make": "",
         "model": "Dan Points, Picking guide"
       }
-    ]
+    ],
+    "allowMultiple": true
   },
   {
     "id": "faa80f3b",
@@ -285,7 +288,8 @@
         "make": "",
         "model": "Dan Points, Public Talk"
       }
-    ]
+    ],
+    "allowMultiple": true
   },
   {
     "id": "7258227c",
@@ -297,7 +301,8 @@
         "make": "",
         "model": "Dan Points, Reference Document"
       }
-    ]
+    ],
+    "allowMultiple": true
   },
   {
     "id": "26889b66",
