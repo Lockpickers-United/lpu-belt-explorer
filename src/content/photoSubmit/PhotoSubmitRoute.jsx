@@ -14,7 +14,7 @@ export default function PhotoSubmitRoute() {
 
     const {profile, user} = useOutletContext()
 
-    usePageTitle('LPU Belt Explorer - Submit Photos')
+    usePageTitle('Contribute Photos')
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
@@ -23,7 +23,7 @@ export default function PhotoSubmitRoute() {
     return (
         <FilterProvider>
             <DataProvider allEntries={allEntries} profile={profile}>
-                <Nav title='Submit Photos' extras={extras}/>
+                <Nav title='Contribute Photos' extras={extras}/>
 
                 {profile && !profile.photoCredit &&
                     <div style={{marginTop: 20, padding: '0px 0px'}}>

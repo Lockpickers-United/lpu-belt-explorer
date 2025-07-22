@@ -14,13 +14,13 @@ import AutoCompleteBox from '../formUtils/AutoCompleteBox.jsx'
 import Link from '@mui/material/Link'
 import Checkbox from '@mui/material/Checkbox'
 import {Collapse} from '@mui/material'
-import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
 import DataContext from '../context/DataContext.jsx'
 import {serverUrl} from './rankingRequestData'
 import {postData} from '../formUtils/postData.jsx'
 import {enqueueSnackbar} from 'notistack'
+import SubNav from '../nav/SubNav.jsx'
 
 /**
  * @prop newBrand
@@ -178,9 +178,6 @@ function RequestLock() {
         ]
     }, [])
     const navigate = useNavigate()
-    const handleChange = useCallback(newValue => {
-        navigate(newValue.page)
-    }, [navigate])
 
     const brandBoxOpacity = form.altBrand > 0 ? 0.5 : 1
     const {isMobile, flexStyle} = useWindowSize()
@@ -190,17 +187,13 @@ function RequestLock() {
     return (
 
         <React.Fragment>
-
-            <div style={{marginBottom: 20, marginTop: 1}}>
-                <ChoiceButtonGroup options={options} onChange={handleChange} defaultValue={options[0].label}/>
-            </div>
+            <SubNav options={options} defaultValue={options[0].label}/>
 
             <div style={{
                 maxWidth: 720, padding: 0,
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
             }}>
                 <div style={{marginBottom: 30, marginRight: paddingLeft, lineHeight: '1.5rem'}}>
-                    <div style={{fontSize: '1.3rem', fontWeight: 700, marginBottom:10}}>Suggest a Lock</div>
                     The lock ranking process for Lockpickers United is a detailed one. It&#39;s a community process and
                     identifying new locks for ranking is a big part of it. Use the form below to submit a lock for
                     ranking. A lot of work goes into adding a new lock to the belt rankings, please provide as much

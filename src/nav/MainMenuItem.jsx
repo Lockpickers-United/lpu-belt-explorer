@@ -44,7 +44,7 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
 
     const style = child
         ? {padding: '5px 0px 9px 48px', margin: '0px 15px 1px 28px', color}
-        : {padding: '14px 0px 14px 24px', color}
+        : {padding: '14px 30px 14px 24px',color}
 
     const coloredIcon = icon
         ? React.cloneElement(icon, {style: {color}})

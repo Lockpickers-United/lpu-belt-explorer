@@ -150,7 +150,7 @@ function PhotoSubmit({profile, user}) {
                   onSubmit={handleFileUpload}>
 
                 <div>
-                    <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Select Lock</div>
+                    <div style={{fontSize: '1.5rem', fontWeight: 500, margin: '30px 0px 10px'}}>Select Lock</div>
                     <div style={{opacity: searchBoxOpacity}}>
                         <LockEntrySearchBox handleChangeLock={handleChangeLock} allEntries={allEntries}
                                             disabled={altLock} reset={reset}/>

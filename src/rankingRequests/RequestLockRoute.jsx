@@ -12,7 +12,7 @@ import {useOutletContext} from 'react-router-dom'
 
 export default function RequestLockRoute() {
 
-    usePageTitle('Lock Ranking Request')
+    usePageTitle('Request a Lock')
 
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
@@ -28,7 +28,7 @@ export default function RequestLockRoute() {
         <FilterProvider filterFields={lockRequestFilterFields}>
             <DataProvider allEntries={combinedEntries} profile={lockCollection}>
 
-                <Nav title='Lock Ranking Request' extras={extras}/>
+                <Nav title='Lock Requests' extras={extras}/>
                 <RequestLock/>
 
             </DataProvider>

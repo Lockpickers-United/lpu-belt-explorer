@@ -1,13 +1,11 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useContext, useMemo, useState} from 'react'
 import LockRequestEntry from './LockRequestEntry.jsx'
 import DataContext from '../locks/LockDataProvider.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import SearchFilterBar from '../filters/SearchFilterBar.jsx'
 import {lockRequestSortFields} from '../data/sortFields'
-import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 import Link from '@mui/material/Link'
-import {useNavigate} from 'react-router-dom'
-
+import SubNav from '../nav/SubNav.jsx'
 
 export default function ViewLockRequests({requestMod}) {
 
@@ -21,16 +19,10 @@ export default function ViewLockRequests({requestMod}) {
             {label: 'View Requests', page: '/rankingrequests/view'}
         ]
     }, [])
-    const navigate = useNavigate()
-    const handleChange = useCallback(newValue => {
-        navigate(newValue.page)
-    }, [navigate])
 
     return (
         <React.Fragment>
-            <div style={{marginBottom: 20, marginTop: 1}}>
-                <ChoiceButtonGroup options={options} onChange={handleChange} defaultValue={options[1].label}/>
-            </div>
+            <SubNav options={options} defaultValue={options[1].label}/>
 
             <div style={{
                 maxWidth: 720, padding: 0,
@@ -38,8 +30,10 @@ export default function ViewLockRequests({requestMod}) {
             }}>
 
                 {requestMod &&
-                    <Link onClick={() => console.log('visibleEntries', visibleEntries)}
-                          style={{color: '#444', cursor: 'pointer', marginLeft:10}}>LOG</Link>
+                    <div style={{textAlign: 'right', marginRight: 7, marginBottom: 5}}>
+                        <Link onClick={() => console.log('visibleEntries', visibleEntries)}
+                              style={{color: '#444', cursor: 'pointer', marginLeft: 10}}>LOG</Link>
+                    </div>
                 }
 
                 <SearchFilterBar sortValues={lockRequestSortFields} label={'Lock Requests'} resetAll={true}/>

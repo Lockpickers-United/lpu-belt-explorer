@@ -14,7 +14,12 @@ function Nav({extras, extrasTwo, title}) {
     const {isFiltered} = useContext(FilterContext)
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
-    const spacer = isMobile && extrasTwo ? 20 : 0
+    const spacer = isMobile
+        ? extrasTwo
+            ? 20
+            : 6
+        : 0
+
     const flexStyle = !isMobile ? 'flex' : 'block'
 
     return (

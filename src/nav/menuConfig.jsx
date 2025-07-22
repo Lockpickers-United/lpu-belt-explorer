@@ -108,7 +108,7 @@ export default [
         path: '/content',
     },
     {
-        title: 'Suggest a Lock',
+        title: 'Request a Lock',
         icon: <EnhancedEncryptionIcon fontSize='small'/>,
         path: '/rankingrequests/submit',
     },
@@ -164,18 +164,22 @@ export default [
         admin: true,
     },
     {
-        title: 'More from LPU',
+        title: 'More from LPUlocks.com',
         icon: <LPU_logo style={{height: 20}}/>,
         expanded: true,
         separator: true,
         children: [
             {
-                title: 'LPUlocks.com Lock Bazaar',
+                title: 'Lock Bazaar Browser',
                 path: 'https://lpulocks.com/#/lockbazaar'
             },
             {
-                title: 'LPUlocks.com Speed Picks',
+                title: 'Speed Picks',
                 path: 'https://lpulocks.com/#/speedpicks'
+            },
+            {
+                title: 'Challenge Locks',
+                path: 'https://lpulocks.com/#/challengelocks'
             }
         ]
     }
