@@ -26,7 +26,7 @@ export default function ViewLockRequestsRoute() {
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
             <DataProvider allEntries={rankingRequests} profile={lockCollection}>
-                <Nav title='Lock Requests' extras={extras}/>
+                <Nav title='View Lock Requests' extras={extras}/>
 
                 <ViewLockRequests user={user} requestMod={requestMod}/>
 

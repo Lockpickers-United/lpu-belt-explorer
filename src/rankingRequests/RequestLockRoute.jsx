@@ -28,7 +28,7 @@ export default function RequestLockRoute() {
         <FilterProvider filterFields={lockRequestFilterFields}>
             <DataProvider allEntries={combinedEntries} profile={lockCollection}>
 
-                <Nav title='Lock Requests' extras={extras}/>
+                <Nav title='Request a Lock' extras={extras}/>
                 <RequestLock/>
 
             </DataProvider>
