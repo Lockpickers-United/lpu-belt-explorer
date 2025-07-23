@@ -74,7 +74,7 @@ function PhotoSubmit({profile, user}) {
 
         const url = 'https://explore.lpubelts.com:8443/upload'
         const snackBars = false
-        const timeoutDuration = 15000
+        const timeoutDuration = 30000
         try {
             setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
             savePhotoCredit(photoCredit)
