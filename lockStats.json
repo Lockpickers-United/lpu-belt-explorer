@@ -563,8 +563,8 @@
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4102,
-    "contributors": 306,
+    "uniqueImages": 4106,
+    "contributors": 305,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -639,6 +639,10 @@
         "images": 50
       },
       {
+        "contributor": "decoder",
+        "images": 43
+      },
+      {
         "contributor": "NCR",
         "images": 43
       },
@@ -649,10 +653,6 @@
       {
         "contributor": "TheGreenishOne",
         "images": 39
-      },
-      {
-        "contributor": "decoder",
-        "images": 38
       },
       {
         "contributor": "DoNotDuplicate",
@@ -1619,10 +1619,6 @@
         "images": 1
       },
       {
-        "contributor": "ingoingo",
-        "images": 1
-      },
-      {
         "contributor": "InsomniacLockPicker",
         "images": 1
       },
@@ -1793,6 +1789,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-07-21 22:20"
+    "updatedDateTime": "2025-07-23 20:25"
   }
 }
