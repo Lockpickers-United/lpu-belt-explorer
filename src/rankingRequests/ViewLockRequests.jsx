@@ -6,6 +6,7 @@ import SearchFilterBar from '../filters/SearchFilterBar.jsx'
 import {lockRequestSortFields} from '../data/sortFields'
 import Link from '@mui/material/Link'
 import SubNav from '../nav/SubNav.jsx'
+import ExportRequestsButton from './ExportRequestsButton.jsx'
 
 export default function ViewLockRequests({requestMod}) {
 
@@ -48,6 +49,11 @@ export default function ViewLockRequests({requestMod}) {
                     />
 
                 ))}
+
+
+                <div style={{margin: '30px 0px', textAlign: 'center'}}>
+                    <ExportRequestsButton text={true} entries={visibleEntries}/>
+                </div>
 
             </div>
         </React.Fragment>

@@ -272,7 +272,7 @@ function PhotoSubmit({profile, user}) {
                         <div style={{width: '100%', textAlign: 'center'}}>
                             <Button onClick={handleReload} variant='contained' color='info'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                                Submit more photos
+                                OK
                             </Button>
                         </div>
 
