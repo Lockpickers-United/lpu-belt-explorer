@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build and Deploy
+      - name: Lint and Build
         run: yarn ci-pr
