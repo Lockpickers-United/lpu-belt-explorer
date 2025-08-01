@@ -14,7 +14,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
 import Button from '@mui/material/Button'
 
-function ExportButton({text, entries}) {
+function ExportRequestsButton({text, entries}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -55,7 +55,7 @@ function ExportButton({text, entries}) {
         const clipboardText = data.map(datum => {
             const safeName = datum.name.replace(/[\s/]/g, '_').replace(/\W/g, '')
             const mech = mechanisms[datum.lockingMechanism] ? `\t${mechanisms[datum.lockingMechanism]}` : ''
-            return `${datum.name}\t\thttps://lpubelts.com/#/rankingrequests/view?id=${datum.id}&name=${safeName}\t${mech}`
+            return `${datum.name}\t\thttps://lpubelts.com/#/rankingrequests/view?id=${datum.id}&name=${safeName}${mech}`
         }).join('\n')
 
         handleClose()
@@ -132,4 +132,4 @@ function ExportButton({text, entries}) {
     )
 }
 
-export default ExportButton
+export default ExportRequestsButton
