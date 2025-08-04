@@ -80,7 +80,7 @@
     "@types/react": "^18.2.21",
     "@vitejs/plugin-react": "^4.4.1",
     "csv-parse": "^5.5.0",
-    "entities": "^4.5.0",
+    "entities": "^6.0.1",
     "eslint": "^8.49.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.33.2",
