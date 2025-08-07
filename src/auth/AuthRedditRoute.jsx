@@ -142,7 +142,7 @@ function AuthRedditRoute() {
                 if (200 === messageResp.status) {
                     const respObj = await messageResp.json()
                     const data = respObj.data
-
+                    
                     if (data.children.length > 0) {
                         if (bookmark) {
                             // Paging forwards in time, must update beforeParam.
@@ -168,7 +168,9 @@ function AuthRedditRoute() {
                         reachedEndOfStream = true
                     }
 
-                    const newMessages = data.children.filter(msg => msg.kind === 't4' && msg.data.distinguished === 'moderator' && msg.data.subreddit === 'lockpicking')
+                    //const newMessages = data.children.filter(msg => msg.kind === 't4' && msg.data.distinguished === 'moderator' && msg.data.subreddit === 'lockpicking')
+                    const newMessages = data.children.filter(msg => msg.kind === 't4' && msg.data.subreddit === 'lockpicking')
+
                     const newAwards = newMessages
                         .map(msg => {
                             let matchId = null
