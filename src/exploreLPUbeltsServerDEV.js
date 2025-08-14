@@ -6,20 +6,17 @@ import https from 'https'
 import EventEmitter from 'events'
 import dayjs from 'dayjs'
 
-import getFlickrInfo from './projects/flickrGetInfo/getFlickrInfo.js'
 //import saveRequest from './projects/saveRequest/saveRequest.js'
-import upload from './projects/uploadContent/uploadContent.js'
-import requestLock, {updateRequest, updateVotes} from './projects/rankingRequests/requestLock.js'
-import handleFirebaseActivityPost from './projects/logFirebaseActivity/logFirebaseActivity.js'
-import processFirebaseActivityLog from './projects/logFirebaseActivity/processFirebaseActivityLog.js'
-import getRedditBelts from './projects/redditBelts/getRedditBelts.js'
-//import fetchRedditFlairs from './projects/redditBelts/fetchRedditFlairs.js'
-import fetchFlairs from './projects/fetchFlairs/fetchFlairs.js'
+// Heavy feature modules are now loaded on-demand within route handlers to reduce baseline memory.
+// requestLock/updateRequest/updateVotes -> dynamic import
+// handleFirebaseActivityPost -> dynamic import
+// processFirebaseActivityLog -> dynamic import
+// getRedditBelts -> dynamic import
+// fetchFlairs -> dynamic import
 import {prodUser} from '../keys/users.js'
 
 // pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
 // https://explore.lpubelts.com:8443/rafl-stats
-
 
 //import importRaflData from './projects/importRaflData/importRaflData.js'
 //import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
@@ -33,13 +30,16 @@ const keysDir = productionServer
     ? `/home/${process.env.USER}/explore-lpubelts-com-node/keys`
     : `/Users/${process.env.USER}/Documents/GitHub/explore-lpubelts-com-node/keys`
 
-const privateKey = fs.readFileSync(`${keysDir}/server.key`, 'utf8')
-const certificate = fs.readFileSync(`${keysDir}/server.crt`, 'utf8')
-const credentials = {key: privateKey, cert: certificate}
-
 const app = express()
+// Small savings and less work on responses
+app.disable('etag')
+app.disable('x-powered-by')
 app.use(cors())
-app.use(express.json())
+// Conservative default JSON limit to avoid buffering large payloads in memory
+app.use(express.json({ limit: '200kb' }))
+
+// Route-specific larger JSON parser (only where needed)
+const largeJson = express.json({ limit: '2mb' })
 
 const myEmitter = new EventEmitter()
 myEmitter.on('myEvent', (data) => {
@@ -49,42 +49,46 @@ myEmitter.on('myEvent', (data) => {
 
 app.get('/flickr-info', async (req, res) => {
     myEmitter.emit('myEvent', 'Flickr Info')
-    await getFlickrInfo(req.query.id).then(results => {
-        res.send(results)
-    })
+    const { default: getFlickrInfo } = await import('./projects/flickrGetInfo/getFlickrInfo.js')
+    const results = await getFlickrInfo(req.query.id)
+    res.send(results)
 })
 
 app.post('/upload', async (req, res) => {
     myEmitter.emit('myEvent', 'Upload Content')
-    await upload(req, res).then()
+    const { default: upload } = await import('./projects/uploadContent/uploadContent.js')
+    await upload(req, res)
 })
 
-
 app.post('/request-lock', async (req, res) => {
-    req.body = req.body || {}
+    req.body ||= {}
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request submitted' + envText)
-    await requestLock(req, res).then()
+    const { default: requestLock } = await import('./projects/rankingRequests/requestLock.js')
+    await requestLock(req, res)
 })
 
 app.post('/update-request', async (req, res) => {
     req.body = req.body || {}
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request update' + envText)
-    await updateRequest(req, res).then()
+    const { updateRequest } = await import('./projects/rankingRequests/requestLock.js')
+    await updateRequest(req, res)
 })
 
 app.post('/request-vote', async (req, res) => {
     req.body.prod = prod
     myEmitter.emit('myEvent', 'Ranking Request Vote update' + envText)
-    await updateVotes(req, res).then()
+    const { updateVotes } = await import('./projects/rankingRequests/requestLock.js')
+    await updateVotes(req, res)
 })
 
-app.post('/log-activity', async (req, res) => {
+app.post('/log-activity', largeJson, async (req, res) => {
     const {prod} = req.body
     const logEnvText = prod ? '' : ' (from DEV)'
     myEmitter.emit('myEvent', 'Log Firebase Activity' + logEnvText)
-    handleFirebaseActivityPost(req, res)
+    const { default: handleFirebaseActivityPost } = await import('./projects/logFirebaseActivity/logFirebaseActivity.js')
+    await handleFirebaseActivityPost(req, res)
 })
 
 app.get('/process-firebase-log', async (req, res) => {
@@ -92,14 +96,15 @@ app.get('/process-firebase-log', async (req, res) => {
     const prod = !req.query.dev
     const logEnvText = prod ? '' : ' (from DEV)'
     myEmitter.emit('myEvent', 'Process Firebase Activity Log' + logEnvText)
-    await processFirebaseActivityLog(req, res).then(results => {
-        return res.status(200).json(results)
-    })
+    const { default: processFirebaseActivityLog } = await import('./projects/logFirebaseActivity/processFirebaseActivityLog.js')
+    const results = await processFirebaseActivityLog(req, res)
+    return res.status(200).json(results)
 })
 
 app.post('/fetch-reddit-flairs', async (req, res) => {
     // gets ALL flairs and saves to redditBeltCounts.json & redditUserFlairs.json
     myEmitter.emit('myEvent', 'Reddit flair fetch requested')
+    const { default: getRedditBelts } = await import('./projects/redditBelts/getRedditBelts.js')
     await getRedditBelts(req, res)
 })
 
@@ -107,6 +112,7 @@ app.post('/fetch-flairs', async (req, res) => {
     // gets flairs for specific userId from fliarLog.json saved by LockyJr
     const userId = req?.body?.userId || ''
     myEmitter.emit('myEvent', `Reddit flair fetch for user ${userId} requested`)
+    const { default: fetchFlairs } = await import('./projects/fetchFlairs/fetchFlairs.js')
     await fetchFlairs(req, res)
 })
 
@@ -144,10 +150,21 @@ app.get('/rafl-stats', async (req, res) => {
 /////////////
 
 const httpServer = http.createServer(app)
-const httpsServer = https.createServer(credentials, app)
+// Reduce idle memory and long-lived sockets
+httpServer.keepAliveTimeout = 5000
+httpServer.headersTimeout = 6000
+httpServer.requestTimeout = 10000
 
-httpServer.listen(ports.http, () => {
-})
-httpsServer.listen(ports.https, () => {
-})
+httpServer.listen(ports.http, () => {})
 
+// Only spin up HTTPS in prod and load TLS keys as Buffers
+if (prod) {
+    const privateKey = fs.readFileSync(`${keysDir}/server.key`)
+    const certificate = fs.readFileSync(`${keysDir}/server.crt`)
+    const credentials = { key: privateKey, cert: certificate }
+    const httpsServer = https.createServer(credentials, app)
+    httpsServer.keepAliveTimeout = 5000
+    httpsServer.headersTimeout = 6000
+    httpsServer.requestTimeout = 10000
+    httpsServer.listen(ports.https, () => {})
+}
