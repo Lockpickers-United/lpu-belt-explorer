@@ -6,7 +6,6 @@ import {itemDetails} from '../../util/getItemDetails.js'
 import fs from 'node:fs/promises'
 
 const production = process.env.USER !== localUser
-
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`

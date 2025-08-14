@@ -22,16 +22,29 @@ import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
 
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
-
 const requestapp = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
-const dbProd = getFirestore(requestapp)
-dbProd.settings({ignoreUndefinedProperties: true})
 
-const dbDev = getFirestore(requestapp, 'lpubelts-dev')
-dbDev.settings({ignoreUndefinedProperties: true})
+let _dbProd
+let _dbDev
+
+function getDb(prod) {
+    if (prod) {
+        if (!_dbProd) {
+            _dbProd = getFirestore(requestapp)
+            _dbProd.settings({ignoreUndefinedProperties: true})
+        }
+        return _dbProd
+    } else {
+        if (!_dbDev) {
+            _dbDev = getFirestore(requestapp, 'locktrackersdev')
+            _dbDev.settings({ignoreUndefinedProperties: true})
+        }
+        return _dbDev
+    }
+}
 
 const execAsync = util.promisify(exec)
 
@@ -69,7 +82,7 @@ export default async function requestLock(req, res) {
     }
 
     const {prod} = req.body
-    const db = prod ? dbProd : dbDev
+    const db = getDb(prod)
 
     const form = formidable({
         uploadDir,
@@ -206,9 +219,8 @@ export async function updateRequest(req, res) {
     if (!(req.user.admin || req.user.requestAdmin)) {
         return handleError(res, 'Insufficient permissions', new Error('Insufficient Permissions'), 403)
     }
-
-    const {entry,prod} = req.body
-    const db = prod ? dbProd : dbDev
+    const {entry, prod} = req.body
+    const db = getDb(prod)
 
     try {
         const ref = db.collection('ranking-requests').doc(entry.id)
@@ -232,14 +244,13 @@ export async function updateRequest(req, res) {
 export async function updateVotes(req, res) {
     const {newVote, prod} = req.body
     const {entryId, displayName} = newVote
+    const db = getDb(prod)
 
     try {
         req.user = await authenticateRequest(req, res)
     } catch (err) {
         return handleError(res, err.message, err, 403)
     }
-
-    const db = prod ? dbProd : dbDev
 
     const {user_id} = req.user
     let updatedVotes = []

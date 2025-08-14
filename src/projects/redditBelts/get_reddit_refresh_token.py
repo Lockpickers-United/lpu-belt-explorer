@@ -10,8 +10,8 @@ with open('../../../keys/reddit-keys.json') as f:
 
 CLIENT_ID = keys['client_id']
 CLIENT_SECRET = keys['client_secret']
-REDIRECT_URI = 'http://localhost:8080'
-SCOPE = 'identity modflair read modmail'
+REDIRECT_URI = 'http://localhost:8080/callback'
+SCOPE = 'identity modflair read modmail mysubreddits flair'
 USER_AGENT = 'flair-fetch-token-generator'
 
 def get_auth_url():

@@ -143,7 +143,6 @@ async function runCommand(command) {
     try {
         const {stdout, stderr} = await execAsync(command)
         console.log('runCommand stdout:', stdout.replace(/\n/g, ''), '      stderr:', stderr)
-        //console.log('runCommand stderr:', stderr)
     } catch (error) {
         console.error('runCommand error:', error)
     }

@@ -2,7 +2,7 @@ import Snoowrap from 'snoowrap'
 import dayjs from 'dayjs'
 import fs from 'node:fs/promises'
 
-const keys = JSON.parse(await fs.readFile('../../keys/reddit-keys.json', 'utf8'))
+const keys = JSON.parse(await fs.readFile('../../../keys/reddit-keys.json', 'utf8'))
 
 const {client_id, client_secret, refresh_token} = keys
 
@@ -15,6 +15,7 @@ const reddit = new Snoowrap({
 
 async function fetchArchivedSyncMessages(subName, seachTerm) {
 
+    console.log('Fetching archived sync messages...')
     await reddit.getMe()                    // any valid endpoint works here
     const token = reddit.accessToken
 
