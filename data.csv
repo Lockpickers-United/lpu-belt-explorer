@@ -568,7 +568,7 @@ Brown,"Australian Lock Co.",BiLock,"8 sliders, 0-2 mastered",Slider,"False gates
 Brown,"Australian Lock Co.",Galaxy,,Other,,,33d6e0df
 Brown,BASI,K10,,Dimple,,,82ae66ad
 Brown,BKS,Multipin,,Pin-tumbler,,,39bf479d
-Brown,"Bricard,ABUS","Chifral,EP10","all versions, fully pinned",Dimple,,,9b00fb5e
+Brown,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, fully pinned",Dimple,changelog,,9b00fb5e
 Brown,"Burg Wächter","Alpha 800",,Wafer,Unguttable,,e38d015b
 Brown,Cavers,Cavith,,"Pump/push,Pin-tumbler",,,de47d600
 Brown,Clavis,T-20,"<15 pins",Dimple,"High pin count",,f51e2ff2

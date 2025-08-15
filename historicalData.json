@@ -29992,13 +29992,17 @@
       {
         "make": "ABUS",
         "model": "EP10"
+      },
+      {
+        "make": "CISA",
+        "model": "RS3"
       }
     ],
     "version": "all versions, fully pinned",
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Bricard Chifral / ABUS EP10",
+    "name": "Bricard Chifral / ABUS EP10 / CISA RS3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 593,
     "lastUpdated": "2025-03-21T17:03:30.600Z",
@@ -30060,6 +30064,9 @@
     ],
     "relatedIds": [
       "8f004bf0"
+    ],
+    "features": [
+      "changelog"
     ]
   },
   "de47d600": {

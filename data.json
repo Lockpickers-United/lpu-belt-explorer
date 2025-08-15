@@ -34847,11 +34847,18 @@
       {
         "make": "ABUS",
         "model": "EP10"
+      },
+      {
+        "make": "CISA",
+        "model": "RS3"
       }
     ],
     "version": "all versions, fully pinned",
     "lockingMechanisms": [
       "Dimple"
+    ],
+    "features": [
+      "changelog"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -34932,7 +34939,7 @@
     "relatedIds": [
       "8f004bf0"
     ],
-    "lastUpdated": "2025-06-02T19:44:16.553Z"
+    "lastUpdated": "2025-08-15T23:36:33.826Z"
   },
   {
     "id": "e38d015b",

@@ -905,7 +905,7 @@ keypins, and countermilling are the norm for you.
 - [Australian Lock Co. Galaxy](https://lpubelts.com/#/locks?id=33d6e0df)
 - [BASI K10](https://lpubelts.com/#/locks?id=82ae66ad)
 - [BKS Multipin](https://lpubelts.com/#/locks?id=39bf479d)
-- [Bricard Chifral / ABUS EP10](https://lpubelts.com/#/locks?id=9b00fb5e) (all versions, fully pinned)
+- [Bricard Chifral / ABUS EP10 / CISA RS3](https://lpubelts.com/#/locks?id=9b00fb5e) (all versions, fully pinned)
 - [Burg W&auml;chter Alpha 800](https://lpubelts.com/#/locks?id=e38d015b)
 - [Cavers Cavith](https://lpubelts.com/#/locks?id=de47d600)
 - [Clavis T-20](https://lpubelts.com/#/locks?id=f51e2ff2) (&lt;15 pins)
