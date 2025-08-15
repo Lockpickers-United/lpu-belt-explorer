@@ -3,15 +3,15 @@
     "description": "Locks",
     "data": [
       {
-        "value": 791,
+        "value": 798,
         "label": "Ranked"
       },
       {
-        "value": 906,
+        "value": 908,
         "label": "All"
       },
       {
-        "value": 115,
+        "value": 110,
         "label": "Unranked"
       }
     ]
@@ -20,73 +20,73 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.02097130242825607,
+      "value": 0.02092511013215859,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 62,
-      "value": 0.0684326710816777,
+      "value": 0.06828193832599119,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
-      "count": 73,
-      "value": 0.08057395143487858,
+      "count": 74,
+      "value": 0.08149779735682819,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16445916114790288,
+      "value": 0.16409691629955947,
       "id": "Green"
     },
     {
       "belt": "Blue",
-      "count": 130,
-      "value": 0.1434878587196468,
+      "count": 131,
+      "value": 0.14427312775330398,
       "id": "Blue"
     },
     {
       "belt": "Purple",
-      "count": 111,
-      "value": 0.12251655629139073,
+      "count": 113,
+      "value": 0.12444933920704845,
       "id": "Purple"
     },
     {
       "belt": "Brown",
-      "count": 85,
-      "value": 0.09381898454746136,
+      "count": 84,
+      "value": 0.09251101321585903,
       "id": "Brown"
     },
     {
       "belt": "Red",
-      "count": 69,
-      "value": 0.076158940397351,
+      "count": 72,
+      "value": 0.07929515418502203,
       "id": "Red"
     },
     {
       "belt": "Black",
-      "count": 93,
-      "value": 0.10264900662251655,
+      "count": 94,
+      "value": 0.10352422907488987,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 115,
-      "value": 0.12693156732891833,
+      "count": 110,
+      "value": 0.1211453744493392,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 353,
+      "value": 354,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 205,
+      "value": 207,
       "id": "dimple"
     },
     {
@@ -178,7 +178,7 @@
     "Orange": [
       {
         "label": "Pin-tumbler",
-        "value": 64,
+        "value": 65,
         "id": "pin-tumbler"
       },
       {
@@ -247,7 +247,7 @@
       },
       {
         "label": "Dimple",
-        "value": 34,
+        "value": 35,
         "id": "dimple"
       },
       {
@@ -289,7 +289,7 @@
     "Purple": [
       {
         "label": "Dimple",
-        "value": 41,
+        "value": 43,
         "id": "dimple"
       },
       {
@@ -355,14 +355,14 @@
         "id": "multiple"
       },
       {
-        "label": "Pin-tumbler",
-        "value": 8,
-        "id": "pin-tumbler"
-      },
-      {
         "label": "Pump/push",
         "value": 8,
         "id": "pump-push"
+      },
+      {
+        "label": "Pin-tumbler",
+        "value": 7,
+        "id": "pin-tumbler"
       },
       {
         "label": "Slider",
@@ -403,7 +403,7 @@
     "Red": [
       {
         "label": "Dimple",
-        "value": 22,
+        "value": 23,
         "id": "dimple"
       },
       {
@@ -413,7 +413,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 8,
+        "value": 9,
         "id": "pin-tumbler"
       },
       {
@@ -455,7 +455,7 @@
     "Black": [
       {
         "label": "Dimple",
-        "value": 25,
+        "value": 26,
         "id": "dimple"
       },
       {
@@ -512,7 +512,7 @@
       },
       {
         "label": "Dimple",
-        "value": 21,
+        "value": 18,
         "id": "dimple"
       },
       {
@@ -552,18 +552,18 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 791,
-        "media": 747,
-        "coverage": "94%"
+        "count": 798,
+        "media": 749,
+        "coverage": "93%"
       },
       {
         "segment": "All locks",
-        "count": 906,
-        "media": 838,
+        "count": 908,
+        "media": 836,
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4106,
+    "uniqueImages": 4092,
     "contributors": 305,
     "topPhotographers": [
       {
@@ -580,11 +580,11 @@
       },
       {
         "contributor": "Reinder Stegen",
-        "images": 224
+        "images": 214
       },
       {
         "contributor": "Luboš Čech",
-        "images": 178
+        "images": 177
       },
       {
         "contributor": "Ben-on-reddit",
@@ -595,12 +595,12 @@
         "images": 82
       },
       {
-        "contributor": "Dra9i",
+        "contributor": "Sidepicks",
         "images": 70
       },
       {
-        "contributor": "Sidepicks",
-        "images": 70
+        "contributor": "Dra9i",
+        "images": 67
       },
       {
         "contributor": "DQ",
@@ -1789,6 +1789,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-07-23 20:25"
+    "updatedDateTime": "2025-08-15 19:23"
   }
 }

@@ -38,7 +38,7 @@ Yellow,"Brinks,Brinks","R70 disk lock,R80 disk lock",,Pin-tumbler,Unguttable,,a8
 Yellow,"Brüder Mannesmann","Brass Padlocks","50mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,1cad075e
 Yellow,,BSS,,Pin-tumbler,,,50fbf666
 Yellow,"Burg Wächter","""Alutitan"" 770 40",,Pin-tumbler,,,4d7dd1a0
-Yellow,"Burg Wächter","""C-Line"" 222 40",,Pin-tumbler,Unguttable,,6ca3420d
+Yellow,"Burg Wächter,Burg Wächter","""C-Line"" 222 30,""C-Line"" 222 40",,Pin-tumbler,Unguttable,,6ca3420d
 Yellow,"Burg Wächter","""Look"" 402 40",,Pin-tumbler,Unguttable,,7f56acb9
 Yellow,"Burg Wächter","""SecuLock"" 405 40",,Pin-tumbler,,,b517a7ef
 Yellow,"Burg Wächter","""Yacht"" 460 Ni 40",,Pin-tumbler,,,9a5b3f53
@@ -86,6 +86,7 @@ Orange,ABUS,55/40,"40mm or larger",Pin-tumbler,Unguttable,,632f4069
 Orange,ABUS,60/50,,Pin-tumbler,Unguttable,,d7188e81
 Orange,ABUS,"64Ti Titalium","40mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,52f1e117
 Orange,ABUS,65/40,,Pin-tumbler,Unguttable,,a0e50505
+Orange,ABUS,82/63,,Pin-tumbler,changelog,,f6ef12e5
 Orange,ABUS,83/40,,Pin-tumbler,,,3653f376
 Orange,ABUS,85,,Pin-tumbler,Unguttable,,683e4f33
 Orange,ABUS,"Buffo (Ecoline)",,Pin-tumbler,,,d7479fd6
@@ -121,7 +122,7 @@ Orange,Garrison,"40mm Brass Padlock",,Pin-tumbler,,,5b5c6a9e
 Orange,GTV,Padlock,,Pin-tumbler,,,ed0e0d36
 Orange,Heracles,5G,,Pin-tumbler,,,3e5236c7
 Orange,IKON,DS,,Pin-tumbler,,,2bdcb8c7
-Orange,ISEO,F5,,Pin-tumbler,,,d261a3ba
+Orange,ISEO,F5,"4 or 5 pin",Pin-tumbler,changelog,,d261a3ba
 Orange,Kasp,"160 series Diskus",,Pin-tumbler,,,9bc8809e
 Orange,LOB,Standard,,Pin-tumbler,,,4f0e4a4b
 Orange,Lockwood,110/40,,Pin-tumbler,,,a5a164ad
@@ -327,7 +328,7 @@ Blue,ASSA,700,"7 pin with tapered drivers",Pin-tumbler,"Tapered drivers",,f1e925
 Blue,ASSA,R502,,Pin-tumbler,,,1bee7a66
 Blue,BASI,K6-RT,,"Pin-tumbler,Sidepins","Active element",6-pin,ee04714f
 Blue,Baton,"6000 series","not Abloy keyway","Disc detainer",,,ae0d35bc
-Blue,Bison/HYT/Lays/Qlsy,"Chain Key Lock",,Pin-tumbler,Changelog,"Various brands",111062fc
+Blue,Bison/HYT/Lays/Qlsy,"Chain Key Lock",,Pin-tumbler,,"Various brands",111062fc
 Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
 Blue,"Burg Wächter",Diamant,,Pin-tumbler,,,32fa52a6
@@ -348,8 +349,8 @@ Blue,DOM,"IX 5KG",,Dimple,"Interactive element",,eec4bd4a
 Blue,DOM,Plura,,Pin-tumbler,"Magic DOM drivers",,96591a8f
 Blue,DOM,"R Plus",,Pin-tumbler,,,2e67118d
 Blue,DOM,RN,"standard cylinder",Pin-tumbler,,"At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
-Blue,DOM,"RS Sigma",,Pin-tumbler,"Magic DOM drivers",,1dd28bf9
-Blue,DOM,S,,Pin-tumbler,,,9aa8821a
+Blue,"DOM,DOM","RS Sigma,RS Sirius",,Pin-tumbler,"Magic DOM drivers,changelog",,1dd28bf9
+Blue,"DOM,DOM","S,S PP1024",,Pin-tumbler,changelog,,9aa8821a
 Blue,DOM,SC,,Pin-tumbler,,,05979a42
 Blue,DOM,SV,,Pin-tumbler,,,95b2c7b0
 Blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
@@ -406,7 +407,8 @@ Blue,Mul-T-Lock,Classic,"standard drivers",Dimple,Pin-in-pin,,0418a174
 Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 spooled drivers",Dimple,Pin-in-pin,,aec0c82d
 Blue,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pins, 3 or fewer spooled drivers",Dimple,Pin-in-pin,,a0ec1618
 Blue,Mul-T-Lock,Integrator,,Dimple,,,6e0bfdd2
-Blue,Opnus,XZ,,Dimple,"High pin count,Changelog",,3af6c54b
+Blue,Omellow,R3,,Dimple,"Interlocking pins,changelog",,1d80c9bb
+Blue,Opnus,XZ,,Dimple,"High pin count",,3af6c54b
 Blue,PACLOCK,"90A Pro",,Pin-tumbler,,,fb5a9eb7
 Blue,PACLOCK,PL410,,Pin-tumbler,Unguttable,,74c225d1
 Blue,Pisla,860,,"Disc detainer",Unguttable,,ca6f4eaf
@@ -417,7 +419,7 @@ Blue,Takigen,10-pin,,Dimple,"High pin count",,b0d2e04c
 Blue,TESA,T60,,Dimple,"Tapered drivers",,8b5b655e
 Blue,Tokoz,Tech,,"Pin-tumbler,Wafer",,,35330d19
 Blue,TrioVing,"(Vingcard) 55##","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
-Blue,U-Shin,"Showa Mortise","6 spools, torpedo keypins",Pin-tumbler,Changelog,,49c381dc
+Blue,U-Shin,"Showa Mortise","6 spools, torpedo keypins",Pin-tumbler,,,49c381dc
 Blue,U-Shin,"Showa X Key","8 pins",Dimple,,,95a9b042
 Blue,Union,"Strongbolt (2100)","5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,86703028
 Blue,Vachette,HDI,,Pin-tumbler,,,8cca70d0
@@ -448,7 +450,7 @@ Purple,ASSA,Guideline,"6 pin with active side pins",Pin-tumbler,"Barrel drivers,
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
 Purple,"Avocet,ERA,Federal Lock,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
-Purple,"Bricard,ABUS","Chifral,EP10","all versions, <15 pins",Dimple,,,8f004bf0
+Purple,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, <15 pins",Dimple,"High pin count,changelog",,8f004bf0
 Purple,Bricard,Supersureté,,Wafer,,,98ba98ae
 Purple,Capitol,"magnetic cam lock",,Magnet,,,85591581
 Purple,CAVEO,TS007,"with spools","Dimple,Slider",,"Seven pins with security drivers, five slider sidebar",0813d39e
@@ -462,7 +464,7 @@ Purple,"Corbin Russwin",Emhart,"4 pins **",Pin-tumbler,"Interlocking pins","** *
 Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
 Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element,Image Test",,db4de1bb
-Purple,Delta,"`DAF Kilit DBS02` Clone",,"Dimple,Slider",Changelog,,95e779e0
+Purple,Delta,"`DAF Kilit DBS02` Clone",,"Dimple,Slider",,,95e779e0
 Purple,Dierre,"New Power",,Wafer,,,a10711cc
 Purple,DOM,"ix 6 kg",,Dimple,,,69eec822
 Purple,DOM,"ix 6 sr",,Dimple,"Torpedo keypins,Interactive element,Magic DOM drivers",,acde7f0c
@@ -482,12 +484,12 @@ Purple,IKON,"sk6 vectorprofil rib extra","5 sliders","Pin-tumbler,Slider","Sprun
 Purple,Illinois,Duo,,Wafer,"Some formats guttable",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
 Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requires 360 for belting; 2 versions exist, with tapered pins, and with tapered spools",6eab0c38
-Purple,ISEO,R7,,Dimple,,,30aa78ef
+Purple,"ISEO,ISEO","R50,R7",,Dimple,changelog,,30aa78ef
 Purple,"Jixin,Jasafe","Z03,Z03",,"Pin-tumbler,Sidepins",,,92482cc9
 Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,"High pin count",,779d74f5
 Purple,Kaken,KX3,"exterior, ≥ 6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements ant type",898a7138
 Purple,"Kale Kilit","164 BNE",,Dimple,,,6f5e0d32
-Purple,"Keso,Keso,Keso,Keso","10RS,1000,2000S,4000S (Omega)","<13 pins",Dimple,"High pin count,Changelog",,304f5471
+Purple,"Keso,Keso,Keso,Keso","10RS,1000,2000S,4000S (Omega)","<13 pins",Dimple,"High pin count",,304f5471
 Purple,Kwikset,"Smartkey (Gen III)",,Slider,"Sprung sliders,Reverse sidebar",,06ddb074
 Purple,Kwikset,"Smartkey (Gens I & II)",,Slider,"Sprung sliders,Reverse sidebar",,41f9efa2
 Purple,Kwikset,"Smartkey SC1 gen I",,Slider,"Sprung sliders,Reverse sidebar",,dd1bf2af
@@ -517,6 +519,7 @@ Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 serrated drivers
 Purple,"Mul-T-Lock,Mul-T-Lock,Mul-T-Lock","Jr,Classic,Interactive","5 pin stacks, ≥ 4 spooled drivers",Dimple,"Pin-in-pin,Interactive element",,3335df97
 Purple,Mul-T-Lock,MT5,,Dimple,"Pin-in-pin,Interactive element",,16906a6c
 Purple,Mul-T-Lock,"Omega Plus",,Dimple,,,8a65b956
+Purple,Nagasawa,KCY-7x,"12 pin",Dimple,"High pin count,changelog",,1ee9600e
 Purple,Nagasawa,"Kodai KCY-31","6 pin",Pin-tumbler,,,3efc97ad
 Purple,"Nemef,Nemef,LIPS","NF2,NF3,8300",,Pin-tumbler,"Tapered drivers",,94466c21
 Purple,Opnus,TZ,"3 rows",Dimple,"High pin count","Similar to UX but 3 rows of pins",f8aaa0ef
@@ -529,6 +532,7 @@ Purple,Sargent,Signature,,"Pin-tumbler,Sidebar",,,e1e595b9
 Purple,Schlage,"Everest 29SL",,Slider,,,3dabf132
 Purple,"Securemme,Securemme","K22,K2",,Dimple,,,ccd19ba8
 Purple,Securemme,K5,,Dimple,,,479f1d73
+Purple,Securystar,"Pro Star",,Dimple,"High pin count,changelog",,2c906ebb
 Purple,Sepa,HDS,,Dimple,"High pin count",,e0a9caf4
 Purple,"TESA,TESA,Nemef,Yale,Azbe","T80,TX80,NF4,HS-K,HS-K",,Dimple,"Tapered drivers,Interactive element",,3f49ccc1
 Purple,TESA,TK100,,Dimple,"Tapered drivers,Interactive element",,9a9ae8df
@@ -539,7 +543,7 @@ Purple,Vachette,Axi'Home,,Dimple,,,416946bc
 Purple,"Walsall Locks","Ace (S1311)","7 lever safe",Lever,"Safe lock,False gates",,37914cb6
 Purple,WEST,"YKK AP",,Dimple,"High pin count",,1220174e
 Purple,"Western Electric,Western Electric","29A,29B",,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,5958a65b
-Purple,Yale,"2000 Plus",,"Dimple,Sidebar,Slider",Changelog,"dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
+Purple,Yale,"2000 Plus",,"Dimple,Sidebar,Slider",,"dimple, 10 vertically aligned pins in 2 rows, 4 sliders",a42a815e
 Purple,Yale,5000,,"Pin-tumbler,Slider",,,1be10736
 Purple,"Yale,Yale,Millenco","Superior,Platinum,Magnum","7 or 9 pins","Dimple,Slider","Sprung sliders,Active sidebar",,ebe9ee59
 Brown,Any,"SFIC with security pins",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both shearlines in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements) **AND** Must have a total number of security pins that is equal to or higher than the number of pin stacks (see [confirmed SFIC's with security pins](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_confirmed_sfic.27s_with_security_pins)",b13f4b57
@@ -555,7 +559,6 @@ Brown,ALPHA,FB,"<12 pins",Dimple,"High pin count",,054731a5
 Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
 Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis Q18 clones",Dimple,,,f85f4ac0
 Brown,Ankerslot,"Infinity K",,"Pin-tumbler,Magnet",,,5329b0f3
-Brown,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,f2d41749
 Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
 Brown,ASSA,Desmo,"8 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar",,1459e2c6
 Brown,ASSA,"Desmo RC","10 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar","** **Special Picking Requirement:** Must be picked to control",93c49314
@@ -600,8 +603,8 @@ Brown,Kaba,Gemini,"<13 pins",Dimple,"High pin count",,e0191c45
 Brown,Kaba,"Gemini pluS","<14 pins",Dimple,"High pin count",,2efc9257
 Brown,Kaken,KXR,,"Slider,Pin-tumbler","Gin spool drivers,Undercut milling,Active sidebar,False gates",,9375df98
 Brown,"Kale Kilit","164 CEC",,Dimple,,,660a840e
-Brown,"Keso,Keso,Keso,Keso","10RS,1000,2000S,4000S (Omega)","≥13 pins",Dimple,"High pin count,Changelog",,c92ff501
-Brown,Keso,8000Ω²,"< 13 pins",Dimple,"High pin count,Changelog",,fe9889e2
+Brown,"Keso,Keso,Keso,Keso","10RS,1000,2000S,4000S (Omega)","≥13 pins",Dimple,"High pin count",,c92ff501
+Brown,Keso,8000Ω²,"< 13 pins",Dimple,"High pin count",,fe9889e2
 Brown,Laperche,Rols,,Pump/push,,,f5cc6ace
 Brown,"LIPS,LIPS","Keso (door cylinder),Octro","≥13 pins",Dimple,"High pin count",,514c7ec4
 Brown,"Lowe and Fletcher","3007 Safe lock","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,8625f848
@@ -658,6 +661,7 @@ Red,"FTH Thirard",Pacific,,Pump/push,,,a57c1e9b
 Red,"GOAL,GOAL","V18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
 Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut milling",,937eb7a8
 Red,Hori,Trident,spools,Dimple,,,49b2c746
+Red,IKON,"SK6 Sperrwelleprofil","4 Serrated Fingerpins, Non-Chamfered Sidebar",Pin-tumbler,"Rotating fingerpins,Active sidebar,changelog",,66d1ab72
 Red,IKON,"tk5 sperwellenprofil","with serrated fingerpins","Pin-tumbler,Sidepins","Rotating fingerpins","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",34d27803
 Red,IKON,Verso,,Slider,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",843896be
 Red,Kaba,14,"13+ pins",Dimple,"High pin count",,aa4c402d
@@ -668,9 +672,10 @@ Red,Kaba,Gemini,"≥13 pins",Dimple,"High pin count",,c8e86f14
 Red,Kaba,"Gemini pluS","≥14 pins",Dimple,"High pin count",,c4484574
 Red,Kaba,Penta,"<15 pins",Dimple,"High pin count",,e3081fd3
 Red,Kaba,Star,"5+ directions, <16 pins",Dimple,"High pin count",,43deff29
-Red,Keso,8000Ω²,">= 13 pins",Dimple,"High pin count,Changelog",,deb35ee7
+Red,Keso,8000Ω²,">= 13 pins",Dimple,"High pin count",,deb35ee7
 Red,Kromer,Novum,,Lever,"Pipe key,Double bitted,False gates",,281aa393
 Red,,Maglok,,Magnet,,,2d1adbaf
+Red,Mauer,Crypto,,,"High pin count,changelog",,696d5f2c
 Red,Mauer,"Praetor B (70079)","11 lever",Lever,"Safe lock,Pipe key,Double bitted",,169b80e3
 Red,Medeco,M4,,"Pin-tumbler,Slider,Sidebar",,,00a2ff18
 Red,"MIWA,MIWA","E6,83EC",,Magnet,"Magnetic pins",,9094ca58
@@ -690,12 +695,13 @@ Red,"S&G,S&G","4544,4440 series",,Lever,"Safe lock,Flat steel key,False gates","
 Red,Schlage,"Everest 29 SL Primus XP",,"Slider,Sidepins","Rotating fingerpins",,cf76cfde
 Red,Sémag,Euromag,,"Magnet,Pump/push","Magnetic pins",,80b0044b
 Red,,Tann,"10 lever",Lever,"Safe lock,False gates",,b5df156e
-Red,"Tann,Chubb","Detector,Detector from 1950's",,Lever,"Various formats,False gates","Usually 5 levers",69668831
+Red,"Tann,Chubb,WLN","Detector,Detector from 1950's,Detector",,Lever,"Various formats,False gates,changelog","Usually 5 levers",69668831
 Red,U-Shin,"Showa NX","≥ 13 pins",Dimple,"High pin count",,95281228
 Red,Vachette,Axi'Tec,,Dimple,"High pin count",,17d41d80
 Red,"Vachette,Vachette,Vachette,Vachette,Vachette","Radial NT,Radial NT+,Radial,Radial S,Radial SI","<18 pins",Dimple,"High pin count",,4db59eb3
 Red,Winkhaus,X-Tra,"9-13 pins",Dimple,"High pin count",,131732a0
 Red,,Xylok,,Pin-tumbler,,,6708838f
+Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,changelog",,5eac6a29
 "Black 2","Abloy,Abloy","Disklock Pro,Novel",,"Disc detainer","Front/rear tension,Disc controller,False gates,Bi-directional","Two versions, padlock and door lock.",1a7a23d4
 "Black 2",Abloy,Easy,,"Disc detainer",,,12ff8c25
 "Black 2",Abloy,Exec,,"Disc detainer","Rear tension,Disc steering system,False gates",,fc627b17
@@ -757,7 +763,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2","Kaba,Kaba","Quattro,experT","21 pins",Dimple,"High pin count",,10968d37
 "Black 1",Kaba,Star,"≥ 5 rows, 16-20 pins",Dimple,"High pin count",,3ddfc71c
 "Black 2",Kaba,Star,"≥ 5 rows, 21 or more pins",Dimple,"High pin count",,dfa88b94
-"Black 1",Kaba,Titan,,Dimple,"High pin count,Changelog",,d54a6b5f
+"Black 1",Kaba,Titan,,Dimple,"High pin count",,d54a6b5f
 "Black 5",Kromer,"Protector (BP55K)",,Wafer,,,f87db705
 "Black 5",Kromer,"Protector (Non-BP55K)",,Wafer,,,50a463eb
 "Black 1",Lockman,Megacross,"with pyramid drivers",Dimple,"High pin count",,f1857cef
@@ -768,7 +774,7 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 3",MIWA,PR,"11 unmastered elements",Lever/sidebar,"Partial gut","upgrade of MIWA PS",91f40022
 "Black 1",MIWA,U9,"8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
 "Black 2",MIWA,U9,"9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
-"Black 1","Mottura,Mottura,Mottura","Champions C43,Champions C44,Champions C48",,"Dimple,Other",Rotors,,ae7d3780
+"Black 1","Mottura,Mottura,Mottura,Mottura,Mottura","Champions C43,Champions C43 Plus,Champions C44,Champions C48,Champions C9P",,"Dimple,Other","Rotors,changelog",,ae7d3780
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5,R10","not mastered","Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
 "Black 5",NATO,Mersey,"10 lever",Lever,"Safe lock,Pin key,Double bitted",,4f2ed774
 "Black 5",NATO,Mersey,"14 lever",Lever,"Safe lock,Pin key,Double bitted",,f29a212f
@@ -783,11 +789,12 @@ Red,,Xylok,,Pin-tumbler,,,6708838f
 "Black 2",UrbanAlps,"Stealth Key SK2",,Lever/sidebar,"Partial gut",,284bf0b0
 "Black 1","Vachette,Vachette,Vachette,Vachette,Vachette","Radial NT,Radial NT+,Radial,Radial S,Radial SI","≥ 18 pins",Dimple,"High pin count",,5def87d0
 "Black 2",WEST,917,,Dimple,"High pin count",,23437955
-"Black 3",WEST,941,,Dimple,"High pin count,Changelog",,ca6c2e4c
+"Black 3",WEST,941,,Dimple,"High pin count",,ca6c2e4c
 "Black 5","Western Electric",30B,,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,e718b140
 "Black 5","Western Electric",30C,,Lever,"Cabinet lock,Flat steel key,Curtain",,5a4310d5
 "Black 1",Winkhaus,X-Tra,"≥13 pins",Dimple,"High pin count",,d1a5cd90
-"Black 2",Yanai,"R 2200M",,Dimple,"High pin count",,a8e79394
+"Black 2",Yanai,"R 2200M",">= 17 pins",Dimple,"High pin count,changelog",,a8e79394
+"Black 1",Yanai,"R 2200M","14-16 pins",Dimple,"High pin count,changelog",,a974eb0c
 "Black 5","Yuema,Forte","750,Enigma",,Slider,"Reverse sidebar",,0b604114
 Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element,Picking Risk","If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",6f837bb4
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
@@ -799,6 +806,7 @@ Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels""
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑","mul-t-lock clone with poorer tolerances.",fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
+Unranked,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Removed,changelog","There is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed.",f2d41749
 Unranked,"ASSA,ASSA","H5,H7",,,"Under Review ⚑",,e10b4a20
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
@@ -823,8 +831,6 @@ Unranked,Codkey,"Locksys MME (micro magnetic element)",,"Dimple,Magnet","Under R
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
-Unranked,DOM,"RS Sirius",,,"Under Review ⚑",,406ac672
-Unranked,DOM,"S pp1024","6 pins",,"Under Review ⚑",,d0632926
 Unranked,Ezcurra,DS-15,,Dimple,"Under Review ⚑",,abe6074c
 Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
 Unranked,Fichet-Bauche,M2i,,Pump/push,"Under Review ⚑",,d6e6039e
@@ -837,9 +843,7 @@ Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
-Unranked,IKON,"SK6 Sperrwelleprofil","4 Serrated Fingerpins, Non-Chamfered Sidebar",Pin-tumbler,"Rotating fingerpins,Active sidebar,Under Review ⚑",,66d1ab72
 Unranked,ISEO,"F6 extra S3",,,"Under Review ⚑",,895be796
-Unranked,ISEO,R50,,Dimple,"Under Review ⚑",,42bebf45
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count",a7d98df3
 Unranked,"Kawaha,Magmaus","(any),(any)",,,"Under Review ⚑",,ab9df828
 Unranked,Kibb,"5 lever",,Lever,"Under Review ⚑",,991c6c07
@@ -857,9 +861,7 @@ Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872
 Unranked,MIWA,PX,,Pin-tumbler,,,fb472463
 Unranked,MIWA,"Star Orion","6 rows",Dimple,"High pin count",,4150776b
 Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Double bitted",,e9d77a86
-Unranked,Nagasawa,KCY-7x,"12 pin",Dimple,"Under Review ⚑,High pin count",,1ee9600e
 Unranked,,Ohshima,"3 row dimple",Dimple,"Under Review ⚑,High pin count",,ea4834c8
-Unranked,Omellow,R3,,Dimple,"Interlocking pins",,1d80c9bb
 Unranked,Picard,"CR Serrature","3 points pump lock",Pump/push,"Under Review ⚑",,2ac99741
 Unranked,Picard,VAK10,,Pump/push,,,ed0a9b08
 Unranked,Pollux,gm05,,Pump/push,"Under Review ⚑",,3ca24202
