@@ -681,12 +681,16 @@
       {
         "make": "Chubb",
         "model": "Detector from 1950's"
+      },
+      {
+        "make": "WLN",
+        "model": "Detector"
       }
     ],
     "lockingMechanisms": [
       "Lever"
     ],
-    "name": "Tann Detector / Chubb Detector from 1950's",
+    "name": "Tann Detector / Chubb Detector from 1950's / WLN Detector",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -719,7 +723,8 @@
     ],
     "features": [
       "Various formats",
-      "False gates"
+      "False gates",
+      "changelog"
     ],
     "notes": "Usually 5 levers",
     "views": 763,
@@ -3172,6 +3177,10 @@
     "makeModels": [
       {
         "make": "Burg Wächter",
+        "model": "\"C-Line\" 222 30"
+      },
+      {
+        "make": "Burg Wächter",
         "model": "\"C-Line\" 222 40"
       }
     ],
@@ -3181,7 +3190,7 @@
     "features": [
       "Unguttable"
     ],
-    "name": "Burg Wächter \"C-Line\" 222 40",
+    "name": "Burg Wächter \"C-Line\" 222 30, \"C-Line\" 222 40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7435,7 +7444,11 @@
       }
     ],
     "views": 1284,
-    "lastUpdated": "2025-03-19T15:44:57.280Z"
+    "lastUpdated": "2025-03-19T15:44:57.280Z",
+    "version": "4 or 5 pin",
+    "features": [
+      "changelog"
+    ]
   },
   "9bc8809e": {
     "id": "9bc8809e",
@@ -17664,13 +17677,18 @@
       {
         "make": "DOM",
         "model": "RS Sigma"
+      },
+      {
+        "make": "DOM",
+        "model": "RS Sirius"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
-      "Magic DOM drivers"
+      "Magic DOM drivers",
+      "changelog"
     ],
     "media": [
       {
@@ -17725,7 +17743,7 @@
         "url": "http://lockwiki.com/index.php/DOM_Sigma"
       }
     ],
-    "name": "DOM RS Sigma",
+    "name": "DOM RS Sigma, RS Sirius",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1322,
     "lastUpdated": "2025-03-18T23:29:31.273Z"
@@ -17737,12 +17755,16 @@
       {
         "make": "DOM",
         "model": "S"
+      },
+      {
+        "make": "DOM",
+        "model": "S PP1024"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM S",
+    "name": "DOM S, S PP1024",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17798,7 +17820,10 @@
       }
     ],
     "views": 797,
-    "lastUpdated": "2025-03-19T15:44:57.290Z"
+    "lastUpdated": "2025-03-19T15:44:57.290Z",
+    "features": [
+      "changelog"
+    ]
   },
   "4c544aa2": {
     "id": "4c544aa2",
@@ -22630,7 +22655,7 @@
   },
   "f2d41749": {
     "id": "f2d41749",
-    "belt": "Brown",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ASSA",
@@ -22646,8 +22671,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Gin spool drivers",
-      "Undercut milling"
+      "Removed",
+      "changelog"
     ],
     "media": [
       {
@@ -22715,7 +22740,8 @@
       "f8445741",
       "d9e3829f",
       "ef221c67"
-    ]
+    ],
+    "notes": "There is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed."
   },
   "ef221c67": {
     "id": "ef221c67",
@@ -23558,13 +23584,17 @@
       {
         "make": "ABUS",
         "model": "EP10"
+      },
+      {
+        "make": "CISA",
+        "model": "RS3"
       }
     ],
     "version": "all versions, <15 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Bricard Chifral / ABUS EP10",
+    "name": "Bricard Chifral / ABUS EP10 / CISA RS3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 797,
     "lastUpdated": "2025-03-21T17:03:30.598Z",
@@ -23628,6 +23658,10 @@
     ],
     "relatedIds": [
       "9b00fb5e"
+    ],
+    "features": [
+      "High pin count",
+      "changelog"
     ]
   },
   "98ba98ae": {
@@ -25363,6 +25397,10 @@
     "makeModels": [
       {
         "make": "ISEO",
+        "model": "R50"
+      },
+      {
+        "make": "ISEO",
         "model": "R7"
       }
     ],
@@ -25407,10 +25445,13 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52757383892_c3f1d0d74d_o.jpg"
       }
     ],
-    "name": "ISEO R7",
+    "name": "ISEO R50, R7",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1071,
-    "lastUpdated": "2025-03-19T01:20:51.375Z"
+    "lastUpdated": "2025-03-19T01:20:51.375Z",
+    "features": [
+      "changelog"
+    ]
   },
   "479f1d73": {
     "id": "479f1d73",
@@ -25824,8 +25865,7 @@
       }
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "version": "<13 pins"
   },
@@ -37290,21 +37330,30 @@
       },
       {
         "make": "Mottura",
+        "model": "Champions C43 Plus"
+      },
+      {
+        "make": "Mottura",
         "model": "Champions C44"
       },
       {
         "make": "Mottura",
         "model": "Champions C48"
+      },
+      {
+        "make": "Mottura",
+        "model": "Champions C9P"
       }
     ],
     "lockingMechanisms": [
       "Dimple",
       "Other"
     ],
-    "name": "Mottura Champions C43, Champions C44, Champions C48",
+    "name": "Mottura Champions C43, Champions C43 Plus, Champions C44, Champions C48, Champions C9P",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
-      "Rotors"
+      "Rotors",
+      "changelog"
     ],
     "media": [
       {
@@ -45675,7 +45724,8 @@
     "name": "Yanai R 2200M",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
-      "High pin count"
+      "High pin count",
+      "changelog"
     ],
     "media": [
       {
@@ -45716,7 +45766,8 @@
       }
     ],
     "views": 2138,
-    "lastUpdated": "2025-03-19T15:44:57.319Z"
+    "lastUpdated": "2025-03-19T15:44:57.319Z",
+    "version": ">= 17 pins"
   },
   "0b604114": {
     "id": "0b604114",
@@ -49617,7 +49668,7 @@
   },
   "1ee9600e": {
     "id": "1ee9600e",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Nagasawa",
@@ -49630,8 +49681,8 @@
     "lastUpdated": "2025-03-18T23:29:31.286Z",
     "views": 130,
     "features": [
-      "Under Review ⚑",
-      "High pin count"
+      "High pin count",
+      "changelog"
     ],
     "lockingMechanisms": [
       "Dimple"
@@ -49749,8 +49800,7 @@
     "lastUpdated": "2025-03-19T01:20:51.403Z",
     "views": 183,
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -50699,9 +50749,6 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53197461328_4bbcb6ebc7_o.jpg"
       }
-    ],
-    "features": [
-      "Changelog"
     ]
   },
   "7164f69d": {
@@ -52544,10 +52591,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 210,
-    "features": [
-      "Changelog"
-    ]
+    "views": 210
   },
   "dbc6670b": {
     "id": "dbc6670b",
@@ -52800,7 +52844,8 @@
         "fullSizeUrl": "https://www.catalocks.eu/photos/930/1.jpg"
       }
     ],
-    "views": 224
+    "views": 224,
+    "dateDeleted": "2025-08-15T19:23:33.252Z"
   },
   "d9c48db1": {
     "id": "d9c48db1",
@@ -53035,7 +53080,8 @@
     "views": 276,
     "lockingMechanisms": [
       "Dimple"
-    ]
+    ],
+    "dateDeleted": "2025-08-15T19:23:33.252Z"
   },
   "5433316e": {
     "id": "5433316e",
@@ -54957,7 +55003,7 @@
   },
   "1d80c9bb": {
     "id": "1d80c9bb",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Omellow",
@@ -54968,7 +55014,8 @@
       "Dimple"
     ],
     "features": [
-      "Interlocking pins"
+      "Interlocking pins",
+      "changelog"
     ],
     "media": [
       {
@@ -56514,7 +56561,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53963410891_6eaaf20607_o.jpg"
       }
-    ]
+    ],
+    "dateDeleted": "2025-08-15T19:23:33.252Z"
   },
   "3e5236c7": {
     "id": "3e5236c7",
@@ -58306,8 +58354,7 @@
     "name": "WEST 941",
     "dateAdded": "2024-08-29T18:27:38.000Z",
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ]
   },
   "476995cc": {
@@ -59316,8 +59363,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ],
     "lastUpdated": "2025-03-19T15:44:57.304Z",
     "name": "Keso 10RS, 1000, 2000S, 4000S (Omega)",
@@ -59578,10 +59624,7 @@
     ],
     "lastUpdated": "2025-03-06T00:34:58.468Z",
     "name": "U-Shin Showa Mortise",
-    "dateAdded": "2025-03-06T00:34:59.000Z",
-    "features": [
-      "Changelog"
-    ]
+    "dateAdded": "2025-03-06T00:34:59.000Z"
   },
   "5bbe7375": {
     "id": "5bbe7375",
@@ -59757,7 +59800,7 @@
   },
   "66d1ab72": {
     "id": "66d1ab72",
-    "belt": "Unranked",
+    "belt": "Red",
     "makeModels": [
       {
         "make": "IKON",
@@ -59771,7 +59814,7 @@
     "features": [
       "Rotating fingerpins",
       "Active sidebar",
-      "Under Review ⚑"
+      "changelog"
     ],
     "media": [
       {
@@ -59874,9 +59917,6 @@
     "lockingMechanisms": [
       "Dimple",
       "Slider"
-    ],
-    "features": [
-      "Changelog"
     ]
   },
   "fe9889e2": {
@@ -59895,8 +59935,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ]
   },
   "deb35ee7": {
@@ -59915,8 +59954,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ]
   },
   "d54a6b5f": {
@@ -59934,8 +59972,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Changelog"
+      "High pin count"
     ]
   },
   "2eeb9bee": {
@@ -60106,5 +60143,98 @@
     "notes": "** **Special Picking Requirement:** Must be picked clockwise.",
     "name": "Fichet-Bauche MPX",
     "dateAdded": "2025-06-10T16:49:06.292Z"
+  },
+  "f6ef12e5": {
+    "id": "f6ef12e5",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "82/63"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "changelog"
+    ],
+    "name": "ABUS 82/63",
+    "dateAdded": "2025-08-15T19:23:33.234Z"
+  },
+  "2c906ebb": {
+    "id": "2c906ebb",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Securystar",
+        "model": "Pro Star"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "changelog"
+    ],
+    "name": "Securystar Pro Star",
+    "dateAdded": "2025-08-15T19:23:33.238Z"
+  },
+  "696d5f2c": {
+    "id": "696d5f2c",
+    "belt": "Red",
+    "makeModels": [
+      {
+        "make": "Mauer",
+        "model": "Crypto"
+      }
+    ],
+    "features": [
+      "High pin count",
+      "changelog"
+    ],
+    "name": "Mauer Crypto",
+    "dateAdded": "2025-08-15T19:23:33.241Z"
+  },
+  "5eac6a29": {
+    "id": "5eac6a29",
+    "belt": "Red",
+    "makeModels": [
+      {
+        "make": "Yanai",
+        "model": "R 2200M"
+      }
+    ],
+    "version": "<14 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "changelog"
+    ],
+    "name": "Yanai R 2200M",
+    "dateAdded": "2025-08-15T19:23:33.241Z"
+  },
+  "a974eb0c": {
+    "id": "a974eb0c",
+    "belt": "Black 1",
+    "makeModels": [
+      {
+        "make": "Yanai",
+        "model": "R 2200M"
+      }
+    ],
+    "version": "14-16 pins",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "changelog"
+    ],
+    "name": "Yanai R 2200M",
+    "dateAdded": "2025-08-15T19:23:33.243Z"
   }
 }
