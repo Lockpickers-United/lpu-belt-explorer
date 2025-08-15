@@ -6,5 +6,5 @@ Those security pins designed to keep you out are powerless against you. You're s
 
 **Evidence format**
 
-- You must submit a **video** of your picking accomplishments for this rank. Videos must be in one continuous take.
-- Photographs showing turned core will also be accepted for locks that cannot be disassembled.
+- You must submit a **video** of your picking accomplishments for this rank unless the lock cannot be disassembled. Videos must be in one continuous take.
+- Photographs showing the turned core are sufficient for locks that cannot be disassembled.
