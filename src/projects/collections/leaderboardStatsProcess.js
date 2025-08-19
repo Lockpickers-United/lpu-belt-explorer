@@ -55,7 +55,7 @@ async function saveLeaderboard() {
 
         }
 
-        if (profile.danLevel) setDeep(userStats, ['danLevel'], profile.danLevel || 0)
+        if (profile.danLevel) setDeep(userStats, ['danLevel'], Math.max(profile.danLevel, profile.awardedDan) || 0)
         if (profile.danPoints)  setDeep(userStats, ['danPoints'], profile.danPoints || 0)
         if (profile.blackBeltCount) setDeep(userStats, ['blackBeltCount'], profile.blackBeltCount)
         setDeep(userStats, ['blackBeltAwardedAt'], profile?.blackBeltAwardedAt?._seconds || 0)

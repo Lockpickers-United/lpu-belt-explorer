@@ -13,11 +13,10 @@ const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
 
-const requestFile = fs.readFileSync('./data/syncMessagesForFlairFix.json', 'utf8')
+const requestFile = fs.readFileSync('./data/syncMessagesForFlairFix2.json', 'utf8')
 const requests = JSON.parse(requestFile)
 
 const lcBelts = uniqueBelts.map(belt => belt.toLowerCase())
-console.log('uniqueBelts', uniqueBelts)
 
 const requestInfo = requests
     .sort((a, b) => {
@@ -38,7 +37,7 @@ const requestInfo = requests
 
         const uname = cleanContent.match(/sync u\/([\w-]+)/i)?.[1] ?? null
 
-        if (cleanContent.includes('dan')) console.log(uname, cleanContent)
+        //if (cleanContent.includes('dan')) console.log(uname, cleanContent)
 
         //const rank = belt ? belt : dan
         const rank = belt
@@ -63,7 +62,7 @@ await reddit.getMe()
 
 const subredditName = 'lockpicking'
 const usernames = [
-    'mgsecure'
+    'mgsecure',
 ]
 
 
@@ -95,7 +94,7 @@ async function reapplyFlair(subredditName, username) {
             console.log('Setting flair for', username, 'from', flair?.text, 'to', belt)
             await setFlair(subredditName, username, belt)
         } else {
-            console.log('Skipping flair for', username, 'as it is a Dan flair:', flair.text)
+            console.log('- Skipping flair for', username, 'as it is a Dan flair:', flair.text)
         }
     } catch (err) {
         console.error('Failed to set user flair', err)
