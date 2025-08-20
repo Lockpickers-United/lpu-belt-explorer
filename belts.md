@@ -239,12 +239,12 @@ Those security pins designed to keep you out are powerless against you. You're s
 
 **Requirements**
 
-- Pick one of the locks ranked as Orange Belt.
+- Pick (SPP or rake) one of the locks ranked as Orange Belt.
 
 **Details**
 
-- If the lock can be dissasembled, you must single pin pick (SPP) it and submit a **video** of your picking accomplishments for this rank. Videos must be in one continuous take.
-- For locks that cannot be disassembled, raking is allowed and photographs showing the turned core are sufficient.
+- If the lock can be dissasembled, you must submit a **video** of your picking accomplishments for this rank. Videos must be in one continuous take.
+- For locks that cannot be disassembled, photographs showing the turned core are sufficient.
 
 
 **Orange Belt Locks**
@@ -337,7 +337,7 @@ together again.
 
 **Picking Requirements**
 
-- SPP (single pin pick) one of the locks ranked as green belt
+- SPP (single pin pick) one of the locks ranked as Green Belt. Raking is not allowed for Green Belt and above.
 
 **Non-Picking Requirements**
 
@@ -348,10 +348,10 @@ together again.
 
 - You must **video** picking and gutting accomplishments in one continuous take, **pictures are no longer accepted at this rank**, even for locks that cannot be disassembled. Your video should include a clear close-up of the pins from the lock.
 - For locks that cannot be gutted -- e.g. Master Lock #410 LOTO -- video documentation of gutting and reassembling a different lock will be accepted.
-- Reassembly can be a different lock and even in a separate video
+- Reassembly can be a different lock and even in a separate video.
 
 Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-7If8) if you not familiar with the
-process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo).
+process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo) and please avoid the YouTube "Shorts" format.
 
 
 **Green Belt Locks**
@@ -531,6 +531,8 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please be sure to see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
 
 - Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker.
+
+- Cutaway Lock: Expose the locking mechanisms of an existing lock. The lock should be completely functional with a working key.
 
 - Lock Write-Up: Provide a detailed breakdown of a lock, its design, pins, security features, and picking techniques.
 
@@ -993,7 +995,7 @@ Ultra-high security is your middle name. Your lock collection is worth more than
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. Note: videos must be in **horizontal** aspect ratio due to the detailed review that Red Belt evidence recieves. Videos shot vertically will be rejected without review.
 
 
 **Red Belt Locks**
@@ -1109,13 +1111,14 @@ is required to gut.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. Note: videos must be in **horizontal** aspect ratio due to the detailed review that Black Belt evidence recieves. Videos shot vertically will be rejected without review.
 
 **Epic Quest Options** (all subject to approval):
 
 - Complete a Master's Project at **Tier 2** level or above.
   - **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
-- Select and pick two additional Black Belt level locks. (Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project)
+- Select and pick two additional Black Belt level locks.
+- Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project.
 
 *Please ask LPU staff if you need further information about Epic Quests.*
 
