@@ -2,9 +2,9 @@ Those security pins designed to keep you out are powerless against you. You're s
 
 **Requirements**
 
-- Pick one of the locks ranked as Orange Belt.
+- Pick (SPP or rake) one of the locks ranked as Orange Belt.
 
 **Details**
 
-- If the lock can be dissasembled, you must single pin pick (SPP) it and submit a **video** of your picking accomplishments for this rank. Videos must be in one continuous take.
-- For locks that cannot be disassembled, raking is allowed and photographs showing the turned core are sufficient.
+- If the lock can be dissasembled, you must submit a **video** of your picking accomplishments for this rank. Videos must be in one continuous take.
+- For locks that cannot be disassembled, photographs showing the turned core are sufficient.

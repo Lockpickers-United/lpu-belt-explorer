@@ -31,12 +31,13 @@ is required to gut.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. Note: videos must be in **horizontal** aspect ratio due to the detailed review that Black Belt evidence recieves. Videos shot vertically will be rejected without review.
 
 **Epic Quest Options** (all subject to approval):
 
 - Complete a Master's Project at **Tier 2** level or above.
   - **[Click here](https://lpubelts.com/#/projects)** for Project types and requirements details.
-- Select and pick two additional Black Belt level locks. (Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project)
+- Select and pick two additional Black Belt level locks.
+- Note that you can opt to submit a Black Belt request with a total of **six** Black Belt locks picked and gutted without completing a Master's Project.
 
 *Please ask LPU staff if you need further information about Epic Quests.*

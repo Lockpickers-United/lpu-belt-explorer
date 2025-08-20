@@ -6,7 +6,7 @@ together again.
 
 **Picking Requirements**
 
-- SPP (single pin pick) one of the locks ranked as green belt
+- SPP (single pin pick) one of the locks ranked as Green Belt. Raking is not allowed for Green Belt and above.
 
 **Non-Picking Requirements**
 
@@ -17,7 +17,7 @@ together again.
 
 - You must **video** picking and gutting accomplishments in one continuous take, **pictures are no longer accepted at this rank**, even for locks that cannot be disassembled. Your video should include a clear close-up of the pins from the lock.
 - For locks that cannot be gutted -- e.g. Master Lock #410 LOTO -- video documentation of gutting and reassembling a different lock will be accepted.
-- Reassembly can be a different lock and even in a separate video
+- Reassembly can be a different lock and even in a separate video.
 
 Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-7If8) if you not familiar with the
-process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo).
+process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo) and please avoid the YouTube "Shorts" format.

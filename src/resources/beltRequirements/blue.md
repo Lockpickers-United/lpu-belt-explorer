@@ -16,6 +16,8 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 
 - Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker.
 
+- Cutaway Lock: Expose the locking mechanisms of an existing lock. The lock should be completely functional with a working key.
+
 - Lock Write-Up: Provide a detailed breakdown of a lock, its design, pins, security features, and picking techniques.
 
 - First Public Pick of a Lock: Successfully pick a lock that has not been picked before (i.e., the first pick of a lock model, brand, or specific design).

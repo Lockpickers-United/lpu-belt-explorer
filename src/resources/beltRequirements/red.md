@@ -15,4 +15,4 @@ Ultra-high security is your middle name. Your lock collection is worth more than
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. Note: videos must be in **horizontal** aspect ratio due to the detailed review that Red Belt evidence recieves. Videos shot vertically will be rejected without review.
