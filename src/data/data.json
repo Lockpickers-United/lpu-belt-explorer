@@ -7664,6 +7664,7 @@
         "model": "72/40"
       }
     ],
+    "version": "Guttable version. Unguttable version is not yet ranked.",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
