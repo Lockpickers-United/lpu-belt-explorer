@@ -356,7 +356,7 @@ process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvh
 
 **Green Belt Locks**
 
-- [ABUS 72/40](https://lpubelts.com/#/locks?id=74a00ae3)
+- [ABUS 72/40](https://lpubelts.com/#/locks?id=74a00ae3) (Guttable version. Unguttable version is not yet ranked.)
 - [ABUS 74/40 LOTO](https://lpubelts.com/#/locks?id=e42853c7)
 - [ABUS 76/40](https://lpubelts.com/#/locks?id=47e7cf73)
 - [ABUS 80TI Titalium](https://lpubelts.com/#/locks?id=e1625c4d)

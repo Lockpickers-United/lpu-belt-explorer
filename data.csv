@@ -153,7 +153,7 @@ Orange,Yale,"5 lever sashlock","5 Lever",Lever,"Mortise,Pin key,Curtain,False ga
 Orange,Yale,Mortise,,Pin-tumbler,,,db1040e5
 Orange,Yale,"Y110 series brass padlock","all formats 40mm or larger (includes Y113 and Y114, excludes iron body disc detainer Y112)",Pin-tumbler,Unguttable,,98a2ba2d
 Orange,Yale,"Y120 series brass padlock","all formats",Pin-tumbler,Unguttable,,ea6539c8
-Green,ABUS,72/40,,Pin-tumbler,"Picking Risk","Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",74a00ae3
+Green,ABUS,72/40,"Guttable version. Unguttable version is not yet ranked.",Pin-tumbler,"Picking Risk","Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",74a00ae3
 Green,ABUS,"74/40 LOTO",,Pin-tumbler,Unguttable,,e42853c7
 Green,ABUS,76/40,,Pin-tumbler,Unguttable,,47e7cf73
 Green,ABUS,"80TI Titalium",,Pin-tumbler,Unguttable,,e1625c4d

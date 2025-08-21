@@ -8904,7 +8904,8 @@
     "features": [
       "Picking Risk"
     ],
-    "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked."
+    "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
+    "version": "Guttable version. Unguttable version is not yet ranked."
   },
   "e42853c7": {
     "id": "e42853c7",
