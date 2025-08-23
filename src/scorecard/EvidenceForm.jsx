@@ -21,10 +21,15 @@ import CollectionButton from '../entries/CollectionButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId, isAward} from '../entries/entryutils'
 import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
+import DataContext from '../context/DataContext.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
+    const {admin} = useContext(AppContext)
+    const {blackBeltUser} = useContext(DataContext)
+
     const {addPickerActivity, updatePickerActivity, removePickerActivity} = useContext(DBContext)
 
     const [evidenceNotes, setEvidenceNotes] = useState(activity?.evidenceNotes ? activity.evidenceNotes : '')
@@ -149,6 +154,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const {isMobile} = useWindowSize()
     const denseButton = !!isMobile
     const buttonWidth = isMobile ? 50 : 250
+    const minWidth = isMobile ? 290 : 500
 
     //TODO fix invalid Autocomplete option, isOptionEqualToValue?
 
@@ -182,7 +188,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                     </div>
                 }
 
-                <div style={{display: 'flex', width: '95%', marginBottom: 10}}>
+                <div style={{display: 'flex', width: '95%', marginBottom: 10, minWidth: minWidth}}>
                     <TextField
                         id='evidence-url'
                         error={!!evidenceUrlError}
@@ -216,7 +222,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                         disableFuture
                     />
 
-                    {(!awardMode && !addProject) &&
+                    {(!awardMode && !addProject && (blackBeltUser|| admin)) &&
                         <TextField
                             select
                             style={{marginLeft: 30, width: 250}}

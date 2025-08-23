@@ -26,6 +26,7 @@ import IconButton from '@mui/material/IconButton'
 import PrintIcon from '@mui/icons-material/Print'
 import AppContext from '../app/AppContext.jsx'
 import {blackBeltAwardId} from '../entries/entryutils'
+import DataContext from '../context/DataContext.jsx'
 
 dayjs.extend(utc)
 
@@ -35,6 +36,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     const {setFilters} = useContext(FilterContext)
     const {cardActivity, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
     const {admin} = useContext(AppContext)
+    const {blackBeltScorecard} = useContext(DataContext)
 
     const entry = getEntryFromId(activity.matchId)
     const project = getProjectEntryFromId(activity.matchId)
@@ -78,12 +80,14 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     const supersedingEntryId = activity.exceptionId
     const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
     const supersedingLock = supersedingEntry ? useMemo(() => getEntryFromId(supersedingEntry.matchId), [getEntryFromId, supersedingEntry.matchId]) : {}
+    const supersedingProject = supersedingEntry ? useMemo(() => getProjectEntryFromId(supersedingEntry.matchId), [getProjectEntryFromId, supersedingEntry.matchId]) : {}
     const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
-    const supersedingLink = supersedingEntryId
-        ? <Link style={{color: '#99c2e5'}} onClick={() => {
+    const supersedingLink = supersedingLock
+        ? <Link style={{color: '#6dbbff'}} onClick={() => {
             navigateToEntry(supersedingEntryId)
         }}>{supersedingLockName}</Link>
-        : null
+        : supersedingProject?.name
+
     let exceptionNote = activity.exceptionType === 'nomatch'
         ? 'Could not be matched to a lock or project'
         : activity.exceptionType === 'badlink' && !award
@@ -192,11 +196,25 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                             textStyle={entity?.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />
                     }
+
+                    {(exceptionNote || (activity.evidenceModifier && (blackBeltScorecard||admin))) &&
+                        <div style={{
+                            margin: '0px 0px 0px 6px',
+                            fontWeight: 600,
+                            fontSize: '.95rem'
+                        }}>
+                            {activity.evidenceModifier && (blackBeltScorecard||admin) &&
+                                <span style={{marginTop:10}}>* {activity.evidenceModifier}</span>
+                            }
+                            {exceptionNote &&
+                                <span style={{marginLeft:10, fontSize: '.9rem'}}>* {exceptionNote} {supersedingLink}</span>
+                            }
+                        </div>
+                    }
+
                 </div>
 
-
                 <div style={{display: flexType, placeItems: 'center', marginLeft: 10, opacity: rowOpacity}}>
-
                     <div style={{display: 'flex', width: 76}}>
                         <div style={{margin: '2px 0px 0px 6px', width: 30, flexShrink: 0, flexDirection: 'column'}}>
                             {entry &&
@@ -231,31 +249,15 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                             </Tooltip>
                         }
                     </div>
-
                 </div>
+
 
             </AccordionSummary>
             {expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
-
-                        {(exceptionNote || activity.evidenceModifier) &&
-                            <div style={{
-                                margin: '0px 0px 20px 20px',
-                                fontWeight: 600,
-                                fontSize: '.95rem'
-                            }}>
-                                {activity.evidenceModifier &&
-                                    <span>{activity.evidenceModifier}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                }
-                                {exceptionNote &&
-                                    <span>* {exceptionNote} {supersedingLink}</span>
-                                }
-                            </div>
-                        }
                         <EvidenceForm activity={activity} handleUpdate={() => {
                         }}/>
-
                     </AccordionDetails>
                 </React.Fragment>
             }

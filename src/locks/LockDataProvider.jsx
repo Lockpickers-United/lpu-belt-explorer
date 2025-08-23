@@ -122,14 +122,19 @@ export function DataProvider({children, allEntries, profile}) {
         return lockbazzarIds?.includes(id)
     }, [lockbazzarIds])
 
+    const blackBeltUser = useMemo(() => {
+        return profile?.blackBeltAwardedAt > 0
+    }, [profile])
+
     const value = useMemo(() => ({
         allEntries,
         visibleEntries,
         getEntryFromId,
         expandAll,
         profile,
+        blackBeltUser,
         lockbazzarAvailable
-    }), [allEntries, getEntryFromId, visibleEntries, expandAll, profile, lockbazzarAvailable])
+    }), [allEntries, visibleEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>

@@ -57,6 +57,7 @@ function ScorecardRoute({mostPopular}) {
         }
         try {
             const profile = await getProfile(userId)
+
             if (profile) {
                 const ownerName = profile.displayName && !profile['privacyAnonymous']
                     ? profile.displayName.toLowerCase().endsWith('s')
@@ -91,6 +92,8 @@ function ScorecardRoute({mostPopular}) {
     const owner = user?.uid === userId
 
     const profile = data ? data.profile : {}
+    const blackBeltScorecard = data?.profile?.blackBeltAwardedAt > 0
+
     const cardActivity = data ? data.scoredActivity : []
     const cardBBCount = data ? data.bbCount : 0
     const cardDanPoints = data ? data.danPoints : 0
@@ -137,7 +140,8 @@ function ScorecardRoute({mostPopular}) {
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
                                    cardNextDanLocks={cardNextDanLocks} cardUniqueLocks={cardUniqueLocks}
                                    cardMaxBelt={cardMaxBelt}
-                                   popularLocks={popularLocks} popularLocksBB={popularLocksBB}>
+                                   popularLocks={popularLocks} popularLocksBB={popularLocksBB}
+                                   profile={profile} blackBeltScorecard={blackBeltScorecard}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
                         <Nav title={title} extras={nav}/>

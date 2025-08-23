@@ -19,7 +19,9 @@ export function ScorecardDataProvider({
                                           cardUniqueLocks,
                                           cardMaxBelt,
                                           popularLocks,
-                                          popularLocksBB
+                                          popularLocksBB,
+                                          profile,
+                                          blackBeltScorecard
                                       }) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
@@ -75,6 +77,10 @@ export function ScorecardDataProvider({
         value: undefined
     }), search, 'popular'), [allPopularEntries, filterArray, search])
 
+    const blackBeltUser = useMemo(() => {
+        return profile?.blackBeltAwardedAt > 0
+    }, [profile])
+
     const value = useMemo(() => ({
         allEntries,
         cardActivity,
@@ -88,10 +94,12 @@ export function ScorecardDataProvider({
         bbPopularEntries,
         cardUniqueLocks,
         cardMaxBelt,
+        blackBeltUser,
+        blackBeltScorecard,
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt])
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
 
     return (
         <ScorecardDataContext.Provider value={value}>
