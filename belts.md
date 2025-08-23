@@ -593,7 +593,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [Bricard Bloctout](https://lpubelts.com/#/locks?id=307e1f03)
 - [Bricard Serial S](https://lpubelts.com/#/locks?id=61f33761)
 - [Burg W&auml;chter Diamant](https://lpubelts.com/#/locks?id=32fa52a6)
-- [Burg W&auml;chter Gamma 700](https://lpubelts.com/#/locks?id=ed9fa926) (non-removable core)
+- [Burg W&auml;chter Gamma 700](https://lpubelts.com/#/locks?id=ed9fa926)
 - [Cantol high-security line ](https://lpubelts.com/#/locks?id=5647f11c) (10-pin dimple)
 - [CAVEO TS007](https://lpubelts.com/#/locks?id=60964e9f) (all standards)
 - [Chubb 114 (3g114)](https://lpubelts.com/#/locks?id=32c85438) (5 lever, pre-2004)

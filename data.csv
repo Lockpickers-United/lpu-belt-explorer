@@ -37,11 +37,11 @@ Yellow,Brinks,"Laminated Padlock","Pin-Tumbler only, 40mm or larger, Weatherproo
 Yellow,"Brinks,Brinks","R70 disk lock,R80 disk lock",,Pin-tumbler,Unguttable,,a8c9aa08
 Yellow,"Brüder Mannesmann","Brass Padlocks","50mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,1cad075e
 Yellow,,BSS,,Pin-tumbler,,,50fbf666
-Yellow,"Burg Wächter","""Alutitan"" 770 40",,Pin-tumbler,,,4d7dd1a0
+Yellow,"Burg Wächter","""Alutitan"" 770 40",,Pin-tumbler,Unguttable,,4d7dd1a0
 Yellow,"Burg Wächter,Burg Wächter","""C-Line"" 222 30,""C-Line"" 222 40",,Pin-tumbler,Unguttable,,6ca3420d
 Yellow,"Burg Wächter","""Look"" 402 40",,Pin-tumbler,Unguttable,,7f56acb9
-Yellow,"Burg Wächter","""SecuLock"" 405 40",,Pin-tumbler,,,b517a7ef
-Yellow,"Burg Wächter","""Yacht"" 460 Ni 40",,Pin-tumbler,,,9a5b3f53
+Yellow,"Burg Wächter","""SecuLock"" 405 40",,Pin-tumbler,Unguttable,,b517a7ef
+Yellow,"Burg Wächter","""Yacht"" 460 Ni 40",,Pin-tumbler,Unguttable,,9a5b3f53
 Yellow,,Börkey,,Pin-tumbler,,,90267144
 Yellow,,Citadel,,Pin-tumbler,,,4938772f
 Yellow,Dulimex,DX,,Pin-tumbler,,,a8d996c0
@@ -202,8 +202,8 @@ Green,BKS,"Detect 3","no active sidebar",Pin-tumbler,,,ec0a2659
 Green,BKS,Helius,,Pin-tumbler,,,4bc2b65a
 Green,Brady,SafeKey,,Pump/push,,,e957e0d6
 Green,Bricard,Serial,,Pin-tumbler,,,3b26e53c
-Green,"Burg Wächter",Atlantic,,Pin-tumbler,,,14f021bb
-Green,"Burg Wächter",Karat,,Pin-tumbler,,,bd9dc1e4
+Green,"Burg Wächter",Atlantic,,Pin-tumbler,Unguttable,,14f021bb
+Green,"Burg Wächter",Karat,,Pin-tumbler,Unguttable,,bd9dc1e4
 Green,"Burg Wächter","Profi 116/40",,Pin-tumbler,Unguttable,,dd155241
 Green,CCL,"Sesamee 900 series",,Pin-tumbler,Overmilling,,1fbf6a7a
 Green,CES,Standard,,Pin-tumbler,,"Also known as CES 810",826fc531
@@ -331,8 +331,8 @@ Blue,Baton,"6000 series","not Abloy keyway","Disc detainer",,,ae0d35bc
 Blue,Bison/HYT/Lays/Qlsy,"Chain Key Lock",,Pin-tumbler,,"Various brands",111062fc
 Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
-Blue,"Burg Wächter",Diamant,,Pin-tumbler,,,32fa52a6
-Blue,"Burg Wächter","Gamma 700","non-removable core",Pin-tumbler,,,ed9fa926
+Blue,"Burg Wächter",Diamant,,Pin-tumbler,Unguttable,,32fa52a6
+Blue,"Burg Wächter","Gamma 700",,Pin-tumbler,Unguttable,,ed9fa926
 Blue,Cantol,"high-security line ","10-pin dimple",Dimple,,,5647f11c
 Blue,CAVEO,TS007,"all standards","Dimple,Slider","Sprung sliders,Active sidebar","Seven pins with standard drivers, five slider sidebar",60964e9f
 Blue,Chubb,"114 (3g114)","5 lever, pre-2004",Lever,"Pin key,Curtain,False gates",,32c85438
@@ -504,7 +504,7 @@ Purple,"M&C,M&C,M&C,M&C,Vachette,Vachette","Color,Color Pro,Color+,Minos,V-DIS,V
 Purple,"M&C,M&C","Condor,Move",,"Dimple,Slider","Active sidebar,False gates",,be22f5f1
 Purple,M&C,Matrix,,"Slider,Pin-tumbler","False gates,Active sidebar",,9aedb834
 Purple,Magnum,Atlantic,,Dimple,,,c9fc823c
-Purple,"Master Lock",#19,,Pin-tumbler,,,8f7f1830
+Purple,"Master Lock",#19,,Pin-tumbler,Unguttable,,8f7f1830
 Purple,Mauer,"Red Line GM",,Dimple,,,0a70d67f
 Purple,Medeco,"Original Camlock","≥ 5 pins ******","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",aeaa6a09
 Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","≥ 5 pins ******","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",826c31e0
