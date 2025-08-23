@@ -2050,6 +2050,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Unguttable"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2195,6 +2198,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Unguttable"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2263,6 +2269,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -10641,6 +10650,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Unguttable"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10685,6 +10697,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -18118,6 +18133,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Unguttable"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18169,9 +18187,11 @@
         "model": "Gamma 700"
       }
     ],
-    "version": "non-removable core",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -30214,6 +30234,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
     ],
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [

@@ -3169,7 +3169,10 @@
       }
     ],
     "views": 2025,
-    "lastUpdated": "2025-03-19T01:20:51.355Z"
+    "lastUpdated": "2025-03-19T01:20:51.355Z",
+    "features": [
+      "Unguttable"
+    ]
   },
   "6ca3420d": {
     "id": "6ca3420d",
@@ -3332,6 +3335,9 @@
         "title": "KoksaWiki",
         "url": "https://wiki.koksa.org/Burg_W%C3%A4chter_SecuLock"
       }
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   "9a5b3f53": {
@@ -3369,7 +3375,10 @@
       }
     ],
     "views": 1178,
-    "lastUpdated": "2025-03-19T15:44:57.278Z"
+    "lastUpdated": "2025-03-19T15:44:57.278Z",
+    "features": [
+      "Unguttable"
+    ]
   },
   "919755fe": {
     "id": "919755fe",
@@ -11475,7 +11484,10 @@
       }
     ],
     "views": 1147,
-    "lastUpdated": "2025-03-18T23:29:31.271Z"
+    "lastUpdated": "2025-03-18T23:29:31.271Z",
+    "features": [
+      "Unguttable"
+    ]
   },
   "32fa52a6": {
     "id": "32fa52a6",
@@ -11521,7 +11533,10 @@
       }
     ],
     "views": 2366,
-    "lastUpdated": "2025-03-19T01:20:51.366Z"
+    "lastUpdated": "2025-03-19T01:20:51.366Z",
+    "features": [
+      "Unguttable"
+    ]
   },
   "bd9dc1e4": {
     "id": "bd9dc1e4",
@@ -11594,7 +11609,10 @@
       }
     ],
     "views": 1302,
-    "lastUpdated": "2025-03-19T15:44:57.283Z"
+    "lastUpdated": "2025-03-19T15:44:57.283Z",
+    "features": [
+      "Unguttable"
+    ]
   },
   "dd155241": {
     "id": "dd155241",
@@ -16820,7 +16838,6 @@
         "model": "Gamma 700"
       }
     ],
-    "version": "non-removable core",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -16856,6 +16873,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52788395516_95176de32d_o.jpg"
       }
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   "5647f11c": {
@@ -49010,6 +49030,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52871178788_674729579d_o.jpg"
       }
+    ],
+    "features": [
+      "Unguttable"
     ]
   },
   "7b69a331": {
