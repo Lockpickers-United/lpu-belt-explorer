@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useContext} from 'react'
+import React, {useState, useCallback, useContext, useMemo} from 'react'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
@@ -9,7 +9,7 @@ import entryName from '../entries/entryName'
 import Link from '@mui/material/Link'
 import FilterContext from '../context/FilterContext.jsx'
 import Drawer from '@mui/material/Drawer'
-import {isAward} from '../entries/entryutils'
+import {getProjectEntryFromId, isAward} from '../entries/entryutils'
 
 function ScoringExceptions() {
     const {setFilters} = useContext(FilterContext)
@@ -33,10 +33,17 @@ function ScoringExceptions() {
         const supersedingEntryId = act.exceptionId
         const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
         const supersedingLock = supersedingEntry ? getEntryFromId(supersedingEntry.matchId) : {}
+        const supersedingProject = supersedingEntry ? useMemo(() => getProjectEntryFromId(supersedingEntry.matchId), [supersedingEntry.matchId]) : {}
         const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
         const matchLock = act.matchId ? getEntryFromId(act.matchId) : null
         const matchLockName = matchLock ? entryName(matchLock, 'short') : ''
-        return {...act, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName, matchLockName:matchLockName}
+        const supersedingLink = supersedingLock
+            ? <Link style={{color: '#6dbbff', textDecoration: 'none'}} onClick={() => {
+                navigateToEntry(supersedingEntryId)
+            }}>{supersedingLockName}</Link>
+            : supersedingProject?.name
+
+        return {...act, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName, matchLockName:matchLockName, supersedingLink}
     })
 
     const unmatchedAct = annotatedActivity.filter(act => 'nomatch' === act.exceptionType)
@@ -59,7 +66,7 @@ function ScoringExceptions() {
 
                         <div style={{display: 'flex', marginBottom: 10, placeItems: 'center'}}>
                             <div style={{fontWeight: 600, fontSize: '1.3rem', flexGrow: 1}}>
-                                Some documentation ineligible for Dan Points
+                                Some entries ineligible for Dan Points
                             </div>
                             <IconButton onClick={handleOverlayClose}>
                                 <HighlightOffIcon sx={{cursor: 'pointer'}}/>
@@ -128,9 +135,7 @@ function ScoringExceptions() {
                                     {samelinedAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
                                             {act.evidenceNotes} is a duplicate
-                                            of <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                            navigateToEntry(act.supersedingEntryId)
-                                        }}>{act.supersedingLockName}</Link>
+                                            of {act.supersedingLink}
                                         </li>
                                     )}
                                 </ul>
@@ -143,15 +148,12 @@ function ScoringExceptions() {
                                     style={{
                                         fontWeight: 500, fontSize: '1.0rem', lineHeight: '1.25rem', margin: '0px'
                                     }}>
-                                    Upgraded by another lock
+                                    Upgraded by another lock or project
                                 </Typography>
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {supersededAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {act.evidenceNotes} is upgraded by <Link
-                                            style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                            navigateToEntry(act.supersedingEntryId)
-                                        }}>{act.supersedingLockName}</Link>
+                                            {act.evidenceNotes} is upgraded by {act.supersedingLink}
                                         </li>
                                     )}
                                 </ul>

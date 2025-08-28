@@ -23,6 +23,8 @@ import {getEntryFromId, isAward} from '../entries/entryutils'
 import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
 import DataContext from '../context/DataContext.jsx'
 import AppContext from '../app/AppContext.jsx'
+import InfoDrawer from '../viewPage/InfoDrawer.jsx'
+
 
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
@@ -222,27 +224,31 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                         disableFuture
                     />
 
-                    {(!awardMode && !addProject && (blackBeltUser|| admin)) &&
-                        <TextField
-                            select
-                            style={{marginLeft: 30, width: 250}}
-                            id='modifier'
-                            label='Modifier'
-                            value={modifier ?? ''}
-                            color='secondary'
-                            onChange={e => {
-                                setModifier(e.target.value)
-                                setUpdated(true)
-                            }}
-                        >
-                            <MenuItem value=''>(None)</MenuItem>
-                            <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
-                            <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
-                            <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
-                            <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
-                            <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
-                                (Notable)</MenuItem>
-                        </TextField>
+                    {(!awardMode && !addProject && (blackBeltUser || admin)) &&
+                        <React.Fragment>
+                            <TextField
+                                select
+                                style={{marginLeft: 30, width: 250}}
+                                id='modifier'
+                                label='Modifier'
+                                value={modifier ?? ''}
+                                color='secondary'
+                                onChange={e => {
+                                    setModifier(e.target.value)
+                                    setUpdated(true)
+                                }}
+                            >
+                                <MenuItem value=''>(None)</MenuItem>
+                                <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
+                                <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
+                                <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
+                                <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
+                                <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
+                                    (Notable)</MenuItem>
+                            </TextField>
+
+                            <InfoDrawer pageId='danModifiers'/>
+                        </React.Fragment>
                     }
                 </div>
 
