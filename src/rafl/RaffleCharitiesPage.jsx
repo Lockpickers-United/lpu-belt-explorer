@@ -13,7 +13,6 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
-import RaffleLACharities from './RaffleLACharities.jsx'
 
 function RaffleCharitesPage() {
     const {visibleEntries} = useContext(DataContext)
@@ -34,9 +33,9 @@ function RaffleCharitesPage() {
     const visibleCharities = visibleEntries
         .sort((a, b) => {
             switch (sort) {
-                case '2024':
-                    return b.donations2024 - a.donations2024
                 case '2025':
+                    return b.donationsPrevious - a.donationsPrevious
+                case '2026':
                     return b.donations - a.donations
                 case 'name':
                     return a['name'].localeCompare(b['name'])
@@ -45,23 +44,19 @@ function RaffleCharitesPage() {
             }
         })
 
-    const LACharities = visibleCharities.filter(charity => charity['tags'].includes('Los Angeles Wildfires'))
-
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
 
     const headerSize = !isMobile ? '1.0rem' : '0.9rem'
     const headerPadding = !isMobile ? '16px 16px' : '10px 10px'
 
     const currTextDesc = raflState === 'live' ? 'Currently' : 'Contributions'
-    const prevText = !isMobile ? '2024 Contributions' : '2024'
-    const currText = !isMobile ? `2025 ${currTextDesc}` : '2025'
+    const prevText = !isMobile ? '2025 Contributions' : '2025'
+    const currText = !isMobile ? `2026 ${currTextDesc}` : '2026'
 
     return (
 
         <React.Fragment>
             <div style={{paddingBottom: 32}}>
-
-                <RaffleLACharities charities={LACharities}/>
 
                 <RaffleSearchBar label='All Approved Charities' sortValues={null}/>
 
@@ -86,20 +81,6 @@ function RaffleCharitesPage() {
                                     {showFull &&
                                         <React.Fragment>
                                             <TableCell
-                                                key='2024'
-                                                style={{
-                                                    fontWeight: 700,
-                                                    fontSize: headerSize,
-                                                    lineHeight: '1.3rem',
-                                                    border: 0,
-                                                    backgroundColor: '#222',
-                                                    textAlign: 'center'
-                                                }}
-                                            >
-                                                <Link onClick={() => handleSort('2024')}
-                                                      style={{color: sort === '2024' ? '#fff' : '#ccc'}}>{prevText}</Link>
-                                            </TableCell>
-                                            <TableCell
                                                 key='2025'
                                                 style={{
                                                     fontWeight: 700,
@@ -111,7 +92,21 @@ function RaffleCharitesPage() {
                                                 }}
                                             >
                                                 <Link onClick={() => handleSort('2025')}
-                                                      style={{color: sort === '2025' ? '#fff' : '#ccc'}}>{currText}</Link>
+                                                      style={{color: sort === '2025' ? '#fff' : '#ccc'}}>{prevText}</Link>
+                                            </TableCell>
+                                            <TableCell
+                                                key='2026'
+                                                style={{
+                                                    fontWeight: 700,
+                                                    fontSize: headerSize,
+                                                    lineHeight: '1.3rem',
+                                                    border: 0,
+                                                    backgroundColor: '#222',
+                                                    textAlign: 'center'
+                                                }}
+                                            >
+                                                <Link onClick={() => handleSort('2026')}
+                                                      style={{color: sort === '2026' ? '#fff' : '#ccc'}}>{currText}</Link>
                                             </TableCell>
                                         </React.Fragment>
                                     }

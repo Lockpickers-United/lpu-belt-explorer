@@ -196,9 +196,11 @@ export const raflMediaSchema = Joi.array().items(
 
 export const raflCharitySchema = Joi.array().items(
     Joi.object({
+        'Charity ID': Joi.string(),
         'Charity Name': Joi.string(),
+        'Disable': Joi.string().allow(''),
         'URL': Joi.string().allow('').uri(),
         'Tags': Joi.string().allow(''),
-        'Total Donations 2024': Joi.string().allow('')
+        'Donations 2025': Joi.string().allow('')
     }).unknown()
 )

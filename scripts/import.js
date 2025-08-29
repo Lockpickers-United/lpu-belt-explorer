@@ -24,7 +24,7 @@ import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
 
-const importRaflData = false
+const importRaflData = true
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -554,10 +554,12 @@ if (importRaflData) {
     console.log('Processing RAFL Charity data...')
     const raflCharities = raflCharityData
         .map(datum => ({
+            id: datum['Charity ID'],
             name: datum['Charity Name'],
             url: datum['URL'],
             tags: splitCommaValues(datum['Tags']),
-            donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
+            donationsPrevious: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
+            disabled: datum['Disable'].length > 0,
         })).filter(x => x)
 
     fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))

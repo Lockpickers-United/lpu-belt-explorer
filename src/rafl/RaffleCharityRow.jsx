@@ -39,11 +39,11 @@ function RaffleCharityRow({charity}) {
                 <React.Fragment>
 
                     <TableCell align={'center'} style={cellStyle}>
-                        {charity.donations2024 > 0 && new Intl.NumberFormat('en-US', {
+                        {charity.donationsPrevious > 0 && new Intl.NumberFormat('en-US', {
                             style: 'currency',
                             currency: 'USD',
                             maximumSignificantDigits: 3
-                        }).format(charity.donations2024)}
+                        }).format(charity.donationsPrevious)}
                     </TableCell>
                     <TableCell align={'center'} style={cellStyle}>
                         {charity.donations > 0 && new Intl.NumberFormat('en-US', {

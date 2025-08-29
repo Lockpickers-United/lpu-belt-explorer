@@ -23,6 +23,7 @@ export function RaffleCharitiesProvider({children}) {
 
         // Filter the data
         const filtered = allCharities
+            .filter(ch => {return !ch.disabled})
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])

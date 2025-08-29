@@ -21,13 +21,14 @@ function RaffleEntryForm() {
     const navigate = useNavigate()
     const {raffleAdminRole} = useContext(RaffleContext)
     const [submitted, setSumbitted] = useState(false)
+
     const [formData, setFormData] = useState({})
     const [charityData, setCharityData] = useState({})
     const [potData, setPotData] = useState({0: {tickets: 0}})
+
     const potKeys = Array.from(Object.keys(potData))
 
-    const {VITE_RAFL_VIEW_FORM_ID: raflFormId} = import.meta.env
-    const {raflQuestionMap, displayStats, setDisplayStats} = useContext(RaffleContext)
+    const {displayStats, setDisplayStats} = useContext(RaffleContext)
     const [initial, setInitial] = useState(true)
     if (initial && displayStats) {
         setDisplayStats(false)
@@ -70,40 +71,28 @@ function RaffleEntryForm() {
         setPotData(newPotData)
     }, [potData])
 
+    const logFormData = useCallback(() => {
+        console.log('formData', formData)
+        console.log('charityData', charityData)
+        console.log('potData', potData)
+    }, [formData, charityData, potData])
+
 
     const handleSubmit = useCallback(() => {
-
-        const base = `https://docs.google.com/forms/d/e/${raflFormId}/viewform?usp=pp_url`
-
-        const platform = `&entry.${raflQuestionMap[0].formId}=${encodeURIComponent(formData.platform)}`
-        const username = `&entry.${raflQuestionMap[1].formId}=${encodeURIComponent(formData.username)}`
-        const charity = `&entry.${raflQuestionMap[2].formId}=${encodeURIComponent(charityData.itemTitle)}`
-        const receipt = `&entry.${raflQuestionMap[3].formId}=${encodeURIComponent(formData.receipt)}`
-        const donation = `&entry.${raflQuestionMap[4].formId}=${encodeURIComponent(formData.donation)}`
-        const belt = `&entry.${raflQuestionMap[75].formId}=${encodeURIComponent(formData.belt)}`
-        const parameters = [platform, username, charity, receipt, donation, belt]
-
-        const potParams = Object.keys(potData).reduce((acc, key) => {
-            const formQuestion = raflQuestionMap.find(q => q.text === potData[key].itemFullTitle)
-            const paramId = formQuestion?.formId || 'undefined'
-            const param = `&entry.${paramId}=${potData[key].tickets}`
-            acc = acc?.length > 0 ? `${acc}${param}` : param
-            return acc
-        }, '')
-
-        console.log('url', `${parameters.join('')}${potParams}`)
+        console.log('formData', formData)
+        console.log('charityData', charityData)
+        console.log('potData', potData)
         setSumbitted(true)
-        openInNewTab(`${base}${parameters.join('')}${potParams}`)
-
-    }, [charityData, formData, openInNewTab, potData, raflFormId, raflQuestionMap])
+    }, [charityData, formData, potData])
 
     const mappedCharities = allCharities
+        .filter(ch => {return !ch.disabled})
         .sort((a, b) => {
             return a.name.localeCompare(b.name)
         })
         .map(c => {
-        return {...c, title: c.name}
-    })
+            return {...c, title: c.name}
+        })
     const charityFullTitle = useCallback((charity) => {
         return charity.name
     }, [])
@@ -114,7 +103,7 @@ function RaffleEntryForm() {
     const isRequired = (field => {
         return requiredFields.includes(field) && !formData[field] && showIssues
     })
-    const receiptUrlError = (formData.receipt || showIssues) && !validator.isURL(formData.receipt)
+    const receiptUrlError = (formData?.receipt || showIssues) && !validator.isURL(formData?.receipt || '', {require_tld: false, require_protocol: true})
     const receiptURLHelperText = receiptUrlError ? 'Receipt link is not a valid URL' : ' '
     const charityError = showIssues && !charityData.itemFullTitle
     const allocationError = parseInt(formData.donation) !== parseInt(allocated)
@@ -291,18 +280,16 @@ function RaffleEntryForm() {
                                 disabled={errors} onClick={handleSubmit}
                         >Review Entry on Google</Button>
                     </div>
-                    {raffleAdminRole &&
-                        <div style={{
-                            ...style,
-                            justifyContent: 'center',
-                            marginTop: 16,
-                            color: '#de2323',
-                            display: errors ? 'flex' : 'none'
-                        }}>
-                            <Button style={{color: '#b00'}} variant='text' onClick={handleSubmit}
-                            >Test Send Incomplete</Button>
-                        </div>
-                    }
+                    <div style={{
+                        ...style,
+                        justifyContent: 'center',
+                        marginTop: 16,
+                        color: '#de2323',
+                        display: errors ? 'flex' : 'none'
+                    }}>
+                        <Button style={{color: '#b00'}} variant='text' onClick={logFormData}
+                        >logFormData</Button>
+                    </div>
                 </div>
             </div>
 
