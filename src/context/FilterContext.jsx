@@ -21,7 +21,7 @@ export function FilterProvider({children, filterFields = []}) {
                     delete newFilters[key]
                 }
             })
-        setSearchParams(newFilters)
+        setSearchParams(newFilters, {replace: true})
     }, [setSearchParams])
 
     const addFilters = useCallback((keyValues, replace) => {
@@ -47,7 +47,7 @@ export function FilterProvider({children, filterFields = []}) {
                 searchParams.delete(key)
             }
         })
-        setSearchParams(searchParams)
+        setSearchParams(searchParams, {replace: true})
     }, [searchParams, setSearchParams])
 
     const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
@@ -56,7 +56,7 @@ export function FilterProvider({children, filterFields = []}) {
 
     const removeFilters = useCallback(keysToDelete => {
         keysToDelete.forEach(key => searchParams.delete(key))
-        setSearchParams(searchParams)
+        setSearchParams(searchParams, {replace: true})
     }, [searchParams, setSearchParams])
 
     const removeFilter = useCallback((keyToDelete, valueToDelete) => {
@@ -67,7 +67,7 @@ export function FilterProvider({children, filterFields = []}) {
             const newValue = currentValue.filter(value => value !== valueToDelete)
             newValue.forEach(v => searchParams.append(keyToDelete, v))
         }
-        setSearchParams(searchParams)
+        setSearchParams(searchParams, {replace: true})
     }, [searchParams, setSearchParams])
 
     const clearFilters = useCallback(() => {
