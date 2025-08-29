@@ -17,7 +17,7 @@ function ViewScorecardRoute({mostPopular}) {
     const subdir = mostPopular ? '/popular' : ''
     useEffect(() => {
         if (authLoaded && user) {
-            navigate(`/profile/${user.uid}/scorecard${subdir}`)
+            navigate(`/profile/${user.uid}/scorecard${subdir}`, {replace: true})
         }
     }, [authLoaded, navigate, subdir, user])
 
