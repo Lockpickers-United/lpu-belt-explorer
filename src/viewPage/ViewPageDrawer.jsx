@@ -10,7 +10,7 @@ import '../resources/md-tables.css'
 
 import {pageData} from './pageData'
 
-export default function InfoDrawer({pageId}) {
+export default function ViewPageDrawer({pageId}) {
 
     const [overlayIsOpen, setOverlayIsOpen] = useState(false)
     const handleOverlayOpen = useCallback(() => {

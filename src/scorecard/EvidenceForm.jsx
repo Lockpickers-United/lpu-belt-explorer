@@ -23,7 +23,7 @@ import {getEntryFromId, isAward} from '../entries/entryutils'
 import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
 import DataContext from '../context/DataContext.jsx'
 import AppContext from '../app/AppContext.jsx'
-import InfoDrawer from '../viewPage/InfoDrawer.jsx'
+import ViewPageDrawer from '../viewPage/ViewPageDrawer.jsx'
 
 
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
@@ -247,7 +247,8 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                                     (Notable)</MenuItem>
                             </TextField>
 
-                            <InfoDrawer pageId='danModifiers'/>
+                            <ViewPageDrawer pageId='danModifiers'/>
+
                         </React.Fragment>
                     }
                 </div>
