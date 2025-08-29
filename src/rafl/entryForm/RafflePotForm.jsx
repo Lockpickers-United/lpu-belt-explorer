@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import FormControl from '@mui/material/FormControl'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../../util/useWindowSize.jsx'
@@ -22,10 +22,11 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     const showDelete = Array.from(Object.keys(potData)).length > 1
 
-    if ((potData[index].tickets !== potDetails.tickets) || potData[index].itemFullTitle !== potDetails.itemFullTitle) {
-        const complete = (!!potDetails.itemFullTitle && !!potDetails.tickets)
-        handlePotChange(index, potDetails, complete)
-    }
+    // Sync parent when local potDetails changes to avoid updating parent during render
+    useEffect(() => {
+        handlePotChange(index, potDetails)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [index, potDetails])
 
     const itemMap = useMemo(() => {
         let options = []
@@ -114,6 +115,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                             fullWidth
                             style={{...style, ...focusStyle}}
                             options={options}
+                            value={potDetails.itemFullTitle || null}
                             onChange={handlePotChoiceChange}
                             renderInput={(params) =>
                                 <TextField
@@ -155,9 +157,9 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
                 <FormControl>
                     {!isMobile && <div style={questionStyle}>&nbsp;</div>}
                     <TextField type='text' name='tickets' label='Tickets'
-                               value={potData[index].tickets ? potData[index].tickets : ''}
+                               value={potDetails.tickets ? potDetails.tickets : ''}
                                error={showIssues && !potDetails.tickets}
-                               helperText={showIssues && !potData[index].tickets ? 'Required Field' : ' '}
+                               helperText={showIssues && !potDetails.tickets ? 'Required Field' : ' '}
                                onChange={handleTicketsChange} color='info' size='small'
                                style={{width: 120}}/>
                 </FormControl>
