@@ -21,7 +21,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
     console.log('potData', potData)
     const [potDetails, setPotDetails] = useState(potData[index])
 
-    const showDelete = Array.from(Object.keys(potData)).length > 1
+    const showDelete = (potData || []).length > 1
 
     // Sync parent when local potDetails changes to avoid updating parent during render
     useEffect(() => {
@@ -97,7 +97,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     const errorStyle = showIssues && !potDetails.itemFullTitle ? {borderBottom: '#b00 solid 4px'} : {}
 
-    const divider = Array.from(Object.keys(potData)).length > 1
+    const divider = (potData || []).length > 1
         ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
         : null
 

@@ -4,35 +4,31 @@ import AddCircleIcon from '@mui/icons-material/AddCircle'
 import RaffleDonationForm from './RaffleDonationForm.jsx'
 
 export default function RaffleDonationConfigurator({donationData, setDonationData, showIssues, questionStyle}) {
-  const donationKeys = Object.keys(donationData)
 
   const addDonation = useCallback(() => {
-    const next = (parseInt(donationKeys[donationKeys.length-1]) || 0) + 1000
-    const newData = {...donationData}
-    newData[next] = {amount: '', receipt: ''}
-    setDonationData(newData)
-  }, [donationData, donationKeys, setDonationData])
+    setDonationData([...(donationData || []), {amount: '', receipt: ''}])
+  }, [donationData, setDonationData])
 
   const removeDonation = useCallback((index) => {
-    const newData = {...donationData}
-    delete newData[index]
-    setDonationData(newData)
+    const newData = [...(donationData || [])]
+    newData.splice(index, 1)
+    setDonationData(newData.length ? newData : [{amount: '', receipt: ''}])
   }, [donationData, setDonationData])
 
   const handleDonationChange = useCallback((index, details) => {
-    const newData = {...donationData}
+    const newData = [...(donationData || [])]
     newData[index] = details
     setDonationData(newData)
   }, [donationData, setDonationData])
 
-    const divider = Object.keys(donationData).length > 1
+  const divider = (donationData || []).length > 1
         ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
         : null
 
-    return (
+  return (
     <React.Fragment>
-      {donationKeys.map(key => (
-        <RaffleDonationForm key={key} index={key}
+      {(donationData || []).map((_, idx) => (
+        <RaffleDonationForm key={idx} index={idx}
                             donationData={donationData}
                             handleDonationChange={handleDonationChange}
                             removeDonation={removeDonation}
@@ -40,8 +36,8 @@ export default function RaffleDonationConfigurator({donationData, setDonationDat
                             questionStyle={questionStyle}
         />
       ))}
-        {divider}
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+      {divider}
+      <div style={{display: 'flex', justifyContent: 'center'}}>
         <Button variant='outlined' onClick={addDonation} size='small' color='info' startIcon={<AddCircleIcon/>}>
           Add Donation
         </Button>

@@ -17,8 +17,9 @@ export default function RaffleDonationForm({
                                                questionStyle
                                            }) {
     const [details, setDetails] = useState(donationData[index] || {amount: '', receipt: ''})
+    const {flexStyle} = useWindowSize()
 
-    console.log('RaffleDonationForm render', index, details)
+    console.log('RaffleDonationForm render', index)
 
     // charity selection (using existing autocomplete component)
     const mappedCharities = useMemo(() => {
@@ -54,10 +55,9 @@ export default function RaffleDonationForm({
         require_protocol: true
     })
 
-    const showDelete = Object.keys(donationData).length > 1
-    const {flexStyle} = useWindowSize()
+    const showDelete = (donationData || []).length > 1
 
-    const divider = Object.keys(donationData).length > 1
+    const divider = (donationData || []).length > 1
         ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
         : null
 

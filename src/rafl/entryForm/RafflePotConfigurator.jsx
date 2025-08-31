@@ -14,43 +14,35 @@ export default function RafflePotConfigurator({
                                                   allocated
                                               }) {
 
-    const potKeys = Array.from(Object.keys(potData))
-
     const difference = donation ? parseInt(donation) - allocated : 0 - allocated
 
     const addPot = useCallback(() => {
-        const next = potKeys[potKeys.length-1] + 1000
-        const newPotData = {...potData}
-        newPotData[next] = {tickets: 0}
-        setPotData(newPotData)
-    }, [potData, potKeys, setPotData])
+        setPotData([...(potData || []), {tickets: 0}])
+    }, [potData, setPotData])
 
     const removePot = useCallback((index) => {
-        const newPotData = {...potData}
-        delete newPotData[index]
-        setPotData(newPotData)
+        const newPotData = [...(potData || [])]
+        newPotData.splice(index, 1)
+        setPotData(newPotData.length ? newPotData : [{tickets: 0}])
     }, [potData, setPotData])
 
     const handleAuto = useCallback(() => {
-        const base = Math.floor(donation / potKeys.length)
-        const remainder = donation % potKeys.length
-        potKeys.map((key, index) => {
-            const newPotData = {...potData}
-
-            if (index === 0 && donation) {
-                newPotData[key].tickets = base + remainder
-            } else if (donation) {
-                newPotData[key].tickets = base
+        const count = (potData || []).length || 1
+        const base = Math.floor((donation || 0) / count)
+        const remainder = (donation || 0) % count
+        const newPotData = [...(potData || [])]
+        newPotData.forEach((pot, index) => {
+            if (donation) {
+                newPotData[index] = { ...pot, tickets: base + (index === 0 ? remainder : 0) }
             } else {
-                newPotData[key].tickets = 0
+                newPotData[index] = { ...pot, tickets: 0 }
             }
-            setPotData(newPotData)
         })
-
-    }, [donation, potData, potKeys, setPotData])
+        setPotData(newPotData)
+    }, [donation, potData, setPotData])
 
     const handlePotChange = useCallback((index, potDetails) => {
-        const newPotData = {...potData}
+        const newPotData = [...(potData || [])]
         newPotData[index] = potDetails
         setPotData(newPotData)
     }, [potData, setPotData])
@@ -64,7 +56,7 @@ export default function RafflePotConfigurator({
     const {isMobile, flexStyle} = useWindowSize()
     const tallySize = !isMobile ? '1.2rem' : '1.0rem'
 
-    const divider = Object.keys(potData).length > 1
+    const divider = (potData || []).length > 1
         ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
         : null
 
@@ -72,7 +64,7 @@ export default function RafflePotConfigurator({
         <React.Fragment>
 
             {
-                potKeys.map(pot =>
+                (potData || []).map((_, pot) =>
                     <RafflePotForm questionStyle={questionStyle} key={pot} index={pot}
                                    potData={potData} handlePotChange={handlePotChange}
                                    showIssues={showIssues} removePot={removePot}/>

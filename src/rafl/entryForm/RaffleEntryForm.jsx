@@ -22,10 +22,8 @@ function RaffleEntryForm() {
     const [submitted, setSumbitted] = useState(false)
 
     const [formData, setFormData] = useState({})
-    const [donationData, setDonationData] = useState({0: {amount: '', receipt: ''}})
-    const [potData, setPotData] = useState({0: {tickets: 0}})
-
-    const potKeys = Array.from(Object.keys(potData))
+    const [donationData, setDonationData] = useState([{amount: '', receipt: ''}])
+    const [potData, setPotData] = useState([{tickets: 0}])
 
     const {displayStats, setDisplayStats} = useContext(RaffleContext)
     const [initial, setInitial] = useState(true)
@@ -35,18 +33,18 @@ function RaffleEntryForm() {
     }
 
     const allocated = useMemo(() => {
-        return potKeys.reduce((acc, pot) => {
-            const potTickets = parseInt(potData[pot].tickets) ? parseInt(potData[pot].tickets) : 0
+        return potData.reduce((acc, pot) => {
+            const potTickets = parseInt(pot?.tickets) ? parseInt(pot?.tickets) : 0
             acc = acc ? acc + potTickets : potTickets
             return acc
         }, 0)
-    }, [potData, potKeys])
+    }, [potData])
 
     const potError = useMemo(() => {
-        return potKeys.reduce((acc, pot) => {
-            return !(potData[pot].itemTitle && potData[pot].tickets)
+        return potData.reduce((acc, pot) => {
+            return !(pot?.itemTitle && pot?.tickets)
         }, false)
-    }, [potData, potKeys])
+    }, [potData])
 
     const openInNewTab = useCallback((url) => { //eslint-disable-line
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -65,26 +63,33 @@ function RaffleEntryForm() {
     }, [formData])
 
     const handlePotChange = useCallback((index, potDetails) => {
-        const newPotData = {...potData}
+        const newPotData = [...potData]
         newPotData[index] = potDetails
         setPotData(newPotData)
     }, [potData])
 
     // total up donations from multi-donation configurator
-    const donationKeys = useMemo(() => Object.keys(donationData), [donationData])
     const totalDonation = useMemo(() => {
-        return donationKeys.reduce((acc, key) => {
-            const amt = parseInt(donationData[key]?.amount)
+        return (donationData || []).reduce((acc, d) => {
+            const amt = parseInt(d?.amount)
             return acc + (isNaN(amt) ? 0 : amt)
         }, 0)
-    }, [donationData, donationKeys])
+    }, [donationData])
+
+    const buildRecord = useCallback(() => {
+        return {
+            ...formData,
+            donations: donationData,
+            pots: potData,
+            totalDonation: totalDonation,
+            allocatedTickets: allocated,
+        }
+    },[allocated, donationData, formData, potData, totalDonation])
 
     const logFormData = useCallback(() => {
-        console.log('formData', formData)
-        console.log('donationData', donationData)
-        console.log('totalDonation', totalDonation)
-        console.log('potData', potData)
-    }, [formData, donationData, totalDonation, potData])
+        const record = buildRecord()
+        console.log('record', record)
+    }, [buildRecord])
 
 
     const handleSubmit = useCallback(() => {
@@ -105,10 +110,10 @@ function RaffleEntryForm() {
     })
     // Validate multi-donation entries
     const donationError = useMemo(() => {
-        if (!donationKeys.length) return true
+        const list = donationData || []
+        if (!list.length) return true
         let err = false
-        donationKeys.forEach(key => {
-            const d = donationData[key] || {}
+        list.forEach(d => {
             const urlOk = d?.receipt ? validator.isURL(d.receipt, {require_tld: false, require_protocol: true}) : false
             if (!(d?.charity?.itemFullTitle && d?.amount && urlOk)) {
                 err = true
@@ -116,7 +121,7 @@ function RaffleEntryForm() {
         })
         if (totalDonation <= 0) err = true
         return err
-    }, [donationData, donationKeys, totalDonation])
+    }, [donationData, totalDonation])
 
     const allocationError = parseInt(totalDonation) !== parseInt(allocated)
 
