@@ -1,7 +1,5 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
-import RaffleAutocompleteBox from './RaffleAutocompleteBox.jsx'
-import allCharities from '../../data/raflCharities.json'
 import RaffleSubHead from '../RaffleSubHead.jsx'
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem'
@@ -11,6 +9,7 @@ import Select from '@mui/material/Select'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
+import RaffleDonationConfigurator from './RaffleDonationConfigurator.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import Dialog from '@mui/material/Dialog'
 import Link from '@mui/material/Link'
@@ -23,7 +22,7 @@ function RaffleEntryForm() {
     const [submitted, setSumbitted] = useState(false)
 
     const [formData, setFormData] = useState({})
-    const [charityData, setCharityData] = useState({})
+    const [donationData, setDonationData] = useState({0: {amount: '', receipt: ''}})
     const [potData, setPotData] = useState({0: {tickets: 0}})
 
     const potKeys = Array.from(Object.keys(potData))
@@ -71,49 +70,60 @@ function RaffleEntryForm() {
         setPotData(newPotData)
     }, [potData])
 
+    // total up donations from multi-donation configurator
+    const donationKeys = useMemo(() => Object.keys(donationData), [donationData])
+    const totalDonation = useMemo(() => {
+        return donationKeys.reduce((acc, key) => {
+            const amt = parseInt(donationData[key]?.amount)
+            return acc + (isNaN(amt) ? 0 : amt)
+        }, 0)
+    }, [donationData, donationKeys])
+
     const logFormData = useCallback(() => {
         console.log('formData', formData)
-        console.log('charityData', charityData)
+        console.log('donationData', donationData)
+        console.log('totalDonation', totalDonation)
         console.log('potData', potData)
-    }, [formData, charityData, potData])
+    }, [formData, donationData, totalDonation, potData])
 
 
     const handleSubmit = useCallback(() => {
         console.log('formData', formData)
-        console.log('charityData', charityData)
+        console.log('donationData', donationData)
+        console.log('totalDonation', totalDonation)
         console.log('potData', potData)
         setSumbitted(true)
-    }, [charityData, formData, potData])
+    }, [formData, donationData, totalDonation, potData])
 
-    const mappedCharities = allCharities
-        .filter(ch => {return !ch.disabled})
-        .sort((a, b) => {
-            return a.name.localeCompare(b.name)
-        })
-        .map(c => {
-            return {...c, title: c.name}
-        })
-    const charityFullTitle = useCallback((charity) => {
-        return charity.name
-    }, [])
+
 
     const [showIssues, setShowIssues] = useState(false)
 
-    const requiredFields = ['platform', 'username', 'charity', 'donation']
+    const requiredFields = ['platform', 'username']
     const isRequired = (field => {
         return requiredFields.includes(field) && !formData[field] && showIssues
     })
-    const receiptUrlError = (formData?.receipt || showIssues) && !validator.isURL(formData?.receipt || '', {require_tld: false, require_protocol: true})
-    const receiptURLHelperText = receiptUrlError ? 'Receipt link is not a valid URL' : ' '
-    const charityError = showIssues && !charityData.itemFullTitle
-    const allocationError = parseInt(formData.donation) !== parseInt(allocated)
+    // Validate multi-donation entries
+    const donationError = useMemo(() => {
+        if (!donationKeys.length) return true
+        let err = false
+        donationKeys.forEach(key => {
+            const d = donationData[key] || {}
+            const urlOk = d?.receipt ? validator.isURL(d.receipt, {require_tld: false, require_protocol: true}) : false
+            if (!(d?.charity?.itemFullTitle && d?.amount && urlOk)) {
+                err = true
+            }
+        })
+        if (totalDonation <= 0) err = true
+        return err
+    }, [donationData, donationKeys, totalDonation])
+
+    const allocationError = parseInt(totalDonation) !== parseInt(allocated)
 
     const errors = (
         !formData['platform']
         || !formData['username']
-        || !charityData.itemFullTitle
-        || !formData['donation']
-        || (!formData.receipt || receiptUrlError)
+        || donationError
         || !!potError
         || allocationError
     )
@@ -196,50 +206,16 @@ function RaffleEntryForm() {
                     borderBottom: '1px #555 solid',
                     padding: '20px 20px'
                 }}>
-                    <div style={sectionStyle}>Your Donation</div>
+                    <div style={sectionStyle}>Your Donation(s)</div>
 
-                    <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
-                        <div style={{flexGrow: 1, marginRight: 40, height: 100}}>
-                            <div style={questionStyle}>Selected Charity</div>
-                            <div style={{height: 6}}/>
-                            <RaffleAutocompleteBox allItems={mappedCharities}
-                                                   setItemDetails={setCharityData}
-                                                   getOptionTitle={charityFullTitle}
-                                                   searchText={'Search Charities'}
-                                                   error={charityError}/>
-                            <div style={{
-                                fontSize: '0.75rem',
-                                color: '#f44336',
-                                margin: '4px 14px 0px 14px',
-                                display: showIssues && !charityData.itemFullTitle ? 'block' : 'none'
-                            }}>
-                                Required Field
-                            </div>
-                        </div>
-                        <div>
-                            <div style={{...questionStyle}}>Total donation in USD</div>
-                            <FormControl>
-                                <TextField type='text' name='donation' label='Donation Amount'
-                                           value={formData.donation ? formData.donation : ''}
-                                           error={isRequired('donation')}
-                                           helperText={isRequired('donation') ? 'Required Field' : ' '}
-                                           onChange={handleChange} color='info' size='small'/>
-                            </FormControl>
-                        </div>
-                    </div>
+                    <RaffleDonationConfigurator donationData={donationData}
+                                               setDonationData={setDonationData}
+                                               showIssues={showIssues}
+                                               questionStyle={questionStyle}
+                    />
 
-                    <div style={{margin: '6px 12px 0px 12px'}}>
-                        <div style={questionStyle}>
-                            Receipt from approved charity <span style={{fontWeight: 400}}>(hosted image link, must contain a visible date)</span>
-                        </div>
-
-                        <FormControl fullWidth>
-                            <TextField type='text' name='receipt' label='Receipt Link'
-                                       error={receiptUrlError} helperText={receiptURLHelperText}
-                                       value={formData.receipt ? formData.receipt : ''}
-                                       onChange={handleChange} color='info' size='small' fullWidth/>
-                        </FormControl>
-
+                    <div style={{display: 'flex', justifyContent: 'center', marginTop: 8}}>
+                        <div style={{fontSize: '1.0rem'}}>Total donation:&nbsp;<strong>{totalDonation}</strong></div>
                     </div>
                 </div>
 
@@ -253,7 +229,7 @@ function RaffleEntryForm() {
                 }}>
                     <div style={sectionStyle}>Your Pots</div>
 
-                    <RafflePotConfigurator donation={formData.donation} potData={potData}
+                    <RafflePotConfigurator donation={totalDonation} potData={potData}
                                            handlePotChange={handlePotChange} questionStyle={questionStyle}
                                            showIssues={showIssues} setPotData={setPotData}
                                            allocated={allocated}/>

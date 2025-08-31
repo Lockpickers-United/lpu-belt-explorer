@@ -64,6 +64,10 @@ export default function RafflePotConfigurator({
     const {isMobile, flexStyle} = useWindowSize()
     const tallySize = !isMobile ? '1.2rem' : '1.0rem'
 
+    const divider = Object.keys(potData).length > 1
+        ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
+        : null
+
     return (
         <React.Fragment>
 
@@ -74,6 +78,8 @@ export default function RafflePotConfigurator({
                                    showIssues={showIssues} removePot={removePot}/>
                 )
             }
+
+            {divider}
 
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <Button variant='outlined' onClick={() => {

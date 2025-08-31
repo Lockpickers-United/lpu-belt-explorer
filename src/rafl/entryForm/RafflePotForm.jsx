@@ -18,6 +18,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
+    console.log('potData', potData)
     const [potDetails, setPotDetails] = useState(potData[index])
 
     const showDelete = Array.from(Object.keys(potData)).length > 1
@@ -39,7 +40,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
             .filter(item => item.formId > 0)
             .sort((a, b) => {
                 return parseInt(a.potNumber) - parseInt(b.potNumber)
-                || a.title.localeCompare(b.title)
+                    || a.title.localeCompare(b.title)
             })
             .map((item) => {
                 const fullTitle = `Pot ${item.potNumber} - ${item.title}`
@@ -96,84 +97,93 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     const errorStyle = showIssues && !potDetails.itemFullTitle ? {borderBottom: '#b00 solid 4px'} : {}
 
+    const divider = Array.from(Object.keys(potData)).length > 1
+        ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
+        : null
+
     return (
-        <div style={{display: flexStyle, margin: 12}}>
-            <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth: 280}}>
-                <div style={{...questionStyle}}>Selected Pot</div>
-                <div style={{height: 4}}/>
-                <React.Fragment>
-                    {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>
-                        <IconButton color='inherit' onClick={handleClick}>
-                            <SearchIcon/>
-                        </IconButton>
-                    </Tooltip>}
-                    {(open || !isMobileFalse) &&
-                        <Autocomplete
-                            selectOnFocus
-                            clearOnEscape
-                            handleHomeEndKeys
-                            fullWidth
-                            style={{...style, ...focusStyle}}
-                            options={options}
-                            value={potDetails.itemFullTitle || null}
-                            onChange={handlePotChoiceChange}
-                            renderInput={(params) =>
-                                <TextField
-                                    {...params}
-                                    style={errorStyle}
-                                    placeholder={'Search Pots'}
-                                    variant='standard'
-                                    color='info'
-                                    inputRef={inputEl}
-                                    InputProps={{
-                                        ...params.InputProps,
-                                        startAdornment: (
-                                            <InputAdornment position='start'>
-                                                <SearchIcon/>
-                                            </InputAdornment>
-                                        )
-                                    }}
-                                />
-                            }
-                        />}
-                    <Backdrop
-                        invisible
-                        open={open && isMobileFalse}
-                        onClick={handleBlur}
-                    />
-                </React.Fragment>
-                <div style={{
-                    fontSize: '0.75rem',
-                    color: '#f44336',
-                    margin: '4px 14px 0px 14px',
-                    display: showIssues && !potDetails.itemFullTitle ? 'block' : 'none'
-                }}>
-                    Required Field
-                </div>
-            </div>
-            <div style={{display: 'flex'}}>
-                <div style={{flexGrow: 1}}></div>
+        <div>
+            {divider}
 
-                <FormControl>
-                    {!isMobile && <div style={questionStyle}>&nbsp;</div>}
-                    <TextField type='text' name='tickets' label='Tickets'
-                               value={potDetails.tickets ? potDetails.tickets : ''}
-                               error={showIssues && !potDetails.tickets}
-                               helperText={showIssues && !potDetails.tickets ? 'Required Field' : ' '}
-                               onChange={handleTicketsChange} color='info' size='small'
-                               style={{width: 120}}/>
-                </FormControl>
-                {showDelete &&
-
-                    <div style={{marginLeft: 10}}>
-                        {!isMobile && <div style={questionStyle}>&nbsp;</div>}
-                        <IconButton color='warning' onClick={() => removePot(index)}>
-                            <DeleteForeverIcon/>
-                        </IconButton>
+            <div style={{display: flexStyle, margin: 12}}>
+                <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth: 280}}>
+                    <div style={{...questionStyle, fontWeight: 600}}>Selected Pot</div>
+                    <div style={{height: 4}}/>
+                    <React.Fragment>
+                        {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>
+                            <IconButton color='inherit' onClick={handleClick}>
+                                <SearchIcon/>
+                            </IconButton>
+                        </Tooltip>}
+                        {(open || !isMobileFalse) &&
+                            <Autocomplete
+                                selectOnFocus
+                                clearOnEscape
+                                handleHomeEndKeys
+                                fullWidth
+                                style={{...style, ...focusStyle}}
+                                options={options}
+                                value={potDetails.itemFullTitle || null}
+                                onChange={handlePotChoiceChange}
+                                renderInput={(params) =>
+                                    <TextField
+                                        {...params}
+                                        style={errorStyle}
+                                        placeholder={'Search Pots'}
+                                        variant='standard'
+                                        color='info'
+                                        inputRef={inputEl}
+                                        InputProps={{
+                                            ...params.InputProps,
+                                            startAdornment: (
+                                                <InputAdornment position='start'>
+                                                    <SearchIcon/>
+                                                </InputAdornment>
+                                            )
+                                        }}
+                                    />
+                                }
+                            />}
+                        <Backdrop
+                            invisible
+                            open={open && isMobileFalse}
+                            onClick={handleBlur}
+                        />
+                    </React.Fragment>
+                    <div style={{
+                        fontSize: '0.75rem',
+                        color: '#f44336',
+                        margin: '4px 14px 0px 14px',
+                        display: showIssues && !potDetails.itemFullTitle ? 'block' : 'none'
+                    }}>
+                        Required Field
                     </div>
-                }
-            </div>
+                </div>
+                <div style={{display: 'flex'}}>
+                    <div style={{flexGrow: 1}}></div>
 
+                    <FormControl>
+                        {!isMobile && <div style={questionStyle}>&nbsp;</div>}
+                        <TextField type='text' name='tickets' label='Tickets'
+                                   value={potDetails.tickets ? potDetails.tickets : ''}
+                                   error={showIssues && !potDetails.tickets}
+                                   helperText={showIssues && !potDetails.tickets ? 'Required Field' : ' '}
+                                   onChange={handleTicketsChange} color='info' size='small'
+                                   style={{width: 120}}/>
+                    </FormControl>
+                    {showDelete &&
+
+                        <div style={{marginLeft: 10}}>
+                            {!isMobile && <div style={questionStyle}>&nbsp;</div>}
+                            <IconButton color='warning' onClick={() => removePot(index)}>
+                                <DeleteForeverIcon/>
+                            </IconButton>
+                        </div>
+                    }
+                </div>
+
+            </div>
         </div>
+
     )
 }
