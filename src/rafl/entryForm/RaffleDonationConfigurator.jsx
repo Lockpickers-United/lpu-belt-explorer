@@ -1,25 +1,29 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, memo} from 'react'
 import Button from '@mui/material/Button'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import RaffleDonationForm from './RaffleDonationForm.jsx'
 
-export default function RaffleDonationConfigurator({donationData, setDonationData, showIssues, questionStyle}) {
+function RaffleDonationConfigurator({donationData, setDonationData, showIssues, questionStyle}) {
 
   const addDonation = useCallback(() => {
-    setDonationData([...(donationData || []), {amount: '', receipt: ''}])
-  }, [donationData, setDonationData])
+    setDonationData(prev => ([...(prev || []), {amount: '', receipt: ''}]))
+  }, [setDonationData])
 
   const removeDonation = useCallback((index) => {
-    const newData = [...(donationData || [])]
-    newData.splice(index, 1)
-    setDonationData(newData.length ? newData : [{amount: '', receipt: ''}])
-  }, [donationData, setDonationData])
+    setDonationData(prev => {
+      const list = [...(prev || [])]
+      list.splice(index, 1)
+      return list.length ? list : [{amount: '', receipt: ''}]
+    })
+  }, [setDonationData])
 
   const handleDonationChange = useCallback((index, details) => {
-    const newData = [...(donationData || [])]
-    newData[index] = details
-    setDonationData(newData)
-  }, [donationData, setDonationData])
+    setDonationData(prev => {
+      const list = [...(prev || [])]
+      list[index] = details
+      return list
+    })
+  }, [setDonationData])
 
   const divider = (donationData || []).length > 1
         ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
@@ -45,3 +49,5 @@ export default function RaffleDonationConfigurator({donationData, setDonationDat
     </React.Fragment>
   )
 }
+
+export default memo(RaffleDonationConfigurator)

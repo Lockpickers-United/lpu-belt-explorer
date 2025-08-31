@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState, memo} from 'react'
 import FormControl from '@mui/material/FormControl'
 import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
@@ -8,7 +8,7 @@ import validator from 'validator'
 import allCharities from '../../data/raflCharities.json'
 import useWindowSize from '../../util/useWindowSize.jsx'
 
-export default function RaffleDonationForm({
+function RaffleDonationForm({
                                                index,
                                                donationData,
                                                handleDonationChange,
@@ -119,3 +119,14 @@ export default function RaffleDonationForm({
         </div>
     )
 }
+
+const areEqual = (prevProps, nextProps) => {
+  if (prevProps.index !== nextProps.index) return false
+  if ((prevProps.donationData || []).length !== (nextProps.donationData || []).length) return false
+  if ((prevProps.donationData || [])[prevProps.index] !== (nextProps.donationData || [])[nextProps.index]) return false
+  if (prevProps.showIssues !== nextProps.showIssues) return false
+  if (prevProps.questionStyle !== nextProps.questionStyle) return false
+  return true
+}
+
+export default memo(RaffleDonationForm, areEqual)

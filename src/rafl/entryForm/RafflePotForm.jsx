@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState, memo} from 'react'
 import FormControl from '@mui/material/FormControl'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../../util/useWindowSize.jsx'
@@ -11,7 +11,7 @@ import Backdrop from '@mui/material/Backdrop'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import RaffleContext from '../RaffleContext.jsx'
 
-export default function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
+function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
     const allPots = useContext(RaffleContext)
     const {isMobile, flexStyle} = useWindowSize()
     const isMobileFalse = false
@@ -187,3 +187,14 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
 
     )
 }
+
+const areEqual = (prevProps, nextProps) => {
+    if (prevProps.index !== nextProps.index) return false
+    if ((prevProps.potData || []).length !== (nextProps.potData || []).length) return false
+    if ((prevProps.potData || [])[prevProps.index] !== (nextProps.potData || [])[nextProps.index]) return false
+    if (prevProps.showIssues !== nextProps.showIssues) return false
+    if (prevProps.questionStyle !== nextProps.questionStyle) return false
+    return true
+}
+
+export default memo(RafflePotForm, areEqual)

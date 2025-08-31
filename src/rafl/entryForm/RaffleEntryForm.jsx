@@ -62,11 +62,6 @@ function RaffleEntryForm() {
         setFormData(newFormData)
     }, [formData])
 
-    const handlePotChange = useCallback((index, potDetails) => {
-        const newPotData = [...potData]
-        newPotData[index] = potDetails
-        setPotData(newPotData)
-    }, [potData])
 
     // total up donations from multi-donation configurator
     const totalDonation = useMemo(() => {
@@ -136,8 +131,8 @@ function RaffleEntryForm() {
 
     const {flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-    const sectionStyle = {fontSize: '1.5rem', fontWeight: 700, marginBottom: 8}
-    const questionStyle = {fontSize: '1.1rem', fontWeight: 400, marginBottom: 8}
+    const sectionStyle = useMemo(() => ({fontSize: '1.5rem', fontWeight: 700, marginBottom: 8}), [])
+    const questionStyle = useMemo(() => ({fontSize: '1.1rem', fontWeight: 400, marginBottom: 8}), [])
 
     return (
         <React.Fragment>
@@ -235,7 +230,7 @@ function RaffleEntryForm() {
                     <div style={sectionStyle}>Your Pots</div>
 
                     <RafflePotConfigurator donation={totalDonation} potData={potData}
-                                           handlePotChange={handlePotChange} questionStyle={questionStyle}
+                                           questionStyle={questionStyle}
                                            showIssues={showIssues} setPotData={setPotData}
                                            allocated={allocated}/>
 

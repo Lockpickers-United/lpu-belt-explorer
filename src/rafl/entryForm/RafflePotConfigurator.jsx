@@ -1,11 +1,11 @@
 import RafflePotForm from './RafflePotForm.jsx'
-import React, {useCallback} from 'react'
+import React, {useCallback, memo} from 'react'
 import Button from '@mui/material/Button'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import Link from '@mui/material/Link'
 
-export default function RafflePotConfigurator({
+function RafflePotConfigurator({
                                                   donation,
                                                   questionStyle,
                                                   potData,
@@ -17,35 +17,41 @@ export default function RafflePotConfigurator({
     const difference = donation ? parseInt(donation) - allocated : 0 - allocated
 
     const addPot = useCallback(() => {
-        setPotData([...(potData || []), {tickets: 0}])
-    }, [potData, setPotData])
+        setPotData(prev => ([...(prev || []), {tickets: 0}]))
+    }, [setPotData])
 
     const removePot = useCallback((index) => {
-        const newPotData = [...(potData || [])]
-        newPotData.splice(index, 1)
-        setPotData(newPotData.length ? newPotData : [{tickets: 0}])
-    }, [potData, setPotData])
+        setPotData(prev => {
+            const list = [...(prev || [])]
+            list.splice(index, 1)
+            return list.length ? list : [{tickets: 0}]
+        })
+    }, [setPotData])
 
     const handleAuto = useCallback(() => {
-        const count = (potData || []).length || 1
-        const base = Math.floor((donation || 0) / count)
-        const remainder = (donation || 0) % count
-        const newPotData = [...(potData || [])]
-        newPotData.forEach((pot, index) => {
-            if (donation) {
-                newPotData[index] = { ...pot, tickets: base + (index === 0 ? remainder : 0) }
-            } else {
-                newPotData[index] = { ...pot, tickets: 0 }
-            }
+        setPotData(prev => {
+            const count = (prev || []).length || 1
+            const base = Math.floor((donation || 0) / count)
+            const remainder = (donation || 0) % count
+            const next = [...(prev || [])]
+            next.forEach((pot, index) => {
+                if (donation) {
+                    next[index] = { ...pot, tickets: base + (index === 0 ? remainder : 0) }
+                } else {
+                    next[index] = { ...pot, tickets: 0 }
+                }
+            })
+            return next
         })
-        setPotData(newPotData)
-    }, [donation, potData, setPotData])
+    }, [donation, setPotData])
 
     const handlePotChange = useCallback((index, potDetails) => {
-        const newPotData = [...(potData || [])]
-        newPotData[index] = potDetails
-        setPotData(newPotData)
-    }, [potData, setPotData])
+        setPotData(prev => {
+            const next = [...(prev || [])]
+            next[index] = potDetails
+            return next
+        })
+    }, [setPotData])
 
     const differenceStyle = difference > 0
         ? {color: '#0b0', fontWeight: 700}
@@ -130,3 +136,5 @@ export default function RafflePotConfigurator({
         </React.Fragment>
     )
 }
+
+export default memo(RafflePotConfigurator)
