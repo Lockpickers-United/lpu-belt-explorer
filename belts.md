@@ -1183,7 +1183,7 @@ is required to gut.
 - [Kaba Penta](https://lpubelts.com/#/locks?id=68b5a797) (15-20 pins)
 - [Kaba Penta](https://lpubelts.com/#/locks?id=bc1509f5) (21 or more pins)
 - [Kaba Quattro / Kaba experT](https://lpubelts.com/#/locks?id=f7b52501) (15-20 pins)
-- [Kaba Quattro / Kaba experT](https://lpubelts.com/#/locks?id=10968d37) (21 pins)
+- [Kaba Quattro / Kaba experT](https://lpubelts.com/#/locks?id=10968d37) (21 or more pins)
 - [Kaba Star](https://lpubelts.com/#/locks?id=3ddfc71c) (&ge; 5 rows, 16-20 pins)
 - [Kaba Star](https://lpubelts.com/#/locks?id=dfa88b94) (&ge; 5 rows, 21 or more pins)
 - [Kaba Titan](https://lpubelts.com/#/locks?id=d54a6b5f)

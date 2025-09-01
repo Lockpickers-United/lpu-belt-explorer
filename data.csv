@@ -760,7 +760,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,changelog",,5eac6a29
 "Black 1",Kaba,Penta,"15-20 pins",Dimple,"High pin count",,68b5a797
 "Black 2",Kaba,Penta,"21 or more pins",Dimple,"High pin count",,bc1509f5
 "Black 1","Kaba,Kaba","Quattro,experT","15-20 pins",Dimple,"High pin count",,f7b52501
-"Black 2","Kaba,Kaba","Quattro,experT","21 pins",Dimple,"High pin count",,10968d37
+"Black 2","Kaba,Kaba","Quattro,experT","21 or more pins",Dimple,"High pin count",,10968d37
 "Black 1",Kaba,Star,"≥ 5 rows, 16-20 pins",Dimple,"High pin count",,3ddfc71c
 "Black 2",Kaba,Star,"≥ 5 rows, 21 or more pins",Dimple,"High pin count",,dfa88b94
 "Black 1",Kaba,Titan,,Dimple,"High pin count",,d54a6b5f
