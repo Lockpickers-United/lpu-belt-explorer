@@ -18,16 +18,32 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
-    console.log('potData', potData)
     const [potDetails, setPotDetails] = useState(potData[index])
 
     const showDelete = (potData || []).length > 1
 
-    // Sync parent when local potDetails changes to avoid updating parent during render
     useEffect(() => {
         handlePotChange(index, potDetails)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index, potDetails])
+
+    // Sync local state when parent potData updates externally (e.g., Auto allocation)
+    useEffect(() => {
+        const incoming = (potData || [])[index] || {}
+        // shallow compare to avoid unnecessary state updates
+        const same = (
+            (incoming.itemFullTitle === potDetails?.itemFullTitle) &&
+            (incoming.itemTitle === potDetails?.itemTitle) &&
+            (incoming.itemId === potDetails?.itemId) &&
+            (incoming.itemPotNumber === potDetails?.itemPotNumber) &&
+            (incoming.itemIndex === potDetails?.itemIndex) &&
+            (String(incoming.tickets || '') === String(potDetails?.tickets || ''))
+        )
+        if (!same) {
+            setPotDetails(prev => ({...prev, ...incoming}))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [index, potData])
 
     const itemMap = useMemo(() => {
         let options = []
@@ -56,7 +72,7 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
     const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
 
     const handleTicketsChange = useCallback(event => {
-        const tickets = event.target.value.replace(/[^0-9]/, '')
+        const tickets = parseInt(event.target.value.replace(/[^0-9]/, ''))
         const tempPotDetails = {...potDetails, tickets: tickets}
         setPotDetails(tempPotDetails)
     }, [potDetails])
@@ -193,8 +209,7 @@ const areEqual = (prevProps, nextProps) => {
     if ((prevProps.potData || []).length !== (nextProps.potData || []).length) return false
     if ((prevProps.potData || [])[prevProps.index] !== (nextProps.potData || [])[nextProps.index]) return false
     if (prevProps.showIssues !== nextProps.showIssues) return false
-    if (prevProps.questionStyle !== nextProps.questionStyle) return false
-    return true
+    return prevProps.questionStyle === nextProps.questionStyle
 }
 
 export default memo(RafflePotForm, areEqual)

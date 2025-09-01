@@ -6,14 +6,14 @@ import RaffleDonationForm from './RaffleDonationForm.jsx'
 function RaffleDonationConfigurator({donationData, setDonationData, showIssues, questionStyle}) {
 
   const addDonation = useCallback(() => {
-    setDonationData(prev => ([...(prev || []), {amount: '', receipt: ''}]))
+    setDonationData(prev => ([...(prev || []), {amount: 0, receipt: ''}]))
   }, [setDonationData])
 
   const removeDonation = useCallback((index) => {
     setDonationData(prev => {
       const list = [...(prev || [])]
       list.splice(index, 1)
-      return list.length ? list : [{amount: '', receipt: ''}]
+      return list.length ? list : [{amount: 0, receipt: ''}]
     })
   }, [setDonationData])
 

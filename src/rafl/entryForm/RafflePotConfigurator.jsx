@@ -111,12 +111,13 @@ function RafflePotConfigurator({
                     </div>
                 </div>
 
-                {donation &&
+                {donation && donation > 0 ?
                     <div style={{display: flexStyle, padding: 8, marginLeft: 10, alignContent: 'center'}}>
                         <Link onClick={() => {
                             handleAuto()
                         }} style={{color: '#417ee6', fontWeight: 700}}>Auto</Link>
                     </div>
+                    : null
                 }
             </div>
 

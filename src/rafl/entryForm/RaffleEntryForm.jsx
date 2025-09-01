@@ -11,18 +11,21 @@ import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
 import RaffleDonationConfigurator from './RaffleDonationConfigurator.jsx'
 import RaffleContext from '../RaffleContext.jsx'
+import DBContextRaffle from '../DBContextRaffle.jsx'
 import Dialog from '@mui/material/Dialog'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import validator from 'validator'
 
 function RaffleEntryForm() {
+    const dbRaffle = useContext(DBContextRaffle)
+    const {testEntry} = useContext(DBContextRaffle)
     const navigate = useNavigate()
-    const {raffleAdminRole} = useContext(RaffleContext)
+    const {raffleAdmin} = useContext(RaffleContext)
     const [submitted, setSumbitted] = useState(false)
 
     const [formData, setFormData] = useState({})
-    const [donationData, setDonationData] = useState([{amount: '', receipt: ''}])
+    const [donationData, setDonationData] = useState([{amount: 0, receipt: ''}])
     const [potData, setPotData] = useState([{tickets: 0}])
 
     const {displayStats, setDisplayStats} = useContext(RaffleContext)
@@ -46,14 +49,8 @@ function RaffleEntryForm() {
         }, false)
     }, [potData])
 
-    const openInNewTab = useCallback((url) => { //eslint-disable-line
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }, [])
-
     const handleChange = useCallback(event => {
         const newFormData = {...formData}
-
         if (event.target.name === 'donation') {
             newFormData[event.target.name] = event.target.value.replace(/[^0-9]/, '')
         } else {
@@ -62,6 +59,16 @@ function RaffleEntryForm() {
         setFormData(newFormData)
     }, [formData])
 
+    const fillTestData = useCallback(() => {
+        console.log('testEntry', testEntry)
+        setFormData({
+            platform: testEntry?.platform,
+            username: testEntry?.username,
+            belt: testEntry?.belt,
+        })
+        setDonationData(testEntry.donations || [{amount: 0, receipt: ''}])
+        setPotData(testEntry.pots || [{tickets: 0}])
+    },[testEntry])
 
     // total up donations from multi-donation configurator
     const totalDonation = useMemo(() => {
@@ -72,30 +79,40 @@ function RaffleEntryForm() {
     }, [donationData])
 
     const buildRecord = useCallback(() => {
-        return {
+        const record = {
             ...formData,
             donations: donationData,
             pots: potData,
             totalDonation: totalDonation,
             allocatedTickets: allocated,
+            status: 'pending',
         }
-    },[allocated, donationData, formData, potData, totalDonation])
+        if (import.meta.env.DEV) {
+            record.dev = true
+        }
+        if (raffleAdmin) {
+            record.adminEntry = true
+        }
+        return record
+    }, [allocated, donationData, formData, potData, raffleAdmin, totalDonation])
 
     const logFormData = useCallback(() => {
         const record = buildRecord()
         console.log('record', record)
     }, [buildRecord])
 
+    const handleSubmit = useCallback(async () => {
+        const record = buildRecord()
+        console.log('record', record)
 
-    const handleSubmit = useCallback(() => {
-        console.log('formData', formData)
-        console.log('donationData', donationData)
-        console.log('totalDonation', totalDonation)
-        console.log('potData', potData)
-        setSumbitted(true)
-    }, [formData, donationData, totalDonation, potData])
-
-
+        try {
+            const id = await dbRaffle?.createRaffleEntry?.(record)
+            console.log('raffle entry created:', id)
+            setSumbitted(true)
+        } catch (e) {
+            console.error('Failed to create raffle entry', e)
+        }
+    }, [buildRecord, dbRaffle])
 
     const [showIssues, setShowIssues] = useState(false)
 
@@ -209,9 +226,9 @@ function RaffleEntryForm() {
                     <div style={sectionStyle}>Your Donation(s)</div>
 
                     <RaffleDonationConfigurator donationData={donationData}
-                                               setDonationData={setDonationData}
-                                               showIssues={showIssues}
-                                               questionStyle={questionStyle}
+                                                setDonationData={setDonationData}
+                                                showIssues={showIssues}
+                                                questionStyle={questionStyle}
                     />
 
                     <div style={{display: 'flex', justifyContent: 'center', marginTop: 8}}>
@@ -254,17 +271,19 @@ function RaffleEntryForm() {
                         </div>
                         <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
                                 disabled={errors} onClick={handleSubmit}
-                        >Review Entry on Google</Button>
+                        >Submit Entry</Button>
                     </div>
                     <div style={{
                         ...style,
                         justifyContent: 'center',
                         marginTop: 16,
                         color: '#de2323',
-                        display: errors ? 'flex' : 'none'
+                        textAlign: 'center'
                     }}>
+                        <Button style={{color: '#b00'}} variant='text' onClick={fillTestData}
+                        >fill test data</Button>
                         <Button style={{color: '#b00'}} variant='text' onClick={logFormData}
-                        >logFormData</Button>
+                        >log entry</Button>
                     </div>
                 </div>
             </div>
@@ -274,9 +293,9 @@ function RaffleEntryForm() {
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30, fontSize: '1.1rem'}}>
                     <span style={{fontSize: '1.3rem', fontWeight: 700}}>Thanks for entering!</span><br/><br/>
-                    <span style={{fontSize: '1.2rem', lineHeight: '1.2rem'}}>
-                        Make sure you hit <strong>SUBMIT</strong> on the google review form
-                        or your entry will not be counted.
+                    <span style={{fontSize: '1.1rem', lineHeight: '0.8rem'}}>
+                        Your entry will be reviewed shortly.
+                        We&#39;ll reach out to you via your chosen platform to let you know your entry has been approved or to resolve any issues.
                         <br/><br/></span>
 
                     You can always make another donation and submit
@@ -285,7 +304,9 @@ function RaffleEntryForm() {
                     Take another look at the pots!
                 </Link><br/><br/>
 
-                    <Link onClick={() => setSumbitted(false)}>(close)</Link>
+                    {raffleAdmin &&
+                        <Link onClick={() => setSumbitted(false)}>(close)</Link>
+                    }
                 </div>
             </Dialog>
         </React.Fragment>

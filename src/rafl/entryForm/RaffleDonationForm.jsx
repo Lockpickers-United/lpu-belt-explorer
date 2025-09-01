@@ -16,10 +16,27 @@ function RaffleDonationForm({
                                                showIssues,
                                                questionStyle
                                            }) {
-    const [details, setDetails] = useState(donationData[index] || {amount: '', receipt: ''})
+    const [details, setDetails] = useState(donationData[index] || {amount: 0, receipt: ''})
     const {flexStyle} = useWindowSize()
 
-    console.log('RaffleDonationForm render', index)
+    // Sync local state when parent potData updates externally (e.g., test data fill)
+    useEffect(() => {
+        const incoming = (donationData || [])[index] || {}
+        console.log('incoming', incoming)
+        // shallow compare to avoid unnecessary state updates
+        const same = (
+            (incoming.charity?.itemFullTitle === details?.charity?.itemFullTitle) &&
+            (incoming.charity?.itemTitle === details?.charity?.itemTitle) &&
+            (incoming.charity?.itemId === details?.charity?.itemId) &&
+            (incoming?.amount === details?.amount) &&
+            (incoming?.receipt === details?.receipt)
+        )
+        if (!same) {
+            setDetails(prev => ({...prev, ...incoming}))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [index, donationData])
+
 
     // charity selection (using existing autocomplete component)
     const mappedCharities = useMemo(() => {
@@ -38,7 +55,7 @@ function RaffleDonationForm({
     }, [index, details])
 
     const onAmountChange = useCallback((e) => {
-        const value = e.target.value.replace(/[^0-9]/g, '')
+        const value = parseInt(e.target.value.replace(/[^0-9]/g, '')) || 0
         setDetails(prev => ({...prev, amount: value}))
     }, [])
 
@@ -71,6 +88,7 @@ function RaffleDonationForm({
                             <div style={{...questionStyle, fontWeight: 600}}>Selected Charity</div>
                             <div style={{height: 6}}/>
                             <RaffleAutocompleteBox allItems={mappedCharities}
+                                                   value={details?.charity?.itemFullTitle || ''}
                                                    setItemDetails={setCharity}
                                                    getOptionTitle={charityFullTitle}
                                                    searchText={'Search Charity'}
@@ -125,8 +143,7 @@ const areEqual = (prevProps, nextProps) => {
   if ((prevProps.donationData || []).length !== (nextProps.donationData || []).length) return false
   if ((prevProps.donationData || [])[prevProps.index] !== (nextProps.donationData || [])[nextProps.index]) return false
   if (prevProps.showIssues !== nextProps.showIssues) return false
-  if (prevProps.questionStyle !== nextProps.questionStyle) return false
-  return true
+  return prevProps.questionStyle === nextProps.questionStyle
 }
 
 export default memo(RaffleDonationForm, areEqual)

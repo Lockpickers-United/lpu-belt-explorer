@@ -120,6 +120,7 @@ const RafflePotTable = ({statsData}) => {
             <div style={{justifyItems: 'center', marginBottom: 20}}>
                 <div style={{width:400}}>
                     <RaffleAutocompleteBox allItems={potData}
+                                           value={searched.itemTitle || null}
                                            setItemDetails={setSeached}
                                            getOptionTitle={potTitle}
                                            searchText={'Search Pots'}
