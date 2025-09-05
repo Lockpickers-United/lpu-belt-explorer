@@ -5,9 +5,8 @@ import AuthContext from '../../app/AuthContext'
 import Tracker from '../../app/Tracker'
 import Footer from '../../nav/Footer'
 import Nav from '../../nav/Nav'
-import ReportButton from '../ReportButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import AdminRoleButton from '../AdminRoleButton.jsx'
+import AdminToolsButton from '../AdminToolsButton.jsx'
 import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import RaffleSubmittedEntriesList from './RaffleSubmittedEntriesList.jsx'
@@ -21,8 +20,7 @@ function RaffleAdminRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <ReportButton active={true}/>
-            <AdminRoleButton/>
+            <AdminToolsButton/>
         </React.Fragment>
     )
 

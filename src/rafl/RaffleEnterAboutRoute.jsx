@@ -12,8 +12,7 @@ import RaffleInfoDetails from './RaffleInfoDetails.md?raw'
 import Button from '@mui/material/Button'
 import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
-import ReportButton from './ReportButton.jsx'
-import AdminRoleButton from './AdminRoleButton.jsx'
+import AdminToolsButton from './AdminToolsButton.jsx'
 import RaffleNotLiveDialog from './RaffleNotLiveDialog.jsx'
 
 function RaffleEnterAboutRoute() {
@@ -36,8 +35,7 @@ function RaffleEnterAboutRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <ReportButton/>
-            <AdminRoleButton/>
+            <AdminToolsButton/>
         </React.Fragment>
     )
 

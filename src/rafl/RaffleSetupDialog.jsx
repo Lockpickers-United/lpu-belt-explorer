@@ -1,5 +1,5 @@
 import Dialog from '@mui/material/Dialog'
-import AdminRoleButton from './AdminRoleButton.jsx'
+import AdminToolsButton from './AdminToolsButton.jsx'
 import React, {useContext} from 'react'
 import RaffleContext from './RaffleContext.jsx'
 
@@ -16,7 +16,7 @@ export default function RaffleSetupDialog() {
                 <div style={{fontSize: '1.2rem'}}>RAFL launches on January 1st!</div>
                 <br/>
 
-                <AdminRoleButton/>
+                <AdminToolsButton/>
             </div>
         </Dialog>
     )

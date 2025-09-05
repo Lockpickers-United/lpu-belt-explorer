@@ -1,5 +1,5 @@
 import Dialog from '@mui/material/Dialog'
-import AdminRoleButton from './AdminRoleButton.jsx'
+import AdminToolsButton from './AdminToolsButton.jsx'
 import React, {useContext} from 'react'
 import RaffleContext from './RaffleContext.jsx'
 import Link from '@mui/material/Link'
@@ -24,7 +24,7 @@ export default function RaffleNotLiveDialog() {
                     </Link>
                     }
                     <br/>
-                    <AdminRoleButton/>
+                    <AdminToolsButton/>
                 </div>
             </Dialog>
 
@@ -37,7 +37,7 @@ export default function RaffleNotLiveDialog() {
                           style={{color: '#ddd', textDecorationColor: '#888', fontSize: '1.1rem', cursor: 'pointer'}}>
                         Click here to view the winners.
                     </Link><br/>
-                    <AdminRoleButton/>
+                    <AdminToolsButton/>
                 </div>
             </Dialog>
 
@@ -49,7 +49,7 @@ export default function RaffleNotLiveDialog() {
                     <br/>
                     <div style={{fontSize: '1.2rem'}}>See you next year!</div>
                     <br/>
-                    <AdminRoleButton/>
+                    <AdminToolsButton/>
                 </div>
             </Dialog>
         </React.Fragment>
