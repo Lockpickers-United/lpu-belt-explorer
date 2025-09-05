@@ -401,6 +401,13 @@ export default [
                 }
             },
             {
+                path: '/rafl/admin',
+                lazy: async () => {
+                    const {default: RaffleAdminRoute} = await import('../rafl/admin/RaffleAdminRoute.jsx')
+                    return {element: <RaffleAdminRoute/>}
+                }
+            },
+            {
                 path: '/rafl/reports',
                 lazy: async () => {
                     const {default: RaffleReportRoute} = await import('../rafl/reports/RaffleReportRoute.jsx')

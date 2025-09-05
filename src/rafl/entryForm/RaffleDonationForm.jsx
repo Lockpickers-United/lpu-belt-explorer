@@ -7,15 +7,16 @@ import RaffleAutocompleteBox from './RaffleAutocompleteBox.jsx'
 import validator from 'validator'
 import allCharities from '../../data/raflCharities.json'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import {Collapse} from '@mui/material'
 
 function RaffleDonationForm({
-                                               index,
-                                               donationData,
-                                               handleDonationChange,
-                                               removeDonation,
-                                               showIssues,
-                                               questionStyle
-                                           }) {
+                                index,
+                                donationData,
+                                handleDonationChange,
+                                removeDonation,
+                                showIssues,
+                                questionStyle
+                            }) {
     const [details, setDetails] = useState(donationData[index] || {amount: 0, receipt: ''})
     const {flexStyle} = useWindowSize()
 
@@ -37,6 +38,17 @@ function RaffleDonationForm({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index, donationData])
 
+    useEffect(() => {
+        handleDonationChange(index, details)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [index, details])
+
+    const [display, setDisplay] = useState(false)
+
+    useEffect(() => {
+        const timer = setTimeout(() => setDisplay(true), 100)
+        return () => clearTimeout(timer)
+    }, [])
 
     // charity selection (using existing autocomplete component)
     const mappedCharities = useMemo(() => {
@@ -49,10 +61,6 @@ function RaffleDonationForm({
     }, [])
     const charityFullTitle = useCallback((charity) => charity.name, [])
 
-    useEffect(() => {
-        handleDonationChange(index, details)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [index, details])
 
     const onAmountChange = useCallback((e) => {
         const value = parseInt(e.target.value.replace(/[^0-9]/g, '')) || 0
@@ -81,69 +89,71 @@ function RaffleDonationForm({
     return (
         <div>
             {divider}
-            <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
-                <div>
-                    <div style={{display: flexStyle, flexGrow: 1, marginRight: 40, height: 100}}>
-                        <div style={{flexGrow: 1, marginRight: 20}}>
-                            <div style={{...questionStyle, fontWeight: 600}}>Selected Charity</div>
-                            <div style={{height: 6}}/>
-                            <RaffleAutocompleteBox allItems={mappedCharities}
-                                                   value={details?.charity?.itemFullTitle || ''}
-                                                   setItemDetails={setCharity}
-                                                   getOptionTitle={charityFullTitle}
-                                                   searchText={'Search Charity'}
-                                                   error={showIssues && !details?.charity?.itemFullTitle}/>
-                            <div style={{
-                                fontSize: '0.75rem',
-                                color: '#f44336',
-                                margin: '4px 14px 0px 14px',
-                                display: showIssues && !details?.charity?.itemFullTitle ? 'block' : 'none'
-                            }}>Required Field
+            <Collapse in={display} timeout={500}>
+                <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
+                    <div>
+                        <div style={{display: flexStyle, flexGrow: 1, marginRight: 40, height: 100}}>
+                            <div style={{flexGrow: 1, marginRight: 20}}>
+                                <div style={{...questionStyle, fontWeight: 600}}>Selected Charity</div>
+                                <div style={{height: 6}}/>
+                                <RaffleAutocompleteBox allItems={mappedCharities}
+                                                       value={details?.charity?.itemFullTitle || ''}
+                                                       setItemDetails={setCharity}
+                                                       getOptionTitle={charityFullTitle}
+                                                       searchText={'Search Charity'}
+                                                       error={showIssues && !details?.charity?.itemFullTitle}/>
+                                <div style={{
+                                    fontSize: '0.75rem',
+                                    color: '#f44336',
+                                    margin: '4px 14px 0px 14px',
+                                    display: showIssues && !details?.charity?.itemFullTitle ? 'block' : 'none'
+                                }}>Required Field
+                                </div>
+                            </div>
+                            <div>
+                                <div style={questionStyle}>Total donation in USD</div>
+                                <FormControl>
+                                    <TextField type='text' name='donation' label='Donation Amount'
+                                               value={details.amount || ''}
+                                               error={showIssues && !details.amount}
+                                               helperText={showIssues && !details.amount ? 'Required Field' : ' '}
+                                               onChange={onAmountChange} color='info' size='small'/>
+                                </FormControl>
                             </div>
                         </div>
-                        <div>
-                            <div style={questionStyle}>Total donation in USD</div>
-                            <FormControl>
-                                <TextField type='text' name='donation' label='Donation Amount'
-                                           value={details.amount || ''}
-                                           error={showIssues && !details.amount}
-                                           helperText={showIssues && !details.amount ? 'Required Field' : ' '}
-                                           onChange={onAmountChange} color='info' size='small'/>
+                        <div style={{flexGrow: 2}}>
+                            <div style={questionStyle}>Receipt from approved charity <span
+                                style={{fontWeight: 400, fontSize: '0.9rem'}}>(hosted image link, must contain a visible date)</span>
+                            </div>
+                            <FormControl fullWidth>
+                                <TextField type='text' name='receipt' label='Receipt Link'
+                                           error={receiptUrlError}
+                                           helperText={receiptUrlError ? 'Receipt link is not a valid URL' : ' '}
+                                           value={details.receipt || ''}
+                                           onChange={onReceiptChange} color='info' size='small' fullWidth/>
                             </FormControl>
                         </div>
                     </div>
-                    <div style={{flexGrow: 2}}>
-                        <div style={questionStyle}>Receipt from approved charity <span
-                            style={{fontWeight: 400, fontSize: '0.9rem'}}>(hosted image link, must contain a visible date)</span>
+                    {showDelete && (
+                        <div style={{marginLeft: 10}}>
+                            <div style={questionStyle}>&nbsp;</div>
+                            <IconButton color='warning' onClick={() => removeDonation(index)}>
+                                <DeleteForeverIcon/>
+                            </IconButton>
                         </div>
-                        <FormControl fullWidth>
-                            <TextField type='text' name='receipt' label='Receipt Link'
-                                       error={receiptUrlError}
-                                       helperText={receiptUrlError ? 'Receipt link is not a valid URL' : ' '}
-                                       value={details.receipt || ''}
-                                       onChange={onReceiptChange} color='info' size='small' fullWidth/>
-                        </FormControl>
-                    </div>
+                    )}
                 </div>
-                {showDelete && (
-                    <div style={{marginLeft: 10}}>
-                        <div style={questionStyle}>&nbsp;</div>
-                        <IconButton color='warning' onClick={() => removeDonation(index)}>
-                            <DeleteForeverIcon/>
-                        </IconButton>
-                    </div>
-                )}
-            </div>
+            </Collapse>
         </div>
     )
 }
 
 const areEqual = (prevProps, nextProps) => {
-  if (prevProps.index !== nextProps.index) return false
-  if ((prevProps.donationData || []).length !== (nextProps.donationData || []).length) return false
-  if ((prevProps.donationData || [])[prevProps.index] !== (nextProps.donationData || [])[nextProps.index]) return false
-  if (prevProps.showIssues !== nextProps.showIssues) return false
-  return prevProps.questionStyle === nextProps.questionStyle
+    if (prevProps.index !== nextProps.index) return false
+    if ((prevProps.donationData || []).length !== (nextProps.donationData || []).length) return false
+    if ((prevProps.donationData || [])[prevProps.index] !== (nextProps.donationData || [])[nextProps.index]) return false
+    if (prevProps.showIssues !== nextProps.showIssues) return false
+    return prevProps.questionStyle === nextProps.questionStyle
 }
 
 export default memo(RaffleDonationForm, areEqual)

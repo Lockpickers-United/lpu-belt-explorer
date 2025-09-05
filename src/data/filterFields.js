@@ -53,6 +53,13 @@ export const raffleFilterFields = [
     {label: 'Split Shipping', fieldName: 'splitShipping'},
 ]
 
+export const raffleEntryFilterFields = [
+    {label: 'Winner', fieldName: 'winner'},
+    {label: 'Charity', fieldName: 'charities'},
+    {label: 'Pot Name', fieldName: 'potNames'},
+    {label: 'Contributor', fieldName: 'contributedBy'},
+]
+
 export const lockRequestFilterFields = [
     {label: 'Status', fieldName: 'requestStatus', sort: statusSort},
     {label: 'Make', fieldName: 'makes'},
