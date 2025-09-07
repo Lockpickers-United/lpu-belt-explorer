@@ -123,7 +123,7 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
 
             <div style={{display: flexStyle, margin: 12}}>
                 <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth: 280}}>
-                    <div style={{...questionStyle, fontWeight: 600}}>Selected Pot</div>
+                    <div style={{...questionStyle, fontWeight: 600, fontSize:'1.1rem'}}>Selected Pot</div>
                     <div style={{height: 4}}/>
                     <React.Fragment>
                         {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>

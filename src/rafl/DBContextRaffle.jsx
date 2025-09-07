@@ -29,13 +29,23 @@ export function DBProviderRaffle({children}) {
     const [dbLoaded, setDbLoaded] = useState(false)
 
     const createRaffleEntry = useCallback(async (data) => {
-        console.log('Creating Raffle Entry', data)
         if (dbError || !isLoggedIn) return 'error'
         try {
             const clean = Object.fromEntries(Object.entries(data || {}).filter(([, v]) => v !== undefined))
+            clean.pots = (clean.pots || []).reduce((acc, pot) => {
+                const existing = acc.find(p => p.itemId === pot.itemId)
+                if (!existing) {
+                    acc.push({...pot})
+                } else {
+                    existing.tickets = (existing.tickets || 0) + (pot.tickets || 0)
+                }
+                return acc
+            }, [])
             if (!clean.createdAt) clean.createdAt = dayjs().toISOString()
             clean.updatedAt = dayjs().toISOString()
+            clean.raflYear = 2026
             const ref = await addDoc(collection(db, 'raffle-entries'), clean)
+            console.log('Created Raffle Entry', clean)
             return ref.id
         } catch (e) {
             console.error('Error creating raffle entry:', e)

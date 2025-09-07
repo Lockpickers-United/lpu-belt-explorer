@@ -5,15 +5,9 @@ import AccordionActions from '@mui/material/AccordionActions'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
-import Tracker from '../../app/Tracker'
 import CopyLinkToRaflPotButton from '../CopyLinkToRaflPotButton.jsx'
 import FieldValue from '../../entries/FieldValue'
-import FilterChip from '../../filters/FilterChip'
-import RaffleImageGallery from '../RaffleImageGallery.jsx'
-import CopyPotTextButton from '../CopyPotTextButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import FilterContext from '../../context/FilterContext.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import DataContext from '../../context/DataContext.jsx'
 import BeltStripe from '../../entries/BeltStripe.jsx'
@@ -21,28 +15,24 @@ import dayjs from 'dayjs'
 import Typography from '@mui/material/Typography'
 import StatusMenu from './StatusMenu.jsx'
 import Tooltip from '@mui/material/Tooltip'
+import DBContext from '../../app/DBContext.jsx'
+import DeleteEntryButton from './DeleteEntryButton.jsx'
 
-function RaffleSubmittedEntry({entry, expanded, onExpand, single}) {
+function RaffleSubmittedEntry({entry, expanded, onExpand, single, editEntryId, setEditEntryId}) {
 
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
-    const {expandAll, statusColors} = useContext(DataContext)
-    const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
-
-    const {filters} = useContext(FilterContext)
+    const {expandAll, statusLabels} = useContext(DataContext)
+    const {updateRaffleEntry} = useContext(DBContext)
 
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
-    const showSimple = single === '2'
-
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
-
             setScrolled(true)
-
             setTimeout(() => {
                 window.scrollTo({
                     left: 0,
@@ -59,28 +49,51 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single}) {
         onExpand && onExpand(isExpanded ? entry?.id : false)
     }, [entry?.id, onExpand])
 
-    const isUpdated = dayjs(entry?.updatedAt).valueOf()-dayjs(entry?.createdAt).valueOf() > 60000
+    const isUpdated = dayjs(entry?.updatedAt).valueOf() - dayjs(entry?.createdAt).valueOf() > 60000
 
-    const {isMobile, flexStyle} = useWindowSize()
+    const approveDonationToggle = useCallback((donationIndex) => {
+        if (!raffleAdminRole) return
+        const updatedDonations = entry.donations.map((donation, index) => {
+            if (index === donationIndex) {
+                return {...donation, approved: !donation.approved}
+            }
+            return donation
+        })
+        const updatedEntry = {
+            ...entry,
+            donations: updatedDonations
+        }
+        updateRaffleEntry(updatedEntry)
+            .then(() => {
+                console.log('Donation approval toggled')
+            })
+            .catch(error => {
+                console.error('Error updating donation approval:', error)
+            })
+    },[entry, raffleAdminRole, updateRaffleEntry])
+
+
+
+        const {isMobile, flexStyle} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
-    const descriptionMargin = !isMobile ? '12px 0px 12px 8px' : '12px 0px 12px 0px'
-    const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
-    const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
+    const donationColors = {no: {backgroundColor: '#333', color: '#aaa'}, yes: {backgroundColor: '#aaa', color: '#fff'}}
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null} sx={{
+            <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{
                 '.MuiAccordionSummary-content': {
                     margin: '6px 0px'
                 }
             }}>
-                <BeltStripe value={statusColors[entry.status]}/>
+                <BeltStripe value={statusLabels[entry.status].entryColor}/>
                 <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
                     <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
                         <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
                             <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, fontWeight: 600}}>
                                 {entry?.username}
+                                &nbsp;<span
+                                style={{fontWeight: 400, color: '#777'}}>({entry.platform.toLowerCase()})</span>
                             </div>
                             <FieldValue
                                 name='Submitted'
@@ -89,7 +102,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single}) {
                                         fontSize: '0.95rem',
                                         lineHeight: 1.25
                                     }}>{dayjs(entry?.createdAt).format('YYYY-MM-DD')}</Typography>}
-                                style={{marginRight:20}}
+                                style={{marginRight: 20}}
                             />
                             <FieldValue
                                 name='Updated'
@@ -99,14 +112,17 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single}) {
                                         lineHeight: 1.25
                                     }}>{dayjs(entry?.updatedAt).format('YYYY-MM-DD')}</Typography>}
                                 textStyle={!isUpdated ? {color: '#777'} : {}}
-                                style={{marginRight:20}}
+                                style={{marginRight: 20}}
                             />
                             <FieldValue
                                 name='Donations'
                                 value={<Typography
-                                    style={{fontSize: '0.95rem', lineHeight: 1.25}}>$ {entry.totalDonation}</Typography>}
+                                    style={{
+                                        fontSize: '0.95rem',
+                                        lineHeight: 1.25
+                                    }}>$ {Intl.NumberFormat().format(entry.totalDonation)}</Typography>}
                                 textStyle={entry.totalDonation !== entry.allocatedTickets ? {color: '#f33'} : {}}
-                                style={{marginRight:20}}
+                                style={{marginRight: 20}}
                             />
                         </div>
                     </div>
@@ -118,48 +134,69 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single}) {
 
                     <AccordionDetails sx={{padding: '0px 16px 0px 16px', margin: '0px 10px'}}>
 
-                        <div style={{fontWeight:700}}>Donations:</div>
+                        <div style={{textAlign: 'right', margin: '0px 0px 10px 0px', fontWeight: 700}}>
+                            Entry Status &nbsp;<StatusMenu entry={entry}/>
+                        </div>
+
+                        <div style={{fontWeight: 700}}>Donations</div>
                         {entry.donations.map((donation, index) => (
-                            <div key={index} style={{display: 'flex', flexGrow: 1, fontSize: contentsFontSize, marginLeft: 10}}>
-                                        <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
-                                            {donation.charity?.itemFullTitle || donation.charity?.itemTitle || 'No Charity Selected'}
-                                        </div>
-                                        <div style={{marginBottom: 4}}>
-                                            {donation.receipt && <span>Receipt: <a href={donation.receipt} target='_blank' rel='noopener noreferrer'>{(donation.receipt.match(/^(?:https?:\/\/)?([^/?#]+)/i) || [])[1]}</a>&nbsp;&nbsp;</span>}
-                                            {donation.amount > 0 && <span style={{marginRight: 12}}>Donation: $ {donation.amount}</span>}
-                                        </div>
+                            <div key={index} style={{
+                                display: 'flex',
+                                flexGrow: 1,
+                                placeItems: 'center',
+                                fontSize: contentsFontSize,
+                                marginLeft: 10,
+                                marginBottom: 4
+                            }}>
+                                <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
+                                    {donation.charity?.itemFullTitle || donation.charity?.itemTitle || 'No Charity Selected'}
+                                </div>
+                                <div style={{marginBottom: 4, placeItems: 'center', display: 'flex'}}>
+                                    {donation.receipt && <span>Receipt: <a href={donation.receipt} target='_blank'
+                                                                           rel='noopener noreferrer'>{(donation.receipt.match(/^(?:https?:\/\/)?([^/?#]+)/i) || [])[1]}</a>&nbsp;&nbsp;</span>}
+                                    {donation.amount > 0 &&
+                                        <span style={{marginRight: 6}}>Donation: $ {donation.amount}</span>}
+                                    <Button style={{
+                                        minWidth: 20,
+                                        padding: '0px 5px', ...donationColors[donation.approved ? 'yes' : 'no']
+                                    }} onClick={() => approveDonationToggle(index)} variant='contained'>OK</Button>
+                                </div>
                             </div>
                         ))}
 
-                        <div style={{fontWeight:700, marginTop:10}}>Pots:</div>
+                        <div style={{fontWeight: 700, marginTop: 10}}>Pots</div>
                         {entry.pots.map((pot, index) => (
-                            <div key={index} style={{display: 'flex', flexGrow: 1, fontSize: contentsFontSize, marginLeft: 10}}>
-                                        <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
-                                            {pot?.itemFullTitle || pot?.itemTitle || 'No Pot Selected'}
-                                        </div>
-                                        <div style={{marginBottom: 4}}>
-                                            {pot?.tickets > 0 && <span style={{marginRight: 12}}>Tickets: {pot.tickets}</span>}
-                                        </div>
+                            <div key={index}
+                                 style={{display: 'flex', flexGrow: 1, fontSize: contentsFontSize, marginLeft: 10}}>
+                                <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
+                                    {pot?.itemFullTitle || pot?.itemTitle || 'No Pot Selected'}
+                                </div>
+                                <div style={{marginBottom: 4}}>
+                                    {pot?.tickets > 0 && <span style={{marginRight: 12}}>Tickets: {pot.tickets}</span>}
+                                </div>
                             </div>
                         ))}
 
-                    </AccordionDetails>
-
-                    {!showSimple &&
-                        <AccordionActions disableSpacing>
-                                <CopyLinkToRaflPotButton entry={entry}/>
+                        <div style={{textAlign: 'center', margin: '25px 0px 0px 0px'}}>
                             <Tooltip title='Edit Entry' arrow disableFocusListener>
-                                <Button variant='contained' size='small' color='warning'
-                                        onClick={() => {}}
+                                <Button variant='contained' size='large'
+                                        onClick={() => {
+                                            setEditEntryId(entry.id)
+                                        }}
                                         style={{
-                                            backgroundColor: '#3ba0e0', marginRight: 15
+                                            backgroundColor: '#2bb259', color: '#000', padding: '6px 14px'
                                         }}>
                                     EDIT ENTRY
                                 </Button>
                             </Tooltip>
-                            <StatusMenu entry={entry}/>
-                        </AccordionActions>
-                    }
+                        </div>
+
+                    </AccordionDetails>
+                    <AccordionActions disableSpacing>
+                        <div  style={{display: 'flex', flexGrow:1}}><DeleteEntryButton entry={entry}/></div>
+                        <CopyLinkToRaflPotButton entry={entry}/>
+
+                    </AccordionActions>
                 </React.Fragment>
             }
         </Accordion>

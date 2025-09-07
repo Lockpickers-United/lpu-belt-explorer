@@ -6,13 +6,13 @@ import AddCircleIcon from '@mui/icons-material/AddCircle'
 import Link from '@mui/material/Link'
 
 function RafflePotConfigurator({
-                                                  donation,
-                                                  questionStyle,
-                                                  potData,
-                                                  showIssues,
-                                                  setPotData,
-                                                  allocated
-                                              }) {
+                                   donation,
+                                   questionStyle,
+                                   potData,
+                                   showIssues,
+                                   setPotData,
+                                   allocated
+                               }) {
 
     const difference = donation ? parseInt(donation) - allocated : 0 - allocated
 
@@ -36,9 +36,9 @@ function RafflePotConfigurator({
             const next = [...(prev || [])]
             next.forEach((pot, index) => {
                 if (donation) {
-                    next[index] = { ...pot, tickets: base + (index === 0 ? remainder : 0) }
+                    next[index] = {...pot, tickets: base + (index === 0 ? remainder : 0)}
                 } else {
-                    next[index] = { ...pot, tickets: 0 }
+                    next[index] = {...pot, tickets: 0}
                 }
             })
             return next
@@ -121,19 +121,20 @@ function RafflePotConfigurator({
                 }
             </div>
 
-            <div style={{
-                fontSize: '0.75rem',
-                color: '#f44336',
-                margin: '4px 14px 0px 14px',
-                textAlign: 'center'
-            }}>
-                {showIssues && donation > allocated
-                    ? <span>All tickets must be assigned to a pot</span>
-                    : showIssues && donation < allocated
-                        ? <span>You have too many tickets allocated</span>
-                        : <span>&nbsp;</span>}
-            </div>
-
+            {showIssues && donation !== allocated &&
+                <div style={{
+                    fontSize: '0.75rem',
+                    color: '#f44336',
+                    margin: '4px 14px 0px 14px',
+                    textAlign: 'center'
+                }}>
+                    {showIssues && donation > allocated
+                        ? <span>All tickets must be assigned to a pot</span>
+                        : showIssues && donation < allocated
+                            ? <span>You have too many tickets allocated</span>
+                            : <span>&nbsp;</span>}
+                </div>
+            }
         </React.Fragment>
     )
 }

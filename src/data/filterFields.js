@@ -42,7 +42,6 @@ export const scorecardExploreFilterFields = [
     {label: 'Collection', fieldName: 'collection', userBased: true}
 ]
 
-
 export const raffleFilterFields = [
     {label: 'Winner', fieldName: 'winner'},
     {label: 'Watchlist', fieldName: 'collection', userBased: true},
@@ -53,11 +52,23 @@ export const raffleFilterFields = [
     {label: 'Split Shipping', fieldName: 'splitShipping'},
 ]
 
+const statusList = [
+    'pending',
+    'approved',
+    'issues',
+    'rejected'
+]
+const raffleStatusSort = (a, b) => {
+    return statusList.indexOf(a) - statusList.indexOf(b)
+}
+
 export const raffleEntryFilterFields = [
-    {label: 'Winner', fieldName: 'winner'},
+    {label: 'Status', fieldName: 'status', sort: raffleStatusSort},
     {label: 'Charity', fieldName: 'charities'},
     {label: 'Pot Name', fieldName: 'potNames'},
     {label: 'Contributor', fieldName: 'contributedBy'},
+    {label: 'Platform', fieldName: 'platform'},
+    {label: 'Winner', fieldName: 'winner'},
 ]
 
 export const lockRequestFilterFields = [

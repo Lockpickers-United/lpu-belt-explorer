@@ -100,9 +100,7 @@ export function RaffleAdminDBProvider({children}) {
         await setDoc(ref, getSummary(allEntries))
     }, [allEntries, authLoaded, dbError, entriesLoaded, getSummary, isLoggedIn, raffleAdmin])
 
-    
     const initialSummarySavedRef = useRef(false)
-
     useEffect(() => {
         if (!entriesLoaded) return
         if (!initialSummarySavedRef.current) {
@@ -118,12 +116,13 @@ export function RaffleAdminDBProvider({children}) {
     const updateRaffleEntry = useCallback(async (entry) => {
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
         if (!entry || !entry.id) throw new Error('updateRaffleEntry requires an entry with an id')
-        const {id, ...rest} = entry
+        const {id, fuzzy, ...rest} = entry
         const clean = Object.fromEntries(Object.entries(rest).filter(([, v]) => v !== undefined))
         clean.updatedAt = dayjs().toISOString()
         const ref = doc(db, 'raffle-entries', id)
         try {
             await setDoc(ref, clean, {merge: true})
+            enqueueSnackbar('RAFL Entry Updated.')
         } catch (error) {
             console.error('Error listening to DB:', error)
             setDbError(true)
@@ -141,6 +140,7 @@ export function RaffleAdminDBProvider({children}) {
         const ref = doc(db, 'raffle-entries', entry.id)
         try {
             await deleteDoc(ref)
+            enqueueSnackbar('RAFL Entry Deleted.')
             return true
         } catch (error) {
             console.error('Error deleting raffle entry:', error)

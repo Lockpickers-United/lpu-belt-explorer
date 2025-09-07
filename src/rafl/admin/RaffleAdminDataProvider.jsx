@@ -5,10 +5,10 @@ import FilterContext from '../../context/FilterContext'
 import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
 import {setDeepUnique} from '../../util/setDeep'
-import RaffleAdminDBContext from './RaffleAdminDBContext.jsx'
+import DBContext from '../../app/DBContext.jsx'
 
 export function RaffleAdminDataProvider({children}) {
-    const {allEntries, entriesLoaded} = useContext(RaffleAdminDBContext)
+    const {allEntries, entriesLoaded} = useContext(DBContext)
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
@@ -74,16 +74,14 @@ export function RaffleAdminDataProvider({children}) {
 
         return sort
             ? searched.sort((a, b) => {
-                if (sort === 'potName') {
-                    return a.title.localeCompare(b.title)
-                } else if (sort === 'contributedBy') {
-                    return a.contributedBy[0].localeCompare(b.contributedBy[0]) || a.title.localeCompare(b.title)
-                } else if (sort === 'tickets') {
-                    return parseInt(b.tickets) - parseInt(a.tickets) || a.title.localeCompare(b.title)
-                } else if (sort === 'donors') {
-                    return parseInt(b.donors) - parseInt(a.donors) || a.title.localeCompare(b.title)
-                } else if (sort === 'dateAdded') {
-                    return parseInt(b.dateAdded) - parseInt(a.dateAdded) || a.title.localeCompare(b.title)
+                if (sort === 'updatedAt') {
+                    return dayjs(a.updatedAt).isBefore(dayjs(b.updatedAt)) ? 1 : -1
+                } else if (sort === 'status') {
+                    return statusSort(a.status, b.status)
+                } else if (sort === 'username') {
+                    return a.username.localeCompare(b.username)
+                } else if (sort === 'totalDonation') {
+                    return b.totalDonation - a.totalDonation
                 } else {
                     return dayjs(a.createdAt).isBefore(dayjs(b.createdAt)) ? 1 : -1
                 }
@@ -102,7 +100,7 @@ export function RaffleAdminDataProvider({children}) {
         visibleEntries,
         getPotFromId,
         expandAll,
-        statusColors
+        statusLabels
     }), [allEntries, visibleEntries, getPotFromId, expandAll])
 
     return (
@@ -114,6 +112,28 @@ export function RaffleAdminDataProvider({children}) {
 
 const fuzzySortKeys = ['fuzzy']
 const statusColors = {
+    pending: 'Blue',
+    approved: 'Green',
+    issues: 'Orange',
+    rejected: 'Red'
+}
+const statusList = [
+    'pending',
+    'approved',
+    'issues',
+    'rejected'
+]
+export const statusSort = (a, b) => {
+    return statusList.indexOf(a) - statusList.indexOf(b)
+}
+export const statusLabels = {
+    pending: {entryColor: 'Blue', backgroundColor: '#3e71bd', textColor: '#fff'},
+    approved: {entryColor: 'Green', backgroundColor: '#34732f', textColor: '#fff'},
+    issues: {entryColor: 'Orange', backgroundColor: '#e16936', textColor: '#fff'},
+    rejected: {entryColor: 'Red', backgroundColor: '#c52323', textColor: '#fff'},
+}
+
+export const statusSimpleColors = {
     pending: 'Blue',
     approved: 'Green',
     issues: 'Orange',

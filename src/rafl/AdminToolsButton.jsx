@@ -39,7 +39,7 @@ function AdminToolsButton() {
                     {route === '#/rafl' &&
                         <PreviewButton/>
                     }
-                    <Tooltip title={'Pot List'} arrow disableFocusListener disableHoverListener={route === '#/rafl'}>
+                    <Tooltip title={'View Pot List'} arrow disableFocusListener disableHoverListener={route === '#/rafl'}>
                         <IconButton onClick={() => handleClick('/rafl')} style={{height: 48, width: 48}}>
                             <AddToPhotosIcon style={{color: route === '#/rafl' ? '#0b0' : '#fff'}}/>
                         </IconButton>

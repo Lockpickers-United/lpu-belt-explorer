@@ -7,10 +7,14 @@ import Menu from '@mui/material/Menu'
 import Dialog from '@mui/material/Dialog'
 import DBContext from '../../app/DBContext.jsx'
 import dayjs from 'dayjs'
+import EditIcon from '@mui/icons-material/Edit'
+import DataContext from '../../context/DataContext.jsx'
 
 export default function StatusMenu({entry}) {
 
     const {updateRaffleEntry, deleteRaffleEntry} = useContext(DBContext)
+    const {statusLabels} = useContext(DataContext)
+
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
     const handleClick = (event) => { // eslint-disable-line no-unused-vars
@@ -51,12 +55,12 @@ export default function StatusMenu({entry}) {
     return (
         <React.Fragment>
             <Tooltip title='Change Entry Status' arrow disableFocusListener>
-                <Button variant='contained' size='small' color='warning'
-                        onClick={handleClick}
+                <Button variant='contained' size='small' endIcon={<EditIcon />}
+                onClick={handleClick}
                         style={{
-                            backgroundColor: '#50af3e', marginRight: 20
+                            backgroundColor: statusLabels[entry.status].backgroundColor, marginRight: 0
                         }}>
-                        CHANGE STATUS
+                    {entry.status}
                 </Button>
             </Tooltip>
             <Menu
@@ -66,20 +70,17 @@ export default function StatusMenu({entry}) {
             >
 
                 <Stack direction='column' style={{minWidth: 100}}>
-                    <MenuItem style={{color: pending ? '#fff' : '#f1aa55'}} onClick={() => changeStatus('pending')} disabled={pending}>
+                    <MenuItem style={{color: pending ? '#fff' : statusLabels['pending'].backgroundColor}} onClick={() => changeStatus('pending')} disabled={pending}>
                         Pending
                     </MenuItem>
-                    <MenuItem style={{color: approved ? '#fff' : '#f1aa55'}} onClick={() => changeStatus('approved')} disabled={approved}>
+                    <MenuItem style={{color: approved ? '#fff' : statusLabels['approved'].backgroundColor}} onClick={() => changeStatus('approved')} disabled={approved}>
                         Approved
                     </MenuItem>
-                    <MenuItem style={{color: issues ? '#fff' : '#f1aa55'}} onClick={() => changeStatus('issues')} disabled={issues}>
+                    <MenuItem style={{color: issues ? '#fff' : statusLabels['issues'].backgroundColor}} onClick={() => changeStatus('issues')} disabled={issues}>
                         Issues
                     </MenuItem>
-                    <MenuItem style={{color: rejected ? '#fff' : '#f1aa55'}} onClick={() => changeStatus('rejected')} disabled={rejected}>
+                    <MenuItem style={{color: rejected ? '#fff' : statusLabels['rejected'].backgroundColor}} onClick={() => changeStatus('rejected')} disabled={rejected}>
                         Rejected
-                    </MenuItem>
-                    <MenuItem style={{color: '#f00'}} onClick={() => setDeleteOpen(true)}>
-                        Delete
                     </MenuItem>
                 </Stack>
             </Menu>

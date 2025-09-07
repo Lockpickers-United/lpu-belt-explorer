@@ -23,7 +23,6 @@ function RaffleDonationForm({
     // Sync local state when parent potData updates externally (e.g., test data fill)
     useEffect(() => {
         const incoming = (donationData || [])[index] || {}
-        console.log('incoming', incoming)
         // shallow compare to avoid unnecessary state updates
         const same = (
             (incoming.charity?.itemFullTitle === details?.charity?.itemFullTitle) &&
@@ -93,8 +92,8 @@ function RaffleDonationForm({
                 <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
                     <div>
                         <div style={{display: flexStyle, flexGrow: 1, marginRight: 40, height: 100}}>
-                            <div style={{flexGrow: 1, marginRight: 20}}>
-                                <div style={{...questionStyle, fontWeight: 600}}>Selected Charity</div>
+                            <div style={{flexGrow: 1, marginRight: 40}}>
+                                <div style={{...questionStyle, fontWeight: 600, fontSize:'1.1rem'}}>Selected Charity</div>
                                 <div style={{height: 6}}/>
                                 <RaffleAutocompleteBox allItems={mappedCharities}
                                                        value={details?.charity?.itemFullTitle || ''}

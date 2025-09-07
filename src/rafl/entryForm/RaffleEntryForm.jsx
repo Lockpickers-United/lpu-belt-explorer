@@ -11,28 +11,56 @@ import {FormHelperText} from '@mui/material'
 import RafflePotConfigurator from './RafflePotConfigurator.jsx'
 import RaffleDonationConfigurator from './RaffleDonationConfigurator.jsx'
 import RaffleContext from '../RaffleContext.jsx'
-import DBContextRaffle from '../DBContextRaffle.jsx'
 import Dialog from '@mui/material/Dialog'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import validator from 'validator'
+import DataContext from '../../context/DataContext.jsx'
+import DBContext from '../../app/DBContext.jsx'
+import FilterContext from '../../context/FilterContext.jsx'
 
-function RaffleEntryForm() {
-    const dbRaffle = useContext(DBContextRaffle)
-    const {testEntry} = useContext(DBContextRaffle)
+function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
+    const {createRaffleEntry, updateRaffleEntry, testEntry} = useContext(DBContext)
     const navigate = useNavigate()
     const {raffleAdmin} = useContext(RaffleContext)
-    const [submitted, setSumbitted] = useState(false)
+    const {allEntries} = useContext(DataContext)
+
+    const {setFilters} = useContext(FilterContext)
 
     const [formData, setFormData] = useState({})
     const [donationData, setDonationData] = useState([{amount: 0, receipt: ''}])
     const [potData, setPotData] = useState([{tickets: 0}])
+    const [entryChanged, setEntryChanged] = useState(false)
+    const [submitted, setSumbitted] = useState(false)
 
     const {displayStats, setDisplayStats} = useContext(RaffleContext)
     const [initial, setInitial] = useState(true)
     if (initial && displayStats) {
         setDisplayStats(false)
         setInitial(false)
+    }
+
+    const fillEntryData = useCallback((entry) => {
+        console.log('entry', entry)
+        setFormData({
+            platform: entry?.platform,
+            username: entry?.username,
+            belt: entry?.belt
+        })
+        setDonationData(entry.donations || [{amount: 0, receipt: ''}])
+        setPotData(entry.pots || [{tickets: 0}])
+    }, [])
+
+    const [editEntry, setEditEntry] = useState(null)
+    if (raffleAdmin && editEntryId) {
+        if (!editEntry || (editEntry && editEntry.id !== editEntryId)) {
+            const entry = allEntries.find(e => e.id === editEntryId)
+            if (entry) {
+                setEditEntry(entry)
+                fillEntryData(entry)
+            }
+        }
+        console.log('editEntry', editEntry)
     }
 
     const allocated = useMemo(() => {
@@ -57,18 +85,8 @@ function RaffleEntryForm() {
             newFormData[event.target.name] = event.target.value
         }
         setFormData(newFormData)
+        setEntryChanged(true)
     }, [formData])
-
-    const fillTestData = useCallback(() => {
-        console.log('testEntry', testEntry)
-        setFormData({
-            platform: testEntry?.platform,
-            username: testEntry?.username,
-            belt: testEntry?.belt,
-        })
-        setDonationData(testEntry.donations || [{amount: 0, receipt: ''}])
-        setPotData(testEntry.pots || [{tickets: 0}])
-    },[testEntry])
 
     // total up donations from multi-donation configurator
     const totalDonation = useMemo(() => {
@@ -85,7 +103,7 @@ function RaffleEntryForm() {
             pots: potData,
             totalDonation: totalDonation,
             allocatedTickets: allocated,
-            status: 'pending',
+            status: 'pending'
         }
         if (import.meta.env.DEV) {
             record.dev = true
@@ -104,15 +122,25 @@ function RaffleEntryForm() {
     const handleSubmit = useCallback(async () => {
         const record = buildRecord()
         console.log('record', record)
-
         try {
-            const id = await dbRaffle?.createRaffleEntry?.(record)
+            const id = await createRaffleEntry(record)
             console.log('raffle entry created:', id)
             setSumbitted(true)
         } catch (e) {
             console.error('Failed to create raffle entry', e)
         }
-    }, [buildRecord, dbRaffle])
+    }, [buildRecord, createRaffleEntry])
+
+    const handleEditSave = useCallback(async (approve) => {
+        const updatedEntry = {...editEntry, ...buildRecord()}
+        if (approve) updatedEntry.status = 'approved'
+        await updateRaffleEntry(updatedEntry)
+        setFilters({id: updatedEntry.id})
+        setEditEntryId(undefined)
+        setEditEntry(null)
+        setSumbitted(true)
+    }, [buildRecord, editEntry, setEditEntryId, setFilters, updateRaffleEntry])
+
 
     const [showIssues, setShowIssues] = useState(false)
 
@@ -144,17 +172,17 @@ function RaffleEntryForm() {
         || !!potError
         || allocationError
     )
-    const continueColor = !errors ? '#4dd04d' : '#666'
+    const continueColor = (!errors && entryChanged) ? '#4dd04d' : '#666'
 
     const {flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const sectionStyle = useMemo(() => ({fontSize: '1.5rem', fontWeight: 700, marginBottom: 8}), [])
-    const questionStyle = useMemo(() => ({fontSize: '1.1rem', fontWeight: 400, marginBottom: 8}), [])
+    const questionStyle = useMemo(() => ({fontSize: '1.0rem', fontWeight: 400, marginBottom: 8}), [])
 
     return (
         <React.Fragment>
             <div style={{paddingBottom: 32}}>
-                <RaffleSubHead text={'ENTRY FORM'}/>
+                <RaffleSubHead text={editEntryId ? 'EDIT RAFL ENTRY' : 'ENTRY FORM'}/>
 
                 <div style={{
                     ...style,
@@ -165,7 +193,7 @@ function RaffleEntryForm() {
                     padding: '20px 20px'
                 }}>
 
-                    <div style={sectionStyle}>About You</div>
+                    <div style={sectionStyle}>{editEntryId ? 'About' : 'About You'}</div>
 
                     <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
                         <FormControl style={{width: 250, marginRight: 16}} size='small' error={isRequired('platform')}>
@@ -223,7 +251,7 @@ function RaffleEntryForm() {
                     borderBottom: '1px #555 solid',
                     padding: '20px 20px'
                 }}>
-                    <div style={sectionStyle}>Your Donation(s)</div>
+                    <div style={sectionStyle}>{editEntryId ? 'Donations' : 'Your Donations'}</div>
 
                     <RaffleDonationConfigurator donationData={donationData}
                                                 setDonationData={setDonationData}
@@ -244,7 +272,7 @@ function RaffleEntryForm() {
                     borderBottom: '1px #555 solid',
                     padding: '20px 20px'
                 }}>
-                    <div style={sectionStyle}>Your Pots</div>
+                    <div style={sectionStyle}>{editEntryId ? 'Pots' : 'Your Pots'}</div>
 
                     <RafflePotConfigurator donation={totalDonation} potData={potData}
                                            questionStyle={questionStyle}
@@ -254,7 +282,14 @@ function RaffleEntryForm() {
                 </div>
 
 
-                <div style={{...style, padding: '20px 20px 20px 20px'}}>
+                <div style={{
+                    ...style,
+                    backgroundColor: '#222',
+                    minHeight: 72,
+                    alignItems: 'center',
+                    borderBottom: '1px #555 solid',
+                    padding: '15px 20px 25px 20px'
+                }}>
                     <div style={{...sectionStyle, textAlign: 'center'}}>All Done?</div>
 
                     <div style={{...style, justifyContent: 'center', marginTop: 0, display: 'flex'}}>
@@ -269,23 +304,35 @@ function RaffleEntryForm() {
                                     }}
                             >Show Issues</Button>
                         </div>
-                        <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
-                                disabled={errors} onClick={handleSubmit}
-                        >Submit Entry</Button>
-                    </div>
-                    <div style={{
-                        ...style,
-                        justifyContent: 'center',
-                        marginTop: 16,
-                        color: '#de2323',
-                        textAlign: 'center'
-                    }}>
-                        <Button style={{color: '#b00'}} variant='text' onClick={fillTestData}
-                        >fill test data</Button>
-                        <Button style={{color: '#b00'}} variant='text' onClick={logFormData}
-                        >log entry</Button>
+                        {!editEntryId
+                            ? <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
+                                      disabled={errors} onClick={handleSubmit}
+                            >Submit Entry</Button>
+                            : <div>
+                                <Button style={{backgroundColor: continueColor, color: '#000', marginRight: 20}} variant='contained'
+                                      disabled={errors || !entryChanged} onClick={() => handleEditSave(false)}
+                            >Save Edits</Button>
+                                <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
+                                      disabled={errors} onClick={() => handleEditSave(true)}
+                            >Save & Approve</Button>
+                            </div>
+                        }
                     </div>
                 </div>
+
+                <div style={{
+                    ...style,
+                    justifyContent: 'center',
+                    marginTop: 16,
+                    color: '#de2323',
+                    textAlign: 'center'
+                }}>
+                    <Button style={{color: '#b00'}} variant='text' onClick={() => fillEntryData(testEntry)}
+                    >fill test data</Button>
+                    <Button style={{color: '#b00'}} variant='text' onClick={logFormData}
+                    >log entry</Button>
+                </div>
+
             </div>
 
             <Dialog open={submitted} componentsProps={{
