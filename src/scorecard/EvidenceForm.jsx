@@ -24,6 +24,7 @@ import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
 import DataContext from '../context/DataContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 import ViewPageDrawer from '../viewPage/ViewPageDrawer.jsx'
+import sanitizeValues from '../util/sanitizeValues'
 
 
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
@@ -32,9 +33,8 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const {admin} = useContext(AppContext)
     const {blackBeltUser} = useContext(DataContext)
 
-    const {addPickerActivity, updatePickerActivity, removePickerActivity} = useContext(DBContext)
+    const {addPickerActivity, updatePickerActivity, removePickerActivity, userLockNotes, updateProfileField} = useContext(DBContext)
 
-    const [evidenceNotes, setEvidenceNotes] = useState(activity?.evidenceNotes ? activity.evidenceNotes : '')
     const [evidenceUrl, setEvidenceUrl] = useState(activity?.link ? activity.link + '' : '')
     const [evidenceDate, setEvidenceDate] = useState(activity?.date ? dayjs(activity.date) : dayjs())
     const [modifier, setModifier] = useState(activity?.evidenceModifier ? activity.evidenceModifier : '')
@@ -44,6 +44,8 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const [entryName, setEntryName] = useState(null)
     const [lockSelectId, setLockSelectId] = useState(null)
     const entry = getEntryFromId(activity?.matchId || lockId)
+
+    const [entryNotes, setEntryNotes] = useState(userLockNotes[activity?.matchId || lockId] || '')
 
     const project = allProjects.find(item => {
         return item.name === entryName
@@ -84,26 +86,43 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
         setLockSelectId(lockDetails.lockId)
     }, [])
 
+    const saveEntryNotes = useCallback(async () => {
+
+        if (entryNotes === userLockNotes[entry.id]) return
+
+        const updatedUserLockNotes = {
+            ...userLockNotes,
+            [entry.id]: entryNotes
+        }
+        if (entryNotes.length === 0) {
+            delete updatedUserLockNotes[entry.id]
+        }
+        await updateProfileField('userLockNotes', updatedUserLockNotes)
+            .catch(error => {
+                console.error('Error updating notes:', error)
+            })
+    }, [entryNotes, userLockNotes, entry, updateProfileField])
+
     const handleSave = useCallback(async () => {
         try {
             setUpdated(false)
             if (activity?.id) {
                 await updatePickerActivity(activity, {
                     matchId: activity.matchId,
-                    evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     evidenceModifier: modifier
                 })
+                await saveEntryNotes()
             } else {
                 const evidUserId = userId || user.uid
                 await addPickerActivity(evidUserId, {
                     matchId: entryId,
-                    evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     evidenceModifier: modifier
                 })
+                await saveEntryNotes()
             }
             enqueueSnackbar('Scorecard updated')
             handleUpdate()
@@ -111,7 +130,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [activity, handleUpdate, updatePickerActivity, evidenceNotes, evidenceUrl, evidenceDate, modifier, userId, user.uid, addPickerActivity, entryId])
+    }, [activity, handleUpdate, updatePickerActivity, evidenceUrl, evidenceDate, modifier, saveEntryNotes, userId, user.uid, addPickerActivity, entryId])
 
     const handleDelete = useCallback(async () => {
         try {
@@ -130,13 +149,14 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
             setEvidenceUrl(activity?.link ? activity.link : '')
             setEvidenceDate(activity?.date ? dayjs(activity.date) : dayjs())
             setModifier(activity?.evidenceModifier ? activity.evidenceModifier : '')
-            setEvidenceNotes(activity?.evidenceNotes ? activity.evidenceNotes : '')
+            setEntryNotes(entryNotes)
+
             setUpdated(false)
             handleUpdate()
         } else {
             handleUpdate()
         }
-    }, [activity, handleUpdate, updated])
+    }, [activity, entryNotes, handleUpdate, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target
@@ -156,6 +176,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const {isMobile} = useWindowSize()
     const denseButton = !!isMobile
     const buttonWidth = isMobile ? 50 : 250
+    const notesRows = isMobile ? 5 : 3
     const minWidth = isMobile ? 290 : 500
 
     //TODO fix invalid Autocomplete option, isOptionEqualToValue?
@@ -253,22 +274,29 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                     }
                 </div>
 
-                <div style={{display: 'flex', width: '90%', marginBottom: 20}}>
-                    <TextField
-                        id='evidence-notes'
-                        label='Notes (optional)'
-                        value={evidenceNotes}
-                        placeholder='https://youtu.be/'
-                        fullWidth
-                        size='small'
-                        margin='dense'
-                        color='secondary'
-                        onChange={e => {
-                            setEvidenceNotes(e.target.value)
-                            setUpdated(true)
-                        }}
-                        sx={{input: {color: '#999'}}}
-                    />
+                <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
+                    <div style={{flexGrow: 1, width: '100%', marginRight: 15}}>
+                        <TextField
+                            id='entryNotes'
+                            label='Your Notes (optional)'
+                            value={entryNotes}
+                            placeholder='Your Notes (optional)'
+                            fullWidth multiline rows={notesRows}
+                            size='small'
+                            margin='dense'
+                            color='secondary'
+                            onChange={e => {
+                                setEntryNotes(sanitizeValues(e.target.value, {urlsOK: true}))
+                                setUpdated(true)
+                            }}
+                            sx={{input: {color: '#ddd'}}}
+                        />
+                        {entryNotes.length > 0 &&
+                            <div style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
+                                {entryNotes.length || 0}/1200
+                            </div>
+                        }
+                    </div>
                     {(!!entry && source !== 'collectionButton') &&
                         <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
                             <CollectionButton id={activity?.matchId || lockId} dense={denseButton}/>

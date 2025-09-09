@@ -28,6 +28,7 @@ import CopyEntryIdButton from './CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import OpenLinkToLockbazaarButton from './OpenLinkToLockbazaarButton.jsx'
 import DataContext from '../context/DataContext.jsx'
+import EntryNotes from './EntryNotes'
 
 function Entry({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
@@ -143,17 +144,17 @@ function Entry({entry, expanded, onExpand}) {
                                 <CollectionButton id={entry.id} makeModels={entry.makeModels}/>
                             </div>
                         </Stack>
-                        <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
-                            {!!entry.notes &&
-                                <FieldValue name='Notes' value={
+                        {!!entry.notes &&
+                            <Stack direction='row' spacing={0} sx={{width: '100%', flexWrap: 'wrap'}}>
+                                <FieldValue name='Comments' value={
                                     <Typography component='div' style={{marginTop: -16}}>
                                         <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
                                             {entry.notes}
                                         </ReactMarkdown>
                                     </Typography>
                                 }/>
-                            }
-                        </Stack>
+                            </Stack>
+                        }
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
@@ -187,6 +188,11 @@ function Entry({entry, expanded, onExpand}) {
                                 </ReactMarkdown>
                             </div>
                         }
+
+                        <div style={{margin: '12px 0px 20px 6px'}}>
+                            <EntryNotes entry={entry}/>
+                        </div>
+
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
