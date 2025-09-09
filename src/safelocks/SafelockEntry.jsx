@@ -18,6 +18,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import SafelocksCollectionButton from './SafelocksCollectionButton.jsx'
 import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
+import EntryNotes from '../entries/EntryNotes.jsx'
 
 function SafelockEntry({entry, expanded, onExpand}) {
     const {make, model} = entry
@@ -161,6 +162,11 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                 </Stack>
                             }/>
                         }
+
+                        <div style={{margin: '12px 0px 20px 6px'}}>
+                            <EntryNotes entry={entry}/>
+                        </div>
+
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
