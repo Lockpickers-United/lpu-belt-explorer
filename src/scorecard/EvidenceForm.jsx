@@ -45,7 +45,6 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const [lockSelectId, setLockSelectId] = useState(null)
     const entry = getEntryFromId(activity?.matchId || lockId)
 
-    const [entryNotes, setEntryNotes] = useState(userLockNotes[activity?.matchId || lockId] || '')
 
     const project = allProjects.find(item => {
         return item.name === entryName
@@ -66,6 +65,8 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                 : award
                     ? award.id
                     : null
+
+    const [entryNotes, setEntryNotes] = useState(userLockNotes[entryId] || '')
 
     const fieldLabel = addAward
         ? 'Belt/Dan'
@@ -88,20 +89,20 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
 
     const saveEntryNotes = useCallback(async () => {
 
-        if (entryNotes === userLockNotes[entry.id]) return
+        if (entryNotes === userLockNotes[entryId]) return
 
         const updatedUserLockNotes = {
             ...userLockNotes,
-            [entry.id]: entryNotes
+            [entryId]: entryNotes
         }
         if (entryNotes.length === 0) {
-            delete updatedUserLockNotes[entry.id]
+            delete updatedUserLockNotes[entryId]
         }
         await updateProfileField('userLockNotes', updatedUserLockNotes)
             .catch(error => {
                 console.error('Error updating notes:', error)
             })
-    }, [entryNotes, userLockNotes, entry, updateProfileField])
+    }, [entryNotes, userLockNotes, entryId, updateProfileField])
 
     const handleSave = useCallback(async () => {
         try {
