@@ -177,8 +177,10 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const {isMobile} = useWindowSize()
     const denseButton = !!isMobile
     const buttonWidth = isMobile ? 50 : 250
-    const notesRows = isMobile ? 5 : 3
     const minWidth = isMobile ? 290 : 500
+    const notesBaseRows = isMobile ? 5 : 3
+    const notesLineBreaks = entryNotes.split('\n').length
+    const notesRows = notesLineBreaks > notesBaseRows ? Math.min(notesLineBreaks, 12) : notesBaseRows
 
     //TODO fix invalid Autocomplete option, isOptionEqualToValue?
 

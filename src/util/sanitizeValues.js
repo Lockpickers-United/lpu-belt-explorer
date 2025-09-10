@@ -10,9 +10,8 @@ import {
 export default function sanitizeValues(object, { profanityOK = false, urlsOK = false } = {}) {
     if (typeof object !== 'object' || object === null) {
         const sanitizedText = sanitizeText(object)
-        const strippedText = stripExtras(sanitizedText)
-        const profanityFiltered = profanityOK ? strippedText : filterProfanity(strippedText)
-        return urlsOK ? profanityFiltered: removeLinks(profanityFiltered)
+        const profanityFiltered = profanityOK ? sanitizedText : filterProfanity(sanitizedText)
+        return urlsOK ? profanityFiltered : removeLinks(profanityFiltered)
     }
     if (Array.isArray(object)) {
         return object.map(sanitizeValues)
@@ -57,13 +56,17 @@ function stripExtras(str) {
             .normalize('NFC')
             // 1) remove combining marks (Zalgo)
             .replace(/\p{M}/gu, '')
-            // 2) remove control/format chars (incl. bidi overrides)
-            .replace(/[\p{Cc}\p{Cf}]/gu, '')
-            // 3) remove zero-widths
-            .replace(/[\u200B-\u200F\u2060-\u206F\uFEFF]/g, '')
-            // 4) collapse spaces/tabs, normalize line breaks, trim
-            .replace(/[ \t]{2,}/g, ' ')
+            // 2) normalize CRLF/CR to LF first
             .replace(/\r\n?/g, '\n')
+            .replace(/\n\n\n/g, '\n\n')
+            // 3) remove control chars EXCEPT LF (\n)
+            //    This removes C0 controls except 0x0A (LF) and also C1 controls
+            // eslint-disable-next-line no-control-regex
+            .replace(/[\u0000-\u0009\u000B-\u000C\u000E-\u001F\u007F-\u009F]/g, '')
+            // 4) remove zero-widths
+            .replace(/[\u200B-\u200F\u2060-\u206F\uFEFF]/g, '')
+            // 5) collapse spaces/tabs
+            .replace(/[ \t]{2,}/g, ' ')
         : ''
 }
 

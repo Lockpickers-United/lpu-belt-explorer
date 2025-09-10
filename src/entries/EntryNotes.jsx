@@ -8,6 +8,9 @@ import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 import SignInButton from '../auth/SignInButton.jsx'
 import sanitizeValues from '../util/sanitizeValues'
+import rehypeExternalLinks from 'rehype-external-links'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export default function EntryNotes({entry}) {
     const {isLoggedIn} = useContext(AuthContext)
@@ -64,7 +67,9 @@ export default function EntryNotes({entry}) {
     const {isMobile} = useWindowSize()
     const optionalHeaderStyle = {fontSize: '1.0rem', fontWeight: 400, marginBottom: 5, paddingLeft: 2, color: '#fff'}
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const notesRows = isMobile ? 5 : 3
+    const notesBaseRows = isMobile ? 5 : 3
+    const notesLineBreaks = entryNotes.split('\n').length
+    const notesRows = notesLineBreaks > notesBaseRows ? Math.min(notesLineBreaks, 12) : notesBaseRows
 
     const dialogContent = (
         <div style={{display: 'flex'}}>
@@ -82,10 +87,10 @@ export default function EntryNotes({entry}) {
                                value={inputValue} onChange={handleChange}
                                id='notes'
                                color='info' style={{}}
-                               placeholder='Add additional notes about this entry'
+                               placeholder='Add your personal notes about this lock'
                                variant='outlined'
                                autoFocus
-                               inputProps={{ maxLength: 1200, style: { fontSize: contentsFontSize } }}
+                               inputProps={{maxLength: 1200, style: {fontSize: contentsFontSize}}}
                     />
                     <div style={{flexGrow: 1, textAlign: 'right', marginTop: 8}}>
                         <Button variant='text' size='small' onClick={handleNotesClose}>Cancel</Button>
@@ -97,7 +102,7 @@ export default function EntryNotes({entry}) {
                         Please sign in to add your<br/>
                         own notes for locks.
                     </div>
-                    <div style={{width:210}}><SignInButton onClick={handleNotesClose}/></div>
+                    <div style={{width: 210}}><SignInButton onClick={handleNotesClose}/></div>
                 </div>
             }
         </div>
@@ -118,12 +123,20 @@ export default function EntryNotes({entry}) {
                         marginLeft: 10,
                         fontWeight: 400,
                         fontStyle: 'italic'
-                    }}>{entryNotes}</div>
+                    }}>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[[rehypeExternalLinks, {
+                            target: '_blank',
+                            rel: ['nofollow', 'noopener', 'noreferrer']
+                        }]]}>
+                            {entryNotes}
+                        </ReactMarkdown>
+                    </div>
                 </div>
 
                 : <div style={{fontWeight: 700, marginTop: 15}}>
-                    <Link style={{fontWeight: 600, color: '#2bb259', textDecoration:'none', cursor:'pointer'}} onClick={handleNotesOpen}>
-                        Add your own notes
+                    <Link style={{fontWeight: 600, color: '#2bb259', textDecoration: 'none', cursor: 'pointer'}}
+                          onClick={handleNotesOpen}>
+                        Add your personal notes
                     </Link>
                 </div>
             }
