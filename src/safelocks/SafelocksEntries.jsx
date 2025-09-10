@@ -4,7 +4,10 @@ import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import NoEntriesCard from '../locks/NoEntriesCard'
 import SafelockEntry from './SafelockEntry.jsx'
 import FilterContext from '../context/FilterContext'
-function SafelocksPage({profile}) {
+import ExportButton from '../locks/ExportButton.jsx'
+import Footer from '../nav/Footer.jsx'
+
+function SafelocksEntries({profile}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
@@ -15,8 +18,13 @@ function SafelocksPage({profile}) {
         setExpanded(id)
     }, [])
 
-    return (
+    const footerBefore = (
+        <div style={{margin:'30px 0px'}}>
+            <ExportButton text={true} entries={visibleEntries}/>
+        </div>
+    )
 
+    return (
         <div style={{margin: 8, paddingBottom: 32}}>
 
             <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
@@ -31,8 +39,11 @@ function SafelocksPage({profile}) {
                     expanded={entry.id === defExpanded || !!expandAll}
                 />
             )}
+
+            <Footer before={footerBefore}/>
+
         </div>
     )
 }
 
-export default SafelocksPage
+export default SafelocksEntries

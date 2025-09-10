@@ -125,7 +125,7 @@ function ScorecardRoute({mostPopular}) {
         )
         : null
 
-    const footerBefore = (<div style={{margin: '30px 0px'}}><ScorecardExportButton text={true}/></div>)
+    const footerBefore = (<div style={{margin: '30px 0px'}}><ScorecardExportButton text={true} profile={profile}/></div>)
 
     const title = loading ? 'Loading...' : 'Profile'
 

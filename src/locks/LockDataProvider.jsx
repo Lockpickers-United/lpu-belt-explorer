@@ -50,7 +50,8 @@ export function DataProvider({children, allEntries, profile}) {
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 collectionSaves: collectionStatsById[entry.id] || 0,
-                simpleBelt: entry.belt.replace(/\s\d/g, '')
+                simpleBelt: entry.belt.replace(/\s\d/g, ''),
+                personalNotes: userNotes[entry.id]
             }))
     }, [allEntries, profile])
 

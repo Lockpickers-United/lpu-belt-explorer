@@ -12,6 +12,7 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
     const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
 
     const mappedEntries = useMemo(() => {
+        const userNotes = profile?.userLockNotes || {}
         return allEntries
             .map(entry => ({
                 ...entry,
@@ -23,9 +24,11 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                     entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
-                    entry.links?.length > 0 ? 'Has Links' : 'No Links'
+                    entry.links?.length > 0 ? 'Has Links' : 'No Links',
+                    userNotes[entry.id] ? 'Has Personal Notes' : undefined,
                 ].flat().filter(x => x),
                 collection: collectionOptions.safelocks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
+                personalNotes: userNotes[entry.id]
             }))
     }, [allEntries, profile])
 

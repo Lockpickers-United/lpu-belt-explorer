@@ -22,7 +22,7 @@ import SafelocksDataProvider from '../safelocks/SafelocksDataProvider.jsx'
 import allEntries from '../data/safelocks.json'
 import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
-import ScorecardExportButton from '../scorecard/ScorecardExportButton.jsx'
+import ExportButton from '../locks/ExportButton.jsx'
 
 function ProfileRoute() {
     const {userId} = useParams()
@@ -67,7 +67,7 @@ function ProfileRoute() {
 
     const title = loading ? 'Loading...' : 'Profile'
 
-    const footerBefore = (<div style={{margin: '30px 0px'}}><ScorecardExportButton text={true}/></div>)
+    const footerBefore = (<div style={{margin: '30px 0px'}}><ExportButton text={true} profile={data} filename={'safeLocksData'}/></div>)
 
     if (loading || !data) {
         return <LoadingDisplay/>
