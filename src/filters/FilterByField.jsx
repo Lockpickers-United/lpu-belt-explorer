@@ -70,6 +70,8 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
         : (filterValue ? [filterValue] : [])
 
     return (
+        <React.Fragment>
+        {options.length === 0 ? null :
         <FormControl style={{minWidth: 120, maxWidth: 300, marginTop: 8}} fullWidth>
             <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
             <Select
@@ -106,6 +108,8 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
                 )}
             </Select>
         </FormControl>
+        }
+        </React.Fragment>
     )
 }
 
