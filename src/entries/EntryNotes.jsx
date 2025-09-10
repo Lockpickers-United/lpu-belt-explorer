@@ -122,8 +122,9 @@ export default function EntryNotes({entry}) {
                 </div>
 
                 : <div style={{fontWeight: 700, marginTop: 15}}>
-                    <Link style={{fontWeight: 400, color: '#2bb259'}} onClick={handleNotesOpen}>Add your own
-                        notes</Link>
+                    <Link style={{fontWeight: 600, color: '#2bb259', textDecoration:'none', cursor:'pointer'}} onClick={handleNotesOpen}>
+                        Add your own notes
+                    </Link>
                 </div>
             }
 
