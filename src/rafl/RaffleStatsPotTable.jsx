@@ -5,32 +5,32 @@ import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import DataContext from '../context/DataContext.jsx'
 
-const RafflePotTable = ({data, tableWidth, nameLength}) => {
+const RafflePotTable = ({summary, tableWidth, nameLength}) => {
     const navigate = useNavigate()
-    const {potViewsById} = data
     const {getPotFromId} = useContext(DataContext)
 
     const columns = [
         {id: 'title', align: 'left', name: 'Title'},
-        {id: 'donors', name: 'Donors', align: 'center'},
-        {id: 'tickets', name: 'Tickets', align: 'center'}
+        {id: 'uniqueDonorCount', name: 'Donors', align: 'center'},
+        {id: 'totalTickets', name: 'Tickets', align: 'center'}
     ]
 
     const sortable = true
     const [sort, setSort] = useState('title')
     const [ascending, setAscending] = useState(true)
 
-    const potData = potViewsById.data.map(pot => {
-        const dataPot = getPotFromId(pot.id)
+    const potData = Object.keys(summary.pots).map(potId => {
+        const dataPot = getPotFromId(potId)
         if (!dataPot) return null
 
-        let potTitle = dataPot?.title ? dataPot.title.substring(0, nameLength) : `unknown (${pot.id})`
+        let potTitle = dataPot?.title ? dataPot.title.substring(0, nameLength) : `unknown (${potId})`
         potTitle = dataPot?.title?.length < nameLength || !dataPot?.title ? potTitle : potTitle + '...'
 
         return {
-            ...pot,
+            ...summary.pots[potId],
             ...dataPot,
-            title: potTitle
+            title: potTitle,
+            uniqueDonorCount: summary.pots[potId]?.uniqueDonors?.length || 0,
         }
     })
         .filter(x => x)
@@ -43,12 +43,14 @@ const RafflePotTable = ({data, tableWidth, nameLength}) => {
                         || a['title'].localeCompare(b['title'])
                 case 'tickets':
                     return parseInt(b[sort]) - parseInt(a[sort])
-                        || a['views'] - (b['views'])
+                        || a['title'].localeCompare(b['title'])
                 default:
                     return parseInt(b[sort]) - parseInt(a[sort])
                         || a['title'].localeCompare(b['title'])
             }
         })
+
+    console.log('potData', potData)
 
     const rows = ascending ? potData : potData.reverse() || []
 

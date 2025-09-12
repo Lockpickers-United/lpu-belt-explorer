@@ -3,11 +3,13 @@ import Dialog from '@mui/material/Dialog'
 import CancelIcon from '@mui/icons-material/Cancel'
 import IconButton from '@mui/material/IconButton'
 
-export default function DisplayDialog({dialogContent, open, handleClose}) {
+export default function DisplayDialog({dialogContent, open, handleClose, width=350}) {
     return (
         <Dialog open={open} onClose={handleClose} sx={{
             '.MuiDialog-paper': {
-                backgroundColor: 'transparent', backgroundImage: 'none', padding: 20, marginBottom: 20
+                backgroundColor: 'transparent', backgroundImage: 'none',
+                padding: '12px', margin: '0px 0px 20px 0px',
+                width: width
             }
         }}>
             <div style={{

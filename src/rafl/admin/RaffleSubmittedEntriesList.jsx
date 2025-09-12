@@ -9,11 +9,13 @@ import RaffleExportButton from '../RaffleExportButton.jsx'
 import ExpandAllButton from '../ExpandAllButton.jsx'
 import RaffleSubmittedEntry from './RaffleSubmittedEntry.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import usePageTitle from '../../util/usePageTitle.jsx'
 
 function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
+    usePageTitle('RAFL Admin - Submitted Entries')
 
     console.log('visibleEntries', visibleEntries)
 

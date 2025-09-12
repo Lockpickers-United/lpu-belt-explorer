@@ -102,13 +102,11 @@ export function RaffleProvider({children}) {
                     entry.name,
                     entry.tags
                 ].join(',')),
-                donors: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donors : 0,
-                donations: charitySummaryStats && charitySummaryStats[entry.name] ? charitySummaryStats[entry.name].donations : 0
             }))
-    }, [charitySummaryStats])
+    }, [])
 
     const [displayStats, setDisplayStats] = useState(false)
-    const [animateTotal, setAnimateTotal] = useState(true)
+    const [animateTotal, setAnimateTotal] = useState(false)
 
     const profileLoaded = Object.keys(lockCollection).length > 0
     const {admin, adminRaffle} = lockCollection

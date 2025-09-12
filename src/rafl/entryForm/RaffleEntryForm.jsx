@@ -24,13 +24,11 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const navigate = useNavigate()
     const {raffleAdmin} = useContext(RaffleContext)
     const {allEntries} = useContext(DataContext)
-
     const {setFilters} = useContext(FilterContext)
 
     const [formData, setFormData] = useState({})
     const [donationData, setDonationData] = useState([{amount: 0, receipt: ''}])
     const [potData, setPotData] = useState([{tickets: 0}])
-    const [entryChanged, setEntryChanged] = useState(false)
     const [submitted, setSumbitted] = useState(false)
 
     const {displayStats, setDisplayStats} = useContext(RaffleContext)
@@ -45,7 +43,8 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
         setFormData({
             platform: entry?.platform,
             username: entry?.username,
-            belt: entry?.belt
+            belt: entry?.belt,
+            notes: entry?.notes || '',
         })
         setDonationData(entry.donations || [{amount: 0, receipt: ''}])
         setPotData(entry.pots || [{tickets: 0}])
@@ -85,7 +84,6 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
             newFormData[event.target.name] = event.target.value
         }
         setFormData(newFormData)
-        setEntryChanged(true)
     }, [formData])
 
     // total up donations from multi-donation configurator
@@ -103,7 +101,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
             pots: potData,
             totalDonation: totalDonation,
             allocatedTickets: allocated,
-            status: 'pending'
+            status: editEntry?.status || 'pending'
         }
         if (import.meta.env.DEV) {
             record.dev = true
@@ -112,7 +110,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
             record.adminEntry = true
         }
         return record
-    }, [allocated, donationData, formData, potData, raffleAdmin, totalDonation])
+    }, [allocated, donationData, editEntry?.status, formData, potData, raffleAdmin, totalDonation])
 
     const logFormData = useCallback(() => {
         const record = buildRecord()
@@ -163,7 +161,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
         return err
     }, [donationData, totalDonation])
 
-    const allocationError = parseInt(totalDonation) !== parseInt(allocated)
+    const allocationError = totalDonation !== parseInt(allocated)
 
     const errors = (
         !formData['platform']
@@ -172,12 +170,14 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
         || !!potError
         || allocationError
     )
-    const continueColor = (!errors && entryChanged) ? '#4dd04d' : '#666'
+    const continueColor = (!errors) ? '#4dd04d' : '#666'
 
-    const {flexStyle} = useWindowSize()
+    const {isMobile, flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const sectionStyle = useMemo(() => ({fontSize: '1.5rem', fontWeight: 700, marginBottom: 8}), [])
     const questionStyle = useMemo(() => ({fontSize: '1.0rem', fontWeight: 400, marginBottom: 8}), [])
+    const optionalHeaderStyle = {fontSize: '1.0rem', fontWeight: 400, marginBottom: 5, paddingLeft: 2, color: '#fff'}
+    const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
 
     return (
         <React.Fragment>
@@ -199,8 +199,8 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                         <FormControl style={{width: 250, marginRight: 16}} size='small' error={isRequired('platform')}>
                             <InputLabel color='info'>Preferred Platform</InputLabel>
                             <Select
-                                value={formData.platform ? formData.platform : ''}
                                 label='Preferred Platform'
+                                value={formData.platform || ''}
                                 onChange={handleChange}
                                 color='info'
                                 name='platform'
@@ -281,6 +281,38 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
 
                 </div>
 
+                {editEntry &&
+                    <div style={{
+                        ...style,
+                        backgroundColor: '#222',
+                        minHeight: 72,
+                        alignItems: 'center',
+                        borderBottom: '1px #555 solid',
+                        padding: '20px 20px'
+                    }}>
+                        <div style={{marginTop: 0, display: 'flex'}}>
+                            <div style={{...optionalHeaderStyle, flexGrow: 1, fontWeight: 700}}>
+                                Entry Notes
+                            </div>
+                            <div style={{...optionalHeaderStyle, color: '#aaa', fontSize: '0.85rem'}}>
+                                {formData?.notes?.length || 0}/1200
+                            </div>
+                        </div>
+                        <TextField type='text' multiline fullWidth rows={2}
+                                   name='notes'
+                                   value={formData.notes || ''}
+                                   onChange={handleChange}
+                                   id='notes'
+                                   color='info' style={{}}
+                                   placeholder='Add additional notes about this entry'
+                                   variant='outlined'
+                                   InputProps={{style: {fontSize: contentsFontSize}}}
+                                   slotProps={{
+                                       htmlInput: {maxLength: 1200}
+                                   }}
+                        />
+                    </div>
+                }
 
                 <div style={{
                     ...style,
@@ -309,12 +341,13 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                                       disabled={errors} onClick={handleSubmit}
                             >Submit Entry</Button>
                             : <div>
-                                <Button style={{backgroundColor: continueColor, color: '#000', marginRight: 20}} variant='contained'
-                                      disabled={errors || !entryChanged} onClick={() => handleEditSave(false)}
-                            >Save Edits</Button>
+                                <Button style={{backgroundColor: continueColor, color: '#000', marginRight: 20}}
+                                        variant='contained'
+                                        disabled={errors} onClick={() => handleEditSave(false)}
+                                >Save Edits</Button>
                                 <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
-                                      disabled={errors} onClick={() => handleEditSave(true)}
-                            >Save & Approve</Button>
+                                        disabled={errors} onClick={() => handleEditSave(true)}
+                                >Save & Approve</Button>
                             </div>
                         }
                     </div>

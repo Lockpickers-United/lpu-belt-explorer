@@ -4,14 +4,11 @@ import {db} from '../../auth/firebase'
 import {
     doc,
     onSnapshot,
-    runTransaction,
-    getDocs,
-    getDoc,
     collection,
     query,
     where,
     deleteDoc,
-    addDoc, setDoc
+    setDoc
 } from 'firebase/firestore'
 import AuthContext from '../../app/AuthContext'
 import {enqueueSnackbar} from 'notistack'
@@ -31,7 +28,6 @@ export function RaffleAdminDBProvider({children}) {
 
     const [dbError, setDbError] = useState(null)
     const [dbLoaded, setDbLoaded] = useState(false)
-
     const [allEntries, setAllEntries] = useState([])
 
     // ENTRIES SUBSCRIPTION (stable onSnapshot managed by effect)
@@ -52,6 +48,7 @@ export function RaffleAdminDBProvider({children}) {
             })
             setAllEntries(entries)
             setEntriesLoaded(true)
+            setDbLoaded(true)
             console.log('DB, subscribedEntries, entry count:', entries.length)
         }, error => {
             console.error('Error listening to DB:', error)
@@ -70,6 +67,8 @@ export function RaffleAdminDBProvider({children}) {
             acc.totalEntries = (acc.totalEntries || 0) + 1
             acc.totalDonations = (acc.totalDonations || 0) + (entry.totalDonation || 0)
             acc.totalTickets = (acc.totalTickets || 0) + (entry.allocatedTickets || 0)
+            acc.redditDonations = (acc.redditDonations || 0) + ( entry.platform === 'Reddit' ? entry.totalDonation : 0)
+            acc.discordDonations = (acc.discordDonations || 0) + ( entry.platform === 'Discord' ? entry.totalDonation : 0)
             setDeepUnique(acc, ['uniqueDonors'], `${entry.username}|${entry.platform}`)
             entry.donations.forEach(donation => {
                 setDeepAdd(acc, ['charities', [donation.charity.itemId], 'totalDonations'], donation.amount)
@@ -77,7 +76,7 @@ export function RaffleAdminDBProvider({children}) {
             }, [])
             entry.pots.forEach(pot => {
                 setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
-                setDeepAdd(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+                setDeepUnique(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
             }, [])
             return acc
         }, {})
@@ -113,7 +112,7 @@ export function RaffleAdminDBProvider({children}) {
 
     if (entriesLoaded) console.log('getSummary', getSummary(allEntries))
 
-    const updateRaffleEntry = useCallback(async (entry) => {
+    const updateRaffleEntry = useCallback(async (entry, snackbar=true) => {
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
         if (!entry || !entry.id) throw new Error('updateRaffleEntry requires an entry with an id')
         const {id, fuzzy, ...rest} = entry
@@ -122,7 +121,7 @@ export function RaffleAdminDBProvider({children}) {
         const ref = doc(db, 'raffle-entries', id)
         try {
             await setDoc(ref, clean, {merge: true})
-            enqueueSnackbar('RAFL Entry Updated.')
+            snackbar && enqueueSnackbar('RAFL Entry Updated.')
         } catch (error) {
             console.error('Error listening to DB:', error)
             setDbError(true)
@@ -157,7 +156,6 @@ export function RaffleAdminDBProvider({children}) {
     const value = useMemo(() => ({
         ...globalContext,
         subscribedEntries,
-        testValue,
         dbLoaded,
         entriesLoaded,
         saveSummary,
@@ -185,5 +183,3 @@ export function RaffleAdminDBProvider({children}) {
 }
 
 export default DBContext
-
-const testValue = 'testing'

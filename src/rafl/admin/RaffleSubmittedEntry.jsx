@@ -17,10 +17,11 @@ import StatusMenu from './StatusMenu.jsx'
 import Tooltip from '@mui/material/Tooltip'
 import DBContext from '../../app/DBContext.jsx'
 import DeleteEntryButton from './DeleteEntryButton.jsx'
+import EntryNotes from './EntryNotes.jsx'
 
-function RaffleSubmittedEntry({entry, expanded, onExpand, single, editEntryId, setEditEntryId}) {
+function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
-    const {raflState, raffleAdminRole} = useContext(RaffleContext)
+    const {raffleAdminRole} = useContext(RaffleContext)
     const {expandAll, statusLabels} = useContext(DataContext)
     const {updateRaffleEntry} = useContext(DBContext)
 
@@ -70,11 +71,10 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single, editEntryId, s
             .catch(error => {
                 console.error('Error updating donation approval:', error)
             })
-    },[entry, raffleAdminRole, updateRaffleEntry])
+    }, [entry, raffleAdminRole, updateRaffleEntry])
 
 
-
-        const {isMobile, flexStyle} = useWindowSize()
+    const {isMobile} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
     const donationColors = {no: {backgroundColor: '#333', color: '#aaa'}, yes: {backgroundColor: '#aaa', color: '#fff'}}
@@ -155,7 +155,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single, editEntryId, s
                                     {donation.receipt && <span>Receipt: <a href={donation.receipt} target='_blank'
                                                                            rel='noopener noreferrer'>{(donation.receipt.match(/^(?:https?:\/\/)?([^/?#]+)/i) || [])[1]}</a>&nbsp;&nbsp;</span>}
                                     {donation.amount > 0 &&
-                                        <span style={{marginRight: 6}}>Donation: $ {donation.amount}</span>}
+                                        <span style={{marginRight: 6}}>Donation: $ {Intl.NumberFormat().format(donation.amount)}</span>}
                                     <Button style={{
                                         minWidth: 20,
                                         padding: '0px 5px', ...donationColors[donation.approved ? 'yes' : 'no']
@@ -172,10 +172,12 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single, editEntryId, s
                                     {pot?.itemFullTitle || pot?.itemTitle || 'No Pot Selected'}
                                 </div>
                                 <div style={{marginBottom: 4}}>
-                                    {pot?.tickets > 0 && <span style={{marginRight: 12}}>Tickets: {pot.tickets}</span>}
+                                    {pot?.tickets > 0 && <span style={{marginRight: 12}}>Tickets: {Intl.NumberFormat().format(pot.tickets)}</span>}
                                 </div>
                             </div>
                         ))}
+
+                        <EntryNotes entry={entry}/>
 
                         <div style={{textAlign: 'center', margin: '25px 0px 0px 0px'}}>
                             <Tooltip title='Edit Entry' arrow disableFocusListener>
@@ -191,12 +193,14 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, single, editEntryId, s
                             </Tooltip>
                         </div>
 
+
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <div  style={{display: 'flex', flexGrow:1}}><DeleteEntryButton entry={entry}/></div>
+                        <div style={{display: 'flex', flexGrow: 1}}><DeleteEntryButton entry={entry}/></div>
                         <CopyLinkToRaflPotButton entry={entry}/>
-
                     </AccordionActions>
+
+
                 </React.Fragment>
             }
         </Accordion>

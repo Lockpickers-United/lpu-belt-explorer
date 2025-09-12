@@ -1,21 +1,17 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {db} from '../auth/firebase'
 import {
     doc,
     onSnapshot,
-    runTransaction,
-    getDocs,
-    getDoc,
     collection,
-    query,
-    where,
-    deleteDoc,
-    addDoc, setDoc
+    addDoc,
 } from 'firebase/firestore'
 import AuthContext from '../app/AuthContext'
 import dayjs from 'dayjs'
 import DBContext from '../app/DBContext.jsx'
 import RaffleContext from './RaffleContext.jsx'
+import {enqueueSnackbar} from 'notistack'
+import Button from '@mui/material/Button'
 
 export function DBProviderRaffle({children}) {
 
@@ -53,6 +49,34 @@ export function DBProviderRaffle({children}) {
         }
     }, [dbError, isLoggedIn])
 
+    // SUMMARY SUBSCRIPTION (stable onSnapshot managed by effect)
+    const [summary, setSummary] = useState({})
+    const [summaryLoaded, setSummaryLoaded] = useState(false)
+
+    useEffect(() => {
+        if (!(authLoaded && isLoggedIn && !!user && raffleAdmin)) {
+            setSummaryLoaded(false)
+            setSummary({})
+            return
+        }
+        const docRef = doc(db, 'data-cache', 'raffle-entries-summary')
+        const unsubscribe = onSnapshot(docRef, docSnap => {
+            const data = docSnap.exists() ? docSnap.data() : null
+            setSummary(data || {})
+            setSummaryLoaded(true)
+            setDbLoaded(true)
+            console.log('DB, raffle summary loaded')
+        }, error => {
+            console.error('Error listening to DB:', error)
+            setDbError(true)
+            enqueueSnackbar('There was a problem reading raffle data. It will be unavailable until you refresh the page. ', {
+                autoHideDuration: null,
+                action: <Button color='secondary' onClick={() => location.reload()}>Refresh</Button>
+            })
+        })
+        return () => unsubscribe()
+    }, [authLoaded, isLoggedIn, raffleAdmin, user])
+
     // value & provider
     const value = useMemo(() => ({
         ...globalContext,
@@ -60,12 +84,10 @@ export function DBProviderRaffle({children}) {
         createRaffleEntry,
         dbLoaded,
         profile,
-    }), [
-        globalContext,
-        createRaffleEntry,
-        dbLoaded,
-        profile,
-    ])
+        summary,
+        summaryLoaded,
+        dbError,
+    }), [globalContext, createRaffleEntry, dbLoaded, profile, summary, summaryLoaded, dbError])
 
     return (
         <DBContext.Provider value={value}>

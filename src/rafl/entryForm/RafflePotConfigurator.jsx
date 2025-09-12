@@ -54,7 +54,7 @@ function RafflePotConfigurator({
     }, [setPotData])
 
     const differenceStyle = difference > 0
-        ? {color: '#0b0', fontWeight: 700}
+        ? {color: '#da8312', fontWeight: 700}
         : difference < 0
             ? {color: '#b00', fontWeight: 700}
             : {}

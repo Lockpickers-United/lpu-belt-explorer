@@ -113,7 +113,7 @@ return (
                                                      color: '#eee'
                                                  }}
                                                  component='th' scope='row'>
-                                        {linkFunction(column.id, row[column.id] ? row[column.id].toLocaleString() : '')}
+                                        {linkFunction(column.id, row[column.id] ? `${column.prefix || ''}${row[column.id].toLocaleString()}` : '')}
                                     </TableCell>
                                     : <TableCell key={index + 1} style={{border: 0}}/>
                             )}
