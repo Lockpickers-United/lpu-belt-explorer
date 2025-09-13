@@ -35,12 +35,16 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const ref = useRef(null)
     const showSimple = single === '2'
 
-    const ticketCount = entry.tickets
-        ? new Intl.NumberFormat().format(entry.tickets)
+    const ticketCount = entry.totalTickets
+        ? new Intl.NumberFormat().format(entry.totalTickets)
         : '---'
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
+
+            console.log('entry', entry)
+
+
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
 
@@ -68,7 +72,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const infoOpacity = entry.winner.length > 0 && !expanded ? 0.6 : 1
+    const infoOpacity = entry.winners.length > 0 && !expanded ? 0.6 : 1
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -103,7 +107,7 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                             </div>
 
                             {showFull &&
-                                <Collapse in={!!entry.donors}>
+                                <Collapse in={entry.uniqueDonorCount > 0}>
                                     <div style={{
                                         marginRight: 15,
                                         fontSize: descriptionFontSize,
@@ -112,10 +116,10 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
                                         opacity: infoOpacity
                                     }}>
                                         <div>
-                                            <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
+                                            <nobr>Donors <strong>{entry.uniqueDonorCount || '--'}</strong></nobr>
                                         </div>
-                                        <div style={{marginLeft: 8}}>
-                                            <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
+                                        <div style={{marginLeft: 16}}>
+                                            <nobr>Tickets <strong>{ticketCount}</strong></nobr>
                                         </div>
                                     </div>
                                 </Collapse>

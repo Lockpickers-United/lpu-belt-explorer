@@ -16,7 +16,7 @@ import dayjs from 'dayjs'
 import DBContextRaffle from '../DBContextRaffle.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import RaffleContext from '../RaffleContext.jsx'
-import {setDeepAdd, setDeepUnique} from '../../util/setDeep'
+import {setDeep, setDeepAdd, setDeepUnique} from '../../util/setDeep'
 
 export function RaffleAdminDBProvider({children}) {
 
@@ -60,15 +60,21 @@ export function RaffleAdminDBProvider({children}) {
         })
         return () => unsubscribe()
     }, [authLoaded, isLoggedIn, raffleAdmin, user])
-    
+
     const getSummary = useCallback((entries) => {
-       let summary = entries.reduce((acc, entry) => {
+        let summary = entries.reduce((acc, entry) => {
             if (!entry || entry.status !== 'approved') return acc
             acc.totalEntries = (acc.totalEntries || 0) + 1
             acc.totalDonations = (acc.totalDonations || 0) + (entry.totalDonation || 0)
             acc.totalTickets = (acc.totalTickets || 0) + (entry.allocatedTickets || 0)
-            acc.redditDonations = (acc.redditDonations || 0) + ( entry.platform === 'Reddit' ? entry.totalDonation : 0)
-            acc.discordDonations = (acc.discordDonations || 0) + ( entry.platform === 'Discord' ? entry.totalDonation : 0)
+
+            const date = entry.createdAt ? dayjs(entry.createdAt).format('YYYY-MM-DD') : 'unknown'
+            setDeepAdd(acc, ['entriesByDate', date, 'totalEntries'], 1)
+            setDeepAdd(acc, ['entriesByDate', date, 'totalDonations'], entry.totalDonation || 0)
+            setDeepAdd(acc, ['entriesByDate', date, 'totalTickets'], entry.allocatedTickets || 0)
+
+            acc.redditDonations = (acc.redditDonations || 0) + (entry.platform === 'Reddit' ? entry.totalDonation : 0)
+            acc.discordDonations = (acc.discordDonations || 0) + (entry.platform === 'Discord' ? entry.totalDonation : 0)
             setDeepUnique(acc, ['uniqueDonors'], `${entry.username}|${entry.platform}`)
             entry.donations.forEach(donation => {
                 setDeepAdd(acc, ['charities', [donation.charity.itemId], 'totalDonations'], donation.amount)
@@ -83,6 +89,7 @@ export function RaffleAdminDBProvider({children}) {
         summary = {
             charities: {},
             pots: {},
+            entriesByDate: {},
             uniqueDonors: [],
             totalEntries: 0,
             totalDonations: 0,
@@ -112,7 +119,7 @@ export function RaffleAdminDBProvider({children}) {
 
     if (entriesLoaded) console.log('getSummary', getSummary(allEntries))
 
-    const updateRaffleEntry = useCallback(async (entry, snackbar=true) => {
+    const updateRaffleEntry = useCallback(async (entry, snackbar = true) => {
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
         if (!entry || !entry.id) throw new Error('updateRaffleEntry requires an entry with an id')
         const {id, fuzzy, ...rest} = entry

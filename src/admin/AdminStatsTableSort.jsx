@@ -35,11 +35,12 @@ const AdminStatsTableSort = ({
     const handleSort = useCallback((columnId) => {
         if (columnId !== sort) {
             setSort(columnId)
-            setAscending(true)
+            const defaultAscending = !tableData.columns.find(c => c.id === columnId)?.descending
+            setAscending(defaultAscending)
         } else {
             setAscending(!ascending)
         }
-    }, [ascending, setAscending, setSort, sort])
+    }, [ascending, setAscending, setSort, sort, tableData])
 
     const sortIcon = ascending
         ? <ArrowDropUpIcon/>

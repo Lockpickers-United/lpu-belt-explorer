@@ -8,13 +8,12 @@ function RaffleTitle({entry}) {
     const {isMobile, flexStyle} = useWindowSize()
 
     let entryName = entry.displayName ? entry.displayName : entry.title
-    const winnersText = (entry.winnerCount && !entry.winner) ? ` (${entry.winnerCount} winners)` : ''
-    entryName = entryName + winnersText
+    const winnersText = (entry.winnerCount > 1 && entry.winners?.length === 0) ? ` (${entry.winnerCount} winners)` : ''
 
-    const marginBottom = entry.winner ? 15 : 0
+    const marginBottom = entry.winners?.length > 0 ? 15 : 0
 
-    const winnerList = Array.isArray(entry.winner) ? entry.winner.join(', ') : undefined
-    const winnerSuffix = entry.winner.length > 1 ? 's' : ''
+    const winnerList = Array.isArray(entry.winners) ? entry.winners.join(', ') : undefined
+    const winnerSuffix = entry.winners.length > 1 ? 's' : ''
     const winnerAlign = isMobile ? 'left' : 'right'
 
     const diameter = !isMobile ? 30 : 28
@@ -61,9 +60,9 @@ function RaffleTitle({entry}) {
                     marginTop: !isMobile ? -3 : 0,
                     flexGrow: 1
                 }}>
-                    {entryName}
+                    {entryName} &nbsp; <nobr>{winnersText}</nobr>
                 </div>
-                {entry.winner.length > 0 &&
+                {entry.winners.length > 0 &&
                     <div style={{
                         display: 'flex',
                         fontSize: winnerSize,

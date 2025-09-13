@@ -1,23 +1,12 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
-import {raflPreviewPots, raflQuestionMap, raflResponseDetails} from '../data/dataUrls'
+import {raflPreviewPots} from '../data/dataUrls'
 import raflData from '../data/rafl.json'
 import raflCharities from '../data/raflCharities.json'
 import DBContext from '../app/DBContext.jsx'
 import removeAccents from 'remove-accents'
 import collectionOptions from '../data/collectionTypes'
 import {useLocalStorage} from 'usehooks-ts'
-import {setDeepAdd} from '../util/setDeep'
-
-/**
- * @property summaryData
- * @property totalDonorCount
- * @property totalDonorCountUnique
- * @property platformDonorCount
- * @property platformDonorCountUnique
- * @property detailedData
- * @property donorsUnique
- */
 
 const RaffleContext = React.createContext({})
 
@@ -27,35 +16,12 @@ export function RaffleProvider({children}) {
     // preview, setup, live, post, hidden
     const [preview, setPreview] = useLocalStorage('previewMode', false)
 
-    const {lockCollection} = useContext(DBContext)
+    const {lockCollection, summary} = useContext(DBContext)
+    console.log('RaffleProvider lockCollection', lockCollection)
+
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
-
-    const {raflQuestionMap, raflResponseDetails, raflPreviewPots} = data || {}
-
-    const raflSummaryStats = useMemo(() => {
-        const totalDonors = raflResponseDetails?.summaryData?.totalDonorCount
-        const uniqueDonors = raflResponseDetails?.summaryData?.totalDonorCountUnique
-        const totalDonations = raflResponseDetails?.summaryData?.totalDonations
-        const platformDonations = raflResponseDetails?.summaryData?.platformDonations
-        const platformDonors = raflResponseDetails?.summaryData?.platformDonorCount
-        const platformDonorsUnique = raflResponseDetails?.summaryData?.platformDonorCountUnique
-
-        return {totalDonors, uniqueDonors, totalDonations, platformDonations, platformDonors, platformDonorsUnique}
-    }, [raflResponseDetails])
-
-    const potSummaryStats = useMemo(() => {
-        return raflResponseDetails
-            ? Object.keys(raflResponseDetails.detailedData).reduce((acc, day) => {
-                const pots = raflResponseDetails.detailedData[day]['pots'] ? raflResponseDetails.detailedData[day]['pots'] : {}
-                Object.keys(pots).forEach(potId => {
-                    setDeepAdd(acc, [potId, 'donors'], pots[potId].donorsUnique)
-                    setDeepAdd(acc, [potId, 'tickets'], pots[potId].tickets)
-                })
-                return acc
-            }, {})
-            : {}
-    },[raflResponseDetails])
+    const {raflPreviewPots} = data || {}
 
     const allPots = useMemo(() => {
         const potEntries = preview && allDataLoaded
@@ -63,36 +29,24 @@ export function RaffleProvider({children}) {
             : raflData
         return potEntries
             .map(entry => {
-                const question = raflQuestionMap?.find(q => q.text.includes(entry.title))
+                const potWinners = summary.winners?.[entry.id] ? summary.winners[entry.id] : []
                 return {
                     ...entry,
+                    ...summary.pots?.[entry.id],
+                    uniqueDonorCount: summary.pots?.[entry.id]?.uniqueDonors?.length || 0,
                     fuzzy: removeAccents([
                         entry.title,
-                        entry.contributedBy.join(','),
-                        entry.winner,
-                        entry.description,
-                        entry.potContents,
+                        entry.keywords,
+                        ...entry.contributedBy,
+                        ...potWinners,
+                        entry.potContents
                     ].join(',')),
                     collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
-                    tickets: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].tickets : 0,
-                    donors: potSummaryStats && potSummaryStats[entry.id] ? potSummaryStats[entry.id].donors : 0,
-                    formId: question ? question.formId : 0,
-                    sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber)
+                    sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber),
+                    winners: potWinners
                 }
             })
-    }, [preview, allDataLoaded, raflPreviewPots, raflQuestionMap, potSummaryStats, lockCollection])
-
-    const charitySummaryStats = useMemo(() => {
-        return raflResponseDetails
-            ? Object.keys(raflResponseDetails.detailedData).reduce((acc, day) => {
-                Object.keys(raflResponseDetails.detailedData[day]['charities']).forEach(charity => {
-                    setDeepAdd(acc, [charity, 'donors'], raflResponseDetails.detailedData[day]['charities'][charity].donorsUnique)
-                    setDeepAdd(acc, [charity, 'donations'], raflResponseDetails.detailedData[day]['charities'][charity].donations)
-                })
-                return acc
-            }, {})
-            : {}
-    },[raflResponseDetails])
+    }, [preview, allDataLoaded, raflPreviewPots, summary, lockCollection])
 
     const allCharities = useMemo(() => {
         return raflCharities
@@ -102,8 +56,11 @@ export function RaffleProvider({children}) {
                     entry.name,
                     entry.tags
                 ].join(',')),
+                donations: summary.charities?.[entry.id]?.totalDonations,
+                donationsText: `$${summary.charities?.[entry.id]?.totalDonations}`,
+                donors: summary.charities?.[entry.id]?.uniqueDonors.length,
             }))
-    }, [])
+    }, [summary.charities])
 
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(false)
@@ -129,10 +86,6 @@ export function RaffleProvider({children}) {
         allDataLoaded,
         allPots,
         allCharities,
-        raflQuestionMap,
-        raflSummaryStats,
-        potSummaryStats,
-        charitySummaryStats,
         displayStats, setDisplayStats,
         toggleStats,
         animateTotal, setAnimateTotal,
@@ -146,10 +99,6 @@ export function RaffleProvider({children}) {
         allDataLoaded,
         allPots,
         allCharities,
-        raflQuestionMap,
-        raflSummaryStats,
-        potSummaryStats,
-        charitySummaryStats,
         displayStats, setDisplayStats,
         toggleStats,
         animateTotal, setAnimateTotal,
@@ -169,8 +118,6 @@ export function RaffleProvider({children}) {
 }
 
 const urls = {
-    raflQuestionMap,
-    raflResponseDetails,
     raflPreviewPots
 }
 

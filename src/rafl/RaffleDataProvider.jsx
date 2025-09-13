@@ -3,12 +3,23 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
+import DBContext from '../app/DBContext.jsx'
 
-export function RaffleDataProvider({children, allEntries}) {
+const scoreThreshold = 0.3
+
+export function RaffleDataProvider({children, allEntries = []}) {
+    const {summary} = useContext(DBContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
+    console.log('allEntries', allEntries)
+    console.log('summary', summary)
+
+
     const visibleEntries = useMemo(() => {
+
+        if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
+
         // Filters as an array
         const filterArray = Object.keys(filters)
             .map(key => {
@@ -28,15 +39,18 @@ export function RaffleDataProvider({children, allEntries}) {
                         : datum[key] === value
                 })
             })
-            .sort((a, b) => { return a.potNumber-b.potNumber})
+            .sort((a, b) => {
+                return a.potNumber - b.potNumber
+            })
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
+            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -30000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
+                .filter(result => result.score > scoreThreshold)
             : filtered
 
         return sort
@@ -56,9 +70,11 @@ export function RaffleDataProvider({children, allEntries}) {
                 }
             })
             : searched.sort((a, b) => {
-                return parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber) || a.title.localeCompare(b.title)
+                return b.score - a.score
+                    || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
+                    || a.title.localeCompare(b.title)
             })
-    }, [allEntries, filters, search, sort])
+    }, [allEntries, filters, search, sort, summary])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
@@ -68,7 +84,7 @@ export function RaffleDataProvider({children, allEntries}) {
         allEntries,
         visibleEntries,
         getPotFromId,
-        expandAll,
+        expandAll
     }), [allEntries, visibleEntries, getPotFromId, expandAll])
 
     return (

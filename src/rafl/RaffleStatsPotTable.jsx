@@ -10,14 +10,17 @@ const RafflePotTable = ({summary, tableWidth, nameLength}) => {
     const {getPotFromId} = useContext(DataContext)
 
     const columns = [
+        {id: 'sortPotNumber', align: 'left', name: '#'},
         {id: 'title', align: 'left', name: 'Title'},
-        {id: 'uniqueDonorCount', name: 'Donors', align: 'center'},
-        {id: 'totalTickets', name: 'Tickets', align: 'center'}
+        {id: 'uniqueDonorCount', name: 'Donors', align: 'center', descending: true},
+        {id: 'totalTickets', name: 'Tickets', align: 'center', descending: true}
     ]
 
     const sortable = true
     const [sort, setSort] = useState('title')
     const [ascending, setAscending] = useState(true)
+
+    console.log('sort', sort, ascending)
 
     const potData = Object.keys(summary.pots).map(potId => {
         const dataPot = getPotFromId(potId)
@@ -36,21 +39,23 @@ const RafflePotTable = ({summary, tableWidth, nameLength}) => {
         .filter(x => x)
         .sort((a, b) => {
             switch (sort) {
+                case 'sortPotNumber':
+                    return a[sort] - b[sort]
+                case 'contributedBy':
+                    return a[sort].localeCompare(b[sort])
                 case 'title':
                     return a[sort].localeCompare(b[sort])
-                case 'donors':
-                    return parseInt(b[sort]) - parseInt(a[sort])
+                case 'uniqueDonorCount':
+                    return a[sort] - b[sort]
                         || a['title'].localeCompare(b['title'])
-                case 'tickets':
-                    return parseInt(b[sort]) - parseInt(a[sort])
+                case 'totalTickets':
+                    return parseInt(a[sort]) - parseInt(b[sort])
                         || a['title'].localeCompare(b['title'])
                 default:
                     return parseInt(b[sort]) - parseInt(a[sort])
                         || a['title'].localeCompare(b['title'])
             }
         })
-
-    console.log('potData', potData)
 
     const rows = ascending ? potData : potData.reverse() || []
 

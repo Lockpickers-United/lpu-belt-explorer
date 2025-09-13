@@ -8,13 +8,15 @@ const RaffleStatsCharityTable = ({summary, tableWidth, nameLength}) => {
 
     const columns = [
         {id: 'displayName', align: 'left', name: 'Charity Name'},
-        {id: 'donors', name: 'Donors', align: 'center'},
-        {id: 'donations', name: 'Raised', align: 'center', prefix: '$'}
+        {id: 'donors', name: 'Donors', align: 'center', descending: true},
+        {id: 'donations', name: 'Raised', align: 'center', prefix: '$', descending: true}
     ]
 
     const sortable = true
     const [sort, setSort] = useState('name')
     const [ascending, setAscending] = useState(true)
+
+    console.log('allCharities', allCharities)
 
     const mappedRows = allCharities.map(row => {
         let charityName = row?.name ? row?.name.substring(0, nameLength) : 'unknown'
@@ -23,9 +25,6 @@ const RaffleStatsCharityTable = ({summary, tableWidth, nameLength}) => {
         return summary.charities[row.id] && summary.charities[row.id].totalDonations > 0
             ? {
                 ...row,
-                donations: summary.charities[row.id].totalDonations,
-                donationsText: `$${summary.charities[row.id].totalDonations}`,
-                donors: summary.charities[row.id].uniqueDonors.length,
                 displayName: charityName
             }
             : {...row, displayName: charityName}
@@ -37,10 +36,10 @@ const RaffleStatsCharityTable = ({summary, tableWidth, nameLength}) => {
                 case 'name':
                     return a['name'].localeCompare(b['name'])
                 case 'donors':
-                    return (b.donors || 0) - (a.donors || 0)
+                    return (a.donors || 0) - (b.donors || 0)
                         || a['name'].localeCompare(b['name'])
                 case 'donations':
-                    return (b.donations || 0) - (a.donations || 0)
+                    return (a.donations || 0) - (b.donations || 0)
                         || a['name'].localeCompare(b['name'])
                 default:
                     return a['name'].localeCompare(b['name'])

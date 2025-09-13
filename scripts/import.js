@@ -17,7 +17,7 @@ import {
     raflSchema,
     raflMediaSchema,
     raflCharitySchema
-} from './schemas.js'
+} from './importSchemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
@@ -505,12 +505,13 @@ if (importRaflData) {
         .map(datum => ({
             id: datum['Unique ID'],
             year: +datum['Year'],
-            potNumber: datum['Pot Number'],
+            potNumber: parseInt(datum['Pot Number']),
             title: datum['Title'],
-            winnerCount: datum['Winner Count'],
+            winnerCount: parseInt(datum['Winner Count']) || 1,
             displayName: datum['Display Name'],
             description: datum['Description'],
             potContents: datum['Pot Contents'],
+            keywords: datum['Keywords'],
             contributedBy: splitCommaValues(datum['Contributed By']),
             tags: splitCommaValues(datum['Tags']),
             country: splitCommaValues(datum['Country']),
@@ -518,7 +519,6 @@ if (importRaflData) {
             splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
             splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
             shippingType: datum['Shipping Type'],
-            winner: splitCommaValues(datum['Winner']),
             dateAdded: datum['Date Added']
         })).filter(x => x)
 

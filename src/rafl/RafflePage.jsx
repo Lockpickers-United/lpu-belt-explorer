@@ -15,6 +15,7 @@ function RafflePage({profile}) {
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
 
+    console.log('visibleEntries', visibleEntries)
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
         setExpanded(id)

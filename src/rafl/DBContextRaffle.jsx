@@ -9,7 +9,6 @@ import {
 import AuthContext from '../app/AuthContext'
 import dayjs from 'dayjs'
 import DBContext from '../app/DBContext.jsx'
-import RaffleContext from './RaffleContext.jsx'
 import {enqueueSnackbar} from 'notistack'
 import Button from '@mui/material/Button'
 
@@ -19,7 +18,6 @@ export function DBProviderRaffle({children}) {
 
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
     const {profile} = useContext(DBContext)
-    const {raffleAdmin} = useContext(RaffleContext)
 
     const [dbError, setDbError] = useState(null)
     const [dbLoaded, setDbLoaded] = useState(false)
@@ -54,7 +52,7 @@ export function DBProviderRaffle({children}) {
     const [summaryLoaded, setSummaryLoaded] = useState(false)
 
     useEffect(() => {
-        if (!(authLoaded && isLoggedIn && !!user && raffleAdmin)) {
+        if (!(authLoaded && isLoggedIn && !!user)) {
             setSummaryLoaded(false)
             setSummary({})
             return
@@ -75,7 +73,7 @@ export function DBProviderRaffle({children}) {
             })
         })
         return () => unsubscribe()
-    }, [authLoaded, isLoggedIn, raffleAdmin, user])
+    }, [authLoaded, isLoggedIn, user])
 
     // value & provider
     const value = useMemo(() => ({

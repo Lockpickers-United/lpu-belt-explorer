@@ -8,12 +8,12 @@ function RaffleParentRoute() {
 
 
     return (
-        <RaffleProvider>
-            <DBProviderRaffle>
+        <DBProviderRaffle>
+            <RaffleProvider>
                 <Outlet/>
                 <RaffleSetupDialog/>
-            </DBProviderRaffle>
-        </RaffleProvider>
+            </RaffleProvider>
+        </DBProviderRaffle>
     )
 }
 

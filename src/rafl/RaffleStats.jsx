@@ -16,17 +16,13 @@ export default function RaffleStats() {
     usePageTitle('RAFL Stats')
 
     const {summary} = useContext(DBContext)
-
+    console.log('summary', summary)
 
     const {data, loading, error} = useData({urls})
     const {siteFullNew, raflResponseDetails, raflSiteStats2025} = data || {} //eslint-disable-line
     const {width, isMobile} = useWindowSize()
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(summary.updatedAt).format('MM/DD/YY hh:mm') + ')'
-
-
-    console.log('summary', summary)
-
 
     const firstHeaderStyle = {
         margin: '26px 0px 18px 0px',
@@ -64,7 +60,7 @@ export default function RaffleStats() {
                 padding: pagePadding, backgroundColor: '#292929',
                 marginLeft: 'auto', marginRight: 'auto'
             }}>
-                <RaffleStatsHeader summary={summary}/>
+                <RaffleStatsHeader/>
 
                 <div style={{width: '100%', textAlign: 'center', color: '#fff'}}>
                     <span style={{fontSize: '0.8rem', marginTop: 0}}>{updateTime}</span>

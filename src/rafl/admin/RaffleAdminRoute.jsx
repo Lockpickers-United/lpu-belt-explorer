@@ -12,6 +12,7 @@ import RaffleContext from '../RaffleContext.jsx'
 import RaffleSubmittedEntriesList from './RaffleSubmittedEntriesList.jsx'
 import {RaffleAdminDBProvider} from './RaffleAdminDBContext.jsx'
 import RaffleEntryForm from '../entryForm/RaffleEntryForm.jsx'
+import RaffleHeader from '../RaffleHeader.jsx'
 
 function RaffleAdminRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
@@ -39,6 +40,7 @@ function RaffleAdminRoute() {
                 <RaffleAdminDataProvider>
                     <React.Fragment>
                         <Nav title='RAFL Admin' extras={extras}/>
+                        <RaffleHeader page={'stats'}/>
 
                         {raffleAdmin && !editEntryId &&
                             <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
