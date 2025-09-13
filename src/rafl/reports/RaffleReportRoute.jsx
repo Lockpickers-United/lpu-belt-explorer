@@ -26,7 +26,6 @@ function RaffleReportRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allPots}>
                 <React.Fragment>
                     <Nav title='RAFL Report' extras={extras}/>
                     {authLoaded && raffleAdmin && <RaffleReport/>}
@@ -34,7 +33,6 @@ function RaffleReportRoute() {
 
                     <Tracker feature='raflReport'/>
                 </React.Fragment>
-            </RaffleDataProvider>
         </FilterProvider>
     )
 }

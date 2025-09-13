@@ -558,6 +558,8 @@ if (importRaflData) {
             name: datum['Charity Name'],
             url: datum['URL'],
             tags: splitCommaValues(datum['Tags']),
+            donations2024: parseInt(datum['Donations 2024'].replace(/[^0-9]/, '')) || 0,
+            donations2025: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
             donationsPrevious: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
             disabled: datum['Disable'].length > 0,
         })).filter(x => x)

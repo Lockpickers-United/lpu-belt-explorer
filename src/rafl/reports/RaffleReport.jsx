@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LoadingDisplay from '../../util/LoadingDisplay'
 import useData from '../../util/useData'
 import usePageTitle from '../../util/usePageTitle'
@@ -8,11 +8,12 @@ import {siteFullNew, raflResponseDetails, raflSiteStats2025} from '../../data/da
 import RaffleSummary from './RaffleSummary.jsx'
 import RafflePageTrackingTable from './RafflePageTrackingTable.jsx'
 import RafflePotTable from './RafflePotTable.jsx'
-import RaffleCharityTable from './RaffleCharityTable.jsx'
+import RaffleReportsCharityTable from './RaffleReportsCharityTable.jsx'
 import RaffleReportHistoricalLines from './RaffleReportHistoricalLines.jsx'
 import RaffleStatsHeader from '../RaffleStatsHeader.jsx'
 import RaffleBeltDistribution from './RaffleBeltDistribution.jsx'
 import RaffleYOYLines from './RaffleYOYLines.jsx'
+import RaffleContext from '../RaffleContext.jsx'
 
 function RaffleReport() {
     usePageTitle('RAFL Report')
@@ -21,6 +22,8 @@ function RaffleReport() {
 
     const {data, loading, error} = useData({urls})
     const {siteFullNew, raflResponseDetails, raflSiteStats2025} = data || {} //eslint-disable-line
+    const {allPots} = useContext(RaffleContext)
+
     const {width} = useWindowSize()
     const smallWindow = width < 560
     const pagePadding = !smallWindow
@@ -74,10 +77,10 @@ function RaffleReport() {
             <RafflePageTrackingTable data={raflSiteStats2025}/>
 
             <div style={headerStyle}>Pot Details</div>
-            <RafflePotTable statsData={raflSiteStats2025}/>
+            <RafflePotTable statsData={raflSiteStats2025} allPots={allPots}/>
 
             <div style={headerStyle}>Charity Details</div>
-            <RaffleCharityTable data={raflSiteStats2025}/>
+            <RaffleReportsCharityTable data={raflSiteStats2025}/>
 
         </div>
     )

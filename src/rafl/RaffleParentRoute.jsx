@@ -6,6 +6,7 @@ import {DBProviderRaffle} from './DBContextRaffle.jsx'
 
 function RaffleParentRoute() {
 
+    console.log('RaffleParentRoute')
 
     return (
         <DBProviderRaffle>

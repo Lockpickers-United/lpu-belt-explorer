@@ -200,6 +200,7 @@ export const raflCharitySchema = Joi.array().items(
         'Disable': Joi.string().allow(''),
         'URL': Joi.string().allow('').uri(),
         'Tags': Joi.string().allow(''),
+        'Donations 2024': Joi.string().allow(''),
         'Donations 2025': Joi.string().allow('')
     }).unknown()
 )

@@ -4,16 +4,16 @@ import AdminStatsTableSort from '../../admin/AdminStatsTableSort.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import RaffleAutocompleteBox from '../entryForm/RaffleAutocompleteBox.jsx'
-import DataContext from '../../context/DataContext.jsx'
 import useData from '../../util/useData.jsx'
 import {raflCollectionDetails} from '../../data/dataUrls'
+import RaffleContext from '../RaffleContext.jsx'
 
 const RafflePotTable = ({statsData}) => {
-    const navigate = useNavigate()
+    const {allPots} = useContext(RaffleContext)
     const {potViewsById} = statsData
-    const {getPotFromId} = useContext(DataContext)
     const {data} = useData({url: raflCollectionDetails})
     const {potWatches} = data || {}
+    const navigate = useNavigate()
 
     const columns = [
         {name: 'Pot #', align: 'center', id: 'potNumber'},
@@ -21,8 +21,8 @@ const RafflePotTable = ({statsData}) => {
         {id: 'title', align: 'left', name: 'Title'},
         {id: 'views', align: 'center', name: 'Views'},
         //{id: 'percentViews', name: '% Views', align: 'center'},
-        {id: 'donors', name: 'Donors', align: 'center'},
-        {id: 'tickets', name: 'Tickets', align: 'center'},
+        {id: 'uniqueDonorCount', name: 'Donors', align: 'center'},
+        {id: 'totalTickets', name: 'Tickets', align: 'center'},
         {id: 'watchlists', name: 'Watchlists', align: 'center'}
     ]
 
@@ -31,10 +31,22 @@ const RafflePotTable = ({statsData}) => {
     const [ascending, setAscending] = useState(true)
     const [searched, setSeached] = useState({})
 
-    const potData = potViewsById.data.map(pot => {
-        const dataPot = getPotFromId(pot.id)
-
+    const potData = allPots.map(pot => {
+        const dataPot = allPots.find(p => p.id === pot.id) || {}
         if (!dataPot) return null
+
+        const statsPot = potViewsById.data.find(p => p.id === pot.id) || {}
+        //console.log('statsPot', pot.id, statsPot)
+
+        pot = {
+            ...pot,
+            views: statsPot.views || 0,
+            percentViews: statsPot.percentViews || 0,
+            uniqueDonorCount: statsPot.uniqueDonorCount || 0,
+            totalTickets: statsPot.totalTickets || 0
+        }
+
+        // Shorten long titles
 
         let potTitle = dataPot?.title ? dataPot.title.substring(0,32) : `unknown (${pot.id})`
         potTitle = dataPot?.title?.length < 32 || !dataPot?.title ? potTitle : potTitle + '...'

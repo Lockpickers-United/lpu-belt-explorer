@@ -18,7 +18,10 @@ import AdminToolsButton from './AdminToolsButton.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
-    const {preview, allPots, raflState, refresh} = useContext(RaffleContext)
+
+    console.log('RaffleRoute')
+
+    const {preview, allPots, allCharities, raflState, refresh} = useContext(RaffleContext)
     const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
     const [searchParams] = useSearchParams()
@@ -59,7 +62,7 @@ function RaffleRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allEntries} profile={lockCollection}>
+            <RaffleDataProvider allEntries={allEntries} allPots={allPots} allCharities={allCharities} profile={lockCollection}>
 
                 <div style={style}>
                     {showSingle &&

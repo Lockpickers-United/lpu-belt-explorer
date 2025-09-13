@@ -17,7 +17,6 @@ export function RaffleProvider({children}) {
     const [preview, setPreview] = useLocalStorage('previewMode', false)
 
     const {lockCollection, summary} = useContext(DBContext)
-    console.log('RaffleProvider lockCollection', lockCollection)
 
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
@@ -56,11 +55,15 @@ export function RaffleProvider({children}) {
                     entry.name,
                     entry.tags
                 ].join(',')),
+                donors: summary.charities?.[entry.id]?.uniqueDonors.length,
                 donations: summary.charities?.[entry.id]?.totalDonations,
                 donationsText: `$${summary.charities?.[entry.id]?.totalDonations}`,
-                donors: summary.charities?.[entry.id]?.uniqueDonors.length,
+                donations2024text: entry.donations2024 ? '$' + entry.donations2024.toLocaleString() : '0',
+                donations2025text: entry.donations2025 ? '$' + entry.donations2025.toLocaleString() : '0',
             }))
     }, [summary.charities])
+
+    console.log('allCharities')
 
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(false)
