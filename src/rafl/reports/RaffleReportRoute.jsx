@@ -8,13 +8,11 @@ import Nav from '../../nav/Nav'
 import RaffleReport from './RaffleReport.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
-import RaffleDataProvider from '../RaffleDataProvider.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 
 function RaffleReportRoute() {
     const {authLoaded} = useContext(AuthContext)
     const {isMobile} = useWindowSize()
-    const {allPots} = useContext(RaffleContext)
     const {raffleAdmin} = useContext(RaffleContext)
 
     const extras = (

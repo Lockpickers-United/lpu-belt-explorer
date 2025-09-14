@@ -1,14 +1,13 @@
 import React, {useCallback, useContext, useState} from 'react'
-import useWindowSize from '../../util/useWindowSize'
-import AdminStatsTableSort from '../../admin/AdminStatsTableSort.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import RaffleAutocompleteBox from '../entryForm/RaffleAutocompleteBox.jsx'
 import useData from '../../util/useData.jsx'
 import {raflCollectionDetails} from '../../data/dataUrls'
 import RaffleContext from '../RaffleContext.jsx'
+import DataTableSort from '../../misc/DataTableSort.jsx'
 
-const RafflePotTable = ({statsData}) => {
+const RaffleReportsPotTable = ({statsData}) => {
     const {allPots} = useContext(RaffleContext)
     const {potViewsById} = statsData
     const {data} = useData({url: raflCollectionDetails})
@@ -19,24 +18,19 @@ const RafflePotTable = ({statsData}) => {
         {name: 'Pot #', align: 'center', id: 'potNumber'},
         //{name: 'ID', align: 'center', id: 'id'},
         {id: 'title', align: 'left', name: 'Title'},
-        {id: 'views', align: 'center', name: 'Views'},
+        {id: 'views', align: 'center', name: 'Views', descending: true},
         //{id: 'percentViews', name: '% Views', align: 'center'},
-        {id: 'uniqueDonorCount', name: 'Donors', align: 'center'},
-        {id: 'totalTickets', name: 'Tickets', align: 'center'},
-        {id: 'watchlists', name: 'Watchlists', align: 'center'}
+        {id: 'uniqueDonorCount', name: 'Donors', align: 'center', descending: true},
+        {id: 'totalTickets', name: 'Tickets', align: 'center', descending: true},
+        {id: 'watchlists', name: 'Watchlists', align: 'center', descending: true}
     ]
 
-    const sortable = true
-    const [sort, setSort] = useState('potNumber')
-    const [ascending, setAscending] = useState(true)
     const [searched, setSeached] = useState({})
 
     const potData = allPots.map(pot => {
         const dataPot = allPots.find(p => p.id === pot.id) || {}
         if (!dataPot) return null
-
         const statsPot = potViewsById.data.find(p => p.id === pot.id) || {}
-        //console.log('statsPot', pot.id, statsPot)
 
         pot = {
             ...pot,
@@ -47,55 +41,32 @@ const RafflePotTable = ({statsData}) => {
         }
 
         // Shorten long titles
-
         let potTitle = dataPot?.title ? dataPot.title.substring(0,32) : `unknown (${pot.id})`
         potTitle = dataPot?.title?.length < 32 || !dataPot?.title ? potTitle : potTitle + '...'
 
         const id = pot?.id?.replace('2025-', '')
         return {
             ...pot,
-            percentViews: (Math.floor(pot.percentViews * 100) + '%'),
             ...dataPot,
             title: potTitle,
             id: id,
-            watchlists: potWatches?.[pot.id] || 0
+            watchlists: potWatches?.[pot.id] || 0,
+            percentViews: (Math.floor(pot.percentViews * 100) + '%'),
         }
-    })
-        .filter(x => x)
-        .sort((a, b) => {
-            switch (sort) {
-                case 'potNumber':
-                    return a['potNumber'] - b['potNumber']
-                        || a['title'].localeCompare(b['title'])
-                case 'id':
-                    return a[sort].localeCompare(b[sort])
-                case 'title':
-                    return a[sort].localeCompare(b[sort])
-                case 'donors':
-                    return parseInt(b[sort]) - parseInt(a[sort])
-                        || a['title'].localeCompare(b['title'])
-                case 'percentViews':
-                    return parseInt(b[sort]) - parseInt(a[sort])
-                        || a['views'] - (b['views'])
-                default:
-                    return parseInt(b[sort]) - parseInt(a[sort])
-                        || a['title'].localeCompare(b['title'])
-            }
-        })
+    }).filter(x => x)
 
-    const sortedPots = ascending ? potData : potData.reverse()
+    const searchedRows = Object.keys(searched).length > 0
+        ? [potData?.find(pot => pot.title === searched.itemTitle)] || []
+        : potData || []
 
-    const rows = Object.keys(searched).length > 0
-        ? [sortedPots?.find(pot => pot.title === searched.itemTitle)] || []
-        : sortedPots || []
-
-    const mappedRows = rows.map(row => {
+    const rows = searchedRows.map(row => {
         return row.donors && row.donors > 0
             ? {...row}
             : {...row, donors: 0, tickets: 0}
     })
 
-    const tableData = {columns: columns, data: mappedRows}
+    const defaultSort = 'potNumber'
+    const tableData = {columns, rows, defaultSort, sortable: true}
 
     const linkFunction = useCallback((id, string) => {
         const pot = potData.find(row => row.title === string)
@@ -109,20 +80,6 @@ const RafflePotTable = ({statsData}) => {
     const potTitle = useCallback((pot) => {
         return pot?.title ? pot.title : 'unknown'
     }, [])
-
-    const {width} = useWindowSize()
-    const mobile360 = width <= 360
-    const mobile395 = width <= 395
-    const mobile428 = width <= 428  // but test also at 412
-    const window560 = width <= 560
-    const window820 = width <= 820
-
-    const fontSize = mobile360 ? '.8rem'
-        : mobile395 ? '.85rem'
-            : mobile428 ? '.9rem'
-                : window560 ? '.95rem'
-                    : window820 ? '.95rem'
-                        : '.95rem'
 
     const tableWidth = '100%'
 
@@ -140,12 +97,11 @@ const RafflePotTable = ({statsData}) => {
                 </div>
             </div>
 
-            <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}
-                                 sortable={sortable} sort={sort} setSort={setSort}
-                                 ascending={ascending} setAscending={setAscending} linkFunction={linkFunction}/>
+            <DataTableSort tableData={tableData} tableWidth={tableWidth} linkFunction={linkFunction}/>
+
         </div>
 
     )
 }
 
-export default RafflePotTable
+export default RaffleReportsPotTable

@@ -18,6 +18,10 @@ import DBContext from '../../app/DBContext.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import {setDeep, setDeepAdd, setDeepUnique} from '../../util/setDeep'
 
+/**
+ * @property uniqueDonors
+ */
+
 export function RaffleAdminDBProvider({children}) {
 
     const globalContext = useContext(DBContextRaffle)
@@ -62,35 +66,58 @@ export function RaffleAdminDBProvider({children}) {
     }, [authLoaded, isLoggedIn, raffleAdmin, user])
 
     const getSummary = useCallback((entries) => {
-        let summary = entries.reduce((acc, entry) => {
-            if (!entry || entry.status !== 'approved') return acc
-            acc.totalEntries = (acc.totalEntries || 0) + 1
-            acc.totalDonations = (acc.totalDonations || 0) + (entry.totalDonation || 0)
-            acc.totalTickets = (acc.totalTickets || 0) + (entry.allocatedTickets || 0)
+        let summary = entries
+            .sort((a, b) => a.createdAt && b.createdAt ? dayjs(a.createdAt).valueOf() - dayjs(b.createdAt).valueOf() : 0)
+            .reduce((acc, entry) => {
+                if (!entry || entry.status !== 'approved') return acc
+                acc.totalEntries = (acc.totalEntries || 0) + 1
+                acc.totalDonations = (acc.totalDonations || 0) + (entry.totalDonation || 0)
+                acc.totalTickets = (acc.totalTickets || 0) + (entry.allocatedTickets || 0)
 
-            const date = entry.createdAt ? dayjs(entry.createdAt).format('YYYY-MM-DD') : 'unknown'
-            setDeepAdd(acc, ['entriesByDate', date, 'totalEntries'], 1)
-            setDeepAdd(acc, ['entriesByDate', date, 'totalDonations'], entry.totalDonation || 0)
-            setDeepAdd(acc, ['entriesByDate', date, 'totalTickets'], entry.allocatedTickets || 0)
+                const date = entry.createdAt ? dayjs(entry.createdAt).format('YYYY-MM-DD') : 'unknown'
+                setDeepAdd(acc, ['entriesByDate', date, 'totalEntries'], 1)
+                setDeepAdd(acc, ['entriesByDate', date, 'totalTickets'], entry.allocatedTickets || 0)
+                setDeepAdd(acc, ['entriesByDate', date, 'totalDonations'], entry.totalDonation || 0)
+                setDeepAdd(acc, ['cumulativeDonations'], entry.totalDonation || 0)
+                setDeep(acc, ['entriesByDate', date, 'cumulativeDonations'], acc.cumulativeDonations || 0)
+                setDeepUnique(acc, ['uniqueDonors'], `${entry.username}|${entry.platform}`)
+                setDeep(acc, ['entriesByDate', date, 'cumulativeUniqueDonors'], acc.uniqueDonors.length || 0)
+                setDeepUnique(acc, ['entriesByDate', date, 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+                setDeep(acc, ['entriesByDate', date, 'uniqueDonorCount'], acc.entriesByDate[date].uniqueDonors.length || 0)
 
-            acc.redditDonations = (acc.redditDonations || 0) + (entry.platform === 'Reddit' ? entry.totalDonation : 0)
-            acc.discordDonations = (acc.discordDonations || 0) + (entry.platform === 'Discord' ? entry.totalDonation : 0)
-            setDeepUnique(acc, ['uniqueDonors'], `${entry.username}|${entry.platform}`)
-            entry.donations.forEach(donation => {
-                setDeepAdd(acc, ['charities', [donation.charity.itemId], 'totalDonations'], donation.amount)
-                setDeepUnique(acc, ['charities', [donation.charity.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
-            }, [])
-            entry.pots.forEach(pot => {
-                setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
-                setDeepUnique(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
-            }, [])
-            return acc
-        }, {})
+                acc.redditDonations = (acc.redditDonations || 0) + (entry.platform === 'Reddit' ? entry.totalDonation : 0)
+                acc.discordDonations = (acc.discordDonations || 0) + (entry.platform === 'Discord' ? entry.totalDonation : 0)
+                entry.donations.forEach(donation => {
+                    setDeepAdd(acc, ['charities', [donation.charity.itemId], 'totalDonations'], donation.amount)
+                    setDeepUnique(acc, ['charities', [donation.charity.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+                }, [])
+                entry.pots.forEach(pot => {
+                    setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
+                    setDeepUnique(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+                }, [])
+                return acc
+            }, {})
+
+        // delete identifying info from summary
+        summary.uniqueDonorCount = summary.uniqueDonors.length || 0
+        delete summary.uniqueDonors
+
+        Object.keys(summary.charities).map(charityId => {
+            summary.charities[charityId].uniqueDonorCount = summary.charities[charityId].uniqueDonors.length || 0
+            delete summary.charities[charityId].uniqueDonors
+        })
+        Object.keys(summary.pots).map(potId => {
+            summary.pots[potId].uniqueDonorCount = summary.pots[potId].uniqueDonors.length || 0
+            delete summary.pots[potId].uniqueDonors
+        })
+        Object.keys(summary.entriesByDate).map(date => {
+            delete summary.entriesByDate[date].uniqueDonors
+        })
+
         summary = {
             charities: {},
             pots: {},
             entriesByDate: {},
-            uniqueDonors: [],
             totalEntries: 0,
             totalDonations: 0,
             totalTickets: 0,

@@ -3,11 +3,9 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import CountUp from 'react-countup'
 import RaffleContext from './RaffleContext.jsx'
 import Tooltip from '@mui/material/Tooltip'
-import DBContext from '../app/DBContext.jsx'
 
 function RaffleStatsHeader({animate = false}) {
-    const {summary} = useContext(DBContext)
-    const {animateTotal} = useContext(RaffleContext)
+    const {summary, animateTotal} = useContext(RaffleContext)
 
     const donors = summary.uniqueDonors?.length || 0
     const donationsTotal = summary.totalDonations || 0

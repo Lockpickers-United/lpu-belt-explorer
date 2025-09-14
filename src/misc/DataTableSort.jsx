@@ -11,18 +11,16 @@ const DataTableSort = ({
                            tableWidth,
                            tableHeight,
                            wrap,
-                           sortable = true,
                            linkFunction
                        }) => {
 
     const whiteSpace = wrap ? 'inherit' : 'nowrap'
 
-    const [sort, setSort] = useState(undefined)
-    const [ascending, setAscending] = useState(true)
+    const {rows, columns, defaultSort = 'name', sortable} = tableData
+    const [sort, setSort] = useState(defaultSort)
+    const [ascending, setAscending] = useState(!tableData.columns.find(c => c.id === defaultSort)?.descending)
 
-    const {rows, columns, defaultSort = 'name'} = tableData
-
-    const sortRows = useCallback(({rows, sort, defaultSort}) => {
+    const sortRows = useCallback(({rows, sort, defaultSort, ascending}) => {
         const list = (rows || []).slice()
         const hasValues = list.find(x => x?.[sort] !== undefined && x?.[sort] !== null)
         const type = typeof hasValues?.[sort]
@@ -43,23 +41,24 @@ const DataTableSort = ({
             return as.localeCompare(bs, undefined, {sensitivity: 'base'})
         }
         list.sort((a, b) => {
+            // primary compare; flip sign if descending
             const primary = cmp(a, b, sort, isNumber)
-            if (primary !== 0) return primary
-            // fallback on defaultSort (string compare by default)
-            const hasValues = list.find(x => x?.[defaultSort] !== undefined && x?.[defaultSort] !== null)
-            const fallbackType = typeof hasValues?.[defaultSort] || 'string'
-            return cmp(a, b, defaultSort, fallbackType === 'number')
+            if (primary !== 0) return ascending ? primary : -primary
+            // fallback compare is ALWAYS the value from the column data (stable)
+            const hasFallback = list.find(x => x?.[defaultSort] !== undefined && x?.[defaultSort] !== null)
+            const fallbackType = typeof hasFallback?.[defaultSort] || 'string'
+            const fallback = cmp(a, b, defaultSort, fallbackType === 'number')
+            return columns?.find(c => c.id === defaultSort)?.descending ? -fallback : fallback
         })
         return list
-    }, [])
+    }, [columns])
 
     const effectiveSort = sort || (columns?.find(c => c.id === defaultSort) ? defaultSort : 'name')
-    const sortedRows = sortRows({rows: rows, columns, sort: effectiveSort, defaultSort: 'name'})
-    const sortedRowsFull = ascending ? sortedRows : sortedRows.slice().reverse()
+    // use the tableData.defaultSort (already pulled into defaultSort) and pass ascending into sortRows
+    const sortedRowsFull = sortRows({rows, sort: effectiveSort, defaultSort, ascending})
 
     const activeRows = sortedRowsFull.filter(x => x[sort] && ![0, '0'].includes(x[sort]))
     const inactiveRows = sortedRowsFull.filter(element => !activeRows.includes(element))
-
     const finalRows = sort && sort !== defaultSort
         ? [...activeRows, ...inactiveRows]
         : sortedRowsFull
@@ -131,14 +130,17 @@ const DataTableSort = ({
                                                fontSize: fontSize,
                                                lineHeight: '1.1rem',
                                                padding: '6px 2px',
-                                               color: '#fff',
+                                               color: '#fff'
                                            }}
                                            component='th' scope='row'>
 
                                     {sortable && column.id !== 'index' &&
                                         <div style={{display: 'flex', marginLeft: index === 0 ? 10 : 20}}>
                                             <Link onClick={() => handleSort(column.id)}
-                                                  style={{color: sort === column.id ? '#fff' : '#bbb', alignContent:'center'}}>
+                                                  style={{
+                                                      color: sort === column.id ? '#fff' : '#bbb',
+                                                      alignContent: 'center'
+                                                  }}>
                                                 <nobr>{column.name}</nobr>
                                             </Link>
                                             {sort === column.id
@@ -148,7 +150,11 @@ const DataTableSort = ({
                                                 : <div style={{width: 24}}/>
                                             }
                                         </div>
-                                        || <div style={{display: 'flex', marginLeft: index === 0 ? 10 : 20, marginRight: 24}}>
+                                        || <div style={{
+                                            display: 'flex',
+                                            marginLeft: index === 0 ? 10 : 20,
+                                            marginRight: 24
+                                        }}>
                                             {column.name}
                                         </div>
                                     }
@@ -179,7 +185,7 @@ const DataTableSort = ({
                                             <div style={{
                                                 textAlign: column.align,
                                                 marginLeft: leftMargins[column.align],
-                                                marginRight: rightMargins[column.align],
+                                                marginRight: rightMargins[column.align]
                                             }}>
                                                 <nobr>{linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '')}</nobr>
                                             </div>

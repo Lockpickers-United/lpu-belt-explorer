@@ -48,19 +48,19 @@ export function DBProviderRaffle({children}) {
     }, [dbError, isLoggedIn])
 
     // SUMMARY SUBSCRIPTION (stable onSnapshot managed by effect)
-    const [summary, setSummary] = useState({})
+    const [summaryData, setSummaryData] = useState({})
     const [summaryLoaded, setSummaryLoaded] = useState(false)
 
     useEffect(() => {
         if (!(authLoaded && isLoggedIn && !!user)) {
             setSummaryLoaded(false)
-            setSummary({})
+            setSummaryData({})
             return
         }
         const docRef = doc(db, 'data-cache', 'raffle-entries-summary')
         const unsubscribe = onSnapshot(docRef, docSnap => {
             const data = docSnap.exists() ? docSnap.data() : null
-            setSummary(data || {})
+            setSummaryData(data || {})
             setSummaryLoaded(true)
             setDbLoaded(true)
             console.log('DB, raffle summary loaded')
@@ -82,10 +82,10 @@ export function DBProviderRaffle({children}) {
         createRaffleEntry,
         dbLoaded,
         profile,
-        summary,
+        summaryData,
         summaryLoaded,
         dbError,
-    }), [globalContext, createRaffleEntry, dbLoaded, profile, summary, summaryLoaded, dbError])
+    }), [globalContext, createRaffleEntry, dbLoaded, profile, summaryData, summaryLoaded, dbError])
 
     return (
         <DBContext.Provider value={value}>

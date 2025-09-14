@@ -4,22 +4,22 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew, raflResponseDetails, raflSiteStats2025} from '../data/dataUrls'
+import {raflResponseDetails} from '../data/dataUrls'
 import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
 import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
 import RaffleYOYLines from './reports/RaffleYOYLines.jsx'
-import DBContext from '../app/DBContext.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 export default function RaffleStats() {
     usePageTitle('RAFL Stats')
 
-    const {summary} = useContext(DBContext)
+    const {summary} = useContext(RaffleContext)
     console.log('summary', summary)
 
     const {data, loading, error} = useData({urls})
-    const {siteFullNew, raflResponseDetails, raflSiteStats2025} = data || {} //eslint-disable-line
+    const {raflResponseDetails} = data || {} //eslint-disable-line
     const {width, isMobile} = useWindowSize()
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(summary.updatedAt).format('MM/DD/YY hh:mm') + ')'
@@ -66,7 +66,7 @@ export default function RaffleStats() {
                     <span style={{fontSize: '0.8rem', marginTop: 0}}>{updateTime}</span>
                 </div>
 
-                <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
+                <RaffleYOYLines data={raflResponseDetails['detailedData']}/>
 
                 <div style={firstHeaderStyle}>Pots</div>
                 <RaffleStatsPotTable summary={summary} tableWidth={tableWidth} nameLength={nameLength}/>
@@ -81,7 +81,5 @@ export default function RaffleStats() {
 }
 
 const urls = {
-    siteFullNew,
     raflResponseDetails,
-    raflSiteStats2025
 }

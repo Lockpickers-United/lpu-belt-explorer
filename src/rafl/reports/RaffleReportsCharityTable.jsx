@@ -24,20 +24,16 @@ const RaffleReportsCharityTable = () => {
         {id: 'donors', name: 'Donors', align: 'center', descending: true},
     ]
     const defaultSort = 'displayName'
-    const tableData = {columns, rows, defaultSort}
+    const tableData = {columns, rows, defaultSort, sortable: true}
 
     const tableWidth = '100%'
-    const sortable = true
     const linkFunction = useCallback((id, string) => {
         return string
     }, [])
 
     return (
-        <div>
-            <div style={{justifyItems: 'center', marginBottom: 20, width: 400}}>
-            </div>
-            <DataTableSort tableData={tableData} tableWidth={tableWidth}
-                           sortable={sortable} linkFunction={linkFunction}/>
+        <div style={{marginTop: 20, width: tableWidth}}>
+            <DataTableSort tableData={tableData} tableWidth={tableWidth} linkFunction={linkFunction}/>
         </div>
     )
 }
