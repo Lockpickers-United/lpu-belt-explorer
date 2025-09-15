@@ -612,7 +612,7 @@ Brown,Magnum,"Mont Blanc",,Wafer,,,236027a0
 Brown,"Mauer,Mauer,Mauer","NW4,NW5,NW6",,"Dimple,Slider","Unsprung sliders",,b8783269
 Brown,Mauer,"President (71111)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,b9b7ba7c
 Brown,Mauer,"Variator A (70091)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,620b6e5a
-Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock",***,"Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
+Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock","4 or more pins ***","Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
 Brown,Medeco,Duracam,***,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
 Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
@@ -634,7 +634,7 @@ Red,Abloy,Disklock,,"Disc detainer","Rear tension,False gates","Disc 4 needs pic
 Red,Abloy,"High Profile",,"Disc detainer","Rear tension,False gates,Profile discs","Many keyway variations, warded spinners, rear profile spinner and profile discs",e92d29ad
 Red,"ABUS,ABUS","EC700,EC800",,Dimple,,,b29a8b44
 Red,ABUS,Plus,"with butterfly discs","Disc detainer","Random mid tension,False gates,Butterfly discs",,b8350901
-Red,ALPHA,FB,"≥12 pins",Dimple,"High pin count",,4223eb26
+Red,ALPHA,FB,"12 or more pins",Dimple,"High pin count",,4223eb26
 Red,"ASSA,Ruko","600,600","6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,29ab2852
 Red,ASSA,700,"7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins",Pin-tumbler,"Tree drivers,Gin spool drivers,Undercut milling,Tapered drivers",,e3bd3faf
 Red,"ASSA,Ruko","700,700","with gin drivers and matched sleeve",Pin-tumbler,,,ef4e0295
@@ -659,7 +659,7 @@ Red,"Fichet,Fichet","450,484","w/ False gates, 2-3 mastered levers",Lever/sideba
 Red,Fontaine,Dynaxis,,Pump/push,,,9d7faa15
 Red,"FTH Thirard",Pacific,,Pump/push,,,a57c1e9b
 Red,"GOAL,GOAL","V18,GP","<14 pins",Dimple,"Overmilling,Torpedo keypins,High pin count",,9f613c4a
-Red,GOAL,Z,"≥2 standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut milling",,937eb7a8
+Red,GOAL,Z,"2 or more standard drivers",Pin-tumbler,"Gin spool drivers,Overmilling,Undercut milling",,937eb7a8
 Red,Hori,Trident,spools,Dimple,,,49b2c746
 Red,IKON,"SK6 Sperrwelleprofil","4 Serrated Fingerpins, Non-Chamfered Sidebar",Pin-tumbler,"Rotating fingerpins,Active sidebar,changelog",,66d1ab72
 Red,IKON,"tk5 sperwellenprofil","with serrated fingerpins","Pin-tumbler,Sidepins","Rotating fingerpins","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",34d27803
