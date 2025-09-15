@@ -1,124 +1,67 @@
-import React, {useCallback, useContext, useRef, useState} from 'react'
+import React, {useCallback, useContext} from 'react'
 import DataContext from '../context/DataContext.jsx'
 import NoEntriesCard from '../locks/NoEntriesCard.jsx'
-import TableContainer from '@mui/material/TableContainer'
-import Table from '@mui/material/Table'
-import TableRow from '@mui/material/TableRow'
-import TableCell from '@mui/material/TableCell'
-import TableHead from '@mui/material/TableHead'
-import TableBody from '@mui/material/TableBody'
-import RaffleCharityRow from './RaffleCharityRow.jsx'
 import Link from '@mui/material/Link'
 import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleSearchBar from './RaffleSearchBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
+import DataTableSort from '../misc/DataTableSort.jsx'
 
 function RaffleCharitesPage() {
     const {visibleEntries} = useContext(DataContext)
-    const {raflState, raffleAdminRole} = useContext(RaffleContext)
-    const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
+    const {raflState} = useContext(RaffleContext)
+
+    const openInNewTab = useCallback((url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }, [])
 
     const {isMobile} = useWindowSize()
-    const scrollableRef = useRef()
-
-    const [sort, setSort] = useState('name')
-
-    const handleSort = useCallback((columnId) => {
-        if (columnId !== sort) {
-            setSort(columnId)
-        }
-    }, [setSort, sort])
-
-    const visibleCharities = visibleEntries
-        .sort((a, b) => {
-            switch (sort) {
-                case '2025':
-                    return b.donationsPrevious - a.donationsPrevious
-                case '2026':
-                    return b.donations - a.donations
-                case 'name':
-                    return a['name'].localeCompare(b['name'])
-                default:
-                    return a['name'].localeCompare(b['name'])
-            }
-        })
-
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-
-    const headerSize = !isMobile ? '1.0rem' : '0.9rem'
-    const headerPadding = !isMobile ? '16px 16px' : '10px 10px'
-
-    const currTextDesc = raflState === 'live' ? 'Currently' : 'Contributions'
+    const currTextDesc = raflState === 'live' ? 'So Far' : 'Donations'
     const prevText = !isMobile ? '2025 Contributions' : '2025'
     const currText = !isMobile ? `2026 ${currTextDesc}` : '2026'
 
+    const shortName = useCallback((charity) => {
+        const nameLength = !isMobile ? 99 : 99
+        let charityName = charity?.name ? charity?.name.substring(0, nameLength) : 'unknown'
+        return charity?.name?.length < nameLength ? charityName : charityName + '...'
+    },[isMobile])
+
+    const rows = visibleEntries.map(charity => {
+        return {
+            ...charity,
+            displayName: shortName(charity),
+        }
+    })
+    const columns = [
+        {id: 'displayName', align: 'left', name: 'Charity Name'},
+        {id: 'donations2025', name: prevText, align: 'center', displayField: 'donations2025text', descending: true},
+        {id: 'donations', name: currText, align: 'center', displayField: 'donationsText', descending: true}
+    ]
+    const defaultSort = 'displayName'
+    const tableWidth = '100%'
+    const tableData = {columns, rows, defaultSort, sortable: true, wrap: true}
+
+    const linkFunction = useCallback((id, string) => {
+        const charity = visibleEntries.find(c => {
+            return shortName(c) === string
+        })
+        if (!charity) return string
+        const url = charity.url || `https://www.google.com/search?q=${encodeURIComponent(charity.name)}`
+        return id === 'displayName'
+            ? <Link onClick={() => openInNewTab(url)}
+                    style={{color: '#fff', fontWeight: 700}}>{string}</Link>
+            : string
+    }, [openInNewTab, shortName, visibleEntries])
+
     return (
-
         <React.Fragment>
-            <div style={{paddingBottom: 32}}>
-
+            <div style={{paddingBottom: 32, width: tableWidth}}>
                 <RaffleSearchBar label='All Approved Charities' sortValues={null}/>
-
-                {visibleEntries.length === 0 && <NoEntriesCard label='Charities'/>}
-
-                {visibleEntries.length > 0 &&
-                    <TableContainer sx={{height: '100%', backgroundColor: '#111'}} id='scrollable'
-                                    ref={scrollableRef}>
-                        <Table stickyHeader style={style}>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell
-                                        key='Charity Name'
-                                        style={{
-                                            fontWeight: 700, fontSize: headerSize, lineHeight: '1.3rem', border: 0,
-                                            backgroundColor: '#222', padding: headerPadding
-                                        }}
-                                    >
-                                        <Link onClick={() => handleSort('name')}
-                                              style={{color: sort === 'name' ? '#fff' : '#ccc'}}>Charity Name</Link>
-                                    </TableCell>
-                                    {showFull &&
-                                        <React.Fragment>
-                                            <TableCell
-                                                key='2025'
-                                                style={{
-                                                    fontWeight: 700,
-                                                    fontSize: headerSize,
-                                                    lineHeight: '1.3rem',
-                                                    border: 0,
-                                                    backgroundColor: '#222',
-                                                    textAlign: 'center'
-                                                }}
-                                            >
-                                                <Link onClick={() => handleSort('2025')}
-                                                      style={{color: sort === '2025' ? '#fff' : '#ccc'}}>{prevText}</Link>
-                                            </TableCell>
-                                            <TableCell
-                                                key='2026'
-                                                style={{
-                                                    fontWeight: 700,
-                                                    fontSize: headerSize,
-                                                    lineHeight: '1.3rem',
-                                                    border: 0,
-                                                    backgroundColor: '#222',
-                                                    textAlign: 'center'
-                                                }}
-                                            >
-                                                <Link onClick={() => handleSort('2026')}
-                                                      style={{color: sort === '2026' ? '#fff' : '#ccc'}}>{currText}</Link>
-                                            </TableCell>
-                                        </React.Fragment>
-                                    }
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {visibleCharities.map((charity, index) =>
-                                    <RaffleCharityRow charity={charity} key={index}/>
-                                )}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                {visibleEntries.length === 0
+                    ? <NoEntriesCard label='Charities'/>
+                    : <DataTableSort tableData={tableData} tableWidth={tableWidth} linkFunction={linkFunction}/>
                 }
             </div>
             <RaffleHiddenDialog/>

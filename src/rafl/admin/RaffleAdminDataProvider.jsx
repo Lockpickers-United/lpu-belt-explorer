@@ -111,12 +111,6 @@ export function RaffleAdminDataProvider({children}) {
 }
 
 const fuzzySortKeys = ['fuzzy']
-const statusColors = {
-    pending: 'Blue',
-    approved: 'Green',
-    issues: 'Orange',
-    rejected: 'Red'
-}
 const statusList = [
     'pending',
     'approved',

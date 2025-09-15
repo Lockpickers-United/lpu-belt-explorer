@@ -16,7 +16,6 @@ export default function RaffleStats() {
     usePageTitle('RAFL Stats')
 
     const {summary} = useContext(RaffleContext)
-    console.log('summary', summary)
 
     const {data, loading, error} = useData({urls})
     const {raflResponseDetails} = data || {} //eslint-disable-line

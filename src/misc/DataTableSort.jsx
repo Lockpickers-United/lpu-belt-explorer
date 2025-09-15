@@ -10,15 +10,19 @@ const DataTableSort = ({
                            tableData,
                            tableWidth,
                            tableHeight,
-                           wrap,
                            linkFunction
                        }) => {
 
-    const whiteSpace = wrap ? 'inherit' : 'nowrap'
 
-    const {rows, columns, defaultSort = 'name', sortable} = tableData
+    const {rows, columns, defaultSort = 'name', sortable, wrap = false} = tableData
     const [sort, setSort] = useState(defaultSort)
     const [ascending, setAscending] = useState(!tableData.columns.find(c => c.id === defaultSort)?.descending)
+    const whiteSpace = wrap ? 'inherit' : 'nowrap'
+
+    const overflowStyle = wrap
+        ? {whiteSpace: 'inherit'}
+        : {whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}
+
 
     const sortRows = useCallback(({rows, sort, defaultSort, ascending}) => {
         const list = (rows || []).slice()
@@ -108,7 +112,7 @@ const DataTableSort = ({
     const rightMargins = {left: 0, center: 0, right: 20}
 
     return (
-        <div>
+        <div style={{width: tableWidth}}>
             <div style={{fontSize: '1.3rem', margin: '10px'}}>{tableData.title}</div>
             <TableContainer id='statsTable'
                             style={{
@@ -119,7 +123,7 @@ const DataTableSort = ({
                                 height: tableHeight
                             }}
                             component={Paper} elevation={2}>
-                <Table size='small' stickyHeader={!!tableHeight}>
+                <Table size='small' stickyHeader={!!tableHeight} style={{width: tableWidth}}>
                     <TableHead>
                         <TableRow style={{backgroundColor: '#111'}}>
                             {displayData.columns.map((column, index) =>
@@ -173,9 +177,9 @@ const DataTableSort = ({
                                     column.id !== 'spacer'
                                         ? <TableCell key={index + 1}
                                                      sx={{
+                                                         ...overflowStyle,
                                                          textAlign: column.align,
                                                          fontSize: fontSize,
-                                                         whiteSpace: whiteSpace,
                                                          padding: '8px 2px',
                                                          border: 0,
                                                          color: '#eee'
@@ -187,7 +191,7 @@ const DataTableSort = ({
                                                 marginLeft: leftMargins[column.align],
                                                 marginRight: rightMargins[column.align]
                                             }}>
-                                                <nobr>{linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '')}</nobr>
+                                                {linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '')}
                                             </div>
                                         </TableCell>
                                         : <TableCell key={index + 1} style={{border: 0}}/>
