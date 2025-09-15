@@ -37769,7 +37769,7 @@
         "model": "M3 Camlock"
       }
     ],
-    "version": "***",
+    "version": "4 or more pins ***",
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
@@ -39452,7 +39452,7 @@
         "model": "FB"
       }
     ],
-    "version": "≥12 pins",
+    "version": "12 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -41417,7 +41417,7 @@
         "model": "Z"
       }
     ],
-    "version": "≥2 standard drivers",
+    "version": "2 or more standard drivers",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],

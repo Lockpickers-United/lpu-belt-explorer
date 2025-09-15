@@ -32510,7 +32510,7 @@
       "Active sidebar"
     ],
     "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
-    "version": "***",
+    "version": "4 or more pins ***",
     "views": 2651,
     "lastUpdated": "2025-03-19T01:20:51.383Z",
     "links": [
@@ -34109,7 +34109,7 @@
         "model": "FB"
       }
     ],
-    "version": "≥12 pins",
+    "version": "12 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -35856,7 +35856,7 @@
         "model": "Z"
       }
     ],
-    "version": "≥2 standard drivers",
+    "version": "2 or more standard drivers",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
