@@ -12,7 +12,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import RaffleContext from '../RaffleContext.jsx'
 
 function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
-    const allPots = useContext(RaffleContext)
+    const {allPots} = useContext(RaffleContext)
     const {isMobile, flexStyle} = useWindowSize()
     const isMobileFalse = false
     const style = {maxWidth: 700}
@@ -52,8 +52,7 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
         let itemPotNumbers = {}
         let itemFormIds = {}
 
-        allPots.allPots
-            .filter(item => item.formId > 0)
+        allPots
             .sort((a, b) => {
                 return parseInt(a.potNumber) - parseInt(b.potNumber)
                     || a.title.localeCompare(b.title)

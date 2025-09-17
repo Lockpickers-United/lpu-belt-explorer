@@ -6,29 +6,32 @@ import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
 import {setDeepUnique} from '../../util/setDeep'
 import DBContext from '../../app/DBContext.jsx'
+import RaffleContext from '../RaffleContext.jsx'
 
 export function RaffleAdminDataProvider({children}) {
+
+    const globalContext = useContext(DataContext)
+
     const {allEntries, entriesLoaded} = useContext(DBContext)
+    const {allPots} = useContext(RaffleContext)
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
-    const visibleEntries = useMemo(() => {
-
+    const mappedEntries = useMemo(() => {
         let charityNames = {}
         let potNames = {}
 
         allEntries.forEach(entry => {
             entry.donations.forEach(donation => {
                 setDeepUnique(charityNames, [entry.id], donation.charity.itemFullTitle)
-            },[])
+            }, [])
             entry.pots.forEach(pot => {
                 setDeepUnique(potNames, [entry.id], pot.itemTitle)
-            },[])
-        },{})
+            }, [])
+        }, {})
 
-
-        const mappedEntries = allEntries
+        return allEntries
             .map(entry => ({
                 ...entry,
                 charities: charityNames[entry.id] || [],
@@ -36,11 +39,42 @@ export function RaffleAdminDataProvider({children}) {
                 fuzzy: removeAccents([
                     entry.username,
                     ...charityNames[entry.id],
-                    ...potNames[entry.id],
-                ].join(',')),
+                    ...potNames[entry.id]
+                ].join(','))
             }))
 
-        console.log('mappedEntries', mappedEntries)
+    }, [allEntries])
+
+    const flatEntries = useMemo(() => {
+        return mappedEntries.reduce((acc, entry) => {
+            entry.pots.forEach(pot => {
+                acc.push({
+                    username: entry.username,
+                    entryId: entry.id,
+                    platform: entry.platform,
+                    potId: pot.itemId,
+                    potTickets: pot.tickets
+                })
+            })
+            return acc
+        }, [])
+    }, [mappedEntries])
+
+    const potEntries = useMemo(() => {
+        return allPots.map((pot) => {
+            const entriesForPot = flatEntries.filter(e => e.potId === pot.id)
+            if (entriesForPot.length > 0) {
+                pot.entrants = entriesForPot
+            }
+            return pot
+        }, [])
+    }, [allPots, flatEntries])
+
+    console.log('potEntries', potEntries)
+
+
+    const visibleEntries = useMemo(() => {
+        if (!entriesLoaded) return []
 
         // Filters as an array
         const filterArray = Object.keys(filters)
@@ -51,7 +85,6 @@ export function RaffleAdminDataProvider({children}) {
                     : {key, value}
             })
             .flat()
-
 
         // Filter the data
         const filtered = mappedEntries
@@ -89,19 +122,21 @@ export function RaffleAdminDataProvider({children}) {
             : searched.sort((a, b) => {
                 return dayjs(a.createdAt).isBefore(dayjs(b.createdAt)) ? 1 : -1
             })
-    }, [allEntries, filters, search, sort])
+    }, [entriesLoaded, filters, mappedEntries, search, sort])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
     const value = useMemo(() => ({
+        ...globalContext,
         allEntries,
         visibleEntries,
+        potEntries,
         getPotFromId,
         expandAll,
         statusLabels
-    }), [allEntries, visibleEntries, getPotFromId, expandAll])
+    }), [globalContext, allEntries, visibleEntries, potEntries, getPotFromId, expandAll])
 
     return (
         <DataContext.Provider value={value}>
@@ -124,7 +159,7 @@ export const statusLabels = {
     pending: {entryColor: 'Blue', backgroundColor: '#3e71bd', textColor: '#fff'},
     approved: {entryColor: 'Green', backgroundColor: '#34732f', textColor: '#fff'},
     issues: {entryColor: 'Orange', backgroundColor: '#e16936', textColor: '#fff'},
-    rejected: {entryColor: 'Red', backgroundColor: '#c52323', textColor: '#fff'},
+    rejected: {entryColor: 'Red', backgroundColor: '#c52323', textColor: '#fff'}
 }
 
 export const statusSimpleColors = {

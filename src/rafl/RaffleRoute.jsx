@@ -8,7 +8,7 @@ import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import RaffleDataProvider from './RaffleDataProvider.jsx'
-import RafflePage from './RafflePage.jsx'
+import RaffleEntries from './RaffleEntries.jsx'
 import {useSearchParams} from 'react-router-dom'
 import RafffleEntry from './RaffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
@@ -79,7 +79,7 @@ function RaffleRoute() {
                                 <RafflePreviewBar refresh={refresh}/>
                             }
 
-                            <RafflePage profile={lockCollection}/>
+                            <RaffleEntries profile={lockCollection}/>
 
                             <Footer/>
                         </React.Fragment>

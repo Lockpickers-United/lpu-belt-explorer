@@ -10,12 +10,14 @@ import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
 import ExpandAllButton from './ExpandAllButton.jsx'
 
-function RafflePage({profile}) {
+function RaffleEntries({profile, allPots, drawing = false}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
 
-    console.log('visibleEntries', visibleEntries)
+    const activeEntries = allPots || visibleEntries || []
+
+    console.log('activeEntries', activeEntries)
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
         setExpanded(id)
@@ -24,25 +26,33 @@ function RafflePage({profile}) {
     return (
 
         <div style={{paddingBottom: 32}}>
-
-            <RaffleIntroBar/>
+            {!drawing &&
+                <RaffleIntroBar/>
+            }
 
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
 
             <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
 
-            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems: 'center', marginTop: 4, marginBottom: 4}}>
+            <div style={{
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                justifyItems: 'center',
+                marginTop: 4,
+                marginBottom: 4
+            }}>
                 <ExpandAllButton/>
             </div>
 
-            {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
+            {activeEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
-            {visibleEntries.map(entry =>
+            {activeEntries.map(entry =>
                 <RaffleEntry
                     key={entry.id}
                     entry={entry}
                     onExpand={handleExpand}
                     expanded={entry.id === defExpanded || !!expandAll}
+                    drawing={drawing}
                 />
             )}
 
@@ -54,4 +64,4 @@ function RafflePage({profile}) {
     )
 }
 
-export default RafflePage
+export default RaffleEntries

@@ -4,7 +4,7 @@ import {
     doc,
     onSnapshot,
     collection,
-    addDoc,
+    addDoc
 } from 'firebase/firestore'
 import AuthContext from '../app/AuthContext'
 import dayjs from 'dayjs'
@@ -50,7 +50,6 @@ export function DBProviderRaffle({children}) {
     // SUMMARY SUBSCRIPTION (stable onSnapshot managed by effect)
     const [summaryData, setSummaryData] = useState({})
     const [summaryLoaded, setSummaryLoaded] = useState(false)
-
     useEffect(() => {
         if (!(authLoaded && isLoggedIn && !!user)) {
             setSummaryLoaded(false)
@@ -75,6 +74,34 @@ export function DBProviderRaffle({children}) {
         return () => unsubscribe()
     }, [authLoaded, isLoggedIn, user])
 
+    // WINNERS SUBSCRIPTION
+    // TODO - make this only load after raffle is over
+    const [winnerData, setWinnerData] = useState({})
+    const [winnersLoaded, setWinnersLoaded] = useState(false)
+    useEffect(() => {
+        if (!(authLoaded && isLoggedIn && !!user)) {
+            setWinnersLoaded(false)
+            setWinnerData({})
+            return
+        }
+        const docRef = doc(db, 'data-cache', 'raffle-winners')
+        const unsubscribe = onSnapshot(docRef, docSnap => {
+            const data = docSnap.exists() ? docSnap.data() : null
+            setWinnerData(data || {})
+            setWinnersLoaded(true)
+            setDbLoaded(true)
+            console.log('DB, raffle winners loaded')
+        }, error => {
+            console.error('Error listening to DB:', error)
+            setDbError(true)
+            enqueueSnackbar('There was a problem reading raffle data. It will be unavailable until you refresh the page. ', {
+                autoHideDuration: null,
+                action: <Button color='secondary' onClick={() => location.reload()}>Refresh</Button>
+            })
+        })
+        return () => unsubscribe()
+    }, [authLoaded, isLoggedIn, user])
+
     // value & provider
     const value = useMemo(() => ({
         ...globalContext,
@@ -84,8 +111,10 @@ export function DBProviderRaffle({children}) {
         profile,
         summaryData,
         summaryLoaded,
-        dbError,
-    }), [globalContext, createRaffleEntry, dbLoaded, profile, summaryData, summaryLoaded, dbError])
+        winnerData,
+        winnersLoaded,
+        dbError
+    }), [globalContext, createRaffleEntry, dbLoaded, profile, summaryData, summaryLoaded, winnerData, winnersLoaded, dbError])
 
     return (
         <DBContext.Provider value={value}>

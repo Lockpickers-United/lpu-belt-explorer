@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useMemo, useState} from 'react'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {raffleEntryFilterFields} from '../../data/filterFields'
 import AuthContext from '../../app/AuthContext'
@@ -9,17 +9,17 @@ import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
 import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
 import RaffleContext from '../RaffleContext.jsx'
-import RaffleSubmittedEntriesList from './RaffleSubmittedEntriesList.jsx'
 import {RaffleAdminDBProvider} from './RaffleAdminDBContext.jsx'
-import RaffleEntryForm from '../entryForm/RaffleEntryForm.jsx'
-import RaffleHeader from '../RaffleHeader.jsx'
+import RaffleHeaderDrawing from './RaffleHeaderDrawing.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import SignInButton from '../../auth/SignInButton.jsx'
+import RandomLockGrid from './RandomLockGrid.jsx'
+import RaffleDrawingFunctions from './RaffleDrawingFunctions.jsx'
+import RaffleDrawingEntries from './RaffleDrawingEntries.jsx'
 
 function RaffleAdminRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
-    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
-
+    const {authLoaded, isLoggedIn, user, lockCollection} = useContext(AuthContext)
 
     useEffect(() => {
         if (raffleAdmin) setRaffleAdminRole(true)
@@ -40,7 +40,7 @@ function RaffleAdminRoute() {
     if (authLoaded && !raffleAdmin) return (
         <React.Fragment>
             <Nav title='RAFL Admin' extras={extras}/>
-            <RaffleHeader page={'RAFL Admin'}/>
+            <RaffleHeaderDrawing page={'drawing'}/>
             <div style={{padding: 20}}>
                 {!isLoggedIn && <div>Please log in to access this page.</div>}
                 {isLoggedIn && !raffleAdmin && <div>Sorry, you do not have access to this page.</div>}
@@ -56,17 +56,17 @@ function RaffleAdminRoute() {
                 <RaffleAdminDataProvider>
                     <React.Fragment>
                         <Nav title='RAFL Admin' extras={extras}/>
-                        <RaffleHeader page={'admin'}/>
+                        <RaffleHeaderDrawing page={'drawing'}/>
 
-
+                        <RaffleDrawingFunctions />
 
                         {raffleAdmin && !editEntryId &&
-                            <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
+                            <RaffleDrawingEntries/>
                         }
 
-                        {raffleAdmin && !!editEntryId &&
-                            <RaffleEntryForm editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
-                        }
+                        <div style={{maxWidth: 800, margin: '0 auto'}}>
+                            <RandomLockGrid/>
+                        </div>
 
                         <Footer/>
 

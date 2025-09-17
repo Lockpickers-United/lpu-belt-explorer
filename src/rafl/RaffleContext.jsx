@@ -9,17 +9,23 @@ import collectionOptions from '../data/collectionTypes'
 import {useLocalStorage} from 'usehooks-ts'
 import dayjs from 'dayjs'
 import raflHistoricalDonations from './raflHistoricalDonations.json'
-import {setDeepPush} from '../util/setDeep'
+import {setDeepAdd, setDeepPush} from '../util/setDeep'
 
 const RaffleContext = React.createContext({})
+
+const maxPots = 1
 
 export function RaffleProvider({children}) {
 
     const {VITE_RAFL_STATE: raflState} = import.meta.env
     // preview, setup, live, post, hidden
     const [preview, setPreview] = useLocalStorage('previewMode', false)
-    const {lockCollection, summaryData} = useContext(DBContext)
-    const summary = useMemo(() => { return {...summaryData}},[summaryData])
+    const {lockCollection, summaryData, winnerData} = useContext(DBContext)
+    const summary = useMemo(() => {
+        return {...summaryData}
+    }, [summaryData])
+
+    console.log('winnerData', winnerData)
 
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
@@ -49,7 +55,10 @@ export function RaffleProvider({children}) {
             const date = day + ' 23:59:59'
             if (dayjs(date).isBefore(dayjs(startDate))) return acc
             setDeepPush(acc, ['totalEntries'], {x: date, y: summary.entriesByDate[day].totalEntries})
-            setDeepPush(acc, ['cumulativeUniqueDonors'], {x: date, y: summary.entriesByDate[day].cumulativeUniqueDonors})
+            setDeepPush(acc, ['cumulativeUniqueDonors'], {
+                x: date,
+                y: summary.entriesByDate[day].cumulativeUniqueDonors
+            })
             setDeepPush(acc, ['totalDonations'], {x: date, y: summary.entriesByDate[day].totalDonations})
             setDeepPush(acc, ['cumulativeDonations'], {x: date, y: summary.entriesByDate[day].cumulativeDonations})
             return acc
@@ -70,7 +79,7 @@ export function RaffleProvider({children}) {
             : raflData
         return potEntries
             .map(entry => {
-                const potWinners = summary.winners?.[entry.id] ? summary.winners[entry.id] : []
+                const potWinners = winnerData?.[entry.id] || []
                 return {
                     ...entry,
                     ...summary.pots?.[entry.id],
@@ -79,7 +88,7 @@ export function RaffleProvider({children}) {
                         entry.title,
                         entry.keywords,
                         ...entry.contributedBy,
-                        ...potWinners,
+                        // ...potWinners,
                         entry.potContents
                     ].join(',')),
                     collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
@@ -88,6 +97,11 @@ export function RaffleProvider({children}) {
                 }
             })
     }, [preview, allDataLoaded, raflPreviewPots, summary, lockCollection])
+
+    // Precompute helper structures for winners: counts and a Set for fast checks
+    const winnerCounts = useMemo(() => ({...(summary.winnerCounts || {})}), [summary.winnerCounts])
+    const multipleWinners = useMemo(() => ([...(summary.multipleWinners || [])]), [summary.multipleWinners])
+    const multipleWinnerSet = useMemo(() => new Set(multipleWinners), [multipleWinners])
 
     const allCharities = useMemo(() => {
         return raflCharities
@@ -101,9 +115,24 @@ export function RaffleProvider({children}) {
                 donations: summary.charities?.[entry.id]?.totalDonations,
                 donationsText: `$${summary.charities?.[entry.id]?.totalDonations}`,
                 donations2024text: entry.donations2024 ? '$' + entry.donations2024.toLocaleString() : '0',
-                donations2025text: entry.donations2025 ? '$' + entry.donations2025.toLocaleString() : '0',
+                donations2025text: entry.donations2025 ? '$' + entry.donations2025.toLocaleString() : '0'
             }))
     }, [summary.charities])
+
+    const winnerList = useMemo(() => {
+        if (!winnerData) return {}
+        return Object.keys(winnerData).reduce((acc, potId) => {
+            winnerData[potId].forEach(winner => {
+                const winnerName = `${winner?.username || ''}|${winner?.platform || ''}`.trim()
+                setDeepAdd(acc, [winnerName], 1)
+            })
+            return acc
+        }, {})
+    }, [winnerData])
+    console.log('winnerList', winnerList)
+
+    const excessWinners = Object.keys(winnerList).filter(k => (winnerList[k] || 0) > maxPots).sort((a, b) => a.localeCompare(b))
+    console.log('excessWinners', excessWinners)
 
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(false)
@@ -127,6 +156,9 @@ export function RaffleProvider({children}) {
         allPots,
         allCharities,
         summary,
+        winnerCounts,
+        multipleWinners,
+        multipleWinnerSet,
         displayStats, setDisplayStats,
         toggleStats,
         animateTotal, setAnimateTotal,
@@ -135,12 +167,15 @@ export function RaffleProvider({children}) {
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
         raflState,
-        preview, setPreview, refresh,
+        preview, setPreview, refresh
     }), [
         allDataLoaded,
         allPots,
         allCharities,
         summary,
+        winnerCounts,
+        multipleWinners,
+        multipleWinnerSet,
         displayStats, setDisplayStats,
         toggleStats,
         animateTotal, setAnimateTotal,
@@ -149,7 +184,7 @@ export function RaffleProvider({children}) {
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
         raflState,
-        preview, setPreview, refresh,
+        preview, setPreview, refresh
     ])
 
     return (

@@ -94,9 +94,32 @@ export function RaffleAdminDBProvider({children}) {
                 entry.pots.forEach(pot => {
                     setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
                     setDeepUnique(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+                    // If winners are recorded on the pot, track them in summary
+                    if (Array.isArray(pot.winners)) {
+                        pot.winners.forEach(winner => {
+                            const key = winner?.key || `${winner?.username || winner?.name || 'unknown'}|${winner?.platform || entry.platform || 'unknown'}`
+                            const label = winner?.label || winner?.name || winner?.username || 'unknown'
+                            setDeepUnique(acc, ['winners', [pot.itemId]], label)
+                            setDeepAdd(acc, ['winnerCounts', [key]], 1)
+                        })
+                    }
                 }, [])
+                // Also support entry-level winners (if present)
+                if (Array.isArray(entry.winners)) {
+                    entry.winners.forEach(winner => {
+                        const key = winner?.key || `${winner?.username || winner?.name || 'unknown'}|${winner?.platform || entry.platform || 'unknown'}`
+                        const label = winner?.label || winner?.name || winner?.username || 'unknown'
+                        setDeepUnique(acc, ['winners', [entry.id]], label)
+                        setDeepAdd(acc, ['winnerCounts', [key]], 1)
+                    })
+                }
                 return acc
             }, {})
+
+        // compute multipleWinners list from winnerCounts (two or more)
+        const multipleWinners = Object.entries(summary.winnerCounts || {})
+            .filter(([, count]) => (count || 0) >= 2)
+            .map(([key]) => key)
 
         // delete identifying info from summary
         summary.uniqueDonorCount = summary.uniqueDonors.length || 0
@@ -121,7 +144,8 @@ export function RaffleAdminDBProvider({children}) {
             totalEntries: 0,
             totalDonations: 0,
             totalTickets: 0,
-            ...summary
+            ...summary,
+            multipleWinners
         }
         summary.updatedAt = dayjs().toISOString()
         return summary
@@ -167,6 +191,25 @@ export function RaffleAdminDBProvider({children}) {
         return true
     }, [authLoaded, isLoggedIn, raffleAdmin, dbError])
 
+
+    const updateRaffleWinners = useCallback(async (potId, winners, snackbar = true) => {
+        if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
+        const ref = doc(db, 'data-cache', 'raffle-winners')
+        try {
+            await setDoc(ref, {[potId]: winners}, {merge: true})
+            snackbar && enqueueSnackbar('RAFL Winners Updated.')
+        } catch (error) {
+            console.error('Error listening to DB:', error)
+            setDbError(true)
+            enqueueSnackbar('There was a problem saving the raffle winners. Please try refreshing the page. ', {
+                autoHideDuration: null,
+                action: <Button color='secondary' onClick={() => location.reload()}>Refresh</Button>
+            })
+        }
+        return true
+    }, [authLoaded, isLoggedIn, raffleAdmin, dbError])
+
+
     const deleteRaffleEntry = useCallback(async (entry) => {
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
         if (!entry || !entry.id) throw new Error('deleteRaffleEntry requires an entry with an id')
@@ -196,7 +239,8 @@ export function RaffleAdminDBProvider({children}) {
         profile,
         allEntries,
         updateRaffleEntry,
-        deleteRaffleEntry
+        deleteRaffleEntry,
+        updateRaffleWinners
     }), [
         globalContext,
         subscribedEntries,
@@ -206,7 +250,8 @@ export function RaffleAdminDBProvider({children}) {
         profile,
         allEntries,
         updateRaffleEntry,
-        deleteRaffleEntry
+        deleteRaffleEntry,
+        updateRaffleWinners
     ])
 
     return (
