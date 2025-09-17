@@ -7,14 +7,14 @@ import Footer from '../../nav/Footer'
 import Nav from '../../nav/Nav'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
-import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import RaffleSubmittedEntriesList from './RaffleSubmittedEntriesList.jsx'
-import {RaffleAdminDBProvider} from './RaffleAdminDBContext.jsx'
 import RaffleEntryForm from '../entryForm/RaffleEntryForm.jsx'
 import RaffleHeader from '../RaffleHeader.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import SignInButton from '../../auth/SignInButton.jsx'
+import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
+import RaffleHeaderAdmin from './RaffleHeaderAdmin.jsx'
 
 function RaffleAdminRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
@@ -52,28 +52,23 @@ function RaffleAdminRoute() {
 
     return (
         <FilterProvider filterFields={raffleEntryFilterFields}>
-            <RaffleAdminDBProvider>
-                <RaffleAdminDataProvider>
-                    <React.Fragment>
-                        <Nav title='RAFL Admin' extras={extras}/>
-                        <RaffleHeader page={'admin'}/>
+            <RaffleAdminDataProvider>
+                <Nav title='RAFL Admin' extras={extras}/>
+                <RaffleHeaderAdmin page={'entries'}/>
 
 
+                {raffleAdmin && !editEntryId &&
+                    <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
+                }
 
-                        {raffleAdmin && !editEntryId &&
-                            <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
-                        }
+                {raffleAdmin && !!editEntryId &&
+                    <RaffleEntryForm editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
+                }
 
-                        {raffleAdmin && !!editEntryId &&
-                            <RaffleEntryForm editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
-                        }
+                <Footer/>
 
-                        <Footer/>
-
-                        <Tracker feature='raflAdmin'/>
-                    </React.Fragment>
-                </RaffleAdminDataProvider>
-            </RaffleAdminDBProvider>
+                <Tracker feature='raflAdmin'/>
+            </RaffleAdminDataProvider>
         </FilterProvider>
     )
 }

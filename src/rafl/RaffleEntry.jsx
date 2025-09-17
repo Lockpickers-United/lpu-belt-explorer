@@ -75,7 +75,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.6 : 1
+    const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.5 : 1
 
     const shipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29'}
     entry.USShip = 'Yes'

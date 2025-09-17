@@ -10,7 +10,6 @@ import ExpandAllButton from '../ExpandAllButton.jsx'
 import RaffleSubmittedEntry from './RaffleSubmittedEntry.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
-import RaffleDrawingFunctions from './RaffleDrawingFunctions.jsx'
 
 function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
     const {filters} = useContext(FilterContext)
@@ -33,9 +32,6 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
     return (
 
         <div style={{paddingBottom: 32}}>
-
-            <RaffleDrawingFunctions/>
-
             <div style={{...style, paddingBottom:0, backgroundColor: '#333'}}>
                 <div style={{padding: '4px 4px 4px 4px'}}>
                     <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 0}}>

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import RaffleContext from '../RaffleContext.jsx'
 import {useNavigate} from 'react-router-dom'
 
-export default function RaffleHeaderDrawing({page}) {
+export default function RaffleHeaderAdmin({page}) {
 
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
@@ -33,9 +33,6 @@ export default function RaffleHeaderDrawing({page}) {
         fontWeight: 700,
         display: flexStyle
     }
-
-
-
 
     return (
         <React.Fragment>
@@ -67,7 +64,36 @@ export default function RaffleHeaderDrawing({page}) {
                                         fontSize: buttonFontSize
                                     }}
                                     disabled={page === 'drawing'}>
-                                SELECT WINNERS
+                                DRAW WINNERS
+                            </Button>
+                        </span>
+                    </Tooltip>
+
+                    <Tooltip title={'Raffle Reports'} arrow disableFocusListener style={{}}>
+                        <span>
+                            <Button onClick={() => handleChange('/rafl/reports')}
+                                    style={{
+                                        marginRight: 10,
+                                        color: page === 'reports' ? '#fff' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}
+                                    disabled={page === 'reports'}>
+                                REPORTS
+                            </Button>
+                        </span>
+                    </Tooltip>
+
+
+                    <Tooltip title={'Raffle Entries'} arrow disableFocusListener style={{}}>
+                        <span>
+                            <Button onClick={() => handleChange('/rafl/admin')}
+                                    style={{
+                                        marginRight: 10,
+                                        color: page === 'entries' ? '#fff' : '#ccc',
+                                        fontSize: buttonFontSize
+                                    }}
+                                    disabled={page === 'entries'}>
+                                ENTRIES
                             </Button>
                         </span>
                     </Tooltip>

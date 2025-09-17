@@ -80,6 +80,8 @@ export function RaffleProvider({children}) {
         return potEntries
             .map(entry => {
                 const potWinners = winnerData?.[entry.id] || []
+                const winnerUsernames = potWinners.map(w => w?.username).filter(u => !!u)
+                const winnerEntryIds = potWinners.map(w => w?.entryId).filter(u => !!u)
                 return {
                     ...entry,
                     ...summary.pots?.[entry.id],
@@ -93,10 +95,12 @@ export function RaffleProvider({children}) {
                     ].join(',')),
                     collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
                     sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber),
-                    winners: potWinners
+                    winners: potWinners,
+                    winnerUsernames,
+                    winnerEntryIds
                 }
             })
-    }, [preview, allDataLoaded, raflPreviewPots, summary, lockCollection])
+    }, [preview, allDataLoaded, raflPreviewPots, winnerData, summary.pots, lockCollection])
 
     // Precompute helper structures for winners: counts and a Set for fast checks
     const winnerCounts = useMemo(() => ({...(summary.winnerCounts || {})}), [summary.winnerCounts])

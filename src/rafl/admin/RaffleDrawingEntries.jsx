@@ -7,14 +7,16 @@ import DataContext from '../../context/DataContext.jsx'
 export default function RaffleDrawingEntries() {
 
     const {lockCollection} = useContext(AuthContext)
-    const {potEntries} = useContext(DataContext)
+    const {visiblePotEntries} = useContext(DataContext)
+
+    console.log('RaffleDrawingEntries visiblePotEntries', visiblePotEntries)
 
     const drawPots = useMemo(() => {
-        return potEntries.filter(pot => pot.entrants?.length > 0)
-    },[potEntries])
+        return visiblePotEntries?.filter(pot => pot.entrants?.length > 0)
+    },[visiblePotEntries])
 
-    console.log('RaffleDrawingEntries potEntries', potEntries)
     console.log('RaffleDrawingEntries drawPots', drawPots)
+
 
     return (
         <RaffleEntries profile={lockCollection} allPots={drawPots} drawing={true}/>

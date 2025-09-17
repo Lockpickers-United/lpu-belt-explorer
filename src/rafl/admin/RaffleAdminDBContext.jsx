@@ -27,7 +27,7 @@ export function RaffleAdminDBProvider({children}) {
     const globalContext = useContext(DBContextRaffle)
 
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
-    const {profile} = useContext(DBContext)
+    const {profile, winnerData} = useContext(DBContext)
     const {raffleAdmin} = useContext(RaffleContext)
 
     const [dbError, setDbError] = useState(null)
@@ -94,6 +94,11 @@ export function RaffleAdminDBProvider({children}) {
                 entry.pots.forEach(pot => {
                     setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
                     setDeepUnique(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+
+
+
+
+
                     // If winners are recorded on the pot, track them in summary
                     if (Array.isArray(pot.winners)) {
                         pot.winners.forEach(winner => {
@@ -150,25 +155,6 @@ export function RaffleAdminDBProvider({children}) {
         summary.updatedAt = dayjs().toISOString()
         return summary
     }, [])
-
-    const saveSummary = useCallback(async () => {
-        if (dbError || !(authLoaded && isLoggedIn && raffleAdmin) || !entriesLoaded) return false
-        const ref = doc(db, 'data-cache', 'raffle-entries-summary')
-        await setDoc(ref, getSummary(allEntries))
-    }, [allEntries, authLoaded, dbError, entriesLoaded, getSummary, isLoggedIn, raffleAdmin])
-
-    const initialSummarySavedRef = useRef(false)
-    useEffect(() => {
-        if (!entriesLoaded) return
-        if (!initialSummarySavedRef.current) {
-            initialSummarySavedRef.current = true
-            return
-        }
-        // save summary whenever entries change after the initial load
-        saveSummary().catch(e => console.error('Error saving summary:', e))
-    }, [allEntries, entriesLoaded, saveSummary])
-
-    if (entriesLoaded) console.log('getSummary', getSummary(allEntries))
 
     const updateRaffleEntry = useCallback(async (entry, snackbar = true) => {
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
@@ -228,6 +214,26 @@ export function RaffleAdminDBProvider({children}) {
             return false
         }
     }, [authLoaded, isLoggedIn, raffleAdmin, dbError])
+
+    const saveSummary = useCallback(async () => {
+        if (dbError || !(authLoaded && isLoggedIn && raffleAdmin) || !entriesLoaded) return false
+        const ref = doc(db, 'data-cache', 'raffle-entries-summary')
+        await setDoc(ref, getSummary(allEntries))
+    }, [allEntries, authLoaded, dbError, entriesLoaded, getSummary, isLoggedIn, raffleAdmin])
+
+    const initialSummarySavedRef = useRef(false)
+    useEffect(() => {
+        if (!entriesLoaded) return
+        if (!initialSummarySavedRef.current) {
+            initialSummarySavedRef.current = true
+            return
+        }
+        // save summary whenever entries change after the initial load
+        saveSummary().catch(e => console.error('Error saving summary:', e))
+    }, [allEntries, entriesLoaded, saveSummary, winnerData])
+
+    if (entriesLoaded) console.log('getSummary', getSummary(allEntries))
+
 
     // value & provider
     const value = useMemo(() => ({

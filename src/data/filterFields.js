@@ -43,22 +43,22 @@ export const scorecardExploreFilterFields = [
 ]
 
 export const raffleFilterFields = [
-    {label: 'Winner', fieldName: 'winner'},
+    {label: 'Winner', fieldName: 'winnerUsernames'},
     {label: 'Watchlist', fieldName: 'collection', userBased: true},
     {label: 'Tag', fieldName: 'tags'},
     {label: 'Contributor', fieldName: 'contributedBy'},
     {label: 'Country', fieldName: 'country'},
     {label: 'Shipping Type', fieldName: 'shippingType'},
-    {label: 'Split Shipping', fieldName: 'splitShipping'},
+    {label: 'Split Shipping', fieldName: 'splitShipping'}
 ]
 
-const statusList = [
-    'pending',
-    'approved',
-    'issues',
-    'rejected'
-]
-const raffleStatusSort = (a, b) => {
+export const raffleStatusSort = (a, b) => {
+    const statusList = [
+        'pending',
+        'approved',
+        'issues',
+        'rejected'
+    ]
     return statusList.indexOf(a) - statusList.indexOf(b)
 }
 
@@ -66,9 +66,8 @@ export const raffleEntryFilterFields = [
     {label: 'Status', fieldName: 'status', sort: raffleStatusSort},
     {label: 'Charity', fieldName: 'charities'},
     {label: 'Pot Name', fieldName: 'potNames'},
-    {label: 'Contributor', fieldName: 'contributedBy'},
     {label: 'Platform', fieldName: 'platform'},
-    {label: 'Winner', fieldName: 'winner'},
+    {label: 'Belt', fieldName: 'belt', sort: beltSort}
 ]
 
 export const lockRequestFilterFields = [
@@ -77,7 +76,7 @@ export const lockRequestFilterFields = [
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Assigned Belt', fieldName: 'belt', sort: beltSort},
     {label: 'Suggested Belt', fieldName: 'approximateBelt', sort: beltSort},
-    {label: 'User Belt', fieldName: 'userBelt', sort: beltSort},
+    {label: 'User Belt', fieldName: 'userBelt', sort: beltSort}
 ]
 
 

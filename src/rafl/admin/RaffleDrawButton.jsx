@@ -63,6 +63,9 @@ export default function RaffleDrawButton({entry}) {
 
     const {updateRaffleWinners, updateRaffleEntry} = useContext(DBContext)
 
+    const drawingText = (entry.winnerCount > 1) ? 'WINNERS' : 'WINNER'
+
+
     const [winners, setWinners] = useState([])
     const [winnerCounts, setWinnerCounts] = useState({})
 
@@ -100,7 +103,7 @@ export default function RaffleDrawButton({entry}) {
                                 fontWeight: 600, fontSize: '0.9rem', marginTop: !isMobile ? -3 : 0,
                                 whiteSpace: 'nowrap', width: 135
                             }}>
-                        Draw Winners
+                        DRAW {drawingText}
                     </Button>
                 </div>
             }
