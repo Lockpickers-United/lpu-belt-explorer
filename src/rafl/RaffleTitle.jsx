@@ -8,39 +8,44 @@ import FilterContext from '../context/FilterContext.jsx'
 function RaffleTitle({entry, drawing = false}) {
     if (!entry) return null
 
-    const {raflState, raffleAdminRole} = useContext(RaffleContext)
+    const {raflState, raffleAdminRole, excessWinners} = useContext(RaffleContext)
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
-    const {addFilter} = useContext(FilterContext)
-
+    const {setFilters} = useContext(FilterContext)
 
     const {isMobile, flexStyle} = useWindowSize()
 
     let entryName = entry.displayName ? entry.displayName : entry.title
     const winnersText = (entry.winnerCount > 1 && entry.winners?.length === 0) ? ` (${entry.winnerCount} winners)` : ''
+    const winnersPlural = (entry.winnerCount > 1) ? 'Winners' : 'Winner'
 
-    const openWinnerPots = useCallback((event, entryId) => {
+    // Function to open winner pots filter
+    const openWinnerPots = useCallback((event, entry) => {
         if (event && typeof event.preventDefault === 'function') event.preventDefault()
         if (event && typeof event.stopPropagation === 'function') event.stopPropagation()
-
-        console.log('openWinnerPots entryId:', entryId)
-        addFilter('winnerEntryIds', entryId, true)
-    },[addFilter])
+        console.log('openWinnerPots entryId:', entry)
+        const winnerFilter = `${entry?.username} (${entry?.platform})`
+        setFilters({winnerFilterNames: winnerFilter})
+    }, [setFilters])
 
     const winnerList = Array.isArray(entry.winners)
         ? <React.Fragment>
             {entry.winners.map((winner, index) => {
-                return <span key={winner.id}>
-                    <Link style={{color: '#fff'}} onClick={(e) => openWinnerPots(e, winner.entryId)}>{winner.username}</Link>
-                    {index < entry.winners.length - 1 ? ', ' : ''}
-                    </span>
+                return <div key={index}>
+                    <div style={{display: 'flex', justifyContent: 'right'}}>
+                        {index === 0 && <span style={{fontWeight: 400}}>{winnersPlural}:&nbsp;</span>}
+                        <Link style={{color: excessWinners.includes(winner.entryId) ? '#f35454' : '#fff'}}
+                              onClick={(e) => openWinnerPots(e, winner)}>{winner.username}</Link>
+                        {excessWinners.includes(winner.entryId) &&
+                            <RaffleDrawButton entry={entry} redrawId={winner.entryId}/>
+                        }
+                    </div>
+                </div>
             })
             }
         </React.Fragment>
         : undefined
 
-
-    const winnerSuffix = entry.winners?.length > 1 ? 's' : ''
-    const winnerAlign = isMobile ? 'left' : 'right'
+    const winnerAlign = isMobile ? 'center' : 'right'
 
     const marginBottom = drawing ? 15 : 0
     const diameter = !isMobile ? 30 : 28
@@ -50,10 +55,10 @@ function RaffleTitle({entry, drawing = false}) {
 
     const titleSize = !isMobile ? '1.4rem' : '1.3rem'
     const titleLineHeight = !isMobile ? '1.8rem' : '1.6rem'
-    const winnerSize = !isMobile ? '1.3rem' : '1.2rem'
+    const winnerSize = !isMobile ? '1.2rem' : '1.1rem'
 
     return (
-        <div style={{display: 'flex', alignItems: 'center', width: '100%', marginBottom: marginBottom}}>
+        <div style={{display: 'flex', placeItems: 'center', width: '100%', marginBottom: marginBottom}}>
             {showFull &&
                 <div style={{
                     borderRadius: '50%',
@@ -78,17 +83,18 @@ function RaffleTitle({entry, drawing = false}) {
                     }}>{entry.potNumber}</div>
                 </div>
             }
-            <div style={{display: flexStyle, flexGrow: 1, placeItems: 'center'}}>
+            <div style={{display: flexStyle, flexDirection:'row', flexGrow: 1, placeItems: 'center'}}>
                 <div style={{
                     display: 'flex',
                     fontWeight: 500,
                     fontSize: titleSize,
                     lineHeight: titleLineHeight,
                     marginTop: !isMobile ? -3 : 0,
+                    flexDirection:'row',
                     flexGrow: 1
                 }}>
-                    {entryName} &nbsp;
-                    <nobr>{winnersText}</nobr>
+                    {entryName}
+                    <nobr>&nbsp;&nbsp;{winnersText}</nobr>
                 </div>
 
                 <div style={{
@@ -101,17 +107,16 @@ function RaffleTitle({entry, drawing = false}) {
                     textAlign: winnerAlign
                 }}>
                     {entry.winners?.length > 0 &&
-                        <span><span style={{fontWeight: 400}}>Winner{winnerSuffix}</span>: {winnerList}</span>
+                        <div>{winnerList}</div>
                     }
                 </div>
 
                 {drawing &&
-                    <RaffleDrawButton entry={entry}/>
+                    <RaffleDrawButton entry={entry} drawing={drawing}/>
                 }
             </div>
         </div>
     )
-
 }
 
 export default RaffleTitle

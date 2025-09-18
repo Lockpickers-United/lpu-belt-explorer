@@ -3,7 +3,15 @@ import Dialog from '@mui/material/Dialog'
 import CancelIcon from '@mui/icons-material/Cancel'
 import IconButton from '@mui/material/IconButton'
 
+// <DisplayDialog dialogContent={dialogContent} open={showDialog} handleClose={handleDialogClose} width={400}/>
+
 export default function DisplayDialog({dialogContent, open, handleClose, width=350}) {
+
+    const stopClick = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+    }
+
     return (
         <Dialog open={open} onClose={handleClose} sx={{
             '.MuiDialog-paper': {
@@ -12,7 +20,7 @@ export default function DisplayDialog({dialogContent, open, handleClose, width=3
                 width: width
             }
         }}>
-            <div style={{
+            <div onClick={handleClose} style={{
                 display: 'flex',
                 flexGrow: 1,
                 justifyContent: 'flex-end',
@@ -24,7 +32,7 @@ export default function DisplayDialog({dialogContent, open, handleClose, width=3
                     <CancelIcon/>
                 </IconButton>
             </div>
-            <div style={{
+            <div onClick={stopClick} style={{
                 backgroundColor: '#666',
                 borderRadius: 4,
                 boxShadow: '0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)'

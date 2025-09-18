@@ -55,7 +55,7 @@ export default function RaffleIntroBar() {
                             RAFL is on!
                         </div>
                         <div style={{fontSize: '1rem', marginTop: 1, marginBottom: 15}}>
-                            Welcome to the <strong>2025 Lockpicking Charity Raffle</strong>.
+                            Welcome to the <strong>2026 Lockpicking Charity Raffle</strong>.
                             You donate to your favorite charity and every dollar donated
                             earns a ticket you can put towards any of the fantastic pots
                             the community has donated this year.
@@ -73,7 +73,7 @@ export default function RaffleIntroBar() {
                         <div style={{fontSize: '1rem', fontWeight: 700}}>
                             Entries will be accepted through January 31,
                             and the primary prize drawing will happen via livestream at 11 a.m. PDT
-                            on Saturday, February 1.
+                            on Sunday, February 1.
                         </div>
                     </div>
                 </div>

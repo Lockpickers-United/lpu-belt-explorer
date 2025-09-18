@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
-import {GoogleAuthProvider, signInWithPopup, signOut} from 'firebase/auth'
+import {GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged} from 'firebase/auth'
 import {auth} from '../auth/firebase'
 
 const AuthContext = React.createContext({})
@@ -31,6 +31,17 @@ export function AuthProvider({children}) {
         provider.setCustomParameters({prompt: 'select_account'})
         return signInWithPopup(auth, provider)
     }, [])
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // Logged in
+            console.log('User:', user.displayName)
+
+        } else {
+            // Logged out
+            console.log('User is signed out')
+        }
+    })
 
     const logout = useCallback(() => {
         setUser({})

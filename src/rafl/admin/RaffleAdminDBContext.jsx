@@ -32,16 +32,16 @@ export function RaffleAdminDBProvider({children}) {
 
     const [dbError, setDbError] = useState(null)
     const [dbLoaded, setDbLoaded] = useState(false)
-    const [allEntries, setAllEntries] = useState([])
+    const [allRaffleEntries, setallRaffleEntries] = useState([])
 
     // ENTRIES SUBSCRIPTION (stable onSnapshot managed by effect)
     const [entriesLoaded, setEntriesLoaded] = useState(false)
-    const subscribedEntries = useCallback(() => allEntries, [allEntries])
+    const subscribedEntries = useCallback(() => allRaffleEntries, [allRaffleEntries])
 
     useEffect(() => {
         if (!(authLoaded && isLoggedIn && !!user && raffleAdmin)) {
             setEntriesLoaded(false)
-            setAllEntries([])
+            setallRaffleEntries([])
             return
         }
         const q = query(collection(db, 'raffle-entries'), where('status', '!=', 'deleted'))
@@ -50,7 +50,7 @@ export function RaffleAdminDBProvider({children}) {
             querySnapshot.forEach(docSnap => {
                 entries.push({...docSnap.data(), id: docSnap.id})
             })
-            setAllEntries(entries)
+            setallRaffleEntries(entries)
             setEntriesLoaded(true)
             setDbLoaded(true)
             console.log('DB, subscribedEntries, entry count:', entries.length)
@@ -94,30 +94,8 @@ export function RaffleAdminDBProvider({children}) {
                 entry.pots.forEach(pot => {
                     setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
                     setDeepUnique(acc, ['pots', [pot.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
-
-
-
-
-
-                    // If winners are recorded on the pot, track them in summary
-                    if (Array.isArray(pot.winners)) {
-                        pot.winners.forEach(winner => {
-                            const key = winner?.key || `${winner?.username || winner?.name || 'unknown'}|${winner?.platform || entry.platform || 'unknown'}`
-                            const label = winner?.label || winner?.name || winner?.username || 'unknown'
-                            setDeepUnique(acc, ['winners', [pot.itemId]], label)
-                            setDeepAdd(acc, ['winnerCounts', [key]], 1)
-                        })
-                    }
+                    //if (winnerData[pot.itemId]) setDeep(acc, ['pots', [pot.itemId], 'winners'], winnerData[pot.itemId])
                 }, [])
-                // Also support entry-level winners (if present)
-                if (Array.isArray(entry.winners)) {
-                    entry.winners.forEach(winner => {
-                        const key = winner?.key || `${winner?.username || winner?.name || 'unknown'}|${winner?.platform || entry.platform || 'unknown'}`
-                        const label = winner?.label || winner?.name || winner?.username || 'unknown'
-                        setDeepUnique(acc, ['winners', [entry.id]], label)
-                        setDeepAdd(acc, ['winnerCounts', [key]], 1)
-                    })
-                }
                 return acc
             }, {})
 
@@ -197,6 +175,9 @@ export function RaffleAdminDBProvider({children}) {
 
 
     const deleteRaffleEntry = useCallback(async (entry) => {
+
+        // TODO: update winner data to remove this entry if it's a winner
+
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin)) return false
         if (!entry || !entry.id) throw new Error('deleteRaffleEntry requires an entry with an id')
         const ref = doc(db, 'raffle-entries', entry.id)
@@ -218,8 +199,8 @@ export function RaffleAdminDBProvider({children}) {
     const saveSummary = useCallback(async () => {
         if (dbError || !(authLoaded && isLoggedIn && raffleAdmin) || !entriesLoaded) return false
         const ref = doc(db, 'data-cache', 'raffle-entries-summary')
-        await setDoc(ref, getSummary(allEntries))
-    }, [allEntries, authLoaded, dbError, entriesLoaded, getSummary, isLoggedIn, raffleAdmin])
+        await setDoc(ref, getSummary(allRaffleEntries))
+    }, [allRaffleEntries, authLoaded, dbError, entriesLoaded, getSummary, isLoggedIn, raffleAdmin])
 
     const initialSummarySavedRef = useRef(false)
     useEffect(() => {
@@ -230,9 +211,9 @@ export function RaffleAdminDBProvider({children}) {
         }
         // save summary whenever entries change after the initial load
         saveSummary().catch(e => console.error('Error saving summary:', e))
-    }, [allEntries, entriesLoaded, saveSummary, winnerData])
+    }, [allRaffleEntries, entriesLoaded, saveSummary, winnerData])
 
-    if (entriesLoaded) console.log('getSummary', getSummary(allEntries))
+    if (entriesLoaded) console.log('getSummary', getSummary(allRaffleEntries))
 
 
     // value & provider
@@ -243,7 +224,7 @@ export function RaffleAdminDBProvider({children}) {
         entriesLoaded,
         saveSummary,
         profile,
-        allEntries,
+        allRaffleEntries,
         updateRaffleEntry,
         deleteRaffleEntry,
         updateRaffleWinners
@@ -254,7 +235,7 @@ export function RaffleAdminDBProvider({children}) {
         entriesLoaded,
         saveSummary,
         profile,
-        allEntries,
+        allRaffleEntries,
         updateRaffleEntry,
         deleteRaffleEntry,
         updateRaffleWinners

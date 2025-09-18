@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
@@ -14,11 +14,56 @@ import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
 import AdminToolsButton from './AdminToolsButton.jsx'
 import RaffleNotLiveDialog from './RaffleNotLiveDialog.jsx'
+import DisplayDialog from '../misc/DisplayDialog.jsx'
+import AuthContext from '../app/AuthContext.jsx'
+import SignInButton from '../auth/SignInButton.jsx'
 
 function RaffleEnterAboutRoute() {
+    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
+
+    const [initialUser, setInitialUser] = useState(user)
+    useEffect(() => {
+        if (authLoaded && !initialUser && user) {
+            setInitialUser(user)
+        }
+    }, [authLoaded, initialUser, user])
+
+    const [newLogin, setNewLogin] = useState(false)
+    useEffect(() => {
+        if (authLoaded && user && !initialUser) {
+            setNewLogin(true)
+        }
+    }, [authLoaded, initialUser, isLoggedIn, newLogin, user])
+
+    console.log('RaffleEnterAboutRoute', {newLogin, authLoaded, isLoggedIn, user, initialUser})
 
     usePageTitle('Enter the RAFL')
     const navigate = useNavigate()
+
+    const [showDialog, setShowDialog] = useState(false)
+    const handleDialogClose = useCallback((event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        setShowDialog(false)
+    },[])
+    const handleEnterClick = useCallback((event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        if (authLoaded && !isLoggedIn) {
+            setShowDialog(true)
+            return
+        }
+        navigate('/rafl/entryform')
+    }, [authLoaded, isLoggedIn, navigate])
+
+    const dialogContent = (
+        <div style={{width: '100%', padding:30, justifyItems: 'center'}} onClick={handleDialogClose}>
+            <div style={{textAlign: 'center', fontSize: '1.2rem', marginBottom: 15}}>
+                <SignInButton linkText={'Please sign in to enter the Raffle.'}/>
+            </div>
+            <div style={{width: 204}}><SignInButton/></div>
+        </div>
+    )
 
     const {isMobile} = useWindowSize()
     const sideSpacing = !isMobile ? 0 : 8
@@ -71,7 +116,7 @@ function RaffleEnterAboutRoute() {
                     Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
 
                     <Button variant='contained' color='success'
-                            onClick={() => navigate('/rafl/entryform')}>
+                            onClick={handleEnterClick}>
                         Click here to enter the RAFL
                     </Button>
 
@@ -91,6 +136,7 @@ function RaffleEnterAboutRoute() {
             <Footer/>
             <Tracker feature='raflEnterAbout'/>
 
+            <DisplayDialog dialogContent={dialogContent} open={showDialog} handleClose={handleDialogClose} width={400}/>
             <RaffleNotLiveDialog/>
 
         </React.Fragment>

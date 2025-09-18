@@ -25,7 +25,19 @@ export function RaffleProvider({children}) {
         return {...summaryData}
     }, [summaryData])
 
-    console.log('winnerData', winnerData)
+    const winnerList = useMemo(() => {
+        if (!winnerData) return {}
+        return Object.keys(winnerData).reduce((acc, potId) => {
+            winnerData[potId].forEach(winner => {
+                setDeepAdd(acc, [winner.entryId], 1)
+            })
+            return acc
+        }, {})
+    }, [winnerData])
+    console.log('winnerList', winnerList)
+
+    const excessWinners = Object.keys(winnerList).filter(k => (winnerList[k] || 0) > maxPots).sort((a, b) => a.localeCompare(b))
+    console.log('excessWinners', excessWinners)
 
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
@@ -81,7 +93,10 @@ export function RaffleProvider({children}) {
             .map(entry => {
                 const potWinners = winnerData?.[entry.id] || []
                 const winnerUsernames = potWinners.map(w => w?.username).filter(u => !!u)
+                const winnerFilterNames = potWinners.map(w => `${w?.username} (${w?.platform})`).filter(u => !!u)
                 const winnerEntryIds = potWinners.map(w => w?.entryId).filter(u => !!u)
+                const excessWinner = winnerEntryIds.some(e => excessWinners.includes(e))
+
                 return {
                     ...entry,
                     ...summary.pots?.[entry.id],
@@ -97,10 +112,12 @@ export function RaffleProvider({children}) {
                     sortPotNumber: entry.potNumber === '0' ? 98 : parseInt(entry.potNumber),
                     winners: potWinners,
                     winnerUsernames,
-                    winnerEntryIds
+                    winnerEntryIds,
+                    winnerFilterNames,
+                    winnerStatus: excessWinner ? 'Too many wins' : undefined,
                 }
             })
-    }, [preview, allDataLoaded, raflPreviewPots, winnerData, summary.pots, lockCollection])
+    }, [preview, allDataLoaded, raflPreviewPots, winnerData, summary.pots, excessWinners, lockCollection])
 
     // Precompute helper structures for winners: counts and a Set for fast checks
     const winnerCounts = useMemo(() => ({...(summary.winnerCounts || {})}), [summary.winnerCounts])
@@ -122,21 +139,6 @@ export function RaffleProvider({children}) {
                 donations2025text: entry.donations2025 ? '$' + entry.donations2025.toLocaleString() : '0'
             }))
     }, [summary.charities])
-
-    const winnerList = useMemo(() => {
-        if (!winnerData) return {}
-        return Object.keys(winnerData).reduce((acc, potId) => {
-            winnerData[potId].forEach(winner => {
-                const winnerName = `${winner?.username || ''}|${winner?.platform || ''}`.trim()
-                setDeepAdd(acc, [winnerName], 1)
-            })
-            return acc
-        }, {})
-    }, [winnerData])
-    console.log('winnerList', winnerList)
-
-    const excessWinners = Object.keys(winnerList).filter(k => (winnerList[k] || 0) > maxPots).sort((a, b) => a.localeCompare(b))
-    console.log('excessWinners', excessWinners)
 
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(false)
@@ -160,6 +162,7 @@ export function RaffleProvider({children}) {
         allPots,
         allCharities,
         summary,
+        excessWinners,
         winnerCounts,
         multipleWinners,
         multipleWinnerSet,
@@ -177,6 +180,7 @@ export function RaffleProvider({children}) {
         allPots,
         allCharities,
         summary,
+        excessWinners,
         winnerCounts,
         multipleWinners,
         multipleWinnerSet,

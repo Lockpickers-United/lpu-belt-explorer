@@ -12,7 +12,7 @@ import SignInButton from '../../auth/SignInButton.jsx'
 import RaffleDrawingEntries from './RaffleDrawingEntries.jsx'
 import {raffleFilterFields} from '../../data/filterFields'
 import {FilterProvider} from '../../context/FilterContext.jsx'
-import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
+import RaffleAdminDataProviderPots from './RaffleAdminDataProviderPots.jsx'
 
 export default function RaffleDrawingRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
@@ -47,7 +47,7 @@ export default function RaffleDrawingRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleAdminDataProvider>
+            <RaffleAdminDataProviderPots drawing={true}>
                 <Nav title='RAFL Drawing' extras={extras}/>
                 <RaffleHeaderAdmin page={'drawing'}/>
 
@@ -58,7 +58,7 @@ export default function RaffleDrawingRoute() {
                 <Footer/>
 
                 <Tracker feature='raflAdmin'/>
-            </RaffleAdminDataProvider>
+            </RaffleAdminDataProviderPots>
         </FilterProvider>
     )
 }

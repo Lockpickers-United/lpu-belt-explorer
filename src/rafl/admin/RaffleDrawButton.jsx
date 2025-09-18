@@ -2,27 +2,9 @@ import React, {useCallback, useContext, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import DBContext from '../../app/DBContext.jsx'
-
-// Picks a random entrant weighted by the number of tickets
-// entrants: Array<{ name: string, tickets: number }>
-export function pickWeightedRandom(entrants = []) {
-    const cleaned = (entrants || []).map(e => ({
-        ...e,
-        tickets: Number(e?.tickets || 0)
-    })).filter(e => e.tickets > 0)
-
-    if (!cleaned.length) return null
-
-    const total = cleaned.reduce((acc, e) => acc + e.tickets, 0)
-    const r = Math.random() * total
-    let acc = 0
-    for (let i = 0; i < cleaned.length; i++) {
-        acc += cleaned[i].tickets
-        if (r < acc) return cleaned[i]
-    }
-    // Fallback (shouldn't happen due to loop logic)
-    return cleaned[cleaned.length - 1]
-}
+import DisplayDialog from '../../misc/DisplayDialog.jsx'
+import ReplayIcon from '@mui/icons-material/Replay'
+import IconButton from '@mui/material/IconButton'
 
 export function pickWeightedRandomMultiple(entrants = [], count = 1) {
     const cleaned = (entrants || []).map(e => ({
@@ -59,44 +41,116 @@ export function pickWinnersForEntry(entry) {
     return pickWeightedRandomMultiple(entry.entrants, Math.max(1, count))
 }
 
-export default function RaffleDrawButton({entry}) {
+export default function RaffleDrawButton({entry, drawing=false, redrawId}) {
+    const {updateRaffleWinners} = useContext(DBContext)
 
-    const {updateRaffleWinners, updateRaffleEntry} = useContext(DBContext)
-
-    const drawingText = (entry.winnerCount > 1) ? 'WINNERS' : 'WINNER'
-
-
-    const [winners, setWinners] = useState([])
-    const [winnerCounts, setWinnerCounts] = useState({})
-
-
-    const draw = useCallback((event) => {
+    const [noMoreEligible, setNoMoreEligible] = useState(false)
+    const handleDeleteClose = useCallback((event) => {
         event.preventDefault()
         event.stopPropagation()
+        setNoMoreEligible(false)
+    },[])
 
+
+    const drawingText = (entry.winnerCount > 1) ? 'WINNERS' : 'WINNER'
+    const draw = useCallback(async (event) => {
+        event.preventDefault()
+        event.stopPropagation()
         const w = pickWinnersForEntry(entry)
-        setWinners(w)
-        // Update local winner counts by entrant name as key (demo)
-        setWinnerCounts(prev => {
-            const next = {...prev}
-            w.forEach(win => {
-                const key = win.name
-                next[key] = (next[key] || 0) + 1
-            })
-            return next
-        })
+        await updateRaffleWinners(entry.id, w)
         console.log('entry.winners', w)
-
-        updateRaffleWinners(entry.id, w)
     }, [entry, updateRaffleWinners])
 
 
-    const {isMobile} = useWindowSize()
+    const redraw = useCallback(async (event, idToRedraw) => {
+        event.preventDefault()
+        event.stopPropagation()
+        try {
+            const currentWinners = Array.isArray(entry?.winners) ? entry.winners.slice() : []
+            const winnerCount = Number(entry?.winnerCount || 1)
+
+            // Build a set of entryIds already winning (excluding the one we're replacing)
+            const existingIds = new Set(
+                currentWinners
+                    //.filter(w => w && w.entryId && w.entryId !== idToRedraw)
+                    .map(w => w.entryId)
+            )
+            console.log('existingIds', existingIds)
+
+            // Build eligible entrant pool: positive tickets, not already a winner (except the one being replaced)
+            const entrants = Array.isArray(entry?.entrants) ? entry.entrants : []
+            const eligible = entrants
+                .map(e => ({...e, tickets: Number(e?.potTickets || 0)}))
+                .filter(e => (e.tickets > 0) && (!e.entryId || !existingIds.has(e.entryId)))
+
+            console.log('eligible', eligible)
+
+            // If no eligible entrant remains, abort
+            if (!eligible.length) {
+                console.warn('No eligible entrants available for redraw for pot', entry?.id, 'redrawId', idToRedraw)
+                setNoMoreEligible(true)
+                return
+            }
+
+            // Draw exactly one replacement winner from eligible pool, avoiding duplicates
+            const [newWinner] = pickWeightedRandomMultiple(eligible, 1)
+            if (!newWinner) {
+                console.warn('Redraw failed to pick a new winner for pot', entry?.id)
+                return
+            }
+
+            let updatedWinners
+            if (winnerCount > 1 && currentWinners.length > 0) {
+                // Replace only the winner whose entryId matches idToRedraw
+                let replaced = false
+                updatedWinners = currentWinners.map(w => {
+                    if (!replaced && w?.entryId === idToRedraw) {
+                        replaced = true
+                        return newWinner
+                    }
+                    return w
+                })
+                // If the specified idToRedraw was not found, do nothing
+                if (!replaced) {
+                    console.warn('Redraw id not found among current winners for pot', entry?.id, 'idToRedraw', idToRedraw)
+                    return
+                }
+            } else {
+                // Single-winner pot: simply set to the new winner
+                updatedWinners = [newWinner]
+            }
+
+            await updateRaffleWinners(entry.id, updatedWinners)
+            console.log('Redraw complete. Updated winners:', updatedWinners)
+        } catch (e) {
+            console.error('Error during redraw:', e)
+        }
+    }, [entry, updateRaffleWinners])
+
+        const {isMobile} = useWindowSize()
+
+    const dialogContent = (
+        <div style={{textAlign: 'center', fontWeight: 700, fontSize: '1.1rem', padding: 40}}>
+            There are no other eligible entries.<br/><br/>
+            Sorry!<br/><br/>
+        </div>
+    )
 
     return (
         <React.Fragment>
-            { !entry.winners || entry.winners?.length === 0 &&
-                <div style={{marginLeft: 20}}>
+            {redrawId && drawing
+                ? <div style={{marginLeft: 2, color: '#f35454', fontWeight: 'bold'}}>
+                    <IconButton onClick={(e) => redraw(e, redrawId)}
+                            color='secondary' variant='contained' size='small'
+                            style={{
+                                fontWeight: 600, fontSize: '0.9rem', marginTop: !isMobile ? -3 : 0,
+                                whiteSpace: 'nowrap', color: '#f35454'
+                            }}>
+                        <ReplayIcon/>
+                    </IconButton>
+                </div>
+                :  !entry.winners || entry.winners?.length === 0
+                ? <div style={{marginLeft: 20}}>
                     <Button onClick={draw}
                             color='secondary' variant='contained' size='small'
                             style={{
@@ -106,7 +160,9 @@ export default function RaffleDrawButton({entry}) {
                         DRAW {drawingText}
                     </Button>
                 </div>
+                    : null
             }
+            <DisplayDialog dialogContent={dialogContent} open={noMoreEligible} handleClose={handleDeleteClose} width={400}/>
         </React.Fragment>
     )
 }

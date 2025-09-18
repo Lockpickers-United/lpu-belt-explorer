@@ -13,7 +13,7 @@ import RaffleEntryForm from '../entryForm/RaffleEntryForm.jsx'
 import RaffleHeader from '../RaffleHeader.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import SignInButton from '../../auth/SignInButton.jsx'
-import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
+import RaffleAdminDataProviderEntries from './RaffleAdminDataProviderEntries.jsx'
 import RaffleHeaderAdmin from './RaffleHeaderAdmin.jsx'
 
 function RaffleAdminRoute() {
@@ -52,7 +52,7 @@ function RaffleAdminRoute() {
 
     return (
         <FilterProvider filterFields={raffleEntryFilterFields}>
-            <RaffleAdminDataProvider>
+            <RaffleAdminDataProviderEntries>
                 <Nav title='RAFL Admin' extras={extras}/>
                 <RaffleHeaderAdmin page={'entries'}/>
 
@@ -68,7 +68,7 @@ function RaffleAdminRoute() {
                 <Footer/>
 
                 <Tracker feature='raflAdmin'/>
-            </RaffleAdminDataProvider>
+            </RaffleAdminDataProviderEntries>
         </FilterProvider>
     )
 }

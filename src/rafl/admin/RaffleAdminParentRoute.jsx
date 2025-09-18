@@ -1,7 +1,7 @@
 import React from 'react'
 import {Outlet} from 'react-router-dom'
 import {RaffleAdminDBProvider} from './RaffleAdminDBContext.jsx'
-import RaffleAdminDataProvider from './RaffleAdminDataProvider.jsx'
+import RaffleAdminDataProviderEntries from './RaffleAdminDataProviderEntries.jsx'
 
 export default function RaffleAdminParentRoute() {
 

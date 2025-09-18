@@ -51,11 +51,6 @@ export function DBProviderRaffle({children}) {
     const [summaryData, setSummaryData] = useState({})
     const [summaryLoaded, setSummaryLoaded] = useState(false)
     useEffect(() => {
-        if (!(authLoaded && isLoggedIn && !!user)) {
-            setSummaryLoaded(false)
-            setSummaryData({})
-            return
-        }
         const docRef = doc(db, 'data-cache', 'raffle-entries-summary')
         const unsubscribe = onSnapshot(docRef, docSnap => {
             const data = docSnap.exists() ? docSnap.data() : null
@@ -79,11 +74,6 @@ export function DBProviderRaffle({children}) {
     const [winnerData, setWinnerData] = useState({})
     const [winnersLoaded, setWinnersLoaded] = useState(false)
     useEffect(() => {
-        if (!(authLoaded && isLoggedIn && !!user)) {
-            setWinnersLoaded(false)
-            setWinnerData({})
-            return
-        }
         const docRef = doc(db, 'data-cache', 'raffle-winners')
         const unsubscribe = onSnapshot(docRef, docSnap => {
             const data = docSnap.exists() ? docSnap.data() : null
@@ -101,6 +91,8 @@ export function DBProviderRaffle({children}) {
         })
         return () => unsubscribe()
     }, [authLoaded, isLoggedIn, user])
+
+    console.log('winnerData', winnerData)
 
     // value & provider
     const value = useMemo(() => ({
