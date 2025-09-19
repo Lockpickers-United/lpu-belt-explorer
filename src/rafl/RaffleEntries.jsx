@@ -9,15 +9,16 @@ import {raffleSortFields} from '../data/sortFields'
 import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
 import ExpandAllButton from './ExpandAllButton.jsx'
+import DBContext from '../app/DBContext.jsx'
 
-function RaffleEntries({profile, allPots, drawing = false}) {
+function RaffleEntries({allPots, drawing = false}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
+    const {lockCollection} = useContext(DBContext)
 
     const activeEntries = allPots || visibleEntries || []
 
-    console.log('activeEntries', activeEntries)
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
         setExpanded(id)
@@ -32,7 +33,7 @@ function RaffleEntries({profile, allPots, drawing = false}) {
 
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
 
-            <InlineFilterDisplay profile={profile} collectionType={'raffle'}/>
+            <InlineFilterDisplay profile={lockCollection} collectionType={'raffle'}/>
 
             <div style={{
                 marginLeft: 'auto',

@@ -18,8 +18,7 @@ import RaffleHeaderAdmin from './RaffleHeaderAdmin.jsx'
 
 function RaffleAdminRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
-    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
-
+    const {authLoaded, isLoggedIn} = useContext(AuthContext)
 
     useEffect(() => {
         if (raffleAdmin) setRaffleAdminRole(true)
@@ -55,7 +54,6 @@ function RaffleAdminRoute() {
             <RaffleAdminDataProviderEntries>
                 <Nav title='RAFL Admin' extras={extras}/>
                 <RaffleHeaderAdmin page={'entries'}/>
-
 
                 {raffleAdmin && !editEntryId &&
                     <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>

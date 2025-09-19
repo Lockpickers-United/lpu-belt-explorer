@@ -50,9 +50,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
-
             setScrolled(true)
-
             setTimeout(() => {
                 window.scrollTo({
                     left: 0,
@@ -78,7 +76,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
     const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.5 : 1
 
     const shipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29'}
-    entry.USShip = 'Yes'
+    entry.USShip = undefined
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>

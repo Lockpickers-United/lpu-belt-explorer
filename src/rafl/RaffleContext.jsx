@@ -34,10 +34,8 @@ export function RaffleProvider({children}) {
             return acc
         }, {})
     }, [winnerData])
-    console.log('winnerList', winnerList)
 
     const excessWinners = Object.keys(winnerList).filter(k => (winnerList[k] || 0) > maxPots).sort((a, b) => a.localeCompare(b))
-    console.log('excessWinners', excessWinners)
 
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)

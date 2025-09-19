@@ -12,8 +12,6 @@ export function RaffleDataProvider({children, allEntries = []}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
-    console.log('summary', summary)
-
     const visibleEntries = useMemo(() => {
 
         if (!summary || Object.keys(summary).length === 0 || !allEntries) return []

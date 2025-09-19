@@ -18,6 +18,7 @@ import validator from 'validator'
 import DataContext from '../../context/DataContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
+import SignInDetect from '../../auth/SignInDetect.jsx'
 
 function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const {createRaffleEntry, updateRaffleEntry, testEntry} = useContext(DBContext)
@@ -25,6 +26,8 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const {raffleAdmin} = useContext(RaffleContext)
     const {allEntries} = useContext(DataContext)
     const {setFilters} = useContext(FilterContext)
+
+    const [newSignIn, setNewSignIn] = useState(false)
 
     const [formData, setFormData] = useState({})
     const [donationData, setDonationData] = useState([{amount: 0, receipt: ''}])
@@ -389,6 +392,9 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                     }
                 </div>
             </Dialog>
+
+            <SignInDetect required={true} dialog={false} newSignIn={newSignIn} setNewSignIn={setNewSignIn}/>
+
         </React.Fragment>
     )
 }

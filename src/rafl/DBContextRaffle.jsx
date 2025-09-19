@@ -92,8 +92,6 @@ export function DBProviderRaffle({children}) {
         return () => unsubscribe()
     }, [authLoaded, isLoggedIn, user])
 
-    console.log('winnerData', winnerData)
-
     // value & provider
     const value = useMemo(() => ({
         ...globalContext,

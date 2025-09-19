@@ -17,7 +17,6 @@ const DataTableSort = ({
     const {rows, columns, defaultSort = 'name', sortable, wrap = false} = tableData
     const [sort, setSort] = useState(defaultSort)
     const [ascending, setAscending] = useState(!tableData.columns.find(c => c.id === defaultSort)?.descending)
-    const whiteSpace = wrap ? 'inherit' : 'nowrap'
 
     const overflowStyle = wrap
         ? {whiteSpace: 'inherit'}

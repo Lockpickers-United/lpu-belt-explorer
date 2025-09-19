@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import Tracker from '../app/Tracker'
-import DBContext from '../app/DBContext'
 import {raffleFilterFields} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext'
 import Footer from '../nav/Footer'
@@ -10,7 +9,6 @@ import useWindowSize from '../util/useWindowSize'
 import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RaffleEntries from './RaffleEntries.jsx'
 import {useSearchParams} from 'react-router-dom'
-import RafffleEntry from './RaffleEntry.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RafflePreviewBar from './RafflePreviewBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
@@ -22,18 +20,13 @@ function RaffleRoute() {
     console.log('RaffleRoute')
 
     const {preview, allPots, allCharities, raflState, refresh} = useContext(RaffleContext)
-    const {lockCollection} = useContext(DBContext)
-    const {isMobile} = useWindowSize()
-    const [searchParams] = useSearchParams()
-    const single = searchParams.get('single')
-    const id = searchParams.get('id')
-    const previewMode = searchParams.has('preview')
-    const showPreview = preview || previewMode
-
+    if (!allPots || !allCharities) return null
     const allEntries = allPots
 
-    const individualPot = allEntries.find(e => e.id === id)
-    const showSingle = (!!single && individualPot)
+    const {isMobile} = useWindowSize()
+    const [searchParams] = useSearchParams()
+    const previewMode = searchParams.has('preview')
+    const showPreview = preview || previewMode
 
     const extras = (
         <React.Fragment>
@@ -56,34 +49,28 @@ function RaffleRoute() {
 
     let navTitle = raflState === 'post'
         ? 'RAFL 2025 has ended'
-        : ['live','setup'].includes(raflState) || !isMobile
+        : ['live', 'setup'].includes(raflState) || !isMobile
             ? 'RAFL 2025!'
             : 'Announcing RAFL 2025!'
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allEntries} allPots={allPots} allCharities={allCharities} profile={lockCollection}>
+            <RaffleDataProvider allEntries={allEntries}>
 
                 <div style={style}>
-                    {showSingle &&
-                        <RafffleEntry entry={individualPot} expanded={true} single={single}/>
-                    }
+                    <React.Fragment>
 
-                    {!showSingle &&
-                        <React.Fragment>
+                        <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
+                        <RaffleHeader page={'pots'}/>
 
-                            <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
-                            <RaffleHeader page={'pots'}/>
+                        {showPreview &&
+                            <RafflePreviewBar refresh={refresh}/>
+                        }
 
-                            {showPreview &&
-                                <RafflePreviewBar refresh={refresh}/>
-                            }
+                        <RaffleEntries/>
 
-                            <RaffleEntries profile={lockCollection}/>
-
-                            <Footer/>
-                        </React.Fragment>
-                    }
+                        <Footer/>
+                    </React.Fragment>
                     <Tracker feature='rafl'/>
                 </div>
             </RaffleDataProvider>

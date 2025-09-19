@@ -9,7 +9,7 @@ export default function RaffleHeaderAdmin({page}) {
 
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
-    const {displayStats, setAnimateTotal} = useContext(RaffleContext)
+    const {setAnimateTotal} = useContext(RaffleContext)
 
     const handleChange = useCallback((page) => {
         navigate(page)

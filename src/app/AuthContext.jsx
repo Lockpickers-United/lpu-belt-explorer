@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
-import {GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged} from 'firebase/auth'
+import {GoogleAuthProvider, signInWithPopup, signOut} from 'firebase/auth'
 import {auth} from '../auth/firebase'
 
 const AuthContext = React.createContext({})
@@ -8,6 +8,7 @@ export function AuthProvider({children}) {
     const [user, setUser] = useState({})
     const [userClaims, setUserClaims] = useState([])
     const [authLoaded, setAuthLoaded] = useState(false)
+    const [initialUser, setInitialUser] = useState(null)
 
     useEffect(() => {
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
@@ -32,18 +33,16 @@ export function AuthProvider({children}) {
         return signInWithPopup(auth, provider)
     }, [])
 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            // Logged in
-            console.log('User:', user.displayName)
-
-        } else {
-            // Logged out
-            console.log('User is signed out')
+    useEffect(() => {
+        if (authLoaded && !initialUser && Object.keys(user || {}).length > 0) {
+            setInitialUser('yes')
+        } else if (authLoaded && !initialUser && Object.keys(user || {}).length === 0) {
+            setInitialUser('no')
         }
-    })
+    }, [authLoaded, initialUser, user])
 
     const logout = useCallback(() => {
+        setInitialUser('no')
         setUser({})
         return signOut(auth)
     }, [])
@@ -54,8 +53,10 @@ export function AuthProvider({children}) {
         user,
         userClaims,
         login,
-        logout
-    }), [authLoaded, login, logout, user, userClaims])
+        logout,
+        initialUser,
+        setInitialUser
+    }), [authLoaded, login, logout, user, userClaims, initialUser, setInitialUser])
 
     return (
         <AuthContext.Provider value={value}>

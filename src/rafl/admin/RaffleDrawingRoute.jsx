@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect} from 'react'
 import AuthContext from '../../app/AuthContext'
 import Tracker from '../../app/Tracker'
 import Footer from '../../nav/Footer'
@@ -16,7 +16,7 @@ import RaffleAdminDataProviderPots from './RaffleAdminDataProviderPots.jsx'
 
 export default function RaffleDrawingRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
-    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
+    const {authLoaded, isLoggedIn} = useContext(AuthContext)
 
     useEffect(() => {
         if (raffleAdmin) setRaffleAdminRole(true)
