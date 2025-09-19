@@ -156,7 +156,7 @@ function RaffleEnterAboutRoute() {
             <Footer/>
             <Tracker feature='raflEnterAbout'/>
 
-            <SignInDetect dialog={false} newSignIn={newSignIn} setNewSignIn={setNewSignIn}/>
+            <SignInDetect newSignIn={newSignIn} setNewSignIn={setNewSignIn} required={false} dialog={false} />
 
             <RaffleNotLiveDialog/>
 

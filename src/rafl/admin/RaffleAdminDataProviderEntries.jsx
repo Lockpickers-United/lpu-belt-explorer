@@ -16,8 +16,6 @@ export function RaffleAdminDataProviderEntries({children}) {
     const {entriesLoaded, allRaffleEntries} = useContext(DBContext)
     const {allPots} = useContext(RaffleContext)
 
-    console.log('allRaffleEntries', allRaffleEntries)
-
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
 
@@ -99,7 +97,7 @@ export function RaffleAdminDataProviderEntries({children}) {
                 } else if (sort === 'status') {
                     return raffleStatusSort(a.status, b.status)
                 } else if (sort === 'username') {
-                    return a.username.localeCompare(b.username)
+                    return a.username?.localeCompare(b.username)
                 } else if (sort === 'totalDonation') {
                     return b.totalDonation - a.totalDonation
                 } else {
@@ -146,7 +144,7 @@ export function RaffleAdminDataProviderEntries({children}) {
                 } else if (sort === 'status') {
                     return raffleStatusSort(a.status, b.status)
                 } else if (sort === 'username') {
-                    return a.username.localeCompare(b.username)
+                    return a.username?.localeCompare(b.username)
                 } else if (sort === 'totalDonation') {
                     return b.totalDonation - a.totalDonation
                 } else {
@@ -164,14 +162,14 @@ export function RaffleAdminDataProviderEntries({children}) {
 
     const value = useMemo(() => ({
         ...globalContext,
-        allEntries: allPots,
+        allEntries: allRaffleEntries,
         visibleEntries,
         mappedPotEntries,
         visiblePotEntries,
         getPotFromId,
         expandAll,
         statusLabels
-    }), [globalContext, allPots, visibleEntries, mappedPotEntries, visiblePotEntries, getPotFromId, expandAll])
+    }), [globalContext, allRaffleEntries, visibleEntries, mappedPotEntries, visiblePotEntries, getPotFromId, expandAll])
 
     return (
         <DataContext.Provider value={value}>

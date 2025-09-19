@@ -177,7 +177,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                             </div>
                         ))}
 
-                        <EntryNotes entry={entry}/>
+                        <EntryNotes entry={entry} containerRef={ref}/>
 
                         <div style={{textAlign: 'center', margin: '25px 0px 0px 0px'}}>
                             <Tooltip title='Edit Entry' arrow disableFocusListener>
@@ -196,7 +196,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <div style={{display: 'flex', flexGrow: 1}}><DeleteEntryButton entry={entry}/></div>
+                        <div style={{display: 'flex', flexGrow: 1}}><DeleteEntryButton entry={entry} containerRef={ref}/></div>
                         <CopyLinkToRaflPotButton entry={entry}/>
                     </AccordionActions>
 

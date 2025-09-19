@@ -36,7 +36,7 @@ function RaffleTitle({entry, drawing = false}) {
                         <Link style={{color: excessWinners.includes(winner.entryId) ? '#f35454' : '#fff'}}
                               onClick={(e) => openWinnerPots(e, winner)}>{winner.username}</Link>
                         {excessWinners.includes(winner.entryId) &&
-                            <RaffleDrawButton entry={entry} redrawId={winner.entryId}/>
+                            <RaffleDrawButton entry={entry} drawing={drawing} redrawId={winner.entryId}/>
                         }
                     </div>
                 </div>

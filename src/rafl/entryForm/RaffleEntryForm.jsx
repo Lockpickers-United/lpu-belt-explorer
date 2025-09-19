@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useRef, useState} from 'react'
 import Button from '@mui/material/Button'
 import RaffleSubHead from '../RaffleSubHead.jsx'
 import TextField from '@mui/material/TextField'
@@ -19,6 +19,7 @@ import DataContext from '../../context/DataContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
 import SignInDetect from '../../auth/SignInDetect.jsx'
+import Box from '@mui/material/Box'
 
 function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const {createRaffleEntry, updateRaffleEntry, testEntry} = useContext(DBContext)
@@ -26,8 +27,6 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const {raffleAdmin} = useContext(RaffleContext)
     const {allEntries} = useContext(DataContext)
     const {setFilters} = useContext(FilterContext)
-
-    const [newSignIn, setNewSignIn] = useState(false)
 
     const [formData, setFormData] = useState({})
     const [donationData, setDonationData] = useState([{amount: 0, receipt: ''}])
@@ -47,7 +46,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
             platform: entry?.platform,
             username: entry?.username,
             belt: entry?.belt,
-            notes: entry?.notes || '',
+            notes: entry?.notes || ''
         })
         setDonationData(entry.donations || [{amount: 0, receipt: ''}])
         setPotData(entry.pots || [{tickets: 0}])
@@ -62,7 +61,6 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                 fillEntryData(entry)
             }
         }
-        console.log('editEntry', editEntry)
     }
 
     const allocated = useMemo(() => {
@@ -182,10 +180,22 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const optionalHeaderStyle = {fontSize: '1.0rem', fontWeight: 400, marginBottom: 5, paddingLeft: 2, color: '#fff'}
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
 
+    const containerRef = useRef(null)
+
     return (
         <React.Fragment>
-            <div style={{paddingBottom: 32}}>
+            <Box style={{...style, paddingBottom: 32}}
+                 ref={containerRef}
+                 sx={{
+                     position: 'relative',
+                     overflow: 'hidden',
+                     isolation: 'isolate'
+                 }}>
+
+                <SignInDetect required={true} dialog={false} linkText={'You must be signed in to enter the Raffle.'} containerRef={containerRef}/>
+
                 <RaffleSubHead text={editEntryId ? 'EDIT RAFL ENTRY' : 'ENTRY FORM'}/>
+
 
                 <div style={{
                     ...style,
@@ -195,6 +205,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                     borderBottom: '1px #555 solid',
                     padding: '20px 20px'
                 }}>
+
 
                     <div style={sectionStyle}>{editEntryId ? 'About' : 'About You'}</div>
 
@@ -369,7 +380,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                     >log entry</Button>
                 </div>
 
-            </div>
+            </Box>
 
             <Dialog open={submitted} componentsProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
@@ -392,8 +403,6 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                     }
                 </div>
             </Dialog>
-
-            <SignInDetect required={true} dialog={false} newSignIn={newSignIn} setNewSignIn={setNewSignIn}/>
 
         </React.Fragment>
     )

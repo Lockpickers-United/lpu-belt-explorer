@@ -2,9 +2,10 @@ import React, {useCallback, useContext, useState} from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import DBContext from '../../app/DBContext.jsx'
-import DisplayDialog from '../../misc/DisplayDialog.jsx'
+import ScopedDialog from '../../misc/ScopedDialog.jsx'
+import {useWindowSize} from 'usehooks-ts'
 
-export default function DeleteEntryButton({entry}) {
+export default function DeleteEntryButton({entry, containerRef}) {
 
     const {deleteRaffleEntry} = useContext(DBContext)
 
@@ -28,6 +29,8 @@ export default function DeleteEntryButton({entry}) {
         </div>
     )
 
+    const {isMobile} = useWindowSize()
+
     return (
         <React.Fragment>
             <Tooltip title='Change Entry Status' arrow disableFocusListener>
@@ -40,7 +43,15 @@ export default function DeleteEntryButton({entry}) {
                 </Button>
             </Tooltip>
 
-            <DisplayDialog dialogContent={dialogContent} open={deleteOpen} handleClose={handleDeleteClose} />
+            <ScopedDialog
+                open={deleteOpen}
+                dialogContent={dialogContent}
+                handleClose={handleDeleteClose}
+                containerRef={containerRef}
+                position={{top: 80}}
+                centerX={true}
+                width={isMobile ? 350 : 550}
+            />
 
         </React.Fragment>
     )

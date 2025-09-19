@@ -27,7 +27,7 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
     const {isMobile} = useWindowSize()
     const style = isMobile
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8}
-        : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12}
+        : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: '12px 12px 12px 12px'}
 
     return (
 

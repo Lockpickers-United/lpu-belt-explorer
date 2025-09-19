@@ -13,20 +13,22 @@ const prod = false
 const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
 
 // Custom claims to set
-const newClaims = {lpuAdmin:true}
+const newClaims = {lpuAdmin:false}
 
 // List of user IDs to update
 const users = [
-    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
+    {uid: 'Hqww5ljRCfQjMppspbvFZsZ5xQI2', name: 'CorrectJeans'},
+
 ]
 
 const team = [ // eslint-disable-line
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
+    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
     {uid: 'WMSvvuutyShfvBBYB3PmDe4fmeS2', name: 'NiXXeD'},
     {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
     {uid: 'mZyfQIARjCP1uJJJc7ioMAALV9v2', name: 'peace'},
     {uid: 'XoUDXU5McjTuVnPA1xfmzytcKuy2', name: 'Red Wanderer'},
-
+    {uid: 'Hqww5ljRCfQjMppspbvFZsZ5xQI2', name: 'CorrectJeans'},
 ]
 
 async function updateCustomClaimsForUsers() {

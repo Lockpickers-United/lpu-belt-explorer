@@ -2,9 +2,9 @@ import React, {useCallback, useContext, useState} from 'react'
 import Button from '@mui/material/Button'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import DBContext from '../../app/DBContext.jsx'
-import DisplayDialog from '../../misc/DisplayDialog.jsx'
 import ReplayIcon from '@mui/icons-material/Replay'
 import IconButton from '@mui/material/IconButton'
+import ScopedDialog from '../../misc/ScopedDialog.jsx'
 
 export function pickWeightedRandomMultiple(entrants = [], count = 1) {
     const cleaned = (entrants || []).map(e => ({
@@ -41,16 +41,14 @@ export function pickWinnersForEntry(entry) {
     return pickWeightedRandomMultiple(entry.entrants, Math.max(1, count))
 }
 
-export default function RaffleDrawButton({entry, drawing=false, redrawId}) {
+export default function RaffleDrawButton({entry, drawing=false, redrawId, containerRef}) {
     const {updateRaffleWinners} = useContext(DBContext)
-
     const [noMoreEligible, setNoMoreEligible] = useState(false)
     const handleDeleteClose = useCallback((event) => {
         event.preventDefault()
         event.stopPropagation()
         setNoMoreEligible(false)
     },[])
-
 
     const drawingText = (entry.winnerCount > 1) ? 'WINNERS' : 'WINNER'
     const draw = useCallback(async (event) => {
@@ -132,7 +130,7 @@ export default function RaffleDrawButton({entry, drawing=false, redrawId}) {
     const dialogContent = (
         <div style={{textAlign: 'center', fontWeight: 700, fontSize: '1.1rem', padding: 40}}>
             There are no other eligible entries.<br/><br/>
-            Sorry!<br/><br/>
+            <Button onClick={handleDeleteClose} variant='contained'>Sorry!</Button> <br/><br/>
         </div>
     )
 
@@ -162,7 +160,17 @@ export default function RaffleDrawButton({entry, drawing=false, redrawId}) {
                 </div>
                     : null
             }
-            <DisplayDialog dialogContent={dialogContent} open={noMoreEligible} handleClose={handleDeleteClose} width={400}/>
+
+            <ScopedDialog
+                open={noMoreEligible}
+                dialogContent={dialogContent}
+                handleClose={handleDeleteClose}
+                containerRef={containerRef}
+                position={{top: 80}}
+                centerX={true}
+                width={isMobile ? 350 : 400}
+            />
+
         </React.Fragment>
     )
 }

@@ -25,7 +25,7 @@ function SignInButton({onClick, linkText}) {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     fontWeight: 700,
-                    fontSize: '1.1rem',
+                    fontSize: '1.2rem',
                 }}>
                     {linkText}
                 </Link>

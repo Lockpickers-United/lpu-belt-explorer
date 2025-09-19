@@ -62,7 +62,7 @@ function RaffleDonationForm({
 
 
     const onAmountChange = useCallback((e) => {
-        const value = parseInt(e.target.value.replace(/[^0-9]/g, '')) || 0
+        const value = parseInt(e.target.value.replace(/[^0-9]/g, '').substring(0, 5)) || 0
         setDetails(prev => ({...prev, amount: value}))
     }, [])
 

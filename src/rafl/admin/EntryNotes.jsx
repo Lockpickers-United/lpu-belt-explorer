@@ -2,11 +2,12 @@ import useWindowSize from '../../util/useWindowSize.jsx'
 import React, {useCallback, useContext, useEffect, useState} from 'react'
 import Link from '@mui/material/Link'
 import TextField from '@mui/material/TextField'
-import DisplayDialog from '../../misc/DisplayDialog.jsx'
 import Button from '@mui/material/Button'
 import DBContext from '../../app/DBContext.jsx'
+import ScopedDialog from '../../misc/ScopedDialog.jsx'
+import Box from '@mui/material/Box'
 
-export default function EntryNotes({entry}) {
+export default function EntryNotes({entry, containerRef}) {
     const {updateRaffleEntry} = useContext(DBContext)
 
     const [notesOpen, setNotesOpen] = useState(false)
@@ -93,8 +94,14 @@ export default function EntryNotes({entry}) {
         </div>
     )
 
+
     return (
-        <React.Fragment>
+        <Box sx={{
+            position: 'relative',
+            overflow: 'hidden',
+            isolation: 'isolate'
+        }}>
+
             {entry.notes?.length > 0
                 ? <div style={{fontWeight: 700, marginTop: 15}}>
                     <div style={{display: 'flex'}}>
@@ -116,10 +123,18 @@ export default function EntryNotes({entry}) {
                 </div>
             }
 
-            <DisplayDialog dialogContent={dialogContent} open={notesOpen} handleClose={handleNotesClose}
-                           width={isMobile ? 350 : 550}/>
+            <ScopedDialog
+                open={notesOpen}
+                dialogContent={dialogContent}
+                handleClose={handleNotesClose}
+                containerRef={containerRef}
+                position={{top: 80}}
+                centerX={true}
+                width={isMobile ? 350 : 550}
+            />
 
-        </React.Fragment>
+
+        </Box>
     )
 
 }
