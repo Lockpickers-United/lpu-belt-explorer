@@ -11,17 +11,7 @@ import queryString from 'query-string'
 import {useLocation} from 'react-router-dom'
 import usePageTitle from '../util/usePageTitle.jsx'
 
-import safeLocksTierOne from './pages/safelocksTierOne.md?raw'
-import ladyLocksQuestInfo from './pages/ladyLocksQuestInfo.md?raw'
-import pinkBelts from './pages/pinkBelts.md?raw'
-import classificationProcess from './pages/classificationProcess.md?raw'
-
-const pages = {
-    safeLocksTierOne: {title: 'Tier 1 Safe/Combination Locks', content: safeLocksTierOne},
-    tierThreeExample: {title: 'Tier 3 Submission Example', content: ladyLocksQuestInfo},
-    pinkBelts: {title: 'Official Announcement: The Pink Belt Revolution!', content: pinkBelts},
-    classificationProcess : {title: 'Lockpickers United Belt Ranking Process', content: classificationProcess},
-}
+import {pageData} from './pageData'
 
 
 export default function ViewPage() {
@@ -29,7 +19,7 @@ export default function ViewPage() {
     const location = useLocation()
     const {pageId} = queryString.parse(location.search)
 
-    usePageTitle(pages[pageId]?.title || 'Page Not Found')
+    usePageTitle(pageData[pageId]?.title || 'Page Not Found')
 
     return (
         <React.Fragment>
@@ -44,13 +34,13 @@ export default function ViewPage() {
                 padding: '0px 30px'
             }}>
                 <CardContent>
-                    <div style={{fontSize:'1.3rem', fontWeight: 700}}>{pages[pageId]?.title}</div>
+                    <div style={{fontSize:'1.3rem', fontWeight: 700}}>{pageData[pageId]?.title}</div>
 
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {
                         target: '_blank',
                         rel: ['nofollow', 'noopener', 'noreferrer']
                     }]]} remarkPlugins={[remarkGfm]}>
-                        {pages[pageId]?.content || 'Page Not Found'}
+                        {pageData[pageId]?.content || 'Page Not Found'}
                     </ReactMarkdown>
                 </CardContent>
                 <CardActions>

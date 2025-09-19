@@ -16,7 +16,7 @@ function ViewProfileRoute() {
 
     useEffect(() => {
         if (authLoaded && user) {
-            navigate(`/profile/${user.uid}`)
+            navigate(`/profile/${user.uid}`, {replace: true})
         }
     }, [authLoaded, navigate, user])
 

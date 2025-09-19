@@ -10,7 +10,7 @@
 import levenshtein from 'fast-levenshtein'
 
 function entryName(entry, nameType = 'short', options = {}) {
-    let makeModels = entry.makeModels
+    let makeModels = entry.makeModels || [{make: entry.make, model: entry.model}]
     const versionString = options.includeVersion && entry.version ? ' (' + entry.version + ')' : ''
 
     if (options.matchTo) {

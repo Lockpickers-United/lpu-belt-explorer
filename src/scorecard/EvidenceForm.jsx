@@ -23,6 +23,9 @@ import {getEntryFromId, isAward} from '../entries/entryutils'
 import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
 import DataContext from '../context/DataContext.jsx'
 import AppContext from '../app/AppContext.jsx'
+import ViewPageDrawer from '../viewPage/ViewPageDrawer.jsx'
+import sanitizeValues from '../util/sanitizeValues'
+
 
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
@@ -30,9 +33,8 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const {admin} = useContext(AppContext)
     const {blackBeltUser} = useContext(DataContext)
 
-    const {addPickerActivity, updatePickerActivity, removePickerActivity} = useContext(DBContext)
+    const {addPickerActivity, updatePickerActivity, removePickerActivity, userLockNotes, updateProfileField} = useContext(DBContext)
 
-    const [evidenceNotes, setEvidenceNotes] = useState(activity?.evidenceNotes ? activity.evidenceNotes : '')
     const [evidenceUrl, setEvidenceUrl] = useState(activity?.link ? activity.link + '' : '')
     const [evidenceDate, setEvidenceDate] = useState(activity?.date ? dayjs(activity.date) : dayjs())
     const [modifier, setModifier] = useState(activity?.evidenceModifier ? activity.evidenceModifier : '')
@@ -42,6 +44,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const [entryName, setEntryName] = useState(null)
     const [lockSelectId, setLockSelectId] = useState(null)
     const entry = getEntryFromId(activity?.matchId || lockId)
+
 
     const project = allProjects.find(item => {
         return item.name === entryName
@@ -63,6 +66,8 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                     ? award.id
                     : null
 
+    const [entryNotes, setEntryNotes] = useState(userLockNotes[entryId] || '')
+
     const fieldLabel = addAward
         ? 'Belt/Dan'
         : addProject
@@ -82,26 +87,43 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
         setLockSelectId(lockDetails.lockId)
     }, [])
 
+    const saveEntryNotes = useCallback(async () => {
+
+        if (entryNotes === userLockNotes[entryId]) return
+
+        const updatedUserLockNotes = {
+            ...userLockNotes,
+            [entryId]: entryNotes
+        }
+        if (entryNotes.length === 0) {
+            delete updatedUserLockNotes[entryId]
+        }
+        await updateProfileField('userLockNotes', updatedUserLockNotes)
+            .catch(error => {
+                console.error('Error updating notes:', error)
+            })
+    }, [entryNotes, userLockNotes, entryId, updateProfileField])
+
     const handleSave = useCallback(async () => {
         try {
             setUpdated(false)
             if (activity?.id) {
                 await updatePickerActivity(activity, {
                     matchId: activity.matchId,
-                    evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     evidenceModifier: modifier
                 })
+                await saveEntryNotes()
             } else {
                 const evidUserId = userId || user.uid
                 await addPickerActivity(evidUserId, {
                     matchId: entryId,
-                    evidenceNotes: evidenceNotes,
                     link: evidenceUrl,
                     date: evidenceDate,
                     evidenceModifier: modifier
                 })
+                await saveEntryNotes()
             }
             enqueueSnackbar('Scorecard updated')
             handleUpdate()
@@ -109,7 +131,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
             console.error('Error while updating scorecard', ex)
             enqueueSnackbar('Error while updating scorecard')
         }
-    }, [activity, handleUpdate, updatePickerActivity, evidenceNotes, evidenceUrl, evidenceDate, modifier, userId, user.uid, addPickerActivity, entryId])
+    }, [activity, handleUpdate, updatePickerActivity, evidenceUrl, evidenceDate, modifier, saveEntryNotes, userId, user.uid, addPickerActivity, entryId])
 
     const handleDelete = useCallback(async () => {
         try {
@@ -128,13 +150,14 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
             setEvidenceUrl(activity?.link ? activity.link : '')
             setEvidenceDate(activity?.date ? dayjs(activity.date) : dayjs())
             setModifier(activity?.evidenceModifier ? activity.evidenceModifier : '')
-            setEvidenceNotes(activity?.evidenceNotes ? activity.evidenceNotes : '')
+            setEntryNotes(entryNotes)
+
             setUpdated(false)
             handleUpdate()
         } else {
             handleUpdate()
         }
-    }, [activity, handleUpdate, updated])
+    }, [activity, entryNotes, handleUpdate, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target
@@ -155,6 +178,9 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const denseButton = !!isMobile
     const buttonWidth = isMobile ? 50 : 250
     const minWidth = isMobile ? 290 : 500
+    const notesBaseRows = isMobile ? 5 : 3
+    const notesLineBreaks = entryNotes.split('\n').length
+    const notesRows = notesLineBreaks > notesBaseRows ? Math.min(notesLineBreaks, 12) : notesBaseRows
 
     //TODO fix invalid Autocomplete option, isOptionEqualToValue?
 
@@ -222,46 +248,58 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                         disableFuture
                     />
 
-                    {(!awardMode && !addProject && (blackBeltUser|| admin)) &&
-                        <TextField
-                            select
-                            style={{marginLeft: 30, width: 250}}
-                            id='modifier'
-                            label='Modifier'
-                            value={modifier ?? ''}
-                            color='secondary'
-                            onChange={e => {
-                                setModifier(e.target.value)
-                                setUpdated(true)
-                            }}
-                        >
-                            <MenuItem value=''>(None)</MenuItem>
-                            <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
-                            <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
-                            <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
-                            <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
-                            <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
-                                (Notable)</MenuItem>
-                        </TextField>
+                    {(!awardMode && !addProject && (blackBeltUser || admin)) &&
+                        <React.Fragment>
+                            <TextField
+                                select
+                                style={{marginLeft: 30, width: 250}}
+                                id='modifier'
+                                label='Modifier'
+                                value={modifier ?? ''}
+                                color='secondary'
+                                onChange={e => {
+                                    setModifier(e.target.value)
+                                    setUpdated(true)
+                                }}
+                            >
+                                <MenuItem value=''>(None)</MenuItem>
+                                <MenuItem value='First Recorded Pick'>First Recorded Pick</MenuItem>
+                                <MenuItem value='First Recorded Pick (Notable)'>First Recorded Pick (Notable)</MenuItem>
+                                <MenuItem value='Non-Picking Defeat'>Non-Picking Defeat</MenuItem>
+                                <MenuItem value='First Recorded Defeat'>First Recorded Defeat</MenuItem>
+                                <MenuItem value='First Recorded Defeat (Notable)'>First Recorded Defeat
+                                    (Notable)</MenuItem>
+                            </TextField>
+
+                            <ViewPageDrawer pageId='danModifiers'/>
+
+                        </React.Fragment>
                     }
                 </div>
 
-                <div style={{display: 'flex', width: '90%', marginBottom: 20}}>
-                    <TextField
-                        id='evidence-notes'
-                        label='Notes (optional)'
-                        value={evidenceNotes}
-                        placeholder='https://youtu.be/'
-                        fullWidth
-                        size='small'
-                        margin='dense'
-                        color='secondary'
-                        onChange={e => {
-                            setEvidenceNotes(e.target.value)
-                            setUpdated(true)
-                        }}
-                        sx={{input: {color: '#999'}}}
-                    />
+                <div style={{display: 'flex', width: '95%', marginBottom: 20}}>
+                    <div style={{flexGrow: 1, width: '100%', marginRight: 15}}>
+                        <TextField
+                            id='entryNotes'
+                            label='Your Notes (optional)'
+                            value={entryNotes}
+                            placeholder='Your Notes (optional)'
+                            fullWidth multiline rows={notesRows}
+                            size='small'
+                            margin='dense'
+                            color='secondary'
+                            onChange={e => {
+                                setEntryNotes(sanitizeValues(e.target.value, {urlsOK: true}))
+                                setUpdated(true)
+                            }}
+                            sx={{input: {color: '#ddd'}}}
+                        />
+                        {entryNotes.length > 0 &&
+                            <div style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
+                                {entryNotes.length || 0}/1200
+                            </div>
+                        }
+                    </div>
                     {(!!entry && source !== 'collectionButton') &&
                         <div style={{width: buttonWidth, textAlign: 'right', marginTop: 10}}>
                             <CollectionButton id={activity?.matchId || lockId} dense={denseButton}/>

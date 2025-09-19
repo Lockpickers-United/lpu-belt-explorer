@@ -74,8 +74,6 @@ Locks that are upgrades of each other will be awarded points only for the highes
 
 Locks that are the same lock or only arbitrarily different will be placed on the same line, and you may only gain points for one of them. (e.g. 3KS/4KS)
 
-Notable locks can and will be put up for a vote within “The Mat” channel.
-
 ## Master's Projects and The Mat
 
 The mat is a core part of the new Dan 2.0 system. It is used for collecting community judgment on Master's Project submissions, which gain non-lockpicking
@@ -135,20 +133,22 @@ in suspension of access to the channel.
 
 ## Point Modifiers
 
-There are special cases in which the point value for a lock is modified to reflect the amount of work and skill that was
-required to pick it.
-- First recorded pick: In the event that an individual is the first person to pick a certain lock on video, even if done
-before the classification of the lock, x1.5 points.
-  - Note: This bonus is awarded at the discretion of the moderators, and does not apply if the lock in question is very
-  similar to a previously picked lock.
-- First recorded pick (notable lock): Certain locks on the list will be marked with a * which indicates that they are
-  locks that have famously not been picked on video. Being the first to demonstrate a successful pick of a notable lock
-  receives x2.5 points.
-- Non-picking defeat: Demonstrating a previously unknown method of defeating a specific lock nondestructively other than
-  picking receives x0.75 points.
-  - Note that creating a new defeat for a lock you have already picked does result in additional points.
-- Non-picking defeat (first defeat): Demonstrating a non-picking method of defeating a lock which has no known prior
-  defeats receives x1.5 points (x2, notable lock), however the lock will still be considered unpicked.
+There are special cases in which the Dan Point value for a lock is modified to reflect the amount of work and skill that was required to open it. Achievements below apply a multipler to the normal Dan points for the lock as ranked.
+
+A **Public First** is defined as the first public video (or other evidence) of picking/defeating a specific ranked lock. Multiplier will be applied even if the open was documented before the classification of the lock. Please note that picking/defeating very similar locks, or identical locks under different brands, should not be considered a public first.
+
+**Notable opens** are generally awarded for locks that have stood unpicked or undefeated for some time despite the community's efforts to attack them. Notable locks may also include new models with a distinctly novel locking mechanism. Minor changes in pin count, etc. do not qualify.  Submissions of "Notable" firsts must be approved by the Mod team.
+
+The following modifiers are recognized:
+
+**First Recorded Pick** - 1.5x Dan Points, 2.5x for Notable Locks
+- The first public video (or other evidence) of picking a specific ranked lock.
+
+**First Recorded Defeat** - 1.5x Dan Points, 2x for Notable Locks
+- Demonstrating and documenting a non-picking method of defeating a lock which has no known prior defeats. Defeat must be performed non-destructively.
+
+**Novel Non-Picking Defeat** - 0.75x Dan Points
+- This includes locks which have existing known defeat methods as long as the new approach is materially different from existing ones. Note that this modifier can only be applied once to a specific lock by the picker, no matter how many new approaches they discover.
 
 ## Dan Sheet 2.0 & Scorecard
 

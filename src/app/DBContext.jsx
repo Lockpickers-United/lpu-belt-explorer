@@ -241,7 +241,6 @@ export function DBProvider({children}) {
             userId,
             projectId: matchId,
             evidenceUrl: '',
-            evidenceNotes: '',
             modifier: ''
         }))
         newDocs.forEach(nd => {
@@ -502,7 +501,8 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
+        removeDismissedMessages,
+        userLockNotes: lockCollection.userLockNotes || {}
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -549,7 +549,6 @@ function evidenceDB2Activity(id, dbRec) {
         link: dbRec.evidenceUrl,
         date: dbRec.evidenceCreatedAt && dbRec.evidenceCreatedAt.toDate().toJSON(),
         collectionDB: 'evidence',
-        evidenceNotes: dbRec.evidenceNotes,
         evidenceModifier: dbRec.modifier
     }
 }
@@ -586,7 +585,6 @@ function activity2DBRec(act) {
         let rec = {
             userId: act.userId,
             evidenceUrl: act.link,
-            evidenceNotes: act.evidenceNotes,
             modifier: act.evidenceModifier
         }
         if (act.matchId) {

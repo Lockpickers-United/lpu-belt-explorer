@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import {enqueueSnackbar} from 'notistack'
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import entryName from '../entries/entryName'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
@@ -16,20 +16,25 @@ import ScorecardDataContext from './ScorecardDataProvider.jsx'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 
-
-function ExportButton({text}) {
+function ScorecardExportButton({text, profile = {}, filename='scorecardData'}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
     const {visibleEntries = []} = useContext(ScorecardDataContext)
 
+    const userNotes = useMemo( () => profile.userLockNotes || {}, [profile.userLockNotes] )
+
     const handleExportJson = useCallback(() => {
-        const data = JSON.stringify(visibleEntries)
+        const exportEntries = visibleEntries.map(datum => ({
+            ...datum,
+            personalNotes: userNotes[datum.matchId] || userNotes[datum.id] || ''
+        }))
+        const data = JSON.stringify(exportEntries)
         handleClose()
-        download('scorecardData.json', data)
-        enqueueSnackbar('Current Scorecard entries downloaded as scorecardData.json')
-    }, [handleClose, visibleEntries])
+        download(`${filename}.json`, data)
+        enqueueSnackbar(`Current entries downloaded as ${filename}.json`)
+    }, [filename, handleClose, userNotes, visibleEntries])
 
     const handleExportClipboard = useCallback(() => {
         const data = visibleEntries.map(datum => ({
@@ -47,23 +52,24 @@ function ExportButton({text}) {
         }).join('\n')
 
         handleClose()
-        navigator.clipboard.writeText(clipboardText)
-        enqueueSnackbar('Current scorecard entries copied to clipboard.')
+        navigator.clipboard.writeText(clipboardText).then()
+        enqueueSnackbar('Current entries copied to clipboard.')
     }, [handleClose, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
-        const csvColumns = ['id', 'name', 'version', 'belt', 'modifier', 'points', 'date', 'link']
+        const csvColumns = ['id', 'name', 'version', 'belt', 'modifier', 'points', 'date', 'link', 'notes']
         const data = visibleEntries.map(datum => ({
             id: datum.matchId,
-            make: datum.makeModels.map(e => e.make).join(','),
-            model: datum.makeModels.map(e => e.model).join(','),
+            make: datum.makeModels?.map(e => e.make).join(','),
+            model: datum.makeModels?.map(e => e.model).join(','),
             version: datum.version,
             belt: datum.belt,
             link: datum.link,
             modifier: datum.evidenceModifier,
             points: datum.points,
             date: datum.date ? dayjs(datum.date).format('L') : '',
-            name: entryName(datum)
+            name: entryName(datum),
+            notes: userNotes[datum.matchId] || userNotes[datum.id] || ''
         }))
 
         const headers = csvColumns.join(',')
@@ -78,9 +84,9 @@ function ExportButton({text}) {
         }).join('\n')
         const csvFile = `${headers}\n${csvData}`
         handleClose()
-        download('scorecardData.csv', csvFile)
-        enqueueSnackbar('Current Scorecard entries downloaded as scorecardData.csv')
-    }, [handleClose, visibleEntries])
+        download(`${filename}.csv`, csvFile)
+        enqueueSnackbar(`Current entries downloaded as ${filename}.csv`)
+    }, [filename, handleClose, userNotes, visibleEntries])
 
     return (
         <React.Fragment>
@@ -133,4 +139,4 @@ function ExportButton({text}) {
     )
 }
 
-export default ExportButton
+export default ScorecardExportButton

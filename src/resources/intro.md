@@ -11,7 +11,7 @@ Karate Belt Flair is entirely optional and members will go "unranked" until they
 
 You don't need to request every belt in sequence, nor start with white belt. Request the belt that best reflects your current level of skill, making sure you fulfill its requirements. Please read all the requirements for each belt carefully and make sure to check the general rules, video requirements, and other information below the ranking list.
 
-Remember this is all just for fun... In the end, no matter what karate belt you have, you're still just wearing fancy pajamas.
+Remember this is all just for fun... In the end, no matter what belt you have, you're still just wearing fancy pajamas.
 
 ----------
 

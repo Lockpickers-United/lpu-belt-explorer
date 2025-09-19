@@ -4,13 +4,12 @@ import DBContext from '../app/DBContext'
 import {dialFilterFields} from '../data/filterFields'
 import {dialSortFields} from '../data/sortFields'
 import {FilterProvider} from '../context/FilterContext'
-import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import SafelocksDataProvider from './SafelocksDataProvider.jsx'
-import SafelocksPage from './SafelocksPage.jsx'
+import SafelocksEntries from './SafelocksEntries.jsx'
 import dials from '../data/safelocks.json'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 
@@ -37,9 +36,7 @@ function SafelocksRoute() {
 
                 <Nav title='Safe Locks' extras={extras} extrasTwo={extrasTwo}/>
 
-                <SafelocksPage profile={lockCollection}/>
-
-                <Footer/>
+                <SafelocksEntries profile={lockCollection}/>
 
                 <Tracker feature='dials'/>
             </SafelocksDataProvider>

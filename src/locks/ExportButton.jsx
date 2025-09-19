@@ -27,8 +27,8 @@ function ExportButton({text, entries}) {
     const handleExportJson = useCallback(() => {
         const data = JSON.stringify(exportEntries)
         handleClose()
-        download('lpubeltsdata.json', data)
-        enqueueSnackbar('Current lock entries downloaded as lpubeltsdata.json')
+        download('lpubeltsData.json', data)
+        enqueueSnackbar('Current lock entries downloaded as lpubeltsData.json')
     }, [handleClose, exportEntries])
 
     const handleExportClipboard = useCallback(() => {
@@ -52,14 +52,15 @@ function ExportButton({text, entries}) {
     }, [handleClose, exportEntries])
 
     const handleExportCsv = useCallback(() => {
-        const csvColumns = ['id', 'name', 'version', 'belt']
+        const csvColumns = ['id', 'name', 'version', 'belt', 'notes']
         const data = exportEntries.map(datum => ({
             id: datum.id,
             make: datum.makeModels.map(e => e.make).join(','),
             model: datum.makeModels.map(e => e.model).join(','),
             version: datum.version,
             belt: datum.belt,
-            name: entryName(datum)
+            name: entryName(datum),
+            notes: datum.personalNotes,
         }))
 
         const headers = csvColumns.join(',')
@@ -74,8 +75,8 @@ function ExportButton({text, entries}) {
         }).join('\n')
         const csvFile = `${headers}\n${csvData}`
         handleClose()
-        download('lpubeltsdata.csv', csvFile)
-        enqueueSnackbar('Current lock entries downloaded as lpubeltsdata.csv')
+        download('lpubeltsData.csv', csvFile)
+        enqueueSnackbar('Current lock entries downloaded as lpubeltsData.csv')
     }, [handleClose, exportEntries])
 
     return (

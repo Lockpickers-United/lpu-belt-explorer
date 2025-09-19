@@ -70,12 +70,12 @@ export function ScorecardDataProvider({
         return Array.isArray(value) ? value.map(sk => ({key, value: sk})) : {key, value}
     }).flat(), [filters])
 
-    const visibleEntries = useMemo(() => processEntries(allActivityEntries, filterArray, search, sort), [allActivityEntries, filterArray, search, sort])
+    const visibleEntries = useMemo(() => processEntries(allActivityEntries, filterArray, search, sort, profile), [allActivityEntries, filterArray, profile, search, sort])
 
     const popularEntries = useMemo(() => processEntries(allPopularEntries, filterArray.concat({
         key: 'exceptionType',
         value: undefined
-    }), search, 'popular'), [allPopularEntries, filterArray, search])
+    }), search, 'popular', profile), [allPopularEntries, filterArray, profile, search])
 
     const blackBeltUser = useMemo(() => {
         return profile?.blackBeltAwardedAt > 0
@@ -108,7 +108,9 @@ export function ScorecardDataProvider({
     )
 }
 
-function processEntries(entries, filterArray, search, sort) {
+function processEntries(entries, filterArray, search, sort, profile={}) {
+    const userNotes = profile?.userLockNotes || {}
+
     // Fill out fields
     const mappedEntries = entries
         .map(entry => ({
@@ -130,8 +132,16 @@ function processEntries(entries, filterArray, search, sort) {
                 entry.exceptionType === 'badlink' ? 'Bad Link' : 'Valid Link',
                 entry.date ? 'Valid Date' : 'No Date'
             ],
+            content: [
+                userNotes[entry.id] || userNotes[entry.matchId] ? 'Has Personal Notes' : undefined,
+            ].flat().filter(x => x),
             scoring: [
                 (() => {
+                    switch (entry.awardType) {
+                        case 'belt':
+                        case 'dan':
+                            return 'Belts & Dans'
+                    }
                     switch (entry.exceptionType) {
                         case 'nomatch':
                             return 'Unmatched'
@@ -151,16 +161,13 @@ function processEntries(entries, filterArray, search, sort) {
                         case 'Unranked':
                             return 'Unranked'
                     }
-                    switch (entry.awardType) {
-                        case 'belt':
-                        case 'dan':
-                            return 'Belts & Dans'
-                    }
                     return 'Worth Points'
                 })()
             ],
-            simpleBelt: entry?.belt?.replace(/\s\d/g, '')
+            simpleBelt: entry?.belt?.replace(/\s\d/g, ''),
+            personalNotes: userNotes[entry.id] || userNotes[entry.matchId]
         }))
+
 
     // Filter the data
     const filtered = mappedEntries
@@ -171,6 +178,8 @@ function processEntries(entries, filterArray, search, sort) {
                     : datum[key] === value
             })
         })
+
+    console.log('filtered', filtered)
 
     // If there is a search term, fuzzy match that
     const searched = search

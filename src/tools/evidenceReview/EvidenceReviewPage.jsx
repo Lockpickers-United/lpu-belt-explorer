@@ -26,10 +26,9 @@ function EvidenceReviewPage({data, updated}) {
 
     const options = useMemo(() => {
         return [
+            {label: 'Modified Picks'},
             {label: 'Scorecard Projects'},
             {label: 'All Projects'},
-            {label: 'Modified Picks'},
-            {label: 'BB Modified'}
         ]
     }, [])
     const [selected, setSelected] = useState(options[0])
@@ -94,12 +93,12 @@ function EvidenceReviewPage({data, updated}) {
                     return a.modifier.localeCompare(b.modifier)
                         || (a.displayName || '').localeCompare(b.displayName || '')
                 } else if (sort === 'evDate') {
-                    return b.date.localeCompare(a.date)
+                    return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
                 }
             })
         } else {
             return filteredEvidence.sort((a, b) => {
-                return b.date.localeCompare(a.date)
+                return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
             })
         }
     }, [sort, filteredEvidence, reverseEvSort]) // eslint-disable-line

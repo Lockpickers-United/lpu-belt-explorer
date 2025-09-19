@@ -17,9 +17,11 @@ export function DataProvider({children, allEntries, profile}) {
     const {data, loading, error} = useData({urls})
     const lockbazzarIds = useMemo(() => {
         return data && !loading && !error ? data.lockbazzarEntryIds : []
-    },[data, error, loading])
+    }, [data, error, loading])
 
     const mappedEntries = useMemo(() => {
+        const userNotes = profile?.userLockNotes || {}
+
         return allEntries
             .map(entry => ({
                 ...entry,
@@ -43,11 +45,13 @@ export function DataProvider({children, allEntries, profile}) {
                     belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
                     dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
                     entry.belt.startsWith('Black') ? 'Is Black' : undefined,
-                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
+                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
+                    userNotes[entry.id] ? 'Has Personal Notes' : undefined,
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 collectionSaves: collectionStatsById[entry.id] || 0,
                 simpleBelt: entry.belt.replace(/\s\d/g, ''),
+                personalNotes: userNotes[entry.id]
             }))
     }, [allEntries, profile])
 
@@ -102,11 +106,11 @@ export function DataProvider({children, allEntries, profile}) {
                 } else if (sort === 'alphaDescending') {
                     return b.fuzzy.localeCompare(a.fuzzy)
                 } else if (sort === 'recentlyUpdated') {
-                    return Math.floor(dayjs(b.lastUpdated).valueOf()/3600) - Math.floor(dayjs(a.lastUpdated).valueOf()/3600)
+                    return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
                         || beltSort(a.belt, b.belt)
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'dateAdded') {
-                    return Math.floor(dayjs(b.dateAdded).valueOf()/3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf()/3600 * 24)
+                    return Math.floor(dayjs(b.dateAdded).valueOf() / 3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf() / 3600 * 24)
                         || beltSort(a.belt, b.belt)
                         || a.fuzzy.localeCompare(b.fuzzy)
                 }
