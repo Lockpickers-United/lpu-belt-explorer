@@ -6,7 +6,6 @@ import FilterContext from '../../context/FilterContext.jsx'
 import RaffleSearchBar from '../RaffleSearchBar.jsx'
 import {raffleAdminSortFields} from '../../data/sortFields'
 import RaffleExportButton from '../RaffleExportButton.jsx'
-import ExpandAllButton from '../ExpandAllButton.jsx'
 import RaffleSubmittedEntry from './RaffleSubmittedEntry.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
@@ -16,8 +15,6 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
     usePageTitle('RAFL Admin - Submitted Entries')
-
-    console.log('visibleEntries', visibleEntries)
 
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
@@ -40,13 +37,9 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
                 </div>
             </div>
 
-            <RaffleSearchBar label='Raffle Entries' sortValues={raffleAdminSortFields}/>
+            <RaffleSearchBar label='Raffle Entries' sortValues={raffleAdminSortFields} entryCount={visibleEntries.length}/>
 
             <InlineFilterDisplay collectionType={'raffle'}/>
-
-            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems: 'center', marginTop: 4, marginBottom: 12}}>
-                <ExpandAllButton/>
-            </div>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Entries'/>}
 
@@ -61,7 +54,7 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
                 />
             )}
 
-            <div style={{marginLeft: 'auto', marginRight: 'auto', justifyItems: 'center', marginTop: 30}}>
+            <div style={{marginLeft: 'auto', marginRight: 'auto', textAlign: 'center', justifyItems: 'center', marginTop: 30}}>
                 <RaffleExportButton text={true}/>
             </div>
 

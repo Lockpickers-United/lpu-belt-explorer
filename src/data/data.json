@@ -18232,7 +18232,7 @@
     "makeModels": [
       {
         "make": "Cantol",
-        "model": "high-security line "
+        "model": "high-security line"
       }
     ],
     "version": "10-pin dimple",
@@ -18279,7 +18279,7 @@
       }
     ],
     "views": 902,
-    "lastUpdated": "2025-03-19T01:20:51.367Z"
+    "lastUpdated": "2025-09-19T21:37:12.978Z"
   },
   {
     "id": "60964e9f",
@@ -37769,7 +37769,7 @@
         "model": "M3 Camlock"
       }
     ],
-    "version": "***",
+    "version": "4 or more pins ***",
     "lockingMechanisms": [
       "Sidebar",
       "Slider"
@@ -39452,7 +39452,7 @@
         "model": "FB"
       }
     ],
-    "version": "≥12 pins",
+    "version": "12 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -41417,7 +41417,7 @@
         "model": "Z"
       }
     ],
-    "version": "≥2 standard drivers",
+    "version": "2 or more standard drivers",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -55859,7 +55859,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "model": "Helason "
+        "model": "Helason"
       }
     ],
     "version": "16-pin round key",
@@ -55945,7 +55945,7 @@
       }
     ],
     "views": 165,
-    "lastUpdated": "2025-03-19T15:44:57.322Z"
+    "lastUpdated": "2025-09-19T21:37:12.986Z"
   },
   {
     "id": "352d0624",

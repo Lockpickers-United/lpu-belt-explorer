@@ -63,6 +63,11 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
         }
     }
 
+    const handleCancelEdit = useCallback(() => {
+        setEditEntryId(undefined)
+        setEditEntry(null)
+    }, [setEditEntryId])
+
     const allocated = useMemo(() => {
         return potData.reduce((acc, pot) => {
             const potTickets = parseInt(pot?.tickets) ? parseInt(pot?.tickets) : 0
@@ -173,6 +178,10 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     )
     const continueColor = (!errors) ? '#4dd04d' : '#666'
 
+    const handleEntryComplete = useCallback(() => {
+        navigate('/rafl')
+    },[navigate])
+
     const {isMobile, flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const sectionStyle = useMemo(() => ({fontSize: '1.5rem', fontWeight: 700, marginBottom: 8}), [])
@@ -192,7 +201,8 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                      isolation: 'isolate'
                  }}>
 
-                <SignInDetect required={true} dialog={false} linkText={'You must be signed in to enter the Raffle.'} containerRef={containerRef}/>
+                <SignInDetect required={true} dialog={false} linkText={'You must be signed in to enter the Raffle.'}
+                              containerRef={containerRef}/>
 
                 <RaffleSubHead text={editEntryId ? 'EDIT RAFL ENTRY' : 'ENTRY FORM'}/>
 
@@ -355,6 +365,10 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                                       disabled={errors} onClick={handleSubmit}
                             >Submit Entry</Button>
                             : <div>
+                                <Button style={{backgroundColor: '#999', color: '#000', marginRight: 20}}
+                                        variant='contained'
+                                        disabled={errors} onClick={handleCancelEdit}
+                                >Cancel</Button>
                                 <Button style={{backgroundColor: continueColor, color: '#000', marginRight: 20}}
                                         variant='contained'
                                         disabled={errors} onClick={() => handleEditSave(false)}
@@ -387,21 +401,27 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30, fontSize: '1.1rem'}}>
                     <span style={{fontSize: '1.3rem', fontWeight: 700}}>Thanks for entering!</span><br/><br/>
-                    <span style={{fontSize: '1.1rem', lineHeight: '0.8rem'}}>
                         Your entry will be reviewed shortly.
                         We&#39;ll reach out to you via your chosen platform to let you know your entry has been approved or to resolve any issues.
-                        <br/><br/></span>
+                        <br/><br/>
+                        You can always make another donation and submit again...<br/>
+                    <Link onClick={() => handleEntryComplete}
+                          style={{
+                              color: '#fff',
+                              textDecorationColor: '#888',
+                              cursor: 'pointer',
+                              fontWeight: 700,
+                              lineHeight: '2.5rem'
+                          }}>
+                        Take another look at the pots!
+                    </Link><br/><br/>
 
-                    You can always make another donation and submit
-                    again... <Link onClick={() => navigate('/rafl')}
-                                   style={{color: '#ddd', textDecorationColor: '#888', cursor: 'pointer'}}>
-                    Take another look at the pots!
-                </Link><br/><br/>
+                    <Button variant='contained' style={{backgroundColor:'#333'}}>Close</Button>
 
-                    {raffleAdmin &&
-                        <Link onClick={() => setSumbitted(false)}>(close)</Link>
-                    }
                 </div>
+                {raffleAdmin &&
+                    <Link onClick={() => setSumbitted(false)}>(close)</Link>
+                }
             </Dialog>
 
         </React.Fragment>

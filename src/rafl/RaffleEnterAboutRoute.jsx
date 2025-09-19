@@ -28,7 +28,6 @@ function RaffleEnterAboutRoute() {
     const [signInStarted, setSignInStarted] = useState(false)
     const [newSignIn, setNewSignIn] = useState(false)
     useEffect(() => {
-        console.log('handleSignIn')
         if (newSignIn) {
             setNewSignIn(false)
             signInStarted && navigate('/rafl/entryform')

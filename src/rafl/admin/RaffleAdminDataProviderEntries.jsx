@@ -20,15 +20,15 @@ export function RaffleAdminDataProviderEntries({children}) {
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
 
     // Filters as an array
-    const filterArray = useMemo (() => Object.keys(filters)
-        .map(key => {
-            const value = filters[key]
-            return Array.isArray(value)
-                ? value.map(subkey => ({key, value: subkey}))
-                : {key, value}
-        })
-        .flat()
-    , [filters])
+    const filterArray = useMemo(() => Object.keys(filters)
+            .map(key => {
+                const value = filters[key]
+                return Array.isArray(value)
+                    ? value.map(subkey => ({key, value: subkey}))
+                    : {key, value}
+            })
+            .flat()
+        , [filters])
 
     const mappedEntries = useMemo(() => {
         let charityNames = {}
@@ -48,6 +48,8 @@ export function RaffleAdminDataProviderEntries({children}) {
                 ...entry,
                 charities: charityNames[entry.id] || [],
                 potNames: potNames[entry.id] || [],
+                content: [entry.notes && entry.notes.length > 0 && 'Has Notes',
+                    entry.donations.every(d => d.approved) ? 'All Donations OK' : 'Donations not OK'].filter(Boolean),
                 fuzzy: removeAccents([
                     entry.username,
                     ...charityNames[entry.id],
@@ -118,7 +120,6 @@ export function RaffleAdminDataProviderEntries({children}) {
             return pot
         }, [])
     }, [allPots, flatEntries])
-    console.log('mappedPotEntries', mappedPotEntries)
 
     const visiblePotEntries = useMemo(() => {
         //if (!entriesLoaded) return []

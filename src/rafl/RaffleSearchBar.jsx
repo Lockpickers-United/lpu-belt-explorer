@@ -3,8 +3,9 @@ import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 
-export default function RaffleSearchBar({label, sortValues}) {
+export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
 
+    label = entryCount > 0 ? `${label} (${entryCount})` : label
     const {isMobile} = useWindowSize()
     const flexStyle = !isMobile ? 'flex' : 'block'
     const style = isMobile

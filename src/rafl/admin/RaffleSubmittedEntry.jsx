@@ -31,6 +31,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
+            console.log('entry', entry)
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             setScrolled(true)
@@ -101,7 +102,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                     style={{
                                         fontSize: '0.95rem',
                                         lineHeight: 1.25
-                                    }}>{dayjs(entry?.createdAt).format('YYYY-MM-DD')}</Typography>}
+                                    }}>{dayjs(entry?.createdAt).format('MMM DD')}</Typography>}
                                 style={{marginRight: 20}}
                             />
                             <FieldValue
@@ -110,7 +111,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                     style={{
                                         fontSize: '0.95rem',
                                         lineHeight: 1.25
-                                    }}>{dayjs(entry?.updatedAt).format('YYYY-MM-DD')}</Typography>}
+                                    }}>{dayjs(entry?.updatedAt).format('MMM DD')}</Typography>}
                                 textStyle={!isUpdated ? {color: '#777'} : {}}
                                 style={{marginRight: 20}}
                             />

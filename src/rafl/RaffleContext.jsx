@@ -97,7 +97,7 @@ export function RaffleProvider({children}) {
 
                 return {
                     ...entry,
-                    ...summary.pots?.[entry.id],
+                    totalTickets: summary.pots?.[entry.id]?.totalTickets || 0,
                     uniqueDonorCount: summary.pots?.[entry.id]?.uniqueDonorCount || 0,
                     fuzzy: removeAccents([
                         entry.title,
@@ -112,7 +112,7 @@ export function RaffleProvider({children}) {
                     winnerUsernames,
                     winnerEntryIds,
                     winnerFilterNames,
-                    winnerStatus: excessWinner ? 'Too many wins' : undefined,
+                    winnerStatus: [potWinners.length > 0 ? 'Winners Selected' :  'Winners Not Selected', excessWinner && 'Too many wins'],
                 }
             })
     }, [preview, allDataLoaded, raflPreviewPots, winnerData, summary.pots, excessWinners, lockCollection])

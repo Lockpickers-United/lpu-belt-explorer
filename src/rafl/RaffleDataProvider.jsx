@@ -56,11 +56,11 @@ export function RaffleDataProvider({children, allEntries = []}) {
                 } else if (sort === 'contributedBy') {
                     return a.contributedBy[0].localeCompare(b.contributedBy[0]) || a.title.localeCompare(b.title)
                 } else if (sort === 'tickets') {
-                    return parseInt(b.tickets) - parseInt(a.tickets) || a.title.localeCompare(b.title)
+                    return b.totalTickets - a.totalTickets || a.title.localeCompare(b.title)
                 } else if (sort === 'donors') {
-                    return parseInt(b.donors) - parseInt(a.donors) || a.title.localeCompare(b.title)
-                } else if (sort === 'dateAdded') {
-                    return parseInt(b.dateAdded) - parseInt(a.dateAdded) || a.title.localeCompare(b.title)
+                    return b.uniqueDonorCount - a.uniqueDonorCount
+                        || b.totalTickets - a.totalTickets
+                        || a.title.localeCompare(b.title)
                 } else {
                     return parseInt(a[sort]) - parseInt(b[sort]) || a.title.localeCompare(b.title)
                 }

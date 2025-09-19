@@ -574,5 +574,8 @@ console.log('Complete.')
 
 function splitCommaValues(string) {
     if (!string) return []
-    return string.replace(/\s+,|,\s+/g, ',').split(',').filter(x => x)
+    return string.replace(/\s+,|,\s+/g, ',')
+        .split(',')
+        .map(s => s.trim())
+        .filter(x => x)
 }

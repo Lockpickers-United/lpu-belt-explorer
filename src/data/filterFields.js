@@ -44,7 +44,7 @@ export const scorecardExploreFilterFields = [
 
 export const raffleFilterFields = [
     {label: 'Winner', fieldName: 'winnerUsernames'},
-    {label: 'Winner Status', fieldName: 'winnerStatus'},
+    {label: 'Winner Status', fieldName: 'winnerStatus', sort: (a, b) => b.localeCompare(a)},
     {label: 'Watchlist', fieldName: 'collection', userBased: true},
     {label: 'Tag', fieldName: 'tags'},
     {label: 'Contributor', fieldName: 'contributedBy'},
@@ -65,6 +65,7 @@ export const raffleStatusSort = (a, b) => {
 
 export const raffleEntryFilterFields = [
     {label: 'Status', fieldName: 'status', sort: raffleStatusSort},
+    {label: 'Content', fieldName: 'content'},
     {label: 'Charity', fieldName: 'charities'},
     {label: 'Pot Name', fieldName: 'potNames'},
     {label: 'Platform', fieldName: 'platform'},

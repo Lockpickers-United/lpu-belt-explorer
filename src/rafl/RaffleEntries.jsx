@@ -31,7 +31,7 @@ function RaffleEntries({allPots, drawing = false}) {
                 <RaffleIntroBar/>
             }
 
-            <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields}/>
+            <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
 
             <InlineFilterDisplay profile={lockCollection} collectionType={'raffle'}/>
 
