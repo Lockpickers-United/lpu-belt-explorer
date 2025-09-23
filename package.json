@@ -15,6 +15,7 @@
     "build-dev-import": "NODE_ENV=production yarn versionFile && yarn run import && vite build --mode dev && yarn copyFiles",
     "preview": "vite preview",
     "lint": "eslint \"./src/**\" \"./scripts/**\"",
+    "test": "vitest run --coverage",
     "import": "node ./scripts/import.js",
     "import-dan": "node ./scripts/importDan.js",
     "refreshRaflPreview": "node ./scripts/refreshRaflPreview.js",
@@ -79,8 +80,12 @@
     "validator": "^13.12.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
     "@types/react": "^18.2.21",
     "@vitejs/plugin-react": "^4.4.1",
+    "@vitest/coverage-v8": "3.2.4",
     "csv-parse": "^5.5.0",
     "entities": "^4.5.0",
     "eslint": "^8.49.0",
@@ -89,9 +94,12 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "firebase-admin": "^11.11.1",
     "husky": "^9.1.7",
+    "jsdom": "^27.0.0",
     "node-fetch": "^3.3.2",
     "rollup-plugin-visualizer": "^5.14.0",
     "uuid": "^9.0.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4",
+    "vitest-fetch-mock": "^0.4.5"
   }
 }
