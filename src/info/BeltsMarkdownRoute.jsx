@@ -11,7 +11,7 @@ function BeltsMarkdownRoute() {
         <React.Fragment>
             <Nav title='Belt Requirements Markdown'/>
 
-            <BeltsMarkdownPage/>
+            <BeltsMarkdownPage showLocks={true}/>
 
             <Footer/>
 

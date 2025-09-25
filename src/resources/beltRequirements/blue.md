@@ -14,7 +14,7 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 
 To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please be sure to see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
 
-- Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker.
+- Challenge Lock (CL): Modify a lock by adding security pins or other features (please see complete Belt Requirements for specifics). You must the share it with a fellow picker or submit the challenge lock -- with photos and details -- to the LockPickers United Challenge Lock Library at https://lpulocks.com/#/challengelocks 
 
 - Cutaway Lock: Expose the locking mechanisms of an existing lock. The lock should be completely functional with a working key.
 

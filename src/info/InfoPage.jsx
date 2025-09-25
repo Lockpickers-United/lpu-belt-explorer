@@ -13,7 +13,7 @@ import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
 
 function InfoPage() {
-    const updateTime = '02/10/2025'
+    const updateTime = '09/25/2025'
 
     const MarkdownRenderer = ({content}) => {
         return (
@@ -87,6 +87,7 @@ function InfoPage() {
 
                     <h2>Table of Contents</h2>
                     <ul>{toc}</ul>
+
                     <MarkdownRenderer content={markdown}/>
 
                 </CardContent>
