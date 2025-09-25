@@ -382,7 +382,7 @@ Blue,IKON,SK7,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https
 Blue,IKON,Undercut,,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",948f9068
 Blue,iNAHO,Tierkey,"3 row, short format",Dimple,,,9b94b1c0
 Blue,Kaba,8,"2 row and 3 row, <9 pins",Dimple,,,5c2f5101
-Blue,Kaken,KX3,"exterior, <6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements ant type",40e50dd4
+Blue,Kaken,KX3,"exterior, <6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",40e50dd4
 Blue,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 Blue,Kenaurd,Dimple,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
@@ -487,7 +487,7 @@ Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requ
 Purple,"ISEO,ISEO","R50,R7",,Dimple,changelog,,30aa78ef
 Purple,"Jixin,Jasafe","Z03,Z03",,"Pin-tumbler,Sidepins",,,92482cc9
 Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,"High pin count",,779d74f5
-Purple,Kaken,KX3,"exterior, ≥ 6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements ant type",898a7138
+Purple,Kaken,KX3,"exterior, ≥ 6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",898a7138
 Purple,"Kale Kilit","164 BNE",,Dimple,,,6f5e0d32
 Purple,"Keso,Keso,Keso,Keso","10RS,1000,2000S,4000S (Omega)","<13 pins",Dimple,"High pin count",,304f5471
 Purple,Kwikset,"Smartkey (Gen III)",,Slider,"Sprung sliders,Reverse sidebar",,06ddb074
