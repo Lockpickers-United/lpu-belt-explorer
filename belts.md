@@ -530,7 +530,7 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 
 To qualify for a Blue Belt, you must also submit a project that demonstrates your growing knowledge of locks and lockpicking. **We encourage new and creative approaches to these projects**. You can choose from a variety of options, please be sure to see/click below for the "Blue Belt Project Requirements" section with more detailed information. Accepted projects include:
 
-- Challenge Lock (CL): Modify a lock by adding security pins or other features, post about it, and share it with a fellow picker.
+- Challenge Lock (CL): Modify a lock by adding security pins or other features (please see complete Belt Requirements for specifics). You must the share it with a fellow picker or submit the challenge lock -- with photos and details -- to the LockPickers United Challenge Lock Library at https://lpulocks.com/#/challengelocks 
 
 - Cutaway Lock: Expose the locking mechanisms of an existing lock. The lock should be completely functional with a working key.
 
@@ -1106,7 +1106,7 @@ is required to gut.
 - All previous non-picking requirements must have been fulfilled:
   - Demonstrated your ability to gut locks and get them back together again. *(Green Belt Requirement)*
   - Demonstrated history of helping new pickers, either on the sub and/or in the Discord channel. *(Blue Belt Requirement)*
-  - Built a "Challenge Lock" and shared it with a fellow picker. *(Blue Belt Requirement)*
+  - Built a "Challenge Lock" or completed similar project. *(Blue Belt Requirement)*
   - Complete a Project/Quest at Tier 1 level or above. *(Brown Belt Requirement)*
 
 **Evidence Format**
@@ -1467,9 +1467,11 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 
 Blue Belt requests require that you have completed an advanced project, which may be a custom pinned "Challenge Lock" shared with another picker (Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you to the fun of exchanging locks designed not for security but specifically to defeat picking.
 
-If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain the more in-depth knowledge of how locks function that comes from building your own.
+If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain the more in-depth knowledge of how locks function that comes from building your own. [Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to.
 
-[Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to.
+You can also meet this requirement by submitting your challenge lock -- with photos and details -- to the LockPickers United Challenge Lock Library at [https://lpulocks.com/#/challengelocks](https://lpulocks.com/#/challengelocks)
+
+
 
 A "**Challenge Lock**" is defined as:
 
