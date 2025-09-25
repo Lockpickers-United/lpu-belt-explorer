@@ -24,7 +24,7 @@ export default function RaffleReportLine({chartHeight, chartdata, showAxisBottom
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}
-                curve={curve ?? 'natural'}
+                curve={curve ?? 'basis'}
                 yScale={{
                     type: 'linear',
                     min: 0,

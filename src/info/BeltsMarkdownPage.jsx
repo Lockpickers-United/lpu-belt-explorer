@@ -55,7 +55,7 @@ const groupedByBelt = rawData.reduce((acc, val) => {
     return acc
 }, initialVal)
 
-function BeltsMarkdownPage() {
+function BeltsMarkdownPage({showLocks = true}) {
 
     const [preview, setPreview] = useState(true)
 
@@ -75,7 +75,11 @@ function BeltsMarkdownPage() {
             const version = encodeNonAsciiHTML(entry.version ? ` (${entry.version})` : '')
             return `- [${makeModels}](${url})${version}`
         }).join('\n')
-        return header + reqs + '\n\n' + entriesHeader + entries + '\n\n' + specialReqs
+        return showLocks
+        ? header + reqs + '\n\n' + entriesHeader + entries + '\n\n' + specialReqs
+        : header + reqs + '\n\n' + specialReqs + '\n\n----------\n\n'
+
+
     }).join('\n\n')
 
     const markdown = [

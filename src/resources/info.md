@@ -187,9 +187,11 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 
 Blue Belt requests require that you have completed an advanced project, which may be a custom pinned "Challenge Lock" shared with another picker (Cutaways are not counted towards challenge locks). Preferably this lock will make it into circulation and introduce you to the fun of exchanging locks designed not for security but specifically to defeat picking.
 
-If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain the more in-depth knowledge of how locks function that comes from building your own.
+If for some reason you are unable to fully engage with the larger community of exchange we still encourage you to gain the more in-depth knowledge of how locks function that comes from building your own. [Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to.
 
-[Speak to a moderator](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking) for assistance if you're having trouble finding pickers you can send your lock to.
+You can also meet this requirement by submitting your challenge lock -- with photos and details -- to the LockPickers United Challenge Lock Library at [https://lpulocks.com/#/challengelocks](https://lpulocks.com/#/challengelocks)
+
+
 
 A "**Challenge Lock**" is defined as:
 

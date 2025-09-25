@@ -1,13 +1,13 @@
-import React, {useMemo, useRef} from 'react'
+import React, {useMemo} from 'react'
 import {
-    Dialog, DialogActions, Button, Zoom
+    Dialog, Zoom, useTheme, lighten
 } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import CancelIcon from '@mui/icons-material/Cancel'
+import Box from '@mui/material/Box'
 
 export default function ScopedDialog({
                                          open,
-                                         onClose,
                                          dialogContent,
                                          handleClose,
                                          width = 350,
@@ -19,6 +19,7 @@ export default function ScopedDialog({
                                          centerX = true                // horizontally center within the parent/viewport
                                      }) {
 
+    const theme = useTheme()
 
     /*
             <ScopedDialog
@@ -30,16 +31,13 @@ export default function ScopedDialog({
                 centerX={true}
                 width={isMobile ? 350 : 550}
             />
-
     */
-
 
     const stopClick = (e) => {
         e.stopPropagation()
         e.preventDefault()
     }
 
-    const paperFocusRef = useRef(null)
     const containerEl = containerRef?.current || null
     const isScoped = !!containerEl
 
@@ -140,7 +138,8 @@ export default function ScopedDialog({
                 '.MuiDialog-paper': {
                     backgroundColor: 'transparent', backgroundImage: 'none',
                     padding: '12px', margin: '0px 0px 20px 0px',
-                    width: width
+                    width: width,
+                    boxShadow: 'none'
                 },
 
             }}
@@ -155,15 +154,13 @@ export default function ScopedDialog({
                     sx: {
                         backgroundColor: '#666',
                         padding: '8px',
-                        boxShadow:
-                            '0px 11px 15px -7px rgba(0,0,0,0.4),0px 24px 38px 3px rgba(0,0,0,0.28),0px 9px 46px 8px rgba(0,0,0,0.24)'
                     }
                 }
             }}
             //onEntered={() => paperFocusRef.current?.focus?.({ preventScroll: true })}
         >
             <Zoom in={open} timeout={{enter: 250, exit: 250}}>
-                <div style={{position: 'relative'}}>
+                <div style={{position: 'relative', paddingBottom: 20}}>
 
                     {handleClose &&
                         <div onClick={handleClose} style={{
@@ -179,21 +176,16 @@ export default function ScopedDialog({
                             </IconButton>
                         </div>
                     }
-                    <div onClick={stopClick} style={{
-                        backgroundColor: '#666',
-                        borderRadius: 4,
-                        //boxShadow: '0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)'
-                        boxShadow: '0px 11px 15px -7px rgba(0,0,0,0.4),0px 24px 38px 3px rgba(0,0,0,0.28),0px 9px 46px 8px rgba(0,0,0,0.24)'
+                    <Box onClick={stopClick} sx={{
+                        backgroundColor: lighten(theme.palette.background.default, 0.2),
+                        borderRadius: '4px',
+                        //boxShadow: '0px 11px 15px -7px rgba(0,0,0,0.6),0px 18px 20px 0px rgba(0,0,0,0.4),0px 9px 46px 8px rgba(0,0,0,0.0)'
+                        boxShadow: theme.shadows[10],
                     }}>
                         {dialogContent}
-                    </div>
+                    </Box>
                 </div>
             </Zoom>
-            <DialogActions>
-                <Button ref={paperFocusRef} onClick={onClose} autoFocus>
-                    Close
-                </Button>
-            </DialogActions>
         </Dialog>
     )
 }
