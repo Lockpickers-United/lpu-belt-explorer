@@ -1,8 +1,8 @@
-import React, {useCallback, useContext} from 'react'
+import React, {useCallback, useContext, useRef} from 'react'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import Button from '@mui/material/Button'
 import RaffleContext from '../RaffleContext.jsx'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 import IconButton from '@mui/material/IconButton'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import RafflePreviewBar from '../RafflePreviewBar.jsx'
@@ -10,6 +10,9 @@ import RafflePreviewBar from '../RafflePreviewBar.jsx'
 export default function RaffleHeaderAdmin({page, width = 700}) {
 
     const {raffleAdminRole, setRaffleAdminRole, preview, setPreview, refresh} = useContext(RaffleContext)
+    const [searchParams, setSearchParams] = useSearchParams()
+    const previewMode = searchParams.has('preview')
+    const showPreview = preview || previewMode
 
     const navigate = useNavigate()
     const {setAnimateTotal} = useContext(RaffleContext)
@@ -27,6 +30,16 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
         setAnimateTotal(false)
     }, [navigate, setAnimateTotal])
 
+    const containerRef = useRef(null)
+
+    const togglePreview = useCallback(() => {
+        if (showPreview && page === 'pots') {
+            searchParams.delete('preview')
+            setSearchParams(searchParams)
+            setPreview(false)
+        }
+    }, [page, searchParams, setPreview, setSearchParams, showPreview])
+
 
     const {isMobile} = useWindowSize()
     const buttonFontSize = !isMobile ? '1.03rem' : '1.0rem'
@@ -37,52 +50,46 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
         marginRight: 'auto',
         display: 'flex',
         alignItems: 'center',
+        height: 40
     }
-
     return (
         <React.Fragment>
             <div style={style}>
-                <IconButton style={{padding: 4, marginRight: 10}} onClick={handleRoleClick}>
-                    <AdminPanelSettingsIcon fontSize='medium' style={{color: '#fff'}}/>
-                </IconButton>
-                <Button onClick={() => handleChange('/rafl/admin')}
-                        style={{
-                            padding: '0px 8px',
-                            marginRight: 10,
-                            color: page === 'entries' ? '#fff' : '#ccc',
-                            fontSize: buttonFontSize
-                        }}
-                        sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
-                        disabled={page === 'entries'}>
-                    ENTRIES
-                </Button>
-                    <Button onClick={() => handleChange('/rafl/reports')}
-                            style={{
-                                padding: '0px 8px',
-                                marginRight: 10,
-                                color: page === 'reports' ? '#fff' : '#ccc',
-                                fontSize: buttonFontSize
-                            }}
-                            sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
-                            disabled={page === 'reports'}>
-                        REPORTS
-                    </Button>
-                <Button onClick={() => handleChange('/rafl/admin/drawing')}
-                        style={{
-                            padding: '0px 8px',
-                            marginRight: 10,
-                            color: page === 'drawing' ? '#fff' : '#ccc',
-                            fontSize: buttonFontSize
-                        }}
-                        sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
-                        disabled={page === 'drawing'}>
-                    DRAW WINNERS
-                </Button>
+                    <IconButton style={{padding: 4}} onClick={togglePreview} disabled={page !== 'pots'}>
+                        <AdminPanelSettingsIcon fontSize='medium' style={{color: '#fff'}}/>
+                    </IconButton>
+                {(!preview || page !== 'pots' || !isMobile) &&
+                    <React.Fragment>
+                        <Button onClick={() => handleChange('/rafl/admin')}
+                                style={{
+                                    padding: '0px 8px',
+                                    marginRight: 10,
+                                    marginLeft: 10,
+                                    color: page === 'entries' ? '#fff' : '#ccc',
+                                    fontSize: buttonFontSize
+                                }}
+                                sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
+                                disabled={page === 'entries'}>
+                            ENTRIES
+                        </Button>
+                        <Button onClick={() => handleChange('/rafl/reports')}
+                                style={{
+                                    padding: '0px 8px',
+                                    marginRight: 10,
+                                    color: page === 'reports' ? '#fff' : '#ccc',
+                                    fontSize: buttonFontSize
+                                }}
+                                sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
+                                disabled={page === 'reports'}>
+                            REPORTS
+                        </Button>
+                    </React.Fragment>
+                }
                 <div style={{display: 'flex', flexGrow: 1, justifyContent: 'right'}}>
                     <RafflePreviewBar page={page} refresh={refresh}/>
                 </div>
             </div>
-            <div style={{height: 8}}/>
+            <div style={{height: 2}}/>
         </React.Fragment>
     )
 

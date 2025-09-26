@@ -23,8 +23,17 @@ function RaffleEntryFormRoute() {
         </React.Fragment>
     )
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
-        <React.Fragment>
+        <div style={style}>
 
             <Nav title='RAFL Entry Form' extras={extras}/>
 
@@ -38,7 +47,7 @@ function RaffleEntryFormRoute() {
 
             <RaffleNotLiveDialog/>
 
-        </React.Fragment>
+        </div>
     )
 }
 

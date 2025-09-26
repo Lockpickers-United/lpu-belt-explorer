@@ -23,16 +23,27 @@ function RaffleReportRoute() {
         </React.Fragment>
     )
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-                <React.Fragment>
-                    <Nav title='RAFL Report' extras={extras}/>
-                    <RaffleHeader page={'reports'} width={700}/>
-                    {authLoaded && raffleAdmin && <RaffleReport/>}
-                    <Footer/>
+            <div style={style}>
 
-                    <Tracker feature='raflReport'/>
-                </React.Fragment>
+                <Nav title='RAFL Report' extras={extras}/>
+                <RaffleHeader page={'reports'} width={700}/>
+                {authLoaded && raffleAdmin && <RaffleReport/>}
+                <Footer/>
+
+                <Tracker feature='raflReport'/>
+
+            </div>
         </FilterProvider>
     )
 }

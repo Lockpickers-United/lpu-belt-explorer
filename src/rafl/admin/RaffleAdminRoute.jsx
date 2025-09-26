@@ -48,23 +48,36 @@ function RaffleAdminRoute() {
         </React.Fragment>
     )
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
         <FilterProvider filterFields={raffleEntryFilterFields}>
             <RaffleAdminDataProviderEntries>
-                <Nav title='RAFL Admin' extras={extras}/>
-                <RaffleHeader page={'entries'}/>
+                <div style={style}>
 
-                {raffleAdmin && !editEntryId &&
-                    <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
-                }
+                    <Nav title='RAFL Admin' extras={extras}/>
+                    <RaffleHeader page={'entries'}/>
 
-                {raffleAdmin && !!editEntryId &&
-                    <RaffleEntryForm editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
-                }
+                    {raffleAdmin && !editEntryId &&
+                        <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
+                    }
 
-                <Footer/>
+                    {raffleAdmin && !!editEntryId &&
+                        <RaffleEntryForm editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
+                    }
 
-                <Tracker feature='raflAdmin'/>
+                    <Footer/>
+
+                    <Tracker feature='raflAdmin'/>
+
+                </div>
             </RaffleAdminDataProviderEntries>
         </FilterProvider>
     )

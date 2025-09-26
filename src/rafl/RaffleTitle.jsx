@@ -45,7 +45,7 @@ function RaffleTitle({entry, drawing = false}) {
         </React.Fragment>
         : undefined
 
-    const winnerAlign = isMobile ? 'center' : 'right'
+    const buttonDivWidth = isMobile ? '100%' : 'auto'
 
     const marginBottom = drawing ? 15 : 0
     const diameter = !isMobile ? 30 : 28
@@ -83,14 +83,13 @@ function RaffleTitle({entry, drawing = false}) {
                     }}>{entry.potNumber}</div>
                 </div>
             }
-            <div style={{display: flexStyle, flexDirection:'row', flexGrow: 1, placeItems: 'center'}}>
+            <div style={{display: flexStyle, flexDirection:'row', flexGrow: 1, placeItems: 'flex-start'}}>
                 <div style={{
                     display: 'flex',
                     fontWeight: 500,
                     fontSize: titleSize,
                     lineHeight: titleLineHeight,
                     marginTop: !isMobile ? -3 : 0,
-                    flexDirection:'row',
                     flexGrow: 1
                 }}>
                     {entryName}
@@ -99,20 +98,25 @@ function RaffleTitle({entry, drawing = false}) {
 
                 <div style={{
                     display: 'flex',
+                    flexGrow: 1,
                     fontSize: winnerSize,
                     lineHeight: titleLineHeight,
                     marginTop: !isMobile ? -3 : 8,
                     marginRight: 10,
                     fontWeight: 600,
-                    textAlign: winnerAlign
+                    justifyItems: 'right'
                 }}>
                     {entry.winners?.length > 0 &&
-                        <div>{winnerList}</div>
+                        <div style={{width: '100%'}}>
+                            {winnerList}
+                        </div>
                     }
                 </div>
 
                 {drawing &&
+                    <div style={{display: 'flex', justifyContent: 'right', width: buttonDivWidth}}>
                     <RaffleDrawButton entry={entry} drawing={drawing}/>
+                    </div>
                 }
             </div>
         </div>

@@ -12,7 +12,7 @@ import RaffleDrawingEntries from './RaffleDrawingEntries.jsx'
 import {raffleFilterFields} from '../../data/filterFields'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import RaffleAdminDataProviderPots from './RaffleAdminDataProviderPots.jsx'
-import RaffleHeader from '../RaffleHeader.jsx'
+import RaffleHeaderDrawing from './RaffleHeaderDrawing.jsx'
 
 export default function RaffleDrawingRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
@@ -35,7 +35,7 @@ export default function RaffleDrawingRoute() {
     if (authLoaded && !raffleAdmin) return (
         <React.Fragment>
             <Nav title='RAFL Admin' extras={extras}/>
-            <RaffleHeader page={'drawing'}/>
+            <RaffleHeaderDrawing page={'drawing'}/>
             <div style={{padding: 20}}>
                 {!isLoggedIn && <div>Please log in to access this page.</div>}
                 {isLoggedIn && !raffleAdmin && <div>Sorry, you do not have access to this page.</div>}
@@ -45,19 +45,32 @@ export default function RaffleDrawingRoute() {
         </React.Fragment>
     )
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleAdminDataProviderPots drawing={true}>
-                <Nav title='RAFL Drawing' extras={extras}/>
-                <RaffleHeader page={'drawing'}/>
+                <div style={style}>
 
-                {raffleAdmin &&
-                    <RaffleDrawingEntries/>
-                }
+                    <Nav title='RAFL 2026' extras={extras}/>
+                    <RaffleHeaderDrawing page={'drawing'}/>
 
-                <Footer/>
+                    {raffleAdmin &&
+                        <RaffleDrawingEntries/>
+                    }
 
-                <Tracker feature='raflAdmin'/>
+                    <Footer/>
+
+                    <Tracker feature='raflAdmin'/>
+
+                </div>
             </RaffleAdminDataProviderPots>
         </FilterProvider>
     )

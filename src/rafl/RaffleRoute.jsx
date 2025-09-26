@@ -43,25 +43,22 @@ function RaffleRoute() {
     }
 
     let navTitle = raflState === 'post'
-        ? 'RAFL 2025 has ended'
+        ? 'RAFL 2026 has ended'
         : ['live', 'setup'].includes(raflState) || !isMobile
-            ? 'RAFL 2025!'
-            : 'Announcing RAFL 2025!'
+            ? 'RAFL 2026!'
+            : 'Announcing RAFL 2026!'
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleDataProvider allEntries={allEntries}>
 
                 <div style={style}>
-                    <React.Fragment>
+                    <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
+                    <RaffleHeader page={'pots'}/>
 
-                        <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
-                        <RaffleHeader page={'pots'}/>
+                    <RaffleEntries/>
 
-                        <RaffleEntries/>
-
-                        <Footer/>
-                    </React.Fragment>
+                    <Footer/>
                     <Tracker feature='rafl'/>
                 </div>
             </RaffleDataProvider>

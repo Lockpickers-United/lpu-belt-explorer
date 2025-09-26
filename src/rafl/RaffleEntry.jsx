@@ -114,7 +114,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                                 {showFull &&
                                     <Collapse in={entry.uniqueDonorCount > 0}>
                                         <div style={{
-                                            marginRight: 15,
+                                            marginRight: 10,
                                             fontSize: descriptionFontSize,
                                             textAlign: 'right',
                                             display: flexStyle,

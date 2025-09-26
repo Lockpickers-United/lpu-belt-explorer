@@ -46,6 +46,8 @@ export default function RafflePreviewBar({refresh, page}) {
 
     const containerRef = useRef(null)
 
+console.log(page)
+
     const togglePreview = useCallback(() => {
         if (previewMode) {
             searchParams.delete('preview')
@@ -71,8 +73,8 @@ export default function RafflePreviewBar({refresh, page}) {
                            alignItems: 'center',
                            overflow: 'hidden'
                        }}>
-                    <IconButton onClick={togglePreview} style={{padding: 8}} disabled>
-                        <VisibilityIcon style={{color: color, opacity:0.5}} fontSize='small'/>
+                    <IconButton style={{padding: 8}} disabled>
+                        <VisibilityIcon style={{color: color, opacity: 0.5}} fontSize='small'/>
                     </IconButton>
                 </Box>
                 : <Box ref={containerRef}
@@ -89,19 +91,16 @@ export default function RafflePreviewBar({refresh, page}) {
                         </Tooltip>
 
                         : <Slide in={showPreview} direction='left' appear={false}>
-                            <div style={{display: 'flex', flexGrow: 1, marginRight: 10}}>
-                                <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>
-                                    <IconButton onClick={togglePreview} style={{padding: 8}}>
-                                        <VisibilityIcon style={{color: color}} fontSize='small'/>
-                                    </IconButton>
-                                </Tooltip>
+                            <div style={{display: 'flex', flexGrow: 1, marginRight: 0}}>
 
                                 <Button onClick={togglePreview}
                                         style={{
                                             padding: '0px 8px 0px 0px',
                                             marginRight: 0,
                                             color: '#8830d3',
-                                            fontSize: '1.0rem'
+                                            fontSize: '1.0rem',
+                                            lineHeight: '1.2rem',
+                                            whiteSpace: 'nowrap',
                                         }}
                                 >
                                     PREVIEW MODE ON
@@ -116,8 +115,11 @@ export default function RafflePreviewBar({refresh, page}) {
                                             <CachedIcon fontSize='small'/>
                                         </IconButton>
                                     </Tooltip>
-
                                 }
+                                    <IconButton onClick={togglePreview} style={{padding: 8}}>
+                                        <VisibilityIcon style={{color: color}} fontSize='small'/>
+                                    </IconButton>
+
                             </div>
                         </Slide>
                     }

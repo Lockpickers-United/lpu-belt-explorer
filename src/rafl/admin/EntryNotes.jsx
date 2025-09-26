@@ -119,7 +119,7 @@ export default function EntryNotes({entry, containerRef}) {
                 </div>
 
                 : <div style={{fontWeight: 700, marginTop: 15}}>
-                    <Link style={{fontWeight: 400, color: '#2bb259'}} onClick={handleNotesOpen}>Add notes</Link>
+                    <Link style={{fontWeight: 600, color: '#2bb259'}} onClick={handleNotesOpen}>Add notes</Link>
                 </div>
             }
 

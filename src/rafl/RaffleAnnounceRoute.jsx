@@ -33,7 +33,7 @@ function RaffleAnnouncetRoute() {
         </React.Fragment>
     )
 
-    const navTitle = !isMobile ? 'Announcing RAFL 2025!' : 'RAFL 2025!'
+    const navTitle = !isMobile ? 'Announcing RAFL 2026!' : 'RAFL 2026!'
 
     return (
         <React.Fragment>

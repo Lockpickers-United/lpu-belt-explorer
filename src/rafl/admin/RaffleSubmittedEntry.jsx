@@ -18,12 +18,19 @@ import Tooltip from '@mui/material/Tooltip'
 import DBContext from '../../app/DBContext.jsx'
 import DeleteEntryButton from './DeleteEntryButton.jsx'
 import EntryNotes from './EntryNotes.jsx'
+import ListAltIcon from '@mui/icons-material/ListAlt'
+import IconButton from '@mui/material/IconButton'
+import Link from '@mui/material/Link'
+import FilterContext from '../../context/FilterContext.jsx'
 
 function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
     const {raffleAdminRole} = useContext(RaffleContext)
     const {expandAll, statusLabels} = useContext(DataContext)
     const {updateRaffleEntry} = useContext(DBContext)
+
+    const {filters: allFilters} = useContext(FilterContext)
+    const {sort} = allFilters || {}
 
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -52,6 +59,11 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
     }, [entry?.id, onExpand])
 
     const isUpdated = dayjs(entry?.updatedAt).valueOf() - dayjs(entry?.createdAt).valueOf() > 60000
+
+    const openInNewTab = useCallback((url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }, [])
 
     const approveDonationToggle = useCallback((donationIndex) => {
         if (!raffleAdminRole) return
@@ -90,11 +102,11 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
             }}>
                 <BeltStripe value={statusLabels[entry.status].entryColor}/>
                 <div style={{display: flexStyle, alignItems: 'center', flexGrow: 1}}>
-                        <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, fontWeight: 600}}>
-                            {entry?.username}
-                            &nbsp;<span
-                            style={{fontWeight: 400, color: '#777'}}>({entry.platform.toLowerCase()})</span>
-                        </div>
+                    <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, fontWeight: 600}}>
+                        {entry?.username}
+                        &nbsp;<span
+                        style={{fontWeight: 400, color: '#777'}}>({entry.platform.toLowerCase()})</span>
+                    </div>
                     <div style={{display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'flex-end'}}>
                         <FieldValue
                             name='Submitted'
@@ -105,8 +117,8 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                 }}>{dayjs(entry?.createdAt).format('MMM DD')}</Typography>}
                             style={{marginRight: 20}}
                         />
-
-                    <FieldValue
+                        { sort==='updatedAt' &&
+                        <FieldValue
                             name='Updated'
                             value={<Typography
                                 style={{
@@ -116,6 +128,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                             textStyle={!isUpdated ? {color: '#777'} : {}}
                             style={{marginRight: 30}}
                         />
+                        }
                         <FieldValue
                             name='Donations'
                             value={<Typography
@@ -137,6 +150,9 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
                         <div style={{textAlign: 'right', margin: '0px 0px 10px 0px', fontWeight: 700}}>
                             Entry Status &nbsp;<StatusMenu entry={entry}/>
+                            <div style={{fontSize:'0.9rem', fontWeight: 400, marginTop:10}}>
+                                Last updated: {dayjs(entry?.updatedAt).format('MMM DD')}
+                            </div>
                         </div>
 
                         <div style={{fontWeight: 700}}>Donations</div>
@@ -144,25 +160,39 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                             <div key={index} style={{
                                 display: 'flex',
                                 flexGrow: 1,
-                                placeItems: 'center',
+                                alignItems: 'center',
                                 fontSize: contentsFontSize,
                                 marginLeft: detailsMarginLeft,
                                 marginBottom: 4
                             }}>
-                                <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
+                                <div style={{fontWeight: 500, flexGrow: 1}}>
                                     {donation.charity?.itemFullTitle || donation.charity?.itemTitle || 'No Charity Selected'}
                                 </div>
-                                <div style={{marginBottom: 4, placeItems: 'center', display: 'flex'}}>
-                                    {donation.receipt && <span>Receipt: <a href={donation.receipt} target='_blank'
-                                                                           rel='noopener noreferrer'>{(donation.receipt.match(/^(?:https?:\/\/)?([^/?#]+)/i) || [])[1]}</a>&nbsp;&nbsp;</span>}
-                                    {donation.amount > 0 &&
-                                        <span
-                                            style={{marginRight: 6}}>Donation: $ {Intl.NumberFormat().format(donation.amount)}</span>}
-                                    <Button style={{
-                                        minWidth: 20,
-                                        padding: '0px 5px', ...donationColors[donation.approved ? 'yes' : 'no']
-                                    }} onClick={() => approveDonationToggle(index)} variant='contained'>OK</Button>
-                                </div>
+                                {!isMobile
+                                    ? <div style={{display: 'flex'}}>
+                                        {donation.receipt && <span>Receipt: <Link
+                                            style={{color: '#ccc', textDecoration: 'underline', cursor: 'pointer'}}
+                                            onClick={() => openInNewTab(donation.receipt)}>{(donation.receipt.match(/^(?:https?:\/\/)?([^/?#]+)/i) || [])[1]}</Link>&nbsp;&nbsp;</span>}
+                                        {donation.amount > 0 &&
+                                            <span
+                                                style={{marginRight: 6}}>Donation: $ {Intl.NumberFormat().format(donation.amount)}</span>}
+                                    </div>
+                                    : <Tooltip title='My Collection' arrow disableFocusListener>
+                                        <IconButton
+                                            variant='outlined'
+                                            color='inherit'
+                                            onClick={() => openInNewTab(donation.receipt)}
+                                            style={{marginRight: 10}}
+                                        >
+                                            <ListAltIcon fontSize='small'/>
+                                        </IconButton>
+                                    </Tooltip>
+                                }
+                                <Button style={{
+                                    minWidth: 20,
+                                    padding: '0px 5px', ...donationColors[donation.approved ? 'yes' : 'no']
+                                }} onClick={() => approveDonationToggle(index)} variant='contained'>OK</Button>
+
                             </div>
                         ))}
 
@@ -182,9 +212,9 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
                         <EntryNotes entry={entry} containerRef={ref}/>
 
-                        <div style={{textAlign: 'center', margin: '25px 0px 0px 0px'}}>
+                        <div style={{textAlign: 'center', margin: '15px 0px 5px 0px'}}>
                             <Tooltip title='Edit Entry' arrow disableFocusListener>
-                                <Button variant='contained' size='large'
+                                <Button variant='contained' size='small'
                                         onClick={() => {
                                             setEditEntryId(entry.id)
                                         }}

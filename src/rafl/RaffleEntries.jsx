@@ -35,16 +35,6 @@ function RaffleEntries({allPots, drawing = false}) {
 
             <InlineFilterDisplay profile={lockCollection} collectionType={'raffle'}/>
 
-            <div style={{
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                justifyItems: 'center',
-                marginTop: 4,
-                marginBottom: 4
-            }}>
-                <ExpandAllButton/>
-            </div>
-
             {activeEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
             {activeEntries.map(entry =>

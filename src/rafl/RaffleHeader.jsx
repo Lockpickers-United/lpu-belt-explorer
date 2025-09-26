@@ -24,7 +24,7 @@ function RaffleHeader({page, width = 700}) {
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 10,
-        padding: '14px 0px 0px 0px',
+        padding: '0px 0px 0px 0px',
         fontWeight: 700,
         display: flexStyle
     }
