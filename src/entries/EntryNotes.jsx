@@ -39,7 +39,7 @@ export default function EntryNotes({entry}) {
     }, [entryNotes])
 
     const handleChange = (event) => {
-        setInputValue(sanitizeValues(event.target.value, {urlsOK: true}))
+        setInputValue(sanitizeValues(event.target.value, {profanityOK: true, urlsOK: true}))
     }
 
     const saveNotes = useCallback(async () => {
@@ -66,8 +66,8 @@ export default function EntryNotes({entry}) {
 
     const {isMobile} = useWindowSize()
     const optionalHeaderStyle = {fontSize: '1.0rem', fontWeight: 400, marginBottom: 5, paddingLeft: 2, color: '#fff'}
-    const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const notesBaseRows = isMobile ? 5 : 3
+    const contentsFontSize = isMobile ? '0.85rem' : '0.9rem'
+    const notesBaseRows = isMobile ? 5 : 8
     const notesLineBreaks = entryNotes.split('\n').length
     const notesRows = notesLineBreaks > notesBaseRows ? Math.min(notesLineBreaks, 12) : notesBaseRows
 
@@ -87,7 +87,7 @@ export default function EntryNotes({entry}) {
                                value={inputValue} onChange={handleChange}
                                id='notes'
                                color='info' style={{}}
-                               placeholder='Add your personal notes about this lock'
+                               placeholder='Add your own personal notes about this lock'
                                variant='outlined'
                                autoFocus
                                inputProps={{maxLength: 1200, style: {fontSize: contentsFontSize}}}
@@ -121,8 +121,8 @@ export default function EntryNotes({entry}) {
                     <div style={{
                         fontSize: contentsFontSize,
                         marginLeft: 10,
+                        marginBottom: 25,
                         fontWeight: 400,
-                        fontStyle: 'italic'
                     }}>
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[[rehypeExternalLinks, {
                             target: '_blank',
