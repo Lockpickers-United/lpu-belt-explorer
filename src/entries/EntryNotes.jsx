@@ -16,7 +16,9 @@ export default function EntryNotes({entry}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {userLockNotes, updateProfileField} = useContext(DBContext)
 
-    const entryNotes = userLockNotes[entry.id] || ''
+    const entryNotes = typeof userLockNotes[entry.id] === 'string'
+        ? userLockNotes[entry.id] || ''
+        : (userLockNotes[entry.id] && userLockNotes[entry.id].notes) || ''
 
     const handleSaveNotes = useCallback(async (updatedNotes) => {
         await updateProfileField('userLockNotes', updatedNotes)
@@ -45,7 +47,7 @@ export default function EntryNotes({entry}) {
     const saveNotes = useCallback(async () => {
         const updatedUserLockNotes = {
             ...userLockNotes,
-            [entry.id]: inputValue || ''
+            [entry.id]: {notes: inputValue || ''}
         }
         await handleSaveNotes(updatedUserLockNotes)
             .catch(error => {
@@ -122,7 +124,7 @@ export default function EntryNotes({entry}) {
                         fontSize: contentsFontSize,
                         marginLeft: 10,
                         marginBottom: 25,
-                        fontWeight: 400,
+                        fontWeight: 400
                     }}>
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[[rehypeExternalLinks, {
                             target: '_blank',
