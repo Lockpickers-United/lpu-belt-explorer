@@ -6,13 +6,13 @@ import Nav from '../../nav/Nav'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
 import RaffleContext from '../RaffleContext.jsx'
-import RaffleHeaderAdmin from './RaffleHeaderAdmin.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import SignInButton from '../../auth/SignInButton.jsx'
 import RaffleDrawingEntries from './RaffleDrawingEntries.jsx'
 import {raffleFilterFields} from '../../data/filterFields'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import RaffleAdminDataProviderPots from './RaffleAdminDataProviderPots.jsx'
+import RaffleHeader from '../RaffleHeader.jsx'
 
 export default function RaffleDrawingRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
@@ -35,7 +35,7 @@ export default function RaffleDrawingRoute() {
     if (authLoaded && !raffleAdmin) return (
         <React.Fragment>
             <Nav title='RAFL Admin' extras={extras}/>
-            <RaffleHeaderAdmin page={'drawing'}/>
+            <RaffleHeader page={'drawing'}/>
             <div style={{padding: 20}}>
                 {!isLoggedIn && <div>Please log in to access this page.</div>}
                 {isLoggedIn && !raffleAdmin && <div>Sorry, you do not have access to this page.</div>}
@@ -49,7 +49,7 @@ export default function RaffleDrawingRoute() {
         <FilterProvider filterFields={raffleFilterFields}>
             <RaffleAdminDataProviderPots drawing={true}>
                 <Nav title='RAFL Drawing' extras={extras}/>
-                <RaffleHeaderAdmin page={'drawing'}/>
+                <RaffleHeader page={'drawing'}/>
 
                 {raffleAdmin &&
                     <RaffleDrawingEntries/>

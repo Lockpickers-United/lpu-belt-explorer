@@ -8,9 +8,7 @@ import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RaffleEntries from './RaffleEntries.jsx'
-import {useSearchParams} from 'react-router-dom'
 import RaffleHeader from './RaffleHeader.jsx'
-import RafflePreviewBar from './RafflePreviewBar.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import AdminToolsButton from './AdminToolsButton.jsx'
 
@@ -19,14 +17,11 @@ function RaffleRoute() {
 
     console.log('RaffleRoute')
 
-    const {preview, allPots, allCharities, raflState, refresh} = useContext(RaffleContext)
+    const {allPots, allCharities, raflState} = useContext(RaffleContext)
     if (!allPots || !allCharities) return null
     const allEntries = allPots
 
     const {isMobile} = useWindowSize()
-    const [searchParams] = useSearchParams()
-    const previewMode = searchParams.has('preview')
-    const showPreview = preview || previewMode
 
     const extras = (
         <React.Fragment>
@@ -62,10 +57,6 @@ function RaffleRoute() {
 
                         <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
                         <RaffleHeader page={'pots'}/>
-
-                        {showPreview &&
-                            <RafflePreviewBar refresh={refresh}/>
-                        }
 
                         <RaffleEntries/>
 

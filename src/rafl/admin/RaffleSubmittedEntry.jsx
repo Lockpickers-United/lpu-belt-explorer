@@ -75,9 +75,10 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
     }, [entry, raffleAdminRole, updateRaffleEntry])
 
 
-    const {isMobile} = useWindowSize()
+    const {isMobile, flexStyle} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
+    const detailsMarginLeft = isMobile ? 2 : 10
     const donationColors = {no: {backgroundColor: '#333', color: '#aaa'}, yes: {backgroundColor: '#aaa', color: '#fff'}}
 
     return (
@@ -88,44 +89,43 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                 }
             }}>
                 <BeltStripe value={statusLabels[entry.status].entryColor}/>
-                <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
-                    <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
-                        <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
-                            <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, fontWeight: 600}}>
-                                {entry?.username}
-                                &nbsp;<span
-                                style={{fontWeight: 400, color: '#777'}}>({entry.platform.toLowerCase()})</span>
-                            </div>
-                            <FieldValue
-                                name='Submitted'
-                                value={<Typography
-                                    style={{
-                                        fontSize: '0.95rem',
-                                        lineHeight: 1.25
-                                    }}>{dayjs(entry?.createdAt).format('MMM DD')}</Typography>}
-                                style={{marginRight: 20}}
-                            />
-                            <FieldValue
-                                name='Updated'
-                                value={<Typography
-                                    style={{
-                                        fontSize: '0.95rem',
-                                        lineHeight: 1.25
-                                    }}>{dayjs(entry?.updatedAt).format('MMM DD')}</Typography>}
-                                textStyle={!isUpdated ? {color: '#777'} : {}}
-                                style={{marginRight: 20}}
-                            />
-                            <FieldValue
-                                name='Donations'
-                                value={<Typography
-                                    style={{
-                                        fontSize: '0.95rem',
-                                        lineHeight: 1.25
-                                    }}>$ {Intl.NumberFormat().format(entry.totalDonation)}</Typography>}
-                                textStyle={entry.totalDonation !== entry.allocatedTickets ? {color: '#f33'} : {}}
-                                style={{marginRight: 20}}
-                            />
+                <div style={{display: flexStyle, alignItems: 'center', flexGrow: 1}}>
+                        <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, fontWeight: 600}}>
+                            {entry?.username}
+                            &nbsp;<span
+                            style={{fontWeight: 400, color: '#777'}}>({entry.platform.toLowerCase()})</span>
                         </div>
+                    <div style={{display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'flex-end'}}>
+                        <FieldValue
+                            name='Submitted'
+                            value={<Typography
+                                style={{
+                                    fontSize: '0.95rem',
+                                    lineHeight: 1.25
+                                }}>{dayjs(entry?.createdAt).format('MMM DD')}</Typography>}
+                            style={{marginRight: 20}}
+                        />
+
+                    <FieldValue
+                            name='Updated'
+                            value={<Typography
+                                style={{
+                                    fontSize: '0.95rem',
+                                    lineHeight: 1.25
+                                }}>{dayjs(entry?.updatedAt).format('MMM DD')}</Typography>}
+                            textStyle={!isUpdated ? {color: '#777'} : {}}
+                            style={{marginRight: 30}}
+                        />
+                        <FieldValue
+                            name='Donations'
+                            value={<Typography
+                                style={{
+                                    fontSize: '0.95rem',
+                                    lineHeight: 1.25
+                                }}>$ {Intl.NumberFormat().format(entry.totalDonation)}</Typography>}
+                            textStyle={entry.totalDonation !== entry.allocatedTickets ? {color: '#f33'} : {}}
+                            style={{marginRight: 20}}
+                        />
                     </div>
                 </div>
             </AccordionSummary>
@@ -133,7 +133,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                 expanded &&
                 <React.Fragment>
 
-                    <AccordionDetails sx={{padding: '0px 16px 0px 16px', margin: '0px 10px'}}>
+                    <AccordionDetails sx={{padding: '0px 16px 0px 16px', marginLeft: '0px 10px'}}>
 
                         <div style={{textAlign: 'right', margin: '0px 0px 10px 0px', fontWeight: 700}}>
                             Entry Status &nbsp;<StatusMenu entry={entry}/>
@@ -146,7 +146,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                 flexGrow: 1,
                                 placeItems: 'center',
                                 fontSize: contentsFontSize,
-                                marginLeft: 10,
+                                marginLeft: detailsMarginLeft,
                                 marginBottom: 4
                             }}>
                                 <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
@@ -156,7 +156,8 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                     {donation.receipt && <span>Receipt: <a href={donation.receipt} target='_blank'
                                                                            rel='noopener noreferrer'>{(donation.receipt.match(/^(?:https?:\/\/)?([^/?#]+)/i) || [])[1]}</a>&nbsp;&nbsp;</span>}
                                     {donation.amount > 0 &&
-                                        <span style={{marginRight: 6}}>Donation: $ {Intl.NumberFormat().format(donation.amount)}</span>}
+                                        <span
+                                            style={{marginRight: 6}}>Donation: $ {Intl.NumberFormat().format(donation.amount)}</span>}
                                     <Button style={{
                                         minWidth: 20,
                                         padding: '0px 5px', ...donationColors[donation.approved ? 'yes' : 'no']
@@ -173,7 +174,8 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                     {pot?.itemFullTitle || pot?.itemTitle || 'No Pot Selected'}
                                 </div>
                                 <div style={{marginBottom: 4}}>
-                                    {pot?.tickets > 0 && <span style={{marginRight: 12}}>Tickets: {Intl.NumberFormat().format(pot.tickets)}</span>}
+                                    {pot?.tickets > 0 && <span
+                                        style={{marginRight: 12}}>Tickets: {Intl.NumberFormat().format(pot.tickets)}</span>}
                                 </div>
                             </div>
                         ))}
@@ -197,7 +199,8 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
                     </AccordionDetails>
                     <AccordionActions disableSpacing>
-                        <div style={{display: 'flex', flexGrow: 1}}><DeleteEntryButton entry={entry} containerRef={ref}/></div>
+                        <div style={{display: 'flex', flexGrow: 1}}><DeleteEntryButton entry={entry}
+                                                                                       containerRef={ref}/></div>
                         <CopyLinkToRaflPotButton entry={entry}/>
                     </AccordionActions>
 

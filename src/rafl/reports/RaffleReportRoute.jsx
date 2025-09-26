@@ -9,6 +9,7 @@ import RaffleReport from './RaffleReport.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
 import RaffleContext from '../RaffleContext.jsx'
+import RaffleHeader from '../RaffleHeader.jsx'
 
 function RaffleReportRoute() {
     const {authLoaded} = useContext(AuthContext)
@@ -26,6 +27,7 @@ function RaffleReportRoute() {
         <FilterProvider filterFields={raffleFilterFields}>
                 <React.Fragment>
                     <Nav title='RAFL Report' extras={extras}/>
+                    <RaffleHeader page={'reports'} width={700}/>
                     {authLoaded && raffleAdmin && <RaffleReport/>}
                     <Footer/>
 

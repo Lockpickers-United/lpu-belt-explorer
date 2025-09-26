@@ -14,7 +14,6 @@ import RaffleHeader from '../RaffleHeader.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import SignInButton from '../../auth/SignInButton.jsx'
 import RaffleAdminDataProviderEntries from './RaffleAdminDataProviderEntries.jsx'
-import RaffleHeaderAdmin from './RaffleHeaderAdmin.jsx'
 
 function RaffleAdminRoute() {
     const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
@@ -53,7 +52,7 @@ function RaffleAdminRoute() {
         <FilterProvider filterFields={raffleEntryFilterFields}>
             <RaffleAdminDataProviderEntries>
                 <Nav title='RAFL Admin' extras={extras}/>
-                <RaffleHeaderAdmin page={'entries'}/>
+                <RaffleHeader page={'entries'}/>
 
                 {raffleAdmin && !editEntryId &&
                     <RaffleSubmittedEntriesList editEntryId={editEntryId} setEditEntryId={setEditEntryId}/>
