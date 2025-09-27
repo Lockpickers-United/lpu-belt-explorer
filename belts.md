@@ -24,13 +24,13 @@ If you want to sync the new belt with your user on Discord, please add your Disc
 
 Each modmail should include:
 
-- A link to the photo / video of the lock(s) picked.
+- A link to the photo / video of the lock(s) picked. (Modmail does not support attachments, you can post your photo to the subreddit or an image hosting site like Imgur)
 - The model of the lock that was picked.
 - Specify what belt you are looking to rank up to.
 - If the video is long, include timestamps for major events in the video (Lock opened @ X time) if timestamps are in the description that is fine.
 - FOR PHOTOS - Ensure keyway is visible and clear in a picked state. We are not concerned with seeing the shackle open.
-- FOR VIDEOS - Ensure clarity and proper light showing all parts of the lock during gutting process (The lock can be
-      fully gutted and a zoom in after to show parts is acceptable). Please avoid using the Shorts format on YouTube, it
+- FOR VIDEOS - Ensure clarity and proper light showing all parts of the lock during gutting process. Pins with security features must be shown closely and clearly to demonstrate said features. (The lock can be
+      fully gutted with a zoom in after to show parts.) Please avoid using the Shorts format on YouTube, it
       does not allow for rewinding to see anything that was missed without watching the whole video over.
 
 Under upper tier ranks that have multiple requirements please collect all the requirements in to one modmail and make
