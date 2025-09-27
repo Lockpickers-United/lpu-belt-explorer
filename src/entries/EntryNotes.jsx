@@ -76,6 +76,9 @@ export default function EntryNotes({entry}) {
                 console.error('Error removing notes:', error)
             })
         handleNotesClose()
+        setRatings({})
+        setRatingsChanged(false)
+
     }, [entry.id, handleNotesClose, handleSaveNotes, userLockNotes])
 
     const {isMobile, flexStyle} = useWindowSize()
