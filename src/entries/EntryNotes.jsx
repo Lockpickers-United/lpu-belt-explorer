@@ -131,7 +131,7 @@ export default function EntryNotes({entry}) {
 
     return (
         <React.Fragment>
-            {entryNotes?.length > 0
+            {Object.keys(lockNotes || {}).length > 0
                 ? <div style={{fontWeight: 700, marginTop: 15}}>
                     <div style={{display: 'flex'}}>
                         <span style={{}}>My notes &nbsp;</span>
@@ -150,6 +150,7 @@ export default function EntryNotes({entry}) {
                         }]]}>
                             {entryNotes}
                         </ReactMarkdown>
+                        {!entryNotes && <div style={{height: 8}}/>}
                         <div style={{display: flexStyle, height: 32, justifyContent: 'flex-start', alignItems: 'center'}}>
                             <RatingTable ratingDimensions={ratingDimensions} onRatingChange={handleRatingChange}
                                          ratings={ratings} readonly={false}
