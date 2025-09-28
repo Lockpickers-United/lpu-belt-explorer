@@ -10,8 +10,13 @@ import validate from './src/validate.js'
 
 import {sheetIds} from '../../../keys/raflSheetIds.js'
 const {raflSheetId} = sheetIds
-export default async function importRaflData() {
+
+// 15ebKk_otKTKFT0pbQuigY_ygMYMqbJTriS17B6MoUrk
+// https://docs.google.com/spreadsheets/d/15ebKk_otKTKFT0pbQuigY_ygMYMqbJTriS17B6MoUrk/gviz/tq?tqx=out:csv&sheet=&headers=1
+
+export default async function importRaflData(req, _res) {
     let errors = []
+    const log = req?.log ?? console
 
     try {
         // Helper to load and validate a file
@@ -24,6 +29,10 @@ export default async function importRaflData() {
 
             const safeTab = encodeURI(tab)
             const url = `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
+
+            log.info(url)
+            log.info(safeTab)
+
             const csvData = await (await fetch(url)).text()
 
             // Parse CSV into JSON
@@ -101,7 +110,7 @@ export default async function importRaflData() {
             id: datum['Unique ID'],
             name: datum['Charity Name'],
             url: datum['URL'],
-            donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
+            donations2024: parseInt(datum['Donations 2024'].replace(/[^0-9]/, '')) || 0
         })).filter(x => x)
 
         const serverPath = process.env.LOGNAME === 'dh_m5s5pf'

@@ -45,7 +45,7 @@ try {
     const fileContents = readFileSync(backupFile, 'utf8')
     data = JSON.parse(fileContents)
 } catch (err) {
-    console.log(`ERROR opening ${backupFile}\n`)
+    console.log(`ERROR opening ${backupFile}\n`, err)
     process.exit(1)
 }
 

@@ -56,7 +56,8 @@ export const raflPotStatsSchema = Joi.array().items(
 export const raflCharityStatsSchema = Joi.array().items(
     Joi.object({
         'Charity Name': Joi.string(),
-        'Total Donations 2025': Joi.string().allow('')
+        'Donations 2024': Joi.string().allow(''),
+        'Donations 2025': Joi.string().allow('')
     }).unknown()
 )
 

@@ -42,7 +42,7 @@ async function setFlair(subredditName, username, belt) {
     return belt
 }
 
-async function modmailReply(conversationId, belt, replyText = undefined, isAuthorHidden = true) {
+async function _modmailReply(conversationId, belt, replyText = undefined, isAuthorHidden = true) {
     if (!replyText) {
         const {defaultMessage} = flairDetails[belt]
         replyText = defaultMessage
@@ -105,11 +105,10 @@ async function setFlairRaw(subredditName, username, templateid) {
         error = err.error
     }
 
-    const {text, cssClass, id} = flairDetails[belt]
+    const {_text, _cssClass, id} = flairDetails[belt]
     await setFlairRaw('lockpicking', username, id)
 
     return
-
 
     if (username) try {
         newFlair = await setFlair(subredditName, username, belt)

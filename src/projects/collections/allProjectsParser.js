@@ -1,23 +1,32 @@
 import {localUser, prodUser} from '../../../keys/users.js'
 import fs from 'node:fs/promises'
-import {setDeepAdd, setDeepUnique} from '../../util/setDeep.js'
 
 const production = process.env.USER !== localUser
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
-const backupDir = production
-    ? `/home/${prodUser}/firebase`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
 
-const allProjects = JSON.parse(await fs.readFile('./allProjects.json', 'utf8'))
+const allProjects = JSON.parse(await fs.readFile(`${serverDir}/allProjects.json`, 'utf8'))
 
-const allProjectsData = allProjects.projects.reduce((acc, project) => {
+const allProjectsData = allProjects.modifiers.reduce((acc, project) => {
 
-    const targetBelt = ['Project 5']
+    acc = acc || []
+    const targetUser = 'GGplAdctTfVDLVvYsfIADJmfp8f2' // eslint-disable-line
 
-    if (!targetBelt.includes(project.belt)) return acc
+    if (project.blackBelt === true) return acc
 
-    console.log(project.displayName + '|' + project.evidenceName + '|' + project.date)
+    //console.log(project.displayName + '|' + project.evidenceName + '|' + project.date)
+
+    acc.push(project)
+    return acc
 
 },[])
+
+console.log('allProjectsData', allProjectsData.length, allProjectsData)
+
+
+try {
+    await fs.writeFile(`${serverDir}/nonBBModified.json`, JSON.stringify(allProjectsData, null, 2))
+} catch (err) {
+    console.log(err)
+}

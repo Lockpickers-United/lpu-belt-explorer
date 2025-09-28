@@ -21,14 +21,14 @@ if (!fs.existsSync(uploadDir)) {
 let subdirs = ''
 let detailsJson = {}
 
-export default async function upload(req, res) {
+export default async function uploadContent(req, res) {
     const form = formidable({
         uploadDir: uploadDir,
         keepExtensions: true,
         createDirsFromUploads: true,
         maxFileSize: 100 * 1024 * 1024, // 100MB
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
-        filename(name, ext, part) {
+        filename(_name, _ext, part) {
             const {originalFilename} = part
             if (!originalFilename) {
                 return 'invalid'

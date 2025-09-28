@@ -92,6 +92,7 @@ export default async function getAllEvidence() {
         acc[evInfo] = true
 
         setDeepPush(fullDb, ['projects'], {
+            docId: doc.id,
             ...doc.data(),
             evidenceName,
             displayName,
@@ -128,6 +129,7 @@ export default async function getAllEvidence() {
 
         if (doc.data().modifier) {
             setDeepPush(fullDb, ['modifiers'], {
+                docId: doc.id,
                 ...doc.data(),
                 evidenceName,
                 displayName,
@@ -205,6 +207,7 @@ export default async function getAllEvidence() {
             : '---'
 
         return {
+            docId: doc.id,
             ...doc.data(),
             evidenceName,
             displayName,
@@ -237,6 +240,7 @@ export default async function getAllEvidence() {
             : '---'
 
         return {
+            docId: doc.id,
             ...doc.data(),
             evidenceName,
             displayName,

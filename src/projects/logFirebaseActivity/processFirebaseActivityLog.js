@@ -16,7 +16,7 @@ if (local) {
     //await processFirebaseActivityLog().then()
 }
 
-export default async function processFirebaseActivityLog(req, res) {
+export default async function processFirebaseActivityLog(_req, res) {
 
     let entries = []
     try {

@@ -7,8 +7,6 @@
 
 import {formidable} from '../../util/formidable/src/index.js'
 import fs from 'fs'
-
-const {writeFile} = fs.promises
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import {contentUploadRecipients,prodUser} from '../../../keys/users.js'
 import util from 'util'
@@ -17,11 +15,12 @@ import {spaceJoin} from '../../util/stringUtils.js'
 import dayjs from 'dayjs'
 import createThumbnails from '../../util/createThumbnails.js'
 import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
-
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
-
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
+
+const {writeFile} = fs.promises
+
 const requestapp = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
@@ -90,7 +89,7 @@ export default async function requestLock(req, res) {
         createDirsFromUploads: true,
         maxFileSize: 30 * 1024 * 1024,
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
-        filename(name, ext, part) {
+        filename(_name, _ext, part) {
             const {fullFilename, filepath, localsubdirs} = createFilename(part, serverPath, uploadDir)
             filepaths.push(filepath)
             // Optionally, save uploadSubDir to a local variable (e.g. in closure) instead of global ??????
