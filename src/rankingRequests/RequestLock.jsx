@@ -203,7 +203,6 @@ function RequestLock() {
                     process. Factors include the availability of locks to review, general availability of locks to the
                     community, access to photos and detailed lock information, and the projected value to the community
                     of adding them to the list.
-                    Yellow & Orange locks are not added frequently.
                     &nbsp;<Link onClick={() => navigate('/view?pageId=classificationProcess')}
                                 style={{color: '#aaa', cursor: 'pointer', fontWeight: 700}}>Click here to learn
                     more</Link>
