@@ -60277,7 +60277,7 @@
         "model": "Lock Cylinder"
       }
     ],
-    "version": "5 or more pins, <2 security pins",
+    "version": "5 or more pins, all standard",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -60294,7 +60294,7 @@
         "model": "Lock Cylinder"
       }
     ],
-    "version": "5 or more pins, 2 or more security pins",
+    "version": "5 or more pins, 1 or more security pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
