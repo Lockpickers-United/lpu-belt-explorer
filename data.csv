@@ -836,8 +836,8 @@ Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
 Unranked,Fichet-Bauche,M2i,,Pump/push,"Under Review ⚑",,d6e6039e
 Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates",,89207b78
 Unranked,Gaab,"6-pin Dimple Lock",,Dimple,"Under Review ⚑",,cd5acff8
-Unranked,Generic/Unranked,"KIK or Mortise Cylinder","SC1 or KW1 keyway, 5 or more pins, <3 security pins",Pin-tumbler,,"Includes common brands such as: Defiant, Reliabilt, etc.",8b3a89ec
-Unranked,Generic/Unranked,"KIK or Mortise Cylinder","SC1 or KW1 keyway, 5 or more pins, 3 or more security pins",Pin-tumbler,,"Includes common brands such as: Defiant, Reliabilt, etc.",d3bdab01
+Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, <2 security pins",Pin-tumbler,,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",8b3a89ec
+Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, 2 or more security pins",Pin-tumbler,,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",d3bdab01
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,"Helason ","16-pin round key",Dimple,"Under Review ⚑",,93324d19
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624

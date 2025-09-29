@@ -559,11 +559,11 @@
       {
         "segment": "All locks",
         "count": 910,
-        "media": 837,
-        "coverage": "91%"
+        "media": 838,
+        "coverage": "92%"
       }
     ],
-    "uniqueImages": 4098,
+    "uniqueImages": 4099,
     "contributors": 306,
     "topPhotographers": [
       {
@@ -572,7 +572,7 @@
       },
       {
         "contributor": "mgsecure",
-        "images": 330
+        "images": 331
       },
       {
         "contributor": "PeaceWeapon",
@@ -1793,6 +1793,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-09-29 17:16"
+    "updatedDateTime": "2025-09-29 18:38"
   }
 }
