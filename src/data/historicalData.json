@@ -3621,7 +3621,7 @@
     "name": "ERA Mortice",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
-      "Mortise",
+      "Mortice",
       "Pin key",
       "False gates"
     ],
@@ -60267,5 +60267,39 @@
     ],
     "name": "Yanai R 2200M",
     "dateAdded": "2025-08-15T19:23:33.243Z"
+  },
+  "8b3a89ec": {
+    "id": "8b3a89ec",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Generic/Unranked",
+        "model": "KIK or Mortise Cylinder"
+      }
+    ],
+    "version": "SC1 or KW1 keyway, 5 or more pins, <3 security pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "Includes common brands such as: Defiant, Reliabilt, etc.",
+    "name": "Generic/Unranked KIK or Mortise Cylinder",
+    "dateAdded": "2025-09-29T17:16:37.420Z"
+  },
+  "d3bdab01": {
+    "id": "d3bdab01",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Generic/Unranked",
+        "model": "KIK or Mortise Cylinder"
+      }
+    ],
+    "version": "SC1 or KW1 keyway, 5 or more pins, 3 or more security pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "Includes common brands such as: Defiant, Reliabilt, etc.",
+    "name": "Generic/Unranked KIK or Mortise Cylinder",
+    "dateAdded": "2025-09-29T17:16:37.420Z"
   }
 }
