@@ -86,20 +86,6 @@ function ToolsRoute() {
                         Scorecard Projects, All Modified Picks, and Black Belt Picks with Modifiers .
                     </div>
 
-                    <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
-                        <Link onClick={() => navigate('/tools/rafl-charities')}
-                              style={{
-                                  color: '#fff',
-                                  textDecorationColor: '#bbb',
-                                  cursor: 'pointer',
-                                  fontSize: '1.1rem',
-                                  fontWeight: 700
-                              }}>
-                            Compare RAFL Charities
-                        </Link><br/>
-                        Compares charity info from site and form to find mismatches.
-                    </div>
-
                 </div>
                 <Footer/>
                 <Tracker feature='flickrInfo'/>

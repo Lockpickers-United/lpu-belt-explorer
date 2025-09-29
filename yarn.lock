@@ -5944,6 +5944,11 @@ react-router@6.21.0:
   dependencies:
     "@remix-run/router" "1.14.0"
 
+react-simple-star-rating@^5.1.7:
+  version "5.1.7"
+  resolved "https://registry.yarnpkg.com/react-simple-star-rating/-/react-simple-star-rating-5.1.7.tgz#5406ade8d0e117a654e979ebd702d89389876c29"
+  integrity sha512-NTFkW8W3uwvI82Fv7JW5i7gmDjEZKxJmj+Z9vn+BjYIXT6ILdnU9qnSUP2cWrWN/WAUlue81f9SgM4CQcenltQ==
+
 react-swipeable@^7.0.1:
   version "7.0.1"
   resolved "https://registry.npmjs.org/react-swipeable/-/react-swipeable-7.0.1.tgz"

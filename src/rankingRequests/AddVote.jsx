@@ -10,8 +10,8 @@ import Dialog from '@mui/material/Dialog'
 import SelectBox from '../formUtils/SelectBox.jsx'
 import {uniqueBelts} from '../data/belts'
 import DataContext from '../context/DataContext.jsx'
-import {serverUrl} from './rankingRequestData'
 import {postData} from '../formUtils/postData.jsx'
+import {nodeServerUrl} from '../data/dataUrls'
 
 export default function AddVote({user, entry}) {
     const [isUpdating, setIsUpdating] = useState(false)
@@ -60,7 +60,7 @@ export default function AddVote({user, entry}) {
         }
         setIsUpdating(true)
         const newVote = {...form, entryId: entry.id, owner: false, userId: user.uid, displayName: profile.displayName}
-        const url = `${serverUrl}/request-vote`
+        const url = `${nodeServerUrl}/request-vote`
         const json= JSON.stringify({ newVote })
 
         try {

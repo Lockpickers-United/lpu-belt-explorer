@@ -1,5 +1,5 @@
 import {enqueueSnackbar} from 'notistack'
-import {serverUrl} from './rankingRequestData'
+import {nodeServerUrl} from '../data/dataUrls'
 import axios from 'axios'
 
 export default async function postRequestCreate_deprecated({formData, user, setUploadError}) {
@@ -12,7 +12,7 @@ export default async function postRequestCreate_deprecated({formData, user, setU
     try {
         const idToken = await user.getIdToken()
         const response = await axios.post(
-            `${serverUrl}/request-lock?${rand}`, formData,
+            `${nodeServerUrl}/request-lock?${rand}`, formData,
             {
                 headers: {
                     'Authorization': 'Bearer ' + idToken,

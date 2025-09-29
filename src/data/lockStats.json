@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 908,
+        "value": 910,
         "label": "All"
       },
       {
-        "value": 110,
+        "value": 112,
         "label": "Unranked"
       }
     ]
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.02092511013215859,
+      "value": 0.020879120879120878,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 62,
-      "value": 0.06828193832599119,
+      "value": 0.06813186813186813,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 74,
-      "value": 0.08149779735682819,
+      "value": 0.08131868131868132,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16409691629955947,
+      "value": 0.16373626373626374,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 131,
-      "value": 0.14427312775330398,
+      "value": 0.14395604395604394,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 113,
-      "value": 0.12444933920704845,
+      "value": 0.12417582417582418,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.09251101321585903,
+      "value": 0.09230769230769231,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 72,
-      "value": 0.07929515418502203,
+      "value": 0.07912087912087912,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 94,
-      "value": 0.10352422907488987,
+      "value": 0.10329670329670329,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 110,
-      "value": 0.1211453744493392,
+      "count": 112,
+      "value": 0.12307692307692308,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 354,
+      "value": 356,
       "id": "pin-tumbler"
     },
     {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 22,
+        "value": 24,
         "id": "pin-tumbler"
       },
       {
@@ -558,13 +558,13 @@
       },
       {
         "segment": "All locks",
-        "count": 908,
-        "media": 836,
-        "coverage": "92%"
+        "count": 910,
+        "media": 837,
+        "coverage": "91%"
       }
     ],
-    "uniqueImages": 4092,
-    "contributors": 305,
+    "uniqueImages": 4098,
+    "contributors": 306,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -988,6 +988,10 @@
       },
       {
         "contributor": "Moturist",
+        "images": 6
+      },
+      {
+        "contributor": "o0RustySpoon",
         "images": 6
       },
       {
@@ -1789,6 +1793,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-09-19 17:37"
+    "updatedDateTime": "2025-09-29 17:16"
   }
 }

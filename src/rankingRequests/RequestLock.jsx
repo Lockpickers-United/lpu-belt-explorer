@@ -17,7 +17,7 @@ import {Collapse} from '@mui/material'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
 import DataContext from '../context/DataContext.jsx'
-import {serverUrl} from './rankingRequestData'
+import {nodeServerUrl} from '../data/dataUrls'
 import {postData} from '../formUtils/postData.jsx'
 import {enqueueSnackbar} from 'notistack'
 import SubNav from '../nav/SubNav.jsx'
@@ -125,8 +125,7 @@ function RequestLock() {
             formData.append('files', file, `${uploadsDir}/${prefix}_${base}_${suffix}.${ext}`.toLowerCase())
         })
 
-
-        const url = `${serverUrl}/request-lock`
+        const url = `${nodeServerUrl}/request-lock`
 
         try {
             const results =  await postData({user, url, formData, snackBars: false})
@@ -142,8 +141,6 @@ function RequestLock() {
             setUploading(false)
             setForm(formCopy)
         }
-
-
     }
 
     const handleReload = useCallback(() => {
@@ -203,7 +200,6 @@ function RequestLock() {
                     process. Factors include the availability of locks to review, general availability of locks to the
                     community, access to photos and detailed lock information, and the projected value to the community
                     of adding them to the list.
-                    Yellow & Orange locks are not added frequently.
                     &nbsp;<Link onClick={() => navigate('/view?pageId=classificationProcess')}
                                 style={{color: '#aaa', cursor: 'pointer', fontWeight: 700}}>Click here to learn
                     more</Link>

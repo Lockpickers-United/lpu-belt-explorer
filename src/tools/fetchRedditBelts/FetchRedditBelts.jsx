@@ -2,7 +2,6 @@ import React, {useCallback, useState} from 'react'
 import {postData, cleanError} from '../../formUtils/postData.jsx'
 import GetUserAndProfile from '../../auth/GetUserAndProfile.jsx'
 import CopyTextButton from './CopyTextButton.jsx'
-import {nodeServer} from '../../formUtils/nodeServerUrl'
 import PlatformBeltCountsTable from '../../stats/PlatformBeltCountsTable.jsx'
 import PlatformBeltCountsChart from '../../stats/PlatformBeltCountsChart.jsx'
 import {uniqueBelts} from '../../data/belts'
@@ -12,6 +11,7 @@ import Dialog from '@mui/material/Dialog'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Button from '@mui/material/Button'
 import useWindowSize from '../../util/useWindowSize'
+import {nodeServerUrl} from '../../data/dataUrls'
 
 const FetchRedditBelts = ({data, refresh}) => {
 
@@ -35,7 +35,7 @@ const FetchRedditBelts = ({data, refresh}) => {
 
         setUploading(true)
         try {
-            const url = `${nodeServer}/fetch-reddit-flairs`
+            const url = `${nodeServerUrl}/fetch-reddit-flairs`
             const snackBars = true
             const timeoutDuration = 60000
             try {

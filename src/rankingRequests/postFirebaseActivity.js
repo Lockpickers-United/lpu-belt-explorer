@@ -1,9 +1,9 @@
-import { serverUrl } from './rankingRequestData'
+import {nodeServerUrl} from '../data/dataUrls'
 import {cleanError, postData} from '../formUtils/postData.jsx'
 
 export default async function postFirebaseActivity({ activityData }) {
 
-    const url = `${serverUrl}/log-activity`
+    const url = `${nodeServerUrl}/log-activity`
     const snackBars = false
     const json= JSON.stringify({ activityData })
 

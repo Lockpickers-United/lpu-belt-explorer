@@ -2,11 +2,13 @@ The Lockpickers United ranking process may seem opaque but it isn't a secret. It
 
 There is a community classification database in which Black Belts and advanced pickers (basically people with the knowledge, skill, and experience required to classify locks) enter their ranking for a particular lock. This applies to new locks as well as existing ones where a change in ranking is being considered.
 
-New locks can be officially added by the classification team and are usually included because something is new, interesting, or there is a new batch of locks that multiple people can get their hands on. Anyone can now submit a lock for consideration by using the **[Ranking Request form](https://lpubelts.com/#/content/lockrequest)**.
+All new locks are officially added by the classification team and are usually included because something is new, interesting, or there is a new batch of locks that multiple people can get their hands on. Anyone can now submit a lock for consideration by using the **[Ranking Request form](https://lpubelts.com/#/content/lockrequest)**.
 
-Locks can only be actively reviewed if they are available/can be sent to members of the classification team for testing. Locks are more likely to be considered if photos and information are available. It's worth mentioning that Yellow & Orange locks are not added frequently because there are so many of them already on the site and it's impossible to keep up with the huge number of easier locks available.
+Locks can only be actively reviewed if they are available/can be sent to members of the classification team for testing. Locks are more likely to be considered if photos and information are available.
 
 The team ranks locks (not anonymously) with the goal of getting consensus from at least three advanced pickers. Once enough votes have been cast to get consensus, mods and staff hold a yes/no vote to approve the new lock/ranking change.
+
+**New:** By popular demand, we recently streamlined the process for ranking some locks. If a lock is very similar to an existing lock on the site, it can be added with limited review. The classification team will still need to approve the addition, but it is not necessary to get consensus from multiple advanced pickers. This is intended to make it easier to add common locks that are easy to find and pick.
 
 Approved additions & changes are compiled into a #changelog that is released every few months (though it has been more frequent lately). Those changes are then implemented on lpubelts.com and copied over to the belt ranking page on reddit.
 
