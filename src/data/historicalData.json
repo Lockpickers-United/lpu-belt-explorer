@@ -60274,15 +60274,15 @@
     "makeModels": [
       {
         "make": "Generic/Unranked",
-        "model": "KIK or Mortise Cylinder"
+        "model": "Lock Cylinder"
       }
     ],
-    "version": "SC1 or KW1 keyway, 5 or more pins, <3 security pins",
+    "version": "5 or more pins, <2 security pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "Includes common brands such as: Defiant, Reliabilt, etc.",
-    "name": "Generic/Unranked KIK or Mortise Cylinder",
+    "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
+    "name": "Generic/Unranked Lock Cylinder",
     "dateAdded": "2025-09-29T17:16:37.420Z"
   },
   "d3bdab01": {
@@ -60291,15 +60291,15 @@
     "makeModels": [
       {
         "make": "Generic/Unranked",
-        "model": "KIK or Mortise Cylinder"
+        "model": "Lock Cylinder"
       }
     ],
-    "version": "SC1 or KW1 keyway, 5 or more pins, 3 or more security pins",
+    "version": "5 or more pins, 2 or more security pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "notes": "Includes common brands such as: Defiant, Reliabilt, etc.",
-    "name": "Generic/Unranked KIK or Mortise Cylinder",
+    "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
+    "name": "Generic/Unranked Lock Cylinder",
     "dateAdded": "2025-09-29T17:16:37.420Z"
   }
 }
