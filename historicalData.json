@@ -60301,5 +60301,32 @@
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "name": "Generic/Unranked Lock Cylinder",
     "dateAdded": "2025-09-29T17:16:37.420Z"
+  },
+  "58c676d3": {
+    "id": "58c676d3",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "Biaxial Camlock"
+      },
+      {
+        "make": "Medeco",
+        "model": "M3 Camlock"
+      }
+    ],
+    "version": "<4 pins ***",
+    "lockingMechanisms": [
+      "Sidebar",
+      "Slider"
+    ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
+    ],
+    "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
+    "name": "Medeco Biaxial Camlock, M3 Camlock",
+    "dateAdded": "2025-09-29T22:09:57.767Z"
   }
 }
