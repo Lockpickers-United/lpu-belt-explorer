@@ -1,5 +1,5 @@
 import { enqueueSnackbar } from 'notistack'
-import { serverUrl } from './rankingRequestData'
+import {nodeServerUrl} from '../data/dataUrls'
 
 export default async function postVoteUpdate_deprecated({ newVote, user }) {
     const controller = new AbortController()
@@ -10,7 +10,7 @@ export default async function postVoteUpdate_deprecated({ newVote, user }) {
 
     try {
         const idToken = await user.getIdToken()
-        const response = await fetch(`${serverUrl}/request-vote?${rand}`, {
+        const response = await fetch(`${nodeServerUrl}/request-vote?${rand}`, {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + idToken,

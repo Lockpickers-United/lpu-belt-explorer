@@ -66,7 +66,13 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                     ? award.id
                     : null
 
-    const [entryNotes, setEntryNotes] = useState(userLockNotes[entryId] || '')
+
+    const lockNotes = userLockNotes[entry.id] || {}
+    const notes = typeof lockNotes === 'string'
+        ? lockNotes || ''
+        : (lockNotes && lockNotes.notes) || ''
+    const [entryNotes, setEntryNotes] = useState(notes || '')
+
 
     const fieldLabel = addAward
         ? 'Belt/Dan'

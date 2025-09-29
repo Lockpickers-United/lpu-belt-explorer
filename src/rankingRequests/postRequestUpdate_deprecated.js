@@ -1,5 +1,5 @@
 import {enqueueSnackbar} from 'notistack'
-import {serverUrl} from './rankingRequestData'
+import {nodeServerUrl} from '../data/dataUrls'
 
 export default async function postRequestUpdate_deprecated({entry, user}) {
     const controller = new AbortController()
@@ -10,7 +10,7 @@ export default async function postRequestUpdate_deprecated({entry, user}) {
 
     try {
         const idToken = await user.getIdToken()
-        const response = await fetch(`${serverUrl}/update-request?${rand}`, {
+        const response = await fetch(`${nodeServerUrl}/update-request?${rand}`, {
             method: 'POST',
             headers: {
                 'Authorization': 'Bearer ' + idToken,

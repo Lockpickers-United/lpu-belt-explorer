@@ -5,6 +5,7 @@ import axios from 'axios'
 import {enqueueSnackbar} from 'notistack'
 import CopyMediaDataButton from './CopyMediaDataButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import {nodeServerUrl} from '../../data/dataUrls'
 
 function ContentSubmit() {
 
@@ -21,7 +22,7 @@ function ContentSubmit() {
         const formData = new FormData()
         formData.append('photosetId', photosetId)
         await axios.get(
-            `https://explore.lpubelts.com:8443/flickr-info?id=${photosetId}`,
+            `${nodeServerUrl}/flickr-info?id=${photosetId}`,
             {}
         )
             .then(response => {

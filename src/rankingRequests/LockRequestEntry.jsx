@@ -23,9 +23,9 @@ import AuthContext from '../app/AuthContext.jsx'
 import AddVote from './AddVote.jsx'
 import Upvote from './Upvote.jsx'
 import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
-import {serverUrl} from './rankingRequestData'
 import {postData} from '../formUtils/postData.jsx'
 import {enqueueSnackbar} from 'notistack'
+import {nodeServerUrl} from '../data/dataUrls'
 
 /**
  * @typedef {object} entry
@@ -96,7 +96,7 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
     }, [entry])
 
     const handleUpdate = useCallback(async (entry) => {
-        const url = `${serverUrl}/update-request`
+        const url = `${nodeServerUrl}/update-request`
         const json= JSON.stringify({ entry })
 
         try {

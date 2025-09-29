@@ -16,6 +16,7 @@ import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Tracker from '../../app/Tracker.jsx'
 import DataContext from '../../locks/LockDataProvider.jsx'
 import {postData, cleanError} from '../../formUtils/postData.jsx'
+import {nodeServerUrl} from '../../data/dataUrls'
 
 /**
  * @prop photoCredit
@@ -72,7 +73,7 @@ function PhotoSubmit({profile, user}) {
         formData.append('uploadsDir', uploadsDir)
         formData.append('notes', notes)
 
-        const url = 'https://explore.lpubelts.com:8443/upload'
+        const url = `${nodeServerUrl}/upload`
         const snackBars = false
         const timeoutDuration = 30000
         try {

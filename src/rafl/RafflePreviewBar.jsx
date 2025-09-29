@@ -10,6 +10,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
 import RaffleContext from './RaffleContext.jsx'
+import {nodeServerUrl} from '../data/dataUrls'
 
 export default function RafflePreviewBar({refresh}) {
     const [requestingPreview, setRequestingPreview] = useState(false)
@@ -21,9 +22,7 @@ export default function RafflePreviewBar({refresh}) {
     const previewMode = searchParams.has('preview')
 
     const refreshPreview = useCallback(async () => {
-        const url = window.location.protocol === 'http:'
-            ? 'http' + '://explore.lpubelts.com:8080/refresh-preview'
-            : 'https://explore.lpubelts.com:8443/refresh-preview'
+        const url = `${nodeServerUrl}/refresh-preview`
 
         setRequestingPreview(true)
 

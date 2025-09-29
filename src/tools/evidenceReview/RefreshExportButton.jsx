@@ -7,6 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
+import {nodeServerUrl} from '../../data/dataUrls'
 
 export default function RefreshExportButton({refresh}) {
     const [requestingExport, setRequestingExport] = useState(false)
@@ -14,9 +15,7 @@ export default function RefreshExportButton({refresh}) {
     const [open, setOpen] = useState(false)
 
     const refreshPreview = useCallback(async () => {
-        const url = window.location.protocol === 'http:'
-            ? 'http' + '://explore.lpubelts.com:8080/export-evidence'
-            : 'https://explore.lpubelts.com:8443/export-evidence'
+        const url = `${nodeServerUrl}/export-evidence`
 
         setRequestingExport(true)
 
