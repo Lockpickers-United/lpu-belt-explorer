@@ -33,7 +33,7 @@ function ScoringExceptions() {
         const supersedingEntryId = act.exceptionId
         const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
         const supersedingLock = supersedingEntry ? getEntryFromId(supersedingEntry.matchId) : {}
-        const supersedingProject = supersedingEntry ? useMemo(() => getProjectEntryFromId(supersedingEntry.matchId), [supersedingEntry.matchId]) : {}
+        const supersedingProject = supersedingEntry ? getProjectEntryFromId(supersedingEntry.matchId) : {}
         const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
         const matchLock = act.matchId ? getEntryFromId(act.matchId) : null
         const matchLockName = matchLock ? entryName(matchLock, 'short') : ''
@@ -164,6 +164,8 @@ function ScoringExceptions() {
                 </Drawer>
             </React.Fragment>
         )
+    } else {
+        return null
     }
 }
 

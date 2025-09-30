@@ -66,8 +66,9 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                     ? award.id
                     : null
 
+console.log('entry', entryId, entry)
 
-    const lockNotes = userLockNotes[entry.id] || {}
+    const lockNotes = userLockNotes[entry?.id] || {}
     const notes = typeof lockNotes === 'string'
         ? lockNotes || ''
         : (lockNotes && lockNotes.notes) || ''
@@ -175,7 +176,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
     const evidenceUrlError = (!!evidenceUrl && !isValidUrl(evidenceUrl) || ((updated && !evidenceUrl)) && !awardMode)
     const evidenceURLHelperText = evidenceUrlError ? 'Documentation link is not valid' : ''
     const evidenceLaunchColor = evidenceUrlValid ? '#fff' : '#666'
-    const saveEntryColor = updated && !evidenceUrlError ? '#fff' : '#555'
+    const saveEntryColor = updated && !evidenceUrlError && !!entryId ? '#fff' : '#555'
     const cancelColor = '#e15c07'
     const urlFieldColor = evidenceUrlError ? 'error' : 'secondary'
     const entryError = evidenceUrlError || (addProject && !entryValues.includes(entryName))
@@ -350,7 +351,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                         </Button>
                         <Button style={{marginRight: 0, color: saveEntryColor}}
                                 onClick={handleSave}
-                                disabled={!updated || entryError}
+                                disabled={!updated || entryError || !entryId}
                         >
                             Save
                         </Button>

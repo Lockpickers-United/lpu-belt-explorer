@@ -179,8 +179,6 @@ function processEntries(entries, filterArray, search, sort, profile={}) {
             })
         })
 
-    console.log('filtered', filtered)
-
     // If there is a search term, fuzzy match that
     const searched = search
         ? fuzzysort.go(removeAccents(search), filtered, {keys: ['fuzzy'], threshold: -25000})
