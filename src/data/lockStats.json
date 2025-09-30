@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 910,
+        "value": 911,
         "label": "All"
       },
       {
-        "value": 112,
+        "value": 113,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.020879120879120878,
+      "value": 0.020856201975850714,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 62,
-      "value": 0.06813186813186813,
+      "value": 0.06805708013172337,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 74,
-      "value": 0.08131868131868132,
+      "value": 0.08122941822173436,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16373626373626374,
+      "value": 0.16355653128430298,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 131,
-      "value": 0.14395604395604394,
+      "value": 0.1437980241492865,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 113,
-      "value": 0.12417582417582418,
+      "value": 0.12403951701427003,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.09230769230769231,
+      "value": 0.09220636663007684,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 72,
-      "value": 0.07912087912087912,
+      "value": 0.07903402854006586,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 94,
-      "value": 0.10329670329670329,
+      "value": 0.10318331503841932,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 112,
-      "value": 0.12307692307692308,
+      "count": 113,
+      "value": 0.12403951701427003,
       "id": "Unranked"
     }
   ],
@@ -91,7 +91,7 @@
     },
     {
       "label": "Multiple",
-      "value": 94,
+      "value": 95,
       "id": "multiple"
     },
     {
@@ -521,14 +521,14 @@
         "id": "pump-push"
       },
       {
+        "label": "Multiple",
+        "value": 5,
+        "id": "multiple"
+      },
+      {
         "label": "Disc detainer",
         "value": 4,
         "id": "disc-detainer"
-      },
-      {
-        "label": "Multiple",
-        "value": 4,
-        "id": "multiple"
       },
       {
         "label": "Wafer",
@@ -553,26 +553,26 @@
       {
         "segment": "Ranked locks",
         "count": 798,
-        "media": 749,
-        "coverage": "93%"
+        "media": 754,
+        "coverage": "94%"
       },
       {
         "segment": "All locks",
-        "count": 910,
-        "media": 837,
-        "coverage": "91%"
+        "count": 911,
+        "media": 844,
+        "coverage": "92%"
       }
     ],
-    "uniqueImages": 4098,
-    "contributors": 306,
+    "uniqueImages": 4151,
+    "contributors": 308,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 341
+        "images": 361
       },
       {
         "contributor": "mgsecure",
-        "images": 330
+        "images": 331
       },
       {
         "contributor": "PeaceWeapon",
@@ -596,7 +596,11 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 70
+        "images": 77
+      },
+      {
+        "contributor": "fabianoh130",
+        "images": 73
       },
       {
         "contributor": "Dra9i",
@@ -605,10 +609,6 @@
       {
         "contributor": "DQ",
         "images": 64
-      },
-      {
-        "contributor": "fabianoh130",
-        "images": 63
       },
       {
         "contributor": "Qikom",
@@ -639,11 +639,11 @@
         "images": 50
       },
       {
-        "contributor": "decoder",
-        "images": 43
+        "contributor": "NCR",
+        "images": 44
       },
       {
-        "contributor": "NCR",
+        "contributor": "decoder",
         "images": 43
       },
       {
@@ -736,7 +736,7 @@
       },
       {
         "contributor": "LockFumbler",
-        "images": 20
+        "images": 21
       },
       {
         "contributor": "Insomniaclockpicker",
@@ -903,6 +903,10 @@
         "images": 9
       },
       {
+        "contributor": "hunson",
+        "images": 9
+      },
+      {
         "contributor": "HVLogic",
         "images": 9
       },
@@ -935,10 +939,6 @@
         "images": 8
       },
       {
-        "contributor": "hunson",
-        "images": 8
-      },
-      {
         "contributor": "Lockpicking Dutchman",
         "images": 8
       },
@@ -952,6 +952,10 @@
       },
       {
         "contributor": "CollateralTech",
+        "images": 7
+      },
+      {
+        "contributor": "Moturist",
         "images": 7
       },
       {
@@ -987,7 +991,7 @@
         "images": 6
       },
       {
-        "contributor": "Moturist",
+        "contributor": "Indigenouslockpicker",
         "images": 6
       },
       {
@@ -1008,6 +1012,10 @@
       },
       {
         "contributor": "ReinderStegen",
+        "images": 6
+      },
+      {
+        "contributor": "SafeAF_orElse",
         "images": 6
       },
       {
@@ -1076,10 +1084,6 @@
       },
       {
         "contributor": "Potti314",
-        "images": 5
-      },
-      {
-        "contributor": "SafeAF_orElse",
         "images": 5
       },
       {
@@ -1299,6 +1303,10 @@
         "images": 3
       },
       {
+        "contributor": "Lanciferous",
+        "images": 3
+      },
+      {
         "contributor": "Lemon",
         "images": 3
       },
@@ -1452,6 +1460,10 @@
       },
       {
         "contributor": "NKT",
+        "images": 2
+      },
+      {
+        "contributor": "Norm",
         "images": 2
       },
       {
@@ -1627,10 +1639,6 @@
         "images": 1
       },
       {
-        "contributor": "Ipaidmyrentman",
-        "images": 1
-      },
-      {
         "contributor": "JambonRoyale",
         "images": 1
       },
@@ -1793,6 +1801,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-09-29 17:16"
+    "updatedDateTime": "2025-09-30 03:03"
   }
 }

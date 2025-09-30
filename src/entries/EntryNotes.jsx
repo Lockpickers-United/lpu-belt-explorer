@@ -106,7 +106,7 @@ export default function EntryNotes({entry}) {
                                value={inputValue} onChange={handleChange}
                                id='notes'
                                color='info' style={{}}
-                               placeholder='Add your own personal notes about this lock'
+                               placeholder='Add your own private notes about this lock, visible only to you.'
                                variant='outlined'
                                autoFocus
                                inputProps={{maxLength: 1200, style: {fontSize: contentsFontSize}}}
@@ -124,7 +124,7 @@ export default function EntryNotes({entry}) {
                 : <div style={{flexGrow: 1, padding: '40px 20px', placeItems: 'center'}}>
                     <div style={{...optionalHeaderStyle, marginBottom: 15, fontWeight: 700, textAlign: 'center'}}>
                         Please sign in to add your<br/>
-                        own notes for locks.
+                        own private notes for locks.
                     </div>
                     <div style={{width: 210}}><SignInButton onClick={handleNotesClose}/></div>
                 </div>
@@ -137,7 +137,7 @@ export default function EntryNotes({entry}) {
             {Object.keys(lockNotes || {}).length > 0
                 ? <div style={{fontWeight: 700, marginTop: 15}}>
                     <div style={{display: 'flex'}}>
-                        <span style={{}}>My notes &nbsp;</span>
+                        <span style={{}}>My private notes &nbsp;</span>
                         <Link style={{fontWeight: 400, color: '#2bb259'}} onClick={handleNotesOpen}>edit</Link>
                         &nbsp;•&nbsp;
                         <Link style={{fontWeight: 400, color: '#2bb259'}} onClick={removeNotes}>remove</Link>
@@ -182,7 +182,7 @@ export default function EntryNotes({entry}) {
                 : <div style={{fontWeight: 700, marginTop: 15}}>
                     <Link style={{fontWeight: 600, color: '#2bb259', textDecoration: 'none', cursor: 'pointer'}}
                           onClick={handleNotesOpen}>
-                        Add your personal notes
+                        Add your own private notes
                     </Link>
                 </div>
             }
