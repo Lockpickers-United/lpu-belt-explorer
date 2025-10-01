@@ -5,7 +5,7 @@ import FieldValue from '../../entries/FieldValue.jsx'
 import LockImageGallery from '../../entries/LockImageGallery.jsx'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import entryName from '../../entries/entryName.js'
+import entryName from '../../entries/entryName'
 import dayjs from 'dayjs'
 
 function RecentMediaEntry({entry}) {

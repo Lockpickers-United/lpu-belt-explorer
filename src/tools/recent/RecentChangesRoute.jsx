@@ -7,7 +7,7 @@ import Tracker from '../../app/Tracker.jsx'
 import allEntries from '../../data/data.json'
 import deletedEntries from '../../data/deletedEntries.json'
 
-import {lockFilterFields} from '../../data/filterFields.js'
+import {lockFilterFields} from '../../data/filterFields'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {DataProvider} from '../../locks/LockDataProvider.jsx'
 
