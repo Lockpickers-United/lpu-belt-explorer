@@ -472,7 +472,7 @@ export default [
     {
         path: '/recent',
         lazy: async () => {
-            const {default: RecentChangesRoute} = await import('../recent/RecentChangesRoute.jsx')
+            const {default: RecentChangesRoute} = await import('../tools/recent/RecentChangesRoute.jsx')
             return {element: <RecentChangesRoute/>}
         }
     },

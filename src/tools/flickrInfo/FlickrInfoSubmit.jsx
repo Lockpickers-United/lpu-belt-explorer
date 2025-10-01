@@ -40,7 +40,8 @@ function ContentSubmit() {
 
     const handleChangePhotoset = useCallback(event => {
         const {value} = event.target
-        setPhotosetId(value)
+        const matches = value.match(/(\d{17})/) || []
+        setPhotosetId(matches[0] || '' )
     }, [])
 
     const errorStack = response?.error ? JSON.stringify(response?.error, null, 2) : undefined

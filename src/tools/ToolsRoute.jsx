@@ -72,6 +72,21 @@ function ToolsRoute() {
                     </div>
 
                     <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
+                        <Link onClick={() => navigate('/recent')}
+                              style={{
+                                  color: '#fff',
+                                  textDecorationColor: '#bbb',
+                                  cursor: 'pointer',
+                                  fontSize: '1.1rem',
+                                  fontWeight: 700
+                              }}>
+                            Recent Changes
+                        </Link><br/>
+                        Shows recently added images (last 14 days) with links to entries.
+                        Also has a tab for deleted entries (all time).
+                    </div>
+
+                    <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
                         <Link onClick={() => navigate('/evidence-review')}
                               style={{
                                   color: '#fff',
@@ -83,7 +98,7 @@ function ToolsRoute() {
                             Evidence Review
                         </Link><br/>
                         Displays All Projects (all Projects from Scorecards as well as unclaimed dan tabs),
-                        Scorecard Projects, All Modified Picks, and Black Belt Picks with Modifiers .
+                        Scorecard Projects, All Modified Picks, and Black Belt Picks with Modifiers.
                     </div>
 
                 </div>

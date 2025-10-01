@@ -1,11 +1,11 @@
 import React, {useCallback} from 'react'
 import {useNavigate} from 'react-router-dom'
-import BeltStripe from '../entries/BeltStripe'
-import FieldValue from '../entries/FieldValue'
-import LockImageGallery from '../entries/LockImageGallery'
+import BeltStripe from '../../entries/BeltStripe.jsx'
+import FieldValue from '../../entries/FieldValue.jsx'
+import LockImageGallery from '../../entries/LockImageGallery.jsx'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import entryName from '../entries/entryName'
+import entryName from '../../entries/entryName.js'
 import dayjs from 'dayjs'
 
 function RecentMediaEntry({entry}) {

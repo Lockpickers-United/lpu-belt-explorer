@@ -66,8 +66,6 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                     ? award.id
                     : null
 
-console.log('entry', entryId, entry)
-
     const lockNotes = userLockNotes[entry?.id] || {}
     const notes = typeof lockNotes === 'string'
         ? lockNotes || ''
