@@ -33,23 +33,34 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
     }, [allEntries, profile])
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array
+        // Filters as an array (support negative values with leading '!')
+        const parseFilter = (key, rawVal) => {
+            const str = String(rawVal ?? '')
+            const negative = str.startsWith('!')
+            const value = negative ? str.slice(1) : str
+            return {key, value, negative}
+        }
         const filterArray = Object.keys(filters)
             .map(key => {
                 const value = filters[key]
                 return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
+                    ? value.map(subkey => parseFilter(key, subkey))
+                    : parseFilter(key, value)
             })
             .flat()
 
         // Filter the data
         const filtered = mappedEntries
             .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
+                return filterArray.every(({key, value, negative}) => {
+                    const datumVal = datum[key]
+                    if (Array.isArray(datumVal)) {
+                        const has = datumVal.includes(value)
+                        return negative ? !has : has
+                    } else {
+                        const is = datumVal === value
+                        return negative ? !is : is
+                    }
                 })
             })
             .sort((a, b) => { return a.fuzzy.localeCompare(b.fuzzy)})

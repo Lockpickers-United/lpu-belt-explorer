@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useContext, useMemo} from 'react'
+import React, {useState, useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
@@ -33,7 +33,7 @@ function ScoringExceptions() {
         const supersedingEntryId = act.exceptionId
         const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
         const supersedingLock = supersedingEntry ? getEntryFromId(supersedingEntry.matchId) : {}
-        const supersedingProject = supersedingEntry ? useMemo(() => getProjectEntryFromId(supersedingEntry.matchId), [supersedingEntry.matchId]) : {}
+        const supersedingProject = supersedingEntry ? getProjectEntryFromId(supersedingEntry.matchId) : {}
         const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
         const matchLock = act.matchId ? getEntryFromId(act.matchId) : null
         const matchLockName = matchLock ? entryName(matchLock, 'short') : ''
@@ -164,6 +164,8 @@ function ScoringExceptions() {
                 </Drawer>
             </React.Fragment>
         )
+    } else {
+        return null
     }
 }
 

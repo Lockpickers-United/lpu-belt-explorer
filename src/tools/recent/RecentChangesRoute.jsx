@@ -1,15 +1,15 @@
 import React from 'react'
-import Footer from '../nav/Footer'
-import Nav from '../nav/Nav'
-import usePageTitle from '../util/usePageTitle'
+import Footer from '../../nav/Footer.jsx'
+import Nav from '../../nav/Nav.jsx'
+import usePageTitle from '../../util/usePageTitle.jsx'
 import RecentChangesPage from './RecentChangesPage.jsx'
-import Tracker from '../app/Tracker.jsx'
-import allEntries from '../data/data.json'
-import deletedEntries from '../data/deletedEntries.json'
+import Tracker from '../../app/Tracker.jsx'
+import allEntries from '../../data/data.json'
+import deletedEntries from '../../data/deletedEntries.json'
 
-import {lockFilterFields} from '../data/filterFields'
-import {FilterProvider} from '../context/FilterContext.jsx'
-import {DataProvider} from '../locks/LockDataProvider'
+import {lockFilterFields} from '../../data/filterFields'
+import {FilterProvider} from '../../context/FilterContext.jsx'
+import {DataProvider} from '../../locks/LockDataProvider.jsx'
 
 function RecentChangesRoute() {
     usePageTitle('Recent Changes')

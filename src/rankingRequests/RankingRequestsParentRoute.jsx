@@ -31,7 +31,6 @@ function RankingRequestsParentRoute() {
                 snapshot => {
                     const docsRead = snapshot.docs.length
                     totalReadCount.current += docsRead
-                    //console.log(`Snapshot received: ${docsRead} reads. Cumulative reads: ${totalReadCount.current}`)
                     const activityData = [{
                         activity: 'READ',
                         activityCount: docsRead,

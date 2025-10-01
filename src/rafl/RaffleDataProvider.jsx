@@ -3,50 +3,51 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
-import RaffleContext from './RaffleContext.jsx'
 
-const scoreThreshold = 0.3
-
-export function RaffleDataProvider({children, allEntries = []}) {
-    const {summary} = useContext(RaffleContext)
+export function RaffleDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
     const visibleEntries = useMemo(() => {
-
-        if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
-
-        // Filters as an array
+        // Filters as an array (support negative values with leading '!')
+        const parseFilter = (key, rawVal) => {
+            const str = String(rawVal ?? '')
+            const negative = str.startsWith('!')
+            const value = negative ? str.slice(1) : str
+            return {key, value, negative}
+        }
         const filterArray = Object.keys(filters)
             .map(key => {
                 const value = filters[key]
                 return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
+                    ? value.map(subkey => parseFilter(key, subkey))
+                    : parseFilter(key, value)
             })
             .flat()
 
         // Filter the data
         const filtered = allEntries
             .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
+                return filterArray.every(({key, value, negative}) => {
+                    const datumVal = datum[key]
+                    if (Array.isArray(datumVal)) {
+                        const has = datumVal.includes(value)
+                        return negative ? !has : has
+                    } else {
+                        const is = datumVal === value
+                        return negative ? !is : is
+                    }
                 })
             })
-            .sort((a, b) => {
-                return a.potNumber - b.potNumber
-            })
+            .sort((a, b) => { return a.potNumber-b.potNumber})
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -30000})
+            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-                .filter(result => result.score > scoreThreshold)
             : filtered
 
         return sort
@@ -56,21 +57,19 @@ export function RaffleDataProvider({children, allEntries = []}) {
                 } else if (sort === 'contributedBy') {
                     return a.contributedBy[0].localeCompare(b.contributedBy[0]) || a.title.localeCompare(b.title)
                 } else if (sort === 'tickets') {
-                    return b.totalTickets - a.totalTickets || a.title.localeCompare(b.title)
+                    return parseInt(b.tickets) - parseInt(a.tickets) || a.title.localeCompare(b.title)
                 } else if (sort === 'donors') {
-                    return b.uniqueDonorCount - a.uniqueDonorCount
-                        || b.totalTickets - a.totalTickets
-                        || a.title.localeCompare(b.title)
+                    return parseInt(b.donors) - parseInt(a.donors) || a.title.localeCompare(b.title)
+                } else if (sort === 'dateAdded') {
+                    return parseInt(b.dateAdded) - parseInt(a.dateAdded) || a.title.localeCompare(b.title)
                 } else {
                     return parseInt(a[sort]) - parseInt(b[sort]) || a.title.localeCompare(b.title)
                 }
             })
             : searched.sort((a, b) => {
-                return b.score - a.score
-                    || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
-                    || a.title.localeCompare(b.title)
+                return parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber) || a.title.localeCompare(b.title)
             })
-    }, [allEntries, filters, search, sort, summary])
+    }, [allEntries, filters, search, sort])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
@@ -80,7 +79,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
         allEntries,
         visibleEntries,
         getPotFromId,
-        expandAll
+        expandAll,
     }), [allEntries, visibleEntries, getPotFromId, expandAll])
 
     return (

@@ -9,11 +9,10 @@ import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import {filterValueNames} from '../data/filterValues'
 
-
 function FilterByField({label, fieldName, onFilter, sort, tab}) {
     const {visibleEntries} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
-    
+
     const entries = useMemo(() => {
         if (tab === 'search' || !tab) {
             return visibleEntries
@@ -21,7 +20,6 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
             return visibleEntries.filter(entry => entry.simpleBelt === tab)
         }
     }, [tab, visibleEntries])
-
 
     const [open, setOpen] = useState(false)
 
@@ -69,46 +67,59 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
         ? defFilters[fieldName]
         : (filterValue ? [filterValue] : [])
 
+    const excludedOptions = value.reduce((acc, val) => {
+            return [...acc, (val.startsWith('!')) ? val : null]
+    }, []). filter(x => x)
+    const fullOptions = [...excludedOptions, ...options]
+
     return (
         <React.Fragment>
-        {options.length === 0 ? null :
-        <FormControl style={{minWidth: 120, maxWidth: 300, marginTop: 8}} fullWidth>
-            <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
-            <Select
-                multiple
-                label={label}
-                labelId={`filter-${fieldName}`}
-                value={value}
-                onChange={handleSelect}
-                style={{marginBottom: 0}}
-                color='secondary'
-                open={open}
-                onClose={handleClose}
-                onOpen={handleOpen}
-                onBlur={handleClose}
-                MenuProps={{
-                    PaperProps: {
-                        style: {
-                            maxHeight: ITEM_HEIGHT * 8 + ITEM_PADDING_TOP
+            {fullOptions.length === 0 ? null :
+                <FormControl style={{minWidth: 120, maxWidth: 300, marginTop: 8}} fullWidth>
+                    <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
+                    <Select
+                        multiple
+                        label={label}
+                        labelId={`filter-${fieldName}`}
+                        value={value}
+                        onChange={handleSelect}
+                        style={{marginBottom: 0}}
+                        color='secondary'
+                        open={open}
+                        onClose={handleClose}
+                        onOpen={handleOpen}
+                        onBlur={handleClose}
+                        MenuProps={{
+                            PaperProps: {
+                                style: {
+                                    maxHeight: ITEM_HEIGHT * 8 + ITEM_PADDING_TOP
+                                }
+                            }
+                        }}
+                        renderValue={selected =>
+                            <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
+                                {selected.map((value) => {
+                                    const valueText = value.startsWith('!')
+                                        ? 'NOT ' + (filterValueNames[value.slice(1)] ? filterValueNames[value.slice(1)] : value.slice(1))
+                                        : filterValueNames[value] ? filterValueNames[value] : value
+                                    return (
+                                        <Chip key={value}
+                                              label={valueText}/>
+                                    )
+                                })}
+                            </Box>
                         }
-                    }
-                }}
-                renderValue={selected =>
-                    <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
-                        {selected.map((value) => (
-                            <Chip key={value} label={filterValueNames[value] ? filterValueNames[value] : value}/>
-                        ))}
-                    </Box>
-                }
-            >
-                {options.map((value, index) =>
-                    <MenuItem key={index} value={value}>
-                        {filterValueNames[value] ? filterValueNames[value] : value + ` (${counts[value] || 0})`}
-                    </MenuItem>
-                )}
-            </Select>
-        </FormControl>
-        }
+                    >
+                        {fullOptions.map((value, index) =>
+                                <MenuItem key={index} value={value}>
+                                    { value.startsWith('!')
+                                        ? 'NOT ' + (filterValueNames[value.slice(1)] ? filterValueNames[value.slice(1)] : value.slice(1))
+                                        : filterValueNames[value] ? filterValueNames[value] : value + ` (${counts[value] || 0})`}
+                                </MenuItem>
+                        )}
+                    </Select>
+                </FormControl>
+            }
         </React.Fragment>
     )
 }

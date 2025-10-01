@@ -8,7 +8,7 @@ import FilterContext from '../context/FilterContext'
 import glossary from '../data/glossary.json'
 import Link from '@mui/material/Link'
 
-function FilterChip({field, value, label = value, mode, ...props}) {
+function FilterChip({field, value, label = value, mode, clickable=true, ...props}) {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const {filters, addFilter} = useContext(FilterContext)
@@ -51,7 +51,7 @@ function FilterChip({field, value, label = value, mode, ...props}) {
             {(!mode || mode === 'full') && termFound &&
                 <React.Fragment>
                     <Chip
-                        clickable
+                        clickable={clickable}
                         variant='outlined'
                         label={label}
                         style={{marginRight: 4, marginBottom: 4}}
@@ -77,11 +77,11 @@ function FilterChip({field, value, label = value, mode, ...props}) {
             }
             {(mode === 'simple' || ((!mode || mode === 'full') && !termFound)) &&
                 <Chip
-                    clickable
+                    clickable={clickable}
                     variant='outlined'
                     label={label}
                     style={{marginRight: 4, marginBottom: 4}}
-                    onClick={handleFilter}
+                    onClick={clickable ? handleFilter : ()=>{}}
                     {...props}
                 />
             }
