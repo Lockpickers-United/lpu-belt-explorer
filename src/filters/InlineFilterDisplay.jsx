@@ -6,7 +6,6 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
 import collectionOptions from '../data/collectionTypes'
-import FilterDisplay from './FilterDisplay'
 import FilterDisplayExclude from './FilterDisplayExclude'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
@@ -18,9 +17,9 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
     const {filters, filterCount, addFilter} = useContext(FilterContext)
     const [open, setOpen] = React.useState(false)
 
-    const collectionLabels = collectionOptions[collectionType].labels
-    const collectionKeyByLabel = collectionOptions[collectionType].keyByLabel
-    const collectedLocks = collectionOptions[collectionType].getCollected(profile) || []
+    const collectionLabels = collectionOptions[collectionType]?.labels || []
+    const collectionKeyByLabel = collectionOptions[collectionType]?.keyByLabel || []
+    const collectedLocks = collectionOptions[collectionType]?.getCollected(profile) || []
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -79,10 +78,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
                         </div>
                     </div>
                 }
-                {!isValidCollection && collectionType !== 'safelocks' &&
-                    <FilterDisplay/>
-                }
-                {!isValidCollection && collectionType === 'safelocks' &&
+                {!isValidCollection &&
                     <FilterDisplayExclude/>
                 }
             </CardContent>

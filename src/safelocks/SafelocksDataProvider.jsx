@@ -40,7 +40,6 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
             const value = negative ? str.slice(1) : str
             return {key, value, negative}
         }
-
         const filterArray = Object.keys(filters)
             .map(key => {
                 const value = filters[key]

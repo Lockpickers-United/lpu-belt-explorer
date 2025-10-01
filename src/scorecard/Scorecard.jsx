@@ -26,6 +26,7 @@ import IconButton from '@mui/material/IconButton'
 import ImportButton from './ImportButton.jsx'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
+import InlineFilterDisplay from '../filters/InlineFilterDisplay.jsx'
 
 function Scorecard({owner, profile, adminAction, popular}) {
     const {isMobile} = useWindowSize()
@@ -42,7 +43,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     } = useContext(ScorecardDataContext)
 
     const {expanded} = useContext(ScorecardListContext)
-    const {filters, setFilters, removeFilters} = useContext(FilterContext)
+    const {filters, filterCount, setFilters, removeFilters} = useContext(FilterContext)
     const {name, locks} = filters
     const {createEvidenceForEntries, removePickerActivity, refreshPickerActivity} = useContext(DBContext)
     const {admin} = useContext(AppContext)
@@ -174,7 +175,6 @@ function Scorecard({owner, profile, adminAction, popular}) {
                     }
                 </React.Fragment>
             }
-
             <Accordion expanded={controlsExpanded} disableGutters={true}>
                 <AccordionSummary style={{
                     paddingLeft: buttonsMargin,
@@ -216,18 +216,21 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 <div style={{flexGrow: 1}}/>
                                 <ToggleButtonGroup exclusive>
                                     <ToggleButton variant='outlined' color='info' size='small' disabled={!mostPopular}
-                                            style={{
-                                                padding: '4px 10px', borderColor: '#236585',
-                                                color: !mostPopular ? '#38b9f6' : '#aaa',
-                                                backgroundColor: !mostPopular ? '#333' : 'transparent'}}
-                                            onClick={() => handleLocksToggle()} value={'myLocks'}>
+                                                  style={{
+                                                      padding: '4px 10px', borderColor: '#236585',
+                                                      color: !mostPopular ? '#38b9f6' : '#aaa',
+                                                      backgroundColor: !mostPopular ? '#333' : 'transparent'
+                                                  }}
+                                                  onClick={() => handleLocksToggle()} value={'myLocks'}>
                                         <nobr>{buttonText}</nobr>
                                     </ToggleButton>
                                     <ToggleButton variant='outlined' color='info' size='small' disabled={mostPopular}
-                                            style={{padding: '4px 10px', borderColor: '#236585',
-                                                color: mostPopular ? '#38b9f6' : '#aaa',
-                                                backgroundColor: mostPopular ? '#333' : 'transparent'}}
-                                            onClick={() => handleLocksToggle()} value={'mostPopular'}>
+                                                  style={{
+                                                      padding: '4px 10px', borderColor: '#236585',
+                                                      color: mostPopular ? '#38b9f6' : '#aaa',
+                                                      backgroundColor: mostPopular ? '#333' : 'transparent'
+                                                  }}
+                                                  onClick={() => handleLocksToggle()} value={'mostPopular'}>
                                         MOST&nbsp;POPULAR
                                     </ToggleButton>
                                 </ToggleButtonGroup>
@@ -303,6 +306,9 @@ function Scorecard({owner, profile, adminAction, popular}) {
                 </AccordionDetails>
             </Accordion>
 
+            {filterCount > 0 &&
+                <InlineFilterDisplay profile={profile} collectionType={'scorecard'}/>
+            }
             {!mostPopular &&
                 <React.Fragment>
                     {visibleEntries.length === 0 &&

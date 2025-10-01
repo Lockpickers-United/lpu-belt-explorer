@@ -44,21 +44,30 @@ function FilterDisplay() {
         return value
     }, [])
 
+
+
+
     if (filterCount === 0) return null
     return (
         <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
-                {filterValues.map(({key, value: filter}, index) =>
-                    <React.Fragment key={index}>
-                        <FilterChipExclude
-                            filterKey={key}
-                            filterValue={filter}
-                            label={`${cleanChipLabel(filterFieldsByFieldName[key]?.label, filter)}`}
-                            variant='outlined'
-                            style={{marginRight: 4, marginBottom: 4}}
-                            onDelete={handleDeleteFilter(key, filter)}
-                        />
-                    </React.Fragment>
+                {filterValues.map(({key, value: filter}, index) => {
+
+                    const baseValue = filter.startsWith('!') ? filter.slice(1) : filter
+                    const cleanValue = cleanChipLabel(filterFieldsByFieldName[key]?.label, baseValue)
+                    const label = filter.startsWith('!') ? `NOT ${cleanValue}` : cleanValue
+
+                    return <React.Fragment key={index}>
+                            <FilterChipExclude
+                                filterKey={key}
+                                filterValue={filter}
+                                label={label}
+                                variant='outlined'
+                                style={{marginRight: 4, marginBottom: 4}}
+                                onDelete={handleDeleteFilter(key, filter)}
+                            />
+                        </React.Fragment>
+                    }
                 )}
             </Stack>
         }/>

@@ -5,9 +5,11 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Button from '@mui/material/Button'
 import LockListContext from './LockListContext'
+import FilterContext from '../context/FilterContext.jsx'
 
 function NoEntriesCard({label, isSearch}) {
     const {tab, setDisplayAll} = useContext(LockListContext)
+    const {filterCount, clearFilters} = useContext(FilterContext)
     const defTab = useDeferredValue(tab)
     const style = {
         marginTop: 16,
@@ -18,13 +20,16 @@ function NoEntriesCard({label, isSearch}) {
     }
 
     const isSearchTab = defTab === 'search'
-    const message = isSearchTab && !isSearch
+    const message = isSearchTab && !isSearch && filterCount === 0
         ? 'No search or filter criteria selected.'
         : <span>No matching {label} were found.<br/>Try adjusting filters, search, or tab.</span>
 
     const handleClick = useCallback(() => {
-        setTimeout(() => setDisplayAll(true), 50)
-    }, [setDisplayAll])
+        setTimeout(() => {
+            clearFilters()
+            setDisplayAll(true)
+        }, 50)
+    }, [clearFilters, setDisplayAll])
 
     return (
         <Card style={style}>

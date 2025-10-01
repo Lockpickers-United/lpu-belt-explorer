@@ -65,10 +65,22 @@ export function ScorecardDataProvider({
         userCount: lock.saveCount
     })), [popularLocksBB, activityByMatchId])
 
-    const filterArray = useMemo(() => Object.keys(filters).map(key => {
-        const value = filters[key]
-        return Array.isArray(value) ? value.map(sk => ({key, value: sk})) : {key, value}
-    }).flat(), [filters])
+    const filterArray = useMemo(() => {
+        const parseFilter = (key, rawVal) => {
+            const str = String(rawVal ?? '')
+            const negative = str.startsWith('!')
+            const value = negative ? str.slice(1) : str
+            return {key, value, negative}
+        }
+        return Object.keys(filters)
+            .map(key => {
+                const value = filters[key]
+                return Array.isArray(value)
+                    ? value.map(subkey => parseFilter(key, subkey))
+                    : parseFilter(key, value)
+            })
+            .flat()
+    }, [filters])
 
     const visibleEntries = useMemo(() => processEntries(allActivityEntries, filterArray, search, sort, profile), [allActivityEntries, filterArray, profile, search, sort])
 
@@ -97,8 +109,6 @@ export function ScorecardDataProvider({
         blackBeltUser,
         blackBeltScorecard,
         getEntryFromId,
-        getProjectEntryFromId,
-        getAwardEntryFromId
     }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
 
     return (
@@ -108,7 +118,7 @@ export function ScorecardDataProvider({
     )
 }
 
-function processEntries(entries, filterArray, search, sort, profile={}) {
+function processEntries(entries, filterArray, search, sort, profile = {}) {
     const userNotes = profile?.userLockNotes || {}
 
     // Fill out fields
@@ -133,7 +143,7 @@ function processEntries(entries, filterArray, search, sort, profile={}) {
                 entry.date ? 'Valid Date' : 'No Date'
             ],
             content: [
-                userNotes[entry.id] || userNotes[entry.matchId] ? 'Has Personal Notes' : undefined,
+                userNotes[entry.id] || userNotes[entry.matchId] ? 'Has Personal Notes' : undefined
             ].flat().filter(x => x),
             scoring: [
                 (() => {
@@ -172,10 +182,15 @@ function processEntries(entries, filterArray, search, sort, profile={}) {
     // Filter the data
     const filtered = mappedEntries
         .filter(datum => {
-            return filterArray.every(({key, value}) => {
-                return Array.isArray(datum[key])
-                    ? datum[key].includes(value)
-                    : datum[key] === value
+            return filterArray.every(({key, value, negative}) => {
+                const datumVal = datum[key]
+                if (Array.isArray(datumVal)) {
+                    const has = datumVal.includes(value)
+                    return negative ? !has : has
+                } else {
+                    const is = datumVal === value
+                    return negative ? !is : is
+                }
             })
         })
 

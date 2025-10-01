@@ -28,7 +28,7 @@ export default function FilterChipExclude({filterKey, filterValue, label}) {
         removeFilter(keyToDelete, valueToDelete)
     }, [removeFilter])
 
-    const menuText = filterValue.startsWith('!') ? 'Include Matches' : 'Exclude Matches'
+    const menuText = filterValue.startsWith('!') ? 'Show Only Matches' : 'Exclude Matches'
 
     return (
         <React.Fragment>
