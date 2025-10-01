@@ -103,7 +103,8 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                     <FieldValue
                                         name={questLabel}
                                         value={
-                                            <FilterChip field='tier' value={entry.tier || 'Unknown'}/>
+                                            <FilterChip field='tier' value={entry.tier || 'Unknown'}
+                                                        clickable={!!entry.tier}/>
                                         }
                                         style={{flexGrow: 1}}
                                     />
@@ -111,7 +112,8 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                 <FieldValue
                                     name='Fence Type'
                                     value={
-                                        <FilterChip field='fence' value={entry.fence || 'Unknown'}/>
+                                        <FilterChip field='fence' value={entry.fence || 'Unknown'}
+                                                    clickable={!!entry.fence}/>
                                     }
                                     style={{flexGrow: 1}}
                                 />
@@ -122,6 +124,7 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                             field='wheels'
                                             label={entry.wheels ? `${entry.wheels} wheels` : 'Unknown'}
                                             value={entry.wheels || 'Unknown'}
+                                            clickable={!!entry.wheels}
                                         />
                                     }
                                     style={{flexGrow: 1}}
@@ -129,7 +132,8 @@ function SafelockEntry({entry, expanded, onExpand}) {
                                 <FieldValue
                                     name='Digits'
                                     value={
-                                        <FilterChip field='digits' value={entry.digits || 'Unknown'}/>
+                                        <FilterChip field='digits' value={entry.digits || 'Unknown'}
+                                                    clickable={!!entry.digits}/>
                                     }
                                     style={{flexGrow: 1}}
                                 />
