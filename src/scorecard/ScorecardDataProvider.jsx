@@ -109,6 +109,8 @@ export function ScorecardDataProvider({
         blackBeltUser,
         blackBeltScorecard,
         getEntryFromId,
+        getProjectEntryFromId,
+        getAwardEntryFromId
     }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
 
     return (
