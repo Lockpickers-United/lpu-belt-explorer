@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useRef} from 'react'
+import React, {useCallback, useContext} from 'react'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import Button from '@mui/material/Button'
 import RaffleContext from '../RaffleContext.jsx'
@@ -17,7 +17,7 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
     const navigate = useNavigate()
     const {setAnimateTotal} = useContext(RaffleContext)
 
-    const handleRoleClick = useCallback(() => {
+    const _handleRoleClick = useCallback(() => {
         if (preview && raffleAdminRole) setPreview(false)
         const isAdminRole = raffleAdminRole
         setRaffleAdminRole(!raffleAdminRole)
@@ -29,8 +29,6 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
         navigate(page)
         setAnimateTotal(false)
     }, [navigate, setAnimateTotal])
-
-    const containerRef = useRef(null)
 
     const togglePreview = useCallback(() => {
         if (showPreview && page === 'pots') {

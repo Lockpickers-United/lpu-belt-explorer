@@ -19,16 +19,21 @@ export function RaffleAdminDataProviderEntries({children}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
 
-    // Filters as an array
-    const filterArray = useMemo(() => Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
-            })
-            .flat()
-        , [filters])
+    // Filters as an array (support negative values with leading '!')
+    const parseFilter = (key, rawVal) => {
+        const str = String(rawVal ?? '')
+        const negative = str.startsWith('!')
+        const value = negative ? str.slice(1) : str
+        return {key, value, negative}
+    }
+    const filterArray = Object.keys(filters)
+        .map(key => {
+            const value = filters[key]
+            return Array.isArray(value)
+                ? value.map(subkey => parseFilter(key, subkey))
+                : parseFilter(key, value)
+        })
+        .flat()
 
     const mappedEntries = useMemo(() => {
         let charityNames = {}
@@ -79,10 +84,15 @@ export function RaffleAdminDataProviderEntries({children}) {
         if (!entriesLoaded) return []
         const filtered = mappedEntries
             .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
+                return filterArray.every(({key, value, negative}) => {
+                    const datumVal = datum[key]
+                    if (Array.isArray(datumVal)) {
+                        const has = datumVal.includes(value)
+                        return negative ? !has : has
+                    } else {
+                        const is = datumVal === value
+                        return negative ? !is : is
+                    }
                 })
             })
         const searched = search

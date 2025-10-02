@@ -22,7 +22,7 @@ const RaffleYOYLines = () => {
     }
     const chartHeight = !isMobile ? 300 : 240
 
-    if (summary.lineDataCurrent.cumulativeDonations.length === 0) return (
+    if (summary?.lineDataCurrent?.cumulativeDonations?.length === 0) return (
         <div style={{color: '#fff', textAlign: 'center', fontSize: '1.2rem', margin: '20px 0px 0px 0px'}}>
             No data available
         </div>

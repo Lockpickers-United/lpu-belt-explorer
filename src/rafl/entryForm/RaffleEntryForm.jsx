@@ -145,6 +145,10 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
         setSumbitted(true)
     }, [buildRecord, editEntry, setEditEntryId, setFilters, updateRaffleEntry])
 
+    const handleEntryComplete = useCallback(() => {
+        navigate('/rafl')
+    },[navigate])
+
 
     const [showIssues, setShowIssues] = useState(false)
 
@@ -177,10 +181,6 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
         || allocationError
     )
     const continueColor = (!errors) ? '#4dd04d' : '#666'
-
-    const handleEntryComplete = useCallback(() => {
-        navigate('/rafl')
-    },[navigate])
 
     const {isMobile, flexStyle} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -416,7 +416,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                         Take another look at the pots!
                     </Link><br/><br/>
 
-                    <Button variant='contained' style={{backgroundColor:'#333'}}>Close</Button>
+                    <Button variant='contained' style={{backgroundColor:'#333'}} onClick={handleEntryComplete}>Close</Button>
 
                 </div>
                 {raffleAdmin &&

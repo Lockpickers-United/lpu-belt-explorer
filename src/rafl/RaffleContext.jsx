@@ -10,6 +10,7 @@ import {useLocalStorage} from 'usehooks-ts'
 import dayjs from 'dayjs'
 import raflHistoricalDonations from './raflHistoricalDonations.json'
 import {setDeepAdd, setDeepPush} from '../util/setDeep'
+import AuthContext from '../app/AuthContext.jsx'
 
 const RaffleContext = React.createContext({})
 
@@ -21,6 +22,12 @@ export function RaffleProvider({children}) {
     // preview, setup, live, post, hidden
     const [preview, setPreview] = useLocalStorage('previewMode', false)
     const {lockCollection, summaryData, winnerData} = useContext(DBContext)
+    const {userClaims} = useContext(AuthContext)
+    const raffleAdmin = ['raflAdmin', 'admin'].some(claim => userClaims.includes(claim))
+    const [raffleAdminRole, setRaffleAdminRole] = useState(false)
+
+    const profileLoaded = Object.keys(lockCollection).length > 0
+
     const summary = useMemo(() => {
         return {...summaryData}
     }, [summaryData])
@@ -140,11 +147,6 @@ export function RaffleProvider({children}) {
 
     const [displayStats, setDisplayStats] = useState(false)
     const [animateTotal, setAnimateTotal] = useState(false)
-
-    const profileLoaded = Object.keys(lockCollection).length > 0
-    const {admin, adminRaffle} = lockCollection
-    const raffleAdmin = admin || adminRaffle
-    const [raffleAdminRole, setRaffleAdminRole] = useState(false)
 
     const toggleStats = useCallback(() => {
         setDisplayStats(!displayStats)

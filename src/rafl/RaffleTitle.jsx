@@ -23,8 +23,7 @@ function RaffleTitle({entry, drawing = false}) {
         if (event && typeof event.preventDefault === 'function') event.preventDefault()
         if (event && typeof event.stopPropagation === 'function') event.stopPropagation()
         console.log('openWinnerPots entryId:', entry)
-        const winnerFilter = `${entry?.username} (${entry?.platform})`
-        setFilters({winnerFilterNames: winnerFilter})
+        setFilters({winnerEntryIds: entry.entryId})
     }, [setFilters])
 
     const winnerList = Array.isArray(entry.winners)

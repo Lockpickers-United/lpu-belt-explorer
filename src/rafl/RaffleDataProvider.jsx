@@ -3,12 +3,19 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
+import RaffleContext from './RaffleContext.jsx'
 
-export function RaffleDataProvider({children, allEntries}) {
+export function RaffleDataProvider({children, allEntries = []}) {
+    const {summary} = useContext(RaffleContext)
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
+    const scoreThreshold = 0.3
+
     const visibleEntries = useMemo(() => {
+
+        if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
+
         // Filters as an array (support negative values with leading '!')
         const parseFilter = (key, rawVal) => {
             const str = String(rawVal ?? '')
@@ -43,11 +50,12 @@ export function RaffleDataProvider({children, allEntries}) {
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
+            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -30000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
+                .filter(result => result.score > scoreThreshold)
             : filtered
 
         return sort
@@ -57,19 +65,21 @@ export function RaffleDataProvider({children, allEntries}) {
                 } else if (sort === 'contributedBy') {
                     return a.contributedBy[0].localeCompare(b.contributedBy[0]) || a.title.localeCompare(b.title)
                 } else if (sort === 'tickets') {
-                    return parseInt(b.tickets) - parseInt(a.tickets) || a.title.localeCompare(b.title)
+                    return b.totalTickets - a.totalTickets || a.title.localeCompare(b.title)
                 } else if (sort === 'donors') {
-                    return parseInt(b.donors) - parseInt(a.donors) || a.title.localeCompare(b.title)
-                } else if (sort === 'dateAdded') {
-                    return parseInt(b.dateAdded) - parseInt(a.dateAdded) || a.title.localeCompare(b.title)
+                    return b.uniqueDonorCount - a.uniqueDonorCount
+                        || b.totalTickets - a.totalTickets
+                        || a.title.localeCompare(b.title)
                 } else {
                     return parseInt(a[sort]) - parseInt(b[sort]) || a.title.localeCompare(b.title)
                 }
             })
             : searched.sort((a, b) => {
-                return parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber) || a.title.localeCompare(b.title)
+                return b.score - a.score
+                    || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
+                    || a.title.localeCompare(b.title)
             })
-    }, [allEntries, filters, search, sort])
+    }, [allEntries, filters, search, sort, summary])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)

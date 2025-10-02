@@ -8,7 +8,6 @@ import RaffleSearchBar from './RaffleSearchBar.jsx'
 import {raffleSortFields} from '../data/sortFields'
 import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
-import ExpandAllButton from './ExpandAllButton.jsx'
 import DBContext from '../app/DBContext.jsx'
 
 function RaffleEntries({allPots, drawing = false}) {
