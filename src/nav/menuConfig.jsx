@@ -103,7 +103,7 @@ export default [
         path: '/about'
     },
     {
-        title: 'Contibute Photos',
+        title: 'Contribute Photos',
         icon: <CameraAltIcon fontSize='small'/>,
         path: '/content',
     },
