@@ -45,7 +45,7 @@ export default [
         title: 'RAFL',
         icon: <NewReleasesIcon fontSize='small'/>,
         path: '/rafl',
-        hidden: raflState === 'hidden'
+        hidden: raflState === 'hidden' || raflState === 'setup',
     },
     {
         title: 'Leaderboards',
