@@ -4,7 +4,7 @@ import DataContext from '../../context/DataContext'
 import FilterContext from '../../context/FilterContext'
 import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
-import {setDeepUnique} from '../../util/setDeep'
+import {setDeepPush, setDeepUnique} from '../../util/setDeep'
 import DBContext from '../../app/DBContext.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import {raffleStatusSort} from '../../data/filterFields'
@@ -13,11 +13,25 @@ export function RaffleAdminDataProviderEntries({children}) {
 
     const globalContext = useContext(DataContext)
 
-    const {entriesLoaded, allRaffleEntries} = useContext(DBContext)
+    const {entriesLoaded, allRaffleEntries, winnerData} = useContext(DBContext)
     const {allPots} = useContext(RaffleContext)
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
+
+    console.log('winnerData', winnerData)
+
+    const entryWins = useMemo(() => {
+        return Object.keys(winnerData).reduce((acc, potId) => {
+            winnerData[potId].map(winner => {
+                setDeepPush(acc, [winner.entryId], potId)
+            })
+            return acc
+        }, {})
+    }, [winnerData])
+
+    console.log('entryWins', entryWins)
+
 
     // Filters as an array (support negative values with leading '!')
     const parseFilter = (key, rawVal) => {
@@ -45,6 +59,9 @@ export function RaffleAdminDataProviderEntries({children}) {
             }, [])
             entry.pots.forEach(pot => {
                 setDeepUnique(potNames, [entry.id], pot.itemTitle)
+                if (entryWins[entry.id]?.includes(pot.itemId)) {
+                    pot.winner = true
+                }
             }, [])
         }, {})
 
@@ -55,6 +72,8 @@ export function RaffleAdminDataProviderEntries({children}) {
                 potNames: potNames[entry.id] || [],
                 content: [entry.notes && entry.notes.length > 0 && 'Has Notes',
                     entry.donations.every(d => d.approved) ? 'All Donations OK' : 'Donations not OK'].filter(Boolean),
+                potsWon: entryWins[entry.id] || [],
+                potWinner: entryWins[entry.id]?.length > 0 ? 'Won Pots' : 'No Wins',
                 fuzzy: removeAccents([
                     entry.username,
                     ...charityNames[entry.id],
@@ -62,7 +81,7 @@ export function RaffleAdminDataProviderEntries({children}) {
                 ].join(','))
             }))
 
-    }, [allRaffleEntries])
+    }, [allRaffleEntries, entryWins])
 
     const flatEntries = useMemo(() => {
         return mappedEntries.reduce((acc, entry) => {

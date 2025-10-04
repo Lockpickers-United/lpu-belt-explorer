@@ -94,6 +94,9 @@ export function RaffleProvider({children}) {
         const potEntries = preview && allDataLoaded
             ? raflPreviewPots ?? []
             : raflData
+
+        const drawingBegun = potEntries.reduce((acc, pot) => acc || !!winnerData?.[pot.id], false)
+
         return potEntries
             .map(entry => {
                 const potWinners = winnerData?.[entry.id] || []
@@ -119,7 +122,9 @@ export function RaffleProvider({children}) {
                     winnerUsernames,
                     winnerEntryIds,
                     winnerFilterNames,
-                    winnerStatus: [potWinners.length > 0 ? 'Winners Selected' :  'Winners Not Selected', excessWinner && 'Too many wins'],
+                    winnerStatus: drawingBegun
+                        ? [potWinners.length > 0 ? 'Winners Selected' :  'Winners Not Selected', excessWinner ? 'Too many wins' : null].filter(x => x)
+                        : []
                 }
             })
     }, [preview, allDataLoaded, raflPreviewPots, winnerData, summary.pots, excessWinners, lockCollection])

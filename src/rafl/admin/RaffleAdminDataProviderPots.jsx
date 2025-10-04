@@ -35,7 +35,9 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
         .flat()
 
     const flatEntries = useMemo(() => {
-        return allRaffleEntries.reduce((acc, entry) => {
+        return allRaffleEntries
+            .filter(entry => entry.status === 'approved')
+            .reduce((acc, entry) => {
             entry.pots.forEach(pot => {
                 acc.push({
                     username: entry.username,

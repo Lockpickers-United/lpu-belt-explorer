@@ -41,7 +41,7 @@ export function pickWinnersForEntry(entry) {
     return pickWeightedRandomMultiple(entry.entrants, Math.max(1, count))
 }
 
-export default function RaffleDrawButton({entry, drawing=false, redrawId, containerRef}) {
+export default function RaffleDrawButton({entry, drawing=false, redrawId, excessWinner, containerRef}) {
     const {updateRaffleWinners} = useContext(DBContext)
     const [noMoreEligible, setNoMoreEligible] = useState(false)
     const handleDeleteClose = useCallback((event) => {
@@ -51,6 +51,7 @@ export default function RaffleDrawButton({entry, drawing=false, redrawId, contai
     },[])
 
     const drawingText = (entry.winnerCount > 1) ? 'WINNERS' : 'WINNER'
+
     const draw = useCallback(async (event) => {
         event.preventDefault()
         event.stopPropagation()
@@ -125,7 +126,7 @@ export default function RaffleDrawButton({entry, drawing=false, redrawId, contai
         }
     }, [entry, updateRaffleWinners])
 
-        const {isMobile} = useWindowSize()
+    const {isMobile} = useWindowSize()
 
     const dialogContent = (
         <div style={{textAlign: 'center', fontWeight: 700, fontSize: '1.1rem', padding: 40}}>
@@ -139,25 +140,25 @@ export default function RaffleDrawButton({entry, drawing=false, redrawId, contai
             {redrawId && drawing
                 ? <div style={{marginLeft: 2, color: '#f35454', fontWeight: 'bold'}}>
                     <IconButton onClick={(e) => redraw(e, redrawId)}
-                            color='secondary' variant='contained' size='small'
-                            style={{
-                                fontWeight: 600, fontSize: '0.9rem', marginTop: !isMobile ? -3 : 0,
-                                whiteSpace: 'nowrap', color: '#f35454'
-                            }}>
-                        <ReplayIcon/>
+                                color='secondary' variant='contained' size='small'
+                                style={{
+                                    fontWeight: 600, fontSize: '0.9rem', marginTop: !isMobile ? -3 : 0,
+                                    whiteSpace: 'nowrap', color: excessWinner ? '#f35454' : '#666'
+                                }}>
+                        <ReplayIcon fontSize='small'/>
                     </IconButton>
                 </div>
                 :  !entry.winners || entry.winners?.length === 0
-                ? <div style={{marginLeft: 20}}>
-                    <Button onClick={draw}
-                            color='secondary' variant='contained' size='small'
-                            style={{
-                                fontWeight: 600, fontSize: '0.9rem', marginTop: !isMobile ? -3 : 0,
-                                whiteSpace: 'nowrap', width: 135
-                            }}>
-                        DRAW {drawingText}
-                    </Button>
-                </div>
+                    ? <div style={{marginLeft: 20, marginTop: !isMobile ? 0 : 8}}>
+                        <Button onClick={draw}
+                                color='secondary' variant='contained' size='small'
+                                style={{
+                                    fontWeight: 600, fontSize: '0.9rem', marginTop: !isMobile ? -3 : 0,
+                                    whiteSpace: 'nowrap', width: 135
+                                }}>
+                            DRAW {drawingText}
+                        </Button>
+                    </div>
                     : null
             }
 

@@ -69,6 +69,7 @@ export const raffleEntryFilterFields = [
     {label: 'Content', fieldName: 'content'},
     {label: 'Charity', fieldName: 'charities'},
     {label: 'Pot Name', fieldName: 'potNames'},
+    {label: 'Winner Status', fieldName: 'potWinner'},
     {label: 'Platform', fieldName: 'platform'},
     {label: 'Belt', fieldName: 'belt', sort: beltSort}
 ]

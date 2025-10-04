@@ -22,12 +22,14 @@ import ListAltIcon from '@mui/icons-material/ListAlt'
 import IconButton from '@mui/material/IconButton'
 import Link from '@mui/material/Link'
 import FilterContext from '../../context/FilterContext.jsx'
+import {useNavigate} from 'react-router-dom'
 
 function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
     const {raffleAdminRole} = useContext(RaffleContext)
     const {expandAll, statusLabels} = useContext(DataContext)
     const {updateRaffleEntry} = useContext(DBContext)
+    const navigate = useNavigate()
 
     const {filters: allFilters} = useContext(FilterContext)
     const {sort} = allFilters || {}
@@ -64,6 +66,10 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }, [])
+
+    const goToPage = useCallback((page) => {
+        navigate(page)
+    }, [navigate])
 
     const approveDonationToggle = useCallback((donationIndex) => {
         if (!raffleAdminRole) return
@@ -102,12 +108,17 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
             }}>
                 <BeltStripe value={statusLabels[entry.status].entryColor}/>
                 <div style={{display: flexStyle, alignItems: 'center', flexGrow: 1}}>
-                    <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, fontWeight: 600}}>
+                    <div style={{margin: titleMargin, display: 'flex', flexGrow: 1,
+                        fontWeight: 600, color: entry.potsWon?.length > 0 ? '#2bb259' : '#fff'}}>
                         {entry?.username}
                         &nbsp;<span
-                        style={{fontWeight: 400, color: '#777'}}>({entry.platform.toLowerCase()})</span>
+                        style={{fontWeight: 400, color: '#777', marginLeft:8}}>({entry.platform.toLowerCase()})</span>
+                        {entry.potsWon?.length > 0 &&
+                            <span
+                                style={{fontWeight: 600, color: '#2bb259', marginLeft:12}}>Winner</span>
+                        }
                     </div>
-                    <div style={{display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'flex-end'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
                         <FieldValue
                             name='Submitted'
                             value={<Typography
@@ -117,17 +128,17 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                 }}>{dayjs(entry?.createdAt).format('MMM DD')}</Typography>}
                             style={{marginRight: 20}}
                         />
-                        { sort==='updatedAt' &&
-                        <FieldValue
-                            name='Updated'
-                            value={<Typography
-                                style={{
-                                    fontSize: '0.95rem',
-                                    lineHeight: 1.25
-                                }}>{dayjs(entry?.updatedAt).format('MMM DD')}</Typography>}
-                            textStyle={!isUpdated ? {color: '#777'} : {}}
-                            style={{marginRight: 30}}
-                        />
+                        {sort === 'updatedAt' &&
+                            <FieldValue
+                                name='Updated'
+                                value={<Typography
+                                    style={{
+                                        fontSize: '0.95rem',
+                                        lineHeight: 1.25
+                                    }}>{dayjs(entry?.updatedAt).format('MMM DD')}</Typography>}
+                                textStyle={!isUpdated ? {color: '#777'} : {}}
+                                style={{marginRight: 30}}
+                            />
                         }
                         <FieldValue
                             name='Donations'
@@ -150,7 +161,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
                         <div style={{textAlign: 'right', margin: '0px 0px 10px 0px', fontWeight: 700}}>
                             Entry Status &nbsp;<StatusMenu entry={entry}/>
-                            <div style={{fontSize:'0.9rem', fontWeight: 400, marginTop:10}}>
+                            <div style={{fontSize: '0.9rem', fontWeight: 400, marginTop: 10}}>
                                 Last updated: {dayjs(entry?.updatedAt).format('MMM DD')}
                             </div>
                         </div>
@@ -201,7 +212,15 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                             <div key={index}
                                  style={{display: 'flex', flexGrow: 1, fontSize: contentsFontSize, marginLeft: 10}}>
                                 <div style={{fontWeight: 500, marginBottom: 4, flexGrow: 1}}>
-                                    {pot?.itemFullTitle || pot?.itemTitle || 'No Pot Selected'}
+                                    <Link style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}
+                                          onClick={() => goToPage(`/rafl/?id=${pot.itemId}`)}>
+                                        {pot?.itemFullTitle || pot?.itemTitle || 'No Pot Selected'}
+                                    </Link>
+                                    {pot.winner && (
+                                        <Link
+                                            style={{color: '#2bb259', fontWeight: 700, marginLeft: 12}}
+                                            onClick={() => goToPage(`/rafl/?id=${pot.itemId}`)}>Winner</Link>
+                                    )}
                                 </div>
                                 <div style={{marginBottom: 4}}>
                                     {pot?.tickets > 0 && <span
