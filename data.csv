@@ -831,13 +831,15 @@ Unranked,Codkey,"Locksys MME (micro magnetic element)",,"Dimple,Magnet","Under R
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
+Unranked,"Defiant,","Deadbolt,exterior","5 pins, 3+ spools",Pin-tumbler,"Under Review ⚑,cylinder",,59dab099
+Unranked,"Defiant,","Deadbolt,interior","5 pins, 2 spools",Pin-tumbler,"Under Review ⚑,cylinder",,5f600c8e
 Unranked,Ezcurra,DS-15,,Dimple,"Under Review ⚑",,abe6074c
 Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
 Unranked,Fichet-Bauche,M2i,,Pump/push,"Under Review ⚑",,d6e6039e
 Unranked,"Folger Adam",80,,Lever,"Flat steel key,Single bitted,False gates",,89207b78
 Unranked,Gaab,"6-pin Dimple Lock",,Dimple,"Under Review ⚑",,cd5acff8
-Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, all standard",Pin-tumbler,,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",8b3a89ec
-Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, 1 or more security pins",Pin-tumbler,,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",d3bdab01
+Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, all standard",Pin-tumbler,cylinder,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",8b3a89ec
+Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, 1 or more security pins",Pin-tumbler,cylinder,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",d3bdab01
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,"Helason ","16-pin round key",Dimple,"Under Review ⚑",,93324d19
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624
@@ -869,6 +871,7 @@ Unranked,Picard,"CR Serrature","3 points pump lock",Pump/push,"Under Review ⚑"
 Unranked,Picard,VAK10,,Pump/push,,,ed0a9b08
 Unranked,Pollux,gm05,,Pump/push,"Under Review ⚑",,3ca24202
 Unranked,"Rav Bariach",Dynamic,"with sliders",,"Under Review ⚑",,9637ddde
+Unranked,Reliabilt,"Deadbolt cylinder","5 pins, all standard",Pin-tumbler,"Under Review ⚑,cylinder",,d87bb501
 Unranked,Ri-Key,"High Security (MTL clone)",,,"Under Review ⚑",,6cb514ea
 Unranked,Rosengrens,24K,,"Disc detainer","Under Review ⚑",,9b528165
 Unranked,Rosengrens,RKL-10,,,"Under Review ⚑,Swappable bitting",,5646568c
