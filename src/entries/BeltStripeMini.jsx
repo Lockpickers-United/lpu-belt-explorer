@@ -1,13 +1,14 @@
 import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
-function BeltStripe({value = 'Unranked', style = {}}) {
+function BeltStripeMini({value = 'Unranked', style = {}}) {
 
-    const bgColor = value.includes('Unranked')
+    const beltColor = value.replace(' Belt', '')
+    const bgColor = beltColor.includes('Unranked')
         ? 'inherit'
-        : belts[value]
-            ? belts[value].color
-            : value.includes('Dan')
+        : belts[beltColor]
+            ? belts[beltColor].color
+            : beltColor.includes('Dan')
                 ? '#769e49'
                 : ''
 
@@ -21,13 +22,13 @@ function BeltStripe({value = 'Unranked', style = {}}) {
         padding: 0
     }
 
-    const {lineColor: stripeColor} = belts[value] || {}
+    const {lineColor: stripeColor} = belts[beltColor] || {}
     const stripes = useMemo(() => {
-        const [stripeValue] = (value.match(/\d/) || [0])
+        const [stripeValue] = (beltColor.match(/\d/) || [0])
         const stripeCount = +stripeValue
         if (stripeCount > 1) {
             return Array(stripeCount).fill(0)
-                .map((value, index) =>
+                .map((beltColor, index) =>
                     <div key={index} style={{
                         width: 4,
                         height: 2,
@@ -39,7 +40,7 @@ function BeltStripe({value = 'Unranked', style = {}}) {
                     }}/>
                 )
         }
-    }, [value, stripeColor])
+    }, [beltColor, stripeColor])
 
     return (
         <div style={{height: '100%', padding: 0, backgroundColor: bgColor, ...style}}>
@@ -48,6 +49,6 @@ function BeltStripe({value = 'Unranked', style = {}}) {
     )
 }
 
-export default React.memo(BeltStripe)
+export default React.memo(BeltStripeMini)
 
 
