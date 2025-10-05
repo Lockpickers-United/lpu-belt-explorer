@@ -25,7 +25,7 @@ export default function PathToBlackPage() {
             marginLeft: 'auto',
             marginRight: 'auto',
             marginTop: 16,
-            marginButtom: 16
+            marginBottom: 16
         }}>
 
             {!pageData[pageId] &&
