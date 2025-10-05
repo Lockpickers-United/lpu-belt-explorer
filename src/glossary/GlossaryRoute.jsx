@@ -7,7 +7,7 @@ import useWindowSize from '../util/useWindowSize'
 import Glossary from './Glossary'
 import GlossarySearchBox from './GlossarySearchBox'
 
-function StatsRoute() {
+export default function GlossaryRoute() {
     const {isMobile} = useWindowSize()
     usePageTitle('Glossary')
 
@@ -31,4 +31,4 @@ function StatsRoute() {
     )
 }
 
-export default StatsRoute
+
