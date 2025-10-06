@@ -8,6 +8,7 @@ import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function PathToBlack({page = {}}) {
     usePageTitle(page?.title || 'Page Not Found')
@@ -31,14 +32,20 @@ export default function PathToBlack({page = {}}) {
         const lockName = entryName(lock, 'any', {includeVersion: false})
         const beltName = lock?.belt
             ? lock.belt === 'Unranked'
-                ? 'Unranked'
-                : lock.belt.replace(/ \d/, '')
-            : 'Unknown'
+                ? 'Unranked:'
+                : lock.belt.replace(/ \d/, '') + ' Belt:'
+            : ''
         const lockMedia = lock?.media || [{}]
 
         const linkSx = {color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
                 color: '#fff'
             }}
+
+        const {isMobile} = useWindowSize()
+        const imageWidth = isMobile ? 85 : 150
+        const textSize = isMobile ? '0.9rem' : '1.0rem'
+        const titleSize = isMobile ? '1.1rem' : '1.2rem'
+        const photoMargin = isMobile ? '6px 16px 0px 0' : '6px 24px 0px 0'
 
         return (<React.Fragment>
             <div style={{
@@ -53,19 +60,19 @@ export default function PathToBlack({page = {}}) {
                     position: 'absolute', top: 0, left: 0, bottom: 0
                 }}/>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'stretch', position: 'relative'}}>
-                    <div style={{fontWeight: 600, fontSize: '1.2rem', marginBottom: 8}}>
-                        {beltName} Belt: <Link onClick={() => {
+                    <div style={{fontWeight: 600, fontSize: titleSize, marginBottom: 8}}>
+                        {beltName} <Link onClick={() => {
                         goToLock(lock.id)
                     }} sx={linkSx}>{lockName}</Link>
                     </div>
                     <div style={{display: 'flex'}}>
-                        <div style={{margin: '6px 24px 6px 0'}}>
-                            <img style={{width: 150}} src={lockMedia[0]?.thumbnailUrl}
+                        <div style={{margin: photoMargin}}>
+                            <img style={{width: imageWidth}} src={lockMedia[0]?.thumbnailUrl}
                                  alt={lockName}/>
                         </div>
                         <div>
                             {descriptions.map((d, i) => (
-                                <div key={i} style={{marginBottom: 8}}>{d}</div>
+                                <div key={i} style={{marginBottom: 8, fontSize: textSize}}>{d}</div>
                             ))}
                         </div>
                     </div>
@@ -75,6 +82,9 @@ export default function PathToBlack({page = {}}) {
     }
 
     function MarkdownFancy({markdown}) {
+        const {isMobile} = useWindowSize()
+        const textSize = isMobile ? '0.95rem' : '1.0rem'
+
         return (
             <ReactMarkdown
                 components={{
@@ -113,9 +123,10 @@ export default function PathToBlack({page = {}}) {
                     },
                     blockquote: ({children}) => <div style={{
                         ...style,
+                        fontSize: textSize,
                         alignItems: 'stretch',
                         position: 'relative',
-                        backgroundColor: '#333',
+                        backgroundColor: '#2a2a2a',
                         borderBottom: '1px solid #000',
                         padding: '12px 18px 6px 18px'
                     }}>{children}</div>,
@@ -125,14 +136,15 @@ export default function PathToBlack({page = {}}) {
                         ...style,
                         fontSize: '1.7rem',
                         fontWeight: 700,
-                        backgroundColor: '#333',
-                        padding: '8px 0 0 18px'
+                        backgroundColor: '#2a2a2a',
+                        padding: '8px 0 0 18px',
+                        borderBottom: 'none'
                     }}>{children}</div>,
                     h6: ({children}) => <div style={{
                         ...style,
                         textAlign: 'right',
                         fontSize: '0.85rem',
-                        padding: '8px 0 0 18px',
+                        padding: '8px 8px 0 18px',
                         borderBottom: 'none'
                     }}>{children}</div>
                 }}

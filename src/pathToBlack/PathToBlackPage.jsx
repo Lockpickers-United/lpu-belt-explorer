@@ -9,6 +9,10 @@ export default function PathToBlackPage() {
     const navigate = useNavigate()
     const location = useLocation()
     const {pageId} = queryString.parse(location.search)
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
 
     const style = {
         maxWidth: 700,
@@ -17,6 +21,10 @@ export default function PathToBlackPage() {
         padding: '6px 20px',
         borderRadius: 0
     }
+
+    const linkSx = {color: '#bbb', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+            color: '#fff'
+        }}
 
     return (
         <div style={{
@@ -48,7 +56,7 @@ export default function PathToBlackPage() {
                         </div>
 
                         {Object.keys(pageData).map(pageId => (
-                            <div key={pageId} style={{marginTop: 16, maxWidth: 450}}>
+                            <div key={pageId} style={{marginTop: 16, maxWidth: 500}}>
                                 <Link onClick={() => {
                                     navigate(`/pathtoblack?pageId=${pageId}`)
                                 }}
@@ -64,6 +72,13 @@ export default function PathToBlackPage() {
                             </div>
                         ))
                         }
+
+                        <div style={{marginTop: 30, borderTop: '1px solid #fff', paddingTop: 16, fontSize: '0.95rem'}}>
+                            A great source for higher-belt locks is the #lock-bazaar channel on the LPU discord.
+                            You can browse/search/filter listings from most of the major sellers at: <Link
+                            onClick={()=>openInNewTab('https://lpulocks.com/#/lockbazaar')} sx={linkSx}>lpulocks.com/#/lockbazaar</Link>
+                        </div>
+
                     </div>
                 </React.Fragment>
             }

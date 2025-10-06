@@ -4,9 +4,11 @@
 >
 >For those who might want to start exploring picking dimples, here’s an [overview of major dimple flag sets](https://www.reddit.com/r/lockpicking/comments/teonid/dimple_lock_pick_set_info_comparison_multipick/) I put together a bit back. I use the Multipick flags, and included some tool selection notes below.
 >
->Dimple lock availability can be a real issue in the US but I’ve tried to select some of the more common ones. I largely rely on #lock-bazaar on the [LPU Discord server](https://discord.com/invite/lockpicking) for higher belt locks
+>Dimple lock availability can be a real issue in the US but I’ve tried to select some of the more common ones. I largely rely on #lock-bazaar on the [LPU Discord server](https://discord.com/invite/lockpicking) for higher belt locks. You can browse/search/filter dimple lock listings from most of the major sellers at: [lpulocks.com/#/lockbazaar](https://lpulocks.com/#/lockbazaar?lockingMechanisms=Dimple&sort=belt)
 
->(Some more notes here about non-ranked locks) 
+- 171f76e9
+- Unfortunately for us in the States, entry-level dimple locks are hard to come by. The [Burg Wächter Boccia](/#/locks?id=171f76e9) is a nice, if pricey, option. UK folks might consider the [Master Lock 1145 - 1165EURD](/#/locks?id=237f29c9) series.
+- I recommend learning with the affordable [Gaab six pin dimple lock](/#/locks?id=cd5acff8) available from UHS Hardware in the US. It's unranked, but I put it's difficulty at Orange. 
 
 - 7ec79663
 - Kenaurd is a house brand at UHS Hardware and this lock doesn’t contain spooled or serrated outer pins. Their 1” mortice lock has four pins while 1 1/8” and longer come with five. Pin-in-Pin "sounds" scary' at first but they’re really not that much harder than standard pins.
