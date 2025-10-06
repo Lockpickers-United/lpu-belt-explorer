@@ -9,6 +9,7 @@ import removeAccents from 'remove-accents'
 import collectionStatsById from '../data/collectionStatsById.json'
 import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
+import filterEntries from '../util/filterEntries'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -56,36 +57,8 @@ export function DataProvider({children, allEntries, profile}) {
     }, [allEntries, profile])
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array (support negative values with leading '!')
-        const parseFilter = (key, rawVal) => {
-            const str = String(rawVal ?? '')
-            const negative = str.startsWith('!')
-            const value = negative ? str.slice(1) : str
-            return {key, value, negative}
-        }
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => parseFilter(key, subkey))
-                    : parseFilter(key, value)
-            })
-            .flat()
-
         // Filter the data
-        const filtered = mappedEntries
-            .filter(datum => {
-                return filterArray.every(({key, value, negative}) => {
-                    const datumVal = datum[key]
-                    if (Array.isArray(datumVal)) {
-                        const has = datumVal.includes(value)
-                        return negative ? !has : has
-                    } else {
-                        const is = datumVal === value
-                        return negative ? !is : is
-                    }
-                })
-            })
+        const filtered = filterEntries(filters, mappedEntries)
 
         // Check for exact search match by id
         const exactMatch = search && filtered.find(e => e.id === search)

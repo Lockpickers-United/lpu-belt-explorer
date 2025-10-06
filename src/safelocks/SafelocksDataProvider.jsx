@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import {groupSort, groupSortReverse} from './groups'
+import filterEntries from '../util/filterEntries'
 
 export function SafelocksDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -33,37 +34,9 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
     }, [allEntries, profile])
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array (support negative values with leading '!')
-        const parseFilter = (key, rawVal) => {
-            const str = String(rawVal ?? '')
-            const negative = str.startsWith('!')
-            const value = negative ? str.slice(1) : str
-            return {key, value, negative}
-        }
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => parseFilter(key, subkey))
-                    : parseFilter(key, value)
-            })
-            .flat()
 
         // Filter the data
-        const filtered = mappedEntries
-            .filter(datum => {
-                return filterArray.every(({key, value, negative}) => {
-                    const datumVal = datum[key]
-                    if (Array.isArray(datumVal)) {
-                        const has = datumVal.includes(value)
-                        return negative ? !has : has
-                    } else {
-                        const is = datumVal === value
-                        return negative ? !is : is
-                    }
-                })
-            })
-            .sort((a, b) => { return a.fuzzy.localeCompare(b.fuzzy)})
+        const filtered = filterEntries(filters, mappedEntries).sort((a, b) => { return a.fuzzy.localeCompare(b.fuzzy)})
 
         // If there is a search term, fuzzy match that
         const searched = search

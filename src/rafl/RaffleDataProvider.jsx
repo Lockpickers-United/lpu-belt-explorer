@@ -3,43 +3,15 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
+import filterEntries from '../util/filterEntries.js'
 
 export function RaffleDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array (support negative values with leading '!')
-        const parseFilter = (key, rawVal) => {
-            const str = String(rawVal ?? '')
-            const negative = str.startsWith('!')
-            const value = negative ? str.slice(1) : str
-            return {key, value, negative}
-        }
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => parseFilter(key, subkey))
-                    : parseFilter(key, value)
-            })
-            .flat()
-
         // Filter the data
-        const filtered = allEntries
-            .filter(datum => {
-                return filterArray.every(({key, value, negative}) => {
-                    const datumVal = datum[key]
-                    if (Array.isArray(datumVal)) {
-                        const has = datumVal.includes(value)
-                        return negative ? !has : has
-                    } else {
-                        const is = datumVal === value
-                        return negative ? !is : is
-                    }
-                })
-            })
-            .sort((a, b) => { return a.potNumber-b.potNumber})
+        const filtered = filterEntries(filters, allEntries).sort((a, b) => { return a.potNumber-b.potNumber})
 
         // If there is a search term, fuzzy match that
         const searched = search
