@@ -9,9 +9,10 @@ import {useNavigate} from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
 import useWindowSize from '../util/useWindowSize.jsx'
+import Box from '@mui/material/Box'
 
 export default function PathToBlack({page = {}}) {
-    usePageTitle(page?.title || 'Page Not Found')
+    page?.title && usePageTitle('Path to Black: ' + page?.title)
     const navigate = useNavigate()
 
     const {getEntryFromId} = useContext(DataContext)
@@ -37,9 +38,11 @@ export default function PathToBlack({page = {}}) {
             : ''
         const lockMedia = lock?.media || [{}]
 
-        const linkSx = {color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+        const linkSx = {
+            color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
                 color: '#fff'
-            }}
+            }
+        }
 
         const {isMobile} = useWindowSize()
         const imageWidth = isMobile ? 85 : 150
@@ -54,7 +57,7 @@ export default function PathToBlack({page = {}}) {
                 alignItems: 'stretch',
                 position: 'relative',
                 backgroundColor: '#222',
-                padding: '16px 32px'
+                padding: '16px 32px',
             }}>
                 <BeltStripeMini value={lock?.belt} style={{
                     position: 'absolute', top: 0, left: 0, bottom: 0
@@ -67,12 +70,12 @@ export default function PathToBlack({page = {}}) {
                     </div>
                     <div style={{display: 'flex'}}>
                         {!isMobile && lockMedia[0]?.thumbnailUrl &&
-                        <div style={{margin: photoMargin}}>
-                            <Link onClick={() => {
-                                goToLock(lock.id)
-                            }}><img style={{width: imageWidth}} src={lockMedia[0]?.thumbnailUrl}
-                                                alt={lockName}/></Link>
-                        </div>
+                            <div style={{margin: photoMargin}}>
+                                <Link onClick={() => {
+                                    goToLock(lock.id)
+                                }}><img style={{width: imageWidth}} src={lockMedia[0]?.thumbnailUrl}
+                                        alt={lockName}/></Link>
+                            </div>
                         }
                         <div>
                             {descriptions.map((d, i) => (
@@ -88,6 +91,14 @@ export default function PathToBlack({page = {}}) {
     function MarkdownFancy({markdown}) {
         const {isMobile} = useWindowSize()
         const textSize = isMobile ? '1.0rem' : '1.0rem'
+        const titleSize = isMobile ? '1.5rem' : '1.7rem'
+        const navLinkSx = {
+            fontWeight: 400, color: '#888', textDecoration: 'none', cursor: 'pointer',
+            '&:hover': {
+                textDecoration: 'underline',
+                color: '#fff'
+            }
+        }
 
         return (
             <ReactMarkdown
@@ -138,12 +149,18 @@ export default function PathToBlack({page = {}}) {
                         {children}</div>,
                     h1: ({children}) => <div style={{
                         ...style,
-                        fontSize: '1.7rem',
+                        fontSize: titleSize,
                         fontWeight: 700,
                         backgroundColor: '#2a2a2a',
                         padding: '8px 0 0 18px',
                         borderBottom: 'none'
-                    }}>{children}</div>,
+                    }}><Box component='span' style={{fontWeight: 400, color: '#666', fontSize: '1.2rem'}}>
+                        <Link sx={navLinkSx} onClick={() => {
+                            navigate('/pathtoblack')
+                        }}>
+                            path to black</Link> &gt; </Box>
+                        <nobr>{children}</nobr>
+                    </div>,
                     h6: ({children}) => <div style={{
                         ...style,
                         textAlign: 'right',
@@ -172,8 +189,8 @@ export default function PathToBlack({page = {}}) {
     }
 
     return (
-        <React.Fragment>
+        <div style={{margin: 6}}>
             <MarkdownFancy markdown={page.content}/>
-        </React.Fragment>
+        </div>
     )
 }

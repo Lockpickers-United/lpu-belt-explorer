@@ -22,9 +22,12 @@ export default function PathToBlackPage() {
         borderRadius: 0
     }
 
-    const linkSx = {color: '#bbb', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
-            color: '#fff'
-        }}
+    const linkSx = {
+        color: '#eee', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+            color: '#fff',
+            textDecoration: 'underline'
+        }
+    }
 
     return (
         <div style={{
@@ -38,14 +41,6 @@ export default function PathToBlackPage() {
 
             {!pageData[pageId] &&
                 <React.Fragment>
-                    <div style={{
-                        ...style,
-                        fontSize: '1.8rem',
-                        fontWeight: 700,
-                        padding: '8px 0 0 18px'
-                    }}>
-                        Path to Black
-                    </div>
                     <div style={style}>
                         <div style={{marginBottom: 24}}>
                             We&#39;ve asked advanced pickers to share their view of a &#34;Path to Black&#34;,
@@ -61,12 +56,10 @@ export default function PathToBlackPage() {
                                     navigate(`/pathtoblack?pageId=${pageId}`)
                                 }}
                                       style={{
-                                          color: '#ddd',
-                                          cursor: 'pointer',
                                           fontWeight: 600,
                                           fontSize: '1.2rem',
-                                          textDecoration: 'underline'
-                                      }}>
+                                      }}
+                                      sx={linkSx}>
                                     {pageData[pageId].title}</Link><br/>
                                 {pageData[pageId].description}
                             </div>
@@ -76,7 +69,8 @@ export default function PathToBlackPage() {
                         <div style={{marginTop: 30, borderTop: '1px solid #fff', paddingTop: 16, fontSize: '0.95rem'}}>
                             A great source for higher-belt locks is the #lock-bazaar channel on the LPU discord.
                             You can browse/search/filter listings from most of the major sellers at: <Link
-                            onClick={()=>openInNewTab('https://lpulocks.com/#/lockbazaar')} sx={linkSx}>lpulocks.com/#/lockbazaar</Link>
+                            onClick={() => openInNewTab('https://lpulocks.com/#/lockbazaar')}
+                            sx={linkSx}>lpulocks.com/#/lockbazaar</Link>
                         </div>
 
                     </div>
