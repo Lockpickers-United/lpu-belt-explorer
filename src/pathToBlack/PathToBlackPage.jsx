@@ -52,7 +52,13 @@ export default function PathToBlackPage() {
                                 <Link onClick={() => {
                                     navigate(`/pathtoblack?pageId=${pageId}`)
                                 }}
-                                      style={{color: '#ccc', cursor: 'pointer', fontWeight: 600, fontSize: '1.2rem'}}>
+                                      style={{
+                                          color: '#ddd',
+                                          cursor: 'pointer',
+                                          fontWeight: 600,
+                                          fontSize: '1.2rem',
+                                          textDecoration: 'underline'
+                                      }}>
                                     {pageData[pageId].title}</Link><br/>
                                 {pageData[pageId].description}
                             </div>

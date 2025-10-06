@@ -56,3 +56,5 @@
 >Looking back what I’ve written, I may have gone a little bit heavy on information lol. If you have any general questions about the recommendations, or lock specific questions (how to pick this and stuff like that), ask me on the LPU discord anytime.
 >
 >**Thanks for reading!**
+
+###### *Originally published Jan. 17, 2025*

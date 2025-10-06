@@ -16,6 +16,7 @@ import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption'
 import CampaignIcon from '@mui/icons-material/Campaign'
 import AssessmentIcon from '@mui/icons-material/Assessment'
+import DirectionsIcon from '@mui/icons-material/Directions'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -95,12 +96,11 @@ export default [
         title: 'More Scorecard Stats',
         icon: <InsertChartOutlinedIcon fontSize='small'/>,
         path: '/explore',
-        beta: true
     },
     {
-        title: 'About LPU Belts',
-        icon: <FeedIcon fontSize='small'/>,
-        path: '/about'
+        title: 'Path to Black',
+        icon: <DirectionsIcon fontSize='small'/>,
+        path: '/pathtoblack',
     },
     {
         title: 'Contribute Photos',
@@ -117,6 +117,11 @@ export default [
         icon: <ChangeCircleIcon fontSize='small'/>,
         path: '/recent',
         beta: true
+    },
+    {
+        title: 'About LPU Belts',
+        icon: <FeedIcon fontSize='small'/>,
+        path: '/about'
     },
     {
         title: 'Admin Tools',
