@@ -29,8 +29,16 @@ export default function PathToBlack({page = {}}) {
 
         const lock = getEntryFromId(String(idText)) || {}
         const lockName = entryName(lock, 'any', {includeVersion: false})
-        const beltName = lock?.belt ? lock.belt.replace(/ \d/, '') : 'Unknown'
+        const beltName = lock?.belt
+            ? lock.belt === 'Unranked'
+                ? 'Unranked'
+                : lock.belt.replace(/ \d/, '')
+            : 'Unknown'
         const lockMedia = lock?.media || [{}]
+
+        const linkSx = {color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+                color: '#fff'
+            }}
 
         return (<React.Fragment>
             <div style={{
@@ -45,8 +53,10 @@ export default function PathToBlack({page = {}}) {
                     position: 'absolute', top: 0, left: 0, bottom: 0
                 }}/>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'stretch', position: 'relative'}}>
-                    <div style={{fontWeight: 600, fontSize: '1.2rem',marginBottom: 8}}>
-                        {beltName} Belt: <Link onClick={()=>{goToLock(lock.id)}} style={{color:'#bbb', cursor:'pointer'}}>{lockName}</Link>
+                    <div style={{fontWeight: 600, fontSize: '1.2rem', marginBottom: 8}}>
+                        {beltName} Belt: <Link onClick={() => {
+                        goToLock(lock.id)
+                    }} sx={linkSx}>{lockName}</Link>
                     </div>
                     <div style={{display: 'flex'}}>
                         <div style={{margin: '6px 24px 6px 0'}}>
@@ -98,7 +108,7 @@ export default function PathToBlack({page = {}}) {
                         if (current) groups.push(current)
 
                         return <>{groups.map((g, i) => (
-                            <LockDisplay key={`ld-${i}`} idChildren={g.idChildren} descriptions={g.descriptions} />
+                            <LockDisplay key={`ld-${i}`} idChildren={g.idChildren} descriptions={g.descriptions}/>
                         ))}</>
                     },
                     blockquote: ({children}) => <div style={{
@@ -107,9 +117,9 @@ export default function PathToBlack({page = {}}) {
                         position: 'relative',
                         backgroundColor: '#333',
                         borderBottom: '1px solid #000',
-                        padding: '12px 18px 6px 18px',
+                        padding: '12px 18px 6px 18px'
                     }}>{children}</div>,
-                    p: ({children}) => <div style={{marginBottom:12, lineHeight: '1.5em'}}>
+                    p: ({children}) => <div style={{marginBottom: 12, lineHeight: '1.5em'}}>
                         {children}</div>,
                     h1: ({children}) => <div style={{
                         ...style,
@@ -118,6 +128,13 @@ export default function PathToBlack({page = {}}) {
                         backgroundColor: '#333',
                         padding: '8px 0 0 18px'
                     }}>{children}</div>,
+                    h6: ({children}) => <div style={{
+                        ...style,
+                        textAlign: 'right',
+                        fontSize: '0.85rem',
+                        padding: '8px 0 0 18px',
+                        borderBottom: 'none'
+                    }}>{children}</div>
                 }}
                 remarkPlugins={[remarkGfm]} rehypePlugins={[[rehypeExternalLinks, {
                 target: '_blank',

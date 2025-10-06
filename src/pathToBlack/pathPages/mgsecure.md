@@ -30,3 +30,5 @@
 >**Black Belt: Epic Quests**
 >
 >My quests were manipulating the [S&G 6730](/#/dials?id=ae84d433&name=Sargent__Greenleaf_6730) safe lock & community contributions, here's my [original belt request](https://www.reddit.com/r/mgsecure/comments/107iei3/black_belt_request/) with details.
+
+###### *Originally published Sept. 21, 2023*

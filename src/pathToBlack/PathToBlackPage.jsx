@@ -39,18 +39,20 @@ export default function PathToBlackPage() {
                         Path to Black
                     </div>
                     <div style={style}>
-                        We&#39;ve asked advanced pickers to share their view of a &#34;Path to Black&#34;,
-                        tracing the steps of rising through the LPU Belt Rankings.
-                        Some have shared the actual locks they submitted along the way
-                        while other have taken the opportunity to explore options around a specific theme.
-                        Most include an array of recommendations for each belt.
+                        <div style={{marginBottom: 24}}>
+                            We&#39;ve asked advanced pickers to share their view of a &#34;Path to Black&#34;,
+                            tracing the steps of rising through the LPU Belt Rankings.
+                            Some have shared the actual locks they submitted along the way
+                            while other have taken the opportunity to explore options around a specific theme.
+                            Most include an array of recommendations for each belt.
+                        </div>
 
                         {Object.keys(pageData).map(pageId => (
-                            <div key={pageId} style={{marginTop: 16}}>
+                            <div key={pageId} style={{marginTop: 16, maxWidth: 450}}>
                                 <Link onClick={() => {
                                     navigate(`/pathtoblack?pageId=${pageId}`)
                                 }}
-                                      style={{color: '#ccc', cursor: 'pointer', fontWeight:600, fontSize:'1.2rem'}}>
+                                      style={{color: '#ccc', cursor: 'pointer', fontWeight: 600, fontSize: '1.2rem'}}>
                                     {pageData[pageId].title}</Link><br/>
                                 {pageData[pageId].description}
                             </div>
@@ -62,7 +64,7 @@ export default function PathToBlackPage() {
 
 
             {pageData[pageId] &&
-                <PathToBlack page={pageData[pageId]} />
+                <PathToBlack page={pageData[pageId]}/>
             }
 
         </div>

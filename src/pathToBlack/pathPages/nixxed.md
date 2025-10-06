@@ -22,3 +22,5 @@
 
 - f133510b
 - The classic PT Black experience. Shoot for the ideal pinning if possible, should be tapers in 3/5/7, with 2+ trees and rest gins. If you can get it grubbed, do it! It makes the gutting/PP experience much safer and basically unbrickable.
+
+###### *Originally published Sept. 19, 2023*
