@@ -43,7 +43,7 @@ export default function PathToBlack({page = {}}) {
 
         const {isMobile} = useWindowSize()
         const imageWidth = isMobile ? 85 : 150
-        const textSize = isMobile ? '0.9rem' : '1.0rem'
+        const textSize = isMobile ? '1.0rem' : '1.0rem'
         const titleSize = isMobile ? '1.1rem' : '1.2rem'
         const photoMargin = isMobile ? '6px 16px 0px 0' : '6px 24px 0px 0'
 
@@ -66,10 +66,14 @@ export default function PathToBlack({page = {}}) {
                     }} sx={linkSx}>{lockName}</Link>
                     </div>
                     <div style={{display: 'flex'}}>
+                        {!isMobile && lockMedia[0]?.thumbnailUrl &&
                         <div style={{margin: photoMargin}}>
-                            <img style={{width: imageWidth}} src={lockMedia[0]?.thumbnailUrl}
-                                 alt={lockName}/>
+                            <Link onClick={() => {
+                                goToLock(lock.id)
+                            }}><img style={{width: imageWidth}} src={lockMedia[0]?.thumbnailUrl}
+                                                alt={lockName}/></Link>
                         </div>
+                        }
                         <div>
                             {descriptions.map((d, i) => (
                                 <div key={i} style={{marginBottom: 8, fontSize: textSize}}>{d}</div>
@@ -83,7 +87,7 @@ export default function PathToBlack({page = {}}) {
 
     function MarkdownFancy({markdown}) {
         const {isMobile} = useWindowSize()
-        const textSize = isMobile ? '0.95rem' : '1.0rem'
+        const textSize = isMobile ? '1.0rem' : '1.0rem'
 
         return (
             <ReactMarkdown
