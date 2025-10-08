@@ -5,7 +5,7 @@ import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
 import {statusSort} from './rankingRequestData'
-import filterEntries from '../filters/filterEntries.js'
+import filterEntries from '../filters/filterEntries'
 
 /**
  * @typedef {object} entry

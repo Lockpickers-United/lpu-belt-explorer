@@ -7,7 +7,7 @@ import belts, {danBeltSort, danBeltSortReverse} from '../../data/belts'
 import collectionOptions from '../../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import collectionStatsById from '../../data/collectionStatsById.json'
-import filterEntries from '../../filters/filterEntries.js'
+import filterEntries from '../../filters/filterEntries'
 
 /**
  * @prop scorecardPicks

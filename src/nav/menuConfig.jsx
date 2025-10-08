@@ -16,9 +16,6 @@ import ChangeCircleIcon from '@mui/icons-material/ChangeCircle'
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption'
 import CampaignIcon from '@mui/icons-material/Campaign'
 import AssessmentIcon from '@mui/icons-material/Assessment'
-import DirectionsIcon from '@mui/icons-material/Directions'
-import RouteIcon from '@mui/icons-material/Route'
-import PolylineIcon from '@mui/icons-material/Polyline'
 import TurnSharpRightIcon from '@mui/icons-material/TurnSharpRight'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
