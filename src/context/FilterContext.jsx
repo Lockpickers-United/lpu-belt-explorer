@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import {useSearchParams} from 'react-router-dom'
 
 const FilterContext = React.createContext({})
@@ -70,9 +70,13 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(searchParams, {replace: true})
     }, [searchParams, setSearchParams])
 
+    // Local state to preserve partially defined advanced filter groups (not yet in URL)
+    const [advancedGroups, setAdvancedGroups] = useState(undefined)
+
     const clearFilters = useCallback(() => {
         const {tab, sort} = filters
         setFilters({tab, sort})
+        setAdvancedGroups([])
     }, [filters, setFilters])
 
     const filterCount = useMemo(() => {
@@ -82,6 +86,89 @@ export function FilterProvider({children, filterFields = []}) {
 
     const isSearch = !!filters?.search
     const isFiltered = (!!filters?.search || !!filters?.sort || filterCount > 0)
+
+    // Convert current filters (from URL query string) into Advanced Filter objects
+    const advancedFilterGroups = useCallback(() => {
+        // If we have in-memory groups, prefer them (to keep partially defined groups visible)
+        if (advancedGroups !== undefined) return advancedGroups
+
+        const groups = []
+        Object.keys(filters || {})
+            .filter(key => !nonFilters.includes(key))
+            .forEach(key => {
+                const raw = filters[key]
+                const addGroupFromString = (str) => {
+                    if (typeof str !== 'string') return
+                    const negative = str.startsWith('!')
+                    const core = negative ? str.slice(1) : str
+                    const hasOr = core.includes('||')
+                    const hasAnd = !hasOr && core.includes('@@')
+                    const delimiter = hasOr ? '||' : hasAnd ? '@@' : null
+                    const values = delimiter ? core.split(delimiter).filter(Boolean) : [core].filter(Boolean)
+                    const operator = hasOr ? 'OR' : 'AND'
+                    groups.push({fieldName: key, matchType: negative ? 'Is Not' : 'Is', operator, values})
+                }
+                if (Array.isArray(raw)) {
+                    const hasPipes = raw.some(v => typeof v === 'string' && (v.includes('||') || v.includes('@@')))
+                    const allNeg = raw.every(v => typeof v === 'string' && v.startsWith('!'))
+                    const noneNeg = raw.every(v => typeof v === 'string' && !v.startsWith('!'))
+                    if (!hasPipes && (allNeg || noneNeg)) {
+                        const negative = allNeg
+                        const values = raw.map(v => (negative ? v.slice(1) : v)).filter(Boolean)
+                        groups.push({fieldName: key, matchType: negative ? 'Is Not' : 'Is', operator: 'AND', values})
+                    } else {
+                        raw.forEach(addGroupFromString)
+                    }
+                } else {
+                    addGroupFromString(raw)
+                }
+            })
+        return groups
+    }, [filters, advancedGroups])
+
+    // Accept an array of Advanced Filter objects and set URL filters accordingly
+    const setAdvancedFilterGroups = useCallback((groups = []) => {
+        // Ensure each group has a stable unique _id for React keys/state isolation
+        const withIds = groups.map(g => {
+            if (!g) return g
+            return g._id ? g : {...g, _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`}
+        })
+        // Save locally (preserves partially defined groups)
+        setAdvancedGroups(withIds)
+
+        const sp = new URLSearchParams()
+        // Preserve existing non-filter params
+        Object.entries(filters || {}).forEach(([key, val]) => {
+            if (nonFilters.includes(key)) {
+                if (Array.isArray(val)) {
+                    val.forEach(v => { if (v !== undefined && v !== null && String(v).length) sp.append(key, v) })
+                } else if (val !== undefined && val !== null && String(val).length) {
+                    sp.set(key, val)
+                }
+            }
+        })
+        // Apply provided groups to URL only when they have concrete values
+        withIds.forEach(g => {
+            if (!g || !g.fieldName) return
+            const vals = Array.isArray(g.values) ? g.values.filter(v => v !== undefined && v !== null && String(v).length) : []
+            const negative = (g.matchType || '').toLowerCase() === 'is not'
+            const op = (g.operator || 'AND').toUpperCase()
+            if (op === 'OR') {
+                if (vals.length) {
+                    const joined = (negative ? '!' : '') + vals.join('||')
+                    sp.set(g.fieldName, joined)
+                }
+            } else {
+                if (vals.length) {
+                    const joined = (negative ? '!' : '') + vals.join('@@')
+                    sp.set(g.fieldName, joined)
+                }
+            }
+        })
+        setSearchParams(sp, {replace: true})
+    }, [filters, setSearchParams])
+
+    const [showAdvancedSearch, setShowAdvancedSearch] = useState(true)
 
     const value = useMemo(() => ({
         filters,
@@ -97,7 +184,12 @@ export function FilterProvider({children, filterFields = []}) {
             ...acc,
             [value.fieldName]: value
         }), {id: {label: 'ID'}}),
-        isSearch, isFiltered
+        isSearch, isFiltered,
+        // Advanced helpers
+        advancedFilterGroups,
+        setAdvancedFilterGroups,
+        showAdvancedSearch,
+        setShowAdvancedSearch
     }), [
         addFilter,
         addFilters,
@@ -108,7 +200,11 @@ export function FilterProvider({children, filterFields = []}) {
         removeFilters,
         setFilters,
         filterFields,
-        isSearch, isFiltered
+        isSearch, isFiltered,
+        advancedFilterGroups,
+        setAdvancedFilterGroups,
+        showAdvancedSearch,
+        setShowAdvancedSearch
     ])
 
     return (

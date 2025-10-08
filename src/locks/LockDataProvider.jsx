@@ -9,7 +9,7 @@ import removeAccents from 'remove-accents'
 import collectionStatsById from '../data/collectionStatsById.json'
 import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
-import filterEntries from '../util/filterEntries'
+import filterEntries from '../filters/filterEntries'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -117,13 +117,14 @@ export function DataProvider({children, allEntries, profile}) {
 
     const value = useMemo(() => ({
         allEntries,
+        mappedEntries,
         visibleEntries,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
         lockbazzarAvailable
-    }), [allEntries, visibleEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
+    }), [allEntries, mappedEntries, visibleEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>

@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
-import filterEntries from '../util/filterEntries.js'
+import filterEntries from '../filters/filterEntries.js'
 
 export function RaffleDataProvider({children, allEntries}) {
     const {filters: allFilters} = useContext(FilterContext)
