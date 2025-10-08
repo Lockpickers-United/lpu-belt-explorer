@@ -5,10 +5,8 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilterValues from './AdvancedFilterValues'
-import IconButton from '@mui/material/IconButton'
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 
-export default function AdvancedFilterField({group = {}, onChange, onRemove}) {
+export default function AdvancedFilterField({group = {}, onChange}) {
 
     const {fieldName = '', matchType = 'Is'} = group
     const {filterFields, advancedFilterGroups} = useContext(FilterContext)
@@ -31,41 +29,38 @@ export default function AdvancedFilterField({group = {}, onChange, onRemove}) {
     }, [onChange])
 
     return (
-        <div style={{display: 'flex', marginTop: 24, alignItems: 'flex-start'}}>
-            <FormControl style={{width: 200, marginRight: 16, marginTop: 8}} size='medium'>
-                <InputLabel color='info'>Filter</InputLabel>
-                <Select
-                    value={filterField}
-                    label='Filter'
-                    onChange={handleSelect}
-                    color='info'
-                    name='fieldName'
-                >
-                    {options.map((item, index) => (
-                        <MenuItem key={index} value={item.fieldName}>{item.label}</MenuItem>
-                    ))}
-                </Select>
-            </FormControl>
+        <div style={{display: 'flex', flexWrap:'wrap', margin: '0px 0 32px 0', alignItems: 'flex-start'}}>
+            <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>
+                <FormControl style={{width: 200, marginRight: 16, marginTop: 8}} size='small'>
+                    <InputLabel color='info'>Filter</InputLabel>
+                    <Select
+                        value={filterField}
+                        label='Filter'
+                        onChange={handleSelect}
+                        color='info'
+                        name='fieldName'
+                    >
+                        {options.map((item, index) => (
+                            <MenuItem key={index} value={item.fieldName}>{item.label}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+                <FormControl style={{width: 90, marginRight: 16, marginTop: 8}} size='small'>
+                    <Select
+                        value={matchType}
+                        onChange={handleMatchType}
+                        color='info'
+                        name='matchType'
+                    >
+                        <MenuItem value={'Is'}>Is</MenuItem>
+                        <MenuItem value={'Is Not'}>Is Not</MenuItem>
+                    </Select>
+                </FormControl>
+            </div>
 
-            <FormControl style={{width: 130, marginRight: 16, marginTop: 8}} size='medium'>
-                <InputLabel color='info'>Match Type</InputLabel>
-                <Select
-                    value={matchType}
-                    label='Match Type'
-                    onChange={handleMatchType}
-                    color='info'
-                    name='matchType'
-                >
-                    <MenuItem value={'Is'}>Is</MenuItem>
-                    <MenuItem value={'Is Not'}>Is Not</MenuItem>
-                </Select>
-            </FormControl>
-
-            <AdvancedFilterValues group={group} onChange={onChange}/>
-
-            <IconButton aria-label='remove filter group' onClick={onRemove} style={{marginTop: 14, marginLeft: 8}}>
-                <DeleteOutlineIcon style={{color:'#eee'}}/>
-            </IconButton>
+            <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>
+                <AdvancedFilterValues group={group} onChange={onChange}/>
+            </div>
         </div>
     )
 }

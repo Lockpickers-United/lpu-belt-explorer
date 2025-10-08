@@ -4,14 +4,14 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import DataContext from '../context/DataContext'
-import Box from '@mui/material/Box'
-import Chip from '@mui/material/Chip'
 import {filterValueNames} from '../data/filterValues'
 import IconButton from '@mui/material/IconButton'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import {setDeepUnique} from '../util/setDeep'
 import filterEntriesAdvanced from './filterEntriesAdvanced'
 import FilterContext from '../context/FilterContext.jsx'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
+import AddCircleIcon from '@mui/icons-material/AddCircle'
 
 function AdvancedFilterByField({
                                    label,
@@ -24,13 +24,14 @@ function AdvancedFilterByField({
                                    groupValues = [],
                                    onFilter,
                                    onRemove,
+                                   handleAddValue,
                                    sort,
                                    size = 'medium'
                                }) {
     const {mappedEntries} = useContext(DataContext)
-    const {filters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters, advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const {tab} = filters
-    const {groupIndex = 0} = group
+    const {groupIndex = 0, values = []} = group
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
 
@@ -79,6 +80,13 @@ function AdvancedFilterByField({
         setTimeout(() => document.activeElement.blur())
     }, [])
     const handleOpen = useCallback(() => setOpen(true), [])
+
+    const handleRemoveGroup = useCallback(() => {
+        const groups = advancedFilterGroups()
+        let next = groups.filter((_, i) => i !== groupIndex)
+        if (next.length === 0) next = [{ _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
+        setAdvancedFilterGroups(next)
+    }, [advancedFilterGroups, groupIndex, setAdvancedFilterGroups])
 
     const {options, counts, negativeCounts, valueIdSets} = useMemo(() => {
         const filterEntries = optionEntries.reduce((acc, entry) => {
@@ -134,14 +142,15 @@ function AdvancedFilterByField({
     return (
         <div style={{display: 'flex', alignItems: 'center'}}>
             {options.length === 0 ? null :
-                <FormControl style={{width: 250, marginTop: 8}} fullWidth>
+                <FormControl style={{minWidth: 210, marginTop: 8, marginRight:4}} size={size === 'small' ? 'small' : 'medium'}
+                             fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
                     <Select
                         label={label}
                         labelId={`filter-${fieldName}`}
                         value={currentValue}
                         onChange={handleSelect}
-                        style={{marginBottom: 0}}
+                        style={{marginBottom: 0, backgroundColor: currentValue.length > 0 ? '#2f2f2f' : undefined}}
                         color='secondary'
                         open={open}
                         onClose={handleClose}
@@ -154,11 +163,6 @@ function AdvancedFilterByField({
                                 }
                             }
                         }}
-                        renderValue={selected =>
-                            <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
-                                <Chip key={selected} label={selected} size={size}/>
-                            </Box>
-                        }
                     >
                         {options.map((opt, index) => {
                             let count
@@ -182,16 +186,28 @@ function AdvancedFilterByField({
                                 }
                             }
                             return <MenuItem key={index} value={opt}>
-                                {filterValueNames[opt] ? filterValueNames[opt] : opt + ` (${count})`}
+                                {filterValueNames[opt] ? filterValueNames[opt] : opt + (currentValue === opt ? '' : ` (${count})`)}
                             </MenuItem>
                         })}
                     </Select>
                 </FormControl>
             }
-            {currentValue.length > 0 &&
-                <IconButton onClick={handleRemoveValue} style={{marginLeft: 4, marginTop: 4}} size='small'>
+            {valueIndex === values.length - 1 &&
+                <IconButton aria-label='add filter group' onClick={handleAddValue}
+                            style={{marginTop: 4, marginLeft: 2}} size='small'>
+                    <AddCircleIcon fontSize='small' style={{color: '#5d854f'}}/>
+                </IconButton>
+            }
+            {(currentValue.length > 0 || valueIndex > 0) &&
+                <IconButton onClick={handleRemoveValue} style={{marginTop: 4, marginLeft: 2}} size='small'>
                     <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
                 </IconButton>
+            }
+            {values.length > 0 &&
+                <IconButton aria-label='remove filter group' onClick={handleRemoveGroup}
+                        style={{marginTop: 6, marginLeft: 2}} size='small'>
+                <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
+            </IconButton>
             }
         </div>
     )

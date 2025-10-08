@@ -1,18 +1,15 @@
-import React, {useCallback, useContext} from 'react'
+import React, {useCallback, useContext, useEffect} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import AdvancedFilterField from './AdvancedFilterField.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Button from '@mui/material/Button'
+import DataContext from '../context/DataContext.jsx'
 
 export default function AdvancedSearch() {
-    const {clearFilters, advancedFilterGroups, setAdvancedFilterGroups, showAdvancedSearch} = useContext(FilterContext)
-
-    const {isMobile} = useWindowSize()
-    const style = isMobile
-        ? {maxWidth: 700, borderRadius: 0}
-        : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
+    const {advancedFilterGroups, setAdvancedFilterGroups, showAdvancedSearch} = useContext(FilterContext)
+    const {visibleEntries = []} = useContext(DataContext)
 
     const addFilter = useCallback(() => {
         const next = [...advancedFilterGroups(), { _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
@@ -20,8 +17,9 @@ export default function AdvancedSearch() {
     }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     const handleClearAll = useCallback(() => {
-        clearFilters()
-    }, [clearFilters])
+        const next = [{ _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
+        setAdvancedFilterGroups(next)
+    }, [setAdvancedFilterGroups])
 
     const handleChangeGroup = useCallback((idx, updated) => {
         const groups = advancedFilterGroups()
@@ -31,20 +29,41 @@ export default function AdvancedSearch() {
 
     const handleRemoveGroup = useCallback((idx) => {
         const groups = advancedFilterGroups()
-        const next = groups.filter((_, i) => i !== idx)
+        let next = groups.filter((_, i) => i !== idx)
+        if (next.length === 0) next = [{ _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
         setAdvancedFilterGroups(next)
     }, [advancedFilterGroups, setAdvancedFilterGroups])
 
+    useEffect(() => {
+        if (advancedFilterGroups().length === 0) {
+            setAdvancedFilterGroups([{
+                _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+                fieldName: '',
+                matchType: 'Is',
+                operator: 'OR',
+                values: []
+            }])
+        }
+    },[advancedFilterGroups, setAdvancedFilterGroups])
+
+    const {isMobile} = useWindowSize()
+    const style = isMobile
+        ? {maxWidth: 700, borderRadius: 0}
+        : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
+
+    const paddingLeft = isMobile ? 8 : 16
     return (
         <React.Fragment>
             {showAdvancedSearch &&
                 <Card style={style} sx={{paddingBottom: 2, paddingTop: 2}}>
-                    <CardContent style={{paddingTop: 0, paddingLeft: 16}}>
+                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
 
-                        <div style={{fontWeight: 700, fontSize: '1.1rem'}}>Advanced Search</div>
-
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                            <div style={{fontWeight: 700, fontSize: '1.1rem'}}>Advanced Search</div>
+                            <div style={{fontWeight: 400, fontSize: '1.1rem'}}>{visibleEntries.length} Locks</div>
+                        </div>
                         <div
-                            style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%'}}>
+                            style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                             {advancedFilterGroups().map((group, index) => (
                                 <AdvancedFilterField
                                     key={group._id || index}
@@ -56,7 +75,7 @@ export default function AdvancedSearch() {
                             ))}
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 24}}>
+                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 12}}>
                             {advancedFilterGroups().length > 0 && (
                                 <Button onClick={handleClearAll} variant='contained' size='small'
                                         style={{backgroundColor: '#444', marginRight: 16}}>

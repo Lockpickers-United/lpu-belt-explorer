@@ -2,8 +2,6 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilterByField from './AdvancedFilterByField.jsx'
 import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
-import Button from '@mui/material/Button'
-import AddCircleIcon from '@mui/icons-material/AddCircle'
 
 export default function AdvancedFilterValues({group = {}, onChange}) {
 
@@ -55,9 +53,10 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                         groupValues={values}
                         onFilter={(newVal) => handleSetValueAt(index, newVal)}
                         onRemove={() => handleRemoveAt(index)}
+                        handleAddValue={handleAddValue}
                         sort={null}
                         tab={'search'}
-                        size={'small'}
+                        size='small'
                     />
                     {index === 0 && values.length > 1 && (
                         <ChoiceButtonGroup
@@ -67,13 +66,6 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                             small={true}
                             style={{margin: '12px 0 8px 0'}}
                         />
-                    )}
-                    {index === values.length - 1 && (
-                        <div style={{display: 'flex', justifyContent: 'right', marginRight: 36}}>
-                            <Button onClick={handleAddValue} style={{color: '#5d854f', marginTop: 4}}
-                                    startIcon={<AddCircleIcon fontSize='large'/>}>
-                                Add Value</Button>
-                        </div>
                     )}
                 </div>
             ))}
@@ -91,9 +83,10 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                     groupValues={values}
                     onFilter={(newVal) => onChange && onChange({values: [newVal]})}
                     onRemove={() => onChange && onChange({values: []})}
+                    handleAddValue={handleAddValue}
                     sort={null}
                     tab={'search'}
-                    size={'small'}
+                    size='small'
                 />
             )}
 
