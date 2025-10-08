@@ -8,15 +8,27 @@ import Button from '@mui/material/Button'
 import DataContext from '../context/DataContext.jsx'
 import Link from '@mui/material/Link'
 import {Collapse} from '@mui/material'
+import queryString from 'query-string'
+import {useLocation} from 'react-router-dom'
 
 export default function AdvancedSearch() {
     const {
         advancedFilterGroups,
         setAdvancedFilterGroups,
         showAdvancedSearch,
-        setShowAdvancedSearch
+        setShowAdvancedSearch,
+        removeFilters
     } = useContext(FilterContext)
     const {visibleEntries = []} = useContext(DataContext)
+
+    const location = useLocation()
+    const searchParams = queryString.parse(location.search)
+    useEffect(() => {
+        if (searchParams.preview === 'advanced') {
+            setShowAdvancedSearch(true)
+            removeFilters(['preview'])
+        }
+    },[removeFilters, searchParams.preview, setShowAdvancedSearch])
 
     const addFilter = useCallback(() => {
         const next = [...advancedFilterGroups(), {

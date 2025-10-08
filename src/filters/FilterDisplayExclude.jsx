@@ -5,7 +5,7 @@ import {filterValueNames} from '../data/filterValues'
 import FilterChipExclude from './FilterChipExclude'
 
 function FilterDisplay() {
-    const {filters, filterCount, removeFilter, filterFieldsByFieldName} = useContext(FilterContext)
+    const {filters, filterCount, removeFilter, filterFieldsByFieldName, nonFilters} = useContext(FilterContext)
 
     const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
         removeFilter(keyToDelete, valueToDelete)
@@ -14,6 +14,7 @@ function FilterDisplay() {
     const filterValues = useMemo(() => {
         const {search, id, tab, name, sort, image, ...rest} = filters
         return Object.keys(rest)
+            .filter(key => !nonFilters.includes(key) && filters[key] !== undefined && filters[key] !== null && filters[key] !== '')
             .map(key => {
                 const value = filters[key]
                 return Array.isArray(value)
@@ -21,7 +22,7 @@ function FilterDisplay() {
                     : {key, value}
             })
             .flat()
-    }, [filters])
+    }, [filters, nonFilters])
 
     const cleanChipLabel = useCallback((label, value) => {
         if (label === 'Belt') {

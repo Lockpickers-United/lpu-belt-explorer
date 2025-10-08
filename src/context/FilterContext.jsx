@@ -79,10 +79,25 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedGroups([])
     }, [filters, setFilters])
 
+    const nonFilters = useMemo(()=> [
+        'id',
+        'name',
+        'search',
+        'tab',
+        'sort',
+        'image',
+        'locks',
+        'debug',
+        'preview',
+        'single',
+        'expandAll',
+        'dataset',
+    ],[])
+
     const filterCount = useMemo(() => {
         const keys = Array.from(searchParams.keys())
         return keys.filter(key => !nonFilters.includes(key)).length
-    }, [searchParams])
+    }, [nonFilters, searchParams])
 
     const isSearch = !!filters?.search
     const isFiltered = (!!filters?.search || !!filters?.sort || filterCount > 0)
@@ -124,7 +139,7 @@ export function FilterProvider({children, filterFields = []}) {
                 }
             })
         return groups
-    }, [filters, advancedGroups])
+    }, [advancedGroups, filters, nonFilters])
 
     // Accept an array of Advanced Filter objects and set URL filters accordingly
     const setAdvancedFilterGroups = useCallback((groups = []) => {
@@ -166,7 +181,7 @@ export function FilterProvider({children, filterFields = []}) {
             }
         })
         setSearchParams(sp, {replace: true})
-    }, [filters, setSearchParams])
+    }, [filters, nonFilters, setSearchParams])
 
     const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
 
@@ -185,6 +200,7 @@ export function FilterProvider({children, filterFields = []}) {
             [value.fieldName]: value
         }), {id: {label: 'ID'}}),
         isSearch, isFiltered,
+        nonFilters,
         // Advanced helpers
         advancedFilterGroups,
         setAdvancedFilterGroups,
@@ -201,6 +217,7 @@ export function FilterProvider({children, filterFields = []}) {
         setFilters,
         filterFields,
         isSearch, isFiltered,
+        nonFilters,
         advancedFilterGroups,
         setAdvancedFilterGroups,
         showAdvancedSearch,
@@ -214,19 +231,5 @@ export function FilterProvider({children, filterFields = []}) {
     )
 }
 
-const nonFilters = [
-    'id',
-    'name',
-    'search',
-    'tab',
-    'sort',
-    'image',
-    'locks',
-    'debug',
-    'preview',
-    'single',
-    'expandAll',
-    'dataset'
-]
 
 export default FilterContext

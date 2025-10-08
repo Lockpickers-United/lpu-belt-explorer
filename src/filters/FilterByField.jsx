@@ -10,7 +10,6 @@ import Chip from '@mui/material/Chip'
 import {filterValueNames} from '../data/filterValues'
 import IconButton from '@mui/material/IconButton'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import {setDeepUnique} from '../util/setDeep'
 
 function FilterByField({label, fieldName, onFilter, sort, tab}) {
     const {visibleEntries} = useContext(DataContext)
