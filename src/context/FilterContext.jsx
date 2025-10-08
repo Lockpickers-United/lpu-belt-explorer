@@ -168,7 +168,7 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(sp, {replace: true})
     }, [filters, setSearchParams])
 
-    const [showAdvancedSearch, setShowAdvancedSearch] = useState(true)
+    const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
 
     const value = useMemo(() => ({
         filters,

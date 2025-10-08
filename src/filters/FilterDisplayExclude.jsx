@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-import FieldValue from '../entries/FieldValue'
 import Stack from '@mui/material/Stack'
 import FilterContext from '../context/FilterContext'
 import {filterValueNames} from '../data/filterValues'
@@ -49,8 +48,7 @@ function FilterDisplay() {
 
     if (filterCount === 0) return null
     return (
-        <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
-            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
+            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginTop: 12}}>
                 {filterValues.map(({key, value: filter}, index) => {
 
                     const baseValue = filter.startsWith('!') ? filter.slice(1) : filter
@@ -70,7 +68,6 @@ function FilterDisplay() {
                     }
                 )}
             </Stack>
-        }/>
     )
 }
 

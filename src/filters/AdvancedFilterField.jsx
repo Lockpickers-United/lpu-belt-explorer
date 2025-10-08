@@ -29,7 +29,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
     }, [onChange])
 
     return (
-        <div style={{display: 'flex', flexWrap:'wrap', margin: '0px 0 32px 0', alignItems: 'flex-start'}}>
+        <div style={{display: 'flex', flexWrap: 'wrap', margin: '0px 0 24px 0', alignItems: 'flex-start'}}>
             <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>
                 <FormControl style={{width: 200, marginRight: 16, marginTop: 8}} size='small'>
                     <InputLabel color='info'>Filter</InputLabel>
@@ -61,6 +61,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
             <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>
                 <AdvancedFilterValues group={group} onChange={onChange}/>
             </div>
+
         </div>
     )
 }

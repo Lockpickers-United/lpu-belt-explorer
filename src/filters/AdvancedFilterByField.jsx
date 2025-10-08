@@ -19,9 +19,7 @@ function AdvancedFilterByField({
                                    matchType,
                                    operator,
                                    valueIndex,
-                                   fieldName,
                                    currentValue,
-                                   groupValues = [],
                                    onFilter,
                                    onRemove,
                                    handleAddValue,
@@ -31,7 +29,7 @@ function AdvancedFilterByField({
     const {mappedEntries} = useContext(DataContext)
     const {filters, advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const {tab} = filters
-    const {groupIndex = 0, values = []} = group
+    const {fieldName, groupIndex = 0, values = []} = group
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
 
@@ -68,26 +66,6 @@ function AdvancedFilterByField({
 
     const [open, setOpen] = useState(false)
 
-    const handleSelect = useCallback(event => {
-        setOpen(false)
-        const val = event.target.value
-        setTimeout(() => onFilter && onFilter(val), 0)
-        setTimeout(() => document.activeElement.blur())
-    }, [onFilter])
-
-    const handleClose = useCallback(() => {
-        setOpen(false)
-        setTimeout(() => document.activeElement.blur())
-    }, [])
-    const handleOpen = useCallback(() => setOpen(true), [])
-
-    const handleRemoveGroup = useCallback(() => {
-        const groups = advancedFilterGroups()
-        let next = groups.filter((_, i) => i !== groupIndex)
-        if (next.length === 0) next = [{ _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
-        setAdvancedFilterGroups(next)
-    }, [advancedFilterGroups, groupIndex, setAdvancedFilterGroups])
-
     const {options, counts, negativeCounts, valueIdSets} = useMemo(() => {
         const filterEntries = optionEntries.reduce((acc, entry) => {
             if (Array.isArray(entry[fieldName])) {
@@ -110,8 +88,12 @@ function AdvancedFilterByField({
             return acc
         }, {})
 
-        const allValues = Array.from(new Set([...Object.keys(counts), currentValue]))
+        let allValues = Array.from(new Set([...Object.keys(counts), currentValue]))
             .filter(v => v && String(v).length > 0 && v !== 'undefined')
+
+        const otherValues = values.filter(v => v !== currentValue)
+        if (allValues.length > 0) allValues = allValues.filter(item => !otherValues.includes(item))
+        if (allValues.length === 0) allValues = ['no more options']
 
         const options = allValues
             .sort((a, b) => {
@@ -125,24 +107,52 @@ function AdvancedFilterByField({
                 }
             })
         return {counts, options, negativeCounts, valueIdSets}
-    }, [currentValue, fieldName, optionEntries, sort])
+    }, [currentValue, fieldName, optionEntries, sort, values])
 
     const baseSelectedValues = useMemo(() => {
-        if (!Array.isArray(groupValues)) return []
-        return groupValues
+        if (!Array.isArray(values)) return []
+        return values
             .map((v, i) => ({v, i}))
             .filter(({v, i}) => i !== valueIndex && v && String(v).length > 0)
             .map(({v}) => v)
-    }, [groupValues, valueIndex])
+    }, [values, valueIndex])
+
+    const handleSelect = useCallback(event => {
+        setOpen(false)
+        const val = event.target.value
+        if (val === 'no more options') return
+        setTimeout(() => onFilter && onFilter(val), 0)
+        setTimeout(() => document.activeElement.blur())
+    }, [onFilter])
+
+    const handleClose = useCallback(() => {
+        setOpen(false)
+        setTimeout(() => document.activeElement.blur())
+    }, [])
+    const handleOpen = useCallback(() => setOpen(true), [])
+
+    const handleRemoveGroup = useCallback(() => {
+        const groups = advancedFilterGroups()
+        let next = groups.filter((_, i) => i !== groupIndex)
+        if (next.length === 0) next = [{
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: '',
+            matchType: 'Is',
+            operator: 'OR',
+            values: []
+        }]
+        setAdvancedFilterGroups(next)
+    }, [advancedFilterGroups, groupIndex, setAdvancedFilterGroups])
 
     const handleRemoveValue = useCallback(() => {
         onRemove && onRemove()
     }, [onRemove])
 
     return (
-        <div style={{display: 'flex', alignItems: 'center'}}>
-            {options.length === 0 ? null :
-                <FormControl style={{minWidth: 210, marginTop: 8, marginRight:4}} size={size === 'small' ? 'small' : 'medium'}
+        <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom:4}}>
+            {(options.length === 0 || fieldName.length === 0) ? null :
+                <FormControl style={{width: 210, minWidth: 210, marginTop: 8, marginRight: 4}}
+                             size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
                     <Select
@@ -156,13 +166,6 @@ function AdvancedFilterByField({
                         onClose={handleClose}
                         onOpen={handleOpen}
                         onBlur={handleClose}
-                        MenuProps={{
-                            PaperProps: {
-                                style: {
-                                    maxHeight: ITEM_HEIGHT * 8 + ITEM_PADDING_TOP
-                                }
-                            }
-                        }}
                     >
                         {options.map((opt, index) => {
                             let count
@@ -192,28 +195,26 @@ function AdvancedFilterByField({
                     </Select>
                 </FormControl>
             }
-            {valueIndex === values.length - 1 &&
+            {valueIndex === 0 && currentValue.length > 0 &&
                 <IconButton aria-label='add filter group' onClick={handleAddValue}
                             style={{marginTop: 4, marginLeft: 2}} size='small'>
                     <AddCircleIcon fontSize='small' style={{color: '#5d854f'}}/>
                 </IconButton>
             }
             {(currentValue.length > 0 || valueIndex > 0) &&
-                <IconButton onClick={handleRemoveValue} style={{marginTop: 4, marginLeft: 2}} size='small'>
+                <IconButton aria-label='remove filter value' onClick={handleRemoveValue}
+                            style={{marginTop: 4, marginLeft: 2}} size='small'>
                     <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
                 </IconButton>
             }
-            {values.length > 0 &&
+            {(!valueIndex || valueIndex ===0) &&
                 <IconButton aria-label='remove filter group' onClick={handleRemoveGroup}
-                        style={{marginTop: 6, marginLeft: 2}} size='small'>
-                <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
-            </IconButton>
+                            style={{marginTop: 4, marginLeft: 2}} size='small'>
+                    <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
+                </IconButton>
             }
         </div>
     )
 }
-
-const ITEM_HEIGHT = 48
-const ITEM_PADDING_TOP = 8
 
 export default AdvancedFilterByField

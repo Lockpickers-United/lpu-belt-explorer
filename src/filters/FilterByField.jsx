@@ -8,10 +8,13 @@ import FilterContext from '../context/FilterContext'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import {filterValueNames} from '../data/filterValues'
+import IconButton from '@mui/material/IconButton'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import {setDeepUnique} from '../util/setDeep'
 
 function FilterByField({label, fieldName, onFilter, sort, tab}) {
     const {visibleEntries} = useContext(DataContext)
-    const {filters} = useContext(FilterContext)
+    const {filters, removeFilters} = useContext(FilterContext)
 
     const entries = useMemo(() => {
         if (tab === 'search' || !tab) {
@@ -22,32 +25,29 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
     }, [tab, visibleEntries])
 
     const [open, setOpen] = useState(false)
-
-    const handleSelect = useCallback(event => {
-        setOpen(false)
-        setTimeout(() => onFilter(fieldName, event.target.value, true), 0)
-        setTimeout(() => document.activeElement.blur())
-    }, [fieldName, onFilter])
-
-    const handleClose = useCallback(() => {
-        setOpen(false)
-        setTimeout(() => document.activeElement.blur())
-    }, [])
-    const handleOpen = useCallback(() => setOpen(true), [])
+    const defFilters = useDeferredValue(filters)
+    const filterValue = defFilters[fieldName]
+    const value = useMemo(() => {
+        return Array.isArray(filterValue)
+            ? defFilters[fieldName]
+            : (filterValue ? [filterValue] : [])
+    }, [defFilters, fieldName, filterValue])
 
     const {counts, options} = useMemo(() => {
-        const allValues = entries
-            .map(datum => datum[fieldName])
+
+        let allValues = entries
+            .map(datum => Array.isArray(datum[fieldName])
+                ? Array.from(new Set([...datum[fieldName]]))
+                : datum[fieldName])
             .flat()
             .filter(x => x)
-
         const counts = allValues.reduce((acc, val) => {
             if (!acc[val]) acc[val] = 0
             acc[val]++
             return acc
         }, {})
 
-        const options = [...new Set(allValues)]
+        const options = Object.keys(counts)
             .sort((a, b) => {
                 if (sort) return sort(a, b)
                 else {
@@ -61,19 +61,29 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
         return {counts, options}
     }, [entries, fieldName, sort])
 
-    const defFilters = useDeferredValue(filters)
-    const filterValue = defFilters[fieldName]
-    const value = Array.isArray(filterValue)
-        ? defFilters[fieldName]
-        : (filterValue ? [filterValue] : [])
+    const handleSelect = useCallback(event => {
+        setOpen(false)
+        setTimeout(() => onFilter(fieldName, event.target.value, true), 0)
+        setTimeout(() => document.activeElement.blur())
+    }, [fieldName, onFilter])
+
+    const handleClose = useCallback(() => {
+        setOpen(false)
+        setTimeout(() => document.activeElement.blur())
+    }, [])
+    const handleOpen = useCallback(() => setOpen(true), [])
+
+    const handleRemove = useCallback(() => {
+        removeFilters([fieldName])
+    }, [fieldName, removeFilters])
 
     const excludedOptions = value.reduce((acc, val) => {
-            return [...acc, (val.startsWith('!')) ? val : null]
-    }, []). filter(x => x)
+        return [...acc, (val.startsWith('!')) ? val : null]
+    }, []).filter(x => x)
     const fullOptions = [...excludedOptions, ...options]
 
     return (
-        <React.Fragment>
+        <div style={{display: 'flex', alignItems: 'center'}}>
             {fullOptions.length === 0 ? null :
                 <FormControl style={{minWidth: 120, maxWidth: 300, marginTop: 8}} fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
@@ -100,8 +110,8 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
                             <Box sx={{display: 'flex', flexWrap: 'wrap', gap: 0.5}}>
                                 {selected.map((value) => {
                                     const valueText = value.startsWith('!')
-                                        ? 'NOT ' + (filterValueNames[value.slice(1)] ? filterValueNames[value.slice(1)] : value.slice(1))
-                                        : filterValueNames[value] ? filterValueNames[value] : value
+                                        ? 'NOT ' + (filterValueNames[value.slice(1)] ? filterValueNames[value.slice(1)] : value.slice(1)).replace('||', ' OR ').replace('@@', ' AND ')
+                                        : filterValueNames[value] ? filterValueNames[value] : value.replace('||', ' OR ').replace('@@', ' AND ')
                                     return (
                                         <Chip key={value}
                                               label={valueText}/>
@@ -111,16 +121,21 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
                         }
                     >
                         {fullOptions.map((value, index) =>
-                                <MenuItem key={index} value={value}>
-                                    { value.startsWith('!')
-                                        ? 'NOT ' + (filterValueNames[value.slice(1)] ? filterValueNames[value.slice(1)] : value.slice(1))
-                                        : filterValueNames[value] ? filterValueNames[value] : value + ` (${counts[value] || 0})`}
-                                </MenuItem>
+                            <MenuItem key={index} value={value}>
+                                {(value || '').startsWith('!')
+                                    ? 'NOT ' + (filterValueNames[value.slice(1)] ? filterValueNames[value.slice(1)] : value.slice(1))
+                                    : filterValueNames[value] ? filterValueNames[value] : value + ` (${counts[value] || 0})`}
+                            </MenuItem>
                         )}
                     </Select>
                 </FormControl>
             }
-        </React.Fragment>
+            {value.length === 0 ? null :
+                <IconButton onClick={handleRemove} style={{height: 30, marginTop: 4, marginLeft: 2}} size='small'>
+                    <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
+                </IconButton>
+            }
+        </div>
     )
 }
 

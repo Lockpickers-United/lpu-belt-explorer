@@ -6,18 +6,37 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Button from '@mui/material/Button'
 import DataContext from '../context/DataContext.jsx'
+import Link from '@mui/material/Link'
+import {Collapse} from '@mui/material'
 
 export default function AdvancedSearch() {
-    const {advancedFilterGroups, setAdvancedFilterGroups, showAdvancedSearch} = useContext(FilterContext)
+    const {
+        advancedFilterGroups,
+        setAdvancedFilterGroups,
+        showAdvancedSearch,
+        setShowAdvancedSearch
+    } = useContext(FilterContext)
     const {visibleEntries = []} = useContext(DataContext)
 
     const addFilter = useCallback(() => {
-        const next = [...advancedFilterGroups(), { _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
+        const next = [...advancedFilterGroups(), {
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: '',
+            matchType: 'Is',
+            operator: 'OR',
+            values: []
+        }]
         setAdvancedFilterGroups(next)
     }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     const handleClearAll = useCallback(() => {
-        const next = [{ _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
+        const next = [{
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: '',
+            matchType: 'Is',
+            operator: 'OR',
+            values: []
+        }]
         setAdvancedFilterGroups(next)
     }, [setAdvancedFilterGroups])
 
@@ -30,9 +49,19 @@ export default function AdvancedSearch() {
     const handleRemoveGroup = useCallback((idx) => {
         const groups = advancedFilterGroups()
         let next = groups.filter((_, i) => i !== idx)
-        if (next.length === 0) next = [{ _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, fieldName: '', matchType: 'Is', operator: 'OR', values: []}]
+        if (next.length === 0) next = [{
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: '',
+            matchType: 'Is',
+            operator: 'OR',
+            values: []
+        }]
         setAdvancedFilterGroups(next)
     }, [advancedFilterGroups, setAdvancedFilterGroups])
+
+    const handleToggleAdvanced = useCallback(() => {
+        setShowAdvancedSearch(!showAdvancedSearch)
+    }, [setShowAdvancedSearch, showAdvancedSearch])
 
     useEffect(() => {
         if (advancedFilterGroups().length === 0) {
@@ -44,7 +73,7 @@ export default function AdvancedSearch() {
                 values: []
             }])
         }
-    },[advancedFilterGroups, setAdvancedFilterGroups])
+    }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -52,15 +81,30 @@ export default function AdvancedSearch() {
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
 
     const paddingLeft = isMobile ? 8 : 16
+
+    const linkSx = {
+        color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+            color: '#fff'
+        }
+    }
+
     return (
-        <React.Fragment>
-            {showAdvancedSearch &&
+            <Collapse in={showAdvancedSearch}>
                 <Card style={style} sx={{paddingBottom: 2, paddingTop: 2}}>
                     <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
 
-                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                            <div style={{fontWeight: 700, fontSize: '1.1rem'}}>Advanced Search</div>
-                            <div style={{fontWeight: 400, fontSize: '1.1rem'}}>{visibleEntries.length} Locks</div>
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                            <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Search</div>
+                            {visibleEntries.length > 1 &&
+                                <div style={{
+                                    fontWeight: 400,
+                                    fontSize: '1.0rem',
+                                    marginLeft: 8
+                                }}>({visibleEntries.length} Locks)</div>
+                            }
+                            <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
+                                <Link onClick={handleToggleAdvanced} sx={linkSx}>Close</Link>
+                            </div>
                         </div>
                         <div
                             style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
@@ -75,7 +119,7 @@ export default function AdvancedSearch() {
                             ))}
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 12}}>
+                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 8}}>
                             {advancedFilterGroups().length > 0 && (
                                 <Button onClick={handleClearAll} variant='contained' size='small'
                                         style={{backgroundColor: '#444', marginRight: 16}}>
@@ -87,7 +131,6 @@ export default function AdvancedSearch() {
 
                     </CardContent>
                 </Card>
-            }
-        </React.Fragment>
+            </Collapse>
     )
 }

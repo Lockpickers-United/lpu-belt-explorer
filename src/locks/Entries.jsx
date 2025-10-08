@@ -51,10 +51,10 @@ function Entries({profile}) {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
 
-                {showAdvancedSearch
-                    ? <AdvancedSearch/>
-                    : <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
+                {!showAdvancedSearch &&
+                    <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
                 }
+                <AdvancedSearch/>
 
                 {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
                     <BeltRequirements belt={tab}/>}

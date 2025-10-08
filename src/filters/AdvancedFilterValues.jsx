@@ -5,7 +5,7 @@ import ChoiceButtonGroup from '../util/ChoiceButtonGroup.jsx'
 
 export default function AdvancedFilterValues({group = {}, onChange}) {
 
-    const {fieldName = '', matchType='Is', operator = 'OR', values = [], groupIndex = 0} = group
+    const {fieldName = '', matchType = 'Is', operator = 'OR', values = [], groupIndex = 0} = group
 
     const {filterFields} = useContext(FilterContext)
     const filterField = filterFields.find(f => f.fieldName === fieldName) || {}
@@ -37,25 +37,22 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
     }, [onChange, values])
 
     return (
-        <div>
+        <div style={{}}>
             {values.length > 0 && values.map((val, index) => (
                 <div key={index} style={{display: 'block', width: 250}}>
                     <AdvancedFilterByField
                         key={index}
+                        {...filterField}
                         group={group}
                         groupIndex={groupIndex}
                         matchType={matchType}
                         operator={operator}
                         valueIndex={index}
-                        label={filterField.label}
-                        fieldName={fieldName}
                         currentValue={val}
                         groupValues={values}
                         onFilter={(newVal) => handleSetValueAt(index, newVal)}
                         onRemove={() => handleRemoveAt(index)}
                         handleAddValue={handleAddValue}
-                        sort={null}
-                        tab={'search'}
                         size='small'
                     />
                     {index === 0 && values.length > 1 && (
@@ -64,31 +61,27 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                             defaultValue={operator}
                             onChange={handleOperatorChange}
                             small={true}
-                            style={{margin: '12px 0 8px 0'}}
+                            style={{margin: '8px 0 8px 0'}}
                         />
                     )}
                 </div>
             ))}
 
-            {values.length === 0 && (
+            {values.length === 0 &&
                 <AdvancedFilterByField
                     key={0}
+                    {...filterField}
                     group={group}
                     groupIndex={groupIndex}
                     matchType={matchType}
                     operator={operator}
-                    label={filterField.label}
-                    fieldName={fieldName}
                     currentValue={''}
-                    groupValues={values}
                     onFilter={(newVal) => onChange && onChange({values: [newVal]})}
                     onRemove={() => onChange && onChange({values: []})}
                     handleAddValue={handleAddValue}
-                    sort={null}
-                    tab={'search'}
                     size='small'
                 />
-            )}
+            }
 
         </div>
     )
