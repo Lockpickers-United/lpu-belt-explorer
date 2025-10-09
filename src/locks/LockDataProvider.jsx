@@ -107,6 +107,14 @@ export function DataProvider({children, allEntries, profile}) {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
+    const beltEntries = useMemo(() => {
+        if (tab === 'search' || !tab) {
+            return visibleEntries
+        } else {
+            return visibleEntries.filter(entry => entry.simpleBelt === tab)
+        }
+    }, [tab, visibleEntries])
+
     const lockbazzarAvailable = useCallback(id => {
         return lockbazzarIds?.includes(id)
     }, [lockbazzarIds])
@@ -119,12 +127,13 @@ export function DataProvider({children, allEntries, profile}) {
         allEntries,
         mappedEntries,
         visibleEntries,
+        beltEntries,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
         lockbazzarAvailable
-    }), [allEntries, mappedEntries, visibleEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
+    }), [allEntries, mappedEntries, visibleEntries, beltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>

@@ -14,7 +14,7 @@ import InputLabel from '@mui/material/InputLabel'
 import Link from '@mui/material/Link'
 import DataContext from '../context/DataContext.jsx'
 
-function InlineFilterDisplay({profile = {}, collectionType}) {
+function InlineFilterDisplay({profile = {}, collectionType, advancedEnabled}) {
     const {userId} = useParams()
     const {filters, filterCount, addFilter, setShowAdvancedSearch, showAdvancedSearch} = useContext(FilterContext)
     const {visibleEntries = []} = useContext(DataContext)
@@ -74,9 +74,11 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
                             marginLeft: 8
                         }}>({visibleEntries.length} Locks)</div>
                     }
-                    <div style={{flexGrow:1, textAlign:'right', fontSize: '0.9rem'}}>
-                        <Link onClick={handleToggleAdvanced} sx={linkSx}>Advanced</Link>
-                    </div>
+                    {advancedEnabled &&
+                        <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
+                            <Link onClick={handleToggleAdvanced} sx={linkSx}>Advanced</Link>
+                        </div>
+                    }
                 </div>
 
                 {

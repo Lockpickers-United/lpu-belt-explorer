@@ -1,5 +1,6 @@
 import SortTextButton from './SortTextButton.jsx'
 import FilterTextButton from './FilterTextButton.jsx'
+import AdvancedFilterTextButton from './AdvancedFilterTextButton.jsx'
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -7,7 +8,15 @@ import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
 import CancelIcon from '@mui/icons-material/Cancel'
 
-function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll=false, expandAll=false, style}) {
+function ViewFilterButtons({
+                               sortValues,
+                               extraFilters = [],
+                               compactMode,
+                               resetAll = false,
+                               expandAll = false,
+                               style,
+                               advancedEnabled = false
+                           }) {
 
     const {filters, filterCount, setFilters, isFiltered} = useContext(FilterContext)
     const {tab, sort, search} = filters
@@ -44,10 +53,13 @@ function ViewFilterButtons({sortValues, extraFilters = [], compactMode, resetAll
              }}
         >
             <SortTextButton sortValues={sortValues} compactMode={compactMode} expandAll={expandAll}/>
-            <FilterTextButton extraFilters={extraFilters}/>
+            {advancedEnabled
+                ? <AdvancedFilterTextButton extraFilters={extraFilters}/>
+                : <FilterTextButton extraFilters={extraFilters}/>
+            }
             {reset &&
                 <Button color='inherit' style={{color: '#bbb'}} onClick={handleReset}>
-                    { !smallWidth ? 'RESET' : <CancelIcon/> }
+                    {!smallWidth ? 'RESET' : <CancelIcon/>}
                 </Button>
             }
         </Box>

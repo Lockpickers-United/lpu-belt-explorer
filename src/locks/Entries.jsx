@@ -15,7 +15,7 @@ import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 import AdvancedSearch from '../filters/AdvancedSearch.jsx'
 
-function Entries({profile}) {
+function Entries({profile, advancedEnabled = false}) {
     const {tab} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
     const {visibleEntries = [], expandAll} = useContext(DataContext)
@@ -32,7 +32,7 @@ function Entries({profile}) {
 
     const footerBefore = (
         <div style={{margin: '30px 0px'}}>
-            <ExportButton text={true} entries={entries}/>
+            <ExportButton text={true} entries={entries} advancedEnabled={advancedEnabled}/>
         </div>
     )
 
@@ -52,7 +52,7 @@ function Entries({profile}) {
             <div style={{margin: 8, paddingBottom: 32}}>
 
                 {!showAdvancedSearch &&
-                    <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
+                    <InlineFilterDisplay profile={profile} collectionType={'locks'} advancedEnabled={true}/>
                 }
                 <AdvancedSearch/>
 

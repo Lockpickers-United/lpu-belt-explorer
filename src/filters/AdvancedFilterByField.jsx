@@ -160,7 +160,7 @@ function AdvancedFilterByField({
                         labelId={`filter-${fieldName}`}
                         value={currentValue}
                         onChange={handleSelect}
-                        style={{marginBottom: 0, backgroundColor: currentValue.length > 0 ? '#2f2f2f' : undefined}}
+                        style={{marginBottom: 0, backgroundColor: currentValue.length > 0 ? '#333' : undefined}}
                         color='secondary'
                         open={open}
                         onClose={handleClose}

@@ -8,7 +8,6 @@ import FilterContext from '../context/FilterContext'
 import FilterByField from './FilterByField'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton'
-import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
@@ -18,13 +17,16 @@ import belts from '../data/belts'
 import LockListContext from '../locks/LockListContext.jsx'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import useWindowSize from '../util/useWindowSize.jsx'
+import Link from '@mui/material/Link'
+import DataContext from '../context/DataContext.jsx'
 
-function FilterTextButton({onFiltersChanged}) {
+function AdvancedFilterTextButton({onFiltersChanged}) {
 
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
-    const {filters, filterCount, addFilters, addFilter, filterFields, removeFilters} = useContext(FilterContext)
+    const {filters, filterCount, addFilters, addFilter, filterFields, removeFilters, showAdvancedSearch, setShowAdvancedSearch} = useContext(FilterContext)
     const {tab} = useContext(LockListContext)
+    const {beltEntries = []} = useContext(DataContext)
     const {belt} = filters
 
     const isLocks = /\/locks/.test(location.hash)
@@ -70,8 +72,18 @@ function FilterTextButton({onFiltersChanged}) {
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
 
+    const handleToggleAdvanced = useCallback(() => {
+        setShowAdvancedSearch(!showAdvancedSearch)
+    }, [setShowAdvancedSearch, showAdvancedSearch])
+
     const {color, lineColor = '#999'} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
     const beltOpacity = scope === 'belt' ? 1 : 0.7
+
+    const linkSx = {
+        color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+            color: '#fff'
+        }
+    }
 
     const {width} = useWindowSize()
     const smallWidth = width <= 500
@@ -96,13 +108,30 @@ function FilterTextButton({onFiltersChanged}) {
                     anchor='right'
                     open={open}
                     onClose={closeDrawer}
+                    sx={{
+                        '.MuiDrawer-paper': {
+                            padding: 1
+                        }
+                    }}
                 >
-                    <Toolbar variant='dense' onClick={closeDrawer} style={{padding: '8px 0px 0px 8px'}}>
-                        <div style={{fontSize: '1.3rem', fontWeight: 700}}>Filters</div>
-                    </Toolbar>
+                    <div style={{display: 'flex', alignItems: 'center', padding: '16px 8px 8px 8px'}} onClick={closeDrawer}>
+                        <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Filters</div>
+                        {beltEntries.length > 1 &&
+                            <div style={{
+                                fontWeight: 400,
+                                fontSize: '1.0rem',
+                                marginLeft: 8
+                            }}>({beltEntries.length} Locks)</div>
+                        }
+                        <div style={{flexGrow:1, textAlign:'right', fontSize: '0.9rem'}}>
+                            <Link onClick={handleToggleAdvanced} sx={linkSx}>{showAdvancedSearch ? '' : 'Advanced'}</Link>
+                        </div>
+                    </div>
+
+
 
                     {belts[initialBelt] && isLocks &&
-                        <div style={{marginLeft: 8, marginBottom: 8}}>
+                        <div style={{margin: '16px 8px 0px 8px'}}>
                             <ToggleButtonGroup
                                 variant='outlined'
                             >
@@ -179,5 +208,4 @@ function FilterTextButton({onFiltersChanged}) {
     )
 }
 
-export default FilterTextButton
-
+export default AdvancedFilterTextButton

@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import {useSearchParams} from 'react-router-dom'
 
 const FilterContext = React.createContext({})
@@ -102,16 +102,13 @@ export function FilterProvider({children, filterFields = []}) {
     const isSearch = !!filters?.search
     const isFiltered = (!!filters?.search || !!filters?.sort || filterCount > 0)
 
-    // Convert current filters (from URL query string) into Advanced Filter objects
-    const advancedFilterGroups = useCallback(() => {
-        // If we have in-memory groups, prefer them (to keep partially defined groups visible)
-        if (advancedGroups !== undefined) return advancedGroups
-
+    // Helper: parse URL-style filters into Advanced Filter groups (no _id)
+    const parseFiltersToGroups = useCallback((srcFilters, skipKeys) => {
         const groups = []
-        Object.keys(filters || {})
-            .filter(key => !nonFilters.includes(key))
+        Object.keys(srcFilters || {})
+            .filter(key => !skipKeys.includes(key))
             .forEach(key => {
-                const raw = filters[key]
+                const raw = srcFilters[key]
                 const addGroupFromString = (str) => {
                     if (typeof str !== 'string') return
                     const negative = str.startsWith('!')
@@ -139,7 +136,14 @@ export function FilterProvider({children, filterFields = []}) {
                 }
             })
         return groups
-    }, [advancedGroups, filters, nonFilters])
+    }, [])
+
+    // Convert current filters (from URL query string) into Advanced Filter objects
+    const advancedFilterGroups = useCallback(() => {
+        // If we have in-memory groups, prefer them (to keep partially defined groups visible)
+        if (advancedGroups !== undefined) return advancedGroups
+        return parseFiltersToGroups(filters, nonFilters)
+    }, [advancedGroups, filters, nonFilters, parseFiltersToGroups])
 
     // Accept an array of Advanced Filter objects and set URL filters accordingly
     const setAdvancedFilterGroups = useCallback((groups = []) => {
@@ -184,6 +188,18 @@ export function FilterProvider({children, filterFields = []}) {
     }, [filters, nonFilters, setSearchParams])
 
     const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
+
+    // Keep advancedGroups in sync with URL filters so AdvancedSearch reflects external changes
+    useEffect(() => {
+        const parsed = parseFiltersToGroups(filters, nonFilters)
+        const withIds = parsed.map(g => g._id ? g : ({...g, _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`}))
+        setAdvancedGroups(prev => {
+            if (!prev || prev.length === 0) return withIds
+            const incomplete = prev.filter(g => !g || !g.fieldName || !Array.isArray(g.values) || g.values.length === 0)
+            if (incomplete.length > 0) return [...withIds, ...incomplete]
+            return withIds
+        })
+    }, [filters, nonFilters, parseFiltersToGroups])
 
     const value = useMemo(() => ({
         filters,

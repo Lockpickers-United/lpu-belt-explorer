@@ -13,12 +13,12 @@ import DataContext from './LockDataProvider.jsx'
 function LockList() {
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
-    const {visibleEntries = []} = useContext(DataContext)
+    const {beltEntries = []} = useContext(DataContext)
 
     const extras = (
         <React.Fragment>
-            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false} entryCount={visibleEntries.length}/>
-            <ViewFilterButtons sortValues={lockSortFields}
+            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false} entryCount={beltEntries.length}/>
+            <ViewFilterButtons sortValues={lockSortFields} advancedEnabled={true}
                                extraFilters={[{key: 'tab', value: 'search'}]}
                                compactMode={true} resetAll={true} expandAll={true}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
@@ -31,7 +31,7 @@ function LockList() {
 
             <BeltToolbar/>
 
-            <Entries profile={lockCollection}/>
+            <Entries profile={lockCollection} advancedEnabled={true}/>
 
             <Tracker feature='locks'/>
         </React.Fragment>

@@ -19,7 +19,7 @@ export default function AdvancedSearch() {
         setShowAdvancedSearch,
         removeFilters
     } = useContext(FilterContext)
-    const {visibleEntries = []} = useContext(DataContext)
+    const {beltEntries = []} = useContext(DataContext)
 
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -101,18 +101,18 @@ export default function AdvancedSearch() {
     }
 
     return (
-            <Collapse in={showAdvancedSearch}>
+            <Collapse in={showAdvancedSearch} unmountOnExit={true}>
                 <Card style={style} sx={{paddingBottom: 2, paddingTop: 2}}>
                     <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
 
                         <div style={{display: 'flex', alignItems: 'center'}}>
                             <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Search</div>
-                            {visibleEntries.length > 1 &&
+                            {beltEntries.length > 1 &&
                                 <div style={{
                                     fontWeight: 400,
                                     fontSize: '1.0rem',
                                     marginLeft: 8
-                                }}>({visibleEntries.length} Locks)</div>
+                                }}>({beltEntries.length} Locks)</div>
                             }
                             <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
                                 <Link onClick={handleToggleAdvanced} sx={linkSx}>Close</Link>
