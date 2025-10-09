@@ -1,7 +1,6 @@
 import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
-import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
@@ -19,7 +18,7 @@ function Entries({profile, advancedEnabled = false}) {
     const {tab} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
     const {visibleEntries = [], expandAll} = useContext(DataContext)
-    const {filters, filterCount, isSearch, showAdvancedSearch} = useContext(FilterContext)
+    const {filters, filterCount, isSearch} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
 
     const entries = useMemo(() => {

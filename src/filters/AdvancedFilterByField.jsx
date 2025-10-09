@@ -16,7 +16,6 @@ import AddCircleIcon from '@mui/icons-material/AddCircle'
 function AdvancedFilterByField({
                                    label,
                                    group,
-                                   matchType,
                                    operator,
                                    valueIndex,
                                    currentValue,
@@ -24,23 +23,27 @@ function AdvancedFilterByField({
                                    onRemove,
                                    handleAddValue,
                                    sort,
-                                   size = 'medium'
+                                   size = 'medium',
+                                   context
                                }) {
 
-    const {beltEntries} = useContext(DataContext)
+    const {mappedBeltEntries} = useContext(DataContext)
     const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
-    const {fieldName, groupIndex = 0, values = []} = group
+    const {fieldName, groupIndex = 0, matchType, values = []} = group
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
 
+    let currentValueText = Array.isArray(values) ? values.join(operator === 'OR' ? ' OR ' : ' AND ') : values
+    currentValueText = matchType === 'Is Not' ? `NOT ${currentValueText}` : currentValueText
+
     const optionEntries = useMemo(() => {
         if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {
-            return beltEntries
+            return mappedBeltEntries
         } else if ((groupIndex > 0 && (!valueIndex || valueIndex === 0)) || (valueIndex > 0 && operator === 'OR')) {
             // Previous Group Entries
             return filterEntriesAdvanced({
                 advancedFilterGroups: advancedFilterGroups(),
-                entries: beltEntries,
+                entries: mappedBeltEntries,
                 groupIndex: groupIndex - 1,
                 valueIndex: 99
             })
@@ -48,13 +51,13 @@ function AdvancedFilterByField({
             // Previous Value Entries
             return filterEntriesAdvanced({
                 advancedFilterGroups: advancedFilterGroups(),
-                entries: beltEntries,
+                entries: mappedBeltEntries,
                 groupIndex: groupIndex,
                 valueIndex: valueIndex - 1
             })
         }
         return []
-    }, [advancedFilterGroups, groupIndex, beltEntries, operator, valueIndex])
+    }, [advancedFilterGroups, groupIndex, mappedBeltEntries, operator, valueIndex])
 
     const [open, setOpen] = useState(false)
 
@@ -80,7 +83,7 @@ function AdvancedFilterByField({
             return acc
         }, {})
 
-        let allValues = Array.from(new Set([...Object.keys(counts), currentValue]))
+        let allValues = Array.from(new Set([...Object.keys(counts), currentValue, currentValueText]))
             .filter(v => v && String(v).length > 0 && v !== 'undefined')
 
         const otherValues = values.filter(v => v !== currentValue)
@@ -99,7 +102,7 @@ function AdvancedFilterByField({
                 }
             })
         return {counts, options, negativeCounts, valueIdSets}
-    }, [currentValue, fieldName, optionEntries, sort, values])
+    }, [currentValue, currentValueText, fieldName, optionEntries, sort, values])
 
     const baseSelectedValues = useMemo(() => {
         if (!Array.isArray(values)) return []
@@ -140,8 +143,16 @@ function AdvancedFilterByField({
         onRemove && onRemove()
     }, [onRemove])
 
+    const marginBottom = context === 'drawer' ? 10 : 4
+    const selectStyle = context !== 'drawer'
+        ? {backgroundColor: currentValue.length > 0 ? '#333' : undefined}
+        : matchType === 'Is Not'
+            ? {backgroundColor: currentValue.length > 0 ? '#642c2c' : undefined}
+            : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
+
+
     return (
-        <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom:4}}>
+        <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom: marginBottom}}>
             {(options.length === 0 || fieldName.length === 0) ? null :
                 <FormControl style={{width: 210, minWidth: 210, marginTop: 8, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
@@ -150,9 +161,9 @@ function AdvancedFilterByField({
                     <Select
                         label={label}
                         labelId={`filter-${fieldName}`}
-                        value={currentValue}
+                        value={context === 'drawer' ? currentValueText : currentValue}
                         onChange={handleSelect}
-                        style={{marginBottom: 0, backgroundColor: currentValue.length > 0 ? '#333' : undefined}}
+                        style={selectStyle}
                         color='secondary'
                         open={open}
                         onClose={handleClose}
@@ -187,24 +198,35 @@ function AdvancedFilterByField({
                     </Select>
                 </FormControl>
             }
-            {valueIndex === 0 && currentValue.length > 0 &&
-                <IconButton aria-label='add filter group' onClick={handleAddValue}
-                            style={{marginTop: 4, marginLeft: 2}} size='small'>
-                    <AddCircleIcon fontSize='small' style={{color: '#5d854f'}}/>
-                </IconButton>
+            {context !== 'drawer' &&
+                <React.Fragment>
+                    {valueIndex === 0 && currentValue.length > 0 &&
+                        <IconButton aria-label='add filter group' onClick={handleAddValue}
+                                    style={{marginTop: 4, marginLeft: 2}} size='small'>
+                            <AddCircleIcon fontSize='small' style={{color: '#5d854f'}}/>
+                        </IconButton>
+                    }
+                    {(currentValue.length > 0 || valueIndex > 0) &&
+                        <IconButton aria-label='remove filter value' onClick={handleRemoveValue}
+                                    style={{marginTop: 4, marginLeft: 2}} size='small'>
+                            <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
+                        </IconButton>
+                    }
+                    {(!valueIndex || valueIndex === 0) &&
+                        <IconButton aria-label='remove filter group' onClick={handleRemoveGroup}
+                                    style={{marginTop: 4, marginLeft: 2}} size='small'>
+                            <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
+                        </IconButton>
+                    }
+                </React.Fragment>
             }
-            {(currentValue.length > 0 || valueIndex > 0) &&
-                <IconButton aria-label='remove filter value' onClick={handleRemoveValue}
+            {(currentValue.length > 0 || valueIndex > 0) && context === 'drawer' &&
+                <IconButton aria-label='remove filter value' onClick={handleRemoveGroup}
                             style={{marginTop: 4, marginLeft: 2}} size='small'>
                     <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
                 </IconButton>
             }
-            {(!valueIndex || valueIndex ===0) &&
-                <IconButton aria-label='remove filter group' onClick={handleRemoveGroup}
-                            style={{marginTop: 4, marginLeft: 2}} size='small'>
-                    <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
-                </IconButton>
-            }
+
         </div>
     )
 }

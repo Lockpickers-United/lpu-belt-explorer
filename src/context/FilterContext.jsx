@@ -117,7 +117,7 @@ export function FilterProvider({children, filterFields = []}) {
                     const hasAnd = !hasOr && core.includes('@@')
                     const delimiter = hasOr ? '||' : hasAnd ? '@@' : null
                     const values = delimiter ? core.split(delimiter).filter(Boolean) : [core].filter(Boolean)
-                    const operator = hasOr ? 'OR' : 'AND'
+                    const operator = hasAnd ? 'AND' : 'OR'
                     groups.push({fieldName: key, matchType: negative ? 'Is Not' : 'Is', operator, values})
                 }
                 if (Array.isArray(raw)) {

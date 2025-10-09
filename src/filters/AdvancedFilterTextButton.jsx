@@ -5,7 +5,7 @@ import Tooltip from '@mui/material/Tooltip'
 import Badge from '@mui/material/Badge'
 import AuthContext from '../app/AuthContext'
 import FilterContext from '../context/FilterContext'
-import FilterByField from './FilterByField'
+import AdvancedFilterByField from './AdvancedFilterByField'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton'
 import Button from '@mui/material/Button'
@@ -25,10 +25,11 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
     const {
         filters,
         filterCount,
-        addFilters,
         filterFields,
         showAdvancedSearch,
-        setShowAdvancedSearch
+        setShowAdvancedSearch,
+        advancedFilterGroups,
+        setAdvancedFilterGroups
     } = useContext(FilterContext)
     const {tab} = useContext(LockListContext)
     const {beltEntries = []} = useContext(DataContext)
@@ -55,14 +56,20 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('f', handleHotkey)
 
-    const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
-        addFilters([
-            {key: keyToAdd, value: valueToAdd},
-            {key: 'id', value: undefined},
-            {key: 'name', value: undefined}
-        ], true)
+    const handleQuickAdd = useCallback((fieldName, valueToAdd) => {
+        if (!fieldName || !valueToAdd) return
+        const groups = advancedFilterGroups()
+        const newGroup = {
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName,
+            matchType: 'Is',
+            operator: 'OR',
+            values: [valueToAdd]
+        }
+        setAdvancedFilterGroups([...groups, newGroup])
         onFiltersChanged && onFiltersChanged()
-    }, [addFilters, onFiltersChanged])
+    }, [advancedFilterGroups, onFiltersChanged, setAdvancedFilterGroups])
+
 
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
@@ -133,14 +140,45 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                                 .filter(field => {
                                     return !(scope === 'belt' && tab !== 'search' && field.label === 'Belt')
                                 })
-                                .map((field, index) =>
-                                    <FilterByField
-                                        tab={tab}
-                                        key={index}
-                                        {...field}
-                                        onFilter={handleAddFilter}
-                                    />
-                                )}
+                                .map((field, index) => {
+                                    const groupsArr = advancedFilterGroups()
+                                    const existingIndex = groupsArr.findIndex(g => g.fieldName === field.fieldName && Array.isArray(g.values) && g.values.length > 0)
+                                    const existing = existingIndex >= 0 ? groupsArr[existingIndex] : null
+
+                                    const group = existing ? {
+                                        ...existing,
+                                        groupIndex: existingIndex
+                                    } : {
+                                        fieldName: field.fieldName,
+                                        groupIndex: 0,
+                                        matchType: 'Is',
+                                        operator: 'OR',
+                                        values: ['']
+                                    }
+
+                                    const currentValue = existing ? (existing.values?.[0] || '') : ''
+                                    const matchType = existing ? existing.matchType || 'Is' : 'Is'
+                                    const operator = existing ? existing.operator || 'OR' : 'OR'
+                                    const groupIndex = existing ? existingIndex : 0
+
+                                    return (
+                                        <AdvancedFilterByField
+                                            key={field.fieldName || index}
+                                            label={field.label}
+                                            group={group}
+                                            groupIndex={groupIndex}
+                                            matchType={matchType}
+                                            operator={operator}
+                                            valueIndex={0}
+                                            currentValue={currentValue}
+                                            onFilter={(val) => handleQuickAdd(field.fieldName, val)}
+                                            onRemove={() => {}}
+                                            handleAddValue={() => {}}
+                                            size='small'
+                                            context='drawer'
+                                        />
+                                    )
+                                })}
                         </Stack>
                     </Box>
                     <div style={{padding: 8}}>

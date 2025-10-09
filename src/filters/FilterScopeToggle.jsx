@@ -4,7 +4,6 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import ToggleButton from '@mui/material/ToggleButton'
 import belts from '../data/belts'
 import LockListContext from '../locks/LockListContext.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function FilterScopeToggle({style = {}}) {
 

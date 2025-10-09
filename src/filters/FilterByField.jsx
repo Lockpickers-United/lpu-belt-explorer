@@ -12,8 +12,12 @@ import IconButton from '@mui/material/IconButton'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 
 function FilterByField({label, fieldName, onFilter, sort}) {
-    const {beltEntries = []} = useContext(DataContext)
+    const {beltEntries, visibleEntries = []} = useContext(DataContext)
     const {filters, removeFilters} = useContext(FilterContext)
+
+    const entries = useMemo(() => {
+        return beltEntries?.length > 0 ? beltEntries : visibleEntries
+    }, [beltEntries, visibleEntries])
 
     const [open, setOpen] = useState(false)
     const defFilters = useDeferredValue(filters)
@@ -26,7 +30,7 @@ function FilterByField({label, fieldName, onFilter, sort}) {
 
     const {counts, options} = useMemo(() => {
 
-        let allValues = beltEntries
+        let allValues = entries
             .map(datum => Array.isArray(datum[fieldName])
                 ? Array.from(new Set([...datum[fieldName]]))
                 : datum[fieldName])
@@ -50,7 +54,7 @@ function FilterByField({label, fieldName, onFilter, sort}) {
                 }
             })
         return {counts, options}
-    }, [beltEntries, fieldName, sort])
+    }, [entries, fieldName, sort])
 
     const handleSelect = useCallback(event => {
         setOpen(false)
