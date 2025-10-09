@@ -17,7 +17,7 @@ import DataContext from '../context/DataContext.jsx'
 function InlineFilterDisplay({profile = {}, collectionType, advancedEnabled}) {
     const {userId} = useParams()
     const {filters, filterCount, addFilter, setShowAdvancedSearch, showAdvancedSearch} = useContext(FilterContext)
-    const {visibleEntries = []} = useContext(DataContext)
+    const {beltEntries = []} = useContext(DataContext)
 
     const [open, setOpen] = React.useState(false)
 
@@ -65,14 +65,14 @@ function InlineFilterDisplay({profile = {}, collectionType, advancedEnabled}) {
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 2}}>
             <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
-                <div style={{display: 'flex', alignItems: 'center'}}>
+                <div style={{display: 'flex', alignItems: 'center', marginBottom: 8}}>
                     <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Current Filters</div>
-                    {visibleEntries.length > 1 &&
+                    {beltEntries.length > 1 &&
                         <div style={{
                             fontWeight: 400,
                             fontSize: '1.0rem',
                             marginLeft: 8
-                        }}>({visibleEntries.length} Locks)</div>
+                        }}>({beltEntries.length} Locks)</div>
                     }
                     {advancedEnabled &&
                         <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>

@@ -11,17 +11,9 @@ import {filterValueNames} from '../data/filterValues'
 import IconButton from '@mui/material/IconButton'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 
-function FilterByField({label, fieldName, onFilter, sort, tab}) {
-    const {visibleEntries} = useContext(DataContext)
+function FilterByField({label, fieldName, onFilter, sort}) {
+    const {beltEntries = []} = useContext(DataContext)
     const {filters, removeFilters} = useContext(FilterContext)
-
-    const entries = useMemo(() => {
-        if (tab === 'search' || !tab) {
-            return visibleEntries
-        } else {
-            return visibleEntries.filter(entry => entry.simpleBelt === tab)
-        }
-    }, [tab, visibleEntries])
 
     const [open, setOpen] = useState(false)
     const defFilters = useDeferredValue(filters)
@@ -34,7 +26,7 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
 
     const {counts, options} = useMemo(() => {
 
-        let allValues = entries
+        let allValues = beltEntries
             .map(datum => Array.isArray(datum[fieldName])
                 ? Array.from(new Set([...datum[fieldName]]))
                 : datum[fieldName])
@@ -58,7 +50,7 @@ function FilterByField({label, fieldName, onFilter, sort, tab}) {
                 }
             })
         return {counts, options}
-    }, [entries, fieldName, sort])
+    }, [beltEntries, fieldName, sort])
 
     const handleSelect = useCallback(event => {
         setOpen(false)

@@ -26,20 +26,12 @@ function AdvancedFilterByField({
                                    sort,
                                    size = 'medium'
                                }) {
-    const {mappedEntries} = useContext(DataContext)
-    const {filters, advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
-    const {tab} = filters
+
+    const {beltEntries} = useContext(DataContext)
+    const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const {fieldName, groupIndex = 0, values = []} = group
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
-
-    const beltEntries = useMemo(() => {
-        if (tab === 'search' || !tab) {
-            return mappedEntries
-        } else {
-            return mappedEntries.filter(entry => entry.simpleBelt === tab)
-        }
-    }, [tab, mappedEntries])
 
     const optionEntries = useMemo(() => {
         if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {

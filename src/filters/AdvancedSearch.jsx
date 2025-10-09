@@ -10,8 +10,10 @@ import Link from '@mui/material/Link'
 import {Collapse} from '@mui/material'
 import queryString from 'query-string'
 import {useLocation} from 'react-router-dom'
+import InlineFilterDisplay from './InlineFilterDisplay.jsx'
+import FilterScopeToggle from './FilterScopeToggle.jsx'
 
-export default function AdvancedSearch() {
+export default function AdvancedSearch({profile, collectionType, advancedEnabled}) {
     const {
         advancedFilterGroups,
         setAdvancedFilterGroups,
@@ -28,7 +30,7 @@ export default function AdvancedSearch() {
             setShowAdvancedSearch(true)
             removeFilters(['preview'])
         }
-    },[removeFilters, searchParams.preview, setShowAdvancedSearch])
+    }, [removeFilters, searchParams.preview, setShowAdvancedSearch])
 
     const addFilter = useCallback(() => {
         const next = [...advancedFilterGroups(), {
@@ -101,48 +103,57 @@ export default function AdvancedSearch() {
     }
 
     return (
+        <React.Fragment>
+            {!showAdvancedSearch &&
+                <InlineFilterDisplay profile={profile} collectionType={collectionType} advancedEnabled={advancedEnabled}/>
+            }
             <Collapse in={showAdvancedSearch} unmountOnExit={true}>
-                <Card style={style} sx={{paddingBottom: 2, paddingTop: 2}}>
-                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
+                    <Card style={style} sx={{paddingBottom: 2, paddingTop: 2}}>
+                        <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
 
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Search</div>
-                            {beltEntries.length > 1 &&
-                                <div style={{
-                                    fontWeight: 400,
-                                    fontSize: '1.0rem',
-                                    marginLeft: 8
-                                }}>({beltEntries.length} Locks)</div>
-                            }
-                            <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
-                                <Link onClick={handleToggleAdvanced} sx={linkSx}>Close</Link>
+                            <div style={{display: 'flex', alignItems: 'center'}}>
+                                <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Search</div>
+                                {beltEntries.length > 1 &&
+                                    <div style={{
+                                        fontWeight: 400,
+                                        fontSize: '1.0rem',
+                                        marginLeft: 8
+                                    }}>({beltEntries.length} Locks)</div>
+                                }
+                                <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
+                                    <Link onClick={handleToggleAdvanced} sx={linkSx}>Close</Link>
+                                </div>
                             </div>
-                        </div>
-                        <div
-                            style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                            {advancedFilterGroups().map((group, index) => (
-                                <AdvancedFilterField
-                                    key={group._id || index}
-                                    group={{...group, groupIndex: index, groupId: group._id}}
-                                    groupIndex={index}
-                                    onChange={(updated) => handleChangeGroup(index, updated)}
-                                    onRemove={() => handleRemoveGroup(index)}
-                                />
-                            ))}
-                        </div>
 
-                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 8}}>
-                            {advancedFilterGroups().length > 0 && (
-                                <Button onClick={handleClearAll} variant='contained' size='small'
-                                        style={{backgroundColor: '#444', marginRight: 16}}>
-                                    Clear All</Button>
-                            )}
-                            <Button onClick={addFilter} variant='contained' color='info' size='small'>Add
-                                Filter</Button>
-                        </div>
+                            <FilterScopeToggle style={{margin: '16px 0px 16px 0px'}}/>
 
-                    </CardContent>
-                </Card>
-            </Collapse>
+                            <div
+                                style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                                {advancedFilterGroups().map((group, index) => (
+                                    <AdvancedFilterField
+                                        key={group._id || index}
+                                        group={{...group, groupIndex: index, groupId: group._id}}
+                                        groupIndex={index}
+                                        onChange={(updated) => handleChangeGroup(index, updated)}
+                                        onRemove={() => handleRemoveGroup(index)}
+                                    />
+                                ))}
+                            </div>
+
+                            <div style={{display: 'flex', justifyContent: 'center', marginTop: 8}}>
+                                {advancedFilterGroups().length > 0 && (
+                                    <Button onClick={handleClearAll} variant='contained' size='small'
+                                            style={{backgroundColor: '#444', marginRight: 16}}>
+                                        Clear All</Button>
+                                )}
+                                <Button onClick={addFilter} variant='contained' color='info' size='small'>Add
+                                    Filter</Button>
+                            </div>
+
+                        </CardContent>
+                    </Card>
+                </Collapse>
+        </React.Fragment>
+
     )
 }

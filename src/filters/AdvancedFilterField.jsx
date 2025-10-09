@@ -28,10 +28,6 @@ export default function AdvancedFilterField({group = {}, onChange}) {
         setTimeout(() => document.activeElement.blur())
     }, [onChange])
 
-
-    // Highlight NOT
-
-
     return (
         <div style={{display: 'flex', flexWrap: 'wrap', margin: '0px 0 24px 0', alignItems: 'flex-start'}}>
             <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>
@@ -55,7 +51,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
                         onChange={handleMatchType}
                         color='info'
                         name='matchType'
-                        style={{backgroundColor: matchType === 'Is Not' ? '#562929' : undefined}}
+                        style={{backgroundColor: matchType === 'Is Not' ? '#642c2c' : undefined}}
                     >
                         <MenuItem value={'Is'}>Is</MenuItem>
                         <MenuItem value={'Is Not'}>Is Not</MenuItem>
