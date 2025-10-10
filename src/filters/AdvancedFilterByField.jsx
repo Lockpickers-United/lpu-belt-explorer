@@ -59,6 +59,11 @@ function AdvancedFilterByField({
         return []
     }, [advancedFilterGroups, groupIndex, mappedBeltEntries, operator, valueIndex])
 
+    
+    console.log('advancedFilterGroups()', advancedFilterGroups())
+    console.log('group', group)
+
+
     const [open, setOpen] = useState(false)
 
     const {options, counts, negativeCounts, valueIdSets} = useMemo(() => {
@@ -83,8 +88,10 @@ function AdvancedFilterByField({
             return acc
         }, {})
 
-        let allValues = Array.from(new Set([...Object.keys(counts), currentValue, currentValueText]))
-            .filter(v => v && String(v).length > 0 && v !== 'undefined')
+        let allValues = context === 'drawer'
+        ? Array.from(new Set([...Object.keys(counts), currentValue, currentValueText]))
+        : Array.from(new Set([...Object.keys(counts), currentValue]))
+        allValues = allValues.filter(v => v && String(v).length > 0 && v !== 'undefined')
 
         const otherValues = values.filter(v => v !== currentValue)
         if (allValues.length > 0) allValues = allValues.filter(item => !otherValues.includes(item))
@@ -102,7 +109,7 @@ function AdvancedFilterByField({
                 }
             })
         return {counts, options, negativeCounts, valueIdSets}
-    }, [currentValue, currentValueText, fieldName, optionEntries, sort, values])
+    }, [context, currentValue, currentValueText, fieldName, optionEntries, sort, values])
 
     const baseSelectedValues = useMemo(() => {
         if (!Array.isArray(values)) return []
