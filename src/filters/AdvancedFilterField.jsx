@@ -5,16 +5,25 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilterValues from './AdvancedFilterValues'
+import AuthContext from '../app/AuthContext.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 export default function AdvancedFilterField({group = {}, onChange}) {
+    const {isLoggedIn} = useContext(AuthContext)
+    const {beta} = useContext(AppContext)
 
     const {fieldName = '', matchType = 'Is'} = group
     const {filterFields, advancedFilterGroups} = useContext(FilterContext)
+
     const [filterField, setFilterField] = useState(fieldName)
 
-    const options = useMemo(() => filterFields.filter(field => {
+    const options = useMemo(() => filterFields
+        .filter(field => {
+            return (!field.beta || beta) && (!field.userBased || isLoggedIn)
+        })
+        .filter(field => {
         return !advancedFilterGroups().some(group => group.fieldName === field.fieldName && field.fieldName !== fieldName)
-    }), [advancedFilterGroups, fieldName, filterFields])
+    }), [advancedFilterGroups, beta, fieldName, filterFields, isLoggedIn])
 
     const handleSelect = useCallback((event) => {
         const newField = event.target.value

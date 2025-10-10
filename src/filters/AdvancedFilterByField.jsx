@@ -27,23 +27,25 @@ function AdvancedFilterByField({
                                    context
                                }) {
 
-    const {mappedBeltEntries} = useContext(DataContext)
+    const {searchedBeltEntries, visibleEntries} = useContext(DataContext)
     const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const {fieldName, groupIndex = 0, matchType, values = []} = group
+
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
 
-    let currentValueText = Array.isArray(values) ? values.join(operator === 'OR' ? ' OR ' : ' AND ') : values
+    let currentValueText = Array.isArray(values) ? values.filter(value => value && String(value).length > 0)
+        .join(operator === 'OR' ? ' OR ' : ' AND ') : values
     currentValueText = matchType === 'Is Not' ? `NOT ${currentValueText}` : currentValueText
 
     const optionEntries = useMemo(() => {
         if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {
-            return mappedBeltEntries
+            return searchedBeltEntries
         } else if ((groupIndex > 0 && (!valueIndex || valueIndex === 0)) || (valueIndex > 0 && operator === 'OR')) {
             // Previous Group Entries
             return filterEntriesAdvanced({
                 advancedFilterGroups: advancedFilterGroups(),
-                entries: mappedBeltEntries,
+                entries: searchedBeltEntries,
                 groupIndex: groupIndex - 1,
                 valueIndex: 99
             })
@@ -51,22 +53,18 @@ function AdvancedFilterByField({
             // Previous Value Entries
             return filterEntriesAdvanced({
                 advancedFilterGroups: advancedFilterGroups(),
-                entries: mappedBeltEntries,
+                entries: searchedBeltEntries,
                 groupIndex: groupIndex,
                 valueIndex: valueIndex - 1
             })
         }
         return []
-    }, [advancedFilterGroups, groupIndex, mappedBeltEntries, operator, valueIndex])
-
-    
-    console.log('advancedFilterGroups()', advancedFilterGroups())
-    console.log('group', group)
-
+    }, [advancedFilterGroups, groupIndex, searchedBeltEntries, operator, valueIndex])
 
     const [open, setOpen] = useState(false)
 
-    const {options, counts, negativeCounts, valueIdSets} = useMemo(() => {
+    const {options, counts} = useMemo(() => {
+        // Build available values for this field from the optionEntries (derived from prior groups/values)
         const filterEntries = optionEntries.reduce((acc, entry) => {
             if (Array.isArray(entry[fieldName])) {
                 entry[fieldName].forEach(value => {
@@ -75,27 +73,11 @@ function AdvancedFilterByField({
             } else setDeepUnique(acc, [entry[fieldName]], entry.id)
             return acc
         }, {})
-        const counts = Object.entries(filterEntries).reduce((acc, [key, ids]) => {
-            acc[key] = ids.length
-            return acc
-        }, {})
-        const negativeCounts = Object.entries(filterEntries).reduce((acc, [key, ids]) => {
-            acc[key] = optionEntries.length - ids.length
-            return acc
-        }, {})
-        const valueIdSets = Object.entries(filterEntries).reduce((acc, [key, ids]) => {
-            acc[key] = new Set([...ids])
-            return acc
-        }, {})
 
         let allValues = context === 'drawer'
-        ? Array.from(new Set([...Object.keys(counts), currentValue, currentValueText]))
-        : Array.from(new Set([...Object.keys(counts), currentValue]))
+            ? Array.from(new Set([...Object.keys(filterEntries), currentValue, currentValueText]))
+            : Array.from(new Set([...Object.keys(filterEntries), currentValue]))
         allValues = allValues.filter(v => v && String(v).length > 0 && v !== 'undefined')
-
-        const otherValues = values.filter(v => v !== currentValue)
-        if (allValues.length > 0) allValues = allValues.filter(item => !otherValues.includes(item))
-        if (allValues.length === 0) allValues = ['no more options']
 
         const options = allValues
             .sort((a, b) => {
@@ -108,16 +90,54 @@ function AdvancedFilterByField({
                     }
                 }
             })
-        return {counts, options, negativeCounts, valueIdSets}
-    }, [context, currentValue, currentValueText, fieldName, optionEntries, sort, values])
 
-    const baseSelectedValues = useMemo(() => {
-        if (!Array.isArray(values)) return []
-        return values
-            .map((v, i) => ({v, i}))
-            .filter(({v, i}) => i !== valueIndex && v && String(v).length > 0)
-            .map(({v}) => v)
-    }, [values, valueIndex])
+        // For each option, compute the resulting count by applying filters including this option via filterEntriesAdvanced
+        const counts = options.reduce((acc, opt) => {
+            if (opt === 'no more options') {
+                acc[opt] = 0
+                return acc
+            }
+            const groups = advancedFilterGroups()
+            const updatedGroups = groups.map((g, idx) => {
+                if (idx !== groupIndex) return g
+                // For OR operator, show per-option count by applying only the candidate value
+                if ((g.operator || operator) === 'OR') {
+                    return {...g, values: [opt]}
+                }
+                // For AND (and others), keep existing semantics of combining values
+                const nv = Array.isArray(values) ? [...values] : []
+                if (typeof valueIndex === 'number') {
+                    if (nv.length === 0) nv.push(opt)
+                    else nv[valueIndex] = opt
+                } else {
+                    nv.push(opt)
+                }
+                const cleaned = nv.filter(v => v !== undefined && v !== null && String(v).length > 0)
+                return {...g, values: cleaned}
+            })
+            const result = filterEntriesAdvanced({
+                advancedFilterGroups: updatedGroups.slice(0, groupIndex + 1),
+                entries: searchedBeltEntries
+            })
+            acc[opt] = Array.isArray(result) ? result.length : 0
+            return acc
+        }, {})
+
+        return {counts, options}
+    }, [advancedFilterGroups, context, currentValue, currentValueText, fieldName, groupIndex, searchedBeltEntries, operator, optionEntries, sort, valueIndex, values])
+
+    const otherValues = Array.isArray(values) ? values.filter((_, i) => i !== valueIndex) : []
+    let filteredOptions = options
+        .filter(opt => {
+            return (counts[opt] > 0)
+                && ((opt !== currentValue || opt !== currentValueText) || counts[opt] !== visibleEntries.length)
+                || (opt === currentValue || opt === currentValueText)
+        })
+        .filter(opt => !otherValues.includes(opt))
+    if (filteredOptions.length === 0) {
+        filteredOptions = ['no more options']
+    }
+    const noMoreOptions = filteredOptions.length === 1 && filteredOptions[0] === 'no more options'
 
     const handleSelect = useCallback(event => {
         setOpen(false)
@@ -157,50 +177,57 @@ function AdvancedFilterByField({
             ? {backgroundColor: currentValue.length > 0 ? '#642c2c' : undefined}
             : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
 
-
     return (
         <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom: marginBottom}}>
-            {(options.length === 0 || fieldName.length === 0) ? null :
+            {(filteredOptions.length === 0 || fieldName.length === 0) ? null :
                 <FormControl style={{width: 210, minWidth: 210, marginTop: 8, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
-                    <InputLabel id={`filter-${fieldName}`} color='secondary'>{label}</InputLabel>
+                    <InputLabel id={`filter-${fieldName}`} color='secondary'
+                                style={{opacity: noMoreOptions ? 0.5 : 1}}>
+                        {label}
+                    </InputLabel>
                     <Select
                         label={label}
                         labelId={`filter-${fieldName}`}
-                        value={context === 'drawer' ? currentValueText : currentValue}
+                        value={noMoreOptions
+                            ? 'no more options'
+                            : context === 'drawer'
+                                ? currentValueText
+                                : currentValue}
+                        disabled={noMoreOptions}
                         onChange={handleSelect}
-                        style={selectStyle}
+                        style={{...selectStyle, opacity: noMoreOptions ? 0.5 : 1}}
                         color='secondary'
                         open={open}
                         onClose={handleClose}
                         onOpen={handleOpen}
                         onBlur={handleClose}
                     >
-                        {options.map((opt, index) => {
-                            let count
-                            if (matchType === 'Is') {
-                                count = counts[opt] || 0
-                            } else {
-                                if (operator === 'AND') {
-                                    // NOT with AND: previous values (if any) already applied in optionEntries for valueIndex>0
-                                    count = negativeCounts[opt] || 0
-                                } else {
-                                    // NOT with OR: need entries that do NOT have any of (baseSelectedValues ∪ {opt})
-                                    const unionIds = new Set()
-                                    const allForbidden = [...baseSelectedValues, opt]
-                                    allForbidden.forEach(v => {
-                                        const set = valueIdSets[v]
-                                        if (set) {
-                                            set.forEach(id => unionIds.add(id))
-                                        }
-                                    })
-                                    count = (optionEntries?.length || 0) - unionIds.size
-                                }
-                            }
-                            return <MenuItem key={index} value={opt}>
-                                {filterValueNames[opt] ? filterValueNames[opt] : opt + (currentValue === opt ? '' : ` (${count})`)}
-                            </MenuItem>
+                        {filteredOptions.map((opt, index) => {
+                            const count = counts[opt] || 0
+                            const isText = ['AND', 'OR'].some(term => opt.includes(term))
+
+                            return (
+                                <MenuItem key={`${opt}-${index}`} value={opt}>
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        width: '100%',
+                                        justifyContent: 'space-between'
+                                    }}>
+                                        <div style={{
+                                            maxWidth: 160,
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis'
+                                        }}>{filterValueNames[opt] ? filterValueNames[opt] : opt}</div>
+                                        <div
+                                            style={{fontSize: '0.8rem', marginLeft: 8, opacity: 0.85}}>
+                                            {(noMoreOptions || isText) ? '' : count}
+                                        </div>
+                                    </div>
+                                </MenuItem>
+                            )
                         })}
                     </Select>
                 </FormControl>
@@ -219,7 +246,7 @@ function AdvancedFilterByField({
                             <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
                         </IconButton>
                     }
-                    {(!valueIndex || valueIndex === 0) &&
+                    {(!valueIndex || valueIndex === 0) && fieldName &&
                         <IconButton aria-label='remove filter group' onClick={handleRemoveGroup}
                                     style={{marginTop: 4, marginLeft: 2}} size='small'>
                             <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
@@ -233,7 +260,6 @@ function AdvancedFilterByField({
                     <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
                 </IconButton>
             }
-
         </div>
     )
 }

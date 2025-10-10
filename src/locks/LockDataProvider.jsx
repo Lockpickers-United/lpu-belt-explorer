@@ -56,28 +56,34 @@ export function DataProvider({children, allEntries, profile}) {
             }))
     }, [allEntries, profile])
 
-    const visibleEntries = useMemo(() => {
-        // Filter the data
-        const filtered = filterEntries(filters, mappedEntries)
+    const searchedBeltEntries = useMemo(() => {
+        if (!search) return mappedEntries
 
         // Check for exact search match by id
-        const exactMatch = search && filtered.find(e => e.id === search)
-        let searched = filtered
-
+        const exactMatch = search && mappedEntries.find(e => e.id === search)
         if (exactMatch) {
-            searched = [exactMatch]
-        } else if (search) {
-            // If there is a search term, fuzzy match that
-            searched = fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -23000})
-                .map(result => ({
-                    ...result.obj,
-                    score: result.score
-                }))
-                .filter(entry => entry.score > 0.23)
+            return [exactMatch]
+        }
+        const searchEntries = fuzzysort.go(removeAccents(search), mappedEntries, {keys: fuzzySortKeys, threshold: -23000})
+            .map(result => ({
+                ...result.obj,
+                score: result.score
+            }))
+            .filter(entry => entry.score > 0.23)
+        if (tab === 'search' || !tab) {
+            return searchEntries
+        } else {
+            return searchEntries.filter(entry => entry.simpleBelt === tab)
         }
 
+    }, [mappedEntries, search, tab])
+
+    const visibleEntries = useMemo(() => {
+        // Filter the data
+        let filtered = filterEntries(filters, searchedBeltEntries)
+
         return sort
-            ? searched.sort((a, b) => {
+            ? filtered.sort((a, b) => {
                 if (sort === 'popularity') {
                     return b.collectionSaves - a.collectionSaves
                         || b.views - a.views
@@ -100,8 +106,8 @@ export function DataProvider({children, allEntries, profile}) {
                         || a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-            : searched
-    }, [filters, mappedEntries, search, sort])
+            : filtered
+    }, [filters, searchedBeltEntries, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
@@ -134,6 +140,7 @@ export function DataProvider({children, allEntries, profile}) {
     const value = useMemo(() => ({
         allEntries,
         mappedEntries,
+        searchedBeltEntries,
         visibleEntries,
         mappedBeltEntries,
         beltEntries,
@@ -142,7 +149,7 @@ export function DataProvider({children, allEntries, profile}) {
         profile,
         blackBeltUser,
         lockbazzarAvailable
-    }), [allEntries, mappedEntries, visibleEntries, mappedBeltEntries, beltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
+    }), [allEntries, mappedEntries, searchedBeltEntries, visibleEntries, mappedBeltEntries, beltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>
