@@ -27,8 +27,6 @@ function FilterTextButton({onFiltersChanged}) {
     const {tab} = useContext(LockListContext)
     const {belt} = filters
 
-    console.log('Rendering FilterTextButton',{filterFields})
-
     const isLocks = /\/locks/.test(location.hash)
     const beltScope = useMemo(() => {
         return tab

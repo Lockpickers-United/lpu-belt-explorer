@@ -6,7 +6,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
 import collectionOptions from '../data/collectionTypes'
-import FilterDisplayExclude from './FilterDisplayExclude'
+import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
@@ -111,7 +111,7 @@ function InlineFilterDisplay({profile = {}, collectionType, advancedEnabled}) {
                     </div>
                 }
                 {!isValidCollection &&
-                    <FilterDisplayExclude/>
+                    <FilterDisplay/>
                 }
             </CardContent>
         </Card>

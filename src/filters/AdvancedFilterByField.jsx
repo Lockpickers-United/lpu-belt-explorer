@@ -12,9 +12,11 @@ import filterEntriesAdvanced from './filterEntriesAdvanced'
 import FilterContext from '../context/FilterContext.jsx'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function AdvancedFilterByField({
                                    label,
+                                   active = false,
                                    group,
                                    operator,
                                    valueIndex,
@@ -29,7 +31,7 @@ function AdvancedFilterByField({
 
     const {searchedBeltEntries, visibleEntries} = useContext(DataContext)
     const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
-    const {fieldName, groupIndex = 0, matchType, values = []} = group
+    const {fieldName, groupIndex, matchType, values = []} = group
 
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
@@ -39,7 +41,9 @@ function AdvancedFilterByField({
     currentValueText = matchType === 'Is Not' ? `NOT ${currentValueText}` : currentValueText
 
     const optionEntries = useMemo(() => {
-        if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {
+        if (!active) {
+            return visibleEntries
+        } else if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {
             return searchedBeltEntries
         } else if ((groupIndex > 0 && (!valueIndex || valueIndex === 0)) || (valueIndex > 0 && operator === 'OR')) {
             // Previous Group Entries
@@ -59,9 +63,7 @@ function AdvancedFilterByField({
             })
         }
         return []
-    }, [advancedFilterGroups, groupIndex, searchedBeltEntries, operator, valueIndex])
-
-    const [open, setOpen] = useState(false)
+    }, [active, groupIndex, valueIndex, operator, visibleEntries, searchedBeltEntries, advancedFilterGroups])
 
     const {options, counts} = useMemo(() => {
         // Build available values for this field from the optionEntries (derived from prior groups/values)
@@ -115,16 +117,34 @@ function AdvancedFilterByField({
                 const cleaned = nv.filter(v => v !== undefined && v !== null && String(v).length > 0)
                 return {...g, values: cleaned}
             })
-            const result = filterEntriesAdvanced({
-                advancedFilterGroups: updatedGroups.slice(0, groupIndex + 1),
-                entries: searchedBeltEntries
-            })
+            let result
+            if (!active) {
+                // For inactive filters, compute matches by applying only the candidate option
+                // against the current visibleEntries (which already reflect active filters).
+                const tempGroup = [{
+                    fieldName,
+                    matchType,
+                    operator: 'OR',
+                    values: [opt]
+                }]
+                result = filterEntriesAdvanced({
+                    advancedFilterGroups: tempGroup,
+                    entries: visibleEntries,
+                    groupIndex: 0
+                })
+            } else {
+                // For active filters, compute matches by including this option within the current groups up to this point
+                result = filterEntriesAdvanced({
+                    advancedFilterGroups: updatedGroups.slice(0, groupIndex + 1),
+                    entries: searchedBeltEntries
+                })
+            }
             acc[opt] = Array.isArray(result) ? result.length : 0
             return acc
         }, {})
 
         return {counts, options}
-    }, [advancedFilterGroups, context, currentValue, currentValueText, fieldName, groupIndex, searchedBeltEntries, operator, optionEntries, sort, valueIndex, values])
+    }, [optionEntries, context, currentValue, currentValueText, fieldName, matchType, sort, advancedFilterGroups, groupIndex, active, searchedBeltEntries, visibleEntries, operator, values, valueIndex])
 
     const otherValues = Array.isArray(values) ? values.filter((_, i) => i !== valueIndex) : []
     let filteredOptions = options
@@ -138,6 +158,8 @@ function AdvancedFilterByField({
         filteredOptions = ['no more options']
     }
     const noMoreOptions = filteredOptions.length === 1 && filteredOptions[0] === 'no more options'
+
+    const [open, setOpen] = useState(false)
 
     const handleSelect = useCallback(event => {
         setOpen(false)
@@ -177,10 +199,13 @@ function AdvancedFilterByField({
             ? {backgroundColor: currentValue.length > 0 ? '#642c2c' : undefined}
             : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
 
+    const {isMobile} = useWindowSize()
+    const fieldWidth = isMobile ? 210 : 250
+
     return (
         <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom: marginBottom}}>
             {(filteredOptions.length === 0 || fieldName.length === 0) ? null :
-                <FormControl style={{width: 210, minWidth: 210, marginTop: 8, marginRight: 4}}
+                <FormControl style={{width: fieldWidth, minWidth: fieldWidth, marginTop: 8, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'

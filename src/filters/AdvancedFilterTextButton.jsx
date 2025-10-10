@@ -35,6 +35,15 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
     const {beltEntries = []} = useContext(DataContext)
     const {belt} = filters
 
+    const filterList = useMemo(() => {
+        const activeFilters = filterFields
+            .filter(field => advancedFilterGroups().some(group => group.fieldName === field.fieldName))
+            .map(field => ({...field, active: true}))
+        const otherFilters = filterFields
+            .filter(field => !activeFilters.find(f => f.fieldName === field.fieldName))
+        return [...activeFilters, ...otherFilters]
+    },[advancedFilterGroups, filterFields])
+
     const beltScope = useMemo(() => {
         return tab
             ? tab
@@ -133,7 +142,7 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
 
                     <Box margin={1}>
                         <Stack direction='column' style={{minWidth: 250}}>
-                            {filterFields
+                            {filterList
                                 .filter(field => {
                                     return (!field.beta || beta) && (!field.userBased || isLoggedIn)
                                 })
@@ -150,7 +159,7 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                                         groupIndex: existingIndex
                                     } : {
                                         fieldName: field.fieldName,
-                                        groupIndex: 0,
+                                        groupIndex: -1,
                                         matchType: 'Is',
                                         operator: 'OR',
                                         values: ['']
@@ -160,10 +169,11 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                                     const matchType = existing ? existing.matchType || 'Is' : 'Is'
                                     const operator = existing ? existing.operator || 'OR' : 'OR'
                                     const groupIndex = existing ? existingIndex : 0
-
                                     return (
                                         <AdvancedFilterByField
-                                            key={field.fieldName || index}
+                                            key={index}
+                                            {...field}
+                                            active={field.active}
                                             label={field.label}
                                             group={group}
                                             groupIndex={groupIndex}

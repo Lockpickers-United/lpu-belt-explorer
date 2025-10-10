@@ -11,9 +11,8 @@ import AppContext from '../app/AppContext.jsx'
 export default function AdvancedFilterField({group = {}, onChange}) {
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
-
-    const {fieldName = '', matchType = 'Is'} = group
     const {filterFields, advancedFilterGroups} = useContext(FilterContext)
+    const {fieldName = '', matchType = 'Is'} = group
 
     const [filterField, setFilterField] = useState(fieldName)
 

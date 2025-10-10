@@ -43,6 +43,7 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                     <AdvancedFilterByField
                         key={index}
                         {...filterField}
+                        active={true}
                         group={group}
                         groupIndex={groupIndex}
                         matchType={matchType}
@@ -71,6 +72,7 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                 <AdvancedFilterByField
                     key={0}
                     {...filterField}
+                    active={true}
                     group={group}
                     groupIndex={groupIndex}
                     matchType={matchType}
