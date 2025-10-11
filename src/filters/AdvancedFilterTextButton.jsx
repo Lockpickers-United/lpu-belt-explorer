@@ -36,9 +36,12 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
     const {belt} = filters
 
     const filterList = useMemo(() => {
-        const activeFilters = filterFields
-            .filter(field => advancedFilterGroups().some(group => group.fieldName === field.fieldName))
-            .map(field => ({...field, active: true}))
+        const activeFilters = advancedFilterGroups()
+            .filter(group => group.fieldName.length > 0)
+            .map(group => {
+            const field = filterFields.find(f => f.fieldName === group.fieldName)
+            return {...field, active: true}
+        })
         const otherFilters = filterFields
             .filter(field => !activeFilters.find(f => f.fieldName === field.fieldName))
         return [...activeFilters, ...otherFilters]
@@ -67,7 +70,20 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
 
     const handleQuickAdd = useCallback((fieldName, valueToAdd) => {
         if (!fieldName || !valueToAdd) return
-        const groups = advancedFilterGroups()
+        const groups = [...advancedFilterGroups().filter(group => group.fieldName.length > 0)]
+
+        const existingIndex = groups.findIndex(g => g.fieldName === fieldName && Array.isArray(g.values) && g.values.length > 0)
+        if (existingIndex >= 0) {
+            const existing = groups[existingIndex]
+            if (existing.values.includes(valueToAdd)) return
+            groups[existingIndex] = {
+                ...existing,
+                values: [valueToAdd]
+            }
+            setAdvancedFilterGroups(groups)
+            onFiltersChanged && onFiltersChanged()
+            return
+        }
         const newGroup = {
             _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
             fieldName,

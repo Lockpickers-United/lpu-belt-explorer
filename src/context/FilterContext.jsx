@@ -162,7 +162,7 @@ export function FilterProvider({children, filterFields = []}) {
                 if (Array.isArray(val)) {
                     val.forEach(v => { if (v !== undefined && v !== null && String(v).length) sp.append(key, v) })
                 } else if (val !== undefined && val !== null && String(val).length) {
-                    sp.set(key, val)
+                    sp.set(key, String(val))
                 }
             }
         })
@@ -190,14 +190,57 @@ export function FilterProvider({children, filterFields = []}) {
     const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
 
     // Keep advancedGroups in sync with URL filters so AdvancedSearch reflects external changes
+    // Preserve the original group order by updating in place where possible.
     useEffect(() => {
         const parsed = parseFiltersToGroups(filters, nonFilters)
-        const withIds = parsed.map(g => g._id ? g : ({...g, _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`}))
+
+        // If URL has no advanced filters, reset in-memory groups so UI clears
+        if (!parsed || parsed.length === 0) {
+            setAdvancedGroups([])
+            return
+        }
+
         setAdvancedGroups(prev => {
-            if (!prev || prev.length === 0) return withIds
-            const incomplete = prev.filter(g => !g || !g.fieldName || !Array.isArray(g.values) || g.values.length === 0)
-            if (incomplete.length > 0) return [...withIds, ...incomplete]
-            return withIds
+            // If there was no prior state, initialize from parsed (assign _id's)
+            if (!prev || prev.length === 0) {
+                return parsed.map(g => g._id ? g : ({...g, _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`}))
+            }
+
+            // Build a queue of parsed groups by fieldName so we can consume them in order
+            const parsedByField = parsed.reduce((acc, g) => {
+                const key = g.fieldName
+                acc[key] = acc[key] || []
+                acc[key].push(g)
+                return acc
+            }, {})
+
+            const next = prev.map(existing => {
+                // If the existing group has a fieldName, try to update it with parsed values
+                if (existing && existing.fieldName && parsedByField[existing.fieldName] && parsedByField[existing.fieldName].length > 0) {
+                    const incoming = parsedByField[existing.fieldName].shift()
+                    // Update existing group in place, preserving _id and position
+                    return {
+                        ...existing,
+                        matchType: incoming.matchType || existing.matchType || 'Is',
+                        operator: incoming.operator || existing.operator || 'AND',
+                        values: Array.isArray(incoming.values) ? incoming.values : (Array.isArray(existing.values) ? existing.values : [])
+                    }
+                }
+                // Otherwise, keep existing as-is (including empty or in-progress groups)
+                return existing
+            })
+
+            // Append any remaining parsed groups (new fields not present in prev)
+            Object.values(parsedByField).forEach(list => {
+                list.forEach(incoming => {
+                    next.push({
+                        ...incoming,
+                        _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
+                    })
+                })
+            })
+
+            return next
         })
     }, [filters, nonFilters, parseFiltersToGroups])
 

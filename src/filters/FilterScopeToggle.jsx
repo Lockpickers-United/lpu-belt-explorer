@@ -68,9 +68,8 @@ export default function FilterScopeToggle({style = {}}) {
                                 backgroundColor: color,
                                 height: 12,
                                 width: 12,
-                                borderColor: lineColor,
                                 borderRadius: 6,
-                                border: '1px solid',
+                                border: `${lineColor} 1px solid`,
                                 marginRight: 8,
                                 opacity: beltOpacity
                             }}/>

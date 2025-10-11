@@ -204,7 +204,7 @@ function AdvancedFilterByField({
 
     return (
         <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom: marginBottom}}>
-            {(filteredOptions.length === 0 || fieldName.length === 0) ? null :
+            {(filteredOptions?.length === 0 || fieldName?.length === 0) ? null :
                 <FormControl style={{width: fieldWidth, minWidth: fieldWidth, marginTop: 8, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
