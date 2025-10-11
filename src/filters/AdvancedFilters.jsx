@@ -6,23 +6,23 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Button from '@mui/material/Button'
 import DataContext from '../context/DataContext.jsx'
-import Link from '@mui/material/Link'
 import {Collapse} from '@mui/material'
 import queryString from 'query-string'
 import {useLocation} from 'react-router-dom'
-import InlineFilterDisplay from './InlineFilterDisplay.jsx'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
+import ResetFiltersButton from './ResetFiltersButton.jsx'
 
-export default function AdvancedSearch({profile, collectionType, advancedEnabled}) {
+export default function AdvancedFilters() {
     const {
         advancedFilterGroups,
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        filterCount,
         removeFilters,
-        clearFilters
+        clearFilters,
     } = useContext(FilterContext)
-    const {beltEntries = []} = useContext(DataContext)
+    const {visibleBeltEntries = []} = useContext(DataContext)
 
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -67,10 +67,6 @@ export default function AdvancedSearch({profile, collectionType, advancedEnabled
         setAdvancedFilterGroups(next)
     }, [advancedFilterGroups, setAdvancedFilterGroups])
 
-    const handleToggleAdvanced = useCallback(() => {
-        setShowAdvancedSearch(!showAdvancedSearch)
-    }, [setShowAdvancedSearch, showAdvancedSearch])
-
     useEffect(() => {
         if (advancedFilterGroups().length === 0) {
             setAdvancedFilterGroups([{
@@ -81,7 +77,8 @@ export default function AdvancedSearch({profile, collectionType, advancedEnabled
                 values: []
             }])
         }
-    }, [advancedFilterGroups, setAdvancedFilterGroups])
+        if (filterCount > 0) setShowAdvancedSearch(true)
+    }, [advancedFilterGroups, filterCount, setAdvancedFilterGroups, setShowAdvancedSearch])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -90,40 +87,28 @@ export default function AdvancedSearch({profile, collectionType, advancedEnabled
 
     const paddingLeft = isMobile ? 8 : 16
 
-    const linkSx = {
-        color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
-            color: '#fff'
-        }
-    }
-
     return (
         <React.Fragment>
-            {!showAdvancedSearch &&
-                <InlineFilterDisplay profile={profile} collectionType={collectionType}
-                                     advancedEnabled={advancedEnabled}/>
-            }
-            <Collapse in={showAdvancedSearch} unmountOnExit={true}>
-                <Card style={style} sx={{paddingBottom: 2, paddingTop: 2}}>
+            <Collapse in={showAdvancedSearch || filterCount > 0} unmountOnExit={true}>
+                <Card style={{...style, paddingBottom: 8, paddingTop: 16}}>
                     <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
 
                         <div style={{display: 'flex', alignItems: 'center'}}>
-                            <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Search</div>
-                            {beltEntries.length > 1 &&
-                                <div style={{
-                                    fontWeight: 400,
-                                    fontSize: '1.0rem',
-                                    marginLeft: 8
-                                }}>({beltEntries.length} Locks)</div>
-                            }
+                            <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Filters</div>
+                            <div style={{
+                                fontWeight: 400,
+                                fontSize: '1.0rem',
+                                marginLeft: 8
+                            }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})</div>
                             <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
-                                <Link onClick={handleToggleAdvanced} sx={linkSx}>Close</Link>
+                                <ResetFiltersButton alwaysShow/>
                             </div>
                         </div>
 
                         <FilterScopeToggle style={{margin: '16px 0px 16px 0px'}}/>
 
                         <div
-                            style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                            style={{display: 'flex', flexDirection: 'column'}}>
                             {advancedFilterGroups().map((group, index) => (
                                 <AdvancedFilterField
                                     key={group._id || index}
@@ -135,10 +120,10 @@ export default function AdvancedSearch({profile, collectionType, advancedEnabled
                             ))}
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 8}}>
+                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 16}}>
                             <Button onClick={handleClearAll} variant='contained' size='small'
                                     style={{backgroundColor: '#444', marginRight: 16}}>
-                                Clear All</Button>
+                                Clear</Button>
                             <Button onClick={addFilter} variant='contained' color='info' size='small'>Add
                                 Filter</Button>
                         </div>

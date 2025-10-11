@@ -23,7 +23,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const inputEl = useRef()
     useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
-    const placeholder = (entryCount > 1) ? `Search ${entryCount ? entryCount.toString() + ' ' : ''}${label}` : ''
+    const placeholder = (entryCount > 1) ? `Search ${entryCount ? entryCount.toString() + ' ' : ''}${label}` : 'Search'
 
     const handleClear = useCallback(() => {
         window.scrollTo({top: 0})

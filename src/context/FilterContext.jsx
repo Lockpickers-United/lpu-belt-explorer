@@ -187,9 +187,7 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(sp, {replace: true})
     }, [filters, nonFilters, setSearchParams])
 
-    const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
-
-    // Keep advancedGroups in sync with URL filters so AdvancedSearch reflects external changes
+    // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
     // Preserve the original group order by updating in place where possible.
     useEffect(() => {
         const parsed = parseFiltersToGroups(filters, nonFilters)
@@ -243,6 +241,8 @@ export function FilterProvider({children, filterFields = []}) {
             return next
         })
     }, [filters, nonFilters, parseFiltersToGroups])
+
+    const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
 
     const value = useMemo(() => ({
         filters,

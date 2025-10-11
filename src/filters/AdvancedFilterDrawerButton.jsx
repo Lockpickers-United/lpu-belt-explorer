@@ -8,6 +8,7 @@ import FilterContext from '../context/FilterContext'
 import AdvancedFilterByField from './AdvancedFilterByField'
 import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton'
+import ResetFiltersButton from './ResetFiltersButton'
 import Button from '@mui/material/Button'
 import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
@@ -18,7 +19,8 @@ import Link from '@mui/material/Link'
 import DataContext from '../context/DataContext.jsx'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
 
-function AdvancedFilterTextButton({onFiltersChanged}) {
+function AdvancedFilterDrawerButton() {
+    const [open, setOpen] = useState(false)
 
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
@@ -32,20 +34,20 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
         setAdvancedFilterGroups
     } = useContext(FilterContext)
     const {tab} = useContext(LockListContext)
-    const {beltEntries = []} = useContext(DataContext)
+    const {visibleBeltEntries = []} = useContext(DataContext)
     const {belt} = filters
 
     const filterList = useMemo(() => {
         const activeFilters = advancedFilterGroups()
-            .filter(group => group.fieldName.length > 0)
+            .filter(group => group.fieldName.length > 0 && Array.isArray(group.values) && group.values.length > 0)
             .map(group => {
-            const field = filterFields.find(f => f.fieldName === group.fieldName)
-            return {...field, active: true}
-        })
+                const field = filterFields.find(f => f.fieldName === group.fieldName)
+                return {...field, active: true}
+            })
         const otherFilters = filterFields
             .filter(field => !activeFilters.find(f => f.fieldName === field.fieldName))
         return [...activeFilters, ...otherFilters]
-    },[advancedFilterGroups, filterFields])
+    }, [advancedFilterGroups, filterFields])
 
     const beltScope = useMemo(() => {
         return tab
@@ -64,12 +66,12 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
         setInitialBelt('search')
     }
 
-    const [open, setOpen] = useState(false)
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('f', handleHotkey)
 
     const handleQuickAdd = useCallback((fieldName, valueToAdd) => {
         if (!fieldName || !valueToAdd) return
+        setShowAdvancedSearch(true)
         const groups = [...advancedFilterGroups().filter(group => group.fieldName.length > 0)]
 
         const existingIndex = groups.findIndex(g => g.fieldName === fieldName && Array.isArray(g.values) && g.values.length > 0)
@@ -81,7 +83,6 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                 values: [valueToAdd]
             }
             setAdvancedFilterGroups(groups)
-            onFiltersChanged && onFiltersChanged()
             return
         }
         const newGroup = {
@@ -92,8 +93,7 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
             values: [valueToAdd]
         }
         setAdvancedFilterGroups([...groups, newGroup])
-        onFiltersChanged && onFiltersChanged()
-    }, [advancedFilterGroups, onFiltersChanged, setAdvancedFilterGroups])
+    }, [advancedFilterGroups, setAdvancedFilterGroups, setShowAdvancedSearch])
 
 
     const openDrawer = useCallback(() => setOpen(true), [])
@@ -119,7 +119,7 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                     <Badge
                         variant='dot'
                         badgeContent={filterCount}
-                        color='secondary'
+                        color='warning'
                         anchorOrigin={{vertical: 'top', horizontal: 'right'}}
                     >
                         {!smallWidth ? 'FILTER' : <FilterAltIcon/>}
@@ -134,23 +134,26 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                     onClose={closeDrawer}
                     sx={{
                         '.MuiDrawer-paper': {
+                            width: 280,
                             padding: 1
                         }
                     }}
                 >
-                    <div style={{display: 'flex', alignItems: 'center', padding: '16px 8px 8px 8px'}}
+                    <div style={{display: 'flex', alignItems: 'center', padding: '16px 8px 0px 8px', height: 76}}
                          onClick={closeDrawer}>
                         <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Filters</div>
-                        {beltEntries.length > 1 &&
                             <div style={{
                                 fontWeight: 400,
                                 fontSize: '1.0rem',
                                 marginLeft: 8
-                            }}>({beltEntries.length} Locks)</div>
-                        }
+                            }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})</div>
                         <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
-                            <Link onClick={handleToggleAdvanced}
-                                  sx={linkSx}>{showAdvancedSearch ? '' : 'Advanced'}</Link>
+                            {!showAdvancedSearch
+                                ? <Link onClick={handleToggleAdvanced}
+                                        sx={linkSx}>{showAdvancedSearch ? 'Reset' : 'Advanced'}</Link>
+                                : <ResetFiltersButton advanced/>
+                            }
+
                         </div>
                     </div>
 
@@ -198,8 +201,10 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                                             valueIndex={0}
                                             currentValue={currentValue}
                                             onFilter={(val) => handleQuickAdd(field.fieldName, val)}
-                                            onRemove={() => {}}
-                                            handleAddValue={() => {}}
+                                            onRemove={() => {
+                                            }}
+                                            handleAddValue={() => {
+                                            }}
                                             size='small'
                                             context='drawer'
                                         />
@@ -210,7 +215,7 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
                     <div style={{padding: 8}}>
                         <ClearFiltersButton forceText/>
                         <Button variant='outlined' color='inherit' onClick={closeDrawer}>
-                            Done
+                            Close
                         </Button>
                     </div>
                 </Drawer>
@@ -219,4 +224,4 @@ function AdvancedFilterTextButton({onFiltersChanged}) {
     )
 }
 
-export default AdvancedFilterTextButton
+export default AdvancedFilterDrawerButton

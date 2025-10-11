@@ -37,7 +37,7 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
     }, [onChange, values])
 
     return (
-        <div style={{}}>
+        <React.Fragment>
             {values.length > 0 && values.map((val, index) => (
                 <div key={index} style={{display: 'block', width: 250}}>
                     <AdvancedFilterByField
@@ -85,6 +85,6 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                 />
             }
 
-        </div>
+        </React.Fragment>
     )
 }

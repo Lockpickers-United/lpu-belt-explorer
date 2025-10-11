@@ -29,7 +29,9 @@ function AdvancedFilterByField({
                                    context
                                }) {
 
-    const {searchedBeltEntries, visibleEntries} = useContext(DataContext)
+    if (!label || label.length === 0) return null
+
+    const {searchedBeltEntries, visibleEntries, visibleBeltEntries} = useContext(DataContext)
     const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const {fieldName, groupIndex, matchType, values = []} = group
 
@@ -42,7 +44,7 @@ function AdvancedFilterByField({
 
     const optionEntries = useMemo(() => {
         if (!active) {
-            return visibleEntries
+            return searchedBeltEntries
         } else if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {
             return searchedBeltEntries
         } else if ((groupIndex > 0 && (!valueIndex || valueIndex === 0)) || (valueIndex > 0 && operator === 'OR')) {
@@ -63,7 +65,7 @@ function AdvancedFilterByField({
             })
         }
         return []
-    }, [active, groupIndex, valueIndex, operator, visibleEntries, searchedBeltEntries, advancedFilterGroups])
+    }, [active, groupIndex, valueIndex, operator, searchedBeltEntries, advancedFilterGroups])
 
     const {options, counts} = useMemo(() => {
         // Build available values for this field from the optionEntries (derived from prior groups/values)
@@ -129,7 +131,7 @@ function AdvancedFilterByField({
                 }]
                 result = filterEntriesAdvanced({
                     advancedFilterGroups: tempGroup,
-                    entries: visibleEntries,
+                    entries: visibleBeltEntries,
                     groupIndex: 0
                 })
             } else {
@@ -144,7 +146,7 @@ function AdvancedFilterByField({
         }, {})
 
         return {counts, options}
-    }, [optionEntries, context, currentValue, currentValueText, fieldName, matchType, sort, advancedFilterGroups, groupIndex, active, searchedBeltEntries, visibleEntries, operator, values, valueIndex])
+    }, [optionEntries, context, currentValue, currentValueText, fieldName, sort, advancedFilterGroups, active, groupIndex, operator, values, valueIndex, matchType, visibleBeltEntries, searchedBeltEntries])
 
     const otherValues = Array.isArray(values) ? values.filter((_, i) => i !== valueIndex) : []
     let filteredOptions = options
@@ -200,12 +202,12 @@ function AdvancedFilterByField({
             : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
 
     const {isMobile} = useWindowSize()
-    const fieldWidth = isMobile ? 210 : 250
+    const fieldWidth = isMobile ? 210 : 210
 
     return (
         <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom: marginBottom}}>
             {(filteredOptions?.length === 0 || fieldName?.length === 0) ? null :
-                <FormControl style={{width: fieldWidth, minWidth: fieldWidth, marginTop: 8, marginRight: 4}}
+                <FormControl style={{minWidth: fieldWidth, marginTop: 8, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'

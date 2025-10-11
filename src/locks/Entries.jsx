@@ -12,9 +12,9 @@ import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
-import AdvancedSearch from '../filters/AdvancedSearch.jsx'
+import AdvancedFilters from '../filters/./AdvancedFilters.jsx'
 
-function Entries({profile, advancedEnabled = false}) {
+function Entries({advancedEnabled = false}) {
     const {tab} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
     const {visibleEntries = [], expandAll} = useContext(DataContext)
@@ -50,7 +50,7 @@ function Entries({profile, advancedEnabled = false}) {
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
 
-                <AdvancedSearch profile={profile} collectionType={'locks'} advancedEnabled={true}/>
+                <AdvancedFilters/>
 
                 {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
                     <BeltRequirements belt={tab}/>}

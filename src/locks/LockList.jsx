@@ -13,11 +13,11 @@ import DataContext from './LockDataProvider.jsx'
 function LockList() {
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
-    const {beltEntries = []} = useContext(DataContext)
+    const {visibleBeltEntries = []} = useContext(DataContext)
 
     const extras = (
         <React.Fragment>
-            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false} entryCount={beltEntries.length}/>
+            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false} entryCount={visibleBeltEntries.length}/>
             <ViewFilterButtons sortValues={lockSortFields} advancedEnabled={true}
                                extraFilters={[{key: 'tab', value: 'search'}]}
                                compactMode={true} resetAll={true} expandAll={true}/>

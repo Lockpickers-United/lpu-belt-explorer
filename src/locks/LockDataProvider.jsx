@@ -122,7 +122,7 @@ export function DataProvider({children, allEntries, profile}) {
         }
     }, [tab, mappedEntries])
 
-    const beltEntries = useMemo(() => {
+    const visibleBeltEntries = useMemo(() => {
         if (tab === 'search' || !tab) {
             return visibleEntries
         } else {
@@ -144,13 +144,13 @@ export function DataProvider({children, allEntries, profile}) {
         searchedBeltEntries,
         visibleEntries,
         mappedBeltEntries,
-        beltEntries,
+        visibleBeltEntries,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
         lockbazzarAvailable
-    }), [allEntries, mappedEntries, searchedBeltEntries, visibleEntries, mappedBeltEntries, beltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
+    }), [allEntries, mappedEntries, searchedBeltEntries, visibleEntries, mappedBeltEntries, visibleBeltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>

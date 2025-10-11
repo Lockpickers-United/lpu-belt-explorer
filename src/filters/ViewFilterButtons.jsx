@@ -1,6 +1,6 @@
 import SortTextButton from './SortTextButton.jsx'
 import FilterTextButton from './FilterTextButton.jsx'
-import AdvancedFilterTextButton from './AdvancedFilterTextButton.jsx'
+import AdvancedFilterDrawerButton from './AdvancedFilterDrawerButton.jsx'
 import Button from '@mui/material/Button'
 import React, {useCallback, useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -18,14 +18,15 @@ function ViewFilterButtons({
                                advancedEnabled = false
                            }) {
 
-    const {filters, filterCount, setFilters, isFiltered} = useContext(FilterContext)
+    const {filters, filterCount, setFilters, isFiltered, setShowAdvancedSearch} = useContext(FilterContext)
     const {tab, sort, search} = filters
 
     const reset = sort || filterCount > 0 || (isFiltered && resetAll)
     const handleReset = useCallback(() => {
         const savedFilters = resetAll ? {tab: tab} : {tab: tab, search: search}
         setFilters(savedFilters)
-    }, [resetAll, search, setFilters, tab])
+        setShowAdvancedSearch && setShowAdvancedSearch(false)
+    }, [resetAll, search, setFilters, setShowAdvancedSearch, tab])
 
     const {width} = useWindowSize()
     const smallWidth = width <= 500
@@ -54,7 +55,7 @@ function ViewFilterButtons({
         >
             <SortTextButton sortValues={sortValues} compactMode={compactMode} expandAll={expandAll}/>
             {advancedEnabled
-                ? <AdvancedFilterTextButton extraFilters={extraFilters}/>
+                ? <AdvancedFilterDrawerButton extraFilters={extraFilters}/>
                 : <FilterTextButton extraFilters={extraFilters}/>
             }
             {reset &&

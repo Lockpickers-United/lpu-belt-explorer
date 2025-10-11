@@ -44,7 +44,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
 
     return (
         <Collapse in={visible || fieldName.length > 0} unmountOnExit>
-            <div style={{display: 'flex', flexWrap: 'wrap', margin: '0px 0 24px 0', alignItems: 'flex-start'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', margin: '0px 0 8px 0', alignItems: 'flex-start'}}>
                 <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>
                     <FormControl style={{width: 200, marginRight: 16, marginTop: 8}} size='small'>
                         <InputLabel color='info'>Filter</InputLabel>
