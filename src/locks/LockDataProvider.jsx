@@ -22,7 +22,6 @@ export function DataProvider({children, allEntries, profile}) {
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
-
         return allEntries
             .map(entry => ({
                 ...entry,
@@ -47,7 +46,7 @@ export function DataProvider({children, allEntries, profile}) {
                     dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
                     entry.belt.startsWith('Black') ? 'Is Black' : undefined,
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
-                    userNotes[entry.id] ? 'Has Personal Notes' : undefined,
+                    userNotes[entry.id] ? 'Has Personal Notes' : undefined
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 collectionSaves: collectionStatsById[entry.id] || 0,
@@ -56,34 +55,36 @@ export function DataProvider({children, allEntries, profile}) {
             }))
     }, [allEntries, profile])
 
-    const searchedBeltEntries = useMemo(() => {
-        if (!search) return mappedEntries
-
-        // Check for exact search match by id
-        const exactMatch = search && mappedEntries.find(e => e.id === search)
+    const searchEntries = useCallback((entries) => {
+        const exactMatch = search && entries.find(e => e.id === search)
         if (exactMatch) {
             return [exactMatch]
         }
-        const searchEntries = fuzzysort.go(removeAccents(search), mappedEntries, {keys: fuzzySortKeys, threshold: -23000})
-            .map(result => ({
-                ...result.obj,
-                score: result.score
-            }))
-            .filter(entry => entry.score > 0.23)
-        if (tab === 'search' || !tab) {
-            return searchEntries
-        } else {
-            return searchEntries.filter(entry => entry.simpleBelt === tab)
-        }
+        return !search
+            ? entries
+            : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
+                .map(result => ({
+                    ...result.obj,
+                    score: result.score
+                }))
+                .filter(entry => entry.score > 0.23)
+    }, [search])
 
-    }, [mappedEntries, search, tab])
+    const searchedBeltEntries = useMemo(() => {
+        if (tab === 'search' || !tab) {
+            return searchEntries(mappedEntries)
+        } else {
+            return searchEntries(mappedEntries).filter(entry => entry.simpleBelt === tab)
+        }
+    },[mappedEntries, searchEntries, tab])
 
     const visibleEntries = useMemo(() => {
         // Filter the data
-        let filtered = filterEntries(filters, searchedBeltEntries)
+        const filtered = filterEntries(filters, mappedEntries)
+        const searched = searchEntries(filtered)
 
         return sort
-            ? filtered.sort((a, b) => {
+            ? searched.sort((a, b) => {
                 if (sort === 'popularity') {
                     return b.collectionSaves - a.collectionSaves
                         || b.views - a.views
@@ -106,8 +107,8 @@ export function DataProvider({children, allEntries, profile}) {
                         || a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-            : filtered
-    }, [filters, searchedBeltEntries, sort])
+            : searched
+    }, [filters, mappedEntries, searchEntries, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
