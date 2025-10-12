@@ -2,7 +2,7 @@ import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import React, {useCallback, useState} from 'react'
 
-function ChoiceButtonGroup({options, onChange, defaultValue}) {
+function ChoiceButtonGroup({options, onChange, defaultValue, small = false, style={}}) {
     const [value, setValue] = useState(defaultValue || options[0].label)
 
     const handleButtonClick = useCallback(newValue => () => {
@@ -11,9 +11,15 @@ function ChoiceButtonGroup({options, onChange, defaultValue}) {
         onChange && onChange(selected)
     }, [onChange, options])
 
+
+    const buttonStyle = small
+        ? {padding: '1px 10px', borderRadius: 2}
+        : {padding: '6px 12px', borderRadius: 0}
+
     return (
         <ToggleButtonGroup
             variant='outlined'
+            style={style}
         >
             {options.map(option =>
                 <ToggleButton
@@ -22,7 +28,7 @@ function ChoiceButtonGroup({options, onChange, defaultValue}) {
                     style={{
                         color: value === option.label ? '#eee' : '#777',
                         backgroundColor: value === option.label ? '#292929' : '#111',
-                        padding: '6px 12px', borderColor: '#000', borderRadius: 0
+                        borderColor: '#000', ...buttonStyle
                     }}
                     value={value}
                 >{option.label}</ToggleButton>

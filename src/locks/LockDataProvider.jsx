@@ -9,7 +9,7 @@ import removeAccents from 'remove-accents'
 import collectionStatsById from '../data/collectionStatsById.json'
 import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
-import filterEntries from '../util/filterEntries'
+import filterEntries from '../filters/filterEntries'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -22,7 +22,6 @@ export function DataProvider({children, allEntries, profile}) {
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
-
         return allEntries
             .map(entry => ({
                 ...entry,
@@ -47,7 +46,7 @@ export function DataProvider({children, allEntries, profile}) {
                     dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
                     entry.belt.startsWith('Black') ? 'Is Black' : undefined,
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
-                    userNotes[entry.id] ? 'Has Personal Notes' : undefined,
+                    userNotes[entry.id] ? 'Has Personal Notes' : undefined
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 collectionSaves: collectionStatsById[entry.id] || 0,
@@ -56,25 +55,33 @@ export function DataProvider({children, allEntries, profile}) {
             }))
     }, [allEntries, profile])
 
-    const visibleEntries = useMemo(() => {
-        // Filter the data
-        const filtered = filterEntries(filters, mappedEntries)
-
-        // Check for exact search match by id
-        const exactMatch = search && filtered.find(e => e.id === search)
-        let searched = filtered
-
+    const searchEntries = useCallback((entries) => {
+        const exactMatch = search && entries.find(e => e.id === search)
         if (exactMatch) {
-            searched = [exactMatch]
-        } else if (search) {
-            // If there is a search term, fuzzy match that
-            searched = fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -23000})
+            return [exactMatch]
+        }
+        return !search
+            ? entries
+            : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
                 .filter(entry => entry.score > 0.23)
+    }, [search])
+
+    const searchedBeltEntries = useMemo(() => {
+        if (tab === 'search' || !tab) {
+            return searchEntries(mappedEntries)
+        } else {
+            return searchEntries(mappedEntries).filter(entry => entry.simpleBelt === tab)
         }
+    },[mappedEntries, searchEntries, tab])
+
+    const visibleEntries = useMemo(() => {
+        // Filter the data
+        const filtered = filterEntries(filters, mappedEntries)
+        const searched = searchEntries(filtered)
 
         return sort
             ? searched.sort((a, b) => {
@@ -101,11 +108,27 @@ export function DataProvider({children, allEntries, profile}) {
                 }
             })
             : searched
-    }, [filters, mappedEntries, search, sort])
+    }, [filters, mappedEntries, searchEntries, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
+
+    const mappedBeltEntries = useMemo(() => {
+        if (tab === 'search' || !tab) {
+            return mappedEntries
+        } else {
+            return mappedEntries.filter(entry => entry.simpleBelt === tab)
+        }
+    }, [tab, mappedEntries])
+
+    const visibleBeltEntries = useMemo(() => {
+        if (tab === 'search' || !tab) {
+            return visibleEntries
+        } else {
+            return visibleEntries.filter(entry => entry.simpleBelt === tab)
+        }
+    }, [tab, visibleEntries])
 
     const lockbazzarAvailable = useCallback(id => {
         return lockbazzarIds?.includes(id)
@@ -117,13 +140,17 @@ export function DataProvider({children, allEntries, profile}) {
 
     const value = useMemo(() => ({
         allEntries,
+        mappedEntries,
+        searchedBeltEntries,
         visibleEntries,
+        mappedBeltEntries,
+        visibleBeltEntries,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
         lockbazzarAvailable
-    }), [allEntries, visibleEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
+    }), [allEntries, mappedEntries, searchedBeltEntries, visibleEntries, mappedBeltEntries, visibleBeltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>

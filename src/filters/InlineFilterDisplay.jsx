@@ -6,15 +6,19 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import {useParams} from 'react-router-dom'
 import collectionOptions from '../data/collectionTypes'
-import FilterDisplayExclude from './FilterDisplayExclude'
+import FilterDisplay from './FilterDisplay'
 import FilterContext from '../context/FilterContext'
 import ClearFiltersButton from './ClearFiltersButton'
 import useWindowSize from '../util/useWindowSize'
 import InputLabel from '@mui/material/InputLabel'
+import Link from '@mui/material/Link'
+import DataContext from '../context/DataContext.jsx'
 
-function InlineFilterDisplay({profile = {}, collectionType}) {
+function InlineFilterDisplay({profile = {}, collectionType, advancedEnabled}) {
     const {userId} = useParams()
-    const {filters, filterCount, addFilter} = useContext(FilterContext)
+    const {filters, filterCount, addFilter, setShowAdvancedSearch, showAdvancedSearch} = useContext(FilterContext)
+    const {beltEntries = []} = useContext(DataContext)
+
     const [open, setOpen] = React.useState(false)
 
     const collectionLabels = collectionOptions[collectionType]?.labels || []
@@ -44,11 +48,39 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
         addFilter('collection', event.target.value, true)
     }, [addFilter])
 
+    const handleToggleAdvanced = useCallback(() => {
+        setShowAdvancedSearch(!showAdvancedSearch)
+    }, [setShowAdvancedSearch, showAdvancedSearch])
+
     if (!filterCount && !userId) return null
+
+    const paddingLeft = isMobile ? 8 : 16
+
+    const linkSx = {
+        color: '#ddd', textDecoration: 'underline', cursor: 'pointer', '&:hover': {
+            color: '#fff', fontSize: '0.9rem'
+        }
+    }
 
     return (
         <Card style={style} sx={{paddingBottom: 0, paddingTop: 2}}>
-            <CardContent style={{paddingTop: 0, paddingLeft: 8}}>
+            <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
+                <div style={{display: 'flex', alignItems: 'center', marginBottom: 8}}>
+                    <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Current Filters</div>
+                    {beltEntries.length > 1 &&
+                        <div style={{
+                            fontWeight: 400,
+                            fontSize: '1.0rem',
+                            marginLeft: 8
+                        }}>({beltEntries.length} Locks)</div>
+                    }
+                    {advancedEnabled &&
+                        <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
+                            <Link onClick={handleToggleAdvanced} sx={linkSx}>Advanced</Link>
+                        </div>
+                    }
+                </div>
+
                 {
                     isValidCollection &&
                     <div style={{display: 'flex'}}>
@@ -79,7 +111,7 @@ function InlineFilterDisplay({profile = {}, collectionType}) {
                     </div>
                 }
                 {!isValidCollection &&
-                    <FilterDisplayExclude/>
+                    <FilterDisplay/>
                 }
             </CardContent>
         </Card>

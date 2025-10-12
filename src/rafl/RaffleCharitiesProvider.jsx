@@ -4,7 +4,7 @@ import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
 import RaffleContext from './RaffleContext.jsx'
-import filterEntries from '../util/filterEntries'
+import filterEntries from '../filters/filterEntries'
 
 export function RaffleCharitiesProvider({children}) {
     const {filters: allFilters} = useContext(FilterContext)

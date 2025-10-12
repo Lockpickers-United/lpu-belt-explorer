@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import {groupSort, groupSortReverse} from './groups'
-import filterEntries from '../util/filterEntries'
+import filterEntries from '../filters/filterEntries'
 
 export function SafelocksDataProvider({children, allEntries, profile}) {
     const {filters: allFilters} = useContext(FilterContext)

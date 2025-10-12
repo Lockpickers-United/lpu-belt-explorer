@@ -29,13 +29,15 @@ export default function FilterChipExclude({filterKey, filterValue, label}) {
     }, [removeFilter])
 
     const menuText = filterValue.startsWith('!') ? 'Show Only Matches' : 'Exclude Matches'
+    const bgColor = filterValue.startsWith('!') ? '#642c2c' : 'inherit'
 
     return (
         <React.Fragment>
             <Chip
-                label={label.replace('!', 'NOT ')}
+                label={label
+                    .replace('!', 'NOT ').replace('||', ' OR ').replace('&&', ' AND ')}
                 variant='outlined'
-                style={{marginRight: 4, marginBottom: 4}}
+                style={{marginRight: 4, marginBottom: 4, backgroundColor: bgColor}}
                 onDelete={handleOpen}
                 deleteIcon={<SettingsIcon/>}
             />

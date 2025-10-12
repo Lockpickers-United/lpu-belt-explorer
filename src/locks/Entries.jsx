@@ -1,7 +1,6 @@
 import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
 import Entry from '../entries/Entry'
-import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
@@ -13,8 +12,9 @@ import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
+import AdvancedFilters from '../filters/./AdvancedFilters.jsx'
 
-function Entries({profile}) {
+function Entries({advancedEnabled = false}) {
     const {tab} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
     const {visibleEntries = [], expandAll} = useContext(DataContext)
@@ -30,8 +30,8 @@ function Entries({profile}) {
     }, [tab, visibleEntries])
 
     const footerBefore = (
-        <div style={{margin:'30px 0px'}}>
-            <ExportButton text={true} entries={entries}/>
+        <div style={{margin: '30px 0px'}}>
+            <ExportButton text={true} entries={entries} advancedEnabled={advancedEnabled}/>
         </div>
     )
 
@@ -49,7 +49,8 @@ function Entries({profile}) {
     return (
         <React.Fragment>
             <div style={{margin: 8, paddingBottom: 32}}>
-                <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
+
+                <AdvancedFilters/>
 
                 {(tab !== 'search' && !isSearch && filterCount === 0 && entries.length !== 0) &&
                     <BeltRequirements belt={tab}/>}
