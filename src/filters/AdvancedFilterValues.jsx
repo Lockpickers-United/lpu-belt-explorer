@@ -62,7 +62,7 @@ export default function AdvancedFilterValues({group = {}, onChange}) {
                             defaultValue={operator}
                             onChange={handleOperatorChange}
                             small={true}
-                            style={{margin: '8px 0 8px 0'}}
+                            style={{margin: '6px 0 16px 0'}}
                         />
                     )}
                 </div>

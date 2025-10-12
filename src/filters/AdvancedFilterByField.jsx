@@ -194,7 +194,7 @@ function AdvancedFilterByField({
         onRemove && onRemove()
     }, [onRemove])
 
-    const marginBottom = context === 'drawer' ? 10 : 4
+    const marginBottom = context === 'drawer' ? 18 : 12
     const selectStyle = context !== 'drawer'
         ? {backgroundColor: currentValue.length > 0 ? '#333' : undefined}
         : matchType === 'Is Not'
@@ -207,7 +207,7 @@ function AdvancedFilterByField({
     return (
         <div style={{display: 'flex', alignItems: 'center', marginBottom: marginBottom}}>
             {(filteredOptions?.length === 0 || fieldName?.length === 0) ? null :
-                <FormControl style={{minWidth: fieldWidth, marginTop: 0, marginRight: 4}}
+                <FormControl style={{minWidth: fieldWidth, marginBottom: 0, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'
