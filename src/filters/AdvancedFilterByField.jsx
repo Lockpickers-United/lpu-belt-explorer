@@ -202,12 +202,12 @@ function AdvancedFilterByField({
             : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
 
     const {isMobile} = useWindowSize()
-    const fieldWidth = isMobile ? 210 : 210
+    const fieldWidth = isMobile || context === 'drawer' ? 210 : 250
 
     return (
-        <div style={{display: 'flex', alignItems: 'center', height: 48, marginBottom: marginBottom}}>
+        <div style={{display: 'flex', alignItems: 'center', marginBottom: marginBottom}}>
             {(filteredOptions?.length === 0 || fieldName?.length === 0) ? null :
-                <FormControl style={{minWidth: fieldWidth, marginTop: 8, marginRight: 4}}
+                <FormControl style={{minWidth: fieldWidth, marginTop: 0, marginRight: 4}}
                              size={size === 'small' ? 'small' : 'medium'}
                              fullWidth>
                     <InputLabel id={`filter-${fieldName}`} color='secondary'

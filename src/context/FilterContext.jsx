@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {useSearchParams} from 'react-router-dom'
 
 const FilterContext = React.createContext({})
@@ -72,6 +72,10 @@ export function FilterProvider({children, filterFields = []}) {
 
     // Local state to preserve partially defined advanced filter groups (not yet in URL)
     const [advancedGroups, setAdvancedGroups] = useState(undefined)
+    // When we push changes locally that result in no URL advanced filters (e.g., user cleared values
+    // or changed the field), avoid resetting the UI back to a blank group. This ref lets the
+    // URL->state sync know to skip clearing once when parsed filters are empty due to a local update.
+    const skipEmptySyncRef = useRef(false)
 
     const clearFilters = useCallback(() => {
         const {tab, sort} = filters
@@ -154,6 +158,9 @@ export function FilterProvider({children, filterFields = []}) {
         })
         // Save locally (preserves partially defined groups)
         setAdvancedGroups(withIds)
+        // Mark that this update originated locally so the sync effect doesn't clear
+        // in-memory groups if the resulting URL has no advanced filters.
+        skipEmptySyncRef.current = true
 
         const sp = new URLSearchParams()
         // Preserve existing non-filter params
@@ -187,13 +194,25 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(sp, {replace: true})
     }, [filters, nonFilters, setSearchParams])
 
-    // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
+    const clearAdvancedFilterGroups = useCallback(() => {
+        setAdvancedGroups([])
+        skipEmptySyncRef.current = false
+        setShowAdvancedSearch(false)
+    },[])
+        // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
     // Preserve the original group order by updating in place where possible.
     useEffect(() => {
         const parsed = parseFiltersToGroups(filters, nonFilters)
 
-        // If URL has no advanced filters, reset in-memory groups so UI clears
+        // If URL has no advanced filters, reset in-memory groups so UI clears —
+        // except when the emptiness is a result of a local update (e.g., user changed
+        // the field or removed the last value). In that case, preserve current in-memory groups.
         if (!parsed || parsed.length === 0) {
+            if (skipEmptySyncRef.current) {
+                // consume the skip and keep current groups as-is
+                skipEmptySyncRef.current = false
+                return
+            }
             setAdvancedGroups([])
             return
         }
@@ -264,7 +283,8 @@ export function FilterProvider({children, filterFields = []}) {
         advancedFilterGroups,
         setAdvancedFilterGroups,
         showAdvancedSearch,
-        setShowAdvancedSearch
+        setShowAdvancedSearch,
+        clearAdvancedFilterGroups
     }), [
         addFilter,
         addFilters,
@@ -280,7 +300,8 @@ export function FilterProvider({children, filterFields = []}) {
         advancedFilterGroups,
         setAdvancedFilterGroups,
         showAdvancedSearch,
-        setShowAdvancedSearch
+        setShowAdvancedSearch,
+        clearAdvancedFilterGroups
     ])
 
     return (

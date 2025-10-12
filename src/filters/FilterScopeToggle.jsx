@@ -42,9 +42,9 @@ export default function FilterScopeToggle({style = {}}) {
         }
     }, [addFilter, initialBelt, removeFilters])
 
-    const {color, lineColor = '#999'} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
+    const {color} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
+    const lineColor = initialBelt === 'Black' ? '#444' : color
     const beltOpacity = scope === 'belt' ? 1 : 0.7
-
 
     return (
         <React.Fragment>
@@ -57,31 +57,32 @@ export default function FilterScopeToggle({style = {}}) {
                             key={'belt'}
                             onClick={changeScope('belt')}
                             style={{
-                                color: scope === 'belt' ? '#eee' : '#777',
-                                backgroundColor: scope === 'belt' ? 'inherit' : '#111',
-                                padding: '4px 12px', borderColor: '#666'
+                                color: scope === 'belt' ? '#fff' : '#777',
+                                backgroundColor: scope === 'belt' ? '#3f3f3f' : '#222',
+                                height: 28, padding: '0px 10px 0px 0px', borderColor: '#666',
+                                width:134, textAlign: 'left', justifyContent: 'flex-start'
                             }}
                             value={'belt'}
                             disabled={scope === 'belt'}
                         >
                             <div style={{
                                 backgroundColor: color,
-                                height: 12,
+                                height: 26,
                                 width: 12,
-                                borderRadius: 6,
-                                border: `${lineColor} 1px solid`,
+                                borderRadius: '3px 0px 0px 3px',
+                                borderRight: `${lineColor} 1px solid`,
                                 marginRight: 8,
                                 opacity: beltOpacity
                             }}/>
-                            {initialBelt} BELT
+                            <div style={{flexGrow: 1,  textAlign: 'center'}}>{initialBelt} BELT</div>
                         </ToggleButton>
                         <ToggleButton
                             key={'all'}
                             onClick={changeScope('all')}
                             style={{
-                                color: scope === 'all' ? '#eee' : '#777',
-                                backgroundColor: scope === 'all' ? 'inherit' : '#111',
-                                padding: '4px 12px', borderColor: '#666'
+                                color: scope === 'all' ? '#fff' : '#777',
+                                backgroundColor: scope === 'all' ? '#3f3f3f' : '#222',
+                                height: 28, padding: '0px 12px', borderColor: '#666',
                             }}
                             value={'all'}
                             disabled={scope === 'all'}

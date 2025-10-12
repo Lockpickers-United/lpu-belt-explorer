@@ -20,7 +20,7 @@ export default function AdvancedFilters() {
         setShowAdvancedSearch,
         filterCount,
         removeFilters,
-        clearFilters,
+        clearFilters
     } = useContext(FilterContext)
     const {visibleBeltEntries = []} = useContext(DataContext)
 
@@ -86,26 +86,31 @@ export default function AdvancedFilters() {
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', borderRadius: 0}
 
     const paddingLeft = isMobile ? 8 : 16
+    const resetMarginTop = isMobile ? 2 : 0
 
     return (
         <React.Fragment>
             <Collapse in={showAdvancedSearch || filterCount > 0} unmountOnExit={true}>
                 <Card style={{...style, paddingBottom: 8, paddingTop: 16}}>
-                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft}}>
+                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft, alignItems: 'top'}}>
 
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <div style={{fontWeight: 700, fontSize: '1.2rem'}}>Advanced Filters</div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '1.0rem',
-                                marginLeft: 8
-                            }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})</div>
-                            <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
+                        <div style={{display: 'flex', alignItems: 'top', marginBottom:16}}>
+                            <div style={{display: 'flex', flexDirection:'column', alignItems: 'top'}}>
+                                <div style={{display: 'flex', marginRight: 36, marginBottom:0, alignItems: 'center'}}>
+                                    <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Advanced Filters</div>
+                                    <div style={{
+                                        fontWeight: 400,
+                                        fontSize: '1.0rem',
+                                        marginLeft: 8
+                                    }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})
+                                    </div>
+                                </div>
+                                <FilterScopeToggle style={{margin: '16px 0px 0px 0px'}}/>
+                            </div>
+                            <div style={{flexGrow: 1, textAlign: 'right', alignItems: 'top', marginTop:resetMarginTop}}>
                                 <ResetFiltersButton alwaysShow/>
                             </div>
                         </div>
-
-                        <FilterScopeToggle style={{margin: '16px 0px 16px 0px'}}/>
 
                         <div
                             style={{display: 'flex', flexDirection: 'column'}}>
@@ -124,8 +129,8 @@ export default function AdvancedFilters() {
                             <Button onClick={handleClearAll} variant='contained' size='small'
                                     style={{backgroundColor: '#444', marginRight: 16}}>
                                 Clear</Button>
-                            <Button onClick={addFilter} variant='contained' color='info' size='small'>Add
-                                Filter</Button>
+                            <Button onClick={addFilter} variant='contained' color='info' size='small'>
+                                Add Filter</Button>
                         </div>
 
                     </CardContent>

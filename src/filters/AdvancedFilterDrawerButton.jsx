@@ -139,7 +139,7 @@ function AdvancedFilterDrawerButton() {
                         }
                     }}
                 >
-                    <div style={{display: 'flex', alignItems: 'center', padding: '16px 8px 0px 8px', height: 76}}
+                    <div style={{display: 'flex', alignItems: 'center', margin: '8px 8px 12px 8px', height: 38}}
                          onClick={closeDrawer}>
                         <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Filters</div>
                             <div style={{
@@ -151,13 +151,13 @@ function AdvancedFilterDrawerButton() {
                             {!showAdvancedSearch
                                 ? <Link onClick={handleToggleAdvanced}
                                         sx={linkSx}>{showAdvancedSearch ? 'Reset' : 'Advanced'}</Link>
-                                : <ResetFiltersButton advanced/>
+                                : <ResetFiltersButton advanced drawer/>
                             }
 
                         </div>
                     </div>
 
-                    <FilterScopeToggle style={{margin: '8px 0px 8px 8px'}}/>
+                    <FilterScopeToggle style={{margin: '0px 0px 8px 8px'}}/>
 
                     <Box margin={1}>
                         <Stack direction='column' style={{minWidth: 250}}>

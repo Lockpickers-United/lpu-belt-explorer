@@ -6,16 +6,17 @@ import Button from '@mui/material/Button'
 import useWindowSize from '../util/useWindowSize'
 import FilterContext from '../context/FilterContext'
 
-export default function ResetFiltersButton({forceText, forceIcon, closeDrawer, alwaysShow}) {
+export default function ResetFiltersButton({forceText, forceIcon, closeDrawer, alwaysShow, drawer = false}) {
     const {isMobile} = useWindowSize()
-    const {filterCount, clearFilters, setAdvancedFilterGroups, setShowAdvancedSearch} = useContext(FilterContext)
+    const {filterCount, clearFilters, clearAdvancedFilterGroups} = useContext(FilterContext)
 
     const handleReset = useCallback(() => {
         clearFilters()
-        setAdvancedFilterGroups && setAdvancedFilterGroups([])
-        setShowAdvancedSearch && setShowAdvancedSearch(false)
+        clearAdvancedFilterGroups && clearAdvancedFilterGroups()
         closeDrawer && closeDrawer()
-    },[clearFilters, closeDrawer, setAdvancedFilterGroups, setShowAdvancedSearch])
+    },[clearAdvancedFilterGroups, clearFilters, closeDrawer])
+
+    const buttonVariant = drawer ? 'text' : 'outlined'
 
     if (filterCount === 0 && !alwaysShow) return null
     if ((isMobile && !forceText) || forceIcon) {
@@ -28,7 +29,8 @@ export default function ResetFiltersButton({forceText, forceIcon, closeDrawer, a
         )
     } else {
         return (
-            <Button color='warning' onClick={handleReset} style={{minWidth: 80, marginLeft:8}}>
+            <Button variant={buttonVariant} color='warning' onClick={handleReset}
+                    style={{height:28, padding: '0px 12px', minWidth: 80, marginLeft:8}}>
                 Reset
             </Button>
         )
