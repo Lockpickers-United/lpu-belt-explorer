@@ -91,8 +91,8 @@ export default function AdvancedFilters() {
     return (
         <React.Fragment>
             <Collapse in={showAdvancedSearch || filterCount > 0} unmountOnExit={true}>
-                <Card style={{...style, paddingBottom: 8, paddingTop: 16}}>
-                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft, alignItems: 'top'}}>
+                <Card style={{...style, paddingBottom: 0, paddingTop: 16}}>
+                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft, paddingRight: paddingLeft, alignItems: 'top'}}>
 
                         <div style={{display: 'flex', alignItems: 'top', marginBottom:16}}>
                             <div style={{display: 'flex', flexDirection:'column', alignItems: 'top'}}>
@@ -125,7 +125,7 @@ export default function AdvancedFilters() {
                             ))}
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 16}}>
+                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 2}}>
                             <Button onClick={handleClearAll} variant='contained' size='small'
                                     style={{backgroundColor: '#444', marginRight: 16}}>
                                 Clear</Button>

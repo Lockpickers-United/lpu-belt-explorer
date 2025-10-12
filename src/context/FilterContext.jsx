@@ -199,7 +199,8 @@ export function FilterProvider({children, filterFields = []}) {
         skipEmptySyncRef.current = false
         setShowAdvancedSearch(false)
     },[])
-        // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
+
+    // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
     // Preserve the original group order by updating in place where possible.
     useEffect(() => {
         const parsed = parseFiltersToGroups(filters, nonFilters)

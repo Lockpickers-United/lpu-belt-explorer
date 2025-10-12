@@ -23,9 +23,9 @@ function Entries({advancedEnabled = false}) {
 
     const entries = useMemo(() => {
         if (tab === 'search') {
-            return visibleEntries
+            return [...visibleEntries]
         } else {
-            return visibleEntries.filter(entry => entry.simpleBelt === tab)
+            return [...visibleEntries].filter(entry => entry.simpleBelt === tab)
         }
     }, [tab, visibleEntries])
 

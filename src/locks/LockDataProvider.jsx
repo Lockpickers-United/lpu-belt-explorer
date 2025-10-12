@@ -81,7 +81,7 @@ export function DataProvider({children, allEntries, profile}) {
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntries(filters, mappedEntries)
-        const searched = searchEntries(filtered)
+        const searched = searchEntries([...filtered])
 
         return sort
             ? searched.sort((a, b) => {
