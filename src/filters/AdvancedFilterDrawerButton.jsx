@@ -6,7 +6,6 @@ import Badge from '@mui/material/Badge'
 import AuthContext from '../app/AuthContext'
 import FilterContext from '../context/FilterContext'
 import AdvancedFilterByField from './AdvancedFilterByField'
-import Stack from '@mui/material/Stack'
 import ClearFiltersButton from './ClearFiltersButton'
 import ResetFiltersButton from './ResetFiltersButton'
 import Button from '@mui/material/Button'
@@ -18,6 +17,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
 import DataContext from '../context/DataContext.jsx'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
+import { motion } from 'motion/react'
 
 function AdvancedFilterDrawerButton() {
     const [open, setOpen] = useState(false)
@@ -159,7 +159,7 @@ function AdvancedFilterDrawerButton() {
                     <FilterScopeToggle style={{margin: '0px 0px 8px 8px'}}/>
 
                     <Box margin={1}>
-                        <Stack direction='column' style={{minWidth: 250}}>
+                        <motion.div layout style={{minWidth: 250}}>
                             {filterList
                                 .filter(field => {
                                     return (!field.beta || beta) && (!field.userBased || isLoggedIn)
@@ -167,7 +167,7 @@ function AdvancedFilterDrawerButton() {
                                 .filter(field => {
                                     return !(scope === 'belt' && tab !== 'search' && field.label === 'Belt')
                                 })
-                                .map((field, index) => {
+                                .map((field) => {
                                     const groupsArr = advancedFilterGroups()
                                     const existingIndex = groupsArr.findIndex(g => g.fieldName === field.fieldName && Array.isArray(g.values) && g.values.length > 0)
                                     const existing = existingIndex >= 0 ? groupsArr[existingIndex] : null
@@ -188,28 +188,29 @@ function AdvancedFilterDrawerButton() {
                                     const operator = existing ? existing.operator || 'OR' : 'OR'
                                     const groupIndex = existing ? existingIndex : 0
                                     return (
-                                        <AdvancedFilterByField
-                                            key={index}
-                                            {...field}
-                                            active={field.active}
-                                            label={field.label}
-                                            group={group}
-                                            groupIndex={groupIndex}
-                                            matchType={matchType}
-                                            operator={operator}
-                                            valueIndex={0}
-                                            currentValue={currentValue}
-                                            onFilter={(val) => handleQuickAdd(field.fieldName, val)}
-                                            onRemove={() => {
-                                            }}
-                                            handleAddValue={() => {
-                                            }}
-                                            size='small'
-                                            context='drawer'
-                                        />
+                                        <motion.div key={field.fieldName} layout transition={{visualDuration: 0.25, ease: ['easeOut']}}>
+                                            <AdvancedFilterByField
+                                                {...field}
+                                                active={field.active}
+                                                label={field.label}
+                                                group={group}
+                                                groupIndex={groupIndex}
+                                                matchType={matchType}
+                                                operator={operator}
+                                                valueIndex={0}
+                                                currentValue={currentValue}
+                                                onFilter={(val) => handleQuickAdd(field.fieldName, val)}
+                                                onRemove={() => {
+                                                }}
+                                                handleAddValue={() => {
+                                                }}
+                                                size='small'
+                                                context='drawer'
+                                            />
+                                        </motion.div>
                                     )
                                 })}
-                        </Stack>
+                        </motion.div>
                     </Box>
                     <div style={{padding: 8}}>
                         <ClearFiltersButton forceText/>
