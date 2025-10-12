@@ -17,7 +17,9 @@ export function RaffleDataProvider({children, allEntries = []}) {
         if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
 
 // Filter the data
-        const filtered = filterEntries(filters, allEntries).sort((a, b) => { return a.potNumber-b.potNumber})
+        const filtered = filterEntries(filters, allEntries).sort((a, b) => {
+            return a.potNumber - b.potNumber
+        })
 
         // If there is a search term, fuzzy match that
         const searched = search
@@ -26,6 +28,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
                     ...result.obj,
                     score: result.score
                 }))
+                .filter(result => result.score > scoreThreshold)
             : filtered
 
         return sort
@@ -59,7 +62,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
         allEntries,
         visibleEntries,
         getPotFromId,
-        expandAll,
+        expandAll
     }), [allEntries, visibleEntries, getPotFromId, expandAll])
 
     return (
