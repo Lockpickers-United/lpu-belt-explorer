@@ -36,7 +36,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
     const matchOptions = useMemo(() => {
         return [
             {label: 'Is', value: 'Is'},
-            {label: 'Not', value: 'Is Not', backgroundColor: '#642c2c'}
+            {label: 'Not', value: 'Is Not', backgroundColor: '#733030'}
         ]
     }, [])
 

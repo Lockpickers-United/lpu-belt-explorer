@@ -94,8 +94,7 @@ function AdvancedFilterDrawerButton() {
         }
         setAdvancedFilterGroups([...groups, newGroup])
     }, [advancedFilterGroups, setAdvancedFilterGroups, setShowAdvancedSearch])
-
-
+    
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
 

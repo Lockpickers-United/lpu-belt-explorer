@@ -198,11 +198,12 @@ function AdvancedFilterByField({
     const selectStyle = context !== 'drawer'
         ? {backgroundColor: currentValue.length > 0 ? '#333' : undefined}
         : matchType === 'Is Not'
-            ? {backgroundColor: currentValue.length > 0 ? '#642c2c' : undefined}
+            ? {backgroundColor: currentValue.length > 0 ? '#733030  ' : undefined}
             : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
 
     const {isMobile} = useWindowSize()
     const fieldWidth = isMobile || context === 'drawer' ? 210 : 250
+    const buttonSize = isMobile ? 'medium' : 'small'
 
     return (
         <div style={{display: 'flex', alignItems: 'center', marginBottom: marginBottom}}>
@@ -263,28 +264,28 @@ function AdvancedFilterByField({
                 <React.Fragment>
                     {valueIndex === 0 && currentValue.length > 0 &&
                         <IconButton aria-label='add filter group' onClick={handleAddValue}
-                                    style={{marginTop: 4, marginLeft: 2}} size='small'>
-                            <AddCircleIcon fontSize='small' style={{color: '#5d854f'}}/>
+                                    style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
+                            <AddCircleIcon fontSize={buttonSize} style={{color: '#5d854f'}}/>
                         </IconButton>
                     }
                     {(currentValue.length > 0 || valueIndex > 0) &&
                         <IconButton aria-label='remove filter value' onClick={handleRemoveValue}
-                                    style={{marginTop: 4, marginLeft: 2}} size='small'>
-                            <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
+                                    style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
+                            <HighlightOffIcon fontSize={buttonSize} style={{color: '#d04e4e'}}/>
                         </IconButton>
                     }
                     {(!valueIndex || valueIndex === 0) && fieldName &&
                         <IconButton aria-label='remove filter group' onClick={handleRemoveGroup}
-                                    style={{marginTop: 4, marginLeft: 2}} size='small'>
-                            <DeleteOutlineIcon fontSize='small' style={{color: '#eee'}}/>
+                                    style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
+                            <DeleteOutlineIcon fontSize={buttonSize} style={{color: '#eee'}}/>
                         </IconButton>
                     }
                 </React.Fragment>
             }
             {(currentValue.length > 0 || valueIndex > 0) && context === 'drawer' &&
                 <IconButton aria-label='remove filter value' onClick={handleRemoveGroup}
-                            style={{marginTop: 4, marginLeft: 2}} size='small'>
-                    <HighlightOffIcon fontSize='small' style={{color: '#d04e4e'}}/>
+                            style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
+                    <HighlightOffIcon fontSize={buttonSize} style={{color: '#d04e4e'}}/>
                 </IconButton>
             }
         </div>
