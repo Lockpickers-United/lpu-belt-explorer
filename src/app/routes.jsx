@@ -313,6 +313,13 @@ export default [
         }
     },
     {
+        path: '/pathtoblack',
+        lazy: async () => {
+            const {default: PathToBlackRoute} = await import('../pathToBlack/PathToBlackRoute.jsx')
+            return {element: <PathToBlackRoute/>}
+        }
+    },
+    {
         path: '/content',
         lazy: async () => {
             const {default: ContentParentRoute} = await import('../content/ContentParentRoute.jsx')

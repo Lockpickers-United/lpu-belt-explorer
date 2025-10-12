@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useCallback, useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import VersionChecker from '../app/VersionChecker'
@@ -8,10 +8,21 @@ import UserMenu from './UserMenu'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
+import menuConfig from '../nav/menuConfig.jsx'
+import {useLocation, useNavigate} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 function Nav({extras, extrasTwo, title}) {
-
     const {isFiltered} = useContext(FilterContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const menuItem = menuConfig.find(item => item.title === title)
+    const isRootPath = location.pathname === menuItem?.path && ['', '?tab=White'].includes(location.search)
+
+    const handleClickTitle = useCallback(() => {
+        menuItem?.path && navigate(menuItem.path)
+    }, [menuItem, navigate])
+
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
     const spacer = isMobile
@@ -21,6 +32,11 @@ function Nav({extras, extrasTwo, title}) {
         : 0
 
     const flexStyle = !isMobile ? 'flex' : 'block'
+    const linkSx = {
+        color: '#fff', textDecoration: 'none', cursor: 'pointer', '&:hover': {
+            textDecoration: 'underline'
+        }
+    }
 
     return (
         <React.Fragment>
@@ -39,7 +55,15 @@ function Nav({extras, extrasTwo, title}) {
                                 marginTop: 6
                             }}>
                                 {(!isFiltered || !smallWidth) &&
-                                    <nobr>{title}</nobr>
+                                    <React.Fragment>
+                                        {menuItem && !isRootPath
+                                            ?
+                                            <Link onClick={handleClickTitle} style={{whiteSpace: 'nowrap'}} sx={linkSx}>
+                                                {title}
+                                            </Link>
+                                            : <nobr>{title}</nobr>
+                                        }
+                                    </React.Fragment>
                                 }
                             </div>
                             {extras}

@@ -7,6 +7,7 @@ import belts, {danBeltSort, danBeltSortReverse} from '../../data/belts'
 import collectionOptions from '../../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import collectionStatsById from '../../data/collectionStatsById.json'
+import filterEntries from '../../filters/filterEntries'
 
 /**
  * @prop scorecardPicks
@@ -61,25 +62,8 @@ export function DataProvider({children, allEntries, scorecardEntries, profile}) 
     }, [getEntryFromId, profile, scorecardEntries, userBelt])
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
-            })
-            .flat()
-
         // Filter the data
-        const filtered = mappedEntries
-            .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
-                })
-            })
+        const filtered = filterEntries(filters, mappedEntries)
 
         // Check for exact search match by id
         const exactMatch = search && filtered.find(e => e.id === search)

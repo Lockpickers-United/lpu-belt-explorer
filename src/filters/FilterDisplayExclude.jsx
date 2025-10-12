@@ -1,12 +1,11 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-import FieldValue from '../entries/FieldValue'
 import Stack from '@mui/material/Stack'
 import FilterContext from '../context/FilterContext'
 import {filterValueNames} from '../data/filterValues'
 import FilterChipExclude from './FilterChipExclude'
 
 function FilterDisplay() {
-    const {filters, filterCount, removeFilter, filterFieldsByFieldName} = useContext(FilterContext)
+    const {filters, filterCount, removeFilter, filterFieldsByFieldName, nonFilters} = useContext(FilterContext)
 
     const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
         removeFilter(keyToDelete, valueToDelete)
@@ -15,6 +14,7 @@ function FilterDisplay() {
     const filterValues = useMemo(() => {
         const {search, id, tab, name, sort, image, ...rest} = filters
         return Object.keys(rest)
+            .filter(key => !nonFilters.includes(key) && filters[key] !== undefined && filters[key] !== null && filters[key] !== '')
             .map(key => {
                 const value = filters[key]
                 return Array.isArray(value)
@@ -22,7 +22,7 @@ function FilterDisplay() {
                     : {key, value}
             })
             .flat()
-    }, [filters])
+    }, [filters, nonFilters])
 
     const cleanChipLabel = useCallback((label, value) => {
         if (label === 'Belt') {
@@ -49,8 +49,7 @@ function FilterDisplay() {
 
     if (filterCount === 0) return null
     return (
-        <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
-            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
+            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginTop: 12}}>
                 {filterValues.map(({key, value: filter}, index) => {
 
                     const baseValue = filter.startsWith('!') ? filter.slice(1) : filter
@@ -70,7 +69,6 @@ function FilterDisplay() {
                     }
                 )}
             </Stack>
-        }/>
     )
 }
 

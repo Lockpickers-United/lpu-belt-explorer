@@ -60283,7 +60283,10 @@
     ],
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "name": "Generic/Unranked Lock Cylinder",
-    "dateAdded": "2025-09-29T17:16:37.420Z"
+    "dateAdded": "2025-09-29T17:16:37.420Z",
+    "features": [
+      "cylinder"
+    ]
   },
   "d3bdab01": {
     "id": "d3bdab01",
@@ -60300,7 +60303,10 @@
     ],
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "name": "Generic/Unranked Lock Cylinder",
-    "dateAdded": "2025-09-29T17:16:37.420Z"
+    "dateAdded": "2025-09-29T17:16:37.420Z",
+    "features": [
+      "cylinder"
+    ]
   },
   "58c676d3": {
     "id": "58c676d3",
@@ -60328,5 +60334,71 @@
     "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "name": "Medeco Biaxial Camlock, M3 Camlock",
     "dateAdded": "2025-09-29T22:09:57.767Z"
+  },
+  "59dab099": {
+    "id": "59dab099",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Defiant",
+        "model": "Deadbolt"
+      },
+      {
+        "model": "exterior"
+      }
+    ],
+    "version": "5 pins, 3+ spools",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Under Review ⚑",
+      "cylinder"
+    ],
+    "name": "Defiant Deadbolt / exterior",
+    "dateAdded": "2025-10-04T16:19:03.606Z"
+  },
+  "5f600c8e": {
+    "id": "5f600c8e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Defiant",
+        "model": "Deadbolt"
+      },
+      {
+        "model": "interior"
+      }
+    ],
+    "version": "5 pins, 2 spools",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Under Review ⚑",
+      "cylinder"
+    ],
+    "name": "Defiant Deadbolt / interior",
+    "dateAdded": "2025-10-04T16:19:03.607Z"
+  },
+  "d87bb501": {
+    "id": "d87bb501",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Reliabilt",
+        "model": "Deadbolt cylinder"
+      }
+    ],
+    "version": "5 pins, all standard",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Under Review ⚑",
+      "cylinder"
+    ],
+    "name": "Reliabilt Deadbolt cylinder",
+    "dateAdded": "2025-10-04T16:19:03.607Z"
   }
 }

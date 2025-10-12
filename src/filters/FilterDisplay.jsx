@@ -27,7 +27,7 @@ function FilterDisplay() {
     const cleanChipLabel = useCallback((label, value) => {
         if (label === 'Belt') {
             if (value === 'Unranked') {
-                return label
+                return value
             }
             if (value.includes('Black')) {
                 return value.replace(/(Black)\s(\d+)/, '$1 Belt $2')
@@ -45,17 +45,22 @@ function FilterDisplay() {
     }, [])
 
     if (filterCount === 0) return null
+
     return (
         <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
-                {filterValues.map(({key, value: filter}, index) =>
-                    <Chip
-                        key={index}
-                        label={`${cleanChipLabel(filterFieldsByFieldName[key]?.label, filter)}`}
-                        variant='outlined'
-                        style={{marginRight: 4, marginBottom: 4}}
-                        onDelete={handleDeleteFilter(key, filter)}
-                    />
+                {filterValues.map(({key, value: filter}, index) => {
+                        const bgColor = filter.startsWith('!') ? '#642c2c' : 'inherit'
+                        const chipLabel = cleanChipLabel(filterFieldsByFieldName[key]?.label, filter)
+                            .replace('!', 'NOT ').replace('||', ' OR ').replace('&&', ' AND ')
+                        return <Chip
+                            key={index}
+                            label={chipLabel}
+                            variant='outlined'
+                            style={{marginRight: 4, marginBottom: 4, backgroundColor: bgColor}}
+                            onDelete={handleDeleteFilter(key, filter)}
+                        />
+                    }
                 )}
             </Stack>
         }/>

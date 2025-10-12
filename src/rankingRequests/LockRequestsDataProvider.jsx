@@ -5,6 +5,7 @@ import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
 import {statusSort} from './rankingRequestData'
+import filterEntries from '../filters/filterEntries'
 
 /**
  * @typedef {object} entry
@@ -46,25 +47,8 @@ export function DataProvider({children, allEntries, profile}) {
     }, [allEntries])
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
-            })
-            .flat()
-
         // Filter the data
-        const filtered = mappedEntries
-            .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
-                })
-            })
+        const filtered = filterEntries(filters, mappedEntries)
 
         // Check for exact search match by id
         const exactMatch = search && filtered.find(e => e.id === search)

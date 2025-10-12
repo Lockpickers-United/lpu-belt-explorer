@@ -4,6 +4,7 @@ import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
 import RaffleContext from './RaffleContext.jsx'
+import filterEntries from '../filters/filterEntries'
 
 export function RaffleCharitiesProvider({children}) {
     const {filters: allFilters} = useContext(FilterContext)
@@ -11,27 +12,8 @@ export function RaffleCharitiesProvider({children}) {
     const {allCharities} = useContext(RaffleContext)
 
     const visibleEntries = useMemo(() => {
-        // Filters as an array
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => ({key, value: subkey}))
-                    : {key, value}
-            })
-            .flat()
-
         // Filter the data
-        const filtered = allCharities
-            .filter(ch => {return !ch.disabled})
-            .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
-                })
-            })
-            .sort((a, b) => { return a.fuzzy.localeCompare(b.fuzzy)})
+        const filtered = filterEntries(filters, allCharities)
 
         // If there is a search term, fuzzy match that
         const searched = search

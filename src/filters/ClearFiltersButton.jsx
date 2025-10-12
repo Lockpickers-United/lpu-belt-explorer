@@ -21,8 +21,8 @@ function ClearFiltersButton({forceText}) {
         )
     } else {
         return (
-            <Button variant='outlined' color='inherit' onClick={clearFilters} style={{minWidth: 120, marginRight:8}}>
-                Clear&nbsp;Filters
+            <Button variant='outlined' color='inherit' onClick={clearFilters} style={{minWidth: 80, marginRight:8}}>
+                Clear
             </Button>
         )
     }

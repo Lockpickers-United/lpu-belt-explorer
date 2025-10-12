@@ -3,6 +3,7 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
+import filterEntries from '../filters/filterEntries'
 import RaffleContext from './RaffleContext.jsx'
 
 export function RaffleDataProvider({children, allEntries = []}) {
@@ -13,49 +14,18 @@ export function RaffleDataProvider({children, allEntries = []}) {
     const scoreThreshold = 0.3
 
     const visibleEntries = useMemo(() => {
-
         if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
 
-        // Filters as an array (support negative values with leading '!')
-        const parseFilter = (key, rawVal) => {
-            const str = String(rawVal ?? '')
-            const negative = str.startsWith('!')
-            const value = negative ? str.slice(1) : str
-            return {key, value, negative}
-        }
-        const filterArray = Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => parseFilter(key, subkey))
-                    : parseFilter(key, value)
-            })
-            .flat()
-
-        // Filter the data
-        const filtered = allEntries
-            .filter(datum => {
-                return filterArray.every(({key, value, negative}) => {
-                    const datumVal = datum[key]
-                    if (Array.isArray(datumVal)) {
-                        const has = datumVal.includes(value)
-                        return negative ? !has : has
-                    } else {
-                        const is = datumVal === value
-                        return negative ? !is : is
-                    }
-                })
-            })
-            .sort((a, b) => { return a.potNumber-b.potNumber})
+// Filter the data
+        const filtered = filterEntries(filters, allEntries).sort((a, b) => { return a.potNumber-b.potNumber})
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -30000})
+            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-                .filter(result => result.score > scoreThreshold)
             : filtered
 
         return sort
