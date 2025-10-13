@@ -38,8 +38,6 @@
     "node": "22"
   },
   "dependencies": {
-    "react-window": "^1.8.10",
-    "react-virtualized-auto-sizer": "^1.0.7",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.15.4",
@@ -57,6 +55,7 @@
     "axios": "^1.9.0",
     "dayjs": "^1.11.13",
     "dompurify": "^3.2.6",
+    "dotenv": "^17.2.3",
     "fast-levenshtein": "^3.0.0",
     "firebase": "^11.7.1",
     "fuzzysort": "^3.1.0",
@@ -76,6 +75,8 @@
     "react-router-dom": "^6.21.0",
     "react-simple-star-rating": "^5.1.7",
     "react-swipeable": "^7.0.1",
+    "react-virtualized-auto-sizer": "^1.0.7",
+    "react-window": "^1.8.10",
     "rehype-external-links": "^3.0.0",
     "remark-gfm": "^4.0.0",
     "remove-accents": "^0.5.0",

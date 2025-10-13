@@ -4,6 +4,9 @@ import {getFirestore} from 'firebase/firestore'
 
 export const {VITE_DEV_FIRESTORE: devFirestore} = import.meta.env
 
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY
+console.log('apiKey', apiKey)
+
 // Firebase configuration
 let firebaseConfig
 
