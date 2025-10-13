@@ -44,13 +44,13 @@ export function DataProvider({children, allEntries, profile}) {
                     entry.links?.length > 0 ? 'Has Links' : 'No Links',
                     belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
                     dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
-                    entry.belt.startsWith('Black') ? 'Is Black' : undefined,
                     entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
                     userNotes[entry.id] ? 'Has Personal Notes' : undefined
                 ].flat().filter(x => x),
                 collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 collectionSaves: collectionStatsById[entry.id] || 0,
                 simpleBelt: entry.belt.replace(/\s\d/g, ''),
+                filterBelts: entry.belt.startsWith('Black') ? ['Black', entry.belt]  : [entry.belt],
                 personalNotes: userNotes[entry.id]
             }))
     }, [allEntries, profile])
