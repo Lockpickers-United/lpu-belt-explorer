@@ -18,6 +18,7 @@ export default function AdvancedFilters() {
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        hideAdvancedSearch,
         filterCount,
         removeFilters,
         clearFilters
@@ -68,7 +69,7 @@ export default function AdvancedFilters() {
     }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     useEffect(() => {
-        if (advancedFilterGroups().length === 0) {
+        if (advancedFilterGroups().length === 0 && !hideAdvancedSearch) {
             setAdvancedFilterGroups([{
                 _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
                 fieldName: '',
@@ -78,7 +79,7 @@ export default function AdvancedFilters() {
             }])
         }
         if (filterCount > 0) setShowAdvancedSearch(true)
-    }, [advancedFilterGroups, filterCount, setAdvancedFilterGroups, setShowAdvancedSearch])
+    }, [advancedFilterGroups, filterCount, hideAdvancedSearch, setAdvancedFilterGroups, setShowAdvancedSearch])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -90,15 +91,11 @@ export default function AdvancedFilters() {
 
     const [transitionIn, setTransitionIn] = useState(false)
     useEffect(() => {
-        if (showAdvancedSearch || filterCount > 0) {
-            const timeout = setTimeout(() => {
+        if (hideAdvancedSearch) setTransitionIn(false)
+        else if (showAdvancedSearch || filterCount > 0) {
                 setTransitionIn(true)
-            }, 0)
-            return () => clearTimeout(timeout)
-        } else {
-            setTransitionIn(false)
         }
-    }, [showAdvancedSearch, filterCount])
+    }, [showAdvancedSearch, filterCount, hideAdvancedSearch])
 
     const [renderContent, setRenderContent] = useState(false)
     useEffect(() => {

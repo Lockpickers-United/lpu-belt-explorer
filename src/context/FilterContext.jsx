@@ -197,6 +197,7 @@ export function FilterProvider({children, filterFields = []}) {
     }, [filters, nonFilters, setSearchParams])
 
     const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
+    const [hideAdvancedSearch, setHideAdvancedSearch] = useState(false)
 
     const addAdvancedFilterGroup = useCallback(({fieldName, valueToAdd, operator, matchType}) => {
         if (!fieldName || !valueToAdd) return
@@ -240,10 +241,23 @@ export function FilterProvider({children, filterFields = []}) {
     }, [advancedFilterGroups, setAdvancedFilterGroups, setShowAdvancedSearch])
 
     const clearAdvancedFilterGroups = useCallback(() => {
-        setAdvancedGroups([])
-        skipEmptySyncRef.current = false
-        setShowAdvancedSearch(false)
-    }, [])
+
+        setHideAdvancedSearch(true)
+        setTimeout(() => {
+            setShowAdvancedSearch(false)
+            // We want the upcoming URL clear to be treated as external (authoritative),
+            // so do not skip the empty sync.
+            skipEmptySyncRef.current = false
+        }, 0)
+        setTimeout(() => {
+            setAdvancedGroups([])
+            clearFilters()
+        }, 350)
+        setTimeout(() => {
+            setHideAdvancedSearch(false)
+        }, 1000)
+
+    }, [clearFilters])
 
     // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
     // Preserve the original group order by updating in place where possible.
@@ -331,6 +345,8 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        hideAdvancedSearch,
+        setHideAdvancedSearch,
         addAdvancedFilterGroup,
         clearAdvancedFilterGroups
     }), [
@@ -349,6 +365,8 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        hideAdvancedSearch,
+        setHideAdvancedSearch,
         addAdvancedFilterGroup,
         clearAdvancedFilterGroups
     ])

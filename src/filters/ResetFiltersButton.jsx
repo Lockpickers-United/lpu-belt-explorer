@@ -18,7 +18,7 @@ export default function ResetFiltersButton({
     const {filterCount, clearFilters, clearAdvancedFilterGroups} = useContext(FilterContext)
 
     const handleReset = useCallback(() => {
-        clearFilters()
+        !clearAdvancedFilterGroups && clearFilters()
         clearAdvancedFilterGroups && clearAdvancedFilterGroups()
         closeDrawer && closeDrawer()
     }, [clearAdvancedFilterGroups, clearFilters, closeDrawer])
