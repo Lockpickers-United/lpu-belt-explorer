@@ -1,4 +1,4 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
@@ -6,11 +6,11 @@ import dayjs from 'dayjs'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import {groupSort, groupSortReverse} from './groups'
-import filterEntries from '../filters/filterEntries'
+import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function SafelocksDataProvider({children, allEntries, profile}) {
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, sort, expandAll} = allFilters
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
@@ -33,19 +33,33 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
             }))
     }, [allEntries, profile])
 
-    const visibleEntries = useMemo(() => {
-
-        // Filter the data
-        const filtered = filterEntries(filters, mappedEntries).sort((a, b) => { return a.fuzzy.localeCompare(b.fuzzy)})
-
-        // If there is a search term, fuzzy match that
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
+    const searchEntries = useCallback((entries) => {
+        const exactMatch = search && entries.find(e => e.id === search)
+        if (exactMatch) {
+            return [exactMatch]
+        }
+        return !search
+            ? entries
+            : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-            : filtered
+                .filter(entry => entry.score > 0.30)
+    }, [search])
+
+    const searchedEntries = useMemo(() => {
+            return searchEntries(mappedEntries)
+    },[mappedEntries, searchEntries])
+
+
+    const visibleEntries = useMemo(() => {
+
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: mappedEntries,
+        })
+        const searched = searchEntries([...filtered])
 
         const groupList = ['2', '2M', '1', '1R']
         const tierList = ['Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']
@@ -80,13 +94,14 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
                 }
             })
             : searched
-    }, [filters, mappedEntries, search, sort])
+    }, [advancedFilterGroups, mappedEntries, searchEntries, sort])
 
     const value = useMemo(() => ({
         allEntries,
+        searchedEntries,
         visibleEntries,
         expandAll
-    }), [allEntries, visibleEntries, expandAll])
+    }), [allEntries, searchedEntries, visibleEntries, expandAll])
 
     return (
         <DataContext.Provider value={value}>

@@ -31,9 +31,12 @@ function AdvancedFilterByField({
 
     if (!label || label.length === 0) return null
 
-    const {searchedBeltEntries, visibleEntries, visibleBeltEntries} = useContext(DataContext)
+    const {searchedEntries, searchedBeltEntries, visibleEntries, visibleBeltEntries} = useContext(DataContext)
     const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const {fieldName, groupIndex, matchType, values = []} = group
+
+    const baseEntries = useMemo(() => searchedBeltEntries || searchedEntries || [], [searchedBeltEntries, searchedEntries])
+    const visEntries = useMemo(() => visibleBeltEntries || visibleEntries || [], [visibleBeltEntries, visibleEntries])
 
     let otherFilterGroups = [...advancedFilterGroups()]
     otherFilterGroups.splice(groupIndex, 1)
@@ -44,14 +47,14 @@ function AdvancedFilterByField({
 
     const optionEntries = useMemo(() => {
         if (!active) {
-            return searchedBeltEntries
+            return baseEntries
         } else if (groupIndex === 0 && (!valueIndex || valueIndex === 0)) {
-            return searchedBeltEntries
+            return baseEntries
         } else if ((groupIndex > 0 && (!valueIndex || valueIndex === 0)) || (valueIndex > 0 && operator === 'OR')) {
             // Previous Group Entries
             return filterEntriesAdvanced({
                 advancedFilterGroups: advancedFilterGroups(),
-                entries: searchedBeltEntries,
+                entries: baseEntries,
                 groupIndex: groupIndex - 1,
                 valueIndex: 99
             })
@@ -59,13 +62,13 @@ function AdvancedFilterByField({
             // Previous Value Entries
             return filterEntriesAdvanced({
                 advancedFilterGroups: advancedFilterGroups(),
-                entries: searchedBeltEntries,
+                entries: baseEntries,
                 groupIndex: groupIndex,
                 valueIndex: valueIndex - 1
             })
         }
         return []
-    }, [active, groupIndex, valueIndex, operator, searchedBeltEntries, advancedFilterGroups])
+    }, [active, groupIndex, valueIndex, operator, baseEntries, advancedFilterGroups])
 
     const {options, counts} = useMemo(() => {
         // Build available values for this field from the optionEntries (derived from prior groups/values)
@@ -131,14 +134,14 @@ function AdvancedFilterByField({
                 }]
                 result = filterEntriesAdvanced({
                     advancedFilterGroups: tempGroup,
-                    entries: visibleBeltEntries,
+                    entries: visEntries,
                     groupIndex: 0
                 })
             } else {
                 // For active filters, compute matches by including this option within the current groups up to this point
                 result = filterEntriesAdvanced({
                     advancedFilterGroups: updatedGroups.slice(0, groupIndex + 1),
-                    entries: searchedBeltEntries
+                    entries: baseEntries
                 })
             }
             acc[opt] = Array.isArray(result) ? result.length : 0
@@ -146,7 +149,7 @@ function AdvancedFilterByField({
         }, {})
 
         return {counts, options}
-    }, [optionEntries, context, currentValue, currentValueText, fieldName, sort, advancedFilterGroups, active, groupIndex, operator, values, valueIndex, matchType, visibleBeltEntries, searchedBeltEntries])
+    }, [optionEntries, context, currentValue, currentValueText, fieldName, sort, advancedFilterGroups, active, groupIndex, operator, values, valueIndex, matchType, visEntries, baseEntries])
 
     const otherValues = Array.isArray(values) ? values.filter((_, i) => i !== valueIndex) : []
     let filteredOptions = options

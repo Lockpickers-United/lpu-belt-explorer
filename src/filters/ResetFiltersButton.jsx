@@ -21,6 +21,7 @@ export default function ResetFiltersButton({
         !clearAdvancedFilterGroups && clearFilters()
         clearAdvancedFilterGroups && clearAdvancedFilterGroups()
         closeDrawer && closeDrawer()
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }, [clearAdvancedFilterGroups, clearFilters, closeDrawer])
 
     const buttonVariant = drawer

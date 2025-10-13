@@ -55,14 +55,7 @@ function Entry({entry, expanded, onExpand}) {
         event.preventDefault()
         event.stopPropagation()
         addAdvancedFilterGroup({fieldName, valueToAdd, operator: 'AND'})
-        setTimeout(() => {
-            const element = document.getElementById('advanced-filters')
-            if (element) {
-                element.scrollIntoView({behavior: 'smooth', block: 'center'})
-                element.focus()
-            }
-        }
-        , 100)
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }, [addAdvancedFilterGroup])
 
     useEffect(() => {
@@ -127,7 +120,7 @@ function Entry({entry, expanded, onExpand}) {
                 </div>
                 {entry.lockingMechanisms?.length > 0 &&
                     <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'row'}}>
-                            {entry.lockingMechanisms?.map((lockingMechanism, index) =>
+                            {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
                                 <Box
                                     key={index}
                                     style={{

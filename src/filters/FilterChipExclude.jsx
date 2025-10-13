@@ -35,7 +35,7 @@ export default function FilterChipExclude({filterKey, filterValue, label}) {
         <React.Fragment>
             <Chip
                 label={label
-                    .replace('!', 'NOT ').replace('||', ' OR ').replace('&&', ' AND ')}
+                    .replace('!', 'NOT ').replace('||', ' OR ').replace('@@', ' AND ')}
                 variant='outlined'
                 style={{marginRight: 4, marginBottom: 4, backgroundColor: bgColor}}
                 onDelete={handleOpen}

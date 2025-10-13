@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
@@ -9,16 +9,17 @@ import removeAccents from 'remove-accents'
 import collectionStatsById from '../data/collectionStatsById.json'
 import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
-import filterEntries from '../filters/filterEntries'
+import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function DataProvider({children, allEntries, profile}) {
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
-
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, tab, sort, expandAll} = allFilters
     const {data, loading, error} = useData({urls})
     const lockbazzarIds = useMemo(() => {
         return data && !loading && !error ? data.lockbazzarEntryIds : []
     }, [data, error, loading])
+
+    const [searchCutoff, setSearchCutoff] = useState(0.30) // eslint-disable-line no-unused-vars
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
@@ -67,8 +68,8 @@ export function DataProvider({children, allEntries, profile}) {
                     ...result.obj,
                     score: result.score
                 }))
-                .filter(entry => entry.score > 0.23)
-    }, [search])
+                .filter(entry => entry.score > searchCutoff)
+    }, [search, searchCutoff])
 
     const searchedBeltEntries = useMemo(() => {
         if (tab === 'search' || !tab) {
@@ -80,7 +81,10 @@ export function DataProvider({children, allEntries, profile}) {
 
     const visibleEntries = useMemo(() => {
         // Filter the data
-        const filtered = filterEntries(filters, mappedEntries)
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: mappedEntries,
+        })
         const searched = searchEntries([...filtered])
 
         return sort
@@ -108,19 +112,11 @@ export function DataProvider({children, allEntries, profile}) {
                 }
             })
             : searched
-    }, [filters, mappedEntries, searchEntries, sort])
+    }, [advancedFilterGroups, mappedEntries, searchEntries, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
-
-    const mappedBeltEntries = useMemo(() => {
-        if (tab === 'search' || !tab) {
-            return mappedEntries
-        } else {
-            return mappedEntries.filter(entry => entry.simpleBelt === tab)
-        }
-    }, [tab, mappedEntries])
 
     const visibleBeltEntries = useMemo(() => {
         if (tab === 'search' || !tab) {
@@ -143,14 +139,26 @@ export function DataProvider({children, allEntries, profile}) {
         mappedEntries,
         searchedBeltEntries,
         visibleEntries,
-        mappedBeltEntries,
         visibleBeltEntries,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
-        lockbazzarAvailable
-    }), [allEntries, mappedEntries, searchedBeltEntries, visibleEntries, mappedBeltEntries, visibleBeltEntries, getEntryFromId, expandAll, profile, blackBeltUser, lockbazzarAvailable])
+        lockbazzarAvailable,
+        searchCutoff,
+        setSearchCutoff
+    }), [allEntries,
+        mappedEntries,
+        searchedBeltEntries,
+        visibleEntries,
+        visibleBeltEntries,
+        getEntryFromId,
+        expandAll,
+        profile,
+        blackBeltUser,
+        lockbazzarAvailable,
+        searchCutoff,
+        setSearchCutoff])
 
     return (
         <DataContext.Provider value={value}>

@@ -1,13 +1,13 @@
 import React, {useCallback, useContext, useDeferredValue, useState} from 'react'
 import DataContext from '../context/DataContext'
-import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import NoEntriesCard from '../locks/NoEntriesCard'
 import SafelockEntry from './SafelockEntry.jsx'
 import FilterContext from '../context/FilterContext'
 import ExportButton from '../locks/ExportButton.jsx'
 import Footer from '../nav/Footer.jsx'
+import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
-function SafelocksEntries({profile}) {
+function SafelocksEntries() {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
@@ -27,9 +27,9 @@ function SafelocksEntries({profile}) {
     return (
         <div style={{margin: 8, paddingBottom: 32}}>
 
-            <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
+            <AdvancedFilters/>
 
-            {visibleEntries.length === 0 && <NoEntriesCard label='Dials'/>}
+            {visibleEntries.length === 0 && <NoEntriesCard label='Safe Locks'/>}
 
             {visibleEntries.map(entry =>
                 <SafelockEntry

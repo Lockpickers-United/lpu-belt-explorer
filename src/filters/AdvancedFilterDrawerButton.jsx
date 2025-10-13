@@ -34,7 +34,7 @@ function AdvancedFilterDrawerButton() {
         setAdvancedFilterGroups
     } = useContext(FilterContext)
     const {tab} = useContext(LockListContext)
-    const {visibleBeltEntries = []} = useContext(DataContext)
+    const {visibleEntries = [], visibleBeltEntries} = useContext(DataContext)
     const {belt} = filters
 
     const filterList = useMemo(() => {
@@ -157,7 +157,7 @@ function AdvancedFilterDrawerButton() {
                                 fontWeight: 400,
                                 fontSize: '1.0rem',
                                 marginLeft: 8
-                            }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})
+                            }}>({(visibleBeltEntries || visibleEntries).length || 0} Lock{(visibleBeltEntries || visibleEntries).length !== 1 && 's'})
                             </div>
                             <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
                                 {!showAdvancedSearch

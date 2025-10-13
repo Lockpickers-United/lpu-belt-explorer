@@ -23,7 +23,7 @@ export default function AdvancedFilters() {
         removeFilters,
         clearFilters
     } = useContext(FilterContext)
-    const {visibleBeltEntries = []} = useContext(DataContext)
+    const {visibleEntries = [], visibleBeltEntries} = useContext(DataContext)
 
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -131,7 +131,7 @@ export default function AdvancedFilters() {
                                         fontWeight: 400,
                                         fontSize: '1.0rem',
                                         marginLeft: 8
-                                    }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})
+                                    }}>({(visibleBeltEntries || visibleEntries || []).length || 0} Lock{(visibleBeltEntries || visibleEntries || []).length !== 1 && 's'})
                                     </div>
                                 </div>
                                 <FilterScopeToggle style={{margin: '16px 0px 0px 0px'}}/>

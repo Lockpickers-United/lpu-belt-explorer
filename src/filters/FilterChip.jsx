@@ -12,7 +12,7 @@ import Box from '@mui/material/Box'
 function FilterChip({field, value, label = value, mode, clickable = true, ...props}) {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
-    const {filters, addFilter} = useContext(FilterContext)
+    const {addAdvancedFilterGroup} = useContext(FilterContext)
 
     const handleClose = useCallback(event => {
         event.preventDefault()
@@ -24,11 +24,9 @@ function FilterChip({field, value, label = value, mode, clickable = true, ...pro
         event.preventDefault()
         event.stopPropagation()
         setOpen(false)
-        if (!filters[field]?.includes(value)) {
-            addFilter(field, value)
-        }
+        addAdvancedFilterGroup({fieldName: field, valueToAdd: value, operator: 'AND'})
         window.scrollTo({top: 0, behavior: 'smooth'})
-    }, [addFilter, field, filters, value])
+    }, [addAdvancedFilterGroup, field, value])
 
     const handleOpen = useCallback(event => {
         event.preventDefault()

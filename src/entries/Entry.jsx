@@ -108,7 +108,7 @@ function Entry({entry, expanded, onExpand}) {
                         <FieldValue
                             value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                    {entry.lockingMechanisms?.map((lockingMechanism, index) =>
+                                    {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
                                         <FilterChip
                                             key={index}
                                             value={lockingMechanism}
