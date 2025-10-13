@@ -1,2 +1,0 @@
-import{r as s,M as i,j as e,K as c,I as l}from"./index-DVl-BZC5.js";import{C as p}from"./ContentCopy-CE3WZfjV.js";function d({entry:a}){const r=s.useCallback(async()=>{const n=a.makeModels.map(({make:t,model:o})=>t&&t!==o?`${t} ${o}`:o).join(`
-`);await navigator.clipboard.writeText(n),i("Make/Model text copied to clipboard.")},[a.makeModels]);return e.jsx(c,{title:"Copy Make/Model Text",arrow:!0,disableFocusListener:!0,children:e.jsx(l,{onClick:r,children:e.jsx(p,{})})})}export{d as C};
