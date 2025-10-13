@@ -114,7 +114,7 @@ export default function AdvancedFilters() {
     return (
         <Collapse in={transitionIn} unmountOnExit>
             {renderContent &&
-                <Card style={{...style, paddingBottom: 0, paddingTop: 16}}>
+                <Card style={{...style, paddingBottom: 0, paddingTop: 16}} id='advanced-filters'>
                     <CardContent style={{
                         paddingTop: 0,
                         paddingLeft: paddingLeft,

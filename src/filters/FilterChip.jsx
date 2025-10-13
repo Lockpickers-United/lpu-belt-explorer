@@ -7,8 +7,9 @@ import {useNavigate} from 'react-router-dom'
 import FilterContext from '../context/FilterContext'
 import glossary from '../data/glossary.json'
 import Link from '@mui/material/Link'
+import Box from '@mui/material/Box'
 
-function FilterChip({field, value, label = value, mode, clickable=true, ...props}) {
+function FilterChip({field, value, label = value, mode, clickable = true, ...props}) {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const {filters, addFilter} = useContext(FilterContext)
@@ -81,13 +82,38 @@ function FilterChip({field, value, label = value, mode, clickable=true, ...props
                     variant='outlined'
                     label={label}
                     style={{marginRight: 4, marginBottom: 4}}
-                    onClick={clickable ? handleFilter : ()=>{}}
+                    onClick={clickable ? handleFilter : () => {
+                    }}
                     {...props}
                 />
             }
+            {(mode === 'div') &&
+                <Box
+                    style={{
+                        display: 'inline-block',
+                        color: '#fff',
+                        fontSize: '0.85rem',
+                        border: '1px solid #666',
+                        borderRadius: 16,
+                        padding: '2px 10px',
+                        cursor: 'pointer',
+                        marginRight: 4,
+                        marginBottom: 4
+                    }}
+                    sx={{
+                        '&:hover': {
+                            backgroundColor: '#333'
+                        }
+                    }}
+                    onClick={handleFilter}
+                    {...props}
+                >
+                    {label}
+                </Box>
+            }
             {(mode === 'text') &&
                 <Link
-                    style={{color:'#fff'}}
+                    style={{color: '#fff'}}
                     onClick={handleFilter}
                     {...props}
                 >

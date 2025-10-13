@@ -83,7 +83,7 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedGroups([])
     }, [filters, setFilters])
 
-    const nonFilters = useMemo(()=> [
+    const nonFilters = useMemo(() => [
         'id',
         'name',
         'search',
@@ -95,8 +95,8 @@ export function FilterProvider({children, filterFields = []}) {
         'preview',
         'single',
         'expandAll',
-        'dataset',
-    ],[])
+        'dataset'
+    ], [])
 
     const filterCount = useMemo(() => {
         const keys = Array.from(searchParams.keys())
@@ -167,7 +167,9 @@ export function FilterProvider({children, filterFields = []}) {
         Object.entries(filters || {}).forEach(([key, val]) => {
             if (nonFilters.includes(key)) {
                 if (Array.isArray(val)) {
-                    val.forEach(v => { if (v !== undefined && v !== null && String(v).length) sp.append(key, v) })
+                    val.forEach(v => {
+                        if (v !== undefined && v !== null && String(v).length) sp.append(key, v)
+                    })
                 } else if (val !== undefined && val !== null && String(val).length) {
                     sp.set(key, String(val))
                 }
@@ -194,11 +196,54 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(sp, {replace: true})
     }, [filters, nonFilters, setSearchParams])
 
+    const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
+
+    const addAdvancedFilterGroup = useCallback(({fieldName, valueToAdd, operator, matchType}) => {
+        if (!fieldName || !valueToAdd) return
+        setShowAdvancedSearch(true)
+        const groups = [...advancedFilterGroups().filter(group => group.fieldName.length > 0)]
+
+        const existingIndex = groups.findIndex(g => g.fieldName === fieldName && Array.isArray(g.values) && g.values.length > 0)
+        if (existingIndex >= 0) {
+            const existing = groups[existingIndex]
+            if (existing.values.includes(valueToAdd)) return
+            if (operator?.toUpperCase() === 'OR') {
+                existing.operator = 'OR'
+                groups[existingIndex] = {
+                    ...existing,
+                    values: [...existing.values, valueToAdd]
+                }
+            } else if (operator?.toUpperCase() === 'AND') {
+                existing.operator = 'AND'
+                groups[existingIndex] = {
+                    ...existing,
+                    values: [...existing.values, valueToAdd]
+                }
+            } else {
+                groups[existingIndex] = {
+                    ...existing,
+                    values: [valueToAdd]
+                }
+            }
+            setAdvancedFilterGroups(groups)
+            return
+        }
+
+        const newGroup = {
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName,
+            matchType: matchType?.toUpperCase() === 'IS NOT' ? 'Is Not' : 'Is',
+            operator: 'OR',
+            values: [valueToAdd]
+        }
+        setAdvancedFilterGroups([...groups, newGroup])
+    }, [advancedFilterGroups, setAdvancedFilterGroups, setShowAdvancedSearch])
+
     const clearAdvancedFilterGroups = useCallback(() => {
         setAdvancedGroups([])
         skipEmptySyncRef.current = false
         setShowAdvancedSearch(false)
-    },[])
+    }, [])
 
     // Keep advancedGroups in sync with URL filters so AdvancedFilters reflects external changes
     // Preserve the original group order by updating in place where possible.
@@ -221,7 +266,10 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedGroups(prev => {
             // If there was no prior state, initialize from parsed (assign _id's)
             if (!prev || prev.length === 0) {
-                return parsed.map(g => g._id ? g : ({...g, _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`}))
+                return parsed.map(g => g._id ? g : ({
+                    ...g,
+                    _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
+                }))
             }
 
             // Build a queue of parsed groups by fieldName so we can consume them in order
@@ -262,8 +310,6 @@ export function FilterProvider({children, filterFields = []}) {
         })
     }, [filters, nonFilters, parseFiltersToGroups])
 
-    const [showAdvancedSearch, setShowAdvancedSearch] = useState(false)
-
     const value = useMemo(() => ({
         filters,
         filterCount,
@@ -285,6 +331,7 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        addAdvancedFilterGroup,
         clearAdvancedFilterGroups
     }), [
         addFilter,
@@ -302,6 +349,7 @@ export function FilterProvider({children, filterFields = []}) {
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        addAdvancedFilterGroup,
         clearAdvancedFilterGroups
     ])
 

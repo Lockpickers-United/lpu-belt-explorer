@@ -1,6 +1,6 @@
 import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
-import Entry from '../entries/Entry'
+import EntrySimple from '../entries/EntrySimple'
 import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
@@ -60,7 +60,7 @@ function Entries({advancedEnabled = false}) {
                 {compact
                     ? <CompactEntries entries={entries}/>
                     : entries.map((entry) =>
-                        <Entry
+                        <EntrySimple
                             key={entry.id}
                             entry={entry}
                             //expanded={entry.id === entryExpanded}
