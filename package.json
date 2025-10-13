@@ -44,7 +44,7 @@
     "moment-timezone": "^0.6.0",
     "node-fetch": "^3.3.2",
     "node-fetch-cookies": "^2.1.1",
-    "nodemailer": "^7.0.3",
+    "nodemailer": "^7.0.9",
     "pino": "^9.11.0",
     "pino-http": "^10.5.0",
     "pino-pretty": "^13.1.1",
