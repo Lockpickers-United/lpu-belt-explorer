@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import Tooltip from '@mui/material/Tooltip'
@@ -111,6 +111,17 @@ function AdvancedFilterDrawerButton() {
     const {width} = useWindowSize()
     const smallWidth = width <= 500
 
+    const [renderContent, setRenderContent] = useState(false)
+    useEffect(() => {
+        if (open) setRenderContent(true)
+        else {
+            const timeout = setTimeout(() => {
+                setRenderContent(false)
+            }, 300)
+            return () => clearTimeout(timeout)
+        }
+    }, [open])
+
     return (
         <React.Fragment>
             <Tooltip title='Filter' arrow disableFocusListener>
@@ -137,7 +148,7 @@ function AdvancedFilterDrawerButton() {
                     }
                 }}
             >
-                {open &&
+                {renderContent &&
                     <React.Fragment>
                         <div style={{display: 'flex', alignItems: 'center', margin: '8px 8px 12px 8px', height: 38}}
                              onClick={closeDrawer}>

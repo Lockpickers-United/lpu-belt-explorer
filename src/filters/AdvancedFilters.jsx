@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import AdvancedFilterField from './AdvancedFilterField.jsx'
@@ -88,15 +88,49 @@ export default function AdvancedFilters() {
     const paddingLeft = isMobile ? 8 : 16
     const resetMarginTop = isMobile ? 2 : 0
 
-    return (
-        <React.Fragment>
-            <Collapse in={showAdvancedSearch || filterCount > 0} unmountOnExit={true}>
-                <Card style={{...style, paddingBottom: 0, paddingTop: 16}}>
-                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft, paddingRight: paddingLeft, alignItems: 'top'}}>
+    const [transitionIn, setTransitionIn] = useState(false)
+    useEffect(() => {
+        if (showAdvancedSearch || filterCount > 0) {
+            const timeout = setTimeout(() => {
+                setTransitionIn(true)
+            }, 0)
+            return () => clearTimeout(timeout)
+        } else {
+            setTransitionIn(false)
+        }
+    }, [showAdvancedSearch, filterCount])
 
-                        <div style={{display: 'flex', alignItems: 'top', marginBottom:16}}>
-                            <div style={{display: 'flex', flexDirection:'column', alignItems: 'top'}}>
-                                <div style={{display: 'flex', marginRight: 36, marginBottom:0, alignItems: 'center'}}>
+    const [renderContent, setRenderContent] = useState(false)
+    useEffect(() => {
+        if (showAdvancedSearch || filterCount > 0) setRenderContent(true)
+        else {
+            const timeout = setTimeout(() => {
+                setRenderContent(false)
+            }, 300)
+            return () => clearTimeout(timeout)
+        }
+    }, [showAdvancedSearch, filterCount])
+
+    return (
+        <Collapse in={transitionIn} unmountOnExit>
+
+            {renderContent &&
+
+                <Card style={{...style, paddingBottom: 0, paddingTop: 16}}>
+                    <CardContent style={{
+                        paddingTop: 0,
+                        paddingLeft: paddingLeft,
+                        paddingRight: paddingLeft,
+                        alignItems: 'top'
+                    }}>
+                        <div style={{display: 'flex', alignItems: 'top', marginBottom: 16}}>
+                            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'top'}}>
+                                <div style={{
+                                    display: 'flex',
+                                    marginRight: 36,
+                                    marginBottom: 0,
+                                    alignItems: 'center'
+                                }}>
                                     <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Advanced Filters</div>
                                     <div style={{
                                         fontWeight: 400,
@@ -107,7 +141,12 @@ export default function AdvancedFilters() {
                                 </div>
                                 <FilterScopeToggle style={{margin: '16px 0px 0px 0px'}}/>
                             </div>
-                            <div style={{flexGrow: 1, textAlign: 'right', alignItems: 'top', marginTop:resetMarginTop}}>
+                            <div style={{
+                                flexGrow: 1,
+                                textAlign: 'right',
+                                alignItems: 'top',
+                                marginTop: resetMarginTop
+                            }}>
                                 <ResetFiltersButton alwaysShow/>
                             </div>
                         </div>
@@ -135,8 +174,7 @@ export default function AdvancedFilters() {
 
                     </CardContent>
                 </Card>
-            </Collapse>
-        </React.Fragment>
-
+            }
+        </Collapse>
     )
 }
