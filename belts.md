@@ -350,7 +350,8 @@ together again.
 - For locks that cannot be gutted -- e.g. Master Lock #410 LOTO -- video documentation of gutting a different lock will be accepted.
 - You can document the reassembly skill with a different lock and even in a separate video, you do not have to reassemble in the same take.
 - The lock you reassemble doesn't have to be the same lock you gutted.
-- Reassembly evidence is only required once for Green Belt, and is not required for further submissions.
+- Reassembly evidence is only required once for Green Belt, and is not required for further submissions. 
+- Please, please be sure to read the **[video submission guidelines](/#/info?id=video-requirements)** before submitting your video.
 
 Check out the KOD [guide to making pick and gut videos](https://youtu.be/gcekRz-7If8) if you not familiar with the
 process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvhb0Meo) and please avoid the YouTube "Shorts" format.
@@ -527,6 +528,7 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 **Picking Evidence Format**
 
 - Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
+- Please, please be sure to read the **[video submission guidelines](/#/info?id=video-requirements)** before submitting your video.
 
 **Blue Belt Project Requirements** (Updated February 2025)
 
@@ -1447,6 +1449,7 @@ Q: **Are there any more goals to work towards after achieving black belt?**
 For submissions, please follow these guidelines:
 - The lock and all components must remain within the frame and clearly visible throughout the video.
 - Videos must consist of a pick and gut in a single take. Length is unimportant - do not remove sections to make the video "cleaner."
+- Your video should include a clear close-up of the pins from the lock, if the lock can be gutted.
 - Videos must be in an easily reviewable format. Standard YouTube (not Shorts) videos are preferred. If another format/host is used please ensure it does not require downloading the video or other accommodations to view.
 - Video elements such as obscuring graphics, speed adjustments, quick zooms (which can look like cuts), etc. during the pick and gut may result in the invalidation of the submission. While these may be added to a video for social media, please submit the raw footage for belt purposes.
   - If you have any concerns about zooms or lighting changes being misconstrued as cuts, consider placing a timer in view of the camera to provide evidence the pick and gut is continuous.
