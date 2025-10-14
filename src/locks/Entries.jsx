@@ -12,7 +12,7 @@ import ExportButton from './ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
-import AdvancedFilters from '../filters/./AdvancedFilters.jsx'
+import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
 function Entries({advancedEnabled = false}) {
     const {tab} = useContext(LockListContext)

@@ -19,7 +19,7 @@ export function DataProvider({children, allEntries, profile}) {
         return data && !loading && !error ? data.lockbazzarEntryIds : []
     }, [data, error, loading])
 
-    const [searchCutoff, setSearchCutoff] = useState(0.30) // eslint-disable-line no-unused-vars
+    const [searchCutoff, setSearchCutoff] = useState(0.30)
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
@@ -56,7 +56,7 @@ export function DataProvider({children, allEntries, profile}) {
             }))
     }, [allEntries, profile])
 
-    const searchEntries = useCallback((entries) => {
+    const searchEntriesForText = useCallback((entries) => {
         const exactMatch = search && entries.find(e => e.id === search)
         if (exactMatch) {
             return [exactMatch]
@@ -73,11 +73,11 @@ export function DataProvider({children, allEntries, profile}) {
 
     const searchedBeltEntries = useMemo(() => {
         if (tab === 'search' || !tab) {
-            return searchEntries(mappedEntries)
+            return searchEntriesForText(mappedEntries)
         } else {
-            return searchEntries(mappedEntries).filter(entry => entry.simpleBelt === tab)
+            return searchEntriesForText(mappedEntries).filter(entry => entry.simpleBelt === tab)
         }
-    },[mappedEntries, searchEntries, tab])
+    },[mappedEntries, searchEntriesForText, tab])
 
     const visibleEntries = useMemo(() => {
         // Filter the data
@@ -85,7 +85,7 @@ export function DataProvider({children, allEntries, profile}) {
             advancedFilterGroups: advancedFilterGroups(),
             entries: mappedEntries,
         })
-        const searched = searchEntries([...filtered])
+        const searched = searchEntriesForText([...filtered])
 
         return sort
             ? searched.sort((a, b) => {
@@ -112,7 +112,7 @@ export function DataProvider({children, allEntries, profile}) {
                 }
             })
             : searched
-    }, [advancedFilterGroups, mappedEntries, searchEntries, sort])
+    }, [advancedFilterGroups, mappedEntries, searchEntriesForText, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
