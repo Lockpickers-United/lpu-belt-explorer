@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback, useContext, useEffect} from 'react'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
@@ -11,9 +11,34 @@ import rehypeExternalLinks from 'rehype-external-links'
 import introMd from '../resources/intro.md?raw'
 import infoMd from '../resources/info.md?raw'
 import changelogMd from '../resources/changelog.md?raw'
+import FilterContext from '../context/FilterContext.jsx'
+import {useNavigate} from 'react-router-dom'
 
 function InfoPage() {
     const updateTime = '09/25/2025'
+
+    const navigate = useNavigate()
+    const {filters} = useContext(FilterContext)
+    const sectionId = filters?.id
+
+    const handleClick = useCallback(id => {
+        navigate(`/info?id=${id}`)
+    }, [navigate])
+
+    const scrollIntoView = (id) => {
+        const domElement = document.getElementById(id)
+        window.scrollTo({
+            left: 0,
+            top: domElement.offsetTop - 75,
+            behavior: 'smooth'
+        })
+    }
+
+    useEffect(() => {
+        if (sectionId && document.getElementById(sectionId)) {
+            scrollIntoView(sectionId)
+        }
+    },[sectionId])
 
     const MarkdownRenderer = ({content}) => {
         return (
@@ -54,21 +79,12 @@ function InfoPage() {
     const toc = sections.map(section => {
         const id = section.toLowerCase().replace(/ /g, '-')
         return (
-            <li key={id}>
-                <Link onClick={() => scrollIntoView(id)}
-                       style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>{section}</Link>
+            <li key={id} style={{marginTop: 2}}>
+                <Link onClick={() => handleClick(id)}
+                       style={{color: '#fff', textDecorationColor: '#aaa', cursor: 'pointer', fontWeight:600}}>{section}</Link>
             </li>
         )
     })
-
-    const scrollIntoView = (id) => {
-        const domElement = document.getElementById(id)
-        window.scrollTo({
-            left: 0,
-            top: domElement.offsetTop - 75,
-            behavior: 'smooth'
-        })
-    }
 
     return (
         <React.Fragment>
@@ -85,7 +101,7 @@ function InfoPage() {
                 }/>
                 <CardContent>
 
-                    <h2>Table of Contents</h2>
+                    <div style={{fontSize:'1.4rem', fontWeight: 700}}>Table of Contents</div>
                     <ul>{toc}</ul>
 
                     <MarkdownRenderer content={markdown}/>

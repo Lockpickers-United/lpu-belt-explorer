@@ -9,6 +9,7 @@ Transitionary phase in your mastery. You are leaving the relative calm and predi
 **Picking Evidence Format**
 
 - Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock.
+- Please, please be sure to read the **[video submission guidelines](/#/info?id=video-requirements)** before submitting your video.
 
 **Blue Belt Project Requirements** (Updated February 2025)
 
