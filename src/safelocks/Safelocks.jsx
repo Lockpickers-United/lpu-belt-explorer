@@ -6,7 +6,7 @@ import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import DataContext from '../context/DataContext.jsx'
-import {dialFilterFields} from '../data/filterFields'
+import {dialSortFields} from '../data/sortFields'
 
 export default function Safelocks() {
     const {isMobile} = useWindowSize()
@@ -15,7 +15,7 @@ export default function Safelocks() {
     const extras = (
         <React.Fragment>
             <SearchBox label='Safe Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false} entryCount={visibleEntries.length}/>
-            <ViewFilterButtons sortValues={dialFilterFields} advancedEnabled={true}
+            <ViewFilterButtons sortValues={dialSortFields} advancedEnabled={true}
                                compactMode={true} resetAll={true} expandAll={true}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
