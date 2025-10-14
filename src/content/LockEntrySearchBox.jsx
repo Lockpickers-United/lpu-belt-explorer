@@ -50,7 +50,7 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
             return {label: lock.lockName, id: lock.id, belt: allEntries.find(entry => entry.id === lock.id).belt}
         })
 
-    const handleChange = useCallback((event, value) => {
+    const handleChange = useCallback((_event, value) => {
         if (!value) {
             handleChangeLock({})
         } else {

@@ -206,7 +206,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                             value={entryName}
                             options={entryValues}
                             style={{maxWidth: 400, marginBottom: 10, marginTop: 5}}
-                            onInputChange={(event, newInputValue) => {
+                            onInputChange={(_event, newInputValue) => {
                                 if (entryValues.includes(newInputValue)) {
                                     setEntryName(newInputValue)
                                 } else {

@@ -30,7 +30,13 @@ module.exports = {
         'react/prop-types': 'off',
         'no-unused-vars': [
             'warn', {
-                'ignoreRestSiblings': true
+                'ignoreRestSiblings': true,
+                'args': 'all',
+                'argsIgnorePattern': '^_',
+                'varsIgnorePattern': '^_',
+                'destructuredArrayIgnorePattern': '^_',
+                'caughtErrors': 'all',
+                'caughtErrorsIgnorePattern': '^_'
             }
         ],
         'react-hooks/exhaustive-deps': 'warn',

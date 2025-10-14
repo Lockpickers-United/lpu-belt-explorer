@@ -34,7 +34,7 @@ function AuthDiscordRoute() {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 })
-            } catch (error) {
+            } catch (_error) {
                 setSyncException('token_failed')
                 return
             }
@@ -63,7 +63,7 @@ function AuthDiscordRoute() {
                 resp = await fetch('https://discord.com/api/users/@me', {
                     headers: {authorization: `${type} ${token}`}
                 })
-            } catch (error) {
+            } catch (_error) {
                 setSyncException('data_failed')
                 return
             }

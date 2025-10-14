@@ -20,7 +20,7 @@ function AutoCompleteBox({name, changeHandler, options, style, disabled = false,
         </Button>
         : null
 
-    const handleChange = useCallback((event, value) => {
+    const handleChange = useCallback((_event, value) => {
         if (options.includes(value)) {
             changeHandler({target: {name: name, value: value}})
         } else {
@@ -28,7 +28,7 @@ function AutoCompleteBox({name, changeHandler, options, style, disabled = false,
         }
     }, [options, changeHandler, name])
 
-    const handleInputChange = (event, newInputValue) => {
+    const handleInputChange = (_event, newInputValue) => {
         !!inputValueHandler && inputValueHandler(newInputValue)
         setInputValue(newInputValue) // Update input value
     }

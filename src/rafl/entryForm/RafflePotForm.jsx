@@ -59,7 +59,7 @@ export default function RafflePotForm({questionStyle, index, potData, handlePotC
         setPotDetails(tempPotDetails)
     }, [potDetails])
 
-    const handlePotChoiceChange = useCallback((event, value) => {
+    const handlePotChoiceChange = useCallback((_event, value) => {
         let item
         if (options.includes(value)) {
             item = {

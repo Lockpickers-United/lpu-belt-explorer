@@ -25,7 +25,7 @@ function BeltStripe({value = 'Unranked'}) {
         const stripeCount = +stripeValue
         if (stripeCount > 1) {
             return Array(stripeCount).fill(0)
-                .map((value, index) =>
+                .map((_value, index) =>
                     <span key={index} style={{
                         width: 8,
                         height: 2,

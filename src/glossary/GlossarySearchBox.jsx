@@ -15,7 +15,7 @@ function GlossarySearchBox() {
     const navigate = useNavigate()
     const inputEl = useRef()
 
-    const handleChange = useCallback((event, value) => {
+    const handleChange = useCallback((_event, value) => {
         if (!value) {
             navigate('/glossary')
         } else if (glossaryTerms.includes(value)) {

@@ -28,7 +28,7 @@ function BeltStripeMini({value = 'Unranked', style = {}}) {
         const stripeCount = +stripeValue
         if (stripeCount > 1) {
             return Array(stripeCount).fill(0)
-                .map((beltColor, index) =>
+                .map((_beltColor, index) =>
                     <div key={index} style={{
                         width: 4,
                         height: 2,

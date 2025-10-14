@@ -42,7 +42,7 @@ const RaffleStatsCharityTable = ({tableWidth, nameLength}) => {
     })
     const tableData = {columns: columns, data: mappedRows}
 
-    const linkFunction = useCallback((id, string) => {
+    const linkFunction = useCallback((_id, string) => {
         return string
     }, [])
 
