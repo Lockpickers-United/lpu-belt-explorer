@@ -38,25 +38,25 @@ function StatsMainPage({data}) {
             fontSize: '1.5rem'
         }}>
 
-            <div style={firstHeaderStyle}>Site Stats</div>
+            <div style={firstHeaderStyle} role='heading' aria-label='Site Stats'>Site Stats</div>
             <SiteStats data={data}/>
 
-            <div style={headerStyle}>Weekly Lock Views</div>
+            <div style={headerStyle} role='heading'>Weekly Lock Views</div>
             <LockViewsLine data={data.siteFullNew}/>
 
-            <div style={headerStyle}>Photo Stats</div>
+            <div style={headerStyle} role='heading'>Photo Stats</div>
             <PhotoStats data={data}/>
 
-            <div style={headerStyle}>Belt Distribution</div>
+            <div style={headerStyle} role='heading'>Belt Distribution</div>
             <BeltDistribution data={data}/>
 
-            <div style={headerStyle}>Brand Lock Distribution</div>
+            <div style={headerStyle} role='heading'>Brand Lock Distribution</div>
             <BrandDistribution data={data}/>
 
-            <div style={headerStyle}>Locking Mechanisms By Belt</div>
+            <div style={headerStyle} role='heading'>Locking Mechanisms By Belt</div>
             <LockingMechanismsByBelt data={data}/>
 
-            <div style={headerStyle}>
+            <div style={headerStyle} role='heading'>
                 Discord & Reddit Belt Distribution
             </div>
             <div style={{display: flexStyle, marginTop: 0, justifyItems: 'center', backgroundColor: '#000'}}>
@@ -64,20 +64,20 @@ function StatsMainPage({data}) {
                 <PlatformBeltCountsChart data={data}/>
             </div>
 
-            <div style={headerStyle}>Reddit Belts Over Time</div>
+            <div style={headerStyle} role='heading'>Reddit Belts Over Time</div>
             <RedditBeltGrowth data={data}/>
 
-            <div style={headerStyle}>Collection Stats</div>
+            <div style={headerStyle} role='heading'>Collection Stats</div>
             <CollectionStatsBar data={data} lockCollection={lockCollection} userText={'You'}
                                 collectionBarHeight={collectionBarHeight}/>
 
-            <div style={headerStyle}>Collections Top Locks</div>
+            <div style={headerStyle} role='heading'>Collections Top Locks</div>
             <CollectionTopLocks data={data}/>
 
-            <div style={headerStyle}>Hourly Traffic</div>
+            <div style={headerStyle} role='heading'>Hourly Traffic</div>
             <HourlyRequestsLine data={data}/>
 
-            <div style={headerStyle}>Visits by Platform & Browser</div>
+            <div style={headerStyle} role='heading'>Visits by Platform & Browser</div>
             <TrafficStats data={data}/>
 
         </div>

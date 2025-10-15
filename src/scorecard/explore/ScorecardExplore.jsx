@@ -23,17 +23,17 @@ export default function ScorecardExplore({data}) {
             fontSize: '1.5rem', fontWeight: 600
         }}>
 
-            <div style={firstHeaderStyle}>
+            <div style={firstHeaderStyle} role='heading' aria-label='User Belt Flows'>
                 User Belt Flows
                 <div style={{fontSize: '0.9rem', fontWeight: 400}}>Discord users since Nov. 2019</div>
             </div>
             <BeltFlowSankey/>
 
-            <div style={headerStyle}>User Drilldown</div>
+            <div style={headerStyle} role='heading' aria-label='User Drilldown'>User Drilldown</div>
             <UserCohorts data={data}/>
 
 
-            <div style={headerStyle}>Scorecard Locks</div>
+            <div style={headerStyle} role='heading'>Scorecard Locks</div>
             <ScorecardLocks data={data}/>
 
         </div>

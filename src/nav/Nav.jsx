@@ -53,7 +53,7 @@ function Nav({extras, extrasTwo, title}) {
                                 paddingLeft: 8,
                                 paddingRight: 16,
                                 marginTop: 6
-                            }}>
+                            }} role='heading' aria-label={title}>
                                 {(!isFiltered || !smallWidth) &&
                                     <React.Fragment>
                                         {menuItem && !isRootPath
@@ -61,7 +61,7 @@ function Nav({extras, extrasTwo, title}) {
                                             <Link onClick={handleClickTitle} style={{whiteSpace: 'nowrap'}} sx={linkSx}>
                                                 {title}
                                             </Link>
-                                            : <nobr>{title}</nobr>
+                                            : <div style={{whiteSpace: 'nowrap'}}>{title}</div>
                                         }
                                     </React.Fragment>
                                 }

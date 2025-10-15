@@ -33,14 +33,17 @@ import LogEntryButton from './LogEntryButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
+import entryName from './entryName'
 
-function Entry({entry, expanded, onExpand}) {
+function EntrySimple({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
     const {addAdvancedFilterGroup} = useContext(FilterContext)
     const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
+
+    const lockName = entryName(entry, 'short', {includeVersion: true})
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
         .sort((a, b) => {
@@ -99,7 +102,7 @@ function Entry({entry, expanded, onExpand}) {
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon/>} role='listitem' aria-label={lockName}>
                 <BeltStripe value={entry.belt}/>
                 <div style={{margin: '6px 0px 8px 12px', width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
                     <div style={{
@@ -281,7 +284,7 @@ function Entry({entry, expanded, onExpand}) {
     )
 }
 
-export default React.memo(Entry, (prevProps, nextProps) => {
+export default React.memo(EntrySimple, (prevProps, nextProps) => {
     return prevProps.entry.id === nextProps.entry.id &&
         prevProps.expanded === nextProps.expanded &&
         prevProps.onExpand === nextProps.onExpand

@@ -57,19 +57,20 @@ function Entries({advancedEnabled = false}) {
 
                 {entries.length === 0 && <NoEntriesCard label='Locks' isSearch={isSearch}/>}
 
-                {compact
-                    ? <CompactEntries entries={entries}/>
-                    : entries.map((entry) =>
-                        <EntrySimple
-                            key={entry.id}
-                            entry={entry}
-                            //expanded={entry.id === entryExpanded}
-                            expanded={entry.id === entryExpanded || !!expandAll}
-                            onExpand={setEntryExpanded}
-                        />
-                    )
-                }
-
+                <div aria-label='Locks' role='list'>
+                    {compact
+                        ? <CompactEntries entries={entries}/>
+                        : entries.map((entry) =>
+                            <EntrySimple
+                                key={entry.id}
+                                entry={entry}
+                                //expanded={entry.id === entryExpanded}
+                                expanded={entry.id === entryExpanded || !!expandAll}
+                                onExpand={setEntryExpanded}
+                            />
+                        )
+                    }
+                </div>
             </div>
             <Footer extras={footer} before={footerBefore}/>
         </React.Fragment>
