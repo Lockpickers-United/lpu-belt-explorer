@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import AdvancedFilterField from './AdvancedFilterField.jsx'
@@ -11,6 +11,8 @@ import queryString from 'query-string'
 import {useLocation} from 'react-router-dom'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
 import ResetFiltersButton from './ResetFiltersButton.jsx'
+import AppContext from '../app/AppContext.jsx'
+import AuthContext from '../app/AuthContext.jsx'
 
 export default function AdvancedFilters() {
     const {
@@ -19,11 +21,14 @@ export default function AdvancedFilters() {
         showAdvancedSearch,
         setShowAdvancedSearch,
         hideAdvancedSearch,
+        filterFields,
         filterCount,
         removeFilters,
         clearFilters
     } = useContext(FilterContext)
     const {visibleEntries = [], visibleBeltEntries} = useContext(DataContext)
+    const {beta} = useContext(AppContext)
+    const {isLoggedIn} = useContext(AuthContext)
 
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -34,6 +39,13 @@ export default function AdvancedFilters() {
         }
     }, [removeFilters, searchParams.preview, setShowAdvancedSearch])
 
+    const visibleFilterGroups = useMemo(() => advancedFilterGroups()
+        .filter(group => {
+            const filterField = filterFields.find(f => f.fieldName === group.fieldName)
+            return (!filterField?.beta || beta) && (!filterField?.userBased || isLoggedIn)
+        })
+    , [advancedFilterGroups, beta, filterFields, isLoggedIn])
+    
     const addFilter = useCallback(() => {
         const next = [...advancedFilterGroups(), {
             _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -148,7 +160,7 @@ export default function AdvancedFilters() {
 
                         <div
                             style={{display: 'flex', flexDirection: 'column'}}>
-                            {advancedFilterGroups().map((group, index) => (
+                            {visibleFilterGroups.map((group, index) => (
                                 <AdvancedFilterField
                                     key={group._id || index}
                                     group={{...group, groupIndex: index, groupId: group._id}}

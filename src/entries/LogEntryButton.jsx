@@ -9,12 +9,13 @@ import DBContext from '../app/DBContext.jsx'
 export default function LogEntryButton({entry}) {
 
     const {adminRole} = useContext(DBContext)
-    if (!adminRole) return null
 
     const handleClick = useCallback(async () => {
         const name =  entryName(entry)
         jsonIt(name, entry)
     }, [entry])
+
+    if (!adminRole) return null
 
     return (
         <Tooltip title='Log Entry Details' arrow disableFocusListener>
