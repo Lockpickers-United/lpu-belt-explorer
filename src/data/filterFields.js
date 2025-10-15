@@ -12,6 +12,7 @@ export const lockFilterFields = [
     {label: 'Belt', fieldName: 'filterBelts', sort: beltSort},
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content'},
+    {label: 'Photographer', fieldName: 'photographers', beta: true},
     {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
 ]
 

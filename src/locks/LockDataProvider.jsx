@@ -10,6 +10,7 @@ import collectionStatsById from '../data/collectionStatsById.json'
 import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
+import {setDeepUnique} from '../util/setDeep'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
@@ -24,7 +25,15 @@ export function DataProvider({children, allEntries, profile}) {
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
         return allEntries
-            .map(entry => ({
+            .map(entry => {
+                const photographers = entry.media?.reduce((acc, m) => {
+                    if (m && m.title && m.title?.includes('By:')) {
+                        setDeepUnique(acc, ['names'], m.title.replace('By: ', '').trim())
+                    }
+                    return acc
+                },[])
+
+                return {
                 ...entry,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 fuzzy: removeAccents(
@@ -52,8 +61,10 @@ export function DataProvider({children, allEntries, profile}) {
                 collectionSaves: collectionStatsById[entry.id] || 0,
                 simpleBelt: entry.belt.replace(/\s\d/g, ''),
                 filterBelts: entry.belt.startsWith('Black') ? ['Black', entry.belt]  : [entry.belt],
-                personalNotes: userNotes[entry.id]
-            }))
+                personalNotes: userNotes[entry.id],
+                photographers: photographers?.names
+            }
+            })
     }, [allEntries, profile])
 
     const searchEntriesForText = useCallback((entries) => {
