@@ -44,7 +44,6 @@ function GlossaryEntry({entry, highlighted}) {
 
         const handleClick = useCallback(async event => {
             event.preventDefault()
-
             await navigator.clipboard.writeText(href)
             enqueueSnackbar('Link copied to clipboard.')
         }, [href])
@@ -59,7 +58,7 @@ function GlossaryEntry({entry, highlighted}) {
         }
 
         return (
-            <a style={style} onClick={handleClick} href={href}>
+            <a aria-label={term} role='term' style={style} onClick={handleClick} href={href}>
                 {term}
             </a>
         )

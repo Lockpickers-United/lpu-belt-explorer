@@ -32,7 +32,12 @@
     "copyData": "node ./scripts/copyData.js",
     "copyFiles": "node ./scripts/copyFiles.js",
     "ci-pr": "yarn lint && yarn build",
-    "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles"
+    "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "e2e": "playwright test",
+    "e2e:headed": "playwright test --headed"
   },
   "engines": {
     "node": "22"
@@ -84,8 +89,14 @@
     "validator": "^13.12.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/react": "^18.2.21",
     "@vitejs/plugin-react": "^4.4.1",
+    "@vitest/ui": "3.2.4",
     "csv-parse": "^5.5.0",
     "entities": "^4.5.0",
     "eslint": "^8.49.0",
@@ -94,9 +105,12 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "firebase-admin": "^11.11.1",
     "husky": "^9.1.7",
+    "jsdom": "^25.0.1",
+    "msw": "^2.6.6",
     "node-fetch": "^3.3.2",
     "rollup-plugin-visualizer": "^5.14.0",
     "uuid": "^9.0.1",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
   }
 }
