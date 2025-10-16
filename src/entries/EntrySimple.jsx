@@ -163,7 +163,7 @@ function EntrySimple({entry, expanded, onExpand}) {
                                         fontSize: '1rem',
                                         lineHeight: 1.25,
                                         fontWeight: 500
-                                    }}>
+                                    }} role='heading' aria-level={2} aria-label={`${entry.belt} Belt`}>
                                         {entry.belt}
                                         <DanPoints belt={entry.belt}/>
                                     </Typography>

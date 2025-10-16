@@ -56,6 +56,11 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+
+                MenuListProps={{
+                    'aria-label': 'View and Sort Options'
+                }}
+
             >
                 <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>SORT BY</div>
                 {sortValues.map(({label, value}) =>
