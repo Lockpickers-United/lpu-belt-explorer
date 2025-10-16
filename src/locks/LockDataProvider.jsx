@@ -44,10 +44,7 @@ export function DataProvider({children, allEntries, profile}) {
                     media: newMedia,
                     makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                     fuzzy: removeAccents(
-                        entry.makeModels
-                            .map(({make, model}) => [make, model])
-                            .flat()
-                            .filter(a => a)
+                        [entryName(entry, 'long')]
                             .concat([
                                 entry.version,
                                 entry.notes,
@@ -80,12 +77,12 @@ export function DataProvider({children, allEntries, profile}) {
             return [exactMatch]
         }
 
-        const regex = /^\((.*)\)$/.exec(search)
+        const regex = /^\/(.*)\/$/.exec(search)
         if (regex && isValidRegex(regex[1])) {
             return entries.reduce((acc, entry) => {
                 if (entryName(entry, 'long').match(new RegExp(regex[1], 'i'))) acc.push(entry)
                 return acc
-            },[])
+            }, [])
         }
 
         return !search
