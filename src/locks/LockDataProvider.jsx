@@ -11,6 +11,7 @@ import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import {setDeepUnique} from '../util/setDeep'
+import {isValidRegex} from '../util/stringUtils'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
@@ -77,6 +78,15 @@ export function DataProvider({children, allEntries, profile}) {
         if (exactMatch) {
             return [exactMatch]
         }
+
+        const regex = /^\((.*)\)$/.exec(search)
+        if (regex && isValidRegex(regex[1])) {
+            return entries.reduce((acc, entry) => {
+                if (entry.fuzzy.match(new RegExp(regex[1], 'i'))) acc.push(entry)
+                return acc
+            },[])
+        }
+
         return !search
             ? entries
             : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})

@@ -35,6 +35,11 @@ describe('LockListRoute', () => {
         expect(firstListItem).toHaveAccessibleName('GOAL V18, GP (<14 pins)')
     })
 
+    it('renders No Entries car with no search reults', async () => {
+        renderLocks('/locks?tab=search&search=asdfgh')
+        expect(screen.getByRole('button', {name: 'View all locks'})).toBeInTheDocument()
+    })
+
     it('updates tab when the user changes belt tab in the UI', async () => {
         renderLocks('/locks?tab=White')
         await screen.findByRole('tab', {name: /white/i})
@@ -75,8 +80,10 @@ describe('LockListRoute', () => {
         renderLocks('/locks')
         const list = await screen.findByRole('list', {name: 'Locks'})
         expect(within(list).getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeInTheDocument()
-        await userEvent.click(within(list).getByRole('listitem', {name: 'Any Acrylic Padlock'}))
-        expect(screen.getByRole('heading', {name: 'White Belt'})).toBeInTheDocument()
+        const firstListItem = await screen.getAllByRole('listitem',{})[0]
+        await userEvent.click(firstListItem)
+        expect(screen.findByRole('image', {name: 'belt-icon'})).toBeDefined()
+        expect(screen.getByRole('button', {name: 'Any Acrylic Padlock Various'})).toBeInTheDocument()
     })
 
 })

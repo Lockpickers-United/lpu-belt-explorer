@@ -73,7 +73,7 @@ function EntrySimple({entry, expanded, onExpand}) {
             setTimeout(() => {
                 window.scrollTo({
                     left: 0,
-                    top: ref.current.offsetTop - offset,
+                    top: ref?.current?.offsetTop - offset,
                     behavior: isIdFiltered ? 'auto' : 'smooth'
                 })
             }, isIdFiltered ? 0 : 100)
@@ -101,8 +101,8 @@ function EntrySimple({entry, expanded, onExpand}) {
     // TODO - don't bring in FilterChip, just render here. Fix add filter for new style.
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>} role='listitem' aria-label={lockName}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} role='listitem' aria-label={lockName}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={entry.belt}/>
                 <div style={{margin: '6px 0px 8px 12px', width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
                     <div style={{

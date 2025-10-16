@@ -36,8 +36,11 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
-    "e2e": "playwright test",
-    "e2e:headed": "playwright test --headed"
+    "e2e": "clear; playwright test",
+    "e2e:headed": "playwright test --headed",
+    "e2e:report": "playwright show-report",
+    "codegen": "npx playwright codegen http://localhost:3000/",
+    "allure": "allure generate allure-results -o allure-report --clean; allure open allure-report"
   },
   "engines": {
     "node": "22"
@@ -97,6 +100,8 @@
     "@types/react": "^18.2.21",
     "@vitejs/plugin-react": "^4.4.1",
     "@vitest/ui": "3.2.4",
+    "@wdio/allure-reporter": "^9.20.0",
+    "allure-playwright": "^3.4.1",
     "csv-parse": "^5.5.0",
     "entities": "^4.5.0",
     "eslint": "^8.49.0",

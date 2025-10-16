@@ -4,6 +4,7 @@ export default defineConfig({
     testDir: 'tests/e2e',
     outputDir: 'tests-results',
     timeout: 60_000,
+    reporter: [['list', { printSteps: true }], ['html', { open: 'never' }], ['allure-playwright']],
     use: {
         baseURL: 'http://localhost:5173',
         trace: 'on-first-retry'
