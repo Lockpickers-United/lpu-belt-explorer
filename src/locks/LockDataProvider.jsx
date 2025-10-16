@@ -12,6 +12,7 @@ import {lockbazzarEntryIds} from '../data/dataUrls'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import {setDeepUnique} from '../util/setDeep'
 import {isValidRegex} from '../util/stringUtils'
+import entryName from '../entries/entryName'
 
 export function DataProvider({children, allEntries, profile}) {
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
@@ -82,7 +83,7 @@ export function DataProvider({children, allEntries, profile}) {
         const regex = /^\((.*)\)$/.exec(search)
         if (regex && isValidRegex(regex[1])) {
             return entries.reduce((acc, entry) => {
-                if (entry.fuzzy.match(new RegExp(regex[1], 'i'))) acc.push(entry)
+                if (entryName(entry, 'long').match(new RegExp(regex[1], 'i'))) acc.push(entry)
                 return acc
             },[])
         }
