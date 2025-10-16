@@ -31,7 +31,7 @@ export function DataProvider({children, allEntries, profile}) {
                     if (m && m.title && m.title?.includes('By:')) {
                         setDeepUnique(photographers, [''], m.title.replace('By: ', '').trim())
                     }
-                    if (entry.belt === 'Unranked' && m.thumbnailUrl && m.thumbnailUrl.includes('flickr.com')) {
+                    if (m?.thumbnailUrl?.includes('flickr.com')) {
                         m.thumbnailUrl = m.thumbnailUrl.replace('_w_d.jpg', '_w.jpg')
                     }
                     return m
