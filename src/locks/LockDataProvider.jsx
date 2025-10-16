@@ -24,46 +24,51 @@ export function DataProvider({children, allEntries, profile}) {
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
+        let photographers = []
         return allEntries
             .map(entry => {
-                const photographers = entry.media?.reduce((acc, m) => {
+                const newMedia = entry.media?.map(m => {
                     if (m && m.title && m.title?.includes('By:')) {
-                        setDeepUnique(acc, ['names'], m.title.replace('By: ', '').trim())
+                        setDeepUnique(photographers, [''], m.title.replace('By: ', '').trim())
                     }
-                    return acc
-                },[])
+                    if (entry.belt === 'Unranked' && m.thumbnailUrl && m.thumbnailUrl.includes('flickr.com')) {
+                        m.thumbnailUrl = m.thumbnailUrl.replace('_w_d.jpg', '_w.jpg')
+                    }
+                    return m
+                })
 
                 return {
-                ...entry,
-                makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
-                fuzzy: removeAccents(
-                    entry.makeModels
-                        .map(({make, model}) => [make, model])
-                        .flat()
-                        .filter(a => a)
-                        .concat([
-                            entry.version,
-                            entry.notes,
-                            entry.belt
-                        ])
-                        .join(',')
-                ),
-                content: [
-                    entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
-                    entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
-                    entry.links?.length > 0 ? 'Has Links' : 'No Links',
-                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
-                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
-                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
-                    userNotes[entry.id] ? 'Has Personal Notes' : undefined
-                ].flat().filter(x => x),
-                collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
-                collectionSaves: collectionStatsById[entry.id] || 0,
-                simpleBelt: entry.belt.replace(/\s\d/g, ''),
-                filterBelts: entry.belt.startsWith('Black') ? ['Black', entry.belt]  : [entry.belt],
-                personalNotes: userNotes[entry.id],
-                photographers: photographers?.names
-            }
+                    ...entry,
+                    media: newMedia,
+                    makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
+                    fuzzy: removeAccents(
+                        entry.makeModels
+                            .map(({make, model}) => [make, model])
+                            .flat()
+                            .filter(a => a)
+                            .concat([
+                                entry.version,
+                                entry.notes,
+                                entry.belt
+                            ])
+                            .join(',')
+                    ),
+                    content: [
+                        entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
+                        entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
+                        entry.links?.length > 0 ? 'Has Links' : 'No Links',
+                        belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
+                        dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
+                        entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
+                        userNotes[entry.id] ? 'Has Personal Notes' : undefined
+                    ].flat().filter(x => x),
+                    collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
+                    collectionSaves: collectionStatsById[entry.id] || 0,
+                    simpleBelt: entry.belt.replace(/\s\d/g, ''),
+                    filterBelts: entry.belt.startsWith('Black') ? ['Black', entry.belt] : [entry.belt],
+                    personalNotes: userNotes[entry.id],
+                    photographers: photographers?.names
+                }
             })
     }, [allEntries, profile])
 
@@ -88,13 +93,13 @@ export function DataProvider({children, allEntries, profile}) {
         } else {
             return searchEntriesForText(mappedEntries).filter(entry => entry.simpleBelt === tab)
         }
-    },[mappedEntries, searchEntriesForText, tab])
+    }, [mappedEntries, searchEntriesForText, tab])
 
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntriesAdvanced({
             advancedFilterGroups: advancedFilterGroups(),
-            entries: mappedEntries,
+            entries: mappedEntries
         })
         const searched = searchEntriesForText([...filtered])
 
