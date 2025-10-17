@@ -42,3 +42,4 @@ src/data/data.json
 src/data/lockStats.json
 /allure-report
 /allure-results
+/playwright-report

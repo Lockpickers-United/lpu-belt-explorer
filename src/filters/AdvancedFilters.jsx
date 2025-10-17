@@ -45,7 +45,7 @@ export default function AdvancedFilters() {
             return (!filterField?.beta || beta) && (!filterField?.userBased || isLoggedIn)
         })
     , [advancedFilterGroups, beta, filterFields, isLoggedIn])
-    
+
     const addFilter = useCallback(() => {
         const next = [...advancedFilterGroups(), {
             _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -138,7 +138,7 @@ export default function AdvancedFilters() {
                                     marginBottom: 0,
                                     alignItems: 'center'
                                 }}>
-                                    <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Advanced Filters</div>
+                                    <div style={{fontWeight: 600, fontSize: '1.3rem'}}>Filters</div>
                                     <div style={{
                                         fontWeight: 400,
                                         fontSize: '1.0rem',

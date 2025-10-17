@@ -1,9 +1,5 @@
 import {test, expect} from '@playwright/test'
 
-const re = /\/locks(.*/
-const valid = re.test('/locks?tab=search&search=v18')
-console.log(valid)
-
 test('user can view Locks Route', async ({page}) => {
     await page.goto('/')
     await expect(page.getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeVisible()

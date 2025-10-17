@@ -6,8 +6,6 @@ import collectionOptions from '../data/collectionTypes'
 import allEntries from '../data/data.json'
 import {lockFilterFields} from '../data/filterFields'
 import {lockSortFields} from '../data/sortFields'
-import FilterButton from '../filters/FilterButton'
-import SortButton from '../filters/SortButton'
 import {DataProvider} from '../locks/LockDataProvider'
 import {FilterProvider} from '../context/FilterContext'
 import {LockListProvider} from '../locks/LockListContext'
@@ -23,6 +21,7 @@ import ProfileNotFound from './ProfileNotFound'
 import ProfilePage from './ProfilePage'
 import AuthContext from '../app/AuthContext.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
+import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
@@ -59,9 +58,8 @@ function ProfileRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox label='Collection'/>
-            <FilterButton/>
-            <SortButton sortValues={lockSortFields}/>
-
+            <ViewFilterButtons sortValues={lockSortFields} advancedEnabled={true}
+                               compactMode={false} resetAll={true} expandAll={false}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ToggleCompactButton/>
         </React.Fragment>
