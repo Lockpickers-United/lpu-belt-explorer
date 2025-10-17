@@ -5,34 +5,50 @@ import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
 import filterEntries from '../filters/filterEntries'
 import RaffleContext from './RaffleContext.jsx'
+import filterEntriesAdvanced from '../filters/filterEntriesAdvanced.js'
 
 export function RaffleDataProvider({children, allEntries = []}) {
     const {summary} = useContext(RaffleContext)
-    const {filters: allFilters} = useContext(FilterContext)
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters
 
-    const scoreThreshold = 0.3
+    const searchCutoff = 0.3
 
-    const visibleEntries = useMemo(() => {
-        if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
+    const searchEntriesForText = useCallback((entries) => {
+        const exactMatch = search && entries.find(e => e.id === search)
+        if (exactMatch) {
+            return [exactMatch]
+        }
 
-// Filter the data
-        const filtered = filterEntries(filters, allEntries).sort((a, b) => {
-            return a.potNumber - b.potNumber
-        })
-
-        // If there is a search term, fuzzy match that
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
+        return !search
+            ? entries
+            : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-                .filter(result => result.score > scoreThreshold)
-            : filtered
+                .filter(entry => entry.score > searchCutoff)
+    }, [search, searchCutoff])
+
+    const searchedEntries = useMemo(() => {
+            return searchEntriesForText(allEntries)
+    }, [allEntries, searchEntriesForText])
+
+
+    const visibleEntries = useMemo(() => {
+        if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
+
+        // Filter the data
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: allEntries
+        }).sort((a, b) => {
+            return a.potNumber - b.potNumber
+        })
+        const searched = searchEntriesForText([...filtered])
 
         return sort
-            ? searched.sort((a, b) => {
+            ? filtered.sort((a, b) => {
                 if (sort === 'potName') {
                     return a.title.localeCompare(b.title)
                 } else if (sort === 'contributedBy') {
@@ -52,7 +68,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
                     || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
                     || a.title.localeCompare(b.title)
             })
-    }, [allEntries, filters, search, sort, summary])
+    }, [advancedFilterGroups, allEntries, searchEntriesForText, sort, summary])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
@@ -60,10 +76,11 @@ export function RaffleDataProvider({children, allEntries = []}) {
 
     const value = useMemo(() => ({
         allEntries,
+        searchedEntries,
         visibleEntries,
         getPotFromId,
         expandAll
-    }), [allEntries, visibleEntries, getPotFromId, expandAll])
+    }), [allEntries, searchedEntries, visibleEntries, getPotFromId, expandAll])
 
     return (
         <DataContext.Provider value={value}>

@@ -2,6 +2,7 @@ import React from 'react'
 import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import {lockSortFields} from '../data/sortFields.js'
 
 export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
 
@@ -21,7 +22,10 @@ export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
             </div>
             {!!sortValues &&
                 <div style={{margin: '12px 20px 0px 20px'}}>
-                    <ViewFilterButtons sortValues={sortValues} expandAll={true}/>
+                    <ViewFilterButtons sortValues={sortValues} advancedEnabled={true}
+                                       extraFilters={[{key: 'tab', value: 'search'}]}
+                                       compactMode={false} resetAll={true} expandAll={true}/>
+
                 </div>
             }
         </div>
