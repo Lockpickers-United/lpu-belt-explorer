@@ -4,9 +4,7 @@ import DBContext from '../app/DBContext'
 import AuthContext from '../app/AuthContext.jsx'
 import Tracker from '../app/Tracker'
 import {dialFilterFields} from '../data/filterFields'
-import {lockSortFields} from '../data/sortFields'
-import FilterButton from '../filters/FilterButton'
-import SortButton from '../filters/SortButton'
+import {dialSortFields} from '../data/sortFields'
 import {FilterProvider} from '../context/FilterContext'
 import {LockListProvider} from '../locks/LockListContext'
 import Footer from '../nav/Footer'
@@ -23,8 +21,9 @@ import allEntries from '../data/safelocks.json'
 import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
+import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 
-function ProfileRoute() {
+function SafelocksCollectionRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {getProfile, lockCollection} = useContext(DBContext)
@@ -59,8 +58,8 @@ function ProfileRoute() {
     const nav = (
         <React.Fragment>
             <SearchBox label='Collection'/>
-            <FilterButton/>
-            <SortButton sortValues={lockSortFields}/>
+            <ViewFilterButtons sortValues={dialSortFields} advancedEnabled={true}
+                               compactMode={false} resetAll={true} expandAll={false}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>
     )
@@ -85,7 +84,7 @@ function ProfileRoute() {
                         <Nav title={title} extras={nav}/>
 
                         <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
-                        
+
                         {loading && <LoadingDisplay/>}
 
                         {!loading && data && !error && entries.length > 0 &&
@@ -104,4 +103,4 @@ function ProfileRoute() {
     )
 }
 
-export default ProfileRoute
+export default SafelocksCollectionRoute

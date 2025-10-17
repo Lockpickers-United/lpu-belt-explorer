@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import AdvancedFilterField from './AdvancedFilterField.jsx'
@@ -11,6 +11,8 @@ import queryString from 'query-string'
 import {useLocation} from 'react-router-dom'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
 import ResetFiltersButton from './ResetFiltersButton.jsx'
+import AppContext from '../app/AppContext.jsx'
+import AuthContext from '../app/AuthContext.jsx'
 
 export default function AdvancedFilters() {
     const {
@@ -18,11 +20,15 @@ export default function AdvancedFilters() {
         setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        hideAdvancedSearch,
+        filterFields,
         filterCount,
         removeFilters,
         clearFilters
     } = useContext(FilterContext)
-    const {visibleBeltEntries = []} = useContext(DataContext)
+    const {visibleEntries = [], visibleBeltEntries} = useContext(DataContext)
+    const {beta} = useContext(AppContext)
+    const {isLoggedIn} = useContext(AuthContext)
 
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -32,6 +38,13 @@ export default function AdvancedFilters() {
             removeFilters(['preview'])
         }
     }, [removeFilters, searchParams.preview, setShowAdvancedSearch])
+
+    const visibleFilterGroups = useMemo(() => advancedFilterGroups()
+        .filter(group => {
+            const filterField = filterFields.find(f => f.fieldName === group.fieldName)
+            return (!filterField?.beta || beta) && (!filterField?.userBased || isLoggedIn)
+        })
+    , [advancedFilterGroups, beta, filterFields, isLoggedIn])
 
     const addFilter = useCallback(() => {
         const next = [...advancedFilterGroups(), {
@@ -68,7 +81,7 @@ export default function AdvancedFilters() {
     }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     useEffect(() => {
-        if (advancedFilterGroups().length === 0) {
+        if (advancedFilterGroups().length === 0 && !hideAdvancedSearch) {
             setAdvancedFilterGroups([{
                 _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
                 fieldName: '',
@@ -78,7 +91,7 @@ export default function AdvancedFilters() {
             }])
         }
         if (filterCount > 0) setShowAdvancedSearch(true)
-    }, [advancedFilterGroups, filterCount, setAdvancedFilterGroups, setShowAdvancedSearch])
+    }, [advancedFilterGroups, filterCount, hideAdvancedSearch, setAdvancedFilterGroups, setShowAdvancedSearch])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -88,33 +101,66 @@ export default function AdvancedFilters() {
     const paddingLeft = isMobile ? 8 : 16
     const resetMarginTop = isMobile ? 2 : 0
 
-    return (
-        <React.Fragment>
-            <Collapse in={showAdvancedSearch || filterCount > 0} unmountOnExit={true}>
-                <Card style={{...style, paddingBottom: 8, paddingTop: 16}}>
-                    <CardContent style={{paddingTop: 0, paddingLeft: paddingLeft, alignItems: 'top'}}>
+    const [transitionIn, setTransitionIn] = useState(false)
+    useEffect(() => {
+        if (hideAdvancedSearch) setTransitionIn(false)
+        else if (showAdvancedSearch || filterCount > 0) {
+                setTransitionIn(true)
+        }
+    }, [showAdvancedSearch, filterCount, hideAdvancedSearch])
 
-                        <div style={{display: 'flex', alignItems: 'top', marginBottom:16}}>
-                            <div style={{display: 'flex', flexDirection:'column', alignItems: 'top'}}>
-                                <div style={{display: 'flex', marginRight: 36, marginBottom:0, alignItems: 'center'}}>
-                                    <div style={{fontWeight: 700, fontSize: '1.3rem'}}>Advanced Filters</div>
+    const [renderContent, setRenderContent] = useState(false)
+    useEffect(() => {
+        if (showAdvancedSearch || filterCount > 0) setRenderContent(true)
+        else {
+            const timeout = setTimeout(() => {
+                setRenderContent(false)
+            }, 300)
+            return () => clearTimeout(timeout)
+        }
+    }, [showAdvancedSearch, filterCount])
+
+    return (
+        <Collapse in={transitionIn} unmountOnExit>
+            {renderContent &&
+                <Card style={{...style, paddingBottom: 0, paddingTop: 16}} id='advanced-filters'>
+                    <CardContent style={{
+                        paddingTop: 0,
+                        paddingLeft: paddingLeft,
+                        paddingRight: paddingLeft,
+                        alignItems: 'top'
+                    }}>
+                        <div style={{display: 'flex', alignItems: 'top', marginBottom: 16}}>
+                            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'top'}}>
+                                <div style={{
+                                    display: 'flex',
+                                    marginRight: 36,
+                                    marginBottom: 0,
+                                    alignItems: 'center'
+                                }}>
+                                    <div style={{fontWeight: 600, fontSize: '1.3rem'}}>Filters</div>
                                     <div style={{
                                         fontWeight: 400,
                                         fontSize: '1.0rem',
                                         marginLeft: 8
-                                    }}>({visibleBeltEntries?.length || 0} Lock{visibleBeltEntries?.length !== 1 && 's'})
+                                    }}>({(visibleBeltEntries || visibleEntries || []).length || 0} Lock{(visibleBeltEntries || visibleEntries || []).length !== 1 && 's'})
                                     </div>
                                 </div>
                                 <FilterScopeToggle style={{margin: '16px 0px 0px 0px'}}/>
                             </div>
-                            <div style={{flexGrow: 1, textAlign: 'right', alignItems: 'top', marginTop:resetMarginTop}}>
+                            <div style={{
+                                flexGrow: 1,
+                                textAlign: 'right',
+                                alignItems: 'top',
+                                marginTop: resetMarginTop
+                            }}>
                                 <ResetFiltersButton alwaysShow/>
                             </div>
                         </div>
 
                         <div
                             style={{display: 'flex', flexDirection: 'column'}}>
-                            {advancedFilterGroups().map((group, index) => (
+                            {visibleFilterGroups.map((group, index) => (
                                 <AdvancedFilterField
                                     key={group._id || index}
                                     group={{...group, groupIndex: index, groupId: group._id}}
@@ -125,7 +171,7 @@ export default function AdvancedFilters() {
                             ))}
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 16}}>
+                        <div style={{display: 'flex', justifyContent: 'center', marginTop: 2}}>
                             <Button onClick={handleClearAll} variant='contained' size='small'
                                     style={{backgroundColor: '#444', marginRight: 16}}>
                                 Clear</Button>
@@ -135,8 +181,7 @@ export default function AdvancedFilters() {
 
                     </CardContent>
                 </Card>
-            </Collapse>
-        </React.Fragment>
-
+            }
+        </Collapse>
     )
 }

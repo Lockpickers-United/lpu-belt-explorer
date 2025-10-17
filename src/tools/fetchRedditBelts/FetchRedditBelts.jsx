@@ -44,7 +44,7 @@ const FetchRedditBelts = ({data, refresh}) => {
                 console.error('Error fetching reddit belts:', error)
                 setUploadError(cleanError(error))
             }
-        } catch (error) {
+        } catch (_error) {
             console.error('Error fetching reddit belts:', uploadError)
         } finally {
             setUploading(false)

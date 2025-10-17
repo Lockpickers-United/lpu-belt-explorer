@@ -35,7 +35,7 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
 
     const {options, itemIds, itemTitles} = itemMap
 
-    const handleChange = useCallback((event, value) => {
+    const handleChange = useCallback((_event, value) => {
         if (!value) {
             setItemDetails({})
         } else if (options.includes(value)) {

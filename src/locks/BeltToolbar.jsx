@@ -35,7 +35,7 @@ function BeltToolbar() {
         setTab(uniqueBelts[key - 1])
     })
 
-    const handleTabClick = useCallback((event, value) => setTab(value), [setTab])
+    const handleTabClick = useCallback((_event, value) => setTab(value), [setTab])
 
     const handleClick = useCallback(value => () => {
         if (tab === value) {

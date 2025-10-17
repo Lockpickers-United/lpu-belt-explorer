@@ -29,7 +29,7 @@ export default async function postVoteUpdate_deprecated({ newVote, user }) {
                 console.log('errorData', errorData)
                 errorMessage = errorData.message || errorMessage
                 enqueueSnackbar(`Error updating votes: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
-            } catch (e) {
+            } catch (_e) {
                 // Fallback in case parsing fails
             }
             return { response: { data: { status: response.status, message: errorMessage } } }

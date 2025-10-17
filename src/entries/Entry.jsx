@@ -29,6 +29,7 @@ import OpenLinkToEntryButton from './OpenLinkToEntryButton.jsx'
 import OpenLinkToLockbazaarButton from './OpenLinkToLockbazaarButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 import EntryNotes from './EntryNotes'
+import LogEntryButton from './LogEntryButton.jsx'
 
 function Entry({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
@@ -107,7 +108,7 @@ function Entry({entry, expanded, onExpand}) {
                         <FieldValue
                             value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                    {entry.lockingMechanisms?.map((lockingMechanism, index) =>
+                                    {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
                                         <FilterChip
                                             key={index}
                                             value={lockingMechanism}
@@ -239,6 +240,7 @@ function Entry({entry, expanded, onExpand}) {
                                 }
                                 <CopyEntryIdButton entry={entry}/>
                                 <OpenLinkToEntryButton entry={entry}/>
+                                <LogEntryButton entry={entry}/>
                             </div>
                             <div style={{display: 'flex'}}>
                                 <CopyEntryTextButton entry={entry}/>

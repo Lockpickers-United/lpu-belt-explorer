@@ -52,7 +52,7 @@ function FilterDisplay() {
                 {filterValues.map(({key, value: filter}, index) => {
                         const bgColor = filter.startsWith('!') ? '#642c2c' : 'inherit'
                         const chipLabel = cleanChipLabel(filterFieldsByFieldName[key]?.label, filter)
-                            .replace('!', 'NOT ').replace('||', ' OR ').replace('&&', ' AND ')
+                            .replace('!', 'NOT ').replace('||', ' OR ').replace('@@', ' AND ')
                         return <Chip
                             key={index}
                             label={chipLabel}

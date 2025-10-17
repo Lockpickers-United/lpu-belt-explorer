@@ -3,12 +3,13 @@ import {getAuth} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 
 export const {VITE_DEV_FIRESTORE: devFirestore} = import.meta.env
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY
 
 // Firebase configuration
 let firebaseConfig
 
 firebaseConfig = {
-    apiKey: 'AIzaSyDGGErdOp0lpzUumA60xJO7BlQr027y9Vo',
+    apiKey: apiKey,
     authDomain: 'lpu-belt-explorer.firebaseapp.com',
     projectId: 'lpu-belt-explorer',
     storageBucket: 'lpu-belt-explorer.appspot.com',

@@ -8,6 +8,7 @@ import AdvancedFilterValues from './AdvancedFilterValues'
 import AuthContext from '../app/AuthContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 import {Collapse} from '@mui/material'
+import ChoiceButtonGroupAdvanced from '../util/ChoiceButtonGroupAdvanced.jsx'
 
 export default function AdvancedFilterField({group = {}, onChange}) {
     const {isLoggedIn} = useContext(AuthContext)
@@ -32,10 +33,18 @@ export default function AdvancedFilterField({group = {}, onChange}) {
         setTimeout(() => document.activeElement.blur())
     }, [onChange])
 
-    const handleMatchType = useCallback((event) => {
-        onChange && onChange({matchType: event.target.value})
-        setTimeout(() => document.activeElement.blur())
+    const matchOptions = useMemo(() => {
+        return [
+            {label: 'Is', value: 'Is'},
+            {label: 'Not', value: 'Is Not', backgroundColor: '#733030'}
+        ]
+    }, [])
+
+    const handleMatchType = useCallback((selected) => {
+        const nextOp = selected?.value || selected?.label || 'Is'
+        onChange && onChange({matchType: nextOp})
     }, [onChange])
+
 
     const [visible, setVisible] = useState(false)
     useEffect(() => {
@@ -46,7 +55,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
         <Collapse in={visible || fieldName.length > 0} unmountOnExit>
             <div style={{display: 'flex', flexWrap: 'wrap', margin: '0px 0 12px 0', alignItems: 'flex-start'}}>
                 <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 0}}>
-                    <FormControl style={{width: 200, marginRight: 16, marginTop: 8}} size='small'>
+                    <FormControl style={{width: 200, marginRight: 0, marginTop: 8}} size='small'>
                         <InputLabel color='info'>Filter</InputLabel>
                         <Select
                             value={filterField}
@@ -60,18 +69,17 @@ export default function AdvancedFilterField({group = {}, onChange}) {
                             ))}
                         </Select>
                     </FormControl>
-                    <FormControl style={{width: 90, marginRight: 16, marginTop: 8}} size='small'>
-                        <Select
-                            value={matchType}
+
+                    <div style={{display:'flex', alignItems: 'center'}}>
+                        <ChoiceButtonGroupAdvanced
+                            options={matchOptions}
+                            defaultValue={matchType}
                             onChange={handleMatchType}
-                            color='info'
-                            name='matchType'
-                            style={{backgroundColor: matchType === 'Is Not' ? '#642c2c' : undefined}}
-                        >
-                            <MenuItem value={'Is'}>Is</MenuItem>
-                            <MenuItem value={'Is Not'}>Is Not</MenuItem>
-                        </Select>
-                    </FormControl>
+                            small={false}
+                            rounded
+                            style={{height:40, margin: '8px 12px 8px 12px', borderRadius: 4}}
+                        /><br/>
+                    </div>
                 </div>
 
                 <div style={{display: 'flex', alignItems: 'flex-start', marginTop: 8}}>

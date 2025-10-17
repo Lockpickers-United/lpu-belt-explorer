@@ -1,12 +1,27 @@
-import React, {useState, useContext, useDeferredValue} from 'react'
+import React, {useState, useContext, useDeferredValue, useEffect} from 'react'
 import SafelockEntry from '../safelocks/SafelockEntry.jsx'
-import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import DataContext from '../context/DataContext'
+import AdvancedFilters from '../filters/AdvancedFilters.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
-function SafelocksCollectionPage({profile}) {
+function SafelocksCollectionPage() {
     const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
+    const {setAdvancedFilterGroups, advancedFilterGroups} = useContext(FilterContext)
+
+    const [initialRender, setInitialRender] = useState(true)
+    useEffect(() => {
+        const newGroup = {
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: 'collection',
+            matchType: 'Is',
+            operator: 'OR',
+            values: ['Any']
+        }
+        if (initialRender && advancedFilterGroups().length === 0 ) setAdvancedFilterGroups([newGroup])
+        setInitialRender(false)
+    }, [advancedFilterGroups, initialRender, setAdvancedFilterGroups])
 
     return (
         <React.Fragment>
@@ -15,7 +30,7 @@ function SafelocksCollectionPage({profile}) {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 0
             }}>
 
-                <InlineFilterDisplay profile={profile} collectionType={'safelocks'}/>
+                <AdvancedFilters/>
 
                 {visibleEntries?.map(entry =>
                     <SafelockEntry

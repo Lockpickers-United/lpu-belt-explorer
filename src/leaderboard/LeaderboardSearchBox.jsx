@@ -22,7 +22,7 @@ function LeaderboardSearchBox({data}) {
             : []
     }, [data])
 
-    const handleChange = useCallback((event, value) => {
+    const handleChange = useCallback((_event, value) => {
         if (!value) {
             searchParams.delete('user')
         } else if (options.includes(value)) {

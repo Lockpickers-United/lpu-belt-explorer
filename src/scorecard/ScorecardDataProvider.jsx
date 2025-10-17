@@ -7,6 +7,7 @@ import {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
 import {getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} from '../entries/entryutils'
+import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function ScorecardDataProvider({
                                           children,
@@ -23,8 +24,8 @@ export function ScorecardDataProvider({
                                           profile,
                                           blackBeltScorecard
                                       }) {
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, locks, ...filters} = allFilters
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, sort} = allFilters
 
     const allActivityEntries = useMemo(() => cardActivity.map(act => {
             const entry = getEntryFromId(act.matchId)
@@ -65,29 +66,11 @@ export function ScorecardDataProvider({
         userCount: lock.saveCount
     })), [popularLocksBB, activityByMatchId])
 
-    const filterArray = useMemo(() => {
-        const parseFilter = (key, rawVal) => {
-            const str = String(rawVal ?? '')
-            const negative = str.startsWith('!')
-            const value = negative ? str.slice(1) : str
-            return {key, value, negative}
-        }
-        return Object.keys(filters)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subkey => parseFilter(key, subkey))
-                    : parseFilter(key, value)
-            })
-            .flat()
-    }, [filters])
+    const {visibleEntries, searchedEntries} = useMemo(() =>
+        processEntries(allActivityEntries, search, sort, profile, advancedFilterGroups()),
+        [allActivityEntries, search, sort, profile, advancedFilterGroups])
 
-    const visibleEntries = useMemo(() => processEntries(allActivityEntries, filterArray, search, sort, profile), [allActivityEntries, filterArray, profile, search, sort])
-
-    const popularEntries = useMemo(() => processEntries(allPopularEntries, filterArray.concat({
-        key: 'exceptionType',
-        value: undefined
-    }), search, 'popular', profile), [allPopularEntries, filterArray, profile, search])
+    const {visibleEntries: popularEntries} = useMemo(() => processEntries(allPopularEntries, search, 'popular', profile, true), [allPopularEntries, profile, search])
 
     const blackBeltUser = useMemo(() => {
         return profile?.blackBeltAwardedAt > 0
@@ -101,6 +84,7 @@ export function ScorecardDataProvider({
         cardEligibleDan,
         cardNextDanPoints,
         cardNextDanLocks,
+        searchedEntries,
         visibleEntries,
         popularEntries,
         bbPopularEntries,
@@ -111,7 +95,7 @@ export function ScorecardDataProvider({
         getEntryFromId,
         getProjectEntryFromId,
         getAwardEntryFromId
-    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, searchedEntries, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
 
     return (
         <ScorecardDataContext.Provider value={value}>
@@ -120,8 +104,21 @@ export function ScorecardDataProvider({
     )
 }
 
-function processEntries(entries, filterArray, search, sort, profile = {}) {
+function processEntries(entries, search, sort, profile = {}, advancedFilterGroups, popular=false) {
     const userNotes = profile?.userLockNotes || {}
+
+    let filterGroups = advancedFilterGroups
+
+    if (popular) {
+        const newGroup = {
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: 'exceptionType',
+            matchType: 'Is',
+            operator: 'OR',
+            values: [undefined]
+        }
+        filterGroups = [...advancedFilterGroups, newGroup ]
+    }
 
     // Fill out fields
     const mappedEntries = entries
@@ -180,30 +177,31 @@ function processEntries(entries, filterArray, search, sort, profile = {}) {
             personalNotes: userNotes[entry.id] || userNotes[entry.matchId]
         }))
 
+    const searchCutoff = 0.30
+
+    const searchEntriesForText = (entries) => {
+        const exactMatch = search && entries.find(e => e.id === search)
+        if (exactMatch) {
+            return [exactMatch]
+        }
+        return !search
+            ? entries
+            : fuzzysort.go(removeAccents(search), entries, {keys: ['fuzzy'], threshold: -23000})
+                .map(result => ({
+                    ...result.obj,
+                    score: result.score
+                }))
+                .filter(entry => entry.score > searchCutoff)
+    }
+
+    const searchedEntries = searchEntriesForText(mappedEntries)
 
     // Filter the data
-    const filtered = mappedEntries
-        .filter(datum => {
-            return filterArray.every(({key, value, negative}) => {
-                const datumVal = datum[key]
-                if (Array.isArray(datumVal)) {
-                    const has = datumVal.includes(value)
-                    return negative ? !has : has
-                } else {
-                    const is = datumVal === value
-                    return negative ? !is : is
-                }
-            })
-        })
-
-    // If there is a search term, fuzzy match that
-    const searched = search
-        ? fuzzysort.go(removeAccents(search), filtered, {keys: ['fuzzy'], threshold: -25000})
-            .map(result => ({
-                ...result.obj,
-                score: result.score
-            }))
-        : filtered
+    const filtered = filterEntriesAdvanced({
+        advancedFilterGroups: filterGroups,
+        entries: mappedEntries,
+    })
+    const searched = searchEntriesForText([...filtered])
 
     // Finally, sort the entries
     const sortCriteria = (() => {
@@ -253,7 +251,7 @@ function processEntries(entries, filterArray, search, sort, profile = {}) {
         }
     })()
 
-    return searched.sort(sortCriteria)
+    return {visibleEntries: searched.sort(sortCriteria), searchedEntries}
 }
 
 export default ScorecardDataContext

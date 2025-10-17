@@ -141,14 +141,14 @@ function LeaderboardRecent({data}) {
     return (
         <React.Fragment>
             <div style={{justifyItems: 'center'}}>
-                <div style={{
+                <h2 style={{
+                    ariaLabel: 'Recent Belts and Dans',
                     fontWeight: 700,
                     fontSize: '1.2rem',
                     width: '100%',
                     textAlign: 'center',
                     margin: '20px 0px'
-                }}>Recent Belts & Dans
-                </div>
+                }}>Recent Belts & Dans</h2>
                 <TableContainer sx={{backgroundColor: '#111', maxWidth: 500}}>
                     <Table sx={{minWidth: 360, align: 'left'}}>
                         <TableHead>

@@ -31,7 +31,7 @@ export default function SelectBox({form, name, optionsList, label=null, variant=
                     fontSize: '1.1rem'
                 }}
             >
-                {optionsList.map((option, index) =>
+                {optionsList.map((_option, index) =>
                     <MenuItem key={index}
                               value={optionsList[index]}>{optionsList[index]}</MenuItem>
                 )}

@@ -30,7 +30,7 @@ export default async function postRequestCreate_deprecated({formData, user, setU
                 const errorData = await response.json()
                 errorMessage = errorData.message || errorMessage
                 enqueueSnackbar(`Error creating request: ${errorMessage}`, {variant: 'error', autoHideDuration: 3000})
-            } catch (e) {
+            } catch (_e) {
                 // Fallback in case parsing fails
             }
             return {response: {data: {status: response.status, message: errorMessage}}}

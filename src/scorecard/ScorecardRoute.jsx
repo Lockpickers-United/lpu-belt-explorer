@@ -6,26 +6,21 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
-import {scorecardSortFields} from '../data/sortFields'
 import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
 import calculateScoreForUser from '../scorecard/scoring'
 import dayjs from 'dayjs'
 import DBContext from '../app/DBContext.jsx'
-import FilterButton from '../filters/FilterButton.jsx'
 import Footer from '../nav/Footer.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
-import Nav from '../nav/Nav.jsx'
 import Scorecard from './Scorecard.jsx'
 import ScorecardExportButton from './ScorecardExportButton.jsx'
 import ScorecardProfileNotFound from './ScorecardProfileNotFound.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
-import SearchBox from '../nav/SearchBox.jsx'
-import SortButton from '../filters/SortButton.jsx'
 import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import {allAwardsById} from '../entries/entryutils'
+import usePageTitle from '../util/usePageTitle.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {userId} = useParams()
@@ -41,7 +36,8 @@ function ScorecardRoute({mostPopular}) {
         uniqueLocks,
         maxBelt
     } = useContext(ScoringContext)
-    const {isMobile} = useWindowSize()
+
+    usePageTitle('Scorecard')
 
     const [triggerState, setTriggerState] = useState(false)
     const handleAdminAction = useCallback(() => {
@@ -114,20 +110,7 @@ function ScorecardRoute({mostPopular}) {
     const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
     const popularLocks = collectionsStats.data ? collectionsStats.data.allUsers.listStats.recordedLocks.topItems : []
 
-    const nav = (window.location.hash.search(/locks=mostPopular/) < 1 && !mostPopular)
-        ? (
-            <React.Fragment>
-                <SearchBox label='Scorecard' extraFilters={[{key: 'tab', value: 'search'}]}/>
-                <SortButton sortValues={scorecardSortFields}/>
-                <FilterButton extraFilters={[{key: 'tab', value: 'search'}]}/>
-                {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            </React.Fragment>
-        )
-        : null
-
     const footerBefore = (<div style={{margin: '30px 0px'}}><ScorecardExportButton text={true} profile={profile}/></div>)
-
-    const title = loading ? 'Loading...' : 'Profile'
 
     if (loading || error) {
         return null
@@ -144,7 +127,6 @@ function ScorecardRoute({mostPopular}) {
                                    profile={profile} blackBeltScorecard={blackBeltScorecard}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
-                        <Nav title={title} extras={nav}/>
 
                         {loading && <LoadingDisplay/>}
 

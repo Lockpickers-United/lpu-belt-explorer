@@ -47,7 +47,7 @@ function AuthRedditRoute() {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     })
-                } catch (error) {
+                } catch (_error) {
                     setSyncException('token_failed')
                     return
                 }
@@ -82,7 +82,7 @@ function AuthRedditRoute() {
                 userResp = await fetch('https://oauth.reddit.com/api/v1/me', {
                     headers: {authorization: `${type} ${token}`}
                 })
-            } catch (error) {
+            } catch (_error) {
                 dataError = true
             }
             if (200 === userResp.status) {
@@ -99,7 +99,7 @@ function AuthRedditRoute() {
                     method: 'POST',
                     headers: {authorization: `${type} ${token}`}
                 })
-            } catch (error) {
+            } catch (_error) {
                 dataError = true
             }
             if (200 === flairResp.status) {
@@ -136,7 +136,7 @@ function AuthRedditRoute() {
                     messageResp = await fetch(url, {
                         headers: {authorization: `${type} ${token}`}
                     })
-                } catch (error) {
+                } catch (_error) {
                     dataError = true
                 }
                 if (200 === messageResp.status) {
@@ -240,7 +240,7 @@ function AuthRedditRoute() {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 })
-            } catch (error) {
+            } catch (_error) {
                 // ignore
             }
         }

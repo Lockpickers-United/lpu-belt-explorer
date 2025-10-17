@@ -1,19 +1,33 @@
-import React, {useState, useContext, useDeferredValue} from 'react'
+import React, {useState, useContext, useDeferredValue, useEffect} from 'react'
 import Entry from '../entries/Entry'
-import InlineFilterDisplay from '../filters/InlineFilterDisplay'
 import CompactEntries from '../locks/CompactEntries'
 import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'
 import InlineCollectionCharts from './InlineCollectionCharts'
 import ProfileHeader from './ProfileHeader.jsx'
 import RandomProfileEntryButton from './RandomProfileEntryButton.jsx'
+import AdvancedFilters from '../filters/AdvancedFilters.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 function ProfilePage({profile, owner}) {
     const {compact} = useContext(LockListContext)
     const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
+    const {setAdvancedFilterGroups, advancedFilterGroups} = useContext(FilterContext)
 
+    const [initialRender, setInitialRender] = useState(true)
+    useEffect(() => {
+        const newGroup = {
+            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+            fieldName: 'collection',
+            matchType: 'Is',
+            operator: 'OR',
+            values: ['Any']
+        }
+        if (initialRender && advancedFilterGroups().length === 0 ) setAdvancedFilterGroups([newGroup])
+        setInitialRender(false)
+    }, [advancedFilterGroups, initialRender, setAdvancedFilterGroups])
 
     return (
         <React.Fragment>
@@ -23,8 +37,8 @@ function ProfilePage({profile, owner}) {
             }}>
 
                 <ProfileHeader profile={profile} page={'collection'} owner={owner}/>
-                <InlineFilterDisplay profile={profile} collectionType={'locks'}/>
                 <InlineCollectionCharts profile={profile} entries={visibleEntries}/>
+                <AdvancedFilters/>
 
                 {compact
                     ? <CompactEntries entries={visibleEntries}/>

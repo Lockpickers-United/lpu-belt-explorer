@@ -22,7 +22,7 @@ const RaffleStatsCharityTable = ({data, columns, tableWidth, nameLength}) => {
     const defaultSort = 'displayName'
     const tableData = {columns, rows, defaultSort, sortable: true}
 
-    const linkFunction = useCallback((id, string) => {
+    const linkFunction = useCallback((_id, string) => {
         return string
     }, [])
 

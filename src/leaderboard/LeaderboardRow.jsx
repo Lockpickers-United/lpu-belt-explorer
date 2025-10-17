@@ -29,6 +29,7 @@ function LeaderboardRow({index, leader, highlighted, scrollableRef, columns, tab
 
     return (
         <TableRow
+            aria-label={leader.displayName}
             key={leader.id}
             ref={ref}
             sx={{

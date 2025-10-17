@@ -76,6 +76,7 @@ function ImageGallery(props) {
                             alt={title}
                             style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
                             onClick={handleOpen(sequenceId)}
+                            loading='lazy'
                         />
                         {
                             fullUrl?.match(/youtube\.com/) &&
@@ -92,6 +93,7 @@ function ImageGallery(props) {
                                     cursor: 'pointer'
                                 }}
                                 onClick={handleVideoClick(fullUrl)}
+                                loading='lazy'
                             />
                         }
                         <ImageListItemBar

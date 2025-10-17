@@ -114,7 +114,7 @@ export default function ScorecardLocks() {
                                     fontSize: '1.1rem'
                                 }}
                             >
-                                {uniqueBeltsAll.map((beltName, index) =>
+                                {uniqueBeltsAll.map((_beltName, index) =>
                                     <MenuItem key={index}
                                               value={uniqueBeltsAll[index]}>{uniqueBeltsAll[index]}</MenuItem>
                                 )}

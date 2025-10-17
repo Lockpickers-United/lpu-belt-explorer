@@ -30,7 +30,7 @@ export default async function postRequestUpdate_deprecated({entry, user}) {
                 errorMessage = errorData.message || errorMessage
                 enqueueSnackbar(`Error updating request: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
 
-            } catch (e) {
+            } catch (_e) {
                 // Fallback in case parsing fails
             }
             return { response: { data: { status: response.status, message: errorMessage } } }

@@ -76,7 +76,7 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
         setPotDetails(tempPotDetails)
     }, [potDetails])
 
-    const handlePotChoiceChange = useCallback((event, value) => {
+    const handlePotChoiceChange = useCallback((_event, value) => {
         let item
         if (options.includes(value)) {
             item = {
