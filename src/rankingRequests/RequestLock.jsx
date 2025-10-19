@@ -134,7 +134,8 @@ function RequestLock() {
         } catch (error) {
             setUploadError(`${error}`.replace('Error: ', ''))
             enqueueSnackbar(`Error creating request: ${error}`, {variant: 'error', autoHideDuration: 3000})
-            throw error
+            // Do not rethrow to avoid Uncaught (in promise) in console; error is handled via UI state and snackbar.
+            return
         } finally {
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
@@ -404,7 +405,7 @@ function RequestLock() {
                                 Please try again later.<br/>
                             </div>
                             <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                                Error message: { uploadError?.response?.data?.message
+                                Error: { uploadError?.response?.data?.message
                                 ? <span>{uploadError?.response?.data?.message} ({uploadError?.response?.data?.status})</span>
                                 : <span>{'' + uploadError}</span>
                             }

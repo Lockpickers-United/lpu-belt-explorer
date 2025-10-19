@@ -39,9 +39,9 @@ export default function ViewLockRequests({requestMod}) {
 
                 <SearchFilterBar sortValues={lockRequestSortFields} label={'Lock Requests'} resetAll={true}/>
 
-                {visibleEntries.map((entry, index) => (
+                {visibleEntries.map((entry) => (
                     <LockRequestEntry
-                        key={index}
+                        key={entry.id}
                         entry={entry}
                         expanded={entry.id === entryExpanded || !!expandAll}
                         onExpand={setEntryExpanded}

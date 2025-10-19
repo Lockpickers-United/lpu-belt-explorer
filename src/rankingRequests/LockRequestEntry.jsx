@@ -38,7 +38,7 @@ import {nodeServerUrl} from '../data/dataUrls'
  * @prop hazLocc
  */
 
-export default function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
+function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
     const {user} = useContext(AuthContext)
     const ref = useRef(null)
     const {expandAll} = useContext(DataContext)
@@ -331,3 +331,9 @@ export default function LockRequestEntry({entry, expanded, onExpand, requestMod}
         </React.Fragment>
     )
 }
+
+export default React.memo(LockRequestEntry, (prevProps, nextProps) => {
+    return prevProps.entry.id === nextProps.entry.id &&
+        prevProps.expanded === nextProps.expanded &&
+        prevProps.onExpand === nextProps.onExpand
+})

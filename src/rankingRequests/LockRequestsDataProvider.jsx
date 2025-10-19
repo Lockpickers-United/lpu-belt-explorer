@@ -91,7 +91,6 @@ export function DataProvider({children, allEntries, profile}) {
             : searched.sort((a, b) => {
                 return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                     || a.fuzzy.localeCompare(b.fuzzy)
-
             })
     }, [filters, mappedEntries, search, sort])
 
