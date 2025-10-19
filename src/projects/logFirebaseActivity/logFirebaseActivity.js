@@ -33,7 +33,6 @@ export default async function handleFirebaseActivityPost(req, res) {
         console.error('Error logging activity', err)
         return handleError(res, 'Error logging activity', null, 500)
     }
-    console.log('handleFirebaseActivityPost done')
     return res.status(200).json('Activity Logged')
 }
 

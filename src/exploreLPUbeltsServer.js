@@ -1,166 +1,101 @@
 import express from 'express'
 import cors from 'cors'
-import fs from 'fs'
-import http from 'http'
-import https from 'https'
-import EventEmitter from 'events'
-import dayjs from 'dayjs'
+import helmet from 'helmet'
+import dotenv from 'dotenv'
+import {logger} from './logger/logger.js'
+import {httpLogger} from './logger/httpLogger.js'
+import {requestIdHeader} from './logger/requestId.js'
+import {registerRoutes} from './routes.js'
 
-//import saveRequest from './projects/saveRequest/saveRequest.js'
-// Heavy feature modules are now loaded on-demand within route handlers to reduce baseline memory.
-// requestLock/updateRequest/updateVotes -> dynamic import
-// handleFirebaseActivityPost -> dynamic import
-// processFirebaseActivityLog -> dynamic import
-// getRedditBelts -> dynamic import
-// fetchFlairs -> dynamic import
-import {prodUser} from '../keys/users.js'
+const env = process.env.NODE_ENV || 'development'
+dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
+const isDev = env !== 'production'
+const _envText = isDev ? ' (DEV)' : ''
 
-// pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
-// https://explore.lpubelts.com:8443/rafl-stats
+// node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
+// NODE_ENV=production node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServer.js
 
-//import importRaflData from './projects/importRaflData/importRaflData.js'
-//import {getCharities, raflUtils} from './projects/raflFormUtilities/raflFormUtils.js'
-
-const prod = true
-const ports = prod ? {http: 8080, https: 8443} : {http: 3000, https: 3443}
-const envText = prod ? '' : ' (DEV)'
-
-const productionServer = process.env.USER === prodUser
-const keysDir = productionServer
-    ? `/home/${process.env.USER}/explore-lpubelts-com-node/keys`
-    : `/Users/${process.env.USER}/Documents/GitHub/explore-lpubelts-com-node/keys`
+// NODE_ENV=production pm2 restart 3 --update-env
+// tail -f /home/dh_m5s5pf/explore-lpubelts-com-node/logs/nodeserver.log
 
 const app = express()
-// Normalize multiple slashes in URL path (e.g., //services///path -> /services/path)
 app.use((req, _res, next) => {
     if (typeof req.url === 'string' && req.url.includes('//')) {
         req.url = req.url.replace(/\/{2,}/g, '/')
     }
     next()
 })
+
 app.disable('etag')
 app.disable('x-powered-by')
-app.use(cors())
-app.use(express.json({ limit: '200kb' }))
-const largeJson = express.json({ limit: '2mb' })
-
-const myEmitter = new EventEmitter()
-myEmitter.on('myEvent', (data) => {
-    const timestamp = dayjs().format('YYYY-MM-DD HH:mm:ss ZZ')
-    console.log(timestamp, '-', data)
+app.use(helmet())
+app.use(express.json({limit: '200kb'}))
+app.use((req, _res, next) => {
+    if (req.body && typeof req.body === 'object') {
+        req.body.prod = !isDev
+    }
+    next()
 })
+app.set('trust proxy', true)
+app.use(httpLogger)
+app.use(requestIdHeader)
 
-app.get('/flickr-info', async (req, res) => {
-    myEmitter.emit('myEvent', 'Flickr Info')
-    const { default: getFlickrInfo } = await import('./projects/flickrGetInfo/getFlickrInfo.js')
-    const results = await getFlickrInfo(req.query.id)
-    res.send(results)
-})
+const corsOrigin = process.env.CORS_ORIGIN
+    ? process.env.CORS_ORIGIN.split(',').map(s => s.trim()).filter(Boolean)
+    : true
+app.use(cors({origin: corsOrigin, credentials: true}))
 
-app.post('/upload', async (req, res) => {
-    myEmitter.emit('myEvent', 'Upload Content')
-    const { default: upload } = await import('./projects/uploadContent/uploadContent.js')
-    await upload(req, res)
-})
+const apiPort = isDev ? 8081 : 8080
+const apiPrefix = isDev ? '' : ''
 
-app.post('/request-lock', async (req, res) => {
-    req.body ||= {}
-    req.body.prod = prod
-    myEmitter.emit('myEvent', 'Ranking Request submitted' + envText)
-    const { default: requestLock } = await import('./projects/requestLock/requestLock.js')
-    await requestLock(req, res)
-})
+// need to test for local or something if you want to run locally at '/api'
 
-app.post('/update-request', async (req, res) => {
-    req.body = req.body || {}
-    req.body.prod = prod
-    myEmitter.emit('myEvent', 'Ranking Request update' + envText)
-    const { updateRequest } = await import('./projects/requestLock/requestLock.js')
-    await updateRequest(req, res)
-})
+registerRoutes(app, { prefix: apiPrefix })
 
-app.post('/request-vote', async (req, res) => {
-    req.body.prod = prod
-    myEmitter.emit('myEvent', 'Ranking Request Vote update' + envText)
-    const { updateVotes } = await import('./projects/requestLock/requestLock.js')
-    await updateVotes(req, res)
-})
-
-app.post('/log-activity', largeJson, async (req, res) => {
-    const {prod} = req.body
-    const logEnvText = prod ? '' : ' (from DEV)'
-    myEmitter.emit('myEvent', 'Log Firebase Activity' + logEnvText)
-    const { default: handleFirebaseActivityPost } = await import('./projects/logFirebaseActivity/logFirebaseActivity.js')
-    await handleFirebaseActivityPost(req, res)
-})
-
-app.get('/process-firebase-log', async (req, res) => {
-    console.log('process-firebase-log')
-    const prod = !req.query.dev
-    const logEnvText = prod ? '' : ' (from DEV)'
-    myEmitter.emit('myEvent', 'Process Firebase Activity Log' + logEnvText)
-    const { default: processFirebaseActivityLog } = await import('./projects/logFirebaseActivity/processFirebaseActivityLog.js')
-    const results = await processFirebaseActivityLog(req, res)
-    return res.status(200).json(results)
-})
-
-app.post('/fetch-reddit-flairs', async (req, res) => {
-    // gets ALL flairs and saves to redditBeltCounts.json & redditUserFlairs.json
-    myEmitter.emit('myEvent', 'Reddit flair fetch requested')
-    const { default: getRedditBelts } = await import('./projects/redditBelts/getRedditBelts.js')
-    await getRedditBelts(req, res)
-})
-
-app.post('/fetch-flairs', async (req, res) => {
-    // gets flairs for specific userId from fliarLog.json saved by LockyJr
-    const userId = req?.body?.userId || ''
-    myEmitter.emit('myEvent', `Reddit flair fetch for user ${userId} requested`)
-    const { default: fetchFlairs } = await import('./projects/fetchFlairs/fetchFlairs.js')
-    await fetchFlairs(req, res)
-})
-
-/*
-
-app.get('/update-rafl-form', async (req, res) => {
-    myEmitter.emit('myEvent', 'RAFL form update requested')
-    await raflUtils('addQuestions').then(results => {
-        res.send(results)
+// 404 handler (must be after routes)
+app.use((req, res) => {
+    if (res.headersSent) return
+    res.status(404).json({
+        error: 'Not Found',
+        path: req.originalUrl || req.url,
+        method: req.method,
+        requestId: req.id
     })
 })
 
-app.get('/rafl-charities', async (req, res) => {
-    myEmitter.emit('myEvent', 'Rafl charities requested')
-    await raflUtils('getCharities').then(results => {
-        res.send(results)
-    })
+// Centralized error handler (must be after routes and 404)
+app.use((err, req, res, next) => {
+    if (res.headersSent) return next(err)
+    const status = err?.status || err?.statusCode || 500
+    const base = {
+        message: err?.message || 'Internal Server Error',
+        code: err?.code,
+        requestId: req.id,
+        path: req.originalUrl || req.url,
+        method: req.method
+    }
+    const payload = isDev
+        ? { ...base, stack: typeof err?.stack === 'string' ? err.stack : undefined, details: err?.details }
+        : base
+    try { logger.error({ err, status, ...base }, 'request error') } catch {}
+    res.status(status).json({ error: payload })
 })
 
-app.get('/rafl-stats', async (req, res) => {
-    myEmitter.emit('myEvent', 'Rafl STATS requested')
-    await raflUtils('getSheetsResponses').then(results => {
-        res.send(results)
-    })
+// Prevent process from exiting on unhandled errors; log them instead
+process.on('unhandledRejection', (reason) => {
+    try { logger.error({ reason }, 'unhandledRejection') } catch { console.error('unhandledRejection', reason) }
 })
-*/
+process.on('uncaughtException', (err) => {
+    try { logger.error({ err }, 'uncaughtException') } catch { console.error('uncaughtException', err) }
+})
 
-/////////////
+const port = apiPort
+const host = process.env.HOST || '0.0.0.0'
 
-const httpServer = http.createServer(app)
-// Reduce idle memory and long-lived sockets
-httpServer.keepAliveTimeout = 5000
-httpServer.headersTimeout = 6000
-httpServer.requestTimeout = 10000
-
-httpServer.listen(ports.http, () => {})
-
-// Only spin up HTTPS in prod and load TLS keys as Buffers
-if (prod) {
-    const privateKey = fs.readFileSync(`${keysDir}/server.key`)
-    const certificate = fs.readFileSync(`${keysDir}/server.crt`)
-    const credentials = { key: privateKey, cert: certificate }
-    const httpsServer = https.createServer(credentials, app)
-    httpsServer.keepAliveTimeout = 5000
-    httpsServer.headersTimeout = 6000
-    httpsServer.requestTimeout = 10000
-    httpsServer.listen(ports.https, () => {})
-}
+const server = app.listen(port, host, () => {
+    logger.info({env, port, apiPrefix, host, corsOrigin}, 'api listening') // use pino, not console
+    console.log({env, port, apiPrefix, host, corsOrigin}, 'api listening')
+})
+server.on('error', (err) => {
+    try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }
+})

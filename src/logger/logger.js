@@ -1,6 +1,8 @@
 // logger.js
 import pino from 'pino'
 import { createRequire } from 'node:module'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 const require = createRequire(import.meta.url)
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -26,9 +28,13 @@ if (isDev) {
     }
     logging = pino({ level: process.env.LOG_LEVEL || 'debug', transport })
 } else {
+    // Resolve log file relative to this module's directory: ../../logs/nodeserver.log
+    const __dirname = path.dirname(fileURLToPath(import.meta.url))
+    const logFile = path.resolve(__dirname, '../../logs/nodeserver.log')
+
     const fileTransport = pino.transport({
         target: 'pino/file',
-        options: { destination: '../logs/nodeserver.log', mkdir: true }
+        options: { destination: logFile, mkdir: true }
     })
     logging = pino({ level: process.env.LOG_LEVEL || 'info', timestamp, base: { hostname: undefined } }, fileTransport)
 }

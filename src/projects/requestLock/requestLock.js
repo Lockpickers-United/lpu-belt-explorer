@@ -5,10 +5,11 @@
  * @prop redditUsername
  */
 
-import {formidable} from '../../util/formidable/src/index.js'
 import fs from 'fs'
+import {formidable, errors as formidableErrors} from '../../util/formidable/src/index.js'
+import {formidableErrorCodes} from '../../util/formidableErrorCodes.js'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients,prodUser} from '../../../keys/users.js'
+import {contentUploadRecipients, prodUser} from '../../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
 import {spaceJoin} from '../../util/stringUtils.js'
@@ -18,8 +19,12 @@ import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
+import {logger} from '../../logger/logger.js'
 
 const {writeFile} = fs.promises
+
+const maxFileSizeMB = 10
+const maxTotalFileSizeMB = 50
 
 const requestapp = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -57,16 +62,42 @@ if (!fs.existsSync(uploadDir)) {
 let uploadSubDir
 
 function handleError(res, message, error, status = 500) {
-    console.error(message, error)
+    logger.error(`handleError: ${message}`)
+
     if (uploadSubDir && fs.existsSync(uploadSubDir)) {
         try {
             fs.rmSync(uploadSubDir, {recursive: true, force: true})
             console.log('Upload directory removed after error:', uploadSubDir)
         } catch (err) {
-            console.error('Error removing upload directory after error:', err)
+            try {
+                logger.error(`Error removing upload directory after error: ${err}`)
+            } catch {
+            }
         }
     }
-    res.status(status).send({status, message})
+
+    if (res.headersSent) {
+        console.warn('handleError called but headers already sent')
+        return
+    }
+
+    const isDev = process.env.NODE_ENV !== 'production'
+    const payload = {
+        error: {
+            message: typeof message === 'string' ? message : (error?.message || 'Error'),
+            code: error?.code,
+            type: error?.name,
+            details: error && typeof error === 'object' ? {
+                formidableCode: error.code,
+                errno: error.errno,
+                syscall: error.syscall
+            } : undefined,
+            stack: isDev && typeof error?.stack === 'string' ? error.stack : undefined
+        }
+    }
+
+    res.status(status).json(payload)
+    res.end()
 }
 
 export default async function requestLock(req, res) {
@@ -80,14 +111,16 @@ export default async function requestLock(req, res) {
         return handleError(res, err.message, err, 403)
     }
 
-    const prod = req?.body?.prod
+    const env = process.env.NODE_ENV || 'development'
+    const prod = env === 'production'
     const db = getDb(prod)
 
     const form = formidable({
         uploadDir,
         keepExtensions: true,
         createDirsFromUploads: true,
-        maxFileSize: 30 * 1024 * 1024,
+        maxFileSize: maxFileSizeMB * 1024 * 1024,
+        maxTotalFileSize: maxTotalFileSizeMB * 1024 * 1024,
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
         filename(_name, _ext, part) {
             const {fullFilename, filepath, localsubdirs} = createFilename(part, serverPath, uploadDir)
@@ -100,7 +133,7 @@ export default async function requestLock(req, res) {
     })
 
     try {
-        const {fields, files} = await parseForm(req, form)
+        const {fields, files} = await parseForm(res, req, form)
         for (const fieldName in fields) {
             if (!Array.isArray(fields[fieldName])) {
                 fields[fieldName] = [fields[fieldName]]
@@ -209,7 +242,6 @@ export default async function requestLock(req, res) {
 }
 
 export async function updateRequest(req, res) {
-
     try {
         req.user = await authenticateRequest(req, res)
     } catch (err) {
@@ -235,8 +267,6 @@ export async function updateRequest(req, res) {
     } catch (error) {
         handleError(res, 'Failed to update ranking request', error, 500)
     }
-
-    console.log('done')
     return res.status(200).json(entry)
 }
 
@@ -291,11 +321,9 @@ export async function updateVotes(req, res) {
         }
 
     } catch (error) {
-        console.error('Error updating votes: ', error)
+        logger.error(`Error updating votes: ${error}`)
         return handleError(res, 'Error updating votes', error)
     }
-
-    console.log('done')
     return res.status(200).json(updatedVotes)
 }
 
@@ -305,23 +333,23 @@ async function fetchRankingRequest(ref, entryId) {
     try {
         const docSnap = await ref.get(entryId)
         if (!docSnap) {
-            console.warn(`No ranking request found for entry: ${entryId}`)
+            logger.warn(`No ranking request found for entry: ${entryId}`)
             return null
         }
         return docSnap.data()
     } catch (error) {
-        console.error(`Error getting document ${entryId}:`, error)
+        logger.error(`Error getting document ${entryId}: ${error}`)
         return null
     }
 }
 
 async function setRankingRequest(ref, entry, entryId) {
     try {
-        console.log('setRankingRequest', entry, entryId)
+        //console.log('setRankingRequest', entry, entryId)
         await ref.set(entry)
         return entry
     } catch (error) {
-        console.error(`Error setting document ${entryId}:`, error)
+        logger.error(`Error setting document ${entryId}: ${error}`)
         throw error
     }
 }
@@ -331,7 +359,7 @@ async function updateRankingRequest(ref, data, entryId) {
         await ref.update(data)
         return data
     } catch (error) {
-        console.error(`Error updating document ${entryId}:`, error)
+        logger.error(`Error updating document ${entryId}: ${error}`)
         throw error
     }
 }
@@ -349,8 +377,23 @@ async function authenticateRequest(req) {
     return decodedToken
 }
 
-function parseForm(req, form) {
+function parseForm(res, req, form) {
     return new Promise((resolve, reject) => {
+        form.once('error', err => {
+            const status = typeof err?.httpCode === 'number'
+                ? err.httpCode
+                : 400
+            const description = err?.code
+                ? err.code === 1016 || err.code === '1016'
+                    ? `Individual file exceeds limit of ${maxFileSizeMB} MB`
+                    : err.code === 1009 || err.code === '1009'
+                        ? `Total upload exceeds limit of ${maxTotalFileSizeMB} MB`
+                        : formidableErrorCodes[err.code].description
+                : 'Formidable form parse error'
+            err.message = `Form parse error: ${description}`
+            handleError(res, description, err, status)
+            reject(err)
+        })  // ensure the Promise settles
         form.parse(req, (err, fields, files) => {
             if (err) return reject(err)
             resolve({fields, files})

@@ -9,7 +9,6 @@ export function registerRoutes(app, { prefix = '/services' } = {}) {
 
     const r = Router()
 
-    // Normalize slashes inside the mounted router as well (handles cases where the remainder after prefix has //)
     r.use((req, _res, next) => {
         if (typeof req.url === 'string' && req.url.includes('//')) {
             req.url = req.url.replace(/\/{2,}/g, '/')
@@ -34,6 +33,7 @@ export function registerRoutes(app, { prefix = '/services' } = {}) {
     // FOR LOCKY JR  ??????
     lazyMount(app, `${prefix}/fetch-flairs`, () => import('./projects/fetchFlairs/fetchFlairs.bundle.js'))
 
+    //RAFL Data Import for preview mode
     lazyMount(app, `${prefix}/refresh-preview`, () => import('./projects/importRaflData/importRaflData.bundle.js'))
 
     lazyMount(app, `${prefix}/log-activity`, () => import('./projects/logFirebaseActivity/logFirebaseActivity.bundle.js'))
