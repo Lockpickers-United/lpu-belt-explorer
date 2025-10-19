@@ -21,8 +21,6 @@ const RaffleReportDonationsDonorsLines = () => {
         </div>
     )
 
-
-    console.log('summary.lineDataCurrent', summary.lineDataCurrent)
     return (
         <React.Fragment>
 
