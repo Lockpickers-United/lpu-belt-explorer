@@ -38,7 +38,6 @@ src/data/linkCache.json
 src/data/data.json
 src/data/rafl.json
 .env.keys
-src/data/data.json
 src/data/lockStats.json
 /allure-report
 /allure-results

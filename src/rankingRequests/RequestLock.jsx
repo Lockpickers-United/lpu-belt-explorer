@@ -128,7 +128,7 @@ function RequestLock() {
         const url = `${nodeServerUrl}/request-lock`
 
         try {
-            const results =  await postData({user, url, formData, snackBars: false})
+            const results =  await postData({user, url, formData, snackBars: false, timeoutDuration: 20000})
             enqueueSnackbar('Upload successful', {variant: 'success'})
             setResponse(results)
         } catch (error) {

@@ -16,9 +16,4 @@ test('renders lock details', async ({page}) => {
 
     await expect(page.getByRole('button', {name: 'My Collection'})).toBeVisible()
     await expect(page.getByRole('img', {name: 'belt-icon'})).toBeDefined()
-
-    //const firstListItem = await screen.getAllByRole('listitem',{})[0]
-    //await userEvent.click(firstListItem)
-    //expect(firstListItem).toHaveAttribute('aria-expanded', 'true')
-    //expect(page.findByRole('image', {name: 'belt-icon'})).toBeDefined()
 })
