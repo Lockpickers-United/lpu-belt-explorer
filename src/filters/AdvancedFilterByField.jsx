@@ -1,8 +1,4 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
 import DataContext from '../context/DataContext'
 import {filterValueNames} from '../data/filterValues'
 import IconButton from '@mui/material/IconButton'
@@ -13,6 +9,8 @@ import FilterContext from '../context/FilterContext.jsx'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import useWindowSize from '../util/useWindowSize.jsx'
+import AdvancedSelect from './AdvancedSelect.jsx'
+import AdvancedSelectAutoComplete from './AdvancedSelectAutoComplete.jsx'
 
 function AdvancedFilterByField({
                                    label,
@@ -164,7 +162,13 @@ function AdvancedFilterByField({
     }
     const noMoreOptions = filteredOptions.length === 1 && filteredOptions[0] === 'no more options'
 
-    const [open, setOpen] = useState(false)
+    const displayValueText = noMoreOptions
+        ? 'no more options'
+        : context === 'drawer'
+            ? currentValueText
+            : currentValue
+
+    const [_open, setOpen] = useState(false)
 
     const handleSelect = useCallback(event => {
         setOpen(false)
@@ -174,11 +178,6 @@ function AdvancedFilterByField({
         setTimeout(() => document.activeElement.blur())
     }, [onFilter])
 
-    const handleClose = useCallback(() => {
-        setOpen(false)
-        setTimeout(() => document.activeElement.blur())
-    }, [])
-    const handleOpen = useCallback(() => setOpen(true), [])
 
     const handleRemoveGroup = useCallback(() => {
         const groups = advancedFilterGroups()
@@ -199,7 +198,7 @@ function AdvancedFilterByField({
 
     const marginBottom = context === 'drawer' ? 18 : 12
     const selectStyle = context !== 'drawer'
-        ? {backgroundColor: currentValue.length > 0 ? '#333' : undefined}
+        ? {backgroundColor: currentValue?.length > 0 ? '#333' : undefined}
         : matchType === 'Is Not'
             ? {backgroundColor: currentValue.length > 0 ? '#733030  ' : undefined}
             : {backgroundColor: currentValue.length > 0 ? '#555' : undefined}
@@ -208,72 +207,40 @@ function AdvancedFilterByField({
     const fieldWidth = isMobile || context === 'drawer' ? 210 : 250
     const buttonSize = isMobile ? 'medium' : 'small'
 
-    //console.log('AdvancedFilterByField render:', fieldName, filteredOptions.length)
+    const props = {
+        label,
+        size,
+        filteredOptions,
+        filterValueNames,
+        counts,
+        fieldName,
+        fieldWidth,
+        noMoreOptions,
+        displayValueText,
+        handleSelect,
+        selectStyle
+    }
 
+    const autocompleteFields = ['makes']
     return (
         <div style={{display: 'flex', alignItems: 'center', marginBottom: marginBottom}}>
-            {(filteredOptions?.length === 0 || fieldName?.length === 0) ? null :
-                <FormControl style={{minWidth: fieldWidth, marginBottom: 0, marginRight: 4}}
-                             size={size === 'small' ? 'small' : 'medium'}
-                             fullWidth>
-                    <InputLabel id={`filter-${fieldName}`} color='secondary'
-                                style={{opacity: noMoreOptions ? 0.5 : 1}}>
-                        {label}
-                    </InputLabel>
-                    <Select
-                        label={label}
-                        labelId={`filter-${fieldName}`}
-                        value={noMoreOptions
-                            ? 'no more options'
-                            : context === 'drawer'
-                                ? currentValueText
-                                : currentValue}
-                        disabled={noMoreOptions}
-                        onChange={handleSelect}
-                        style={{...selectStyle, opacity: noMoreOptions ? 0.5 : 1}}
-                        color='secondary'
-                        open={open}
-                        onClose={handleClose}
-                        onOpen={handleOpen}
-                        onBlur={handleClose}
-                    >
-                        {filteredOptions.map((opt, index) => {
-                            const count = counts[opt] || 0
-                            const isText = ['AND', 'OR'].some(term => opt.includes(term))
-
-                            return (
-                                <MenuItem key={`${opt}-${index}`} value={opt}>
-                                    <div style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        width: '100%',
-                                        justifyContent: 'space-between'
-                                    }}>
-                                        <div style={{
-                                            maxWidth: 160,
-                                            overflow: 'hidden',
-                                            textOverflow: 'ellipsis'
-                                        }}>{filterValueNames[opt] ? filterValueNames[opt] : opt}</div>
-                                        <div
-                                            style={{fontSize: '0.8rem', marginLeft: 8, opacity: 0.85}}>
-                                            {(noMoreOptions || isText) ? '' : count}
-                                        </div>
-                                    </div>
-                                </MenuItem>
-                            )
-                        })}
-                    </Select>
-                </FormControl>
+            {(filteredOptions?.length === 0 || fieldName?.length === 0)
+                ? null
+                : autocompleteFields.includes(fieldName)
+                    ? <AdvancedSelectAutoComplete props={props}/>
+                    : <AdvancedSelect props={props}/>
             }
+
+
             {context !== 'drawer' &&
                 <React.Fragment>
-                    {valueIndex === 0 && currentValue.length > 0 &&
+                    {valueIndex === 0 && currentValue?.length > 0 &&
                         <IconButton aria-label='add filter group' onClick={handleAddValue}
                                     style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
                             <AddCircleIcon fontSize={buttonSize} style={{color: '#5d854f'}}/>
                         </IconButton>
                     }
-                    {(currentValue.length > 0 || valueIndex > 0) &&
+                    {(currentValue?.length > 0 || valueIndex > 0) &&
                         <IconButton aria-label='remove filter value' onClick={handleRemoveValue}
                                     style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
                             <HighlightOffIcon fontSize={buttonSize} style={{color: '#d04e4e'}}/>
@@ -287,7 +254,7 @@ function AdvancedFilterByField({
                     }
                 </React.Fragment>
             }
-            {(currentValue.length > 0 || valueIndex > 0) && context === 'drawer' &&
+            {(currentValue?.length > 0 || valueIndex > 0) && context === 'drawer' &&
                 <IconButton aria-label='remove filter value' onClick={handleRemoveGroup}
                             style={{marginTop: 4, marginLeft: 2}} size={buttonSize}>
                     <HighlightOffIcon fontSize={buttonSize} style={{color: '#d04e4e'}}/>
