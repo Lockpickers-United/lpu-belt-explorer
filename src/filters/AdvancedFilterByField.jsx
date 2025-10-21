@@ -208,6 +208,8 @@ function AdvancedFilterByField({
     const fieldWidth = isMobile || context === 'drawer' ? 210 : 250
     const buttonSize = isMobile ? 'medium' : 'small'
 
+    //console.log('AdvancedFilterByField render:', fieldName, filteredOptions.length)
+
     return (
         <div style={{display: 'flex', alignItems: 'center', marginBottom: marginBottom}}>
             {(filteredOptions?.length === 0 || fieldName?.length === 0) ? null :
