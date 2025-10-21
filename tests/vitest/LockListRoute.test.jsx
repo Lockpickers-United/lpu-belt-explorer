@@ -35,7 +35,7 @@ describe('LockListRoute', () => {
         expect(firstListItem).toHaveAccessibleName('GOAL V18, GP (<14 pins)')
     })
 
-    it('renders No Entries car with no search reults', async () => {
+    it('renders No Entries card with no search reults', async () => {
         renderLocks('/locks?tab=search&search=asdfgh')
         expect(screen.getByRole('button', {name: 'View all locks'})).toBeInTheDocument()
     })

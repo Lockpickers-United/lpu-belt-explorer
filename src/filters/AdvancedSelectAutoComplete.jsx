@@ -27,7 +27,8 @@ export default function AdvancedSelectAutoComplete({
         noMoreOptions,
         displayValueText,
         handleSelect,
-        selectStyle
+        selectStyle,
+        context
     } = props
 
     const inputEl = useRef()
@@ -69,6 +70,7 @@ export default function AdvancedSelectAutoComplete({
                     disabled={noMoreOptions}
                     key={reset || noMoreOptions}
                     selectOnFocus
+                    disableClearable ={context === 'drawer'}
                     clearOnEscape
                     handleHomeEndKeys
                     autoHighlight
@@ -87,7 +89,7 @@ export default function AdvancedSelectAutoComplete({
                         const count = (counts && counts[option]) ? counts[option] : 0
                         const isText = typeof option === 'string' && ['AND', 'OR'].some(term => option.includes(term))
                         return (
-                            <li {...props} key={`${option}-${count}`}>
+                            <li {...props} key={`${option}-${count}`} role='option' aria-label={`${option}-${count}`}>
                                 <div style={{
                                     display: 'flex',
                                     alignItems: 'center',
@@ -114,6 +116,8 @@ export default function AdvancedSelectAutoComplete({
                             placeholder={label}
                             variant='outlined'
                             color='info'
+                            role='textbox'
+                            aria-label={`${label}-field`}
                             inputRef={inputEl}
                             InputProps={{
                                 ...params.InputProps,

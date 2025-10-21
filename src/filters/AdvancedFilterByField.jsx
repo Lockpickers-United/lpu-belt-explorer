@@ -218,7 +218,8 @@ function AdvancedFilterByField({
         noMoreOptions,
         displayValueText,
         handleSelect,
-        selectStyle
+        selectStyle,
+        context
     }
 
     const autocompleteFields = ['makes']

@@ -39,6 +39,7 @@ src/data/data.json
 src/data/rafl.json
 .env.keys
 src/data/lockStats.json
-/allure-report
-/allure-results
-/playwright-report
+allure-report/*
+allure-results/*
+playwright-report/*
+tests-results/*
