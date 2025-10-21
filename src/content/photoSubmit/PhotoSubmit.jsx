@@ -78,6 +78,7 @@ function PhotoSubmit({profile, user}) {
         const timeoutDuration = 30000
         try {
             setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
+            //console.log('Upload response:', response)
             savePhotoCredit(photoCredit)
         } catch (error) {
             setUploadError(cleanError(error))

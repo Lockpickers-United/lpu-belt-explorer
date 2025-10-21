@@ -52,7 +52,6 @@ export const postData = async ({user, url, formData, json, snackBars, timeoutDur
                 }
             )
         }
-        throw new Error(errorMessage)
     }
 }
 

@@ -9,6 +9,7 @@ import SearchBox from '../nav/SearchBox'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import {lockSortFields} from '../data/sortFields'
 import DataContext from './LockDataProvider.jsx'
+import SearchCutoffBar from '../filters/SearchCutoffBar.jsx'
 
 function LockList() {
     const {isMobile} = useWindowSize()
@@ -17,7 +18,8 @@ function LockList() {
 
     const extras = (
         <React.Fragment>
-            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false} entryCount={visibleBeltEntries.length}/>
+            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}
+                       entryCount={visibleBeltEntries.length}/>
             <ViewFilterButtons sortValues={lockSortFields} advancedEnabled={true}
                                extraFilters={[{key: 'tab', value: 'search'}]}
                                compactMode={true} resetAll={true} expandAll={true}/>
@@ -30,6 +32,8 @@ function LockList() {
             <Nav title='Locks' extras={extras}/>
 
             <BeltToolbar/>
+
+            <SearchCutoffBar/>
 
             <Entries profile={lockCollection} advancedEnabled={true}/>
 

@@ -1,18 +1,21 @@
 import React, {useContext, useMemo, useState} from 'react'
 import LockRequestEntry from './LockRequestEntry.jsx'
-import DataContext from '../locks/LockDataProvider.jsx'
+import DataContext from '../context/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import SearchFilterBar from '../filters/SearchFilterBar.jsx'
 import {lockRequestSortFields} from '../data/sortFields'
 import Link from '@mui/material/Link'
 import SubNav from '../nav/SubNav.jsx'
 import ExportRequestsButton from './ExportRequestsButton.jsx'
+import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
 export default function ViewLockRequests({requestMod}) {
 
     const {visibleEntries = [], expandAll} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
+
+    //console.log('ViewLockRequests render:', visibleEntries)
 
     const options = useMemo(() => {
         return [
@@ -38,6 +41,7 @@ export default function ViewLockRequests({requestMod}) {
                 }
 
                 <SearchFilterBar sortValues={lockRequestSortFields} label={'Lock Requests'} resetAll={true}/>
+                <AdvancedFilters/>
 
                 {visibleEntries.map((entry) => (
                     <LockRequestEntry
@@ -47,9 +51,7 @@ export default function ViewLockRequests({requestMod}) {
                         onExpand={setEntryExpanded}
                         requestMod={requestMod}
                     />
-
                 ))}
-
 
                 <div style={{margin: '30px 0px', textAlign: 'center'}}>
                     <ExportRequestsButton text={true} entries={visibleEntries}/>

@@ -41,7 +41,9 @@ function entryName(entry, nameType = 'short', options = {}) {
 
     if (nameType === 'long') {
         const lockName = makeModels.map((makeModel) => {
-            return makeModel.make + ' ' + makeModel.model
+            return makeModel.make
+                ? makeModel.make + ' ' + makeModel.model
+                : makeModel.model
         }).join(' / ')
         return lockName + versionString
     } else if (nameType === 'data') {

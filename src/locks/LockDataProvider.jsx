@@ -22,7 +22,7 @@ export function DataProvider({children, allEntries, profile}) {
         return data && !loading && !error ? data.lockbazzarEntryIds : []
     }, [data, error, loading])
 
-    const [searchCutoff, setSearchCutoff] = useState(0.30)
+    const [searchCutoff, setSearchCutoff] = useState('0.30')
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
@@ -92,7 +92,7 @@ export function DataProvider({children, allEntries, profile}) {
                     ...result.obj,
                     score: result.score
                 }))
-                .filter(entry => entry.score > searchCutoff)
+                .filter(entry => entry.score > parseFloat(searchCutoff))
     }, [search, searchCutoff])
 
     const searchedBeltEntries = useMemo(() => {

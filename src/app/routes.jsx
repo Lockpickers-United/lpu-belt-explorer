@@ -470,6 +470,13 @@ export default [
         ]
     },
     {
+        path: '/beta',
+        lazy: async () => {
+            const {default: BetaToggleRoute} = await import('../tools/betaToggle/BetaToggleRoute.jsx')
+            return {element: <BetaToggleRoute/>}
+        }
+    },
+    {
         path: '/evidence-review',
         lazy: async () => {
             const {default: EvidenceReviewRoute} = await import('../tools/evidenceReview/EvidenceReviewRoute.jsx')
