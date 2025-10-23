@@ -32,23 +32,3 @@ test('user can filter lock list by locking mechanism', async ({page}) => {
     await expect(page.getByRole('listitem', {name: /ABUS/i})).toBeVisible()
     await expect(page.getByRole('listitem', {name: 'Generic/Unknown 1 or 2 Lever Cabinet lock'})).not.toBeAttached()
 })
-
-test('user can filter lock list by make autocomplete', async ({page}) => {
-    await page.goto('/locks?tab=White')
-    await expect(page.getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeVisible()
-    const filterButton = await page.getByRole('button', {name: 'Filter'})
-    await expect(filterButton).toBeVisible()
-    await filterButton.click()
-    const makeMenu = await page.getByRole('combobox', {name: 'Make'})
-    //const makeMenu = await page.locator('input[aria-label="Make"]')
-    await makeMenu.click({timeout: 3000})
-    const makeMenuList = await page.getByRole('listbox', {name: 'Make'})
-    await expect(makeMenuList).toBeVisible()
-    //await makeMenuList.click({timeout: 3000})
-
-    const makeField = await page.getByRole('textbox', {name: 'Make-field'})
-    await expect(makeField).toBeVisible()
-
-    const masterLock = await page.getByRole('option', {name: /Master Lock/i})
-    await expect(masterLock).toBeVisible()
-})

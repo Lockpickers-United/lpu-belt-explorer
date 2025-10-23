@@ -79,6 +79,8 @@ export default function AdvancedSelectAutoComplete({
                     style={selectStyle}
                     options={filteredOptions}
                     name={fieldName}
+                    id={`${fieldName}-combo`}
+                    aria-label={`${fieldName}-combo`}
                     value={displayValueText || null}
                     isOptionEqualToValue={(option, value) => option === value}
                     onChange={handleChange}
@@ -118,6 +120,7 @@ export default function AdvancedSelectAutoComplete({
                             color='info'
                             role='textbox'
                             aria-label={`${label}-field`}
+                            id={`${label}-field`}
                             inputRef={inputEl}
                             InputProps={{
                                 ...params.InputProps,

@@ -34,6 +34,8 @@ export default function ResetFiltersButton({
         ? {marginLeft: 2}
         : {height: 28, padding: '0px 12px', minWidth: 80, marginLeft: 8}
 
+    const ariaLabel = nav ? 'Reset All Filters' : 'Reset Filters'
+
     if (filterCount === 0 && !alwaysShow) return null
     if ((isMobile && !forceText) || forceIcon) {
         return (
@@ -46,7 +48,7 @@ export default function ResetFiltersButton({
     } else {
         return (
             <Button variant={buttonVariant} color='warning' onClick={handleReset}
-                    style={buttonStyle}>
+                    style={buttonStyle} aria-label={ariaLabel}>
                 Reset
             </Button>
         )

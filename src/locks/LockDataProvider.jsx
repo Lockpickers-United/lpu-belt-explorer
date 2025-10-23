@@ -48,7 +48,7 @@ export function DataProvider({children, allEntries, profile}) {
                             .concat([
                                 entry.version,
                                 entry.notes,
-                                entry.belt
+                                //entry.belt
                             ])
                             .join(',')
                     ),
