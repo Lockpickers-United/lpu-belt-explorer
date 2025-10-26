@@ -74,13 +74,14 @@ function PhotoSubmit({profile, user}) {
         formData.append('notes', notes)
 
         const url = `${nodeServerUrl}/upload`
-        const snackBars = false
+        const snackBars = true
         const timeoutDuration = 30000
         try {
             setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
             //console.log('Upload response:', response)
             savePhotoCredit(photoCredit)
         } catch (error) {
+            //console.log('Upload error:', error)
             setUploadError(cleanError(error))
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
@@ -268,16 +269,14 @@ function PhotoSubmit({profile, user}) {
                             fontWeight: 500,
                             marginBottom: 60,
                             textAlign: 'center'
-                        }}>{title} Uploaded Succesfully!
+                        }}>{title} Uploaded Successfully!
                         </div>
-
                         <div style={{width: '100%', textAlign: 'center'}}>
                             <Button onClick={handleReload} variant='contained' color='info'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
                                 OK
                             </Button>
                         </div>
-
                     </div>
                 </div>
             </Dialog>
@@ -292,13 +291,10 @@ function PhotoSubmit({profile, user}) {
                             Something went wrong.<br/>
                             Please try again later.<br/>
                         </div>
-                        <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                            Error message: {uploadError?.response?.data?.message || uploadError?.message}
-                            {uploadError?.response?.data?.status &&
-                                <span> ({uploadError?.response?.data?.status})</span> }
+                        <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
+                             {uploadError?.message}<br/>
+                            (Error code {uploadError?.status})
                         </div>
-
-
                         <div style={{width: '100%', textAlign: 'center'}}>
                             <Button onClick={handleReload} variant='contained' color='error'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>

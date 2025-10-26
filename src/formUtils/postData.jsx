@@ -42,16 +42,21 @@ export const postData = async ({user, url, formData, json, snackBars, timeoutDur
             error.message?.includes('aborted')
         const errorMessage = isTimeout
             ? 'Request timed out. Please try again.'
-            : error.response?.data?.error?.message || error.response?.data?.message || error.message || 'Error during authentication or server request'
+            : error.response?.data?.error?.message
+            || error.response?.data?.message
+            || error.message
+            || 'Error during authentication or server request'
+
         if (snackBars) {
             enqueueSnackbar(
-                errorMessage,
+                `${errorMessage} (${error.status})`,
                 {
                     variant: 'error',
                     autoHideDuration: isTimeout ? 5000 : 3000
                 }
             )
         }
+        throw {...error, message: errorMessage}
     }
 }
 
