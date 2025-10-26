@@ -724,7 +724,7 @@
     "features": [
       "Various formats",
       "False gates",
-      "changelog"
+      "Latest changelog"
     ],
     "notes": "Usually 5 levers",
     "views": 763,
@@ -1537,7 +1537,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52827837974_fab0e4100e_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "45"
   },
   "a8c9aa08": {
     "id": "a8c9aa08",
@@ -1627,7 +1628,8 @@
     "name": "Master Lock #1",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 15766,
-    "lastUpdated": "2025-03-19T01:20:51.353Z"
+    "lastUpdated": "2025-03-19T01:20:51.353Z",
+    "modelNum": "1"
   },
   "38289b36": {
     "id": "38289b36",
@@ -1704,7 +1706,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52849284263_7a118923ff_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "2"
   },
   "562e964e": {
     "id": "562e964e",
@@ -1840,7 +1843,8 @@
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 13743,
-    "lastUpdated": "2025-03-19T01:20:51.353Z"
+    "lastUpdated": "2025-03-19T01:20:51.353Z",
+    "modelNum": "3"
   },
   "dff62f52": {
     "id": "dff62f52",
@@ -1899,7 +1903,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52849011114_de16668aed_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "4"
   },
   "c800618f": {
     "id": "c800618f",
@@ -1993,7 +1998,8 @@
       }
     ],
     "views": 9208,
-    "lastUpdated": "2025-03-19T15:44:57.277Z"
+    "lastUpdated": "2025-03-19T15:44:57.277Z",
+    "modelNum": "5"
   },
   "f10deed6": {
     "id": "f10deed6",
@@ -2052,7 +2058,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52849011114_de16668aed_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "6"
   },
   "4bbeeb48": {
     "id": "4bbeeb48",
@@ -2092,7 +2099,8 @@
       }
     ],
     "views": 7412,
-    "lastUpdated": "2025-03-19T01:20:51.354Z"
+    "lastUpdated": "2025-03-19T01:20:51.354Z",
+    "modelNum": "7"
   },
   "79adf554": {
     "id": "79adf554",
@@ -2151,7 +2159,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52849011114_de16668aed_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "8"
   },
   "36d4123c": {
     "id": "36d4123c",
@@ -2363,7 +2372,8 @@
     "name": "ABUS 55/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 13089,
-    "lastUpdated": "2025-03-19T15:44:57.277Z"
+    "lastUpdated": "2025-03-19T15:44:57.277Z",
+    "modelNum": "55.3"
   },
   "693abee0": {
     "id": "693abee0",
@@ -2411,7 +2421,8 @@
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "notes": "Includes 64Ti/20, 64Ti/25, 64Ti/30",
     "views": 7136,
-    "lastUpdated": "2025-03-19T01:20:51.354Z"
+    "lastUpdated": "2025-03-19T01:20:51.354Z",
+    "modelNum": "64.3"
   },
   "1ce31c29": {
     "id": "1ce31c29",
@@ -2485,7 +2496,8 @@
       }
     ],
     "views": 4861,
-    "lastUpdated": "2025-03-18T23:29:31.268Z"
+    "lastUpdated": "2025-03-18T23:29:31.268Z",
+    "modelNum": "65.35"
   },
   "805fc883": {
     "id": "805fc883",
@@ -2534,7 +2546,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53090037968_ddb8df9b1d_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "84.35"
   },
   "2484ce70": {
     "id": "2484ce70",
@@ -2668,7 +2681,8 @@
       }
     ],
     "views": 3574,
-    "lastUpdated": "2025-03-19T01:20:51.354Z"
+    "lastUpdated": "2025-03-19T01:20:51.354Z",
+    "modelNum": "65"
   },
   "9d830052": {
     "id": "9d830052",
@@ -2705,7 +2719,8 @@
       }
     ],
     "views": 2888,
-    "lastUpdated": "2025-03-19T15:44:57.277Z"
+    "lastUpdated": "2025-03-19T15:44:57.277Z",
+    "modelNum": "84.4"
   },
   "abdf3acd": {
     "id": "abdf3acd",
@@ -4241,7 +4256,8 @@
     "name": "Master Lock 130",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 9857,
-    "lastUpdated": "2025-03-19T15:44:57.278Z"
+    "lastUpdated": "2025-03-19T15:44:57.278Z",
+    "modelNum": "130"
   },
   "2455f0ae": {
     "id": "2455f0ae",
@@ -4385,7 +4401,8 @@
     "name": "Master Lock 140, 141",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 18434,
-    "lastUpdated": "2025-03-19T01:20:51.355Z"
+    "lastUpdated": "2025-03-19T01:20:51.355Z",
+    "modelNum": "140"
   },
   "6af6f704": {
     "id": "6af6f704",
@@ -4434,7 +4451,8 @@
       }
     ],
     "views": 5162,
-    "lastUpdated": "2025-03-19T01:20:51.356Z"
+    "lastUpdated": "2025-03-19T01:20:51.356Z",
+    "modelNum": "4140"
   },
   "759d0d0f": {
     "id": "759d0d0f",
@@ -4480,7 +4498,8 @@
       }
     ],
     "views": 8183,
-    "lastUpdated": "2025-03-19T15:44:57.278Z"
+    "lastUpdated": "2025-03-19T15:44:57.278Z",
+    "modelNum": "930"
   },
   "df703850": {
     "id": "df703850",
@@ -5439,7 +5458,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52897322010_c71e0abee3_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "45.4"
   },
   "16e9d2ab": {
     "id": "16e9d2ab",
@@ -5497,7 +5517,8 @@
       }
     ],
     "views": 6032,
-    "lastUpdated": "2025-03-18T23:29:31.269Z"
+    "lastUpdated": "2025-03-18T23:29:31.269Z",
+    "modelNum": "54.5"
   },
   "632f4069": {
     "id": "632f4069",
@@ -5580,7 +5601,8 @@
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 10851,
-    "lastUpdated": "2025-03-19T01:20:51.356Z"
+    "lastUpdated": "2025-03-19T01:20:51.356Z",
+    "modelNum": "55.4"
   },
   "d7188e81": {
     "id": "d7188e81",
@@ -5620,7 +5642,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53090076250_75e74a3c87_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "60.5"
   },
   "52f1e117": {
     "id": "52f1e117",
@@ -5676,7 +5699,8 @@
     "name": "ABUS 64Ti Titalium",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 6919,
-    "lastUpdated": "2025-03-19T01:20:51.356Z"
+    "lastUpdated": "2025-03-19T01:20:51.356Z",
+    "modelNum": "64"
   },
   "a0e50505": {
     "id": "a0e50505",
@@ -5734,7 +5758,8 @@
       }
     ],
     "views": 5605,
-    "lastUpdated": "2025-03-19T15:44:57.279Z"
+    "lastUpdated": "2025-03-19T15:44:57.279Z",
+    "modelNum": "65.4"
   },
   "3653f376": {
     "id": "3653f376",
@@ -5786,7 +5811,8 @@
     "name": "ABUS 83/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 6271,
-    "lastUpdated": "2025-03-19T01:20:51.356Z"
+    "lastUpdated": "2025-03-19T01:20:51.356Z",
+    "modelNum": "83.4"
   },
   "683e4f33": {
     "id": "683e4f33",
@@ -5823,7 +5849,8 @@
     "name": "ABUS 85",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 4976,
-    "lastUpdated": "2025-03-19T01:20:51.356Z"
+    "lastUpdated": "2025-03-19T01:20:51.356Z",
+    "modelNum": "85"
   },
   "d7479fd6": {
     "id": "d7479fd6",
@@ -7456,7 +7483,7 @@
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "version": "4 or 5 pin",
     "features": [
-      "changelog"
+      "Latest changelog"
     ]
   },
   "9bc8809e": {
@@ -7610,7 +7637,8 @@
     "name": "Master Lock 150",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 14647,
-    "lastUpdated": "2025-03-19T15:44:57.280Z"
+    "lastUpdated": "2025-03-19T15:44:57.280Z",
+    "modelNum": "150"
   },
   "9441e2cc": {
     "id": "9441e2cc",
@@ -7659,7 +7687,8 @@
       }
     ],
     "views": 5892,
-    "lastUpdated": "2025-03-19T15:44:57.280Z"
+    "lastUpdated": "2025-03-19T15:44:57.280Z",
+    "modelNum": "4150"
   },
   "e2e15f47": {
     "id": "e2e15f47",
@@ -7726,7 +7755,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54258057402_6c1a1003d7_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "532"
   },
   "9ca2c109": {
     "id": "9ca2c109",
@@ -7848,7 +7878,8 @@
     ],
     "views": 13696,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
-    "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked."
+    "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
+    "modelNum": "570"
   },
   "9f832458": {
     "id": "9f832458",
@@ -13819,7 +13850,8 @@
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 8598,
-    "lastUpdated": "2025-03-19T15:44:57.286Z"
+    "lastUpdated": "2025-03-19T15:44:57.286Z",
+    "modelNum": "410"
   },
   "366d5f50": {
     "id": "366d5f50",
@@ -13892,7 +13924,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52831871321_93587400c2_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "6835"
   },
   "b1915ecd": {
     "id": "b1915ecd",
@@ -13947,7 +13980,8 @@
       }
     ],
     "views": 8156,
-    "lastUpdated": "2025-03-19T15:44:57.286Z"
+    "lastUpdated": "2025-03-19T15:44:57.286Z",
+    "modelNum": "911"
   },
   "cb471080": {
     "id": "cb471080",
@@ -13993,7 +14027,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52839681736_7832dd5587_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "931"
   },
   "2bf16de8": {
     "id": "2bf16de8",
@@ -14430,7 +14465,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52815189130_e076bd017c_o.jpg"
       }
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "c7f1add4": {
     "id": "c7f1add4",
@@ -17709,7 +17745,7 @@
     ],
     "features": [
       "Magic DOM drivers",
-      "changelog"
+      "Latest changelog"
     ],
     "media": [
       {
@@ -17843,7 +17879,7 @@
     "views": 797,
     "lastUpdated": "2025-03-19T15:44:57.290Z",
     "features": [
-      "changelog"
+      "Latest changelog"
     ]
   },
   "4c544aa2": {
@@ -20576,7 +20612,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53801212667_a7dc0b75d2_o.jpg"
       }
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "6e0bfdd2": {
     "id": "6e0bfdd2",
@@ -20678,7 +20715,8 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/MUL-T-LOCK/MUL-T-LOCK%20INTEGRATOR%20UK_991.html"
       }
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "fb5a9eb7": {
     "id": "fb5a9eb7",
@@ -22693,7 +22731,7 @@
     ],
     "features": [
       "Removed",
-      "changelog"
+      "Latest changelog"
     ],
     "media": [
       {
@@ -23682,7 +23720,7 @@
     ],
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ]
   },
   "98ba98ae": {
@@ -25471,7 +25509,7 @@
     "views": 1071,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
     "features": [
-      "changelog"
+      "Latest changelog"
     ]
   },
   "479f1d73": {
@@ -27415,7 +27453,8 @@
       "Interactive element"
     ],
     "views": 2634,
-    "lastUpdated": "2025-03-21T17:03:30.599Z"
+    "lastUpdated": "2025-03-21T17:03:30.599Z",
+    "searchKeywords": "multilock, mtl"
   },
   "16906a6c": {
     "id": "16906a6c",
@@ -27466,7 +27505,8 @@
       }
     ],
     "views": 1655,
-    "lastUpdated": "2025-03-18T23:29:31.277Z"
+    "lastUpdated": "2025-03-18T23:29:31.277Z",
+    "searchKeywords": "multilock, mtl"
   },
   "8a65b956": {
     "id": "8a65b956",
@@ -27494,7 +27534,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53081190552_14ac03a5fa_o.jpg"
       }
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "3efc97ad": {
     "id": "3efc97ad",
@@ -30087,7 +30128,7 @@
       "8f004bf0"
     ],
     "features": [
-      "changelog"
+      "Latest changelog"
     ]
   },
   "de47d600": {
@@ -32828,7 +32869,8 @@
     "relatedIds": [
       "aec0c82d",
       "48323cde"
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "0ae75ea0": {
     "id": "0ae75ea0",
@@ -37381,7 +37423,7 @@
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Rotors",
-      "changelog"
+      "Latest changelog"
     ],
     "media": [
       {
@@ -37980,7 +38022,6 @@
     ],
     "name": "S&G 4544, 4440 series",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "notes": "S&G=Sargent & Greenleaf",
     "features": [
       "Safe lock",
       "Flat steel key",
@@ -38043,7 +38084,9 @@
       }
     ],
     "views": 978,
-    "lastUpdated": "2025-03-19T01:20:51.389Z"
+    "lastUpdated": "2025-03-19T01:20:51.389Z",
+    "searchKeywords": "Sargent & Greenleaf",
+    "notes": "Sargent & Greenleaf lever lock"
   },
   "cf76cfde": {
     "id": "cf76cfde",
@@ -44696,7 +44739,8 @@
     ],
     "views": 4161,
     "lastUpdated": "2025-03-19T01:20:51.395Z",
-    "version": "not mastered"
+    "version": "not mastered",
+    "searchKeywords": "multilock, mtl"
   },
   "4f2ed774": {
     "id": "4f2ed774",
@@ -45753,7 +45797,7 @@
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ],
     "media": [
       {
@@ -46694,7 +46738,8 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ]
+    ],
+    "modelNum": "5.45"
   },
   "d005e7b8": {
     "id": "d005e7b8",
@@ -47148,7 +47193,6 @@
       }
     ],
     "version": "5 serrated pin-in-pin ",
-    "notes": "mul-t-lock clone with poorer tolerances.",
     "name": "Angal",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lockingMechanisms": [
@@ -49033,7 +49077,8 @@
     ],
     "features": [
       "Unguttable"
-    ]
+    ],
+    "modelNum": "19"
   },
   "7b69a331": {
     "id": "7b69a331",
@@ -49082,7 +49127,8 @@
     ],
     "features": [
       "Under Review ⚑"
-    ]
+    ],
+    "modelNum": "160"
   },
   "8d67f9b7": {
     "id": "8d67f9b7",
@@ -49120,7 +49166,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52954020348_89a4d52905_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "1921"
   },
   "237f29c9": {
     "id": "237f29c9",
@@ -49166,7 +49213,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880298327_43c4b8bf52_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "1145"
   },
   "01c9e8d1": {
     "id": "01c9e8d1",
@@ -49635,7 +49683,8 @@
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "features": [
       "Pin-in-pin"
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "1798ca06": {
     "id": "1798ca06",
@@ -49713,7 +49762,7 @@
     "views": 130,
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ],
     "lockingMechanisms": [
       "Dimple"
@@ -50016,7 +50065,10 @@
     ],
     "features": [
       "Under Review ⚑"
-    ]
+    ],
+    "searchKeywords": "Sargent & Greenleaf",
+    "version": "9 levers",
+    "notes": "Sargent & Greenleaf lever lock"
   },
   "4403a73f": {
     "id": "4403a73f",
@@ -51157,7 +51209,8 @@
     "relatedIds": [
       "48323cde",
       "5c5701d7"
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "48323cde": {
     "id": "48323cde",
@@ -51243,7 +51296,8 @@
     "relatedIds": [
       "aec0c82d",
       "5c5701d7"
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "895be796": {
     "id": "895be796",
@@ -53228,7 +53282,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54107236147_f3dea1a78f_o.jpg"
       }
-    ]
+    ],
+    "modelNum": "2950"
   },
   "ea4834c8": {
     "id": "ea4834c8",
@@ -54233,7 +54288,9 @@
     "lastUpdated": "2025-03-19T15:44:57.324Z",
     "name": "S&G 4163",
     "dateAdded": "2023-08-05T14:23:24.000Z",
-    "views": 188
+    "views": 188,
+    "searchKeywords": "Sargent & Greenleaf",
+    "notes": "Sargent & Greenleaf lever lock"
   },
   "8a7eee5c": {
     "id": "8a7eee5c",
@@ -54294,7 +54351,9 @@
     "lastUpdated": "2025-03-19T15:44:57.324Z",
     "name": "S&G 6804",
     "dateAdded": "2023-08-05T14:23:24.000Z",
-    "views": 206
+    "views": 206,
+    "searchKeywords": "Sargent & Greenleaf",
+    "notes": "Sargent & Greenleaf lever lock"
   },
   "62cbb01c": {
     "id": "62cbb01c",
@@ -54362,7 +54421,10 @@
     "lastUpdated": "2025-03-19T01:20:51.404Z",
     "name": "S&G 6880",
     "dateAdded": "2023-08-05T14:23:24.000Z",
-    "views": 213
+    "views": 213,
+    "searchKeywords": "Sargent & Greenleaf",
+    "version": "9 levers",
+    "notes": "Sargent & Greenleaf lever lock"
   },
   "dc8dfd58": {
     "id": "dc8dfd58",
@@ -55046,7 +55108,7 @@
     ],
     "features": [
       "Interlocking pins",
-      "changelog"
+      "Latest changelog"
     ],
     "media": [
       {
@@ -57749,7 +57811,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52824809280_dd7536f01d_o.jpg"
       }
-    ]
+    ],
+    "searchKeywords": "multilock, mtl"
   },
   "90e4bcc1": {
     "id": "90e4bcc1",
@@ -59845,7 +59908,7 @@
     "features": [
       "Rotating fingerpins",
       "Active sidebar",
-      "changelog"
+      "Latest changelog"
     ],
     "media": [
       {
@@ -60188,7 +60251,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "changelog"
+      "Latest changelog"
     ],
     "name": "ABUS 82/63",
     "dateAdded": "2025-08-15T19:23:33.234Z"
@@ -60207,7 +60270,7 @@
     ],
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ],
     "name": "Securystar Pro Star",
     "dateAdded": "2025-08-15T19:23:33.238Z"
@@ -60223,7 +60286,7 @@
     ],
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ],
     "name": "Mauer Crypto",
     "dateAdded": "2025-08-15T19:23:33.241Z"
@@ -60243,7 +60306,7 @@
     ],
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ],
     "name": "Yanai R 2200M",
     "dateAdded": "2025-08-15T19:23:33.241Z"
@@ -60263,7 +60326,7 @@
     ],
     "features": [
       "High pin count",
-      "changelog"
+      "Latest changelog"
     ],
     "name": "Yanai R 2200M",
     "dateAdded": "2025-08-15T19:23:33.243Z"
