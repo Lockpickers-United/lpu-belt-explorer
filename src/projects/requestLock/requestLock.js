@@ -6,8 +6,7 @@
  */
 
 import fs from 'fs'
-import {formidable, errors as formidableErrors} from '../../util/formidable/src/index.js'
-import {formidableErrorCodes} from '../../util/formidableErrorCodes.js'
+import {formidable} from '../../util/formidable/src/index.js'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import {contentUploadRecipients, prodUser} from '../../../keys/users.js'
 import util from 'util'
@@ -20,6 +19,7 @@ import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
 import {logger} from '../../logger/logger.js'
+import parseForm from '../../util/parseForm.js'
 
 const {writeFile} = fs.promises
 
@@ -83,6 +83,8 @@ function handleError(res, message, error, status = 500) {
 
     const isDev = process.env.NODE_ENV !== 'production'
     const payload = {
+        status: 'error',
+        statusText: message || 'An unexpected error occurred.',
         error: {
             message: typeof message === 'string' ? message : (error?.message || 'Error'),
             code: error?.code,
@@ -133,7 +135,7 @@ export default async function requestLock(req, res) {
     })
 
     try {
-        const {fields, files} = await parseForm(res, req, form)
+        const {fields, files} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
         for (const fieldName in fields) {
             if (!Array.isArray(fields[fieldName])) {
                 fields[fieldName] = [fields[fieldName]]
@@ -228,12 +230,10 @@ export default async function requestLock(req, res) {
                 text: `Lock Request: ${lockName}`,
                 html: fieldsHtml
             })
-            console.log('Message sent: %s', email.messageId)
+            //console.log('Message sent: %s', email.messageId)
         } catch (error) {
             return handleError(res, 'Email send error', error)
         }
-
-        console.log('done')
         return res.status(200).json(entry)
 
     } catch (err) {
@@ -377,30 +377,6 @@ async function authenticateRequest(req) {
     return decodedToken
 }
 
-function parseForm(res, req, form) {
-    return new Promise((resolve, reject) => {
-        form.once('error', err => {
-            const status = typeof err?.httpCode === 'number'
-                ? err.httpCode
-                : 400
-            const description = err?.code
-                ? err.code === 1016 || err.code === '1016'
-                    ? `Individual file exceeds limit of ${maxFileSizeMB} MB`
-                    : err.code === 1009 || err.code === '1009'
-                        ? `Total upload exceeds limit of ${maxTotalFileSizeMB} MB`
-                        : formidableErrorCodes[err.code].description
-                : 'Formidable form parse error'
-            err.message = `Form parse error: ${description}`
-            handleError(res, description, err, status)
-            reject(err)
-        })  // ensure the Promise settles
-        form.parse(req, (err, fields, files) => {
-            if (err) return reject(err)
-            resolve({fields, files})
-        })
-    })
-}
-
 function createFilename(part, serverPath, uploadDir) {
     const {originalFilename} = part
     if (!originalFilename) return 'invalid'
@@ -419,7 +395,7 @@ function createFilename(part, serverPath, uploadDir) {
 async function runCommand(command) {
     try {
         const {stdout, stderr} = await execAsync(command)
-        console.log('runCommand stdout:', stdout.trim(), 'stderr:', stderr)
+        //console.log('runCommand stdout:', stdout.trim(), 'stderr:', stderr)
     } catch (error) {
         console.error('runCommand error:', error)
     }

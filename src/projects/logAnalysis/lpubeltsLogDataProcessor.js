@@ -45,8 +45,6 @@ const siteStatsFullJsonFile = path.join(serverPath, 'statsSiteFullNew.json')
 const countryTZ = path.join(componentsDir, 'lpu-country-timezones.json')
 
 // Load lock details from JSON feed (module must export lockDetailsNewPM)
-
-
 import { lockDetailsNewPM } from './getLockDetails.js'
 
 let lockDetailsNew
@@ -75,6 +73,7 @@ wip.visitsByCountry = {}
 wip.firstVisit = {}   // country => first date seen
 wip.lockViewsByCountry = {}
 wip.states = {}
+wip.lockViewsBySearch = {}
 wip.lockViewsByWidth = {}
 wip.referrerWelcomeViews = {}
 wip.referrerLockViews = {}
@@ -242,6 +241,14 @@ for (const file of dataFiles) {
         }
     }
 
+    // Process lockViewsBySearch
+    if (dayData.lockViewsBySearch) {
+        wip.lockViewsBySearch = wip.lockViewsBySearch || {}
+        for (const key in dayData.lockViewsBySearch) {
+            wip.lockViewsBySearch[key] = (wip.lockViewsBySearch[key] || 0) + dayData.lockViewsBySearch[key]
+        }
+    }
+
     // Process lockViewsByWidth
     if (dayData.lockViewsByWidth) {
         wip.lockViewsByWidth = wip.lockViewsByWidth || {}
@@ -324,7 +331,7 @@ for (const file of dataFiles) {
 
 
 // --- SITE STATS OBJECT (final output) ---
-let siteStatsFull = {}
+let siteStatsFull = {test: true}
 
 // --- FUNCTIONS FOR BUILDING REPORTS ---
 
@@ -729,6 +736,24 @@ function hourlyRequests() {
 }
 
 // 12. screenWidths – aggregates lock views by screen width
+function searchTerms() {
+    let jsonData = {}
+    jsonData.columns = [
+        {id: 'term', name: 'Search Term', align: 'left'},
+        {id: 'lockViews', name: 'Lock Views', align: 'center'}
+    ]
+    let dataArray = []
+    for (const term of Object.keys(wip.lockViewsBySearch).sort((a, b) => (wip.lockViewsBySearch[b] || 0) - (wip.lockViewsBySearch[a] || 0))) {
+        if (term) {
+            dataArray.push({term: term, lockViews: wip.lockViewsBySearch[term]})
+        }
+    }
+    jsonData.data = dataArray
+    jsonData.title = ''
+    siteStatsFull.searchTerms = jsonData
+}
+
+// 12. screenWidths – aggregates lock views by screen width
 function screenWidths() {
     let jsonData = {}
     jsonData.columns = [
@@ -769,6 +794,7 @@ lockViewsByBelt()
 pageTracking()
 platformBrowser()
 hourlyRequests()
+searchTerms()
 screenWidths()
 outputSiteFullJson()
 

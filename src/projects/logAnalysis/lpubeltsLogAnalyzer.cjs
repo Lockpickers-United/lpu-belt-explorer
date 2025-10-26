@@ -18,7 +18,7 @@ dayjs.extend(timezone)
 
 // CONFIGURATION
 const filterInternal = false
-const daysToReport = 999
+const daysToReport = 9999
 
 // Date configuration (using YYYYMMDD format)
 const startDateStr = '20230220'  // YYYYMMDD
@@ -33,8 +33,8 @@ const local = workDir.includes('nealbayless')
 
 // Set paths based on environment
 const componentsDir = local
-    ? '/Users/nealbayless/Documents/GitHub/explore-lpubelts-com-node/projects/logAnalysis'
-    : '/home/dh_m5s5pf/explore-lpubelts-com-node/projects/logAnalysis'
+    ? '/Users/nealbayless/Documents/GitHub/explore-lpubelts-com-node/src/projects/logAnalysis'
+    : '/home/dh_m5s5pf/explore-lpubelts-com-node/src/projects/logAnalysis'
 
 const logsPath = local
     ? '/Users/nealbayless/Documents/LOCKPICK/LPU-Belt-Explorer/Log-Analysis/logs_godaddy/'
@@ -106,6 +106,8 @@ logFiles.forEach(logFileName => {
     const logContent = fs.readFileSync(fullLogPath, 'utf8')
     const lines = logContent.split('\n')
 
+    //console.log('processing log file:', fullLogPath, 'with', lines.length, 'lines')
+
     lines.forEach(line => {
         if (!line.trim()) return
         logLines++
@@ -119,13 +121,14 @@ logFiles.forEach(logFileName => {
         if (!match) return
 
         let [
-            , clientAddress,
-            //rfc1413,
-            //username,
+            _,
+            clientAddress,
+            _rfc1413,
+            _username,
             localTime,
             httpRequest,
-            //statusCode,
-            //bytesSentToClient,
+            _statusCode,
+            _bytesSentToClient,
             referer,
             clientSoftware
         ] = match
@@ -242,11 +245,12 @@ logFiles.forEach(logFileName => {
         // PARSE BEACON REQUESTS
         const parsedUrl = url.parse(fileRequested, true)
         const query = parsedUrl.query
-        const trkString = query.trk
-        const pageString = query.page
-        const screenWidthString = query.w
-        const refString = query.ref
-        let cleanReferrerString = refString ? refString.replace(/(https:\/\/lpubelts\.com\/).*/, '$1') : undefined
+        const trkString = query.trk?.trim()
+        const pageString = query.page?.trim()
+        const screenWidthString = query.w?.trim()
+        const refString = query.ref?.trim()
+        const searchTerm = query.search?.trim().toLowerCase()
+        let cleanReferrerString = refString ? refString.replace(/(https:\/\/lpubelts\.com\/).*/, '$1').trim() : undefined
         if (cleanReferrerString) {
             stats[requestDateText].referrerViews = stats[requestDateText].referrerViews || {}
             stats[requestDateText].referrerViews[cleanReferrerString] = (stats[requestDateText].referrerViews[cleanReferrerString] || 0) + 1
@@ -305,6 +309,10 @@ logFiles.forEach(logFileName => {
             if (screenWidthString) {
                 stats[requestDateText].lockViewsByWidth = stats[requestDateText].lockViewsByWidth || {}
                 stats[requestDateText].lockViewsByWidth[screenWidthString] = (stats[requestDateText].lockViewsByWidth[screenWidthString] || 0) + 1
+            }
+            if (searchTerm) {
+                stats[requestDateText].lockViewsBySearch = stats[requestDateText].lockViewsBySearch || {}
+                stats[requestDateText].lockViewsBySearch[searchTerm] = (stats[requestDateText].lockViewsBySearch[searchTerm] || 0) + 1
             }
             stats[requestDateText].lockViewsByIP = stats[requestDateText].lockViewsByIP || {}
             stats[requestDateText].lockViewsByIP[clientAddress] = (stats[requestDateText].lockViewsByIP[clientAddress] || 0) + 1
