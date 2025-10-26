@@ -11,29 +11,40 @@ import AppContext from '../app/AppContext.jsx'
 
 export default function SearchCutoffBar() {
 
-    const {searchCutoff, setSearchCutoff, visibleEntries = []} = useContext(DataContext)
+    const {searchCutoff, setSearchCutoff, searchVariant, setSearchVariant, visibleBeltEntries = []} = useContext(DataContext)
     const {beta} = useContext(AppContext)
 
     useEffect(() => {
-        if (!beta && searchCutoff !== '0.30') {
-            setSearchCutoff('0.30')
+        // Avoid infinite updates: compare by fields, not by object identity
+        const defaultCutoff = {A: '0.40', B: '0.25'}
+        const needsReset = !beta && (
+            searchCutoff?.A !== defaultCutoff.A || searchCutoff?.B !== defaultCutoff.B
+        )
+        if (needsReset) {
+            setSearchCutoff(defaultCutoff)
         }
-    },[beta, searchCutoff, setSearchCutoff])
+    }, [beta, searchCutoff?.A, searchCutoff?.B, setSearchCutoff])
 
     const [open, setOpen] = React.useState(false)
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleChange = useCallback(event => {
-        setSearchCutoff(event.target.value)
-    }, [setSearchCutoff])
+        const newCutoff = {A: '0.30', B: '0.25'}
+        newCutoff[searchVariant] = event.target.value
+        setSearchCutoff(newCutoff)
+    }, [searchVariant, setSearchCutoff])
+
+    const handleChangeVariant = useCallback(variant => {
+        setSearchVariant(variant)
+    }, [setSearchVariant])
 
     const logEntries = useCallback(() => {
         console.log('\n> Search Cutoff', searchCutoff)
-        visibleEntries.map(entry => {
+        visibleBeltEntries.map(entry => {
             const foo = `${entry.score.toFixed(3)} - ${entryName(entry, 'long')} (${entry.belt})`
             console.log(foo)
         })
-    }, [searchCutoff, visibleEntries])
+    }, [searchCutoff, visibleBeltEntries])
 
     const linkSx = {
         color: '#fff', textDecoration: 'none', cursor: 'pointer', '&:hover': {
@@ -50,7 +61,17 @@ export default function SearchCutoffBar() {
     return (
         <div style={{...style, display: 'flex', backgroundColor: '#333', padding: 8, marginTop: 5, alignItems: 'center'}}>
             <div style={{display: 'flex', flexGrow: 1, marginLeft: 8, fontWeight: 500}}>
-                Search Cutoff Testing
+                Search Variant
+                <Link onClick={() => handleChangeVariant('A')} sx={linkSx} style={{
+                    marginLeft: 10,
+                    fontWeight: searchVariant === 'A' ? 'bold' : 'normal',
+                    textDecoration: searchVariant === 'A' ? 'underline' : 'none'
+                }}>A</Link>
+                <span style={{marginLeft: 6, marginRight: 6}}>|</span>
+                <Link onClick={() => handleChangeVariant('B')} sx={linkSx} style={{
+                    fontWeight: searchVariant === 'B' ? 'bold' : 'normal',
+                    textDecoration: searchVariant === 'B' ? 'underline' : 'none'
+                }}>B</Link>
             </div>
             <div style={{display: 'flex', marginLeft: 8, alignItems: 'center'}}>
                 <FormControl id='beltPulldown' size='small' variant='outlined'
@@ -62,7 +83,7 @@ export default function SearchCutoffBar() {
                         open={open}
                         onClose={handleClose}
                         onOpen={handleOpen}
-                        value={searchCutoff}
+                        value={searchCutoff[searchVariant]}
                         onChange={handleChange}
                         style={{backgroundColor: '#222', fontSize: '1.1rem', fontWeight: 500}}
                         color='secondary'

@@ -10,7 +10,7 @@ import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import {lockSortFields} from '../data/sortFields'
 import DataContext from './LockDataProvider.jsx'
 import SearchCutoffBar from '../filters/SearchCutoffBar.jsx'
-
+import SearchDidYouMeanBar from '../filters/SearchDidYouMeanBar.jsx'
 function LockList() {
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
@@ -34,6 +34,7 @@ function LockList() {
             <BeltToolbar/>
 
             <SearchCutoffBar/>
+            <SearchDidYouMeanBar/>
 
             <Entries profile={lockCollection} advancedEnabled={true}/>
 

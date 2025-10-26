@@ -83,6 +83,7 @@ const originalData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 console.log('Processing main data...')
 const jsonData = mainData
     .map(datum => {
+        const id = datum['Unique ID']
         const belt = datum.Belt
         const makes = splitCommaValues(datum.Make)
         const models = splitCommaValues(datum.Model)
@@ -94,7 +95,8 @@ const jsonData = mainData
         const lockingMechanisms = splitCommaValues(datum['Locking Mechanisms'])
         const features = splitCommaValues(datum.Features)
         const notes = datum.Notes
-        const id = datum['Unique ID']
+        const searchKeywords = datum['Search Keywords']
+        const modelNum = datum['Model Num']
 
         const value = {
             id,
@@ -103,7 +105,9 @@ const jsonData = mainData
             version,
             lockingMechanisms,
             features,
-            notes
+            notes,
+            searchKeywords,
+            modelNum
         }
 
         // Clean up empty values to reduce payload size

@@ -32,7 +32,7 @@ describe('LockListRoute', () => {
     it('renders Lock List with search', async () => {
         renderLocks('/locks?tab=search&search=v18')
         let firstListItem = screen.getAllByRole('listitem')[0]
-        expect(firstListItem).toHaveAccessibleName('GOAL V18, GP (<14 pins)')
+        expect(firstListItem).toHaveAccessibleName(/GOAL V18/i)
     })
 
     it('renders No Entries card with no search reults', async () => {

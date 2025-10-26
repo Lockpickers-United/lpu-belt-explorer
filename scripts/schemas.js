@@ -25,6 +25,8 @@ export const mainSchema = Joi.array().items(
         'Locking Mechanisms': Joi.string().allow(''),
         Features: Joi.string().allow(''),
         Notes: Joi.string().allow(''),
+        'Search Keywords': Joi.string().allow(''),
+        'Model Num': Joi.number().allow(''),
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/)
     }).unknown()
 )

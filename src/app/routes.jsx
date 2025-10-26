@@ -166,7 +166,7 @@ export default [
             {
                 path: '/admin/siteReport',
                 lazy: async () => {
-                    const {default: SiteReportMain} = await import('../admin/SiteReportMain')
+                    const {default: SiteReportMain} = await import('../admin/siteReport/SiteReportMain.jsx')
                     return {element: <SiteReportMain/>}
                 }
             },
