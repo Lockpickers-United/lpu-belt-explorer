@@ -18,15 +18,29 @@ const timestamp = () => {
 let logging
 
 if (isDev) {
-    // try to resolve pino-pretty; if missing, fall back to plain JSON
-    let transport
+    // In dev: pretty-print to console AND write to a local dev log file
+    const __dirname = path.dirname(fileURLToPath(import.meta.url))
+    const devLogFile = path.resolve(__dirname, '../../logs/nodeserver-dev.log')
+
+    const targets = []
+    // Pretty console when available
     try {
         require.resolve('pino-pretty')
-        transport = { target: 'pino-pretty', options: { colorize: true, translateTime: 'yyyy/MM/dd HH:mm:ss' } }
+        targets.push({
+            target: 'pino-pretty',
+            options: { colorize: true, translateTime: 'yyyy/MM/dd HH:mm:ss' }
+        })
     } catch {
-        transport = undefined
+        // If pino-pretty is not installed, console will receive JSON via the default stream below
     }
-    logging = pino({ level: process.env.LOG_LEVEL || 'debug', transport })
+    // Always write to dev log file as requested
+    targets.push({
+        target: 'pino/file',
+        options: { destination: devLogFile, mkdir: true }
+    })
+
+    const transport = pino.transport({ targets })
+    logging = pino({ level: process.env.LOG_LEVEL || 'debug', base: { hostname: undefined } }, transport)
 } else {
     // Resolve log file relative to this module's directory: ../../logs/nodeserver.log
     const __dirname = path.dirname(fileURLToPath(import.meta.url))

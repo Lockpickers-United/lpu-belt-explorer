@@ -7,15 +7,25 @@ export default function parseForm(res, req, form, handleError, maxFileSizeMB, ma
             const status = typeof err?.httpCode === 'number'
                 ? err.httpCode
                 : 400
-            const description = err?.code
-                ? err.code === 1016 || err.code === '1016'
-                    ? 'File exceeds size limit' + (maxFileSizeMB ? ` of ${maxFileSizeMB} MB` : '')
-                    : err.code === 1009 || err.code === '1009'
-                        ? 'Total upload exceeds size limit' + (maxTotalFileSizeMB ? ` of ${maxTotalFileSizeMB} MB` : '')
-                        : formidableErrorCodes[err.code].description
-                : 'Formidable form parse error'
-            err.message = `Form parse error: ${description}`
-            handleError(res, description, err, status)
+            // Defensive description mapping to avoid throwing inside the error handler
+            let description = 'Formidable form parse error'
+            const code = err?.code
+            if (code != null) {
+                const strCode = String(code)
+                if (strCode === '1016') {
+                    description = 'File exceeds size limit' + (maxFileSizeMB ? ` of ${maxFileSizeMB} MB` : '')
+                } else if (strCode === '1009') {
+                    description = 'Total upload exceeds size limit' + (maxTotalFileSizeMB ? ` of ${maxTotalFileSizeMB} MB` : '')
+                } else if (formidableErrorCodes && formidableErrorCodes[strCode]?.description) {
+                    description = formidableErrorCodes[strCode].description
+                } else if (formidableErrorCodes && formidableErrorCodes[Number(strCode)]?.description) {
+                    description = formidableErrorCodes[Number(strCode)].description
+                } else if (typeof err?.message === 'string' && err.message.trim()) {
+                    description = err.message
+                }
+            }
+            try { err.message = `Form parse error: ${description}` } catch {}
+            try { handleError(res, description, err, status) } catch {}
             reject(err)
         })  // ensure the Promise settles
         form.parse(req, (err, fields, files) => {

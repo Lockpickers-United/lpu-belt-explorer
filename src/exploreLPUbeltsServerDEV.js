@@ -40,15 +40,6 @@ app.set('trust proxy', true)
 app.use(httpLogger)
 app.use(requestIdHeader)
 
-// Flag multipart/form-data POST requests so downstream parsers can log contents safely in DEV
-app.use((req, _res, next) => {
-    const ct = req.headers && (req.headers['content-type'] || req.headers['Content-Type']) || ''
-    if (req.method === 'POST' && typeof ct === 'string' && ct.includes('multipart/form-data')) {
-        req.logMultipart = true
-    }
-    next()
-})
-
 const corsOrigin = process.env.CORS_ORIGIN
     ? process.env.CORS_ORIGIN.split(',').map(s => s.trim()).filter(Boolean)
     : true

@@ -16,9 +16,10 @@ const execAsync = util.promisify(exec)
  */
 
 const uploadDir = `/home/${prodUser}/uploads`
+const isDev = process.env.NODE_ENV !== 'production'
 
-const maxFileSizeMB = 1
-const maxTotalFileSizeMB = 50
+const maxFileSizeMB = isDev ? 1 : 15
+const maxTotalFileSizeMB = 60
 
 
 // Ensure the upload directory exists
@@ -49,7 +50,6 @@ function handleError(res, message, error, status = 500) {
         return
     }
 
-    const isDev = process.env.NODE_ENV !== 'production'
     const payload = {
         error: {
             message: typeof message === 'string' ? message : (error?.message || 'Error'),
