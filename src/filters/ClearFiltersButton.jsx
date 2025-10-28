@@ -10,18 +10,17 @@ function ClearFiltersButton({forceText}) {
     const {isMobile} = useWindowSize()
     const {filterCount, clearFilters} = useContext(FilterContext)
 
-    if (filterCount === 0) return null
     if (isMobile && !forceText) {
         return (
             <Tooltip title='Clear Filters' arrow disableFocusListener>
-                <IconButton onClick={clearFilters}>
+                <IconButton onClick={clearFilters} disabled={filterCount === 0}>
                     <ClearAllIcon/>
                 </IconButton>
             </Tooltip>
         )
     } else {
         return (
-            <Button variant='outlined' color='inherit' onClick={clearFilters} style={{minWidth: 80, marginRight:8}}>
+            <Button variant='outlined' color='inherit' onClick={clearFilters} style={{minWidth: 80, marginRight:8}} disabled={filterCount === 0}>
                 Clear
             </Button>
         )
