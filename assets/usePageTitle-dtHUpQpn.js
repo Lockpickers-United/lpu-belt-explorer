@@ -1,1 +1,0 @@
-import{az as o}from"./index-CR79cG60.js";function i(t){return o(n(t))}function n(t){const e=/^localhost.*/.test(window.location.host)?"LOCAL":/^dev.*/.test(window.location.host)?"DEV":"LPU Belt Explorer";return t?`${e} - ${t}`:"LPU Belt Explorer"}export{i as u};
