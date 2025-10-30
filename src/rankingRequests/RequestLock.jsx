@@ -128,13 +128,13 @@ function RequestLock() {
         const url = `${nodeServerUrl}/request-lock`
 
         try {
-            const results =  await postData({user, url, formData, snackBars: false})
+            const results =  await postData({user, url, formData, snackBars: false, timeoutDuration: 20000})
             enqueueSnackbar('Upload successful', {variant: 'success'})
             setResponse(results)
         } catch (error) {
             setUploadError(`${error}`.replace('Error: ', ''))
             enqueueSnackbar(`Error creating request: ${error}`, {variant: 'error', autoHideDuration: 3000})
-            throw error
+            // Do not rethrow to avoid Uncaught (in promise) in console; error is handled via UI state and snackbar.
         } finally {
             files.forEach(file => URL.revokeObjectURL(file.preview))
             setFiles([])
@@ -403,11 +403,9 @@ function RequestLock() {
                                 Something went wrong.<br/>
                                 Please try again later.<br/>
                             </div>
-                            <div style={{fontSize: '0.85rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                                Error message: { uploadError?.response?.data?.message
-                                ? <span>{uploadError?.response?.data?.message} ({uploadError?.response?.data?.status})</span>
-                                : <span>{'' + uploadError}</span>
-                            }
+                            <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
+                                {uploadError?.message}<br/>
+                                (Error code {uploadError?.status})
                             </div>
 
                             <div style={{width: '100%', textAlign: 'center'}}>

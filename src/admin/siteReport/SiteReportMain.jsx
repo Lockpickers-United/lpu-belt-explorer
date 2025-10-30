@@ -1,17 +1,18 @@
 import React from 'react'
-import LoadingDisplay from '../util/LoadingDisplay'
-import useData from '../util/useData'
-import usePageTitle from '../util/usePageTitle'
-import useWindowSize from '../util/useWindowSize'
+import LoadingDisplay from '../../util/LoadingDisplay.jsx'
+import useData from '../../util/useData.jsx'
+import usePageTitle from '../../util/usePageTitle.jsx'
+import useWindowSize from '../../util/useWindowSize.jsx'
 import dayjs from 'dayjs'
-import {siteFullNew} from '../data/dataUrls'
-import LockViewsLine from '../stats/LockViewsLine'
-import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
-import PageTrackingTable from './siteReport/PageTrackingTable'
-import SiteReportSummary from './siteReport/SiteReportSummary'
-import PopularCountries from './siteReport/PopularCountries'
-import PopularAreas from './siteReport/PopularAreas.jsx'
-import ScreenWidthsTable from './siteReport/ScreenWidthsTable.jsx'
+import {siteFullNew} from '../../data/dataUrls'
+import LockViewsLine from '../../stats/LockViewsLine.jsx'
+import FirstVisitsLastSevenTable from './FirstVisitsLastSevenTable.jsx'
+import PageTrackingTable from './PageTrackingTable.jsx'
+import SiteReportSummary from './SiteReportSummary.jsx'
+import PopularCountries from './PopularCountries.jsx'
+import PopularAreas from './PopularAreas.jsx'
+import ScreenWidthsTable from './ScreenWidthsTable.jsx'
+import SearchTermsTable from './SearchTermsTable.jsx'
 
 function SiteReportMain() {
     usePageTitle('Site Report')
@@ -70,8 +71,17 @@ function SiteReportMain() {
                 </React.Fragment>
             }
 
-            <div style={headerStyle}>Lock Views by Screen Width</div>
-            <ScreenWidthsTable data={siteFullNew}/>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                <div>
+                    <div style={headerStyle}>Lock Views by Screen Width</div>
+                    <ScreenWidthsTable data={siteFullNew}/>
+                </div>
+
+                <div>
+                    <div style={headerStyle}>Lock Views by Search Term</div>
+                    <SearchTermsTable data={siteFullNew}/>
+                </div>
+            </div>
 
         </div>
     )

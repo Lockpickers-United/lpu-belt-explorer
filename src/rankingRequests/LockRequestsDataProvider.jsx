@@ -1,11 +1,11 @@
-import React, {useCallback, useContext, useMemo} from 'react'
-import fuzzysort from 'fuzzysort'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import DataContext from '../context/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
 import {statusSort} from './rankingRequestData'
-import filterEntries from '../filters/filterEntries'
+import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
+import SearchEntries from '../filters/SearchEntries.jsx'
 
 /**
  * @typedef {object} entry
@@ -15,9 +15,11 @@ import filterEntries from '../filters/filterEntries'
  * @prop requestedBy
  */
 
-export function DataProvider({children, allEntries, profile}) {
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, expandAll, ...filters} = allFilters
+export function DataProvider({children, allEntries=[], profile}) {
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, id, tab, name, sort, image, expandAll, ..._filters} = allFilters
+
+    const [searchCutoff, setSearchCutoff] = useState(0.30)
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -46,41 +48,37 @@ export function DataProvider({children, allEntries, profile}) {
             }))
     }, [allEntries])
 
+
+    const searchedEntries = useMemo(() => {
+        return SearchEntries(mappedEntries, search, searchCutoff)
+    }, [mappedEntries, search, searchCutoff])
+
     const visibleEntries = useMemo(() => {
+
         // Filter the data
-        const filtered = filterEntries(filters, mappedEntries)
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: mappedEntries
+        })
 
-        // Check for exact search match by id
-        const exactMatch = search && filtered.find(e => e.id === search)
-        let searched = filtered
+        const searched = SearchEntries(filtered, search, searchCutoff)
 
-        if (exactMatch) {
-            searched = [exactMatch]
-        } else if (search) {
-            // If there is a search term, fuzzy match that
-            searched = fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
-                .map(result => ({
-                    ...result.obj,
-                    score: result.score
-                }))
-        }
-
-        return sort
-            ? searched.sort((a, b) => {
-                if (sort === 'alphaAscending') {
+        const effectiveSort = sort ?? 'dateRequested'
+        return [...searched].sort((a, b) => {
+                if (effectiveSort === 'alphaAscending') {
                     return a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'alphaDescending') {
+                } else if (effectiveSort === 'alphaDescending') {
                     return b.fuzzy.localeCompare(a.fuzzy)
-                } else if (sort === 'requestStatus') {
-                     return statusSort(a.requestStatus, b.requestStatus)
+                } else if (effectiveSort === 'requestStatus') {
+                    return statusSort(a.requestStatus, b.requestStatus)
                         || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'requestCount') {
-                     return b.requestCount - a.requestCount
+                } else if (effectiveSort === 'requestCount') {
+                    return b.requestCount - a.requestCount
                         || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'recentlyUpdated') {
+                } else if (effectiveSort === 'recentlyUpdated') {
                     return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
                         || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'dateRequested') {
+                } else if (effectiveSort === 'dateRequested') {
                     return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else {
@@ -88,12 +86,7 @@ export function DataProvider({children, allEntries, profile}) {
                         || a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-            : searched.sort((a, b) => {
-                return dayjs(b.dateRequested).valueOf() - dayjs(a.dateRequested).valueOf()
-                    || a.fuzzy.localeCompare(b.fuzzy)
-
-            })
-    }, [filters, mappedEntries, search, sort])
+    }, [advancedFilterGroups, mappedEntries, search, searchCutoff, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
@@ -102,12 +95,14 @@ export function DataProvider({children, allEntries, profile}) {
     const value = useMemo(() => {
         return {
             allEntries,
+            searchedEntries,
             visibleEntries,
             getEntryFromId,
             expandAll,
             profile,
+            searchCutoff, setSearchCutoff
         }
-    }, [allEntries, visibleEntries, getEntryFromId, expandAll, profile])
+    }, [allEntries, searchedEntries, visibleEntries, getEntryFromId, expandAll, profile, searchCutoff])
 
     return (
         <DataContext.Provider value={value}>
@@ -115,6 +110,3 @@ export function DataProvider({children, allEntries, profile}) {
         </DataContext.Provider>
     )
 }
-
-const fuzzySortKeys = ['fuzzy']
-

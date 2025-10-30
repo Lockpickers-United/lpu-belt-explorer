@@ -166,7 +166,7 @@ export default [
             {
                 path: '/admin/siteReport',
                 lazy: async () => {
-                    const {default: SiteReportMain} = await import('../admin/SiteReportMain')
+                    const {default: SiteReportMain} = await import('../admin/siteReport/SiteReportMain.jsx')
                     return {element: <SiteReportMain/>}
                 }
             },
@@ -490,6 +490,13 @@ export default [
                 }
             }
         ]
+    },
+    {
+        path: '/beta',
+        lazy: async () => {
+            const {default: BetaToggleRoute} = await import('../tools/betaToggle/BetaToggleRoute.jsx')
+            return {element: <BetaToggleRoute/>}
+        }
     },
     {
         path: '/evidence-review',

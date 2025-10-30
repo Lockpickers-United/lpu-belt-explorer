@@ -37,6 +37,7 @@
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
     "e2e": "clear; playwright test",
+    "e2e:ui": "playwright test --ui",
     "e2e:headed": "playwright test --headed",
     "e2e:report": "playwright show-report",
     "codegen": "npx playwright codegen http://localhost:3000/",

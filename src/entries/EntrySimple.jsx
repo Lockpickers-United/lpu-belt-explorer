@@ -37,12 +37,12 @@ import entryName from './entryName'
 
 function EntrySimple({entry, expanded, onExpand}) {
     const {expandAll} = useContext(DataContext)
-    const {addAdvancedFilterGroup} = useContext(FilterContext)
+    const {addAdvancedFilterGroup, filters} = useContext(FilterContext)
     const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
-
+    const {search} = filters
     const lockName = entryName(entry, 'short', {includeVersion: true})
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
@@ -263,8 +263,10 @@ function EntrySimple({entry, expanded, onExpand}) {
                     <AccordionActions disableSpacing>
                         <div style={{display: 'flex', width: '100%'}}>
                             <div style={{flexGrow: 1, justifyItems: 'left'}}>
-                                {!expandAll &&
-
+                                {!expandAll && !!search &&
+                                    <Tracker feature='lock' id={entry.id} search={search}/>
+                                }
+                                {!expandAll && !search &&
                                     <Tracker feature='lock' id={entry.id}/>
                                 }
                                 <CopyEntryIdButton entry={entry}/>

@@ -15,6 +15,7 @@ import {isValidRegex} from '../util/stringUtils'
 import entryName from '../entries/entryName'
 
 export function DataProvider({children, allEntries, profile}) {
+
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
     const {search, tab, sort, expandAll} = allFilters
     const {data, loading, error} = useData({urls})
@@ -22,7 +23,8 @@ export function DataProvider({children, allEntries, profile}) {
         return data && !loading && !error ? data.lockbazzarEntryIds : []
     }, [data, error, loading])
 
-    const [searchCutoff, setSearchCutoff] = useState(0.30)
+    const [searchCutoff, setSearchCutoff] = useState({A: '0.40', B: '0.25'})
+    const [searchVariant, setSearchVariant] = useState('A')
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
@@ -46,12 +48,26 @@ export function DataProvider({children, allEntries, profile}) {
                     fuzzy: removeAccents(
                         [entryName(entry, 'long')]
                             .concat([
+                                entry.searchKeywords,
+                                entry.notes
+                                //entry.version,
+                                //entry.belt
+                            ])
+                            .join(',')
+                    ),
+                    fuzzyB: removeAccents(
+                        entry.makeModels
+                            .map(({make, model}) => [make, model])
+                            .flat()
+                            .filter(a => a)
+                            .concat([
                                 entry.version,
                                 entry.notes,
                                 entry.belt
                             ])
                             .join(',')
                     ),
+                    score: 1,
                     content: [
                         entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                         entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
@@ -71,7 +87,40 @@ export function DataProvider({children, allEntries, profile}) {
             })
     }, [allEntries, profile])
 
+    const allMakes = useMemo(() => {
+        return allEntries.reduce((acc, entry) => {
+            entry.makeModels.forEach(mm => {
+                if (mm.make && !acc.includes(mm.make)) {
+                    acc.push(mm.make)
+                }
+            })
+            return acc
+        }, []).sort((a, b) => a.localeCompare(b))
+    }, [allEntries])
+
+    const closestMake = useMemo(() => {
+        return search
+            ? fuzzysort.go(removeAccents(search), allMakes, {limit: 1, threshold: .2})
+                .map(result => ({
+                    make: result.target,
+                    score: result.score
+                }))?.[0]
+            : undefined
+    }, [allMakes, search])
+
+    const anyMatch = useMemo(() => {
+        return search
+            ? fuzzysort.go(removeAccents(search), mappedEntries, {keys: fuzzySortKeys, limit: 1, threshold: 0})
+                .map(result => ({
+                    name: entryName(result.obj, 'long'),
+                    score: result.score
+                }))?.[0]
+            : undefined
+    }, [mappedEntries, search])
+
     const searchEntriesForText = useCallback((entries) => {
+        if (!search) return entries
+
         const exactMatch = search && entries.find(e => e.id === search)
         if (exactMatch) {
             return [exactMatch]
@@ -85,15 +134,34 @@ export function DataProvider({children, allEntries, profile}) {
             }, [])
         }
 
-        return !search
-            ? entries
-            : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
+        const coreSearch = searchVariant === 'A'
+            ? fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-                .filter(entry => entry.score > searchCutoff)
-    }, [search, searchCutoff])
+                .filter(entry => entry.score > parseFloat(searchCutoff['A']))
+                .sort((a, b) => {
+                    return Math.floor(b.score * 10) - Math.floor(a.score * 10)
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                        || beltSort(a.belt, b.belt)
+                })
+            : fuzzysort.go(removeAccents(search), entries, {keys: ['fuzzyB'], threshold: -23000})
+                .map(result => ({
+                    ...result.obj,
+                    score: result.score
+                }))
+                .filter(entry => entry.score > parseFloat(searchCutoff['B']))
+
+        return searchVariant === 'A' && ['master', 'master lock', 'abus'].includes(search.toLowerCase())
+            ? coreSearch.sort((a, b) => {
+                return parseFloat(a.modelNum || '99999') - parseFloat(b.modelNum || '99999')
+                    || Math.floor(b.score * 10) - Math.floor(a.score * 10)
+                    || a.fuzzy.localeCompare(b.fuzzy)
+            })
+            : coreSearch
+
+    }, [search, searchCutoff, searchVariant])
 
     const searchedBeltEntries = useMemo(() => {
         if (tab === 'search' || !tab) {
@@ -164,25 +232,30 @@ export function DataProvider({children, allEntries, profile}) {
         searchedBeltEntries,
         visibleEntries,
         visibleBeltEntries,
+        closestMake,
+        anyMatch,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
         lockbazzarAvailable,
-        searchCutoff,
-        setSearchCutoff
+        searchCutoff, setSearchCutoff,
+        searchVariant, setSearchVariant
     }), [allEntries,
         mappedEntries,
         searchedBeltEntries,
         visibleEntries,
         visibleBeltEntries,
+        closestMake,
+        anyMatch,
         getEntryFromId,
         expandAll,
         profile,
         blackBeltUser,
         lockbazzarAvailable,
-        searchCutoff,
-        setSearchCutoff])
+        searchCutoff, setSearchCutoff,
+        searchVariant, setSearchVariant
+    ])
 
     return (
         <DataContext.Provider value={value}>

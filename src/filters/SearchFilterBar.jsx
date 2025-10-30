@@ -18,7 +18,7 @@ export default function SearchFilterBar({label, sortValues, resetAll}) {
             </div>
             {!!sortValues &&
                 <div style={{margin: '12px 20px 0px 20px'}}>
-                    <ViewFilterButtons sortValues={sortValues} resetAll={resetAll}/>
+                    <ViewFilterButtons sortValues={sortValues} resetAll={resetAll} advancedEnabled={true}/>
                 </div>
             }
         </div>

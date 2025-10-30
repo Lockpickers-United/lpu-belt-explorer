@@ -12,7 +12,7 @@ export const postData = async ({user, url, formData, json, snackBars, timeoutDur
     const idToken = user ? await user.getIdToken() : null
     const isJson = json !== undefined && formData === undefined
     const headers = {
-        ...(idToken && { Authorization: `Bearer ${idToken}` }),
+        ...(idToken && {Authorization: `Bearer ${idToken}`}),
         'Content-Type': isJson ? 'application/json' : 'multipart/form-data'
     }
     const data = isJson ? json : formData
@@ -36,30 +36,27 @@ export const postData = async ({user, url, formData, json, snackBars, timeoutDur
 
     } catch (error) {
         clearTimeout(timeout)
-
         const isTimeout =
             error.name === 'CanceledError' ||
             error.code === 'ERR_CANCELED' ||
             error.message?.includes('aborted')
+        const errorMessage = isTimeout
+            ? 'Request timed out. Please try again.'
+            : error.response?.data?.error?.message
+            || error.response?.data?.message
+            || error.message
+            || 'Error during authentication or server request'
 
         if (snackBars) {
             enqueueSnackbar(
-                isTimeout
-                    ? 'Request timed out. Please try again.'
-                    : 'Error during authentication or server request',
+                `${errorMessage} (${error.status})`,
                 {
                     variant: 'error',
                     autoHideDuration: isTimeout ? 5000 : 3000
                 }
             )
         }
-
-        if (isTimeout) {
-            throw new Error('Request timed out')
-        }
-
-        console.error('Error during authentication or server request:', cleanError(error))
-        throw new Error('Error during authentication or server request')
+        throw {...error, message: errorMessage}
     }
 }
 
