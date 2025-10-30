@@ -46,8 +46,6 @@ export default function RafflePreviewBar({refresh, page}) {
 
     const containerRef = useRef(null)
 
-console.log(page)
-
     const togglePreview = useCallback(() => {
         if (previewMode) {
             searchParams.delete('preview')

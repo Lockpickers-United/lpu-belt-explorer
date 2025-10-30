@@ -5,7 +5,7 @@ import NoEntriesCard from '../../locks/NoEntriesCard.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
 import RaffleSearchBar from '../RaffleSearchBar.jsx'
 import {raffleAdminSortFields} from '../../data/sortFields'
-import RaffleExportButton from '../RaffleExportButton.jsx'
+import RaffleAdminExportButton from './RaffleAdminExportButton.jsx'
 import RaffleSubmittedEntry from './RaffleSubmittedEntry.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
@@ -55,7 +55,7 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
             )}
 
             <div style={{marginLeft: 'auto', marginRight: 'auto', textAlign: 'center', justifyItems: 'center', marginTop: 30}}>
-                <RaffleExportButton text={true}/>
+                <RaffleAdminExportButton text={true}/>
             </div>
 
         </div>

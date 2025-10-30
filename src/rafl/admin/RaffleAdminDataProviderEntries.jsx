@@ -19,8 +19,6 @@ export function RaffleAdminDataProviderEntries({children}) {
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
 
-    console.log('winnerData', winnerData)
-
     const entryWins = useMemo(() => {
         return Object.keys(winnerData).reduce((acc, potId) => {
             winnerData[potId].map(winner => {
@@ -29,9 +27,6 @@ export function RaffleAdminDataProviderEntries({children}) {
             return acc
         }, {})
     }, [winnerData])
-
-    console.log('entryWins', entryWins)
-
 
     // Filters as an array (support negative values with leading '!')
     const parseFilter = (key, rawVal) => {

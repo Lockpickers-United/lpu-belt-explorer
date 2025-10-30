@@ -27,7 +27,7 @@ const RaffleReportsCharityTable = () => {
     const tableData = {columns, rows, defaultSort, sortable: true}
 
     const tableWidth = '100%'
-    const linkFunction = useCallback((id, string) => {
+    const linkFunction = useCallback((_id, string) => {
         return string
     }, [])
 

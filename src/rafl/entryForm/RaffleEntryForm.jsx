@@ -77,7 +77,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     }, [potData])
 
     const potError = useMemo(() => {
-        return potData.reduce((acc, pot) => {
+        return potData.reduce((_acc, pot) => {
             return !(pot?.itemTitle && pot?.tickets)
         }, false)
     }, [potData])

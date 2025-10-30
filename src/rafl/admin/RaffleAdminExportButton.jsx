@@ -10,13 +10,13 @@ import Tooltip from '@mui/material/Tooltip'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useContext, useState} from 'react'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import download from '../util/download'
-import DataContext from '../context/DataContext.jsx'
+import download from '../../util/download'
+import DataContext from '../../context/DataContext.jsx'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
-import RaffleContext from './RaffleContext.jsx'
+import RaffleContext from '../RaffleContext.jsx'
 
-function RaffleExportButton({text}) {
+export default function RaffleAdminExportButton({text}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -28,39 +28,57 @@ function RaffleExportButton({text}) {
     const handleExportJson = useCallback(() => {
         const data = JSON.stringify(visibleEntries)
         handleClose()
-        download(`rafflePots${dateText}.json`, data)
-        enqueueSnackbar('Current RAFL pots downloaded as rafflePots.json')
+        download(`raffleEntries${dateText}.json`, data)
+        enqueueSnackbar('Current RAFL entries downloaded as raffleEntries.json')
     }, [dateText, handleClose, visibleEntries])
 
     const handleExportClipboard = useCallback(() => {
-        const clipboardText = visibleEntries.map(entry => {
-            const winnerText = entry.winnerCount > 1 ? `(${entry.winnerCount} winners)` : ''
-            let entryText = `Pot #${entry.potNumber} - ${entry.title} ${winnerText}\n` +
-                `  DONATIONS: ${entry.totalTickets}\n` +
-                `  DONORS: ${entry.uniqueDonorCount}\n`
-            if (entry.winnerFilterNames.length > 0) {
-                entryText += `  WINNERS: ${entry.winnerFilterNames.join(', ')}\n`
+        const data = visibleEntries.map(entry => {
+            const wonPots = entry.pots
+                .filter(pot => entry.potsWon.includes(pot.itemId))
+                .map(pot => pot.itemTitle)
+            return {
+                id: entry.id,
+                username: entry.username,
+                platform: entry.platform,
+                createdAt: entry.createdAt,
+                potNames: entry.potNames.join(', '),
+                donations: entry.donations.map(donation => donation.charity.itemTitle).join(', '),
+                totalDonation: entry.totalDonation,
+                wonPots: wonPots.join(', ')
             }
-            return entryText
+        })
 
+        const clipboardText = data.map(entry => {
+            let entryText = `${entry.username} (${entry.platform}) - $${entry.totalDonation}\n` +
+                `  POTS: ${entry.potNames}\n` +
+                `  DONATIONS: ${entry.donations}\n`
+            if (entry.wonPots.length > 0) entryText += `  POTS WON: ${entry.wonPots}\n`
+            return entryText
         }).join('\n')
 
         handleClose()
         navigator.clipboard.writeText(clipboardText).then(() => {
-            enqueueSnackbar('Current RAFL pots copied to clipboard.')
+            enqueueSnackbar('Current RAFL entries copied to clipboard.')
         })
     }, [handleClose, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
-        const data = visibleEntries.map(entry => ({
-            id: entry.id,
-            potNumber: entry.potNumber,
-            title: entry.title,
-            contributedBy: entry.contributedBy.join(', '),
-            donors: entry.uniqueDonorCount,
-            tickets: entry.totalTickets,
-            winners: entry.winnerFilterNames.join(', ')
-        }))
+        const data = visibleEntries.map(entry => {
+            const wonPots = entry.pots
+                .filter(pot => entry.potsWon.includes(pot.itemId))
+                .map(pot => pot.itemTitle)
+            return {
+                id: entry.id,
+                username: entry.username,
+                platform: entry.platform,
+                totalDonation: `$${entry.totalDonation}`,
+                createdAt: dayjs(entry.createdAt).format('MM-DD-YYYY'),
+                potNames: entry.potNames.join(', '),
+                donations: entry.donations.map(donation => donation.charity.itemTitle).join(', '),
+                wonPots: wonPots.join(', ')
+            }
+        })
 
         const headers = Object.keys(data[0]).join(',')
         const csvData = data.map(datum => {
@@ -74,8 +92,8 @@ function RaffleExportButton({text}) {
         }).join('\n')
         const csvFile = `${headers}\n${csvData}`
         handleClose()
-        download('rafflePots.csv', csvFile)
-        enqueueSnackbar('Current RAFL pots downloaded as rafflePots.csv')
+        download('raffleEntries.csv', csvFile)
+        enqueueSnackbar('Current RAFL entries downloaded as raffleEntries.csv')
     }, [handleClose, visibleEntries])
 
     return (
@@ -130,5 +148,3 @@ function RaffleExportButton({text}) {
         </div>
     )
 }
-
-export default RaffleExportButton

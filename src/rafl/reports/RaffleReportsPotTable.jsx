@@ -41,8 +41,8 @@ const RaffleReportsPotTable = ({statsData}) => {
         }
 
         // Shorten long titles
-        let potTitle = dataPot?.title ? dataPot.title.substring(0,32) : `unknown (${pot.id})`
-        potTitle = dataPot?.title?.length < 32 || !dataPot?.title ? potTitle : potTitle + '...'
+        let potTitle = dataPot?.title ? dataPot.title.substring(0,28) : `unknown (${pot.id})`
+        potTitle = dataPot?.title?.length < 28 || !dataPot?.title ? potTitle : potTitle + '...'
 
         const id = pot?.id?.replace('2025-', '')
         return {

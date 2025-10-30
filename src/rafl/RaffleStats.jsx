@@ -46,7 +46,7 @@ export default function RaffleStats() {
 
     const tableWidth = width <= 560
         ? width - 20
-        : 650
+        : 640
 
     const nameLength = !isMobile ? 48 : 24
 

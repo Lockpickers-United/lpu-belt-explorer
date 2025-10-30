@@ -25,7 +25,7 @@ function RaffleReportRoute() {
 
     const sideSpacing = !isMobile ? 0 : 8
     const style = {
-        maxWidth: 700,
+        maxWidth: 800,
         marginLeft: 'auto',
         marginRight: 'auto',
         paddingLeft: sideSpacing,

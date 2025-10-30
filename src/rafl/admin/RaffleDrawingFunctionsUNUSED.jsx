@@ -65,7 +65,7 @@ const entries = [
         entrants: [{name: 'Eve', tickets:300}, {name: 'Frank', tickets:75}]},
 ]
 
-function RaffleDrawingFunctions() {
+function RaffleDrawingFunctionsUNUSED() {
 
     const [selectedEntryId, setSelectedEntryId] = useState(entries[0]?.id)
     const [winners, setWinners] = useState([])
@@ -132,4 +132,4 @@ function RaffleDrawingFunctions() {
     )
 }
 
-export default RaffleDrawingFunctions
+export default RaffleDrawingFunctionsUNUSED

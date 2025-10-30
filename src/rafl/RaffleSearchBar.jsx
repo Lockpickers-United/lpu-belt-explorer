@@ -2,7 +2,6 @@ import React from 'react'
 import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-import {lockSortFields} from '../data/sortFields.js'
 
 export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
 
