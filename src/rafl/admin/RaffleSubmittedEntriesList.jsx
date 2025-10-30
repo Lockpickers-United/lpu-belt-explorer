@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useDeferredValue, useState} from 'react'
 import DataContext from '../../context/DataContext.jsx'
-import InlineFilterDisplay from '../../filters/InlineFilterDisplay.jsx'
+import AdvancedFilters from '../../filters/AdvancedFilters.jsx'
 import NoEntriesCard from '../../locks/NoEntriesCard.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
 import RaffleSearchBar from '../RaffleSearchBar.jsx'
@@ -39,7 +39,7 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
 
             <RaffleSearchBar label='Raffle Entries' sortValues={raffleAdminSortFields} entryCount={visibleEntries.length}/>
 
-            <InlineFilterDisplay collectionType={'raffle'}/>
+            <AdvancedFilters/>
 
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Entries'/>}
 

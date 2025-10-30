@@ -157,16 +157,13 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                 expanded &&
                 <React.Fragment>
 
-                    <AccordionDetails sx={{padding: '0px 16px 0px 16px', marginLeft: '0px 10px'}}>
+                    <AccordionDetails sx={{padding: '0px 16px 0px 16px', margin: '0px 10px'}}>
 
                         <div style={{textAlign: 'right', margin: '0px 0px 10px 0px', fontWeight: 700}}>
                             Entry Status &nbsp;<StatusMenu entry={entry}/>
-                            <div style={{fontSize: '0.9rem', fontWeight: 400, marginTop: 10}}>
-                                Last updated: {dayjs(entry?.updatedAt).format('MMM DD')}
-                            </div>
                         </div>
 
-                        <div style={{fontWeight: 700}}>Donations</div>
+                        <div style={{fontWeight: 500, fontSize:'0.8rem'}}>DONATIONS</div>
                         {entry.donations.map((donation, index) => (
                             <div key={index} style={{
                                 display: 'flex',
@@ -207,7 +204,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                             </div>
                         ))}
 
-                        <div style={{fontWeight: 700, marginTop: 10}}>Pots</div>
+                        <div style={{fontWeight: 500, fontSize:'0.8rem', marginTop: 10}}>POTS</div>
                         {entry.pots.map((pot, index) => (
                             <div key={index}
                                  style={{display: 'flex', flexGrow: 1, fontSize: contentsFontSize, marginLeft: 10}}>
@@ -231,6 +228,10 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
                         <EntryNotes entry={entry} containerRef={ref}/>
 
+                        <div style={{fontSize: '0.9rem', fontWeight: 400, marginTop: 10, textAlign: 'right'}}>
+                            Last updated: {dayjs(entry?.updatedAt).format('MMM DD')}
+                        </div>
+
                         <div style={{textAlign: 'center', margin: '15px 0px 5px 0px'}}>
                             <Tooltip title='Edit Entry' arrow disableFocusListener>
                                 <Button variant='contained' size='small'
@@ -244,7 +245,6 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                                 </Button>
                             </Tooltip>
                         </div>
-
 
                     </AccordionDetails>
                     <AccordionActions disableSpacing>

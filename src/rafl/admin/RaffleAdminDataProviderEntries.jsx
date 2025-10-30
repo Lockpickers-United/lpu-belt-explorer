@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-import fuzzysort from 'fuzzysort'
 import DataContext from '../../context/DataContext'
 import FilterContext from '../../context/FilterContext'
 import removeAccents from 'remove-accents'
@@ -8,6 +7,8 @@ import {setDeepPush, setDeepUnique} from '../../util/setDeep'
 import DBContext from '../../app/DBContext.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import {raffleStatusSort} from '../../data/filterFields'
+import searchEntriesForText from '../../filters/searchEntriesForText'
+import filterEntriesAdvanced from '../../filters/filterEntriesAdvanced'
 
 export function RaffleAdminDataProviderEntries({children}) {
 
@@ -16,8 +17,8 @@ export function RaffleAdminDataProviderEntries({children}) {
     const {entriesLoaded, allRaffleEntries, winnerData} = useContext(DBContext)
     const {allPots} = useContext(RaffleContext)
 
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, id, tab, name, sort, image, preview, single, expandAll, ..._filters} = allFilters || {}
 
     const entryWins = useMemo(() => {
         return Object.keys(winnerData).reduce((acc, potId) => {
@@ -28,21 +29,7 @@ export function RaffleAdminDataProviderEntries({children}) {
         }, {})
     }, [winnerData])
 
-    // Filters as an array (support negative values with leading '!')
-    const parseFilter = (key, rawVal) => {
-        const str = String(rawVal ?? '')
-        const negative = str.startsWith('!')
-        const value = negative ? str.slice(1) : str
-        return {key, value, negative}
-    }
-    const filterArray = Object.keys(filters)
-        .map(key => {
-            const value = filters[key]
-            return Array.isArray(value)
-                ? value.map(subkey => parseFilter(key, subkey))
-                : parseFilter(key, value)
-        })
-        .flat()
+    const searchCutoff = 0.3
 
     const mappedEntries = useMemo(() => {
         let charityNames = {}
@@ -93,29 +80,17 @@ export function RaffleAdminDataProviderEntries({children}) {
         }, [])
     }, [mappedEntries])
 
+    const searchedEntries = useMemo(() => {
+        return searchEntriesForText(search, [...mappedEntries], searchCutoff)
+    },[mappedEntries, search])
 
     const visibleEntries = useMemo(() => {
         if (!entriesLoaded) return []
-        const filtered = mappedEntries
-            .filter(datum => {
-                return filterArray.every(({key, value, negative}) => {
-                    const datumVal = datum[key]
-                    if (Array.isArray(datumVal)) {
-                        const has = datumVal.includes(value)
-                        return negative ? !has : has
-                    } else {
-                        const is = datumVal === value
-                        return negative ? !is : is
-                    }
-                })
-            })
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
-                .map(result => ({
-                    ...result.obj,
-                    score: result.score
-                }))
-            : filtered
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: mappedEntries
+        })
+        const searched = searchEntriesForText(search, [...filtered], searchCutoff)
         return sort
             ? searched.sort((a, b) => {
                 if (sort === 'updatedAt') {
@@ -133,7 +108,7 @@ export function RaffleAdminDataProviderEntries({children}) {
             : searched.sort((a, b) => {
                 return dayjs(a.createdAt).isBefore(dayjs(b.createdAt)) ? 1 : -1
             })
-    }, [entriesLoaded, filterArray, mappedEntries, search, sort])
+    }, [advancedFilterGroups, entriesLoaded, mappedEntries, search, sort])
 
     const mappedPotEntries = useMemo(() => {
         return allPots.map((pot) => {
@@ -146,22 +121,11 @@ export function RaffleAdminDataProviderEntries({children}) {
     }, [allPots, flatEntries])
 
     const visiblePotEntries = useMemo(() => {
-        //if (!entriesLoaded) return []
-        const filtered = mappedPotEntries
-            .filter(datum => {
-                return filterArray.every(({key, value}) => {
-                    return Array.isArray(datum[key])
-                        ? datum[key].includes(value)
-                        : datum[key] === value
-                })
-            })
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
-                .map(result => ({
-                    ...result.obj,
-                    score: result.score
-                }))
-            : filtered
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: mappedEntries
+        })
+        const searched = searchEntriesForText(search, [...filtered], searchCutoff)
         return sort
             ? searched.sort((a, b) => {
                 if (sort === 'updatedAt') {
@@ -179,7 +143,7 @@ export function RaffleAdminDataProviderEntries({children}) {
             : searched.sort((a, b) => {
                 return a.potNumber - b.potNumber
             })
-    }, [filterArray, mappedPotEntries, search, sort])
+    }, [advancedFilterGroups, mappedEntries, search, sort])
 
     const getPotFromId = useCallback(id => {
         return mappedPotEntries.find(e => e.id === id)
@@ -188,13 +152,14 @@ export function RaffleAdminDataProviderEntries({children}) {
     const value = useMemo(() => ({
         ...globalContext,
         allEntries: allRaffleEntries,
+        searchedEntries,
         visibleEntries,
         mappedPotEntries,
         visiblePotEntries,
         getPotFromId,
         expandAll,
         statusLabels
-    }), [globalContext, allRaffleEntries, visibleEntries, mappedPotEntries, visiblePotEntries, getPotFromId, expandAll])
+    }), [globalContext, allRaffleEntries, searchedEntries, visibleEntries, mappedPotEntries, visiblePotEntries, getPotFromId, expandAll])
 
     return (
         <DataContext.Provider value={value}>
@@ -202,8 +167,6 @@ export function RaffleAdminDataProviderEntries({children}) {
         </DataContext.Provider>
     )
 }
-
-const fuzzySortKeys = ['fuzzy']
 
 export const statusLabels = {
     pending: {entryColor: 'Blue', backgroundColor: '#3e71bd', textColor: '#fff'},

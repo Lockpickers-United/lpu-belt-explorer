@@ -213,9 +213,6 @@ export function RaffleAdminDBProvider({children}) {
         saveSummary().catch(e => console.error('Error saving summary:', e))
     }, [allRaffleEntries, entriesLoaded, saveSummary, winnerData])
 
-    if (entriesLoaded) console.log('getSummary', getSummary(allRaffleEntries))
-
-
     // value & provider
     const value = useMemo(() => ({
         ...globalContext,

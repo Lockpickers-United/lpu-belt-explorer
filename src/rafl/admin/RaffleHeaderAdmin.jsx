@@ -9,21 +9,13 @@ import RafflePreviewBar from '../RafflePreviewBar.jsx'
 
 export default function RaffleHeaderAdmin({page, width = 700}) {
 
-    const {raffleAdminRole, setRaffleAdminRole, preview, setPreview, refresh} = useContext(RaffleContext)
+    const {preview, setPreview, refresh} = useContext(RaffleContext)
     const [searchParams, setSearchParams] = useSearchParams()
     const previewMode = searchParams.has('preview')
     const showPreview = preview || previewMode
 
     const navigate = useNavigate()
     const {setAnimateTotal} = useContext(RaffleContext)
-
-    const _handleRoleClick = useCallback(() => {
-        if (preview && raffleAdminRole) setPreview(false)
-        const isAdminRole = raffleAdminRole
-        setRaffleAdminRole(!raffleAdminRole)
-        if (isAdminRole) navigate('/rafl')
-    }, [navigate, preview, raffleAdminRole, setPreview, setRaffleAdminRole])
-
 
     const handleChange = useCallback((page) => {
         navigate(page)
@@ -41,6 +33,7 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
 
     const {isMobile} = useWindowSize()
     const buttonFontSize = !isMobile ? '1.03rem' : '1.0rem'
+    const shouldShowNavButtons = !preview || page !== 'pots' || !isMobile
 
     const style = {
         maxWidth: width,
@@ -50,20 +43,21 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
         alignItems: 'center',
         height: 40
     }
+
     return (
         <React.Fragment>
             <div style={style}>
                     <IconButton style={{padding: 4}} onClick={togglePreview} disabled={page !== 'pots'}>
-                        <AdminPanelSettingsIcon fontSize='medium' style={{color: '#fff'}}/>
+                        <AdminPanelSettingsIcon fontSize='medium' style={{color: '#4c82fd'}}/>
                     </IconButton>
-                {(!preview || page !== 'pots' || !isMobile) &&
+                {shouldShowNavButtons &&
                     <React.Fragment>
                         <Button onClick={() => handleChange('/rafl/admin')}
                                 style={{
                                     padding: '0px 8px',
                                     marginRight: 10,
                                     marginLeft: 10,
-                                    color: page === 'entries' ? '#fff' : '#ccc',
+                                    color: page === 'entries' ? '#48adf1' : '#ccc',
                                     fontSize: buttonFontSize
                                 }}
                                 sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
@@ -74,7 +68,7 @@ export default function RaffleHeaderAdmin({page, width = 700}) {
                                 style={{
                                     padding: '0px 8px',
                                     marginRight: 10,
-                                    color: page === 'reports' ? '#fff' : '#ccc',
+                                    color: page === 'reports' ? '#48adf1' : '#ccc',
                                     fontSize: buttonFontSize
                                 }}
                                 sx={{':hover': {bgcolor: '#333', color: '#fff'}}}
