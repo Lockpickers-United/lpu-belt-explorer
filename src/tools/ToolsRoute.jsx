@@ -101,6 +101,20 @@ function ToolsRoute() {
                         Scorecard Projects, All Modified Picks, and Black Belt Picks with Modifiers.
                     </div>
 
+                    <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
+                        <Link onClick={() => navigate('/userinfo')}
+                              style={{
+                                  color: '#fff',
+                                  textDecorationColor: '#bbb',
+                                  cursor: 'pointer',
+                                  fontSize: '1.1rem',
+                                  fontWeight: 700
+                              }}>
+                            User Info
+                        </Link><br/>
+                        Displays info for logged in user. Includes uid, claims, Scorecard stats, and Collection details.
+                    </div>
+
                 </div>
                 <Footer/>
                 <Tracker feature='flickrInfo'/>

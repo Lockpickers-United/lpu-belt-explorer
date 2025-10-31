@@ -17,11 +17,12 @@ const newClaims = {qaUser:true}
 
 // List of user IDs to update
 const users = [
-    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
+    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'}
 ]
 
 const team = [ // eslint-disable-line
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
+    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
     {uid: 'WMSvvuutyShfvBBYB3PmDe4fmeS2', name: 'NiXXeD'},
     {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
     {uid: 'mZyfQIARjCP1uJJJc7ioMAALV9v2', name: 'peace'},
