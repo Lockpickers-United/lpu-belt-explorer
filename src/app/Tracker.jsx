@@ -15,12 +15,17 @@ function Tracker({feature, ...extraParams}) {
     const query = querystring.stringify({trk: feature, r: randomStuff, w: screen.width, ref, page, ...extraParams})
     const url = `https://images.lpubelts.com/i/${file}?${query}`
     const urlDH = `https://img.lpubelts.com/i/${file}?${query}`
+
+    // <Tracker feature='search' search={search}/>
+    // <Tracker feature='lock' id={entry.id} search={search}/>
+
     return <span><img alt='lpu' src={url} width={0} height={0}/><img alt='lpu' src={urlDH} width={0} height={0}/></span>
 }
 
 const files = {
     locks: 'welcome.gif',
     lock: 'clear.gif',
+    search: 'srch.gif',
     raflPot: 'rafl.gif'
 }
 
