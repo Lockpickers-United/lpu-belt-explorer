@@ -6,9 +6,10 @@ import dayjs from 'dayjs'
 const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
-    const {adminRole} = useContext(DBContext)
+    const {adminRole, qaUserRole} = useContext(DBContext)
     const [beta, setBeta] = useLocalStorage('beta2024', false)
     const [admin, setAdmin] = useLocalStorage('admin', adminRole && !!import.meta.env.DEV)
+    const [qaUser, setQaUser] = useLocalStorage('qaUser', qaUserRole && !!import.meta.env.DEV)
 
     const [compact, setCompact] = useState(false)
 
@@ -16,7 +17,10 @@ export function AppProvider({children}) {
         if (!adminRole && admin) {
             setAdmin(false)
         }
-    }, [adminRole, admin, setAdmin])
+        if (!qaUserRole && qaUser) {
+            setQaUser(false)
+        }
+    }, [adminRole, admin, setAdmin, qaUserRole, qaUser, setQaUser])
 
     const handleSetBeta = useCallback(value => {
         setBeta(value)
@@ -29,6 +33,14 @@ export function AppProvider({children}) {
             setAdmin(false)
         }
     }, [setAdmin, adminRole])
+
+    const handleSetQaUser = useCallback(value => {
+        if (qaUserRole) {
+            setQaUser(value)
+        } else {
+            setQaUser(false)
+        }
+    }, [qaUserRole, setQaUser])
 
     const [initial, setInitial] = useState()
     const [version, setVersion] = useState()
@@ -78,11 +90,13 @@ export function AppProvider({children}) {
         setBeta: handleSetBeta,
         admin,
         setAdmin: handleSetAdmin,
+        qaUser,
+        setQaUser: handleSetQaUser,
         version: initial,
         updateRequired,
         updateAvailable,
         compact, setCompact,
-    }), [beta, handleSetBeta, admin, handleSetAdmin, initial, updateRequired, updateAvailable, compact])
+    }), [beta, handleSetBeta, admin, handleSetAdmin, qaUser, handleSetQaUser, initial, updateRequired, updateAvailable, compact])
 
     return (
         <AppContext.Provider value={value}>

@@ -7,13 +7,13 @@ const app = admin.initializeApp({
 })
 
 
-const prod = false
+const prod = true
 
 
 const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
 
 // Custom claims to set
-const newClaims = {lpuAdmin:true}
+const newClaims = {qaUser:true}
 
 // List of user IDs to update
 const users = [

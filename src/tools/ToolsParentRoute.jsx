@@ -8,10 +8,8 @@ import Fade from '@mui/material/Fade'
 import useData from '../util/useData.jsx'
 
 function ToolsParentRoute() {
-    const {authLoaded} = useContext(AuthContext)
-    const {adminRole} = useContext(DBContext)
-    const {user, userClaims} = useContext(AuthContext)
-    const {getProfile} = useContext(DBContext)
+    const {authLoaded, isLoggedIn, user, userClaims} = useContext(AuthContext)
+    const {adminRole, getProfile} = useContext(DBContext)
     const navigate = useNavigate()
     const userId = user ? user.uid : null
     const loadFn = useCallback(async () => {
@@ -26,7 +24,7 @@ function ToolsParentRoute() {
     const {data = {}, loading, error} = useData({loadFn}) // eslint-disable-line
     const profile = data
 
-    const toolsUser = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole
+    const toolsUser = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
 
     return (
         <React.Fragment>
