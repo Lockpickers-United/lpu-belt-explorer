@@ -11,7 +11,6 @@ import dayjs from 'dayjs'
 import DBContext from '../app/DBContext.jsx'
 import Footer from '../nav/Footer.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import Nav from '../nav/Nav.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
@@ -20,7 +19,7 @@ export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
     const {getProfile, getPickerActivity} = useContext(DBContext)
     const {filters = {}, addFilters} = useContext(FilterContext)
-    const {uid} = filters
+    const {uid, name} = filters
 
     const {
         scoredActivity,
@@ -75,10 +74,14 @@ export default function UserInfoMain() {
         if (user && !uid) {
             addFilters([
                 {key: 'uid', value: user.uid},
+            ], true)
+        }
+        if (profile && !name) {
+            addFilters([
                 {key: 'name', value: encodeURIComponent(profile?.displayName)}
             ], true)
         }
-    }, [addFilters, filters, profile, uid, user])
+    }, [addFilters, filters, name, profile, uid, user])
 
     const cardActivity = data ? data.scoredActivity : []
     const cardBBCount = data ? data.bbCount : 0

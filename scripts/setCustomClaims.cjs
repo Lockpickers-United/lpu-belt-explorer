@@ -17,7 +17,7 @@ const newClaims = {qaUser:true}
 
 // List of user IDs to update
 const users = [
-    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'}
+    {uid: '84dULJFIN4bHIC1LxCiuvBCSqT43', name: 'todd'}
 ]
 
 const team = [ // eslint-disable-line
