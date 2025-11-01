@@ -27,6 +27,7 @@ const team = [ // eslint-disable-line
     {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
     {uid: 'mZyfQIARjCP1uJJJc7ioMAALV9v2', name: 'peace'},
     {uid: 'XoUDXU5McjTuVnPA1xfmzytcKuy2', name: 'Red Wanderer'},
+    {uid: '84dULJFIN4bHIC1LxCiuvBCSqT43', name: 'todd'}
 
 ]
 

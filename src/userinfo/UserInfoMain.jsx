@@ -1,4 +1,4 @@
-import React, {useContext, useCallback, useEffect, useMemo} from 'react'
+import React, {useContext, useCallback, useEffect, useMemo, useState} from 'react'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import {collectionsStatsCurrent} from '../data/dataUrls'
 import FilterContext from '../context/FilterContext.jsx'
@@ -14,10 +14,13 @@ import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
+import {TextField, Button} from '@mui/material'
+import AppContext from '../app/AppContext.jsx'
 
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
     const {getProfile, getPickerActivity} = useContext(DBContext)
+    const {admin} = useContext(AppContext)
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
 
@@ -32,7 +35,17 @@ export default function UserInfoMain() {
         maxBelt
     } = useContext(ScoringContext)
 
-    const userId = user?.uid
+    const [userId, setUserId] = useState(user?.uid)
+    const [uidInput, setUidInput] = useState(uid || user?.uid || '')
+
+    // keep local input and effective userId in sync with filter uid
+    useEffect(() => {
+        const effective = uid || user?.uid || ''
+        setUidInput(effective)
+        if (effective !== userId) {
+            setUserId(effective)
+        }
+    }, [uid, user, userId])
 
     const loadFn = useCallback(async () => {
         try {
@@ -73,7 +86,7 @@ export default function UserInfoMain() {
     useEffect(() => {
         if (user && !uid) {
             addFilters([
-                {key: 'uid', value: user.uid},
+                {key: 'uid', value: user.uid}
             ], true)
         }
         if (profile && !name) {
@@ -105,12 +118,32 @@ export default function UserInfoMain() {
 
     const footerBefore = undefined
 
+    const headerStyle = {fontWeight: 700, backgroundColor: '#333', padding: 2, textAlign: 'left', marginTop: 10}
+    const varStyle = {fontWeight: 700, paddingRight: 10}
+
+    const handleUidApply = useCallback(() => {
+        const value = (uidInput || '').trim()
+        const next = value || user?.uid || ''
+        addFilters([
+            {key: 'uid', value: next},
+            {key: 'name', value: undefined}
+        ], true)
+        setUserId(next)
+    }, [uidInput, addFilters, user])
+
+    const handleUidClear = useCallback(() => {
+        const self = user?.uid || ''
+        setUidInput(self)
+        addFilters([
+            {key: 'uid', value: self},
+            {key: 'name', value: undefined}
+        ], true)
+        setUserId(self)
+    }, [addFilters, user])
+
     if (loading || error) {
         return null
     }
-
-    const headerStyle = {fontWeight: 700, backgroundColor: '#333', padding: 2, textAlign: 'left', marginTop: 10}
-    const varStyle = {fontWeight: 700, paddingRight: 10}
 
     return (
         <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
@@ -131,7 +164,26 @@ export default function UserInfoMain() {
                             marginLeft: 'auto', marginRight: 'auto',
                             justifyItems: 'center', fontSize: '0.95rem'
                         }}>
-                            <table>
+                            {admin &&
+                                <div style={{display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12}}>
+                                    <TextField
+                                        label='View user by UID'
+                                        variant='outlined'
+                                        size='small'
+                                        value={uidInput}
+                                        onChange={(e) => setUidInput(e.target.value)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') handleUidApply()
+                                        }}
+                                        style={{flex: 1, minWidth: 360}}
+                                    />
+                                    <Button variant='contained' color='secondary' size='small'
+                                            onClick={handleUidApply}>Load</Button>
+                                    <Button variant='text' color='inherit' size='small' onClick={handleUidClear}>Reset
+                                        to me</Button>
+                                </div>
+                            }
+                            <table id='userInfo'>
                                 <thead>
                                 <tr style={headerStyle}>
                                     <th>Parameter</th>
@@ -146,7 +198,7 @@ export default function UserInfoMain() {
                                 </tr>
                                 <tr>
                                     <td style={varStyle}>user id</td>
-                                    <td>{user.uid}</td>
+                                    <td>{userId}</td>
                                 </tr>
                                 <tr>
                                     <td style={varStyle}>user claims</td>
