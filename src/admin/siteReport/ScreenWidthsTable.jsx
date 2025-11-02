@@ -4,7 +4,6 @@ import useWindowSize from '../../util/useWindowSize'
 
 const ScreenWidthsTable = ({data}) => {
 
-
     const widths = [360, 375, 384, 393, 412, 414, 428, 430, 1024, 1440, 1536, 1920, 2560, 3440]
 
     const summaryData = data['screenWidths'].data.reduce((acc, res) => {
@@ -35,7 +34,6 @@ const ScreenWidthsTable = ({data}) => {
         return acc
     }, {})
 
-
     const totals = Object.keys(summaryData).sort((a, b) => {
         return a - b
     }).filter(x => x!== 'total' && x !== '359-')
@@ -65,8 +63,8 @@ const ScreenWidthsTable = ({data}) => {
 
     const tableData = {
         columns: [...data['screenWidths'].columns,
-            {'name': 'Percent Views', 'align': 'left', 'id': 'percentViews'},
-            {'name': 'Cumulative Views', 'align': 'left', 'id': 'cumulativeViews'}
+            {'name': 'Percent Views', 'align': 'center', 'id': 'percentViews'},
+            {'name': 'Cumulative Views', 'align': 'center', 'id': 'cumulativeViews'}
         ],
         data: summaryRows
     }
@@ -85,7 +83,7 @@ const ScreenWidthsTable = ({data}) => {
                     : window820 ? '.9rem'
                         : '.85rem'
 
-    const tableWidth = 375
+    const tableWidth = 550
     const tableHeight = 650
 
     return (

@@ -102,7 +102,7 @@ function UserMenu() {
                         {adminRole &&
                             <MenuItem onClick={handleToggleAdmin}>
                                 <ListItemIcon>
-                                    <AdminPanelSettingsIcon color={admin ? 'warning' : 'default'}/>
+                                    <AdminPanelSettingsIcon color={admin ? 'success' : 'default'}/>
                                 </ListItemIcon>
                                 {admin ?
                                     <ListItemText>Disable Admin</ListItemText>

@@ -200,10 +200,12 @@ export default function UserInfoMain() {
                                     <td style={varStyle}>user id</td>
                                     <td>{userId}</td>
                                 </tr>
+                                { user?.uid === userId &&
                                 <tr>
                                     <td style={varStyle}>user claims</td>
                                     <td>{userClaims.join(', ')}</td>
                                 </tr>
+                                }
                                 {profile?.admin &&
                                     <tr>
                                         <td style={varStyle}>profile.admin</td>

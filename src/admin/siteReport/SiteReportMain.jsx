@@ -71,17 +71,11 @@ function SiteReportMain() {
                 </React.Fragment>
             }
 
-            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                <div>
-                    <div style={headerStyle}>Lock Views by Screen Width</div>
-                    <ScreenWidthsTable data={siteFullNew}/>
-                </div>
+            <div style={headerStyle}>Lock Views by Search Term</div>
+            <SearchTermsTable data={siteFullNew}/>
 
-                <div>
-                    <div style={headerStyle}>Lock Views by Search Term</div>
-                    <SearchTermsTable data={siteFullNew}/>
-                </div>
-            </div>
+            <div style={headerStyle}>Lock Views by Screen Width</div>
+            <ScreenWidthsTable data={siteFullNew}/>
 
         </div>
     )

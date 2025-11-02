@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import AdminStatsTableSort from '../AdminStatsTableSort'
 import useWindowSize from '../../util/useWindowSize'
 import Link from '@mui/material/Link'
@@ -8,22 +8,55 @@ const SearchTermsTable = ({data}) => {
     const navigate = useNavigate()
 
     const {searchTerms} = data
-    const tableData = {
-        columns: [
-            {'name': '#', 'align': 'center', 'id': 'number'},
-            ...searchTerms.columns
-        ],
-        data: searchTerms.data
-            .sort((a, b) => b.lockViews - a.lockViews || a.term.localeCompare(b.term))
-            .slice(0, 100)
-            .map((item, index) => {
+
+    const sortable = true
+    const [sort, setSort] = useState('completedSearches')
+    const [ascending, setAscending] = useState(true)
+
+    const columns = [
+        {'name': '#', 'align': 'center', 'id': 'index'},
+        ...searchTerms.columns,
+        {'id': 'viewsPerSearch', 'name': 'Views/Search', 'align': 'center'}
+    ]
+
+    const viewsPerSearch = searchTerms.data.reduce((acc, item) => {
+        acc = acc || {}
+        const vps = item.completedSearches > 0
+            ? item.lockViews / item.completedSearches
+            : 0
+        acc[item.term] = Math.round(vps)
+        return acc
+    }, {})
+
+    const mappedData = searchTerms.data.map(item => {
+        return {
+            ...item,
+            viewsPerSearch: viewsPerSearch[item.term]
+        }
+    })
+
+    const rows = mappedData.sort((a, b) => {
+        switch (sort) {
+            case 'lockViews':
+                return (b.lockViews || 0) - (a.lockViews || 0) || a.term.localeCompare(b.term)
+            case 'completedSearches':
+                return (b.completedSearches || 0) - (a.completedSearches || 0) || a.term.localeCompare(b.term)
+            case 'viewsPerSearch':
+                return (b.viewsPerSearch || 0) - (a.viewsPerSearch || 0) || a.term.localeCompare(b.term)
+            default:
+                return (b.lockViews || 0) - (a.lockViews || 0) || a.term.localeCompare(b.term)
+        }
+    })
+        .slice(0, 300)
+        .map((item, index) => {
             return {
-                number: index + 1,
-                term: item.term,
-                lockViews: item.lockViews,
+                index: index + 1,
+                ...item
             }
         })
-    }
+
+    const sortedRows = ascending ? rows : rows.reverse()
+    const tableData = {columns: columns, data: sortedRows}
 
     const linkFunction = useCallback((id, string) => {
         return id === 'term'
@@ -46,14 +79,14 @@ const SearchTermsTable = ({data}) => {
                     : window820 ? '.9rem'
                         : '.85rem'
 
-    const tableWidth = 375
+    const tableWidth = 550
     const tableHeight = 650
 
     return (
         <div>
             <AdminStatsTableSort tableData={tableData} tableWidth={tableWidth} fontSize={fontSize}
-                                 sortable={false} tableHeight={tableHeight} sort={'number'} linkFunction={linkFunction}/>
-
+                                 sortable={sortable} tableHeight={tableHeight} sort={sort} setSort={setSort}
+                                 ascending={ascending} setAscending={setAscending} linkFunction={linkFunction}/>
 
 
         </div>
