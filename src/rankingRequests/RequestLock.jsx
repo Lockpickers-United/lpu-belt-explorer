@@ -45,6 +45,10 @@ function RequestLock() {
         setForm({...form, [name]: value})
     }, [form])
 
+    const handleDroppedFiles = useCallback((allFiles, _zoneId) => {
+        setFiles(allFiles)
+    }, [])
+
     const handleAltBrandToggle = useCallback(() => {
         setAcReset(!acReset)
         const formCopy = {...form}
@@ -291,7 +295,12 @@ function RequestLock() {
                                 Lock Photos (at least 1 required)<br/>
                                 <span style={{fontSize: '1.0rem', fontWeight: 400}}>Please include body, key, keyway, and if guttable, pictures of all relevant features</span>
                             </div>
-                            <Dropzone files={files} setFiles={setFiles}/>
+
+                            <Dropzone files={files || []} otherFiles={[]}
+                                      handleDroppedFiles={handleDroppedFiles}
+                                      maxFiles={5}
+                                      backgroundColor={'#333'}/>
+
                         </div>
 
                         <div style={{display: flexStyle, marginTop: 30, width: fullWidth}}>

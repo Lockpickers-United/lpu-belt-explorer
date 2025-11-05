@@ -49,6 +49,10 @@ function PhotoSubmit({profile, user}) {
         return file.name
     })
 
+    const handleDroppedFiles = useCallback((allFiles, _zoneId) => {
+        setFiles(allFiles)
+    }, [])
+
     const title = files.length === 1 ? 'File' : 'Files'
 
     const handleFileUpload = async (event) => {
@@ -176,7 +180,11 @@ function PhotoSubmit({profile, user}) {
                             <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                 Upload<br/>
                             </div>
-                            <Dropzone files={files} setFiles={setFiles}/>
+
+                            <Dropzone files={files || []} otherFiles={[]}
+                                      handleDroppedFiles={handleDroppedFiles}
+                                      maxFiles={5}
+                                      backgroundColor={'#333'}/>
 
                             {lock &&
                                 <div>

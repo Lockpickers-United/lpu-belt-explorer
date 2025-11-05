@@ -80,7 +80,7 @@ const SearchTermsTable = ({data}) => {
                         : '.85rem'
 
     const tableWidth = 550
-    const tableHeight = 650
+    const tableHeight = 750
 
     return (
         <div>
