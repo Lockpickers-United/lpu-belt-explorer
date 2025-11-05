@@ -5,11 +5,11 @@ import ToggleBetaButton from './ToggleBetaButton'
 function Footer({extras, before}) {
     return (
 
-    <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
+        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
 
-        {before}
+            {before}
 
-        <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
+            <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
                 Discord
             </a>
             &nbsp;•&nbsp;
@@ -21,8 +21,8 @@ function Footer({extras, before}) {
                 YouTube
             </a>
             &nbsp;•&nbsp;
-            <a href='https://github.com/Lockpickers-United/lpu-belt-explorer' target='_blank' rel='noopener noreferrer'>
-                GitHub
+            <a href='/#/usage'>
+                Usage
             </a>
             &nbsp;•&nbsp;
             <a href='/#/privacy'>
@@ -35,7 +35,7 @@ function Footer({extras, before}) {
                 <ToggleBetaButton/>
             </div>
         </Typography>
-)
+    )
 }
 
 export default Footer

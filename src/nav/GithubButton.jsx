@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 function GithubButton({url}) {
     return (
         <Tooltip title='View on GitHub' arrow disableFocusListener>
-            <IconButton href={url} target='_blank'>
+            <IconButton href={url} target='_blank' rel="noopener noreferrer nofollow">
                 <GitHubIcon/>
             </IconButton>
         </Tooltip>
