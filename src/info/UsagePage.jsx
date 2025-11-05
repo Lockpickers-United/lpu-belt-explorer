@@ -10,7 +10,6 @@ import usageMd from '../resources/usage.md?raw'
 import remarkGfm from 'remark-gfm'
 
 function PrivacyPage() {
-    const updateTime = 'November 28, 2023'
     return (
         <React.Fragment>
             <Card style={{
