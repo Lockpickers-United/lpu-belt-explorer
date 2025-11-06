@@ -4,7 +4,7 @@ The LPU Belt Explorer (https://lpubelts.com) comprises thousands of hours of wor
 
 > From the license text: *Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.*
 
-> Code for the site and related utilities, as well as supporting information is available on GitHub: https://github.com/Lockpickers-United/lpu-belt-explorer
+> Code for the site and related utilities, as well as supporting information, is available on GitHub: https://github.com/Lockpickers-United/lpu-belt-explorer
 
 
 2. **Lock Classifications and Data are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International public license (CC BY-NC-SA 4.0)**: https://creativecommons.org/licenses/by-nc-sa/4.0/
