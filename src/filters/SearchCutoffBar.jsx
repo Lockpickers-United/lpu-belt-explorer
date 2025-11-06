@@ -12,18 +12,18 @@ import AppContext from '../app/AppContext.jsx'
 export default function SearchCutoffBar() {
 
     const {searchCutoff, setSearchCutoff, searchVariant, setSearchVariant, visibleBeltEntries = []} = useContext(DataContext)
-    const {beta} = useContext(AppContext)
+    const {admin, qaUser} = useContext(AppContext)
 
     useEffect(() => {
         // Avoid infinite updates: compare by fields, not by object identity
         const defaultCutoff = {A: '0.40', B: '0.25'}
-        const needsReset = !beta && (
+        const needsReset = !admin && (
             searchCutoff?.A !== defaultCutoff.A || searchCutoff?.B !== defaultCutoff.B
         )
         if (needsReset) {
             setSearchCutoff(defaultCutoff)
         }
-    }, [beta, searchCutoff?.A, searchCutoff?.B, setSearchCutoff])
+    }, [admin, searchCutoff?.A, searchCutoff?.B, setSearchCutoff])
 
     const [open, setOpen] = React.useState(false)
     const handleClose = useCallback(() => setOpen(false), [])
@@ -57,7 +57,7 @@ export default function SearchCutoffBar() {
         ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8}
         : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12}
 
-    if (!beta) return null
+    if (!admin && !qaUser) return null
     return (
         <div style={{...style, display: 'flex', backgroundColor: '#333', padding: 8, marginTop: 5, alignItems: 'center'}}>
             <div style={{display: 'flex', flexGrow: 1, marginLeft: 8, fontWeight: 500}}>

@@ -8,10 +8,11 @@ import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import {useSearchParams} from 'react-router-dom'
-import {useDebounce} from 'usehooks-ts'
+import {useDebounceValue} from 'usehooks-ts'
 import FilterContext from '../context/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
+import Tracker from '../app/Tracker'
 
 function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const [searchParams] = useSearchParams()
@@ -37,7 +38,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
         setText(value)
     }, [])
 
-    const debounceText = useDebounce(text.replaceAll('\t', ' '), 250)
+    const [debounceText] = useDebounceValue(text.replaceAll('\t', ' '), 250)
     useEffect(() => {
         if (!!debounceText && debounceText !== searchParams.get('search')) {
             if (debounceText) {
@@ -59,6 +60,19 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
             removeFilter('search', '')
         }
     }, [debounceText]) // eslint-disable-line
+
+    // 2 sec debounce specifically for tracking the final search term
+    const [debounceTrack] = useDebounceValue(text.replaceAll('\t', ' ').trim(), 2000)
+    const [trackerTerm, setTrackerTerm] = useState(null)
+    useEffect(() => {
+        if (debounceTrack) {
+            // mount Tracker for one render, then unmount to avoid duplicate pings
+            setTrackerTerm(debounceTrack)
+            const t = setTimeout(() => setTrackerTerm(null), 0)
+            return () => clearTimeout(t)
+        }
+        // if cleared, do nothing
+    }, [debounceTrack])
 
     const [open, setOpen] = useState(false)
     const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])
@@ -148,6 +162,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
                 open={open && isMobile}
                 onClick={handleBlur}
             />
+            {trackerTerm && <Tracker feature='search' search={trackerTerm} />}
         </React.Fragment>
     )
 }

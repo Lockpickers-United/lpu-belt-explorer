@@ -534,6 +534,13 @@ export default [
         }
     },
     {
+        path: '/usage',
+        lazy: async () => {
+            const {default: UsageRoute} = await import('../info/UsageRoute.jsx')
+            return {element: <UsageRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },

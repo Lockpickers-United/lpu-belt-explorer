@@ -43,7 +43,7 @@ import isValidUrl from '../util/isValidUrl'
 const DBContext = React.createContext({})
 
 export function DBProvider({children}) {
-    const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
+    const {authLoaded, isLoggedIn, user, userClaims} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
     const [pickerActivity, setPickerActivity] = useState([])
     const [collectionDBLoaded, setCollectionDBLoaded] = useState(false)
@@ -53,6 +53,7 @@ export function DBProvider({children}) {
 
     const dbLoaded = collectionDBLoaded && activityLoaded
     const adminRole = isLoggedIn && lockCollection && lockCollection.admin
+    const qaUserRole = isLoggedIn && user && (['qaUser', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
@@ -501,7 +502,8 @@ export function DBProvider({children}) {
         updateSystemMessage,
         updateSystemMessageStatus,
         removeDismissedMessages,
-        userLockNotes: lockCollection.userLockNotes || {}
+        userLockNotes: lockCollection.userLockNotes || {},
+        qaUserRole
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -529,7 +531,8 @@ export function DBProvider({children}) {
         getAllSystemMessages,
         updateSystemMessage,
         updateSystemMessageStatus,
-        removeDismissedMessages
+        removeDismissedMessages,
+        qaUserRole
     ])
 
     return (

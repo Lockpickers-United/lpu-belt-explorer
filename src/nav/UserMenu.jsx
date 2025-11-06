@@ -12,7 +12,7 @@ import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
-
+import BiotechIcon from '@mui/icons-material/Biotech'
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import EditIcon from '@mui/icons-material/Edit'
 import IconButton from '@mui/material/IconButton'
@@ -28,8 +28,8 @@ import {useNavigate} from 'react-router-dom'
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {adminRole, lockCollection} = useContext(DBContext)
-    const {admin, setAdmin} = useContext(AppContext)
+    const {adminRole, lockCollection, qaUserRole} = useContext(DBContext)
+    const {admin, setAdmin, qaUser, setQaUser} = useContext(AppContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -46,6 +46,10 @@ function UserMenu() {
     const handleToggleAdmin = useCallback(() => {
         setAdmin(!admin)
     }, [admin, setAdmin])
+
+    const handleToggleQaUser = useCallback(() => {
+        setQaUser(!qaUser)
+    }, [qaUser, setQaUser])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -74,7 +78,8 @@ function UserMenu() {
                 onClose={handleClose}
                 sx={{
                     '.MuiMenuItem-root': {
-                        minHeight:'36px'
+                        minHeight:'36px',
+                        minWidth:'190px',
                     }
                 }}
             >
@@ -97,12 +102,24 @@ function UserMenu() {
                         {adminRole &&
                             <MenuItem onClick={handleToggleAdmin}>
                                 <ListItemIcon>
-                                    <AdminPanelSettingsIcon/>
+                                    <AdminPanelSettingsIcon color={admin ? 'success' : 'default'}/>
                                 </ListItemIcon>
                                 {admin ?
                                     <ListItemText>Disable Admin</ListItemText>
                                 :
                                     <ListItemText>Enable Admin</ListItemText>
+                                }
+                            </MenuItem>
+                        }
+                        {qaUserRole &&
+                            <MenuItem onClick={handleToggleQaUser}>
+                                <ListItemIcon>
+                                    <BiotechIcon color={qaUser ? 'info' : 'default'}/>
+                                </ListItemIcon>
+                                {qaUser ?
+                                    <ListItemText>Disable QA Role</ListItemText>
+                                :
+                                    <ListItemText>Enable QA Role</ListItemText>
                                 }
                             </MenuItem>
                         }
