@@ -553,22 +553,22 @@
       {
         "segment": "Ranked locks",
         "count": 798,
-        "media": 754,
+        "media": 755,
         "coverage": "94%"
       },
       {
         "segment": "All locks",
         "count": 914,
-        "media": 847,
+        "media": 848,
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4185,
-    "contributors": 295,
+    "uniqueImages": 4217,
+    "contributors": 297,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 367
+        "images": 379
       },
       {
         "contributor": "mgsecure",
@@ -596,7 +596,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 77
+        "images": 83
       },
       {
         "contributor": "fabianoh130",
@@ -711,6 +711,10 @@
         "images": 24
       },
       {
+        "contributor": "tonysansan",
+        "images": 24
+      },
+      {
         "contributor": "FloridaManPicks",
         "images": 23
       },
@@ -728,10 +732,6 @@
       },
       {
         "contributor": "Mick Emhurt",
-        "images": 22
-      },
-      {
-        "contributor": "tonysansan",
         "images": 22
       },
       {
@@ -923,6 +923,10 @@
         "images": 9
       },
       {
+        "contributor": "Archwild",
+        "images": 8
+      },
+      {
         "contributor": "BlackMoone845",
         "images": 8
       },
@@ -992,6 +996,10 @@
       },
       {
         "contributor": "ALTrdGenetics",
+        "images": 6
+      },
+      {
+        "contributor": "Bugasu",
         "images": 6
       },
       {
@@ -1088,10 +1096,6 @@
       },
       {
         "contributor": "baek",
-        "images": 4
-      },
-      {
-        "contributor": "Bugasu",
         "images": 4
       },
       {
@@ -1451,6 +1455,10 @@
         "images": 2
       },
       {
+        "contributor": "Orange",
+        "images": 2
+      },
+      {
         "contributor": "PandaFrog",
         "images": 2
       },
@@ -1749,6 +1757,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-10-25 16:40"
+    "updatedDateTime": "2025-11-06 17:19"
   }
 }
