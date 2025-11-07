@@ -3,6 +3,8 @@ import nixxed from './pathPages/nixxed.md?raw'
 import peace from './pathPages/peace.md?raw'
 import dynamic from './pathPages/dynamic.md?raw'
 import fiveisbinding from './pathPages/fiveisbinding.md?raw'
+import skylerminer from './pathPages/skylerminer.md?raw'
+import tonysansan from './pathPages/tonysansan.md?raw'
 
 export const pageData = {
     nixxed: {
@@ -29,5 +31,15 @@ export const pageData = {
         content: fiveisbinding,
         title: 'Five is Binding',
         description: 'Not a full path, but a *six* lock, all ASSA Twin Black Belt submission.',
+    },
+    skylerminer: {
+        content: skylerminer,
+        title: 'SkylerMiner',
+        description: 'Lots of details from their zippy path to Black Belt.',
+    },
+    tonysansan: {
+        content: tonysansan,
+        title: 'TonySanSan',
+        description: 'LPU guru TonySanSan takes us on a journey, not just to Black Belt, but to the Kromer Protector -- one of the most difficult locks in the world.',
     },
 }

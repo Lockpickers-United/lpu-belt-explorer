@@ -88,6 +88,44 @@ export default function PathToBlack({page = {}}) {
         </React.Fragment>)
     }
 
+    const NotesDisplay = ({idChildren, descriptions = []}) => {
+        // Extract the id text from the first <li>'s children (could be a string or array)
+        const idText = React.Children.toArray(idChildren)
+            .map(c => (typeof c === 'string' ? c : (c?.props?.children ?? '')))
+            .flat()
+            .join('')
+            .trim()
+        const lock = getEntryFromId(String(idText)) || {}
+        const {isMobile} = useWindowSize()
+        const textSize = isMobile ? '1.0rem' : '1.0rem'
+
+        return (<React.Fragment>
+            <div style={{
+                ...style,
+                display: 'flex',
+                alignItems: 'stretch',
+                position: 'relative',
+                backgroundColor: '#222',
+                padding: '16px 32px',
+            }}>
+                <BeltStripeMini value={lock?.belt} style={{
+                    position: 'absolute', top: 0, left: 0, bottom: 0
+                }}/>
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'stretch', position: 'relative'}}>
+                    <div style={{display: 'flex'}}>
+                        <div>
+                            {descriptions.map((d, i) => (
+                                <div key={i} style={{marginBottom: 8, fontSize: textSize}}>{d}</div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </React.Fragment>)
+    }
+
+
+
     function MarkdownFancy({markdown}) {
         const {isMobile} = useWindowSize()
         const textSize = isMobile ? '1.0rem' : '1.0rem'
@@ -134,6 +172,39 @@ export default function PathToBlack({page = {}}) {
 
                         return <>{groups.map((g, i) => (
                             <LockDisplay key={`ld-${i}`} idChildren={g.idChildren} descriptions={g.descriptions}/>
+                        ))}</>
+                    },
+                    ol: ({children}) => {
+                        const extractText = (ch) => React.Children.toArray(ch)
+                            .map(c => (typeof c === 'string' ? c : (c?.props?.children ?? '')))
+                            .flat()
+                            .join('')
+                            .trim()
+
+                        const nodes = React.Children
+                            .toArray(children)
+                            .filter(React.isValidElement) // keep <li> only
+
+                        const groups = []
+                        let current = null
+
+                        nodes.forEach((li) => {
+                            const text = extractText(li.props.children)
+                            const looksLikeId = !!getEntryFromId(String(text))
+                            if (looksLikeId) {
+                                // start a new group
+                                if (current) groups.push(current)
+                                current = {idChildren: li.props.children, descriptions: []}
+                            } else {
+                                // description line
+                                if (!current) return // skip orphan description before any id
+                                current.descriptions.push(li.props.children)
+                            }
+                        })
+                        if (current) groups.push(current)
+
+                        return <>{groups.map((g, i) => (
+                            <NotesDisplay key={`ld-${i}`} idChildren={g.idChildren} descriptions={g.descriptions}/>
                         ))}</>
                     },
                     blockquote: ({children}) => <div style={{

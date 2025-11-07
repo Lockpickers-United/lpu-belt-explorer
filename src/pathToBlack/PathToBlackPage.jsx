@@ -51,13 +51,13 @@ export default function PathToBlackPage() {
                         </div>
 
                         {Object.keys(pageData).map(pageId => (
-                            <div key={pageId} style={{marginTop: 16, maxWidth: 500}}>
+                            <div key={pageId} style={{marginTop: 16, maxWidth: 650}}>
                                 <Link onClick={() => {
                                     navigate(`/pathtoblack?pageId=${pageId}`)
                                 }}
                                       style={{
                                           fontWeight: 600,
-                                          fontSize: '1.2rem',
+                                          fontSize: '1.1rem',
                                       }}
                                       sx={linkSx}>
                                     {pageData[pageId].title}</Link><br/>

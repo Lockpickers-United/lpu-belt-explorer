@@ -15,12 +15,10 @@ import ScoringContext from '../context/ScoringContext.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import {TextField, Button} from '@mui/material'
-import AppContext from '../app/AppContext.jsx'
 
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
-    const {getProfile, getPickerActivity} = useContext(DBContext)
-    const {admin} = useContext(AppContext)
+    const {getProfile, getPickerActivity,adminRole} = useContext(DBContext)
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
 
@@ -40,12 +38,14 @@ export default function UserInfoMain() {
 
     // keep local input and effective userId in sync with filter uid
     useEffect(() => {
-        const effective = uid || user?.uid || ''
+        const effective = adminRole
+            ? uid || user?.uid || ''
+            : user?.uid || ''
         setUidInput(effective)
         if (effective !== userId) {
             setUserId(effective)
         }
-    }, [uid, user, userId])
+    }, [adminRole, uid, user, userId])
 
     const loadFn = useCallback(async () => {
         try {
@@ -89,12 +89,15 @@ export default function UserInfoMain() {
                 {key: 'uid', value: user.uid}
             ], true)
         }
-        if (profile && !name) {
+    }, [addFilters, uid, user])
+
+    useEffect(() => {
+        if (profile && (!name || (profile.displayName && name !== profile.displayName))) {
             addFilters([
                 {key: 'name', value: encodeURIComponent(profile?.displayName)}
             ], true)
         }
-    }, [addFilters, filters, name, profile, uid, user])
+    }, [addFilters, name, profile])
 
     const cardActivity = data ? data.scoredActivity : []
     const cardBBCount = data ? data.bbCount : 0
@@ -164,7 +167,7 @@ export default function UserInfoMain() {
                             marginLeft: 'auto', marginRight: 'auto',
                             justifyItems: 'center', fontSize: '0.95rem'
                         }}>
-                            {admin &&
+                            {adminRole &&
                                 <div style={{display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12}}>
                                     <TextField
                                         label='View user by UID'
@@ -200,11 +203,11 @@ export default function UserInfoMain() {
                                     <td style={varStyle}>user id</td>
                                     <td>{userId}</td>
                                 </tr>
-                                { user?.uid === userId &&
-                                <tr>
-                                    <td style={varStyle}>user claims</td>
-                                    <td>{userClaims.join(', ')}</td>
-                                </tr>
+                                {user?.uid === userId &&
+                                    <tr>
+                                        <td style={varStyle}>user claims</td>
+                                        <td>{userClaims.join(', ')}</td>
+                                    </tr>
                                 }
                                 {profile?.admin &&
                                     <tr>
