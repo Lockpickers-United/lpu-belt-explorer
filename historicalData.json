@@ -16918,7 +16918,7 @@
     "makeModels": [
       {
         "make": "Cantol",
-        "model": "high-security line "
+        "model": "high-security line"
       }
     ],
     "version": "10-pin dimple",
@@ -48460,7 +48460,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "model": "Helason "
+        "model": "Helason"
       }
     ],
     "version": "16-pin round key",
