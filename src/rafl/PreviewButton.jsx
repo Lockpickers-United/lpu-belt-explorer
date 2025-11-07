@@ -7,7 +7,7 @@ import {useSearchParams} from 'react-router-dom'
 import RaffleContext from './RaffleContext.jsx'
 
 function PreviewButton() {
-    const {raffleAdminRole, preview, setPreview} = useContext(RaffleContext)
+    const {preview, setPreview} = useContext(RaffleContext)
     const [searchParams, setSearchParams] = useSearchParams()
     const previewMode = searchParams.has('preview')
     const showPreview = preview || previewMode
@@ -26,12 +26,11 @@ function PreviewButton() {
 
     const color = showPreview ? '#983de6' : '#fff'
 
-    if (!raffleAdminRole) return null
 
     return (
         <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>
-            <IconButton onClick={togglePreview} style={{height: 48, width: 48}}>
-                <VisibilityIcon style={{color: color}}/>
+            <IconButton onClick={togglePreview} style={{padding: 8}}>
+                <VisibilityIcon style={{color: color}} fontSize="small"/>
             </IconButton>
         </Tooltip>
     )

@@ -1,854 +1,1410 @@
 [
   {
+    "id": "ch_ACNMF",
     "name": "A.C.N.M Foundation",
     "url": "http://acnmf.org/",
     "tags": [],
-    "donations2024": 50
+    "donations2024": 50,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
   },
   {
+    "id": "ch_Aband",
     "name": "Abandoned Pet Project",
     "url": "https://www.abandonedpetproject.org/donate-here/",
     "tags": [],
-    "donations2024": 290
+    "donations2024": 290,
+    "donations2025": 655,
+    "donationsPrevious": 655,
+    "disabled": false
   },
   {
+    "id": "ch_Again",
     "name": "Against Malaria Foundation",
     "url": "http://www.againstmalaria.com/Donation.aspx",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 300,
+    "donationsPrevious": 300,
+    "disabled": false
   },
   {
+    "id": "ch_Alame",
     "name": "Alameda Food Bank",
     "url": "https://www.alamedafoodbank.org",
     "tags": [],
-    "donations2024": 475
+    "donations2024": 475,
+    "donations2025": 1000,
+    "donationsPrevious": 1000,
+    "disabled": false
   },
   {
+    "id": "ch_Aligh",
     "name": "Alight",
     "url": "https://www.wearealight.org/",
     "tags": [],
-    "donations2024": 400
+    "donations2024": 400,
+    "donations2025": 210,
+    "donationsPrevious": 210,
+    "disabled": false
   },
   {
+    "id": "ch_ACLU",
     "name": "American Civil Liberties Union",
     "url": "https://www.charitynavigator.org/ein/136213516",
     "tags": [],
-    "donations2024": 1408
+    "donations2024": 1408,
+    "donations2025": 3313,
+    "donationsPrevious": 3313,
+    "disabled": false
   },
   {
+    "id": "ch_AmHum",
     "name": "American Humane",
     "url": "https://www.americanhumane.org/",
     "tags": [],
-    "donations2024": 400
+    "donations2024": 400,
+    "donations2025": 155,
+    "donationsPrevious": 155,
+    "disabled": false
   },
   {
+    "id": "ch_ASPCA",
+    "name": "ASPCA",
+    "url": "https://secure.aspca.org/donate/donate-t",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 200,
+    "donationsPrevious": 200,
+    "disabled": false
+  },
+  {
+    "id": "ch_Autis",
     "name": "Autistic Self Advocacy Network",
     "url": "https://secure.everyaction.com/uEXr_TqeBkqmQMlvi7itXg2",
     "tags": [],
-    "donations2024": 325
+    "donations2024": 325,
+    "donations2025": 1025,
+    "donationsPrevious": 1025,
+    "disabled": false
   },
   {
+    "id": "ch_BigBr",
     "name": "Big Brothers Big Sisters",
     "url": "https://secured.bbbs.org/page/34557/donate/1?ea.tracking.id=bbbs-website",
     "tags": [],
-    "donations2024": 200
+    "donations2024": 200,
+    "donations2025": 125,
+    "donationsPrevious": 125,
+    "disabled": false
   },
   {
+    "id": "ch_BillW",
     "name": "Bill Wilson Center",
     "url": "https://www.billwilsoncenter.org/ways_to_give/",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 250,
+    "donationsPrevious": 250,
+    "disabled": false
   },
   {
+    "id": "ch_Borna",
     "name": "Borna",
     "url": "https://stiftungen.stiftungschweiz.ch/organizations/goenner-und-foerderstiftung-der-genossenschaft-borna-arbeits-und-wohngemeinschaft-rothrist",
     "tags": [],
-    "donations2024": 231
+    "donations2024": 231,
+    "donations2025": 136,
+    "donationsPrevious": 136,
+    "disabled": false
   },
   {
+    "id": "ch_Bosto",
     "name": "Boston Children's Hospital",
     "url": "https://www.childrenshospital.org/",
     "tags": [],
-    "donations2024": 20
+    "donations2024": 20,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
   },
   {
+    "id": "ch_Boysa",
     "name": "Boys and Girls Club",
     "url": "https://bgca.org/?form=donate",
     "tags": [],
-    "donations2024": 51
+    "donations2024": 51,
+    "donations2025": 15,
+    "donationsPrevious": 15,
+    "disabled": false
   },
   {
+    "id": "ch_Bradb",
     "name": "Bradbury-Sullivan LGBT Community Center",
     "url": "https://www.bradburysullivancenter.org/join",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": true
   },
   {
-    "name": "Camp One Step",
-    "url": "https://camponestep.org/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Canadian Whale Institute",
-    "url": "https://www.canadianwhaleinstitute.ca/donate",
-    "tags": [],
-    "donations2024": 320
-  },
-  {
-    "name": "Caritas Australia Limited",
-    "url": "https://www.caritas.org.au/donate-now/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Catholic Social Services of Columbus",
-    "url": "https://colscss.org/get-involved/give/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Center of Hope Food Bank",
-    "url": "https://www.fentoncenterofhope.org/donations",
-    "tags": [],
-    "donations2024": 420
-  },
-  {
-    "name": "Charity Navigator",
-    "url": "https://give.charitynavigator.org/give/151985/#!/donation/checkout",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Chicago Children’s Advocacy Center",
-    "url": "https://www.chicagocac.org/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Child’s Play",
-    "url": "https://childsplay.salsalabs.org/donatenow/index.html",
-    "tags": [],
-    "donations2024": 105
-  },
-  {
-    "name": "Children and Adults with Attention-Deficit/Hyperactivity Disorder",
-    "url": "https://donate.givedirect.org/?cid=15107&n=653656",
-    "tags": [],
-    "donations2024": 50
-  },
-  {
-    "name": "Citizens United for Research in Epilepsy",
-    "url": "https://www.cureepilepsy.org/get-involved/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "City Harvest",
-    "url": "https://secure.cityharvest.org/site/Donation2?2621.donation=form1&df_id=2621&mfc_pref=T",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Code.org",
-    "url": "https://donate.code.org/campaign/support-computer-science-education/c172233",
-    "tags": [],
-    "donations2024": 140
-  },
-  {
-    "name": "Covenant House California",
-    "url": "https://covenanthousecalifornia.org/donate-now/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Danish Cancer Society",
-    "url": "https://www.cancer.dk/stoet-os/giv-et-bidrag/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "DFW Humane Society",
-    "url": "https://www.dfwhumane.com/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Diabetes Fonds",
-    "url": "https://www.diabetesfonds.nl/home",
-    "tags": [],
-    "donations2024": 127
-  },
-  {
-    "name": "Direct Relief",
-    "url": "https://secure.directrelief.org/site/Donation2?df_id=2924&mfc_pref=T&2924.donation=form1",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Disasters Emergency Committee",
-    "url": "https://donation.dec.org.uk/",
-    "tags": [],
-    "donations2024": 127
-  },
-  {
-    "name": "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser",
-    "url": "https://donate.doctorswithoutborders.org/onetime.cfm",
-    "tags": [],
-    "donations2024": 1675
-  },
-  {
-    "name": "Dog's Trust",
-    "url": "https://www.dogstrust.org.uk/donation/",
-    "tags": [],
-    "donations2024": 46
-  },
-  {
-    "name": "Domestic Violence Crisis Service",
-    "url": "https://dvcs.org.au/get-involved/donations/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Down Syndrome Association of Middle Tennessee",
-    "url": "https://www.somethingextra.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Electronic Frontier Foundation",
-    "url": "https://supporters.eff.org/donate/year-end-challenge--DB",
-    "tags": [],
-    "donations2024": 1520
-  },
-  {
-    "name": "Feed My Starving Children",
-    "url": "https://www.fmsc.org/ways-to-give",
-    "tags": [],
-    "donations2024": 60
-  },
-  {
-    "name": "Feed Nova Scotia",
-    "url": "https://www.feednovascotia.ca/donate/donate-money#donate",
-    "tags": [],
-    "donations2024": 37
-  },
-  {
-    "name": "Feeding America",
-    "url": "https://www.feedingamerica.org/",
-    "tags": [],
-    "donations2024": 350
-  },
-  {
-    "name": "Feeding Kentucky",
-    "url": "https://feedingky.org/fky-donation-form/",
-    "tags": [],
-    "donations2024": 103
-  },
-  {
-    "name": "Fisher House Foundation",
-    "url": "https://engage.fisherhouse.org/site/Donation2?2262.donation=form1&df_id=2262&mfc_pref=T",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Food Bank of the Rockies",
-    "url": "https://www.foodbankrockies.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Foundation for Prader-Willi Research",
-    "url": "https://www.fpwr.org/thismoment",
-    "tags": [],
-    "donations2024": 1000
-  },
-  {
-    "name": "Frankie’s Friends",
-    "url": "https://www.frankiesfriends.org/donate",
-    "tags": [],
-    "donations2024": 50
-  },
-  {
-    "name": "General Society of Mechanics & Tradesmen",
-    "url": "https://generalsociety.org/?page_id=291",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Girls Who Code",
-    "url": "https://girlswhocode.com/",
-    "tags": [],
-    "donations2024": 302
-  },
-  {
-    "name": "Give Well",
-    "url": "https://secure.givewell.org/",
-    "tags": [],
-    "donations2024": 1000
-  },
-  {
-    "name": "Golden State Greyhound Adoption",
-    "url": "http://www.goldengreyhounds.com/donations/index.htm",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Good Cheer Food Bank",
-    "url": "https://www.goodcheer.org/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Greater New Haven Cat Project",
-    "url": "https://www.gnhcp.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Green Mountain Club",
-    "url": "https://secure3.convio.net/gmc/site/Donation2;jsessionid=00000000.app30125a?df_id=2182&2182.donation=form1&mfc_pref=T&NONCE_TOKEN=FBE0DB1EB2FB831F071AFD148A21F585",
-    "tags": [],
-    "donations2024": 100
-  },
-  {
-    "name": "Hardcore Help",
-    "url": "https://www.hardcore-help.org/donate/",
-    "tags": [],
-    "donations2024": 174
-  },
-  {
-    "name": "Heard County Humane Society",
-    "url": "https://heardcountyhumanesociety.wordpress.com/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Hilarity for Charity",
-    "url": "https://wearehfc.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Hope for Paws",
-    "url": "https://www.hopeforpaws.org/donationrecurring",
-    "tags": [],
-    "donations2024": 75
-  },
-  {
-    "name": "Hospice Foundation of America",
-    "url": "https://hospicefoundation.org/donate/",
-    "tags": [],
-    "donations2024": 104
-  },
-  {
-    "name": "Hospice of Wellington",
-    "url": "https://www.hospicewellington.org/donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "International Rescue Committee",
-    "url": "https://help.rescue.org/donate?ms=ws_resq_top_nav_btn_fy22_CRO_mmus_oct_t501&initialms=ws_resq_top_nav_btn_fy22_CRO_mmus_oct_t501",
-    "tags": [],
-    "donations2024": 50
-  },
-  {
-    "name": "Leadership Fairfax",
-    "url": "https://www.leadershipfairfax.org/Donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Lifeline",
-    "url": "https://fundraise.lifeline.org.au/sponsor",
-    "tags": [],
-    "donations2024": 507
-  },
-  {
-    "name": "Lifewater Canada",
-    "url": "https://lifewater.ca/?ID=63",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Malaria Consortium",
-    "url": "https://www.malariaconsortium.org/support/donate.htm",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Mental Health Association",
-    "url": "https://www.mhanational.org/donate-now",
-    "tags": [],
-    "donations2024": 30
-  },
-  {
-    "name": "Michael J. Fox Foundation for Parkinson's Research",
-    "url": "https://www.michaeljfox.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Mind",
-    "url": "https://www.mind.org.uk/donate/",
-    "tags": [],
-    "donations2024": 63
-  },
-  {
-    "name": "Minus18",
-    "url": "https://www.minus18.org.au/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Mozilla",
-    "url": "https://foundation.mozilla.org/en/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "NAMI",
-    "url": "https://nami.org/About-NAMI/Donate-to-NAMI",
-    "tags": [],
-    "donations2024": 10
-  },
-  {
-    "name": "National Breast Cancer Foundation",
-    "url": "https://fundraise.nbcf.org/give/251086/#!/donation/checkout",
-    "tags": [],
-    "donations2024": 428
-  },
-  {
-    "name": "National Disaster Search Dog Foundation",
-    "url": "https://donate.searchdogfoundation.org/1170",
-    "tags": [],
-    "donations2024": 565
-  },
-  {
-    "name": "National Math + Science Initiative",
-    "url": "https://www.nms.org/Donation-Form.aspx",
-    "tags": [],
-    "donations2024": 300
-  },
-  {
-    "name": "National Multiple Sclerosis Society",
-    "url": "https://www.nationalmssociety.org/Donate",
-    "tags": [],
-    "donations2024": 170
-  },
-  {
-    "name": "National Pediatric Cancer Foundation",
-    "url": "https://nationalpcf.org/donate/",
-    "tags": [],
-    "donations2024": 300
-  },
-  {
-    "name": "National Society for the Prevention of Cruelty to Children",
-    "url": "https://www.nspcc.org.uk/support-us/ways-to-give/donate/?utm_source=homepage",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Niagara's Cancer Care Run Foundation",
-    "url": "https://secure.rankincancerrun.com/donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "North Texas Food Bank",
-    "url": "https://give.ntfb.org/site/Donation2;jsessionid=00000000.app20013b?1400.donation=form1&df_id=1400&mfc_pref=T&NONCE_TOKEN=C5D36D82967CDA3DAC275D2087291E51",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Nurse-Family Partnership",
-    "url": "https://www.classy.org/give/97299/#!/donation/checkout",
-    "tags": [],
-    "donations2024": 300
-  },
-  {
-    "name": "Oregon Food Bank",
-    "url": "https://www.oregonfoodbank.org/",
-    "tags": [],
-    "donations2024": 1075
-  },
-  {
-    "name": "Our Companions Animal Rescue",
-    "url": "https://www.ourcompanions.org/get-involved/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Our Daily Bread Denton",
-    "url": "https://www.ourdailybreaddenton.org/donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Pain BC",
-    "url": "https://painbc.ca/donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Partners in Health",
-    "url": "https://www.pih.org/?form=donate",
-    "tags": [],
-    "donations2024": 50
-  },
-  {
-    "name": "Polar Bears International",
-    "url": "https://polarbearsinternational.org/",
-    "tags": [],
-    "donations2024": 65
-  },
-  {
-    "name": "Red Noses International",
-    "url": "https://www.rotenasen.de/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Revived Soldiers Ukraine",
-    "url": "https://www.rsukraine.org/",
-    "tags": [],
-    "donations2024": 60
-  },
-  {
-    "name": "RIP Medical Debt",
-    "url": "https://ripmedicaldebt.org/",
-    "tags": [],
-    "donations2024": 50
-  },
-  {
-    "name": "Ronald McDonald House Charities",
-    "url": "https://www.rmhc.org/donate",
-    "tags": [],
-    "donations2024": 250
-  },
-  {
-    "name": "Royal Flying Doctor Service",
-    "url": "https://www.flyingdoctor.org.au/donate/",
-    "tags": [],
-    "donations2024": 341
-  },
-  {
-    "name": "Royal Society of the Protection of Birds",
-    "url": "https://www.rspb.org.uk/join-and-donate/",
-    "tags": [],
-    "donations2024": 9
-  },
-  {
-    "name": "RSPCA (Australia)",
-    "url": "https://www.rspca.org.au/start-your-donation-story/regular",
-    "tags": [],
-    "donations2024": 164
-  },
-  {
-    "name": "Salvation Army USA",
-    "url": "https://www.salvationarmyusa.org/usn/ways-to-give/",
-    "tags": [],
-    "donations2024": 2000
-  },
-  {
-    "name": "Save the Children",
-    "url": "https://support.savethechildren.org/site/Donation2?df_id=1631&1631.donation=form1",
-    "tags": [],
-    "donations2024": 293
-  },
-  {
-    "name": "Seattle Children's Hospital",
-    "url": "https://give.seattlechildrens.org/",
-    "tags": [],
-    "donations2024": 200
-  },
-  {
-    "name": "Second Harvest of Silicon Valley",
-    "url": "https://www.shfb.org/give-help/donate-funds/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Shared Hope International",
-    "url": "https://sharedhope.org/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Shriners Hospitals for Children",
-    "url": "https://www.shrinerschildrens.org",
-    "tags": [],
-    "donations2024": 104
-  },
-  {
-    "name": "SickKids Foundation",
-    "url": "https://www.sickkidsfoundation.com/waystodonate",
-    "tags": [],
-    "donations2024": 50
-  },
-  {
-    "name": "SIRUM",
-    "url": "https://www.sirum.org/about/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Social Bite",
-    "url": "https://socialbite.enthuse.com/donate#!/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Special Operations Warrior Foundation",
-    "url": "https://interland3.donorperfect.net/weblink/weblink.aspx?name=E130156&id=8",
-    "tags": [],
-    "donations2024": 380
-  },
-  {
-    "name": "Spokane Create",
-    "url": "http://www.spokanecreate.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "St. Jude Children’s Research Hospital",
-    "url": "https://www.stjude.org/donate/donate-to-st-jude.html",
-    "tags": [],
-    "donations2024": 1395
-  },
-  {
-    "name": "Stack Up",
-    "url": "https://www.stackup.org/donate",
-    "tags": [],
-    "donations2024": 210
-  },
-  {
-    "name": "StarJam",
-    "url": "https://www.starjam.org/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Sydney Fox and Dingo Rescue",
-    "url": "https://sfdr.org/",
-    "tags": [],
-    "donations2024": 2220
-  },
-  {
-    "name": "Tafel",
-    "url": "https://www.tafel.de/spenden/jetzt-spenden",
-    "tags": [],
-    "donations2024": 86
-  },
-  {
-    "name": "The Beacon House Association of San Pedro",
-    "url": "https://thebeaconhouse.networkforgood.com/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "The Crucible",
-    "url": "https://www.thecrucible.org/support-the-crucible/art-transforms-lives/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "The Donkey Sanctuary",
-    "url": "https://www.thedonkeysanctuary.org.uk/support-us/donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "The Food Bank of Contra Costa and Solano",
-    "url": "https://www.foodbankccs.org/",
-    "tags": [],
-    "donations2024": 350
-  },
-  {
-    "name": "The Internet Archive",
-    "url": "https://archive.org/donate",
-    "tags": [],
-    "donations2024": 2922
-  },
-  {
-    "name": "The Leukemia and Lymphoma Society",
-    "url": "https://givenow.lls.org/give/342076/#!/donation/checkout",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "The Rotary Foundation",
-    "url": "https://www.rotary.org/en/donate",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "The Trevor Project",
-    "url": "https://give.thetrevorproject.org/give/63307/#!/donation/checkout?c_src=EOY20&c_src2=headerdonatebutton",
-    "tags": [],
-    "donations2024": 1627
-  },
-  {
-    "name": "Tulsa Zoo",
-    "url": "https://tulsazoo.org/donate-today/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "UK Men's Sheds Association",
-    "url": "https://menssheds.org.uk/donate/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "United Nations Children’s Fund (UNICEF)",
-    "url": "https://www.unicefusa.org/?form=donate",
-    "tags": [],
-    "donations2024": 486
-  },
-  {
-    "name": "Utah Food Bank",
-    "url": "https://www.utahfoodbank.org/give-money/",
-    "tags": [],
-    "donations2024": 104
-  },
-  {
-    "name": "Water.org",
-    "url": "https://water.org/donate/",
-    "tags": [],
-    "donations2024": 350
-  },
-  {
-    "name": "WI Cook Foundation",
-    "url": "https://www.cookchildrens.org/giving/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "Wikimedia",
-    "url": "https://donate.wikimedia.org/w/index.php?title=Special:LandingPage&country=US&uselang=en&utm_medium=spontaneous&utm_source=fr-redir&utm_campaign=spontaneous",
-    "tags": [],
-    "donations2024": 2972
-  },
-  {
-    "name": "Wikimedia.de",
-    "url": "https://www.wikimedia.de/",
-    "tags": [],
-    "donations2024": 108
-  },
-  {
-    "name": "Worcester Food Bank",
-    "url": "https://foodbank.org/",
-    "tags": [],
-    "donations2024": 0
-  },
-  {
-    "name": "World Builders",
-    "url": "https://fundraise.worldbuilders.org/give/158394/#!/donation/checkout",
-    "tags": [],
-    "donations2024": 100
-  },
-  {
+    "id": "ch_CCF",
     "name": "California Community Foundation",
     "url": "https://www.calfund.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 228,
+    "donationsPrevious": 228,
+    "disabled": false
   },
   {
+    "id": "ch_CFF",
     "name": "California Fire Foundation",
     "url": "https://www.cafirefoundation.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 728,
+    "donationsPrevious": 728,
+    "disabled": false
   },
   {
+    "id": "ch_CampO",
+    "name": "Camp One Step",
+    "url": "https://camponestep.org/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Canad",
+    "name": "Canadian Whale Institute",
+    "url": "https://www.canadianwhaleinstitute.ca/donate",
+    "tags": [],
+    "donations2024": 320,
+    "donations2025": 347,
+    "donationsPrevious": 347,
+    "disabled": false
+  },
+  {
+    "id": "ch_Carit",
+    "name": "Caritas Australia Limited",
+    "url": "https://www.caritas.org.au/donate-now/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Catho",
+    "name": "Catholic Social Services of Columbus",
+    "url": "https://colscss.org/get-involved/give/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Cente",
+    "name": "Center of Hope Food Bank",
+    "url": "https://www.fentoncenterofhope.org/donations",
+    "tags": [],
+    "donations2024": 420,
+    "donations2025": 257,
+    "donationsPrevious": 257,
+    "disabled": false
+  },
+  {
+    "id": "ch_Chari",
+    "name": "Charity Navigator",
+    "url": "https://give.charitynavigator.org/give/151985/#!/donation/checkout",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 129,
+    "donationsPrevious": 129,
+    "disabled": false
+  },
+  {
+    "id": "ch_Chica",
+    "name": "Chicago Children’s Advocacy Center",
+    "url": "https://www.chicagocac.org/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Chil1",
+    "name": "Child’s Play",
+    "url": "https://childsplay.salsalabs.org/donatenow/index.html",
+    "tags": [],
+    "donations2024": 105,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Chil2",
+    "name": "Children and Adults with Attention-Deficit/Hyperactivity Disorder",
+    "url": "https://donate.givedirect.org/?cid=15107&n=653656",
+    "tags": [],
+    "donations2024": 50,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Citiz",
+    "name": "Citizens United for Research in Epilepsy",
+    "url": "https://www.cureepilepsy.org/get-involved/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_CityH",
+    "name": "City Harvest",
+    "url": "https://secure.cityharvest.org/site/Donation2?2621.donation=form1&df_id=2621&mfc_pref=T",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Codeo",
+    "name": "Code.org",
+    "url": "https://donate.code.org/campaign/support-computer-science-education/c172233",
+    "tags": [],
+    "donations2024": 140,
+    "donations2025": 100,
+    "donationsPrevious": 100,
+    "disabled": false
+  },
+  {
+    "id": "ch_CORE1",
     "name": "CORE (Community Organized Relief Effort)",
     "url": "https://www.coreresponse.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 540,
+    "donationsPrevious": 540,
+    "disabled": false
   },
   {
+    "id": "ch_Coven",
+    "name": "Covenant House California",
+    "url": "https://covenanthousecalifornia.org/donate-now/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 255,
+    "donationsPrevious": 255,
+    "disabled": false
+  },
+  {
+    "id": "ch_Danis",
+    "name": "Danish Cancer Society",
+    "url": "https://www.cancer.dk/stoet-os/giv-et-bidrag/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_DFWHu",
+    "name": "DFW Humane Society",
+    "url": "https://www.dfwhumane.com/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Diabe",
+    "name": "Diabetes Fonds",
+    "url": "https://www.diabetesfonds.nl/home",
+    "tags": [],
+    "donations2024": 127,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Direc",
+    "name": "Direct Relief",
+    "url": "https://secure.directrelief.org/site/Donation2?df_id=2924&mfc_pref=T&2924.donation=form1",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 204,
+    "donationsPrevious": 204,
+    "disabled": false
+  },
+  {
+    "id": "ch_Disas",
+    "name": "Disasters Emergency Committee",
+    "url": "https://donation.dec.org.uk/",
+    "tags": [],
+    "donations2024": 127,
+    "donations2025": 124,
+    "donationsPrevious": 124,
+    "disabled": false
+  },
+  {
+    "id": "ch_Docto",
+    "name": "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser",
+    "url": "https://donate.doctorswithoutborders.org/onetime.cfm",
+    "tags": [],
+    "donations2024": 1675,
+    "donations2025": 3713,
+    "donationsPrevious": 3713,
+    "disabled": false
+  },
+  {
+    "id": "ch_DogsT",
+    "name": "Dog's Trust",
+    "url": "https://www.dogstrust.org.uk/donation/",
+    "tags": [],
+    "donations2024": 46,
+    "donations2025": 15,
+    "donationsPrevious": 15,
+    "disabled": false
+  },
+  {
+    "id": "ch_Domes",
+    "name": "Domestic Violence Crisis Service",
+    "url": "https://dvcs.org.au/get-involved/donations/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_DownS",
+    "name": "Down Syndrome Association of Middle Tennessee",
+    "url": "https://www.somethingextra.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 30,
+    "donationsPrevious": 30,
+    "disabled": false
+  },
+  {
+    "id": "ch_Elect",
+    "name": "Electronic Frontier Foundation",
+    "url": "https://supporters.eff.org/donate/year-end-challenge--DB",
+    "tags": [],
+    "donations2024": 1520,
+    "donations2025": 1411,
+    "donationsPrevious": 1411,
+    "disabled": false
+  },
+  {
+    "id": "ch_Enter",
     "name": "Entertainment Industry Foundation",
     "url": "https://www.eifoundation.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 20,
+    "donationsPrevious": 20,
+    "disabled": false
   },
   {
+    "id": "ch_FeedM",
+    "name": "Feed My Starving Children",
+    "url": "https://www.fmsc.org/ways-to-give",
+    "tags": [],
+    "donations2024": 60,
+    "donations2025": 106,
+    "donationsPrevious": 106,
+    "disabled": false
+  },
+  {
+    "id": "ch_FeedN",
+    "name": "Feed Nova Scotia",
+    "url": "https://www.feednovascotia.ca/donate/donate-money#donate",
+    "tags": [],
+    "donations2024": 37,
+    "donations2025": 34,
+    "donationsPrevious": 34,
+    "disabled": false
+  },
+  {
+    "id": "ch_Feed1",
+    "name": "Feeding America",
+    "url": "https://www.feedingamerica.org/",
+    "tags": [],
+    "donations2024": 350,
+    "donations2025": 500,
+    "donationsPrevious": 500,
+    "disabled": false
+  },
+  {
+    "id": "ch_Feed2",
+    "name": "Feeding Kentucky",
+    "url": "https://feedingky.org/fky-donation-form/",
+    "tags": [],
+    "donations2024": 103,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Fishe",
+    "name": "Fisher House Foundation",
+    "url": "https://engage.fisherhouse.org/site/Donation2?2262.donation=form1&df_id=2262&mfc_pref=T",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 1081,
+    "donationsPrevious": 1081,
+    "disabled": false
+  },
+  {
+    "id": "ch_FoodB",
+    "name": "Food Bank of the Rockies",
+    "url": "https://www.foodbankrockies.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 100,
+    "donationsPrevious": 100,
+    "disabled": false
+  },
+  {
+    "id": "ch_Found",
+    "name": "Foundation for Prader-Willi Research",
+    "url": "https://www.fpwr.org/thismoment",
+    "tags": [],
+    "donations2024": 1000,
+    "donations2025": 1000,
+    "donationsPrevious": 1000,
+    "disabled": false
+  },
+  {
+    "id": "ch_Frank",
+    "name": "Frankie’s Friends",
+    "url": "https://www.frankiesfriends.org/donate",
+    "tags": [],
+    "donations2024": 50,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Gener",
+    "name": "General Society of Mechanics & Tradesmen",
+    "url": "https://generalsociety.org/?page_id=291",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 100,
+    "donationsPrevious": 100,
+    "disabled": false
+  },
+  {
+    "id": "ch_Germ1",
+    "name": "German Childhood Cancer Foundation",
+    "url": "https://www.kinderkrebsstiftung.de/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 344,
+    "donationsPrevious": 344,
+    "disabled": false
+  },
+  {
+    "id": "ch_Germ2",
+    "name": "Germany's Relief Coalition",
+    "url": "https://www.aktion-deutschland-hilft.de/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 416,
+    "donationsPrevious": 416,
+    "disabled": false
+  },
+  {
+    "id": "ch_Girls",
+    "name": "Girls Who Code",
+    "url": "https://girlswhocode.com/",
+    "tags": [],
+    "donations2024": 302,
+    "donations2025": 25,
+    "donationsPrevious": 25,
+    "disabled": false
+  },
+  {
+    "id": "ch_GiveW",
+    "name": "Give Well",
+    "url": "https://secure.givewell.org/",
+    "tags": [],
+    "donations2024": 1000,
+    "donations2025": 30,
+    "donationsPrevious": 30,
+    "disabled": false
+  },
+  {
+    "id": "ch_Golde",
+    "name": "Golden State Greyhound Adoption",
+    "url": "http://www.goldengreyhounds.com/donations/index.htm",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_GoodC",
+    "name": "Good Cheer Food Bank",
+    "url": "https://www.goodcheer.org/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 50,
+    "donationsPrevious": 50,
+    "disabled": false
+  },
+  {
+    "id": "ch_Great",
+    "name": "Greater New Haven Cat Project",
+    "url": "https://www.gnhcp.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Green",
+    "name": "Green Mountain Club",
+    "url": "https://secure3.convio.net/gmc/site/Donation2;jsessionid=00000000.app30125a?df_id=2182&2182.donation=form1&mfc_pref=T&NONCE_TOKEN=FBE0DB1EB2FB831F071AFD148A21F585",
+    "tags": [],
+    "donations2024": 100,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Hardc",
+    "name": "Hardcore Help",
+    "url": "https://www.hardcore-help.org/donate/",
+    "tags": [],
+    "donations2024": 174,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Heard",
+    "name": "Heard County Humane Society",
+    "url": "https://heardcountyhumanesociety.wordpress.com/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Hilar",
+    "name": "Hilarity for Charity",
+    "url": "https://wearehfc.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Hopef",
+    "name": "Hope for Paws",
+    "url": "https://www.hopeforpaws.org/donationrecurring",
+    "tags": [],
+    "donations2024": 75,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Hosp1",
+    "name": "Hospice Foundation of America",
+    "url": "https://hospicefoundation.org/donate/",
+    "tags": [],
+    "donations2024": 104,
+    "donations2025": 50,
+    "donationsPrevious": 50,
+    "disabled": false
+  },
+  {
+    "id": "ch_Hosp2",
+    "name": "Hospice of Wellington",
+    "url": "https://www.hospicewellington.org/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_HRCam",
+    "name": "Human Rights Campaign",
+    "url": "https://www.hrc.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 250,
+    "donationsPrevious": 250,
+    "disabled": false
+  },
+  {
+    "id": "ch_Inter",
+    "name": "International Rescue Committee",
+    "url": "https://help.rescue.org/donate?ms=ws_resq_top_nav_btn_fy22_CRO_mmus_oct_t501&initialms=ws_resq_top_nav_btn_fy22_CRO_mmus_oct_t501",
+    "tags": [],
+    "donations2024": 50,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Leade",
+    "name": "Leadership Fairfax",
+    "url": "https://www.leadershipfairfax.org/Donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Lifel",
+    "name": "Lifeline",
+    "url": "https://fundraise.lifeline.org.au/sponsor",
+    "tags": [],
+    "donations2024": 507,
+    "donations2025": 559,
+    "donationsPrevious": 559,
+    "disabled": false
+  },
+  {
+    "id": "ch_Lifew",
+    "name": "Lifewater Canada",
+    "url": "https://lifewater.ca/?ID=63",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_LosA1",
     "name": "Los Angeles County Animal Care Foundation",
     "url": "https://lacountyanimals.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 50,
+    "donationsPrevious": 50,
+    "disabled": false
   },
   {
+    "id": "ch_LosA2",
     "name": "Los Angeles Fire Department Foundation",
     "url": "https://supportlafd.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 1394,
+    "donationsPrevious": 1394,
+    "disabled": false
   },
   {
+    "id": "ch_Malar",
+    "name": "Malaria Consortium",
+    "url": "https://www.malariaconsortium.org/support/donate.htm",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 750,
+    "donationsPrevious": 750,
+    "disabled": false
+  },
+  {
+    "id": "ch_Menta",
+    "name": "Mental Health Association",
+    "url": "https://www.mhanational.org/donate-now",
+    "tags": [],
+    "donations2024": 30,
+    "donations2025": 344,
+    "donationsPrevious": 344,
+    "disabled": false
+  },
+  {
+    "id": "ch_Micha",
+    "name": "Michael J. Fox Foundation for Parkinson's Research",
+    "url": "https://www.michaeljfox.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 485,
+    "donationsPrevious": 485,
+    "disabled": false
+  },
+  {
+    "id": "ch_Mind",
+    "name": "Mind",
+    "url": "https://www.mind.org.uk/donate/",
+    "tags": [],
+    "donations2024": 63,
+    "donations2025": 164,
+    "donationsPrevious": 164,
+    "disabled": false
+  },
+  {
+    "id": "ch_Minus",
+    "name": "Minus18",
+    "url": "https://www.minus18.org.au/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 404,
+    "donationsPrevious": 404,
+    "disabled": false
+  },
+  {
+    "id": "ch_Mozil",
+    "name": "Mozilla",
+    "url": "https://foundation.mozilla.org/en/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 136,
+    "donationsPrevious": 136,
+    "disabled": false
+  },
+  {
+    "id": "ch_NAMI",
+    "name": "NAMI",
+    "url": "https://nami.org/About-NAMI/Donate-to-NAMI",
+    "tags": [],
+    "donations2024": 10,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nati1",
+    "name": "National Breast Cancer Foundation",
+    "url": "https://fundraise.nbcf.org/give/251086/#!/donation/checkout",
+    "tags": [],
+    "donations2024": 428,
+    "donations2025": 113,
+    "donationsPrevious": 113,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nati2",
+    "name": "National Disaster Search Dog Foundation",
+    "url": "https://donate.searchdogfoundation.org/1170",
+    "tags": [],
+    "donations2024": 565,
+    "donations2025": 500,
+    "donationsPrevious": 500,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nati3",
+    "name": "National Math + Science Initiative",
+    "url": "https://www.nms.org/Donation-Form.aspx",
+    "tags": [],
+    "donations2024": 300,
+    "donations2025": 480,
+    "donationsPrevious": 480,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nati4",
+    "name": "National Multiple Sclerosis Society",
+    "url": "https://www.nationalmssociety.org/Donate",
+    "tags": [],
+    "donations2024": 170,
+    "donations2025": 206,
+    "donationsPrevious": 206,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nati5",
+    "name": "National Pediatric Cancer Foundation",
+    "url": "https://nationalpcf.org/donate/",
+    "tags": [],
+    "donations2024": 300,
+    "donations2025": 400,
+    "donationsPrevious": 400,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nati6",
+    "name": "National Society for the Prevention of Cruelty to Children",
+    "url": "https://www.nspcc.org.uk/support-us/ways-to-give/donate/?utm_source=homepage",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 99,
+    "donationsPrevious": 99,
+    "disabled": false
+  },
+  {
+    "id": "ch_Niaga",
+    "name": "Niagara's Cancer Care Run Foundation",
+    "url": "https://secure.rankincancerrun.com/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_North",
+    "name": "North Texas Food Bank",
+    "url": "https://give.ntfb.org/site/Donation2;jsessionid=00000000.app20013b?1400.donation=form1&df_id=1400&mfc_pref=T&NONCE_TOKEN=C5D36D82967CDA3DAC275D2087291E51",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 75,
+    "donationsPrevious": 75,
+    "disabled": false
+  },
+  {
+    "id": "ch_Nurse",
+    "name": "Nurse-Family Partnership",
+    "url": "https://www.classy.org/give/97299/#!/donation/checkout",
+    "tags": [],
+    "donations2024": 300,
+    "donations2025": 400,
+    "donationsPrevious": 400,
+    "disabled": false
+  },
+  {
+    "id": "ch_Orego",
+    "name": "Oregon Food Bank",
+    "url": "https://www.oregonfoodbank.org/",
+    "tags": [],
+    "donations2024": 1075,
+    "donations2025": 1000,
+    "donationsPrevious": 1000,
+    "disabled": false
+  },
+  {
+    "id": "ch_OurCo",
+    "name": "Our Companions Animal Rescue",
+    "url": "https://www.ourcompanions.org/get-involved/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 26,
+    "donationsPrevious": 26,
+    "disabled": false
+  },
+  {
+    "id": "ch_OurDa",
+    "name": "Our Daily Bread Denton",
+    "url": "https://www.ourdailybreaddenton.org/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 250,
+    "donationsPrevious": 250,
+    "disabled": false
+  },
+  {
+    "id": "ch_PainB",
+    "name": "Pain BC",
+    "url": "https://painbc.ca/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 104,
+    "donationsPrevious": 104,
+    "disabled": false
+  },
+  {
+    "id": "ch_Partn",
+    "name": "Partners in Health",
+    "url": "https://www.pih.org/?form=donate",
+    "tags": [],
+    "donations2024": 50,
+    "donations2025": 26,
+    "donationsPrevious": 26,
+    "disabled": false
+  },
+  {
+    "id": "ch_PasaC",
     "name": "Pasadena Community Foundation",
     "url": "https://pasadenacf.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
   },
   {
+    "id": "ch_PasaH",
     "name": "Pasadena Humane",
     "url": "https://pasadenahumane.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 130,
+    "donationsPrevious": 130,
+    "disabled": false
   },
   {
+    "id": "ch_Polar",
+    "name": "Polar Bears International",
+    "url": "https://polarbearsinternational.org/",
+    "tags": [],
+    "donations2024": 65,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_RedNo",
+    "name": "Red Noses International",
+    "url": "https://www.rotenasen.de/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Reviv",
+    "name": "Revived Soldiers Ukraine",
+    "url": "https://www.rsukraine.org/",
+    "tags": [],
+    "donations2024": 60,
+    "donations2025": 35,
+    "donationsPrevious": 35,
+    "disabled": false
+  },
+  {
+    "id": "ch_RIPMe",
+    "name": "RIP Medical Debt",
+    "url": "https://ripmedicaldebt.org/",
+    "tags": [],
+    "donations2024": 50,
+    "donations2025": 52,
+    "donationsPrevious": 52,
+    "disabled": false
+  },
+  {
+    "id": "ch_Ronal",
+    "name": "Ronald McDonald House Charities",
+    "url": "https://www.rmhc.org/donate",
+    "tags": [],
+    "donations2024": 250,
+    "donations2025": 131,
+    "donationsPrevious": 131,
+    "disabled": false
+  },
+  {
+    "id": "ch_Roya1",
+    "name": "Royal Flying Doctor Service",
+    "url": "https://www.flyingdoctor.org.au/donate/",
+    "tags": [],
+    "donations2024": 341,
+    "donations2025": 167,
+    "donationsPrevious": 167,
+    "disabled": false
+  },
+  {
+    "id": "ch_Roya2",
+    "name": "Royal Society of the Protection of Birds",
+    "url": "https://www.rspb.org.uk/join-and-donate/",
+    "tags": [],
+    "donations2024": 9,
+    "donations2025": 10,
+    "donationsPrevious": 10,
+    "disabled": false
+  },
+  {
+    "id": "ch_RSPCA",
+    "name": "RSPCA (Australia)",
+    "url": "https://www.rspca.org.au/start-your-donation-story/regular",
+    "tags": [],
+    "donations2024": 164,
+    "donations2025": 154,
+    "donationsPrevious": 154,
+    "disabled": false
+  },
+  {
+    "id": "ch_Salva",
+    "name": "Salvation Army USA",
+    "url": "https://www.salvationarmyusa.org/usn/ways-to-give/",
+    "tags": [],
+    "donations2024": 2000,
+    "donations2025": 7480,
+    "donationsPrevious": 7480,
+    "disabled": false
+  },
+  {
+    "id": "ch_Savet",
+    "name": "Save the Children",
+    "url": "https://support.savethechildren.org/site/Donation2?df_id=1631&1631.donation=form1",
+    "tags": [],
+    "donations2024": 293,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Seatt",
+    "name": "Seattle Children's Hospital",
+    "url": "https://give.seattlechildrens.org/",
+    "tags": [],
+    "donations2024": 200,
+    "donations2025": 250,
+    "donationsPrevious": 250,
+    "disabled": false
+  },
+  {
+    "id": "ch_Secon",
+    "name": "Second Harvest of Silicon Valley",
+    "url": "https://www.shfb.org/give-help/donate-funds/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 1000,
+    "donationsPrevious": 1000,
+    "disabled": false
+  },
+  {
+    "id": "ch_Share",
+    "name": "Shared Hope International",
+    "url": "https://sharedhope.org/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Shrin",
+    "name": "Shriners Hospitals for Children",
+    "url": "https://www.shrinerschildrens.org",
+    "tags": [],
+    "donations2024": 104,
+    "donations2025": 133,
+    "donationsPrevious": 133,
+    "disabled": false
+  },
+  {
+    "id": "ch_SickK",
+    "name": "SickKids Foundation",
+    "url": "https://www.sickkidsfoundation.com/waystodonate",
+    "tags": [],
+    "donations2024": 50,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_SIRUM",
+    "name": "SIRUM",
+    "url": "https://www.sirum.org/about/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Socia",
+    "name": "Social Bite",
+    "url": "https://socialbite.enthuse.com/donate#!/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_SOSKi",
+    "name": "SOS Kinderdorf",
+    "url": "https://www.sos-kinderdorf.de/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 313,
+    "donationsPrevious": 313,
+    "disabled": false
+  },
+  {
+    "id": "ch_Speci",
+    "name": "Special Operations Warrior Foundation",
+    "url": "https://interland3.donorperfect.net/weblink/weblink.aspx?name=E130156&id=8",
+    "tags": [],
+    "donations2024": 380,
+    "donations2025": 10,
+    "donationsPrevious": 10,
+    "disabled": false
+  },
+  {
+    "id": "ch_Spoka",
+    "name": "Spokane Create",
+    "url": "http://www.spokanecreate.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_StJud",
+    "name": "St. Jude Children’s Research Hospital",
+    "url": "https://www.stjude.org/donate/donate-to-st-jude.html",
+    "tags": [],
+    "donations2024": 1395,
+    "donations2025": 2291,
+    "donationsPrevious": 2291,
+    "disabled": false
+  },
+  {
+    "id": "ch_Stack",
+    "name": "Stack Up",
+    "url": "https://www.stackup.org/donate",
+    "tags": [],
+    "donations2024": 210,
+    "donations2025": 75,
+    "donationsPrevious": 75,
+    "disabled": false
+  },
+  {
+    "id": "ch_StarJ",
+    "name": "StarJam",
+    "url": "https://www.starjam.org/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_Sydne",
+    "name": "Sydney Fox and Dingo Rescue",
+    "url": "https://sfdr.org/",
+    "tags": [],
+    "donations2024": 2220,
+    "donations2025": 577,
+    "donationsPrevious": 577,
+    "disabled": false
+  },
+  {
+    "id": "ch_Tafel",
+    "name": "Tafel",
+    "url": "https://www.tafel.de/spenden/jetzt-spenden",
+    "tags": [],
+    "donations2024": 86,
+    "donations2025": 155,
+    "donationsPrevious": 155,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheBe",
+    "name": "The Beacon House Association of San Pedro",
+    "url": "https://thebeaconhouse.networkforgood.com/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheCr",
+    "name": "The Crucible",
+    "url": "https://www.thecrucible.org/support-the-crucible/art-transforms-lives/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheDo",
+    "name": "The Donkey Sanctuary",
+    "url": "https://www.thedonkeysanctuary.org.uk/support-us/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheFo",
+    "name": "The Food Bank of Contra Costa and Solano",
+    "url": "https://www.foodbankccs.org/",
+    "tags": [],
+    "donations2024": 350,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheIn",
+    "name": "The Internet Archive",
+    "url": "https://archive.org/donate",
+    "tags": [],
+    "donations2024": 2922,
+    "donations2025": 1024,
+    "donationsPrevious": 1024,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheLe",
+    "name": "The Leukemia and Lymphoma Society",
+    "url": "https://givenow.lls.org/give/342076/#!/donation/checkout",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 150,
+    "donationsPrevious": 150,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheRo",
+    "name": "The Rotary Foundation",
+    "url": "https://www.rotary.org/en/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_TheTr",
+    "name": "The Trevor Project",
+    "url": "https://give.thetrevorproject.org/give/63307/#!/donation/checkout?c_src=EOY20&c_src2=headerdonatebutton",
+    "tags": [],
+    "donations2024": 1627,
+    "donations2025": 1435,
+    "donationsPrevious": 1435,
+    "disabled": false
+  },
+  {
+    "id": "ch_Tulsa",
+    "name": "Tulsa Zoo",
+    "url": "https://tulsazoo.org/donate-today/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_UKMen",
+    "name": "UK Men's Sheds Association",
+    "url": "https://menssheds.org.uk/donate/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 85,
+    "donationsPrevious": 85,
+    "disabled": false
+  },
+  {
+    "id": "ch_Unite",
+    "name": "United Nations Children’s Fund (UNICEF)",
+    "url": "https://www.unicefusa.org/?form=donate",
+    "tags": [],
+    "donations2024": 486,
+    "donations2025": 485,
+    "donationsPrevious": 485,
+    "disabled": false
+  },
+  {
+    "id": "ch_UtahF",
+    "name": "Utah Food Bank",
+    "url": "https://www.utahfoodbank.org/give-money/",
+    "tags": [],
+    "donations2024": 104,
+    "donations2025": 515,
+    "donationsPrevious": 515,
+    "disabled": false
+  },
+  {
+    "id": "ch_Ventu",
     "name": "Ventura County Community Foundation",
     "url": "https://vccf.org/",
     "tags": [
       "Los Angeles Wildfires"
     ],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
   },
   {
-    "name": "German Childhood Cancer Foundation",
-    "url": "https://www.kinderkrebsstiftung.de/",
+    "id": "ch_Water",
+    "name": "Water.org",
+    "url": "https://water.org/donate/",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 350,
+    "donations2025": 1400,
+    "donationsPrevious": 1400,
+    "disabled": false
   },
   {
-    "name": "Germany's Relief Coalition",
-    "url": "https://www.aktion-deutschland-hilft.de/",
+    "id": "ch_WICoo",
+    "name": "WI Cook Foundation",
+    "url": "https://www.cookchildrens.org/giving/",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
   },
   {
-    "name": "SOS Kinderdorf",
-    "url": "https://www.sos-kinderdorf.de/",
+    "id": "ch_WikiM",
+    "name": "Wikimedia",
+    "url": "https://donate.wikimedia.org/w/index.php?title=Special:LandingPage&country=US&uselang=en&utm_medium=spontaneous&utm_source=fr-redir&utm_campaign=spontaneous",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 2972,
+    "donations2025": 8025,
+    "donationsPrevious": 8025,
+    "disabled": false
   },
   {
-    "name": "ASPCA",
-    "url": "https://secure.aspca.org/donate/donate-t",
+    "id": "ch_WikiD",
+    "name": "Wikimedia.de",
+    "url": "https://www.wikimedia.de/",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 108,
+    "donations2025": 25,
+    "donationsPrevious": 25,
+    "disabled": false
   },
   {
-    "name": "Human Rights Campaign",
-    "url": "https://www.hrc.org/",
+    "id": "ch_Worce",
+    "name": "Worcester Food Bank",
+    "url": "https://foodbank.org/",
     "tags": [],
-    "donations2024": 0
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
+    "id": "ch_World",
+    "name": "World Builders",
+    "url": "https://fundraise.worldbuilders.org/give/158394/#!/donation/checkout",
+    "tags": [],
+    "donations2024": 100,
+    "donations2025": 102,
+    "donationsPrevious": 102,
+    "disabled": false
   }
 ]

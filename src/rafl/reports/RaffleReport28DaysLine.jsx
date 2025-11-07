@@ -83,11 +83,11 @@ const RaffleReport28DaysLine = ({lineData}) => {
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}
-                curve='natural'
+                curve='basis'
                 yScale={{
                     type: 'linear',
                     min: 0,
-                    max: '5000',
+                    max: 'auto',
                     stacked: false,
                     reverse: false
                 }}

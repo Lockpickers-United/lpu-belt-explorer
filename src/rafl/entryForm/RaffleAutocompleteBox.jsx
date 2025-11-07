@@ -7,7 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
 
-function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, searchText, error}) {
+function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, searchText, error, value}) {
     const style = {maxWidth: 700}
     const {isMobile} = false
     const inputEl = useRef()
@@ -82,6 +82,7 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
                 fullWidth
                 style={{...style, ...focusStyle}}
                 options={options}
+                value={value || null}
                 onChange={handleChange}
                 renderInput={(params) =>
                     <TextField

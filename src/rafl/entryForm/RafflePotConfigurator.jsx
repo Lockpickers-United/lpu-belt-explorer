@@ -1,62 +1,60 @@
 import RafflePotForm from './RafflePotForm.jsx'
-import React, {useCallback} from 'react'
+import React, {useCallback, memo} from 'react'
 import Button from '@mui/material/Button'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import Link from '@mui/material/Link'
 
-export default function RafflePotConfigurator({
-                                                  donation,
-                                                  questionStyle,
-                                                  potData,
-                                                  showIssues,
-                                                  setPotData,
-                                                  allocated
-                                              }) {
-
-    const potKeys = Array.from(Object.keys(potData))
+function RafflePotConfigurator({
+                                   donation,
+                                   questionStyle,
+                                   potData,
+                                   showIssues,
+                                   setPotData,
+                                   allocated
+                               }) {
 
     const difference = donation ? parseInt(donation) - allocated : 0 - allocated
 
     const addPot = useCallback(() => {
-        const next = potKeys[potKeys.length-1] + 1000
-        const newPotData = {...potData}
-        newPotData[next] = {tickets: 0}
-        setPotData(newPotData)
-    }, [potData, potKeys, setPotData])
+        setPotData(prev => ([...(prev || []), {tickets: 0}]))
+    }, [setPotData])
 
     const removePot = useCallback((index) => {
-        const newPotData = {...potData}
-        delete newPotData[index]
-        setPotData(newPotData)
-    }, [potData, setPotData])
+        setPotData(prev => {
+            const list = [...(prev || [])]
+            list.splice(index, 1)
+            return list.length ? list : [{tickets: 0}]
+        })
+    }, [setPotData])
 
     const handleAuto = useCallback(() => {
-        const base = Math.floor(donation / potKeys.length)
-        const remainder = donation % potKeys.length
-        potKeys.map((key, index) => {
-            const newPotData = {...potData}
-
-            if (index === 0 && donation) {
-                newPotData[key].tickets = base + remainder
-            } else if (donation) {
-                newPotData[key].tickets = base
-            } else {
-                newPotData[key].tickets = 0
-            }
-            setPotData(newPotData)
+        setPotData(prev => {
+            const count = (prev || []).length || 1
+            const base = Math.floor((donation || 0) / count)
+            const remainder = (donation || 0) % count
+            const next = [...(prev || [])]
+            next.forEach((pot, index) => {
+                if (donation) {
+                    next[index] = {...pot, tickets: base + (index === 0 ? remainder : 0)}
+                } else {
+                    next[index] = {...pot, tickets: 0}
+                }
+            })
+            return next
         })
-
-    }, [donation, potData, potKeys, setPotData])
+    }, [donation, setPotData])
 
     const handlePotChange = useCallback((index, potDetails) => {
-        const newPotData = {...potData}
-        newPotData[index] = potDetails
-        setPotData(newPotData)
-    }, [potData, setPotData])
+        setPotData(prev => {
+            const next = [...(prev || [])]
+            next[index] = potDetails
+            return next
+        })
+    }, [setPotData])
 
     const differenceStyle = difference > 0
-        ? {color: '#0b0', fontWeight: 700}
+        ? {color: '#da8312', fontWeight: 700}
         : difference < 0
             ? {color: '#b00', fontWeight: 700}
             : {}
@@ -64,16 +62,22 @@ export default function RafflePotConfigurator({
     const {isMobile, flexStyle} = useWindowSize()
     const tallySize = !isMobile ? '1.2rem' : '1.0rem'
 
+    const divider = (potData || []).length > 1
+        ? <div style={{height: 0, margin: '20px 0px', borderBottom: '2px solid #bbb', alignItems: 'center'}}/>
+        : null
+
     return (
         <React.Fragment>
 
             {
-                potKeys.map(pot =>
+                (potData || []).map((_, pot) =>
                     <RafflePotForm questionStyle={questionStyle} key={pot} index={pot}
                                    potData={potData} handlePotChange={handlePotChange}
                                    showIssues={showIssues} removePot={removePot}/>
                 )
             }
+
+            {divider}
 
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <Button variant='outlined' onClick={() => {
@@ -107,28 +111,32 @@ export default function RafflePotConfigurator({
                     </div>
                 </div>
 
-                {donation &&
+                {donation && donation > 0 ?
                     <div style={{display: flexStyle, padding: 8, marginLeft: 10, alignContent: 'center'}}>
                         <Link onClick={() => {
                             handleAuto()
                         }} style={{color: '#417ee6', fontWeight: 700}}>Auto</Link>
                     </div>
+                    : null
                 }
             </div>
 
-            <div style={{
-                fontSize: '0.75rem',
-                color: '#f44336',
-                margin: '4px 14px 0px 14px',
-                textAlign: 'center'
-            }}>
-                {showIssues && donation > allocated
-                    ? <span>All tickets must be assigned to a pot</span>
-                    : showIssues && donation < allocated
-                        ? <span>You have too many tickets allocated</span>
-                        : <span>&nbsp;</span>}
-            </div>
-
+            {showIssues && donation !== allocated &&
+                <div style={{
+                    fontSize: '0.75rem',
+                    color: '#f44336',
+                    margin: '4px 14px 0px 14px',
+                    textAlign: 'center'
+                }}>
+                    {showIssues && donation > allocated
+                        ? <span>All tickets must be assigned to a pot</span>
+                        : showIssues && donation < allocated
+                            ? <span>You have too many tickets allocated</span>
+                            : <span>&nbsp;</span>}
+                </div>
+            }
         </React.Fragment>
     )
 }
+
+export default memo(RafflePotConfigurator)

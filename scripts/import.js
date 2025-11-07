@@ -17,14 +17,14 @@ import {
     raflSchema,
     raflMediaSchema,
     raflCharitySchema
-} from './schemas.js'
+} from './importSchemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
 
-const importRaflData = false
+const importRaflData = true
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -509,12 +509,13 @@ if (importRaflData) {
         .map(datum => ({
             id: datum['Unique ID'],
             year: +datum['Year'],
-            potNumber: datum['Pot Number'],
+            potNumber: parseInt(datum['Pot Number']),
             title: datum['Title'],
-            winnerCount: datum['Winner Count'],
+            winnerCount: parseInt(datum['Winner Count']) || 1,
             displayName: datum['Display Name'],
             description: datum['Description'],
             potContents: datum['Pot Contents'],
+            keywords: datum['Keywords'],
             contributedBy: splitCommaValues(datum['Contributed By']),
             tags: splitCommaValues(datum['Tags']),
             country: splitCommaValues(datum['Country']),
@@ -522,7 +523,6 @@ if (importRaflData) {
             splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
             splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
             shippingType: datum['Shipping Type'],
-            winner: splitCommaValues(datum['Winner']),
             dateAdded: datum['Date Added']
         })).filter(x => x)
 
@@ -558,10 +558,14 @@ if (importRaflData) {
     console.log('Processing RAFL Charity data...')
     const raflCharities = raflCharityData
         .map(datum => ({
+            id: datum['Charity ID'],
             name: datum['Charity Name'],
             url: datum['URL'],
             tags: splitCommaValues(datum['Tags']),
-            donations2024: parseInt(datum['Total Donations 2024'].replace(/[^0-9]/, '')) || 0
+            donations2024: parseInt(datum['Donations 2024'].replace(/[^0-9]/, '')) || 0,
+            donations2025: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
+            donationsPrevious: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
+            disabled: datum['Disable'].length > 0,
         })).filter(x => x)
 
     fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
@@ -574,5 +578,8 @@ console.log('Complete.')
 
 function splitCommaValues(string) {
     if (!string) return []
-    return string.replace(/\s+,|,\s+/g, ',').split(',').filter(x => x)
+    return string.replace(/\s+,|,\s+/g, ',')
+        .split(',')
+        .map(s => s.trim())
+        .filter(x => x)
 }

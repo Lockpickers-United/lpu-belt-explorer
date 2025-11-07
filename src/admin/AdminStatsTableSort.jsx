@@ -35,11 +35,12 @@ const AdminStatsTableSort = ({
     const handleSort = useCallback((columnId) => {
         if (columnId !== sort) {
             setSort(columnId)
-            setAscending(true)
+            const defaultAscending = !tableData.columns.find(c => c.id === columnId)?.descending
+            setAscending(defaultAscending)
         } else {
             setAscending(!ascending)
         }
-    }, [ascending, setAscending, setSort, sort])
+    }, [ascending, setAscending, setSort, sort, tableData])
 
     const sortIcon = ascending
         ? <ArrowDropUpIcon/>
@@ -113,7 +114,7 @@ return (
                                                      color: '#eee'
                                                  }}
                                                  component='th' scope='row'>
-                                        {linkFunction(column.id, row[column.id] ? row[column.id].toLocaleString() : '')}
+                                        {linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '')}
                                     </TableCell>
                                     : <TableCell key={index + 1} style={{border: 0}}/>
                             )}

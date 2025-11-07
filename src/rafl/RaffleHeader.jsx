@@ -1,14 +1,14 @@
 import React, {useCallback, useContext} from 'react'
-import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import {useNavigate} from 'react-router-dom'
 import useWindowSize from '../util/useWindowSize.jsx'
 import RaffleContext from './RaffleContext.jsx'
+import RaffleHeaderAdmin from './admin/RaffleHeaderAdmin.jsx'
 
-function RaffleHeader({page}) {
+function RaffleHeader({page, width = 700}) {
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const navigate = useNavigate()
-    const {displayStats, setAnimateTotal} = useContext(RaffleContext)
+    const {setAnimateTotal} = useContext(RaffleContext)
 
     const handleChange = useCallback((page) => {
         navigate(page)
@@ -20,20 +20,17 @@ function RaffleHeader({page}) {
     const buttonFontSize = !isMobile ? '1.03rem' : '1.0rem'
 
     const style = {
-        maxWidth: 700,
+        maxWidth: width,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 10,
-        padding: '14px 0px 0px 0px',
+        padding: '0px 0px 0px 0px',
         fontWeight: 700,
         display: flexStyle
     }
 
     let prizeButtonText = raflState !== 'preview' || raffleAdminRole || isMobile ? 'PRIZES' : 'PRIZE PREVIEW'
     prizeButtonText = ['hidden', 'post'].includes(raflState) ? prizeButtonText.replace('PRIZES', '2025 PRIZES') : prizeButtonText
-
-
-    const toolTip = displayStats ? 'Hide Real-time Stats' : 'Show Real-time Stats'
 
     return (
         <React.Fragment>
@@ -42,84 +39,67 @@ function RaffleHeader({page}) {
                 <div style={{marginTop: buttonTop, justifyItems: 'right'}}>
                     <div style={{flexGrow: 1}}/>
 
-                    <Tooltip title={'Raffle Prizes'} arrow disableFocusListener style={{}}>
-                        <span>
-                            <Button onClick={() => handleChange('/rafl')}
-                                    style={{
-                                        marginRight: 10,
-                                        color: page === 'pots' ? '#fff' : '#ccc',
-                                        fontSize: buttonFontSize
-                                    }}
-                                    disabled={page === 'pots'}>
-                                {prizeButtonText}
-                            </Button>
-                        </span>
-                    </Tooltip>
+                    <Button onClick={() => handleChange('/rafl')}
+                            style={{
+                                marginRight: 10,
+                                color: page === 'pots' ? '#fff' : '#ccc',
+                                fontSize: buttonFontSize
+                            }}
+                            disabled={page === 'pots'}>
+                        {prizeButtonText}
+                    </Button>
 
                     {(raflState === 'preview' && !raffleAdminRole) &&
-                        <Tooltip title={'Call For Contributions'} arrow disableFocusListener style={{}}>
-                        <span>
-                            <Button onClick={() => handleChange('/rafl/announce')}
-                                    style={{
-                                        marginRight: 10,
-                                        color: page === 'announce' ? '#fff' : '#ccc',
-                                        fontSize: buttonFontSize
-                                    }}
-                                    disabled={page === 'announce'}>
-                                CONTRIBUTE
-                            </Button>
-                        </span>
-                        </Tooltip>
+                        <Button onClick={() => handleChange('/rafl/announce')}
+                                style={{
+                                    marginRight: 10,
+                                    color: page === 'announce' ? '#fff' : '#ccc',
+                                    fontSize: buttonFontSize
+                                }}
+                                disabled={page === 'announce'}>
+                            CONTRIBUTE
+                        </Button>
                     }
 
                     {(raflState !== 'hidden' || raffleAdminRole) &&
-                    <Tooltip title={'Approved Charities'} arrow disableFocusListener style={{}}>
-                        <span>
-                            <Button onClick={() => handleChange('/rafl/charities')}
-                                    style={{
-                                        marginRight: 10,
-                                        color: page === 'charities' ? '#fff' : '#ccc',
-                                        fontSize: buttonFontSize
-                                    }}
-                                    disabled={page === 'charities'}>
-                                CHARITIES
-                            </Button>
-                        </span>
-                    </Tooltip>
+                        <Button onClick={() => handleChange('/rafl/charities')}
+                                style={{
+                                    marginRight: 10,
+                                    color: page === 'charities' ? '#fff' : '#ccc',
+                                    fontSize: buttonFontSize
+                                }}
+                                disabled={page === 'charities'}>
+                            CHARITIES
+                        </Button>
                     }
 
                     {(['live', 'post'].includes(raflState) || raffleAdminRole) &&
-                        <Tooltip title={'Enter the RAFL'} arrow disableFocusListener style={{}}>
-                        <span>
-                            <Button onClick={() => handleChange('/rafl/enter')}
-                                    style={{
-                                        marginRight: 10,
-                                        color: page === 'enter' ? '#fff' : '#ccc',
-                                        fontSize: buttonFontSize
-                                    }}>
-                                ENTER
-                            </Button>
-                        </span>
-                        </Tooltip>
+                        <Button onClick={() => handleChange('/rafl/enter')}
+                                style={{
+                                    marginRight: 10,
+                                    color: page === 'enter' ? '#fff' : '#ccc',
+                                    fontSize: buttonFontSize
+                                }}>
+                            ENTER
+                        </Button>
                     }
 
                     {(['live', 'post'].includes(raflState) || raffleAdminRole) &&
-                        <Tooltip title={toolTip} arrow disableFocusListener style={{}}>
-                        <span>
-                            <Button onClick={() => handleChange('/rafl/stats')}
-                                    style={{
-                                        marginRight: 0,
-                                        color: page === 'stats' ? '#fff' : '#ccc',
-                                        fontSize: buttonFontSize
-                                    }}>
-                                STATS
-                            </Button>
-                        </span>
-                        </Tooltip>
+                        <Button onClick={() => handleChange('/rafl/stats')}
+                                style={{
+                                    marginRight: 0,
+                                    color: page === 'stats' ? '#fff' : '#ccc',
+                                    fontSize: buttonFontSize
+                                }}>
+                            STATS
+                        </Button>
                     }
 
                 </div>
             </div>
+            {raffleAdminRole &&
+                <RaffleHeaderAdmin page={page} width={width}/>
+            }
             <div style={{height: 8}}/>
         </React.Fragment>
     )

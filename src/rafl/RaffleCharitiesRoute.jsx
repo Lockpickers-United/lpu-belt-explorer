@@ -9,8 +9,7 @@ import useWindowSize from '../util/useWindowSize'
 import RaffleCharitiesProvider from './RaffleCharitiesProvider.jsx'
 import RaffleCharitiesPage from './RaffleCharitiesPage.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
-import ReportButton from './ReportButton.jsx'
-import AdminRoleButton from './AdminRoleButton.jsx'
+import AdminToolsButton from './AdminToolsButton.jsx'
 
 function RaffleCharitiesRoute() {
 
@@ -29,8 +28,7 @@ function RaffleCharitiesRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <ReportButton/>
-            <AdminRoleButton/>
+            <AdminToolsButton/>
         </React.Fragment>
     )
 

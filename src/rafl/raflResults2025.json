@@ -1,0 +1,7632 @@
+{
+  "summaryData": {
+    "totalDonations": 53745,
+    "totalDonorCount": 284,
+    "totalDonorCountUnique": 197,
+    "platformDonations": {
+      "Discord": 42117,
+      "Reddit": 11628
+    },
+    "platformDonorCount": {
+      "Discord": 211,
+      "Reddit": 73
+    },
+    "platformDonorCountUnique": {
+      "Discord": 138,
+      "Reddit": 59
+    },
+    "charityDonations": {
+      "The Trevor Project": 1435,
+      "St. Jude Children’s Research Hospital": 2291,
+      "Abandoned Pet Project": 655,
+      "Mind": 164,
+      "Wikimedia": 8025,
+      "The Internet Archive": 1024,
+      "Sydney Fox and Dingo Rescue": 577,
+      "Special Operations Warrior Foundation": 10,
+      "North Texas Food Bank": 75,
+      "Salvation Army USA": 7480,
+      "Royal Flying Doctor Service": 167,
+      "Michael J. Fox Foundation for Parkinson's Research": 485,
+      "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": 3713,
+      "Wikimedia.de": 25,
+      "National Disaster Search Dog Foundation": 500,
+      "Electronic Frontier Foundation": 1411,
+      "Pain BC": 104,
+      "American Civil Liberties Union": 3313,
+      "National Breast Cancer Foundation": 113,
+      "United Nations Children’s Fund (UNICEF)": 485,
+      "Canadian Whale Institute": 347,
+      "American Humane": 155,
+      "Autistic Self Advocacy Network": 1025,
+      "Our Daily Bread Denton": 250,
+      "Lifeline": 559,
+      "Mozilla": 136,
+      "Minus18": 404,
+      "Covenant House California": 255,
+      "Shriners Hospitals for Children": 133,
+      "Direct Relief": 204,
+      "Feed Nova Scotia": 34,
+      "Ronald McDonald House Charities": 131,
+      "UK Men's Sheds Association": 85,
+      "Center of Hope Food Bank": 257,
+      "National Multiple Sclerosis Society": 206,
+      "Down Syndrome Association of Middle Tennessee": 30,
+      "Borna": 136,
+      "Stack Up": 75,
+      "General Society of Mechanics & Tradesmen": 100,
+      "Girls Who Code": 25,
+      "Big Brothers Big Sisters": 125,
+      "Los Angeles Fire Department Foundation": 1394,
+      "Mental Health Association": 344,
+      "California Fire Foundation": 728,
+      "Tafel": 155,
+      "Give Well": 30,
+      "Pasadena Humane": 130,
+      "Fisher House Foundation": 1081,
+      "Entertainment Industry Foundation": 20,
+      "Malaria Consortium": 750,
+      "RSPCA (Australia)": 154,
+      "California Community Foundation": 228,
+      "The Leukemia and Lymphoma Society": 150,
+      "Los Angeles County Animal Care Foundation": 50,
+      "Alight": 210,
+      "Food Bank of the Rockies": 100,
+      "Feed My Starving Children": 106,
+      "Utah Food Bank": 515,
+      "Water.org": 1400,
+      "CORE (Community Organized Relief Effort)": 540,
+      "Foundation for Prader-Willi Research": 1000,
+      "Charity Navigator": 129,
+      "Dog's Trust": 15,
+      "National Society for the Prevention of Cruelty to Children": 99,
+      "Disasters Emergency Committee": 124,
+      "Partners in Health": 26,
+      "German Childhood Cancer Foundation": 344,
+      "SOS Kinderdorf": 313,
+      "Germany's Relief Coalition": 416,
+      "Boys and Girls Club": 15,
+      "National Math + Science Initiative": 480,
+      "Code.org": 100,
+      "Human Rights Campaign": 250,
+      "Seattle Children's Hospital": 250,
+      "Our Companions Animal Rescue": 26,
+      "Alameda Food Bank": 1000,
+      "Second Harvest of Silicon Valley": 1000,
+      "Against Malaria Foundation": 300,
+      "Bill Wilson Center": 250,
+      "Hospice Foundation of America": 50,
+      "ASPCA": 200,
+      "Oregon Food Bank": 1000,
+      "RIP Medical Debt": 52,
+      "Good Cheer Food Bank": 50,
+      "Royal Society of the Protection of Birds": 10,
+      "Revived Soldiers Ukraine": 35,
+      "National Pediatric Cancer Foundation": 400,
+      "Nurse-Family Partnership": 400,
+      "Feeding America": 500,
+      "World Builders": 102
+    },
+    "charityDonorCount": {
+      "The Trevor Project": 17,
+      "St. Jude Children’s Research Hospital": 17,
+      "Abandoned Pet Project": 9,
+      "Mind": 3,
+      "Wikimedia": 21,
+      "The Internet Archive": 14,
+      "Sydney Fox and Dingo Rescue": 7,
+      "Special Operations Warrior Foundation": 1,
+      "North Texas Food Bank": 2,
+      "Salvation Army USA": 7,
+      "Royal Flying Doctor Service": 2,
+      "Michael J. Fox Foundation for Parkinson's Research": 5,
+      "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": 15,
+      "Wikimedia.de": 1,
+      "National Disaster Search Dog Foundation": 3,
+      "Electronic Frontier Foundation": 10,
+      "Pain BC": 1,
+      "American Civil Liberties Union": 17,
+      "National Breast Cancer Foundation": 3,
+      "United Nations Children’s Fund (UNICEF)": 3,
+      "Canadian Whale Institute": 2,
+      "American Humane": 3,
+      "Autistic Self Advocacy Network": 5,
+      "Our Daily Bread Denton": 3,
+      "Lifeline": 2,
+      "Mozilla": 2,
+      "Minus18": 1,
+      "Covenant House California": 2,
+      "Shriners Hospitals for Children": 2,
+      "Direct Relief": 4,
+      "Feed Nova Scotia": 1,
+      "Ronald McDonald House Charities": 2,
+      "UK Men's Sheds Association": 3,
+      "Center of Hope Food Bank": 1,
+      "National Multiple Sclerosis Society": 2,
+      "Down Syndrome Association of Middle Tennessee": 2,
+      "Borna": 1,
+      "Stack Up": 1,
+      "General Society of Mechanics & Tradesmen": 1,
+      "Girls Who Code": 1,
+      "Big Brothers Big Sisters": 2,
+      "Los Angeles Fire Department Foundation": 4,
+      "Mental Health Association": 4,
+      "California Fire Foundation": 6,
+      "Tafel": 2,
+      "Give Well": 1,
+      "Pasadena Humane": 2,
+      "Fisher House Foundation": 2,
+      "Entertainment Industry Foundation": 1,
+      "Malaria Consortium": 3,
+      "RSPCA (Australia)": 1,
+      "California Community Foundation": 3,
+      "The Leukemia and Lymphoma Society": 2,
+      "Los Angeles County Animal Care Foundation": 1,
+      "Alight": 1,
+      "Food Bank of the Rockies": 1,
+      "Feed My Starving Children": 1,
+      "Utah Food Bank": 1,
+      "Water.org": 4,
+      "CORE (Community Organized Relief Effort)": 4,
+      "Foundation for Prader-Willi Research": 1,
+      "Charity Navigator": 2,
+      "Dog's Trust": 2,
+      "National Society for the Prevention of Cruelty to Children": 2,
+      "Disasters Emergency Committee": 1,
+      "Partners in Health": 1,
+      "German Childhood Cancer Foundation": 2,
+      "SOS Kinderdorf": 1,
+      "Germany's Relief Coalition": 1,
+      "Boys and Girls Club": 1,
+      "National Math + Science Initiative": 2,
+      "Code.org": 1,
+      "Human Rights Campaign": 3,
+      "Seattle Children's Hospital": 2,
+      "Our Companions Animal Rescue": 1,
+      "Alameda Food Bank": 1,
+      "Second Harvest of Silicon Valley": 1,
+      "Against Malaria Foundation": 1,
+      "Bill Wilson Center": 1,
+      "Hospice Foundation of America": 1,
+      "ASPCA": 2,
+      "Oregon Food Bank": 1,
+      "RIP Medical Debt": 1,
+      "Good Cheer Food Bank": 1,
+      "Royal Society of the Protection of Birds": 1,
+      "Revived Soldiers Ukraine": 1,
+      "National Pediatric Cancer Foundation": 1,
+      "Nurse-Family Partnership": 1,
+      "Feeding America": 1,
+      "World Builders": 1
+    },
+    "charityDonorCountUnique": {
+      "The Trevor Project": 16,
+      "St. Jude Children’s Research Hospital": 17,
+      "Abandoned Pet Project": 8,
+      "Mind": 2,
+      "Wikimedia": 21,
+      "The Internet Archive": 14,
+      "Sydney Fox and Dingo Rescue": 6,
+      "Special Operations Warrior Foundation": 1,
+      "North Texas Food Bank": 2,
+      "Salvation Army USA": 6,
+      "Royal Flying Doctor Service": 2,
+      "Michael J. Fox Foundation for Parkinson's Research": 4,
+      "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": 15,
+      "Wikimedia.de": 1,
+      "National Disaster Search Dog Foundation": 2,
+      "Electronic Frontier Foundation": 10,
+      "Pain BC": 1,
+      "American Civil Liberties Union": 16,
+      "National Breast Cancer Foundation": 3,
+      "United Nations Children’s Fund (UNICEF)": 3,
+      "Canadian Whale Institute": 2,
+      "American Humane": 3,
+      "Autistic Self Advocacy Network": 5,
+      "Our Daily Bread Denton": 2,
+      "Lifeline": 2,
+      "Mozilla": 2,
+      "Minus18": 1,
+      "Covenant House California": 2,
+      "Shriners Hospitals for Children": 2,
+      "Direct Relief": 3,
+      "Feed Nova Scotia": 1,
+      "Ronald McDonald House Charities": 2,
+      "UK Men's Sheds Association": 3,
+      "Center of Hope Food Bank": 1,
+      "National Multiple Sclerosis Society": 2,
+      "Down Syndrome Association of Middle Tennessee": 2,
+      "Borna": 1,
+      "Stack Up": 1,
+      "General Society of Mechanics & Tradesmen": 1,
+      "Girls Who Code": 1,
+      "Big Brothers Big Sisters": 2,
+      "Los Angeles Fire Department Foundation": 4,
+      "Mental Health Association": 4,
+      "California Fire Foundation": 6,
+      "Tafel": 2,
+      "Give Well": 1,
+      "Pasadena Humane": 2,
+      "Fisher House Foundation": 2,
+      "Entertainment Industry Foundation": 1,
+      "Malaria Consortium": 3,
+      "RSPCA (Australia)": 1,
+      "California Community Foundation": 2,
+      "The Leukemia and Lymphoma Society": 2,
+      "Los Angeles County Animal Care Foundation": 1,
+      "Alight": 1,
+      "Food Bank of the Rockies": 1,
+      "Feed My Starving Children": 1,
+      "Utah Food Bank": 1,
+      "Water.org": 4,
+      "CORE (Community Organized Relief Effort)": 4,
+      "Foundation for Prader-Willi Research": 1,
+      "Charity Navigator": 2,
+      "Dog's Trust": 2,
+      "National Society for the Prevention of Cruelty to Children": 2,
+      "Disasters Emergency Committee": 1,
+      "Partners in Health": 1,
+      "German Childhood Cancer Foundation": 2,
+      "SOS Kinderdorf": 1,
+      "Germany's Relief Coalition": 1,
+      "Boys and Girls Club": 1,
+      "National Math + Science Initiative": 2,
+      "Code.org": 1,
+      "Human Rights Campaign": 2,
+      "Seattle Children's Hospital": 1,
+      "Our Companions Animal Rescue": 1,
+      "Alameda Food Bank": 1,
+      "Second Harvest of Silicon Valley": 1,
+      "Against Malaria Foundation": 1,
+      "Bill Wilson Center": 1,
+      "Hospice Foundation of America": 1,
+      "ASPCA": 2,
+      "Oregon Food Bank": 1,
+      "RIP Medical Debt": 1,
+      "Good Cheer Food Bank": 1,
+      "Royal Society of the Protection of Birds": 1,
+      "Revived Soldiers Ukraine": 1,
+      "National Pediatric Cancer Foundation": 1,
+      "Nurse-Family Partnership": 1,
+      "Feeding America": 1,
+      "World Builders": 1
+    },
+    "beltDonations": {
+      "Yellow": 13948,
+      "Orange": 2515,
+      "undefined": 13966,
+      "Black": 7934,
+      "Green": 7257,
+      "Blue": 4406,
+      "Red": 871,
+      "Brown": 858,
+      "Purple": 776,
+      "White": 1214
+    },
+    "beltDonorCountUnique": {
+      "Yellow": 15,
+      "Orange": 24,
+      "undefined": 47,
+      "Black": 31,
+      "Green": 34,
+      "Blue": 16,
+      "Red": 6,
+      "Brown": 10,
+      "Purple": 10,
+      "White": 10
+    },
+    "potTickets": {
+      "2025-036": 1936,
+      "2025-030": 478,
+      "2025-041": 708,
+      "2025-001": 473,
+      "2025-058": 211,
+      "2025-056": 130,
+      "2025-010": 403,
+      "2025-011": 221,
+      "2025-068": 459,
+      "2025-070": 371,
+      "2025-071": 405,
+      "2025-033": 865,
+      "2025-020": 325,
+      "2025-015": 1014,
+      "2025-006": 3753,
+      "2025-055": 203,
+      "2025-050": 8801,
+      "2025-007": 887,
+      "2025-063": 421,
+      "2025-009": 894,
+      "2025-002": 527,
+      "2025-037": 772,
+      "2025-021": 1186,
+      "2025-029": 546,
+      "2025-022": 154,
+      "2025-031": 541,
+      "2025-034": 390,
+      "2025-052": 2173,
+      "2025-026": 7043,
+      "2025-003": 2444,
+      "2025-060": 211,
+      "2025-069": 179,
+      "2025-004": 660,
+      "2025-028": 326,
+      "2025-073": 262,
+      "2025-005": 530,
+      "2025-018": 424,
+      "2025-042": 131,
+      "2025-072": 124,
+      "2025-017": 543,
+      "2025-040": 285,
+      "2025-025": 801,
+      "2025-047": 364,
+      "2025-016": 889,
+      "2025-043": 233,
+      "2025-044": 283,
+      "2025-045": 2337,
+      "2025-053": 234,
+      "2025-039": 160,
+      "2025-067": 246,
+      "2025-027": 742,
+      "2025-019": 271,
+      "2025-023": 96,
+      "2025-013": 255,
+      "2025-035": 169,
+      "2025-024": 607,
+      "2025-008": 146,
+      "2025-038": 189,
+      "2025-066": 425,
+      "2025-059": 1212,
+      "2025-046": 112,
+      "2025-064": 177,
+      "2025-051": 203,
+      "2025-065": 133,
+      "2025-062": 97,
+      "2025-061": 217,
+      "2025-057": 112,
+      "2025-048": 97,
+      "2025-054": 144,
+      "2025-049": 52
+    },
+    "potDonorCount": {
+      "2025-036": 56,
+      "2025-030": 39,
+      "2025-041": 32,
+      "2025-001": 25,
+      "2025-058": 26,
+      "2025-056": 20,
+      "2025-010": 31,
+      "2025-011": 24,
+      "2025-068": 35,
+      "2025-070": 20,
+      "2025-071": 26,
+      "2025-033": 56,
+      "2025-020": 27,
+      "2025-015": 46,
+      "2025-006": 39,
+      "2025-055": 17,
+      "2025-050": 74,
+      "2025-007": 35,
+      "2025-063": 34,
+      "2025-009": 36,
+      "2025-002": 41,
+      "2025-037": 41,
+      "2025-021": 33,
+      "2025-029": 22,
+      "2025-022": 16,
+      "2025-031": 18,
+      "2025-034": 21,
+      "2025-052": 28,
+      "2025-026": 84,
+      "2025-003": 31,
+      "2025-060": 19,
+      "2025-069": 18,
+      "2025-004": 29,
+      "2025-028": 10,
+      "2025-073": 19,
+      "2025-005": 32,
+      "2025-018": 33,
+      "2025-042": 14,
+      "2025-072": 13,
+      "2025-017": 21,
+      "2025-040": 26,
+      "2025-025": 35,
+      "2025-047": 27,
+      "2025-016": 30,
+      "2025-043": 16,
+      "2025-044": 18,
+      "2025-045": 37,
+      "2025-053": 17,
+      "2025-039": 17,
+      "2025-067": 24,
+      "2025-027": 21,
+      "2025-019": 28,
+      "2025-023": 12,
+      "2025-013": 16,
+      "2025-035": 17,
+      "2025-024": 26,
+      "2025-008": 14,
+      "2025-038": 20,
+      "2025-066": 24,
+      "2025-059": 31,
+      "2025-046": 11,
+      "2025-064": 17,
+      "2025-051": 14,
+      "2025-065": 13,
+      "2025-062": 10,
+      "2025-061": 12,
+      "2025-057": 11,
+      "2025-048": 13,
+      "2025-054": 13,
+      "2025-049": 8
+    },
+    "potDonorCountUnique": {
+      "2025-036": 51,
+      "2025-030": 37,
+      "2025-041": 31,
+      "2025-001": 25,
+      "2025-058": 26,
+      "2025-056": 18,
+      "2025-010": 29,
+      "2025-011": 21,
+      "2025-068": 33,
+      "2025-070": 19,
+      "2025-071": 26,
+      "2025-033": 50,
+      "2025-020": 26,
+      "2025-015": 41,
+      "2025-006": 32,
+      "2025-055": 16,
+      "2025-050": 59,
+      "2025-007": 33,
+      "2025-063": 33,
+      "2025-009": 31,
+      "2025-002": 41,
+      "2025-037": 40,
+      "2025-021": 31,
+      "2025-029": 22,
+      "2025-022": 16,
+      "2025-031": 16,
+      "2025-034": 21,
+      "2025-052": 27,
+      "2025-026": 75,
+      "2025-003": 27,
+      "2025-060": 16,
+      "2025-069": 18,
+      "2025-004": 29,
+      "2025-028": 10,
+      "2025-073": 17,
+      "2025-005": 29,
+      "2025-018": 32,
+      "2025-042": 14,
+      "2025-072": 13,
+      "2025-017": 17,
+      "2025-040": 23,
+      "2025-025": 34,
+      "2025-047": 26,
+      "2025-016": 27,
+      "2025-043": 15,
+      "2025-044": 17,
+      "2025-045": 31,
+      "2025-053": 16,
+      "2025-039": 15,
+      "2025-067": 23,
+      "2025-027": 21,
+      "2025-019": 26,
+      "2025-023": 11,
+      "2025-013": 16,
+      "2025-035": 17,
+      "2025-024": 26,
+      "2025-008": 14,
+      "2025-038": 19,
+      "2025-066": 22,
+      "2025-059": 31,
+      "2025-046": 11,
+      "2025-064": 17,
+      "2025-051": 13,
+      "2025-065": 13,
+      "2025-062": 10,
+      "2025-061": 11,
+      "2025-057": 11,
+      "2025-048": 13,
+      "2025-054": 13,
+      "2025-049": 8
+    }
+  },
+  "detailedData": {
+    "2025-01-01": {
+      "cumDonorsUnique": 11,
+      "totalDonations": 1025,
+      "totalDonors": 11,
+      "totalDonorCountUnique": 11,
+      "platforms": {
+        "Discord": {
+          "donations": 1000,
+          "donors": 10,
+          "donorsUnique": 10
+        },
+        "Reddit": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "The Trevor Project": {
+          "donations": 470,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Abandoned Pet Project": {
+          "donations": 215,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Mind": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Internet Archive": {
+          "donations": 36,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Sydney Fox and Dingo Rescue": {
+          "donations": 69,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Special Operations Warrior Foundation": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-036": {
+          "tickets": 23,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-030": {
+          "tickets": 17,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-041": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-001": {
+          "tickets": 37,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-058": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 23,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-011": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-070": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-071": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 62,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-020": {
+          "tickets": 4,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-015": {
+          "tickets": 27,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-006": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 41,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-007": {
+          "tickets": 15,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-063": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 32,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-002": {
+          "tickets": 22,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-037": {
+          "tickets": 22,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-021": {
+          "tickets": 13,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-029": {
+          "tickets": 17,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-022": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 17,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-034": {
+          "tickets": 252,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-052": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-026": {
+          "tickets": 64,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-003": {
+          "tickets": 22,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-060": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-042": {
+          "tickets": 16,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-072": {
+          "tickets": 16,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-017": {
+          "tickets": 29,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-040": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-016": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-053": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-02": {
+      "cumDonorsUnique": 18,
+      "totalDonations": 972,
+      "totalDonors": 8,
+      "totalDonorCountUnique": 7,
+      "platforms": {
+        "Reddit": {
+          "donations": 947,
+          "donors": 7,
+          "donorsUnique": 6
+        },
+        "Discord": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Abandoned Pet Project": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "North Texas Food Bank": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Salvation Army USA": {
+          "donations": 104,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 46,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Royal Flying Doctor Service": {
+          "donations": 12,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Michael J. Fox Foundation for Parkinson's Research": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 750,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "pots": {
+        "2025-020": {
+          "tickets": 50,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-041": {
+          "tickets": 16,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-026": {
+          "tickets": 217,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-033": {
+          "tickets": 19,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-005": {
+          "tickets": 9,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-058": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 25,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-007": {
+          "tickets": 30,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-011": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-040": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 9,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-027": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-019": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 54,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-035": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 21,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-053": {
+          "tickets": 21,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-034": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 128,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-025": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 27,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-016": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 13,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-004": {
+          "tickets": 6,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-03": {
+      "cumDonorsUnique": 26,
+      "totalDonations": 981,
+      "totalDonors": 10,
+      "totalDonorCountUnique": 9,
+      "platforms": {
+        "Reddit": {
+          "donations": 229,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "Discord": {
+          "donations": 752,
+          "donors": 7,
+          "donorsUnique": 6
+        }
+      },
+      "charities": {
+        "Wikimedia.de": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 114,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Disaster Search Dog Foundation": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Electronic Frontier Foundation": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Abandoned Pet Project": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Sydney Fox and Dingo Rescue": {
+          "donations": 32,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 206,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Pain BC": {
+          "donations": 104,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-067": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-066": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-046": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 21,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-036": {
+          "tickets": 52,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-016": {
+          "tickets": 17,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-002": {
+          "tickets": 31,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-037": {
+          "tickets": 57,
+          "donors": 6,
+          "donorsUnique": 5
+        },
+        "2025-045": {
+          "tickets": 21,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-053": {
+          "tickets": 21,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-017": {
+          "tickets": 22,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-004": {
+          "tickets": 21,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-015": {
+          "tickets": 35,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-003": {
+          "tickets": 90,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-068": {
+          "tickets": 35,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-021": {
+          "tickets": 30,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-026": {
+          "tickets": 45,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-033": {
+          "tickets": 30,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-047": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 38,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-007": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-029": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-060": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-042": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 103,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-058": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-019": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-056": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-011": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-009": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-010": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 14,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-04": {
+      "cumDonorsUnique": 33,
+      "totalDonations": 502,
+      "totalDonors": 7,
+      "totalDonorCountUnique": 7,
+      "platforms": {
+        "Discord": {
+          "donations": 452,
+          "donors": 6,
+          "donorsUnique": 6
+        },
+        "Reddit": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Electronic Frontier Foundation": {
+          "donations": 125,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "American Civil Liberties Union": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Breast Cancer Foundation": {
+          "donations": 43,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Salvation Army USA": {
+          "donations": 104,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-051": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-019": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-003": {
+          "tickets": 62,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-007": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 22,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-024": {
+          "tickets": 4,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-070": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 14,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-050": {
+          "tickets": 132,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-065": {
+          "tickets": 22,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-055": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-011": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-016": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-017": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-05": {
+      "cumDonorsUnique": 36,
+      "totalDonations": 627,
+      "totalDonors": 4,
+      "totalDonorCountUnique": 3,
+      "platforms": {
+        "Reddit": {
+          "donations": 152,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Discord": {
+          "donations": 475,
+          "donors": 3,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "United Nations Children’s Fund (UNICEF)": {
+          "donations": 152,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Canadian Whale Institute": {
+          "donations": 175,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Michael J. Fox Foundation for Parkinson's Research": {
+          "donations": 300,
+          "donors": 2,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-015": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-035": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-046": {
+          "tickets": 32,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 170,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-019": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 100,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 90,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-06": {
+      "cumDonorsUnique": 39,
+      "totalDonations": 114,
+      "totalDonors": 3,
+      "totalDonorCountUnique": 3,
+      "platforms": {
+        "Reddit": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Discord": {
+          "donations": 104,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Michael J. Fox Foundation for Parkinson's Research": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-025": {
+          "tickets": 3,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-033": {
+          "tickets": 9,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-030": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-019": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-020": {
+          "tickets": 3,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-047": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-016": {
+          "tickets": 9,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-061": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 4,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-067": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-011": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-002": {
+          "tickets": 4,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-037": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-053": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-035": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-07": {
+      "cumDonorsUnique": 41,
+      "totalDonations": 367,
+      "totalDonors": 4,
+      "totalDonorCountUnique": 2,
+      "platforms": {
+        "Discord": {
+          "donations": 367,
+          "donors": 4,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "North Texas Food Bank": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Electronic Frontier Foundation": {
+          "donations": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 41,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Internet Archive": {
+          "donations": 26,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-017": {
+          "tickets": 70,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 61,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-045": {
+          "tickets": 70,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-051": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-061": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-060": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-011": {
+          "tickets": 3,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-049": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-035": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-08": {
+      "cumDonorsUnique": 49,
+      "totalDonations": 1755,
+      "totalDonors": 10,
+      "totalDonorCountUnique": 8,
+      "platforms": {
+        "Discord": {
+          "donations": 1700,
+          "donors": 8,
+          "donorsUnique": 6
+        },
+        "Reddit": {
+          "donations": 55,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "The Internet Archive": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Humane": {
+          "donations": 70,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Autistic Self Advocacy Network": {
+          "donations": 450,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Sydney Fox and Dingo Rescue": {
+          "donations": 146,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Our Daily Bread Denton": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Lifeline": {
+          "donations": 404,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Mozilla": {
+          "donations": 126,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Minus18": {
+          "donations": 404,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Covenant House California": {
+          "donations": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-042": {
+          "tickets": 26,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-023": {
+          "tickets": 26,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-025": {
+          "tickets": 4,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-033": {
+          "tickets": 15,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-030": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-051": {
+          "tickets": 27,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-019": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-020": {
+          "tickets": 9,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-047": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 56,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-015": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 151,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-041": {
+          "tickets": 29,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-005": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-016": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-061": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-060": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-065": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-055": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 9,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-050": {
+          "tickets": 640,
+          "donors": 5,
+          "donorsUnique": 3
+        },
+        "2025-067": {
+          "tickets": 151,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-007": {
+          "tickets": 18,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-010": {
+          "tickets": 13,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-011": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-002": {
+          "tickets": 26,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-037": {
+          "tickets": 9,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-059": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-024": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 176,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-035": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 51,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-053": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-068": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-069": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-017": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 13,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-039": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-029": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-046": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-049": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-034": {
+          "tickets": 3,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-073": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-052": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-071": {
+          "tickets": 26,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-027": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 196,
+          "donors": 3,
+          "donorsUnique": 3
+        }
+      }
+    },
+    "2025-01-09": {
+      "cumDonorsUnique": 50,
+      "totalDonations": 130,
+      "totalDonors": 1,
+      "totalDonorCountUnique": 1,
+      "platforms": {
+        "Discord": {
+          "donations": 130,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Shriners Hospitals for Children": {
+          "donations": 130,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-020": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-10": {
+      "cumDonorsUnique": 54,
+      "totalDonations": 195,
+      "totalDonors": 4,
+      "totalDonorCountUnique": 4,
+      "platforms": {
+        "Discord": {
+          "donations": 55,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Reddit": {
+          "donations": 140,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Direct Relief": {
+          "donations": 35,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Feed Nova Scotia": {
+          "donations": 34,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Ronald McDonald House Charities": {
+          "donations": 106,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-030": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 7,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 22,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-056": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 8,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-041": {
+          "tickets": 19,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 16,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-033": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-017": {
+          "tickets": 9,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 9,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 9,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-11": {
+      "cumDonorsUnique": 57,
+      "totalDonations": 381,
+      "totalDonors": 3,
+      "totalDonorCountUnique": 3,
+      "platforms": {
+        "Reddit": {
+          "donations": 124,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Discord": {
+          "donations": 257,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "UK Men's Sheds Association": {
+          "donations": 24,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Center of Hope Food Bank": {
+          "donations": 257,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-058": {
+          "tickets": 24,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-033": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-12": {
+      "cumDonorsUnique": 58,
+      "totalDonations": 110,
+      "totalDonors": 2,
+      "totalDonorCountUnique": 2,
+      "platforms": {
+        "Reddit": {
+          "donations": 110,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "National Multiple Sclerosis Society": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Down Syndrome Association of Middle Tennessee": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-033": {
+          "tickets": 101,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-025": {
+          "tickets": 9,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-13": {
+      "cumDonorsUnique": 60,
+      "totalDonations": 311,
+      "totalDonors": 3,
+      "totalDonorCountUnique": 3,
+      "platforms": {
+        "Reddit": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Discord": {
+          "donations": 211,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Our Daily Bread Denton": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Borna": {
+          "donations": 136,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Stack Up": {
+          "donations": 75,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-051": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 58,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-041": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-018": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-065": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-024": {
+          "tickets": 34,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-046": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 16,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-047": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-016": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-060": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-042": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 6,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-14": {
+      "cumDonorsUnique": 65,
+      "totalDonations": 585,
+      "totalDonors": 12,
+      "totalDonorCountUnique": 5,
+      "platforms": {
+        "Discord": {
+          "donations": 510,
+          "donors": 11,
+          "donorsUnique": 4
+        },
+        "Reddit": {
+          "donations": 75,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "General Society of Mechanics & Tradesmen": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Girls Who Code": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Big Brothers Big Sisters": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Autistic Self Advocacy Network": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Los Angeles Fire Department Foundation": {
+          "donations": 75,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Mental Health Association": {
+          "donations": 107,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "California Fire Foundation": {
+          "donations": 103,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-019": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 39,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-005": {
+          "tickets": 8,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-001": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-060": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 44,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-059": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-068": {
+          "tickets": 30,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-052": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 88,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-025": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 27,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-040": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 7,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 17,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 73,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-15": {
+      "cumDonorsUnique": 69,
+      "totalDonations": 331,
+      "totalDonors": 4,
+      "totalDonorCountUnique": 4,
+      "platforms": {
+        "Reddit": {
+          "donations": 130,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Discord": {
+          "donations": 201,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Wikimedia": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Tafel": {
+          "donations": 51,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Give Well": {
+          "donations": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-005": {
+          "tickets": 23,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 18,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 18,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 18,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 23,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-026": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-050": {
+          "tickets": 181,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-016": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-16": {
+      "cumDonorsUnique": 72,
+      "totalDonations": 2091,
+      "totalDonors": 4,
+      "totalDonorCountUnique": 3,
+      "platforms": {
+        "Discord": {
+          "donations": 35,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Reddit": {
+          "donations": 2056,
+          "donors": 2,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Pasadena Humane": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Los Angeles Fire Department Foundation": {
+          "donations": 1029,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Fisher House Foundation": {
+          "donations": 1027,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-030": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-060": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 200,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 169,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 160,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 267,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 260,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-17": {
+      "cumDonorsUnique": 74,
+      "totalDonations": 1020,
+      "totalDonors": 2,
+      "totalDonorCountUnique": 2,
+      "platforms": {
+        "Discord": {
+          "donations": 1020,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Entertainment Industry Foundation": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-025": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-019": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-047": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-008": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-060": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-051": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-061": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-065": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-035": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-046": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-049": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 38,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-18": {
+      "cumDonorsUnique": 75,
+      "totalDonations": 500,
+      "totalDonors": 5,
+      "totalDonorCountUnique": 1,
+      "platforms": {
+        "Discord": {
+          "donations": 500,
+          "donors": 5,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Malaria Consortium": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Abandoned Pet Project": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Mental Health Association": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Big Brothers Big Sisters": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-050": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 80,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 80,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-017": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-19": {
+      "cumDonorsUnique": 80,
+      "totalDonations": 429,
+      "totalDonors": 7,
+      "totalDonorCountUnique": 5,
+      "platforms": {
+        "Discord": {
+          "donations": 220,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "Reddit": {
+          "donations": 209,
+          "donors": 3,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 172,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Shriners Hospitals for Children": {
+          "donations": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "RSPCA (Australia)": {
+          "donations": 154,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Humane": {
+          "donations": 35,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Abandoned Pet Project": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Ronald McDonald House Charities": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-042": {
+          "tickets": 32,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 84,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-068": {
+          "tickets": 70,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-047": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-005": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-022": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-20": {
+      "cumDonorsUnique": 82,
+      "totalDonations": 332,
+      "totalDonors": 4,
+      "totalDonorCountUnique": 3,
+      "platforms": {
+        "Discord": {
+          "donations": 232,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "Reddit": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "California Community Foundation": {
+          "donations": 128,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Tafel": {
+          "donations": 104,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Our Daily Bread Denton": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-017": {
+          "tickets": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 53,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-006": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-21": {
+      "cumDonorsUnique": 84,
+      "totalDonations": 152,
+      "totalDonors": 2,
+      "totalDonorCountUnique": 2,
+      "platforms": {
+        "Discord": {
+          "donations": 152,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      },
+      "charities": {
+        "Salvation Army USA": {
+          "donations": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Leukemia and Lymphoma Society": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-030": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 32,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-041": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-22": {
+      "cumDonorsUnique": 87,
+      "totalDonations": 325,
+      "totalDonors": 5,
+      "totalDonorCountUnique": 5,
+      "platforms": {
+        "Reddit": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Discord": {
+          "donations": 225,
+          "donors": 4,
+          "donorsUnique": 4
+        }
+      },
+      "charities": {
+        "California Fire Foundation": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Los Angeles County Animal Care Foundation": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Leukemia and Lymphoma Society": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Disaster Search Dog Foundation": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Direct Relief": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-005": {
+          "tickets": 23,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 18,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 18,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 28,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-021": {
+          "tickets": 43,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-026": {
+          "tickets": 35,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-030": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-054": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 30,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-051": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-23": {
+      "cumDonorsUnique": 90,
+      "totalDonations": 326,
+      "totalDonors": 5,
+      "totalDonorCountUnique": 5,
+      "platforms": {
+        "Discord": {
+          "donations": 306,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "Reddit": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Wikimedia": {
+          "donations": 104,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Internet Archive": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Salvation Army USA": {
+          "donations": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-050": {
+          "tickets": 104,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-039": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 17,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-021": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-009": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 12,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-24": {
+      "cumDonorsUnique": 96,
+      "totalDonations": 1202,
+      "totalDonors": 8,
+      "totalDonorCountUnique": 6,
+      "platforms": {
+        "Reddit": {
+          "donations": 21,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Discord": {
+          "donations": 1181,
+          "donors": 7,
+          "donorsUnique": 5
+        }
+      },
+      "charities": {
+        "United Nations Children’s Fund (UNICEF)": {
+          "donations": 21,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 314,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 150,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Alight": {
+          "donations": 210,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Pasadena Humane": {
+          "donations": 105,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Direct Relief": {
+          "donations": 102,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "California Fire Foundation": {
+          "donations": 300,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-019": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 26,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 41,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-007": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 170,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-051": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-016": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-061": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-050": {
+          "tickets": 179,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-066": {
+          "tickets": 70,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-049": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-018": {
+          "tickets": 45,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-025": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 150,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-001": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-25": {
+      "cumDonorsUnique": 105,
+      "totalDonations": 3455,
+      "totalDonors": 12,
+      "totalDonorCountUnique": 10,
+      "platforms": {
+        "Reddit": {
+          "donations": 1650,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "Discord": {
+          "donations": 1805,
+          "donors": 7,
+          "donorsUnique": 5
+        }
+      },
+      "charities": {
+        "Food Bank of the Rockies": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Salvation Army USA": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Feed My Starving Children": {
+          "donations": 106,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "California Fire Foundation": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Utah Food Bank": {
+          "donations": 515,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 124,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Los Angeles Fire Department Foundation": {
+          "donations": 260,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Internet Archive": {
+          "donations": 385,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Water.org": {
+          "donations": 700,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "CORE (Community Organized Relief Effort)": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-030": {
+          "tickets": 45,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-018": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 55,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-052": {
+          "tickets": 1035,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-051": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 55,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-050": {
+          "tickets": 1161,
+          "donors": 5,
+          "donorsUnique": 3
+        },
+        "2025-066": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-021": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-065": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-037": {
+          "tickets": 60,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-035": {
+          "tickets": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-025": {
+          "tickets": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-019": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-036": {
+          "tickets": 20,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-001": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 45,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-043": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-011": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-009": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 65,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-024": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-053": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-068": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-069": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 69,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-027": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 310,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-005": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-26": {
+      "cumDonorsUnique": 109,
+      "totalDonations": 1250,
+      "totalDonors": 5,
+      "totalDonorCountUnique": 5,
+      "platforms": {
+        "Discord": {
+          "donations": 1250,
+          "donors": 5,
+          "donorsUnique": 5
+        }
+      },
+      "charities": {
+        "Foundation for Prader-Willi Research": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Multiple Sclerosis Society": {
+          "donations": 106,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Direct Relief": {
+          "donations": 42,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-025": {
+          "tickets": 102,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-033": {
+          "tickets": 112,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-047": {
+          "tickets": 51,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-001": {
+          "tickets": 202,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-018": {
+          "tickets": 55,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-009": {
+          "tickets": 106,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-037": {
+          "tickets": 101,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-059": {
+          "tickets": 106,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-026": {
+          "tickets": 202,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-030": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-050": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-002": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-004": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 7,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-020": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-015": {
+          "tickets": 21,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-065": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-024": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-053": {
+          "tickets": 41,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-068": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 27,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-022": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-046": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-062": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 7,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-27": {
+      "cumDonorsUnique": 124,
+      "totalDonations": 3882,
+      "totalDonors": 23,
+      "totalDonorCountUnique": 16,
+      "platforms": {
+        "Reddit": {
+          "donations": 210,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "Discord": {
+          "donations": 3672,
+          "donors": 20,
+          "donorsUnique": 13
+        }
+      },
+      "charities": {
+        "Wikimedia": {
+          "donations": 304,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "Charity Navigator": {
+          "donations": 54,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Fisher House Foundation": {
+          "donations": 54,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Sydney Fox and Dingo Rescue": {
+          "donations": 220,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Water.org": {
+          "donations": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Abandoned Pet Project": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 150,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 160,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "American Civil Liberties Union": {
+          "donations": 250,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 2050,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "Electronic Frontier Foundation": {
+          "donations": 330,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "American Humane": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-030": {
+          "tickets": 18,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-019": {
+          "tickets": 21,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-047": {
+          "tickets": 11,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-015": {
+          "tickets": 72,
+          "donors": 6,
+          "donorsUnique": 6
+        },
+        "2025-036": {
+          "tickets": 150,
+          "donors": 7,
+          "donorsUnique": 7
+        },
+        "2025-067": {
+          "tickets": 9,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-007": {
+          "tickets": 35,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-038": {
+          "tickets": 11,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-063": {
+          "tickets": 20,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-037": {
+          "tickets": 40,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-059": {
+          "tickets": 19,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-068": {
+          "tickets": 47,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-071": {
+          "tickets": 57,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-026": {
+          "tickets": 1172,
+          "donors": 9,
+          "donorsUnique": 9
+        },
+        "2025-025": {
+          "tickets": 17,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-033": {
+          "tickets": 70,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-041": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-001": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-006": {
+          "tickets": 25,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-050": {
+          "tickets": 1065,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-010": {
+          "tickets": 25,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-018": {
+          "tickets": 91,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-009": {
+          "tickets": 94,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-002": {
+          "tickets": 63,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-045": {
+          "tickets": 16,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-021": {
+          "tickets": 20,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-029": {
+          "tickets": 66,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-034": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-016": {
+          "tickets": 104,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-024": {
+          "tickets": 24,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-066": {
+          "tickets": 55,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-004": {
+          "tickets": 53,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-052": {
+          "tickets": 9,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-027": {
+          "tickets": 12,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-058": {
+          "tickets": 35,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-035": {
+          "tickets": 18,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-056": {
+          "tickets": 13,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-044": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-011": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-053": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-060": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-042": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-003": {
+          "tickets": 36,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-013": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-051": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-061": {
+          "tickets": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 16,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-017": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 8,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-28": {
+      "cumDonorsUnique": 135,
+      "totalDonations": 7133,
+      "totalDonors": 17,
+      "totalDonorCountUnique": 13,
+      "platforms": {
+        "Discord": {
+          "donations": 7113,
+          "donors": 16,
+          "donorsUnique": 12
+        },
+        "Reddit": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "charities": {
+        "Wikimedia": {
+          "donations": 80,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "The Internet Archive": {
+          "donations": 160,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "National Breast Cancer Foundation": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Dog's Trust": {
+          "donations": 5,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Society for the Prevention of Cruelty to Children": {
+          "donations": 37,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Disasters Emergency Committee": {
+          "donations": 124,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Mental Health Association": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 200,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "California Fire Foundation": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Partners in Health": {
+          "donations": 26,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Salvation Army USA": {
+          "donations": 6000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Sydney Fox and Dingo Rescue": {
+          "donations": 43,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "German Childhood Cancer Foundation": {
+          "donations": 313,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-068": {
+          "tickets": 15,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-070": {
+          "tickets": 4,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-026": {
+          "tickets": 2818,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-048": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-064": {
+          "tickets": 29,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-015": {
+          "tickets": 125,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-003": {
+          "tickets": 20,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-050": {
+          "tickets": 2851,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-036": {
+          "tickets": 251,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-009": {
+          "tickets": 55,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-005": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-016": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-018": {
+          "tickets": 12,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-007": {
+          "tickets": 100,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-010": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-037": {
+          "tickets": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 32,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-035": {
+          "tickets": 4,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-004": {
+          "tickets": 60,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-047": {
+          "tickets": 130,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 73,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-069": {
+          "tickets": 40,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 421,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-025": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-033": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-030": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-042": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-038": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-059": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 2,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-29": {
+      "cumDonorsUnique": 152,
+      "totalDonations": 2606,
+      "totalDonors": 25,
+      "totalDonorCountUnique": 19,
+      "platforms": {
+        "Discord": {
+          "donations": 2292,
+          "donors": 20,
+          "donorsUnique": 14
+        },
+        "Reddit": {
+          "donations": 314,
+          "donors": 5,
+          "donorsUnique": 5
+        }
+      },
+      "charities": {
+        "Wikimedia": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "SOS Kinderdorf": {
+          "donations": 313,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 62,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Down Syndrome Association of Middle Tennessee": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Germany's Relief Coalition": {
+          "donations": 416,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "UK Men's Sheds Association": {
+          "donations": 24,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Malaria Consortium": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 253,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "CORE (Community Organized Relief Effort)": {
+          "donations": 265,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Trevor Project": {
+          "donations": 250,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Los Angeles Fire Department Foundation": {
+          "donations": 30,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 190,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "Boys and Girls Club": {
+          "donations": 15,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Math + Science Initiative": {
+          "donations": 80,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Salvation Army USA": {
+          "donations": 168,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Code.org": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Internet Archive": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Human Rights Campaign": {
+          "donations": 150,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "Seattle Children's Hospital": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-019": {
+          "tickets": 23,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-020": {
+          "tickets": 106,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-068": {
+          "tickets": 3,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-046": {
+          "tickets": 9,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-036": {
+          "tickets": 719,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-031": {
+          "tickets": 63,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-030": {
+          "tickets": 13,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-045": {
+          "tickets": 30,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-034": {
+          "tickets": 11,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-026": {
+          "tickets": 12,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-047": {
+          "tickets": 21,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-058": {
+          "tickets": 27,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-033": {
+          "tickets": 31,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-015": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-005": {
+          "tickets": 65,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-018": {
+          "tickets": 34,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-050": {
+          "tickets": 388,
+          "donors": 10,
+          "donorsUnique": 7
+        },
+        "2025-002": {
+          "tickets": 49,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-064": {
+          "tickets": 26,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-004": {
+          "tickets": 46,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-041": {
+          "tickets": 171,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-021": {
+          "tickets": 71,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-065": {
+          "tickets": 36,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-024": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-029": {
+          "tickets": 25,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-025": {
+          "tickets": 7,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-051": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-001": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-006": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-016": {
+          "tickets": 147,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-003": {
+          "tickets": 36,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-061": {
+          "tickets": 19,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-060": {
+          "tickets": 44,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-062": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-042": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-072": {
+          "tickets": 6,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-044": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 8,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-057": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-067": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-010": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-011": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-038": {
+          "tickets": 19,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-063": {
+          "tickets": 6,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-009": {
+          "tickets": 101,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-037": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-059": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-013": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-035": {
+          "tickets": 20,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-066": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-053": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-017": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-039": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 69,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-028": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 36,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-054": {
+          "tickets": 2,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-049": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-073": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-071": {
+          "tickets": 1,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-027": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        }
+      }
+    },
+    "2025-01-30": {
+      "cumDonorsUnique": 170,
+      "totalDonations": 9912,
+      "totalDonors": 27,
+      "totalDonorCountUnique": 19,
+      "platforms": {
+        "Reddit": {
+          "donations": 841,
+          "donors": 10,
+          "donorsUnique": 9
+        },
+        "Discord": {
+          "donations": 9071,
+          "donors": 17,
+          "donorsUnique": 10
+        }
+      },
+      "charities": {
+        "Mind": {
+          "donations": 139,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Wikimedia": {
+          "donations": 3000,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Our Companions Animal Rescue": {
+          "donations": 26,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "United Nations Children’s Fund (UNICEF)": {
+          "donations": 312,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "CORE (Community Organized Relief Effort)": {
+          "donations": 25,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Autistic Self Advocacy Network": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 150,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "National Society for the Prevention of Cruelty to Children": {
+          "donations": 62,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Alameda Food Bank": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Second Harvest of Silicon Valley": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Against Malaria Foundation": {
+          "donations": 300,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Bill Wilson Center": {
+          "donations": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Covenant House California": {
+          "donations": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Malaria Consortium": {
+          "donations": 600,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Mozilla": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Hospice Foundation of America": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "ASPCA": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Lifeline": {
+          "donations": 155,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Royal Flying Doctor Service": {
+          "donations": 155,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Oregon Food Bank": {
+          "donations": 1000,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Canadian Whale Institute": {
+          "donations": 172,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "California Fire Foundation": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "The Internet Archive": {
+          "donations": 6,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-038": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 232,
+          "donors": 7,
+          "donorsUnique": 7
+        },
+        "2025-036": {
+          "tickets": 203,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-050": {
+          "tickets": 68,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-007": {
+          "tickets": 353,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-059": {
+          "tickets": 839,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-035": {
+          "tickets": 53,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-021": {
+          "tickets": 873,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-027": {
+          "tickets": 619,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-011": {
+          "tickets": 53,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-040": {
+          "tickets": 63,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-026": {
+          "tickets": 324,
+          "donors": 7,
+          "donorsUnique": 6
+        },
+        "2025-015": {
+          "tickets": 253,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-073": {
+          "tickets": 18,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-041": {
+          "tickets": 12,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-005": {
+          "tickets": 53,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-016": {
+          "tickets": 272,
+          "donors": 5,
+          "donorsUnique": 4
+        },
+        "2025-061": {
+          "tickets": 41,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-060": {
+          "tickets": 48,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-067": {
+          "tickets": 28,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-024": {
+          "tickets": 148,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-066": {
+          "tickets": 71,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-004": {
+          "tickets": 75,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-006": {
+          "tickets": 1460,
+          "donors": 8,
+          "donorsUnique": 5
+        },
+        "2025-003": {
+          "tickets": 2004,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-018": {
+          "tickets": 40,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-042": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-072": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-045": {
+          "tickets": 209,
+          "donors": 5,
+          "donorsUnique": 4
+        },
+        "2025-064": {
+          "tickets": 4,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-033": {
+          "tickets": 16,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-002": {
+          "tickets": 94,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-017": {
+          "tickets": 142,
+          "donors": 5,
+          "donorsUnique": 4
+        },
+        "2025-001": {
+          "tickets": 54,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-037": {
+          "tickets": 104,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-068": {
+          "tickets": 74,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-010": {
+          "tickets": 35,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-071": {
+          "tickets": 59,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-030": {
+          "tickets": 21,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-009": {
+          "tickets": 216,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-043": {
+          "tickets": 106,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-044": {
+          "tickets": 106,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-053": {
+          "tickets": 103,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-025": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-051": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-019": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-020": {
+          "tickets": 13,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-047": {
+          "tickets": 58,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-048": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-008": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-062": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-023": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-065": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-055": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-056": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-057": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 39,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-069": {
+          "tickets": 28,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-039": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 39,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-029": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-022": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 64,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-046": {
+          "tickets": 19,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-054": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-049": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 39,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-052": {
+          "tickets": 3,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    },
+    "2025-01-31": {
+      "cumDonorsUnique": 197,
+      "totalDonations": 10744,
+      "totalDonors": 47,
+      "totalDonorCountUnique": 32,
+      "platforms": {
+        "Discord": {
+          "donations": 6804,
+          "donors": 33,
+          "donorsUnique": 24
+        },
+        "Reddit": {
+          "donations": 3940,
+          "donors": 14,
+          "donorsUnique": 8
+        }
+      },
+      "charities": {
+        "The Trevor Project": {
+          "donations": 161,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "National Disaster Search Dog Foundation": {
+          "donations": 250,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "California Community Foundation": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "American Civil Liberties Union": {
+          "donations": 1550,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "Electronic Frontier Foundation": {
+          "donations": 606,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "The Internet Archive": {
+          "donations": 161,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "Human Rights Campaign": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Breast Cancer Foundation": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "German Childhood Cancer Foundation": {
+          "donations": 31,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "RIP Medical Debt": {
+          "donations": 52,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Good Cheer Food Bank": {
+          "donations": 50,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Abandoned Pet Project": {
+          "donations": 150,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Doctors Without Borders / Medecins Sans Frontieres / Läkare utan gränser": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Sydney Fox and Dingo Rescue": {
+          "donations": 67,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Seattle Children's Hospital": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "CORE (Community Organized Relief Effort)": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Autistic Self Advocacy Network": {
+          "donations": 500,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "Water.org": {
+          "donations": 450,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "UK Men's Sheds Association": {
+          "donations": 37,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Dog's Trust": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Royal Society of the Protection of Birds": {
+          "donations": 10,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "ASPCA": {
+          "donations": 100,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Michael J. Fox Foundation for Parkinson's Research": {
+          "donations": 150,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Mental Health Association": {
+          "donations": 37,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Revived Soldiers Ukraine": {
+          "donations": 35,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Math + Science Initiative": {
+          "donations": 400,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "National Pediatric Cancer Foundation": {
+          "donations": 400,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Nurse-Family Partnership": {
+          "donations": 400,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Feeding America": {
+          "donations": 500,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Charity Navigator": {
+          "donations": 75,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "St. Jude Children’s Research Hospital": {
+          "donations": 20,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "Wikimedia": {
+          "donations": 3930,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "World Builders": {
+          "donations": 102,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      },
+      "pots": {
+        "2025-015": {
+          "tickets": 310,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-036": {
+          "tickets": 109,
+          "donors": 7,
+          "donorsUnique": 5
+        },
+        "2025-064": {
+          "tickets": 45,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-029": {
+          "tickets": 220,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-017": {
+          "tickets": 115,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-055": {
+          "tickets": 110,
+          "donors": 5,
+          "donorsUnique": 4
+        },
+        "2025-039": {
+          "tickets": 20,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-033": {
+          "tickets": 98,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-008": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-050": {
+          "tickets": 1469,
+          "donors": 9,
+          "donorsUnique": 7
+        },
+        "2025-011": {
+          "tickets": 79,
+          "donors": 6,
+          "donorsUnique": 5
+        },
+        "2025-059": {
+          "tickets": 40,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-030": {
+          "tickets": 247,
+          "donors": 6,
+          "donorsUnique": 6
+        },
+        "2025-067": {
+          "tickets": 11,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-073": {
+          "tickets": 152,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-025": {
+          "tickets": 540,
+          "donors": 6,
+          "donorsUnique": 6
+        },
+        "2025-047": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-048": {
+          "tickets": 25,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-069": {
+          "tickets": 15,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-019": {
+          "tickets": 144,
+          "donors": 5,
+          "donorsUnique": 5
+        },
+        "2025-020": {
+          "tickets": 75,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-038": {
+          "tickets": 53,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-052": {
+          "tickets": 1022,
+          "donors": 6,
+          "donorsUnique": 6
+        },
+        "2025-026": {
+          "tickets": 1048,
+          "donors": 8,
+          "donorsUnique": 7
+        },
+        "2025-010": {
+          "tickets": 50,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-068": {
+          "tickets": 46,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-071": {
+          "tickets": 30,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-006": {
+          "tickets": 1500,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-060": {
+          "tickets": 28,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-042": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-072": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-022": {
+          "tickets": 15,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-037": {
+          "tickets": 60,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-024": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-009": {
+          "tickets": 110,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-016": {
+          "tickets": 230,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-051": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-041": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-005": {
+          "tickets": 220,
+          "donors": 4,
+          "donorsUnique": 4
+        },
+        "2025-001": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-003": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-018": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-061": {
+          "tickets": 15,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-062": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-043": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-044": {
+          "tickets": 25,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-023": {
+          "tickets": 5,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-065": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-058": {
+          "tickets": 40,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-056": {
+          "tickets": 25,
+          "donors": 3,
+          "donorsUnique": 2
+        },
+        "2025-057": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-007": {
+          "tickets": 225,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-063": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-002": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-013": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-035": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-066": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-045": {
+          "tickets": 1532,
+          "donors": 7,
+          "donorsUnique": 3
+        },
+        "2025-053": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-070": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-021": {
+          "tickets": 20,
+          "donors": 2,
+          "donorsUnique": 1
+        },
+        "2025-040": {
+          "tickets": 60,
+          "donors": 4,
+          "donorsUnique": 3
+        },
+        "2025-004": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-028": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-031": {
+          "tickets": 305,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-046": {
+          "tickets": 10,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-054": {
+          "tickets": 11,
+          "donors": 2,
+          "donorsUnique": 2
+        },
+        "2025-049": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        },
+        "2025-034": {
+          "tickets": 30,
+          "donors": 3,
+          "donorsUnique": 3
+        },
+        "2025-027": {
+          "tickets": 0,
+          "donors": 1,
+          "donorsUnique": 1
+        }
+      }
+    }
+  },
+  "metadata": {
+    "updatedDateTime": "2025-02-04 14:00"
+  }
+}

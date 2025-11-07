@@ -16,7 +16,6 @@ import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import RaffleContext from './RaffleContext.jsx'
 
-
 function RaffleExportButton({text}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -30,40 +29,37 @@ function RaffleExportButton({text}) {
         const data = JSON.stringify(visibleEntries)
         handleClose()
         download(`rafflePots${dateText}.json`, data)
-        enqueueSnackbar('Current RAFL entries downloaded as rafflePots.json')
+        enqueueSnackbar('Current RAFL pots downloaded as rafflePots.json')
     }, [dateText, handleClose, visibleEntries])
 
     const handleExportClipboard = useCallback(() => {
-        const data = visibleEntries.map(entry => ({
-            id: entry.id,
-            potNumber: entry.potNumber,
-            title: entry.title,
-            contributedBy: entry.contributedBy,
-            donors: entry.donors,
-            tickets: entry.tickets,
-            winner: entry.winner
-        }))
+        const clipboardText = visibleEntries.map(entry => {
+            const winnerText = entry.winnerCount > 1 ? `(${entry.winnerCount} winners)` : ''
+            let entryText = `Pot #${entry.potNumber} - ${entry.title} ${winnerText}\n` +
+                `  DONATIONS: ${entry.totalTickets}\n` +
+                `  DONORS: ${entry.uniqueDonorCount}\n`
+            if (entry.winnerFilterNames.length > 0) {
+                entryText += `  WINNERS: ${entry.winnerFilterNames.join(', ')}\n`
+            }
+            return entryText
 
-        const clipboardText = data.map(entry => {
-            const winnerText = entry.winner ? `[Winner: ${entry.winner}]` : ''
-            return `* Pot #${entry.potNumber} - ${entry.title} ${winnerText}`
         }).join('\n')
 
         handleClose()
         navigator.clipboard.writeText(clipboardText).then(() => {
-            enqueueSnackbar('Current scorecard entries copied to clipboard.')
+            enqueueSnackbar('Current RAFL pots copied to clipboard.')
         })
     }, [handleClose, visibleEntries])
 
     const handleExportCsv = useCallback(() => {
         const data = visibleEntries.map(entry => ({
+            id: entry.id,
             potNumber: entry.potNumber,
             title: entry.title,
-            //id: entry.id,
-            contributedBy: entry.contributedBy,
-            donors: entry.donors,
-            tickets: entry.tickets,
-            winner: entry.winner
+            contributedBy: entry.contributedBy.join(', '),
+            donors: entry.uniqueDonorCount,
+            tickets: entry.totalTickets,
+            winners: entry.winnerFilterNames.join(', ')
         }))
 
         const headers = Object.keys(data[0]).join(',')
@@ -78,8 +74,8 @@ function RaffleExportButton({text}) {
         }).join('\n')
         const csvFile = `${headers}\n${csvData}`
         handleClose()
-        download('scorecardData.csv', csvFile)
-        enqueueSnackbar('Current Scorecard entries downloaded as scorecardData.csv')
+        download('rafflePots.csv', csvFile)
+        enqueueSnackbar('Current RAFL pots downloaded as rafflePots.csv')
     }, [handleClose, visibleEntries])
 
     return (

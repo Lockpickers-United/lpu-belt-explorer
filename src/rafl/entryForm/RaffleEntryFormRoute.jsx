@@ -6,9 +6,8 @@ import usePageTitle from '../../util/usePageTitle.jsx'
 import RaffleHeader from '../RaffleHeader.jsx'
 import RaffleEntryForm from './RaffleEntryForm.jsx'
 import DBContext from '../../app/DBContext.jsx'
-import ReportButton from '../ReportButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import AdminRoleButton from '../AdminRoleButton.jsx'
+import AdminToolsButton from '../AdminToolsButton.jsx'
 import RaffleNotLiveDialog from '../RaffleNotLiveDialog.jsx'
 
 function RaffleEntryFormRoute() {
@@ -20,13 +19,21 @@ function RaffleEntryFormRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <ReportButton/>
-            <AdminRoleButton/>
+            <AdminToolsButton/>
         </React.Fragment>
     )
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
-        <React.Fragment>
+        <div style={style}>
 
             <Nav title='RAFL Entry Form' extras={extras}/>
 
@@ -40,7 +47,7 @@ function RaffleEntryFormRoute() {
 
             <RaffleNotLiveDialog/>
 
-        </React.Fragment>
+        </div>
     )
 }
 

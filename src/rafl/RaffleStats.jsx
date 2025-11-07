@@ -1,23 +1,27 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
 import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFullNew, raflResponseDetails, raflSiteStats2025} from '../data/dataUrls'
+import {raflResponseDetails} from '../data/dataUrls'
 import RaffleStatsPotTable from './RaffleStatsPotTable.jsx'
 import RaffleStatsCharityTable from './RaffleStatsCharityTable.jsx'
 import RaffleStatsHeader from './RaffleStatsHeader.jsx'
 import RaffleHiddenDialog from './RaffleHiddenDialog.jsx'
 import RaffleYOYLines from './reports/RaffleYOYLines.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
-function RaffleReport() {
-    usePageTitle('RAFL Report')
+export default function RaffleStats() {
+    usePageTitle('RAFL Stats')
+
+    const {summary} = useContext(RaffleContext)
+
     const {data, loading, error} = useData({urls})
-    const {siteFullNew, raflResponseDetails, raflSiteStats2025} = data || {} //eslint-disable-line
+    const {raflResponseDetails} = data || {} //eslint-disable-line
     const {width, isMobile} = useWindowSize()
     const updateTime = loading ? '--'
-        : '(updated: ' + dayjs(raflResponseDetails?.metadata['updatedDateTime']).format('MM/DD/YY hh:mm') + ')'
+        : '(updated: ' + dayjs(summary.updatedAt).format('MM/DD/YY hh:mm') + ')'
 
     const firstHeaderStyle = {
         margin: '26px 0px 18px 0px',
@@ -42,7 +46,7 @@ function RaffleReport() {
 
     const tableWidth = width <= 560
         ? width - 20
-        : 650
+        : 640
 
     const nameLength = !isMobile ? 48 : 24
 
@@ -61,13 +65,13 @@ function RaffleReport() {
                     <span style={{fontSize: '0.8rem', marginTop: 0}}>{updateTime}</span>
                 </div>
 
-                <RaffleYOYLines data={raflResponseDetails?.detailedData}/>
+                <RaffleYOYLines data={raflResponseDetails['detailedData']}/>
 
                 <div style={firstHeaderStyle}>Pots</div>
-                <RaffleStatsPotTable data={raflSiteStats2025} tableWidth={tableWidth} nameLength={nameLength}/>
+                <RaffleStatsPotTable summary={summary} tableWidth={tableWidth} nameLength={nameLength}/>
 
                 <div style={headerStyle}>Charities</div>
-                <RaffleStatsCharityTable data={siteFullNew} tableWidth={tableWidth} nameLength={nameLength}/>
+                <RaffleStatsCharityTable summary={summary} tableWidth={tableWidth} nameLength={nameLength}/>
 
             </div>
             <RaffleHiddenDialog/>
@@ -76,9 +80,5 @@ function RaffleReport() {
 }
 
 const urls = {
-    siteFullNew,
     raflResponseDetails,
-    raflSiteStats2025
 }
-
-export default RaffleReport

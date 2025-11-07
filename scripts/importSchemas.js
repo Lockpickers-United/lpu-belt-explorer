@@ -166,20 +166,19 @@ export const raflSchema = Joi.array().items(
         'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
         'Year': Joi.number().max(2030),
         'Pot Number': Joi.number().max(999),
-        'Title': Joi.string(),
         'Winner Count': Joi.number().allow(''),
+        'Title': Joi.string(),
         'Display Name': Joi.string().allow(''),
         'Description': Joi.string().allow(''),
         'Pot Contents': Joi.string().allow(''),
         'Contributed By': Joi.string(),
         'Tags': Joi.string().allow(''),
+        'Keywords': Joi.string().allow(''),
         'Country': Joi.string().allow(''),
         'Shipping Info Text': Joi.string().allow(''),
         'Split Shipping': Joi.string().allow(''),
         'Shipping Type': Joi.string().allow(''),
-        'Winner': Joi.string().allow(''),
-        'Date Added': Joi.number().allow('')
-
+        'Date Added': Joi.string().allow('')
     }).unknown()
 )
 
@@ -198,9 +197,12 @@ export const raflMediaSchema = Joi.array().items(
 
 export const raflCharitySchema = Joi.array().items(
     Joi.object({
+        'Charity ID': Joi.string(),
         'Charity Name': Joi.string(),
+        'Disable': Joi.string().allow(''),
         'URL': Joi.string().allow('').uri(),
         'Tags': Joi.string().allow(''),
-        'Total Donations 2024': Joi.string().allow('')
+        'Donations 2024': Joi.string().allow(''),
+        'Donations 2025': Joi.string().allow('')
     }).unknown()
 )

@@ -21,8 +21,12 @@ import FilterContext from '../context/FilterContext.jsx'
 import {Collapse} from '@mui/material'
 import RaffleContext from './RaffleContext.jsx'
 import DataContext from '../context/DataContext.jsx'
+import Box from '@mui/material/Box'
 
-function RaffleEntry({entry, expanded, onExpand, single}) {
+function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
+
+    if (!entry) return null
+
     const {raflState, raffleAdminRole} = useContext(RaffleContext)
     const {expandAll} = useContext(DataContext)
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
@@ -35,17 +39,18 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
     const ref = useRef(null)
     const showSimple = single === '2'
 
-    const ticketCount = entry.tickets
-        ? new Intl.NumberFormat().format(entry.tickets)
+    const ticketCount = entry.totalTickets
+        ? new Intl.NumberFormat().format(entry.totalTickets)
         : '---'
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
+
+            console.log('entry', entry)
+
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
-
             setScrolled(true)
-
             setTimeout(() => {
                 window.scrollTo({
                     left: 0,
@@ -64,93 +69,112 @@ function RaffleEntry({entry, expanded, onExpand, single}) {
 
     const {isMobile, flexStyle} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
-    const descriptionMargin = !isMobile ? '12px 0px 12px 8px' : '12px 0px 12px 0px'
+    const descriptionMargin = !isMobile ? '12px 0px 0px 8px' : '12px 0px 0px 0px'
     const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
-    const infoOpacity = entry.winner.length > 0 && !expanded ? 0.6 : 1
+    const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.5 : 1
+
+    const shipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29'}
+    entry.USShip = undefined
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
             <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null}>
-                <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
-                    <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
-                        <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
-                            <div style={{margin: titleMargin, display: 'flex', flexGrow: 1}}>
-                                <RaffleTitle entry={entry}/>
+                <div style={{width: '100%', marginBottom: 20}}>
+                    <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
+                        <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
+                            <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
+                                <div style={{margin: titleMargin, display: 'flex', flexGrow: 1}}>
+                                    <RaffleTitle entry={entry} drawing={drawing}/>
+                                </div>
                             </div>
-                        </div>
-                        <div style={{margin: contribMargin, display: 'flex'}}>
-                            <div style={{flexGrow: 1, opacity: infoOpacity}}>
-                                <div style={{
-                                    marginRight: 8,
-                                    color: '#bbb',
-                                    fontSize: '1.0rem'
-                                }}>Contributed by &nbsp;
-                                    {entry.contributedBy.map((contrib, index) => {
-                                        const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
-                                        return (
-                                            <span key={index}>
+                            <div style={{margin: contribMargin, display: 'flex'}}>
+                                <div style={{flexGrow: 1, opacity: infoOpacity}}>
+                                    <div style={{
+                                        marginRight: 8,
+                                        color: '#bbb',
+                                        fontSize: '1.0rem'
+                                    }}>Contributed by &nbsp;
+                                        {entry.contributedBy?.map((contrib, index) => {
+                                            const separator = index < entry.contributedBy.length - 1 ? ', ' : ''
+                                            return (
+                                                <span key={index}>
                                             <FilterChip
                                                 value={contrib}
                                                 field='contributedBy'
                                                 mode={'text'}
                                             />{separator}
                                         </span>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
-                            {showFull &&
-                                <Collapse in={!!entry.donors}>
-                                    <div style={{
-                                        marginRight: 15,
-                                        fontSize: descriptionFontSize,
-                                        textAlign: 'right',
-                                        display: flexStyle,
-                                        opacity: infoOpacity
-                                    }}>
-                                        <div>
-                                            <nobr>Donors: <strong>{entry.donors || '--'}</strong></nobr>
-                                        </div>
-                                        <div style={{marginLeft: 8}}>
-                                            <nobr>Tickets: <strong>{ticketCount}</strong></nobr>
-                                        </div>
-                                    </div>
-                                </Collapse>
-                            }
-                        </div>
-
-                        {!showSimple && shippingFiltered &&
-                            <div style={{display: 'flex', marginTop: 6, opacity: infoOpacity}}>
-                                <div style={{marginRight: 10}}>
-                                    <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                        entry.country.map((country, index) => {
-                                            const separator = index < entry.country.length - 1 ? ', ' : ''
-                                            return (
-                                                <span key={index}><FilterChip value={country} field='country'
-                                                                              mode={'text'}/>{separator}</span>
                                             )
                                         })}
-                                    />
+                                    </div>
                                 </div>
-                                <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                            value={entry.shippingInfo}/>
+
+                                {showFull &&
+                                    <Collapse in={entry.uniqueDonorCount > 0}>
+                                        <div style={{
+                                            marginRight: 10,
+                                            fontSize: descriptionFontSize,
+                                            textAlign: 'right',
+                                            display: flexStyle,
+                                            opacity: infoOpacity
+                                        }}>
+                                            <div>
+                                                <nobr>Donors <strong>{entry.uniqueDonorCount || '--'}</strong></nobr>
+                                            </div>
+                                            <div style={{marginLeft: 16}}>
+                                                <nobr>Tickets <strong>{ticketCount}</strong></nobr>
+                                            </div>
+                                        </div>
+                                    </Collapse>
+                                }
                             </div>
-                        }
-                        <div style={{margin: descriptionMargin, fontSize: descriptionFontSize, opacity: infoOpacity}}>
-                            <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                                {entry.description}
-                            </ReactMarkdown>
+
+                            {!showSimple && shippingFiltered &&
+                                <div style={{display: 'flex', marginTop: 6, opacity: infoOpacity}}>
+                                    <div style={{marginRight: 10}}>
+                                        <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                            entry.country.map((country, index) => {
+                                                const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                return (
+                                                    <span key={index}><FilterChip value={country} field='country'
+                                                                                  mode={'text'}/>{separator}</span>
+                                                )
+                                            })}
+                                        />
+                                    </div>
+                                    <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
+                                                value={entry.shippingInfo}/>
+                                </div>
+                            }
+                            <Box style={{
+                                margin: descriptionMargin,
+                                fontSize: descriptionFontSize,
+                                opacity: infoOpacity
+                            }}>
+                                <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
+                                               components={{p: 'div'}}>
+                                    {entry.description}
+                                </ReactMarkdown>
+                            </Box>
                         </div>
+
+                        {showFull && !drawing &&
+                            <WatchlistButton id={entry.id}/>
+                        }
+
                     </div>
 
-                    {showFull &&
-                        <WatchlistButton id={entry.id}/>
+                    {entry.USShip && !drawing &&
+                        <div
+                            style={{textAlign: 'right', width: '100%', marginTop: 10, paddingRight: 20, color: '#aaa'}}>
+                            Ships to USA: &nbsp;
+                            <span style={{color: shipColor[entry.USShip], fontWeight: 'bold'}}>{entry.USShip}</span>
+                        </div>
                     }
-
                 </div>
+
             </AccordionSummary>
             {
                 expanded &&

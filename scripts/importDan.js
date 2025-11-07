@@ -1,6 +1,6 @@
 import fs from 'fs'
 import {parse} from 'csv-parse/sync'
-import {danSchema} from './schemas.js'
+import {danSchema} from './importSchemas.js'
 import beltDetails, {projectTiers, modifierMultiplier} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import masterIndex, {lockById, projectById, normalizeCodeword} from './lpuBeltIndex.js'

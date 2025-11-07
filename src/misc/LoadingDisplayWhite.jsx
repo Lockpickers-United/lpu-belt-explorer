@@ -2,10 +2,10 @@ import React from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 import {circularProgressClasses} from '@mui/material'
 
-export default function LoadingDisplayWhite() {
+export default function LoadingDisplayWhite({diameter = 40}) {
 
     return (
-        <div style={{display: 'flex', placeItems: 'center', width: 40, height: 40}}>
+        <div style={{display: 'flex', placeItems: 'center', width: diameter, height: diameter}}>
             <CircularProgress
                 variant='indeterminate'
                 disableShrink

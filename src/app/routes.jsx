@@ -408,6 +408,28 @@ export default [
                 }
             },
             {
+                path: '/rafl/admin',
+                lazy: async () => {
+                    const {default: RaffleAdminParentRoute} = await import('../rafl/admin/RaffleAdminParentRoute.jsx')
+                    return {element: <RaffleAdminParentRoute/>}
+                },
+                children: [
+                    {
+                        path: '/rafl/admin',
+                        lazy: async () => {
+                            const {default: RaffleAdminRoute} = await import('../rafl/admin/RaffleAdminRoute.jsx')
+                            return {element: <RaffleAdminRoute/>}
+                        }
+                    },
+                    {
+                        path: '/rafl/admin/drawing',
+                        lazy: async () => {
+                            const {default: RaffleDrawingRoute} = await import('../rafl/admin/RaffleDrawingRoute.jsx')
+                            return {element: <RaffleDrawingRoute/>}
+                        }
+                    }]
+            },
+            {
                 path: '/rafl/reports',
                 lazy: async () => {
                     const {default: RaffleReportRoute} = await import('../rafl/reports/RaffleReportRoute.jsx')

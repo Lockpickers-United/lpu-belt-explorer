@@ -1,0 +1,77 @@
+import React, {useContext, useEffect} from 'react'
+import AuthContext from '../../app/AuthContext'
+import Tracker from '../../app/Tracker'
+import Footer from '../../nav/Footer'
+import Nav from '../../nav/Nav'
+import useWindowSize from '../../util/useWindowSize.jsx'
+import AdminToolsButton from '../AdminToolsButton.jsx'
+import RaffleContext from '../RaffleContext.jsx'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import SignInButton from '../../auth/SignInButton.jsx'
+import RaffleDrawingEntries from './RaffleDrawingEntries.jsx'
+import {raffleFilterFields} from '../../data/filterFields'
+import {FilterProvider} from '../../context/FilterContext.jsx'
+import RaffleAdminDataProviderPots from './RaffleAdminDataProviderPots.jsx'
+import RaffleHeaderDrawing from './RaffleHeaderDrawing.jsx'
+
+export default function RaffleDrawingRoute() {
+    const {raffleAdmin, setRaffleAdminRole} = useContext(RaffleContext)
+    const {authLoaded, isLoggedIn} = useContext(AuthContext)
+
+    useEffect(() => {
+        if (raffleAdmin) setRaffleAdminRole(true)
+    })
+
+    const {isMobile} = useWindowSize()
+
+    const extras = (
+        <React.Fragment>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            <AdminToolsButton/>
+        </React.Fragment>
+    )
+
+    if (!authLoaded) return (<LoadingDisplay message='Loading...'/>)
+    if (authLoaded && !raffleAdmin) return (
+        <React.Fragment>
+            <Nav title='RAFL Admin' extras={extras}/>
+            <RaffleHeaderDrawing page={'drawing'}/>
+            <div style={{padding: 20}}>
+                {!isLoggedIn && <div>Please log in to access this page.</div>}
+                {isLoggedIn && !raffleAdmin && <div>Sorry, you do not have access to this page.</div>}
+                <div><SignInButton/></div>
+            </div>
+            <Footer/>
+        </React.Fragment>
+    )
+
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
+    return (
+        <FilterProvider filterFields={raffleFilterFields}>
+            <RaffleAdminDataProviderPots drawing={true}>
+                <div style={style}>
+
+                    <Nav title='RAFL 2026' extras={extras}/>
+                    <RaffleHeaderDrawing page={'drawing'}/>
+
+                    {raffleAdmin &&
+                        <RaffleDrawingEntries/>
+                    }
+
+                    <Footer/>
+
+                    <Tracker feature='raflAdmin'/>
+
+                </div>
+            </RaffleAdminDataProviderPots>
+        </FilterProvider>
+    )
+}

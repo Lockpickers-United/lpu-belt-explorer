@@ -9,8 +9,7 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleAnnounce from './RaffleAnnounce.md?raw'
 import RaffleSubHead from './RaffleSubHead.jsx'
-import ReportButton from './ReportButton.jsx'
-import AdminRoleButton from './AdminRoleButton.jsx'
+import AdminToolsButton from './AdminToolsButton.jsx'
 
 function RaffleAnnouncetRoute() {
 
@@ -30,12 +29,11 @@ function RaffleAnnouncetRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <ReportButton/>
-            <AdminRoleButton/>
+            <AdminToolsButton/>
         </React.Fragment>
     )
 
-    const navTitle = !isMobile ? 'Announcing RAFL 2025!' : 'RAFL 2025!'
+    const navTitle = !isMobile ? 'Announcing RAFL 2026!' : 'RAFL 2026!'
 
     return (
         <React.Fragment>

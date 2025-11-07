@@ -2,31 +2,21 @@ import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
 import CountUp from 'react-countup'
 import RaffleContext from './RaffleContext.jsx'
+import Tooltip from '@mui/material/Tooltip'
 
-/**
- * @property raflSummaryStats.uniqueDonors
- * @property raflSummaryStats.totalDonors
- * @property raflSummaryStats.totalDonations
- * @property raflSummaryStats.platformDonations
- * @property raflSummaryStats.platformDonations.Discord
- * @property raflSummaryStats.platformDonations.Reddit
- */
+function RaffleStatsHeader({animate = false}) {
+    const {summary, animateTotal} = useContext(RaffleContext)
 
-function RaffleStatsHeader({animate}) {
-    const {raflSummaryStats, animateTotal} = useContext(RaffleContext)
-
-    const donors = raflSummaryStats && raflSummaryStats.uniqueDonors || 0
-    const donationsTotal = raflSummaryStats && raflSummaryStats.totalDonations || 0
-    const donationsTotalStr = raflSummaryStats && new Intl.NumberFormat().format(donationsTotal)
-    const averageDonation = raflSummaryStats && Math.floor(donationsTotal / donors) || 0
+    const donors = summary.uniqueDonors?.length || 0
+    const donationsTotal = summary.totalDonations || 0
+    const donationsTotalStr = new Intl.NumberFormat().format(donationsTotal)
+    const averageDonation = donors > 0 && Math.floor(donationsTotal / donors) || 0
+    const discordDonations = summary.discordDonations || 1
+    const redditDonations = summary.redditDonations || 1
 
     const chartWidth = 300
-    const discordDonations = raflSummaryStats && raflSummaryStats.platformDonations?.Discord || 0
-    const redditDonations = raflSummaryStats && raflSummaryStats.platformDonations?.Reddit || 0
-    const totalDonations = raflSummaryStats && discordDonations + redditDonations
-    const discordWidth = raflSummaryStats && (discordDonations / totalDonations) * chartWidth
-    const redditWidth = raflSummaryStats && (redditDonations / totalDonations) * chartWidth
-
+    const discordWidth = (discordDonations / donationsTotal) * chartWidth
+    const redditWidth = (redditDonations / donationsTotal) * chartWidth
 
     const {isMobile, flexStyle} = useWindowSize()
     const statsPadding = !isMobile ? '14px 20px 12px 20px' : '10px 10px 16px 10px'
@@ -67,28 +57,34 @@ function RaffleStatsHeader({animate}) {
                     <div><span
                         style={{fontWeight: 400, color: '#ddd'}}>Donors</span> {donors} &nbsp;&nbsp;&nbsp;
                         <span
-                            style={{fontWeight: 400, color: '#ddd'}}>Average Donation</span> ${averageDonation}
+                            style={{fontWeight: 400, color: '#ddd'}}>Ave. User Donations</span> ${averageDonation}
                     </div>
                 </div>
                 <div style={{width: chartWidth, textAlign: 'center', marginTop: 2}}>
-                    {!isMobile && <span style={{fontWeight: 700, fontSize:'1.1rem'}}>Source</span>}
-                    <div style={{display: 'flex', textAlign: 'left', fontSize:'0.95rem'}}>
+                    {!isMobile && <span style={{fontWeight: 700, fontSize: '1.1rem'}}>Source</span>}
+                    <div style={{display: 'flex', textAlign: 'left', fontSize: '0.95rem'}}>
                         <div style={{flexGrow: 1, paddingLeft: 8}}>Discord</div>
                         <div style={{paddingRight: 8}}>Reddit</div>
                     </div>
                     <div style={{display: 'flex'}}>
-                        <div style={{
-                            ...discordStyle,
-                            width: discordWidth || 0,
-                            backgroundColor: '#587ee6',
-                            height: 20
-                        }}></div>
-                        <div style={{
-                            ...redditStyle,
-                            width: redditWidth || 0,
-                            backgroundColor: '#2d52b0',
-                            height: 20
-                        }}></div>
+                        <Tooltip title={`$ ${new Intl.NumberFormat().format(discordDonations)}`} arrow
+                                 disableFocusListener>
+                            <div style={{
+                                ...discordStyle,
+                                width: discordWidth || 0,
+                                backgroundColor: '#587ee6',
+                                height: 20
+                            }}></div>
+                        </Tooltip>
+                        <Tooltip title={`$ ${new Intl.NumberFormat().format(redditDonations)}`} arrow
+                                 disableFocusListener>
+                            <div style={{
+                                ...redditStyle,
+                                width: redditWidth || 0,
+                                backgroundColor: '#2d52b0',
+                                height: 20
+                            }}></div>
+                        </Tooltip>
                     </div>
                 </div>
             </div>
