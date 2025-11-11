@@ -60461,5 +60461,21 @@
     ],
     "name": "Reliabilt Deadbolt cylinder",
     "dateAdded": "2025-10-04T16:19:03.607Z"
+  },
+  "ccdbffbf": {
+    "id": "ccdbffbf",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "WR"
+      }
+    ],
+    "lockingMechanisms": [
+      "Slider"
+    ],
+    "notes": "Dual sidebar",
+    "name": "MIWA WR",
+    "dateAdded": "2025-11-11T19:09:04.039Z"
   }
 }

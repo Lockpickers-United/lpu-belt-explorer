@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 914,
+        "value": 915,
         "label": "All"
       },
       {
-        "value": 116,
+        "value": 117,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.020787746170678335,
+      "value": 0.020765027322404372,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 62,
-      "value": 0.06783369803063458,
+      "value": 0.06775956284153005,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 74,
-      "value": 0.08096280087527352,
+      "value": 0.08087431693989071,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16301969365426697,
+      "value": 0.1628415300546448,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 131,
-      "value": 0.14332603938730853,
+      "value": 0.1431693989071038,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 113,
-      "value": 0.12363238512035012,
+      "value": 0.12349726775956284,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.09190371991247265,
+      "value": 0.09180327868852459,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 72,
-      "value": 0.0787746170678337,
+      "value": 0.07868852459016394,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 94,
-      "value": 0.10284463894967177,
+      "value": 0.10273224043715846,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 116,
-      "value": 0.12691466083150985,
+      "count": 117,
+      "value": 0.12786885245901639,
       "id": "Unranked"
     }
   ],
@@ -106,7 +106,7 @@
     },
     {
       "label": "Slider",
-      "value": 31,
+      "value": 32,
       "id": "slider"
     },
     {
@@ -539,6 +539,11 @@
         "label": "Magnet",
         "value": 1,
         "id": "magnet"
+      },
+      {
+        "label": "Slider",
+        "value": 1,
+        "id": "slider"
       }
     ]
   },
@@ -558,7 +563,7 @@
       },
       {
         "segment": "All locks",
-        "count": 914,
+        "count": 915,
         "media": 848,
         "coverage": "92%"
       }
@@ -1757,6 +1762,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-11-11 18:26"
+    "updatedDateTime": "2025-11-11 19:09"
   }
 }
