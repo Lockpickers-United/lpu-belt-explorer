@@ -333,7 +333,7 @@ Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
 Blue,"Burg Wächter",Diamant,,Pin-tumbler,Unguttable,,32fa52a6
 Blue,"Burg Wächter","Gamma 700",,Pin-tumbler,Unguttable,,ed9fa926
-Blue,Cantol,"high-security line ","10-pin dimple",Dimple,,,5647f11c
+Blue,Cantol,"high-security line","10-pin dimple",Dimple,,,5647f11c
 Blue,CAVEO,TS007,"all standards","Dimple,Slider","Sprung sliders,Active sidebar","Seven pins with standard drivers, five slider sidebar",60964e9f
 Blue,Chubb,"114 (3g114)","5 lever, pre-2004",Lever,"Pin key,Curtain,False gates",,32c85438
 Blue,Chubb,"114e (3g114e)","5 lever, after 2004",Lever,"Pin key,Curtain,False gates",,0c946064
@@ -430,7 +430,7 @@ Blue,Winkhaus,N-Tra,,Dimple,,,2c9d12fc
 Blue,Winkhaus,RPE,,Pin-tumbler,,,c643eca2
 Blue,Winkhaus,Titan,,"Pin-tumbler,Sidepins",,,fe088de0
 Blue,Yale,2100,,"Dimple,Sidebar,Slider","Sprung sliders","dimple, similar to Superior, but 6 pin stacks vertically aligned",7164f69d
-Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,"Image Test",779e7dcb
+Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,"On the Yale B, a max lift (Yale 0) will cause the spooled driver to sit entirely within the plug, representing a possible spring risk.",779e7dcb
 Blue,Yale,"KM 1 star Superior",,Pin-tumbler,,"spooled key pins with 6 gege style drivers",c1e91978
 Blue,"Yale,Yale,Millenco","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
 Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
@@ -841,7 +841,7 @@ Unranked,Gaab,"6-pin Dimple Lock",,Dimple,"Under Review ⚑",,cd5acff8
 Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, all standard",Pin-tumbler,cylinder,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",8b3a89ec
 Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, 1 or more security pins",Pin-tumbler,cylinder,"Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",d3bdab01
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
-Unranked,,"Helason ","16-pin round key",Dimple,"Under Review ⚑",,93324d19
+Unranked,,Helason,"16-pin round key",Dimple,"Under Review ⚑",,93324d19
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624
 Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under Review ⚑,Cabinet lock,Uncurtained,Pipe key",,81c91d86
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd

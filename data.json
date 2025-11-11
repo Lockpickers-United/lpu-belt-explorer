@@ -18648,7 +18648,7 @@
     "makeModels": [
       {
         "make": "Cantol",
-        "model": "high-security line "
+        "model": "high-security line"
       }
     ],
     "version": "10-pin dimple",
@@ -18695,7 +18695,7 @@
       }
     ],
     "views": 902,
-    "lastUpdated": "2025-10-25T18:24:16.785Z"
+    "lastUpdated": "2025-11-11T18:26:52.410Z"
   },
   {
     "id": "60964e9f",
@@ -24983,7 +24983,7 @@
     "features": [
       "Overmilling"
     ],
-    "notes": "Image Test",
+    "notes": "On the Yale B, a max lift (Yale 0) will cause the spooled driver to sit entirely within the plug, representing a possible spring risk.",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -57076,7 +57076,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "model": "Helason "
+        "model": "Helason"
       }
     ],
     "version": "16-pin round key",
@@ -57162,7 +57162,7 @@
       }
     ],
     "views": 165,
-    "lastUpdated": "2025-10-25T18:24:16.788Z"
+    "lastUpdated": "2025-11-11T18:26:52.418Z"
   },
   {
     "id": "352d0624",
