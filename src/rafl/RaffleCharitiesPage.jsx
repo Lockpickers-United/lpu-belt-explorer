@@ -37,8 +37,12 @@ function RaffleCharitesPage() {
     const columns = [
         {id: 'displayName', align: 'left', name: 'Charity Name'},
         {id: 'donations2025', name: prevText, align: 'center', displayField: 'donations2025text', descending: true},
-        {id: 'donations', name: currText, align: 'center', displayField: 'donationsText', descending: true}
     ]
+
+    if (raflState !== 'preview') {
+        columns.push({id: 'donations', name: currText, align: 'center', displayField: 'donationsText', descending: true})
+    }
+
     const defaultSort = 'displayName'
     const tableWidth = '100%'
     const tableData = {columns, rows, defaultSort, sortable: true, wrap: true}

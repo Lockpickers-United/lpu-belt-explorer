@@ -11,8 +11,6 @@ function RaflPotSearchBox({handleChangeLock, allEntries=[], disabled, reset = fa
     const {isMobile} = useWindowSize()
     const inputEl = useRef()
 
-    console.log('allEntries', allEntries)
-
     const lockDetails = useMemo(() => {
         let lockNames = {}
         const allLocks = [...allEntries].sort((a, b) => {
@@ -34,8 +32,6 @@ function RaflPotSearchBox({handleChangeLock, allEntries=[], disabled, reset = fa
         .map((lock) => {
             return {label: lock.lockName, id: lock.id}
         })
-
-    console.log('options', options)
 
     const handleChange = useCallback((_event, value) => {
         if (!value) {

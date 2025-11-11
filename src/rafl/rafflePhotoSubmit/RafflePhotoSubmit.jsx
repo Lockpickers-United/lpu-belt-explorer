@@ -43,8 +43,6 @@ function RafflePhotoSubmit({profile, user}) {
     const entry = allEntries.find(e => e.id === lockDetails?.lockId)
     const uploadable = (!!lockDetails?.lockFullName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
 
-    console.log('lockDetails', lockDetails)
-
     const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_`.replace('/', '+')
     const suffix = `${photoCredit}`.replace('/', '+')
 
