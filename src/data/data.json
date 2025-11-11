@@ -58235,6 +58235,22 @@
     "lastUpdated": "2025-10-25T18:24:16.788Z"
   },
   {
+    "id": "ccdbffbf",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "WR"
+      }
+    ],
+    "lockingMechanisms": [
+      "Slider"
+    ],
+    "notes": "Dual sidebar",
+    "dateAdded": "2025-11-11T19:09:04.039Z",
+    "lastUpdated": "2025-11-11T19:09:04.369Z"
+  },
+  {
     "id": "e9d77a86",
     "belt": "Unranked",
     "makeModels": [
