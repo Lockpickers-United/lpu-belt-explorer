@@ -16,6 +16,8 @@ import Tracker from '../../app/Tracker.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import {postData, cleanError} from '../../formUtils/postData.jsx'
 import {nodeServerUrl} from '../../data/dataUrls'
+import Link from '@mui/material/Link'
+import {useNavigate} from 'react-router-dom'
 
 /**
  * @prop photoCredit
@@ -40,7 +42,6 @@ function RafflePhotoSubmit({profile, user}) {
     const allEntries = useMemo(() => [...allPots],[allPots])
 
     const dt = dayjs().format('YYYYMMDD-HHMMss')
-    const entry = allEntries.find(e => e.id === lockDetails?.lockId)
     const uploadable = (!!lockDetails?.lockFullName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
 
     const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_`.replace('/', '+')
@@ -70,8 +71,6 @@ function RafflePhotoSubmit({profile, user}) {
         formData.append('droppedFileNames', droppedFileNames)
         formData.append('lockFullName', lockDetails.lockFullName)
         formData.append('lockName', lockDetails.lockName)
-        formData.append('version', entry?.version)
-        formData.append('belt', entry?.belt)
         formData.append('lockId', lockDetails.lockId)
         formData.append('photoCredit', photoCredit)
         formData.append('displayName', profile?.displayName)
@@ -147,6 +146,12 @@ function RafflePhotoSubmit({profile, user}) {
 
     const searchBoxOpacity = altLock ? 0.5 : 1
     const {flexStyle} = useWindowSize()
+    const linkSx = {
+        color: '#bbb', textDecoration: 'underline', cursor: 'pointer', fontWeight:500, '&:hover': {
+            color: '#fff'
+        }
+    }
+    const navigate = useNavigate()
 
     return (
 
@@ -154,17 +159,21 @@ function RafflePhotoSubmit({profile, user}) {
             maxWidth: 800, padding: 0,
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
         }}>
+
+            <div style={{fontSize: '1.7rem', fontWeight: 600, marginBottom: 20}}>
+                Pot Photos  | <Link onClick={()=>navigate('/rafl/contribute')} sx={linkSx}>Info</Link>
+            </div>
+
             <form action={null} encType='multipart/form-data' method='post'
                   onSubmit={handleFileUpload}>
 
                 <div>
-                    <div style={{fontSize: '1.5rem', fontWeight: 500, margin: '30px 0px 10px'}}>Select Pot</div>
+                    <div style={{fontSize: '1.5rem', fontWeight: 500, margin: '0px 0px 0px'}}>Select Pot</div>
                     <div style={{opacity: searchBoxOpacity}}>
                         <RaflPotSearchBox handleChangeLock={handleChangeLock} allEntries={allEntries}
                                             disabled={altLock} reset={reset}/>
                     </div>
-
-                    <div style={{marginTop: 8}}>
+                    <div style={{marginTop: 0}}>
                         <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'
                                   checked={altLock}/> Submit
                         photos for a pot not on the site.

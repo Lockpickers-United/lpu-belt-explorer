@@ -453,8 +453,15 @@ export default [
             {
                 path: '/rafl/photos',
                 lazy: async () => {
-                    const {default: RafflePhotoSubmitRoute} = await import('../rafl/rafflePhotoSubmit/RafflePhotoSubmitRoute.jsx')
+                    const {default: RafflePhotoSubmitRoute} = await import('../rafl/rafflePotSubmit/RafflePhotoSubmitRoute.jsx')
                     return {element: <RafflePhotoSubmitRoute/>}
+                }
+            },
+            {
+                path: '/rafl/contribute',
+                lazy: async () => {
+                    const {default: RafflePotSubmitRoute} = await import('../rafl/rafflePotSubmit/RafflePotSubmitRoute.jsx')
+                    return {element: <RafflePotSubmitRoute/>}
                 }
             }
         ]
