@@ -161,6 +161,15 @@ export default function RafflePotSubmit({profile, user}) {
                     />
 
                     <TextField
+                        label="Title"
+                        name="title"
+                        value={form.title || ''}
+                        onChange={handleFormChange}
+                        color='info'
+                        fullWidth
+                    />
+
+                    <TextField
                         label="Pot contents"
                         name="potContents"
                         value={form.potContents || ''}
