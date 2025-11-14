@@ -505,7 +505,7 @@ if (importRaflData) {
     // RAFL Data
     console.log('Processing RAFL data...')
     const raflMainData = raflData
-        .filter(datum => datum['Year'] === '2025')
+        .filter(datum => datum['Year'] === '2026')
         .map(datum => ({
             id: datum['Unique ID'],
             year: +datum['Year'],
