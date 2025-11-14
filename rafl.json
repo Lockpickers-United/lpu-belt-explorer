@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "id": "2026-001",
+    "year": 2026,
+    "potNumber": 1,
+    "title": "$$$ of Locc!!!!",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "$150 RAFL Gift Certificate at  lpulocks.com/rafl",
+    "potContents": "$150 RAFL Gift Certificate. Good for a single purchase of available items from a single participating seller. **Please see details at [lpulocks.com/rafl](http://lpulocks.com/#/rafl)**",
+    "keywords": "lpulocks",
+    "contributedBy": [
+      "LPUbelts.com Team"
+    ],
+    "tags": [
+      "Gift certificates"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Digital prize",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Digital prize",
+    "dateAdded": "20241214"
+  },
+  {
+    "id": "2026-002",
+    "year": 2026,
+    "potNumber": 1,
+    "title": "Chubby Sparrow and MORE",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "CollateralTech"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "dateAdded": ""
+  }
+]
