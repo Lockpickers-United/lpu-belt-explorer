@@ -568,8 +568,8 @@
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4217,
-    "contributors": 297,
+    "uniqueImages": 4029,
+    "contributors": 257,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -577,11 +577,11 @@
       },
       {
         "contributor": "mgsecure",
-        "images": 334
+        "images": 333
       },
       {
         "contributor": "PeaceWeapon",
-        "images": 242
+        "images": 227
       },
       {
         "contributor": "Reinder Stegen",
@@ -605,7 +605,7 @@
       },
       {
         "contributor": "fabianoh130",
-        "images": 76
+        "images": 75
       },
       {
         "contributor": "Dra9i",
@@ -613,11 +613,7 @@
       },
       {
         "contributor": "Yabende",
-        "images": 67
-      },
-      {
-        "contributor": "DQ",
-        "images": 64
+        "images": 66
       },
       {
         "contributor": "Qikom",
@@ -630,6 +626,10 @@
       {
         "contributor": "Septclues",
         "images": 56
+      },
+      {
+        "contributor": "DQ",
+        "images": 54
       },
       {
         "contributor": "NiXXeD",
@@ -648,16 +648,16 @@
         "images": 44
       },
       {
-        "contributor": "NCR",
-        "images": 44
-      },
-      {
         "contributor": "Legendofthesamurai",
         "images": 40
       },
       {
         "contributor": "TheGreenishOne",
         "images": 39
+      },
+      {
+        "contributor": "NCR",
+        "images": 38
       },
       {
         "contributor": "DoNotDuplicate",
@@ -681,14 +681,10 @@
       },
       {
         "contributor": "Yagias",
-        "images": 33
+        "images": 32
       },
       {
         "contributor": "Hunson",
-        "images": 30
-      },
-      {
-        "contributor": "Mugatu",
         "images": 30
       },
       {
@@ -696,8 +692,8 @@
         "images": 29
       },
       {
-        "contributor": "CorrectJeans",
-        "images": 28
+        "contributor": "Mugatu",
+        "images": 29
       },
       {
         "contributor": "Octane",
@@ -784,10 +780,6 @@
         "images": 15
       },
       {
-        "contributor": "Moki",
-        "images": 15
-      },
-      {
         "contributor": "Scoooot",
         "images": 15
       },
@@ -796,16 +788,12 @@
         "images": 14
       },
       {
+        "contributor": "Moki",
+        "images": 14
+      },
+      {
         "contributor": "TrapperLock",
         "images": 14
-      },
-      {
-        "contributor": "Wyte",
-        "images": 14
-      },
-      {
-        "contributor": "HVLogic",
-        "images": 13
       },
       {
         "contributor": "Least",
@@ -817,6 +805,10 @@
       },
       {
         "contributor": "DifficultZebra",
+        "images": 12
+      },
+      {
+        "contributor": "HVLogic",
         "images": 12
       },
       {
@@ -856,15 +848,7 @@
         "images": 11
       },
       {
-        "contributor": "44 Delta",
-        "images": 10
-      },
-      {
         "contributor": "Alpama",
-        "images": 10
-      },
-      {
-        "contributor": "banditobrandino07",
         "images": 10
       },
       {
@@ -892,14 +876,6 @@
         "images": 10
       },
       {
-        "contributor": "MelBrooksKA",
-        "images": 10
-      },
-      {
-        "contributor": "PickSmith",
-        "images": 10
-      },
-      {
         "contributor": "Retep Reyem",
         "images": 10
       },
@@ -913,6 +889,10 @@
       },
       {
         "contributor": "Two06",
+        "images": 10
+      },
+      {
+        "contributor": "Wyte",
         "images": 10
       },
       {
@@ -936,7 +916,7 @@
         "images": 8
       },
       {
-        "contributor": "Deadhammer",
+        "contributor": "CorrectJeans",
         "images": 8
       },
       {
@@ -948,15 +928,11 @@
         "images": 8
       },
       {
-        "contributor": "f-eq-ma",
-        "images": 8
-      },
-      {
-        "contributor": "Gorg the Blacksmith",
-        "images": 8
-      },
-      {
         "contributor": "Lockpicking Dutchman",
+        "images": 8
+      },
+      {
+        "contributor": "MelBrooksKA",
         "images": 8
       },
       {
@@ -964,11 +940,15 @@
         "images": 8
       },
       {
+        "contributor": "banditobrandino07",
+        "images": 7
+      },
+      {
         "contributor": "Brummie Lock Picker",
         "images": 7
       },
       {
-        "contributor": "CollateralTech",
+        "contributor": "f-eq-ma",
         "images": 7
       },
       {
@@ -1020,7 +1000,7 @@
         "images": 6
       },
       {
-        "contributor": "Pyrolock",
+        "contributor": "PickSmith",
         "images": 6
       },
       {
@@ -1052,23 +1032,11 @@
         "images": 5
       },
       {
-        "contributor": "Bare Bones Lock Picking",
-        "images": 5
-      },
-      {
-        "contributor": "Granny",
-        "images": 5
-      },
-      {
         "contributor": "Guid",
         "images": 5
       },
       {
         "contributor": "LockChuck",
-        "images": 5
-      },
-      {
-        "contributor": "lockpickersbench",
         "images": 5
       },
       {
@@ -1104,19 +1072,7 @@
         "images": 4
       },
       {
-        "contributor": "Doktor Weasel",
-        "images": 4
-      },
-      {
-        "contributor": "Don",
-        "images": 4
-      },
-      {
         "contributor": "EDF0101",
-        "images": 4
-      },
-      {
-        "contributor": "escape goat",
         "images": 4
       },
       {
@@ -1133,6 +1089,10 @@
       },
       {
         "contributor": "ImSchatten",
+        "images": 4
+      },
+      {
+        "contributor": "lockpickersbench",
         "images": 4
       },
       {
@@ -1168,10 +1128,6 @@
         "images": 4
       },
       {
-        "contributor": "Sarius",
-        "images": 4
-      },
-      {
         "contributor": "sic!",
         "images": 4
       },
@@ -1185,10 +1141,6 @@
       },
       {
         "contributor": "thedungbeetle",
-        "images": 4
-      },
-      {
-        "contributor": "Todd",
         "images": 4
       },
       {
@@ -1208,14 +1160,6 @@
         "images": 3
       },
       {
-        "contributor": "Bonx",
-        "images": 3
-      },
-      {
-        "contributor": "BurnB1",
-        "images": 3
-      },
-      {
         "contributor": "Burnetb1",
         "images": 3
       },
@@ -1225,10 +1169,6 @@
       },
       {
         "contributor": "Chris Capune",
-        "images": 3
-      },
-      {
-        "contributor": "Craig 3.0",
         "images": 3
       },
       {
@@ -1256,10 +1196,6 @@
         "images": 3
       },
       {
-        "contributor": "Fireshaper",
-        "images": 3
-      },
-      {
         "contributor": "Frosty",
         "images": 3
       },
@@ -1273,10 +1209,6 @@
       },
       {
         "contributor": "Hayliox",
-        "images": 3
-      },
-      {
-        "contributor": "ImaginaryUnit",
         "images": 3
       },
       {
@@ -1297,10 +1229,6 @@
       },
       {
         "contributor": "Lemon",
-        "images": 3
-      },
-      {
-        "contributor": "LockpickingDev",
         "images": 3
       },
       {
@@ -1356,10 +1284,6 @@
         "images": 2
       },
       {
-        "contributor": "4550",
-        "images": 2
-      },
-      {
         "contributor": "anonymoususer 08276283027",
         "images": 2
       },
@@ -1384,15 +1308,15 @@
         "images": 2
       },
       {
+        "contributor": "Don",
+        "images": 2
+      },
+      {
         "contributor": "DP Locksport",
         "images": 2
       },
       {
         "contributor": "Dromicete",
-        "images": 2
-      },
-      {
-        "contributor": "elocksmith",
         "images": 2
       },
       {
@@ -1424,27 +1348,11 @@
         "images": 2
       },
       {
-        "contributor": "Law Lock Tools",
-        "images": 2
-      },
-      {
-        "contributor": "locksmitharmy",
-        "images": 2
-      },
-      {
-        "contributor": "MarkUK",
-        "images": 2
-      },
-      {
         "contributor": "MidnightPhilopicker",
         "images": 2
       },
       {
         "contributor": "N3rdL0rd",
-        "images": 2
-      },
-      {
-        "contributor": "NKT",
         "images": 2
       },
       {
@@ -1520,15 +1428,7 @@
         "images": 2
       },
       {
-        "contributor": "V Pinball",
-        "images": 2
-      },
-      {
         "contributor": "4811",
-        "images": 1
-      },
-      {
-        "contributor": "amvgaert",
         "images": 1
       },
       {
@@ -1537,10 +1437,6 @@
       },
       {
         "contributor": "b1blatt",
-        "images": 1
-      },
-      {
-        "contributor": "Badger",
         "images": 1
       },
       {
@@ -1580,11 +1476,11 @@
         "images": 1
       },
       {
-        "contributor": "DWeb",
+        "contributor": "EliteAssassin",
         "images": 1
       },
       {
-        "contributor": "EliteAssassin",
+        "contributor": "escape goat",
         "images": 1
       },
       {
@@ -1592,15 +1488,7 @@
         "images": 1
       },
       {
-        "contributor": "HJ",
-        "images": 1
-      },
-      {
         "contributor": "Holly Poer",
-        "images": 1
-      },
-      {
-        "contributor": "hunson",
         "images": 1
       },
       {
@@ -1616,14 +1504,6 @@
         "images": 1
       },
       {
-        "contributor": "Joey69692568",
-        "images": 1
-      },
-      {
-        "contributor": "knowthebird",
-        "images": 1
-      },
-      {
         "contributor": "Lochabar",
         "images": 1
       },
@@ -1632,19 +1512,11 @@
         "images": 1
       },
       {
-        "contributor": "Lockpickwebwinkel.nl",
-        "images": 1
-      },
-      {
         "contributor": "Lockr",
         "images": 1
       },
       {
         "contributor": "LockSkipper",
-        "images": 1
-      },
-      {
-        "contributor": "lpulocks.com",
         "images": 1
       },
       {
@@ -1692,22 +1564,6 @@
         "images": 1
       },
       {
-        "contributor": "Ratyoke",
-        "images": 1
-      },
-      {
-        "contributor": "Reckedx",
-        "images": 1
-      },
-      {
-        "contributor": "RWB",
-        "images": 1
-      },
-      {
-        "contributor": "SasPes",
-        "images": 1
-      },
-      {
         "contributor": "schliesszylinder",
         "images": 1
       },
@@ -1724,27 +1580,11 @@
         "images": 1
       },
       {
-        "contributor": "Southord",
-        "images": 1
-      },
-      {
-        "contributor": "thatonenottrollguy",
-        "images": 1
-      },
-      {
         "contributor": "theyeetbeetle",
         "images": 1
       },
       {
-        "contributor": "Tsubaki",
-        "images": 1
-      },
-      {
         "contributor": "UrbanHawk",
-        "images": 1
-      },
-      {
-        "contributor": "ViceGrip",
         "images": 1
       },
       {
@@ -1762,6 +1602,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-11-11 19:09"
+    "updatedDateTime": "2025-11-14 18:26"
   }
 }
