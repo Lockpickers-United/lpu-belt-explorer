@@ -4,16 +4,22 @@ import React, {useContext} from 'react'
 import RaffleContext from './RaffleContext.jsx'
 import RAFL2026 from '../resources/hello-my-name-is-RAFL-2026s.png'
 import Box from '@mui/material/Box'
+import {useLocation} from 'react-router-dom'
 
 export default function RaffleSetupDialog() {
     const {raffleAdminRole, raflState} = useContext(RaffleContext)
+    const location = useLocation()
+
+    const showDialog = raflState === 'setup'
+        && !raffleAdminRole
+        && location.pathname !== '/rafl/contribute' && location.pathname !== '/rafl/photos'
 
     return (
-        <Dialog open={raflState === 'setup' && !raffleAdminRole}
+        <Dialog open={showDialog}
                 componentsProps={{
                     backdrop: {style: {backgroundColor: '#000', opacity: 1}}
                 }}
-                sx = {{
+                sx={{
                     '.MuiDialog-paper': {
                         backgroundColor: '#000', opacity: 1, backgroundImage: 'none'
                     }
@@ -24,7 +30,7 @@ export default function RaffleSetupDialog() {
                     width: '100%', margin: '30px 0px 30px'
                 }}/>
                 <br/>
-                <div style={{fontSize: '1.2rem', marginBottom:150}}>Stay tuned!</div>
+                <div style={{fontSize: '1.2rem', marginBottom: 150}}>Stay tuned!</div>
                 <br/>
 
                 <AdminToolsButton/>

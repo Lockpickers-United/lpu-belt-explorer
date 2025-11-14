@@ -15,8 +15,6 @@ import AdminToolsButton from './AdminToolsButton.jsx'
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
 
-    console.log('RaffleRoute')
-
     const {allPots, allCharities, raflState} = useContext(RaffleContext)
     if (!allPots || !allCharities) return null
     const allEntries = allPots

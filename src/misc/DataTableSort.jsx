@@ -10,7 +10,8 @@ const DataTableSort = ({
                            tableData,
                            tableWidth,
                            tableHeight,
-                           linkFunction
+                           linkFunction,
+                           totalsRow
                        }) => {
 
 
@@ -65,6 +66,8 @@ const DataTableSort = ({
     const finalRows = sort && sort !== defaultSort
         ? [...activeRows, ...inactiveRows]
         : sortedRowsFull
+
+    if (totalsRow) finalRows.push(totalsRow)
 
     const displayData = {columns: columns, data: finalRows}
     displayData.columns.filter(x => x?.id && x?.align)
@@ -172,9 +175,9 @@ const DataTableSort = ({
                                           '&:nth-of-type(even) td, &:nth-of-type(even) th': {backgroundColor: '#191919'},
                                           'td, th': {}
                                       }}>
-                                {displayData.columns.map((column, index) =>
+                                {displayData.columns.map((column, idx) =>
                                     column.id !== 'spacer'
-                                        ? <TableCell key={index + 1}
+                                        ? <TableCell key={idx + 1}
                                                      sx={{
                                                          ...overflowStyle,
                                                          textAlign: column.align,
@@ -188,7 +191,8 @@ const DataTableSort = ({
                                             <div style={{
                                                 textAlign: column.align,
                                                 marginLeft: leftMargins[column.align],
-                                                marginRight: rightMargins[column.align]
+                                                marginRight: rightMargins[column.align],
+                                                fontWeight: totalsRow && index === displayData.data.length - 1 ? 700 : 'inherit'
                                             }}>
                                                 {linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '')}
                                             </div>

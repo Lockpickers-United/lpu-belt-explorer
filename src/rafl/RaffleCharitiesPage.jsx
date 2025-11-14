@@ -26,21 +26,57 @@ function RaffleCharitesPage() {
         const nameLength = !isMobile ? 99 : 99
         let charityName = charity?.name ? charity?.name.substring(0, nameLength) : 'unknown'
         return charity?.name?.length < nameLength ? charityName : charityName + '...'
-    },[isMobile])
+    }, [isMobile])
+
+    const showTotals = true
+    let totalDonations2024 = 0
+    let totalDonations2025 = 0
+    let totalDonations = 0
 
     const rows = visibleEntries.map(charity => {
+        totalDonations2024 += charity.donations2024 || 0
+        totalDonations2025 += charity.donations2025 || 0
+        totalDonations += charity.donations || 0
         return {
             ...charity,
-            displayName: shortName(charity),
+            displayName: shortName(charity)
         }
     })
+
+    const totalsRow = showTotals
+        ? {
+            displayName: 'TOTAL',
+            donations2024: new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumSignificantDigits: 5
+            }).format(totalDonations2024),
+            donations2025: new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumSignificantDigits: 5
+            }).format(totalDonations2025),
+            donations: new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumSignificantDigits: 5
+            }).format(totalDonations)
+        }
+        : undefined
+
     const columns = [
         {id: 'displayName', align: 'left', name: 'Charity Name'},
-        {id: 'donations2025', name: prevText, align: 'center', displayField: 'donations2025text', descending: true},
+        {id: 'donations2025', name: prevText, align: 'center', displayField: 'donations2025text', descending: true}
     ]
 
     if (raflState !== 'preview') {
-        columns.push({id: 'donations', name: currText, align: 'center', displayField: 'donationsText', descending: true})
+        columns.push({
+            id: 'donations',
+            name: currText,
+            align: 'center',
+            displayField: 'donationsText',
+            descending: true
+        })
     }
 
     const defaultSort = 'displayName'
@@ -65,7 +101,7 @@ function RaffleCharitesPage() {
                 <RaffleSearchBar label='All Approved Charities' sortValues={null}/>
                 {visibleEntries.length === 0
                     ? <NoEntriesCard label='Charities'/>
-                    : <DataTableSort tableData={tableData} tableWidth={tableWidth} linkFunction={linkFunction}/>
+                    : <DataTableSort tableData={tableData} tableWidth={tableWidth} linkFunction={linkFunction} totalsRow={totalsRow}/>
                 }
             </div>
             <RaffleHiddenDialog/>

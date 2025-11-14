@@ -8,7 +8,6 @@ import RaffleEntryForm from './RaffleEntryForm.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
-import RaffleNotLiveDialog from '../RaffleNotLiveDialog.jsx'
 
 function RaffleEntryFormRoute() {
     const {lockCollection} = useContext(DBContext)
@@ -44,8 +43,6 @@ function RaffleEntryFormRoute() {
             <Footer/>
 
             <Tracker feature='raflForm'/>
-
-            <RaffleNotLiveDialog/>
 
         </div>
     )

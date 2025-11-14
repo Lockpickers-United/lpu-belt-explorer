@@ -18,7 +18,7 @@ function RaffleHeader({page, width = 700}) {
     const {isMobile, flexStyle} = useWindowSize()
     const buttonTop = !isMobile ? 4 : 0
     const buttonFontSize = !isMobile ? '1.03rem' : '1.0rem'
-
+    const buttonMarginRight = !isMobile ? 10 : 3
     const style = {
         maxWidth: width,
         marginLeft: 'auto',
@@ -30,7 +30,9 @@ function RaffleHeader({page, width = 700}) {
     }
 
     let prizeButtonText = raflState !== 'preview' || raffleAdminRole || isMobile ? 'PRIZES' : 'PRIZE PREVIEW'
-    prizeButtonText = ['hidden', 'post'].includes(raflState) ? prizeButtonText.replace('PRIZES', '2025 PRIZES') : prizeButtonText
+    prizeButtonText = ['hidden', 'post'].includes(raflState) ? prizeButtonText.replace('PRIZES', '2026 PRIZES') : prizeButtonText
+
+    const enterButtonText = raflState === 'live' || raffleAdminRole ? 'ENTER' : 'INFO'
 
     return (
         <React.Fragment>
@@ -41,7 +43,7 @@ function RaffleHeader({page, width = 700}) {
 
                     <Button onClick={() => handleChange('/rafl')}
                             style={{
-                                marginRight: 10,
+                                marginRight: buttonMarginRight,
                                 color: page === 'pots' ? '#fff' : '#ccc',
                                 fontSize: buttonFontSize
                             }}
@@ -52,7 +54,7 @@ function RaffleHeader({page, width = 700}) {
                     {(raflState === 'preview' && !raffleAdminRole) &&
                         <Button onClick={() => handleChange('/rafl/announce')}
                                 style={{
-                                    marginRight: 10,
+                                    marginRight: buttonMarginRight,
                                     color: page === 'announce' ? '#fff' : '#ccc',
                                     fontSize: buttonFontSize
                                 }}
@@ -64,7 +66,7 @@ function RaffleHeader({page, width = 700}) {
                     {(raflState !== 'hidden' || raffleAdminRole) &&
                         <Button onClick={() => handleChange('/rafl/charities')}
                                 style={{
-                                    marginRight: 10,
+                                    marginRight: buttonMarginRight,
                                     color: page === 'charities' ? '#fff' : '#ccc',
                                     fontSize: buttonFontSize
                                 }}
@@ -73,21 +75,21 @@ function RaffleHeader({page, width = 700}) {
                         </Button>
                     }
 
-                    {(['live', 'post'].includes(raflState) || raffleAdminRole) &&
+                    {(['preview', 'live', 'post'].includes(raflState) || raffleAdminRole) &&
                         <Button onClick={() => handleChange('/rafl/enter')}
                                 style={{
-                                    marginRight: 10,
+                                    marginRight: 0,
                                     color: page === 'enter' ? '#fff' : '#ccc',
                                     fontSize: buttonFontSize
                                 }}>
-                            ENTER
+                            {enterButtonText}
                         </Button>
                     }
 
                     {(['live', 'post'].includes(raflState) || raffleAdminRole) &&
                         <Button onClick={() => handleChange('/rafl/stats')}
                                 style={{
-                                    marginRight: 0,
+                                    marginLeft: buttonMarginRight,
                                     color: page === 'stats' ? '#fff' : '#ccc',
                                     fontSize: buttonFontSize
                                 }}>

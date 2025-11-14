@@ -13,17 +13,19 @@ import Button from '@mui/material/Button'
 import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
 import AdminToolsButton from './AdminToolsButton.jsx'
-import RaffleNotLiveDialog from './RaffleNotLiveDialog.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import SignInButton from '../auth/SignInButton.jsx'
 import Popover from '@mui/material/Popover'
 import SignInDetect from '../auth/SignInDetect.jsx'
+import RaffleContext from './RaffleContext.jsx'
 
 function RaffleEnterAboutRoute() {
     usePageTitle('Enter the RAFL')
     const navigate = useNavigate()
 
     const {isLoggedIn} = useContext(AuthContext)
+    const {raffleAdminRole, raflState} = useContext(RaffleContext)
+    const disableEnterButton = raflState !== 'live' && !raffleAdminRole
 
     const [signInStarted, setSignInStarted] = useState(false)
     const [newSignIn, setNewSignIn] = useState(false)
@@ -108,39 +110,48 @@ function RaffleEnterAboutRoute() {
                     </ReactMarkdown>
                 </div>
 
-                <div style={{...style, textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
-                    Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
-
-                    {isLoggedIn
-                        ? <Button variant='contained' color='success'
-                                  onClick={handleEnterClick}>
+                {disableEnterButton
+                    ? <div style={{...style, textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
+                        <strong>RAFL isn&#39;t currently active.</strong><br/><br/>
+                        <Button variant='contained' color='success' disabled={true}
+                                onClick={handleEnterClick}>
                             Click here to enter the RAFL
                         </Button>
-                        : <React.Fragment><Button variant='contained' color='info'
-                                                  onClick={handleMenuOpen}>
-                            Click here to enter the RAFL
-                        </Button>
-                            <Popover open={menuOpen} anchorEl={anchorEl} onClose={handleMenuClose}
-                                     anchorOrigin={{
-                                         vertical: 'bottom',
-                                         horizontal: 'left'
-                                     }}
-                            >
-                                <div style={{
-                                    display: 'flex',
-                                    fontSize: '1.2rem',
-                                    padding: 30,
-                                    width: 300,
-                                    placeItems: 'center'
-                                }}
-                                     onClick={handleMenuClose}>
-                                    {popoverContent}
-                                </div>
-                            </Popover>
-                        </React.Fragment>
-                    }
-                </div>
+                    </div>
 
+                    : <div style={{...style, textAlign: 'center', paddingTop: 20, paddingBottom: 20}}>
+                        Once you&#39;ve read the rules and{linebreak}made your donation<br/><br/>
+
+                        {isLoggedIn
+                            ? <Button variant='contained' color='success'
+                                      onClick={handleEnterClick}>
+                                Click here to enter the RAFL
+                            </Button>
+                            : <React.Fragment><Button variant='contained' color='info'
+                                                      onClick={handleMenuOpen}>
+                                Click here to enter the RAFL
+                            </Button>
+                                <Popover open={menuOpen} anchorEl={anchorEl} onClose={handleMenuClose}
+                                         anchorOrigin={{
+                                             vertical: 'bottom',
+                                             horizontal: 'left'
+                                         }}
+                                >
+                                    <div style={{
+                                        display: 'flex',
+                                        fontSize: '1.2rem',
+                                        padding: 30,
+                                        width: 300,
+                                        placeItems: 'center'
+                                    }}
+                                         onClick={handleMenuClose}>
+                                        {popoverContent}
+                                    </div>
+                                </Popover>
+                            </React.Fragment>
+                        }
+                    </div>
+                }
                 <div style={style}>
                     <div style={{padding: contentPadding}}>
                         <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
@@ -155,9 +166,8 @@ function RaffleEnterAboutRoute() {
             <Footer/>
             <Tracker feature='raflEnterAbout'/>
 
-            <SignInDetect newSignIn={newSignIn} setNewSignIn={setNewSignIn} required={false} dialog={false} />
+            <SignInDetect newSignIn={newSignIn} setNewSignIn={setNewSignIn} required={false} dialog={false}/>
 
-            <RaffleNotLiveDialog/>
 
         </React.Fragment>
     )

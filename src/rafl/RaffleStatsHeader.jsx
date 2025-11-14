@@ -7,7 +7,7 @@ import Tooltip from '@mui/material/Tooltip'
 function RaffleStatsHeader({animate = false}) {
     const {summary, animateTotal} = useContext(RaffleContext)
 
-    const donors = summary.uniqueDonors?.length || 0
+    const donors = summary.uniqueDonorCount || 0
     const donationsTotal = summary.totalDonations || 0
     const donationsTotalStr = new Intl.NumberFormat().format(donationsTotal)
     const averageDonation = donors > 0 && Math.floor(donationsTotal / donors) || 0

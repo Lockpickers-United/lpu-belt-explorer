@@ -18,15 +18,15 @@ import validator from 'validator'
 import DataContext from '../../context/DataContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import FilterContext from '../../context/FilterContext.jsx'
-import SignInDetect from '../../auth/SignInDetect.jsx'
 import Box from '@mui/material/Box'
+import RaffleFormDialogs from './RaffleFormDialogs.jsx'
 
 function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     const {createRaffleEntry, updateRaffleEntry, testEntry} = useContext(DBContext)
-    const navigate = useNavigate()
     const {raffleAdmin} = useContext(RaffleContext)
     const {allEntries} = useContext(DataContext)
     const {setFilters} = useContext(FilterContext)
+    const navigate = useNavigate()
 
     const [formData, setFormData] = useState({})
     const [donationData, setDonationData] = useState([{amount: 0, receipt: ''}])
@@ -41,7 +41,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
     }
 
     const fillEntryData = useCallback((entry) => {
-        console.log('entry', entry)
+        console.log('auto-fill entry', entry)
         setFormData({
             platform: entry?.platform,
             username: entry?.username,
@@ -147,8 +147,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
 
     const handleEntryComplete = useCallback(() => {
         navigate('/rafl')
-    },[navigate])
-
+    }, [navigate])
 
     const [showIssues, setShowIssues] = useState(false)
 
@@ -201,8 +200,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                      isolation: 'isolate'
                  }}>
 
-                <SignInDetect required={true} dialog={false} linkText={'You must be signed in to enter the Raffle.'}
-                              containerRef={containerRef}/>
+                <RaffleFormDialogs/>
 
                 <RaffleSubHead text={editEntryId ? 'EDIT RAFL ENTRY' : 'ENTRY FORM'}/>
 
@@ -401,10 +399,11 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30, fontSize: '1.1rem'}}>
                     <span style={{fontSize: '1.3rem', fontWeight: 700}}>Thanks for entering!</span><br/><br/>
-                        Your entry will be reviewed shortly.
-                        We&#39;ll reach out to you via your chosen platform to let you know your entry has been approved or to resolve any issues.
-                        <br/><br/>
-                        You can always make another donation and submit again...<br/>
+                    Your entry will be reviewed shortly.
+                    We&#39;ll reach out to you via your chosen platform to let you know your entry has been approved or
+                    to resolve any issues.
+                    <br/><br/>
+                    You can always make another donation and submit again...<br/>
                     <Link onClick={() => handleEntryComplete}
                           style={{
                               color: '#fff',
@@ -416,7 +415,8 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                         Take another look at the pots!
                     </Link><br/><br/>
 
-                    <Button variant='contained' style={{backgroundColor:'#333'}} onClick={handleEntryComplete}>Close</Button>
+                    <Button variant='contained' style={{backgroundColor: '#333'}}
+                            onClick={handleEntryComplete}>Close</Button>
 
                 </div>
                 {raffleAdmin &&
