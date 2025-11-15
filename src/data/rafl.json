@@ -22,7 +22,17 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Digital prize",
-    "dateAdded": "20241214"
+    "dateAdded": "20241214",
+    "media": [
+      {
+        "title": "By: lpulocks.com",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54195687736_de64ec6801_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54195687736/in/album-72177720322353676/",
+        "sequenceId": 1,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54195687736_bd9b0c97f7_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-002",
@@ -36,6 +46,27 @@
     "keywords": "",
     "contributedBy": [
       "CollateralTech"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-000",
+    "year": 2026,
+    "potNumber": 99,
+    "title": "test pot",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "mgsecure"
     ],
     "tags": [],
     "country": [],
