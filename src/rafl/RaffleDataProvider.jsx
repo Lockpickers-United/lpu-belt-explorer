@@ -29,8 +29,9 @@ export function RaffleDataProvider({children, allEntries = []}) {
     }, [search, searchCutoff])
 
     const searchedEntries = useMemo(() => {
-        return searchEntriesForText(allEntries)
+            return searchEntriesForText(allEntries)
     }, [allEntries, searchEntriesForText])
+
 
     const visibleEntries = useMemo(() => {
         if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
@@ -41,14 +42,11 @@ export function RaffleDataProvider({children, allEntries = []}) {
             entries: allEntries
         }).sort((a, b) => {
             return a.sortPotNumber - b.sortPotNumber
-                || a.title.localeCompare(b.title)
         })
-        const searched = search
-            ? searchEntriesForText([...filtered])
-            : [...filtered]
+        const searched = searchEntriesForText([...filtered])
 
         return sort
-            ? filtered.sort((a, b) => {
+            ? searched.sort((a, b) => {
                 if (sort === 'potName') {
                     return a.title.localeCompare(b.title)
                 } else if (sort === 'contributedBy') {
@@ -63,16 +61,12 @@ export function RaffleDataProvider({children, allEntries = []}) {
                     return parseInt(a[sort]) - parseInt(b[sort]) || a.title.localeCompare(b.title)
                 }
             })
-            : search
-                ? searched.sort((a, b) => {
-                    return b.score - a.score
-                        || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
-                        || a.title.localeCompare(b.title)
-                })
-                : filtered
-    }, [advancedFilterGroups, allEntries, search, searchEntriesForText, sort, summary])
-
-    console.log('visibleEntries', visibleEntries)
+            : searched.sort((a, b) => {
+                return b.score - a.score
+                    || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
+                    || a.title.localeCompare(b.title)
+            })
+    }, [advancedFilterGroups, allEntries, searchEntriesForText, sort, summary])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
