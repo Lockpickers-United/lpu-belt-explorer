@@ -7,6 +7,7 @@ import {FilterProvider} from '../../context/FilterContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
 import AdminToolsButton from '../AdminToolsButton.jsx'
+import Footer from '../../nav/Footer.jsx'
 
 export default function RafflePhotoSubmitRoute() {
     const {isMobile} = useWindowSize()
@@ -27,6 +28,7 @@ export default function RafflePhotoSubmitRoute() {
         <FilterProvider>
             <Nav title='RAFL Pot Photos' extras={extras}/>
             <RafflePhotoSubmit profile={lockCollection} user={user}/>
+            <Footer/>
         </FilterProvider>
     )
 }

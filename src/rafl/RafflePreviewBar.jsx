@@ -16,6 +16,8 @@ import LoadingDisplayWhiteSmall from '../misc/LoadingDisplayWhiteSmall.jsx'
 import Slide from '@mui/material/Slide'
 import Box from '@mui/material/Box'
 import {nodeServerUrl} from '../data/dataUrls'
+import {getData} from '../formUtils/getData.jsx'
+import {enqueueSnackbar} from 'notistack'
 
 export default function RafflePreviewBar({refresh, page}) {
     const [requestingPreview, setRequestingPreview] = useState(false)
@@ -29,18 +31,16 @@ export default function RafflePreviewBar({refresh, page}) {
 
     const refreshPreview = useCallback(async () => {
         const url = `${nodeServerUrl}/refresh-preview`
-
-        setRequestingPreview(true)
-
-        await fetch(url, {cache: 'no-store'})
-            .then(async res => {
-                setRequestingPreview(false)
-                return await res.json()
-            })
-            .then(async response => {
-                setResponse(response)
-                console.log('preview response\n', JSON.stringify(response, null, 2))
-            })
+        try {
+            setRequestingPreview(true)
+            const results =  await getData({url, snackBars: false, timeoutDuration: 30000})
+            enqueueSnackbar('Request successful', {variant: 'success'})
+            setResponse(results)
+        } catch (error) {
+            enqueueSnackbar(`Error creating request: ${error.message}`, {variant: 'error', autoHideDuration: 3000})
+        } finally {
+            setRequestingPreview(false)
+        }
         await refresh()
     }, [refresh])
 
@@ -62,7 +62,6 @@ export default function RafflePreviewBar({refresh, page}) {
 
     return (
         <React.Fragment>
-
 
             {page !== 'pots'
                 ? <Box ref={containerRef}
