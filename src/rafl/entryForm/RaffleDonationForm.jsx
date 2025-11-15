@@ -18,7 +18,7 @@ function RaffleDonationForm({
                                 questionStyle
                             }) {
     const [details, setDetails] = useState(donationData[index] || {amount: 0, receipt: ''})
-    const {flexStyle} = useWindowSize()
+    const {isMobile, flexStyle} = useWindowSize()
 
     // Sync local state when parent potData updates externally (e.g., test data fill)
     useEffect(() => {
@@ -89,18 +89,26 @@ function RaffleDonationForm({
         <div>
             {divider}
             <Collapse in={display} timeout={500}>
-                <div style={{display: flexStyle, margin: '12px 12px 0px 12px'}}>
+                <div style={{display: flexStyle, margin: '0px 12px 0px 12px'}}>
                     <div>
-                        <div style={{display: flexStyle, flexGrow: 1, marginRight: 40, height: 100}}>
+                        <div style={{display: flexStyle, flexGrow: 1, marginRight: 40}}>
                             <div style={{flexGrow: 1, marginRight: 40}}>
-                                <div style={{...questionStyle, fontWeight: 600, fontSize:'1.1rem'}}>Selected Charity</div>
+                                <div style={{
+                                    ...questionStyle,
+                                    fontWeight: 600,
+                                    fontSize: '1.1rem',
+                                    marginTop: 4
+                                }}>Selected Charity
+                                </div>
                                 <div style={{height: 6}}/>
-                                <RaffleAutocompleteBox allItems={mappedCharities}
-                                                       value={details?.charity?.itemFullTitle || ''}
-                                                       setItemDetails={setCharity}
-                                                       getOptionTitle={charityFullTitle}
-                                                       searchText={'Search Charity'}
-                                                       error={showIssues && !details?.charity?.itemFullTitle}/>
+                                <div>
+                                    <RaffleAutocompleteBox allItems={mappedCharities}
+                                                           value={details?.charity?.itemFullTitle || ''}
+                                                           setItemDetails={setCharity}
+                                                           getOptionTitle={charityFullTitle}
+                                                           searchText={'Search Charity'}
+                                                           error={showIssues && !details?.charity?.itemFullTitle}/>
+                                </div>
                                 <div style={{
                                     fontSize: '0.75rem',
                                     color: '#f44336',
@@ -110,7 +118,7 @@ function RaffleDonationForm({
                                 </div>
                             </div>
                             <div>
-                                <div style={questionStyle}>Total donation in USD</div>
+                                <div style={{...questionStyle, marginTop: 5}}>Total donation in USD</div>
                                 <FormControl>
                                     <TextField type='text' name='donation' label='Donation Amount'
                                                value={details.amount || ''}
@@ -120,7 +128,8 @@ function RaffleDonationForm({
                                 </FormControl>
                             </div>
                         </div>
-                        <div style={{flexGrow: 2}}>
+
+                        <div>
                             <div style={questionStyle}>Receipt from approved charity <span
                                 style={{fontWeight: 400, fontSize: '0.9rem'}}>(hosted image link, must contain a visible date)</span>
                             </div>
@@ -135,7 +144,9 @@ function RaffleDonationForm({
                     </div>
                     {showDelete && (
                         <div style={{marginLeft: 10}}>
-                            <div style={questionStyle}>&nbsp;</div>
+                            {!isMobile &&
+                                <div style={questionStyle}>&nbsp;</div>
+                            }
                             <IconButton color='warning' onClick={() => removeDonation(index)}>
                                 <DeleteForeverIcon/>
                             </IconButton>

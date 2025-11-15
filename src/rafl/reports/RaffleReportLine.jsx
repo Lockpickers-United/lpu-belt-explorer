@@ -1,6 +1,7 @@
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from '../../admin/adminChartDefaults'
 import React from 'react'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 export default function RaffleReportLine({chartHeight, chartdata, showAxisBottom, colors, tickValues, curve}) {
 
@@ -12,6 +13,9 @@ export default function RaffleReportLine({chartHeight, chartdata, showAxisBottom
 
     const legendTranslateY = showAxisBottom ? 70 : 20
     const legendTranslateX = showAxisBottom ? 0 : 20
+
+    const {isMobile} = useWindowSize()
+    const dayTickValues = isMobile ? 'every 2 days' : 'every day'
 
     return (
         <div style={{height: chartHeight, width: '100%'}}>
@@ -53,7 +57,7 @@ export default function RaffleReportLine({chartHeight, chartdata, showAxisBottom
                         tickRotation: -45,
                         direction: 'row',
                         legendOffset: -12,
-                        tickValues: 'every day'
+                        tickValues: dayTickValues
                     }
                     : null
                 }

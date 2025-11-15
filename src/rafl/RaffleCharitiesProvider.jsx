@@ -1,28 +1,47 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import removeAccents from 'remove-accents'
 import RaffleContext from './RaffleContext.jsx'
-import filterEntries from '../filters/filterEntries'
+import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function RaffleCharitiesProvider({children}) {
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, ...filters} = allFilters
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, sort} = allFilters
     const {allCharities} = useContext(RaffleContext)
 
-    const visibleEntries = useMemo(() => {
-        // Filter the data
-        const filtered = filterEntries(filters, allCharities)
+    const searchCutoff = 0.3
 
-        // If there is a search term, fuzzy match that
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
+    const searchEntriesForText = useCallback((entries) => {
+        const exactMatch = search && entries.find(e => e.id === search)
+        if (exactMatch) {
+            return [exactMatch]
+        }
+        return !search
+            ? entries
+            : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-            : filtered
+                .filter(entry => entry.score > searchCutoff)
+    }, [search, searchCutoff])
+
+    const searchedCharities = useMemo(() => {
+        return searchEntriesForText(allCharities)
+    }, [allCharities, searchEntriesForText])
+
+
+    const visibleEntries = useMemo(() => {
+        // Filter the data
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: allCharities
+        }).sort((a, b) => {
+            return a.sortPotNumber - b.sortPotNumber
+        })
+        const searched = searchEntriesForText([...filtered])
 
         return sort
             ? searched.sort((a, b) => {
@@ -35,12 +54,13 @@ export function RaffleCharitiesProvider({children}) {
                 }
             })
             : searched
-    }, [allCharities, filters, search, sort])
+    }, [advancedFilterGroups, allCharities, searchEntriesForText, sort])
 
     const value = useMemo(() => ({
         allCharities,
-        visibleEntries
-    }), [allCharities, visibleEntries])
+        visibleEntries,
+        searchedCharities
+    }), [allCharities, visibleEntries, searchedCharities])
 
     return (
         <DataContext.Provider value={value}>

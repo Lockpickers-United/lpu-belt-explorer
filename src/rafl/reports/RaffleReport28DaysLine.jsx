@@ -54,7 +54,7 @@ const RaffleReport28DaysLine = ({lineData}) => {
             siteLineData.push(entryFormHash)
         })
 
-    const {width} = useWindowSize()
+    const {isMobile, width} = useWindowSize()
     const mobileSmall = width <= 360
     const mobileMedium = width <= 395
     const mobileLarge = width <= 428  // but test also at 412
@@ -71,6 +71,8 @@ const RaffleReport28DaysLine = ({lineData}) => {
     const chartMargin = !smallWindow
         ? {top: 10, right: 20, bottom: 70, left: 50}
         : {top: 10, right: 20, bottom: 50, left: 50}
+
+    const tickValues = isMobile ? 'every 2 days' : 'every day'
 
     return (
         <div style={{height: chartHeight, width: '100%'}}>
@@ -111,7 +113,7 @@ const RaffleReport28DaysLine = ({lineData}) => {
                     tickRotation: -45,
                     direction: 'row',
                     legendOffset: -12,
-                    tickValues: 'every day'
+                    tickValues: tickValues
                 }}
                 legends={[
                     {

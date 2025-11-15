@@ -352,7 +352,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                                 setShowIssues(!showIssues)
                             }}
                                     style={{
-                                        marginRight: 20,
+                                        marginRight: 10,
                                         color: showIssues ? '#de2323' : '#bbb',
                                         borderColor: showIssues ? '#de2323' : '#bbb'
                                     }}
@@ -362,16 +362,16 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                             ? <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
                                       disabled={errors} onClick={handleSubmit}
                             >Submit Entry</Button>
-                            : <div>
-                                <Button style={{backgroundColor: '#999', color: '#000', marginRight: 20}}
+                            : <div style={{justifyContent: 'center', marginTop: 0, display: 'flex'}}>
+                                <Button style={{backgroundColor: '#e0693c', color: '#000', marginRight: 10, lineHeight: '1.1rem'}}
                                         variant='contained'
-                                        disabled={errors} onClick={handleCancelEdit}
+                                        onClick={handleCancelEdit}
                                 >Cancel</Button>
-                                <Button style={{backgroundColor: continueColor, color: '#000', marginRight: 20}}
+                                <Button style={{backgroundColor: continueColor, color: '#000', marginRight: 10, lineHeight: '1.1rem'}}
                                         variant='contained'
                                         disabled={errors} onClick={() => handleEditSave(false)}
                                 >Save Edits</Button>
-                                <Button style={{backgroundColor: continueColor, color: '#000'}} variant='contained'
+                                <Button style={{backgroundColor: continueColor, color: '#000', lineHeight: '1.1rem'}} variant='contained'
                                         disabled={errors} onClick={() => handleEditSave(true)}
                                 >Save & Approve</Button>
                             </div>
