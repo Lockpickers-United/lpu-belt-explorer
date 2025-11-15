@@ -18,7 +18,6 @@ export function RaffleDataProvider({children, allEntries = []}) {
         if (exactMatch) {
             return [exactMatch]
         }
-
         return !search
             ? entries
             : fuzzysort.go(removeAccents(search), entries, {keys: fuzzySortKeys, threshold: -23000})
@@ -30,9 +29,8 @@ export function RaffleDataProvider({children, allEntries = []}) {
     }, [search, searchCutoff])
 
     const searchedEntries = useMemo(() => {
-            return searchEntriesForText(allEntries)
+        return searchEntriesForText(allEntries)
     }, [allEntries, searchEntriesForText])
-
 
     const visibleEntries = useMemo(() => {
         if (!summary || Object.keys(summary).length === 0 || !allEntries) return []
@@ -42,9 +40,12 @@ export function RaffleDataProvider({children, allEntries = []}) {
             advancedFilterGroups: advancedFilterGroups(),
             entries: allEntries
         }).sort((a, b) => {
-            return a.potNumber - b.potNumber
+            return a.sortPotNumber - b.sortPotNumber
+                || a.title.localeCompare(b.title)
         })
-        const searched = searchEntriesForText([...filtered])
+        const searched = search
+            ? searchEntriesForText([...filtered])
+            : [...filtered]
 
         return sort
             ? filtered.sort((a, b) => {
@@ -62,12 +63,16 @@ export function RaffleDataProvider({children, allEntries = []}) {
                     return parseInt(a[sort]) - parseInt(b[sort]) || a.title.localeCompare(b.title)
                 }
             })
-            : searched.sort((a, b) => {
-                return b.score - a.score
-                    || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
-                    || a.title.localeCompare(b.title)
-            })
-    }, [advancedFilterGroups, allEntries, searchEntriesForText, sort, summary])
+            : search
+                ? searched.sort((a, b) => {
+                    return b.score - a.score
+                        || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
+                        || a.title.localeCompare(b.title)
+                })
+                : filtered
+    }, [advancedFilterGroups, allEntries, search, searchEntriesForText, sort, summary])
+
+    console.log('visibleEntries', visibleEntries)
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)

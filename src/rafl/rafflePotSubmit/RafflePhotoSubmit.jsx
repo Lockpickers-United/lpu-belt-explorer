@@ -35,9 +35,9 @@ function RafflePhotoSubmit({profile, user}) {
     const [altLock, setAltLock] = useState(false)
     const [altLockName, setAltLockName] = useState('')
     const [notes, setNotes] = useState('')
-
     const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName || '')
     const [reset, setReset] = useState(false)
+    const navigate = useNavigate()
 
     const allEntries = useMemo(() => [...allPots],[allPots])
 
@@ -151,7 +151,6 @@ function RafflePhotoSubmit({profile, user}) {
             color: '#fff'
         }
     }
-    const navigate = useNavigate()
 
     return (
 

@@ -6,6 +6,7 @@ import RafflePotSubmit from './RafflePotSubmit.jsx'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
+import AdminToolsButton from '../AdminToolsButton.jsx'
 
 export default function RafflePotSubmitRoute() {
     const {isMobile} = useWindowSize()
@@ -16,7 +17,10 @@ export default function RafflePotSubmitRoute() {
     usePageTitle('RAFL Pot Info')
 
     const extras = (
-        <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
+        <React.Fragment>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            <AdminToolsButton/>
+        </React.Fragment>
     )
 
     return (
