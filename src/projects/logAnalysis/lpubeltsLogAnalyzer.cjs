@@ -310,7 +310,7 @@ logFiles.forEach(logFileName => {
                 stats[requestDateText].lockViewsByWidth = stats[requestDateText].lockViewsByWidth || {}
                 stats[requestDateText].lockViewsByWidth[screenWidthString] = (stats[requestDateText].lockViewsByWidth[screenWidthString] || 0) + 1
             }
-            if (searchTerm) {
+            if (searchTerm && requestDate.isAfter(dayjs('2025-10-30', 'YYYY-MM-DD'))) {
                 stats[requestDateText].lockViewsBySearch = stats[requestDateText].lockViewsBySearch || {}
                 stats[requestDateText].lockViewsBySearch[searchTerm] = (stats[requestDateText].lockViewsBySearch[searchTerm] || 0) + 1
             }
@@ -328,6 +328,11 @@ logFiles.forEach(logFileName => {
             if (cleanReferrerString) {
                 stats[requestDateText].referrerWelcomeViews = stats[requestDateText].referrerWelcomeViews || {}
                 stats[requestDateText].referrerWelcomeViews[cleanReferrerString] = (stats[requestDateText].referrerWelcomeViews[cleanReferrerString] || 0) + 1
+            }
+        } else if (fileRequested.match(/\/i\/srch\.gif/i)) {
+            if (searchTerm && requestDate.isAfter(dayjs('2025-10-30', 'YYYY-MM-DD'))) {
+                stats[requestDateText].completedSearches = stats[requestDateText].completedSearches || {}
+                stats[requestDateText].completedSearches[searchTerm] = (stats[requestDateText].completedSearches[searchTerm] || 0) + 1
             }
         }
 

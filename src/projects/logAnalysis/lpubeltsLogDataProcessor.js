@@ -73,6 +73,7 @@ wip.visitsByCountry = {}
 wip.firstVisit = {}   // country => first date seen
 wip.lockViewsByCountry = {}
 wip.states = {}
+wip.completedSearches = {}
 wip.lockViewsBySearch = {}
 wip.lockViewsByWidth = {}
 wip.referrerWelcomeViews = {}
@@ -238,6 +239,14 @@ for (const file of dataFiles) {
         wip.states = wip.states || {}
         for (const key in dayData.states) {
             wip.states[key] = (wip.states[key] || 0) + dayData.states[key]
+        }
+    }
+
+    // Process completedSearches
+    if (dayData.completedSearches) {
+        wip.completedSearches = wip.completedSearches || {}
+        for (const key in dayData.completedSearches) {
+            wip.completedSearches[key] = (wip.completedSearches[key] || 0) + dayData.completedSearches[key]
         }
     }
 
@@ -735,17 +744,18 @@ function hourlyRequests() {
     ]
 }
 
-// 12. screenWidths – aggregates lock views by screen width
+// 12. searchTerms – aggregates lock views by search term
 function searchTerms() {
     let jsonData = {}
     jsonData.columns = [
         {id: 'term', name: 'Search Term', align: 'left'},
+        {id: 'completedSearches', name: 'Searches', align: 'center'},
         {id: 'lockViews', name: 'Lock Views', align: 'center'}
     ]
     let dataArray = []
-    for (const term of Object.keys(wip.lockViewsBySearch).sort((a, b) => (wip.lockViewsBySearch[b] || 0) - (wip.lockViewsBySearch[a] || 0))) {
+    for (const term of Object.keys(wip.completedSearches).sort((a, b) => (wip.completedSearches[b] || 0) - (wip.completedSearches[a] || 0))) {
         if (term) {
-            dataArray.push({term: term, lockViews: wip.lockViewsBySearch[term]})
+            dataArray.push({term: term, completedSearches: wip.completedSearches[term], lockViews: wip.lockViewsBySearch[term]})
         }
     }
     jsonData.data = dataArray
@@ -753,7 +763,7 @@ function searchTerms() {
     siteStatsFull.searchTerms = jsonData
 }
 
-// 12. screenWidths – aggregates lock views by screen width
+// 13. screenWidths – aggregates lock views by screen width
 function screenWidths() {
     let jsonData = {}
     jsonData.columns = [
@@ -771,7 +781,7 @@ function screenWidths() {
     siteStatsFull.screenWidths = jsonData
 }
 
-// 13. outputSiteFullJson – write final JSON with metadata
+// 14. outputSiteFullJson – write final JSON with metadata
 function outputSiteFullJson() {
     const dt = dayjs().tz('America/Los_Angeles')
     siteStatsFull.metadata = {

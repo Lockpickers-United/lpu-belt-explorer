@@ -18,7 +18,7 @@ const execAsync = util.promisify(exec)
 const uploadDir = `/home/${prodUser}/uploads`
 const isDev = process.env.NODE_ENV !== 'production'
 
-const maxFileSizeMB = isDev ? 1 : 15
+const maxFileSizeMB = isDev ? 15 : 15
 const maxTotalFileSizeMB = 60
 
 
@@ -134,8 +134,7 @@ export default async function uploadContent(req, res) {
     fieldsHtml += '</table>'
 
     output.on('close', async function () {
-        logger.info('Files zipped successfully to', destinationFile)
-        logger.info(archive.pointer() + ' total bytes')
+        logger.info('Files zipped successfully: ' + archive.pointer() + ' total bytes')
         try {
             const email = await sendEmail({
                 emailConfig: 'content',

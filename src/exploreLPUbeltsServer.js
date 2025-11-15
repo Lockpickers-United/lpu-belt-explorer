@@ -13,10 +13,10 @@ const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
-// NODE_ENV=production node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServer.js
 
-// NODE_ENV=production pm2 restart 3 --update-env
-// tail -f /home/dh_m5s5pf/explore-lpubelts-com-node/logs/nodeserver.log
+// NODE_ENV=production node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServer.js
+// NODE_ENV=production pm2 restart 1 --update-env
+// tail -n 200 -f  /home/dh_m5s5pf/explore-lpubelts-com-node/logs/nodeserver.log
 
 const app = express()
 app.use((req, _res, next) => {
@@ -94,7 +94,7 @@ const host = process.env.HOST || '0.0.0.0'
 
 const server = app.listen(port, host, () => {
     logger.info({env, port, apiPrefix, host, corsOrigin}, 'api listening') // use pino, not console
-    console.log({env, port, apiPrefix, host, corsOrigin}, 'api listening')
+    //console.log({env, port, apiPrefix, host, corsOrigin}, 'api listening')
 })
 server.on('error', (err) => {
     try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }

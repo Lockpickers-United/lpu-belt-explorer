@@ -39,4 +39,5 @@ export function registerRoutes(app, { prefix = '/services' } = {}) {
     lazyMount(app, `${prefix}/log-activity`, () => import('./projects/logFirebaseActivity/logFirebaseActivity.bundle.js'))
     lazyMount(app, `${prefix}/process-firebase-log`, () => import('./projects/logFirebaseActivity/processFirebaseActivityLog.bundle.js'))
 
+    lazyMount(app, `${prefix}/email-form`, () => import('./projects/emailFormContents/emailFormContents.bundle.js'))
 }

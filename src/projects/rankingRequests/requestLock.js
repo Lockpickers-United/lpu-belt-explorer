@@ -8,7 +8,7 @@
 import {formidable} from '../../util/formidable/src/index.js'
 import fs from 'fs'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients,prodUser} from '../../../keys/users.js'
+import {contentUploadRecipients, prodUser} from '../../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
 import {spaceJoin} from '../../util/stringUtils.js'
@@ -18,8 +18,14 @@ import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
+import parseForm from '../../util/parseForm.js'
+import {logger} from '../../logger/logger.js'
 
 const {writeFile} = fs.promises
+
+const isDev = process.env.NODE_ENV !== 'production'
+const maxFileSizeMB = isDev ? 1 : 15
+const maxTotalFileSizeMB = 60
 
 const requestapp = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -57,16 +63,41 @@ if (!fs.existsSync(uploadDir)) {
 let uploadSubDir
 
 function handleError(res, message, error, status = 500) {
-    console.error(message, error)
+    logger.error(`handleError: ${message}`)
+
     if (uploadSubDir && fs.existsSync(uploadSubDir)) {
         try {
             fs.rmSync(uploadSubDir, {recursive: true, force: true})
-            console.log('Upload directory removed after error:', uploadSubDir)
+            logger.info('Upload directory removed after error:', uploadSubDir)
         } catch (err) {
-            console.error('Error removing upload directory after error:', err)
+            try {
+                logger.error(`Error removing upload directory after error: ${err}`)
+            } catch {
+            }
         }
     }
-    res.status(status).send({status, message})
+
+    if (res.headersSent) {
+        logger.warn('handleError called but headers already sent')
+        return
+    }
+
+    const payload = {
+        error: {
+            message: typeof message === 'string' ? message : (error?.message || 'Error'),
+            code: error?.code,
+            type: error?.name,
+            details: error && typeof error === 'object' ? {
+                formidableCode: error.code,
+                errno: error.errno,
+                syscall: error.syscall
+            } : undefined,
+            stack: isDev && typeof error?.stack === 'string' ? error.stack : undefined
+        }
+    }
+
+    res.status(status).json(payload)
+    res.end()
 }
 
 export default async function requestLock(req, res) {
@@ -87,7 +118,8 @@ export default async function requestLock(req, res) {
         uploadDir,
         keepExtensions: true,
         createDirsFromUploads: true,
-        maxFileSize: 30 * 1024 * 1024,
+        maxFileSize: maxFileSizeMB * 1024 * 1024,
+        maxTotalFileSize: maxTotalFileSizeMB * 1024 * 1024,
         filter: ({mimetype}) => mimetype && mimetype.includes('image'),
         filename(_name, _ext, part) {
             const {fullFilename, filepath, localsubdirs} = createFilename(part, serverPath, uploadDir)
@@ -99,113 +131,109 @@ export default async function requestLock(req, res) {
         }
     })
 
-    try {
-        const {fields, files} = await parseForm(req, form)
-        for (const fieldName in fields) {
-            if (!Array.isArray(fields[fieldName])) {
-                fields[fieldName] = [fields[fieldName]]
-            }
+    const {fields, files} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
+    for (const fieldName in fields) {
+        if (!Array.isArray(fields[fieldName])) {
+            fields[fieldName] = [fields[fieldName]]
         }
-
-        const entry = {
-            makeModels: [{
-                make: fields.make?.firstValue() || fields.newBrand?.firstValue(),
-                model: fields.model.firstValue()
-            }],
-            lockingMechanisms: fields.lockingMechanisms?.[0]?.split(',') || [],
-            id: fields.id?.firstValue(),
-            approximateBelt: fields.approxBelt?.firstValue(),
-            usernames: {
-                discord: fields.discordUsername?.firstValue(),
-                reddit: fields.redditUsername?.firstValue()
-            },
-            displayName: fields.displayName?.firstValue(),
-            userBelt: fields.userBelt?.firstValue(),
-            notes: fields.notes?.firstValue(),
-            hazLocc: fields.hazLocc?.firstValue(),
-            requestedBy: [{
-                owner: true,
-                userId: req.user.user_id,
-                displayName: fields.displayName?.firstValue(),
-                discordUsername: fields.discordUsername?.firstValue(),
-                redditUsername: fields.redditUsername?.firstValue()
-            }],
-            requestStatus: 'Submitted',
-            dateRequested: dayjs().toISOString()
-        }
-
-        entry.media = await Promise.all(filepaths.map(async (filepath, index) => ({
-            title: `By: ${fields.discordUsername || fields.redditUsername}`,
-            fullUrl: filepath,
-            fullSizeUrl: (await createThumbnails({
-                inputFile: files.files[index].filepath,
-                width: 1024
-            })).replace(uploadDir, serverPath),
-            thumbnailUrl: (await createThumbnails({
-                inputFile: files.files[index].filepath,
-                width: 500
-            })).replace(uploadDir, serverPath),
-            sequenceId: index + 1,
-            dateAdded: dayjs().toISOString(),
-            subtitle: 'CC BY-NC-SA 4.0'
-        })))
-
-        const lockName = spaceJoin(fields.make || fields.newBrand, fields.model)
-
-        if (subdirs) {
-            const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
-            const detailsJson = JSON.stringify(fields, null, 2)
-            try {
-                await Promise.all([
-                    runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.discordUsername || fields.redditUsername}' -Title='${slugify(lockName)}' -gps:all= -UserComment='${fields.id}' '${destination}'`),
-                    writeFile(`${destination}/uploadData.json`, detailsJson, 'utf8')
-                ])
-            } catch (err) {
-                return handleError(res, 'uploadData or thumbnail writeFile error', err)
-            }
-        }
-
-        const ref = db.collection('ranking-requests').doc(entry.id)
-        try {
-            await setRankingRequest(ref, entry, entry.id, entry.displayName)
-            await logToFirebaseLog([{
-                activity: 'READ',
-                activityCount: 1,
-                source: 'request-create',
-                id: entry.id,
-                displayName: entry.displayName,
-                prod: prod
-            }])
-        } catch (error) {
-            handleError(res, 'Failed to set ranking request', error, 500)
-        }
-
-        const html = `<strong>Lock addition request for ${sanitizeHTML(lockName)} by ${sanitizeHTML(fields.discordUsername || fields.redditUsername)}</strong><br/><br/>`
-        let fieldsHtml = html + '<table style="border-width:1px">'
-        for (const key in fields) {
-            fieldsHtml += `<tr><td>${sanitizeHTML(key)}</td><td>${sanitizeHTML(fields[key])}</td></tr>`
-        }
-        fieldsHtml += '</table>'
-
-        try {
-            const email = await sendEmail({
-                emailConfig: 'content',
-                to: contentUploadRecipients,
-                subject: `Lock Request: ${lockName}`,
-                text: `Lock Request: ${lockName}`,
-                html: fieldsHtml
-            })
-            console.log('Message sent: %s', email.messageId)
-        } catch (error) {
-            return handleError(res, 'Email send error', error)
-        }
-
-        console.log('done')
-        return res.status(200).json(entry)
-
-    } catch (err) {
-        return handleError(res, 'Form Parse Error', err)
     }
+
+    const entry = {
+        makeModels: [{
+            make: fields.make?.firstValue() || fields.newBrand?.firstValue(),
+            model: fields.model.firstValue()
+        }],
+        lockingMechanisms: fields.lockingMechanisms?.[0]?.split(',') || [],
+        id: fields.id?.firstValue(),
+        approximateBelt: fields.approxBelt?.firstValue(),
+        usernames: {
+            discord: fields.discordUsername?.firstValue(),
+            reddit: fields.redditUsername?.firstValue()
+        },
+        displayName: fields.displayName?.firstValue(),
+        userBelt: fields.userBelt?.firstValue(),
+        notes: fields.notes?.firstValue(),
+        hazLocc: fields.hazLocc?.firstValue(),
+        requestedBy: [{
+            owner: true,
+            userId: req.user.user_id,
+            displayName: fields.displayName?.firstValue(),
+            discordUsername: fields.discordUsername?.firstValue(),
+            redditUsername: fields.redditUsername?.firstValue()
+        }],
+        requestStatus: 'Submitted',
+        dateRequested: dayjs().toISOString()
+    }
+
+    entry.media = await Promise.all(filepaths.map(async (filepath, index) => ({
+        title: `By: ${fields.discordUsername || fields.redditUsername}`,
+        fullUrl: filepath,
+        fullSizeUrl: (await createThumbnails({
+            inputFile: files.files[index].filepath,
+            width: 1024
+        })).replace(uploadDir, serverPath),
+        thumbnailUrl: (await createThumbnails({
+            inputFile: files.files[index].filepath,
+            width: 500
+        })).replace(uploadDir, serverPath),
+        sequenceId: index + 1,
+        dateAdded: dayjs().toISOString(),
+        subtitle: 'CC BY-NC-SA 4.0'
+    })))
+
+    const lockName = spaceJoin(fields.make || fields.newBrand, fields.model)
+
+    if (subdirs) {
+        const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
+        const detailsJson = JSON.stringify(fields, null, 2)
+        try {
+            await Promise.all([
+                runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.discordUsername || fields.redditUsername}' -Title='${slugify(lockName)}' -gps:all= -UserComment='${fields.id}' '${destination}'`),
+                writeFile(`${destination}/uploadData.json`, detailsJson, 'utf8')
+            ])
+        } catch (err) {
+            return handleError(res, 'uploadData or thumbnail writeFile error', err)
+        }
+    }
+
+    const ref = db.collection('ranking-requests').doc(entry.id)
+    try {
+        await setRankingRequest(ref, entry, entry.id, entry.displayName)
+        await logToFirebaseLog([{
+            activity: 'READ',
+            activityCount: 1,
+            source: 'request-create',
+            id: entry.id,
+            displayName: entry.displayName,
+            prod: prod
+        }])
+    } catch (error) {
+        handleError(res, 'Failed to set ranking request', error, 500)
+    }
+
+    const html = `<strong>Lock addition request for ${sanitizeHTML(lockName)} by ${sanitizeHTML(fields.discordUsername || fields.redditUsername)}</strong><br/><br/>`
+    let fieldsHtml = html + '<table style="border-width:1px">'
+    for (const key in fields) {
+        fieldsHtml += `<tr><td>${sanitizeHTML(key)}</td><td>${sanitizeHTML(fields[key])}</td></tr>`
+    }
+    fieldsHtml += '</table>'
+
+    try {
+        const email = await sendEmail({
+            emailConfig: 'content',
+            to: contentUploadRecipients,
+            subject: `Lock Request: ${lockName}`,
+            text: `Lock Request: ${lockName}`,
+            html: fieldsHtml
+        })
+        console.log('Message sent: %s', email.messageId)
+    } catch (error) {
+        return handleError(res, 'Email send error', error)
+    }
+
+    console.log('done')
+    return res.status(200).json(entry)
+
 }
 
 export async function updateRequest(req, res) {
@@ -347,15 +375,6 @@ async function authenticateRequest(req) {
         throw new Error('Insufficient permissions')
     }
     return decodedToken
-}
-
-function parseForm(req, form) {
-    return new Promise((resolve, reject) => {
-        form.parse(req, (err, fields, files) => {
-            if (err) return reject(err)
-            resolve({fields, files})
-        })
-    })
 }
 
 function createFilename(part, serverPath, uploadDir) {
