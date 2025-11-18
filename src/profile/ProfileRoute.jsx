@@ -59,9 +59,7 @@ function ProfileRoute() {
         const uniqueIds = new Set(collectionOptions.locks.getCollected(profile))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
     }, [profile, loading])
-
-    console.log('ProfileRoute data', {loading, error, entries, data})
-
+    
     const nav = (
         <React.Fragment>
             <SearchBox label='Collection'/>
