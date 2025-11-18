@@ -26,8 +26,9 @@ import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
-    const {getProfile} = useContext(DBContext)
+    const {getProfile, getPickerActivity} = useContext(DBContext)
     const {isMobile} = useWindowSize()
+
 
     const loadFn = useCallback(async () => {
         try {
@@ -41,19 +42,25 @@ function ProfileRoute() {
 
                 document.title = `LPU Belt Explorer - ${ownerName} Profile`
             }
-            return profile
+            const pickerActivity = await getPickerActivity(userId)
+
+            return {profile, pickerActivity}
         } catch (ex) {
             console.error('Error loading profile.', ex)
             return null
         }
-    }, [getProfile, userId])
+    }, [getPickerActivity, getProfile, userId])
     const {data = {}, loading, error} = useData({loadFn})
 
+    const {profile, pickerActivity} = data || {}
+
     const entries = useMemo(() => {
-        if (loading || !data) return []
-        const uniqueIds = new Set(collectionOptions.locks.getCollected(data))
+        if (loading || !profile) return []
+        const uniqueIds = new Set(collectionOptions.locks.getCollected(profile))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
-    }, [data, loading])
+    }, [profile, loading])
+
+    console.log('ProfileRoute data', {loading, error, entries, data})
 
     const nav = (
         <React.Fragment>
@@ -75,15 +82,15 @@ function ProfileRoute() {
 
     return (
         <FilterProvider filterFields={lockFilterFields}>
-            <DataProvider allEntries={entries} profile={data}>
+            <DataProvider allEntries={entries} profile={profile}>
                 <LockListProvider>
                     <Nav title={title} extras={nav}/>
 
                     {loading && <LoadingDisplay/>}
 
-                    {!loading && data && !error && <ProfilePage profile={data} owner={user && user.uid === userId}/>}
-                    {!loading && data && !error && entries.length === 0 && <NoProfileData/>}
-                    {!loading && (!data || error) && <ProfileNotFound/>}
+                    {!loading && profile && !error && <ProfilePage profile={profile} pickerActivity={pickerActivity} owner={user && user.uid === userId}/>}
+                    {!loading && profile && !error && entries.length === 0 && <NoProfileData/>}
+                    {!loading && (!profile || error) && <ProfileNotFound/>}
 
                     <Footer before={footerBefore}/>
 

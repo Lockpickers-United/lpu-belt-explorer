@@ -46,13 +46,14 @@ function Scorecard({owner, profile, adminAction, popular}) {
         cardMaxBelt
     } = useContext(ScorecardDataContext)
 
-    const {expanded} = useContext(ScorecardListContext)
     const {filters, filterCount, setFilters, removeFilters} = useContext(FilterContext)
-    const {name, locks} = filters
+    const {name, locks, scorecardId} = filters
+    const {expanded} = useContext(ScorecardListContext)
+
     const {createEvidenceForEntries, removePickerActivity, refreshPickerActivity} = useContext(DBContext)
     const {admin} = useContext(AppContext)
 
-    const [entryExpanded, setEntryExpanded] = useState(expanded)
+    const [entryExpanded, setEntryExpanded] = useState(scorecardId || expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
     const [controlForm, setControlForm] = useState('import')
     const [loading, setLoading] = useState(false)

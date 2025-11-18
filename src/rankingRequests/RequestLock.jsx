@@ -413,8 +413,8 @@ function RequestLock() {
                                 Please try again later.<br/>
                             </div>
                             <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                                {uploadError?.message}<br/>
-                                (Error code {uploadError?.status})
+                                {uploadError?.message.toString()}<br/>
+                                (Error code {uploadError?.status.toString()})
                             </div>
 
                             <div style={{width: '100%', textAlign: 'center'}}>

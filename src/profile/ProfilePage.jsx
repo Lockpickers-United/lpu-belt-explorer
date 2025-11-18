@@ -9,7 +9,7 @@ import RandomProfileEntryButton from './RandomProfileEntryButton.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 
-function ProfilePage({profile, owner}) {
+function ProfilePage({profile, pickerActivity, owner}) {
     const {compact} = useContext(LockListContext)
     const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
@@ -28,6 +28,11 @@ function ProfilePage({profile, owner}) {
         if (initialRender && advancedFilterGroups().length === 0 ) setAdvancedFilterGroups([newGroup])
         setInitialRender(false)
     }, [advancedFilterGroups, initialRender, setAdvancedFilterGroups])
+
+    const scorecardMap = pickerActivity.reduce((acc, entry) => {
+        if (entry.matchId && entry.id) acc[entry.matchId] = entry.id
+        return acc
+    },{})
 
     return (
         <React.Fragment>
@@ -48,6 +53,7 @@ function ProfilePage({profile, owner}) {
                             entry={entry}
                             expanded={entry.id === defExpanded}
                             onExpand={setExpanded}
+                            scorecardId={scorecardMap[entry.id]}
                         />
                     )
                 }

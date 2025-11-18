@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import rehypeExternalLinks from 'rehype-external-links'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
@@ -30,8 +30,12 @@ import OpenLinkToLockbazaarButton from './OpenLinkToLockbazaarButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 import EntryNotes from './EntryNotes'
 import LogEntryButton from './LogEntryButton.jsx'
+import ListAltIcon from '@mui/icons-material/ListAlt'
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip'
 
-function Entry({entry, expanded, onExpand}) {
+function Entry({entry, expanded, onExpand, scorecardId}) {
+    const navigate = useNavigate()
     const {expandAll} = useContext(DataContext)
     const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
@@ -81,9 +85,20 @@ function Entry({entry, expanded, onExpand}) {
         )
     }, [entry.makeModels])
 
+    const handleScorecardClick = useCallback((event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        const scorecardLink = scorecardId && userId && `/profile/${userId}/scorecard?scorecardId=${scorecardId}`
+        navigate(scorecardLink)
+    }, [navigate, scorecardId, userId])
+
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{
+                '.MuiAccordionSummary-content': {
+                    alignItems: 'center'
+                }
+            }} style={{}}>
                 <BeltStripe value={entry.belt}/>
                 <div style={{margin: '12px 0px 8px 8px', width: '55%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
@@ -102,7 +117,7 @@ function Entry({entry, expanded, onExpand}) {
                         />
                     }
                 </div>
-                <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'column'}}>
+                <div style={{margin: '6px 0px 0px 0px', flexGrow: 1, flexDirection: 'column'}}>
                     {
                         entry.lockingMechanisms?.length > 0 &&
                         <FieldValue
@@ -120,6 +135,15 @@ function Entry({entry, expanded, onExpand}) {
                         />
                     }
                 </div>
+                {scorecardId &&
+                    <div style={{margin: '0px 10px 0px 0px'}}>
+                        <Tooltip title='View in Scorecard' arrow disableFocusListener>
+                            <IconButton onClick={handleScorecardClick} size='small' aria-label='scorecard'>
+                                <ListAltIcon/>
+                            </IconButton>
+                        </Tooltip>
+                    </div>
+                }
             </AccordionSummary>
             {
                 expanded &&

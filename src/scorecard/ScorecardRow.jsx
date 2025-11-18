@@ -253,7 +253,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
 
 
             </AccordionSummary>
-            {expanded &&
+            {owner && expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
                         <EvidenceForm activity={activity} handleUpdate={() => {
