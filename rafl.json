@@ -54,26 +54,5 @@
     "splitShippingBoolean": false,
     "shippingType": "",
     "dateAdded": ""
-  },
-  {
-    "id": "2026-003",
-    "year": 2026,
-    "potNumber": 99,
-    "title": "a test pot",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "potContents": "",
-    "keywords": "",
-    "contributedBy": [
-      "mgsecure"
-    ],
-    "tags": [],
-    "country": [],
-    "shippingInfo": "",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "",
-    "dateAdded": ""
   }
 ]
