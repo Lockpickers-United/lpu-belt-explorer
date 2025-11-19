@@ -164,7 +164,7 @@ export const platformBeltSchema = Joi.array().items(
 export const raflSchema = Joi.array().items(
     Joi.object({
         'Unique ID': Joi.string().regex(/\d{4}-\d{3}$/),
-        'Year': Joi.number().max(2030),
+        'Year': Joi.number(),
         'Pot Number': Joi.number().max(999),
         'Contributed By': Joi.string(),
         'Title': Joi.string(),
