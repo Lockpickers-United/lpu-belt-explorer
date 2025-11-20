@@ -11206,13 +11206,17 @@
     "makeModels": [
       {
         "make": "BKS",
+        "model": "51 (Livius)"
+      },
+      {
+        "make": "BKS",
         "model": "51-SL (Livius)"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "BKS 51-SL (Livius)",
+    "name": "BKS 51 (Livius), 51-SL (Livius)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 628,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
@@ -11271,7 +11275,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52874593749_244c85634a_o.jpg"
       }
-    ]
+    ],
+    "notes": "The BKS 51-SL is distinguished by a side mechanism"
   },
   "135ef1c0": {
     "id": "135ef1c0",
