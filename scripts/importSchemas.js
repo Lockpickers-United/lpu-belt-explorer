@@ -178,6 +178,7 @@ export const raflSchema = Joi.array().items(
         'Shipping Info Text': Joi.string().allow(''),
         'Split Shipping': Joi.string().allow(''),
         'Shipping Type': Joi.string().allow(''),
+        'Ships To US': Joi.string().allow(''),
         'Date Added': Joi.string().allow('')
     }).unknown()
 )

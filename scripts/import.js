@@ -523,6 +523,7 @@ if (importRaflData) {
             splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
             splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
             shippingType: datum['Shipping Type'],
+            shipsToUS: datum['Ships To US'],
             dateAdded: datum['Date Added']
         })).filter(x => x)
 

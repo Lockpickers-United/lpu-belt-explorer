@@ -17,7 +17,6 @@ function RaffleRoute() {
 
     const {allPots, allCharities, raflState} = useContext(RaffleContext)
     if (!allPots || !allCharities) return null
-    const allEntries = allPots
 
     const {isMobile} = useWindowSize()
 
@@ -48,8 +47,7 @@ function RaffleRoute() {
 
     return (
         <FilterProvider filterFields={raffleFilterFields}>
-            <RaffleDataProvider allEntries={allEntries}>
-
+            <RaffleDataProvider allEntries={allPots}>
                 <div style={style}>
                     <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
                     <RaffleHeader page={'pots'}/>

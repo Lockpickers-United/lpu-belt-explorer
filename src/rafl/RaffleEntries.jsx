@@ -9,12 +9,10 @@ import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
-function RaffleEntries({allPots, drawing = false}) {
+function RaffleEntries({drawing = false}) {
     const {filters} = useContext(FilterContext)
     const [expanded, setExpanded] = useState(filters.id)
-    const {visibleEntries, expandAll} = useContext(DataContext)
-
-    const activeEntries = allPots || visibleEntries || []
+    const {visibleEntries = [], expandAll} = useContext(DataContext)
 
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
@@ -31,9 +29,9 @@ function RaffleEntries({allPots, drawing = false}) {
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
             <AdvancedFilters/>
 
-            {activeEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
+            {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
-            {activeEntries.map(entry =>
+            {visibleEntries.map(entry =>
                 <RaffleEntry
                     key={entry.id}
                     entry={entry}
