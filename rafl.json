@@ -22,6 +22,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Digital prize",
+    "shipsToUS": "Y",
     "dateAdded": "20241214",
     "media": [
       {
@@ -53,6 +54,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
+    "shipsToUS": "",
     "dateAdded": ""
   },
   {
@@ -69,11 +71,14 @@
       "BurnB1"
     ],
     "tags": [],
-    "country": [],
-    "shippingInfo": "",
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "",
+    "shippingType": "International shipping included",
+    "shipsToUS": "Y",
     "dateAdded": ""
   },
   {
@@ -90,11 +95,14 @@
       "BurnB1"
     ],
     "tags": [],
-    "country": [],
-    "shippingInfo": "",
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "",
+    "shippingType": "International shipping included",
+    "shipsToUS": "Y",
     "dateAdded": ""
   }
 ]
