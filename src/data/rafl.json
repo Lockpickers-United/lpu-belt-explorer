@@ -54,5 +54,47 @@
     "splitShippingBoolean": false,
     "shippingType": "",
     "dateAdded": ""
+  },
+  {
+    "id": "2026-003",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "The Paladin",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "BurnB1"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-004",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Carbon fiber flag set",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "BurnB1"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "dateAdded": ""
   }
 ]
