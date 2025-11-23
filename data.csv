@@ -577,7 +577,6 @@ Brown,"ASSA,ASSA,ASSA","Twin Combi,1800,4800","barrel drivers, 2 or 3 finger pin
 Brown,"Australian Lock Co.",BiLock,"12 sliders, 5-6 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,9ed006d4
 Brown,"Australian Lock Co.",BiLock,"8 sliders, 0-2 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,0b1a28ce
 Brown,"Australian Lock Co.",Galaxy,,Other,,,33d6e0df
-Brown,BASI,K10,,Dimple,,,82ae66ad
 Brown,BKS,Multipin,,Pin-tumbler,,,39bf479d
 Brown,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, fully pinned",Dimple,"Latest changelog",,9b00fb5e
 Brown,"Burg Wächter","Alpha 800",,Wafer,Unguttable,,e38d015b
@@ -818,6 +817,7 @@ Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding l
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
 Unranked,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Removed,Latest changelog","There is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed.",f2d41749
 Unranked,"ASSA,ASSA","H5,H7",,,"Under Review ⚑",,e10b4a20
+Unranked,BASI,K10,,Dimple,,,82ae66ad
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8

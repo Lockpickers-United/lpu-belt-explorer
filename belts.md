@@ -920,7 +920,6 @@ keypins, and countermilling are the norm for you.
 - [Australian Lock Co. BiLock](https://lpubelts.com/#/locks?id=9ed006d4) (12 sliders, 5-6 mastered)
 - [Australian Lock Co. BiLock](https://lpubelts.com/#/locks?id=0b1a28ce) (8 sliders, 0-2 mastered)
 - [Australian Lock Co. Galaxy](https://lpubelts.com/#/locks?id=33d6e0df)
-- [BASI K10](https://lpubelts.com/#/locks?id=82ae66ad)
 - [BKS Multipin](https://lpubelts.com/#/locks?id=39bf479d)
 - [Bricard Chifral / ABUS EP10 / CISA RS3](https://lpubelts.com/#/locks?id=9b00fb5e) (all versions, fully pinned)
 - [Burg W&auml;chter Alpha 800](https://lpubelts.com/#/locks?id=e38d015b)
