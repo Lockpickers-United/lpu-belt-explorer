@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import rehypeExternalLinks from 'rehype-external-links'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
@@ -34,8 +34,10 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
 import entryName from './entryName'
+import Link from '@mui/material/Link'
 
 function EntrySimple({entry, expanded, onExpand}) {
+    const navigate = useNavigate()
     const {expandAll} = useContext(DataContext)
     const {addAdvancedFilterGroup, filters} = useContext(FilterContext)
     const {userId} = useParams()
@@ -94,6 +96,12 @@ function EntrySimple({entry, expanded, onExpand}) {
 
     const textColor = entry.belt === 'Unranked' ? '#aaa' : '#fff'
     const versionColor = entry.belt === 'Unranked' ? '#aaa' : '#ccc'
+    const linkSx = {color: '#aaa', textDecoration: 'none', cursor: 'pointer', '&:hover': {
+            color: '#fff'
+        }}
+    const relatedHeader = upgradeTree(entry.id).length > 0
+        ? <div style={{marginBottom:2}}>Other Versions | <Link sx={linkSx} onClick={() => navigate('/profile/scorecard/upgrades')}>View Upgrades</Link></div>
+        : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
     const makeModelWidth = isMobile ? '55%' : '60%'
@@ -199,7 +207,7 @@ function EntrySimple({entry, expanded, onExpand}) {
                             }/>
                         }
                         {allRelatedIds?.length > 1 && !userId &&
-                            <FieldValue name='Other Versions' value={
+                            <FieldValue name={relatedHeader} value={
                                 <React.Fragment>
                                     {allRelatedIds.map(relatedId =>
                                         <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand}

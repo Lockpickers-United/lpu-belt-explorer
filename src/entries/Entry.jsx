@@ -34,6 +34,12 @@ import ListAltIcon from '@mui/icons-material/ListAlt'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 
+///////////////////////////
+//
+//   NOT USED IN /locks
+//
+///////////////////////////
+
 function Entry({entry, expanded, onExpand, scorecardId}) {
     const navigate = useNavigate()
     const {expandAll} = useContext(DataContext)

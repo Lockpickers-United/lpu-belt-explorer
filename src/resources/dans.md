@@ -70,7 +70,9 @@ Picking locks of blue belt or above will earn the following Dan Points
 | Black 4 | 36     |
 | Black 5 | 50     |
 
-Locks that are upgrades of each other will be awarded points only for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements and one with 7, then only points for the 11 will be awarded. The list of official upgrades can be found [here](https://lpubelts.com/#/profile/scorecard/upgrades).
+Locks that are upgrades of each other will be awarded points only for the highest ranked lock. For example, if someone has picked both a MIWA PR with 11 unmastered elements and one with 7, then only points for the 11 will be awarded.
+
+**[Click here for the list of official upgrades](https://lpubelts.com/#/profile/scorecard/upgrades)**.
 
 Locks that are the same lock or only arbitrarily different will be placed on the same line, and you may only gain points for one of them. (e.g. 3KS/4KS)
 

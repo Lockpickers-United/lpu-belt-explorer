@@ -6,7 +6,7 @@ import entryName from '../entries/entryName'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItem from '@mui/material/ListItem'
 import {allUpgradesPartitioned} from '../entries/entryutils'
-import LinkIcon from '@mui/icons-material/Link'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import {useNavigate} from 'react-router-dom'
 import IconButton from '@mui/material/IconButton'
 import IntroCopy from '../misc/IntroCopy.jsx'
@@ -29,10 +29,13 @@ function Entries() {
     }).filter(x => x.length > 0)
         .sort((a, b) => {
             return entryName(a[0]).localeCompare(entryName(b[0]))
-
         })
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+
+    const linkSx = {color: '#eee', textDecoration: 'none', cursor: 'pointer', '&:hover': {
+            color: '#fff'
+        }}
 
     return (
         <React.Fragment>
@@ -46,7 +49,6 @@ function Entries() {
                         {upgradeTree.map(entry =>
                             <React.Fragment key={entry.id}>
                                 <ListItem
-                                    key={entry.id}
                                     style={{
                                         ...style, minHeight: 64,
                                         borderTop: '1px solid rgba(255, 255, 255, 0.12)',
@@ -59,12 +61,13 @@ function Entries() {
                                         primaryTypographyProps={{fontWeight: 500}}
                                         secondary={entry.version}
                                         style={{padding: '0px 0px 0px 10px'}}
+                                        sx={linkSx}
+                                        onClick={handleClick(entry)}
                                     />
                                     <ListItemIcon style={{minWidth: 20, marginLeft: 16}}>
                                         <IconButton onClick={handleClick(entry)}>
-                                            <LinkIcon/>
+                                            <OpenInNewIcon fontSize='small'/>
                                         </IconButton>
-
                                     </ListItemIcon>
                                 </ListItem>
                             </React.Fragment>
