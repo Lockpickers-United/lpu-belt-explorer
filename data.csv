@@ -47,7 +47,7 @@ Yellow,"Burg Wächter","""SecuLock"" 405 40",,Pin-tumbler,Unguttable,,b517a7ef
 Yellow,"Burg Wächter","""Yacht"" 460 Ni 40",,Pin-tumbler,Unguttable,,9a5b3f53
 Yellow,,Börkey,,Pin-tumbler,,,90267144
 Yellow,,Citadel,,Pin-tumbler,,,4938772f
-Yellow,Defiant,5-pin,"interior pinning",Pin-tumbler,,,7bd9285f
+Yellow,Defiant,"5-pin Deadbolt","interior pinning, 1 spool, 4 regular pins",Pin-tumbler,,,5f600c8e
 Yellow,Dulimex,DX,,Pin-tumbler,,,a8d996c0
 Yellow,Eagle,37110,,Pin-tumbler,,,2f634d15
 Yellow,Egret,"5-pin Padlock",,Pin-tumbler,Unguttable,,75d883a0
@@ -83,7 +83,7 @@ Yellow,Squire,660,"4 lever",Lever,"Padlock,Pin key,Curtain",,920b7da1
 Yellow,Squire,Defiant,"5 lever",Lever,"Padlock,Pin key,Curtain",,ed713b97
 Yellow,,Stabilit,,Pin-tumbler,,,9fd77c9a
 Yellow,,Wolfdog,,Pin-tumbler,Unguttable,,4b32e9dd
-Orange,ABUS,41,"40mm or larger (5 pins)",,"Under Review ⚑",,18ecc45b
+Orange,ABUS,41,"40mm or larger (5 pins)",,,,18ecc45b
 Orange,ABUS,45/40,"brass body, 40mm or larger",Pin-tumbler,Unguttable,,67b285d9
 Orange,ABUS,"5/45 Silver Rock",,Pin-tumbler,,,0feafca7
 Orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
@@ -103,7 +103,7 @@ Orange,ABUS,Monobloc,,Pin-tumbler,,,204d85a7
 Orange,ABUS,"Ti12 Titalium",,Pin-tumbler,,,1050a58c
 Orange,ACE,Tubular,,Pump/push,,,bf8970de
 Orange,ALPHA,1000,"50mm 60mm (5pins / spools)",Pin-tumbler,,,bac43ba7
-Orange,"ASSA,ASSA","H5,H7",camlock,Pin-tumbler,,,3ffcee59
+Orange,"ASSA,ASSA","H5,H7",camlock,Pin-tumbler,,,e10b4a20
 Orange,BAB,DESS5,,Pin-tumbler,,,9ea2c500
 Orange,BASI,AS,,Pin-tumbler,,,46ec197e
 Orange,BASI,V50,,Pin-tumbler,,,1bba03a6
@@ -117,7 +117,7 @@ Orange,CISA,220/50,,Pin-tumbler,,,b7b0fdbd
 Orange,Cocraft,"6-Pin Padlock","non-guttable version",Pin-tumbler,Unguttable,,3b3e78b0
 Orange,Commando,Peacemaker,,Pin-tumbler,Unguttable,,606275d8
 Orange,Corbin,"Arco Cromato",,Pin-tumbler,Unguttable,,99057c44
-Orange,Defiant,5-pin,"exterior pinning",Pin-tumbler,,,1f409df0
+Orange,Defiant,"5-pin Deadbolt","exterior pinning, 3 spools, 2 regular pins",Pin-tumbler,,,59dab099
 Orange,DOM,RN,"standard cylinder",Pin-tumbler,,"Pinning does not meet the requirements for either Green or Blue Belt versions",2b948dc5
 Orange,Eclipse,"(any model)","British Standard - 5 lever, 2007+",Lever,"Mortise,Pin key,Curtain,False gates",,677afce6
 Orange,"Eurospec (E*S)",Easi-T,"British Standard - 5 lever, Brass key, 2004+",Lever,"Mortise,Pin key,Curtain,False gates",,26315d0f
@@ -816,7 +816,6 @@ Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑",,fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
 Unranked,"ASSA,Ruko","500,500","5 stacks of pins, gin drivers and matching countermilling",Pin-tumbler,"Removed,Latest changelog","There is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed.",f2d41749
-Unranked,"ASSA,ASSA","H5,H7",,,"Under Review ⚑",,e10b4a20
 Unranked,BASI,K10,,Dimple,,,82ae66ad
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
@@ -841,8 +840,6 @@ Unranked,Codkey,"Locksys MME (micro magnetic element)",,"Dimple,Magnet","Under R
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
-Unranked,"Defiant,","Deadbolt,exterior","5 pins, 3+ spools",Pin-tumbler,"Under Review ⚑,cylinder",,59dab099
-Unranked,"Defiant,","Deadbolt,interior","5 pins, 2 spools",Pin-tumbler,"Under Review ⚑,cylinder",,5f600c8e
 Unranked,Ezcurra,DS-15,,Dimple,"Under Review ⚑",,abe6074c
 Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
 Unranked,Fichet-Bauche,M2i,,Pump/push,"Under Review ⚑",,d6e6039e
