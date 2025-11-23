@@ -51,6 +51,7 @@ function EntrySimple({entry, expanded, onExpand}) {
         .sort((a, b) => {
             return beltSort(allEntriesById[a].belt, allEntriesById[b].belt) || a.localeCompare(b)
         })
+    const upgradeBaseId = upgradeTree(entry.id)[0]
 
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
@@ -99,8 +100,8 @@ function EntrySimple({entry, expanded, onExpand}) {
     const linkSx = {color: '#aaa', textDecoration: 'none', cursor: 'pointer', '&:hover': {
             color: '#fff'
         }}
-    const relatedHeader = upgradeTree(entry.id).length > 0
-        ? <div style={{marginBottom:2}}>Other Versions | <Link sx={linkSx} onClick={() => navigate('/profile/scorecard/upgrades')}>View Upgrades</Link></div>
+    const relatedHeader = upgradeBaseId
+        ? <div style={{marginBottom:2}}>Other Versions | <Link sx={linkSx} onClick={() => navigate(`/profile/scorecard/upgrades?id=${upgradeBaseId}`)}>View Upgrades</Link></div>
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
