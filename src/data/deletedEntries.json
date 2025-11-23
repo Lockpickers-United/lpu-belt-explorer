@@ -2131,5 +2131,60 @@
     "name": "Yale B-ED",
     "dateAdded": "2025-03-06T00:34:59.000Z",
     "dateDeleted": "2025-06-02T19:44:16.275Z"
+  },
+  {
+    "id": "7bd9285f",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Defiant",
+        "model": "5-pin"
+      }
+    ],
+    "version": "interior pinning",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Defiant 5-pin",
+    "dateAdded": "2025-11-23T19:59:27.061Z",
+    "dateDeleted": "2025-11-23T22:12:45.321Z"
+  },
+  {
+    "id": "3ffcee59",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "H5"
+      },
+      {
+        "make": "ASSA",
+        "model": "H7"
+      }
+    ],
+    "version": "camlock",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ASSA H5, H7",
+    "dateAdded": "2025-11-23T19:59:27.061Z",
+    "dateDeleted": "2025-11-23T22:12:45.322Z"
+  },
+  {
+    "id": "1f409df0",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Defiant",
+        "model": "5-pin"
+      }
+    ],
+    "version": "exterior pinning",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Defiant 5-pin",
+    "dateAdded": "2025-11-23T19:59:27.061Z",
+    "dateDeleted": "2025-11-23T22:12:45.322Z"
   }
 ]

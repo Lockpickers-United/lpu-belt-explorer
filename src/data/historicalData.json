@@ -52478,9 +52478,6 @@
         "model": "41"
       }
     ],
-    "features": [
-      "Under Review ⚑"
-    ],
     "lastUpdated": "2023-08-03T13:21:20.097Z",
     "name": "ABUS 41",
     "dateAdded": "2023-08-03T13:21:21.000Z",
@@ -56176,7 +56173,7 @@
   },
   "e10b4a20": {
     "id": "e10b4a20",
-    "belt": "Unranked",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ASSA",
@@ -56190,9 +56187,6 @@
     "lastUpdated": "2025-03-19T15:44:57.320Z",
     "name": "ASSA H5, H7",
     "dateAdded": "2023-12-28T18:48:59.000Z",
-    "features": [
-      "Under Review ⚑"
-    ],
     "views": 255,
     "media": [
       {
@@ -56213,6 +56207,10 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53427925902_b80a127e3a_o.jpg"
       }
+    ],
+    "version": "camlock",
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   "b68b677c": {
@@ -60454,48 +60452,34 @@
   },
   "59dab099": {
     "id": "59dab099",
-    "belt": "Unranked",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Defiant",
-        "model": "Deadbolt"
-      },
-      {
-        "model": "exterior"
+        "model": "5-pin Deadbolt"
       }
     ],
-    "version": "5 pins, 3+ spools",
+    "version": "exterior pinning, 3 spools, 2 regular pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Under Review ⚑",
-      "cylinder"
-    ],
-    "name": "Defiant Deadbolt / exterior",
+    "name": "Defiant 5-pin Deadbolt",
     "dateAdded": "2025-10-04T16:19:03.606Z"
   },
   "5f600c8e": {
     "id": "5f600c8e",
-    "belt": "Unranked",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "Defiant",
-        "model": "Deadbolt"
-      },
-      {
-        "model": "interior"
+        "model": "5-pin Deadbolt"
       }
     ],
-    "version": "5 pins, 2 spools",
+    "version": "interior pinning, 1 spool, 4 regular pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Under Review ⚑",
-      "cylinder"
-    ],
-    "name": "Defiant Deadbolt / interior",
+    "name": "Defiant 5-pin Deadbolt",
     "dateAdded": "2025-10-04T16:19:03.607Z"
   },
   "d87bb501": {
@@ -60612,7 +60596,8 @@
       "Pin-tumbler"
     ],
     "name": "Defiant 5-pin",
-    "dateAdded": "2025-11-23T19:59:27.061Z"
+    "dateAdded": "2025-11-23T19:59:27.061Z",
+    "dateDeleted": "2025-11-23T22:12:45.321Z"
   },
   "3ffcee59": {
     "id": "3ffcee59",
@@ -60632,7 +60617,8 @@
       "Pin-tumbler"
     ],
     "name": "ASSA H5, H7",
-    "dateAdded": "2025-11-23T19:59:27.061Z"
+    "dateAdded": "2025-11-23T19:59:27.061Z",
+    "dateDeleted": "2025-11-23T22:12:45.322Z"
   },
   "8ee515bb": {
     "id": "8ee515bb",
@@ -60686,7 +60672,8 @@
       "Pin-tumbler"
     ],
     "name": "Defiant 5-pin",
-    "dateAdded": "2025-11-23T19:59:27.061Z"
+    "dateAdded": "2025-11-23T19:59:27.061Z",
+    "dateDeleted": "2025-11-23T22:12:45.322Z"
   },
   "a92951f6": {
     "id": "a92951f6",
