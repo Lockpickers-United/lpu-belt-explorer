@@ -1546,6 +1546,10 @@
     "makeModels": [
       {
         "make": "Brinks",
+        "model": "R60 disk lock"
+      },
+      {
+        "make": "Brinks",
         "model": "R70 disk lock"
       },
       {
@@ -1559,7 +1563,7 @@
     "features": [
       "Unguttable"
     ],
-    "name": "Brinks R70 disk lock, R80 disk lock",
+    "name": "Brinks R60 disk lock, R70 disk lock, R80 disk lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5848,7 +5852,8 @@
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 4976,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
-    "modelNum": "85"
+    "modelNum": "85",
+    "version": "40mm or larger (≥5 pins)"
   },
   "d7479fd6": {
     "id": "d7479fd6",
@@ -9789,13 +9794,17 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Pfaffenhain Standard"
+        "model": "Pfaffenhain 310"
+      },
+      {
+        "make": "ABUS",
+        "model": "S5+"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS Pfaffenhain Standard",
+    "name": "ABUS Pfaffenhain 310, S5+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1226,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
@@ -9845,7 +9854,8 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20STANDARD_311.html"
       }
     ],
-    "notes": "5-pin version requires Pfaffenhain barrel pin, otherwise orange"
+    "notes": "requires Pfaffenhain barrel pin, otherwise orange",
+    "version": "5 pins"
   },
   "bc6837f8": {
     "id": "bc6837f8",
@@ -9989,7 +9999,7 @@
   },
   "c4130a64": {
     "id": "c4130a64",
-    "belt": "Green",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ABUS",
@@ -10024,7 +10034,9 @@
     "name": "ABUS WavyLine Pro, Pfaffenhain WavyLine Pro",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1140,
-    "lastUpdated": "2025-03-19T15:44:57.282Z"
+    "lastUpdated": "2025-03-19T15:44:57.282Z",
+    "version": "6 pins, 4 side pins + profile check",
+    "notes": "Must be picked 360°"
   },
   "b0076ed7": {
     "id": "b0076ed7",
@@ -11646,7 +11658,8 @@
     "lastUpdated": "2025-03-19T15:44:57.283Z",
     "features": [
       "Unguttable"
-    ]
+    ],
+    "version": "40mm or larger, 5 pins"
   },
   "dd155241": {
     "id": "dd155241",
@@ -11654,7 +11667,7 @@
     "makeModels": [
       {
         "make": "Burg Wächter",
-        "model": "Profi 116/40"
+        "model": "Profi 116"
       }
     ],
     "lockingMechanisms": [
@@ -11663,7 +11676,7 @@
     "features": [
       "Unguttable"
     ],
-    "name": "Burg Wächter Profi 116/40",
+    "name": "Burg Wächter Profi 116",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -11695,7 +11708,8 @@
       }
     ],
     "views": 1172,
-    "lastUpdated": "2025-03-19T15:44:57.283Z"
+    "lastUpdated": "2025-03-19T15:44:57.283Z",
+    "version": "40mm or larger, 5 pins"
   },
   "83ac6e00": {
     "id": "83ac6e00",
@@ -16282,13 +16296,17 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "Pfaffenhain 410"
+      },
+      {
+        "make": "ABUS",
         "model": "S6+"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS S6+",
+    "name": "ABUS Pfaffenhain 410, S6+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 2895,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
@@ -16356,7 +16374,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52872084091_abcafe3c9d_o.jpg"
       }
-    ]
+    ],
+    "version": "6 pins",
+    "notes": "requires Pfaffenhain barrel pin, otherwise green"
   },
   "34c0dfe4": {
     "id": "34c0dfe4",
@@ -16870,7 +16890,7 @@
   },
   "ed9fa926": {
     "id": "ed9fa926",
-    "belt": "Blue",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Burg Wächter",
@@ -18568,16 +18588,20 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "P031"
+        "model": "P031 N6"
+      },
+      {
+        "make": "IKON",
+        "model": "P031 AEP10"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON P031",
+    "name": "IKON P031 N6, P031 AEP10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "version": "N6 profile",
+    "version": "N6 or AEP10 profile",
     "views": 1037,
     "lastUpdated": "2025-03-19T15:44:57.291Z",
     "media": [
@@ -24811,7 +24835,8 @@
     "name": "EVVA DPI, DPS, DPX, EPS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1357,
-    "lastUpdated": "2025-03-19T15:44:57.297Z"
+    "lastUpdated": "2025-03-19T15:44:57.297Z",
+    "notes": "Must have at least 4 sliders with false gates"
   },
   "93871dad": {
     "id": "93871dad",
@@ -25874,6 +25899,10 @@
       },
       {
         "make": "Keso",
+        "model": "2000"
+      },
+      {
+        "make": "Keso",
         "model": "2000S"
       },
       {
@@ -25884,7 +25913,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Keso 10RS, 1000, 2000S, 4000S (Omega)",
+    "name": "Keso 10RS, 1000, 2000, 2000S, 4000S (Omega)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1267,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
@@ -27466,6 +27495,10 @@
       {
         "make": "Mul-T-Lock",
         "model": "MT5"
+      },
+      {
+        "make": "Mul-T-Lock",
+        "model": "MTL 500"
       }
     ],
     "lockingMechanisms": [
@@ -27481,7 +27514,7 @@
         "url": "https://www.lockpickingforensics.com"
       }
     ],
-    "name": "Mul-T-Lock MT5",
+    "name": "Mul-T-Lock MT5, MTL 500",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Pin-in-pin",
@@ -30473,12 +30506,16 @@
       {
         "make": "STS",
         "model": "IX bola"
+      },
+      {
+        "make": "BASI",
+        "model": "K10"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "DOM ix 10 kg / STS IX bola",
+    "name": "DOM ix 10 kg / STS IX bola / BASI K10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Torpedo keypins",
@@ -34596,7 +34633,7 @@
         "model": "Janus"
       }
     ],
-    "version": "< 14 pins",
+    "version": "< 13 pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -40451,7 +40488,7 @@
         "model": "Janus"
       }
     ],
-    "version": "14 or more pins",
+    "version": "13 or more pins",
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -41955,7 +41992,8 @@
       "Magnetic rotors"
     ],
     "views": 2133,
-    "lastUpdated": "2025-03-19T01:20:51.392Z"
+    "lastUpdated": "2025-03-19T01:20:51.392Z",
+    "version": "with up to 5 additional gates for mastering"
   },
   "4abcb403": {
     "id": "4abcb403",
@@ -52433,7 +52471,7 @@
   },
   "18ecc45b": {
     "id": "18ecc45b",
-    "belt": "Unranked",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "ABUS",
@@ -52446,7 +52484,8 @@
     "lastUpdated": "2023-08-03T13:21:20.097Z",
     "name": "ABUS 41",
     "dateAdded": "2023-08-03T13:21:21.000Z",
-    "views": 596
+    "views": 596,
+    "version": "40mm or larger (5 pins)"
   },
   "e2fd1519": {
     "id": "e2fd1519",
@@ -59349,6 +59388,14 @@
       {
         "make": "Wilka",
         "model": "PR100 Series"
+      },
+      {
+        "make": "Wilka",
+        "model": "TH6"
+      },
+      {
+        "make": "Wilka",
+        "model": "SI6"
       }
     ],
     "version": "6 pin",
@@ -59359,7 +59406,7 @@
       "Active element"
     ],
     "lastUpdated": "2025-02-16T07:00:26.260Z",
-    "name": "Wilka PR100 Series",
+    "name": "Wilka PR100 Series, TH6, SI6",
     "dateAdded": "2025-02-16T07:00:27.000Z"
   },
   "a0bfa615": {
@@ -59448,6 +59495,10 @@
       },
       {
         "make": "Keso",
+        "model": "2000"
+      },
+      {
+        "make": "Keso",
         "model": "2000S"
       },
       {
@@ -59463,7 +59514,7 @@
       "High pin count"
     ],
     "lastUpdated": "2025-03-19T15:44:57.304Z",
-    "name": "Keso 10RS, 1000, 2000S, 4000S (Omega)",
+    "name": "Keso 10RS, 1000, 2000, 2000S, 4000S (Omega)",
     "dateAdded": "2025-02-17T13:29:55.000Z",
     "media": [
       {
@@ -60482,5 +60533,197 @@
     "notes": "Dual sidebar",
     "name": "MIWA WR",
     "dateAdded": "2025-11-11T19:09:04.039Z"
+  },
+  "ecb469c3": {
+    "id": "ecb469c3",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "45/30"
+      },
+      {
+        "make": "ABUS",
+        "model": "45/35"
+      }
+    ],
+    "version": "4 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "modelNum": "55.3",
+    "name": "ABUS 45/30, 45/35",
+    "dateAdded": "2025-11-23T19:59:27.060Z"
+  },
+  "7982c469": {
+    "id": "7982c469",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "85"
+      }
+    ],
+    "version": "30mm or smaller (<5 pins)",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "modelNum": "85",
+    "name": "ABUS 85",
+    "dateAdded": "2025-11-23T19:59:27.060Z"
+  },
+  "bc6cc2b5": {
+    "id": "bc6cc2b5",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "8450"
+      },
+      {
+        "make": "ASSA",
+        "model": "10450"
+      }
+    ],
+    "version": "camlock",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ASSA 8450, 10450",
+    "dateAdded": "2025-11-23T19:59:27.060Z"
+  },
+  "7bd9285f": {
+    "id": "7bd9285f",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Defiant",
+        "model": "5-pin"
+      }
+    ],
+    "version": "interior pinning",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Defiant 5-pin",
+    "dateAdded": "2025-11-23T19:59:27.061Z"
+  },
+  "3ffcee59": {
+    "id": "3ffcee59",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "H5"
+      },
+      {
+        "make": "ASSA",
+        "model": "H7"
+      }
+    ],
+    "version": "camlock",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ASSA H5, H7",
+    "dateAdded": "2025-11-23T19:59:27.061Z"
+  },
+  "8ee515bb": {
+    "id": "8ee515bb",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "Karat"
+      }
+    ],
+    "version": "30mm or smaller, 4 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "name": "Burg Wächter Karat",
+    "dateAdded": "2025-11-23T19:59:27.061Z"
+  },
+  "bdd4f71e": {
+    "id": "bdd4f71e",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "Profi 116"
+      }
+    ],
+    "version": "30mm or smaller, 4 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "name": "Burg Wächter Profi 116",
+    "dateAdded": "2025-11-23T19:59:27.061Z"
+  },
+  "1f409df0": {
+    "id": "1f409df0",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Defiant",
+        "model": "5-pin"
+      }
+    ],
+    "version": "exterior pinning",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Defiant 5-pin",
+    "dateAdded": "2025-11-23T19:59:27.061Z"
+  },
+  "a92951f6": {
+    "id": "a92951f6",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Federal Lock",
+        "model": "Super F50"
+      },
+      {
+        "make": "Federal Lock",
+        "model": "Super F60"
+      }
+    ],
+    "version": "5 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "name": "Federal Lock Super F50, Super F60",
+    "dateAdded": "2025-11-23T19:59:27.061Z"
+  },
+  "22fb67b4": {
+    "id": "22fb67b4",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "FCV",
+        "model": "Dimple"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "FCV Dimple",
+    "dateAdded": "2025-11-23T19:59:27.062Z"
   }
 }

@@ -148,5 +148,71 @@
     "shippingType": "",
     "shipsToUS": "",
     "dateAdded": ""
+  },
+  {
+    "id": "2026-007",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Abloy PL685",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "imaginary_unit"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-008",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "787 cutaway",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "Craig 3.0"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-009",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Honey Pot",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "Craig 3.0"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
   }
 ]
