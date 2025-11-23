@@ -22,7 +22,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "Digital prize",
-    "shipsToUS": "Y",
+    "shipsToUS": "Yes",
     "dateAdded": "20241214",
     "media": [
       {
@@ -39,7 +39,7 @@
     "id": "2026-002",
     "year": 2026,
     "potNumber": 0,
-    "title": "Chubby Sparrow and MORE",
+    "title": "Little Pick Energy",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
@@ -54,7 +54,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "shipsToUS": "",
+    "shipsToUS": "Split",
     "dateAdded": ""
   },
   {
@@ -78,7 +78,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Y",
+    "shipsToUS": "Yes",
     "dateAdded": ""
   },
   {
@@ -102,7 +102,51 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Y",
+    "shipsToUS": "Yes",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-005",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "802-2.1",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "H.J"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-006",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "802-2.2",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "H.J"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
     "dateAdded": ""
   }
 ]
