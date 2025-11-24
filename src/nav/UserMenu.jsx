@@ -38,6 +38,10 @@ function UserMenu() {
         ? lockCollection.displayName.replace(/\s/g, '_')
         : 'anonymous'
 
+    const displayName = lockCollection.displayName
+        ? lockCollection.displayName
+        : 'Account'
+
     const handleClick = useCallback(url => () => {
         handleClose()
         navigate(url)
@@ -58,12 +62,12 @@ function UserMenu() {
 
     return (
         <React.Fragment>
-            <Tooltip title={isLoggedIn ? user.displayName : 'Account'} arrow disableFocusListener>
+            <Tooltip title={isLoggedIn ? displayName : 'Account'} arrow disableFocusListener>
                 <IconButton color='inherit' onClick={handleOpen} edge='end'>
                     {
                         isLoggedIn
                             ? <Avatar
-                                alt={user.displayName}
+                                alt={displayName}
                                 src={user.photoURL}
                                 sx={{width: 32, height: 32}}
                             />
@@ -78,8 +82,7 @@ function UserMenu() {
                 onClose={handleClose}
                 sx={{
                     '.MuiMenuItem-root': {
-                        minHeight:'36px',
-                        minWidth:'190px',
+                        minHeight: '36px', minWidth: '190px'
                     }
                 }}
             >
@@ -106,7 +109,7 @@ function UserMenu() {
                                 </ListItemIcon>
                                 {admin ?
                                     <ListItemText>Disable Admin</ListItemText>
-                                :
+                                    :
                                     <ListItemText>Enable Admin</ListItemText>
                                 }
                             </MenuItem>
@@ -116,10 +119,9 @@ function UserMenu() {
                                 <ListItemIcon>
                                     <BiotechIcon color={qaUser ? 'info' : 'default'}/>
                                 </ListItemIcon>
-                                {qaUser ?
-                                    <ListItemText>Disable QA Role</ListItemText>
-                                :
-                                    <ListItemText>Enable QA Role</ListItemText>
+                                {qaUser
+                                    ? <ListItemText>Disable QA Role</ListItemText>
+                                    : <ListItemText>Enable QA Role</ListItemText>
                                 }
                             </MenuItem>
                         }
@@ -127,7 +129,7 @@ function UserMenu() {
 
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}`)}>
                             <ListItemIcon>
-                                <LibraryBooksIcon  fontSize='small'/>
+                                <LibraryBooksIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>
@@ -182,7 +184,7 @@ function UserMenu() {
                     <div>
                         <MenuItem disabled>
                             <ListItemIcon>
-                                <LibraryBooksIcon  fontSize='small'/>
+                                <LibraryBooksIcon fontSize='small'/>
                             </ListItemIcon>
                             <ListItemText>Lock Collection</ListItemText>
                         </MenuItem>

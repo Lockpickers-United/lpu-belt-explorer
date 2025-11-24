@@ -63,7 +63,7 @@ function RaflPotSearchBox({handleChangeLock, allEntries=[], disabled, reset = fa
                 renderInput={(params) =>
                     <TextField
                         {...params}
-                        placeholder='Search Locks'
+                        placeholder='Search Pots'
                         variant='standard'
                         color='info'
                         inputRef={inputEl}
