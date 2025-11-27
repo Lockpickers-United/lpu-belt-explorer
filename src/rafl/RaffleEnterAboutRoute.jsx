@@ -12,7 +12,7 @@ import RaffleInfoDetails from './RaffleInfoDetails.md?raw'
 import Button from '@mui/material/Button'
 import RaffleSubHead from './RaffleSubHead.jsx'
 import {useNavigate} from 'react-router-dom'
-import AdminToolsButton from './AdminToolsButton.jsx'
+import AdminToolButtons from './AdminToolButtons.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import SignInButton from '../auth/SignInButton.jsx'
 import Popover from '@mui/material/Popover'
@@ -80,7 +80,7 @@ function RaffleEnterAboutRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <AdminToolsButton/>
+            <AdminToolButtons/>
         </React.Fragment>
     )
 

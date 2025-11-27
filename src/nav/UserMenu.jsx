@@ -40,7 +40,7 @@ function UserMenu() {
 
     const displayName = lockCollection.displayName
         ? lockCollection.displayName
-        : 'Account'
+        : 'Your Account'
 
     const handleClick = useCallback(url => () => {
         handleClose()

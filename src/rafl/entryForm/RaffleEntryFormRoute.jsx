@@ -7,7 +7,7 @@ import RaffleHeader from '../RaffleHeader.jsx'
 import RaffleEntryForm from './RaffleEntryForm.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import AdminToolsButton from '../AdminToolsButton.jsx'
+import AdminToolButtons from '../AdminToolButtons.jsx'
 
 function RaffleEntryFormRoute() {
     const {lockCollection} = useContext(DBContext)
@@ -18,7 +18,7 @@ function RaffleEntryFormRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <AdminToolsButton/>
+            <AdminToolButtons/>
         </React.Fragment>
     )
 

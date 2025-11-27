@@ -3,10 +3,11 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import RaffleContext from './RaffleContext.jsx'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
+import VisibilityIcon from '@mui/icons-material/Visibility'
 
-function AdminToolsButton() {
+function AdminToolButtons() {
     const {
         raffleAdmin,
         raffleAdminRole,
@@ -16,6 +17,22 @@ function AdminToolsButton() {
         setAnimateTotal
     } = useContext(RaffleContext)
     const navigate = useNavigate()
+
+    const [searchParams, setSearchParams] = useSearchParams()
+    const previewMode = searchParams.has('preview')
+    const showPreview = preview || previewMode
+
+    const togglePreview = useCallback(() => {
+        if (previewMode) {
+            searchParams.delete('preview')
+            setSearchParams(searchParams)
+            setPreview(false)
+        } else {
+            setPreview(!preview)
+        }
+    }, [preview, previewMode, searchParams, setPreview, setSearchParams])
+
+    const previewColor = showPreview ? '#983de6' : '#fff'
 
     const handleRoleClick = useCallback(() => {
         if (preview && raffleAdminRole) setPreview(false)
@@ -46,6 +63,13 @@ function AdminToolsButton() {
                     </IconButton>
                 </Tooltip>
             }
+            {showPreview &&
+                <Tooltip title='Toggle Preview Mode' arrow disableFocusListener>
+                    <IconButton onClick={togglePreview} style={{padding: 8}}>
+                        <VisibilityIcon style={{color: previewColor}} fontSize='small'/>
+                    </IconButton>
+                </Tooltip>
+            }
             <Tooltip title={toolTip} arrow disableFocusListener>
                 <IconButton onClick={() => handleRoleClick()} style={{height: 48, width: 48}}>
                     <AdminPanelSettingsIcon style={{color: color}}/>
@@ -56,4 +80,4 @@ function AdminToolsButton() {
     )
 }
 
-export default AdminToolsButton
+export default AdminToolButtons

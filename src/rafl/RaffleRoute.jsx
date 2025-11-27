@@ -10,7 +10,7 @@ import RaffleDataProvider from './RaffleDataProvider.jsx'
 import RaffleEntries from './RaffleEntries.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RaffleContext from './RaffleContext.jsx'
-import AdminToolsButton from './AdminToolsButton.jsx'
+import AdminToolButtons from './AdminToolButtons.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
@@ -24,7 +24,7 @@ function RaffleRoute() {
         <React.Fragment>
             <React.Fragment>
                 {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-                <AdminToolsButton/>
+                <AdminToolButtons/>
             </React.Fragment>
         </React.Fragment>
     )

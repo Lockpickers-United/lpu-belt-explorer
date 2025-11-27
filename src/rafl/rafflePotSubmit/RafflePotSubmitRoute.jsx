@@ -6,7 +6,7 @@ import RafflePotSubmit from './RafflePotSubmit.jsx'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
-import AdminToolsButton from '../AdminToolsButton.jsx'
+import AdminToolButtons from '../AdminToolButtons.jsx'
 import Footer from '../../nav/Footer.jsx'
 
 export default function RafflePotSubmitRoute() {
@@ -20,7 +20,7 @@ export default function RafflePotSubmitRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <AdminToolsButton/>
+            <AdminToolButtons/>
         </React.Fragment>
     )
 

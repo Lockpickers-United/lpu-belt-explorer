@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import RaffleAnnounce from './RaffleAnnounce.md?raw'
 import RaffleSubHead from './RaffleSubHead.jsx'
-import AdminToolsButton from './AdminToolsButton.jsx'
+import AdminToolButtons from './AdminToolButtons.jsx'
 
 function RaffleAnnouncetRoute() {
 
@@ -29,7 +29,7 @@ function RaffleAnnouncetRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <AdminToolsButton/>
+            <AdminToolButtons/>
         </React.Fragment>
     )
 

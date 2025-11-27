@@ -1,5 +1,5 @@
 import Dialog from '@mui/material/Dialog'
-import AdminToolsButton from './AdminToolsButton.jsx'
+import AdminToolButtons from './AdminToolButtons.jsx'
 import React, {useContext} from 'react'
 import RaffleContext from './RaffleContext.jsx'
 import RAFL2026 from '../resources/hello-my-name-is-RAFL-2026s.png'
@@ -33,7 +33,7 @@ export default function RaffleSetupDialog() {
                 <div style={{fontSize: '1.2rem', marginBottom: 150}}>Stay tuned!</div>
                 <br/>
 
-                <AdminToolsButton/>
+                <AdminToolButtons/>
             </div>
         </Dialog>
     )

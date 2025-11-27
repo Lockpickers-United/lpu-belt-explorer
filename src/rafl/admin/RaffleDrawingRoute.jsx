@@ -4,7 +4,7 @@ import Tracker from '../../app/Tracker'
 import Footer from '../../nav/Footer'
 import Nav from '../../nav/Nav'
 import useWindowSize from '../../util/useWindowSize.jsx'
-import AdminToolsButton from '../AdminToolsButton.jsx'
+import AdminToolButtons from '../AdminToolButtons.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import SignInButton from '../../auth/SignInButton.jsx'
@@ -27,7 +27,7 @@ export default function RaffleDrawingRoute() {
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-            <AdminToolsButton/>
+            <AdminToolButtons/>
         </React.Fragment>
     )
 
