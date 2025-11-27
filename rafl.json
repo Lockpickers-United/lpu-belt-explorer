@@ -109,45 +109,69 @@
     "id": "2026-005",
     "year": 2026,
     "potNumber": 0,
-    "title": "802-2.1",
+    "title": "Anchor Lås Pot #1",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
-    "potContents": "",
+    "potContents": "- Anchor Lås 802-2 padlock body\n- Begleri fidget toy\n- Small bag of Swedish candy",
     "keywords": "",
     "contributedBy": [
       "H.J"
     ],
     "tags": [],
-    "country": [],
-    "shippingInfo": "",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "",
-    "shipsToUS": "",
-    "dateAdded": ""
+    "country": [
+      "Sweden"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "shipsToUS": "Split",
+    "dateAdded": "20251126",
+    "media": [
+      {
+        "title": "By: H.J",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54949359167_291847057f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54949359167/in/album-72177720330595608/",
+        "sequenceId": 2,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54949359167_8356790964_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-006",
     "year": 2026,
     "potNumber": 0,
-    "title": "802-2.2",
+    "title": "Anchor Lås Pot #2",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
-    "potContents": "",
+    "potContents": "- Anchor Lås 802-2 padlock body\n- Begleri fidget toy\n- Small bag of Swedish candy",
     "keywords": "",
     "contributedBy": [
       "H.J"
     ],
     "tags": [],
-    "country": [],
-    "shippingInfo": "",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "",
-    "shipsToUS": "",
-    "dateAdded": ""
+    "country": [
+      "Sweden"
+    ],
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "shipsToUS": "Split",
+    "dateAdded": "20251126",
+    "media": [
+      {
+        "title": "By: H.J",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54949359167_291847057f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54949359167/in/album-72177720330595608/",
+        "sequenceId": 3,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54949359167_8356790964_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-007",
@@ -214,5 +238,29 @@
     "shippingType": "",
     "shipsToUS": "",
     "dateAdded": ""
+  },
+  {
+    "id": "2026-010",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Emhart Emporium",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "- Mini Emhart pin kit\n- Emhart blanks\n- Emhart Blockout function mortise cylinder w/ operating & blockout keys (contributed by @Try_Δngle)\n- NIB Emhart deadbolt w/ hardware (Black Belt)\n- Grubbed Emhart rim cylinder (Red Belt)\n- Emhart LFIC w/ operating & control keys (Purple Belt)",
+    "keywords": "",
+    "contributedBy": [
+      "Granny"
+    ],
+    "tags": [],
+    "country": [
+      "Canada"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "shipsToUS": "Split",
+    "dateAdded": "20251127"
   }
 ]
