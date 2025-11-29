@@ -321,7 +321,7 @@ Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS,Wuerth","E20,E30,E60,E70,E90,NP (6-pin)",,Pin-tumbler,,,5c0d870b
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
 Blue,"ABUS,ABUS","EC750,EC850","T-spools and recessed pins version, not 700/800",Dimple,,,3515caae
-Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element,Image Test","require 360° picking",d005e7b8
+Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element","require 360° picking",d005e7b8
 Blue,ABUS,GDS,"with barrels",Pin-tumbler,"Barrel drivers",,3df9c95f
 Blue,"ABUS,ABUS","Integral,Pfaffenhain Integral","with 6 main row pins and >= 5 side pins",Pin-tumbler,,,8606220a
 Blue,"ABUS,ABUS","KV14,KY14",,Pin-tumbler,,,fe84cc3c
@@ -474,7 +474,7 @@ Purple,"CompX Chicago,Inceca","TuBAR,Plana",,"Other,Sidebar","Active sidebar",,8
 Purple,"Corbin Russwin",Emhart,"4 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",71bce5b7
 Purple,"Corbin Russwin","Master Ring",***,Pin-tumbler,,"*** **Special Picking Requirement:** Both shearlines must be filmed in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",50fd7a98
 Purple,"DAF Kilit",DBS02,,"Dimple,Slider",,,5e264777
-Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element,Image Test",,db4de1bb
+Purple,"DeGuard,HQ","Interactive clone,High Security interactive clone","5 pins",Dimple,"Pin-in-pin,Interactive element",,db4de1bb
 Purple,Delta,"`DAF Kilit DBS02` Clone",,"Dimple,Slider",,,95e779e0
 Purple,Dierre,"New Power",,Wafer,,,a10711cc
 Purple,DOM,"ix 6 kg",,Dimple,,,69eec822
@@ -808,7 +808,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Latest changelog",,5eac6a2
 "Black 5","Yuema,Forte","750,Enigma",,Slider,"Reverse sidebar",,0b604114
 Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element,Picking Risk","If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",6f837bb4
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
-Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑,Image Test",,9ae8b650
+Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
@@ -820,9 +820,9 @@ Unranked,BASI,K10,,Dimple,,,82ae66ad
 Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
-Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑,Image Test",,08c823ed
+Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑",,08c823ed
 Unranked,,Bond,,Pin-tumbler,"Under Review ⚑",,4062aefb
-Unranked,Bovii,LOTO,"dimple lock",Dimple,"Image Test",,e35a3c91
+Unranked,Bovii,LOTO,"dimple lock",Dimple,,,e35a3c91
 Unranked,Bowley,543,,Pin-tumbler,,,b1949215
 Unranked,Bowley,Rotasera,,,,,e35772c9
 Unranked,"Burg Wächter","Profi 116/25",,Pin-tumbler,"Under Review ⚑",,c77a4ac8
