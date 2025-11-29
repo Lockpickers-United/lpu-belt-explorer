@@ -71,6 +71,7 @@ export function DataProvider({children, allEntries, profile}) {
                     content: [
                         entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
                         entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
+                        entry.media?.some(m => m.label) ? 'Model Photos' : undefined,
                         entry.links?.length > 0 ? 'Has Links' : 'No Links',
                         belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
                         dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
