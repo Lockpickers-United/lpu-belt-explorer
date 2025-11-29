@@ -160,7 +160,9 @@ function RafflePhotoSubmit({profile, user}) {
         }}>
 
             <div style={{fontSize: '1.7rem', fontWeight: 600, marginBottom: 20}}>
-                Pot <Link onClick={()=>navigate('/rafl/contribute')} sx={linkSx}>Info</Link> | Photos
+                Pot <Link onClick={()=>navigate('/rafl/contribute')} sx={linkSx}>Info</Link> |
+                &nbsp; Photos |
+                &nbsp;<Link onClick={()=>navigate('/rafl/potpreview')} sx={linkSx}>Preview</Link>
             </div>
 
             <form action={null} encType='multipart/form-data' method='post'

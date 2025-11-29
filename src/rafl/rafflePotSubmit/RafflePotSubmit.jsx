@@ -125,7 +125,9 @@ export default function RafflePotSubmit({profile, user}) {
         }}>
 
             <div style={{fontSize: '1.7rem', fontWeight: 600, marginBottom: 20}}>
-                Pot Info  | <Link onClick={()=>navigate('/rafl/photos')} sx={linkSx}>Photos</Link>
+                Pot Info |
+                &nbsp;<Link onClick={()=>navigate('/rafl/photos')} sx={linkSx}>Photos</Link> |
+                &nbsp;<Link onClick={()=>navigate('/rafl/potpreview')} sx={linkSx}>Preview</Link>
             </div>
 
 

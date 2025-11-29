@@ -24,11 +24,22 @@ export default function RafflePhotoSubmitRoute() {
         </React.Fragment>
     )
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     return (
         <FilterProvider>
-            <Nav title='RAFL Pot Photos' extras={extras}/>
-            <RafflePhotoSubmit profile={lockCollection} user={user}/>
-            <Footer/>
+            <div style={style}>
+                <Nav title='RAFL Pot Photos' extras={extras}/>
+                <RafflePhotoSubmit profile={lockCollection} user={user}/>
+                <Footer/>
+            </div>
         </FilterProvider>
     )
 }

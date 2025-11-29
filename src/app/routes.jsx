@@ -463,6 +463,13 @@ export default [
                     const {default: RafflePotSubmitRoute} = await import('../rafl/rafflePotSubmit/RafflePotSubmitRoute.jsx')
                     return {element: <RafflePotSubmitRoute/>}
                 }
+            },
+            {
+                path: '/rafl/potpreview',
+                lazy: async () => {
+                    const {default: RafflePotPreviewRoute} = await import('../rafl/rafflePotSubmit/RafflePotPreviewRoute.jsx')
+                    return {element: <RafflePotPreviewRoute/>}
+                }
             }
         ]
     }, {

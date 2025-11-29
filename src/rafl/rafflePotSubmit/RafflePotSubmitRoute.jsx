@@ -17,6 +17,15 @@ export default function RafflePotSubmitRoute() {
 
     usePageTitle('RAFL Pot Info')
 
+    const sideSpacing = !isMobile ? 0 : 8
+    const style = {
+        maxWidth: 700,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: sideSpacing,
+        paddingRight: sideSpacing
+    }
+
     const extras = (
         <React.Fragment>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
@@ -26,9 +35,11 @@ export default function RafflePotSubmitRoute() {
 
     return (
         <FilterProvider>
-            <Nav title='RAFL Pot Info' extras={extras}/>
-            <RafflePotSubmit profile={lockCollection} user={user}/>
-            <Footer/>
+            <div style={style}>
+                <Nav title='RAFL Pot Info' extras={extras}/>
+                <RafflePotSubmit profile={lockCollection} user={user}/>
+                <Footer/>
+            </div>
         </FilterProvider>
     )
 }
