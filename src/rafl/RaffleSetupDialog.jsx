@@ -12,7 +12,9 @@ export default function RaffleSetupDialog() {
 
     const showDialog = raflState === 'setup'
         && !raffleAdminRole
-        && location.pathname !== '/rafl/contribute' && location.pathname !== '/rafl/photos'
+        && location.pathname !== '/rafl/contribute'
+        && location.pathname !== '/rafl/photos'
+        && location.pathname !== '/rafl/potpreview'
 
     return (
         <Dialog open={showDialog}

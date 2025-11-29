@@ -20,10 +20,8 @@ function RaffleRoute() {
 
     const extras = (
         <React.Fragment>
-            <React.Fragment>
-                {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
-                <AdminToolButtons/>
-            </React.Fragment>
+            {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
+            <AdminToolButtons/>
         </React.Fragment>
     )
     const extrasTwo = undefined
