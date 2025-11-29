@@ -101,7 +101,7 @@
     },
     {
       "label": "Disc detainer",
-      "value": 32,
+      "value": 33,
       "id": "disc-detainer"
     },
     {
@@ -521,14 +521,14 @@
         "id": "pump-push"
       },
       {
+        "label": "Disc detainer",
+        "value": 5,
+        "id": "disc-detainer"
+      },
+      {
         "label": "Multiple",
         "value": 5,
         "id": "multiple"
-      },
-      {
-        "label": "Disc detainer",
-        "value": 4,
-        "id": "disc-detainer"
       },
       {
         "label": "Wafer",
@@ -1610,6 +1610,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-11-29 00:11"
+    "updatedDateTime": "2025-11-29 15:45"
   }
 }

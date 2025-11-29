@@ -60286,6 +60286,9 @@
         "model": "War-Lok"
       }
     ],
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -60320,7 +60323,7 @@
       }
     ],
     "views": 187,
-    "lastUpdated": "2025-10-25T18:24:16.788Z"
+    "lastUpdated": "2025-11-29T15:45:47.348Z"
   },
   {
     "id": "288c8f6e",
