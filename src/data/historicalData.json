@@ -25096,8 +25096,7 @@
     "lastUpdated": "2025-03-19T15:44:57.296Z",
     "features": [
       "Pin-in-pin",
-      "Interactive element",
-      "Image Test"
+      "Interactive element"
     ]
   },
   "3b848976": {
@@ -46547,8 +46546,7 @@
       }
     ],
     "features": [
-      "Under Review ⚑",
-      "Image Test"
+      "Under Review ⚑"
     ]
   },
   "12ff8c25": {
@@ -46804,8 +46802,7 @@
     "views": 278,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "features": [
-      "Trap element",
-      "Image Test"
+      "Trap element"
     ],
     "lockingMechanisms": [
       "Dimple"
@@ -59639,8 +59636,7 @@
       "Lever"
     ],
     "features": [
-      "Under Review ⚑",
-      "Image Test"
+      "Under Review ⚑"
     ],
     "media": [
       {
@@ -59864,10 +59860,7 @@
     ],
     "lastUpdated": "2025-03-19T15:44:57.320Z",
     "name": "Bovii LOTO",
-    "dateAdded": "2025-03-06T02:11:05.000Z",
-    "features": [
-      "Image Test"
-    ]
+    "dateAdded": "2025-03-06T02:11:05.000Z"
   },
   "b1949215": {
     "id": "b1949215",
