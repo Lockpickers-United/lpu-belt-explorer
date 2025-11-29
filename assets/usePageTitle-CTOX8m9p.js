@@ -1,0 +1,1 @@
+import{ay as o}from"./index-D2G3zxk1.js";function i(t){return o(n(t))}function n(t){const e=/^localhost.*/.test(window.location.host)?"LOCAL":/^dev.*/.test(window.location.host)?"DEV":"LPU Belt Explorer";return t?`${e} - ${t}`:"LPU Belt Explorer"}export{i as u};
