@@ -48,7 +48,20 @@
     "contributedBy": [
       "CollateralTech"
     ],
-    "tags": [],
+    "tags": [
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Tensioners (TOK)",
+      "Tensioners (BOK)",
+      "Tensioners (tubular)",
+      "Tensioners (other)",
+      "Cases",
+      "Tools (decoding)",
+      "Tools (bypass)",
+      "Compact",
+      "EDC",
+      "Puzzle"
+    ],
     "country": [],
     "shippingInfo": "",
     "splitShipping": "shippingSplit",
@@ -118,7 +131,10 @@
     "contributedBy": [
       "H.J"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (padlocks)",
+      "Swag (other)"
+    ],
     "country": [
       "Sweden"
     ],
@@ -152,7 +168,10 @@
     "contributedBy": [
       "H.J"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (padlocks)",
+      "Swag (other)"
+    ],
     "country": [
       "Sweden"
     ],
