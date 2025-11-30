@@ -67,7 +67,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "shipsToUS": "Split",
+    "shipsToUS": "Buyer pays fees",
     "dateAdded": ""
   },
   {
@@ -142,7 +142,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Split",
+    "shipsToUS": "Buyer pays fees",
     "dateAdded": "20251126",
     "media": [
       {
@@ -179,7 +179,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Split",
+    "shipsToUS": "Buyer pays fees",
     "dateAdded": "20251126",
     "media": [
       {
@@ -279,7 +279,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Split",
+    "shipsToUS": "Buyer pays fees",
     "dateAdded": "20251127"
   }
 ]
