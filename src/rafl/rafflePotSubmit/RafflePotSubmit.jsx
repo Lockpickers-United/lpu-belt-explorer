@@ -255,7 +255,7 @@ export default function RafflePotSubmit({profile, user}) {
                     >
                         <option aria-label="None" value="" />
                         <option value="Yes">Yes</option>
-                        <option value="Yes, buyer pays shipping + fees">Yes, buyer pays shipping + fees</option>
+                        <option value="Yes, buyer pays duties & fees">Yes, buyer pays duties & fees</option>
                         <option value="No">No</option>
                     </TextField>
 

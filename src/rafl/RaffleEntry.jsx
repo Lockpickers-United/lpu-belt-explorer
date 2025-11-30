@@ -75,7 +75,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
     const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.5 : 1
 
-    const shipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29'}
+    const shipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29', 'Buyer pays fees': '#e39a29'}
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -165,7 +165,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
                     </div>
 
-                    {entry.shipsToUS && !drawing && false &&
+                    {entry.shipsToUS && !drawing &&
                         <div
                             style={{textAlign: 'right', width: '100%', marginTop: 10, paddingRight: 20, color: '#aaa'}}>
                             Ships to USA: &nbsp;
