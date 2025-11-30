@@ -1405,6 +1405,65 @@
     "dateDeleted": "2023-05-30T18:50:09.000Z"
   },
   {
+    "id": "35adb4d6",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "Profi 116/30"
+      }
+    ],
+    "name": "Burg Wächter Profi 116/30",
+    "dateAdded": "2023-03-02T19:05:25.000Z",
+    "views": 362,
+    "lastUpdated": "2025-03-19T01:20:51.399Z",
+    "features": [
+      "Under Review ⚑"
+    ],
+    "media": [
+      {
+        "title": "By: TrapperLock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52960453689_a782e7d7f8_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52960453689/in/album-72177720308913837/",
+        "sequenceId": 866,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52960453689_22fa68631b_o.jpg"
+      },
+      {
+        "title": "By: TrapperLock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52960307656_129b73898f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52960307656/in/album-72177720308913837/",
+        "sequenceId": 867,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52960307656_65eb6868d8_o.jpg"
+      },
+      {
+        "title": "By: TrapperLock",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52960690830_91acf52df4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52960690830/in/album-72177720308913837/",
+        "sequenceId": 868,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52960690830_a66b218f2f_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54274912577_7076f036a0_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54274912577/in/album-72177720308913837/",
+        "sequenceId": 869,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54274912577_9326f32b57_o.jpg"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateDeleted": "2025-11-30T23:47:20.743Z"
+  },
+  {
     "id": "728d4aa0",
     "belt": "Unranked",
     "makeModels": [
@@ -1555,6 +1614,87 @@
       }
     ],
     "dateDeleted": "2025-02-17T15:17:12.000Z"
+  },
+  {
+    "id": "c77a4ac8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "Profi 116/25"
+      }
+    ],
+    "lastUpdated": "2023-08-10T00:09:36.303Z",
+    "name": "Burg Wächter Profi 116/25",
+    "dateAdded": "2023-05-05T09:34:27.000Z",
+    "views": 221,
+    "features": [
+      "Under Review ⚑"
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateDeleted": "2025-11-30T23:47:20.743Z"
+  },
+  {
+    "id": "bbfd4108",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Burg Wächter",
+        "model": "Profi 116/50"
+      }
+    ],
+    "version": "50mm or larger",
+    "lastUpdated": "2025-03-21T17:03:30.605Z",
+    "name": "Burg Wächter Profi 116/50",
+    "dateAdded": "2023-05-05T09:34:27.000Z",
+    "views": 355,
+    "features": [
+      "Under Review ⚑"
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54401252715_9b610e37cb_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54401252715/in/album-72177720324559687/",
+        "sequenceId": 2824,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54401252715_e312004403_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54401062244_d85c7d3c5d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54401062244/in/album-72177720324559687/",
+        "sequenceId": 2825,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54401062244_9ff059e561_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54401122608_9f9ea835fa_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54401122608/in/album-72177720324559687/",
+        "sequenceId": 2826,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54401122608_b88e140fcd_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54401062864_c933d3eddd_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54401062864/in/album-72177720324559687/",
+        "sequenceId": 2827,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54401062864_6dd337696d_o.jpg"
+      }
+    ],
+    "dateDeleted": "2025-11-30T23:47:20.743Z"
   },
   {
     "id": "110c872d",
