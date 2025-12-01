@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 919,
+        "value": 918,
         "label": "All"
       },
       {
-        "value": 111,
+        "value": 110,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.020674646354733407,
+      "value": 0.020697167755991286,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 66,
-      "value": 0.07181719260065289,
+      "value": 0.0718954248366013,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 80,
-      "value": 0.08705114254624592,
+      "value": 0.08714596949891068,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16213275299238303,
+      "value": 0.16230936819172112,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 131,
-      "value": 0.1425462459194777,
+      "value": 0.14270152505446623,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 114,
-      "value": 0.12404787812840043,
+      "value": 0.12418300653594772,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 83,
-      "value": 0.09031556039173014,
+      "value": 0.09041394335511982,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 72,
-      "value": 0.07834602829162132,
+      "value": 0.0784313725490196,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 94,
-      "value": 0.10228509249183895,
+      "value": 0.10239651416122005,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 111,
-      "value": 0.12078346028291621,
+      "count": 110,
+      "value": 0.11982570806100218,
       "id": "Unranked"
     }
   ],
@@ -86,7 +86,7 @@
     },
     {
       "label": "Dimple",
-      "value": 207,
+      "value": 206,
       "id": "dimple"
     },
     {
@@ -512,7 +512,7 @@
       },
       {
         "label": "Dimple",
-        "value": 19,
+        "value": 18,
         "id": "dimple"
       },
       {
@@ -563,9 +563,9 @@
       },
       {
         "segment": "All locks",
-        "count": 919,
+        "count": 918,
         "media": 845,
-        "coverage": "91%"
+        "coverage": "92%"
       }
     ],
     "uniqueImages": 4029,
@@ -1610,6 +1610,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-11-30 23:47"
+    "updatedDateTime": "2025-12-01 00:03"
   }
 }
