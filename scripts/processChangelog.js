@@ -11,14 +11,16 @@ const app = admin.initializeApp({
 ////////////////////////////////////////////////
 // change to (default) and true for production
 
-const db = getFirestore(app, 'lpubelts-dev')
+//const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
+
 const WRITE_TO_DB = true
 
 // set to desired id mapping
+// { 'old ID': 'new ID' }
 
 const newIdFromOld = {
-    '61a01892': 'fb51b475',
-    '0ae75ea0': '3335df97',
+    '82ae66ad': 'dd6a3683',
 }
 ////////////////////////////////////////////////
 
@@ -32,7 +34,7 @@ evidDocs.forEach(rec => {
     const oldId = rec.data().projectId
     const newId = newIdFromOld[oldId]
     impactedUsers.push(rec.data().userId)
-    console.log(`evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
+    console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
     evidBatch.update(rec.ref, {projectId: newId})    
 })
 if (WRITE_TO_DB) {

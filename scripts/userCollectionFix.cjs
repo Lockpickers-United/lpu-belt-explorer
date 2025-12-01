@@ -6,6 +6,10 @@ const app = admin.initializeApp({
 })
 const db = admin.firestore(app)
 
+//
+// For changelog migrations, see processChangelog.js
+//
+
 // Update these variables to restore a user's data
 const userId = ''
 const data = {
