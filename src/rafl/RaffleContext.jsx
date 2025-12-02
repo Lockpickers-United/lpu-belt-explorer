@@ -148,6 +148,7 @@ export function RaffleProvider({children}) {
                 donations2024text: entry.donations2024 ? '$' + entry.donations2024.toLocaleString() : '0',
                 donations2025text: entry.donations2025 ? '$' + entry.donations2025.toLocaleString() : '0'
             }))
+            .filter(entry => !entry.disabled)
     }, [summary.charities])
 
     const [displayStats, setDisplayStats] = useState(false)

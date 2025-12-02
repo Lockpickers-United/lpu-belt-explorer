@@ -64,8 +64,9 @@ function Entries({advancedEnabled = false}) {
                             <EntrySimple
                                 key={entry.id}
                                 entry={entry}
-                                //expanded={entry.id === entryExpanded}
-                                expanded={entry.id === entryExpanded || !!expandAll}
+                                expanded={entry.id === entryExpanded
+                                    || !!expandAll
+                                    || visibleEntries.length === 1}
                                 onExpand={setEntryExpanded}
                             />
                         )
