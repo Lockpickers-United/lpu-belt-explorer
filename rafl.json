@@ -287,5 +287,29 @@
     "shippingType": "International shipping included",
     "shipsToUS": "Buyer pays fees",
     "dateAdded": "20251127"
+  },
+  {
+    "id": "2026-011",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "SasPes Pot",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "SasPes"
+    ],
+    "tags": [],
+    "country": [
+      "Sweden"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "shipsToUS": "Buyer pays fees",
+    "dateAdded": "20251201"
   }
 ]
