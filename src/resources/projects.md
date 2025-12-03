@@ -2,7 +2,7 @@
 
 Master's Projects -- also known as Epic Quests -- are an integral part of Black Belt requirements and Dan System advancement. They give Black Belts further levels of mastery to aspire to and achieve, to incentivize them to remain in the community and enrich it with knowledge, and to increase the scope of what is possible within picking and locksport in general.
 
-Earning Dan Points can be accomplished completing projects within the following Disciplines.
+Dan Points can be earned by completing projects within the following Disciplines:
 
 - Case Making
 - Challenge Locks
@@ -46,10 +46,10 @@ Please send the following information in PM to a mod, or include in your black b
 - Hoped for Tier: (1-5)
 - Evidence:
 
-Note: evidence should be images/text/video links etc., ideally in a pdf document format
+**Note:** Project submissions must include a write-up of the project, including all relevant details. Evidence should also include images, video links, etc. as needed to document the project. PDF format is preferred if possible.
+
 
 ## Voting Guidelines
-
 
 ### Case Making Quest Guidelines
 Each progressive tier must fulfill all prior tier requirements.
