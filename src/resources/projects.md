@@ -46,7 +46,7 @@ Please send the following information in PM to a mod, or include in your black b
 - Hoped for Tier: (1-5)
 - Evidence:
 
-**Note:** Project submissions must include a write-up of the project, including all relevant details. Evidence should also include images, video links, etc. as needed to document the project. PDF format is preferred if possible.
+**Note:** Project submissions must include clear documentation of the project for review. This could comprise organized and labeled images or videos. A write-up of the project, including all relevant details, is required where additional context is needed (e.g., Safe Manipulation). PDF format is preferred if possible.
 
 
 ## Voting Guidelines
