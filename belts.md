@@ -1125,7 +1125,9 @@ is required to gut.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. Note: videos must be in **horizontal** aspect ratio due to the detailed review that Black Belt evidence recieves. Videos shot vertically will be rejected without review.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. 
+- **Please note:** Black Belt request videos receive the highest possible level of scrutiny on every detail of the lock. Be sure to include clear evidence of all locking components, pins, and milling in your video.
+- Videos must be in horizontal aspect ratio due to the detailed review that Black Belt evidence recieves. Videos shot vertically will be rejected without review.
 
 **Epic Quest Options** (all subject to approval):
 
