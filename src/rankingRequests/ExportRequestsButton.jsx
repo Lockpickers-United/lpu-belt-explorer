@@ -21,9 +21,7 @@ function ExportRequestsButton({text, entries}) {
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
     const exportEntries = useMemo(() => {
-        const safe = Array.isArray(entries) ? entries.slice() : []
-        safe.sort((a, b) => (a?.fuzzy || '').localeCompare(b?.fuzzy || ''))
-        return safe
+        return Array.isArray(entries) ? entries.slice() : []
     }, [entries])
 
     const data = exportEntries.map(datum => ({
