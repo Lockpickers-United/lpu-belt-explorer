@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import {enqueueSnackbar} from 'notistack'
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import entryName from '../entries/entryName'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
@@ -20,7 +20,11 @@ function ExportRequestsButton({text, entries}) {
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const exportEntries = entries.sort((a, b) => a.makes[0].localeCompare(b.makes[0]))
+    const exportEntries = useMemo(() => {
+        const safe = Array.isArray(entries) ? entries.slice() : []
+        safe.sort((a, b) => (a?.fuzzy || '').localeCompare(b?.fuzzy || ''))
+        return safe
+    }, [entries])
 
     const data = exportEntries.map(datum => ({
         id: datum.id,
