@@ -311,5 +311,185 @@
     "shippingType": "International shipping included",
     "shipsToUS": "Buyer pays fees",
     "dateAdded": "20251201"
+  },
+  {
+    "id": "2026-012",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Fully Custom Case",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "Winner fully customizes a pick case",
+    "keywords": "",
+    "contributedBy": [
+      "Sarius"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "20eur towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "shipsToUS": "Buyer pays fees",
+    "dateAdded": "20251202"
+  },
+  {
+    "id": "2026-013",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Leisure no 19",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "Master Lock no19 w/ key and box",
+    "keywords": "",
+    "contributedBy": [
+      "Lockleisure"
+    ],
+    "tags": [
+      "Locks (padlocks)",
+      "Locks (beginner)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No international shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251202"
+  },
+  {
+    "id": "2026-014",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Padlock pot",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "(Need to identify all the locks in the picture)",
+    "keywords": "",
+    "contributedBy": [
+      "Lockleisure"
+    ],
+    "tags": [
+      "Locks (padlocks)",
+      "Locks (beginner)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No international shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251202"
+  },
+  {
+    "id": "2026-015",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "American Store Credit",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "60eur gift certificate for purchase from Amvgaert's lock shop",
+    "keywords": "",
+    "contributedBy": [
+      "andrex66IT"
+    ],
+    "tags": [
+      "Gift certificates"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Digital prize",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Digital prize",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251202"
+  },
+  {
+    "id": "2026-016",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "German Store Credit",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "60eur gift certificate for purchase from Decoder's lock shop",
+    "keywords": "",
+    "contributedBy": [
+      "andrex66IT"
+    ],
+    "tags": [
+      "Gift certificates"
+    ],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "Digital prize",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Digital prize",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251202"
+  },
+  {
+    "id": "2026-017",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "spoon stuff",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "spoon"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No international shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251204"
+  },
+  {
+    "id": "2026-018",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "A Box of Skittles",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "While this may look just exactly like a very ordinary box of Skittles, the truth is that this rainbow contains cleverly hidden secrets that will last you far longer than any other Skittles you’ll ever come across! Don’t put them in your mouth; they’re too large for that and won’t do your teeth any favors. While some people may enjoy them by blindly taking one at random, others find it more pleasing to line them up like an OCD person and methodically complete one color before moving on to the next. I personally found each of these to be a good experience and would recommend this pot for a beginner to intermediate picker looking for a broad experience ascending the ranks. \nContents: 3+ white belt locks I haven't decided on yet, but that are decent to pick. An Abus 55/30, Master 140, Brinks 164. A Master Vline 5150, Abus 55/40, Master 575. An ACE 38mm brassie, A1100, Paclock 90A. A Dom RS Sigma, Goal S, Paclock 90A Pro. An SFIC, Gen 3 Smartkey, Medeco biaxial",
+    "keywords": "",
+    "contributedBy": [
+      "NoodleThumb"
+    ],
+    "tags": [
+      "Mystery"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$100 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split international shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251204"
   }
 ]
