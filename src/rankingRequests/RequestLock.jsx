@@ -133,7 +133,7 @@ function RequestLock() {
 
         try {
             const results =  await postData({user, url, formData, snackBars: true, timeoutDuration: 45000})
-            enqueueSnackbar('Upload successful', {variant: 'success'})
+            //enqueueSnackbar('Upload successful', {variant: 'success'})
             setResponse(results)
         } catch (error) {
             setUploadError(error)
