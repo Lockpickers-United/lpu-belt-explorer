@@ -228,7 +228,9 @@
       "Craig 3.0"
     ],
     "tags": [],
-    "country": [],
+    "country": [
+      "USA"
+    ],
     "shippingInfo": "",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
@@ -244,13 +246,15 @@
     "winnerCount": 1,
     "displayName": "",
     "description": "",
-    "potContents": "",
+    "potContents": "-US, UK, Canada, Latin America, and Africa",
     "keywords": "",
     "contributedBy": [
       "Craig 3.0"
     ],
     "tags": [],
-    "country": [],
+    "country": [
+      "USA"
+    ],
     "shippingInfo": "",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
@@ -446,16 +450,19 @@
     "id": "2026-017",
     "year": 2026,
     "potNumber": 0,
-    "title": "spoon stuff",
+    "title": "spoon's scents",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
-    "potContents": "",
+    "potContents": "-3 fragrances, male or female scents (winner's choice)3 male or female scents\n-1x brown+ lock (TBD)\n-MTL of spoon's choice",
     "keywords": "",
     "contributedBy": [
       "spoon"
     ],
-    "tags": [],
+    "tags": [
+      "Locks (advanced)",
+      "Locks (dimple)"
+    ],
     "country": [
       "USA"
     ],
@@ -491,5 +498,111 @@
     "shippingType": "Split international shipping",
     "shipsToUS": "Yes",
     "dateAdded": "20251204"
+  },
+  {
+    "id": "2026-019",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "BiLock 5-belt advanced progression kit",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "Kit contains:\n-1x BiLock 570 Oval cylinder \n-1x Quick Change Core (QCC) pinned - in mastered to match key. \n-1x BiLock key (modified into QCC key) \n-2x BiLock Pin #1 \n-2x BiLock Pin #2 \n-2x BiLock Pin #3 \n-2x BiLock Pin #4 \n-2x BiLock Pin #5 Master A \n-2x BiLock Pin #6 Master B \n-2x BiLock Pin #7 Master C \n-2x BiLock Pin #8 Master D \n-2x BiLock Pin #9 Master E \n-2x BiLock Pin #10 Master F \n-2x BiLock Pin #11 Master G \n-2x BiLock Pin #12 Master H \n-2x BiLock Pin #13 Master I \n-2x BiLock Pin #14 Master J \n-2x BiLock Pin #15 Master K \n-12x spare springs \n-1x spare cover plate \n-Labeled storage container \n-2x shims for easy reassembly \n-Full instructions for QCC removal and set up for each belt",
+    "keywords": "",
+    "contributedBy": [
+      "ishyladson"
+    ],
+    "tags": [
+      "Locks (advanced)",
+      "Pins",
+      "Spare Parts"
+    ],
+    "country": [
+      "Australia"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "Buyer pays fees",
+    "dateAdded": "20251206"
+  },
+  {
+    "id": "2026-020",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Abus Limited Edition Padlocks",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "-1x Abus padlock with clock (Boxed) \n-1x Abus padlock with 2 keys (Boxed)",
+    "keywords": "",
+    "contributedBy": [
+      "elocksmith"
+    ],
+    "tags": [
+      "Locks (beginner/intermediate)",
+      "Collector items"
+    ],
+    "country": [
+      "Australia"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "shipsToUS": "Buyer pays fees",
+    "dateAdded": "20251206"
+  },
+  {
+    "id": "2026-021",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Medeco X5",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "-Medeco M4 LFIC w/ operating key\n-Medeco Biaxial mortise w/ key\n-Medeco B SFIC with operating key\n-Medeco X4 SFIC, no keys\n-Medeco Dual Tech (Bicentric XT and X4), no keys",
+    "keywords": "",
+    "contributedBy": [
+      "bask"
+    ],
+    "tags": [
+      "Locks (beginner/intermediate)",
+      "Locks (advanced)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "International shipping included",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251207"
+  },
+  {
+    "id": "2026-022",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Hot Topic",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "potContents": "XL ASSA Abloy Golf shirt",
+    "keywords": "",
+    "contributedBy": [
+      "Wyte"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
   }
 ]
