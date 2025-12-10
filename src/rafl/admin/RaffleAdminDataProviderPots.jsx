@@ -7,6 +7,8 @@ import dayjs from 'dayjs'
 import RaffleContext from '../RaffleContext.jsx'
 import {raffleStatusSort} from '../../data/filterFields'
 import DBContext from '../../app/DBContext.jsx'
+import searchEntriesForText from '../../filters/searchEntriesForText'
+import filterEntriesAdvanced from '../../filters/filterEntriesAdvanced.js'
 
 export function RaffleAdminDataProviderPots({children, drawing}) {
 
@@ -15,40 +17,26 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
     const {allPots} = useContext(RaffleContext)
     const {allRaffleEntries} = useContext(DBContext)
 
-    const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
+    console.log('RaffleAdminDataProviderPots', allPots)
 
-    // Filters as an array (support negative values with leading '!')
-    const parseFilter = (key, rawVal) => {
-        const str = String(rawVal ?? '')
-        const negative = str.startsWith('!')
-        const value = negative ? str.slice(1) : str
-        return {key, value, negative}
-    }
-    const filterArray = Object.keys(filters)
-        .map(key => {
-            const value = filters[key]
-            return Array.isArray(value)
-                ? value.map(subkey => parseFilter(key, subkey))
-                : parseFilter(key, value)
-        })
-        .flat()
+    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
 
     const flatEntries = useMemo(() => {
         return allRaffleEntries
             .filter(entry => entry.status === 'approved')
             .reduce((acc, entry) => {
-            entry.pots.forEach(pot => {
-                acc.push({
-                    username: entry.username,
-                    entryId: entry.id,
-                    platform: entry.platform,
-                    potId: pot.itemId,
-                    potTickets: pot.tickets
+                entry.pots.forEach(pot => {
+                    acc.push({
+                        username: entry.username,
+                        entryId: entry.id,
+                        platform: entry.platform,
+                        potId: pot.itemId,
+                        potTickets: pot.tickets
+                    })
                 })
-            })
-            return acc
-        }, [])
+                return acc
+            }, [])
     }, [allRaffleEntries])
 
     const mappedPotEntries = useMemo(() => {
@@ -60,30 +48,22 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
             return pot
         }, [])
     }, [allPots, flatEntries])
+
     console.log('mappedPotEntries', mappedPotEntries)
 
+    const searchCutoff = 0.3
+
+    const searchedEntries = useMemo(() => {
+        return searchEntriesForText(search, [...mappedPotEntries], searchCutoff)
+    },[mappedPotEntries, search])
+
     const visibleEntries = useMemo(() => {
-        //if (!entriesLoaded) return []
-        const filtered = mappedPotEntries
-            .filter(datum => {
-                return filterArray.every(({key, value, negative}) => {
-                    const datumVal = datum[key]
-                    if (Array.isArray(datumVal)) {
-                        const has = datumVal.includes(value)
-                        return negative ? !has : has
-                    } else {
-                        const is = datumVal === value
-                        return negative ? !is : is
-                    }
-                })
-            })
-        const searched = search
-            ? fuzzysort.go(removeAccents(search), filtered, {keys: fuzzySortKeys, threshold: -25000})
-                .map(result => ({
-                    ...result.obj,
-                    score: result.score
-                }))
-            : filtered
+        const filtered = filterEntriesAdvanced({
+            advancedFilterGroups: advancedFilterGroups(),
+            entries: mappedPotEntries
+        })
+        const searched = searchEntriesForText(search, [...filtered], searchCutoff)
+
         let sorted = sort
             ? searched.sort((a, b) => {
                 if (sort === 'updatedAt') {
@@ -103,7 +83,7 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
             })
         if (drawing) sorted = sorted.filter(pot => pot.entrants?.length > 0)
         return sorted
-    }, [drawing, filterArray, mappedPotEntries, search, sort])
+    }, [drawing, mappedPotEntries, search, sort])
 
     const getPotFromId = useCallback(id => {
         return mappedPotEntries.find(e => e.id === id)

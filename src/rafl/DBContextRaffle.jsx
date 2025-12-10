@@ -57,7 +57,6 @@ export function DBProviderRaffle({children}) {
             setSummaryData(data || {})
             setSummaryLoaded(true)
             setDbLoaded(true)
-            console.log('DB, raffle summary loaded')
         }, error => {
             console.error('Error listening to DB:', error)
             setDbError(true)
@@ -80,7 +79,6 @@ export function DBProviderRaffle({children}) {
             setWinnerData(data || {})
             setWinnersLoaded(true)
             setDbLoaded(true)
-            console.log('DB, raffle winners loaded')
         }, error => {
             console.error('Error listening to DB:', error)
             setDbError(true)

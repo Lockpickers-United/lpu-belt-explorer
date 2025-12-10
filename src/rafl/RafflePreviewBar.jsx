@@ -32,7 +32,6 @@ export default function RafflePreviewBar({refresh, page}) {
     const showPreview = preview || previewMode
 
     const oldPreview = dayjs(version).valueOf() > dayjs(raflPreviewVersion.version).valueOf()
-    console.log('oldPreview', oldPreview, version, raflPreviewVersion.version)
 
     const refreshPreview = useCallback(async () => {
         const url = `${nodeServerUrl}/refresh-preview`

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import Tracker from '../app/Tracker'
-import {raffleFilterFields} from '../data/filterFields'
+import {raffleFilterFields, raffleFilterFieldsWinners} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
@@ -11,12 +11,18 @@ import RaffleEntries from './RaffleEntries.jsx'
 import RaffleHeader from './RaffleHeader.jsx'
 import RaffleContext from './RaffleContext.jsx'
 import AdminToolButtons from './AdminToolButtons.jsx'
+import DBContext from '../app/DBContext.jsx'
 
 function RaffleRoute() {
     usePageTitle('RAFL Prizes')
 
     const {allPots, allCharities, raflState} = useContext(RaffleContext)
     if (!allPots || !allCharities) return null
+    const {winnerData} = useContext(DBContext)
+
+    const currentFilterFields = Object.keys(winnerData).length > 0
+        ? raffleFilterFieldsWinners
+        : raffleFilterFields
 
     const {isMobile} = useWindowSize()
 
@@ -46,7 +52,7 @@ function RaffleRoute() {
             : 'Announcing RAFL 2026!'
 
     return (
-        <FilterProvider filterFields={raffleFilterFields}>
+        <FilterProvider filterFields={currentFilterFields}>
             <RaffleDataProvider allEntries={allPots}>
                 <div style={style}>
                     <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
