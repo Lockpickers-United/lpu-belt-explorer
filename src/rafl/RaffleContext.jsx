@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
 import useData from '../util/useData'
-import {raflPreviewPots} from '../data/dataUrls'
+import {raflPreviewPots, raflPreviewVersion} from '../data/dataUrls'
 import raflData from '../data/rafl.json'
 import raflCharities from '../data/raflCharities.json'
 import DBContext from '../app/DBContext.jsx'
@@ -46,7 +46,7 @@ export function RaffleProvider({children}) {
 
     const {data, loading, error, refresh} = useData({urls})
     const allDataLoaded = (!loading && !error && !!data)
-    const {raflPreviewPots} = data || {}
+    const {raflPreviewPots, raflPreviewVersion} = data || {}
 
     const firstDate = dayjs('2025-09-01')
     const entryDates = Object.keys(summary?.entriesByDate || {}).sort().reduce((acc, date) => {
@@ -180,6 +180,7 @@ export function RaffleProvider({children}) {
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
         raflState,
+        raflPreviewVersion,
         preview, setPreview, refresh
     }), [
         allDataLoaded,
@@ -198,6 +199,7 @@ export function RaffleProvider({children}) {
         profileLoaded,
         raffleAdmin, raffleAdminRole, setRaffleAdminRole,
         raflState,
+        raflPreviewVersion,
         preview, setPreview, refresh
     ])
 
@@ -209,7 +211,7 @@ export function RaffleProvider({children}) {
 }
 
 const urls = {
-    raflPreviewPots
+    raflPreviewPots, raflPreviewVersion
 }
 
 export default RaffleContext

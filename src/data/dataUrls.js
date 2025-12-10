@@ -27,7 +27,7 @@ export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
 
 export const raflSiteStats2025 = `${url}/statsSiteFullNew.json`
 export const raflPreviewPots = `${url}/raflPreviewPots.json`
-export const raflQuestionMap = `${url}/raflQuestionMap.json`
+export const raflPreviewVersion = `${url}/raflPreviewVersion.json`
 export const raflResponseDetails = `${url}/raflResponseDetails.json`
 export const raflCollectionDetails = `${url}/raflCollectionDetails.json`
 

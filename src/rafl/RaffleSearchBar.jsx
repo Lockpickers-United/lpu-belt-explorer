@@ -5,7 +5,6 @@ import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
 
-    label = entryCount > 0 ? `${label} (${entryCount})` : label
     const {isMobile} = useWindowSize()
     const flexStyle = !isMobile ? 'flex' : 'block'
     const style = isMobile
@@ -17,7 +16,7 @@ export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
     return (
         <div style={{display: flexStyle, ...style, backgroundColor: '#333', minHeight:72, ...borderstyle}}>
             <div style={{display: 'flex', flexGrow: 1, marginLeft: 8}}>
-                <SearchBox label={label} keepOpen={true}/>
+                <SearchBox label={label} keepOpen={true} entryCount={entryCount}/>
             </div>
             {!!sortValues &&
                 <div style={{margin: '12px 20px 0px 20px'}}>
