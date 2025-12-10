@@ -59,7 +59,9 @@ export const raffleFilterFields = [
     {label: 'Contributor', fieldName: 'contributedBy'},
     {label: 'Country', fieldName: 'country'},
     {label: 'Shipping Type', fieldName: 'shippingType'},
-    {label: 'Split Shipping', fieldName: 'splitShipping'}
+    {label: 'Split Shipping', fieldName: 'splitShipping'},
+    {label: 'US Shipping Details', fieldName: 'usShipText'},
+    {label: 'Content', fieldName: 'content'},
 ]
 
 export const raffleFilterFieldsWinners = [
@@ -70,7 +72,9 @@ export const raffleFilterFieldsWinners = [
     {label: 'Contributor', fieldName: 'contributedBy'},
     {label: 'Country', fieldName: 'country'},
     {label: 'Shipping Type', fieldName: 'shippingType'},
-    {label: 'Split Shipping', fieldName: 'splitShipping'}
+    {label: 'Split Shipping', fieldName: 'splitShipping'},
+    {label: 'US Shipping Details', fieldName: 'usShipText'},
+    {label: 'Content', fieldName: 'content'},
 ]
 
 export const raffleStatusSort = (a, b) => {

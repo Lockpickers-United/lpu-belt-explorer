@@ -42,7 +42,6 @@ function RaffleExportButton({text}) {
                 entryText += `  WINNERS: ${entry.winnerFilterNames.join(', ')}\n`
             }
             return entryText
-
         }).join('\n')
 
         handleClose()

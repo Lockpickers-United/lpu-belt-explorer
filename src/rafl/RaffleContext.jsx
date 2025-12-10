@@ -14,7 +14,7 @@ import AuthContext from '../app/AuthContext.jsx'
 
 const RaffleContext = React.createContext({})
 
-const maxPots = 1
+const maxPots = 3
 
 export function RaffleProvider({children}) {
 
@@ -104,6 +104,12 @@ export function RaffleProvider({children}) {
                 const winnerFilterNames = potWinners.map(w => `${w?.username} (${w?.platform})`).filter(u => !!u)
                 const winnerEntryIds = potWinners.map(w => w?.entryId).filter(u => !!u)
                 const excessWinner = winnerEntryIds.some(e => excessWinners.includes(e))
+                const usShipText = {
+                    Yes: 'Ships to the US',
+                    No: 'Cannot ship to the US',
+                    Split: 'US winner splits duties & fees',
+                    'Winner pays fees': 'US winner pays duties & fees'
+                }
 
                 return {
                     ...entry,
@@ -117,13 +123,17 @@ export function RaffleProvider({children}) {
                         entry.potContents
                     ].join(',')),
                     collection: collectionOptions.raffle.map.map(m => lockCollection && lockCollection[m.key] && lockCollection[m.key].includes(entry.id) ? 'In ' + m.label : 'Not in ' + m.label),
+                    content: [
+                        entry.media?.length > 0 ? 'Has Images' : 'No Images'
+                    ],
                     sortPotNumber: entry.potNumber === 0 ? 98 : entry.potNumber,
+                    usShipText: usShipText[entry.shipsToUS] || '',
                     winners: potWinners,
                     winnerUsernames,
                     winnerEntryIds,
                     winnerFilterNames,
                     winnerStatus: drawingBegun
-                        ? [potWinners.length > 0 ? 'Winners Selected' :  'Winners Not Selected', excessWinner ? 'Too many wins' : null].filter(x => x)
+                        ? [potWinners.length > 0 ? 'Winners Selected' : 'Winners Not Selected', excessWinner ? 'Too many wins' : null].filter(x => x)
                         : []
                 }
             })

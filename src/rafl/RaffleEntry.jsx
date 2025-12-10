@@ -22,6 +22,8 @@ import {Collapse} from '@mui/material'
 import RaffleContext from './RaffleContext.jsx'
 import DataContext from '../context/DataContext.jsx'
 import Box from '@mui/material/Box'
+import CopyEntryIdButton from '../entries/CopyEntryIdButton.jsx'
+import LogEntryButton from '../entries/LogEntryButton.jsx'
 
 function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
@@ -45,9 +47,6 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
-
-            console.log('entry', entry)
-
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             setScrolled(true)
@@ -69,13 +68,19 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
     const {isMobile, flexStyle} = useWindowSize()
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
+    const contribMargin = !isMobile ? '0px 0px 0px 8px' : '0px 0px 0px 0px'
     const descriptionMargin = !isMobile ? '12px 0px 0px 8px' : '12px 0px 0px 0px'
-    const contribMargin = !isMobile ? '0px 0px 18px 8px' : '0px 0px 18px 0px'
     const descriptionFontSize = isMobile ? '1rem' : '1.1rem'
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
     const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.5 : 1
 
-    const shipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29', 'Buyer pays fees': '#e39a29'}
+    const usShipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29', 'Buyer pays fees': '#e39a29'}
+    const usShipText = {
+        Yes: '',
+        No: 'Cannot ship to the US',
+        Split: 'US winner splits duties & fees',
+        'Buyer pays fees': 'US winner pays duties & fees'
+    }
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
@@ -147,16 +152,18 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                                                 value={entry.shippingInfo}/>
                                 </div>
                             }
-                            <Box style={{
-                                margin: descriptionMargin,
-                                fontSize: descriptionFontSize,
-                                opacity: infoOpacity
-                            }}>
-                                <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
-                                               components={{p: 'div'}}>
-                                    {entry.description}
-                                </ReactMarkdown>
-                            </Box>
+                            {entry.description &&
+                                <Box style={{
+                                    margin: descriptionMargin,
+                                    fontSize: descriptionFontSize,
+                                    opacity: infoOpacity
+                                }}>
+                                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
+                                                   components={{p: 'div'}}>
+                                        {entry.description}
+                                    </ReactMarkdown>
+                                </Box>
+                            }
                         </div>
 
                         {showFull && !drawing &&
@@ -164,14 +171,6 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                         }
 
                     </div>
-
-                    {entry.shipsToUS && !drawing &&
-                        <div
-                            style={{textAlign: 'right', width: '100%', marginTop: 10, paddingRight: 20, color: '#aaa'}}>
-                            Ships to USA: &nbsp;
-                            <span style={{color: shipColor[entry.shipsToUS], fontWeight: 'bold'}}>{entry.shipsToUS}</span>
-                        </div>
-                    }
                 </div>
 
             </AccordionSummary>
@@ -179,6 +178,20 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                 expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
+                        {entry.shipsToUS && entry.shipsToUS !== 'Yes' && !drawing &&
+                            <div
+                                style={{
+                                    textAlign: 'right',
+                                    width: '100%',
+                                    marginTop: 5,
+                                    paddingRight: 20,
+                                    color: usShipColor[entry.shipsToUS],
+                                    fontWeight: 'bold',
+                                    fontSize: '0.95rem'
+                                }}>{usShipText[entry.shipsToUS]}
+                            </div>
+                        }
+
                         <div style={{display: flexStyle}}>
                             <Stack direction='row' alignItems='flex-start' style={{}}>
                                 {!!entry.tags?.length && !showSimple &&
@@ -259,10 +272,18 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                     </AccordionDetails>
                     {!showSimple &&
                         <AccordionActions disableSpacing>
-                            <CopyPotTextButton entry={entry}/>
-                            {showFull &&
-                                <CopyLinkToRaflPotButton entry={entry}/>
-                            }
+                            <div style={{display: 'flex', width: '100%'}}>
+                                <div style={{flexGrow: 1, justifyItems: 'left'}}>
+                                    <CopyEntryIdButton entry={entry}/>
+                                    <LogEntryButton entry={entry}/>
+                                </div>
+                                <div style={{display: 'flex'}}>
+                                    <CopyPotTextButton entry={entry}/>
+                                    {showFull &&
+                                        <CopyLinkToRaflPotButton entry={entry}/>
+                                    }
+                                </div>
+                            </div>
                         </AccordionActions>
                     }
                 </React.Fragment>
