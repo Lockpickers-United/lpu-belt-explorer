@@ -132,12 +132,12 @@ function RequestLock() {
         const url = `${nodeServerUrl}/request-lock`
 
         try {
-            const results =  await postData({user, url, formData, snackBars: false, timeoutDuration: 20000})
+            const results =  await postData({user, url, formData, snackBars: true, timeoutDuration: 45000})
             enqueueSnackbar('Upload successful', {variant: 'success'})
             setResponse(results)
         } catch (error) {
-            setUploadError(`${error}`.replace('Error: ', ''))
-            enqueueSnackbar(`Error creating request: ${error}`, {variant: 'error', autoHideDuration: 3000})
+            setUploadError(error)
+            //enqueueSnackbar(`Error creating request: ${error.message}`, {variant: 'error', autoHideDuration: 3000})
             // Do not rethrow to avoid Uncaught (in promise) in console; error is handled via UI state and snackbar.
         } finally {
             files.forEach(file => URL.revokeObjectURL(file.preview))

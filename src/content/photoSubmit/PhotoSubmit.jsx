@@ -79,7 +79,7 @@ function PhotoSubmit({profile, user}) {
 
         const url = `${nodeServerUrl}/upload`
         const snackBars = true
-        const timeoutDuration = 30000
+        const timeoutDuration = 45000
         try {
             setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
             //console.log('Upload response:', response)
